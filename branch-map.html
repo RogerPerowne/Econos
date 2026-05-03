@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Econos — A-Level Economics Branch Map</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3e;
+      --text: #e2e4ef;
+      --muted: #6b7094;
+      --accent-micro: #4f8ef7;
+      --accent-macro: #e06b6b;
+      --accent-theme: #7ac97a;
+      --accent-qs: #c97ace;
+      --sidebar-w: 240px;
+      --topbar-h: 56px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      height: var(--topbar-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 12px;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .topbar-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .topbar-logo span { color: var(--accent-micro); }
+
+    .topbar-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+    }
+
+    .topbar-title {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .topbar-search {
+      margin-left: auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      color: var(--text);
+      font-size: 13px;
+      width: 200px;
+      outline: none;
+    }
+
+    .topbar-search::placeholder { color: var(--muted); }
+    .topbar-search:focus { border-color: var(--accent-micro); }
+
+    /* ── Main layout ── */
+    .layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Sidebars ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .sidebar.right {
+      border-right: none;
+      border-left: 1px solid var(--border);
+    }
+
+    .sidebar-header {
+      padding: 14px 16px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .sidebar-body {
+      overflow-y: auto;
+      flex: 1;
+      padding: 8px 0;
+    }
+
+    .sidebar-body::-webkit-scrollbar { width: 4px; }
+    .sidebar-body::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .nav-group-label {
+      padding: 10px 16px 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 0;
+      color: var(--text);
+      transition: background 0.12s;
+    }
+
+    .nav-item:hover { background: rgba(255,255,255,0.05); }
+
+    .nav-item.active {
+      background: rgba(79, 142, 247, 0.12);
+      color: var(--accent-micro);
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      font-size: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 1px 7px;
+      color: var(--muted);
+    }
+
+    .progress-bar-wrap {
+      margin: 4px 16px 2px;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s;
+    }
+
+    .sidebar-footer {
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .avatar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-micro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* ── Map canvas ── */
+    .map-area {
+      flex: 1;
+      overflow: auto;
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(79,142,247,0.03) 0%, transparent 70%),
+        var(--bg);
+      background-size: 40px 40px, auto;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(79,142,247,0.04) 0%, transparent 70%);
+    }
+
+    .map-area::-webkit-scrollbar { width: 6px; height: 6px; }
+    .map-area::-webkit-scrollbar-track { background: transparent; }
+    .map-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .map-canvas {
+      position: relative;
+      width: 1400px;
+      padding: 60px 80px 100px;
+    }
+
+    /* ── SVG connector lines ── */
+    .connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* ── Branch sections ── */
+    .branch-section {
+      margin-bottom: 64px;
+    }
+
+    .branch-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .branch-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .nodes-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ── Topic nodes ── */
+    .node {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      width: 180px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      position: relative;
+    }
+
+    .node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      border-color: var(--node-color, var(--accent-micro));
+    }
+
+    .node.complete {
+      border-color: var(--node-color, var(--accent-micro));
+      background: rgba(122, 201, 122, 0.06);
+    }
+
+    .node.locked {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .node-icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .node-title {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .node-sub {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .node-status {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .node-status.done { background: var(--accent-theme); color: #fff; }
+    .node-status.lock { background: var(--border); color: var(--muted); }
+
+    .node-progress {
+      margin-top: 10px;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .node-progress-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--node-color, var(--accent-micro));
+    }
+
+    /* Colour themes per branch */
+    .micro  { --node-color: var(--accent-micro); }
+    .macro  { --node-color: var(--accent-macro); }
+    .theme  { --node-color: var(--accent-theme); }
+    .qs     { --node-color: var(--accent-qs); }
+
+    /* ── Right sidebar stats ── */
+    .stat-card {
+      margin: 8px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .ring-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 16px 0 8px;
+    }
+
+    .ring {
+      width: 80px;
+      height: 80px;
+    }
+
+    .ring circle {
+      fill: none;
+      stroke-width: 7;
+      stroke-linecap: round;
+    }
+
+    .ring .track { stroke: var(--border); }
+    .ring .fill  { stroke: var(--accent-micro); stroke-dasharray: 220; stroke-dashoffset: 110; transform: rotate(-90deg); transform-origin: 50% 50%; }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 12px 4px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .tag:hover { border-color: var(--accent-micro); color: var(--text); }
+    .tag.active { background: var(--accent-micro); border-color: var(--accent-micro); color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-logo">Eco<span>nos</span></div>
+    <div class="topbar-divider"></div>
+    <div class="topbar-title">A-Level Economics — Branch Map</div>
+    <input class="topbar-search" type="text" placeholder="Search topics…" />
+  </header>
+
+  <div class="layout">
+
+    <!-- Left sidebar: navigation -->
+    <aside class="sidebar left">
+      <div class="sidebar-header">Syllabus</div>
+      <div class="sidebar-body">
+
+        <div class="nav-group-label">Microeconomics</div>
+        <div class="nav-item active">
+          <span class="nav-dot" style="background:var(--accent-micro)"></span>
+          Markets &amp; Prices
+          <span class="nav-badge">8</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-micro)"></span>
+          Market Failure
+          <span class="nav-badge">6</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-micro)"></span>
+          Firm Behaviour
+          <span class="nav-badge">7</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-micro)"></span>
+          Labour Markets
+          <span class="nav-badge">5</span>
+        </div>
+
+        <div class="nav-group-label">Macroeconomics</div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-macro)"></span>
+          National Income
+          <span class="nav-badge">6</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-macro)"></span>
+          Inflation &amp; Unemployment
+          <span class="nav-badge">5</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-macro)"></span>
+          Fiscal &amp; Monetary Policy
+          <span class="nav-badge">7</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-macro)"></span>
+          International Trade
+          <span class="nav-badge">6</span>
+        </div>
+
+        <div class="nav-group-label">Themes &amp; Essays</div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-theme)"></span>
+          Development Economics
+          <span class="nav-badge">8</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-theme)"></span>
+          Inequality
+          <span class="nav-badge">4</span>
+        </div>
+
+        <div class="nav-group-label">Skills</div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-qs)"></span>
+          Quantitative Methods
+          <span class="nav-badge">5</span>
+        </div>
+        <div class="nav-item">
+          <span class="nav-dot" style="background:var(--accent-qs)"></span>
+          Diagram Technique
+          <span class="nav-badge">6</span>
+        </div>
+
+        <div style="height:8px"></div>
+        <div class="progress-bar-wrap" style="margin:4px 16px 2px">
+          <div class="progress-bar-fill" style="width:38%;background:var(--accent-micro)"></div>
+        </div>
+        <div style="padding:4px 16px 8px;font-size:11px;color:var(--muted)">38% of syllabus covered</div>
+
+      </div>
+      <div class="sidebar-footer">
+        <div class="avatar-row">
+          <div class="avatar">AJ</div>
+          <div>
+            <div style="font-size:13px;color:var(--text)">Alex Johnson</div>
+            <div style="font-size:11px">Year 13 · Edexcel</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Map canvas -->
+    <main class="map-area">
+      <div class="map-canvas">
+
+        <!-- Microeconomics -->
+        <div class="branch-section">
+          <div class="branch-label" style="color:var(--accent-micro)">Microeconomics</div>
+          <div class="nodes-row">
+
+            <div class="node micro complete">
+              <div class="node-status done">✓</div>
+              <div class="node-icon">⚖️</div>
+              <div class="node-title">Supply &amp; Demand</div>
+              <div class="node-sub">Shifts, equilibrium, elasticity</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:100%"></div></div>
+            </div>
+
+            <div class="node micro complete">
+              <div class="node-status done">✓</div>
+              <div class="node-icon">📐</div>
+              <div class="node-title">Price Elasticity</div>
+              <div class="node-sub">PED, PES, YED, XED</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:100%"></div></div>
+            </div>
+
+            <div class="node micro">
+              <div class="node-icon">🏭</div>
+              <div class="node-title">Production &amp; Costs</div>
+              <div class="node-sub">SR vs LR, economies of scale</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:65%"></div></div>
+            </div>
+
+            <div class="node micro">
+              <div class="node-icon">🏆</div>
+              <div class="node-title">Market Structures</div>
+              <div class="node-sub">Perfect, monopoly, oligopoly</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:40%"></div></div>
+            </div>
+
+            <div class="node micro">
+              <div class="node-icon">💀</div>
+              <div class="node-title">Market Failure</div>
+              <div class="node-sub">Externalities, public goods</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:20%"></div></div>
+            </div>
+
+            <div class="node micro locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">🤝</div>
+              <div class="node-title">Labour Markets</div>
+              <div class="node-sub">MRP, wage determination</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node micro locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">🎯</div>
+              <div class="node-title">Government Intervention</div>
+              <div class="node-sub">Taxes, subsidies, regulation</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Macroeconomics -->
+        <div class="branch-section">
+          <div class="branch-label" style="color:var(--accent-macro)">Macroeconomics</div>
+          <div class="nodes-row">
+
+            <div class="node macro complete">
+              <div class="node-status done">✓</div>
+              <div class="node-icon">📊</div>
+              <div class="node-title">National Income</div>
+              <div class="node-sub">GDP, GNP, circular flow</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:100%"></div></div>
+            </div>
+
+            <div class="node macro">
+              <div class="node-icon">📈</div>
+              <div class="node-title">AD &amp; AS</div>
+              <div class="node-sub">Aggregate demand &amp; supply model</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:55%"></div></div>
+            </div>
+
+            <div class="node macro">
+              <div class="node-icon">🔥</div>
+              <div class="node-title">Inflation</div>
+              <div class="node-sub">CPI, demand-pull, cost-push</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:30%"></div></div>
+            </div>
+
+            <div class="node macro locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">💼</div>
+              <div class="node-title">Unemployment</div>
+              <div class="node-sub">Types, costs, trade-offs</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node macro locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">🏦</div>
+              <div class="node-title">Monetary Policy</div>
+              <div class="node-sub">Interest rates, money supply</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node macro locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">🏛️</div>
+              <div class="node-title">Fiscal Policy</div>
+              <div class="node-sub">Government spending &amp; tax</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node macro locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">🌍</div>
+              <div class="node-title">International Trade</div>
+              <div class="node-sub">Comparative advantage, BoP</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Themes -->
+        <div class="branch-section">
+          <div class="branch-label" style="color:var(--accent-theme)">Themes &amp; Extended Writing</div>
+          <div class="nodes-row">
+
+            <div class="node theme">
+              <div class="node-icon">🌱</div>
+              <div class="node-title">Economic Growth</div>
+              <div class="node-sub">Causes, sustainability</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:45%"></div></div>
+            </div>
+
+            <div class="node theme locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">⚡</div>
+              <div class="node-title">Development Economics</div>
+              <div class="node-sub">HDI, poverty traps, aid</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node theme locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">⚖️</div>
+              <div class="node-title">Inequality</div>
+              <div class="node-sub">Gini, redistribution</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node theme locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">✍️</div>
+              <div class="node-title">Essay Technique</div>
+              <div class="node-sub">Structure, evaluation, chains</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Quantitative Skills -->
+        <div class="branch-section">
+          <div class="branch-label" style="color:var(--accent-qs)">Quantitative Skills &amp; Diagrams</div>
+          <div class="nodes-row">
+
+            <div class="node qs complete">
+              <div class="node-status done">✓</div>
+              <div class="node-icon">🔢</div>
+              <div class="node-title">Index Numbers</div>
+              <div class="node-sub">Weighted averages, RPI</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:100%"></div></div>
+            </div>
+
+            <div class="node qs">
+              <div class="node-icon">📉</div>
+              <div class="node-title">Diagram Drawing</div>
+              <div class="node-sub">Labels, shifts, welfare areas</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:70%"></div></div>
+            </div>
+
+            <div class="node qs locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">🧮</div>
+              <div class="node-title">Data Interpretation</div>
+              <div class="node-sub">% change, real vs nominal</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+            <div class="node qs locked">
+              <div class="node-status lock">🔒</div>
+              <div class="node-icon">📋</div>
+              <div class="node-title">Quantitative Questions</div>
+              <div class="node-sub">Exam-style calculation Qs</div>
+              <div class="node-progress"><div class="node-progress-fill" style="width:0%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /map-canvas -->
+    </main>
+
+    <!-- Right sidebar: progress & info -->
+    <aside class="sidebar right">
+      <div class="sidebar-header">Progress</div>
+      <div class="sidebar-body">
+
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 36 36">
+            <circle class="track" cx="18" cy="18" r="15.9"/>
+            <circle class="fill" cx="18" cy="18" r="15.9"/>
+          </svg>
+        </div>
+        <div style="text-align:center;font-size:11px;color:var(--muted);margin-bottom:8px">38% complete</div>
+
+        <div class="stat-card">
+          <div class="stat-label">Topics Done</div>
+          <div class="stat-value" style="color:var(--accent-theme)">4</div>
+          <div class="stat-sub">of 23 total</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Current Streak</div>
+          <div class="stat-value" style="color:var(--accent-micro)">7</div>
+          <div class="stat-sub">days in a row</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Exam Date</div>
+          <div class="stat-value" style="font-size:16px">14 May</div>
+          <div class="stat-sub">11 days remaining</div>
+        </div>
+
+        <div class="sidebar-header" style="margin-top:8px">Filter by Tag</div>
+        <div class="tag-list">
+          <div class="tag active">All</div>
+          <div class="tag">Paper 1</div>
+          <div class="tag">Paper 2</div>
+          <div class="tag">Paper 3</div>
+          <div class="tag">Diagrams</div>
+          <div class="tag">Calcs</div>
+          <div class="tag">Essays</div>
+        </div>
+
+        <div class="sidebar-header" style="margin-top:8px">Next Up</div>
+        <div style="padding:10px 12px;font-size:13px;color:var(--muted);line-height:1.5">
+          <div style="color:var(--text);font-weight:600;margin-bottom:4px">Production &amp; Costs</div>
+          Continue where you left off — 65% done.<br/>
+          Estimated: <span style="color:var(--accent-micro)">~20 min</span>
+        </div>
+
+      </div>
+    </aside>
+
+  </div><!-- /layout -->
+
+</body>
+</html>

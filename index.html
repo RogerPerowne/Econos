@@ -18,7 +18,7 @@
       --amber: #f59e0b;
       --purple: #8b5cf6;
       --sidebar-w: 210px;
-      --right-w: 260px;
+      --right-w: 264px;
     }
 
     body {
@@ -42,19 +42,11 @@
     }
 
     .logo { padding: 0 20px 6px; }
-
     .logo-dots { display: flex; gap: 4px; margin-bottom: 4px; }
     .logo-dots span { width: 7px; height: 7px; border-radius: 50%; }
-
-    .logo-text {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--blue);
-      letter-spacing: -1px;
-    }
-    .logo-text .o1 { color: var(--green); }
-    .logo-text .o2 { color: var(--amber); }
-
+    .logo-text { font-size: 22px; font-weight: 800; color: #2563eb; letter-spacing: -1px; }
+    .logo-text .o1 { color: #10b981; }
+    .logo-text .o2 { color: #f59e0b; }
     .logo-tag { font-size: 10px; color: var(--muted); margin-top: 2px; }
 
     .nav { margin-top: 20px; flex: 1; overflow-y: auto; padding: 0 10px; }
@@ -73,8 +65,7 @@
       text-decoration: none;
     }
     .nav-item:hover { background: #f0f4ff; color: var(--text); }
-    .nav-item.active { background: #eff4ff; color: var(--blue); font-weight: 600; }
-
+    .nav-item.active { background: #eff4ff; color: #2563eb; font-weight: 600; }
     .nav-icon { width: 18px; height: 18px; opacity: 0.7; flex-shrink: 0; }
     .nav-item.active .nav-icon { opacity: 1; }
 
@@ -82,24 +73,30 @@
       margin-left: auto;
       font-size: 10px;
       font-weight: 600;
-      background: #f0f0f4;
-      color: var(--muted);
-      border-radius: 4px;
+      color: #9ca3af;
+      background: #f3f4f6;
       padding: 2px 6px;
+      border-radius: 20px;
     }
 
-    .sidebar-promo {
+    .journey-card {
       margin: 12px;
       background: linear-gradient(135deg, #059669 0%, #10b981 100%);
       border-radius: 12px;
       padding: 14px;
-      color: #fff;
     }
-    .sidebar-promo-icon { font-size: 20px; margin-bottom: 6px; }
-    .sidebar-promo-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
-    .sidebar-promo-desc { font-size: 11px; opacity: 0.85; line-height: 1.4; }
+    .journey-card-top {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .journey-card-desc { font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.5; }
 
-    .sidebar-user {
+    .user-profile {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -107,206 +104,122 @@
       border-top: 1px solid var(--border);
     }
     .user-avatar {
-      width: 32px; height: 32px;
-      background: var(--blue);
-      color: #fff;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700;
-      flex-shrink: 0;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: #2563eb; color: #fff; font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .user-name { font-size: 13px; font-weight: 600; color: var(--text); }
     .user-sub { font-size: 11px; color: var(--muted); }
 
     /* ─── Main ─── */
-    .main {
-      flex: 1;
-      overflow-y: auto;
-      padding: 32px 36px 60px;
-    }
+    .main { flex: 1; overflow-y: auto; padding: 32px 36px 60px; min-width: 0; }
     .main::-webkit-scrollbar { width: 6px; }
-    .main::-webkit-scrollbar-track { background: transparent; }
     .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-    .topbar-user {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-bottom: 28px;
+    .topbar {
+      display: flex; justify-content: flex-end; align-items: center;
+      gap: 12px; margin-bottom: 28px;
     }
-    .topbar-greeting { font-size: 15px; font-weight: 500; color: var(--text); }
+    .welcome-text { font-size: 15px; font-weight: 500; color: var(--text); }
     .topbar-avatar {
-      width: 36px; height: 36px;
-      background: var(--blue);
-      color: #fff;
-      border-radius: 50%;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #2563eb; color: #fff; font-size: 14px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 700;
     }
 
-    .page-title { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
-    .page-sub { font-size: 15px; color: var(--muted); margin-top: 6px; margin-bottom: 28px; }
+    .page-title { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 6px; }
+    .page-sub { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
 
-    /* ─── Feature card ─── */
-    .feature-card {
+    /* Featured card */
+    .featured-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 28px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      position: relative;
-      overflow: hidden;
+      margin-bottom: 24px;
     }
+    .featured-card-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 20px; gap: 16px;
+    }
+    .first-topic-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .featured-card-meta h2 {
+      font-size: 21px; font-weight: 800; letter-spacing: -0.4px;
+      color: var(--text); margin-bottom: 10px;
+    }
+    .featured-card-meta p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      gap: 16px;
-    }
-    .card-top-left { flex: 1; }
-    .card-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .card-title { font-size: 22px; font-weight: 800; letter-spacing: -0.4px; color: var(--text); margin-bottom: 8px; }
-    .card-desc { font-size: 14px; color: var(--muted); line-height: 1.55; }
-
-    .chart-svg { flex-shrink: 0; }
-
-    /* Phase cards */
-    .phases-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .phase-card {
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 16px;
-      background: var(--surface);
-    }
-    .phase-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    .phase-icon {
-      width: 34px; height: 34px;
-      border-radius: 9px;
+    .phases-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 20px 0; }
+    .phase-card { border: 1px solid var(--border); border-radius: 14px; padding: 16px; background: #fafbfd; }
+    .phase-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .phase-icon-wrap {
+      width: 36px; height: 36px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
     }
-    .phase-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 20px;
-    }
-    .badge-green { background: #ecfdf5; color: var(--green); }
-    .badge-grey { background: #f3f4f8; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+    .phase-badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+    .badge-green { background: #ecfdf5; color: #059669; }
+    .badge-grey { background: #f3f4f6; color: #9ca3af; }
+    .phase-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .phase-card p { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+    .phase-step { font-size: 12px; font-weight: 600; }
+    .phase-step.green { color: #10b981; }
+    .phase-step.muted { color: var(--muted); }
 
-    .phase-name { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .phase-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
-    .phase-step { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
-    .phase-step.ready { color: var(--green); }
-    .phase-step.locked { color: var(--muted); }
-
-    /* CTA */
     .btn-primary {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.15s, box-shadow 0.15s;
-      margin-top: 4px;
+      display: block; width: 100%; padding: 14px;
+      background: #2563eb; color: #fff; font-size: 15px; font-weight: 700;
+      border: none; border-radius: 12px; cursor: pointer; text-align: center;
+      text-decoration: none; transition: background 0.15s, box-shadow 0.15s; margin-bottom: 10px;
     }
     .btn-primary:hover { background: #1d4ed8; box-shadow: 0 4px 16px rgba(37,99,235,0.3); }
-
-    .no-pressure {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 10px;
-    }
+    .no-pressure { text-align: center; font-size: 13px; color: var(--muted); }
 
     /* Trust badges */
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 14px;
-      margin-top: 20px;
-    }
+    .trust-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
     .trust-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
+      display: flex; flex-direction: column; gap: 8px;
     }
     .trust-icon {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      background: #eff6ff;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 10px;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: #eff6ff; display: flex; align-items: center; justify-content: center;
     }
-    .trust-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .trust-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+    .trust-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .trust-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-    /* ─── Right panel ─── */
+    /* Right panel */
     .right-panel {
-      width: var(--right-w);
-      background: var(--surface);
-      border-left: 1px solid var(--border);
-      flex-shrink: 0;
-      padding: 28px 20px;
+      width: var(--right-w); background: var(--surface); border-left: 1px solid var(--border);
+      flex-shrink: 0; padding: 32px 20px; display: flex; flex-direction: column;
       overflow-y: auto;
     }
     .right-panel::-webkit-scrollbar { width: 4px; }
     .right-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-    .rp-heading {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 16px;
-      font-weight: 800;
-      margin-bottom: 6px;
+    .right-heading {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 10px;
     }
-    .rp-sub { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 20px; }
+    .right-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
 
-    .rp-step {
-      display: flex;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
+    .step-item {
+      display: flex; gap: 14px; padding: 16px 0;
+      border-bottom: 1px solid var(--border); align-items: flex-start;
     }
-    .rp-step:last-child { border-bottom: none; }
-    .rp-step-icon {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+    .step-item:last-child { border-bottom: none; }
+    .step-icon-wrap {
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .rp-step-body { flex: 1; }
-    .rp-step-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
-    .rp-step-desc { font-size: 12px; color: var(--muted); }
-    .rp-chevron { color: var(--muted); font-size: 12px; align-self: center; margin-left: auto; }
+    .step-body { flex: 1; }
+    .step-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .step-sub { font-size: 12px; color: var(--muted); }
+    .step-chevron { color: var(--muted); font-size: 14px; padding-top: 10px; }
   </style>
 </head>
 <body>
@@ -316,7 +229,7 @@
   <div class="logo">
     <div class="logo-dots">
       <span style="background:#10b981"></span>
-      <span style="background:#2563eb"></span>
+      <span style="background:#3b82f6"></span>
       <span style="background:#f59e0b"></span>
     </div>
     <div class="logo-text">ec<span class="o1">o</span>n<span class="o2">o</span>s</div>
@@ -351,18 +264,20 @@
       Study planner
     </a>
     <a class="nav-item" href="#">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
       Settings
     </a>
   </nav>
 
-  <div class="sidebar-promo">
-    <div class="sidebar-promo-icon">🚀</div>
-    <div class="sidebar-promo-title">Your learning journey starts here</div>
-    <div class="sidebar-promo-desc">We'll guide you step by step to build confidence and master economics.</div>
+  <div class="journey-card">
+    <div class="journey-card-top">
+      <span>🚀</span>
+      <span>Your learning journey starts here</span>
+    </div>
+    <div class="journey-card-desc">We'll guide you step by step to build confidence and master economics.</div>
   </div>
 
-  <div class="sidebar-user">
+  <div class="user-profile">
     <div class="user-avatar">AB</div>
     <div>
       <div class="user-name">Alex Brown</div>
@@ -373,89 +288,70 @@
 
 <!-- ─── Main ─── -->
 <main class="main">
-  <div class="topbar-user">
-    <div class="topbar-greeting">Welcome, Alex! 👋</div>
+  <div class="topbar">
+    <span class="welcome-text">Welcome, Alex! 👋</span>
     <div class="topbar-avatar">A</div>
   </div>
 
   <div class="page-title">Let's get you started.</div>
   <div class="page-sub">We've built your first learning path. It takes about 10 minutes.</div>
 
-  <!-- Feature card -->
-  <div class="feature-card">
-    <div class="card-top">
-      <div class="card-top-left">
-        <div class="card-label">Your first topic</div>
-        <div class="card-title">Inflation – Cost-push vs Demand-pull</div>
-        <div class="card-desc">A key topic in A-Level Economics that builds the foundation for many other areas of the course.</div>
+  <!-- Featured card -->
+  <div class="featured-card">
+    <div class="featured-card-header">
+      <div class="featured-card-meta">
+        <div class="first-topic-label">Your first topic</div>
+        <h2>Inflation – Cost-push vs Demand-pull</h2>
+        <p>A key topic in A-Level Economics that builds the foundation for many other areas of the course.</p>
       </div>
-      <!-- Bar chart SVG -->
-      <svg class="chart-svg" width="130" height="90" viewBox="0 0 130 90" fill="none">
-        <!-- Bars -->
-        <rect x="12" y="56" width="18" height="28" rx="3" fill="#bfdbfe"/>
-        <rect x="36" y="42" width="18" height="42" rx="3" fill="#93c5fd"/>
-        <rect x="60" y="26" width="18" height="58" rx="3" fill="#60a5fa"/>
-        <rect x="84" y="10" width="18" height="74" rx="3" fill="#2563eb"/>
-        <!-- Green curved arrow -->
-        <path d="M8 76 Q50 20 104 8" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M97 4 L104 8 L100 15" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Cloud decorations -->
-        <ellipse cx="112" cy="18" rx="9" ry="5" fill="#f0f9ff" opacity="0.8"/>
-        <ellipse cx="120" cy="22" rx="7" ry="4" fill="#e0f2fe" opacity="0.7"/>
+      <!-- Rising bar chart SVG -->
+      <svg width="120" height="90" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <ellipse cx="95" cy="12" rx="14" ry="7" fill="#e0e7ff" opacity="0.7"/>
+        <ellipse cx="109" cy="9" rx="9" ry="5" fill="#dbeafe" opacity="0.5"/>
+        <ellipse cx="83" cy="8" rx="8" ry="4" fill="#e0e7ff" opacity="0.4"/>
+        <rect x="8"  y="62" width="16" height="20" rx="3" fill="#bfdbfe"/>
+        <rect x="30" y="48" width="16" height="34" rx="3" fill="#93c5fd"/>
+        <rect x="52" y="34" width="16" height="48" rx="3" fill="#3b82f6"/>
+        <rect x="74" y="18" width="16" height="64" rx="3" fill="#2563eb"/>
+        <path d="M 14 64 Q 42 22 92 14" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <polygon points="92,8 100,15 86,16" fill="#10b981"/>
       </svg>
     </div>
 
     <!-- Phase cards -->
-    <div class="phases-grid">
-      <!-- Learn it -->
+    <div class="phases-row">
       <div class="phase-card">
-        <div class="phase-header">
-          <div class="phase-icon" style="background:#ecfdf5;">
+        <div class="phase-card-top">
+          <div class="phase-icon-wrap" style="background:#ecfdf5;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
           <span class="phase-badge badge-green">Ready</span>
         </div>
-        <div class="phase-name" style="color:#10b981;">Learn it</div>
-        <div class="phase-desc">Understand the key concepts in simple steps.</div>
-        <div class="phase-step ready">✓ Step 1 of 3</div>
+        <h3>Learn it</h3>
+        <p>Understand the key concepts in simple steps.</p>
+        <div class="phase-step green">✓ Step 1 of 3</div>
       </div>
-
-      <!-- Link it -->
       <div class="phase-card">
-        <div class="phase-header">
-          <div class="phase-icon" style="background:#fffbeb;">
+        <div class="phase-card-top">
+          <div class="phase-icon-wrap" style="background:#fffbeb;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </div>
-          <span class="phase-badge badge-grey">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Locked
-          </span>
+          <span class="phase-badge badge-grey">🔒 Locked</span>
         </div>
-        <div class="phase-name" style="color:#1a1d2e;">Link it</div>
-        <div class="phase-desc">Connect ideas and see how they work together.</div>
-        <div class="phase-step locked">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Step 2 of 3
-        </div>
+        <h3>Link it</h3>
+        <p>Connect ideas and see how they work together.</p>
+        <div class="phase-step muted">🔒 Step 2 of 3</div>
       </div>
-
-      <!-- Land it -->
       <div class="phase-card">
-        <div class="phase-header">
-          <div class="phase-icon" style="background:#f5f3ff;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        <div class="phase-card-top">
+          <div class="phase-icon-wrap" style="background:#f5f3ff;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
           </div>
-          <span class="phase-badge badge-grey">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Locked
-          </span>
+          <span class="phase-badge badge-grey">🔒 Locked</span>
         </div>
-        <div class="phase-name" style="color:#1a1d2e;">Land it</div>
-        <div class="phase-desc">Apply your knowledge in essay and exam questions.</div>
-        <div class="phase-step locked">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Step 2 of 3
-        </div>
+        <h3>Land it</h3>
+        <p>Apply your knowledge in essay and exam questions.</p>
+        <div class="phase-step muted">🔒 Step 3 of 3</div>
       </div>
     </div>
 
@@ -464,24 +360,24 @@
   </div>
 
   <!-- Trust badges -->
-  <div class="trust-grid">
+  <div class="trust-row">
     <div class="trust-card">
       <div class="trust-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
       <div class="trust-title">Trusted by students</div>
       <div class="trust-desc">Join thousands of students across the UK.</div>
     </div>
     <div class="trust-card">
-      <div class="trust-icon" style="background:#fffbeb;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="trust-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       </div>
       <div class="trust-title">Curriculum aligned</div>
       <div class="trust-desc">Content written by experts and aligned to the A-Level syllabus.</div>
     </div>
     <div class="trust-card">
-      <div class="trust-icon" style="background:#ecfdf5;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div class="trust-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       </div>
       <div class="trust-title">Safe, secure and private</div>
       <div class="trust-desc">Your data is secure and never shared with third parties.</div>
@@ -491,41 +387,41 @@
 
 <!-- ─── Right Panel ─── -->
 <aside class="right-panel">
-  <div class="rp-heading">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+  <div class="right-heading">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     What's next?
   </div>
-  <div class="rp-sub">Complete each step to build deeper understanding and boost your grades.</div>
+  <div class="right-desc">Complete each step to build deeper understanding and boost your grades.</div>
 
-  <div class="rp-step">
-    <div class="rp-step-icon" style="background:#ecfdf5;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+  <div class="step-item">
+    <div class="step-icon-wrap" style="background:#ecfdf5;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
     </div>
-    <div class="rp-step-body">
-      <div class="rp-step-name" style="color:#10b981;">Learn it</div>
-      <div class="rp-step-desc">Build a strong foundation</div>
+    <div class="step-body">
+      <div class="step-title" style="color:#10b981;">Learn it</div>
+      <div class="step-sub">Build a strong foundation</div>
     </div>
-    <div class="rp-chevron">∨</div>
+    <div class="step-chevron">∨</div>
   </div>
 
-  <div class="rp-step">
-    <div class="rp-step-icon" style="background:#fffbeb;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+  <div class="step-item">
+    <div class="step-icon-wrap" style="background:#fffbeb;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
     </div>
-    <div class="rp-step-body">
-      <div class="rp-step-name">Link it</div>
-      <div class="rp-step-desc">Make connections</div>
+    <div class="step-body">
+      <div class="step-title" style="color:#f59e0b;">Link it</div>
+      <div class="step-sub">Make connections</div>
     </div>
-    <div class="rp-chevron">∨</div>
+    <div class="step-chevron">∨</div>
   </div>
 
-  <div class="rp-step">
-    <div class="rp-step-icon" style="background:#f5f3ff;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+  <div class="step-item">
+    <div class="step-icon-wrap" style="background:#f5f3ff;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
     </div>
-    <div class="rp-step-body">
-      <div class="rp-step-name">Land it</div>
-      <div class="rp-step-desc">Apply and excel</div>
+    <div class="step-body">
+      <div class="step-title" style="color:#8b5cf6;">Land it</div>
+      <div class="step-sub">Apply and excel</div>
     </div>
   </div>
 </aside>

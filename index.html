@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Econos — A-Level Economics revision. Learn it. Link it. Land it.">
   <title>econos · A-Level Economics</title>
-  <link rel="icon" type="image/png" href="Econos-Logo.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/Logo%20Without%20Wordmark%20Econos%20Logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,12 +60,9 @@
       padding: 24px 0 0;
     }
 
-    .brand { padding: 0 20px 20px; border-bottom: 1px solid var(--gray-200); margin-bottom: 8px; }
-    .brand__dots { display: flex; gap: 5px; margin-bottom: 6px; }
-    .brand__dots span { width: 8px; height: 8px; border-radius: 50%; }
-    .brand__wordmark { font-size: 24px; font-weight: 800; color: var(--blue); letter-spacing: -0.5px; line-height: 1; margin-bottom: 3px; }
-    .brand__wordmark .ec-os { color: var(--green); }
-    .brand__tagline { font-size: 11px; color: var(--gray-400); font-weight: 500; }
+    .brand { padding: 0 20px 20px; border-bottom: 1px solid var(--gray-200); margin-bottom: 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .brand__logo-img { max-width: 148px; height: auto; display: block; }
+    .brand__tagline { font-size: 11px; color: var(--gray-400); font-weight: 500; font-style: italic; }
     .brand__tagline .ec-green { color: var(--green); }
     .brand__tagline .ec-amber { color: var(--amber); }
     .brand__tagline .ec-blue  { color: var(--blue); }
@@ -188,12 +186,7 @@
 
 <aside class="sidebar">
   <div class="brand">
-    <div class="brand__dots">
-      <span style="background:#10B981"></span>
-      <span style="background:#F59E0B"></span>
-      <span style="background:#2563EB"></span>
-    </div>
-    <div class="brand__wordmark">econ<span class="ec-os">os</span></div>
+    <img src="assets/Logo%20With%20Wordmark%20Econos%20Logo.png" alt="Econos" class="brand__logo-img">
     <div class="brand__tagline"><span class="ec-green">Learn it.</span> <span class="ec-amber">Link it.</span> <span class="ec-blue">Land it.</span></div>
   </div>
 

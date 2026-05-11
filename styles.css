@@ -160,29 +160,21 @@ img, svg { display: block; max-width: 100%; }
   gap: var(--sp-1);
 }
 
-.sidebar__logo {
-  height: 36px;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
+.sidebar__logo-img {
+  max-width: 148px;
+  height: auto;
+  display: block;
 }
-
-.sidebar__wordmark {
-  font-size: 28px;
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.02em;
-  color: var(--econ-blue-dark);
-}
-.sidebar__wordmark .ec-os { color: var(--econ-blue); }
 
 .sidebar__tagline {
   font-size: var(--fs-xs);
-  color: var(--econ-amber-600);
   font-style: italic;
   font-weight: var(--fw-medium);
+  color: var(--econ-gray-400);
 }
-.sidebar__tagline .ec-blue { color: var(--econ-blue); }
 .sidebar__tagline .ec-green { color: var(--econ-green-600); }
+.sidebar__tagline .ec-amber { color: var(--econ-amber-600); }
+.sidebar__tagline .ec-blue  { color: var(--econ-blue); }
 
 .sidebar__nav {
   padding: var(--sp-4) var(--sp-3);

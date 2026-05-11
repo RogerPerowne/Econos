@@ -40,12 +40,9 @@
     return `
       <aside class="sidebar">
         <div class="sidebar__brand">
-          <div class="sidebar__logo">
-            ${I.brandGlyph}
-          </div>
-          <div class="sidebar__wordmark">econ<span class="ec-os">os</span></div>
+          <img src="assets/Logo%20With%20Wordmark%20Econos%20Logo.png" alt="Econos" class="sidebar__logo-img">
           <div class="sidebar__tagline">
-            Learn it. <span class="ec-blue">Link it.</span> <span class="ec-green">Land it.</span>
+            <span class="ec-green">Learn it.</span> <span class="ec-amber">Link it.</span> <span class="ec-blue">Land it.</span>
           </div>
         </div>
 

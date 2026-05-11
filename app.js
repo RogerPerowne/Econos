@@ -40,7 +40,7 @@
     return `
       <aside class="sidebar">
         <div class="sidebar__brand">
-          <img src="assets/Logo%20With%20Wordmark%20Econos%20Logo.png" alt="Econos" class="sidebar__logo-img">
+          <img src="assets/econos-logo-with-wordmark.png" alt="Econos" class="sidebar__logo-img">
           <div class="sidebar__tagline">
             <span class="ec-green">Learn it.</span> <span class="ec-amber">Link it.</span> <span class="ec-blue">Land it.</span>
           </div>

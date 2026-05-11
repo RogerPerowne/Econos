@@ -3440,3 +3440,11 @@ img, svg { display: block; max-width: 100%; }
   color: var(--econ-gray-700);
   line-height: var(--lh-relaxed);
 }
+/* ============================================================
+   ULTRAWIDE: cap content width, centre within available space
+   ============================================================ */
+.main {
+  max-width: 1440px;
+  margin-inline: auto;
+  width: 100%;
+}

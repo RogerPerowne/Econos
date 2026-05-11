@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Econos — A-Level Economics revision. Learn it. Link it. Land it.">
   <title>econos · A-Level Economics</title>
+  <link rel="icon" type="image/png" href="Econos-Logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +19,7 @@
       --blue-d: #1E40AF;
       --green:  #10B981;
       --amber:  #F59E0B;
+      --rose:   #E11D48;
       --purple: #7E22CE;
       --gray-50:  #F8FAFC;
       --gray-100: #F1F5F9;
@@ -63,8 +65,9 @@
     .brand__wordmark { font-size: 24px; font-weight: 800; color: var(--blue); letter-spacing: -0.5px; line-height: 1; margin-bottom: 3px; }
     .brand__wordmark .ec-os { color: var(--green); }
     .brand__tagline { font-size: 11px; color: var(--gray-400); font-weight: 500; }
-    .brand__tagline .ec-blue  { color: var(--blue); }
     .brand__tagline .ec-green { color: var(--green); }
+    .brand__tagline .ec-amber { color: var(--amber); }
+    .brand__tagline .ec-blue  { color: var(--blue); }
 
     .nav { padding: 8px 10px; flex: 1; }
     .nav a {
@@ -166,6 +169,7 @@
     .bg-blue-soft   { background: #EFF6FF; }
     .bg-green-soft  { background: #ECFDF5; }
     .bg-amber-soft  { background: #FFFBEB; }
+    .bg-rose-soft   { background: #FFF1F2; }
     .bg-purple-soft { background: #F5F3FF; }
 
     .badge-blue   { background: #DBEAFE; color: var(--blue-d); }
@@ -186,11 +190,11 @@
   <div class="brand">
     <div class="brand__dots">
       <span style="background:#10B981"></span>
-      <span style="background:#2563EB"></span>
       <span style="background:#F59E0B"></span>
+      <span style="background:#2563EB"></span>
     </div>
     <div class="brand__wordmark">econ<span class="ec-os">os</span></div>
-    <div class="brand__tagline">Learn it. <span class="ec-blue">Link it.</span> <span class="ec-green">Land it.</span></div>
+    <div class="brand__tagline"><span class="ec-green">Learn it.</span> <span class="ec-amber">Link it.</span> <span class="ec-blue">Land it.</span></div>
   </div>
 
   <nav class="nav">
@@ -326,8 +330,8 @@
 
       <div class="topic-card topic-card--soon">
         <div class="topic-card__header">
-          <div class="topic-card__icon" style="background:#F5F3FF;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#7E22CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <div class="topic-card__icon bg-rose-soft">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
           <span class="topic-card__status badge-gray">Coming soon</span>
         </div>

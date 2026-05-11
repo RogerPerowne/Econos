@@ -57,7 +57,7 @@ window.ECONOS_TOPIC = {
           sub: '<strong>The policy lever.</strong> Government final consumption expenditure (excludes transfer payments like benefits — those affect C indirectly). Directly controlled by the Treasury. Can be used counter-cyclically via fiscal policy to stabilise the economy.'
         },
         {
-          tone: 'purple',
+          tone: 'rose',
           label: 'Net exports (X−M) ≈ 3%',
           sub: '<strong>The international channel.</strong> Export revenue minus import spending. Driven by: relative prices (linked to exchange rates), relative income growth, and non-price competitiveness. A stronger pound makes X dearer and M cheaper — so X−M typically falls. Note: the UK runs a persistent current account deficit, so X−M is usually negative.'
         }
@@ -140,7 +140,7 @@ window.ECONOS_TOPIC = {
           example: "<strong>2020 COVID fiscal response:</strong> UK G rose by ~£300bn — the furlough scheme alone cost ~£70bn. This was the largest peacetime expansion of government spending in history. Without it, unemployment modelling suggested 3-4m job losses."
         },
         {
-          tone: 'purple',
+          tone: 'rose',
           label: 'Net Exports (X−M)',
           drivers: [
             '<strong>Exchange rate</strong> — appreciation → X dearer, M cheaper → X−M falls',
@@ -221,7 +221,7 @@ window.ECONOS_TOPIC = {
         },
         {
           num: '4',
-          tone: 'purple',
+          tone: 'rose',
           title: 'Exchange rate & world trade',
           text: '<strong>The external channel.</strong> A depreciation of sterling → exports cheaper abroad, imports dearer at home → (X−M) rises → AD shifts right (but imported inflation also rises). World income growth boosts export demand independently of the exchange rate. <strong>Post-Brexit trade barriers</strong> are a structural reduction in the (X−M) component.'
         }
@@ -274,7 +274,7 @@ window.ECONOS_TOPIC = {
         },
         {
           key: 'exchange-rate',
-          tone: 'purple',
+          tone: 'rose',
           label: 'Net exports (X−M)',
           chain: [
             'Lower Bank Rate → less attractive to international investors → sterling falls',

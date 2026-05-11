@@ -1,0 +1,3442 @@
+/* econos v11 — Inter forced on Why/formula at 2026-05-11 14:08 UTC */
+/* ============================================================
+   ECONOS DESIGN SYSTEM
+   Learn it. Link it. Land it.
+   ============================================================ */
+
+:root {
+  /* === COLOURS === */
+  /* Brand */
+  --econ-blue:        #2563EB;   /* primary action, "os" highlight */
+  --econ-blue-dark:   #1E40AF;   /* logo wordmark */
+  --econ-blue-50:     #EFF6FF;   /* tip box bg */
+  --econ-blue-100:    #DBEAFE;
+  --econ-blue-600:    #2563EB;
+  --econ-blue-700:    #1D4ED8;
+
+  --econ-green:       #10B981;   /* success, key takeaway */
+  --econ-green-50:    #ECFDF5;   /* key takeaway bg */
+  --econ-green-100:   #D1FAE5;
+  --econ-green-600:   #059669;
+  --econ-green-700:   #047857;
+
+  --econ-amber:       #F59E0B;   /* think prompts, warnings */
+  --econ-amber-50:    #FFFBEB;
+  --econ-amber-100:   #FEF3C7;   /* think/exam tip bg */
+  --econ-amber-600:   #D97706;
+  --econ-amber-700:   #B45309;
+
+  --econ-purple:      #9333EA;   /* what's next, special */
+  --econ-purple-50:   #FAF5FF;
+  --econ-purple-100:  #F3E8FF;   /* coming up next bg */
+  --econ-purple-600:  #9333EA;
+  --econ-purple-700:  #7E22CE;
+
+  --econ-rose:        #E11D48;   /* losers, warnings */
+  --econ-rose-50:     #FFF1F2;
+  --econ-rose-100:    #FFE4E6;   /* losers/warning bg */
+  --econ-rose-600:    #E11D48;
+
+  /* Neutrals */
+  --econ-white:       #FFFFFF;
+  --econ-gray-50:     #F9FAFB;   /* page bg */
+  --econ-gray-100:    #F3F4F6;   /* subtle bg */
+  --econ-gray-200:    #E5E7EB;   /* borders */
+  --econ-gray-300:    #D1D5DB;
+  --econ-gray-400:    #9CA3AF;   /* muted text */
+  --econ-gray-500:    #6B7280;   /* secondary text */
+  --econ-gray-600:    #4B5563;
+  --econ-gray-700:    #374151;
+  --econ-gray-800:    #1F2937;
+  --econ-gray-900:    #111827;   /* primary text */
+
+  /* === TYPOGRAPHY === */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  --fs-xs:   12px;
+  --fs-sm:   13px;
+  --fs-base: 14px;
+  --fs-md:   15px;
+  --fs-lg:   16px;
+  --fs-xl:   18px;
+  --fs-2xl:  20px;
+  --fs-3xl:  24px;
+  --fs-4xl:  32px;
+  --fs-5xl:  40px;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi:   600;
+  --fw-bold:   700;
+
+  --lh-tight:   1.2;
+  --lh-snug:    1.35;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.65;
+
+  /* === SPACING === */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-7:  28px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* === RADII === */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   16px;
+  --r-2xl:  20px;
+  --r-full: 999px;
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+
+  /* === LAYOUT === */
+  --sidebar-w: 240px;
+  --rightbar-w: 280px;
+  --header-h: 64px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--econ-gray-900);
+  background: var(--econ-gray-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+
+/* ============================================================
+   APP SHELL
+   ============================================================ */
+
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 100vh;
+}
+
+/* ----- Sidebar ----- */
+.sidebar {
+  background: var(--econ-white);
+  border-right: 1px solid var(--econ-gray-200);
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-6) 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar__brand {
+  padding: 0 var(--sp-6) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.sidebar__logo {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.sidebar__wordmark {
+  font-size: 28px;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  color: var(--econ-blue-dark);
+}
+.sidebar__wordmark .ec-os { color: var(--econ-blue); }
+
+.sidebar__tagline {
+  font-size: var(--fs-xs);
+  color: var(--econ-amber-600);
+  font-style: italic;
+  font-weight: var(--fw-medium);
+}
+.sidebar__tagline .ec-blue { color: var(--econ-blue); }
+.sidebar__tagline .ec-green { color: var(--econ-green-600); }
+
+.sidebar__nav {
+  padding: var(--sp-4) var(--sp-3);
+  flex: 1;
+}
+
+.sidebar__nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md);
+  color: var(--econ-gray-700);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar__nav a:hover { background: var(--econ-gray-100); }
+.sidebar__nav a.is-active {
+  background: var(--econ-blue-50);
+  color: var(--econ-blue-700);
+}
+.sidebar__nav svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+.sidebar__streak {
+  margin: var(--sp-4) var(--sp-4) var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--econ-green-50);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  text-align: center;
+}
+.sidebar__streak-row { display: flex; align-items: center; gap: var(--sp-2); }
+.sidebar__streak-flame { font-size: 22px; line-height: 1; }
+.sidebar__streak-num { font-size: 26px; font-weight: var(--fw-bold); color: var(--econ-gray-900); line-height: 1; }
+.sidebar__streak-label { font-size: var(--fs-xs); color: var(--econ-gray-700); font-weight: var(--fw-medium); }
+.sidebar__streak-sub { font-size: var(--fs-xs); color: var(--econ-gray-500); }
+
+.sidebar__user {
+  padding: var(--sp-4);
+  border-top: 1px solid var(--econ-gray-200);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.sidebar__user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  background: var(--econ-blue-100);
+  color: var(--econ-blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+}
+.sidebar__user-info { flex: 1; min-width: 0; }
+.sidebar__user-name { font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--econ-gray-900); }
+.sidebar__user-role { font-size: var(--fs-xs); color: var(--econ-gray-500); }
+.sidebar__user-chev { color: var(--econ-gray-400); }
+
+/* ----- Main area ----- */
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  height: var(--header-h);
+  background: var(--econ-white);
+  border-bottom: 1px solid var(--econ-gray-200);
+  padding: 0 var(--sp-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+}
+
+.topbar__back {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  color: var(--econ-gray-700);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-md);
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.topbar__back:hover { background: var(--econ-gray-100); }
+
+.topbar__crumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  margin-left: var(--sp-2);
+}
+.topbar__session-label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--econ-green-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.topbar__topic-title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.topbar__streak {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  font-weight: var(--fw-medium);
+}
+.topbar__streak-icon { color: var(--econ-amber); }
+
+.topbar__avatar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.topbar__avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  background: var(--econ-blue-100);
+  color: var(--econ-blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+}
+.topbar__avatar-chev { color: var(--econ-gray-400); }
+
+/* ----- Page body (3-col within main) ----- */
+.page {
+  display: grid;
+  grid-template-columns: 1fr var(--rightbar-w);
+  gap: var(--sp-6);
+  padding: var(--sp-6) var(--sp-8) var(--sp-12);
+  align-items: start;
+}
+
+.page--single { grid-template-columns: 1fr; }
+
+/* progress bar bar */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-6);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  margin-bottom: var(--sp-4);
+}
+.progress__label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--econ-gray-700);
+  white-space: nowrap;
+}
+.progress__bar {
+  flex: 1;
+  height: 8px;
+  background: var(--econ-gray-200);
+  border-radius: var(--r-full);
+  position: relative;
+  overflow: visible;
+}
+.progress__fill {
+  height: 100%;
+  background: var(--econ-green);
+  border-radius: var(--r-full);
+  position: relative;
+  transition: width 0.4s ease;
+}
+.progress__fill::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: var(--r-full);
+  background: var(--econ-green);
+  box-shadow: 0 0 0 3px var(--econ-white), 0 0 0 4px var(--econ-green);
+}
+.progress__pct {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-700);
+  min-width: 36px;
+  text-align: right;
+}
+.progress__exit {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--econ-gray-700);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-md);
+  background: var(--econ-white);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.progress__exit:hover { background: var(--econ-gray-50); }
+
+/* ============================================================
+   CARDS & CONTENT
+   ============================================================ */
+
+.card {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-xl);
+  padding: var(--sp-7) var(--sp-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__step-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-green-700);
+  margin-bottom: var(--sp-3);
+}
+
+.card__title {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--econ-gray-900);
+  margin-bottom: var(--sp-4);
+  letter-spacing: -0.02em;
+}
+
+.card__title--lg {
+  font-size: var(--fs-5xl);
+  margin-bottom: var(--sp-3);
+}
+
+.card__lede {
+  font-size: var(--fs-lg);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-6);
+  max-width: 560px;
+}
+
+/* Two-column layout inside a card */
+.row { display: flex; gap: var(--sp-6); align-items: flex-start; }
+.row > * { min-width: 0; }
+.row--center { align-items: center; }
+.row--top { align-items: flex-start; }
+
+/* ============================================================
+   CALLOUT BOXES (the soft tinted boxes)
+   ============================================================ */
+
+.callout {
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+.callout__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  background: var(--econ-white);
+}
+
+.callout__body { flex: 1; }
+
+.callout__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  margin-bottom: var(--sp-1);
+}
+
+.callout__text {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--econ-gray-700);
+}
+
+.callout--success { background: var(--econ-green-50); }
+.callout--success .callout__title { color: var(--econ-green-700); }
+.callout--success .callout__icon { color: var(--econ-green-600); }
+
+.callout--info { background: var(--econ-blue-50); }
+.callout--info .callout__title { color: var(--econ-blue-700); }
+.callout--info .callout__icon { color: var(--econ-blue-600); }
+
+.callout--warn { background: var(--econ-amber-100); }
+.callout--warn .callout__title { color: var(--econ-amber-700); }
+.callout--warn .callout__icon { color: var(--econ-amber-600); }
+
+.callout--purple { background: var(--econ-purple-100); }
+.callout--purple .callout__title { color: var(--econ-purple-700); }
+.callout--purple .callout__icon { color: var(--econ-purple-600); }
+
+.callout--rose { background: var(--econ-rose-100); }
+.callout--rose .callout__title { color: var(--econ-rose-600); }
+.callout--rose .callout__icon { color: var(--econ-rose-600); }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  border-radius: var(--r-md);
+  transition: background 0.15s, transform 0.05s;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--econ-blue);
+  color: var(--econ-white);
+  padding: var(--sp-4) var(--sp-6);
+  font-size: var(--fs-md);
+  border-radius: var(--r-md);
+}
+.btn--primary:hover { background: var(--econ-blue-700); }
+
+.btn--ghost {
+  background: var(--econ-white);
+  color: var(--econ-gray-700);
+  border: 1px solid var(--econ-gray-200);
+}
+.btn--ghost:hover { background: var(--econ-gray-50); }
+
+.btn--lg {
+  padding: var(--sp-4) var(--sp-7);
+  font-size: var(--fs-lg);
+}
+
+/* ============================================================
+   STAGE PROGRESSION (Learn / Master / Review)
+   ============================================================ */
+
+.stages {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+.stages__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  margin-bottom: var(--sp-4);
+  display: none;
+}
+
+.stage {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-4) 0;
+  position: relative;
+}
+.stage:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 50px;
+  bottom: -10px;
+  width: 1px;
+  background: var(--econ-gray-200);
+}
+
+.stage__num {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  border: 2px solid var(--econ-gray-300);
+  color: var(--econ-gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.stage__body { padding-top: var(--sp-1); flex: 1; }
+.stage__name { font-size: var(--fs-md); font-weight: var(--fw-semi); color: var(--econ-gray-900); }
+.stage__sub { font-size: var(--fs-xs); color: var(--econ-gray-500); margin-top: 2px; line-height: var(--lh-snug); }
+.stage__lock { color: var(--econ-gray-400); }
+
+.stage.is-current .stage__num {
+  background: var(--econ-white);
+  border-color: var(--econ-green);
+  color: var(--econ-green-700);
+}
+.stage.is-current .stage__name { color: var(--econ-green-700); }
+
+.stage__chip {
+  display: inline-block;
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  background: var(--econ-green-100);
+  color: var(--econ-green-700);
+  padding: 2px var(--sp-2);
+  border-radius: var(--r-full);
+}
+
+/* ============================================================
+   CARDS RAIL (right side - "Cards" list)
+   ============================================================ */
+
+.right-rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  position: sticky;
+  top: var(--sp-6);
+}
+
+.rail-card {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.rail-card__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+  margin-bottom: var(--sp-2);
+}
+
+.rail-card__sub {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  margin-bottom: var(--sp-4);
+}
+
+/* Session progress dots */
+.session-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-4);
+}
+.session-dot {
+  flex: 1;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  border: 2px solid var(--econ-gray-200);
+  color: var(--econ-gray-400);
+  width: 28px;
+  flex: 0 0 28px;
+}
+.session-dot.is-done {
+  background: var(--econ-green);
+  border-color: var(--econ-green);
+  color: var(--econ-white);
+}
+.session-dot.is-current {
+  background: var(--econ-green);
+  border-color: var(--econ-green);
+  color: var(--econ-white);
+}
+.session-line {
+  flex: 1;
+  height: 2px;
+  background: var(--econ-gray-200);
+}
+.session-line.is-done { background: var(--econ-green); }
+
+/* Cards list */
+.cards-list { display: flex; flex-direction: column; gap: var(--sp-1); }
+
+.cards-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cards-list__item:hover { background: var(--econ-gray-50); }
+.cards-list__item.is-current { background: var(--econ-green-50); }
+
+.cards-list__num {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  border: 1.5px solid var(--econ-gray-300);
+  color: var(--econ-gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  flex-shrink: 0;
+}
+.cards-list__item.is-current .cards-list__num {
+  border-color: var(--econ-green);
+  color: var(--econ-green-700);
+}
+.cards-list__item.is-done .cards-list__num {
+  background: var(--econ-green);
+  border-color: var(--econ-green);
+  color: var(--econ-white);
+}
+
+.cards-list__body { flex: 1; }
+.cards-list__name {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-900);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+}
+.cards-list__item.is-current .cards-list__name { color: var(--econ-green-700); font-weight: var(--fw-semi); }
+.cards-list__chip {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--econ-green-700);
+  margin-top: 2px;
+}
+
+/* ============================================================
+   "WHAT YOU'LL DO" + footer cards (intro page)
+   ============================================================ */
+
+.session-meta {
+  display: flex;
+  gap: var(--sp-7);
+  align-items: center;
+  padding: var(--sp-5) var(--sp-7);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-xl);
+  margin-top: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+}
+.session-meta__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.session-meta__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--econ-green-50);
+  color: var(--econ-green-600);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.session-meta__item:nth-child(2) .session-meta__icon { background: var(--econ-purple-50); color: var(--econ-purple-600); }
+.session-meta__label { font-size: var(--fs-xs); color: var(--econ-gray-500); }
+.session-meta__val { font-size: var(--fs-sm); color: var(--econ-gray-900); font-weight: var(--fw-semi); }
+
+.session-meta__cta { margin-left: auto; }
+
+/* "What you'll do in this session" success box */
+.do-box {
+  background: var(--econ-green-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: var(--sp-4);
+  align-items: center;
+  margin-bottom: var(--sp-4);
+}
+.do-box__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  color: var(--econ-green-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.do-box__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-green-700);
+  margin-bottom: 2px;
+}
+.do-box__sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+}
+.do-box__checks { display: flex; flex-direction: column; gap: var(--sp-1); align-items: flex-end; }
+.do-box__check {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  white-space: nowrap;
+}
+.do-box__check .check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--r-full);
+  background: var(--econ-green);
+  color: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   ILLUSTRATIONS
+   ============================================================ */
+
+.illust-bars {
+  width: 240px;
+  height: 180px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   IMPACT GRID (slide 4 - Consumers / Firms / Economy)
+   ============================================================ */
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.impact-card {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+.impact-card--green-tint { background: var(--econ-green-50); border-color: var(--econ-green-100); }
+.impact-card--amber-tint { background: var(--econ-amber-50); border-color: var(--econ-amber-100); }
+.impact-card--blue-tint { background: var(--econ-blue-50); border-color: var(--econ-blue-100); }
+
+.impact-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+.impact-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.impact-card--green-tint .impact-card__icon { color: var(--econ-green-600); }
+.impact-card--amber-tint .impact-card__icon { color: var(--econ-amber-600); }
+.impact-card--blue-tint  .impact-card__icon { color: var(--econ-blue-600); }
+.impact-card__title { font-size: var(--fs-md); font-weight: var(--fw-semi); color: var(--econ-gray-900); }
+.impact-card--green-tint .impact-card__title { color: var(--econ-green-700); }
+.impact-card--amber-tint .impact-card__title { color: var(--econ-amber-700); }
+.impact-card--blue-tint  .impact-card__title { color: var(--econ-blue-700); }
+
+.impact-card ul { padding-left: 0; }
+.impact-card li {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+  padding-left: var(--sp-4);
+  position: relative;
+  margin-bottom: var(--sp-2);
+}
+.impact-card li::before {
+  content: '•';
+  position: absolute;
+  left: var(--sp-2);
+  color: var(--econ-gray-400);
+}
+
+/* Winners / Losers row */
+.wl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: var(--sp-5); border-radius: var(--r-lg); overflow: hidden; }
+.wl-side { padding: var(--sp-5); display: flex; gap: var(--sp-4); align-items: flex-start; }
+.wl-side--green { background: var(--econ-green-50); }
+.wl-side--rose  { background: var(--econ-rose-50); }
+.wl-side__icon { width: 36px; height: 36px; border-radius: var(--r-full); background: var(--econ-white); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.wl-side--green .wl-side__icon { color: var(--econ-green-600); }
+.wl-side--rose  .wl-side__icon { color: var(--econ-rose-600); }
+.wl-side__title { font-size: var(--fs-md); font-weight: var(--fw-semi); margin-bottom: var(--sp-2); }
+.wl-side--green .wl-side__title { color: var(--econ-green-700); }
+.wl-side--rose  .wl-side__title { color: var(--econ-rose-600); }
+.wl-side__list { font-size: var(--fs-sm); color: var(--econ-gray-700); line-height: var(--lh-relaxed); }
+.wl-side__list strong { color: var(--econ-gray-900); }
+
+/* ============================================================
+   TYPES OF INFLATION (slide 3) — two-column comparison
+   ============================================================ */
+
+.types-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: var(--sp-4);
+}
+
+.type-col { padding: var(--sp-5) var(--sp-6); background: var(--econ-gray-50); }
+.type-col--demand { background: var(--econ-green-50); }
+.type-col--cost   { background: var(--econ-blue-50); }
+
+.type-col__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-4);
+  margin-bottom: var(--sp-4);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.type-col__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.type-col--demand .type-col__icon { color: var(--econ-green-600); }
+.type-col--cost   .type-col__icon { color: var(--econ-blue-600); }
+.type-col__title { font-size: var(--fs-lg); font-weight: var(--fw-semi); }
+.type-col--demand .type-col__title { color: var(--econ-green-700); }
+.type-col--cost   .type-col__title { color: var(--econ-blue-700); }
+
+.type-col__row { margin-bottom: var(--sp-3); font-size: var(--fs-sm); line-height: var(--lh-relaxed); color: var(--econ-gray-700); }
+.type-col__row strong {
+  color: var(--econ-gray-900);
+  font-weight: var(--fw-semi);
+  display: inline;
+}
+.type-col--demand .type-col__row strong:first-child { color: var(--econ-green-700); }
+.type-col--cost   .type-col__row strong:first-child { color: var(--econ-blue-700); }
+
+.type-col__example {
+  margin-top: var(--sp-4);
+  background: var(--econ-white);
+  padding: var(--sp-4);
+  border-radius: var(--r-md);
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+.type-col__example-icon {
+  color: var(--econ-gray-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.type-col__example-text { font-size: var(--fs-sm); color: var(--econ-gray-700); line-height: var(--lh-relaxed); }
+.type-col__example-text strong { color: var(--econ-gray-900); font-weight: var(--fw-semi); }
+
+/* ============================================================
+   "HOW INFLATION HAPPENS" flow (slide 5 mini-chain)
+   ============================================================ */
+
+.flow {
+  background: var(--econ-amber-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  margin-bottom: var(--sp-5);
+}
+.flow__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+  margin-bottom: var(--sp-5);
+}
+.flow__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+.flow__node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+}
+.flow__circle {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--r-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+  line-height: 1.25;
+  padding: var(--sp-2);
+}
+.flow__circle-icon { font-size: 22px; margin-bottom: 2px; }
+.flow__node:nth-child(1) .flow__circle { background: #DBEAFE; color: var(--econ-blue-700); }
+.flow__node:nth-child(3) .flow__circle { background: #FED7AA; color: var(--econ-amber-700); }
+.flow__node:nth-child(5) .flow__circle { background: #FECACA; color: var(--econ-rose-600); }
+.flow__node:nth-child(7) .flow__circle { background: var(--econ-green-100); color: var(--econ-green-700); }
+.flow__sub {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  font-style: italic;
+}
+.flow__arrow {
+  color: var(--econ-gray-400);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Summary grid (slide 5) */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+.summary-tile {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+.summary-tile--green-tint { background: var(--econ-green-50); border-color: var(--econ-green-100); }
+.summary-tile--blue-tint { background: var(--econ-blue-50); border-color: var(--econ-blue-100); }
+.summary-tile--amber-tint { background: var(--econ-amber-50); border-color: var(--econ-amber-100); }
+.summary-tile__head { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.summary-tile__num {
+  width: 28px; height: 28px; border-radius: var(--r-full);
+  background: var(--econ-white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: var(--fw-bold); font-size: var(--fs-sm);
+}
+.summary-tile--green-tint .summary-tile__num { color: var(--econ-green-700); }
+.summary-tile--blue-tint  .summary-tile__num { color: var(--econ-blue-700); }
+.summary-tile--amber-tint .summary-tile__num { color: var(--econ-amber-700); }
+.summary-tile__title { font-size: var(--fs-md); font-weight: var(--fw-semi); color: var(--econ-gray-900); }
+.summary-tile ul { padding-left: 0; }
+.summary-tile li {
+  font-size: var(--fs-sm); color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed); padding-left: var(--sp-4); position: relative;
+  margin-bottom: var(--sp-2);
+}
+.summary-tile li::before { content: '•'; position: absolute; left: var(--sp-2); color: var(--econ-gray-400); }
+.summary-tile p { font-size: var(--fs-sm); color: var(--econ-gray-700); line-height: var(--lh-relaxed); margin-bottom: var(--sp-2); }
+
+/* Two-col mini comparison inside summary tile */
+.mini-comp { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-top: var(--sp-2); }
+.mini-comp__col { font-size: var(--fs-sm); }
+.mini-comp__name {
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-2);
+  color: var(--econ-gray-900);
+}
+.mini-comp__col--demand .mini-comp__name { color: var(--econ-green-700); }
+.mini-comp__col--cost .mini-comp__name { color: var(--econ-blue-700); }
+.mini-comp__text {
+  font-size: var(--fs-sm); color: var(--econ-gray-700);
+  line-height: var(--lh-snug); padding-left: var(--sp-3);
+  position: relative;
+}
+.mini-comp__text::before { content: '•'; position: absolute; left: 0; color: var(--econ-gray-400); }
+
+/* Impacts mini list (in summary) */
+.impacts-mini { display: flex; flex-direction: column; gap: var(--sp-2); }
+.impacts-mini__row {
+  display: flex; gap: var(--sp-3); align-items: flex-start;
+  font-size: var(--fs-sm); color: var(--econ-gray-700); line-height: var(--lh-snug);
+}
+.impacts-mini__icon {
+  width: 24px; height: 24px; border-radius: var(--r-full);
+  background: var(--econ-white);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--econ-amber-700);
+}
+.impacts-mini__row strong { color: var(--econ-gray-900); font-weight: var(--fw-semi); }
+
+/* Final wrap row (slide 5 bottom) */
+.wrap-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.wrap-tile {
+  background: var(--econ-green-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+.wrap-tile--blue-tint { background: var(--econ-blue-50); }
+.wrap-tile__head { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.wrap-tile__icon {
+  font-size: 18px;
+  color: var(--econ-green-600);
+}
+.wrap-tile--blue-tint .wrap-tile__icon { color: var(--econ-amber-600); }
+.wrap-tile__title { font-size: var(--fs-md); font-weight: var(--fw-semi); color: var(--econ-green-700); }
+.wrap-tile--blue-tint .wrap-tile__title { color: var(--econ-blue-700); }
+.wrap-tile__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.wrap-tile__col-name { font-size: var(--fs-sm); font-weight: var(--fw-semi); margin-bottom: var(--sp-2); color: var(--econ-gray-900); }
+.wrap-tile__col-text { font-size: var(--fs-sm); color: var(--econ-gray-700); line-height: var(--lh-relaxed); }
+.wrap-tile__col--win .wrap-tile__col-name { color: var(--econ-green-700); }
+.wrap-tile__col--lose .wrap-tile__col-name { color: var(--econ-rose-600); }
+.wrap-tile p { font-size: var(--fs-sm); color: var(--econ-gray-700); line-height: var(--lh-relaxed); }
+
+/* ============================================================
+   FOOTER (Previous / Next)
+   ============================================================ */
+
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--sp-6);
+  margin-top: var(--sp-6);
+  border-top: 1px solid var(--econ-gray-200);
+}
+.card-foot__counter {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-500);
+}
+
+/* ============================================================
+   STAGE 1 INTRO PAGE
+   ============================================================ */
+
+.intro-card { padding: var(--sp-8) var(--sp-10); }
+.intro-card .row { gap: var(--sp-8); }
+.intro-card__text { flex: 1; max-width: 540px; }
+
+/* "Tip" callout in intro */
+.intro-card .callout { margin-top: var(--sp-2); }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+.flex { display: flex; }
+.gap-2 { gap: var(--sp-2); }
+.gap-3 { gap: var(--sp-3); }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.mt-4 { margin-top: var(--sp-4); }
+.mt-6 { margin-top: var(--sp-6); }
+.mb-4 { margin-bottom: var(--sp-4); }
+.mb-6 { margin-bottom: var(--sp-6); }
+
+/* ============================================================
+   EXAM EDGE CALLOUT — distinctive purple-bordered "gem" box
+   ============================================================ */
+
+.exam-edge {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  background: linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 100%);
+  border: 1.5px solid var(--econ-purple-100);
+  border-left: 4px solid var(--econ-purple-600);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  position: relative;
+}
+
+.exam-edge__star {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-full);
+  background: var(--econ-purple-600);
+  color: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.exam-edge__body { flex: 1; }
+.exam-edge__label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--econ-purple-700);
+  margin-bottom: 2px;
+}
+.exam-edge__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+  margin-bottom: var(--sp-2);
+}
+.exam-edge__text {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--econ-gray-700);
+}
+
+/* ============================================================
+   FRAMING CARD — Card 1 layout
+   ============================================================ */
+
+.framing-row {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+  margin-bottom: var(--sp-6);
+}
+
+.framing-diagram {
+  display: flex;
+  justify-content: center;
+}
+
+.branch-callouts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.branch-cal {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding: var(--sp-4);
+  border-radius: var(--r-lg);
+  border-left: 4px solid;
+}
+.branch-cal--green { background: var(--econ-green-50);  border-left-color: var(--econ-green); }
+.branch-cal--amber { background: var(--econ-amber-50);  border-left-color: var(--econ-amber); }
+.branch-cal--blue  { background: var(--econ-blue-50);   border-left-color: var(--econ-blue); }
+
+.branch-cal__dot {
+  width: 14px; height: 14px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.branch-cal--green .branch-cal__dot { background: var(--econ-green); }
+.branch-cal--amber .branch-cal__dot { background: var(--econ-amber); }
+.branch-cal--blue  .branch-cal__dot { background: var(--econ-blue); }
+
+.branch-cal__label {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  margin-bottom: 2px;
+}
+.branch-cal--green .branch-cal__label { color: var(--econ-green-700); }
+.branch-cal--amber .branch-cal__label { color: var(--econ-amber-700); }
+.branch-cal--blue  .branch-cal__label { color: var(--econ-blue-700); }
+
+.branch-cal__sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+}
+
+/* ============================================================
+   CAUSE CARD — Cards 2 & 3 (mechanism + causes/hallmarks 2-col)
+   ============================================================ */
+
+.mech-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
+  align-items: center;
+}
+
+.mech-diagram {
+  background: var(--econ-gray-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  border: 1px solid var(--econ-gray-200);
+}
+.mech-diagram__caption {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  text-align: center;
+  line-height: var(--lh-snug);
+}
+
+.cause-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.cause-col {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+.cause-col__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--econ-gray-500);
+  margin-bottom: var(--sp-3);
+}
+.cause-col ul { padding-left: 0; }
+.cause-col li {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+  padding: 6px 0 6px var(--sp-5);
+  position: relative;
+}
+.cause-col li::before {
+  content: '';
+  position: absolute;
+  left: var(--sp-2);
+  top: 14px;
+  width: 6px; height: 6px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-400);
+}
+.cause-col--hallmark li::before { background: var(--econ-green); }
+
+/* "UK examples" callout — same as info but with flag */
+.uk-examples {
+  background: var(--econ-blue-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  margin-bottom: var(--sp-4);
+}
+.uk-examples__flag {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.uk-examples__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-blue-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.uk-examples__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+/* Policy row (cards 2 & 3) */
+.policy-box {
+  background: var(--econ-amber-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  border-left: 4px solid var(--econ-amber);
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  margin-top: var(--sp-4);
+}
+.policy-box__icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.policy-box__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-amber-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.policy-box__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+/* Dilemma box (card 3) — rose-tinted, prominent */
+.dilemma {
+  background: var(--econ-rose-50);
+  border: 1.5px solid var(--econ-rose-100);
+  border-left: 4px solid var(--econ-rose);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  margin-top: var(--sp-4);
+}
+.dilemma__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.dilemma__icon {
+  font-size: 18px;
+  color: var(--econ-rose-600);
+}
+.dilemma__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-rose-600);
+}
+.dilemma__lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.dilemma__line {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+/* ============================================================
+   DIAGNOSE CARD — Card 4
+   ============================================================ */
+
+.diag-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: var(--sp-5);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.diag-table thead th {
+  background: var(--econ-gray-50);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  text-align: left;
+  padding: var(--sp-4) var(--sp-5);
+  color: var(--econ-gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--fs-xs);
+  border-bottom: 1px solid var(--econ-gray-200);
+}
+.diag-table thead th:nth-child(2) { color: var(--econ-green-700); }
+.diag-table thead th:nth-child(3) { color: var(--econ-amber-700); }
+
+.diag-table tbody td {
+  font-size: var(--fs-sm);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--econ-gray-100);
+  color: var(--econ-gray-800);
+}
+.diag-table tbody tr:last-child td { border-bottom: none; }
+.diag-table tbody td:first-child {
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-600);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--econ-gray-50);
+  width: 28%;
+}
+.diag-table tbody td:nth-child(2) {
+  font-weight: var(--fw-medium);
+  color: var(--econ-green-700);
+  background: rgba(236, 253, 245, 0.4);
+}
+.diag-table tbody td:nth-child(3) {
+  font-weight: var(--fw-medium);
+  color: var(--econ-amber-700);
+  background: rgba(255, 251, 235, 0.6);
+}
+
+/* Scenarios grid */
+.scenarios {
+  margin-bottom: var(--sp-5);
+}
+.scenarios__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+  margin-bottom: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.scenarios__title::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background: var(--econ-amber);
+  border-radius: 2px;
+}
+
+.scenarios__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+
+.scenario {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.scenario__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.scenario__label {
+  width: 28px; height: 28px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  background: var(--econ-gray-100);
+  color: var(--econ-gray-700);
+}
+.scenario__text {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--econ-gray-700);
+  flex: 1;
+}
+.scenario__answer {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+}
+.scenario__arrow { opacity: 0.7; }
+
+.scenario--green .scenario__label { background: var(--econ-green); color: white; }
+.scenario--green .scenario__answer { background: var(--econ-green-50); color: var(--econ-green-700); }
+.scenario--amber .scenario__label { background: var(--econ-amber); color: white; }
+.scenario--amber .scenario__answer { background: var(--econ-amber-50); color: var(--econ-amber-700); }
+.scenario--purple .scenario__label { background: var(--econ-purple-600); color: white; }
+.scenario--purple .scenario__answer { background: var(--econ-purple-50); color: var(--econ-purple-700); }
+
+/* ============================================================
+   PUZZLE CARD — Card 5
+   ============================================================ */
+
+.classical-box {
+  background: var(--econ-blue-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-5);
+  border-left: 4px solid var(--econ-blue);
+}
+.classical-box__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.classical-box__icon { font-size: 18px; }
+.classical-box__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-blue-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.classical-formula {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+.classical-formula__main {
+  font-size: 30px;
+  font-weight: var(--fw-bold);
+  color: var(--econ-blue-dark);
+  letter-spacing: 0.02em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+}
+.classical-formula__sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+  font-style: italic;
+}
+
+.classical-quote {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  font-style: italic;
+  line-height: var(--lh-relaxed);
+  padding-left: var(--sp-3);
+  border-left: 2px solid var(--econ-blue-100);
+  margin-bottom: var(--sp-3);
+}
+
+.classical-examples {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+}
+
+/* The puzzle visual */
+.puzzle-visual {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+.puzzle-visual__chart {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--sp-3);
+}
+.puzzle-visual__caption {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  text-align: center;
+  font-style: italic;
+}
+
+.puzzle-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+.puzzle-bullet {
+  font-size: var(--fs-base);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+  padding-left: var(--sp-5);
+  position: relative;
+}
+.puzzle-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px; height: 8px;
+  border-radius: var(--r-full);
+  background: var(--econ-blue);
+}
+
+.cliffhanger {
+  text-align: center;
+  margin-top: var(--sp-5);
+  font-size: 36px;
+  font-weight: var(--fw-bold);
+  color: var(--econ-blue-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+}
+
+/* ============================================================
+   MECHANISMS CARD — Card 6 (2x2 grid)
+   ============================================================ */
+
+.mech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.mech-tile {
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  border: 1px solid;
+  position: relative;
+}
+.mech-tile--blue  { background: var(--econ-blue-50);   border-color: var(--econ-blue-100); }
+.mech-tile--green { background: var(--econ-green-50);  border-color: var(--econ-green-100); }
+.mech-tile--amber { background: var(--econ-amber-50);  border-color: var(--econ-amber-100); }
+.mech-tile--rose  { background: var(--econ-rose-50);   border-color: var(--econ-rose-100); }
+
+.mech-tile__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+.mech-tile__num {
+  width: 30px; height: 30px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  color: var(--econ-white);
+  flex-shrink: 0;
+}
+.mech-tile--blue  .mech-tile__num { background: var(--econ-blue); }
+.mech-tile--green .mech-tile__num { background: var(--econ-green); }
+.mech-tile--amber .mech-tile__num { background: var(--econ-amber); }
+.mech-tile--rose  .mech-tile__num { background: var(--econ-rose); }
+
+.mech-tile__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+}
+.mech-tile--blue  .mech-tile__title { color: var(--econ-blue-700); }
+.mech-tile--green .mech-tile__title { color: var(--econ-green-700); }
+.mech-tile--amber .mech-tile__title { color: var(--econ-amber-700); }
+.mech-tile--rose  .mech-tile__title { color: var(--econ-rose-600); }
+
+.mech-tile__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+/* Connection box (Card 6 closer) */
+.connection-box {
+  background: var(--econ-green-50);
+  border-left: 4px solid var(--econ-green);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  margin-top: var(--sp-4);
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+.connection-box__icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.connection-box__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-green-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.connection-box__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+/* ============================================================
+   DEFLATION CARD — Card 7
+   ============================================================ */
+
+.def-mechs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+
+.def-mech-row {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-left: 4px solid var(--econ-rose);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+}
+
+.def-mech-row__icon {
+  width: 44px; height: 44px;
+  border-radius: var(--r-md);
+  background: var(--econ-rose-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.def-mech-row__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+  margin-bottom: 2px;
+}
+.def-mech-row__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+}
+
+/* Examples to know — compact horizontal */
+.def-examples {
+  background: var(--econ-blue-50);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-4);
+}
+.def-examples__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-blue-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.def-examples__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.def-examples__item {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+.def-examples__period {
+  font-weight: var(--fw-semi);
+  color: var(--econ-blue-dark);
+}
+
+/* Bridge to Land it */
+.bridge {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+  border: 1.5px solid var(--econ-green-100);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  margin-top: var(--sp-4);
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+}
+.bridge__icon {
+  width: 42px; height: 42px;
+  border-radius: var(--r-full);
+  background: var(--econ-green);
+  color: var(--econ-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.bridge__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-green-700);
+  margin-bottom: 2px;
+}
+.bridge__text {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+/* ============================================================
+   DOWNLOAD DECK CARD — right rail addition
+   ============================================================ */
+
+.deck-download {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.deck-download__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.deck-download__icon {
+  width: 36px; height: 36px;
+  border-radius: var(--r-md);
+  background: var(--econ-purple-50);
+  color: var(--econ-purple-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.deck-download__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-900);
+}
+.deck-download__sub {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  line-height: var(--lh-relaxed);
+}
+.deck-download__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  background: var(--econ-gray-50);
+  color: var(--econ-gray-700);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  border: 1px solid var(--econ-gray-200);
+  transition: background 0.15s;
+  width: 100%;
+}
+.deck-download__btn:hover {
+  background: var(--econ-purple-50);
+  border-color: var(--econ-purple-100);
+  color: var(--econ-purple-700);
+}
+
+/* Hide on small (basic responsive) */
+@media (max-width: 1100px) {
+  :root { --sidebar-w: 200px; --rightbar-w: 240px; }
+  .page { padding: var(--sp-4); }
+}
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .page { grid-template-columns: 1fr; }
+  .right-rail { display: none; }
+  .framing-row, .mech-row, .cause-grid, .mech-grid { grid-template-columns: 1fr; }
+  .scenarios__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   ============================================================
+   V2 ENHANCEMENTS — pop-up book interactions, layout fixes,
+   consistent shadows, mathematically-correct diagrams support
+   ============================================================
+   ============================================================ */
+
+
+/* ============================================================
+   1. ANIMATION KEYFRAMES — the pop-up book vocabulary
+   ============================================================ */
+
+@keyframes econ-rise-in {
+  0%   { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes econ-flap-open {
+  0%   { opacity: 0; transform: rotateX(-78deg) translateY(-6px); transform-origin: top center; }
+  100% { opacity: 1; transform: rotateX(0)      translateY(0);    transform-origin: top center; }
+}
+
+@keyframes econ-slide-reveal {
+  0%   { opacity: 0; transform: translateY(-6px); max-height: 0;     padding-top: 0; padding-bottom: 0; margin-top: 0; }
+  100% { opacity: 1; transform: translateY(0);    max-height: 600px; }
+}
+
+@keyframes econ-pulse-attention {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0     rgba(37, 99, 235, 0.45); }
+  50%      { transform: scale(1.04); box-shadow: 0 0 0 14px  rgba(37, 99, 235, 0); }
+}
+
+@keyframes econ-tease-bob {
+  0%, 100% { transform: translateY(0)    rotate(0deg);   }
+  50%      { transform: translateY(-3px) rotate(-1.2deg);}
+}
+
+@keyframes econ-ad-shift {
+  0%   { transform: translateX(-12px); opacity: 0; }
+  100% { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes econ-shimmer {
+  0%   { background-position: -180px 0; }
+  100% { background-position: 180px 0;  }
+}
+
+
+/* ============================================================
+   2. UTILITY: consistent card shadow, hover lift
+   ============================================================ */
+
+/* The shared "paper" feel — every content box gets a subtle lift. */
+.exam-edge,
+.callout,
+.cause-col,
+.uk-examples,
+.policy-box,
+.dilemma,
+.classical-box,
+.puzzle-visual,
+.scenario,
+.mech-tile,
+.def-mech-row,
+.def-examples,
+.connection-box,
+.bridge,
+.session-meta,
+.rail-card,
+.deck-download {
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+/* Hover-lift on interactive surfaces only (cards, scenarios) */
+.scenario,
+.mech-tile,
+.branch-cal,
+.cards-list__item {
+  cursor: pointer;
+}
+.scenario:hover,
+.mech-tile:hover,
+.branch-cal:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* ============================================================
+   3. INTRO CARD LAYOUT FIXES
+   - Hero fills the right column properly
+   - Green ticks left-aligned, even spacing
+   - Bottom session-meta evenly distributed
+   ============================================================ */
+
+/* Hero now takes a real slice of the card */
+.intro-card .row { gap: var(--sp-7); align-items: center; }
+.intro-card__text { flex: 1 1 0; min-width: 0; max-width: none; }
+
+.illust-bars {
+  width: 260px;
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.illust-bars svg {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  display: block;
+}
+
+/* Tablet / smaller laptop — stack hero below text rather than crush it */
+@media (max-width: 1100px) {
+  .intro-card .row { flex-direction: column; align-items: stretch; }
+  .illust-bars { width: 100%; max-width: 320px; align-self: flex-start; }
+}
+
+/* Re-stack the do-box: title+sub up top, checks left-aligned below in a row */
+.do-box {
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: auto auto;
+  row-gap: var(--sp-3);
+  column-gap: var(--sp-4);
+  align-items: start;
+  padding: var(--sp-5) var(--sp-6);
+}
+.do-box > .do-box__icon { grid-row: 1; grid-column: 1; }
+.do-box > div:nth-child(2) { grid-row: 1; grid-column: 2; }
+.do-box__checks {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-5);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: var(--sp-2);
+  border-top: 1px dashed rgba(16, 185, 129, 0.25);
+}
+.do-box__check {
+  white-space: normal;
+  font-weight: var(--fw-medium);
+  color: var(--econ-green-700);
+}
+
+/* Session meta — three columns of equal weight */
+.session-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: var(--sp-6);
+  padding: var(--sp-5) var(--sp-7);
+}
+.session-meta__cta { margin-left: 0; }
+.session-meta__item { gap: var(--sp-4); }
+
+
+/* ============================================================
+   4. CARDS 2 & 3 — coloured topic banner + accent treatment
+   These are added by app.js as a wrapper around the cause cards.
+   ============================================================ */
+
+.cause-banner {
+  margin: calc(-1 * var(--sp-8)) calc(-1 * var(--sp-8)) var(--sp-6);
+  padding: var(--sp-5) var(--sp-8);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  position: relative;
+  overflow: hidden;
+}
+.cause-banner::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -20px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  opacity: 0.12;
+}
+.cause-banner__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px var(--sp-3);
+  border-radius: var(--r-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+}
+.cause-banner__pill-dot {
+  width: 10px; height: 10px; border-radius: var(--r-full);
+}
+.cause-banner__main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.cause-banner__line {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+}
+
+.cause-banner--green        { background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); }
+.cause-banner--green::after { background: var(--econ-green); }
+.cause-banner--green .cause-banner__pill { color: var(--econ-green-700); }
+.cause-banner--green .cause-banner__pill-dot { background: var(--econ-green); }
+.cause-banner--green .cause-banner__line { color: var(--econ-green-700); }
+
+.cause-banner--amber        { background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); }
+.cause-banner--amber::after { background: var(--econ-amber); }
+.cause-banner--amber .cause-banner__pill { color: var(--econ-amber-700); }
+.cause-banner--amber .cause-banner__pill-dot { background: var(--econ-amber); }
+.cause-banner--amber .cause-banner__line { color: var(--econ-amber-700); }
+
+/* Two-up layout for "Causes" and "Hallmarks" on cards 2-3 */
+.cause-twoup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+@media (max-width: 900px) {
+  .cause-twoup { grid-template-columns: 1fr; }
+}
+
+/* Accent strips on the cause-col blocks */
+.cause-col { position: relative; overflow: hidden; }
+.cause-col::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--econ-gray-300);
+}
+.cause-col--causes::before    { background: var(--econ-blue); }
+.cause-col--hallmark::before  { background: var(--econ-green); }
+.cause-col--hallmark-amber::before { background: var(--econ-amber); }
+
+/* Diagram now centres in its own panel with a soft frame */
+.mech-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: var(--sp-5);
+  align-items: center;
+  margin-bottom: var(--sp-4);
+}
+.mech-diagram {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-3);
+  box-shadow: var(--shadow-md);
+}
+.mech-diagram svg {
+  width: 100%;
+  height: auto;
+  max-width: 340px;
+  display: block;
+  margin: 0 auto;
+}
+.mech-diagram__caption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .mech-row { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   5. POP-UP BOOK INTERACTIONS
+   ============================================================ */
+
+/* --- Card 1 framing: branches as tappable flaps --- */
+.branch-cal {
+  position: relative;
+  user-select: none;
+}
+.branch-cal__sub.is-hidden {
+  display: none;
+}
+.branch-cal[data-flap] .branch-cal__sub {
+  animation: econ-flap-open 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.branch-cal__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--econ-gray-500);
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+}
+.branch-cal__hint::after {
+  content: '+';
+  display: inline-block;
+  width: 16px; height: 16px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-200);
+  color: var(--econ-gray-600);
+  text-align: center;
+  line-height: 14px;
+  font-weight: 800;
+  transition: transform 0.22s ease, background 0.22s ease;
+}
+.branch-cal.is-open .branch-cal__hint::after {
+  transform: rotate(45deg);
+  background: var(--econ-gray-300);
+}
+
+/* --- Card 4 diagnose: tap-to-reveal answer --- */
+.scenario__reveal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  padding: 8px 14px;
+  border-radius: var(--r-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  background: var(--econ-white);
+  color: var(--econ-gray-700);
+  border: 1.5px solid var(--econ-gray-300);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.scenario__reveal:hover {
+  background: var(--econ-gray-50);
+  border-color: var(--econ-gray-400);
+  transform: translateY(-1px);
+}
+.scenario__reveal-icon {
+  width: 14px; height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.scenario__answer.is-hidden {
+  display: none;
+}
+.scenario__answer:not(.is-hidden) {
+  animation: econ-slide-reveal 0.36s ease both;
+}
+.scenario__reveal.is-used {
+  display: none;
+}
+.scenario--green   .scenario__reveal:hover { border-color: var(--econ-green);  color: var(--econ-green-700);  }
+.scenario--amber   .scenario__reveal:hover { border-color: var(--econ-amber);  color: var(--econ-amber-700);  }
+.scenario--purple  .scenario__reveal:hover { border-color: var(--econ-purple); color: var(--econ-purple-700); }
+
+/* --- Card 5 cliffhanger: clickable "Why?" --- */
+.cliffhanger {
+  display: block;
+  margin: var(--sp-6) auto var(--sp-3);
+  padding: var(--sp-5) var(--sp-8);
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+  font-size: 56px;
+  font-weight: var(--fw-bold);
+  color: var(--econ-blue-dark);
+  text-align: center;
+  position: relative;
+  letter-spacing: -1px;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.22s ease;
+  animation: econ-tease-bob 2.4s ease-in-out infinite;
+}
+.cliffhanger:hover {
+  transform: scale(1.06) rotate(-1deg);
+  color: var(--econ-blue);
+}
+.cliffhanger::before,
+.cliffhanger::after {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 2px;
+  color: var(--econ-blue);
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+.cliffhanger::before {
+  content: '↓ tap to find out';
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cliffhanger.is-revealed {
+  animation: none;
+  transform: scale(0.85);
+  color: var(--econ-gray-400);
+  pointer-events: none;
+}
+.cliffhanger.is-revealed::before { display: none; }
+
+.cliffhanger-reveal {
+  margin-top: var(--sp-4);
+  padding: var(--sp-5) var(--sp-6);
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1.5px solid var(--econ-blue);
+  box-shadow: var(--shadow-md);
+  display: none;
+}
+.cliffhanger-reveal.is-revealed {
+  display: block;
+  animation: econ-slide-reveal 0.5s ease both;
+}
+.cliffhanger-reveal__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--econ-blue-dark);
+  margin-bottom: var(--sp-2);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.cliffhanger-reveal__title::before {
+  content: '🎯';
+  font-size: 18px;
+}
+.cliffhanger-reveal__text {
+  font-size: var(--fs-base);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-3);
+}
+.cliffhanger-reveal__hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.cliffhanger-reveal__hint {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-blue-100);
+  padding: 6px var(--sp-3);
+  border-radius: var(--r-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--econ-blue-dark);
+}
+.cliffhanger-reveal__cta {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--econ-blue-dark);
+  font-weight: var(--fw-semi);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.cliffhanger-reveal__cta::before {
+  content: '→';
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* When cliffhanger is revealed, the "Next card" button starts pulsing */
+.btn--pulse {
+  animation: econ-pulse-attention 1.6s ease-in-out infinite;
+}
+
+/* --- Card 6 mechanisms: staggered reveal on card load --- */
+.mech-tile {
+  opacity: 0;
+  animation: econ-rise-in 0.5s ease both;
+}
+.mech-tile:nth-child(1) { animation-delay: 0.05s; }
+.mech-tile:nth-child(2) { animation-delay: 0.18s; }
+.mech-tile:nth-child(3) { animation-delay: 0.31s; }
+.mech-tile:nth-child(4) { animation-delay: 0.44s; }
+
+/* --- Card 7 deflation: tap-to-reveal flaps --- */
+.def-mech-row {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+.def-mech-row:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.def-mech-row__hint {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.3px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.def-mech-row__hint::before {
+  content: '+';
+  width: 14px; height: 14px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-200);
+  color: var(--econ-gray-600);
+  font-weight: 800;
+  text-align: center;
+  line-height: 12px;
+  font-size: 11px;
+  transition: transform 0.22s ease, background 0.22s ease;
+}
+.def-mech-row.is-open .def-mech-row__hint { display: none; }
+.def-mech-row__text.is-hidden { display: none; }
+.def-mech-row__text:not(.is-hidden) {
+  animation: econ-slide-reveal 0.36s ease both;
+}
+
+
+/* ============================================================
+   6. EXAM EDGE — slightly punchier
+   ============================================================ */
+
+.exam-edge {
+  position: relative;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+}
+.exam-edge::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--econ-amber) 0%, var(--econ-amber-600) 100%);
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
+}
+
+
+/* ============================================================
+   7. CLIFFHANGER container — sits inside puzzle-visual
+   make it a button instead of a div in the markup
+   ============================================================ */
+.puzzle-visual { padding-bottom: var(--sp-4); }
+
+
+/* ============================================================
+   8. Reduced motion — respect user setting
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ============================================================
+   ============================================================
+   V3 DESIGN LANGUAGE — single left accent, themed titles
+   ----------------------------------------------------------------
+   Rule: each content box has ONE coloured left accent (single
+   stripe, never doubled). The box's title takes that same colour.
+   No grey headers on themed boxes.
+   ============================================================
+   ============================================================ */
+
+/* Suppress the v2 ::before accents that doubled with original border-lefts */
+.exam-edge::before,
+.cause-col::before {
+  display: none;
+}
+
+/* --- Exam-edge: amber gem, single stripe --- */
+.exam-edge {
+  border-left: 4px solid var(--econ-amber);
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border-color: var(--econ-amber-100);
+}
+.exam-edge__title { color: var(--econ-amber-700); }
+
+/* --- Cause-col: convert v2 ::before stripe to a real border-left --- */
+.cause-col { border-left: 4px solid var(--econ-gray-300); }
+.cause-col--causes              { border-left-color: var(--econ-blue);  }
+.cause-col--causes .cause-col__title       { color: var(--econ-blue-700);  }
+.cause-col--hallmark            { border-left-color: var(--econ-green); }
+.cause-col--hallmark .cause-col__title     { color: var(--econ-green-700); }
+.cause-col--hallmark-amber      { border-left-color: var(--econ-amber); }
+.cause-col--hallmark-amber .cause-col__title { color: var(--econ-amber-700); }
+
+/* --- UK examples: blue accent, themed title --- */
+.uk-examples {
+  border-left: 4px solid var(--econ-blue);
+  background: var(--econ-blue-50);
+}
+.uk-examples__title { color: var(--econ-blue-700); }
+
+/* --- Policy box: already amber border-left, just colour the title --- */
+.policy-box__title { color: var(--econ-amber-700); }
+
+/* --- Dilemma: rose accent, ensure title is themed --- */
+.dilemma__title { color: var(--econ-rose-600); }
+
+/* --- Classical box: blue accent, themed title --- */
+.classical-box__title { color: var(--econ-blue-700); }
+
+/* --- Connection box: green accent, themed title --- */
+.connection-box__title { color: var(--econ-green-700); }
+
+/* --- Bridge: purple (forward-looking next step) --- */
+.bridge {
+  border-left: 4px solid var(--econ-purple);
+  background: var(--econ-purple-50);
+}
+.bridge__title { color: var(--econ-purple-700); }
+
+/* --- Deflation mechanism row: rose (warning) --- */
+.def-mech-row__title { color: var(--econ-rose-600); }
+
+/* --- Deflation examples list: blue (knowledge) --- */
+.def-examples {
+  border-left: 4px solid var(--econ-blue);
+  background: var(--econ-blue-50);
+}
+.def-examples__title { color: var(--econ-blue-700); }
+
+/* --- Do-box (intro green checklist): green accent --- */
+.do-box { border-left: 4px solid var(--econ-green); }
+
+/* --- Mech-tiles (card 6): each tone gets its accent + title colour --- */
+.mech-tile--blue   { border-left: 4px solid var(--econ-blue);  }
+.mech-tile--green  { border-left: 4px solid var(--econ-green); }
+.mech-tile--amber  { border-left: 4px solid var(--econ-amber); }
+.mech-tile--rose   { border-left: 4px solid var(--econ-rose);  }
+.mech-tile--blue  .mech-tile__title { color: var(--econ-blue-700);  }
+.mech-tile--green .mech-tile__title { color: var(--econ-green-700); }
+.mech-tile--amber .mech-tile__title { color: var(--econ-amber-700); }
+.mech-tile--rose  .mech-tile__title { color: var(--econ-rose-600);  }
+
+/* --- Scenario tiles (card 4 diagnose): tone-coloured accent --- */
+.scenario--green   { border-left: 4px solid var(--econ-green);  }
+.scenario--amber   { border-left: 4px solid var(--econ-amber);  }
+.scenario--purple  { border-left: 4px solid var(--econ-purple); }
+
+/* --- Cliffhanger reveal panel: blue --- */
+.cliffhanger-reveal { border-left: 4px solid var(--econ-blue); }
+
+/* --- Callouts: ensure each variant has a left accent --- */
+.callout--success { border-left: 4px solid var(--econ-green); }
+.callout--info    { border-left: 4px solid var(--econ-blue);  }
+.callout--warn    { border-left: 4px solid var(--econ-amber); }
+.callout--purple  { border-left: 4px solid var(--econ-purple);}
+.callout--rose    { border-left: 4px solid var(--econ-rose);  }
+
+
+/* ============================================================
+   ============================================================
+   V4 LAYOUT + ICON SYSTEM
+   - Full-width diagram modifier for cause cards
+   - Cause-twoup (Causes + Hallmarks side-by-side)
+   - Standardised icon badge: 32px circle, themed bg, white icon
+   ============================================================
+   ============================================================ */
+
+/* Wide diagram fills the card width — used on cause cards */
+.mech-diagram--wide {
+  margin-bottom: var(--sp-5);
+}
+.mech-diagram--wide svg {
+  max-width: 100%;
+}
+
+/* Cause-twoup: causes + hallmarks side-by-side, equal columns */
+.cause-twoup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+@media (max-width: 900px) {
+  .cause-twoup { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   STANDARDISED ICON BADGE — every box icon follows this pattern.
+   Reference: .exam-edge__star (purple -> now amber).
+   Pattern: 32px circle, theme-coloured background, white icon.
+   ============================================================ */
+
+/* Fix exam-edge star to match its (new) amber accent */
+.exam-edge__star {
+  background: var(--econ-amber);
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+
+/* Common badge shape for all other box icons */
+.uk-examples__flag,
+.policy-box__icon,
+.dilemma__icon,
+.classical-box__icon,
+.connection-box__icon,
+.bridge__icon,
+.def-mech-row__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+/* Theme colour per box */
+.uk-examples__flag    { background: var(--econ-blue); font-size: 11px; font-weight: 800; letter-spacing: 0.5px; }
+.policy-box__icon     { background: var(--econ-amber);  }
+.dilemma__icon        { background: var(--econ-rose);   }
+.classical-box__icon  { background: var(--econ-blue);   }
+.connection-box__icon { background: var(--econ-green);  }
+.bridge__icon         { background: var(--econ-purple); font-weight: 800; }
+.def-mech-row__icon   { background: var(--econ-rose);   }
+
+/* Callout icons too — circular themed badges */
+.callout__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFFFFF;
+}
+.callout--success .callout__icon { background: var(--econ-green);  color: #FFFFFF; }
+.callout--info    .callout__icon { background: var(--econ-blue);   color: #FFFFFF; }
+.callout--warn    .callout__icon { background: var(--econ-amber);  color: #FFFFFF; }
+.callout--purple  .callout__icon { background: var(--econ-purple); color: #FFFFFF; }
+.callout--rose    .callout__icon { background: var(--econ-rose);   color: #FFFFFF; }
+.callout__icon svg { width: 16px; height: 16px; }
+
+
+/* ============================================================
+   ============================================================
+   V5 FINE-TUNES
+   - Exam-edge reverts to purple (the gem character, theme-independent)
+   - Intro icons unified to 36px so titles align across boxes
+   - "Your goal" column gets more space so text stays on 2 lines
+   ============================================================
+   ============================================================ */
+
+/* --- Exam-edge: ALWAYS purple (the gem stays purple) ---
+   Pattern matches other coloured boxes (.callout--success uses
+   green-50, .dilemma uses rose-50 etc — solid *-50 tint).
+   Tailwind's purple-50 is too light/ambiguous (reads pink); using
+   violet-100 instead — same pattern, more saturation, unambiguous. */
+.exam-edge {
+  border-left: 4px solid #6B21A8;
+  background: #EDE9FE;             /* violet-100 — clearly purple, not pink */
+  border-color: #6b21a8;           /* violet-200 */
+}
+.exam-edge__title { color: #6B21A8; }
+.exam-edge__star  { background: #6B21A8; }
+
+
+/* --- Intro page: unify all icon badges to 36px so titles line up --- */
+.callout__icon {
+  width: 36px;
+  height: 36px;
+}
+.callout__icon svg { width: 18px; height: 18px; }
+
+.do-box__icon {
+  width: 36px;
+  height: 36px;
+}
+.session-meta__icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* All three intro boxes now use the same 36px badge + sp-5 padding + sp-4 gap,
+   so their title baselines align vertically. */
+
+
+/* --- Session-meta: give "Your goal" more space, force 2-line text --- */
+.session-meta {
+  grid-template-columns: auto 1fr auto;
+}
+
+
+/* ============================================================
+   ============================================================
+   V6 DESIGN RULE — RESERVED ICON COLUMN
+   ----------------------------------------------------------------
+   Every box has two regions:
+     1. ICON COLUMN (fixed 36px on the left): ONLY the badge lives here.
+     2. CONTENT COLUMN (everything to the right of the icon + gap):
+        all titles, body text, lists, checks, ratings — every row of
+        content aligns starting from this column's left edge.
+
+   No content row may bleed back into the icon column.
+
+   This is enforced naturally by flex-based boxes (which use a single
+   content child). For grid-based boxes (do-box), it must be set
+   explicitly via grid-column.
+   ============================================================
+   ============================================================ */
+
+/* Do-box: bottom check row stays in the content column,
+   not spanning back across the icon column. */
+.do-box__checks {
+  grid-column: 2;
+}
+
+/* The dashed separator between top content and the checks row should
+   also start at the content-column edge, so it visually connects to the
+   title above it. Using a left-margin trick rather than border-left
+   so it integrates with existing border-top styling. */
+.do-box__checks {
+  border-top: 1px dashed rgba(16, 185, 129, 0.35);
+  margin-left: 0;
+}
+
+
+/* ============================================================
+   ============================================================
+   V7 ENFORCING ICON-COLUMN RULE on the last two boxes
+   - Dilemma: restructure to [icon][body] flex; title + lines both
+     align in the body column
+   - Def-examples: add a proper icon badge; title + list both align
+     in the body column
+   ============================================================
+   ============================================================ */
+
+/* --- Dilemma: icon | body layout --- */
+.dilemma {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding: var(--sp-4) var(--sp-5);
+}
+.dilemma__body {
+  flex: 1;
+  min-width: 0;
+}
+.dilemma__icon {
+  /* picked up by v4 icon system: 32px circle, rose bg, white glyph
+     — bump to 36px to match the other primary box icons */
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  line-height: 1;
+}
+.dilemma__title {
+  display: block;
+  margin-bottom: var(--sp-2);
+  /* colour already set to rose by v3 */
+}
+.dilemma__lines {
+  display: block;
+  /* No longer a separate row — it's inside the body column,
+     so it naturally aligns with the title above it. */
+}
+
+/* --- Def-examples: icon | body layout --- */
+.def-examples {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding: var(--sp-4) var(--sp-5);
+}
+.def-examples__body {
+  flex: 1;
+  min-width: 0;
+}
+.def-examples__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--econ-blue);
+  color: #FFFFFF;
+  font-size: 17px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.def-examples__title {
+  display: block;
+  margin-bottom: var(--sp-2);
+  /* colour already set to blue-700 by v3 */
+}
+.def-examples__list {
+  display: block;
+}
+
+
+/* ============================================================
+   ============================================================
+   V8 TOPIC 2 SUPPORT
+   - Purple branch variant (4th branch for AD components)
+   - Hallmark accent variants (blue, purple, generic)
+   - Paired template (Card 6: G + Net Trade)
+   ============================================================
+   ============================================================ */
+
+/* --- 4th branch tone: purple (used for X−M in AD topic) --- */
+.branch-cal--purple {
+  background: var(--econ-purple-50);
+  border-left-color: var(--econ-purple-700);
+}
+.branch-cal--purple .branch-cal__dot { background: var(--econ-purple-700); }
+.branch-cal--purple .branch-cal__label { color: var(--econ-purple-700); }
+
+/* --- Hallmark accent: generalised variants --- */
+.cause-col--hallmark-green       { border-left-color: var(--econ-green); }
+.cause-col--hallmark-green .cause-col__title { color: var(--econ-green-700); }
+.cause-col--hallmark-amber       { border-left-color: var(--econ-amber); }
+.cause-col--hallmark-amber .cause-col__title { color: var(--econ-amber-700); }
+.cause-col--hallmark-blue        { border-left-color: var(--econ-blue); }
+.cause-col--hallmark-blue .cause-col__title { color: var(--econ-blue-700); }
+.cause-col--hallmark-purple      { border-left-color: var(--econ-purple-700); }
+.cause-col--hallmark-purple .cause-col__title { color: var(--econ-purple-700); }
+
+
+/* ============================================================
+   PAIRED TEMPLATE — two components side-by-side (Card 6 of AD)
+   ============================================================ */
+
+.paired-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+@media (max-width: 900px) {
+  .paired-grid { grid-template-columns: 1fr; }
+}
+
+.paired-half {
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-left: 4px solid var(--econ-gray-300);
+  box-shadow: var(--shadow-sm);
+}
+.paired-half--blue   { border-left-color: var(--econ-blue);        background: var(--econ-blue-50); }
+.paired-half--green  { border-left-color: var(--econ-green);       background: var(--econ-green-50); }
+.paired-half--amber  { border-left-color: var(--econ-amber);       background: var(--econ-amber-50); }
+.paired-half--purple { border-left-color: var(--econ-purple-700);  background: var(--econ-purple-50); }
+.paired-half--rose   { border-left-color: var(--econ-rose);        background: var(--econ-rose-50); }
+
+.paired-half__label {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--sp-3);
+}
+.paired-half--blue   .paired-half__label { color: var(--econ-blue-700); }
+.paired-half--green  .paired-half__label { color: var(--econ-green-700); }
+.paired-half--amber  .paired-half__label { color: var(--econ-amber-700); }
+.paired-half--purple .paired-half__label { color: var(--econ-purple-700); }
+
+.paired-half__drivers ul {
+  list-style: none;
+  padding: 0;
+}
+.paired-half__drivers li {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  padding: var(--sp-1) 0 var(--sp-1) var(--sp-4);
+  position: relative;
+  line-height: var(--lh-relaxed);
+}
+.paired-half__drivers li::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 11px;
+  width: 6px; height: 6px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-400);
+}
+
+.paired-half__example {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-3);
+  border-top: 1px dashed var(--econ-gray-300);
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+}
+.paired-half__example-flag {
+  width: 28px; height: 28px;
+  border-radius: var(--r-full);
+  background: var(--econ-blue);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   V9 — Cause banner: add blue and purple variants
+   So that .paired template cards (and any future cause card using
+   blue/purple themes) get the same styled banner treatment as
+   consumption (green) and investment (amber).
+   ============================================================ */
+
+.cause-banner--blue          { background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); }
+.cause-banner--blue::after   { background: var(--econ-blue); }
+.cause-banner--blue .cause-banner__pill { color: var(--econ-blue-700); }
+.cause-banner--blue .cause-banner__pill-dot { background: var(--econ-blue); }
+.cause-banner--blue .cause-banner__line { color: var(--econ-blue-700); }
+
+.cause-banner--purple        { background: linear-gradient(135deg, #FAF5FF 0%, #EDE9FE 100%); }
+.cause-banner--purple::after { background: var(--econ-purple-700); }
+.cause-banner--purple .cause-banner__pill { color: var(--econ-purple-700); }
+.cause-banner--purple .cause-banner__pill-dot { background: var(--econ-purple-700); }
+.cause-banner--purple .cause-banner__line { color: var(--econ-purple-700); }
+
+
+/* ============================================================
+   ============================================================
+   V13 — AD-INTERACTIVE TEMPLATE (LANDSCAPE)
+   Full-width diagram at top, horizontal tab strip below, then
+   the active tab's content panel underneath.
+
+   Replaces the V10 portrait layout where the diagram was squeezed
+   into a 1.5fr column. The diagram is the pedagogical centrepiece
+   and deserves the full canvas width.
+   ============================================================
+   ============================================================ */
+
+.ad-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+/* --- 1. Full-width diagram panel --- */
+.ad-interactive__diagram {
+  background: #FFFFFF;
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.ad-interactive__diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Layer visibility — CSS state machine ---
+   The container holds one of: .show-base, .show-extension, .show-shift.
+   Layers fade in/out via opacity for smooth transitions. */
+
+/* Visible in BASE state */
+.ad-svg .layer-curve-solid,
+.ad-svg .layer-e1,
+.ad-svg .layer-legend-base {
+  opacity: 1;
+  transition: opacity 0.32s ease;
+}
+
+/* Hidden by default */
+.ad-svg .layer-curve-dashed,
+.ad-svg .layer-extension,
+.ad-svg .layer-shift,
+.ad-svg .layer-curve-label-shift,
+.ad-svg .layer-legend-extension,
+.ad-svg .layer-legend-shift {
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+
+/* EXTENSION state */
+.show-extension .ad-svg .layer-legend-base { opacity: 0; }
+.show-extension .ad-svg .layer-legend-extension { opacity: 1; }
+.show-extension .ad-svg .layer-extension { opacity: 1; }
+
+/* SHIFT state */
+.show-shift .ad-svg .layer-curve-solid > line { stroke: #94A3B8; stroke-dasharray: 6 4; transition: stroke 0.32s ease; }
+.show-shift .ad-svg .layer-curve-solid > text { opacity: 0; }
+.show-shift .ad-svg .layer-curve-label-shift { opacity: 1; }
+.show-shift .ad-svg .layer-e1 { opacity: 0; }
+.show-shift .ad-svg .layer-legend-base { opacity: 0; }
+.show-shift .ad-svg .layer-legend-shift { opacity: 1; }
+.show-shift .ad-svg .layer-shift { opacity: 1; }
+
+/* --- 2. Horizontal tab strip --- */
+.ad-interactive__tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2);
+}
+@media (max-width: 760px) {
+  .ad-interactive__tabs { grid-template-columns: 1fr; }
+}
+
+.ad-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease, background 0.18s ease;
+}
+.ad-tab:hover {
+  background: var(--econ-gray-50);
+  transform: translateY(-1px);
+}
+.ad-tab.is-active {
+  border-color: var(--econ-blue);
+  background: var(--econ-blue-50);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.18);
+}
+
+.ad-tab__num {
+  width: 30px; height: 30px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-200);
+  color: var(--econ-gray-600);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: var(--fw-extrabold);
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ad-tab.is-active .ad-tab__num {
+  background: var(--econ-blue);
+  color: #FFFFFF;
+}
+
+.ad-tab__label {
+  flex: 1;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-tight);
+}
+.ad-tab.is-active .ad-tab__label {
+  color: var(--econ-blue-700);
+}
+
+/* --- 3. Content panel below tabs --- */
+.ad-interactive__panels {
+  position: relative;
+}
+
+.ad-panel {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-left: 4px solid var(--econ-blue);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+  display: none;
+}
+.ad-panel.is-active {
+  display: block;
+  animation: ad-panel-rise 0.32s ease;
+}
+
+@keyframes ad-panel-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ad-panel__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-blue-700);
+  margin-bottom: var(--sp-3);
+}
+
+.ad-panel__body {
+  font-size: var(--fs-base);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+}
+
+
+
+/* ============================================================
+   ============================================================
+   V12 — TRANSMISSION-CHAIN TEMPLATE
+   Card 3 of Monetary Policy topic.
+   Three-zone flow row at top (Action → Channels → Outcome),
+   then a tap-to-reveal panel showing the chain steps.
+   ============================================================
+   ============================================================ */
+
+.tc-flow {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) 2.5fr minmax(120px, 1fr);
+  gap: var(--sp-4);
+  align-items: stretch;
+  margin-bottom: var(--sp-5);
+}
+@media (max-width: 760px) {
+  .tc-flow { grid-template-columns: 1fr; }
+}
+
+/* --- Action & Outcome bookends --- */
+.tc-action, .tc-outcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--sp-4);
+  border-radius: var(--r-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.tc-action {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border: 1px solid var(--econ-amber);
+}
+.tc-action__eyebrow {
+  font-size: 10px;
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-amber-700);
+  letter-spacing: 2px;
+  margin-bottom: var(--sp-2);
+}
+.tc-action__text {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-amber-700);
+  line-height: var(--lh-tight);
+}
+.tc-outcome {
+  background: linear-gradient(135deg, #DCFCE7 0%, #BBF7D0 100%);
+  border: 1px solid var(--econ-green);
+}
+.tc-outcome__eyebrow {
+  font-size: 10px;
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-green-700);
+  letter-spacing: 2px;
+  margin-bottom: var(--sp-2);
+}
+.tc-outcome__text {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-green-700);
+  line-height: var(--lh-tight);
+}
+
+/* --- Channel pills (the 5 buttons) --- */
+.tc-channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  justify-content: center;
+}
+
+.tc-channel {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease, background 0.18s ease;
+}
+.tc-channel:hover {
+  background: var(--econ-gray-50);
+  transform: translateX(2px);
+}
+
+.tc-channel__dot {
+  width: 12px; height: 12px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-400);
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+}
+
+.tc-channel__label {
+  flex: 1;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--econ-gray-800);
+}
+
+.tc-channel__chev {
+  color: var(--econ-gray-400);
+  font-size: 14px;
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+/* Channel theming — when ACTIVE, show its colour */
+.tc-channel--green.is-active  { border-color: var(--econ-green);  background: var(--econ-green-50);  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.18); }
+.tc-channel--green.is-active .tc-channel__dot    { background: var(--econ-green); }
+.tc-channel--green.is-active .tc-channel__label  { color: var(--econ-green-700); }
+.tc-channel--green.is-active .tc-channel__chev   { color: var(--econ-green); transform: translateX(2px); }
+
+.tc-channel--amber.is-active  { border-color: var(--econ-amber);  background: var(--econ-amber-50);  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.18); }
+.tc-channel--amber.is-active .tc-channel__dot    { background: var(--econ-amber); }
+.tc-channel--amber.is-active .tc-channel__label  { color: var(--econ-amber-700); }
+.tc-channel--amber.is-active .tc-channel__chev   { color: var(--econ-amber); transform: translateX(2px); }
+
+.tc-channel--blue.is-active   { border-color: var(--econ-blue);   background: var(--econ-blue-50);   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.18); }
+.tc-channel--blue.is-active .tc-channel__dot     { background: var(--econ-blue); }
+.tc-channel--blue.is-active .tc-channel__label   { color: var(--econ-blue-700); }
+.tc-channel--blue.is-active .tc-channel__chev    { color: var(--econ-blue); transform: translateX(2px); }
+
+.tc-channel--purple.is-active { border-color: var(--econ-purple-700); background: var(--econ-purple-50); box-shadow: 0 2px 8px rgba(126, 34, 206, 0.18); }
+.tc-channel--purple.is-active .tc-channel__dot   { background: var(--econ-purple-700); }
+.tc-channel--purple.is-active .tc-channel__label { color: var(--econ-purple-700); }
+.tc-channel--purple.is-active .tc-channel__chev  { color: var(--econ-purple-700); transform: translateX(2px); }
+
+.tc-channel--rose.is-active   { border-color: var(--econ-rose);   background: var(--econ-rose-50);   box-shadow: 0 2px 8px rgba(225, 29, 72, 0.18); }
+.tc-channel--rose.is-active .tc-channel__dot     { background: var(--econ-rose); }
+.tc-channel--rose.is-active .tc-channel__label   { color: var(--econ-rose-700); }
+.tc-channel--rose.is-active .tc-channel__chev    { color: var(--econ-rose); transform: translateX(2px); }
+
+/* --- Chain panel (the expanded view) --- */
+.tc-panels {
+  position: relative;
+  margin-bottom: var(--sp-5);
+}
+
+.tc-panel {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-left: 4px solid var(--econ-gray-300);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+  display: none;
+}
+.tc-panel.is-active {
+  display: block;
+  animation: tc-panel-rise 0.32s ease;
+}
+
+@keyframes tc-panel-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tc-panel--green  { border-left-color: var(--econ-green); }
+.tc-panel--amber  { border-left-color: var(--econ-amber); }
+.tc-panel--blue   { border-left-color: var(--econ-blue); }
+.tc-panel--purple { border-left-color: var(--econ-purple-700); }
+.tc-panel--rose   { border-left-color: var(--econ-rose); }
+
+.tc-panel__header {
+  margin-bottom: var(--sp-4);
+}
+.tc-panel__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-extrabold);
+}
+.tc-panel--green  .tc-panel__title { color: var(--econ-green-700); }
+.tc-panel--amber  .tc-panel__title { color: var(--econ-amber-700); }
+.tc-panel--blue   .tc-panel__title { color: var(--econ-blue-700); }
+.tc-panel--purple .tc-panel__title { color: var(--econ-purple-700); }
+.tc-panel--rose   .tc-panel__title { color: var(--econ-rose-700); }
+
+.tc-chain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: tc-step;
+}
+.tc-chain__step {
+  position: relative;
+  padding: var(--sp-3) var(--sp-3) var(--sp-3) 48px;
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-800);
+  line-height: var(--lh-relaxed);
+  counter-increment: tc-step;
+}
+.tc-chain__step::before {
+  content: counter(tc-step);
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px; height: 28px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-100);
+  color: var(--econ-gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: var(--fw-extrabold);
+}
+.tc-panel--green  .tc-chain__step::before { background: var(--econ-green-50);  color: var(--econ-green-700); }
+.tc-panel--amber  .tc-chain__step::before { background: var(--econ-amber-50);  color: var(--econ-amber-700); }
+.tc-panel--blue   .tc-chain__step::before { background: var(--econ-blue-50);   color: var(--econ-blue-700); }
+.tc-panel--purple .tc-chain__step::before { background: var(--econ-purple-50); color: var(--econ-purple-700); }
+.tc-panel--rose   .tc-chain__step::before { background: var(--econ-rose-50);   color: var(--econ-rose-700); }
+
+/* Connecting line between steps */
+.tc-chain__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: calc(50% + 14px);
+  width: 0;
+  height: calc(100% - 28px);
+  border-left: 2px dashed var(--econ-gray-300);
+}
+
+.tc-panel__micro {
+  margin-top: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--econ-gray-50);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-relaxed);
+}

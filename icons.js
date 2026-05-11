@@ -1,0 +1,1598 @@
+/* ============================================================
+   ECONOS — icon definitions (inline SVG strings)
+   v2: hero redesigned, AD/AS diagrams mathematically correct,
+       pop-up book aesthetic
+   ============================================================ */
+
+window.ECONOS_ICONS = {
+
+  /* Sidebar nav */
+  home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>`,
+  topics: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 5a2 2 0 012-2h4v18H6a2 2 0 01-2-2V5z"/><path d="M14 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4V3z"/></svg>`,
+  progress: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 21V8M9 21v-9M15 21V5M21 21v-7"/></svg>`,
+  practice: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>`,
+  planner: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>`,
+  messages: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 5h16v12H7l-3 3V5z"/></svg>`,
+  settings: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="3"/><path d="M19 12c0 .5-.1 1-.1 1.5l2 1.5-2 3.5-2.4-1c-.7.6-1.6 1-2.5 1.4L13.5 21h-3l-.5-2.1c-.9-.3-1.8-.8-2.5-1.4l-2.4 1-2-3.5 2-1.5c-.1-.5-.1-1-.1-1.5s.1-1 .1-1.5l-2-1.5 2-3.5 2.4 1c.7-.6 1.6-1 2.5-1.4L10.5 3h3l.5 2.1c.9.3 1.8.8 2.5 1.4l2.4-1 2 3.5-2 1.5c.1.5.1 1 .1 1.5z"/></svg>`,
+
+  /* Common */
+  flame: `<span style="display:inline-block; font-size:18px; line-height:1;">🔥</span>`,
+  arrowLeft: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>`,
+  arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`,
+  chevDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>`,
+  exit: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M5 12l5 5L20 7"/></svg>`,
+  lock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>`,
+  target: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>`,
+  clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>`,
+  bulb: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M9 18h6M10 22h4M12 2a7 7 0 014 12.5V17H8v-2.5A7 7 0 0112 2z"/></svg>`,
+  star: `<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg>`,
+  info: `<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 7v.01M12 11v6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
+  cap: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>`,
+  trophy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M8 4h8v6a4 4 0 01-8 0V4z"/><path d="M8 6H5a2 2 0 002 2h1M16 6h3a2 2 0 01-2 2h-1M9 18h6M10 14v4M14 14v4"/></svg>`,
+  chart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M3 21V8M9 21v-9M15 21V5M21 21v-7"/></svg>`,
+  scale: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 3v18M3 7h18M3 7l3 8a3 3 0 006 0M21 7l-3 8a3 3 0 01-6 0"/></svg>`,
+  globe: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18"/></svg>`,
+  building: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 8h.01M9 12h.01M9 16h.01M15 8h.01M15 12h.01M15 16h.01"/></svg>`,
+  users: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg>`,
+  database: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>`,
+  trendUp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>`,
+  trendDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 7l6 6 4-4 8 8"/><path d="M14 17h7v-7"/></svg>`,
+  cog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
+  cart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 3h2l2.5 12h12L22 7H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>`,
+  pound: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M16 7a3 3 0 00-6 0v3H7"/><path d="M7 14h10M7 18h12"/><path d="M10 10v8"/></svg>`,
+  bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 3h14v18l-7-5-7 5V3z"/></svg>`,
+  eye: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
+
+  /* Brand logo glyph */
+  brandGlyph: `
+    <svg viewBox="0 0 40 28" width="40" height="28" xmlns="http://www.w3.org/2000/svg">
+      <line x1="6" y1="20" x2="14" y2="14" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="14" y1="14" x2="22" y2="18" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="22" y1="18" x2="32" y2="6" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="6" cy="20" r="3" fill="#10B981"/>
+      <circle cx="14" cy="14" r="3" fill="#F59E0B"/>
+      <circle cx="22" cy="18" r="3" fill="#1E40AF"/>
+      <circle cx="32" cy="6" r="3" fill="#2563EB"/>
+    </svg>
+  `,
+
+  /* ============================================================
+     HERO ILLUSTRATION — intro card (v2)
+     Editorial price-tag montage. Same basket, three rising prices.
+     Faint CPI line in the background for context.
+     ============================================================ */
+  heroBars: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="hero-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0F9FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <!-- background -->
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#hero-bg)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#hero-dots)" opacity="0.4"/>
+
+      <!-- faint diagonal CPI line (bottom-left to upper-right, climbing) -->
+      <path d="M 25 320 L 60 308 L 90 295 L 120 275 L 150 245 L 180 200 L 210 130 L 245 70"
+            stroke="#3B82F6" stroke-width="2.5" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" opacity="0.18"/>
+
+      <!-- vertical "prices rising" arrow on the left margin -->
+      <path d="M 32 290 Q 28 200 32 95" stroke="#2563EB" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-dasharray="3 4" opacity="0.5"/>
+      <polygon points="32,90 27,100 37,100" fill="#2563EB" opacity="0.55"/>
+      <text x="14" y="200" font-size="9" font-weight="800" fill="#2563EB"
+            text-anchor="middle" letter-spacing="2"
+            transform="rotate(-90 14 200)" opacity="0.7">PRICES RISING</text>
+
+      <!-- Tag 1: NEWEST (top, £2.40), small, tilted left -->
+      <g transform="translate(150, 40) rotate(-7)" filter="url(#hero-shadow)">
+        <path d="M 0 0 L 60 0 L 75 15 L 60 30 L 0 30 Z"
+              fill="#FECACA" stroke="#DC2626" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="62" cy="15" r="2.8" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
+        <text x="30" y="21" font-size="14" font-weight="800" fill="#991B1B" text-anchor="middle">£2.40</text>
+        <line x1="60" y1="-2" x2="78" y2="-12" stroke="#92400E" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+      <!-- string from £2.40 down to basket -->
+      <path d="M 200 75 Q 205 150 175 240" stroke="#92400E" stroke-width="1" fill="none"
+            stroke-linecap="round" opacity="0.55"/>
+
+      <!-- Tag 2: HERO (middle, £1.80), big, central -->
+      <g transform="translate(70, 130) rotate(2)" filter="url(#hero-shadow)">
+        <path d="M 0 0 L 110 0 L 130 22 L 110 44 L 0 44 Z"
+              fill="#10B981" stroke="#047857" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="113" cy="22" r="4" fill="#FFFFFF" stroke="#047857" stroke-width="1.5"/>
+        <text x="55" y="30" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">£1.80</text>
+        <!-- +50% badge floating above-right -->
+        <g transform="translate(115, -16)">
+          <rect x="0" y="0" width="42" height="22" rx="11" fill="#E11D48" stroke="#9F1239" stroke-width="1"/>
+          <text x="21" y="16" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">+50%</text>
+        </g>
+      </g>
+      <!-- string from £1.80 down to basket -->
+      <path d="M 130 178 Q 132 220 140 245" stroke="#92400E" stroke-width="1" fill="none"
+            stroke-linecap="round" opacity="0.55"/>
+
+      <!-- Tag 3: OLDEST (low, £1.20), small, tilted right -->
+      <g transform="translate(170, 200) rotate(10)" filter="url(#hero-shadow)">
+        <path d="M 0 0 L 56 0 L 70 14 L 56 28 L 0 28 Z"
+              fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="58" cy="14" r="2.5" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+        <text x="28" y="20" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">£1.20</text>
+        <line x1="56" y1="-2" x2="72" y2="-10" stroke="#92400E" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+      <!-- string from £1.20 down to basket -->
+      <path d="M 200 230 Q 200 245 175 250" stroke="#92400E" stroke-width="1" fill="none"
+            stroke-linecap="round" opacity="0.55"/>
+
+      <!-- shopping basket centred low -->
+      <g transform="translate(70, 245)">
+        <path d="M 22 18 Q 70 -16 118 18" stroke="#92400E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 0 20 L 16 80 L 124 80 L 140 20 Z" fill="#FCD34D" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="32" y1="20" x2="40" y2="80" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="64" y1="20" x2="68" y2="80" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="96" y1="20" x2="92" y2="80" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="6" y1="40" x2="134" y2="40" stroke="#B45309" stroke-width="1" opacity="0.4"/>
+        <line x1="11" y1="60" x2="129" y2="60" stroke="#B45309" stroke-width="1" opacity="0.4"/>
+      </g>
+
+      <!-- decorative coins -->
+      <g transform="translate(238, 180)" opacity="0.85">
+        <circle cx="0" cy="0" r="9" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <text x="0" y="3" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g transform="translate(245, 305)" opacity="0.75">
+        <circle cx="0" cy="0" r="7" fill="#FBBF24" stroke="#92400E" stroke-width="1"/>
+        <text x="0" y="3" font-size="8" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- Bottom strip -->
+      <g transform="translate(20, 333)">
+        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
+        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">SAME BASKET · HIGHER PRICES</text>
+      </g>
+    </svg>
+  `,
+
+  /* Shopping basket illustration (legacy) */
+  basket: `
+    <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 30 80 L 50 140 L 150 140 L 170 80 Z" fill="#10B981" stroke="#047857" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M 60 80 Q 100 30 140 80" stroke="#047857" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+  `,
+
+  priceCompare: `
+    <svg viewBox="0 0 140 70" width="140" height="70" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="140" height="70" rx="8" fill="#fff" stroke="#E5E7EB"/>
+      <text x="14" y="25" font-family="Inter, sans-serif" font-size="13" fill="#6B7280" font-weight="500">2023</text>
+      <text x="60" y="25" font-family="Inter, sans-serif" font-size="13" fill="#111827" font-weight="600">£10.00</text>
+      <text x="14" y="55" font-family="Inter, sans-serif" font-size="13" fill="#6B7280" font-weight="500">2024</text>
+      <text x="60" y="55" font-family="Inter, sans-serif" font-size="13" fill="#111827" font-weight="600">£11.00</text>
+      <path d="M 110 50 L 122 35 L 130 35 M 122 35 L 122 43" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `,
+
+  /* === BRANCH DIAGRAM — Card 1 === */
+  branchDiagram: `
+    <svg viewBox="0 0 300 280" width="300" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="branch-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
+        </pattern>
+        <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+        </marker>
+        <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+        <radialGradient id="dest-glow" cx="0.5" cy="0.5" r="0.7">
+          <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18"/>
+          <stop offset="70%" stop-color="#3B82F6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- subtle background + soft glow behind the destination -->
+      <rect x="0" y="0" width="300" height="280" fill="url(#branch-dots)" opacity="0.45"/>
+      <ellipse cx="225" cy="140" rx="80" ry="80" fill="url(#dest-glow)"/>
+
+      <!-- Three coloured arrows entering from the LEFT edge (where the flaps sit
+           in the layout) and converging into the Rising prices box on the right.
+           Top-to-bottom colour order matches the flaps: green, amber, blue. -->
+      <path d="M 0 60 Q 75 60 138 110"
+            stroke="#10B981" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arr-green)"/>
+      <path d="M 0 140 L 138 140"
+            stroke="#F59E0B" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arr-amber)"/>
+      <path d="M 0 220 Q 75 220 138 165"
+            stroke="#2563EB" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+
+      <!-- Rising prices outcome box, on the right side of the diagram -->
+      <rect x="160" y="80" width="130" height="120" rx="18"
+            fill="#1E40AF" stroke="#1E3A8A" stroke-width="2"/>
+      <text x="225" y="120" font-size="9" font-weight="700" fill="#A5B4FC" text-anchor="middle" letter-spacing="2">THE OUTCOME</text>
+      <line x1="175" y1="130" x2="275" y2="130" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+      <text x="225" y="155" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">Rising</text>
+      <text x="225" y="178" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">prices ↑</text>
+    </svg>
+  `,
+
+  /* ============================================================
+     AD/AS DIAGRAM — Demand-pull (Card 2) — REBUILT
+     Mathematically correct intersections.
+     AD1: y = 0.625x + 12.5  (60,50)→(220,150)
+     AD2: y = 0.625x - 6.25  (90,50)→(250,150)  [parallel, +30 right]
+     SRAS: y = -0.605x + 195.26  (50,165)→(240,50)
+     E1 = (149, 105), E2 = (164, 96).  Both Y rises and P rises.
+     ============================================================ */
+  adAsDemandPull: `
+    <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="ad-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+      </defs>
+
+      <!-- chart axes — chart area: x ∈ [55, 380], y ∈ [40, 235] -->
+      <line x1="55" y1="35" x2="55" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="55" y1="235" x2="380" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="48" y="32" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
+      <text x="385" y="243" font-size="12" font-weight="700" fill="#374151">Y</text>
+
+      <!-- SRAS — slope -0.638, top-right at (350, 50) -->
+      <line x1="65" y1="232" x2="350" y2="50" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="358" y="50" font-size="12" font-weight="700" fill="#475569">SRAS</text>
+
+      <!-- AD₁ — dashed grey, top-left at (75, 60) -->
+      <line x1="75" y1="60" x2="305" y2="230" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+      <text x="60" y="50" font-size="12" font-weight="600" fill="#94A3B8">AD₁</text>
+
+      <!-- AD₂ — solid green, top at (135, 60), shifted right by 60 -->
+      <line x1="135" y1="60" x2="365" y2="230" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+      <text x="125" y="50" font-size="13" font-weight="800" fill="#10B981">AD₂</text>
+
+      <!-- shift arrow in clean lower-mid space, placed at y=190 between the lines -->
+      <path d="M 257 192 L 305 192" stroke="#10B981" stroke-width="2.6" fill="none" marker-end="url(#ad-shift)"/>
+      <text x="281" y="208" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle" letter-spacing="1">AD shifts right</text>
+
+      <!-- Equilibrium 1 — at (195, 149) -->
+      <line x1="55" y1="149" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+      <line x1="195" y1="235" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+      <circle cx="195" cy="149" r="4.5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+      <text x="50" y="153" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="end">P₁</text>
+      <text x="195" y="252" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">Y₁</text>
+
+      <!-- Equilibrium 2 — at (227, 128) -->
+      <line x1="55" y1="128" x2="227" y2="128" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <line x1="227" y1="235" x2="227" y2="128" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <circle cx="227" cy="128" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+      <text x="50" y="132" font-size="11" font-weight="800" fill="#10B981" text-anchor="end">P₂</text>
+      <text x="227" y="252" font-size="11" font-weight="800" fill="#10B981" text-anchor="middle">Y₂</text>
+
+      <!-- Result chip — tucked in clean right margin -->
+      <g transform="translate(395, 95)">
+        <rect x="0" y="0" width="75" height="58" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
+        <text x="37.5" y="18" font-size="9" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">RESULT</text>
+        <line x1="12" y1="24" x2="63" y2="24" stroke="#10B981" stroke-width="1" opacity="0.4"/>
+        <text x="37.5" y="40" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">P ↑</text>
+        <text x="37.5" y="54" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Y ↑</text>
+      </g>
+    </svg>
+  `,
+
+  /* ============================================================
+     AD/AS DIAGRAM — Cost-push (Card 3) — REBUILT
+     AD: y = 0.625x + 12.5
+     SRAS1: y = -0.605x + 195.26  (50,165)→(240,50)
+     SRAS2: y = -0.605x + 170.26  (50,140)→(240,25)  [shift up 25]
+     E1 = (149, 105), E2 = (128, 93).  Y falls, P rises.
+     ============================================================ */
+  adAsCostPush: `
+    <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="sras-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+        </marker>
+      </defs>
+
+      <!-- chart axes -->
+      <line x1="55" y1="35" x2="55" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="55" y1="235" x2="380" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="48" y="32" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
+      <text x="385" y="243" font-size="12" font-weight="700" fill="#374151">Y</text>
+
+      <!-- AD — unchanged -->
+      <line x1="75" y1="60" x2="305" y2="230" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="312" y="232" font-size="12" font-weight="700" fill="#475569">AD</text>
+
+      <!-- SRAS₁ — dashed grey, top-right at (350, 50) -->
+      <line x1="65" y1="232" x2="350" y2="50" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+      <text x="358" y="50" font-size="12" font-weight="600" fill="#94A3B8">SRAS₁</text>
+
+      <!-- SRAS₂ — solid amber, shifted up by 50, endpoints (65, 182) → (303, 30) -->
+      <line x1="65" y1="182" x2="303" y2="30" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+      <text x="310" y="30" font-size="13" font-weight="800" fill="#F59E0B">SRAS₂</text>
+
+      <!-- shift arrow — vertical, in clean upper-middle space at x=270 -->
+      <path d="M 270 95 L 270 60" stroke="#F59E0B" stroke-width="2.6" fill="none" marker-end="url(#sras-shift)"/>
+      <text x="282" y="80" font-size="10" font-weight="700" fill="#F59E0B" letter-spacing="1">SRAS shifts left</text>
+
+      <!-- Equilibrium 1 — at (195, 149) -->
+      <line x1="55" y1="149" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+      <line x1="195" y1="235" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+      <circle cx="195" cy="149" r="4.5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+      <text x="50" y="153" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="end">P₁</text>
+      <text x="195" y="252" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">Y₁</text>
+
+      <!-- Equilibrium 2 — at (159, 122). Y falls, P rises. -->
+      <line x1="55" y1="122" x2="159" y2="122" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <line x1="159" y1="235" x2="159" y2="122" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <circle cx="159" cy="122" r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5"/>
+      <text x="50" y="126" font-size="11" font-weight="800" fill="#F59E0B" text-anchor="end">P₂</text>
+      <text x="159" y="252" font-size="11" font-weight="800" fill="#F59E0B" text-anchor="middle">Y₂</text>
+
+      <!-- Result chip — clean right margin -->
+      <g transform="translate(395, 95)">
+        <rect x="0" y="0" width="75" height="58" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="37.5" y="18" font-size="9" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="1">RESULT</text>
+        <line x1="12" y1="24" x2="63" y2="24" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+        <text x="37.5" y="40" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">P ↑</text>
+        <text x="37.5" y="54" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">Y ↓</text>
+      </g>
+    </svg>
+  `,
+
+  /* === QE puzzle chart — Card 5 === */
+  qeChart: `
+    <svg viewBox="0 0 480 220" width="480" height="220" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <line x1="50" y1="20" x2="50" y2="180" stroke="#374151" stroke-width="1.5"/>
+      <line x1="50" y1="180" x2="460" y2="180" stroke="#374151" stroke-width="1.5"/>
+      <text x="60"  y="200" font-size="10" fill="#6B7280" text-anchor="middle">2008</text>
+      <text x="160" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2012</text>
+      <text x="260" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2016</text>
+      <text x="360" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2020</text>
+      <text x="455" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2022</text>
+      <line x1="50" y1="158" x2="460" y2="158" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="465" y="162" font-size="10" fill="#9CA3AF">2% target</text>
+      <path d="M 60 175 Q 100 120 160 90 Q 220 75 280 70 Q 340 65 400 60 Q 440 55 455 50"
+            stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="430" y="42" font-size="11" font-weight="700" fill="#2563EB">M0 ↑↑</text>
+      <text x="430" y="55" font-size="10" fill="#2563EB" opacity="0.7">(5-10×)</text>
+      <path d="M 60 158 L 100 152 L 140 162 L 180 156 L 220 160 L 260 158 L 300 156 L 340 154 L 380 150 L 410 130 L 440 65 L 455 70"
+            stroke="#E11D48" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="120" y="148" font-size="11" font-weight="700" fill="#E11D48">CPI ≈ 2%</text>
+      <rect x="395" y="76" width="62" height="22" rx="4" fill="#FFE4E6" stroke="#E11D48"/>
+      <text x="426" y="91" font-size="10" font-weight="700" fill="#E11D48" text-anchor="middle">2022 spike</text>
+      <line x1="426" y1="98" x2="430" y2="115" stroke="#E11D48" stroke-width="1"/>
+      <text x="40" y="100" font-size="10" fill="#6B7280" text-anchor="end" transform="rotate(-90 40 100)">Index</text>
+    </svg>
+  `,
+
+  /* === AD composition stacked bar — Aggregate Demand Card 1 === */
+  adComposition: `
+    <svg viewBox="0 0 360 480" width="360" height="480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="ad-comp-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
+        </pattern>
+        <filter id="bar-shadow" x="-5%" y="-5%" width="120%" height="105%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="360" height="480" fill="url(#ad-comp-dots)" opacity="0.4"/>
+
+      <!-- Eyebrow / title -->
+      <text x="180" y="28" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2" text-anchor="middle">UK AGGREGATE DEMAND</text>
+      <text x="180" y="46" font-size="10" font-weight="600" fill="#64748B" letter-spacing="0.5" text-anchor="middle">approximate ONS shares</text>
+
+      <!-- ===== Vertical stacked bar =====
+           Bar at x=80 to x=140 (width 60).
+           Bar y range: 70 to 410 (height 340).
+           Shares: C 60% = 204px, I 17% = 57.8px, G 20% = 68px, X-M 3% = 10.2px.
+           Stack from top (high C) downward, BUT make C BIGGEST (at bottom for visual weight).
+           Actually convention: largest at bottom for visual stability.
+           Stack from top: G (smallest visible), I, then C (biggest at bottom). Actually let's do
+           C on top (since it's the headline), then G, then I, then X-M at bottom.
+           Re-think: visual weight reads best with biggest at the BOTTOM. So:
+             X-M tiny on top, I, G, C biggest at bottom. -->
+
+      <!-- X-M: 3% = ~10px, y=70 to y=80 -->
+      <g filter="url(#bar-shadow)">
+        <rect x="80" y="70" width="60" height="10" fill="#7E22CE" rx="3"/>
+      </g>
+      <!-- I: 17% = ~58px, y=80 to y=138 -->
+      <g filter="url(#bar-shadow)">
+        <rect x="80" y="80" width="60" height="58" fill="#F59E0B" rx="0"/>
+      </g>
+      <!-- G: 20% = ~68px, y=138 to y=206 -->
+      <g filter="url(#bar-shadow)">
+        <rect x="80" y="138" width="60" height="68" fill="#2563EB" rx="0"/>
+      </g>
+      <!-- C: 60% = ~204px, y=206 to y=410 -->
+      <g filter="url(#bar-shadow)">
+        <rect x="80" y="206" width="60" height="204" fill="#10B981" rx="0"/>
+      </g>
+
+      <!-- Re-cap top/bottom rounded corners by stacking with rounded outer rects -->
+      <!-- The X-M top gets rounded; the C bottom gets rounded. Easier: redraw small rounded caps. -->
+      <rect x="80" y="70" width="60" height="6" fill="#7E22CE"/>
+      <path d="M 80 73 Q 80 70 83 70 L 137 70 Q 140 70 140 73 L 140 76 L 80 76 Z" fill="#7E22CE"/>
+      <rect x="80" y="404" width="60" height="6" fill="#10B981"/>
+      <path d="M 80 404 L 140 404 L 140 407 Q 140 410 137 410 L 83 410 Q 80 410 80 407 Z" fill="#10B981"/>
+
+      <!-- Percentage labels INSIDE each band -->
+      <!-- C: 60% — big, centred in its band -->
+      <text x="110" y="315" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">60%</text>
+      <!-- G: 20% — centred in band (138 to 206, mid 172) -->
+      <text x="110" y="178" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">20%</text>
+      <!-- I: 17% — centred in band (80 to 138, mid 109) -->
+      <text x="110" y="115" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">17%</text>
+      <!-- (X-M): 3% — too tiny for inline text. Leader line + label to the right. -->
+
+      <!-- ===== Component labels to the RIGHT of each band ===== -->
+      <!-- X-M (3%) with leader line -->
+      <line x1="145" y1="75" x2="170" y2="75" stroke="#7E22CE" stroke-width="1.5"/>
+      <text x="175" y="73"  font-size="14" font-weight="700" fill="#7E22CE">Net Trade (X−M)</text>
+      <text x="175" y="89"  font-size="11" font-weight="600" fill="#64748B">~3% · volatile</text>
+
+      <!-- I (17%) -->
+      <text x="160" y="105" font-size="14" font-weight="700" fill="#B45309">Investment (I)</text>
+      <text x="160" y="121" font-size="11" font-weight="700" fill="#B45309" letter-spacing="1">VOLATILE</text>
+
+      <!-- G (20%) -->
+      <text x="160" y="170" font-size="14" font-weight="700" fill="#1D4ED8">Government (G)</text>
+      <text x="160" y="186" font-size="11" font-weight="600" fill="#64748B">policy lever</text>
+
+      <!-- C (60%) -->
+      <text x="160" y="305" font-size="14" font-weight="700" fill="#047857">Consumption (C)</text>
+      <text x="160" y="321" font-size="11" font-weight="600" fill="#64748B">stable, dominant</text>
+
+      <!-- ===== Equation footer ===== -->
+      <g transform="translate(180, 450)">
+        <rect x="-145" y="-18" width="290" height="36" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="0" y="6" font-size="15" font-weight="800" fill="#0F172A" text-anchor="middle">AD = C + I + G + (X−M)</text>
+      </g>
+    </svg>
+  `,
+
+  /* === Multiplier ripple chart — Aggregate Demand Card 7 === */
+  multiplierChart: `
+    <svg viewBox="0 0 480 220" width="480" height="220" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="mult-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+      </defs>
+
+      <!-- Eyebrow -->
+      <text x="240" y="22" font-size="10" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">MULTIPLIER RIPPLE · MPC = 0.6</text>
+
+      <!-- Initial injection -->
+      <g transform="translate(30, 50)">
+        <text x="0" y="0" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">INITIAL INJECTION</text>
+        <rect x="0" y="8" width="60" height="48" fill="#2563EB" rx="6"/>
+        <text x="30" y="38" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">£10bn</text>
+        <text x="30" y="78" font-size="9" font-weight="700" fill="#1D4ED8" text-anchor="middle">Round 1</text>
+      </g>
+
+      <!-- Arrow to the ripple -->
+      <path d="M 100 78 L 130 78" stroke="#2563EB" stroke-width="2" fill="none" marker-end="url(#mult-arrow)"/>
+
+      <!-- Successive rounds (each 60% of the previous) -->
+      <g transform="translate(140, 50)">
+        <!-- Round 2: £6bn -->
+        <rect x="0" y="22" width="38" height="34" fill="#3B82F6" rx="4"/>
+        <text x="19" y="44" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">£6bn</text>
+        <text x="19" y="78" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">Round 2</text>
+
+        <!-- Round 3: £3.6bn -->
+        <rect x="45" y="33" width="28" height="23" fill="#60A5FA" rx="3"/>
+        <text x="59" y="49" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">£3.6</text>
+        <text x="59" y="78" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">R3</text>
+
+        <!-- Round 4: £2.16bn -->
+        <rect x="80" y="40" width="20" height="16" fill="#93C5FD" rx="3"/>
+        <text x="90" y="52" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle">£2.2</text>
+        <text x="90" y="78" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">R4</text>
+
+        <!-- Round 5: £1.30bn -->
+        <rect x="106" y="45" width="14" height="11" fill="#BFDBFE" rx="2"/>
+        <text x="113" y="78" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">R5</text>
+
+        <!-- … -->
+        <text x="135" y="50" font-size="14" font-weight="800" fill="#94A3B8">…</text>
+      </g>
+
+      <!-- "=" sign -->
+      <text x="300" y="84" font-size="22" font-weight="800" fill="#64748B" text-anchor="middle">=</text>
+
+      <!-- Final total -->
+      <g transform="translate(320, 50)">
+        <text x="65" y="0" font-size="10" font-weight="700" fill="#047857" letter-spacing="1" text-anchor="middle">FINAL AD IMPACT</text>
+        <rect x="0" y="8" width="130" height="48" fill="#10B981" rx="6"/>
+        <text x="65" y="40" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">£25bn</text>
+        <text x="65" y="78" font-size="9" font-weight="700" fill="#047857" text-anchor="middle">over all rounds</text>
+      </g>
+
+      <!-- Formula at bottom -->
+      <g transform="translate(240, 170)">
+        <rect x="-180" y="-18" width="360" height="36" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="0" y="6" font-size="14" font-weight="800" fill="#0F172A" text-anchor="middle">k = 1 / (1 − MPC) = 1 / 0.4 = 2.5  →  £10bn × 2.5 = £25bn</text>
+      </g>
+
+      <!-- Caption -->
+      <text x="240" y="205" font-size="9" font-style="italic" fill="#94A3B8" text-anchor="middle">Each round = 60% of the previous (the MPC). Sum converges to multiplier × initial.</text>
+    </svg>
+  `,
+
+  /* === AD movement vs shift — Aggregate Demand Card 3 === */
+  adMovementShift: `
+    <svg viewBox="0 0 640 280" width="640" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="mv-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+        </marker>
+        <marker id="shift-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+      </defs>
+
+      <!-- ===== LEFT PANEL: MOVEMENT ALONG AD ===== -->
+      <g transform="translate(0, 0)">
+        <!-- Panel header pill -->
+        <g transform="translate(150, 20)">
+          <rect x="-110" y="-12" width="220" height="24" rx="12" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+          <text x="0" y="4" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" letter-spacing="1.5">MOVEMENT ALONG AD</text>
+        </g>
+
+        <!-- Subhead -->
+        <text x="150" y="55" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">price level changes · same curve</text>
+
+        <!-- Axes (x: 50..280, y: 80..220) -->
+        <line x1="50" y1="70" x2="50" y2="220" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="50" y1="220" x2="290" y2="220" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="42" y="68" font-size="11" font-weight="700" fill="#374151" text-anchor="end">P</text>
+        <text x="295" y="228" font-size="11" font-weight="700" fill="#374151">Y</text>
+
+        <!-- AD curve (single, slope -0.6) -->
+        <line x1="65" y1="90" x2="265" y2="210" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        <text x="270" y="214" font-size="12" font-weight="800" fill="#2563EB">AD</text>
+
+        <!-- Point 1 (top of curve, higher P, lower Y) — at (115, 120) -->
+        <line x1="50" y1="120" x2="115" y2="120" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+        <line x1="115" y1="220" x2="115" y2="120" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+        <circle cx="115" cy="120" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="44" y="124" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="end">P₁</text>
+        <text x="115" y="237" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="middle">Y₁</text>
+
+        <!-- Point 2 (lower P, higher Y) — at (215, 180) -->
+        <line x1="50" y1="180" x2="215" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+        <line x1="215" y1="220" x2="215" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
+        <circle cx="215" cy="180" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="44" y="184" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="end">P₂</text>
+        <text x="215" y="237" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="middle">Y₂</text>
+
+        <!-- Arrow along the curve from point 1 to point 2 -->
+        <path d="M 130 130 Q 165 155 200 175"
+              stroke="#94A3B8" stroke-width="2.2" fill="none" stroke-linecap="round" marker-end="url(#mv-arrow)"/>
+        <text x="180" y="148" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">slide</text>
+
+        <!-- Cause chip -->
+        <g transform="translate(150, 257)">
+          <rect x="-110" y="-12" width="220" height="22" rx="11" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
+          <text x="0" y="3" font-size="10" font-weight="700" fill="#1D4ED8" text-anchor="middle">trigger: price level (P) changes</text>
+        </g>
+      </g>
+
+      <!-- ===== Divider ===== -->
+      <line x1="320" y1="20" x2="320" y2="260" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4 4"/>
+
+      <!-- ===== RIGHT PANEL: SHIFT OF AD ===== -->
+      <g transform="translate(330, 0)">
+        <!-- Panel header pill -->
+        <g transform="translate(150, 20)">
+          <rect x="-110" y="-12" width="220" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+          <text x="0" y="4" font-size="10" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1.5">SHIFT OF AD CURVE</text>
+        </g>
+
+        <!-- Subhead -->
+        <text x="150" y="55" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">whole curve moves · C, I, G or X−M change</text>
+
+        <!-- Axes -->
+        <line x1="50" y1="70" x2="50" y2="220" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="50" y1="220" x2="290" y2="220" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="42" y="68" font-size="11" font-weight="700" fill="#374151" text-anchor="end">P</text>
+        <text x="295" y="228" font-size="11" font-weight="700" fill="#374151">Y</text>
+
+        <!-- AD₁ — dashed grey -->
+        <line x1="60" y1="90" x2="220" y2="210" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+        <text x="48" y="86" font-size="11" font-weight="700" fill="#94A3B8">AD₁</text>
+
+        <!-- AD₂ — solid green, shifted right by 50px -->
+        <line x1="110" y1="90" x2="270" y2="210" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+        <text x="275" y="214" font-size="12" font-weight="800" fill="#10B981">AD₂</text>
+
+        <!-- Horizontal shift arrow in the lower-middle clean space -->
+        <path d="M 150 175 L 200 175"
+              stroke="#10B981" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#shift-arrow)"/>
+        <text x="175" y="194" font-size="10" font-weight="800" fill="#10B981" text-anchor="middle" letter-spacing="0.5">shift right</text>
+      </g>
+
+      <!-- Cause chip (right panel - placed at parent SVG coords) -->
+      <g transform="translate(480, 257)">
+        <rect x="-110" y="-12" width="220" height="22" rx="11" fill="#ECFDF5" stroke="#10B981" stroke-width="1"/>
+        <text x="0" y="3" font-size="10" font-weight="700" fill="#047857" text-anchor="middle">trigger: C / I / G / (X−M) changes</text>
+      </g>
+    </svg>
+  `,
+
+  /* === AD interactive — base/extension/shift via CSS layers === */
+  adInteractive: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
+      <defs>
+        <marker id="adv2-mv-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 10 0 L 0 5 L 10 10 z" fill="#F59E0B"/>
+        </marker>
+        <marker id="adv2-mv-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+        </marker>
+        <marker id="adv2-sh-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 10 0 L 0 5 L 10 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="adv2-sh-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+      </defs>
+
+      <!-- ===== TITLE STRIP at the top ===== -->
+      <g class="layer-legend-base">
+        <circle cx="60" cy="32" r="7" fill="#2563EB"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">AD slopes downward · three macroeconomic reasons</text>
+      </g>
+      <g class="layer-legend-extension">
+        <circle cx="60" cy="32" r="7" fill="#F59E0B"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Price level changes → slide along AD (movement)</text>
+      </g>
+      <g class="layer-legend-shift">
+        <circle cx="60" cy="32" r="7" fill="#10B981"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Non-price factor changes → whole curve shifts</text>
+      </g>
+
+      <!-- ===== CHART AREA on the LEFT half =====
+           x ∈ [60, 540], y ∈ [70, 400]  (480 wide × 330 tall) -->
+      <g class="layer-axes">
+        <line x1="60" y1="60"  x2="60"  y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <text x="60"  y="50"  font-size="18" font-weight="800" fill="#0F172A" text-anchor="middle">P</text>
+        <text x="568" y="406" font-size="18" font-weight="800" fill="#0F172A">Y</text>
+      </g>
+
+      <!-- ===== AD₁ — slope 1, from (120, 110) to (470, 380). E₁ at midpoint (295, 245) ===== -->
+      <g class="layer-curve-solid">
+        <line x1="120" y1="110" x2="470" y2="380" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+        <text x="480" y="384" font-size="15" font-weight="700" fill="#334155">AD</text>
+      </g>
+
+      <!-- Curve-label override in shift state -->
+      <g class="layer-curve-label-shift">
+        <text x="480" y="384" font-size="15" font-weight="700" fill="#334155">AD₁</text>
+      </g>
+
+      <!-- ===== E₁ EQUILIBRIUM at (295, 245) ===== -->
+      <g class="layer-e1">
+        <line x1="60"  y1="245" x2="295" y2="245" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <line x1="295" y1="400" x2="295" y2="245" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="295" cy="245" r="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="50" y="250" font-size="14" font-weight="700" fill="#1E40AF" text-anchor="end">P₁</text>
+        <text x="295" y="423" font-size="14" font-weight="700" fill="#1E40AF" text-anchor="middle">Y₁</text>
+        <text x="304" y="238" font-size="13" font-weight="700" fill="#1E40AF">E₁</text>
+      </g>
+
+      <!-- ===== EXTENSION LAYER — TWO new equilibria on the curve =====
+           Slope is 1, so points on the curve: (120+t, 110+t) for t in [0, 350]
+           E₂ upper: t=110 → (230, 220). On axis: P₂ at y=220, Y₂ at x=230
+           E₃ lower: t=190 → (310 wait that's beyond midpoint). Let me redo.
+           Midpoint t = 175. So E₂ = t=105 → (225, 215); E₃ = t=245 → (365, 355). -->
+      <g class="layer-extension">
+        <!-- E₂ upper equilibrium at (225, 215) -->
+        <line x1="60"  y1="215" x2="225" y2="215" stroke="#FCA5A5" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <line x1="225" y1="400" x2="225" y2="215" stroke="#FCA5A5" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <circle cx="225" cy="215" r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="50" y="220" font-size="14" font-weight="700" fill="#B45309" text-anchor="end">P₂</text>
+        <text x="225" y="423" font-size="14" font-weight="700" fill="#B45309" text-anchor="middle">Y₂</text>
+        <text x="234" y="208" font-size="13" font-weight="700" fill="#B45309">E₂</text>
+
+        <!-- E₃ lower equilibrium at (365, 355) -->
+        <line x1="60"  y1="355" x2="365" y2="355" stroke="#FCA5A5" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <line x1="365" y1="400" x2="365" y2="355" stroke="#FCA5A5" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <circle cx="365" cy="355" r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="50" y="360" font-size="14" font-weight="700" fill="#B45309" text-anchor="end">P₃</text>
+        <text x="365" y="423" font-size="14" font-weight="700" fill="#B45309" text-anchor="middle">Y₃</text>
+        <text x="374" y="348" font-size="13" font-weight="700" fill="#B45309">E₃</text>
+
+        <!-- Double-headed amber arrow offset perpendicular to the curve.
+             Anchor near E₁=(295,245); perpendicular into upper-right=(0.707,-0.707).
+             Offset 40: midpoint (323, 217). Length 110 along curve direction.
+             Start (284, 178); End (362, 256). -->
+        <line x1="284" y1="178" x2="362" y2="256"
+              stroke="#F59E0B" stroke-width="3" stroke-linecap="round"
+              marker-start="url(#adv2-mv-start)" marker-end="url(#adv2-mv-end)"/>
+      </g>
+
+      <!-- ===== SHIFT LAYER — AD₀ and AD₂ ===== -->
+      <g class="layer-shift">
+        <!-- AD₀ shifted left by 80: from (40, 110) to (390, 380), parallel slope 1 -->
+        <line x1="40" y1="110" x2="390" y2="380" stroke="#10B981" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round" opacity="0.75"/>
+        <text x="46" y="103" font-size="14" font-weight="700" fill="#047857">AD₀</text>
+
+        <!-- AD₂ shifted right by 80: from (200, 110) to (550, 380), parallel slope 1 -->
+        <line x1="200" y1="110" x2="550" y2="380" stroke="#10B981" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round" opacity="0.75"/>
+        <text x="206" y="103" font-size="14" font-weight="700" fill="#047857">AD₂</text>
+
+        <!-- New equilibria at same P₁ (y=245):
+             AD₀: t=135 → x = 40+135 = 175. So E₀ at (175, 245).
+             AD₂: t=135 → x = 200+135 = 335. So E₂_shift at (335, 245). -->
+
+        <!-- E₀ left equilibrium -->
+        <line x1="175" y1="400" x2="175" y2="245" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="175" cy="245" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="175" y="423" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">Y₀</text>
+        <text x="166" y="238" font-size="13" font-weight="700" fill="#047857" text-anchor="end">E₀</text>
+
+        <!-- E₂_shift right equilibrium -->
+        <line x1="335" y1="400" x2="335" y2="245" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="335" cy="245" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="335" y="423" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">Y₂</text>
+        <text x="344" y="238" font-size="13" font-weight="700" fill="#047857">E₂</text>
+
+        <!-- Double-headed green arrow above the three equilibria -->
+        <line x1="190" y1="200" x2="320" y2="200"
+              stroke="#10B981" stroke-width="3.5" stroke-linecap="round"
+              marker-start="url(#adv2-sh-start)" marker-end="url(#adv2-sh-end)"/>
+      </g>
+
+      <!-- ===== RIGHT-SIDE EXPLAINER PANEL =====
+           A vertical strip from x=600 to x=880, top to bottom, holds state-aware
+           annotations that the diagram doesn't need to fight for space with. -->
+
+      <!-- Vertical divider line -->
+      <line x1="595" y1="70" x2="595" y2="400" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+      <!-- BASE state annotation -->
+      <g class="layer-legend-base">
+        <g transform="translate(620, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">THE CURVE</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">AD shows planned</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">spending at every</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">price level.</text>
+          <text x="0" y="105" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">WHY IT SLOPES DOWN</text>
+          <text x="0" y="130" font-size="13" font-weight="600" fill="#475569">① Wealth effect</text>
+          <text x="0" y="150" font-size="13" font-weight="600" fill="#475569">② Interest rate effect</text>
+          <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">③ International substitution</text>
+          <text x="0" y="210" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">EQUILIBRIUM</text>
+          <text x="0" y="234" font-size="14" font-weight="600" fill="#334155">E₁ sits where AD</text>
+          <text x="0" y="254" font-size="14" font-weight="600" fill="#334155">meets short-run AS</text>
+          <text x="0" y="274" font-size="14" font-weight="600" fill="#334155">(not shown here).</text>
+        </g>
+      </g>
+
+      <!-- EXTENSION state annotation -->
+      <g class="layer-legend-extension">
+        <g transform="translate(620, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">SLIDE ALONG AD</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">If the <tspan font-weight="700">price level</tspan></text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">changes — and only</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">that — we slide UP</text>
+          <text x="0" y="90" font-size="14" font-weight="600" fill="#334155">or DOWN the curve.</text>
+          <text x="0" y="125" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">RESULT</text>
+          <text x="0" y="150" font-size="14" font-weight="600" fill="#334155">P ↑ → Y ↓ (E₂)</text>
+          <text x="0" y="170" font-size="14" font-weight="600" fill="#334155">P ↓ → Y ↑ (E₃)</text>
+          <text x="0" y="205" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">CURVE STAYS PUT</text>
+          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Same curve, different</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">point. No shift.</text>
+        </g>
+      </g>
+
+      <!-- SHIFT state annotation -->
+      <g class="layer-legend-shift">
+        <g transform="translate(620, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">SHIFT OF AD CURVE</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">If <tspan font-weight="700">C, I, G or (X−M)</tspan></text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">changes, the whole</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">curve moves at every</text>
+          <text x="0" y="90" font-size="14" font-weight="600" fill="#334155">price level.</text>
+          <text x="0" y="125" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">TRIGGERS — EITHER WAY</text>
+          <text x="0" y="150" font-size="13" font-weight="600" fill="#475569">Rate cuts → shift right</text>
+          <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">Tax rises → shift left</text>
+          <text x="0" y="190" font-size="13" font-weight="600" fill="#475569">Sterling falls → shift right</text>
+          <text x="0" y="210" font-size="13" font-weight="600" fill="#475569">Confidence drops → left</text>
+          <text x="0" y="245" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">NEW EQUILIBRIUM</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">Same P₁, different Y</text>
+        </g>
+      </g>
+    </svg>
+  `,
+
+  /* === AD topic hero illustration === */
+  heroAd: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="ad-hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="ad-hero-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0F9FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="ad-hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <!-- Background -->
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#ad-hero-bg)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#ad-hero-dots)" opacity="0.4"/>
+
+      <!-- Faint convergence "GDP growing" arc at top, mirroring inflation hero arc -->
+      <path d="M 245 60 Q 245 170 245 295" stroke="#2563EB" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-dasharray="3 4" opacity="0.45"/>
+      <polygon points="245,295 240,285 250,285" fill="#2563EB" opacity="0.55"/>
+      <text x="262" y="180" font-size="9" font-weight="800" fill="#2563EB"
+            text-anchor="middle" letter-spacing="2"
+            transform="rotate(90 262 180)" opacity="0.7">AD = TOTAL SPEND</text>
+
+      <!-- ===== Four cartoon "spenders" pouring into the central pot ===== -->
+
+      <!-- Tag 1: Consumer (C) — green coin pouch, top-left -->
+      <g transform="translate(38, 50) rotate(-8)" filter="url(#ad-hero-shadow)">
+        <!-- pouch -->
+        <path d="M 4 14 Q 0 8 8 6 L 32 6 Q 40 8 36 14 L 38 36 Q 38 44 30 44 L 10 44 Q 2 44 2 36 Z"
+              fill="#10B981" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- string tie -->
+        <line x1="14" y1="6" x2="14" y2="2" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="26" y1="6" x2="26" y2="2" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- "C" label -->
+        <text x="20" y="29" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">C</text>
+      </g>
+      <!-- C label -->
+      <text x="62" y="115" font-size="10" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="0.5">CONSUMERS</text>
+      <text x="62" y="127" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~60%</text>
+
+      <!-- Tag 2: Investment (I) — amber tool/factory, top-right -->
+      <g transform="translate(170, 45) rotate(6)" filter="url(#ad-hero-shadow)">
+        <!-- factory body -->
+        <rect x="0" y="14" width="42" height="30" fill="#F59E0B" stroke="#B45309" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- roof -->
+        <polygon points="0,14 14,4 28,14" fill="#F59E0B" stroke="#B45309" stroke-width="1.8" stroke-linejoin="round"/>
+        <polygon points="14,14 28,4 42,14" fill="#F59E0B" stroke="#B45309" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- chimney -->
+        <rect x="32" y="0" width="6" height="8" fill="#B45309"/>
+        <!-- "I" label -->
+        <text x="21" y="35" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">I</text>
+      </g>
+      <!-- I label -->
+      <text x="194" y="113" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="0.5">FIRMS</text>
+      <text x="194" y="125" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~17%</text>
+
+      <!-- Tag 3: Government (G) — blue building, mid-left -->
+      <g transform="translate(20, 170) rotate(-4)" filter="url(#ad-hero-shadow)">
+        <!-- column building -->
+        <rect x="0" y="14" width="48" height="28" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- pediment -->
+        <polygon points="-3,14 24,2 51,14" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- columns -->
+        <line x1="10" y1="16" x2="10" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
+        <line x1="20" y1="16" x2="20" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
+        <line x1="30" y1="16" x2="30" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
+        <line x1="40" y1="16" x2="40" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
+        <!-- "G" label -->
+        <text x="24" y="33" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">G</text>
+      </g>
+      <!-- G label -->
+      <text x="46" y="226" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="0.5">GOVERNMENT</text>
+      <text x="46" y="238" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~20%</text>
+
+      <!-- Tag 4: Net Trade (X−M) — purple ship/box, mid-right -->
+      <g transform="translate(170, 170) rotate(8)" filter="url(#ad-hero-shadow)">
+        <!-- crate -->
+        <rect x="0" y="8" width="44" height="32" fill="#7E22CE" stroke="#581C87" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- slats -->
+        <line x1="0" y1="18" x2="44" y2="18" stroke="#581C87" stroke-width="1.2" opacity="0.7"/>
+        <line x1="0" y1="30" x2="44" y2="30" stroke="#581C87" stroke-width="1.2" opacity="0.7"/>
+        <line x1="22" y1="8" x2="22" y2="40" stroke="#581C87" stroke-width="1.2" opacity="0.7"/>
+        <!-- arrow up — exports outflow indicator -->
+        <path d="M 8 5 L 12 1 L 16 5" stroke="#581C87" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- "X−M" label -->
+        <text x="22" y="29" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">X−M</text>
+      </g>
+      <!-- X-M label -->
+      <text x="195" y="226" font-size="10" font-weight="800" fill="#7E22CE" text-anchor="middle" letter-spacing="0.5">NET TRADE</text>
+      <text x="195" y="238" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~3%</text>
+
+      <!-- ===== Strings/streams from each spender into the central pot ===== -->
+      <!-- C → pot -->
+      <path d="M 64 90 Q 90 200 130 270" stroke="#10B981" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
+      <!-- I → pot -->
+      <path d="M 200 90 Q 175 200 150 270" stroke="#F59E0B" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
+      <!-- G → pot -->
+      <path d="M 60 215 Q 95 245 130 275" stroke="#2563EB" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
+      <!-- X-M → pot -->
+      <path d="M 200 215 Q 175 245 150 275" stroke="#7E22CE" stroke-width="1.8" fill="none"
+            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
+
+      <!-- ===== Central pot (the "economy") ===== -->
+      <g transform="translate(95, 265)" filter="url(#ad-hero-shadow)">
+        <!-- Bowl body -->
+        <path d="M 4 6 L 86 6 L 80 60 Q 80 64 76 64 L 14 64 Q 10 64 10 60 Z"
+              fill="#FCD34D" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
+        <!-- Top rim -->
+        <ellipse cx="45" cy="6" rx="42" ry="6" fill="#FBBF24" stroke="#92400E" stroke-width="2"/>
+        <!-- Texture lines -->
+        <line x1="20" y1="22" x2="22" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="44" y1="22" x2="44" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="68" y1="22" x2="66" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <!-- "AD" label inside -->
+        <text x="45" y="42" font-size="18" font-weight="800" fill="#92400E" text-anchor="middle">AD</text>
+      </g>
+
+      <!-- A couple of coin sparkles around the pot -->
+      <g transform="translate(82, 290)" opacity="0.8">
+        <circle cx="0" cy="0" r="7" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <text x="0" y="3" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g transform="translate(200, 305)" opacity="0.75">
+        <circle cx="0" cy="0" r="8" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <text x="0" y="3" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- Bottom strip -->
+      <g transform="translate(20, 333)">
+        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
+        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">FOUR SOURCES · ONE DEMAND</text>
+      </g>
+    </svg>
+  `,
+
+  heroUnemployment: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="un-hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="un-hero-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0F9FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="un-hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#un-hero-bg)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#un-hero-dots)" opacity="0.4"/>
+
+      <!-- Top: working-age population pool -->
+      <g transform="translate(140, 60)">
+        <ellipse cx="0" cy="0" rx="95" ry="22" fill="#FCD34D" stroke="#92400E" stroke-width="2"/>
+        <text x="0" y="-2" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle" letter-spacing="1.5">WORKING-AGE</text>
+        <text x="0" y="10" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle" letter-spacing="1.5">POPULATION (16-64)</text>
+      </g>
+
+      <!-- Three flow lines from pool down to the three buckets -->
+      <path d="M 75 70 Q 60 130 50 180"  stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.6"/>
+      <path d="M 140 82 L 140 180"        stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.6"/>
+      <path d="M 205 70 Q 220 130 230 180" stroke="#2563EB" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.6"/>
+
+      <!-- ===== Three figure groups ===== -->
+
+      <!-- EMPLOYED (green, left) — group of 3 figures, briefcase -->
+      <g transform="translate(20, 190)" filter="url(#un-hero-shadow)">
+        <!-- Big rounded panel -->
+        <rect x="0" y="0" width="60" height="70" rx="10" fill="#10B981" stroke="#047857" stroke-width="1.8"/>
+        <!-- Stick figures (3) -->
+        <!-- Figure 1 -->
+        <circle cx="15" cy="22" r="5" fill="#FFFFFF"/>
+        <rect x="11" y="28" width="8" height="14" rx="2" fill="#FFFFFF"/>
+        <!-- Figure 2 -->
+        <circle cx="30" cy="22" r="5" fill="#FFFFFF"/>
+        <rect x="26" y="28" width="8" height="14" rx="2" fill="#FFFFFF"/>
+        <!-- Figure 3 -->
+        <circle cx="45" cy="22" r="5" fill="#FFFFFF"/>
+        <rect x="41" y="28" width="8" height="14" rx="2" fill="#FFFFFF"/>
+        <!-- Briefcase -->
+        <rect x="22" y="50" width="16" height="10" rx="1" fill="#FCD34D" stroke="#92400E" stroke-width="1"/>
+        <rect x="27" y="48" width="6" height="3" fill="#92400E"/>
+      </g>
+      <text x="50" y="275" font-size="11" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="0.5">EMPLOYED</text>
+      <text x="50" y="288" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">working</text>
+
+      <!-- UNEMPLOYED (amber, centre) — single figure with question mark / looking -->
+      <g transform="translate(110, 190)" filter="url(#un-hero-shadow)">
+        <rect x="0" y="0" width="60" height="70" rx="10" fill="#F59E0B" stroke="#B45309" stroke-width="1.8"/>
+        <!-- Single figure -->
+        <circle cx="30" cy="25" r="7" fill="#FFFFFF"/>
+        <rect x="24" y="33" width="12" height="20" rx="3" fill="#FFFFFF"/>
+        <!-- Magnifying glass / job search -->
+        <g transform="translate(40, 42)">
+          <circle cx="0" cy="0" r="6" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+          <line x1="4" y1="4" x2="9" y2="9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </g>
+      <text x="140" y="275" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="0.5">UNEMPLOYED</text>
+      <text x="140" y="288" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">actively seeking</text>
+
+      <!-- INACTIVE (blue, right) — single figure with rest/student icon -->
+      <g transform="translate(200, 190)" filter="url(#un-hero-shadow)">
+        <rect x="0" y="0" width="60" height="70" rx="10" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8"/>
+        <!-- Single figure -->
+        <circle cx="30" cy="25" r="7" fill="#FFFFFF"/>
+        <rect x="24" y="33" width="12" height="20" rx="3" fill="#FFFFFF"/>
+        <!-- Book / not seeking -->
+        <g transform="translate(30, 60)">
+          <rect x="-9" y="-4" width="18" height="6" rx="1" fill="#FCD34D" stroke="#92400E" stroke-width="1"/>
+          <line x1="0" y1="-3" x2="0" y2="1" stroke="#92400E" stroke-width="0.8"/>
+        </g>
+      </g>
+      <text x="230" y="275" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="0.5">INACTIVE</text>
+      <text x="230" y="288" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">not seeking</text>
+
+      <!-- Bottom strip -->
+      <g transform="translate(20, 333)">
+        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
+        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">THREE STATES · ONE WORKFORCE</text>
+      </g>
+    </svg>
+  `,
+
+  labourClassification: `
+    <svg viewBox="0 0 300 280" width="300" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="lab-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
+        </pattern>
+        <marker id="lab-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="lab-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+        </marker>
+        <marker id="lab-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+        <radialGradient id="lab-src-glow" cx="0.5" cy="0.5" r="0.7">
+          <stop offset="0%" stop-color="#92400E" stop-opacity="0.18"/>
+          <stop offset="70%" stop-color="#92400E" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <rect x="0" y="0" width="300" height="280" fill="url(#lab-dots)" opacity="0.45"/>
+      <ellipse cx="225" cy="140" rx="80" ry="80" fill="url(#lab-src-glow)"/>
+
+      <rect x="160" y="80" width="130" height="120" rx="18" fill="#FCD34D" stroke="#92400E" stroke-width="2"/>
+      <text x="225" y="120" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle" letter-spacing="2">THE POPULATION</text>
+      <line x1="175" y1="130" x2="275" y2="130" stroke="#B45309" stroke-width="1" opacity="0.4"/>
+      <text x="225" y="155" font-size="15" font-weight="800" fill="#92400E" text-anchor="middle">Working-age</text>
+      <text x="225" y="175" font-size="15" font-weight="800" fill="#92400E" text-anchor="middle">(16-64)</text>
+
+      <path d="M 158 110 Q 80 90 0 60" stroke="#10B981" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#lab-arr-green)"/>
+      <path d="M 158 140 L 0 140" stroke="#F59E0B" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#lab-arr-amber)"/>
+      <path d="M 158 170 Q 80 190 0 220" stroke="#2563EB" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#lab-arr-blue)"/>
+    </svg>
+  `,
+
+  adAsRecession: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
+      <defs>
+        <marker id="recv2-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="recv2-gap-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 10 0 L 0 5 L 10 10 z" fill="#E11D48"/>
+        </marker>
+        <marker id="recv2-gap-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
+        </marker>
+      </defs>
+
+      <!-- ===== TOP TITLE STRIP ===== -->
+      <g class="layer-legend-base">
+        <circle cx="60" cy="32" r="7" fill="#2563EB"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Full employment · AD meets AS at Y<tspan font-size="13" baseline-shift="sub">FE</tspan></text>
+      </g>
+      <g class="layer-legend-extension">
+        <circle cx="60" cy="32" r="7" fill="#E11D48"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">AD falls → output gap → cyclical unemployment</text>
+      </g>
+      <g class="layer-legend-shift">
+        <circle cx="60" cy="32" r="7" fill="#F59E0B"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Sticky wages → unemployment PERSISTS (Keynes)</text>
+      </g>
+
+      <!-- ===== CHART AREA on the LEFT =====
+           x ∈ [60, 560], y ∈ [70, 400] -->
+      <g class="layer-axes">
+        <line x1="60" y1="60"  x2="60"  y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="400" x2="580" y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <text x="60"  y="50"  font-size="18" font-weight="800" fill="#0F172A" text-anchor="middle">P</text>
+        <text x="588" y="406" font-size="18" font-weight="800" fill="#0F172A">Y</text>
+      </g>
+
+      <!-- ===== LRAS at x=430 ===== -->
+      <g class="layer-axes">
+        <line x1="430" y1="80" x2="430" y2="400" stroke="#0F172A" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round" opacity="0.7"/>
+        <text x="439" y="95" font-size="16" font-weight="700" fill="#0F172A">LRAS</text>
+        <text x="430" y="423" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">FE</tspan></text>
+      </g>
+
+      <!-- ===== AS curve (upward-sloping SRAS), red, always visible =====
+           From (90, 380) to (550, 100). Slope = (100-380)/(550-90) = -0.609. -->
+      <g class="layer-curve-solid">
+        <line x1="90" y1="380" x2="550" y2="100" stroke="#E11D48" stroke-width="4" stroke-linecap="round"/>
+        <text x="560" y="100" font-size="16" font-weight="700" fill="#E11D48">AS</text>
+      </g>
+
+      <!-- ===== AD₁ — slope 0.5, passes through Y_FE on AS =====
+           AS at x=430: y = 380 - 0.609*(430-90) = 380 - 207 = 173.
+           So E₁ at (430, 173). AD₁ with slope 0.5, passing through (430,173):
+           y = 173 + 0.5(x-430) = 0.5x - 42.
+           At x=100, y=8 (too high — off chart). Use slope 0.4:
+           y = 173 + 0.4(x-430) = 0.4x + 1. At x=100, y=41 (still high).
+           Use slope 0.5 but start from x=140: at x=140, y=28 (off-top).
+           Better: keep slope 0.5 but render only from (180, 48) to (580, 248).
+           At x=180, y=48. At x=580, y=248. Slope (248-48)/(580-180)=0.5. ✓
+           Passes through (430, 173)? Yes: y = 48 + 0.5(430-180) = 48 + 125 = 173 ✓ -->
+      <g class="layer-curve-solid">
+        <line x1="180" y1="48" x2="580" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+        <text x="588" y="252" font-size="15" font-weight="700" fill="#334155">AD<tspan font-size="12" baseline-shift="sub">1</tspan></text>
+      </g>
+
+      <!-- ===== E₁ FULL EMPLOYMENT at (430, 173) ===== -->
+      <g class="layer-e1">
+        <line x1="60" y1="173" x2="430" y2="173" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="430" cy="173" r="7" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="50" y="178" font-size="14" font-weight="700" fill="#1E40AF" text-anchor="end">P<tspan font-size="11" baseline-shift="sub">1</tspan></text>
+        <text x="440" y="166" font-size="13" font-weight="700" fill="#1E40AF">E<tspan font-size="11" baseline-shift="sub">1</tspan></text>
+      </g>
+
+      <!-- ===== EXTENSION LAYER — AD₂ shifted left, new equilibrium E₂ below Y_FE =====
+           AD₂ shifted left by 130: from (50, 48) to (450, 248), slope 0.5.
+           AS: y = 380 - 0.609(x-90) = -0.609x + 434.81
+           AD₂: y = 0.5(x-50) + 48 = 0.5x + 23
+           Equate: 0.5x + 23 = -0.609x + 434.81 → 1.109x = 411.81 → x = 371.3
+           y = 0.5*371.3 + 23 = 208.7
+           So E₂ ≈ (371, 209). x=371 < 430 = Y_FE → output gap exists ✓ -->
+      <g class="layer-extension">
+        <!-- AD₂ -->
+        <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+        <text x="34" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+
+        <!-- Green AD shift arrow showing AD₁ → AD₂ -->
+        <path d="M 350 155 L 280 155" stroke="#10B981" stroke-width="3" stroke-linecap="round" marker-end="url(#recv2-shift)"/>
+        <text x="315" y="142" font-size="12" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">AD FALLS</text>
+
+        <!-- E₂ equilibrium -->
+        <line x1="60" y1="209" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <line x1="371" y1="400" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="371" cy="209" r="7" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="50" y="214" font-size="14" font-weight="700" fill="#9F1239" text-anchor="end">P<tspan font-size="11" baseline-shift="sub">2</tspan></text>
+        <text x="371" y="423" font-size="14" font-weight="700" fill="#9F1239" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">1</tspan></text>
+        <text x="381" y="202" font-size="13" font-weight="700" fill="#9F1239">E<tspan font-size="11" baseline-shift="sub">2</tspan></text>
+
+        <!-- Output gap shading on the x-axis between Y₁ and Y_FE -->
+        <rect x="371" y="385" width="59" height="14" fill="#FCD34D" opacity="0.5"/>
+        <line x1="371" y1="378" x2="430" y2="378" stroke="#E11D48" stroke-width="2.8" stroke-linecap="round"
+              marker-start="url(#recv2-gap-s)" marker-end="url(#recv2-gap-e)"/>
+        <text x="400" y="368" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="0.5">OUTPUT GAP</text>
+      </g>
+
+      <!-- ===== SHIFT LAYER — Sticky wages, unemployment persists ===== -->
+      <g class="layer-shift">
+        <!-- AD₂ still left-shifted -->
+        <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+        <text x="34" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+
+        <!-- E₂ still at (371, 209) -->
+        <line x1="60" y1="209" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <line x1="371" y1="400" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="371" cy="209" r="7" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="371" y="423" font-size="14" font-weight="700" fill="#9F1239" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">1</tspan></text>
+
+        <!-- Horizontal sticky-wage floor at P₁ level (y=173) -->
+        <line x1="100" y1="173" x2="380" y2="173" stroke="#F59E0B" stroke-width="3.5" stroke-dasharray="3 3" stroke-linecap="round"/>
+        <text x="240" y="165" font-size="12" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="1">STICKY WAGE FLOOR</text>
+
+        <!-- Output gap still shown -->
+        <rect x="371" y="385" width="59" height="14" fill="#FCD34D" opacity="0.5"/>
+        <line x1="371" y1="378" x2="430" y2="378" stroke="#E11D48" stroke-width="2.8" stroke-linecap="round"
+              marker-start="url(#recv2-gap-s)" marker-end="url(#recv2-gap-e)"/>
+        <text x="400" y="368" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="0.5">GAP PERSISTS</text>
+      </g>
+
+      <!-- ===== RIGHT-SIDE EXPLAINER PANEL ===== -->
+      <line x1="615" y1="70" x2="615" y2="400" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+      <g class="layer-legend-base">
+        <g transform="translate(640, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">FULL EMPLOYMENT</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">AD meets short-run AS</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">at Y<tspan font-size="11" baseline-shift="sub">FE</tspan> — economy is at</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">its potential output.</text>
+          <text x="0" y="105" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">UNEMPLOYMENT HERE</text>
+          <text x="0" y="130" font-size="13" font-weight="600" fill="#475569">Only the natural rate:</text>
+          <text x="0" y="150" font-size="13" font-weight="600" fill="#475569">frictional + structural</text>
+          <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">+ seasonal. No cyclical.</text>
+          <text x="0" y="205" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">KEY LINK</text>
+          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Labour is a</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">derived demand</tspan> —</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">from output demand.</text>
+        </g>
+      </g>
+
+      <g class="layer-legend-extension">
+        <g transform="translate(640, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">AD FALLS (RECESSION)</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">C, I, G or (X−M) drops.</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">AD shifts left. Output</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">falls to Y₁ &lt; Y<tspan font-size="11" baseline-shift="sub">FE</tspan>.</text>
+          <text x="0" y="105" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">DERIVED DEMAND</text>
+          <text x="0" y="130" font-size="14" font-weight="600" fill="#334155">Output demand ↓</text>
+          <text x="0" y="150" font-size="14" font-weight="600" fill="#334155">→ labour demand ↓</text>
+          <text x="0" y="170" font-size="14" font-weight="600" fill="#334155">→ unemployment ↑</text>
+          <text x="0" y="205" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">OUTPUT GAP</text>
+          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Y<tspan font-size="11" baseline-shift="sub">FE</tspan> − Y₁ = the size</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">of cyclical</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">unemployment.</text>
+        </g>
+      </g>
+
+      <g class="layer-legend-shift">
+        <g transform="translate(640, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">CLASSICAL VIEW</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">Wages should fall →</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">AS shifts → market</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">re-clears at Y<tspan font-size="11" baseline-shift="sub">FE</tspan>.</text>
+          <text x="0" y="105" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">KEYNES DISAGREED</text>
+          <text x="0" y="130" font-size="14" font-weight="600" fill="#334155">Nominal wages are</text>
+          <text x="0" y="150" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">sticky downward</tspan>:</text>
+          <text x="0" y="170" font-size="14" font-weight="600" fill="#334155">unions resist cuts,</text>
+          <text x="0" y="190" font-size="14" font-weight="600" fill="#334155">contracts are fixed.</text>
+          <text x="0" y="225" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">CONSEQUENCE</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">Unemployment</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">persists</tspan> — stimulus</text>
+          <text x="0" y="290" font-size="14" font-weight="600" fill="#334155">is needed to shift AD.</text>
+        </g>
+      </g>
+    </svg>
+  `,
+
+  /* === Monetary Policy topic === */
+  heroMonetary: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="mp-hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="mp-hero-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0F9FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="mp-hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#mp-hero-bg)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#mp-hero-dots)" opacity="0.4"/>
+
+      <!-- ===== Bank of England building (top) ===== -->
+      <g transform="translate(95, 32)" filter="url(#mp-hero-shadow)">
+        <!-- Pediment / triangle roof -->
+        <polygon points="-5,32 45,8 95,32" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Main body -->
+        <rect x="0" y="32" width="90" height="56" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Columns -->
+        <line x1="12" y1="36" x2="12" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
+        <line x1="28" y1="36" x2="28" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
+        <line x1="44" y1="36" x2="44" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
+        <line x1="60" y1="36" x2="60" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
+        <line x1="76" y1="36" x2="76" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
+        <!-- Bank Rate label inside -->
+        <text x="45" y="58" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">BANK RATE</text>
+        <text x="45" y="76" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
+        <!-- Base -->
+        <rect x="-3" y="86" width="96" height="6" fill="#1E40AF" rx="1"/>
+      </g>
+      <text x="140" y="135" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="1.5">BANK OF ENGLAND</text>
+
+      <!-- ===== Five "pipes" (dashed coloured paths) flowing DOWN to the central AD pot ===== -->
+      <!-- All start near the bank base (~y=130), converge to (~140, 268) -->
+      <!-- Borrowing -->
+      <path d="M 100 132 Q 90 200 130 266" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- Mortgages -->
+      <path d="M 115 132 Q 110 200 135 268" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- Savings -->
+      <path d="M 140 132 L 140 268" stroke="#2563EB" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- Exchange rate -->
+      <path d="M 165 132 Q 170 200 145 268" stroke="#7E22CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- Expectations -->
+      <path d="M 180 132 Q 190 200 150 268" stroke="#E11D48" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
+
+      <!-- ===== Five small channel tags arranged in two rows alongside the pipes ===== -->
+      <!-- Row 1 (left) -->
+      <g transform="translate(14, 155)" filter="url(#mp-hero-shadow)">
+        <rect x="0" y="0" width="62" height="22" rx="11" fill="#10B981" stroke="#047857" stroke-width="1"/>
+        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">BORROWING</text>
+      </g>
+      <g transform="translate(204, 155)" filter="url(#mp-hero-shadow)">
+        <rect x="0" y="0" width="62" height="22" rx="11" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
+        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">£ vs $/€</text>
+      </g>
+
+      <!-- Row 2 (middle) -->
+      <g transform="translate(14, 195)" filter="url(#mp-hero-shadow)">
+        <rect x="0" y="0" width="62" height="22" rx="11" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
+        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">MORTGAGES</text>
+      </g>
+      <g transform="translate(204, 195)" filter="url(#mp-hero-shadow)">
+        <rect x="0" y="0" width="62" height="22" rx="11" fill="#E11D48" stroke="#9F1239" stroke-width="1"/>
+        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">BELIEFS</text>
+      </g>
+
+      <!-- Row 3 (centre, single) -->
+      <g transform="translate(109, 235)" filter="url(#mp-hero-shadow)">
+        <rect x="0" y="0" width="62" height="22" rx="11" fill="#2563EB" stroke="#1E40AF" stroke-width="1"/>
+        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">SAVINGS</text>
+      </g>
+
+      <!-- ===== Central AD pot (the economy) ===== -->
+      <g transform="translate(95, 268)" filter="url(#mp-hero-shadow)">
+        <path d="M 4 6 L 86 6 L 80 60 Q 80 64 76 64 L 14 64 Q 10 64 10 60 Z"
+              fill="#FCD34D" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
+        <ellipse cx="45" cy="6" rx="42" ry="6" fill="#FBBF24" stroke="#92400E" stroke-width="2"/>
+        <line x1="20" y1="22" x2="22" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="44" y1="22" x2="44" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <line x1="68" y1="22" x2="66" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
+        <text x="45" y="38" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">AD →</text>
+        <text x="45" y="52" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">CPI</text>
+      </g>
+
+      <!-- Bottom strip -->
+      <g transform="translate(20, 343)">
+        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
+        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">ONE LEVER · FIVE CHANNELS</text>
+      </g>
+    </svg>
+  `,
+
+  monetaryFraming: `
+    <svg viewBox="0 0 300 280" width="300" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="mp-fr-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#E2E8F0"/>
+        </pattern>
+        <marker id="mp-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="mp-arr-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+        </marker>
+        <marker id="mp-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+        <marker id="mp-arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#7E22CE"/>
+        </marker>
+        <marker id="mp-arr-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
+        </marker>
+      </defs>
+
+      <rect x="0" y="0" width="300" height="280" fill="url(#mp-fr-dots)" opacity="0.45"/>
+
+      <!-- BoE (right) — blue building -->
+      <rect x="180" y="60" width="110" height="160" rx="18" fill="#2563EB" stroke="#1E40AF" stroke-width="2"/>
+      <polygon points="180,60 235,42 290,60" fill="#2563EB" stroke="#1E40AF" stroke-width="2" stroke-linejoin="round"/>
+      <!-- Columns -->
+      <line x1="195" y1="68" x2="195" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
+      <line x1="212" y1="68" x2="212" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
+      <line x1="229" y1="68" x2="229" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
+      <line x1="246" y1="68" x2="246" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
+      <line x1="263" y1="68" x2="263" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
+      <line x1="280" y1="68" x2="280" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
+      <!-- Labels inside BoE -->
+      <text x="235" y="110" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">BANK OF</text>
+      <text x="235" y="125" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">ENGLAND</text>
+      <line x1="200" y1="138" x2="270" y2="138" stroke="#FFFFFF" stroke-width="1" opacity="0.4"/>
+      <text x="235" y="160" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">BANK</text>
+      <text x="235" y="174" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">RATE</text>
+      <text x="235" y="200" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
+
+      <!-- Five arrows flowing FROM BoE (left edge x=180) TO the flaps (x=0, off-screen left)
+           Spread vertically at y = 75, 110, 140, 175, 210 -->
+      <path d="M 178 75  Q 90 60 0 50"  stroke="#10B981" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-green)"/>
+      <path d="M 178 110 Q 90 95 0 95" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-amber)"/>
+      <path d="M 178 140 L 0 140"       stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-blue)"/>
+      <path d="M 178 175 Q 90 190 0 185" stroke="#7E22CE" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-purple)"/>
+      <path d="M 178 210 Q 90 225 0 230" stroke="#E11D48" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-rose)"/>
+    </svg>
+  `,
+
+  adAsMonetary: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
+      <defs>
+        <marker id="mpv2-shift-down" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#E11D48"/>
+        </marker>
+        <marker id="mpv2-shift-up" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+      </defs>
+
+      <!-- ===== TOP TITLE STRIP ===== -->
+      <g class="layer-legend-base">
+        <circle cx="60" cy="32" r="7" fill="#2563EB"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Inflation at target · AD meets AS at full employment</text>
+      </g>
+      <g class="layer-legend-extension">
+        <circle cx="60" cy="32" r="7" fill="#E11D48"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Rate hike → AD shifts LEFT → inflation falls</text>
+      </g>
+      <g class="layer-legend-shift">
+        <circle cx="60" cy="32" r="7" fill="#10B981"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">QE at ZLB → AD shifts RIGHT → recovery from below-target</text>
+      </g>
+
+      <!-- Same chart geometry as recession v2 (consistency across ad-interactive cards) -->
+      <g class="layer-axes">
+        <line x1="60" y1="60"  x2="60"  y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="400" x2="580" y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <text x="60"  y="50"  font-size="18" font-weight="800" fill="#0F172A" text-anchor="middle">P</text>
+        <text x="588" y="406" font-size="18" font-weight="800" fill="#0F172A">Y</text>
+      </g>
+
+      <!-- LRAS at x=430 -->
+      <g class="layer-axes">
+        <line x1="430" y1="80" x2="430" y2="400" stroke="#0F172A" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round" opacity="0.7"/>
+        <text x="439" y="95" font-size="16" font-weight="700" fill="#0F172A">LRAS</text>
+        <text x="430" y="423" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">FE</tspan></text>
+      </g>
+
+      <!-- SRAS — red, from (90, 380) to (550, 100) -->
+      <g class="layer-curve-solid">
+        <line x1="90" y1="380" x2="550" y2="100" stroke="#E11D48" stroke-width="4" stroke-linecap="round"/>
+        <text x="560" y="100" font-size="16" font-weight="700" fill="#E11D48">SRAS</text>
+      </g>
+
+      <!-- AD₁ — slope 0.5, from (180, 48) to (580, 248), passes through (430, 173) -->
+      <g class="layer-curve-solid">
+        <line x1="180" y1="48" x2="580" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+        <text x="588" y="252" font-size="15" font-weight="700" fill="#334155">AD<tspan font-size="12" baseline-shift="sub">1</tspan></text>
+      </g>
+
+      <!-- E₁ at (430, 173) -->
+      <g class="layer-e1">
+        <line x1="60" y1="173" x2="430" y2="173" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="430" cy="173" r="7" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="50" y="178" font-size="14" font-weight="700" fill="#1E40AF" text-anchor="end">P<tspan font-size="11" baseline-shift="sub">1</tspan></text>
+        <text x="440" y="166" font-size="13" font-weight="700" fill="#1E40AF">E<tspan font-size="11" baseline-shift="sub">1</tspan></text>
+      </g>
+
+      <!-- EXTENSION (rate hike) — AD shifts LEFT -->
+      <g class="layer-extension">
+        <!-- AD₂ shifted left by 130: from (50, 48) to (450, 248) -->
+        <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
+        <text x="34" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">2</tspan></text>
+
+        <!-- Red shift arrow -->
+        <path d="M 350 155 L 280 155" stroke="#E11D48" stroke-width="3" stroke-linecap="round" marker-end="url(#mpv2-shift-down)"/>
+        <text x="315" y="142" font-size="12" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="1">RATE HIKE</text>
+
+        <!-- E₂ at intersection of AD₂ with SRAS: ≈ (371, 209) — same math as recession -->
+        <line x1="60" y1="209" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <line x1="371" y1="400" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="371" cy="209" r="7" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="50" y="214" font-size="14" font-weight="700" fill="#9F1239" text-anchor="end">P<tspan font-size="11" baseline-shift="sub">2</tspan></text>
+        <text x="371" y="423" font-size="14" font-weight="700" fill="#9F1239" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">2</tspan></text>
+        <text x="381" y="202" font-size="13" font-weight="700" fill="#9F1239">E<tspan font-size="11" baseline-shift="sub">2</tspan></text>
+      </g>
+
+      <!-- SHIFT (QE at ZLB) — AD shifts RIGHT
+           AD₃ shifted right by 130: from (310, 48) to (710, 248).
+           But 710 > 580 (chart right edge). Truncate at right edge: end at x=580.
+           At x=580: y = 48 + 0.5(580-310) = 48 + 135 = 183. So endpoint (580, 183).
+           Intersection with SRAS (y = -0.609x + 434.81):
+           AD₃: y = 0.5(x-310) + 48 = 0.5x - 107
+           0.5x - 107 = -0.609x + 434.81 → 1.109x = 541.81 → x = 488.6
+           y = 0.5*488.6 - 107 = 137.3
+           So E₃ at (489, 137). Y₃ = 489 > Y_FE = 430 → slight overheat (realistic for QE). -->
+      <g class="layer-shift">
+        <!-- AD₃ shifted right, capped at chart right edge -->
+        <line x1="310" y1="48" x2="580" y2="183" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
+        <text x="296" y="50" font-size="15" font-weight="700" fill="#1E40AF">AD<tspan font-size="12" baseline-shift="sub">3</tspan></text>
+
+        <!-- Green shift arrow -->
+        <path d="M 270 240 L 340 240" stroke="#10B981" stroke-width="3" stroke-linecap="round" marker-end="url(#mpv2-shift-up)"/>
+        <text x="305" y="227" font-size="12" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">QE (ZLB)</text>
+
+        <!-- E₃ at (489, 137) -->
+        <line x1="60" y1="137" x2="489" y2="137" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <line x1="489" y1="400" x2="489" y2="137" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <circle cx="489" cy="137" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="50" y="142" font-size="14" font-weight="700" fill="#047857" text-anchor="end">P<tspan font-size="11" baseline-shift="sub">3</tspan></text>
+        <text x="489" y="423" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">3</tspan></text>
+        <text x="499" y="130" font-size="13" font-weight="700" fill="#047857">E<tspan font-size="11" baseline-shift="sub">3</tspan></text>
+      </g>
+
+      <!-- ===== RIGHT-SIDE EXPLAINER PANEL ===== -->
+      <line x1="615" y1="70" x2="615" y2="400" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+      <g class="layer-legend-base">
+        <g transform="translate(640, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">STARTING POINT</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">AD₁ meets SRAS at</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">Y<tspan font-size="11" baseline-shift="sub">FE</tspan>. Inflation at the</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">BoE's 2% target.</text>
+          <text x="0" y="105" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">THE BOE'S JOB</text>
+          <text x="0" y="130" font-size="13" font-weight="600" fill="#475569">Respond to shocks that</text>
+          <text x="0" y="150" font-size="13" font-weight="600" fill="#475569">push the economy off</text>
+          <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">this equilibrium.</text>
+          <text x="0" y="205" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">TWO TOOLS</text>
+          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Bank Rate — the lever</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">QE — when rates can't</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">fall further (ZLB).</text>
+        </g>
+      </g>
+
+      <g class="layer-legend-extension">
+        <g transform="translate(640, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">RATE HIKE</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">Inflation too high.</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">BoE raises Bank Rate.</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">All 5 channels pull</text>
+          <text x="0" y="90" font-size="14" font-weight="600" fill="#334155">AD to the left.</text>
+          <text x="0" y="125" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">EFFECT</text>
+          <text x="0" y="150" font-size="14" font-weight="600" fill="#334155">P falls (inflation ↓)</text>
+          <text x="0" y="170" font-size="14" font-weight="600" fill="#334155">Y falls (output ↓)</text>
+          <text x="0" y="205" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">THE TRADE-OFF</text>
+          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Classic <tspan font-weight="800">Phillips curve</tspan>:</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">controlling inflation</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">costs output / jobs.</text>
+        </g>
+      </g>
+
+      <g class="layer-legend-shift">
+        <g transform="translate(640, 100)">
+          <text x="0" y="0" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">QE AT THE ZLB</text>
+          <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">Inflation too low.</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">Rates already at zero</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">— the <tspan font-weight="800">zero lower</tspan></text>
+          <text x="0" y="90" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">bound</tspan>. Can't cut more.</text>
+          <text x="0" y="125" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">THE WORKAROUND</text>
+          <text x="0" y="150" font-size="14" font-weight="600" fill="#334155">BoE buys bonds →</text>
+          <text x="0" y="170" font-size="14" font-weight="600" fill="#334155">yields fall, sterling</text>
+          <text x="0" y="190" font-size="14" font-weight="600" fill="#334155">depreciates, wealth</text>
+          <text x="0" y="210" font-size="14" font-weight="600" fill="#334155">effect kicks in.</text>
+          <text x="0" y="245" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">RESULT</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">AD shifts right. Same</text>
+          <text x="0" y="290" font-size="14" font-weight="600" fill="#334155">tool kit, different lever.</text>
+        </g>
+      </g>
+    </svg>
+  `
+
+};

@@ -672,6 +672,15 @@
              '<span class="quiz-dot__mark">' + (rv.ok ? '✓' : '✗') + '</span></div>';
     }).join('');
 
+    var detailItems = S.results.map(function (rv) {
+      var m = TYPE_META[rv.type] || { label: rv.type, tone: 'blue' };
+      var tc = TONE_COLOURS[m.tone];
+      return '<div class="quiz-rv-item">' +
+        '<div class="quiz-rv-dot ' + (rv.ok ? 'ok' : 'bad') + '">' + (rv.ok ? '✓' : '✗') + '</div>' +
+        '<div><div class="quiz-rv-type" style="color:' + tc.fg + '">Q' + rv.n + ' · ' + m.label + '</div>' +
+        '<div class="quiz-rv-summary">' + rv.summary + '</div></div></div>';
+    }).join('');
+
     var nCorrect = S.score;
     var nIncorrect = total - nCorrect;
 
@@ -722,20 +731,15 @@
           '<span><span class="quiz-legend-dot quiz-legend-dot--ok"></span>Correct (' + nCorrect + ')</span>' +
           '<span><span class="quiz-legend-dot quiz-legend-dot--bad"></span>Incorrect (' + nIncorrect + ')</span>' +
         '</div>' +
-      '</div>' +
-
-      '<div class="quiz-cta-card">' +
-        '<div class="quiz-cta-card__icon">📄</div>' +
-        '<div class="quiz-cta-card__body">' +
-          '<div class="quiz-cta-card__title">Want a detailed breakdown?</div>' +
-          '<div class="quiz-cta-card__sub">Download the worked-solutions sheet for guided commentary on every question.</div>' +
-        '</div>' +
-        '<button class="quiz-btn quiz-btn--primary">📥 Download sheet</button>' +
+        '<details class="quiz-review-details">' +
+          '<summary class="quiz-review-details__summary">Show the full breakdown question by question</summary>' +
+          '<div class="quiz-review-grid">' + detailItems + '</div>' +
+        '</details>' +
       '</div>' +
 
       '<div class="quiz-results__actions">' +
-        '<button class="quiz-btn quiz-btn--primary" onclick="restartQuiz()">Retry quiz</button>' +
-        '<a class="quiz-btn quiz-btn--secondary" href="' + backHref + '">' + backLabel + '</a>' +
+        '<button class="quiz-btn quiz-btn--secondary" onclick="restartQuiz()">Redo quiz</button>' +
+        '<button class="quiz-btn quiz-btn--primary" onclick="alert(\'Master mode coming soon \\u2014 exam-style questions from past papers\')">Ready to Master Inflation →</button>' +
       '</div>' +
 
       '</div>');

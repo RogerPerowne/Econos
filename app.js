@@ -160,15 +160,12 @@
    * Coloured topic banner used on cause cards (2 & 3).
    * Anchors the page visually with the branch colour from card 1.
    */
-  function renderCauseBanner(tone, label, line) {
+  function renderCauseBanner(tone, label) {
     return `
       <div class="cause-banner cause-banner--${tone}">
         <div class="cause-banner__pill">
           <span class="cause-banner__pill-dot"></span>
           <span>${label}</span>
-        </div>
-        <div class="cause-banner__main">
-          <div class="cause-banner__line">${line}</div>
         </div>
       </div>
     `;
@@ -374,7 +371,7 @@
     }
 
     return `
-      ${renderCauseBanner(tone, bannerLabel, c.lede)}
+      ${renderCauseBanner(tone, bannerLabel)}
       ${headerLede}
       ${diagramFull}
       ${causesHallmarks}
@@ -677,7 +674,7 @@
   /* === Paired template: two components side-by-side (e.g. Gov + Net Trade) === */
   function renderCardPaired(c) {
     const banner = c.bannerLabel
-      ? renderCauseBanner(c.bannerTone || 'blue', c.bannerLabel, c.lede)
+      ? renderCauseBanner(c.bannerTone || 'blue', c.bannerLabel)
       : '';
 
     const pairs = c.pairs.map(p => `

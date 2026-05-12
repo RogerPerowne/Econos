@@ -9,12 +9,13 @@ window.ECONOS_LINK_DIAGRAM = {
   backUrl:      'link_inflation_intro.html',
 
   stations: [
-    { id: 'context', label: 'Context Highlighter', href: 'link_inflation_context.html' },
-    { id: 'diagram', label: 'Diagram Connector',   href: 'link_inflation_diagram.html' },
-    { id: 'flaw',    label: 'Spot the Flaw'       },
-    { id: 'judge',   label: 'Make the Judgement'  }
+    { id: 'context', label: 'Use the context',    href: 'link_inflation_context.html' },
+    { id: 'chain',   label: 'Build the chain',    href: 'link_inflation_chain.html'   },
+    { id: 'diagram', label: 'Diagram connector',  href: 'link_inflation_diagram.html' },
+    { id: 'flaw',    label: 'Spot the flaw'       },
+    { id: 'judge',   label: 'Make the judgement'  }
   ],
-  currentStationIdx: 1,
+  currentStationIdx: 2,
 
   /* ── Stage 0: Select the right diagram ── */
   select: {

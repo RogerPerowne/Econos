@@ -52,8 +52,12 @@
 
     function renderTopbar() {
       return ''
-        + '<header class="topbar topbar--simple">'
-        +   '<a href="topic_inflation.html" class="topbar__back-link">' + I.arrowLeft + '<span>Back to Learn it</span></a>'
+        + '<header class="topbar">'
+        +   '<a href="topic_inflation.html" class="topbar__back">' + I.arrowLeft + '</a>'
+        +   '<div class="topbar__crumbs">'
+        +     '<div class="topbar__session-label">' + T.sessionLabel + '</div>'
+        +     '<div class="topbar__topic-title">' + T.topic + '</div>'
+        +   '</div>'
         +   '<div class="topbar__right">'
         +     '<div class="topbar__streak"><span class="topbar__streak-icon">🔥</span><span>1 day streak</span></div>'
         +     '<div class="topbar__avatar"><div class="topbar__avatar-circle">AB</div><span class="topbar__avatar-chev">' + I.chevDown + '</span></div>'
@@ -176,7 +180,7 @@
     }
 
     document.getElementById('app-root').innerHTML = ''
-      + '<div class="app">'
+      + '<div class="app theme--link">'
       +   renderSidebar()
       +   '<div class="main">'
       +     renderTopbar()

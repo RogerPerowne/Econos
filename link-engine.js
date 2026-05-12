@@ -22,7 +22,7 @@
     function render() {
       var root = document.getElementById('app-root');
       root.innerHTML = ''
-        + '<div class="app">'
+        + '<div class="app theme--link">'
         +   renderSidebar()
         +   '<div class="main">'
         +     renderTopbar()
@@ -281,17 +281,18 @@
     }
 
     function renderRail() {
-      var stationsHtml = DATA.stations.map(function (st, i) {
+      // Build stations using the same cards-list tablet pattern as Learn It
+      var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
         var done      = i < DATA.currentStationIdx;
-        var cls       = 'link-rail__station' + (isCurrent ? ' is-current' : '') + (done ? ' is-done' : '');
+        var status    = done ? 'done' : (isCurrent ? 'current' : '');
         var num       = done ? I.check : (i + 1);
         return ''
-          + '<div class="' + cls + '">'
-          +   '<div class="link-rail__num">' + num + '</div>'
-          +   '<div class="link-rail__body">'
-          +     '<div class="link-rail__name">' + st.label + '</div>'
-          +     (isCurrent ? '<span class="link-rail__chip">Current</span>' : '')
+          + '<div class="cards-list__item' + (status ? ' is-' + status : '') + '">'
+          +   '<div class="cards-list__num">' + num + '</div>'
+          +   '<div class="cards-list__body">'
+          +     '<div class="cards-list__name">' + st.label + '</div>'
+          +     (isCurrent ? '<span class="cards-list__chip">Current</span>' : '')
           +   '</div>'
           + '</div>';
       }).join('');
@@ -321,8 +322,8 @@
         +     sessionDots
         +   '</div>'
         +   '<div class="rail-card">'
-        +     '<div class="rail-card__title" style="margin-bottom: var(--sp-3);">Link it stations</div>'
-        +     '<div class="link-rail__stations">' + stationsHtml + '</div>'
+        +     '<div class="rail-card__title" style="margin-bottom: var(--sp-3);">Stations</div>'
+        +     '<div class="cards-list">' + stationsList + '</div>'
         +   '</div>'
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title" style="margin-bottom: var(--sp-3);">What good looks like</div>'

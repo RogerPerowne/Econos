@@ -1414,7 +1414,13 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-full);
   background: var(--econ-gray-400);
 }
-.cause-col--hallmark li::before { background: var(--econ-green); }
+.cause-col--causes li::before          { background: var(--econ-blue); }
+.cause-col--hallmark li::before        { background: var(--econ-green); }
+.cause-col--hallmark-green li::before  { background: var(--econ-green); }
+.cause-col--hallmark-amber li::before  { background: var(--econ-amber); }
+.cause-col--hallmark-blue li::before   { background: var(--econ-blue); }
+.cause-col--hallmark-purple li::before { background: var(--econ-purple-700); }
+.cause-col--hallmark-rose li::before   { background: var(--econ-rose); }
 
 /* "UK examples" callout — same as info but with flag */
 .uk-examples {

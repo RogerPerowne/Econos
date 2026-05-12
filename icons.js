@@ -1421,11 +1421,11 @@ window.ECONOS_ICONS = {
         <rect x="251" y="100" width="2" height="4"/><rect x="249" y="104" width="6" height="92"/><rect x="247" y="196" width="10" height="4"/>
         <rect x="278" y="100" width="2" height="4"/><rect x="276" y="104" width="6" height="92"/><rect x="274" y="196" width="10" height="4"/>
       </g>
-      <!-- Central tablet between middle columns: BANK RATE ↑ -->
-      <rect x="226" y="120" width="32" height="60" rx="3" fill="#1E40AF" stroke="#0B1426" stroke-width="1"/>
-      <text x="242" y="138" font-size="7" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">BANK</text>
-      <text x="242" y="150" font-size="7" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">RATE</text>
-      <text x="242" y="172" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
+      <!-- Central tablet (centered on building, width 46): BANK RATE ↑ -->
+      <rect x="212" y="115" width="46" height="76" rx="3" fill="#1E40AF" stroke="#0B1426" stroke-width="1"/>
+      <text x="235" y="138" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">BANK</text>
+      <text x="235" y="152" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">RATE</text>
+      <text x="235" y="180" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
       <!-- Stepped plinth (base) -->
       <rect x="174" y="200" width="122" height="6" fill="#1E40AF"/>
       <rect x="170" y="206" width="130" height="6" fill="#1E3A8A"/>

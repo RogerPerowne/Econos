@@ -371,10 +371,10 @@
         if (bridge) bridge.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
 
-      // next (stub)
+      // next station → chain page
       var nextBtn = document.getElementById('next-station');
       if (nextBtn) nextBtn.addEventListener('click', function () {
-        alert('Build the Chain station coming next!');
+        window.location.href = 'link_inflation_chain.html';
       });
     }
 

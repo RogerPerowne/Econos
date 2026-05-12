@@ -94,8 +94,20 @@
     Qs = questions.map(shuffleQuestion).map(function (q, i) { q.n = i + 1; return q; });
     TOPIC = Object.assign({}, TOPIC, topicConfig || {});
     if (TOPIC.title) document.title = TOPIC.title + ' · econos';
+    S.startedAt = Date.now();
     renderQ(0);
   };
+
+  function formatDuration(ms) {
+    var s = Math.max(0, Math.round(ms / 1000));
+    var m = Math.floor(s / 60);
+    var rs = s % 60;
+    return m + 'm ' + (rs < 10 ? '0' : '') + rs + 's';
+  }
+  function formatAvg(ms, n) {
+    if (!n) return '—';
+    return Math.round(ms / n / 1000) + 's';
+  }
 
   /* ── Core utilities ── */
   function r(html) {
@@ -646,43 +658,93 @@
   window.renderResults = function () {
     var total = Qs.length;
     var pct = Math.round(S.score / total * 100);
-    var scoreColour = pct >= 80 ? 'var(--econ-green)'
-                    : pct >= 60 ? 'var(--econ-amber-700)'
-                    : pct >= 40 ? 'var(--econ-amber)'
-                    : 'var(--econ-rose)';
-    var verdict = pct >= 80 ? 'Excellent command of this topic — the full picture is clear.'
-                : pct >= 60 ? 'Solid understanding. A few analytical gaps remain.'
+    var passed = pct >= 60;
+    var elapsed = Date.now() - (S.startedAt || Date.now());
+
+    var verdict = pct >= 80 ? 'Excellent — the full picture is clear.'
+                : pct >= 60 ? "You're on the right track."
                 : pct >= 40 ? 'Developing — some core ideas need more work.'
-                : 'This topic needs focused revision before the exam.';
-    var reviewItems = S.results.map(function (rv) {
-      var m = TYPE_META[rv.type] || { label: rv.type, tone: 'blue' };
-      var tc = TONE_COLOURS[m.tone];
-      return '<div class="quiz-rv-item">' +
-        '<div class="quiz-rv-dot ' + (rv.ok ? 'ok' : 'bad') + '">' + (rv.ok ? '✓' : '✗') + '</div>' +
-        '<div><div class="quiz-rv-type" style="color:' + tc.fg + '">Q' + rv.n + ' · ' + m.label + '</div>' +
-        '<div class="quiz-rv-summary">' + rv.summary + '</div></div></div>';
+                : 'This topic needs focused revision.';
+
+    var dots = S.results.map(function (rv) {
+      return '<div class="quiz-dot quiz-dot--' + (rv.ok ? 'ok' : 'bad') + '">' +
+             '<span class="quiz-dot__n">' + rv.n + '</span>' +
+             '<span class="quiz-dot__mark">' + (rv.ok ? '✓' : '✗') + '</span></div>';
     }).join('');
+
+    var nCorrect = S.score;
+    var nIncorrect = total - nCorrect;
+
     var backHref  = TOPIC.backUrl  || 'topic_inflation.html';
     var backLabel = TOPIC.backLabel || 'Back to topic';
+
     r('<div class="quiz-results">' +
+
       '<div class="quiz-results__hero">' +
-      '<div class="quiz-results__label">' + TOPIC.title + ' · Session Complete</div>' +
-      '<div class="quiz-results__score" style="color:' + scoreColour + '">' + S.score + '<span class="quiz-results__score-denom"> / ' + total + '</span></div>' +
-      '<div class="quiz-results__label">' + pct + '% correct</div>' +
-      '<div class="quiz-results__verdict">' + verdict + '</div></div>' +
-      '<div class="quiz-review-title">Session review</div>' +
-      '<div class="quiz-review-grid">' + reviewItems + '</div>' +
+        '<div class="quiz-results__head-icon">🎯</div>' +
+        '<div>' +
+          '<div class="quiz-results__head-title">Quick check complete!</div>' +
+          '<div class="quiz-results__head-sub">Here\'s how you performed on your ' + total + ' questions.</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="quiz-stats">' +
+        '<div class="quiz-stat">' +
+          '<div class="quiz-stat__label">Your score</div>' +
+          '<div class="quiz-stat__value">' + S.score + '<span class="quiz-stat__denom">/' + total + '</span></div>' +
+          '<div class="quiz-stat__sub">' + pct + '%</div>' +
+          '<div class="quiz-stat__verdict">' + verdict + '</div>' +
+          '<div class="quiz-stat__chip quiz-stat__chip--' + (passed ? 'ok' : 'bad') + '">' +
+            (passed ? '✓ Pass (60% required)' : 'Below pass mark — try again') +
+          '</div>' +
+        '</div>' +
+        '<div class="quiz-stat">' +
+          '<div class="quiz-stat__label">Time taken</div>' +
+          '<div class="quiz-stat__value quiz-stat__value--small">' + formatDuration(elapsed) + '</div>' +
+          '<div class="quiz-stat__divider"></div>' +
+          '<div class="quiz-stat__label">Average time per question</div>' +
+          '<div class="quiz-stat__value quiz-stat__value--small">' + formatAvg(elapsed, total) + '</div>' +
+        '</div>' +
+        '<div class="quiz-stat quiz-stat--ring">' +
+          '<div class="quiz-stat__label">Accuracy</div>' +
+          '<div class="quiz-ring" style="--ring-pct:' + pct + '">' +
+            '<div class="quiz-ring__inner"><div class="quiz-ring__pct">' + pct + '%</div>' +
+            '<div class="quiz-ring__sub">' + nCorrect + ' correct</div></div>' +
+          '</div>' +
+          '<div class="quiz-stat__sub">of ' + total + ' questions</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="quiz-review-card">' +
+        '<div class="quiz-review-card__title">Review your answers</div>' +
+        '<div class="quiz-dots">' + dots + '</div>' +
+        '<div class="quiz-review-legend">' +
+          '<span><span class="quiz-legend-dot quiz-legend-dot--ok"></span>Correct (' + nCorrect + ')</span>' +
+          '<span><span class="quiz-legend-dot quiz-legend-dot--bad"></span>Incorrect (' + nIncorrect + ')</span>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="quiz-cta-card">' +
+        '<div class="quiz-cta-card__icon">📄</div>' +
+        '<div class="quiz-cta-card__body">' +
+          '<div class="quiz-cta-card__title">Want a detailed breakdown?</div>' +
+          '<div class="quiz-cta-card__sub">Download the worked-solutions sheet for guided commentary on every question.</div>' +
+        '</div>' +
+        '<button class="quiz-btn quiz-btn--primary">📥 Download sheet</button>' +
+      '</div>' +
+
       '<div class="quiz-results__actions">' +
-      '<button class="quiz-btn quiz-btn--primary" onclick="restartQuiz()">Try again</button>' +
-      '<a class="quiz-btn quiz-btn--secondary" href="' + backHref + '">' + backLabel + '</a>' +
-      '<a class="quiz-btn quiz-btn--secondary" href="index.html">Home</a>' +
-      '</div></div>');
+        '<button class="quiz-btn quiz-btn--primary" onclick="restartQuiz()">Retry quiz</button>' +
+        '<a class="quiz-btn quiz-btn--secondary" href="' + backHref + '">' + backLabel + '</a>' +
+      '</div>' +
+
+      '</div>');
   };
 
   window.restartQuiz = function () {
     S = { qi: 0, score: 0, results: [], answered: false,
           rankOrder: [], pfSel: {}, msChecked: [], esChosen: {},
-          confChosen: -1, confPhase: 'pick' };
+          confChosen: -1, confPhase: 'pick', startedAt: Date.now() };
     Qs = Qs.map(shuffleQuestion);
     renderQ(0);
   };

@@ -50,8 +50,8 @@ window.ECONOS_ICONS = {
      Always ascending left→right · green→yellow→pink in order.
      ============================================================ */
   brandGlyph: `
-    <svg viewBox="0 0 130 56" width="56" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
-      <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+    <svg viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
+      <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="2.8" stroke-linecap="round"/>
       <circle cx="14"  cy="46" r="7"   fill="#1FB574"/>
       <circle cx="65"  cy="28" r="8.5" fill="#F5B800"/>
       <circle cx="116" cy="12" r="10"  fill="#EC2D68"/>

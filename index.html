@@ -35,22 +35,40 @@
     }
     .wrap { max-width: 880px; margin: 0 auto; }
 
-    /* ── Header / logo lockup ── */
+    /* ── Header / logo lockup (vertical, left-aligned) ── */
     .header {
       display: flex;
-      align-items: center;
-      gap: 16px;
+      flex-direction: column;
+      align-items: flex-start;
       margin-bottom: 56px;
+      line-height: 1;
     }
-    .header svg { display: block; }
-    .wordmark {
+    .header .mark {
+      display: block;
+      width: 240px;
+      height: auto;
+      margin-bottom: 6px;
+    }
+    .header .wordmark {
       font-family: 'Fraunces', Georgia, serif;
       font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
       font-weight: 700;
-      font-size: 56px;
+      font-size: 116px;
       letter-spacing: -0.035em;
       line-height: 0.9;
       color: var(--ink);
+      display: block;
+    }
+    .header .tagline {
+      font-family: 'Fraunces', Georgia, serif;
+      font-variation-settings: "opsz" 14, "SOFT" 30, "WONK" 0;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      color: var(--ink);
+      margin-top: 14px;
+      display: block;
     }
 
     /* ── Hero ── */
@@ -88,15 +106,6 @@
       color: var(--ink-soft);
       line-height: 1.55;
       max-width: 580px;
-    }
-    .tagline {
-      margin-top: 32px;
-      font-family: 'Fraunces', Georgia, serif;
-      font-variation-settings: "opsz" 48, "SOFT" 50, "WONK" 1;
-      font-weight: 700;
-      font-size: 26px;
-      letter-spacing: -0.015em;
-      color: var(--ink);
     }
     .dg { color: var(--green); }
     .dy { color: var(--yellow); }
@@ -179,7 +188,9 @@
     @media (max-width: 720px) {
       .principles { grid-template-columns: 1fr; }
       h1 { font-size: 44px; }
-      .wordmark { font-size: 44px; }
+      .header .wordmark { font-size: 76px; }
+      .header .tagline { font-size: 14px; margin-top: 9px; }
+      .header .mark { width: 158px; margin-bottom: 4px; }
     }
     .principle { border-top: 2px solid var(--ink); padding-top: 12px; }
     .principle-num {
@@ -218,15 +229,16 @@
 <body>
   <div class="wrap">
 
-    <!-- ═══ HEADER: curve mark + econos wordmark ═══ -->
+    <!-- ═══ HEADER: vertical lockup — mark + wordmark + tagline ═══ -->
     <header class="header">
-      <svg width="78" height="34" viewBox="0 0 130 56" aria-label="econos mark">
-        <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+      <svg class="mark" viewBox="0 0 130 56" aria-label="econos mark" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="2.8" stroke-linecap="round"/>
         <circle cx="14"  cy="46" r="7"   fill="#1FB574"/>
         <circle cx="65"  cy="28" r="8.5" fill="#F5B800"/>
         <circle cx="116" cy="12" r="10"  fill="#EC2D68"/>
       </svg>
-      <div class="wordmark">econos</div>
+      <span class="wordmark">econos</span>
+      <span class="tagline">Learn it<span class="dg">.</span> Link it<span class="dy">.</span> Land it<span class="dp">.</span></span>
     </header>
 
     <!-- ═══ HERO ═══ -->
@@ -234,7 +246,6 @@
       <div class="eyebrow">A-Level Economics · Revision Platform</div>
       <h1>Revision built around how examiners actually mark<span class="dp">.</span></h1>
       <p class="hero-lede">Bite-sized cards organised around the recurring friction types and frameworks that real Edexcel questions reward — not just topic-by-topic memorisation.</p>
-      <div class="tagline">Learn it<span class="dg">.</span> Link it<span class="dy">.</span> Land it<span class="dp">.</span></div>
     </section>
 
     <!-- ═══ TOPICS ═══ -->

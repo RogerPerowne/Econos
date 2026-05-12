@@ -4971,3 +4971,34 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 900px) {
   .quiz-stats { grid-template-columns: 1fr; }
 }
+
+/* Collapsible per-question review */
+.quiz-review-details {
+  margin-top: var(--sp-4);
+  border-top: 1px solid var(--econ-gray-200);
+  padding-top: var(--sp-4);
+}
+.quiz-review-details__summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  color: var(--econ-blue-700);
+  padding: var(--sp-2) 0;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.quiz-review-details__summary::-webkit-details-marker { display: none; }
+.quiz-review-details__summary::before {
+  content: '▸';
+  display: inline-block;
+  transition: transform 0.18s ease;
+  font-size: var(--fs-xs);
+}
+.quiz-review-details[open] .quiz-review-details__summary::before {
+  transform: rotate(90deg);
+}
+.quiz-review-details .quiz-review-grid {
+  margin-top: var(--sp-3);
+  margin-bottom: 0;
+}

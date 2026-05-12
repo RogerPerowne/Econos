@@ -185,78 +185,120 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 5 — QE puzzle ----- */
+    /* ----- CARD 5 — Monetary theory & QE (merged) ----- */
     {
-      id: 'qe-puzzle',
-      template: 'puzzle',
+      id: 'monetary',
+      template: 'monetary',
       stepLabel: 'Learn: Step 5 of 7',
-      title: 'The QE puzzle',
-      lede: "Money creation should cause inflation. So why didn't it?",
+      title: "Money supply & QE",
+      lede: "Classical theory says more money = more inflation. QE broke that rule — and understanding why is worth exam marks.",
       classical: {
         title: 'The classical view',
         formula: 'MV = PY',
         formulaSub: 'money × velocity = prices × output',
         quote: '"Inflation is always and everywhere a monetary phenomenon." — Friedman',
-        examples: 'Hyperinflations confirm it: <strong>Zimbabwe 2008</strong>, <strong>Weimar 1923</strong>, <strong>Hungary 1946</strong> - all monetary.'
+        examples: 'Hyperinflations confirm it: <strong>Zimbabwe 2008</strong>, <strong>Weimar 1923</strong>, <strong>Hungary 1946</strong> — all monetary.'
       },
       puzzle: {
-        title: 'The puzzle',
-        chartCaption: 'UK monetary base (M0) vs CPI inflation, 2008-2022',
         bullets: [
-          '<strong>2008-2022:</strong> Bank of England, Fed, and ECB all engaged in massive QE - expanding the monetary base by 5-10×.',
+          '<strong>2008-2022:</strong> BoE, Fed and ECB expanded the monetary base by 5-10× through QE.',
           '<strong>Critics warned</strong> of imminent hyperinflation.',
-          "<strong>It didn't happen.</strong>"
-        ],
-        cliffhanger: 'Why?'
+          '<strong>It didn\'t happen.</strong> Four reasons explain why.'
+        ]
       },
-      examEdge: {
-        title: 'Theory vs reality',
-        text: "Showing you understand <em>why</em> simple monetary theory failed in 2008-22 is exactly the kind of nuance that lifts an answer to A*. Don't just quote Friedman - explain when his rule holds and when it doesn't."
-      }
-    },
-
-    /* ----- CARD 6 — Why QE didn't cause inflation ----- */
-    {
-      id: 'qe-resolution',
-      template: 'mechanisms',
-      stepLabel: 'Learn: Step 6 of 7',
-      title: "Why QE didn't cause inflation",
-      lede: 'Four mechanisms. Each one matters in essays.',
       mechanisms: [
         {
           num: '1',
           tone: 'blue',
           title: 'Velocity collapsed',
-          text: 'M rose 10× but V fell 10×. Banks held QE-created reserves rather than lending; firms hoarded cash. <strong>MV = PY</strong> held - V just did the adjusting.'
+          text: 'M rose 10× but V fell 10×. Banks held QE-created reserves rather than lending. <strong>MV = PY</strong> held — V just did the adjusting.'
         },
         {
           num: '2',
           tone: 'green',
           title: 'Output gap',
-          text: 'Economies were below potential. The AS curve was effectively flat in this region - new money raised output rather than prices.'
+          text: 'Economies were below potential. New money raised output rather than prices — the AS curve was effectively flat.'
         },
         {
           num: '3',
           tone: 'amber',
           title: 'Anchored expectations',
-          text: "Decades of credible 2% inflation targeting kept expectations stable. People didn't expect inflation, so they didn't act in ways that caused it."
+          text: "Decades of credible 2% targeting kept expectations stable. People didn't expect inflation, so they didn't act in ways that caused it."
         },
         {
           num: '4',
           tone: 'rose',
-          title: 'The counter-examples confirm it',
-          text: 'Venezuela, Argentina, Turkey <em>did</em> get inflation from money creation - because their central banks lacked credibility, output gaps were smaller, and money was financing fiscal deficits.'
+          title: 'Counter-examples confirm it',
+          text: 'Venezuela, Argentina, Turkey <em>did</em> get inflation — because their central banks lacked credibility and money financed fiscal deficits.'
         }
       ],
       examEdge: {
         title: 'The takeaway gem',
-        text: '"More money = more inflation" needs context. Money creation <strong>in a recession with anchored expectations</strong> doesn\'t cause inflation. Money creation <strong>by an unconstrained central bank financing deficits</strong> usually does.'
-      },
-      connection: {
-        title: 'Connection to 2022-23',
-        text: 'The 2022-23 UK inflation spike came from energy and supply chains - not QE. Inflation arrived <em>years</em> after QE ended. Timing matters.'
+        text: '"More money = more inflation" needs context. QE <strong>in a recession with anchored expectations</strong> doesn\'t cause inflation. The 2022-23 spike came from energy shocks — not QE. Timing matters.'
       }
     },
+
+    /* ----- CARD 6 — Impacts of inflation ----- */
+    {
+      id: 'impacts',
+      template: 'impacts',
+      stepLabel: 'Learn: Step 6 of 7',
+      title: 'Impacts of inflation',
+      lede: 'Inflation affects different groups in very different ways. The distributional story is where evaluation marks live.',
+      groups: [
+        {
+          tone: 'green',
+          icon: '👥',
+          label: 'Consumers',
+          bullets: [
+            'Real incomes fall when wages lag inflation',
+            'Purchasing power erodes — the same money buys less',
+            'Fixed-income groups (pensioners, benefit recipients) hit hardest'
+          ]
+        },
+        {
+          tone: 'amber',
+          icon: '🏢',
+          label: 'Firms',
+          bullets: [
+            'Rising input costs squeeze profit margins',
+            'Uncertainty reduces investment',
+            'Some firms pass costs on — others absorb and shrink'
+          ]
+        },
+        {
+          tone: 'blue',
+          icon: '🌐',
+          label: 'Economy',
+          bullets: [
+            'Loss of international competitiveness',
+            'Exports fall, imports rise — worsens current account',
+            'Slower growth if BoE raises rates to control it'
+          ]
+        }
+      ],
+      winnersLosers: {
+        winners: {
+          label: 'Winners',
+          items: ['<strong>Borrowers</strong> — repay debt in lower real terms (incl. the government)']
+        },
+        losers: {
+          label: 'Losers',
+          items: [
+            '<strong>Savers</strong> — real value of savings eroded',
+            '<strong>Fixed-income earners</strong> — wages or pensions don\'t keep up',
+            '<strong>Creditors</strong> — loans repaid in devalued money'
+          ]
+        }
+      },
+      example: 'The 2022-23 UK spike: energy costs doubled, real wages fell for 18 months. Low-income households — who spend a higher share of income on energy and food — were disproportionately affected.',
+      examEdge: {
+        title: 'Evaluation: who loses most?',
+        text: 'The strongest evaluation identifies <em>which group</em> is worst affected and <em>why the burden is unequal</em>. Low-income households face a higher inflation rate on their basket — they can\'t easily switch away from essentials.'
+      }
+    },
+
+
 
     /* ----- CARD 7 — Deflation ----- */
     {

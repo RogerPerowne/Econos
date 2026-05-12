@@ -5070,3 +5070,87 @@ img, svg { display: block; max-width: 100%; }
   color: var(--econ-gray-700);
   line-height: 1.55;
 }
+
+/* ===== Impacts of inflation card ===== */
+.impact-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+.impact-group {
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  border: 1px solid;
+}
+.impact-group--green { background: var(--econ-green-50);  border-color: var(--econ-green-100); }
+.impact-group--amber { background: var(--econ-amber-50);  border-color: var(--econ-amber-100); }
+.impact-group--blue  { background: var(--econ-blue-50);   border-color: var(--econ-blue-100);  }
+.impact-group__head {
+  display: flex; align-items: center; gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.impact-group__icon { font-size: 20px; }
+.impact-group__label {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+}
+.impact-group--green .impact-group__label { color: var(--econ-green-700); }
+.impact-group--amber .impact-group__label { color: var(--econ-amber-700); }
+.impact-group--blue  .impact-group__label { color: var(--econ-blue-700);  }
+.impact-group__list {
+  margin: 0; padding-left: var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: 1.6;
+  display: flex; flex-direction: column; gap: 4px;
+}
+
+/* Winners / Losers split */
+.wl-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+.wl-panel {
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  border: 1px solid;
+}
+.wl-panel--win  { background: var(--econ-green-50); border-color: var(--econ-green-100); }
+.wl-panel--lose { background: var(--econ-rose-50);  border-color: var(--econ-rose-100);  }
+.wl-panel__head {
+  display: flex; align-items: center; gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.wl-panel__icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+}
+.wl-panel--win  .wl-panel__icon { background: var(--econ-green); color: var(--econ-white); }
+.wl-panel--lose .wl-panel__icon { background: var(--econ-rose);  color: var(--econ-white); }
+.wl-panel__label {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+}
+.wl-panel--win  .wl-panel__label { color: var(--econ-green-700); }
+.wl-panel--lose .wl-panel__label { color: var(--econ-rose-700);  }
+.wl-panel__list {
+  margin: 0; padding-left: var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: 1.6;
+  display: flex; flex-direction: column; gap: 4px;
+}
+
+@media (max-width: 900px) {
+  .impact-groups { grid-template-columns: 1fr; }
+  .wl-row        { grid-template-columns: 1fr; }
+}

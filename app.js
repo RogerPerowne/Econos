@@ -528,6 +528,99 @@
     `;
   }
 
+  /* === Card 5 (merged): monetary theory + QE === */
+  function renderCardMonetary(c) {
+    const tiles = c.mechanisms.map(m => `
+      <div class="mech-tile mech-tile--${m.tone}">
+        <div class="mech-tile__head">
+          <div class="mech-tile__num">${m.num}</div>
+          <div class="mech-tile__title">${m.title}</div>
+        </div>
+        <div class="mech-tile__text">${m.text}</div>
+      </div>
+    `).join('');
+
+    const bullets = c.puzzle.bullets.map(b => `<div class="puzzle-bullet">${b}</div>`).join('');
+
+    return `
+      <div class="card__step-label">${c.stepLabel}</div>
+      <h1 class="card__title">${c.title}</h1>
+      <p class="card__lede">${c.lede}</p>
+
+      <div class="classical-box">
+        <div class="classical-box__head">
+          <span class="classical-box__icon">📐</span>
+          <span class="classical-box__title">${c.classical.title}</span>
+        </div>
+        <div class="classical-formula">
+          <div class="classical-formula__main">${c.classical.formula}</div>
+          <div class="classical-formula__sub">${c.classical.formulaSub}</div>
+        </div>
+        <div class="classical-quote">${c.classical.quote}</div>
+        <div class="classical-examples">${c.classical.examples}</div>
+      </div>
+
+      <div class="puzzle-bullets" style="margin: var(--sp-5) 0;">${bullets}</div>
+
+      <div class="mech-grid">${tiles}</div>
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* === Card 6 (new): impacts of inflation === */
+  function renderCardImpacts(c) {
+    const groups = c.groups.map(g => `
+      <div class="impact-group impact-group--${g.tone}">
+        <div class="impact-group__head">
+          <span class="impact-group__icon">${g.icon}</span>
+          <span class="impact-group__label">${g.label}</span>
+        </div>
+        <ul class="impact-group__list">
+          ${g.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+
+    const wItems = c.winnersLosers.winners.items.map(i => `<li>${i}</li>`).join('');
+    const lItems = c.winnersLosers.losers.items.map(i => `<li>${i}</li>`).join('');
+
+    return `
+      <div class="card__step-label">${c.stepLabel}</div>
+      <h1 class="card__title">${c.title}</h1>
+      <p class="card__lede">${c.lede}</p>
+
+      <div class="impact-groups">${groups}</div>
+
+      <div class="wl-row">
+        <div class="wl-panel wl-panel--win">
+          <div class="wl-panel__head">
+            <span class="wl-panel__icon">↑</span>
+            <span class="wl-panel__label">${c.winnersLosers.winners.label}</span>
+          </div>
+          <ul class="wl-panel__list">${wItems}</ul>
+        </div>
+        <div class="wl-panel wl-panel--lose">
+          <div class="wl-panel__head">
+            <span class="wl-panel__icon">↓</span>
+            <span class="wl-panel__label">${c.winnersLosers.losers.label}</span>
+          </div>
+          <ul class="wl-panel__list">${lItems}</ul>
+        </div>
+      </div>
+
+      <div class="callout callout--info" style="margin-top: var(--sp-5);">
+        <div class="callout__icon">📊</div>
+        <div class="callout__body">
+          <div class="callout__title">Example</div>
+          <div class="callout__text">${c.example}</div>
+        </div>
+      </div>
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
   /* === Card 7: deflation === */
   function renderCardDeflation(c) {
     const mechs = c.mechanisms.map((m, i) => `
@@ -722,6 +815,8 @@
       case 'diagnose':           body = renderCardDiagnose(c);         break;
       case 'puzzle':             body = renderCardPuzzle(c);           break;
       case 'mechanisms':         body = renderCardMechanisms(c);       break;
+      case 'monetary':           body = renderCardMonetary(c);         break;
+      case 'impacts':            body = renderCardImpacts(c);          break;
       case 'deflation':          body = renderCardDeflation(c);        break;
       case 'paired':             body = renderCardPaired(c);           break;
       case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
@@ -840,8 +935,8 @@
       'demand-pull':   'Demand-pull',
       'cost-push':     'Cost-push',
       'diagnose':      'Spotting the difference',
-      'qe-puzzle':     'The QE puzzle',
-      'qe-resolution': "Why QE didn't cause inflation",
+      'monetary':      'Money supply & QE',
+      'impacts':       'Impacts of inflation',
       'deflation':     'Deflation'
     }[id] || id;
   }

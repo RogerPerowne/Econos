@@ -5109,12 +5109,12 @@ img, svg { display: block; max-width: 100%; }
 }
 .impact-group__list li {
   position: relative;
-  padding: 4px 0 4px var(--sp-7);
+  padding: 4px 0 4px calc(var(--sp-7) + var(--sp-3));
 }
 .impact-group__list li::before {
   content: '';
   position: absolute;
-  left: var(--sp-5);
+  left: var(--sp-7);
   top: 12px;
   width: 6px; height: 6px;
   border-radius: var(--r-full);
@@ -5167,12 +5167,12 @@ img, svg { display: block; max-width: 100%; }
 }
 .wl-panel__list li {
   position: relative;
-  padding: 4px 0 4px var(--sp-8);
+  padding: 4px 0 4px calc(var(--sp-7) + var(--sp-2) + var(--sp-3));
 }
 .wl-panel__list li::before {
   content: '';
   position: absolute;
-  left: var(--sp-7);
+  left: calc(var(--sp-7) + var(--sp-2));
   top: 12px;
   width: 6px; height: 6px;
   border-radius: var(--r-full);

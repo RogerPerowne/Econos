@@ -99,7 +99,6 @@
         +   renderExtract()
         +   (state.selected !== null && !state.checked ? renderSelectedBanner() : '')
         +   renderBuckets()
-        +   renderExtras()
         +   (state.checked ? renderResult() : renderInfoBanner())
         + '</div>'
         + renderFooter();
@@ -167,27 +166,6 @@
           + '</button>';
       }).join('');
       return '<div class="link-buckets">' + html + '</div>';
-    }
-
-    function renderExtras() {
-      var extras = Object.keys(S.evidence).filter(function (eid) { return S.evidence[eid].extra; });
-      var chips  = extras.map(function (eid) {
-        var ev     = S.evidence[eid];
-        var placed = state.placements[eid] !== undefined;
-        var sel    = state.selected === eid;
-        var cls    = 'extra-chip'
-                   + (placed ? ' is-placed' : '')
-                   + (sel    ? ' is-selected' : '');
-        return '<button type="button" class="' + cls + '" data-evidence="' + eid + '"' + (placed ? ' disabled' : '') + '>'
-             +   '<span class="extra-chip__plus">+</span>'
-             +   ev.text
-             + '</button>';
-      }).join('');
-      return ''
-        + '<div class="link-extras">'
-        +   '<div class="link-extras__label">Extra evidence (not in the extract)</div>'
-        +   '<div class="link-extras__chips">' + chips + '</div>'
-        + '</div>';
     }
 
     function renderInfoBanner() {

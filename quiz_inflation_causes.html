@@ -17,7 +17,6 @@
   <div id="app-root"></div>
 
   <script src="icons.js"></script>
-  <script src="data-inflation.js"></script>
   <script src="data-inflation-causes-quiz.js"></script>
   <script src="quiz-engine.js"></script>
 
@@ -25,17 +24,6 @@
   (function () {
     var I = window.ECONOS_ICONS;
     var Q = window.ECONOS_QUIZ;
-    var T = window.ECONOS_TOPIC;
-
-    var SHORT_NAMES = {
-      'framing':       'Inflation has many causes',
-      'demand-pull':   'Demand-pull',
-      'cost-push':     'Cost-push',
-      'diagnose':      'Spotting the difference',
-      'qe-puzzle':     'The QE puzzle',
-      'qe-resolution': "Why QE didn't cause inflation",
-      'deflation':     'Deflation'
-    };
 
     var navItems = [
       { name: 'Home',         icon: I.home,     href: 'index.html', active: false },
@@ -89,54 +77,8 @@
       +   '</div>'
       + '</header>';
 
-    // Right rail — all cards marked done, "Quiz" entry as current
-    var cardsList = T.cards.map(function (c, i) {
-      var name = SHORT_NAMES[c.id] || c.id;
-      return ''
-        + '<a href="topic_inflation.html" class="cards-list__item is-done" data-card-idx="' + i + '">'
-        +   '<div class="cards-list__num">' + I.check + '</div>'
-        +   '<div class="cards-list__body"><div class="cards-list__name">' + name + '</div></div>'
-        + '</a>';
-    }).join('')
-    + '<div class="cards-list__item is-current">'
-    +   '<div class="cards-list__num">★</div>'
-    +   '<div class="cards-list__body"><div class="cards-list__name">Quiz</div><span class="cards-list__chip">Current</span></div>'
-    + '</div>';
-
-    var sessionDots = ''
-      + '<div class="session-dots">'
-      +   '<div class="session-dot is-done">' + I.check + '</div>'
-      +   '<div class="session-line is-done"></div>'
-      +   '<div class="session-dot is-current">2</div>'
-      +   '<div class="session-line"></div>'
-      +   '<div class="session-dot">3</div>'
-      + '</div>';
-
-    var rail = ''
-      + '<aside class="right-rail">'
-      +   '<div class="rail-card">'
-      +     '<div class="rail-card__title">Session progress</div>'
-      +     '<div class="rail-card__sub">Step 2 of 3: Master</div>'
-      +     sessionDots
-      +   '</div>'
-      +   '<div class="rail-card">'
-      +     '<div class="rail-card__title" style="margin-bottom: var(--sp-3);">Cards</div>'
-      +     '<div class="cards-list">' + cardsList + '</div>'
-      +   '</div>'
-      +   '<div class="deck-download">'
-      +     '<div class="deck-download__head">'
-      +       '<div class="deck-download__icon">📄</div>'
-      +       '<div>'
-      +         '<div class="deck-download__title">Want more depth?</div>'
-      +         '<div class="deck-download__sub">Download the full topic deck</div>'
-      +       '</div>'
-      +     '</div>'
-      +     '<button class="deck-download__btn">📥 Download PDF</button>'
-      +   '</div>'
-      + '</aside>';
-
     var intro = ''
-      + '<div id="quiz-root">'
+      + '<div class="quiz-wrap" id="quiz-root">'
       +   '<div class="quiz-hero">'
       +     '<div class="quiz-hero__eyebrow">Test yourself</div>'
       +     '<div class="quiz-hero__title">' + Q.title + '</div>'
@@ -150,10 +92,8 @@
       +   '</div>'
       + '</div>';
 
-    var page = '<div class="page">' + intro + rail + '</div>';
-
     document.getElementById('app-root').innerHTML =
-      '<div class="app">' + sidebar + '<div class="main">' + topbar + page + '</div></div>';
+      '<div class="app">' + sidebar + '<div class="main">' + topbar + intro + '</div></div>';
 
     document.getElementById('quiz-start').addEventListener('click', function () {
       window.bootQuiz(Q.questions, {

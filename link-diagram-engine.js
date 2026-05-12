@@ -116,7 +116,7 @@
     function renderTopbar() {
       return ''
         + '<header class="topbar">'
-        +   '<a href="' + DATA.backUrl + '" class="topbar__back">' + I.arrowLeft + '</a>'
+        +   '<a href="' + DATA.backUrl + '" class="topbar__back">' + I.arrowLeft + '<span>Back to dashboard</span></a>'
         +   '<div class="topbar__crumbs">'
         +     '<div class="topbar__session-label">' + DATA.sessionLabel + '</div>'
         +     '<div class="topbar__topic-title">' + DATA.topic + '</div>'

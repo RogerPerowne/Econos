@@ -7090,6 +7090,83 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   .diag-explain-layout { grid-template-columns: 1fr; }
 }
 
+/* ── It Depends On — explain phase ── */
+.depends-explain {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--sp-4);
+}
+.depends-explain-block {
+  border: 1.5px solid var(--econ-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  background: var(--econ-white);
+  transition: border-color 0.2s, background 0.2s;
+}
+.depends-explain-block.is-correct {
+  border-color: var(--econ-green);
+  background: var(--econ-green-50);
+}
+.depends-explain-block.is-wrong {
+  border-color: var(--econ-rose);
+  background: #FEF2F2;
+}
+.depends-explain-block__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+.depends-explain-block__icon { font-size: 1.4rem; flex-shrink: 0; }
+.depends-explain-block__label {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--econ-ink);
+  flex: 1;
+}
+.depends-factor-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+}
+.is-correct .depends-factor-mark { background: var(--econ-green); color: white; }
+.is-wrong   .depends-factor-mark { background: var(--econ-rose);  color: white; }
+
+.depends-explain-block__textarea {
+  width: 100%;
+  min-height: 72px;
+  padding: var(--sp-3);
+  border: 1.5px solid var(--econ-border);
+  border-radius: var(--r-md);
+  font: inherit;
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  background: var(--econ-white);
+  resize: vertical;
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: border-color 0.12s;
+}
+.depends-explain-block__textarea:focus {
+  outline: none;
+  border-color: var(--econ-amber);
+  box-shadow: 0 0 0 3px rgba(245,184,0,0.15);
+}
+.depends-explain-block__textarea[readonly] {
+  background: transparent;
+  border-color: transparent;
+  color: var(--econ-ink);
+  resize: none;
+  padding-left: 0;
+}
+
 /* ============================================================
    It Depends On station
    ============================================================ */

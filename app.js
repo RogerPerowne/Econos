@@ -569,7 +569,6 @@
       ${renderExamEdge(c.examEdge)}
 
       ${c.bridge ? `<div class="bridge"><div class="bridge__icon">→</div><div><div class="bridge__title">${c.bridge.title}</div><div class="bridge__text">${c.bridge.text}</div></div></div>` : ''}
-      ${c.quizCta ? `<div class="quiz-cta-wrap"><a href="${c.quizCta.href}" class="quiz-start-btn">${c.quizCta.label}</a></div>` : ''}
     `;
   }
 
@@ -886,7 +885,12 @@
       render();
     } else if (action === 'next') {
       if (currentView === T.cards.length - 1) {
-        alert('Quick Check coming next session 🎯');
+        const last = T.cards[currentView];
+        if (last.quizCta && last.quizCta.href) {
+          window.location.href = last.quizCta.href;
+        } else {
+          alert('Quick Check coming next session 🎯');
+        }
       } else {
         currentView = currentView + 1;
         render();

@@ -57,7 +57,8 @@ window.ECONOS_LINK_DIAGRAM = {
     ]
   },
 
-
+  /* ── Scenario context shown across stages ── */
+  scenario: {
     icon:  '🔥',
     text:  'Global oil and gas prices rise sharply, pushing up firms\' production and transport costs.',
     dataPoints: [

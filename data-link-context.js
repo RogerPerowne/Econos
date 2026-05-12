@@ -11,6 +11,7 @@ window.ECONOS_LINK_STATION = {
   stations: [
     { id: 'context', label: 'Use the context',    href: 'link_inflation_context.html' },
     { id: 'chain',   label: 'Build the chain',    href: 'link_inflation_chain.html'   },
+    { id: 'diagram', label: 'Diagram connector',  href: 'link_inflation_diagram.html' },
     { id: 'flaw',    label: 'Spot the flaw'       },
     { id: 'judge',   label: 'Make the judgement'  }
   ],

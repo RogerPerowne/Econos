@@ -23,8 +23,9 @@ window.ECONOS_LINK_INTRO = {
     stations: [
       { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: 'link_inflation_context.html', state: 'available' },
       { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order or fill the steps in a reasoning chain.',                href: 'link_inflation_chain.html',    state: 'available' },
-      { num: 3, name: 'Spot the flaw',      skill: 'Evaluation',  sub: 'Pick the strongest answer; name the flaws in the others.',     href: '#',                            state: 'locked'    },
-      { num: 4, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Choose the strongest evaluative pivot and complete the line.', href: '#',                            state: 'locked'    }
+      { num: 3, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label, interpret and explain the right AD/AS diagram.',  href: 'link_inflation_diagram.html',  state: 'available' },
+      { num: 4, name: 'Spot the flaw',      skill: 'Evaluation',  sub: 'Pick the strongest answer; name the flaws in the others.',     href: '#',                            state: 'locked'    },
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Choose the strongest evaluative pivot and complete the line.', href: '#',                            state: 'locked'    }
     ],
 
     stages: [

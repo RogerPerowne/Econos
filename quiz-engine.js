@@ -672,6 +672,8 @@
                 : pct >= 40 ? 'Developing — some core ideas need more work.'
                 : 'This topic needs focused revision.';
 
+    var nCorrect = S.score;
+
     var reviewRows = S.results.map(function (rv) {
       var m = TYPE_META[rv.type] || { label: rv.type, tone: 'blue' };
       var tc = TONE_COLOURS[m.tone];

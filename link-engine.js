@@ -155,15 +155,15 @@
           : '';
 
         return ''
-          + '<button type="button" class="link-bucket link-bucket--' + b.tone + (hasSelection ? ' is-ready' : '') + '" data-bucket="' + b.id + '">'
+          + '<div role="button" tabindex="0" class="link-bucket link-bucket--' + b.tone + (hasSelection ? ' is-ready' : '') + '" data-bucket="' + b.id + '">'
           +   '<div class="link-bucket__head">'
           +     '<span class="link-bucket__icon">' + b.icon + '</span>'
           +     '<span class="link-bucket__label">' + b.label + '</span>'
           +     '<span class="link-bucket__count">' + placedIds.length + '</span>'
           +   '</div>'
-          +   '<div class="link-bucket__chips">' + chips + '</div>'
           +   emptyState
-          + '</button>';
+          +   '<div class="link-bucket__chips">' + chips + '</div>'
+          + '</div>';
       }).join('');
       return '<div class="link-buckets">' + html + '</div>';
     }
@@ -327,13 +327,20 @@
 
       // buckets (whole bucket is the tap target)
       document.querySelectorAll('[data-bucket]').forEach(function (el) {
-        el.addEventListener('click', function (e) {
+        function place() {
           if (state.checked) return;
           if (state.selected === null) return;
           var bid = el.getAttribute('data-bucket');
           state.placements[state.selected] = bid;
           state.selected = null;
           render();
+        }
+        el.addEventListener('click', place);
+        el.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            place();
+          }
         });
       });
 

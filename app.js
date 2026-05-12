@@ -176,16 +176,24 @@
      ============================================================ */
 
   function renderIntro() {
-    const stages = T.intro.stages.map(s => `
-      <div class="stage ${s.state === 'current' ? 'is-current' : ''}">
+    const stages = T.intro.stages.map(s => {
+      const cls = 'stage'
+                + (s.state === 'current'   ? ' is-current'   : '')
+                + (s.state === 'available' ? ' is-available' : '')
+                + (s.state === 'locked'    ? ' is-locked'    : '');
+      const inner = `
         <div class="stage__num">${s.state === 'locked' ? I.lock : s.num}</div>
         <div class="stage__body">
           <div class="stage__name">${s.name}</div>
           <div class="stage__sub">${s.sub}</div>
           ${s.state === 'current' ? '<span class="stage__chip">Current</span>' : ''}
+          ${s.state === 'available' ? '<span class="stage__chip stage__chip--available">Open →</span>' : ''}
         </div>
-      </div>
-    `).join('');
+      `;
+      return s.href && s.state !== 'locked'
+        ? `<a href="${s.href}" class="${cls}">${inner}</a>`
+        : `<div class="${cls}">${inner}</div>`;
+    }).join('');
 
     return `
       <div class="page">

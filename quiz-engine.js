@@ -747,7 +747,7 @@
 
       '<div class="quiz-results__actions">' +
         '<button class="quiz-btn quiz-btn--secondary" onclick="restartQuiz()">Redo quiz</button>' +
-        '<button class="quiz-btn quiz-btn--primary" onclick="alert(\'Master mode coming soon \\u2014 exam-style questions from past papers\')">Ready to Master Inflation →</button>' +
+        '<a class="quiz-btn quiz-btn--primary" href="link_inflation_intro.html">On to Link it →</a>' +
       '</div>' +
 
       '</div>');

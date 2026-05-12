@@ -6,7 +6,7 @@
 window.ECONOS_LINK_STATION = {
   topic:        'Causes of Inflation & Deflation',
   sessionLabel: 'Session 2 of 3: Link',
-  backUrl:      'topic_inflation.html',
+  backUrl:      'link_inflation_intro.html',
 
   stations: [
     { id: 'context', label: 'Use the context'   },

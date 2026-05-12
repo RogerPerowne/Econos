@@ -3024,6 +3024,11 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-full);
   background: var(--econ-gray-400);
 }
+.paired-half--blue   .paired-half__drivers li::before { background: var(--econ-blue); }
+.paired-half--green  .paired-half__drivers li::before { background: var(--econ-green); }
+.paired-half--amber  .paired-half__drivers li::before { background: var(--econ-amber); }
+.paired-half--purple .paired-half__drivers li::before { background: var(--econ-purple-700); }
+.paired-half--rose   .paired-half__drivers li::before { background: var(--econ-rose); }
 
 .paired-half__example {
   margin-top: var(--sp-4);

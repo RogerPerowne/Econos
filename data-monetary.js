@@ -64,8 +64,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 7',
       title: 'The Bank of England',
       lede: "Independence, mandate, machinery. Three things to lock in before you reason about policy.",
-      bannerLabel: 'The institution · How it works',
-      bannerTone: 'blue',
       pairs: [
         {
           tone: 'blue',
@@ -262,8 +260,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Credibility: the invisible tool',
       lede: "The BoE's most powerful tool is sometimes saying nothing. If markets believe inflation will return to target, it tends to. Lose belief — and you need a much bigger hammer.",
-      bannerLabel: 'Credibility · The expectations channel',
-      bannerTone: 'purple',
       pairs: [
         {
           tone: 'green',

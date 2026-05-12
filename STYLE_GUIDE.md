@@ -46,6 +46,11 @@ Diagrams use a slightly different, softer palette to feel illustrative rather th
 - ❌ "RESULT P↑ Y↑" chips (the diagram tells its own story; don't summarise it in a chip)
 - ❌ Chunky filled arrowheads (slim, elegant)
 
+### Text colour: ink only (accessibility rule)
+**All text** uses `--econ-ink` (or `--ink` in standalone HTML). We do not use grey for body text, captions, hints, labels, or any other text content. Users have a wide range of eyesight quality — pure ink ensures clear visibility at all times.
+
+Grey variables (`--econ-gray-*`) remain available for **non-text** uses only: borders, dividers, icon backgrounds, subtle fills.
+
 ---
 
 ## 2. Typography

@@ -50,8 +50,8 @@ window.ECONOS_ICONS = {
      Always ascending left→right · green→yellow→pink in order.
      ============================================================ */
   brandGlyph: `
-    <svg viewBox="0 0 130 56" width="56" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
-      <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+    <svg viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
+      <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="2.8" stroke-linecap="round"/>
       <circle cx="14"  cy="46" r="7"   fill="#1FB574"/>
       <circle cx="65"  cy="28" r="8.5" fill="#F5B800"/>
       <circle cx="116" cy="12" r="10"  fill="#EC2D68"/>
@@ -1405,31 +1405,37 @@ window.ECONOS_ICONS = {
 
       <rect x="0" y="0" width="300" height="280" fill="url(#mp-fr-dots)" opacity="0.45"/>
 
-      <!-- BoE (right) — blue building -->
-      <rect x="180" y="60" width="110" height="160" rx="18" fill="#2563EB" stroke="#1E40AF" stroke-width="2"/>
-      <polygon points="180,60 235,42 290,60" fill="#2563EB" stroke="#1E40AF" stroke-width="2" stroke-linejoin="round"/>
-      <!-- Columns -->
-      <line x1="195" y1="68" x2="195" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
-      <line x1="212" y1="68" x2="212" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
-      <line x1="229" y1="68" x2="229" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
-      <line x1="246" y1="68" x2="246" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
-      <line x1="263" y1="68" x2="263" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
-      <line x1="280" y1="68" x2="280" y2="210" stroke="#FFFFFF" stroke-width="1.4" opacity="0.5"/>
-      <!-- Labels inside BoE -->
-      <text x="235" y="110" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">BANK OF</text>
-      <text x="235" y="125" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">ENGLAND</text>
-      <line x1="200" y1="138" x2="270" y2="138" stroke="#FFFFFF" stroke-width="1" opacity="0.4"/>
-      <text x="235" y="160" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">BANK</text>
-      <text x="235" y="174" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">RATE</text>
-      <text x="235" y="200" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
+      <!-- ===== Classical bank building (right) ===== -->
+      <!-- Pediment (wide triangular roof) -->
+      <polygon points="172,90 235,58 298,90" fill="#2563EB" stroke="#1E40AF" stroke-width="2" stroke-linejoin="round"/>
+      <!-- Architrave (horizontal beam above columns) -->
+      <rect x="178" y="90" width="114" height="10" fill="#1E40AF"/>
+      <!-- Frieze label "BANK OF ENGLAND" -->
+      <text x="235" y="97" font-size="6" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">BANK OF ENGLAND</text>
+      <!-- Main body (columned hall) -->
+      <rect x="180" y="100" width="110" height="100" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+      <!-- Four substantial columns with capitals -->
+      <g fill="#FFFFFF" opacity="0.92">
+        <rect x="190" y="100" width="2" height="4"/><rect x="188" y="104" width="6" height="92"/><rect x="186" y="196" width="10" height="4"/>
+        <rect x="217" y="100" width="2" height="4"/><rect x="215" y="104" width="6" height="92"/><rect x="213" y="196" width="10" height="4"/>
+        <rect x="251" y="100" width="2" height="4"/><rect x="249" y="104" width="6" height="92"/><rect x="247" y="196" width="10" height="4"/>
+        <rect x="278" y="100" width="2" height="4"/><rect x="276" y="104" width="6" height="92"/><rect x="274" y="196" width="10" height="4"/>
+      </g>
+      <!-- Central tablet (centered on building, width 46): BANK RATE ↑ -->
+      <rect x="212" y="115" width="46" height="76" rx="3" fill="#1E40AF" stroke="#0B1426" stroke-width="1"/>
+      <text x="235" y="138" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">BANK</text>
+      <text x="235" y="152" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">RATE</text>
+      <text x="235" y="180" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
+      <!-- Stepped plinth (base) -->
+      <rect x="174" y="200" width="122" height="6" fill="#1E40AF"/>
+      <rect x="170" y="206" width="130" height="6" fill="#1E3A8A"/>
 
-      <!-- Five arrows flowing FROM BoE (left edge x=180) TO the flaps (x=0, off-screen left)
-           Spread vertically at y = 75, 110, 140, 175, 210 -->
-      <path d="M 178 75  Q 90 60 0 50"  stroke="#10B981" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-green)"/>
-      <path d="M 178 110 Q 90 95 0 95" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-amber)"/>
-      <path d="M 178 140 L 0 140"       stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-blue)"/>
-      <path d="M 178 175 Q 90 190 0 185" stroke="#7E22CE" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-purple)"/>
-      <path d="M 178 210 Q 90 225 0 230" stroke="#E11D48" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-rose)"/>
+      <!-- ===== Five arrows flowing FROM the building (left edge ~x=172) TO the flaps on the left ===== -->
+      <path d="M 170 100 Q 90 80 0 55"   stroke="#10B981" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-green)"/>
+      <path d="M 170 125 Q 90 110 0 105" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-amber)"/>
+      <path d="M 170 153 L 0 153"        stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-blue)"/>
+      <path d="M 170 180 Q 90 195 0 200" stroke="#7E22CE" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-purple)"/>
+      <path d="M 170 205 Q 90 225 0 245" stroke="#E11D48" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#mp-arr-rose)"/>
     </svg>
   `,
 

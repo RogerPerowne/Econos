@@ -79,8 +79,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Consumption and Investment',
       lede: "C is the engine room; I is the accelerant. Together they account for ~77% of UK AD — and between them they drive most of the business cycle.",
-      bannerLabel: 'C & I · Engine and accelerant',
-      bannerTone: 'green',
       pairs: [
         {
           tone: 'green',
@@ -124,8 +122,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Government spending and Net Exports',
       lede: "G is the most directly controllable component. (X−M) is the most internationally exposed. Both are essential for multi-perspective answers.",
-      bannerLabel: 'G & X−M · Policy and trade',
-      bannerTone: 'blue',
       pairs: [
         {
           tone: 'blue',

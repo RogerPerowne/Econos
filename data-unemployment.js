@@ -62,8 +62,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Measuring unemployment',
       lede: "Two measures, different stories. The gap between them is the gem most students miss.",
-      bannerLabel: 'Measurement · Two definitions',
-      bannerTone: 'blue',
       pairs: [
         {
           tone: 'blue',
@@ -225,8 +223,6 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Different causes, different cures',
       lede: "The matrix that organises every unemployment policy essay. Match the toolkit to the type — using the wrong one is an A* trap.",
-      bannerLabel: 'Policy · Match the cure to the cause',
-      bannerTone: 'blue',
       pairs: [
         {
           tone: 'green',

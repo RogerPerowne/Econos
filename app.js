@@ -568,13 +568,8 @@
 
       ${renderExamEdge(c.examEdge)}
 
-      <div class="bridge">
-        <div class="bridge__icon">→</div>
-        <div>
-          <div class="bridge__title">${c.bridge.title}</div>
-          <div class="bridge__text">${c.bridge.text}</div>
-        </div>
-      </div>
+      ${c.bridge ? `<div class="bridge"><div class="bridge__icon">→</div><div><div class="bridge__title">${c.bridge.title}</div><div class="bridge__text">${c.bridge.text}</div></div></div>` : ''}
+      ${c.quizCta ? `<div class="quiz-cta-wrap"><a href="${c.quizCta.href}" class="quiz-start-btn">${c.quizCta.label}</a></div>` : ''}
     `;
   }
 

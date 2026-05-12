@@ -31,7 +31,7 @@
     topicId:  'inflation_causes',
     title:    'Causes of Inflation &amp; Deflation',
     subtitle: 'Theme 2.4 · Edexcel A-Level',
-    sessionLabel: 'Session 2 of 3: Master',
+    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  'topic_inflation.html',
     backLabel: 'Back to topic',
 

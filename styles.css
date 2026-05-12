@@ -1653,7 +1653,7 @@ img, svg { display: block; max-width: 100%; }
    ============================================================ */
 
 .classical-box {
-  background: var(--econ-blue-50);
+  background: transparent;
   border-radius: var(--r-lg);
   padding: var(--sp-5) var(--sp-6);
   margin-bottom: var(--sp-5);

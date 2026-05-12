@@ -181,33 +181,41 @@ img, svg { display: block; max-width: 100%; }
   padding: 0 var(--sp-6) var(--sp-6);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--sp-1);
+  align-items: flex-start;
+  line-height: 1;
 }
 
 .sidebar__logo {
-  height: 36px;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
+  display: block;
+  margin-bottom: 4px;
+}
+.sidebar__logo svg {
+  display: block;
+  width: 140px;
+  height: auto;
 }
 
 .sidebar__wordmark {
   font-family: var(--font-display);
   font-variation-settings: var(--fraunces-display);
-  font-size: 32px;
+  font-size: 64px;
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 0.9;
   color: var(--econ-ink);
+  display: block;
 }
 
 .sidebar__tagline {
-  font-family: var(--font-body);
-  font-size: var(--fs-xs);
-  color: var(--econ-ink-soft);
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 14, "SOFT" 30, "WONK" 0;
+  font-size: 13px;
   font-weight: 600;
-  margin-top: 6px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: var(--econ-ink);
+  margin-top: 9px;
+  display: block;
 }
 .sidebar__tagline .ec-stop-green  { color: var(--econ-green);  font-weight: 800; }
 .sidebar__tagline .ec-stop-yellow { color: var(--econ-amber);  font-weight: 800; }

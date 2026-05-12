@@ -735,7 +735,7 @@
       <div class="page">
         <div>
           <div class="progress">
-            <span class="progress__label">Overall progress</span>
+            <span class="progress__label">Progress</span>
             <div class="progress__bar"><div class="progress__fill" style="width: ${pct}%;"></div></div>
             <span class="progress__pct">${pct}%</span>
             <button class="progress__exit" data-action="back-to-intro">${I.exit} Exit session</button>

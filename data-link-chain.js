@@ -81,7 +81,19 @@ window.ECONOS_LINK_CHAIN = {
           text: 'As prices across the economy rise, CPI increases. This is cost-push inflation: the price level rises even though there has been no increase in aggregate demand.'
         }
       ],
-      examBridge: '"An oil-price shock shifts SRAS leftward; firms facing squeezed margins raise output prices, transmitting higher input costs into CPI — a classic cost-push inflation where rising prices are accompanied by falling real output."'
+      examBridge: '"An oil-price shock shifts SRAS leftward; firms facing squeezed margins raise output prices, transmitting higher input costs into CPI — a classic cost-push inflation where rising prices are accompanied by falling real output."',
+
+      prompts: [
+        'What happens to firms\' output or prices as costs rise?',
+        'How does this affect the general price level?',
+        'What is the wider effect on households and real incomes?'
+      ],
+      modelAnswers: [
+        'Firms face squeezed profit margins and respond by cutting output and/or raising prices — on the AD/AS diagram, SRAS shifts leftward.',
+        'The leftward SRAS shift raises the equilibrium price level. CPI increases, producing cost-push inflation even without any change in aggregate demand.',
+        'Higher prices erode households\' real wages and purchasing power. Real incomes fall, reducing consumer spending and potentially deepening the slowdown.'
+      ],
+      vocab: ['SRAS', 'cost-push', 'price level', 'CPI', 'real incomes', 'purchasing power', 'profit margins', 'stagflation']
     },
 
     /* ── 2. Demand-pull (consumer boom) ── */
@@ -145,7 +157,19 @@ window.ECONOS_LINK_CHAIN = {
           text: 'With demand exceeding the economy\'s productive capacity, firms respond by raising prices rather than output. This demand-pull inflation is sustained as long as AD remains above LRAS.'
         }
       ],
-      examBridge: '"Rising house prices generate a positive wealth effect; consumer spending lifts AD rightward and, with the output gap closing, firms raise prices rather than output — generating demand-pull inflation that may persist until monetary policy tightens."'
+      examBridge: '"Rising house prices generate a positive wealth effect; consumer spending lifts AD rightward and, with the output gap closing, firms raise prices rather than output — generating demand-pull inflation that may persist until monetary policy tightens."',
+
+      prompts: [
+        'How does higher wealth and easier credit affect spending?',
+        'What happens to aggregate demand and the output gap?',
+        'What type of inflation results, and what might sustain it?'
+      ],
+      modelAnswers: [
+        'Higher household wealth and easier access to credit raise disposable income and consumer confidence. Consumption rises — the largest component of AD.',
+        'Rising consumption shifts AD to the right. As the economy approaches full capacity, the output gap closes, putting sustained upward pressure on the price level.',
+        'Demand-pull inflation emerges as firms raise prices rather than output. If firms also grant wage rises to meet demand, a wage-price spiral may develop, embedding inflation expectations.'
+      ],
+      vocab: ['aggregate demand', 'AD', 'wealth effect', 'output gap', 'demand-pull', 'full capacity', 'consumer confidence', 'inflation expectations']
     },
 
     /* ── 3. Wage-price spiral ── */
@@ -209,7 +233,19 @@ window.ECONOS_LINK_CHAIN = {
           text: 'Seeing real wages eroded again, workers and unions push for another above-inflation settlement. This self-reinforcing loop — a wage-price spiral — can embed inflation expectations and make inflation difficult to control without a recession.'
         }
       ],
-      examBridge: '"Above-inflation wage settlements raise unit labour costs, shifting SRAS left and pushing up the price level; the resulting fall in real wages prompts further pay demands, creating a self-reinforcing wage-price spiral that risks de-anchoring inflation expectations."'
+      examBridge: '"Above-inflation wage settlements raise unit labour costs, shifting SRAS left and pushing up the price level; the resulting fall in real wages prompts further pay demands, creating a self-reinforcing wage-price spiral that risks de-anchoring inflation expectations."',
+
+      prompts: [
+        'How do higher wages affect firms\' costs of production?',
+        'How do firms respond, and what happens to the price level?',
+        'Why does this create a self-reinforcing spiral?'
+      ],
+      modelAnswers: [
+        'Higher wages raise unit labour costs — firms\' main cost of production. This shifts SRAS to the left as the economy becomes more expensive to operate at every output level.',
+        'To protect profit margins, firms raise prices (cost mark-up pricing). CPI rises, shifting the burden back onto workers whose nominal pay rise is now worth less in real terms.',
+        'Workers\' real wages fall again despite the pay rise, so unions push for further above-inflation settlements. This self-reinforcing loop embeds inflationary expectations and is difficult to break without a deliberate policy-induced recession.'
+      ],
+      vocab: ['unit labour costs', 'SRAS', 'cost mark-up', 'real wages', 'nominal wages', 'wage-price spiral', 'inflation expectations', 'profit margins']
     }
   ]
 };

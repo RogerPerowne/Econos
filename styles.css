@@ -6423,3 +6423,186 @@ a.stage:hover .stage__name { color: var(--econ-blue-700); }
 .theme--link .chain-progress-bar__fill { background: var(--econ-amber); }
 .theme--link .chain-tile:hover { border-color: var(--econ-amber); }
 .theme--link .chain-slot--anchor { background: var(--econ-green-50); border-color: var(--econ-green-100); }
+
+/* ============================================================
+   Chain station — Open Response variant
+   ============================================================ */
+
+/* Open chain: slots stack vertically for text input */
+.chain-slots--open {
+  flex-direction: column;
+  overflow-x: visible;
+  gap: 0;
+}
+.chain-slots--open .chain-slot { max-width: none; }
+.chain-slots--open .chain-arrow {
+  width: auto;
+  height: 28px;
+  padding-top: 0;
+  transform: rotate(90deg);
+  align-self: flex-start;
+  margin-left: 12px; /* align with slot num centre */
+}
+
+/* Open slot body */
+.chain-open-slot {
+  flex-direction: row;
+  align-items: flex-start;
+  min-height: auto;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border: 1.5px solid var(--econ-border);
+  background: var(--econ-white);
+}
+.chain-open-slot.is-pending { border-color: var(--econ-amber); background: var(--econ-amber-50); }
+.chain-open-slot.is-correct  { border-color: var(--econ-green); background: var(--econ-green-50); }
+.chain-open-slot.is-wrong    { border-color: var(--econ-rose);  background: #FEF2F2; }
+
+.chain-slot__num.is-correct { background: var(--econ-green); color: white; }
+.chain-slot__num.is-wrong   { background: var(--econ-rose);  color: white; }
+
+.chain-open-slot__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* Student answer textarea */
+.chain-open-slot__textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 72px;
+  border: 1.5px solid var(--econ-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  background: var(--econ-white);
+  line-height: 1.5;
+  transition: border-color 0.15s;
+}
+.chain-open-slot__textarea:focus {
+  outline: none;
+  border-color: var(--econ-amber);
+  box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.18);
+}
+
+/* Locked answer display after check */
+.chain-open-slot__answer {
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: 1.5;
+  background: var(--econ-white);
+  border: 1.5px solid var(--econ-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-3);
+  min-height: 48px;
+}
+.chain-open-slot__empty-note { color: var(--econ-muted); font-style: italic; }
+
+/* Model answer reveal */
+.chain-open-slot__model {
+  background: var(--econ-surface);
+  border-left: 3px solid var(--econ-amber);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: var(--sp-3) var(--sp-4);
+}
+.chain-open-slot__model-label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--econ-amber-700);
+  margin-bottom: var(--sp-1);
+}
+.chain-open-slot__model-text {
+  font-size: var(--fs-sm);
+  color: var(--econ-ink);
+  line-height: 1.5;
+}
+
+/* Self-mark buttons */
+.chain-open-slot__selfmark {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+.chain-open-slot__selfmark-label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--econ-muted);
+  flex-shrink: 0;
+}
+.chain-selfmark-btn {
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background 0.1s, border-color 0.1s;
+}
+.chain-selfmark-btn--ok {
+  background: var(--econ-green-50);
+  border-color: var(--econ-green-100);
+  color: var(--econ-green-700);
+}
+.chain-selfmark-btn--ok:hover { background: var(--econ-green); color: white; border-color: var(--econ-green); }
+.chain-selfmark-btn--no {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: var(--econ-rose);
+}
+.chain-selfmark-btn--no:hover { background: var(--econ-rose); color: white; border-color: var(--econ-rose); }
+
+/* Mark prompt nudge */
+.chain-open-slot__mark-prompt {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--econ-muted);
+  padding: var(--sp-3) 0;
+  font-style: italic;
+}
+
+/* Vocabulary chips */
+.chain-vocab {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+  flex-wrap: wrap;
+}
+.chain-vocab__label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--econ-muted);
+  white-space: nowrap;
+  padding-top: 5px;
+  flex-shrink: 0;
+}
+.chain-vocab__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.chain-vocab-chip {
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  background: var(--econ-surface);
+  border: 1px solid var(--econ-border);
+  font: inherit;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-med);
+  color: var(--econ-ink);
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+.chain-vocab-chip:hover {
+  background: var(--econ-amber-50);
+  border-color: var(--econ-amber);
+  color: var(--econ-amber-700);
+}

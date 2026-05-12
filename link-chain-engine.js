@@ -297,9 +297,8 @@
     function renderRail() {
       var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
-        var done      = i < DATA.currentStationIdx;
-        var status    = done ? 'done' : (isCurrent ? 'current' : '');
-        var num       = done ? I.check : (i + 1);
+        var status    = isCurrent ? 'current' : '';
+        var num       = i + 1;
         var tag       = st.href ? 'a' : 'div';
         var attrs     = st.href ? ' href="' + st.href + '"' : '';
         var lockChip  = (!st.href && !isCurrent) ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';

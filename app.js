@@ -914,17 +914,13 @@
   }
 
   function renderSessionDots(currentIdx) {
-    // Map card idx (0-6) to one of 3 stages
-    const stage = currentIdx <= 2 ? 1 : (currentIdx <= 4 ? 2 : 3);
     return `
       <div class="session-dots">
-        <div class="session-dot ${stage === 1 ? 'is-current' : 'is-done'}">
-          ${stage > 1 ? I.check : '1'}
-        </div>
-        <div class="session-line ${stage > 1 ? 'is-done' : ''}"></div>
-        <div class="session-dot ${stage === 2 ? 'is-current' : (stage > 2 ? 'is-done' : '')}">${stage > 2 ? I.check : '2'}</div>
-        <div class="session-line ${stage > 2 ? 'is-done' : ''}"></div>
-        <div class="session-dot ${stage === 3 ? 'is-current' : ''}">3</div>
+        <div class="session-dot is-current">1</div>
+        <div class="session-line"></div>
+        <div class="session-dot">2</div>
+        <div class="session-line"></div>
+        <div class="session-dot">3</div>
       </div>
     `;
   }

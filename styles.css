@@ -5688,3 +5688,145 @@ img, svg { display: block; max-width: 100%; }
   .link-buckets { grid-template-columns: 1fr; }
   .link-footer  { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   STAGES — extended states (available, done, locked) + clickable
+   ============================================================ */
+a.stage { text-decoration: none; }
+a.stage:hover .stage__num {
+  border-color: var(--econ-blue);
+  background: var(--econ-blue-50);
+}
+a.stage:hover .stage__name { color: var(--econ-blue-700); }
+
+.stage.is-available .stage__num {
+  border-color: var(--econ-blue);
+  color: var(--econ-blue-700);
+}
+.stage.is-available .stage__name { color: var(--econ-blue-700); }
+
+.stage.is-done .stage__num {
+  background: var(--econ-green);
+  border-color: var(--econ-green);
+  color: var(--econ-white);
+}
+.stage.is-done .stage__name { color: var(--econ-gray-700); }
+.stage.is-done .stage__sub  { color: var(--econ-gray-500); }
+
+.stage.is-locked .stage__num {
+  background: var(--econ-gray-50);
+  border-color: var(--econ-gray-200);
+  color: var(--econ-gray-500);
+}
+.stage.is-locked .stage__name { color: var(--econ-gray-500); }
+.stage.is-locked .stage__sub  { color: var(--econ-gray-400); }
+
+.stage__chip--available {
+  background: var(--econ-blue-50);
+  color: var(--econ-blue-700);
+}
+.stage__chip--done {
+  background: var(--econ-green-50);
+  color: var(--econ-green-700);
+}
+
+/* ============================================================
+   LINK IT INTRO — stations preview list
+   ============================================================ */
+
+.link-intro-stations__head {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--econ-gray-700);
+  margin: var(--sp-5) 0 var(--sp-3);
+}
+.link-intro-stations {
+  display: flex; flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+.link-intro-station {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md);
+  border: 1px solid var(--econ-gray-100);
+  background: var(--econ-white);
+  text-decoration: none;
+  color: inherit;
+  transition: all 120ms;
+}
+.link-intro-station:hover {
+  border-color: var(--econ-blue);
+  background: var(--econ-blue-50);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -6px rgba(15,23,42,0.10);
+}
+.link-intro-station.is-locked {
+  opacity: 0.55;
+  cursor: default;
+}
+.link-intro-station.is-locked:hover {
+  border-color: var(--econ-gray-100);
+  background: var(--econ-white);
+  transform: none;
+  box-shadow: none;
+}
+.link-intro-station__num {
+  width: 32px; height: 32px;
+  border-radius: var(--r-full);
+  background: var(--econ-blue-50);
+  color: var(--econ-blue-700);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+}
+.link-intro-station.is-locked .link-intro-station__num {
+  background: var(--econ-gray-100);
+  color: var(--econ-gray-500);
+}
+.link-intro-station__body { flex: 1; min-width: 0; }
+.link-intro-station__head {
+  display: flex; align-items: center; gap: var(--sp-2);
+  margin-bottom: 2px;
+}
+.link-intro-station__name {
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+}
+.link-intro-station__skill {
+  font-size: 11px;
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+}
+.link-intro-station__skill--application { background: var(--econ-green-50);  color: var(--econ-green-700);  }
+.link-intro-station__skill--analysis    { background: var(--econ-blue-50);   color: var(--econ-blue-700);   }
+.link-intro-station__skill--evaluation  { background: var(--econ-amber-50);  color: var(--econ-amber-700);  }
+.link-intro-station__skill--numeracy    { background: var(--econ-purple-50); color: var(--econ-purple-700); }
+.link-intro-station__sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-700);
+  line-height: var(--lh-snug);
+}
+.link-intro-station__arrow {
+  color: var(--econ-blue);
+  flex-shrink: 0;
+}
+
+/* simple topbar variant */
+.topbar--simple { justify-content: space-between; }
+.topbar__back-link {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  color: var(--econ-ink);
+  text-decoration: none;
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-base);
+}
+.topbar__back-link:hover { color: var(--econ-blue-700); }

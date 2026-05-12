@@ -22,9 +22,9 @@ window.ECONOS_TOPIC = {
     ],
     tip: "These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.",
     stages: [
-      { num: 1, name: 'Learn',  sub: 'Recap and lock in the gems',     state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions',  state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
+      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',       state: 'current'                                  },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context',    state: 'available', href: 'link_inflation_intro.html' },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'locked'                                   }
     ]
   },
 

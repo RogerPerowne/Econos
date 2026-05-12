@@ -97,21 +97,30 @@
         +   '<h1 class="link-card__title">' + S.question + '</h1>'
         +   '<p class="link-card__lede">' + S.instruction + '</p>'
         +   renderExtract()
-        +   (state.selected !== null && !state.checked ? renderSelectedBanner() : '')
+        +   (state.selected !== null && !state.checked ? renderPicker() : '')
         +   renderBuckets()
         +   (state.checked ? renderResult() : renderInfoBanner())
         + '</div>'
         + renderFooter();
     }
 
-    function renderSelectedBanner() {
-      var ev = S.evidence[state.selected];
+    function renderPicker() {
+      var ev   = S.evidence[state.selected];
+      var opts = S.buckets.map(function (b) {
+        return ''
+          + '<button type="button" class="link-picker__opt link-picker__opt--' + b.tone + '" data-pick="' + b.id + '">'
+          +   '<span class="link-picker__opt-icon">' + b.icon + '</span>'
+          +   '<span class="link-picker__opt-label">' + b.label + '</span>'
+          + '</button>';
+      }).join('');
       return ''
-        + '<div class="link-selected">'
-        +   '<span class="link-selected__label">Selected:</span>'
-        +   '<span class="link-selected__chip">' + ev.text + '</span>'
-        +   '<span class="link-selected__hint">Now tap a bucket below ↓</span>'
-        +   '<button type="button" class="link-selected__cancel" id="cancel-selection">Cancel</button>'
+        + '<div class="link-picker">'
+        +   '<div class="link-picker__phrase">'
+        +     '<span class="link-picker__chip">' + ev.text + '</span>'
+        +     '<span class="link-picker__hint">→ Choose a bucket</span>'
+        +     '<button type="button" class="link-picker__cancel" id="cancel-selection">✕</button>'
+        +   '</div>'
+        +   '<div class="link-picker__options">' + opts + '</div>'
         + '</div>';
     }
 
@@ -130,7 +139,6 @@
     }
 
     function renderBuckets() {
-      var hasSelection = state.selected !== null && !state.checked;
       var html = S.buckets.map(function (b) {
         var placedIds = Object.keys(state.placements).filter(function (eid) {
           return state.placements[eid] === b.id;
@@ -138,24 +146,24 @@
         var chips = placedIds.map(function (eid) {
           var ev = S.evidence[eid];
           var statusCls = '';
-          var marker    = '<span class="link-chip__x" aria-label="remove">×</span>';
+          var marker    = '<button type="button" class="link-chip__x" data-remove="' + eid + '" aria-label="remove">×</button>';
           if (state.checked) {
             var ok    = S.correct[eid] === b.id;
             statusCls = ok ? ' is-correct' : ' is-wrong';
             marker    = '<span class="link-chip__icon">' + (ok ? '✓' : '✕') + '</span>';
           }
-          return '<button type="button" class="link-chip' + statusCls + '" data-remove="' + eid + '">'
+          return '<div class="link-chip' + statusCls + '">'
                +   '<span class="link-chip__text">' + ev.text + '</span>'
                +   marker
-               + '</button>';
+               + '</div>';
         }).join('');
 
         var emptyState = placedIds.length === 0
-          ? '<div class="link-bucket__empty">' + (hasSelection ? 'Tap here to place' : 'No evidence yet') + '</div>'
+          ? '<div class="link-bucket__empty">No evidence yet</div>'
           : '';
 
         return ''
-          + '<div role="button" tabindex="0" class="link-bucket link-bucket--' + b.tone + (hasSelection ? ' is-ready' : '') + '" data-bucket="' + b.id + '">'
+          + '<div class="link-bucket link-bucket--' + b.tone + '">'
           +   '<div class="link-bucket__head">'
           +     '<span class="link-bucket__icon">' + b.icon + '</span>'
           +     '<span class="link-bucket__label">' + b.label + '</span>'
@@ -265,14 +273,17 @@
         var done      = i < DATA.currentStationIdx;
         var status    = done ? 'done' : (isCurrent ? 'current' : '');
         var num       = done ? I.check : (i + 1);
+        var tag       = st.href ? 'a' : 'div';
+        var attrs     = st.href ? ' href="' + st.href + '"' : '';
+        var lockChip  = (!st.href && !isCurrent) ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';
         return ''
-          + '<div class="cards-list__item' + (status ? ' is-' + status : '') + '">'
+          + '<' + tag + ' class="cards-list__item' + (status ? ' is-' + status : '') + (st.href ? ' is-linked' : '') + '"' + attrs + '>'
           +   '<div class="cards-list__num">' + num + '</div>'
           +   '<div class="cards-list__body">'
           +     '<div class="cards-list__name">' + st.label + '</div>'
-          +     (isCurrent ? '<span class="cards-list__chip">Current</span>' : '')
+          +     (isCurrent ? '<span class="cards-list__chip">Current</span>' : lockChip)
           +   '</div>'
-          + '</div>';
+          + '</' + tag + '>';
       }).join('');
 
       var wgllHtml = S.whatGoodLooksLike.map(function (p) {
@@ -313,7 +324,7 @@
     /* -------- handlers -------- */
 
     function attachHandlers() {
-      // evidence (marks in extract OR extras row)
+      // tap phrase → open picker
       document.querySelectorAll('[data-evidence]').forEach(function (el) {
         el.addEventListener('click', function (e) {
           e.stopPropagation();
@@ -325,26 +336,18 @@
         });
       });
 
-      // buckets (whole bucket is the tap target)
-      document.querySelectorAll('[data-bucket]').forEach(function (el) {
-        function place() {
-          if (state.checked) return;
-          if (state.selected === null) return;
-          var bid = el.getAttribute('data-bucket');
-          state.placements[state.selected] = bid;
+      // tap picker bucket option → place
+      document.querySelectorAll('[data-pick]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (state.checked || state.selected === null) return;
+          state.placements[state.selected] = el.getAttribute('data-pick');
           state.selected = null;
           render();
-        }
-        el.addEventListener('click', place);
-        el.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            place();
-          }
         });
       });
 
-      // remove chip
+      // remove chip (× button on placed chips)
       document.querySelectorAll('[data-remove]').forEach(function (el) {
         el.addEventListener('click', function (e) {
           e.stopPropagation();
@@ -355,7 +358,7 @@
         });
       });
 
-      // cancel selection
+      // cancel picker
       var cancel = document.getElementById('cancel-selection');
       if (cancel) cancel.addEventListener('click', function () {
         state.selected = null;
@@ -371,10 +374,10 @@
         if (bridge) bridge.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
 
-      // next (stub)
+      // next station → chain page
       var nextBtn = document.getElementById('next-station');
       if (nextBtn) nextBtn.addEventListener('click', function () {
-        alert('Build the Chain station coming next!');
+        window.location.href = 'link_inflation_chain.html';
       });
     }
 

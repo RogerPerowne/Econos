@@ -4740,3 +4740,234 @@ img, svg { display: block; max-width: 100%; }
   flex-wrap: wrap;
   margin-top: var(--sp-5);
 }
+
+/* ===== Results v2 — score / time / accuracy ===== */
+.quiz-results { padding: var(--sp-6); }
+
+.quiz-results__hero {
+  display: flex; align-items: center; gap: var(--sp-4);
+  text-align: left;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: var(--sp-5);
+}
+.quiz-results__head-icon {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--econ-green-50);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.quiz-results__head-title {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--econ-ink);
+  line-height: 1.2;
+}
+.quiz-results__head-sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+  margin-top: 2px;
+}
+
+.quiz-stats {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+.quiz-stat {
+  background: var(--econ-gray-50);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  display: flex; flex-direction: column;
+  align-items: flex-start;
+}
+.quiz-stat--ring { align-items: center; text-align: center; }
+.quiz-stat__label {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--econ-gray-600);
+  margin-bottom: var(--sp-2);
+}
+.quiz-stat__value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-display);
+  font-weight: var(--fw-bold);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--econ-ink);
+}
+.quiz-stat__value--small { font-size: 32px; }
+.quiz-stat__denom {
+  font-size: 28px;
+  color: var(--econ-gray-400);
+  font-weight: var(--fw-normal);
+}
+.quiz-stat__sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+  margin-top: var(--sp-2);
+}
+.quiz-stat__verdict {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-style: italic;
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+  line-height: 1.4;
+  margin-top: var(--sp-3);
+}
+.quiz-stat__chip {
+  display: inline-flex; align-items: center;
+  padding: 4px var(--sp-3);
+  border-radius: var(--r-full);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-xs);
+  margin-top: var(--sp-3);
+}
+.quiz-stat__chip--ok {
+  background: var(--econ-green-50);
+  color: var(--econ-green-700);
+  border: 1px solid var(--econ-green-100);
+}
+.quiz-stat__chip--bad {
+  background: var(--econ-rose-50);
+  color: var(--econ-rose-700);
+  border: 1px solid var(--econ-rose-100);
+}
+.quiz-stat__divider {
+  width: 100%; height: 1px;
+  background: var(--econ-gray-200);
+  margin: var(--sp-3) 0;
+}
+
+/* Accuracy ring */
+.quiz-ring {
+  --ring-pct: 0;
+  width: 132px; height: 132px;
+  border-radius: 50%;
+  background:
+    conic-gradient(var(--econ-green) calc(var(--ring-pct) * 1%), var(--econ-gray-200) 0);
+  display: flex; align-items: center; justify-content: center;
+  margin: var(--sp-2) 0;
+}
+.quiz-ring__inner {
+  width: 104px; height: 104px;
+  border-radius: 50%;
+  background: var(--econ-white);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.quiz-ring__pct {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-weight: var(--fw-bold);
+  font-size: 28px;
+  color: var(--econ-green-700);
+  line-height: 1;
+}
+.quiz-ring__sub {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-600);
+  margin-top: 4px;
+}
+
+/* Review your answers — numbered dots */
+.quiz-review-card {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+.quiz-review-card__title {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+  margin-bottom: var(--sp-4);
+}
+.quiz-dots {
+  display: flex; flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+.quiz-dot {
+  display: inline-flex; align-items: center;
+  gap: 6px;
+  padding: 4px var(--sp-3);
+  border-radius: var(--r-full);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  border: 1px solid;
+}
+.quiz-dot--ok {
+  background: var(--econ-green-50);
+  border-color: var(--econ-green-100);
+  color: var(--econ-green-700);
+}
+.quiz-dot--bad {
+  background: var(--econ-rose-50);
+  border-color: var(--econ-rose-100);
+  color: var(--econ-rose-700);
+}
+.quiz-dot__mark { font-weight: var(--fw-bold); }
+.quiz-review-legend {
+  display: flex; gap: var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+}
+.quiz-legend-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.quiz-legend-dot--ok { background: var(--econ-green); }
+.quiz-legend-dot--bad { background: var(--econ-rose); }
+
+/* Download sheet CTA */
+.quiz-cta-card {
+  display: flex; align-items: center;
+  gap: var(--sp-4);
+  background: var(--econ-blue-50);
+  border: 1px solid var(--econ-blue-100);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+.quiz-cta-card__icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--econ-white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.quiz-cta-card__body { flex: 1; }
+.quiz-cta-card__title {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+}
+.quiz-cta-card__sub {
+  font-size: var(--fs-sm);
+  color: var(--econ-gray-600);
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .quiz-stats { grid-template-columns: 1fr; }
+}

@@ -83,7 +83,7 @@
     if (currentView === 'intro') {
       return `
         <header class="topbar">
-          <a href="#" class="topbar__back">
+          <a href="index.html" class="topbar__back">
             ${I.arrowLeft}
             <span>Back to dashboard</span>
           </a>
@@ -160,15 +160,12 @@
    * Coloured topic banner used on cause cards (2 & 3).
    * Anchors the page visually with the branch colour from card 1.
    */
-  function renderCauseBanner(tone, label, line) {
+  function renderCauseBanner(tone, label) {
     return `
       <div class="cause-banner cause-banner--${tone}">
         <div class="cause-banner__pill">
           <span class="cause-banner__pill-dot"></span>
           <span>${label}</span>
-        </div>
-        <div class="cause-banner__main">
-          <div class="cause-banner__line">${line}</div>
         </div>
       </div>
     `;
@@ -179,16 +176,24 @@
      ============================================================ */
 
   function renderIntro() {
-    const stages = T.intro.stages.map(s => `
-      <div class="stage ${s.state === 'current' ? 'is-current' : ''}">
+    const stages = T.intro.stages.map(s => {
+      const cls = 'stage'
+                + (s.state === 'current'   ? ' is-current'   : '')
+                + (s.state === 'available' ? ' is-available' : '')
+                + (s.state === 'locked'    ? ' is-locked'    : '');
+      const inner = `
         <div class="stage__num">${s.state === 'locked' ? I.lock : s.num}</div>
         <div class="stage__body">
           <div class="stage__name">${s.name}</div>
           <div class="stage__sub">${s.sub}</div>
           ${s.state === 'current' ? '<span class="stage__chip">Current</span>' : ''}
+          ${s.state === 'available' ? '<span class="stage__chip stage__chip--available">Open →</span>' : ''}
         </div>
-      </div>
-    `).join('');
+      `;
+      return s.href && s.state !== 'locked'
+        ? `<a href="${s.href}" class="${cls}">${inner}</a>`
+        : `<div class="${cls}">${inner}</div>`;
+    }).join('');
 
     return `
       <div class="page">
@@ -374,7 +379,7 @@
     }
 
     return `
-      ${renderCauseBanner(tone, bannerLabel, c.lede)}
+      ${renderCauseBanner(tone, bannerLabel)}
       ${headerLede}
       ${diagramFull}
       ${causesHallmarks}
@@ -531,6 +536,99 @@
     `;
   }
 
+  /* === Card 5 (merged): monetary theory + QE === */
+  function renderCardMonetary(c) {
+    const tiles = c.mechanisms.map(m => `
+      <div class="mech-tile mech-tile--${m.tone}">
+        <div class="mech-tile__head">
+          <div class="mech-tile__num">${m.num}</div>
+          <div class="mech-tile__title">${m.title}</div>
+        </div>
+        <div class="mech-tile__text">${m.text}</div>
+      </div>
+    `).join('');
+
+    const bullets = c.puzzle.bullets.map(b => `<div class="puzzle-bullet">${b}</div>`).join('');
+
+    return `
+      <div class="card__step-label">${c.stepLabel}</div>
+      <h1 class="card__title">${c.title}</h1>
+      <p class="card__lede">${c.lede}</p>
+
+      <div class="classical-box">
+        <div class="classical-box__head">
+          <span class="classical-box__icon">📐</span>
+          <span class="classical-box__title">${c.classical.title}</span>
+        </div>
+        <div class="classical-formula">
+          <div class="classical-formula__main">${c.classical.formula}</div>
+          <div class="classical-formula__sub">${c.classical.formulaSub}</div>
+        </div>
+        <div class="classical-quote">${c.classical.quote}</div>
+        <div class="classical-examples">${c.classical.examples}</div>
+      </div>
+
+      <div class="puzzle-bullets" style="margin: var(--sp-5) 0;">${bullets}</div>
+
+      <div class="mech-grid">${tiles}</div>
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* === Card 6 (new): impacts of inflation === */
+  function renderCardImpacts(c) {
+    const groups = c.groups.map(g => `
+      <div class="impact-group impact-group--${g.tone}">
+        <div class="impact-group__head">
+          <span class="impact-group__icon">${g.icon}</span>
+          <span class="impact-group__label">${g.label}</span>
+        </div>
+        <ul class="impact-group__list">
+          ${g.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+
+    const wItems = c.winnersLosers.winners.items.map(i => `<li>${i}</li>`).join('');
+    const lItems = c.winnersLosers.losers.items.map(i => `<li>${i}</li>`).join('');
+
+    return `
+      <div class="card__step-label">${c.stepLabel}</div>
+      <h1 class="card__title">${c.title}</h1>
+      <p class="card__lede">${c.lede}</p>
+
+      <div class="impact-groups">${groups}</div>
+
+      <div class="wl-row">
+        <div class="wl-panel wl-panel--win">
+          <div class="wl-panel__head">
+            <span class="wl-panel__icon">↑</span>
+            <span class="wl-panel__label">${c.winnersLosers.winners.label}</span>
+          </div>
+          <ul class="wl-panel__list">${wItems}</ul>
+        </div>
+        <div class="wl-panel wl-panel--lose">
+          <div class="wl-panel__head">
+            <span class="wl-panel__icon">↓</span>
+            <span class="wl-panel__label">${c.winnersLosers.losers.label}</span>
+          </div>
+          <ul class="wl-panel__list">${lItems}</ul>
+        </div>
+      </div>
+
+      <div class="callout callout--info" style="margin-top: var(--sp-5); margin-bottom: var(--sp-5);">
+        <div class="callout__icon">📊</div>
+        <div class="callout__body">
+          <div class="callout__title">Example</div>
+          <div class="callout__text">${c.example}</div>
+        </div>
+      </div>
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
   /* === Card 7: deflation === */
   function renderCardDeflation(c) {
     const mechs = c.mechanisms.map((m, i) => `
@@ -571,13 +669,7 @@
 
       ${renderExamEdge(c.examEdge)}
 
-      <div class="bridge">
-        <div class="bridge__icon">→</div>
-        <div>
-          <div class="bridge__title">${c.bridge.title}</div>
-          <div class="bridge__text">${c.bridge.text}</div>
-        </div>
-      </div>
+      ${c.bridge ? `<div class="bridge"><div class="bridge__icon">→</div><div><div class="bridge__title">${c.bridge.title}</div><div class="bridge__text">${c.bridge.text}</div></div></div>` : ''}
     `;
   }
 
@@ -677,7 +769,7 @@
   /* === Paired template: two components side-by-side (e.g. Gov + Net Trade) === */
   function renderCardPaired(c) {
     const banner = c.bannerLabel
-      ? renderCauseBanner(c.bannerTone || 'blue', c.bannerLabel, c.lede)
+      ? renderCauseBanner(c.bannerTone || 'blue', c.bannerLabel)
       : '';
 
     const pairs = c.pairs.map(p => `
@@ -731,6 +823,8 @@
       case 'diagnose':           body = renderCardDiagnose(c);         break;
       case 'puzzle':             body = renderCardPuzzle(c);           break;
       case 'mechanisms':         body = renderCardMechanisms(c);       break;
+      case 'monetary':           body = renderCardMonetary(c);         break;
+      case 'impacts':            body = renderCardImpacts(c);          break;
       case 'deflation':          body = renderCardDeflation(c);        break;
       case 'paired':             body = renderCardPaired(c);           break;
       case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
@@ -744,7 +838,7 @@
       <div class="page">
         <div>
           <div class="progress">
-            <span class="progress__label">Overall progress</span>
+            <span class="progress__label">Progress</span>
             <div class="progress__bar"><div class="progress__fill" style="width: ${pct}%;"></div></div>
             <span class="progress__pct">${pct}%</span>
             <button class="progress__exit" data-action="back-to-intro">${I.exit} Exit session</button>
@@ -790,16 +884,26 @@
       `;
     }).join('');
 
+    const lastCard = T.cards[T.cards.length - 1];
+    const quizHref = lastCard && lastCard.quizCta ? lastCard.quizCta.href : null;
+    const quizEntry = quizHref ? `
+      <a href="${quizHref}" class="cards-list__item cards-list__item--quiz">
+        <div class="cards-list__num">★</div>
+        <div class="cards-list__body">
+          <div class="cards-list__name">Quiz</div>
+        </div>
+      </a>` : '';
+
     return `
       <div class="rail-card">
-        <div class="rail-card__title">Session progress</div>
-        <div class="rail-card__sub">Step 1 of 3: Recap</div>
+        <div class="rail-card__title">Topic progress</div>
+        <div class="rail-card__sub">Step 1 of 3: Learn</div>
         ${renderSessionDots(currentIdx)}
       </div>
 
       <div class="rail-card">
         <div class="rail-card__title" style="margin-bottom: var(--sp-3);">Cards</div>
-        <div class="cards-list">${cardsList}</div>
+        <div class="cards-list">${cardsList}${quizEntry}</div>
       </div>
 
       <div class="deck-download">
@@ -818,17 +922,13 @@
   }
 
   function renderSessionDots(currentIdx) {
-    // Map card idx (0-6) to one of 3 stages
-    const stage = currentIdx <= 2 ? 1 : (currentIdx <= 4 ? 2 : 3);
     return `
       <div class="session-dots">
-        <div class="session-dot ${stage === 1 ? 'is-current' : 'is-done'}">
-          ${stage > 1 ? I.check : '1'}
-        </div>
-        <div class="session-line ${stage > 1 ? 'is-done' : ''}"></div>
-        <div class="session-dot ${stage === 2 ? 'is-current' : (stage > 2 ? 'is-done' : '')}">${stage > 2 ? I.check : '2'}</div>
-        <div class="session-line ${stage > 2 ? 'is-done' : ''}"></div>
-        <div class="session-dot ${stage === 3 ? 'is-current' : ''}">3</div>
+        <div class="session-dot is-current">1</div>
+        <div class="session-line"></div>
+        <div class="session-dot">2</div>
+        <div class="session-line"></div>
+        <div class="session-dot">3</div>
       </div>
     `;
   }
@@ -839,8 +939,8 @@
       'demand-pull':   'Demand-pull',
       'cost-push':     'Cost-push',
       'diagnose':      'Spotting the difference',
-      'qe-puzzle':     'The QE puzzle',
-      'qe-resolution': "Why QE didn't cause inflation",
+      'monetary':      'Money supply & QE',
+      'impacts':       'Impacts of inflation',
       'deflation':     'Deflation'
     }[id] || id;
   }
@@ -894,7 +994,12 @@
       render();
     } else if (action === 'next') {
       if (currentView === T.cards.length - 1) {
-        alert('Quick Check coming next session 🎯');
+        const last = T.cards[currentView];
+        if (last.quizCta && last.quizCta.href) {
+          window.location.href = last.quizCta.href;
+        } else {
+          alert('Quick Check coming next session 🎯');
+        }
       } else {
         currentView = currentView + 1;
         render();

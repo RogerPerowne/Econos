@@ -781,6 +781,16 @@
       `;
     }).join('');
 
+    const lastCard = T.cards[T.cards.length - 1];
+    const quizHref = lastCard && lastCard.quizCta ? lastCard.quizCta.href : null;
+    const quizEntry = quizHref ? `
+      <a href="${quizHref}" class="cards-list__item cards-list__item--quiz">
+        <div class="cards-list__num">★</div>
+        <div class="cards-list__body">
+          <div class="cards-list__name">Quiz</div>
+        </div>
+      </a>` : '';
+
     return `
       <div class="rail-card">
         <div class="rail-card__title">Topic progress</div>
@@ -790,7 +800,7 @@
 
       <div class="rail-card">
         <div class="rail-card__title" style="margin-bottom: var(--sp-3);">Cards</div>
-        <div class="cards-list">${cardsList}</div>
+        <div class="cards-list">${cardsList}${quizEntry}</div>
       </div>
 
       <div class="deck-download">

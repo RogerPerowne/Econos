@@ -5952,6 +5952,18 @@ a.stage:hover .stage__name { color: var(--econ-blue-700); }
 .theme--link .cards-list__item.is-current .cards-list__name { color: var(--econ-amber-700); }
 .theme--link .cards-list__chip { color: var(--econ-amber-700); }
 
+/* clickable station links in rail */
+a.cards-list__item { text-decoration: none; color: inherit; display: flex; }
+a.cards-list__item.is-linked { cursor: pointer; transition: background 0.15s, transform 0.1s; }
+a.cards-list__item.is-linked:hover { background: var(--econ-gray-100); }
+a.cards-list__item.is-linked:active { transform: scale(0.99); }
+.theme--link a.cards-list__item.is-linked:hover { background: var(--econ-amber-50); }
+.cards-list__chip--locked {
+  background: var(--econ-gray-100);
+  color: var(--econ-gray-500);
+  border: 1px solid var(--econ-gray-200);
+}
+
 /* eyebrow tag → amber */
 .theme--link .link-card__eyebrow {
   color: var(--econ-amber-700);

@@ -9,10 +9,10 @@ window.ECONOS_LINK_CHAIN = {
   backUrl:      'link_inflation_intro.html',
 
   stations: [
-    { id: 'context', label: 'Use the context'    },
-    { id: 'chain',   label: 'Build the chain'    },
-    { id: 'flaw',    label: 'Spot the flaw'      },
-    { id: 'judge',   label: 'Make the judgement' }
+    { id: 'context', label: 'Use the context',    href: 'link_inflation_context.html' },
+    { id: 'chain',   label: 'Build the chain',    href: 'link_inflation_chain.html'   },
+    { id: 'flaw',    label: 'Spot the flaw'       },
+    { id: 'judge',   label: 'Make the judgement'  }
   ],
   currentStationIdx: 1,
 

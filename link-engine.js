@@ -273,14 +273,17 @@
         var done      = i < DATA.currentStationIdx;
         var status    = done ? 'done' : (isCurrent ? 'current' : '');
         var num       = done ? I.check : (i + 1);
+        var tag       = st.href ? 'a' : 'div';
+        var attrs     = st.href ? ' href="' + st.href + '"' : '';
+        var lockChip  = (!st.href && !isCurrent) ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';
         return ''
-          + '<div class="cards-list__item' + (status ? ' is-' + status : '') + '">'
+          + '<' + tag + ' class="cards-list__item' + (status ? ' is-' + status : '') + (st.href ? ' is-linked' : '') + '"' + attrs + '>'
           +   '<div class="cards-list__num">' + num + '</div>'
           +   '<div class="cards-list__body">'
           +     '<div class="cards-list__name">' + st.label + '</div>'
-          +     (isCurrent ? '<span class="cards-list__chip">Current</span>' : '')
+          +     (isCurrent ? '<span class="cards-list__chip">Current</span>' : lockChip)
           +   '</div>'
-          + '</div>';
+          + '</' + tag + '>';
       }).join('');
 
       var wgllHtml = S.whatGoodLooksLike.map(function (p) {

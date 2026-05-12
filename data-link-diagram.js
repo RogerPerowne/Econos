@@ -9,8 +9,8 @@ window.ECONOS_LINK_DIAGRAM = {
   backUrl:      'link_inflation_intro.html',
 
   stations: [
-    { id: 'context', label: 'Context Highlighter' },
-    { id: 'diagram', label: 'Diagram Connector'   },
+    { id: 'context', label: 'Context Highlighter', href: 'link_inflation_context.html' },
+    { id: 'diagram', label: 'Diagram Connector',   href: 'link_inflation_diagram.html' },
     { id: 'flaw',    label: 'Spot the Flaw'       },
     { id: 'judge',   label: 'Make the Judgement'  }
   ],

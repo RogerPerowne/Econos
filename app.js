@@ -784,7 +784,7 @@
     return `
       <div class="rail-card">
         <div class="rail-card__title">Topic progress</div>
-        <div class="rail-card__sub">Step 1 of 3: Recap</div>
+        <div class="rail-card__sub">Step 1 of 3: Learn</div>
         ${renderSessionDots(currentIdx)}
       </div>
 

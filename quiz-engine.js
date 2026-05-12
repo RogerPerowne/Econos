@@ -145,7 +145,13 @@
 
   function recordResult(ok, summary) {
     if (ok) S.score++;
-    S.results.push({ ok: ok, n: S.qi + 1, type: Qs[S.qi].type, summary: summary });
+    var q = Qs[S.qi];
+    S.results.push({
+      ok: ok, n: S.qi + 1, type: q.type,
+      stem: q.stem || '',
+      exp:  q.exp  || '',
+      summary: summary
+    });
   }
 
   window.advance = function () { S.qi++; S.answered = false; renderQ(S.qi); };
@@ -666,23 +672,30 @@
                 : pct >= 40 ? 'Developing — some core ideas need more work.'
                 : 'This topic needs focused revision.';
 
-    var dots = S.results.map(function (rv) {
-      return '<div class="quiz-dot quiz-dot--' + (rv.ok ? 'ok' : 'bad') + '">' +
-             '<span class="quiz-dot__n">' + rv.n + '</span>' +
-             '<span class="quiz-dot__mark">' + (rv.ok ? '✓' : '✗') + '</span></div>';
-    }).join('');
-
-    var detailItems = S.results.map(function (rv) {
+    var reviewRows = S.results.map(function (rv) {
       var m = TYPE_META[rv.type] || { label: rv.type, tone: 'blue' };
       var tc = TONE_COLOURS[m.tone];
-      return '<div class="quiz-rv-item">' +
-        '<div class="quiz-rv-dot ' + (rv.ok ? 'ok' : 'bad') + '">' + (rv.ok ? '✓' : '✗') + '</div>' +
-        '<div><div class="quiz-rv-type" style="color:' + tc.fg + '">Q' + rv.n + ' · ' + m.label + '</div>' +
-        '<div class="quiz-rv-summary">' + rv.summary + '</div></div></div>';
+      var hasExp = !!(rv.exp || rv.summary);
+      var header =
+        '<summary class="quiz-rvrow__head">' +
+          '<div class="quiz-rvrow__chip quiz-rvrow__chip--' + (rv.ok ? 'ok' : 'bad') + '">' +
+            '<span>Q' + rv.n + '</span>' +
+            '<span>' + (rv.ok ? '✓' : '✗') + '</span>' +
+          '</div>' +
+          '<div class="quiz-rvrow__body">' +
+            '<div class="quiz-rvrow__type" style="color:' + tc.fg + '">' + m.label + '</div>' +
+            '<div class="quiz-rvrow__stem">' + (rv.stem || '<em>Question ' + rv.n + '</em>') + '</div>' +
+          '</div>' +
+          (hasExp ? '<div class="quiz-rvrow__chev">▸</div>' : '') +
+        '</summary>';
+      var body = hasExp
+        ? '<div class="quiz-rvrow__detail">' +
+            (rv.summary ? '<div class="quiz-rvrow__summary">' + rv.summary + '</div>' : '') +
+            (rv.exp ? '<div class="quiz-rvrow__exp">' + rv.exp + '</div>' : '') +
+          '</div>'
+        : '';
+      return '<details class="quiz-rvrow"' + (hasExp ? '' : ' open') + '>' + header + body + '</details>';
     }).join('');
-
-    var nCorrect = S.score;
-    var nIncorrect = total - nCorrect;
 
     var backHref  = TOPIC.backUrl  || 'topic_inflation.html';
     var backLabel = TOPIC.backLabel || 'Back to topic';
@@ -726,15 +739,8 @@
 
       '<div class="quiz-review-card">' +
         '<div class="quiz-review-card__title">Review your answers</div>' +
-        '<div class="quiz-dots">' + dots + '</div>' +
-        '<div class="quiz-review-legend">' +
-          '<span><span class="quiz-legend-dot quiz-legend-dot--ok"></span>Correct (' + nCorrect + ')</span>' +
-          '<span><span class="quiz-legend-dot quiz-legend-dot--bad"></span>Incorrect (' + nIncorrect + ')</span>' +
-        '</div>' +
-        '<details class="quiz-review-details">' +
-          '<summary class="quiz-review-details__summary">Show the full breakdown question by question</summary>' +
-          '<div class="quiz-review-grid">' + detailItems + '</div>' +
-        '</details>' +
+        '<div class="quiz-review-card__hint">Tap any question to see the full explanation.</div>' +
+        '<div class="quiz-rvrows">' + reviewRows + '</div>' +
       '</div>' +
 
       '<div class="quiz-results__actions">' +

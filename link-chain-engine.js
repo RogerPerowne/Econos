@@ -114,8 +114,10 @@
         +   renderEyebrow()
         +   '<p class="link-card__lede">' + DATA.instruction + '</p>'
         +   renderScenario(C.scenario)
-        +   renderChain(C)
-        +   renderAvailableTiles(C)
+        +   '<div class="chain-layout' + (state.checked ? ' is-checked' : '') + '">'
+        +     (state.checked ? '' : '<div class="chain-layout__tiles">' + renderAvailableTiles(C) + '</div>')
+        +     '<div class="chain-layout__chain">' + renderChain(C) + '</div>'
+        +   '</div>'
         +   renderFeedback(C)
         + '</div>'
         + renderFooter();
@@ -198,7 +200,7 @@
       for (var j = 0; j < slots.length; j++) {
         inner += slots[j];
         if (j < slots.length - 1) {
-          inner += '<div class="chain-arrow">→</div>';
+          inner += '<div class="chain-arrow">↓</div>';
         }
       }
 
@@ -223,8 +225,8 @@
 
       return ''
         + '<div class="chain-available">'
-        +   '<div class="chain-available__heading">Available tiles</div>'
-        +   '<div class="chain-available__grid">' + tilesHtml + '</div>'
+        +   '<div class="chain-available__label">Available tiles</div>'
+        +   '<div class="chain-tiles">' + tilesHtml + '</div>'
         + '</div>';
     }
 

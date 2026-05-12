@@ -5830,3 +5830,123 @@ a.stage:hover .stage__name { color: var(--econ-blue-700); }
   font-size: var(--fs-base);
 }
 .topbar__back-link:hover { color: var(--econ-blue-700); }
+
+/* ============================================================
+   THEME — Link It  (amber / orange accent across all Link pages)
+   Scope: .theme--link wraps the entire .app on Link It pages.
+   ============================================================ */
+
+/* session dot step-2 = current → amber */
+.theme--link .session-dot.is-current {
+  background: var(--econ-amber);
+  border-color: var(--econ-amber);
+  color: var(--econ-ink);
+}
+
+/* stage current → amber */
+.theme--link .stage.is-current .stage__num {
+  border-color: var(--econ-amber);
+  color: var(--econ-amber-700);
+}
+.theme--link .stage.is-current .stage__name { color: var(--econ-amber-700); }
+.theme--link .stage__chip {
+  background: var(--econ-amber-100);
+  color: var(--econ-amber-700);
+}
+
+/* cards-list current station → amber */
+.theme--link .cards-list__item.is-current { background: var(--econ-amber-50); }
+.theme--link .cards-list__item.is-current .cards-list__num {
+  border-color: var(--econ-amber);
+  color: var(--econ-amber-700);
+}
+.theme--link .cards-list__item.is-current .cards-list__name { color: var(--econ-amber-700); }
+.theme--link .cards-list__chip { color: var(--econ-amber-700); }
+
+/* eyebrow tag → amber */
+.theme--link .link-card__eyebrow {
+  color: var(--econ-amber-700);
+  background: var(--econ-amber-50);
+  border-color: var(--econ-amber-100);
+}
+.theme--link .link-card__eyebrow-dot { background: var(--econ-amber); }
+
+/* selected-evidence banner → amber */
+.theme--link .link-selected {
+  background: var(--econ-amber-50);
+  border-color: var(--econ-amber-100);
+}
+.theme--link .link-selected__label,
+.theme--link .link-selected__hint  { color: var(--econ-amber-700); }
+.theme--link .link-selected__chip  {
+  border-color: var(--econ-amber);
+  color: var(--econ-amber-700);
+}
+.theme--link .link-selected__cancel {
+  border-color: var(--econ-amber-100);
+  color: var(--econ-amber-700);
+}
+
+/* mark-btn selected ring → amber */
+.theme--link .mark-btn:hover {
+  background: var(--econ-amber-50);
+  border-color: var(--econ-amber);
+}
+.theme--link .mark-btn.is-selected {
+  background: var(--econ-amber-100);
+  border-color: var(--econ-amber);
+  box-shadow: 0 0 0 3px rgba(245,184,0,0.22);
+}
+
+/* extra-chip hover/selected → amber */
+.theme--link .extra-chip:hover {
+  background: var(--econ-amber-50);
+  border-color: var(--econ-amber);
+}
+.theme--link .extra-chip.is-selected {
+  background: var(--econ-amber-100);
+  border-color: var(--econ-amber);
+  box-shadow: 0 0 0 3px rgba(245,184,0,0.22);
+}
+
+/* primary button → amber with dark text */
+.theme--link .link-btn--primary {
+  background: var(--econ-amber);
+  border-color: var(--econ-amber);
+  color: var(--econ-ink);
+}
+.theme--link .link-btn--primary:hover {
+  background: var(--econ-amber-600);
+  border-color: var(--econ-amber-600);
+  color: var(--econ-white);
+}
+.theme--link .link-btn--primary:disabled {
+  background: var(--econ-gray-100);
+  border-color: var(--econ-gray-100);
+  color: var(--econ-gray-500);
+}
+
+/* session meta Start button → amber */
+.theme--link .btn--primary {
+  background: var(--econ-amber);
+  border-color: var(--econ-amber);
+  color: var(--econ-ink);
+}
+.theme--link .btn--primary:hover {
+  background: var(--econ-amber-600);
+  border-color: var(--econ-amber-600);
+  color: var(--econ-white);
+}
+
+/* station-preview tiles open state → amber */
+.theme--link .link-intro-station__num {
+  background: var(--econ-amber-50);
+  color: var(--econ-amber-700);
+}
+.theme--link .link-intro-station:hover {
+  border-color: var(--econ-amber);
+  background: var(--econ-amber-50);
+}
+
+/* topbar session label → amber for Link It pages */
+.theme--link .topbar__session-label { color: var(--econ-amber-700); }

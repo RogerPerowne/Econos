@@ -12,7 +12,7 @@ window.ECONOS_LINK_DIAGRAM = {
     { id: 'context', label: 'Use the context',    href: 'link_inflation_context.html' },
     { id: 'chain',   label: 'Build the chain',    href: 'link_inflation_chain.html'   },
     { id: 'diagram', label: 'Diagram connector',  href: 'link_inflation_diagram.html' },
-    { id: 'flaw',    label: 'Spot the flaw'       },
+    { id: 'depends', label: 'It depends on',     href: 'link_inflation_depends.html' },
     { id: 'judge',   label: 'Make the judgement'  }
   ],
   currentStationIdx: 2,

@@ -609,7 +609,7 @@
         </div>
       </div>
 
-      <div class="callout callout--info" style="margin-top: var(--sp-5);">
+      <div class="callout callout--info" style="margin-top: var(--sp-5); margin-bottom: var(--sp-5);">
         <div class="callout__icon">📊</div>
         <div class="callout__body">
           <div class="callout__title">Example</div>

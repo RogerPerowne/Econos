@@ -247,7 +247,7 @@ window.ECONOS_TOPIC = {
       lede: 'Inflation affects different groups in very different ways. The distributional story is where evaluation marks live.',
       groups: [
         {
-          tone: 'green',
+          tone: 'purple',
           icon: '👥',
           label: 'Consumers',
           bullets: [

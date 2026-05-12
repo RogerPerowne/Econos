@@ -2956,6 +2956,14 @@ img, svg { display: block; max-width: 100%; }
 .branch-cal--purple .branch-cal__dot { background: var(--econ-purple-700); }
 .branch-cal--purple .branch-cal__label { color: var(--econ-purple-700); }
 
+/* --- 5th branch tone: rose --- */
+.branch-cal--rose {
+  background: var(--econ-rose-50);
+  border-left-color: var(--econ-rose);
+}
+.branch-cal--rose .branch-cal__dot { background: var(--econ-rose); }
+.branch-cal--rose .branch-cal__label { color: var(--econ-rose); }
+
 /* --- Hallmark accent: generalised variants --- */
 .cause-col--hallmark-green       { border-left-color: var(--econ-green); }
 .cause-col--hallmark-green .cause-col__title { color: var(--econ-green-700); }

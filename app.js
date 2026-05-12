@@ -83,7 +83,7 @@
     if (currentView === 'intro') {
       return `
         <header class="topbar">
-          <a href="#" class="topbar__back">
+          <a href="index.html" class="topbar__back">
             ${I.arrowLeft}
             <span>Back to dashboard</span>
           </a>

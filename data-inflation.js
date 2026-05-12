@@ -301,8 +301,8 @@ window.ECONOS_TOPIC = {
         text: "Central banks target <strong>2%, not 0%</strong> because the costs are asymmetric. Modest inflation overshoots (3-4%) are manageable. Modest <em>undershoots</em> toward zero are dangerous. This is the strongest argument for the 2% target - use it in monetary policy questions."
       },
       bridge: {
-        title: 'Where to next',
-        text: "You've got the conceptual model. Now apply it: try the <strong>AD/AS simulator</strong> in <em>Land it</em> to see demand-pull, cost-push, and supply shocks play out interactively."
+        title: 'Test yourself',
+        text: "You've got the conceptual model. Now pressure-test it: ten exam-style questions on demand-pull, cost-push, the 2022 episode and the wage-price spiral.<br><br><a href=\"quiz_inflation_causes.html\" class=\"quiz-start-btn\" style=\"margin-top:0\">Start the quiz →</a>"
       }
     }
   ]

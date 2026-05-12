@@ -45,15 +45,16 @@ window.ECONOS_ICONS = {
   eye: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
 
   /* Brand logo glyph */
+  /* ============================================================
+     BRAND MARK — the curve, per Brand Manual v1.0
+     Always ascending left→right · green→yellow→pink in order.
+     ============================================================ */
   brandGlyph: `
-    <svg viewBox="0 0 40 28" width="40" height="28" xmlns="http://www.w3.org/2000/svg">
-      <line x1="6" y1="20" x2="14" y2="14" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="14" y1="14" x2="22" y2="18" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="22" y1="18" x2="32" y2="6" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="6" cy="20" r="3" fill="#10B981"/>
-      <circle cx="14" cy="14" r="3" fill="#F59E0B"/>
-      <circle cx="22" cy="18" r="3" fill="#1E40AF"/>
-      <circle cx="32" cy="6" r="3" fill="#2563EB"/>
+    <svg viewBox="0 0 130 56" width="56" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
+      <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="14"  cy="46" r="7"   fill="#1FB574"/>
+      <circle cx="65"  cy="28" r="8.5" fill="#F5B800"/>
+      <circle cx="116" cy="12" r="10"  fill="#EC2D68"/>
     </svg>
   `,
 

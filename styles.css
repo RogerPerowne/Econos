@@ -6158,41 +6158,48 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   margin-bottom: var(--sp-3);
 }
 
-/* chain slots row */
-.chain-slots {
-  display: flex;
-  align-items: stretch;
-  gap: 0;
+/* two-column layout: tiles left, chain right */
+.chain-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 1.6fr;
+  gap: var(--sp-5);
   margin-bottom: var(--sp-5);
-  overflow-x: auto;
-  padding-bottom: var(--sp-2);
+  align-items: start;
+}
+.chain-layout.is-checked {
+  grid-template-columns: 1fr;
 }
 
-/* arrow between slots */
+/* chain slots — vertical stack */
+.chain-slots {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* arrow between slots (↓) */
 .chain-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: 32px;
-  font-size: 1.25rem;
+  height: 18px;
+  font-size: 1.1rem;
   color: var(--econ-muted);
-  padding-top: 18px; /* align with content, below the num badge */
+  margin: 2px 0;
 }
 
-/* individual slot */
+/* individual slot — row layout */
 .chain-slot {
-  flex: 1;
-  min-width: 140px;
-  max-width: 200px;
+  width: 100%;
   border-radius: var(--r-lg);
-  padding: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: var(--sp-2);
+  gap: var(--sp-3);
   position: relative;
-  min-height: 110px;
+  min-height: 56px;
 }
 
 /* num badge */
@@ -6221,7 +6228,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-size: var(--fs-sm);
   font-weight: var(--fw-semi);
   color: var(--econ-green-700);
-  text-align: center;
+  text-align: left;
   line-height: 1.3;
 }
 
@@ -6239,9 +6246,9 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .chain-slot__placeholder {
   font-size: var(--fs-xs);
   color: var(--econ-muted);
-  text-align: center;
+  text-align: left;
   line-height: 1.4;
-  padding: var(--sp-2);
+  flex: 1;
 }
 
 /* filled slot */
@@ -6260,8 +6267,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .chain-slot__text {
   font-size: var(--fs-sm);
   color: var(--econ-ink);
-  text-align: center;
-  line-height: 1.3;
+  text-align: left;
+  line-height: 1.35;
   flex: 1;
 }
 .chain-slot__body {
@@ -6274,9 +6281,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* remove × button on filled slot */
 .chain-slot__remove {
-  position: absolute;
-  top: 6px;
-  right: 6px;
+  position: static;
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
   border-radius: var(--r-full);
@@ -6296,9 +6302,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* feedback mark on slot after check */
 .chain-slot__mark {
-  position: absolute;
-  top: 6px;
-  right: 6px;
+  position: static;
+  flex-shrink: 0;
   width: 22px;
   height: 22px;
   border-radius: var(--r-full);
@@ -6332,24 +6337,25 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   margin-bottom: var(--sp-3);
 }
 .chain-tiles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
 }
 .chain-tile {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: var(--sp-2);
-  padding: var(--sp-3) var(--sp-2);
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-3);
   background: var(--econ-white);
   border: 1.5px solid var(--econ-border);
   border-radius: var(--r-lg);
   cursor: pointer;
-  text-align: center;
+  text-align: left;
   font: inherit;
   color: var(--econ-ink);
   transition: transform 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
+  width: 100%;
 }
 .chain-tile:hover {
   border-color: var(--econ-amber);
@@ -6357,13 +6363,15 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   box-shadow: var(--shadow-sm);
 }
 .chain-tile__icon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1;
+  flex-shrink: 0;
 }
 .chain-tile__text {
   font-size: var(--fs-sm);
-  line-height: 1.3;
+  line-height: 1.35;
   font-weight: var(--fw-med);
+  flex: 1;
 }
 
 /* feedback section */
@@ -6418,17 +6426,11 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   line-height: 1.5;
 }
 
-/* responsive: stack slots vertically on mobile */
-@media (max-width: 600px) {
-  .chain-slots {
-    flex-direction: column;
-    align-items: stretch;
-    overflow-x: visible;
-  }
-  .chain-slot { max-width: none; flex-direction: row; min-height: auto; }
-  .chain-slot__body { flex-direction: row; }
-  .chain-arrow { width: auto; height: 24px; padding-top: 0; transform: rotate(90deg); align-self: center; }
-  .chain-tiles { grid-template-columns: repeat(2, 1fr); }
+/* responsive: collapse two-column to single column on narrow screens */
+@media (max-width: 820px) {
+  .chain-layout { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .chain-layout__chain { order: 1; }
+  .chain-layout__tiles { order: 2; }
 }
 
 /* theme--link overrides for chain station */

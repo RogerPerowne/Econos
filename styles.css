@@ -60,6 +60,8 @@
   --econ-gray-50:     #F5F3EE;   /* very subtle warm surface */
   --econ-gray-100:    #F0EEE8;   /* subtle warm surface */
   --econ-gray-200:    #E7E7EA;   /* default borders */
+  --econ-border:      #E7E7EA;   /* alias for default border colour */
+  --econ-border-strong: #C4C4CA; /* stronger border for emphasis */
   --econ-gray-300:    #D1D1D6;
   --econ-gray-400:    #9CA3AF;   /* muted text · captions */
   --econ-gray-500:    #6B7280;   /* secondary text */
@@ -7644,14 +7646,14 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .judge-bank {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--sp-3);
 }
 .judge-bank-row {
   display: grid;
   grid-template-columns: 38px 1fr;
   align-items: center;
   gap: var(--sp-2);
-  padding: 4px;
+  padding: var(--sp-3) var(--sp-2);
   border-radius: var(--r-md);
   transition: background 0.12s;
 }

@@ -25,7 +25,7 @@ window.ECONOS_LINK_INTRO = {
       { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order or fill the steps in a reasoning chain.',                href: 'link_inflation_chain.html',    state: 'available' },
       { num: 3, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label, interpret and explain the right AD/AS diagram.',  href: 'link_inflation_diagram.html',  state: 'available' },
       { num: 4, name: 'It depends on',     skill: 'Evaluation',  sub: 'Rank the factors that most change the answer to a policy claim.',       href: 'link_inflation_depends.html',  state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Choose the strongest evaluative pivot and complete the line.', href: '#',                            state: 'locked'    }
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, diagram and factors into an exam-quality judgement.', href: 'link_inflation_judge.html', state: 'available' }
     ],
 
     stages: [

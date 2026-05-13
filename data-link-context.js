@@ -7,6 +7,7 @@ window.ECONOS_LINK_STATION = {
   topic:        'Causes of Inflation & Deflation',
   sessionLabel: 'Session 2 of 3: Link',
   backUrl:      'link_inflation_intro.html',
+  nextUrl:      'link_inflation_chain.html',
 
   stations: [
     { id: 'context', label: 'Use the context',    href: 'link_inflation_context.html' },
@@ -20,59 +21,51 @@ window.ECONOS_LINK_STATION = {
   station: {
     type:        'context',
     eyebrow:     'Use the context',
-    question:    'Which details in the extract matter most for judging whether inflationary pressure is easing?',
+    question:    'Which details in the extract matter most for judging whether the Bank of England should raise interest rates further?',
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Focus on what changes the answer, not just what sounds economic.',
 
     extract: [
-      'UK inflation data this morning showed CPI inflation has [[cpi-fall|fallen from 6.8% to 3.2%]] in the year to March, the lowest rate since mid-2021.',
-      'The Office for National Statistics said [[energy|energy prices have eased]] compared with the same period last year, helped by [[wholesale|lower wholesale gas prices]] and [[gov-support|government support in the first half of the year]].',
-      'However, [[wages|wage growth remains above 5%]], with average regular pay rising 5.6% in the three months to February.',
-      'Retail sales were also notable — [[retail|retail sales are weak]], falling 0.6% in March after a 0.4% drop in February.',
-      'Meanwhile, [[services|many service firms continue to raise prices]], with the [[pmi|services PMI index still well above its long-run average]], according to S&P Global.'
+      'The Office for National Statistics confirmed UK CPI inflation has [[cpi-level|risen to 6.8%]], driven largely by a sharp rise in global energy prices following supply disruption in major producing regions.',
+      '[[energy|Energy prices have risen by 18%]] over the past three months, pushing up firms\' production and transport costs across the economy.',
+      'However, [[wages|wage growth stands at 3.1%]], below the rate of inflation, meaning real wages are falling for most workers.',
+      'The Bank of England\'s Monetary Policy Committee is considering a [[rate-rise|further 50 basis point rise in the base rate]], having already raised rates from 0.1% to 4.5% over the past two years.',
+      '[[confidence|Consumer confidence remains weak]], with the GfK index at -30, reflecting the squeeze on household budgets from higher energy bills.',
+      'A minority of economists warn that a further rate rise risks [[recession|tipping the economy into recession]], given that output growth is already close to zero.'
     ],
 
     evidence: {
-      'cpi-fall':    { text: 'fallen from 6.8% to 3.2%' },
-      'energy':      { text: 'energy prices have eased' },
-      'wholesale':   { text: 'lower wholesale gas prices' },
-      'gov-support': { text: 'government support in the first half of the year' },
-      'wages':       { text: 'wage growth remains above 5%' },
-      'retail':      { text: 'retail sales are weak' },
-      'services':    { text: 'many service firms continue to raise prices' },
-      'pmi':         { text: 'services PMI index still well above its long-run average' }
+      'cpi-level':  { text: 'risen to 6.8%' },
+      'energy':     { text: 'Energy prices have risen by 18%' },
+      'wages':      { text: 'wage growth stands at 3.1%' },
+      'confidence': { text: 'Consumer confidence remains weak' },
+      'recession':  { text: 'tipping the economy into recession' }
     },
 
     buckets: [
-      { id: 'easing',      label: 'Suggests inflation is easing',    tone: 'green', icon: '↑' },
-      { id: 'persist',     label: 'Suggests inflation may persist',  tone: 'amber', icon: '∿' },
-      { id: 'complicates', label: 'Complicates the judgement',       tone: 'blue',  icon: '?' }
+      { id: 'raises',      label: 'Supports raising rates',         tone: 'green', icon: '↑' },
+      { id: 'against',     label: 'Argues against raising rates',   tone: 'pink',  icon: '↓' },
+      { id: 'complicates', label: 'Complicates the case either way', tone: 'blue',  icon: '?' }
     ],
 
     correct: {
-      'cpi-fall':    'easing',
-      'energy':      'easing',
-      'wholesale':   'easing',
-      'wages':       'persist',
-      'services':    'persist',
-      'pmi':         'persist',
-      'retail':      'complicates',
-      'gov-support': 'complicates'
+      'cpi-level':  'raises',
+      'energy':     'complicates',
+      'wages':      'complicates',
+      'confidence': 'against',
+      'recession':  'against'
     },
 
     explain: {
-      'cpi-fall':    'The headline rate falling is the clearest direct evidence inflation is easing.',
-      'energy':      'Cost-push pressure unwinding — directly reduces upward pressure on SRAS.',
-      'wholesale':   'Falling input costs feed through to lower CPI with a lag.',
-      'wages':       'Above-inflation wage growth sustains demand-pull pressure and risks a wage–price spiral.',
-      'services':    'Sticky services inflation is the Bank of England\'s key worry — underlying inflation has not yet eased.',
-      'pmi':         'A leading indicator that services firms are still raising prices, so price pressure is likely to persist.',
-      'retail':      'Weak demand could ease inflation, but also signals economic weakness — it cuts both ways.',
-      'gov-support': 'Support held energy prices down artificially in H1 — its absence going forward could put pressure back on.'
+      'cpi-level':  'CPI at 6.8% is well above the 2% target, confirming inflation is high — this is the clearest direct justification for a rate rise to anchor expectations and cool demand.',
+      'energy':     'A cost-push energy shock is the origin of this inflation. Rate rises work on demand, not supply costs, so their effectiveness here is limited — the shock complicates the case for tightening.',
+      'wages':      'Real wages falling means workers are already suffering a squeeze on purchasing power. This suggests demand is not the primary driver of inflation, complicating the justification for further rate rises.',
+      'confidence': 'With consumer confidence already weak, a further rate rise would tighten conditions on households already under strain — arguing against raising rates when demand may already be cooling.',
+      'recession':  'If output growth is near zero, a further rate rise could tip the economy into recession — this is a significant argument against raising rates given the fragile growth outlook.'
     },
 
     bucketCue: 'Good application uses context to change the conclusion.',
 
-    examBridge: '"Although headline CPI has fallen sharply, persistent services inflation and strong wage growth suggest underlying pressure remains, complicating the case for early rate cuts."',
+    examBridge: '"With inflation at 6.8% and driven by a supply-side energy shock, the case for further rate rises is genuinely uncertain: rates can anchor expectations, but if the shock is temporary, a rate rise imposes output costs without removing the underlying pressure."',
 
     whatGoodLooksLike: [
       { icon: '🔍',  text: 'Use evidence from the extract'        },

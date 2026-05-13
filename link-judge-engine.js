@@ -44,7 +44,7 @@
     }
 
     function readyToCheck(sc) {
-      return allBlanksFilled(sc) && !!state.overallAnswer;
+      return allBlanksFilled(sc);
     }
 
     function blankSummary(sc) {
@@ -208,35 +208,14 @@
           + '</div>';
       }).join('');
 
-      var op = sc.overallPosition;
-      var opsHtml = op.options.map(function (o) {
-        var selected = state.overallAnswer === o.id;
-        var cls = 'judge-overall__opt';
-        if (selected) cls += ' is-selected';
-        if (state.revealed && selected) {
-          cls += o.correct ? ' is-correct' : ' is-wrong';
-        }
-        var disabled = state.revealed ? ' disabled' : '';
-        return ''
-          + '<button type="button" class="' + cls + '" data-overall="' + o.id + '"' + disabled + '>'
-          +   '<span class="judge-overall__radio"></span>'
-          +   '<span class="judge-overall__label">' + o.text + '</span>'
-          + '</button>';
-      }).join('');
-
       return ''
         + '<div class="judge-workspace">'
         +   '<div class="judge-bank">' + rowsHtml + '</div>'
-        +   '<div class="judge-overall">'
-        +     '<div class="judge-overall__heading">' + op.prompt + '</div>'
-        +     opsHtml
-        +   '</div>'
         + '</div>';
     }
 
     function renderReveal(sc) {
       var s        = blankSummary(sc);
-      var overall  = isOverallCorrect(sc);
       var pct      = Math.round((s.correct / s.total) * 100);
       var scoreTone= pct >= 75 ? 'green' : pct >= 50 ? 'amber' : 'rose';
 
@@ -245,9 +224,6 @@
         +   '<div class="judge-reveal__score judge-reveal__score--' + scoreTone + '">'
         +     '<div class="judge-reveal__score-num">' + s.correct + ' / ' + s.total + '</div>'
         +     '<div class="judge-reveal__score-label">Blanks correct</div>'
-        +     '<div class="judge-reveal__overall ' + (overall ? 'is-correct' : 'is-wrong') + '">'
-        +       (overall ? '✓ Overall position correct' : '✕ Overall position not the strongest')
-        +     '</div>'
         +   '</div>'
         +   '<div class="judge-reveal__bridge">'
         +     '<div class="judge-reveal__bridge-label">Exam-quality model judgement</div>'
@@ -266,7 +242,7 @@
         var btnDisabled = ready ? '' : ' disabled';
         var btnLabel = ready
           ? 'Check my judgement →'
-          : 'Fill all blanks and pick an overall position';
+          : 'Fill all blanks';
         primary = '<button type="button" class="' + btnCls + '" id="check-btn"' + btnDisabled + '>' + btnLabel + '</button>';
       } else if (!isLast) {
         primary = '<button type="button" class="link-btn link-btn--primary" id="next-scenario">Next scenario →</button>';
@@ -369,15 +345,6 @@
             // advance focus to next unfilled blank if any
             state.activeBlank = nextUnfilledBlank(bId);
           }
-          render();
-        });
-      });
-
-      /* overall position */
-      document.querySelectorAll('[data-overall]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          if (state.revealed) return;
-          state.overallAnswer = el.getAttribute('data-overall');
           render();
         });
       });

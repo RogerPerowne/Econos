@@ -7938,3 +7938,138 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   .judge-blank { min-width: 36px; padding: 2px 5px; }
   .link-card { padding: var(--sp-3); }
 }
+
+
+/* ============================================================
+   BRAND REFRESH — sticky nav, mobile nav, sidebar logo,
+   topbar sticky, improved intro card polish
+   ============================================================ */
+
+/* ── Sticky topbar (desktop) ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+/* ── Mobile nav (shown on ≤ 900px where sidebar is hidden) ── */
+.mobile-nav {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--econ-white);
+  border-bottom: 1px solid var(--econ-border);
+  height: 56px;
+  padding: 0 var(--sp-4);
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 8px rgba(11,20,38,0.07);
+}
+.mobile-nav__logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+.mobile-nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.mobile-nav__streak {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-ink);
+  background: var(--econ-green-50);
+  border: 1px solid var(--econ-green-100);
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+}
+.mobile-nav__avatar {
+  width: 34px; height: 34px;
+  border-radius: var(--r-full);
+  background: var(--econ-blue-100);
+  color: var(--econ-blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(37,99,235,0.18);
+}
+
+@media (max-width: 900px) {
+  .mobile-nav { display: flex; }
+  .topbar { position: sticky; top: 56px; z-index: 89; }
+}
+
+/* ── Updated sidebar brand — show logo-full, hide old text ── */
+.sidebar__logo-link {
+  display: block;
+  padding: var(--sp-4) 0 var(--sp-5);
+}
+.sidebar__logo-full {
+  width: 156px;
+  height: auto;
+  display: block;
+}
+.sidebar__wordmark,
+.sidebar__tagline { display: none; }
+/* Also hide the old icon-only wrapper if still present */
+.sidebar__brand .sidebar__logo { display: none; }
+.sidebar__brand .sidebar__logo-link ~ .sidebar__logo { display: none; }
+
+/* ── Sidebar nav — improved active state ── */
+.sidebar__nav a.is-active {
+  background: linear-gradient(135deg, var(--econ-blue-50) 0%, rgba(219,234,254,0.6) 100%);
+  color: var(--econ-blue-700);
+  font-weight: var(--fw-semi);
+}
+
+/* ── Topic page intro card — hero visual improvements ── */
+.intro-card {
+  background: linear-gradient(160deg, #FFFFFF 60%, #F0FDF7 100%);
+  border: 1.5px solid var(--econ-border);
+  border-top: 3px solid var(--econ-green);
+}
+
+/* ── Session meta — polished ── */
+.session-meta {
+  border: 1.5px solid var(--econ-border);
+  border-radius: var(--r-xl);
+  background: var(--econ-white);
+  box-shadow: 0 2px 10px rgba(11,20,38,0.05);
+}
+
+/* ── Card improvements — stronger top accent ── */
+.card {
+  border: 1.5px solid var(--econ-border);
+  box-shadow: 0 2px 12px rgba(11,20,38,0.05);
+}
+
+/* ── Button improvements ── */
+.btn--primary {
+  box-shadow: 0 3px 10px rgba(11,20,38,0.2);
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(11,20,38,0.25);
+}
+
+/* ── Right rail — cleaner ── */
+.rail-card {
+  border: 1.5px solid var(--econ-border);
+  box-shadow: 0 2px 8px rgba(11,20,38,0.04);
+}
+
+/* ── Topbar improvements ── */
+.topbar {
+  box-shadow: 0 1px 6px rgba(11,20,38,0.07);
+}
+
+/* ── Page: extra top breathing room for sticky topbar ── */
+.page { scroll-margin-top: var(--header-h); }

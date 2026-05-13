@@ -11,96 +11,230 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Brand tokens — kept inline so this landing page works standalone */
+    /* ── Brand tokens ── */
     :root {
-      --ink: #0B1426;
-      --ink-soft: #2A3650;
-      --muted: #6B7280;
-      --line: #E7E7EA;
-      --bg: #FAF8F4;
-      --green: #1FB574;
-      --yellow: #F5B800;
-      --pink: #EC2D68;
-      --purple: #7C3AED;
-      --blue: #2563EB;
+      --ink:    #0B1426;
+      --ink-s:  #2A3650;
+      --muted:  #6B7280;
+      --line:   #E7E7EA;
+      --bg:     #FAF8F4;
+      --white:  #FFFFFF;
+      --green:  #1FB574;
+      --amber:  #F5B800;
+      --pink:   #EC2D68;
+      --blue:   #2563EB;
+      --green-50: #E8F8F0;
+      --amber-50: #FEF8E0;
+      --nav-h:  64px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--ink);
       line-height: 1.5;
-      padding: 48px 24px 80px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    .wrap { max-width: 880px; margin: 0 auto; width: 100%; }
 
-    /* ── Header / logo lockup (vertical, left-aligned) ── */
-    .header {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 56px;
+    /* ══════════════════════════════════════════
+       SITE NAV — sticky top bar
+    ══════════════════════════════════════════ */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      height: var(--nav-h);
+      padding: 0 32px;
     }
-    .header .logo-full {
-      display: block;
-      width: 280px;
-      height: auto;
-    }
-
-    /* ── Hero ── */
-    .hero { margin-bottom: 56px; max-width: 640px; }
-    .eyebrow {
-      font-family: 'Inter';
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--ink);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+    .site-nav__inner {
+      max-width: 960px;
+      margin: 0 auto;
+      height: 100%;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .eyebrow::before {
+    .site-nav__logo img { height: 34px; width: auto; display: block; }
+    .site-nav__links { display: flex; align-items: center; gap: 32px; }
+    .site-nav__link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-s);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .site-nav__link:hover { color: var(--ink); }
+    .site-nav__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      background: var(--ink);
+      color: var(--bg);
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(11,20,38,0.18);
+    }
+    .site-nav__cta:hover {
+      background: #1a2a4a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(11,20,38,0.22);
+    }
+    @media (max-width: 600px) {
+      .site-nav { padding: 0 20px; }
+      .site-nav__link { display: none; }
+    }
+
+    /* ══════════════════════════════════════════
+       PAGE WRAPPER
+    ══════════════════════════════════════════ */
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 32px; width: 100%; }
+    @media (max-width: 600px) { .wrap { padding: 0 20px; } }
+
+    /* ══════════════════════════════════════════
+       HERO SECTION
+    ══════════════════════════════════════════ */
+    .home-hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: center;
+      padding: 72px 0 64px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 56px;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
       content: '';
       width: 6px; height: 6px;
       border-radius: 999px;
-      background: var(--ink);
+      background: var(--green);
     }
+    .hero-eyebrow__sep { color: var(--line); }
     h1 {
       font-family: 'Fraunces', Georgia, serif;
       font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
       font-weight: 700;
-      font-size: 64px;
+      font-size: 58px;
       letter-spacing: -0.03em;
-      line-height: 1;
+      line-height: 1.02;
       color: var(--ink);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     .hero-lede {
-      font-size: 18px;
-      color: var(--ink);
-      line-height: 1.55;
-      max-width: 580px;
+      font-size: 17px;
+      color: var(--ink-s);
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 32px;
     }
-    .dg { color: var(--green); }
-    .dy { color: var(--yellow); }
-    .dp { color: var(--pink); }
-
-    /* ── Section title ── */
-    .section-title {
-      font-family: 'Inter';
+    .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
       font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .hero-btn--primary {
+      background: var(--ink);
+      color: var(--bg);
+      box-shadow: 0 3px 12px rgba(11,20,38,0.2);
+    }
+    .hero-btn--primary:hover { background: #1a2a4a; transform: translateY(-2px); box-shadow: 0 5px 18px rgba(11,20,38,0.25); }
+    .hero-btn--ghost {
+      background: transparent;
       color: var(--ink);
-      margin-bottom: 18px;
+      border: 2px solid var(--line);
+    }
+    .hero-btn--ghost:hover { border-color: var(--ink); background: rgba(11,20,38,0.04); }
+
+    /* Stages pill row */
+    .hero-stages {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .stage-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid;
+    }
+    .stage-pill__dot { width: 7px; height: 7px; border-radius: 999px; flex-shrink: 0; }
+    .stage-pill--green { background: var(--green-50); border-color: #D1F2E1; color: #0E633F; }
+    .stage-pill--green .stage-pill__dot { background: var(--green); }
+    .stage-pill--amber { background: var(--amber-50); border-color: #FDF0C2; color: #8C6800; }
+    .stage-pill--amber .stage-pill__dot { background: var(--amber); }
+    .stage-pill--grey  { background: #F9FAFB; border-color: var(--line); color: #9CA3AF; }
+    .stage-pill--grey .stage-pill__dot { background: var(--line); border: 1.5px solid #9CA3AF; }
+    .stage-pill__sep { color: var(--line); margin: 0 2px; }
+
+    /* Hero illustration */
+    .home-hero__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .home-hero__visual svg { width: 100%; height: auto; max-width: 420px; }
+    @media (max-width: 860px) {
+      .home-hero { grid-template-columns: 1fr; padding: 56px 0 48px; }
+      h1 { font-size: 44px; }
+      .home-hero__visual { display: none; }
+    }
+    @media (max-width: 520px) {
+      h1 { font-size: 36px; }
+      .hero-lede { font-size: 15px; }
+      .home-hero { padding: 40px 0 36px; margin-bottom: 40px; }
+      .hero-btn { font-size: 14px; padding: 11px 20px; }
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION TITLE
+    ══════════════════════════════════════════ */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 20px;
     }
     .section-title::before {
       content: '';
@@ -109,36 +243,41 @@
       background: var(--ink);
     }
 
-    /* ── Topic cards ── */
+    /* ══════════════════════════════════════════
+       TOPIC CARDS
+    ══════════════════════════════════════════ */
     .topics {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 14px;
       margin-bottom: 56px;
     }
     .topic {
       display: block;
-      padding: 24px 22px;
-      background: #FFFFFF;
+      padding: 26px 24px;
+      background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 16px;
       text-decoration: none;
       color: inherit;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
     }
     .topic:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(11, 20, 38, 0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(11, 20, 38, 0.08);
       border-color: var(--ink);
     }
-    .topic__num {
-      font-family: 'Inter';
-      font-weight: 700;
+    .topic__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 11px;
-      letter-spacing: 0.12em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 10px;
+      color: var(--muted);
+      margin-bottom: 12px;
     }
     .topic__title {
       font-family: 'Fraunces', Georgia, serif;
@@ -149,33 +288,34 @@
       line-height: 1.1;
       margin-bottom: 8px;
       color: var(--ink);
+      transition: color 0.15s;
     }
-    .topic__sub {
+    .topic:hover .topic__title { color: var(--blue); }
+    .topic__sub { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .topic__arrow {
+      position: absolute;
+      bottom: 22px; right: 22px;
+      width: 28px; height: 28px;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
       font-size: 14px;
-      color: var(--ink);
-      line-height: 1.45;
+      transition: background 0.15s, border-color 0.15s;
     }
+    .topic:hover .topic__arrow { background: var(--ink); border-color: var(--ink); color: var(--white); }
 
-    /* ── Principles strip ── */
+    /* ══════════════════════════════════════════
+       HOW WE BUILD IT
+    ══════════════════════════════════════════ */
     .principles {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 22px;
+      gap: 28px;
       margin-bottom: 56px;
     }
-    @media (max-width: 720px) {
-      .principles { grid-template-columns: 1fr; }
-      h1 { font-size: 40px; }
-      .header { align-items: center; }
-      .header .logo-full { width: 200px; }
-      body { padding: 32px 16px 64px; }
-      .hero-lede { font-size: 16px; }
-    }
-    @media (max-width: 480px) {
-      h1 { font-size: 32px; }
-      .header .logo-full { width: 160px; }
-    }
-    .principle { border-top: 2px solid var(--ink); padding-top: 12px; }
+    @media (max-width: 720px) { .principles { grid-template-columns: 1fr; } }
+    .principle { border-top: 2px solid var(--ink); padding-top: 14px; }
     .principle-num {
       font-family: 'Fraunces', Georgia, serif;
       font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
@@ -183,73 +323,160 @@
       font-size: 28px;
       line-height: 1;
       color: var(--ink);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .principle-title {
-      font-family: 'Inter';
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .principle-body {
-      font-size: 13px;
-      color: var(--ink);
-      line-height: 1.5;
-    }
+    .principle-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+    .principle-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-    /* ── Footer ── */
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
     .footer {
       margin-top: 48px;
-      padding-top: 24px;
+      padding: 24px 0 48px;
       border-top: 1px solid var(--line);
-      font-size: 13px;
-      color: var(--ink);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
+    .footer__logo img { height: 24px; width: auto; opacity: 0.5; }
+    .footer__meta { font-size: 13px; color: var(--muted); }
+
+    /* colour helpers */
+    .dg { color: var(--green); }
+    .dy { color: var(--amber); }
+    .dp { color: var(--pink); }
   </style>
 </head>
 <body>
+
+  <!-- ════ STICKY SITE NAV ════ -->
+  <nav class="site-nav">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo">
+        <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it.">
+      </a>
+      <div class="site-nav__links">
+        <a href="#topics" class="site-nav__link">Topics</a>
+        <a href="#how" class="site-nav__link">How it works</a>
+        <a href="topic_inflation.html" class="site-nav__cta">Start learning →</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="wrap">
 
-    <!-- ═══ HEADER: logo ═══ -->
-    <header class="header">
-      <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it." class="logo-full">
-    </header>
+    <!-- ════ HERO ════ -->
+    <section class="home-hero">
+      <div class="home-hero__text">
+        <div class="hero-eyebrow">
+          A-Level Economics
+          <span class="hero-eyebrow__sep">·</span>
+          Edexcel Revision Platform
+        </div>
+        <h1>Revision built around how examiners actually mark<span class="dp">.</span></h1>
+        <p class="hero-lede">Bite-sized cards organised around the recurring friction types and frameworks that real Edexcel questions reward — not just topic-by-topic memorisation.</p>
+        <div class="hero-actions">
+          <a href="topic_inflation.html" class="hero-btn hero-btn--primary">Start with Inflation →</a>
+          <a href="#topics" class="hero-btn hero-btn--ghost">See all topics</a>
+        </div>
+        <div class="hero-stages">
+          <span class="stage-pill stage-pill--green"><span class="stage-pill__dot"></span>Learn it</span>
+          <span class="stage-pill stage-pill--amber"><span class="stage-pill__dot"></span>Link it</span>
+          <span class="stage-pill stage-pill--grey"><span class="stage-pill__dot"></span>Land it</span>
+        </div>
+      </div>
 
-    <!-- ═══ HERO ═══ -->
-    <section class="hero">
-      <div class="eyebrow">A-Level Economics · Revision Platform</div>
-      <h1>Revision built around how examiners actually mark<span class="dp">.</span></h1>
-      <p class="hero-lede">Bite-sized cards organised around the recurring friction types and frameworks that real Edexcel questions reward — not just topic-by-topic memorisation.</p>
+      <!-- Economics diagram illustration -->
+      <div class="home-hero__visual">
+        <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AD-AS economics diagram illustration">
+          <!-- Card shell -->
+          <rect x="8" y="12" width="404" height="318" rx="20" fill="rgba(11,20,38,0.05)"/>
+          <rect x="0" y="4" width="404" height="318" rx="20" fill="#FFFFFF" stroke="#E7E7EA" stroke-width="1.5"/>
+          <!-- Card header bar -->
+          <rect x="0" y="4" width="404" height="46" rx="20" fill="#FAF8F4"/>
+          <rect x="0" y="30" width="404" height="20" fill="#FAF8F4"/>
+          <text x="18" y="32" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#9CA3AF">AD / AS Diagram · Inflation &amp; Output</text>
+          <!-- Traffic light dots -->
+          <circle cx="366" cy="27" r="5" fill="#EC2D68"/>
+          <circle cx="381" cy="27" r="5" fill="#F5B800"/>
+          <circle cx="396" cy="27" r="5" fill="#1FB574"/>
+          <!-- Chart area -->
+          <!-- Axes -->
+          <line x1="54" y1="68" x2="54" y2="282" stroke="#0B1426" stroke-width="2"/>
+          <line x1="54" y1="282" x2="384" y2="282" stroke="#0B1426" stroke-width="2"/>
+          <!-- Axis arrowheads -->
+          <path d="M 50 68 L 54 60 L 58 68" fill="#0B1426"/>
+          <path d="M 376 278 L 384 282 L 376 286" fill="#0B1426"/>
+          <!-- Grid lines -->
+          <line x1="54" y1="118" x2="384" y2="118" stroke="#F0F0EE" stroke-width="1"/>
+          <line x1="54" y1="170" x2="384" y2="170" stroke="#F0F0EE" stroke-width="1"/>
+          <line x1="54" y1="230" x2="384" y2="230" stroke="#F0F0EE" stroke-width="1"/>
+          <line x1="134" y1="68" x2="134" y2="282" stroke="#F0F0EE" stroke-width="1"/>
+          <line x1="219" y1="68" x2="219" y2="282" stroke="#F0F0EE" stroke-width="1"/>
+          <line x1="304" y1="68" x2="304" y2="282" stroke="#F0F0EE" stroke-width="1"/>
+          <!-- LRAS (green dashed vertical) -->
+          <line x1="219" y1="74" x2="219" y2="277" stroke="#1FB574" stroke-width="2.5" stroke-dasharray="5,4"/>
+          <!-- AD curve (blue, downward sloping) -->
+          <path d="M 74 78 Q 196 186 376 272" stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- SRAS curve (rose, upward sloping) -->
+          <path d="M 74 268 Q 172 204 376 82" stroke="#EC2D68" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Equilibrium drop lines -->
+          <line x1="219" y1="174" x2="219" y2="282" stroke="#0B1426" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+          <line x1="54" y1="174" x2="219" y2="174" stroke="#0B1426" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+          <!-- Equilibrium point (halo + dot) -->
+          <circle cx="219" cy="174" r="10" fill="white"/>
+          <circle cx="219" cy="174" r="6" fill="#0B1426"/>
+          <!-- E* label -->
+          <text x="227" y="170" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0B1426">E*</text>
+          <!-- Curve label chips -->
+          <rect x="340" y="258" width="36" height="20" rx="10" fill="#2563EB"/>
+          <text x="358" y="272" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">AD</text>
+          <rect x="335" y="72" width="50" height="20" rx="10" fill="#EC2D68"/>
+          <text x="360" y="86" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">SRAS</text>
+          <rect x="224" y="72" width="52" height="20" rx="10" fill="#1FB574"/>
+          <text x="250" y="86" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">LRAS</text>
+          <!-- Axis labels -->
+          <text x="40" y="178" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle" transform="rotate(-90 40 178)">Price Level (P)</text>
+          <text x="218" y="300" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle">Real GDP</text>
+        </svg>
+      </div>
     </section>
 
-    <!-- ═══ TOPICS ═══ -->
+    <!-- ════ TOPICS ════ -->
+    <a id="topics"></a>
     <div class="section-title">Topics in progress</div>
     <div class="topics">
       <a class="topic" href="topic_inflation.html">
-        <div class="topic__num">Theme 2.4</div>
+        <div class="topic__tag">Theme 2.4</div>
         <div class="topic__title">Inflation</div>
         <div class="topic__sub">Demand-pull, cost-push, QE, deflation</div>
+        <div class="topic__arrow">→</div>
       </a>
       <a class="topic" href="topic_ad.html">
-        <div class="topic__num">Theme 2.2</div>
+        <div class="topic__tag">Theme 2.2</div>
         <div class="topic__title">Aggregate Demand</div>
         <div class="topic__sub">Components, slope, multiplier</div>
+        <div class="topic__arrow">→</div>
       </a>
       <a class="topic" href="topic_unemployment.html">
-        <div class="topic__num">Theme 2.1.3</div>
+        <div class="topic__tag">Theme 2.1.3</div>
         <div class="topic__title">Employment &amp; Unemployment</div>
         <div class="topic__sub">Types, diagnosis, policy responses</div>
+        <div class="topic__arrow">→</div>
       </a>
       <a class="topic" href="topic_monetary.html">
-        <div class="topic__num">Theme 2.6.2</div>
+        <div class="topic__tag">Theme 2.6.2</div>
         <div class="topic__title">Monetary Policy</div>
         <div class="topic__sub">Transmission, QE, credibility</div>
+        <div class="topic__arrow">→</div>
       </a>
     </div>
 
-    <!-- ═══ PRINCIPLES ═══ -->
+    <!-- ════ HOW WE BUILD IT ════ -->
+    <a id="how"></a>
     <div class="section-title">How we build it</div>
     <div class="principles">
       <div class="principle">
@@ -269,11 +496,13 @@
       </div>
     </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <div class="footer">
-      <div>4 of 55 topics · in development</div>
-      <div>Brand v1.0</div>
-    </div>
+    <!-- ════ FOOTER ════ -->
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="assets/econos-logo-full.png" alt="econos">
+      </div>
+      <div class="footer__meta">4 of 55 topics · in development · Brand v1.0</div>
+    </footer>
 
   </div>
 </body>

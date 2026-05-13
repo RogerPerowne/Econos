@@ -113,8 +113,7 @@
     }
 
     function renderStation() {
-      var sc        = currentScenario();
-      var allPicked = state.picks.length === 3;
+      var sc = currentScenario();
       return ''
         + '<div class="link-card">'
         +   '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>' + DATA.eyebrow
@@ -122,7 +121,8 @@
         +   '</div>'
         +   '<p class="link-card__lede">' + DATA.instruction + '</p>'
         +   renderClaim(sc)
-        +   (allPicked ? renderExplainPhase(sc) : renderPickPhase(sc))
+        +   renderWorkspace(sc)
+        +   (state.revealed ? renderJudgement(sc) : '')
         + '</div>'
         + renderFooter();
     }
@@ -138,17 +138,19 @@
         + '</div>';
     }
 
-    /* ── Phase 1: pick factors ── */
-    function renderPickPhase(sc) {
+    /* ── Unified workspace: bank (left) + slots with textareas (right) ── */
+    function renderWorkspace(sc) {
       var placedSet = {};
       state.picks.forEach(function (id) { placedSet[id] = true; });
 
       var factorsHtml = sc.factors.map(function (f) {
         var placed = !!placedSet[f.id];
+        var disabled = state.revealed || (state.picks.length >= 3 && !placed);
         return ''
           + '<button type="button"'
           +   ' class="depends-factor' + (placed ? ' is-placed' : '') + '"'
-          +   (placed ? ' disabled aria-hidden="true"' : ' data-factor="' + f.id + '"')
+          +   ' data-factor="' + f.id + '"'
+          +   (disabled ? ' disabled' : '')
           + '>'
           +   '<span class="depends-factor__icon">' + f.icon + '</span>'
           +   '<span class="depends-factor__label">' + f.label + '</span>'
@@ -157,23 +159,7 @@
 
       var slotsHtml = '';
       for (var i = 0; i < 3; i++) {
-        var id     = state.picks[i] || null;
-        var factor = id ? factorById(sc, id) : null;
-        if (factor) {
-          slotsHtml += ''
-            + '<div class="depends-slot depends-slot--filled">'
-            +   '<div class="depends-slot__num">' + (i + 1) + '</div>'
-            +   '<span class="depends-slot__icon">' + factor.icon + '</span>'
-            +   '<span class="depends-slot__label">' + factor.label + '</span>'
-            +   '<button type="button" class="depends-slot__remove" data-remove-pick="' + i + '">&times;</button>'
-            + '</div>';
-        } else {
-          slotsHtml += ''
-            + '<div class="depends-slot depends-slot--empty">'
-            +   '<div class="depends-slot__num">' + (i + 1) + '</div>'
-            +   '<span class="depends-slot__placeholder">Tap a factor ←</span>'
-            + '</div>';
-        }
+        slotsHtml += renderSlot(sc, i);
         if (i < 2) slotsHtml += '<div class="depends-arrow">↓</div>';
       }
 
@@ -184,51 +170,64 @@
         +     '<div class="depends-factor-grid">' + factorsHtml + '</div>'
         +   '</div>'
         +   '<div class="depends-rank">'
-        +     '<div class="depends-rank__heading">Your factors</div>'
+        +     '<div class="depends-rank__heading">Your factors &amp; reasons</div>'
         +     '<div class="depends-slots">' + slotsHtml + '</div>'
         +   '</div>'
         + '</div>';
     }
 
-    /* ── Phase 2: explain + reveal ── */
-    function renderExplainPhase(sc) {
-      var html = '';
-      for (var i = 0; i < 3; i++) {
-        var id     = state.picks[i];
-        var factor = factorById(sc, id);
-        var inModel = isInModelTop3(sc, id);
-        var markCls = state.revealed
-          ? (inModel ? ' is-correct' : ' is-wrong')
-          : '';
-        var markHtml = state.revealed
-          ? '<span class="depends-factor-mark">' + (inModel ? '✓' : '✕') + '</span>'
-          : '';
+    function renderSlot(sc, i) {
+      var id     = state.picks[i] || null;
+      var factor = id ? factorById(sc, id) : null;
 
-        html += ''
-          + '<div class="depends-explain-block' + markCls + '">'
-          +   '<div class="depends-explain-block__head">'
-          +     '<span class="depends-explain-block__icon">' + factor.icon + '</span>'
-          +     '<span class="depends-explain-block__label">' + factor.label + '</span>'
-          +     markHtml
-          +   '</div>'
-          +   '<textarea'
-          +     ' class="depends-explain-block__textarea"'
-          +     ' data-why-idx="' + i + '"'
-          +     ' placeholder="Why does this factor matter for the claim?"'
-          +     (state.revealed ? ' readonly' : '')
-          +   '></textarea>'
+      if (!factor) {
+        return ''
+          + '<div class="depends-slot depends-slot--empty">'
+          +   '<div class="depends-slot__num">' + (i + 1) + '</div>'
+          +   '<span class="depends-slot__placeholder">Tap a factor on the left ←</span>'
           + '</div>';
-        if (i < 2) html += '<div class="depends-arrow">↓</div>';
       }
 
-      var judgementHtml = state.revealed
-        ? '<div class="depends-judgement">'
-          +   '<div class="depends-judgement__label">Ideal evaluative statement</div>'
-          +   '<div class="depends-judgement__text">' + sc.judgement + '</div>'
+      var inModel  = isInModelTop3(sc, id);
+      var markCls  = state.revealed ? (inModel ? ' is-correct' : ' is-wrong') : '';
+      var markHtml = state.revealed
+        ? '<span class="depends-factor-mark">' + (inModel ? '✓' : '✕') + '</span>'
+        : '';
+      var removeHtml = state.revealed
+        ? ''
+        : '<button type="button" class="depends-slot__remove" data-remove-pick="' + i + '" aria-label="Remove">&times;</button>';
+      var idealHtml = state.revealed
+        ? '<div class="depends-ideal">'
+          +   '<div class="depends-ideal__label">Check against the ideal reason</div>'
+          +   '<div class="depends-ideal__text">' + factor.why + '</div>'
           + '</div>'
         : '';
 
-      return '<div class="depends-explain">' + html + '</div>' + judgementHtml;
+      return ''
+        + '<div class="depends-slot depends-slot--filled' + markCls + '">'
+        +   '<div class="depends-slot__head">'
+        +     '<div class="depends-slot__num">' + (i + 1) + '</div>'
+        +     '<span class="depends-slot__icon">' + factor.icon + '</span>'
+        +     '<span class="depends-slot__label">' + factor.label + '</span>'
+        +     markHtml
+        +     removeHtml
+        +   '</div>'
+        +   '<textarea'
+        +     ' class="depends-slot__textarea"'
+        +     ' data-why-idx="' + i + '"'
+        +     ' placeholder="Why does this factor matter for the claim?"'
+        +     (state.revealed ? ' readonly' : '')
+        +   '></textarea>'
+        +   idealHtml
+        + '</div>';
+    }
+
+    function renderJudgement(sc) {
+      return ''
+        + '<div class="depends-judgement">'
+        +   '<div class="depends-judgement__label">Ideal evaluative analysis</div>'
+        +   '<div class="depends-judgement__text">' + sc.judgement + '</div>'
+        + '</div>';
     }
 
     /* ── Rail ── */
@@ -313,12 +312,20 @@
     /* -------- handlers -------- */
 
     function attachHandlers() {
-      /* tap factor → add to picks */
+      /* tap factor → add to picks; tap a greyed (placed) factor → remove */
       document.querySelectorAll('[data-factor]').forEach(function (el) {
         el.addEventListener('click', function () {
-          if (state.picks.length >= 3 || state.revealed) return;
-          var id = el.getAttribute('data-factor');
-          if (state.picks.indexOf(id) !== -1) return;
+          if (state.revealed) return;
+          var id  = el.getAttribute('data-factor');
+          var idx = state.picks.indexOf(id);
+          if (idx !== -1) {
+            state.picks.splice(idx, 1);
+            state.whyTexts.splice(idx, 1);
+            state.whyTexts.push('');
+            render();
+            return;
+          }
+          if (state.picks.length >= 3) return;
           state.picks.push(id);
           render();
         });
@@ -326,10 +333,13 @@
 
       /* × on slot → remove */
       document.querySelectorAll('[data-remove-pick]').forEach(function (el) {
-        el.addEventListener('click', function () {
+        el.addEventListener('click', function (ev) {
+          ev.stopPropagation();
           if (state.revealed) return;
           var idx = parseInt(el.getAttribute('data-remove-pick'), 10);
           state.picks.splice(idx, 1);
+          state.whyTexts.splice(idx, 1);
+          state.whyTexts.push('');
           render();
         });
       });

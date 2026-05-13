@@ -7472,14 +7472,22 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   line-height: 1.6;
 }
 
-/* Scenario counter badge */
+/* Eyebrow + scenario counter row */
+.link-card__eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.link-card__eyebrow-row .link-card__eyebrow {
+  margin-bottom: 0;
+}
 .depends-scenario-badge {
   font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semi);
   color: var(--econ-muted);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: var(--sp-2);
 }
 
 /* Theme overrides */

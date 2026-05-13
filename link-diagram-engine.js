@@ -669,7 +669,7 @@
       } else if (!allMarked) {
         primary = '<button type="button" class="link-btn link-btn--primary" disabled>Mark each part to continue</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-diag">Station complete ✓</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-diag">Next: It depends on →</button>';
       }
 
       return ''
@@ -993,7 +993,7 @@
       /* Finish */
       var finishBtn = document.getElementById('finish-diag');
       if (finishBtn) finishBtn.addEventListener('click', function () {
-        alert('Spot the Flaw station coming next!');
+        window.location.href = DATA.nextUrl || DATA.backUrl;
       });
     }
 

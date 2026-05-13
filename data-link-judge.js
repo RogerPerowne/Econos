@@ -37,10 +37,10 @@ window.ECONOS_LINK_JUDGE = {
         text:   'Higher interest rates are the best way to reduce inflation.'
       },
       evidenceCards: [
-        { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: 'Energy prices have eased, but wage growth remains sticky.' },
-        { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Higher rates reduce borrowing, spending and AD.' },
-        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'AD shifts left — inflation falls, output may weaken.' },
-        { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Cause of inflation and transmission strength matter most.' }
+        { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: 'Energy prices +18%: cost-push inflation, real wages falling.' },
+        { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Energy costs ↑ → SRAS shifts left → price level ↑, output ↓.' },
+        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'SRAS shifts left — stagflation: higher P, lower Y simultaneously.' },
+        { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on cause, credibility and transmission.' }
       ],
       cloze: 'Overall, higher interest rates are [1] when inflation is mainly [2], because higher borrowing costs reduce [3] and shift [4] left. However, their effectiveness is weaker when inflation is driven by [5], since interest rates do not directly reduce firms\' [6]. Therefore, the strongest judgement is that higher interest rates are [7], but only if the transmission mechanism is strong and the fall in [8] is not excessive.',
       blanks: [
@@ -103,9 +103,11 @@ window.ECONOS_LINK_JUDGE = {
         ]
       },
       examBridge: '"Higher interest rates are useful but conditional: most effective against demand-pull inflation through their effect on consumption and investment, but limited against cost-push pressures from global supply shocks. The strongest judgement is that they should be used when the transmission mechanism is strong and the output cost is acceptable."'
-    },
+    }
+  ]
+};
 
-    /* ── 2. Cost-push inflation & Bank of England ── */
+/*  removed scenarios (cost-push-boe, fiscal-cuts-demand-pull) kept here for reference
     {
       id: 'cost-push-boe',
       claim: {
@@ -258,5 +260,4 @@ window.ECONOS_LINK_JUDGE = {
       },
       examBridge: '"Cutting government spending can reduce demand-pull inflation, but it is best seen as a supporting tool: monetary policy is faster and more precise, and the open-economy fiscal multiplier limits the impact of cuts. Where cuts fall on public investment, they risk damaging LRAS and making long-run inflation worse."'
     }
-  ]
-};
+*/

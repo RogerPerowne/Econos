@@ -7,6 +7,7 @@ window.ECONOS_LINK_DIAGRAM = {
   topic:        'Causes of Inflation & Deflation',
   sessionLabel: 'Session 2 of 3: Link',
   backUrl:      'link_inflation_intro.html',
+  nextUrl:      'link_inflation_depends.html',
 
   stations: [
     { id: 'context', label: 'Use the context',    href: 'link_inflation_context.html' },

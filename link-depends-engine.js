@@ -241,14 +241,16 @@
     function renderRail() {
       var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
+        var isDone    = i < DATA.currentStationIdx;
+        var statusCls = isDone ? ' is-done' : (isCurrent ? ' is-current' : '');
         var tag       = st.href ? 'a' : 'div';
         var attrs     = st.href ? ' href="' + st.href + '"' : '';
-        var lockChip  = (!st.href && !isCurrent) ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';
+        var lockChip  = (!st.href && !isCurrent && !isDone) ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';
         return ''
           + '<' + tag
-          +   ' class="cards-list__item' + (isCurrent ? ' is-current' : '') + (st.href ? ' is-linked' : '') + '"'
+          +   ' class="cards-list__item' + statusCls + (st.href ? ' is-linked' : '') + '"'
           +   attrs + '>'
-          +   '<div class="cards-list__num">' + (i + 1) + '</div>'
+          +   '<div class="cards-list__num">' + (isDone ? I.check : (i + 1)) + '</div>'
           +   '<div class="cards-list__body">'
           +     '<div class="cards-list__name">' + st.label + '</div>'
           +     (isCurrent ? '<span class="cards-list__chip">Current</span>' : lockChip)

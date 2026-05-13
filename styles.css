@@ -7581,10 +7581,12 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* Cloze paragraph */
 .judge-cloze {
-  font-size: 12px;
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 48, "SOFT" 50, "WONK" 1;
+  font-size: 18px;
   line-height: 2;
   color: var(--econ-ink);
-  padding: var(--sp-4) var(--sp-4);
+  padding: var(--sp-5) var(--sp-5);
   background: var(--econ-white);
   border: 1.5px solid var(--econ-border);
   border-radius: var(--r-lg);
@@ -7597,24 +7599,25 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   min-width: 60px;
   padding: 4px 10px;
   margin: 0 3px;
-  font: inherit;
-  font-weight: var(--fw-semi);
-  color: var(--econ-amber-700);
-  background: var(--econ-amber-50);
-  border: 1.5px solid var(--econ-amber-100);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  color: var(--econ-blue);
+  background: var(--econ-blue-50);
+  border: 1.5px solid var(--econ-blue-100);
   border-radius: var(--r-md);
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
 }
 .judge-blank:hover {
-  border-color: var(--econ-amber);
-  background: var(--econ-amber-100);
+  border-color: var(--econ-blue);
+  background: var(--econ-blue-100);
 }
 .judge-blank.is-active {
-  background: var(--econ-amber);
+  background: var(--econ-blue);
   color: white;
-  border-color: var(--econ-amber);
-  box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.25);
+  border-color: var(--econ-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
 }
 .judge-blank.is-filled {
   background: var(--econ-cream);
@@ -7661,9 +7664,9 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   background: var(--econ-amber-50);
 }
 .judge-bank-row__num {
-  font-size: var(--fs-xs);
+  font-size: 13px;
   font-weight: var(--fw-bold);
-  color: var(--econ-muted);
+  color: var(--econ-blue);
   text-align: center;
 }
 .judge-bank-row__opts {
@@ -7672,13 +7675,13 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   gap: var(--sp-2);
 }
 .judge-option {
-  font: inherit;
-  font-size: 12px;
-  font-weight: var(--fw-med);
-  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--fw-semi);
+  padding: 10px 18px;
   background: var(--econ-white);
   border: 1.5px solid var(--econ-border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-lg);
   color: var(--econ-ink);
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s, box-shadow 0.12s, transform 0.08s;

@@ -145,16 +145,21 @@
       state.picks.forEach(function (id) { placedSet[id] = true; });
 
       var factorsHtml = sc.factors.map(function (f) {
-        var placed = !!placedSet[f.id];
-        var disabled = state.revealed || (state.picks.length >= 3 && !placed);
+        var placed    = !!placedSet[f.id];
+        var missed    = state.revealed && isInModelTop3(sc, f.id) && !placed;
+        var disabled  = state.revealed || (state.picks.length >= 3 && !placed);
+        var cls       = 'depends-factor'
+          + (placed ? ' is-placed' : '')
+          + (missed  ? ' is-missed' : '');
         return ''
           + '<button type="button"'
-          +   ' class="depends-factor' + (placed ? ' is-placed' : '') + '"'
+          +   ' class="' + cls + '"'
           +   ' data-factor="' + f.id + '"'
           +   (disabled ? ' disabled' : '')
           + '>'
           +   '<span class="depends-factor__icon">' + f.icon + '</span>'
           +   '<span class="depends-factor__label">' + f.label + '</span>'
+          +   (missed ? '<span class="depends-factor__missed">Should have picked</span>' : '')
           + '</button>';
       }).join('');
 

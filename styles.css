@@ -7330,11 +7330,22 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   border-style: dashed;
   cursor: default;
 }
+.depends-slot__label--struck {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
 .depends-ideal {
-  background: var(--econ-white);
-  border-left: 3px solid var(--econ-amber);
   padding: var(--sp-2) var(--sp-3);
   border-radius: 0 var(--r-md) var(--r-md) 0;
+  border-left: 3px solid var(--econ-amber);
+  background: var(--econ-white);
+}
+.depends-ideal--correct {
+  border-left-color: var(--econ-green);
+}
+.depends-ideal--wrong {
+  border-left-color: var(--econ-rose);
+  background: var(--econ-rose-50);
 }
 .depends-ideal__label {
   font-size: var(--fs-xs);
@@ -7344,6 +7355,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   color: var(--econ-amber-700);
   margin-bottom: 4px;
 }
+.depends-ideal--correct .depends-ideal__label { color: var(--econ-green-700); }
+.depends-ideal--wrong   .depends-ideal__label { color: var(--econ-rose-700); }
 .depends-ideal__text {
   font-size: var(--fs-sm);
   line-height: 1.55;

@@ -188,27 +188,36 @@
           + '</div>';
       }
 
-      var inModel  = isInModelTop3(sc, id);
-      var markCls  = state.revealed ? (inModel ? ' is-correct' : ' is-wrong') : '';
-      var markHtml = state.revealed
+      var inModel    = isInModelTop3(sc, id);
+      var markCls    = state.revealed ? (inModel ? ' is-correct' : ' is-wrong') : '';
+      var markHtml   = state.revealed
         ? '<span class="depends-factor-mark">' + (inModel ? '✓' : '✕') + '</span>'
         : '';
       var removeHtml = state.revealed
         ? ''
         : '<button type="button" class="depends-slot__remove" data-remove-pick="' + i + '" aria-label="Remove">&times;</button>';
-      var idealHtml = state.revealed
-        ? '<div class="depends-ideal">'
-          +   '<div class="depends-ideal__label">Check against the ideal reason</div>'
-          +   '<div class="depends-ideal__text">' + factor.why + '</div>'
-          + '</div>'
-        : '';
+      var labelCls   = (state.revealed && !inModel) ? ' depends-slot__label--struck' : '';
+      var revealHtml = '';
+      if (state.revealed) {
+        if (inModel) {
+          revealHtml = '<div class="depends-ideal depends-ideal--correct">'
+            + '<div class="depends-ideal__label">Ideal reason</div>'
+            + '<div class="depends-ideal__text">' + factor.why + '</div>'
+            + '</div>';
+        } else {
+          revealHtml = '<div class="depends-ideal depends-ideal--wrong">'
+            + '<div class="depends-ideal__label">Not a key factor for this claim</div>'
+            + '<div class="depends-ideal__text">This factor is less decisive here — see the ideal analysis below for the factors that change the conclusion most.</div>'
+            + '</div>';
+        }
+      }
 
       return ''
         + '<div class="depends-slot depends-slot--filled' + markCls + '">'
         +   '<div class="depends-slot__head">'
         +     '<div class="depends-slot__num">' + (i + 1) + '</div>'
         +     '<span class="depends-slot__icon">' + factor.icon + '</span>'
-        +     '<span class="depends-slot__label">' + factor.label + '</span>'
+        +     '<span class="depends-slot__label' + labelCls + '">' + factor.label + '</span>'
         +     markHtml
         +     removeHtml
         +   '</div>'
@@ -218,7 +227,7 @@
         +     ' placeholder="Why does this factor matter for the claim?"'
         +     (state.revealed ? ' readonly' : '')
         +   '></textarea>'
-        +   idealHtml
+        +   revealHtml
         + '</div>';
     }
 

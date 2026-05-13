@@ -7262,7 +7262,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .depends-slots {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: var(--sp-3);
 }
 .depends-arrow {
   display: flex;

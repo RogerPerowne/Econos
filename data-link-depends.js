@@ -65,6 +65,18 @@ window.ECONOS_LINK_DEPENDS = {
           icon:  '🌍',
           label: 'Global supply shocks',
           why:   'Domestic monetary policy cannot address the root cause of globally driven cost-push inflation, such as energy price spikes or commodity shortages. Rate rises impose a domestic demand squeeze on a supply-side problem.'
+        },
+        {
+          id:    'real-interest-rate',
+          icon:  '📐',
+          label: 'Real vs nominal interest rates',
+          why:   'What matters for spending decisions is the real interest rate (nominal minus inflation). If inflation is very high, even large nominal rate rises may leave real rates low or negative, limiting their restraining effect on demand.'
+        },
+        {
+          id:    'alternative-policies',
+          icon:  '🔄',
+          label: 'Availability of alternative policies',
+          why:   'If fiscal policy or supply-side reforms could address inflation more directly — e.g. targeted energy subsidies for cost-push, or boosting productive capacity — then interest rates may not be the "best" tool regardless of their effectiveness.'
         }
       ],
       modelRanking: ['cause-of-inflation', 'transmission-strength', 'inflation-expectations'],
@@ -115,6 +127,18 @@ window.ECONOS_LINK_DEPENDS = {
           icon:  '🏛️',
           label: 'Fiscal policy coordination',
           why:   'Government intervention — such as energy price subsidies or windfall taxes on energy firms — can directly offset supply-side cost increases in a way monetary policy cannot. If fiscal support is active, the Bank\'s task is correspondingly easier.'
+        },
+        {
+          id:    'profit-led-inflation',
+          icon:  '💰',
+          label: 'Profit-led inflation',
+          why:   'If firms are using supply shocks as cover to expand profit margins beyond cost increases, monetary tightening may be ineffective — higher rates do not directly constrain pricing power. Regulatory or competition policy may be more targeted.'
+        },
+        {
+          id:    'labour-market-tightness',
+          icon:  '👷',
+          label: 'Labour market tightness',
+          why:   'A tight labour market can cause cost-push pressures to become self-reinforcing through wage demands. The Bank can influence labour market conditions indirectly by cooling demand, giving it some leverage even over supply-side inflation.'
         }
       ],
       modelRanking: ['source-of-shock', 'wage-price-spiral', 'exchange-rate-channel'],
@@ -165,6 +189,18 @@ window.ECONOS_LINK_DEPENDS = {
           icon:  '😟',
           label: 'Confidence and expectations effects',
           why:   'Sharp spending cuts can reduce consumer and business confidence, contracting private sector demand more than intended. This may amplify the disinflationary effect but also risk tipping the economy into deflation or recession beyond the target adjustment.'
+        },
+        {
+          id:    'supply-side-damage',
+          icon:  '🏗️',
+          label: 'Supply-side damage from cuts',
+          why:   'If spending cuts fall on public investment — infrastructure, R&D, education — they reduce LRAS over time, potentially worsening long-run inflation even as they cool short-run demand. The composition of cuts matters as much as their size.'
+        },
+        {
+          id:    'income-distribution',
+          icon:  '⚖️',
+          label: 'Income distribution effects',
+          why:   'Spending cuts are regressive if they fall on benefits and public services. Lower-income households have higher marginal propensities to consume, so cuts targeted at them may reduce demand more sharply — but also worsen inequality and social outcomes.'
         }
       ],
       modelRanking: ['monetary-policy-alternative', 'fiscal-multiplier', 'composition-of-cuts'],

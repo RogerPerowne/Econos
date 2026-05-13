@@ -400,7 +400,6 @@
              +   '<div class="diag-option__thumb">' + thumbHtml + '</div>'
              +   '<div class="diag-option__body">'
              +     '<div class="diag-option__title">' + opt.title + '</div>'
-             +     '<div class="diag-option__sub">' + opt.sub + '</div>'
              +     correctBadge
              +     feedbackHtml
              +   '</div>'

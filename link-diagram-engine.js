@@ -179,9 +179,10 @@
         + '<text x="314" y="205" font-size="10" fill="#2563eb">equilibrium</text>'
       ) : '';
 
-      /* Shift arrow (shown in stage 1 after labels placed, and stages 2+) */
+      /* Shift arrow — placed in upper whitespace between SRAS₁ and SRAS₂ at y=60,
+         well above the equilibrium crossing region */
       var shiftArrow = showDashes ? (''
-        + '<line x1="395" y1="95" x2="318" y2="95" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>'
+        + '<line x1="425" y1="60" x2="353" y2="60" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>'
       ) : '';
 
       return ''
@@ -225,9 +226,12 @@
         + '<text x="463" y="23"  font-size="11" fill="#2563eb">SRAS₁</text>'
         + '<text x="383" y="23"  font-size="11" fill="#7c3aed">SRAS₂</text>'
 
-        /* Equilibrium labels and dots on top of everything */
+        /* Equilibrium labels and dots on top — white halo behind each dot
+           so they read clearly where curves cross */
         + eqLbls
+        + '<circle cx="308" cy="198" r="8" fill="white"/>'
         + '<circle cx="308" cy="198" r="5" fill="#2563eb"/>'
+        + '<circle cx="261" cy="161" r="8" fill="white"/>'
         + '<circle cx="261" cy="161" r="5" fill="#7c3aed"/>'
 
         + '</svg>';
@@ -288,9 +292,11 @@
           + '<line x1="8"  y1="80" x2="68" y2="6"  stroke="#7c3aed" stroke-width="2"/>'
           + '<line x1="22" y1="8"  x2="108" y2="75" stroke="#059669" stroke-width="2"/>'
         + '</g>'
+        + '<circle cx="64" cy="41" r="5" fill="white"/>'
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
+        + '<circle cx="49" cy="30" r="5" fill="white"/>'
         + '<circle cx="49" cy="30" r="3" fill="#7c3aed"/>'
-        + '<line x1="85" y1="20" x2="73" y2="20" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
+        + '<line x1="82" y1="18" x2="70" y2="18" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
     }
 
@@ -304,7 +310,9 @@
           + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
           + '<line x1="45" y1="8"  x2="113" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
         + '</g>'
+        + '<circle cx="64" cy="41" r="5" fill="white"/>'
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
+        + '<circle cx="79" cy="30" r="5" fill="white"/>'
         + '<circle cx="79" cy="30" r="3" fill="#059669" opacity="0.7"/>'
         + '<line x1="56" y1="60" x2="72" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
         + '</svg>';
@@ -320,7 +328,9 @@
           + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
           + '<line x1="22" y1="8"  x2="100" y2="70" stroke="#059669" stroke-width="2"/>'
         + '</g>'
+        + '<circle cx="55" cy="42" r="5" fill="white"/>'
         + '<circle cx="55" cy="42" r="3" fill="#2563eb" opacity="0.6"/>'
+        + '<circle cx="75" cy="36" r="5" fill="white"/>'
         + '<circle cx="75" cy="36" r="3" fill="#059669"/>'
         + '<line x1="60" y1="20" x2="70" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#arr-tc)"/>'
         + '</svg>';
@@ -337,7 +347,9 @@
           + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
           + '<line x1="5"  y1="8"  x2="75" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
         + '</g>'
+        + '<circle cx="64" cy="41" r="5" fill="white"/>'
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
+        + '<circle cx="49" cy="53" r="5" fill="white"/>'
         + '<circle cx="49" cy="53" r="3" fill="#059669" opacity="0.7"/>'
         + '<line x1="69" y1="60" x2="55" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
         + '</svg>';

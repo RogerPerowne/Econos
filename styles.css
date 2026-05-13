@@ -7649,14 +7649,14 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .judge-bank {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: 2px;
 }
 .judge-bank-row {
   display: grid;
   grid-template-columns: 38px 1fr;
   align-items: center;
   gap: var(--sp-2);
-  padding: var(--sp-3) var(--sp-2);
+  padding: var(--sp-1) var(--sp-2);
   border-radius: var(--r-md);
   transition: background 0.12s;
 }

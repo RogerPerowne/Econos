@@ -6191,12 +6191,21 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 /* arrow between slots (↓) */
 .chain-arrow {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 18px;
+  gap: 1px;
+  height: 30px;
   font-size: 1.1rem;
   color: var(--econ-muted);
   margin: 2px 0;
+}
+.chain-arrow__label {
+  font-size: 10px;
+  font-style: italic;
+  color: var(--econ-gray-400);
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 /* individual slot — row layout */
@@ -6238,6 +6247,23 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-size: var(--fs-sm);
   font-weight: var(--fw-semi);
   color: var(--econ-green-700);
+  text-align: left;
+  line-height: 1.3;
+}
+
+/* endpoint slot (locked destination) */
+.chain-slot--endpoint {
+  background: var(--econ-amber-50);
+  border: 2px solid var(--econ-amber-100);
+}
+.chain-slot--endpoint .chain-slot__num {
+  background: var(--econ-amber);
+  color: white;
+}
+.chain-slot--endpoint .chain-slot__text {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--econ-amber-700);
   text-align: left;
   line-height: 1.3;
 }

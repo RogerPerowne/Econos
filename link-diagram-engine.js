@@ -581,34 +581,26 @@
       } else if (!allMarked) {
         primary = '<button type="button" class="link-btn link-btn--primary" disabled>Mark each part to continue</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-diag">Next: It depends on →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-diag">Go to judgement →</button>';
       }
 
       return ''
-        + '<div class="link-card diag-explain-card">'
+        + '<div class="link-card">'
         +   '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>' + S.eyebrow + '</div>'
         +   '<h1 class="link-card__title">' + S.title + '</h1>'
         +   '<p class="link-card__lede">' + S.instruction + '</p>'
         +   renderScenario()
-        +   '<div class="diag-explain-layout">'
-        /* Left: diagram + legend */
-        +     '<div class="diag-explain-left">'
-        +       '<div class="diag-explain-left__label">AD/AS diagram</div>'
-        +       '<div class="diag-wrap diag-wrap--small">'
-        +         renderDiagramSVG({ showDashes: true, showEqLbls: true })
-        +       '</div>'
-        +       renderDiagLegend()
-        +       '<div class="diag-explain-keys">' + criteriaHtml + '</div>'
-        +     '</div>'
-        /* Right: writing prompts */
-        +     '<div class="diag-explain-right">'
-        +       partsHtml
-        +       '<div class="diag-combined">'
-        +         '<div class="diag-combined__label">Your linked explanation</div>'
-        +         '<div class="diag-combined__sub">Combine your three parts into a 2–3 sentence explanation.</div>'
-        +         combinedEl
-        +       '</div>'
-        +     '</div>'
+        /* Diagram above writing prompts */
+        +   '<div class="diag-wrap">'
+        +     renderDiagramSVG({ showDashes: true, showEqLbls: true })
+        +   '</div>'
+        +   renderDiagLegend()
+        +   '<div class="diag-explain-keys">' + criteriaHtml + '</div>'
+        +   partsHtml
+        +   '<div class="diag-combined">'
+        +     '<div class="diag-combined__label">Your linked explanation</div>'
+        +     '<div class="diag-combined__sub">Combine your three parts into a 2–3 sentence explanation.</div>'
+        +     combinedEl
         +   '</div>'
         +   '<div class="link-info"><span class="link-info__icon">💡</span><span>' + S.hint + '</span></div>'
         + '</div>'

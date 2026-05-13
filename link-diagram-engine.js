@@ -187,8 +187,11 @@
       return ''
         + '<svg viewBox="0 0 560 430" xmlns="http://www.w3.org/2000/svg" class="diag-svg" aria-label="AD/AS diagram">'
         + '<defs>'
-        +   '<marker id="arr-purple" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">'
-        +     '<path d="M0,0 L6,3 L0,6 Z" fill="#7c3aed"/>'
+        +   '<clipPath id="chart-clip">'
+        +     '<rect x="101" y="21" width="442" height="378"/>'
+        +   '</clipPath>'
+        +   '<marker id="arr-purple" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">'
+        +     '<path d="M0,0 L4,2 L0,4 Z" fill="#7c3aed"/>'
         +   '</marker>'
         + '</defs>'
 
@@ -202,27 +205,28 @@
         + '<polygon points="552,400 539,395 539,405" fill="#1f2937"/>'
         + '<text x="330" y="428" font-size="12" fill="#6b7280" text-anchor="middle">Real output</text>'
 
-        /* LRAS */
-        + '<line x1="308" y1="20" x2="308" y2="400" stroke="#374151" stroke-width="1.5"/>'
-        + '<text x="312" y="16" font-size="11" fill="#374151">LRAS</text>'
+        /* Data lines — clipped to chart area so nothing escapes the axes */
+        + '<g clip-path="url(#chart-clip)">'
+          /* LRAS */
+          + '<line x1="308" y1="21" x2="308" y2="399" stroke="#374151" stroke-width="1.5"/>'
+          /* AD₁ */
+          + '<line x1="110" y1="40" x2="510" y2="360" stroke="#059669" stroke-width="2.5"/>'
+          /* SRAS₁ */
+          + '<line x1="130" y1="399" x2="460" y2="25" stroke="#2563eb" stroke-width="2.5"/>'
+          /* SRAS₂ — starts at x=50 which is left of the y-axis; clipPath handles it */
+          + '<line x1="50"  y1="399" x2="380" y2="25" stroke="#7c3aed" stroke-width="2.5"/>'
+          + guides
+          + shiftArrow
+        + '</g>'
 
-        /* AD₁ */
-        + '<line x1="110" y1="40" x2="510" y2="360" stroke="#059669" stroke-width="2.5"/>'
-        + '<text x="514" y="354" font-size="11" fill="#059669">AD₁</text>'
+        /* Curve labels — outside clip so they sit cleanly beyond line ends */
+        + '<text x="312" y="18"  font-size="11" fill="#374151">LRAS</text>'
+        + '<text x="514" y="360" font-size="11" fill="#059669">AD₁</text>'
+        + '<text x="463" y="23"  font-size="11" fill="#2563eb">SRAS₁</text>'
+        + '<text x="383" y="23"  font-size="11" fill="#7c3aed">SRAS₂</text>'
 
-        /* SRAS₁ (blue, original) */
-        + '<line x1="130" y1="400" x2="460" y2="25" stroke="#2563eb" stroke-width="2.5"/>'
-        + '<text x="463" y="21" font-size="11" fill="#2563eb">SRAS₁</text>'
-
-        /* SRAS₂ (purple, shifted left) */
-        + '<line x1="50"  y1="400" x2="380" y2="25" stroke="#7c3aed" stroke-width="2.5"/>'
-        + '<text x="383" y="21" font-size="11" fill="#7c3aed">SRAS₂</text>'
-
-        + guides
-        + shiftArrow
+        /* Equilibrium labels and dots on top of everything */
         + eqLbls
-
-        /* Equilibrium dots */
         + '<circle cx="308" cy="198" r="5" fill="#2563eb"/>'
         + '<circle cx="261" cy="161" r="5" fill="#7c3aed"/>'
 
@@ -257,64 +261,85 @@
 
     /* ── Thumbnail SVGs for diagram option cards ── */
 
+    /* Shared thumbnail clip + marker defs — inlined per SVG with unique IDs */
+    function thumbDefs(clipId, markId, markColour) {
+      return '<defs>'
+        + '<clipPath id="' + clipId + '"><rect x="21" y="6" width="93" height="78"/></clipPath>'
+        + '<marker id="' + markId + '" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">'
+        +   '<path d="M0,0 L4,2 L0,4 Z" fill="' + markColour + '"/>'
+        + '</marker>'
+        + '</defs>';
+    }
+
+    function thumbAxes() {
+      return '<line x1="20" y1="85" x2="20" y2="5"  stroke="#d1d5db" stroke-width="1.5"/>'
+           + '<line x1="20" y1="85" x2="115" y2="85" stroke="#d1d5db" stroke-width="1.5"/>';
+    }
+
     function thumbSRASLeft() {
       /* SRAS₁ (blue, right), SRAS₂ (purple, left shifted), AD (green), LRAS (grey vertical) */
+      /* SRAS₂ starts at x=8 — would cross y-axis; clipPath handles it */
       return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
-        + '<line x1="20" y1="85" x2="20" y2="5"  stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="20" y1="85" x2="115" y2="85" stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="64" y1="5"  x2="64" y2="85" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
-        + '<line x1="25"  y1="85" x2="90"  y2="5" stroke="#2563eb" stroke-width="2"/>'
-        + '<line x1="8"   y1="80" x2="68"  y2="5" stroke="#7c3aed" stroke-width="2"/>'
-        + '<line x1="22" y1="8"  x2="108" y2="75" stroke="#059669" stroke-width="2"/>'
+        + thumbDefs('clip-ta', 'arr-ta', '#7c3aed')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-ta)">'
+          + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
+          + '<line x1="25" y1="84" x2="90" y2="6"  stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="8"  y1="80" x2="68" y2="6"  stroke="#7c3aed" stroke-width="2"/>'
+          + '<line x1="22" y1="8"  x2="108" y2="75" stroke="#059669" stroke-width="2"/>'
+        + '</g>'
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="49" cy="30" r="3" fill="#7c3aed"/>'
-        + '<line x1="85" y1="20" x2="72" y2="20" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ta)"/>'
-        + '<defs><marker id="ta" markerWidth="5" markerHeight="5" refX="3" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#7c3aed"/></marker></defs>'
+        + '<line x1="85" y1="20" x2="73" y2="20" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
     }
 
     function thumbADRight() {
       return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
-        + '<line x1="20" y1="85" x2="20" y2="5"  stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="20" y1="85" x2="115" y2="85" stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="64" y1="5"  x2="64" y2="85" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
-        + '<line x1="25" y1="85" x2="95"  y2="10" stroke="#2563eb" stroke-width="2"/>'
-        + '<line x1="22" y1="8"  x2="95"  y2="72" stroke="#059669" stroke-width="2"/>'
-        + '<line x1="45" y1="8"  x2="115" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+        + thumbDefs('clip-tb', 'arr-tb', '#059669')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-tb)">'
+          + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
+          + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
+          + '<line x1="45" y1="8"  x2="113" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+        + '</g>'
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="79" cy="30" r="3" fill="#059669" opacity="0.7"/>'
-        + '<line x1="56" y1="60" x2="72" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#tb)"/>'
-        + '<defs><marker id="tb" markerWidth="5" markerHeight="5" refX="3" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#059669"/></marker></defs>'
+        + '<line x1="56" y1="60" x2="72" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
         + '</svg>';
     }
 
     function thumbLRASRight() {
       return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
-        + '<line x1="20" y1="85" x2="20" y2="5"  stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="20" y1="85" x2="115" y2="85" stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="55" y1="5"  x2="55" y2="85" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>'
-        + '<line x1="75" y1="5"  x2="75" y2="85" stroke="#374151" stroke-width="1.5"/>'
-        + '<line x1="25" y1="85" x2="95"  y2="10" stroke="#2563eb" stroke-width="2"/>'
-        + '<line x1="22" y1="8"  x2="100" y2="70" stroke="#059669" stroke-width="2"/>'
+        + thumbDefs('clip-tc', 'arr-tc', '#374151')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-tc)">'
+          + '<line x1="55" y1="6"  x2="55" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>'
+          + '<line x1="75" y1="6"  x2="75" y2="84" stroke="#374151" stroke-width="1.5"/>'
+          + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="22" y1="8"  x2="100" y2="70" stroke="#059669" stroke-width="2"/>'
+        + '</g>'
         + '<circle cx="55" cy="42" r="3" fill="#2563eb" opacity="0.6"/>'
         + '<circle cx="75" cy="36" r="3" fill="#059669"/>'
-        + '<line x1="60" y1="20" x2="70" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#tc)"/>'
-        + '<defs><marker id="tc" markerWidth="5" markerHeight="5" refX="3" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#374151"/></marker></defs>'
+        + '<line x1="60" y1="20" x2="70" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#arr-tc)"/>'
         + '</svg>';
     }
 
     function thumbADLeft() {
+      /* AD₂ dashed starts at x=5 — would cross y-axis; clipPath handles it */
       return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
-        + '<line x1="20" y1="85" x2="20" y2="5"  stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="20" y1="85" x2="115" y2="85" stroke="#d1d5db" stroke-width="1.5"/>'
-        + '<line x1="64" y1="5"  x2="64" y2="85" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
-        + '<line x1="25" y1="85" x2="95"  y2="10" stroke="#2563eb" stroke-width="2"/>'
-        + '<line x1="22" y1="8"  x2="95"  y2="72" stroke="#059669" stroke-width="2"/>'
-        + '<line x1="5"  y1="8"  x2="75"  y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+        + thumbDefs('clip-td', 'arr-td', '#059669')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-td)">'
+          + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
+          + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
+          + '<line x1="5"  y1="8"  x2="75" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+        + '</g>'
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="49" cy="53" r="3" fill="#059669" opacity="0.7"/>'
-        + '<line x1="69" y1="60" x2="53" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#td)"/>'
-        + '<defs><marker id="td" markerWidth="5" markerHeight="5" refX="3" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#059669"/></marker></defs>'
+        + '<line x1="69" y1="60" x2="55" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
         + '</svg>';
     }
 

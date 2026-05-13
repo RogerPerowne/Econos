@@ -65,11 +65,7 @@
       return ''
         + '<aside class="sidebar">'
         +   '<div class="sidebar__brand">'
-        +     '<div class="sidebar__logo"><img src="assets/econos-icon.png" alt="econos"></div>'
-        +     '<div class="sidebar__wordmark">econos</div>'
-        +     '<div class="sidebar__tagline">'
-        +       'Learn it<span class="ec-stop-green">.</span> Link it<span class="ec-stop-yellow">.</span> Land it<span class="ec-stop-pink">.</span>'
-        +     '</div>'
+        +     '<a href="index.html" class="sidebar__logo-link"><img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full"></a>'
         +   '</div>'
         +   '<nav class="sidebar__nav">'
         +     nav.map(function (n) {

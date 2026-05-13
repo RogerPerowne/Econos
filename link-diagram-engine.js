@@ -297,6 +297,8 @@
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="49" cy="30" r="5" fill="white"/>'
         + '<circle cx="49" cy="30" r="3" fill="#7c3aed"/>'
+        + '<text x="72" y="52" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="36" y="26" font-size="9" font-weight="600" fill="#7c3aed">E₂</text>'
         /* At y=18: SRAS₁ at x≈80, SRAS₂ at x≈58. Arrow from 76→62, 4px buffer */
         + '<line x1="76" y1="18" x2="62" y2="18" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
@@ -316,6 +318,8 @@
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="79" cy="30" r="5" fill="white"/>'
         + '<circle cx="79" cy="30" r="3" fill="#059669" opacity="0.7"/>'
+        + '<text x="52" y="52" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="87" y="26" font-size="9" font-weight="600" fill="#059669">E₂</text>'
         /* At y=60: AD₁ at x≈81, AD₂ at x≈100. Arrow from 85→96, 4px buffer, points right */
         + '<line x1="85" y1="60" x2="96" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
         + '</svg>';
@@ -335,6 +339,8 @@
         + '<circle cx="55" cy="42" r="3" fill="#2563eb" opacity="0.6"/>'
         + '<circle cx="75" cy="36" r="5" fill="white"/>'
         + '<circle cx="75" cy="36" r="3" fill="#059669"/>'
+        + '<text x="42" y="54" font-size="9" font-weight="600" fill="#2563eb" opacity="0.7">E₁</text>'
+        + '<text x="82" y="33" font-size="9" font-weight="600" fill="#059669">E₂</text>'
         + '<line x1="60" y1="20" x2="70" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#arr-tc)"/>'
         + '</svg>';
     }
@@ -354,6 +360,8 @@
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="49" cy="53" r="5" fill="white"/>'
         + '<circle cx="49" cy="53" r="3" fill="#059669" opacity="0.7"/>'
+        + '<text x="72" y="36" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="36" y="64" font-size="9" font-weight="600" fill="#059669">E₂</text>'
         /* At y=60: AD₁ at x≈81, AD₂ at x≈62. Arrow from 77→66, 4px buffer, points left */
         + '<line x1="77" y1="60" x2="66" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
         + '</svg>';

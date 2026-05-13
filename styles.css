@@ -137,7 +137,10 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; }
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--font-body);
@@ -147,6 +150,7 @@ body {
   background: var(--econ-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
@@ -2040,6 +2044,9 @@ img, svg { display: block; max-width: 100%; }
   .right-rail { display: none; }
   .framing-row, .mech-row, .cause-grid, .mech-grid { grid-template-columns: 1fr; }
   .scenarios__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .page { padding: var(--sp-3); }
 }
 
 
@@ -7843,4 +7850,91 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 @media (max-width: 980px) {
   .judge-cards { grid-template-columns: repeat(2, 1fr); }
   .judge-workspace { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   MOBILE / SMARTPHONE RESPONSIVE
+   Prevent side-scroll, fix text overflow, scale diagrams
+   ============================================================ */
+
+/* ── Prevent overflow on all containers ── */
+.app, .page, .link-card, .link-card__body,
+.depends-layout, .depends-bank, .depends-slots,
+.chain-layout, .diag-wrap, .judge-cloze,
+.judge-cards, .judge-workspace, .judge-reveal {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* ── Wrap long words in text containers ── */
+.link-card__title,
+.link-card__instruction,
+.link-card__claim,
+.depends-factor__label,
+.depends-slot__head,
+.depends-ideal,
+.chain-slot__text,
+.diag-interp-row__q,
+.judge-card__text,
+.judge-cloze,
+.judge-reveal__bridge-text,
+.judge-overall__label {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Small phone breakpoint (≤ 600px) ── */
+@media (max-width: 600px) {
+
+  /* Reduce link card padding */
+  .link-card { padding: var(--sp-4); }
+
+  /* Stack claim card on narrow screens */
+  .depends-claim { flex-direction: column; gap: var(--sp-2); padding: var(--sp-3); }
+  .depends-claim__text { font-size: var(--fs-md); }
+
+  /* Judge: stack evidence cards to 1 column */
+  .judge-cards { grid-template-columns: 1fr; }
+
+  /* Cloze paragraph: smaller font, allow line wrapping */
+  .judge-cloze { font-size: var(--fs-sm); line-height: 1.9; padding: var(--sp-3); }
+
+  /* Blank chips: shrink min-width so they don't blow out the container */
+  .judge-blank { min-width: 44px; padding: 3px 7px; font-size: var(--fs-xs); }
+
+  /* Judge option pills: wrap freely */
+  .judge-bank-row__opts { flex-wrap: wrap; }
+  .judge-option { font-size: 11px; padding: 3px 8px; }
+
+  /* Reveal: stack score + bridge */
+  .judge-reveal { grid-template-columns: 1fr; }
+
+  /* Diagram options: already 1-col at 680px; ensure thumb SVG scales */
+  .diag-option__thumb svg { width: 100%; height: auto; }
+  .diag-wrap { overflow: hidden; }
+
+  /* Drop-zones: allow text to wrap so they don't overflow */
+  .diag-zone { white-space: normal; font-size: 10px; padding: 0 6px; }
+
+  /* Depends bank: ensure factors don't overflow */
+  .depends-factor { max-width: 100%; }
+  .depends-factor__label { white-space: normal; }
+
+  /* Depends slots: full width */
+  .depends-slot--filled { min-width: 0; width: 100%; }
+  .depends-slot__textarea { font-size: var(--fs-xs); }
+
+  /* Station progress rail (cards-list): allow wrap */
+  .cards-list { flex-wrap: wrap; }
+
+  /* Context / chain: reduce font size slightly */
+  .link-card__instruction { font-size: var(--fs-sm); }
+}
+
+/* ── Extra-small phones (≤ 400px) ── */
+@media (max-width: 400px) {
+  .judge-cloze { font-size: 13px; }
+  .judge-blank { min-width: 36px; padding: 2px 5px; }
+  .link-card { padding: var(--sp-3); }
 }

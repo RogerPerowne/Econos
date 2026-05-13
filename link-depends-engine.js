@@ -112,10 +112,7 @@
       var sc = currentScenario();
       return ''
         + '<div class="link-card">'
-        +   '<div class="link-card__eyebrow-row">'
-        +     '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>' + DATA.eyebrow + '</div>'
-        +     '<span class="depends-scenario-badge">Scenario ' + (state.scenarioIdx + 1) + ' of ' + DATA.scenarios.length + '</span>'
-        +   '</div>'
+        +   '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>' + DATA.eyebrow + '</div>'
         +   '<p class="link-card__lede">' + DATA.instruction + '</p>'
         +   renderClaim(sc)
         +   renderWorkspace(sc)

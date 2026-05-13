@@ -7649,19 +7649,22 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .judge-bank {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--sp-2);
 }
 .judge-bank-row {
   display: grid;
   grid-template-columns: 38px 1fr;
   align-items: center;
   gap: var(--sp-2);
-  padding: var(--sp-1) var(--sp-2);
+  padding: 6px var(--sp-3);
+  background: var(--econ-gray-50);
+  border: 1px solid var(--econ-border);
   border-radius: var(--r-md);
-  transition: background 0.12s;
+  transition: background 0.12s, border-color 0.12s;
 }
 .judge-bank-row.is-active {
   background: var(--econ-amber-50);
+  border-color: var(--econ-amber);
 }
 .judge-bank-row__num {
   font-size: 13px;
@@ -7678,10 +7681,10 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: var(--fw-semi);
-  padding: 10px 18px;
+  padding: 5px 14px;
   background: var(--econ-white);
   border: 1.5px solid var(--econ-border);
-  border-radius: var(--r-lg);
+  border-radius: 999px;
   color: var(--econ-ink);
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s, box-shadow 0.12s, transform 0.08s;

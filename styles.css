@@ -7701,6 +7701,11 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   color: white;
   border-color: var(--econ-amber);
 }
+.judge-option.is-selected:hover:not(:disabled) {
+  background: var(--econ-amber-600);
+  color: white;
+  border-color: var(--econ-amber-600);
+}
 .judge-option.is-correct {
   background: var(--econ-green);
   color: white;

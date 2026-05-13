@@ -65,7 +65,7 @@
       return ''
         + '<aside class="sidebar">'
         +   '<div class="sidebar__brand">'
-        +     '<div class="sidebar__logo">' + I.brandGlyph + '</div>'
+        +     '<div class="sidebar__logo"><img src="assets/econos-icon.png" alt="econos"></div>'
         +     '<div class="sidebar__wordmark">econos</div>'
         +     '<div class="sidebar__tagline">'
         +       'Learn it<span class="ec-stop-green">.</span> Link it<span class="ec-stop-yellow">.</span> Land it<span class="ec-stop-pink">.</span>'

@@ -41,7 +41,7 @@
       <aside class="sidebar">
         <div class="sidebar__brand">
           <div class="sidebar__logo">
-            ${I.brandGlyph}
+            <img src="assets/econos-icon.png" alt="econos">
           </div>
           <div class="sidebar__wordmark">econos</div>
           <div class="sidebar__tagline">

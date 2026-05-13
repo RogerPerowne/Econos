@@ -134,7 +134,7 @@
         +         '</div>'
         +       '</div>'
 
-        +       '<div class="link-intro-stations__head">The four stations</div>'
+        +       '<div class="link-intro-stations__head">The five steps</div>'
         +       '<div class="link-intro-stations">' + renderStations() + '</div>'
 
         +       '<div class="callout callout--info">'

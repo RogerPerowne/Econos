@@ -277,7 +277,11 @@
       } else if (!isLastChain) {
         primary = '<button type="button" class="link-btn link-btn--primary" id="next-chain">Next scenario →</button>';
       } else {
+<<<<<<< HEAD
         primary = '<button type="button" class="link-btn link-btn--primary" id="next-station">Next: Diagram →</button>';
+=======
+        primary = '<button type="button" class="link-btn link-btn--primary" id="next-station">Next: Diagram connector →</button>';
+>>>>>>> origin/main
       }
 
       var chainCounter = 'Chain ' + (state.chainIdx + 1) + ' of ' + DATA.chains.length;

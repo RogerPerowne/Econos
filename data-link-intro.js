@@ -12,13 +12,13 @@ window.ECONOS_LINK_INTRO = {
     summary: "Now you've locked in the content. Time to train the skills examiners reward — applying it to context, building chains of reasoning, spotting flaws and reaching a judgement.",
     heroKey: 'heroBars',
 
-    doInThis: 'Four short stations train the application, analysis and evaluation skills A-level rewards.',
+    doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
     outcomes: [
       'Use real news context to change the answer',
       'Build watertight chains of reasoning',
       'Spot examiner-grade flaws and reach a judgement'
     ],
-    tip: "These stations are not tests — they're cognitive drills. Treat them like circuits in the gym: same movement patterns, different topic content.",
+    tip: "These steps are not tests — they're cognitive drills. Treat them like circuits in the gym: same movement patterns, different topic content.",
 
     stations: [
       { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: 'link_inflation_context.html', state: 'available' },

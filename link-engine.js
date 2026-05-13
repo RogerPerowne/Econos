@@ -257,7 +257,7 @@
       return ''
         + '<div class="link-footer">'
         +   '<a href="' + DATA.backUrl + '" class="link-btn link-btn--ghost">← Back</a>'
-        +   '<div class="link-footer__counter">Station ' + idx + ' of ' + tot + ' · ' + nPlaced + '/' + nTotal + ' placed</div>'
+        +   '<div class="link-footer__counter">Step ' + idx + ' of ' + tot + ' · ' + nPlaced + '/' + nTotal + ' placed</div>'
         +   primary
         + '</div>';
     }
@@ -306,7 +306,7 @@
         +     sessionDots
         +   '</div>'
         +   '<div class="rail-card">'
-        +     '<div class="rail-card__title" style="margin-bottom: var(--sp-3);">Stations</div>'
+        +     '<div class="rail-card__title" style="margin-bottom: var(--sp-3);">Steps</div>'
         +     '<div class="cards-list">' + stationsList + '</div>'
         +   '</div>'
         +   '<div class="rail-card">'

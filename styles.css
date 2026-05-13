@@ -6832,6 +6832,19 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .diag-zone__icon  { font-style: normal; }
 
 /* Available label chips */
+.diag-chip-panel {
+  background: var(--econ-amber-50);
+  border: 1.5px solid var(--econ-amber-100);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+.diag-chip-panel__instruction {
+  font-size: var(--fs-sm);
+  color: var(--econ-amber-700);
+  font-weight: var(--fw-semi);
+  margin-bottom: var(--sp-3);
+}
 .diag-chips { margin-bottom: var(--sp-4); }
 .diag-chips__label {
   font-size: var(--fs-sm);

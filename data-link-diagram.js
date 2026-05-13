@@ -95,66 +95,35 @@ window.ECONOS_LINK_DIAGRAM = {
     ]
   },
 
-  /* ── Stage 2: Interpret the diagram ── */
-  interpret: {
-    eyebrow:     'Diagram Connector — Interpret the Diagram',
-    title:       'Connect the labelled diagram to the economic story.',
-    instruction: 'Interpret each part of the diagram and explain what it means economically.',
-    hint:        'Skill hint: Link each part of the diagram to the economic story using cause → mechanism → effect.',
-
-    questions: [
-      {
-        num:         1,
-        question:    'Which curve shifted and why?',
-        modelAnswer: 'SRAS shifted left because higher energy prices increased firms\' average costs of production, making it more expensive to supply any given level of output.'
-      },
-      {
-        num:         2,
-        question:    'What happens to the price level?',
-        modelAnswer: 'The price level rises from P₁ to P₂. As SRAS shifts left, the equilibrium moves up the AD curve — firms charge higher prices to cover their increased costs.'
-      },
-      {
-        num:         3,
-        question:    'What happens to real output?',
-        modelAnswer: 'Real output falls from Y₁ to Y₂. The leftward SRAS shift means the economy can produce less at every price level — output contracts alongside the price rise, creating stagflationary pressure.'
-      },
-      {
-        num:         4,
-        question:    'Why is this cost-push inflation?',
-        modelAnswer: 'It is cost-push because the inflation originates on the supply side — rising input costs reduce SRAS, pushing up the price level without any increase in aggregate demand. The trigger is a cost shock, not excess consumer spending.'
-      }
-    ],
-
-    vocab: ['SRAS', 'cost-push', 'price level', 'real output', 'negative supply shock', 'stagflation', 'purchasing power', 'profit margins']
-  },
-
-  /* ── Stage 3: Explain the diagram ── */
+  /* ── Stage 2: Read & write the diagram (merged Interpret + Explain) ── */
   explain: {
-    eyebrow:     'Diagram Connector — Explain the Diagram',
+    eyebrow:     'Diagram Connector — Read & Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
-    instruction: 'Use the visual shift and the context to write a short, clear explanation.',
+    instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
     hint:        'Skill focus: Analysis — Bridge the diagram into clear written analysis.',
+
+    vocab: ['SRAS', 'cost-push', 'price level', 'real output', 'negative supply shock', 'stagflation', 'purchasing power', 'profit margins'],
 
     parts: [
       {
         num:         1,
         title:       'Use the shift',
-        prompt:      'State which curve shifts and why.',
-        maxChars:    200,
-        modelAnswer: 'Higher energy prices increase firms\' costs of production. On the AD/AS diagram, SRAS shifts to the left — the economy becomes more costly to operate at every output level.'
+        prompt:      'Which curve shifts, why does it shift, and what type of inflation is this?',
+        maxChars:    240,
+        modelAnswer: 'SRAS shifts left because higher energy prices raise firms\' costs of production at every level of output. This is cost-push inflation — supply-side in origin, not driven by any change in aggregate demand.'
       },
       {
         num:         2,
         title:       'Explain the outcome',
-        prompt:      'Explain what happens to inflation and real output.',
-        maxChars:    200,
-        modelAnswer: 'The leftward shift in SRAS raises the equilibrium price level from P₁ to P₂, causing cost-push inflation. Simultaneously, real output falls from Y₁ to Y₂ as production becomes uneconomical at the higher cost level.'
+        prompt:      'What happens to the price level and real output as the curve shifts?',
+        maxChars:    240,
+        modelAnswer: 'The equilibrium moves up the AD curve: the price level rises from P₁ to P₂ while real output falls from Y₁ to Y₂. The economy faces higher prices and lower output simultaneously — stagflationary pressure.'
       },
       {
         num:         3,
         title:       'Add a wider effect',
         prompt:      'Add one likely effect on real incomes, spending or growth.',
-        maxChars:    200,
+        maxChars:    240,
         modelAnswer: 'As prices rise faster than wages, real incomes fall. This reduces households\' purchasing power and dampens consumer spending, potentially deepening the fall in output and creating stagflationary conditions.'
       }
     ],

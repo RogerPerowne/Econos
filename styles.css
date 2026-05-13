@@ -7581,7 +7581,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* Cloze paragraph */
 .judge-cloze {
-  font-size: var(--fs-md);
+  font-size: 14px;
   line-height: 2;
   color: var(--econ-ink);
   padding: var(--sp-4) var(--sp-4);
@@ -7673,7 +7673,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 }
 .judge-option {
   font: inherit;
-  font-size: var(--fs-md);
+  font-size: 14px;
   font-weight: var(--fw-med);
   padding: 8px 16px;
   background: var(--econ-white);

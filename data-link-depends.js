@@ -8,7 +8,7 @@ window.ECONOS_LINK_DEPENDS = {
   sessionLabel: 'Session 2 of 3: Link',
   backUrl:      'link_inflation_intro.html',
   eyebrow:      'It Depends On',
-  instruction:  'Rank the three factors you think matter most for this claim. Order them from most to least important — then see the ideal evaluation.',
+  instruction:  'Pick the three factors that most change the answer to this claim. Explain why each one matters, then check against the ideal evaluation.',
   nextUrl:      'link_inflation_intro.html',
 
   stations: [

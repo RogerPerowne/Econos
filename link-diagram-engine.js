@@ -1,6 +1,6 @@
 /* ============================================================
    ECONOS — Link It engine (Diagram Connector)
-   Three stages: Label → Interpret → Explain
+   Three stages: Select → Label → Read & Write
    ============================================================ */
 
 (function () {
@@ -11,7 +11,7 @@
     var DATA = window.ECONOS_LINK_DIAGRAM;
 
     var state = {
-      stage:    0,          // 0=select, 1=label, 2=interpret, 3=explain
+      stage:    0,          // 0=select, 1=label, 2=read-write
 
       /* Stage 0: select */
       selectedOption: null, // id of chosen diagram option
@@ -22,12 +22,7 @@
       placements: {},       // zoneId → chipId
       labelChecked: false,
 
-      /* Stage 2: interpret */
-      interpInputs: ['', '', '', ''],
-      interpMarks:  [null, null, null, null],
-      interpChecked: false,
-
-      /* Stage 3: explain */
+      /* Stage 2: read & write */
       explainInputs: ['', '', ''],
       combinedInput: '',
       explainMarks:  [null, null, null],
@@ -62,7 +57,6 @@
         +       '<div class="link-station">'
         +         (state.stage === 0 ? renderSelectStation()   :
                    state.stage === 1 ? renderLabelStation()    :
-                   state.stage === 2 ? renderInterpStation()   :
                                        renderExplainStation())
         +       '</div>'
         +       renderRail()
@@ -430,7 +424,7 @@
         + '</div>'
         + '<div class="link-footer">'
         +   '<a href="' + DATA.backUrl + '" class="link-btn link-btn--ghost">← Back</a>'
-        +   '<div class="link-footer__counter">Step 1 of 4 · Select</div>'
+        +   '<div class="link-footer__counter">Step 1 of 3 · Select</div>'
         +   primary
         + '</div>';
     }
@@ -484,7 +478,7 @@
       if (!state.labelChecked) {
         primary = '<button type="button" class="link-btn link-btn--primary"' + (canCheck ? '' : ' disabled') + ' id="check-labels">Check labels →</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="next-stage">Interpret the diagram →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="next-stage">Read &amp; write →</button>';
       }
 
       return ''
@@ -507,94 +501,12 @@
         + '</div>'
         + '<div class="link-footer">'
         +   '<a href="' + DATA.backUrl + '" class="link-btn link-btn--ghost">← Back</a>'
-        +   '<div class="link-footer__counter">Step 2 of 4 · Label</div>'
+        +   '<div class="link-footer__counter">Step 2 of 3 · Label</div>'
         +   primary
         + '</div>';
     }
 
-    /* ── Stage 1: Interpret the Diagram ── */
-
-    function renderInterpStation() {
-      var S = DATA.interpret;
-      var allMarked = state.interpMarks.every(function (m) { return m !== null; });
-
-      var questionsHtml = S.questions.map(function (q, i) {
-        var mark  = state.interpMarks[i];
-        var input = state.interpInputs[i];
-        var rowCls = 'diag-interp-row'
-          + (state.interpInputs[i].trim() ? ' has-content' : '')
-          + (mark === true  ? ' is-correct' : '')
-          + (mark === false ? ' is-wrong'   : '');
-
-        var answerArea;
-        if (!state.interpChecked) {
-          answerArea = ''
-            + '<div class="diag-interp-input-wrap">'
-            +   '<textarea class="diag-interp-input" data-interp="' + i + '" placeholder="Type your explanation…" rows="2"></textarea>'
-            + '</div>';
-        } else {
-          answerArea = ''
-            + '<div class="diag-interp-answer">' + (input.trim() || '<em>No answer given</em>') + '</div>'
-            + '<div class="diag-interp-model">'
-            +   '<span class="diag-interp-model__label">Model answer:</span>'
-            +   '<span class="diag-interp-model__text">' + q.modelAnswer + '</span>'
-            + '</div>'
-            + (mark === null
-              ? '<div class="diag-interp-selfmark">'
-              +   '<span class="diag-interp-selfmark__label">How did you do?</span>'
-              +   '<button type="button" class="chain-selfmark-btn chain-selfmark-btn--ok"  data-interp-mark="' + i + '" data-val="ok">✓ Got it</button>'
-              +   '<button type="button" class="chain-selfmark-btn chain-selfmark-btn--no"  data-interp-mark="' + i + '" data-val="no">✕ Not quite</button>'
-              + '</div>'
-              : '');
-        }
-
-        return ''
-          + '<div class="' + rowCls + '">'
-          +   '<div class="diag-interp-row__head">'
-          +     '<span class="diag-interp-row__num">' + q.num + '</span>'
-          +     '<span class="diag-interp-row__q">' + q.question + '</span>'
-          +     (mark !== null ? '<span class="diag-interp-row__mark ' + (mark ? 'is-ok' : 'is-no') + '">' + (mark ? '✓' : '✕') + '</span>' : '')
-          +   '</div>'
-          +   answerArea
-          + '</div>';
-      }).join('');
-
-      var vocabChips = S.vocab.map(function (term) {
-        return '<button type="button" class="chain-vocab-chip" data-vocab-interp="' + term + '">' + term + '</button>';
-      }).join('');
-
-      var primary;
-      if (!state.interpChecked) {
-        var anyFilled = state.interpInputs.some(function (v) { return v.trim().length > 0; });
-        primary = '<button type="button" class="link-btn link-btn--primary"' + (anyFilled ? '' : ' disabled') + ' id="check-interp">Check answers →</button>';
-      } else if (!allMarked) {
-        primary = '<button type="button" class="link-btn link-btn--primary" disabled>Mark each answer to continue</button>';
-      } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="next-stage">Explain the diagram →</button>';
-      }
-
-      return ''
-        + '<div class="link-card">'
-        +   '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>' + S.eyebrow + '</div>'
-        +   '<h1 class="link-card__title">' + S.title + '</h1>'
-        +   '<p class="link-card__lede">' + S.instruction + '</p>'
-        +   renderScenario()
-        +   '<div class="diag-wrap">'
-        +     renderDiagramSVG({ showDashes: true, showEqLbls: true })
-        +   '</div>'
-        +   renderDiagLegend()
-        +   '<div class="diag-interp-questions">' + questionsHtml + '</div>'
-        +   '<div class="chain-vocab"><span class="chain-vocab__label">Useful terms</span><div class="chain-vocab__chips">' + vocabChips + '</div></div>'
-        +   '<div class="link-info"><span class="link-info__icon">💡</span><span>' + S.hint + '</span></div>'
-        + '</div>'
-        + '<div class="link-footer">'
-        +   '<button type="button" class="link-btn link-btn--ghost" id="back-stage">← Label stage</button>'
-        +   '<div class="link-footer__counter">Step 3 of 4 · Interpret</div>'
-        +   primary
-        + '</div>';
-    }
-
-    /* ── Stage 2: Explain the Diagram ── */
+    /* ── Stage 2: Read & Write the Diagram ── */
 
     function renderExplainStation() {
       var S    = DATA.explain;
@@ -701,8 +613,8 @@
         +   '<div class="link-info"><span class="link-info__icon">💡</span><span>' + S.hint + '</span></div>'
         + '</div>'
         + '<div class="link-footer">'
-        +   '<button type="button" class="link-btn link-btn--ghost" id="back-stage">← Interpret stage</button>'
-        +   '<div class="link-footer__counter">Step 4 of 4 · Explain</div>'
+        +   '<button type="button" class="link-btn link-btn--ghost" id="back-stage">← Label stage</button>'
+        +   '<div class="link-footer__counter">Step 3 of 3 · Read &amp; write</div>'
         +   primary
         + '</div>';
     }
@@ -737,10 +649,9 @@
       }).join('');
 
       var stageItems = [
-        { label: 'Select the Diagram',    sub: state.stage > 0 ? 'Complete' : 'Current' },
-        { label: 'Label the Diagram',     sub: state.stage > 1 ? 'Complete' : state.stage === 1 ? 'Current' : 'Next' },
-        { label: 'Interpret the Diagram', sub: state.stage > 2 ? 'Complete' : state.stage === 2 ? 'Current' : 'Next' },
-        { label: 'Explain the Diagram',   sub: state.stage === 3 ? 'Current' : 'Up next' }
+        { label: 'Select the Diagram',  sub: state.stage > 0 ? 'Complete' : 'Current' },
+        { label: 'Label the Diagram',   sub: state.stage > 1 ? 'Complete' : state.stage === 1 ? 'Current' : 'Next' },
+        { label: 'Read & Write',        sub: state.stage === 2 ? 'Current' : 'Up next' }
       ];
       var stagesHtml = stageItems.map(function (s, i) {
         var isDone    = state.stage > i;
@@ -792,10 +703,6 @@
     /* ── DOM helpers ── */
 
     function restoreTextareas() {
-      for (var i = 0; i < 4; i++) {
-        var el = document.querySelector('[data-interp="' + i + '"]');
-        if (el) el.value = state.interpInputs[i];
-      }
       for (var j = 0; j < 3; j++) {
         var el2 = document.querySelector('[data-explain="' + j + '"]');
         if (el2) el2.value = state.explainInputs[j];
@@ -868,58 +775,6 @@
         }).length;
         state.score += nCorrect;
         render();
-      });
-
-      /* Stage 1: interpret inputs */
-      document.querySelectorAll('[data-interp]').forEach(function (el) {
-        el.addEventListener('input', function () {
-          var i = parseInt(el.getAttribute('data-interp'), 10);
-          state.interpInputs[i] = el.value;
-          var btn = document.getElementById('check-interp');
-          if (btn) {
-            btn.disabled = !state.interpInputs.some(function (v) { return v.trim().length > 0; });
-          }
-        });
-        el.addEventListener('focus', function () { state.lastFocused = parseInt(el.getAttribute('data-interp'), 10); });
-      });
-
-      /* Stage 1: vocab chips */
-      document.querySelectorAll('[data-vocab-interp]').forEach(function (el) {
-        el.addEventListener('click', function (e) {
-          e.preventDefault();
-          var term = el.getAttribute('data-vocab-interp');
-          var idx  = state.lastFocused >= 0 ? state.lastFocused : 0;
-          var ta   = document.querySelector('[data-interp="' + idx + '"]');
-          if (!ta) return;
-          var s = ta.selectionStart, ev = ta.selectionEnd, v = ta.value;
-          var ins = (s > 0 && v[s-1] !== ' ') ? ' ' + term : term;
-          ta.value = v.slice(0, s) + ins + v.slice(ev);
-          ta.selectionStart = ta.selectionEnd = s + ins.length;
-          ta.focus();
-          state.interpInputs[idx] = ta.value;
-        });
-      });
-
-      /* Stage 1: check */
-      var checkInterp = document.getElementById('check-interp');
-      if (checkInterp) checkInterp.addEventListener('click', function () {
-        document.querySelectorAll('[data-interp]').forEach(function (el) {
-          state.interpInputs[parseInt(el.getAttribute('data-interp'), 10)] = el.value;
-        });
-        state.interpChecked = true;
-        render();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      /* Stage 1: self-mark */
-      document.querySelectorAll('[data-interp-mark]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          var i = parseInt(el.getAttribute('data-interp-mark'), 10);
-          var ok = el.getAttribute('data-val') === 'ok';
-          if (ok) state.score++;
-          state.interpMarks[i] = ok;
-          render();
-        });
       });
 
       /* Stage 2: explain inputs */

@@ -491,14 +491,17 @@
         + '<div class="link-card">'
         +   '<div class="link-card__eyebrow"><span class="link-card__eyebrow-dot"></span>' + S.eyebrow + '</div>'
         +   '<h1 class="link-card__title">' + S.title + '</h1>'
-        +   '<p class="link-card__lede">' + S.instruction + '</p>'
-        +   renderScenario()
+        +   (chipsHtml
+              ? '<div class="diag-chip-panel">'
+              +   '<div class="diag-chip-panel__instruction">👆 Click a label to select it, then click a dashed zone on the diagram to place it.</div>'
+              +   '<div class="diag-chips__row">' + chipsHtml + '</div>'
+              + '</div>'
+              : '')
         +   '<div class="diag-wrap">'
         +     renderDiagramSVG({ showDashes: state.labelChecked, showEqLbls: false })
         +     zoneOverlays
         +   '</div>'
         +   renderDiagLegend()
-        +   (chipsHtml ? '<div class="diag-chips"><div class="diag-chips__label">Available labels</div><div class="diag-chips__row">' + chipsHtml + '</div></div>' : '')
         +   feedbackHtml
         +   '<div class="link-info"><span class="link-info__icon">💡</span><span>' + S.hint + '</span></div>'
         + '</div>'

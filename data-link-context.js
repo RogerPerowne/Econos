@@ -28,7 +28,7 @@ window.ECONOS_LINK_STATION = {
       'The Office for National Statistics confirmed UK CPI inflation has [[cpi-level|risen to 6.8%]], driven largely by a sharp rise in global energy prices following supply disruption in major producing regions.',
       '[[energy|Energy prices have risen by 18%]] over the past three months, pushing up firms\' production and transport costs across the economy.',
       'However, [[wages|wage growth stands at 3.1%]], below the rate of inflation, meaning real wages are falling for most workers.',
-      'The Bank of England\'s Monetary Policy Committee is considering a [[rate-rise|further 50 basis point rise in the base rate]], having already raised rates from 0.1% to 4.5% over the past two years.',
+      'The Bank of England\'s Monetary Policy Committee is considering a further 50 basis point rise in the base rate, having already raised rates from 0.1% to 4.5% over the past two years.',
       '[[confidence|Consumer confidence remains weak]], with the GfK index at -30, reflecting the squeeze on household budgets from higher energy bills.',
       'A minority of economists warn that a further rate rise risks [[recession|tipping the economy into recession]], given that output growth is already close to zero.'
     ],

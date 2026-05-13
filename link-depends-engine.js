@@ -306,7 +306,7 @@
       } else if (!isLast) {
         primary = '<button type="button" class="link-btn link-btn--primary" id="next-scenario">Next scenario →</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-btn">Finish →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-btn">Next: Make the judgement →</button>';
       }
 
       return ''

@@ -248,7 +248,7 @@
       var tot         = DATA.stations.length;
       var primary;
       if (state.checked) {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="next-station">Next station →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="next-station">Next: Build the chain →</button>';
       } else {
         primary = '<button type="button" class="link-btn link-btn--primary"'
                 + (canCheck ? '' : ' disabled')

@@ -179,10 +179,11 @@
         + '<text x="314" y="205" font-size="10" fill="#2563eb">equilibrium</text>'
       ) : '';
 
-      /* Shift arrow — placed in upper whitespace between SRAS₁ and SRAS₂ at y=60,
-         well above the equilibrium crossing region */
+      /* Shift arrow — at y=45 (well above equilibrium), centred in the gap
+         between SRAS₁ (x≈442 at y=45) and SRAS₂ (x≈362 at y=45), with a
+         10px buffer from each curve so the arrow never touches them */
       var shiftArrow = showDashes ? (''
-        + '<line x1="425" y1="60" x2="353" y2="60" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>'
+        + '<line x1="432" y1="45" x2="372" y2="45" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>'
       ) : '';
 
       return ''
@@ -296,7 +297,8 @@
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="49" cy="30" r="5" fill="white"/>'
         + '<circle cx="49" cy="30" r="3" fill="#7c3aed"/>'
-        + '<line x1="82" y1="18" x2="70" y2="18" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
+        /* At y=18: SRAS₁ at x≈80, SRAS₂ at x≈58. Arrow from 76→62, 4px buffer */
+        + '<line x1="76" y1="18" x2="62" y2="18" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
     }
 
@@ -314,7 +316,8 @@
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="79" cy="30" r="5" fill="white"/>'
         + '<circle cx="79" cy="30" r="3" fill="#059669" opacity="0.7"/>'
-        + '<line x1="56" y1="60" x2="72" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
+        /* At y=60: AD₁ at x≈81, AD₂ at x≈100. Arrow from 85→96, 4px buffer, points right */
+        + '<line x1="85" y1="60" x2="96" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
         + '</svg>';
     }
 
@@ -351,7 +354,8 @@
         + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
         + '<circle cx="49" cy="53" r="5" fill="white"/>'
         + '<circle cx="49" cy="53" r="3" fill="#059669" opacity="0.7"/>'
-        + '<line x1="69" y1="60" x2="55" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
+        /* At y=60: AD₁ at x≈81, AD₂ at x≈62. Arrow from 77→66, 4px buffer, points left */
+        + '<line x1="77" y1="60" x2="66" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
         + '</svg>';
     }
 

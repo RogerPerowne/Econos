@@ -11,7 +11,7 @@
 
     var state = {
       scenarioIdx:    0,
-      activeBlank:    null,    // currently focused blank id (1..8)
+      activeBlank:    1,       // currently focused blank id (1..8); starts on first blank
       blankAnswers:   {},      // blankId -> optionId
       overallAnswer:  null,    // optionId
       revealed:       false
@@ -366,7 +366,7 @@
         state.scenarioIdx++;
         state.blankAnswers  = {};
         state.overallAnswer = null;
-        state.activeBlank   = null;
+        state.activeBlank   = 1;
         state.revealed      = false;
         render();
         window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -161,7 +161,6 @@
       var slotsHtml = '';
       for (var i = 0; i < 3; i++) {
         slotsHtml += renderSlot(sc, i);
-        if (i < 2) slotsHtml += '<div class="depends-arrow">↓</div>';
       }
 
       return ''

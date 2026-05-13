@@ -189,7 +189,8 @@ img, svg { display: block; max-width: 100%; }
   display: block;
   margin-bottom: 4px;
 }
-.sidebar__logo svg {
+.sidebar__logo svg,
+.sidebar__logo img {
   display: block;
   width: 140px;
   height: auto;

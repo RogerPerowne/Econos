@@ -13,7 +13,7 @@ window.ECONOS_LINK_STATION = {
     { id: 'chain',   label: 'Build the chain',    href: 'link_inflation_chain.html'   },
     { id: 'diagram', label: 'Diagram connector',  href: 'link_inflation_diagram.html' },
     { id: 'depends', label: 'It depends on',     href: 'link_inflation_depends.html' },
-    { id: 'judge',   label: 'Make the judgement'  }
+    { id: 'judge',   label: 'Make the judgement', href: 'link_inflation_judge.html' }
   ],
   currentStationIdx: 0,
 

@@ -4,7 +4,7 @@
 
 window.ECONOS_LINK_INTRO = {
   topic:        'Causes of Inflation & Deflation',
-  sessionLabel: 'SESSION 2 OF 3: LINK',
+  sessionLabel: 'Session 2 of 3: Link',
   estTime:      '15–20 minutes',
   goal:         'Bridge knowledge to exam application',
 

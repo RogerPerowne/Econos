@@ -7597,23 +7597,6 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 }
 
 /* Eyebrow + scenario counter row */
-.link-card__eyebrow-row {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  margin-bottom: var(--sp-4);
-}
-.link-card__eyebrow-row .link-card__eyebrow {
-  margin-bottom: 0;
-}
-.depends-scenario-badge {
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semi);
-  color: var(--econ-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 /* Theme overrides */
 .theme--link .depends-factor:hover { border-color: var(--econ-amber); }
 .theme--link .depends-slot--filled .depends-slot__num { background: var(--econ-amber); border-color: var(--econ-amber); }

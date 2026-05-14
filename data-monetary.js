@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   id: 'monetary_policy',
   topicNum: '2.6.2',
   theme: 'Theme 2 · The National and Global Economy',
-  sessionLabel: 'SESSION 1 OF 3: LEARN',
+  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monetary Policy',
   estTime: '8-10 minutes',
   goal: 'Master the transmission chain — and when it breaks',

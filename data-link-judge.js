@@ -9,7 +9,7 @@ window.ECONOS_LINK_JUDGE = {
   backUrl:      'link_inflation_intro.html',
   eyebrow:      'Make the Judgement',
   instruction:  'Use the evidence you have built so far to complete the final judgement. Choose the strongest phrase for each blank.',
-  nextUrl:      'link_inflation_intro.html',
+  nextUrl:      'link_inflation_complete.html',
 
   stations: [
     { id: 'context', label: 'Use the context',   href: 'link_inflation_context.html' },

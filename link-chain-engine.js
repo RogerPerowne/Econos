@@ -418,6 +418,11 @@
       /* Next station → open response challenge */
       var nextStationBtn = document.getElementById('next-station');
       if (nextStationBtn) nextStationBtn.addEventListener('click', function () {
+        try {
+          var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
+          stored.chain = state.score;
+          localStorage.setItem('econos_link_scores', JSON.stringify(stored));
+        } catch (e) {}
         window.location.href = DATA.nextUrl || 'link_inflation_intro.html';
       });
     }

@@ -247,7 +247,7 @@
       } else if (!isLast) {
         primary = '<button type="button" class="link-btn link-btn--primary" id="next-scenario">Next scenario →</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-btn">Finish Link it →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-btn">See my results →</button>';
       }
 
       return ''
@@ -377,6 +377,13 @@
       /* finish */
       var finishBtn = document.getElementById('finish-btn');
       if (finishBtn) finishBtn.addEventListener('click', function () {
+        var sc = currentScenario();
+        var summary = blankSummary(sc);
+        try {
+          var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
+          stored.judge = summary.correct;
+          localStorage.setItem('econos_link_scores', JSON.stringify(stored));
+        } catch (e) {}
         window.location.href = DATA.nextUrl || DATA.backUrl;
       });
     }

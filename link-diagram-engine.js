@@ -840,6 +840,11 @@
       /* Finish */
       var finishBtn = document.getElementById('finish-diag');
       if (finishBtn) finishBtn.addEventListener('click', function () {
+        try {
+          var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
+          stored.diagram = state.score;
+          localStorage.setItem('econos_link_scores', JSON.stringify(stored));
+        } catch (e) {}
         window.location.href = DATA.nextUrl || DATA.backUrl;
       });
     }

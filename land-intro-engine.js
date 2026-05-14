@@ -12,26 +12,35 @@
     var T = window.ECONOS_LAND_INTRO;
 
     var state = {
-      sectionACount:   0,
-      sectionBId:      null,
-      sectionCInclude: false
+      sectionA: null,   /* null | 1..5 | 'skip' */
+      sectionB: [],     /* array of option ids; may contain 'none' for explicit skip */
+      sectionC: null    /* null | 'include' | 'skip' */
     };
 
     /* ── helpers ──────────────────────────────────────────── */
 
-    function totalMarks() {
-      var a = state.sectionACount * 5;
+    function sectionAMarks() {
+      return (typeof state.sectionA === 'number') ? state.sectionA * 5 : 0;
+    }
+
+    function sectionBMarks() {
       var b = 0;
-      if (state.sectionBId && state.sectionBId !== 'none') {
-        for (var i = 0; i < T.sectionB.options.length; i++) {
-          if (T.sectionB.options[i].id === state.sectionBId) {
-            b = T.sectionB.options[i].marks;
+      for (var i = 0; i < state.sectionB.length; i++) {
+        var id = state.sectionB[i];
+        if (id === 'none') { continue; }
+        for (var j = 0; j < T.sectionB.options.length; j++) {
+          if (T.sectionB.options[j].id === id) {
+            b += T.sectionB.options[j].marks;
             break;
           }
         }
       }
-      var c = state.sectionCInclude ? 25 : 0;
-      return a + b + c;
+      return b;
+    }
+
+    function totalMarks() {
+      var c = state.sectionC === 'include' ? 25 : 0;
+      return sectionAMarks() + sectionBMarks() + c;
     }
 
     function estTime(marks) {
@@ -124,19 +133,21 @@
       var marks = totalMarks();
       var items = '';
 
-      if (state.sectionACount > 0) {
-        var aQ = state.sectionACount;
+      if (typeof state.sectionA === 'number' && state.sectionA > 0) {
+        var aQ = state.sectionA;
         items += '<div class="land-rs__item">'
           + '<span class="land-rs__dot land-rs__dot--a"></span>'
           + '<span>Section A &mdash; ' + aQ + ' question' + (aQ > 1 ? 's' : '') + ' (' + (aQ * 5) + ' marks)</span>'
           + '</div>';
       }
 
-      if (state.sectionBId && state.sectionBId !== 'none') {
+      for (var bi = 0; bi < state.sectionB.length; bi++) {
+        var bid = state.sectionB[bi];
+        if (bid === 'none') { continue; }
         var bLabel = '';
-        for (var i = 0; i < T.sectionB.options.length; i++) {
-          if (T.sectionB.options[i].id === state.sectionBId) {
-            bLabel = T.sectionB.options[i].label;
+        for (var bj = 0; bj < T.sectionB.options.length; bj++) {
+          if (T.sectionB.options[bj].id === bid) {
+            bLabel = T.sectionB.options[bj].label;
             break;
           }
         }
@@ -146,7 +157,7 @@
           + '</div>';
       }
 
-      if (state.sectionCInclude) {
+      if (state.sectionC === 'include') {
         items += '<div class="land-rs__item">'
           + '<span class="land-rs__dot land-rs__dot--c"></span>'
           + '<span>Section C &mdash; Essay (25 marks)</span>'
@@ -169,12 +180,12 @@
 
     function renderSectionA() {
       var pills = '';
-      for (var n = 0; n <= 5; n++) {
-        var cls = 'land-pill' + (state.sectionACount === n ? ' is-selected' : '');
-        pills += '<button class="' + cls + '" data-section="a" data-value="' + n + '">'
-          + (n === 0 ? 'None' : n)
-          + '</button>';
+      for (var n = 1; n <= 5; n++) {
+        var cls = 'land-pill' + (state.sectionA === n ? ' is-selected' : '');
+        pills += '<button class="' + cls + '" data-section="a" data-value="' + n + '">' + n + '</button>';
       }
+      var skipCls = 'land-pill land-pill--skip' + (state.sectionA === 'skip' ? ' is-selected' : '');
+      pills += '<button class="' + skipCls + '" data-section="a" data-value="skip">Skip</button>';
       return '<div class="land-section">'
         + '<div class="land-section__head">'
         +   '<div class="land-section__label-row">'
@@ -192,7 +203,7 @@
 
     function renderSectionB() {
       var pills = T.sectionB.options.map(function (opt) {
-        var sel  = state.sectionBId === opt.id;
+        var sel  = state.sectionB.indexOf(opt.id) !== -1;
         var cls  = 'land-pill'
           + (sel ? ' is-selected' : '')
           + (opt.id === 'none' ? ' land-pill--skip' : '');
@@ -207,7 +218,7 @@
         +     '<span class="land-section__tag land-section__tag--b">B</span>'
         +     '<div>'
         +       '<div class="land-section__name">Section B</div>'
-        +       '<div class="land-section__sub">Extended response</div>'
+        +       '<div class="land-section__sub">Extended response &middot; select one or more</div>'
         +     '</div>'
         +   '</div>'
         + '</div>'
@@ -217,8 +228,8 @@
     }
 
     function renderSectionC() {
-      var incCls  = 'land-pill land-pill--lg' + (state.sectionCInclude  ? ' is-selected' : '');
-      var skipCls = 'land-pill land-pill--lg land-pill--skip' + (!state.sectionCInclude ? ' is-selected' : '');
+      var incCls  = 'land-pill land-pill--lg' + (state.sectionC === 'include'  ? ' is-selected' : '');
+      var skipCls = 'land-pill land-pill--lg land-pill--skip' + (state.sectionC === 'skip' ? ' is-selected' : '');
 
       return '<div class="land-section">'
         + '<div class="land-section__head">'
@@ -290,7 +301,7 @@
         +     '<div class="land-config-card__title">Build your Land It session</div>'
         +     '<div class="land-config-card__sub">Select which sections to practise. You can always adjust and rebuild.</div>'
         +   '</div>'
-        +   '<div class="land-sections">'
+        +   '<div class="land-sections" id="land-sections">'
         +     renderSectionA()
         +     renderSectionB()
         +     renderSectionC()
@@ -347,15 +358,11 @@
       }
     }
 
-    function updatePillSelection(section, value) {
-      var root  = document.getElementById('app-root');
-      var pills = root.querySelectorAll('[data-section="' + section + '"]');
-      for (var i = 0; i < pills.length; i++) {
-        if (pills[i].getAttribute('data-value') === value) {
-          pills[i].classList.add('is-selected');
-        } else {
-          pills[i].classList.remove('is-selected');
-        }
+    function rerenderSections() {
+      var el = document.getElementById('land-sections');
+      if (el) {
+        el.innerHTML = renderSectionA() + renderSectionB() + renderSectionC();
+        attachHandlers();
       }
     }
 
@@ -370,13 +377,24 @@
             var section = btn.getAttribute('data-section');
             var value   = btn.getAttribute('data-value');
             if (section === 'a') {
-              state.sectionACount = parseInt(value, 10);
+              state.sectionA = (value === 'skip') ? 'skip' : parseInt(value, 10);
             } else if (section === 'b') {
-              state.sectionBId = value;
+              if (value === 'none') {
+                state.sectionB = ['none'];
+              } else {
+                var noneIdx = state.sectionB.indexOf('none');
+                if (noneIdx !== -1) { state.sectionB.splice(noneIdx, 1); }
+                var idx = state.sectionB.indexOf(value);
+                if (idx === -1) {
+                  state.sectionB.push(value);
+                } else {
+                  state.sectionB.splice(idx, 1);
+                }
+              }
             } else if (section === 'c') {
-              state.sectionCInclude = (value === 'include');
+              state.sectionC = value;
             }
-            updatePillSelection(section, value);
+            rerenderSections();
             updateSummaryPanels();
           });
         })(pills[i]);

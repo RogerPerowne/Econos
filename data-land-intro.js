@@ -11,7 +11,7 @@ window.ECONOS_LAND_INTRO = {
   },
 
   sectionB: {
-    description: 'Choose the extended response question type. Each mark value represents a different question style.',
+    description: 'Each mark value represents a different question style. Select one or more to practise in this session.',
     options: [
       { id: 'b5',   label: '5 marks',  marks: 5  },
       { id: 'b8',   label: '8 marks',  marks: 8  },

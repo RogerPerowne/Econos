@@ -272,7 +272,7 @@
         +   '</div>'
         + '</div>'
         + '<div class="land-session-meta__cta">'
-        +   '<a href="#" class="btn btn--primary btn--lg' + disabledCls + '">Build my session ' + I.arrowRight + '</a>'
+        +   '<a href="' + (typeof state.sectionA === 'number' && state.sectionA > 0 ? 'land_inflation_section_a.html' : '#') + '" class="btn btn--primary btn--lg' + disabledCls + '">Build my session ' + I.arrowRight + '</a>'
         + '</div>'
         + '</div>';
     }

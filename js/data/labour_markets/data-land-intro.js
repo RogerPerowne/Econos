@@ -1,0 +1,37 @@
+window.ECONOS_LAND_INTRO = {
+  topic:        'Labour Markets',
+  sessionLabel: 'Session 3 of 3: Land',
+
+  sectionA: {
+    description: 'Short data-response questions worth 5 marks each. Select how many to include in your session.'
+  },
+
+  sectionB: {
+    description: 'Each mark value represents a different question style. Select one or more to practise in this session.',
+    options: [
+      { id: 'b5',   label: '5 marks',  marks: 5  },
+      { id: 'b8',   label: '8 marks',  marks: 8  },
+      { id: 'b12',  label: '12 marks', marks: 12 },
+      { id: 'none', label: 'Skip',     marks: 0  }
+    ]
+  },
+
+  sectionC: {
+    description: 'A 25-mark essay question. In the exam you choose from two options. In Land It you practice one.'
+  },
+
+  trains: [
+    'Applying MRP theory to explain why firms hire up to the point where MRP = wage',
+    'Analysing monopsony power and its effect on wages and employment relative to competition',
+    'Evaluating the gender pay gap using MRP theory and labour market imperfections',
+    'Assessing the National Minimum Wage as a policy response to low wages and monopsony'
+  ],
+
+  tip: 'Always distinguish between the demand side (MRP as the derived demand for labour) and the supply side (wage rates, participation rates, union bargaining). In monopsony analysis, remember the employer faces an upward-sloping labour supply curve &#8212; the marginal cost of labour exceeds the wage, so employment is set below and wages below the competitive equilibrium.',
+
+  stages: [
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                               }
+  ]
+};

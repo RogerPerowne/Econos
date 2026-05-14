@@ -194,17 +194,6 @@
         }
       }
 
-      /* Slot 4 — endpoint (locked) */
-      if (C.endpoint) {
-        slots.push(
-          '<div class="chain-slot chain-slot--endpoint">'
-          + '<div class="chain-slot__num">4</div>'
-          + '<div class="chain-slot__icon">' + C.endpoint.icon + '</div>'
-          + '<div class="chain-slot__text">' + C.endpoint.text + '</div>'
-          + '</div>'
-        );
-      }
-
       /* Interleave with arrows */
       var inner = '';
       for (var j = 0; j < slots.length; j++) {
@@ -214,7 +203,9 @@
         }
       }
 
-      return '<div class="chain-slots">' + inner + '</div>';
+      return ''
+        + '<div class="chain-available__label">Build your chain</div>'
+        + '<div class="chain-slots">' + inner + '</div>';
     }
 
     function renderAvailableTiles(C) {

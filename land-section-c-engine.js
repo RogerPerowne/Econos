@@ -187,6 +187,22 @@
 
     /* ── page assembly ──────────────────────────────────── */
 
+    function saveSectionStart(letter) {
+      var d = {};
+      try { d = JSON.parse(localStorage.getItem('econosLandResults') || '{}'); } catch (e) {}
+      if (!d[letter]) { d[letter] = {}; }
+      d[letter].startMs = Date.now();
+      try { localStorage.setItem('econosLandResults', JSON.stringify(d)); } catch (e) {}
+    }
+    function saveSectionEnd(letter, extra) {
+      var d = {};
+      try { d = JSON.parse(localStorage.getItem('econosLandResults') || '{}'); } catch (e) {}
+      if (!d[letter]) { d[letter] = {}; }
+      d[letter].endMs = Date.now();
+      if (extra) { for (var k in extra) { if (extra.hasOwnProperty(k)) { d[letter][k] = extra[k]; } } }
+      try { localStorage.setItem('econosLandResults', JSON.stringify(d)); } catch (e) {}
+    }
+
     function getNextSection(current) {
       var session = null;
       try { session = JSON.parse(localStorage.getItem('econosLandSession') || 'null'); } catch (e) {}
@@ -204,11 +220,11 @@
 
     function renderBottomBar(currentSection, revealLabelPre, revealLabelPost) {
       var next = getNextSection(currentSection);
-      var revealBtnCls = 'btn btn--ghost btn--lg' + (state.revealed ? ' is-disabled' : '');
-      var revealLabel  = state.revealed ? revealLabelPost : revealLabelPre;
-      var continueBtn  = next
-        ? '<a href="' + next.href + '" class="btn btn--primary btn--lg">Continue to ' + next.label + ' ' + I.arrowRight + '</a>'
-        : '<a href="' + T.backUrl + '" class="btn btn--primary btn--lg">Finish &amp; return to Land It ' + I.arrowRight + '</a>';
+      var revealBtnCls  = 'btn btn--ghost btn--lg' + (state.revealed ? ' is-disabled' : '');
+      var revealLabel   = state.revealed ? revealLabelPost : revealLabelPre;
+      var continueHref  = next ? next.href : 'land_inflation_complete.html';
+      var continueLabel = next ? ('Continue to ' + next.label) : 'Finish &amp; see results';
+      var continueBtn   = '<button id="js-continue-btn" data-href="' + continueHref + '" class="btn btn--primary btn--lg">' + continueLabel + ' ' + I.arrowRight + '</button>';
       return '<div class="land-bottom-bar">'
         +   '<a href="' + T.backUrl + '" class="btn btn--ghost">← Back to Land It</a>'
         +   '<button id="js-reveal-btn" class="' + revealBtnCls + '">' + revealLabel + '</button>'
@@ -278,8 +294,19 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
+
+      /* continue / finish — save timing + attempted status */
+      var continueBtn = document.getElementById('js-continue-btn');
+      if (continueBtn) {
+        continueBtn.addEventListener('click', function () {
+          var attempted = state.text && state.text.replace(/\s+/g, '').length > 20;
+          saveSectionEnd('C', { attempted: attempted });
+          window.location.href = continueBtn.getAttribute('data-href');
+        });
+      }
     }
 
+    saveSectionStart('C');
     render();
   };
 })();

@@ -15,9 +15,7 @@ window.ECONOS_LAND_INTRO = {
     options: [
       { id: 'b5',   label: '5 marks',  marks: 5  },
       { id: 'b8',   label: '8 marks',  marks: 8  },
-      { id: 'b10',  label: '10 marks', marks: 10 },
       { id: 'b12',  label: '12 marks', marks: 12 },
-      { id: 'b15',  label: '15 marks', marks: 15 },
       { id: 'none', label: 'Skip',     marks: 0  }
     ]
   },

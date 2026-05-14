@@ -252,7 +252,7 @@
 
       return ''
         + '<div class="link-footer">'
-        +   '<a href="link_inflation_chain.html" class="link-btn link-btn--ghost">← Easy mode</a>'
+        +   '<a href="' + TopicLoader.buildUrl('link_chain.html') + '" class="link-btn link-btn--ghost">← Easy mode</a>'
         +   '<div class="link-footer__counter">Step ' + stationNum + ' of ' + stationTot + ' · Chain ' + (state.chainIdx + 1) + ' of ' + DATA.chains.length + '</div>'
         +   primary
         + '</div>';

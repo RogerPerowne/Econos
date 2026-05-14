@@ -190,11 +190,11 @@
     function renderFooter() {
       var firstSection = selectedSections.length > 0 ? selectedSections[0] : 'A';
       var reDoMap = {
-        A: 'land_inflation_section_a.html',
-        B: 'land_inflation_section_b.html',
-        C: 'land_inflation_section_c.html'
+        A: TopicLoader.buildUrl('land_section_a.html'),
+        B: TopicLoader.buildUrl('land_section_b.html'),
+        C: TopicLoader.buildUrl('land_section_c.html')
       };
-      var redoHref = reDoMap[firstSection] || 'land_inflation_intro.html';
+      var redoHref = reDoMap[firstSection] || TopicLoader.buildUrl('land_intro.html');
       return '<div class="link-footer">'
         + '<a href="' + redoHref + '" class="link-btn link-btn--ghost">Redo session</a>'
         + '<a href="' + DATA.nextUrl + '" class="link-btn link-btn--primary">Back to my topics ' + I.arrowRight + '</a>'

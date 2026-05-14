@@ -7,7 +7,7 @@
   'use strict';
 
   window.bootLinkChain = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 0) { window.location.replace('link_inflation_context.html'); return; } } catch (e) {}
+    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 0) { window.location.replace(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_CHAIN;
@@ -416,7 +416,7 @@
           var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
           localStorage.setItem('econos_link_unlocked', String(Math.max(u, 1)));
         } catch (e) {}
-        window.location.href = DATA.nextUrl || 'link_inflation_intro.html';
+        window.location.href = DATA.nextUrl || TopicLoader.buildUrl('link_intro.html');
       });
     }
 

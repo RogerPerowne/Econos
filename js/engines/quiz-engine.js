@@ -699,7 +699,7 @@
       return '<details class="quiz-rvrow"' + (hasExp ? '' : ' open') + '>' + header + body + '</details>';
     }).join('');
 
-    var backHref  = TOPIC.backUrl  || 'topic_inflation.html';
+    var backHref  = TOPIC.backUrl  || TopicLoader.buildUrl('topic.html');
     var backLabel = TOPIC.backLabel || 'Back to topic';
 
     r('<div class="quiz-results">' +
@@ -747,7 +747,7 @@
 
       '<div class="quiz-results__actions">' +
         '<button class="quiz-btn quiz-btn--secondary" onclick="restartQuiz()">Redo quiz</button>' +
-        '<a class="quiz-btn quiz-btn--primary" href="link_inflation_intro.html">On to Link it →</a>' +
+        '<a class="quiz-btn quiz-btn--primary" href="' + TopicLoader.buildUrl('link_intro.html') + '">On to Link it →</a>' +
       '</div>' +
 
       '</div>');

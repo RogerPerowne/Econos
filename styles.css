@@ -8330,7 +8330,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   color: var(--econ-ink);
 }
 .lc-row__score {
-  flex: 0 0 52px;
+  flex: 0 0 140px;
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
   color: var(--econ-ink);
@@ -8358,8 +8358,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 }
 .lc-th--spacer { flex: 0 0 28px; }
 .lc-th--name   { flex: 0 0 180px; }
-.lc-th--score  { flex: 0 0 52px; }
-.lc-th--time   { flex: 0 0 88px; margin-left: auto; text-align: right; }
+.lc-th--score  { flex: 0 0 140px; }
+.lc-th--time   { flex: 0 0 88px; text-align: right; }
 
 /* Advice boxes */
 .lc-advice {

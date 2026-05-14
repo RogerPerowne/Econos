@@ -129,7 +129,7 @@
 
   /* === LAYOUT === */
   --sidebar-w: 240px;
-  --rightbar-w: 280px;
+  --rightbar-w: 240px;
   --header-h: 64px;
 }
 
@@ -2036,7 +2036,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* Hide on small (basic responsive) */
 @media (max-width: 1100px) {
-  :root { --sidebar-w: 200px; --rightbar-w: 240px; }
+  :root { --sidebar-w: 200px; --rightbar-w: 210px; }
   .page { padding: var(--sp-4); }
 }
 @media (max-width: 900px) {
@@ -6848,8 +6848,10 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .diag-wrap--small { max-width: 100%; }
 .diag-svg {
   width: 100%;
+  max-width: 640px;
   height: auto;
   display: block;
+  margin: 0 auto;
   border-radius: var(--r-lg);
 }
 

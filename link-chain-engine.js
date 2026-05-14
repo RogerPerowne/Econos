@@ -122,8 +122,8 @@
     }
 
     function renderEyebrow() {
-      var pct = Math.round(state.placements.length / 2 * 100);
-      var maxScore = DATA.chains.length * 2;
+      var pct = Math.round(state.placements.length / 3 * 100);
+      var maxScore = DATA.chains.length * 3;
       return ''
         + '<div class="link-card__eyebrow">'
         +   '<span class="link-card__eyebrow-dot"></span>'
@@ -157,8 +157,8 @@
         + '</div>'
       );
 
-      /* Slots 2–3 (positions 0–1 in placements) */
-      for (var i = 0; i < 2; i++) {
+      /* Slots 2–4 (positions 0–2 in placements) */
+      for (var i = 0; i < 3; i++) {
         var slotNum = i + 2;
         var placed  = state.placements[i];
 
@@ -192,17 +192,6 @@
             + '</div>'
           );
         }
-      }
-
-      /* Slot 4 — endpoint (locked) */
-      if (C.endpoint) {
-        slots.push(
-          '<div class="chain-slot chain-slot--endpoint">'
-          + '<div class="chain-slot__num">4</div>'
-          + '<div class="chain-slot__icon">' + C.endpoint.icon + '</div>'
-          + '<div class="chain-slot__text">' + C.endpoint.text + '</div>'
-          + '</div>'
-        );
       }
 
       /* Interleave with arrows */
@@ -282,7 +271,7 @@
     function renderFooter() {
       var stationNum  = DATA.currentStationIdx + 1;
       var stationTot  = DATA.stations.length;
-      var allFilled   = state.placements.length === 2;
+      var allFilled   = state.placements.length === 3;
       var isLastChain = state.chainIdx === DATA.chains.length - 1;
 
       var primary;
@@ -400,7 +389,7 @@
         state.checked = true;
         /* Count correct placements and add to running score */
         var correct = 0;
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < 3; i++) {
           if (isCorrect(C, i)) correct++;
         }
         state.score += correct;

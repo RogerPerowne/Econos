@@ -8351,7 +8351,6 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-size: var(--fs-sm);
   font-weight: var(--fw-semi);
   color: var(--econ-ink);
-  text-align: right;
 }
 .lc-stat-box__big--time {
   font-size: 22px;
@@ -8359,7 +8358,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .lc-th--spacer { flex: 0 0 28px; }
 .lc-th--name   { flex: 0 0 180px; }
 .lc-th--score  { flex: 0 0 140px; }
-.lc-th--time   { flex: 0 0 88px; text-align: right; }
+.lc-th--time   { flex: 0 0 88px; }
 
 /* Advice boxes */
 .lc-advice {

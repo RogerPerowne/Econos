@@ -7,6 +7,8 @@
   'use strict';
 
   window.bootLinkChain = function () {
+    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 0) { window.location.replace('link_inflation_context.html'); return; } } catch (e) {}
+
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_CHAIN;
 
@@ -303,15 +305,17 @@
     }
 
     function renderRail() {
+      var unlockedIdx = (function () { try { return parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10); } catch (e) { return -1; } })();
       var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
-        var isDone    = i < DATA.currentStationIdx;
+        var isDone    = i <= unlockedIdx && !isCurrent;
+        var isLocked  = i > unlockedIdx && !isCurrent;
         var status    = isDone ? 'done' : (isCurrent ? 'current' : '');
-        var tag       = st.href ? 'a' : 'div';
-        var attrs     = st.href ? ' href="' + st.href + '"' : '';
-        var lockChip  = (!st.href && !isCurrent && !isDone) ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';
+        var tag       = isLocked ? 'div' : 'a';
+        var attrs     = isLocked ? '' : ' href="' + st.href + '"';
+        var lockChip  = isLocked ? '<span class="cards-list__chip cards-list__chip--locked">Locked</span>' : '';
         return ''
-          + '<' + tag + ' class="cards-list__item' + (status ? ' is-' + status : '') + (st.href ? ' is-linked' : '') + '"' + attrs + '>'
+          + '<' + tag + ' class="cards-list__item' + (status ? ' is-' + status : '') + (!isLocked ? ' is-linked' : '') + '"' + attrs + '>'
           +   '<div class="cards-list__num">' + (isDone ? I.check : (i + 1)) + '</div>'
           +   '<div class="cards-list__body">'
           +     '<div class="cards-list__name">' + st.label + '</div>'
@@ -422,6 +426,8 @@
           var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
           stored.chain = state.score;
           localStorage.setItem('econos_link_scores', JSON.stringify(stored));
+          var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
+          localStorage.setItem('econos_link_unlocked', String(Math.max(u, 1)));
         } catch (e) {}
         window.location.href = DATA.nextUrl || 'link_inflation_intro.html';
       });

@@ -45,7 +45,7 @@
 
     function estTime(marks) {
       if (marks === 0) { return '—'; }
-      var mins = Math.round(marks * 1.8);
+      var mins = Math.round((marks * 1.2) / 10) * 10;
       if (mins < 60) { return mins + ' min'; }
       var h = Math.floor(mins / 60);
       var m = mins % 60;

@@ -583,7 +583,7 @@
       } else if (!allMarked) {
         primary = '<button type="button" class="link-btn link-btn--primary" disabled>Mark each part to continue</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-diag">Next: It depends on →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="finish-diag">Go to judgement →</button>';
       }
 
       return ''

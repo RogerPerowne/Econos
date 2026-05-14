@@ -194,6 +194,17 @@
         }
       }
 
+      /* Slot 4 — endpoint (locked) */
+      if (C.endpoint) {
+        slots.push(
+          '<div class="chain-slot chain-slot--endpoint">'
+          + '<div class="chain-slot__num">4</div>'
+          + '<div class="chain-slot__icon">' + C.endpoint.icon + '</div>'
+          + '<div class="chain-slot__text">' + C.endpoint.text + '</div>'
+          + '</div>'
+        );
+      }
+
       /* Interleave with arrows */
       var inner = '';
       for (var j = 0; j < slots.length; j++) {
@@ -282,7 +293,7 @@
       } else if (!isLastChain) {
         primary = '<button type="button" class="link-btn link-btn--primary" id="next-chain">Next scenario →</button>';
       } else {
-        primary = '<button type="button" class="link-btn link-btn--primary" id="next-station">Next: Diagram connector →</button>';
+        primary = '<button type="button" class="link-btn link-btn--primary" id="next-station">Next: Diagram →</button>';
       }
 
       var chainCounter = 'Chain ' + (state.chainIdx + 1) + ' of ' + DATA.chains.length;

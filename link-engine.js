@@ -11,6 +11,12 @@
     var DATA = window.ECONOS_LINK_STATION;
     var S    = DATA.station;
 
+    /* Start/reset timer and clear any previous session scores */
+    try {
+      localStorage.setItem('econos_link_start', Date.now().toString());
+      localStorage.setItem('econos_link_scores', '{}');
+    } catch (e) {}
+
     var state = {
       placements: {},   // evidenceId -> bucketId
       selected:   null, // currently-selected evidenceId
@@ -369,9 +375,19 @@
         if (bridge) bridge.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
 
-      // next station → chain page
+      // next station → chain page; save context score first
       var nextBtn = document.getElementById('next-station');
       if (nextBtn) nextBtn.addEventListener('click', function () {
+        var correct = S.correct;
+        var score = 0;
+        Object.keys(correct).forEach(function (id) {
+          if (state.placements[id] === correct[id]) score++;
+        });
+        try {
+          var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
+          stored.context = score;
+          localStorage.setItem('econos_link_scores', JSON.stringify(stored));
+        } catch (e) {}
         window.location.href = 'link_inflation_chain.html';
       });
     }

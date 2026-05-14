@@ -383,6 +383,15 @@
       /* finish */
       var finishBtn = document.getElementById('finish-btn');
       if (finishBtn) finishBtn.addEventListener('click', function () {
+        var sc = currentScenario();
+        var score = state.picks.filter(function (id) {
+          return sc.modelRanking.indexOf(id) >= 0;
+        }).length;
+        try {
+          var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
+          stored.depends = score;
+          localStorage.setItem('econos_link_scores', JSON.stringify(stored));
+        } catch (e) {}
         window.location.href = DATA.nextUrl || DATA.backUrl;
       });
     }

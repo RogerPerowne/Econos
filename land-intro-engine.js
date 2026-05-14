@@ -30,8 +30,25 @@
       if (typeof state.sectionA === 'number' && state.sectionA > 0) { sections.push('A'); }
       if (hasSectionB())                                             { sections.push('B'); }
       if (state.sectionC === 'include')                              { sections.push('C'); }
+
+      var aCount = (typeof state.sectionA === 'number') ? state.sectionA : 0;
+
+      var bMarks = [];
+      for (var bi = 0; bi < state.sectionB.length; bi++) {
+        var bid = state.sectionB[bi];
+        if (bid === 'none') { continue; }
+        for (var bj = 0; bj < T.sectionB.options.length; bj++) {
+          if (T.sectionB.options[bj].id === bid) { bMarks.push(T.sectionB.options[bj].marks); }
+        }
+      }
+
       try {
-        localStorage.setItem('econosLandSession', JSON.stringify({ sections: sections, topic: 'inflation' }));
+        localStorage.setItem('econosLandSession', JSON.stringify({
+          sections: sections,
+          topic:    'inflation',
+          aCount:   aCount,
+          bMarks:   bMarks
+        }));
       } catch (e) { /* ignore */ }
     }
     function buildHref() {

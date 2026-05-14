@@ -425,13 +425,40 @@
 
     /* ── page assembly ───────────────────────────────────── */
 
+    function getNextSection(current) {
+      var session = null;
+      try { session = JSON.parse(localStorage.getItem('econosLandSession') || 'null'); } catch (e) {}
+      if (!session || !session.sections || !session.sections.length) { return null; }
+      var idx = session.sections.indexOf(current);
+      if (idx === -1 || idx === session.sections.length - 1) { return null; }
+      var next = session.sections[idx + 1];
+      var map = {
+        'A': { label: 'Section A', href: 'land_inflation_section_a.html' },
+        'B': { label: 'Section B', href: 'land_inflation_section_b.html' },
+        'C': { label: 'Section C', href: 'land_inflation_section_c.html' }
+      };
+      return map[next] || null;
+    }
+
+    function renderBottomBar(currentSection, revealLabelPre, revealLabelPost) {
+      var next = getNextSection(currentSection);
+      var revealBtnCls = 'btn btn--ghost btn--lg' + (state.revealed ? ' is-disabled' : '');
+      var revealLabel  = state.revealed ? revealLabelPost : revealLabelPre;
+      var continueBtn  = next
+        ? '<a href="' + next.href + '" class="btn btn--primary btn--lg">Continue to ' + next.label + ' ' + I.arrowRight + '</a>'
+        : '<a href="' + T.backUrl + '" class="btn btn--primary btn--lg">Finish &amp; return to Land It ' + I.arrowRight + '</a>';
+      return '<div class="land-bottom-bar">'
+        +   '<a href="' + T.backUrl + '" class="btn btn--ghost">← Back to Land It</a>'
+        +   '<button id="js-reveal-btn" class="' + revealBtnCls + '">' + revealLabel + '</button>'
+        +   continueBtn
+        + '</div>';
+    }
+
     function renderMain() {
       var totalMarks = 0;
       for (var i = 0; i < T.questions.length; i++) { totalMarks += T.questions[i].marks; }
 
       var questionsHtml = T.questions.map(function (q) { return renderQuestion(q); }).join('');
-
-      var revealBtnCls = 'btn btn--primary btn--lg' + (state.revealed ? ' is-disabled' : '');
 
       return '<div class="land-main">'
         + '<div class="land-section-header">'
@@ -441,10 +468,7 @@
         + '</div>'
         + renderProgress()
         + questionsHtml
-        + '<div class="land-bottom-bar">'
-        +   '<a href="' + T.backUrl + '" class="btn btn--ghost">← Back to Land It</a>'
-        +   '<button id="js-reveal-btn" class="' + revealBtnCls + '">' + (state.revealed ? 'Answers shown' : 'Check Section A answers →') + '</button>'
-        + '</div>'
+        + renderBottomBar('A', 'Reveal Section A answers', 'Answers shown')
         + '</div>';
     }
 

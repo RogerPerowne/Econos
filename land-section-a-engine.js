@@ -262,7 +262,9 @@
         +   '<span class="land-part__marks">' + partMarksTxt + '</span>'
         + '</div>'
         + '<textarea class="land-freetext-ta" data-ta="' + part.id + '" rows="5" placeholder="Write your answer here…">' + stored + '</textarea>'
-        + '<div class="land-hint">' + I.info + '<span>' + part.hint + '</span></div>'
+        + '<details class="land-hint-details"><summary class="land-hint-summary">' + I.info + '<span>Show hint</span></summary>'
+        +   '<div class="land-hint">' + part.hint + '</div>'
+        + '</details>'
         + modelHtml
         + '</div>';
     }

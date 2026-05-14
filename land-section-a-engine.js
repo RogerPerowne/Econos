@@ -9,6 +9,13 @@
     var I = window.ECONOS_ICONS;
     var T = window.ECONOS_LAND_SECTION_A;
 
+    /* Limit to the number of questions the user selected in the configurator. */
+    try {
+      var sess = JSON.parse(localStorage.getItem('econosLandSession') || '{}');
+      var aCount = (typeof sess.aCount === 'number' && sess.aCount > 0) ? sess.aCount : T.questions.length;
+      if (aCount < T.questions.length) { T.questions = T.questions.slice(0, aCount); }
+    } catch (e) { /* ignore */ }
+
     var state = {
       mcq:      {},    /* partId → selectedOptionId */
       text:     {},    /* inputId → string value    */

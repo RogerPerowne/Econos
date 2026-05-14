@@ -9,6 +9,25 @@
     var I = window.ECONOS_ICONS;
     var T = window.ECONOS_LAND_SECTION_B;
 
+    /* Filter parts to only the mark values the user selected in the configurator. */
+    try {
+      var sess = JSON.parse(localStorage.getItem('econosLandSession') || '{}');
+      if (sess.bMarks && sess.bMarks.length) {
+        var allowed = {};
+        for (var bi = 0; bi < sess.bMarks.length; bi++) { allowed[sess.bMarks[bi]] = true; }
+        var filtered = [];
+        for (var pi = 0; pi < T.question.parts.length; pi++) {
+          if (allowed[T.question.parts[pi].marks]) { filtered.push(T.question.parts[pi]); }
+        }
+        if (filtered.length > 0) {
+          T.question.parts = filtered;
+          var newTotal = 0;
+          for (var mi = 0; mi < filtered.length; mi++) { newTotal += filtered[mi].marks; }
+          T.question.marks = newTotal;
+        }
+      }
+    } catch (e) { /* ignore */ }
+
     var state = {
       text:     {},     /* partId → string                     */
       revealed: false

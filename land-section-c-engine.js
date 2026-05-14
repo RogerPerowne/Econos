@@ -11,6 +11,7 @@
 
     var state = {
       text:     '',
+      diagrams: {},     /* 'essay' → data URL */
       revealed: false
     };
 
@@ -130,6 +131,70 @@
         + strongHtml;
     }
 
+    /* ── diagram attachment ──────────────────────────────── */
+
+    function renderDiagramZone(partId) {
+      var dataUrl = state.diagrams[partId];
+      var inner = '';
+      if (dataUrl) {
+        inner = '<div class="land-diagram-zone__preview-wrap">'
+          + '<img src="' + dataUrl + '" class="land-diagram-zone__img" alt="Your diagram">'
+          + '<button class="land-diagram-zone__remove" data-diag-remove="' + partId + '">× Remove diagram</button>'
+          + '</div>';
+      } else {
+        inner = '<input type="file" accept="image/*" class="land-diagram-zone__input" id="diag-input-' + partId + '" data-diag-input="' + partId + '">'
+          + '<label for="diag-input-' + partId + '" class="land-diagram-btn">'
+          +   '<span class="land-diagram-btn__icon">&#x1F4CE;</span>'
+          +   '<span>Add diagram</span>'
+          + '</label>';
+      }
+      return '<div class="land-diagram-zone" id="diag-zone-' + partId + '">' + inner + '</div>';
+    }
+
+    function updateDiagramZoneContent(partId) {
+      var zone = document.getElementById('diag-zone-' + partId);
+      if (!zone) { return; }
+      var dataUrl = state.diagrams[partId];
+      if (dataUrl) {
+        zone.innerHTML = '<div class="land-diagram-zone__preview-wrap">'
+          + '<img src="' + dataUrl + '" class="land-diagram-zone__img" alt="Your diagram">'
+          + '<button class="land-diagram-zone__remove" data-diag-remove="' + partId + '">× Remove diagram</button>'
+          + '</div>';
+      } else {
+        zone.innerHTML = '<input type="file" accept="image/*" class="land-diagram-zone__input" id="diag-input-' + partId + '" data-diag-input="' + partId + '">'
+          + '<label for="diag-input-' + partId + '" class="land-diagram-btn">'
+          +   '<span class="land-diagram-btn__icon">&#x1F4CE;</span>'
+          +   '<span>Add diagram</span>'
+          + '</label>';
+      }
+      var newInput = zone.querySelector('[data-diag-input]');
+      if (newInput) { attachDiagramInput(newInput); }
+      var removeBtn = zone.querySelector('[data-diag-remove]');
+      if (removeBtn) { attachDiagramRemove(removeBtn); }
+    }
+
+    function attachDiagramInput(inp) {
+      inp.addEventListener('change', function () {
+        var partId = inp.getAttribute('data-diag-input');
+        var file = inp.files && inp.files[0];
+        if (!file) { return; }
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          state.diagrams[partId] = e.target.result;
+          updateDiagramZoneContent(partId);
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function attachDiagramRemove(btn) {
+      btn.addEventListener('click', function () {
+        var partId = btn.getAttribute('data-diag-remove');
+        state.diagrams[partId] = null;
+        updateDiagramZoneContent(partId);
+      });
+    }
+
     /* ── essay question ──────────────────────────────────── */
 
     function renderQuestion() {
@@ -164,6 +229,7 @@
         + '</div>'
         + '<div class="land-essay-card__stem">' + q.stem + '</div>'
         + '<textarea class="land-freetext-ta land-freetext-ta--essay" data-ta="essay" rows="16" placeholder="Plan your structure, then write your essay here…">' + state.text + '</textarea>'
+        + renderDiagramZone('essay')
         + tipsHtml
         + modelHtml
         + '</div>';
@@ -304,6 +370,14 @@
           window.location.href = continueBtn.getAttribute('data-href');
         });
       }
+
+      /* diagram file inputs */
+      var diagInputs = root.querySelectorAll('[data-diag-input]');
+      for (var di = 0; di < diagInputs.length; di++) { attachDiagramInput(diagInputs[di]); }
+
+      /* diagram remove buttons */
+      var diagRemoves = root.querySelectorAll('[data-diag-remove]');
+      for (var dr = 0; dr < diagRemoves.length; dr++) { attachDiagramRemove(diagRemoves[dr]); }
     }
 
     saveSectionStart('C');

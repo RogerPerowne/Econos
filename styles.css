@@ -8692,6 +8692,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   flex-direction: column;
   gap: var(--sp-5);
   padding-bottom: var(--sp-10);
+  min-width: 0; /* prevent CSS grid blowout */
 }
 
 /* section header */
@@ -8815,17 +8816,14 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 }
 .land-q-card__body {
   display: flex;
-  gap: 0;
+  flex-direction: column;
 }
 .land-q-context {
-  width: 42%;
-  flex-shrink: 0;
-  padding: var(--sp-5);
-  border-right: 1px solid var(--econ-gray-100);
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 1px solid var(--econ-gray-100);
   background: var(--econ-gray-50);
 }
 .land-q-parts {
-  flex: 1;
   padding: var(--sp-5) var(--sp-6);
   display: flex;
   flex-direction: column;
@@ -9267,8 +9265,6 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* responsive */
 @media (max-width: 820px) {
-  .land-q-card__body { flex-direction: column; }
-  .land-q-context { width: 100%; border-right: none; border-bottom: 1px solid var(--econ-gray-100); }
   .land-calc-flow { flex-wrap: wrap; }
   .land-calc-arrow { padding-top: 0; align-self: center; }
   .land-section-header { padding: var(--sp-4) var(--sp-5); }

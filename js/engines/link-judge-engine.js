@@ -6,7 +6,7 @@
   'use strict';
 
   window.bootLinkJudge = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 3) { window.location.replace('link_inflation_context.html'); return; } } catch (e) {}
+    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 3) { window.location.replace(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_JUDGE;

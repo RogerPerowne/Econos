@@ -70,8 +70,8 @@
 
     function renderRightRail() {
       var stages = [
-        { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: 'topic_inflation.html'      },
-        { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: 'link_inflation_intro.html' },
+        { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
+        { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
         { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                    }
       ];
 
@@ -277,9 +277,9 @@
       if (idx === -1 || idx === session.sections.length - 1) { return null; }
       var next = session.sections[idx + 1];
       var map = {
-        'A': { label: 'Section A', href: 'land_inflation_section_a.html' },
-        'B': { label: 'Section B', href: 'land_inflation_section_b.html' },
-        'C': { label: 'Section C', href: 'land_inflation_section_c.html' }
+        'A': { label: 'Section A', href: TopicLoader.buildUrl('land_section_a.html') },
+        'B': { label: 'Section B', href: TopicLoader.buildUrl('land_section_b.html') },
+        'C': { label: 'Section C', href: TopicLoader.buildUrl('land_section_c.html') }
       };
       return map[next] || null;
     }
@@ -288,7 +288,7 @@
       var next = getNextSection(currentSection);
       var revealBtnCls  = 'btn btn--ghost btn--lg' + (state.revealed ? ' is-disabled' : '');
       var revealLabel   = state.revealed ? revealLabelPost : revealLabelPre;
-      var continueHref  = next ? next.href : 'land_inflation_complete.html';
+      var continueHref  = next ? next.href : TopicLoader.buildUrl('land_complete.html');
       var continueLabel = next ? ('Continue to ' + next.label) : 'Finish &amp; see results';
       var continueBtn   = '<button id="js-continue-btn" data-href="' + continueHref + '" class="btn btn--primary btn--lg">' + continueLabel + ' ' + I.arrowRight + '</button>';
       return '<div class="land-bottom-bar">'

@@ -8,7 +8,7 @@
   'use strict';
 
   window.bootLinkComplete = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 4) { window.location.replace('link_inflation_context.html'); return; } } catch (e) {}
+    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 4) { window.location.replace(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_COMPLETE;
@@ -159,10 +159,8 @@
 
     function renderFooter() {
       var weakHref = weakestId
-        ? ('link_inflation_' + weakestId + '.html')
+        ? TopicLoader.buildUrl('link_' + weakestId + '.html')
         : '#';
-      if (weakestId === 'context') weakHref = 'link_inflation_context.html';
-      if (weakestId === 'judge')   weakHref = 'link_inflation_judge.html';
 
       return ''
         + '<div class="link-footer">'
@@ -259,7 +257,7 @@
     function renderTopbar() {
       return ''
         + '<header class="topbar">'
-        +   '<a href="link_inflation_intro.html" class="topbar__back">' + I.arrowLeft + '<span>Back to dashboard</span></a>'
+        +   '<a href="' + TopicLoader.buildUrl('link_intro.html') + '" class="topbar__back">' + I.arrowLeft + '<span>Back to dashboard</span></a>'
         +   '<div class="topbar__crumbs">'
         +     '<div class="topbar__session-label">' + DATA.sessionLabel + '</div>'
         +     '<div class="topbar__topic-title">' + DATA.topic + '</div>'

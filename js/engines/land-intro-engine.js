@@ -53,13 +53,13 @@
     }
     function buildHref() {
       if (typeof state.sectionA === 'number' && state.sectionA > 0) {
-        return 'land_inflation_section_a.html';
+        return TopicLoader.buildUrl('land_section_a.html');
       }
       if (hasSectionB()) {
-        return 'land_inflation_section_b.html';
+        return TopicLoader.buildUrl('land_section_b.html');
       }
       if (state.sectionC === 'include') {
-        return 'land_inflation_section_c.html';
+        return TopicLoader.buildUrl('land_section_c.html');
       }
       return '#';
     }
@@ -136,7 +136,7 @@
 
     function renderTopbar() {
       return '<header class="topbar">'
-        + '<a href="topic_inflation.html" class="topbar__back">' + I.arrowLeft + '</a>'
+        + '<a href="' + TopicLoader.buildUrl('topic.html') + '" class="topbar__back">' + I.arrowLeft + '</a>'
         + '<div class="topbar__crumbs">'
         +   '<div class="topbar__session-label">' + T.sessionLabel + '</div>'
         +   '<div class="topbar__topic-title">' + T.topic + '</div>'

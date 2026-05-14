@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
     stages: [
       { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',       state: 'current'                                  },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context',    state: 'available', href: 'link_inflation_intro.html' },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'locked'                                   }
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: 'land_inflation_intro.html' }
     ]
   },
 

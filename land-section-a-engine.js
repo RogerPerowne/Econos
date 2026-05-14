@@ -231,10 +231,11 @@
         feedbackHtml = '<div class="' + fbCls + '">' + fbText + '</div>';
       }
 
+      var letterHtml = part.letter ? '<span class="land-part__letter">(' + part.letter + ')</span>' : '';
       var partMarksTxt = '(' + part.marks + ' mark' + (part.marks > 1 ? 's' : '') + ')';
       return '<div class="land-part">'
         + '<div class="land-part__stem">'
-        +   '<span class="land-part__letter">(' + part.letter + ')</span>'
+        +   letterHtml
         +   '<span class="land-part__stem-text">' + part.stem + '</span>'
         +   '<span class="land-part__marks">' + partMarksTxt + '</span>'
         + '</div>'
@@ -307,9 +308,11 @@
         + modelInterpHtml
         + '</div>';
 
+      var calcLetterHtml = part.letter ? '<span class="land-part__letter">(' + part.letter + ')</span>' : '';
       var partMarksTxt = '(' + part.marks + ' mark' + (part.marks > 1 ? 's' : '') + ')';
       return '<div class="land-part land-part--calc">'
         + '<div class="land-part__stem land-part__stem--row">'
+        +   calcLetterHtml
         +   '<span class="land-part__stem-text">' + part.stem + '</span>'
         +   '<span class="land-part__marks">' + partMarksTxt + '</span>'
         + '</div>'
@@ -337,6 +340,29 @@
             + '</div>';
         }).join('');
         return '<div class="land-data-grid">' + itemsHtml + '</div>';
+      }
+      if (ctx.type === 'data-table') {
+        var titleHtml = ctx.tableTitle ? '<div class="land-table__title">' + ctx.tableTitle + '</div>' : '';
+        var headCells = ctx.headers.map(function (h) {
+          return '<th>' + h + '</th>';
+        }).join('');
+        var bodyRows = ctx.rows.map(function (row) {
+          var cells = row.values.map(function (v) {
+            return '<td>' + v + '</td>';
+          }).join('');
+          return '<tr><td class="land-table__label">' + row.label + '</td>' + cells + '</tr>';
+        }).join('');
+        return '<div class="land-table-wrap">'
+          + titleHtml
+          + '<table class="land-table"><thead><tr>' + headCells + '</tr></thead><tbody>' + bodyRows + '</tbody></table>'
+          + '</div>';
+      }
+      if (ctx.type === 'text-extract') {
+        var sourceHtml = ctx.source ? '<div class="land-extract__source">' + ctx.source + '</div>' : '';
+        return '<div class="land-extract">'
+          + '<div class="land-extract__text">' + ctx.text + '</div>'
+          + sourceHtml
+          + '</div>';
       }
       return '';
     }

@@ -31,7 +31,7 @@ window.ECONOS_LINK_INTRO = {
     stages: [
       { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',       state: 'done',     href: 'topic_inflation.html'      },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context',    state: 'current'                                       },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'locked'                                        }
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: 'land_inflation_intro.html' }
     ],
 
     startUrl:   'link_inflation_context.html',

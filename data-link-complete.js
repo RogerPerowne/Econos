@@ -66,5 +66,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'Combine your chain, diagram and evaluation into one structured judgement: clear position, mechanism, condition, limitation.'
   },
 
-  nextUrl: '#'
+  nextUrl: 'land_inflation_intro.html'
 };

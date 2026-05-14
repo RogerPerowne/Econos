@@ -19,6 +19,22 @@
 
     /* ── helpers ──────────────────────────────────────────── */
 
+    function hasSectionB() {
+      for (var i = 0; i < state.sectionB.length; i++) {
+        if (state.sectionB[i] !== 'none') { return true; }
+      }
+      return false;
+    }
+    function buildHref() {
+      if (typeof state.sectionA === 'number' && state.sectionA > 0) {
+        return 'land_inflation_section_a.html';
+      }
+      if (hasSectionB()) {
+        return 'land_inflation_section_b.html';
+      }
+      return '#';
+    }
+
     function sectionAMarks() {
       return (typeof state.sectionA === 'number') ? state.sectionA * 5 : 0;
     }
@@ -272,7 +288,7 @@
         +   '</div>'
         + '</div>'
         + '<div class="land-session-meta__cta">'
-        +   '<a href="' + (typeof state.sectionA === 'number' && state.sectionA > 0 ? 'land_inflation_section_a.html' : '#') + '" class="btn btn--primary btn--lg' + disabledCls + '">Build my session ' + I.arrowRight + '</a>'
+        +   '<a href="' + buildHref() + '" class="btn btn--primary btn--lg' + disabledCls + '">Build my session ' + I.arrowRight + '</a>'
         + '</div>'
         + '</div>';
     }

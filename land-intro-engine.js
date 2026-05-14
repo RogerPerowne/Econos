@@ -25,6 +25,15 @@
       }
       return false;
     }
+    function saveSessionToStorage() {
+      var sections = [];
+      if (typeof state.sectionA === 'number' && state.sectionA > 0) { sections.push('A'); }
+      if (hasSectionB())                                             { sections.push('B'); }
+      if (state.sectionC === 'include')                              { sections.push('C'); }
+      try {
+        localStorage.setItem('econosLandSession', JSON.stringify({ sections: sections, topic: 'inflation' }));
+      } catch (e) { /* ignore */ }
+    }
     function buildHref() {
       if (typeof state.sectionA === 'number' && state.sectionA > 0) {
         return 'land_inflation_section_a.html';
@@ -383,6 +392,7 @@
         el.innerHTML = renderSectionA() + renderSectionB() + renderSectionC();
         attachHandlers();
       }
+      saveSessionToStorage();
     }
 
     /* ── event handlers ──────────────────────────────────── */

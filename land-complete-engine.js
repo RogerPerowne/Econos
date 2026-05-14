@@ -166,7 +166,8 @@
 
       return '<div class="lc-station-table">'
         + '<div class="lc-station-table__head">'
-        +   '<span>Section</span>'
+        +   '<span class="lc-th--spacer"></span>'
+        +   '<span class="lc-th--name">Section</span>'
         +   '<span class="lc-th--score">Score</span>'
         +   '<span class="lc-th--time">Time</span>'
         + '</div>'

@@ -4,7 +4,7 @@
 
 window.ECONOS_LINK_COMPLETE = {
   topic:        'Causes of Inflation & Deflation',
-  sessionLabel: 'SESSION 2 OF 3: LINK',
+  sessionLabel: 'Session 2 of 3: Link',
 
   stations: [
     { id: 'context', label: 'Use the context',    max: 5, color: '#059669' },

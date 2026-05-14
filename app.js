@@ -849,7 +849,7 @@
               </button>
               <span class="card-foot__counter">Card ${idx + 1} of ${T.cards.length}</span>
               <button class="btn btn--primary" data-action="next" data-next-button>
-                ${isLast ? 'Start quick check' : 'Next card'} ${I.arrowRight}
+                ${isLast ? 'Next: Quick check' : 'Next card'} ${I.arrowRight}
               </button>
             </div>
           </div>

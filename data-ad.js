@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   id: 'aggregate_demand',
   topicNum: '2.2',
   theme: 'Theme 2 · The National and Global Economy',
-  sessionLabel: 'SESSION 1 OF 3: LEARN',
+  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Aggregate Demand',
   estTime: '6-8 minutes',
   goal: 'Lock in the four engines that drive AD',

@@ -182,15 +182,36 @@
             ? '<button class="chain-slot__remove" data-remove-slot="' + i + '" aria-label="Remove tile">×</button>'
             : '';
 
-          slots.push(
-            '<div class="chain-slot chain-slot--filled' + statusCls + '">'
+          var slotHtml = '<div class="chain-slot chain-slot--filled' + statusCls + '">'
             + '<div class="chain-slot__num">' + slotNum + '</div>'
             + '<div class="chain-slot__icon">' + tile.icon + '</div>'
             + '<div class="chain-slot__text">' + tile.text + '</div>'
             + removeBtn
             + markHtml
-            + '</div>'
-          );
+            + '</div>';
+
+          if (state.checked) {
+            var explainEntry = C.explain.filter(function (e) { return e.pos === i; })[0];
+            var explainText  = explainEntry ? explainEntry.text : '';
+            var correctTile  = C.tiles.filter(function (t) { return t.pos === i; })[0];
+            var idealLabel, idealBody;
+            if (correct) {
+              idealLabel = 'Ideal reasoning';
+              idealBody  = explainText;
+            } else {
+              idealLabel = 'Not the strongest next link';
+              idealBody  = (correctTile
+                ? '<div class="chain-ideal__correction">→ ' + correctTile.icon + ' ' + correctTile.text + '</div>'
+                : '')
+                + explainText;
+            }
+            slotHtml += '<div class="chain-ideal chain-ideal--' + (correct ? 'correct' : 'wrong') + '">'
+              + '<div class="chain-ideal__label">' + idealLabel + '</div>'
+              + '<div class="chain-ideal__text">' + idealBody + '</div>'
+              + '</div>';
+          }
+
+          slots.push(slotHtml);
         }
       }
 
@@ -234,33 +255,8 @@
     function renderFeedback(C) {
       if (!state.checked) return '';
 
-      var rowsHtml = C.explain.map(function (ex) {
-        var correct = isCorrect(C, ex.pos);
-        var placed  = state.placements[ex.pos];
-        var tile    = placed ? tileById(C, placed) : null;
-        var correct_tile = C.tiles.filter(function (t) { return t.pos === ex.pos; })[0];
-
-        var markCls  = correct ? 'chain-fb__mark--ok' : 'chain-fb__mark--no';
-        var markGlyph = correct ? '✓' : '✕';
-        var wrongNote = (!correct && tile && correct_tile)
-          ? '<span class="chain-fb__correction">→ ' + correct_tile.icon + ' ' + correct_tile.text + '</span>'
-          : '';
-
-        return ''
-          + '<div class="chain-fb__row">'
-          +   '<div class="chain-fb__head">'
-          +     '<span class="chain-fb__mark ' + markCls + '">' + markGlyph + '</span>'
-          +     '<span class="chain-fb__step">Step ' + (ex.pos + 2) + '</span>'
-          +     (tile ? '<span class="chain-fb__placed">' + tile.icon + ' ' + tile.text + '</span>' : '')
-          +     wrongNote
-          +   '</div>'
-          +   '<div class="chain-fb__text">' + ex.text + '</div>'
-          + '</div>';
-      }).join('');
-
       return ''
         + '<div class="chain-feedback">'
-        +   '<div class="chain-fb">' + rowsHtml + '</div>'
         +   '<div class="link-bridge">'
         +     '<div class="link-bridge__label">In an exam answer, this becomes…</div>'
         +     '<div class="link-bridge__text">' + C.examBridge + '</div>'

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>econos · Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF8F4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #E7E7EA;
+      border-radius: 16px;
+      padding: 48px 40px 40px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 4px 24px rgba(11,20,38,0.07);
+    }
+    .logo {
+      display: block;
+      height: 28px;
+      margin: 0 auto 32px;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #0B1426;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #6B7280;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      color: #0B1426;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.15s;
+      margin-bottom: 16px;
+    }
+    input:focus { border-color: #2563EB; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      background: #0B1426;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #1a2d4d; }
+    .error {
+      font-size: 13px;
+      color: #DC2626;
+      text-align: center;
+      margin-top: 14px;
+      min-height: 18px;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: #9CA3AF;
+      text-align: center;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="assets/econos-logo-full.png" alt="econos" class="logo">
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to access the demo</p>
+    <form id="login-form" autocomplete="off">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Username" autocomplete="username">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+      <button type="submit" class="btn">Sign in</button>
+    </form>
+    <div class="error" id="error-msg"></div>
+    <p class="footer-note">A-Level Economics &mdash; Demo access only</p>
+  </div>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var u = document.getElementById('username').value.trim();
+      var p = document.getElementById('password').value;
+      if (u === 'econos' && p === 'demo2024') {
+        localStorage.setItem('econosAuth', '1');
+        window.location.href = 'index.html';
+      } else {
+        document.getElementById('error-msg').textContent = 'Incorrect username or password.';
+      }
+    });
+  </script>
+</body>
+</html>

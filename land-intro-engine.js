@@ -32,6 +32,9 @@
       if (hasSectionB()) {
         return 'land_inflation_section_b.html';
       }
+      if (state.sectionC === 'include') {
+        return 'land_inflation_section_c.html';
+      }
       return '#';
     }
 

@@ -120,7 +120,8 @@ window.ECONOS_TOPIC = {
         { term: 'Sludge', def: 'Friction deliberately built into processes to discourage good decisions — the negative use of choice architecture.' },
         { term: 'Present bias', def: 'Tendency to overweight immediate rewards relative to future ones — beyond normal time preference.' }
       ],
-      examEdge: 'Internalities extend the market failure rationale for intervention beyond externalities: even without spillover to others, an individual\'s present-biased decision imposes costs on their future self. This justifies sugar taxes, tobacco regulation, and pension auto-enrolment purely on grounds of protecting individuals from their own biases — not just protecting third parties. Strong evaluation point for any behaviour-change policy essay.'
+      examEdge: 'Internalities extend the market failure rationale for intervention beyond externalities: even without spillover to others, an individual\'s present-biased decision imposes costs on their future self. This justifies sugar taxes, tobacco regulation, and pension auto-enrolment purely on grounds of protecting individuals from their own biases — not just protecting third parties. Strong evaluation point for any behaviour-change policy essay.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

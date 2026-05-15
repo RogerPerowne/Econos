@@ -260,19 +260,16 @@
       </div>`;
     }
 
-    // Key terms — coloured tiles with click-to-reveal definitions
+    // Key terms — coloured tiles, definitions always visible, one row
     if (c.keyTerms && c.keyTerms.length) {
-      content += genSecLabel('🔑', 'Key terms — tap each to reveal');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:22px;">
+      content += genSecLabel('🔑', 'Key terms');
+      content += `<div style="display:grid;grid-template-columns:repeat(${c.keyTerms.length},1fr);gap:12px;margin-bottom:22px;">
         ${c.keyTerms.map((kt, i) => {
           const t = TONES[i % TONES.length];
           return `
-          <div class="key-tile" style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}30;">
+          <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}30;">
             <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;">${kt.term}</div>
-            <div style="padding:10px 14px;">
-              <button data-action="reveal-def" style="background:none;border:1.5px dashed ${t.border};color:${t.label};font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;width:100%;text-align:center;">Reveal definition ↓</button>
-              <div class="key-tile__def is-hidden" style="font-size:13px;color:#2A3650;line-height:1.55;margin-top:10px;">${kt.def}</div>
-            </div>
+            <div style="padding:12px 14px;font-size:13px;color:#2A3650;line-height:1.55;">${kt.def}</div>
           </div>`;
         }).join('')}
       </div>`;

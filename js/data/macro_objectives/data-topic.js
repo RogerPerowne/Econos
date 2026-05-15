@@ -109,6 +109,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 7',
       title: 'The Phillips curve: inflation-unemployment trade-off',
       lede: "Bill Phillips discovered in 1958 that lower unemployment correlated with higher wage inflation. This became the theoretical foundation for demand management — and the controversy that followed is equally important.",
+      diagramKey: 'phillipsInteractive',
       steps: [
         {
           key: 'base',

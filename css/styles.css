@@ -3302,6 +3302,29 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .market-svg .layer-shift { opacity: 1; }
 .show-shift .market-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== PHILLIPS INTERACTIVE ===== */
+.phillips-svg .layer-axes,
+.phillips-svg .layer-srpc1,
+.phillips-svg .layer-point-a,
+.phillips-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.phillips-svg .layer-lrpc,
+.phillips-svg .layer-srpc2,
+.phillips-svg .layer-friedman-points,
+.phillips-svg .layer-legend-extension,
+.phillips-svg .layer-stagflation,
+.phillips-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .phillips-svg .layer-point-a { opacity: 0.45; }
+.show-extension .phillips-svg .layer-legend-base { opacity: 0; }
+.show-extension .phillips-svg .layer-lrpc { opacity: 1; }
+.show-extension .phillips-svg .layer-srpc2 { opacity: 1; }
+.show-extension .phillips-svg .layer-friedman-points { opacity: 1; }
+.show-extension .phillips-svg .layer-legend-extension { opacity: 1; }
+.show-shift .phillips-svg .layer-srpc1 { opacity: 0.3; }
+.show-shift .phillips-svg .layer-point-a { opacity: 0.3; }
+.show-shift .phillips-svg .layer-legend-base { opacity: 0; }
+.show-shift .phillips-svg .layer-stagflation { opacity: 1; }
+.show-shift .phillips-svg .layer-legend-shift { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;

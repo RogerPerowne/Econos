@@ -5330,4 +5330,183 @@ window.ECONOS_ICONS = {
       </g>
     </svg>
   `,
+
+  kinkedDemandInteractive: `
+    <svg class="kink-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="kink-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
+        <marker id="kink-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="kink-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#D97706"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: kink-point (always visible — current price/quantity) ===== -->
+      <g class="layer-kink-point">
+        <!-- P* dashed horizontal to kink -->
+        <line x1="60" y1="200" x2="250" y2="200" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- Q* dashed vertical to x-axis -->
+        <line x1="250" y1="200" x2="250" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- Kink point (purple, prominent) -->
+        <circle cx="250" cy="200" r="6.5" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
+        <text x="46" y="204" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">P*</text>
+        <text x="250" y="418" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="middle">Q*</text>
+      </g>
+
+      <!-- ===== LAYER: elastic-d (upper segment of demand — base + later states) ===== -->
+      <g class="layer-elastic-d">
+        <g clip-path="url(#kink-chart-clip)">
+          <!-- D1 (elastic, above P*): (60,140) → (250,200), gentle slope 0.316 -->
+          <line x1="60" y1="140" x2="250" y2="200" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- Label for upper elastic segment -->
+        <text x="70" y="128" font-size="11" font-weight="700" fill="#2563EB">D₁ (elastic — rivals hold)</text>
+      </g>
+
+      <!-- ===== LAYER: inelastic-d (lower segment of demand — extension + later states) ===== -->
+      <g class="layer-inelastic-d">
+        <g clip-path="url(#kink-chart-clip)">
+          <!-- D2 (inelastic, below P*): (250,200) → (510,380), steeper slope 0.692 -->
+          <line x1="250" y1="200" x2="510" y2="380" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- Label for lower inelastic segment -->
+        <text x="395" y="312" font-size="11" font-weight="700" fill="#2563EB">D₂ (inelastic — rivals match)</text>
+      </g>
+
+      <!-- ===== LAYER: mr (shift + efficiency states) ===== -->
+      <g class="layer-mr">
+        <g clip-path="url(#kink-chart-clip)">
+          <!-- MR1 (from elastic D1): (60,140) → (250,260), slope = 2*0.316 = 0.632 -->
+          <line x1="60" y1="140" x2="250" y2="260" stroke="#0EA5E9" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <!-- MR2 (from extrapolated inelastic D2): (250,331) → (299.5,400), slope = 2*0.692 = 1.384 -->
+          <line x1="250" y1="331" x2="299" y2="400" stroke="#0EA5E9" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <!-- Vertical MR gap at Q*=250: from MR1 end (260) to MR2 start (331) -->
+          <line x1="250" y1="260" x2="250" y2="331" stroke="#D97706" stroke-width="2.5"/>
+          <!-- Gap endpoint dots -->
+          <circle cx="250" cy="260" r="3.5" fill="#0EA5E9"/>
+          <circle cx="250" cy="331" r="3.5" fill="#0EA5E9"/>
+        </g>
+        <!-- MR labels -->
+        <text x="155" y="218" font-size="11" font-weight="700" fill="#0EA5E9">MR₁</text>
+        <text x="305" y="395" font-size="11" font-weight="700" fill="#0EA5E9">MR₂</text>
+        <!-- Gap label and bracket -->
+        <line x1="260" y1="260" x2="278" y2="260" stroke="#D97706" stroke-width="1.5"/>
+        <line x1="260" y1="331" x2="278" y2="331" stroke="#D97706" stroke-width="1.5"/>
+        <line x1="278" y1="260" x2="278" y2="331" stroke="#D97706" stroke-width="1.5"/>
+        <rect x="284" y="285" width="56" height="20" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+        <text x="312" y="299" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">MR gap</text>
+      </g>
+
+      <!-- ===== LAYER: mc (efficiency state only — multiple MC curves through gap) ===== -->
+      <g class="layer-mc">
+        <g clip-path="url(#kink-chart-clip)">
+          <!-- MC1 (original, through middle of gap): passes through (250, 295), slope -0.15 -->
+          <line x1="60" y1="323" x2="510" y2="256" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+          <!-- MC shifted UP (cost decrease, still in gap): passes through (250, 270) -->
+          <line x1="60" y1="298" x2="510" y2="231" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 4" opacity="0.55"/>
+          <!-- MC shifted DOWN (cost increase, still in gap): passes through (250, 320) -->
+          <line x1="60" y1="348" x2="510" y2="281" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 4" opacity="0.55"/>
+        </g>
+        <text x="515" y="260" font-size="13" font-weight="700" fill="#DC2626">MC</text>
+        <text x="515" y="235" font-size="10" font-weight="600" fill="#DC2626" opacity="0.65">MC↓</text>
+        <text x="515" y="285" font-size="10" font-weight="600" fill="#DC2626" opacity="0.65">MC↑</text>
+        <!-- Annotation: all MC within gap → same Q*, P* -->
+        <rect x="350" y="65" width="190" height="38" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+        <text x="445" y="80" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">Any MC within the gap</text>
+        <text x="445" y="96" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">→ price stays at P*</text>
+      </g>
+
+      <!-- ===== LAYER: panel-base ===== -->
+      <g class="layer-panel-base">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price rise scenario: rivals don't follow → elastic above P*</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">IF YOU RAISE PRICE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Rivals don't follow — they keep</text>
+        <text x="620" y="118" font-size="13" fill="#334155">their prices to grab your share.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">You lose many customers</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Demand is ELASTIC above P*:</text>
+        <text x="620" y="188" font-size="13" fill="#334155">small price rise → big Q drop.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REAL EXAMPLE</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Supermarket raises bread 20p:</text>
+        <text x="620" y="262" font-size="13" fill="#334155">rivals stay put → shoppers</text>
+        <text x="620" y="280" font-size="13" fill="#334155">switch stores quickly.</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: what if you cut price instead?</text>
+      </g>
+
+      <!-- ===== LAYER: panel-ext ===== -->
+      <g class="layer-panel-ext">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price cut scenario: rivals match → inelastic below P*</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">IF YOU CUT PRICE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Rivals match the cut — they</text>
+        <text x="620" y="118" font-size="13" fill="#334155">fear losing market share.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">You gain few new customers</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Demand is INELASTIC below P*:</text>
+        <text x="620" y="188" font-size="13" fill="#334155">big price cut → small Q gain.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">ASYMMETRIC REACTIONS</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Rivals follow cuts (defensive)</text>
+        <text x="620" y="262" font-size="13" fill="#334155">but ignore rises (predatory).</text>
+        <text x="620" y="280" font-size="13" fill="#334155">→ Demand curve is KINKED at P*.</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: derive MR from the kinked D</text>
+      </g>
+
+      <!-- ===== LAYER: panel-shift ===== -->
+      <g class="layer-panel-shift">
+        <circle cx="74" cy="32" r="7" fill="#D97706"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MR has a vertical discontinuity at Q*</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">THE MR GAP</text>
+        <text x="620" y="100" font-size="13" fill="#334155">MR is derived from each D</text>
+        <text x="620" y="118" font-size="13" fill="#334155">segment separately:</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#0EA5E9">MR₁ (from elastic D₁)</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Gentle slope — ends just below</text>
+        <text x="620" y="188" font-size="13" fill="#334155">D₁ at the kink quantity Q*.</text>
+        <text x="620" y="218" font-size="13" font-weight="700" fill="#0EA5E9">MR₂ (from inelastic D₂)</text>
+        <text x="620" y="236" font-size="13" fill="#334155">Steeper — starts well below</text>
+        <text x="620" y="254" font-size="13" fill="#334155">MR₁ at Q*, falls rapidly.</text>
+        <text x="620" y="288" font-size="13" font-weight="700" fill="#D97706">Vertical gap at Q*</text>
+        <text x="620" y="306" font-size="13" fill="#334155">MR is discontinuous — jumps</text>
+        <text x="620" y="324" font-size="13" fill="#334155">down as Q crosses Q*.</text>
+      </g>
+
+      <!-- ===== LAYER: panel-eff ===== -->
+      <g class="layer-panel-eff">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price rigidity: MC shifts within the gap leave P* unchanged</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">PROFIT-MAX RULE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Firm sets MR = MC.</text>
+        <text x="620" y="118" font-size="13" fill="#334155">If MC passes through the gap,</text>
+        <text x="620" y="136" font-size="13" fill="#334155">optimal output remains at Q*.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Cost shocks within the gap</text>
+        <text x="620" y="188" font-size="13" fill="#334155">do not change P*.</text>
+        <text x="620" y="206" font-size="13" fill="#334155">Dashed MC lines: cost</text>
+        <text x="620" y="224" font-size="13" fill="#334155">shifts up and down — still</text>
+        <text x="620" y="242" font-size="13" fill="#334155">cross MR within the gap.</text>
+        <text x="620" y="276" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXPLAINS</text>
+        <text x="620" y="298" font-size="13" fill="#334155">Sticky oligopoly prices:</text>
+        <text x="620" y="316" font-size="13" fill="#334155">petrol, supermarkets, airlines.</text>
+        <text x="620" y="334" font-size="13" fill="#334155">Costs fluctuate but P holds.</text>
+      </g>
+    </svg>
+  `,
 };

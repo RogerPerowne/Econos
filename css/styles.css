@@ -3462,6 +3462,29 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .mvc-svg .layer-monopoly-eq { opacity: 1; }
 .show-shift .mvc-svg .layer-welfare-decomp { opacity: 1; }
 .show-shift .mvc-svg .layer-panel-shift { opacity: 1; }
+/* === Kinked Demand Curve Interactive === */
+.kink-svg .layer-axes,
+.kink-svg .layer-kink-point,
+.kink-svg .layer-elastic-d,
+.kink-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.kink-svg .layer-inelastic-d,
+.kink-svg .layer-mr,
+.kink-svg .layer-mc,
+.kink-svg .layer-panel-ext,
+.kink-svg .layer-panel-shift,
+.kink-svg .layer-panel-eff { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .kink-svg .layer-panel-base { opacity: 0; }
+.show-extension .kink-svg .layer-inelastic-d { opacity: 1; }
+.show-extension .kink-svg .layer-panel-ext { opacity: 1; }
+.show-shift .kink-svg .layer-panel-base { opacity: 0; }
+.show-shift .kink-svg .layer-inelastic-d { opacity: 1; }
+.show-shift .kink-svg .layer-mr { opacity: 1; }
+.show-shift .kink-svg .layer-panel-shift { opacity: 1; }
+.show-efficiency .kink-svg .layer-panel-base { opacity: 0; }
+.show-efficiency .kink-svg .layer-inelastic-d { opacity: 1; }
+.show-efficiency .kink-svg .layer-mr { opacity: 1; }
+.show-efficiency .kink-svg .layer-mc { opacity: 1; }
+.show-efficiency .kink-svg .layer-panel-eff { opacity: 1; }
 
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {

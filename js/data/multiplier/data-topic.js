@@ -10,7 +10,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'National Income & The Multiplier',
-  estTime: '9-11 minutes',
+  estTime: '11-13 minutes',
   goal: 'Lock in equilibrium income, the multiplier formula, and the leakages that shrink it',
 
   intro: {
@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards',    state: 'current' },
+      { num: 1, name: 'Learn it', sub: '9 concept cards',    state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
     ]
@@ -36,7 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'circular-flow',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
+      stepLabel: 'Learn: Step 1 of 9',
       title: 'The circular flow of income',
       lede: 'Income circulates between households and firms. Injections add to the flow; leakages remove from it. Equilibrium is where injections equal leakages.',
       branches: [
@@ -58,7 +58,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'equilibrium-income',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 2 of 8',
+      stepLabel: 'Learn: Step 2 of 9',
       title: 'Equilibrium national income',
       lede: 'The economy reaches equilibrium when planned expenditure equals actual output — and when injections equal leakages. Knowing what moves it is the foundation of macro policy analysis.',
       mechanisms: [
@@ -101,7 +101,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'multiplier-formula',
       template: 'puzzle',
-      stepLabel: 'Learn: Step 3 of 8',
+      stepLabel: 'Learn: Step 3 of 9',
       title: 'The multiplier: formula and mechanism',
       lede: "A £10bn injection doesn't just add £10bn to GDP. It circulates — income, spending, income, spending — until leakages drain it away. The multiplier tells you the total effect.",
       classical: {
@@ -137,7 +137,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'multiplier-worked',
       template: 'worked-example',
-      stepLabel: 'Learn: Step 4 of 8',
+      stepLabel: 'Learn: Step 4 of 9',
       title: 'Worked Example: Calculating the Multiplier Effect',
       scenario: 'The UK government announces a <strong>£10bn green infrastructure programme</strong> — new offshore wind farms built using domestic contractors. A macro analyst is asked to estimate the total impact on national income.\n\nGiven: MPS = 0.15 · MRT = 0.25 · MPM = 0.10',
       steps: [
@@ -179,7 +179,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       tone: 'amber',
       bannerLabel: 'What determines the multiplier value?',
-      stepLabel: 'Learn: Step 5 of 8',
+      stepLabel: 'Learn: Step 5 of 9',
       title: 'What determines the size of the multiplier?',
       lede: 'The multiplier is NOT a fixed number. It varies by country, by policy type, and by where the economy is in the cycle. Understanding why is the A* distinction.',
       diagramCaption: 'The multiplier = 1 \xf7 (MPS + MRT + MPM). Each leakage reduces the multiplier.',
@@ -222,7 +222,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'accelerator',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 6 of 8',
+      stepLabel: 'Learn: Step 6 of 9',
       title: 'The accelerator principle',
       lede: "The multiplier says an injection raises income. The accelerator says rising income raises investment further. Together they create boom-bust cycles. The interaction is the A* insight.",
       mechanisms: [
@@ -265,7 +265,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'multiplier-policy',
       template: 'paired',
-      stepLabel: 'Learn: Step 7 of 8',
+      stepLabel: 'Learn: Step 7 of 9',
       title: 'Multiplier effects by policy type',
       lede: 'Not all fiscal policies have the same multiplier. Understanding the differences is key to evaluating fiscal policy options.',
       pairs: [
@@ -308,7 +308,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'income-welfare',
       template: 'deflation',
-      stepLabel: 'Learn: Step 8 of 8',
+      stepLabel: 'Learn: Step 8 of 9',
       title: 'National income: what the numbers really tell us',
       lede: "National income statistics are the most-cited economic data in the world. But they come with crucial caveats — and knowing the caveats is what lifts welfare answers to A*.",
       mechanismsTitle: 'Five things to check before citing national income data',
@@ -352,6 +352,61 @@ window.ECONOS_TOPIC = {
         text: 'In any welfare question, the A* structure is: <em>\'While real GDP per capita has [risen/fallen], this overstates/understates actual welfare because [distribution/PPP/sustainability]. A better measure — [HDI/Gini/median income] — reveals [alternative picture].\'</em> This structure always works and always scores.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 9 — Essay scaffold ----- */
+    {
+      id: 'mult-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 9 of 9',
+      title: 'Essay scaffold: the multiplier',
+      question: 'Evaluate the view that the Keynesian multiplier means fiscal policy is always an effective tool for raising national income. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define the multiplier and explain the Keynesian logic. Introduce the debate: does the multiplier always make fiscal policy effective, or does it depend on conditions?',
+          hint: 'Multiplier k = 1/(1-MPC) = 1/(MPS+MRT+MRM). An injection of £G raises national income by £G×k. But: MPC < 1, leakages reduce k, context matters (spare capacity, liquidity trap, crowding out).',
+          model: 'The Keynesian multiplier describes how an initial injection of expenditure generates a larger final increase in national income through successive rounds of spending and re-spending. With a marginal propensity to consume (MPC) of 0.8, a £10bn fiscal stimulus would ultimately raise national income by £50bn (k = 1/(1-0.8) = 5). Keynes argued this amplification effect makes fiscal policy a powerful demand-management tool, particularly in recessions when private expenditure is deficient. However, the size of the multiplier in practice depends critically on the propensity to import, leak into savings, and on the state of spare capacity in the economy. This essay evaluates whether the multiplier reliably makes fiscal policy effective.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — The multiplier amplifies fiscal stimulus in recessionary conditions',
+          prompt: 'Explain how in a recession with a negative output gap and spare capacity, the multiplier operates powerfully: injected income creates employment, which creates further income and spending, without generating inflation.',
+          hint: 'Negative output gap: actual < potential. MPC high when households income-constrained. Workers take new jobs, spend → create more jobs. Low inflation risk with spare capacity. Post-2008 empirical estimates: multipliers 1.5-2.5 in deep recessions.',
+          model: 'The multiplier is most powerful when the economy operates below potential output — a negative output gap. In recessionary conditions, unemployed workers have a high MPC (they spend new income rather than save it), firms have spare capacity to expand output without raising prices, and the additional demand propagates through multiple rounds of spending. The IMF\'s 2012 reassessment of fiscal multipliers found that post-2008 austerity significantly underestimated the multiplier, estimating it at 1.5–2.5 in deep recessions — substantially above the 0.5 assumed in pre-crisis models. This evidence supports the Keynesian claim that in a demand deficiency recession, a £10bn fiscal stimulus can generate £15–25bn of additional national income, making fiscal policy highly effective at raising output and employment.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — The balanced-budget multiplier means even tax-funded spending raises income',
+          prompt: 'Explain the balanced-budget multiplier: an equal increase in G and T raises national income by exactly £1 per pound (k=1), because government spending multiplies but tax has a smaller negative multiplier (filtered through MPC).',
+          hint: 'Tax multiplier = -MPC/(1-MPC). Government spending multiplier = 1/(1-MPC). Balanced budget multiplier = spending k + tax k = 1. So even deficit-neutral fiscal expansion raises income. Useful for deficit-averse governments.',
+          model: 'An important but often-overlooked insight is the balanced-budget multiplier: a simultaneous increase in government spending (G) and taxation (T) of equal size raises national income by exactly £1 per £1 injected, even though the budget is unchanged. This occurs because the government spending multiplier (1/(1-MPC)) is larger than the tax multiplier (-MPC/(1-MPC)) in absolute value — their sum is exactly 1. The intuition: £1 of new taxation reduces disposable income by £1, but consumers cut spending by MPC×£1 (not the full £1), while the government spends the full £1. This means fiscally responsible governments can still use the multiplier to raise national income without expanding the deficit — a theoretically important but politically underutilised insight.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Leakages, crowding out, and open economies reduce the actual multiplier',
+          prompt: 'Argue that in practice, especially in open economies like the UK, leakages through imports, taxation, and savings substantially reduce the actual multiplier below the simple Keynesian value, and government borrowing may crowd out private investment.',
+          hint: 'Full multiplier: k = 1/(MPS+MRT+MRM). UK: MRM (marginal propensity to import) ~0.25. Real k ≈ 1.0-1.5 for UK, not 2-5. Crowding out: government borrowing raises interest rates → reduces I. Ricardian equivalence: households save anticipating future tax rises.',
+          model: 'In practice, the Keynesian multiplier in open economies is considerably smaller than the simple 1/(1-MPC) formula suggests. The full multiplier accounts for all leakages: savings (MPS), taxation (MRT), and imports (MRM). With a UK marginal propensity to import of approximately 0.25 and significant taxation, the realistic UK multiplier is around 1.0–1.5 — substantially below the theoretical maximum. Furthermore, deficit-financed fiscal expansion may crowd out private investment: if government borrowing raises real interest rates, firms reduce capital investment, partially offsetting the multiplier effect. Robert Barro\'s Ricardian equivalence argument extends this further: rational households, anticipating future tax rises to service the debt, increase savings in response to fiscal stimulus — dampening the consumption channel that drives the multiplier.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — The multiplier depends critically on economic conditions and the type of spending',
+          prompt: 'Evaluate how the multiplier varies with the state of the economy (recession vs boom), the type of fiscal spending (high-leakage transfers vs low-leakage domestic investment), and whether monetary policy is constrained.',
+          hint: 'Recession + ZLB (zero lower bound): monetary policy exhausted, fiscal multiplier largest. Boom: multiplier ≈ 0 (crowding out, full capacity). High-multiplier spending: domestic infrastructure, low-income transfers (high MPC). Low-multiplier: tax cuts to wealthy (saved), imports-heavy purchases.',
+          model: 'The multiplier is not a fixed constant but a variable that depends on economic context and the composition of fiscal policy. During a deep recession with monetary policy constrained at the zero lower bound — as in 2009-2021 — the multiplier is largest because crowding out is minimal (rates are already zero) and spare capacity absorbs the demand. During a boom with the economy at or above potential, the multiplier approaches zero: additional demand generates inflation rather than output, and the central bank raises rates to offset the stimulus. The type of spending also matters: domestic infrastructure investment and income transfers to low-income households (who have high MPCs and low import propensities) generate larger multipliers than tax cuts to wealthier households or spending with high import content. A well-targeted fiscal stimulus in a deep recession can be highly effective; an indiscriminate fiscal expansion at full employment is largely inflationary.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Reach a judgement: does the multiplier make fiscal policy always effective, and under what conditions is it most and least powerful?',
+          hint: 'Not "always" — but conditionally powerful. Most effective: deep recession, negative output gap, ZLB, high-multiplier spending categories, domestic supply chains. Least effective: boom, open economy with high import propensity, fiscal credibility problems. The multiplier is a tool, not a guarantee.',
+          model: 'In conclusion, the multiplier makes fiscal policy conditionally effective, not always effective. The statement in the question overstates the case. In deep recessions with spare capacity and constrained monetary policy, empirical evidence supports multipliers of 1.5–2.5, making fiscal stimulus genuinely powerful for raising national income. However, in boom conditions, open economies, or when fiscal credibility is compromised, the multiplier may be close to zero as leakages, crowding out, and inflationary pressure negate the injection. The effectiveness of fiscal policy therefore depends on the economic cycle, the composition of spending, and the monetary policy context — not on the mechanical application of the multiplier formula. Policymakers who ignore these conditions risk either undershooting in recessions or overheating in expansions.'
+        }
+      ]
     }
   ]
 };

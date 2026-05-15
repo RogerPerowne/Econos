@@ -137,100 +137,121 @@
         + '</div>';
     }
 
-    /* ── AD/AS Diagram SVG ── */
-    /* Key coordinates (viewBox 0 0 560 440):
-       E₁ = initial equilibrium (308, 198)
-       E₂ = new equilibrium    (261, 161)
-       LRAS at x=308
-       SRAS₁: (130,400)→(460,25)
-       SRAS₂: (50,400)→(380,25)  — shifted left
-       AD₁:   (110,40)→(510,360) */
+    /* ── AD/AS Diagram SVG — data-driven renderer ──
+       DATA.diagram specifies:
+         xLabel / yLabel   : axis titles
+         lines[]           : { x1,y1,x2,y2, stroke, strokeWidth, label,labelX,labelY,labelFill }
+         eqDots[]          : { cx,cy, fill, initLabel?,initLabelX?,initLabelY?,
+                                           newLabel?, newLabelX?, newLabelY? }
+         guides[]          : shown at stage 2; each { x1,y1,x2,y2,
+                               tickLeft?,tickLeftY?,  tickBottom?,tickBottomX? }
+         shiftArrow        : shown at stage 2; { x1,y1,x2,y2, stroke }
+         ariaLabel         : SVG accessible label
+    */
 
     function renderDiagramSVG(opts) {
-      var showDashes = opts && opts.showDashes;  // stages 2+
-      var showEqLbls = opts && opts.showEqLbls;  // stages 2+
-      var hasReadyZone = opts && opts.hasReadyZone; // stage 1: make zones glow
+      var showDashes  = opts && opts.showDashes;
+      var showEqLbls  = opts && opts.showEqLbls;
+      var D = DATA.diagram || {};
 
-      /* Dashed guide lines + axis tick labels */
-      var guides = showDashes ? (''
-        + '<line x1="100" y1="161" x2="261" y2="161" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>'
-        + '<line x1="100" y1="198" x2="308" y2="198" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>'
-        + '<line x1="261" y1="161" x2="261" y2="400" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>'
-        + '<line x1="308" y1="198" x2="308" y2="400" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>'
-        + '<text x="96"  y="164" font-size="10" fill="#6b7280" text-anchor="end">P₂</text>'
-        + '<text x="96"  y="201" font-size="10" fill="#6b7280" text-anchor="end">P₁</text>'
-        + '<text x="261" y="416" font-size="10" fill="#6b7280" text-anchor="middle">Y₂</text>'
-        + '<text x="308" y="416" font-size="10" fill="#6b7280" text-anchor="middle">Y₁</text>'
-      ) : '';
+      var xLabel = D.xLabel || 'Real output';
+      var yLabel = D.yLabel || 'Price level';
 
-      /* Equilibrium labels — shown in stages 2+ */
-      var eqLbls = showEqLbls ? (''
-        + '<text x="268" y="156" font-size="10" fill="#7c3aed">New</text>'
-        + '<text x="268" y="168" font-size="10" fill="#7c3aed">equilibrium</text>'
-        + '<text x="314" y="193" font-size="10" fill="#2563eb">Initial</text>'
-        + '<text x="314" y="205" font-size="10" fill="#2563eb">equilibrium</text>'
-      ) : '';
+      /* Collect unique arrowhead colours needed */
+      var arrowColours = {};
+      if (showDashes && D.shiftArrow && D.shiftArrow.stroke) {
+        arrowColours[D.shiftArrow.stroke] = true;
+      }
+      var markerDefs = Object.keys(arrowColours).map(function (col) {
+        var id = 'arr-' + col.replace('#', '');
+        return '<marker id="' + id + '" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">'
+          + '<path d="M0,0 L4,2 L0,4 Z" fill="' + col + '"/>'
+          + '</marker>';
+      }).join('');
 
-      /* Shift arrow — at y=45 (well above equilibrium), centred in the gap
-         between SRAS₁ (x≈442 at y=45) and SRAS₂ (x≈362 at y=45), with a
-         10px buffer from each curve so the arrow never touches them */
-      var shiftArrow = showDashes ? (''
-        + '<line x1="432" y1="45" x2="372" y2="45" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>'
-      ) : '';
+      /* Lines (curves) */
+      var linesHtml = (D.lines || []).map(function (ln) {
+        return '<line x1="' + ln.x1 + '" y1="' + ln.y1 + '" x2="' + ln.x2 + '" y2="' + ln.y2 + '"'
+          + ' stroke="' + (ln.stroke || '#374151') + '" stroke-width="' + (ln.strokeWidth || 2) + '"/>';
+      }).join('');
+
+      /* Curve labels (outside clip group, positioned by data) */
+      var lineLabels = (D.lines || []).filter(function (ln) { return ln.label; }).map(function (ln) {
+        return '<text x="' + ln.labelX + '" y="' + ln.labelY + '" font-size="11"'
+          + ' fill="' + (ln.labelFill || ln.stroke || '#374151') + '">' + ln.label + '</text>';
+      }).join('');
+
+      /* Guide lines + tick labels — shown at stage 2 */
+      var guidesHtml = '';
+      if (showDashes) {
+        guidesHtml = (D.guides || []).map(function (g) {
+          var s = '<line x1="' + g.x1 + '" y1="' + g.y1 + '" x2="' + g.x2 + '" y2="' + g.y2 + '"'
+            + ' stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>';
+          if (g.tickLeft) {
+            s += '<text x="96" y="' + g.tickLeftY + '" font-size="10" fill="#6b7280" text-anchor="end">' + g.tickLeft + '</text>';
+          }
+          if (g.tickBottom) {
+            s += '<text x="' + g.tickBottomX + '" y="416" font-size="10" fill="#6b7280" text-anchor="middle">' + g.tickBottom + '</text>';
+          }
+          return s;
+        }).join('');
+      }
+
+      /* Shift arrow — shown at stage 2 */
+      var shiftArrow = '';
+      if (showDashes && D.shiftArrow) {
+        var sa = D.shiftArrow;
+        var arrowId = 'arr-' + (sa.stroke || '#7c3aed').replace('#', '');
+        shiftArrow = '<line x1="' + sa.x1 + '" y1="' + sa.y1 + '" x2="' + sa.x2 + '" y2="' + sa.y2 + '"'
+          + ' stroke="' + (sa.stroke || '#7c3aed') + '" stroke-width="1.5" marker-end="url(#' + arrowId + ')"/>';
+      }
+
+      /* Equilibrium dots + labels */
+      var eqHtml = (D.eqDots || []).map(function (eq) {
+        var s = '<circle cx="' + eq.cx + '" cy="' + eq.cy + '" r="8" fill="white"/>'
+              + '<circle cx="' + eq.cx + '" cy="' + eq.cy + '" r="5" fill="' + (eq.fill || '#2563eb') + '"/>';
+        if (showEqLbls) {
+          if (eq.initLabel) {
+            s += '<text x="' + eq.initLabelX + '" y="' + eq.initLabelY + '" font-size="10" fill="' + (eq.fill || '#2563eb') + '">' + eq.initLabel + '</text>';
+            if (eq.initLabel2) s += '<text x="' + eq.initLabelX + '" y="' + (eq.initLabelY + 12) + '" font-size="10" fill="' + (eq.fill || '#2563eb') + '">' + eq.initLabel2 + '</text>';
+          }
+          if (eq.newLabel) {
+            s += '<text x="' + eq.newLabelX + '" y="' + eq.newLabelY + '" font-size="10" fill="' + (eq.fill || '#2563eb') + '">' + eq.newLabel + '</text>';
+            if (eq.newLabel2) s += '<text x="' + eq.newLabelX + '" y="' + (eq.newLabelY + 12) + '" font-size="10" fill="' + (eq.fill || '#2563eb') + '">' + eq.newLabel2 + '</text>';
+          }
+        }
+        return s;
+      }).join('');
 
       return ''
-        + '<svg viewBox="0 0 560 430" xmlns="http://www.w3.org/2000/svg" class="diag-svg" aria-label="AD/AS diagram">'
+        + '<svg viewBox="0 0 560 430" xmlns="http://www.w3.org/2000/svg" class="diag-svg" aria-label="' + (D.ariaLabel || 'Economic diagram') + '">'
         + '<defs>'
-        +   '<clipPath id="chart-clip">'
-        +     '<rect x="101" y="21" width="442" height="378"/>'
-        +   '</clipPath>'
-        +   '<marker id="arr-purple" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">'
-        +     '<path d="M0,0 L4,2 L0,4 Z" fill="#7c3aed"/>'
-        +   '</marker>'
+        +   '<clipPath id="chart-clip"><rect x="101" y="21" width="442" height="378"/></clipPath>'
+        +   markerDefs
         + '</defs>'
-
         /* Y-axis */
         + '<line x1="100" y1="20" x2="100" y2="400" stroke="#1f2937" stroke-width="2"/>'
         + '<polygon points="100,13 95,26 105,26" fill="#1f2937"/>'
-        + '<text x="28" y="215" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90,28,215)">Price level</text>'
-
+        + '<text x="28" y="215" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90,28,215)">' + yLabel + '</text>'
         /* X-axis */
         + '<line x1="100" y1="400" x2="545" y2="400" stroke="#1f2937" stroke-width="2"/>'
         + '<polygon points="552,400 539,395 539,405" fill="#1f2937"/>'
-        + '<text x="330" y="428" font-size="12" fill="#6b7280" text-anchor="middle">Real output</text>'
-
-        /* Data lines — clipped to chart area so nothing escapes the axes */
+        + '<text x="330" y="428" font-size="12" fill="#6b7280" text-anchor="middle">' + xLabel + '</text>'
+        /* Clipped content: lines, guides, shift arrow */
         + '<g clip-path="url(#chart-clip)">'
-          /* LRAS */
-          + '<line x1="308" y1="21" x2="308" y2="399" stroke="#374151" stroke-width="1.5"/>'
-          /* AD₁ */
-          + '<line x1="110" y1="40" x2="510" y2="360" stroke="#059669" stroke-width="2.5"/>'
-          /* SRAS₁ */
-          + '<line x1="130" y1="399" x2="460" y2="25" stroke="#2563eb" stroke-width="2.5"/>'
-          /* SRAS₂ — starts at x=50 which is left of the y-axis; clipPath handles it */
-          + '<line x1="50"  y1="399" x2="380" y2="25" stroke="#7c3aed" stroke-width="2.5"/>'
-          + guides
-          + shiftArrow
+        +   linesHtml
+        +   guidesHtml
+        +   shiftArrow
         + '</g>'
-
-        /* Curve labels — outside clip so they sit cleanly beyond line ends */
-        + '<text x="312" y="18"  font-size="11" fill="#374151">LRAS</text>'
-        + '<text x="514" y="360" font-size="11" fill="#059669">AD₁</text>'
-        + '<text x="463" y="23"  font-size="11" fill="#2563eb">SRAS₁</text>'
-        + '<text x="383" y="23"  font-size="11" fill="#7c3aed">SRAS₂</text>'
-
-        /* Equilibrium labels and dots on top — white halo behind each dot
-           so they read clearly where curves cross */
-        + eqLbls
-        + '<circle cx="308" cy="198" r="8" fill="white"/>'
-        + '<circle cx="308" cy="198" r="5" fill="#2563eb"/>'
-        + '<circle cx="261" cy="161" r="8" fill="white"/>'
-        + '<circle cx="261" cy="161" r="5" fill="#7c3aed"/>'
-
+        /* Labels outside clip */
+        + lineLabels
+        /* Equilibrium dots and labels on top */
+        + eqHtml
         + '</svg>';
     }
 
     /* HTML overlay drop zones — absolutely positioned over the SVG.
+       Zone positions come from DATA.label.zones: { id, pctX, pctY, pctW }
        Percentages are relative to the SVG viewBox (560×430). */
     function renderZoneOverlay(zone, content, tone) {
       var cls = 'diag-zone'
@@ -247,14 +268,12 @@
         + '</div>';
     }
 
-    /* Zone layout — positions as % of 560×430 SVG */
-    var ZONES = {
-      'shift':    { id: 'shift',    pctX: 34,   pctY: 13.5, pctW: 19 },
-      'new-eq':   { id: 'new-eq',   pctX: 48,   pctY: 33,   pctW: 21 },
-      'init-eq':  { id: 'init-eq',  pctX: 57,   pctY: 41,   pctW: 22 },
-      'hi-price': { id: 'hi-price', pctX: 0.5,  pctY: 33,   pctW: 17 },
-      'lo-out':   { id: 'lo-out',   pctX: 39,   pctY: 93.5, pctW: 18 }
-    };
+    /* Build ZONES lookup from DATA.label.zones for O(1) access */
+    var ZONES = (function () {
+      var map = {};
+      (DATA.label.zones || []).forEach(function (z) { map[z.id] = z; });
+      return map;
+    }());
 
     /* ── Thumbnail SVGs for diagram option cards ── */
 

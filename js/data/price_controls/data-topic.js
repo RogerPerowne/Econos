@@ -26,24 +26,29 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'price_controls_1',
-      template: 'framing',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Price controls: the big picture',
-      lede: 'Governments cap or floor prices to protect consumers or producers — but every control creates a shortage, a surplus, or both.',
-      branches: [
-        { tone: 'green',  label: 'Price ceilings',     sub: 'Maximum prices set <em>below</em> equilibrium. Aim: protect consumers (rents, energy, food).' },
-        { tone: 'amber',  label: 'Price floors',       sub: 'Minimum prices set <em>above</em> equilibrium. Aim: protect producers or workers (NMW, agricultural support).' },
-        { tone: 'rose',   label: 'Consequences',       sub: 'Ceilings → shortages, queues, black markets. Floors → surpluses, gluts, government buy-ups.' },
-        { tone: 'purple', label: 'Evaluation',         sub: 'Distributional gains for some groups vs allocative inefficiency and unintended consequences.' },
-        { tone: 'blue',   label: 'Alternatives',       sub: 'Subsidies, taxes, direct transfers, and supply-side policies often achieve the same goal more efficiently.' }
+      lede: 'Governments cap or floor prices to protect consumers or producers — but every binding control creates a shortage, a surplus, and a deadweight loss.',
+      diagramKey: 'priceControlsInteractive',
+      steps: [
+        {
+          key: 'base',
+          label: 'Free market benchmark',
+          text: 'Without intervention the market clears at <strong>(Q*, P*)</strong> where supply meets demand. Every buyer finds a seller and vice versa — quantity traded equals Q*, and consumer + producer surplus are maximised. This is the benchmark against which price controls are judged.'
+        },
+        {
+          key: 'extension',
+          label: 'Price ceiling → shortage',
+          text: 'A <strong>price ceiling</strong> sets a legal maximum price P_c <em>below</em> equilibrium. At P_c, <strong>Q_D &gt; Q_S</strong> — a shortage opens up. Trade falls to Q_S (supply is the binding side). Aim: protect consumers (rent caps, energy price caps, essential medicines). Side effects: queues, rationing, black markets, deadweight loss.'
+        },
+        {
+          key: 'shift',
+          label: 'Price floor → surplus',
+          text: 'A <strong>price floor</strong> sets a legal minimum price P_f <em>above</em> equilibrium. At P_f, <strong>Q_S &gt; Q_D</strong> — a surplus opens up. Trade falls to Q_D (demand is the binding side). Aim: protect producers or workers (national minimum wage, agricultural price support). Side effects: gluts, government buy-ups, unemployment (NMW context).'
+        }
       ],
-      body: 'A <strong>price ceiling</strong> (maximum price) is a legal upper limit on the price that can be charged for a good. It only affects the market if set BELOW the equilibrium price. If set above equilibrium, it has no effect (market price is already below the ceiling).<br><br><strong>Mechanism:</strong><br>• Ceiling price Pc < equilibrium P*<br>• At Pc: QD > QS → shortage<br>• Quantity traded = the lower of QD and QS = QS (supply is the binding constraint)<br>• Unsatisfied demand = QD − QS<br><br><strong>Rationale:</strong> protect consumers from "too high" prices — rents, energy, food, essential medicines.',
-      keyTerms: [
-        { term: 'Price ceiling', def: 'Legal maximum price set below equilibrium — creates a shortage.' },
-        { term: 'Shortage', def: 'Excess demand at the controlled price: QD > QS.' },
-        { term: 'Binding constraint', def: 'A price ceiling is only binding (has an effect) if set below equilibrium price.' }
-      ],
-      examEdge: 'Diagram for price ceiling: draw D and S, equilibrium at P*. Draw horizontal line at Pc < P*. Show QS on supply curve at Pc and QD on demand curve at Pc. Arrow showing shortage = QD − QS. Shade the consumer surplus area carefully — some consumers gain (those who buy at lower price); some lose (those who cannot buy due to shortage). Net welfare analysis requires the DWL triangle.'
+      examEdge: 'For each control, label six things on the diagram: D, S, free-market (Q*, P*), the controlled price (P_c or P_f), the binding quantity (Q_S or Q_D), and the deadweight loss triangle. A ceiling above P* — or a floor below P* — has no effect (the market price already complies).'
     },
     {
       id: 'price_controls_2',

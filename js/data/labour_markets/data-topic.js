@@ -59,6 +59,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_markets_3',
       template: 'mechanisms',
+      diagramKey: 'labourMarketEquilibrium',
       title: 'Labour Market Equilibrium',
       intro: 'In a competitive labour market, the equilibrium wage and employment level are determined by the intersection of labour demand (MRP) and labour supply.',
       steps: [
@@ -96,6 +97,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_markets_6',
       template: 'framing',
+      diagramKey: 'monopsonyDiagram',
       title: 'Monopsony in Labour Markets',
       body: 'A <strong>monopsony</strong> is a single buyer of labour in a market — a firm with market power on the demand side. As a single buyer, the monopsonist faces an upward-sloping labour supply curve — to hire more workers, it must raise the wage.<br><br>The monopsonist\'s marginal cost of labour (MCL) lies ABOVE the supply curve: raising the wage to attract one more worker means paying the higher wage to ALL existing workers (assuming a uniform wage).<br><br><strong>Monopsony equilibrium:</strong><br>• Profit-maximising: hire where MRP = MCL<br>• Wage: read off the supply curve at this employment level<br>• Result: W < MRP and L < competitive level<br><br>Monopsonists pay workers less than their MRP and employ fewer workers than competitive equilibrium. This is the labour market analogue of monopoly: the buyer exploits market power just as a monopolist exploits product market power.',
       keyTerms: [

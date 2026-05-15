@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_supply_nmw_2',
       template: 'framing',
+      diagramKey: 'backwardBendingLSC',
       title: 'The Backward-Bending Labour Supply Curve',
       body: 'Combining substitution and income effects generates the characteristic shape of the individual labour supply curve:<br><br>• At low wages: substitution effect > income effect → supply curve slopes upward (work more as wage rises)<br>• At higher wages: income effect may exceed substitution effect → supply curve bends backward (work fewer hours as wage rises further)<br>• The bend typically occurs at higher income levels — the curve starts bending for high earners first<br><br><strong>Aggregate (market) labour supply:</strong> the market supply curve is the horizontal sum of all individual supply curves. Because different workers bend at different wages, the aggregate curve typically slopes upward over the relevant range — even if individual curves bend backward, different workers reach the bend point at different wage levels, so the aggregate effect is still upward-sloping in practice.',
       keyTerms: [
@@ -96,6 +97,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_supply_nmw_6',
       template: 'framing',
+      diagramKey: 'nmwDiagram',
       title: 'The National Minimum Wage: Theory and Evidence',
       body: 'The <strong>National Minimum Wage (NMW)</strong> / <strong>National Living Wage (NLW)</strong> sets a legal floor on wages:<br><br><strong>Standard competitive model prediction:</strong> a wage floor above equilibrium → excess supply (unemployment). More workers want to work than employers want to hire at the higher wage.<br><br><strong>Evidence contradicts the simple model:</strong> Card and Krueger (1994) — US study comparing fast food employment across state minimum wage border — found minimum wage increases did NOT reduce employment. UK Low Pay Commission finds similarly small employment effects in UK NMW research.<br><br><strong>Monopsony explanation:</strong> many low-wage sectors have monopsonistic characteristics (few large employers of low-skill workers: Amazon warehouses, care sector, supermarkets). In monopsony, NMW up to the competitive wage level can increase both wages AND employment — correcting the monopsony distortion.<br><br><strong>2024 NLW:</strong> £11.44/hour for workers 21+. UK minimum wage now among highest in OECD relative to median wages.',
       keyTerms: [

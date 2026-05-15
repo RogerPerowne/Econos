@@ -723,6 +723,7 @@
       <h1 class="card__title">${c.title}</h1>
       <p class="card__lede">${c.lede}</p>
 
+      ${c.diagramKey && I[c.diagramKey] ? `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>` : ''}
       <div class="mech-grid">${tiles}</div>
 
       ${renderExamEdge(c.examEdge)}

@@ -5176,4 +5176,158 @@ window.ECONOS_ICONS = {
             text-anchor="middle" letter-spacing="3" opacity="0.7">TRADE  ·  OFFS</text>
     </svg>
   `,
+
+  monopolyVsCompetitionInteractive: `
+    <svg class="mvc-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="mvc-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: base-curves (D/AR and MC — always visible) ===== -->
+      <g class="layer-base-curves">
+        <g clip-path="url(#mvc-chart-clip)">
+          <!-- D/AR: (60,43)→(500,336), slope 0.667 — at x=250: y=170; at x=400: y=270 -->
+          <line x1="60" y1="43" x2="500" y2="336" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="505" y="338" font-size="13" font-weight="700" fill="#2563EB">D=AR</text>
+        <g clip-path="url(#mvc-chart-clip)">
+          <!-- MC: (60,329)→(510,251) — upward-sloping in economics; at x=250: y=296; at x=400: y=270 -->
+          <line x1="60" y1="329" x2="510" y2="251" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="515" y="255" font-size="13" font-weight="700" fill="#DC2626">MC</text>
+      </g>
+
+      <!-- ===== LAYER: cs-competition (base state only — large CS triangle) ===== -->
+      <g class="layer-cs-competition">
+        <!-- CS under perfect competition: triangle from D-intercept (60,43) to PC eq (400,270) to price on y-axis (60,270) -->
+        <polygon points="60,43 400,270 60,270" fill="#DBEAFE" fill-opacity="0.55"/>
+        <text x="150" y="225" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">Consumer</text>
+        <text x="150" y="243" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">surplus</text>
+      </g>
+
+      <!-- ===== LAYER: pc-eq (base + extension + shift states) ===== -->
+      <g class="layer-pc-eq">
+        <!-- P_c dashed horizontal to PC eq -->
+        <line x1="60" y1="270" x2="400" y2="270" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- Q_c dashed vertical to x-axis -->
+        <line x1="400" y1="270" x2="400" y2="400" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- PC equilibrium dot (green) -->
+        <circle cx="400" cy="270" r="6" fill="#059669"/>
+        <text x="46" y="274" font-size="12" font-weight="600" fill="#2563EB" text-anchor="end">P_c</text>
+        <text x="400" y="418" font-size="12" font-weight="600" fill="#2563EB" text-anchor="middle">Q_c</text>
+      </g>
+
+      <!-- ===== LAYER: mr-curve (extension + shift states) ===== -->
+      <g class="layer-mr-curve">
+        <g clip-path="url(#mvc-chart-clip)">
+          <!-- MR: same y-intercept as D at (60,43), twice the slope — ends at (328,400) -->
+          <line x1="60" y1="43" x2="328" y2="400" stroke="#2563EB" stroke-width="2" stroke-dasharray="6 3" opacity="0.75"/>
+        </g>
+        <text x="328" y="418" font-size="13" font-weight="700" fill="#2563EB" opacity="0.75" text-anchor="middle">MR</text>
+      </g>
+
+      <!-- ===== LAYER: monopoly-eq (extension + shift states) ===== -->
+      <g class="layer-monopoly-eq">
+        <!-- P_m dashed horizontal at y=170 (monopoly price on D at Q_m) -->
+        <line x1="60" y1="170" x2="250" y2="170" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- Q_m dashed vertical at x=250 -->
+        <line x1="250" y1="170" x2="250" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- MR=MC intersection point (purple dot at 250,296) -->
+        <circle cx="250" cy="296" r="5" fill="#7C3AED"/>
+        <text x="258" y="300" font-size="11" font-weight="700" fill="#7C3AED">MR=MC</text>
+        <!-- Monopoly price point on D (amber dot at 250,170) -->
+        <circle cx="250" cy="170" r="6" fill="#D97706"/>
+        <text x="46" y="174" font-size="12" font-weight="600" fill="#7C3AED" text-anchor="end">P_m</text>
+        <text x="250" y="418" font-size="12" font-weight="600" fill="#7C3AED" text-anchor="middle">Q_m</text>
+      </g>
+
+      <!-- ===== LAYER: welfare-decomp (shift state only) ===== -->
+      <g class="layer-welfare-decomp">
+        <!-- Monopoly CS — smaller triangle (60,43)-(250,170)-(60,170) -->
+        <polygon points="60,43 250,170 60,170" fill="#DBEAFE" fill-opacity="0.75"/>
+        <!-- Transferred area — rectangle from P_c to P_m at Q=0 to Q_m (60,170)-(250,170)-(250,270)-(60,270) -->
+        <polygon points="60,170 250,170 250,270 60,270" fill="#FEF3C7" fill-opacity="0.85"/>
+        <!-- DWL triangle — (250,170) on D, (400,270) PC eq, (250,296) MC at Q_m -->
+        <polygon points="250,170 400,270 250,296" fill="#FEE2E2" fill-opacity="0.85" stroke="#DC2626" stroke-width="1.5"/>
+        <!-- Area labels -->
+        <text x="115" y="138" font-size="11" font-weight="700" fill="#2563EB" text-anchor="middle">CS</text>
+        <text x="155" y="225" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">PS gain</text>
+        <text x="311" y="250" font-size="11" font-weight="800" fill="#DC2626">DWL</text>
+      </g>
+
+      <!-- ===== LAYER: panel-base ===== -->
+      <g class="layer-panel-base">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Perfect competition — the allocatively efficient benchmark</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">PERFECT COMPETITION</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Many price-taking firms drive</text>
+        <text x="620" y="118" font-size="13" fill="#334155">the market to P = MC = min AC.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Output: Q_c (maximum feasible)</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Price: P_c (at MC = min AC)</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Consumer surplus: maximised.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">STATIC EFFICIENCY</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Allocatively efficient: P = MC</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Productively efficient: P = AC</text>
+        <text x="620" y="280" font-size="13" fill="#334155">Deadweight loss = zero</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: what monopoly does to this outcome</text>
+      </g>
+
+      <!-- ===== LAYER: panel-ext ===== -->
+      <g class="layer-panel-ext">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopoly sets MR = MC → higher P, lower Q</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">MONOPOLY OUTCOME</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Monopolist faces whole D curve.</text>
+        <text x="620" y="118" font-size="13" fill="#334155">MR lies below AR (D).</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">MR = MC → output Q_m</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Read up to D → price P_m</text>
+        <text x="620" y="204" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VS PERFECT COMPETITION</text>
+        <text x="620" y="226" font-size="13" fill="#334155">P_m &gt; P_c: price mark-up</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Q_m &lt; Q_c: output restricted</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Supernormal profit possible.</text>
+        <text x="620" y="296" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">INEFFICIENCY</text>
+        <text x="620" y="318" font-size="13" fill="#334155">At Q_m: P &gt; MC — units</text>
+        <text x="620" y="336" font-size="13" fill="#334155">consumers value above cost</text>
+        <text x="620" y="354" font-size="13" fill="#334155">go unproduced.</text>
+      </g>
+
+      <!-- ===== LAYER: panel-shift ===== -->
+      <g class="layer-panel-shift">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Welfare cost: DWL from monopoly output restriction</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">WELFARE COMPARISON</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Monopoly splits the competitive</text>
+        <text x="620" y="118" font-size="13" fill="#334155">welfare surplus three ways:</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#2563EB">Blue — remaining CS</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Consumer surplus shrinks:</text>
+        <text x="620" y="188" font-size="13" fill="#334155">fewer units at a higher price.</text>
+        <text x="620" y="218" font-size="13" font-weight="700" fill="#D97706">Amber — transferred to monopolist</text>
+        <text x="620" y="236" font-size="13" fill="#334155">Former CS redistributed as</text>
+        <text x="620" y="254" font-size="13" fill="#334155">extra producer surplus (profit).</text>
+        <text x="620" y="284" font-size="13" font-weight="700" fill="#DC2626">Red — deadweight loss</text>
+        <text x="620" y="302" font-size="13" fill="#334155">Value destroyed — benefits</text>
+        <text x="620" y="320" font-size="13" fill="#334155">nobody. Static welfare cost</text>
+        <text x="620" y="338" font-size="13" fill="#334155">of monopoly restriction.</text>
+      </g>
+    </svg>
+  `,
 };

@@ -3440,6 +3440,28 @@ img, svg { display: block; max-width: 100%; }
 .show-efficiency .pd-svg .layer-nash { opacity: 1; }
 .show-efficiency .pd-svg .layer-pareto { opacity: 1; }
 .show-efficiency .pd-svg .layer-legend-efficiency { opacity: 1; }
+/* === Monopoly vs Competition Interactive === */
+.mvc-svg .layer-axes,
+.mvc-svg .layer-base-curves,
+.mvc-svg .layer-cs-competition,
+.mvc-svg .layer-pc-eq,
+.mvc-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.mvc-svg .layer-mr-curve,
+.mvc-svg .layer-monopoly-eq,
+.mvc-svg .layer-welfare-decomp,
+.mvc-svg .layer-panel-ext,
+.mvc-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .mvc-svg .layer-cs-competition { opacity: 0; }
+.show-extension .mvc-svg .layer-panel-base { opacity: 0; }
+.show-extension .mvc-svg .layer-mr-curve { opacity: 1; }
+.show-extension .mvc-svg .layer-monopoly-eq { opacity: 1; }
+.show-extension .mvc-svg .layer-panel-ext { opacity: 1; }
+.show-shift .mvc-svg .layer-cs-competition { opacity: 0; }
+.show-shift .mvc-svg .layer-panel-base { opacity: 0; }
+.show-shift .mvc-svg .layer-mr-curve { opacity: 1; }
+.show-shift .mvc-svg .layer-monopoly-eq { opacity: 1; }
+.show-shift .mvc-svg .layer-welfare-decomp { opacity: 1; }
+.show-shift .mvc-svg .layer-panel-shift { opacity: 1; }
 
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {

@@ -26,16 +26,29 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'monopoly_vs_competition_1',
-      template: 'diagnose',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'Static Welfare Comparison',
-      intro: 'Comparing monopoly and perfect competition on static efficiency criteria using the same cost conditions.',
-      rows: [
-        { label: 'Criterion', colA: 'Perfect competition', colB: 'Monopoly' },
-        { label: 'Price', colA: 'P = MC = minimum AC. Lowest possible price (at long-run equilibrium).', colB: 'P > MC. Price above competitive level — monopoly mark-up.' },
-        { label: 'Output', colA: 'Q_c: socially optimal output where P = MC = AC.', colB: 'Q_m < Q_c: restricted output to raise price. Fewer goods produced.' }
+      lede: 'Comparing monopoly and perfect competition using the same cost conditions — the definitive test of static efficiency.',
+      diagramKey: 'monopolyVsCompetitionInteractive',
+      steps: [
+        {
+          key: 'base',
+          label: 'Perfect competition',
+          text: 'Under perfect competition many price-taking firms drive the market to long-run equilibrium where <strong>P = MC = minimum AC</strong>. Output is maximised at Q_c, price is minimised at P_c. Consumer surplus (blue triangle) is fully maximised. There is no deadweight loss — this is the benchmark for static efficiency evaluation.'
+        },
+        {
+          key: 'extension',
+          label: 'Monopoly outcome',
+          text: 'A monopolist faces the whole downward-sloping demand curve (D = AR) so its marginal revenue (MR) lies below AR. The profit-maximising rule <strong>MR = MC</strong> gives output Q_m &lt; Q_c. The monopolist then reads up to the demand curve to set price P_m &gt; P_c. Both output and consumer welfare fall relative to the competitive benchmark.'
+        },
+        {
+          key: 'shift',
+          label: 'Welfare cost (DWL)',
+          text: 'Comparing the two outcomes: consumer surplus shrinks (blue). Part of the lost CS is transferred to the monopolist as extra profit (amber rectangle). The remainder is <strong>deadweight welfare loss</strong> (red triangle) — value destroyed that benefits nobody. Total social welfare is lower under monopoly by exactly the size of the DWL triangle. Consumer surplus: higher under competition. Producer surplus: monopolist earns supernormal profit; competitive firms earn only normal profit.'
+        }
       ],
-      footer: 'Consumer surplus: higher under perfect competition (lower price, higher quantity). Producer surplus: monopolist earns supernormal profit; competitive firms earn only normal profit. Deadweight welfare loss: zero under competition; positive triangle under monopoly (the "welfare cost of monopoly"). Total social welfare: greater under perfect competition by the size of the DWL triangle.',
-      examEdge: 'The DWL from monopoly is the definitive welfare measure. In practice, the size matters: if the demand curve is very inelastic and MC is flat, the DWL triangle is relatively small (price rises a lot but quantity falls little). If demand is elastic, DWL is larger. Competition policy is most warranted where DWL is large relative to the scale of the market.'
+      examEdge: 'The DWL triangle is the definitive static welfare measure. Its size depends on elasticities: if demand is very inelastic and MC is flat, the DWL triangle is small (price rises a lot but quantity falls little). If demand is elastic, DWL is larger. Competition policy intervention is most justified where DWL is large relative to the scale of the market.'
     },
     {
       id: 'monopoly_vs_competition_2',

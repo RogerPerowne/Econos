@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_discrimination_2',
       template: 'framing',
+      diagramKey: 'firstDegreePd',
       title: 'First-Degree Price Discrimination',
       body: '<strong>First-degree (perfect) price discrimination:</strong> the firm charges every consumer exactly their maximum willingness to pay (their reservation price). Every unit sold at a different price equal to the marginal benefit to that consumer.<br><br><strong>Welfare effects:</strong><br>• Producer captures <em>all</em> consumer surplus — zero consumer surplus remains<br>• BUT: output is higher than standard monopoly — firm produces up to Q<sub>c</sub> (the competitive output), because it is profitable to sell even the last unit at a price just above MC<br>• Result: no deadweight welfare loss (output is allocatively efficient) but all welfare goes to the producer<br>• Allocatively efficient (P = MC for last unit) but distributionally very unequal<br><br><strong>Real-world approximations:</strong> haggling markets, salary negotiations, some professional services (lawyer fees), personalised pricing algorithms.',
       keyTerms: [
@@ -71,6 +72,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_discrimination_4',
       template: 'framing',
+      diagramKey: 'thirdDegreePd',
       title: 'Third-Degree Price Discrimination',
       body: '<strong>Third-degree price discrimination:</strong> the firm charges different prices to identifiable groups of consumers who have different price elasticities of demand. The most common and most examinable form.<br><br><strong>Pricing rule:</strong> charge higher price to the group with lower PED (less price-sensitive) and lower price to the group with higher PED (more price-sensitive). Profit-maximising condition: MR<sub>A</sub> = MR<sub>B</sub> = MC.<br><br><strong>Classic examples:</strong><br>• Rail: peak (inelastic business travellers) vs off-peak (elastic leisure travellers)<br>• Cinema: adult vs student/senior tickets<br>• Pharmaceuticals: same drug priced higher in USA (inelastic, insured) vs India (elastic, price-sensitive)<br>• International price discrimination: textbooks cheaper in developing markets<br>• Age-based pricing: gym memberships, insurance',
       keyTerms: [

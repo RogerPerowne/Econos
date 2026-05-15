@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'public_goods_2',
       template: 'framing',
+      diagramKey: 'freeRiderDiagram',
       title: 'The Free Rider Problem',
       body: 'Non-excludability creates the <strong>free rider problem</strong>: individuals have an incentive to benefit from a good without contributing to its cost, because they cannot be excluded from its benefits.<br><br><strong>Logic:</strong> If the good will be provided regardless (because others pay), why contribute? If everyone reasons this way, no one contributes — and the good is not provided. This is a form of the <strong>prisoner\'s dilemma</strong>: individual rationality leads to collective irrationality.<br><br>Consequence: the market fails to provide public goods at all, or drastically under-provides. The only solution is government provision funded by compulsory taxation — bypassing the free rider problem.',
       keyTerms: [

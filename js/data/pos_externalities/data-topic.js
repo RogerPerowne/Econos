@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pos_externalities_2',
       template: 'mechanisms',
+      diagramKey: 'posExternalityDiagram',
       title: 'The Positive Externality Diagram',
       intro: 'For a positive consumption externality, the demand curve (MPB) understates the true social benefit.',
       steps: [

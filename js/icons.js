@@ -7857,4 +7857,437 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  cartelPrisonersDilemma: `
+    <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="320" y="32" font-size="15" font-weight="700" fill="#334155" text-anchor="middle">Cartel Prisoners' Dilemma — Payoff Matrix</text>
+
+      <!-- Layout constants: table starts at x=130, y=60 -->
+      <!-- Column widths: header col = 130, two data cols = 190 each -->
+      <!-- Row heights: header row = 55, two data rows = 130 each -->
+
+      <!-- Top-left corner cell -->
+      <rect x="30" y="60" width="180" height="60" fill="#94A3B8" rx="4"/>
+      <text x="120" y="85" font-size="11" fill="#F8FAFC" text-anchor="middle" font-style="italic">Firm A \ Firm B</text>
+
+      <!-- Column header: Firm B Comply -->
+      <rect x="215" y="60" width="190" height="60" fill="#1E3A5F" rx="4"/>
+      <text x="310" y="85" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Firm B: Comply</text>
+
+      <!-- Column header: Firm B Cheat -->
+      <rect x="410" y="60" width="190" height="60" fill="#1E3A5F" rx="4"/>
+      <text x="505" y="85" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Firm B: Cheat</text>
+
+      <!-- Row header: Firm A Comply -->
+      <rect x="30" y="125" width="180" height="130" fill="#1E3A5F" rx="4"/>
+      <text x="120" y="183" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Firm A:</text>
+      <text x="120" y="200" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Comply</text>
+
+      <!-- Row header: Firm A Cheat -->
+      <rect x="30" y="260" width="180" height="130" fill="#1E3A5F" rx="4"/>
+      <text x="120" y="318" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Firm A:</text>
+      <text x="120" y="335" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Cheat</text>
+
+      <!-- Cell: Both comply (A=12, B=12) — green shading -->
+      <rect x="215" y="125" width="190" height="130" fill="#DCFCE7" stroke="#059669" stroke-width="2" rx="4"/>
+      <text x="310" y="165" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £12m</text>
+      <text x="310" y="183" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £12m</text>
+      <text x="310" y="207" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">Cartel outcome</text>
+
+      <!-- Cell: A cheats, B complies (A=18, B=4) -->
+      <rect x="410" y="125" width="190" height="130" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" rx="4"/>
+      <text x="505" y="165" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £18m</text>
+      <text x="505" y="183" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £4m</text>
+
+      <!-- Cell: A complies, B cheats (A=4, B=18) -->
+      <rect x="215" y="260" width="190" height="130" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" rx="4"/>
+      <text x="310" y="300" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £4m</text>
+      <text x="310" y="318" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £18m</text>
+
+      <!-- Cell: Both cheat (A=7, B=7) — red border Nash equilibrium -->
+      <rect x="410" y="260" width="190" height="130" fill="#FEE2E2" stroke="#DC2626" stroke-width="3" rx="4"/>
+      <text x="505" y="300" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £7m</text>
+      <text x="505" y="318" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £7m</text>
+      <text x="505" y="338" font-size="10" font-weight="600" fill="#DC2626" text-anchor="middle">Nash equilibrium</text>
+      <text x="505" y="353" font-size="9" fill="#DC2626" text-anchor="middle">Dominant strategy outcome</text>
+
+      <!-- Dominant strategy annotations -->
+      <text x="30" y="418" font-size="10" fill="#334155">If B complies → A earns £18m cheating vs £12m complying → Cheat</text>
+      <text x="30" y="434" font-size="10" fill="#334155">If B cheats → A earns £7m cheating vs £4m complying → Cheat</text>
+      <text x="320" y="458" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">Dominant strategy for both = Cheat → Nash equilibrium (£7m, £7m) &lt; Cartel optimum (£12m, £12m)</text>
+    </svg>
+  `,
+
+  cartelJointProfitDiagram: `
+    <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Cartel as Joint Monopolist — Profit Maximisation</text>
+
+      <!-- Axes -->
+      <!-- Y axis -->
+      <line x1="70" y1="40" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="66,44 74,44 70,36" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="70" y1="390" x2="640" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="636,386 636,394 644,390" fill="#334155"/>
+      <!-- Axis labels -->
+      <text x="30" y="220" font-size="12" fill="#334155" text-anchor="middle" transform="rotate(-90,30,220)">Price / Cost (£)</text>
+      <text x="660" y="394" font-size="12" fill="#334155">Q</text>
+
+      <!-- Demand curve (AR) navy: from (70,80) to (610,370) -->
+      <line x1="70" y1="80" x2="610" y2="370" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="618" y="374" font-size="11" font-weight="700" fill="#2563EB">Market AR (Demand)</text>
+
+      <!-- MR curve: slope twice as steep as demand, from (70,80) to (340,370) -->
+      <line x1="70" y1="80" x2="340" y2="370" stroke="#64748B" stroke-width="2"/>
+      <text x="346" y="374" font-size="11" font-weight="700" fill="#64748B">MR</text>
+
+      <!-- MC line: horizontal at y=270 -->
+      <line x1="70" y1="270" x2="610" y2="270" stroke="#DC2626" stroke-width="2"/>
+      <text x="616" y="274" font-size="11" font-weight="700" fill="#DC2626">MC (= ΣMC)</text>
+
+      <!-- MR=MC intersection: MR hits MC at Q_cartel
+           MR: y = 80 + (370-80)/(340-70) * (x-70) = 80 + (290/270)*(x-70)
+           At y=270: 270 = 80 + (290/270)*(x-70) → (190*270/290) + 70 = x ≈ 247
+           P_cartel from AR: y = 80 + (290/540)*(247-70) ≈ 80 + 95 = 175
+      -->
+      <!-- Dashed lines for Q_cartel = x=247, P_cartel = y=175 -->
+      <line x1="247" y1="175" x2="247" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <line x1="70" y1="175" x2="247" y2="175" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="243" y="408" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_cartel</text>
+      <text x="58" y="179" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_cartel</text>
+
+      <!-- Competitive equilibrium: MC=AR
+           AR: y = 80 + (290/540)*(x-70); At y=270: 270 = 80 + (290/540)*(x-70)
+           (190*540/290) + 70 = x ≈ 424
+      -->
+      <line x1="424" y1="270" x2="424" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <line x1="70" y1="270" x2="424" y2="270" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="424" y="408" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_c</text>
+      <text x="58" y="274" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_c</text>
+
+      <!-- Amber supernormal profit rectangle: x=70..247, y=175..270 (P_cartel to AC=MC) -->
+      <rect x="70" y="175" width="177" height="95" fill="#FEF3C7" opacity="0.7"/>
+      <text x="153" y="218" font-size="10" font-weight="700" fill="#D97706" text-anchor="middle">Cartel</text>
+      <text x="153" y="231" font-size="10" font-weight="700" fill="#D97706" text-anchor="middle">supernormal profit</text>
+
+      <!-- Rose DWL triangle: vertices (247,175), (424,270), (247,270) -->
+      <polygon points="247,175 424,270 247,270" fill="#FEE2E2" opacity="0.8"/>
+      <text x="330" y="310" font-size="10" font-weight="600" fill="#DC2626" text-anchor="middle">DWL</text>
+
+      <!-- Individual quota arrow annotation -->
+      <text x="350" y="50" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Each member's quota = Q_cartel ÷ n</text>
+
+      <!-- Incentive-to-cheat annotation -->
+      <text x="350" y="135" font-size="10" fill="#DC2626" text-anchor="middle">Any firm can increase profit by exceeding quota while P &gt; MC</text>
+    </svg>
+  `,
+
+  allocativeEfficiencyDiagram: `
+    <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Shared title -->
+      <text x="350" y="26" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Allocative efficiency requires P = MC at every margin</text>
+
+      <!-- Divider -->
+      <line x1="350" y1="36" x2="350" y2="430" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+      <!-- ===== LEFT PANEL: Allocatively Efficient ===== -->
+      <!-- Panel label -->
+      <text x="175" y="52" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Allocatively Efficient (P = MC)</text>
+
+      <!-- Y axis -->
+      <line x1="55" y1="65" x2="55" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="51,69 59,69 55,61" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="55" y1="400" x2="330" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="326,396 326,404 334,400" fill="#334155"/>
+      <text x="338" y="404" font-size="11" fill="#334155">Q</text>
+      <text x="44" y="70" font-size="11" fill="#334155" text-anchor="end">P</text>
+
+      <!-- Demand D: navy, downward from (55,100) to (315,380) -->
+      <line x1="55" y1="100" x2="315" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="320" y="383" font-size="11" font-weight="700" fill="#2563EB">D</text>
+
+      <!-- Supply/MC: green, upward from (55,360) to (315,110) -->
+      <line x1="55" y1="360" x2="315" y2="110" stroke="#059669" stroke-width="2.5"/>
+      <text x="316" y="108" font-size="11" font-weight="700" fill="#059669">MC</text>
+
+      <!-- Equilibrium intersection: solve
+           D: y = 100 + (280/260)*(x-55)
+           S: y = 360 - (250/260)*(x-55)
+           100 + (280/260)*(x-55) = 360 - (250/260)*(x-55)
+           (530/260)*(x-55) = 260
+           x-55 = 260*260/530 ≈ 127.7 → x ≈ 183
+           y ≈ 100 + (280/260)*127.7 ≈ 100 + 137.5 ≈ 237.5 ≈ 238
+      -->
+      <line x1="183" y1="238" x2="183" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="55" y1="238" x2="183" y2="238" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="183" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q*</text>
+      <text x="50" y="242" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P*=MC*</text>
+
+      <!-- Checkmark annotation -->
+      <text x="175" y="310" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">✓ P = MC: no welfare loss</text>
+
+      <!-- ===== RIGHT PANEL: Allocatively Inefficient ===== -->
+      <!-- Panel label -->
+      <text x="525" y="52" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">Allocatively Inefficient (P &gt; MC)</text>
+
+      <!-- Y axis -->
+      <line x1="380" y1="65" x2="380" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="376,69 384,69 380,61" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="380" y1="400" x2="655" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="651,396 651,404 659,400" fill="#334155"/>
+      <text x="663" y="404" font-size="11" fill="#334155">Q</text>
+      <text x="369" y="70" font-size="11" fill="#334155" text-anchor="end">P</text>
+
+      <!-- Demand D: navy, downward from (380,100) to (640,380) -->
+      <line x1="380" y1="100" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="383" font-size="11" font-weight="700" fill="#2563EB">D</text>
+
+      <!-- MC: red, upward from (380,360) to (640,110) -->
+      <line x1="380" y1="360" x2="640" y2="110" stroke="#DC2626" stroke-width="2.5"/>
+      <text x="641" y="108" font-size="11" font-weight="700" fill="#DC2626">MC</text>
+
+      <!-- Monopoly outcome: Q_m at x=460, P_m = y=170 (from demand) -->
+      <!-- Competitive Q_c: where MC=D: same calc as left ≈ x=508, y=238 -->
+      <!-- Q_m dashed -->
+      <line x1="460" y1="170" x2="460" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="380" y1="170" x2="460" y2="170" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="460" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_m</text>
+      <text x="375" y="174" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_m</text>
+
+      <!-- Q_c dashed -->
+      <line x1="508" y1="238" x2="508" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="508" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_c</text>
+
+      <!-- DWL rose triangle: (460,170), (508,238), (460,238) approx
+           At Q_m=460: MC value: y = 360 - (250/260)*(460-380) = 360 - 76.9 ≈ 283
+           DWL triangle: (460,170), (508,238), (460,283)
+      -->
+      <polygon points="460,170 508,238 460,283" fill="#FEE2E2" opacity="0.85"/>
+      <text x="498" y="305" font-size="10" font-weight="600" fill="#DC2626" text-anchor="middle">DWL</text>
+
+      <!-- Annotation -->
+      <text x="525" y="350" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">✗ P &gt; MC: DWL = deadweight welfare loss</text>
+    </svg>
+  `,
+
+  posExternalityDiagram: `
+    <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Positive Consumption Externality — Under-consumption</text>
+
+      <!-- Y axis -->
+      <line x1="70" y1="45" x2="70" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="66,49 74,49 70,41" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="70" y1="400" x2="640" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="636,396 636,404 644,400" fill="#334155"/>
+      <text x="655" y="404" font-size="12" fill="#334155">Q</text>
+      <text x="42" y="50" font-size="12" fill="#334155">P/B/C</text>
+
+      <!-- MPC = MSC: red upward from (70,360) to (600,110) -->
+      <line x1="70" y1="360" x2="600" y2="110" stroke="#DC2626" stroke-width="2.5"/>
+      <text x="608" y="108" font-size="11" font-weight="700" fill="#DC2626">MPC = MSC (Supply)</text>
+
+      <!-- MPB: navy downward from (70,100) to (580,380) -->
+      <line x1="70" y1="100" x2="580" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="586" y="383" font-size="11" font-weight="700" fill="#2563EB">MPB (Private Demand)</text>
+
+      <!-- MSB: parallel to MPB but shifted up by 70px — from (70,55) to (580,335) -->
+      <line x1="70" y1="55" x2="580" y2="335" stroke="#059669" stroke-width="2.5"/>
+      <text x="586" y="338" font-size="11" font-weight="700" fill="#059669">MSB = MPB + MEB</text>
+
+      <!-- Market equilibrium Q_m: MPB = MPC
+           MPB: y = 100 + (280/510)*(x-70)
+           MPC: y = 360 - (250/530)*(x-70)
+           100 + (280/510)*(x-70) = 360 - (250/530)*(x-70)
+           (280/510 + 250/530)*(x-70) = 260
+           (0.549 + 0.472)*(x-70) = 260
+           1.021*(x-70) = 260 → x-70 ≈ 254.6 → x ≈ 325
+           y_MPB ≈ 100 + (280/510)*254.6 ≈ 100 + 139.8 ≈ 240
+      -->
+      <line x1="325" y1="240" x2="325" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="70" y1="240" x2="325" y2="240" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="325" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_m</text>
+      <text x="58" y="244" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_m</text>
+      <text x="200" y="416" font-size="9" fill="#334155" text-anchor="middle">(under-consumption)</text>
+
+      <!-- Social optimum Q*: MSB = MPC
+           MSB: y = 55 + (280/510)*(x-70)
+           MPC: y = 360 - (250/530)*(x-70)
+           55 + (280/510)*(x-70) = 360 - (250/530)*(x-70)
+           1.021*(x-70) = 305 → x-70 ≈ 298.7 → x ≈ 369
+           y ≈ 360 - (250/530)*298.7 ≈ 360 - 140.9 ≈ 219
+      -->
+      <line x1="369" y1="219" x2="369" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="70" y1="219" x2="369" y2="219" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="369" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q*</text>
+      <text x="58" y="223" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P*</text>
+      <text x="500" y="155" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Social optimum Q*</text>
+
+      <!-- MEB double-headed vertical arrow at x=390, from MSB to MPB at x=390
+           MPB at x=390: y = 100 + (280/510)*(390-70) = 100 + 175.7 ≈ 276
+           MSB at x=390: y = 55 + (280/510)*(390-70) = 55 + 175.7 ≈ 231
+      -->
+      <line x1="395" y1="231" x2="395" y2="276" stroke="#059669" stroke-width="2"/>
+      <polygon points="391,235 399,235 395,225" fill="#059669"/>
+      <polygon points="391,272 399,272 395,282" fill="#059669"/>
+      <text x="408" y="258" font-size="10" font-weight="600" fill="#059669">MEB</text>
+
+      <!-- Welfare loss rose triangle: Q_m to Q*, bounded MSB above, MPC below
+           Vertices: (325,240=MPC at Q_m), (369,219=MSB=MPC at Q*), (325, MSB at Q_m)
+           MSB at x=325: y = 55 + (280/510)*(325-70) = 55 + 140 = 195
+           So triangle: (325,195), (369,219), (325,240)
+      -->
+      <polygon points="325,195 369,219 325,240" fill="#FEE2E2" opacity="0.85"/>
+      <text x="290" y="215" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">Welfare loss from</text>
+      <text x="290" y="228" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">under-consumption</text>
+
+      <!-- Green shading for corrective subsidy gain area (Q_m to Q* between MSB and MPC) -->
+      <!-- This is roughly the same triangle but shaded green for the gain -->
+      <polygon points="325,195 369,219 325,240" fill="#DCFCE7" opacity="0.5"/>
+      <text x="450" y="330" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">↑ Welfare gain from corrective subsidy: Q_m → Q*</text>
+    </svg>
+  `,
+
+  lemonMarketDiagram: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Akerlof's Lemons Market — Adverse Selection &amp; Market Unravelling</text>
+
+      <!-- Y axis -->
+      <line x1="70" y1="45" x2="70" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="66,49 74,49 70,41" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="70" y1="400" x2="640" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="636,396 636,404 644,400" fill="#334155"/>
+      <text x="655" y="404" font-size="12" fill="#334155">Q</text>
+      <text x="50" y="50" font-size="12" fill="#334155" text-anchor="end">P (£)</text>
+
+      <!-- Demand D: navy downward from (70,80) to (600,380) -->
+      <line x1="70" y1="80" x2="600" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="608" y="383" font-size="11" font-weight="700" fill="#2563EB">Buyer demand (based on expected quality)</text>
+
+      <!-- S1: green, upward, rightmost — from (70,350) to (540,100) -->
+      <line x1="70" y1="350" x2="540" y2="100" stroke="#059669" stroke-width="2.5"/>
+      <text x="548" y="98" font-size="11" font-weight="700" fill="#059669">S₁: Full market (good cars + lemons)</text>
+
+      <!-- S2: amber, upward, middle — from (70,350) to (380,100) -->
+      <line x1="70" y1="350" x2="380" y2="100" stroke="#D97706" stroke-width="2.5"/>
+      <text x="388" y="98" font-size="11" font-weight="700" fill="#D97706">S₂: Good cars withdraw</text>
+
+      <!-- S3: red, upward, leftmost — from (70,350) to (220,100) -->
+      <line x1="70" y1="350" x2="220" y2="100" stroke="#DC2626" stroke-width="2.5"/>
+      <text x="228" y="98" font-size="11" font-weight="700" fill="#DC2626">S₃: Only lemons (market collapse)</text>
+
+      <!-- P1 intersection: D meets S1
+           D: y = 80 + (300/530)*(x-70)
+           S1: y = 350 - (250/470)*(x-70)
+           80 + 0.566*(x-70) = 350 - 0.532*(x-70)
+           1.098*(x-70) = 270 → x-70 ≈ 245.9 → x ≈ 316
+           y ≈ 80 + 0.566*245.9 ≈ 80 + 139.2 ≈ 219
+      -->
+      <circle cx="316" cy="219" r="5" fill="#059669"/>
+      <line x1="70" y1="219" x2="316" y2="219" stroke="#059669" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="58" y="223" font-size="10" font-weight="600" fill="#059669" text-anchor="end">P₁</text>
+
+      <!-- P2 intersection: D meets S2
+           S2: y = 350 - (250/310)*(x-70)
+           80 + 0.566*(x-70) = 350 - 0.806*(x-70)
+           1.372*(x-70) = 270 → x-70 ≈ 196.8 → x ≈ 267
+           y ≈ 80 + 0.566*196.8 ≈ 80 + 111.4 ≈ 191
+      -->
+      <circle cx="267" cy="191" r="5" fill="#D97706"/>
+      <line x1="70" y1="191" x2="267" y2="191" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="58" y="195" font-size="10" font-weight="600" fill="#D97706" text-anchor="end">P₂</text>
+
+      <!-- P3 intersection: D meets S3
+           S3: y = 350 - (250/150)*(x-70)
+           80 + 0.566*(x-70) = 350 - 1.667*(x-70)
+           2.233*(x-70) = 270 → x-70 ≈ 120.9 → x ≈ 191
+           y ≈ 80 + 0.566*120.9 ≈ 80 + 68.4 ≈ 148
+      -->
+      <circle cx="191" cy="148" r="5" fill="#DC2626"/>
+      <line x1="70" y1="148" x2="191" y2="148" stroke="#DC2626" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="58" y="152" font-size="10" font-weight="600" fill="#DC2626" text-anchor="end">P₃</text>
+
+      <!-- Collapse arrow sequence -->
+      <text x="350" y="348" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Asymmetric info → adverse selection → P falls → good cars exit → repeat</text>
+
+      <!-- Annotation box -->
+      <rect x="150" y="410" width="400" height="36" fill="#FEE2E2" rx="6" stroke="#DC2626" stroke-width="1.5"/>
+      <text x="350" y="430" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">Result: only low-quality goods trade, or market collapses entirely</text>
+    </svg>
+  `,
+
+  freeRiderDiagram: `
+    <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Public Goods — Free Rider Problem &amp; Market Under-provision</text>
+
+      <!-- Y axis -->
+      <line x1="70" y1="45" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="66,49 74,49 70,41" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="70" y1="390" x2="640" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="636,386 636,394 644,390" fill="#334155"/>
+      <text x="655" y="394" font-size="12" fill="#334155">Q</text>
+      <text x="48" y="50" font-size="12" fill="#334155" text-anchor="end">Value / Cost</text>
+
+      <!-- MC: red, gently upward from (70,300) to (560,150) -->
+      <line x1="70" y1="300" x2="560" y2="150" stroke="#DC2626" stroke-width="2.5"/>
+      <text x="568" y="148" font-size="11" font-weight="700" fill="#DC2626">MC of provision</text>
+
+      <!-- MSB: navy downward from (70,80) to (580,360) -->
+      <line x1="70" y1="80" x2="580" y2="360" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="588" y="363" font-size="11" font-weight="700" fill="#2563EB">MSB (True social value)</text>
+
+      <!-- Social optimum Q*: MSB = MC
+           MSB: y = 80 + (280/510)*(x-70)
+           MC:  y = 300 - (150/490)*(x-70)
+           80 + 0.549*(x-70) = 300 - 0.306*(x-70)
+           0.855*(x-70) = 220 → x-70 ≈ 257.3 → x ≈ 327
+           y ≈ 80 + 0.549*257.3 ≈ 80 + 141.3 ≈ 221
+      -->
+      <line x1="327" y1="221" x2="327" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="70" y1="221" x2="327" y2="221" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="327" y="407" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q* (social optimum)</text>
+      <text x="58" y="225" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P*</text>
+
+      <!-- Market outcome: vertical line at Q_market ≈ x=80 (near zero) -->
+      <line x1="80" y1="70" x2="80" y2="390" stroke="#DC2626" stroke-width="2.5"/>
+      <text x="82" y="62" font-size="10" font-weight="600" fill="#DC2626">Market provides Q ≈ 0</text>
+
+      <!-- Rose shading: welfare loss from Q≈0 to Q*
+           Fill area bounded by MSB above, MC below, from x=80 to x=327
+           MSB at x=80: y ≈ 80 + 0.549*10 ≈ 85.5 ≈ 86
+           MC at x=80:  y ≈ 300 - 0.306*10 ≈ 296.9 ≈ 297
+           MSB at x=327: y ≈ 221
+           MC at x=327: y ≈ 221
+      -->
+      <polygon points="80,86 327,221 80,297" fill="#FEE2E2" opacity="0.8"/>
+      <text x="165" y="185" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">Market failure:</text>
+      <text x="165" y="200" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">massive under-provision</text>
+
+      <!-- Annotation box -->
+      <rect x="60" y="310" width="570" height="50" fill="#DBEAFE" rx="6" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="345" y="331" font-size="10" font-weight="600" fill="#1E40AF" text-anchor="middle">Non-excludable → no revenue → private firms won't provide</text>
+      <text x="345" y="348" font-size="10" font-weight="600" fill="#1E40AF" text-anchor="middle">→ government must fund via taxation</text>
+    </svg>
+  `,
+
 };

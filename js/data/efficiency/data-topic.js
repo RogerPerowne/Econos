@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'efficiency_2',
       template: 'framing',
+      diagramKey: 'allocativeEfficiencyDiagram',
       title: 'Allocative Efficiency',
       body: '<strong>Allocative efficiency</strong> is achieved when resources are allocated to their highest-value uses — producing the combination of goods and services that maximises social welfare.<br><br><strong>Condition:</strong> P = MC for every good. At this price, the marginal value to consumers (P) equals the marginal cost of production (MC) — no reallocation of resources can increase total welfare.<br><br>If P > MC: consumers value additional units more than they cost → too little is being produced → welfare gain from expanding output. If P < MC: additional units cost more than consumers value them → too much is being produced.<br><br>Competitive markets with no externalities achieve P = MC at equilibrium.',
       keyTerms: [

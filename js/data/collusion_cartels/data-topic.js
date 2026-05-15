@@ -60,6 +60,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'collusion_cartels_3',
       template: 'mechanisms',
+      diagramKey: 'cartelPrisonersDilemma',
       title: 'Why Cartels Are Unstable: The Prisoner\'s Dilemma',
       intro: 'Even if a cartel is formed, each individual member has an incentive to cheat — making cartels inherently unstable.',
       steps: [
@@ -73,6 +74,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'collusion_cartels_4',
       template: 'framing',
+      diagramKey: 'cartelJointProfitDiagram',
       title: 'OPEC: The World\'s Most Famous Cartel',
       body: '<strong>OPEC</strong> (Organisation of Petroleum Exporting Countries) is the classic real-world cartel study:<br><br>• Founded 1960; 13 member countries including Saudi Arabia, UAE, Iraq, Iran<br>• Controls ≈ 40% of world oil supply and ≈ 80% of proven reserves<br>• Sets production quotas for members to limit output → maintain high prices<br><br><strong>Key cartel tensions in OPEC:</strong><br>• Members frequently exceed their production quotas (classic cheating)<br>• Saudi Arabia acts as "swing producer" — adjusts own output to compensate for others\' cheating<br>• Non-OPEC producers (USA shale, Russia, Norway) are not bound by quotas → produce freely<br>• Internal conflicts: price hawks (Iran, Venezuela need high prices for fiscal solvency) vs moderates (Saudi Arabia can sustain lower prices)<br><br><strong>2020 crisis:</strong> OPEC+ failed to agree cuts during COVID → Saudi Arabia launched price war → oil price crashed to $20/barrel → all parties damaged.',
       keyTerms: [

@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Positive Externalities',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the positive externality diagram, why markets underprovide goods with external benefits, and how subsidies and regulation correct this.',
   intro: {
     heroKey: 'heroExternalities',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Positive externality → MSB > MPB → market underproduces/underconsumes. Policy: subsidy to shift MPB up to MSB (consumption side) or MPC down to MSC (production side). Socially optimal output > market output.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pos_externalities_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Positive externalities: the big picture',
       lede: 'When private benefit ignores third-party gain, markets underproduce goods that society values most — like education and healthcare.',
       branches: [
@@ -133,6 +133,61 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'NHS vs private healthcare debate is the definitive policy question here. Free at point of use eliminates underconsumption from positive externality but may create moral hazard (trivial GP appointments). Co-payments (small charges for prescriptions) attempt to limit this without re-creating access barriers. A nuanced evaluation.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'pe-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: positive externalities',
+      question: 'Evaluate the view that subsidies are the most effective government policy for correcting market failure caused by positive externalities. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define positive externalities, explain the market failure, and introduce the main policy options.',
+          hint: 'Positive externality: third-party benefit not captured in the market price. Result: private MSB < social MSB → market under-produces relative to social optimum (Q_market < Q_optimal). Policy options: subsidies (reduce price, increase consumption to Q*), provision in-kind (state provision free at point of use), regulation (minimum consumption requirements). The question is whether subsidies are the MOST effective.',
+          model: 'A positive externality arises when the consumption or production of a good generates benefits for third parties not reflected in the market price. Because consumers and producers base decisions on private costs and benefits only, the free market under-provides goods with positive externalities — consumption falls short of the socially optimal level where social marginal benefit equals social marginal cost. The government has several tools to correct this market failure: subsidies (shifting supply rightward to close the output gap), in-kind provision (direct state supply, free at point of use), and regulation (mandatory minimum consumption). This essay evaluates whether the subsidy is the most effective instrument.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — How subsidies correct positive externality market failure',
+          prompt: 'Explain the subsidy mechanism and how it moves the market toward the social optimum.',
+          hint: 'Subsidy = per-unit payment to producer (or consumer) = size of the externality (MEB). Mechanism: subsidy reduces effective price → demand increases OR subsidy to producer shifts supply right → equilibrium output rises to Q*. At Q*, private MSB (=price) + MEB = SMB → efficient allocation. Education subsidy: private schools, university maintenance grants (UK 2000s), apprenticeship levy subsidies. Healthcare: NHS prescription subsidy (£9.90 vs full cost).',
+          model: 'A Pigouvian subsidy equal to the marginal external benefit (MEB) at the social optimum corrects positive externality market failure by internalising the externality. For a consumer subsidy: the effective price to consumers falls, increasing the quantity demanded to Q* where P = SMC = SMB/person. For a producer subsidy: the supply curve shifts right by the subsidy amount, reducing the market price and increasing equilibrium output to Q*. At this point, the private marginal benefit plus the marginal external benefit equals the social marginal benefit — allocative efficiency is restored. UK examples include university education subsidies (student loans below market interest rates, maintenance grants), apprenticeship levy subsidies, and R&D tax credits — all designed to close the gap between private and social returns to investment in human capital and innovation.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — State provision and regulation as alternatives',
+          prompt: 'Explain how direct state provision and regulation can address positive externalities, and their relative strengths.',
+          hint: 'State provision (NHS, state schools): free at point of use → eliminates price barrier → consumption rises to at or near social optimum. Avoids the administrative complexity of calculating the optimal subsidy. Most effective when externalities are large and access inequality is a concern. Regulation: compulsory education (5-16 in UK), mandatory vaccination programmes. Eliminates underconsumption by legal requirement — most direct. But may over-correct (forces consumption on unwilling individuals).',
+          model: 'State provision — supplying the good free or below cost at point of use — addresses positive externalities more directly than subsidies in markets where the barrier to consumption is price itself. The NHS provides healthcare free at the point of use, eliminating the price barrier that would cause underconsumption given the large positive externality of health (lower infection transmission, higher productivity, social cohesion). Compulsory education (ages 5-16 in the UK) uses regulation to mandate minimum consumption — ensuring the positive externality of an educated citizenry is fully captured. Regulation is the most direct remedy where the externality is large and society judges that consumption is essential: it eliminates the underconsumption problem by legal requirement, rather than relying on price incentives.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Practical limitations of subsidies: information failure and deadweight subsidy cost',
+          prompt: 'Evaluate the practical problems with subsidy design: measurement of MEB, over-subsidisation, and fiscal cost.',
+          hint: 'Information problem: government must measure MEB accurately. If MEB underestimated → subsidy too small. If overestimated → over-production beyond Q* → welfare loss in other direction. Subsidies have fiscal cost (opportunity cost — money spent on subsidies not available for other public spending). May also cause moral hazard: subsidised firms invest less in innovation (protected from full market discipline). Evidence: industry subsidies have mixed records — UK steel subsidies 1970s, EU agricultural subsidies — often wasteful.',
+          model: 'The critical limitation of subsidies is the information problem: to set the optimal subsidy, the government must accurately measure the marginal external benefit at the social optimum — which is unobservable. If the subsidy is too small, under-provision persists; if too large, over-production generates its own welfare loss. The Pigouvian ideal is theoretically precise but practically elusive. Subsidies also impose direct fiscal costs — money spent subsidising one activity cannot be used elsewhere (opportunity cost). UK experience with industrial subsidies (British Leyland in the 1970s, EU Common Agricultural Policy) illustrates how poorly-targeted subsidies can sustain inefficient producers, reduce market discipline, and generate deadweight losses exceeding the externality they were designed to correct. State provision avoids the calibration problem by supplying the good directly at zero price — but introduces the moral hazard of potentially unlimited demand.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Which instrument is best depends on the externality\'s size and the market context',
+          prompt: 'Weigh subsidies vs state provision vs regulation with reference to specific positive externality contexts.',
+          hint: 'Key judgement: subsidies work best for moderate externalities where price incentives can work (R&D, training). State provision works best for large externalities where access inequality is a concern and price barriers would leave large groups excluded (healthcare, primary education). Regulation works best where minimum consumption is socially essential (compulsory education, vaccination). No single instrument dominates across all contexts.',
+          model: 'The most effective policy depends on the nature and magnitude of the positive externality. Subsidies are most effective for moderate externalities in markets where consumers are already engaged but are consuming sub-optimally due to price (R&D tax credits, apprenticeship subsidies) — the price mechanism is working, it just needs recalibration. State provision is most effective where the externality is very large, access inequality is a major concern, and price barriers would exclude significant parts of the population (NHS healthcare, universal primary education): in these cases, the subsidy would need to be so large that it effectively becomes provision, and direct supply is more administratively efficient. Regulation is most effective where consumption is a social necessity and voluntary underconsumption has severe external costs (compulsory vaccination, compulsory schooling): the external cost of non-consumption is too high to leave to individual choice. In practice, most positive externality markets use a mix of all three instruments.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a nuanced judgement: subsidies are effective for moderate externalities but state provision and regulation are superior where externalities are large or access inequality is severe.',
+          hint: 'Subsidies are a good tool but not universally the best. Their strength — using price mechanisms — is also their weakness: they require accurate MEB measurement and work less well where price barriers are severe. State provision and regulation are superior in specific contexts. The best policy mixes instruments to context.',
+          model: 'Subsidies are an effective policy tool for correcting positive externality market failure in markets where price incentives are operative and externalities are moderate — R&D, vocational training, and targeted social investment all benefit from subsidy instruments that preserve market mechanisms while correcting the divergence between private and social returns. However, the claim that subsidies are the most effective instrument universally overstates their advantages. Where positive externalities are very large, where access inequality is severe, or where minimum consumption is socially essential, direct state provision or compulsory regulation achieve the social optimum more reliably and without the information problems inherent in calculating optimal Pigouvian subsidy rates. The most effective real-world approach combines instruments: direct provision for essential services with large externalities, subsidies for markets with moderate externalities and functioning price mechanisms, and regulation where non-consumption has unacceptable social costs.'
+        }
+      ]
     }
   ]
 };

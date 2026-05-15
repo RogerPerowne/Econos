@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Environmental Economics',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the economics of environmental degradation, carbon markets, the sustainability debate, and the policy toolkit for environmental protection.',
   intro: {
     heroKey: 'heroExternalities',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'The environment provides three economic services: resource inputs, waste sink, and amenity value. Market prices capture the first poorly, the second not at all, and the third barely — hence systematic environmental market failure.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'environmental_econ_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Environmental economics: the big picture',
       lede: 'The environment is the ultimate under-priced resource — and climate change is the largest market failure in history.',
       branches: [
@@ -131,6 +131,61 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'International environmental agreements face the collective action problem at the global level: no supranational authority can compel compliance. This is the fundamental reason climate policy is harder than domestic environmental policy — the externality is global but governance is national. Use the term "international public good" for a stable climate — reinforces why market failure is so intractable.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'ee-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: environmental economics',
+      question: 'Evaluate the view that a carbon tax is the most effective policy to reduce carbon emissions. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Explain carbon emissions as a negative externality and introduce the main policy tools.',
+          hint: 'Carbon emissions: negative externality (cost to third parties via climate change). Market failure: MSC > MPC → over-production and overconsumption of fossil fuels. Policy tools: carbon tax (Pigouvian), cap-and-trade ETS, regulation (emission standards, bans), subsidies for clean alternatives. Carbon tax is the market-based, price mechanism approach — internalises the externality via price signal.',
+          model: 'Carbon dioxide emissions represent a negative externality: burning fossil fuels imposes climate change costs on the global community that are not reflected in the private market price. The resulting market failure produces excessive emissions — firms and consumers emit more than is socially optimal because they face only private costs, not the full social marginal cost including environmental damage. Policy tools include a carbon tax (Pigouvian), cap-and-trade emission trading schemes, direct regulation (emission standards, technology mandates, fossil fuel bans), and subsidies for clean alternatives. This essay evaluates whether the carbon tax is the most effective among these instruments.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — How a carbon tax internalises the externality efficiently',
+          prompt: 'Explain the carbon tax mechanism and its efficiency advantages.',
+          hint: 'Tax = MSC − MPC = MEC at social optimum. Raises price of carbon-intensive goods → reduces demand → firms shift to cleaner production → innovation incentive. Revenue can be recycled (lower income tax, green investment). Dynamic efficiency: creates continuous incentive to innovate and reduce emissions further (unlike fixed standard which just requires minimum compliance). UK carbon floor price: raises cost of coal generation → coal power station closures. EU ETS: cap-and-trade equivalent — price mechanism approach.',
+          model: 'A carbon tax set equal to the marginal external cost (MEC) at the social optimum raises the price of carbon-intensive activities to reflect their full social cost, correcting the market failure at source. Firms and consumers face a price signal that incentivises switching to lower-carbon alternatives — the least-cost abatement options are adopted first, ensuring aggregate emission reduction is achieved at minimum economic cost. The dynamic efficiency advantage is significant: unlike regulatory standards, which require only minimum compliance, a carbon tax creates a continuous incentive to innovate and reduce emissions further, since every additional tonne abated saves the firm the tax cost. Revenue from the carbon tax can be recycled — used to reduce other distortionary taxes (a "green dividend") or fund clean investment — making the net economic impact more positive. The UK\'s carbon price floor, introduced in 2013, made coal power uneconomic: UK coal\'s share of electricity generation fell from ~40% to near zero by 2019.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Cap-and-trade as an alternative market-based approach',
+          prompt: 'Explain the EU ETS and evaluate whether it achieves equivalent or superior outcomes to a carbon tax.',
+          hint: 'Cap-and-trade (EU ETS): government sets total emission cap, issues permits, firms trade. Price of permits = carbon price discovered by market. Certainty of environmental outcome (cap is fixed) vs carbon tax (quantity response uncertain). ETS: better for environmental target certainty; carbon tax: better for price stability and investment certainty. Real-world: EU ETS had permit price near zero 2008-17 due to over-allocation → failed to incentivise abatement. Reformed post-2021: permit price rose to €80-100/tonne → significant investment in clean energy.',
+          model: 'Cap-and-trade emissions trading schemes (ETS) achieve the same theoretical outcome as a carbon tax via a different mechanism: the government sets the total quantity of allowable emissions (the cap) and issues tradeable permits equal to that cap. Firms that can abate cheaply do so and sell surplus permits; firms facing high abatement costs buy permits. The permit price discovered through trading is equivalent to the optimal carbon tax. The key distinction is certainty: a carbon tax provides price certainty (firms know the cost of emitting) but quantity uncertainty (the volume of emission reduction depends on price elasticity of demand); an ETS provides quantity certainty (the cap guarantees total emissions) but price uncertainty (the permit price fluctuates). The EU ETS\'s early failure (over-allocated permits → near-zero prices 2008-17 → no abatement incentive) shows that poorly designed cap-and-trade can fail where a well-calibrated carbon tax would succeed — and vice versa.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Limitations of carbon tax: regressivity, carbon leakage, and political constraints',
+          prompt: 'Evaluate the practical and political limitations of carbon tax as the primary climate policy instrument.',
+          hint: 'Regressivity: carbon tax is regressive — energy costs are larger share of low-income household budgets. Reduces equity unless revenue is rebated progressively (carbon dividend). Carbon leakage: if only some countries impose carbon tax, emissions-intensive industries relocate to unregulated jurisdictions → global emissions unchanged, UK industry disadvantaged. Solution: Carbon Border Adjustment Mechanism (CBAM, EU 2026). Information problem: how do you set the correct tax rate when the social cost of carbon is uncertain? IPCC estimates vary widely.',
+          model: 'Carbon taxes face three significant practical challenges. First, regressivity: energy expenditure constitutes a higher proportion of low-income households\' budgets, so a uniform carbon tax imposes proportionally larger costs on poorer households. This distributional concern is real but addressable — carbon revenue can be recycled as a flat per-capita dividend (making the policy progressive overall) or as targeted energy bill relief for low-income households. Second, carbon leakage: if only the UK or EU imposes a carbon tax while competitors do not, energy-intensive industries may relocate to unregulated jurisdictions, eliminating domestic emission reductions while harming competitiveness. The EU\'s Carbon Border Adjustment Mechanism (2026) addresses this by taxing imports from non-carbon-priced jurisdictions — but adds trade complexity. Third, setting the right tax rate requires estimating the social cost of carbon — which is genuinely uncertain, ranging from $50 to $200+ per tonne in different estimates — making optimal calibration difficult.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Carbon tax vs regulation vs clean subsidies: which dominates in which context?',
+          prompt: 'Weigh the carbon tax against regulation and subsidies with reference to different emission reduction contexts.',
+          hint: 'Carbon tax: most efficient for economy-wide emissions where substitution is feasible (energy, transport). Regulation: most effective for specific source reductions where technology mandates are feasible (vehicle standards, building regulations, appliance efficiency). Clean subsidies: best for accelerating deployment of new technologies where market barriers to adoption are high (offshore wind, EV charging infrastructure). Most effective climate policy uses all three: carbon price (internalise the externality), standards (floor for hard-to-abate sectors), subsidies (accelerate clean technology deployment).',
+          model: 'No single instrument dominates across all emission reduction contexts. Carbon taxes are most efficient for economy-wide emissions where substitution between carbon-intensive and low-carbon options is feasible at relatively low cost — energy markets, domestic heating, transport. They send a pervasive price signal that reaches every decision maker simultaneously. Regulation is most effective for specific sectors where technology mandates achieve emission reductions that price alone cannot: UK building regulations for new-build energy efficiency, vehicle emission standards (Euro 6), planned phaseouts of gas boilers and petrol vehicles set clear direction that investment planning requires. Clean energy subsidies (Contracts for Difference for offshore wind, EV charging infrastructure grants) address the deployment barriers for new technologies: the carbon price provides the long-run investment signal, but scale-up requires up-front support during the cost-reduction learning curve. The UK Climate Change Act (2008), which mandates legally binding net-zero targets, uses all three instruments in combination — a comprehensive approach that reflects the complexity of the challenge.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a nuanced judgement: carbon tax is theoretically optimal and highly effective but works best as part of a policy mix with regulation and clean subsidies.',
+          hint: 'Carbon tax is the economists\' preferred tool — price mechanism, dynamic efficiency, revenue neutrality possible. But it is not sufficient alone: carbon leakage, regressivity, and technology deployment barriers require complementary tools. Most effective climate policy uses carbon price (broad economy signal), regulation (sectoral floor), and subsidies (technology acceleration). "Most effective" depends on what dimension of effectiveness you prioritise.',
+          model: 'A well-designed carbon tax is arguably the most cost-efficient single instrument for reducing carbon emissions, because it harnesses price mechanisms to direct abatement toward the lowest-cost opportunities, generates revenue that can offset regressive impacts, and provides a continuous innovation incentive. However, calling it the most effective instrument overall requires qualification. Carbon leakage limits its effectiveness in an open economy without border adjustment; setting the correct tax rate under uncertainty about the social cost of carbon introduces calibration risk; and some emission reductions require complementary regulatory mandates and technology deployment support that a price signal alone cannot deliver quickly enough to meet climate targets. The most effective real-world approach combines a meaningful carbon price (to send the right signal economy-wide), sectoral regulation (to set minimum standards in hard-to-price contexts), and targeted subsidies (to accelerate clean technology adoption). Used in combination, these instruments address the full range of market failures driving carbon emissions more effectively than any single instrument could achieve alone.'
+        }
+      ]
     }
   ]
 };

@@ -282,16 +282,16 @@
       const tR = TONES[2];
       content += `
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
-        <div style="border-radius:12px;overflow:hidden;background:${tL.bg};border:1px solid ${tL.border}30;">
-          <div style="padding:12px 16px;background:${tL.headerBg};color:#fff;font-weight:800;font-size:14px;text-align:center;">${c.left.label}</div>
-          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
-            ${c.left.points.map(p => `<li style="margin-bottom:8px;">${p}</li>`).join('')}
+        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tL.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
+          <div style="color:${tL.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.left.label}</div>
+          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+            ${c.left.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tL.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
           </ul>
         </div>
-        <div style="border-radius:12px;overflow:hidden;background:${tR.bg};border:1px solid ${tR.border}30;">
-          <div style="padding:12px 16px;background:${tR.headerBg};color:#fff;font-weight:800;font-size:14px;text-align:center;">${c.right.label}</div>
-          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
-            ${c.right.points.map(p => `<li style="margin-bottom:8px;">${p}</li>`).join('')}
+        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tR.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
+          <div style="color:${tR.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.right.label}</div>
+          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+            ${c.right.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tR.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
           </ul>
         </div>
       </div>`;

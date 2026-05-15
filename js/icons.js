@@ -1066,6 +1066,9 @@ window.ECONOS_ICONS = {
         <marker id="dm-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
         </marker>
+        <clipPath id="dm-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
       </defs>
 
       <!-- Background -->
@@ -1161,11 +1164,15 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole demand curve</text>
-        <!-- D0 left shift -->
-        <line x1="30" y1="90" x2="420" y2="370" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <!-- D0 left shift (clipped to axis area) -->
+        <g clip-path="url(#dm-chart-clip)">
+          <line x1="30" y1="90" x2="420" y2="370" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        </g>
         <text x="426" y="368" font-size="14" font-weight="700" fill="#DC2626">D₀</text>
-        <!-- D2 right shift -->
-        <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <!-- D2 right shift (clipped to axis area) -->
+        <g clip-path="url(#dm-chart-clip)">
+          <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        </g>
         <text x="548" y="376" font-size="14" font-weight="700" fill="#059669">D₂</text>
         <!-- E0 circle (red) at (225, 230) -->
         <line x1="225" y1="230" x2="225" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -1178,8 +1185,8 @@ window.ECONOS_ICONS = {
         <line x1="365" y1="230" x2="365" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="365" cy="230" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
         <text x="365" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
-        <!-- Horizontal double-headed arrow -->
-        <line x1="228" y1="230" x2="362" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#dm-red-end)" marker-end="url(#dm-green-end)"/>
+        <!-- Horizontal double-headed arrow (shortened to clear circles) -->
+        <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#dm-red-end)" marker-end="url(#dm-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF DEMAND</text>
         <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
@@ -1214,6 +1221,9 @@ window.ECONOS_ICONS = {
         <marker id="sp-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
         </marker>
+        <clipPath id="sp-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
       </defs>
 
       <!-- Background -->
@@ -1309,11 +1319,15 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole supply curve</text>
-        <!-- S0 left shift (higher costs) -->
-        <line x1="30" y1="370" x2="420" y2="90" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <!-- S0 left shift (clipped to axis area) -->
+        <g clip-path="url(#sp-chart-clip)">
+          <line x1="30" y1="370" x2="420" y2="90" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        </g>
         <text x="424" y="88" font-size="14" font-weight="700" fill="#DC2626">S₀</text>
-        <!-- S2 right shift (lower costs) -->
-        <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <!-- S2 right shift (clipped to axis area) -->
+        <g clip-path="url(#sp-chart-clip)">
+          <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        </g>
         <text x="564" y="88" font-size="14" font-weight="700" fill="#059669">S₂</text>
         <!-- E0_s circle (red) at (225, 230) -->
         <line x1="225" y1="230" x2="225" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -1326,8 +1340,8 @@ window.ECONOS_ICONS = {
         <line x1="365" y1="230" x2="365" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="365" cy="230" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
         <text x="365" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
-        <!-- Horizontal double-headed arrow -->
-        <line x1="228" y1="230" x2="362" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#sp-red-end)" marker-end="url(#sp-green-end)"/>
+        <!-- Horizontal double-headed arrow (shortened to clear circles) -->
+        <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#sp-red-end)" marker-end="url(#sp-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF SUPPLY</text>
         <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
@@ -1359,6 +1373,9 @@ window.ECONOS_ICONS = {
         <marker id="mk-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
         </marker>
+        <clipPath id="mk-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
       </defs>
 
       <!-- Background -->
@@ -1426,8 +1443,10 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Demand shifts right → higher P and higher Q</text>
-        <!-- D2 line -->
-        <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <!-- D2 line (clipped to axis area) -->
+        <g clip-path="url(#mk-chart-clip)">
+          <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        </g>
         <text x="548" y="376" font-size="14" font-weight="700" fill="#059669">D₂</text>
         <!-- E1 ref (old equilibrium) -->
         <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
@@ -1439,10 +1458,10 @@ window.ECONOS_ICONS = {
         <text x="302" y="208" font-size="11" font-weight="700" fill="#059669">E₂</text>
         <text x="46" y="213" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₂</text>
         <text x="325" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
-        <!-- Horizontal green arrow at y=209 from x=295 to x=325 (Q increase) -->
-        <line x1="295" y1="209" x2="322" y2="209" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
-        <!-- Vertical green arrow at x=325 from y=230 to y=209 (P increase) -->
-        <line x1="325" y1="230" x2="325" y2="212" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Horizontal green arrow at y=209 from E1 toward E2 (shortened to clear circles) -->
+        <line x1="302" y1="209" x2="316" y2="209" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Vertical green arrow at x=325 from E1 up toward E2 (shortened to clear circles) -->
+        <line x1="325" y1="224" x2="325" y2="218" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">DEMAND SHIFTS RIGHT</text>
         <text x="620" y="100" font-size="13" fill="#334155">D₁ → D₂: more demanded at</text>
@@ -1463,8 +1482,10 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Supply shifts right → higher Q but lower P</text>
-        <!-- S2 line -->
-        <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <!-- S2 line (clipped to axis area) -->
+        <g clip-path="url(#mk-chart-clip)">
+          <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        </g>
         <text x="548" y="88" font-size="14" font-weight="700" fill="#059669">S₂</text>
         <!-- E1 ref (old equilibrium) -->
         <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
@@ -1476,10 +1497,10 @@ window.ECONOS_ICONS = {
         <text x="302" y="268" font-size="11" font-weight="700" fill="#059669">E₃</text>
         <text x="46" y="256" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₃</text>
         <text x="325" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₃</text>
-        <!-- Horizontal green arrow at y=252 from x=295 to x=325 (Q increase) -->
-        <line x1="295" y1="252" x2="322" y2="252" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
-        <!-- Vertical green arrow at x=325 from y=230 to y=252 (P decrease/fall) -->
-        <line x1="325" y1="230" x2="325" y2="249" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Horizontal green arrow at y=252 from E1 toward E3 (shortened to clear circles) -->
+        <line x1="302" y1="252" x2="316" y2="252" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Vertical green arrow at x=325 from E1 down toward E3 (shortened to clear circles) -->
+        <line x1="325" y1="236" x2="325" y2="243" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SUPPLY SHIFTS RIGHT</text>
         <text x="620" y="100" font-size="13" fill="#334155">S₁ → S₂: more supplied at</text>

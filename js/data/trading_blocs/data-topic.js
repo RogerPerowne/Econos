@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Trading Blocs & WTO',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the hierarchy of trade agreements, Viner\'s trade creation vs diversion, and the WTO\'s role and limitations.',
   intro: {
     heroKey: 'heroGlobe',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Trade creation = good (shift from high-cost domestic to low-cost bloc partner). Trade diversion = potentially bad (shift from low-cost rest-of-world to higher-cost bloc partner due to common external tariff).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'trading_blocs_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Trading blocs and the WTO: the big picture',
       lede: 'Countries can liberalise trade with the whole world (multilateral) or with a chosen few (regional). Each path has costs as well as gains.',
       branches: [
@@ -134,6 +134,61 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'A top-band answer on UK trade policy notes: bilateral FTAs gain market access but cannot fully replicate the frictionless single-market access the UK had as an EU member, because services (UK\'s strength) are harder to liberalise in FTAs than goods.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'tb-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: trading blocs',
+      question: 'Evaluate the costs and benefits to a country of joining a regional trading bloc such as the European Union. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define trading blocs and the different levels of integration. Introduce the core debate: do the welfare gains from trade creation outweigh the losses from trade diversion and reduced policy independence?',
+          hint: 'Trading bloc = group of countries with preferential trade arrangements. Levels: FTA → customs union → single market → economic/monetary union. EU is deepest integration. Key trade-off: trade creation vs trade diversion.',
+          model: 'A regional trading bloc is a group of countries that grant each other preferential market access, ranging from a basic free trade area (FTA), which eliminates internal tariffs, to a full economic and monetary union, which adopts a single currency and coordinates fiscal policy. The European Union represents the most advanced integration model, encompassing a single market with free movement of goods, services, capital, and labour, and a monetary union (eurozone). Membership confers static gains through trade creation and dynamic gains through competition and scale, but also imposes costs through trade diversion, loss of policy autonomy, and political constraints. This essay evaluates these trade-offs with reference to the UK's experience.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Trade creation generates welfare gains through specialisation',
+          prompt: 'Explain how joining a bloc eliminates tariffs on intra-bloc trade, allowing member countries to import from more efficient bloc partners rather than producing domestically — generating a welfare gain through trade creation.',
+          hint: 'Trade creation: domestic high-cost production replaced by cheaper imports from bloc partner. Consumer surplus rises; producer surplus falls; net welfare gain. EU single market: eliminated non-tariff barriers (NTBs) adding to static gains. Estimated EU membership added 2-3% to UK GDP.',
+          model: 'Trade creation arises when bloc membership leads a country to replace expensive domestic production with cheaper imports from more efficient bloc partners. By removing tariffs and non-tariff barriers within the bloc, the price of imports falls, consumer surplus increases, and resources shift toward activities in which the country has comparative advantage. The European single market went beyond tariff elimination to remove regulatory barriers, standardise product rules, and liberalise services — substantially enhancing trade creation. Academic estimates suggest EU membership added approximately 2–3% to UK GDP through these static trade gains, representing a substantial welfare improvement compared to trading under WTO tariffs.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Dynamic gains from competition, scale, and FDI',
+          prompt: 'Explain the dynamic benefits of bloc membership: larger market increases competition (reducing X-inefficiency), enables firms to achieve economies of scale, and attracts FDI from firms seeking tariff-free access to the bloc.',
+          hint: 'Single market: 450m consumers. BMW, Toyota invest in UK to access EU market. Competition → innovation, lower prices, efficiency. Scale economies in manufacturing. Long-run productivity gains may exceed static trade creation.',
+          model: 'Beyond static trade creation, bloc membership generates dynamic efficiency gains that may be more significant in the long run. Access to a larger single market — over 450 million consumers in the EU — enables firms to achieve greater economies of scale, reducing long-run average costs and improving international competitiveness. Intensified competition from bloc partners reduces X-inefficiency and stimulates innovation. Furthermore, the bloc acts as a magnet for foreign direct investment: firms outside the bloc invest within it to gain tariff-free access, raising domestic capital stock and technology transfer. Japan\'s automotive investment in the UK during the 1980s–90s was directly motivated by single market access and significantly boosted UK manufacturing productivity.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Trade diversion and loss of policy autonomy impose real costs',
+          prompt: 'Argue that a common external tariff diverts trade from the most efficient world producer to a less efficient bloc partner, causing welfare loss. Also address the loss of independent trade and monetary policy.',
+          hint: 'Trade diversion: bloc\'s common external tariff makes cheaper non-bloc imports more expensive than bloc imports → welfare loss. EU common external tariff on manufactured goods. Loss of independent monetary policy in eurozone. Loss of FTA flexibility (UK-US deal).',
+          model: 'The common external tariff (CET) imposed by a customs union or deeper bloc can divert trade from the world\'s most efficient producers to less efficient bloc partners whose goods are cheaper only because intra-bloc tariffs are zero. If, for example, the EU\'s CET makes US or Asian manufactured goods more expensive than German equivalents, trade diverts to the less competitive European supplier — a welfare loss. The net welfare effect of joining depends on whether trade creation exceeds trade diversion; this is empirically uncertain and varies by sector. Beyond trade effects, bloc membership constrains policy autonomy: eurozone members cannot devalue their currency or set independent interest rates, as Greece painfully discovered during the 2009–2015 debt crisis when the inability to depreciate the euro prolonged its recession.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Net impact depends on the depth of integration and country characteristics',
+          prompt: 'Evaluate how the depth of integration (FTA vs customs union vs single market), the country\'s trade patterns, and its structural similarity to bloc partners determine whether membership is net beneficial.',
+          hint: 'Deeper integration = more trade creation and dynamic gains, but more policy loss. Small, open, trade-dependent economies gain most. Optimal currency area: similar economic cycles and labour mobility needed. UK case: large services economy, global trade orientation.',
+          model: 'The net benefit of trading bloc membership is highly context-specific. Small, open economies that are highly trade-dependent — such as Ireland or the Netherlands — gain most from bloc membership because trade creation is large relative to GDP. Larger, more self-sufficient economies with globally diversified trade patterns may gain less. The optimum currency area theory suggests monetary union is beneficial only when member economies have synchronised business cycles, flexible labour markets, and fiscal transfer mechanisms — conditions the eurozone imperfectly meets. The UK\'s case is instructive: as a large, services-dominated economy with significant non-EU trade ties and an already open economy, the static gains from EU membership were positive but smaller than for smaller manufacturing-dependent members; the dynamic gains from financial services access may have been more significant.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Reach a judgement: on balance, do the benefits of trading bloc membership typically outweigh the costs, and for what type of country?',
+          hint: 'Most empirical evidence: EU membership net beneficial for most members. Trade creation > trade diversion in the EU case. However, the UK\'s Brexit vote reflects non-economic costs (sovereignty, immigration, political independence) that economic analysis cannot fully capture. Commit to a conditional verdict.',
+          model: 'In conclusion, the empirical balance of evidence suggests that trading bloc membership generates net welfare gains for most member economies through trade creation, dynamic efficiency, and FDI attraction — particularly for smaller, trade-dependent economies deeply integrated with bloc partners. However, these gains are not universal: trade diversion imposes real costs, monetary union requires sacrifice of macroeconomic flexibility that can prove painful in asymmetric recessions, and the loss of independent trade policy constrains countries with globally diversified trade relationships. The optimal level of integration depends on a country\'s size, trade orientation, and degree of structural convergence with bloc partners. Beyond the economics, the UK\'s Brexit experience demonstrates that sovereignty, political identity, and immigration concerns may ultimately outweigh measured economic costs — a reminder that trade bloc membership is as much a political as an economic decision.'
+        }
+      ]
     }
   ]
 };

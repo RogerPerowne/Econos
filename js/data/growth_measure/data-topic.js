@@ -10,7 +10,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Economic Growth & National Income',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in GDP, GNP, PPP and what growth really means',
 
   intro: {
@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.',
     stages: [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',    state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards',    state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
     ]
@@ -36,7 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'gdp-framing',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'GDP: three ways to measure one thing',
       lede: 'GDP = Gross Domestic Product = the total value of all final goods and services produced in a country over a given period. Three approaches, one answer.',
       branches: [
@@ -58,7 +58,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'real-vs-nominal',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'Real vs nominal GDP',
       lede: "Nominal GDP rises when output rises AND when prices rise. Real GDP strips out inflation — and it's the only number that tells you if people are actually better off.",
       mechanisms: [
@@ -101,7 +101,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'gnp-gni',
       template: 'paired',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'GDP vs GNP / GNI',
       lede: 'GDP measures output <em>within</em> a country. GNP/GNI measures income <em>of</em> a country’s residents — wherever in the world they earn it.',
       pairs: [
@@ -144,7 +144,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       tone: 'amber',
       bannerLabel: 'Adjustment for price level differences',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'Purchasing Power Parity (PPP)',
       lede: '$1 buys very different things in New York vs Nairobi. PPP adjusts for this — so international income comparisons actually make sense.',
       diagramCaption: 'PPP converts GDP into equivalent purchasing power across countries.',
@@ -184,7 +184,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'sr-lr-growth',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'Short run vs long run economic growth',
       lede: 'The PPF is the key distinction. Short run growth moves <em>towards</em> the frontier. Long run growth pushes it <em>outward</em>. Getting this wrong loses marks every time.',
       mechanisms: [
@@ -227,7 +227,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'growth-causes',
       template: 'paired',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'Causes of economic growth',
       lede: 'Growth requires either using spare capacity (SR) or expanding capacity (LR). The causes and policies differ completely.',
       pairs: [
@@ -270,7 +270,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'gdp-limits',
       template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'GDP: what it misses',
       lede: "GDP is the world's most-cited statistic — and one of its most incomplete. Knowing its limits is essential for welfare and development questions.",
       mechanismsTitle: 'Six things GDP does not capture',
@@ -323,6 +323,61 @@ window.ECONOS_TOPIC = {
         text: 'Standard of Living & Wellbeing builds directly on these limitations — covering HDI in depth, the Kuznets curve, and the debate around composite vs single-dimensional measures.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'gm-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: measuring economic growth',
+      question: 'Evaluate the view that economic growth, as measured by changes in real GDP, is the most important macroeconomic objective for a government to pursue. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define real GDP and economic growth. Introduce the debate about whether GDP growth is the most important objective, given competing objectives (low inflation, full employment, BOP equilibrium) and GDP\'s limitations as a welfare measure.',
+          hint: 'Real GDP = nominal GDP adjusted for inflation. Growth = % change in real GDP over time. The four main macroeconomic objectives: growth, low inflation, low unemployment, BOP equilibrium. Simon Kuznets on GDP limitations. "Not everything that counts can be counted."',
+          model: 'Economic growth — the sustained increase in an economy\'s productive capacity, measured by the percentage change in real GDP — is widely regarded as the primary macroeconomic objective because it underpins rising material living standards, government revenue, and job creation. However, governments face multiple competing objectives: maintaining low and stable inflation, achieving full employment, and sustaining a broadly balanced current account. Furthermore, GDP itself is an imperfect welfare proxy, ignoring distribution, environmental sustainability, and subjective wellbeing. This essay evaluates whether prioritising real GDP growth represents the right policy focus, or whether competing and complementary objectives deserve equal or greater weight.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Growth enables all other macroeconomic objectives',
+          prompt: 'Argue that real GDP growth is foundational because it generates tax revenue (enabling public spending), reduces unemployment (Okun\'s Law), and creates the wealth needed to address other societal goals.',
+          hint: 'Okun\'s Law: 2% above-trend growth reduces unemployment by ~1%. Growth → tax revenues rise → public services funded without tax rises. Higher real incomes → poverty reduction, better healthcare/education. Without growth, all redistributive goals are zero-sum.',
+          model: 'The strongest case for prioritising economic growth is that it provides the fiscal and material foundation for all other policy objectives. Okun\'s Law estimates that approximately 2 percentage points of above-trend GDP growth reduces the unemployment rate by 1 percentage point — meaning growth is the most reliable generator of employment. Growing output expands the tax base, increasing government revenues without requiring higher tax rates, thereby funding investment in healthcare, education, and infrastructure that drives future growth in a virtuous cycle. Critically, without growth, redistributive goals become zero-sum: any improvement in one group\'s living standards requires a reduction in another\'s. Growth creates the "fiscal dividend" that allows simultaneous improvement across multiple social objectives — a case that conservative and progressive governments alike have advanced historically.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Real GDP growth reflects genuine improvements in productive capacity',
+          prompt: 'Explain how real GDP growth — adjusted for inflation and ideally measured by all three methods (expenditure, income, output) — captures the expansion of an economy\'s ability to produce goods and services that consumers value.',
+          hint: 'Real vs nominal: real adjusts for price level changes, measuring volume of output. Three approaches cross-check: all should give same answer. Long-run growth = LRAS shifting right via investment, technology, labour quality. Post-war UK growth ~2-3%/year underpinned rapid living standard improvement.',
+          model: 'Real GDP growth, properly measured, captures a genuine increase in the volume of goods and services produced — not merely inflation. Using all three national income accounting methods (expenditure: C+I+G+(X-M); income: wages+profit+rent+interest; output: value added at each production stage) provides a cross-validated measure of economic activity. Long-run trend growth, driven by investment in physical and human capital and technological progress, shifts the long-run aggregate supply (LRAS) curve rightward — permanently expanding productive capacity. The post-war UK growth rate of approximately 2.5–3% per year generated a near-quadrupling of real output between 1950 and 2000, enabling dramatic improvements in health, education, and material living standards that would have been impossible without this sustained expansion.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — GDP growth may conflict with other objectives and has serious limitations',
+          prompt: 'Argue that pursuing GDP growth as the primary objective can conflict with low inflation (positive output gap), environmental sustainability (carbon emissions), and equity (Kuznets inverted-U), and that growth mismeasures welfare.',
+          hint: 'Overheating: growth above trend → positive output gap → inflation. Environmental Kuznets curve: growth increases environmental damage before decreasing it. Rising inequality in UK during growth periods. GDP counts military spending, pollution clean-up equally with healthcare.',
+          model: 'Growth pursued as the overriding objective generates genuine policy conflicts. When actual GDP exceeds potential output (a positive output gap), inflationary pressure builds — making growth and price stability temporarily incompatible. The environmental consequences of GDP-measured growth are severe: carbon emissions, resource depletion, and biodiversity loss are positively correlated with growth in the absence of strong environmental policy. The Environmental Kuznets Curve hypothesis suggests pollution rises before eventually falling as incomes rise — meaning early-stage growth actively degrades environmental welfare. Furthermore, GDP is insensitive to distribution: UK growth during 1980–2000 coincided with sharply rising inequality, as the gains flowed disproportionately to higher earners. GDP also counts economically wasteful activity (pollution remediation, defensive expenditure) identically to productive consumption — systematically overstating welfare improvements.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — The appropriate prioritisation depends on the economic cycle and development stage',
+          prompt: 'Evaluate how the relative importance of growth vs other objectives changes with the stage of the business cycle, the country\'s development level, and the sustainability of the growth path.',
+          hint: 'Developing economy: growth priority clear (base poverty elimination). Advanced economy near potential: other objectives may dominate. Recessionary gap: growth/employment priority. Inflationary boom: growth may need to be restrained. "Green growth" debate: can we grow sustainably?',
+          model: 'The appropriate weight placed on GDP growth as an objective is necessarily context-dependent. For developing economies where GDP per capita is below $10,000, growth is the primary lever for poverty elimination and human development — the link between growth and welfare improvements is direct and unambiguous at this stage. For advanced economies near potential output, where basic material needs are largely met, the marginal welfare return to additional GDP growth diminishes while the relative importance of distribution, sustainability, and wellbeing increases. In a recessionary gap, growth and employment become paramount; in an inflationary boom, restraining growth may be the right policy. The emerging consensus around "inclusive growth" — measuring growth by median household income, not mean GDP — and green GDP frameworks that adjust for natural capital depletion represents an attempt to reconcile the genuine importance of growth with its acknowledged limitations.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Reach a judgement: is GDP growth the most important macroeconomic objective, and should government policy prioritise it above others?',
+          hint: 'Growth is the most important single objective in the long run because it enables all others. But it should not be maximised without regard to sustainability, distribution, and stability. Recommend: pursue trend growth while using other policies to ensure it is inclusive and sustainable. Avoid simplistic "growth is always good" or "growth is harmful" positions.',
+          model: 'In conclusion, real GDP growth is the most important macroeconomic objective in the long run because it provides the material and fiscal foundation for all others — employment, public services, poverty reduction, and even environmental investment. Without it, policymakers face zero-sum trade-offs. However, treating GDP growth as the sole or dominant objective leads to policy errors: it risks overheating and inflation, ignores distributional consequences, and may be environmentally unsustainable. The right approach is to target trend growth rather than cyclical maximisation, to complement growth policy with redistribution and environmental frameworks, and to supplement GDP with wellbeing and sustainability indicators when evaluating policy success. UK growth policy since 2008 — characterised by low trend growth, productivity stagnation, and rising inequality — illustrates both the costs of insufficient growth and the inadequacy of measuring policy success by GDP alone.'
+        }
+      ]
     }
   ]
 };

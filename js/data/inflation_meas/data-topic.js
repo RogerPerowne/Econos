@@ -10,13 +10,13 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Inflation: Measurement & Costs',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in CPI, RPI, CPIH and who wins and loses from inflation',
 
   intro: {
     heroKey: 'heroBars',
     summary: "The 2% target. The basket of goods. The difference between CPI, RPI, and CPIH. And the six groups who win or lose depending on whether inflation rises or falls. All the gems are here.",
-    doInThis: 'Recap how inflation is measured, the limitations of price indices, costs of inflation, and costs of deflation.',
+    doInThis: 'Work through 8 cards: inflation definition, CPI construction, a CPI calculation worked example, RPI vs CPI, price index limitations, costs of inflation, deflation, and the 2% target rationale.',
     outcomes: [
       'Distinguish CPI, RPI, and CPIH',
       'Identify winners and losers from inflation',
@@ -36,7 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'inflation-framing',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Inflation: a sustained general rise in the price level',
       lede: 'One definition. Three things to note. Knowing the three qualifiers separates exam answers from everyday conversations about prices.',
       branches: [
@@ -58,7 +58,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'cpi',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'How CPI is constructed',
       lede: 'The Consumer Price Index is the UK\'s official inflation measure and the Bank of England\'s target. Knowing how it\'s built exposes its limitations.',
       mechanisms: [
@@ -97,11 +97,49 @@ window.ECONOS_TOPIC = {
       }
     },
 
+    /* ----- CARD 3 — CPI Worked Example ----- */
+    {
+      id: 'cpi-worked',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 3 of 8',
+      title: 'Worked Example: Calculating CPI and the Inflation Rate',
+      scenario: 'The ONS constructs a simplified price index for a hypothetical economy using three categories. The <strong>base year is 2023</strong> (index = 100).<br><br><table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;"><thead><tr style="background:#0B1426;color:#fff;"><th style="padding:8px 10px;text-align:left;">Category</th><th style="padding:8px 10px;text-align:center;">Weight</th><th style="padding:8px 10px;text-align:center;">2023 price</th><th style="padding:8px 10px;text-align:center;">2024 price</th></tr></thead><tbody><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Food &amp; drink</td><td style="padding:8px 10px;text-align:center;">0.40</td><td style="padding:8px 10px;text-align:center;">100p</td><td style="padding:8px 10px;text-align:center;">120p</td></tr><tr style="background:#fff;"><td style="padding:8px 10px;">Transport</td><td style="padding:8px 10px;text-align:center;">0.35</td><td style="padding:8px 10px;text-align:center;">200p</td><td style="padding:8px 10px;text-align:center;">210p</td></tr><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Recreation</td><td style="padding:8px 10px;text-align:center;">0.25</td><td style="padding:8px 10px;text-align:center;">50p</td><td style="padding:8px 10px;text-align:center;">50p</td></tr></tbody></table>',
+      steps: [
+        {
+          prompt: 'Step 1 — Calculate the price relative for each category',
+          hint: 'Price relative = (current year price ÷ base year price). This tells you how prices have changed, ignoring units.',
+          answer: 'Food: 120 ÷ 100 = <strong>1.20</strong> (prices rose 20%)<br>Transport: 210 ÷ 200 = <strong>1.05</strong> (prices rose 5%)<br>Recreation: 50 ÷ 50 = <strong>1.00</strong> (no change)'
+        },
+        {
+          prompt: 'Step 2 — Multiply each price relative by its weight',
+          hint: 'Weighted contribution = price relative × weight. This captures how much each category matters in typical household spending.',
+          answer: 'Food: 1.20 × 0.40 = <strong>0.480</strong><br>Transport: 1.05 × 0.35 = <strong>0.368</strong><br>Recreation: 1.00 × 0.25 = <strong>0.250</strong>'
+        },
+        {
+          prompt: 'Step 3 — Sum the weighted contributions to get CPI',
+          hint: 'CPI = Σ (price relative × weight). This is a weighted average of price changes. Multiply by 100 if expressing as an index.',
+          answer: '0.480 + 0.368 + 0.250 = <strong>1.098</strong><br>CPI (2024) = <strong>109.8</strong> (base year = 100)'
+        },
+        {
+          prompt: 'Step 4 — Calculate the inflation rate',
+          hint: 'Inflation rate = ((CPI current − CPI base) ÷ CPI base) × 100',
+          answer: 'Inflation = ((109.8 − 100) ÷ 100) × 100 = <strong>9.8%</strong>'
+        },
+        {
+          prompt: 'Step 5 — Interpret: why is inflation 9.8% when food prices rose 20%?',
+          hint: 'Think about the role of weights. What happens if Recreation had a 0.60 weight instead of 0.25?',
+          answer: 'Food rose 20% but has only a 0.40 weight — its contribution is capped. Transport rose 5% and Recreation rose 0%. The weighted average (9.8%) is pulled below food\'s 20% rise because other categories rose less. <strong>Key exam point:</strong> if Recreation had a 0.60 weight with food at 0.15, CPI would be far lower — weights are crucial. This is why the ONS updates the basket annually as spending patterns change.'
+        }
+      ],
+      conclusion: 'CPI (2024) = 109.8 → Inflation rate = <strong>9.8%</strong>. The weighting system means overall inflation reflects the full range of household spending, not just the categories with the largest price rises. Food\'s 20% rise is diluted because transport (35% weight) rose only 5% and recreation (25% weight) didn\'t rise at all.',
+      examEdge: 'A common exam error is treating the CPI calculation as a simple average of price rises: (20% + 5% + 0%) ÷ 3 = 8.3%. This ignores weights. The correct method weights each category by its share of household spending. Also: CPI excludes mortgage payments and council tax — relevant for evaluating whether CPI accurately reflects the cost of living for different households.'
+    },
+
     /* ----- CARD 3 — RPI vs CPI vs CPIH ----- */
     {
       id: 'rpi-cpi-cpih',
       template: 'paired',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'RPI vs CPI vs CPIH: the three measures',
       lede: 'Three price indices, three different numbers, three different policy uses. Knowing which is which — and when each is quoted — is an immediate A* signal.',
       pairs: [
@@ -142,7 +180,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price-index-limits',
       template: 'diagnose',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'Limitations of measuring inflation',
       lede: 'Every price index is an average — and averages hide variation. Knowing the limitations prevents over-reliance on a single number.',
       table: {
@@ -183,7 +221,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'inflation-costs',
       template: 'impacts',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'Costs of inflation',
       lede: 'High and volatile inflation imposes real economic costs — not just higher prices. Seven distinct mechanisms, each worth a point in an exam answer.',
       groups: [
@@ -264,7 +302,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'deflation-costs',
       template: 'deflation',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'Costs of deflation: the deflationary spiral',
       lede: "Deflation sounds good — prices falling, money worth more. But it creates a self-reinforcing trap that is far harder to escape than inflation. This is why central banks fear it.",
       mechanismsTitle: 'The deflationary spiral: four interlocking mechanisms',
@@ -308,7 +346,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'inflation-target',
       template: 'puzzle',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 8 of 8',
       title: 'The 2% target: why not zero?',
       lede: "If inflation is a cost, why doesn't the Bank of England target zero? The answer reveals deep insights about how monetary policy works — and is a classic A* question.",
       classical: {

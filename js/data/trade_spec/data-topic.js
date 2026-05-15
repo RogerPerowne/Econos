@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Trade & Specialisation',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in comparative advantage, the gains from trade, and why specialisation shapes global commerce.',
   intro: {
     heroKey: 'heroGlobe',
     summary: 'Countries trade because it is mutually beneficial even when one partner is more productive at everything. Comparative advantage — not absolute advantage — determines the pattern of trade.',
-    doInThis: 'Work through 7 concept cards covering absolute and comparative advantage, gains from trade, terms of trade, free trade benefits and limitations, and the case for managed trade.',
+    doInThis: 'Work through 8 cards covering absolute and comparative advantage, gains from trade, terms of trade, free trade benefits and limitations, and the case for managed trade — including a step-by-step comparative advantage calculation worked example.',
     outcomes: [
       'Distinguish absolute from comparative advantage with numerical examples',
       'Calculate opportunity costs and identify which good each country should specialise in',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Opportunity cost is the key — whichever country gives up less of the other good to produce one unit has comparative advantage in that good.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'trade_spec_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Trade and specialisation: why countries trade',
       lede: 'Even a country that\'s worse at making everything can gain from trade. Ricardo\'s insight is one of the most counter-intuitive ideas in economics.',
       branches: [
@@ -134,6 +134,42 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Examiners reward awareness that the UK runs a structural goods deficit but services surplus. Mentioning global value chains as a reason why simple comparative advantage models are insufficient earns evaluation credit.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+    {
+      id: 'ca-worked',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Worked Example: Identifying Comparative Advantage',
+      scenario: '<p>The table below shows the output per worker per day in two countries.</p><table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:0.92rem"><thead><tr><th style="border:1px solid #CBD5E1;padding:8px 12px;background:#F1F5F9;text-align:left">Country</th><th style="border:1px solid #CBD5E1;padding:8px 12px;background:#F1F5F9;text-align:center">Wheat (tonnes)</th><th style="border:1px solid #CBD5E1;padding:8px 12px;background:#F1F5F9;text-align:center">Textiles (metres)</th></tr></thead><tbody><tr><td style="border:1px solid #CBD5E1;padding:8px 12px">Agraria</td><td style="border:1px solid #CBD5E1;padding:8px 12px;text-align:center">6</td><td style="border:1px solid #CBD5E1;padding:8px 12px;text-align:center">2</td></tr><tr><td style="border:1px solid #CBD5E1;padding:8px 12px">Textilia</td><td style="border:1px solid #CBD5E1;padding:8px 12px;text-align:center">2</td><td style="border:1px solid #CBD5E1;padding:8px 12px;text-align:center">4</td></tr></tbody></table><p>Agraria has absolute advantage in both goods. Identify comparative advantage and show the gains from specialisation.</p>',
+      steps: [
+        {
+          prompt: 'Step 1: Calculate opportunity cost of wheat in each country',
+          hint: 'OC of wheat = units of textiles given up to produce 1 tonne of wheat.',
+          answer: '<p><strong>Agraria:</strong> producing 1 tonne of wheat means giving up 2/6 = <strong>⅓ metres of textiles</strong>.</p><p><strong>Textilia:</strong> producing 1 tonne of wheat means giving up 4/2 = <strong>2 metres of textiles</strong>.</p><p>Agraria has the lower opportunity cost in wheat (⅓ &lt; 2), so <strong>Agraria has comparative advantage in wheat</strong>.</p>'
+        },
+        {
+          prompt: 'Step 2: Calculate opportunity cost of textiles in each country',
+          hint: 'OC of textiles = units of wheat given up to produce 1 metre of textiles.',
+          answer: '<p><strong>Agraria:</strong> producing 1 metre of textiles means giving up 6/2 = <strong>3 tonnes of wheat</strong>.</p><p><strong>Textilia:</strong> producing 1 metre of textiles means giving up 2/4 = <strong>½ tonne of wheat</strong>.</p><p>Textilia has the lower opportunity cost in textiles (½ &lt; 3), so <strong>Textilia has comparative advantage in textiles</strong>.</p>'
+        },
+        {
+          prompt: 'Step 3: Determine specialisation — who produces what?',
+          hint: 'Each country specialises in the good where it has the lower opportunity cost.',
+          answer: '<p><strong>Agraria specialises fully in wheat</strong> (OC = ⅓ textiles per wheat, the lower figure).</p><p><strong>Textilia specialises fully in textiles</strong> (OC = ½ wheat per textile, the lower figure).</p><p>Notice: Agraria has absolute advantage in both goods, yet it is still mutually beneficial for Textilia to specialise — this is Ricardo\'s key insight.</p>'
+        },
+        {
+          prompt: 'Step 4: Show the gain from specialisation with 10 workers each',
+          hint: 'Compare total output before (5 workers each on each good) and after (full specialisation).',
+          answer: '<p><strong>Before specialisation</strong> (5 workers each on each good):<br>Agraria: 5×6 = 30 wheat + 5×2 = 10 textiles<br>Textilia: 5×2 = 10 wheat + 5×4 = 20 textiles<br><strong>World total: 40 wheat + 30 textiles</strong></p><p><strong>After specialisation</strong> (10 workers each on own CA good):<br>Agraria: 10×6 = 60 wheat; Textilia: 10×4 = 40 textiles<br><strong>World total: 60 wheat + 40 textiles</strong></p><p>Specialisation adds 20 tonnes of wheat and 10 metres of textiles — both countries can consume more after trading.</p>'
+        },
+        {
+          prompt: 'Step 5: State a valid terms-of-trade range for exchange',
+          hint: 'Both countries will only trade if they can get more than they could produce domestically.',
+          answer: '<p>Agraria\'s domestic OC: 1 wheat costs ⅓ textile → it will trade 1 wheat for anything <strong>above ⅓ textile</strong>.<br>Textilia\'s domestic OC: 1 wheat costs 2 textiles → it will pay up to <strong>2 textiles per wheat</strong>.</p><p>A <strong>mutually beneficial ToT</strong> lies between these limits: <strong>⅓ &lt; textiles per wheat &lt; 2</strong>.<br>For example, 1 tonne of wheat traded for 1 metre of textiles benefits both countries.</p>'
+        }
+      ],
+      conclusion: 'Comparative advantage is determined by <strong>opportunity cost, not absolute productivity</strong>. Calculate four OC figures (two goods × two countries), identify the lower value in each column, and the pattern of specialisation follows automatically. The gains from trade are real — world output rises when countries specialise.',
+      examEdge: 'Always show four OC calculations and compare them explicitly. State which country has CA in which good before concluding. If asked for a terms-of-trade range, quote both domestic OC boundaries and a valid exchange ratio between them. Show full working for 4-mark data questions.'
     }
   ]
 };

@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business_objectives_2',
       template: 'framing',
+      diagramKey: 'revMaxDiagram',
       title: 'Revenue Maximisation',
       body: '<strong>Revenue maximisation</strong> (Baumol, 1959): managers of large corporations prioritise total revenue (TR) rather than profit — because manager pay, status, and prestige are more closely linked to revenue and company size than to profit.<br><br><strong>Condition:</strong> Revenue is maximised where MR = 0 (any further output reduces TR since MR turns negative).<br><br><strong>Implication:</strong> Revenue-maximising firm produces MORE output at a LOWER price than a profit-maximiser. If shareholders impose a minimum profit constraint, the firm produces where TR satisfies that constraint — somewhere between profit-max and revenue-max output.',
       keyTerms: [

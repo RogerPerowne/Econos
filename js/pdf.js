@@ -319,6 +319,22 @@ window.EconosPdf = (function () {
     return note + formula + frames + howIt + examEdgeBlock(c.examEdge);
   }
 
+  function renderPedFiveFrames(c) {
+    var FRAME_COLORS = { rose: C.rose, amber: C.amber, blue: C.blue, green: C.green, purple: C.purple };
+    var frames = (c.frames || []).map(function (f) {
+      var col = FRAME_COLORS[f.tone] || C.slate;
+      return '<div style="border-left:5px solid ' + col + ';padding:10px 0 10px 14px;margin-bottom:12px;page-break-inside:avoid;">' +
+        '<div style="font-size:10px;font-weight:800;color:' + col + ';text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">' + f.name + '</div>' +
+        '<div style="display:inline-block;font-size:10px;font-weight:700;color:' + col + ';background:' + col + '18;padding:1px 8px;border-radius:20px;margin-bottom:6px;">' + f.ped + '</div>' +
+        '<div style="font-size:12px;color:' + C.ink + ';line-height:1.55;">' +
+        '<strong>Example:</strong> ' + f.example + '<br>' +
+        '<span style="color:' + C.slate + ';font-style:italic;">' + f.trRule + '</span>' +
+        '</div></div>';
+    }).join('');
+    var lede = c.lede ? '<div style="font-size:13px;color:' + C.slate + ';margin-bottom:14px;line-height:1.6;">' + c.lede + '</div>' : '';
+    return lede + frames + examEdgeBlock(c.examEdge);
+  }
+
   /* ---- Generic-format renderer (body / causes:{head,body} / steps:{label,text} /
           rows / left+right:{points} / keyTerms) — matches app.js renderCardGeneric ---- */
 
@@ -433,7 +449,7 @@ window.EconosPdf = (function () {
   }
 
   function isGenericCard(c) {
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames') return false;
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -458,6 +474,7 @@ window.EconosPdf = (function () {
       case 'ad-interactive':     return renderFallback();
       case 'transmission-chain': return renderFallback();
       case 'elasticity-explorer':return renderElasticityFallback(c);
+      case 'ped-five-frames':    return renderPedFiveFrames(c);
       default:                   return renderFallback();
     }
   }

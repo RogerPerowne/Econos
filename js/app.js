@@ -894,6 +894,87 @@
     `;
   }
 
+  /* -------------------------------------------------------------------------
+     PED Five-Frames: static visual card showing the 5 elasticity regimes.
+     Each frame has a mini SVG chart, name, PED badge, example, and TR rule.
+     ------------------------------------------------------------------------- */
+  function pedMiniSvg(type, color) {
+    const axes = `
+      <line x1="14" y1="8" x2="14" y2="78" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="14" y1="78" x2="96" y2="78" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="6" y="12" font-size="9" fill="#94A3B8" font-family="Inter,sans-serif">P</text>
+      <text x="91" y="88" font-size="9" fill="#94A3B8" font-family="Inter,sans-serif">Q</text>
+    `;
+    const D = {
+      vertical: `
+        <line x1="52" y1="10" x2="52" y2="76" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="28" x2="52" y2="28" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
+        <line x1="14" y1="54" x2="52" y2="54" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <circle cx="52" cy="28" r="3.5" fill="${color}" opacity="0.9"/>
+        <circle cx="52" cy="54" r="3.5" fill="${color}" opacity="0.5"/>
+      `,
+      steep: `
+        <line x1="35" y1="10" x2="63" y2="76" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="28" x2="43" y2="28" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
+        <line x1="14" y1="54" x2="55" y2="54" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="43" y1="28" x2="43" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="55" y1="54" x2="55" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+        <circle cx="43" cy="28" r="3.5" fill="${color}" opacity="0.9"/>
+        <circle cx="55" cy="54" r="3.5" fill="${color}" opacity="0.5"/>
+      `,
+      hyperbola: `
+        <path d="M 18 72 C 22 34, 46 17, 88 11" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="26" x2="40" y2="26" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
+        <line x1="14" y1="54" x2="63" y2="54" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="40" y1="26" x2="40" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="63" y1="54" x2="63" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+        <circle cx="40" cy="26" r="3.5" fill="${color}" opacity="0.9"/>
+        <circle cx="63" cy="54" r="3.5" fill="${color}" opacity="0.5"/>
+      `,
+      shallow: `
+        <line x1="14" y1="18" x2="88" y2="72" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="24" x2="21" y2="24" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
+        <line x1="14" y1="57" x2="70" y2="57" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="21" y1="24" x2="21" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="70" y1="57" x2="70" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+        <circle cx="21" cy="24" r="3.5" fill="${color}" opacity="0.9"/>
+        <circle cx="70" cy="57" r="3.5" fill="${color}" opacity="0.5"/>
+      `,
+      horizontal: `
+        <line x1="14" y1="44" x2="86" y2="44" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="24" x2="52" y2="24" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+        <line x1="14" y1="44" x2="14" y2="44" stroke="${color}" stroke-width="1"/>
+        <text x="54" y="21" font-size="8.5" fill="#DC2626" font-family="Inter,sans-serif" opacity="0.85">P↑→ Q=0</text>
+        <circle cx="14" cy="44" r="3.5" fill="${color}" opacity="0.7"/>
+        <circle cx="14" cy="24" r="3" fill="#DC2626" opacity="0.5"/>
+      `
+    };
+    return `<svg viewBox="0 0 108 92" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">${axes}${D[type] || ''}</svg>`;
+  }
+
+  function renderCardPedFiveFrames(c) {
+    const COLORS = { rose:'#DC2626', amber:'#D97706', blue:'#2563EB', green:'#059669', purple:'#7C3AED' };
+    const frames = (c.frames || []).map(f => {
+      const col = COLORS[f.tone] || '#64748B';
+      return `
+        <div class="pff-frame" style="border-color:${col}20;background:${col}06;">
+          <div class="pff-chart">${pedMiniSvg(f.curveType, col)}</div>
+          <div class="pff-name" style="color:${col};">${f.name}</div>
+          <div class="pff-ped" style="background:${col}18;color:${col};">${f.ped}</div>
+          <p class="pff-example">${f.example}</p>
+          <div class="pff-tr" style="border-left-color:${col};">${f.trRule}</div>
+        </div>
+      `;
+    }).join('');
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      <div class="pff-grid">${frames}</div>
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
   function renderCardAdInteractive(c) {
     const diagram = c.diagramKey && I[c.diagramKey] ? I[c.diagramKey] : I.adInteractive;
     const tabs = c.steps.map((s, i) => `
@@ -1033,7 +1114,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1067,6 +1148,7 @@
         case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
         case 'transmission-chain': body = renderCardTransmissionChain(c); break;
         case 'elasticity-explorer':body = renderCardElasticityExplorer(c); break;
+        case 'ped-five-frames':    body = renderCardPedFiveFrames(c);      break;
       }
     }
 

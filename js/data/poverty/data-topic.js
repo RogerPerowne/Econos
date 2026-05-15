@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Poverty',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the distinction between absolute and relative poverty, their causes, and the range of anti-poverty policies.',
   intro: {
     heroKey: 'heroInequality',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Absolute poverty = cannot meet basic survival needs (World Bank: under $2.15/day PPP). Relative poverty = income below a threshold relative to the median (UK: 60% of median income).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'poverty_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Poverty: the big picture',
       lede: 'Poverty is more than low income. How we define it shapes which problem we fix — and which we miss.',
       branches: [
@@ -131,6 +131,61 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'The existence of in-work poverty challenges the assumption that employment is sufficient to escape poverty. This undermines the "make work pay" policy rationale and suggests structural issues with wage levels and housing costs rather than simply work disincentives.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'pov-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: poverty',
+      question: 'Evaluate the effectiveness of government policies to reduce poverty. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define relative and absolute poverty. Introduce the main policy approaches and the key trade-offs.',
+          hint: 'Absolute poverty: income insufficient for basic needs (food, shelter, clothing). Relative poverty: income below 60% of median — a social exclusion measure. Policy approaches: (1) cash transfers/welfare benefits, (2) minimum wage/in-work benefits, (3) education and skills investment (supply-side), (4) in-kind provision (NHS, social housing). Trade-off: short-run income support vs long-run capability building.',
+          model: 'Poverty has two main dimensions in policy analysis: absolute poverty (insufficient income for basic subsistence needs) and relative poverty (typically defined as household income below 60% of the median, reflecting social exclusion in a wealthy society). The UK government addresses poverty through multiple instruments: direct cash transfers (Universal Credit), in-work benefit supplements (Working Tax Credit/UC work allowances), minimum wage legislation, education and skills investment, and in-kind provision (NHS, subsidised social housing). The appropriate policy mix depends on the type of poverty, its causes, and the relative priority placed on short-run income support versus long-run capability enhancement. This essay evaluates the effectiveness of these instruments.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Cash transfers and minimum wage: direct income support',
+          prompt: 'Explain how Universal Credit and the National Living Wage address poverty directly.',
+          hint: 'Universal Credit: consolidates six benefits into one payment, tapers as income rises (reduces poverty trap from 100% withdrawal rates of old system). NLW: £11.44/hr (2024), rising to £12.60 by 2025 → raises incomes of ~4m low-paid workers directly. Effectiveness evidence: Child Tax Credits (pre-2015) lifted ~500,000 children out of relative poverty. Limitation: UC taper rate still creates high effective marginal tax rates for low earners; benefit cap may trap families in poverty.',
+          model: 'Direct income support through Universal Credit and the National Living Wage provides the most immediate route to poverty reduction. Universal Credit replaced a complex means-tested benefit system with a single payment that tapers as earned income rises — reducing (though not eliminating) the poverty trap where additional work was barely worth taking. The National Living Wage (£11.44/hour in 2024) raises the floor for approximately 4 million low-paid workers, directly increasing household incomes and reducing in-work poverty. Historical evidence supports effectiveness: Child Tax Credits before 2015 were estimated to have lifted over 500,000 children out of relative poverty by supplementing in-work incomes. However, limitations remain: the UC taper rate (55p withdrawal per £1 earned) combined with housing costs and Council Tax creates effective marginal tax rates of 70-80% for some low earners, substantially reducing the financial incentive to increase working hours.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Education and skills investment: the long-run capability approach',
+          prompt: 'Explain how investing in human capital addresses the structural causes of poverty.',
+          hint: 'Amartya Sen: capabilities approach — poverty is about lack of capabilities (education, health, participation) not just income. Education: long-run returns to schooling are high (each year of education raises wage by ~8-10% in developed countries). Early years intervention (Sure Start) has lasting positive effects on child development, school readiness, and later earnings. Skills training (apprenticeships, retraining): addresses structural unemployment and wage premium gap. Limitation: takes 10-20 years to show effects on poverty statistics.',
+          model: 'The capability approach to poverty (Sen) argues that genuine poverty reduction requires developing people\'s abilities to function effectively — education, health, social participation — not just income transfers. Investment in human capital addresses the structural causes of poverty rather than its symptoms. Early years intervention has the highest return: the Sure Start programme provided childcare, parenting support, and health services for children under five in deprived areas. Evaluations found lasting positive effects on school readiness, cognitive development, and later life outcomes — consistent with James Heckman\'s research showing that £1 invested in early childhood yields £7-12 in long-run social returns. Education and skills investment raises the lifetime earnings capacity of individuals from deprived backgrounds, attacking poverty at its structural roots rather than providing income transfers that leave underlying causes unchanged.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Limitations of benefit-based approaches: work disincentives and housing costs',
+          prompt: 'Evaluate the unintended consequences of benefit-based poverty reduction — poverty trap, welfare dependency, and structural housing costs.',
+          hint: 'Poverty trap: benefit withdrawal + tax = very high marginal effective tax rate for low earners. Example: earn £1 extra → lose 55p UC + 12% NI + 20% income tax = ~87p loss → taking extra work is irrational. Dependency culture: persistent reliance on transfers without skills development. Housing costs: relative poverty is strongly driven by housing costs, especially in London/South East — income transfers are insufficient if absorbed by rent increases. Benefit cap: limits UC to £23,000/year (London) — below the poverty line for families with children in high-rent areas.',
+          model: 'Benefit-based approaches to poverty have structural limitations. The poverty trap — high effective marginal tax rates on low earners from simultaneous benefit withdrawal and taxation — remains a significant disincentive: some low-income workers gain less than 15p for every additional £1 earned, making increased work hours economically irrational. This undermines the incentive dimension of poverty reduction policy. A deeper structural problem is the housing cost crisis: relative poverty statistics are significantly affected by housing costs, and income transfers are partially absorbed by rent increases in high-demand areas. The benefit cap (£23,000/year for families in London) can leave multi-child families in high-rent areas in persistent poverty regardless of benefit levels. These structural housing market failures — insufficient supply of social and affordable housing — interact with income support to produce poverty that cash transfers cannot fully resolve without complementary housing policy.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Short-run vs long-run; absolute vs relative poverty priorities',
+          prompt: 'Weigh the different instruments against each other with reference to the type of poverty, time horizon, and trade-offs.',
+          hint: 'Absolute poverty: cash transfers are most effective short-run (raise income above subsistence immediately). Relative poverty: harder to address because it moves with median income — even significant income transfers may not reduce relative poverty if median income is rising faster. Long-run: education and skills investment is the most durable route — reduces structural causes, raises earning potential, reduces welfare dependency. The most effective poverty reduction combines: minimum wage (floor), targeted transfers (immediate support), education and early years investment (long-run capability), and housing market reform (addresses structural cost driver).',
+          model: 'The effectiveness of different poverty reduction tools depends on the type of poverty being targeted and the time horizon. For absolute poverty, direct income transfers (Universal Credit, NLW) are most effective in the short run — they raise incomes above the subsistence level immediately and the evidence base is strong. For relative poverty, effectiveness is more contested: since relative poverty is measured against the median, aggregate income growth can reduce relative poverty without any specific poverty intervention, while even substantial transfers may not close the gap if median incomes are rising rapidly. Long-run poverty reduction is most durably achieved through education and skills investment that raises earning capacity: countries with strong universal education, effective vocational training, and high-quality early years provision consistently achieve lower relative poverty rates than those relying primarily on income transfers. The UK\'s relatively high poverty rate by international standards reflects both structural housing cost issues and historical underinvestment in vocational skills — challenges that income transfers alone cannot resolve.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a reasoned judgement: a combination of direct income support, minimum wage, education investment, and housing market reform is most effective — no single instrument is sufficient.',
+          hint: 'Cash transfers: essential for short-run relief, but create poverty trap and cannot address structural causes alone. NLW: effective for working poor, but doesn\'t help those unable to work. Education investment: most durable long-run solution, but decades-long implementation lag. Housing reform: necessary complementary policy — income transfers absorbed by rent increases. Most effective combination addresses all dimensions simultaneously.',
+          model: 'The most effective approach to poverty reduction combines direct income support (Universal Credit, National Living Wage) for immediate relief with human capital investment (early years, education, skills) for long-run capability development, and structural housing reform to address the cost driver that absorbs much of the income support provided. No single instrument is sufficient: cash transfers reduce absolute poverty immediately but cannot address relative poverty indefinitely if structural drivers — low skills, housing costs, regional inequality — remain unchanged; education investment has decades-long lags that make it insufficient for families in current poverty; the NLW raises floors for workers but leaves non-workers unaffected. The UK\'s persistent relative poverty rate — one of the higher rates among comparable developed economies — reflects the failure to combine these instruments effectively into a coherent anti-poverty strategy. The evidence from countries with lower poverty rates (Nordic countries, Germany) suggests that sustained investment in education, active labour market policy, universal childcare, and adequate social housing produces more durable poverty reduction than income transfers alone.'
+        }
+      ]
     }
   ]
 };

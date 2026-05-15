@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Public Goods',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in non-rivalry, non-excludability, the free rider problem, and why public goods cannot be provided by markets.',
   intro: {
     heroKey: 'heroExternalities',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Non-rival = one person\'s use does not reduce availability to others. Non-excludable = impossible to prevent non-payers from benefiting. BOTH must apply for a pure public good. Either alone is not sufficient.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'public_goods_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Public goods: the big picture',
       lede: 'Some goods can\'t be rationed by price — and without government, they won\'t exist at all.',
       branches: [
@@ -131,6 +131,61 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The internet began as a US Defence Department public good (ARPANET — non-excludable, non-rival). Commercial internet is now a mix: basic infrastructure is quasi-public; web services are private (subscription, advertising). Technology transformed what was a public good into mostly private goods. This evolution is a rich evaluation point.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'pg-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: public goods',
+      question: 'Evaluate the view that the free-rider problem means public goods must always be provided by the government. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define public goods and the free-rider problem. Explain why they lead to market underprovision.',
+          hint: 'Public goods: non-excludable (cannot prevent non-payers from consuming) and non-rival (one person\'s consumption does not reduce availability to others). Free-rider problem: rational agents do not pay for goods they can consume free → no private firm can profitably supply → market provides zero. Government provision funded by taxation solves this. But: not all public goods require direct government production — private provision with government funding, or technology changes making exclusion possible.',
+          model: 'Public goods are characterised by non-excludability (non-payers cannot be excluded from consumption) and non-rivalry (consumption by one person does not reduce availability to others). These properties generate the free-rider problem: rational individuals have no incentive to pay for goods they can consume regardless — so voluntary contributions are insufficient and private firms cannot profitably supply them. The market provides zero — a clear case of market failure. Government provision funded by compulsory taxation is the standard solution: it overcomes the free-rider problem by making contributions non-optional. However, the claim that government must always directly provide public goods requires qualification — the mechanisms of provision vary, and some traditional public goods have been transformed by technology.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Why government provision is essential: national defence and street lighting',
+          prompt: 'Explain why pure public goods with very large free-rider problems require direct government provision.',
+          hint: 'National defence: perfectly non-excludable and non-rival — all residents benefit regardless of contribution. No private market solution is conceivable without government contracting (even private security firms depend on government legal framework). Street lighting, flood defences, lighthouse (classic Samuelson example). These are pure public goods where private provision at the socially optimal level is impossible without government funding. Even libertarian economists accept these as legitimate government functions.',
+          model: 'For pure public goods — where both non-excludability and non-rivalry are absolute — government provision is not merely preferable but necessary. National defence cannot be provided privately: once a country is defended, all residents receive protection regardless of their contribution, and one person\'s defence does not reduce another\'s. No private business model can overcome this: any voluntary scheme will be undermined by free-riding, producing a level of defence far below the social optimum. Street lighting, flood defences, and public health epidemiology share these characteristics. Even economists broadly sympathetic to market solutions (including most libertarians) accept that these pure public goods justify government provision funded by compulsory taxation. Samuelson\'s lighthouse example became the textbook case precisely because it illustrated the inevitability of government provision where exclusion is genuinely impossible.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Quasi-public goods and alternative provision mechanisms',
+          prompt: 'Explain how quasi-public goods and evolving technologies create spaces for private provision with government support.',
+          hint: 'Quasi-public goods: non-rival but potentially excludable (roads with tolls, parks with entrance fees, broadcasts with encryption). Technology makes exclusion possible (congestion charging, scrambled television signals, digital content paywalls). Private provision with government support: BBC franchise (private broadcaster with public funding for public good content), private prisons with government contracts, satellite navigation (GPS — US military public good, commercial applications on top). Not all "public goods" require direct government production — contracting out is possible.',
+          model: 'Many goods traditionally treated as public goods are in fact quasi-public: non-rival but potentially excludable with appropriate technology or institutional arrangements. Roads were once considered pure public goods, but toll systems (M6 Toll, congestion charging in London) demonstrate that exclusion is feasible — creating a market mechanism for cost recovery. Television broadcasts were once pure public goods (non-excludable free-to-air), but encrypted digital transmission has made conditional access possible, enabling private subscription models. GPS navigation began as a US military public good (non-excludable, freely available) and private firms (Garmin, Google Maps) built commercial applications on top of the government-funded infrastructure. These examples show that the line between pure public goods (requiring government provision) and quasi-public goods (amenable to various provision models) is not fixed — it depends on current technology and institutional design.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Government failure in public good provision',
+          prompt: 'Evaluate government failure risks: over-provision, political capture, and inefficiency in public good supply.',
+          hint: 'Government failure: political incentives may lead to over-provision of some public goods (defence spending in democratic countries with large defence industries), under-provision of others (flood defences in low-visibility constituencies). Inefficiency: no competitive pressure → cost inflation in government-provided public goods. BBC: debates about whether public broadcasting genuinely provides public goods or just competes with commercial media. Public health: government pandemic preparedness was chronically underfunded pre-COVID — a government failure of public good provision. Private contracting: competitive tendering for contracted services can reduce government failure in efficiency, if not in direction.',
+          model: 'Government provision of public goods does not guarantee optimal outcomes — government failure is a real risk. Political incentives distort provision levels: defence spending is often inflated by the political economy of defence industry lobbying, while flood defences in politically marginal constituencies receive less investment than social welfare requires. The chronic underfunding of pandemic preparedness across most developed governments before COVID-19 represents a failure of public good provision: scientific consensus identified pandemic risk as high, but the non-visible, future-oriented nature of preparedness investment made it politically vulnerable to budget cuts. BBC public broadcasting illustrates a different challenge: the public goods argument for universal licence-fee funding has weakened as streaming services provide wide content access, raising questions about whether compulsory public funding is still justified for a service now competing directly with Netflix and Amazon Prime.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Pure public goods vs quasi-public goods: when government provision is necessary',
+          prompt: 'Weigh the free-rider argument against technology changes and alternative mechanisms.',
+          hint: 'Key judgement: pure public goods (national defence, flood defences, street lighting) require government provision because the free-rider problem is structurally insolvable. Quasi-public goods may be provided via mixed models (contracted services, franchise agreements, regulated private providers). Technology has narrowed the category of genuine public goods over time — many goods once non-excludable are now commercially viable with appropriate technology. Government\'s essential role is funding (taxation to overcome free-rider) not necessarily direct production (contracting and franchising are viable alternatives for quasi-public goods).',
+          model: 'The most accurate evaluation distinguishes between government funding (overcoming the free-rider problem via taxation) and government production (directly supplying the good). Government funding is necessary for pure public goods — the free-rider problem is structurally unsolvable without compulsory contribution. However, government production is not always necessary: contracted private provision (NHS suppliers, defence contractors), franchise models (BBC, road franchise operators), and regulated private utilities can all deliver public-goods-type outcomes without direct state production. Technology has progressively narrowed the set of truly non-excludable goods, expanding the space for market or quasi-market provision. The appropriate framework therefore acknowledges government funding as essential for pure public goods while remaining open to various production mechanisms — competitive contracting for efficiency, regulated markets for natural monopoly quasi-public goods, and direct provision only where genuine market failure makes alternatives unworkable.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a nuanced judgement: government funding is essential for pure public goods; government production is not always necessary; technology has expanded the scope for alternative provision.',
+          hint: 'Free-rider problem justifies compulsory government funding (taxation) for pure public goods — this is unambiguous. But the method of provision (direct production vs contracting vs franchise) should be chosen on efficiency grounds, not assumed to be direct government supply. Many goods once treated as public goods are now quasi-public and amenable to market or hybrid provision with government oversight.',
+          model: 'The free-rider problem means that pure public goods — national defence, flood defences, street lighting — cannot be adequately supplied by voluntary market exchange and require government provision funded by compulsory taxation. This conclusion is robust and broadly accepted across the political spectrum. However, the claim that government must always directly provide these goods overstates the case. For quasi-public goods where technology makes exclusion possible, or where competitive contracting can improve efficiency, government funding combined with private or regulated production may achieve better outcomes than direct public supply. Technology has progressively expanded this category — what constituted a pure public good in 1950 may be commercially viable in 2025. The enduring principle is that government taxation must overcome the free-rider problem; the method of production should be chosen on efficiency and equity grounds rather than assumed to require direct government delivery in all cases.'
+        }
+      ]
     }
   ]
 };

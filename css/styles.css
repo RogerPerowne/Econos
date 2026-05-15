@@ -1660,6 +1660,10 @@ img, svg { display: block; max-width: 100%; }
 .scenario--amber .scenario__answer { background: var(--econ-amber-50); color: var(--econ-amber-700); }
 .scenario--purple .scenario__label { background: var(--econ-purple-600); color: white; }
 .scenario--purple .scenario__answer { background: var(--econ-purple-50); color: var(--econ-purple-700); }
+.scenario--blue .scenario__label { background: var(--econ-blue); color: white; }
+.scenario--blue .scenario__answer { background: var(--econ-blue-50); color: var(--econ-blue-700); }
+.scenario--rose .scenario__label { background: var(--econ-rose); color: white; }
+.scenario--rose .scenario__answer { background: var(--econ-rose-50); color: var(--econ-rose-700); }
 
 /* ============================================================
    PUZZLE CARD — Card 5
@@ -2444,6 +2448,8 @@ img, svg { display: block; max-width: 100%; }
 .scenario--green   .scenario__reveal:hover { border-color: var(--econ-green);  color: var(--econ-green-700);  }
 .scenario--amber   .scenario__reveal:hover { border-color: var(--econ-amber);  color: var(--econ-amber-700);  }
 .scenario--purple  .scenario__reveal:hover { border-color: var(--econ-purple); color: var(--econ-purple-700); }
+.scenario--blue    .scenario__reveal:hover { border-color: var(--econ-blue);   color: var(--econ-blue-700);   }
+.scenario--rose    .scenario__reveal:hover { border-color: var(--econ-rose);   color: var(--econ-rose-700);   }
 
 /* --- Card 5 cliffhanger: clickable "Why?" --- */
 .cliffhanger {
@@ -2733,6 +2739,8 @@ img, svg { display: block; max-width: 100%; }
 .scenario--green   { border-left: 4px solid var(--econ-green);  }
 .scenario--amber   { border-left: 4px solid var(--econ-amber);  }
 .scenario--purple  { border-left: 4px solid var(--econ-purple); }
+.scenario--blue    { border-left: 4px solid var(--econ-blue);   }
+.scenario--rose    { border-left: 4px solid var(--econ-rose);   }
 
 /* --- Cliffhanger reveal panel: blue --- */
 .cliffhanger-reveal { border-left: 4px solid var(--econ-blue); }

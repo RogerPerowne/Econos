@@ -109,7 +109,8 @@ window.ECONOS_TOPIC = {
         { term: 'Perfectly elastic demand', def: 'PED = infinity; horizontal demand curve; any price above market price → zero demand. Faced by firms in perfect competition.' },
         { term: 'Giffen good', def: 'A good where a price rise leads to increased demand — upward-sloping demand curve; income effect stronger than substitution effect.' }
       ],
-      examEdge: 'Perfectly elastic demand is not just an abstract concept — it describes the demand curve facing any individual firm in perfect competition. This is why perfectly competitive firms cannot set prices above MC — any attempt would destroy all demand. Use this when explaining why P = MC holds in perfect competition.'
+      examEdge: 'Perfectly elastic demand is not just an abstract concept — it describes the demand curve facing any individual firm in perfect competition. This is why perfectly competitive firms cannot set prices above MC — any attempt would destroy all demand. Use this when explaining why P = MC holds in perfect competition.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]
 };

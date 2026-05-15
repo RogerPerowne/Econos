@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
         { term: 'Hyperinflation', def: 'Extremely rapid inflation (typically >50%/month) destroying money\'s store of value and medium of exchange functions.' },
         { term: 'Financial intermediation', def: 'Banks channel savings into investment — enables capital accumulation needed for growth.' }
       ],
-      examEdge: 'A strong essay note: the link between specialisation and money is circular — specialisation requires money to function; but money\'s development is itself driven by the gains from specialisation that make exchange worthwhile. This mutual reinforcement is a hallmark of market economies.'
+      examEdge: 'A strong essay note: the link between specialisation and money is circular — specialisation requires money to function; but money\'s development is itself driven by the gains from specialisation that make exchange worthwhile. This mutual reinforcement is a hallmark of market economies.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]
 };

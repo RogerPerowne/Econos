@@ -122,7 +122,8 @@ window.ECONOS_TOPIC = {
           'Behavioural game theory: experiments show cooperation in prisoner\'s dilemma beyond what theory predicts'
         ]
       ],
-      examEdge: 'The most important limitation is the behavioural challenge: experimental economics (ultimatum game, public goods game) consistently shows that real people cooperate more than rational self-interest predicts. Players care about fairness, reputation, and reciprocity — not just payoffs. Behavioural game theory (Kahneman, Thaler) incorporates these insights. This links game theory to behavioural economics — evaluating game theory\'s limits using behavioural evidence shows sophisticated cross-topic thinking.'
+      examEdge: 'The most important limitation is the behavioural challenge: experimental economics (ultimatum game, public goods game) consistently shows that real people cooperate more than rational self-interest predicts. Players care about fairness, reputation, and reciprocity — not just payoffs. Behavioural game theory (Kahneman, Thaler) incorporates these insights. This links game theory to behavioural economics — evaluating game theory\'s limits using behavioural evidence shows sophisticated cross-topic thinking.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

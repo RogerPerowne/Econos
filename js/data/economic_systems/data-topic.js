@@ -135,7 +135,8 @@ window.ECONOS_TOPIC = {
         { term: 'Shock therapy', def: 'Rapid, simultaneous liberalisation of prices, privatisation, and trade — contrasted with gradualism.' },
         { term: 'State capitalism', def: 'A system where the state retains significant ownership and control of key industries while allowing market competition in others — China\'s model.' }
       ],
-      examEdge: 'The China model challenges the binary "market vs command" framing. China\'s record suggests markets and state can coexist productively — but critics argue this depends on institutional specifics (property rights enforcement, contract law) rather than ownership per se. This nuance earns evaluation marks.'
+      examEdge: 'The China model challenges the binary "market vs command" framing. China\'s record suggests markets and state can coexist productively — but critics argue this depends on institutional specifics (property rights enforcement, contract law) rather than ownership per se. This nuance earns evaluation marks.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]
 };

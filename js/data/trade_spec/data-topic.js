@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Trade & Specialisation',
-  estTime: '9-11 minutes',
+  estTime: '11-13 minutes',
   goal: 'Lock in comparative advantage, the gains from trade, and why specialisation shapes global commerce.',
   intro: {
     heroKey: 'heroGlobe',
     summary: 'Countries trade because it is mutually beneficial even when one partner is more productive at everything. Comparative advantage — not absolute advantage — determines the pattern of trade.',
-    doInThis: 'Work through 8 cards covering absolute and comparative advantage, gains from trade, terms of trade, free trade benefits and limitations, and the case for managed trade — including a step-by-step comparative advantage calculation worked example.',
+    doInThis: 'Work through 8 cards covering absolute and comparative advantage, gains from trade, terms of trade, free trade benefits and limitations, and the case for managed trade — including a worked example calculation and a 25-mark essay scaffold.',
     outcomes: [
       'Distinguish absolute from comparative advantage with numerical examples',
       'Calculate opportunity costs and identify which good each country should specialise in',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Opportunity cost is the key — whichever country gives up less of the other good to produce one unit has comparative advantage in that good.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -170,6 +170,61 @@ window.ECONOS_TOPIC = {
       ],
       conclusion: 'Comparative advantage is determined by <strong>opportunity cost, not absolute productivity</strong>. Calculate four OC figures (two goods × two countries), identify the lower value in each column, and the pattern of specialisation follows automatically. The gains from trade are real — world output rises when countries specialise.',
       examEdge: 'Always show four OC calculations and compare them explicitly. State which country has CA in which good before concluding. If asked for a terms-of-trade range, quote both domestic OC boundaries and a valid exchange ratio between them. Show full working for 4-mark data questions.'
+    },
+
+    /* ----- CARD 9 — Essay scaffold ----- */
+    {
+      id: 'ts-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 9 of 9',
+      title: 'Essay scaffold: trade and comparative advantage',
+      question: 'Evaluate the view that free trade based on comparative advantage always benefits all countries involved. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define comparative advantage and explain the standard case for free trade.',
+          hint: 'Comparative advantage: a country has CA in a good where its opportunity cost of production is lower. Ricardo: even if one country is more efficient at everything, specialisation according to CA raises world output. Standard gains: lower prices for consumers, higher real incomes globally, improved allocative efficiency. The "always benefits all" claim is the strong version to evaluate.',
+          model: 'Comparative advantage — the principle that countries should specialise in goods where their relative opportunity cost is lowest — is the foundational theory of international trade. David Ricardo\'s model demonstrates that even when one country is absolutely more productive at everything, both countries gain from specialisation and exchange: world output rises and consumers in both countries access goods at lower prices. The standard case for free trade rests on these gains: lower consumer prices through import competition, productivity improvements as resources shift to most-efficient uses, and scale economies from larger markets. However, the claim that free trade always benefits all countries involved is a strong version of the argument that requires careful qualification.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Gains from trade: comparative advantage in action',
+          prompt: 'Explain the welfare gains from specialisation and trade with reference to opportunity cost and world output.',
+          hint: 'Mechanism: specialise where OC is lower → each country produces more of its CA good → trade at a ToT between the two domestic OC ratios → both countries consume outside their PPF. World output rises (post-specialisation total production exceeds pre-specialisation total). Consumer gains: access to imports at prices below domestic OC. Trade liberalisation empirically correlates with economic growth (post-war era of GATT/WTO coincides with unprecedented global growth).',
+          model: 'The gains from comparative advantage trade are concrete and demonstrable. When each country specialises in goods where its opportunity cost is lowest, total world production of both goods rises — as the classic Ricardian model shows, the combined PPF shifts outward after specialisation. Consumers in both trading nations then access goods at prices below their domestic production costs, raising real incomes. Trade at a terms of trade between the two countries\' domestic opportunity cost ratios leaves both countries consuming combinations of goods that lie outside their individual PPFs — a clear welfare gain. Empirically, the post-war era of trade liberalisation through GATT and the WTO coincided with the fastest sustained increase in global living standards in economic history, with hundreds of millions lifted from poverty partly through export-led growth.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Trade and economic development: the infant industry argument',
+          prompt: 'Explain why the comparative advantage framework may not always benefit developing countries in the long run.',
+          hint: 'Static vs dynamic CA: a country\'s CA today may not reflect its long-run productive potential. If LDC has CA in primary commodities but these have low income elasticity (Prebisch-Singer: ToT deteriorates for commodity exporters over time) → specialisation locks in structural disadvantage. Infant industry argument (Hamilton, List): temporary protection allows industries to develop learning-by-doing efficiencies → shift CA in the long run. South Korea/Japan: industrial policy protected infant industries, successfully shifted from primary to manufacturing CA.',
+          model: 'The comparative advantage framework reflects current relative productivity — not future development potential. Countries with comparative advantage in primary commodities (agricultural goods, raw materials) face the Prebisch-Singer thesis: over time, commodity terms of trade deteriorate relative to manufactured goods (low income elasticity of demand, inelastic supply). Specialising according to present CA may therefore lock developing nations into a structurally disadvantageous export mix. The infant industry argument (Hamilton, List) challenges this: a temporary trade barrier can allow a nascent industry to develop learning-by-doing efficiencies until it becomes internationally competitive, shifting the country\'s CA toward higher value-added sectors. South Korea\'s successful development of competitive steel, electronics, and automotive industries behind protectionist walls illustrates that strategic deviation from immediate CA can benefit long-run development — something the static CA model does not capture.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Distributional effects and structural unemployment',
+          prompt: 'Evaluate who loses from trade liberalisation and why aggregate gains may not benefit all groups within a country.',
+          hint: 'Stolper-Samuelson theorem: trade liberalisation reduces the real wage of the abundant factor — in rich countries, this is low-skill labour (which competes with cheap imports). Even if aggregate welfare rises, import-competing workers lose. UK manufacturing job losses 1980s–2000s: Midlands/Northern workers displaced by cheap imports from East Asia. Gains from trade may go primarily to capital owners (higher returns from export sectors) while workers bear the adjustment costs. Adjustment costs: retraining takes time and money; regional concentration of affected industries (rust belt problem).',
+          model: 'Even where comparative advantage trade raises aggregate welfare, the distributional effects can leave significant groups worse off. The Stolper-Samuelson theorem predicts that trade liberalisation reduces the real wage of the factor of production that competes most directly with imports — in developed countries, typically low-skill labour. Workers in import-competing industries (UK manufacturing, US steel) face wage pressure and job losses from trade with lower-wage countries. The aggregate gains from trade are real, but they flow disproportionately to capital owners and high-skill workers whose products are in export demand, while the concentrated costs fall on specific communities and industries. The deindustrialisation of UK Midlands and Northern manufacturing towns from the 1980s through the 2000s illustrates this: the aggregate economy gained from cheaper imports, but affected communities faced structural unemployment, skill mismatch, and lasting regional deprivation. Trade gains do not automatically or quickly redistribute to compensate losers.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Conditions for mutual benefit: factor mobility, adjustment time, and trade policy design',
+          prompt: 'Weigh the gains against the limitations with reference to what conditions determine whether all benefit.',
+          hint: 'Free trade benefits all countries IF: (1) factor markets adjust smoothly (labour can retrain and relocate); (2) gains are redistributed through fiscal policy (trade adjustment assistance); (3) ToT are fair (not manipulated by powerful trading partners); (4) the CA is genuine rather than created by subsidies or currency manipulation. When these conditions hold poorly (rigid labour markets, high adjustment costs, currency manipulation by trading partners), the gains from trade are real but unevenly distributed, and some groups clearly lose.',
+          model: 'Whether free trade based on comparative advantage benefits all countries depends critically on the conditions surrounding trade — not just the CA calculation itself. The gains are most evenly distributed when factor markets adjust smoothly (workers can retrain and relocate), fiscal systems redistribute gains to compensate losers (trade adjustment assistance), and trading partners compete on genuine productivity rather than currency manipulation or export subsidies. Where these conditions hold — as in trade between similarly developed economies with flexible labour markets and strong social insurance systems — the gains from trade are broadly shared. Where they do not hold — rigid labour markets, inadequate adjustment support, and trade with partners who use undervalued exchange rates (as China was widely accused of in the 2000s) — the distributional costs fall heavily on specific groups while aggregate gains are appropriated elsewhere. The design of trade policy — including complementary domestic policies for redistribution and adjustment — ultimately determines whether comparative advantage trade delivers its theoretical benefits to all parties.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a nuanced judgement: trade based on comparative advantage raises aggregate welfare but does not automatically benefit all — the distribution of gains depends on policy design and market conditions.',
+          hint: 'Free trade raises aggregate welfare — this is robust. But "always benefits all countries" overstates the case: distributional effects within countries mean some groups lose even when the aggregate wins; developing countries may be locked into disadvantageous specialisation patterns; and asymmetric market power in trade negotiations may skew terms. The conclusion should distinguish aggregate gains (real) from universal benefit (not guaranteed without policy).',
+          model: 'Free trade based on comparative advantage does raise aggregate world welfare — the gains from specialisation and exchange are real and empirically well-supported over the long run. However, the claim that it always benefits all countries involved overstates the case in two important respects. Within countries, distributional effects mean that while aggregate welfare rises, workers in import-competing industries can be made worse off, and these losses are concentrated geographically and occupationally in ways that create lasting social costs. Across countries, the static CA framework may lock developing nations into structurally disadvantaged export specialisations, and the ability of powerful trading partners to manipulate ToT through subsidies or currency intervention means the gains are not always evenly distributed between nations. Free trade is broadly beneficial, but realising mutual benefit for all parties requires complementary policies: redistribution of trade gains to compensate losers, adjustment assistance for affected workers, and international governance frameworks that prevent beggar-thy-neighbour manipulation of comparative advantages.'
+        }
+      ]
     }
   ]
 };

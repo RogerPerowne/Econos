@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monopolistic Competition',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the assumptions, short-run and long-run equilibria, efficiency properties, and how monopolistic competition explains real markets with product differentiation.',
   intro: {
     heroKey: 'heroFirm',
     summary: 'Monopolistic competition blends elements of both monopoly and competition: many firms compete, but each has a degree of market power through product differentiation. The result is a market that achieves variety but sacrifices productive efficiency.',
-    doInThis: 'Work through 7 cards covering the four assumptions, the downward-sloping demand curve, short-run supernormal profit, long-run normal profit equilibrium, excess capacity, efficiency analysis, and evaluation of the model.',
+    doInThis: 'Work through 7 cards covering the four assumptions, the downward-sloping demand curve, short-run supernormal profit, long-run normal profit equilibrium, excess capacity, efficiency analysis, and evaluation of the model. Finish with a 25-mark essay scaffold.',
     outcomes: [
       'State the four assumptions of monopolistic competition and how they differ from perfect competition',
       'Draw and explain short-run supernormal profit and long-run normal profit equilibria',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Short run: like monopoly — MR = MC, P > MC, supernormal profit possible. Long run: like competition — free entry eliminates supernormal profit, P = AC. But unlike perfect competition, P > MC and P > min AC in the long run — excess capacity and allocative inefficiency persist.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopolistic_competition_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Monopolistic competition: the big picture',
       lede: 'Many firms, differentiated products. A hybrid that delivers variety — but pays for it in efficiency.',
       branches: [
@@ -133,6 +133,61 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The best markets for real-world application: restaurants (similar food, compete on atmosphere/cuisine/location), hairdressers (similar service, compete on style/reputation/location), clothing brands (similar garments, compete on brand/design), smartphone apps. All show the defining features: many sellers, differentiated products, free entry, supernormal profit eroded long-run. Using a specific industry example and applying the theory systematically always distinguishes top-band answers.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'mc-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: monopolistic competition',
+      question: 'Evaluate the view that monopolistic competition leads to an inefficient allocation of resources. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define monopolistic competition and explain why its long-run equilibrium differs from perfect competition in terms of efficiency.',
+          hint: 'Monopolistic competition: many firms, differentiated products, free entry. Long-run: P = AC (normal profit) but P > MC (allocative inefficiency) and P > min AC (productive inefficiency, excess capacity). The efficiency case against MC is well-established. But product variety and non-price competition may generate consumer benefits that the static efficiency framework misses.',
+          model: 'Monopolistic competition — characterised by many competing firms selling differentiated products with free entry — produces a long-run equilibrium where the demand curve is tangent to the average cost curve. This generates normal profit but leaves the firm at an output below minimum average cost, with price above marginal cost. By the standard welfare criteria, this constitutes both allocative inefficiency (P > MC → output below social optimum) and productive inefficiency (P > min AC → excess capacity). However, a complete welfare assessment must also consider the consumer gains from product variety and non-price competition that differentiation enables.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — The case for inefficiency: excess capacity and DWL',
+          prompt: 'Explain allocative and productive inefficiency in the monopolistic competition long-run equilibrium.',
+          hint: 'Allocative inefficiency: P > MC — output where demand curve is tangent to AC lies to the LEFT of minimum AC. Each unit not produced between actual output and the socially optimal output represents DWL. Productive inefficiency: firms operate with excess capacity — they could lower AC by producing more. Chamberlin called this the "cost of monopolistic competition": consumers pay higher prices for variety. Empirical example: restaurant sector has persistent thin margins and many exits — excess capacity visible as half-empty restaurants.',
+          model: 'In the long-run equilibrium of monopolistic competition, the demand curve is tangent to the average cost curve at a point to the left of minimum AC. This creates two efficiency losses simultaneously. First, allocative inefficiency: price exceeds marginal cost, meaning consumers would value additional units at more than the cost of producing them — a deadweight welfare loss. Second, productive inefficiency: firms operate with excess capacity, producing below the output at which average cost is minimised. They pay higher average costs than is technically necessary. Chamberlin described this as the "cost of monopolistic competition" — consumers pay for variety through higher prices and smaller individual firm scale. The restaurant industry illustrates this: intense product differentiation generates many small establishments operating below efficient scale, with persistent thin margins and high exit rates.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — The variety benefit: consumer welfare from differentiation',
+          prompt: 'Explain how product differentiation generates consumer surplus and dynamic benefits that partially offset the efficiency losses.',
+          hint: 'Product variety → consumer surplus from closer match to preferences (horizontal differentiation). Dixit-Stiglitz: consumers value variety intrinsically — a market with more differentiated options generates higher total welfare even with excess capacity. Non-price competition (quality, service, innovation) → dynamic efficiency through product improvement. Advertising may create information value (not just persuasion). Example: restaurant sector variety clearly improves consumer welfare vs a homogeneous food market.',
+          model: 'The static efficiency framework understates the consumer benefits of monopolistic competition by ignoring the welfare gains from product variety. When products are differentiated, consumers can choose the variant that most closely matches their preferences — generating consumer surplus from a better fit between product and taste. The Dixit-Stiglitz (1977) framework formalises this: consumers have a preference for variety that is intrinsically welfare-improving, so a market with more differentiated options generates higher total welfare even if each firm operates with excess capacity. Non-price competition in monopolistic competition also drives dynamic efficiency improvements: firms invest in quality, design, service, and innovation to differentiate their product — a form of competitive pressure absent in homogeneous markets. The restaurant sector, often cited as excess capacity in static analysis, is also the sector with the fastest product innovation (cuisine development, service concepts) — a dynamic benefit the efficiency framework misses.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Advertising waste and the X-inefficiency challenge',
+          prompt: 'Evaluate whether advertising and branding in monopolistic competition generate welfare costs rather than benefits.',
+          hint: 'Advertising: may be informative (welfare-improving) or persuasive (creates artificial differentiation, raises barriers). Galbraith: advertising manufactures demand — not genuine consumer preference. Dorfman-Steiner: monopolistically competitive firms over-invest in advertising relative to the social optimum. Brand loyalty may make demand less elastic → reduces the self-correcting competitive pressure. X-inefficiency: market power from differentiation reduces competitive discipline → higher costs than necessary.',
+          model: 'The variety argument for monopolistic competition is strongest when differentiation reflects genuine product variation (taste differences in restaurants, quality differences in clothing). However, much product differentiation is created through advertising and branding that generates perceived rather than real differences — Galbraith\'s "manufactured wants." In this case, advertising expenditure is a welfare cost rather than a benefit: resources devoted to persuasive advertising (making Coca-Cola seem more appealing than Pepsi) could be used productively elsewhere. Brand loyalty artificially reduces the price elasticity of demand, reducing the competitive pressure that should erode supernormal profit. If advertising creates sustainable brand advantages, the long-run equilibrium may involve persistent supernormal profit — worse than the standard model suggests. X-inefficiency is also a concern: the degree of market power from differentiation, even if small, reduces the intensity of cost competition and may allow inefficient management practices to persist.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Static vs dynamic efficiency; real-world market assessment',
+          prompt: 'Weigh the static efficiency losses against the dynamic benefits of differentiation, and consider whether the outcome is preferable to perfect competition.',
+          hint: 'The static efficiency losses in MC (P > MC, excess capacity) are real but relatively small compared to monopoly — the many-firms, free-entry conditions limit market power. The question is whether the variety benefit offsets these losses. Consumers revealed preference: they consistently choose differentiated markets when given the option. A world of homogeneous products (perfect competition) would be more statically efficient but impoverishes consumer choice. Key test: is the excess capacity and DWL large enough to justify policy intervention? In most MC markets, the answer is no.',
+          model: 'The appropriate evaluation compares monopolistic competition not against the unattainable standard of perfect competition but against the realistic alternative of fewer, less differentiated firms. The excess capacity and DWL in monopolistic competition are real but modest: because there are many firms with free entry, individual market power is limited and the P − MC gap is smaller than in oligopoly or monopoly. The dynamic benefits of product variety and non-price competition are substantial and directly observable: consumers consistently reveal preferences for differentiated markets (choosing restaurants over cafeterias, branded clothing over uniform garments). The Schumpeterian dynamic efficiency argument — that competition through innovation and differentiation drives long-run welfare gains — is particularly applicable to monopolistic competition, where firms continuously innovate to maintain differentiation. On balance, the efficiency losses of monopolistic competition are a reasonable price for product variety in most industries, and policy intervention to force productively efficient output would be welfare-reducing overall.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a reasoned judgement: static inefficiency is real but modest; variety benefits likely outweigh the losses in most MC markets.',
+          hint: 'Acknowledge allocative and productive inefficiency — they are genuine. But: losses are modest compared to monopoly; variety benefits are real and valued by consumers; dynamic competition through non-price means drives product improvement. Policy intervention rarely justified. The view that MC is always inefficient ignores the variety dimension of welfare.',
+          model: 'Monopolistic competition does produce allocative and productive inefficiency relative to the perfectly competitive benchmark — this is not in dispute. However, the view that this constitutes a clear case of inefficient resource allocation that warrants policy intervention is too strong. The efficiency losses are inherent to having product differentiation, which is itself welfare-improving: consumers value the variety that differentiation provides, and revealed preferences consistently show they choose differentiated markets when available. The static efficiency losses are also modest relative to monopoly, given the many-firms free-entry conditions that constrain individual market power. Dynamic efficiency — through continuous product innovation and quality competition — partially offsets static losses over time. On balance, monopolistic competition achieves a welfare outcome that is, in most industries, superior to forcing competitive homogeneity: the "price" of excess capacity is worth paying for the variety and dynamism it enables.'
+        }
+      ]
     }
   ]
 };

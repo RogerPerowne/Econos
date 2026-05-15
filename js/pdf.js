@@ -57,7 +57,10 @@ window.EconosPdf = (function () {
 
   function examEdgeBlock(e) {
     if (!e) return '';
-    return calloutBlock({ color: C.blue, label: e.title, html: e.text, icon: '⚡' });
+    var title = (typeof e === 'object') ? (e.title || 'Exam edge') : 'Exam edge';
+    var text  = (typeof e === 'object') ? e.text : e;
+    if (!text) return '';
+    return calloutBlock({ color: C.blue, label: title, html: text, icon: '⚡' });
   }
 
   function keyTakeawayBlock(k) {
@@ -290,7 +293,133 @@ window.EconosPdf = (function () {
       '</div>';
   }
 
+  /* ---- Generic-format renderer (body / causes:{head,body} / steps:{label,text} /
+          rows / left+right:{points} / keyTerms) — matches app.js renderCardGeneric ---- */
+
+  var TONES = [C.green, C.amber, C.blue, C.purple];
+
+  function renderBranchesBlock(branches) {
+    if (!branches || !branches.length) return '';
+    var inner = branches.map(function (b) {
+      var col = toneColor(b.tone);
+      return '<div style="flex:1;min-width:170px;border-left:5px solid ' + col + ';padding:6px 0 6px 14px;">' +
+        '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em;">' + s(b.label) + '</div>' +
+        '<div style="font-size:12px;line-height:1.6;color:' + C.ink + ';">' + s(b.sub) + '</div>' +
+        '</div>';
+    }).join('');
+    return secHead('🧭', 'The big picture') +
+      '<div style="display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 18px;">' + inner + '</div>';
+  }
+
+  function renderBodyBlock(html) {
+    if (!html) return '';
+    return '<div style="font-size:13px;line-height:1.75;color:' + C.ink + ';margin:6px 0 18px;border-left:4px solid ' + C.rule + ';padding:4px 0 4px 14px;">' +
+      html + '</div>';
+  }
+
+  function renderCausesGrid(causes) {
+    if (!causes || !causes.length) return '';
+    var tiles = causes.map(function (item, i) {
+      var col = TONES[i % TONES.length];
+      return '<div style="flex:1;min-width:240px;border-top:4px solid ' + col + ';padding:10px 0 0;">' +
+        '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' + s(item.head) + '</div>' +
+        '<div style="font-size:12px;line-height:1.65;color:' + C.ink + ';">' + s(item.body) + '</div>' +
+        '</div>';
+    }).join('');
+    return secHead('🔗', 'Key mechanisms') +
+      '<div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;">' + tiles + '</div>';
+  }
+
+  function renderStepsBlock(steps) {
+    if (!steps || !steps.length) return '';
+    var items = steps.map(function (st, i) {
+      var col = TONES[i % TONES.length];
+      return '<div style="display:flex;gap:14px;margin-bottom:10px;border-left:5px solid ' + col + ';padding:6px 0 6px 14px;">' +
+        '<div style="width:26px;height:26px;border-radius:50%;border:2px solid ' + col + ';color:' + col + ';font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + (i + 1) + '</div>' +
+        '<div style="flex:1;">' +
+        '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:4px;">' + s(st.label) + '</div>' +
+        '<div style="font-size:12px;line-height:1.6;color:' + C.ink + ';">' + s(st.text) + '</div>' +
+        '</div></div>';
+    }).join('');
+    return secHead('📋', 'How it works') + items;
+  }
+
+  function renderRowsTable(c) {
+    if (!c.rows || !c.rows.length) return '';
+    var hasHeader = c.colA || c.colB;
+    var head = hasHeader ?
+      '<tr><th style="padding:9px 11px;"></th>' +
+      '<th style="padding:9px 11px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:' + C.green + ';border-bottom:3px solid ' + C.green + ';text-align:left;">' + s(c.colA) + '</th>' +
+      '<th style="padding:9px 11px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:' + C.amber + ';border-bottom:3px solid ' + C.amber + ';text-align:left;">' + s(c.colB) + '</th></tr>' : '';
+    var rows = c.rows.map(function (r) {
+      return '<tr>' +
+        '<td style="padding:8px 11px;font-size:12px;font-weight:700;color:' + C.ink + ';border-bottom:1px solid ' + C.rule + ';">' + s(r.label) + '</td>' +
+        '<td style="padding:8px 11px;font-size:12px;color:' + C.green + ';font-weight:600;border-bottom:1px solid ' + C.rule + ';">' + s(r.colA) + '</td>' +
+        '<td style="padding:8px 11px;font-size:12px;color:' + C.amber + ';font-weight:600;border-bottom:1px solid ' + C.rule + ';">' + s(r.colB) + '</td>' +
+        '</tr>';
+    }).join('');
+    return secHead('📊', 'Compare') +
+      '<table style="width:100%;border-collapse:collapse;margin-bottom:18px;">' +
+      (hasHeader ? '<thead>' + head + '</thead>' : '') +
+      '<tbody>' + rows + '</tbody></table>' +
+      (c.footer ? '<div style="font-size:12px;color:' + C.slate + ';font-style:italic;margin-bottom:18px;">' + s(c.footer) + '</div>' : '');
+  }
+
+  function renderLeftRight(c) {
+    if (!c.left || !c.right) return '';
+    function side(s_, col) {
+      var pts = (s_.points || []).map(function (p) { return '<li>' + s(p) + '</li>'; }).join('');
+      return '<div style="flex:1;min-width:240px;border-top:4px solid ' + col + ';padding:10px 0 0;">' +
+        '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em;">' + s(s_.label) + '</div>' +
+        '<ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.75;color:' + C.ink + ';">' + pts + '</ul>' +
+        '</div>';
+    }
+    return secHead('⚖️', 'Head to head') +
+      '<div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;">' +
+      side(c.left, C.green) + side(c.right, C.blue) +
+      '</div>';
+  }
+
+  function renderKeyTerms(keyTerms) {
+    if (!keyTerms || !keyTerms.length) return '';
+    var tiles = keyTerms.map(function (kt, i) {
+      var col = TONES[i % TONES.length];
+      return '<div style="flex:1;min-width:200px;border-top:3px solid ' + col + ';padding:8px 0 0;">' +
+        '<div style="font-weight:800;font-size:12px;color:' + col + ';margin-bottom:5px;">' + s(kt.term) + '</div>' +
+        '<div style="font-size:11.5px;line-height:1.6;color:' + C.ink + ';">' + s(kt.def) + '</div>' +
+        '</div>';
+    }).join('');
+    return secHead('🔑', 'Key terms') +
+      '<div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;">' + tiles + '</div>';
+  }
+
+  function renderGeneric(c) {
+    var intro = c.intro ? '<div style="font-size:13px;line-height:1.65;color:' + C.slate + ';font-style:italic;border-left:4px solid ' + C.blue + ';padding:6px 0 6px 14px;margin-bottom:18px;">💡 ' + s(c.intro) + '</div>' : '';
+    return intro +
+      renderBranchesBlock(c.branches) +
+      renderBodyBlock(c.body) +
+      renderCausesGrid(c.causes && Array.isArray(c.causes) && c.causes.length && c.causes[0] && c.causes[0].head ? c.causes : null) +
+      renderStepsBlock(c.steps) +
+      renderRowsTable(c) +
+      renderLeftRight(c) +
+      renderKeyTerms(c.keyTerms) +
+      examEdgeBlock(c.examEdge);
+  }
+
+  function isGenericCard(c) {
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain') return false;
+    return !!(
+      c.body !== undefined ||
+      c.steps !== undefined ||
+      c.rows !== undefined ||
+      (c.left !== undefined && c.right !== undefined) ||
+      (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
+       typeof c.causes[0] === 'object' && 'head' in c.causes[0])
+    );
+  }
+
   function renderCardBody(c) {
+    if (isGenericCard(c)) return renderGeneric(c);
     switch (c.template) {
       case 'framing':            return renderFraming(c);
       case 'cause':              return renderCause(c);

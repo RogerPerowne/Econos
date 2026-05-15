@@ -5479,15 +5479,11 @@ window.ECONOS_ICONS = {
         <text x="74" y="358" font-size="10" fill="#64748B" text-anchor="end">many</text>
       </g>
 
-      <!-- Region shading (shift state) -->
+      <!-- Region shading (shift state) — colour only, captions live in right panel -->
       <g class="layer-regions">
         <rect x="80" y="80" width="220" height="280" fill="#059669" fill-opacity="0.12"/>
         <rect x="300" y="80" width="240" height="280" fill="#DC2626" fill-opacity="0.12"/>
         <line x1="300" y1="80" x2="300" y2="360" stroke="#475569" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
-        <text x="190" y="100" font-size="11" font-weight="700" fill="#059669" text-anchor="middle" letter-spacing="1">CONTESTABLE REGION</text>
-        <text x="190" y="115" font-size="10" fill="#059669" text-anchor="middle">competitive outcomes</text>
-        <text x="420" y="100" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle" letter-spacing="1">MARKET POWER REGION</text>
-        <text x="420" y="115" font-size="10" fill="#DC2626" text-anchor="middle">DWL, supernormal profit</text>
       </g>
 
       <!-- Markers: structure dots -->
@@ -5519,13 +5515,9 @@ window.ECONOS_ICONS = {
         <text x="480" y="121" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">utilities, patents</text>
       </g>
 
-      <!-- Highlight arrow (shift state) showing contestable monopoly sits in green region despite one firm -->
+      <!-- Visual emphasis on contestable monopoly (shift) — ring + subtle pulse only -->
       <g class="layer-highlight">
-        <path d="M 230 115 Q 270 95 290 100" fill="none" stroke="#059669" stroke-width="1.8" stroke-dasharray="4 3"/>
-        <polygon points="288,96 294,100 286,103" fill="#059669"/>
-        <text x="305" y="102" font-size="11" font-weight="700" fill="#059669">one firm,</text>
-        <text x="305" y="115" font-size="11" font-weight="700" fill="#059669">competitive outcome</text>
-        <text x="305" y="127" font-size="10" font-style="italic" fill="#475569">(low sunk costs)</text>
+        <circle cx="195" cy="115" r="18" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
       </g>
 
       <!-- Panels -->

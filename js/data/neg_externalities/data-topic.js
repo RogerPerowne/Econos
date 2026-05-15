@@ -47,16 +47,34 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'neg_externalities_2',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'The Negative Production Externality Diagram',
-      intro: 'This is the most important diagram in market failure. Every element must be precisely labelled.',
+      lede: 'The most important diagram in market failure. Build it in four moves — every label matters.',
+      diagramKey: 'negExternalityInteractive',
       steps: [
-        { label: 'Axes and curves', text: 'P on vertical axis, Q on horizontal. Draw downward-sloping demand curve (= MSB = MPB when no positive externality). Draw MPC (supply) upward-sloping. Draw MSC above MPC — the vertical gap between them is the marginal external cost (MEC).' },
-        { label: 'Market equilibrium', text: 'Market produces where MPC = MSB (demand). Mark this Q-market and P-market. This is the free market output — too high.' },
-        { label: 'Socially optimal output', text: 'Optimal output where MSC = MSB. Mark Q-optimal < Q-market and P-optimal > P-market. Society would be better off at this lower output level.' },
-        { label: 'Deadweight welfare loss', text: 'Triangle between Q-optimal and Q-market, bounded above by MSC and below by MSB (demand). This represents the net welfare loss from overproduction.' }
+        {
+          key: 'base',
+          label: 'Market equilibrium',
+          text: 'Start with the free market: <strong>MPC</strong> (marginal private cost, supply) meets <strong>MSB</strong> (marginal social benefit, demand) at the market equilibrium <strong>(Q_m, P_m)</strong>. This is what an unregulated market produces — but it ignores any cost imposed on third parties.'
+        },
+        {
+          key: 'extension',
+          label: 'Add MSC and MEC',
+          text: 'Add <strong>MSC</strong> (marginal social cost) above MPC. The vertical gap between them is the <strong>MEC</strong> — marginal external cost imposed on third parties: pollution, congestion, noise, CO₂. MSC = MPC + MEC. The market ignores this gap, so it overproduces.'
+        },
+        {
+          key: 'shift',
+          label: 'Socially optimal output',
+          text: 'The socially optimal point is where <strong>MSC = MSB</strong> at <strong>(Q*, P*)</strong>. Compare: <strong>Q* &lt; Q_m</strong> (society wants less output) and <strong>P* &gt; P_m</strong> (optimal price is higher). The free market overproduces by (Q_m − Q*).'
+        },
+        {
+          key: 'efficiency',
+          label: 'Deadweight welfare loss',
+          text: 'Shade the <strong>DWL triangle</strong> bounded by MSC (above), MSB (below), and the vertical at Q_m. For every unit produced beyond Q*, society loses (MSC − MSB) of welfare. A <strong>Pigouvian tax = MEC at Q*</strong> internalises the externality and eliminates the DWL.'
+        }
       ],
-      examEdge: 'Diagram technique: label MPC (supply), MSC (above it), demand = MSB, market equilibrium (Q-market, P-market), socially optimal point (Q-opt, P-opt), and shade the DWL triangle. Missing any of these loses marks. Draw the MSC as a parallel shift above MPC for a constant external cost.'
+      examEdge: 'Diagram technique: label all six elements — D=MSB, MPC, MSC, E_market (Q_m, P_m), E* (Q*, P*), and shade the DWL triangle. Missing any of these loses marks. Draw MSC as a parallel shift above MPC for a constant external cost.'
     },
     {
       id: 'neg_externalities_3',

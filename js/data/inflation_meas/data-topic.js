@@ -233,8 +233,25 @@ window.ECONOS_TOPIC = {
         }
       ],
       winnersLosers: {
-        winners: ['Borrowers (debt erodes in real terms)', 'Owners of real assets (land, property)', 'Governments (debt burden falls)', 'Firms with pricing power'],
-        losers: ['Savers on fixed nominal rates', 'Holders of cash', 'Workers on fixed wages', 'Creditors / lenders', 'Those on fixed incomes (pensions)']
+        winners: {
+          label: 'Winners from inflation',
+          items: [
+            'Borrowers (debt erodes in real terms)',
+            'Owners of real assets (land, property)',
+            'Governments (debt burden falls)',
+            'Firms with pricing power'
+          ]
+        },
+        losers: {
+          label: 'Losers from inflation',
+          items: [
+            'Savers on fixed nominal rates',
+            'Holders of cash',
+            'Workers on fixed wages',
+            'Creditors / lenders',
+            'Those on fixed incomes (pensions)'
+          ]
+        }
       },
       example: '<strong>UK 2022-23:</strong> CPI peaked at 11.1% (Oct 2022). Real wages fell ~4%. Mortgage holders on variable rates faced surging repayments. But owner-occupiers saw house prices hold up — a classic winners-and-losers split from inflation.',
       examEdge: {

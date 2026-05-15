@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the causes, benefits, costs and the de-globalisation debate',
 
   intro: {
-    heroKey: 'heroGlobalisation',
+    heroKey: 'heroGlobe',
     summary: "Globalisation has transformed every economy on earth over the past 50 years. Understanding its causes, winners, losers, and growing political backlash is essential for every international economics question.",
     doInThis: 'Recap the characteristics and causes of globalisation, its benefits and costs for developed and developing countries, and the de-globalisation trend.',
     outcomes: [

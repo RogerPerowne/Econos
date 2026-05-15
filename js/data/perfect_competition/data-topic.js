@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the assumptions, short-run and long-run equilibria, efficiency properties, and limitations of the perfect competition model.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroFirm',
     summary: 'Perfect competition is the theoretical benchmark against which all other market structures are measured. Understanding its assumptions and equilibrium conditions enables rigorous evaluation of real markets that diverge from this ideal.',
     doInThis: 'Work through 7 cards covering the five assumptions, the price-taking firm, short-run profit and loss, long-run equilibrium, efficiency analysis, and evaluation of the model\'s realism.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the distinction between explicit and tacit collusion, why cartels form and why they are unstable, real-world cartel examples, and competition policy responses.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroGameTheory',
     summary: 'Collusion occurs when oligopolists coordinate behaviour rather than compete independently. Explicit cartels are illegal but extremely harmful. Tacit collusion is legal but hard to distinguish from parallel behaviour. Understanding why cartels form — and why they break down — requires game theory.',
     doInThis: 'Work through 7 cards covering explicit vs tacit collusion, the prisoner\'s dilemma and cartel instability, OPEC as a case study, tacit collusion mechanisms, competition law, leniency programmes, and evaluation.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in what determines a country\'s international competitiveness, how it is measured, and how policy can improve it.',
   intro: {
-    heroKey: 'supply_side',
+    heroKey: 'heroGlobe',
     summary: 'International competitiveness is about whether domestic firms can win orders in global markets. It depends on price factors (unit labour costs, exchange rate) and non-price factors (quality, innovation, infrastructure). The UK\'s productivity puzzle is a central case study.',
     doInThis: 'Work through 7 cards covering the definition and measurement of competitiveness, unit labour costs, non-price factors, the UK productivity puzzle, and supply-side strategies to improve competitiveness.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the theory of contestable markets, the role of sunk costs, hit-and-run entry, and how contestability reshapes competition policy beyond market structure.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroMarketPower',
     summary: 'Contestability theory (Baumol, 1982) challenges the conventional view that market structure determines behaviour. If entry and exit are costless, even a monopolist must price competitively — the threat of entry disciplines behaviour without actual competition.',
     doInThis: 'Work through 7 cards covering the definition and assumptions, sunk costs as the key variable, hit-and-run entry, the perfectly contestable market, how incumbents respond to contestability, real-world approximations, and evaluation.',
     outcomes: [

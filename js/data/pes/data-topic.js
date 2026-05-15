@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the PES formula, what determines supply elasticity, how PES affects price and quantity adjustment, and its policy implications.',
   intro: {
-    heroKey: 'market',
+    heroKey: 'heroElasticity',
     summary: 'PES measures how responsive supply is to a price change. When demand shifts, the split between price and quantity adjustment depends on PES. Inelastic supply means most of the adjustment is in price; elastic supply means most is in quantity.',
     doInThis: 'Work through 7 cards covering the PES formula, elastic/inelastic cases, determinants, the relationship between time and elasticity, PES in specific markets, and policy applications.',
     outcomes: [

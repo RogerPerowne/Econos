@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the three accounts, UK deficit causes, and correction policies',
 
   intro: {
-    heroKey: 'heroBop',
+    heroKey: 'heroExchangeRates',
     summary: "The balance of payments records all transactions between a country and the rest of the world. The UK has had a persistent current account deficit — understanding why, and what to do about it, is a recurring Paper 2 theme.",
     doInThis: 'Recap the three BoP accounts, current account components, UK deficit causes and consequences, and correction policies.',
     outcomes: [

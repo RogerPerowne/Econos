@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in how price ceilings and price floors work, their intended effects and unintended consequences, and how to evaluate them as policy tools.',
   intro: {
-    heroKey: 'fiscal',
+    heroKey: 'heroPrice',
     summary: 'Price controls set legal limits on market prices. They are used with good intentions — to protect consumers or support producers — but create predictable unintended consequences: shortages, surpluses, black markets, and quality deterioration.',
     doInThis: 'Work through 7 cards covering price ceilings (maximum prices), price floors (minimum prices), their welfare effects, real-world examples, unintended consequences, and evaluation against alternative policies.',
     outcomes: [

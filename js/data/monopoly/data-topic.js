@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the monopoly model — sources of power, profit maximisation, welfare loss, and when monopoly may be beneficial.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroMarketPower',
     summary: 'A monopoly is a single supplier with no close substitutes. It is a price-maker that restricts output to raise price above marginal cost — creating a deadweight welfare loss. But monopoly can sometimes fund dynamic efficiency through R&D, and natural monopoly requires public intervention.',
     doInThis: 'Work through 7 cards covering the definition and sources of monopoly power, profit maximisation, welfare analysis, comparing monopoly to competition, natural monopoly, and evaluation.',
     outcomes: [

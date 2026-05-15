@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in why firms grow, internal vs external growth, types of integration, and the conditions under which growth creates or destroys value.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroFirm',
     summary: 'Firms grow to achieve economies of scale, market power, and strategic security. But growth has limits — diseconomies of scale, regulatory constraints, and the persistent evidence that most mergers destroy rather than create value.',
     doInThis: 'Work through 7 cards covering motives for growth, internal vs external growth, horizontal/vertical/conglomerate integration, merger outcomes, constraints on growth, and evaluation.',
     outcomes: [

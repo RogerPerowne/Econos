@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the three degrees of price discrimination, the conditions required, the welfare effects, and how to evaluate whether it is good or bad for consumers.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroMarketPower',
     summary: 'Price discrimination occurs when a firm charges different prices for the same good to different consumers or groups, not justified by cost differences. It transfers consumer surplus to producers and can simultaneously increase output — creating complex welfare effects.',
     doInThis: 'Work through 7 cards covering the definition and conditions, first-degree (perfect), second-degree (quantity/versioning), third-degree (group), welfare analysis, real-world examples, and evaluation.',
     outcomes: [

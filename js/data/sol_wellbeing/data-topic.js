@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Move beyond GDP to measure what actually matters',
 
   intro: {
-    heroKey: 'heroWellbeing',
+    heroKey: 'heroGrowth',
     summary: "GDP is the starting point, not the answer. Standard of living questions demand a richer toolkit — HDI, composite measures, inequality adjustments, and wellbeing evidence. These cards cover all of them.",
     doInThis: 'Recap HDI construction, Kuznets curve, limitations of composite measures, and the subjective wellbeing debate.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the full range of business objectives beyond profit maximisation — and why different objectives change firm behaviour.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroFirm',
     summary: 'The standard economic assumption is that firms maximise profit. But real firms have shareholders, managers, workers, and wider stakeholders — each with different objectives. Understanding these alternative objectives is essential for analysing firm behaviour in oligopolies, public sector organisations, and social enterprises.',
     doInThis: 'Work through 7 cards covering profit maximisation, revenue maximisation, growth, satisficing, the divorce of ownership and control, CSR, and public sector objectives.',
     outcomes: [

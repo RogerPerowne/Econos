@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the free market, command, and mixed economy models — their mechanisms, advantages, and failures.',
   intro: {
-    heroKey: 'growth',
+    heroKey: 'heroPrice',
     summary: 'Every economy must answer the three fundamental questions: what, how, and for whom to produce. Different economic systems use different mechanisms — prices, central planning, or a mix — to allocate scarce resources. No system is perfect.',
     doInThis: 'Work through 7 cards covering the market mechanism, command economies, mixed economies, the price system as an allocative tool, and the debate between market and state.',
     outcomes: [

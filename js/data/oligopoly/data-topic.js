@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the characteristics of oligopoly, the kinked demand curve model, strategic interdependence, and how oligopolists behave in practice.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroGameTheory',
     summary: 'Oligopoly is the dominant real-world market structure: a few large firms with significant market power who must each consider rivals\' reactions when making decisions. Strategic interdependence — not just cost and demand — drives outcomes.',
     doInThis: 'Work through 7 cards covering the defining characteristics, strategic interdependence, the kinked demand curve model, price rigidity, non-price competition, the spectrum from competition to collusion, and evaluation.',
     outcomes: [

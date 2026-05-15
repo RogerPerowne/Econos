@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the LRAC curve, minimum efficient scale, economies and diseconomies of scale, and their implications for market structure.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroCostCurves',
     summary: 'In the long run, all factors can be varied. The shape of the long-run average cost curve reveals the optimal scale of production and explains why some industries have few large firms while others have many small ones.',
     doInThis: 'Work through 7 cards covering the LRAC curve as an envelope, minimum efficient scale, internal economies of scale, external economies of scale, diseconomies of scale, and implications for natural monopoly and market structure.',
     outcomes: [

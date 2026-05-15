@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in Gini coefficient, Lorenz curve, causes and consequences of inequality, and the redistribution policy toolkit.',
   intro: {
-    heroKey: 'inequality',
+    heroKey: 'heroInequality',
     summary: 'Inequality of income and wealth is both a measurement challenge and a policy debate. The Lorenz curve and Gini coefficient provide tools to quantify it; understanding causes identifies which policies can reduce it most effectively.',
     doInThis: 'Work through 7 cards covering Lorenz curve, Gini coefficient, income vs wealth inequality, causes of inequality, its consequences, redistribution tools, and the equity-efficiency trade-off.',
     outcomes: [

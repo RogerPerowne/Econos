@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in how prices signal, incentivise, ration and transmit information — and why market failure occurs when these functions break down.',
   intro: {
-    heroKey: 'market',
+    heroKey: 'heroPrice',
     summary: 'Prices do far more than measure value — they coordinate economic activity across millions of decentralised agents without central direction. Understanding these functions explains both why markets are powerful and why they sometimes fail.',
     doInThis: 'Work through 7 cards covering the three functions of price (signalling, incentive, rationing), the flow of price information through markets, entrepreneurship and the profit signal, and what happens when prices fail to function.',
     outcomes: [

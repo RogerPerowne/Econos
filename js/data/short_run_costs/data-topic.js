@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in fixed vs variable costs, total/average/marginal cost, the law of diminishing returns, and U-shaped average cost curves.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroCostCurves',
     summary: 'Cost analysis is the bedrock of firm decision-making. In the short run, fixed costs are unavoidable and variable costs rise as output increases — eventually at an accelerating rate due to diminishing marginal returns. Understanding these curves is essential for all market structure analysis.',
     doInThis: 'Work through 7 cards covering fixed and variable costs, TC/AC/MC relationships, the law of diminishing returns, the U-shaped AC curve, marginal cost and supply, and cost concepts in practice.',
     outcomes: [

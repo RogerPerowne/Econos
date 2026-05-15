@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Master market-based and interventionist supply-side tools and their trade-offs',
 
   intro: {
-    heroKey: 'heroSupplySide',
+    heroKey: 'heroAggSupply',
     summary: "Supply-side policies aim to shift LRAS right — raising potential output without inflation. But the toolkit divides sharply between market-based (Thatcherite) and interventionist (Keynesian/social-democratic) approaches. Both have merits and limitations.",
     doInThis: 'Recap market-based supply-side policies, interventionist alternatives, UK examples, productivity debate, and evaluation framework.',
     outcomes: [

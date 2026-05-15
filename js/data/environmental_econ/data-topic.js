@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the economics of environmental degradation, carbon markets, the sustainability debate, and the policy toolkit for environmental protection.',
   intro: {
-    heroKey: 'environment',
+    heroKey: 'heroExternalities',
     summary: 'Environmental economics applies externality and market failure frameworks to the planet\'s most pressing challenge. Carbon pricing, cap-and-trade, and the sustainability concept are central to modern economic policy.',
     doInThis: 'Work through 7 cards covering the environment as a public good, climate change as the ultimate externality, carbon taxes, EU ETS, sustainability, the Stern Review, and the trade-off between growth and environmental protection.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in what determines exchange rates, how changes affect trade and macro objectives, and the floating vs fixed debate.',
   intro: {
-    heroKey: 'monetary',
+    heroKey: 'heroExchangeRates',
     summary: 'The exchange rate is the price of one currency in terms of another. It connects domestic and international markets: a depreciation makes exports cheaper and imports dearer, affecting competitiveness, inflation and the current account.',
     doInThis: 'Work through 7 cards covering FOREX markets, appreciation vs depreciation, the Marshall-Lerner condition, J-curve effect, floating vs fixed systems, and exchange rate policy trade-offs.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the individual and market labour supply curve, the role of trade unions in wage bargaining, and the economics of the National Minimum Wage under competitive and monopsonistic conditions.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroLabour',
     summary: 'Labour supply theory explains individual work decisions through the substitution and income effects. Trade unions act as labour market monopolies, raising wages above equilibrium. The National Minimum Wage has surprisingly limited disemployment effects — explained by monopsony theory.',
     doInThis: 'Work through 7 cards covering the individual labour supply decision, the backward-bending supply curve, market labour supply, trade union wage bargaining, the economic effects of trade unions, NMW theory and evidence, and evaluation.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the tools of protectionism, the arguments for and against, and how to evaluate them for essay questions.',
   intro: {
-    heroKey: 'trade',
+    heroKey: 'heroGlobe',
     summary: 'Protectionism uses government policy to restrict imports and support domestic industries. Tools range from tariffs and quotas to subtler non-tariff barriers. Each creates winners (domestic producers) and losers (consumers, trading partners).',
     doInThis: 'Work through 7 cards covering the main protectionist instruments, their welfare effects, arguments for and against protectionism, and how economists evaluate trade policy.',
     outcomes: [

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in productive, allocative, dynamic, and X-efficiency — their definitions, conditions, and how different market structures perform against each criterion.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroCostCurves',
     summary: 'Efficiency is economics\'s gold standard for evaluating markets. But there are four distinct types — and markets that perform well on one criterion may perform poorly on another. Understanding the trade-offs between them is essential for all market structure evaluation.',
     doInThis: 'Work through 7 cards covering productive efficiency, allocative efficiency, dynamic efficiency, X-efficiency, the efficiency conditions in different market structures, and how to evaluate market performance.',
     outcomes: [

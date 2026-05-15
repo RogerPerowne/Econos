@@ -1,0 +1,40 @@
+window.ECONOS_LAND_SECTION_C = {
+  topic:        'Perfect Competition',
+  sessionLabel: 'Session 3 of 3: Land',
+  sectionLabel: 'Section C &#8212; Essay',
+  backUrl:      TopicLoader.buildUrl('land_intro.html'),
+
+  question: {
+    id:               'qc',
+    commandWord:      'Evaluate',
+    stem:             'Evaluate the view that perfect competition is the most desirable market structure for consumers.',
+    marks:            25,
+    suggestedMinutes: 30,
+
+    structureTips: [
+      'Define perfect competition and identify its five key assumptions.',
+      'Explain the long-run equilibrium condition (P = MR = MC = minimum AC) and what it means for consumer welfare.',
+      'Develop the case FOR: allocative efficiency (P = MC), productive efficiency (minimum AC), maximum consumer surplus, lowest sustainable price.',
+      'Evaluate limitation 1: dynamic efficiency &#8212; Schumpeter&#39;s hypothesis, R&amp;D incentives, patent protection as counter-evidence.',
+      'Evaluate limitation 2: static efficiency gains assume assumptions hold &#8212; homogeneous product, perfect information, no externalities.',
+      'Consider contestability as an alternative framework: even imperfectly competitive markets can approximate competitive outcomes.',
+      'Conclude with a supported, conditional judgement &#8212; for what types of goods and industries is perfect competition most desirable?'
+    ],
+
+    modelAnswer:
+      '<p>Perfect competition is the market structure economists use as the benchmark for welfare assessment. It has five defining assumptions: many buyers and sellers, homogeneous product, perfect information, no barriers to entry or exit, and full factor mobility. These assumptions generate a specific long-run equilibrium in which price equals marginal cost equals minimum average cost (P&#160;=&#160;MR&#160;=&#160;MC&#160;=&#160;minimum AC), simultaneously achieving all static efficiency conditions. The central question is whether this outcome is most desirable for consumers compared to alternatives such as oligopoly or monopoly.</p>'
+    + '<p>The welfare case for perfect competition is powerful. Allocative efficiency (P&#160;=&#160;MC) ensures resources flow to goods consumers value most highly &#8212; the price they pay for the last unit exactly equals the cost of producing it, so no further reallocation could increase welfare. Productive efficiency (P&#160;=&#160;minimum AC) means goods are produced at the lowest possible unit cost &#8212; consumers benefit from minimum prices consistent with firms earning normal profit. Unlike monopoly, there is no deadweight welfare loss: the competitive price maximises the sum of consumer and producer surplus. UK agricultural commodity markets illustrate these properties: wheat prices adjusted from &#163;340 per tonne at the 2022 peak back to below &#163;180 as supply expanded, transmitting cost reductions to consumers. No single firm could maintain above-cost prices because entry and price-taking behaviour eroded any supernormal profit. From a consumer perspective &#8212; lower prices, no excess profits, maximum choice &#8212; this is the ideal.</p>'
+    + '<p>However, perfect competition is dynamically inefficient in ways that ultimately harm consumers. In long-run equilibrium, firms earn only normal profit with no retained earnings for R&amp;D investment. The homogeneous product and perfect information assumptions mean any innovation is immediately copied by rivals, eliminating the first-mover commercial advantage that makes innovation worthwhile. Schumpeter argued that real innovation &#8212; the pharmaceutical breakthroughs, digital technologies, and process improvements that raise living standards &#8212; requires the supernormal profit that only market power can deliver. The evidence supports this: AstraZeneca, with significant market power in pharmaceutical markets, invested &#163;8.1 billion in R&amp;D in 2023. UK wheat farmers, operating in near-competitive conditions, invest approximately zero. The patent system &#8212; which creates a temporary monopoly right to incentivise innovation &#8212; is a deliberate policy acknowledgement that dynamic efficiency requires departing from perfect competition. Consumers in innovative industries (pharmaceuticals, technology, advanced manufacturing) may therefore be better served by market structures with some degree of market power that funds the innovations they ultimately consume.</p>'
+    + '<p>A further limitation is that perfect competition&#39;s efficiency properties depend entirely on its assumptions holding &#8212; and they rarely do in practice. Most goods are differentiated (not homogeneous): consumers value brand, quality, service, and convenience, which make them willing to pay above the commodity price for identifiable goods. Information is asymmetric in most markets &#8212; sellers know more about product quality than buyers (used cars, financial products, medical services), so competitive price alone does not ensure allocative efficiency. Externalities &#8212; which competitive markets systematically fail to address &#8212; mean P&#160;=&#160;MC is not sufficient for allocative efficiency when social costs diverge from private costs. The nearest real-world approximations to perfect competition (commodity markets, foreign exchange) are also among the most volatile, as the 2022 wheat price crisis demonstrated &#8212; price volatility may harm consumer welfare even while average prices are lower. Perfectly competitive markets also provide minimal product variety: the homogeneous product assumption eliminates the differentiation that many consumers value.</p>'
+    + '<p>The theory of contestable markets (Baumol, 1982) offers a useful perspective: in a perfectly contestable market with free entry and exit but potentially fewer competitors, prices are also driven to competitive levels without requiring the strict assumptions of perfect competition. This suggests the benefits of competition can be achieved by maintaining contestability &#8212; low barriers to entry &#8212; rather than requiring the full perfectly competitive structure. UK competition policy focuses on preventing barriers to entry rather than atomising industries into large numbers of small firms, reflecting this insight.</p>'
+    + '<p>In conclusion, perfect competition is the most desirable market structure for consumers in a static, standardised-product context where dynamic efficiency is less important: commodity markets, basic manufacturing, and price-competitive services where product homogeneity is a reasonable approximation. For these industries, the combination of lowest sustainable price, zero supernormal profit, and maximum consumer surplus makes it the clear welfare benchmark. However, for innovation-intensive industries &#8212; pharmaceuticals, technology, aerospace &#8212; some degree of market power may deliver better long-run consumer outcomes through greater R&amp;D investment, product variety, and quality improvements. Perfect competition is not unconditionally the most desirable market structure; its desirability is conditional on the nature of the good, the importance of dynamic versus static efficiency, and whether the assumptions of the model approximate reality.</p>'
+  },
+
+  strongAnswers: [
+    'Define perfect competition precisely and state all five assumptions before analysing efficiency',
+    'Explain both allocative AND productive efficiency &#8212; and why perfect competition achieves both simultaneously',
+    'Develop the dynamic efficiency evaluation with evidence: Schumpeter, R&amp;D spending, patent protection',
+    'Use specific UK evidence: agricultural price data, pharmaceutical R&amp;D, competition policy',
+    'Conclude conditionally &#8212; the ideal market structure depends on the type of good and the relative importance of static vs dynamic efficiency'
+  ]
+};

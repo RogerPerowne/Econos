@@ -108,7 +108,8 @@ window.ECONOS_TOPIC = {
         { term: 'Supernormal profit persistence', def: 'Sustained in markets with barriers to entry — monopoly and oligopoly. Attracts but cannot be fully eroded by competition.' },
         { term: 'Entry and exit mechanism', def: 'The process by which competitive markets eliminate supernormal profit and economic losses in the long run.' }
       ],
-      examEdge: 'The long-run profit outcome is the most important distinguishing feature between market structures: perfect competition → always normal profit long-run; monopoly → always supernormal; monopolistic competition → normal profit but at excess capacity. This should be stated explicitly at the end of any market structure essay — it summarises the welfare difference.'
+      examEdge: 'The long-run profit outcome is the most important distinguishing feature between market structures: perfect competition → always normal profit long-run; monopoly → always supernormal; monopolistic competition → normal profit but at excess capacity. This should be stated explicitly at the end of any market structure essay — it summarises the welfare difference.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
           'Remedies imperfect: behavioural conditions are hard to monitor; structural remedies may destroy value'
         ]
       },
-      examEdge: 'Google Shopping case (EU, 2017): fined €2.4bn for favouring own comparison service in search results. Google appealed for 5 years while continuing the behaviour. By the time remedy took effect, market had moved on. Illustrates the speed problem: competition enforcement is too slow for fast-moving digital markets — hence CMA\'s proactive ex-ante approach.'
+      examEdge: 'Google Shopping case (EU, 2017): fined €2.4bn for favouring own comparison service in search results. Google appealed for 5 years while continuing the behaviour. By the time remedy took effect, market had moved on. Illustrates the speed problem: competition enforcement is too slow for fast-moving digital markets — hence CMA\'s proactive ex-ante approach.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

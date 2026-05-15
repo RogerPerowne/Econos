@@ -108,7 +108,8 @@ window.ECONOS_TOPIC = {
         { term: 'Zero economic profit', def: 'TR = TC (including normal profit in TC) — the long-run competitive equilibrium. Firm is covering all costs including opportunity cost of capital.' },
         { term: 'Accounting profit', def: 'TR − explicit costs. May be positive even when economic profit is negative (if accounting profit < implicit costs).' }
       ],
-      examEdge: 'The economic vs accounting profit distinction is crucial for market structure analysis. "Breaking even" in economic terms means earning normal profit — not zero accounting profit. In long-run perfect competition, P = AC → zero economic profit = normal profit. This is the equilibrium, not a failure. Saying "competitive firms earn no profit" is wrong — they earn normal profit.'
+      examEdge: 'The economic vs accounting profit distinction is crucial for market structure analysis. "Breaking even" in economic terms means earning normal profit — not zero accounting profit. In long-run perfect competition, P = AC → zero economic profit = normal profit. This is the equilibrium, not a failure. Saying "competitive firms earn no profit" is wrong — they earn normal profit.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

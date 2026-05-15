@@ -122,7 +122,8 @@ window.ECONOS_TOPIC = {
         { term: 'First-mover advantage', def: 'In sequential games, the first firm to act (commit to price/quantity) can influence rivals\' reactions to its benefit.' },
         { term: 'Market performance', def: 'Assessment of a market across multiple criteria: price, output, efficiency, innovation, consumer welfare.' }
       ],
-      examEdge: 'Essay on oligopoly welfare: acknowledge that the welfare verdict is not predetermined. Competitive oligopoly → near-competitive outcomes → broadly welfare-positive. Collusive oligopoly → monopoly-like outcomes → welfare-negative. The same structure (four large supermarkets) can produce price wars (2015–17 supermarket price war) or near-identical prices (petrol retailers). Competition policy must address behaviour, not just structure.'
+      examEdge: 'Essay on oligopoly welfare: acknowledge that the welfare verdict is not predetermined. Competitive oligopoly → near-competitive outcomes → broadly welfare-positive. Collusive oligopoly → monopoly-like outcomes → welfare-negative. The same structure (four large supermarkets) can produce price wars (2015–17 supermarket price war) or near-identical prices (petrol retailers). Competition policy must address behaviour, not just structure.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

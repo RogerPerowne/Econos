@@ -122,7 +122,8 @@ window.ECONOS_TOPIC = {
         { term: 'Schumpeter\'s hypothesis', def: 'Market power and supernormal profit are prerequisites for significant innovation — competitive markets innovate less.' },
         { term: 'Patent protection', def: 'Temporary monopoly right granted to innovators — deliberately creates market power to incentivise R&D investment.' }
       ],
-      examEdge: 'The dynamic efficiency paradox of perfect competition is the most sophisticated evaluation point in all of market structure analysis. Use it in any essay comparing perfect competition favourably to monopoly: "while perfect competition achieves static efficiency, Schumpeter\'s hypothesis suggests it may be dynamically inferior — the pharmaceutical and tech industries demonstrate that significant innovation requires the profit incentives that only market power can provide."'
+      examEdge: 'The dynamic efficiency paradox of perfect competition is the most sophisticated evaluation point in all of market structure analysis. Use it in any essay comparing perfect competition favourably to monopoly: "while perfect competition achieves static efficiency, Schumpeter\'s hypothesis suggests it may be dynamically inferior — the pharmaceutical and tech industries demonstrate that significant innovation requires the profit incentives that only market power can provide."',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

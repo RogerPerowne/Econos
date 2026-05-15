@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'YED & XED',
-  estTime: '7-9 minutes',
+  estTime: '10-12 minutes',
   goal: 'Lock in income and cross-price elasticities — formulas, signs, interpretation, and their applications to business and trade strategy.',
   intro: {
     heroKey: 'heroElasticity',
     summary: 'YED and XED extend elasticity analysis beyond own-price. They reveal how demand responds to income changes (YED) and to the prices of related goods (XED) — critical for classifying goods and understanding market linkages.',
-    doInThis: 'Work through 7 cards covering YED formula and interpretation, normal vs inferior goods, luxury goods, XED formula, substitutes vs complements, and applications to business strategy and international trade.',
+    doInThis: 'Work through 9 cards: the big picture, an interactive YED Engel-curve explorer, normal/inferior/luxury goods, YED business strategy, the XED formula, an interactive XED cross-price explorer, XED applications, worked calculations, and the wider economy implications.',
     outcomes: [
       'Calculate and interpret YED including sign and magnitude',
       'Classify goods as normal (luxury/necessity) or inferior using YED',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'YED: positive = normal good (rises with income); negative = inferior good (falls with income); >1 = luxury. XED: positive = substitutes (rise in price of B raises demand for A); negative = complements.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 9',
       title: 'YED &amp; XED: the big picture',
       lede: 'Demand doesn&apos;t just respond to a good&apos;s own price — it also reacts to incomes and to the prices of <em>other</em> goods.',
       branches: [
@@ -46,8 +46,18 @@ window.ECONOS_TOPIC = {
       examEdge: 'The sign of YED is its most important feature — it classifies the good. The magnitude determines sensitivity. A common error: students say "demand is inelastic" when they mean "necessity" (low YED). YED is not about price responsiveness — use "normal/inferior" and "luxury/necessity" language instead.'
     },
     {
+      id: 'yed_explorer',
+      template: 'yed-explorer',
+      stepLabel: 'Learn: Step 2 of 9',
+      title: 'YED Explorer: drag the points along the Engel curve',
+      lede: 'Move <strong>A</strong> and <strong>B</strong> along the Engel curve (Income on X, Quantity demanded on Y). The sign of YED classifies the good; the magnitude tells you how sensitive demand is to income. Watch the chip flip as you move from inferior to necessity to luxury.',
+      howItWorks: 'When income rises, demand for a <strong>normal good</strong> rises (upward-sloping Engel curve). For an <strong>inferior good</strong>, demand falls as income rises (downward-sloping). The <strong>luxury threshold</strong> is YED > 1 — demand grows <em>faster</em> than income. Try the presets: Bus travel (negative → inferior), Basic food (positive but < 1 → necessity), Through origin (YED = 1 everywhere), Restaurant meals and Foreign holidays (both > 1 → luxury).',
+      examEdge: 'The sign of YED is the most-tested feature: positive = normal, negative = inferior. The magnitude (0–1 = necessity; > 1 = luxury) is tested in data-response questions. A common error: writing "income elastic" or "income inelastic" — the exam expects "luxury" or "necessity" language, not elastic/inelastic. Save that language for PED and PES.'
+    },
+    {
       id: 'yed_xed_2',
       template: 'cause',
+      stepLabel: 'Learn: Step 3 of 9',
       title: 'Applying YED: Normal, Inferior, and Luxury Goods',
       causes: [
         { head: 'Normal goods (YED > 0)', body: 'Most goods: furniture, clothing, electronics, restaurant meals. Demand grows with the economy. Positive relationship between economic growth and demand — important for business planning in growing markets.' },
@@ -60,6 +70,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_3',
       template: 'framing',
+      stepLabel: 'Learn: Step 4 of 9',
       title: 'YED and Business Strategy',
       body: '<strong>Diversification:</strong> firms with products across different YED categories have more stable overall revenues. A portfolio mixing luxury goods (high YED) with necessities (low YED) buffers against recession.<br><br><strong>Market selection:</strong> in rapidly growing emerging markets (rising incomes), luxury goods companies expand aggressively — high YED means disproportionate sales growth. China luxury goods market grew 50x 2000-2020 as incomes rose.<br><br><strong>Macroeconomic sensitivity:</strong> firms with high YED products must track GDP forecasts carefully. High YED = high economic sensitivity = more volatile earnings = higher financial risk.',
       keyTerms: [
@@ -70,8 +81,18 @@ window.ECONOS_TOPIC = {
       examEdge: 'Ryanair benefited from the 2008-09 recession: consumers switched from full-service airlines (normal good, high YED) to low-cost airlines (inferior good substitute, negative YED relative to full-service). This illustrates how understanding YED reveals competitive dynamics during economic downturns.'
     },
     {
+      id: 'xed_explorer',
+      template: 'xed-explorer',
+      stepLabel: 'Learn: Step 5 of 9',
+      title: 'XED Explorer: drag the points, spot substitute or complement',
+      lede: 'Price of Good B is on the X-axis; Quantity demanded of Good A is on the Y-axis. Move <strong>A</strong> and <strong>B</strong> to see how the demand for Good A responds when Good B\'s price changes. The sign of XED tells you everything.',
+      howItWorks: '<strong>Positive slope → substitutes</strong>: as Good B gets pricier, consumers switch to Good A (demand for A rises). <strong>Negative slope → complements</strong>: as Good B gets pricier, demand for B falls — and since the goods are used together, demand for A falls too. <strong>Horizontal line → independent</strong>: Good B\'s price has no effect on Good A.<br><br>Try the presets: Coke/Pepsi and Tea/Coffee show substitutes (positive); Petrol & car trips and Tea & milk show complements (negative).',
+      examEdge: 'Sign is everything for XED: positive = substitutes, negative = complements. Magnitude tells you how close the relationship is. The most common XED exam error: students forget that the price change is for Good B but the demand change is for Good A — the cross-price relationship always runs between TWO different goods. Always name both goods explicitly in your answer.'
+    },
+    {
       id: 'yed_xed_4',
       template: 'framing',
+      stepLabel: 'Learn: Step 6 of 9',
       title: 'Cross-Price Elasticity of Demand (XED)',
       body: '<strong>XED</strong> measures the responsiveness of demand for Good A to a change in the price of Good B.<br><br><strong>Formula:</strong> XED = (% ΔQD of Good A) \xf7 (% ΔP of Good B)<br><br>XED sign reveals the relationship between the goods:<br>• <strong>XED > 0 (positive):</strong> Substitutes — a rise in price of B causes consumers to switch to A. Stronger positive XED → closer substitutes. Example: Pepsi and Coca-Cola.<br>• <strong>XED < 0 (negative):</strong> Complements — a rise in price of B reduces demand for A (used together). Stronger negative XED → closer complements. Example: petrol and cars.<br>• <strong>XED = 0:</strong> Unrelated goods — price of B has no effect on demand for A.',
       keyTerms: [
@@ -84,6 +105,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_5',
       template: 'mechanisms',
+      stepLabel: 'Learn: Step 7 of 9',
       title: 'XED Applications: Substitutes and Complements',
       intro: 'XED analysis is used in competition policy, business strategy, and market definition.',
       steps: [
@@ -97,6 +119,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_6',
       template: 'diagnose',
+      stepLabel: 'Learn: Step 8 of 9',
       title: 'Calculating YED and XED: Worked Examples',
       intro: 'Practise interpreting calculated values with the correct sign, magnitude, and conclusion.',
       rows: [
@@ -110,6 +133,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_7',
       template: 'framing',
+      stepLabel: 'Learn: Step 9 of 9',
       title: 'YED, XED and the Wider Economy',
       body: '<strong>YED and international trade:</strong> countries exporting luxury goods (France — champagne, fashion; Germany — premium cars) are more vulnerable to global recessions (high YED in export markets → sharp revenue falls). Countries exporting commodities face different challenges (low YED, but price volatility).<br><br><strong>YED and structural change:</strong> as incomes rise over time, consumer spending shifts from necessities to luxuries (Engel\'s Law). This drives sectoral transformation: agriculture → manufacturing → services, as rising incomes shift demand toward higher-YED goods.<br><br><strong>XED and inflation:</strong> when energy prices rise sharply, negative XED with energy-intensive goods (plastic, chemicals, transport) creates cost-push inflation across complementary markets.',
       keyTerms: [

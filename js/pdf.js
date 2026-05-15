@@ -319,6 +319,35 @@ window.EconosPdf = (function () {
     return note + formula + frames + howIt + examEdgeBlock(c.examEdge);
   }
 
+  function renderYedXedFallback(c, which) {
+    var isYed = which === 'YED';
+    var col = isYed ? C.purple : C.blue;
+    var formula = '<div style="border:2px solid ' + col + ';border-radius:8px;padding:14px 18px;margin-bottom:16px;text-align:center;">' +
+      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + col + ';margin-bottom:8px;">' + which + ' — midpoint formula</div>' +
+      '<div style="font-size:20px;font-weight:900;color:' + col + ';font-family:Georgia,serif;">' + (isYed ? 'YED = %ΔQD ÷ %ΔY (Income)' : 'XED = %ΔQD_A ÷ %ΔP_B') + '</div>' +
+      '<div style="font-size:11px;color:' + C.slate + ';margin-top:6px;font-style:italic;">' + (isYed
+        ? 'YED > 0 = normal good · YED < 0 = inferior · YED > 1 = luxury · 0 < YED < 1 = necessity'
+        : 'XED > 0 = substitutes · XED < 0 = complements · XED = 0 = independent goods') + '</div>' +
+      '</div>';
+    var items = isYed ? [
+      { col: C.rose,   label: 'Inferior good (YED < 0)',       eg: 'Bus travel, value-brand food', note: 'Demand falls as income rises — consumers trade up.' },
+      { col: C.amber,  label: 'Normal necessity (0 < YED < 1)',eg: 'Food, utilities, clothing',     note: 'Demand rises slowly with income; recession-resilient.' },
+      { col: C.blue,   label: 'Unit elastic (YED = 1)',         eg: 'Engel curve through origin',   note: '%ΔQD = %ΔY at every point.' },
+      { col: C.purple, label: 'Luxury good (YED > 1)',          eg: 'Foreign holidays, designer goods, restaurant meals', note: 'Demand rises faster than income; pro-cyclical.' }
+    ] : [
+      { col: C.purple, label: 'Complements (XED < 0)',         eg: 'Petrol & car trips, tea & milk',    note: 'P_B ↑ → QD_A ↓ — goods used together.' },
+      { col: C.slate,  label: 'Independent (XED = 0)',         eg: 'Unrelated goods',                   note: 'P_B has no effect on QD_A.' },
+      { col: C.green,  label: 'Substitutes (XED > 0)',         eg: 'Coke & Pepsi, tea & coffee',        note: 'P_B ↑ → QD_A ↑ — consumers switch from B to A.' }
+    ];
+    var list = items.map(function (r) {
+      return '<div style="border-left:5px solid ' + r.col + ';padding:8px 0 8px 14px;margin-bottom:10px;">' +
+        '<div style="font-size:11px;font-weight:800;color:' + r.col + ';text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">' + r.label + '</div>' +
+        '<div style="font-size:12px;color:' + C.ink + ';line-height:1.55;"><strong>Example:</strong> ' + r.eg + '<br><span style="color:' + C.slate + ';">' + r.note + '</span></div></div>';
+    }).join('');
+    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app. Static reference below.</div>';
+    return note + formula + list + examEdgeBlock(c.examEdge);
+  }
+
   function renderPesExplorerFallback(c) {
     var presets = [
       { col: C.rose,   label: 'Perfectly inelastic (PES = 0)', shape: 'Vertical supply',   eg: 'Fish already at market; paintings by deceased artist',  note: 'Supply fixed — 100% of demand shift → price change.' },
@@ -494,7 +523,7 @@ window.EconosPdf = (function () {
   }
 
   function isGenericCard(c) {
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer') return false;
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -521,6 +550,8 @@ window.EconosPdf = (function () {
       case 'elasticity-explorer':return renderElasticityFallback(c);
       case 'worked-example':     return renderWorkedExample(c);
       case 'pes-explorer':       return renderPesExplorerFallback(c);
+      case 'yed-explorer':       return renderYedXedFallback(c, 'YED');
+      case 'xed-explorer':       return renderYedXedFallback(c, 'XED');
       case 'ped-five-frames':    return renderPedFiveFrames(c);
       default:                   return renderFallback();
     }

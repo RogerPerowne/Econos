@@ -935,6 +935,42 @@
   }
 
   /* -------------------------------------------------------------------------
+     YED Explorer & XED Explorer — Engel-curve and cross-price widgets.
+     Both registered as globals by js/yed-xed-explorer.js.
+     ------------------------------------------------------------------------- */
+  function renderCardYedExplorer(c) {
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      <div class="yed-root" data-yed-mount></div>
+      ${c.howItWorks ? `
+        <div style="background:#F5F3FF;border-left:4px solid #7C3AED;border-radius:8px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#7C3AED;margin-bottom:8px;">How to read it</div>
+          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        </div>
+      ` : ''}
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  function renderCardXedExplorer(c) {
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      <div class="xed-root" data-xed-mount></div>
+      ${c.howItWorks ? `
+        <div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:8px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#2563EB;margin-bottom:8px;">How to read it</div>
+          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        </div>
+      ` : ''}
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* -------------------------------------------------------------------------
      PES Explorer: interactive supply-curve widget (mirror of elasticity-explorer
      but for upward-sloping supply; registered as window.EconosPes).
      ------------------------------------------------------------------------- */
@@ -1177,7 +1213,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1214,6 +1250,8 @@
         case 'ped-five-frames':    body = renderCardPedFiveFrames(c);      break;
         case 'worked-example':     body = renderCardWorkedExample(c);      break;
         case 'pes-explorer':       body = renderCardPesExplorer(c);        break;
+        case 'yed-explorer':       body = renderCardYedExplorer(c);        break;
+        case 'xed-explorer':       body = renderCardXedExplorer(c);        break;
       }
     }
 
@@ -1347,6 +1385,12 @@
     }
     if (window.EconosPes) {
       root.querySelectorAll('.pes-root[data-pes-mount]').forEach(el => window.EconosPes.init(el));
+    }
+    if (window.EconosYed) {
+      root.querySelectorAll('.yed-root[data-yed-mount]').forEach(el => window.EconosYed.init(el));
+    }
+    if (window.EconosXed) {
+      root.querySelectorAll('.xed-root[data-xed-mount]').forEach(el => window.EconosXed.init(el));
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }

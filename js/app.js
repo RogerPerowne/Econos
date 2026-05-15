@@ -213,9 +213,12 @@
       }).join('');
     }
 
-    // Rows (comparison table) — card-style grid with zebra rows
+    // Rows (comparison table) — card-style grid with zebra rows.
+    // Rows whose label is answer-like hide their cells behind reveal buttons.
     if (c.rows && c.rows.length) {
-      content += genSecLabel('📊', 'Compare');
+      const REVEAL_RE = /interpretation|verdict|diagnosis|conclusion|takeaway|what it means|what it tells|policy implication|^\s*answer|^\s*outcome|^\s*result/i;
+      const anyReveal = c.rows.some(r => REVEAL_RE.test(r.label));
+      content += genSecLabel('📊', anyReveal ? 'Compare — think before you reveal' : 'Compare');
       const colA = c.colA || '';
       const colB = c.colB || '';
       content += `<div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7EA;margin-bottom:20px;">`;
@@ -226,12 +229,29 @@
           <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colB}</div>
         </div>`;
       }
-      content += c.rows.map((r, i) => `
+      content += c.rows.map((r, i) => {
+        const reveal = REVEAL_RE.test(r.label);
+        if (reveal) {
+          return `
+          <div style="display:grid;grid-template-columns:140px 1fr 1fr;background:#FEFCE8;border-top:1px solid #E7E7EA;">
+            <div style="padding:12px 14px;font-weight:800;font-size:13px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
+            <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">
+              <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
+              <div class="reveal-cell__body is-hidden">${r.colA}</div>
+            </div>
+            <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">
+              <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
+              <div class="reveal-cell__body is-hidden">${r.colB}</div>
+            </div>
+          </div>`;
+        }
+        return `
         <div style="display:grid;grid-template-columns:140px 1fr 1fr;background:${i % 2 === 0 ? '#f8fafc' : '#fff'};border-top:1px solid #E7E7EA;">
           <div style="padding:12px 14px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
           <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">${r.colA}</div>
           <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${r.colB}</div>
-        </div>`).join('');
+        </div>`;
+      }).join('');
       content += `</div>`;
       if (c.footer) {
         content += `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
@@ -1212,6 +1232,13 @@
       if (!edge) return;
       const txt = edge.querySelector('.exam-edge__text');
       if (txt) txt.classList.remove('is-hidden');
+      target.style.display = 'none';
+    } else if (action === 'reveal-cell') {
+      // Generic renderer: reveal an answer cell in a comparison table
+      const cell = target.closest('.reveal-cell');
+      if (!cell) return;
+      const body = cell.querySelector('.reveal-cell__body');
+      if (body) body.classList.remove('is-hidden');
       target.style.display = 'none';
     } else if (action === 'reveal-scenario') {
       // Card 4 diagnose: show the answer for this scenario, hide the button

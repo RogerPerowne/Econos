@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_failure_2',
       template: 'cause',
+      diagramKey: 'govtFailureDiagram',
       title: 'Causes of Government Failure',
       causes: [
         { head: 'Information failure', body: 'Governments face the same information problems as markets — or worse. Setting optimal taxes, subsidies, or production targets requires knowing the MEC or MEB, which is inherently uncertain. Incorrect information → wrong policy level → under- or over-correction.' },

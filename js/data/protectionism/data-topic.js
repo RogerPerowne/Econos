@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'protectionism_2',
       template: 'mechanisms',
+      diagramKey: 'tariffDiagram',
       title: 'How a Tariff Works',
       intro: 'A tariff raises the import price, reduces import volume, raises domestic producer surplus and government revenue, but reduces consumer surplus — creating a net deadweight welfare loss.',
       steps: [

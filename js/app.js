@@ -895,6 +895,46 @@
   }
 
   /* -------------------------------------------------------------------------
+     Worked Example: scaffolded reveal-steps calculation card.
+     Students see the prompt and hint first; clicking "Show working" reveals
+     the answer for that step. Reusable for PED/PES/YED/XED calculations.
+     ------------------------------------------------------------------------- */
+  function renderCardWorkedExample(c) {
+    const steps = (c.steps || []).map((s, i) => `
+      <div class="we-step">
+        <div class="we-step__header">
+          <span class="we-step__num">${i + 1}</span>
+          <div class="we-step__right">
+            <div class="we-step__prompt">${s.prompt}</div>
+            ${s.hint ? `<div class="we-step__hint">💡 ${s.hint}</div>` : ''}
+          </div>
+        </div>
+        <button class="we-step__btn" data-action="we-reveal" type="button">Show working →</button>
+        <div class="we-step__answer is-hidden">
+          <div class="we-step__answer-inner">${s.answer}</div>
+        </div>
+      </div>
+    `).join('');
+
+    const conclusion = c.conclusion ? `
+      <div class="we-conclusion">
+        <div class="we-conclusion__label">Conclusion</div>
+        <div class="we-conclusion__text">${c.conclusion}</div>
+      </div>
+    ` : '';
+
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      ${c.scenario ? `<div class="we-scenario">${c.scenario}</div>` : ''}
+      <div class="we-steps">${steps}</div>
+      ${conclusion}
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* -------------------------------------------------------------------------
      PED Five-Frames: static visual card showing the 5 elasticity regimes.
      Each frame has a mini SVG chart, name, PED badge, example, and TR rule.
      ------------------------------------------------------------------------- */
@@ -1114,7 +1154,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1149,6 +1189,7 @@
         case 'transmission-chain': body = renderCardTransmissionChain(c); break;
         case 'elasticity-explorer':body = renderCardElasticityExplorer(c); break;
         case 'ped-five-frames':    body = renderCardPedFiveFrames(c);      break;
+        case 'worked-example':     body = renderCardWorkedExample(c);      break;
       }
     }
 
@@ -1408,6 +1449,15 @@
       root.querySelectorAll('.ad-panel').forEach(panel => {
         panel.classList.toggle('is-active', panel.dataset.panelKey === newState);
       });
+    } else if (action === 'we-reveal') {
+      // Worked-example: reveal this step's answer and update button
+      const step = target.closest('.we-step');
+      if (!step) return;
+      const answer = step.querySelector('.we-step__answer');
+      if (answer) answer.classList.remove('is-hidden');
+      target.textContent = '✓ Working shown';
+      target.disabled = true;
+      target.style.opacity = '0.5';
     } else if (action === 'tc-channel') {
       // Transmission chain: highlight the chosen channel and reveal its panel
       const key = target.dataset.channelKey;

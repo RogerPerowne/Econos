@@ -10376,3 +10376,102 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   border-radius: 0 6px 6px 0;
   margin-top: 2px;
 }
+
+/* --- Worked Example --------------------------------------------------------- */
+.we-scenario {
+  background: #EFF6FF;
+  border: 1.5px solid #BFDBFE;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #1E3A5F;
+  margin-bottom: 18px;
+}
+.we-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+.we-step {
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #FAFBFC;
+  transition: border-color 0.2s;
+}
+.we-step:has(.we-step__answer:not(.is-hidden)) { border-color: #059669; }
+.we-step__header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.we-step__num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #0B1426;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.we-step__right { flex: 1; min-width: 0; }
+.we-step__prompt {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0B1426;
+  line-height: 1.45;
+}
+.we-step__hint {
+  font-size: 12px;
+  color: #64748B;
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.we-step__btn {
+  background: white;
+  border: 1.5px solid #2563EB;
+  color: #2563EB;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.we-step__btn:hover:not(:disabled) { background: #EFF6FF; }
+.we-step__answer {
+  margin-top: 12px;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 12px;
+}
+.we-step__answer-inner {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #0B1426;
+  background: #F0FDF4;
+  border-left: 4px solid #059669;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+}
+.we-conclusion {
+  background: #0B1426;
+  color: white;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+}
+.we-conclusion__label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94A3B8;
+  margin-bottom: 6px;
+}
+.we-conclusion__text {
+  font-size: 13px;
+  line-height: 1.65;
+}

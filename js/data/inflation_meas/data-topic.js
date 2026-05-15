@@ -303,7 +303,7 @@ window.ECONOS_TOPIC = {
       },
       puzzle: {
         title: 'Why not 0%?',
-        chartCaption: 'Inflation buffer: the 2% target provides insurance against deflation.',
+        chartCaption: 'UK CPI inflation, 2010 – Jan 2026. The 2% target is the reference; the 2022 spike to 11.1% and the 2015-16 dip to near zero both illustrate why a buffer matters.',
         bullets: [
           '<strong>Deflation buffer:</strong> 2% provides room for the economy to absorb shocks without slipping into deflation (which is much harder to escape).',
           '<strong>Wage stickiness:</strong> with 2% inflation, firms can cut real wages by simply not raising nominal wages — lubricating labour market adjustment without the resistance that nominal cuts provoke.',

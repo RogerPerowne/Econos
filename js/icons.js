@@ -354,29 +354,67 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === QE puzzle chart — Card 5 === */
+  /* === UK CPI inflation 2010 – Jan 2026 (Card 5 puzzle chart) === */
   qeChart: `
     <svg viewBox="0 0 480 220" width="480" height="220" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <line x1="50" y1="20" x2="50" y2="180" stroke="#374151" stroke-width="1.5"/>
+      <!-- Background -->
+      <rect width="480" height="220" fill="#FFFFFF"/>
+
+      <!-- Horizontal gridlines (faint) -->
+      <line x1="50" y1="127" x2="460" y2="127" stroke="#F3F4F6" stroke-width="1"/>
+      <line x1="50" y1="100" x2="460" y2="100" stroke="#F3F4F6" stroke-width="1"/>
+      <line x1="50" y1="73"  x2="460" y2="73"  stroke="#F3F4F6" stroke-width="1"/>
+      <line x1="50" y1="47"  x2="460" y2="47"  stroke="#F3F4F6" stroke-width="1"/>
+
+      <!-- 2% target reference line -->
+      <line x1="50" y1="153" x2="460" y2="153" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="464" y="156" font-size="10" font-weight="700" fill="#6B7280">2% target</text>
+
+      <!-- Axes -->
+      <line x1="50" y1="20"  x2="50"  y2="180" stroke="#374151" stroke-width="1.5"/>
       <line x1="50" y1="180" x2="460" y2="180" stroke="#374151" stroke-width="1.5"/>
-      <text x="60"  y="200" font-size="10" fill="#6B7280" text-anchor="middle">2008</text>
-      <text x="160" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2012</text>
-      <text x="260" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2016</text>
-      <text x="360" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2020</text>
-      <text x="455" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2022</text>
-      <line x1="50" y1="158" x2="460" y2="158" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3 3"/>
-      <text x="465" y="162" font-size="10" fill="#9CA3AF">2% target</text>
-      <path d="M 60 175 Q 100 120 160 90 Q 220 75 280 70 Q 340 65 400 60 Q 440 55 455 50"
-            stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <text x="430" y="42" font-size="11" font-weight="700" fill="#2563EB">M0 ↑↑</text>
-      <text x="430" y="55" font-size="10" fill="#2563EB" opacity="0.7">(5-10×)</text>
-      <path d="M 60 158 L 100 152 L 140 162 L 180 156 L 220 160 L 260 158 L 300 156 L 340 154 L 380 150 L 410 130 L 440 65 L 455 70"
-            stroke="#E11D48" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="120" y="148" font-size="11" font-weight="700" fill="#E11D48">CPI ≈ 2%</text>
-      <rect x="395" y="76" width="62" height="22" rx="4" fill="#FFE4E6" stroke="#E11D48"/>
-      <text x="426" y="91" font-size="10" font-weight="700" fill="#E11D48" text-anchor="middle">2022 spike</text>
-      <line x1="426" y1="98" x2="430" y2="115" stroke="#E11D48" stroke-width="1"/>
-      <text x="40" y="100" font-size="10" fill="#6B7280" text-anchor="end" transform="rotate(-90 40 100)">Index</text>
+
+      <!-- Y-axis labels -->
+      <text x="44" y="184" font-size="9" fill="#6B7280" text-anchor="end">0%</text>
+      <text x="44" y="157" font-size="9" fill="#6B7280" text-anchor="end">2%</text>
+      <text x="44" y="131" font-size="9" fill="#6B7280" text-anchor="end">4%</text>
+      <text x="44" y="104" font-size="9" fill="#6B7280" text-anchor="end">6%</text>
+      <text x="44" y="77"  font-size="9" fill="#6B7280" text-anchor="end">8%</text>
+      <text x="44" y="51"  font-size="9" fill="#6B7280" text-anchor="end">10%</text>
+
+      <!-- Y-axis title -->
+      <text x="20" y="100" font-size="10" fill="#6B7280" text-anchor="middle" transform="rotate(-90 20 100)">CPI %</text>
+
+      <!-- X-axis labels (every 2 years) -->
+      <text x="50"  y="200" font-size="10" fill="#6B7280" text-anchor="middle">2010</text>
+      <text x="101" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2012</text>
+      <text x="152" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2014</text>
+      <text x="204" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2016</text>
+      <text x="255" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2018</text>
+      <text x="306" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2020</text>
+      <text x="357" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2022</text>
+      <text x="409" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2024</text>
+      <text x="460" y="200" font-size="10" fill="#6B7280" text-anchor="middle">2026</text>
+
+      <!-- UK CPI inflation series (Jan 2010 – Jan 2026, approx ONS data) -->
+      <polyline fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
+        points="50,133 69,131 76,127 95,111 108,124 127,148 146,153 172,173 185,180 204,176 223,159 243,141 251,139 268,152 293,160 319,178 332,171 345,147 355,108 367,64 379,32 391,40 404,93 412,127 422,153 434,147 454,130 460,140"/>
+
+      <!-- Peak marker + 11.1% label at Oct 2022 -->
+      <circle cx="379" cy="32" r="3.5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+      <rect x="312" y="22" width="58" height="20" rx="4" fill="#FFE4E6" stroke="#DC2626" stroke-width="1"/>
+      <text x="341" y="36" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">Oct 2022 · 11.1%</text>
+      <line x1="370" y1="32" x2="375" y2="32" stroke="#DC2626" stroke-width="1"/>
+
+      <!-- 2015–16 deflation-buffer marker -->
+      <circle cx="185" cy="180" r="2.8" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5"/>
+      <text x="185" y="172" font-size="9" font-weight="700" fill="#DC2626" text-anchor="middle">Near 0%</text>
+
+      <!-- Series label -->
+      <text x="55" y="115" font-size="11" font-weight="700" fill="#DC2626">UK CPI</text>
+
+      <!-- Source -->
+      <text x="460" y="216" font-size="8" fill="#9CA3AF" text-anchor="end" font-style="italic">Source: ONS</text>
     </svg>
   `,
 

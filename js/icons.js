@@ -1104,6 +1104,9 @@ window.ECONOS_ICONS = {
         <marker id="dm-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
         </marker>
+        <marker id="dm-red-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/>
+        </marker>
         <clipPath id="dm-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
         </clipPath>
@@ -1229,7 +1232,7 @@ window.ECONOS_ICONS = {
         <circle cx="365" cy="230" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
         <text x="365" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
         <!-- Horizontal double-headed arrow (shortened to clear circles) -->
-        <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#dm-red-end)" marker-end="url(#dm-green-end)"/>
+        <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#dm-red-start)" marker-end="url(#dm-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF DEMAND</text>
         <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
@@ -1263,6 +1266,9 @@ window.ECONOS_ICONS = {
         </marker>
         <marker id="sp-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+        <marker id="sp-red-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/>
         </marker>
         <clipPath id="sp-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
@@ -1389,7 +1395,7 @@ window.ECONOS_ICONS = {
         <circle cx="365" cy="230" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
         <text x="365" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
         <!-- Horizontal double-headed arrow (shortened to clear circles) -->
-        <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#sp-red-end)" marker-end="url(#sp-green-end)"/>
+        <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#sp-red-start)" marker-end="url(#sp-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF SUPPLY</text>
         <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>

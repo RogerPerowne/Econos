@@ -1010,10 +1010,10 @@
 
   /* === full card view === */
   function isGenericCard(c) {
-    // Cards with an explicit known template are handled by the switch below
-    const knownTemplates = ['framing','cause','diagnose','puzzle','mechanisms','monetary','impacts','deflation','paired','ad-interactive','transmission-chain'];
-    if (knownTemplates.includes(c.template)) return false;
-    // Cards in the generic format (all topics except inflation) use these fields
+    // These two templates always need their own dedicated renderer regardless of fields present
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain') return false;
+    // All other cards: route by field presence. Inflation-style cards have branches/title/etc
+    // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||

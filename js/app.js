@@ -147,6 +147,13 @@
      Handles the standard data format used by all non-inflation
      topics: body, causes[], steps[], rows[], left/right, keyTerms
      ============================================================ */
+  const TONES = [
+    { bg: 'var(--econ-green-50)',  border: 'var(--econ-green)',  label: 'var(--econ-green-700)' },
+    { bg: 'var(--econ-amber-50)',  border: 'var(--econ-amber)',  label: 'var(--econ-amber-700)' },
+    { bg: 'var(--econ-blue-50)',   border: 'var(--econ-blue)',   label: 'var(--econ-blue-700)'  },
+    { bg: 'var(--econ-purple-50)', border: 'var(--econ-purple)', label: 'var(--econ-purple-600)' }
+  ];
+
   function renderCardGeneric(c) {
     let content = '';
 
@@ -160,27 +167,31 @@
       content += `<div style="font-size:15px;line-height:1.7;color:#0B1426;margin-bottom:20px;">${c.body}</div>`;
     }
 
-    // cause: [{head, body}]
+    // cause: [{head, body}] — coloured tile cycling
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
-      content += c.causes.map(item => `
-        <div style="margin-bottom:12px;padding:14px 16px;background:#f8fafc;border-radius:10px;border-left:3px solid #2563EB;">
-          <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:6px;">${item.head}</div>
+      content += c.causes.map((item, i) => {
+        const t = TONES[i % TONES.length];
+        return `
+        <div style="margin-bottom:12px;padding:14px 16px;background:${t.bg};border-radius:10px;border-left:3px solid ${t.border};">
+          <div style="font-weight:700;font-size:14px;color:${t.label};margin-bottom:6px;">${item.head}</div>
           <div style="font-size:14px;color:#2A3650;line-height:1.6;">${item.body}</div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
     }
 
-    // mechanisms: [{label, text}]
+    // mechanisms: [{label, text}] — numbered steps with cycling tones
     if (c.steps && c.steps.length) {
-      content += c.steps.map((s, i) => `
-        <div style="display:flex;gap:14px;margin-bottom:12px;padding:14px 16px;background:#f8fafc;border-radius:10px;">
-          <div style="width:26px;height:26px;border-radius:50%;background:#0B1426;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;">${i + 1}</div>
+      content += c.steps.map((s, i) => {
+        const t = TONES[i % TONES.length];
+        return `
+        <div style="display:flex;gap:14px;margin-bottom:12px;padding:14px 16px;background:${t.bg};border-radius:10px;border-left:3px solid ${t.border};">
+          <div style="width:26px;height:26px;border-radius:50%;background:${t.border};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;">${i + 1}</div>
           <div>
-            <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:4px;">${s.label}</div>
+            <div style="font-weight:700;font-size:14px;color:${t.label};margin-bottom:4px;">${s.label}</div>
             <div style="font-size:14px;color:#2A3650;line-height:1.6;">${s.text}</div>
           </div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
     }
 
     // diagnose: rows [{label, colA, colB}]
@@ -215,22 +226,25 @@
       </div>`;
     }
 
-    // key terms
+    // key terms — coloured tiles with click-to-reveal definitions
     if (c.keyTerms && c.keyTerms.length) {
       content += `<div style="margin-bottom:18px;">
-        <div style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;margin-bottom:10px;">Key terms</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
-          ${c.keyTerms.map(kt => `
-            <div style="padding:12px 14px;background:#f8fafc;border-radius:8px;border-left:2px solid #E7E7EA;">
-              <div style="font-weight:700;font-size:13px;color:#0B1426;margin-bottom:4px;">${kt.term}</div>
-              <div style="font-size:13px;color:#6B7280;line-height:1.5;">${kt.def}</div>
-            </div>
-          `).join('')}
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;margin-bottom:10px;">Key terms — tap to reveal</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+          ${c.keyTerms.map((kt, i) => {
+            const t = TONES[i % TONES.length];
+            return `
+            <div class="key-tile" style="padding:12px 14px;background:${t.bg};border-radius:8px;border-left:3px solid ${t.border};">
+              <div style="font-weight:700;font-size:13px;color:${t.label};margin-bottom:6px;">${kt.term}</div>
+              <button data-action="reveal-def" style="background:none;border:1px dashed ${t.border};color:${t.label};font-size:12px;font-weight:600;padding:4px 8px;border-radius:6px;cursor:pointer;">Reveal definition ↓</button>
+              <div class="key-tile__def is-hidden" style="font-size:13px;color:#2A3650;line-height:1.5;margin-top:8px;">${kt.def}</div>
+            </div>`;
+          }).join('')}
         </div>
       </div>`;
     }
 
-    // examEdge (string or object)
+    // examEdge — predict-then-reveal (string or object)
     if (c.examEdge) {
       const edgeTitle = typeof c.examEdge === 'object' ? (c.examEdge.title || 'Exam edge') : 'Exam edge';
       const edgeText  = typeof c.examEdge === 'object' ? c.examEdge.text : c.examEdge;
@@ -241,7 +255,8 @@
             <div class="exam-edge__body">
               <div class="exam-edge__label">Exam edge</div>
               <div class="exam-edge__title">${edgeTitle}</div>
-              <div class="exam-edge__text">${edgeText}</div>
+              <button data-action="reveal-edge" class="exam-edge__btn" style="margin-top:8px;background:#fff;border:1px dashed #D97706;color:#92400E;font-size:13px;font-weight:600;padding:6px 12px;border-radius:6px;cursor:pointer;">Show the gem →</button>
+              <div class="exam-edge__text is-hidden" style="margin-top:10px;">${edgeText}</div>
             </div>
           </div>
         `;
@@ -1148,6 +1163,20 @@
       }
     } else if (action === 'download-deck') {
       alert('PDF deck download coming soon 📄');
+    } else if (action === 'reveal-def') {
+      // Generic renderer: toggle a key-term definition
+      const tile = target.closest('.key-tile');
+      if (!tile) return;
+      const def = tile.querySelector('.key-tile__def');
+      if (def) def.classList.toggle('is-hidden');
+      target.textContent = def && def.classList.contains('is-hidden') ? 'Reveal definition ↓' : 'Hide definition ↑';
+    } else if (action === 'reveal-edge') {
+      // Generic renderer: predict-then-reveal exam edge
+      const edge = target.closest('.exam-edge');
+      if (!edge) return;
+      const txt = edge.querySelector('.exam-edge__text');
+      if (txt) txt.classList.remove('is-hidden');
+      target.style.display = 'none';
     } else if (action === 'reveal-scenario') {
       // Card 4 diagnose: show the answer for this scenario, hide the button
       const id = target.dataset.scenarioTarget;

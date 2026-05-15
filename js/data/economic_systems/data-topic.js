@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_1',
       template: 'framing',
-      title: 'The Free Market Economy',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Economic systems: the big picture',
+      lede: 'Every society must decide who allocates scarce resources — the market, the state, or some blend of the two.',
+      branches: [
+        { tone: 'green',  label: 'The free market',         sub: 'Prices and self-interest coordinate millions of decentralised decisions. Adam Smith&apos;s invisible hand at work.' },
+        { tone: 'rose',   label: 'The command economy',     sub: 'The state owns resources and plans production. Equity is prioritised, but information and incentive problems bite hard.' },
+        { tone: 'purple', label: 'The mixed economy',       sub: 'A blend: markets allocate most goods, government corrects failures and provides essentials. Every real economy lives here.' },
+        { tone: 'blue',   label: 'The price mechanism',     sub: 'Signals, incentives and rationing — the three jobs prices do whenever markets are allowed to function.' },
+        { tone: 'amber',  label: 'Transition &amp; hybrids', sub: 'Russia&apos;s shock therapy, China&apos;s gradualism: different paths from plan to market, with very different outcomes.' }
+      ],
       body: 'In a <strong>free market economy</strong>, the three economic questions are answered by the <em>price mechanism</em>. Private ownership of resources is the norm; prices emerge from the interaction of supply and demand; self-interest drives resource allocation; and competition disciplines firms to produce efficiently.<br><br><strong>Adam Smith\'s invisible hand:</strong> individuals pursuing their own self-interest unintentionally promote society\'s interest — as if guided by an invisible hand. The market coordinates millions of decentralised decisions without central direction.',
       keyTerms: [
         { term: 'Free market economy', def: 'An economy where resource allocation is determined primarily by price signals arising from private decisions of buyers and sellers.' },

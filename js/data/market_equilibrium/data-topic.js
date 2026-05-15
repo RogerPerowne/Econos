@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'market_equilibrium_1',
       template: 'framing',
-      title: 'Market Equilibrium',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Market equilibrium: the big picture',
+      lede: 'Markets settle where supply meets demand — and the way they get there, and what disturbs them, is the heart of microeconomics.',
+      branches: [
+        { tone: 'green',  label: 'Equilibrium price &amp; quantity', sub: 'The unique P* and Q* where quantity demanded equals quantity supplied — the market clears with no shortage or surplus.' },
+        { tone: 'amber',  label: 'Excess demand &amp; supply',       sub: 'Above P*, surpluses force price down. Below P*, shortages force price up. The self-correcting mechanism that gives the model its power.' },
+        { tone: 'blue',   label: 'Shifts &amp; new equilibria',      sub: 'When D or S moves, P* and Q* move with them. Single and simultaneous shifts produce predictable — or ambiguous — outcomes.' },
+        { tone: 'purple', label: 'Allocative efficiency',            sub: 'At equilibrium, marginal benefit equals marginal cost. Consumer plus producer surplus is maximised — society&apos;s scarce resources are well used.' },
+        { tone: 'rose',   label: 'When markets fail to clear',       sub: 'Price controls, sticky wages, expectations and bubbles can prevent equilibrium being reached. Disequilibrium is the real world.' }
+      ],
       body: '<strong>Market equilibrium</strong> is the price at which quantity demanded equals quantity supplied — the market "clears" with no unsold stock and no unsatisfied buyers. At equilibrium price P* and quantity Q*:<br>• No buyer is unable to find a seller at that price<br>• No seller has unsold stock at that price<br>• There is no tendency for price to change<br><br>Equilibrium is stable: if disturbed by a price above or below P*, forces automatically push price back toward P*. This stability property is what makes the model so powerful.',
       keyTerms: [
         { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied — the market clears.' },

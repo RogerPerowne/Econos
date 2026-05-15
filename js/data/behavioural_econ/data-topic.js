@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'behavioural_econ_1',
       template: 'framing',
-      title: 'Bounded Rationality',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Behavioural economics: the big picture',
+      lede: 'Real people aren\'t perfectly rational — and the systematic patterns of how they go wrong open up new policy tools.',
+      branches: [
+        { tone: 'green',  label: 'Bounded rationality', sub: 'Simon: people use heuristics because full optimisation is cognitively impossible. Errors are systematic, not random.' },
+        { tone: 'amber',  label: 'Cognitive biases',    sub: 'Anchoring, availability, herd behaviour, confirmation bias — predictable distortions in decision-making.' },
+        { tone: 'rose',   label: 'Prospect theory',     sub: 'Kahneman & Tversky: losses hurt ~2x more than equivalent gains feel good. We weigh outcomes against a reference point.' },
+        { tone: 'blue',   label: 'Nudge theory',        sub: 'Thaler & Sunstein: change the choice architecture (defaults, framing) to steer better outcomes without removing freedom.' },
+        { tone: 'purple', label: 'Policy implications', sub: 'Auto-enrolment, plain packaging, default opt-ins — low-cost interventions where information campaigns alone fail.' }
+      ],
       body: 'Traditional economics assumes agents are <em>homo economicus</em> — fully rational, self-interested, with stable preferences and perfect information processing. Behavioural economics (Kahneman, Tversky, Thaler) shows this is wrong.<br><br><strong>Bounded rationality</strong> (Herbert Simon): people are rational within limits — they use mental shortcuts (heuristics) because full optimisation is cognitively costly and often impossible. The result: systematic, predictable biases in decision-making.<br><br>This is not just about random errors — biases are systematic. The same person will make the same mistake in the same context repeatedly. This predictability means they can be modelled and addressed by policy.',
       keyTerms: [
         { term: 'Bounded rationality', def: 'Decision-making that is rational within cognitive limits — uses heuristics rather than full optimisation.' },

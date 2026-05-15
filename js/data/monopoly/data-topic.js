@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopoly_1',
       template: 'framing',
-      title: 'What Is a Monopoly?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Monopoly: the big picture',
+      lede: 'A single seller behind barriers. Restricts output, lifts price, captures surplus — but the story is not all bad.',
+      branches: [
+        { tone: 'blue',   label: 'Price-maker, not taker',     sub: 'Faces the market demand curve. MR lies below AR — selling more requires cutting price on all units.' },
+        { tone: 'amber',  label: 'Output restricted, P > MC',  sub: 'Profit max at MR = MC produces less than the competitive level. The mark-up is the source of welfare loss.' },
+        { tone: 'rose',   label: 'Deadweight loss',            sub: 'A triangle of surplus destroyed by under-supply. Plus a transfer of consumer surplus into monopoly profit.' },
+        { tone: 'purple', label: 'The Schumpeter defence',     sub: 'Supernormal profits may fund R&D and innovation. Natural monopolies can serve markets at lower cost than rivals could.' }
+      ],
       body: 'A <strong>pure monopoly</strong> is a market with a single seller producing a good with no close substitutes. In practice, monopoly power exists on a spectrum — the CMA defines a firm as having "monopoly" position if it has over 25% market share.<br><br>Key features:<br>• Price-maker (not price-taker): faces the downward-sloping market demand curve — must lower price to sell more<br>• MR < AR: to sell one more unit, must reduce price on all existing units → MR < P<br>• Barriers to entry: prevent competition from eroding supernormal profit<br>• Profit maximisation: produce where MR = MC; charge price from demand curve at that quantity',
       keyTerms: [
         { term: 'Pure monopoly', def: 'Single seller; no close substitutes. In practice, CMA uses 25% market share as indicative threshold.' },

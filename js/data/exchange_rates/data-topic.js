@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'exchange_rates_1',
       template: 'framing',
-      title: 'The FOREX Market',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Exchange rates: the price of money',
+      lede: 'A currency is just another asset — its price moves with supply, demand, and expectations. Four lenses unlock how rates are set and why they matter.',
+      branches: [
+        { tone: 'green',  label: 'Supply and demand', sub: 'Exports, FDI inflows, and hot-money chasing UK assets create demand for £. Imports and capital outflows create supply. The market clears like any other.' },
+        { tone: 'blue',   label: 'Drivers of movement', sub: 'Interest-rate differentials and inflation gaps drive the long run; speculation and sentiment dominate the short run. Distinguish the two timeframes.' },
+        { tone: 'amber',  label: 'Trade-offs of depreciation', sub: 'A weaker £ boosts exports but raises imported inflation and cuts real wages. No free lunch — every move helps some, hurts others.' },
+        { tone: 'purple', label: 'Floating vs fixed regimes', sub: 'Float lets the market adjust but invites volatility. Peg locks in stability but surrenders monetary policy. Managed floats sit in the middle.' }
+      ],
       body: 'The <strong>foreign exchange market (FOREX)</strong> is a global, decentralised market where currencies are bought and sold. The exchange rate is determined by supply and demand.<br><br><strong>Demand for \xa3:</strong> foreigners buying UK exports, investing in the UK, or speculating that \xa3 will rise.<br><strong>Supply of \xa3:</strong> UK residents buying imports, investing abroad, or speculating that \xa3 will fall.<br><br>A <strong>depreciation</strong> (or devaluation if fixed system) means the \xa3 buys fewer foreign currency units. An <strong>appreciation</strong> means \xa3 buys more.',
       keyTerms: [
         { term: 'Appreciation', def: 'The currency rises in value against others — exports become more expensive, imports cheaper.' },

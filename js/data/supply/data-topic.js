@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_1',
       template: 'framing',
-      title: 'The Law of Supply',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Supply: the big picture',
+      lede: 'Supply is the producer side of every market — and the profit motive is the engine that drives it.',
+      branches: [
+        { tone: 'green',  label: 'Law of supply',           sub: 'Ceteris paribus, price &uarr; &rarr; quantity supplied &uarr;. Higher prices make production more profitable, drawing firms in and existing firms out further.' },
+        { tone: 'amber',  label: 'Movement vs shift',       sub: 'A change in the good&apos;s own price moves you along the curve. Any other determinant (costs, tech, taxes) shifts the whole curve.' },
+        { tone: 'blue',   label: 'Non-price determinants',  sub: 'Production costs, technology, indirect taxes and subsidies, producer numbers and expectations — the levers that shift S left or right.' },
+        { tone: 'purple', label: 'Producer surplus',        sub: 'The gap between the price received and the minimum the producer would accept. The welfare gain to firms from trade.' },
+        { tone: 'rose',   label: 'Joint &amp; competing supply', sub: 'Beef &amp; leather rise together; wheat &amp; barley compete for the same fields. Linked supply curves complicate the simple picture.' }
+      ],
       body: 'The <strong>law of supply</strong> states that, ceteris paribus, as price rises, the quantity supplied rises; as price falls, quantity supplied falls. The supply curve slopes upward from left to right.<br><br><strong>Why?</strong> Higher prices increase the profitability of production — existing firms expand output; new firms enter the market. Lower prices reduce profit margins — firms contract output or exit.<br><br>The upward slope reflects the idea that as output expands, firms must bring in progressively higher-cost factors of production (the law of diminishing returns in the short run) — so higher prices are needed to justify more production.',
       keyTerms: [
         { term: 'Law of supply', def: 'Ceteris paribus: higher price → higher quantity supplied. Price and quantity supplied move in the same direction.' },

@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'protectionism_1',
       template: 'framing',
-      title: 'What Is Protectionism?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Protectionism: shielding the home market',
+      lede: 'Every tariff is a wedge — between world and domestic prices, between winners and losers. The question is whether the shield is worth the cost.',
+      branches: [
+        { tone: 'blue',   label: 'The toolkit', sub: 'Tariffs, quotas, subsidies, regulations, embargoes. All raise the effective domestic price or restrict supply of imports — through different mechanisms.' },
+        { tone: 'green',  label: 'The case for', sub: 'Infant industries, strategic sectors, national security, jobs in vulnerable regions, retaliation. Sometimes intervention has a real economic justification.' },
+        { tone: 'rose',   label: 'The case against', sub: 'Deadweight loss, higher consumer prices, retaliation risk, lost efficiency from comparative advantage. Free-trade economics points one way.' },
+        { tone: 'purple', label: 'Who wins, who loses', sub: 'Domestic producers and government gain; consumers and foreign exporters lose. Protectionism is fundamentally a redistribution policy — not just an efficiency one.' }
+      ],
       body: '<strong>Protectionism</strong> refers to any government policy that restricts international trade to protect domestic industries from foreign competition. Motives include: protecting jobs, nurturing infant industries, correcting trade deficits, national security, and retaliating against foreign protectionism. Protectionist measures can be <em>tariff barriers</em> (taxes on imports) or <em>non-tariff barriers</em> (quotas, subsidies, regulations, embargoes). All create a wedge between the world price and the domestic price, diverting income from consumers and foreign producers to domestic producers or government.',
       keyTerms: [
         { term: 'Tariff', def: 'A tax levied on imported goods, raising their domestic price.' },
@@ -111,7 +119,7 @@ window.ECONOS_TOPIC = {
           'Free trade between unequal partners may lock developing nations into low-value exports',
           'Environmental and labour standards may be "dumped" under free trade (race to the bottom)'
         ]
-      ],
+      },
       examEdge: 'Neither position is always correct — the optimal policy depends on the industry, the country\'s development level, and the trading partner. Top essays acknowledge this rather than advocating one view absolutely.'
     },
     {

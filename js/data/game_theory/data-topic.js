@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'game_theory_1',
       template: 'framing',
-      title: 'The Game Theory Framework',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Game theory: the big picture',
+      lede: 'In oligopoly, your best move depends on what rivals do — and they\'re thinking the same about you. Game theory makes this interdependence tractable.',
+      branches: [
+        { tone: 'green',  label: 'The framework',         sub: 'Players, strategies, payoffs. The payoff matrix turns strategic interaction into a problem you can actually solve.' },
+        { tone: 'blue',   label: 'Nash equilibrium',      sub: 'Each player\'s strategy is a best response to the others. No one wants to unilaterally deviate — the workhorse solution concept.' },
+        { tone: 'rose',   label: 'Prisoner\'s dilemma',   sub: 'Individual rationality produces a collectively worse outcome. Explains cartel breakdown, price wars, and arms races.' },
+        { tone: 'amber',  label: 'Repeated games',        sub: 'When players interact repeatedly, cooperation can be sustained through punishment strategies. The folk theorem.' },
+        { tone: 'purple', label: 'Sequential games',      sub: 'Order matters. First-mover advantage and commitment can lock in outcomes that simultaneous play cannot.' }
+      ],
       body: '<strong>Game theory</strong> models strategic situations where: there are two or more players, each player has a set of strategies, and the payoff (outcome) for each player depends on the strategies chosen by ALL players.<br><br><strong>Key components of a game:</strong><br>• <strong>Players:</strong> the decision-makers (firms, countries, individuals)<br>• <strong>Strategies:</strong> the complete set of actions available to each player<br>• <strong>Payoffs:</strong> the outcome (profit, utility, market share) for each combination of strategies<br>• <strong>Information:</strong> what each player knows about the game and about rivals<br><br><strong>Payoff matrix:</strong> a table showing the payoff for each player for every possible combination of strategies. Player A\'s strategies are rows; Player B\'s strategies are columns. Each cell shows (payoff to A, payoff to B).<br><br><strong>Economic applications:</strong> oligopoly pricing, cartel stability, auction strategy, nuclear deterrence, trade policy, competition between platforms.',
       keyTerms: [
         { term: 'Game theory', def: 'Mathematical framework for analysing strategic interaction — situations where each player\'s outcome depends on all players\' choices.' },
@@ -121,7 +130,7 @@ window.ECONOS_TOPIC = {
           'Payoffs often not known: estimating rivals\' profit functions requires information firms don\'t have',
           'Behavioural game theory: experiments show cooperation in prisoner\'s dilemma beyond what theory predicts'
         ]
-      ],
+      },
       examEdge: 'The most important limitation is the behavioural challenge: experimental economics (ultimatum game, public goods game) consistently shows that real people cooperate more than rational self-interest predicts. Players care about fairness, reputation, and reciprocity — not just payoffs. Behavioural game theory (Kahneman, Thaler) incorporates these insights. This links game theory to behavioural economics — evaluating game theory\'s limits using behavioural evidence shows sophisticated cross-topic thinking.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }

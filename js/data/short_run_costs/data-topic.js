@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'short_run_costs_1',
       template: 'framing',
-      title: 'Fixed and Variable Costs',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Short-run costs: the big picture',
+      lede: 'In the short run, capital is locked in. That single constraint shapes every cost curve — and explains the U-shape you\'ll draw a hundred times.',
+      branches: [
+        { tone: 'green',  label: 'Fixed vs variable',          sub: 'FC stays the same whatever you produce; VC rises with output. The split drives the whole short-run cost story.' },
+        { tone: 'blue',   label: 'TC, AC and MC',              sub: 'AC = TC/Q; MC = ΔTC/ΔQ. MC always cuts AC at AC\'s minimum — a mathematical certainty.' },
+        { tone: 'amber',  label: 'Diminishing returns',        sub: 'Add more labour to fixed capital and eventually each extra worker adds less. Rising MC follows directly.' },
+        { tone: 'purple', label: 'The U-shaped AC',            sub: 'Falling AFC pulls AC down; rising AVC eventually pushes it up. The U is the visible signature of the fixed factor.' }
+      ],
       body: 'In the <strong>short run</strong>, at least one factor of production is fixed (usually capital — machinery, buildings). This creates two categories of cost:<br><br><strong>Fixed costs (FC):</strong> do not vary with output. Must be paid whether the firm produces 0 or 1,000 units. Examples: rent, insurance, management salaries, loan repayments, depreciation on equipment.<br><br><strong>Variable costs (VC):</strong> increase as output rises. Examples: raw materials, hourly labour, energy for production.<br><br><strong>Total Cost (TC) = FC + VC.</strong> The distinction matters: in the short run, fixed costs are sunk (cannot be recovered by reducing output) — only variable costs can be reduced by cutting production.',
       keyTerms: [
         { term: 'Fixed cost', def: 'Cost that does not vary with output — paid regardless of production level. Creates economies of scale as it spreads over more units.' },

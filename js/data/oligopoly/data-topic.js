@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'oligopoly_1',
       template: 'framing',
-      title: 'Characteristics of Oligopoly',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Oligopoly: the big picture',
+      lede: 'A few big firms watching each other. Strategic interdependence is the whole story — and it generates wildly different outcomes from the same structure.',
+      branches: [
+        { tone: 'blue',   label: 'Few firms, high barriers',  sub: 'High CR4 or HHI. Scale economies, brands, and network effects protect incumbents from entry.' },
+        { tone: 'amber',  label: 'Strategic interdependence', sub: 'Every pricing or output move depends on guessing rivals\' reactions. Game theory replaces simple optimisation.' },
+        { tone: 'purple', label: 'Price war or collusion',    sub: 'Same structure can produce fierce undercutting or tacit price-matching. The kinked demand curve explains why prices often stay sticky.' },
+        { tone: 'green',  label: 'Non-price competition',     sub: 'Branding, loyalty schemes, R&D, advertising. Where price competition is dangerous, oligopolists fight elsewhere.' }
+      ],
       body: 'An <strong>oligopoly</strong> exists when a small number of large firms dominate a market. Key characteristics:<br><br>• <strong>Few dominant firms:</strong> measured by concentration ratio — e.g., CR4 (four-firm concentration ratio) above 60% typically indicates oligopoly<br>• <strong>High barriers to entry:</strong> scale economies, sunk costs, brand loyalty, and network effects protect incumbents<br>• <strong>Interdependence:</strong> each firm\'s decisions affect rivals — and each firm knows this. Rivals\' reactions must be anticipated.<br>• <strong>Product differentiation possible:</strong> oligopolists may sell homogeneous (petrol, steel) or differentiated (cars, smartphones) products<br>• <strong>Non-price competition:</strong> advertising, branding, loyalty schemes, and product development are primary competitive tools<br><br><strong>Examples:</strong> UK supermarkets (Tesco, Sainsbury\'s, Asda, Morrisons), smartphones (Apple, Samsung), banking (big four), energy (big six historically), airlines.',
       keyTerms: [
         { term: 'Oligopoly', def: 'A market dominated by a few large firms — each is large enough that its decisions affect rivals and vice versa.' },
@@ -84,7 +92,7 @@ window.ECONOS_TOPIC = {
           'Cannot explain price wars or competitive price cutting — model predicts stability only',
           'Game theory provides more rigorous analysis of strategic interaction'
         ]
-      ],
+      },
       examEdge: 'The kinked demand model is frequently criticised for its internal inconsistency: it assumes rivals match price cuts but not price rises, without explaining why. In practice, rivals might match price rises (if they want higher industry profits). The model is a useful pedagogical device for understanding price rigidity but is not a complete theory of oligopoly behaviour. Game theory (prisoner\'s dilemma, Nash equilibrium) provides a more rigorous framework.'
     },
     {

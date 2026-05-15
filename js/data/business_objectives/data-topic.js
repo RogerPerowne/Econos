@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'business_objectives_1',
       template: 'framing',
-      title: 'Profit Maximisation',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Business objectives: the big picture',
+      lede: 'Textbooks assume firms maximise profit. Reality is messier — managers, stakeholders, and bounded rationality pull firms in different directions.',
+      branches: [
+        { tone: 'green',  label: 'Profit maximisation',   sub: 'The benchmark: produce where MR = MC. Survives competition, satisfies shareholders, funds investment.' },
+        { tone: 'blue',   label: 'Revenue and growth max',sub: 'Baumol and Marris: managers prefer revenue or size (linked to pay and prestige) over profit. Higher output, lower price.' },
+        { tone: 'purple', label: 'Satisficing',           sub: 'Simon: with bounded rationality and many stakeholders, firms set minimum acceptable targets rather than maximising anything.' },
+        { tone: 'amber',  label: 'Divorce of ownership',  sub: 'Shareholders own, managers control. The principal-agent problem explains why firms deviate from profit maximisation.' },
+        { tone: 'purple', label: 'CSR and public sector', sub: 'Firms balance profit against social responsibility; public sector pursues welfare not profit at all.' }
+      ],
       body: 'The standard economic assumption: firms maximise <strong>profit</strong> by producing where Marginal Revenue (MR) = Marginal Cost (MC). Below this output, each additional unit adds more to revenue than cost → profit rises. Above this output, each additional unit costs more than it earns → profit falls. The maximum is at MR = MC.<br><br><strong>Rationale:</strong> in competitive markets, firms must make at least normal profit to survive. Shareholders demand returns. Profit funds investment and growth. Over time, firms that maximise profit outcompete those that do not.<br><br>Normal profit = just sufficient return to keep the entrepreneur in the industry (implicit opportunity cost). Supernormal profit = profit above normal = economic rent.',
       keyTerms: [
         { term: 'Profit maximisation', def: 'Producing where MR = MC — the output level that maximises the difference between total revenue and total cost.' },
@@ -52,7 +61,7 @@ window.ECONOS_TOPIC = {
       id: 'business_objectives_3',
       template: 'framing',
       title: 'Growth Maximisation and Sales Maximisation',
-      body: '<strong>Growth maximisation</strong> (Marris, 1963): managers prioritise firm growth — measured by sales growth or asset growth — because growth increases manager power, job security, and rewards. Managers face a trade-off: grow too fast and the firm's financial position deteriorates → risk of takeover (which would replace them).<br><br><strong>Sales (output) maximisation:</strong> produce as much as possible subject to making at least normal profit. Output beyond the profit-maximising level, but prices cover all costs. Often used to gain market share in competitive oligopolies — loss-leading strategies temporarily.<br><br>Growth strategies: mergers and acquisitions, reinvestment of retained profits, aggressive market entry.',
+      body: '<strong>Growth maximisation</strong> (Marris, 1963): managers prioritise firm growth — measured by sales growth or asset growth — because growth increases manager power, job security, and rewards. Managers face a trade-off: grow too fast and the firm\'s financial position deteriorates → risk of takeover (which would replace them).<br><br><strong>Sales (output) maximisation:</strong> produce as much as possible subject to making at least normal profit. Output beyond the profit-maximising level, but prices cover all costs. Often used to gain market share in competitive oligopolies — loss-leading strategies temporarily.<br><br>Growth strategies: mergers and acquisitions, reinvestment of retained profits, aggressive market entry.',
       keyTerms: [
         { term: 'Growth maximisation', def: 'Managers prioritise expanding the firm\'s size — revenue, assets, and market share rather than profit.' },
         { term: 'Sales maximisation', def: 'Maximising output subject to breaking even — produces beyond profit-max; maximises market share.' },

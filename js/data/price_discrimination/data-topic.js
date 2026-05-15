@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_discrimination_1',
       template: 'framing',
-      title: 'What is Price Discrimination?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Price discrimination: the big picture',
+      lede: 'Same good, different prices. A way for firms with market power to capture surplus that single pricing leaves on the table.',
+      branches: [
+        { tone: 'blue',   label: 'Three conditions',        sub: 'Market power, ability to segment buyers by willingness to pay, and prevention of arbitrage. All three must hold.' },
+        { tone: 'green',  label: 'Three degrees',           sub: 'First (perfect, charge each consumer\'s max), second (by quantity or version), third (by group: students, peak/off-peak).' },
+        { tone: 'purple', label: 'Surplus transfer',        sub: 'Consumer surplus shifts to producer. Some consumers gain access at lower prices; others pay more than before.' },
+        { tone: 'amber',  label: 'Welfare: ambiguous',      sub: 'Output may rise (reducing DWL) but distribution worsens. Whether this is "good" depends on whose welfare you weight.' }
+      ],
       body: '<strong>Price discrimination</strong> occurs when a firm charges different prices to different consumers (or consumer groups) for the same good or service, where the price difference is NOT justified by cost differences.<br><br>Key insight: a standard monopolist charges one price and loses potential profit from consumers willing to pay more (consumer surplus above the price) and from consumers who would buy at a lower price. Price discrimination allows the firm to capture more of the consumer surplus as producer surplus.<br><br><strong>Three conditions required:</strong><br>1. <strong>Market power</strong> — must be a price-setter, not a price-taker<br>2. <strong>Market segmentation</strong> — must identify groups with different willingness to pay (different PED)<br>3. <strong>Prevention of arbitrage</strong> — must prevent resale between segments (or discrimination collapses)',
       keyTerms: [
         { term: 'Price discrimination', def: 'Charging different prices to different consumers for the same good, where differences are not cost-based.' },
@@ -108,7 +116,7 @@ window.ECONOS_TOPIC = {
           'Requires costly segmentation and enforcement — resources wasted on discrimination machinery',
           'Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate'
         ]
-      ],
+      },
       examEdge: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used — evaluating price discrimination requires knowing what the firm does with the extra profit.'
     },
     {

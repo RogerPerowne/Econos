@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'poverty_1',
       template: 'framing',
-      title: 'Absolute vs Relative Poverty',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Poverty: the big picture',
+      lede: 'Poverty is more than low income. How we define it shapes which problem we fix — and which we miss.',
+      branches: [
+        { tone: 'green',  label: 'Absolute vs relative', sub: 'Absolute = below a basic-needs threshold ($2.15/day, World Bank). Relative = below 60% of median income. A country can cut one while the other rises.' },
+        { tone: 'blue',   label: 'How we measure it', sub: 'Headcount, poverty gap, MPI. Income-based measures miss deprivation in health, education and housing — multi-dimensional indices fill the gap.' },
+        { tone: 'amber',  label: 'Causes and traps', sub: 'Low wages, weak human capital, discrimination, and benefit withdrawal can lock households below the line. The poverty trap is structural, not lazy.' },
+        { tone: 'purple', label: 'Policy responses', sub: 'Cash transfers, minimum wages, education, healthcare, progressive tax. Each tackles a different cause — none alone is enough.' }
+      ],
       body: '<strong>Absolute poverty</strong> exists when income is insufficient to meet basic human needs: food, shelter, clean water, and sanitation. The World Bank defines it as living on under $2.15 per day (2022, PPP-adjusted). Globally, around 700 million people live in absolute poverty — primarily in Sub-Saharan Africa and South Asia.<br><br><strong>Relative poverty</strong> is defined in relation to the living standards of the society in question. In the UK, relative poverty is conventionally defined as household income below 60% of median household income after housing costs. Relative poverty can persist even as absolute poverty falls if inequality rises.<br><br>The distinction matters for policy: absolute poverty requires income transfers; relative poverty requires addressing distribution.',
       keyTerms: [
         { term: 'Absolute poverty', def: 'Income insufficient to meet basic survival needs; World Bank threshold: $2.15/day (PPP).' },

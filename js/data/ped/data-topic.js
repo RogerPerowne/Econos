@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_1',
       template: 'framing',
-      title: 'PED Formula and Interpretation',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Price elasticity of demand: the big picture',
+      lede: 'Demand curves all slope down — but <em>how steeply</em> is what decides who pays a tax, what firms charge, and whether revenue rises or falls.',
+      branches: [
+        { tone: 'blue',   label: 'Formula &amp; values',     sub: '%&Delta;QD &divide; %&Delta;P. Elastic (|PED| &gt; 1), inelastic (|PED| &lt; 1), unit elastic (|PED| = 1) — the three regimes that drive every result.' },
+        { tone: 'green',  label: 'What determines PED',       sub: 'Substitutes, necessity vs luxury, proportion of income, time horizon, addiction. The deeper the substitutes, the more elastic.' },
+        { tone: 'amber',  label: 'PED &amp; total revenue',   sub: 'If demand is inelastic, raise price to grow revenue. If elastic, cut price. The single rule that drives pricing strategy.' },
+        { tone: 'purple', label: 'PED &amp; tax incidence',   sub: 'The more inelastic side bears the larger share of an indirect tax. Why cigarette taxes fall on smokers, not on tobacco firms.' },
+        { tone: 'rose',   label: 'Special cases',             sub: 'Perfectly elastic, perfectly inelastic, and along a straight-line demand curve PED changes at every point — easy traps in exams.' }
+      ],
       body: '<strong>Price Elasticity of Demand (PED)</strong> measures the responsiveness of quantity demanded to a change in the good\'s own price.<br><br><strong>Formula:</strong> PED = (% ΔQD) \xf7 (% ΔP)<br><br>PED is always negative (price and quantity demanded move in opposite directions per the law of demand). The sign is usually ignored — we compare the absolute value |PED|:<br><br>• |PED| > 1: <strong>Price elastic</strong> — QD changes proportionally more than price. Revenue falls when price rises.<br>• |PED| < 1: <strong>Price inelastic</strong> — QD changes proportionally less than price. Revenue rises when price rises.<br>• |PED| = 1: <strong>Unit elastic</strong> — QD changes proportionally the same as price. Revenue unchanged when price changes.',
       keyTerms: [
         { term: 'PED', def: '% change in quantity demanded \xf7 % change in price. Always negative; compare absolute value.' },

@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_1',
       template: 'framing',
-      title: 'Scarcity: The Central Problem',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'The basic economic problem: the big picture',
+      lede: 'Wants are infinite, resources are not. Every idea in economics flows from this single tension.',
+      branches: [
+        { tone: 'green',  label: 'Scarcity &amp; resources',     sub: 'Unlimited wants meet finite land, labour, capital and enterprise. Every economy, rich or poor, faces it.' },
+        { tone: 'amber',  label: 'Opportunity cost',             sub: 'Every choice means giving something up. The next-best alternative forgone is the true cost of any decision.' },
+        { tone: 'blue',   label: 'What, how, for whom',          sub: 'The three questions every economic system must answer about allocating scarce resources between competing uses.' },
+        { tone: 'purple', label: 'Agents &amp; rationality',     sub: 'Consumers, firms and government each pursue their own objectives — and are assumed (mostly) to do so rationally.' },
+        { tone: 'rose',   label: 'Positive vs normative',        sub: 'Facts versus value judgements. The line that separates economic analysis from political opinion.' }
+      ],
       body: '<strong>Scarcity</strong> is the fundamental economic problem: human wants are unlimited, but the resources needed to satisfy them — land, labour, capital, and enterprise — are finite. Because resources are scarce, we cannot produce everything we want, so choices must be made.<br><br>Scarcity applies to all economies regardless of income level. Even the richest country cannot produce unlimited healthcare, education, infrastructure, and defence simultaneously. Scarcity forces trade-offs at every level: individual, firm, and government.',
       keyTerms: [
         { term: 'Scarcity', def: 'The condition where unlimited wants exceed the limited resources available to satisfy them.' },

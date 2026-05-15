@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'trade_spec_1',
       template: 'framing',
-      title: 'Absolute vs Comparative Advantage',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Trade and specialisation: why countries trade',
+      lede: 'Even a country that\'s worse at making everything can gain from trade. Ricardo\'s insight is one of the most counter-intuitive ideas in economics.',
+      branches: [
+        { tone: 'green',  label: 'Absolute vs comparative', sub: 'Absolute = more output per input. Comparative = lower opportunity cost. Trade gains rest on comparative advantage, not absolute.' },
+        { tone: 'blue',   label: 'Gains from specialisation', sub: 'Higher world output, lower prices, economies of scale, more variety. The pie grows when each country focuses on what it gives up least to produce.' },
+        { tone: 'amber',  label: 'Terms of trade', sub: 'The price of exports relative to imports decides who captures the gains. Falling commodity prices have squeezed primary exporters (Prebisch-Singer).' },
+        { tone: 'rose',   label: 'Limits and losers', sub: 'Assumptions of the model break in reality — transport costs, scale economies, structural unemployment. Free trade creates losers as well as winners.' }
+      ],
       body: 'A country has <strong>absolute advantage</strong> when it can produce more of a good with the same resources than another country. A country has <strong>comparative advantage</strong> when it can produce a good at a lower <em>opportunity cost</em>. Ricardo showed that even if one country has absolute advantage in all goods, both countries gain from specialising where their opportunity cost is lowest and trading. This is the foundation of the case for free trade.',
       keyTerms: [
         { term: 'Absolute advantage', def: 'Producing more output per unit of input than a trading partner.' },

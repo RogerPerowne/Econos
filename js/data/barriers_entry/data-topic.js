@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'barriers_entry_1',
       template: 'framing',
-      title: 'The Role of Barriers to Entry',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Barriers to entry: the big picture',
+      lede: 'Without barriers, supernormal profit gets competed away. With them, market structure — and consumer outcomes — can change for decades.',
+      branches: [
+        { tone: 'green',  label: 'Why barriers matter',   sub: 'Barriers determine how long supernormal profit persists — the central concept linking market structure to performance.' },
+        { tone: 'blue',   label: 'Structural barriers',   sub: 'Innocent: scale economies, sunk costs, control of key resources. Built into the technology of the industry.' },
+        { tone: 'amber',  label: 'Strategic barriers',    sub: 'Deliberate: predatory pricing, limit pricing, brand proliferation. Incumbents create them to deter entrants.' },
+        { tone: 'purple', label: 'Legal and network',     sub: 'Patents, licences, and network effects can be even more durable than cost-based barriers — and harder to dismantle.' }
+      ],
       body: 'In competitive markets, supernormal profit attracts new entrants → supply increases → price falls → profit eroded. <strong>Barriers to entry</strong> prevent this process — allowing incumbent firms to sustain supernormal profit in the long run.<br><br>The height of the entry barrier determines the persistence of supernormal profit. High barriers (natural monopoly, strong patents) → permanent supernormal profit. Low barriers (modest scale economies, weak brand) → profit competed away over time.<br><br>Barriers to entry are therefore the central concept in determining market structure: the higher the barriers, the more concentrated and less competitive the market.',
       keyTerms: [
         { term: 'Barriers to entry', def: 'Obstacles that prevent new firms from entering a profitable market — sustain incumbents\' supernormal profit.' },

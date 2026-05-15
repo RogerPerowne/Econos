@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'neg_externalities_1',
       template: 'framing',
-      title: 'What Is a Negative Externality?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Negative externalities: the big picture',
+      lede: 'When private costs ignore third-party harm, markets overproduce — and society pays the bill.',
+      branches: [
+        { tone: 'green',  label: 'The core concept',   sub: 'MSC = MPC + MEC. When MEC > 0, the market price understates true cost and output exceeds the social optimum.' },
+        { tone: 'blue',   label: 'The diagram',        sub: 'MSC sits above MPC. Welfare loss is the triangle between MSC and MPB beyond Q*.' },
+        { tone: 'amber',  label: 'Types & examples',   sub: 'Production externalities (pollution, congestion) and consumption externalities (smoking, alcohol).' },
+        { tone: 'purple', label: 'Coase & private fixes', sub: 'With clear property rights and low transaction costs, parties can bargain to the efficient outcome — no government needed.' },
+        { tone: 'rose',   label: 'Government policies', sub: 'Pigouvian taxes, regulation, tradable permits — each with strengths, weaknesses, and information demands.' }
+      ],
       body: 'An <strong>externality</strong> occurs when a third party (not the buyer or seller) is affected by an economic transaction. A <strong>negative externality</strong> is an external cost — a cost imposed on third parties who receive no compensation.<br><br>Key terminology:<br>• <strong>Private cost (MPC):</strong> the cost borne by the producer or consumer directly.<br>• <strong>External cost (MEC):</strong> the cost borne by third parties not party to the transaction.<br>• <strong>Social cost (MSC):</strong> MSC = MPC + MEC — the total cost to society of producing one more unit.<br><br>When negative externalities exist, MSC > MPC. Market prices only reflect MPC, so the market overproduces — more output is produced than is socially optimal.',
       keyTerms: [
         { term: 'Negative externality', def: 'An external cost imposed on third parties as a result of economic activity — not reflected in market price.' },

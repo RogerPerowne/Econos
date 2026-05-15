@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_functions_1',
       template: 'framing',
-      title: 'Prices as Signals',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Functions of the price mechanism: the big picture',
+      lede: 'Prices do three jobs at once — and that is how markets allocate resources without anyone in charge.',
+      branches: [
+        { tone: 'blue',   label: 'Signalling',                 sub: 'Prices broadcast information about relative scarcity. A rise tells producers to expand and consumers to economise — no central planner required.' },
+        { tone: 'green',  label: 'Incentives',                 sub: 'Higher prices reward producers who supply scarce goods; lower prices punish those producing unwanted ones. Self-interest does the heavy lifting.' },
+        { tone: 'amber',  label: 'Rationing',                  sub: 'When supply is scarce, rising prices ration the good to those who value it most — and choke off lower-value uses.' },
+        { tone: 'purple', label: 'Entrepreneurship',           sub: 'Price gaps between costs and willingness-to-pay reveal profit opportunities. Entrepreneurs spot them and reallocate resources.' },
+        { tone: 'rose',   label: 'When prices fail',           sub: 'Externalities, public goods and information gaps stop prices reflecting true social costs — the bridge into market failure.' }
+      ],
       body: 'Prices communicate information about relative scarcity and value across markets — without anyone needing to understand the big picture.<br><br>A price rise signals that a good is becoming scarcer relative to demand. This information reaches producers, who expand supply, and consumers, who economise. Neither needs to know why the price rose — just that it did.<br><br><strong>Hayek\'s insight:</strong> the price system aggregates dispersed knowledge that no central planner could possess. Millions of individual decisions — crop harvests, consumer preferences, technological costs — are compressed into a single price that guides all market participants simultaneously.',
       keyTerms: [
         { term: 'Price signal', def: 'A price change that communicates information about relative scarcity or value, guiding resource allocation decisions.' },

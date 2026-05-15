@@ -3387,6 +3387,24 @@ img, svg { display: block; max-width: 100%; }
 .show-efficiency .negext-svg .layer-dwl { opacity: 1; }
 .show-efficiency .negext-svg .layer-legend-efficiency { opacity: 1; }
 
+/* ===== PRICE CONTROLS INTERACTIVE ===== */
+.pc-svg .layer-axes,
+.pc-svg .layer-base-curves,
+.pc-svg .layer-equilibrium,
+.pc-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.pc-svg .layer-ceiling,
+.pc-svg .layer-legend-extension,
+.pc-svg .layer-floor,
+.pc-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .pc-svg .layer-equilibrium { opacity: 0.4; }
+.show-extension .pc-svg .layer-legend-base { opacity: 0; }
+.show-extension .pc-svg .layer-ceiling { opacity: 1; }
+.show-extension .pc-svg .layer-legend-extension { opacity: 1; }
+.show-shift .pc-svg .layer-equilibrium { opacity: 0.4; }
+.show-shift .pc-svg .layer-legend-base { opacity: 0; }
+.show-shift .pc-svg .layer-floor { opacity: 1; }
+.show-shift .pc-svg .layer-legend-shift { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;

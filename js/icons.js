@@ -2091,6 +2091,164 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  priceControlsInteractive: `
+    <svg class="pc-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="pc-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
+        <marker id="pc-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="pc-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#D97706"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: base curves (D and S — always visible) ===== -->
+      <g class="layer-base-curves">
+        <g clip-path="url(#pc-chart-clip)">
+          <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="372" font-size="13" font-weight="700" fill="#2563EB">D</text>
+        <g clip-path="url(#pc-chart-clip)">
+          <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="88" font-size="13" font-weight="700" fill="#DC2626">S</text>
+      </g>
+
+      <!-- ===== LAYER: equilibrium (always visible; fades in ceiling/floor states) ===== -->
+      <g class="layer-equilibrium">
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="6" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+        <text x="304" y="222" font-size="12" font-weight="700" fill="#334155">E*</text>
+        <text x="46" y="234" font-size="12" font-weight="600" fill="#334155" text-anchor="end">P*</text>
+        <text x="295" y="418" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">Q*</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <circle cx="74" cy="32" r="7" fill="#64748B"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Free market clears at (Q*, P*) — no shortage, no surplus</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">FREE MARKET BENCHMARK</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Where supply meets demand,</text>
+        <text x="620" y="118" font-size="13" fill="#334155">the market clears: every buyer</text>
+        <text x="620" y="136" font-size="13" fill="#334155">finds a seller and vice versa.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Allocatively efficient</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Quantity traded = Q*</text>
+        <text x="620" y="206" font-size="13" fill="#334155">Consumer + producer surplus</text>
+        <text x="620" y="224" font-size="13" fill="#334155">maximised.</text>
+        <text x="620" y="262" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">A PRICE CONTROL CHANGES THIS</text>
+        <text x="620" y="285" font-size="13" fill="#334155">Government sets a binding</text>
+        <text x="620" y="303" font-size="13" fill="#334155">cap (ceiling) or floor at a</text>
+        <text x="620" y="321" font-size="13" fill="#334155">non-clearing price.</text>
+        <text x="620" y="355" font-size="11" font-style="italic" fill="#64748B">Tabs above show each in turn.</text>
+      </g>
+
+      <!-- ===== LAYER: ceiling (extension state) ===== -->
+      <g class="layer-ceiling">
+        <!-- Ceiling horizontal line at Pc = y=290 (below P* = 230) -->
+        <line x1="60" y1="290" x2="490" y2="290" stroke="#059669" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <text x="498" y="294" font-size="13" font-weight="700" fill="#059669">P_c (ceiling)</text>
+        <text x="46" y="294" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P_c</text>
+        <!-- QS on supply at Pc: (211, 290) -->
+        <line x1="211" y1="290" x2="211" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="211" cy="290" r="5.5" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
+        <text x="211" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q_S</text>
+        <!-- QD on demand at Pc: (379, 290) -->
+        <line x1="379" y1="290" x2="379" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="379" cy="290" r="5.5" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
+        <text x="379" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q_D</text>
+        <!-- Shortage double-headed arrow between QS and QD at Pc, slightly below the ceiling -->
+        <line x1="218" y1="312" x2="372" y2="312" stroke="#D97706" stroke-width="2.5" marker-start="url(#pc-amber-start)" marker-end="url(#pc-amber-end)"/>
+        <rect x="262" y="318" width="66" height="20" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+        <text x="295" y="332" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">Shortage</text>
+        <!-- DWL triangle: (211, 170), (211, 290), (295, 230) -->
+        <polygon points="211,170 211,290 295,230" fill="#FEE2E2" fill-opacity="0.65" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="234" y="234" font-size="11" font-weight="800" fill="#DC2626">DWL</text>
+      </g>
+
+      <!-- ===== LAYER: legend extension (ceiling) ===== -->
+      <g class="layer-legend-extension">
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price ceiling: P_c &lt; P* → shortage</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">PRICE CEILING (MAX PRICE)</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Government caps price at P_c</text>
+        <text x="620" y="118" font-size="13" fill="#334155">below the market equilibrium.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">At P_c: Q_D &gt; Q_S</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Shortage = Q_D − Q_S</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Trade falls to Q_S (supply is</text>
+        <text x="620" y="206" font-size="13" fill="#334155">the binding side).</text>
+        <text x="620" y="240" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REAL-WORLD AIM</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Rent caps, energy price caps,</text>
+        <text x="620" y="280" font-size="13" fill="#334155">essential medicines.</text>
+        <text x="620" y="314" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">SIDE EFFECTS</text>
+        <text x="620" y="336" font-size="13" fill="#334155">Queues, rationing, black</text>
+        <text x="620" y="354" font-size="13" fill="#334155">markets, deadweight loss (red).</text>
+      </g>
+
+      <!-- ===== LAYER: floor (shift state) ===== -->
+      <g class="layer-floor">
+        <!-- Floor horizontal line at Pf = y=170 (above P* = 230) -->
+        <line x1="60" y1="170" x2="490" y2="170" stroke="#D97706" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <text x="498" y="174" font-size="13" font-weight="700" fill="#D97706">P_f (floor)</text>
+        <text x="46" y="174" font-size="12" font-weight="600" fill="#D97706" text-anchor="end">P_f</text>
+        <!-- QD on demand at Pf: (211, 170) -->
+        <line x1="211" y1="170" x2="211" y2="400" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="211" cy="170" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.5"/>
+        <text x="211" y="418" font-size="12" font-weight="600" fill="#D97706" text-anchor="middle">Q_D</text>
+        <!-- QS on supply at Pf: (379, 170) -->
+        <line x1="379" y1="170" x2="379" y2="400" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="379" cy="170" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.5"/>
+        <text x="379" y="418" font-size="12" font-weight="600" fill="#D97706" text-anchor="middle">Q_S</text>
+        <!-- Surplus double-headed arrow between QD and QS at Pf, slightly above the floor -->
+        <line x1="218" y1="148" x2="372" y2="148" stroke="#D97706" stroke-width="2.5" marker-start="url(#pc-amber-start)" marker-end="url(#pc-amber-end)"/>
+        <rect x="266" y="130" width="58" height="20" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+        <text x="295" y="144" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">Surplus</text>
+        <!-- DWL triangle: (211, 170), (211, 290), (295, 230) -->
+        <polygon points="211,170 211,290 295,230" fill="#FEE2E2" fill-opacity="0.65" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="234" y="234" font-size="11" font-weight="800" fill="#DC2626">DWL</text>
+      </g>
+
+      <!-- ===== LAYER: legend shift (floor) ===== -->
+      <g class="layer-legend-shift">
+        <circle cx="74" cy="32" r="7" fill="#D97706"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price floor: P_f &gt; P* → surplus</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">PRICE FLOOR (MIN PRICE)</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Government floors price at P_f</text>
+        <text x="620" y="118" font-size="13" fill="#334155">above the market equilibrium.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">At P_f: Q_S &gt; Q_D</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Surplus = Q_S − Q_D</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Trade falls to Q_D (demand is</text>
+        <text x="620" y="206" font-size="13" fill="#334155">the binding side).</text>
+        <text x="620" y="240" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REAL-WORLD AIM</text>
+        <text x="620" y="262" font-size="13" fill="#334155">National minimum wage,</text>
+        <text x="620" y="280" font-size="13" fill="#334155">agricultural price support.</text>
+        <text x="620" y="314" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">SIDE EFFECTS</text>
+        <text x="620" y="336" font-size="13" fill="#334155">Gluts, government buy-ups,</text>
+        <text x="620" y="354" font-size="13" fill="#334155">unemployment (NMW context).</text>
+      </g>
+    </svg>
+  `,
+
   /* === Kuznets curve — static diagram for sol_wellbeing/kuznets card === */
   kuznetsCurve: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

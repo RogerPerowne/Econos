@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'International Competitiveness',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in what determines a country\'s international competitiveness, how it is measured, and how policy can improve it.',
   intro: {
     heroKey: 'heroGlobe',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Unit labour cost = wage cost per unit of output. It rises if wages grow faster than productivity — making the country less price-competitive.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'intl_competitiveness_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'International competitiveness: the big picture',
       lede: 'Why do German cars sell despite high wages, while UK exports lag? Competitiveness has two faces — and one stubborn underlying driver.',
       branches: [
@@ -132,6 +132,61 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The answer depends on the industry and development level. UK policy should focus on non-price competitiveness (skills, R&D, services quality) since competing on price with emerging markets is not a viable long-run strategy for a high-wage economy — say this explicitly in an essay.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'ic-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: international competitiveness',
+      question: 'Evaluate the policies a government could use to improve the international competitiveness of its economy. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define international competitiveness and distinguish price from non-price competitiveness.',
+          hint: 'International competitiveness: ability to sell goods and services in world markets at a profit. Price competitiveness: relative unit labour costs, exchange rate, inflation relative to trading partners. Non-price competitiveness: quality, design, brand, after-sales service, innovation. For a high-wage economy like the UK, non-price factors are more important long-run — competing on price with emerging markets is not a sustainable strategy.',
+          model: 'International competitiveness describes an economy\'s ability to sell goods and services in world markets at a sustainable profit, maintaining or growing market share over time. Competitiveness has two dimensions: price competitiveness (determined by unit labour costs, the exchange rate, and relative inflation rates) and non-price competitiveness (quality, innovation, brand strength, reliability, and service). For a high-wage developed economy like the UK, non-price factors are increasingly decisive: Germany sustains a large current account surplus despite high wages because its manufacturing output (machinery, vehicles, chemicals) commands quality premiums that buyers willingly pay. Policy to improve competitiveness must address both dimensions, but particularly the structural supply-side drivers of long-run non-price advantage.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Supply-side policies to improve long-run competitiveness',
+          prompt: 'Explain how education, infrastructure, and R&D investment raise long-run non-price competitiveness.',
+          hint: 'Human capital: skilled workers → higher productivity → lower unit labour costs → price competitiveness AND better product quality → non-price competitiveness. R&D investment: innovation → new products → higher value-added exports. Infrastructure: reduces logistics costs → lower unit distribution costs. Institutional quality: rule of law, IP protection, efficient courts → attract FDI. UK productivity puzzle: UK productivity 16-18% below G7 average (2024) — reflects underinvestment in all these areas since 2008.',
+          model: 'Supply-side policies address the structural drivers of long-run competitiveness most directly. Investment in education and skills raises human capital — increasing labour productivity, reducing unit labour costs, and enabling the development of more sophisticated, higher-value exports. R&D investment and innovation policy (tax credits, university-industry partnerships) create new products and processes, generating the non-price advantages that sustain competitive position against lower-cost rivals. Infrastructure investment (transport, digital connectivity) reduces logistics costs and enables geographic clustering of competitive industries. These policies take years to produce observable effects on competitiveness — the UK\'s persistent productivity gap (16-18% below G7 average in 2024) reflects decades of underinvestment — but they address the root causes rather than symptoms. The German and Nordic economic models, with high public investment in education and infrastructure alongside strong institutional quality, demonstrate that sustained supply-side investment produces durable competitive advantage.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Exchange rate policy and relative cost management',
+          prompt: 'Explain how exchange rate depreciation and labour cost control improve price competitiveness.',
+          hint: 'Depreciation: lower £ → exports cheaper in foreign currency → higher export demand → improved competitiveness in traded goods. But: Marshall-Lerner condition must hold (PEDx + PEDm > 1). J-curve: competitiveness improves only after time lag. Wage moderation: holding real wage growth below productivity → lower unit labour costs → improved price competitiveness. UK post-2016: 15-20% sterling depreciation → improved price competitiveness for manufactured goods but limited effect on services exports. Limitation: depreciation also raises import costs → SRAS left → inflation → erodes price competitiveness gain.',
+          model: 'Exchange rate depreciation improves price competitiveness by reducing the foreign-currency price of UK exports: a 10% fall in sterling makes UK goods 10% cheaper for overseas buyers, boosting export demand provided the Marshall-Lerner condition holds. The post-2016 Brexit-related sterling depreciation provided a natural experiment: UK manufactured exports did become more competitive on price, and export volumes rose. However, the simultaneous rise in import prices pushed SRAS left, increasing domestic costs and partially offsetting the competitiveness gain within two to three years. Wage moderation — holding real wage growth below productivity growth — reduces unit labour costs more durably, improving price competitiveness without inflationary side-effects. However, sustained wage moderation is politically difficult and can reduce domestic consumer demand. For the UK, which has comparative advantage in services (financial, professional, educational), price competitiveness via depreciation matters less than for manufacturing-oriented economies.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Limitations and the non-price competitiveness gap',
+          prompt: 'Evaluate why supply-side improvements take too long for short-run competitiveness challenges, and why price-based approaches are insufficient for structural improvement.',
+          hint: 'Time lag: education reform takes 15-20 years to show in workforce productivity. Infrastructure investment: 10+ years (HS2 controversy). Short-run competitiveness challenges (losing export market share) may require faster responses. UK structural weaknesses: management quality, innovation commercialisation, regional concentration in London/South East. Competing on price with East Asian manufacturers is not viable for UK — must be non-price. But non-price competitiveness gaps are structural and slow to close.',
+          model: 'The main limitations of supply-side policies are implementation lags: education reforms take 15-20 years to flow through to the workforce, infrastructure projects require a decade from conception to completion, and R&D investment produces commercially deployable technology only after extended development cycles. These lags mean supply-side reform cannot address short-run competitiveness challenges — a firm losing market share to Chinese competitors this year needs faster solutions. Price competitiveness via depreciation provides faster results but is transitory (inflation erodes the gain) and difficult to sustain in an open economy with flexible labour markets and independent monetary policy. The deeper structural challenge for the UK is that its competitiveness gap is primarily non-price and regional: UK productivity is concentrated in London and the South East, with large gaps to the rest of the country, and UK management quality and innovation commercialisation consistently score below international benchmarks. These structural weaknesses are not amenable to quick fixes.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Optimal policy mix for a high-wage developed economy',
+          prompt: 'Weigh the relative merits of different approaches for the UK\'s specific competitive position.',
+          hint: 'For the UK specifically: non-price competitiveness is the durable solution — competing on price with China, India, Vietnam is not viable. Key bottlenecks: management quality, regional disparity, R&D commercialisation, infrastructure. Short-run vs long-run: exchange rate and wage policy for short-run adjustment; supply-side reform for long-run structural improvement. Financial services and professional services: UK has strong non-price competitive advantage here — regulatory framework and talent base are the key assets to protect post-Brexit.',
+          model: 'For the UK, the most effective competitiveness policy mix prioritises non-price factors — because the UK cannot and should not compete on labour costs with emerging market economies. The country\'s genuine competitive advantages lie in financial services, professional services, higher education, high-value manufacturing (aerospace, pharmaceuticals), and creative industries: all areas where quality, reputation, regulation, and talent matter far more than price. Policy should protect and develop these advantages: maintaining strong IP frameworks, investing in STEM education and university research, improving London\'s attractiveness as a global financial centre post-Brexit, and closing the regional productivity gap that leaves English regions 20-30% below the capital in productivity. Short-run exchange rate adjustment remains part of the toolkit, but long-run strategy should focus on the structural supply-side reforms that shift the UK toward higher-value, less price-elastic exports where non-price factors determine competitiveness.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a reasoned judgement: supply-side investment is the most durable route to competitiveness for the UK, but involves long lags and requires consistent policy commitment.',
+          hint: 'Supply-side reform (education, R&D, infrastructure) is the most effective long-run approach. Short-run: exchange rate and relative cost management provide partial support. UK\'s specific challenge: close the productivity gap, capitalise on services competitive advantage, and develop regional economic capacity. No quick fixes — competitiveness is built over decades.',
+          model: 'The most effective policies for improving UK international competitiveness are supply-side investments in human capital, R&D, and infrastructure — because these address the structural productivity gaps that determine long-run competitive position. These take time to produce results but are the only durable route to non-price competitiveness that cannot be competed away by emerging market cost advantages. Exchange rate depreciation and wage moderation provide short-run price competitiveness improvements but are temporary and self-limiting. The UK\'s most important strategic asset is its competitive advantage in high-value services — financial services, professional services, education, and creative industries — which depend on regulatory quality, institutional trust, and talent attraction rather than price. Protecting and developing these advantages, while closing the domestic productivity and regional investment gaps that hold back the broader economy, should be the primary focus of UK competitiveness policy. Consistency over time — rather than any single intervention — is what builds durable competitive advantage.'
+        }
+      ]
     }
   ]
 };

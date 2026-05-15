@@ -3440,28 +3440,80 @@ img, svg { display: block; max-width: 100%; }
 .show-efficiency .pd-svg .layer-nash { opacity: 1; }
 .show-efficiency .pd-svg .layer-pareto { opacity: 1; }
 .show-efficiency .pd-svg .layer-legend-efficiency { opacity: 1; }
-/* === Monopoly vs Competition Interactive === */
-.mvc-svg .layer-axes,
-.mvc-svg .layer-base-curves,
-.mvc-svg .layer-cs-competition,
-.mvc-svg .layer-pc-eq,
-.mvc-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
-.mvc-svg .layer-mr-curve,
-.mvc-svg .layer-monopoly-eq,
-.mvc-svg .layer-welfare-decomp,
-.mvc-svg .layer-panel-ext,
-.mvc-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
-.show-extension .mvc-svg .layer-cs-competition { opacity: 0; }
-.show-extension .mvc-svg .layer-panel-base { opacity: 0; }
-.show-extension .mvc-svg .layer-mr-curve { opacity: 1; }
-.show-extension .mvc-svg .layer-monopoly-eq { opacity: 1; }
-.show-extension .mvc-svg .layer-panel-ext { opacity: 1; }
-.show-shift .mvc-svg .layer-cs-competition { opacity: 0; }
-.show-shift .mvc-svg .layer-panel-base { opacity: 0; }
-.show-shift .mvc-svg .layer-mr-curve { opacity: 1; }
-.show-shift .mvc-svg .layer-monopoly-eq { opacity: 1; }
-.show-shift .mvc-svg .layer-welfare-decomp { opacity: 1; }
-.show-shift .mvc-svg .layer-panel-shift { opacity: 1; }
+/* === Firm-level PC vs Monopoly === */
+.fpcm-svg .layer-axes,
+.fpcm-svg .layer-cost-curves,
+.fpcm-svg .layer-pc-demand,
+.fpcm-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.fpcm-svg .layer-monopoly-demand,
+.fpcm-svg .layer-comparison,
+.fpcm-svg .layer-panel-ext,
+.fpcm-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .fpcm-svg .layer-pc-demand { opacity: 0; }
+.show-extension .fpcm-svg .layer-panel-base { opacity: 0; }
+.show-extension .fpcm-svg .layer-monopoly-demand { opacity: 1; }
+.show-extension .fpcm-svg .layer-panel-ext { opacity: 1; }
+.show-shift .fpcm-svg .layer-pc-demand { opacity: 0.55; }
+.show-shift .fpcm-svg .layer-panel-base { opacity: 0; }
+.show-shift .fpcm-svg .layer-monopoly-demand { opacity: 1; }
+.show-shift .fpcm-svg .layer-comparison { opacity: 1; }
+.show-shift .fpcm-svg .layer-panel-shift { opacity: 1; }
+/* === Market-level welfare (corrected DWL) === */
+.mlw-svg .layer-axes,
+.mlw-svg .layer-base-curves,
+.mlw-svg .layer-cs-competition,
+.mlw-svg .layer-pc-eq,
+.mlw-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.mlw-svg .layer-mr-curve,
+.mlw-svg .layer-monopoly-eq,
+.mlw-svg .layer-welfare-decomp,
+.mlw-svg .layer-panel-ext,
+.mlw-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .mlw-svg .layer-cs-competition { opacity: 0; }
+.show-extension .mlw-svg .layer-panel-base { opacity: 0; }
+.show-extension .mlw-svg .layer-mr-curve { opacity: 1; }
+.show-extension .mlw-svg .layer-monopoly-eq { opacity: 1; }
+.show-extension .mlw-svg .layer-panel-ext { opacity: 1; }
+.show-shift .mlw-svg .layer-cs-competition { opacity: 0; }
+.show-shift .mlw-svg .layer-panel-base { opacity: 0; }
+.show-shift .mlw-svg .layer-mr-curve { opacity: 1; }
+.show-shift .mlw-svg .layer-monopoly-eq { opacity: 1; }
+.show-shift .mlw-svg .layer-welfare-decomp { opacity: 1; }
+.show-shift .mlw-svg .layer-panel-shift { opacity: 1; }
+/* === Contestability Spectrum (2D plot) === */
+.cspec-svg .layer-axes,
+.cspec-svg .layer-markers,
+.cspec-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.cspec-svg .layer-regions,
+.cspec-svg .layer-examples,
+.cspec-svg .layer-highlight,
+.cspec-svg .layer-panel-ext,
+.cspec-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .cspec-svg .layer-panel-base { opacity: 0; }
+.show-extension .cspec-svg .layer-examples { opacity: 1; }
+.show-extension .cspec-svg .layer-panel-ext { opacity: 1; }
+.show-shift .cspec-svg .layer-panel-base { opacity: 0; }
+.show-shift .cspec-svg .layer-examples { opacity: 1; }
+.show-shift .cspec-svg .layer-regions { opacity: 1; }
+.show-shift .cspec-svg .layer-highlight { opacity: 1; }
+.show-shift .cspec-svg .layer-panel-shift { opacity: 1; }
+/* === Contestability Frames (P falls as barriers fall) === */
+.cfra-svg .layer-axes,
+.cfra-svg .layer-cost-curves,
+.cfra-svg .layer-state-monopoly,
+.cfra-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.cfra-svg .layer-state-contestable,
+.cfra-svg .layer-state-perfect,
+.cfra-svg .layer-panel-ext,
+.cfra-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .cfra-svg .layer-state-monopoly { opacity: 0; }
+.show-extension .cfra-svg .layer-panel-base { opacity: 0; }
+.show-extension .cfra-svg .layer-state-contestable { opacity: 1; }
+.show-extension .cfra-svg .layer-panel-ext { opacity: 1; }
+.show-shift .cfra-svg .layer-state-monopoly { opacity: 0; }
+.show-shift .cfra-svg .layer-panel-base { opacity: 0; }
+.show-shift .cfra-svg .layer-state-perfect { opacity: 1; }
+.show-shift .cfra-svg .layer-panel-shift { opacity: 1; }
 /* === Kinked Demand Curve Interactive === */
 .kink-svg .layer-axes,
 .kink-svg .layer-kink-point,

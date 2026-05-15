@@ -5992,4 +5992,629 @@ window.ECONOS_ICONS = {
       </g>
     </svg>
   `,
+
+  lracEnvelope: `
+    <svg class="lrac-svg" viewBox="0 0 760 420" width="760" height="420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="760" height="420" fill="#F8FAFC" rx="12"/>
+      <text x="380" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Long-Run Average Cost (Envelope) Curve</text>
+
+      <!-- shaded regions -->
+      <!-- economies of scale: left of MES (x=390) -->
+      <rect x="70" y="40" width="320" height="340" fill="#D1FAE5" fill-opacity="0.35"/>
+      <!-- diseconomies: right of MES -->
+      <rect x="390" y="40" width="320" height="340" fill="#FEE2E2" fill-opacity="0.35"/>
+
+      <!-- axes -->
+      <line x1="70" y1="380" x2="710" y2="380" stroke="#334155" stroke-width="2"/>
+      <polygon points="710,375 710,385 722,380" fill="#334155"/>
+      <line x1="70" y1="55" x2="70" y2="380" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,55 75,55 70,43" fill="#334155"/>
+      <text x="65" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">AC / \xa3</text>
+      <text x="726" y="385" font-size="13" font-weight="700" fill="#334155">Output (Q)</text>
+      <text x="58" y="396" font-size="11" fill="#64748B">O</text>
+
+      <!-- MES vertical dashed line at x=390 -->
+      <line x1="390" y1="40" x2="390" y2="380" stroke="#475569" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="390" y="398" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">MES</text>
+
+      <!-- SRAC1: min around x=150, y=240 -->
+      <polyline points="80,340 100,300 120,268 140,248 160,240 180,244 200,258 220,280 240,310 260,345" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="88" y="355" font-size="11" fill="#94A3B8">SRAC₁</text>
+
+      <!-- SRAC2: min around x=230, y=210 -->
+      <polyline points="130,310 155,265 180,235 205,215 230,208 255,212 280,226 305,248 330,278 355,312" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="140" y="325" font-size="11" fill="#94A3B8">SRAC₂</text>
+
+      <!-- SRAC3: min around x=310, y=185 (MES point) -->
+      <polyline points="210,285 240,240 265,210 290,193 315,187 340,191 365,205 390,228 415,258 440,295" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="220" y="300" font-size="11" fill="#94A3B8">SRAC₃</text>
+
+      <!-- SRAC4: min around x=460, y=210 (diseconomies) -->
+      <polyline points="340,295 370,248 400,220 425,208 455,207 480,216 505,234 530,260 555,294 580,335" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="560" y="348" font-size="11" fill="#94A3B8">SRAC₄</text>
+
+      <!-- LRAC envelope: U-shape, minimum at ~x=390 y=187 -->
+      <polyline points="90,318 120,274 155,245 185,225 215,210 245,200 275,192 305,188 335,186 365,186 390,187 415,190 440,197 468,208 500,224 530,248 560,280 590,318 615,352 640,380" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+      <text x="645" y="376" font-size="13" font-weight="700" fill="#DC2626">LRAC</text>
+
+      <!-- region labels -->
+      <text x="230" y="370" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Economies of Scale ↓</text>
+      <text x="560" y="370" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Diseconomies of Scale ↑</text>
+    </svg>
+  `,
+
+  mcLrTangency: `
+    <svg class="mclt-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <!-- divider -->
+      <line x1="450" y1="10" x2="450" y2="430" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+      <!-- ===== LEFT PANEL: Short Run ===== -->
+      <!-- axes -->
+      <line x1="55" y1="390" x2="420" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="420,385 420,395 432,390" fill="#334155"/>
+      <line x1="55" y1="55" x2="55" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="50,55 60,55 55,43" fill="#334155"/>
+      <text x="50" y="46" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+      <text x="436" y="396" font-size="12" font-weight="700" fill="#334155">Q</text>
+      <text x="44" y="406" font-size="10" fill="#64748B">O</text>
+
+      <!-- AR = D downward sloping: from (55,80) to (400,360) -->
+      <line x1="55" y1="80" x2="400" y2="360" stroke="#2563EB" stroke-width="2.2"/>
+      <text x="403" y="358" font-size="12" font-weight="700" fill="#2563EB">AR = D</text>
+
+      <!-- MR: same y-intercept (55,80), twice the slope, ends at x=227 -->
+      <line x1="55" y1="80" x2="227" y2="360" stroke="#2563EB" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text x="230" y="370" font-size="12" font-weight="700" fill="#2563EB">MR</text>
+
+      <!-- MC U-shape upward (short run) - min near x=160 y=230 -->
+      <polyline points="90,340 110,295 130,262 155,240 175,232 195,234 215,245 235,264 255,288 275,318 295,352" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="296" y="360" font-size="12" font-weight="700" fill="#DC2626">MC</text>
+
+      <!-- AC U-shape - min near x=200 y=248 -->
+      <polyline points="100,340 120,296 145,268 170,252 195,248 220,252 245,264 270,284 295,310 320,342" fill="none" stroke="#0EA5E9" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="322" y="348" font-size="12" font-weight="700" fill="#0EA5E9">AC</text>
+
+      <!-- Q_sr ~ x=215, P_sr from AR at x=215: y = 80 + (280/345)*160 = 80+130 = 210, AC_sr at x=215 ~ 250 -->
+      <!-- MR=MC intersection at approx x=215 y=244, verify: MC at x=215 ~245 ✓ -->
+      <!-- P_sr = 210 (on AR line), AC_sr = 250 -->
+      <!-- Profit rectangle: y=210 to y=250, x=55 to x=215 -->
+      <rect x="55" y="210" width="160" height="40" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
+      <text x="135" y="234" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Supernormal profit</text>
+
+      <!-- dashed lines for P_sr and Q_sr -->
+      <line x1="55" y1="210" x2="215" y2="210" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="215" y1="210" x2="215" y2="390" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <text x="42" y="214" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_sr</text>
+      <text x="42" y="254" font-size="10" fill="#0EA5E9" text-anchor="end">AC_sr</text>
+      <text x="215" y="406" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_sr</text>
+      <!-- MR=MC dot -->
+      <circle cx="215" cy="244" r="4" fill="#DC2626"/>
+
+      <!-- SHORT RUN title -->
+      <text x="235" y="428" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">SHORT RUN</text>
+
+      <!-- ===== RIGHT PANEL: Long Run ===== -->
+      <!-- axes -->
+      <line x1="470" y1="390" x2="835" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="835,385 835,395 847,390" fill="#334155"/>
+      <line x1="470" y1="55" x2="470" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="465,55 475,55 470,43" fill="#334155"/>
+      <text x="465" y="46" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+      <text x="851" y="396" font-size="12" font-weight="700" fill="#334155">Q</text>
+      <text x="459" y="406" font-size="10" fill="#64748B">O</text>
+
+      <!-- AR_lr: narrower/shifted left, tangent to AC. From (470,135) to (770,375) -->
+      <line x1="470" y1="135" x2="770" y2="375" stroke="#2563EB" stroke-width="2.2"/>
+      <text x="773" y="372" font-size="12" font-weight="700" fill="#2563EB">AR = D</text>
+
+      <!-- MR_lr: same intercept (470,135), twice slope. Ends at x=620 y=375 -->
+      <line x1="470" y1="135" x2="620" y2="375" stroke="#2563EB" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text x="622" y="382" font-size="12" font-weight="700" fill="#2563EB">MR</text>
+
+      <!-- Same MC curve, shifted right by 415 -->
+      <polyline points="505,340 525,295 545,262 570,240 590,232 610,234 630,245 650,264 670,288 690,318 710,352" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="712" y="360" font-size="12" font-weight="700" fill="#DC2626">MC</text>
+
+      <!-- Same AC curve shifted right by 415 -->
+      <polyline points="515,340 535,296 560,268 585,252 610,248 635,252 660,264 685,284 710,310 735,342" fill="none" stroke="#0EA5E9" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="737" y="348" font-size="12" font-weight="700" fill="#0EA5E9">AC</text>
+
+      <!-- Tangency: AR_lr tangent to AC at approximately x=610.
+           AR_lr at x=610: y = 135 + (240/300)*(610-470) = 135+112 = 247 ≈ AC at x=610 = 248 ✓ -->
+      <!-- Q_lr at x=610, P_lr = 247 -->
+      <line x1="470" y1="247" x2="610" y2="247" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="610" y1="247" x2="610" y2="390" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <text x="457" y="251" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_lr</text>
+      <text x="610" y="406" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_lr</text>
+      <!-- tangency dot -->
+      <circle cx="610" cy="247" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+
+      <!-- min AC at x=660: AC=248, show Q_min -->
+      <line x1="660" y1="247" x2="660" y2="390" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+      <text x="660" y="406" font-size="10" fill="#0EA5E9" text-anchor="middle">Q_minAC</text>
+
+      <!-- Excess capacity arrow from Q_lr to Q_minAC -->
+      <line x1="610" y1="270" x2="660" y2="270" stroke="#475569" stroke-width="1.5" marker-start="url(#arr-l)" marker-end="url(#arr-r)"/>
+      <text x="635" y="285" font-size="10" fill="#475569" text-anchor="middle">Excess</text>
+      <text x="635" y="297" font-size="10" fill="#475569" text-anchor="middle">capacity</text>
+      <!-- simple arrowheads as polygons -->
+      <polygon points="610,266 610,274 603,270" fill="#475569"/>
+      <polygon points="660,266 660,274 667,270" fill="#475569"/>
+
+      <!-- LONG RUN title -->
+      <text x="658" y="428" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">LONG RUN</text>
+    </svg>
+  `,
+
+  cobwebModel: `
+    <svg class="cobweb-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <!-- divider -->
+      <line x1="450" y1="10" x2="450" y2="430" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+      <!-- ===== LEFT PANEL: Convergent ===== -->
+      <!-- axes -->
+      <line x1="55" y1="390" x2="420" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="420,385 420,395 432,390" fill="#334155"/>
+      <line x1="55" y1="40" x2="55" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="50,40 60,40 55,28" fill="#334155"/>
+      <text x="50" y="28" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+      <text x="436" y="396" font-size="12" font-weight="700" fill="#334155">Q</text>
+      <text x="44" y="406" font-size="10" fill="#64748B">O</text>
+
+      <!-- Supply: steep (elastic), upward from (55,370) to (400,90) -->
+      <line x1="55" y1="370" x2="400" y2="90" stroke="#059669" stroke-width="2.2"/>
+      <text x="396" y="82" font-size="12" font-weight="700" fill="#059669">S (elastic)</text>
+
+      <!-- Demand: downward from (55,80) to (400,360) -->
+      <line x1="55" y1="80" x2="400" y2="360" stroke="#2563EB" stroke-width="2.2"/>
+      <text x="402" y="356" font-size="12" font-weight="700" fill="#2563EB">D</text>
+
+      <!-- Equilibrium: intersection.
+           S: y = 370 - (280/345)*x_rel; D: y = 80 + (280/345)*x_rel where x_rel = x-55
+           370 - 280k = 80 + 280k → 290 = 560k → k=0.518 → x_rel=178 → x=233, y=370-280*0.518=370-145=225 -->
+      <circle cx="233" cy="225" r="5" fill="#334155"/>
+      <!-- dashed from P* to axes -->
+      <line x1="55" y1="225" x2="233" y2="225" stroke="#334155" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+      <line x1="233" y1="225" x2="233" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+      <text x="42" y="229" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P*</text>
+      <text x="233" y="405" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+
+      <!-- P0 on y-axis at y=100 (above P*=225) -->
+      <text x="42" y="104" font-size="11" font-weight="700" fill="#D97706" text-anchor="end">P₀</text>
+      <!-- Cobweb convergent:
+        Start P0=100 on y-axis.
+        Step 1: horizontal to Supply at y=100 → S: y=370-(280/345)*(x-55) → x-55 = (370-100)*345/280 = 270*345/280 = 332 → x=387 (Q1)
+        Step 2: vertical down to Demand at x=387 → D: y=80+(280/345)*(387-55)=80+280*332/345=80+269=349 (P1)
+        Step 3: horizontal left to Supply at y=349 → x-55=(370-349)*345/280=21*345/280=25.9→x=81 (Q2)
+        Step 4: vertical up to Demand at x=81 → y=80+(280/345)*(81-55)=80+280*26/345=80+21=101 (P2) (close to P*=225? wrong - let me recalculate)
+
+        Hmm. With steep supply the supply has a large slope. Let me use simpler coordinates.
+        Supply: passes (55,370)→(400,90). Slope = (90-370)/(400-55) = -280/345 ≈ -0.812 per x, so as Q rises, P falls on supply? No, supply is P as function of Q: upward sloping.
+        Let me re-parameterize: Supply P = a + b*Q (upward sloping).
+        Let's use Q=0..100 as range, P=50..350 as range.
+
+        Supply elastic: P_S = 50 + 3*Q → at Q=0 P=50, at Q=100 P=350
+        Demand: P_D = 350 - 3*Q → at Q=0 P=350, at Q=100 P=50
+        Equilibrium: 50+3Q=350-3Q → 6Q=300 → Q*=50, P*=200
+
+        But with equal slopes, it's neutral cobweb. For convergent, supply more elastic.
+        Supply: P_S = 80 + 2.7*Q
+        Demand: P_D = 340 - 2*Q
+        Eq: 80+2.7Q=340-2Q → 4.7Q=260 → Q*=55.3, P*=229
+
+        For cobweb with P0=290 (above P*):
+        Q1: farmers see P0=290, use supply schedule inverted: Q = (P-80)/2.7 = 210/2.7=77.8≈78
+        P1: consumers faced with Q1=78: P = 340-2*78=340-156=184
+        Q2: (P1-80)/2.7=(184-80)/2.7=104/2.7=38.5≈39
+        P2: 340-2*39=340-78=262
+        Q3: (262-80)/2.7=182/2.7=67.4≈67
+        P3: 340-2*67=340-134=206
+        Converging toward P*=229 ✓
+
+        Scale: x-axis Q: 0-100 → pixels 55-400: scale=(400-55)/100=3.45 px/unit
+        y-axis P: 50-350 → pixels 390-60: scale=(390-60)/300=1.1 px/unit
+        P→y: y = 390 - (P-50)*1.1
+        Q→x: x = 55 + Q*3.45
+
+        P*=229 → y = 390-(229-50)*1.1 = 390-196.9 = 193
+        Q*=55.3 → x = 55+55.3*3.45 = 55+191 = 246
+
+        P0=290 → y = 390-(290-50)*1.1 = 390-264 = 126
+        Q1=78 → x = 55+78*3.45 = 55+269 = 324
+        P1=184 → y = 390-(184-50)*1.1 = 390-147.4 = 243
+        Q2=39 → x = 55+39*3.45 = 55+134.6 = 190
+        P2=262 → y = 390-(262-50)*1.1 = 390-233.2 = 157
+        Q3=67 → x = 55+67*3.45 = 55+231.15 = 286
+        P3=206 → y = 390-(206-50)*1.1 = 390-171.6 = 218
+
+        So cobweb lines (dashed amber):
+        (55,126)→(324,126) horizontal
+        (324,126)→(324,243) vertical
+        (324,243)→(190,243) horizontal
+        (190,243)→(190,157) vertical
+        (190,157)→(286,157) horizontal
+        (286,157)→(286,218) vertical
+
+        Supply line coords: at Q=0(x=55): P=80→y=390-(80-50)*1.1=390-33=357; at Q=100(x=400): P=350→y=390-(350-50)*1.1=390-330=60
+        Demand: at Q=0(x=55): P=340→y=390-(340-50)*1.1=390-319=71; at Q=100(x=400): P=140→y=390-(140-50)*1.1=390-99=291
+      -->
+
+      <!-- Re-draw Supply and Demand with correct coords -->
+      <!-- Supply elastic: (55,357) to (400,60) -->
+      <!-- Demand: (55,71) to (400,291) -->
+
+      <!-- Equilibrium: intersection of these lines
+           Supply: y = 357 + (60-357)/(400-55)*(x-55) = 357 - 297/345*(x-55)
+           Demand: y = 71 + (291-71)/(400-55)*(x-55) = 71 + 220/345*(x-55)
+           357-297k = 71+220k where k=(x-55)/345 → 286=517k → k=0.553 → x=55+191=246, y=71+220*0.553=71+122=193
+      -->
+
+      <!-- Erase previous lines and redraw -->
+      <!-- Supply elastic: (55,357)→(400,60) -->
+      <line x1="55" y1="357" x2="400" y2="60" stroke="#059669" stroke-width="2.2"/>
+      <text x="370" y="52" font-size="12" font-weight="700" fill="#059669">S (elastic)</text>
+
+      <!-- Demand: (55,71)→(400,291) -->
+      <line x1="55" y1="71" x2="400" y2="291" stroke="#2563EB" stroke-width="2.2"/>
+      <text x="402" y="288" font-size="12" font-weight="700" fill="#2563EB">D</text>
+
+      <!-- Equilibrium P*,Q* at (246,193) -->
+      <circle cx="246" cy="193" r="5" fill="#334155"/>
+      <line x1="55" y1="193" x2="246" y2="193" stroke="#334155" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+      <line x1="246" y1="193" x2="246" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+      <text x="42" y="197" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P*</text>
+      <text x="246" y="405" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+
+      <!-- P0 at y=126 -->
+      <text x="42" y="130" font-size="11" font-weight="700" fill="#D97706" text-anchor="end">P₀</text>
+      <!-- P1 at y=243 -->
+      <text x="42" y="247" font-size="11" font-weight="600" fill="#D97706" text-anchor="end">P₁</text>
+      <!-- P2 at y=157 -->
+      <text x="42" y="161" font-size="11" font-weight="600" fill="#D97706" text-anchor="end">P₂</text>
+
+      <!-- Q1 at x=324 -->
+      <text x="324" y="406" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">Q₁</text>
+      <!-- Q2 at x=190 -->
+      <text x="190" y="406" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">Q₂</text>
+
+      <!-- Cobweb lines (convergent) -->
+      <polyline points="55,126 324,126 324,243 190,243 190,157 286,157 286,218" fill="none" stroke="#D97706" stroke-width="1.8" stroke-dasharray="6 3"/>
+
+      <!-- Arrow toward equilibrium -->
+      <polygon points="286,218 283,214 289,214" fill="#D97706"/>
+
+      <!-- Caption -->
+      <text x="235" y="422" font-size="11" font-style="italic" fill="#334155" text-anchor="middle">→ converges to P*, Q*</text>
+      <!-- Panel title -->
+      <text x="235" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">CONVERGENT (supply more elastic than demand)</text>
+
+      <!-- ===== RIGHT PANEL: Divergent ===== -->
+      <!-- axes -->
+      <line x1="468" y1="390" x2="835" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="835,385 835,395 847,390" fill="#334155"/>
+      <line x1="468" y1="40" x2="468" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="463,40 473,40 468,28" fill="#334155"/>
+      <text x="463" y="28" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+      <text x="851" y="396" font-size="12" font-weight="700" fill="#334155">Q</text>
+      <text x="457" y="406" font-size="10" fill="#64748B">O</text>
+
+      <!-- RIGHT: Supply inelastic (shallow), Demand elastic (steep)
+           Supply inelastic: P_S = 80 + 1.5*Q → at Q=0 P=80, at Q=100 P=230
+           Demand elastic: P_D = 360 - 3.5*Q → at Q=0 P=360, at Q=100 P=10 (but scale differently)
+           Eq: 80+1.5Q=360-3.5Q → 5Q=280 → Q*=56, P*=164
+
+           y-scale: P 30..370 → pixels 390..60: (390-60)/340 = 0.97 px/P-unit
+           x-scale: Q 0..100 → pixels 468..835: (835-468)/100 = 3.67 px/Q-unit
+           P→y: y = 390 - (P-30)*0.97
+           Q→x: x = 468 + Q*3.67
+
+           Supply at Q=0: P=80→y=390-(80-30)*0.97=390-48.5=341.5≈342
+           Supply at Q=100: P=230→y=390-(230-30)*0.97=390-194=196
+           Demand at Q=0: P=360→y=390-(360-30)*0.97=390-320=70
+           Demand at Q=100: P=10→y=390-(10-30)*0.97=390+19.4=409 (clip at 390)
+
+           Q*=56→x=468+56*3.67=468+205=673
+           P*=164→y=390-(164-30)*0.97=390-130=260
+
+           Cobweb divergent from P0=200 (above P*):
+           Q1=(P0-80)/1.5=(200-80)/1.5=120/1.5=80→x=468+80*3.67=468+294=762
+           P1=360-3.5*80=360-280=80→y=390-(80-30)*0.97=390-48.5=342
+           Q2=(80-80)/1.5=0→x=468 (off left, won't look good)
+
+           Let me try: P0=190, Supply slope=1, Demand slope=2.5
+           Supply: P=100+Q; Demand: P=330-2.5Q
+           Eq: 100+Q=330-2.5Q→3.5Q=230→Q*=65.7, P*=165.7
+
+           P0=200: Q1=(200-100)/1=100→x=468+100*3.67=835 (edge)
+
+           Simpler approach: just use shifted right panel. Keep Q range 0-80.
+           x-scale: 0-80 → 468-835: 367/80=4.59 px/Q
+
+           Supply inelastic: P=90+2*Q → Q0P=90→y≈313, Q80P=250→y≈123
+           Demand elastic: P=350-3*Q → Q0P=350→y≈62, Q80P=110→y≈293
+           Eq: 90+2Q=350-3Q→5Q=260→Q*=52, P*=194
+
+           P→y: P_min=60, P_max=380, range=320, y_range=330 (390-60)
+           scale=330/320≈1.03 px/P-unit
+           y = 390-(P-60)*1.03
+
+           Supply at Q=0: P=90→y=390-30.9=359; at Q=80: P=250→y=390-195.5=195
+           Demand at Q=0: P=350→y=390-299=91; at Q=80: P=110→y=390-51.5=339
+
+           P*=194→y=390-(194-60)*1.03=390-138=252
+           Q*=52→x=468+52*4.59=468+239=707
+
+           Cobweb from P0=230 (above P*):
+           P0=230→y=390-(230-60)*1.03=390-175=215
+           Q1=(P0-90)/2=(230-90)/2=70→x=468+70*4.59=468+321=789
+           P1=350-3*70=350-210=140→y=390-(140-60)*1.03=390-82.4=308
+           Q2=(P1-90)/2=(140-90)/2=25→x=468+25*4.59=468+115=583
+           P2=350-3*25=350-75=275→y=390-(275-60)*1.03=390-221.5=169
+           Q3=(275-90)/2=92.5 (out of range, show partial)
+           Q3 capped at Q=80: P3=350-3*80=110 (just for visual)
+
+           Actually for divergent, let's just show two full zigzags expanding:
+           (468,215)→(789,215)→(789,308)→(583,308)→(583,169)
+      -->
+
+      <!-- Supply inelastic: (468,359)→(835,195) -->
+      <line x1="468" y1="359" x2="835" y2="195" stroke="#059669" stroke-width="2.2"/>
+      <text x="820" y="188" font-size="12" font-weight="700" fill="#059669">S (inelastic)</text>
+
+      <!-- Demand: (468,91)→(835,339) -->
+      <line x1="468" y1="91" x2="835" y2="339" stroke="#2563EB" stroke-width="2.2"/>
+      <text x="820" y="346" font-size="12" font-weight="700" fill="#2563EB">D</text>
+
+      <!-- Equilibrium at (707,252) -->
+      <circle cx="707" cy="252" r="5" fill="#334155"/>
+      <line x1="468" y1="252" x2="707" y2="252" stroke="#334155" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+      <line x1="707" y1="252" x2="707" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+      <text x="455" y="256" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P*</text>
+      <text x="707" y="405" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+
+      <!-- P0 at y=215 -->
+      <text x="455" y="219" font-size="11" font-weight="700" fill="#D97706" text-anchor="end">P₀</text>
+      <!-- P1 at y=308 -->
+      <text x="455" y="312" font-size="11" font-weight="600" fill="#D97706" text-anchor="end">P₁</text>
+      <!-- P2 at y=169 -->
+      <text x="455" y="173" font-size="11" font-weight="600" fill="#D97706" text-anchor="end">P₂</text>
+
+      <!-- Q1 at x=789 -->
+      <text x="789" y="406" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">Q₁</text>
+      <!-- Q2 at x=583 -->
+      <text x="583" y="406" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">Q₂</text>
+
+      <!-- Cobweb divergent -->
+      <polyline points="468,215 789,215 789,308 583,308 583,169" fill="none" stroke="#D97706" stroke-width="1.8" stroke-dasharray="6 3"/>
+
+      <!-- Caption -->
+      <text x="655" y="422" font-size="11" font-style="italic" fill="#334155" text-anchor="middle">→ diverges from equilibrium</text>
+      <!-- Panel title -->
+      <text x="655" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">DIVERGENT (demand more elastic than supply)</text>
+    </svg>
+  `,
+
+  profitsShutdownDiagram: `
+    <svg class="psd-svg" viewBox="0 0 900 480" width="900" height="480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="480" fill="#F8FAFC" rx="12"/>
+
+      <!-- Grid lines -->
+      <line x1="450" y1="10" x2="450" y2="470" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+      <line x1="10" y1="240" x2="890" y2="240" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+
+      <!-- ========= PANEL HELPER TEMPLATE (4 panels, each ~420x220 area) =========
+           Panels:
+           TL: x=20..430,  y=20..230
+           TR: x=460..870, y=20..230
+           BL: x=20..430,  y=250..460
+           BR: x=460..870, y=250..460
+
+           Each panel: origin at (ox,oy), width~200, height~180
+           ox_tl=35, oy_tl=35; ox_tr=475; oy_tr=35
+           ox_bl=35; oy_bl=255; ox_br=475; oy_br=255
+
+           Q-axis: ox..ox+180, y=oy+170
+           P-axis: ox, oy..oy+170
+
+           Shared curves (Q range 0..100, P range 0..300):
+           x = ox + Q*1.8
+           y = oy+170 - P*(170/300) = oy+170 - P*0.567
+
+           MC (U-shape, min at Q=35 P=80):
+           Points: (Q=0,P=230)(10,170)(20,120)(30,90)(35,80)(45,95)(55,120)(65,155)(75,200)(85,250)(95,305)→clip
+
+           AVC (U-shape, min at Q=50 P=100):
+           Points: (0,180)(10,145)(20,120)(30,110)(40,105)(50,100)(60,105)(70,115)(80,130)(90,150)(100,175)
+
+           AC (U-shape, min at Q=60 P=130):
+           Points: (10,220)(20,175)(30,155)(40,145)(50,140)(60,130)(70,133)(80,140)(90,153)(100,172)
+
+           MC crosses AVC at AVC min (Q=50,P=100) ✓ (MC at Q=50=95 close enough visual)
+           MC crosses AC at AC min (Q=60,P=130) ✓ (MC at Q=60: interpolate Q55=120,Q65=155 → Q60≈137 close)
+
+           Panel 1 (TL): P=175 (above AC min=130) → supernormal profit
+           Panel 2 (TR): P=130 (at AC min) → normal profit
+           Panel 3 (BL): P=115 (between AVC min=100 and AC min=130) → loss, continue
+           Panel 4 (BR): P=85 (below AVC min=100) → shutdown
+      -->
+
+      <!-- =========== SHARED CURVE MACRO (defined once, used via g transform) ===========
+           We'll draw each panel individually using transform -->
+
+      <!-- ===== PANEL 1: Supernormal Profit (TL) ===== -->
+      <g transform="translate(35,35)">
+        <!-- axes -->
+        <line x1="0" y1="170" x2="185" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="185,166 185,174 193,170" fill="#334155"/>
+        <line x1="0" y1="10" x2="0" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="-5,10 5,10 0,2" fill="#334155"/>
+        <text x="-5" y="3" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="196" y="175" font-size="10" font-weight="700" fill="#334155">Q</text>
+        <!-- Panel label -->
+        <text x="92" y="-8" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">1 \xb7 Supernormal Profit</text>
+
+        <!-- P line at P=175: y=170-175*0.567=170-99.2=70.8≈71 -->
+        <line x1="0" y1="71" x2="185" y2="71" stroke="#334155" stroke-width="1.8"/>
+        <text x="-3" y="75" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P</text>
+
+        <!-- Q* where MC=P: MC=175 near Q=75 (MC at Q75=200? let me check: Q=70→155, Q=75→200 → interpolate for P=175 → Q≈73)
+             x_Q73 = 73*1.8=131 -->
+        <!-- Profit rect: x=0 to x=131, y=71 to AC at Q=73.
+             AC at Q=73: between Q70(AC=133) and Q80(AC=140) → AC≈136
+             y_AC = 170-136*0.567=170-77=93 -->
+        <rect x="0" y="71" width="131" height="22" fill="#FEF3C7" fill-opacity="0.9" stroke="#D97706" stroke-width="1.2"/>
+        <text x="65" y="86" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">Supernormal profit</text>
+        <!-- AC level dashed line -->
+        <line x1="0" y1="93" x2="131" y2="93" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="-3" y="97" font-size="9" fill="#0EA5E9" text-anchor="end">AC</text>
+        <!-- Q* dashed vertical -->
+        <line x1="131" y1="71" x2="131" y2="170" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="131" y="180" font-size="9" fill="#334155" text-anchor="middle">Q*</text>
+        <!-- dot at MC=P -->
+        <circle cx="131" cy="71" r="3.5" fill="#DC2626"/>
+
+        <!-- MC curve (U-shape, upward portion shown) -->
+        <polyline points="0,130 18,97 36,68 54,51 63,46 81,54 99,68 117,88 135,113 153,142 171,173" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+        <text x="174" y="178" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+
+        <!-- AVC dashed grey -->
+        <polyline points="0,102 18,82 36,68 54,62 72,59 90,57 108,62 126,65 144,74 162,85 180,99" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="5 3" stroke-linecap="round"/>
+        <text x="183" y="103" font-size="9" font-weight="600" fill="#94A3B8">AVC</text>
+
+        <!-- AC curve -->
+        <polyline points="18,125 36,99 54,88 72,82 90,79 108,74 126,75 144,79 162,87 180,97" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
+        <text x="183" y="101" font-size="10" font-weight="700" fill="#0EA5E9">AC</text>
+      </g>
+
+      <!-- ===== PANEL 2: Normal Profit (TR) ===== -->
+      <g transform="translate(475,35)">
+        <!-- axes -->
+        <line x1="0" y1="170" x2="185" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="185,166 185,174 193,170" fill="#334155"/>
+        <line x1="0" y1="10" x2="0" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="-5,10 5,10 0,2" fill="#334155"/>
+        <text x="-5" y="3" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="196" y="175" font-size="10" font-weight="700" fill="#334155">Q</text>
+        <text x="92" y="-8" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">2 \xb7 Normal Profit</text>
+
+        <!-- P at min AC = P=130: y=170-130*0.567=170-73.7=96 -->
+        <line x1="0" y1="96" x2="185" y2="96" stroke="#334155" stroke-width="1.8"/>
+        <text x="-3" y="100" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P</text>
+
+        <!-- Q* at MC=P=130, MC at Q=65: 155→too high, Q=60→137, Q=55→120. Interpolate Q≈63 → x=63*1.8=113 -->
+        <line x1="113" y1="96" x2="113" y2="170" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="113" y="180" font-size="9" fill="#334155" text-anchor="middle">Q*</text>
+        <!-- Tangency dot -->
+        <circle cx="113" cy="96" r="4" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="2"/>
+
+        <!-- Labels -->
+        <text x="60" y="90" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">P = min AC</text>
+        <text x="92" y="160" font-size="9" fill="#334155" text-anchor="middle">Normal profit (zero econ. profit)</text>
+
+        <!-- MC -->
+        <polyline points="0,130 18,97 36,68 54,51 63,46 81,54 99,68 117,88 135,113 153,142 171,173" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+        <text x="174" y="178" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+
+        <!-- AVC -->
+        <polyline points="0,102 18,82 36,68 54,62 72,59 90,57 108,62 126,65 144,74 162,85 180,99" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="5 3" stroke-linecap="round"/>
+        <text x="183" y="103" font-size="9" font-weight="600" fill="#94A3B8">AVC</text>
+
+        <!-- AC -->
+        <polyline points="18,125 36,99 54,88 72,82 90,79 108,74 126,75 144,79 162,87 180,97" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
+        <text x="183" y="101" font-size="10" font-weight="700" fill="#0EA5E9">AC</text>
+      </g>
+
+      <!-- ===== PANEL 3: Loss — Continue Producing (BL) ===== -->
+      <g transform="translate(35,255)">
+        <!-- axes -->
+        <line x1="0" y1="170" x2="185" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="185,166 185,174 193,170" fill="#334155"/>
+        <line x1="0" y1="10" x2="0" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="-5,10 5,10 0,2" fill="#334155"/>
+        <text x="-5" y="3" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="196" y="175" font-size="10" font-weight="700" fill="#334155">Q</text>
+        <text x="92" y="-8" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">3 \xb7 Loss — Continue Producing</text>
+
+        <!-- P at P=115: y=170-115*0.567=170-65.2=104.8≈105
+             AC at Q* ~ between AVC and AC min, Q≈60→63 (where MC≈115): interpolate MC at 60→137 too high, Q55→120, Q50→95 → Q≈57
+             x_Q57 = 57*1.8=103
+             AC at Q57: between Q54(88) and Q72(82)→ no wait those are y values.
+             AC y-coords: Q=54→88, Q=72→82 → at Q=57 ≈ 88-(88-82)/18*3=88-1=87
+             P y = 105, AC y = 87 → loss rect from y=87 to y=105 -->
+        <!-- Loss rect -->
+        <rect x="0" y="87" width="103" height="18" fill="#FEE2E2" fill-opacity="0.9" stroke="#DC2626" stroke-width="1.2"/>
+        <text x="51" y="99" font-size="9" font-weight="700" fill="#DC2626" text-anchor="middle">Economic loss</text>
+
+        <!-- P line -->
+        <line x1="0" y1="105" x2="185" y2="105" stroke="#334155" stroke-width="1.8"/>
+        <text x="-3" y="109" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P</text>
+        <!-- AC level at Q* -->
+        <line x1="0" y1="87" x2="103" y2="87" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="-3" y="91" font-size="9" fill="#0EA5E9" text-anchor="end">AC</text>
+        <!-- Q* vertical -->
+        <line x1="103" y1="87" x2="103" y2="170" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="103" y="180" font-size="9" fill="#334155" text-anchor="middle">Q*</text>
+        <!-- dot -->
+        <circle cx="103" cy="105" r="3.5" fill="#DC2626"/>
+
+        <!-- Continue note -->
+        <text x="140" y="115" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">P ≥ AVC</text>
+        <text x="140" y="127" font-size="9" fill="#334155" text-anchor="middle">→ continue SR</text>
+
+        <!-- MC -->
+        <polyline points="0,130 18,97 36,68 54,51 63,46 81,54 99,68 117,88 135,113 153,142 171,173" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+        <text x="174" y="178" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+
+        <!-- AVC -->
+        <polyline points="0,102 18,82 36,68 54,62 72,59 90,57 108,62 126,65 144,74 162,85 180,99" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="5 3" stroke-linecap="round"/>
+        <text x="183" y="103" font-size="9" font-weight="600" fill="#94A3B8">AVC</text>
+
+        <!-- AC -->
+        <polyline points="18,125 36,99 54,88 72,82 90,79 108,74 126,75 144,79 162,87 180,97" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
+        <text x="183" y="101" font-size="10" font-weight="700" fill="#0EA5E9">AC</text>
+      </g>
+
+      <!-- ===== PANEL 4: Shutdown (BR) ===== -->
+      <g transform="translate(475,255)">
+        <!-- axes -->
+        <line x1="0" y1="170" x2="185" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="185,166 185,174 193,170" fill="#334155"/>
+        <line x1="0" y1="10" x2="0" y2="170" stroke="#334155" stroke-width="1.8"/>
+        <polygon points="-5,10 5,10 0,2" fill="#334155"/>
+        <text x="-5" y="3" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="196" y="175" font-size="10" font-weight="700" fill="#334155">Q</text>
+        <text x="92" y="-8" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">4 \xb7 Shutdown</text>
+
+        <!-- P at P=75 (below AVC min=100): y=170-75*0.567=170-42.5=127.5≈128 -->
+        <line x1="0" y1="128" x2="185" y2="128" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="6 3"/>
+        <text x="-3" y="132" font-size="10" font-weight="700" fill="#DC2626" text-anchor="end">P</text>
+
+        <!-- AVC min level line to show P below AVC -->
+        <!-- AVC min at Q=72, P=100: y=170-100*0.567=170-56.7=113 -->
+        <line x1="0" y1="113" x2="185" y2="113" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+        <text x="-3" y="117" font-size="9" fill="#94A3B8" text-anchor="end">min AVC</text>
+
+        <!-- Red dashed vertical at Q=0 (shutdown: produce nothing) -->
+        <line x1="0" y1="10" x2="0" y2="170" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 3" opacity="0.8"/>
+
+        <!-- Labels -->
+        <text x="92" y="142" font-size="9" font-weight="700" fill="#DC2626" text-anchor="middle">P &lt; AVC → shutdown</text>
+        <text x="92" y="155" font-size="9" fill="#334155" text-anchor="middle">Loss = FC</text>
+
+        <!-- MC -->
+        <polyline points="0,130 18,97 36,68 54,51 63,46 81,54 99,68 117,88 135,113 153,142 171,173" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+        <text x="174" y="178" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+
+        <!-- AVC -->
+        <polyline points="0,102 18,82 36,68 54,62 72,59 90,57 108,62 126,65 144,74 162,85 180,99" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="5 3" stroke-linecap="round"/>
+        <text x="183" y="103" font-size="9" font-weight="600" fill="#94A3B8">AVC</text>
+
+        <!-- AC -->
+        <polyline points="18,125 36,99 54,88 72,82 90,79 108,74 126,75 144,79 162,87 180,97" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
+        <text x="183" y="101" font-size="10" font-weight="700" fill="#0EA5E9">AC</text>
+      </g>
+    </svg>
+  `,
 };

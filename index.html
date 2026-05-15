@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Brand tokens — kept inline so this landing page works standalone */
     :root {
       --ink: #0B1426;
       --ink-soft: #2A3650;
@@ -34,9 +33,9 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    .wrap { max-width: 880px; margin: 0 auto; width: 100%; }
+    .wrap { max-width: 960px; margin: 0 auto; width: 100%; }
 
-    /* ── Header / logo lockup (vertical, left-aligned) ── */
+    /* ── Header ── */
     .header {
       display: flex;
       flex-direction: column;
@@ -89,72 +88,112 @@
     .dy { color: var(--yellow); }
     .dp { color: var(--pink); }
 
-    /* ── Section title ── */
-    .section-title {
+    /* ── Theme section ── */
+    .theme-section { margin-bottom: 56px; }
+    .theme-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .theme-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .theme-name {
       font-family: 'Inter';
       font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.12em;
+      font-size: 14px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      color: var(--ink-soft);
     }
-    .section-title::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 999px;
-      background: var(--ink);
+    .theme-count {
+      margin-left: auto;
+      font-family: 'Inter';
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    /* ── Topic cards ── */
+    /* ── Topic grid ── */
     .topics {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
-      margin-bottom: 56px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
     }
     .topic {
       display: block;
-      padding: 24px 22px;
+      padding: 20px 18px 16px;
       background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 12px;
       text-decoration: none;
       color: inherit;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
     }
     .topic:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(11, 20, 38, 0.06);
+      box-shadow: 0 6px 18px rgba(11, 20, 38, 0.07);
       border-color: var(--ink);
+    }
+    .topic__accent {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 12px 12px 0 0;
     }
     .topic__num {
       font-family: 'Inter';
       font-weight: 700;
       font-size: 11px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 10px;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
     .topic__title {
       font-family: 'Fraunces', Georgia, serif;
       font-variation-settings: "opsz" 48, "SOFT" 50, "WONK" 1;
       font-weight: 700;
-      font-size: 22px;
+      font-size: 19px;
       letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 8px;
+      line-height: 1.15;
+      margin-bottom: 6px;
       color: var(--ink);
     }
     .topic__sub {
-      font-size: 14px;
-      color: var(--ink);
+      font-size: 13px;
+      color: var(--muted);
       line-height: 1.45;
+      margin-bottom: 12px;
     }
+
+    /* ── Availability badges ── */
+    .topic__badges {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-family: 'Inter';
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: 4px;
+    }
+    .badge--learn  { background: #dcfce7; color: #166534; }
+    .badge--link   { background: #fef9c3; color: #854d0e; }
+    .badge--land   { background: #dbeafe; color: #1e3a8a; }
+    .badge--locked { background: #f3f4f6; color: #9ca3af; }
 
     /* ── Principles strip ── */
     .principles {
@@ -206,6 +245,25 @@
       color: var(--ink);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .footer-legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer-legend-dot {
+      width: 8px; height: 8px;
+      border-radius: 2px;
     }
   </style>
   <script src="js/auth-check.js"></script>
@@ -222,36 +280,14 @@
     <section class="hero">
       <div class="eyebrow">A-Level Economics · Revision Platform</div>
       <h1>Revision built around how examiners actually mark<span class="dp">.</span></h1>
-      <p class="hero-lede">Bite-sized cards organised around the recurring friction types and frameworks that real Edexcel questions reward — not just topic-by-topic memorisation.</p>
+      <p class="hero-lede">Bite-sized cards organised around the recurring friction types and frameworks that real Edexcel questions reward &#8212; not just topic-by-topic memorisation.</p>
     </section>
 
-    <!-- ═══ TOPICS ═══ -->
-    <div class="section-title">Topics in progress</div>
-    <div class="topics">
-      <a class="topic" href="topic.html?topic=inflation">
-        <div class="topic__num">Theme 2.4</div>
-        <div class="topic__title">Inflation</div>
-        <div class="topic__sub">Demand-pull, cost-push, QE, deflation</div>
-      </a>
-      <a class="topic" href="topic.html?topic=ad">
-        <div class="topic__num">Theme 2.2</div>
-        <div class="topic__title">Aggregate Demand</div>
-        <div class="topic__sub">Components, slope, multiplier</div>
-      </a>
-      <a class="topic" href="topic.html?topic=unemployment">
-        <div class="topic__num">Theme 2.1.3</div>
-        <div class="topic__title">Employment &amp; Unemployment</div>
-        <div class="topic__sub">Types, diagnosis, policy responses</div>
-      </a>
-      <a class="topic" href="topic.html?topic=monetary">
-        <div class="topic__num">Theme 2.6.2</div>
-        <div class="topic__title">Monetary Policy</div>
-        <div class="topic__sub">Transmission, QE, credibility</div>
-      </a>
-    </div>
+    <!-- ═══ ALL TOPICS (rendered by JS) ═══ -->
+    <div id="topics-root"></div>
 
     <!-- ═══ PRINCIPLES ═══ -->
-    <div class="section-title">How we build it</div>
+    <div style="font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:18px;display:flex;align-items:center;gap:10px;"><span style="width:6px;height:6px;border-radius:999px;background:var(--ink);display:inline-block;"></span>How we build it</div>
     <div class="principles">
       <div class="principle">
         <div class="principle-num">01</div>
@@ -272,10 +308,140 @@
 
     <!-- ═══ FOOTER ═══ -->
     <div class="footer">
-      <div>4 of 55 topics · in development</div>
-      <div>Brand v1.0</div>
+      <div id="footer-count">63 topics across 4 themes</div>
+      <div class="footer-legend">
+        <div class="footer-legend-item">
+          <div class="footer-legend-dot" style="background:#dcfce7;border:1px solid #166534;"></div>
+          Learn it
+        </div>
+        <div class="footer-legend-item">
+          <div class="footer-legend-dot" style="background:#fef9c3;border:1px solid #854d0e;"></div>
+          Link it
+        </div>
+        <div class="footer-legend-item">
+          <div class="footer-legend-dot" style="background:#dbeafe;border:1px solid #1e3a8a;"></div>
+          Land it
+        </div>
+      </div>
     </div>
 
   </div>
+
+  <script src="js/topics.js"></script>
+  <script>
+    (function () {
+      var THEMES = [
+        {
+          num: 1,
+          name: 'Introduction to Markets and Market Failure',
+          ids: [
+            'basic_econ_problem','ppf','specialisation_money','economic_systems',
+            'demand','supply','market_equilibrium','ped','pes','yed_xed',
+            'price_functions','neg_externalities','pos_externalities','public_goods',
+            'info_gaps','environmental_econ','govt_intervention_tax',
+            'govt_intervention_subsidies','price_controls','govt_failure',
+            'behavioural_econ','unstable_markets'
+          ]
+        },
+        {
+          num: 2,
+          name: 'The National and Global Economy',
+          ids: [
+            'growth_measure','sol_wellbeing','inflation_meas','inflation',
+            'unemployment','bop_t2','ad','agg_supply','multiplier',
+            'growth_cycle','macro_objectives','fiscal_policy','monetary','supply_side'
+          ]
+        },
+        {
+          num: 3,
+          name: 'Business Behaviour and the Labour Market',
+          ids: [
+            'business_objectives','business_growth','short_run_costs','long_run_costs',
+            'profits_shutdown','efficiency','perfect_competition','monopoly',
+            'barriers_entry','monopoly_vs_competition','price_discrimination',
+            'monopolistic_competition','oligopoly','collusion_cartels','game_theory',
+            'profit_cost_changes','contestability','labour_markets','labour_supply_nmw'
+          ]
+        },
+        {
+          num: 4,
+          name: 'A Global Perspective',
+          ids: [
+            'globalisation','trade_spec','trading_blocs','protectionism',
+            'exchange_rates','intl_competitiveness','poverty','income_inequality'
+          ]
+        }
+      ];
+
+      var topicMap = {};
+      for (var i = 0; i < window.ECONOS_TOPICS.length; i++) {
+        var t = window.ECONOS_TOPICS[i];
+        topicMap[t.id] = t;
+      }
+
+      function getLandHref(id) {
+        return 'land_intro.html?topic=' + id;
+      }
+      function getLearnHref(id) {
+        return 'topic.html?topic=' + id;
+      }
+      function getLinkHref(id) {
+        return 'link_intro.html?topic=' + id;
+      }
+
+      function getBestHref(topic) {
+        if (topic.available.land) return getLandHref(topic.id);
+        if (topic.available.link) return getLinkHref(topic.id);
+        if (topic.available.learn) return getLearnHref(topic.id);
+        return '#';
+      }
+
+      function renderBadges(avail) {
+        var html = '<div class="topic__badges">';
+        html += '<span class="badge ' + (avail.learn ? 'badge--learn' : 'badge--locked') + '">Learn it</span>';
+        html += '<span class="badge ' + (avail.link  ? 'badge--link'  : 'badge--locked') + '">Link it</span>';
+        html += '<span class="badge ' + (avail.land  ? 'badge--land'  : 'badge--locked') + '">Land it</span>';
+        html += '</div>';
+        return html;
+      }
+
+      function renderTheme(theme) {
+        var html = '<div class="theme-section">';
+        html += '<div class="theme-header">';
+        html += '<div class="theme-num">Theme ' + theme.num + '</div>';
+        html += '<div class="theme-name">' + theme.name + '</div>';
+        html += '<div class="theme-count">' + theme.ids.length + ' topics</div>';
+        html += '</div>';
+        html += '<div class="topics">';
+
+        for (var i = 0; i < theme.ids.length; i++) {
+          var id = theme.ids[i];
+          var topic = topicMap[id];
+          if (!topic) continue;
+
+          var num = theme.num + '.' + (i + 1);
+          var href = getBestHref(topic);
+
+          html += '<a class="topic" href="' + href + '">';
+          html += '<div class="topic__accent" style="background:' + topic.color + '"></div>';
+          html += '<div class="topic__num">Theme ' + num + '</div>';
+          html += '<div class="topic__title">' + topic.name + '</div>';
+          html += '<div class="topic__sub">' + topic.sub + '</div>';
+          html += renderBadges(topic.available);
+          html += '</a>';
+        }
+
+        html += '</div></div>';
+        return html;
+      }
+
+      var root = document.getElementById('topics-root');
+      var html = '';
+      for (var t = 0; t < THEMES.length; t++) {
+        html += renderTheme(THEMES[t]);
+      }
+      root.innerHTML = html;
+    })();
+  </script>
 </body>
 </html>

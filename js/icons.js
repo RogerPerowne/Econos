@@ -870,32 +870,32 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="11" fill="#94A3B8" text-anchor="middle">O</text>
       </g>
 
-      <!-- ===== LAYER: PPF base curve (visible all states, faded in shift) ===== -->
+      <!-- ===== LAYER: PPF base curve — intercepts at axis midpoints ===== -->
       <g class="layer-ppf-base">
-        <path d="M 60,75 C 240,75 540,295 540,390" fill="none" stroke="#2563EB" stroke-width="3"/>
-        <text x="548" y="388" font-size="13" font-weight="700" fill="#2563EB">PPF₁</text>
+        <path d="M 60,220 C 170,220 310,340 310,395" fill="none" stroke="#2563EB" stroke-width="3"/>
+        <text x="315" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₁</text>
       </g>
 
       <!-- ===== LAYER: base points (show-base only) ===== -->
       <g class="layer-base-points">
-        <!-- Dashed gridlines for point A (t≈0.5 → ~368, 197) -->
-        <line x1="60" y1="197" x2="368" y2="197" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5 4"/>
-        <line x1="368" y1="400" x2="368" y2="197" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5 4"/>
+        <!-- Dashed gridlines for point A (t≈0.5 → ~226, 287) -->
+        <line x1="60" y1="287" x2="226" y2="287" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5 4"/>
+        <line x1="226" y1="400" x2="226" y2="287" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5 4"/>
         <!-- Point A: on the curve (efficient) -->
-        <circle cx="368" cy="197" r="7" fill="#2563EB"/>
-        <text x="378" y="193" font-size="13" font-weight="700" fill="#2563EB">A</text>
-        <text x="392" y="193" font-size="12" fill="#475569">— Efficient (on PPF)</text>
-        <!-- Point B: inside (inefficient) at ~(270, 270) -->
-        <circle cx="270" cy="270" r="7" fill="#D97706"/>
-        <text x="280" y="266" font-size="13" font-weight="700" fill="#D97706">B</text>
-        <text x="294" y="266" font-size="12" fill="#475569">— Inefficient (inside)</text>
-        <!-- Point C: outside (unattainable) at ~(440, 160) -->
-        <circle cx="440" cy="160" r="7" fill="#DC2626"/>
-        <text x="450" y="156" font-size="13" font-weight="700" fill="#DC2626">C</text>
-        <text x="464" y="156" font-size="12" fill="#475569">— Unattainable</text>
+        <circle cx="226" cy="287" r="7" fill="#2563EB"/>
+        <text x="236" y="283" font-size="13" font-weight="700" fill="#2563EB">A</text>
+        <text x="250" y="283" font-size="12" fill="#475569">— Efficient (on PPF)</text>
+        <!-- Point B: inside PPF (inefficient) -->
+        <circle cx="155" cy="330" r="7" fill="#D97706"/>
+        <text x="165" y="326" font-size="13" font-weight="700" fill="#D97706">B</text>
+        <text x="179" y="326" font-size="12" fill="#475569">— Inefficient (inside)</text>
+        <!-- Point C: outside PPF (unattainable) -->
+        <circle cx="330" cy="170" r="7" fill="#DC2626"/>
+        <text x="340" y="166" font-size="13" font-weight="700" fill="#DC2626">C</text>
+        <text x="354" y="166" font-size="12" fill="#475569">— Unattainable</text>
         <!-- Zone labels -->
-        <text x="195" y="330" font-size="11" fill="#D97706" font-style="italic">Inefficient zone</text>
-        <text x="400" y="120" font-size="11" fill="#DC2626" font-style="italic">Unattainable zone</text>
+        <text x="100" y="370" font-size="11" fill="#D97706" font-style="italic">Inefficient zone</text>
+        <text x="360" y="130" font-size="11" fill="#DC2626" font-style="italic">Unattainable zone</text>
       </g>
 
       <!-- ===== LAYER: legend base (right panel) ===== -->
@@ -922,27 +922,27 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: opportunity cost (show-extension only) ===== -->
       <g class="layer-opp-cost">
-        <!-- Point D: near top-left t≈0.22 → (~195, 115) -->
-        <line x1="60" y1="115" x2="195" y2="115" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
-        <line x1="195" y1="400" x2="195" y2="115" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
-        <circle cx="195" cy="115" r="7" fill="#D97706"/>
-        <text x="181" y="112" font-size="13" font-weight="700" fill="#D97706">D</text>
+        <!-- Point D: t≈0.25 on new PPF₁ → (~145, 240) -->
+        <line x1="60" y1="240" x2="145" y2="240" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="145" y1="400" x2="145" y2="240" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="145" cy="240" r="7" fill="#D97706"/>
+        <text x="150" y="234" font-size="13" font-weight="700" fill="#D97706">D</text>
         <!-- Axis tick labels for D -->
-        <text x="50" y="119" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₁</text>
-        <text x="195" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₁</text>
-        <!-- Point E: near bottom-right t≈0.72 → (~478, 287) -->
-        <line x1="60" y1="287" x2="478" y2="287" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
-        <line x1="478" y1="400" x2="478" y2="287" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
-        <circle cx="478" cy="287" r="7" fill="#D97706"/>
-        <text x="488" y="284" font-size="13" font-weight="700" fill="#D97706">E</text>
+        <text x="50" y="244" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₁</text>
+        <text x="145" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₁</text>
+        <!-- Point E: t≈0.75 on new PPF₁ → (~286, 344) -->
+        <line x1="60" y1="344" x2="286" y2="344" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="286" y1="400" x2="286" y2="344" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="286" cy="344" r="7" fill="#D97706"/>
+        <text x="292" y="340" font-size="13" font-weight="700" fill="#D97706">E</text>
         <!-- Axis tick labels for E -->
-        <text x="50" y="291" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₂</text>
-        <text x="478" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₂</text>
-        <!-- OC arc arrow from D to E -->
-        <path d="M 205,115 Q 380,135 470,287" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppf-occ-end)"/>
+        <text x="50" y="348" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₂</text>
+        <text x="286" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₂</text>
+        <!-- OC arc arrow from D to E (follows curve shape) -->
+        <path d="M 155,240 Q 240,265 280,342" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppf-occ-end)"/>
         <!-- Delta labels -->
-        <text x="115" y="205" font-size="12" font-weight="600" fill="#D97706">−ΔConsumer</text>
-        <text x="320" y="385" font-size="12" font-weight="600" fill="#D97706">+ΔCapital</text>
+        <text x="72" y="296" font-size="12" font-weight="600" fill="#D97706">−ΔC</text>
+        <text x="200" y="415" font-size="12" font-weight="600" fill="#D97706">+ΔK</text>
       </g>
 
       <!-- ===== LAYER: legend extension (right panel) ===== -->
@@ -965,20 +965,20 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: shift curves (show-shift only) ===== -->
       <g class="layer-shift-curves">
-        <!-- PPF₂ outward (green dashed) — large outward shift -->
-        <path d="M 60,16 C 248,16 578,250 578,390" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="9 5"/>
-        <text x="566" y="388" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
-        <!-- PPF₃ inward (red dashed) — large inward shift -->
-        <path d="M 60,152 C 192,152 452,342 452,390" fill="none" stroke="#DC2626" stroke-width="3" stroke-dasharray="9 5"/>
-        <text x="455" y="388" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
-        <!-- Double-headed green arrow: PPF₁ → PPF₂ (outward), at t≈0.28 on curve -->
-        <!-- PPF₁@t=0.28 ≈ (228,120); PPF₂@t=0.28 ≈ (236,64) -->
-        <line x1="230" y1="118" x2="238" y2="66"
+        <!-- PPF₂ outward (green dashed) — full axis extent -->
+        <path d="M 60,55 C 240,55 545,285 545,395" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="9 5"/>
+        <text x="550" y="390" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
+        <!-- PPF₃ inward (red dashed) — quarter axis extent -->
+        <path d="M 60,335 C 100,335 178,375 178,395" fill="none" stroke="#DC2626" stroke-width="3" stroke-dasharray="9 5"/>
+        <text x="182" y="390" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
+        <!-- Double-headed green arrow: PPF₁ → PPF₂ (outward) at t≈0.3 -->
+        <!-- PPF₁@t=0.3≈(163,247); PPF₂@t=0.3≈(244,108) -->
+        <line x1="165" y1="245" x2="242" y2="112"
               stroke="#059669" stroke-width="3" stroke-linecap="round"
               marker-start="url(#ppf-shift-out-start)" marker-end="url(#ppf-shift-out-end)"/>
-        <!-- Double-headed red arrow: PPF₃ → PPF₁ (inward), at t≈0.35 on curve -->
-        <!-- PPF₁@t=0.35 ≈ (275,141); PPF₃@t=0.35 ≈ (234,182) -->
-        <line x1="270" y1="143" x2="236" y2="180"
+        <!-- Double-headed red arrow: PPF₁ → PPF₃ (inward) at t≈0.2 -->
+        <!-- PPF₁@t=0.2≈(128,233); PPF₃@t=0.2≈(90,350) -->
+        <line x1="155" y1="253" x2="88" y2="348"
               stroke="#DC2626" stroke-width="3" stroke-linecap="round"
               marker-start="url(#ppf-shift-in-start)" marker-end="url(#ppf-shift-in-end)"/>
       </g>
@@ -1008,20 +1008,20 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: efficiency points (show-efficiency only) ===== -->
       <g class="layer-efficiency">
-        <!-- Point F: productive efficiency midpoint t≈0.5 (~368, 197) -->
-        <line x1="60" y1="197" x2="368" y2="197" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
-        <line x1="368" y1="400" x2="368" y2="197" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
-        <circle cx="368" cy="197" r="7" fill="#7C3AED"/>
-        <text x="378" y="193" font-size="13" font-weight="700" fill="#7C3AED">F</text>
-        <text x="392" y="193" font-size="12" fill="#475569">— Productive efficiency</text>
-        <!-- Point G: allocative efficiency (different point t≈0.3 → ~290, 151) -->
-        <circle cx="290" cy="151" r="7" fill="#0891B2"/>
-        <text x="300" y="147" font-size="13" font-weight="700" fill="#0891B2">G</text>
-        <text x="314" y="147" font-size="12" fill="#475569">— Allocative efficiency (P=MC)</text>
-        <!-- Point H: inside PPF (inefficient) at ~(220, 250) -->
-        <circle cx="220" cy="250" r="7" fill="#94A3B8"/>
-        <text x="230" y="246" font-size="13" font-weight="700" fill="#64748B">H</text>
-        <text x="244" y="246" font-size="12" fill="#475569">— Inefficient (inside PPF)</text>
+        <!-- Point F: productive efficiency midpoint t≈0.5 on new PPF₁ → (~226, 287) -->
+        <line x1="60" y1="287" x2="226" y2="287" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="226" y1="400" x2="226" y2="287" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="226" cy="287" r="7" fill="#7C3AED"/>
+        <text x="236" y="283" font-size="13" font-weight="700" fill="#7C3AED">F</text>
+        <text x="250" y="283" font-size="12" fill="#475569">— Productive efficiency</text>
+        <!-- Point G: allocative efficiency t≈0.35 on new PPF₁ → (~179, 256) -->
+        <circle cx="179" cy="256" r="7" fill="#0891B2"/>
+        <text x="189" y="252" font-size="13" font-weight="700" fill="#0891B2">G</text>
+        <text x="203" y="252" font-size="12" fill="#475569">— Allocative efficiency (P=MC)</text>
+        <!-- Point H: inside PPF (inefficient) -->
+        <circle cx="148" cy="328" r="7" fill="#94A3B8"/>
+        <text x="158" y="324" font-size="13" font-weight="700" fill="#64748B">H</text>
+        <text x="172" y="324" font-size="12" fill="#475569">— Inefficient (inside PPF)</text>
       </g>
 
       <!-- ===== LAYER: legend efficiency (right panel) ===== -->

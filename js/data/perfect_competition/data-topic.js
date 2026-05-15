@@ -59,6 +59,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'perfect_competition_3',
       template: 'mechanisms',
+      diagramKey: 'profitsShutdownDiagram',
       title: 'Short-Run Equilibrium: Three Cases',
       intro: 'In the short run, a perfectly competitive firm can make supernormal profit, normal profit, or a loss — depending on where market price P sits relative to its cost curves.',
       steps: [

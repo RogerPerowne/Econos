@@ -28,6 +28,7 @@ window.ECONOS_TOPIC = {
       id: 'long_run_costs_1',
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
+      diagramKey: 'lracEnvelope',
       title: 'Long-run costs: the big picture',
       lede: 'In the long run everything is variable. The shape of the cost curve determines what market structure the industry can sustain.',
       branches: [

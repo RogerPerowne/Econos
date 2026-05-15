@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'unstable_markets_2',
       template: 'framing',
+      diagramKey: 'cobwebModel',
       title: 'The Cobweb Model',
       body: 'The <strong>cobweb model</strong> explains cyclical price and quantity oscillations in agricultural markets arising from production lags.<br><br><strong>Mechanism:</strong><br>1. Good harvest → low price this year.<br>2. Farmers plan next year\'s planting based on this year\'s (low) price → reduce acreage.<br>3. Bad supply next year → high price.<br>4. High price → farmers plant lots next year.<br>5. Large harvest → low price again. Cycle repeats.<br><br><strong>Convergent cobweb:</strong> if supply is more elastic than demand, oscillations shrink over time — market tends toward equilibrium. <strong>Divergent cobweb:</strong> if demand is more inelastic than supply is elastic, oscillations grow — market becomes increasingly unstable.',
       keyTerms: [

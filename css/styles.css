@@ -2347,7 +2347,8 @@ img, svg { display: block; max-width: 100%; }
   display: none;
 }
 .key-tile__def.is-hidden,
-.exam-edge__text.is-hidden {
+.exam-edge__text.is-hidden,
+.reveal-cell__body.is-hidden {
   display: none;
 }
 /* Generic card body — proper hanging indent for bullet lists */

@@ -935,6 +935,29 @@
   }
 
   /* -------------------------------------------------------------------------
+     PES Explorer: interactive supply-curve widget (mirror of elasticity-explorer
+     but for upward-sloping supply; registered as window.EconosPes).
+     ------------------------------------------------------------------------- */
+  function renderCardPesExplorer(c) {
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+
+      <div class="pes-root" data-pes-mount></div>
+
+      ${c.howItWorks ? `
+        <div style="background:#F0FDF4;border-left:4px solid var(--econ-green);border-radius:8px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--econ-green);margin-bottom:8px;">How to read it</div>
+          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        </div>
+      ` : ''}
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* -------------------------------------------------------------------------
      PED Five-Frames: static visual card showing the 5 elasticity regimes.
      Each frame has a mini SVG chart, name, PED badge, example, and TR rule.
      ------------------------------------------------------------------------- */
@@ -1154,7 +1177,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1190,6 +1213,7 @@
         case 'elasticity-explorer':body = renderCardElasticityExplorer(c); break;
         case 'ped-five-frames':    body = renderCardPedFiveFrames(c);      break;
         case 'worked-example':     body = renderCardWorkedExample(c);      break;
+        case 'pes-explorer':       body = renderCardPesExplorer(c);        break;
       }
     }
 
@@ -1320,6 +1344,9 @@
     bindEvents();
     if (window.EconosElasticity) {
       root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
+    }
+    if (window.EconosPes) {
+      root.querySelectorAll('.pes-root[data-pes-mount]').forEach(el => window.EconosPes.init(el));
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }

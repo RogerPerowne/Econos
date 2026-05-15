@@ -7005,4 +7005,195 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ============================================================
+     MES BARRIER DIAGRAM — Scale Economies as Entry Barrier
+     viewBox 760 x 440
+     ============================================================ */
+  mesBarrierDiagram: `
+    <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="380" y="22" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Scale Economies as Entry Barrier: Incumbent at MES, Entrant starts small</text>
+
+      <!-- Axes -->
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="68" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Average Cost (£)</text>
+
+      <!-- X axis -->
+      <line x1="70" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="720,385 720,395 730,390" fill="#334155"/>
+      <text x="735" y="394" font-size="11" font-weight="700" fill="#334155">Q</text>
+      <text x="400" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Output (Q)</text>
+
+      <!-- Amber shading: cost disadvantage zone (left of MES, above min AC) -->
+      <!-- MES is at x=310, min AC y=280, entrant region is from x=70 to x=310, y=280 to entrant y=130 -->
+      <rect x="70" y="130" width="240" height="150" fill="#FEF3C7" opacity="0.7"/>
+      <text x="190" y="155" font-size="9" font-weight="600" fill="#D97706" text-anchor="middle">Cost Disadvantage</text>
+      <text x="190" y="167" font-size="9" font-weight="600" fill="#D97706" text-anchor="middle">Zone</text>
+
+      <!-- LRAC curve: smooth U-shape via cubic bezier -->
+      <!-- starts high left ~(90,320), dips to MES ~(310,280), rises back up ~(620,340) -->
+      <path d="M 90 50 C 130 300, 250 290, 310 280 C 400 272, 540 295, 660 345"
+            fill="none" stroke="#DC2626" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="672" y="349" font-size="10" font-weight="700" fill="#DC2626">LRAC</text>
+      <text x="620" y="365" font-size="9" fill="#DC2626" text-anchor="middle">(Incumbent's cost curve)</text>
+
+      <!-- MES vertical dashed line at x=310 -->
+      <line x1="310" y1="280" x2="310" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="310" y="408" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">MES</text>
+
+      <!-- Market Demand vertical dashed line at x=620 -->
+      <line x1="620" y1="40" x2="620" y2="390" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="620" y="408" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle">Market</text>
+      <text x="672" y="60" font-size="10" font-weight="700" fill="#2563EB" text-anchor="start">Market Demand (D)</text>
+
+      <!-- Entrant dot on LRAC far left of MES (approx x=130, y=215 on curve) -->
+      <circle cx="130" cy="215" r="5" fill="#D97706"/>
+      <text x="140" y="207" font-size="9" font-weight="700" fill="#D97706">Entrant's starting position</text>
+      <text x="140" y="220" font-size="9" fill="#D97706">"High AC — cost disadvantage"</text>
+
+      <!-- Incumbent dot at MES bottom -->
+      <circle cx="310" cy="280" r="5" fill="#DC2626"/>
+      <text x="320" y="275" font-size="9" font-weight="700" fill="#DC2626">Incumbent's AC</text>
+
+      <!-- Double-headed arrow between entrant AC level (y=215) and incumbent AC level (y=280) at x=80 -->
+      <line x1="58" y1="215" x2="58" y2="280" stroke="#334155" stroke-width="1.5"/>
+      <polygon points="53,219 63,219 58,210" fill="#334155"/>
+      <polygon points="53,276 63,276 58,285" fill="#334155"/>
+      <text x="12" y="255" font-size="8" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90,12,255)">Cost gap</text>
+      <text x="28" y="255" font-size="8" fill="#334155" text-anchor="middle" transform="rotate(-90,28,255)">deters entry</text>
+    </svg>
+  `,
+
+  /* ============================================================
+     LIMIT PRICING DIAGRAM
+     viewBox 760 x 440
+     ============================================================ */
+  limitPricingDiagram: `
+    <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="380" y="22" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Limit Pricing: Incumbent sets price below entrant's minimum AC to deter entry</text>
+
+      <!-- Axes -->
+      <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="68" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Price / Cost (P)</text>
+
+      <line x1="70" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="720,385 720,395 730,390" fill="#334155"/>
+      <text x="735" y="394" font-size="11" font-weight="700" fill="#334155">Q</text>
+      <text x="400" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Quantity (Q)</text>
+
+      <!-- Market Demand (AR) — downward sloping from (70,60) to (680,360) -->
+      <line x1="70" y1="60" x2="680" y2="360" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="690" y="364" font-size="10" font-weight="700" fill="#2563EB">D (AR)</text>
+      <text x="690" y="376" font-size="9" fill="#2563EB">Market Demand</text>
+
+      <!-- Incumbent MC — roughly horizontal at y=330 -->
+      <line x1="70" y1="330" x2="680" y2="330" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+      <text x="688" y="334" font-size="10" font-weight="700" fill="#059669">MC</text>
+      <text x="688" y="346" font-size="9" fill="#059669">Incumbent MC</text>
+
+      <!-- Entrant's min AC — horizontal dashed at y=220 -->
+      <line x1="70" y1="220" x2="680" y2="220" stroke="#D97706" stroke-width="1.8" stroke-dasharray="7 4"/>
+      <text x="688" y="224" font-size="10" font-weight="700" fill="#D97706">Entrant's min AC</text>
+
+      <!-- Shading: Entry unprofitable zone between P_L (y=235) and Entrant min AC (y=220) -->
+      <rect x="70" y="220" width="610" height="15" fill="#FEE2E2" opacity="0.8"/>
+      <text x="375" y="231" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">Entry unprofitable zone</text>
+
+      <!-- Shading: Foregone profit band between P_m (y=100) and P_L (y=235) -->
+      <rect x="70" y="100" width="610" height="135" fill="#FEF3C7" opacity="0.5"/>
+      <text x="375" y="168" font-size="9" font-weight="600" fill="#D97706" text-anchor="middle">Foregone profit (cost of deterrence)</text>
+
+      <!-- P_m dashed horizontal at y=100 -->
+      <line x1="70" y1="100" x2="680" y2="100" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="60" y="104" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_m</text>
+      <text x="60" y="116" font-size="8" fill="#334155" text-anchor="end">(profit-max price)</text>
+
+      <!-- P_L dashed horizontal at y=235 -->
+      <line x1="70" y1="235" x2="680" y2="235" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="60" y="239" font-size="10" font-weight="700" fill="#D97706" text-anchor="end">P_L</text>
+      <text x="60" y="251" font-size="8" fill="#D97706" text-anchor="end">(limit price)</text>
+
+      <!-- P_c dashed horizontal at y=330 -->
+      <text x="60" y="330" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_c</text>
+      <text x="60" y="342" font-size="8" fill="#334155" text-anchor="end">(competitive price)</text>
+
+      <!-- Annotation box -->
+      <rect x="140" y="48" width="430" height="30" fill="#FEF3C7" rx="6" opacity="0.9"/>
+      <text x="355" y="64" font-size="9" fill="#92400E" text-anchor="middle" font-weight="600">Incumbent sets P_L &lt; Entrant's AC → entry yields a loss → entry deterred</text>
+    </svg>
+  `,
+
+  /* ============================================================
+     NETWORK EFFECT DIAGRAM — Critical Mass &amp; Winner-takes-all
+     viewBox 700 x 420
+     ============================================================ */
+  networkEffectDiagram: `
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="350" y="22" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Winner-takes-all: incumbent network advantage compounds over time</text>
+
+      <!-- Axes -->
+      <line x1="60" y1="30" x2="60" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="55,30 65,30 60,20" fill="#334155"/>
+      <text x="58" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Value to Each User</text>
+
+      <line x1="60" y1="370" x2="670" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="670,365 670,375 680,370" fill="#334155"/>
+      <text x="684" y="374" font-size="11" font-weight="700" fill="#334155">U</text>
+      <text x="370" y="400" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Number of Users</text>
+
+      <!-- Critical mass vertical dashed line at x=240 -->
+      <!-- Sub-critical shading (rose) left of x=240 -->
+      <rect x="60" y="30" width="180" height="340" fill="#FEE2E2" opacity="0.5"/>
+      <text x="150" y="320" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">Sub-critical —</text>
+      <text x="150" y="333" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">network too small</text>
+      <text x="150" y="346" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">to sustain</text>
+
+      <!-- Super-critical shading (green) right of x=240 -->
+      <rect x="240" y="30" width="420" height="340" fill="#DCFCE7" opacity="0.4"/>
+      <text x="450" y="320" font-size="9" font-weight="600" fill="#059669" text-anchor="middle">Super-critical —</text>
+      <text x="450" y="333" font-size="9" font-weight="600" fill="#059669" text-anchor="middle">self-reinforcing growth</text>
+
+      <!-- Critical mass dashed vertical -->
+      <line x1="240" y1="30" x2="240" y2="370" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="240" y="388" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Critical mass</text>
+      <text x="240" y="400" font-size="9" fill="#334155" text-anchor="middle">threshold</text>
+
+      <!-- S-shaped (sigmoid) Network Value curve in navy -->
+      <!-- Approximate sigmoid: starts near (60,355), flat low, steep rise around x=240, flattens near (660,75) -->
+      <path d="M 60 355 C 110 353, 160 348, 200 335 C 220 325, 228 305, 240 280 C 255 248, 275 210, 310 175 C 360 128, 430 95, 520 80 C 580 72, 630 70, 660 68"
+            fill="none" stroke="#1E3A5F" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="665" y="72" font-size="10" font-weight="700" fill="#1E3A5F">Network</text>
+      <text x="665" y="84" font-size="10" font-weight="700" fill="#1E3A5F">Value</text>
+
+      <!-- Entrant dot: left of critical mass at x=140, on curve ~y=350 -->
+      <circle cx="140" cy="350" r="5" fill="#DC2626"/>
+      <text x="80" y="270" font-size="9" font-weight="700" fill="#DC2626">Entrant position</text>
+      <text x="80" y="282" font-size="9" fill="#DC2626">(few users, low value)</text>
+      <line x1="130" y1="285" x2="140" y2="344" stroke="#DC2626" stroke-width="1" stroke-dasharray="3 2"/>
+
+      <!-- Incumbent dot: right of critical mass at x=560, on curve ~y=77 -->
+      <circle cx="560" cy="77" r="5" fill="#1E3A5F"/>
+      <text x="490" y="53" font-size="9" font-weight="700" fill="#1E3A5F">Incumbent position</text>
+      <text x="490" y="65" font-size="9" fill="#1E3A5F">(many users, high value)</text>
+      <line x1="540" y1="68" x2="556" y2="74" stroke="#1E3A5F" stroke-width="1" stroke-dasharray="3 2"/>
+
+      <!-- Double-headed horizontal arrow between the two dots (at y=360, from x=140 to x=560) -->
+      <line x1="148" y1="360" x2="552" y2="360" stroke="#334155" stroke-width="1.5"/>
+      <polygon points="148,355 148,365 138,360" fill="#334155"/>
+      <polygon points="552,355 552,365 562,360" fill="#334155"/>
+      <text x="350" y="354" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Network gap — almost impossible to close</text>
+    </svg>
+  `,
+
 };

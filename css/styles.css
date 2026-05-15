@@ -3339,6 +3339,28 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .phillips-svg .layer-stagflation { opacity: 1; }
 .show-shift .phillips-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== LORENZ INTERACTIVE ===== */
+.lorenz-svg .layer-axes,
+.lorenz-svg .layer-equality,
+.lorenz-svg .layer-lorenz-uk,
+.lorenz-svg .layer-base-points,
+.lorenz-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.lorenz-svg .layer-lorenz-uk-dashed,
+.lorenz-svg .layer-gini-areas,
+.lorenz-svg .layer-legend-extension,
+.lorenz-svg .layer-compare,
+.lorenz-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .lorenz-svg .layer-base-points { opacity: 0; }
+.show-extension .lorenz-svg .layer-legend-base { opacity: 0; }
+.show-extension .lorenz-svg .layer-gini-areas { opacity: 1; }
+.show-extension .lorenz-svg .layer-legend-extension { opacity: 1; }
+.show-shift .lorenz-svg .layer-lorenz-uk { opacity: 0; }
+.show-shift .lorenz-svg .layer-base-points { opacity: 0; }
+.show-shift .lorenz-svg .layer-legend-base { opacity: 0; }
+.show-shift .lorenz-svg .layer-lorenz-uk-dashed { opacity: 1; }
+.show-shift .lorenz-svg .layer-compare { opacity: 1; }
+.show-shift .lorenz-svg .layer-legend-shift { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;

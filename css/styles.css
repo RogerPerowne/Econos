@@ -3361,6 +3361,32 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .lorenz-svg .layer-compare { opacity: 1; }
 .show-shift .lorenz-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== NEGATIVE EXTERNALITY INTERACTIVE ===== */
+.negext-svg .layer-axes,
+.negext-svg .layer-base-curves,
+.negext-svg .layer-market-eq,
+.negext-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.negext-svg .layer-msc,
+.negext-svg .layer-mec,
+.negext-svg .layer-legend-extension,
+.negext-svg .layer-optimal,
+.negext-svg .layer-legend-shift,
+.negext-svg .layer-dwl,
+.negext-svg .layer-legend-efficiency { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .negext-svg .layer-legend-base { opacity: 0; }
+.show-extension .negext-svg .layer-msc { opacity: 1; }
+.show-extension .negext-svg .layer-mec { opacity: 1; }
+.show-extension .negext-svg .layer-legend-extension { opacity: 1; }
+.show-shift .negext-svg .layer-legend-base { opacity: 0; }
+.show-shift .negext-svg .layer-msc { opacity: 1; }
+.show-shift .negext-svg .layer-optimal { opacity: 1; }
+.show-shift .negext-svg .layer-legend-shift { opacity: 1; }
+.show-efficiency .negext-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .negext-svg .layer-msc { opacity: 1; }
+.show-efficiency .negext-svg .layer-optimal { opacity: 1; }
+.show-efficiency .negext-svg .layer-dwl { opacity: 1; }
+.show-efficiency .negext-svg .layer-legend-efficiency { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;

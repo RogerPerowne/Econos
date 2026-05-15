@@ -71,7 +71,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       hallmarks: {
-        title: "Hallmarks - what you'll see",
+        title: "Characteristics",
         items: [
           'Prices rising <strong>with</strong> output rising',
           'Falling unemployment',
@@ -113,7 +113,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       hallmarks: {
-        title: "Hallmarks - what you'll see",
+        title: "Characteristics",
         items: [
           'Prices rising <strong>while</strong> output falls',
           'Rising unemployment',

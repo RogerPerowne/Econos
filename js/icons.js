@@ -5777,23 +5777,21 @@ window.ECONOS_ICONS = {
         <text x="312" y="299" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">MR gap</text>
       </g>
 
-      <!-- ===== LAYER: mc (efficiency state only — multiple MC curves through gap) ===== -->
+      <!-- ===== LAYER: mc (efficiency state only — Nike-tick MC curves through gap) ===== -->
       <g class="layer-mc">
         <g clip-path="url(#kink-chart-clip)">
-          <!-- MC1 (original, through middle of gap): passes through (250, 295), slope -0.15 -->
-          <line x1="60" y1="323" x2="510" y2="256" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
-          <!-- MC shifted UP (cost decrease, still in gap): passes through (250, 270) -->
-          <line x1="60" y1="298" x2="510" y2="231" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 4" opacity="0.55"/>
-          <!-- MC shifted DOWN (cost increase, still in gap): passes through (250, 320) -->
-          <line x1="60" y1="348" x2="510" y2="281" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 4" opacity="0.55"/>
+          <!-- Base MC (Nike tick, cubic-VC shape) — passes y=303 at Q*=x=250, inside gap -->
+          <polyline points="60,307 80,314 100,319 120,323 140,325 160,325 180,323 200,319 220,314 240,307 250,303 260,298 280,288 300,276 320,262 340,246 360,228 380,209 400,188 420,165 440,141 460,115 480,87 500,57" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+          <!-- MC shifted UP (cost rise — higher curve, smaller y) — passes y=275 at x=250 -->
+          <polyline points="60,279 80,286 100,291 120,295 140,297 160,297 180,295 200,291 220,286 240,279 250,275 260,270 280,260 300,248 320,234 340,218 360,200 380,181 400,160 420,137 440,113 460,87" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+          <!-- MC shifted DOWN (cost fall — lower curve, larger y) — passes y=325 at x=250 -->
+          <polyline points="60,329 80,336 100,341 120,345 140,347 160,347 180,345 200,341 220,336 240,329 250,325 260,320 280,310 300,298 320,284 340,268 360,250 380,231 400,210 420,187 440,163 460,137 480,109 500,79" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
         </g>
-        <text x="515" y="260" font-size="13" font-weight="700" fill="#DC2626">MC</text>
-        <text x="515" y="235" font-size="10" font-weight="600" fill="#DC2626" opacity="0.65">MC↓</text>
-        <text x="515" y="285" font-size="10" font-weight="600" fill="#DC2626" opacity="0.65">MC↑</text>
+        <text x="505" y="60" font-size="13" font-weight="700" fill="#DC2626">MC</text>
         <!-- Annotation: all MC within gap → same Q*, P* -->
-        <rect x="350" y="65" width="190" height="38" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
-        <text x="445" y="80" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">Any MC within the gap</text>
-        <text x="445" y="96" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">→ price stays at P*</text>
+        <rect x="350" y="115" width="190" height="38" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+        <text x="445" y="130" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">Any MC within the gap</text>
+        <text x="445" y="146" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">→ price stays at P*</text>
       </g>
 
       <!-- ===== LAYER: panel-base ===== -->

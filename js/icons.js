@@ -6617,4 +6617,392 @@ window.ECONOS_ICONS = {
       </g>
     </svg>
   `,
+
+  /* ============================================================
+     LABOUR MARKET DIAGRAMS
+     ============================================================ */
+
+  labourMarketEquilibrium: `
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Amber wage bill shading: W* x Q* rectangle (0,W*) to (Q*,0) -->
+      <!-- W* approx y=180 (from top), Q* approx x=370 (from left) -->
+      <!-- Chart area: origin at (70, 370), W* at y=180 means chart-y=190, Q* at x=370 means chart-x=300 -->
+      <rect x="70" y="180" width="300" height="190" fill="#D97706" opacity="0.12"/>
+      <text x="175" y="300" font-size="11" fill="#92400E" font-weight="600" text-anchor="middle">Wage Bill</text>
+      <text x="175" y="314" font-size="10" fill="#92400E" text-anchor="middle">(W* \xd7 Q*)</text>
+
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="55" y="18" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">W</text>
+      <text x="30" y="200" font-size="11" fill="#334155" text-anchor="middle" transform="rotate(-90,30,200)">Wage (W)</text>
+
+      <!-- X axis -->
+      <line x1="70" y1="370" x2="650" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="650,365 650,375 660,370" fill="#334155"/>
+      <text x="665" y="374" font-size="12" font-weight="700" fill="#334155">Q_L</text>
+      <text x="360" y="400" font-size="11" fill="#334155" text-anchor="middle">Employment (Q_L)</text>
+
+      <!-- Labour Demand (MRP): downward sloping from (70,60) to (630,340) -->
+      <line x1="90" y1="70" x2="620" y2="340" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="625" y="348" font-size="12" font-weight="700" fill="#2563EB">Labour Demand (MRP)</text>
+
+      <!-- Labour Supply (S_L): upward sloping from (70,340) to (630,70) -->
+      <line x1="90" y1="330" x2="620" y2="80" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="625" y="78" font-size="12" font-weight="700" fill="#059669">Labour Supply (S_L)</text>
+
+      <!-- Equilibrium intersection approx at (370, 205) -->
+      <circle cx="370" cy="205" r="5" fill="#334155"/>
+
+      <!-- Dashed gridlines from intersection to axes -->
+      <line x1="370" y1="205" x2="370" y2="370" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+      <line x1="70" y1="205" x2="370" y2="205" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+
+      <!-- Labels W* and Q* on axes -->
+      <text x="58" y="209" font-size="12" font-weight="700" fill="#334155" text-anchor="end">W*</text>
+      <text x="370" y="390" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+    </svg>
+  `,
+
+  monopsonyDiagram: `
+    <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="50" y="20" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">W</text>
+      <text x="28" y="220" font-size="11" fill="#334155" text-anchor="middle" transform="rotate(-90,28,220)">Wage / Cost</text>
+
+      <!-- X axis -->
+      <line x1="70" y1="390" x2="700" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="700,385 700,395 710,390" fill="#334155"/>
+      <text x="714" y="394" font-size="12" font-weight="700" fill="#334155">Q_L</text>
+      <text x="385" y="420" font-size="11" fill="#334155" text-anchor="middle">Employment (Q_L)</text>
+
+      <!-- Labour Supply S_L = AC_L: upward sloping from (90,350) to (630,80) -->
+      <line x1="90" y1="350" x2="630" y2="80" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="635" y="78" font-size="11" font-weight="700" fill="#059669">S = AC_L</text>
+
+      <!-- MC_L: steeper upward slope from (90,390) to (430,80) -->
+      <line x1="90" y1="390" x2="430" y2="65" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="432" y="62" font-size="11" font-weight="700" fill="#DC2626">MC_L</text>
+
+      <!-- Labour Demand MRP: downward sloping from (90,80) to (650,370) -->
+      <line x1="90" y1="80" x2="650" y2="370" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="652" y="372" font-size="11" font-weight="700" fill="#2563EB">MRP (Labour Demand)</text>
+
+      <!-- Monopsony equilibrium: MC_L = MRP intersection -->
+      <!-- MC_L line: from (90,390) to (430,65) — parametric at t: x=90+340t, y=390-325t -->
+      <!-- MRP line: from (90,80) to (650,370) — parametric: x=90+560s, y=80+290s -->
+      <!-- Solving: 90+340t=90+560s → 340t=560s → t=560s/340=1.647s -->
+      <!--          390-325t=80+290s → 390-325(1.647s)=80+290s → 310=825.3s → s=0.376 -->
+      <!-- Q_m x = 90+560*0.376 = 90+210.6 = 300.6, y = 80+290*0.376 = 80+109 = 189 -->
+      <!-- W_m: read from S_L at x=300: S_L from (90,350) to (630,80): t=(300-90)/540=0.389 -->
+      <!--      y = 350 - 270*0.389 = 350 - 105 = 245 -->
+
+      <!-- Amber shading for monopsony wage gap rectangle (W_m to W*, Q_m wide) -->
+      <!-- W* competitive: S_L = MRP intersection -->
+      <!-- S_L: x=90+540t, y=350-270t; MRP: x=90+560s, y=80+290s -->
+      <!-- 90+540t=90+560s → 540t=560s → t=1.037s -->
+      <!-- 350-270t=80+290s → 350-270(1.037s)=80+290s → 270=570s → s=0.474 -->
+      <!-- W* x=90+560*0.474=90+265=355, y=80+290*0.474=80+137.5=217.5 -->
+      <rect x="70" y="218" width="232" height="27" fill="#D97706" opacity="0.20"/>
+      <text x="186" y="231" font-size="10" fill="#92400E" font-weight="600" text-anchor="middle">Monopsony wage gap</text>
+
+      <!-- Monopsony equilibrium point (Q_m, MRP intersection) -->
+      <circle cx="301" cy="189" r="5" fill="#334155"/>
+
+      <!-- Dashed from Q_m up/down to W_m on S curve -->
+      <line x1="301" y1="189" x2="301" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+      <line x1="70" y1="245" x2="301" y2="245" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+      <circle cx="301" cy="245" r="4" fill="#059669"/>
+
+      <!-- Labels W_m -->
+      <text x="58" y="249" font-size="11" font-weight="700" fill="#334155" text-anchor="end">W_m</text>
+      <text x="301" y="408" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_m</text>
+
+      <!-- Competitive equilibrium W*, Q* -->
+      <circle cx="355" cy="218" r="5" fill="#334155"/>
+      <line x1="355" y1="218" x2="355" y2="390" stroke="#64748B" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <line x1="70" y1="218" x2="355" y2="218" stroke="#64748B" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <text x="58" y="222" font-size="11" font-weight="700" fill="#64748B" text-anchor="end">W*</text>
+      <text x="355" y="408" font-size="11" font-weight="700" fill="#64748B" text-anchor="middle">Q*</text>
+    </svg>
+  `,
+
+  backwardBendingLSC: `
+    <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="420" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="50" y="20" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">W</text>
+      <text x="25" y="230" font-size="11" fill="#334155" text-anchor="middle" transform="rotate(-90,25,230)">Wage (W)</text>
+
+      <!-- X axis -->
+      <line x1="70" y1="420" x2="580" y2="420" stroke="#334155" stroke-width="2"/>
+      <polygon points="580,415 580,425 590,420" fill="#334155"/>
+      <text x="596" y="424" font-size="12" font-weight="700" fill="#334155">H</text>
+      <text x="330" y="452" font-size="11" fill="#334155" text-anchor="middle">Hours Worked (H)</text>
+
+      <!-- Backward-bending supply curve: smooth path -->
+      <!-- Lower segment (sub effect): rises right from bottom-left -->
+      <!-- Upper segment (income effect): bends back left at high wages -->
+      <!-- Curve: start at (120, 400), go to (400, 200) [bend point W0], then curve back to (220, 60) -->
+      <path d="M 120 400 C 200 380, 350 300, 400 200 C 430 140, 350 80, 220 60"
+            fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Bend point W0 at approx (400, 200) -->
+      <circle cx="400" cy="200" r="5" fill="#1E3A5F"/>
+      <line x1="70" y1="200" x2="400" y2="200" stroke="#334155" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.7"/>
+      <text x="58" y="204" font-size="12" font-weight="700" fill="#334155" text-anchor="end">W₀</text>
+
+      <!-- Label: substitution effect dominates (lower-right segment) -->
+      <text x="370" y="320" font-size="11" font-weight="600" fill="#2563EB" text-anchor="middle">Substitution effect</text>
+      <text x="370" y="334" font-size="11" font-weight="600" fill="#2563EB" text-anchor="middle">dominates</text>
+      <!-- Upward arrow -->
+      <line x1="370" y1="342" x2="370" y2="358" stroke="#2563EB" stroke-width="1.5"/>
+      <polygon points="366,358 374,358 370,366" fill="#2563EB"/>
+
+      <!-- Label: income effect dominates (upper-left segment) -->
+      <text x="195" y="105" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">Income effect</text>
+      <text x="195" y="119" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">dominates</text>
+      <!-- Leftward arrow -->
+      <line x1="175" y1="127" x2="158" y2="127" stroke="#DC2626" stroke-width="1.5"/>
+      <polygon points="158,123 158,131 150,127" fill="#DC2626"/>
+
+      <!-- Annotation box -->
+      <rect x="75" y="440" width="490" height="30" fill="#FEF3C7" rx="6" opacity="0.9"/>
+      <text x="320" y="453" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">At W₀, income effect = substitution effect — further wage ↑ reduces hours supplied</text>
+    </svg>
+  `,
+
+  nmwDiagram: `
+    <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="50" y="20" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">W</text>
+      <text x="28" y="215" font-size="11" fill="#334155" text-anchor="middle" transform="rotate(-90,28,215)">Wage (W)</text>
+
+      <!-- X axis -->
+      <line x1="70" y1="390" x2="700" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="700,385 700,395 710,390" fill="#334155"/>
+      <text x="714" y="394" font-size="12" font-weight="700" fill="#334155">Q_L</text>
+      <text x="385" y="420" font-size="11" fill="#334155" text-anchor="middle">Employment (Q_L)</text>
+
+      <!-- Labour Demand: downward sloping -->
+      <line x1="100" y1="80" x2="660" y2="370" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="664" y="374" font-size="11" font-weight="700" fill="#2563EB">Labour Demand</text>
+
+      <!-- Labour Supply: upward sloping -->
+      <line x1="100" y1="360" x2="660" y2="90" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="664" y="88" font-size="11" font-weight="700" fill="#059669">Labour Supply</text>
+
+      <!-- Equilibrium W_e, Q_e -->
+      <!-- Demand: (100,80)→(660,370), Supply: (100,360)→(660,90) -->
+      <!-- Demand: y=80+(t*290/560)*(x-100)+...  parametric: x=100+560t, y=80+290t -->
+      <!-- Supply: x=100+560s, y=360-270s -->
+      <!-- 80+290t=360-270t → 560t=280 → t=0.5 → x=100+280=380, y=80+145=225 -->
+      <circle cx="380" cy="225" r="5" fill="#334155"/>
+      <line x1="380" y1="225" x2="380" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+      <line x1="70" y1="225" x2="380" y2="225" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+      <text x="58" y="229" font-size="11" font-weight="700" fill="#334155" text-anchor="end">W_e</text>
+      <text x="380" y="408" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_e</text>
+
+      <!-- NMW wage floor at W_NMW (above equilibrium) — at y=155 (higher wage) -->
+      <line x1="70" y1="155" x2="660" y2="155" stroke="#D97706" stroke-width="2.2" stroke-dasharray="8 4"/>
+      <text x="440" y="148" font-size="11" font-weight="700" fill="#D97706">National Minimum Wage (W_NMW)</text>
+
+      <!-- At W_NMW: Q_d on demand curve, Q_s on supply curve -->
+      <!-- Demand at y=155: 155=80+290t → t=0.259 → x=100+560*0.259=100+145=245 -->
+      <!-- Supply at y=155: 155=360-270s → 270s=205 → s=0.759 → x=100+560*0.759=100+425=525 -->
+      <line x1="245" y1="155" x2="245" y2="390" stroke="#334155" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+      <line x1="525" y1="155" x2="525" y2="390" stroke="#334155" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+
+      <!-- Shade unemployment gap Q_d to Q_s along x-axis -->
+      <rect x="245" y="370" width="280" height="20" fill="#FEE2E2" opacity="0.85" rx="3"/>
+      <rect x="245" y="155" width="280" height="235" fill="#FEE2E2" opacity="0.18"/>
+
+      <!-- Labels Q_d and Q_s on x-axis -->
+      <text x="245" y="408" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_d</text>
+      <text x="525" y="408" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_s</text>
+
+      <!-- Unemployment gap label with brace -->
+      <text x="385" y="383" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">Unemployment gap</text>
+
+      <!-- Annotation: employment loss -->
+      <rect x="75" y="60" width="200" height="30" fill="#FEE2E2" rx="6" opacity="0.85"/>
+      <text x="175" y="73" font-size="10" fill="#DC2626" text-anchor="middle" font-weight="600">Q* falls: Q_e → Q_d</text>
+      <text x="175" y="85" font-size="9" fill="#DC2626" text-anchor="middle">(employment loss)</text>
+    </svg>
+  `,
+
+  firstDegreePd: `
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="380" stroke="#334155" stroke-width="2"/>
+      <polygon points="65,30 75,30 70,20" fill="#334155"/>
+      <text x="50" y="20" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+      <text x="25" y="210" font-size="11" fill="#334155" text-anchor="middle" transform="rotate(-90,25,210)">Price / Cost</text>
+
+      <!-- X axis -->
+      <line x1="70" y1="380" x2="640" y2="380" stroke="#334155" stroke-width="2"/>
+      <polygon points="640,375 640,385 650,380" fill="#334155"/>
+      <text x="656" y="384" font-size="12" font-weight="700" fill="#334155">Q</text>
+      <text x="360" y="412" font-size="11" fill="#334155" text-anchor="middle">Quantity (Q)</text>
+
+      <!-- Demand (AR): downward sloping from (70,50) to (570,370) -->
+      <!-- D line: x=70+500t, y=50+320t -->
+      <line x1="70" y1="50" x2="570" y2="370" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="574" y="370" font-size="11" font-weight="700" fill="#2563EB">D = AR</text>
+
+      <!-- MR: same y-intercept (70,50), twice the slope — reaches x-axis at midpoint Q_max/2 -->
+      <!-- MR reaches y=380 at x=70+250=320 (half the x-range) -->
+      <line x1="70" y1="50" x2="320" y2="380" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+      <text x="324" y="378" font-size="11" font-weight="700" fill="#64748B">MR</text>
+
+      <!-- MC = AC: horizontal line at y=250 (mid-low) -->
+      <line x1="70" y1="250" x2="600" y2="250" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 3"/>
+      <text x="603" y="254" font-size="11" font-weight="700" fill="#DC2626">MC = AC</text>
+
+      <!-- Q_m where MR=MC: MR line y=50+330t, x=70+250t; at y=250: 250=50+330t → t=0.606 → x=70+250*0.606=70+151=221 -->
+      <!-- P_m on demand at x=221: 221=70+500t → t=0.302 → y=50+320*0.302=50+96.6=147 -->
+      <!-- Q_c where D=MC: 250=50+320t → t=0.625 → x=70+500*0.625=70+312.5=382 -->
+
+      <!-- Blue CS triangle (single price monopoly): vertices (70,50), (70,147), (221,147) shaded -->
+      <polygon points="70,50 70,147 221,147" fill="#DBEAFE" opacity="0.7"/>
+      <text x="105" y="120" font-size="10" fill="#2563EB" font-weight="600">CS (single</text>
+      <text x="105" y="132" font-size="10" fill="#2563EB" font-weight="600">price monopoly)</text>
+
+      <!-- Amber entire area under demand above MC from 0 to Q_c: polygon (70,50)→(382,250)→(70,250) -->
+      <polygon points="70,50 382,250 70,250" fill="#FEF3C7" opacity="0.75"/>
+      <text x="185" y="220" font-size="10" fill="#92400E" font-weight="600" text-anchor="middle">All surplus → Producer</text>
+      <text x="185" y="233" font-size="10" fill="#92400E" font-weight="600" text-anchor="middle">(1st degree PD)</text>
+
+      <!-- Dashed lines for Q_m, P_m -->
+      <line x1="221" y1="147" x2="221" y2="380" stroke="#334155" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+      <line x1="70" y1="147" x2="221" y2="147" stroke="#334155" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="58" y="151" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_m</text>
+      <text x="221" y="398" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_m</text>
+
+      <!-- Q_c label -->
+      <line x1="382" y1="250" x2="382" y2="380" stroke="#334155" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="382" y="398" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_c</text>
+
+      <!-- Key text box -->
+      <rect x="430" y="60" width="240" height="40" fill="#FEF3C7" rx="8" opacity="0.9"/>
+      <text x="550" y="76" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">No consumer surplus — firm</text>
+      <text x="550" y="90" font-size="10" fill="#92400E" text-anchor="middle">extracts all willingness-to-pay</text>
+    </svg>
+  `,
+
+  thirdDegreePd: `
+    <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Vertical divider -->
+      <line x1="450" y1="20" x2="450" y2="400" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.7"/>
+
+      <!-- ===== LEFT PANEL: Market A — Elastic ===== -->
+      <!-- Y axis -->
+      <line x1="50" y1="30" x2="50" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="45,30 55,30 50,20" fill="#334155"/>
+      <text x="36" y="20" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+
+      <!-- X axis -->
+      <line x1="50" y1="370" x2="425" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="425,365 425,375 435,370" fill="#334155"/>
+      <text x="438" y="374" font-size="11" font-weight="700" fill="#334155">Q</text>
+
+      <!-- Panel title -->
+      <text x="237" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market A — Elastic Demand (e.g. students / exports)</text>
+
+      <!-- Demand A: relatively flat (elastic), from (50,60) to (420,300) -->
+      <line x1="50" y1="60" x2="420" y2="300" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="422" y="302" font-size="10" font-weight="700" fill="#2563EB">D_A</text>
+
+      <!-- MR_A: same intercept (50,60), twice slope → reaches zero at x=50+(420-50)/2=235 -->
+      <!-- MR_A from (50,60) to (235,300) ... extended down -->
+      <line x1="50" y1="60" x2="235" y2="310" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="237" y="310" font-size="10" font-weight="700" fill="#64748B">MR_A</text>
+
+      <!-- MC: horizontal at y=220 -->
+      <line x1="50" y1="220" x2="420" y2="220" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text x="424" y="224" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+
+      <!-- Q_A where MR_A = MC: MR_A line: y=60+250*(x-50)/185 approx -->
+      <!-- MR_A: from (50,60) to (235,310): slope=(310-60)/(235-50)=250/185=1.351 -->
+      <!-- at y=220: 220=60+1.351*(x-50) → 160=1.351*(x-50) → x-50=118.4 → x=168 -->
+      <!-- P_A on D_A at x=168: D_A slope=(300-60)/(420-50)=240/370=0.649 -->
+      <!-- y=60+0.649*(168-50)=60+76.6=137 -->
+
+      <!-- Amber revenue rectangle Q_A x P_A -->
+      <rect x="50" y="137" width="118" height="233" fill="#FEF3C7" opacity="0.6"/>
+      <text x="109" y="270" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Revenue</text>
+      <text x="109" y="282" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Q_A \xd7 P_A</text>
+
+      <!-- Dashed lines Q_A, P_A -->
+      <line x1="168" y1="137" x2="168" y2="370" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <line x1="50" y1="137" x2="168" y2="137" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="40" y="141" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_A</text>
+      <text x="168" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_A</text>
+
+      <!-- ===== RIGHT PANEL: Market B — Inelastic ===== -->
+      <!-- Y axis -->
+      <line x1="470" y1="30" x2="470" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="465,30 475,30 470,20" fill="#334155"/>
+      <text x="456" y="20" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+
+      <!-- X axis -->
+      <line x1="470" y1="370" x2="860" y2="370" stroke="#334155" stroke-width="2"/>
+      <polygon points="860,365 860,375 870,370" fill="#334155"/>
+      <text x="873" y="374" font-size="11" font-weight="700" fill="#334155">Q</text>
+
+      <!-- Panel title -->
+      <text x="665" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market B — Inelastic Demand (e.g. domestic / business)</text>
+
+      <!-- Demand B: steeper (inelastic), from (470,50) to (850,330) -->
+      <line x1="470" y1="50" x2="850" y2="330" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="852" y="332" font-size="10" font-weight="700" fill="#2563EB">D_B</text>
+
+      <!-- MR_B: same intercept (470,50), twice slope → x midpoint = 470+(850-470)/2 = 660 -->
+      <line x1="470" y1="50" x2="660" y2="330" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="662" y="332" font-size="10" font-weight="700" fill="#64748B">MR_B</text>
+
+      <!-- MC: same level y=220 -->
+      <line x1="470" y1="220" x2="855" y2="220" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text x="857" y="224" font-size="10" font-weight="700" fill="#DC2626">MC</text>
+
+      <!-- Q_B where MR_B = MC -->
+      <!-- MR_B: from (470,50) to (660,330): slope=280/190=1.474 -->
+      <!-- at y=220: 220=50+1.474*(x-470) → 170=1.474*(x-470) → x-470=115.3 → x=585 -->
+      <!-- P_B on D_B at x=585: slope=(330-50)/(850-470)=280/380=0.737 -->
+      <!-- y=50+0.737*(585-470)=50+84.7=135 -->
+
+      <!-- Amber revenue rectangle Q_B x P_B -->
+      <rect x="470" y="135" width="115" height="235" fill="#FEF3C7" opacity="0.6"/>
+      <text x="527" y="265" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Revenue</text>
+      <text x="527" y="277" font-size="9" fill="#92400E" font-weight="600" text-anchor="middle">Q_B \xd7 P_B</text>
+
+      <!-- Dashed lines Q_B, P_B -->
+      <line x1="585" y1="135" x2="585" y2="370" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <line x1="470" y1="135" x2="585" y2="135" stroke="#334155" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.7"/>
+      <text x="460" y="139" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_B</text>
+      <text x="585" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_B</text>
+
+      <!-- Shared annotation -->
+      <rect x="200" y="393" width="500" height="22" fill="#FEF3C7" rx="6" opacity="0.9"/>
+      <text x="450" y="408" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">P_B &gt; P_A — higher price in the less elastic market (MR_A = MR_B = MC)</text>
+    </svg>
+  `,
+
 };

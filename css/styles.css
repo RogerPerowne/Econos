@@ -3240,6 +3240,63 @@ img, svg { display: block; max-width: 100%; }
 .show-efficiency .ppf-svg .layer-efficiency { opacity: 1; }
 .show-efficiency .ppf-svg .layer-legend-efficiency { opacity: 1; }
 
+/* ===== DEMAND INTERACTIVE ===== */
+.demand-svg .layer-axes,
+.demand-svg .layer-demand-base,
+.demand-svg .layer-e1,
+.demand-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.demand-svg .layer-extension,
+.demand-svg .layer-legend-extension,
+.demand-svg .layer-shift,
+.demand-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .demand-svg .layer-e1 { opacity: 0; }
+.show-extension .demand-svg .layer-legend-base { opacity: 0; }
+.show-extension .demand-svg .layer-extension { opacity: 1; }
+.show-extension .demand-svg .layer-legend-extension { opacity: 1; }
+.show-shift .demand-svg .layer-demand-base { opacity: 0.25; }
+.show-shift .demand-svg .layer-e1 { opacity: 0; }
+.show-shift .demand-svg .layer-legend-base { opacity: 0; }
+.show-shift .demand-svg .layer-shift { opacity: 1; }
+.show-shift .demand-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== SUPPLY INTERACTIVE ===== */
+.supply-svg .layer-axes,
+.supply-svg .layer-supply-base,
+.supply-svg .layer-e1,
+.supply-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.supply-svg .layer-extension,
+.supply-svg .layer-legend-extension,
+.supply-svg .layer-shift,
+.supply-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .supply-svg .layer-e1 { opacity: 0; }
+.show-extension .supply-svg .layer-legend-base { opacity: 0; }
+.show-extension .supply-svg .layer-extension { opacity: 1; }
+.show-extension .supply-svg .layer-legend-extension { opacity: 1; }
+.show-shift .supply-svg .layer-supply-base { opacity: 0.25; }
+.show-shift .supply-svg .layer-e1 { opacity: 0; }
+.show-shift .supply-svg .layer-legend-base { opacity: 0; }
+.show-shift .supply-svg .layer-shift { opacity: 1; }
+.show-shift .supply-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== MARKET INTERACTIVE ===== */
+.market-svg .layer-axes,
+.market-svg .layer-demand-base,
+.market-svg .layer-supply-base,
+.market-svg .layer-e1,
+.market-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.market-svg .layer-extension,
+.market-svg .layer-legend-extension,
+.market-svg .layer-shift,
+.market-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .market-svg .layer-e1 { opacity: 0; }
+.show-extension .market-svg .layer-legend-base { opacity: 0; }
+.show-extension .market-svg .layer-extension { opacity: 1; }
+.show-extension .market-svg .layer-legend-extension { opacity: 1; }
+.show-shift .market-svg .layer-e1 { opacity: 0; }
+.show-shift .market-svg .layer-legend-base { opacity: 0; }
+.show-shift .market-svg .layer-shift { opacity: 1; }
+.show-shift .market-svg .layer-legend-shift { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;

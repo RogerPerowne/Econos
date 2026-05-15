@@ -8788,4 +8788,129 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  contestabilityDiagram: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="700" height="460" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="350" y="28" font-size="13" font-weight="600" fill="#1E3A5F" text-anchor="middle">Contestability: Threat of Entry Disciplines Pricing</text>
+
+      <!-- Vertical divider -->
+      <line x1="350" y1="45" x2="350" y2="430" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- ===== LEFT PANEL: High Barriers — Supernormal Profit ===== -->
+      <text x="180" y="50" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">High Barriers: Supernormal Profit</text>
+
+      <!-- Left axes -->
+      <line x1="60" y1="405" x2="330" y2="405" stroke="#334155" stroke-width="2"/>
+      <polygon points="326,401 326,409 334,405" fill="#334155"/>
+      <line x1="60" y1="405" x2="60" y2="60" stroke="#334155" stroke-width="2"/>
+      <polygon points="56,64 64,64 60,56" fill="#334155"/>
+      <text x="46" y="58" font-size="11" font-weight="600" fill="#334155">P</text>
+      <text x="338" y="412" font-size="11" font-weight="600" fill="#334155">Q</text>
+
+      <!-- LEFT: AR = D (downward sloping) from (65,110) to (320,390) -->
+      <line x1="65" y1="110" x2="320" y2="390" stroke="#2563EB" stroke-width="2"/>
+      <text x="322" y="388" font-size="10" fill="#2563EB" font-weight="600">AR=D</text>
+
+      <!-- LEFT: MR (same y-intercept, twice the gradient) from (65,110) to (192,390) -->
+      <line x1="65" y1="110" x2="192" y2="390" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="194" y="388" font-size="10" fill="#64748B" font-weight="600">MR</text>
+
+      <!-- LEFT: AC (U-shaped) M65,340 C110,155 250,155 320,310 -->
+      <path d="M 65,340 C 110,155 250,155 320,310" stroke="#0EA5E9" stroke-width="2" fill="none"/>
+      <text x="322" y="308" font-size="10" fill="#0EA5E9" font-weight="600">AC</text>
+
+      <!-- LEFT: MC (steeper U, minimum left of AC) M65,390 C120,190 210,190 320,130 -->
+      <path d="M 65,390 C 120,190 210,190 320,130" stroke="#DC2626" stroke-width="2" fill="none"/>
+      <text x="322" y="128" font-size="10" fill="#DC2626" font-weight="600">MC</text>
+
+      <!-- LEFT: MR=MC intersection at approx x=155, y=300 -->
+      <!-- Q_pm dashed vertical from (155,300) to (155,405) -->
+      <line x1="155" y1="300" x2="155" y2="405" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="151" y="418" font-size="10" fill="#334155" text-anchor="middle">Q&#x209A;&#x2098;</text>
+
+      <!-- LEFT: P_pm on AR at x=155: y = 110 + (155-65)/(320-65)*(390-110) = 110 + 90/255*280 ≈ 209 -->
+      <!-- AC at Q_pm ≈ 255 (on falling part of bezier, above AR) — need AC below AR -->
+      <!-- Using: P_pm horizontal at y=209, AC_pm at y=255 would give loss. -->
+      <!-- Instead use: AR at x=155 y≈209, AC lower at y≈160 (deep in U trough) -->
+      <!-- The U trough of AC is at roughly x=185, y=155. At x=155, AC≈172. -->
+      <!-- Supernormal profit rect: x=60..155, y=172..209. Height=37, width=95. -->
+      <rect x="60" y="172" width="95" height="37" fill="#FEF3C7" opacity="0.85"/>
+      <rect x="60" y="172" width="95" height="37" fill="none" stroke="#D97706" stroke-width="1"/>
+      <text x="107" y="185" font-size="8" fill="#D97706" text-anchor="middle" font-weight="600">Supernormal</text>
+      <text x="107" y="196" font-size="8" fill="#D97706" text-anchor="middle" font-weight="600">profit</text>
+
+      <!-- P_pm dashed horizontal at y=209 from x=60 to x=155 -->
+      <line x1="60" y1="209" x2="155" y2="209" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="36" y="213" font-size="9" fill="#2563EB">P&#x209A;&#x2098;</text>
+
+      <!-- AC_pm dashed horizontal at y=172 from x=60 to x=155 -->
+      <line x1="60" y1="172" x2="155" y2="172" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="30" y="176" font-size="9" fill="#0EA5E9">AC&#x209A;&#x2098;</text>
+
+      <!-- ===== RIGHT PANEL: Contestable Market — Normal Profit ===== -->
+      <text x="520" y="50" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">Contestable: Normal Profit</text>
+
+      <!-- Right axes -->
+      <line x1="370" y1="405" x2="660" y2="405" stroke="#334155" stroke-width="2"/>
+      <polygon points="656,401 656,409 664,405" fill="#334155"/>
+      <line x1="370" y1="405" x2="370" y2="60" stroke="#334155" stroke-width="2"/>
+      <polygon points="366,64 374,64 370,56" fill="#334155"/>
+      <text x="356" y="58" font-size="11" font-weight="600" fill="#334155">P</text>
+      <text x="668" y="412" font-size="11" font-weight="600" fill="#334155">Q</text>
+
+      <!-- RIGHT: AR = D (downward sloping) from (375,110) to (640,390) -->
+      <line x1="375" y1="110" x2="640" y2="390" stroke="#2563EB" stroke-width="2"/>
+      <text x="642" y="388" font-size="10" fill="#2563EB" font-weight="600">AR=D</text>
+
+      <!-- RIGHT: MR from (375,110) to (507,390) -->
+      <line x1="375" y1="110" x2="507" y2="390" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="509" y="388" font-size="10" fill="#64748B" font-weight="600">MR</text>
+
+      <!-- RIGHT: AC (U-shaped) -->
+      <path d="M 375,340 C 420,155 560,155 630,310" stroke="#0EA5E9" stroke-width="2" fill="none"/>
+      <text x="632" y="308" font-size="10" fill="#0EA5E9" font-weight="600">AC</text>
+
+      <!-- RIGHT: MC -->
+      <path d="M 375,390 C 430,190 520,190 630,130" stroke="#DC2626" stroke-width="2" fill="none"/>
+      <text x="632" y="128" font-size="10" fill="#DC2626" font-weight="600">MC</text>
+
+      <!-- RIGHT: Q_c at break-even (AR=AC tangency). -->
+      <!-- AR at x=490: t=(490-375)/(640-375)=115/265=0.434, y=110+0.434*280=232 -->
+      <!-- AC at x=490 (near trough, approx 165). Not equal. -->
+      <!-- Place break-even where AR crosses AC: visually around x=490, y=232 on AR. -->
+      <!-- For right panel, price = AC = competitive price. -->
+      <!-- Use x=490 for Q_c, price on AR at x=490 ≈ 232 -->
+      <line x1="490" y1="232" x2="490" y2="405" stroke="#334155" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="490" y="418" font-size="10" fill="#334155" text-anchor="middle">Q&#x1D9C;</text>
+
+      <!-- P_c = AC = break-even price at y=232 -->
+      <line x1="370" y1="232" x2="490" y2="232" stroke="#059669" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="352" y="236" font-size="9" fill="#059669">P&#x1D9C;</text>
+
+      <!-- RIGHT: Normal profit shading (break-even: P=AC) — just a thin green line indicator -->
+      <!-- Annotate with green label "P = AC: Normal profit (break-even)" -->
+      <rect x="396" y="195" width="150" height="26" fill="#D1FAE5" rx="4" opacity="0.9"/>
+      <rect x="396" y="195" width="150" height="26" fill="none" stroke="#059669" stroke-width="1" rx="4"/>
+      <text x="471" y="207" font-size="8.5" fill="#059669" text-anchor="middle" font-weight="600">Normal profit</text>
+      <text x="471" y="218" font-size="8.5" fill="#059669" text-anchor="middle">(P = AC, break-even)</text>
+
+      <!-- Arrow pointing to break-even annotation -->
+      <line x1="471" y1="221" x2="490" y2="232" stroke="#059669" stroke-width="1"/>
+
+      <!-- RIGHT: Threat of entry annotation -->
+      <rect x="378" y="60" width="170" height="28" fill="#F0FDF4" rx="4" opacity="0.9"/>
+      <rect x="378" y="60" width="170" height="28" fill="none" stroke="#059669" stroke-width="1" rx="4"/>
+      <text x="463" y="72" font-size="8.5" fill="#059669" text-anchor="middle" font-weight="600">Threat of entry forces</text>
+      <text x="463" y="83" font-size="8.5" fill="#059669" text-anchor="middle">price down to AC</text>
+
+      <!-- Bottom annotation bar -->
+      <rect x="10" y="435" width="680" height="18" fill="#F1F5F9" rx="4"/>
+      <text x="350" y="448" font-size="9.5" fill="#475569" text-anchor="middle">Contestable markets: low sunk costs &#x2192; hit-and-run entry &#x2192; incumbent prices at AC &#x2192; normal profit only</text>
+    </svg>
+  `,
+
+
 };

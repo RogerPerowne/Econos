@@ -127,16 +127,137 @@
 
   function renderExamEdge(e) {
     if (!e) return '';
+    const title = typeof e === 'object' ? (e.title || 'Exam edge') : 'Exam edge';
+    const text  = typeof e === 'object' ? e.text : e;
+    if (!text) return '';
     return `
       <div class="exam-edge">
         <div class="exam-edge__star">⭐</div>
         <div class="exam-edge__body">
           <div class="exam-edge__label">Exam edge</div>
-          <div class="exam-edge__title">${e.title}</div>
-          <div class="exam-edge__text">${e.text}</div>
+          <div class="exam-edge__title">${title}</div>
+          <div class="exam-edge__text">${text}</div>
         </div>
       </div>
     `;
+  }
+
+  /* ============================================================
+     GENERIC CARD RENDERER
+     Handles the standard data format used by all non-inflation
+     topics: body, causes[], steps[], rows[], left/right, keyTerms
+     ============================================================ */
+  function renderCardGeneric(c) {
+    let content = '';
+
+    // intro/lede text
+    if (c.intro) {
+      content += `<p style="font-size:15px;color:#2A3650;margin-bottom:18px;line-height:1.6;">${c.intro}</p>`;
+    }
+
+    // framing: HTML body block
+    if (c.body) {
+      content += `<div style="font-size:15px;line-height:1.7;color:#0B1426;margin-bottom:20px;">${c.body}</div>`;
+    }
+
+    // cause: [{head, body}]
+    if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
+      content += c.causes.map(item => `
+        <div style="margin-bottom:12px;padding:14px 16px;background:#f8fafc;border-radius:10px;border-left:3px solid #2563EB;">
+          <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:6px;">${item.head}</div>
+          <div style="font-size:14px;color:#2A3650;line-height:1.6;">${item.body}</div>
+        </div>
+      `).join('');
+    }
+
+    // mechanisms: [{label, text}]
+    if (c.steps && c.steps.length) {
+      content += c.steps.map((s, i) => `
+        <div style="display:flex;gap:14px;margin-bottom:12px;padding:14px 16px;background:#f8fafc;border-radius:10px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:#0B1426;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;">${i + 1}</div>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:4px;">${s.label}</div>
+            <div style="font-size:14px;color:#2A3650;line-height:1.6;">${s.text}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // diagnose: rows [{label, colA, colB}]
+    if (c.rows && c.rows.length) {
+      content += `<div style="overflow-x:auto;margin-bottom:18px;border-radius:10px;border:1px solid #E7E7EA;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          ${c.rows.map(r => `
+            <tr>
+              <td style="padding:10px 14px;background:#f1f5f9;font-weight:700;border-bottom:1px solid #E7E7EA;white-space:nowrap;min-width:120px;">${r.label}</td>
+              <td style="padding:10px 14px;border-bottom:1px solid #E7E7EA;vertical-align:top;border-right:1px solid #E7E7EA;">${r.colA}</td>
+              <td style="padding:10px 14px;border-bottom:1px solid #E7E7EA;vertical-align:top;">${r.colB}</td>
+            </tr>
+          `).join('')}
+        </table>
+      </div>`;
+      if (c.footer) {
+        content += `<p style="font-size:13px;color:#6B7280;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
+      }
+    }
+
+    // paired: left / right format
+    if (c.left && c.right) {
+      content += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
+        <div style="padding:16px;background:#f0fdf4;border-radius:10px;border-top:3px solid #1FB574;">
+          <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:10px;">${c.left.label}</div>
+          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding-left:18px;margin:0;">${c.left.points.map(p => `<li style="margin-bottom:6px;">${p}</li>`).join('')}</ul>
+        </div>
+        <div style="padding:16px;background:#eff6ff;border-radius:10px;border-top:3px solid #2563EB;">
+          <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:10px;">${c.right.label}</div>
+          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding-left:18px;margin:0;">${c.right.points.map(p => `<li style="margin-bottom:6px;">${p}</li>`).join('')}</ul>
+        </div>
+      </div>`;
+    }
+
+    // key terms
+    if (c.keyTerms && c.keyTerms.length) {
+      content += `<div style="margin-bottom:18px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;margin-bottom:10px;">Key terms</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+          ${c.keyTerms.map(kt => `
+            <div style="padding:12px 14px;background:#f8fafc;border-radius:8px;border-left:2px solid #E7E7EA;">
+              <div style="font-weight:700;font-size:13px;color:#0B1426;margin-bottom:4px;">${kt.term}</div>
+              <div style="font-size:13px;color:#6B7280;line-height:1.5;">${kt.def}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+    }
+
+    // examEdge (string or object)
+    if (c.examEdge) {
+      const edgeTitle = typeof c.examEdge === 'object' ? (c.examEdge.title || 'Exam edge') : 'Exam edge';
+      const edgeText  = typeof c.examEdge === 'object' ? c.examEdge.text : c.examEdge;
+      if (edgeText) {
+        content += `
+          <div class="exam-edge">
+            <div class="exam-edge__star">⭐</div>
+            <div class="exam-edge__body">
+              <div class="exam-edge__label">Exam edge</div>
+              <div class="exam-edge__title">${edgeTitle}</div>
+              <div class="exam-edge__text">${edgeText}</div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // quizCta
+    if (c.quizCta) {
+      content += `
+        <div style="margin-top:24px;text-align:center;">
+          <a href="${c.quizCta.href}" class="btn btn--primary btn--lg">${c.quizCta.label}</a>
+        </div>
+      `;
+    }
+
+    return `<h1 class="card__title">${c.title}</h1>${content}`;
   }
 
   function renderKeyTakeaway(k) {
@@ -796,9 +917,10 @@
 
     return `
       ${banner}
-      <div class="card__step-label">${c.stepLabel}</div>
+      ${c.stepLabel ? `<div class="card__step-label">${c.stepLabel}</div>` : ''}
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      ${c.intro ? `<p style="font-size:15px;color:#2A3650;margin-bottom:16px;line-height:1.6;">${c.intro}</p>` : ''}
 
       <div class="paired-grid">${pairs}</div>
 
@@ -808,23 +930,39 @@
   }
 
   /* === full card view === */
+  function isGenericCard(c) {
+    // Cards in the generic format (all topics except inflation) use these fields
+    return !!(
+      c.body !== undefined ||
+      c.steps !== undefined ||
+      c.rows  !== undefined ||
+      (c.left !== undefined && c.right !== undefined) ||
+      (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
+       typeof c.causes[0] === 'object' && 'head' in c.causes[0])
+    );
+  }
+
   function renderCard(idx) {
     const c = T.cards[idx];
     const pct = Math.round(((idx + 1) / T.cards.length) * 100);
 
     let body = '';
-    switch (c.template) {
-      case 'framing':            body = renderCardFraming(c);          break;
-      case 'cause':              body = renderCardCause(c);            break;
-      case 'diagnose':           body = renderCardDiagnose(c);         break;
-      case 'puzzle':             body = renderCardPuzzle(c);           break;
-      case 'mechanisms':         body = renderCardMechanisms(c);       break;
-      case 'monetary':           body = renderCardMonetary(c);         break;
-      case 'impacts':            body = renderCardImpacts(c);          break;
-      case 'deflation':          body = renderCardDeflation(c);        break;
-      case 'paired':             body = renderCardPaired(c);           break;
-      case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
-      case 'transmission-chain': body = renderCardTransmissionChain(c); break;
+    if (isGenericCard(c)) {
+      body = renderCardGeneric(c);
+    } else {
+      switch (c.template) {
+        case 'framing':            body = renderCardFraming(c);          break;
+        case 'cause':              body = renderCardCause(c);            break;
+        case 'diagnose':           body = renderCardDiagnose(c);         break;
+        case 'puzzle':             body = renderCardPuzzle(c);           break;
+        case 'mechanisms':         body = renderCardMechanisms(c);       break;
+        case 'monetary':           body = renderCardMonetary(c);         break;
+        case 'impacts':            body = renderCardImpacts(c);          break;
+        case 'deflation':          body = renderCardDeflation(c);        break;
+        case 'paired':             body = renderCardPaired(c);           break;
+        case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
+        case 'transmission-chain': body = renderCardTransmissionChain(c); break;
+      }
     }
 
     const isLast = idx === T.cards.length - 1;
@@ -930,15 +1068,18 @@
   }
 
   function cardShortName(id) {
-    return {
-      'framing':       'Inflation has many causes',
-      'demand-pull':   'Demand-pull',
-      'cost-push':     'Cost-push',
-      'diagnose':      'Spotting the difference',
-      'monetary':      'Money supply & QE',
-      'impacts':       'Impacts of inflation',
-      'deflation':     'Deflation'
-    }[id] || id;
+    const inflationNames = {
+      'framing':     'Inflation has many causes',
+      'demand-pull': 'Demand-pull',
+      'cost-push':   'Cost-push',
+      'diagnose':    'Spotting the difference',
+      'monetary':    'Money supply & QE',
+      'impacts':     'Impacts of inflation',
+      'deflation':   'Deflation'
+    };
+    if (inflationNames[id]) return inflationNames[id];
+    const card = T.cards.find(c => c.id === id);
+    return card ? card.title : id;
   }
 
   /* ============================================================

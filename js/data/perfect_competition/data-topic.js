@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'perfect_competition_1',
       template: 'framing',
-      title: 'Assumptions of Perfect Competition',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Perfect competition: the big picture',
+      lede: 'A theoretical benchmark, not a description of reality — and that\'s exactly what makes it useful for judging every other market.',
+      branches: [
+        { tone: 'green', label: 'Five strict assumptions', sub: 'Many price-takers, homogeneous product, perfect information, free entry and exit, mobile factors. The full set delivers efficiency.' },
+        { tone: 'blue',  label: 'Price-taking firm',       sub: 'AR = MR = P horizontal at the market price. Firm decides only how much to produce — never what to charge.' },
+        { tone: 'amber', label: 'Entry erodes profit',     sub: 'Short-run supernormal profit attracts entrants until price falls to AC. Long-run profit = normal.' },
+        { tone: 'purple', label: 'The efficiency benchmark', sub: 'In long-run equilibrium: P = MC = minimum AC. Allocative and productive efficiency together — the yardstick for every other structure.' }
+      ],
       body: 'Perfect competition has five key assumptions:<br><br>1. <strong>Many buyers and sellers:</strong> no single participant can influence price — all are price-takers.<br>2. <strong>Homogeneous product:</strong> identical goods — no brand differentiation; buyers are indifferent between sellers.<br>3. <strong>Perfect information:</strong> all buyers and sellers know all prices — no search costs.<br>4. <strong>No barriers to entry or exit:</strong> firms can freely enter profitable markets and exit unprofitable ones — any supernormal profit is competed away.<br>5. <strong>Factor mobility:</strong> resources can move freely between uses — labour and capital respond to price signals.',
       keyTerms: [
         { term: 'Price-taker', def: 'A firm that has no pricing power — must accept the market price. Cannot raise price without losing all customers (infinite PED).' },

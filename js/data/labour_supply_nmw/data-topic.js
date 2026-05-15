@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_supply_nmw_1',
       template: 'framing',
-      title: 'Individual Labour Supply: The Work-Leisure Trade-off',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Labour supply, unions, and the NMW: the big picture',
+      lede: 'How many hours people work, what unions do to wages, and whether a minimum wage costs jobs — three battles fought on the same supply curve.',
+      branches: [
+        { tone: 'green',  label: 'Work-leisure choice',   sub: 'Every worker trades hours of leisure for wages. Substitution and income effects shape the individual supply curve.' },
+        { tone: 'blue',   label: 'Backward-bending curve',sub: 'At high wages the income effect can dominate — workers buy more leisure as pay rises further. The classic supply twist.' },
+        { tone: 'amber',  label: 'Trade unions',          sub: 'Acting as labour-market monopolies, unions raise wages — but risk reducing employment. The classic equity-efficiency trade-off.' },
+        { tone: 'purple', label: 'National Minimum Wage', sub: 'Standard theory predicts job losses; monopsony theory predicts no losses or even more jobs. The evidence is genuinely mixed.' }
+      ],
       body: 'Every worker faces a trade-off between work (paid) and leisure (unpaid but valued). The individual labour supply decision is about how many hours to work at each wage rate.<br><br><strong>Two effects of a wage increase:</strong><br>• <strong>Substitution effect:</strong> higher wage makes leisure more expensive (each hour of leisure costs more in forgone wages) → rational worker substitutes work for leisure → works MORE hours<br>• <strong>Income effect:</strong> higher wage increases real income → worker can afford more of everything, including leisure → works FEWER hours<br><br>At low wages: substitution effect typically dominates → supply curve slopes upward (more work at higher wages).<br>At high wages: income effect may dominate → supply curve bends backwards (fewer hours at even higher wages).',
       keyTerms: [
         { term: 'Substitution effect (labour)', def: 'Higher wages make leisure more costly in opportunity cost terms → worker substitutes work for leisure → more hours worked.' },

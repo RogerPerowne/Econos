@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'public_goods_1',
       template: 'framing',
-      title: 'Defining Public Goods',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Public goods: the big picture',
+      lede: 'Some goods can\'t be rationed by price — and without government, they won\'t exist at all.',
+      branches: [
+        { tone: 'green',  label: 'Two defining properties', sub: 'Non-rival (my use doesn\'t diminish yours) and non-excludable (can\'t stop non-payers benefiting).' },
+        { tone: 'rose',   label: 'The free rider problem',  sub: 'Everyone has an incentive not to pay → market under-provides → complete market failure.' },
+        { tone: 'purple', label: 'Pure vs quasi-public',    sub: 'Few goods are perfectly non-rival and non-excludable. Most lie on a spectrum (roads, broadcasting, beaches).' },
+        { tone: 'blue',   label: 'Why markets fail',        sub: 'No price signal can be charged → no profit incentive to supply → private provision is impossible at efficient scale.' },
+        { tone: 'amber',  label: 'Government solutions',    sub: 'Tax-funded provision bypasses free-riding — but raises questions about how much to provide and at what cost.' }
+      ],
       body: 'A <strong>pure public good</strong> has two essential properties:<br><br><strong>1. Non-rival:</strong> one person\'s consumption does not reduce the amount available to others. A lighthouse beam does not "use up" when one ship sees it.<br><br><strong>2. Non-excludable:</strong> once provided, it is impossible (or prohibitively expensive) to prevent non-payers from benefiting. A country\'s national defence protects all residents regardless of whether they pay tax.<br><br>These two properties together make public goods fundamentally different from private goods. A <strong>private good</strong> is both rival (your consumption reduces mine) and excludable (non-payers can be excluded). Most goods are private goods.',
       keyTerms: [
         { term: 'Non-rival', def: 'Consumption by one person does not reduce the amount available for others — zero marginal cost of providing to an additional consumer.' },

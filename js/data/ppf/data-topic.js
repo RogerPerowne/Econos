@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_1',
       template: 'framing',
-      title: 'The PPF: Construction and Meaning',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'The PPF: the big picture',
+      lede: 'A single curve that captures scarcity, choice, opportunity cost, efficiency and growth — the workhorse diagram of Theme 1.',
+      branches: [
+        { tone: 'green',  label: 'Construction &amp; meaning',  sub: 'Maximum combinations of two goods, given resources and technology. On the curve = efficient; inside = wasteful; outside = unattainable.' },
+        { tone: 'amber',  label: 'Opportunity cost',             sub: 'Every move along the PPF means giving up some of one good to gain another. The slope is the opportunity cost in physical units.' },
+        { tone: 'blue',   label: 'Why it&apos;s bowed out',      sub: 'Resources are not equally suited to all uses. Reallocating less-suitable resources raises the opportunity cost of extra output — increasing OC.' },
+        { tone: 'purple', label: 'Shifts: growth &amp; decline', sub: 'Better technology, more resources or higher productivity shift the PPF out. Disasters, depreciation and unemployment can shift it in.' },
+        { tone: 'rose',   label: 'Consumer vs capital trade-off', sub: 'Producing more capital goods today forgoes consumption now but shifts the PPF further out tomorrow — the growth–welfare tension.' }
+      ],
       body: 'A <strong>Production Possibility Frontier (PPF)</strong> shows the maximum combinations of two goods an economy can produce, given its current resources and technology, when all resources are fully and efficiently employed.<br><br>The PPF is drawn with one good on each axis. Every point ON the curve is productively efficient — no more of one good can be produced without giving up some of the other. Points <em>inside</em> the curve represent inefficiency (wasted or unemployed resources). Points <em>outside</em> the curve are currently unattainable.',
       keyTerms: [
         { term: 'PPF', def: 'A curve showing maximum output combinations of two goods given current resources and technology.' },

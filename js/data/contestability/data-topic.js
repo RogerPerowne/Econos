@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'contestability_1',
       template: 'framing',
-      title: 'What is a Contestable Market?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Contestable markets: the big picture',
+      lede: 'Sometimes a monopolist prices like a competitor — because the threat of entry is enough. Contestability rewrites how we judge market power.',
+      branches: [
+        { tone: 'green',  label: 'The core idea',         sub: 'Potential competition disciplines incumbent behaviour. What matters is not the number of firms but how easy entry and exit are.' },
+        { tone: 'blue',   label: 'Sunk costs are key',    sub: 'Recoverable costs don\'t deter entry. Only sunk (irrecoverable) costs create the asymmetry that protects incumbents.' },
+        { tone: 'amber',  label: 'Hit-and-run entry',     sub: 'Where sunk costs are zero, entrants can swoop in, profit briefly, and exit before retaliation — keeping prices near cost.' },
+        { tone: 'purple', label: 'Policy implications',   sub: 'Don\'t just count firms — assess entry and exit costs. Changes how regulators view monopoly and merger control.' }
+      ],
       body: 'A <strong>contestable market</strong> (Baumol, Panzar, Willig, 1982) is one where entry and exit are costless — any firm can enter, compete, and exit without losing capital if unsuccessful.<br><br><strong>Perfectly contestable market conditions:</strong><br>• Zero sunk costs (all costs recoverable on exit)<br>• No entry barriers of any kind<br>• Instant access to the same technology and inputs as incumbents<br>• Potential entrants face the same cost conditions as incumbents<br><br><strong>Key insight:</strong> in a perfectly contestable market, the incumbent must price at AC (normal profit), not at the monopoly price. Any supernormal profit invites entry. Because entry and exit are costless, a potential entrant faces no risk — they can enter, undercut the incumbent, earn profit, and exit before the incumbent can respond. This is "hit-and-run entry."<br><br>Contestability is NOT about the number of firms — it is about the credibility of the entry threat.',
       keyTerms: [
         { term: 'Contestable market', def: 'A market where entry and exit are costless — potential competition disciplines incumbent behaviour even without actual competition.' },
@@ -121,7 +129,7 @@ window.ECONOS_TOPIC = {
           'Network effects create sunk costs for consumers (switching costs) — reduces contestability even with zero firm sunk costs',
           'Digital markets: some argue they are natural monopolies with strong network barriers, not contestable'
         ]
-      ],
+      },
       examEdge: 'Contestability theory\'s most powerful policy implication: regulators should focus on reducing sunk costs through infrastructure sharing and open access mandates rather than breaking up large firms. Examples: BT Openreach (open access to fibre infrastructure reduces sunk costs for broadband providers — increases contestability). Mobile virtual network operators (MVNOs) access incumbent networks without building their own — reduces sunk costs, increases contestability. The theory directly guides this approach to competition policy.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }

@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'business_growth_1',
       template: 'framing',
-      title: 'Motives for Business Growth',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Business growth: the big picture',
+      lede: 'Firms grow for many reasons — and not all of them serve shareholders. Four ideas frame how, why, and at what cost firms expand.',
+      branches: [
+        { tone: 'green',  label: 'Why firms grow',        sub: 'Scale economies, market power, risk diversification — and manager-driven empire-building when ownership and control diverge.' },
+        { tone: 'blue',   label: 'Internal vs external',  sub: 'Organic expansion (slow, controlled) versus mergers and acquisitions (fast, risky). Different routes, different trade-offs.' },
+        { tone: 'amber',  label: 'Integration types',     sub: 'Horizontal, vertical, and conglomerate. Each changes market structure differently and triggers different competition concerns.' },
+        { tone: 'rose',   label: 'Why mergers fail',      sub: 'Around 80% of M&A destroys value. Integration problems, cultural clash, and overpayment (the winner\'s curse) explain why.' }
+      ],
       body: 'Firms grow for multiple reasons, some in shareholders\' interests and some primarily in managers\' interests:<br><br><strong>Shareholder-aligned motives:</strong><br>• Economies of scale → lower unit costs → higher profit margins<br>• Market power → pricing power → higher profit<br>• Risk diversification → more stable earnings<br>• Synergies → combined value > separate values ("2+2=5")<br><br><strong>Manager-driven motives (principal-agent):</strong><br>• Larger firm → higher CEO pay (pay scales with firm size)<br>• Empire-building for prestige and status<br>• Job security — harder to take over a larger firm',
       keyTerms: [
         { term: 'Economies of scale', def: 'Long-run average cost falls as output rises — a key motive for both internal and external growth.' },

@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_intervention_subsidies_1',
       template: 'framing',
-      title: 'How Subsidies Work',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Subsidies: the big picture',
+      lede: 'Subsidies shift supply right to boost production and consumption — but who really benefits depends on elasticities, not intent.',
+      branches: [
+        { tone: 'green',  label: 'How they work',         sub: 'Government pays per unit → supply shifts right → price falls, quantity rises. The mirror image of a tax.' },
+        { tone: 'blue',   label: 'Correcting externalities', sub: 'Pigouvian logic in reverse: subsidy = MEB internalises positive spillover and moves output to social optimum.' },
+        { tone: 'purple', label: 'Incidence',             sub: 'Producer vs consumer share of the benefit depends on relative PED/PES — not on who receives the cheque.' },
+        { tone: 'amber',  label: 'Limitations',           sub: 'Opportunity cost of public funds, risk of producer inefficiency, persistence after the original case has gone.' },
+        { tone: 'rose',   label: 'Alternative policies',  sub: 'Direct provision, regulation, vouchers, info campaigns — each may achieve the same goal at lower cost.' }
+      ],
       body: 'A <strong>subsidy</strong> is a government payment to producers or consumers that lowers the effective cost of a good or service, aiming to increase its production or consumption.<br><br><strong>Types:</strong><br>• <em>Producer subsidy:</em> paid to firms → reduces cost per unit → supply shifts RIGHT → price falls, quantity rises.<br>• <em>Consumer subsidy:</em> paid to buyers (voucher, benefit) → increases effective purchasing power for that good → demand shifts RIGHT → price rises, quantity rises.<br><br>Subsidies are the mirror of taxes: a tax shifts supply left; a subsidy shifts supply right. Both change equilibrium, create transfers, and affect welfare. Subsidies cost the government revenue (opportunity cost).',
       keyTerms: [
         { term: 'Subsidy', def: 'A government payment per unit to reduce the cost of production or consumption — shifts supply rightward.' },

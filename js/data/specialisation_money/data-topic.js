@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_1',
       template: 'framing',
-      title: 'Specialisation and the Division of Labour',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Specialisation &amp; money: the big picture',
+      lede: 'Specialisation makes us vastly more productive — but only if we have a way to exchange what we produce.',
+      branches: [
+        { tone: 'green',  label: 'Division of labour',          sub: 'Splitting production into specialised tasks raises productivity dramatically — Smith&apos;s pin factory turned 200 pins/day into 48,000.' },
+        { tone: 'blue',   label: 'Gains from specialisation',   sub: 'Higher output, lower unit costs, comparative advantage at the national level — the engine of economic growth and trade.' },
+        { tone: 'amber',  label: 'Limits &amp; downsides',      sub: 'Boredom, structural unemployment, over-reliance on trade and supply-chain fragility. Specialisation is not costless.' },
+        { tone: 'rose',   label: 'The barter problem',          sub: 'Specialisation only works if we can trade. Barter needs a double coincidence of wants — almost impossible at scale.' },
+        { tone: 'purple', label: 'Money &amp; its functions',   sub: 'Medium of exchange, unit of account, store of value, standard of deferred payment. Money is what makes specialised economies possible.' }
+      ],
       body: '<strong>Specialisation</strong> occurs when individuals, firms, regions, or countries concentrate on producing what they are relatively most efficient at. <strong>Division of labour</strong> refers to breaking production into specialised tasks, with each worker performing only one or a few.<br><br>Adam Smith (Wealth of Nations, 1776): a pin factory with 10 workers each performing one step produces 48,000 pins/day. The same workers without specialisation could produce perhaps 200. Productivity multiplier: 240x.<br><br>Benefits at the national level: countries specialise in goods where they have comparative advantage, then trade — raising world output above what each could achieve in isolation.',
       keyTerms: [
         { term: 'Specialisation', def: 'Concentrating on one good or task in which you have relative efficiency.' },

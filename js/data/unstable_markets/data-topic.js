@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'unstable_markets_1',
       template: 'framing',
-      title: 'Why Commodity Markets Are Volatile',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Unstable commodity markets: the big picture',
+      lede: 'Food and raw-material prices swing wildly because supply lags, demand is inelastic, and small shocks cause big movements.',
+      branches: [
+        { tone: 'green',  label: 'Why prices swing',     sub: 'Inelastic demand <em>and</em> inelastic short-run supply mean small shocks → large price changes.' },
+        { tone: 'blue',   label: 'The cobweb model',     sub: 'Production lags + price-based planting decisions create cyclical convergent or divergent oscillations.' },
+        { tone: 'rose',   label: 'Real-world costs',     sub: 'Farmer income volatility, food insecurity, inflation pass-through, investment uncertainty.' },
+        { tone: 'amber',  label: 'Buffer stock schemes', sub: 'Government buys at floor, sells at ceiling to stabilise prices — in theory. In practice: cost, storage, corruption.' },
+        { tone: 'purple', label: 'Globalised commodities', sub: 'World prices, futures markets, and speculation now dominate — domestic policy levers are weaker than ever.' }
+      ],
       body: 'Agricultural and commodity markets are characterised by extreme price volatility because both supply and demand are highly price inelastic:<br><br><strong>Inelastic demand (|PED| < 1):</strong> food is a necessity — demand barely changes with price. When supply falls, consumers cannot easily substitute → large price rise needed to clear market.<br><br><strong>Inelastic supply (PES < 1, short run):</strong> supply is fixed by the season — once crops are planted, quantity cannot be quickly adjusted. A bad harvest causes a large price spike because supply cannot increase to meet demand.<br><br>Combined: any supply shock → very large price change. PED = -0.2, PES = 0.3 (typical agricultural estimates) → 1% fall in supply causes ~3-4% rise in price.',
       keyTerms: [
         { term: 'Price volatility', def: 'Large, unpredictable fluctuations in price — common in commodity markets due to inelastic demand and supply combined with supply shocks.' },

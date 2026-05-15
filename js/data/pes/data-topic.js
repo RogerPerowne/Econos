@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_1',
       template: 'framing',
-      title: 'PES Formula and Interpretation',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Price elasticity of supply: the big picture',
+      lede: 'When demand jumps, do prices rocket or does output adjust? PES decides — and shapes everything from housing bubbles to oil shocks.',
+      branches: [
+        { tone: 'blue',   label: 'Formula &amp; values',         sub: '%&Delta;QS &divide; %&Delta;P. Always positive. Elastic (&gt; 1), inelastic (&lt; 1), and the perfectly inelastic/elastic extremes.' },
+        { tone: 'green',  label: 'What determines PES',           sub: 'Spare capacity, stocks, mobility of factors, ease of entry — and above all, time. The longer the period, the more elastic supply becomes.' },
+        { tone: 'amber',  label: 'PES &amp; demand shifts',       sub: 'Inelastic supply &rarr; demand shifts hit price hard, quantity barely moves. Elastic supply &rarr; quantity adjusts, price barely moves.' },
+        { tone: 'purple', label: 'PES &amp; tax incidence',       sub: 'The more inelastic side carries the heavier burden. Mirror image of PED — together they decide who really pays the tax.' },
+        { tone: 'rose',   label: 'Short run vs long run',         sub: 'In the short run, supply is often near-vertical. In the long run it flattens as capacity expands — the same shock has very different effects.' }
+      ],
       body: '<strong>Price Elasticity of Supply (PES)</strong> measures the responsiveness of quantity supplied to a change in price.<br><br><strong>Formula:</strong> PES = (% ΔQS) \xf7 (% ΔP)<br><br>PES is always positive (price and quantity supplied move in the same direction — upward-sloping supply curve).<br><br>• PES > 1: <strong>Elastic supply</strong> — producers can respond significantly to a price rise; quantity increases proportionally more than price.<br>• PES < 1: <strong>Inelastic supply</strong> — producers cannot increase output much; most price change becomes just a price rise, not extra output.<br>• PES = 0: <strong>Perfectly inelastic</strong> — supply is fixed regardless of price; vertical supply curve.<br>• PES = ∞: <strong>Perfectly elastic</strong> — producers supply any amount at the going price; horizontal supply curve.',
       keyTerms: [
         { term: 'PES', def: '% change in quantity supplied \xf7 % change in price. Always positive for normal upward-sloping supply.' },

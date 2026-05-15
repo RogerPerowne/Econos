@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'long_run_costs_1',
       template: 'framing',
-      title: 'The Long-Run Average Cost Curve',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Long-run costs: the big picture',
+      lede: 'In the long run everything is variable. The shape of the cost curve determines what market structure the industry can sustain.',
+      branches: [
+        { tone: 'green',  label: 'The LRAC curve',        sub: 'The envelope of all short-run cost curves. Shows the lowest cost per unit when firms can choose any scale of operation.' },
+        { tone: 'blue',   label: 'Economies of scale',    sub: 'Technical, managerial, financial, marketing, risk-bearing. Why bigger firms can undercut smaller ones on price.' },
+        { tone: 'amber',  label: 'Diseconomies of scale', sub: 'Coordination costs, communication failures, X-inefficiency. Why getting too big eventually pushes unit costs back up.' },
+        { tone: 'purple', label: 'MES and structure',     sub: 'Minimum efficient scale relative to market size determines whether the industry supports many firms, few firms, or a natural monopoly.' }
+      ],
       body: 'In the <strong>long run</strong>, all factors of production can be varied — no fixed costs. The firm chooses the optimal scale of operation for each output level.<br><br>The <strong>Long-Run Average Cost (LRAC) curve</strong> is the "envelope" of all possible short-run average cost curves — each point on the LRAC represents the lowest possible cost of producing that output using the optimal capital stock for that scale.<br><br>The LRAC curve is typically:<br>• <strong>Initially falling:</strong> economies of scale as output rises<br>• <strong>Flat (or minimum) at MES:</strong> constant returns to scale at the minimum efficient scale<br>• <strong>Eventually rising (possibly):</strong> diseconomies of scale at very large scales',
       keyTerms: [
         { term: 'LRAC', def: 'Long-Run Average Cost — the minimum average cost achievable at each output level when all inputs can be varied.' },

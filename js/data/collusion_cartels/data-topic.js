@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'collusion_cartels_1',
       template: 'framing',
-      title: 'Explicit vs Tacit Collusion',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Collusion and cartels: the big picture',
+      lede: 'Coordinated oligopolists can mimic a monopoly — but every cartel member has an incentive to cheat. Stability is the whole story.',
+      branches: [
+        { tone: 'green',  label: 'Explicit vs tacit',     sub: 'Formal cartels (illegal) and parallel behaviour without agreement (legal but harmful). Both push prices above competitive levels.' },
+        { tone: 'blue',   label: 'Why firms collude',     sub: 'Joint profit maximisation, avoiding destructive price wars, and reducing strategic uncertainty in oligopoly.' },
+        { tone: 'rose',   label: 'Why cartels collapse',  sub: 'The prisoner\'s dilemma: each member gains by cheating. Cartels are inherently unstable unless punishment is credible.' },
+        { tone: 'amber',  label: 'Sustaining collusion',  sub: 'Price leadership, repeated games, and tacit signals can hold coordination together — even without illegal communication.' },
+        { tone: 'purple', label: 'Competition policy',    sub: 'CMA, leniency programmes, and case law. Detecting tacit collusion is the hardest problem in competition law.' }
+      ],
       body: '<strong>Collusion</strong> occurs when oligopolists coordinate behaviour — on price, output, market share, or other competitive variables — to raise joint profits above the competitive level.<br><br><strong>Explicit collusion (cartel):</strong> formal, secret agreement between firms to fix prices, divide markets, or restrict output. Illegal under UK and EU competition law. Examples: OPEC, vitamins cartel, construction cartels.<br><br><strong>Tacit collusion:</strong> firms coordinate behaviour through signals and parallel behaviour without formal agreement. Legal but hard to detect. Firms learn from experience what prices rivals will accept without triggering price wars. Examples: price leadership, petrol pricing cycles.<br><br><strong>Why both are problematic:</strong> both result in prices above the competitive level, output below competitive level, and consumer surplus transferred to producers. The welfare effect is similar to monopoly.',
       keyTerms: [
         { term: 'Cartel', def: 'A formal agreement between competing firms to coordinate prices, output, or market sharing — illegal in most jurisdictions.' },
@@ -121,7 +130,7 @@ window.ECONOS_TOPIC = {
           'Crisis cartels (wartime, pandemic) may coordinate supply when markets fail',
           'Competition law allows "block exemptions" for cooperation that generates efficiency gains'
         ]
-      ],
+      },
       examEdge: 'The EU block exemption framework acknowledges that not all inter-firm coordination is harmful. R&D agreements between competitors can be exempted from cartel prohibition if they generate innovation benefits that consumers share. Joint purchasing agreements, standardisation agreements, and crisis cartels have been permitted under specific conditions. The principle: prohibition applies to agreements that restrict competition without generating offsetting consumer benefits.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }

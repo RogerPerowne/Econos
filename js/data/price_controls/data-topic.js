@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_controls_1',
       template: 'framing',
-      title: 'Price Ceilings (Maximum Prices)',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Price controls: the big picture',
+      lede: 'Governments cap or floor prices to protect consumers or producers — but every control creates a shortage, a surplus, or both.',
+      branches: [
+        { tone: 'green',  label: 'Price ceilings',     sub: 'Maximum prices set <em>below</em> equilibrium. Aim: protect consumers (rents, energy, food).' },
+        { tone: 'amber',  label: 'Price floors',       sub: 'Minimum prices set <em>above</em> equilibrium. Aim: protect producers or workers (NMW, agricultural support).' },
+        { tone: 'rose',   label: 'Consequences',       sub: 'Ceilings → shortages, queues, black markets. Floors → surpluses, gluts, government buy-ups.' },
+        { tone: 'purple', label: 'Evaluation',         sub: 'Distributional gains for some groups vs allocative inefficiency and unintended consequences.' },
+        { tone: 'blue',   label: 'Alternatives',       sub: 'Subsidies, taxes, direct transfers, and supply-side policies often achieve the same goal more efficiently.' }
+      ],
       body: 'A <strong>price ceiling</strong> (maximum price) is a legal upper limit on the price that can be charged for a good. It only affects the market if set BELOW the equilibrium price. If set above equilibrium, it has no effect (market price is already below the ceiling).<br><br><strong>Mechanism:</strong><br>• Ceiling price Pc < equilibrium P*<br>• At Pc: QD > QS → shortage<br>• Quantity traded = the lower of QD and QS = QS (supply is the binding constraint)<br>• Unsatisfied demand = QD − QS<br><br><strong>Rationale:</strong> protect consumers from "too high" prices — rents, energy, food, essential medicines.',
       keyTerms: [
         { term: 'Price ceiling', def: 'Legal maximum price set below equilibrium — creates a shortage.' },

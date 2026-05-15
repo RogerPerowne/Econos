@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'intl_competitiveness_1',
       template: 'framing',
-      title: 'Defining International Competitiveness',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'International competitiveness: the big picture',
+      lede: 'Why do German cars sell despite high wages, while UK exports lag? Competitiveness has two faces — and one stubborn underlying driver.',
+      branches: [
+        { tone: 'green',  label: 'Price competitiveness', sub: 'Lower unit costs let firms undercut rivals. Driven by unit labour costs, exchange rates, and input prices.' },
+        { tone: 'blue',   label: 'Non-price competitiveness', sub: 'Quality, design, innovation, brand and reliability. Why customers pay more for a Mercedes than a Kia.' },
+        { tone: 'amber',  label: 'Productivity as bedrock', sub: 'In the long run, productivity growth is what funds both higher wages and lower unit costs. The UK\'s puzzle sits here.' },
+        { tone: 'purple', label: 'Macro consequences', sub: 'Competitiveness shapes the current account, jobs in tradeable sectors, and the real exchange rate. It ties micro performance to macro outcomes.' }
+      ],
       body: '<strong>International competitiveness</strong> refers to the ability of a country\'s firms to sell goods and services successfully in global markets relative to foreign rivals. It has two dimensions:<br><br><strong>Price competitiveness:</strong> producing at lower cost per unit than competitors — determined by unit labour costs (ULC), exchange rates, raw material costs, and tax rates.<br><br><strong>Non-price competitiveness:</strong> offering products that are preferred at the same or even higher price — determined by quality, reliability, design, innovation, after-sales service, and brand reputation.',
       keyTerms: [
         { term: 'Unit labour cost (ULC)', def: 'Total labour cost divided by output — wage cost per unit produced. Lower ULC = greater price competitiveness.' },

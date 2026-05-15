@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'profits_shutdown_1',
       template: 'framing',
-      title: 'Revenue Concepts: TR, AR, MR',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Revenue, profit and shutdown: the big picture',
+      lede: 'Profit is the gap between revenue and cost — but the rule for when to keep producing during a loss surprises most students.',
+      branches: [
+        { tone: 'blue',   label: 'Revenue building blocks',  sub: 'TR, AR and MR. Under perfect competition MR = AR = P; under monopoly MR < AR, falling twice as fast.' },
+        { tone: 'green',  label: 'Normal vs supernormal',    sub: 'Normal profit (P = AC) just covers opportunity cost. Supernormal (P > AC) attracts entry in competitive markets.' },
+        { tone: 'amber',  label: 'The shutdown rule',        sub: 'In the short run, keep producing if P ≥ AVC — even at a loss. Below AVC, shutdown beats operating.' },
+        { tone: 'purple', label: 'Reading the diagram',      sub: 'Profit is always a rectangle: height (P − AC) by width Q*. The single most-tested visual skill in Theme 3.' }
+      ],
       body: '<strong>Total Revenue (TR)</strong> = Price \xd7 Quantity. Always rises initially as Q rises, then may fall depending on demand elasticity.<br><br><strong>Average Revenue (AR)</strong> = TR/Q = Price (P). The AR curve IS the demand curve — shows price at each quantity.<br><br><strong>Marginal Revenue (MR)</strong> = change in TR from selling one more unit. For a price-taking firm (perfect competition): demand is perfectly elastic → P is constant → MR = AR = P (horizontal). For a price-setter (monopoly): must lower price to sell more → MR < AR (MR curve lies below demand curve and falls twice as steeply for a linear demand curve).',
       keyTerms: [
         { term: 'Average Revenue (AR)', def: 'Revenue per unit = TR/Q = price. The AR curve is identical to the demand curve.' },

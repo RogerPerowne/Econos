@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'environmental_econ_1',
       template: 'framing',
-      title: 'The Environment as an Economic Resource',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Environmental economics: the big picture',
+      lede: 'The environment is the ultimate under-priced resource — and climate change is the largest market failure in history.',
+      branches: [
+        { tone: 'green',  label: 'The environment as resource', sub: 'Three services markets under-price: raw inputs, waste sink capacity, and amenity value.' },
+        { tone: 'rose',   label: 'Climate as market failure',   sub: 'Stern: global, long-horizon, irreversible, pervasive — every textbook failure compounded.' },
+        { tone: 'blue',   label: 'Carbon taxes',                sub: 'Pigouvian price on emissions: simple, transparent, but politically painful and hard to calibrate.' },
+        { tone: 'amber',  label: 'Cap-and-trade',               sub: 'Set total emissions, let firms trade permits. Quantity-certain, price-volatile — the EU ETS model.' },
+        { tone: 'purple', label: 'Sustainability & growth',     sub: 'Can growth be decoupled from environmental harm? International agreements, free-riding, and the equity question.' }
+      ],
       body: 'The natural environment provides three distinct economic services, each of which the market systematically under-prices:<br><br>1. <strong>Resource inputs:</strong> raw materials, energy, water, food. Markets price these but often below full social cost (depletion externalities, subsidy distortions).<br>2. <strong>Waste sink:</strong> the atmosphere, rivers, and soils absorb waste (CO2, chemicals, plastics). Markets treat this as a free service — but capacity is finite.<br>3. <strong>Amenity value:</strong> biodiversity, landscapes, clean air, recreational spaces — valued by people but poorly captured in market prices.<br><br>Environmental economics seeks to internalise these values into market prices — making environmental degradation economically costly.',
       keyTerms: [
         { term: 'Natural capital', def: 'The stock of natural resources and ecosystems that provide economic services — equivalent to man-made capital.' },

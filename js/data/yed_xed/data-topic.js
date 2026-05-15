@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'yed_xed_1',
       template: 'framing',
-      title: 'Income Elasticity of Demand (YED)',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'YED &amp; XED: the big picture',
+      lede: 'Demand doesn&apos;t just respond to a good&apos;s own price — it also reacts to incomes and to the prices of <em>other</em> goods.',
+      branches: [
+        { tone: 'green',  label: 'YED: income elasticity',         sub: '%&Delta;QD &divide; %&Delta;income. The sign reveals the good type; the size reveals the responsiveness.' },
+        { tone: 'blue',   label: 'Normal, inferior, luxury',       sub: 'YED &gt; 0 = normal; &lt; 0 = inferior; &gt; 1 = luxury; 0–1 = necessity. The classification that drives long-run industry growth.' },
+        { tone: 'amber',  label: 'XED: cross-price elasticity',    sub: '%&Delta;QD<sub>A</sub> &divide; %&Delta;P<sub>B</sub>. Positive = substitutes; negative = complements; zero = unrelated.' },
+        { tone: 'purple', label: 'Business &amp; strategy use',    sub: 'Firms use YED to forecast through the cycle and XED to map rivals and complements. The elasticity toolkit in action.' },
+        { tone: 'rose',   label: 'Wider economy implications',     sub: 'Income elasticities shape structural change: as economies grow, demand swings from agriculture to manufacturing to services.' }
+      ],
       body: '<strong>YED</strong> measures the responsiveness of quantity demanded to a change in consumer income.<br><br><strong>Formula:</strong> YED = (% ΔQD) \xf7 (% Δ Income)<br><br>Unlike PED, YED can be positive or negative, and its sign is crucial:<br>• <strong>YED > 0:</strong> Normal good — demand rises as income rises (consumers can afford more)<br>• <strong>YED < 0:</strong> Inferior good — demand falls as income rises (consumers switch to better alternatives)<br>• <strong>YED > 1:</strong> Luxury good — demand rises proportionally more than income<br>• <strong>0 < YED < 1:</strong> Necessity (normal but not luxury) — demand rises proportionally less than income',
       keyTerms: [
         { term: 'YED', def: '% change in quantity demanded \xf7 % change in income. Sign indicates good type; magnitude indicates responsiveness.' },

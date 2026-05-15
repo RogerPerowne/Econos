@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_failure_1',
       template: 'framing',
-      title: 'What Is Government Failure?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Government failure: the big picture',
+      lede: 'Intervention designed to fix market failure can make things worse — and recognising when is the heart of evaluation.',
+      branches: [
+        { tone: 'green',  label: 'The core idea',         sub: 'A net welfare loss <em>from</em> intervention. The comparator is realistic government, not a perfect one.' },
+        { tone: 'amber',  label: 'Causes',                sub: 'Information failures, conflicting objectives, administrative cost, political short-termism.' },
+        { tone: 'rose',   label: 'Regulatory capture',    sub: 'Regulators end up serving the industry they\'re meant to regulate — distorted policy, weak enforcement.' },
+        { tone: 'purple', label: 'Unintended consequences', sub: 'Rent controls → housing shortages. Drug bans → black markets. Subsidies → dependence. The classic exam material.' },
+        { tone: 'blue',   label: 'Reducing failure',      sub: 'Better information, transparency, sunset clauses, cost-benefit analysis, independent regulators.' }
+      ],
       body: '<strong>Government failure</strong> occurs when government intervention in markets produces a net welfare loss — either because it creates new inefficiencies, has large unintended consequences, or corrects the market failure poorly. The result is an outcome worse than the uncorrected market.<br><br>Government failure does not mean all intervention is wrong — just that intervention has costs as well as benefits and should be subject to rigorous evaluation. The relevant comparison is not "market outcome vs perfect government" but "market outcome vs realistic government intervention."<br><br>Market failure + government failure = a case for choosing the lesser of two evils.',
       keyTerms: [
         { term: 'Government failure', def: 'When government intervention creates welfare losses that exceed (or could exceed) the market failure it was designed to correct.' },

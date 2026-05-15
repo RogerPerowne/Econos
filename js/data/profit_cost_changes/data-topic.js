@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'profit_cost_changes_1',
       template: 'framing',
-      title: 'The MR = MC Framework',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Changes in costs and revenues: the big picture',
+      lede: 'When the world shifts — taxes, oil prices, consumer tastes — the MR = MC point moves with it. A disciplined method gets the new equilibrium right every time.',
+      branches: [
+        { tone: 'blue',   label: 'Start from MR = MC',     sub: 'Every change in cost or demand re-locates the profit-maximising output. Always begin by identifying which curve has moved.' },
+        { tone: 'amber',  label: 'Cost shock',             sub: 'Variable cost rises shift MC up → lower Q, higher P. The pass-through depends on PED.' },
+        { tone: 'green',  label: 'Demand shock',           sub: 'A rise in demand shifts AR and MR right → higher Q and higher P. Profit usually expands.' },
+        { tone: 'purple', label: 'Fixed vs variable',      sub: 'Lump-sum costs hit profit but not Q or P. Per-unit costs change MC → ripple through to price and output.' }
+      ],
       body: 'All profit analysis is built on the MR = MC condition. To analyse any change:<br><br><strong>Step 1:</strong> Identify what has changed — cost side (MC or AC) or revenue side (AR/MR).<br><strong>Step 2:</strong> Draw or redraw the relevant curve(s).<br><strong>Step 3:</strong> Find the new MR = MC intersection → new Q*.<br><strong>Step 4:</strong> Read off the new price from the demand curve at Q*.<br><strong>Step 5:</strong> Compare AC at new Q* with P → new profit per unit. Calculate profit rectangle: (P − AC) \xd7 Q*.<br><br><strong>Key principle:</strong> A change in fixed costs does NOT change the profit-maximising output. Fixed costs shift AC (and hence the profit rectangle) but do NOT shift MC. Since MR = MC determines Q*, and MC hasn\'t moved, Q* and P are unchanged. Only profit (the rectangle) changes.',
       keyTerms: [
         { term: 'Profit-maximising output Q*', def: 'The output where MR = MC. This is the starting point for all profit analysis.' },

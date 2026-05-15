@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_intervention_tax_1',
       template: 'framing',
-      title: 'How Indirect Taxes Work',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Indirect taxes: the big picture',
+      lede: 'Taxes shift supply left to curb consumption and raise revenue — but the real burden falls where elasticity allows it.',
+      branches: [
+        { tone: 'green',  label: 'How they work',     sub: 'Specific (per unit) or ad valorem (% of price). Supply shifts left → higher price, lower quantity.' },
+        { tone: 'blue',   label: 'Pigouvian taxes',   sub: 'Set tax = MEC to internalise the externality and move output to the social optimum.' },
+        { tone: 'purple', label: 'Tax incidence',     sub: 'Who really pays depends on PED vs PES. Inelastic demand → consumer bears most; inelastic supply → producer bears most.' },
+        { tone: 'amber',  label: 'Limitations',       sub: 'Information problem (true MEC unknown), regressive impact, black markets, evasion.' },
+        { tone: 'rose',   label: 'Alternatives',      sub: 'Regulation, tradable permits, subsidies for substitutes, behavioural nudges — each with different efficiency and equity trade-offs.' }
+      ],
       body: 'An <strong>indirect tax</strong> is a tax levied on goods and services (rather than directly on income or profits). It is collected by producers but ultimately borne by both producers and consumers depending on price elasticities.<br><br><strong>Types:</strong><br>• <em>Specific tax (unit tax):</em> a fixed amount per unit (e.g. \xa31 per litre of petrol). On a diagram: parallel leftward shift of supply curve.<br>• <em>Ad valorem tax:</em> a percentage of the price (e.g. 20% VAT). On a diagram: supply curve pivots (shifts left by a larger absolute amount at higher prices).<br><br><strong>Mechanism:</strong> tax raises the effective cost of production for every unit → supply curve shifts left → new equilibrium at higher price and lower quantity.',
       keyTerms: [
         { term: 'Indirect tax', def: 'Tax on spending rather than income — collected at the point of sale. Examples: VAT (20%), fuel duty, sugar levy.' },

@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'pos_externalities_1',
       template: 'framing',
-      title: 'What Is a Positive Externality?',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Positive externalities: the big picture',
+      lede: 'When private benefit ignores third-party gain, markets underproduce goods that society values most — like education and healthcare.',
+      branches: [
+        { tone: 'green',  label: 'The core concept',  sub: 'MSB = MPB + MEB. When MEB > 0, the market undervalues the good and output falls short of the social optimum.' },
+        { tone: 'blue',   label: 'The diagram',       sub: 'MSB sits above MPB. Welfare loss is the triangle of forgone net benefit between Q_market and Q*.' },
+        { tone: 'amber',  label: 'Education & healthcare', sub: 'The classic case studies: spillover benefits for productivity, public health, and social cohesion.' },
+        { tone: 'purple', label: 'Merit goods',       sub: 'Goods under-consumed due to both information failure <em>and</em> positive externalities — overlapping but distinct concepts.' },
+        { tone: 'rose',   label: 'Policy responses',  sub: 'Subsidies, direct public provision, regulation (compulsory schooling). Each trades efficiency against equity and cost.' }
+      ],
       body: 'A <strong>positive externality</strong> occurs when economic activity generates benefits for third parties who are not party to the transaction and who do not pay for those benefits.<br><br>Key framework:<br>• <strong>Private benefit (MPB):</strong> the benefit received directly by the consumer.<br>• <strong>External benefit (MEB):</strong> additional benefit received by third parties.<br>• <strong>Social benefit (MSB):</strong> MSB = MPB + MEB — total benefit to society.<br><br>When positive externalities exist, MSB > MPB. The market, responding only to MPB, produces less than the socially optimal quantity where MSB = MSC. The result is <strong>underconsumption</strong> or <strong>underproduction</strong>.',
       keyTerms: [
         { term: 'Positive externality', def: 'External benefit to third parties from economic activity — not reflected in market price or private cost-benefit calculations.' },

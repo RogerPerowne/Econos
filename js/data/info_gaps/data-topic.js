@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'info_gaps_1',
       template: 'framing',
-      title: 'Information and Market Failure',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Information gaps: the big picture',
+      lede: 'When one side of a deal knows more than the other, even competitive markets can unravel.',
+      branches: [
+        { tone: 'green',  label: 'Imperfect vs asymmetric', sub: 'All information is imperfect — but asymmetry (one party systematically knows more) is the source of failure.' },
+        { tone: 'rose',   label: 'Adverse selection',       sub: 'Akerlof\'s "lemons": hidden quality before a deal drives good goods out of the market.' },
+        { tone: 'amber',  label: 'Moral hazard',            sub: 'Hidden action <em>after</em> a deal — insured drivers take more risks, banks underwrite riskier loans.' },
+        { tone: 'blue',   label: 'Market solutions',        sub: 'Signalling (degrees, warranties) and screening (insurance excesses, credit checks) help reveal hidden information.' },
+        { tone: 'purple', label: 'Government responses',    sub: 'Mandatory disclosure, regulation, public provision — especially in healthcare and financial services.' }
+      ],
       body: 'Standard market theory assumes <strong>perfect information</strong>: all buyers and sellers know prices, quality, and each other\'s characteristics. In reality, information is often:<br><br>• <strong>Imperfect:</strong> no one has complete information (normal and manageable)<br>• <strong>Asymmetric:</strong> one party systematically knows more than the other — this creates market failure<br>• <strong>Hidden action:</strong> one party cannot observe the other\'s behaviour after a deal<br><br>Asymmetric information problems arise in: used car markets, insurance, labour markets, healthcare, financial services, and credit markets. They lead to inefficient outcomes even when markets are competitive.',
       keyTerms: [
         { term: 'Asymmetric information', def: 'One party to a transaction has systematically better information than the other — creates market failure.' },

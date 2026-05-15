@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'trading_blocs_1',
       template: 'framing',
-      title: 'Spectrum of Economic Integration',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Trading blocs and the WTO: the big picture',
+      lede: 'Countries can liberalise trade with the whole world (multilateral) or with a chosen few (regional). Each path has costs as well as gains.',
+      branches: [
+        { tone: 'blue',   label: 'Levels of integration', sub: 'FTA → customs union → single market → economic union → monetary union. Each step deepens economic ties and surrenders more policy independence.' },
+        { tone: 'green',  label: 'Trade creation', sub: 'Joining a bloc replaces inefficient domestic production with cheaper partner imports. The pro-trade welfare gain.' },
+        { tone: 'amber',  label: 'Trade diversion', sub: 'A common external tariff can divert imports from the cheapest world producer to a less efficient bloc partner. The hidden cost.' },
+        { tone: 'purple', label: 'WTO and multilateralism', sub: 'The WTO polices global trade rules (MFN, national treatment, dispute settlement). Regional blocs can complement it — or undermine its universal logic.' }
+      ],
       body: 'Economic integration has five levels, each deeper than the last:<br><br><strong>1. Free Trade Area (FTA)</strong> — members remove tariffs between themselves; each keeps own external tariffs (e.g. NAFTA/USMCA).<br><strong>2. Customs Union (CU)</strong> — FTA plus a common external tariff on imports from non-members (e.g. EU pre-single market).<br><strong>3. Single/Common Market</strong> — CU plus free movement of goods, services, capital and labour (EU single market).<br><strong>4. Economic Union</strong> — single market plus harmonised economic policies (EU).<br><strong>5. Monetary Union</strong> — economic union plus shared currency and central bank (Eurozone).',
       keyTerms: [
         { term: 'Common external tariff', def: 'A uniform tariff applied by all customs-union members on imports from non-member countries.' },

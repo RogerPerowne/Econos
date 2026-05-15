@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_markets_1',
       template: 'framing',
-      title: 'Derived Demand for Labour',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Labour markets: the big picture',
+      lede: 'Wages and jobs come from the same supply-and-demand logic as any market — but workers aren\'t widgets, and employers aren\'t always price-takers.',
+      branches: [
+        { tone: 'green',  label: 'Derived demand',        sub: 'Firms hire labour only because workers produce sellable output. Product market shocks transmit straight to labour demand.' },
+        { tone: 'blue',   label: 'MRP theory',            sub: 'Hire workers up to where the marginal revenue product equals the wage. The MRP curve IS the firm\'s labour demand curve.' },
+        { tone: 'amber',  label: 'Wage differentials',    sub: 'Skills, compensating differentials, discrimination, and bargaining power all explain why identical hours pay different wages.' },
+        { tone: 'rose',   label: 'Monopsony',             sub: 'When one buyer dominates, employers can push wages below MRP. Workers under-paid, under-employed — a labour-market market failure.' }
+      ],
       body: 'The demand for labour is a <strong>derived demand</strong> — firms hire workers not for their own sake but because workers produce goods and services that can be sold.<br><br>This means the demand for labour depends on:<br>• The demand for the final product (higher product demand → more labour demanded)<br>• The productivity of labour (more productive workers → more valuable → higher demand)<br>• The price of the final product (higher product price → each worker generates more revenue → higher demand)<br><br><strong>Implication:</strong> anything that increases the demand for a firm\'s product will increase its demand for labour. Demand shocks in product markets transmit directly to labour markets. UK manufacturing job losses 1980s–2000s reflected both import competition (reduced product demand) and automation (substitution away from labour).',
       keyTerms: [
         { term: 'Derived demand', def: 'Demand for a factor of production (labour, capital) that arises from the demand for the goods or services it produces.' },

@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopolistic_competition_1',
       template: 'framing',
-      title: 'Assumptions of Monopolistic Competition',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Monopolistic competition: the big picture',
+      lede: 'Many firms, differentiated products. A hybrid that delivers variety — but pays for it in efficiency.',
+      branches: [
+        { tone: 'green',  label: 'Many firms, free entry',   sub: 'Like perfect competition: no barriers, so supernormal profit gets competed away in the long run.' },
+        { tone: 'blue',   label: 'Product differentiation',  sub: 'Each firm has a slightly different product → downward-sloping demand → some pricing power.' },
+        { tone: 'amber',  label: 'Excess capacity',          sub: 'Long-run tangency sits to the left of minimum AC. Firms operate below efficient scale.' },
+        { tone: 'purple', label: 'Variety vs efficiency',    sub: 'Consumers gain choice; the cost is allocative and productive inefficiency. The defining trade-off.' }
+      ],
       body: 'Monopolistic competition (Chamberlin, 1930s) has four key assumptions:<br><br>1. <strong>Many sellers:</strong> many firms in the market — no firm is large enough to dominate; each has small market share.<br>2. <strong>Product differentiation:</strong> each firm\'s product is slightly different — branding, quality, location, design. This gives each firm a small degree of market power (downward-sloping demand).<br>3. <strong>No barriers to entry or exit:</strong> firms can freely enter profitable markets and exit loss-making ones — same as perfect competition.<br>4. <strong>Imperfect information:</strong> consumers don\'t have perfect knowledge of all products and prices — search costs and brand loyalty exist.<br><br><strong>Key difference from perfect competition:</strong> product differentiation means each firm is NOT a price-taker. Each faces a downward-sloping demand curve for its differentiated product.',
       keyTerms: [
         { term: 'Product differentiation', def: 'Each firm\'s product differs from rivals\' in real or perceived ways — gives each firm some pricing power.' },
@@ -121,7 +129,7 @@ window.ECONOS_TOPIC = {
           'Normal profit in long run, but at higher cost than perfectly competitive equilibrium',
           'Brand loyalty may be irrational — consumers pay premium for negligible real differences'
         ]
-      ],
+      },
       examEdge: 'The best markets for real-world application: restaurants (similar food, compete on atmosphere/cuisine/location), hairdressers (similar service, compete on style/reputation/location), clothing brands (similar garments, compete on brand/design), smartphone apps. All show the defining features: many sellers, differentiated products, free entry, supernormal profit eroded long-run. Using a specific industry example and applying the theory systematically always distinguishes top-band answers.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }

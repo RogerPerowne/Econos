@@ -27,7 +27,16 @@ window.ECONOS_TOPIC = {
     {
       id: 'efficiency_1',
       template: 'framing',
-      title: 'Productive Efficiency',
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Types of efficiency: the big picture',
+      lede: 'Efficiency means different things — and market structures trade them against each other. Knowing which type matters is what separates B from A* answers.',
+      branches: [
+        { tone: 'green',  label: 'Productive',            sub: 'Production at minimum average cost — no waste. Achieved at the bottom of the LRAC curve.' },
+        { tone: 'blue',   label: 'Allocative',            sub: 'Resources go to their highest-value uses: P = MC. Marginal benefit to consumers equals marginal cost of production.' },
+        { tone: 'purple', label: 'Dynamic',               sub: 'Efficiency over time: innovation, R&D, product improvement. Requires retained profit — often missing in perfect competition.' },
+        { tone: 'amber',  label: 'X-inefficiency',        sub: 'Costs above the minimum due to weak competitive pressure. Monopolies become slack; competition trims fat.' },
+        { tone: 'rose',   label: 'Static vs dynamic',     sub: 'The policy dilemma: perfect competition is statically efficient but may be dynamically poor. Monopoly may be the reverse.' }
+      ],
       body: '<strong>Productive efficiency</strong> is achieved when output is produced at the lowest possible average cost — the firm operates at the minimum point of the LRAC curve.<br><br><strong>Condition:</strong> P = minimum LRAC (long run) or MC = AC (minimum AC in short run).<br><br>Productively efficient firms are producing at minimum cost per unit — no waste of resources. The firm cannot reduce cost without reducing output.<br><br>In market structures: perfect competition achieves productive efficiency in the long run (competitive pressure forces firms to minimum AC or they are priced out). Monopoly may not achieve it (operates beyond or before minimum AC; lacks competitive pressure).',
       keyTerms: [
         { term: 'Productive efficiency', def: 'Production at minimum long-run average cost — no waste; resources fully and efficiently employed.' },

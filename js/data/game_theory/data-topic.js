@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Game Theory',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the prisoner\'s dilemma, dominant strategies, Nash equilibrium, repeated games, and how game theory explains oligopoly behaviour and competition policy.',
   intro: {
     heroKey: 'heroGameTheory',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Nash equilibrium: each player is making the best response to what the other is doing. Neither can improve their payoff by unilaterally changing strategy. Dominant strategy: best response regardless of what the other player does. If a dominant strategy exists, a rational player always chooses it.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'game_theory_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Game theory: the big picture',
       lede: 'In oligopoly, your best move depends on what rivals do — and they\'re thinking the same about you. Game theory makes this interdependence tractable.',
       branches: [
@@ -60,7 +60,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'game_theory_3',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: "The Prisoner's Dilemma",
       lede: 'The most important game in economics — individually rational behaviour produces a collectively suboptimal outcome. Build it up cell by cell.',
       diagramKey: 'prisonersDilemmaInteractive',
@@ -151,6 +151,61 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The most important limitation is the behavioural challenge: experimental economics (ultimatum game, public goods game) consistently shows that real people cooperate more than rational self-interest predicts. Players care about fairness, reputation, and reciprocity — not just payoffs. Behavioural game theory (Kahneman, Thaler) incorporates these insights. This links game theory to behavioural economics — evaluating game theory\'s limits using behavioural evidence shows sophisticated cross-topic thinking.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'gt-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: game theory',
+      question: 'Evaluate the usefulness of game theory in explaining the behaviour of firms in oligopolistic markets. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define oligopoly and game theory. Introduce the key insight: in oligopolies, each firm\'s optimal strategy depends on what rivals do — making strategic interdependence the defining feature and game theory the natural analytical tool.',
+          hint: 'Oligopoly: few large firms, high barriers to entry, strategic interdependence. Game theory: analyses strategic interaction — players, strategies, payoffs, equilibria. Nash equilibrium: no player can improve by changing strategy unilaterally. Applications: prisoner\'s dilemma (price wars), repeated games (tacit collusion), entry deterrence.',
+          model: 'Oligopoly — a market structure dominated by a small number of large firms with high barriers to entry — is characterised by strategic interdependence: each firm\'s optimal decision depends critically on the actions of rivals. This interdependence makes simple price-taking models inapplicable. Game theory provides the analytical framework for these situations, modelling firms as players choosing strategies to maximise payoffs given expectations of rivals\' choices. Key tools include the Nash equilibrium (a strategy profile where no player benefits from unilaterally deviating), the prisoner\'s dilemma (explaining why mutually harmful competition can persist), and repeated game analysis (explaining how tacit collusion can be sustained). This essay evaluates how well these tools explain observed oligopoly behaviour.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — The prisoner\'s dilemma explains competitive outcomes and cartel instability',
+          prompt: 'Explain how the prisoner\'s dilemma payoff matrix captures the incentive structure facing oligopolists — where defecting (undercutting on price or cheating on a cartel) is the dominant strategy, leading to a Nash equilibrium that is worse for both firms than cooperation.',
+          hint: 'Payoff matrix: both firms choose high or low price. Dominant strategy: low price (undercut). Nash equilibrium: both low price = lower profits for both. Cartel: both choose high price = better outcome, but unstable (incentive to cheat). OPEC: cartel repeatedly undermined by member defection.',
+          model: 'The prisoner\'s dilemma provides the clearest game-theoretic insight into oligopoly: even when mutual cooperation (e.g. maintaining high prices) would benefit all firms, individual incentives drive each firm to defect. In a standard two-firm payoff matrix where both can charge high or low prices, "low price" is the dominant strategy for each — regardless of the rival\'s choice, each firm does better by undercutting. The resulting Nash equilibrium (both charge low) delivers lower profits to both than mutual high pricing, yet it is the predicted outcome. This explains why price wars occur in oligopolies and why cartels are inherently unstable: member firms always have an individual incentive to cheat on the agreement. OPEC\'s repeated production quota violations illustrate this real-world cartel instability.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Repeated games explain tacit collusion and stable oligopoly pricing',
+          prompt: 'Explain how in a repeated game (the prisoner\'s dilemma played infinitely), firms can sustain cooperative outcomes through tit-for-tat strategies and the threat of punishment — explaining the observed stability of prices in many oligopolies.',
+          hint: 'Repeated game: future matters. Discount rate: if firms value future profits sufficiently, cooperation is rational. Tit-for-tat: cooperate unless rival defects, then punish. Folk theorem: any outcome between Nash and cooperative can be sustained. UK petrol market: price leadership, parallel pricing without explicit agreement.',
+          model: 'When the prisoner\'s dilemma is played repeatedly — as in ongoing business relationships — cooperative outcomes can be sustained through credible punishment strategies. Robert Axelrod\'s tournaments demonstrated that "tit-for-tat" — cooperate initially, then mirror the rival\'s last move — is highly successful in generating and sustaining cooperation. The Folk Theorem formalises this: in an infinitely repeated game with a sufficiently high discount factor (firms care enough about future profits), any payoff between the Nash equilibrium and the cooperative optimum can be sustained as an equilibrium. This explains tacit collusion — price coordination without explicit agreement — observed in UK petrol retail, supermarket pricing, and mobile phone tariffs. Firms signal willingness to cooperate through price leadership and parallel pricing, avoiding the welfare costs of price wars while staying within competition law.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Game theory\'s rationality assumptions limit its real-world explanatory power',
+          prompt: 'Argue that game theory\'s predictions depend on assumptions of common knowledge and rationality that frequently fail in real markets, limiting its ability to predict actual firm behaviour.',
+          hint: 'Rationality assumption: firms correctly calculate payoff matrices and best responses. In practice: bounded rationality (Simon), heuristics, errors. Multiple Nash equilibria: theory cannot predict which is selected. Payoffs unknown: firms don\'t know rivals\' cost structures. Behavioural evidence: cooperation exceeds theory\'s prediction (public goods games).',
+          model: 'Game theory\'s predictive power is constrained by its demanding assumptions. First, rational play requires common knowledge — each player knows the payoffs, knows the other knows them, and so on infinitely — a condition rarely met in real oligopolies where rival cost structures are private information. Second, Herbert Simon\'s concept of bounded rationality suggests that real decision-makers use heuristics and satisficing rather than calculating Nash equilibria. Third, when multiple Nash equilibria exist (a common occurrence in more complex games), theory cannot predict which will be selected without additional assumptions about equilibrium selection. Finally, experimental evidence from ultimatum games and public goods experiments consistently shows that real players cooperate, punish unfair offers, and consider reciprocity beyond what rational self-interest predicts — suggesting that game theory systematically underestimates the scope for cooperation.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Game theory is most useful as a framework, not a precise predictor',
+          prompt: 'Evaluate game theory\'s contribution as a conceptual framework for competition policy and oligopoly analysis, even if it cannot predict exact equilibria in complex real markets.',
+          hint: 'Mechanism design: auction theory (government spectrum sales). Competition law: cartels exploit prisoner\'s dilemma logic — leniency programmes use game theory to destabilise cartels (first defector gets immunity). Entry deterrence: limit pricing, predatory pricing modelled as sequential games. Game theory is descriptively powerful even if not perfectly predictive.',
+          model: 'The appropriate evaluation of game theory is as a conceptual framework rather than a precise predictive tool. Even where game theory cannot uniquely predict equilibrium, it structures the analysis of strategic interaction in ways that generate powerful policy insights. Competition authorities use prisoner\'s dilemma logic in cartel enforcement: leniency programmes — where the first cartel member to report the cartel receives immunity — deliberately exploit the game structure to destabilise collusion. The UK CMA\'s leniency programme has broken up major cartels in construction and financial services precisely because it changes the payoff matrix. Government spectrum auctions (3G, 4G) used mechanism design — an application of game theory — to raise over £22bn in the UK alone. These real policy successes demonstrate game theory\'s practical value, even where its predictive precision is limited.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Reach a judgement: is game theory a useful tool for explaining oligopoly behaviour, and what are its main limitations?',
+          hint: 'Game theory is the most powerful available tool for oligopoly analysis — the key concepts (Nash equilibrium, prisoner\'s dilemma, repeated games, entry deterrence) explain patterns that other models cannot. Limitations are real but do not invalidate the framework. The appropriate response is to supplement with behavioural insights, not abandon game theory.',
+          model: 'In conclusion, game theory is the most useful available framework for explaining oligopolistic behaviour, offering insights that no alternative model provides: why price wars occur despite their mutual harm, why tacit collusion persists without explicit agreements, and how entry threats discipline incumbent pricing. The prisoner\'s dilemma and repeated game models explain patterns observed in real markets from OPEC to supermarket pricing. However, game theory\'s predictive precision is limited by rationality assumptions, information requirements, and the problem of multiple equilibria. These limitations are best addressed by supplementing formal game-theoretic analysis with behavioural economics insights — recognising that real firms use heuristics, respond to social norms, and consider reputation — rather than abandoning the framework entirely. Game theory remains indispensable for competition policy and industrial economics despite, not because of, its idealised assumptions.'
+        }
+      ]
     }
   ]
 };

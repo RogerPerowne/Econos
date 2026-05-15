@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'profits_shutdown_2',
       template: 'framing',
+      diagramKey: 'profitsShutdownDiagram',
       title: 'Normal Profit, Supernormal Profit, and Loss',
       body: 'Profit analysis uses <strong>economic profit</strong> (TR − economic costs, where economic costs include normal profit as a cost):<br><br>• <strong>Normal profit:</strong> TR = TC (economic). The firm covers all costs including opportunity cost. Zero economic profit = normal profit. In diagrams: P = AC → firm just breaks even economically.<br>• <strong>Supernormal profit:</strong> TR > TC. P > AC. Firm earns above normal return. Attracts new entrants in competitive markets.<br>• <strong>Loss (economic):</strong> TR < TC. P < AC. Firm makes a loss. May or may not continue operating depending on whether it covers variable costs.<br><br><strong>Profit rectangle:</strong> Profit = (P − AC) \xd7 Q → rectangle on diagram between P and AC, width Q.',
       keyTerms: [

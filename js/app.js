@@ -191,6 +191,11 @@
       </div>`;
     }
 
+    // Diagram (if card provides a diagramKey)
+    if (c.diagramKey && I[c.diagramKey]) {
+      content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
+    }
+
     // Body text — styled as a rich explainer
     if (c.body) {
       content += `

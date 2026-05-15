@@ -511,7 +511,9 @@ window.EconosPdf = (function () {
 
   function renderGeneric(c) {
     var intro = c.intro ? '<div style="font-size:13px;line-height:1.65;color:' + C.slate + ';font-style:italic;border-left:4px solid ' + C.blue + ';padding:6px 0 6px 14px;margin-bottom:18px;">💡 ' + s(c.intro) + '</div>' : '';
+    var diagramNote = c.diagramKey ? '<div style="font-size:12px;color:' + C.slate + ';border:1.5px dashed ' + C.rule + ';border-radius:8px;padding:10px 14px;margin-bottom:18px;font-style:italic;">📊 Interactive diagram available in the app.</div>' : '';
     return intro +
+      diagramNote +
       renderBranchesBlock(c.branches) +
       renderBodyBlock(c.body) +
       renderCausesGrid(c.causes && Array.isArray(c.causes) && c.causes.length && c.causes[0] && c.causes[0].head ? c.causes : null) +

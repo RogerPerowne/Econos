@@ -59,6 +59,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopolistic_competition_3',
       template: 'mechanisms',
+      diagramKey: 'mcLrTangency',
       title: 'Long-Run Adjustment: Entry Erodes Profit',
       intro: 'Free entry eliminates supernormal profit in the long run — the same mechanism as perfect competition, but the long-run outcome is different.',
       steps: [

@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Market Power & Contestability',
-  estTime: '8-10 minutes',
+  estTime: '10-12 minutes',
   goal: 'Understand that competitive outcomes depend on the threat of entry — not just the number of firms. Place real markets on the contestability spectrum.',
   intro: {
     heroKey: 'heroMarketPower',
     summary: 'The textbook compares perfect competition with monopoly as if structure (how many firms) were the central question. The modern framework treats CONTESTABILITY — the threat of entry — as the central question. PC and monopoly become the two theoretical limit cases on the contestability spectrum, with most real markets in between.',
-    doInThis: 'Work through 7 cards: the contestability spectrum, the two textbook limit cases drawn correctly, contestability theory (Baumol), the corrected welfare diagram, when market power is benign, where real markets actually sit, and modern competition policy.',
+    doInThis: 'Work through 8 cards: the contestability spectrum, the two textbook limit cases, contestability theory (Baumol), the corrected welfare diagram, when market power is benign, where real markets sit, modern competition policy, and a full market structures comparison table.',
     outcomes: [
       'Place market structures on the contestability spectrum from PC to pure monopoly',
       'Draw firm-level diagrams correctly: horizontal AR=MR=P under PC versus downward AR with MR below under monopoly',
@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Structure (how many firms) matters less than CONDUCT (how they behave), and conduct is disciplined by CONTESTABILITY (the threat of entry). A single firm in an easy-entry market may price like PC; an oligopoly with high entry barriers may behave like a monopoly. Always assess entry barriers, not just count of firms.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -28,7 +28,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mvc_1',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'The Contestability Spectrum',
       lede: 'Forget "how many firms?" — the real question is "how easy is entry?". Market structures sit on a contestability spectrum from low barriers (PC) to high barriers (pure monopoly).',
       diagramKey: 'contestabilitySpectrum',
@@ -54,7 +54,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mvc_2',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'The Two Limit Cases — Done Correctly',
       lede: 'A firm-level diagram for each extreme. PC firm: horizontal AR=MR=P (price-taker). Monopoly: faces the whole downward demand, MR below AR.',
       diagramKey: 'firmLevelPcVsMonopoly',
@@ -80,7 +80,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mvc_3',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Contestability Theory (Baumol 1982)',
       lede: 'A market is contestable if entry and exit are costless. Then even a single firm must price near competitive level — the threat of entry disciplines it.',
       diagramKey: 'contestabilityFrames',
@@ -106,7 +106,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mvc_4',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'The Welfare Cost of Unchecked Market Power',
       lede: 'Market-level diagram: industry demand vs industry supply for PC, vs monopolist\'s MR=MC for monopoly. The DWL triangle is the welfare cost when contestability fails.',
       diagramKey: 'marketLevelWelfare',
@@ -177,7 +177,27 @@ window.ECONOS_TOPIC = {
           'Risk of regulatory capture as agencies repeatedly engage the same firms'
         ]
       },
-      examEdge: 'The modern framework is genuinely different from textbook PC vs Monopoly. Don\'t evaluate competition policy as if its goal is to force PC — its goal is to ensure CONTESTABILITY. Strong evaluation: "While breaking up Big Tech may seem appealing under the static welfare model, the contestability framework prefers conduct codes that preserve scale benefits while preventing entry-barrier abuse — the approach embedded in the UK Digital Markets, Competition and Consumers Act 2024."',
+      examEdge: 'The modern framework is genuinely different from textbook PC vs Monopoly. Don\'t evaluate competition policy as if its goal is to force PC — its goal is to ensure CONTESTABILITY. Strong evaluation: "While breaking up Big Tech may seem appealing under the static welfare model, the contestability framework prefers conduct codes that preserve scale benefits while preventing entry-barrier abuse — the approach embedded in the UK Digital Markets, Competition and Consumers Act 2024."'
+    },
+    {
+      id: 'mvc_8',
+      template: 'market-structures-comparison',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Market Structures at a Glance',
+      lede: 'All four structures side by side. Use the \'Reveal\' rows to self-test the efficiency verdicts before checking — this is exactly the kind of comparison an examiner expects you to make fluently.',
+      rows: [
+        { label: 'No. of firms',    pc: 'Many (infinite in theory)', mc: 'Many',        ol: 'Few (typically 3–10)',                mo: 'One' },
+        { label: 'Product type',    pc: 'Homogeneous (identical)',    mc: 'Differentiated', ol: 'Homogeneous or differentiated',      mo: 'Unique — no close substitutes' },
+        { label: 'Entry barriers',  pc: 'None — free entry & exit',  mc: 'Low',         ol: 'High (scale, capital, brands)',         mo: 'Very high (legal, natural, strategic)' },
+        { label: 'Price control',   pc: 'None — price-taker',        mc: 'Slight',      ol: 'Significant',                          mo: 'Full — price-maker' },
+        { label: 'SR profit',       pc: 'Supernormal possible',       mc: 'Supernormal possible', ol: 'Supernormal likely',          mo: 'Supernormal likely' },
+        { label: 'LR profit',       pc: 'Normal only (entry erodes)', mc: 'Normal only (entry erodes)', ol: 'Supernormal likely (barriers protect)', mo: 'Supernormal likely (barriers protect)' },
+        { reveal: true, label: 'Productive efficiency', pc: '✓ P = min AC in LR', mc: '✗ Excess capacity — P > min AC', ol: '✗ Usually not', mo: '✗ P > min AC' },
+        { reveal: true, label: 'Allocative efficiency', pc: '✓ P = MC',            mc: '✗ P > MC',                       ol: '✗ P > MC',     mo: '✗ P > MC (deadweight loss)' },
+        { reveal: true, label: 'Dynamic efficiency',    pc: '✗ Normal profit = no R&D budget', mc: '✓ Limited', ol: '✓ Often strong — supernormal funds R&D', mo: '✓ Possible if profits reinvested (Schumpeter)' },
+        { label: 'UK examples',     pc: 'Foreign exchange, commodity markets', mc: 'Coffee shops, hairdressers, restaurants', ol: 'Supermarkets (Big 4), banks, airlines', mo: 'Water utilities, Royal Mail (letters)' }
+      ],
+      examEdge: 'Don\'t just list structures — compare them on efficiency and link to policy. Strong analysis: "Unlike PC, monopoly is neither productively nor allocatively efficient in the static model — but may achieve greater dynamic efficiency if Schumpeterian supernormal profit funds R&D. Whether the static losses outweigh dynamic gains is an empirical question, not a theoretical one." Always qualify with contestability.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]

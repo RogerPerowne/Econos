@@ -120,7 +120,8 @@ window.ECONOS_TOPIC = {
         { term: 'Global commons', def: 'Resources shared by all (atmosphere, oceans) — subject to the tragedy of the commons when unregulated.' },
         { term: 'Tragedy of the commons', def: 'Shared resources are over-exploited because each individual gains the full benefit but bears only a fraction of the cost.' }
       ],
-      examEdge: 'International environmental agreements face the collective action problem at the global level: no supranational authority can compel compliance. This is the fundamental reason climate policy is harder than domestic environmental policy — the externality is global but governance is national. Use the term "international public good" for a stable climate — reinforces why market failure is so intractable.'
+      examEdge: 'International environmental agreements face the collective action problem at the global level: no supranational authority can compel compliance. This is the fundamental reason climate policy is harder than domestic environmental policy — the externality is global but governance is national. Use the term "international public good" for a stable climate — reinforces why market failure is so intractable.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

@@ -297,7 +297,8 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'Always apply the multiplier',
         text: 'When asked about fiscal stimulus, the answer is rarely just "AD shifts right by £X". The answer is "AD shifts right by £X × k". Stating the multiplier value (even approximately) is a 2-3 mark gem.'
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

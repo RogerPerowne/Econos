@@ -119,7 +119,8 @@ window.ECONOS_TOPIC = {
           'Government failure risk: political interference, bureaucratic inefficiency, over-provision for electoral reasons'
         ]
       },
-      examEdge: 'The internet began as a US Defence Department public good (ARPANET — non-excludable, non-rival). Commercial internet is now a mix: basic infrastructure is quasi-public; web services are private (subscription, advertising). Technology transformed what was a public good into mostly private goods. This evolution is a rich evaluation point.'
+      examEdge: 'The internet began as a US Defence Department public good (ARPANET — non-excludable, non-rival). Commercial internet is now a mix: basic infrastructure is quasi-public; web services are private (subscription, advertising). Technology transformed what was a public good into mostly private goods. This evolution is a rich evaluation point.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

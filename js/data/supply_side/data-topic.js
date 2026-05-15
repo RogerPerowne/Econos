@@ -297,7 +297,8 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'The complete supply-side essay structure',
         text: "<em>'Supply-side policies [type + mechanism → LRAS effect]. In theory, this raises potential output [LRAS diagram]. In practice, effectiveness depends on [time lag / cost / market failure severity / implementation]. UK evidence [specific example] suggests [positive or limited effectiveness]. Compared to [alternative policy], supply-side is [more/less] appropriate because [context-specific reason].'</em> Always structure, evidence, context."
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

@@ -122,7 +122,8 @@ window.ECONOS_TOPIC = {
         { term: 'Sunset clause', def: 'Predetermined end date for a policy or subsidy — forces reassessment and reduces risk of permanent distortion.' },
         { term: 'Crowding out', def: 'Government subsidy may displace private investment if it subsidises activities the private sector would have undertaken anyway.' }
       ],
-      examEdge: 'Additionality problem with subsidies: did the subsidy cause additional activity, or would it have happened anyway? If firms were going to install solar panels without the Feed-in Tariff, the subsidy is pure windfall with no externality benefit. Measuring additionality is difficult — another information challenge for policymakers.'
+      examEdge: 'Additionality problem with subsidies: did the subsidy cause additional activity, or would it have happened anyway? If firms were going to install solar panels without the Feed-in Tariff, the subsidy is pure windfall with no externality benefit. Measuring additionality is difficult — another information challenge for policymakers.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

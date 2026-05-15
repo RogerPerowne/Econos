@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
           'Not targeted at household poverty — many minimum wage earners are second earners in non-poor households'
         ]
       },
-      examEdge: 'Regional variation in the NMW\'s effect is a sophisticated evaluation point. In London, median wage is £19/hour — NMW of £11.44 is well below equilibrium, meaning employment effects are minimal. In low-wage regions of northern England, median wages in some sectors approach the NMW — the floor is binding, closer to or above the competitive equilibrium in those areas. A uniform national NMW is therefore more likely to cause employment effects in low-wage regions than high-wage ones. This is why some economists advocate regional minimum wages — though this creates its own complications.'
+      examEdge: 'Regional variation in the NMW\'s effect is a sophisticated evaluation point. In London, median wage is £19/hour — NMW of £11.44 is well below equilibrium, meaning employment effects are minimal. In low-wage regions of northern England, median wages in some sectors approach the NMW — the floor is binding, closer to or above the competitive equilibrium in those areas. A uniform national NMW is therefore more likely to cause employment effects in low-wage regions than high-wage ones. This is why some economists advocate regional minimum wages — though this creates its own complications.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

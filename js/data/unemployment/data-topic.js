@@ -303,7 +303,8 @@ window.ECONOS_TOPIC = {
       bridge: {
         title: "Where to next",
         text: "You've got the conceptual map. Now apply it: try the <strong>policy diagnostic simulator</strong> in <em>Land it</em> — given a scenario, pick the right toolkit and explain why."
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

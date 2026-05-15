@@ -120,7 +120,8 @@ window.ECONOS_TOPIC = {
           'Resource allocation by political decision rather than price'
         ]
       },
-      examEdge: 'The public-private hybrid (privatised public utilities: BT, British Gas, water companies, rail franchises) attempts to use market incentives for public service objectives. Results are mixed: water companies took profit while under-investing in infrastructure. Rail franchises relied on government subsidies. The hybrid faces principal-agent problems at multiple levels.'
+      examEdge: 'The public-private hybrid (privatised public utilities: BT, British Gas, water companies, rail franchises) attempts to use market incentives for public service objectives. Results are mixed: water companies took profit while under-investing in infrastructure. Rail franchises relied on government subsidies. The hybrid faces principal-agent problems at multiple levels.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

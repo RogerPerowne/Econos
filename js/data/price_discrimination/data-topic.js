@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
         { term: 'Personalised pricing', def: 'Individual-level pricing based on collected data about willingness to pay — approximates first-degree discrimination.' },
         { term: 'Algorithmic pricing', def: 'Automated price-setting using machine learning — enables discrimination at scale without human intervention.' }
       ],
-      examEdge: 'Digital price discrimination is the contemporary frontier of competition policy. The CMA and EU are grappling with whether algorithmic pricing is a new form of predatory or discriminatory behaviour. Key issue: is personalised pricing a normal commercial response to different consumer preferences, or is it exploitative extraction of data-revealed willingness to pay? The policy response is still evolving — this uncertainty is itself an exam-worthy evaluation point.'
+      examEdge: 'Digital price discrimination is the contemporary frontier of competition policy. The CMA and EU are grappling with whether algorithmic pricing is a new form of predatory or discriminatory behaviour. Key issue: is personalised pricing a normal commercial response to different consumer preferences, or is it exploitative extraction of data-revealed willingness to pay? The policy response is still evolving — this uncertainty is itself an exam-worthy evaluation point.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

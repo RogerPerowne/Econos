@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
           'Exploitation of vulnerable workers: zero-hours contracts, gig economy — power asymmetry even without formal monopsony'
         ]
       },
-      examEdge: 'The gig economy (Uber, Deliveroo, Amazon Flex) raises new labour market questions not easily captured by the competitive model. Workers are classified as self-employed (no employment rights) but have limited ability to negotiate — they accept the platform\'s terms or leave. Supreme Court (Uber v Aslam, 2021) ruled Uber drivers are "workers" entitled to minimum wage — a major shift. The question of whether gig workers are genuinely self-employed or exploited in a form of disguised employment is the contemporary labour market policy frontier.'
+      examEdge: 'The gig economy (Uber, Deliveroo, Amazon Flex) raises new labour market questions not easily captured by the competitive model. Workers are classified as self-employed (no employment rights) but have limited ability to negotiate — they accept the platform\'s terms or leave. Supreme Court (Uber v Aslam, 2021) ruled Uber drivers are "workers" entitled to minimum wage — a major shift. The question of whether gig workers are genuinely self-employed or exploited in a form of disguised employment is the contemporary labour market policy frontier.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

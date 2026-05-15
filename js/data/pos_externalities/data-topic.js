@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
           'Fiscal cost: requires taxation which may have its own efficiency costs'
         ]
       },
-      examEdge: 'NHS vs private healthcare debate is the definitive policy question here. Free at point of use eliminates underconsumption from positive externality but may create moral hazard (trivial GP appointments). Co-payments (small charges for prescriptions) attempt to limit this without re-creating access barriers. A nuanced evaluation.'
+      examEdge: 'NHS vs private healthcare debate is the definitive policy question here. Free at point of use eliminates underconsumption from positive externality but may create moral hazard (trivial GP appointments). Co-payments (small charges for prescriptions) attempt to limit this without re-creating access barriers. A nuanced evaluation.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

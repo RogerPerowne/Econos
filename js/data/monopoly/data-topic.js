@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
         { term: 'Structural remedy', def: 'Require divestiture of assets or business units — restores competition by changing market structure.' },
         { term: 'Behavioural remedy', def: 'Impose conditions on firm behaviour (e.g. must supply rivals on fair terms) — preserves market structure but constrains conduct.' }
       ],
-      examEdge: 'Structural vs behavioural remedies: structural (break up the firm, force divestiture) is cleaner and more durable — competition is embedded in market structure. Behavioural (conditions on conduct) is less disruptive but requires ongoing monitoring and is vulnerable to regulatory capture. CMA generally prefers structural remedies where possible. This distinction matters for essays on competition policy.'
+      examEdge: 'Structural vs behavioural remedies: structural (break up the firm, force divestiture) is cleaner and more durable — competition is embedded in market structure. Behavioural (conditions on conduct) is less disruptive but requires ongoing monitoring and is vulnerable to regulatory capture. CMA generally prefers structural remedies where possible. This distinction matters for essays on competition policy.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

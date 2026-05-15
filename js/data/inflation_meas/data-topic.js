@@ -320,7 +320,8 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'The sacrifice ratio',
         text: 'Reducing inflation once it\'s above target is costly. Each percentage point reduction in inflation requires roughly <strong>1-3% of GDP to be sacrificed</strong> in lost output (the sacrifice ratio). This is why central banks work hard to keep inflation anchored — regaining credibility after a shock is far more expensive than never losing it.'
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

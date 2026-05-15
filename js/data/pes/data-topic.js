@@ -109,7 +109,8 @@ window.ECONOS_TOPIC = {
         { term: 'Structural reform', def: 'Long-term changes to market institutions (planning, labour market rules) that affect PES — slow to implement but durable.' },
         { term: 'Inflationary pressure', def: 'Inelastic supply means demand growth translates into price rises. Higher PES reduces inflationary impact of growing demand.' }
       ],
-      examEdge: 'Linking PES to inflation control is a sophisticated analysis point: if supply is inelastic, any rightward shift in aggregate demand creates inflationary pressure. Supply-side policies that raise PES allow faster output response and lower inflation — explaining why supply-side reforms and monetary policy are complementary, not alternatives.'
+      examEdge: 'Linking PES to inflation control is a sophisticated analysis point: if supply is inelastic, any rightward shift in aggregate demand creates inflationary pressure. Supply-side policies that raise PES allow faster output response and lower inflation — explaining why supply-side reforms and monetary policy are complementary, not alternatives.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

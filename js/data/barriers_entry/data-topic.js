@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
           'Data barriers (access to user data gives incumbents advantage) — data access mandates for entrants'
         ]
       },
-      examEdge: 'The policy response should match the type of barrier: structural barriers (scale economies) → regulate the firm but do not break it up. Legal barriers (patents, licences) → time-limit and scope carefully. Strategic barriers (predatory pricing, foreclosure) → prohibition and fines. Network effects → interoperability mandates, data portability. Each barrier type requires a specific policy tool.'
+      examEdge: 'The policy response should match the type of barrier: structural barriers (scale economies) → regulate the firm but do not break it up. Legal barriers (patents, licences) → time-limit and scope carefully. Strategic barriers (predatory pricing, foreclosure) → prohibition and fines. Network effects → interoperability mandates, data portability. Each barrier type requires a specific policy tool.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

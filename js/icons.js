@@ -1518,6 +1518,170 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  phillipsInteractive: `
+    <svg class="phillips-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="ph-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="ph-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+        </marker>
+        <marker id="ph-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+        <clipPath id="ph-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">π</text>
+        <text x="40" y="62" font-size="10" fill="#64748B" text-anchor="end">Inflation %</text>
+        <text x="570" y="406" font-size="13" font-weight="700" fill="#334155">U</text>
+        <text x="572" y="420" font-size="10" fill="#64748B">Unempl. %</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">0</text>
+      </g>
+
+      <!-- ===== LAYER: SRPC1 (original short-run Phillips curve) ===== -->
+      <g class="layer-srpc1">
+        <g clip-path="url(#ph-chart-clip)">
+          <line x1="90" y1="103" x2="490" y2="383" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="496" y="386" font-size="13" font-weight="700" fill="#2563EB">SRPC₁</text>
+      </g>
+
+      <!-- ===== LAYER: Point A (initial equilibrium at NAIRU) ===== -->
+      <g class="layer-point-a">
+        <line x1="60" y1="250" x2="300" y2="250" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="300" y1="250" x2="300" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="300" cy="250" r="6" fill="white" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="312" y="246" font-size="13" font-weight="700" fill="#2563EB">A</text>
+        <text x="46" y="254" font-size="12" font-weight="600" fill="#334155" text-anchor="end">π₀</text>
+        <text x="300" y="418" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">U_N</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Phillips (1958): empirical inverse relation between U and π</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">THE PHILLIPS CURVE</text>
+        <text x="620" y="100" font-size="14" font-weight="700" fill="#1E293B">Lower unemployment</text>
+        <text x="620" y="120" font-size="14" font-weight="700" fill="#1E293B">↔ higher wage inflation.</text>
+        <text x="620" y="155" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THE ORIGINAL FINDING</text>
+        <text x="620" y="178" font-size="13" fill="#334155">UK data 1861–1957: tight</text>
+        <text x="620" y="196" font-size="13" fill="#334155">labour markets pushed wages up.</text>
+        <text x="620" y="230" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">POLICY IMPLICATION</text>
+        <text x="620" y="253" font-size="13" fill="#334155">A "menu of choices": pick a</text>
+        <text x="620" y="271" font-size="13" fill="#334155">point on the curve via demand</text>
+        <text x="620" y="289" font-size="13" fill="#334155">management.</text>
+        <text x="620" y="324" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">AT POINT A</text>
+        <text x="620" y="347" font-size="13" fill="#334155">Economy at the natural rate</text>
+        <text x="620" y="365" font-size="13" fill="#334155">U_N with low inflation π₀.</text>
+      </g>
+
+      <!-- ===== LAYER: LRPC (vertical at NAIRU) ===== -->
+      <g class="layer-lrpc">
+        <line x1="300" y1="55" x2="300" y2="400" stroke="#7C3AED" stroke-width="3" stroke-dasharray="6 4"/>
+        <text x="308" y="68" font-size="13" font-weight="700" fill="#7C3AED">LRPC</text>
+      </g>
+
+      <!-- ===== LAYER: SRPC2 (shifted-up short-run curve) ===== -->
+      <g class="layer-srpc2">
+        <g clip-path="url(#ph-chart-clip)">
+          <line x1="90" y1="33" x2="490" y2="313" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="8 5" opacity="0.85"/>
+        </g>
+        <text x="496" y="316" font-size="13" font-weight="700" fill="#2563EB">SRPC₂</text>
+      </g>
+
+      <!-- ===== LAYER: Friedman path A → B → C ===== -->
+      <g class="layer-friedman-points">
+        <!-- Point B at (200, 180): stimulus moves down SRPC1 -->
+        <line x1="60" y1="180" x2="200" y2="180" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="200" y1="180" x2="200" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="200" cy="180" r="6" fill="white" stroke="#D97706" stroke-width="2.5"/>
+        <text x="186" y="172" font-size="13" font-weight="700" fill="#D97706">B</text>
+        <text x="46" y="184" font-size="12" font-weight="600" fill="#D97706" text-anchor="end">π₁</text>
+        <text x="200" y="418" font-size="12" font-weight="600" fill="#D97706" text-anchor="middle">U₁</text>
+        <!-- Point C at (300, 180): expectations adjust, back to NAIRU at higher π -->
+        <circle cx="300" cy="180" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="312" y="176" font-size="13" font-weight="700" fill="#059669">C</text>
+        <!-- Arrow A → B (move along SRPC1, amber) -->
+        <line x1="293" y1="247" x2="207" y2="184" stroke="#D97706" stroke-width="2" marker-end="url(#ph-amber-end)"/>
+        <!-- Arrow B → C (curve shifts up, green) -->
+        <line x1="208" y1="180" x2="292" y2="180" stroke="#059669" stroke-width="2" marker-end="url(#ph-green-end)"/>
+      </g>
+
+      <!-- ===== LAYER: legend extension ===== -->
+      <g class="layer-legend-extension">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Friedman & Phelps (1968): no long-run trade-off — LRPC is vertical</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THREE STAGES</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#1E293B">A → B (short run):</text>
+        <text x="620" y="118" font-size="13" fill="#334155">stimulus pushes U below U_N,</text>
+        <text x="620" y="136" font-size="13" fill="#334155">moving along SRPC₁ to π₁.</text>
+        <text x="620" y="166" font-size="13" font-weight="700" fill="#1E293B">B → C (adjustment):</text>
+        <text x="620" y="184" font-size="13" fill="#334155">workers expect π₁ inflation,</text>
+        <text x="620" y="202" font-size="13" fill="#334155">demand higher nominal wages.</text>
+        <text x="620" y="220" font-size="13" fill="#334155">SRPC shifts up to SRPC₂.</text>
+        <text x="620" y="250" font-size="13" font-weight="700" fill="#1E293B">At C (long run):</text>
+        <text x="620" y="268" font-size="13" fill="#334155">unemployment back at U_N,</text>
+        <text x="620" y="286" font-size="13" fill="#334155">but inflation now permanently π₁.</text>
+        <text x="620" y="320" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">EXAM TAKEAWAY</text>
+        <text x="620" y="343" font-size="13" fill="#334155">In the long run the Phillips</text>
+        <text x="620" y="361" font-size="13" fill="#334155">curve is vertical at U_N (NAIRU).</text>
+      </g>
+
+      <!-- ===== LAYER: stagflation (1970s shift) ===== -->
+      <g class="layer-stagflation">
+        <!-- SRPC3 — supply-shock shifted curve (steeper shift up) -->
+        <g clip-path="url(#ph-chart-clip)">
+          <line x1="90" y1="55" x2="490" y2="265" stroke="#DC2626" stroke-width="3" stroke-dasharray="8 5"/>
+        </g>
+        <text x="496" y="268" font-size="13" font-weight="700" fill="#DC2626">SRPC₃</text>
+        <!-- Stagflation point at (400, 160): higher U AND higher π than A -->
+        <line x1="60" y1="160" x2="400" y2="160" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="400" y1="160" x2="400" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="400" cy="160" r="7" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="412" y="156" font-size="13" font-weight="700" fill="#DC2626">S</text>
+        <text x="46" y="164" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">π_S</text>
+        <text x="400" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">U_S</text>
+        <!-- Diagonal red arrow from A toward stagflation point -->
+        <line x1="307" y1="244" x2="393" y2="166" stroke="#DC2626" stroke-width="2.5" marker-end="url(#ph-red-end)"/>
+      </g>
+
+      <!-- ===== LAYER: legend shift (stagflation) ===== -->
+      <g class="layer-legend-shift">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">1970s stagflation: supply shock pushes BOTH U and π up</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">SUPPLY SHOCK BREAKS THE CURVE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">OPEC oil shocks (1973, 1979)</text>
+        <text x="620" y="118" font-size="13" fill="#334155">shifted SRAS left.</text>
+        <text x="620" y="148" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">RESULT: STAGFLATION</text>
+        <text x="620" y="171" font-size="13" fill="#334155">Inflation AND unemployment</text>
+        <text x="620" y="189" font-size="13" fill="#334155">rose together — impossible</text>
+        <text x="620" y="207" font-size="13" fill="#334155">on the original Phillips curve.</text>
+        <text x="620" y="237" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">SRPC SHIFTS UP</text>
+        <text x="620" y="260" font-size="13" fill="#334155">Cost-push inflation raised the</text>
+        <text x="620" y="278" font-size="13" fill="#334155">whole curve to SRPC₃.</text>
+        <text x="620" y="313" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">POLICY LEGACY</text>
+        <text x="620" y="336" font-size="13" fill="#334155">Ended Keynesian consensus;</text>
+        <text x="620" y="354" font-size="13" fill="#334155">launched monetarism.</text>
+      </g>
+    </svg>
+  `,
+
   /* === AD topic hero illustration === */
   heroAd: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

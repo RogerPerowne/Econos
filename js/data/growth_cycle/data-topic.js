@@ -311,7 +311,8 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'The complete growth evaluation',
         text: "A* evaluation of UK growth policy: <em>'While real GDP has grown at ~1.2%/year since 2008, this masks a productivity stagnation, widening inequality (Kuznets), a persistent current account deficit, and environmental costs of carbon-intensive growth. Sustainable growth requires simultaneously: supply-side investment (education, R&D, infrastructure), demand stabilisation (monetary policy), and decarbonisation (green industrial policy).'</em>"
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

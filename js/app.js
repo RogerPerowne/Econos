@@ -980,6 +980,48 @@
   }
 
   /* -------------------------------------------------------------------------
+     Essay Scaffold — paragraph-by-paragraph exam essay builder with reveals.
+     ------------------------------------------------------------------------- */
+  function renderCardEssayScaffold(c) {
+    const TYPE_STYLE = {
+      intro:      { color: '#0EA5E9', bg: '#F0F9FF', label: 'Introduction' },
+      analysis:   { color: '#1E3A5F', bg: '#EFF6FF', label: 'Analysis' },
+      counter:    { color: '#D97706', bg: '#FFFBEB', label: 'Counter-argument' },
+      evaluation: { color: '#7C3AED', bg: '#F5F3FF', label: 'Evaluation' },
+      conclusion: { color: '#059669', bg: '#F0FDF4', label: 'Conclusion' }
+    };
+    const paras = (c.paragraphs || []).map(p => {
+      const s = TYPE_STYLE[p.type] || TYPE_STYLE.analysis;
+      return `
+        <div style="border-radius:10px;border:1.5px solid ${s.color}40;background:${s.bg};margin-bottom:14px;overflow:hidden;">
+          <div style="background:${s.color};padding:10px 16px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;">${s.label}</span>
+            ${p.label ? `<span style="font-size:12px;color:rgba(255,255,255,0.75);">— ${p.label}</span>` : ''}
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:13px;color:#334155;line-height:1.65;margin-bottom:12px;">${p.prompt}</div>
+            ${p.hint ? `<div style="font-size:12px;color:#64748B;font-style:italic;margin-bottom:12px;">💡 ${p.hint}</div>` : ''}
+            <button class="we-step__btn" data-action="we-reveal" style="margin:0;" type="button">Show model paragraph →</button>
+            <div class="we-step__answer is-hidden" style="margin-top:10px;">
+              <div style="background:#fff;border-left:4px solid ${s.color};border-radius:0 8px 8px 0;padding:12px 14px;font-size:13px;line-height:1.7;color:#0B1426;">${p.model}</div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      <div style="background:#0B1426;border-radius:12px;padding:16px 20px;margin-bottom:20px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#94A3B8;margin-bottom:8px;">Exam question · ${c.marks || 25} marks${c.timeGuide ? ' · ' + c.timeGuide : ''}</div>
+        <div style="font-size:15px;font-weight:600;color:#F1F5F9;line-height:1.5;">${c.question || ''}</div>
+      </div>
+      ${paras}
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* -------------------------------------------------------------------------
      YED Explorer & XED Explorer — Engel-curve and cross-price widgets.
      Both registered as globals by js/yed-xed-explorer.js.
      ------------------------------------------------------------------------- */
@@ -1258,7 +1300,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1298,6 +1340,7 @@
         case 'yed-explorer':       body = renderCardYedExplorer(c);        break;
         case 'xed-explorer':               body = renderCardXedExplorer(c);                   break;
         case 'market-structures-comparison': body = renderCardMarketStructuresComparison(c);  break;
+        case 'essay-scaffold':               body = renderCardEssayScaffold(c);               break;
       }
     }
 

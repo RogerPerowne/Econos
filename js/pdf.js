@@ -509,6 +509,24 @@ window.EconosPdf = (function () {
       '<div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;">' + tiles + '</div>';
   }
 
+  function renderEssayScaffold(c) {
+    var TYPE_COLORS = { intro: '#0EA5E9', analysis: '#1E3A5F', counter: '#D97706', evaluation: '#7C3AED', conclusion: '#059669' };
+    var TYPE_LABELS = { intro: 'Introduction', analysis: 'Analysis', counter: 'Counter-argument', evaluation: 'Evaluation', conclusion: 'Conclusion' };
+    var lede = c.lede ? '<div style="font-size:13px;color:' + C.slate + ';margin-bottom:12px;line-height:1.6;">' + c.lede + '</div>' : '';
+    var qBlock = '<div style="background:#0B1426;border-radius:8px;padding:14px 16px;margin-bottom:16px;">' +
+      '<div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94A3B8;margin-bottom:6px;">Exam Question · ' + (c.marks || 25) + ' marks' + (c.timeGuide ? ' · ' + c.timeGuide : '') + '</div>' +
+      '<div style="font-size:13px;font-weight:600;color:#F1F5F9;line-height:1.5;">' + (c.question || '') + '</div></div>';
+    var paras = (c.paragraphs || []).map(function(p) {
+      var col = TYPE_COLORS[p.type] || C.slate;
+      var lbl = (TYPE_LABELS[p.type] || p.type) + (p.label ? ' — ' + p.label : '');
+      return '<div style="border-left:4px solid ' + col + ';padding:10px 0 10px 14px;margin-bottom:12px;page-break-inside:avoid;">' +
+        '<div style="font-size:10px;font-weight:800;color:' + col + ';text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">' + lbl + '</div>' +
+        '<div style="font-size:11px;color:#64748B;font-style:italic;margin-bottom:6px;">' + p.prompt + '</div>' +
+        '<div style="font-size:12px;color:#0B1426;line-height:1.6;">' + (p.model || '') + '</div></div>';
+    }).join('');
+    return lede + qBlock + paras + examEdgeBlock(c.examEdge);
+  }
+
   function renderMarketStructuresComparison(c) {
     var COLS = [
       { key: 'pc', label: 'Perfect Competition', color: '#059669' },
@@ -554,7 +572,7 @@ window.EconosPdf = (function () {
   }
 
   function isGenericCard(c) {
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold') return false;
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -585,6 +603,7 @@ window.EconosPdf = (function () {
       case 'xed-explorer':       return renderYedXedFallback(c, 'XED');
       case 'ped-five-frames':            return renderPedFiveFrames(c);
       case 'market-structures-comparison': return renderMarketStructuresComparison(c);
+      case 'essay-scaffold':               return renderEssayScaffold(c);
       default:                           return renderFallback();
     }
   }

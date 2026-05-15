@@ -10,13 +10,13 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monetary Policy',
-  estTime: '8-10 minutes',
+  estTime: '10-12 minutes',
   goal: 'Master the transmission chain — and when it breaks',
 
   intro: {
     heroKey: 'heroMonetary',
     summary: "One lever, five channels. Master the transmission chain and you'll know when it works — and when, like 2009 or 2022, it doesn't.",
-    doInThis: 'Lock in the channels, run the chains, and know what breaks the pipe.',
+    doInThis: 'Lock in the channels, run the chains, know what breaks the pipe — plus a 25-mark essay scaffold on monetary policy effectiveness.',
     outcomes: [
       'Name 5 transmission channels',
       'Spot when policy hits its limits',
@@ -37,7 +37,7 @@ window.ECONOS_TOPIC = {
       id: 'channels',
       template: 'framing',
       diagramKey: 'monetaryFraming',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'One lever, five channels',
       lede: "Monetary policy means one main lever — the Bank Rate. But it pulls five distinct strings to reach inflation. Naming them all is the first A* move.",
       branches: [
@@ -61,7 +61,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'boe',
       template: 'paired',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'The Bank of England',
       lede: "Independence, mandate, machinery. Three things to lock in before you reason about policy.",
       pairs: [
@@ -104,7 +104,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'transmission',
       template: 'transmission-chain',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'The transmission chain',
       lede: "Press each channel to follow the causal chain. Same starting point, same ending point, but five different routes.",
       action: 'Bank Rate rises ↑',
@@ -184,7 +184,7 @@ window.ECONOS_TOPIC = {
       id: 'conventional-vs-qe',
       template: 'ad-interactive',
       diagramKey: 'adAsMonetary',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'Conventional vs unconventional',
       lede: "Rates work most of the time. When they don't — like 2009 or 2020 at the zero lower bound — central banks reach for QE. Same target, different mechanism.",
       steps: [
@@ -214,7 +214,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'under-stress',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: "When the pipe doesn't work",
       lede: "Monetary policy isn't magic. Four things that can break the transmission chain — spotting which one applies is the analytical move that lifts answers to A*.",
       mechanisms: [
@@ -257,7 +257,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'credibility',
       template: 'paired',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'Credibility: the invisible tool',
       lede: "The BoE's most powerful tool is sometimes saying nothing. If markets believe inflation will return to target, it tends to. Lose belief — and you need a much bigger hammer.",
       pairs: [
@@ -300,7 +300,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'evaluation',
       template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'Strengths, weaknesses & policy interaction',
       lede: "Monetary policy doesn't operate alone. Four things to remember when evaluating it — and one of them earns marks every time.",
       mechanismsTitle: 'Four things to evaluate',
@@ -344,6 +344,53 @@ window.ECONOS_TOPIC = {
         text: "You've got the chains, the constraints, and the credibility story. Now apply them: try the <strong>monetary policy simulator</strong> in <em>Land it</em> — given a scenario, choose the rate move and walk one chain."
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'monetary-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      question: 'Evaluate the view that monetary policy is the most effective tool for managing the macroeconomy. [25 marks]',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define monetary policy and state its main objective. Outline the transmission mechanism briefly. Signal that effectiveness is conditional and will be evaluated against fiscal and supply-side alternatives.',
+          hint: 'Monetary policy = BoE setting Bank Rate and using QE/QT to hit 2% CPI inflation target. Works via 5 channels: borrowing cost, mortgages, savings/wealth, exchange rate, expectations. Effectiveness contested by ZLB, time lags, and fiscal interactions.',
+          model: 'Monetary policy refers to the use of the Bank Rate (and unconventional tools such as quantitative easing) by the Bank of England to achieve the government\'s 2% CPI inflation target and support wider macroeconomic stability. The MPC adjusts the Bank Rate monthly, influencing aggregate demand via five transmission channels: borrowing costs, mortgage payments, savings and wealth effects, the exchange rate, and inflation expectations. The claim that monetary policy is the most effective macroeconomic management tool rests on its speed relative to fiscal policy, its political independence from electoral cycles, and its ability to fine-tune demand continuously. Against this, monetary policy faces significant limitations at the zero lower bound, operates with uncertain transmission lags, and may be ineffective against supply-side shocks — conditions that argue for fiscal or supply-side policy instead.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis — the case for monetary policy',
+          prompt: 'Explain the key advantages: speed, independence, and fine-tuning ability. Use the 2022-24 tightening cycle as a live case.',
+          hint: 'MPC meets 8 times/year → rapid response. Independence since 1997 → credible anchor for expectations (the strongest channel). Fine-tuned: 25bp or 50bp increments allow calibrated adjustment unlike large fiscal packages. 2022-24: Bank Rate 0.1% → 5.25% → CPI fell from 11% to ~2% by 2024.',
+          model: 'Monetary policy\'s primary advantage is the speed and flexibility of the policy instrument. The Monetary Policy Committee meets eight times annually and can adjust the Bank Rate in increments as small as 25 basis points, enabling rapid and calibrated responses to changing economic conditions that would take a parliamentary fiscal process 12-24 months to achieve. The 2022-24 tightening cycle demonstrates this capacity: faced with CPI inflation peaking at 11.1% in October 2022, the MPC raised rates from 0.1% to 5.25% in 18 months — the fastest tightening cycle in 40 years. By late 2024, CPI had fallen to approximately 2%, broadly consistent with the target. A second advantage is institutional credibility. Since independence in 1997, the BoE\'s inflation-targeting mandate has anchored private-sector expectations: when firms and households believe the Bank will act to restore inflation to target, they moderate price- and wage-setting behaviour pre-emptively, reducing the actual output cost of disinflation. The expectations channel — arguably the most powerful of the five — is uniquely available to an independent, credible central bank, not to a government constrained by electoral incentives.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter-argument — limitations of monetary policy',
+          prompt: 'Explain the zero lower bound, transmission uncertainty, distributional effects, and ineffectiveness against supply shocks.',
+          hint: 'ZLB (2009-21): conventional rate policy exhausted at ~0%, QE deployed but less targeted, transmission unclear. Time lags: 12-18 months for full effect → policy based on forecasts not current data → error-prone. Supply shock (2022): energy price cost-push partly beyond monetary influence. Regressive: higher mortgage rates hit homeowners hardest.',
+          model: 'Monetary policy faces binding constraints that fundamentally limit its effectiveness in some macroeconomic conditions. The zero lower bound (ZLB) — encountered by the BoE from 2009 to 2021 — represents the most significant structural limitation: once the Bank Rate reaches approximately 0%, conventional monetary policy is exhausted. The Bank deployed quantitative easing (purchasing £895bn of gilts over the period) as an unconventional substitute, but QE\'s transmission mechanism is less direct and its effectiveness more disputed — empirical estimates of QE\'s effect on GDP and inflation vary widely. A second constraint is the length and variability of monetary transmission lags: the full effect of a rate change on inflation takes 12-18 months to materialise, meaning the MPC must set policy based on uncertain forecasts of where the economy will be, not where it is. This forecasting challenge contributed to the BoE\'s delayed response to post-COVID inflation — rates were held near zero until late 2021 even as inflation was accelerating. Monetary policy is also less effective against supply-side shocks. The 2022-23 inflation surge was substantially cost-push — driven by energy and food price spikes following Russia\'s invasion of Ukraine — not demand-pull. Rate rises can reduce demand to suppress inflation but at the cost of significant output losses; they cannot address the underlying supply constraint. Finally, rate rises create distributional effects: higher mortgage payments compress disposable income for homeowners (particularly in the UK, with its high share of variable-rate mortgages), while renters and those without mortgages are less directly affected.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — comparison with fiscal and supply-side policy',
+          prompt: 'Evaluate when fiscal policy is a necessary complement (ZLB conditions) and when supply-side policy addresses root causes better.',
+          hint: 'Fiscal: targeted (can direct spending at specific sectors), direct AD impact, necessary when ZLB binding. But: time lags, crowding out, debt sustainability. Supply-side: addresses root cause (low productivity, structural unemployment) not just symptoms. But: very long lags (years or decades). Optimal macro framework: monetary for routine stabilisation, fiscal for deep recessions, supply-side for long-run growth.',
+          model: 'The relative effectiveness of monetary versus alternative policies is highly context-dependent. Fiscal policy has a complementary advantage: government spending directly raises aggregate demand without reliance on private sector behavioural responses. At the ZLB — when monetary policy was effectively exhausted — the COVID-19 furlough scheme (costing ~£70bn) maintained household incomes and prevented mass unemployment, an outcome the Bank Rate alone could not have delivered. However, fiscal policy\'s 12-24 month decision and implementation lag, crowding out risk, and debt sustainability constraints (UK debt ~100% of GDP, 2024) mean it cannot replace monetary policy as the primary routine stabilisation tool. Supply-side policy operates on an even longer time horizon — education and training reform, infrastructure investment, and deregulation take years or decades to shift potential output and the LRAS curve. While supply-side reform is the only sustainable long-run solution to the UK\'s persistently low productivity growth (~0.5% per year since 2008 vs ~2% pre-crisis), it cannot stabilise the business cycle in the short run. The most effective macroeconomic framework is therefore not any single tool in isolation, but the coordinated deployment of all three: monetary policy for routine and rapid AD management, fiscal policy in extremis (ZLB, deep recessions), and supply-side reform for long-run potential growth.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Make a conditional judgement on whether monetary policy is the most effective tool. What conditions make it more or less effective?',
+          hint: 'Most effective when: economy is demand-driven, inflation is above target, ZLB not binding, transmission mechanism functional. Less effective when: supply shock dominates, ZLB applies, structural problems require supply-side reform. "Most effective" for routine stabilisation but not universally so.',
+          model: 'Monetary policy is the most effective tool for routine macroeconomic stabilisation — but this is a conditional claim, not an absolute one. Its advantages — speed, independence, credibility, and fine-tuning capacity — make it the primary first-response instrument for managing demand-driven fluctuations around the inflation target. The 2022-24 tightening cycle demonstrates that, when deployed decisively and credibly, monetary policy can successfully reduce inflation even from elevated levels. However, monetary policy reaches its limits at the zero lower bound, in the face of supply-side shocks beyond its control, and when structural problems (productivity, regional inequality, skill gaps) require targeted intervention rather than aggregate demand management. In these circumstances, fiscal policy and supply-side reform are not alternatives to monetary policy but complements that monetary policy alone cannot substitute for. The appropriate conclusion is that monetary policy is the most effective tool for its specific purpose — achieving the inflation target through demand management — but that purpose covers only part of the macroeconomic management agenda. A complete and effective macroeconomic framework requires all three pillars: independent monetary policy, disciplined but responsive fiscal policy, and sustained supply-side reform.'
+        }
+      ]
     }
   ]
 };

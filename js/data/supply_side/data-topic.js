@@ -36,6 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ss-framing',
       template: 'framing',
+      diagramKey: 'supplyPolicyDiagram',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Supply-side policies: shifting LRAS right',
       lede: 'Supply-side policies increase the productive capacity of the economy — shifting LRAS right, reducing the NAIRU, and enabling non-inflationary growth.',

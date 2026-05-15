@@ -330,8 +330,8 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'monopoly_vs_competition',
-    name: 'Monopoly vs Competition',
-    sub: 'Welfare comparison, dynamic efficiency, natural monopoly',
+    name: 'Market Power & Contestability',
+    sub: 'Contestability spectrum, firm-level limit cases, welfare, competition policy',
     color: '#ec4899',
     available: { learn: true, link: false, land: false }
   },

@@ -26,24 +26,34 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'ppf_1',
-      template: 'framing',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 7',
-      title: 'The PPF: the big picture',
-      lede: 'A single curve that captures scarcity, choice, opportunity cost, efficiency and growth — the workhorse diagram of Theme 1.',
-      branches: [
-        { tone: 'green',  label: 'Construction &amp; meaning',  sub: 'Maximum combinations of two goods, given resources and technology. On the curve = efficient; inside = wasteful; outside = unattainable.' },
-        { tone: 'amber',  label: 'Opportunity cost',             sub: 'Every move along the PPF means giving up some of one good to gain another. The slope is the opportunity cost in physical units.' },
-        { tone: 'blue',   label: 'Why it&apos;s bowed out',      sub: 'Resources are not equally suited to all uses. Reallocating less-suitable resources raises the opportunity cost of extra output — increasing OC.' },
-        { tone: 'purple', label: 'Shifts: growth &amp; decline', sub: 'Better technology, more resources or higher productivity shift the PPF out. Disasters, depreciation and unemployment can shift it in.' },
-        { tone: 'rose',   label: 'Consumer vs capital trade-off', sub: 'Producing more capital goods today forgoes consumption now but shifts the PPF further out tomorrow — the growth–welfare tension.' }
+      title: 'The PPF: one diagram, five concepts',
+      lede: 'The Production Possibility Frontier is the most versatile diagram in Theme 1 — explore construction, opportunity cost, shifts, and efficiency using the interactive diagram below.',
+      diagramKey: 'ppfInteractive',
+      steps: [
+        {
+          key: 'base',
+          label: 'Construction',
+          text: 'The PPF shows the <strong>maximum combinations</strong> of two goods an economy can produce given current resources and technology. Point A (on the curve) is <strong>productively efficient</strong>. Point B (inside) is <strong>inefficient</strong> — resources are wasted or unemployed. Point C (outside) is <strong>unattainable</strong> with current resources — only achievable after economic growth.'
+        },
+        {
+          key: 'extension',
+          label: 'Opportunity cost',
+          text: 'Moving from D to E along the PPF means gaining capital goods but sacrificing consumer goods — this is the <strong>opportunity cost</strong>. The curve is <strong>bowed out</strong> because resources are not equally suited to all uses. The further you specialise in one good, the less adaptable the remaining resources are, so each extra unit costs progressively more of the other good — <strong>increasing opportunity cost</strong>.'
+        },
+        {
+          key: 'shift',
+          label: 'Shifts',
+          text: 'The PPF shifts <strong>outward (PPF₂)</strong> when productive capacity increases: better technology, more resources, or higher productivity. It shifts <strong>inward (PPF₃)</strong> after negative supply shocks: war, natural disaster, or capital depreciation. Movement along PPF₁ is just reallocation of existing resources — the frontier itself does not move.'
+        },
+        {
+          key: 'efficiency',
+          label: 'Efficiency',
+          text: 'Point F shows <strong>productive efficiency</strong> — on the PPF, maximum output, no waste. Point G shows <strong>allocative efficiency</strong> — the specific point on the PPF where the combination produced matches consumer preferences (where P=MC). Point H (inside) is <strong>productively inefficient</strong>. Critical: being on the PPF (productive efficiency) does <em>not</em> guarantee being at the right point (allocative efficiency).'
+        }
       ],
-      body: 'A <strong>Production Possibility Frontier (PPF)</strong> shows the maximum combinations of two goods an economy can produce, given its current resources and technology, when all resources are fully and efficiently employed.<br><br>The PPF is drawn with one good on each axis. Every point ON the curve is productively efficient — no more of one good can be produced without giving up some of the other. Points <em>inside</em> the curve represent inefficiency (wasted or unemployed resources). Points <em>outside</em> the curve are currently unattainable.',
-      keyTerms: [
-        { term: 'PPF', def: 'A curve showing maximum output combinations of two goods given current resources and technology.' },
-        { term: 'Productive efficiency', def: 'Producing at maximum output from given resources — any point on the PPF.' },
-        { term: 'Unattainable', def: 'Points beyond the PPF — impossible with current resources/technology; require economic growth to reach.' }
-      ],
-      examEdge: 'When drawing a PPF, always label: (1) both axes with good names and units, (2) the curve itself, (3) a point inside labelled "inefficient," (4) a point on the curve labelled "efficient," (5) a point outside labelled "unattainable." Missing labels cost marks.'
+      examEdge: 'In exam diagrams always label: both axes with good names, the PPF curve, a point inside labelled "inefficient", a point on the curve labelled "efficient/on the PPF", and a point outside labelled "unattainable". Missing axis labels or unlabelled points are the most common PPF mark losses.'
     },
     {
       id: 'ppf_2',

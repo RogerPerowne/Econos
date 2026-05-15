@@ -3204,10 +3204,46 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .ad-svg .layer-legend-shift { opacity: 1; }
 .show-shift .ad-svg .layer-shift { opacity: 1; }
 
+/* ===== PPF INTERACTIVE — layer visibility ===== */
+/* Visible by default (base state) */
+.ppf-svg .layer-axes,
+.ppf-svg .layer-ppf-base,
+.ppf-svg .layer-base-points,
+.ppf-svg .layer-legend-base {
+  opacity: 1;
+  transition: opacity 0.32s ease;
+}
+/* Hidden by default */
+.ppf-svg .layer-opp-cost,
+.ppf-svg .layer-legend-extension,
+.ppf-svg .layer-shift-curves,
+.ppf-svg .layer-legend-shift,
+.ppf-svg .layer-efficiency,
+.ppf-svg .layer-legend-efficiency {
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+/* show-extension */
+.show-extension .ppf-svg .layer-base-points { opacity: 0; }
+.show-extension .ppf-svg .layer-legend-base { opacity: 0; }
+.show-extension .ppf-svg .layer-opp-cost { opacity: 1; }
+.show-extension .ppf-svg .layer-legend-extension { opacity: 1; }
+/* show-shift */
+.show-shift .ppf-svg .layer-ppf-base { opacity: 0.3; }
+.show-shift .ppf-svg .layer-base-points { opacity: 0; }
+.show-shift .ppf-svg .layer-legend-base { opacity: 0; }
+.show-shift .ppf-svg .layer-shift-curves { opacity: 1; }
+.show-shift .ppf-svg .layer-legend-shift { opacity: 1; }
+/* show-efficiency */
+.show-efficiency .ppf-svg .layer-base-points { opacity: 0; }
+.show-efficiency .ppf-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .ppf-svg .layer-efficiency { opacity: 1; }
+.show-efficiency .ppf-svg .layer-legend-efficiency { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* default; overridden by inline style for 4 tabs */
   gap: var(--sp-2);
 }
 @media (max-width: 760px) {

@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Price elasticity of demand: the big picture',
       lede: 'Demand curves all slope down — but <em>how steeply</em> is what decides who pays a tax, what firms charge, and whether revenue rises or falls.',
       branches: [
@@ -46,8 +46,18 @@ window.ECONOS_TOPIC = {
       examEdge: 'Always show your working in PED calculations: state the formula, substitute the values, calculate each percentage change separately, then divide. A numerical error in the final step still earns method marks if the approach is clearly shown.'
     },
     {
+      id: 'ped_explorer',
+      template: 'elasticity-explorer',
+      stepLabel: 'Learn: Step 2 of 8',
+      title: 'PED Explorer: drag the points, watch the maths',
+      lede: 'Move <strong>A</strong> and <strong>B</strong> along the demand curve. The formula recalculates live, the classification chip flips, and the shaded rectangles show the revenue (P × Q) at each price — so the inelastic-raise-price / elastic-cut-price rule becomes something you <em>see</em>, not just memorise.',
+      howItWorks: 'Pick two prices, compare what happens to quantity. The <strong>amber rectangle</strong> is revenue at point A; the <strong>green rectangle</strong> is revenue at point B. When demand is <strong>inelastic</strong>, a price rise grows the green rectangle (revenue rises). When demand is <strong>elastic</strong>, a price rise shrinks it. The unit-elastic case (|PED| = 1) is where the rectangles are exactly equal — try sliding A and B until the chip flips to blue.<br><br>Press a preset to jump to a real market — insulin (near-vertical), petrol short-run vs long-run, family cars (around unit), designer handbags (shallow elastic), or a perfectly-competitive firm (horizontal).',
+      examEdge: 'Three traps the examiner sets here. (1) Don\'t confuse the <em>slope</em> of the curve with elasticity — along the same straight line, PED falls from infinity at the top to zero at the bottom. (2) The TR rule works <em>both</em> ways: inelastic + price ↑ → TR ↑, but also inelastic + price ↓ → TR ↓. (3) Always quote |PED| with one decimal place and state the regime explicitly ("elastic, because |PED| = 1.6 > 1").'
+    },
+    {
       id: 'ped_2',
       template: 'cause',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Determinants of PED',
       causes: [
         { head: 'Number and closeness of substitutes', body: 'The more substitutes available, the more elastic demand. A price rise for one brand of cola → consumers switch to another. Few substitutes → inelastic (insulin, petrol). This is the most important determinant.' },
@@ -61,6 +71,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_3',
       template: 'mechanisms',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'PED and Total Revenue',
       intro: 'Total Revenue (TR) = Price \xd7 Quantity. The effect of a price change on TR depends on PED — this is one of the most important practical applications of elasticity.',
       steps: [
@@ -74,6 +85,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_4',
       template: 'framing',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'PED and Tax Incidence',
       body: 'When the government imposes an indirect tax (e.g. VAT, fuel duty), the <strong>tax incidence</strong> — who actually bears the burden — depends on the relative elasticities of supply and demand.<br><br><strong>Inelastic demand + elastic supply:</strong> consumers bear most of the tax. Quantity demanded barely changes; most of the tax is passed on as higher prices. Example: cigarette tax.<br><br><strong>Elastic demand + inelastic supply:</strong> producers bear most of the tax. If they try to pass the tax on in higher prices, demand collapses, so they absorb it through lower margins.<br><br>Tax revenue = tax rate \xd7 quantity sold. Higher inelastic demand goods generate more stable revenue from taxation.',
       keyTerms: [
@@ -86,6 +98,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_5',
       template: 'diagnose',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'Applying PED: Worked Examples',
       intro: 'PED calculation requires careful handling of sign and interpretation.',
       rows: [
@@ -99,6 +112,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_6',
       template: 'framing',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'PED and Business Pricing Strategy',
       body: 'Understanding PED guides firm pricing decisions:<br><br><strong>Segment by elasticity:</strong> firms charge higher prices to price-inelastic segments (business travellers who need to travel regardless) and lower prices to elastic segments (leisure travellers with substitutes). This is the basis of price discrimination (covered in Theme 3).<br><br><strong>Differentiate to reduce elasticity:</strong> branding, quality, loyalty schemes all reduce the effective number of substitutes — making demand more inelastic and giving pricing power. Apple: high brand loyalty → inelastic demand → premium pricing.<br><br><strong>Elastic markets → compete on price:</strong> in commodity markets with many substitutes, demand is highly elastic; firms are price-takers with no pricing power.',
       keyTerms: [
@@ -111,6 +125,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'ped_7',
       template: 'framing',
+      stepLabel: 'Learn: Step 8 of 8',
       title: 'Special Cases of PED',
       body: '<strong>Perfectly inelastic (PED = 0):</strong> Vertical demand curve. Quantity demanded does not change at all with price. No real-world good is truly perfectly inelastic, but life-saving drugs approximate this in emergency settings.<br><br><strong>Perfectly elastic (PED = ∞):</strong> Horizontal demand curve. Any price rise above the market price causes quantity demanded to fall to zero. Competitive firms in a perfectly competitive market face perfectly elastic demand — they are price-takers.<br><br><strong>Giffen good:</strong> Upward-sloping demand curve (positive PED). Extremely rare. Possible when an inferior good takes up such a large share of income that the income effect overwhelms the substitution effect — historical Irish potato example.',
       keyTerms: [

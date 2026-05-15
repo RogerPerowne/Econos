@@ -1414,13 +1414,13 @@ img, svg { display: block; max-width: 100%; }
   font-size: var(--fs-sm);
   color: var(--econ-ink);
   line-height: var(--lh-relaxed);
-  padding: 6px 0 6px var(--sp-5);
+  padding: 6px 0 6px var(--sp-6);
   position: relative;
 }
 .cause-col li::before {
   content: '';
   position: absolute;
-  left: var(--sp-2);
+  left: 4px;
   top: 14px;
   width: 6px; height: 6px;
   border-radius: var(--r-full);
@@ -3069,14 +3069,14 @@ img, svg { display: block; max-width: 100%; }
 .paired-half__drivers li {
   font-size: var(--fs-sm);
   color: var(--econ-ink);
-  padding: var(--sp-1) 0 var(--sp-1) var(--sp-4);
+  padding: var(--sp-1) 0 var(--sp-1) var(--sp-5);
   position: relative;
   line-height: var(--lh-relaxed);
 }
 .paired-half__drivers li::before {
   content: '';
   position: absolute;
-  left: 4px; top: 11px;
+  left: 2px; top: 11px;
   width: 6px; height: 6px;
   border-radius: var(--r-full);
   background: var(--econ-gray-400);

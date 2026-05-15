@@ -152,7 +152,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       hallmarks: {
-        title: "Hallmarks - what you'll see",
+        title: "Characteristics",
         items: [
           'Savings ratio falling → C rising',
           'Consumer confidence index strengthening',
@@ -198,7 +198,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       hallmarks: {
-        title: "Hallmarks - what you'll see",
+        title: "Characteristics",
         items: [
           'PMI (Purchasing Managers Index) above/below 50',
           'Business confidence surveys',

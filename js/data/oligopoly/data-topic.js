@@ -58,16 +58,34 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'oligopoly_3',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'The Kinked Demand Curve Model',
-      intro: 'The kinked demand curve (Sweezy, 1939) explains price rigidity in oligopoly by modelling asymmetric rival reactions to price changes.',
+      lede: 'Sweezy (1939) explains oligopoly price rigidity by modelling asymmetric rival reactions: rivals match price cuts but ignore price rises.',
+      diagramKey: 'kinkedDemandInteractive',
       steps: [
-        { label: 'Assumption for price rises', text: 'If a firm RAISES its price above the current price P*, rivals do NOT follow — they hold their own prices to gain market share. Result: the firm loses many customers → demand is ELASTIC above P*.' },
-        { label: 'Assumption for price cuts', text: 'If a firm CUTS its price below P*, rivals DO match the cut — they fear losing market share. Result: the firm gains few customers (all rivals also cut) → demand is INELASTIC below P*.' },
-        { label: 'The kink and the gap in MR', text: 'Combining these creates a kinked demand curve — elastic above P*, inelastic below P*. The kink at P* creates a vertical discontinuity (gap) in the MR curve at Q*.' },
-        { label: 'Price rigidity result', text: 'As long as the firm\'s MC curve passes through the vertical section of the MR gap, profit-maximising output remains at Q* and price stays at P*. Moderate cost changes (MC shifts up or down but stays within the gap) do not change the profit-maximising price.' }
+        {
+          key: 'base',
+          label: 'Price rise → elastic',
+          text: 'If a firm RAISES its price above the current price P*, rivals do NOT follow — they hold their own prices steady to grab market share. The firm loses many customers quickly. → Demand is <strong>ELASTIC above P*</strong>: small price rise causes a large quantity fall.'
+        },
+        {
+          key: 'extension',
+          label: 'Price cut → inelastic',
+          text: 'If the firm CUTS its price below P*, rivals DO match the cut — they fear losing market share if they don\'t. The firm gains few new customers (everyone has cut). → Demand is <strong>INELASTIC below P*</strong>: even a big cut produces only a small quantity gain. Combining both reactions gives a <strong>kinked demand curve</strong> at P*.'
+        },
+        {
+          key: 'shift',
+          label: 'MR gap at Q*',
+          text: 'Derive MR from each segment separately. MR₁ (from elastic D₁) is gentle; MR₂ (from inelastic D₂) is much steeper and starts well below where MR₁ ended. The result: MR has a <strong>vertical discontinuity (gap)</strong> at the kink quantity Q*. MR jumps downward as output crosses Q*.'
+        },
+        {
+          key: 'efficiency',
+          label: 'Price rigidity',
+          text: 'Firms set MR = MC. As long as MC passes through the vertical MR gap, profit-maximising output stays at Q* and the price stays at P*. <strong>Moderate cost shocks (dashed MC shifts) do not change the price</strong> — they still cross MR inside the gap. This explains why oligopoly prices are sticky even when input costs fluctuate.'
+        }
       ],
-      examEdge: 'The vertical gap in MR is the key analytical point. Cost shocks that shift MC within this gap leave price unchanged — explaining why oligopoly prices are "sticky" in practice. Petrol retailers: costs fluctuate with oil prices but retail prices often remain fixed for extended periods. The kinked demand model offers an explanation for this observed price rigidity. Note the limitation: the model assumes rivals\' asymmetric reactions but does not explain HOW the current price P* was established.'
+      examEdge: 'The vertical gap in MR is the key analytical point. Cost shocks that shift MC within this gap leave price unchanged — explaining why oligopoly prices are "sticky" in practice. Petrol retailers: wholesale costs fluctuate with oil prices but retail prices often remain fixed for extended periods. Note the limitation: the model assumes asymmetric rival reactions but does not explain HOW the current price P* was established in the first place.'
     },
     {
       id: 'oligopoly_4',

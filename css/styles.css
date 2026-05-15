@@ -2365,6 +2365,10 @@ img, svg { display: block; max-width: 100%; }
   padding-left: 4px;
   margin-bottom: 6px;
 }
+/* Override: cause-col li needs its own indent so custom bullet clears text */
+.cause-col li {
+  padding-left: 28px !important;
+}
 .key-tile button:hover {
   background: rgba(255,255,255,0.6) !important;
 }

@@ -59,6 +59,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'contestability_3',
       template: 'mechanisms',
+      diagramKey: 'contestabilityDiagram',
       title: 'Hit-and-Run Entry',
       intro: 'Hit-and-run entry is the mechanism by which potential entrants discipline incumbent pricing in contestable markets.',
       steps: [

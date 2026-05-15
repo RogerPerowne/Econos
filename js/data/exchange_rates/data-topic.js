@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Exchange Rates',
-  estTime: '9-11 minutes',
+  estTime: '11-13 minutes',
   goal: 'Lock in what determines exchange rates, how changes affect trade and macro objectives, and the floating vs fixed debate.',
   intro: {
     heroKey: 'heroExchangeRates',
     summary: 'The exchange rate is the price of one currency in terms of another. It connects domestic and international markets: a depreciation makes exports cheaper and imports dearer, affecting competitiveness, inflation and the current account.',
-    doInThis: 'Work through 8 cards covering FOREX markets, appreciation vs depreciation, the Marshall-Lerner condition and J-curve, a full Marshall-Lerner worked calculation, floating vs fixed systems, and exchange rate policy trade-offs.',
+    doInThis: 'Work through 9 cards covering FOREX markets, appreciation vs depreciation, the Marshall-Lerner condition and J-curve, a full Marshall-Lerner worked calculation, floating vs fixed systems, exchange rate policy trade-offs, and a 25-mark essay scaffold on depreciation and the current account.',
     outcomes: [
       'Explain how supply and demand in FOREX markets determine the exchange rate',
       'Analyse the effects of currency depreciation on exports, imports, inflation and growth',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Depreciation: \xa3 falls in value → exports cheaper in foreign currency (volume rises) → imports dearer in \xa3 (volume falls). Net effect on current account depends on price elasticities (Marshall-Lerner).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -185,6 +185,51 @@ window.ECONOS_TOPIC = {
       footer: 'Balance of payments: depreciation helps current account (if M-L holds) but appreciation worsens it. Employment: depreciation boosts export-sector jobs but raises input costs and may shrink import-competing firms. No free lunch in exchange rate policy.',
       examEdge: 'A 25-mark essay on exchange rate policy requires systematic treatment of ALL objectives — growth, inflation, BoP, and employment — and how policy-makers face impossible trade-offs when these conflict. "It depends on the cause of the change" is valid evaluation.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+    {
+      id: 'er-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 9 of 9',
+      question: 'Evaluate the view that a depreciation of the pound will always improve the UK\'s current account balance. [25 marks]',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define depreciation and current account. State the Marshall-Lerner condition as the key analytical framework. Signal a conditional conclusion.',
+          hint: 'Depreciation = fall in currency value in a floating system. Current account = trade in goods + services + primary + secondary income. Marshall-Lerner: depreciation improves current account only if PEDx + PEDm > 1.',
+          model: 'A depreciation of the pound means a fall in the sterling exchange rate — the price of £1 falls in terms of foreign currencies, so exports become cheaper for foreign buyers and imports become more expensive for UK consumers. The current account records the flow of money from trade in goods and services, primary income (investment returns), and secondary income (transfers). A depreciation is often argued to improve the current account by raising export volumes and reducing import volumes. However, this conclusion is conditional: the Marshall-Lerner condition states that depreciation improves the current account only if the sum of the price elasticities of demand for exports and imports (|PEDx| + |PEDm|) exceeds unity. In the short run, this condition may not hold, producing a J-curve pattern rather than immediate improvement. Whether depreciation "always" improves the current account therefore depends on these price elasticities, the J-curve time profile, and the macroeconomic conditions in which the depreciation occurs.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis — the case that depreciation improves the current account',
+          prompt: 'Explain the price competitiveness mechanism: exports cheaper, imports dearer, net trade balance improves. Reference the Marshall-Lerner condition.',
+          hint: '£ depreciates → exports cheaper in foreign currency → PEDx determines volume response → export revenue rises if PEDx > 0. Imports dearer in £ → PEDm determines volume response → import spending falls if PEDm > 0. If |PEDx| + |PEDm| > 1, current account improves.',
+          model: 'A sterling depreciation improves price competitiveness directly: if £1 falls from $1.40 to $1.20, UK goods that previously cost $140 now cost $120 in the US market. If demand for UK exports is price-elastic (|PEDx| > 0.5), export volume rises enough to increase total export revenue — the fall in price is more than offset by the gain in volume. Simultaneously, imports priced in foreign currencies cost more in sterling terms, reducing import volumes if UK demand for imports is price-elastic (|PEDm| > 0.5). The combined effect, captured in the Marshall-Lerner condition, requires |PEDx| + |PEDm| > 1 for the current account to improve. In the long run, price elasticities tend to be relatively high: consumers and firms have time to switch suppliers, contracts can be renegotiated, and substitute products can be found. Empirically, the long-run price elasticities for UK trade are generally estimated to satisfy the Marshall-Lerner condition — so a sustained depreciation should, over time, improve the current account balance.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter-argument — why depreciation may not improve the current account',
+          prompt: 'Explain the J-curve effect (short-run elasticities are low), pass-through inflation, and structural factors that limit improvement.',
+          hint: 'J-curve: in the short run, contracts are fixed, so volumes don\'t change immediately — the current account worsens as import prices rise before volumes adjust. Import-price inflation → real depreciation erodes over time. If exports are price-inelastic (luxury goods, niche manufactures), volume response is weak. Domestic inflation may rapidly offset the nominal depreciation.',
+          model: 'In the short run, the Marshall-Lerner condition is frequently violated, producing the J-curve effect. Existing trade contracts are fixed in advance: a UK importer contracted to pay $100m for US goods must now pay more in sterling, worsening the current account immediately. Meanwhile, foreign buyers take time to respond to lower sterling prices by switching suppliers — new contracts take months to negotiate. The initial effect of depreciation is therefore a deterioration in the current account (the downward stroke of the J), before volume adjustments produce the eventual improvement (the upward stroke). For the UK, this adjustment lag has been estimated at 1-2 years. A second structural limitation is inflation pass-through: as import prices rise in sterling, domestic inflation increases. Higher UK price levels erode the competitiveness gain from depreciation in nominal terms — over time, the real exchange rate may recover toward its pre-depreciation level, leaving the current account little changed. This is especially relevant for a commodity-importing economy like the UK, where energy and food price increases following depreciation can significantly offset the export competitiveness gain. Furthermore, if UK exports are price-inelastic — either because they are high-quality differentiated goods where buyers are less sensitive to price, or because there is limited capacity to scale up export production — the volume response to cheaper prices will be limited.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — macroeconomic context determines effectiveness',
+          prompt: 'Evaluate whether depreciation improves the current account conditional on: export product mix, trading partner income levels, domestic capacity, and current account composition.',
+          hint: 'If UK\'s main trading partners are in recession, their income effects dominate price effects — demand for UK exports falls despite lower prices. If UK inflation is already high, real depreciation is small. Services trade (60% of UK exports) may be less price-sensitive than goods trade. Current account composition: UK primary income deficit depends on investment flows, not just trade prices.',
+          model: 'The effectiveness of depreciation in improving the current account also depends on the macroeconomic context. If the UK\'s trading partners (EU: 42% of UK trade; US: 15%) are themselves in recession, the income effect on demand for UK exports dominates the price effect — even cheaper UK goods will not find willing buyers if foreign incomes are depressed. This was the experience after the 2008 financial crisis, when sterling depreciated by 25% but the current account deficit persisted and widened, partly because the global recession suppressed export demand. The composition of UK trade is also relevant: services represent approximately 60% of UK exports (financial services, education, tourism). Service exports are generally less price-sensitive than goods — demand for UK legal services, financial products, or university education is determined more by quality and reputation than price competitiveness. Depreciation-driven improvement is therefore more limited for a service-dominated exporter than for a manufacturing-dominated one. Finally, the UK\'s current account deficit includes a primary income deficit (investment income flows), which depends on capital flows and asset returns, not exchange rates. Even a large improvement in the trade balance may be insufficient to correct the overall current account if the income deficit persists.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Make a conditional judgement: under what conditions does depreciation improve the current account? What is the overall verdict?',
+          hint: 'Depreciation CAN improve the current account, but only when: Marshall-Lerner holds in the long run, pass-through inflation is contained, trading partners\' incomes are growing, and there is export capacity to respond. Short run worsening (J-curve) is likely. "Always" improves is clearly false.',
+          model: 'The view that depreciation always improves the current account is clearly too strong. Depreciation is a necessary but insufficient condition for current account improvement, and even its sufficiency is conditional. In the long run, where Marshall-Lerner elasticities are satisfied, trading partner growth is positive, domestic inflation is contained, and there is spare productive capacity to expand exports, depreciation can and does improve the current account — the sterling depreciation of 2008-09 did eventually contribute to some rebalancing toward export growth from 2012 onwards. However, the short-run J-curve deterioration is well-documented and can persist for 1-2 years; pass-through inflation can rapidly erode the real competitiveness gain; and structural features of the UK economy (service dominance, inelastic export products, income account deficit) limit the trade adjustment channel. The most accurate summary is that depreciation is a useful but imperfect tool for current account adjustment — more reliable in the long run than the short run, and more effective for goods-intensive exporters than service-intensive ones like the UK. Policymakers cannot rely on exchange rate adjustment alone to correct persistent current account imbalances; structural supply-side reforms to boost export capacity and productivity are also required.'
+        }
+      ]
     }
   ]
 };

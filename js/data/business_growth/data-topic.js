@@ -73,6 +73,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'business_growth_3',
       template: 'cause',
+      diagramKey: 'businessGrowthDiagram',
       title: 'Types of Integration',
       causes: [
         { head: 'Horizontal integration', body: 'Merger of firms at the same stage of production in the same industry. Examples: two banks merging; supermarket takeover of rival. Motives: economies of scale, market power, eliminate competitor. Competition law concern: most likely type to reduce competition → CMA scrutiny.' },

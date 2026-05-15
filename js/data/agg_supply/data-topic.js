@@ -10,13 +10,13 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Aggregate Supply',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Master SRAS, LRAS and the Classical vs Keynesian debate',
 
   intro: {
     heroKey: 'heroAggSupply',
     summary: "SRAS and LRAS do very different things. The Classical vs Keynesian debate about LRAS shape determines everything — what equilibrium means, whether fiscal policy works, and how inflation and output interact.",
-    doInThis: 'Recap SRAS shifters, Classical and Keynesian LRAS, equilibrium, supply-side shifts, and output gap closure.',
+    doInThis: 'Recap SRAS shifters, Classical and Keynesian LRAS, equilibrium, supply-side shifts, and output gap closure. Finish with a 25-mark essay scaffold.',
     outcomes: [
       'Distinguish SRAS from LRAS shifters',
       'Explain Classical and Keynesian LRAS shapes',
@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.',
     stages: [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',    state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards',    state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
     ]
@@ -36,7 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'sras-lras-framing',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'SRAS vs LRAS: two very different curves',
       lede: 'Aggregate Supply has two versions with completely different shapes, shifters, and policy implications. Confusing them is the most-marked-down error in macro essays.',
       branches: [
@@ -61,7 +61,7 @@ window.ECONOS_TOPIC = {
       diagramKey: 'adAsCostPush',
       tone: 'green',
       bannerLabel: 'Short Run Aggregate Supply',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'SRAS: why it slopes upward and what shifts it',
       lede: 'SRAS slopes upward because input costs (especially wages) are sticky in the short run. When the price level rises, firms receive higher revenues but pay the same costs — so they produce more.',
       diagramCaption: 'SRAS: upward sloping in P-Y space. Shifts left on cost increases, right on productivity gains.',
@@ -103,7 +103,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-classical',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'LRAS Classical: the self-correcting economy',
       lede: 'The Classical school says: in the long run, wages and prices are fully flexible. The economy always returns to full employment output. Government intervention is unnecessary — and counterproductive.',
       mechanisms: [
@@ -146,7 +146,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'lras-keynesian',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'LRAS Keynesian: when fiscal policy works',
       lede: "The Keynesian LRAS has three zones. Where the economy sits determines whether fiscal stimulus raises output or just prices. This is the key to every recession policy debate.",
       steps: [
@@ -176,7 +176,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'macro-equilibrium',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'Macro equilibrium: where AD meets AS',
       lede: 'Equilibrium in the macro model is where AD intersects AS. But which AS? And what happens when they shift? This card runs through the core scenarios.',
       mechanisms: [
@@ -219,7 +219,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'shifter-comparison',
       template: 'paired',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'SRAS vs LRAS shifters: the key distinction',
       lede: 'The most common exam error: applying an LRAS shifter to SRAS, or vice versa. This card locks in the distinction.',
       pairs: [
@@ -264,7 +264,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'output-gaps',
       template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'Output gaps and the adjustment process',
       lede: "Output gaps measure the distance between actual and potential output. Understanding how they open, persist, and close is the backbone of every macro policy discussion.",
       mechanismsTitle: 'The two output gaps and their dynamics',
@@ -303,6 +303,61 @@ window.ECONOS_TOPIC = {
         text: 'A* macro answers <strong>estimate the size of the output gap</strong>, not just its direction. \'A negative output gap of approximately 2-3% of GDP suggests significant spare capacity — sufficient for AD stimulus without triggering inflation.\' Quantification is the mark-up.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'as-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: LRAS and fiscal policy',
+      question: 'Evaluate the view that fiscal policy is the most effective way to increase a country\'s long-run productive potential. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define long-run productive potential and briefly introduce the Classical vs Keynesian debate about what shifts LRAS.',
+          hint: 'Long-run productive potential = the maximum sustainable output the economy can produce (LRAS at Y*). Fiscal policy can shift LRAS via public investment, education, and infrastructure. But supply-side reforms and private investment also shift LRAS — the debate is about effectiveness.',
+          model: 'A country\'s long-run productive potential — represented by a rightward shift in LRAS — depends on the quantity and quality of factors of production: labour, capital, enterprise, and technology. Fiscal policy can attempt to expand this potential through public investment in infrastructure, education, and R&D. However, Classical economists question whether government spending is the most effective route, favouring private-sector-led supply-side reforms instead. This essay evaluates whether fiscal policy is indeed the most effective instrument.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Public investment and LRAS',
+          prompt: 'Explain how fiscal policy can shift LRAS through infrastructure, education, and R&D spending.',
+          hint: 'Mechanism: public investment → raises MPC (labour productivity) and capital stock → LRAS shifts right. Infrastructure (roads, broadband) reduces transport costs, enabling specialisation. Education raises human capital — skills and knowledge that persist long-term. R&D creates technology spillovers (positive externalities) that the private sector under-provides. UK: HS2, apprenticeship funding as examples.',
+          model: 'Fiscal policy can directly expand productive potential through public investment. Infrastructure spending — such as digital broadband or transport networks — reduces distribution costs and allows greater specialisation, shifting LRAS rightward. Education and skills investment raises human capital: a more educated labour force is more productive, adaptable, and innovative. R&D subsidies address the market failure of positive externalities: since firms cannot capture all benefits of innovation, they under-invest — government funding bridges the gap. The UK\'s industrial strategy periods (1960s, 2017) illustrate this logic, with mixed but not negligible success in targeted sectors.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Supply-side tax and deregulation (market-based approach)',
+          prompt: 'Explain how non-spending fiscal tools (tax cuts, deregulation) can shift LRAS through private investment incentives.',
+          hint: 'Corporation tax cuts → higher post-tax returns on investment → private capital accumulation → LRAS right. Income tax/NI cuts → higher participation rate and labour supply → LRAS right. Deregulation → reduces firm costs. These avoid \'crowding out\' by stimulating private rather than public investment.',
+          model: 'Beyond direct spending, fiscal policy also includes tax and regulatory tools that influence private sector incentives. Cuts in corporation tax raise the post-tax return on investment, incentivising capital accumulation by firms — which is ultimately a stronger driver of LRAS growth than government capital, because private firms face market discipline and allocate capital more efficiently. Income tax and National Insurance reductions raise labour supply by improving work incentives — expanding the economically active workforce and shifting LRAS right. These market-based fiscal tools sidestep the crowding-out problem: rather than substituting for private investment, they complement and catalyse it.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Keynesian multiplier vs Classical crowding out',
+          prompt: 'Evaluate the crowding out argument and supply-side alternatives to fiscal expansion.',
+          hint: 'Classical: government borrowing raises interest rates → crowds out private investment → no net LRAS gain. Ricardian equivalence: households anticipate future taxes and save instead of spending. Supply-side reform (labour market flexibility, competition policy) shifts LRAS without requiring high public spending. Nordic model: high fiscal spending can work, but requires strong institutions and coordination.',
+          model: 'Classical economists raise important objections to fiscal-led LRAS expansion. Crowding out occurs when government borrowing raises interest rates, displacing private investment — so the net LRAS impact is smaller than the fiscal injection implies. Ricardian equivalence (Barro, 1974) suggests households offset government spending by increasing savings in anticipation of future tax rises, negating the intended stimulus. Empirically, the UK\'s 2010-19 austerity period, while contractionary in the short run, did not obviously destroy long-run productive potential — suggesting some market-based adjustment occurred. Supply-side reformers argue that deregulation, competition policy, and labour market flexibility achieve LRAS gains more efficiently and without the debt legacy that fiscal expansion creates.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Time lag, public goods argument, and institutional quality',
+          prompt: 'Weigh both sides with reference to the nature of the market failure, the time horizon, and country-specific context.',
+          hint: 'Key judgement: fiscal policy is strongest where market failures are greatest (education, infrastructure as public goods). Private markets under-provide long-lived public goods due to non-excludability. But implementation quality matters: if public investment is poorly directed or subject to political capture, returns are low. Short-run vs long-run: fiscal investment has long lags (infrastructure takes years to build). The \'most effective\' claim depends on context.',
+          model: 'The effectiveness of fiscal policy in expanding LRAS ultimately depends on the nature and scale of market failure in the economy. Where infrastructure is a public good (non-excludable, non-rival) — or where education generates positive externalities — the market systematically under-provides, and fiscal intervention is both necessary and efficient. Here, fiscal policy has no market substitute. However, beyond these genuine public goods, the returns to government spending depend heavily on institutional quality: politically directed investment, poorly targeted spending, or corruption erodes the LRAS benefit. The UK\'s HS2 experience illustrates the risk of cost overruns and scope reduction reducing the infrastructure dividend. Supply-side reforms — removing barriers to entry, improving competition — can achieve some LRAS gains without fiscal cost, making them a complement rather than alternative to targeted public investment.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a reasoned judgement on whether fiscal policy is the most effective LRAS tool.',
+          hint: 'Most effective where genuine market failure exists (public goods, positive externalities). Less effective than private investment in most capital formation. The strongest fiscal tools are public goods provision and human capital investment — not general stimulus spending.',
+          model: 'Fiscal policy is the most effective tool for expanding LRAS in the specific domains where market failure is most severe: public goods infrastructure, human capital formation, and R&D with positive externalities. These are areas where private markets systematically under-invest, and government provision is not just useful but necessary for long-run growth. Beyond these domains, however, the case weakens: tax incentives and supply-side reforms that stimulate private investment are likely to deliver greater LRAS gains per pound of fiscal cost, since private capital allocation is disciplined by market signals rather than political priorities. On balance, fiscal policy is a powerful but not universally superior LRAS tool — its effectiveness is high precisely where market failure is greatest, and limited elsewhere.'
+        }
+      ]
     }
   ]
 };

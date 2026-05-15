@@ -180,6 +180,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'stagflation',
       template: 'cause',
+      diagramKey: 'costPushDiagram',
       tone: 'rose',
       bannerLabel: 'The worst macro outcome',
       stepLabel: 'Learn: Step 5 of 7',

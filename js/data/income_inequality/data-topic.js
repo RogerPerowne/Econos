@@ -26,15 +26,29 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'income_inequality_1',
-      template: 'framing',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'Lorenz Curve & Gini Coefficient',
-      body: 'The <strong>Lorenz curve</strong> plots cumulative share of income against cumulative share of population, ranked from poorest to richest. Perfect equality is the 45\xb0 line ("line of equal distribution"). The further the Lorenz curve bows below this line, the greater the inequality.<br><br>The <strong>Gini coefficient</strong> = Area A \xf7 (Area A + Area B), where A is the area between the Lorenz curve and the line of equality, and B is the area below the Lorenz curve. Range: 0 (perfect equality) to 1 (perfect inequality). UK Gini for income ~0.35; for wealth ~0.63. Wealth is always more unequally distributed than income.',
-      keyTerms: [
-        { term: 'Lorenz curve', def: 'A graph of cumulative income share vs cumulative population share — further from the 45\xb0 line = more unequal.' },
-        { term: 'Gini coefficient', def: 'Ratio of area between Lorenz curve and equality line to total area below equality line. 0 = equality; 1 = maximum inequality.' },
-        { term: 'Quintile share ratio', def: 'Income of top 20% divided by income of bottom 20% — simpler alternative measure of inequality.' }
+      lede: 'The Lorenz curve plots cumulative share of income against cumulative share of population — the further it bows below the 45° line of perfect equality, the greater the inequality. The Gini coefficient turns that bow into a single number.',
+      diagramKey: 'lorenzInteractive',
+      steps: [
+        {
+          key: 'base',
+          label: 'Construction',
+          text: 'The <strong>Lorenz curve</strong> ranks households from poorest to richest and plots <em>cumulative share of income</em> (y) against <em>cumulative share of population</em> (x). The 45° line shows perfect equality — every population share earns the same income share. The further the Lorenz curve bows below the 45° line, the more unequal the distribution. UK 2022: the bottom 20% earn ~7% of income; the top 20% earn ~42%.'
+        },
+        {
+          key: 'extension',
+          label: 'The Gini coefficient',
+          text: 'The <strong>Gini coefficient</strong> = Area A ÷ (Area A + Area B). <strong>A</strong> is the area between the equality line and the Lorenz curve. <strong>B</strong> is the area under the Lorenz curve. Range: 0 (perfect equality) to 1 (one person earns everything). UK income Gini ≈ 0.35; UK wealth Gini ≈ 0.63 — <strong>wealth is always more unequally distributed than income</strong>.'
+        },
+        {
+          key: 'shift',
+          label: 'International comparison',
+          text: 'Three economies, same axes: <strong>Sweden</strong> (Gini ≈ 0.27) hugs the 45° line — strong redistribution flattens the curve. <strong>UK</strong> (Gini ≈ 0.35, dashed) bows moderately. <strong>South Africa</strong> (Gini ≈ 0.63) bows far below — its bottom 20% earn only ~3% of income. Shifting toward the 45° line = falling inequality; shifting away = rising inequality.'
+        }
       ],
-      examEdge: 'Exam diagrams: draw the line of perfect equality first (45\xb0), then the Lorenz curve bowing below it, label the areas A and B, and state Gini = A/(A+B). A shift of the Lorenz curve toward the equality line = falling inequality. This is a classic 4-mark diagram question.'
+      examEdge: 'Exam diagrams: draw the line of perfect equality first (45°), then the Lorenz curve bowing below it, label the areas A and B, and state Gini = A/(A+B). A shift of the Lorenz curve toward the equality line = falling inequality. Classic 4-mark diagram question.'
     },
     {
       id: 'income_inequality_2',

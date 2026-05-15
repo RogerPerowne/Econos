@@ -1746,6 +1746,185 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  lorenzInteractive: `
+    <svg class="lorenz-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="lz-chart-clip">
+          <rect x="60" y="55" width="345" height="345"/>
+        </clipPath>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="440" y1="16" x2="440" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <!-- X-axis -->
+        <line x1="60" y1="400" x2="405" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="405,395 405,405 417,400" fill="#334155"/>
+        <!-- Y-axis -->
+        <line x1="60" y1="400" x2="60" y2="55" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <!-- Axis labels -->
+        <text x="232" y="425" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">Cumulative population % (poorest → richest)</text>
+        <text x="32" y="227" font-size="11" font-weight="600" fill="#334155" text-anchor="middle" transform="rotate(-90 32 227)">Cumulative income %</text>
+        <!-- Tick marks and labels on X -->
+        <line x1="129" y1="400" x2="129" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="129" y="416" font-size="10" fill="#64748B" text-anchor="middle">20</text>
+        <line x1="198" y1="400" x2="198" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="198" y="416" font-size="10" fill="#64748B" text-anchor="middle">40</text>
+        <line x1="267" y1="400" x2="267" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="267" y="416" font-size="10" fill="#64748B" text-anchor="middle">60</text>
+        <line x1="336" y1="400" x2="336" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="336" y="416" font-size="10" fill="#64748B" text-anchor="middle">80</text>
+        <line x1="405" y1="400" x2="405" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="405" y="416" font-size="10" fill="#64748B" text-anchor="middle">100</text>
+        <!-- Tick marks and labels on Y -->
+        <line x1="60" y1="331" x2="56" y2="331" stroke="#334155" stroke-width="1.5"/>
+        <text x="50" y="335" font-size="10" fill="#64748B" text-anchor="end">20</text>
+        <line x1="60" y1="262" x2="56" y2="262" stroke="#334155" stroke-width="1.5"/>
+        <text x="50" y="266" font-size="10" fill="#64748B" text-anchor="end">40</text>
+        <line x1="60" y1="193" x2="56" y2="193" stroke="#334155" stroke-width="1.5"/>
+        <text x="50" y="197" font-size="10" fill="#64748B" text-anchor="end">60</text>
+        <line x1="60" y1="124" x2="56" y2="124" stroke="#334155" stroke-width="1.5"/>
+        <text x="50" y="128" font-size="10" fill="#64748B" text-anchor="end">80</text>
+        <line x1="60" y1="55" x2="56" y2="55" stroke="#334155" stroke-width="1.5"/>
+        <text x="50" y="59" font-size="10" fill="#64748B" text-anchor="end">100</text>
+        <text x="48" y="416" font-size="11" fill="#64748B">0</text>
+      </g>
+
+      <!-- ===== LAYER: equality line (always visible) ===== -->
+      <g class="layer-equality">
+        <line x1="60" y1="400" x2="405" y2="55" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <text x="380" y="80" font-size="11" font-weight="700" fill="#7C3AED" transform="rotate(-45 380 80)">Line of perfect equality</text>
+      </g>
+
+      <!-- ===== LAYER: UK Lorenz curve (base + extension states) ===== -->
+      <g class="layer-lorenz-uk">
+        <path d="M 60,400 Q 150,395 198,334 T 405,55" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+        <text x="312" y="248" font-size="13" font-weight="700" fill="#2563EB">UK Lorenz</text>
+      </g>
+
+      <!-- ===== LAYER: UK Lorenz dashed (shift state — original reference) ===== -->
+      <g class="layer-lorenz-uk-dashed">
+        <path d="M 60,400 Q 150,395 198,334 T 405,55" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" stroke-linecap="round" opacity="0.55"/>
+        <text x="312" y="248" font-size="12" font-weight="600" fill="#2563EB" opacity="0.7">UK</text>
+      </g>
+
+      <!-- ===== LAYER: base points (quintile markers) ===== -->
+      <g class="layer-base-points">
+        <circle cx="129" cy="376" r="4.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+        <circle cx="198" cy="334" r="4.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+        <circle cx="267" cy="276" r="4.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+        <circle cx="336" cy="200" r="4.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+        <!-- Annotation: bottom 20% earn ~7% -->
+        <text x="138" y="372" font-size="10" font-weight="600" fill="#2563EB">(20, 7)</text>
+        <text x="345" y="196" font-size="10" font-weight="600" fill="#2563EB">(80, 58)</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <circle cx="455" cy="32" r="7" fill="#2563EB"/>
+        <text x="471" y="37" font-size="12" font-weight="600" fill="#334155">Lorenz curve · cumulative income vs cumulative population</text>
+        <text x="455" y="78" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">CONSTRUCTION</text>
+        <text x="455" y="102" font-size="13" fill="#334155">Rank households poorest →</text>
+        <text x="455" y="120" font-size="13" fill="#334155">richest. Plot cumulative</text>
+        <text x="455" y="138" font-size="13" fill="#334155">share of income (y) against</text>
+        <text x="455" y="156" font-size="13" fill="#334155">cumulative share of population (x).</text>
+        <text x="455" y="190" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE 45° LINE</text>
+        <text x="455" y="214" font-size="13" fill="#334155">Perfect equality: every</text>
+        <text x="455" y="232" font-size="13" fill="#334155">person earns the same share.</text>
+        <text x="455" y="265" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">THE FURTHER IT BOWS,</text>
+        <text x="455" y="283" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">THE MORE UNEQUAL</text>
+        <text x="455" y="312" font-size="13" font-weight="700" fill="#1E293B">UK 2022 snapshot</text>
+        <text x="455" y="332" font-size="13" fill="#334155">Bottom 20% earn ~7% of income.</text>
+        <text x="455" y="350" font-size="13" fill="#334155">Top 20% earn ~42%.</text>
+      </g>
+
+      <!-- ===== LAYER: Gini areas (extension state) ===== -->
+      <g class="layer-gini-areas">
+        <!-- Area A: between equality line and Lorenz curve -->
+        <path d="M 60,400 L 405,55 Q 350,128 198,334 Q 150,395 60,400 Z"
+              fill="#FEF3C7" fill-opacity="0.65" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <!-- Area B: below the Lorenz curve -->
+        <path d="M 60,400 Q 150,395 198,334 Q 350,128 405,55 L 405,400 Z"
+              fill="#DBEAFE" fill-opacity="0.55" stroke="#2563EB" stroke-width="1" stroke-dasharray="4 3"/>
+        <!-- Area labels -->
+        <text x="195" y="190" font-size="28" font-weight="800" fill="#D97706" text-anchor="middle">A</text>
+        <text x="320" y="340" font-size="28" font-weight="800" fill="#2563EB" text-anchor="middle">B</text>
+      </g>
+
+      <!-- ===== LAYER: legend extension (Gini formula) ===== -->
+      <g class="layer-legend-extension">
+        <circle cx="455" cy="32" r="7" fill="#D97706"/>
+        <text x="471" y="37" font-size="12" font-weight="600" fill="#334155">Gini = A ÷ (A + B) — measure of inequality</text>
+        <text x="455" y="78" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">THE GINI COEFFICIENT</text>
+        <!-- Formula box -->
+        <rect x="455" y="92" width="380" height="62" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+        <text x="645" y="125" font-size="22" font-weight="700" fill="#334155" text-anchor="middle">Gini = A ÷ (A + B)</text>
+        <text x="645" y="145" font-size="11" fill="#64748B" text-anchor="middle">Range: 0 (perfect equality) → 1 (one person has all)</text>
+        <!-- Area A explainer -->
+        <rect x="455" y="174" width="14" height="14" rx="2" fill="#FEF3C7" stroke="#D97706"/>
+        <text x="476" y="186" font-size="12" font-weight="700" fill="#D97706">Area A:</text>
+        <text x="455" y="206" font-size="12" fill="#334155">between equality line and Lorenz</text>
+        <!-- Area B explainer -->
+        <rect x="455" y="226" width="14" height="14" rx="2" fill="#DBEAFE" stroke="#2563EB"/>
+        <text x="476" y="238" font-size="12" font-weight="700" fill="#2563EB">Area B:</text>
+        <text x="455" y="258" font-size="12" fill="#334155">below the Lorenz curve</text>
+        <!-- UK Gini value -->
+        <text x="455" y="295" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">UK 2022 VALUES</text>
+        <text x="455" y="318" font-size="13" fill="#334155">Income Gini ≈ 0.35</text>
+        <text x="455" y="336" font-size="13" fill="#334155">Wealth Gini ≈ 0.63 (much higher)</text>
+        <text x="455" y="365" font-size="11" font-style="italic" fill="#64748B">Wealth is always more unequally</text>
+        <text x="455" y="380" font-size="11" font-style="italic" fill="#64748B">distributed than income.</text>
+      </g>
+
+      <!-- ===== LAYER: comparison curves (shift state — international) ===== -->
+      <g class="layer-compare">
+        <!-- Sweden — more equal (Gini ≈ 0.27) -->
+        <path d="M 60,400 Q 150,388 198,320 T 405,55" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+        <text x="290" y="220" font-size="13" font-weight="700" fill="#059669">Sweden</text>
+        <!-- South Africa — much more unequal (Gini ≈ 0.63) -->
+        <path d="M 60,400 Q 180,398 267,341 T 405,55" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+        <text x="200" y="362" font-size="13" font-weight="700" fill="#DC2626">South Africa</text>
+        <!-- Annotation arrow showing "more unequal" direction -->
+        <text x="135" y="290" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">more</text>
+        <text x="135" y="304" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">unequal ↘</text>
+      </g>
+
+      <!-- ===== LAYER: legend shift (international comparison) ===== -->
+      <g class="layer-legend-shift">
+        <circle cx="455" cy="32" r="7" fill="#059669"/>
+        <text x="471" y="37" font-size="12" font-weight="600" fill="#334155">International comparison · same axes, different Ginis</text>
+        <text x="455" y="78" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">FURTHER FROM 45° = MORE UNEQUAL</text>
+        <!-- Sweden row -->
+        <line x1="455" y1="108" x2="490" y2="108" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+        <text x="498" y="113" font-size="13" font-weight="700" fill="#059669">Sweden</text>
+        <text x="582" y="113" font-size="13" font-weight="600" fill="#334155">Gini ≈ 0.27</text>
+        <text x="455" y="132" font-size="12" fill="#475569">Strong redistribution; bottom 20%</text>
+        <text x="455" y="148" font-size="12" fill="#475569">earn ~9% of income.</text>
+        <!-- UK row -->
+        <line x1="455" y1="180" x2="490" y2="180" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5"/>
+        <text x="498" y="185" font-size="13" font-weight="700" fill="#2563EB">UK</text>
+        <text x="582" y="185" font-size="13" font-weight="600" fill="#334155">Gini ≈ 0.35</text>
+        <text x="455" y="204" font-size="12" fill="#475569">Mid-range OECD; tax + benefits</text>
+        <text x="455" y="220" font-size="12" fill="#475569">cut pre-tax Gini from ~0.52.</text>
+        <!-- South Africa row -->
+        <line x1="455" y1="252" x2="490" y2="252" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+        <text x="498" y="257" font-size="13" font-weight="700" fill="#DC2626">South Africa</text>
+        <text x="603" y="257" font-size="13" font-weight="600" fill="#334155">Gini ≈ 0.63</text>
+        <text x="455" y="276" font-size="12" fill="#475569">Highest measured inequality;</text>
+        <text x="455" y="292" font-size="12" fill="#475569">bottom 20% earn ~3%.</text>
+        <text x="455" y="328" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXAM EVALUATION</text>
+        <text x="455" y="350" font-size="12" fill="#334155">Compare curves to argue whether</text>
+        <text x="455" y="366" font-size="12" fill="#334155">redistribution is desirable.</text>
+      </g>
+    </svg>
+  `,
+
   /* === AD topic hero illustration === */
   heroAd: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

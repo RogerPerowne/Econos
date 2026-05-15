@@ -5177,21 +5177,147 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  monopolyVsCompetitionInteractive: `
-    <svg class="mvc-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  firmLevelPcVsMonopoly: `
+    <svg class="fpcm-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <clipPath id="mvc-chart-clip">
+        <clipPath id="fpcm-chart-clip"><rect x="60" y="43" width="502" height="357"/></clipPath>
+      </defs>
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== cost curves (Marco's cubic VC formulas — always visible) ===== -->
+      <g class="layer-cost-curves">
+        <g clip-path="url(#fpcm-chart-clip)">
+          <polyline points="70,235 85,250 110,271 135,289 160,304 185,315 210,323 235,328 260,330 285,328 310,323 335,315 360,304 385,289 410,271 435,250 460,225 485,197 510,166 535,131 560,94" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+          <polyline points="150,71 160,94 185,137 210,167 235,190 260,208 285,221 310,232 335,240 360,246 385,249 410,251 435,252 460,251 485,249 510,245 535,240 560,234" fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round"/>
+          <polyline points="70,230 85,237 110,249 135,259 160,269 185,277 210,284 235,290 260,295 285,299 310,302 335,303 360,304 385,303 410,302 435,299 460,295 485,290 510,284 535,277 560,269" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" stroke-linecap="round"/>
+        </g>
+        <text x="565" y="98" font-size="13" font-weight="700" fill="#DC2626">MC</text>
+        <text x="565" y="237" font-size="13" font-weight="700" fill="#0EA5E9">AC</text>
+        <text x="565" y="271" font-size="12" font-weight="600" fill="#64748B">AVC</text>
+      </g>
+
+      <!-- ===== PC firm demand (base + dimmed in shift) ===== -->
+      <g class="layer-pc-demand">
+        <line x1="60" y1="252" x2="560" y2="252" stroke="#059669" stroke-width="2.5"/>
+        <text x="155" y="246" font-size="12" font-weight="700" fill="#059669">AR = MR = P (price-taker)</text>
+        <circle cx="435" cy="252" r="7" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
+        <line x1="435" y1="252" x2="435" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+        <line x1="60" y1="252" x2="435" y2="252" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.4"/>
+        <text x="46" y="256" font-size="12" font-weight="700" fill="#059669" text-anchor="end">P*</text>
+        <text x="435" y="418" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">q*</text>
+      </g>
+
+      <!-- ===== Monopoly firm demand (extension + shift) ===== -->
+      <g class="layer-monopoly-demand">
+        <g clip-path="url(#fpcm-chart-clip)">
+          <line x1="60" y1="50" x2="560" y2="400" stroke="#2563EB" stroke-width="2.5"/>
+          <line x1="60" y1="50" x2="310" y2="400" stroke="#2563EB" stroke-width="2" stroke-dasharray="6 3" opacity="0.75"/>
+        </g>
+        <text x="497" y="385" font-size="12" font-weight="700" fill="#2563EB">AR = D</text>
+        <text x="265" y="395" font-size="12" font-weight="700" fill="#2563EB" opacity="0.8">MR</text>
+        <!-- Supernormal profit box: P_m=12 (y=190), AC_m=11 (y=208), q_m=40 (x=260) -->
+        <rect x="60" y="190" width="200" height="18" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
+        <text x="160" y="203" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">Supernormal profit</text>
+        <!-- P_m and Q_m reference lines -->
+        <line x1="60" y1="190" x2="260" y2="190" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="260" y1="190" x2="260" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <!-- AC at q_m horizontal tick for reading off -->
+        <line x1="60" y1="208" x2="260" y2="208" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+        <!-- MR=MC dot -->
+        <circle cx="260" cy="330" r="5" fill="#7C3AED"/>
+        <text x="268" y="336" font-size="11" font-weight="700" fill="#7C3AED">MR = MC</text>
+        <!-- Monopoly price dot on AR -->
+        <circle cx="260" cy="190" r="7" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
+        <text x="46" y="194" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">P_m</text>
+        <text x="46" y="212" font-size="11" font-weight="600" fill="#0EA5E9" text-anchor="end">AC_m</text>
+        <text x="260" y="418" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="middle">Q_m</text>
+      </g>
+
+      <!-- ===== shift comparison annotation ===== -->
+      <g class="layer-comparison">
+        <line x1="260" y1="252" x2="435" y2="252" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+        <text x="347" y="244" font-size="11" font-style="italic" fill="#475569" text-anchor="middle" opacity="0.85">PC produces more</text>
+        <line x1="270" y1="200" x2="425" y2="248" stroke="#475569" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+      </g>
+
+      <!-- ===== panels ===== -->
+      <g class="layer-panel-base">
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">PC firm: price-taker — horizontal AR=MR=P at market price</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">PC FIRM (PRICE-TAKER)</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Market sets P; firm faces a</text>
+        <text x="620" y="118" font-size="13" fill="#334155">perfectly elastic (horizontal)</text>
+        <text x="620" y="136" font-size="13" fill="#334155">demand: <tspan font-weight="700">AR = MR = P</tspan>.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Output where MC = MR</text>
+        <text x="620" y="188" font-size="13" fill="#334155">In LR, free entry drives</text>
+        <text x="620" y="206" font-size="13" fill="#334155">profit to zero → P = min AC.</text>
+        <text x="620" y="240" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EFFICIENCY</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Allocative: P = MC ✓</text>
+        <text x="620" y="280" font-size="13" fill="#334155">Productive: P = min AC ✓</text>
+        <text x="620" y="298" font-size="13" fill="#334155">Economic profit: zero</text>
+        <text x="620" y="332" font-size="11" font-style="italic" fill="#64748B">Next: same costs, monopoly demand</text>
+      </g>
+
+      <g class="layer-panel-ext">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopoly firm: faces whole D — AR slopes down, MR below AR</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">MONOPOLY FIRM</text>
+        <text x="620" y="100" font-size="13" fill="#334155">To sell more, must cut price</text>
+        <text x="620" y="118" font-size="13" fill="#334155">on every unit → <tspan font-weight="700">MR &lt; AR</tspan>.</text>
+        <text x="620" y="136" font-size="13" fill="#334155">For linear D, MR has twice</text>
+        <text x="620" y="154" font-size="13" fill="#334155">the slope of AR.</text>
+        <text x="620" y="188" font-size="13" font-weight="700" fill="#1E293B">Profit-max: MR = MC → Q_m</text>
+        <text x="620" y="206" font-size="13" fill="#334155">P_m read up to AR → P_m &gt; MC.</text>
+        <text x="620" y="240" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">SUPERNORMAL PROFIT</text>
+        <text x="620" y="262" font-size="13" fill="#334155">(P_m − AC) \xd7 Q_m → amber box.</text>
+        <text x="620" y="280" font-size="13" fill="#334155">Persists if entry blocked.</text>
+        <text x="620" y="314" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">INEFFICIENT</text>
+        <text x="620" y="336" font-size="13" fill="#334155">Q_m below min-AC; P &gt; MC.</text>
+      </g>
+
+      <g class="layer-panel-shift">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Same costs, different demand → very different outcomes</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">SIDE-BY-SIDE</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#059669">PC firm</text>
+        <text x="620" y="118" font-size="13" fill="#334155">Q* ≈ 75, P* = min AC ≈ 8.5</text>
+        <text x="620" y="136" font-size="13" fill="#334155">Zero economic profit (LR).</text>
+        <text x="620" y="166" font-size="13" font-weight="700" fill="#7C3AED">Monopoly firm</text>
+        <text x="620" y="184" font-size="13" fill="#334155">Q_m = 40, P_m = 12</text>
+        <text x="620" y="202" font-size="13" fill="#334155">AC_m = 11, profit ≈ \xa340/period</text>
+        <text x="620" y="236" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VERDICT</text>
+        <text x="620" y="258" font-size="13" fill="#334155">Monopoly produces less, at</text>
+        <text x="620" y="276" font-size="13" fill="#334155">higher cost, above MC, with</text>
+        <text x="620" y="294" font-size="13" fill="#334155">supernormal profit.</text>
+        <text x="620" y="328" font-size="11" font-style="italic" fill="#475569">BUT only if entry stays blocked</text>
+        <text x="620" y="346" font-size="11" font-style="italic" fill="#475569">— see contestability (card 3).</text>
+      </g>
+    </svg>
+  `,
+
+  marketLevelWelfare: `
+    <svg class="mlw-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="mlw-chart-clip">
           <rect x="60" y="43" width="502" height="357"/>
         </clipPath>
       </defs>
 
-      <!-- Background -->
       <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
-
-      <!-- Right panel divider -->
       <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
 
-      <!-- ===== LAYER: axes ===== -->
       <g class="layer-axes">
         <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
         <polygon points="560,395 560,405 572,400" fill="#334155"/>
@@ -5202,18 +5328,18 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== LAYER: base-curves (D/AR and MC — always visible) ===== -->
+      <!-- ===== LAYER: base-curves (market D and industry S/MC — always visible) ===== -->
       <g class="layer-base-curves">
-        <g clip-path="url(#mvc-chart-clip)">
-          <!-- D/AR: (60,43)→(500,336), slope 0.667 — at x=250: y=170; at x=400: y=270 -->
+        <g clip-path="url(#mlw-chart-clip)">
           <line x1="60" y1="43" x2="500" y2="336" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
-        <text x="505" y="338" font-size="13" font-weight="700" fill="#2563EB">D=AR</text>
-        <g clip-path="url(#mvc-chart-clip)">
-          <!-- MC: (60,329)→(510,251) — upward-sloping in economics; at x=250: y=296; at x=400: y=270 -->
+        <text x="505" y="338" font-size="13" font-weight="700" fill="#2563EB">D</text>
+        <text x="505" y="354" font-size="10" fill="#2563EB" opacity="0.75">(market demand)</text>
+        <g clip-path="url(#mlw-chart-clip)">
           <line x1="60" y1="329" x2="510" y2="251" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
         </g>
-        <text x="515" y="255" font-size="13" font-weight="700" fill="#DC2626">MC</text>
+        <text x="515" y="255" font-size="13" font-weight="700" fill="#DC2626">S = MC</text>
+        <text x="515" y="270" font-size="10" fill="#DC2626" opacity="0.75">(ΣMC of firms)</text>
       </g>
 
       <!-- ===== LAYER: cs-competition (base state only — large CS triangle) ===== -->
@@ -5238,7 +5364,7 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: mr-curve (extension + shift states) ===== -->
       <g class="layer-mr-curve">
-        <g clip-path="url(#mvc-chart-clip)">
+        <g clip-path="url(#mlw-chart-clip)">
           <!-- MR: same y-intercept as D at (60,43), twice the slope — ends at (328,400) -->
           <line x1="60" y1="43" x2="328" y2="400" stroke="#2563EB" stroke-width="2" stroke-dasharray="6 3" opacity="0.75"/>
         </g>
@@ -5274,59 +5400,300 @@ window.ECONOS_ICONS = {
         <text x="311" y="250" font-size="11" font-weight="800" fill="#DC2626">DWL</text>
       </g>
 
-      <!-- ===== LAYER: panel-base ===== -->
       <g class="layer-panel-base">
         <circle cx="74" cy="32" r="7" fill="#2563EB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Perfect competition — the allocatively efficient benchmark</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">PERFECT COMPETITION</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Many price-taking firms drive</text>
-        <text x="620" y="118" font-size="13" fill="#334155">the market to P = MC = min AC.</text>
-        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Output: Q_c (maximum feasible)</text>
-        <text x="620" y="170" font-size="13" fill="#334155">Price: P_c (at MC = min AC)</text>
-        <text x="620" y="188" font-size="13" fill="#334155">Consumer surplus: maximised.</text>
-        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">STATIC EFFICIENCY</text>
-        <text x="620" y="244" font-size="13" fill="#334155">Allocatively efficient: P = MC</text>
-        <text x="620" y="262" font-size="13" fill="#334155">Productively efficient: P = AC</text>
-        <text x="620" y="280" font-size="13" fill="#334155">Deadweight loss = zero</text>
-        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: what monopoly does to this outcome</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Market level: industry D meets industry S=ΣMC at (Q_c, P_c)</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">PC INDUSTRY EQUILIBRIUM</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Market D meets industry supply</text>
+        <text x="620" y="118" font-size="13" fill="#334155">S = ΣMC of price-taking firms.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">At (Q_c, P_c): P = MC</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Consumer surplus (blue triangle)</text>
+        <text x="620" y="188" font-size="13" fill="#334155">is maximised.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WELFARE</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Deadweight loss = zero.</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Allocative efficiency holds</text>
+        <text x="620" y="280" font-size="13" fill="#334155">at the industry level.</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: monopolist takes over — same costs</text>
       </g>
 
-      <!-- ===== LAYER: panel-ext ===== -->
       <g class="layer-panel-ext">
         <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopoly sets MR = MC → higher P, lower Q</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">MONOPOLY OUTCOME</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Monopolist faces whole D curve.</text>
-        <text x="620" y="118" font-size="13" fill="#334155">MR lies below AR (D).</text>
-        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">MR = MC → output Q_m</text>
-        <text x="620" y="170" font-size="13" fill="#334155">Read up to D → price P_m</text>
-        <text x="620" y="204" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VS PERFECT COMPETITION</text>
-        <text x="620" y="226" font-size="13" fill="#334155">P_m &gt; P_c: price mark-up</text>
-        <text x="620" y="244" font-size="13" fill="#334155">Q_m &lt; Q_c: output restricted</text>
-        <text x="620" y="262" font-size="13" fill="#334155">Supernormal profit possible.</text>
-        <text x="620" y="296" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">INEFFICIENCY</text>
-        <text x="620" y="318" font-size="13" fill="#334155">At Q_m: P &gt; MC — units</text>
-        <text x="620" y="336" font-size="13" fill="#334155">consumers value above cost</text>
-        <text x="620" y="354" font-size="13" fill="#334155">go unproduced.</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopolist takes over — faces D as AR, with MR below</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">MONOPOLY TAKEOVER</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Single firm now faces whole D</text>
+        <text x="620" y="118" font-size="13" fill="#334155">as its own AR. MR sits below AR</text>
+        <text x="620" y="136" font-size="13" fill="#334155">(twice slope for linear D).</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">MR = MC → Q_m &lt; Q_c</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Read up to D → P_m &gt; P_c.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VS PC OUTCOME</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Output restricted, price raised.</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Industry MC unchanged —</text>
+        <text x="620" y="280" font-size="13" fill="#334155">only the demand side changes.</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: who wins, who loses, and DWL</text>
       </g>
 
-      <!-- ===== LAYER: panel-shift ===== -->
       <g class="layer-panel-shift">
         <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Welfare cost: DWL from monopoly output restriction</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">WELFARE COMPARISON</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Monopoly splits the competitive</text>
-        <text x="620" y="118" font-size="13" fill="#334155">welfare surplus three ways:</text>
-        <text x="620" y="152" font-size="13" font-weight="700" fill="#2563EB">Blue — remaining CS</text>
-        <text x="620" y="170" font-size="13" fill="#334155">Consumer surplus shrinks:</text>
-        <text x="620" y="188" font-size="13" fill="#334155">fewer units at a higher price.</text>
-        <text x="620" y="218" font-size="13" font-weight="700" fill="#D97706">Amber — transferred to monopolist</text>
-        <text x="620" y="236" font-size="13" fill="#334155">Former CS redistributed as</text>
-        <text x="620" y="254" font-size="13" fill="#334155">extra producer surplus (profit).</text>
-        <text x="620" y="284" font-size="13" font-weight="700" fill="#DC2626">Red — deadweight loss</text>
-        <text x="620" y="302" font-size="13" fill="#334155">Value destroyed — benefits</text>
-        <text x="620" y="320" font-size="13" fill="#334155">nobody. Static welfare cost</text>
-        <text x="620" y="338" font-size="13" fill="#334155">of monopoly restriction.</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Welfare decomposition — CS shrinks, transfer, DWL</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">WELFARE DECOMPOSITION</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#2563EB">Blue — remaining CS</text>
+        <text x="620" y="118" font-size="13" fill="#334155">Shrinks vs PC baseline.</text>
+        <text x="620" y="148" font-size="13" font-weight="700" fill="#D97706">Amber — transfer</text>
+        <text x="620" y="166" font-size="13" fill="#334155">Former CS now monopolist's PS.</text>
+        <text x="620" y="184" font-size="13" fill="#334155">Redistribution, not destruction.</text>
+        <text x="620" y="214" font-size="13" font-weight="700" fill="#DC2626">Red triangle — DWL</text>
+        <text x="620" y="232" font-size="13" fill="#334155">Value destroyed: units consumers</text>
+        <text x="620" y="250" font-size="13" fill="#334155">value above MC go unproduced.</text>
+        <text x="620" y="284" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">CAVEAT</text>
+        <text x="620" y="306" font-size="13" fill="#334155">This is the outcome IF entry</text>
+        <text x="620" y="324" font-size="13" fill="#334155">is blocked. A contestable</text>
+        <text x="620" y="342" font-size="13" fill="#334155">monopoly shrinks DWL toward 0.</text>
+      </g>
+    </svg>
+  `,
+
+  contestabilitySpectrum: `
+    <svg class="cspec-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <linearGradient id="cspec-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#059669" stop-opacity="0.18"/>
+          <stop offset="50%" stop-color="#D97706" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#DC2626" stop-opacity="0.18"/>
+        </linearGradient>
+      </defs>
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- Plot area: x=80..540 (barriers), y=80..360 (concentration: top = one firm, bottom = many) -->
+      <g class="layer-axes">
+        <line x1="80" y1="360" x2="540" y2="360" stroke="#334155" stroke-width="2"/>
+        <polygon points="540,355 540,365 552,360" fill="#334155"/>
+        <line x1="80" y1="80" x2="80" y2="360" stroke="#334155" stroke-width="2"/>
+        <polygon points="75,80 85,80 80,68" fill="#334155"/>
+        <!-- Axis labels -->
+        <text x="310" y="392" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Entry barriers →</text>
+        <text x="90" y="378" font-size="10" fill="#64748B">low</text>
+        <text x="530" y="378" font-size="10" fill="#64748B" text-anchor="end">high</text>
+        <text x="58" y="220" font-size="12" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90 58 220)">Concentration →</text>
+        <text x="74" y="86" font-size="10" fill="#64748B" text-anchor="end">one</text>
+        <text x="74" y="358" font-size="10" fill="#64748B" text-anchor="end">many</text>
+      </g>
+
+      <!-- Region shading (shift state) -->
+      <g class="layer-regions">
+        <rect x="80" y="80" width="220" height="280" fill="#059669" fill-opacity="0.12"/>
+        <rect x="300" y="80" width="240" height="280" fill="#DC2626" fill-opacity="0.12"/>
+        <line x1="300" y1="80" x2="300" y2="360" stroke="#475569" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+        <text x="190" y="100" font-size="11" font-weight="700" fill="#059669" text-anchor="middle" letter-spacing="1">CONTESTABLE REGION</text>
+        <text x="190" y="115" font-size="10" fill="#059669" text-anchor="middle">competitive outcomes</text>
+        <text x="420" y="100" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle" letter-spacing="1">MARKET POWER REGION</text>
+        <text x="420" y="115" font-size="10" fill="#DC2626" text-anchor="middle">DWL, supernormal profit</text>
+      </g>
+
+      <!-- Markers: structure dots -->
+      <g class="layer-markers">
+        <!-- PC: low barriers, many firms -->
+        <circle cx="120" cy="330" r="9" fill="#059669"/>
+        <text x="120" y="350" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">PC</text>
+        <!-- Monopolistic competition -->
+        <circle cx="170" cy="285" r="9" fill="#84CC16"/>
+        <text x="170" y="305" font-size="11" font-weight="700" fill="#65A30D" text-anchor="middle">MC</text>
+        <!-- Oligopoly: medium barriers, few firms -->
+        <circle cx="340" cy="155" r="9" fill="#D97706"/>
+        <text x="340" y="175" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">Oligopoly</text>
+        <!-- Contestable monopoly: LOW barriers, one firm (the key insight) -->
+        <circle cx="195" cy="115" r="10" fill="#FFFFFF" stroke="#059669" stroke-width="3"/>
+        <text x="195" y="138" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Contestable</text>
+        <text x="195" y="151" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">monopoly</text>
+        <!-- Pure monopoly: high barriers, one firm -->
+        <circle cx="480" cy="105" r="9" fill="#DC2626"/>
+        <text x="480" y="93" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">Pure monopoly</text>
+      </g>
+
+      <!-- Real-world examples (extension state) -->
+      <g class="layer-examples">
+        <text x="120" y="316" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">fresh produce</text>
+        <text x="170" y="271" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">restaurants</text>
+        <text x="340" y="141" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">supermarkets, banks</text>
+        <text x="195" y="167" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">airline route</text>
+        <text x="480" y="121" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">utilities, patents</text>
+      </g>
+
+      <!-- Highlight arrow (shift state) showing contestable monopoly sits in green region despite one firm -->
+      <g class="layer-highlight">
+        <path d="M 230 115 Q 270 95 290 100" fill="none" stroke="#059669" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <polygon points="288,96 294,100 286,103" fill="#059669"/>
+        <text x="305" y="102" font-size="11" font-weight="700" fill="#059669">one firm,</text>
+        <text x="305" y="115" font-size="11" font-weight="700" fill="#059669">competitive outcome</text>
+        <text x="305" y="127" font-size="10" font-style="italic" fill="#475569">(low sunk costs)</text>
+      </g>
+
+      <!-- Panels -->
+      <g class="layer-panel-base">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Markets sit on a spectrum of entry barriers, not firm count</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE SPECTRUM</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Entry barriers — not the count</text>
+        <text x="620" y="118" font-size="13" fill="#334155">of firms — define market type.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Five canonical structures:</text>
+        <text x="620" y="170" font-size="13" fill="#334155">• Perfect competition (PC)</text>
+        <text x="620" y="188" font-size="13" fill="#334155">• Monopolistic competition (MC)</text>
+        <text x="620" y="206" font-size="13" fill="#334155">• Oligopoly</text>
+        <text x="620" y="224" font-size="13" fill="#334155">• Contestable monopoly</text>
+        <text x="620" y="242" font-size="13" fill="#334155">• Pure monopoly</text>
+        <text x="620" y="276" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">KEY OBSERVATION</text>
+        <text x="620" y="298" font-size="13" fill="#334155">"Contestable monopoly" has only</text>
+        <text x="620" y="316" font-size="13" fill="#334155">one firm — but sits LEFT on the</text>
+        <text x="620" y="334" font-size="13" fill="#334155">barriers axis. Watch this.</text>
+      </g>
+
+      <g class="layer-panel-ext">
+        <circle cx="74" cy="32" r="7" fill="#D97706"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Real markets sit between the textbook extremes</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">REAL MARKETS</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#059669">PC: fresh produce</text>
+        <text x="620" y="118" font-size="13" fill="#334155">Many sellers, near-homogeneous.</text>
+        <text x="620" y="148" font-size="13" font-weight="700" fill="#65A30D">MC: restaurants, hairdressers</text>
+        <text x="620" y="166" font-size="13" fill="#334155">Many differentiated firms.</text>
+        <text x="620" y="196" font-size="13" font-weight="700" fill="#92400E">Oligopoly: supermarkets, banks</text>
+        <text x="620" y="214" font-size="13" fill="#334155">Few firms, brand + scale.</text>
+        <text x="620" y="244" font-size="13" font-weight="700" fill="#059669">Airlines: contestable</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Mobile aircraft = low sunk costs.</text>
+        <text x="620" y="292" font-size="13" font-weight="700" fill="#DC2626">Pure monopoly: utilities, patents</text>
+        <text x="620" y="310" font-size="13" fill="#334155">High barriers, often regulated.</text>
+      </g>
+
+      <g class="layer-panel-shift">
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Contestability cuts across structure — barriers, not count</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE BIG INSIGHT</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Behaviour depends on entry</text>
+        <text x="620" y="118" font-size="13" fill="#334155">conditions, not firm count.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#059669">Green region (left)</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Low barriers → competitive</text>
+        <text x="620" y="188" font-size="13" fill="#334155">outcomes, even with one firm.</text>
+        <text x="620" y="218" font-size="13" font-weight="700" fill="#DC2626">Red region (right)</text>
+        <text x="620" y="236" font-size="13" fill="#334155">High barriers → market power,</text>
+        <text x="620" y="254" font-size="13" fill="#334155">supernormal profit, DWL.</text>
+        <text x="620" y="288" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">POLICY UPSHOT</text>
+        <text x="620" y="310" font-size="13" fill="#334155">Target entry BARRIERS, not</text>
+        <text x="620" y="328" font-size="13" fill="#334155">firm structure or market share.</text>
+      </g>
+    </svg>
+  `,
+
+  contestabilityFrames: `
+    <svg class="cfra-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="cfra-chart-clip"><rect x="60" y="43" width="502" height="357"/></clipPath>
+      </defs>
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- Same cost stack as fpcm (Marco's formulas) — and AR curve as monopoly demand -->
+      <g class="layer-cost-curves">
+        <g clip-path="url(#cfra-chart-clip)">
+          <polyline points="70,235 85,250 110,271 135,289 160,304 185,315 210,323 235,328 260,330 285,328 310,323 335,315 360,304 385,289 410,271 435,250 460,225 485,197 510,166 535,131 560,94" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+          <polyline points="150,71 160,94 185,137 210,167 235,190 260,208 285,221 310,232 335,240 360,246 385,249 410,251 435,252 460,251 485,249 510,245 535,240 560,234" fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="60" y1="50" x2="560" y2="400" stroke="#2563EB" stroke-width="2.5"/>
+          <line x1="60" y1="50" x2="310" y2="400" stroke="#2563EB" stroke-width="2" stroke-dasharray="6 3" opacity="0.7"/>
+        </g>
+        <text x="565" y="98" font-size="13" font-weight="700" fill="#DC2626">MC</text>
+        <text x="565" y="237" font-size="13" font-weight="700" fill="#0EA5E9">AC</text>
+        <text x="497" y="385" font-size="12" font-weight="700" fill="#2563EB">AR=D</text>
+        <text x="266" y="395" font-size="12" font-weight="700" fill="#2563EB" opacity="0.75">MR</text>
+      </g>
+
+      <!-- State: pure monopoly (base) — P_m=12 (y=190), Q_m=40 (x=260), AC=11 (y=208) -->
+      <g class="layer-state-monopoly">
+        <rect x="60" y="190" width="200" height="18" fill="#FEE2E2" fill-opacity="0.85" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="160" y="203" font-size="11" font-weight="700" fill="#991B1B" text-anchor="middle">Large supernormal profit</text>
+        <line x1="60" y1="190" x2="260" y2="190" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 4"/>
+        <line x1="260" y1="190" x2="260" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+        <circle cx="260" cy="190" r="7" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="46" y="194" font-size="12" font-weight="700" fill="#DC2626" text-anchor="end">P_m</text>
+        <text x="260" y="418" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">Q_m</text>
+      </g>
+
+      <!-- State: contestable monopoly (extension) — P≈10.5 (y=216), Q≈48 (x=300), AC≈9.91 (y=226) -->
+      <g class="layer-state-contestable">
+        <rect x="60" y="216" width="240" height="11" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
+        <text x="180" y="225" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Reduced profit (entry threat)</text>
+        <line x1="60" y1="216" x2="300" y2="216" stroke="#D97706" stroke-width="2" stroke-dasharray="5 4"/>
+        <line x1="300" y1="216" x2="300" y2="400" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+        <circle cx="300" cy="216" r="7" fill="#FFFFFF" stroke="#D97706" stroke-width="2.5"/>
+        <text x="46" y="220" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">P</text>
+        <text x="300" y="418" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Q</text>
+      </g>
+
+      <!-- State: perfectly contestable (shift) — P=AC≈9.5 (y=234), Q≈53 (x=323) -->
+      <g class="layer-state-perfect">
+        <line x1="60" y1="234" x2="323" y2="234" stroke="#059669" stroke-width="2.5"/>
+        <line x1="323" y1="234" x2="323" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+        <circle cx="323" cy="234" r="7" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
+        <text x="46" y="238" font-size="12" font-weight="700" fill="#059669" text-anchor="end">P=AC</text>
+        <text x="323" y="418" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Q_c</text>
+        <text x="180" y="226" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Zero supernormal profit</text>
+      </g>
+
+      <!-- Panels -->
+      <g class="layer-panel-base">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Pure monopoly: no entry threat — full markup P_m above MC</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">PURE MONOPOLY</text>
+        <text x="620" y="100" font-size="13" fill="#334155">High sunk costs and barriers</text>
+        <text x="620" y="118" font-size="13" fill="#334155">block entry. The incumbent</text>
+        <text x="620" y="136" font-size="13" fill="#334155">faces no entry threat.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Output: profit-max Q_m</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Price: P_m well above MC.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">PROFIT</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Large supernormal profit:</text>
+        <text x="620" y="262" font-size="13" fill="#334155">(P_m − AC) × Q_m → red box.</text>
+        <text x="620" y="280" font-size="13" fill="#334155">Persists indefinitely.</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: lower the entry barriers</text>
+      </g>
+
+      <g class="layer-panel-ext">
+        <circle cx="74" cy="32" r="7" fill="#D97706"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Contestable monopoly: hit-and-run threat disciplines pricing</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">CONTESTABLE MONOPOLY</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Low sunk costs → credible</text>
+        <text x="620" y="118" font-size="13" fill="#334155">hit-and-run entry threat.</text>
+        <text x="620" y="136" font-size="13" fill="#334155">Incumbent prices defensively.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Price drops toward AC</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Output expands; markup shrinks.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">STRUCTURE = ONE FIRM</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Still a monopoly on paper —</text>
+        <text x="620" y="262" font-size="13" fill="#334155">but behaves competitively.</text>
+        <text x="620" y="280" font-size="13" fill="#334155">Profit small (amber).</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: the limit case</text>
+      </g>
+
+      <g class="layer-panel-shift">
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Perfectly contestable: P = AC, no supernormal profit</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">PERFECT CONTESTABILITY</text>
+        <text x="620" y="100" font-size="13" fill="#334155">In the limit of zero sunk costs</text>
+        <text x="620" y="118" font-size="13" fill="#334155">and free entry/exit:</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Price = AC at chosen Q</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Any markup → instant entry.</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Zero economic profit.</text>
+        <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAMPLE</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Airline routes — aircraft are</text>
+        <text x="620" y="262" font-size="13" fill="#334155">mobile (low route-specific</text>
+        <text x="620" y="280" font-size="13" fill="#334155">sunk costs). One carrier on a</text>
+        <text x="620" y="298" font-size="13" fill="#334155">route prices near AC because</text>
+        <text x="620" y="316" font-size="13" fill="#334155">rivals can redeploy planes.</text>
       </g>
     </svg>
   `,

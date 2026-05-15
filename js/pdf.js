@@ -319,6 +319,25 @@ window.EconosPdf = (function () {
     return note + formula + frames + howIt + examEdgeBlock(c.examEdge);
   }
 
+  function renderWorkedExample(c) {
+    var lede = c.lede ? '<div style="font-size:13px;color:' + C.slate + ';margin-bottom:12px;line-height:1.6;">' + c.lede + '</div>' : '';
+    var scenario = c.scenario ? '<div style="background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.65;color:#1E3A5F;margin-bottom:16px;">' + c.scenario + '</div>' : '';
+    var steps = (c.steps || []).map(function (s, i) {
+      return '<div style="border:1.5px solid #E2E8F0;border-radius:8px;padding:12px 14px;margin-bottom:10px;page-break-inside:avoid;">' +
+        '<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;">' +
+        '<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#0B1426;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;">' + (i + 1) + '</span>' +
+        '<div style="flex:1;font-size:13px;font-weight:600;color:#0B1426;line-height:1.45;">' + s.prompt + '</div>' +
+        '</div>' +
+        (s.hint ? '<div style="font-size:11px;color:#64748B;font-style:italic;margin-bottom:8px;padding-left:32px;">💡 ' + s.hint + '</div>' : '') +
+        '<div style="background:#F0FDF4;border-left:4px solid #059669;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;line-height:1.6;color:#0B1426;margin-left:32px;">' + s.answer + '</div>' +
+        '</div>';
+    }).join('');
+    var conclusion = c.conclusion ? '<div style="background:#0B1426;color:white;border-radius:8px;padding:12px 16px;margin-bottom:14px;">' +
+      '<div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94A3B8;margin-bottom:5px;">Conclusion</div>' +
+      '<div style="font-size:12px;line-height:1.65;">' + c.conclusion + '</div></div>' : '';
+    return lede + scenario + steps + conclusion + examEdgeBlock(c.examEdge);
+  }
+
   function renderPedFiveFrames(c) {
     var FRAME_COLORS = { rose: C.rose, amber: C.amber, blue: C.blue, green: C.green, purple: C.purple };
     var frames = (c.frames || []).map(function (f) {
@@ -449,7 +468,7 @@ window.EconosPdf = (function () {
   }
 
   function isGenericCard(c) {
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example') return false;
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -474,6 +493,7 @@ window.EconosPdf = (function () {
       case 'ad-interactive':     return renderFallback();
       case 'transmission-chain': return renderFallback();
       case 'elasticity-explorer':return renderElasticityFallback(c);
+      case 'worked-example':     return renderWorkedExample(c);
       case 'ped-five-frames':    return renderPedFiveFrames(c);
       default:                   return renderFallback();
     }

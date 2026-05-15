@@ -155,7 +155,7 @@
   ];
 
   function genSecLabel(emoji, text) {
-    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#6B7280;margin:24px 0 12px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
+    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 12px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
   }
 
   function renderCardGeneric(c) {
@@ -169,7 +169,7 @@
     // Intro/lede — styled as a thought-prompt callout
     if (c.intro) {
       content += `
-        <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:#1e3a5f;line-height:1.65;font-style:italic;">
+        <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:#0B1426;line-height:1.65;font-style:italic;">
           💡 ${c.intro}
         </div>`;
     }
@@ -191,7 +191,7 @@
         return `
         <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}40;">
           <div style="padding:12px 18px;background:${t.headerBg};color:#fff;font-weight:800;font-size:15px;">${item.head}</div>
-          <div style="padding:14px 18px;font-size:14px;color:#2A3650;line-height:1.7;">${item.body}</div>
+          <div style="padding:14px 18px;font-size:14px;color:#0B1426;line-height:1.7;">${item.body}</div>
         </div>`;
       }).join('');
       content += `</div>`;
@@ -207,7 +207,7 @@
           <div style="width:34px;height:34px;border-radius:50%;background:${t.headerBg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;">${i + 1}</div>
           <div>
             <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:5px;">${s.label}</div>
-            <div style="font-size:14px;color:#2A3650;line-height:1.65;">${s.text}</div>
+            <div style="font-size:14px;color:#0B1426;line-height:1.65;">${s.text}</div>
           </div>
         </div>`;
       }).join('');
@@ -229,12 +229,12 @@
       content += c.rows.map((r, i) => `
         <div style="display:grid;grid-template-columns:140px 1fr 1fr;background:${i % 2 === 0 ? '#f8fafc' : '#fff'};border-top:1px solid #E7E7EA;">
           <div style="padding:12px 14px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
-          <div style="padding:12px 14px;font-size:13px;color:#2A3650;line-height:1.55;border-right:1px solid #E7E7EA;">${r.colA}</div>
-          <div style="padding:12px 14px;font-size:13px;color:#2A3650;line-height:1.55;">${r.colB}</div>
+          <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">${r.colA}</div>
+          <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${r.colB}</div>
         </div>`).join('');
       content += `</div>`;
       if (c.footer) {
-        content += `<p style="font-size:13px;color:#6B7280;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
+        content += `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
       }
     }
 
@@ -247,13 +247,13 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
         <div style="border-radius:12px;overflow:hidden;background:${tL.bg};border:1px solid ${tL.border}30;">
           <div style="padding:12px 16px;background:${tL.headerBg};color:#fff;font-weight:800;font-size:14px;text-align:center;">${c.left.label}</div>
-          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
+          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
             ${c.left.points.map(p => `<li style="margin-bottom:8px;">${p}</li>`).join('')}
           </ul>
         </div>
         <div style="border-radius:12px;overflow:hidden;background:${tR.bg};border:1px solid ${tR.border}30;">
           <div style="padding:12px 16px;background:${tR.headerBg};color:#fff;font-weight:800;font-size:14px;text-align:center;">${c.right.label}</div>
-          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
+          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
             ${c.right.points.map(p => `<li style="margin-bottom:8px;">${p}</li>`).join('')}
           </ul>
         </div>
@@ -269,7 +269,7 @@
           return `
           <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}30;">
             <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;">${kt.term}</div>
-            <div style="padding:12px 14px;font-size:13px;color:#2A3650;line-height:1.55;">${kt.def}</div>
+            <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${kt.def}</div>
           </div>`;
         }).join('')}
       </div>`;
@@ -303,7 +303,7 @@
         <div style="margin-top:30px;padding:24px 20px;background:linear-gradient(135deg,var(--econ-green-50),var(--econ-blue-50));border-radius:16px;border:1px solid var(--econ-blue-100);text-align:center;">
           <div style="font-size:32px;margin-bottom:8px;">🎯</div>
           <div style="font-weight:800;font-size:19px;color:#0B1426;margin-bottom:6px;">Ready to test yourself?</div>
-          <div style="font-size:14px;color:#2A3650;margin-bottom:18px;">See what you've locked in from this session.</div>
+          <div style="font-size:14px;color:#0B1426;margin-bottom:18px;">See what you've locked in from this session.</div>
           <a href="${c.quizCta.href}" class="btn btn--primary btn--lg">${c.quizCta.label}</a>
         </div>`;
     }
@@ -971,7 +971,7 @@
       ${c.stepLabel ? `<div class="card__step-label">${c.stepLabel}</div>` : ''}
       <h1 class="card__title">${c.title}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      ${c.intro ? `<p style="font-size:15px;color:#2A3650;margin-bottom:16px;line-height:1.6;">${c.intro}</p>` : ''}
+      ${c.intro ? `<p style="font-size:15px;color:#0B1426;margin-bottom:16px;line-height:1.6;">${c.intro}</p>` : ''}
 
       <div class="paired-grid">${pairs}</div>
 

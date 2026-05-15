@@ -47,16 +47,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_2',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Movement Along vs Shift of the Supply Curve',
-      intro: 'The same distinction as demand applies: price changes → movement along; everything else → shift.',
+      lede: 'The same fundamental distinction as demand — but the supply curve slopes the other way. Explore interactively.',
+      diagramKey: 'supplyInteractive',
       steps: [
-        { label: 'Extension of supply', text: 'Price rises → quantity supplied rises → movement UP the supply curve (but the curve stays in place). Called an "extension" or "increase in quantity supplied."' },
-        { label: 'Contraction of supply', text: 'Price falls → quantity supplied falls → movement DOWN the supply curve. Called a "contraction" or "decrease in quantity supplied."' },
-        { label: 'Increase in supply', text: 'A non-price determinant changes favourably → more is supplied at every price → entire curve shifts RIGHTWARD (downward). E.g. lower input costs, new technology.' },
-        { label: 'Decrease in supply', text: 'A non-price determinant worsens → less is supplied at every price → entire curve shifts LEFTWARD (upward). E.g. higher wages, raw material cost spike, tax rise.' }
+        {
+          key: 'base',
+          label: 'The supply curve',
+          text: 'The supply curve shows the <strong>positive relationship between price and quantity supplied</strong>. Ceteris paribus, as price rises, quantity supplied rises. It slopes upward because higher prices increase the profitability of production — existing firms expand output, new firms enter. Rising output also raises marginal costs (diminishing returns), so higher prices are needed to justify more production.'
+        },
+        {
+          key: 'extension',
+          label: 'Movement along',
+          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the supply curve — nothing else can. A price rise causes an <strong>extension</strong> (E₂: higher P, higher Q supplied). A price fall causes a <strong>contraction</strong> (E₃: lower P, lower Q supplied). The curve itself does not move. Say "quantity supplied rises/falls," not "supply rises/falls."'
+        },
+        {
+          key: 'shift',
+          label: 'Supply shifts',
+          text: 'A change in any <strong>non-price determinant</strong> shifts the entire supply curve. <strong>Rightward (S₂ — increase):</strong> more supplied at every price — lower input costs, better technology, more producers, or a subsidy. <strong>Leftward (S₀ — decrease):</strong> less supplied at every price — higher input costs, a new tax, a supply shock, or fewer producers. At every price, producers are now willing to supply a different quantity.'
+        }
       ],
-      examEdge: 'A leftward shift (decrease in supply) and a rightward shift (increase) can be confusing because a leftward shift raises equilibrium price — it looks like an "upward" shift. Always refer to left/right, not up/down. State the cause, the direction of shift, and the effect on equilibrium.'
+      examEdge: 'A leftward shift in supply raises equilibrium price — it looks like an "upward" shift on the diagram. Always describe shifts as left or right (not up or down), then explain the cause and the effect on equilibrium price and quantity. Both cause and effect are needed for full marks.'
     },
     {
       id: 'supply_3',

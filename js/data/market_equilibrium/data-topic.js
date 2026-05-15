@@ -60,16 +60,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_3',
-      template: 'mechanisms',
-      title: 'Analysing a Single Shift',
-      intro: 'The standard exam technique for a supply or demand shift has four steps.',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Analysing Shifts: Demand and Supply',
+      lede: 'When D or S shifts, the equilibrium price and quantity both change — explore how interactively.',
+      diagramKey: 'marketInteractive',
       steps: [
-        { label: 'Step 1: Start at equilibrium', text: 'Draw S and D intersecting at (P1, Q1). This is your starting point.' },
-        { label: 'Step 2: Identify the shift', text: 'Which curve moves? A change in non-price factor for consumers → demand shifts. A change in non-price factor for producers → supply shifts. Which direction? Right = increase; left = decrease.' },
-        { label: 'Step 3: Find new equilibrium', text: 'The shifted curve intersects the unchanged curve at a new point (P2, Q2). Mark this clearly.' },
-        { label: 'Step 4: State the outcome', text: 'State what happened to equilibrium price (rose/fell) and equilibrium quantity (rose/fell). Example: "Demand increases → price rises from P1 to P2; quantity rises from Q1 to Q2."' }
+        {
+          key: 'base',
+          label: 'Market equilibrium',
+          text: '<strong>Equilibrium</strong> is where D meets S — the price P* that clears the market. At P*, quantity demanded equals quantity supplied, there is no shortage and no surplus, and there is no tendency for price to change. The <strong>price mechanism</strong> restores equilibrium automatically: above P*, surplus forces price down; below P*, shortage forces price up.'
+        },
+        {
+          key: 'extension',
+          label: 'Demand shift',
+          text: '<strong>Demand shifts right (D₁ → D₂)</strong> when a non-price demand determinant changes favourably — higher income, changed tastes, or a rise in a substitute\'s price. At the original P*, there is now excess demand → price rises → quantity supplied extends up S₁ → new equilibrium E₂. Result: <strong>both P and Q rise</strong>. This is an unambiguous outcome when only demand shifts.'
+        },
+        {
+          key: 'shift',
+          label: 'Supply shift',
+          text: '<strong>Supply shifts right (S₁ → S₂)</strong> when a non-price supply determinant improves — lower input costs, better technology, more producers, or a subsidy. At the original P*, there is now excess supply → price falls → quantity demanded extends down D₁ → new equilibrium E₃. Result: <strong>Q rises but P falls</strong>. Opposite direction to a demand shift — a key exam comparison.'
+        }
       ],
-      examEdge: 'For 4-6 mark questions, the diagram + explanation together earn the marks. A correct diagram with no explanation gets partial credit; an explanation without a correct diagram also loses marks. Always do both. Dedicate 2-3 minutes to diagram accuracy.'
+      examEdge: 'For any shift question: (1) identify which curve shifts and why, (2) draw the shift clearly with D₂ or S₂ labelled, (3) mark the new equilibrium with dashed gridlines to both axes, (4) state the direction of change in both P and Q. Missing any of these steps loses marks — diagram technique is as important as the analysis.'
     },
     {
       id: 'market_equilibrium_4',

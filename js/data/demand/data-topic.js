@@ -46,16 +46,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_2',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Movement Along vs Shift of the Demand Curve',
-      intro: 'This is the most common source of error in diagram questions. The distinction is absolute.',
+      lede: 'This is the most common source of error in exam diagrams — explore the distinction interactively.',
+      diagramKey: 'demandInteractive',
       steps: [
-        { label: 'Movement along (extension/contraction)', text: 'Caused ONLY by a change in the good\'s own price. Price rises → quantity demanded falls (contraction). Price falls → quantity demanded rises (extension). The curve does not move.' },
-        { label: 'Shift of the curve (increase/decrease)', text: 'Caused by any change in a non-price determinant. The ENTIRE curve moves left (decrease in demand) or right (increase in demand).' },
-        { label: 'How to draw a shift', text: 'Draw original curve D1, then D2 to the right (increase) or left (decrease). Label both. Mark the original equilibrium and note that price and quantity both change when the curve shifts.' },
-        { label: 'Common mistake', text: 'Never say "demand falls because price rises." Price rises → quantity demanded falls (movement along). Demand falls → the curve shifts left.' }
+        {
+          key: 'base',
+          label: 'The demand curve',
+          text: 'The demand curve shows the <strong>inverse relationship between price and quantity demanded</strong>. Ceteris paribus, as price rises, quantity demanded falls. It slopes downward because of the <strong>substitution effect</strong> (the good becomes expensive relative to alternatives) and the <strong>income effect</strong> (real purchasing power falls as price rises).'
+        },
+        {
+          key: 'extension',
+          label: 'Movement along',
+          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the demand curve — nothing else can. A price rise causes a <strong>contraction</strong> (E₂: higher P, lower Q). A price fall causes an <strong>extension</strong> (E₃: lower P, higher Q). The curve itself does not move. Precise language matters: say "quantity demanded falls," not "demand falls."'
+        },
+        {
+          key: 'shift',
+          label: 'Demand shifts',
+          text: 'A change in any <strong>non-price determinant</strong> shifts the entire demand curve. <strong>Rightward (D₂ — increase):</strong> more demanded at every price — higher income, changed tastes, or a rise in a substitute\'s price. <strong>Leftward (D₀ — decrease):</strong> less demanded at every price — lower income, or a rise in a complement\'s price. Quantity changes at every price level, not just P₁.'
+        }
       ],
-      examEdge: 'In exam mark schemes, one mark is typically awarded for stating the direction of shift AND one for explaining the cause. State both: "A rise in consumer income shifts the demand curve for normal goods to the right, as consumers are willing and able to buy more at every price."'
+      examEdge: 'Never say "demand rises because price falls" — that confuses demand (the whole schedule) with quantity demanded (a point on the schedule). Price falls cause quantity demanded to rise (movement along). Demand rising means the curve shifts right. Examiners specifically test this distinction.'
     },
     {
       id: 'demand_3',

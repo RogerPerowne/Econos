@@ -1051,6 +1051,452 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  demandInteractive: `
+    <svg class="demand-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="dm-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="dm-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="dm-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+        </marker>
+        <marker id="dm-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: demand base ===== -->
+      <g class="layer-demand-base">
+        <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+        <text x="498" y="370" font-size="14" font-weight="700" fill="#2563EB">D₁</text>
+      </g>
+
+      <!-- ===== LAYER: E1 equilibrium ===== -->
+      <g class="layer-e1">
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="6" fill="white" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="46" y="234" font-size="12" font-weight="600" fill="#334155" text-anchor="end">P₁</text>
+        <text x="295" y="418" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">Q₁</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Demand slopes downward · inverse price-quantity relationship</text>
+        <!-- Panel content -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">THE DEMAND CURVE</text>
+        <text x="620" y="100" font-size="14" font-weight="700" fill="#1E293B">Downward sloping: higher</text>
+        <text x="620" y="120" font-size="14" font-weight="700" fill="#1E293B">prices → less demanded.</text>
+        <text x="620" y="155" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TWO REASONS</text>
+        <text x="620" y="178" font-size="13" font-weight="700" fill="#1E293B">① Substitution effect:</text>
+        <text x="620" y="196" font-size="13" fill="#334155">good becomes expensive relative</text>
+        <text x="620" y="214" font-size="13" fill="#334155">to substitutes</text>
+        <text x="620" y="240" font-size="13" font-weight="700" fill="#1E293B">② Income effect:</text>
+        <text x="620" y="258" font-size="13" fill="#334155">real purchasing power falls as</text>
+        <text x="620" y="276" font-size="13" fill="#334155">price rises</text>
+        <text x="620" y="312" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">AT EQUILIBRIUM</text>
+        <text x="620" y="335" font-size="13" fill="#334155">Quantity demanded Q₁ at price P₁.</text>
+      </g>
+
+      <!-- ===== LAYER: extension (movement along demand) ===== -->
+      <g class="layer-extension">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#D97706"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price changes → slide ALONG the demand curve</text>
+        <!-- E2 contraction point (212, 170) -->
+        <line x1="60" y1="170" x2="212" y2="170" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="212" y1="170" x2="212" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="212" cy="170" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="46" y="174" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">P₂</text>
+        <text x="212" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Q₂</text>
+        <text x="220" y="158" font-size="11" font-weight="600" fill="#DC2626">contraction</text>
+        <!-- E3 extension point (385, 295) -->
+        <line x1="60" y1="295" x2="385" y2="295" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="385" y1="295" x2="385" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="385" cy="295" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="46" y="299" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₃</text>
+        <text x="385" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₃</text>
+        <text x="340" y="315" font-size="11" font-weight="600" fill="#059669">extension</text>
+        <!-- Double-headed amber arrow along D1 from E2 to E3 -->
+        <line x1="220" y1="175" x2="378" y2="289" stroke="#D97706" stroke-width="2.5" marker-start="url(#dm-amber-start)" marker-end="url(#dm-amber-end)"/>
+        <!-- Legend panel -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">MOVEMENT ALONG CURVE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Only a price change causes this —</text>
+        <text x="620" y="120" font-size="13" fill="#334155">the curve itself stays fixed.</text>
+        <text x="620" y="175" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">CONTRACTION (E₂)</text>
+        <text x="620" y="198" font-size="13" fill="#334155">P rises → Q falls</text>
+        <text x="620" y="216" font-size="13" fill="#334155">Move up the curve</text>
+        <text x="620" y="248" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXTENSION (E₃)</text>
+        <text x="620" y="271" font-size="13" fill="#334155">P falls → Q rises</text>
+        <text x="620" y="289" font-size="13" fill="#334155">Move down the curve</text>
+        <text x="620" y="325" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">EXAM LANGUAGE</text>
+        <text x="620" y="348" font-size="13" fill="#334155">Say "quantity demanded rises/falls,"</text>
+        <text x="620" y="366" font-size="13" fill="#334155">not "demand rises/falls."</text>
+      </g>
+
+      <!-- ===== LAYER: shift ===== -->
+      <g class="layer-shift">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole demand curve</text>
+        <!-- D0 left shift -->
+        <line x1="30" y1="90" x2="420" y2="370" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="426" y="368" font-size="14" font-weight="700" fill="#DC2626">D₀</text>
+        <!-- D2 right shift -->
+        <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="548" y="376" font-size="14" font-weight="700" fill="#059669">D₂</text>
+        <!-- E0 circle (red) at (225, 230) -->
+        <line x1="225" y1="230" x2="225" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="225" cy="230" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="225" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Q₀</text>
+        <!-- E1 ref grey circle at (295, 230) -->
+        <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
+        <text x="295" y="418" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">Q₁</text>
+        <!-- E2_shift circle (green) at (365, 230) -->
+        <line x1="365" y1="230" x2="365" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="365" cy="230" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="365" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
+        <!-- Horizontal double-headed arrow -->
+        <line x1="228" y1="230" x2="362" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#dm-red-end)" marker-end="url(#dm-green-end)"/>
+        <!-- Legend panel -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF DEMAND</text>
+        <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
+        <text x="620" y="120" font-size="13" fill="#334155">the whole curve moves.</text>
+        <line x1="620" y1="160" x2="660" y2="160" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="668" y="164" font-size="12" font-weight="600" fill="#059669">D₂ — right (increase):</text>
+        <text x="620" y="182" font-size="12" fill="#334155">↑ income, ↑ tastes,</text>
+        <text x="620" y="198" font-size="12" fill="#334155">↑ substitute price</text>
+        <line x1="620" y1="222" x2="660" y2="222" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="668" y="226" font-size="12" font-weight="600" fill="#DC2626">D₀ — left (decrease):</text>
+        <text x="620" y="244" font-size="12" fill="#334155">↓ income, ↓ tastes,</text>
+        <text x="620" y="260" font-size="12" fill="#334155">↑ complement price</text>
+        <text x="620" y="295" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">REMEMBER</text>
+        <text x="620" y="318" font-size="13" fill="#334155">Q changes at EVERY price —</text>
+        <text x="620" y="338" font-size="13" fill="#334155">not just P₁.</text>
+      </g>
+    </svg>
+  `,
+
+  supplyInteractive: `
+    <svg class="supply-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="sp-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="sp-amber-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="sp-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+        </marker>
+        <marker id="sp-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: supply base ===== -->
+      <g class="layer-supply-base">
+        <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round"/>
+        <text x="498" y="88" font-size="14" font-weight="700" fill="#DC2626">S₁</text>
+      </g>
+
+      <!-- ===== LAYER: E1 equilibrium ===== -->
+      <g class="layer-e1">
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="46" y="234" font-size="12" font-weight="600" fill="#334155" text-anchor="end">P₁</text>
+        <text x="295" y="418" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">Q₁</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Supply slopes upward · higher prices incentivise more production</text>
+        <!-- Panel content -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">THE SUPPLY CURVE</text>
+        <text x="620" y="100" font-size="14" font-weight="700" fill="#1E293B">Upward sloping: higher prices</text>
+        <text x="620" y="120" font-size="14" font-weight="700" fill="#1E293B">make production more profitable</text>
+        <text x="620" y="140" font-size="14" font-weight="700" fill="#1E293B">→ more is supplied.</text>
+        <text x="620" y="175" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHY IT SLOPES UP</text>
+        <text x="620" y="198" font-size="13" font-weight="700" fill="#1E293B">① Profit motive:</text>
+        <text x="620" y="216" font-size="13" fill="#334155">higher prices cover rising</text>
+        <text x="620" y="234" font-size="13" fill="#334155">marginal costs</text>
+        <text x="620" y="260" font-size="13" font-weight="700" fill="#1E293B">② New entrants:</text>
+        <text x="620" y="278" font-size="13" fill="#334155">higher prices attract new firms</text>
+        <text x="620" y="296" font-size="13" fill="#334155">into the market</text>
+        <text x="620" y="330" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">AT EQUILIBRIUM</text>
+        <text x="620" y="353" font-size="13" fill="#334155">Quantity supplied Q₁ at price P₁.</text>
+      </g>
+
+      <!-- ===== LAYER: extension (movement along supply) ===== -->
+      <g class="layer-extension">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#D97706"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price changes → slide ALONG the supply curve</text>
+        <!-- E2 extension point (378, 170) — price up, more supplied -->
+        <line x1="60" y1="170" x2="378" y2="170" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="378" y1="170" x2="378" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="378" cy="170" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="46" y="174" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₂</text>
+        <text x="378" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
+        <text x="386" y="158" font-size="11" font-weight="600" fill="#059669">extension</text>
+        <!-- E3 contraction point (204, 295) — price down, less supplied -->
+        <line x1="60" y1="295" x2="204" y2="295" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="204" y1="295" x2="204" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="204" cy="295" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="46" y="299" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">P₃</text>
+        <text x="204" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Q₃</text>
+        <text x="150" y="315" font-size="11" font-weight="600" fill="#DC2626">contraction</text>
+        <!-- Double-headed amber arrow along S1 from E3 to E2 (going up-right) -->
+        <line x1="210" y1="290" x2="371" y2="176" stroke="#D97706" stroke-width="2.5" marker-start="url(#sp-amber-start)" marker-end="url(#sp-amber-end)"/>
+        <!-- Legend panel -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">MOVEMENT ALONG CURVE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Only a price change causes this.</text>
+        <text x="620" y="175" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXTENSION (E₂)</text>
+        <text x="620" y="198" font-size="13" fill="#334155">P rises → Q supplied rises</text>
+        <text x="620" y="216" font-size="13" fill="#334155">Move up the curve.</text>
+        <text x="620" y="248" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">CONTRACTION (E₃)</text>
+        <text x="620" y="271" font-size="13" fill="#334155">P falls → Q supplied falls</text>
+        <text x="620" y="289" font-size="13" fill="#334155">Move down the curve.</text>
+        <text x="620" y="325" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">EXAM LANGUAGE</text>
+        <text x="620" y="348" font-size="13" fill="#334155">Say "quantity supplied rises/falls,"</text>
+        <text x="620" y="366" font-size="13" fill="#334155">not "supply rises/falls."</text>
+      </g>
+
+      <!-- ===== LAYER: shift ===== -->
+      <g class="layer-shift">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole supply curve</text>
+        <!-- S0 left shift (higher costs) -->
+        <line x1="30" y1="370" x2="420" y2="90" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="424" y="88" font-size="14" font-weight="700" fill="#DC2626">S₀</text>
+        <!-- S2 right shift (lower costs) -->
+        <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="564" y="88" font-size="14" font-weight="700" fill="#059669">S₂</text>
+        <!-- E0_s circle (red) at (225, 230) -->
+        <line x1="225" y1="230" x2="225" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="225" cy="230" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="225" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Q₀</text>
+        <!-- E1_ref grey circle at (295, 230) -->
+        <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
+        <text x="295" y="418" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">Q₁</text>
+        <!-- E2_s circle (green) at (365, 230) -->
+        <line x1="365" y1="230" x2="365" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="365" cy="230" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="365" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
+        <!-- Horizontal double-headed arrow -->
+        <line x1="228" y1="230" x2="362" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#sp-red-end)" marker-end="url(#sp-green-end)"/>
+        <!-- Legend panel -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF SUPPLY</text>
+        <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
+        <text x="620" y="120" font-size="13" fill="#334155">the whole curve moves.</text>
+        <line x1="620" y1="155" x2="660" y2="155" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="668" y="159" font-size="12" font-weight="600" fill="#059669">S₂ — right (increase in supply):</text>
+        <text x="620" y="177" font-size="12" fill="#334155">Lower costs / Better technology</text>
+        <text x="620" y="193" font-size="12" fill="#334155">/ More producers / Subsidies</text>
+        <line x1="620" y1="217" x2="660" y2="217" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="668" y="221" font-size="12" font-weight="600" fill="#DC2626">S₀ — left (decrease in supply):</text>
+        <text x="620" y="243" font-size="12" fill="#334155">Higher wages / Input price rise</text>
+        <text x="620" y="259" font-size="12" fill="#334155">/ New tax / Supply shock</text>
+        <text x="620" y="295" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">REMEMBER</text>
+        <text x="620" y="318" font-size="13" fill="#334155">At every price, more (S₂) or less</text>
+        <text x="620" y="338" font-size="13" fill="#334155">(S₀) is supplied.</text>
+      </g>
+    </svg>
+  `,
+
+  marketInteractive: `
+    <svg class="market-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="mk-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+        </marker>
+        <marker id="mk-green-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#059669"/>
+        </marker>
+        <marker id="mk-amber-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: demand base ===== -->
+      <g class="layer-demand-base">
+        <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+        <text x="498" y="370" font-size="14" font-weight="700" fill="#2563EB">D₁</text>
+      </g>
+
+      <!-- ===== LAYER: supply base ===== -->
+      <g class="layer-supply-base">
+        <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round"/>
+        <text x="498" y="88" font-size="14" font-weight="700" fill="#DC2626">S₁</text>
+      </g>
+
+      <!-- ===== LAYER: E1 equilibrium ===== -->
+      <g class="layer-e1">
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="7" fill="white" stroke="#64748B" stroke-width="2.5"/>
+        <text x="46" y="234" font-size="12" font-weight="600" fill="#334155" text-anchor="end">P*</text>
+        <text x="295" y="418" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">Q*</text>
+        <text x="302" y="222" font-size="11" font-weight="700" fill="#334155">E₁</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Market equilibrium · supply meets demand at P* and Q*</text>
+        <!-- Panel content -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">MARKET EQUILIBRIUM</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Where D meets S — the price that</text>
+        <text x="620" y="118" font-size="13" fill="#334155">clears the market.</text>
+        <text x="620" y="143" font-size="13" font-weight="700" fill="#1E293B">At P*: Qd = Qs.</text>
+        <text x="620" y="161" font-size="13" fill="#334155">No shortage, no surplus.</text>
+        <text x="620" y="196" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">PRICE MECHANISM</text>
+        <text x="620" y="219" font-size="13" fill="#334155">Above P*: surplus → price falls</text>
+        <text x="620" y="237" font-size="13" fill="#334155">→ market clears</text>
+        <text x="620" y="261" font-size="13" fill="#334155">Below P*: shortage → price rises</text>
+        <text x="620" y="279" font-size="13" fill="#334155">→ market clears</text>
+        <text x="620" y="314" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">ALLOCATIVE EFFICIENCY</text>
+        <text x="620" y="337" font-size="13" fill="#334155">At E₁, social welfare (CS + PS)</text>
+        <text x="620" y="355" font-size="13" fill="#334155">is maximised.</text>
+      </g>
+
+      <!-- ===== LAYER: extension (demand shifts right) ===== -->
+      <g class="layer-extension">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Demand shifts right → higher P and higher Q</text>
+        <!-- D2 line -->
+        <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="548" y="376" font-size="14" font-weight="700" fill="#059669">D₂</text>
+        <!-- E1 ref (old equilibrium) -->
+        <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
+        <text x="282" y="222" font-size="11" font-weight="600" fill="#64748B">E₁</text>
+        <!-- E2_mkt at (325, 209) -->
+        <line x1="60" y1="209" x2="325" y2="209" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="325" y1="209" x2="325" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="325" cy="209" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="302" y="208" font-size="11" font-weight="700" fill="#059669">E₂</text>
+        <text x="46" y="213" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₂</text>
+        <text x="325" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
+        <!-- Horizontal green arrow at y=209 from x=295 to x=325 (Q increase) -->
+        <line x1="295" y1="209" x2="322" y2="209" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Vertical green arrow at x=325 from y=230 to y=209 (P increase) -->
+        <line x1="325" y1="230" x2="325" y2="212" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Legend panel -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">DEMAND SHIFTS RIGHT</text>
+        <text x="620" y="100" font-size="13" fill="#334155">D₁ → D₂: more demanded at</text>
+        <text x="620" y="118" font-size="13" fill="#334155">every price.</text>
+        <text x="620" y="153" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">NEW EQUILIBRIUM E₂</text>
+        <text x="620" y="176" font-size="13" fill="#334155">Higher price P₂ AND higher</text>
+        <text x="620" y="194" font-size="13" fill="#334155">quantity Q₂.</text>
+        <text x="620" y="229" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">CAUSES OF RIGHTWARD SHIFT</text>
+        <text x="620" y="252" font-size="13" fill="#334155">↑ income / ↑ tastes</text>
+        <text x="620" y="270" font-size="13" fill="#334155">↑ substitute price / ↑ population</text>
+        <text x="620" y="305" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXAM NOTE</text>
+        <text x="620" y="328" font-size="13" fill="#334155">Both P and Q rise — unambiguous</text>
+        <text x="620" y="346" font-size="13" fill="#334155">outcome when only D shifts.</text>
+      </g>
+
+      <!-- ===== LAYER: shift (supply shifts right) ===== -->
+      <g class="layer-shift">
+        <!-- Title strip -->
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Supply shifts right → higher Q but lower P</text>
+        <!-- S2 line -->
+        <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <text x="548" y="88" font-size="14" font-weight="700" fill="#059669">S₂</text>
+        <!-- E1 ref (old equilibrium) -->
+        <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
+        <text x="282" y="222" font-size="11" font-weight="600" fill="#64748B">E₁</text>
+        <!-- E3_mkt at (325, 252) -->
+        <line x1="60" y1="252" x2="325" y2="252" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="325" y1="252" x2="325" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="325" cy="252" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="302" y="268" font-size="11" font-weight="700" fill="#059669">E₃</text>
+        <text x="46" y="256" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₃</text>
+        <text x="325" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₃</text>
+        <!-- Horizontal green arrow at y=252 from x=295 to x=325 (Q increase) -->
+        <line x1="295" y1="252" x2="322" y2="252" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Vertical green arrow at x=325 from y=230 to y=252 (P decrease/fall) -->
+        <line x1="325" y1="230" x2="325" y2="249" stroke="#059669" stroke-width="2" marker-end="url(#mk-green-end)"/>
+        <!-- Legend panel -->
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SUPPLY SHIFTS RIGHT</text>
+        <text x="620" y="100" font-size="13" fill="#334155">S₁ → S₂: more supplied at</text>
+        <text x="620" y="118" font-size="13" fill="#334155">every price.</text>
+        <text x="620" y="153" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">NEW EQUILIBRIUM E₃</text>
+        <text x="620" y="176" font-size="13" fill="#334155">Lower price P₃ but higher</text>
+        <text x="620" y="194" font-size="13" fill="#334155">quantity Q₃.</text>
+        <text x="620" y="229" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">CAUSES OF RIGHTWARD SHIFT</text>
+        <text x="620" y="252" font-size="13" fill="#334155">↓ input costs / better technology</text>
+        <text x="620" y="270" font-size="13" fill="#334155">↑ producers / subsidy</text>
+        <text x="620" y="305" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXAM NOTE</text>
+        <text x="620" y="328" font-size="13" fill="#334155">Q rises but P falls — opposite</text>
+        <text x="620" y="346" font-size="13" fill="#334155">direction to demand shift outcome.</text>
+      </g>
+    </svg>
+  `,
+
   /* === AD topic hero illustration === */
   heroAd: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

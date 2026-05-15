@@ -9175,4 +9175,258 @@ window.ECONOS_ICONS = {
     <text x="330" y="405" text-anchor="middle" font-size="9" fill="#64748B">Services surplus only partly offsets goods deficit — structural deficit requires expenditure-switching (depreciation) or expenditure-reducing policies.</text>
   </svg>`,
 
+  globalisationDiagram: `<svg viewBox="0 0 660 440" font-family="Inter, sans-serif" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Background -->
+    <rect width="660" height="440" fill="#F8FAFC" rx="12"/>
+
+    <!-- Title -->
+    <text x="330" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">Globalisation: Drivers and Effects</text>
+
+    <!-- ── Central hub ── -->
+    <rect x="270" y="196" width="120" height="48" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5" rx="8"/>
+    <text x="330" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">Globalisation</text>
+    <text x="330" y="232" text-anchor="middle" font-size="9" fill="#64748B">drivers → effects</text>
+
+    <!-- ════════════════════════════════════════
+         LEFT SIDE — Drivers (blue #2563EB)
+         ════════════════════════════════════════ -->
+
+    <!-- Driver 1: Trade liberalisation -->
+    <rect x="30" y="60" width="170" height="36" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2" rx="6"/>
+    <text x="115" y="76" text-anchor="middle" font-size="10" font-weight="600" fill="#2563EB">Trade Liberalisation</text>
+    <text x="115" y="89" text-anchor="middle" font-size="9" fill="#334155">(WTO, FTAs)</text>
+    <!-- Arrow from driver to centre -->
+    <line x1="200" y1="78" x2="268" y2="205" stroke="#2563EB" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+
+    <!-- Driver 2: Technology -->
+    <rect x="30" y="140" width="170" height="36" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2" rx="6"/>
+    <text x="115" y="156" text-anchor="middle" font-size="10" font-weight="600" fill="#2563EB">Technology</text>
+    <text x="115" y="169" text-anchor="middle" font-size="9" fill="#334155">(internet, shipping)</text>
+    <line x1="200" y1="158" x2="268" y2="213" stroke="#2563EB" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+
+    <!-- Driver 3: Capital mobility -->
+    <rect x="30" y="220" width="170" height="36" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2" rx="6"/>
+    <text x="115" y="236" text-anchor="middle" font-size="10" font-weight="600" fill="#2563EB">Capital Mobility</text>
+    <text x="115" y="249" text-anchor="middle" font-size="9" fill="#334155">(FDI, financial flows)</text>
+    <line x1="200" y1="238" x2="268" y2="225" stroke="#2563EB" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+
+    <!-- Driver 4: MNC expansion -->
+    <rect x="30" y="300" width="170" height="36" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2" rx="6"/>
+    <text x="115" y="316" text-anchor="middle" font-size="10" font-weight="600" fill="#2563EB">MNC Expansion</text>
+    <text x="115" y="329" text-anchor="middle" font-size="9" fill="#334155">(multinational corporations)</text>
+    <line x1="200" y1="318" x2="268" y2="233" stroke="#2563EB" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+
+    <!-- ════════════════════════════════════════
+         RIGHT SIDE — Effects
+         Benefits (green #059669) & Costs (red #DC2626)
+         ════════════════════════════════════════ -->
+
+    <!-- Benefits label -->
+    <text x="460" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="#059669">Benefits</text>
+
+    <!-- Benefit 1: Lower consumer prices -->
+    <rect x="390" y="60" width="180" height="36" fill="#ECFDF5" stroke="#059669" stroke-width="1.2" rx="6"/>
+    <text x="480" y="76" text-anchor="middle" font-size="10" font-weight="600" fill="#059669">Lower Consumer Prices</text>
+    <text x="480" y="89" text-anchor="middle" font-size="9" fill="#334155">(import competition)</text>
+    <line x1="392" y1="78" x2="342" y2="206" stroke="#059669" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+
+    <!-- Benefit 2: Technology transfer -->
+    <rect x="390" y="140" width="180" height="36" fill="#ECFDF5" stroke="#059669" stroke-width="1.2" rx="6"/>
+    <text x="480" y="156" text-anchor="middle" font-size="10" font-weight="600" fill="#059669">Technology Transfer</text>
+    <text x="480" y="169" text-anchor="middle" font-size="9" fill="#334155">(knowledge spillovers)</text>
+    <line x1="392" y1="158" x2="342" y2="213" stroke="#059669" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+
+    <!-- Benefit 3: Specialisation gains -->
+    <rect x="390" y="220" width="180" height="36" fill="#ECFDF5" stroke="#059669" stroke-width="1.2" rx="6"/>
+    <text x="480" y="236" text-anchor="middle" font-size="10" font-weight="600" fill="#059669">Specialisation Gains</text>
+    <text x="480" y="249" text-anchor="middle" font-size="9" fill="#334155">(comparative advantage)</text>
+    <line x1="392" y1="238" x2="342" y2="225" stroke="#059669" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+
+    <!-- Costs label -->
+    <text x="460" y="292" text-anchor="middle" font-size="10" font-weight="700" fill="#DC2626">Costs</text>
+
+    <!-- Cost 1: Structural unemployment -->
+    <rect x="390" y="300" width="180" height="36" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.2" rx="6"/>
+    <text x="480" y="316" text-anchor="middle" font-size="10" font-weight="600" fill="#DC2626">Structural Unemployment</text>
+    <text x="480" y="329" text-anchor="middle" font-size="9" fill="#334155">(import competition)</text>
+    <line x1="392" y1="318" x2="342" y2="233" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowRed)"/>
+
+    <!-- Cost 2: Tax competition -->
+    <rect x="390" y="360" width="180" height="36" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.2" rx="6"/>
+    <text x="480" y="372" text-anchor="middle" font-size="10" font-weight="600" fill="#DC2626">Tax Competition</text>
+    <text x="480" y="385" text-anchor="middle" font-size="9" fill="#334155">(race to the bottom)</text>
+    <line x1="392" y1="378" x2="342" y2="240" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowRed)"/>
+
+    <!-- Cost 3: Increased inequality -->
+    <rect x="390" y="396" width="180" height="36" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.2" rx="6"/>
+    <text x="480" y="409" text-anchor="middle" font-size="10" font-weight="600" fill="#DC2626">Increased Inequality</text>
+    <text x="480" y="422" text-anchor="middle" font-size="9" fill="#334155">(wages &amp; wealth diverge)</text>
+    <line x1="392" y1="414" x2="342" y2="244" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowRed)"/>
+
+    <!-- ── Arrow marker definitions ── -->
+    <defs>
+      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
+      </marker>
+      <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+      </marker>
+      <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+      </marker>
+    </defs>
+
+  </svg>`,
+
+  businessGrowthDiagram: `<svg viewBox="0 0 660 440" font-family="Inter, sans-serif" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrowGrey" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#334155"/>
+      </marker>
+      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
+      </marker>
+      <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+      </marker>
+      <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+      </marker>
+    </defs>
+
+    <!-- Background -->
+    <rect width="660" height="440" fill="#F8FAFC" rx="12"/>
+
+    <!-- Main title -->
+    <text x="330" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">Types of Business Integration</text>
+
+    <!-- ═══ SECTION 1: Horizontal Integration (left column) ═══ -->
+    <text x="140" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#2563EB">Horizontal Integration</text>
+
+    <!-- Firm A (Retailer) -->
+    <rect x="30" y="72" width="110" height="36" rx="6" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="85" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#2563EB">Firm A</text>
+    <text x="85" y="100" text-anchor="middle" font-size="10" fill="#334155">(Retailer)</text>
+
+    <!-- Firm B (Retailer) -->
+    <rect x="168" y="72" width="110" height="36" rx="6" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="223" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#2563EB">Firm B</text>
+    <text x="223" y="100" text-anchor="middle" font-size="10" fill="#334155">(Retailer)</text>
+
+    <!-- Merge arrow between the two firms -->
+    <line x1="140" y1="90" x2="168" y2="90" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <text x="154" y="85" text-anchor="middle" font-size="9" fill="#2563EB">merge</text>
+
+    <!-- Same stage label -->
+    <text x="154" y="122" text-anchor="middle" font-size="9.5" fill="#334155">Same stage of production</text>
+    <text x="154" y="134" text-anchor="middle" font-size="9" fill="#64748B">e.g. two supermarkets merge</text>
+
+    <!-- Lines from both firms down to merged result -->
+    <line x1="85" y1="108" x2="85" y2="152" stroke="#2563EB" stroke-width="1" stroke-dasharray="4,2"/>
+    <line x1="223" y1="108" x2="223" y2="152" stroke="#2563EB" stroke-width="1" stroke-dasharray="4,2"/>
+    <line x1="85" y1="152" x2="223" y2="152" stroke="#2563EB" stroke-width="1" stroke-dasharray="4,2"/>
+    <line x1="154" y1="152" x2="154" y2="162" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Merged result box -->
+    <rect x="74" y="162" width="160" height="36" rx="6" fill="#BFDBFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="154" y="177" text-anchor="middle" font-size="11" font-weight="600" fill="#1D4ED8">Combined Retail Firm</text>
+    <text x="154" y="190" text-anchor="middle" font-size="9.5" fill="#334155">Increased market share</text>
+
+    <!-- ═══ SECTION 2: Vertical Integration (centre column) ═══ -->
+    <text x="360" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">Vertical Integration</text>
+
+    <!-- Supplier box (upstream) -->
+    <rect x="295" y="72" width="120" height="36" rx="6" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+    <text x="355" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#059669">Supplier</text>
+    <text x="355" y="100" text-anchor="middle" font-size="10" fill="#334155">(Raw materials)</text>
+
+    <!-- Backward integration label (left of arrow) -->
+    <text x="290" y="127" text-anchor="end" font-size="9" fill="#059669" font-weight="600">Backward</text>
+    <text x="290" y="138" text-anchor="end" font-size="9" fill="#334155">acquires supplier</text>
+
+    <!-- Arrow: supplier to core firm -->
+    <line x1="355" y1="108" x2="355" y2="152" stroke="#059669" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+    <!-- Central firm -->
+    <rect x="295" y="152" width="120" height="36" rx="6" fill="#A7F3D0" stroke="#059669" stroke-width="2"/>
+    <text x="355" y="167" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">Core Firm</text>
+    <text x="355" y="180" text-anchor="middle" font-size="10" fill="#334155">(Manufacturer)</text>
+
+    <!-- Forward integration label (left of arrow) -->
+    <text x="290" y="207" text-anchor="end" font-size="9" fill="#059669" font-weight="600">Forward</text>
+    <text x="290" y="218" text-anchor="end" font-size="9" fill="#334155">acquires distributor</text>
+
+    <!-- Arrow: core firm to distributor -->
+    <line x1="355" y1="188" x2="355" y2="232" stroke="#059669" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+    <!-- Distributor/Retailer box (downstream) -->
+    <rect x="295" y="232" width="120" height="36" rx="6" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+    <text x="355" y="247" text-anchor="middle" font-size="11" font-weight="600" fill="#059669">Distributor</text>
+    <text x="355" y="260" text-anchor="middle" font-size="10" fill="#334155">(Retailer)</text>
+
+    <!-- Upstream / Downstream labels -->
+    <text x="420" y="100" font-size="9" fill="#64748B">&#x2191; Upstream</text>
+    <text x="420" y="262" font-size="9" fill="#64748B">&#x2193; Downstream</text>
+
+    <!-- ═══ SECTION 3: Conglomerate (right column) ═══ -->
+    <text x="553" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#D97706">Conglomerate</text>
+
+    <!-- Parent firm -->
+    <rect x="488" y="72" width="130" height="36" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="553" y="87" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">Parent Firm</text>
+    <text x="553" y="100" text-anchor="middle" font-size="10" fill="#334155">(e.g. Retailer)</text>
+
+    <!-- Arrows from parent to unrelated businesses -->
+    <line x1="530" y1="108" x2="510" y2="152" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+    <line x1="576" y1="108" x2="596" y2="152" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+    <text x="553" y="135" text-anchor="middle" font-size="9" fill="#D97706" font-weight="600">acquires</text>
+
+    <!-- Unrelated business A -->
+    <rect x="460" y="152" width="120" height="36" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1.5"/>
+    <text x="520" y="167" text-anchor="middle" font-size="11" font-weight="600" fill="#B45309">Unrelated A</text>
+    <text x="520" y="180" text-anchor="middle" font-size="10" fill="#334155">(e.g. Media)</text>
+
+    <!-- Unrelated business B -->
+    <rect x="588" y="152" width="52" height="36" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1.5"/>
+    <text x="614" y="167" text-anchor="middle" font-size="10" font-weight="600" fill="#B45309">Unrelated</text>
+    <text x="614" y="180" text-anchor="middle" font-size="9" fill="#B45309">B (Tech)</text>
+
+    <!-- Conglomerate note -->
+    <text x="553" y="210" text-anchor="middle" font-size="9.5" fill="#334155">No production link</text>
+    <text x="553" y="222" text-anchor="middle" font-size="9" fill="#64748B">Diversification reduces risk</text>
+
+    <!-- ═══ DIVIDERS between sections ═══ -->
+    <line x1="280" y1="48" x2="280" y2="310" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="472" y1="48" x2="472" y2="310" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,3"/>
+
+    <!-- ═══ KEY DIFFERENCES summary bar ═══ -->
+    <rect x="20" y="318" width="620" height="52" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="330" y="333" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0F172A">Key Differences</text>
+    <text x="154" y="349" text-anchor="middle" font-size="9.5" fill="#334155">Horizontal: same industry,</text>
+    <text x="154" y="361" text-anchor="middle" font-size="9.5" fill="#334155">same stage</text>
+    <text x="355" y="349" text-anchor="middle" font-size="9.5" fill="#334155">Vertical: same industry,</text>
+    <text x="355" y="361" text-anchor="middle" font-size="9.5" fill="#334155">different stage</text>
+    <text x="548" y="349" text-anchor="middle" font-size="9.5" fill="#334155">Conglomerate: different</text>
+    <text x="548" y="361" text-anchor="middle" font-size="9.5" fill="#334155">industry entirely</text>
+    <line x1="253" y1="326" x2="253" y2="362" stroke="#CBD5E1" stroke-width="1"/>
+    <line x1="452" y1="326" x2="452" y2="362" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- ═══ LEGEND ═══ -->
+    <rect x="20" y="384" width="620" height="40" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="42" y="400" font-size="10" font-weight="700" fill="#0F172A">Legend:</text>
+
+    <rect x="100" y="389" width="14" height="14" rx="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="119" y="400" font-size="10" fill="#2563EB" font-weight="600">Horizontal</text>
+    <text x="119" y="413" font-size="9" fill="#334155">Same-stage merger</text>
+
+    <rect x="240" y="389" width="14" height="14" rx="3" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+    <text x="259" y="400" font-size="10" fill="#059669" font-weight="600">Vertical</text>
+    <text x="259" y="413" font-size="9" fill="#334155">Supply chain integration</text>
+
+    <rect x="390" y="389" width="14" height="14" rx="3" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+    <text x="409" y="400" font-size="10" fill="#D97706" font-weight="600">Conglomerate</text>
+    <text x="409" y="413" font-size="9" fill="#334155">Unrelated diversification</text>
+  </svg>`,
+
 };

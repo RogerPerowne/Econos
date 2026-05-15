@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Labour Markets',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the demand for labour (MRP theory), labour market equilibrium, wage determination, and how imperfect competition in labour markets creates monopsony power.',
   intro: {
     heroKey: 'heroLabour',
     summary: 'Labour markets determine wages and employment levels. Unlike goods markets, the demand for labour is derived from the demand for the goods workers produce. Understanding MRP theory, labour market equilibrium, and monopsony explains wage outcomes across the economy.',
-    doInThis: 'Work through 7 cards covering derived demand, the MRP theory of labour demand, labour market equilibrium, shifts in labour demand and supply, wage differentials, monopsony, and evaluation of labour market outcomes.',
+    doInThis: 'Work through 7 cards covering derived demand, the MRP theory of labour demand, labour market equilibrium, shifts in labour demand and supply, wage differentials, monopsony, and evaluation of labour market outcomes. Finish with a 25-mark essay scaffold.',
     outcomes: [
       'Explain derived demand and construct the firm\'s labour demand curve from MRP',
       'Identify factors that shift labour demand and supply',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Demand for labour: MRP = MR \xd7 MP. Firm hires up to the point where MRP = wage (W). The MRP curve IS the labour demand curve. Higher MRP → higher wages. Supply of labour: upward sloping (higher wages attract more workers). Equilibrium: labour demand = labour supply.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'labour_markets_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Labour markets: the big picture',
       lede: 'Wages and jobs come from the same supply-and-demand logic as any market — but workers aren\'t widgets, and employers aren\'t always price-takers.',
       branches: [
@@ -133,6 +133,61 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The gig economy (Uber, Deliveroo, Amazon Flex) raises new labour market questions not easily captured by the competitive model. Workers are classified as self-employed (no employment rights) but have limited ability to negotiate — they accept the platform\'s terms or leave. Supreme Court (Uber v Aslam, 2021) ruled Uber drivers are "workers" entitled to minimum wage — a major shift. The question of whether gig workers are genuinely self-employed or exploited in a form of disguised employment is the contemporary labour market policy frontier.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'lm-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: labour markets and wages',
+      question: 'Evaluate the view that monopsony is the most significant cause of wage inequality in labour markets. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define monopsony and wage inequality, and outline the main competing causes of wage differentials.',
+          hint: 'Monopsony: single employer (or dominant buyer) in a labour market — wages can be held below MRP because workers lack alternative employment. Wage inequality has multiple causes: MRP differences (productivity, skills), compensating differentials, discrimination, and labour market power. Question is whether monopsony is the MOST significant.',
+          model: 'Monopsony exists where a single employer (or small group) dominates hiring in a labour market — enabling wages to be set below the competitive MRP level. While this clearly depresses wages for affected workers, wage inequality has multiple causes: differences in marginal revenue product (reflecting skills, education, and capital intensity), compensating differentials for unpleasant or risky work, discrimination on non-productivity grounds, and the role of trade unions and collective bargaining. This essay evaluates whether monopsony is the dominant explanation for wage inequality, or whether productivity differences are more fundamental.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — How monopsony depresses wages below MRP',
+          prompt: 'Explain the monopsony wage and employment outcome using MRP theory.',
+          hint: 'Monopsonist faces upward-sloping labour supply (to hire more, must raise wage). Marginal Labour Cost (MLC) > wage (raising wage for all workers). Firm hires where MRP = MLC → employment L_m < competitive L*. Wage W_m < MRP — workers exploited by amount (MRP - W_m). Example: NHS as monopsonist employer of nurses; Amazon in some warehouse towns.',
+          model: 'A monopsonist faces an upward-sloping labour supply curve — to attract additional workers it must raise the wage for all existing workers, meaning the Marginal Labour Cost (MLC) exceeds the wage at every employment level. The profit-maximising firm hires where MRP = MLC, producing employment L_m which is below the competitive equilibrium L*. The wage W_m is set from the supply curve — below the MRP, meaning workers are paid less than their productive contribution. This wage gap (MRP − W_m) represents exploitation in the technical economic sense. Real-world examples include the NHS as a dominant employer of nurses in many regions, supermarkets as dominant buyers of agricultural labour in rural areas, and Amazon warehouses in some local labour markets. In these cases, monopsony power contributes directly to wage inequality between these workers and those in competitive labour markets.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — MRP differences as the primary structural cause',
+          prompt: 'Explain how productivity and skills differences generate most of the observed wage inequality.',
+          hint: 'MRP = MR × MP. High-skill workers (surgeons, software engineers) have high MP → high MRP → high wages. Education and training investment raises human capital → shifts MRP curve right. Technology has raised the MRP of high-skill workers (capital-skill complementarity) while reducing MRP of routine task workers (automation). Wage premium for degree graduates reflects this. This explains cross-economy wage inequality more comprehensively than monopsony.',
+          model: 'The most fundamental cause of wage inequality is differential marginal revenue product — higher-skilled workers produce more valuable output, commanding commensurately higher wages. A software engineer generates far more revenue per hour than an unskilled labourer — the resulting wage gap reflects economic reality, not exploitation. Technological change has amplified this: capital-skill complementarity means technology raises the productivity and MRP of high-skill workers while substituting for routine manual tasks (automation), widening the skill premium. The graduate wage premium in the UK (~25-30% over non-graduates) reflects a structural MRP gap, not primarily monopsony power. Human capital theory (Becker) explains most of the systematic wage variation across occupations as returns to investment in education and training rather than employer market power.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Compensating differentials, discrimination, and monopsony limits',
+          prompt: 'Evaluate the role of compensating differentials, discrimination, and limits to the monopsony explanation.',
+          hint: 'Compensating differentials: unpleasant or dangerous jobs pay more (garbage collectors, miners) — not inequality in the equity sense, just compensation. Discrimination: wages diverge from MRP for non-productivity reasons (gender, ethnicity) — a different cause of inequality. Monopsony may be limited in practice: workers can relocate, remote work reduces geographic monopsony, minimum wage legislation constrains the wage floor. Amazon monopsony example challenged by gig economy alternatives.',
+          model: 'Several factors limit the significance of monopsony as the primary explanation. Compensating differentials explain why some low-wage workers receive lower pay for desirable non-wage characteristics (flexible hours, pleasant environment) — this is not inequality in any inequitable sense. Discrimination remains a distinct and significant cause: the gender pay gap (~15% in the UK) reflects structural bias rather than MRP differences, and cannot be attributed to monopsony. Furthermore, monopsony in practice may be weaker than the theoretical model implies: remote working has reduced geographic concentration, minimum wage legislation constrains the wage floor (the 2016 NLW rise reduced the monopsony gap for low-wage workers), and labour mobility has increased with digital job platforms. The monopsony explanation is most powerful in geographically isolated or low-skill labour markets — but these represent a subset of the total wage inequality observed.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Weighing the causes: context-dependent significance',
+          prompt: 'Judge the relative importance of monopsony vs MRP differences vs discrimination, with reference to specific labour market contexts.',
+          hint: 'Key judgement: monopsony is most significant in specific local labour markets (NHS nursing, agricultural labour, some gig platforms) but explains less of economy-wide inequality than MRP differences. The most important policy lever for reducing inequality depends on diagnosis: if MRP differences dominate, invest in education; if monopsony, enforce minimum wage and competition in labour markets; if discrimination, equality legislation.',
+          model: 'The relative significance of monopsony depends on the labour market being examined. In geographically isolated markets with a dominant employer — NHS nurses in rural areas, agricultural workers in small towns — monopsony clearly depresses wages below MRP and is the primary explanation of that specific inequality. But at the economy-wide level, the systematic wage inequality between occupations — surgeons versus cleaners, tech workers versus shop assistants — is far more comprehensively explained by differences in human capital, MRP, and the capital-skill complementarity driven by technological change. Discrimination (gender, ethnicity) is a significant additional cause that neither monopsony nor MRP differences fully explain. Policy implications follow from this diagnosis: reducing overall wage inequality requires human capital investment and reducing barriers to education (addressing MRP gaps), alongside minimum wage enforcement (addressing monopsony) and equality legislation (addressing discrimination).'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a reasoned judgement on the primacy of monopsony vs other causes of wage inequality.',
+          hint: 'Monopsony is important in specific markets but not the most significant cause economy-wide. MRP differences (skills, education, technology) explain the majority of observed wage inequality. Discrimination is a separate and significant cause. A well-rounded answer avoids single-cause explanations.',
+          model: 'Monopsony is a significant cause of wage inequality in specific labour markets where employer concentration is high, but it is unlikely to be the most significant cause of overall wage inequality across the economy. The primary driver of systematic wage differences between occupations and skill levels is differential marginal revenue product — itself shaped by human capital investment, education, and the capital-skill complementarity effects of technology. These structural MRP differences explain the bulk of observed wage inequality across the economy more comprehensively than monopsony power, which is geographically and sectorally concentrated. Discrimination remains a separate and persistent cause of wage inequality, requiring distinct policy interventions. The most effective approach to reducing wage inequality addresses all three mechanisms: investing in education and skills (narrowing MRP gaps), minimum wage legislation and competition policy in labour markets (limiting monopsony), and robust equality enforcement (tackling discrimination at source).'
+        }
+      ]
     }
   ]
 };

@@ -58,6 +58,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'globalisation-causes',
       template: 'mechanisms',
+      diagramKey: 'globalisationDiagram',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Causes of globalisation',
       lede: 'Globalisation has been driven by technological change, policy liberalisation, and the rise of multinational corporations. These forces reinforce each other.',

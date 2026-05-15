@@ -124,16 +124,53 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'ped_7',
-      template: 'framing',
+      template: 'ped-five-frames',
       stepLabel: 'Learn: Step 8 of 8',
-      title: 'Special Cases of PED',
-      body: '<strong>Perfectly inelastic (PED = 0):</strong> Vertical demand curve. Quantity demanded does not change at all with price. No real-world good is truly perfectly inelastic, but life-saving drugs approximate this in emergency settings.<br><br><strong>Perfectly elastic (PED = ∞):</strong> Horizontal demand curve. Any price rise above the market price causes quantity demanded to fall to zero. Competitive firms in a perfectly competitive market face perfectly elastic demand — they are price-takers.<br><br><strong>Giffen good:</strong> Upward-sloping demand curve (positive PED). Extremely rare. Possible when an inferior good takes up such a large share of income that the income effect overwhelms the substitution effect — historical Irish potato example.',
-      keyTerms: [
-        { term: 'Perfectly inelastic demand', def: 'PED = 0; vertical demand curve; quantity demanded is fixed regardless of price.' },
-        { term: 'Perfectly elastic demand', def: 'PED = infinity; horizontal demand curve; any price above market price → zero demand. Faced by firms in perfect competition.' },
-        { term: 'Giffen good', def: 'A good where a price rise leads to increased demand — upward-sloping demand curve; income effect stronger than substitution effect.' }
+      title: 'The five regimes of PED',
+      lede: 'Every demand curve lives somewhere on the spectrum from vertical (quantity never budges) to horizontal (any price rise destroys all demand). Recognise the shape, name the regime, and apply the TR rule — that is the full exam toolkit.',
+      frames: [
+        {
+          tone: 'rose',
+          name: 'Perfectly inelastic',
+          ped: 'PED = 0',
+          curveType: 'vertical',
+          example: 'Life-saving medication in an emergency — demand must be met regardless of price',
+          trRule: 'Price ↑ → TR ↑ always. QD is fixed, so every price rise raises revenue proportionally.'
+        },
+        {
+          tone: 'amber',
+          name: 'Inelastic',
+          ped: '|PED| < 1',
+          curveType: 'steep',
+          example: 'Petrol (short run), cigarettes, electricity, rail season tickets',
+          trRule: 'Price ↑ → TR ↑. QD falls, but less than proportionally — the price effect wins.'
+        },
+        {
+          tone: 'blue',
+          name: 'Unit elastic',
+          ped: '|PED| = 1',
+          curveType: 'hyperbola',
+          example: 'The midpoint of any straight-line demand curve — rarely a real-world steady state',
+          trRule: 'Any price change → TR unchanged. The % fall in QD exactly cancels the % rise in P.'
+        },
+        {
+          tone: 'green',
+          name: 'Elastic',
+          ped: '|PED| > 1',
+          curveType: 'shallow',
+          example: 'Luxury holidays, branded goods with close rivals, restaurant meals',
+          trRule: 'Price ↑ → TR ↓. QD falls more than proportionally — the volume effect dominates.'
+        },
+        {
+          tone: 'purple',
+          name: 'Perfectly elastic',
+          ped: 'PED = ∞',
+          curveType: 'horizontal',
+          example: 'Any firm in perfect competition — a price-taker facing the market price',
+          trRule: 'Must accept market price exactly. Any price above it → quantity demanded collapses to zero.'
+        }
       ],
-      examEdge: 'Perfectly elastic demand is not just an abstract concept — it describes the demand curve facing any individual firm in perfect competition. This is why perfectly competitive firms cannot set prices above MC — any attempt would destroy all demand. Use this when explaining why P = MC holds in perfect competition.',
+      examEdge: 'The classic exam trap: "demand is elastic because the curve is steep." Wrong — steepness depends on the axis scales you choose; it is not PED. On a straight-line demand curve, the slope is constant but PED changes at every point: upper half is elastic, lower half is inelastic, midpoint is unit elastic. Always calculate PED from the formula — never read it off the picture.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

@@ -322,7 +322,7 @@
                 <h1 class="card__title card__title--lg">${T.title}</h1>
                 <p class="card__lede">${T.intro.summary}</p>
               </div>
-              <div class="illust-bars">${T.intro.heroKey && I[T.intro.heroKey] ? I[T.intro.heroKey] : I.heroBars}</div>
+              ${T.intro.heroKey && I[T.intro.heroKey] ? `<div class="illust-bars">${I[T.intro.heroKey]}</div>` : ''}
             </div>
 
             <div class="do-box">

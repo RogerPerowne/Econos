@@ -174,6 +174,23 @@
         </div>`;
     }
 
+    // Branches — tone-coded tappable callouts (framing-style)
+    if (c.branches && c.branches.length) {
+      content += genSecLabel('🧭', 'The big picture — tap each to recall');
+      content += `<div class="branch-callouts" style="margin-bottom:24px;">
+        ${c.branches.map((b, i) => `
+          <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">
+            <div class="branch-cal__dot"></div>
+            <div style="flex:1; min-width:0;">
+              <div class="branch-cal__label">${b.label}</div>
+              <div class="branch-cal__sub is-hidden">${b.sub}</div>
+              <div class="branch-cal__hint">tap to recall</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>`;
+    }
+
     // Body text — styled as a rich explainer
     if (c.body) {
       content += `

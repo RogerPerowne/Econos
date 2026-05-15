@@ -27,7 +27,15 @@ window.ECONOS_TOPIC = {
     {
       id: 'demand_1',
       template: 'framing',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'The Law of Demand',
+      lede: 'Price up, quantity down. Simple — but understanding why unlocks the whole of microeconomics.',
+      branches: [
+        { tone: 'green',  label: 'Substitution effect',     sub: 'When a good\'s price rises, it becomes relatively expensive vs alternatives — consumers switch to substitutes, reducing quantity demanded.' },
+        { tone: 'amber',  label: 'Income effect',           sub: 'When a good\'s price rises, real purchasing power falls — consumers can afford less of everything, including this good.' },
+        { tone: 'blue',   label: 'Downward-sloping curve',  sub: 'The visual consequence: at every price, sum the two effects → the demand curve slopes from top-left to bottom-right.' },
+        { tone: 'purple', label: 'Giffen exception',        sub: 'For extremely inferior goods (historical: Irish potatoes), a negative income effect can overwhelm substitution — price rise lifts quantity. Rare; evaluation gold.' }
+      ],
       body: 'The <strong>law of demand</strong> states that, ceteris paribus (all else equal), as the price of a good falls, the quantity demanded rises; as price rises, quantity demanded falls. This produces a downward-sloping demand curve.<br><br>Two economic effects explain this:<br><br><strong>Substitution effect:</strong> as price rises, the good becomes more expensive relative to substitutes — consumers switch to alternatives, reducing quantity demanded.<br><strong>Income effect:</strong> as price rises, real purchasing power falls — consumers can afford less of everything including the good in question, reducing quantity demanded.',
       keyTerms: [
         { term: 'Law of demand', def: 'Ceteris paribus: a fall in price leads to a rise in quantity demanded; price and quantity demanded move in opposite directions.' },

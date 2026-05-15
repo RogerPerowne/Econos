@@ -276,7 +276,7 @@
       </div>`;
     }
 
-    // Exam edge — predict-then-reveal
+    // Exam edge — always visible
     if (c.examEdge) {
       const edgeTitle = typeof c.examEdge === 'object' ? (c.examEdge.title || 'Exam edge') : 'Exam edge';
       const edgeText  = typeof c.examEdge === 'object' ? c.examEdge.text : c.examEdge;
@@ -287,8 +287,7 @@
             <div class="exam-edge__body">
               <div class="exam-edge__label">Exam edge</div>
               <div class="exam-edge__title">${edgeTitle}</div>
-              <button data-action="reveal-edge" class="exam-edge__btn" style="margin-top:8px;background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:13px;font-weight:700;padding:7px 14px;border-radius:8px;cursor:pointer;">Show the gem →</button>
-              <div class="exam-edge__text is-hidden" style="margin-top:12px;">${edgeText}</div>
+              <div class="exam-edge__text" style="margin-top:8px;">${edgeText}</div>
             </div>
           </div>`;
       }

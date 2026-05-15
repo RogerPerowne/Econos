@@ -2391,6 +2391,179 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  prisonersDilemmaInteractive: `
+    <svg class="pd-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="pd-blue-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
+        </marker>
+        <marker id="pd-red-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+        <marker id="pd-green-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: matrix base (always visible) ===== -->
+      <g class="layer-matrix-base">
+        <!-- Outer column header -->
+        <text x="340" y="60" font-size="14" font-weight="800" fill="#334155" text-anchor="middle" letter-spacing="1">PLAYER B</text>
+        <!-- Column sub-labels -->
+        <text x="255" y="100" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Stay silent</text>
+        <text x="425" y="100" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Confess</text>
+        <!-- Outer row header (rotated) -->
+        <text x="80" y="240" font-size="14" font-weight="800" fill="#334155" text-anchor="middle" letter-spacing="1" transform="rotate(-90 80 240)">PLAYER A</text>
+        <!-- Row sub-labels (rotated) -->
+        <text x="125" y="180" font-size="12" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90 125 180)">Stay silent</text>
+        <text x="125" y="300" font-size="12" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90 125 300)">Confess</text>
+
+        <!-- Cell (Silent, Silent) — Pareto optimum -->
+        <rect x="170" y="120" width="170" height="120" fill="#ECFDF5" stroke="#059669" stroke-width="2" rx="6"/>
+        <text x="195" y="155" font-size="13" font-weight="700" fill="#059669">A: 1 year</text>
+        <text x="315" y="225" font-size="13" font-weight="700" fill="#059669" text-anchor="end">B: 1 year</text>
+
+        <!-- Cell (Silent, Confess) — A betrayed -->
+        <rect x="340" y="120" width="170" height="120" fill="#FFFBEB" stroke="#D97706" stroke-width="2" rx="6"/>
+        <text x="365" y="155" font-size="13" font-weight="700" fill="#DC2626">A: 10 years</text>
+        <text x="485" y="225" font-size="13" font-weight="700" fill="#059669" text-anchor="end">B: 0</text>
+
+        <!-- Cell (Confess, Silent) — B betrayed -->
+        <rect x="170" y="240" width="170" height="120" fill="#FFFBEB" stroke="#D97706" stroke-width="2" rx="6"/>
+        <text x="195" y="275" font-size="13" font-weight="700" fill="#059669">A: 0</text>
+        <text x="315" y="345" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">B: 10 years</text>
+
+        <!-- Cell (Confess, Confess) — Nash equilibrium -->
+        <rect x="340" y="240" width="170" height="120" fill="#FEE2E2" stroke="#DC2626" stroke-width="2" rx="6"/>
+        <text x="365" y="275" font-size="13" font-weight="700" fill="#DC2626">A: 5 years</text>
+        <text x="485" y="345" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">B: 5 years</text>
+
+        <!-- Hint text below matrix -->
+        <text x="340" y="395" font-size="11" font-style="italic" fill="#64748B" text-anchor="middle">Each cell shows (A's outcome, B's outcome). Lower years = better.</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <circle cx="612" cy="32" r="7" fill="#334155"/>
+        <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Two suspects · each chooses silent or confess</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE SCENARIO</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Two suspects arrested. Each</text>
+        <text x="620" y="118" font-size="13" fill="#334155">decides separately — no</text>
+        <text x="620" y="136" font-size="13" fill="#334155">communication possible.</text>
+        <text x="620" y="170" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE PAYOFFS</text>
+        <text x="620" y="192" font-size="13" fill="#334155">Both silent → <tspan font-weight="700">1 year each</tspan></text>
+        <text x="620" y="210" font-size="13" fill="#334155">One confesses → <tspan font-weight="700">0 / 10 years</tspan></text>
+        <text x="620" y="228" font-size="13" fill="#334155">Both confess → <tspan font-weight="700">5 years each</tspan></text>
+        <text x="620" y="262" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE PUZZLE</text>
+        <text x="620" y="284" font-size="13" fill="#334155">Each rational player picks the</text>
+        <text x="620" y="302" font-size="13" fill="#334155">strategy that's best for them.</text>
+        <text x="620" y="320" font-size="13" fill="#334155">What outcome emerges — and</text>
+        <text x="620" y="338" font-size="13" fill="#334155">is it the best they could do?</text>
+      </g>
+
+      <!-- ===== LAYER: best response A (extension) ===== -->
+      <g class="layer-br-a">
+        <!-- A prefers Confess in BOTH columns. Mark the Confess row cells with blue arrows pointing down -->
+        <!-- Column 1: A goes from (Silent, Silent)=1yr to (Confess, Silent)=0yr → DOWN arrow -->
+        <line x1="220" y1="195" x2="220" y2="265" stroke="#2563EB" stroke-width="3" marker-end="url(#pd-blue-end)"/>
+        <text x="226" y="232" font-size="11" font-weight="700" fill="#2563EB">A: better</text>
+        <!-- Column 2: A goes from (Silent, Confess)=10yr to (Confess, Confess)=5yr → DOWN arrow -->
+        <line x1="390" y1="195" x2="390" y2="265" stroke="#2563EB" stroke-width="3" marker-end="url(#pd-blue-end)"/>
+        <text x="396" y="232" font-size="11" font-weight="700" fill="#2563EB">A: better</text>
+        <!-- Highlight A's dominant strategy: Confess row -->
+        <rect x="166" y="236" width="348" height="128" fill="none" stroke="#2563EB" stroke-width="3" stroke-dasharray="6 4" rx="8"/>
+        <text x="340" y="378" font-size="12" font-weight="800" fill="#2563EB" text-anchor="middle">A's dominant strategy: CONFESS</text>
+      </g>
+
+      <!-- ===== LAYER: legend extension ===== -->
+      <g class="layer-legend-extension">
+        <circle cx="612" cy="32" r="7" fill="#2563EB"/>
+        <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Player A reasons: "What's best for me, given B's choice?"</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">PLAYER A'S REASONING</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#1E293B">If B stays silent:</text>
+        <text x="620" y="118" font-size="13" fill="#334155">A gets 1yr (silent) or 0yr</text>
+        <text x="620" y="136" font-size="13" fill="#334155">(confess) → A prefers CONFESS.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">If B confesses:</text>
+        <text x="620" y="188" font-size="13" fill="#334155">A gets 10yr (silent) or 5yr</text>
+        <text x="620" y="206" font-size="13" fill="#334155">(confess) → A prefers CONFESS.</text>
+        <text x="620" y="244" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">DOMINANT STRATEGY</text>
+        <text x="620" y="266" font-size="13" fill="#334155">CONFESS is best for A</text>
+        <text x="620" y="284" font-size="13" fill="#334155"><tspan font-weight="700">regardless</tspan> of what B does.</text>
+        <text x="620" y="320" font-size="11" font-style="italic" fill="#64748B">By symmetry, B's reasoning</text>
+        <text x="620" y="336" font-size="11" font-style="italic" fill="#64748B">is identical — both confess.</text>
+      </g>
+
+      <!-- ===== LAYER: Nash equilibrium (shift) ===== -->
+      <g class="layer-nash">
+        <!-- A's dominant strategy box (kept visible-ish) -->
+        <rect x="166" y="236" width="348" height="128" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="6 4" rx="8" opacity="0.5"/>
+        <!-- B's dominant strategy box: Confess column -->
+        <rect x="336" y="116" width="178" height="248" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 4" rx="8" opacity="0.5"/>
+        <!-- Nash equilibrium cell highlight -->
+        <rect x="336" y="236" width="178" height="128" fill="none" stroke="#7C3AED" stroke-width="4" rx="8"/>
+        <!-- Big "Nash" label -->
+        <rect x="358" y="248" width="74" height="18" rx="4" fill="#7C3AED"/>
+        <text x="395" y="262" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">NASH EQ</text>
+      </g>
+
+      <!-- ===== LAYER: legend shift ===== -->
+      <g class="layer-legend-shift">
+        <circle cx="612" cy="32" r="7" fill="#7C3AED"/>
+        <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Both play dominant strategy → Nash equilibrium</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE NASH EQUILIBRIUM</text>
+        <text x="620" y="100" font-size="13" fill="#334155">A point where neither player</text>
+        <text x="620" y="118" font-size="13" fill="#334155">can do better by unilaterally</text>
+        <text x="620" y="136" font-size="13" fill="#334155">switching strategy.</text>
+        <text x="620" y="170" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">HERE: (CONFESS, CONFESS)</text>
+        <text x="620" y="192" font-size="13" fill="#334155">A: dominant strategy → confess</text>
+        <text x="620" y="210" font-size="13" fill="#334155">B: dominant strategy → confess</text>
+        <text x="620" y="228" font-size="13" font-weight="700" fill="#7C3AED">Outcome: 5 years each.</text>
+        <text x="620" y="262" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">CHECK IT'S AN EQUILIBRIUM</text>
+        <text x="620" y="284" font-size="13" fill="#334155">If A switches to silent: gets</text>
+        <text x="620" y="302" font-size="13" fill="#334155">10yr instead of 5 → worse.</text>
+        <text x="620" y="320" font-size="13" fill="#334155">Same for B. Nobody deviates.</text>
+      </g>
+
+      <!-- ===== LAYER: pareto comparison (efficiency) ===== -->
+      <g class="layer-pareto">
+        <!-- Highlight Pareto optimum cell -->
+        <rect x="168" y="118" width="174" height="124" fill="none" stroke="#059669" stroke-width="4" rx="8"/>
+        <rect x="190" y="130" width="92" height="18" rx="4" fill="#059669"/>
+        <text x="236" y="144" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">PARETO OPT</text>
+        <!-- Comparison arrow from Nash to Pareto -->
+        <path d="M 425 250 Q 340 200 270 175" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#pd-green-end)"/>
+        <rect x="295" y="195" width="115" height="36" rx="6" fill="#FFFFFF" stroke="#059669" stroke-width="1.5"/>
+        <text x="352" y="210" font-size="10" font-weight="800" fill="#059669" text-anchor="middle" letter-spacing="1">BOTH BETTER OFF</text>
+        <text x="352" y="224" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">at (1, 1)</text>
+      </g>
+
+      <!-- ===== LAYER: legend efficiency ===== -->
+      <g class="layer-legend-efficiency">
+        <circle cx="612" cy="32" r="7" fill="#059669"/>
+        <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Nash ≠ Pareto: individual rationality, collective suboptimality</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE DILEMMA</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Nash equilibrium: 5 years each.</text>
+        <text x="620" y="118" font-size="13" fill="#334155">Pareto optimum: 1 year each.</text>
+        <text x="620" y="148" font-size="13" font-weight="700" fill="#059669">Both players are worse off</text>
+        <text x="620" y="166" font-size="13" font-weight="700" fill="#059669">at Nash than at Pareto.</text>
+        <text x="620" y="198" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHY THEY CAN'T REACH PARETO</text>
+        <text x="620" y="220" font-size="13" fill="#334155">Each fears the other will</text>
+        <text x="620" y="238" font-size="13" fill="#334155">defect → safe choice is to</text>
+        <text x="620" y="256" font-size="13" fill="#334155">defect too (the trap).</text>
+        <text x="620" y="290" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">APPLICATIONS</text>
+        <text x="620" y="312" font-size="13" fill="#334155">Cartel cheating · arms races ·</text>
+        <text x="620" y="330" font-size="13" fill="#334155">advertising wars · climate</text>
+        <text x="620" y="348" font-size="13" fill="#334155">action · free-riding.</text>
+      </g>
+    </svg>
+  `,
+
   /* === Kuznets curve — static diagram for sol_wellbeing/kuznets card === */
   kuznetsCurve: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

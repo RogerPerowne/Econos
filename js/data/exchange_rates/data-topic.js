@@ -72,15 +72,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'exchange_rates_4',
-      template: 'framing',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Marshall-Lerner Condition & J-Curve',
-      body: 'The <strong>Marshall-Lerner condition</strong> states that depreciation will improve the current account only if the sum of the price elasticity of demand for exports (PEDx) and imports (PEDm) is greater than 1: |PEDx| + |PEDm| > 1.<br><br>The <strong>J-curve</strong> explains why the current account initially worsens before improving after depreciation: contracts are already in place, so import bills rise immediately in domestic currency while export volumes take time to rise. The current account "dips" then improves, tracing a J shape over time.<br><br>Empirical evidence: Marshall-Lerner does hold in the long run for most economies; J-curve lasts approximately 12-18 months.',
-      keyTerms: [
-        { term: 'Marshall-Lerner condition', def: 'Depreciation improves current account if |PEDx| + |PEDm| > 1.' },
-        { term: 'J-curve', def: 'Current account worsens then improves after depreciation; short-run contracts prevent immediate volume adjustment.' },
-        { term: 'Price elasticity of demand for exports', def: 'How responsive export demand is to a change in export price — related to uniqueness and substitutability of exports.' }
+      lede: 'Depreciation makes exports cheaper and imports dearer — but the current account does not improve immediately. The J-curve traces the path; Marshall-Lerner says when it actually completes.',
+      diagramKey: 'jCurveInteractive',
+      steps: [
+        {
+          key: 'base',
+          label: 'Starting point',
+          text: 'Before depreciation the currency is stable and the current account sits at its <strong>pre-depreciation level</strong>. Then £ depreciates: exports become cheaper in foreign currency, imports dearer in £. The intuition says CA should improve — but contracts and prices are locked in short-run, so <strong>volumes cannot adjust immediately</strong>.'
+        },
+        {
+          key: 'extension',
+          label: 'The J-curve unfolds',
+          text: 'Four phases: <strong>A → B</strong> short-run worsening (import bills up in £, export volumes unchanged); <strong>B</strong> trough at ~6 months (maximum deterioration); <strong>B → C</strong> volumes respond as new contracts are written and demand for cheaper exports picks up; <strong>C → D</strong> long-run improvement — CA rises above the pre-depreciation level. Typical duration: 12–18 months.'
+        },
+        {
+          key: 'shift',
+          label: 'Marshall-Lerner condition',
+          text: 'The J-curve only completes if <strong>|PED_X| + |PED_M| &gt; 1</strong> — the volume response is large enough to outweigh the price effect. If exports and imports are inelastic (e.g. unique goods, services-heavy trade), depreciation can leave the CA <strong>permanently worse</strong> (dashed purple path). The UK\'s services-heavy exports are relatively inelastic — limits the J in practice.'
+        }
       ],
-      examEdge: 'If a country exports unique goods (aircraft, luxury brands, pharmaceuticals), PEDx is low — depreciation boosts revenues but volume rises little. If exports are commodity-like, PEDx is high and volume response is large. The UK\'s services exports are relatively inelastic — depreciation helps less than it would for a goods-heavy economy.'
+      examEdge: 'If a country exports unique goods (aircraft, luxury brands, pharmaceuticals), PED_X is low — depreciation boosts revenues but volume rises little. If exports are commodity-like, PED_X is high and volume response is large. Always state the M-L condition explicitly and link it to the country\'s export composition.'
     },
     {
       id: 'exchange_rates_5',

@@ -3405,6 +3405,22 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .pc-svg .layer-floor { opacity: 1; }
 .show-shift .pc-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== J-CURVE INTERACTIVE ===== */
+.jcurve-svg .layer-axes,
+.jcurve-svg .layer-baseline,
+.jcurve-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.jcurve-svg .layer-jcurve,
+.jcurve-svg .layer-legend-extension,
+.jcurve-svg .layer-failed,
+.jcurve-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .jcurve-svg .layer-legend-base { opacity: 0; }
+.show-extension .jcurve-svg .layer-jcurve { opacity: 1; }
+.show-extension .jcurve-svg .layer-legend-extension { opacity: 1; }
+.show-shift .jcurve-svg .layer-legend-base { opacity: 0; }
+.show-shift .jcurve-svg .layer-jcurve { opacity: 1; }
+.show-shift .jcurve-svg .layer-failed { opacity: 1; }
+.show-shift .jcurve-svg .layer-legend-shift { opacity: 1; }
+
 /* --- 2. Horizontal tab strip --- */
 .ad-interactive__tabs {
   display: grid;

@@ -2249,6 +2249,148 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  jCurveInteractive: `
+    <svg class="jcurve-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="jc-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <!-- X-axis at y=230 (the zero / baseline) -->
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">CA</text>
+        <text x="40" y="62" font-size="10" fill="#64748B" text-anchor="end">balance</text>
+        <text x="572" y="406" font-size="11" font-weight="700" fill="#334155">Time (months)</text>
+        <text x="48" y="416" font-size="11" fill="#64748B">0</text>
+        <!-- Month ticks -->
+        <line x1="160" y1="400" x2="160" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="160" y="416" font-size="10" fill="#64748B" text-anchor="middle">6</text>
+        <line x1="260" y1="400" x2="260" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="260" y="416" font-size="10" fill="#64748B" text-anchor="middle">12</text>
+        <line x1="360" y1="400" x2="360" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="360" y="416" font-size="10" fill="#64748B" text-anchor="middle">18</text>
+        <line x1="460" y1="400" x2="460" y2="404" stroke="#334155" stroke-width="1.5"/>
+        <text x="460" y="416" font-size="10" fill="#64748B" text-anchor="middle">24</text>
+      </g>
+
+      <!-- ===== LAYER: zero (baseline) line — always visible ===== -->
+      <g class="layer-baseline">
+        <line x1="60" y1="230" x2="560" y2="230" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="564" y="234" font-size="11" font-weight="700" fill="#64748B">Pre-dep. CA balance</text>
+        <!-- Depreciation event marker at x=60 -->
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#7C3AED" stroke-width="2"/>
+        <text x="68" y="68" font-size="11" font-weight="700" fill="#7C3AED">Depreciation hits</text>
+        <text x="68" y="82" font-size="10" fill="#7C3AED" opacity="0.8">t = 0</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Before depreciation: stable currency, balanced CA</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">STARTING POINT</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Currency is stable and the</text>
+        <text x="620" y="118" font-size="13" fill="#334155">current account sits at its</text>
+        <text x="620" y="136" font-size="13" fill="#334155">pre-depreciation level.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Then £ depreciates…</text>
+        <text x="620" y="190" font-size="13" fill="#334155">— exports cheaper abroad</text>
+        <text x="620" y="208" font-size="13" fill="#334155">— imports dearer at home</text>
+        <text x="620" y="240" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WILL THE CA IMPROVE?</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Not immediately. Contracts and</text>
+        <text x="620" y="280" font-size="13" fill="#334155">prices are locked in short-run.</text>
+        <text x="620" y="298" font-size="13" fill="#334155">Volumes take time to adjust.</text>
+        <text x="620" y="332" font-size="11" font-style="italic" fill="#64748B">The next state traces the</text>
+        <text x="620" y="348" font-size="11" font-style="italic" fill="#64748B">resulting J-shaped path.</text>
+      </g>
+
+      <!-- ===== LAYER: J-curve path (extension + shift) ===== -->
+      <g class="layer-jcurve">
+        <g clip-path="url(#jc-chart-clip)">
+          <path d="M 60,230 C 100,260 140,320 160,330 C 200,335 240,290 260,230 C 320,180 400,160 540,140"
+                fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- Phase markers -->
+        <circle cx="60" cy="230" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+        <circle cx="160" cy="330" r="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
+        <circle cx="260" cy="230" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+        <circle cx="540" cy="140" r="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
+        <!-- Phase labels -->
+        <text x="60" y="218" font-size="11" font-weight="700" fill="#DC2626">A: t=0</text>
+        <text x="160" y="350" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">B: trough</text>
+        <text x="270" y="220" font-size="11" font-weight="700" fill="#DC2626">C: back to baseline</text>
+        <text x="540" y="128" font-size="11" font-weight="700" fill="#DC2626" text-anchor="end">D: net improvement</text>
+        <!-- Curve label -->
+        <text x="380" y="210" font-size="13" font-weight="700" fill="#DC2626" font-style="italic">J-curve</text>
+      </g>
+
+      <!-- ===== LAYER: legend extension ===== -->
+      <g class="layer-legend-extension">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">J-curve: CA dips first (~6 months), then recovers and improves</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">FOUR PHASES</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#1E293B">A → B: short-run worsening</text>
+        <text x="620" y="118" font-size="12" fill="#475569">Import bills rise immediately</text>
+        <text x="620" y="134" font-size="12" fill="#475569">in £; export volumes locked.</text>
+        <text x="620" y="162" font-size="13" font-weight="700" fill="#1E293B">B: the trough (~6 months)</text>
+        <text x="620" y="180" font-size="12" fill="#475569">Maximum deterioration.</text>
+        <text x="620" y="208" font-size="13" font-weight="700" fill="#1E293B">B → C: volumes respond</text>
+        <text x="620" y="226" font-size="12" fill="#475569">New contracts written;</text>
+        <text x="620" y="242" font-size="12" fill="#475569">export demand picks up.</text>
+        <text x="620" y="270" font-size="13" font-weight="700" fill="#1E293B">C → D: long-run improvement</text>
+        <text x="620" y="288" font-size="12" fill="#475569">CA rises above pre-dep. level.</text>
+        <text x="620" y="324" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">DURATION</text>
+        <text x="620" y="346" font-size="13" fill="#334155">Typically 12–18 months in</text>
+        <text x="620" y="364" font-size="13" fill="#334155">developed economies.</text>
+      </g>
+
+      <!-- ===== LAYER: failed M-L curve (shift state) ===== -->
+      <g class="layer-failed">
+        <!-- Alternative path: dips but doesn't recover (M-L fails) -->
+        <g clip-path="url(#jc-chart-clip)">
+          <path d="M 60,230 C 100,260 140,320 160,330 C 240,355 360,360 540,350"
+                fill="none" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 5"/>
+        </g>
+        <text x="445" y="343" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">M-L fails: no recovery</text>
+        <!-- M-L condition box -->
+        <rect x="80" y="65" width="260" height="58" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
+        <text x="210" y="86" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="middle" letter-spacing="1">MARSHALL-LERNER CONDITION</text>
+        <text x="210" y="110" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>
+      </g>
+
+      <!-- ===== LAYER: legend shift ===== -->
+      <g class="layer-legend-shift">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Marshall-Lerner: J only completes if elasticities are high enough</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE CONDITION</text>
+        <text x="620" y="100" font-size="14" font-weight="700" fill="#334155">|PED_X| + |PED_M| &gt; 1</text>
+        <text x="620" y="122" font-size="12" fill="#475569">Sum of price elasticities of</text>
+        <text x="620" y="138" font-size="12" fill="#475569">demand for X and M.</text>
+        <text x="620" y="172" font-size="13" font-weight="700" fill="#DC2626">If condition HOLDS</text>
+        <text x="620" y="190" font-size="12" fill="#475569">Volume response large enough</text>
+        <text x="620" y="206" font-size="12" fill="#475569">to outweigh price effect → CA</text>
+        <text x="620" y="222" font-size="12" fill="#475569">improves (red J-curve).</text>
+        <text x="620" y="250" font-size="13" font-weight="700" fill="#7C3AED">If condition FAILS</text>
+        <text x="620" y="268" font-size="12" fill="#475569">Inelastic X and M → volume</text>
+        <text x="620" y="284" font-size="12" fill="#475569">response too weak; CA stays</text>
+        <text x="620" y="300" font-size="12" fill="#475569">worse (dashed purple path).</text>
+        <text x="620" y="334" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">UK CONTEXT</text>
+        <text x="620" y="356" font-size="12" fill="#334155">Services-heavy exports are</text>
+        <text x="620" y="372" font-size="12" fill="#334155">relatively inelastic — limits J.</text>
+      </g>
+    </svg>
+  `,
+
   /* === Kuznets curve — static diagram for sol_wellbeing/kuznets card === */
   kuznetsCurve: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

@@ -8290,4 +8290,298 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  revMaxDiagram: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Loss-domain background (not applicable here; plain background) -->
+
+      <!-- Axes -->
+      <!-- Y axis -->
+      <line x1="70" y1="30" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="66,34 74,34 70,26" fill="#334155"/>
+      <!-- X axis -->
+      <line x1="70" y1="390" x2="660" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="656,386 656,394 664,390" fill="#334155"/>
+      <!-- Axis labels -->
+      <text x="662" y="394" font-size="12" fill="#334155">Q</text>
+      <text x="48" y="34" font-size="12" fill="#334155" text-anchor="end">P/Cost</text>
+
+      <!--
+        Coordinate system: x from 70 (Q=0) to 640 (Q=570 units)
+        y from 390 (price=0) to 30 (price=360)
+        price scale: 1 unit price = 1 px
+
+        AR (demand): P = 360 - (360/570)*(Q) where Q = x - 70
+          → P at x=70: 360 → y = 390 - 360 = 30
+          → x-intercept: P=0 → Q=570 → x=640, y=390
+        MR: same y-intercept, twice the slope
+          P_MR = 360 - 2*(360/570)*(Q)
+          → x-intercept: Q=285 → x=355, y=390
+
+        MC (U-shaped): minimum near Q=200 (x=270)
+          MC = 0.002*(Q-200)^2 + 40, scaled to pixel coords
+          at Q=0(x=70): MC = 80 → y = 390-80=310
+          at Q=200(x=270): MC = 40 → y = 390-40=350
+          at Q=400(x=470): MC = 120 → y = 390-120=270
+          at Q=500(x=570): MC = 200 → y = 390-200=190
+
+        AC (U-shaped, min to right of MC min, Q=280, x=350):
+          AC = 0.0015*(Q-280)^2 + 60
+          at Q=0(x=70): AC = 177.6 → y=390-177.6=212
+          at Q=280(x=350): AC=60 → y=330
+          at Q=450(x=520): AC = 92.35 → y=298
+          at Q=570(x=640): AC = 177.6 → y=212
+
+        Key points:
+        Q_π: MR=MC → 0.632*(x-70) + 360 - 390 = 0.002*((x-70)/570*...
+        Let me use numeric Q:
+          MR: P = 360 - (720/570)*Q = 360 - 1.263*Q
+          MC: P = 0.002*(Q-200)^2 + 40
+          At Q=100: MR=234, MC=0.002*10000+40=60 → MR>MC
+          At Q=200: MR=107.4, MC=40 → MR>MC
+          At Q=250: MR=44.7, MC=0.002*2500+40=45 → ≈equal → Q_π ≈ 250
+          Q_π=250 → x=70+250=320, AR at Q=250: P=360-1.263*250/2=360-157.9=202 (using AR slope 360/570=0.632)
+          AR: P=360-0.632*Q. At Q=250: P=360-158=202 → y_AR=390-202=188
+          MC: 0.002*(250-200)^2+40=0.002*2500+40=45 → y_MC=390-45=345
+          AC at Q=250: 0.0015*(250-280)^2+60=0.0015*900+60=1.35+60=61.35 → y_AC=390-61.35=329
+
+        Q_r: MR=0 → 360-1.263*Q=0 → Q=285 → x=355, y_AR=390-(360-0.632*285)=390-180=210 → P_r=180
+
+        Q_n: AR=AC → 360-0.632*Q = 0.0015*(Q-280)^2+60
+          Trial Q=400: AR=360-252.8=107.2, AC=0.0015*14400+60=21.6+60=81.6 → AR>AC
+          Trial Q=470: AR=360-297=63, AC=0.0015*(190)^2+60=0.0015*36100+60=54.15+60=114.15 → AR<AC
+          Trial Q=445: AR=360-281.2=78.8, AC=0.0015*(165)^2+60=0.0015*27225+60=40.84+60=100.84 → AR<AC
+          Trial Q=420: AR=360-265.4=94.6, AC=0.0015*(140)^2+60=0.0015*19600+60=29.4+60=89.4 → AR>AC
+          Trial Q=430: AR=360-271.8=88.2, AC=0.0015*(150)^2+60=0.0015*22500+60=33.75+60=93.75 → AR<AC
+          Trial Q=425: AR=360-268.6=91.4, AC=0.0015*(145)^2+60=0.0015*21025+60=31.54+60=91.54 → ≈ equal → Q_n≈425
+          x_n=70+425=495, y_AR_n=390-91.4=299 (≈ y_AC_n=390-91.54=298)
+
+        Amber profit box at Q_π=250:
+          P_π = 202 (y=188), AC at Q_π = 61.35 (y=329)
+          x=70 to x=320, y from 188 to 329 → rect width=250, height=141
+      -->
+
+      <!-- Amber supernormal profit shading (Q_π area) -->
+      <rect x="70" y="188" width="250" height="141" fill="#FEF3C7" opacity="0.7"/>
+
+      <!-- AC curve (U-shaped, blue #0EA5E9) via cubic bezier -->
+      <!-- passes through approx: (70,212), (350,330), (520,298), (640,212) -->
+      <path d="M70,212 C170,340 280,336 350,330 C440,322 510,295 640,212"
+            stroke="#0EA5E9" stroke-width="2" fill="none"/>
+      <text x="645" y="210" font-size="11" font-weight="700" fill="#0EA5E9">AC</text>
+
+      <!-- MC curve (U-shaped, red #DC2626) via cubic bezier -->
+      <!-- passes through approx: (70,310), (270,350), (470,270), (570,190) -->
+      <path d="M70,310 C170,360 230,355 270,350 C350,342 430,280 570,190"
+            stroke="#DC2626" stroke-width="2" fill="none"/>
+      <text x="575" y="188" font-size="11" font-weight="700" fill="#DC2626">MC</text>
+
+      <!-- AR (Demand) line: (70,30) to (640,390) -->
+      <line x1="70" y1="30" x2="640" y2="390" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="393" font-size="11" font-weight="700" fill="#2563EB">AR (Demand)</text>
+
+      <!-- MR line: same y-intercept (70,30), x-intercept at Q=285 → (355,390) -->
+      <line x1="70" y1="30" x2="355" y2="390" stroke="#64748B" stroke-width="2.5"/>
+      <text x="360" y="393" font-size="11" font-weight="700" fill="#64748B">MR</text>
+
+      <!-- Q_π dashed lines (x=320) -->
+      <line x1="320" y1="188" x2="320" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="70" y1="188" x2="320" y2="188" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="320" y="407" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_π</text>
+      <text x="58" y="192" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_π</text>
+
+      <!-- Q_r dashed lines (x=355) -->
+      <line x1="355" y1="210" x2="355" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="70" y1="210" x2="355" y2="210" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="355" y="407" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_r</text>
+      <text x="58" y="214" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_r</text>
+
+      <!-- Q_n dashed line (x=495) -->
+      <line x1="495" y1="299" x2="495" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="495" y="407" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">Q_n (break-even/sales-max)</text>
+
+      <!-- Profit shading label -->
+      <text x="195" y="255" font-size="10" font-weight="600" fill="#92400E" text-anchor="middle">Supernormal</text>
+      <text x="195" y="268" font-size="10" font-weight="600" fill="#92400E" text-anchor="middle">profit at Q_π</text>
+
+      <!-- X-axis order arrows: Q_π < Q_r < Q_n -->
+      <line x1="320" y1="420" x2="355" y2="420" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="355" y1="420" x2="495" y2="420" stroke="#334155" stroke-width="1.5"/>
+
+      <!-- Annotation box -->
+      <rect x="60" y="425" width="620" height="30" fill="#DBEAFE" rx="6" stroke="#2563EB" stroke-width="1"/>
+      <text x="350" y="437" font-size="9" font-weight="600" fill="#1E40AF" text-anchor="middle">Revenue-max: MR=0 → higher output, lower price, less profit than profit-max.</text>
+      <text x="350" y="450" font-size="9" font-weight="600" fill="#1E40AF" text-anchor="middle">Sales-max: AR=AC → highest output with normal profit (MR constraint from shareholders)</text>
+    </svg>
+  `,
+
+  prospectTheoryDiagram: `
+    <svg viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Split background: losses (left) rose tint, gains (right) green tint -->
+      <!-- Origin at x=200, y=240 -->
+      <rect x="30" y="30" width="170" height="420" fill="#FFF5F5" rx="4" opacity="0.7"/>
+      <rect x="200" y="30" width="450" height="420" fill="#F0FDF4" rx="4" opacity="0.7"/>
+
+      <!-- Axes -->
+      <!-- X axis -->
+      <line x1="30" y1="240" x2="650" y2="240" stroke="#334155" stroke-width="2"/>
+      <polygon points="646,236 646,244 654,240" fill="#334155"/>
+      <!-- Y axis -->
+      <line x1="200" y1="440" x2="200" y2="30" stroke="#334155" stroke-width="2"/>
+      <polygon points="196,34 204,34 200,26" fill="#334155"/>
+
+      <!-- Axis labels -->
+      <text x="652" y="256" font-size="11" fill="#334155">Outcomes</text>
+      <text x="202" y="24" font-size="11" fill="#334155">Subjective value</text>
+      <text x="100" y="258" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">Losses</text>
+      <text x="430" y="258" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">Gains</text>
+
+      <!--
+        S-curve:
+        Origin at (200, 240).
+        GAINS side (right): concave-down, starts steep then flattens.
+          From (200,240) curves up to ~(620,100) — rises 140px over 420px x
+          Control points for cubic bezier: start steep then level off
+          M200,240 C260,120 340,90 620,100
+
+        LOSSES side (left): concave-up (steep drop, then flattens going left).
+          From (200,240) drops steeply then flattens toward (30,350)
+          The curve is steeper than gains side to show loss aversion
+          M200,240 C150,320 80,360 30,370
+
+        Combined as one path:
+        Start at losses end (30,370), curve to origin (200,240), then to gains end (620,100)
+      -->
+      <path d="M30,370 C80,360 150,320 200,240 C260,120 340,90 620,100"
+            stroke="#1E3A5F" stroke-width="3" fill="none"/>
+
+      <!-- Reference point dot -->
+      <circle cx="200" cy="240" r="5" fill="#1E3A5F"/>
+      <text x="210" y="235" font-size="10" font-weight="600" fill="#334155">Reference point (current state)</text>
+
+      <!--
+        ±£100 asymmetry illustration:
+        Gains: £100 gain → x=200+120=320, read off curve:
+          On gains curve at x=320: approx y=175 → value = 240-175=65 px up
+        Losses: £100 loss → x=200-120=80, read off curve:
+          On losses curve at x=80: approx y=348 → value = 348-240=108 px down
+        So loss > gain in magnitude as intended.
+      -->
+
+      <!-- £100 gain: dashed horizontal at y≈175 from x=200 to x=320 -->
+      <line x1="200" y1="175" x2="320" y2="175" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="320" y1="240" x2="320" y2="175" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <circle cx="320" cy="175" r="3" fill="#059669"/>
+      <text x="325" y="260" font-size="9" fill="#334155" text-anchor="middle">+£100</text>
+
+      <!-- £100 loss: dashed horizontal at y≈348 from x=80 to x=200 -->
+      <line x1="80" y1="348" x2="200" y2="348" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="80" y1="240" x2="80" y2="348" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <circle cx="80" cy="348" r="3" fill="#DC2626"/>
+      <text x="80" y="260" font-size="9" fill="#334155" text-anchor="middle">−£100</text>
+
+      <!-- Double-headed arrows on y-axis showing asymmetry -->
+      <!-- Gain arrow: y=240 to y=175 at x=195 -->
+      <line x1="192" y1="240" x2="192" y2="178" stroke="#059669" stroke-width="1.5"/>
+      <polygon points="188,180 196,180 192,173" fill="#059669"/>
+      <polygon points="188,238 196,238 192,245" fill="#059669"/>
+      <!-- Loss arrow: y=240 to y=348 at x=192 -->
+      <line x1="185" y1="243" x2="185" y2="345" stroke="#DC2626" stroke-width="1.5"/>
+      <polygon points="181,345 189,345 185,352" fill="#DC2626"/>
+      <polygon points="181,245 189,245 185,238" fill="#DC2626"/>
+
+      <!-- Asymmetry label -->
+      <text x="430" y="360" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">Loss of £100 hurts ≈ 2× more</text>
+      <text x="430" y="373" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">than gain of £100 helps</text>
+
+      <!-- Annotation box top-right -->
+      <rect x="420" y="40" width="220" height="50" fill="#DBEAFE" rx="6" stroke="#2563EB" stroke-width="1"/>
+      <text x="530" y="57" font-size="10" font-weight="700" fill="#1E40AF" text-anchor="middle">Loss aversion: β ≈ 2</text>
+      <text x="530" y="72" font-size="9" fill="#1E40AF" text-anchor="middle">Diminishing sensitivity</text>
+      <text x="530" y="84" font-size="9" fill="#1E40AF" text-anchor="middle">in both domains</text>
+    </svg>
+  `,
+
+  nudgeDefaultDiagram: `
+    <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="320" y="28" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">UK Pension Participation: The Power of the Default</text>
+      <text x="320" y="44" font-size="10" fill="#64748B" text-anchor="middle">Same wages. Same pension terms. Only the default changed.</text>
+
+      <!--
+        Chart area: x from 80 to 580, y from 60 (100%) to 360 (0%)
+        y scale: 300px = 100% → 1% = 3px
+        y(v%) = 360 - v*3
+
+        55% bar: y_top = 360-55*3=360-165=195, height=165
+        87% bar: y_top = 360-87*3=360-261=99, height=261
+
+        Left bar x: 120 to 240 (width=120), centre=180
+        Right bar x: 340 to 460 (width=120), centre=400
+      -->
+
+      <!-- Y-axis gridlines -->
+      <line x1="80" y1="360" x2="580" y2="360" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="80" y1="300" x2="580" y2="300" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="80" y1="240" x2="580" y2="240" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="80" y1="180" x2="580" y2="180" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="80" y1="120" x2="580" y2="120" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="80" y1="60" x2="580" y2="60" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 3"/>
+
+      <!-- Y axis -->
+      <line x1="80" y1="60" x2="80" y2="365" stroke="#334155" stroke-width="2"/>
+      <polygon points="76,64 84,64 80,56" fill="#334155"/>
+      <!-- Y axis labels -->
+      <text x="74" y="364" font-size="10" fill="#334155" text-anchor="end">0%</text>
+      <text x="74" y="304" font-size="10" fill="#334155" text-anchor="end">20%</text>
+      <text x="74" y="244" font-size="10" fill="#334155" text-anchor="end">40%</text>
+      <text x="74" y="184" font-size="10" fill="#334155" text-anchor="end">60%</text>
+      <text x="74" y="124" font-size="10" fill="#334155" text-anchor="end">80%</text>
+      <text x="74" y="64" font-size="10" fill="#334155" text-anchor="end">100%</text>
+      <text x="30" y="220" font-size="10" fill="#334155" text-anchor="middle" transform="rotate(-90,30,220)">% Enrolled</text>
+
+      <!-- X axis -->
+      <line x1="80" y1="360" x2="580" y2="360" stroke="#334155" stroke-width="2"/>
+
+      <!-- Left bar: Opt-IN, 55%, fill rose -->
+      <rect x="120" y="195" width="120" height="165" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+      <!-- Bar value label -->
+      <text x="180" y="189" font-size="13" font-weight="700" fill="#DC2626" text-anchor="middle">55%</text>
+      <!-- X label -->
+      <text x="180" y="376" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Opt-IN</text>
+      <text x="180" y="389" font-size="9" fill="#64748B" text-anchor="middle">(manual enrolment)</text>
+
+      <!-- Right bar: Opt-OUT, 87%, fill green -->
+      <rect x="340" y="99" width="120" height="261" fill="#DCFCE7" stroke="#059669" stroke-width="1.5"/>
+      <!-- Bar value label -->
+      <text x="400" y="93" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">87%</text>
+      <!-- X label -->
+      <text x="400" y="376" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Opt-OUT</text>
+      <text x="400" y="389" font-size="9" fill="#64748B" text-anchor="middle">(auto-enrolment)</text>
+
+      <!-- Dashed amber line at 55% (y=195) -->
+      <line x1="80" y1="195" x2="580" y2="195" stroke="#D97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="584" y="199" font-size="9" font-weight="600" fill="#D97706">Previous participation rate</text>
+
+      <!-- Double-headed arrow between bar tops: (240,195) to (340,99) with +32pp label -->
+      <!-- Vertical arrow at x=300 from y=195 to y=99 -->
+      <line x1="300" y1="195" x2="300" y2="102" stroke="#334155" stroke-width="1.5"/>
+      <polygon points="296,105 304,105 300,98" fill="#334155"/>
+      <polygon points="296,192 304,192 300,199" fill="#334155"/>
+      <text x="315" y="152" font-size="10" font-weight="700" fill="#334155">+32 pp</text>
+
+      <!-- Bottom annotation box -->
+      <rect x="60" y="395" width="520" height="22" fill="#FEF3C7" rx="5" stroke="#D97706" stroke-width="1"/>
+      <text x="320" y="410" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">This is a nudge — no regulation, no tax incentive. Just changing the default option raised saving by 32 percentage points.</text>
+    </svg>
+  `,
+
 };

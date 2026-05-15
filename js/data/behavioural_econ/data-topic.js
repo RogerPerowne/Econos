@@ -60,6 +60,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'behavioural_econ_3',
       template: 'framing',
+      diagramKey: 'prospectTheoryDiagram',
       title: 'Prospect Theory',
       body: 'Kahneman and Tversky\'s <strong>prospect theory</strong> (1979, Nobel Prize 2002) describes how people actually make decisions under uncertainty — distinct from expected utility theory:<br><br>1. <strong>Reference dependence:</strong> outcomes are evaluated relative to a reference point (current state), not absolute levels.<br>2. <strong>Loss aversion:</strong> losses from the reference point weigh ~2x more than equivalent gains.<br>3. <strong>Diminishing sensitivity:</strong> the first \xa3100 lost hurts more than the next \xa3100 lost — declining marginal impact of further losses or gains.<br>4. <strong>Probability weighting:</strong> people overweight small probabilities (buy lottery tickets, fear plane crashes) and underweight large probabilities.',
       keyTerms: [
@@ -72,6 +73,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'behavioural_econ_4',
       template: 'framing',
+      diagramKey: 'nudgeDefaultDiagram',
       title: 'Nudge Theory',
       body: '<strong>Nudge theory</strong> (Thaler and Sunstein, 2008): small changes to the "choice architecture" — the way options are presented — can significantly alter behaviour without restricting choice or using financial incentives.<br><br>Key nudge techniques:<br>• <strong>Default options:</strong> make the desired behaviour the default (opt-out rather than opt-in). UK pension auto-enrolment: default is enrolled → participation rate rose from 55% to 87%.<br>• <strong>Social norms:</strong> inform people what others do. HMRC: "86% of people in your area have paid on time" → increased compliance.<br>• <strong>Simplification:</strong> reduce cognitive burden → fewer decisions to avoid procrastination.<br>• <strong>Framing:</strong> present information to activate desired response (loss frame vs gain frame).',
       keyTerms: [

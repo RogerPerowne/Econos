@@ -182,17 +182,19 @@
         </div>`;
     }
 
-    // Causes: [{head, body}] — big coloured tiles
+    // Causes: [{head, body}] — big coloured tiles in a 2-col grid
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       content += genSecLabel('🔗', 'Key mechanisms');
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:18px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         return `
-        <div style="margin-bottom:14px;border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}40;">
+        <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}40;">
           <div style="padding:12px 18px;background:${t.headerBg};color:#fff;font-weight:800;font-size:15px;">${item.head}</div>
           <div style="padding:14px 18px;font-size:14px;color:#2A3650;line-height:1.7;">${item.body}</div>
         </div>`;
       }).join('');
+      content += `</div>`;
     }
 
     // Steps: [{label, text}] — numbered with cycling tones

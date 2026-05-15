@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Negative Externalities',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the externality framework — MSC vs MPC, deadweight welfare loss, and how to draw and evaluate the negative externality diagram.',
   intro: {
     heroKey: 'heroExternalities',
     summary: 'Negative externalities arise when production or consumption imposes costs on third parties not reflected in market prices. The result: the market overproduces relative to the socially optimal level, creating a welfare loss.',
-    doInThis: 'Work through 7 cards covering the definition and types of negative externalities, the MSC/MPC diagram, welfare loss triangle, real-world examples, production vs consumption externalities, and policy responses.',
+    doInThis: 'Work through 8 cards covering the definition and types of negative externalities, the MSC/MPC diagram, welfare loss triangle, real-world examples, production vs consumption externalities, policy responses, and a 25-mark essay scaffold on correcting negative externalities.',
     outcomes: [
       'Define negative externality and distinguish production from consumption externalities',
       'Draw and interpret the negative production externality diagram with MSC above MPC',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Negative externality → MSC > MPC → market overproduces. Deadweight welfare loss = triangle between market output and socially optimal output. Government corrects via Pigouvian tax to shift MPC up to MSC.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'neg_externalities_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Negative externalities: the big picture',
       lede: 'When private costs ignore third-party harm, markets overproduce — and society pays the bill.',
       branches: [
@@ -48,7 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'neg_externalities_2',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'The Negative Production Externality Diagram',
       lede: 'The most important diagram in market failure. Build it in four moves — every label matters.',
       diagramKey: 'negExternalityInteractive',
@@ -151,6 +151,51 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'Economists generally prefer taxes (price-based instruments) for efficiency; environmentalists may prefer regulations for certainty. A hybrid is often optimal: regulations set a minimum standard; taxes create incentives beyond compliance. Acknowledge this in essays for a balanced evaluation.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+    {
+      id: 'neg-ext-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      question: 'Evaluate the view that a Pigouvian (pollution) tax is the most effective way to correct the market failure caused by negative externalities. [25 marks]',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define negative externality and state why the market fails. Briefly outline the Pigouvian tax mechanism and signal that you will evaluate it against alternatives.',
+          hint: 'State that MSC > MPC, the market overproduces at Qm > Q*, and a Pigouvian tax of MEC at Q* can in theory internalise the external cost.',
+          model: 'A negative externality arises when a third party bears costs not reflected in the market price, so that MSC > MPC. The free market overproduces at Qm (where MPC = MSB) rather than the socially optimal Q* (where MSC = MSB), generating a deadweight welfare loss. A Pigouvian tax set equal to the MEC at Q* shifts MPC upward to equal MSC, inducing the market to produce Q* without direct government control of output. Whether this is the most effective correction depends on the accuracy of information available, the elasticity of demand, distributional consequences, and the feasibility of alternative interventions.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis — the case FOR Pigouvian taxes',
+          prompt: 'Explain the diagram mechanism (MSC, MPC, DWL, optimal tax). Argue the efficiency and revenue advantages versus regulation.',
+          hint: 'Tax = MEC at Q*. Eliminates DWL triangle. Raises revenue for green investment. Dynamic incentive to keep innovating beyond compliance. Firms choose cheapest abatement method (cost-effective).',
+          model: 'The key theoretical advantage of a Pigouvian tax is its price-mechanism efficiency. By setting the tax equal to the MEC at the socially optimal output level, the government internalises the external cost without specifying which firm must cut output. Each firm faces the same marginal cost of pollution, so total abatement occurs at minimum aggregate cost — firms with low abatement costs reduce output more, those with high abatement costs pay the tax. This contrasts with uniform regulation, which imposes identical standards regardless of a firm\'s abatement cost, producing the same environmental outcome at higher total cost. A further advantage is dynamic efficiency: faced with a tax that falls on every unit of pollution, firms have a permanent incentive to invest in cleaner technology beyond the regulatory compliance threshold. Tax revenue (approximately MEC × Q*) can be recycled as a "double dividend" — reducing other distortionary taxes or funding environmental investment.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter-argument — limitations of Pigouvian taxes',
+          prompt: 'Identify the core practical problems: measuring MEC is very difficult, taxes can be regressive, and inelastic demand limits effectiveness.',
+          hint: 'Information problem: MEC disputed, varies by context. Regressive impact: fuel duty hits low-income households hardest. If PED is inelastic, output may not fall to Q* even with a large tax.',
+          model: 'The central practical limitation is information failure. Setting the optimal tax requires an accurate estimate of the MEC — yet the MEC is inherently difficult to measure, as it requires valuing environmental damage across all affected parties, across time, and under uncertainty. Economists disagree substantially: the social cost of carbon, for instance, is estimated at anywhere between $15 and $300 per tonne CO₂, depending on discount rate assumptions and climate damage models (Stern vs Nordhaus). An incorrectly estimated MEC produces government failure: if the tax is set too low, the market still overproduces; if too high, output falls below Q*, generating a new DWL in the opposite direction. A second limitation is distributional equity. Pigouvian taxes — particularly on energy, fuel, and tobacco — are regressive, taking a larger proportion of income from low-income households who spend a higher share on these necessities. This raises political economy problems: the 2018 French "gilets jaunes" protests erupted partly in response to fuel duty increases. Politically unacceptable taxes may be undermined by exemptions, defeating their corrective purpose.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — comparing alternative policies',
+          prompt: 'Assess cap-and-trade (ETS) and regulation as alternatives. Evaluate contextual factors: scale of externality, number of polluters, monitoring capacity.',
+          hint: 'ETS: achieves environmental target with certainty at least cost, but permit prices volatile. Regulation: certain outcome but no dynamic efficiency and "one-size-fits-all" problem. Context: for global externalities (carbon), Coase impossible — international coordination needed.',
+          model: 'Cap-and-trade schemes such as the EU ETS combine the cost-efficiency of taxes with the outcome certainty of regulation. By fixing a total quantity of permits (achieving an environmental target) and allowing trading (ensuring cost efficiency), ETS avoids the measurement problem of setting the exact MEC — the carbon price is determined by the market for permits. However, permit price volatility creates investment uncertainty for firms planning long-run capital expenditure, and if permits are issued for free (grandfathering), the revenue-recycling benefit is lost. Regulatory standards (command-and-control), while informationally undemanding, are allocatively inefficient: a uniform emissions limit ignores that some firms can abate very cheaply while others cannot, so total abatement cost is higher than necessary. For large-scale, global externalities such as climate change, neither unilateral taxes nor domestic regulation can fully internalise the cost — free-rider problems between nations mean that the optimal solution requires international cooperation (Paris Agreement, CBAM), which is inherently harder to achieve than domestic price instruments.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Make a conditional judgement: under what conditions is a Pigouvian tax the best instrument? What is the overall verdict?',
+          hint: 'Pigouvian taxes are theoretically optimal but practically limited. Effective when: MEC is measurable, demand is elastic, distributional effects are compensated. Hybrid with regulation may be superior in practice.',
+          model: 'The Pigouvian tax is theoretically the most efficient corrective instrument, since it achieves Q* at minimum total abatement cost while generating revenue and maintaining dynamic efficiency incentives. Its practical superiority, however, is conditional. Where the MEC can be estimated with reasonable confidence, demand is elastic, and distributional effects can be offset through revenue recycling (e.g. compensating low-income households), the tax is likely the best available tool. Where the MEC is deeply contested (carbon), demand is inelastic (tobacco in the short run), or distributional impacts are severe, complementary instruments — regulations to guarantee minimum standards, ETS to cap total emissions, or direct provision to bypass the market — may be preferable or necessary alongside the tax. In practice, the most effective policy mix typically combines a Pigouvian price signal with regulatory backstops: neither instrument alone is sufficient. The claim that a pollution tax is always "the most effective" correction is thus too strong — but it remains the essential first instrument in the policymaker\'s toolkit.'
+        }
+      ]
     }
   ]
 };

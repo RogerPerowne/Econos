@@ -60,6 +60,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'trading_blocs_3',
       template: 'mechanisms',
+      diagramKey: 'tradingBlocDiagram',
       title: 'Trade Diversion',
       intro: 'Trade diversion occurs when the common external tariff causes imports to switch from the cheapest global source to a higher-cost bloc partner — potentially welfare-reducing.',
       steps: [

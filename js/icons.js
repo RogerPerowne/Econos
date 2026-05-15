@@ -8584,4 +8584,208 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  tariffDiagram: `
+    <svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Welfare shading (draw before curves) -->
+      <!-- Producer surplus gain (amber) -->
+      <rect x="198" y="270" width="100" height="60" fill="#FEF3C7" opacity="0.85"/>
+      <!-- Government revenue (blue) -->
+      <rect x="298" y="270" width="134" height="60" fill="#DBEAFE" opacity="0.8"/>
+      <!-- DWL production triangle (rose): (198,330)→(298,330)→(298,270) -->
+      <polygon points="198,330 298,330 298,270" fill="#FEE2E2" opacity="0.9"/>
+      <!-- DWL consumption triangle (rose): (432,330)→(432,270)→(531,330) -->
+      <polygon points="432,330 432,270 531,330" fill="#FEE2E2" opacity="0.9"/>
+
+      <!-- Dashed vertical lines -->
+      <line x1="198" y1="330" x2="198" y2="420" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="298" y1="270" x2="298" y2="420" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="432" y1="270" x2="432" y2="420" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="531" y1="330" x2="531" y2="420" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <!-- Horizontal price lines -->
+      <!-- World price Pw (y=330) dashed -->
+      <line x1="65" y1="330" x2="650" y2="330" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <!-- Tariff price Pw+t (y=270) solid red -->
+      <line x1="65" y1="270" x2="650" y2="270" stroke="#DC2626" stroke-width="1.5"/>
+
+      <!-- Axes -->
+      <line x1="65" y1="420" x2="650" y2="420" stroke="#334155" stroke-width="2"/>
+      <polygon points="646,416 646,424 654,420" fill="#334155"/>
+      <line x1="65" y1="420" x2="65" y2="40" stroke="#334155" stroke-width="2"/>
+      <polygon points="61,44 69,44 65,36" fill="#334155"/>
+
+      <!-- Domestic supply S (green, upward) -->
+      <line x1="90" y1="395" x2="640" y2="65" stroke="#059669" stroke-width="2"/>
+      <!-- Domestic demand D (blue, downward) -->
+      <line x1="90" y1="65" x2="640" y2="395" stroke="#2563EB" stroke-width="2"/>
+
+      <!-- Axis labels -->
+      <text x="50" y="35" font-size="12" fill="#334155" font-weight="600">P</text>
+      <text x="660" y="428" font-size="12" fill="#334155" font-weight="600">Q</text>
+      <text x="648" y="58" font-size="11" fill="#059669" font-weight="600">S</text>
+      <text x="648" y="398" font-size="11" fill="#2563EB" font-weight="600">D</text>
+
+      <!-- Price labels -->
+      <text x="48" y="334" font-size="11" fill="#64748B">Pw</text>
+      <text x="32" y="274" font-size="11" fill="#DC2626">Pw+t</text>
+
+      <!-- Quantity labels -->
+      <text x="190" y="432" font-size="10" fill="#334155" text-anchor="middle">Qs</text>
+      <text x="294" y="432" font-size="10" fill="#334155" text-anchor="middle">Qs'</text>
+      <text x="428" y="432" font-size="10" fill="#334155" text-anchor="middle">Qd'</text>
+      <text x="527" y="432" font-size="10" fill="#334155" text-anchor="middle">Qd</text>
+
+      <!-- Legend (top-right) -->
+      <rect x="490" y="50" width="10" height="10" fill="#FEF3C7" stroke="#D97706" stroke-width="0.5"/>
+      <text x="506" y="59" font-size="9" fill="#334155">Producer surplus gain</text>
+      <rect x="490" y="66" width="10" height="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="0.5"/>
+      <text x="506" y="75" font-size="9" fill="#334155">Government revenue</text>
+      <rect x="490" y="82" width="10" height="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="0.5"/>
+      <text x="506" y="91" font-size="9" fill="#334155">Deadweight welfare loss</text>
+
+      <!-- Bottom annotation box -->
+      <rect x="65" y="448" width="570" height="22" fill="#F1F5F9" rx="4"/>
+      <text x="350" y="463" font-size="9" fill="#475569" text-anchor="middle">Consumer surplus loss = PS gain + govt revenue + 2 DWL triangles | Two DWL triangles = net welfare loss from tariff</text>
+    </svg>
+  `,
+
+  govtFailureDiagram: `
+    <svg viewBox="0 0 620 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- DWL shading (draw before curves) -->
+      <!-- Original market failure DWL (rose): triangle (252,248),(330,218),(252,218) -->
+      <polygon points="252,248 330,218 252,218" fill="#FEE2E2" opacity="0.7"/>
+      <!-- Government failure DWL (purple): triangle (210,265),(252,248),(210,248) -->
+      <polygon points="210,265 252,248 210,248" fill="#EDE9FE" opacity="0.7"/>
+
+      <!-- Dashed vertical lines -->
+      <line x1="210" y1="265" x2="210" y2="380" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="252" y1="248" x2="252" y2="380" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="330" y1="218" x2="330" y2="380" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <!-- Axes -->
+      <line x1="65" y1="380" x2="590" y2="380" stroke="#334155" stroke-width="2"/>
+      <polygon points="586,376 586,384 594,380" fill="#334155"/>
+      <line x1="65" y1="380" x2="65" y2="35" stroke="#334155" stroke-width="2"/>
+      <polygon points="61,39 69,39 65,31" fill="#334155"/>
+
+      <!-- Overestimate tax line (purple dashed): MPC shifted up 95px → from (90,260) to (520,45) -->
+      <line x1="90" y1="260" x2="520" y2="45" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+      <!-- MSC = MPC + MEC (red dashed): from (90,300) to (540,45) -->
+      <line x1="90" y1="300" x2="540" y2="45" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
+
+      <!-- MPC (green, upward): from (90,355) to (570,80) -->
+      <line x1="90" y1="355" x2="570" y2="80" stroke="#059669" stroke-width="2"/>
+
+      <!-- MSB demand (blue, downward): from (90,75) to (570,360) -->
+      <line x1="90" y1="75" x2="570" y2="360" stroke="#2563EB" stroke-width="2"/>
+
+      <!-- Axis labels -->
+      <text x="50" y="30" font-size="12" fill="#334155" font-weight="600">P</text>
+      <text x="598" y="386" font-size="12" fill="#334155" font-weight="600">Q</text>
+
+      <!-- Curve labels -->
+      <text x="522" y="364" font-size="10" fill="#2563EB" font-weight="600">MSB (demand)</text>
+      <text x="572" y="74" font-size="10" fill="#059669" font-weight="600">MPC</text>
+      <text x="480" y="40" font-size="10" fill="#DC2626" font-weight="600">MSC = MPC + MEC</text>
+      <text x="400" y="52" font-size="10" fill="#7C3AED">Govt tax line (overestimate)</text>
+
+      <!-- Equilibrium dots -->
+      <circle cx="330" cy="218" r="4" fill="#334155"/>
+      <circle cx="252" cy="248" r="5" fill="#059669"/>
+      <circle cx="210" cy="265" r="4" fill="#7C3AED"/>
+
+      <!-- Quantity labels at bottom -->
+      <text x="210" y="392" font-size="10" fill="#7C3AED" text-anchor="middle">Q''</text>
+      <text x="252" y="392" font-size="10" fill="#059669" text-anchor="middle">Q*</text>
+      <text x="330" y="392" font-size="10" fill="#334155" text-anchor="middle">Qm</text>
+
+      <!-- Annotation boxes -->
+      <rect x="252" y="155" width="160" height="20" fill="#FEE2E2" rx="4"/>
+      <text x="332" y="168" font-size="9" fill="#B91C1C" text-anchor="middle">Original market failure DWL</text>
+      <rect x="140" y="196" width="110" height="20" fill="#EDE9FE" rx="4"/>
+      <text x="195" y="209" font-size="9" fill="#7C3AED" text-anchor="middle">Govt failure DWL</text>
+
+      <!-- Bottom annotation -->
+      <rect x="65" y="397" width="490" height="18" fill="#F1F5F9" rx="4"/>
+      <text x="310" y="410" font-size="9.5" fill="#475569" text-anchor="middle">Government failure: imperfect knowledge of MEC &#x2192; incorrect tax &#x2192; new deadweight loss</text>
+    </svg>
+  `,
+
+  tradingBlocDiagram: `
+    <svg viewBox="0 0 660 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Title -->
+      <text x="330" y="28" font-size="12" font-weight="700" fill="#1E3A5F" text-anchor="middle">Customs Union / FTA: Viner Welfare Analysis</text>
+
+      <!-- Welfare shading (draw before curves) -->
+      <!-- Trade diversion rectangle (rose): x=285-393, y=273-306 -->
+      <rect x="285" y="273" width="108" height="33" fill="#FEE2E2" opacity="0.75"/>
+      <!-- Trade creation left triangle (green): (285,256)→(257,256)→(257,273) -->
+      <polygon points="285,256 257,256 257,273" fill="#D1FAE5" opacity="0.75"/>
+      <!-- Trade creation right triangle (green): (393,256)→(422,256)→(422,273) -->
+      <polygon points="393,256 422,256 422,273" fill="#D1FAE5" opacity="0.75"/>
+
+      <!-- Dashed vertical lines -->
+      <line x1="257" y1="273" x2="257" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="285" y1="256" x2="285" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="393" y1="256" x2="393" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="422" y1="273" x2="422" y2="390" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <!-- Horizontal price lines -->
+      <!-- Pw (y=306) dashed slate -->
+      <line x1="65" y1="306" x2="615" y2="306" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <!-- Pp (y=273) solid orange -->
+      <line x1="65" y1="273" x2="615" y2="273" stroke="#F97316" stroke-width="2"/>
+      <!-- Pt (y=256) dashed red -->
+      <line x1="65" y1="256" x2="615" y2="256" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+      <!-- Axes -->
+      <line x1="65" y1="390" x2="620" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="616,386 616,394 624,390" fill="#334155"/>
+      <line x1="65" y1="390" x2="65" y2="40" stroke="#334155" stroke-width="2"/>
+      <polygon points="61,44 69,44 65,36" fill="#334155"/>
+
+      <!-- Domestic supply S (green, upward): from (65,390) to (615,57) -->
+      <line x1="65" y1="390" x2="615" y2="57" stroke="#059669" stroke-width="2"/>
+      <!-- Domestic demand D (blue, downward): from (65,57) to (615,390) -->
+      <line x1="65" y1="57" x2="615" y2="390" stroke="#2563EB" stroke-width="2"/>
+
+      <!-- Axis labels -->
+      <text x="50" y="35" font-size="12" fill="#334155" font-weight="600">P</text>
+      <text x="628" y="396" font-size="12" fill="#334155" font-weight="600">Q</text>
+      <text x="618" y="50" font-size="11" fill="#059669" font-weight="600">S</text>
+      <text x="618" y="394" font-size="11" fill="#2563EB" font-weight="600">D</text>
+
+      <!-- Price line labels -->
+      <text x="360" y="300" font-size="9" fill="#64748B">Pw (cheapest world price, faces tariff)</text>
+      <text x="380" y="267" font-size="9" fill="#F97316">Pp (FTA partner price)</text>
+      <text x="380" y="249" font-size="9" fill="#DC2626">Pt (pre-FTA price with tariff)</text>
+
+      <!-- Quantity labels -->
+      <text x="253" y="400" font-size="9" fill="#334155" text-anchor="middle">Qs'</text>
+      <text x="281" y="400" font-size="9" fill="#334155" text-anchor="middle">Qs</text>
+      <text x="389" y="400" font-size="9" fill="#334155" text-anchor="middle">Qd</text>
+      <text x="418" y="400" font-size="9" fill="#334155" text-anchor="middle">Qd'</text>
+
+      <!-- Legend (top-left) -->
+      <rect x="70" y="50" width="10" height="10" fill="#D1FAE5" stroke="#059669" stroke-width="0.5"/>
+      <text x="86" y="59" font-size="9" fill="#334155">Trade creation (welfare gain)</text>
+      <rect x="70" y="66" width="10" height="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="0.5"/>
+      <text x="86" y="75" font-size="9" fill="#334155">Trade diversion (welfare loss)</text>
+
+      <!-- Bottom annotation -->
+      <rect x="65" y="402" width="530" height="14" fill="#F1F5F9" rx="4"/>
+      <text x="330" y="413" font-size="9" fill="#475569" text-anchor="middle">Net welfare effect = trade creation gains &#x2212; trade diversion losses. FTA raises welfare only if trade creation &gt; trade diversion.</text>
+    </svg>
+  `,
+
 };

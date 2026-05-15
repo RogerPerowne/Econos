@@ -503,6 +503,17 @@ window.EconosPdf = (function () {
       '</div>\n' +
 
       sections +
+      '<script>\n' +
+      '(function () {\n' +
+      '  var hasPrinted = false;\n' +
+      '  window.addEventListener("afterprint", function () {\n' +
+      '    if (hasPrinted) return;\n' +
+      '    hasPrinted = true;\n' +
+      '    if (window.opener && !window.opener.closed) { try { window.opener.focus(); } catch (_) {} }\n' +
+      '    setTimeout(function () { window.close(); }, 200);\n' +
+      '  });\n' +
+      '}());\n' +
+      '</script>\n' +
       '</div>\n</body>\n</html>';
   }
 
@@ -516,7 +527,10 @@ window.EconosPdf = (function () {
     win.document.open();
     win.document.write(html);
     win.document.close();
-    setTimeout(function () { win.focus(); win.print(); }, 900);
+    setTimeout(function () {
+      win.focus();
+      win.print();
+    }, 900);
   }
 
   return { generate: generate };

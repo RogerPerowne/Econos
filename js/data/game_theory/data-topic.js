@@ -59,16 +59,34 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'game_theory_3',
-      template: 'mechanisms',
-      title: 'The Prisoner\'s Dilemma',
-      intro: 'The prisoner\'s dilemma is the most important game in economics — it demonstrates how individually rational behaviour can produce collectively suboptimal outcomes.',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: "The Prisoner's Dilemma",
+      lede: 'The most important game in economics — individually rational behaviour produces a collectively suboptimal outcome. Build it up cell by cell.',
+      diagramKey: 'prisonersDilemmaInteractive',
       steps: [
-        { label: 'The scenario', text: 'Two suspects are arrested separately. Each can either confess (defect) or stay silent (cooperate with partner). The payoffs: if both stay silent → 1 year each. If one confesses, one stays silent → confessor free, silent partner 10 years. If both confess → 5 years each.' },
-        { label: 'Dominant strategy: confess', text: 'For each player: if the other confesses, it is better to confess (5 years < 10 years). If the other stays silent, it is better to confess (0 years < 1 year). Confessing is the dominant strategy for both.' },
-        { label: 'Nash equilibrium: both confess', text: 'Both players play their dominant strategy → both confess → both serve 5 years. This is the Nash equilibrium.' },
-        { label: 'Collectively suboptimal', text: 'But if both had stayed silent → 1 year each. Both players are worse off than if they had cooperated. Rational individual play → collectively irrational outcome. This is the prisoner\'s dilemma: individual rationality does not produce social optimality.' }
+        {
+          key: 'base',
+          label: 'The scenario',
+          text: 'Two suspects are arrested separately — no communication possible. Each chooses <strong>stay silent</strong> (cooperate with partner) or <strong>confess</strong> (defect). Payoffs: both silent → <strong>1 year each</strong>. One confesses → <strong>0 / 10 years</strong> (confessor walks; silent partner takes the hit). Both confess → <strong>5 years each</strong>. Lower years = better outcome.'
+        },
+        {
+          key: 'extension',
+          label: "Player A's dominant strategy",
+          text: 'Player A reasons separately for each of B\'s possible choices. If B stays silent: A gets 1yr (silent) vs 0yr (confess) → <strong>confess is better</strong>. If B confesses: A gets 10yr (silent) vs 5yr (confess) → <strong>confess is better</strong>. Confess beats silent <em>whatever B does</em> — that\'s a <strong>dominant strategy</strong>. By symmetry, B reasons the same way.'
+        },
+        {
+          key: 'shift',
+          label: 'The Nash equilibrium',
+          text: 'Both play their dominant strategy → both confess → outcome (5, 5). This is the <strong>Nash equilibrium</strong>: a point where neither player can do better by unilaterally switching. Check it: if A switches to silent given B confesses, A gets 10yr instead of 5 — worse. Same for B. Nobody deviates.'
+        },
+        {
+          key: 'efficiency',
+          label: 'Nash ≠ Pareto',
+          text: 'But (Silent, Silent) gives <strong>1 year each</strong> — both players are <strong>better off</strong> than at the Nash outcome of 5 each. The Pareto optimum exists but neither player can trust the other to play it. This gap between individual rationality and collective optimality is the dilemma. <strong>Applications</strong>: cartel cheating, arms races, advertising wars, climate action, free-riding.'
+        }
       ],
-      examEdge: 'The prisoner\'s dilemma is the analytical core of cartel instability. Replace "stay silent" with "honour quota" and "confess" with "cheat on quota." The payoffs: (honour, honour) = shared monopoly profit; (cheat, honour) = maximum profit for cheater, low for victim; (honour, cheat) = vice versa; (cheat, cheat) = competitive profit for both. Dominant strategy: cheat. Nash equilibrium: both cheat → competitive outcome. This is why cartels are inherently unstable — the prisoner\'s dilemma is embedded in their structure.'
+      examEdge: 'The prisoner\'s dilemma is the analytical core of cartel instability. Replace "stay silent" with "honour quota" and "confess" with "cheat on quota." Dominant strategy: cheat. Nash equilibrium: both cheat → competitive outcome. This is why cartels are inherently unstable — the prisoner\'s dilemma is embedded in their structure.'
     },
     {
       id: 'game_theory_4',

@@ -319,6 +319,32 @@ window.EconosPdf = (function () {
     return note + formula + frames + howIt + examEdgeBlock(c.examEdge);
   }
 
+  function renderPesExplorerFallback(c) {
+    var presets = [
+      { col: C.rose,   label: 'Perfectly inelastic (PES = 0)', shape: 'Vertical supply',   eg: 'Fish already at market; paintings by deceased artist',  note: 'Supply fixed — 100% of demand shift → price change.' },
+      { col: C.amber,  label: 'Inelastic (PES < 1)',           shape: 'Steep supply',       eg: 'Oil (short run), housing, agricultural crops',          note: 'Most demand shift → price; little quantity adjustment.' },
+      { col: C.blue,   label: 'Unit elastic (PES = 1)',        shape: 'Through origin',     eg: 'Theoretical — any linear supply curve through the origin', note: '%ΔQS = %ΔP; demand shift splits equally between P and Q.' },
+      { col: C.green,  label: 'Elastic (PES > 1)',             shape: 'Shallow supply',     eg: 'Manufactured goods, labour in unskilled sectors',        note: 'Most demand shift → quantity; price barely moves.' },
+      { col: C.purple, label: 'Perfectly elastic (PES = ∞)',  shape: 'Horizontal supply',  eg: 'Long-run manufactured goods with constant costs',        note: 'All demand shift → quantity; price unchanged.' }
+    ];
+    var regimes = presets.map(function (r) {
+      return '<div style="border-left:5px solid ' + r.col + ';padding:8px 0 8px 14px;margin-bottom:10px;">' +
+        '<div style="font-size:11px;font-weight:800;color:' + r.col + ';text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">' + r.label + '</div>' +
+        '<div style="font-size:12px;color:' + C.ink + ';line-height:1.55;">' +
+        '<strong>Shape:</strong> ' + r.shape + ' &nbsp;·&nbsp; <strong>Example:</strong> ' + r.eg + '<br>' +
+        '<span style="color:' + C.slate + ';">' + r.note + '</span>' +
+        '</div></div>';
+    }).join('');
+    var formula = '<div style="border:2px solid ' + C.green + ';border-radius:8px;padding:14px 18px;margin-bottom:16px;text-align:center;">' +
+      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + C.green + ';margin-bottom:8px;">PES — midpoint formula</div>' +
+      '<div style="font-size:22px;font-weight:900;color:' + C.green + ';font-family:Georgia,serif;">PES = %ΔQS ÷ %ΔP</div>' +
+      '<div style="font-size:11px;color:' + C.slate + ';margin-top:6px;font-style:italic;">Always positive · PES &gt; 1 elastic · PES &lt; 1 inelastic · PES = 1 unit elastic</div>' +
+      '<div style="font-size:11px;color:' + C.slate + ';margin-top:4px;">Geometric rule: through origin → unit elastic · P-axis intercept → inelastic · Q-axis intercept → elastic</div>' +
+      '</div>';
+    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app — drag two points along the supply curve to see live PES and the supply response. Static reference below.</div>';
+    return note + formula + regimes + examEdgeBlock(c.examEdge);
+  }
+
   function renderWorkedExample(c) {
     var lede = c.lede ? '<div style="font-size:13px;color:' + C.slate + ';margin-bottom:12px;line-height:1.6;">' + c.lede + '</div>' : '';
     var scenario = c.scenario ? '<div style="background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.65;color:#1E3A5F;margin-bottom:16px;">' + c.scenario + '</div>' : '';
@@ -468,7 +494,7 @@ window.EconosPdf = (function () {
   }
 
   function isGenericCard(c) {
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer') return false;
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -494,6 +520,7 @@ window.EconosPdf = (function () {
       case 'transmission-chain': return renderFallback();
       case 'elasticity-explorer':return renderElasticityFallback(c);
       case 'worked-example':     return renderWorkedExample(c);
+      case 'pes-explorer':       return renderPesExplorerFallback(c);
       case 'ped-five-frames':    return renderPedFiveFrames(c);
       default:                   return renderFallback();
     }

@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Elasticity of Supply',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the PES formula, what determines supply elasticity, how PES affects price and quantity adjustment, and its policy implications.',
   intro: {
     heroKey: 'heroElasticity',
     summary: 'PES measures how responsive supply is to a price change. When demand shifts, the split between price and quantity adjustment depends on PES. Inelastic supply means most of the adjustment is in price; elastic supply means most is in quantity.',
-    doInThis: 'Work through 7 cards covering the PES formula, elastic/inelastic cases, determinants, the relationship between time and elasticity, PES in specific markets, and policy applications.',
+    doInThis: 'Work through 9 cards covering the PES formula, an interactive supply explorer, a scaffolded worked calculation, determinants, demand-shift effects, key markets, tax incidence, long-run vs short-run supply, and supply-side policy.',
     outcomes: [
       'Calculate and interpret PES using the formula',
       'Explain the determinants of PES including time, spare capacity, and factor mobility',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'PES = % change in QS \xf7 % change in P. Always positive (supply slopes upward). PES > 1 = elastic; PES < 1 = inelastic; PES = 0 = perfectly inelastic; PES = ∞ = perfectly elastic.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 9',
       title: 'Price elasticity of supply: the big picture',
       lede: 'When demand jumps, do prices rocket or does output adjust? PES decides — and shapes everything from housing bubbles to oil shocks.',
       branches: [
@@ -46,8 +46,55 @@ window.ECONOS_TOPIC = {
       examEdge: 'A supply curve through the origin has PES = 1 at all points (unit elastic). A supply curve cutting the price axis (steep) has PES < 1 at any point on it (inelastic). A supply curve cutting the quantity axis (flat) has PES > 1 (elastic). This geometric trick saves calculation time in exams.'
     },
     {
+      id: 'pes_explorer',
+      template: 'pes-explorer',
+      stepLabel: 'Learn: Step 2 of 9',
+      title: 'PES Explorer: drag the points, watch the supply respond',
+      lede: 'Move <strong>A</strong> and <strong>B</strong> along the supply curve. The formula recalculates live — watch whether quantity supplied responds a lot or a little to the price change. The steeper the curve, the more inelastic the supply.',
+      howItWorks: 'The supply curve slopes <strong>upward</strong> — price and quantity move in the same direction, so PES is always positive. Pick point A (lower price) and point B (higher price): the widget shows how much quantity supplied changes relative to the price change.<br><br>The key geometric rule: if the supply curve passes through the <strong>origin</strong>, PES = 1 at every point. If it cuts the <strong>P-axis</strong> (starts above zero price), PES &lt; 1 (inelastic). If it cuts the <strong>Q-axis</strong> (supply starts at zero price with positive quantity), PES &gt; 1 (elastic). Try the "Through origin" preset to see this in action.',
+      examEdge: 'Three exam traps for PES: (1) PES is always positive — unlike PED, there is no negative sign issue. (2) The geometric rule (origin → unit elastic; P-intercept → inelastic; Q-intercept → elastic) saves calculation time in multi-choice questions — draw the line mentally and check where it crosses. (3) "Time period" is almost always the correct first determinant to cite — short-run PES is nearly always lower than long-run PES.'
+    },
+    {
+      id: 'pes_worked',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 3 of 9',
+      title: 'Worked example: calculating PES step by step',
+      lede: 'Work through each step yourself before revealing the answer — this mirrors exactly what the examiner wants to see.',
+      scenario: '<strong>Scenario:</strong> The market price of crude oil rises from <strong>$50</strong> to <strong>$60</strong> per barrel. At $50, producers supply <strong>80 million barrels</strong> per day. After the price rise, supply increases to <strong>84 million barrels</strong> per day.',
+      steps: [
+        {
+          prompt: 'Calculate the percentage change in price.',
+          hint: '% change = (New − Old) ÷ Old × 100',
+          answer: '% ΔP = (60 − 50) ÷ 50 × 100 = <strong>+20%</strong><br><span style="color:#475569;font-size:12px;">Price has risen by 20%.</span>'
+        },
+        {
+          prompt: 'Calculate the percentage change in quantity supplied.',
+          hint: '% change = (New − Old) ÷ Old × 100. This should be positive — supply and price move together.',
+          answer: '% ΔQS = (84 − 80) ÷ 80 × 100 = <strong>+5%</strong><br><span style="color:#475569;font-size:12px;">Quantity supplied has risen by 5%.</span>'
+        },
+        {
+          prompt: 'Apply the PES formula.',
+          hint: 'PES = % ΔQS ÷ % ΔP. The result will be positive — unlike PED, there is no negative sign.',
+          answer: 'PES = +5% ÷ 20% = <strong>+0.25</strong>'
+        },
+        {
+          prompt: 'Classify the result and interpret it in context.',
+          hint: 'Compare PES to 1. Explain why oil supply responds this way in the short/medium run.',
+          answer: 'PES = 0.25 &lt; 1 → supply is <strong>price inelastic</strong>.<br>A 20% price rise caused only a 5% rise in quantity supplied. Existing oil wells are already operating; new drilling and refinery capacity takes years to build. Supply cannot respond quickly to higher prices.'
+        },
+        {
+          prompt: 'Explain the policy implication of this result.',
+          hint: 'What happens to the price when demand for oil suddenly rises, given supply is inelastic?',
+          answer: 'With inelastic supply (PES = 0.25), a rightward shift in demand causes a <strong>large price rise</strong> and only a small increase in quantity. Most of the market adjustment falls on price, not output — explaining why oil price spikes are large and sudden. Long-run supply is more elastic as new capacity is built, so prices eventually moderate.'
+        }
+      ],
+      conclusion: 'Oil supply is highly inelastic in the short run because extracting and refining capacity is fixed. This means oil price shocks are sharp but tend to attract new investment over the long run, gradually improving supply elasticity. The short-run / long-run PES distinction is one of the most policy-relevant concepts in economics.',
+      examEdge: 'Show every step: formula → values → each % separately → divide → classify → explain in context. The fifth step (policy implication) is what separates high-band answers — always link PES to what it means for prices, quantities, and market participants when demand shifts.'
+    },
+    {
       id: 'pes_2',
       template: 'cause',
+      stepLabel: 'Learn: Step 4 of 9',
       title: 'Determinants of PES',
       causes: [
         { head: 'Time period', body: 'The most important determinant. In the very short run (market period), supply is fixed — PES = 0 (e.g. fish already at market, paintings by a deceased artist). Short run: some adjustment possible (overtime, variable inputs). Long run: new capacity built — PES rises significantly.' },
@@ -61,6 +108,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_3',
       template: 'mechanisms',
+      stepLabel: 'Learn: Step 5 of 9',
       title: 'PES and the Effect of Demand Shifts',
       intro: 'When demand shifts, PES determines the split between price change and quantity change.',
       steps: [
@@ -74,6 +122,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_4',
       template: 'diagnose',
+      stepLabel: 'Learn: Step 6 of 9',
       title: 'PES in Key Markets',
       intro: 'Different markets have very different PES characteristics — know these for contextual exam questions.',
       rows: [
@@ -87,6 +136,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_5',
       template: 'framing',
+      stepLabel: 'Learn: Step 7 of 9',
       title: 'PES and Tax Incidence',
       body: 'Just as PED affects tax incidence, so does PES. The relative elasticity of supply and demand determines who bears the tax burden.<br><br><strong>Inelastic supply + elastic demand:</strong> most tax burden falls on producers. Sellers cannot easily reduce quantity (committed to producing), so they absorb the tax.<br><br><strong>Elastic supply + inelastic demand:</strong> most tax burden falls on consumers. Sellers can redirect production elsewhere if price falls, so they pass tax on. Classic example: cigarette tax on inelastic demand — consumers bear most of the burden.<br><br><strong>Rule:</strong> the less elastic side of the market bears more of the tax burden.',
       keyTerms: [
@@ -99,6 +149,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_6',
       template: 'framing',
+      stepLabel: 'Learn: Step 8 of 9',
       title: 'Long-Run vs Short-Run Supply Curves',
       body: 'The time period distinction is captured by drawing separate short-run and long-run supply curves:<br><br><strong>Short-run supply (SRAS):</strong> steeper (more inelastic) — limited ability to change output quickly. Fixed capital, committed contracts, seasonality all limit responsiveness.<br><br><strong>Long-run supply (LRAS):</strong> flatter (more elastic) — firms can build new factories, hire more workers, exit or enter. Supply can expand to meet demand without large price rises.<br><br>This distinction mirrors the macro SRAS/LRAS distinction in Theme 2. The same principle applies: short-run constraints are real and important; long-run adjustment restores equilibrium but takes time.',
       keyTerms: [
@@ -111,6 +162,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'pes_7',
       template: 'framing',
+      stepLabel: 'Learn: Step 9 of 9',
       title: 'PES and Supply-Side Policy',
       body: 'Government supply-side policies can increase PES by removing constraints on supply response:<br><br>• <strong>Planning reform:</strong> faster planning permissions → housing supply PES rises → less house price volatility.<br>• <strong>Skills training:</strong> wider labour supply → labour PES rises → wage pressures moderate when demand rises.<br>• <strong>Infrastructure investment:</strong> better transport links → more responsive distribution and manufacturing supply.<br>• <strong>R&D and technology:</strong> reduces production costs → firms can expand output at lower marginal cost → more elastic supply.<br><br>Higher PES means demand increases translate into more output and less price inflation — a welfare improvement.',
       keyTerms: [

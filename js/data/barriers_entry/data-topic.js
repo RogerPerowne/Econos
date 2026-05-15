@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'barriers_entry_2',
       template: 'cause',
+      diagramKey: 'mesBarrierDiagram',
       title: 'Structural (Innocent) Barriers to Entry',
       causes: [
         { head: 'Economies of scale', body: 'Incumbents produce at large scale → low AC. Entrants start small → high AC. Entrant cannot match incumbent prices without making a loss until it reaches scale — by which time it may have failed. Natural monopoly is the extreme case.' },
@@ -59,6 +60,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'barriers_entry_3',
       template: 'cause',
+      diagramKey: 'limitPricingDiagram',
       title: 'Strategic (Deliberate) Barriers to Entry',
       causes: [
         { head: 'Predatory pricing', body: 'Incumbent prices below cost to drive out or deter new entrants, then raises price once threat is eliminated. Illegal under competition law but difficult to prove intent. Example: alleged predatory pricing by Standard Oil (1900s). Modern concern: Amazon Marketplace pricing.' },
@@ -83,6 +85,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'barriers_entry_5',
       template: 'framing',
+      diagramKey: 'networkEffectDiagram',
       title: 'Network Effects as Entry Barriers',
       body: 'A <strong>network effect</strong> occurs when the value of a product increases as more people use it. Network effects create powerful entry barriers because:\n\n• An entrant starts with zero users — its product is less valuable than the incumbent\'s\n• New users join the incumbent (higher value) not the entrant (lower value)\n• The incumbent\'s network advantage compounds over time\n• Result: "winner-take-all" markets dominated by the first platform to achieve critical mass\n\n<strong>Examples:</strong> WhatsApp (switching means losing contacts), LinkedIn (professional network → switching costs high), Windows (software ecosystem). Network effects explain why tech monopolies are more durable than traditional monopolies — competitors face an almost insurmountable chicken-and-egg problem.',
       keyTerms: [

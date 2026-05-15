@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'info_gaps_2',
       template: 'framing',
+      diagramKey: 'lemonMarketDiagram',
       title: 'Akerlof\'s Market for Lemons',
       body: 'George Akerlof\'s 1970 paper "The Market for Lemons" showed how asymmetric information can destroy entire markets.<br><br><strong>Used cars example:</strong><br>• Sellers know the quality of their car ("peach" or "lemon")<br>• Buyers cannot distinguish quality before purchase<br>• Buyers offer an average price reflecting average quality<br>• Sellers of peaches (high quality) find the average price too low — they withdraw<br>• Market now only has lemons — average quality falls<br>• Buyers lower their offer price further — more peaches exit<br>• Market unravels until only lemons remain or the market collapses entirely<br><br>The result: a market that should function destroys itself due to information asymmetry.',
       keyTerms: [

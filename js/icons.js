@@ -836,8 +836,14 @@ window.ECONOS_ICONS = {
         <marker id="ppf-shift-out-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
         </marker>
+        <marker id="ppf-shift-out-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#059669"/>
+        </marker>
         <marker id="ppf-shift-in-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
           <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+        <marker id="ppf-shift-in-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+          <path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/>
         </marker>
       </defs>
 
@@ -959,18 +965,22 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: shift curves (show-shift only) ===== -->
       <g class="layer-shift-curves">
-        <!-- PPF₂ outward (green dashed) -->
-        <path d="M 60,42 C 245,42 558,272 558,390" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 4"/>
-        <text x="564" y="390" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
-        <!-- PPF₃ inward (red dashed) -->
-        <path d="M 60,115 C 205,115 490,322 490,390" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 4"/>
-        <text x="494" y="388" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
-        <!-- Shift arrows (double-headed around x=310) -->
-        <line x1="310" y1="110" x2="310" y2="55" stroke="#059669" stroke-width="1.5" marker-end="url(#ppf-shift-out-end)"/>
-        <text x="315" y="88" font-size="11" fill="#059669" font-weight="600">outward</text>
-        <line x1="310" y1="150" x2="310" y2="195" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppf-shift-in-end)"/>
-        <text x="315" y="178" font-size="11" fill="#DC2626" font-weight="600">inward</text>
-        <text x="295" y="128" font-size="11" fill="#334155">PPF₁</text>
+        <!-- PPF₂ outward (green dashed) — large outward shift -->
+        <path d="M 60,16 C 248,16 578,250 578,390" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="9 5"/>
+        <text x="566" y="388" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
+        <!-- PPF₃ inward (red dashed) — large inward shift -->
+        <path d="M 60,152 C 192,152 452,342 452,390" fill="none" stroke="#DC2626" stroke-width="3" stroke-dasharray="9 5"/>
+        <text x="455" y="388" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
+        <!-- Double-headed green arrow: PPF₁ → PPF₂ (outward), at t≈0.28 on curve -->
+        <!-- PPF₁@t=0.28 ≈ (228,120); PPF₂@t=0.28 ≈ (236,64) -->
+        <line x1="230" y1="118" x2="238" y2="66"
+              stroke="#059669" stroke-width="3" stroke-linecap="round"
+              marker-start="url(#ppf-shift-out-start)" marker-end="url(#ppf-shift-out-end)"/>
+        <!-- Double-headed red arrow: PPF₃ → PPF₁ (inward), at t≈0.35 on curve -->
+        <!-- PPF₁@t=0.35 ≈ (275,141); PPF₃@t=0.35 ≈ (234,182) -->
+        <line x1="270" y1="143" x2="236" y2="180"
+              stroke="#DC2626" stroke-width="3" stroke-linecap="round"
+              marker-start="url(#ppf-shift-in-start)" marker-end="url(#ppf-shift-in-end)"/>
       </g>
 
       <!-- ===== LAYER: legend shift (right panel) ===== -->

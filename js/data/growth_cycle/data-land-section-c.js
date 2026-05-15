@@ -1,0 +1,46 @@
+/* ============================================================
+   ECONOS — Land It · Section C data for Economic Growth and the Business Cycle
+   Topic: Economic Growth and the Business Cycle (2.10)
+   ============================================================ */
+
+window.ECONOS_LAND_SECTION_C = {
+  topic:        'Economic Growth and the Business Cycle',
+  sessionLabel: 'Session 3 of 3: Land',
+  sectionLabel: 'Section C &#8212; Essay',
+  backUrl:      TopicLoader.buildUrl('land_intro.html'),
+
+  /* In the exam there are two options; here we present one. */
+  question: {
+    id:          'qc',
+    commandWord: 'Evaluate',
+    stem:        'Evaluate the role of investment in determining the long-run rate of economic growth in the UK.',
+    marks:       25,
+    suggestedMinutes: 30,
+
+    structureTips: [
+      'Define long-run economic growth and explain its relationship to the LRAS curve.',
+      'Distinguish between physical capital investment, human capital investment, and R&amp;D investment &#8212; all three are relevant.',
+      'Analyse the mechanism by which each type of investment raises productivity and shifts LRAS to the right.',
+      'Use specific UK evidence: business investment as % of GDP, R&amp;D data, the productivity puzzle, and infrastructure plans.',
+      'Evaluate the limits of investment as a growth driver: diminishing returns, the importance of complementary factors (institutions, skills, demand), and the post-2008 &#8220;investment gap&#8221;.',
+      'Consider alternative determinants of long-run growth: trade, institutions, human capital (separately from investment), and technological change.',
+      'Reach a conditional judgement: how important is investment relative to other factors, and under what conditions is it the binding constraint on UK growth?'
+    ],
+
+    modelAnswer:
+      '<p>Long-run economic growth is defined as a sustained increase in an economy&#39;s productive potential &#8212; its capacity to produce goods and services &#8212; shown in the AD&#47;AS model as a rightward shift of the long-run aggregate supply (LRAS) curve. Unlike short-run cyclical recovery, which simply returns actual output to potential, long-run growth moves the potential frontier itself outward. Investment &#8212; in its various forms &#8212; is widely regarded as the most important driver of this process, but its role must be understood alongside other fundamental growth determinants.</p>'
+    + '<p>Physical capital investment &#8212; businesses&#39; spending on new plant, machinery, equipment, and buildings &#8212; directly raises the capital-to-labour ratio. As workers have access to more and better capital, their productivity rises: output per hour increases, enabling higher real wages and more goods and services for the same number of working hours. In the neoclassical growth model, capital accumulation is the primary proximate source of per-capita output growth, at least until diminishing marginal returns set in. UK gross fixed capital formation stood at around 18% of GDP in 2022 &#8212; below the G7 average and historically low for an advanced economy. This chronic underinvestment in physical capital is widely cited as a central cause of the UK&#39;s productivity puzzle: output per worker grew at just 0.4% per year on average since 2008, compared with 2.2% in the fifteen years before the financial crisis. Had investment been maintained at pre-crisis levels, capital stock growth &#8212; and with it productivity &#8212; would have been materially higher. The 2023 Budget&#39;s introduction of &#8220;full expensing&#8221; &#8212; allowing firms to deduct 100% of capital expenditure in the year of purchase &#8212; directly addresses this gap by lowering the effective after-tax cost of investment, aiming to stimulate a higher rate of capital accumulation and shift the LRAS to the right.</p>'
+    + '<p>R&amp;D investment plays an equally important role by driving technological progress &#8212; the factor that, in endogenous growth theory, sustains long-run productivity growth even in the face of diminishing returns to capital. Unlike physical capital, knowledge is non-rival &#8212; its use by one firm does not diminish its availability to others &#8212; and generates positive externalities through spillovers across firms and industries. The market therefore systematically underinvests in R&amp;D relative to the socially optimal level, creating a role for government support. UK total R&amp;D spending at 1.7% of GDP falls well below the G7 average of 2.7%, suggesting that the UK&#39;s innovation gap is itself a significant constraint on long-run growth. Each percentage-point increase in R&amp;D intensity is estimated to raise the long-run growth rate by around 0.1&#8211;0.2 percentage points &#8212; a small annual increment that compounds substantially over decades. Government R&amp;D tax credits, Innovate UK, and university research funding all aim to correct this market failure, but their impact depends on private sector willingness to co-invest and on the availability of skilled researchers to conduct the work.</p>'
+    + '<p>Human capital investment &#8212; education, training, and skills development &#8212; is a third dimension of investment that determines long-run growth. A more educated and skilled workforce is more productive, able to adopt and use new technologies, and capable of generating the managerial and entrepreneurial quality that drives innovation. The UK&#39;s skills shortages &#8212; particularly in technical, digital, and engineering fields &#8212; prevent many firms from deploying available technology effectively, limiting the return on physical capital investment. In this sense, human capital and physical capital are complements: investment in machinery delivers its full productivity benefit only if workers have the skills to operate it effectively. Government investment in T-levels, apprenticeships, and numeracy programmes addresses this complementarity, though the returns are measured in decades rather than years.</p>'
+    + '<p>However, the role of investment in determining long-run growth has important limits. First, in the standard neoclassical model, capital accumulation faces diminishing marginal returns: each additional unit of capital adds progressively less to output, so investment alone cannot sustain permanently higher growth without ongoing technological progress. This is why endogenous growth theorists emphasise R&amp;D and human capital alongside physical investment. Second, investment is not the only determinant of long-run growth: the quality of institutions &#8212; rule of law, property rights, contract enforcement, and regulatory quality &#8212; fundamentally determines the environment in which investment decisions are made. Poor institutions deter investment by raising uncertainty and reducing expected returns; strong institutions attract foreign direct investment and support domestic capital formation. The post-Brexit reduction in UK inward FDI &#8212; as firms relocated some European operations to maintain single-market access &#8212; illustrates how institutional and trade relationships interact with investment incentives. Third, even well-designed investment requires sufficient aggregate demand to justify it: firms invest when they are confident that future demand will generate adequate returns. If macroeconomic policy maintains too tight a stance, potential growth cannot be realised because investment does not materialise. The concept of hysteresis suggests that prolonged weak demand &#8212; as the UK experienced after 2010&#8211;12 austerity &#8212; may have permanently damaged the supply-side by deterring investment that would otherwise have occurred.</p>'
+    + '<p>In conclusion, investment &#8212; across its physical, technological, and human dimensions &#8212; is the most important proximate determinant of long-run economic growth in the UK. The productivity puzzle of 0.4% annual growth since 2008 is substantially explained by chronic underinvestment across all three dimensions. Policies that raise business investment, R&amp;D, and human capital accumulation &#8212; such as full expensing, R&amp;D tax credits, and skills reform &#8212; are therefore well-targeted. However, investment operates within a broader ecosystem: it requires strong institutions, adequate aggregate demand, appropriate skills, and an open trade environment to deliver its full growth dividend. For the UK specifically, addressing the investment gap is necessary but not sufficient; post-Brexit structural headwinds, regional imbalances, and skills shortages must be addressed concurrently. Investment is best understood not as a single lever but as the centrepiece of a coherent, long-run growth strategy.</p>'
+  },
+
+  strongAnswers: [
+    'Define long-run growth precisely and link investment to LRAS from the outset',
+    'Distinguish between physical capital, R&amp;D, and human capital investment &#8212; all three matter',
+    'Use specific UK data: business investment as % of GDP, R&amp;D figures, productivity growth rates',
+    'Evaluate investment&#39;s limits: diminishing returns, the role of institutions and demand, hysteresis',
+    'Conclude with a conditional judgement that acknowledges complementary factors'
+  ]
+};

@@ -321,7 +321,8 @@ window.ECONOS_TOPIC = {
       bridge: {
         title: 'What comes next',
         text: 'Standard of Living & Wellbeing builds directly on these limitations — covering HDI in depth, the Kuznets curve, and the debate around composite vs single-dimensional measures.'
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

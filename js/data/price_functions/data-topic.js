@@ -122,7 +122,8 @@ window.ECONOS_TOPIC = {
           'Can take account of long-run social benefits that short-term market prices ignore'
         ]
       },
-      examEdge: 'Neither system is universally superior — the optimal choice is context-specific. Markets excel at allocating private goods with well-defined property rights and no externalities. Government is needed where prices fail to capture social costs/benefits. The debate is always about the marginal case — not an all-or-nothing choice.'
+      examEdge: 'Neither system is universally superior — the optimal choice is context-specific. Markets excel at allocating private goods with well-defined property rights and no externalities. Government is needed where prices fail to capture social costs/benefits. The debate is always about the marginal case — not an all-or-nothing choice.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

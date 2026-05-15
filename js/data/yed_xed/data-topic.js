@@ -108,7 +108,8 @@ window.ECONOS_TOPIC = {
         { term: 'Structural transformation', def: 'Shift in economic activity from primary to secondary to tertiary sectors as incomes rise — driven by different YED across sectors.' },
         { term: 'Cost-push transmission', def: 'Rise in price of a complement (energy) reduces demand for and raises costs of energy-intensive goods — inflation spreads through complement linkages.' }
       ],
-      examEdge: 'Engel\'s Law as a macro application: UK households spend 8% of income on food; Ethiopian households spend 50%. This reflects different income levels and YED — as development raises incomes, food\'s share of spending falls, releasing income for manufactured goods and services. A powerful micro-macro link.'
+      examEdge: 'Engel\'s Law as a macro application: UK households spend 8% of income on food; Ethiopian households spend 50%. This reflects different income levels and YED — as development raises incomes, food\'s share of spending falls, releasing income for manufactured goods and services. A powerful micro-macro link.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

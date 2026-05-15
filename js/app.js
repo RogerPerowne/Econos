@@ -898,7 +898,7 @@
         <div class="ad-interactive__diagram show-base" data-ad-state="base">
           ${diagram}
         </div>
-        <div class="ad-interactive__tabs">
+        <div class="ad-interactive__tabs" style="grid-template-columns: repeat(${c.steps.length}, 1fr);">
           ${tabs}
         </div>
         <div class="ad-interactive__panels">
@@ -1280,8 +1280,7 @@
       // Update the diagram container class
       const diagram = root.querySelector('.ad-interactive__diagram');
       if (diagram) {
-        diagram.classList.remove('show-base', 'show-extension', 'show-shift');
-        diagram.classList.add('show-' + newState);
+        diagram.className = diagram.className.split(' ').filter(cls => !cls.startsWith('show-')).join(' ') + ' show-' + newState;
         diagram.dataset.adState = newState;
       }
 

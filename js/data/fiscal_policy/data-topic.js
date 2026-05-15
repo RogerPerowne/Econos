@@ -36,6 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'fiscal-framing',
       template: 'framing',
+      diagramKey: 'adAsDemandPull',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Fiscal policy: government\'s lever over AD',
       lede: 'Fiscal policy uses government spending (G) and taxation (T) to influence aggregate demand, income distribution, and the long-run supply capacity of the economy.',

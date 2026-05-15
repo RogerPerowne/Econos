@@ -826,6 +826,221 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* === PPF interactive diagram === */
+  ppfInteractive: `
+    <svg class="ppf-svg" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="ppf-occ-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+        </marker>
+        <marker id="ppf-shift-out-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+        </marker>
+        <marker id="ppf-shift-in-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/>
+        </marker>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Dashed vertical divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes (always visible) ===== -->
+      <g class="layer-axes">
+        <!-- Y-axis -->
+        <line x1="60" y1="400" x2="60" y2="55" stroke="#334155" stroke-width="2"/>
+        <!-- X-axis -->
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <!-- Axis arrowheads -->
+        <polygon points="60,50 56,62 64,62" fill="#334155"/>
+        <polygon points="565,400 553,396 553,404" fill="#334155"/>
+        <!-- Axis labels -->
+        <text x="55" y="42" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Consumer</text>
+        <text x="55" y="56" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Goods</text>
+        <text x="570" y="404" font-size="12" font-weight="700" fill="#334155" text-anchor="start">Capital Goods</text>
+        <!-- Origin label -->
+        <text x="48" y="416" font-size="11" fill="#94A3B8" text-anchor="middle">O</text>
+      </g>
+
+      <!-- ===== LAYER: PPF base curve (visible all states, faded in shift) ===== -->
+      <g class="layer-ppf-base">
+        <path d="M 60,75 C 240,75 540,295 540,390" fill="none" stroke="#2563EB" stroke-width="3"/>
+        <text x="548" y="388" font-size="13" font-weight="700" fill="#2563EB">PPF₁</text>
+      </g>
+
+      <!-- ===== LAYER: base points (show-base only) ===== -->
+      <g class="layer-base-points">
+        <!-- Dashed gridlines for point A (t≈0.5 → ~368, 197) -->
+        <line x1="60" y1="197" x2="368" y2="197" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5 4"/>
+        <line x1="368" y1="400" x2="368" y2="197" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5 4"/>
+        <!-- Point A: on the curve (efficient) -->
+        <circle cx="368" cy="197" r="7" fill="#2563EB"/>
+        <text x="378" y="193" font-size="13" font-weight="700" fill="#2563EB">A</text>
+        <text x="392" y="193" font-size="12" fill="#475569">— Efficient (on PPF)</text>
+        <!-- Point B: inside (inefficient) at ~(270, 270) -->
+        <circle cx="270" cy="270" r="7" fill="#D97706"/>
+        <text x="280" y="266" font-size="13" font-weight="700" fill="#D97706">B</text>
+        <text x="294" y="266" font-size="12" fill="#475569">— Inefficient (inside)</text>
+        <!-- Point C: outside (unattainable) at ~(440, 160) -->
+        <circle cx="440" cy="160" r="7" fill="#DC2626"/>
+        <text x="450" y="156" font-size="13" font-weight="700" fill="#DC2626">C</text>
+        <text x="464" y="156" font-size="12" fill="#475569">— Unattainable</text>
+        <!-- Zone labels -->
+        <text x="195" y="330" font-size="11" fill="#D97706" font-style="italic">Inefficient zone</text>
+        <text x="400" y="120" font-size="11" fill="#DC2626" font-style="italic">Unattainable zone</text>
+      </g>
+
+      <!-- ===== LAYER: legend base (right panel) ===== -->
+      <g class="layer-legend-base">
+        <!-- Title strip -->
+        <circle cx="612" cy="31" r="6" fill="#2563EB"/>
+        <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Frontier = maximum output · three zones</text>
+        <!-- Header -->
+        <text x="620" y="75" font-size="10" font-weight="800" fill="#2563EB" letter-spacing="2">THREE ZONES</text>
+        <!-- A row -->
+        <circle cx="627" cy="101" r="7" fill="#2563EB"/>
+        <text x="642" y="106" font-size="13" font-weight="600" fill="#334155">On the PPF · Productively efficient</text>
+        <!-- B row -->
+        <circle cx="627" cy="129" r="7" fill="#D97706"/>
+        <text x="642" y="134" font-size="13" font-weight="600" fill="#334155">Inside · Inefficient, wasted resources</text>
+        <!-- C row -->
+        <circle cx="627" cy="157" r="7" fill="#DC2626"/>
+        <text x="642" y="162" font-size="13" font-weight="600" fill="#334155">Outside · Unattainable now</text>
+        <!-- Why slopes down -->
+        <text x="620" y="198" font-size="10" font-weight="800" fill="#2563EB" letter-spacing="2">WHY IT SLOPES DOWN</text>
+        <text x="620" y="220" font-size="13" font-weight="600" fill="#334155">More of one good always means</text>
+        <text x="620" y="238" font-size="13" font-weight="600" fill="#334155">less of the other — scarcity.</text>
+      </g>
+
+      <!-- ===== LAYER: opportunity cost (show-extension only) ===== -->
+      <g class="layer-opp-cost">
+        <!-- Point D: near top-left t≈0.22 → (~195, 115) -->
+        <line x1="60" y1="115" x2="195" y2="115" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="195" y1="400" x2="195" y2="115" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="195" cy="115" r="7" fill="#D97706"/>
+        <text x="181" y="112" font-size="13" font-weight="700" fill="#D97706">D</text>
+        <!-- Axis tick labels for D -->
+        <text x="50" y="119" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₁</text>
+        <text x="195" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₁</text>
+        <!-- Point E: near bottom-right t≈0.72 → (~478, 287) -->
+        <line x1="60" y1="287" x2="478" y2="287" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="478" y1="400" x2="478" y2="287" stroke="#D97706" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="478" cy="287" r="7" fill="#D97706"/>
+        <text x="488" y="284" font-size="13" font-weight="700" fill="#D97706">E</text>
+        <!-- Axis tick labels for E -->
+        <text x="50" y="291" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">C₂</text>
+        <text x="478" y="415" font-size="11" font-weight="600" fill="#D97706" text-anchor="middle">K₂</text>
+        <!-- OC arc arrow from D to E -->
+        <path d="M 205,115 Q 380,135 470,287" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppf-occ-end)"/>
+        <!-- Delta labels -->
+        <text x="115" y="205" font-size="12" font-weight="600" fill="#D97706">−ΔConsumer</text>
+        <text x="320" y="385" font-size="12" font-weight="600" fill="#D97706">+ΔCapital</text>
+      </g>
+
+      <!-- ===== LAYER: legend extension (right panel) ===== -->
+      <g class="layer-legend-extension">
+        <!-- Title strip -->
+        <circle cx="612" cy="31" r="6" fill="#D97706"/>
+        <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Movement along PPF = opportunity cost</text>
+        <!-- Header -->
+        <text x="620" y="75" font-size="10" font-weight="800" fill="#D97706" letter-spacing="2">OPPORTUNITY COST</text>
+        <text x="620" y="100" font-size="13" font-weight="600" fill="#334155">Moving D → E:</text>
+        <text x="620" y="120" font-size="13" font-weight="600" fill="#059669">+ more capital goods</text>
+        <text x="620" y="140" font-size="13" font-weight="600" fill="#DC2626">− fewer consumer goods</text>
+        <!-- Why bowed out -->
+        <text x="620" y="180" font-size="10" font-weight="800" fill="#D97706" letter-spacing="2">WHY BOWED OUT</text>
+        <text x="620" y="202" font-size="13" font-weight="600" fill="#334155">Resources not perfectly adaptable.</text>
+        <text x="620" y="222" font-size="13" font-weight="600" fill="#334155">Each extra unit of capital costs</text>
+        <text x="620" y="242" font-size="13" font-weight="600" fill="#334155">progressively more consumer goods.</text>
+        <text x="620" y="275" font-size="12" font-weight="600" fill="#64748B" font-style="italic">= Increasing opportunity cost</text>
+      </g>
+
+      <!-- ===== LAYER: shift curves (show-shift only) ===== -->
+      <g class="layer-shift-curves">
+        <!-- PPF₂ outward (green dashed) -->
+        <path d="M 60,42 C 245,42 558,272 558,390" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 4"/>
+        <text x="564" y="390" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
+        <!-- PPF₃ inward (red dashed) -->
+        <path d="M 60,115 C 205,115 490,322 490,390" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 4"/>
+        <text x="494" y="388" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
+        <!-- Shift arrows (double-headed around x=310) -->
+        <line x1="310" y1="110" x2="310" y2="55" stroke="#059669" stroke-width="1.5" marker-end="url(#ppf-shift-out-end)"/>
+        <text x="315" y="88" font-size="11" fill="#059669" font-weight="600">outward</text>
+        <line x1="310" y1="150" x2="310" y2="195" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppf-shift-in-end)"/>
+        <text x="315" y="178" font-size="11" fill="#DC2626" font-weight="600">inward</text>
+        <text x="295" y="128" font-size="11" fill="#334155">PPF₁</text>
+      </g>
+
+      <!-- ===== LAYER: legend shift (right panel) ===== -->
+      <g class="layer-legend-shift">
+        <!-- Title strip -->
+        <circle cx="612" cy="31" r="6" fill="#059669"/>
+        <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Shift of PPF = change in productive capacity</text>
+        <!-- Header -->
+        <text x="620" y="75" font-size="10" font-weight="800" fill="#059669" letter-spacing="2">PPF SHIFTS</text>
+        <!-- PPF₂ outward -->
+        <line x1="620" y1="97" x2="640" y2="97" stroke="#059669" stroke-width="2.5" stroke-dasharray="5 3"/>
+        <text x="648" y="101" font-size="13" font-weight="700" fill="#059669">PPF₂ — outward</text>
+        <text x="648" y="119" font-size="12" fill="#475569">Better technology / More resources</text>
+        <text x="648" y="135" font-size="12" fill="#475569">/ Higher productivity</text>
+        <!-- PPF₃ inward -->
+        <line x1="620" y1="160" x2="640" y2="160" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="5 3"/>
+        <text x="648" y="164" font-size="13" font-weight="700" fill="#DC2626">PPF₃ — inward</text>
+        <text x="648" y="182" font-size="12" fill="#475569">War / natural disaster</text>
+        <text x="648" y="198" font-size="12" fill="#475569">/ Capital depreciation</text>
+        <!-- Movement along note -->
+        <text x="620" y="232" font-size="10" font-weight="800" fill="#334155" letter-spacing="2">MOVEMENT ALONG PPF₁</text>
+        <text x="620" y="253" font-size="12" fill="#475569">Just reallocation — no change</text>
+        <text x="620" y="269" font-size="12" fill="#475569">in capacity.</text>
+      </g>
+
+      <!-- ===== LAYER: efficiency points (show-efficiency only) ===== -->
+      <g class="layer-efficiency">
+        <!-- Point F: productive efficiency midpoint t≈0.5 (~368, 197) -->
+        <line x1="60" y1="197" x2="368" y2="197" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="368" y1="400" x2="368" y2="197" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="368" cy="197" r="7" fill="#7C3AED"/>
+        <text x="378" y="193" font-size="13" font-weight="700" fill="#7C3AED">F</text>
+        <text x="392" y="193" font-size="12" fill="#475569">— Productive efficiency</text>
+        <!-- Point G: allocative efficiency (different point t≈0.3 → ~290, 151) -->
+        <circle cx="290" cy="151" r="7" fill="#0891B2"/>
+        <text x="300" y="147" font-size="13" font-weight="700" fill="#0891B2">G</text>
+        <text x="314" y="147" font-size="12" fill="#475569">— Allocative efficiency (P=MC)</text>
+        <!-- Point H: inside PPF (inefficient) at ~(220, 250) -->
+        <circle cx="220" cy="250" r="7" fill="#94A3B8"/>
+        <text x="230" y="246" font-size="13" font-weight="700" fill="#64748B">H</text>
+        <text x="244" y="246" font-size="12" fill="#475569">— Inefficient (inside PPF)</text>
+      </g>
+
+      <!-- ===== LAYER: legend efficiency (right panel) ===== -->
+      <g class="layer-legend-efficiency">
+        <!-- Title strip -->
+        <circle cx="612" cy="31" r="6" fill="#7C3AED"/>
+        <text x="626" y="36" font-size="12" font-weight="700" fill="#334155">Points on PPF · productive ≠ allocative efficiency</text>
+        <!-- Header -->
+        <text x="620" y="75" font-size="10" font-weight="800" fill="#7C3AED" letter-spacing="2">EFFICIENCY</text>
+        <!-- F row -->
+        <circle cx="627" cy="101" r="7" fill="#7C3AED"/>
+        <text x="642" y="106" font-size="13" font-weight="600" fill="#334155">F — Productive efficiency</text>
+        <text x="642" y="122" font-size="12" fill="#475569">On the PPF, max output</text>
+        <!-- G row -->
+        <circle cx="627" cy="148" r="7" fill="#0891B2"/>
+        <text x="642" y="153" font-size="13" font-weight="600" fill="#334155">G — Allocative efficiency</text>
+        <text x="642" y="169" font-size="12" fill="#475569">Optimal combination (P=MC)</text>
+        <!-- H row -->
+        <circle cx="627" cy="195" r="7" fill="#94A3B8"/>
+        <text x="642" y="200" font-size="13" font-weight="600" fill="#334155">H — Inefficiency</text>
+        <text x="642" y="216" font-size="12" fill="#475569">Inside PPF, idle resources</text>
+        <!-- Italic note -->
+        <text x="620" y="255" font-size="12" fill="#64748B" font-style="italic">F and G both on PPF but G is</text>
+        <text x="620" y="272" font-size="12" fill="#64748B" font-style="italic">the 'right' combination</text>
+      </g>
+
+    </svg>
+  `,
+
   /* === AD topic hero illustration === */
   heroAd: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

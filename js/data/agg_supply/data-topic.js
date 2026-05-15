@@ -58,6 +58,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'sras',
       template: 'cause',
+      diagramKey: 'adAsCostPush',
       tone: 'green',
       bannerLabel: 'Short Run Aggregate Supply',
       stepLabel: 'Learn: Step 2 of 7',

@@ -872,6 +872,28 @@
   /* === AD-INTERACTIVE template: full-width diagram + horizontal tabs + content panel ===
        Diagram is data-driven via diagramKey; defaults to adInteractive.
        Layout: diagram (full-width), tabs strip, then active tab's panel. */
+  /* === ELASTICITY EXPLORER: interactive draggable demand curve ===
+       Self-contained widget rendered + wired by js/elasticity-explorer.js.
+       This renderer just emits the host div + the surrounding card chrome. */
+  function renderCardElasticityExplorer(c) {
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+
+      <div class="ee-root" data-ee-mount></div>
+
+      ${c.howItWorks ? `
+        <div style="background:#F8FAFC;border-left:4px solid var(--econ-blue);border-radius:8px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
+          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        </div>
+      ` : ''}
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
   function renderCardAdInteractive(c) {
     const diagram = c.diagramKey && I[c.diagramKey] ? I[c.diagramKey] : I.adInteractive;
     const tabs = c.steps.map((s, i) => `
@@ -1011,7 +1033,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1044,6 +1066,7 @@
         case 'paired':             body = renderCardPaired(c);           break;
         case 'ad-interactive':     body = renderCardAdInteractive(c);    break;
         case 'transmission-chain': body = renderCardTransmissionChain(c); break;
+        case 'elasticity-explorer':body = renderCardElasticityExplorer(c); break;
       }
     }
 
@@ -1172,6 +1195,9 @@
     const inner = currentView === 'intro' ? renderIntro() : renderCard(currentView);
     root.innerHTML = renderShell(inner);
     bindEvents();
+    if (window.EconosElasticity) {
+      root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
+    }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 

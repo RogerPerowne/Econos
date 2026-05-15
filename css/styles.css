@@ -10048,3 +10048,274 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   .land-bottom-bar .btn--ghost,
   .land-bottom-bar .btn--primary { width: 100%; text-align: center; justify-content: center; }
 }
+
+/* ============================================================
+   ELASTICITY EXPLORER (interactive PED widget)
+   ============================================================ */
+.ee-root {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 18px 0 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.ee-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.ee-chart-wrap {
+  background: #FAFBFC;
+  border: 1px solid #EEF1F4;
+  border-radius: 10px;
+  padding: 8px;
+}
+.ee-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ee-handle { cursor: grab; }
+.ee-handle.is-dragging { cursor: grabbing; }
+.ee-handle:focus { outline: none; }
+.ee-handle:focus-visible circle:last-of-type {
+  stroke-width: 4;
+  filter: drop-shadow(0 0 0 3px rgba(37, 99, 235, 0.25));
+}
+
+/* Readouts panel */
+.ee-readouts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Formula box */
+.ee-formula {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #FAFBFF;
+}
+.ee-formula__head {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #475569;
+  margin-bottom: 10px;
+}
+.ee-formula__line {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #0B1426;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.ee-formula__line--def { color: #475569; }
+.ee-formula__line--result {
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.ee-formula__line strong { color: #0B1426; font-weight: 800; }
+.ee-mod {
+  color: #94A3B8;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: auto;
+}
+.ee-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2px;
+  vertical-align: middle;
+  line-height: 1.1;
+}
+.ee-frac .ee-num,
+.ee-frac .ee-den { font-size: 13px; }
+.ee-frac .ee-num {
+  border-bottom: 1.5px solid #0B1426;
+  padding: 2px 8px 1px;
+}
+.ee-frac .ee-den {
+  padding: 1px 8px 0;
+}
+
+/* Classification chip */
+.ee-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--ee-chip-color, #2563EB);
+  color: var(--ee-chip-color, #2563EB);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  align-self: flex-start;
+  transition: border-color 0.2s, color 0.2s;
+}
+.ee-chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ee-chip-color, #2563EB);
+  transition: background 0.2s;
+}
+
+/* Spectrum bar */
+.ee-spectrum {
+  position: relative;
+  padding: 6px 0 4px;
+}
+.ee-spectrum__bar {
+  display: grid;
+  grid-template-columns: 5fr 1fr 5fr;
+  height: 26px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.ee-spectrum__seg {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ee-spectrum__seg--in   { background: #FFFBEB; color: #92400E; }
+.ee-spectrum__seg--unit { background: #EFF6FF; color: #1D4ED8; }
+.ee-spectrum__seg--el   { background: #ECFDF5; color: #047857; }
+.ee-spectrum__marker {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  background: #0B1426;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: left 0.18s ease;
+  left: 50%;
+}
+
+/* TR comparison */
+.ee-tr {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+}
+.ee-tr__head {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #475569;
+  margin-bottom: 8px;
+}
+.ee-tr__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.ee-tr__cell {
+  border-left: 4px solid #D97706;
+  padding: 4px 8px;
+}
+.ee-tr__cell--p2 { border-left-color: #059669; }
+.ee-tr__cell-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+}
+.ee-tr__cell-value {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0B1426;
+  font-variant-numeric: tabular-nums;
+}
+.ee-tr__arrow {
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  color: #94A3B8;
+}
+.ee-tr__verdict {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #334155;
+  background: #F8FAFC;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+/* Preset bar */
+.ee-preset-bar {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.ee-preset-bar__head {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #475569;
+  margin-bottom: 10px;
+}
+.ee-preset-bar__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ee-preset {
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: #334155;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.ee-preset:hover { border-color: #94A3B8; }
+.ee-preset.is-active {
+  background: #0B1426;
+  color: white;
+  border-color: #0B1426;
+}
+.ee-preset-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #475569;
+  font-style: italic;
+  min-height: 18px;
+}
+
+/* Responsive — stack on narrow screens */
+@media (max-width: 820px) {
+  .ee-grid { grid-template-columns: 1fr; }
+  .ee-tr__row { grid-template-columns: 1fr; }
+  .ee-tr__arrow { transform: rotate(90deg); }
+}

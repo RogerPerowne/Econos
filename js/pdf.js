@@ -293,6 +293,32 @@ window.EconosPdf = (function () {
       '</div>';
   }
 
+  function renderElasticityFallback(c) {
+    var formula = '<div style="border:2px solid ' + C.navy + ';border-radius:8px;padding:14px 18px;margin-bottom:16px;text-align:center;">' +
+      '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:' + C.navy + ';margin-bottom:8px;">PED — midpoint formula</div>' +
+      '<div style="font-size:22px;font-weight:900;color:' + C.navy + ';font-family:Georgia,serif;">PED = %ΔQ ÷ %ΔP</div>' +
+      '<div style="font-size:11px;color:' + C.slate + ';margin-top:6px;font-style:italic;">|PED| &gt; 1 elastic · |PED| &lt; 1 inelastic · |PED| = 1 unit elastic</div>' +
+      '</div>';
+    var regimes = [
+      { col: C.rose,   label: 'Perfectly inelastic',  shape: 'Vertical demand curve',    eg: 'Insulin in emergency settings',     rule: 'PED = 0 — quantity fixed.' },
+      { col: C.amber,  label: 'Inelastic',            shape: 'Steep demand curve',       eg: 'Petrol short-run, salt',            rule: '|PED| < 1 — Q moves less than P.' },
+      { col: C.blue,   label: 'Unit elastic',         shape: 'Rectangular hyperbola',    eg: 'Mid-point of any linear demand',    rule: '|PED| = 1 — TR unchanged.' },
+      { col: C.green,  label: 'Elastic',              shape: 'Shallow demand curve',     eg: 'Designer handbags, branded soft drinks', rule: '|PED| > 1 — Q moves more than P.' },
+      { col: C.purple, label: 'Perfectly elastic',    shape: 'Horizontal demand curve',  eg: 'A firm in perfect competition',     rule: 'PED = ∞ — any price rise → zero sales.' }
+    ];
+    var frames = regimes.map(function (r) {
+      return '<div style="border-left:5px solid ' + r.col + ';padding:8px 0 8px 14px;margin-bottom:10px;">' +
+        '<div style="font-size:11px;font-weight:800;color:' + r.col + ';text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">' + r.label + '</div>' +
+        '<div style="font-size:12px;color:' + C.ink + ';line-height:1.55;">' +
+        '<strong>Shape:</strong> ' + r.shape + ' &nbsp;·&nbsp; <strong>Real example:</strong> ' + r.eg + '<br>' +
+        '<span style="color:' + C.slate + ';">' + r.rule + '</span>' +
+        '</div></div>';
+    }).join('');
+    var howIt = c.howItWorks ? calloutBlock({ color: C.blue, label: 'How to read it', icon: '🧭', html: c.howItWorks }) : '';
+    var note = '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:14px;">Interactive widget in the Econos app — drag two points along the curve to see live PED, classification and the total-revenue rectangles. Static reference below.</div>';
+    return note + formula + frames + howIt + examEdgeBlock(c.examEdge);
+  }
+
   /* ---- Generic-format renderer (body / causes:{head,body} / steps:{label,text} /
           rows / left+right:{points} / keyTerms) — matches app.js renderCardGeneric ---- */
 
@@ -431,6 +457,7 @@ window.EconosPdf = (function () {
       case 'paired':             return renderPaired(c);
       case 'ad-interactive':     return renderFallback();
       case 'transmission-chain': return renderFallback();
+      case 'elasticity-explorer':return renderElasticityFallback(c);
       default:                   return renderFallback();
     }
   }

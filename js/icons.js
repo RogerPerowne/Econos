@@ -965,19 +965,19 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: shift curves (show-shift only) ===== -->
       <g class="layer-shift-curves">
-        <!-- PPF₂ outward (green dashed) — full axis extent -->
-        <path d="M 60,55 C 240,55 545,285 545,395" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="9 5"/>
-        <text x="550" y="390" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
-        <!-- PPF₃ inward (red dashed) — quarter axis extent -->
-        <path d="M 60,335 C 100,335 178,375 178,395" fill="none" stroke="#DC2626" stroke-width="3" stroke-dasharray="9 5"/>
-        <text x="182" y="390" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
-        <!-- Double-headed green arrow: PPF₁ → PPF₂ (outward) at t≈0.3 -->
-        <!-- PPF₁@t=0.3≈(163,247); PPF₂@t=0.3≈(244,108) -->
+        <!-- PPF₁ repeated as dashed blue — marks the original position -->
+        <path d="M 60,220 C 170,220 310,340 310,395" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
+        <!-- PPF₂ outward — blue solid (new position, same colour family) -->
+        <path d="M 60,55 C 240,55 545,285 545,395" fill="none" stroke="#2563EB" stroke-width="3"/>
+        <text x="550" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₂</text>
+        <!-- PPF₃ inward — blue solid (new position, same colour family) -->
+        <path d="M 60,335 C 100,335 178,375 178,395" fill="none" stroke="#2563EB" stroke-width="3"/>
+        <text x="182" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₃</text>
+        <!-- Double-headed green arrow: PPF₁ → PPF₂ (outward direction) -->
         <line x1="165" y1="245" x2="242" y2="112"
               stroke="#059669" stroke-width="3" stroke-linecap="round"
               marker-start="url(#ppf-shift-out-start)" marker-end="url(#ppf-shift-out-end)"/>
-        <!-- Double-headed red arrow: PPF₁ → PPF₃ (inward) at t≈0.2 -->
-        <!-- PPF₁@t=0.2≈(128,233); PPF₃@t=0.2≈(90,350) -->
+        <!-- Double-headed red arrow: PPF₁ → PPF₃ (inward direction) -->
         <line x1="155" y1="253" x2="88" y2="348"
               stroke="#DC2626" stroke-width="3" stroke-linecap="round"
               marker-start="url(#ppf-shift-in-start)" marker-end="url(#ppf-shift-in-end)"/>
@@ -991,13 +991,13 @@ window.ECONOS_ICONS = {
         <!-- Header -->
         <text x="620" y="75" font-size="10" font-weight="800" fill="#059669" letter-spacing="2">PPF SHIFTS</text>
         <!-- PPF₂ outward -->
-        <line x1="620" y1="97" x2="640" y2="97" stroke="#059669" stroke-width="2.5" stroke-dasharray="5 3"/>
-        <text x="648" y="101" font-size="13" font-weight="700" fill="#059669">PPF₂ — outward</text>
+        <line x1="620" y1="97" x2="640" y2="97" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="648" y="101" font-size="13" font-weight="700" fill="#2563EB">PPF₂ — outward</text>
         <text x="648" y="119" font-size="12" fill="#475569">Better technology / More resources</text>
         <text x="648" y="135" font-size="12" fill="#475569">/ Higher productivity</text>
         <!-- PPF₃ inward -->
-        <line x1="620" y1="160" x2="640" y2="160" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="5 3"/>
-        <text x="648" y="164" font-size="13" font-weight="700" fill="#DC2626">PPF₃ — inward</text>
+        <line x1="620" y1="160" x2="640" y2="160" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="648" y="164" font-size="13" font-weight="700" fill="#2563EB">PPF₃ — inward</text>
         <text x="648" y="182" font-size="12" fill="#475569">War / natural disaster</text>
         <text x="648" y="198" font-size="12" fill="#475569">/ Capital depreciation</text>
         <!-- Movement along note -->
@@ -1164,16 +1164,21 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole demand curve</text>
-        <!-- D0 left shift (clipped to axis area) -->
+        <!-- D₁ original — dashed blue, marks previous position -->
         <g clip-path="url(#dm-chart-clip)">
-          <line x1="30" y1="90" x2="420" y2="370" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
-        <text x="426" y="368" font-size="14" font-weight="700" fill="#DC2626">D₀</text>
-        <!-- D2 right shift (clipped to axis area) -->
+        <text x="494" y="372" font-size="13" font-weight="600" fill="#2563EB" opacity="0.7">D₁</text>
+        <!-- D₀ left shift — blue solid (new position, same colour) -->
         <g clip-path="url(#dm-chart-clip)">
-          <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="30" y1="90" x2="420" y2="370" stroke="#2563EB" stroke-width="2.5"/>
         </g>
-        <text x="548" y="376" font-size="14" font-weight="700" fill="#059669">D₂</text>
+        <text x="426" y="368" font-size="14" font-weight="700" fill="#2563EB">D₀</text>
+        <!-- D₂ right shift — blue solid (new position, same colour) -->
+        <g clip-path="url(#dm-chart-clip)">
+          <line x1="170" y1="90" x2="560" y2="370" stroke="#2563EB" stroke-width="2.5"/>
+        </g>
+        <text x="548" y="376" font-size="14" font-weight="700" fill="#2563EB">D₂</text>
         <!-- E0 circle (red) at (225, 230) -->
         <line x1="225" y1="230" x2="225" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="225" cy="230" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
@@ -1191,12 +1196,12 @@ window.ECONOS_ICONS = {
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF DEMAND</text>
         <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
         <text x="620" y="120" font-size="13" fill="#334155">the whole curve moves.</text>
-        <line x1="620" y1="160" x2="660" y2="160" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
-        <text x="668" y="164" font-size="12" font-weight="600" fill="#059669">D₂ — right (increase):</text>
+        <line x1="620" y1="160" x2="660" y2="160" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="668" y="164" font-size="12" font-weight="600" fill="#2563EB">D₂ — right (increase):</text>
         <text x="620" y="182" font-size="12" fill="#334155">↑ income, ↑ tastes,</text>
         <text x="620" y="198" font-size="12" fill="#334155">↑ substitute price</text>
-        <line x1="620" y1="222" x2="660" y2="222" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
-        <text x="668" y="226" font-size="12" font-weight="600" fill="#DC2626">D₀ — left (decrease):</text>
+        <line x1="620" y1="222" x2="660" y2="222" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="668" y="226" font-size="12" font-weight="600" fill="#2563EB">D₀ — left (decrease):</text>
         <text x="620" y="244" font-size="12" fill="#334155">↓ income, ↓ tastes,</text>
         <text x="620" y="260" font-size="12" fill="#334155">↑ complement price</text>
         <text x="620" y="295" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">REMEMBER</text>
@@ -1319,16 +1324,21 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole supply curve</text>
-        <!-- S0 left shift (clipped to axis area) -->
+        <!-- S₁ original — dashed red, marks previous position -->
         <g clip-path="url(#sp-chart-clip)">
-          <line x1="30" y1="370" x2="420" y2="90" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
+        </g>
+        <text x="494" y="88" font-size="13" font-weight="600" fill="#DC2626" opacity="0.7">S₁</text>
+        <!-- S₀ left shift — red solid (new position, same colour) -->
+        <g clip-path="url(#sp-chart-clip)">
+          <line x1="30" y1="370" x2="420" y2="90" stroke="#DC2626" stroke-width="2.5"/>
         </g>
         <text x="424" y="88" font-size="14" font-weight="700" fill="#DC2626">S₀</text>
-        <!-- S2 right shift (clipped to axis area) -->
+        <!-- S₂ right shift — red solid (new position, same colour) -->
         <g clip-path="url(#sp-chart-clip)">
-          <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="170" y1="370" x2="560" y2="90" stroke="#DC2626" stroke-width="2.5"/>
         </g>
-        <text x="564" y="88" font-size="14" font-weight="700" fill="#059669">S₂</text>
+        <text x="564" y="88" font-size="14" font-weight="700" fill="#DC2626">S₂</text>
         <!-- E0_s circle (red) at (225, 230) -->
         <line x1="225" y1="230" x2="225" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="225" cy="230" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
@@ -1346,11 +1356,11 @@ window.ECONOS_ICONS = {
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF SUPPLY</text>
         <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
         <text x="620" y="120" font-size="13" fill="#334155">the whole curve moves.</text>
-        <line x1="620" y1="155" x2="660" y2="155" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
-        <text x="668" y="159" font-size="12" font-weight="600" fill="#059669">S₂ — right (increase in supply):</text>
+        <line x1="620" y1="155" x2="660" y2="155" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="668" y="159" font-size="12" font-weight="600" fill="#DC2626">S₂ — right (increase in supply):</text>
         <text x="620" y="177" font-size="12" fill="#334155">Lower costs / Better technology</text>
         <text x="620" y="193" font-size="12" fill="#334155">/ More producers / Subsidies</text>
-        <line x1="620" y1="217" x2="660" y2="217" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 5"/>
+        <line x1="620" y1="217" x2="660" y2="217" stroke="#DC2626" stroke-width="2.5"/>
         <text x="668" y="221" font-size="12" font-weight="600" fill="#DC2626">S₀ — left (decrease in supply):</text>
         <text x="620" y="243" font-size="12" fill="#334155">Higher wages / Input price rise</text>
         <text x="620" y="259" font-size="12" fill="#334155">/ New tax / Supply shock</text>
@@ -1443,11 +1453,15 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Demand shifts right → higher P and higher Q</text>
-        <!-- D2 line (clipped to axis area) -->
+        <!-- D₁ original — dashed blue, marks previous position -->
         <g clip-path="url(#mk-chart-clip)">
-          <line x1="170" y1="90" x2="560" y2="370" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
-        <text x="548" y="376" font-size="14" font-weight="700" fill="#059669">D₂</text>
+        <!-- D₂ right shift — blue solid (new position, same colour) -->
+        <g clip-path="url(#mk-chart-clip)">
+          <line x1="170" y1="90" x2="560" y2="370" stroke="#2563EB" stroke-width="2.5"/>
+        </g>
+        <text x="548" y="376" font-size="14" font-weight="700" fill="#2563EB">D₂</text>
         <!-- E1 ref (old equilibrium) -->
         <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
         <text x="282" y="222" font-size="11" font-weight="600" fill="#64748B">E₁</text>
@@ -1482,11 +1496,15 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Supply shifts right → higher Q but lower P</text>
-        <!-- S2 line (clipped to axis area) -->
+        <!-- S₁ original — dashed red, marks previous position -->
         <g clip-path="url(#mk-chart-clip)">
-          <line x1="170" y1="370" x2="560" y2="90" stroke="#059669" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
-        <text x="548" y="88" font-size="14" font-weight="700" fill="#059669">S₂</text>
+        <!-- S₂ right shift — red solid (new position, same colour) -->
+        <g clip-path="url(#mk-chart-clip)">
+          <line x1="170" y1="370" x2="560" y2="90" stroke="#DC2626" stroke-width="2.5"/>
+        </g>
+        <text x="548" y="88" font-size="14" font-weight="700" fill="#DC2626">S₂</text>
         <!-- E1 ref (old equilibrium) -->
         <circle cx="295" cy="230" r="4" fill="#94A3B8" stroke="#64748B" stroke-width="1.5"/>
         <text x="282" y="222" font-size="11" font-weight="600" fill="#64748B">E₁</text>
@@ -1554,12 +1572,20 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">0</text>
       </g>
 
-      <!-- ===== LAYER: SRPC1 (original short-run Phillips curve) ===== -->
+      <!-- ===== LAYER: SRPC1 solid (base state only) ===== -->
       <g class="layer-srpc1">
         <g clip-path="url(#ph-chart-clip)">
           <line x1="90" y1="103" x2="490" y2="383" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
         <text x="496" y="386" font-size="13" font-weight="700" fill="#2563EB">SRPC₁</text>
+      </g>
+
+      <!-- ===== LAYER: SRPC1 dashed (extension/shift states — marks original position) ===== -->
+      <g class="layer-srpc1-dashed">
+        <g clip-path="url(#ph-chart-clip)">
+          <line x1="90" y1="103" x2="490" y2="383" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
+        </g>
+        <text x="496" y="386" font-size="13" font-weight="600" fill="#2563EB" opacity="0.7">SRPC₁</text>
       </g>
 
       <!-- ===== LAYER: Point A (initial equilibrium at NAIRU) ===== -->
@@ -1597,10 +1623,10 @@ window.ECONOS_ICONS = {
         <text x="308" y="68" font-size="13" font-weight="700" fill="#7C3AED">LRPC</text>
       </g>
 
-      <!-- ===== LAYER: SRPC2 (shifted-up short-run curve) ===== -->
+      <!-- ===== LAYER: SRPC2 solid (new shifted position) ===== -->
       <g class="layer-srpc2">
         <g clip-path="url(#ph-chart-clip)">
-          <line x1="90" y1="33" x2="490" y2="313" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="8 5" opacity="0.85"/>
+          <line x1="90" y1="33" x2="490" y2="313" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
         <text x="496" y="316" font-size="13" font-weight="700" fill="#2563EB">SRPC₂</text>
       </g>
@@ -1645,11 +1671,11 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: stagflation (1970s shift) ===== -->
       <g class="layer-stagflation">
-        <!-- SRPC3 — supply-shock shifted curve (steeper shift up) -->
+        <!-- SRPC₃ — supply-shock shifted curve, blue solid (new position, same colour) -->
         <g clip-path="url(#ph-chart-clip)">
-          <line x1="90" y1="55" x2="490" y2="265" stroke="#DC2626" stroke-width="3" stroke-dasharray="8 5"/>
+          <line x1="90" y1="55" x2="490" y2="265" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
-        <text x="496" y="268" font-size="13" font-weight="700" fill="#DC2626">SRPC₃</text>
+        <text x="496" y="268" font-size="13" font-weight="700" fill="#2563EB">SRPC₃</text>
         <!-- Stagflation point at (400, 160): higher U AND higher π than A -->
         <line x1="60" y1="160" x2="400" y2="160" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="400" y1="160" x2="400" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -1657,8 +1683,8 @@ window.ECONOS_ICONS = {
         <text x="412" y="156" font-size="13" font-weight="700" fill="#DC2626">S</text>
         <text x="46" y="164" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">π_S</text>
         <text x="400" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">U_S</text>
-        <!-- Diagonal red arrow from A toward stagflation point -->
-        <line x1="307" y1="244" x2="393" y2="166" stroke="#DC2626" stroke-width="2.5" marker-end="url(#ph-red-end)"/>
+        <!-- Diagonal arrow from A toward stagflation point -->
+        <line x1="307" y1="244" x2="393" y2="166" stroke="#D97706" stroke-width="2.5" marker-end="url(#ph-amber-end)"/>
       </g>
 
       <!-- ===== LAYER: legend shift (stagflation) ===== -->

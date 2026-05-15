@@ -509,6 +509,35 @@ window.EconosPdf = (function () {
       '<div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;">' + tiles + '</div>';
   }
 
+  function renderMarketStructuresComparison(c) {
+    var COLS = [
+      { key: 'pc', label: 'Perfect Competition', color: '#059669' },
+      { key: 'mc', label: 'Monopolistic Comp.',  color: '#0EA5E9' },
+      { key: 'ol', label: 'Oligopoly',            color: '#D97706' },
+      { key: 'mo', label: 'Monopoly',             color: '#DC2626' }
+    ];
+    var header = '<div style="display:grid;grid-template-columns:140px repeat(4,1fr);background:#0B1426;border-radius:8px 8px 0 0;">' +
+      '<div style="padding:10px 10px;"></div>' +
+      COLS.map(function(col) {
+        return '<div style="padding:10px 8px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:' + col.color + ';border-left:1px solid rgba(255,255,255,0.1);text-align:center;">' + col.label + '</div>';
+      }).join('') + '</div>';
+    var rows = (c.rows || []).map(function(r, i) {
+      var bg = r.reveal ? '#FEFCE8' : (i % 2 === 0 ? '#F8FAFC' : '#fff');
+      var labelStyle = r.reveal
+        ? 'padding:10px 10px;font-weight:800;font-size:11px;color:#92400E;border-right:1px solid #E7E7EA;'
+        : 'padding:10px 10px;font-weight:700;font-size:11px;color:#0B1426;border-right:1px solid #E7E7EA;';
+      return '<div style="display:grid;grid-template-columns:140px repeat(4,1fr);background:' + bg + ';border-top:1px solid #E7E7EA;">' +
+        '<div style="' + labelStyle + '">' + (r.reveal ? '⭐ ' : '') + r.label + '</div>' +
+        COLS.map(function(col) {
+          return '<div style="padding:10px 8px;font-size:11px;color:#0B1426;line-height:1.45;border-left:1px solid #E7E7EA;text-align:center;">' + (r[col.key] || '–') + '</div>';
+        }).join('') + '</div>';
+    }).join('');
+    var lede = c.lede ? '<div style="font-size:13px;color:' + C.slate + ';margin-bottom:12px;line-height:1.6;">' + c.lede + '</div>' : '';
+    return lede +
+      '<div style="overflow-x:auto;border-radius:8px;border:1px solid #E7E7EA;margin-bottom:16px;">' + header + rows + '</div>' +
+      examEdgeBlock(c.examEdge);
+  }
+
   function renderGeneric(c) {
     var intro = c.intro ? '<div style="font-size:13px;line-height:1.65;color:' + C.slate + ';font-style:italic;border-left:4px solid ' + C.blue + ';padding:6px 0 6px 14px;margin-bottom:18px;">💡 ' + s(c.intro) + '</div>' : '';
     var diagramNote = c.diagramKey ? '<div style="font-size:12px;color:' + C.slate + ';border:1.5px dashed ' + C.rule + ';border-radius:8px;padding:10px 14px;margin-bottom:18px;font-style:italic;">📊 Interactive diagram available in the app.</div>' : '';
@@ -525,7 +554,7 @@ window.EconosPdf = (function () {
   }
 
   function isGenericCard(c) {
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison') return false;
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -554,8 +583,9 @@ window.EconosPdf = (function () {
       case 'pes-explorer':       return renderPesExplorerFallback(c);
       case 'yed-explorer':       return renderYedXedFallback(c, 'YED');
       case 'xed-explorer':       return renderYedXedFallback(c, 'XED');
-      case 'ped-five-frames':    return renderPedFiveFrames(c);
-      default:                   return renderFallback();
+      case 'ped-five-frames':            return renderPedFiveFrames(c);
+      case 'market-structures-comparison': return renderMarketStructuresComparison(c);
+      default:                           return renderFallback();
     }
   }
 

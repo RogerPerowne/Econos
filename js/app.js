@@ -940,6 +940,45 @@
   }
 
   /* -------------------------------------------------------------------------
+     Market Structures Comparison — 4-column reveal table.
+     ------------------------------------------------------------------------- */
+  function renderCardMarketStructuresComparison(c) {
+    const COLS = [
+      { key: 'pc', label: 'Perfect Competition', color: '#059669' },
+      { key: 'mc', label: 'Monopolistic Comp.',  color: '#0EA5E9' },
+      { key: 'ol', label: 'Oligopoly',            color: '#D97706' },
+      { key: 'mo', label: 'Monopoly',             color: '#DC2626' }
+    ];
+    const header = `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#0B1426;border-radius:12px 12px 0 0;">
+      <div style="padding:11px 12px;"></div>
+      ${COLS.map(col => `<div style="padding:11px 8px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:${col.color};border-left:1px solid rgba(255,255,255,0.1);text-align:center;">${col.label}</div>`).join('')}
+    </div>`;
+    const rows = (c.rows || []).map((r, i) => {
+      if (r.reveal) {
+        return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#FEFCE8;border-top:1px solid #E7E7EA;">
+          <div style="padding:12px 12px;font-weight:800;font-size:12px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
+          ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:12px;line-height:1.5;border-left:1px solid #E7E7EA;text-align:center;">
+            <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:11px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">Reveal ↓</button>
+            <div class="reveal-cell__body is-hidden" style="color:#0B1426;">${r[col.key] || '–'}</div>
+          </div>`).join('')}
+        </div>`;
+      }
+      return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:${i % 2 === 0 ? '#F8FAFC' : '#fff'};border-top:1px solid #E7E7EA;">
+        <div style="padding:12px 12px;font-weight:700;font-size:12px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
+        ${COLS.map(col => `<div style="padding:12px 8px;font-size:12px;color:#0B1426;line-height:1.5;border-left:1px solid #E7E7EA;text-align:center;">${r[col.key] || '–'}</div>`).join('')}
+      </div>`;
+    }).join('');
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      <div style="overflow-x:auto;border-radius:12px;border:1px solid #E7E7EA;margin-bottom:20px;">${header}${rows}</div>
+      ${c.footer ? `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>` : ''}
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* -------------------------------------------------------------------------
      YED Explorer & XED Explorer — Engel-curve and cross-price widgets.
      Both registered as globals by js/yed-xed-explorer.js.
      ------------------------------------------------------------------------- */
@@ -1218,7 +1257,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1256,7 +1295,8 @@
         case 'worked-example':     body = renderCardWorkedExample(c);      break;
         case 'pes-explorer':       body = renderCardPesExplorer(c);        break;
         case 'yed-explorer':       body = renderCardYedExplorer(c);        break;
-        case 'xed-explorer':       body = renderCardXedExplorer(c);        break;
+        case 'xed-explorer':               body = renderCardXedExplorer(c);                   break;
+        case 'market-structures-comparison': body = renderCardMarketStructuresComparison(c);  break;
       }
     }
 

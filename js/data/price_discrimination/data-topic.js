@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Discrimination',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the three degrees of price discrimination, the conditions required, the welfare effects, and how to evaluate whether it is good or bad for consumers.',
   intro: {
     heroKey: 'heroMarketPower',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Price discrimination requires: market power (price-setter), ability to segment markets (identify groups with different PED), and prevention of arbitrage (resale between groups). Without all three, discrimination fails.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_discrimination_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Price discrimination: the big picture',
       lede: 'Same good, different prices. A way for firms with market power to capture surplus that single pricing leaves on the table.',
       branches: [
@@ -133,6 +133,61 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Digital price discrimination is the contemporary frontier of competition policy. The CMA and EU are grappling with whether algorithmic pricing is a new form of predatory or discriminatory behaviour. Key issue: is personalised pricing a normal commercial response to different consumer preferences, or is it exploitative extraction of data-revealed willingness to pay? The policy response is still evolving — this uncertainty is itself an exam-worthy evaluation point.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'pd-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: price discrimination',
+      question: 'Evaluate the view that price discrimination is always harmful to consumers. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define price discrimination and its three degrees. Explain the standard consumer welfare concern.',
+          hint: 'Price discrimination: charging different prices for the same good, not based on cost differences. Three degrees: 1st (perfect PD, each unit at max WTP), 2nd (quantity discounts, self-selection), 3rd (different market segments). Standard concern: firm extracts consumer surplus → reduces consumer welfare. But 3rd degree PD may increase output vs single price monopoly; 1st degree increases output to Qpc (allocatively efficient). The "always harmful" claim requires evaluation.',
+          model: 'Price discrimination — charging different consumers different prices for the same good or service, based on differences in willingness to pay rather than cost — is a strategy available only to firms with market power. Three degrees are typically distinguished: first degree (perfect price discrimination, charging each customer their maximum willingness to pay), second degree (quantity discounts, tiered pricing), and third degree (different prices in segmented markets). The standard concern is that price discrimination transfers consumer surplus to the producer. However, the welfare analysis is more complex: price discrimination can increase output and, in some cases, benefit consumers who would otherwise be priced out of the market entirely.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — How price discrimination harms consumers: surplus extraction',
+          prompt: 'Explain how third-degree price discrimination redistributes welfare from consumers to producers.',
+          hint: '3rd degree: segment markets by elasticity → charge inelastic market more, elastic market less. Net effect on total output: depends on whether new output exceeds lost output. Consumer loss: inelastic segment consumers pay more than single-price monopoly. Equity concern: price discrimination by income (wealthier consumers pay more where elasticity negatively correlated with income — but also the reverse). Airline pricing: business travellers pay many times leisure price for same seat. Pharmaceutical pricing: if UK is low elasticity market, charged more.',
+          model: 'Third-degree price discrimination — the most common form — harms consumers in the high-price market segment. By charging price-inelastic buyers (business travellers, essential medication users) more than under a single-price monopoly, the firm extracts surplus from those consumers with the least substitution alternatives. Business travellers paying £800 for a London-Edinburgh flight while leisure travellers pay £50 for the same seat represents a direct transfer of surplus from consumers to the airline, enabled by the ability to segment markets. The equity dimension reinforces this concern where income and price elasticity are negatively correlated: those with fewer alternatives (lower income, essential goods) face higher prices, which is regressive.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — When price discrimination benefits consumers: output expansion',
+          prompt: 'Explain how price discrimination can increase total output and benefit consumers who would otherwise be excluded.',
+          hint: 'If 3rd degree PD increases total output vs single price monopoly → consumers gain through lower price in elastic segment. Students/pensioners pay less for train travel (they would not travel at full price — they gain positive CS). NHS vs private prescriptions: differential pricing allows pharmaceutical firms to earn high profit in rich markets (funding R&D) while providing low-cost access in developing markets. Peak/off-peak pricing: allocates capacity efficiently — consumers willing to pay peak premium use it; those who can flex pay less.',
+          model: 'Price discrimination can benefit consumers in the lower-price market segment by offering access at prices below the single-price monopoly level. Student and pensioner railcard discounts represent third-degree price discrimination: these groups have highly elastic demand (they would not travel at full price) and gain positive consumer surplus from discriminatory pricing that would not be available under a single uniform tariff. Similarly, tiered pharmaceutical pricing — high prices in rich markets, low prices in developing countries — enables access for populations that could not afford a single global price, while high-market prices fund the R&D investment that created the treatment. Allocative efficiency may also improve: if price discrimination increases total output toward the competitive level (the elastic market consumes more output at the lower price), the deadweight welfare loss shrinks. In the extreme case of perfect first-degree price discrimination, output reaches the allocatively efficient level (P = MC for the last unit), eliminating the DWL entirely.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Information asymmetry and algorithmic discrimination concerns',
+          prompt: 'Evaluate the modern concerns about big-data price discrimination and its implications for consumer trust and fairness.',
+          hint: 'Algorithmic/personalised pricing: firms use data (search history, device type, location, purchase history) to set individual prices. Unlike traditional 3rd degree PD (visible to consumers), this is invisible → consumers cannot shop around effectively. Privacy concern: data collection itself may be harmful. Distributional: if low-income consumers identified as less price-sensitive in some categories → pay more. Insurance: health/life insurance using data to discriminate by risk → those most needing coverage (high risk) pay most or excluded. CMA and EU grappling with this — regulatory response unclear.',
+          model: 'The contemporary form of price discrimination — algorithmic personalised pricing using consumer data — raises welfare concerns beyond the traditional analysis. When airlines, hotels, and e-commerce platforms use browsing history, device type, and demographic data to set individual prices dynamically, the discrimination is invisible to consumers: they cannot identify whether they are being charged more than another customer, which undermines the ability to comparison-shop or negotiate. This information asymmetry shifts the traditional analysis: in standard third-degree PD, consumers at least know which segment they are in and can make informed choices. With algorithmic discrimination, they cannot. Data-driven insurance pricing provides the starkest case: using genetic or health data to discriminate by risk may accurately reflect expected costs, but it prices the most vulnerable people out of markets that exist precisely to protect them — a fundamental equity concern that the standard efficiency analysis cannot address.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Weighing welfare effects by degree and market context',
+          prompt: 'Weigh the distributional, efficiency, and output effects of price discrimination across its three degrees.',
+          hint: 'First degree PD: allocatively efficient but eliminates all CS — firms capture everything. Second degree PD: generally consumer-friendly (quantity discounts benefit large buyers). Third degree PD: ambiguous — may increase output and benefit elastic-demand segments; harms inelastic segments. Net welfare effect: empirically mixed. Airlines: most consumers get cheaper access through off-peak pricing; only business travellers pay premium. Policy: price discrimination per se not illegal — depends on whether it increases or decreases total welfare. CMA focuses on algorithmic discrimination as an emerging concern.',
+          model: 'The welfare impact of price discrimination varies fundamentally by degree and context. First-degree price discrimination achieves allocative efficiency (output at Qpc, DWL = 0) but represents a complete transfer of consumer surplus to the producer — consumers are not better off than under a single-price monopoly in terms of surplus. Second-degree price discrimination (volume discounts, loyalty pricing) generally benefits high-volume consumers and is rarely considered harmful. Third-degree price discrimination produces mixed welfare outcomes: consumers in price-elastic segments gain access at lower prices, those in inelastic segments pay more. The net welfare effect depends on whether output increases overall — which requires empirical assessment rather than theoretical presumption. The "always harmful" claim clearly fails for cases where price discrimination enables access for consumers priced out of a uniform monopoly price. It is strongest for algorithmic discrimination where information asymmetries prevent consumers from exercising informed choice.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a nuanced judgement: price discrimination is often, but not always, harmful — welfare effects depend on degree, output effects, and information transparency.',
+          hint: 'The "always harmful" claim fails because: (1) 3rd degree PD may expand output and benefit elastic segments; (2) student/pensioner discounts are consumer-friendly; (3) tiered pharmaceutical pricing expands access. But: surplus extraction from inelastic consumers is real; algorithmic PD raises new concerns. Appropriate policy: evaluate case-by-case, focus on algorithmic discrimination where information asymmetry is most severe.',
+          model: 'The view that price discrimination is always harmful to consumers is demonstrably false. Student railcard discounts, off-peak pricing, and tiered pharmaceutical access pricing all represent third-degree price discrimination that benefits lower-income or elastic-demand consumers who would be excluded from a uniform monopoly price. These cases illustrate that price discrimination can expand access and increase total welfare. However, price discrimination typically involves surplus extraction from price-inelastic consumers, and the modern form of algorithmic data-driven pricing raises new concerns about information asymmetry and invisible discrimination that traditional welfare analysis cannot fully address. The appropriate policy framework is therefore case-specific: evaluating whether total output increases (generally welfare-improving), whether information is transparent enough for consumers to exercise choice (traditional PD), or whether algorithmic discrimination creates new market failures requiring regulatory attention. Price discrimination is a tool of market power — sometimes beneficial, sometimes harmful — but never a simple categorical welfare verdict in either direction.'
+        }
+      ]
     }
   ]
 };

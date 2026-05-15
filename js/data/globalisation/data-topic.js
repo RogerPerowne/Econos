@@ -10,7 +10,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Globalisation',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in the causes, benefits, costs and the de-globalisation debate',
 
   intro: {
@@ -24,7 +24,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.',
     stages: [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',    state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards',    state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
     ]
@@ -36,7 +36,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'globalisation-framing',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Globalisation: the interconnection of economies',
       lede: 'Globalisation describes the growing integration of economies worldwide — through trade, capital flows, migration, and information. It is a process, not an event.',
       branches: [
@@ -59,7 +59,7 @@ window.ECONOS_TOPIC = {
       id: 'globalisation-causes',
       template: 'mechanisms',
       diagramKey: 'globalisationDiagram',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 8',
       title: 'Causes of globalisation',
       lede: 'Globalisation has been driven by technological change, policy liberalisation, and the rise of multinational corporations. These forces reinforce each other.',
       mechanisms: [
@@ -104,7 +104,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       tone: 'green',
       bannerLabel: 'Benefits of globalisation',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 8',
       title: 'Benefits of globalisation',
       lede: 'Globalisation has produced the most dramatic reduction in absolute poverty in human history — while also generating new inequalities and vulnerabilities.',
       diagramCaption: 'Global extreme poverty: 36% (1990) → 10% (2023). Linked to trade integration.',
@@ -145,7 +145,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'globalisation-costs',
       template: 'paired',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'Costs of globalisation',
       lede: 'Globalisation creates winners and losers. The costs fall unevenly — by country, sector, and income group — and have driven the most significant political backlash in decades.',
       pairs: [
@@ -190,7 +190,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'globalisation-developing',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 5 of 7',
+      stepLabel: 'Learn: Step 5 of 8',
       title: 'Globalisation and economic development',
       lede: "Globalisation's impact on developing countries is complex and contested. It has created enormous opportunities — but access to those opportunities is unequal.",
       mechanisms: [
@@ -235,7 +235,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       tone: 'rose',
       bannerLabel: 'The reversal trend',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 6 of 8',
       title: 'De-globalisation: slowing and reversing?',
       lede: "Since 2008, globalisation has slowed. Since 2016, it has partially reversed. The forces driving de-globalisation are political, economic, and geopolitical — and may be structural rather than cyclical.",
       diagramCaption: 'World trade as % of GDP peaked ~2008 and has not recovered to pre-crisis trajectory.',
@@ -276,7 +276,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'mncs',
       template: 'paired',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 7 of 8',
       title: 'Multinational corporations: power and controversy',
       lede: 'MNCs are the primary vehicle through which globalisation operates. They are simultaneously engines of development and objects of fierce criticism.',
       pairs: [
@@ -312,6 +312,61 @@ window.ECONOS_TOPIC = {
         text: "A* MNC evaluation uses a net welfare test: <em>'Whether FDI is beneficial depends on whether the employment, technology, and export benefits outweigh the tax leakage, profit repatriation, and environmental costs — which in turn depends on host country institutions, regulation, and bargaining power.'</em> Context-specific evaluation always outscores generic lists."
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'glob-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: globalisation',
+      question: 'Evaluate the costs and benefits of globalisation for a developed economy such as the UK. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define globalisation and briefly explain why its welfare impact on a developed economy is contested.',
+          hint: 'Globalisation: growing integration of economies through trade, capital flows, migration, and information. For developed economies, standard gains (comparative advantage, consumer prices, FDI inflows) coexist with costs (structural unemployment, labour market downward pressure, de-industrialisation). The debate is not whether there are costs and benefits but which dominates and for whom.',
+          model: 'Globalisation describes the deepening integration of national economies through international trade, capital flows, migration, and the diffusion of technology and ideas. Since the 1980s, successive waves of trade liberalisation, financial deregulation, and technological change have dramatically reduced the costs of international exchange. For a developed economy such as the UK, globalisation has delivered substantial consumer and economic gains — lower prices, access to capital, technological transfer — while also generating distributional costs concentrated in specific industries and regions. The welfare assessment is therefore highly contested and depends on which groups are considered and over what time horizon.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Consumer and macroeconomic benefits',
+          prompt: 'Explain the main economic gains from globalisation for the UK: lower prices, specialisation, FDI, and financial services.',
+          hint: 'Comparative advantage gains: UK specialises in financial services, professional services, advanced manufacturing where it has CA → higher real incomes. China price effect: manufactured goods prices fell sharply 1990s-2010s → raised UK real wages/living standards (Bank of England estimate: ~10% reduction in goods CPI). FDI: foreign investment created UK jobs and technology transfer (Toyota Sunderland, Nissan Sunderland). Capital inflows finance current account deficit. UK financial services: London as global financial centre created high-paid service export sector.',
+          model: 'Globalisation has generated substantial economic gains for the UK. The most quantitatively significant benefit has been the "China price" effect: the integration of China and other emerging economies into global trade from the 1990s drove manufactured goods prices sharply lower, equivalent to a significant reduction in UK consumer price levels — estimated at a 10% or more reduction in goods CPI. This raised UK real wages and purchasing power, particularly benefiting lower-income households who spend a higher proportion of income on manufactured goods. Specialisation according to comparative advantage has allowed the UK to focus on high-value services (financial, professional, educational) where it has structural advantages, generating higher-paid employment than the manufacturing it replaced. FDI inflows have brought capital, employment, and technology: Japanese automotive investment (Nissan Sunderland, Toyota Derbyshire) created competitive, export-oriented manufacturing plants that would not have existed without open capital markets.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Structural costs: deindustrialisation and distributional effects',
+          prompt: 'Explain the concentrated regional and occupational costs of globalisation for UK workers.',
+          hint: 'Deindustrialisation: UK manufacturing employment 36% (1971) → 8% (2023). Import competition from low-wage economies (China, Eastern Europe) eliminated textile, steel, electronics manufacturing. Stolper-Samuelson: trade liberalisation reduces real wages of the competing factor in rich countries → low-skill UK workers bear disproportionate cost. Regional concentration: manufacturing job losses concentrated in Midlands, North, Wales → lasting deprivation. The China shock (Autor, Dorn, Hanson 2016): US evidence shows local labour markets facing Chinese import competition had persistent employment losses and social problems (higher opioid use, lower marriage rates).',
+          model: 'The distributional costs of globalisation for developed economies are real and concentrated. UK manufacturing employment fell from 36% of the workforce in 1971 to approximately 8% by 2023 — a structural transformation driven partly by import competition from lower-cost economies. The Stolper-Samuelson theorem predicts this: trade liberalisation reduces the real wages of the factor competing with imports — primarily low-skill workers in developed countries. These losses have been geographically concentrated in former manufacturing towns and regions (Midlands, North of England, South Wales) that have not fully adjusted to the service-sector economy. The China Shock research (Autor, Dorn, Hanson) provides rigorous evidence that US communities most exposed to Chinese import competition experienced persistent employment losses, wage stagnation, and associated social problems — with similar dynamics likely in affected UK regions. These distributional costs are real welfare losses that aggregate GDP statistics obscure.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — De-globalisation and supply chain vulnerabilities',
+          prompt: 'Evaluate the risks of over-dependence on global supply chains revealed by COVID and geopolitical tensions.',
+          hint: 'COVID-19 revealed supply chain vulnerabilities: PPE shortages (UK had no domestic production), semiconductor shortages (Taiwan-dependent supply), energy dependence on Russia (gas prices surged 2022). Just-in-time global supply chains → efficient in normal times but fragile under shocks. Geopolitical risk: US-China decoupling, tariff wars. National security argument for onshoring: semiconductors (CHIPS Act), pharmaceutical manufacturing, food security. The efficiency of globalisation has a resilience cost — over-specialisation creates systemic risk.',
+          model: 'The COVID-19 pandemic and subsequent supply chain disruptions revealed a significant cost of globalisation: the vulnerability created by over-dependence on internationally concentrated supply chains. The UK\'s inability to source adequate personal protective equipment at the start of the pandemic — having no significant domestic PPE manufacturing capacity — illustrated the security risk of the "comparative advantage at all costs" logic. Global semiconductor supply concentrated in Taiwan (TSMC produces ~90% of the world\'s advanced chips) creates a single point of failure for entire economies. Russia\'s invasion of Ukraine in 2022 exposed European dependence on Russian gas, triggering energy price spikes across the UK and Europe. These "tail risk" events — low probability but high impact — represent a category of globalisation cost that standard welfare analysis underweights. The US CHIPS Act (2022) and EU Chips Act (2023) reflect a policy shift toward strategic "friend-shoring" and onshoring that accepts some efficiency loss in exchange for supply security.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Net welfare assessment and the redistribution failure',
+          prompt: 'Weigh the aggregate benefits against the distributional costs, and evaluate whether policy has adequately addressed the losers.',
+          hint: 'Aggregate net benefit from globalisation for the UK is almost certainly positive — lower prices, services surplus, FDI employment, technology. But gains have been unequally distributed: financial services and high-skill workers gained; manufacturing workers and their communities lost. Political backlash (Brexit, rise of populism) reflects the failure to redistribute gains to compensate losers. The Compensation Principle (Kaldor-Hicks): gainers could theoretically compensate losers — but they haven\'t. This distributional failure may undermine the political sustainability of globalisation itself.',
+          model: 'The aggregate net benefit of globalisation for the UK economy is almost certainly positive — lower consumer prices, a strong financial services export sector, substantial FDI employment, and access to global technology have all raised average UK living standards. However, the aggregate picture conceals a distributional failure that has had profound political consequences. The gains from globalisation flowed disproportionately to mobile capital, high-skill workers, and consumers of manufactured goods, while the concentrated adjustment costs fell on low-skill manufacturing workers and their communities. The Kaldor-Hicks compensation principle suggests gains should be redistributed to compensate losers — but UK policy failed to do this adequately: trade adjustment assistance has been minimal, regional investment insufficient, and retraining programmes underfunded. The political consequence — Brexit, the rise of economic nationalism, declining trust in liberal economic consensus — reflects the failure to ensure that globalisation\'s gains were widely shared. This distributional failure may ultimately threaten the sustainability of the open trading system that produced the gains in the first place.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Deliver a reasoned overall judgement: globalisation has generated net economic gains for the UK but the distributional costs are real and require policy attention.',
+          hint: 'Net benefit positive for the UK — but concentrated costs in specific communities are real welfare losses that aggregate statistics miss. The supply chain vulnerability concern is growing in salience. The most important policy implication is redistribution: ensuring gains from trade are shared with those who bear the adjustment costs. The appropriate response is not de-globalisation but managed engagement with complementary domestic policy.',
+          model: 'Globalisation has generated substantial net economic benefits for the UK: lower consumer prices through comparative advantage trade, a world-leading financial services export sector, FDI employment and technology transfer, and participation in global supply chains that have raised productivity. These aggregate gains are large and well-evidenced. However, the claim that globalisation has been beneficial for all UK citizens is clearly false: workers displaced by import competition in manufacturing regions have borne concentrated and lasting costs that were not adequately compensated by redistribution of the aggregate gains. The supply chain vulnerability revelations of COVID and geopolitical tensions have added a resilience dimension to the welfare calculation that standard models underweighted. The appropriate policy response is not retreat from globalisation — which would sacrifice substantial efficiency gains — but managed engagement: continued openness combined with strategic investment in domestic supply security, robust trade adjustment assistance, and regional policy that ensures the gains from globalisation are more equitably distributed. Globalisation is a net positive for the UK economy, but it has generated losers who require explicit policy attention if the political sustainability of open trade is to be maintained.'
+        }
+      ]
     }
   ]
 };

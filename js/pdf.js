@@ -330,8 +330,8 @@ window.EconosPdf = (function () {
       return '<div style="margin-bottom:32px;">' + header + lede + body + '</div>';
     }).join('');
 
-    /* Cover block — heavy borders, no fills */
-    var cover = '<div style="border-top:14px solid ' + C.navy + ';border-bottom:2px solid ' + C.rule + ';padding:24px 0 22px;margin-bottom:36px;">' +
+    /* Cover block — soft grey panel */
+    var cover = '<div style="background:#F1F5F9;border-radius:10px;padding:28px 32px;margin-bottom:36px;">' +
       '<div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:' + C.slate + ';margin-bottom:10px;">' + s(topic.theme) + '</div>' +
       '<div style="font-size:36px;font-weight:900;line-height:1.05;color:' + C.navy + ';margin-bottom:14px;font-family:Georgia,serif;">' + s(topic.title) + '</div>' +
       '<div style="font-size:14px;color:' + C.slate + ';margin-bottom:14px;line-height:1.5;">' + s(topic.goal) + '</div>' +
@@ -374,10 +374,6 @@ window.EconosPdf = (function () {
       '</div>\n' +
 
       sections +
-
-      '<div style="text-align:center;padding:24px 0 4px;font-size:11px;color:' + C.muted + ';border-top:1px solid ' + C.rule + ';margin-top:8px;letter-spacing:.06em;">' +
-      'ECONOS · A-Level Economics Revision' +
-      '</div>\n' +
       '</div>\n</body>\n</html>';
   }
 

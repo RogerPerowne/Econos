@@ -9113,4 +9113,66 @@ window.ECONOS_ICONS = {
     <text x="330" y="428" font-size="9" fill="#475569" text-anchor="middle">Supply-side policies raise potential output (LRAS shifts right) enabling higher Y at stable P &#x2014; long-run solution to inflation-growth trade-off</text>
   </svg>`,
 
+  currentAccountDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" font-family="Inter, sans-serif">
+    <!-- Background -->
+    <rect width="660" height="420" fill="#F8FAFC" rx="12"/>
+
+    <!-- Title -->
+    <text x="330" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">UK Current Account: Four Components</text>
+
+    <!-- Subtitle -->
+    <text x="330" y="46" text-anchor="middle" font-size="10" fill="#64748B">(approximate 2023 figures, £bn per year)</text>
+
+    <!-- Minor gridlines (dashed) -->
+    <line x1="150" y1="68" x2="150" y2="270" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="210" y1="68" x2="210" y2="270" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="330" y1="68" x2="330" y2="270" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="390" y1="68" x2="390" y2="270" stroke="#CBD5E1" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+    <!-- Zero line -->
+    <line x1="270" y1="65" x2="270" y2="355" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Row 1: Trade in Goods (deficit: -£175bn) -->
+    <rect x="60" y="78" width="210" height="34" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+    <text x="40" y="88" text-anchor="start" font-size="11" font-weight="600" fill="#DC2626">Trade in Goods</text>
+    <text x="65" y="100" font-size="10" font-weight="600" fill="#DC2626">&#x2212;£175bn</text>
+    <text x="275" y="100" font-size="9.5" fill="#64748B">Goods deficit</text>
+
+    <!-- Row 2: Trade in Services (surplus: +£105bn) -->
+    <rect x="270" y="128" width="126" height="34" fill="#D1FAE5" stroke="#059669" stroke-width="1"/>
+    <text x="40" y="138" text-anchor="start" font-size="11" font-weight="600" fill="#059669">Trade in Services</text>
+    <text x="370" y="150" text-anchor="end" font-size="10" font-weight="600" fill="#059669">+£105bn</text>
+    <text x="400" y="150" font-size="9.5" fill="#64748B">Services surplus</text>
+
+    <!-- Row 3: Primary Income (deficit: -£35bn) -->
+    <rect x="228" y="178" width="42" height="34" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+    <text x="40" y="188" text-anchor="start" font-size="11" font-weight="600" fill="#D97706">Primary Income</text>
+    <text x="233" y="200" font-size="10" font-weight="600" fill="#D97706">&#x2212;£35bn</text>
+    <text x="275" y="200" font-size="9.5" fill="#64748B">(investment returns)</text>
+
+    <!-- Row 4: Secondary Income (deficit: -£40bn) -->
+    <rect x="222" y="228" width="48" height="34" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+    <text x="40" y="238" text-anchor="start" font-size="11" font-weight="600" fill="#475569">Secondary Income</text>
+    <text x="227" y="250" font-size="10" font-weight="600" fill="#475569">&#x2212;£40bn</text>
+    <text x="275" y="250" font-size="9.5" fill="#64748B">(transfers, foreign aid)</text>
+
+    <!-- Net current account total line -->
+    <line x1="96" y1="285" x2="270" y2="285" stroke="#1E3A5F" stroke-width="2"/>
+    <text x="183" y="300" text-anchor="middle" font-size="11" font-weight="600" fill="#DC2626">Net CA = &#x2212;£145bn</text>
+    <polygon points="100,281 100,289 92,285" fill="#DC2626"/>
+
+    <!-- Axis labels -->
+    <text x="270" y="360" text-anchor="middle" font-size="9" fill="#334155">0</text>
+    <text x="210" y="360" text-anchor="middle" font-size="9" fill="#334155">-£50bn</text>
+    <text x="150" y="360" text-anchor="middle" font-size="9" fill="#334155">-£100bn</text>
+    <text x="90" y="360" text-anchor="middle" font-size="9" fill="#334155">-£150bn</text>
+    <text x="330" y="360" text-anchor="middle" font-size="9" fill="#334155">+£50bn</text>
+    <text x="390" y="360" text-anchor="middle" font-size="9" fill="#334155">+£100bn</text>
+
+    <!-- Bottom annotation bar -->
+    <rect x="20" y="375" width="620" height="36" fill="#F1F5F9" rx="4"/>
+    <text x="330" y="390" text-anchor="middle" font-size="9.5" fill="#475569">UK current account deficit ~3-4% of GDP — financed by financial account surplus (FDI and portfolio inflows).</text>
+    <text x="330" y="405" text-anchor="middle" font-size="9" fill="#64748B">Services surplus only partly offsets goods deficit — structural deficit requires expenditure-switching (depreciation) or expenditure-reducing policies.</text>
+  </svg>`,
+
 };

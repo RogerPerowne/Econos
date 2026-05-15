@@ -148,103 +148,135 @@
      topics: body, causes[], steps[], rows[], left/right, keyTerms
      ============================================================ */
   const TONES = [
-    { bg: 'var(--econ-green-50)',  border: 'var(--econ-green)',  label: 'var(--econ-green-700)' },
-    { bg: 'var(--econ-amber-50)',  border: 'var(--econ-amber)',  label: 'var(--econ-amber-700)' },
-    { bg: 'var(--econ-blue-50)',   border: 'var(--econ-blue)',   label: 'var(--econ-blue-700)'  },
-    { bg: 'var(--econ-purple-50)', border: 'var(--econ-purple)', label: 'var(--econ-purple-600)' }
+    { bg: 'var(--econ-green-50)',  border: 'var(--econ-green)',  label: 'var(--econ-green-700)',  headerBg: 'var(--econ-green)'  },
+    { bg: 'var(--econ-amber-50)',  border: 'var(--econ-amber)',  label: 'var(--econ-amber-700)',  headerBg: 'var(--econ-amber)'  },
+    { bg: 'var(--econ-blue-50)',   border: 'var(--econ-blue)',   label: 'var(--econ-blue-700)',   headerBg: 'var(--econ-blue)'   },
+    { bg: 'var(--econ-purple-50)', border: 'var(--econ-purple)', label: 'var(--econ-purple-600)', headerBg: 'var(--econ-purple)' }
   ];
+
+  function genSecLabel(emoji, text) {
+    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#6B7280;margin:24px 0 12px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
+  }
 
   function renderCardGeneric(c) {
     let content = '';
 
-    // intro/lede text
+    // Step label chip
+    if (c.stepLabel) {
+      content += `<div class="card__step-label">${c.stepLabel}</div>`;
+    }
+
+    // Intro/lede — styled as a thought-prompt callout
     if (c.intro) {
-      content += `<p style="font-size:15px;color:#2A3650;margin-bottom:18px;line-height:1.6;">${c.intro}</p>`;
+      content += `
+        <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:#1e3a5f;line-height:1.65;font-style:italic;">
+          💡 ${c.intro}
+        </div>`;
     }
 
-    // framing: HTML body block
+    // Body text — styled as a rich explainer
     if (c.body) {
-      content += `<div style="font-size:15px;line-height:1.7;color:#0B1426;margin-bottom:20px;">${c.body}</div>`;
+      content += `
+        <div style="font-size:15px;line-height:1.8;color:#0B1426;margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;">
+          ${c.body}
+        </div>`;
     }
 
-    // cause: [{head, body}] — coloured tile cycling
+    // Causes: [{head, body}] — big coloured tiles
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
+      content += genSecLabel('🔗', 'Key mechanisms');
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         return `
-        <div style="margin-bottom:12px;padding:14px 16px;background:${t.bg};border-radius:10px;border-left:3px solid ${t.border};">
-          <div style="font-weight:700;font-size:14px;color:${t.label};margin-bottom:6px;">${item.head}</div>
-          <div style="font-size:14px;color:#2A3650;line-height:1.6;">${item.body}</div>
+        <div style="margin-bottom:14px;border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}40;">
+          <div style="padding:12px 18px;background:${t.headerBg};color:#fff;font-weight:800;font-size:15px;">${item.head}</div>
+          <div style="padding:14px 18px;font-size:14px;color:#2A3650;line-height:1.7;">${item.body}</div>
         </div>`;
       }).join('');
     }
 
-    // mechanisms: [{label, text}] — numbered steps with cycling tones
+    // Steps: [{label, text}] — numbered with cycling tones
     if (c.steps && c.steps.length) {
+      content += genSecLabel('📋', 'How it works');
       content += c.steps.map((s, i) => {
         const t = TONES[i % TONES.length];
         return `
-        <div style="display:flex;gap:14px;margin-bottom:12px;padding:14px 16px;background:${t.bg};border-radius:10px;border-left:3px solid ${t.border};">
-          <div style="width:26px;height:26px;border-radius:50%;background:${t.border};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;">${i + 1}</div>
+        <div style="display:flex;gap:16px;margin-bottom:14px;padding:16px 18px;background:${t.bg};border-radius:12px;border:1px solid ${t.border}40;border-left:5px solid ${t.border};">
+          <div style="width:34px;height:34px;border-radius:50%;background:${t.headerBg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;">${i + 1}</div>
           <div>
-            <div style="font-weight:700;font-size:14px;color:${t.label};margin-bottom:4px;">${s.label}</div>
-            <div style="font-size:14px;color:#2A3650;line-height:1.6;">${s.text}</div>
+            <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:5px;">${s.label}</div>
+            <div style="font-size:14px;color:#2A3650;line-height:1.65;">${s.text}</div>
           </div>
         </div>`;
       }).join('');
     }
 
-    // diagnose: rows [{label, colA, colB}]
+    // Rows (comparison table) — card-style grid with zebra rows
     if (c.rows && c.rows.length) {
-      content += `<div style="overflow-x:auto;margin-bottom:18px;border-radius:10px;border:1px solid #E7E7EA;overflow:hidden;">
-        <table style="width:100%;border-collapse:collapse;font-size:14px;">
-          ${c.rows.map(r => `
-            <tr>
-              <td style="padding:10px 14px;background:#f1f5f9;font-weight:700;border-bottom:1px solid #E7E7EA;white-space:nowrap;min-width:120px;">${r.label}</td>
-              <td style="padding:10px 14px;border-bottom:1px solid #E7E7EA;vertical-align:top;border-right:1px solid #E7E7EA;">${r.colA}</td>
-              <td style="padding:10px 14px;border-bottom:1px solid #E7E7EA;vertical-align:top;">${r.colB}</td>
-            </tr>
-          `).join('')}
-        </table>
-      </div>`;
+      content += genSecLabel('📊', 'Compare');
+      const colA = c.colA || '';
+      const colB = c.colB || '';
+      content += `<div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7EA;margin-bottom:20px;">`;
+      if (colA || colB) {
+        content += `<div style="display:grid;grid-template-columns:140px 1fr 1fr;background:#0B1426;">
+          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);"></div>
+          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colA}</div>
+          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colB}</div>
+        </div>`;
+      }
+      content += c.rows.map((r, i) => `
+        <div style="display:grid;grid-template-columns:140px 1fr 1fr;background:${i % 2 === 0 ? '#f8fafc' : '#fff'};border-top:1px solid #E7E7EA;">
+          <div style="padding:12px 14px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
+          <div style="padding:12px 14px;font-size:13px;color:#2A3650;line-height:1.55;border-right:1px solid #E7E7EA;">${r.colA}</div>
+          <div style="padding:12px 14px;font-size:13px;color:#2A3650;line-height:1.55;">${r.colB}</div>
+        </div>`).join('');
+      content += `</div>`;
       if (c.footer) {
         content += `<p style="font-size:13px;color:#6B7280;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
       }
     }
 
-    // paired: left / right format
+    // Paired: left / right — dramatic header panels
     if (c.left && c.right) {
-      content += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
-        <div style="padding:16px;background:#f0fdf4;border-radius:10px;border-top:3px solid #1FB574;">
-          <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:10px;">${c.left.label}</div>
-          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding-left:18px;margin:0;">${c.left.points.map(p => `<li style="margin-bottom:6px;">${p}</li>`).join('')}</ul>
+      content += genSecLabel('⚖️', 'Head to head');
+      const tL = TONES[0];
+      const tR = TONES[2];
+      content += `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
+        <div style="border-radius:12px;overflow:hidden;background:${tL.bg};border:1px solid ${tL.border}30;">
+          <div style="padding:12px 16px;background:${tL.headerBg};color:#fff;font-weight:800;font-size:14px;text-align:center;">${c.left.label}</div>
+          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
+            ${c.left.points.map(p => `<li style="margin-bottom:8px;">${p}</li>`).join('')}
+          </ul>
         </div>
-        <div style="padding:16px;background:#eff6ff;border-radius:10px;border-top:3px solid #2563EB;">
-          <div style="font-weight:700;font-size:14px;color:#0B1426;margin-bottom:10px;">${c.right.label}</div>
-          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding-left:18px;margin:0;">${c.right.points.map(p => `<li style="margin-bottom:6px;">${p}</li>`).join('')}</ul>
+        <div style="border-radius:12px;overflow:hidden;background:${tR.bg};border:1px solid ${tR.border}30;">
+          <div style="padding:12px 16px;background:${tR.headerBg};color:#fff;font-weight:800;font-size:14px;text-align:center;">${c.right.label}</div>
+          <ul style="font-size:13px;color:#2A3650;line-height:1.65;padding:14px 16px 14px 32px;margin:0;">
+            ${c.right.points.map(p => `<li style="margin-bottom:8px;">${p}</li>`).join('')}
+          </ul>
         </div>
       </div>`;
     }
 
-    // key terms — coloured tiles with click-to-reveal definitions
+    // Key terms — coloured tiles with click-to-reveal definitions
     if (c.keyTerms && c.keyTerms.length) {
-      content += `<div style="margin-bottom:18px;">
-        <div style="font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;margin-bottom:10px;">Key terms — tap to reveal</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
-          ${c.keyTerms.map((kt, i) => {
-            const t = TONES[i % TONES.length];
-            return `
-            <div class="key-tile" style="padding:12px 14px;background:${t.bg};border-radius:8px;border-left:3px solid ${t.border};">
-              <div style="font-weight:700;font-size:13px;color:${t.label};margin-bottom:6px;">${kt.term}</div>
-              <button data-action="reveal-def" style="background:none;border:1px dashed ${t.border};color:${t.label};font-size:12px;font-weight:600;padding:4px 8px;border-radius:6px;cursor:pointer;">Reveal definition ↓</button>
-              <div class="key-tile__def is-hidden" style="font-size:13px;color:#2A3650;line-height:1.5;margin-top:8px;">${kt.def}</div>
-            </div>`;
-          }).join('')}
-        </div>
+      content += genSecLabel('🔑', 'Key terms — tap each to reveal');
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:22px;">
+        ${c.keyTerms.map((kt, i) => {
+          const t = TONES[i % TONES.length];
+          return `
+          <div class="key-tile" style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}30;">
+            <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;">${kt.term}</div>
+            <div style="padding:10px 14px;">
+              <button data-action="reveal-def" style="background:none;border:1.5px dashed ${t.border};color:${t.label};font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;width:100%;text-align:center;">Reveal definition ↓</button>
+              <div class="key-tile__def is-hidden" style="font-size:13px;color:#2A3650;line-height:1.55;margin-top:10px;">${kt.def}</div>
+            </div>
+          </div>`;
+        }).join('')}
       </div>`;
     }
 
-    // examEdge — predict-then-reveal (string or object)
+    // Exam edge — predict-then-reveal
     if (c.examEdge) {
       const edgeTitle = typeof c.examEdge === 'object' ? (c.examEdge.title || 'Exam edge') : 'Exam edge';
       const edgeText  = typeof c.examEdge === 'object' ? c.examEdge.text : c.examEdge;
@@ -255,21 +287,27 @@
             <div class="exam-edge__body">
               <div class="exam-edge__label">Exam edge</div>
               <div class="exam-edge__title">${edgeTitle}</div>
-              <button data-action="reveal-edge" class="exam-edge__btn" style="margin-top:8px;background:#fff;border:1px dashed #D97706;color:#92400E;font-size:13px;font-weight:600;padding:6px 12px;border-radius:6px;cursor:pointer;">Show the gem →</button>
-              <div class="exam-edge__text is-hidden" style="margin-top:10px;">${edgeText}</div>
+              <button data-action="reveal-edge" class="exam-edge__btn" style="margin-top:8px;background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:13px;font-weight:700;padding:7px 14px;border-radius:8px;cursor:pointer;">Show the gem →</button>
+              <div class="exam-edge__text is-hidden" style="margin-top:12px;">${edgeText}</div>
             </div>
-          </div>
-        `;
+          </div>`;
       }
     }
 
-    // quizCta
+    // Key takeaway (if the card data includes one)
+    if (c.keyTakeaway) {
+      content += renderKeyTakeaway(c.keyTakeaway);
+    }
+
+    // Quiz CTA — celebration-style signpost
     if (c.quizCta) {
       content += `
-        <div style="margin-top:24px;text-align:center;">
+        <div style="margin-top:30px;padding:24px 20px;background:linear-gradient(135deg,var(--econ-green-50),var(--econ-blue-50));border-radius:16px;border:1px solid var(--econ-blue-100);text-align:center;">
+          <div style="font-size:32px;margin-bottom:8px;">🎯</div>
+          <div style="font-weight:800;font-size:19px;color:#0B1426;margin-bottom:6px;">Ready to test yourself?</div>
+          <div style="font-size:14px;color:#2A3650;margin-bottom:18px;">See what you've locked in from this session.</div>
           <a href="${c.quizCta.href}" class="btn btn--primary btn--lg">${c.quizCta.label}</a>
-        </div>
-      `;
+        </div>`;
     }
 
     return `<h1 class="card__title">${c.title}</h1>${content}`;

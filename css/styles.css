@@ -2350,6 +2350,19 @@ img, svg { display: block; max-width: 100%; }
 .exam-edge__text.is-hidden {
   display: none;
 }
+/* Generic card body — proper hanging indent for bullet lists */
+.card ul,
+.card ol,
+.exam-edge__text ul,
+.exam-edge__text ol {
+  padding-left: 1.4em;
+  margin: 8px 0;
+}
+.card li,
+.exam-edge__text li {
+  padding-left: 4px;
+  margin-bottom: 6px;
+}
 .key-tile button:hover {
   background: rgba(255,255,255,0.6) !important;
 }

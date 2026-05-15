@@ -3514,6 +3514,23 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .cfra-svg .layer-panel-base { opacity: 0; }
 .show-shift .cfra-svg .layer-state-perfect { opacity: 1; }
 .show-shift .cfra-svg .layer-panel-shift { opacity: 1; }
+/* === Short-run cost stack === */
+.sr-svg .layer-axes,
+.sr-svg .layer-afc,
+.sr-svg .layer-avc,
+.sr-svg .layer-ac,
+.sr-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.sr-svg .layer-mc,
+.sr-svg .layer-crossings,
+.sr-svg .layer-panel-ext,
+.sr-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .sr-svg .layer-panel-base { opacity: 0; }
+.show-extension .sr-svg .layer-mc { opacity: 1; }
+.show-extension .sr-svg .layer-panel-ext { opacity: 1; }
+.show-shift .sr-svg .layer-panel-base { opacity: 0; }
+.show-shift .sr-svg .layer-mc { opacity: 1; }
+.show-shift .sr-svg .layer-crossings { opacity: 1; }
+.show-shift .sr-svg .layer-panel-shift { opacity: 1; }
 /* === Kinked Demand Curve Interactive === */
 .kink-svg .layer-axes,
 .kink-svg .layer-kink-point,

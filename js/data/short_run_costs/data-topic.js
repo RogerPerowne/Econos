@@ -46,16 +46,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'short_run_costs_2',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Total, Average, and Marginal Cost',
-      intro: 'These three cost measures serve different analytical purposes and have precise mathematical relationships.',
+      lede: 'AFC falls, AVC bottoms then rises, AC inherits the U-shape. MC is the marginal — and it always crosses AVC and AC at their minima.',
+      diagramKey: 'shortRunCostStack',
       steps: [
-        { label: 'Total Cost (TC)', text: 'TC = FC + VC. At zero output, TC = FC (firm still pays rent, etc.). TC rises as output rises. The gradient of TC at any point = marginal cost.' },
-        { label: 'Average Cost (AC)', text: 'AC = TC/Q. Also: AC = AFC + AVC. AFC falls as Q rises (fixed costs spread more thinly). AVC initially falls then rises (diminishing returns). Combined: AC is U-shaped.' },
-        { label: 'Marginal Cost (MC)', text: 'MC = ΔTC/ΔQ = change in total cost per extra unit. Initially falls (increasing returns), then rises (diminishing returns). MC is the key decision variable: produce one more unit if P > MC.' },
-        { label: 'Key relationship', text: 'MC crosses AC at AC\'s minimum point. When MC < AC, AC falls. When MC > AC, AC rises. This mathematical relationship is universal and must be drawn correctly.' }
+        {
+          key: 'base',
+          label: 'AFC + AVC → AC',
+          text: '<strong>AFC = FC/Q</strong> always falls as Q rises — fixed costs get spread across more units. <strong>AVC</strong> falls first (specialisation and increasing returns to labour on fixed capital), then rises (diminishing returns). <strong>AC = AFC + AVC</strong>: inherits the U-shape because AFC drags it down on the left and AVC pushes it up on the right.'
+        },
+        {
+          key: 'extension',
+          label: 'Add the marginal',
+          text: '<strong>MC = ΔTC/ΔQ</strong> — the cost of producing one more unit. Falls initially due to specialisation and increasing returns, then rises sharply as diminishing returns set in: each extra worker added to fixed capital produces less, so each extra unit costs more. Result: the Nike-tick shape.'
+        },
+        {
+          key: 'shift',
+          label: 'The crossing rule',
+          text: '<strong>MC crosses every average at its minimum.</strong> This is a mathematical certainty, not a coincidence. When MC &lt; AC, MC pulls AC down. When MC &gt; AC, MC pushes AC up. So at the moment MC = AC, AC stops falling and starts rising — its minimum. Same logic gives MC = AVC at min AVC. The point where MC = AC = min AC is the firm\'s <strong>productively efficient output</strong>.'
+        }
       ],
-      examEdge: 'The MC-AC relationship is the most commonly incorrectly drawn relationship in exams. MC must cross AC at the bottom of the U. If your MC curve does not cross AC at the minimum, the diagram is wrong. A useful check: does MC lie below AC on the left side of AC minimum? Does MC lie above AC on the right side? If yes, you\'re correct.'
+      examEdge: 'The MC-AC relationship is the most commonly incorrectly drawn diagram in exams. MC must cross AC at the bottom of the U. Quick check while drawing: does MC lie below AC on the left of AC\'s minimum? Does MC lie above AC on the right? If yes, you\'re correct. Same applies to MC vs AVC at min AVC.'
     },
     {
       id: 'short_run_costs_3',

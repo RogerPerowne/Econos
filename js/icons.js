@@ -8912,5 +8912,205 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  demandPullDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" font-family="Inter, sans-serif">
+    <!-- Background -->
+    <rect width="640" height="430" fill="#F8FAFC" rx="12"/>
+
+    <!-- Title -->
+    <text x="320" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1E3A5F">Demand-Pull Inflation: AD Shifts Right</text>
+
+    <!-- Y-axis -->
+    <line x1="65" y1="390" x2="65" y2="40" stroke="#334155" stroke-width="2"/>
+    <polygon points="61,44 69,44 65,36" fill="#334155"/>
+    <text x="38" y="38" font-size="11" font-weight="600" fill="#334155">P</text>
+
+    <!-- X-axis -->
+    <line x1="65" y1="390" x2="600" y2="390" stroke="#334155" stroke-width="2"/>
+    <polygon points="596,386 596,394 604,390" fill="#334155"/>
+    <text x="525" y="408" font-size="11" font-weight="600" fill="#334155">Real Output (Y)</text>
+
+    <!-- LRAS: vertical dashed red at x=310 -->
+    <line x1="310" y1="390" x2="310" y2="60" stroke="#DC2626" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="314" y="52" font-size="11" fill="#DC2626" font-weight="600">LRAS</text>
+
+    <!-- SRAS: upward sloping from (80,360) to (560,80) -->
+    <line x1="80" y1="360" x2="560" y2="80" stroke="#059669" stroke-width="2"/>
+    <text x="563" y="74" font-size="11" fill="#059669" font-weight="600">SRAS</text>
+
+    <!-- AD₁: downward sloping from (80,80) to (520,360) -->
+    <line x1="80" y1="80" x2="520" y2="360" stroke="#2563EB" stroke-width="2"/>
+    <text x="525" y="358" font-size="11" fill="#2563EB" font-weight="600">AD&#x2081;</text>
+
+    <!-- AD₂: shifted right, dashed, from (140,80) to (580,360) -->
+    <line x1="140" y1="80" x2="580" y2="360" stroke="#2563EB" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="578" y="356" font-size="11" fill="#2563EB" font-weight="700">AD&#x2082;</text>
+
+    <!-- Equilibrium 1 dot at (300,228) -->
+    <circle cx="300" cy="228" r="5" fill="#334155"/>
+    <!-- Dashed horizontal P₁ -->
+    <line x1="65" y1="228" x2="300" y2="228" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Dashed vertical Y₁ -->
+    <line x1="300" y1="390" x2="300" y2="228" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="48" y="232" font-size="10" fill="#334155" text-anchor="middle">P&#x2081;</text>
+    <text x="296" y="402" font-size="10" fill="#334155" text-anchor="middle">Y&#x2081;</text>
+
+    <!-- Equilibrium 2 dot at (358,210) -->
+    <circle cx="358" cy="210" r="5" fill="#334155"/>
+    <!-- Dashed horizontal P₂ -->
+    <line x1="65" y1="210" x2="358" y2="210" stroke="#2563EB" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Dashed vertical Y₂ -->
+    <line x1="358" y1="390" x2="358" y2="210" stroke="#2563EB" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="48" y="214" font-size="10" fill="#2563EB" text-anchor="middle">P&#x2082;</text>
+    <text x="354" y="402" font-size="10" fill="#2563EB" text-anchor="middle">Y&#x2082;</text>
+
+    <!-- Shift arrow (rightward) from AD₁ toward AD₂ -->
+    <line x1="325" y1="285" x2="355" y2="285" stroke="#2563EB" stroke-width="1.5"/>
+    <polygon points="351,281 351,289 359,285" fill="#2563EB"/>
+
+    <!-- Bottom annotation bar -->
+    <rect x="65" y="410" width="510" height="14" fill="#F1F5F9" rx="3"/>
+    <text x="320" y="420" font-size="9" fill="#475569" text-anchor="middle">Demand-pull inflation: &#x2191;AD &#x2192; &#x2191;P and &#x2191;Y &#x2014; economy moves up SRAS &#x2014; cured by contractionary monetary/fiscal policy</text>
+  </svg>`,
+
+  costPushDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" font-family="Inter, sans-serif">
+    <!-- Background -->
+    <rect width="640" height="430" fill="#F8FAFC" rx="12"/>
+
+    <!-- Title -->
+    <text x="320" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1E3A5F">Cost-Push Inflation: SRAS Shifts Left</text>
+
+    <!-- Y-axis -->
+    <line x1="65" y1="390" x2="65" y2="40" stroke="#334155" stroke-width="2"/>
+    <polygon points="61,44 69,44 65,36" fill="#334155"/>
+    <text x="38" y="38" font-size="11" font-weight="600" fill="#334155">P</text>
+
+    <!-- X-axis -->
+    <line x1="65" y1="390" x2="600" y2="390" stroke="#334155" stroke-width="2"/>
+    <polygon points="596,386 596,394 604,390" fill="#334155"/>
+    <text x="525" y="408" font-size="11" font-weight="600" fill="#334155">Real Output (Y)</text>
+
+    <!-- LRAS: vertical dashed red at x=310 -->
+    <line x1="310" y1="390" x2="310" y2="60" stroke="#DC2626" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="314" y="52" font-size="11" fill="#DC2626" font-weight="600">LRAS</text>
+
+    <!-- AD: downward sloping from (80,100) to (520,380) -->
+    <line x1="80" y1="100" x2="520" y2="380" stroke="#2563EB" stroke-width="2"/>
+    <text x="525" y="378" font-size="11" fill="#2563EB" font-weight="600">AD</text>
+
+    <!-- SRAS₁: upward sloping from (80,380) to (520,80) -->
+    <line x1="80" y1="380" x2="520" y2="80" stroke="#059669" stroke-width="2"/>
+    <text x="523" y="74" font-size="11" fill="#059669" font-weight="600">SRAS&#x2081;</text>
+
+    <!-- SRAS₂: shifted left, dashed orange, from (10,380) to (450,80) -->
+    <line x1="10" y1="380" x2="450" y2="80" stroke="#D97706" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="452" y="74" font-size="11" fill="#D97706" font-weight="700">SRAS&#x2082;</text>
+
+    <!-- Equilibrium 1 dot at (292,235) -->
+    <circle cx="292" cy="235" r="5" fill="#334155"/>
+    <!-- Dashed horizontal P₁ -->
+    <line x1="65" y1="235" x2="292" y2="235" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Dashed vertical Y₁ -->
+    <line x1="292" y1="390" x2="292" y2="235" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="50" y="239" font-size="10" fill="#334155" text-anchor="middle">P&#x2081;</text>
+    <text x="292" y="402" font-size="10" fill="#334155" text-anchor="middle">Y&#x2081;</text>
+
+    <!-- Equilibrium 2 dot at (256,212) -->
+    <circle cx="256" cy="212" r="5" fill="#334155"/>
+    <!-- Dashed horizontal P₂ -->
+    <line x1="65" y1="212" x2="256" y2="212" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Dashed vertical Y₂ -->
+    <line x1="256" y1="390" x2="256" y2="212" stroke="#D97706" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="50" y="216" font-size="10" fill="#D97706" text-anchor="middle">P&#x2082;</text>
+    <text x="256" y="402" font-size="10" fill="#D97706" text-anchor="middle">Y&#x2082;</text>
+
+    <!-- Shift arrow (leftward) from SRAS₁ toward SRAS₂ -->
+    <line x1="360" y1="200" x2="294" y2="200" stroke="#D97706" stroke-width="1.5"/>
+    <polygon points="298,196 298,204 290,200" fill="#D97706"/>
+
+    <!-- Stagflation annotation box -->
+    <rect x="400" y="80" width="190" height="44" fill="#FFFBEB" rx="4" stroke="#D97706" stroke-width="1"/>
+    <text x="495" y="96" font-size="10" font-weight="600" fill="#D97706" text-anchor="middle">Stagflation:</text>
+    <text x="495" y="111" font-size="9.5" fill="#92400E" text-anchor="middle">&#x2191;P and &#x2193;Y simultaneously</text>
+
+    <!-- Bottom annotation bar -->
+    <rect x="65" y="410" width="510" height="14" fill="#F1F5F9" rx="3"/>
+    <text x="320" y="420" font-size="9" fill="#475569" text-anchor="middle">Cost-push inflation: &#x2191;costs &#x2192; SRAS shifts left &#x2192; &#x2191;P and &#x2193;Y (stagflation) &#x2014; monetary dilemma: tighten to cut inflation OR loosen to protect output</text>
+  </svg>`,
+
+  supplyPolicyDiagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 440" font-family="Inter, sans-serif">
+    <!-- Background -->
+    <rect width="660" height="440" fill="#F8FAFC" rx="12"/>
+
+    <!-- Title -->
+    <text x="330" y="27" text-anchor="middle" font-size="12" font-weight="600" fill="#1E3A5F">Supply-Side Policy: LRAS Shifts Right</text>
+
+    <!-- Y-axis -->
+    <line x1="65" y1="395" x2="65" y2="40" stroke="#334155" stroke-width="2"/>
+    <polygon points="61,44 69,44 65,36" fill="#334155"/>
+    <text x="38" y="38" font-size="11" font-weight="600" fill="#334155">P</text>
+
+    <!-- X-axis -->
+    <line x1="65" y1="395" x2="610" y2="395" stroke="#334155" stroke-width="2"/>
+    <polygon points="606,391 606,399 614,395" fill="#334155"/>
+    <text x="530" y="412" font-size="11" font-weight="600" fill="#334155">Real Output (Y)</text>
+
+    <!-- AD: downward sloping from (80,80) to (560,380) -->
+    <line x1="80" y1="80" x2="560" y2="380" stroke="#2563EB" stroke-width="2"/>
+    <text x="562" y="382" font-size="11" fill="#2563EB" font-weight="600">AD</text>
+
+    <!-- LRAS₁: vertical dashed red at x=270 -->
+    <line x1="270" y1="395" x2="270" y2="65" stroke="#DC2626" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="274" y="56" font-size="11" fill="#DC2626" font-weight="600">LRAS&#x2081;</text>
+
+    <!-- LRAS₂: vertical dashed green at x=420 -->
+    <line x1="420" y1="395" x2="420" y2="65" stroke="#059669" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="424" y="56" font-size="11" fill="#059669" font-weight="600">LRAS&#x2082;</text>
+
+    <!-- SRAS₁: faint dashed, from (70,370) to (480,80) -->
+    <line x1="70" y1="370" x2="480" y2="80" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.6"/>
+
+    <!-- SRAS₂: solid, shifted right, from (170,380) to (580,80) -->
+    <line x1="170" y1="380" x2="580" y2="80" stroke="#059669" stroke-width="1.5"/>
+    <text x="582" y="74" font-size="10" fill="#059669" font-weight="600">SRAS</text>
+
+    <!-- Equilibrium 1 dot at (270,199) -->
+    <circle cx="270" cy="199" r="4" fill="#DC2626"/>
+    <!-- Dashed horizontal P* at y=199 -->
+    <line x1="65" y1="199" x2="270" y2="199" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Dashed vertical Y₁ -->
+    <line x1="270" y1="199" x2="270" y2="395" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="48" y="203" font-size="10" fill="#334155" text-anchor="middle">P*</text>
+    <text x="266" y="407" font-size="10" fill="#334155" text-anchor="middle">Y&#x2081;</text>
+
+    <!-- Equilibrium 2 dot at (350,249) -->
+    <circle cx="350" cy="249" r="4" fill="#059669"/>
+    <!-- Dashed horizontal at y=249 -->
+    <line x1="65" y1="249" x2="350" y2="249" stroke="#059669" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Dashed vertical Y₂ -->
+    <line x1="350" y1="249" x2="350" y2="395" stroke="#059669" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="48" y="253" font-size="10" fill="#059669" text-anchor="middle">P*</text>
+    <text x="346" y="407" font-size="10" fill="#059669" text-anchor="middle">Y&#x2082;</text>
+
+    <!-- LRAS shift arrow at y=150 from x=270 to x=415 -->
+    <line x1="275" y1="150" x2="410" y2="150" stroke="#059669" stroke-width="1.5"/>
+    <polygon points="406,146 406,154 414,150" fill="#059669"/>
+
+    <!-- Growth arrow at y=370 from x=280 to x=410 -->
+    <line x1="280" y1="370" x2="405" y2="370" stroke="#059669" stroke-width="1.5"/>
+    <polygon points="401,366 401,374 409,370" fill="#059669"/>
+    <text x="345" y="360" text-anchor="middle" font-size="9.5" fill="#059669">&#x2191; Potential Output</text>
+
+    <!-- Policy annotation box (top-left) -->
+    <rect x="75" y="70" width="200" height="72" fill="white" rx="5" opacity="0.9" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="175" y="86" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A5F">Supply-Side Policies</text>
+    <text x="85" y="100" font-size="9" fill="#475569">&#x2022; &#x2193; Trade union power / labour flexibility</text>
+    <text x="85" y="113" font-size="9" fill="#475569">&#x2022; &#x2191; Education &amp; training investment</text>
+    <text x="85" y="126" font-size="9" fill="#475569">&#x2022; &#x2193; Corporation tax / deregulation</text>
+    <text x="85" y="139" font-size="9" fill="#475569">&#x2022; Infrastructure &amp; R&amp;D spending</text>
+
+    <!-- Bottom annotation bar -->
+    <rect x="65" y="418" width="530" height="14" fill="#F1F5F9" rx="3"/>
+    <text x="330" y="428" font-size="9" fill="#475569" text-anchor="middle">Supply-side policies raise potential output (LRAS shifts right) enabling higher Y at stable P &#x2014; long-run solution to inflation-growth trade-off</text>
+  </svg>`,
 
 };

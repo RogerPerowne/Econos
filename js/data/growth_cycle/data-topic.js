@@ -59,6 +59,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demand-shocks',
       template: 'mechanisms',
+      diagramKey: 'demandPullDiagram',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Demand-side shocks',
       lede: "Demand-side shocks shift AD — changing both output and the price level in the same direction. They come from inside the economy or from global events.",

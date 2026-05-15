@@ -335,15 +335,6 @@
     }
 
     // Quiz CTA — celebration-style signpost
-    if (c.quizCta) {
-      content += `
-        <div style="margin-top:30px;padding:24px 20px;background:linear-gradient(135deg,var(--econ-green-50),var(--econ-blue-50));border-radius:16px;border:1px solid var(--econ-blue-100);text-align:center;">
-          <div style="font-size:32px;margin-bottom:8px;">🎯</div>
-          <div style="font-weight:800;font-size:19px;color:#0B1426;margin-bottom:6px;">Ready to test yourself?</div>
-          <div style="font-size:14px;color:#0B1426;margin-bottom:18px;">See what you've locked in from this session.</div>
-          <a href="${c.quizCta.href}" class="btn btn--primary btn--lg">${c.quizCta.label}</a>
-        </div>`;
-    }
 
     return `<h1 class="card__title">${c.title}</h1>${content}`;
   }

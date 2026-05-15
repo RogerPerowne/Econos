@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the demand for labour (MRP theory), labour market equilibrium, wage determination, and how imperfect competition in labour markets creates monopsony power.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroLabour',
     summary: 'Labour markets determine wages and employment levels. Unlike goods markets, the demand for labour is derived from the demand for the goods workers produce. Understanding MRP theory, labour market equilibrium, and monopsony explains wage outcomes across the economy.',
     doInThis: 'Work through 7 cards covering derived demand, the MRP theory of labour demand, labour market equilibrium, shifts in labour demand and supply, wage differentials, monopsony, and evaluation of labour market outcomes.',
     outcomes: [

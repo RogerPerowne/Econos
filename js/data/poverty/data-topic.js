@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the distinction between absolute and relative poverty, their causes, and the range of anti-poverty policies.',
   intro: {
-    heroKey: 'inequality',
+    heroKey: 'heroInequality',
     summary: 'Poverty is both an absolute deprivation of basic needs and a relative exclusion from normal living standards. Understanding its causes — from low productivity to structural inequality — determines which policies are most effective.',
     doInThis: 'Work through 7 cards covering absolute vs relative poverty, measurement, causes in developing and developed countries, the poverty trap, international anti-poverty policies, and UK anti-poverty strategy.',
     outcomes: [

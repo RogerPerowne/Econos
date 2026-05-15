@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the prisoner\'s dilemma, dominant strategies, Nash equilibrium, repeated games, and how game theory explains oligopoly behaviour and competition policy.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroGameTheory',
     summary: 'Game theory is the formal study of strategic interaction — situations where the outcome for each player depends on the choices of all players. It provides the rigorous framework behind oligopoly analysis, collusion stability, and competition policy design.',
     doInThis: 'Work through 7 cards covering the basic framework and payoff matrices, dominant strategies, Nash equilibrium, the prisoner\'s dilemma, repeated games and the Folk Theorem, sequential games and first-mover advantage, and evaluation of game theory\'s limits.',
     outcomes: [

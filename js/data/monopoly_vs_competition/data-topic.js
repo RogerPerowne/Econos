@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the systematic welfare comparison between monopoly and perfect competition, the natural monopoly case, and how competition policy responds.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroMarketPower',
     summary: 'The welfare comparison between monopoly and perfect competition is the central evaluation question in market structure analysis. Understanding the trade-offs — static vs dynamic efficiency, scale economies vs market power — is essential for top-band essay answers.',
     doInThis: 'Work through 7 cards covering the formal welfare comparison, natural monopoly justification, static vs dynamic efficiency trade-off, consumer harm evidence, merger policy, and the role of contestability in limiting monopoly abuse.',
     outcomes: [

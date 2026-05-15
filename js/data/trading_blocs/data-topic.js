@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the hierarchy of trade agreements, Viner\'s trade creation vs diversion, and the WTO\'s role and limitations.',
   intro: {
-    heroKey: 'globalisation',
+    heroKey: 'heroGlobe',
     summary: 'Countries form trading blocs to deepen economic integration. But blocs may divert trade away from the most efficient global producers, creating costs even as they create benefits within the group.',
     doInThis: 'Work through 7 concept cards covering the spectrum of integration from FTAs to monetary union, trade creation, trade diversion, the WTO\'s function, and evaluation of regional vs multilateral agreements.',
     outcomes: [

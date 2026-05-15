@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the assumptions, short-run and long-run equilibria, efficiency properties, and how monopolistic competition explains real markets with product differentiation.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroFirm',
     summary: 'Monopolistic competition blends elements of both monopoly and competition: many firms compete, but each has a degree of market power through product differentiation. The result is a market that achieves variety but sacrifices productive efficiency.',
     doInThis: 'Work through 7 cards covering the four assumptions, the downward-sloping demand curve, short-run supernormal profit, long-run normal profit equilibrium, excess capacity, efficiency analysis, and evaluation of the model.',
     outcomes: [

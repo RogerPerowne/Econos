@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in how indirect taxes work, their welfare effects, tax incidence, and evaluation of taxation as a tool for correcting market failure.',
   intro: {
-    heroKey: 'fiscal',
+    heroKey: 'heroIntervention',
     summary: 'Indirect taxes raise the price of goods, shifting supply and reducing consumption. Whether a tax is appropriate depends on the size of the externality it corrects, who bears its burden, and whether the quantity reduction is sufficient to reach the social optimum.',
     doInThis: 'Work through 7 cards covering how taxes shift supply, the tax diagram, consumer/producer incidence, Pigouvian taxes, specific vs ad valorem taxes, real-world tax examples, and evaluation of taxation policy.',
     outcomes: [

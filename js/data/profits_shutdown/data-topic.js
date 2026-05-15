@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in average and marginal revenue concepts, profit calculation, the shutdown rule, and how to identify profit/loss areas on diagrams.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroCostCurves',
     summary: 'Revenue analysis bridges cost theory to market structure. Understanding how TR, AR, and MR behave under different demand conditions, combined with the shutdown rule, enables full profit analysis — the backbone of all market structure diagrams.',
     doInThis: 'Work through 7 cards covering TR/AR/MR relationships, normal vs supernormal profit, economic loss, the shutdown condition, break-even analysis, and how to read profit/loss rectangles on diagrams.',
     outcomes: [

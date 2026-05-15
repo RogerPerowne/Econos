@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in how subsidies shift supply, their welfare effects, who benefits, and when they are justified as a market failure correction.',
   intro: {
-    heroKey: 'fiscal',
+    heroKey: 'heroIntervention',
     summary: 'Subsidies lower the cost of production or consumption, increasing supply or demand. They can correct positive externalities, support infant industries, and address equity concerns — but they distort markets, cost taxpayers, and may be misallocated.',
     doInThis: 'Work through 7 cards covering the subsidy mechanism, producer vs consumer subsidies, the subsidy diagram, welfare analysis, real-world examples, evaluation, and comparison with alternative policies.',
     outcomes: [

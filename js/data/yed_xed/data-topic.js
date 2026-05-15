@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in income and cross-price elasticities — formulas, signs, interpretation, and their applications to business and trade strategy.',
   intro: {
-    heroKey: 'market',
+    heroKey: 'heroElasticity',
     summary: 'YED and XED extend elasticity analysis beyond own-price. They reveal how demand responds to income changes (YED) and to the prices of related goods (XED) — critical for classifying goods and understanding market linkages.',
     doInThis: 'Work through 7 cards covering YED formula and interpretation, normal vs inferior goods, luxury goods, XED formula, substitutes vs complements, and applications to business strategy and international trade.',
     outcomes: [

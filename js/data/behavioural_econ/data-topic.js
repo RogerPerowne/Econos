@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the key cognitive biases, nudge theory, and how behavioural insights change the case for government intervention.',
   intro: {
-    heroKey: 'market',
+    heroKey: 'heroBehavioural',
     summary: 'Traditional economics assumes rational, self-interested actors. Behavioural economics shows this is wrong in systematic, predictable ways. Loss aversion, present bias, and herd behaviour create market failures even without externalities — and nudge theory offers low-cost policy solutions.',
     doInThis: 'Work through 7 cards covering bounded rationality, the main cognitive biases, prospect theory, nudge theory, applications of behavioural insights to policy, and evaluation of behavioural economics as a framework.',
     outcomes: [

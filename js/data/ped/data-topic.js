@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the PED formula, determinants, the relationship with total revenue, and how to apply PED to real market situations.',
   intro: {
-    heroKey: 'market',
+    heroKey: 'heroElasticity',
     summary: 'PED measures how sensitive quantity demanded is to a price change. It determines whether a price rise raises or lowers total revenue — and is central to firm pricing strategy, government tax policy, and welfare analysis.',
     doInThis: 'Work through 7 cards covering the PED formula, elastic/inelastic/unit elastic cases, determinants, revenue implications, the midpoint method, and applications to taxation and business strategy.',
     outcomes: [

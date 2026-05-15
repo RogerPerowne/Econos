@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in comparative advantage, the gains from trade, and why specialisation shapes global commerce.',
   intro: {
-    heroKey: 'trade',
+    heroKey: 'heroGlobe',
     summary: 'Countries trade because it is mutually beneficial even when one partner is more productive at everything. Comparative advantage — not absolute advantage — determines the pattern of trade.',
     doInThis: 'Work through 7 concept cards covering absolute and comparative advantage, gains from trade, terms of trade, free trade benefits and limitations, and the case for managed trade.',
     outcomes: [

@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in CPI, RPI, CPIH and who wins and loses from inflation',
 
   intro: {
-    heroKey: 'heroInflation',
+    heroKey: 'heroBars',
     summary: "The 2% target. The basket of goods. The difference between CPI, RPI, and CPIH. And the six groups who win or lose depending on whether inflation rises or falls. All the gems are here.",
     doInThis: 'Recap how inflation is measured, the limitations of price indices, costs of inflation, and costs of deflation.',
     outcomes: [
@@ -216,7 +216,7 @@ window.ECONOS_TOPIC = {
           bullets: [
             'Inflation pushes nominal incomes into higher tax brackets',
             'Real tax burden rises even with no change in tax rates',
-            'Sometimes called 'bracket creep'',
+            'Sometimes called &apos;bracket creep&apos;',
             'Governments gain — workers lose purchasing power without a pay rise'
           ]
         },

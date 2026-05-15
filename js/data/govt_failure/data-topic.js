@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the causes and types of government failure — and why intervention intended to correct market failure can sometimes make things worse.',
   intro: {
-    heroKey: 'govt',
+    heroKey: 'heroIntervention',
     summary: 'Government intervention is justified by market failure — but intervention is not costless. Government failure occurs when intervention produces a worse outcome than the market would have, due to information problems, political incentives, unintended consequences, or regulatory capture.',
     doInThis: 'Work through 7 cards covering the definition of government failure, information problems, regulatory capture, the law of unintended consequences, short-termism, intervention vs market failure comparison, and the case for minimal intervention.',
     outcomes: [

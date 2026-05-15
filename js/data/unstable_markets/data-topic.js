@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in why commodity markets are volatile, the buffer stock model, and the evaluation of price stabilisation schemes.',
   intro: {
-    heroKey: 'market',
+    heroKey: 'heroSupplyDemand',
     summary: 'Agricultural and commodity markets are characterised by price volatility — inelastic supply and demand combined with unpredictable supply shocks create large price swings. Buffer stock schemes attempt to stabilise prices, but face significant practical challenges.',
     doInThis: 'Work through 7 cards covering why commodity markets are unstable, the role of PED/PES, the cobweb model, buffer stock mechanisms, their limitations, alternatives, and evaluation.',
     outcomes: [

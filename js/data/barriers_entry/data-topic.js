@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the types of entry barriers, how they sustain supernormal profit, and their implications for competition policy.',
   intro: {
-    heroKey: 'business',
+    heroKey: 'heroMarketPower',
     summary: 'Barriers to entry are the key determinant of whether supernormal profits persist in the long run. Understanding their sources — structural, strategic, or legal — determines the appropriate competition policy response.',
     doInThis: 'Work through 7 cards covering structural barriers (scale, sunk costs, resources), strategic barriers (predatory pricing, limit pricing, brand proliferation), legal barriers, network effects, and evaluation of barriers as competition policy targets.',
     outcomes: [

@@ -47,6 +47,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopoly_2',
       template: 'mechanisms',
+      diagramKey: 'monopolySupernormalProfit',
       title: 'The Monopoly Diagram',
       intro: 'The monopoly diagram is the most important in Theme 3 — every market structure essay needs it or a variant of it.',
       steps: [
@@ -72,6 +73,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopoly_4',
       template: 'framing',
+      diagramKey: 'monopolyDwl',
       title: 'Welfare Analysis: Monopoly vs Competition',
       body: 'Comparing monopoly to perfect competition reveals the welfare cost of monopoly power:<br><br>Under perfect competition: P = MC = AC at efficient output Q_c<br>Under monopoly: P_m > MC, Q_m < Q_c<br><br><strong>Welfare effects:</strong><br>• Consumer surplus falls: higher price and lower quantity → large CS loss<br>• Producer surplus rises: supernormal profit is part of consumer surplus transferred to producer<br>• Deadweight welfare loss: the triangle between Q_m and Q_c bounded by demand and MC — neither consumer nor producer gets this surplus; it is destroyed<br>• Net social welfare: competition CS > monopoly CS + monopoly PS (because of DWL)',
       keyTerms: [
@@ -110,6 +112,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'monopoly_6',
       template: 'framing',
+      diagramKey: 'naturalMonopolyDiagram',
       title: 'Natural Monopoly and Regulation',
       body: '<strong>Natural monopoly</strong> occurs when the market can be served most cheaply by a single firm (LRAC still falling at the market output level). Breaking it up into competing firms would raise average costs for all — each small firm on the high part of its LRAC curve.<br><br><strong>Regulation options:</strong><br>• <em>Average cost pricing:</em> force P = AC → normal profit; more output than profit-max. Not perfectly allocatively efficient (P > MC) but achieves normal profit.<br>• <em>Marginal cost pricing:</em> force P = MC → allocatively efficient but may be below AC → loss → requires public subsidy to sustain.<br>• <em>RPI-X price cap:</em> cap annual price rises → maintains profit incentive while limiting exploitation.<br>• <em>Nationalisation:</em> public ownership; price set by government at social optimum.',
       keyTerms: [

@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_intervention_tax_2',
       template: 'mechanisms',
+      diagramKey: 'taxDiagram',
       title: 'The Tax Diagram: Full Analysis',
       intro: 'Mastering this diagram is essential — it appears in many different exam contexts.',
       steps: [
@@ -85,6 +86,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_intervention_tax_5',
       template: 'diagnose',
+      diagramKey: 'taxIncidenceDiagram',
       title: 'Tax Incidence: Who Really Pays?',
       intro: 'The legal incidence (who pays the tax) differs from the economic incidence (who bears the burden).',
       rows: [

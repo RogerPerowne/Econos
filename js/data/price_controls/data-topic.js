@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Controls',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in how price ceilings and price floors work, their intended effects and unintended consequences, and how to evaluate them as policy tools.',
   intro: {
     heroKey: 'heroPrice',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Price ceiling BELOW equilibrium → shortage (QD > QS). Price floor ABOVE equilibrium → surplus (QS > QD). Remember: ceiling = max (must be set LOW to bite); floor = min (must be set HIGH to bite).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_controls_1',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Price controls: the big picture',
       lede: 'Governments cap or floor prices to protect consumers or producers — but every binding control creates a shortage, a surplus, and a deadweight loss.',
       diagramKey: 'priceControlsInteractive',
@@ -136,6 +136,61 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Means-tested targeted subsidies are generally more efficient than price controls because: (1) they do not create shortages, (2) they reach those most in need rather than all consumers, (3) they preserve price signals. The main disadvantage is stigma of means-testing and complexity of administration. This comparison earns evaluation marks in any price controls essay.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'pc-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: price controls',
+      question: 'Evaluate the effectiveness of price controls as a government policy to improve market outcomes. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define price ceilings and price floors. Introduce the rationale for each and the central debate about whether they improve market outcomes or create new inefficiencies.',
+          hint: 'Price ceiling (maximum price): set below equilibrium → prevents market from clearing at Pm → shortage. Price floor (minimum price): set above equilibrium → prevents price from falling → surplus. Rationale: affordability (ceiling), producer support or minimum wage (floor).',
+          model: 'Price controls are government-imposed limits on the prices that can be charged in a market. A price ceiling sets a maximum price below the free market equilibrium, aiming to improve affordability for consumers — as with rent controls or energy price caps. A price floor sets a minimum price above equilibrium, protecting producers\' incomes or workers\' wages — as with agricultural support prices or the National Living Wage. While both interventions may address legitimate market imperfections, they prevent the price mechanism from clearing markets and create their own inefficiencies. This essay evaluates the conditions under which price controls improve market outcomes and when they cause greater harm.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Price ceilings can improve affordability and correct monopoly pricing',
+          prompt: 'Explain how a price ceiling below the monopoly price can prevent exploitation of consumers and restore output closer to the competitive level, and give a real-world example.',
+          hint: 'Monopoly sets Pm > MC → deadweight loss. Regulatory price cap forces price down toward MC → output rises, welfare improves. Example: Ofgem energy price cap (2022-23); rent controls in housing emergencies.',
+          model: 'In markets characterised by monopoly power, an appropriately set price ceiling can improve efficiency by preventing the monopolist from restricting output and charging above the competitive price. When the energy regulator Ofgem imposed a price cap during the 2021–23 energy crisis, it prevented energy companies from extracting excessive consumer surplus during a period of inelastic demand and consumer vulnerability. Theory supports this: a maximum price set between the monopoly price and marginal cost forces output toward the competitive level, partially eliminating the deadweight welfare loss from monopoly. In such circumstances, price ceilings can be genuinely efficiency-enhancing, not just distributionally motivated.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Price floors can correct monopsony and support minimum incomes',
+          prompt: 'Explain how the National Living Wage as a price floor can raise wages without reducing employment if the labour market is monopsonistic, where the employer has wage-setting power below the competitive wage.',
+          hint: 'Monopsony: wage < MRP → exploitation. Minimum wage as price floor raises wage without employment loss if set between monopsony wage and competitive wage. Evidence: Card and Krueger (1994); UK NLW rises without significant unemployment.',
+          model: 'Price floors in labour markets — specifically minimum wages — illustrate how price controls can improve outcomes in markets with structural imbalances. In a competitive labour market, a minimum wage above equilibrium would cause unemployment (labour surplus). However, in a monopsonistic labour market — where employers have wage-setting power — wages are already below the competitive level. A minimum wage set between the monopsony wage and the competitive wage raises employment and wages simultaneously, correcting the monopsonist\'s exploitation. Card and Krueger\'s (1994) seminal study of US fast food workers, and subsequent UK evidence on the National Living Wage, suggests that moderate increases have not generated significant disemployment, consistent with the monopsony model.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Price controls create shortages, surpluses, and misallocation',
+          prompt: 'Argue that in competitive markets, price ceilings cause shortages (Qd > Qs) and price floors cause surpluses (Qs > Qd), leading to black markets, non-price rationing, and resource misallocation.',
+          hint: 'Rent control → housing shortage, non-price rationing (queuing/networks), black market subletting, reduced supply investment. Agricultural floors → EU milk/butter mountains. Goods go to fastest queue, not highest valuer.',
+          model: 'In competitive markets, price controls prevent prices from clearing supply and demand, creating persistent imbalances. A rent control below the free market rent reduces the quantity of housing supplied (landlords exit the market, reduce maintenance, or convert to other uses) while increasing quantity demanded — generating a chronic housing shortage. Allocation shifts from price to non-price rationing (queuing, networks, relationships), meaning housing goes to those who queue fastest or know the right people, not those who value it most — a violation of allocative efficiency. The European Union\'s Common Agricultural Policy price floors historically generated massive surpluses ("butter mountains", "wine lakes") that had to be stored or destroyed at taxpayer expense, representing pure welfare loss.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Effectiveness depends on market structure, elasticity, and level of control',
+          prompt: 'Evaluate how the price elasticity of supply and demand, the degree of market power, and the level at which the control is set determine whether price controls improve or worsen outcomes.',
+          hint: 'Inelastic supply (short-run housing): ceiling → small shortage. Elastic supply: large shortage. Minimum wage close to equilibrium: small distortion. Far above equilibrium: large unemployment. Policy effectiveness is highly context-specific.',
+          model: 'The welfare impact of price controls is highly sensitive to the price elasticities of supply and demand and the gap between the control and the free market price. In the short run, supply is often inelastic — a rent ceiling creates only a small shortage as existing landlords cannot quickly exit. In the long run, elastic supply responses (reduced investment in new housing, conversion to other uses) cause much larger shortages. Similarly, a minimum wage set marginally above the equilibrium wage in a moderately monopsonistic market may improve outcomes with minimal employment effects; one set far above equilibrium in a competitive market will generate significant unemployment. The degree of market power also matters fundamentally — price controls correct inefficiency only when the problem is monopoly/monopsony; they create inefficiency when imposed on competitive markets.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Reach a judgement: when are price controls effective, and when are alternative policies preferable?',
+          hint: 'Effective: monopoly/monopsony markets, genuine affordability crises, where alternatives (subsidies, income transfers) are impractical in the short run. Ineffective: competitive markets, when set far from equilibrium, when supply is elastic. Alternatives (targeted subsidies, income transfers, supply expansion) better in the long run.',
+          model: 'In conclusion, price controls can improve market outcomes in specific, well-defined circumstances: when markets lack competition (monopoly or monopsony), when there is a short-term affordability crisis requiring immediate intervention, or when minimum wages are set conservatively in labour markets with employer wage-setting power. However, as a general policy tool in competitive markets, price controls create shortages, surpluses, and misallocation that worsen overall welfare. The long-run alternative of addressing root causes — expanding housing supply, increasing competition, raising incomes through targeted transfers — typically delivers superior outcomes without the distortions. Price controls are therefore a short-run palliative rather than a structural solution, most justified as emergency measures while deeper reforms are implemented.'
+        }
+      ]
     }
   ]
 };

@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Intervention: Taxes',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in how indirect taxes work, their welfare effects, tax incidence, and evaluation of taxation as a tool for correcting market failure.',
   intro: {
     heroKey: 'heroIntervention',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Tax shifts supply LEFT (decreases supply). New equilibrium: price rises (less than the full tax), quantity falls. Tax revenue = tax per unit \xd7 new quantity. DWL = two triangles between old and new equilibrium.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_intervention_tax_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Indirect taxes: the big picture',
       lede: 'Taxes shift supply left to curb consumption and raise revenue — but the real burden falls where elasticity allows it.',
       branches: [
@@ -135,6 +135,61 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Exam essays often ask to "compare two policies." Tax vs regulation structure: tax = flexibility, efficiency, revenue generation, but uncertain quantity outcome and regressive. Regulation = certainty, simplicity, but inflexibility, no revenue, may be inefficient. Both have a role — hybrid approaches (set a regulatory floor + carbon tax above it) often optimal.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+    },
+
+    /* ----- CARD 8 — Essay scaffold ----- */
+    {
+      id: 'git-essay',
+      template: 'essay-scaffold',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Essay scaffold: government intervention — taxation',
+      question: 'Evaluate the use of taxation as a policy to correct market failure caused by negative externalities. (25 marks)',
+      marks: 25,
+      timeGuide: '35 minutes',
+      paragraphs: [
+        {
+          type: 'intro',
+          label: 'Introduction',
+          prompt: 'Define negative externalities, market failure, and Pigouvian taxation. Introduce the essay debate: can taxes effectively correct the divergence between private and social costs?',
+          hint: 'Negative externality = third-party cost not reflected in market price (MSC > MPC). Market overproduces at Qm vs social optimum Q*. Pigouvian tax = MEC to shift private cost up to social cost.',
+          model: 'A negative externality arises when production or consumption imposes costs on third parties that are not reflected in market prices, causing a divergence between the marginal private cost (MPC) and the marginal social cost (MSC). Free markets overproduce such goods relative to the social optimum because producers and consumers ignore the external cost. A Pigouvian tax, set equal to the marginal external cost (MEC), internalises this externality by raising the private cost to equal the social cost, restoring allocative efficiency. This essay evaluates the effectiveness of such taxes, weighing the theoretical case against practical limitations including information problems, regressivity, and political constraints.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 1 — Tax internalises the externality and restores allocative efficiency',
+          prompt: 'Explain how a Pigouvian tax equal to MEC shifts the supply curve left, raises price from Pm to P*, and reduces output from Qm to Q* — eliminating the welfare loss triangle.',
+          hint: 'Diagram: MPC + tax = MSC. Output falls to social optimum. Deadweight welfare loss eliminated. Revenue raised = tax × Q* — can be used to compensate those affected by the externality.',
+          model: 'In theory, a Pigouvian tax equal to the marginal external cost (MEC) corrects the market failure precisely. By adding the tax to producers\' costs, the supply curve shifts left from MPC to MSC (=MPC+tax), raising the market price from Pm to P* and reducing output from the overproduced Qm to the socially optimal Q*. The welfare loss triangle — representing the excess of social cost over social benefit in the range Qm to Q* — is eliminated. Simultaneously, tax revenue (tax rate × Q*) can be recycled to compensate victims of the externality or fund public goods, providing a dual efficiency and fiscal benefit. The UK landfill tax (1996) and air passenger duty illustrate this logic in practice.'
+        },
+        {
+          type: 'analysis',
+          label: 'Analysis 2 — Tax provides continuous incentive to innovate and reduce the externality',
+          prompt: 'Explain why a price-based instrument like a tax is more efficient than regulation, as it gives firms a continuous incentive to find cheaper ways to reduce the externality rather than simply complying to a standard.',
+          hint: 'Regulation sets a floor (comply or not); tax incentivises further reduction below the standard. If a firm can abate more cheaply than the tax rate, it will. Dynamic efficiency: ongoing incentive to develop greener technology.',
+          model: 'A key advantage of taxation over regulation is the continuous incentive it provides for innovation and emission reduction beyond the regulatory standard. Under a command-and-control regulation (e.g. an emission standard), a firm has no incentive to reduce pollution below the legal limit. Under a Pigouvian tax, every additional unit of pollution still costs the firm — so any firm that can reduce emissions more cheaply than the tax rate will do so, achieving the socially optimal level of abatement at minimum total cost. This dynamic efficiency argument explains why economists consistently prefer carbon taxes or cap-and-trade to fixed emission standards: they allocate abatement to those who can do it most cheaply, minimising total cost to the economy.'
+        },
+        {
+          type: 'counter',
+          label: 'Counter — Taxes face serious information and equity problems',
+          prompt: 'Argue that setting the optimal Pigouvian tax rate is extremely difficult in practice (requires knowing MEC), and that per-unit taxes are often regressive — falling disproportionately on lower-income households.',
+          hint: 'MEC varies by location, individual, and is inherently uncertain. UK fuel duty = regressive. Sugar tax: low-income households spend higher share on sugary drinks. Tax may not reduce quantity if demand is very inelastic.',
+          model: 'In practice, the Pigouvian tax faces two major obstacles. First, setting the optimal rate requires accurate measurement of the MEC — which varies across individuals, locations, and time, and is inherently uncertain. Underestimating MEC sets the tax too low, leaving residual market failure; overestimating it causes excessive deadweight loss. The UK\'s failure to maintain the fuel duty escalator reflects political pressure when the true social cost of carbon is disputed. Second, many consumption taxes are regressive: lower-income households spend a higher share of income on fuel, alcohol, and tobacco — so a per-unit tax imposes a proportionally heavier burden on the poor. This equity concern may justify preferring regulation or means-tested alternatives in some contexts.'
+        },
+        {
+          type: 'evaluation',
+          label: 'Evaluation — Effectiveness depends on price elasticity and political feasibility',
+          prompt: 'Evaluate how the price elasticity of demand for the externality-generating good determines the effectiveness of the tax, and discuss political constraints that limit optimal tax design.',
+          hint: 'Inelastic demand (cigarettes, petrol): tax raises revenue but may not reduce quantity much. Elastic demand: tax effectively reduces output. Political feasibility: "fuel duty hypothecation" debate; yellow-vest protests in France over carbon tax.',
+          model: 'The effectiveness of a Pigouvian tax in reducing the externality-generating activity depends critically on the price elasticity of demand. Where demand is highly inelastic — as for cigarettes or petrol in the short run — a tax raises substantial revenue but achieves relatively little reduction in consumption. This represents a partial failure of the corrective purpose (though the revenue can compensate). Where demand is more elastic (e.g. single-use plastics), the price signal is more effective at shifting behaviour toward substitutes. Furthermore, political feasibility constrains optimal tax design: France\'s gilet jaunes protests against a carbon tax increase and the UK\'s fuel duty freeze since 2011 demonstrate that even well-designed taxes can be politically unsustainable, undermining long-run corrective effectiveness.'
+        },
+        {
+          type: 'conclusion',
+          label: 'Conclusion',
+          prompt: 'Reach a balanced judgement: under what conditions is taxation an effective policy for correcting negative externalities, and when are alternatives preferable?',
+          hint: 'Tax is most effective when: demand is elastic, MEC can be estimated, revenue can be recycled to address regressivity. Alternatives (regulation, tradeable permits) preferable when: certainty of outcome needed, demand very inelastic, distributional effects unacceptable.',
+          model: 'In conclusion, Pigouvian taxation is a theoretically sound and practically valuable instrument for correcting market failure caused by negative externalities, offering allocative efficiency, dynamic incentives, and revenue generation. Its effectiveness is greatest when demand is sufficiently elastic to respond to the price signal and when the tax rate can be calibrated to a reasonable estimate of MEC. However, the information challenges of setting the optimal rate, the regressivity of per-unit taxes, and political feasibility constraints mean that taxation alone is rarely sufficient. The most effective policy framework typically combines a carbon or environmental tax with redistributive revenue recycling and complementary regulation — using each instrument\'s strengths to address the other\'s weaknesses.'
+        }
+      ]
     }
   ]
 };

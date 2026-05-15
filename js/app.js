@@ -1010,6 +1010,9 @@
 
   /* === full card view === */
   function isGenericCard(c) {
+    // Cards with an explicit known template are handled by the switch below
+    const knownTemplates = ['framing','cause','diagnose','puzzle','mechanisms','monetary','impacts','deflation','paired','ad-interactive','transmission-chain'];
+    if (knownTemplates.includes(c.template)) return false;
     // Cards in the generic format (all topics except inflation) use these fields
     return !!(
       c.body !== undefined ||

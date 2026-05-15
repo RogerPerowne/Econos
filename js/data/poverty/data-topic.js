@@ -121,7 +121,8 @@ window.ECONOS_TOPIC = {
         { term: 'Two-child limit', def: 'UC/child tax credit only paid for first two children — linked to increased child poverty by IFS.' },
         { term: 'National Living Wage', def: 'Statutory minimum for over-21s — currently \xa312.21/hr (Apr 2024), rising towards 2/3 of median wage.' }
       ],
-      examEdge: 'The existence of in-work poverty challenges the assumption that employment is sufficient to escape poverty. This undermines the "make work pay" policy rationale and suggests structural issues with wage levels and housing costs rather than simply work disincentives.'
+      examEdge: 'The existence of in-work poverty challenges the assumption that employment is sufficient to escape poverty. This undermines the "make work pay" policy rationale and suggests structural issues with wage levels and housing costs rather than simply work disincentives.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

@@ -124,7 +124,8 @@ window.ECONOS_TOPIC = {
         { term: 'Reshoring', def: 'Returning production to the home country — often incentivised by tariffs; slow and costly.' },
         { term: 'Non-tariff barriers', def: 'Border checks, rules of origin, customs procedures — major source of post-Brexit trade friction.' }
       ],
-      examEdge: 'Use Brexit and US-China as contrasting case studies: Brexit is primarily about non-tariff barriers (border friction for goods, loss of passporting for services); US-China is primarily tariff-based but with strategic technology restrictions (semiconductors, AI) added.'
+      examEdge: 'Use Brexit and US-China as contrasting case studies: Brexit is primarily about non-tariff barriers (border friction for goods, loss of passporting for services); US-China is primarily tariff-based but with strategic technology restrictions (semiconductors, AI) added.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

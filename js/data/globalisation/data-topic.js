@@ -309,7 +309,8 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'The net welfare test for MNC FDI',
         text: "A* MNC evaluation uses a net welfare test: <em>'Whether FDI is beneficial depends on whether the employment, technology, and export benefits outweigh the tax leakage, profit repatriation, and environmental costs — which in turn depends on host country institutions, regulation, and bargaining power.'</em> Context-specific evaluation always outscores generic lists."
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
   ]
 };

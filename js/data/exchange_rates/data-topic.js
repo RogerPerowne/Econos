@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Exchange Rates',
-  estTime: '7-9 minutes',
+  estTime: '9-11 minutes',
   goal: 'Lock in what determines exchange rates, how changes affect trade and macro objectives, and the floating vs fixed debate.',
   intro: {
     heroKey: 'heroExchangeRates',
     summary: 'The exchange rate is the price of one currency in terms of another. It connects domestic and international markets: a depreciation makes exports cheaper and imports dearer, affecting competitiveness, inflation and the current account.',
-    doInThis: 'Work through 7 cards covering FOREX markets, appreciation vs depreciation, the Marshall-Lerner condition, J-curve effect, floating vs fixed systems, and exchange rate policy trade-offs.',
+    doInThis: 'Work through 8 cards covering FOREX markets, appreciation vs depreciation, the Marshall-Lerner condition and J-curve, a full Marshall-Lerner worked calculation, floating vs fixed systems, and exchange rate policy trade-offs.',
     outcomes: [
       'Explain how supply and demand in FOREX markets determine the exchange rate',
       'Analyse the effects of currency depreciation on exports, imports, inflation and growth',
@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Depreciation: \xa3 falls in value → exports cheaper in foreign currency (volume rises) → imports dearer in \xa3 (volume falls). Net effect on current account depends on price elasticities (Marshall-Lerner).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'exchange_rates_1',
       template: 'framing',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 8',
       title: 'Exchange rates: the price of money',
       lede: 'A currency is just another asset — its price moves with supply, demand, and expectations. Four lenses unlock how rates are set and why they matter.',
       branches: [
@@ -73,7 +73,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'exchange_rates_4',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 8',
       title: 'Marshall-Lerner Condition & J-Curve',
       lede: 'Depreciation makes exports cheaper and imports dearer — but the current account does not improve immediately. The J-curve traces the path; Marshall-Lerner says when it actually completes.',
       diagramKey: 'jCurveInteractive',
@@ -95,6 +95,44 @@ window.ECONOS_TOPIC = {
         }
       ],
       examEdge: 'If a country exports unique goods (aircraft, luxury brands, pharmaceuticals), PED_X is low — depreciation boosts revenues but volume rises little. If exports are commodity-like, PED_X is high and volume response is large. Always state the M-L condition explicitly and link it to the country\'s export composition.'
+    },
+    {
+      id: 'exchange_rates_worked',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 5 of 8',
+      title: 'Worked Example: Marshall-Lerner Condition',
+      scenario: 'The pound <strong>depreciates 20%</strong> against the dollar. A government economist must assess whether the current account deficit will improve.\n\nGiven: UK exports = \xa3100bn \xb7 UK imports = \xa3100bn \xb7 PED for UK exports = −0.7 \xb7 PED for UK imports = −0.5',
+      steps: [
+        {
+          label: 'Step 1 — Check the Marshall-Lerner condition',
+          hint: 'The M-L condition says depreciation improves the current account only if the sum of the absolute PED values exceeds 1. Does it hold here?',
+          answer: '<strong>|PED_X| + |PED_M| = 0.7 + 0.5 = 1.2 &gt; 1</strong>\n\nThe Marshall-Lerner condition IS satisfied. In the long run (once contracts adjust and volumes respond), depreciation will improve the current account. If the sum had been less than 1, depreciation would have made the deficit worse.'
+        },
+        {
+          label: 'Step 2 — Calculate the effect on export revenue',
+          hint: 'Depreciation makes UK exports cheaper in dollars. How does the 20% depreciation affect the volume of exports — and therefore export revenue in pounds?',
+          answer: 'UK export prices in \xa3 are <strong>unchanged</strong> — UK firms still receive the same pounds per unit.\nIn dollars, UK goods are <strong>20% cheaper</strong> → foreign buyers respond.\n\n%ΔQ_X = |PED_X| \xd7 depreciation = 0.7 \xd7 20% = <strong>+14%</strong>\n\nNew export revenue: \xa3100bn \xd7 1.14 = <strong>\xa3114bn</strong> (up \xa314bn)\n\nNote: export revenue in \xa3 rises because price per unit is unchanged but volume is up 14%.'
+        },
+        {
+          label: 'Step 3 — Calculate the effect on import spending',
+          hint: 'Depreciation makes imports more expensive in pounds. How do higher import prices affect the volume of imports — and the total import bill?',
+          answer: 'UK import prices in \xa3 rise <strong>+20%</strong> (weaker \xa3 → foreign goods cost more).\nImporters respond by buying less.\n\n%ΔQ_M = |PED_M| \xd7 price rise = 0.5 \xd7 20% = <strong>−10%</strong>\n\nNew import spending: \xa3100bn \xd7 1.20 \xd7 0.90 = <strong>\xa3108bn</strong> (up \xa38bn)\n\nThe import bill rose because |PED_M| = 0.5 &lt; 1 — the price effect (+20%) outweighs the volume fall (−10%). Import spending rises despite fewer imports being bought.'
+        },
+        {
+          label: 'Step 4 — Calculate the net change in the trade balance',
+          hint: 'Use X − M before and after depreciation. By how much does the current account improve?',
+          answer: 'Before depreciation: \xa3100bn − \xa3100bn = <strong>\xa30bn</strong> (balanced)\nAfter depreciation: \xa3114bn − \xa3108bn = <strong>+\xa36bn surplus</strong>\n\n<strong>Improvement = +\xa36bn</strong>\n\nExports rose by \xa314bn but imports rose by only \xa38bn — so the net position improved by \xa36bn. This confirms M-L: with |PED_X| + |PED_M| = 1.2, the volume response was large enough to outweigh the adverse price effect on imports.'
+        },
+        {
+          label: 'Step 5 — Apply the J-curve: will this happen immediately?',
+          hint: 'The M-L result is a long-run outcome. What happens in the short run — and why is the path shaped like a “J”?',
+          answer: '<strong>Short run (0–6 months):</strong> trade contracts are fixed. Import volumes do not fall but the import bill in \xa3 rises (prices up). Export volumes unchanged. Current account <em>worsens</em>.\n\n<strong>Medium run (6–18 months):</strong> contracts renegotiated. Export orders rise as foreign buyers respond. Import substitution kicks in. CA starts improving.\n\n<strong>Long run:</strong> the full +\xa36bn improvement materialises — but only if the M-L condition holds.\n\n<strong>UK evaluation:</strong> financial services exports (a large UK share) are relatively price-inelastic. The actual UK M-L sum may be close to 1 — improvement is modest and slow. Always tailor to the country\'s export composition.'
+        }
+      ],
+      conclusion: {
+        label: 'Key result',
+        text: '|PED_X| + |PED_M| = 1.2 > 1 → M-L satisfied → CA improves by +\xa36bn long-run. Short-run: J-curve means CA first worsens before improving. For the UK, with inelastic services exports, the actual gain is smaller and slower than this model predicts.'
+      }
     },
     {
       id: 'exchange_rates_5',

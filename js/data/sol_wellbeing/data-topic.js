@@ -150,6 +150,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       tone: 'blue',
       bannerLabel: 'The growth-inequality relationship',
+      diagramKey: 'kuznetsCurve',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'The Kuznets curve',
       lede: "Simon Kuznets' 1955 hypothesis: as countries develop, inequality first rises then falls. The inverted-U shape that organises every development/inequality essay.",

@@ -1925,6 +1925,54 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* === Kuznets curve — static diagram for sol_wellbeing/kuznets card === */
+  kuznetsCurve: `
+    <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Background -->
+      <rect width="480" height="280" fill="#F8FAFC" rx="8"/>
+
+      <!-- Axes -->
+      <line x1="60" y1="240" x2="440" y2="240" stroke="#334155" stroke-width="2"/>
+      <polygon points="440,235 440,245 452,240" fill="#334155"/>
+      <line x1="60" y1="40" x2="60" y2="240" stroke="#334155" stroke-width="2"/>
+      <polygon points="55,40 65,40 60,28" fill="#334155"/>
+
+      <!-- Axis labels -->
+      <text x="60" y="20" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Inequality</text>
+      <text x="60" y="34" font-size="10" fill="#64748B" text-anchor="middle">(Gini)</text>
+      <text x="448" y="256" font-size="11" font-weight="700" fill="#334155">GDP / capita →</text>
+      <text x="48" y="256" font-size="10" fill="#64748B">0</text>
+
+      <!-- Vertical dashed reference line at peak -->
+      <line x1="250" y1="60" x2="250" y2="240" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3"/>
+
+      <!-- Kuznets curve — inverted U -->
+      <path d="M 60,200 Q 250,-70 440,180" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Stage 1: agricultural (ascending segment) -->
+      <circle cx="125" cy="148" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <text x="68" y="200" font-size="11" font-weight="700" fill="#2563EB">① Agricultural</text>
+      <text x="68" y="214" font-size="10" fill="#64748B">low income</text>
+      <text x="68" y="226" font-size="10" fill="#64748B">low inequality</text>
+
+      <!-- Stage 2: industrialising (peak) -->
+      <circle cx="250" cy="55" r="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="250" y="44" font-size="11" font-weight="700" fill="#2563EB" text-anchor="middle">② Industrialising</text>
+      <rect x="208" y="78" width="84" height="20" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+      <text x="250" y="92" font-size="10" font-weight="700" fill="#D97706" text-anchor="middle">peak inequality</text>
+
+      <!-- Stage 3: post-industrial (descending) -->
+      <circle cx="375" cy="148" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <text x="372" y="200" font-size="11" font-weight="700" fill="#2563EB">③ Post-industrial</text>
+      <text x="372" y="214" font-size="10" fill="#64748B">high income</text>
+      <text x="372" y="226" font-size="10" fill="#64748B">falling inequality</text>
+
+      <!-- Direction arrows along curve -->
+      <text x="160" y="115" font-size="14" fill="#2563EB" opacity="0.7">↗</text>
+      <text x="320" y="115" font-size="14" fill="#2563EB" opacity="0.7">↘</text>
+    </svg>
+  `,
+
   /* === AD topic hero illustration === */
   heroAd: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

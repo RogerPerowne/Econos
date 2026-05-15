@@ -69,6 +69,56 @@ window.ECONOS_LINK_DIAGRAM = {
     ]
   },
 
+  /* ── Diagram specification (read by link-diagram-engine renderDiagramSVG) ── */
+  /* viewBox 0 0 560 430; axes origin at (100,400); clip rect x=101 y=21 w=442 h=378 */
+  diagram: {
+    ariaLabel: 'AD/AS diagram — cost-push inflation (SRAS shifts left)',
+    xLabel: 'Real output',
+    yLabel: 'Price level',
+
+    lines: [
+      /* LRAS — vertical grey dashed */
+      { x1: 308, y1: 21,  x2: 308, y2: 399, stroke: '#374151', strokeWidth: 1.5,
+        label: 'LRAS', labelX: 312, labelY: 18,  labelFill: '#374151' },
+      /* AD₁ — green downward-sloping */
+      { x1: 110, y1: 40,  x2: 510, y2: 360, stroke: '#059669', strokeWidth: 2.5,
+        label: 'AD₁',  labelX: 514, labelY: 360, labelFill: '#059669' },
+      /* SRAS₁ — blue upward-sloping (original) */
+      { x1: 130, y1: 399, x2: 460, y2: 25,  stroke: '#2563eb', strokeWidth: 2.5,
+        label: 'SRAS₁',labelX: 463, labelY: 23,  labelFill: '#2563eb' },
+      /* SRAS₂ — purple upward-sloping (shifted left; starts left of y-axis, clipPath trims it) */
+      { x1: 50,  y1: 399, x2: 380, y2: 25,  stroke: '#7c3aed', strokeWidth: 2.5,
+        label: 'SRAS₂',labelX: 383, labelY: 23,  labelFill: '#7c3aed' }
+    ],
+
+    /* Guide lines + tick labels shown at stage 2 (showDashes) */
+    guides: [
+      /* Horizontal from y-axis to new equilibrium (E₂ at 261,161) */
+      { x1: 100, y1: 161, x2: 261, y2: 161, tickLeft: 'P₂', tickLeftY: 164 },
+      /* Horizontal from y-axis to initial equilibrium (E₁ at 308,198) */
+      { x1: 100, y1: 198, x2: 308, y2: 198, tickLeft: 'P₁', tickLeftY: 201 },
+      /* Vertical from E₂ down to x-axis */
+      { x1: 261, y1: 161, x2: 261, y2: 400, tickBottom: 'Y₂', tickBottomX: 261 },
+      /* Vertical from E₁ down to x-axis */
+      { x1: 308, y1: 198, x2: 308, y2: 400, tickBottom: 'Y₁', tickBottomX: 308 }
+    ],
+
+    /* Shift arrow shown at stage 2; points from SRAS₁ toward SRAS₂ */
+    shiftArrow: { x1: 432, y1: 45, x2: 372, y2: 45, stroke: '#7c3aed' },
+
+    /* Equilibrium dots — initial (E₁) and new (E₂) */
+    eqDots: [
+      {
+        cx: 308, cy: 198, fill: '#2563eb',
+        initLabel: 'Initial', initLabel2: 'equilibrium', initLabelX: 314, initLabelY: 193
+      },
+      {
+        cx: 261, cy: 161, fill: '#7c3aed',
+        newLabel: 'New', newLabel2: 'equilibrium', newLabelX: 268, newLabelY: 156
+      }
+    ]
+  },
+
   /* ── Stage 1: Label the diagram ── */
   label: {
     eyebrow:     'Diagram Connector — Label the Diagram',
@@ -76,12 +126,13 @@ window.ECONOS_LINK_DIAGRAM = {
     instruction: 'Connect the visual shift to the economic outcomes by placing the correct labels on the diagram.',
     hint:        'Skill focus: connect the visual shift to economic outcomes.',
 
+    /* Zone positions as % of 560×430 SVG viewBox */
     zones: [
-      { id: 'shift',    label: 'Shift label'       },
-      { id: 'new-eq',   label: 'New equilibrium'   },
-      { id: 'init-eq',  label: 'Initial eq.'       },
-      { id: 'hi-price', label: 'Higher price level' },
-      { id: 'lo-out',   label: 'Lower real output'  }
+      { id: 'shift',    label: 'Shift label',        pctX: 34,  pctY: 13.5, pctW: 19 },
+      { id: 'new-eq',   label: 'New equilibrium',    pctX: 48,  pctY: 33,   pctW: 21 },
+      { id: 'init-eq',  label: 'Initial eq.',        pctX: 57,  pctY: 41,   pctW: 22 },
+      { id: 'hi-price', label: 'Higher price level', pctX: 0.5, pctY: 33,   pctW: 17 },
+      { id: 'lo-out',   label: 'Lower real output',  pctX: 39,  pctY: 93.5, pctW: 18 }
     ],
 
     chips: [

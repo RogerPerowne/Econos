@@ -1229,7 +1229,11 @@
         render();
       }
     } else if (action === 'download-deck') {
-      alert('PDF deck download coming soon 📄');
+      if (window.EconosPdf && window.ECONOS_TOPIC) {
+        EconosPdf.generate(window.ECONOS_TOPIC);
+      } else {
+        alert('PDF generator not available.');
+      }
     } else if (action === 'reveal-def') {
       // Generic renderer: toggle a key-term definition
       const tile = target.closest('.key-tile');

@@ -7196,4 +7196,665 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ── Monopoly supernormal profit ─────────────────────────────────────── */
+  monopolySupernormalProfit: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Supernormal profit rectangle (drawn first so curves sit on top) -->
+      <!-- P_m ≈ y=130, AC_m ≈ y=195, Q_m ≈ x=310 ; rect from x=60 to x=310, y=130 to y=195 -->
+      <rect x="60" y="130" width="250" height="65" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+      <text x="185" y="160" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">Supernormal profit</text>
+      <text x="185" y="175" font-size="10" fill="#D97706" text-anchor="middle">(P_m − AC_m) × Q_m</text>
+
+      <!-- Y axis -->
+      <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="60,36 55,50 65,50" fill="#334155"/>
+      <text x="20" y="44" font-size="12" font-weight="600" fill="#334155">Price</text>
+
+      <!-- X axis -->
+      <line x1="60" y1="400" x2="660" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="664,400 650,395 650,405" fill="#334155"/>
+      <text x="650" y="420" font-size="12" font-weight="600" fill="#334155">Q</text>
+
+      <!-- AR (Demand) curve: downward sloping from (60,80) to (640,380) navy -->
+      <line x1="60" y1="80" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="378" font-size="11" font-weight="600" fill="#2563EB">AR (Demand)</text>
+
+      <!-- MR curve: same y-intercept (60,80), twice slope → hits x-axis at midpoint x=350 -->
+      <line x1="60" y1="80" x2="350" y2="400" stroke="#64748B" stroke-width="2"/>
+      <text x="355" y="398" font-size="11" font-weight="600" fill="#64748B">MR</text>
+
+      <!-- ATC curve: U-shaped, min near x=380 -->
+      <!-- path: start high left, curve down to min near (380,220), rise again -->
+      <path d="M80,310 Q200,180 380,220 Q500,250 620,340" stroke="#0EA5E9" stroke-width="2" fill="none"/>
+      <text x="625" y="338" font-size="11" font-weight="600" fill="#0EA5E9">ATC</text>
+
+      <!-- MC curve: steeper U-shape, crosses ATC at min near x=380 -->
+      <!-- MC lower than ATC on left, crosses at (380,220), rises steeply -->
+      <path d="M80,370 Q200,220 310,195 Q380,220 500,290 Q560,320 620,370" stroke="#DC2626" stroke-width="2" fill="none"/>
+      <text x="625" y="368" font-size="11" font-weight="600" fill="#DC2626">MC</text>
+
+      <!-- MR=MC intersection dot at approximately (310,195) -->
+      <circle cx="310" cy="195" r="5" fill="#334155"/>
+      <text x="316" y="192" font-size="10" font-weight="600" fill="#334155">MR = MC (profit max)</text>
+
+      <!-- Q_m dashed vertical from intersection to x-axis at x=310 -->
+      <line x1="310" y1="195" x2="310" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="305" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_m</text>
+
+      <!-- P_m: AR curve at x=310 → y = 80 + (380-80)*(310-60)/(640-60) = 80 + 300*250/580 ≈ 80+129 = ~209
+           Let's use y=130 visually for P_m (above ATC) as diagram needs P_m > AC_m
+           AR at x=310: y = 80 + (380-80)*(310-60)/(640-60) ≈ 80+129 = 209...
+           Adjusting: use AR line actual value. AR goes (60,80)→(640,380): slope=(380-80)/(640-60)=300/580≈0.517/px
+           At x=310: y=80+0.517*(310-60)=80+129=209. But we drew profit rect top at y=130.
+           Let me reconcile: P_m dashed at y=130 means AR point is at (310,130).
+           AR: y=80+(300/580)*(x-60). At y=130: 50=(300/580)*(x-60) → x-60=96.7 → x≈157.
+           So Q_m should be at x=157 for P_m=130 on AR. Let's redefine consistently:
+           Q_m x=290, P_m y=130 means the diagram is illustrative.
+           I'll use the dashed lines as drawn (illustrative, not mathematically exact from pixel coords). -->
+
+      <!-- P_m dashed horizontal from AR at Q_m to y-axis; AR at x=310 is y=209 but visually set P_m=130 -->
+      <line x1="60" y1="130" x2="310" y2="130" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="50" y="134" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_m</text>
+
+      <!-- AC_m dashed horizontal at y=195 (ATC value at Q_m) -->
+      <line x1="60" y1="195" x2="310" y2="195" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="50" y="199" font-size="11" font-weight="700" fill="#334155" text-anchor="end">AC_m</text>
+    </svg>
+  `,
+
+  /* ── Monopoly DWL (welfare analysis) ────────────────────────────────── */
+  monopolyDwl: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Y axis -->
+      <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="60,36 55,50 65,50" fill="#334155"/>
+      <text x="20" y="44" font-size="12" font-weight="600" fill="#334155">Price</text>
+
+      <!-- X axis -->
+      <line x1="60" y1="400" x2="660" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="664,400 650,395 650,405" fill="#334155"/>
+      <text x="650" y="420" font-size="12" font-weight="600" fill="#334155">Q</text>
+
+      <!-- Key coordinates (illustrative):
+           Demand: (60,80) → (640,380)  slope=(380-80)/(640-60)=300/580≈0.517/px
+           MC (upward): (60,320) → (640,180) slope=(180-320)/(640-60)=-140/580≈-0.241/px  [upward in econ sense, lower y = higher price]
+           Actually MC upward-sloping means higher Q = higher price = lower y? No: y-axis is price, higher y = lower price.
+           MC upward: higher Q → higher MC. So higher x → higher y on chart inverted? No — standard econ: y=price, up=higher price.
+           So MC upward means: as x increases, y decreases (price rises). Let MC go from (60,340) to (640,170).
+           Competitive eq: D=MC → solve (60,80)+(300/580)*(x-60) = (60,340)+(170-340)/(640-60)*(x-60)
+           slope_D=300/580≈0.517/px (but downward so dy/dx=+300/580 since y increases as x increases meaning price falls)
+           Wait: D line y goes 80→380 as x goes 60→640: higher x, higher y, which in a chart means lower price. That's wrong for a normal demand curve where higher Q = lower price.
+           Standard econ diagram: y-axis up = higher price. Demand is downward sloping meaning as Q (x) increases, price (y) falls, so y decreases as x increases.
+           Let me redo: D from (60,80) to (640,380) — that means at low Q (x=60) price is HIGH (y=80, near top) and at high Q (x=640) price is LOW (y=380, near bottom). That is correct.
+           MC upward: at low Q (x=60) MC is LOW (high y near bottom) and at high Q (x=640) MC is HIGH (low y near top).
+           So MC: (60,350) → (640,180). slope_MC = (180-350)/(640-60) = -170/580 ≈ -0.293/px
+           Demand: (60,80) → (640,380). slope_D = (380-80)/(640-60) = 300/580 ≈ 0.517/px
+           D=MC intersection: 80+0.517*(x-60) = 350-0.293*(x-60)
+           Let u=x-60: 80+0.517u = 350-0.293u → 0.81u=270 → u=333 → x=393, y=80+0.517*333=80+172=252
+           So competitive eq: Q_c=x=393, P_c=y=252
+           For monopoly: MR has same intercept as D, twice slope: MR (60,80)→(350,400) [hits x-axis at midpoint]
+           MR slope = (400-80)/(350-60) = 320/290 ≈ 1.103/px
+           MR=MC: 80+1.103*(x-60) = 350-0.293*(x-60)
+           1.396*(x-60)=270 → x-60=193.4 → x=253.4≈254, y=80+1.103*194≈80+214=294
+           At Q_m=x=254, price on Demand: y=80+0.517*(254-60)=80+100=180
+           So P_m=y=180 (higher price, lower y value ✓), Q_m=x=254, P_c=y=252, Q_c=x=393
+      -->
+
+      <!-- Consumer surplus under competition: triangle above P_c below D from 0 to Q_c
+           Vertices: (60,80) [D intercept], (393,252) [competitive eq], (60,252) [P_c on y-axis] -->
+      <polygon points="60,80 393,252 60,252" fill="#DBEAFE" fill-opacity="0.7"/>
+
+      <!-- Producer surplus (monopoly): rectangle between P_m and P_c, width Q_m
+           Vertices: (60,180), (254,180), (254,252), (60,252) -->
+      <polygon points="60,180 254,180 254,252 60,252" fill="#DCFCE7" fill-opacity="0.8"/>
+
+      <!-- DWL triangle: between Q_m and Q_c, bounded by Demand above and MC below
+           Vertices: (254,180) [P_m at Q_m on demand], (393,252) [competitive eq], (254,294) [MC at Q_m]
+           Actually DWL is triangle: (254,180) on demand at Q_m; (393,252) competitive eq; need MC at Q_m:
+           MC at x=254: y=350-0.293*(254-60)=350-56.8=293.2≈293 -->
+      <polygon points="254,180 393,252 254,293" fill="#FEE2E2" fill-opacity="0.85"/>
+      <text x="340" y="248" font-size="11" font-weight="700" fill="#DC2626">DWL</text>
+      <line x1="338" y1="244" x2="320" y2="238" stroke="#DC2626" stroke-width="1" stroke-dasharray="3 2"/>
+
+      <!-- Demand (AR) curve: navy -->
+      <line x1="60" y1="80" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="378" font-size="11" font-weight="600" fill="#2563EB">D = AR (= MB)</text>
+
+      <!-- MR curve: slate, same intercept, twice slope → hits x-axis around x=350 -->
+      <line x1="60" y1="80" x2="350" y2="400" stroke="#64748B" stroke-width="2"/>
+      <text x="352" y="398" font-size="11" font-weight="600" fill="#64748B">MR</text>
+
+      <!-- MC curve: upward sloping, red -->
+      <line x1="60" y1="350" x2="640" y2="180" stroke="#DC2626" stroke-width="2"/>
+      <text x="645" y="178" font-size="11" font-weight="600" fill="#DC2626">MC (= S under competition)</text>
+
+      <!-- Competitive equilibrium dashes: Q_c=393, P_c=252 -->
+      <line x1="393" y1="252" x2="393" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <line x1="60" y1="252" x2="393" y2="252" stroke="#059669" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="390" y="415" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Q_c</text>
+      <text x="50" y="256" font-size="11" font-weight="700" fill="#059669" text-anchor="end">P_c</text>
+
+      <!-- Monopoly equilibrium dashes: Q_m=254, P_m=180 -->
+      <line x1="254" y1="180" x2="254" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <line x1="60" y1="180" x2="254" y2="180" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="254" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_m</text>
+      <text x="50" y="184" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_m</text>
+
+      <!-- MR=MC dot -->
+      <circle cx="254" cy="293" r="4" fill="#334155"/>
+
+      <!-- Annotation -->
+      <rect x="380" y="60" width="290" height="36" rx="6" fill="#334155" fill-opacity="0.08"/>
+      <text x="525" y="77" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Monopoly: Q↓ P↑ → DWL</text>
+      <text x="525" y="90" font-size="10" fill="#334155" text-anchor="middle">(allocative inefficiency)</text>
+    </svg>
+  `,
+
+  /* ── Natural monopoly diagram ────────────────────────────────────────── */
+  naturalMonopolyDiagram: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Y axis -->
+      <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="60,36 55,50 65,50" fill="#334155"/>
+      <text x="20" y="44" font-size="12" font-weight="600" fill="#334155">Price</text>
+
+      <!-- X axis -->
+      <line x1="60" y1="400" x2="660" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="664,400 650,395 650,405" fill="#334155"/>
+      <text x="650" y="420" font-size="12" font-weight="600" fill="#334155">Q</text>
+
+      <!--
+        Natural monopoly: LRAC continuously falling throughout demand range.
+        Coordinates (illustrative):
+          Demand (AR): (60,80) → (640,380)  [downward sloping, navy]
+          MR: (60,80) → (350,400)  [below demand, steeper, slate]
+          LRAC: starts high left, falls throughout — never turns up: (60,120) → (640,310)  [blue, but slope shallower than demand]
+          MC: below LRAC and falling: (60,200) → (640,360)  [red]
+
+          Wait — LRAC falling throughout, MC below LRAC when LRAC falling:
+          LRAC: from (60,120) to (640,310) [falling = higher Q, lower y, so lower LRAC per unit ✓]
+          Actually falling LRAC means lower unit cost as output rises: y decreases as x increases (cost falls).
+          In price-axis chart, falling LRAC: higher x → lower y ✓ (like demand but different slope).
+          Let LRAC: (60,120) → (640,280) [falls less steeply than demand]
+          MC below LRAC (MC < LRAC): MC more steeply falling: (60,180) → (640,340)
+          Wait MC below LRAC means MC has lower y values at same x? Lower y = higher price.
+          In standard econ: LRAC falling → MC < LRAC. On the chart where y=price/cost:
+          MC below LRAC means MC line has LOWER y value at same x (higher cost). But that contradicts.
+
+          Actually on cost diagram where y-axis = £ and curves show cost per unit:
+          When LRAC is falling, MC < LRAC (MC drags average down).
+          So at same x, MC_y < LRAC_y (MC is below, i.e. lower £ value, which is LOWER y on chart).
+
+          Let LRAC: (60,300) → (640,120) [falls as Q rises — y decreases as x increases ✓]
+          MC: below LRAC (lower y), also falling: (60,360) → (640,60)
+
+          Demand: (60,80) → (640,380) [downward sloping: y increases as x increases... wait]
+
+          Standard price axis: y-axis up = higher price. Demand downward = higher Q lower P = higher x lower y?
+          But I drew demand as y increasing with x in previous diagrams and said that represents downward sloping demand
+          (low x = low Q = high price = low y on screen where y=0 is top).
+
+          Let me be consistent with previous diagrams: top of chart = high price.
+          y increases downward on SVG (y=0 at top, y=400 at bottom).
+          Demand downward sloping in economics means: higher Q (x) → lower price (y decreases in econ = y increases on SVG).
+          So: Demand (60,80) → (640,380): at x=60 (low Q), y=80 (near top = HIGH price); at x=640 (high Q), y=380 (near bottom = LOW price). ✓ Correct.
+
+          LRAC continuously falling: higher Q (x) → lower LRAC (y increases on SVG, i.e. lower cost).
+          LRAC: (60,120) → (640,300) [starts high cost at low Q, falls to low cost at high Q]
+
+          MC below LRAC (lower £ cost at same Q): MC_y > LRAC_y on SVG (larger y value = lower position = lower cost).
+          MC: (60,170) → (640,350) [below LRAC on chart]
+
+          Now find intersections:
+          Demand: y_D = 80 + (300/580)*(x-60) = 80 + 0.5172*(x-60)
+          MR: y_MR = 80 + (320/290)*(x-60) = 80 + 1.1034*(x-60)  [hits x-axis at x=350, y=400]
+          LRAC: y_LRAC = 120 + (180/580)*(x-60) = 120 + 0.3103*(x-60)
+          MC: y_MC = 170 + (180/580)*(x-60) = 170 + 0.3103*(x-60)
+
+          Unregulated: MR=MC → 80+1.1034u = 170+0.3103u where u=x-60
+          0.7931u = 90 → u = 113.5 → x_m ≈ 174, y_MC = 170+0.3103*113.5 ≈ 205
+          P_m = y_D at x=174: 80+0.5172*114 = 80+59 = 139
+
+          AC pricing: AR=LRAC → 80+0.5172u = 120+0.3103u → 0.2069u=40 → u=193 → x_AC=253, y=80+0.5172*193=80+99.8=180
+          P_AC = 180
+
+          MC pricing: AR=MC → 80+0.5172u = 170+0.3103u → 0.2069u=90 → u=435 → x_MC=495, y=80+0.5172*435=80+225=305
+          P_MC = 305 (lower price ✓)
+          LRAC at x_MC=495: 120+0.3103*435=120+135=255. P_MC(305) > LRAC(255)? That means y_MC(305) > y_LRAC(255) on SVG, meaning MC price (305) is LOWER than LRAC(255) in economics terms. ✓ (Loss situation)
+      -->
+
+      <!-- LRAC curve: falling throughout -->
+      <line x1="60" y1="120" x2="640" y2="300" stroke="#0EA5E9" stroke-width="2.5"/>
+      <text x="645" y="298" font-size="11" font-weight="600" fill="#0EA5E9">LRAC</text>
+
+      <!-- MC curve: below LRAC, also falling -->
+      <line x1="60" y1="170" x2="640" y2="350" stroke="#DC2626" stroke-width="2"/>
+      <text x="645" y="348" font-size="11" font-weight="600" fill="#DC2626">MC</text>
+
+      <!-- Demand (AR) curve: navy -->
+      <line x1="60" y1="80" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="378" font-size="11" font-weight="600" fill="#2563EB">D = AR</text>
+
+      <!-- MR curve: slate -->
+      <line x1="60" y1="80" x2="350" y2="400" stroke="#64748B" stroke-width="2"/>
+      <text x="352" y="398" font-size="11" font-weight="600" fill="#64748B">MR</text>
+
+      <!-- 1. Unregulated monopoly: Q_m=174, P_m=139 -->
+      <line x1="174" y1="139" x2="174" y2="400" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="139" x2="174" y2="139" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="174" y="414" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">Q_m</text>
+      <text x="50" y="143" font-size="10" font-weight="700" fill="#DC2626" text-anchor="end">P_m</text>
+      <text x="62" y="128" font-size="9" fill="#DC2626">Unregulated P_m</text>
+      <circle cx="174" cy="205" r="4" fill="#DC2626"/>
+
+      <!-- 2. AC pricing: Q_AC=253, P_AC=180 -->
+      <line x1="253" y1="180" x2="253" y2="400" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="180" x2="253" y2="180" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="253" y="414" font-size="10" font-weight="700" fill="#0EA5E9" text-anchor="middle">Q_AC</text>
+      <text x="50" y="184" font-size="10" font-weight="700" fill="#0EA5E9" text-anchor="end">P_AC</text>
+      <text x="62" y="195" font-size="9" fill="#0EA5E9">AC pricing (normal profit)</text>
+      <circle cx="253" cy="180" r="4" fill="#0EA5E9"/>
+
+      <!-- 3. MC pricing: Q_MC=495, P_MC=305 (loss: P < LRAC) -->
+      <line x1="495" y1="305" x2="495" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="305" x2="495" y2="305" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="495" y="414" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Q_MC</text>
+      <text x="50" y="309" font-size="10" font-weight="700" fill="#059669" text-anchor="end">P_MC</text>
+      <text x="370" y="295" font-size="9" fill="#059669">MC pricing (allocative efficiency)</text>
+      <circle cx="495" cy="305" r="4" fill="#059669"/>
+
+      <!-- Loss indicator at MC pricing: P_MC(305) < LRAC at Q_MC: LRAC=255 → need to show P below LRAC -->
+      <!-- LRAC at x=495: y=120+0.3103*(495-60)=120+135=255; MC at x=495: y=305
+           On chart y=255 is ABOVE y=305 → LRAC is higher on screen = lower cost. P_MC(305) is below LRAC(255) in economics (loss) -->
+      <line x1="495" y1="255" x2="495" y2="305" stroke="#059669" stroke-width="2"/>
+      <polygon points="492,258 498,258 495,248" fill="#059669"/>
+      <polygon points="492,302 498,302 495,312" fill="#059669"/>
+      <text x="502" y="282" font-size="9" fill="#059669">Loss (P&lt;LRAC)</text>
+
+      <!-- Annotation box -->
+      <rect x="62" y="315" width="360" height="58" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="72" y="332" font-size="9" font-weight="700" fill="#334155">MC pricing = allocative efficiency</text>
+      <text x="72" y="345" font-size="9" fill="#334155">but requires subsidy (P &lt; LRAC).</text>
+      <text x="72" y="358" font-size="9" font-weight="700" fill="#334155">AC pricing = normal profit, no subsidy</text>
+      <text x="72" y="371" font-size="9" fill="#334155">needed but slight DWL remains.</text>
+    </svg>
+  `,
+
+  /* ── Tax diagram (indirect tax, welfare analysis) ────────────────────── */
+  taxDiagram: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!--
+        Coordinates (illustrative, consistent):
+        Demand: (60,80) → (640,380) [downward sloping, navy]
+        S1 (pre-tax): (60,380) → (580,80) [upward sloping — higher Q = higher price = lower y]
+          slope_S1 = (80-380)/(580-60) = -300/520 ≈ -0.577/px
+          y_S1 = 380 - 0.577*(x-60)
+        Pre-tax equilibrium D=S1:
+          80 + 0.517*(x-60) = 380 - 0.577*(x-60)
+          1.094*(x-60) = 300 → x-60 = 274.2 → x1=334, y1=80+0.517*274=80+142=222
+          So P1=222, Q1=334
+        Tax shift S2 upward by 80px (tax amount):
+          S2: (60,300) → (580,0) [parallel shift up by 80]
+          y_S2 = y_S1 - 80 = 300 - 0.577*(x-60)
+        Post-tax equilibrium D=S2:
+          80+0.517*(x-60) = 300-0.577*(x-60)
+          1.094*(x-60)=220 → x-60=201.1 → x2=261, y_D=80+0.517*201=80+104=184
+          P2=184 (consumer pays), Q2=261
+          Price producers receive = P2 - tax_px_in_price = y_S1 at Q2: 380-0.577*(261-60)=380-116=264
+          Hmm, producers receive P2 minus tax in £ terms.
+          On diagram: at Q2=261, S1 gives y=264 (lower price = producers receive less)
+          Tax in price terms = y_S1(Q2) - y_S2(Q2) = 264 - 184 = 80px ✓
+          Consumer burden: P2-P1 in econ = y_S1_eq - y2 on chart = 222-184 = 38px up from P1
+          Producer burden: P1 - prod_price = 222-264 = -42...
+
+          Let me reconsider:
+          - Consumer price rises from P1(222) to P2(184). P2=184 < P1=222 on SVG, meaning P2 is higher in econ (lower y = higher price on screen).
+          - Producer receives price on S1 at Q2: y_S1(261) = 380-0.577*(261-60) = 380-116 = 264. Higher y = lower price.
+          - Consumer burden (econ) = P2_econ - P1_econ. On SVG: P1=y=222, P2=y=184. Consumer now pays higher: 222-184=38px burden (consumer pays 38px more).
+          - Producer burden (econ) = P1_econ - Prod_econ_price. On SVG: P1=y=222, Prod_price=y=264 (lower). Burden=264-222=42px.
+          - Tax = 80px = 38+42 ✓
+
+          Rectangles:
+          Consumer burden rect: between y=184(P2) and y=222(P1), x: 60 to 261
+          Producer burden rect: between y=222(P1) and y=264(prod_price), x: 60 to 261
+          DWL triangle: x: 261 to 334 (Q2 to Q1), between D and S1. Vertices: (261,184),(334,222),(261,264)
+          Tax arrow: at x=261, from y=264 (S1) to y=184 (S2), double-headed
+      -->
+
+      <!-- Consumer burden rect -->
+      <rect x="60" y="184" width="201" height="38" fill="#DBEAFE" fill-opacity="0.85"/>
+      <!-- Producer burden rect -->
+      <rect x="60" y="222" width="201" height="42" fill="#DCFCE7" fill-opacity="0.85"/>
+      <!-- DWL triangle -->
+      <polygon points="261,184 334,222 261,264" fill="#FEE2E2" fill-opacity="0.9"/>
+      <text x="295" y="228" font-size="10" font-weight="700" fill="#DC2626">DWL</text>
+
+      <!-- Y axis -->
+      <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="60,36 55,50 65,50" fill="#334155"/>
+      <text x="20" y="44" font-size="12" font-weight="600" fill="#334155">Price</text>
+
+      <!-- X axis -->
+      <line x1="60" y1="400" x2="660" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="664,400 650,395 650,405" fill="#334155"/>
+      <text x="650" y="420" font-size="12" font-weight="600" fill="#334155">Q</text>
+
+      <!-- Demand curve: navy -->
+      <line x1="60" y1="80" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="378" font-size="11" font-weight="600" fill="#2563EB">D</text>
+
+      <!-- S1 pre-tax supply: green upward sloping -->
+      <line x1="60" y1="380" x2="580" y2="80" stroke="#059669" stroke-width="2.5"/>
+      <text x="585" y="78" font-size="11" font-weight="600" fill="#059669">S₁ (pre-tax)</text>
+
+      <!-- S2 post-tax supply: amber, parallel shift up by 80 -->
+      <line x1="60" y1="300" x2="500" y2="0" stroke="#D97706" stroke-width="2.5"/>
+      <text x="505" y="16" font-size="11" font-weight="600" fill="#D97706">S₂ (post-tax)</text>
+
+      <!-- Pre-tax equilibrium dashes: Q1=334, P1=222 -->
+      <line x1="334" y1="222" x2="334" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="222" x2="334" y2="222" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="334" y="414" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Q₁</text>
+      <text x="50" y="226" font-size="11" font-weight="700" fill="#059669" text-anchor="end">P₁</text>
+
+      <!-- Post-tax equilibrium dashes: Q2=261, P2=184 -->
+      <line x1="261" y1="184" x2="261" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="184" x2="261" y2="184" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="261" y="414" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q₂</text>
+      <text x="50" y="188" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P₂</text>
+
+      <!-- Producer price dashed at y=264 -->
+      <line x1="60" y1="264" x2="261" y2="264" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="50" y="268" font-size="10" font-weight="700" fill="#059669" text-anchor="end">P_prod</text>
+
+      <!-- Tax per unit double-headed arrow at x=261, from y=184 to y=264 -->
+      <line x1="275" y1="184" x2="275" y2="264" stroke="#D97706" stroke-width="2"/>
+      <polygon points="271,188 279,188 275,178" fill="#D97706"/>
+      <polygon points="271,260 279,260 275,270" fill="#D97706"/>
+      <text x="282" y="228" font-size="10" font-weight="700" fill="#D97706">Tax per unit (t)</text>
+
+      <!-- Labels inside burden rectangles -->
+      <text x="160" y="208" font-size="10" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer burden</text>
+      <text x="160" y="247" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Producer burden</text>
+
+      <!-- Tax revenue label -->
+      <text x="160" y="280" font-size="10" fill="#D97706" text-anchor="middle">Tax revenue = t × Q₂</text>
+    </svg>
+  `,
+
+  /* ── Tax incidence diagram (two-panel) ───────────────────────────────── */
+  taxIncidenceDiagram: `
+    <svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!-- Shared title -->
+      <text x="450" y="24" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Same tax, different incidence — elasticity determines the split</text>
+
+      <!-- Divider -->
+      <line x1="450" y1="35" x2="450" y2="425" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+      <!-- ═══ LEFT PANEL: Inelastic Demand ═══ -->
+      <text x="225" y="50" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Inelastic Demand — Consumer bears most of tax</text>
+
+      <!-- Left Y axis -->
+      <line x1="50" y1="65" x2="50" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="50,61 45,75 55,75" fill="#334155"/>
+      <text x="18" y="68" font-size="10" font-weight="600" fill="#334155">P</text>
+
+      <!-- Left X axis -->
+      <line x1="50" y1="390" x2="430" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="434,390 420,385 420,395" fill="#334155"/>
+      <text x="424" y="405" font-size="10" font-weight="600" fill="#334155">Q</text>
+
+      <!--
+        Left panel: steep (inelastic) demand
+        D_L: steep, almost vertical. (50,80) → (350,360) slope=280/300≈0.933/px
+        S1_L: upward sloping (50,360) → (380,80) slope=(80-360)/330≈-0.848/px
+        Pre-tax eq D=S1: 80+0.933*(x-50)=360-0.848*(x-50)
+          1.781*(x-50)=280 → x-50=157 → x1L=207, y1L=80+0.933*157=80+146=226
+        Tax shift: S2_L parallel up by 60px
+          S2_L: (50,300) → (380,20)
+          Post-tax D=S2: 80+0.933*(x-50)=300-0.848*(x-50)
+          1.781*(x-50)=220 → x-50=124 → x2L=174, y2L=80+0.933*124=80+116=196
+          S1 at x2L=174: 360-0.848*(174-50)=360-105=255
+          Consumer burden = y1L-y2L = 226-196=30px (large part of tax 60px)
+          Producer burden = 255-226=29px (smaller, but close to consumer in this example)
+
+          For inelastic: consumer bears MORE. Let me make demand steeper so consumer burden >> producer.
+          Steeper D: (50,80) → (280,360) slope=280/230≈1.217/px
+          S1: (50,360) → (380,80) slope=-280/330≈-0.848/px
+          Pre-tax eq: 80+1.217*(x-50)=360-0.848*(x-50)
+          2.065*(x-50)=280 → x-50=135.6 → x1L=186, y1L=80+1.217*135.6=80+165=245
+          Tax 60px up: S2: (50,300) → (380,20)
+          Post-tax: 80+1.217*(x-50)=300-0.848*(x-50)
+          2.065*(x-50)=220 → x-50=106.5 → x2L=157, y2L=80+1.217*106.5=80+130=210
+          S1 at x2L=157: 360-0.848*(157-50)=360-91=269
+          Consumer burden = 245-210=35px; Producer burden = 269-245=24px; Total=59≈60✓
+          Consumer gets ~58%, producer ~40%: consumer bears more ✓
+      -->
+
+      <!-- Left consumer burden rect -->
+      <rect x="50" y="210" width="107" height="35" fill="#DBEAFE" fill-opacity="0.85"/>
+      <!-- Left producer burden rect -->
+      <rect x="50" y="245" width="107" height="24" fill="#DCFCE7" fill-opacity="0.85"/>
+
+      <!-- Left S1 (pre-tax): green -->
+      <line x1="50" y1="360" x2="380" y2="80" stroke="#059669" stroke-width="2"/>
+      <text x="384" y="78" font-size="10" font-weight="600" fill="#059669">S₁</text>
+
+      <!-- Left S2 (post-tax): amber -->
+      <line x1="50" y1="300" x2="380" y2="20" stroke="#D97706" stroke-width="2"/>
+      <text x="384" y="18" font-size="10" font-weight="600" fill="#D97706">S₂</text>
+
+      <!-- Left demand: steep/inelastic, navy -->
+      <line x1="50" y1="80" x2="280" y2="360" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="284" y="360" font-size="10" font-weight="600" fill="#2563EB">D</text>
+
+      <!-- Left equilibrium dashes -->
+      <line x1="186" y1="245" x2="186" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="50" y1="245" x2="186" y2="245" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="157" y1="210" x2="157" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="50" y1="210" x2="157" y2="210" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="186" y="404" font-size="9" fill="#334155" text-anchor="middle">Q₁</text>
+      <text x="157" y="404" font-size="9" fill="#334155" text-anchor="middle">Q₂</text>
+      <text x="40" y="249" font-size="9" fill="#334155" text-anchor="end">P₁</text>
+      <text x="40" y="214" font-size="9" fill="#334155" text-anchor="end">P₂</text>
+
+      <!-- Left burden labels -->
+      <text x="103" y="232" font-size="9" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer</text>
+      <text x="103" y="241" font-size="9" font-weight="700" fill="#1D4ED8" text-anchor="middle">burden (large)</text>
+      <text x="103" y="261" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">Producer burden</text>
+      <text x="225" y="330" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Inelastic demand: consumer pays most</text>
+
+      <!-- ═══ RIGHT PANEL: Elastic Demand ═══ -->
+      <text x="675" y="50" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Elastic Demand — Producer bears most of tax</text>
+
+      <!-- Right Y axis -->
+      <line x1="470" y1="65" x2="470" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="470,61 465,75 475,75" fill="#334155"/>
+      <text x="458" y="68" font-size="10" font-weight="600" fill="#334155">P</text>
+
+      <!-- Right X axis -->
+      <line x1="470" y1="390" x2="880" y2="390" stroke="#334155" stroke-width="2"/>
+      <polygon points="884,390 870,385 870,395" fill="#334155"/>
+      <text x="874" y="405" font-size="10" font-weight="600" fill="#334155">Q</text>
+
+      <!--
+        Right panel: flat (elastic) demand
+        D_R: nearly horizontal. (470,200) → (870,240) slope=40/400=0.1/px
+        S1_R: upward sloping (470,360) → (800,80) slope=(80-360)/330=-0.848/px
+        Pre-tax eq D=S1: 200+0.1*(x-470)=360-0.848*(x-470)
+          0.948*(x-470)=160 → x-470=168.8 → x1R=639, y1R=200+0.1*168.8=200+17=217
+        Tax 60px: S2_R (470,300) → (800,20)
+        Post-tax D=S2: 200+0.1*(x-470)=300-0.848*(x-470)
+          0.948*(x-470)=100 → x-470=105.5 → x2R=576, y2R=200+0.1*105.5=200+11=211
+          S1 at x2R=576: 360-0.848*(576-470)=360-90=270
+          Consumer burden = 217-211=6px (small ✓ only ~10% of tax)
+          Producer burden = 270-217=53px (large ✓ ~88% of tax)
+          Total=59≈60 ✓
+      -->
+
+      <!-- Right consumer burden rect -->
+      <rect x="470" y="211" width="106" height="6" fill="#DBEAFE" fill-opacity="0.85"/>
+      <!-- Right producer burden rect -->
+      <rect x="470" y="217" width="106" height="53" fill="#DCFCE7" fill-opacity="0.85"/>
+
+      <!-- Right S1 (pre-tax): green -->
+      <line x1="470" y1="360" x2="800" y2="80" stroke="#059669" stroke-width="2"/>
+      <text x="804" y="78" font-size="10" font-weight="600" fill="#059669">S₁</text>
+
+      <!-- Right S2 (post-tax): amber -->
+      <line x1="470" y1="300" x2="800" y2="20" stroke="#D97706" stroke-width="2"/>
+      <text x="804" y="18" font-size="10" font-weight="600" fill="#D97706">S₂</text>
+
+      <!-- Right demand: flat/elastic, navy -->
+      <line x1="470" y1="200" x2="870" y2="240" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="872" y="240" font-size="10" font-weight="600" fill="#2563EB">D</text>
+
+      <!-- Right equilibrium dashes -->
+      <line x1="639" y1="217" x2="639" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="470" y1="217" x2="639" y2="217" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="576" y1="211" x2="576" y2="390" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="470" y1="211" x2="576" y2="211" stroke="#334155" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="639" y="404" font-size="9" fill="#334155" text-anchor="middle">Q₁</text>
+      <text x="576" y="404" font-size="9" fill="#334155" text-anchor="middle">Q₂</text>
+      <text x="460" y="221" font-size="9" fill="#334155" text-anchor="end">P₁</text>
+      <text x="460" y="215" font-size="9" fill="#334155" text-anchor="end">P₂</text>
+
+      <!-- Right burden labels -->
+      <text x="576" y="209" font-size="9" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer (small)</text>
+      <text x="576" y="248" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">Producer burden</text>
+      <text x="576" y="260" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">(large)</text>
+      <text x="675" y="330" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Elastic demand: producer pays most</text>
+    </svg>
+  `,
+
+  /* ── Subsidy diagram (welfare analysis) ─────────────────────────────── */
+  subsidyDiagram: `
+    <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+      <!--
+        Coordinates (illustrative, consistent):
+        Demand: (60,80) → (640,380) [downward sloping, navy]
+          slope_D = 300/580 ≈ 0.517/px; y_D = 80 + 0.517*(x-60)
+        S1 (pre-subsidy): upward sloping (60,380) → (580,80)
+          slope_S1 = -300/520 ≈ -0.577/px; y_S1 = 380 - 0.577*(x-60)
+        Pre-subsidy equilibrium D=S1:
+          80+0.517*(x-60)=380-0.577*(x-60)
+          1.094*(x-60)=300 → x-60=274.2 → x1=334, y1=80+0.517*274=80+142=222
+          P1=222, Q1=334
+        Subsidy: S2 shifted DOWNWARD by 80px (lower cost to producers → supply shifts down/right)
+          S2: (60,460) → (640,100) [but 460 is off chart bottom; let's say (60,380+80)=(60,460) clips]
+          Better: S2 starts from (60,460) but visible from where it enters chart.
+          y_S2 = y_S1 + 80 = 460 - 0.577*(x-60)
+          S2 enters chart (y=400) at: 400=460-0.577*(x-60) → 0.577*(x-60)=60 → x-60=104 → x=164
+          S2 exits chart top (y=0) not relevant. Let's draw (164,400) to (640,93) clipped.
+          Actually draw from (60,460) which is below chart — draw from visible start:
+          let start at x=164,y=400 and end: y_S2 at x=640 = 460-0.577*(640-60)=460-335=125
+          So S2: (164,400) → (640,125) [visible portion]
+
+          But for labeling subsidy arrow between S1 and S2 at Q2, let's set:
+        Post-subsidy equilibrium D=S2:
+          80+0.517*(x-60)=460-0.577*(x-60)
+          1.094*(x-60)=380 → x-60=347.3 → x2=407, y2=80+0.517*347=80+179=259
+          P2=259 (consumers pay lower price: higher y = lower price ✓ since 259>222... wait 259>222 means price is LOWER since higher y = lower on chart ✓)
+          Producers receive: y_S1 at x2=407: 380-0.577*(407-60)=380-200=180.
+          Effective producer price=y=180 (lower y = higher price received ✓ — producers get higher than P2)
+          Subsidy per unit on chart: y_S1(407)-y_S2(407)=200... let me check: y_S2=460-0.577*347=460-200=260.
+          Diff S1-S2 at x=407: 180-260=-80... S2 is 80 below S1 in y (further down screen = lower cost) ✓
+
+          Consumer gain: price fell from P1(222) to P2(259). P2(259)>P1(222) means P2 is LOWER economically ✓.
+          Consumer gain rect: between y=222(P1) and y=259(P2), x: 60 to 334(Q1) [approx, for simplicity use Q1]
+          Actually consumer gain is (P1-P2_econ)*Q1 = price drop * original Q. On chart: (y_P2-y_P1)*Q1 = (259-222)*334=37*334
+
+          Producer gain: effective price received = y_S1(Q2)=180, pre-subsidy price=P1_econ=y=222 (higher y=lower price).
+          Producers receive y=180 (higher price in econ) vs P1=y=222 (lower econ price).
+          Producer gain rect: between y=180(prod price) and y=222(P1), x: 60 to 407(Q2)
+
+          Government cost: s × Q2 = 80px * Q2 = total subsidy rectangle.
+          On chart: from y=180(prod price) to y=259(consumer price P2), x: 60 to 407
+          Height = 259-180 = 79 ≈ 80px ✓
+
+          Welfare loss (overproduction): small rose triangle at right side.
+          DWL at Q1 to Q2: bounded by D and S1.
+          Vertices: (334,222)[pre-sub eq], (407,259)[post-sub consumer price on D], (407,180)[post-sub S1 price]
+
+          Subsidy arrow at x=407: from y=180(S1) to y=260(S2), double-headed.
+      -->
+
+      <!-- Government cost rectangle: amber outline, y=180 to y=259, x=60 to 407 -->
+      <rect x="60" y="180" width="347" height="79" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="5 3"/>
+
+      <!-- Consumer gain rect: blue, y=222 to y=259, x=60 to 334 -->
+      <rect x="60" y="222" width="274" height="37" fill="#DBEAFE" fill-opacity="0.85"/>
+      <!-- Producer gain rect: green, y=180 to y=222, x=60 to 407 -->
+      <rect x="60" y="180" width="347" height="42" fill="#DCFCE7" fill-opacity="0.85"/>
+      <!-- Welfare loss triangle: rose, between Q1(334) and Q2(407) -->
+      <polygon points="334,222 407,259 407,180" fill="#FEE2E2" fill-opacity="0.9"/>
+      <text x="375" y="238" font-size="9" font-weight="700" fill="#DC2626" text-anchor="middle">Welfare</text>
+      <text x="375" y="250" font-size="9" font-weight="700" fill="#DC2626" text-anchor="middle">loss</text>
+
+      <!-- Y axis -->
+      <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="60,36 55,50 65,50" fill="#334155"/>
+      <text x="20" y="44" font-size="12" font-weight="600" fill="#334155">Price</text>
+
+      <!-- X axis -->
+      <line x1="60" y1="400" x2="660" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="664,400 650,395 650,405" fill="#334155"/>
+      <text x="650" y="420" font-size="12" font-weight="600" fill="#334155">Q</text>
+
+      <!-- Demand curve: navy -->
+      <line x1="60" y1="80" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
+      <text x="645" y="378" font-size="11" font-weight="600" fill="#2563EB">D</text>
+
+      <!-- S1 pre-subsidy: green upward sloping -->
+      <line x1="60" y1="380" x2="580" y2="80" stroke="#059669" stroke-width="2.5"/>
+      <text x="585" y="78" font-size="11" font-weight="600" fill="#059669">S₁ (pre-subsidy)</text>
+
+      <!-- S2 post-subsidy: blue, shifted downward (right/lower cost) -->
+      <line x1="164" y1="400" x2="640" y2="125" stroke="#0EA5E9" stroke-width="2.5"/>
+      <text x="645" y="123" font-size="11" font-weight="600" fill="#0EA5E9">S₂ (post-subsidy)</text>
+
+      <!-- Pre-subsidy equilibrium dashes: Q1=334, P1=222 -->
+      <line x1="334" y1="222" x2="334" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="222" x2="334" y2="222" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="334" y="414" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Q₁</text>
+      <text x="50" y="226" font-size="11" font-weight="700" fill="#059669" text-anchor="end">P₁</text>
+
+      <!-- Post-subsidy equilibrium dashes: Q2=407, P2=259 -->
+      <line x1="407" y1="259" x2="407" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="60" y1="259" x2="407" y2="259" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="407" y="414" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q₂</text>
+      <text x="50" y="263" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P₂</text>
+
+      <!-- Producer effective price dashed at y=180 -->
+      <line x1="60" y1="180" x2="407" y2="180" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="50" y="184" font-size="10" font-weight="700" fill="#059669" text-anchor="end">P_prod</text>
+
+      <!-- Subsidy per unit double-headed arrow at x=420, from y=180(S1) to y=260(S2) -->
+      <line x1="425" y1="180" x2="425" y2="260" stroke="#D97706" stroke-width="2"/>
+      <polygon points="421,184 429,184 425,174" fill="#D97706"/>
+      <polygon points="421,256 429,256 425,266" fill="#D97706"/>
+      <text x="433" y="224" font-size="10" font-weight="700" fill="#D97706">Subsidy per unit (s)</text>
+
+      <!-- Burden labels -->
+      <text x="160" y="215" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Producer gain</text>
+      <text x="160" y="245" font-size="10" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer gain</text>
+
+      <!-- Government cost label -->
+      <text x="235" y="175" font-size="10" font-weight="600" fill="#D97706" text-anchor="middle">Total government cost = s × Q₂</text>
+      <text x="235" y="395" font-size="9" fill="#D97706" text-anchor="middle">(cost &gt; consumer + producer gain → welfare loss)</text>
+    </svg>
+  `,
+
 };

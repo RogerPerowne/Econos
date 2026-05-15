@@ -48,6 +48,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'govt_intervention_subsidies_2',
       template: 'mechanisms',
+      diagramKey: 'subsidyDiagram',
       title: 'The Subsidy Diagram',
       intro: 'The subsidy diagram is the mirror image of the tax diagram — master both for maximum flexibility in exams.',
       steps: [

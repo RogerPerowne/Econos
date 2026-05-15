@@ -5690,6 +5690,126 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  shortRunCostStack: `
+    <svg class="sr-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="sr-chart-clip"><rect x="60" y="43" width="502" height="357"/></clipPath>
+      </defs>
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== AFC (hyperbolic decline, always visible) ===== -->
+      <g class="layer-afc">
+        <g clip-path="url(#sr-chart-clip)">
+          <polyline points="135,167 160,225 185,260 210,283 235,300 260,313 285,322 310,330 335,336 360,342 385,346 410,350 435,353 460,356 485,358 510,361 535,363 560,365" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3" stroke-linecap="round"/>
+        </g>
+        <text x="565" y="368" font-size="12" font-weight="600" fill="#94A3B8">AFC</text>
+      </g>
+
+      <!-- ===== AVC (U-shape, always visible) ===== -->
+      <g class="layer-avc">
+        <g clip-path="url(#sr-chart-clip)">
+          <polyline points="70,230 85,237 110,249 135,259 160,269 185,277 210,284 235,290 260,295 285,299 310,302 335,303 360,304 385,303 410,302 435,299 460,295 485,290 510,284 535,277 560,269" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" stroke-linecap="round"/>
+        </g>
+        <text x="565" y="272" font-size="12" font-weight="600" fill="#64748B">AVC</text>
+      </g>
+
+      <!-- ===== AC (U-shape, always visible) ===== -->
+      <g class="layer-ac">
+        <g clip-path="url(#sr-chart-clip)">
+          <polyline points="150,71 160,94 185,137 210,167 235,190 260,208 285,221 310,232 335,240 360,246 385,249 410,251 435,252 460,251 485,249 510,245 535,240 560,234" fill="none" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="565" y="237" font-size="13" font-weight="700" fill="#0EA5E9">AC</text>
+      </g>
+
+      <!-- ===== MC (Nike tick, extension + shift states) ===== -->
+      <g class="layer-mc">
+        <g clip-path="url(#sr-chart-clip)">
+          <polyline points="70,235 85,250 110,271 135,289 160,304 185,315 210,323 235,328 260,330 285,328 310,323 335,315 360,304 385,289 410,271 435,250 460,225 485,197 510,166 535,131 560,94" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="565" y="98" font-size="13" font-weight="700" fill="#DC2626">MC</text>
+      </g>
+
+      <!-- ===== Crossing markers (shift state only) ===== -->
+      <g class="layer-crossings">
+        <!-- MC=AVC at min AVC: (360, 304) -->
+        <circle cx="360" cy="304" r="7" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
+        <line x1="360" y1="304" x2="360" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
+        <text x="360" y="418" font-size="11" font-weight="700" fill="#7C3AED" text-anchor="middle">min AVC</text>
+        <!-- MC=AC at min AC: (435, 252) -->
+        <circle cx="435" cy="252" r="7" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
+        <line x1="435" y1="252" x2="435" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
+        <text x="435" y="418" font-size="11" font-weight="700" fill="#7C3AED" text-anchor="middle">min AC</text>
+        <!-- Annotation -->
+        <rect x="180" y="56" width="280" height="36" rx="4" fill="#F3E8FF" stroke="#7C3AED" stroke-width="1.2"/>
+        <text x="320" y="72" font-size="11" font-weight="700" fill="#6B21A8" text-anchor="middle">MC crosses AVC at min AVC,</text>
+        <text x="320" y="86" font-size="11" font-weight="700" fill="#6B21A8" text-anchor="middle">and AC at min AC</text>
+      </g>
+
+      <!-- ===== Right-panel content ===== -->
+      <g class="layer-panel-base">
+        <circle cx="74" cy="32" r="7" fill="#0EA5E9"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">AC inherits the U from AFC (falling) + AVC (eventually rising)</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#0EA5E9" letter-spacing="2">BUILDING THE U</text>
+        <text x="620" y="100" font-size="13" fill="#334155">AC = AFC + AVC.</text>
+        <text x="620" y="134" font-size="13" font-weight="700" fill="#94A3B8">AFC (light dashed)</text>
+        <text x="620" y="152" font-size="13" fill="#334155">FC/Q — always falls as Q rises.</text>
+        <text x="620" y="170" font-size="13" fill="#334155">"Spreading the fixed cost."</text>
+        <text x="620" y="200" font-size="13" font-weight="700" fill="#64748B">AVC (gray dashed)</text>
+        <text x="620" y="218" font-size="13" fill="#334155">Falls first (specialisation),</text>
+        <text x="620" y="236" font-size="13" fill="#334155">then rises (diminishing</text>
+        <text x="620" y="254" font-size="13" fill="#334155">marginal returns to labour).</text>
+        <text x="620" y="284" font-size="13" font-weight="700" fill="#0EA5E9">AC (blue)</text>
+        <text x="620" y="302" font-size="13" fill="#334155">Inherits the U: AFC drag down +</text>
+        <text x="620" y="320" font-size="13" fill="#334155">AVC pull up = U-shape.</text>
+      </g>
+
+      <g class="layer-panel-ext">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC = the gradient of TC — Nike-tick shape from returns</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">MARGINAL COST</text>
+        <text x="620" y="100" font-size="13" fill="#334155">MC = ΔTC/ΔQ — the cost of</text>
+        <text x="620" y="118" font-size="13" fill="#334155">producing one more unit.</text>
+        <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Falls then rises (Nike tick)</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Initial fall: specialisation,</text>
+        <text x="620" y="188" font-size="13" fill="#334155">increasing returns to labour.</text>
+        <text x="620" y="218" font-size="13" fill="#334155">Later rise: diminishing</text>
+        <text x="620" y="236" font-size="13" fill="#334155">returns kick in — each extra</text>
+        <text x="620" y="254" font-size="13" fill="#334155">worker on fixed capital adds</text>
+        <text x="620" y="272" font-size="13" fill="#334155">less to output, so each extra</text>
+        <text x="620" y="290" font-size="13" fill="#334155">unit costs more.</text>
+        <text x="620" y="324" font-size="11" font-style="italic" fill="#64748B">Next: how MC relates to AVC and AC</text>
+      </g>
+
+      <g class="layer-panel-shift">
+        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC pulls the averages — crosses each at its minimum</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE CROSSING RULE</text>
+        <text x="620" y="100" font-size="13" fill="#334155">When MC &lt; average → average</text>
+        <text x="620" y="118" font-size="13" fill="#334155">is being pulled DOWN.</text>
+        <text x="620" y="136" font-size="13" fill="#334155">When MC &gt; average → pulled UP.</text>
+        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">MC = AVC at min AVC</text>
+        <text x="620" y="188" font-size="13" fill="#334155">Below: AVC falling.</text>
+        <text x="620" y="206" font-size="13" fill="#334155">Above: AVC rising.</text>
+        <text x="620" y="240" font-size="13" font-weight="700" fill="#1E293B">MC = AC at min AC</text>
+        <text x="620" y="258" font-size="13" fill="#334155">Same logic — and this is the</text>
+        <text x="620" y="276" font-size="13" fill="#334155">productive efficiency point.</text>
+        <text x="620" y="310" font-size="11" font-style="italic" fill="#475569">Universal: marginal always pulls</text>
+        <text x="620" y="326" font-size="11" font-style="italic" fill="#475569">the average toward itself.</text>
+      </g>
+    </svg>
+  `,
+
   kinkedDemandInteractive: `
     <svg class="kink-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

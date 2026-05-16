@@ -208,30 +208,62 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
       intro: 'Ask: “What can consumers do when the price rises?” The more options they have — to switch, delay, or go without — the more elastic demand will be.',
       causes: [
         {
+          icon: '🔄',
           head: '1. Close substitutes',
-          body: 'The more substitutes available, the more elastic demand. A price rise for one cola brand → consumers switch to another. Few substitutes (insulin, petrol) → inelastic. <strong>This is the most important determinant.</strong>'
+          body: 'The more substitutes available, the more elastic demand. A price rise for one cola brand → consumers switch to another. Few substitutes (insulin, petrol) → inelastic. <strong>The most important determinant.</strong>'
         },
         {
+          icon: '💎',
           head: '2. Necessity vs luxury',
           body: 'Necessities (food, medicines, utilities) tend to be inelastic — consumers cannot easily cut back. Luxuries (holidays, jewellery, restaurant meals) are more elastic — purchases can be postponed or abandoned.'
         },
         {
+          icon: '💰',
           head: '3. Proportion of income',
-          body: 'Goods that take a large share of income (rent, cars) are more price elastic — consumers are very sensitive to price changes. Small items (salt, matches) are inelastic — price changes are barely noticed.'
+          body: 'Goods that take a large share of income (rent, cars) are more price elastic. Small items (salt, matches) are inelastic — a price change is barely noticed against total spending.'
         },
         {
+          icon: '⏱️',
           head: '4. Time period',
-          body: 'Demand becomes more elastic over time. Short-run: consumers are locked into habits and commitments. Long-run: substitutes emerge, behaviour adapts, new options appear. Petrol is inelastic short-run; more elastic long-run as EVs become viable.'
+          body: 'Demand becomes more elastic over time. Short-run: consumers are locked into habits. Long-run: substitutes emerge and behaviour adapts. Petrol is inelastic now; more elastic long-run as EVs become viable.'
         },
         {
+          icon: '🔒',
           head: '5. Habit and addiction',
-          body: 'Cigarettes, alcohol, addictive goods: demand is inelastic because willingness to pay is maintained despite price rises. This is precisely why sin taxes raise substantial revenue without large falls in quantity demanded.'
+          body: 'Cigarettes, alcohol, addictive goods: demand is inelastic because willingness to pay holds despite price rises. This is precisely why sin taxes raise substantial revenue with little fall in quantity demanded.'
         }
       ],
-      examEdge: {
-        title: 'Think like an examiner',
-        text: '<strong>Table salt:</strong> few substitutes, small income share, essential → likely inelastic.<br><strong>Petrol:</strong> few short-run substitutes, essential for travel → relatively inelastic.<br><strong>Foreign holidays:</strong> many substitutes, high income share, highly discretionary → likely elastic.<br><strong>Designer trainers:</strong> many alternatives, luxury item, strong brand alternatives → likely elastic.<br><br>In exam questions, always tie the determinant to the specific product: “Demand for petrol is inelastic because there are few close substitutes in the short run — most journeys cannot easily be switched to other modes of transport.”'
-      },
+      productExamples: [
+        {
+          icon: '🧂',
+          product: 'Table salt',
+          verdict: 'Likely inelastic',
+          verdictTone: 'rose',
+          reasoning: 'Essential; no substitutes; tiny share of income — price barely noticed.'
+        },
+        {
+          icon: '⛽',
+          product: 'Petrol',
+          verdict: 'Relatively inelastic',
+          verdictTone: 'amber',
+          reasoning: 'Few short-run substitutes; necessary for most journeys.'
+        },
+        {
+          icon: '✈️',
+          product: 'Foreign holidays',
+          verdict: 'Likely elastic',
+          verdictTone: 'green',
+          reasoning: 'Many alternatives; high cost; easily postponed or swapped.'
+        },
+        {
+          icon: '👟',
+          product: 'Designer trainers',
+          verdict: 'Likely elastic',
+          verdictTone: 'green',
+          reasoning: 'Many alternatives; luxury item; brand-driven not need-driven.'
+        }
+      ],
+      examEdge: 'Always tie the determinant to the product: “Demand for petrol is inelastic because there are few close substitutes in the short run — most journeys cannot easily switch to other transport modes.” Determinant → mechanism → conclusion.',
       keyTakeaway: {
         title: 'Key takeaway',
         text: 'PED is shaped by context — ask how easy it is for consumers to switch, delay, or do without. The more locked-in consumers are, the more inelastic the demand.'

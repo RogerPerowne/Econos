@@ -155,7 +155,7 @@
   ];
 
   function genSecLabel(emoji, text) {
-    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 12px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
+    return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
   }
 
   function renderCardGeneric(c) {
@@ -208,7 +208,7 @@
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
       content += genSecLabel('🔗', 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '280px'},1fr));gap:${hasIcons ? '12px' : '14px'};margin-bottom:18px;">`;
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '280px'},1fr));gap:${hasIcons ? '12px' : '14px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         if (hasIcons) {
@@ -244,7 +244,7 @@
         purple: { color: '#7C3AED', badge: '#EDE9FE' },
       };
       content += `
-      <div style="border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:22px;">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:28px;">
         <div style="background:#0B1426;padding:14px 18px;display:flex;align-items:center;gap:10px;">
           <span style="font-size:18px;">🎓</span>
           <div>
@@ -262,8 +262,8 @@
                 <div style="font-weight:800;font-size:14px;color:#0B1426;margin-bottom:10px;">${p.product}</div>
                 <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
-                  <div style="display:inline-block;padding:3px 10px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:11px;font-weight:700;margin-bottom:8px;">${p.verdict}</div>
-                  <div style="font-size:13.5px;color:#0B1426;line-height:1.6;">${p.reasoning}</div>
+                  <div style="display:inline-block;padding:3px 10px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:11px;font-weight:700;margin-bottom:10px;">${p.verdict}</div>
+                  <div style="font-size:13.5px;color:#0B1426;line-height:1.6;padding-top:2px;">${p.reasoning}</div>
                 </div>
               </div>`;
             }).join('')}
@@ -278,7 +278,7 @@
       content += c.steps.map((s, i) => {
         const t = TONES[i % TONES.length];
         return `
-        <div style="display:flex;gap:16px;margin-bottom:14px;padding:16px 18px;background:${t.bg};border-radius:12px;border:1px solid ${t.border}40;border-left:5px solid ${t.border};">
+        <div style="display:flex;gap:16px;margin-bottom:18px;padding:16px 18px;background:${t.bg};border-radius:12px;border:1px solid ${t.border}40;border-left:5px solid ${t.border};">
           <div style="width:34px;height:34px;border-radius:50%;background:${t.headerBg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;">${i + 1}</div>
           <div>
             <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:5px;">${s.label}</div>
@@ -286,6 +286,7 @@
           </div>
         </div>`;
       }).join('');
+      content += `<div style="height:8px;"></div>`;
     }
 
     // Rows (comparison table) — card-style grid with zebra rows.
@@ -358,7 +359,7 @@
     // Key terms — coloured tiles, definitions always visible, one row
     if (c.keyTerms && c.keyTerms.length) {
       content += genSecLabel('🔑', 'Key terms');
-      content += `<div style="display:grid;grid-template-columns:repeat(${c.keyTerms.length},1fr);gap:12px;margin-bottom:22px;">
+      content += `<div style="display:grid;grid-template-columns:repeat(${c.keyTerms.length},1fr);gap:12px;margin-bottom:28px;">
         ${c.keyTerms.map((kt, i) => {
           const t = TONES[i % TONES.length];
           return `

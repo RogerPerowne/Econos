@@ -1109,22 +1109,22 @@
         <circle cx="55" cy="54" r="3.5" fill="${color}" opacity="0.5"/>
       `,
       hyperbola: `
-        <path d="M 20 11 C 26 13 35 24 40 26 C 52 30 60 48 63 54 C 68 64 80 71 90 74" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="14" y1="26" x2="40" y2="26" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
-        <line x1="14" y1="54" x2="63" y2="54" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-        <line x1="40" y1="26" x2="40" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-        <line x1="63" y1="54" x2="63" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
-        <circle cx="40" cy="26" r="3.5" fill="${color}" opacity="0.9"/>
-        <circle cx="63" cy="54" r="3.5" fill="${color}" opacity="0.5"/>
+        <line x1="20" y1="14" x2="88" y2="76" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="32" x2="40" y2="32" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
+        <line x1="14" y1="53" x2="63" y2="53" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="40" y1="32" x2="40" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="63" y1="53" x2="63" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+        <circle cx="40" cy="32" r="3.5" fill="${color}" opacity="0.9"/>
+        <circle cx="63" cy="53" r="3.5" fill="${color}" opacity="0.5"/>
       `,
       shallow: `
-        <line x1="14" y1="18" x2="88" y2="72" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="14" y1="24" x2="21" y2="24" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
-        <line x1="14" y1="57" x2="70" y2="57" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-        <line x1="21" y1="24" x2="21" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-        <line x1="70" y1="57" x2="70" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
-        <circle cx="21" cy="24" r="3.5" fill="${color}" opacity="0.9"/>
-        <circle cx="70" cy="57" r="3.5" fill="${color}" opacity="0.5"/>
+        <line x1="14" y1="28" x2="95" y2="70" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="14" y1="31" x2="20" y2="31" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
+        <line x1="14" y1="60" x2="75" y2="60" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="20" y1="31" x2="20" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="75" y1="60" x2="75" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+        <circle cx="20" cy="31" r="3.5" fill="${color}" opacity="0.9"/>
+        <circle cx="75" cy="60" r="3.5" fill="${color}" opacity="0.5"/>
       `,
       horizontal: `
         <line x1="14" y1="44" x2="86" y2="44" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>

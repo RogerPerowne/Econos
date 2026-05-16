@@ -518,6 +518,7 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   gap: var(--sp-4);
   align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .callout__icon {
@@ -1263,6 +1264,7 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-lg);
   padding: var(--sp-5);
   position: relative;
+  margin-bottom: 20px;
 }
 
 .exam-edge__star {

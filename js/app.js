@@ -1535,10 +1535,12 @@
     const income1 = s.y1 != null ? s.y1 : (s.income1 || 100);
     const income2 = s.y2 != null ? s.y2 : (s.income2 || 105);
     const q1 = s.q1, q2 = s.q2;
+    const cur = s.currency || '';
     const pctI = ((income2 - income1) / income1) * 100;
     const pctQ = ((q2 - q1) / q1) * 100;
     const yed  = pctQ / pctI;
-    const fmtPct = v => (v > 0 ? '+' : '') + v.toFixed(0) + '%';
+    const fmtPct    = v => (v > 0 ? '+' : '') + v.toFixed(0) + '%';
+    const fmtIncome = v => cur + v.toLocaleString();
 
     const T1 = { c:'#059669', bg:'#ECFDF5', soft:'#D1FAE5' };
     const T2 = { c:'#D97706', bg:'#FFFBEB', soft:'#FEF3C7' };
@@ -1584,7 +1586,7 @@
         <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${chartH-padB}" stroke="#CBD5E1" stroke-width="1.5"/>
         <line x1="${padL}" y1="${chartH-padB}" x2="${chartW-padR}" y2="${chartH-padB}" stroke="#CBD5E1" stroke-width="1.5"/>
         <text x="6" y="${padT+8}" font-size="10" fill="#94A3B8" font-weight="700">Q</text>
-        <text x="${chartW-padR-6}" y="${chartH-padB+18}" font-size="10" fill="#94A3B8" font-weight="700" text-anchor="end">Income</text>
+        <text x="${chartW-padR-6}" y="${chartH-padB+18}" font-size="10" fill="#94A3B8" font-weight="700" text-anchor="end">Income${cur ? ' (' + cur + ')' : ''}</text>
         <line x1="${x1c}" y1="${y1c}" x2="${x2c}" y2="${y2c}" stroke="#0B1426" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
         <line x1="${padL}" y1="${y1c}" x2="${x1c}" y2="${y1c}" stroke="${T1.c}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
         <line x1="${x1c}" y1="${y1c}" x2="${x1c}" y2="${chartH-padB}" stroke="${T1.c}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
@@ -1610,12 +1612,12 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
             <div style="border-radius:10px;background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
               <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
-              <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">Income index <span style="font-size:15px;">${income1}</span></div>
+              <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">Income: <span style="font-size:15px;">${fmtIncome(income1)}</span></div>
               <div style="font-size:13px;color:#475569;margin-top:2px;">${q1.toLocaleString()} bus trips/day</div>
             </div>
             <div style="border-radius:10px;background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
               <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
-              <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">Income <span style="font-size:15px;">${fmtPct(pctI)}</span></div>
+              <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">Income: <span style="font-size:15px;">${fmtIncome(income2)}</span></div>
               <div style="font-size:13px;color:#475569;margin-top:2px;">${q2.toLocaleString()} bus trips/day</div>
             </div>
           </div>
@@ -1635,9 +1637,9 @@
       {
         tone: T1, icon: '💰',
         title: 'Calculate % change in income',
-        prompt: `Average household incomes rose from index <strong>${income1}</strong> to <strong>${income2}</strong>. Apply: (New − Old) ÷ Old × 100`,
-        formula: `% Δ Income = (${income2} − ${income1}) ÷ ${income1} × 100`,
-        reveal: `% Δ Income = (${income2} − ${income1}) ÷ ${income1} × 100 = <strong>${fmtPct(pctI)}</strong>. This goes in the denominator of the YED formula. Keep the positive sign — incomes rose.`
+        prompt: `Average household incomes rose from <strong>${fmtIncome(income1)}</strong> to <strong>${fmtIncome(income2)}</strong>. Apply: (New − Old) ÷ Old × 100`,
+        formula: `% Δ Income = (${fmtIncome(income2)} − ${fmtIncome(income1)}) ÷ ${fmtIncome(income1)} × 100`,
+        reveal: `% Δ Income = (${fmtIncome(income2)} − ${fmtIncome(income1)}) ÷ ${fmtIncome(income1)} × 100 = <strong>${fmtPct(pctI)}</strong>. This goes in the denominator of the YED formula. Keep the positive sign — incomes rose.`
       },
       {
         tone: T2, icon: '📊',

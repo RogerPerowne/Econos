@@ -116,6 +116,7 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
         q1: 100, q2: 70
       },
       contextLine: 'Concert tickets have many substitutes — streaming services, other live events, staying in.',
+      conclusion: 'Concert tickets are price elastic because consumers have many substitutes. The price rise caused a bigger proportional fall in quantity demanded, reducing total revenue. The promoter would earn more by keeping the price at £10.',
       examEdge: {
         title: 'Why PED is usually negative',
         text: 'Price and quantity move in opposite directions (law of demand) — so PED is always negative for a normal good. Economists compare the <strong>magnitude</strong> (|PED|), ignoring the sign. A PED of −1.5 is <em>more elastic</em> than −0.8, even though −0.8 is mathematically larger. Always state the sign in your calculation, then use the magnitude to classify.'

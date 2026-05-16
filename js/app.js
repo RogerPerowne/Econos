@@ -1215,13 +1215,51 @@
       </div>
     ` : '';
 
+    // Horizontal roadmap — overview of the 5-step journey, sits between scenario and step 1
+    const roadmapStops = [
+      { tone: T1, icon: '📉', label: 'Find % ΔQ' },
+      { tone: T2, icon: '💷', label: 'Find % ΔP' },
+      { tone: T3, icon: '➗', label: 'Apply formula' },
+      { tone: T4, icon: '🎯', label: 'Classify' },
+      { tone: T5, icon: '💰', label: 'Revenue impact' }
+    ];
+    const roadmap = `
+      <div style="margin:18px 0 14px;padding:18px 14px 14px;background:#FAFBFF;border-radius:14px;border:1px solid #E7E7EA;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#475569;text-align:center;margin-bottom:14px;">Your 5-step journey</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:start;position:relative;">
+          ${roadmapStops.map((stop, i) => `
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;">
+              ${i > 0 ? `<div style="position:absolute;top:18px;right:50%;width:100%;height:3px;background:linear-gradient(90deg,${roadmapStops[i-1].tone.c}30,${stop.tone.c}30);border-radius:2px;z-index:0;"></div>` : ''}
+              <div style="position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:#fff;border:2.5px solid ${stop.tone.c};color:${stop.tone.c};display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;box-shadow:0 2px 6px ${stop.tone.c}30;">${i + 1}</div>
+              <div style="font-size:16px;line-height:1;">${stop.icon}</div>
+              <div style="font-size:11px;font-weight:700;color:${stop.tone.c};text-align:center;line-height:1.3;max-width:90px;">${stop.label}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    // Final conclusion block — celebratory dark panel summarising the calculation
+    const conclusionBlock = c.conclusion ? `
+      <div style="margin-top:18px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
+        <div style="padding:18px 22px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="font-size:34px;line-height:1;flex-shrink:0;">🏆</div>
+          <div>
+            <div style="color:#FCD34D;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">The full picture</div>
+            <div style="color:#fff;font-size:17px;font-weight:800;margin-bottom:6px;">Conclusion</div>
+            <div style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.65;">${c.conclusion}</div>
+          </div>
+        </div>
+      </div>
+    ` : '';
+
     return `
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
       ${scenarioPanel}
-      ${connector(0, T1)}
+      ${roadmap}
       ${step1}
       ${connector(1, T2)}
       ${step2}
@@ -1232,6 +1270,7 @@
       ${connector(4, T5)}
       ${step5}
 
+      ${conclusionBlock}
       ${contextStrip}
 
       ${renderExamEdge(c.examEdge)}

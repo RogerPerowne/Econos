@@ -1053,17 +1053,18 @@
       </svg>
     `;
 
-    // Step node helper — colored badge, accent border, prompt, formula slab, Solve button, hidden reveal
+    // Step node helper — tone-coded card; data-step-tone used by click handler
     const stepNode = (n, tone, icon, title, prompt, formula, reveal) => `
-      <div class="ped-calc-step" data-ped-step="${n}" style="position:relative;border-radius:16px;background:#fff;border:1px solid ${tone.c}25;border-left:6px solid ${tone.c};box-shadow:0 3px 14px rgba(0,0,0,0.08);padding:18px 20px 20px;margin-bottom:0;">
+      <div class="ped-calc-step" data-ped-step="${n}" data-step-tone="${tone.c}" style="position:relative;border-radius:16px;background:#fff;border:1px solid ${tone.c}25;border-left:6px solid ${tone.c};box-shadow:0 3px 14px rgba(0,0,0,0.08);padding:18px 20px 20px;transition:box-shadow 0.25s ease;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;box-shadow:0 2px 8px ${tone.c}55;">${n}</div>
+          <div data-step-num="${n}" style="width:38px;height:38px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;box-shadow:0 2px 8px ${tone.c}55;transition:all 0.3s ease;">${n}</div>
           <div style="font-size:22px;line-height:1;">${icon}</div>
-          <div style="font-weight:800;font-size:15px;color:${tone.c};letter-spacing:0.01em;">${title}</div>
+          <div style="font-weight:800;font-size:15px;color:${tone.c};letter-spacing:0.01em;flex:1;">${title}</div>
+          <div data-solved-badge style="display:none;background:${tone.c};color:#fff;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:800;flex-shrink:0;">✓ Done</div>
         </div>
         <div style="font-size:14px;color:#0B1426;line-height:1.6;margin-bottom:12px;">${prompt}</div>
         ${formula ? `<div style="background:${tone.bg};border:1px dashed ${tone.c}50;border-radius:10px;padding:11px 14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#0B1426;margin-bottom:12px;text-align:center;letter-spacing:0.02em;">${formula}</div>` : ''}
-        <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;">Solve step ${n} ↓</button>
+        <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;transition:all 0.2s ease;">Solve step ${n} ↓</button>
         <div class="ped-step__answer is-hidden" style="margin-top:14px;padding:14px 16px;background:${tone.soft};border-radius:10px;border-left:4px solid ${tone.c};font-size:14px;color:#0B1426;line-height:1.65;">${reveal}</div>
       </div>
     `;
@@ -1225,12 +1226,20 @@
     ];
     const roadmap = `
       <div style="margin:18px 0 14px;padding:18px 14px 14px;background:#FAFBFF;border-radius:14px;border:1px solid #E7E7EA;">
-        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#475569;text-align:center;margin-bottom:14px;">Your 5-step journey</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#475569;">Your 5-step journey</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;gap:4px;">
+              ${roadmapStops.map((stop, i) => `<div data-progress-dot="${i+1}" style="width:10px;height:10px;border-radius:50%;background:#E2E8F0;transition:background 0.3s ease;"></div>`).join('')}
+            </div>
+            <div data-ped-progress style="font-size:12px;font-weight:800;color:#94A3B8;min-width:70px;text-align:right;transition:color 0.3s ease;">0 / 5 done</div>
+          </div>
+        </div>
         <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:start;position:relative;">
           ${roadmapStops.map((stop, i) => `
             <div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;">
               ${i > 0 ? `<div style="position:absolute;top:18px;right:50%;width:100%;height:3px;background:linear-gradient(90deg,${roadmapStops[i-1].tone.c}30,${stop.tone.c}30);border-radius:2px;z-index:0;"></div>` : ''}
-              <div style="position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:#fff;border:2.5px solid ${stop.tone.c};color:${stop.tone.c};display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;box-shadow:0 2px 6px ${stop.tone.c}30;">${i + 1}</div>
+              <div data-roadmap-step="${i+1}" style="position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:#fff;border:2.5px solid ${stop.tone.c};color:${stop.tone.c};display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;box-shadow:0 2px 6px ${stop.tone.c}30;transition:all 0.3s ease;">${i + 1}</div>
               <div style="font-size:16px;line-height:1;">${stop.icon}</div>
               <div style="font-size:11px;font-weight:700;color:${stop.tone.c};text-align:center;line-height:1.3;max-width:90px;">${stop.label}</div>
             </div>
@@ -1239,16 +1248,21 @@
       </div>
     `;
 
-    // Final conclusion block — celebratory dark panel summarising the calculation
+    // Final conclusion block — locked until all steps solved, then fades in as the payoff
     const conclusionBlock = c.conclusion ? `
-      <div style="margin-top:18px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
-        <div style="padding:18px 22px;display:flex;align-items:flex-start;gap:14px;">
-          <div style="font-size:34px;line-height:1;flex-shrink:0;">🏆</div>
-          <div>
-            <div style="color:#FCD34D;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">The full picture</div>
-            <div style="color:#fff;font-size:17px;font-weight:800;margin-bottom:6px;">Conclusion</div>
-            <div style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.65;">${c.conclusion}</div>
+      <div data-ped-payoff style="margin-top:18px;position:relative;border-radius:16px;opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
+        <div style="border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
+          <div style="padding:18px 22px;display:flex;align-items:flex-start;gap:14px;">
+            <div style="font-size:34px;line-height:1;flex-shrink:0;">🏆</div>
+            <div>
+              <div style="color:#FCD34D;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">The full picture</div>
+              <div style="color:#fff;font-size:17px;font-weight:800;margin-bottom:6px;">Conclusion</div>
+              <div style="color:rgba(255,255,255,0.85);font-size:14px;line-height:1.65;">${c.conclusion}</div>
+            </div>
           </div>
+        </div>
+        <div data-ped-lock style="position:absolute;inset:0;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,0.55);backdrop-filter:blur(2px);">
+          <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:800;color:#475569;box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all 5 steps to unlock</div>
         </div>
       </div>
     ` : '';
@@ -1953,21 +1967,71 @@
       target.disabled = true;
       target.style.opacity = '0.5';
     } else if (action === 'ped-solve') {
-      // PED-calculation step chain: reveal answer + light up next connector
+      // PED-calculation step chain
       const step = target.closest('.ped-calc-step');
       if (!step) return;
+
+      // Reveal answer
       const answer = step.querySelector('.ped-step__answer');
-      if (answer) answer.classList.remove('is-hidden');
+      if (answer) { answer.classList.remove('is-hidden'); answer.style.animation = 'none'; }
       target.style.display = 'none';
       step.classList.add('is-solved');
+      step.style.boxShadow = '0 6px 22px rgba(0,0,0,0.13)';
+
       const n = parseInt(step.dataset.pedStep, 10);
-      const accent = step.style.borderLeftColor || '#059669';
+      const colour = step.dataset.stepTone || '#059669';
+
+      // ① Flip the step number badge to ✓
+      const numBadge = step.querySelector('[data-step-num]');
+      if (numBadge) { numBadge.textContent = '✓'; numBadge.style.fontSize = '18px'; }
+
+      // ② Show "Done" pill in the step header
+      const solvedBadge = step.querySelector('[data-solved-badge]');
+      if (solvedBadge) solvedBadge.style.display = 'block';
+
+      // ③ Light up roadmap bubble for this step
+      const bubble = root.querySelector(`[data-roadmap-step="${n}"]`);
+      if (bubble) {
+        bubble.style.background = colour;
+        bubble.style.borderColor = colour;
+        bubble.style.color = '#fff';
+        bubble.textContent = '✓';
+        bubble.style.boxShadow = `0 0 0 4px ${colour}30`;
+      }
+
+      // ④ Fill progress dot for this step
+      const dot = root.querySelector(`[data-progress-dot="${n}"]`);
+      if (dot) dot.style.background = colour;
+
+      // ⑤ Update "N / 5 done" counter
+      const solved = root.querySelectorAll('.ped-calc-step.is-solved').length;
+      const total  = root.querySelectorAll('.ped-calc-step').length;
+      const counter = root.querySelector('[data-ped-progress]');
+      if (counter) {
+        counter.textContent = `${solved} / ${total} done`;
+        counter.style.color = solved === total ? '#059669' : '#475569';
+      }
+
+      // ⑥ Light up the connector to the next step
       const nextLink = root.querySelector(`[data-ped-connector="${n}"]`);
       if (nextLink) {
-        const line = nextLink.querySelector('[data-link-line]');
+        const line  = nextLink.querySelector('[data-link-line]');
         const arrow = nextLink.querySelector('[data-link-arrow]');
-        if (line) line.style.background = accent;
-        if (arrow) arrow.style.borderTopColor = accent;
+        if (line)  line.style.background = colour;
+        if (arrow) arrow.style.borderTopColor = colour;
+      }
+
+      // ⑦ Unlock conclusion when all steps done
+      if (solved === total) {
+        const payoff = root.querySelector('[data-ped-payoff]');
+        const lock   = root.querySelector('[data-ped-lock]');
+        if (lock)   lock.style.display = 'none';
+        if (payoff) {
+          payoff.style.opacity = '1';
+          payoff.style.filter  = 'none';
+          payoff.style.boxShadow = '0 0 0 3px #FCD34D, 0 8px 30px rgba(11,20,38,0.25)';
+          payoff.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }
     } else if (action === 'tc-channel') {
       // Transmission chain: highlight the chosen channel and reveal its panel

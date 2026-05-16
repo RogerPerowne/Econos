@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_1',
-      stepLabel: 'Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'What is Income Elasticity of Demand (YED)?',
       intro: 'When the economy booms and incomes rise, do people buy more Rolexes — or more instant noodles? YED tells you.',
       body: `<div style="border:2px solid #0B1426;border-radius:10px;padding:16px;text-align:center;margin:12px 0;font-size:18px;font-weight:700;background:#F8FAFC;">
@@ -46,74 +46,94 @@ window.ECONOS_TOPIC = {
 </ul>`,
       causes: [
         {
-          head: '✅ Normal good (YED > 0)',
+          icon: '✅',
+          head: 'Normal good (YED > 0)',
           body: 'Demand rises when income rises. Most everyday goods: electronics, clothing, restaurant meals. Positive relationship with the economic cycle — demand grows alongside GDP.'
         },
         {
-          head: '💎 Luxury good (YED > 1)',
+          icon: '💎',
+          head: 'Luxury good (YED > 1)',
           body: 'Demand rises proportionally more than income. Designer goods, foreign holidays, premium cars. Pro-cyclical: revenues collapse in recessions, surge in booms. High cyclical risk for firms.'
         },
         {
-          head: '🧾 Necessity (0 < YED < 1)',
+          icon: '🧾',
+          head: 'Necessity (0 < YED < 1)',
           body: 'Demand rises but less than income. Bread, utilities, basic clothing. Recession-resilient but limited growth potential during booms. Stable, predictable revenue profile.'
         },
         {
-          head: '📉 Inferior good (YED < 0)',
+          icon: '📉',
+          head: 'Inferior good (YED < 0)',
           body: 'Demand falls when income rises — consumers trade up. Bus travel, value-brand food. Counter-cyclical: sell more in recessions, less in booms. Budget supermarkets and budget airlines often occupy this space.'
+        }
+      ],
+      productExamplesTitle: 'Normal or inferior?',
+      productExamplesSubtitle: 'Predict the YED classification for each good — then reveal the verdict.',
+      productExamples: [
+        {
+          icon: '✈️',
+          product: 'Foreign holidays',
+          verdict: 'Luxury (YED > 1)',
+          verdictTone: 'purple',
+          reasoning: 'YED ≈ 1.5–2.5. Demand is strongly income-sensitive — surges in booms, collapses in recessions. Airlines and travel firms must plan for sharp cyclical swings in revenue.'
+        },
+        {
+          icon: '🚌',
+          product: 'Bus travel',
+          verdict: 'Inferior (YED < 0)',
+          verdictTone: 'red',
+          reasoning: 'YED ≈ −2. As incomes rise, people switch to cars or taxis. Demand falls when the economy grows, rises in recessions — a counter-cyclical pattern. Subsidies are often needed in booms.'
+        },
+        {
+          icon: '🍞',
+          product: 'Bread',
+          verdict: 'Necessity (0 < YED < 1)',
+          verdictTone: 'amber',
+          reasoning: 'YED ≈ 0.1–0.3. Demand barely changes with income. A recession-resilient staple — people buy roughly the same amount regardless of whether the economy grows or contracts.'
+        },
+        {
+          icon: '👜',
+          product: 'Designer handbags',
+          verdict: 'Luxury (YED > 1)',
+          verdictTone: 'purple',
+          reasoning: 'YED > 2. Luxury goods have very high income elasticity — demand rises far more than proportionally when incomes grow. The global luxury market collapsed ~30% in the 2008–09 recession.'
         }
       ],
       keyTakeaway: 'The sign of YED classifies the good. The magnitude tells you how sensitive demand is to income changes.'
     },
 
     /* ================================================================
-       CARD 2 — WORKED EXAMPLE: CALCULATING YED
-       Bus travel scenario, 5 scaffolded steps
+       CARD 2 — INTERACTIVE CALCULATION: YED
+       Bus travel scenario — connected 5-step chain
        ================================================================ */
     {
       id: 'yed_xed_2',
-      template: 'worked-example',
-      stepLabel: 'Step 2 of 7',
+      template: 'yed-calculation',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Worked Example: Calculating YED',
       lede: 'The sign matters as much as the number — get both right.',
-      scenario: 'Average household incomes rise by <strong>5%</strong>. Over the same period, demand for bus travel falls by <strong>10%</strong>.',
-      steps: [
-        {
-          prompt: 'Identify the % change in income.',
-          hint: 'This is given directly in the scenario.',
-          answer: '% Δ Income = <strong>+5%</strong> (given)'
-        },
-        {
-          prompt: 'Identify the % change in quantity demanded.',
-          hint: 'Demand fell — this should be negative.',
-          answer: '% ΔQD = <strong>−10%</strong> (given — note the negative sign; demand fell)'
-        },
-        {
-          prompt: 'Apply the YED formula.',
-          hint: 'YED = % ΔQD \xf7 % Δ Income. A negative result is expected here.',
-          answer: 'YED = −10% \xf7 +5% = <strong>−2</strong>'
-        },
-        {
-          prompt: 'Interpret the sign.',
-          hint: 'What does a negative YED tell us about the type of good?',
-          answer: 'YED is negative → bus travel is an <strong>inferior good</strong>. As people get richer, they switch to cars or taxis.'
-        },
-        {
-          prompt: 'Interpret the magnitude.',
-          hint: 'How income-sensitive is demand? What does this mean for bus operators?',
-          answer: '|YED| = 2 &gt; 1 → demand is strongly income-sensitive. A 5% income rise causes a 10% decline in bus demand. Bus operators should expect sharp revenue falls during economic booms, and partial recovery during recessions.'
-        }
-      ],
+      scenario: {
+        icon: '🚌',
+        headline: 'Bus travel demand',
+        subline: 'Rising incomes — which way does demand move?',
+        income1: 100,
+        income2: 105,
+        q1: 200,
+        q2: 180
+      },
       conclusion: 'YED = −2 confirms bus travel is an inferior good with high income sensitivity. This shapes transport policy: subsidising buses makes sense when the economy grows (demand falls and operators need support) as well as during recessions when lower-income households rely on public transport.',
-      examEdge: 'Five steps for full marks: state formula → substitute values → calculate → interpret sign (good type) → interpret magnitude (sensitivity). "Bus travel is an inferior good" alone is not enough — you must quantify and explain the magnitude.'
+      contextLine: 'The negative sign is what matters most — it tells you the good is inferior. The magnitude (2) tells you how strongly income-sensitive demand is.',
+      examEdge: {
+        title: 'Five steps for full marks',
+        text: 'State formula → substitute values → calculate → interpret sign (good type) → interpret magnitude (sensitivity). "Bus travel is an inferior good" alone is not enough — you must quantify and explain the magnitude.'
+      }
     },
-
     /* ================================================================
        CARD 3 — YED IN BUSINESS STRATEGY
        Four application areas with real examples
        ================================================================ */
     {
       id: 'yed_xed_3',
-      stepLabel: 'Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'YED in Business Strategy',
       intro: 'Firms use YED to navigate economic cycles — knowing your YED profile is as important as knowing your margins.',
       steps: [
@@ -144,7 +164,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_4',
-      stepLabel: 'Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'What is Cross-Price Elasticity of Demand (XED)?',
       intro: 'When Pepsi raises its prices, Coca-Cola\'s sales go up. When petrol prices spike, fewer people buy cars. XED measures these cross-market effects.',
       body: `<div style="border:2px solid #0B1426;border-radius:10px;padding:16px;text-align:center;margin:12px 0;font-size:18px;font-weight:700;background:#F8FAFC;">
@@ -158,71 +178,96 @@ window.ECONOS_TOPIC = {
 </ul>`,
       causes: [
         {
-          head: '➕ Substitutes (XED > 0)',
+          icon: '➕',
+          head: 'Substitutes (XED > 0)',
           body: 'Price of B rises → consumers switch to A → demand for A rises. Stronger positive XED = closer substitutes. Examples: Pepsi & Coke (close substitutes, high positive XED), butter & margarine, train & bus travel.'
         },
         {
-          head: '➖ Complements (XED < 0)',
+          icon: '➖',
+          head: 'Complements (XED < 0)',
           body: 'Price of B rises → demand for B falls → demand for A also falls (used together). Examples: petrol & cars, tea & milk, gaming consoles & games. The razor-blade model exploits strongly negative XED.'
         },
         {
-          head: '⭕ Unrelated goods (XED = 0)',
+          icon: '⭕',
+          head: 'Unrelated goods (XED = 0)',
           body: 'Price of B has no effect on demand for A. Examples: haircuts & bread, smartphones & cheese. No strategic relationship — these markets can be analysed independently.'
         }
       ],
+      productExamplesTitle: 'Substitute or complement?',
+      productExamplesSubtitle: 'Predict the XED relationship for each pair — then reveal the verdict.',
+      productExamples: [
+        {
+          icon: '☕',
+          product: 'Tea & coffee',
+          verdict: 'Substitutes (XED > 0)',
+          verdictTone: 'green',
+          reasoning: 'XED ≈ +0.6. When coffee prices rise, some consumers switch to tea — positive cross-price elasticity confirms substitutability. The CMA would consider this borderline evidence of market overlap.'
+        },
+        {
+          icon: '⛽',
+          product: 'Petrol & cars',
+          verdict: 'Complements (XED < 0)',
+          verdictTone: 'red',
+          reasoning: 'XED ≈ −0.5 to −1.0. When petrol prices spike, demand for (petrol-powered) cars falls — they are used together. A strong oil price rise meaningfully reduces new car sales.'
+        },
+        {
+          icon: '🎮',
+          product: 'Games consoles & games',
+          verdict: 'Strong Complements (XED << 0)',
+          verdictTone: 'red',
+          reasoning: 'XED strongly negative. PlayStation console pricing is kept low to drive game sales at full margin — the classic razor-blade model. Demand for games falls sharply if console prices rise.'
+        },
+        {
+          icon: '🚆',
+          product: 'Train & bus travel',
+          verdict: 'Substitutes (XED > 0)',
+          verdictTone: 'green',
+          reasoning: 'XED > 0 — when train fares rise, some commuters switch to buses. Both serve the same journey need. Rail strikes (effectively infinite price rise) consistently boost bus and coach demand.'
+        }
+      ],
       keyTakeaway: 'The sign of XED reveals the relationship. The magnitude tells you how close that relationship is.',
-      examEdge: 'Common error: students forget that XED always involves TWO different goods — price of Good B changes, quantity demanded of Good A responds. Always name both goods explicitly. Example: "If coffee prices rise, XED(tea, coffee) > 0 means demand for tea rises."'
+      examEdge: {
+        title: 'Always name both goods',
+        text: 'Students forget that XED always involves TWO different goods — price of Good B changes, quantity demanded of Good A responds. Always name both goods explicitly. Example: "If coffee prices rise, XED(tea, coffee) > 0 means demand for tea rises."'
+      }
     },
 
     /* ================================================================
-       CARD 5 — WORKED EXAMPLE: CALCULATING XED
-       Tea & coffee scenario, 5 scaffolded steps
+       CARD 5 — INTERACTIVE CALCULATION: XED
+       Tea & coffee scenario — connected 5-step chain
        ================================================================ */
     {
       id: 'yed_xed_5',
-      template: 'worked-example',
-      stepLabel: 'Step 5 of 7',
+      template: 'xed-calculation',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Worked Example: Calculating XED',
       lede: 'Always name both goods and state which price changed and which quantity responded.',
-      scenario: 'The price of coffee rises from <strong>\xa32.00</strong> to <strong>\xa32.30</strong> per cup. Over the same period, demand for tea rises from <strong>200</strong> to <strong>218</strong> cups per day at a local café.',
-      steps: [
-        {
-          prompt: 'Calculate the % change in price of Good B (coffee).',
-          hint: '% change = (New − Old) \xf7 Old \xd7 100',
-          answer: '% ΔP(coffee) = (2.30 − 2.00) \xf7 2.00 \xd7 100 = <strong>+15%</strong>'
-        },
-        {
-          prompt: 'Calculate the % change in QD of Good A (tea).',
-          hint: 'QD of tea rose — this should be positive.',
-          answer: '% ΔQD(tea) = (218 − 200) \xf7 200 \xd7 100 = <strong>+9%</strong>'
-        },
-        {
-          prompt: 'Apply the XED formula.',
-          hint: 'XED(A, B) = % ΔQD(A) \xf7 % ΔP(B). Always state both goods.',
-          answer: 'XED(tea, coffee) = +9% \xf7 +15% = <strong>+0.6</strong>'
-        },
-        {
-          prompt: 'Interpret the sign.',
-          hint: 'Positive XED → what is the relationship?',
-          answer: 'XED is positive → tea and coffee are <strong>substitutes</strong>. When coffee gets more expensive, consumers switch to tea.'
-        },
-        {
-          prompt: 'Interpret the magnitude.',
-          hint: 'How close are these substitutes? What does 0.6 tell us about consumer loyalty to coffee?',
-          answer: 'XED = 0.6 → moderate substitutes (not close substitutes). A 15% rise in coffee prices causes only a 9% rise in tea demand. Many consumers remain loyal to coffee despite the price rise — they are imperfect substitutes.'
-        }
-      ],
+      scenario: {
+        icon: '☕',
+        headline: 'Tea and coffee at a café',
+        subline: 'Coffee gets more expensive — what happens to tea demand?',
+        currency: '£',
+        goodA: 'Tea',
+        goodB: 'Coffee',
+        pB1: 2.00,
+        pB2: 2.30,
+        qA1: 200,
+        qA2: 218
+      },
       conclusion: 'XED(tea, coffee) = +0.6 confirms they are moderate substitutes. A business selling tea could use this insight: when coffee prices rise (from commodity shocks or bean shortages), expect a modest boost to tea demand — but not a massive one. Close substitutes would show XED closer to 2 or 3.',
-      examEdge: 'Magnitude matters for XED: a value of 0.1 means very weak substitutes; 2.0 means very close substitutes. The CMA uses XED > ~0.5 as evidence that two products are in the same market when reviewing mergers — a value of 0.6 would be borderline evidence of market overlap.'
+      contextLine: 'The sign (+) tells you the goods are substitutes. The magnitude (0.6) tells you how close — moderate, not close.',
+      examEdge: {
+        title: 'Name both goods every time',
+        text: 'Magnitude matters for XED: a value of 0.1 means very weak substitutes; 2.0 means very close substitutes. The CMA uses XED > ~0.5 as evidence that two products are in the same market when reviewing mergers — a value of 0.6 would be borderline evidence of market overlap.'
+      }
     },
-
     /* ================================================================
        CARD 6 — REAL-WORLD APPLICATIONS
        Four application areas: law, pricing, trade, development
        ================================================================ */
     {
       id: 'yed_xed_6',
-      stepLabel: 'Step 6 of 7',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Real-World Applications',
       intro: 'YED and XED aren\'t just formulas — they drive competition law, pricing strategy, and macroeconomic policy.',
       steps: [
@@ -253,7 +298,7 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'yed_xed_7',
-      stepLabel: 'Step 7 of 7',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam Summary: YED & XED',
       intro: 'Two formulas, two signs, four good types, three relationship types — here\'s the complete picture.',
       body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#059669;margin-bottom:10px;">① YED vs XED at a Glance</div>

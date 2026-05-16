@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'ped',
-  topicNum: '1.8',
+  topicNum: '2.2',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Elasticity of Demand',

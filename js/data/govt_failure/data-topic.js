@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'govt_failure',
-  topicNum: '1.20',
+  topicNum: '4.2',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Failure',

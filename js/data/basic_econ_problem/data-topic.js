@@ -1,9 +1,9 @@
 window.ECONOS_TOPIC = {
   id: 'basic_econ_problem',
-  topicNum: '1.1',
+  topicNum: '1.1-1.3',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
-  title: 'The Basic Economic Problem',
+  title: 'Introduction to Economics',
   estTime: '7-9 minutes',
   goal: 'Lock in scarcity, choice, opportunity cost, and the three fundamental economic questions that shape every economy.',
   intro: {

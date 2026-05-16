@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'yed_xed',
-  topicNum: '1.10',
+  topicNum: '2.3',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Income & Cross-Price Elasticity',

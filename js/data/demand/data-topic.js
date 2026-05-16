@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'demand',
-  topicNum: '1.5',
+  topicNum: '2.1',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Demand',

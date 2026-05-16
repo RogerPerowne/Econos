@@ -3,146 +3,313 @@ window.ECONOS_TOPIC = {
   topicNum: '1.10',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
-  title: 'YED & XED',
-  estTime: '10-12 minutes',
-  goal: 'Lock in income and cross-price elasticities — formulas, signs, interpretation, and their applications to business and trade strategy.',
+  title: 'Income & Cross-Price Elasticity',
+  estTime: '10–12 minutes',
+  goal: 'Understand YED and XED — their formulas, signs, magnitudes, and how they classify goods, reveal market relationships, and drive business and policy decisions.',
   intro: {
     heroKey: 'heroElasticity',
-    summary: 'YED and XED extend elasticity analysis beyond own-price. They reveal how demand responds to income changes (YED) and to the prices of related goods (XED) — critical for classifying goods and understanding market linkages.',
-    doInThis: 'Work through 9 cards: the big picture, an interactive YED Engel-curve explorer, normal/inferior/luxury goods, YED business strategy, the XED formula, an interactive XED cross-price explorer, XED applications, worked calculations, and the wider economy implications.',
+    summary: 'YED measures how demand responds to income changes; XED measures how demand for one good responds to the price of another. Together they classify goods (normal, inferior, luxury, necessity) and reveal whether two products are substitutes, complements, or unrelated.',
+    doInThis: 'Work through 7 cards covering YED, a YED worked example, business strategy applications, XED, an XED worked example, real-world applications, and an exam-ready summary.',
     outcomes: [
       'Calculate and interpret YED including sign and magnitude',
       'Classify goods as normal (luxury/necessity) or inferior using YED',
       'Calculate and interpret XED including sign and what it reveals about the relationship between goods',
-      'Apply YED and XED to business portfolio and trade analysis'
+      'Apply YED and XED to business strategy, competition policy, and macroeconomic analysis'
     ],
-    tip: 'YED: positive = normal good (rises with income); negative = inferior good (falls with income); >1 = luxury. XED: positive = substitutes (rise in price of B raises demand for A); negative = complements.',
+    tip: 'YED: positive = normal good; negative = inferior good; YED > 1 = luxury; 0 < YED < 1 = necessity. XED: positive = substitutes; negative = complements; zero = unrelated.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '9 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
+
+    /* ================================================================
+       CARD 1 — WHAT IS YED
+       Hook question → formula → four good types
+       ================================================================ */
     {
       id: 'yed_xed_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 9',
-      title: 'YED &amp; XED: the big picture',
-      lede: 'Demand doesn&apos;t just respond to a good&apos;s own price — it also reacts to incomes and to the prices of <em>other</em> goods.',
-      branches: [
-        { tone: 'green',  label: 'YED: income elasticity',         sub: '%&Delta;QD &divide; %&Delta;income. The sign reveals the good type; the size reveals the responsiveness.' },
-        { tone: 'blue',   label: 'Normal, inferior, luxury',       sub: 'YED &gt; 0 = normal; &lt; 0 = inferior; &gt; 1 = luxury; 0–1 = necessity. The classification that drives long-run industry growth.' },
-        { tone: 'amber',  label: 'XED: cross-price elasticity',    sub: '%&Delta;QD<sub>A</sub> &divide; %&Delta;P<sub>B</sub>. Positive = substitutes; negative = complements; zero = unrelated.' },
-        { tone: 'purple', label: 'Business &amp; strategy use',    sub: 'Firms use YED to forecast through the cycle and XED to map rivals and complements. The elasticity toolkit in action.' },
-        { tone: 'rose',   label: 'Wider economy implications',     sub: 'Income elasticities shape structural change: as economies grow, demand swings from agriculture to manufacturing to services.' }
+      stepLabel: 'Step 1 of 7',
+      title: 'What is Income Elasticity of Demand (YED)?',
+      intro: 'When the economy booms and incomes rise, do people buy more Rolexes — or more instant noodles? YED tells you.',
+      body: `<div style="border:2px solid #0B1426;border-radius:10px;padding:16px;text-align:center;margin:12px 0;font-size:18px;font-weight:700;background:#F8FAFC;">
+  YED = % ΔQD \xf7 % Δ Income
+</div>
+<p style="margin:10px 0 6px;">Unlike PED, YED can be <strong>positive or negative</strong> — the sign classifies the good type and is the most important thing to get right.</p>
+<ul style="margin:8px 0 0 18px;line-height:1.8;">
+  <li><strong>YED &gt; 0:</strong> Normal good — demand rises when income rises.</li>
+  <li><strong>YED &gt; 1:</strong> Luxury good — demand rises proportionally <em>more</em> than income (a subcategory of normal).</li>
+  <li><strong>0 &lt; YED &lt; 1:</strong> Necessity — demand rises but proportionally <em>less</em> than income.</li>
+  <li><strong>YED &lt; 0:</strong> Inferior good — demand <em>falls</em> when income rises; consumers trade up to better alternatives.</li>
+</ul>`,
+      causes: [
+        {
+          head: '✅ Normal good (YED > 0)',
+          body: 'Demand rises when income rises. Most everyday goods: electronics, clothing, restaurant meals. Positive relationship with the economic cycle — demand grows alongside GDP.'
+        },
+        {
+          head: '💎 Luxury good (YED > 1)',
+          body: 'Demand rises proportionally more than income. Designer goods, foreign holidays, premium cars. Pro-cyclical: revenues collapse in recessions, surge in booms. High cyclical risk for firms.'
+        },
+        {
+          head: '🧾 Necessity (0 < YED < 1)',
+          body: 'Demand rises but less than income. Bread, utilities, basic clothing. Recession-resilient but limited growth potential during booms. Stable, predictable revenue profile.'
+        },
+        {
+          head: '📉 Inferior good (YED < 0)',
+          body: 'Demand falls when income rises — consumers trade up. Bus travel, value-brand food. Counter-cyclical: sell more in recessions, less in booms. Budget supermarkets and budget airlines often occupy this space.'
+        }
       ],
-      body: '<strong>YED</strong> measures the responsiveness of quantity demanded to a change in consumer income.<br><br><strong>Formula:</strong> YED = (% ΔQD) \xf7 (% Δ Income)<br><br>Unlike PED, YED can be positive or negative, and its sign is crucial:<br>• <strong>YED > 0:</strong> Normal good — demand rises as income rises (consumers can afford more)<br>• <strong>YED < 0:</strong> Inferior good — demand falls as income rises (consumers switch to better alternatives)<br>• <strong>YED > 1:</strong> Luxury good — demand rises proportionally more than income<br>• <strong>0 < YED < 1:</strong> Necessity (normal but not luxury) — demand rises proportionally less than income',
-      keyTerms: [
-        { term: 'YED', def: '% change in quantity demanded \xf7 % change in income. Sign indicates good type; magnitude indicates responsiveness.' },
-        { term: 'Normal good', def: 'YED > 0: demand increases as income rises.' },
-        { term: 'Inferior good', def: 'YED < 0: demand falls as income rises — consumers trade up to superior alternatives.' }
-      ],
-      examEdge: 'The sign of YED is its most important feature — it classifies the good. The magnitude determines sensitivity. A common error: students say "demand is inelastic" when they mean "necessity" (low YED). YED is not about price responsiveness — use "normal/inferior" and "luxury/necessity" language instead.'
+      keyTakeaway: 'The sign of YED classifies the good. The magnitude tells you how sensitive demand is to income changes.'
     },
-    {
-      id: 'yed_explorer',
-      template: 'yed-explorer',
-      stepLabel: 'Learn: Step 2 of 9',
-      title: 'YED Explorer: drag the points along the Engel curve',
-      lede: 'Move <strong>A</strong> and <strong>B</strong> along the Engel curve (Income on X, Quantity demanded on Y). The sign of YED classifies the good; the magnitude tells you how sensitive demand is to income. Watch the chip flip as you move from inferior to necessity to luxury.',
-      howItWorks: 'When income rises, demand for a <strong>normal good</strong> rises (upward-sloping Engel curve). For an <strong>inferior good</strong>, demand falls as income rises (downward-sloping). The <strong>luxury threshold</strong> is YED > 1 — demand grows <em>faster</em> than income. Try the presets: Bus travel (negative → inferior), Basic food (positive but < 1 → necessity), Through origin (YED = 1 everywhere), Restaurant meals and Foreign holidays (both > 1 → luxury).',
-      examEdge: 'The sign of YED is the most-tested feature: positive = normal, negative = inferior. The magnitude (0–1 = necessity; > 1 = luxury) is tested in data-response questions. A common error: writing "income elastic" or "income inelastic" — the exam expects "luxury" or "necessity" language, not elastic/inelastic. Save that language for PED and PES.'
-    },
+
+    /* ================================================================
+       CARD 2 — WORKED EXAMPLE: CALCULATING YED
+       Bus travel scenario, 5 scaffolded steps
+       ================================================================ */
     {
       id: 'yed_xed_2',
-      template: 'cause',
-      stepLabel: 'Learn: Step 3 of 9',
-      title: 'Applying YED: Normal, Inferior, and Luxury Goods',
-      causes: [
-        { head: 'Normal goods (YED > 0)', body: 'Most goods: furniture, clothing, electronics, restaurant meals. Demand grows with the economy. Positive relationship between economic growth and demand — important for business planning in growing markets.' },
-        { head: 'Luxury goods (YED > 1)', body: 'Foreign holidays, luxury cars, fine dining, premium brands. Demand grows proportionally faster than income. During recessions, demand collapses; during booms, demand surges. High income sensitivity = high cyclical risk.' },
-        { head: 'Necessities (0 < YED < 1)', body: 'Bread, milk, utilities, basic clothing. Demand barely changes with income — relatively income-inelastic. Recession-resilient businesses; lower growth potential in boom times.' },
-        { head: 'Inferior goods (YED < 0)', body: 'Value-brand food, bus travel, certain basic goods. Demand falls when incomes rise as consumers upgrade. During recessions, inferior good sales rise; during booms, they fall. Counter-cyclical.' }
+      template: 'worked-example',
+      stepLabel: 'Step 2 of 7',
+      title: 'Worked Example: Calculating YED',
+      lede: 'The sign matters as much as the number — get both right.',
+      scenario: 'Average household incomes rise by <strong>5%</strong>. Over the same period, demand for bus travel falls by <strong>10%</strong>.',
+      steps: [
+        {
+          prompt: 'Identify the % change in income.',
+          hint: 'This is given directly in the scenario.',
+          answer: '% Δ Income = <strong>+5%</strong> (given)'
+        },
+        {
+          prompt: 'Identify the % change in quantity demanded.',
+          hint: 'Demand fell — this should be negative.',
+          answer: '% ΔQD = <strong>−10%</strong> (given — note the negative sign; demand fell)'
+        },
+        {
+          prompt: 'Apply the YED formula.',
+          hint: 'YED = % ΔQD \xf7 % Δ Income. A negative result is expected here.',
+          answer: 'YED = −10% \xf7 +5% = <strong>−2</strong>'
+        },
+        {
+          prompt: 'Interpret the sign.',
+          hint: 'What does a negative YED tell us about the type of good?',
+          answer: 'YED is negative → bus travel is an <strong>inferior good</strong>. As people get richer, they switch to cars or taxis.'
+        },
+        {
+          prompt: 'Interpret the magnitude.',
+          hint: 'How income-sensitive is demand? What does this mean for bus operators?',
+          answer: '|YED| = 2 &gt; 1 → demand is strongly income-sensitive. A 5% income rise causes a 10% decline in bus demand. Bus operators should expect sharp revenue falls during economic booms, and partial recovery during recessions.'
+        }
       ],
-      examEdge: 'YED is crucial for recession analysis: luxury good producers (LVMH, Rolls-Royce) are highly pro-cyclical — revenues collapse in recessions. Supermarket own-brand sales are counter-cyclical (inferior goods rise in recessions). This explains corporate strategy during economic downturns.'
+      conclusion: 'YED = −2 confirms bus travel is an inferior good with high income sensitivity. This shapes transport policy: subsidising buses makes sense when the economy grows (demand falls and operators need support) as well as during recessions when lower-income households rely on public transport.',
+      examEdge: 'Five steps for full marks: state formula → substitute values → calculate → interpret sign (good type) → interpret magnitude (sensitivity). "Bus travel is an inferior good" alone is not enough — you must quantify and explain the magnitude.'
     },
+
+    /* ================================================================
+       CARD 3 — YED IN BUSINESS STRATEGY
+       Four application areas with real examples
+       ================================================================ */
     {
       id: 'yed_xed_3',
-      template: 'framing',
-      stepLabel: 'Learn: Step 4 of 9',
-      title: 'YED and Business Strategy',
-      body: '<strong>Diversification:</strong> firms with products across different YED categories have more stable overall revenues. A portfolio mixing luxury goods (high YED) with necessities (low YED) buffers against recession.<br><br><strong>Market selection:</strong> in rapidly growing emerging markets (rising incomes), luxury goods companies expand aggressively — high YED means disproportionate sales growth. China luxury goods market grew 50x 2000-2020 as incomes rose.<br><br><strong>Macroeconomic sensitivity:</strong> firms with high YED products must track GDP forecasts carefully. High YED = high economic sensitivity = more volatile earnings = higher financial risk.',
-      keyTerms: [
-        { term: 'Pro-cyclical', def: 'Sales rise in booms and fall in recessions — typical of luxury goods with high positive YED.' },
-        { term: 'Counter-cyclical', def: 'Sales rise in recessions and fall in booms — typical of inferior goods (negative YED) like discount retailers.' },
-        { term: 'Diversification', def: 'Holding products with different YED profiles reduces overall revenue volatility.' }
+      stepLabel: 'Step 3 of 7',
+      title: 'YED in Business Strategy',
+      intro: 'Firms use YED to navigate economic cycles — knowing your YED profile is as important as knowing your margins.',
+      steps: [
+        {
+          label: 'Portfolio diversification',
+          text: 'Firms with products across different YED categories have more stable revenues. A mix of luxury goods (high YED) and necessities (low YED) buffers against recession — when luxury sales collapse, necessity sales hold up. Unilever sells premium and value brands for exactly this reason.'
+        },
+        {
+          label: 'Recession planning',
+          text: 'Luxury good producers (LVMH, Rolls-Royce, airlines) must hold larger cash reserves, cut costs faster, and use flexible contracts — because a 5% income fall can trigger 10%+ revenue decline. Necessity producers have more predictable revenues and can plan more conservatively.'
+        },
+        {
+          label: 'Emerging market strategy',
+          text: 'In rapidly growing economies (India, China in 2000–2020), rising incomes unlock luxury demand exponentially. With YED > 1, demand grows faster than income — the China luxury market grew approximately 50x from 2000–2020 as middle-class incomes rose.'
+        },
+        {
+          label: 'Counter-cyclical opportunity',
+          text: 'Inferior good businesses (budget supermarkets, value airlines like Ryanair) benefit from recessions. Ryanair grew market share in 2008–09 as consumers switched from full-service airlines (normal goods, high YED) to budget options (inferior goods relative to full-service). Understanding YED reveals who gains when others lose.'
+        }
       ],
-      examEdge: 'Ryanair benefited from the 2008-09 recession: consumers switched from full-service airlines (normal good, high YED) to low-cost airlines (inferior good substitute, negative YED relative to full-service). This illustrates how understanding YED reveals competitive dynamics during economic downturns.'
+      keyTakeaway: 'Know your YED: it tells you whether you're pro-cyclical (luxury), counter-cyclical (inferior), or recession-resilient (necessity).',
+      examEdge: 'Ryanair in 2008–09 is a powerful exam example: full-service airlines are normal goods (high YED) → demand collapsed; budget airlines acted as inferior substitutes → demand rose. This shows YED isn't just about the good itself but about relative positioning — what is the alternative consumers switch to?'
     },
-    {
-      id: 'xed_explorer',
-      template: 'xed-explorer',
-      stepLabel: 'Learn: Step 5 of 9',
-      title: 'XED Explorer: drag the points, spot substitute or complement',
-      lede: 'Price of Good B is on the X-axis; Quantity demanded of Good A is on the Y-axis. Move <strong>A</strong> and <strong>B</strong> to see how the demand for Good A responds when Good B\'s price changes. The sign of XED tells you everything.',
-      howItWorks: '<strong>Positive slope → substitutes</strong>: as Good B gets pricier, consumers switch to Good A (demand for A rises). <strong>Negative slope → complements</strong>: as Good B gets pricier, demand for B falls — and since the goods are used together, demand for A falls too. <strong>Horizontal line → independent</strong>: Good B\'s price has no effect on Good A.<br><br>Try the presets: Coke/Pepsi and Tea/Coffee show substitutes (positive); Petrol & car trips and Tea & milk show complements (negative).',
-      examEdge: 'Sign is everything for XED: positive = substitutes, negative = complements. Magnitude tells you how close the relationship is. The most common XED exam error: students forget that the price change is for Good B but the demand change is for Good A — the cross-price relationship always runs between TWO different goods. Always name both goods explicitly in your answer.'
-    },
+
+    /* ================================================================
+       CARD 4 — WHAT IS XED
+       Hook question → formula → three relationship types
+       ================================================================ */
     {
       id: 'yed_xed_4',
-      template: 'framing',
-      stepLabel: 'Learn: Step 6 of 9',
-      title: 'Cross-Price Elasticity of Demand (XED)',
-      body: '<strong>XED</strong> measures the responsiveness of demand for Good A to a change in the price of Good B.<br><br><strong>Formula:</strong> XED = (% ΔQD of Good A) \xf7 (% ΔP of Good B)<br><br>XED sign reveals the relationship between the goods:<br>• <strong>XED > 0 (positive):</strong> Substitutes — a rise in price of B causes consumers to switch to A. Stronger positive XED → closer substitutes. Example: Pepsi and Coca-Cola.<br>• <strong>XED < 0 (negative):</strong> Complements — a rise in price of B reduces demand for A (used together). Stronger negative XED → closer complements. Example: petrol and cars.<br>• <strong>XED = 0:</strong> Unrelated goods — price of B has no effect on demand for A.',
-      keyTerms: [
-        { term: 'XED', def: '% change in QD of Good A \xf7 % change in price of Good B. Sign reveals relationship between goods.' },
-        { term: 'Substitutes', def: 'Goods that can be used in place of each other; XED > 0.' },
-        { term: 'Complements', def: 'Goods used together; XED < 0 — a rise in price of one reduces demand for the other.' }
+      stepLabel: 'Step 4 of 7',
+      title: 'What is Cross-Price Elasticity of Demand (XED)?',
+      intro: 'When Pepsi raises its prices, Coca-Cola\'s sales go up. When petrol prices spike, fewer people buy cars. XED measures these cross-market effects.',
+      body: `<div style="border:2px solid #0B1426;border-radius:10px;padding:16px;text-align:center;margin:12px 0;font-size:18px;font-weight:700;background:#F8FAFC;">
+  XED = % ΔQD(Good A) \xf7 % ΔP(Good B)
+</div>
+<p style="margin:10px 0 6px;">The <strong>sign of XED</strong> reveals the economic relationship between the two goods:</p>
+<ul style="margin:8px 0 0 18px;line-height:1.8;">
+  <li><strong>XED &gt; 0 (positive):</strong> Substitutes — price of B rises → consumers switch to A → demand for A rises.</li>
+  <li><strong>XED &lt; 0 (negative):</strong> Complements — price of B rises → demand for B falls → demand for A falls too (used together).</li>
+  <li><strong>XED = 0:</strong> Unrelated goods — price of B has no effect on demand for A.</li>
+</ul>`,
+      causes: [
+        {
+          head: '➕ Substitutes (XED > 0)',
+          body: 'Price of B rises → consumers switch to A → demand for A rises. Stronger positive XED = closer substitutes. Examples: Pepsi & Coke (close substitutes, high positive XED), butter & margarine, train & bus travel.'
+        },
+        {
+          head: '➖ Complements (XED < 0)',
+          body: 'Price of B rises → demand for B falls → demand for A also falls (used together). Examples: petrol & cars, tea & milk, gaming consoles & games. The razor-blade model exploits strongly negative XED.'
+        },
+        {
+          head: '⭕ Unrelated goods (XED = 0)',
+          body: 'Price of B has no effect on demand for A. Examples: haircuts & bread, smartphones & cheese. No strategic relationship — these markets can be analysed independently.'
+        }
       ],
-      examEdge: 'XED is tested in supply/demand chain questions: "If the price of butter rises, what happens to demand for margarine?" XED(margarine, butter) > 0 → substitutes → demand for margarine rises. Walk through: price of B rises → consumers switch to A → demand for A increases. Always trace the direction carefully.'
+      keyTakeaway: 'The sign of XED reveals the relationship. The magnitude tells you how close that relationship is.',
+      examEdge: 'Common error: students forget that XED always involves TWO different goods — price of Good B changes, quantity demanded of Good A responds. Always name both goods explicitly. Example: "If coffee prices rise, XED(tea, coffee) > 0 means demand for tea rises."'
     },
+
+    /* ================================================================
+       CARD 5 — WORKED EXAMPLE: CALCULATING XED
+       Tea & coffee scenario, 5 scaffolded steps
+       ================================================================ */
     {
       id: 'yed_xed_5',
-      template: 'mechanisms',
-      stepLabel: 'Learn: Step 7 of 9',
-      title: 'XED Applications: Substitutes and Complements',
-      intro: 'XED analysis is used in competition policy, business strategy, and market definition.',
+      template: 'worked-example',
+      stepLabel: 'Step 5 of 7',
+      title: 'Worked Example: Calculating XED',
+      lede: 'Always name both goods and state which price changed and which quantity responded.',
+      scenario: 'The price of coffee rises from <strong>\xa32.00</strong> to <strong>\xa32.30</strong> per cup. Over the same period, demand for tea rises from <strong>200</strong> to <strong>218</strong> cups per day at a local café.',
       steps: [
-        { label: 'Market definition (competition law)', text: 'Regulators use XED to define a product\'s market. If XED between two products is high (>0.5), they are in the same market and a merger between their producers may reduce competition. XED evidence is used in CMA merger investigations.' },
-        { label: 'Complement pricing strategy', text: 'If XED(A, B) is strongly negative, cutting price of B boosts demand for A. Razor-blade model: cheap razors → high demand for blades. Console manufacturers: cheap PlayStation → high demand for games.' },
-        { label: 'Competitive pricing', text: 'High positive XED between two firms\' products → intense competition. A price cut by rival B significantly increases B\'s QD at expense of A. Cola wars: Pepsi and Coke have high positive XED.' },
-        { label: 'Portfolio strategy', text: 'Firms producing complements (negative XED) can cross-subsidise — lower price of one product to boost demand for the complementary product where margins are higher.' }
+        {
+          prompt: 'Calculate the % change in price of Good B (coffee).',
+          hint: '% change = (New − Old) \xf7 Old \xd7 100',
+          answer: '% ΔP(coffee) = (2.30 − 2.00) \xf7 2.00 \xd7 100 = <strong>+15%</strong>'
+        },
+        {
+          prompt: 'Calculate the % change in QD of Good A (tea).',
+          hint: 'QD of tea rose — this should be positive.',
+          answer: '% ΔQD(tea) = (218 − 200) \xf7 200 \xd7 100 = <strong>+9%</strong>'
+        },
+        {
+          prompt: 'Apply the XED formula.',
+          hint: 'XED(A, B) = % ΔQD(A) \xf7 % ΔP(B). Always state both goods.',
+          answer: 'XED(tea, coffee) = +9% \xf7 +15% = <strong>+0.6</strong>'
+        },
+        {
+          prompt: 'Interpret the sign.',
+          hint: 'Positive XED → what is the relationship?',
+          answer: 'XED is positive → tea and coffee are <strong>substitutes</strong>. When coffee gets more expensive, consumers switch to tea.'
+        },
+        {
+          prompt: 'Interpret the magnitude.',
+          hint: 'How close are these substitutes? What does 0.6 tell us about consumer loyalty to coffee?',
+          answer: 'XED = 0.6 → moderate substitutes (not close substitutes). A 15% rise in coffee prices causes only a 9% rise in tea demand. Many consumers remain loyal to coffee despite the price rise — they are imperfect substitutes.'
+        }
       ],
-      examEdge: 'Competition law application: the CMA (UK) or European Commission define the "relevant market" using XED. If XED between two products is high and positive, they constrain each other\'s pricing — they are in the same market. Low or negative XED means they are separate markets. This determines whether a merger is investigated.'
+      conclusion: 'XED(tea, coffee) = +0.6 confirms they are moderate substitutes. A business selling tea could use this insight: when coffee prices rise (from commodity shocks or bean shortages), expect a modest boost to tea demand — but not a massive one. Close substitutes would show XED closer to 2 or 3.',
+      examEdge: 'Magnitude matters for XED: a value of 0.1 means very weak substitutes; 2.0 means very close substitutes. The CMA uses XED > ~0.5 as evidence that two products are in the same market when reviewing mergers — a value of 0.6 would be borderline evidence of market overlap.'
     },
+
+    /* ================================================================
+       CARD 6 — REAL-WORLD APPLICATIONS
+       Four application areas: law, pricing, trade, development
+       ================================================================ */
     {
       id: 'yed_xed_6',
-      template: 'diagnose',
-      stepLabel: 'Learn: Step 8 of 9',
-      title: 'Calculating YED and XED: Worked Examples',
-      intro: 'Practise interpreting calculated values with the correct sign, magnitude, and conclusion.',
-      rows: [
-        { label: 'Scenario', colA: 'Incomes rise 5%; demand for bus travel falls 10%', colB: 'Price of coffee rises 15%; demand for tea rises 9%' },
-        { label: 'Formula', colA: 'YED = -10% \xf7 5% = -2', colB: 'XED = +9% \xf7 +15% = +0.6' },
-        { label: 'Interpretation', colA: 'YED = -2: strong inferior good. A 5% income rise causes 10% fall in bus demand. As incomes rise, passengers switch to cars or taxis.', colB: 'XED = +0.6: substitutes (positive sign). A 15% rise in coffee price raises tea demand by 9%. Moderate substitutes — some consumers switch but not all.' }
+      stepLabel: 'Step 6 of 7',
+      title: 'Real-World Applications',
+      intro: 'YED and XED aren't just formulas — they drive competition law, pricing strategy, and macroeconomic policy.',
+      steps: [
+        {
+          label: 'Competition law (XED)',
+          text: 'The CMA and European Commission define \'relevant markets\' using XED. If XED between two products is strongly positive (> ~0.5), they constrain each other\'s pricing — they\'re in the same market. This determines whether a merger is investigated. Google/DoubleClick and Pfizer/AstraZeneca mergers both involved market definition using cross-price evidence.'
+        },
+        {
+          label: 'Complement pricing strategy (XED)',
+          text: 'Negative XED reveals a razor-blade opportunity. If XED(blades, razors) is strongly negative, cutting the price of razors boosts razor demand, which drives blade sales at full margin. PlayStation consoles are priced low to sell games at high margin. Printers are cheap; ink cartridges are expensive.'
+        },
+        {
+          label: 'YED and international trade',
+          text: 'Countries exporting luxury goods (France — champagne, Germany — premium cars) face sharp revenue falls in global recessions because export demand has high YED. Commodity exporters face lower YED but higher price volatility. Understanding YED helps countries manage trade exposure across the economic cycle.'
+        },
+        {
+          label: 'Engel\'s Law and structural change',
+          text: 'As incomes rise globally, spending patterns shift — food\'s share of income falls (low YED), services and luxuries rise (high YED). This explains why rich countries have mostly service economies, and why development economists track YED across sectors to predict structural transformation from agriculture to manufacturing to services.'
+        }
       ],
-      footer: 'Note for YED: the number 2 matters — demand is highly income sensitive. For XED: the value 0.6 confirms positive (substitutes) but indicates moderate substitutability — goods are imperfect substitutes rather than near-identical.',
-      examEdge: 'Multi-mark YED/XED questions: (1) state formula, (2) substitute values, (3) calculate, (4) interpret sign, (5) interpret magnitude. Full marks require ALL five steps. Missing the magnitude interpretation (just saying "substitutes" without noting "moderate" vs "close") leaves marks on the table.'
+      keyTakeaway: 'YED shapes long-run business strategy and macro structure. XED defines who your competitors and complements really are.',
+      examEdge: 'Engel\'s Law as a development economics link: UK households spend ~8% of income on food; Ethiopian households ~50%. Rising incomes reduce food\'s share (low YED), freeing spending for manufactured goods and services. This micro concept underpins the entire theory of economic development — a powerful cross-topic connection.'
     },
+
+    /* ================================================================
+       CARD 7 — EXAM SUMMARY: YED & XED
+       Comparison table, common mistakes, 5-step checklist
+       ================================================================ */
     {
       id: 'yed_xed_7',
-      template: 'framing',
-      stepLabel: 'Learn: Step 9 of 9',
-      title: 'YED, XED and the Wider Economy',
-      body: '<strong>YED and international trade:</strong> countries exporting luxury goods (France — champagne, fashion; Germany — premium cars) are more vulnerable to global recessions (high YED in export markets → sharp revenue falls). Countries exporting commodities face different challenges (low YED, but price volatility).<br><br><strong>YED and structural change:</strong> as incomes rise over time, consumer spending shifts from necessities to luxuries (Engel\'s Law). This drives sectoral transformation: agriculture → manufacturing → services, as rising incomes shift demand toward higher-YED goods.<br><br><strong>XED and inflation:</strong> when energy prices rise sharply, negative XED with energy-intensive goods (plastic, chemicals, transport) creates cost-push inflation across complementary markets.',
-      keyTerms: [
-        { term: 'Engel\'s Law', def: 'As income rises, the proportion spent on food falls — a specific application of YED showing food is a necessity (low YED).' },
-        { term: 'Structural transformation', def: 'Shift in economic activity from primary to secondary to tertiary sectors as incomes rise — driven by different YED across sectors.' },
-        { term: 'Cost-push transmission', def: 'Rise in price of a complement (energy) reduces demand for and raises costs of energy-intensive goods — inflation spreads through complement linkages.' }
+      stepLabel: 'Step 7 of 7',
+      title: 'Exam Summary: YED & XED',
+      intro: 'Two formulas, two signs, four good types, three relationship types — here\'s the complete picture.',
+      body: `<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#059669;margin-bottom:10px;">① YED vs XED at a Glance</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid #CBD5E1;border-radius:10px;overflow:hidden;margin-bottom:20px;font-size:12px;">
+  <div style="background:#1E3A5F;color:#fff;font-weight:800;padding:8px 12px;">Dimension</div>
+  <div style="background:#1E3A5F;color:#fff;font-weight:800;padding:8px 12px;">YED</div>
+  <div style="background:#1E3A5F;color:#fff;font-weight:800;padding:8px 12px;">XED</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;font-weight:700;color:#0B1426;">Formula</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">% ΔQD \xf7 % Δ Income</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">% ΔQD(A) \xf7 % ΔP(B)</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;font-weight:700;color:#0B1426;">Positive sign</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Normal good</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Substitutes</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;font-weight:700;color:#0B1426;">Negative sign</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Inferior good</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Complements</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;font-weight:700;color:#0B1426;">Zero</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Theoretical (income has no effect)</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Unrelated goods</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;font-weight:700;color:#0B1426;">Magnitude &gt; 1</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Luxury good</div>
+  <div style="background:#F8FAFC;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Close substitutes or complements</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;font-weight:700;color:#0B1426;">Magnitude &lt; 1</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Necessity</div>
+  <div style="background:#fff;padding:8px 12px;border-top:1px solid #CBD5E1;color:#0B1426;">Weak relationship</div>
+</div>
+
+<div style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#DC2626;margin-bottom:10px;">② Common Mistakes</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
+  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
+    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Wrong sign interpretation</div>
+    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Negative YED = inferior (not 'inelastic'). Positive YED = normal (not 'elastic'). Sign → good type, not elasticity classification.</div>
+  </div>
+  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
+    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Elastic/inelastic language for YED</div>
+    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Use 'luxury', 'necessity', 'normal', 'inferior' — not 'income elastic'. Elastic/inelastic language belongs to PED and PES.</div>
+  </div>
+  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
+    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Forgetting which good is A and B in XED</div>
+    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Price of B changes → quantity of A responds. Always state both goods explicitly — "XED(tea, coffee) = +0.6" not just "XED = +0.6".</div>
+  </div>
+  <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
+    <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ XED magnitude without sign</div>
+    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Saying 'XED = 1.5 so they're substitutes' is fine. Saying 'XED = −1.5 so they're substitutes' is wrong — negative XED means complements.</div>
+  </div>
+</div>`,
+      steps: [
+        { label: 'State the correct formula', text: 'YED = % ΔQD \xf7 % Δ Income. XED = % ΔQD(A) \xf7 % ΔP(B). Name both goods for XED.' },
+        { label: 'Calculate', text: 'Substitute the values and show each step. Never skip to the final answer — method marks are available at each stage.' },
+        { label: 'Interpret the sign', text: 'YED sign → good type (normal/inferior). XED sign → relationship type (substitutes/complements). This is the most-tested step.' },
+        { label: 'Interpret the magnitude', text: 'How strong is the effect? YED > 1 = luxury; 0–1 = necessity. XED close to 0 = weak relationship; XED > 1 = close substitutes or complements.' },
+        { label: 'Apply to a real context', text: 'Link to business strategy, competition policy, or market behaviour. This is where evaluation marks sit — a calculation alone is never a full answer.' }
       ],
-      examEdge: 'Engel\'s Law as a macro application: UK households spend 8% of income on food; Ethiopian households spend 50%. This reflects different income levels and YED — as development raises incomes, food\'s share of spending falls, releasing income for manufactured goods and services. A powerful micro-macro link.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      keyTakeaway: 'Sign classifies. Magnitude quantifies. Context applies. Get all three for full marks.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
+
   ]
 };

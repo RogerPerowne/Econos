@@ -103,39 +103,19 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
        ================================================================ */
     {
       id: 'ped_3',
-      template: 'worked-example',
+      template: 'ped-calculation',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Calculating PED step by step',
-      lede: 'Work through each step yourself first — then reveal the working. This is exactly the method the examiner expects to see laid out.',
-      scenario: '<strong>Scenario:</strong> The price of concert tickets rises from <strong>\xa310</strong> to <strong>\xa312</strong>. Quantity demanded falls from <strong>100</strong> to <strong>70</strong>.',
-      steps: [
-        {
-          prompt: 'Calculate the percentage change in quantity demanded.',
-          hint: '% change = (New − Old) \xf7 Old \xd7 100. Expect a negative answer — law of demand.',
-          answer: '% ΔQD = (70 − 100) \xf7 100 \xd7 100 = <strong>−30%</strong>'
-        },
-        {
-          prompt: 'Calculate the percentage change in price.',
-          hint: '% change = (New − Old) \xf7 Old \xd7 100.',
-          answer: '% ΔP = (12 − 10) \xf7 10 \xd7 100 = <strong>+20%</strong>'
-        },
-        {
-          prompt: 'Apply the PED formula.',
-          hint: 'PED = % ΔQD \xf7 % ΔP. The result will be negative — that is correct.',
-          answer: 'PED = −30% \xf7 +20% = <strong>−1.5</strong>'
-        },
-        {
-          prompt: 'Classify the result and interpret it.',
-          hint: 'Compare |PED| to 1. State elastic or inelastic, then explain why in this context.',
-          answer: '|PED| = 1.5 &gt; 1 → demand is <strong>price elastic</strong>.<br>A 20% price rise caused a 30% fall in quantity demanded. Concert tickets have many substitutes — streaming services, other live events, staying in.'
-        },
-        {
-          prompt: 'Predict the effect on total revenue.',
-          hint: 'TR = P \xd7 Q. Elastic demand + price rise → TR rises or falls?',
-          answer: 'TR₁ = \xa310 \xd7 100 = <strong>\xa31,000</strong><br>TR₂ = \xa312 \xd7 70 = <strong>\xa3840</strong><br>Revenue <strong>falls by \xa3160</strong>. Elastic demand means the volume loss outweighs the higher price per ticket.'
-        }
-      ],
-      conclusion: 'Concert tickets are price elastic because consumers have many substitutes. The price rise caused a bigger proportional fall in quantity demanded, reducing total revenue. The promoter would earn more by keeping the price at \xa310.',
+      lede: 'Follow the chain. Each step unlocks the next — by the end you\'ll see how a price change ripples into a revenue impact.',
+      scenario: {
+        icon: '🎫',
+        headline: 'Concert tickets',
+        subline: 'The promoter raises the ticket price. What happens to revenue?',
+        currency: '£',
+        p1: 10, p2: 12,
+        q1: 100, q2: 70
+      },
+      contextLine: 'Concert tickets have many substitutes — streaming services, other live events, staying in.',
       examEdge: {
         title: 'Why PED is usually negative',
         text: 'Price and quantity move in opposite directions (law of demand) — so PED is always negative for a normal good. Economists compare the <strong>magnitude</strong> (|PED|), ignoring the sign. A PED of −1.5 is <em>more elastic</em> than −0.8, even though −0.8 is mathematically larger. Always state the sign in your calculation, then use the magnitude to classify.'

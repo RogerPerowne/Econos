@@ -994,6 +994,251 @@
   }
 
   /* -------------------------------------------------------------------------
+     PED Calculation — connected step chain.
+     Five tone-coded nodes wired together; each "Solve" reveals working,
+     populates the formula scaffold and lights up the next connector.
+     ------------------------------------------------------------------------- */
+  function renderCardPedCalculation(c) {
+    const s = c.scenario || {};
+    const cur = s.currency || '£';
+    const p1 = s.p1, p2 = s.p2, q1 = s.q1, q2 = s.q2;
+    const pctQ = ((q2 - q1) / q1) * 100;
+    const pctP = ((p2 - p1) / p1) * 100;
+    const ped = pctQ / pctP;
+    const tr1 = p1 * q1, tr2 = p2 * q2;
+    const trDelta = tr2 - tr1;
+    const absPed = Math.abs(ped);
+    const fmtPct = v => (v > 0 ? '+' : '') + v.toFixed(0) + '%';
+    const fmtMoney = v => cur + v.toLocaleString();
+
+    // Tone palette — one colour per step
+    const T1 = { name:'green',  c:'#059669', bg:'#ECFDF5', soft:'#D1FAE5' };
+    const T2 = { name:'amber',  c:'#D97706', bg:'#FFFBEB', soft:'#FEF3C7' };
+    const T3 = { name:'blue',   c:'#2563EB', bg:'#EFF6FF', soft:'#DBEAFE' };
+    const T4 = { name:'purple', c:'#7C3AED', bg:'#F5F3FF', soft:'#EDE9FE' };
+    const T5 = { name:'rose',   c:'#DC2626', bg:'#FEF2F2', soft:'#FEE2E2' };
+
+    // Verdict classification → maps onto spectrum index (0..4)
+    let verdict, verdictIdx;
+    if (absPed === 0)               { verdict = 'Perfectly inelastic'; verdictIdx = 0; }
+    else if (absPed < 1)            { verdict = 'Inelastic';          verdictIdx = 1; }
+    else if (absPed === 1)          { verdict = 'Unit elastic';       verdictIdx = 2; }
+    else if (absPed < Infinity)     { verdict = 'Elastic';            verdictIdx = 3; }
+    else                            { verdict = 'Perfectly elastic';  verdictIdx = 4; }
+
+    // Mini P/Q scatter chart for the scenario
+    const chartW = 220, chartH = 150;
+    const padL = 32, padB = 28, padT = 14, padR = 14;
+    const qMax = Math.max(q1, q2) * 1.2;
+    const pMax = Math.max(p1, p2) * 1.4;
+    const xScale = q => padL + (q / qMax) * (chartW - padL - padR);
+    const yScale = p => (chartH - padB) - (p / pMax) * (chartH - padT - padB);
+    const x1 = xScale(q1), y1 = yScale(p1);
+    const x2 = xScale(q2), y2 = yScale(p2);
+    const miniChart = `
+      <svg viewBox="0 0 ${chartW} ${chartH}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Inter,sans-serif;">
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${chartH - padB}" stroke="#CBD5E1" stroke-width="1.5"/>
+        <line x1="${padL}" y1="${chartH - padB}" x2="${chartW - padR}" y2="${chartH - padB}" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="6" y="${padT + 8}" font-size="10" fill="#94A3B8" font-weight="700">P</text>
+        <text x="${chartW - padR - 4}" y="${chartH - padB + 18}" font-size="10" fill="#94A3B8" font-weight="700" text-anchor="end">Q</text>
+        <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#0B1426" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+        <line x1="${padL}" y1="${y1}" x2="${x1}" y2="${y1}" stroke="${T1.c}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+        <line x1="${x1}" y1="${y1}" x2="${x1}" y2="${chartH - padB}" stroke="${T1.c}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+        <line x1="${padL}" y1="${y2}" x2="${x2}" y2="${y2}" stroke="${T5.c}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+        <line x1="${x2}" y1="${y2}" x2="${x2}" y2="${chartH - padB}" stroke="${T5.c}" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+        <circle cx="${x1}" cy="${y1}" r="6" fill="${T1.c}" stroke="#fff" stroke-width="2"/>
+        <circle cx="${x2}" cy="${y2}" r="6" fill="${T5.c}" stroke="#fff" stroke-width="2"/>
+        <text x="${x1 + 9}" y="${y1 - 6}" font-size="10" fill="${T1.c}" font-weight="800">Before</text>
+        <text x="${x2 + 9}" y="${y2 - 6}" font-size="10" fill="${T5.c}" font-weight="800">After</text>
+      </svg>
+    `;
+
+    // Step node helper — colored badge, accent border, prompt, formula slab, Solve button, hidden reveal
+    const stepNode = (n, tone, icon, title, prompt, formula, reveal) => `
+      <div class="ped-calc-step" data-ped-step="${n}" style="position:relative;border-radius:16px;background:#fff;border:1px solid ${tone.c}25;border-left:6px solid ${tone.c};box-shadow:0 3px 14px rgba(0,0,0,0.08);padding:18px 20px 20px;margin-bottom:0;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;box-shadow:0 2px 8px ${tone.c}55;">${n}</div>
+          <div style="font-size:22px;line-height:1;">${icon}</div>
+          <div style="font-weight:800;font-size:15px;color:${tone.c};letter-spacing:0.01em;">${title}</div>
+        </div>
+        <div style="font-size:14px;color:#0B1426;line-height:1.6;margin-bottom:12px;">${prompt}</div>
+        ${formula ? `<div style="background:${tone.bg};border:1px dashed ${tone.c}50;border-radius:10px;padding:11px 14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#0B1426;margin-bottom:12px;text-align:center;letter-spacing:0.02em;">${formula}</div>` : ''}
+        <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;">Solve step ${n} ↓</button>
+        <div class="ped-step__answer is-hidden" style="margin-top:14px;padding:14px 16px;background:${tone.soft};border-radius:10px;border-left:4px solid ${tone.c};font-size:14px;color:#0B1426;line-height:1.65;">${reveal}</div>
+      </div>
+    `;
+
+    // Connector arrow between nodes — turns from grey to coloured when previous step solved
+    const connector = (n, tone) => `
+      <div class="ped-calc-link" data-ped-connector="${n}" style="display:flex;justify-content:center;align-items:center;height:36px;position:relative;">
+        <div class="ped-calc-link__line" style="width:3px;height:100%;background:#CBD5E1;border-radius:2px;transition:background 0.25s ease;" data-link-line></div>
+        <div class="ped-calc-link__arrow" style="position:absolute;bottom:-2px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #CBD5E1;transition:border-top-color 0.25s ease;" data-link-arrow></div>
+      </div>
+    `;
+
+    // SCENARIO header panel
+    const scenarioPanel = `
+      <div style="border-radius:16px;overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 3px 14px rgba(0,0,0,0.08);margin-bottom:14px;background:#fff;">
+        <div style="background:linear-gradient(135deg,#0B1426,#1E293B);padding:16px 20px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:26px;">${s.icon || '📊'}</span>
+          <div>
+            <div style="color:#fff;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;">The scenario</div>
+            <div style="color:#fff;font-weight:800;font-size:17px;margin-top:2px;">${s.headline}</div>
+            ${s.subline ? `<div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:3px;">${s.subline}</div>` : ''}
+          </div>
+        </div>
+        <div style="padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:center;">
+          <div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div style="border-radius:10px;background:${T1.bg};padding:12px 14px;border:1px solid ${T1.c}30;">
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T1.c};">Before</div>
+                <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">${fmtMoney(p1)} <span style="font-size:13px;color:#475569;font-weight:600;">/ ticket</span></div>
+                <div style="font-size:13px;color:#475569;margin-top:2px;">${q1.toLocaleString()} tickets sold</div>
+              </div>
+              <div style="border-radius:10px;background:${T5.bg};padding:12px 14px;border:1px solid ${T5.c}30;">
+                <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">After</div>
+                <div style="font-size:18px;font-weight:800;color:#0B1426;margin-top:4px;">${fmtMoney(p2)} <span style="font-size:13px;color:#475569;font-weight:600;">/ ticket</span></div>
+                <div style="font-size:13px;color:#475569;margin-top:2px;">${q2.toLocaleString()} tickets sold</div>
+              </div>
+            </div>
+          </div>
+          <div>${miniChart}</div>
+        </div>
+      </div>
+    `;
+
+    // STEP 1 — %ΔQ
+    const step1 = stepNode(1, T1, '📉', 'Find the % change in quantity',
+      'When price rose, quantity demanded dropped. By what percentage?',
+      `% ΔQ&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">(New − Old)</span> ÷ Old × 100`,
+      `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;">% ΔQ = (${q2} − ${q1}) ÷ ${q1} × 100<br><span style="font-size:18px;font-weight:800;color:${T1.c};">% ΔQ = ${fmtPct(pctQ)}</span></div>
+      <div style="margin-top:10px;font-size:13.5px;">Negative — that is correct. Law of demand: price up, quantity down.</div>`
+    );
+
+    // STEP 2 — %ΔP
+    const step2 = stepNode(2, T2, '💷', 'Find the % change in price',
+      'Now repeat the same formula on the price side.',
+      `% ΔP&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">(New − Old)</span> ÷ Old × 100`,
+      `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;">% ΔP = (${p2} − ${p1}) ÷ ${p1} × 100<br><span style="font-size:18px;font-weight:800;color:${T2.c};">% ΔP = ${fmtPct(pctP)}</span></div>
+      <div style="margin-top:10px;font-size:13.5px;">Positive — the promoter raised the price.</div>`
+    );
+
+    // STEP 3 — Apply formula, with populated equation
+    const step3 = stepNode(3, T3, '➗', 'Apply the PED formula',
+      'Plug the two answers into the PED equation — the result is your coefficient.',
+      `PED&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">% ΔQ</span>&nbsp;&nbsp;÷&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">% ΔP</span>`,
+      `<div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;font-weight:800;">
+        <span style="color:#0B1426;">PED =</span>
+        <span style="background:${T1.soft};color:${T1.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T1.c}50;">${fmtPct(pctQ)}</span>
+        <span style="color:#0B1426;">÷</span>
+        <span style="background:${T2.soft};color:${T2.c};padding:6px 12px;border-radius:8px;border:1.5px solid ${T2.c}50;">${fmtPct(pctP)}</span>
+        <span style="color:#0B1426;">=</span>
+        <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:18px;box-shadow:0 2px 8px ${T3.c}55;">${ped.toFixed(2)}</span>
+      </div>
+      <div style="margin-top:12px;font-size:13.5px;text-align:center;">The minus sign is expected — but we classify using the <strong>magnitude</strong> |${ped.toFixed(2)}| = ${absPed.toFixed(2)}.</div>`
+    );
+
+    // STEP 4 — Classify on spectrum
+    const spectrumZones = [
+      { label: 'Perf. inelastic', short: '0',   bg: T5.bg, c: T5.c },
+      { label: 'Inelastic',       short: '<1',  bg: T2.bg, c: T2.c },
+      { label: 'Unit elastic',    short: '=1',  bg: T3.bg, c: T3.c },
+      { label: 'Elastic',         short: '>1',  bg: T4.bg, c: T4.c },
+      { label: 'Perf. elastic',   short: '∞',   bg: T1.bg, c: T1.c }
+    ];
+    const step4 = stepNode(4, T4, '🎯', 'Classify the elasticity',
+      'Compare the magnitude to 1. Where on the elasticity spectrum does our answer land?',
+      `Compare&nbsp;&nbsp;<span style="color:${T4.c};font-weight:800;">|PED|</span>&nbsp;&nbsp;against&nbsp;&nbsp;<span style="color:${T4.c};font-weight:800;">1</span>`,
+      `<div style="margin-bottom:14px;">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px;">
+          ${spectrumZones.map((z, i) => `
+            <div style="background:${z.bg};border:${i === verdictIdx ? `2.5px solid ${z.c}` : `1px solid ${z.c}40`};border-radius:8px;padding:8px 4px;text-align:center;position:relative;${i === verdictIdx ? `box-shadow:0 0 0 4px ${z.c}20;` : ''}">
+              <div style="font-size:14px;font-weight:800;color:${z.c};">${z.short}</div>
+              <div style="font-size:10px;font-weight:700;color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
+              ${i === verdictIdx ? `<div style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:${z.c};color:#fff;padding:3px 9px;border-radius:6px;font-size:11px;font-weight:800;box-shadow:0 2px 6px rgba(0,0,0,0.2);white-space:nowrap;">|${ped.toFixed(2)}| = ${absPed.toFixed(2)} ▼</div>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:12px 14px;border:2px solid ${T4.c};display:flex;align-items:center;gap:10px;">
+        <span style="font-size:22px;">✅</span>
+        <div>
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
+          <div style="font-size:16px;font-weight:800;color:#0B1426;margin-top:2px;">Demand is <span style="color:${T4.c};">price ${verdict.toLowerCase()}</span></div>
+          <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity — a bigger proportional response.</div>
+        </div>
+      </div>`
+    );
+
+    // STEP 5 — Total revenue impact, with TR bars
+    const trMax = Math.max(tr1, tr2);
+    const barH = 38;
+    const barChart = `
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:4px;">
+            <span style="color:${T1.c};">TR Before · ${fmtMoney(p1)} × ${q1}</span>
+            <span style="color:#0B1426;">${fmtMoney(tr1)}</span>
+          </div>
+          <div style="height:${barH}px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
+            <div style="width:${(tr1 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T1.c},${T1.c}cc);"></div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:4px;">
+            <span style="color:${T5.c};">TR After · ${fmtMoney(p2)} × ${q2}</span>
+            <span style="color:#0B1426;">${fmtMoney(tr2)}</span>
+          </div>
+          <div style="height:${barH}px;background:#F1F5F9;border-radius:8px;overflow:hidden;">
+            <div style="width:${(tr2 / trMax) * 100}%;height:100%;background:linear-gradient(90deg,${T5.c},${T5.c}cc);"></div>
+          </div>
+        </div>
+      </div>
+    `;
+    const step5 = stepNode(5, T5, '💰', 'What happens to total revenue?',
+      'When demand is elastic and you raise the price, the volume loss outweighs the price gain — and revenue falls.',
+      `TR&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T5.c};font-weight:800;">Price</span>&nbsp;&nbsp;×&nbsp;&nbsp;<span style="color:${T5.c};font-weight:800;">Quantity</span>`,
+      `${barChart}
+      <div style="background:#fff;border-radius:10px;padding:12px 14px;border:2px solid ${T5.c};display:flex;align-items:center;gap:12px;">
+        <div style="background:${T5.c};color:#fff;border-radius:10px;padding:8px 14px;font-size:18px;font-weight:800;flex-shrink:0;">${trDelta < 0 ? '−' : '+'}${fmtMoney(Math.abs(trDelta))}</div>
+        <div>
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T5.c};">Revenue impact</div>
+          <div style="font-size:14px;color:#0B1426;margin-top:3px;line-height:1.5;">Revenue ${trDelta < 0 ? '<strong>falls</strong>' : '<strong>rises</strong>'} by ${fmtMoney(Math.abs(trDelta))}. The promoter would earn more by keeping the price at ${fmtMoney(p1)}.</div>
+        </div>
+      </div>`
+    );
+
+    // CONTEXT line beneath the chain
+    const contextStrip = c.contextLine ? `
+      <div style="margin-top:18px;padding:14px 18px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;border-left:4px solid #0B1426;font-size:14px;color:#0B1426;line-height:1.65;">
+        <strong>💡 Why?</strong> ${c.contextLine}
+      </div>
+    ` : '';
+
+    return `
+      <div class="card__step-label">${c.stepLabel || ''}</div>
+      <h1 class="card__title">${c.title || ''}</h1>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+
+      ${scenarioPanel}
+      ${connector(0, T1)}
+      ${step1}
+      ${connector(1, T2)}
+      ${step2}
+      ${connector(2, T3)}
+      ${step3}
+      ${connector(3, T4)}
+      ${step4}
+      ${connector(4, T5)}
+      ${step5}
+
+      ${contextStrip}
+
+      ${renderExamEdge(c.examEdge)}
+    `;
+  }
+
+  /* -------------------------------------------------------------------------
      Market Structures Comparison — 4-column reveal table.
      ------------------------------------------------------------------------- */
   function renderCardMarketStructuresComparison(c) {
@@ -1349,7 +1594,7 @@
   /* === full card view === */
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -1385,6 +1630,7 @@
         case 'elasticity-explorer':body = renderCardElasticityExplorer(c); break;
         case 'ped-five-frames':    body = renderCardPedFiveFrames(c);      break;
         case 'worked-example':     body = renderCardWorkedExample(c);      break;
+        case 'ped-calculation':    body = renderCardPedCalculation(c);     break;
         case 'pes-explorer':       body = renderCardPesExplorer(c);        break;
         case 'yed-explorer':       body = renderCardYedExplorer(c);        break;
         case 'xed-explorer':               body = renderCardXedExplorer(c);                   break;
@@ -1667,6 +1913,23 @@
       target.textContent = '✓ Working shown';
       target.disabled = true;
       target.style.opacity = '0.5';
+    } else if (action === 'ped-solve') {
+      // PED-calculation step chain: reveal answer + light up next connector
+      const step = target.closest('.ped-calc-step');
+      if (!step) return;
+      const answer = step.querySelector('.ped-step__answer');
+      if (answer) answer.classList.remove('is-hidden');
+      target.style.display = 'none';
+      step.classList.add('is-solved');
+      const n = parseInt(step.dataset.pedStep, 10);
+      const accent = step.style.borderLeftColor || '#059669';
+      const nextLink = root.querySelector(`[data-ped-connector="${n}"]`);
+      if (nextLink) {
+        const line = nextLink.querySelector('[data-link-line]');
+        const arrow = nextLink.querySelector('[data-link-arrow]');
+        if (line) line.style.background = accent;
+        if (arrow) arrow.style.borderTopColor = accent;
+      }
     } else if (action === 'tc-channel') {
       // Transmission chain: highlight the chosen channel and reveal its panel
       const key = target.dataset.channelKey;

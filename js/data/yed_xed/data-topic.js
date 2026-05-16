@@ -115,8 +115,8 @@ window.ECONOS_TOPIC = {
         icon: '🚌',
         headline: 'Bus travel demand',
         subline: 'Rising incomes — which way does demand move?',
-        income1: 100,
-        income2: 105,
+        y1: 100,
+        y2: 105,
         q1: 200,
         q2: 180
       },
@@ -249,10 +249,10 @@ window.ECONOS_TOPIC = {
         currency: '£',
         goodA: 'Tea',
         goodB: 'Coffee',
-        pB1: 2.00,
-        pB2: 2.30,
-        qA1: 200,
-        qA2: 218
+        pb1: 2.00,
+        pb2: 2.30,
+        qa1: 200,
+        qa2: 218
       },
       conclusion: 'XED(tea, coffee) = +0.6 confirms they are moderate substitutes. A business selling tea could use this insight: when coffee prices rise (from commodity shocks or bean shortages), expect a modest boost to tea demand — but not a massive one. Close substitutes would show XED closer to 2 or 3.',
       contextLine: 'The sign (+) tells you the goods are substitutes. The magnitude (0.6) tells you how close — moderate, not close.',

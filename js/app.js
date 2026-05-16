@@ -257,11 +257,14 @@
             ${c.productExamples.map(p => {
               const vc = VC[p.verdictTone] || VC.amber;
               return `
-              <div style="background:#fff;border-radius:10px;border:1px solid #E2E8F0;padding:13px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+              <div class="reveal-cell" style="background:#fff;border-radius:10px;border:1px solid #E2E8F0;padding:13px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
                 <div style="font-size:26px;margin-bottom:7px;">${p.icon}</div>
-                <div style="font-weight:800;font-size:13px;color:#0B1426;margin-bottom:5px;">${p.product}</div>
-                <div style="display:inline-block;padding:2px 9px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:10px;font-weight:700;margin-bottom:7px;">${p.verdict}</div>
-                <div style="font-size:12px;color:#475569;line-height:1.55;">${p.reasoning}</div>
+                <div style="font-weight:800;font-size:13px;color:#0B1426;margin-bottom:8px;">${p.product}</div>
+                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
+                <div class="reveal-cell__body is-hidden">
+                  <div style="display:inline-block;padding:2px 9px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:10px;font-weight:700;margin-bottom:7px;">${p.verdict}</div>
+                  <div style="font-size:12px;color:#475569;line-height:1.55;">${p.reasoning}</div>
+                </div>
               </div>`;
             }).join('')}
           </div>

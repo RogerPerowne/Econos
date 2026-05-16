@@ -6009,7 +6009,7 @@ window.ECONOS_ICONS = {
       <polygon points="710,375 710,385 722,380" fill="#334155"/>
       <line x1="70" y1="55" x2="70" y2="380" stroke="#334155" stroke-width="2"/>
       <polygon points="65,55 75,55 70,43" fill="#334155"/>
-      <text x="65" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">AC / \xa3</text>
+      <text x="65" y="46" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">AC / £</text>
       <text x="726" y="385" font-size="13" font-weight="700" fill="#334155">Output (Q)</text>
       <text x="58" y="396" font-size="11" fill="#64748B">O</text>
 
@@ -6017,31 +6017,38 @@ window.ECONOS_ICONS = {
       <line x1="390" y1="40" x2="390" y2="380" stroke="#475569" stroke-width="1.5" stroke-dasharray="6 4"/>
       <text x="390" y="398" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">MES</text>
 
-      <!-- SRAC1: min around x=150, y=240 -->
-      <polyline points="80,340 100,300 120,268 140,248 160,240 180,244 200,258 220,280 240,310 260,345" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
-      <text x="88" y="355" font-size="11" fill="#94A3B8">SRAC₁</text>
+      <!-- SRAC curves: proper U-shapes (high cost at extremes, low cost at minimum).
+           In SVG: low y = high on screen = HIGH cost; high y = near bottom = LOW cost.
+           Each SRAC minimum lies approximately on the LRAC envelope. -->
 
-      <!-- SRAC2: min around x=230, y=210 -->
-      <polyline points="130,310 155,265 180,235 205,215 230,208 255,212 280,226 305,248 330,278 355,312" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
-      <text x="140" y="325" font-size="11" fill="#94A3B8">SRAC₂</text>
+      <!-- SRAC1: small plant, min at (160,145) on LRAC. Tangent to LRAC there. -->
+      <polyline points="85,80 100,96 120,117 140,135 158,145 165,141 185,131 205,116 225,98 245,82" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="248" y="80" font-size="11" fill="#94A3B8">SRAC₁</text>
 
-      <!-- SRAC3: min around x=310, y=185 (MES point) -->
-      <polyline points="210,285 240,240 265,210 290,193 315,187 340,191 365,205 390,228 415,258 440,295" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
-      <text x="220" y="300" font-size="11" fill="#94A3B8">SRAC₃</text>
+      <!-- SRAC2: medium-small plant, min at (232,204) on LRAC. -->
+      <polyline points="130,88 155,115 178,142 200,168 218,188 230,204 238,198 252,181 268,162 283,142 298,122 312,104 325,88" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="327" y="86" font-size="11" fill="#94A3B8">SRAC₂</text>
 
-      <!-- SRAC4: min around x=460, y=210 (diseconomies) -->
-      <polyline points="340,295 370,248 400,220 425,208 455,207 480,216 505,234 530,260 555,294 580,335" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
-      <text x="560" y="348" font-size="11" fill="#94A3B8">SRAC₄</text>
+      <!-- SRAC3: medium plant, min at (310,253) on LRAC. Closest to MES. -->
+      <polyline points="212,88 235,114 258,142 278,170 295,198 308,230 310,253 315,242 328,218 342,192 360,165 380,138 400,114 420,92" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="422" y="90" font-size="11" fill="#94A3B8">SRAC₃</text>
 
-      <!-- LRAC envelope: U-shape, minimum at ~x=390 y=187 -->
-      <polyline points="90,318 120,274 155,245 185,225 215,210 245,200 275,192 305,188 335,186 365,186 390,187 415,190 440,197 468,208 500,224 530,248 560,280 590,318 615,352 640,380" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
-      <text x="645" y="376" font-size="13" font-weight="700" fill="#DC2626">LRAC</text>
+      <!-- SRAC4: large plant, min at (462,250) on LRAC. Diseconomies region. -->
+      <polyline points="342,90 365,115 390,143 415,173 438,203 458,232 462,250 468,238 482,216 500,190 522,163 544,136 565,110 585,88" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="587" y="86" font-size="11" fill="#94A3B8">SRAC₄</text>
+
+      <!-- LRAC envelope: proper U-shape.
+           Minimum at MES x=390, y=277 (lowest AC = highest y on curve).
+           Starts high (y=82) at low Q, falls to min (y=277) at MES, rises (y=92) at high Q.
+           Passes through each SRAC minimum: (160,145), (232,204), (310,253), (462,250). -->
+      <polyline points="90,82 120,108 155,140 185,167 215,192 245,215 275,235 305,251 335,264 365,273 390,277 415,272 440,262 468,247 500,228 530,205 560,178 590,148 615,118 640,92" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+      <text x="645" y="90" font-size="13" font-weight="700" fill="#DC2626">LRAC</text>
 
       <!-- region labels -->
-      <text x="230" y="370" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Economies of Scale ↓</text>
-      <text x="560" y="370" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Diseconomies of Scale ↑</text>
+      <text x="230" y="368" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Economies of Scale ↓</text>
+      <text x="560" y="368" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Diseconomies of Scale ↑</text>
     </svg>
-  `,
+  `
 
   mcLrTangency: `
     <svg class="mclt-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -7038,10 +7045,10 @@ window.ECONOS_ICONS = {
 
       <!-- LRAC curve: smooth U-shape via cubic bezier -->
       <!-- starts high left ~(90,320), dips to MES ~(310,280), rises back up ~(620,340) -->
-      <path d="M 90 50 C 130 300, 250 290, 310 280 C 400 272, 540 295, 660 345"
+      <path d="M 90 50 C 130 300, 250 290, 310 280 C 380 270, 540 148, 660 82"
             fill="none" stroke="#DC2626" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="672" y="349" font-size="10" font-weight="700" fill="#DC2626">LRAC</text>
-      <text x="620" y="365" font-size="9" fill="#DC2626" text-anchor="middle">(Incumbent's cost curve)</text>
+      <text x="668" y="78" font-size="10" font-weight="700" fill="#DC2626">LRAC</text>
+      <text x="620" y="92" font-size="9" fill="#DC2626" text-anchor="middle">(Incumbent's cost curve)</text>
 
       <!-- MES vertical dashed line at x=310 -->
       <line x1="310" y1="280" x2="310" y2="390" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>

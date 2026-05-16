@@ -943,9 +943,9 @@
       <div class="ee-root" data-ee-mount></div>
 
       ${c.howItWorks ? `
-        <div style="background:#F8FAFC;border-left:4px solid var(--econ-blue);border-radius:8px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
-          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        <div style="background:#F8FAFC;border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-blue);margin-bottom:8px;">How to read it</div>
+          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
         </div>
       ` : ''}
 
@@ -1010,16 +1010,16 @@
     const rows = (c.rows || []).map((r, i) => {
       if (r.reveal) {
         return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:#FEFCE8;border-top:1px solid #E7E7EA;">
-          <div style="padding:12px 12px;font-weight:800;font-size:12px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
-          ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:12px;line-height:1.5;border-left:1px solid #E7E7EA;text-align:center;">
-            <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:11px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">Reveal ↓</button>
+          <div style="padding:12px 12px;font-weight:800;font-size:13px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
+          ${COLS.map(col => `<div class="reveal-cell" style="padding:12px 8px;font-size:13px;line-height:1.55;border-left:1px solid #E7E7EA;text-align:center;">
+            <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;">Reveal ↓</button>
             <div class="reveal-cell__body is-hidden" style="color:#0B1426;">${r[col.key] || '–'}</div>
           </div>`).join('')}
         </div>`;
       }
       return `<div style="display:grid;grid-template-columns:150px repeat(4,1fr);background:${i % 2 === 0 ? '#F8FAFC' : '#fff'};border-top:1px solid #E7E7EA;">
-        <div style="padding:12px 12px;font-weight:700;font-size:12px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
-        ${COLS.map(col => `<div style="padding:12px 8px;font-size:12px;color:#0B1426;line-height:1.5;border-left:1px solid #E7E7EA;text-align:center;">${r[col.key] || '–'}</div>`).join('')}
+        <div style="padding:12px 12px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
+        ${COLS.map(col => `<div style="padding:12px 8px;font-size:13px;color:#0B1426;line-height:1.55;border-left:1px solid #E7E7EA;text-align:center;">${r[col.key] || '–'}</div>`).join('')}
       </div>`;
     }).join('');
     return `
@@ -1085,9 +1085,9 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div class="yed-root" data-yed-mount></div>
       ${c.howItWorks ? `
-        <div style="background:#F5F3FF;border-left:4px solid #7C3AED;border-radius:8px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#7C3AED;margin-bottom:8px;">How to read it</div>
-          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        <div style="background:#F5F3FF;border-left:4px solid #7C3AED;border-radius:10px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#7C3AED;margin-bottom:8px;">How to read it</div>
+          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
         </div>
       ` : ''}
       ${renderExamEdge(c.examEdge)}
@@ -1101,9 +1101,9 @@
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
       <div class="xed-root" data-xed-mount></div>
       ${c.howItWorks ? `
-        <div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:8px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#2563EB;margin-bottom:8px;">How to read it</div>
-          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        <div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:10px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#2563EB;margin-bottom:8px;">How to read it</div>
+          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
         </div>
       ` : ''}
       ${renderExamEdge(c.examEdge)}
@@ -1123,9 +1123,9 @@
       <div class="pes-root" data-pes-mount></div>
 
       ${c.howItWorks ? `
-        <div style="background:#F0FDF4;border-left:4px solid var(--econ-green);border-radius:8px;padding:14px 18px;margin:18px 0;">
-          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--econ-green);margin-bottom:8px;">How to read it</div>
-          <div style="font-size:13px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
+        <div style="background:#F0FDF4;border-left:4px solid var(--econ-green);border-radius:10px;padding:14px 18px;margin:18px 0;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:var(--econ-green);margin-bottom:8px;">How to read it</div>
+          <div style="font-size:15px;line-height:1.7;color:#0B1426;">${c.howItWorks}</div>
         </div>
       ` : ''}
 
@@ -1337,7 +1337,7 @@
       ${c.stepLabel ? `<div class="card__step-label">${c.stepLabel}</div>` : ''}
       <h1 class="card__title">${c.title}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      ${c.intro ? `<p style="font-size:15px;color:#0B1426;margin-bottom:16px;line-height:1.6;">${c.intro}</p>` : ''}
+      ${c.intro ? `<p style="font-size:15px;color:#0B1426;margin-bottom:16px;line-height:1.65;">${c.intro}</p>` : ''}
 
       <div class="paired-grid">${pairs}</div>
 

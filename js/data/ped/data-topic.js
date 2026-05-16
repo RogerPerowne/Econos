@@ -231,6 +231,11 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
           icon: '🔒',
           head: '5. Habit and addiction',
           body: 'Cigarettes, alcohol, addictive goods: demand is inelastic because willingness to pay holds despite price rises. This is precisely why sin taxes raise substantial revenue with little fall in quantity demanded.'
+        },
+        {
+          icon: '🌟',
+          head: '6. Branding and loyalty',
+          body: 'Strong brand attachment (Apple, Nike, Chanel) makes consumers perceive no real substitute — even when cheaper alternatives exist. Brand loyalty reduces elasticity by making the good feel unique in consumers\' minds.'
         }
       ],
       productExamples: [

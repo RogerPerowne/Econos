@@ -208,21 +208,21 @@
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
       content += genSecLabel('🔗', 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(${hasIcons ? '175px' : '280px'},1fr));gap:${hasIcons ? '12px' : '14px'};margin-bottom:18px;">`;
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '280px'},1fr));gap:${hasIcons ? '12px' : '14px'};margin-bottom:18px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         if (hasIcons) {
           const headText = item.head.replace(/^\d+\.\s*/, '');
           return `
-          <div style="border-radius:14px;overflow:hidden;background:#fff;border:1px solid ${t.border}25;box-shadow:0 2px 12px rgba(0,0,0,0.07);display:flex;flex-direction:column;">
-            <div style="padding:18px 16px 10px;background:${t.bg};text-align:center;">
-              <div style="font-size:30px;line-height:1;">${item.icon}</div>
+          <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
+            <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
+              <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${item.icon}</div>
             </div>
-            <div style="padding:9px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;gap:7px;">
-              <span style="min-width:19px;height:19px;border-radius:50%;background:rgba(255,255,255,0.25);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;">${i + 1}</span>
-              <span>${headText}</span>
+            <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;gap:8px;">
+              <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
+              <span style="line-height:1.3;">${headText}</span>
             </div>
-            <div style="padding:11px 14px 14px;font-size:13px;color:#334155;line-height:1.6;flex:1;">${item.body}</div>
+            <div style="padding:11px 14px 15px;font-size:12.5px;color:#334155;line-height:1.6;flex:1;">${item.body}</div>
           </div>`;
         }
         return `

@@ -371,7 +371,8 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
       keyTakeaway: {
         title: 'Ready for the next step',
         text: 'You can now apply PED to data-response questions, chains of reasoning, and 25-mark essays. Next topic: cross elasticity and income elasticity of demand.'
-      }
+      },
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

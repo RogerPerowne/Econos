@@ -150,51 +150,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Essay on oligopoly welfare: acknowledge that the welfare verdict is not predetermined. Competitive oligopoly → near-competitive outcomes → broadly welfare-positive. Collusive oligopoly → monopoly-like outcomes → welfare-negative. The same structure (four large supermarkets) can produce price wars (2015–17 supermarket price war) or near-identical prices (petrol retailers). Competition policy must address behaviour, not just structure.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-    {
-      id: 'oligopoly-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      question: 'Evaluate the view that oligopoly is always harmful to consumers. [25 marks]',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define oligopoly and set up the debate: harmful (collusion, prices above MC) vs potentially beneficial (R&D, innovation, economies of scale). Signal a conditional conclusion.',
-          hint: 'Define: few dominant firms, high CR4/HHI, strategic interdependence, barriers to entry. State the two sides briefly. Signal you will evaluate contextually.',
-          model: 'Oligopoly is a market structure dominated by a small number of large firms — typically identified by a four-firm concentration ratio (CR4) above 60% — each of which must consider rivals\' reactions when making pricing and output decisions. The claim that oligopoly is always harmful to consumers rests on the observation that market power allows firms to set price above marginal cost, reducing output and generating deadweight welfare losses, and that strategic interdependence creates incentives for collusion that amplify this outcome. Against this, oligopolists\' supernormal profits fund significant R&D investment (dynamic efficiency), scale economies may lower costs, and competitive oligopoly can approach near-competitive outcomes. The verdict depends critically on whether oligopolists compete or collude — and the regulatory environment in which they operate.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis — the case that oligopoly harms consumers',
-          prompt: 'Explain the mechanisms: price rigidity (kinked demand), tacit collusion, and the welfare cost of P > MC.',
-          hint: 'Kinked demand curve: rivals match price cuts (demand inelastic below P*) but ignore price rises (demand elastic above P*) → price rigidity at P* above competitive level. Tacit collusion: through price leadership or parallel pricing, firms reach monopoly-like outcomes without explicit cartel. DWL = triangle between Q_monopoly and Q_competitive.',
-          model: 'The kinked demand curve model (Sweezy, 1939) explains how oligopoly generates price rigidity above the competitive level. Firms anticipate that rivals will match any price cut (limiting the sales gain) but ignore any price rise (allowing market share to be lost). This creates a kink in the demand curve at the current price P*, with a discontinuity in the MR curve, meaning MC can shift significantly without inducing a price change. Prices remain above MC — allocative inefficiency persists. Beyond price rigidity, strategic interdependence creates powerful incentives for tacit collusion: through price leadership, where a dominant firm sets price and others follow without explicit coordination, firms can sustain prices at near-monopoly levels legally. UK petrol retailers, banking charges, and mobile roaming fees have all been subject to CMA investigations for parallel pricing consistent with tacit coordination. The welfare cost is real: P > MC implies output is below the socially optimal level, creating a deadweight loss triangle; consumer surplus is transferred to producer surplus; and X-inefficiency may develop as firms with protected market power face insufficient competitive pressure on costs.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter-argument — oligopoly can benefit consumers',
-          prompt: 'Evaluate the dynamic efficiency benefits (R&D, innovation) and when competitive oligopoly approaches competitive outcomes.',
-          hint: 'Schumpeter: supernormal profits → R&D investment → innovation that benefits consumers over time (pharmaceuticals, tech). Scale economies: large firms can achieve lower LRAC, passing savings to consumers. Bertrand competition with identical products → P=MC even with just two firms. Supermarket price wars 2014-17 benefited consumers significantly.',
-          model: 'The static efficiency analysis ignores the dynamic dimension. Schumpeterian competition holds that market power and the prospect of supernormal profit are necessary incentives for innovation: a firm will invest in costly R&D only if it can expect to capture the returns in the form of profit. The UK pharmaceutical sector — dominated by oligopolists such as AstraZeneca and GSK — spends £4-6bn annually on R&D, producing innovations that benefit millions of consumers over decades. If pharmaceutical prices were driven to MC, the dynamic incentive for drug development would collapse. Similarly, tech oligopolists (Apple, Google, Amazon) have delivered continuous product improvements at falling real prices — consumer surplus from these innovations vastly exceeds any static welfare loss from pricing above MC. Furthermore, oligopoly is not always synonymous with high prices: when oligopolists compete on price (Bertrand-style), with homogeneous products and low switching costs, price competition can be intense. The 2014–17 UK supermarket price war — triggered by the entry of Aldi and Lidl — drove average grocery prices down sharply, with Tesco, Asda, and Morrisons cutting prices aggressively. The same market structure produced pro-consumer outcomes because the competitive dynamic changed.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — context and competition policy',
-          prompt: 'Evaluate the role of barriers to entry, product homogeneity, and competition policy in determining whether oligopoly is harmful.',
-          hint: 'High sunk costs → tacit collusion more stable, contestability lower → more harmful. Homogeneous products → Bertrand competition → lower prices. Differentiated products → non-price competition, prices sticky. CMA/Competition Act 1998: cartels are illegal, but tacit collusion is hard to prosecute. Regulatory quality determines outcomes.',
-          model: 'The welfare impact of oligopoly depends crucially on three factors. First, the height of entry barriers: where sunk costs are low and markets are relatively contestable (airlines on some routes, some retail sectors), the threat of entry disciplines incumbent pricing even without actual entry — approaching the contestable market outcome (P = AC, normal profit). Where sunk costs are prohibitive (aerospace, pharmaceuticals), entry threats are weak and the monopoly-like outcome is more durable. Second, product homogeneity: with identical products and price competition, even a small number of firms can produce competitive outcomes (Bertrand paradox). With differentiated products, non-price competition insulates firms from rivals\' price cuts, sustaining higher prices. Third, regulatory effectiveness: the Competition and Markets Authority (CMA) can block mergers that substantially reduce competition, prosecute explicit price-fixing cartels (criminal sanctions under the Enterprise Act 2002), and investigate tacit collusion through market investigations — but tacit collusion that falls short of explicit agreement remains difficult to address legally. Where competition policy is effective and active, oligopoly\'s worst outcomes can be constrained.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Make a conditional judgement: when is oligopoly harmful? When is it beneficial? What is the net verdict?',
-          hint: 'Oligopoly is harmful when: high sunk costs, homogeneous products, tacit or explicit collusion, weak regulation. Beneficial when: strong R&D incentives, competitive rivalry, low sunk costs, active CMA. "Always harmful" is too strong — context determines outcome.',
-          model: 'The claim that oligopoly is always harmful to consumers cannot be sustained as a general proposition. Collusive oligopoly — whether through explicit cartels or tacit coordination — produces monopoly-like outcomes that impose real welfare losses on consumers: higher prices, lower output, reduced allocative efficiency, and fewer incentives for cost reduction. In these circumstances, oligopoly is clearly harmful and warrants regulatory intervention. However, competitive oligopoly generates outcomes that may substantially benefit consumers: price wars reduce prices below monopoly levels; scale economies lower costs; supernormal profits fund R&D that delivers innovations consumers value. The appropriate conclusion is conditional: oligopoly is most likely harmful when sunk costs are high (reducing contestability), products are homogeneous (removing product-quality competition), and regulatory enforcement is weak. It is least harmful — and potentially beneficial — when competitive dynamics are active, contestability is significant, and competition policy maintains the conditions for rivalry. The correct policy response is therefore to focus on behaviour (tackling collusion and anti-competitive practice) rather than treating oligopoly as inherently harmful regardless of context.'
-        }
-      ]
     }
+
   ]
 };

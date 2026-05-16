@@ -134,61 +134,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The policy response should match the type of barrier: structural barriers (scale economies) → regulate the firm but do not break it up. Legal barriers (patents, licences) → time-limit and scope carefully. Strategic barriers (predatory pricing, foreclosure) → prohibition and fines. Network effects → interoperability mandates, data portability. Each barrier type requires a specific policy tool.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'be-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: barriers to entry',
-      question: 'Evaluate the view that barriers to entry are always harmful to consumers and should be removed by government. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define barriers to entry and explain why they are generally seen as harmful. Introduce the key exception: some barriers may have welfare benefits.',
-          hint: 'Barriers to entry sustain supernormal profit for incumbents by preventing competitive entry. Standard welfare case: barriers → less competition → higher prices, lower output, allocative inefficiency. But some barriers incentivise innovation (patents) or reflect genuine cost structures (natural monopoly) — the view that they are ALWAYS harmful requires challenge.',
-          model: 'Barriers to entry are features of markets that prevent potential rivals from entering when incumbents earn supernormal profits. In a competitive market, supernormal profit would attract entry → prices fall → profit erodes → consumers benefit. Barriers short-circuit this self-correcting mechanism, allowing incumbent firms to sustain prices above competitive levels. The prima facie case for removing them is strong: consumers pay higher prices, output is restricted, and dynamic efficiency may suffer. However, the claim that barriers are always harmful is too strong — some barriers incentivise innovation, and the appropriate policy response depends critically on the type and source of the barrier.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — How barriers harm consumers: static inefficiency',
-          prompt: 'Explain the allocative and productive inefficiency that arises from barriers sustaining monopoly power.',
-          hint: 'Barriers → monopoly power → P > MC (allocative inefficiency), DWL. Supernormal profit persisted → no X-efficiency pressure. Price set above MC by extent of market power. Real-world: pharmaceutical prices (insulin in US at 10× UK price where competition is higher), broadband prices in areas with cable monopoly.',
-          model: 'When barriers to entry sustain market power, firms can price above marginal cost — producing allocative inefficiency and a deadweight welfare loss. Consumers pay more than is socially optimal, and output is restricted below the efficient level. Without competitive pressure, incumbents also face reduced incentives for cost efficiency (X-inefficiency): Leibenstein\'s research found firms in protected markets carried 20-30% excess costs. The pharmaceutical industry illustrates this starkly: where patent protection is strongest, drug prices diverge most sharply from marginal cost — insulin in the US costs approximately 10 times the UK price partly because of weaker competitive constraint. This static efficiency loss is the foundational case for reducing barriers.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — The innovation argument for barriers: patents and sunk costs',
-          prompt: 'Explain why some barriers are necessary incentives for investment and innovation.',
-          hint: 'Patents: without patent protection, innovators cannot recover R&D sunk costs → private R&D would be below social optimum (positive externality problem). Patent protection enables innovation that benefits consumers long-term — even though it creates short-run monopoly. Schumpeterian dynamic efficiency: large profits attract creative destruction — long-run consumer benefit. Natural monopoly: scale economies are structural, not created by government — removing them by forcing multiple firms destroys cost efficiency.',
-          model: 'The most important exception to the "barriers are always harmful" view is the patent system. Innovation involves high upfront sunk costs (pharmaceutical R&D averaging £1-2bn per drug) that are justified only if the innovator can earn supernormal profit during the patent period. Without patent protection, the public-good nature of knowledge (non-rival, non-excludable) means rivals could free-ride on the innovator\'s investment — causing private R&D to fall below the socially optimal level. The patent barrier creates a temporary monopoly, but the consumer benefits from the innovation it incentivises. Similarly, natural monopoly barriers reflect genuine cost structures: a single water or rail network has lower average costs than two competing networks — forcing entry by requiring a duplicate network would raise costs and consumer prices. Here, the barrier serves productive efficiency, not exploitation.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Strategic barriers vs structural: different policy implications',
-          prompt: 'Distinguish between strategic barriers (always harmful, should be removed) and structural barriers (require regulation, not removal).',
-          hint: 'Strategic barriers (predatory pricing, exclusive dealing, limit pricing) are deliberately erected by incumbents and have no welfare justification — competition law should prohibit. Structural barriers (scale economies, sunk costs) are often welfare-improving in themselves — removing them would raise costs. Natural monopoly: better to regulate price than to force competition. Key distinction for policy: type of barrier determines appropriate response.',
-          model: 'The policy question is better framed as: which barriers should be removed, and which regulated rather than eliminated? Strategic barriers — predatory pricing, exclusive dealing contracts, excessive brand proliferation — are erected by incumbents specifically to prevent competition and have no social welfare justification. These should be prohibited under competition law, as they damage consumers without any countervailing benefit. However, structural barriers (economies of scale, sunk costs) reflect genuine cost structures and often cannot be "removed" without destroying productive efficiency. A natural monopoly (water infrastructure) broken into competing networks would have higher average costs — consumers would be worse off. The appropriate response here is price regulation (Ofwat, Ofgem) rather than forced entry. Patent barriers fall in between: time-limited patent protection is welfare-improving; excessive patent terms or patent evergreening (pharmaceutical industry) extend monopoly beyond what innovation incentive requires and should be challenged.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Dynamic vs static efficiency trade-off',
-          prompt: 'Weigh the dynamic efficiency gains from barriers (innovation) against the static costs (DWL, higher prices).',
-          hint: 'A* move: the trade-off between static and dynamic efficiency is the key evaluation framework. Removing all barriers maximises static efficiency but may destroy dynamic efficiency (innovation incentives). Optimal policy balances both. Schumpeter: temporary monopoly profit is the engine of innovation (creative destruction) — the monopolist today is the innovator of yesterday. Counter: in digital markets, incumbent advantage can be so durable that Schumpeterian competition never arrives (Facebook network effect barrier).',
-          model: 'The deepest evaluation turns on the dynamic vs static efficiency trade-off. Removing all barriers would maximise static allocative efficiency — P = MC, maximum consumer surplus in the short run. But it would likely reduce dynamic efficiency: without the prospect of supernormal profit, firms invest less in R&D, product development, and the risky investment that drives long-run growth. Schumpeter\'s creative destruction framework suggests that temporary monopoly profit is the reward for innovation — and that competition occurs between successive innovations (iPhone competing with Android) rather than within a single product. This Schumpeterian logic is strongest in high-innovation industries (pharmaceuticals, technology). However, it is weaker in digital platform markets where network effects create winner-takes-all outcomes that lock out Schumpeterian competition entirely — Facebook has faced no serious competitor for social networking for over a decade. In these cases, the dynamic efficiency argument fails, and interventions (interoperability mandates, data portability) are more justified.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a nuanced judgement: barriers are not always harmful — the type and source of the barrier determines whether removal or regulation is the appropriate response.',
-          hint: 'Strategic barriers: remove (prohibit). Natural monopoly structural barriers: regulate, not remove. Patent barriers: time-limit carefully. Network effect barriers: interoperability requirements. The blanket claim "always harmful" fails because it ignores the innovation incentive and cost-structure arguments.',
-          model: 'The view that barriers to entry are always harmful and should always be removed is too broad. Strategic barriers — predatory pricing, exclusive dealing, deliberate foreclosure — have no welfare justification and should be prohibited by competition authorities. But structural and legal barriers are more nuanced: natural monopoly barriers reflect cost realities where forced competition would be wasteful, and patent barriers provide essential innovation incentives without which private R&D would fall below the socially optimal level. The appropriate policy is to match the response to the barrier type: prohibit strategic barriers, regulate natural monopolies, time-limit patents carefully, and require interoperability where network effects create irreversible lock-in. The blanket removal of all barriers would maximise short-run static efficiency but at the cost of long-run dynamic efficiency — ultimately trading future innovation for lower prices today.'
-        }
-      ]
     }
+
   ]
 };

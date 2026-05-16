@@ -299,61 +299,7 @@ window.ECONOS_TOPIC = {
         text: 'When asked about fiscal stimulus, the answer is rarely just "AD shifts right by £X". The answer is "AD shifts right by £X × k". Stating the multiplier value (even approximately) is a 2-3 mark gem.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'ad-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: aggregate demand',
-      question: 'Evaluate the view that fiscal policy is the most effective policy for managing aggregate demand to achieve macroeconomic objectives. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define aggregate demand and fiscal policy. Briefly introduce the debate about which demand-management policy is most effective.',
-          hint: 'Key concepts: AD = C + I + G + (X−M); fiscal policy = government spending and taxation; monetary policy as the main alternative; macroeconomic objectives (growth, low unemployment, low inflation, BOP equilibrium).',
-          model: 'Aggregate demand (AD) is the total planned expenditure in an economy at a given price level, comprising consumption (C), investment (I), government spending (G), and net exports (X−M). Fiscal policy uses changes in government spending and taxation to shift the AD curve, aiming to stabilise output and employment. While fiscal policy offers a powerful and direct lever — especially through the multiplier effect — monetary policy, supply-side measures, and exchange rate policy also influence AD. This essay evaluates whether fiscal policy is truly the most effective demand-management tool.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Fiscal policy directly shifts AD via the multiplier',
-          prompt: 'Explain how an increase in G or reduction in T shifts AD to the right, and how the multiplier amplifies the initial injection.',
-          hint: 'Multiplier k = 1/(1−MPC). If MPC = 0.6, k = 2.5, so £10bn G raises AD by £25bn. G is the only AD component government directly controls.',
-          model: 'Fiscal expansion — such as a rise in public investment (G) or a cut in income tax boosting disposable income (C) — directly shifts the AD curve to the right. Crucially, the Keynesian multiplier amplifies this initial injection: with a marginal propensity to consume of 0.6, the multiplier (k = 1/1−0.6 = 2.5) means a £10bn stimulus generates a £25bn increase in national income. Because G is the only AD component government can set directly, fiscal policy offers a degree of precision unavailable to monetary policy, which operates indirectly through interest rates and credit conditions. This makes fiscal policy particularly powerful during demand deficits.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Fiscal policy is especially effective at the zero lower bound',
-          prompt: 'Explain why fiscal policy becomes relatively more powerful when monetary policy is constrained (e.g. near-zero interest rates, liquidity trap).',
-          hint: 'Post-2008 and post-2020: Bank Rate near 0%. QE had limited traction. Fiscal stimulus (furlough, NHS spending, infrastructure) directly sustained AD.',
-          model: 'Fiscal policy proves particularly effective when monetary policy is constrained. At the zero lower bound — as in the UK during 2009–2021 when Bank Rate was 0.1% — interest rate cuts cannot stimulate further borrowing or investment, creating a liquidity trap. In such circumstances, only direct government expenditure can reliably boost AD. The UK\'s COVID-19 furlough scheme (costing over £70bn) directly maintained household incomes and aggregate consumption when private spending collapsed. This illustrates that fiscal policy can substitute for monetary policy when conventional demand-management tools are exhausted.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Monetary policy may be more effective in normal conditions',
-          prompt: 'Argue that monetary policy (interest rate changes by the Bank of England) is faster, less politically constrained, and avoids fiscal risks like crowding out and government debt.',
-          hint: 'MPC sets rates independently; rate changes pass through quickly to mortgage costs, business borrowing, exchange rate. Fiscal policy risks: crowding out private investment; rising national debt; time lags from political process.',
-          model: 'However, under normal macroeconomic conditions, monetary policy may be a more effective demand-management tool. The Bank of England\'s Monetary Policy Committee can adjust Bank Rate at monthly meetings, providing a faster and more flexible response than fiscal policy, which requires parliamentary approval and often takes 12–18 months to implement fully. Lower interest rates reduce borrowing costs for households (boosting C) and firms (boosting I) simultaneously, without the fiscal risks associated with government borrowing. Furthermore, large fiscal expansions may crowd out private investment if government borrowing raises interest rates, partially offsetting the AD boost. Rising public debt also constrains future fiscal flexibility, as seen in post-2010 UK austerity.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Effectiveness depends on context and leakages',
-          prompt: 'Evaluate how the size of the multiplier, import propensity, and business confidence affect fiscal policy\'s real-world impact on AD.',
-          hint: 'Full multiplier: k = 1/(MPS + MRT + MRM). High import content reduces domestic AD gain. If confidence is low, tax cuts may be saved not spent. Fiscal rules and debt sustainability also matter.',
-          model: 'The effectiveness of fiscal policy ultimately depends on the size of the actual multiplier, which in open economies like the UK is significantly smaller than the simple Keynesian model suggests. Once leakages through savings (MPS), taxation (MRT), and imports (MRM) are accounted for, the UK multiplier may be as low as 1.0–1.5. High import propensity means that a significant portion of fiscal stimulus leaks abroad, reducing the domestic AD impact. Additionally, if consumer and business confidence is deeply depressed, tax cuts may be saved rather than spent, blunting the Keynesian transmission mechanism. The credibility and timing of fiscal action therefore critically conditions its effectiveness.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a balanced judgement: in what circumstances is fiscal policy most effective, and when might alternatives be superior?',
-          hint: 'Best case for fiscal: zero lower bound, deep recession, high multiplier sector targeting. Best case for monetary: normal conditions, independent central bank, faster transmission. Avoid sitting on the fence — commit to a view with a condition.',
-          model: 'In conclusion, fiscal policy is most effective at managing AD in exceptional circumstances — particularly when monetary policy is constrained by the zero lower bound or when targeted public investment can exploit a high multiplier in domestic sectors. However, in normal macroeconomic conditions, monetary policy\'s speed, flexibility, and independence from political pressures make it a superior first-line demand-management tool. The most effective approach is therefore context-dependent: fiscal policy should be the primary instrument during deep recessions or liquidity traps, while monetary policy is preferable for fine-tuning AD in stable economic environments. A combination of both — the policy mix — is often optimal for simultaneously achieving low inflation, full employment, and sustainable growth.'
-        }
-      ]
     }
+
   ]
 };

@@ -135,61 +135,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Use Brexit and US-China as contrasting case studies: Brexit is primarily about non-tariff barriers (border friction for goods, loss of passporting for services); US-China is primarily tariff-based but with strategic technology restrictions (semiconductors, AI) added.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'prot-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: protectionism',
-      question: 'Evaluate the case for protectionism as a trade policy for a country like the UK. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define protectionism and explain its instruments. Introduce the key arguments for and against.',
-          hint: 'Protectionism: government policies that restrict imports to protect domestic industries. Instruments: tariffs (tax on imports), quotas (quantity limits), subsidies to domestic producers, non-tariff barriers (regulations, standards, border friction). Standard case against: reduces trade → higher prices, less choice, lower efficiency. Arguments for: infant industry, strategic industries, employment protection, national security.',
-          model: 'Protectionism encompasses government policies — tariffs, quotas, subsidies, and non-tariff barriers — that restrict imports to protect domestic industries from international competition. The standard economic case against protectionism is strong: it raises consumer prices, reduces allocative efficiency, invites retaliation, and ultimately shrinks the gains from trade. Yet protectionist arguments have proved politically durable because their benefits are concentrated (visible protected jobs) while their costs are dispersed (marginally higher prices for millions of consumers). This essay evaluates the case for protectionism for a country like the UK, examining whether the theoretical arguments withstand scrutiny and what the empirical evidence shows.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — The case against protectionism: consumer costs and retaliation',
-          prompt: 'Explain the welfare costs of tariffs and the retaliatory spiral they can create.',
-          hint: 'Tariff mechanism: import price rises → domestic producers gain (higher prices, more output) → consumers lose (higher prices, less choice) → government gains revenue → net welfare loss = DWL (consumer surplus lost > revenue gained + producer surplus). Retaliation: trading partners impose their own tariffs → UK exports face barriers → export industries lose. WTO rules constrain unilateral protectionism. Historical: US Smoot-Hawley (1930) → global trade fell 65% → worsened Great Depression. Post-Brexit UK: border friction (non-tariff barriers) reduced UK-EU trade for goods and services.',
-          model: 'Tariff protection imposes a direct welfare cost on domestic consumers: the higher import price reduces consumer surplus by more than it raises producer surplus and government revenue combined, generating a deadweight welfare loss. For the UK, which relies heavily on imported goods (90%+ of food from abroad, significant imported consumer goods), tariffs on major trading partners would raise the cost of living substantially. The secondary cost is retaliation: if the UK raises tariffs on EU or US imports, affected partners respond with their own barriers, reducing demand for UK exports. The UK\'s post-Brexit experience provides a natural experiment: the introduction of non-tariff barriers through border friction reduced UK-EU goods trade by an estimated 15-20% — illustrating the trade-reducing effect of protection even without explicit tariffs. The interwar period provides the historical warning: the US Smoot-Hawley tariff (1930) triggered a global retaliatory spiral that reduced world trade by 65% and deepened the Great Depression.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — The infant industry and strategic sector arguments',
-          prompt: 'Evaluate when protectionism may be theoretically justified: infant industries and strategic sectors.',
-          hint: 'Infant industry (Hamilton, List): new domestic industry cannot compete with established foreign producers due to scale disadvantage. Temporary protection → domestic industry grows → learning-by-doing → eventually competitive. Condition for validity: industry must become competitive without permanent protection; protection must be temporary. Successful examples: South Korea (POSCO steel, Samsung, DRAM chips), Japan (Toyota), Taiwan (TSMC semiconductors). Failed examples: UK steel protection 1970s, EU agriculture (CAP). Strategic sectors: national security (semiconductors, defence) justifies protection regardless of efficiency.',
-          model: 'The infant industry argument provides the most theoretically coherent case for temporary protection. A new domestic industry may face higher unit costs than established foreign competitors — not because it is intrinsically less efficient, but because it lacks the accumulated learning-by-doing experience and scale economies that incumbents have. Temporary protection can allow the industry to reach the scale needed to compete internationally. The historical evidence is mixed but not uniformly negative: South Korea\'s industrial policy of protecting infant industries in steel, automobiles, and semiconductors during the 1960s-80s successfully created world-class competitive industries (POSCO, Samsung, Hyundai) that no longer require protection. However, the infant industry argument requires discipline — protection must be temporary and conditional on achieving competitiveness, not a permanent shield for inefficient production. The UK\'s long-term protection of its steel and automotive industries in the 1970s failed this test. Strategic sector arguments are more robust: civilian control of semiconductor manufacturing (TSMC in Taiwan), food security, and defence industrial base are legitimate grounds for protection that cannot be evaluated on pure efficiency criteria.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Protectionism as employment protection: a legitimate short-run concern?',
-          prompt: 'Evaluate the political economy of protectionism — protecting jobs — and why this argument, while economically weak, has political force.',
-          hint: 'Employment argument: imports from low-wage countries displace domestic workers → structural unemployment → regional deprivation (Midlands manufacturing, Rust Belt in US). Short-run social cost is concentrated and visible; long-run efficiency gain is dispersed and gradual. Stolper-Samuelson: trade liberalisation reduces real wages of the competing factor — low-skill workers in rich countries. Adjustment costs are real: retraining takes years, geographic mobility is limited. HOWEVER: protection doesn\'t create net jobs long-run (higher prices reduce spending elsewhere). Better solution: adjustment assistance + trade liberalisation.',
-          model: 'The employment protection argument for protectionism is economically weak but politically compelling. Concentrated job losses in import-competing industries — UK steel towns, former manufacturing regions — create visible social costs that generate strong political pressure for protection. The Stolper-Samuelson theorem formalises this: trade liberalisation does reduce the real wages of workers competing most directly with cheap imports. These adjustment costs are real, concentrated geographically, and often intergenerational in their effects. However, the economic case for using trade protection to preserve these jobs is poor: protection raises prices for all consumers (including workers elsewhere in the economy), reduces resource allocation to more competitive sectors, and ultimately cannot preserve jobs in structurally uncompetitive industries indefinitely. The superior policy response is trade adjustment assistance — helping displaced workers retrain and relocate — combined with trade liberalisation rather than protection. The UK\'s failure to provide adequate adjustment assistance for communities affected by deindustrialisation is a domestic policy failure, not a market failure remedied by protectionism.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Weighing the case: context, conditionality, and the UK\'s specific position',
-          prompt: 'Weigh the protectionist arguments against the free trade case for the UK specifically.',
-          hint: 'UK context: services-dominated economy (financial services, professional services 80%+ of GDP). UK has CA in financial services and advanced manufacturing — not mass manufacturing. For the UK, protectionism of mass manufacturing would preserve structurally uncompetitive industries at high consumer cost. UK trade policy challenge post-Brexit: balancing trade agreements with regulatory alignment. UK strategic interests: semiconductors (FDI attraction policy), food security (domestic food production), defence (BAE Systems). The infant industry argument is weakest for a developed country with mature capital markets — private finance should fund growing industries.',
-          model: 'The case for protectionism is weakest for a developed, open economy like the UK. The UK\'s revealed comparative advantage lies in financial services, insurance, professional services, education, and advanced manufacturing — not in the labour-intensive or capital-intensive industries most threatened by import competition. Protecting mass manufacturing imports would impose higher consumer prices on UK households with limited benefit: the industries are structurally uncompetitive (reflecting genuine comparative disadvantage) rather than merely in an infant stage. The UK also has well-developed capital markets, reducing the market failure justification for infant industry protection: private venture capital and industrial finance can fund promising new industries without trade barriers. Where strategic arguments apply — semiconductors (critical for defence and AI), food security margins — targeted interventions are more appropriate than broad tariff barriers. Post-Brexit, the UK\'s greatest trade policy challenge is not imposing new barriers but managing the non-tariff barrier costs already introduced through reduced EU trade integration.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a judgement on whether the case for protectionism is compelling for the UK.',
-          hint: 'The infant industry and strategic sector arguments provide legitimate but narrow justifications for targeted protection. General protectionism (tariffs on consumer imports) is harmful: raises prices, invites retaliation, slows productivity growth. For the UK, free trade with appropriate adjustment policy is superior. The employment argument is best addressed through domestic labour market and adjustment policies, not trade barriers.',
-          model: 'The case for general protectionism is not compelling for the UK. The efficiency costs — higher consumer prices, retaliation risks, reduced productivity growth — outweigh the benefits in most contexts, and the UK\'s comparative advantages lie in sectors (financial services, advanced technology, education) that benefit from open trade rather than protection. The infant industry argument carries more weight in developing economies with genuinely nascent industries, where capital market imperfections and learning-by-doing justify temporary barriers. For the UK, strategic sector arguments (semiconductors, food security, defence) provide the most robust justification for targeted intervention — but these are narrow, conditional cases that do not support broad protectionism. The appropriate response to trade adjustment costs is domestic policy: retraining programmes, regional investment, and adjustment assistance — not trade barriers that impose permanent consumer price increases to delay inevitable structural change.'
-        }
-      ]
     }
+
   ]
 };

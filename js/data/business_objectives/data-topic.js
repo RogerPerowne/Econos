@@ -132,61 +132,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The public-private hybrid (privatised public utilities: BT, British Gas, water companies, rail franchises) attempts to use market incentives for public service objectives. Results are mixed: water companies took profit while under-investing in infrastructure. Rail franchises relied on government subsidies. The hybrid faces principal-agent problems at multiple levels.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'bo-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: business objectives',
-      question: 'Evaluate the view that firms always aim to maximise profits. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define profit maximisation and explain why it is the standard economic assumption. Introduce the main alternatives.',
-          hint: 'Profit maximisation: produce where MR = MC, set price on demand curve → maximum profit. Standard assumption in neoclassical theory. Principal-agent problem: when ownership and control diverge (shareholders vs managers), managers may pursue alternative objectives. Alternatives: revenue maximisation (Baumol), growth maximisation (Marris), satisficing (Simon), CSR.',
-          model: 'Profit maximisation — producing where marginal revenue equals marginal cost — is the cornerstone assumption of neoclassical microeconomic theory. It predicts that firms set price and output to generate the maximum possible profit for shareholders. However, this assumption requires all decision-makers within the firm to act in shareholders\' interests, which is credible only when ownership and control coincide. As firms grow and ownership separates from management, the principal-agent problem arises: managers pursue objectives that diverge from shareholder profit maximisation. This essay evaluates whether profit maximisation remains the dominant objective, or whether alternative managerial and institutional objectives better describe real-world firm behaviour.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — The case for profit maximisation: competitive pressure and shareholder governance',
-          prompt: 'Explain why competitive markets and shareholder governance push firms toward profit maximisation.',
-          hint: 'Product market competition: firms that persistently fail to maximise profit will be undercut by rivals, lose market share, and exit. Capital market discipline: shareholders can remove managers (threat of hostile takeover, AGM vote). Executive pay linked to shareholder returns (share options, performance bonuses). Evidence: corporate governance reforms (Cadbury Code, shareholder say on pay) have tightened this alignment.',
-          model: 'Competitive markets impose a strong discipline on firms: those that fail to maximise profit are undercut by cost-minimising rivals, lose market share, and face eventual exit. This product market pressure drives firms toward cost efficiency and profit maximisation as a condition of survival, regardless of managerial preferences. In addition, modern corporate governance has strengthened shareholder control over managers: executive compensation linked to share price performance (via options and bonuses), say-on-pay votes at AGMs, and the threat of hostile takeover all align managerial incentives with shareholder returns. Where these governance mechanisms are strong — as in Anglo-American capital markets — profit-maximising behaviour is most closely approximated. For small owner-managed firms, the distinction is moot: owner-managers are their own principals, so profit maximisation is the natural objective.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Revenue and growth maximisation: managerial alternatives',
-          prompt: 'Explain Baumol\'s revenue maximisation and Marris\'s growth maximisation as alternatives when ownership and control diverge.',
-          hint: 'Baumol: managers\' pay and status correlated with firm size (revenue), not profit. Revenue max: produce where MR = 0 (elastic demand point) — more output, lower price than profit max. Evidence: firm size as proxy for CEO pay. Marris: managers value firm growth (larger empire, harder to take over). Growth max: dividend sacrifice to reinvest in expansion — balances growth rate against takeover risk. Penrose growth limit: managerial capacity constrains growth.',
-          model: 'When ownership and control diverge, managers can pursue objectives that serve their own interests at shareholders\' expense. Baumol\'s revenue maximisation model argues that managerial pay and status are more closely correlated with firm size (revenue) than profit — so managers maximise revenue subject to a profit constraint sufficient to satisfy shareholders. This produces a higher output and lower price than profit maximisation: the firm expands sales volume at the cost of margin. Marris\'s growth maximisation model similarly predicts that managers prefer empire-building: rapid firm growth brings prestige, higher pay, and reduced takeover vulnerability. Growth-maximising firms sacrifice short-run profit to reinvest in expansion — consistent with the observed tendency of large firms to under-distribute profits relative to what shareholders would prefer.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Satisficing and CSR: bounded rationality and stakeholder objectives',
-          prompt: 'Evaluate Simon\'s satisficing and the growing role of CSR as departures from profit maximisation.',
-          hint: 'Simon: managers face bounded rationality — cannot calculate the true profit-maximising output. Satisfice: achieve \'good enough\' profit that satisfies all stakeholders. Evidence: firms set target ROE rather than maximising. CSR: firms sacrifice profit for social and environmental goals. Friedman counter: CSR is shareholders\' money — managers have no right to donate it. But CSR can be profit-maximising long-run (brand value, regulatory risk reduction, talent recruitment).',
-          model: 'Herbert Simon\'s satisficing model challenges profit maximisation on cognitive rather than motivational grounds: managers face bounded rationality — limited information and computational capacity mean the true profit-maximising output cannot be calculated. Instead, firms set satisficing targets (e.g. a 15% return on equity) and seek the first strategy that meets them, rather than exhaustively optimising. This produces more stable and predictable behaviour than pure optimisation. CSR represents a further departure: firms increasingly sacrifice short-run profit for social and environmental goals — ESG reporting, net-zero commitments, charitable giving. Milton Friedman famously argued that CSR misuses shareholders\' money, but the modern counter-argument is that CSR is often profit-maximising in the long run through brand value creation, regulatory risk reduction, and the ability to attract talent who prefer ethical employers.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Industry, ownership structure, and market conditions matter',
-          prompt: 'Weigh the different objectives against each other with reference to the type of firm, market structure, and time horizon.',
-          hint: 'Profit maximisation more likely: competitive markets (survival discipline), owner-managed firms (no agency problem), strong shareholder governance. Alternative objectives more likely: large oligopolies (slack reduces competitive pressure), separation of ownership and control (managerial discretion), public companies (CSR obligations). Short run vs long run: even CSR-oriented firms must be profitable long-run. Public sector: explicitly pursues non-profit objectives.',
-          model: 'The truth is context-dependent. Profit maximisation is most plausible for owner-managed SMEs and firms in highly competitive markets where survival requires cost efficiency. In these cases, competitive pressure substitutes for direct shareholder control. Alternative objectives are more plausible in large corporations with dispersed ownership, strong market power that generates organisational slack, and managerial discretion unchecked by competitive pressure. The time horizon also matters: in the short run, firms may satisfy multiple stakeholders (revenue growth, CSR, employee welfare); in the long run, they must generate sufficient return to retain capital. The empirical evidence is mixed — surveys show managers prioritise earnings per share and return on equity as targets, which are closer to profit maximisation than to revenue or growth maximisation. But the persistent under-distribution of cash flows by large tech companies (Apple, Alphabet) in favour of retention and empire-building is more consistent with managerial growth objectives.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a nuanced judgement: profit maximisation is the dominant goal in competitive markets, but managerial objectives prevail where governance is weak and market power is strong.',
-          hint: 'Profit maximisation: best approximation for competitive, owner-managed firms. Managerial alternatives: most significant in oligopolies with strong market power and dispersed ownership. Satisficing: probably the most realistic description of actual decision-making processes. The \'always\' claim is clearly false — both theory and evidence point to objective plurality.',
-          model: 'The claim that firms always aim to maximise profits is a useful theoretical benchmark but an incomplete description of actual behaviour. Competitive markets and shareholder governance create strong incentives toward profit maximisation — and for owner-managed firms in competitive industries, it is a reasonable approximation. However, the separation of ownership and control in large corporations introduces managerial objectives: revenue maximisation, growth maximisation, and satisficing are all credible descriptions of decision-making in different organisational contexts. CSR objectives add a further layer. The empirical evidence suggests that most managers pursue a combination of objectives — profit as a constraint rather than the sole goal — with the weight given to each depending on competitive pressure, governance quality, and ownership structure. The question is therefore not which single objective firms always pursue, but rather what combination of objectives applies in a given market and institutional context.'
-        }
-      ]
     }
+
   ]
 };

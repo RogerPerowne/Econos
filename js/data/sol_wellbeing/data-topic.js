@@ -318,61 +318,7 @@ window.ECONOS_TOPIC = {
         text: 'Inflation Measurement & Costs builds on the price level concepts introduced here — how we measure the cost of living, and who gains and loses from inflation.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'sw-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: standard of living and wellbeing',
-      question: 'Evaluate the view that GDP per capita is an inadequate measure of living standards and that governments should use alternative indicators to guide policy. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define GDP per capita and living standards. Introduce the debate: does GDP per capita adequately capture welfare, or do composite and subjective measures provide a more complete picture?',
-          hint: 'GDP per capita = total output/population. Measures material living standards. Limitations: ignores distribution, non-market activity, environmental degradation, subjective wellbeing. Alternatives: HDI, GNI, Happy Planet Index, ONS wellbeing framework.',
-          model: 'GDP per capita — the value of all goods and services produced in an economy divided by the population — is the most widely used indicator of material living standards. It offers comparability across countries and time, reflects productive capacity, and correlates with key outcomes such as life expectancy and educational attainment. However, it captures only market-priced output and ignores the distribution of income, environmental sustainability, unpaid work, leisure, and subjective wellbeing. This essay evaluates whether these limitations are sufficiently serious to require governments to supplement or replace GDP per capita with richer indicators when setting policy priorities.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — GDP per capita fails to capture distribution and inequality',
-          prompt: 'Explain how GDP per capita can rise while median household welfare stagnates or falls if income growth is concentrated at the top of the distribution. Use UK evidence.',
-          hint: 'UK 2010-2019: aggregate GDP grew but median real wages stagnant. Gini coefficient rose. GDP per capita hid growing inequality. Simon Kuznets himself warned "welfare of a nation can scarcely be inferred from national income".',
-          model: 'The most significant limitation of GDP per capita as a welfare indicator is its insensitivity to income distribution. As a mean rather than a median measure, GDP per capita rises when the incomes of the wealthiest grow rapidly, even if the majority of the population experiences no improvement. In the UK between 2010 and 2019, real GDP per capita grew modestly, yet median real wages were essentially stagnant, food bank usage tripled, and poverty rates among working households rose. The architect of national income accounting, Simon Kuznets, explicitly warned that "the welfare of a nation can scarcely be inferred from a measurement of national income" — a caution that governments largely ignored for decades. The HDI partially addresses this by incorporating life expectancy and education, but composite indices remain susceptible to the same averaging problem.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — GDP ignores environmental sustainability and non-market welfare',
-          prompt: 'Explain how GDP counts environmental depletion as positive output and ignores unpaid work, leisure, and subjective wellbeing — all of which matter for true welfare.',
-          hint: 'Oil spill → clean-up costs add to GDP. Deforestation → timber adds to GDP but natural capital lost. Unpaid care (£1.24 trillion in UK). Mental health crisis not captured. Happy Planet Index: Costa Rica outranks USA.',
-          model: 'GDP systematically mismeasures welfare in two further ways. First, it treats environmental depletion as positive: extracting finite oil reserves, clearing forests for agriculture, and even cleaning up pollution all add to measured output, while the loss of natural capital — which sustains future welfare — is invisible. This violates sustainability: GDP can rise while the foundations of long-term welfare are eroded. Second, GDP excludes non-market welfare: the UK Office for National Statistics estimates the value of unpaid household production (caring, cooking, volunteering) at over £1.24 trillion annually — nearly 60% of measured GDP — yet none appears in national accounts. Mental health, leisure time, and social connection also matter for welfare but are absent from GDP. Alternative measures like the Genuine Progress Indicator (GPI) explicitly adjust for these factors, typically showing a divergence from GDP trends after the 1970s.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — GDP per capita remains the most practical and internationally comparable measure',
-          prompt: 'Argue that despite its limitations, GDP per capita is robust, universally comparable, and highly correlated with good outcomes — and that composite measures have their own methodological weaknesses.',
-          hint: 'Cross-country comparisons: GDP strongly predicts life expectancy, infant mortality, education outcomes. HDI components are collinear with GDP. Composite indices are subjective in weighting. Governments need a simple, consistent metric for fiscal and monetary policy.',
-          model: 'Despite its well-documented limitations, GDP per capita retains important advantages. It is universally comparable across 190+ countries, regularly updated, and robust to political manipulation. Crucially, it correlates strongly with human development outcomes: in cross-country data, GDP per capita explains approximately 80% of the variation in life expectancy, infant mortality, and educational attainment — suggesting it captures much of what matters for welfare. The HDI\'s three components (income, health, education) are themselves highly collinear with GDP per capita, meaning the composite index adds limited information. Composite indices also embed subjective value judgements in their weightings — how much more does an extra year of life expectancy matter than an extra year of schooling? — that are not grounded in revealed preference and can vary arbitrarily between researchers.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — The right measure depends on the policy question',
-          prompt: 'Evaluate whether different indicators are appropriate for different policy purposes, and assess the practical feasibility of government adopting multi-dimensional wellbeing frameworks.',
-          hint: 'GDP: monetary policy, fiscal sustainability, international investment. HDI: human capital investment priorities. ONS wellbeing: social policy, mental health, inequality. New Zealand Wellbeing Budget (2019) as example of multi-framework government.',
-          model: 'A nuanced evaluation recognises that no single indicator can serve all policy purposes, and the choice of measure should be dictated by the policy question at hand. GDP per capita remains the most appropriate guide for monetary policy (output gap), fiscal sustainability (debt-to-GDP), and international competitiveness. For human capital investment priorities, HDI comparisons reveal where education and health are underperforming relative to income. For social policy — housing, mental health, community, environment — the ONS\'s national wellbeing framework and subjective wellbeing data provide insights that GDP cannot. New Zealand\'s 2019 Wellbeing Budget explicitly allocated resources based on multi-dimensional wellbeing indicators, embedding five government priorities beyond GDP. This approach represents a practical model for governments seeking to move beyond GDP without abandoning its analytical utility entirely.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a judgement: is GDP per capita inadequate, and should governments adopt alternative indicators?',
-          hint: 'GDP is inadequate as a sole welfare measure but remains indispensable as a component. Governments should use a dashboard of indicators, with GDP for economic management and composite/subjective measures for social policy. Commit to a conditional recommendation.',
-          model: 'In conclusion, GDP per capita is inadequate as a sole measure of living standards because it systematically ignores distribution, environmental sustainability, non-market welfare, and subjective wellbeing — all of which matter for policy. However, it is not without value: its universality, precision, and correlation with human development outcomes make it indispensable for economic management. The appropriate response is not to replace GDP but to supplement it with a dashboard of indicators — HDI for human development, the ONS wellbeing framework for social policy, and adjusted net savings for sustainability. Governments that set targets exclusively around GDP risk optimising for a narrow dimension of welfare at the expense of health, equity, and environmental sustainability. The UK government\'s adoption of ONS wellbeing reporting alongside GDP represents a step in the right direction, though embedding wellbeing fully in budget decisions remains a work in progress.'
-        }
-      ]
     }
+
   ]
 };

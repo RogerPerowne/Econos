@@ -308,53 +308,7 @@ window.ECONOS_TOPIC = {
         text: "A* fiscal policy evaluation structure: <em>'While fiscal expansion is effective when [conditions: spare capacity, ZLB, high-MPC targeting], its effectiveness is limited when [conditions: full capacity, crowding out, debt unsustainability]. The net assessment depends on [multiplier size, debt position, monetary coordination].'</em> Conditional conclusions always outperform absolute ones."
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'fiscal-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      question: 'Evaluate the view that fiscal policy is the most effective tool for managing aggregate demand. [25 marks]',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define fiscal policy and aggregate demand. State the central debate and signal your evaluative approach (conditional judgement).',
-          hint: 'Fiscal policy = G and T. AD = C + I + G + (X-M). State that fiscal policy directly shifts AD but effectiveness depends on multiplier, crowding out, debt position, and whether monetary policy can operate.',
-          model: 'Fiscal policy refers to the use of government spending (G) and taxation (T) to influence macroeconomic outcomes, principally aggregate demand (AD = C + I + G + X − M). Expansionary fiscal policy (↑G or ↓T) directly raises G — a component of AD — and creates multiplier effects as income circulates through the economy. Contractionary policy does the reverse, reducing AD to control inflation. Whether fiscal policy is the most effective demand-management tool depends on a range of contextual factors: the size of the fiscal multiplier, the degree of crowding out, the economy\'s position in the cycle, the sustainability of public debt, and the availability and effectiveness of monetary policy alternatives.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis — the case for fiscal policy',
-          prompt: 'Explain the direct AD impact and the multiplier mechanism. Argue why fiscal policy is uniquely powerful at the zero lower bound (ZLB).',
-          hint: 'G directly adds to AD (unlike monetary policy, which works indirectly via rates). Multiplier = 1/(1-MPC) — large with high MPC and spare capacity. At ZLB, monetary policy loses traction; fiscal policy remains effective (2009 stimulus packages). Automatic stabilisers act instantly.',
-          model: 'The primary strength of fiscal policy is its direct effect on aggregate demand. When the government increases spending on infrastructure, public services, or welfare, G rises immediately, shifting AD to the right without dependence on private sector behaviour. This contrasts with monetary policy, which influences AD indirectly via interest rates → investment → income — a transmission chain with 12–18 month lags and weak traction when business confidence is depressed. The fiscal multiplier amplifies this initial effect: an initial rise in G of £1 raises income, which raises consumption at the marginal propensity to consume (MPC), which raises income again — the total AD impact is £1/(1-MPC). With a high MPC (low-income targeted spending) and spare productive capacity, the multiplier can exceed 1.5. The 2008–09 global financial crisis illustrated fiscal policy\'s relative advantage when monetary policy hit the zero lower bound: the Obama stimulus package (ARRA, ~$830bn) and UK temporary VAT cut provided demand support that interest rate cuts could no longer deliver.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter-argument — limitations and monetary policy comparison',
-          prompt: 'Explain crowding out, time lags, and debt sustainability constraints. Compare with monetary policy\'s speed and independence advantages.',
-          hint: 'Time lags: recognition + decision + implementation = 12-24 months. Crowding out: ↑borrowing → ↑interest rates → ↓private investment. Debt: UK debt ~100% of GDP (2024) — constrained fiscal space. Monetary policy: faster (rates set monthly by MPC), independent of politics, credible.',
-          model: 'The effectiveness of fiscal policy is significantly constrained in practice. Discretionary fiscal expansion requires: a recognition lag (identifying the shock), a decision lag (parliamentary debate and budget process), and an implementation lag (contracting, spending, and distributing tax changes) — total delays of 12–24 months. In a fast-moving economic cycle, policy may take effect after the recession has already passed, risking pro-cyclical stimulus. Financial crowding out presents a further constraint: when the government borrows to finance deficits, the demand for loanable funds rises, pushing up interest rates and reducing private investment. In classical analysis, complete crowding out leaves net AD unchanged. Even partial crowding out reduces the multiplier. The UK\'s current debt position (~£2.7 trillion, ~100% of GDP) limits fiscal space further — large deficits may alarm bond markets, raising gilt yields and worsening the very crowding out the stimulus was meant to offset. By comparison, monetary policy can be adjusted monthly by the independent Bank of England MPC, operates with greater speed and political credibility, and can be fine-tuned continuously without the legislative process that constrains discretionary fiscal changes.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — context determines effectiveness',
-          prompt: 'Evaluate when fiscal policy is relatively more vs less effective. Consider automatic stabilisers, multiplier conditions, and the role of fiscal-monetary coordination.',
-          hint: 'Fiscal > monetary when: at ZLB, deep recession, high MPC targeting, large spare capacity. Monetary > fiscal when: modest downturn, functional transmission mechanism, debt constraints binding. Automatic stabilisers always work — but discretionary fiscal may not. Coordination (fiscal + QE) was key 2009-12.',
-          model: 'The relative effectiveness of fiscal versus monetary policy is fundamentally contingent rather than absolute. The Keynesian case for fiscal policy is strongest when: (1) the economy is at or approaching the zero lower bound on nominal interest rates, rendering conventional monetary policy unable to stimulate; (2) there is substantial spare capacity (negative output gap), meaning the multiplier is large (crowding out of real resources is low); (3) government spending is targeted at high-MPC groups (low-income households, unemployed) rather than tax cuts for high earners or corporations; and (4) automatic stabilisers are insufficient for the scale of the shock. Conversely, fiscal policy is relatively less effective when the economy operates near full capacity (multiplier small, crowding out high), debt is already elevated (market confidence constraints), or when the shock is supply-side in nature (fiscal demand stimulus is ineffective against supply constraints or stagflation). The 2009–12 period demonstrated that the two tools are complementary: the Bank of England\'s quantitative easing programme (purchasing £375bn of gilts) suppressed gilt yields, preventing the fiscal deficit from crowding out private borrowing — in effect, monetary policy enabled fiscal policy to work. This fiscal-monetary coordination represents the most effective demand-management framework.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Make a conditional judgement. Under what conditions is fiscal policy the most effective tool? Is monetary policy ever better?',
-          hint: 'Conditional conclusion: fiscal policy is the most effective tool specifically when monetary policy is constrained (ZLB), spare capacity is large, and spending is well-targeted. Otherwise, monetary policy\'s speed and independence make it preferable for routine stabilisation.',
-          model: 'Fiscal policy is not universally the most effective demand-management tool, but it is uniquely powerful in specific conditions: deep recessions where monetary policy is constrained by the zero lower bound, where spare capacity is substantial, and where government spending can be directed at high-multiplier uses. In these conditions — as in 2008–09 — fiscal expansion is necessary and effective where monetary policy alone is insufficient. In normal cyclical conditions, however, monetary policy\'s speed, political independence, and continuous adjustability make it the preferred primary instrument for fine-tuning AD. The automatic stabilisers embedded in fiscal policy — tax and welfare responses to the cycle — provide a first line of defence that requires no decision lag. Overall, the most effective framework combines monetary policy for routine stabilisation with fiscal policy held in reserve for crisis conditions, supported by independent fiscal oversight (OBR) to maintain long-run debt sustainability. Fiscal policy is the most powerful tool in the toolkit — but not one that should be deployed routinely without careful attention to its lags, costs, and debt implications.'
-        }
-      ]
     }
+
   ]
 };

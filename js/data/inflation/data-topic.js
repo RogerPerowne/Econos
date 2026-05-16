@@ -298,8 +298,6 @@ window.ECONOS_TOPIC = {
       }
     },
 
-
-
     /* ----- CARD 7 — Deflation ----- */
     {
       id: 'deflation',
@@ -343,61 +341,7 @@ window.ECONOS_TOPIC = {
         text: "Central banks target <strong>2%, not 0%</strong> because the costs are asymmetric. Modest inflation overshoots (3-4%) are manageable. Modest <em>undershoots</em> toward zero are dangerous. This is the strongest argument for the 2% target - use it in monetary policy questions."
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'causes'}), label: 'Test yourself →' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'inf-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: inflation',
-      question: 'Evaluate the view that monetary policy is the most effective tool for controlling inflation. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define inflation and briefly explain the main tools for controlling it. Introduce the debate between monetary and alternative policy instruments.',
-          hint: 'Inflation: sustained rise in the general price level. Main tools: monetary policy (Bank Rate, QE — targets demand-side inflation), supply-side policy (raises LRAS → reduces inflationary pressure), fiscal policy (contractionary fiscal policy reduces AD). The key question is whether monetary policy, specifically Bank Rate, is superior to alternatives. Demand-pull inflation: monetary policy is well-suited. Cost-push inflation: monetary policy creates a policy dilemma.',
-          model: 'Inflation — a sustained rise in the general price level — can arise from demand-side (demand-pull) or supply-side (cost-push) sources. The primary tool for controlling inflation in the UK is monetary policy: the Bank of England\'s Monetary Policy Committee sets Bank Rate to influence aggregate demand, with an inflation target of CPI 2%. However, fiscal policy (contractionary government spending or tax rises) and supply-side policies (reducing cost pressures, increasing productive capacity) can also address inflation. This essay evaluates whether monetary policy deserves its primacy as an inflation control tool, or whether the source of inflation determines which instrument is most effective.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — How monetary policy controls demand-pull inflation',
-          prompt: 'Explain the transmission mechanism through which Bank Rate controls demand-pull inflation.',
-          hint: 'Transmission mechanism: ↑ Bank Rate → ↑ mortgage rates, savings rates, borrowing costs → ↓ consumption (income effect for mortgage holders), ↓ investment → ↓ AD → ↓ inflationary pressure. Also: ↑ exchange rate → ↓ export competitiveness + ↓ import prices → ↓ CPI. BoE independence (1997) provides credibility: low inflation expectations → wage demands moderate → self-fulfilling disinflation. 2021-23 episode: BoE raised rates from 0.1% to 5.25% → inflation fell from 11.1% to 2%.',
-          model: 'Monetary policy works primarily through the interest rate transmission mechanism. When the Bank of England raises Bank Rate, commercial banks raise mortgage and borrowing rates: consumers with variable mortgages face higher debt service costs, reducing disposable income and spending; firms face higher investment costs, reducing capital expenditure. The resulting fall in aggregate demand reduces the output gap and eases inflationary pressure. An additional channel operates through the exchange rate: higher UK interest rates attract capital inflows → sterling appreciates → import prices fall → CPI falls directly. The 2021-23 tightening cycle illustrates this: the MPC raised Bank Rate from 0.1% to 5.25% between November 2021 and August 2023, contributing to the fall of CPI inflation from 11.1% to approximately 2% by mid-2024. Bank of England independence (granted 1997) enhances effectiveness by anchoring inflation expectations: if firms and workers believe the BoE will hit its 2% target, they moderate wage and price demands, reducing the sacrifice ratio.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Limitations: cost-push inflation and the policy dilemma',
-          prompt: 'Explain why monetary policy is a poor instrument for cost-push inflation and the trade-off it creates.',
-          hint: 'Cost-push inflation: SRAS shifts left → price level rises AND output falls → stagflation. Tightening monetary policy (↑ Bank Rate) to reduce inflation from SRAS shock worsens the output gap further. Easing to protect output worsens inflation. The classic policy dilemma: monetary policy cannot fix supply-side problems without worsening the other half of the dilemma. 2022 UK: energy price shock caused cost-push inflation — BoE could not address root cause (supply). Only supply-side policy (domestic energy production, energy efficiency, price caps) could address the source.',
-          model: 'Monetary policy\'s effectiveness is most compromised when inflation is cost-push rather than demand-pull. When SRAS shifts left — due to energy price shocks, supply chain disruption, or wage-price spirals — both output falls and prices rise simultaneously (stagflation). Raising Bank Rate to reduce inflation also reduces AD, worsening the output fall; easing policy to protect output worsens inflation. Neither approach resolves the problem, which lies on the supply side. The 2022 UK energy price crisis illustrates this acutely: the BoE faced CPI of 11.1% driven primarily by energy and food price shocks outside its control. Raising rates to 5.25% suppressed demand but could not address the root cause (energy supply restriction) and contributed to a near-recession. Supply-side interventions — energy price caps (the UK Energy Price Guarantee), domestic energy investment, and energy efficiency — were more directly targeted at the source of the inflation than monetary tightening.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Fiscal policy and supply-side alternatives',
-          prompt: 'Evaluate when fiscal policy or supply-side reform may be more effective at controlling inflation than monetary policy.',
-          hint: 'Contractionary fiscal policy (↑ taxes, ↓ G) reduces AD → reduces inflationary pressure. May be targeted more precisely than blunt interest rate changes. No exchange rate appreciation side effect. But: subject to political cycle, slow to implement, may worsen deficit short-run. Supply-side policy: raises LRAS → reduces inflationary pressure while maintaining output → no trade-off. But: long lags (education, infrastructure) — not suited to short-run stabilisation. Price controls (energy price caps): directly cap CPI component — fast-acting but create supply distortions.',
-          model: 'Contractionary fiscal policy — raising taxes or reducing government spending — can also reduce aggregate demand and inflationary pressure without the exchange rate appreciation that accompanies Bank Rate rises. In a coordinated setting, fiscal and monetary tightening together can achieve inflation control while maintaining more stable exchange rates. However, fiscal policy suffers from implementation lags (budget cycles, parliamentary process) and is subject to political constraints: governments facing elections are reluctant to raise taxes or cut spending, making fiscal policy pro-cyclical in practice. Supply-side policies represent the most direct response to structural inflationary pressure: education, infrastructure, and technology investment shift LRAS right, reducing inflation while maintaining output — a superior outcome to the AD-reducing instruments. However, supply-side reform takes years to produce measurable effects on the output gap, making it unsuitable for short-run inflation stabilisation.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Source of inflation determines the best instrument',
-          prompt: 'Weigh monetary policy against alternatives with reference to the type of inflation and the time horizon.',
-          hint: 'Key judgement: monetary policy is most effective for demand-pull inflation where the target (reducing excess AD) matches the instrument (raising borrowing costs). It is least effective for cost-push inflation where it creates a policy dilemma. The appropriate instrument depends on the source of inflation. For UK 2022-23 inflation: monetary policy was part of the solution but supply-side and price interventions addressed the structural causes more directly. BoE independence is a major strength — credibility amplifies effectiveness. Long-run: supply-side policy is the most durable solution to structural inflationary pressure.',
-          model: 'The most important evaluation dimension is the source of inflation. Monetary policy is clearly the most effective instrument for controlling demand-pull inflation: it directly targets excess aggregate demand, operates quickly through financial markets, and is enhanced by the credibility of Bank of England independence. The UK\'s successful return of CPI from 11.1% to target through the 2021-23 tightening cycle is strong evidence of its effectiveness in this context. However, monetary policy is a poor primary instrument for cost-push inflation: it addresses the symptom (high prices) rather than the cause (supply constraints), and creates a sacrifice of output that supply-side solutions do not. For cost-push inflation, targeted supply-side interventions — energy market reform, supply chain investment, competition policy to reduce mark-ups — are more effective at addressing the source without worsening the output gap. The optimal approach combines instruments: monetary policy for demand management, supply-side reform for structural competitiveness, and targeted fiscal measures for specific cost-push episodes.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a reasoned judgement: monetary policy is the best single tool for demand-pull inflation but not for cost-push, and long-run price stability ultimately requires supply-side foundations.',
-          hint: 'Monetary policy is the most effective short-run stabilisation tool for demand-pull inflation, and BoE independence gives it credibility that amplifies this effectiveness. But it is insufficient alone: cost-push inflation requires supply-side responses; long-run price stability requires productive capacity growth (LRAS shifting right). The "most effective" claim is valid for demand-pull scenarios but requires qualification for cost-push episodes.',
-          model: 'Monetary policy is the most effective single tool available to the UK for controlling inflation in the short to medium run, particularly for demand-pull episodes. Bank of England independence, the credibility of the 2% target, and the breadth of the interest rate transmission mechanism all enhance its effectiveness. However, the claim requires important qualification: monetary policy creates a policy dilemma for cost-push inflation, where tightening worsens the output gap without addressing the supply-side source of the price pressure. In these circumstances — as the 2022 energy shock demonstrated — supply-side interventions and targeted fiscal measures are more directly effective. Long-run price stability ultimately requires supply-side foundations: productive capacity that grows in line with demand, competitive markets that prevent mark-up inflation, and an institutional framework of BoE independence and fiscal responsibility. Monetary policy is the most effective stabilisation instrument; supply-side reform is the most durable one.'
-        }
-      ]
     }
+
   ]
 };

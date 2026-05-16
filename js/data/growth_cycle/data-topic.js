@@ -314,61 +314,7 @@ window.ECONOS_TOPIC = {
         text: "A* evaluation of UK growth policy: <em>'While real GDP has grown at ~1.2%/year since 2008, this masks a productivity stagnation, widening inequality (Kuznets), a persistent current account deficit, and environmental costs of carbon-intensive growth. Sustainable growth requires simultaneously: supply-side investment (education, R&D, infrastructure), demand stabilisation (monetary policy), and decarbonisation (green industrial policy).'</em>"
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'gc-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: the economic cycle',
-      question: 'Evaluate the view that governments should use fiscal and monetary policy to smooth the economic cycle and stabilise output around its trend rate. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define the economic (business) cycle and explain the four phases. Introduce the debate about whether active stabilisation policy is desirable or effective.',
-          hint: 'Economic cycle: fluctuations in real GDP around trend growth. Phases: boom (positive output gap) → downturn → recession (negative output gap) → recovery. Policy tools: fiscal (G, T) and monetary (interest rates). Debate: Keynesian stabilisation vs monetarist "rules not discretion".',
-          model: 'The economic cycle describes the periodic fluctuations in real GDP around its long-run trend rate of growth — alternating phases of boom (positive output gap, inflationary pressure), downturn, recession (negative output gap, rising unemployment), and recovery. These cyclical swings impose real welfare costs: booms generate inflation and asset bubbles, while recessions cause unemployment, income loss, and scarring effects on long-term productivity. Governments and central banks can deploy fiscal policy (changes in G and T) and monetary policy (interest rate adjustments) to dampen these fluctuations. This essay evaluates whether such active stabilisation policy is both theoretically justified and practically effective.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Active stabilisation can reduce the welfare costs of the cycle',
-          prompt: 'Explain how expansionary fiscal and monetary policy in a recession can close a negative output gap, restore employment, and prevent hysteresis (permanent scarring effects on the labour force).',
-          hint: 'Negative output gap → unemployment, demand deficiency. AD stimulus shifts AD right → closer to potential. Hysteresis: long-term unemployed lose skills, reducing LRAS. Preventing hysteresis is the strongest case for intervention. UK furlough scheme (2020) preserved employment.',
-          model: 'The strongest case for stabilisation policy rests on preventing hysteresis — the permanent scarring of productive capacity through prolonged recession. When workers are unemployed for extended periods, skills depreciate, labour force attachment weakens, and potential output falls permanently below its pre-recession trend. Active fiscal stimulus — such as the UK\'s 2020 furlough scheme, which directly subsidised 9.6 million jobs — can prevent this scarring by maintaining employment through the trough. Similarly, monetary easing (zero interest rates, quantitative easing) sustains investment and credit availability when private confidence collapses. These interventions address the Keynesian case for stabilisation: in deep recessions, market forces alone cannot rapidly restore full employment, and inaction has permanent costs.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Automatic stabilisers provide a first line of cyclical defence',
-          prompt: 'Explain how automatic fiscal stabilisers (progressive taxation, unemployment benefits) moderate the cycle without discretionary intervention, and argue this is less prone to timing lags.',
-          hint: 'Boom: tax revenue rises automatically (progressive rates), benefits fall → AD dampened. Recession: tax revenue falls, benefits rise → AD supported. No implementation lag. UK: automatic stabilisers estimated to reduce amplitude of cycle by ~25%.',
-          model: 'Automatic fiscal stabilisers — the self-correcting mechanisms built into the tax and benefit system — provide stabilisation without the implementation lags that afflict discretionary policy. In a boom, progressive income tax withdraws a larger share of rising incomes, and unemployment benefit expenditure falls automatically — both dampen the AD expansion. In recession, tax revenues fall and benefit payments rise, supporting household incomes and AD without any government decision-making. Academic estimates suggest automatic stabilisers reduce the amplitude of the economic cycle by approximately 25% in the UK. Because they operate immediately and symmetrically, automatic stabilisers are the most reliable stabilisation instrument — the argument for additional discretionary policy is strongest only when the cycle is severe enough to overwhelm their impact.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Time lags and government failure limit the effectiveness of discretionary policy',
-          prompt: 'Argue that discretionary fiscal and monetary policy faces recognition, decision, and implementation lags that can cause stabilisation policy to be pro-cyclical rather than counter-cyclical.',
-          hint: 'Recognition lag: 6-12 months before recession confirmed. Decision lag: parliamentary process for fiscal. Implementation lag: infrastructure spending takes years. Monetary: 12-18 month transmission lag. Result: stimulus arrives in recovery → overheats. Friedman\'s "long and variable lags".',
-          model: 'A fundamental challenge to active stabilisation is the problem of time lags, identified by Milton Friedman as "long and variable." The recognition lag (6–12 months before a recession is confirmed in GDP data), decision lag (fiscal measures require parliamentary approval), and implementation lag (infrastructure spending may take years to deploy) mean discretionary stimulus often arrives after the recession has ended — potentially overheating an already recovering economy. Monetary policy transmits with a 12–18 month lag through the banking system. The result can be pro-cyclical policy: fuel on the fire in the boom, and then stimulus arriving just as growth is self-sustaining, exacerbating the next boom-bust. This was arguably a contributing factor to the credit bubble of the mid-2000s, when monetary policy remained loose for too long.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — The case for stabilisation depends on the severity of the shock',
-          prompt: 'Evaluate how the magnitude of the shock (mild vs severe recession, symmetric vs asymmetric), the economy\'s self-correcting capacity, and the available policy space determine whether active stabilisation is warranted.',
-          hint: 'Mild cycle: let automatic stabilisers work. Severe exogenous shock (COVID, GFC): discretionary policy justified as markets cannot self-correct quickly. Policy space: low debt → fiscal space; near zero rates → constrained monetary space. UK post-2008: monetary "exhausted"; needed fiscal.',
-          model: 'The appropriate degree of active stabilisation depends critically on the nature and severity of the shock. For mild cyclical fluctuations, automatic stabilisers and the economy\'s self-correcting mechanisms (flexible prices, wage adjustment) are generally sufficient, and discretionary intervention risks the lag problem. For severe exogenous shocks — the Global Financial Crisis or the COVID-19 pandemic — market self-correction is too slow and the welfare costs of inaction (mass unemployment, firm failure, hysteresis) justify large-scale discretionary intervention. The available policy space also matters: post-2008, with Bank Rate near zero, conventional monetary policy was exhausted, making fiscal stimulus the only available tool. The UK\'s post-2008 austerity — cutting fiscal stimulus precisely when monetary policy was constrained — is widely regarded as having prolonged the recovery by failing to fill this policy gap.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a judgement: should governments actively smooth the economic cycle, and if so, which tools and under what conditions?',
-          hint: 'Yes to stabilisation — but primarily via automatic stabilisers and credible monetary policy for mild cycles. Reserve discretionary fiscal for severe shocks when monetary policy is constrained. Friedman\'s rule (constant money growth) is too inflexible; Keynesian fine-tuning is too prone to lags. The optimal policy is pragmatic, not ideological.',
-          model: 'In conclusion, governments should aim to smooth the economic cycle, but the appropriate tool depends on severity and context. Automatic fiscal stabilisers are the most reliable first-line instrument — operating immediately, symmetrically, and without discretionary lags. For mild fluctuations, monetary policy through an independent central bank provides sufficient counter-cyclical management without political distortions. Discretionary fiscal policy should be reserved for severe recessions — particularly when monetary policy is constrained by the zero lower bound — where the speed and scale of automatic stabilisers is insufficient to prevent hysteresis. The UK\'s post-2008 premature fiscal consolidation and COVID-era furlough scheme together illustrate both the dangers of withdrawing support too early and the effectiveness of timely large-scale intervention. The optimal approach is pragmatic rule-based flexibility, not rigid monetarist inaction or perpetual Keynesian fine-tuning.'
-        }
-      ]
     }
+
   ]
 };

@@ -132,54 +132,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'Regional variation in the NMW\'s effect is a sophisticated evaluation point. In London, median wage is £19/hour — NMW of £11.44 is well below equilibrium, meaning employment effects are minimal. In low-wage regions of northern England, median wages in some sectors approach the NMW — the floor is binding, closer to or above the competitive equilibrium in those areas. A uniform national NMW is therefore more likely to cause employment effects in low-wage regions than high-wage ones. This is why some economists advocate regional minimum wages — though this creates its own complications.'
-    },
-    {
-      id: 'labour_supply_nmw_essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay Scaffold: The Case for a National Minimum Wage',
-      lede: 'Write your own version of each paragraph, then reveal the model to compare. Focus on the monopsony twist — it\'s what separates a good answer from a great one.',
-      question: 'Evaluate the case for a National Minimum Wage. [25 marks]',
-      marks: 25,
-      timeGuide: '35–40 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: '3–4 sentences',
-          prompt: 'Define NMW. State what the standard competitive model predicts (unemployment). Signal that you will challenge this with the monopsony model and real-world evidence.',
-          hint: 'The examiner is looking for: definition, the theoretical tension, and a signpost to your analytical approach.',
-          model: 'The National Minimum Wage (NMW) — £11.44/hour for workers 21+ in 2024, branded the National Living Wage — sets a legal floor below which wages cannot fall. Standard competitive labour market theory predicts that a wage floor set above equilibrium will cause unemployment: firms demand less labour at the higher price, while more workers seek employment, creating a surplus. However, this prediction is contested: Card and Krueger\'s landmark 1994 study found no disemployment effects from US minimum wage increases, and the UK Low Pay Commission has found similar results. The monopsony model offers an explanation — in markets where employers have wage-setting power, a minimum wage can actually increase both wages and employment simultaneously.'
-        },
-        {
-          type: 'analysis',
-          label: 'Standard competitive model — the case against',
-          prompt: 'Draw the competitive labour market diagram with an NMW floor above equilibrium. Identify Q_d (employment falls), Q_s (labour supply rises), and the unemployment gap Q_s − Q_d.',
-          hint: 'Be precise: employment falls from Q* to Q_d, not from Q_s to Q_d. This is a common exam error.',
-          model: 'In a competitive labour market, the NMW acts as a price floor above the equilibrium wage W*. At the NMW, employers demand labour at Q_d (on the labour demand/MRP curve) — lower than the competitive employment level Q*. Workers supply labour at Q_s (on the labour supply curve) — higher than Q*. The result is a surplus of labour (Q_s − Q_d) — unemployment. Firms in the competitive model are at the efficient margin: any wage above W* makes some previously profitable employment unprofitable. This argument suggests the NMW destroys exactly the low-wage jobs it was designed to protect, particularly affecting young workers, those in low-skill roles, and firms in price-competitive industries like retail and hospitality.'
-        },
-        {
-          type: 'counter',
-          label: 'Monopsony model — the case for',
-          prompt: 'Draw the monopsony diagram: S = AC_L, MC_L above supply, MRP as demand. Show that monopsony sets W_m < W* and Q_m < Q*. Then show how a minimum wage up to W* raises both wages AND employment.',
-          hint: 'The key insight: monopsony produces below competitive output AND below competitive wages — the minimum wage corrects both distortions simultaneously.',
-          model: 'The monopsony model fundamentally changes the analysis. A monopsonist — a dominant buyer of labour — faces an upward-sloping supply curve: to hire more workers, it must raise the wage for all existing workers. The marginal cost of labour (MCL) therefore exceeds the supply curve (AC_L). Profit-maximising monopsonist hires where MCL = MRP at output Q_m, paying wage W_m — below both the competitive wage W* and workers\' MRP. A minimum wage set between W_m and W* raises wages and simultaneously increases employment toward the competitive level, because the minimum wage flattens the MCL curve for the monopsonist — the dominant strategy is now to hire more, not less. Many low-wage sectors in the UK exhibit monopsonistic features: the NHS is the dominant employer of nurses; large supermarket chains dominate in many local labour markets; social care is geographically concentrated. For these sectors, the monopsony model is the more relevant framework, explaining why Low Pay Commission research consistently finds small or zero disemployment effects from NMW increases.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Broader effects and limitations',
-          prompt: 'Evaluate beyond employment: effects on (1) poverty reduction; (2) inflation; (3) firm productivity; (4) regional variation. Be honest about limitations.',
-          hint: 'A strong evaluation identifies the conditions under which the NMW works well vs poorly — not just a list of pros and cons.',
-          model: 'Beyond employment effects, the NMW generates several further consequences. On poverty: it raises wages of the lowest-paid and reduces the Gini coefficient — though its poverty-reduction impact is limited because many minimum-wage workers are secondary earners in non-poor households (the "poverty-trap targeting" problem). On inflation: a wage floor raises firms\' costs, potentially feeding through to prices — though evidence of significant NMW-driven inflation is limited, suggesting firms absorb the cost through productivity improvement and reduced margins rather than price rises. On productivity: higher wages may improve worker morale, reduce turnover and absenteeism, and attract higher-quality workers — efficiency wage theory suggests that the positive effect on labour quality can offset some or all of the wage cost increase. A crucial limitation is regional variation: £11.44/hour is well below the market wage in London but approaches the market wage in some northern and rural labour markets, meaning disemployment risks are geographically concentrated.'
-        },
-        {
-          type: 'conclusion',
-          label: '3–4 sentences — conditional verdict',
-          prompt: 'Reach a clear verdict. Under what conditions is the NMW beneficial? Under what conditions harmful? What does the balance of evidence suggest?',
-          model: 'The balance of evidence supports a qualified case for the NMW. Where low-wage markets have monopsonistic characteristics — which is more common than the competitive model assumes — the NMW corrects a market failure by raising both wages and employment. The poverty reduction and inequality compression benefits are real, even if imperfectly targeted. The risks are most acute when the NMW is set above the competitive equilibrium in genuinely competitive, thin-margin labour markets, and in low-wage regions where the floor bites hardest. A well-calibrated NMW, set by an independent body like the Low Pay Commission using current evidence, is likely to do more good than harm — but the appropriate level is an empirical question, not a theoretical one, and the case grows weaker the higher the floor is set relative to median wages.'
-        }
-      ],
-      examEdge: 'The monopsony rebuttal is what separates A and A* answers from B answers on this question. Examiners explicitly credit candidates who know the Card-Krueger study (1994), the Low Pay Commission evidence, and the monopsony explanation. Avoid saying "studies show the NMW doesn\'t cause unemployment" without explaining WHY — the mechanism (monopsony correction) is the economic analysis, not the empirical assertion.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
+
   ]
 };

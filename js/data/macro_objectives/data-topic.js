@@ -304,61 +304,7 @@ window.ECONOS_TOPIC = {
         text: "A* answers consistently anchor analysis in real UK data: '...consistent with the UK\'s experience in 2022-23, when unemployment fell to 3.7% — below the NAIRU — and wage inflation accelerated to 7.8%, validating the short-run Phillips curve relationship.' Data-anchored answers always score higher than purely theoretical ones."
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'mo-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: macroeconomic objectives',
-      question: 'Evaluate the view that maintaining low inflation should be the primary macroeconomic objective for the UK government. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define the UK\'s macroeconomic objectives and explain why low inflation has been given priority via Bank of England independence.',
-          hint: 'UK objectives: growth, low inflation (CPI 2% target), low unemployment, current account balance, environmental sustainability. BoE independence (1997): delegated inflation targeting to central bank — signals that low inflation is the primary short-run objective. But the 5 objectives often conflict — is inflation the right priority? Other countries prioritise growth or employment (the Fed\'s dual mandate).',
-          model: 'The UK government pursues five macroeconomic objectives — economic growth, low inflation, low unemployment, current account stability, and environmental sustainability. Since 1997, operational independence of the Bank of England — with its primary remit to maintain CPI inflation at 2% — has institutionally prioritised low inflation as the anchor objective. This reflects the consensus that price stability provides the foundation for sustainable growth and employment. However, this prioritisation involves trade-offs: the short-run Phillips curve suggests that achieving low inflation may require higher unemployment, and the 2% inflation target may constrain growth in low-inflation recessions. This essay evaluates whether low inflation deserves its primacy.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Why low inflation is important: the case for priority',
-          prompt: 'Explain the economic and social costs of high inflation that justify its prioritisation.',
-          hint: 'Costs of inflation: (1) arbitrary redistribution from creditors to debtors (real value of savings eroded), (2) shoe-leather costs (firms and consumers economise on money holdings), (3) menu costs (frequent repricing), (4) international competitiveness (high inflation → exports expensive), (5) wage-price spiral risk. Uncertainty: high and variable inflation impairs investment decisions (firms cannot plan efficiently). Political economy: inflation erodes living standards visibly → political instability (Weimar, Zimbabwe, Venezuela). Central bank credibility: once lost, very costly to restore (Volcker recession 1981-82).',
-          model: 'High and variable inflation imposes substantial economic costs. It redistributes wealth arbitrarily from creditors and savers to debtors (eroding real asset values), reduces international competitiveness (UK exports become expensive relative to stable-inflation competitors), creates uncertainty that discourages long-term investment, and can trigger wage-price spirals that are costly to break. The UK\'s experience of double-digit inflation in the 1970s — combined with supply-side shocks — produced stagflation, requiring the deep 1980-81 recession to restore credibility. Central bank independence with a clear inflation target addresses the time-inconsistency problem: governments facing elections have incentives to allow excessive inflation for short-run growth gains; a rule-based independent central bank commits credibly to price stability, reducing inflation expectations and lowering the sacrifice ratio needed to achieve targets.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — The case for growth and employment as primary objectives',
-          prompt: 'Evaluate why economic growth and employment may deserve equal or greater priority than inflation.',
-          hint: 'Growth: long-run living standards are primarily determined by productivity growth and LRAS expansion — not inflation. Japan had 30 years of below-target inflation (deflation risk) and stagnant growth: shows inflation target too narrowly focused. Employment: hysteresis — long-term unemployment damages human capital, future productivity. Growth creates fiscal space for public services. US Fed has a dual mandate (price stability AND maximum employment) — arguably more balanced than UK single mandate. OBR vs BoE: growth forecasts and fiscal sustainability considerations argue for valuing growth alongside inflation.',
-          model: 'Long-run living standards are determined primarily by economic growth — the expansion of productive capacity — rather than price stability per se. A country with 2% inflation and 0.5% growth achieves the inflation target while delivering declining relative living standards (as the UK has experienced since 2008). Japan\'s experience is instructive: three decades of below-target inflation did not prevent economic stagnation — deflation risk became the primary concern. The Federal Reserve\'s dual mandate (price stability and maximum employment) reflects a more balanced approach: unemployment imposes its own substantial welfare costs (lost output, skill atrophy, social deprivation) that a narrow inflation focus underweights. Hysteresis further complicates the trade-off: if tight monetary policy to achieve 2% inflation causes unemployment to remain elevated, human capital depreciates and the natural rate of unemployment rises permanently — creating long-run costs that exceed the short-run inflation benefit.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Conflicts between objectives: when pursuing one undermines others',
-          prompt: 'Evaluate the key objective conflicts that challenge any single prioritisation.',
-          hint: 'Growth vs inflation: fiscal stimulus raises AD → growth + employment in short run → inflation risk (positive output gap). Growth vs BoP: growing economy sucks in imports → current account deficit widens → external vulnerability. Growth vs environment: GDP growth has historically been associated with carbon emissions (though decoupling is possible). Low inflation vs employment: at very low inflation (below 2%), deflation risk → higher real rates → lower investment → unemployment rises. Key evaluation: the "right" primary objective depends on the phase of the cycle — in recession, employment and growth; in boom, inflation; in structural supply shock, supply-side priorities.',
-          model: 'The fundamental problem with designating any single objective as primary is that the macroeconomic objectives conflict. The short-run Phillips curve embeds the inflation-unemployment trade-off: pursuing low inflation via monetary tightening creates unemployment; pursuing full employment risks exceeding the NAIRU and triggering accelerating inflation. Fiscal stimulus to achieve growth simultaneously risks inflation (demand-pull) and current account deficit (import leakage). These conflicts mean the optimal priority depends on the current economic context: in a recessionary period with negative output gap, growth and employment deserve priority; in an inflationary boom, price stability becomes paramount. A single, invariant prioritisation of inflation, regardless of economic conditions, risks sacrificing welfare in cases where the low-inflation objective imposes greater costs than the alternative.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Context-dependent prioritisation and the case for supply-side resolution',
-          prompt: 'Weigh the case for prioritising inflation against growth/employment with reference to the current UK context.',
-          hint: 'Supply-side resolution: only supply-side policy can simultaneously achieve growth, low inflation, and low unemployment (LRAS shift right). This is the A* resolution. But takes years. Short-run: the right priority depends on where the economy is. Post-pandemic 2022-23: inflation clearly the primary concern (11.1% CPI). Post-2024: inflation returning to target → growth and productivity the primary challenges. A single primary objective is inappropriate — the policy hierarchy should be context-dependent. UK productivity puzzle: persistent low productivity growth is the structural challenge — neither inflation targeting nor monetary policy addresses this directly.',
-          model: 'The most persuasive evaluation recognises that optimal objective prioritisation is context-dependent, not permanent. In a period of significantly above-target inflation — as the UK experienced in 2021-23 — price stability was clearly the appropriate primary focus: 11.1% inflation imposed real welfare costs and risked wage-price spiral dynamics that would have been far more costly to break later. In a period of near-target inflation with weak growth — as the UK faces entering 2025 — growth and productivity should move to the fore. The deeper issue is that monetary policy and inflation targeting address short-run demand management but not the UK\'s structural productivity weakness. The UK\'s productivity growth has averaged only ~0.5% per year since 2008, far below historical trends — a supply-side failure that determines long-run living standards far more than whether CPI averages 2.0% or 2.5%. Supply-side reform that shifts LRAS right is the only policy that simultaneously achieves higher growth, lower inflation, lower unemployment, and improved competitiveness — but it operates on a different timescale from monetary policy.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a reasoned judgement: low inflation is an important objective but its primacy depends on context, and supply-side growth should share the priority focus.',
-          hint: 'Low inflation is rightly prioritised when inflation is significantly above target — the costs of high inflation are real and credibility takes years to rebuild. But in a low-inflation, low-growth environment, prioritising the 2% target above all else may sacrifice growth unnecessarily. The most sophisticated answer advocates for context-dependent priority with supply-side structural reform as the long-run resolution.',
-          model: 'Low inflation is an important macroeconomic objective that deserves priority when inflation is significantly above target — the costs of high inflation and lost central bank credibility are real and restoration is costly. The UK\'s institutional framework of Bank of England independence with a 2% CPI target has delivered substantially lower and more stable inflation than the pre-1997 arrangement, and this credibility is worth preserving. However, the view that low inflation should always be the primary objective — subordinating growth and employment to the inflation target regardless of economic context — is too rigid. In a low-inflation recession or period of structural supply weakness, pursuing the 2% target too zealously imposes unnecessary unemployment and foregone growth. The UK\'s most pressing macroeconomic challenge entering the late 2020s is not keeping inflation at 2% but achieving the productivity growth that has eluded it since 2008. This requires supply-side reform that addresses investment, skills, and infrastructure — objectives that monetary policy and the inflation target cannot deliver.'
-        }
-      ]
     }
+
   ]
 };

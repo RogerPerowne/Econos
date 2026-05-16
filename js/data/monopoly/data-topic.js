@@ -133,54 +133,7 @@ window.ECONOS_TOPIC = {
         { term: 'Behavioural remedy', def: 'Impose conditions on firm behaviour (e.g. must supply rivals on fair terms) — preserves market structure but constrains conduct.' }
       ],
       examEdge: 'Structural vs behavioural remedies: structural (break up the firm, force divestiture) is cleaner and more durable — competition is embedded in market structure. Behavioural (conditions on conduct) is less disruptive but requires ongoing monitoring and is vulnerable to regulatory capture. CMA generally prefers structural remedies where possible. This distinction matters for essays on competition policy.'
-    },
-    {
-      id: 'monopoly_essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay Scaffold: Is Monopoly Always Harmful?',
-      lede: 'Work through each paragraph section. Write your own version first, then reveal the model paragraph to compare.',
-      question: 'Evaluate the view that monopoly is always harmful to consumers and to society as a whole. [25 marks]',
-      marks: 25,
-      timeGuide: '35–40 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: '3–4 sentences',
-          prompt: 'Define monopoly. State the standard welfare model\'s prediction (P > MC, DWL). Then signpost that you will argue harm is conditional — on contestability, regulation, and dynamic efficiency.',
-          hint: 'Avoid "In this essay I will…" — start with the economic concept, not a meta-statement.',
-          model: 'A monopoly exists where a single firm supplies a market, protected by barriers to entry that prevent rivals from competing away supernormal profits. The static welfare model predicts that monopoly is harmful: the profit-maximising output (MR = MC) lies below the competitive level, price exceeds marginal cost, and a deadweight welfare loss triangle is created — surplus that neither consumer nor producer captures. However, this verdict is not universal. Whether monopoly harms consumers depends on the degree of contestability, how the firm is regulated, and whether supernormal profits fund the dynamic efficiency that benefits consumers in the long run.'
-        },
-        {
-          type: 'analysis',
-          label: 'The static welfare case against monopoly',
-          prompt: 'Develop the monopoly diagram argument. Identify: (1) P > MC → allocative inefficiency; (2) P > min AC → possible productive inefficiency; (3) DWL triangle. Anchor with a real example.',
-          hint: 'Refer explicitly to the diagram — name the curves, the triangles, and the magnitudes.',
-          model: 'The monopoly diagram illustrates the harm clearly. Profit-maximising output Q_m is set where MR = MC; at this output, price P_m is read off the demand curve and exceeds MC. This violates allocative efficiency (P ≠ MC) — resources are under-allocated to this market relative to the social optimum. The DWL triangle between Q_m and the competitive output Q_c represents trades that would have benefited both parties but do not occur. Consumer surplus shrinks significantly: the rectangle (P_m − AC) × Q_m is transferred to the producer as supernormal profit, and the DWL triangle is destroyed altogether. In UK pharmaceutical markets, branded drugs command prices 10–100× marginal production cost during the patent period — a large static welfare cost born by the NHS and patients.'
-        },
-        {
-          type: 'counter',
-          label: 'Three counter-arguments',
-          prompt: 'Present three reasons why monopoly may not always be harmful: (1) natural monopoly cost advantage; (2) Schumpeterian dynamic efficiency; (3) contestability discipline.',
-          hint: 'Each counter-argument should be one focused sentence of theory plus one example.',
-          model: 'Three counter-arguments challenge the blanket verdict. First, <strong>natural monopoly</strong>: where LRAC is still falling at market output, a single firm serves consumers at lower cost than competing firms could — water distribution and rail track are clear examples where fragmentation would raise costs. Second, <strong>Schumpeterian dynamic efficiency</strong>: supernormal profits finance R&D that generates the innovations — vaccines, operating systems, new materials — that raise living standards over time. Patents are the deliberate policy expression of this trade-off: 20 years of monopoly pricing in exchange for the innovation that ultimately benefits all consumers. Third, <strong>contestability</strong>: a monopolist facing credible entry threats prices near AC, sacrificing supernormal profit to deter hit-and-run entrants — the harm predicted by the static model does not materialise if barriers are low.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Weighing the arguments',
-          prompt: 'Evaluate the strength of the counter-arguments. When does the Schumpeter defence hold? When does it fail? How does the type of monopoly (natural vs strategic vs tech) affect the verdict?',
-          hint: 'Strong evaluation uses evidence and distinguishes cases — "it depends on X because…"',
-          model: 'The strength of the counter-arguments varies by industry. The Schumpeter defence is strongest in pharmaceutical and semiconductor markets, where the costs of innovation are large, upfront and uncertain, and patent protection genuinely drives investment that would not occur under competition. It is weakest in industries where incumbents use market power to suppress rather than fund innovation — Big Tech acquiring potential rivals (Facebook/Instagram, Google/YouTube) to eliminate competitive threats rather than innovate. The natural monopoly argument is compelling for physical network infrastructure (pipes, wires, rail track) but much weaker for digital platforms, where the cost structure is different. Contestability analysis adds the most nuance: Google\'s 92% search share looks alarming under the static model, but if entry barriers are low, the harm may be overstated — though in practice, data accumulation and network effects create substantial entry barriers that make Google\'s position durable rather than contestable.'
-        },
-        {
-          type: 'conclusion',
-          label: '3–4 sentences — conditional verdict',
-          prompt: 'Reach a clear, conditional conclusion. State the conditions under which monopoly IS harmful vs when it is NOT. Avoid "it depends" without stating what it depends on.',
-          model: 'Monopoly is harmful when barriers are strategic rather than natural, when supernormal profits are retained rather than reinvested in R&D, and when the market is not contestable — these conditions characterise many Big Tech and branded consumer goods markets. Regulation — AC pricing for natural monopoly, RPI-X price caps, CMA merger control — can substantially reduce the harm without forfeiting scale economies. The Schumpeter defence justifies patent-protected monopoly in innovation-intensive industries, but only when the monopoly period is finite and competition resumes after patent expiry. The verdict therefore depends on the source of market power and whether the regulatory framework is effective: monopoly is a problem to be managed, not a universal market failure verdict.'
-        }
-      ],
-      examEdge: 'The most common weakness in monopoly essays is treating the static welfare model as the full story. Examiners reward candidates who explicitly distinguish static and dynamic efficiency, who apply contestability theory rather than just counting firms, and who use specific UK evidence (CMA cases, patent system, utility regulation) rather than generic statements.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
     }
+
   ]
 };

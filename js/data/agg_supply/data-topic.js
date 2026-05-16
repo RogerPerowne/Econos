@@ -303,61 +303,7 @@ window.ECONOS_TOPIC = {
         text: 'A* macro answers <strong>estimate the size of the output gap</strong>, not just its direction. \'A negative output gap of approximately 2-3% of GDP suggests significant spare capacity — sufficient for AD stimulus without triggering inflation.\' Quantification is the mark-up.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'as-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: LRAS and fiscal policy',
-      question: 'Evaluate the view that fiscal policy is the most effective way to increase a country\'s long-run productive potential. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define long-run productive potential and briefly introduce the Classical vs Keynesian debate about what shifts LRAS.',
-          hint: 'Long-run productive potential = the maximum sustainable output the economy can produce (LRAS at Y*). Fiscal policy can shift LRAS via public investment, education, and infrastructure. But supply-side reforms and private investment also shift LRAS — the debate is about effectiveness.',
-          model: 'A country\'s long-run productive potential — represented by a rightward shift in LRAS — depends on the quantity and quality of factors of production: labour, capital, enterprise, and technology. Fiscal policy can attempt to expand this potential through public investment in infrastructure, education, and R&D. However, Classical economists question whether government spending is the most effective route, favouring private-sector-led supply-side reforms instead. This essay evaluates whether fiscal policy is indeed the most effective instrument.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Public investment and LRAS',
-          prompt: 'Explain how fiscal policy can shift LRAS through infrastructure, education, and R&D spending.',
-          hint: 'Mechanism: public investment → raises MPC (labour productivity) and capital stock → LRAS shifts right. Infrastructure (roads, broadband) reduces transport costs, enabling specialisation. Education raises human capital — skills and knowledge that persist long-term. R&D creates technology spillovers (positive externalities) that the private sector under-provides. UK: HS2, apprenticeship funding as examples.',
-          model: 'Fiscal policy can directly expand productive potential through public investment. Infrastructure spending — such as digital broadband or transport networks — reduces distribution costs and allows greater specialisation, shifting LRAS rightward. Education and skills investment raises human capital: a more educated labour force is more productive, adaptable, and innovative. R&D subsidies address the market failure of positive externalities: since firms cannot capture all benefits of innovation, they under-invest — government funding bridges the gap. The UK\'s industrial strategy periods (1960s, 2017) illustrate this logic, with mixed but not negligible success in targeted sectors.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Supply-side tax and deregulation (market-based approach)',
-          prompt: 'Explain how non-spending fiscal tools (tax cuts, deregulation) can shift LRAS through private investment incentives.',
-          hint: 'Corporation tax cuts → higher post-tax returns on investment → private capital accumulation → LRAS right. Income tax/NI cuts → higher participation rate and labour supply → LRAS right. Deregulation → reduces firm costs. These avoid \'crowding out\' by stimulating private rather than public investment.',
-          model: 'Beyond direct spending, fiscal policy also includes tax and regulatory tools that influence private sector incentives. Cuts in corporation tax raise the post-tax return on investment, incentivising capital accumulation by firms — which is ultimately a stronger driver of LRAS growth than government capital, because private firms face market discipline and allocate capital more efficiently. Income tax and National Insurance reductions raise labour supply by improving work incentives — expanding the economically active workforce and shifting LRAS right. These market-based fiscal tools sidestep the crowding-out problem: rather than substituting for private investment, they complement and catalyse it.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Keynesian multiplier vs Classical crowding out',
-          prompt: 'Evaluate the crowding out argument and supply-side alternatives to fiscal expansion.',
-          hint: 'Classical: government borrowing raises interest rates → crowds out private investment → no net LRAS gain. Ricardian equivalence: households anticipate future taxes and save instead of spending. Supply-side reform (labour market flexibility, competition policy) shifts LRAS without requiring high public spending. Nordic model: high fiscal spending can work, but requires strong institutions and coordination.',
-          model: 'Classical economists raise important objections to fiscal-led LRAS expansion. Crowding out occurs when government borrowing raises interest rates, displacing private investment — so the net LRAS impact is smaller than the fiscal injection implies. Ricardian equivalence (Barro, 1974) suggests households offset government spending by increasing savings in anticipation of future tax rises, negating the intended stimulus. Empirically, the UK\'s 2010-19 austerity period, while contractionary in the short run, did not obviously destroy long-run productive potential — suggesting some market-based adjustment occurred. Supply-side reformers argue that deregulation, competition policy, and labour market flexibility achieve LRAS gains more efficiently and without the debt legacy that fiscal expansion creates.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Time lag, public goods argument, and institutional quality',
-          prompt: 'Weigh both sides with reference to the nature of the market failure, the time horizon, and country-specific context.',
-          hint: 'Key judgement: fiscal policy is strongest where market failures are greatest (education, infrastructure as public goods). Private markets under-provide long-lived public goods due to non-excludability. But implementation quality matters: if public investment is poorly directed or subject to political capture, returns are low. Short-run vs long-run: fiscal investment has long lags (infrastructure takes years to build). The \'most effective\' claim depends on context.',
-          model: 'The effectiveness of fiscal policy in expanding LRAS ultimately depends on the nature and scale of market failure in the economy. Where infrastructure is a public good (non-excludable, non-rival) — or where education generates positive externalities — the market systematically under-provides, and fiscal intervention is both necessary and efficient. Here, fiscal policy has no market substitute. However, beyond these genuine public goods, the returns to government spending depend heavily on institutional quality: politically directed investment, poorly targeted spending, or corruption erodes the LRAS benefit. The UK\'s HS2 experience illustrates the risk of cost overruns and scope reduction reducing the infrastructure dividend. Supply-side reforms — removing barriers to entry, improving competition — can achieve some LRAS gains without fiscal cost, making them a complement rather than alternative to targeted public investment.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a reasoned judgement on whether fiscal policy is the most effective LRAS tool.',
-          hint: 'Most effective where genuine market failure exists (public goods, positive externalities). Less effective than private investment in most capital formation. The strongest fiscal tools are public goods provision and human capital investment — not general stimulus spending.',
-          model: 'Fiscal policy is the most effective tool for expanding LRAS in the specific domains where market failure is most severe: public goods infrastructure, human capital formation, and R&D with positive externalities. These are areas where private markets systematically under-invest, and government provision is not just useful but necessary for long-run growth. Beyond these domains, however, the case weakens: tax incentives and supply-side reforms that stimulate private investment are likely to deliver greater LRAS gains per pound of fiscal cost, since private capital allocation is disciplined by market signals rather than political priorities. On balance, fiscal policy is a powerful but not universally superior LRAS tool — its effectiveness is high precisely where market failure is greatest, and limited elsewhere.'
-        }
-      ]
     }
+
   ]
 };

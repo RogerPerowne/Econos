@@ -132,61 +132,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'OPEC is a supply-side price stabilisation mechanism: restrict supply to raise price (floor management). Contrast with buffer stocks: buffer stocks use reserves to stabilise (buying/selling existing stocks); OPEC manages new production. Both aim to reduce price volatility but OPEC\'s primary goal is actually to raise prices above competitive equilibrium — a cartel, not a neutral stabilisation scheme.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'um-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: unstable markets',
-      question: 'Evaluate the case for government intervention to stabilise prices in agricultural and commodity markets. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define price instability and explain why it is a particular problem in agricultural and commodity markets. Introduce the range of possible government interventions and the debate about their effectiveness.',
-          hint: 'Agricultural/commodity prices: volatile because supply is inelastic in short run (growing season, extraction lead times) and demand is price inelastic. Small supply shocks → large price swings. Cobweb model: price cycles from supply response lags. Interventions: buffer stocks, price floors, income support, futures markets.',
-          model: 'Agricultural and commodity markets are characterised by acute price instability arising from the combination of price-inelastic demand, inelastic short-run supply, and the delayed supply response inherent in biological or geological production cycles. A drought, frost, or geopolitical disruption can cause large price swings that impose severe welfare costs on producers (price collapses ruin farm incomes), consumers (price spikes harm food security), and macroeconomic stability (commodity price inflation transmits to general price levels). The cobweb model formalises how supply response lags generate cyclical price oscillations. This essay evaluates whether government intervention — through buffer stocks, floor prices, income support, or international agreements — effectively addresses these instabilities at acceptable cost.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Price instability imposes real welfare costs that markets cannot self-correct',
-          prompt: 'Explain the welfare costs of price instability for farmers (income uncertainty, investment underinvestment), consumers (food security), and the broader economy (inflation, BoP volatility in commodity-dependent countries).',
-          hint: 'Farmers: low prices → farm incomes collapse → unable to invest in next season → supply falls further → price spike. Food security: price spikes → malnutrition in low-income households. Commodity-dependent LDCs: export revenues volatile → fiscal instability, debt crises.',
-          model: 'Price instability in commodity markets generates welfare costs that markets cannot self-correct because the underlying source — inelastic supply responses with biological lags — is inherent to the production process, not a market distortion. For farmers, price volatility creates income uncertainty that discourages long-run investment in capacity, land improvement, and technology adoption — a source of dynamic inefficiency in food production. For consumers in low-income households, food price spikes directly threaten food security: the 2007–08 global food price crisis, when wheat and rice prices doubled within a year, contributed to nutritional deprivation and social unrest across 30+ countries. For commodity-exporting developing economies, revenue volatility triggers fiscal crises, debt accumulation, and exchange rate instability — the "resource curse" of primary commodity dependence.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Buffer stocks can stabilise prices by absorbing supply and demand shocks',
-          prompt: 'Explain how a government buffer stock scheme — buying commodity when price falls below a floor, selling from reserves when price rises above a ceiling — can stabilise prices and incomes for both producers and consumers.',
-          hint: 'Buffer stock: government buys when P < floor (accumulates reserves) and sells when P > ceiling (releases reserves). Stabilises within a band. Reduces cobweb oscillations. Requires significant capital to build reserves. EU CAP: intervention buying. International Cocoa/Coffee agreements.',
-          model: 'Buffer stock schemes provide the clearest theoretical mechanism for commodity price stabilisation. By committing to buy the commodity at a minimum price (floor) and sell from accumulated reserves at a maximum price (ceiling), the government absorbs supply and demand shocks that would otherwise cause large price swings. In a poor harvest year, the scheme releases stocks to prevent price spikes; in a bumper harvest year, it buys excess supply to prevent price collapses. Both producers and consumers benefit from the price stability: farmers can plan investments with greater certainty, and consumers face more predictable food costs. The EU\'s Common Agricultural Policy historically used intervention buying as a buffer stock mechanism, and international commodity agreements — for cocoa, coffee, and rubber — attempted similar price band stabilisation in the 1970s–80s.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Buffer stocks are costly and prone to failure in practice',
-          prompt: 'Argue that buffer stocks require enormous capital to build reserves, face systematic difficulties in setting the right floor/ceiling prices, and have historically failed — creating surpluses (EU food mountains) or running out of funds.',
-          hint: 'EU butter mountains, wine lakes: floor price set too high → permanent surplus accumulation → billions in storage costs → eventual dumping at below-market prices. International tin agreement collapse (1985): funds exhausted. Wrong price band → intervention operates one-sided. Structural price shifts make pre-set bands obsolete.',
-          model: 'In practice, buffer stock schemes have a poor track record. The EU\'s intervention buying system set floor prices above long-run equilibrium to protect farm incomes, generating structural surpluses — "butter mountains," "wine lakes," and grain mountains — that cost billions to store and eventually required subsidised disposal that depressed world prices for developing country producers. The International Tin Agreement collapsed in 1985 when the scheme exhausted its funds trying to defend an unsustainably high floor price. The fundamental problem is that correctly identifying the long-run equilibrium price is an information challenge government agencies cannot reliably solve: technological change (higher-yield seeds), climate shifts, and demand growth continuously alter equilibrium prices, making any pre-set floor/ceiling prone to becoming distorted. When structural price shifts occur, the scheme operates one-sidedly — perpetually accumulating or perpetually depleting stocks.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Alternative instruments may be more effective and less costly',
-          prompt: 'Evaluate whether futures markets, income support schemes, supply management quotas, or international diversification agreements represent more effective alternatives to direct price controls in commodity markets.',
-          hint: 'Futures markets: private-sector price stabilisation — farmer sells forward at fixed price. No storage cost, no government capital required. Income support: decouple from production (EU single farm payment) → stabilise incomes without creating surpluses. Diversification: LDC structural transformation reduces commodity dependence. Each has limitations.',
-          model: 'Several alternative instruments may deliver more effective stabilisation at lower cost than buffer stocks. Futures and forward markets allow farmers to lock in prices before harvest, hedging against price risk at minimal social cost — the farmer sacrifices potential upside gains in exchange for income certainty, with no government capital tied up in physical reserves. Income support schemes — like the EU\'s post-2003 Single Farm Payment, which decoupled support from production levels — stabilise farmer incomes without incentivising excess production or creating surpluses. However, futures markets require sufficient market depth and sophistication that may be absent in developing countries; income support requires sustained fiscal commitment; and international diversification is a decades-long structural transition. For acute, short-term food security crises in vulnerable economies, some form of government intervention — strategic food reserves, import subsidies, targeted consumption support — remains difficult to avoid entirely.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a judgement: is government intervention to stabilise commodity prices justified, and what form should it take?',
-          hint: 'Intervention justified: genuine market failure (instability from structural inelasticities), welfare costs are large and fall on vulnerable groups. But buffer stocks are a flawed instrument. Preferred approach: combination of futures markets for risk management, income support decoupled from production, and strategic reserves for acute food security crises only.',
-          model: 'In conclusion, the case for some degree of government intervention in commodity markets is strong: price instability arises from structural market features (inelastic supply and demand, biological lags), not temporary inefficiencies, and the welfare costs — farmer income collapse, consumer food insecurity, macroeconomic volatility — are large and disproportionately borne by the most vulnerable. However, traditional buffer stock schemes have a poor track record due to information problems, storage costs, and the difficulty of setting sustainable price bands. The most effective policy combines decoupled income support (stabilising farm incomes without production distortions), encouragement of futures market participation for risk management, and strategic food reserves limited to genuine food security emergencies — while promoting long-run structural diversification in commodity-dependent economies to reduce their underlying vulnerability. Blanket price controls that ignore the cost of government failure are as harmful as the instability they aim to address.'
-        }
-      ]
     }
+
   ]
 };

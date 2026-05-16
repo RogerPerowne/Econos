@@ -218,11 +218,11 @@
             <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
               <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${item.icon}</div>
             </div>
-            <div style="padding:10px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;gap:8px;">
+            <div style="padding:11px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;">
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
               <span style="line-height:1.3;">${headText}</span>
             </div>
-            <div style="padding:11px 14px 15px;font-size:12.5px;color:#334155;line-height:1.6;flex:1;">${item.body}</div>
+            <div style="padding:13px 14px 16px;font-size:14px;color:#0B1426;line-height:1.65;flex:1;">${item.body}</div>
           </div>`;
         }
         return `
@@ -257,13 +257,13 @@
             ${c.productExamples.map(p => {
               const vc = VC[p.verdictTone] || VC.amber;
               return `
-              <div class="reveal-cell" style="background:#fff;border-radius:10px;border:1px solid #E2E8F0;padding:13px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
-                <div style="font-size:26px;margin-bottom:7px;">${p.icon}</div>
-                <div style="font-weight:800;font-size:13px;color:#0B1426;margin-bottom:8px;">${p.product}</div>
-                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
+              <div class="reveal-cell" style="background:#fff;border-radius:14px;border:1px solid #E2E8F0;padding:16px 15px;box-shadow:0 3px 14px rgba(0,0,0,0.08);">
+                <div style="font-size:28px;margin-bottom:9px;line-height:1;">${p.icon}</div>
+                <div style="font-weight:800;font-size:14px;color:#0B1426;margin-bottom:10px;">${p.product}</div>
+                <button data-action="reveal-cell" type="button" style="background:#fff;border:1.5px dashed #94A3B8;color:#475569;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;width:100%;">Predict verdict ↓</button>
                 <div class="reveal-cell__body is-hidden">
-                  <div style="display:inline-block;padding:2px 9px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:10px;font-weight:700;margin-bottom:7px;">${p.verdict}</div>
-                  <div style="font-size:12px;color:#475569;line-height:1.55;">${p.reasoning}</div>
+                  <div style="display:inline-block;padding:3px 10px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:11px;font-weight:700;margin-bottom:8px;">${p.verdict}</div>
+                  <div style="font-size:13.5px;color:#0B1426;line-height:1.6;">${p.reasoning}</div>
                 </div>
               </div>`;
             }).join('')}

@@ -1528,7 +1528,8 @@
      ------------------------------------------------------------------------- */
   function renderCardYedCalculation(c) {
     const s = c.scenario || {};
-    const income1 = s.income1 || 100, income2 = s.income2 || 105;
+    const income1 = s.y1 != null ? s.y1 : (s.income1 || 100);
+    const income2 = s.y2 != null ? s.y2 : (s.income2 || 105);
     const q1 = s.q1, q2 = s.q2;
     const pctI = ((income2 - income1) / income1) * 100;
     const pctQ = ((q2 - q1) / q1) * 100;
@@ -1619,48 +1620,48 @@
       </div>`;
 
     const roadmapStops = [
-      { tone: T1, icon: '🔍', label: 'Spot the data' },
-      { tone: T2, icon: '💰', label: '% Δ Income' },
-      { tone: T3, icon: '🚌', label: '% ΔQD' },
-      { tone: T4, icon: '🧮', label: 'Calc YED' },
-      { tone: T5, icon: '🏷️', label: 'Good type' }
+      { tone: T1, icon: '💰', label: '%Δ Income' },
+      { tone: T2, icon: '📊', label: '%ΔQD' },
+      { tone: T3, icon: '➗', label: 'YED formula' },
+      { tone: T4, icon: '🏷️', label: 'Interpret sign' },
+      { tone: T5, icon: '📈', label: 'Interpret magnitude' }
     ];
 
     const steps = [
       {
-        tone: T1, icon: '🔍',
-        title: 'Identify the data',
-        prompt: `Incomes rose by <strong>${fmtPct(pctI)}</strong>. Demand for bus travel fell by <strong>${fmtPct(Math.abs(pctQ))}</strong>. Write down the YED formula.`,
-        formula: 'YED = % ΔQD ÷ % Δ Income',
-        reveal: `We need two values: % Δ Income (denominator) and % ΔQD (numerator). Unlike PED and PES, YED can be <strong>positive or negative</strong> — the sign tells us whether the good is normal or inferior.`
+        tone: T1, icon: '💰',
+        title: 'Calculate % change in income',
+        prompt: `Average household incomes rose from index <strong>${income1}</strong> to <strong>${income2}</strong>. Apply: (New − Old) ÷ Old × 100`,
+        formula: `% Δ Income = (${income2} − ${income1}) ÷ ${income1} × 100`,
+        reveal: `% Δ Income = (${income2} − ${income1}) ÷ ${income1} × 100 = <strong>${fmtPct(pctI)}</strong>. This goes in the denominator of the YED formula. Keep the positive sign — incomes rose.`
       },
       {
-        tone: T2, icon: '💰',
-        title: 'Identify % change in income',
-        prompt: `Average household incomes rose by ${fmtPct(pctI)}. This is given directly in the scenario — write it down with its sign.`,
-        formula: `% Δ Income = ${fmtPct(pctI)} (given)`,
-        reveal: `% Δ Income = <strong>${fmtPct(pctI)}</strong>. This goes in the denominator of the YED formula. Keep the positive sign — incomes rose.`
-      },
-      {
-        tone: T3, icon: '🚌',
-        title: 'Identify % change in quantity demanded',
+        tone: T2, icon: '📊',
+        title: 'Calculate % change in quantity demanded',
         prompt: `Demand for bus travel fell — from ${q1.toLocaleString()} to ${q2.toLocaleString()} trips/day. Calculate % ΔQD, making sure to keep the negative sign.`,
         formula: `% ΔQD = (${q2} − ${q1}) ÷ ${q1} × 100`,
         reveal: `% ΔQD = (${q2} − ${q1}) ÷ ${q1} × 100 = <strong>${fmtPct(pctQ)}</strong>. The negative sign is essential — it confirms demand <em>fell</em> when incomes rose, which is the defining characteristic of an inferior good.`
       },
       {
-        tone: T4, icon: '🧮',
+        tone: T3, icon: '➗',
         title: 'Apply the YED formula',
         prompt: 'Divide % ΔQD by % Δ Income. Keep the negative sign.',
-        formula: `<span style="background:${T3.bg};border:1px solid ${T3.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctQ)}</span> ÷ <span style="background:${T2.bg};border:1px solid ${T2.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctI)}</span> = <span style="background:${T4.bg};border:1px solid ${T4.c}40;border-radius:6px;padding:3px 8px;font-weight:900;">YED = ${yed.toFixed(1)}</span>`,
+        formula: `<span style="background:${T2.bg};border:1px solid ${T2.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctQ)}</span> ÷ <span style="background:${T1.bg};border:1px solid ${T1.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctI)}</span> = <span style="background:${T3.bg};border:1px solid ${T3.c}40;border-radius:6px;padding:3px 8px;font-weight:900;">YED = ${yed.toFixed(1)}</span>`,
         reveal: `YED = ${fmtPct(pctQ)} ÷ ${fmtPct(pctI)} = <strong>${yed.toFixed(1)}</strong>${spectrum}`
       },
       {
-        tone: T5, icon: '🏷️',
-        title: 'Classify and interpret',
-        prompt: `YED = ${yed.toFixed(1)}. What type of good is bus travel? What does the magnitude mean for bus operators?`,
+        tone: T4, icon: '🏷️',
+        title: 'Interpret the sign — good type',
+        prompt: `YED = ${yed.toFixed(1)}. Is the sign positive or negative? What type of good does this make bus travel?`,
         formula: null,
-        reveal: `YED = ${yed.toFixed(1)} <strong>&lt; 0</strong> → bus travel is an <strong>inferior good</strong>. As incomes rise, consumers switch to cars or taxis. The magnitude |${yed.toFixed(1)}| > 1 means demand is <em>strongly</em> income-sensitive — a ${fmtPct(pctI)} income rise causes a ${fmtPct(Math.abs(pctQ))} fall in bus demand. Bus operators face sharp revenue losses during economic booms and partial recovery in recessions.`
+        reveal: `YED = ${yed.toFixed(1)} <strong>&lt; 0</strong> → bus travel is an <strong>inferior good</strong>. As incomes rise, consumers trade up — switching to cars or taxis. The negative sign is the single most important result: it classifies the good type. Never confuse sign with magnitude — a large negative YED means strongly inferior, not "very inelastic".`
+      },
+      {
+        tone: T5, icon: '📈',
+        title: 'Interpret the magnitude — boom and recession impacts',
+        prompt: `|YED| = ${Math.abs(yed).toFixed(1)}. Is this weakly or strongly income-sensitive? What happens to bus demand in a boom vs a recession?`,
+        formula: null,
+        reveal: `|YED| = ${Math.abs(yed).toFixed(1)} <strong>&gt; 1</strong> → demand is <em>strongly</em> income-sensitive. A ${fmtPct(pctI)} income rise causes a ${fmtPct(Math.abs(pctQ))} fall in bus demand. <strong>In a boom:</strong> incomes rise → bus demand falls sharply → operators lose revenue, may need government subsidies to maintain services. <strong>In a recession:</strong> incomes fall → bus demand recovers → counter-cyclical benefit for operators. Bus companies and transport planners must model demand against the economic cycle — YED = ${yed.toFixed(1)} makes this a high-sensitivity relationship.`
       }
     ];
 
@@ -1679,8 +1680,10 @@
   function renderCardXedCalculation(c) {
     const s = c.scenario || {};
     const cur = s.currency || '£';
-    const pB1 = s.pB1, pB2 = s.pB2;  // Price of Good B (coffee)
-    const qA1 = s.qA1, qA2 = s.qA2;  // QD of Good A (tea)
+    const pB1 = s.pb1 != null ? s.pb1 : s.pB1;  // Price of Good B (coffee)
+    const pB2 = s.pb2 != null ? s.pb2 : s.pB2;
+    const qA1 = s.qa1 != null ? s.qa1 : s.qA1;  // QD of Good A (tea)
+    const qA2 = s.qa2 != null ? s.qa2 : s.qA2;
     const goodA = s.goodA || 'Tea', goodB = s.goodB || 'Coffee';
     const pctPB = ((pB2 - pB1) / pB1) * 100;
     const pctQA = ((qA2 - qA1) / qA1) * 100;
@@ -1694,11 +1697,11 @@
     const T5 = { c:'#DC2626', bg:'#FEF2F2', soft:'#FEE2E2' };
 
     let verdictIdx;
-    if (xed < -1)       verdictIdx = 0;  // Strong complement
-    else if (xed < 0)   verdictIdx = 1;  // Weak complement
-    else if (xed === 0) verdictIdx = 2;  // Unrelated
-    else if (xed <= 1)  verdictIdx = 3;  // Weak substitute
-    else                verdictIdx = 4;  // Strong substitute
+    if (xed < -1)              verdictIdx = 0;  // Strong complement
+    else if (xed < 0)          verdictIdx = 1;  // Weak complement
+    else if (Math.abs(xed) < 0.1) verdictIdx = 2;  // Unrelated
+    else if (xed < 1)          verdictIdx = 3;  // Weak substitute
+    else                       verdictIdx = 4;  // Strong substitute
 
     const xedZones = [
       { label: 'Strong<br>Complement', sub: 'XED < −1',   color: '#DC2626' },
@@ -1772,48 +1775,48 @@
       </div>`;
 
     const roadmapStops = [
-      { tone: T1, icon: '🔍', label: 'Name both goods' },
-      { tone: T2, icon: '📈', label: '% ΔP(B)' },
-      { tone: T3, icon: '🛒', label: '% ΔQD(A)' },
-      { tone: T4, icon: '🧮', label: 'Calc XED' },
-      { tone: T5, icon: '🏷️', label: 'Relationship' }
+      { tone: T1, icon: '☕', label: '%ΔP(Good B)' },
+      { tone: T2, icon: '🍵', label: '%ΔQD(Good A)' },
+      { tone: T3, icon: '➗', label: 'XED formula' },
+      { tone: T4, icon: '🔗', label: 'Relationship' },
+      { tone: T5, icon: '📏', label: 'Magnitude' }
     ];
 
     const steps = [
       {
-        tone: T1, icon: '🔍',
-        title: 'Identify both goods',
-        prompt: `Good A = <strong>${goodA}</strong> (its QD changes). Good B = <strong>${goodB}</strong> (its price changes). Write down the XED formula.`,
-        formula: `XED(${goodA}, ${goodB}) = % ΔQD(${goodA}) ÷ % ΔP(${goodB})`,
-        reveal: `Always name both goods — "XED = 0.6" alone is incomplete. The price of <strong>${goodB}</strong> changes first; we measure the effect on demand for <strong>${goodA}</strong>.`
-      },
-      {
-        tone: T2, icon: '📈',
+        tone: T1, icon: '☕',
         title: `Calculate % change in price of ${goodB}`,
         prompt: `${goodB} price rose from <strong>${cur}${pB1}</strong> to <strong>${cur}${pB2}</strong> per cup. Apply: (New − Old) ÷ Old × 100`,
         formula: `% ΔP(${goodB}) = (${pB2} − ${pB1}) ÷ ${pB1} × 100`,
-        reveal: `% ΔP(${goodB}) = (${pB2} − ${pB1}) ÷ ${pB1} × 100 = <strong>${fmtPct(pctPB)}</strong>. This is the price trigger — now we check the demand response.`
+        reveal: `% ΔP(${goodB}) = (${pB2} − ${pB1}) ÷ ${pB1} × 100 = <strong>${fmtPct(pctPB)}</strong>. This is the price trigger — ${goodB} got more expensive, which may cause consumers to switch to ${goodA}.`
       },
       {
-        tone: T3, icon: '🛒',
+        tone: T2, icon: '🍵',
         title: `Calculate % change in QD of ${goodA}`,
         prompt: `${goodA} demand rose from <strong>${qA1}</strong> to <strong>${qA2}</strong> cups/day. Apply: (New − Old) ÷ Old × 100`,
         formula: `% ΔQD(${goodA}) = (${qA2} − ${qA1}) ÷ ${qA1} × 100`,
-        reveal: `% ΔQD(${goodA}) = (${qA2} − ${qA1}) ÷ ${qA1} × 100 = <strong>${fmtPct(pctQA)}</strong>. ${goodA} demand rose when ${goodB} got more expensive — a positive response suggesting they might be substitutes.`
+        reveal: `% ΔQD(${goodA}) = (${qA2} − ${qA1}) ÷ ${qA1} × 100 = <strong>${fmtPct(pctQA)}</strong>. ${goodA} demand rose when ${goodB} got more expensive — a positive response suggesting substitutability.`
       },
       {
-        tone: T4, icon: '🧮',
+        tone: T3, icon: '➗',
         title: 'Apply the XED formula',
-        prompt: `Divide % ΔQD(${goodA}) by % ΔP(${goodB}).`,
-        formula: `<span style="background:${T3.bg};border:1px solid ${T3.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctQA)}</span> ÷ <span style="background:${T2.bg};border:1px solid ${T2.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctPB)}</span> = <span style="background:${T4.bg};border:1px solid ${T4.c}40;border-radius:6px;padding:3px 8px;font-weight:900;">XED = +${xed.toFixed(2)}</span>`,
+        prompt: `Divide % ΔQD(${goodA}) by % ΔP(${goodB}). Always name both goods in the answer.`,
+        formula: `<span style="background:${T2.bg};border:1px solid ${T2.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctQA)}</span> ÷ <span style="background:${T1.bg};border:1px solid ${T1.c}40;border-radius:6px;padding:3px 8px;">${fmtPct(pctPB)}</span> = <span style="background:${T3.bg};border:1px solid ${T3.c}40;border-radius:6px;padding:3px 8px;font-weight:900;">XED = +${xed.toFixed(2)}</span>`,
         reveal: `XED(${goodA}, ${goodB}) = ${fmtPct(pctQA)} ÷ ${fmtPct(pctPB)} = <strong>+${xed.toFixed(2)}</strong>${spectrum}`
       },
       {
-        tone: T5, icon: '🏷️',
-        title: 'Classify the relationship',
-        prompt: `XED = +${xed.toFixed(2)}. What is the relationship between ${goodA} and ${goodB}? How close are they as substitutes?`,
+        tone: T4, icon: '🔗',
+        title: 'Identify the relationship',
+        prompt: `XED = +${xed.toFixed(2)}. Is the sign positive or negative? What does that tell you about the relationship between ${goodA} and ${goodB}?`,
         formula: null,
-        reveal: `XED = +${xed.toFixed(2)} <strong>&gt; 0</strong> → ${goodA} and ${goodB} are <strong>substitutes</strong>. The positive sign confirms the relationship; the magnitude ${xed.toFixed(2)} tells us how close. Close substitutes would have XED closer to 2–3; a value of ${xed.toFixed(2)} indicates <em>moderate</em> substitutability — many consumers still prefer ${goodB} even at higher prices. The CMA uses XED &gt; ~0.5 as evidence that two products compete in the same market.`
+        reveal: `XED = +${xed.toFixed(2)} <strong>&gt; 0</strong> → ${goodA} and ${goodB} are <strong>substitutes</strong>. The positive sign confirms the relationship: when ${goodB} became more expensive, some consumers switched to ${goodA} instead. Always name both goods — "XED > 0 so substitutes" alone is incomplete without stating which goods.`
+      },
+      {
+        tone: T5, icon: '📏',
+        title: 'Interpret the magnitude — market and legal implications',
+        prompt: `XED = +${xed.toFixed(2)}. How close are ${goodA} and ${goodB} as substitutes? Would the CMA consider them to be in the same market?`,
+        formula: null,
+        reveal: `XED = +${xed.toFixed(2)} indicates <em>moderate</em> substitutability — significant, but not close substitutes. Close substitutes have XED closer to 2–3; weak substitutes closer to 0.1–0.2. <strong>CMA competition law context:</strong> the Competition and Markets Authority uses XED &gt; ~0.5 as evidence that two products compete in the same market when reviewing mergers. XED = +${xed.toFixed(2)} would be borderline evidence of market overlap — enough to trigger scrutiny but not conclusive. A ${goodA} producer could use this: when ${goodB} prices rise due to commodity shocks, expect a modest boost to ${goodA} demand — plan production accordingly.`
       }
     ];
 

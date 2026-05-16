@@ -400,12 +400,15 @@
 
   function renderKeyTakeaway(k) {
     if (!k) return '';
+    const title = typeof k === 'object' ? (k.title || 'Key takeaway') : 'Key takeaway';
+    const text  = typeof k === 'object' ? k.text : k;
+    if (!text) return '';
     return `
       <div class="callout callout--success">
         <div class="callout__icon">${I.bulb}</div>
         <div class="callout__body">
-          <div class="callout__title">${k.title}</div>
-          <div class="callout__text">${k.text}</div>
+          <div class="callout__title">${title}</div>
+          <div class="callout__text">${text}</div>
         </div>
       </div>
     `;

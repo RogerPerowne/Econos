@@ -128,37 +128,53 @@ window.ECONOS_TOPIC = {
        ================================================================ */
     {
       id: 'pes_4',
+      template: 'pes-five-frames',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Reading the PES Coefficient',
-      intro: 'The number tells you everything — but only if you know how to read it.',
-      causes: [
+      lede: 'PES is always positive. The magnitude tells you how much output can expand when price rises — and how a market absorbs a demand shift.',
+      frames: [
         {
-          icon: '🔴',
-          head: 'Perfectly Inelastic — PES = 0',
-          body: 'Supply is completely fixed regardless of price. Vertical supply curve. Examples: Van Gogh paintings, land in a specific location, fish already landed at market. Any demand shift goes entirely into price — quantity cannot change.'
+          tone: 'rose',
+          name: 'Perfectly inelastic',
+          pesCoeff: 'PES = 0',
+          curveType: 'vertical',
+          example: 'Land in a specific location, Van Gogh paintings, fish already landed at market.',
+          marketRule: 'Demand shift → 100% price spike, 0% extra output. Supply is completely fixed.'
         },
         {
-          icon: '🟡',
-          head: 'Inelastic — PES < 1',
-          body: 'Supply responds less than proportionally to price. Most demand shifts go into higher prices. Examples: housing (UK PES ≈ 0.1–0.3), oil short-run, agricultural produce within a season. High price volatility when demand shifts.'
+          tone: 'amber',
+          name: 'Inelastic',
+          pesCoeff: 'PES < 1',
+          curveType: 'steep',
+          example: 'UK housing (PES ≈ 0.1), crude oil short-run, agricultural produce within a season.',
+          marketRule: 'Demand shift → mostly price rise, small quantity gain. Markets are price-volatile.'
         },
         {
-          icon: '🔵',
-          head: 'Unit Elastic — PES = 1',
-          body: 'Supply responds exactly in proportion to price. A 10% price rise → 10% more supplied. Supply curve passes through the origin. Boundary between elastic and inelastic.'
+          tone: 'blue',
+          name: 'Unit elastic',
+          pesCoeff: 'PES = 1',
+          curveType: 'origin',
+          example: 'Supply through origin has PES = 1 everywhere — a handy visual shortcut.',
+          marketRule: '10% price rise → 10% more supplied. Equal split. Curve passes through origin.'
         },
         {
-          icon: '🟢',
-          head: 'Elastic — PES > 1',
-          body: 'Supply responds more than proportionally. Quantity rises faster than price. Examples: manufactured goods with spare capacity, many service industries, some agricultural products in the long run. Demand shifts go mostly into quantity, not price.'
+          tone: 'green',
+          name: 'Elastic',
+          pesCoeff: 'PES > 1',
+          curveType: 'shallow',
+          example: 'Manufactured goods with spare capacity, many services, long-run agricultural output.',
+          marketRule: 'Demand shift → mostly quantity rise, small price increase. Markets adjust well.'
         },
         {
-          icon: '🟣',
-          head: 'Perfectly Elastic — PES = ∞',
-          body: 'Producers supply any amount at the going market price. Horizontal supply curve. Examples: perfectly competitive industries in the long run with constant costs. Any demand shift goes entirely into quantity — price doesn’t move.'
+          tone: 'purple',
+          name: 'Perfectly elastic',
+          pesCoeff: 'PES = ∞',
+          curveType: 'horizontal',
+          example: 'Long-run perfectly competitive industry with constant costs. Any Q at the going price.',
+          marketRule: 'Demand shift → 100% quantity, 0% price. Supply is infinitely flexible.'
         }
       ],
-      examEdge: 'Values to know: housing PES ≈ 0.1–0.3 (very inelastic). Oil short-run ≈ 0.1–0.3. Agriculture within-season ≈ 0.3. Manufacturing long-run can be > 1. These numbers appear in data-response questions.'
+      examEdge: 'Geometric shortcut: supply through origin → PES = 1; cuts P-axis above origin → PES < 1 (inelastic); cuts Q-axis → PES > 1 (elastic). Values to know: UK housing ≈ 0.1, crude oil short-run ≈ 0.2–0.3, manufacturing long-run > 1.'
     },
 
     /* ================================================================
@@ -189,7 +205,7 @@ window.ECONOS_TOPIC = {
         {
           icon: '🔄',
           head: 'Factor mobility',
-          body: 'If labour and capital can easily switch into this good’s production, PES is higher. Specialised assets (oil rigs, orchards) cannot be redeployed quickly — locking in low PES until long-run investment occurs.'
+          body: 'If labour and capital can easily switch into this good\'s production, PES is higher. Specialised assets (oil rigs, orchards) cannot be redeployed quickly — locking in low PES until long-run investment occurs.'
         },
         {
           icon: '🔧',
@@ -217,7 +233,7 @@ window.ECONOS_TOPIC = {
           product: 'Crude oil (short-run)',
           verdict: 'Inelastic',
           verdictTone: 'orange',
-          reasoning: 'PES ≈ 0.2–0.3. Existing wells operate at near-full capacity. New drilling and refinery infrastructure takes years. Price signals can’t unlock much extra output quickly.'
+          reasoning: 'PES ≈ 0.2–0.3. Existing wells operate at near-full capacity. New drilling and refinery infrastructure takes years. Price signals can\'t unlock much extra output quickly.'
         },
         {
           icon: '🌾',
@@ -241,7 +257,7 @@ window.ECONOS_TOPIC = {
           reasoning: 'PES > 1 long-run. Firms can hire workers, add shifts, and build new plant over 1–3 years. Long-run supply is considerably more elastic than short-run — time is the key.'
         }
       ],
-      keyTakeaway: 'When asked for the ‘most important’ determinant: always say time period first.',
+      keyTakeaway: 'When asked for the \'most important\' determinant: always say time period first.',
       examEdge: {
         title: 'Short-run vs long-run — always distinguish',
         text: 'Short-run vs long-run PES is the single most exam-relevant point. Always state: "In the short run, supply is more inelastic because…" and "In the long run, supply becomes more elastic as…" — this alone can earn a Band 3 mark.'
@@ -255,7 +271,7 @@ window.ECONOS_TOPIC = {
       id: 'pes_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'PES in the Real World',
-      intro: 'PES isn’t just a formula — it shapes housing crises, food price spikes, tax policy, and economic reform.',
+      intro: 'PES isn\'t just a formula — it shapes housing crises, food price spikes, tax policy, and economic reform.',
       steps: [
         {
           label: 'Housing market crisis',
@@ -327,7 +343,7 @@ window.ECONOS_TOPIC = {
   </div>
   <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
     <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ Demand subsidies fix supply problems</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Help to Buy didn’t solve the housing crisis because PES stayed near 0. Demand-side policy can’t fix an inelastic supply problem.</div>
+    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Help to Buy didn't solve the housing crisis because PES stayed near 0. Demand-side policy can't fix an inelastic supply problem.</div>
   </div>
 </div>`,
       steps: [

@@ -1128,11 +1128,7 @@
       `,
       horizontal: `
         <line x1="14" y1="44" x2="86" y2="44" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="14" y1="24" x2="52" y2="24" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
-        <line x1="14" y1="44" x2="14" y2="44" stroke="${color}" stroke-width="1"/>
-        <text x="54" y="21" font-size="8.5" fill="#DC2626" font-family="Inter,sans-serif" opacity="0.85">P↑→ Q=0</text>
         <circle cx="14" cy="44" r="3.5" fill="${color}" opacity="0.7"/>
-        <circle cx="14" cy="24" r="3" fill="#DC2626" opacity="0.5"/>
       `
     };
     return `<svg viewBox="0 0 108 92" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">${axes}${D[type] || ''}</svg>`;

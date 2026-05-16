@@ -2323,7 +2323,7 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: J-curve path (extension + shift) ===== -->
       <g class="layer-jcurve">
         <g clip-path="url(#jc-chart-clip)">
-          <path d="M 60,230 C 100,260 140,320 160,330 C 200,335 240,290 260,230 C 320,180 400,160 540,140"
+          <path d="M 60,230 C 100,270 145,330 160,330 C 175,330 220,300 260,230 C 300,160 400,148 540,140"
                 fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
         </g>
         <!-- Phase markers -->
@@ -2364,7 +2364,7 @@ window.ECONOS_ICONS = {
       <g class="layer-failed">
         <!-- Alternative path: dips but doesn't recover (M-L fails) -->
         <g clip-path="url(#jc-chart-clip)">
-          <path d="M 60,230 C 100,260 140,320 160,330 C 240,355 360,360 540,350"
+          <path d="M 60,230 C 100,270 145,330 160,330 C 175,330 280,350 540,350"
                 fill="none" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 5"/>
         </g>
         <text x="445" y="343" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">M-L fails: no recovery</text>
@@ -7246,7 +7246,7 @@ window.ECONOS_ICONS = {
 
       <!-- MC: U-shaped. Passes through (250,277)=MR=MC and (370,260)=ATC min.
            At Q_m: y_MC(277) > y_ATC(245) in SVG => MC price < ATC price => ATC still falling left of min. -->
-      <path d="M60,270 Q130,330 250,277 Q310,270 370,260 Q440,225 520,185" stroke="#DC2626" stroke-width="2.5" fill="none"/>
+      <path d="M60,270 C100,287 230,277 250,277 C270,277 330,262 370,260 C410,258 470,215 520,185" stroke="#DC2626" stroke-width="2.5" fill="none"/>
       <text x="525" y="183" font-size="11" font-weight="600" fill="#DC2626">MC</text>
 
       <!-- MR=MC dot at (250,277): on both MR line and MC curve -->
@@ -8462,7 +8462,7 @@ window.ECONOS_ICONS = {
         Combined as one path:
         Start at losses end (30,370), curve to origin (200,240), then to gains end (620,100)
       -->
-      <path d="M30,370 C80,360 150,320 200,240 C260,120 340,90 620,100"
+      <path d="M30,370 C80,360 150,320 200,240 C250,160 340,90 620,100"
             stroke="#1E3A5F" stroke-width="3" fill="none"/>
 
       <!-- Reference point dot -->

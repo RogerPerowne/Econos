@@ -375,12 +375,12 @@ window.ECONOS_ICONS = {
       <line x1="50" y1="180" x2="460" y2="180" stroke="#374151" stroke-width="1.5"/>
 
       <!-- Y-axis labels -->
-      <text x="44" y="184" font-size="9" fill="#6B7280" text-anchor="end">0%</text>
-      <text x="44" y="157" font-size="9" fill="#6B7280" text-anchor="end">2%</text>
-      <text x="44" y="131" font-size="9" fill="#6B7280" text-anchor="end">4%</text>
-      <text x="44" y="104" font-size="9" fill="#6B7280" text-anchor="end">6%</text>
-      <text x="44" y="77"  font-size="9" fill="#6B7280" text-anchor="end">8%</text>
-      <text x="44" y="51"  font-size="9" fill="#6B7280" text-anchor="end">10%</text>
+      <text x="44" y="184" font-size="11" fill="#6B7280" text-anchor="end">0%</text>
+      <text x="44" y="157" font-size="11" fill="#6B7280" text-anchor="end">2%</text>
+      <text x="44" y="131" font-size="11" fill="#6B7280" text-anchor="end">4%</text>
+      <text x="44" y="104" font-size="11" fill="#6B7280" text-anchor="end">6%</text>
+      <text x="44" y="77"  font-size="11" fill="#6B7280" text-anchor="end">8%</text>
+      <text x="44" y="51"  font-size="11" fill="#6B7280" text-anchor="end">10%</text>
 
       <!-- Y-axis title -->
       <text x="20" y="100" font-size="10" fill="#6B7280" text-anchor="middle" transform="rotate(-90 20 100)">CPI %</text>
@@ -6063,33 +6063,36 @@ window.ECONOS_ICONS = {
       <line x1="55" y1="80" x2="400" y2="360" stroke="#2563EB" stroke-width="2.2"/>
       <text x="403" y="358" font-size="12" font-weight="700" fill="#2563EB">AR = D</text>
 
-      <!-- MR: same y-intercept (55,80), twice the slope, ends at x=227 -->
+      <!-- MR: same y-intercept (55,80), twice the slope, hits x-axis at x=246 -->
       <line x1="55" y1="80" x2="227" y2="360" stroke="#2563EB" stroke-width="1.8" stroke-dasharray="5 3"/>
       <text x="230" y="370" font-size="12" font-weight="700" fill="#2563EB">MR</text>
 
-      <!-- MC U-shape upward (short run) - min near x=160 y=230 -->
-      <polyline points="90,340 110,295 130,262 155,240 175,232 195,234 215,245 235,264 255,288 275,318 295,352" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="296" y="360" font-size="12" font-weight="700" fill="#DC2626">MC</text>
+      <!-- MC proper U-shape: high at low Q (low y=high price), falls to min at x=140, rises.
+           MR=MC at x=175: y_MR=80+(560/345)*120=275, y_MC=275.
+           MC also passes through AC min at x=220, y=222. -->
+      <polyline points="70,160 90,210 110,270 130,310 140,315 155,305 175,275 200,245 220,222 250,200 290,170 340,140" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="343" y="138" font-size="12" font-weight="700" fill="#DC2626">MC</text>
 
-      <!-- AC U-shape - min near x=200 y=248 -->
-      <polyline points="100,340 120,296 145,268 170,252 195,248 220,252 245,264 270,284 295,310 320,342" fill="none" stroke="#0EA5E9" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="322" y="348" font-size="12" font-weight="700" fill="#0EA5E9">AC</text>
+      <!-- AC proper U-shape: high at low Q, min at x=220 y=222, rises.
+           AC at Q_sr (x=175) approx 238. MC=AC at AC min (x=220, y=222). -->
+      <polyline points="80,160 100,185 130,218 160,236 185,240 210,230 220,222 250,208 290,185 340,160" fill="none" stroke="#0EA5E9" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="343" y="158" font-size="12" font-weight="700" fill="#0EA5E9">AC</text>
 
-      <!-- Q_sr ~ x=215, P_sr from AR at x=215: y = 80 + (280/345)*160 = 80+130 = 210, AC_sr at x=215 ~ 250 -->
-      <!-- MR=MC intersection at approx x=215 y=244, verify: MC at x=215 ~245 ✓ -->
-      <!-- P_sr = 210 (on AR line), AC_sr = 250 -->
-      <!-- Profit rectangle: y=210 to y=250, x=55 to x=215 -->
-      <rect x="55" y="210" width="160" height="40" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
-      <text x="135" y="234" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Supernormal profit</text>
+      <!-- Q_sr=175: MR=MC at (175,275). P_sr=y_AR(175)=80+(280/345)*120=177. AC_sr approx 238.
+           Supernormal profit rect: x=55 to 175, y=177 (P_sr) to y=238 (AC_sr), height=61 -->
+      <rect x="55" y="177" width="120" height="61" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
+      <text x="115" y="208" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Supernormal</text>
+      <text x="115" y="220" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">profit</text>
 
-      <!-- dashed lines for P_sr and Q_sr -->
-      <line x1="55" y1="210" x2="215" y2="210" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
-      <line x1="215" y1="210" x2="215" y2="390" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
-      <text x="42" y="214" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_sr</text>
-      <text x="42" y="254" font-size="10" fill="#0EA5E9" text-anchor="end">AC_sr</text>
-      <text x="215" y="406" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_sr</text>
-      <!-- MR=MC dot -->
-      <circle cx="215" cy="244" r="4" fill="#DC2626"/>
+      <!-- dashed guide lines for P_sr and Q_sr -->
+      <line x1="55" y1="177" x2="175" y2="177" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="55" y1="238" x2="175" y2="238" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+      <line x1="175" y1="177" x2="175" y2="390" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <text x="42" y="181" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_sr</text>
+      <text x="42" y="242" font-size="10" fill="#0EA5E9" text-anchor="end">AC_sr</text>
+      <text x="175" y="406" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_sr</text>
+      <!-- MR=MC dot at (175,275) on both MC curve and MR line -->
+      <circle cx="175" cy="275" r="4" fill="#DC2626"/>
 
       <!-- SHORT RUN title -->
       <text x="235" y="428" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">SHORT RUN</text>
@@ -6104,7 +6107,8 @@ window.ECONOS_ICONS = {
       <text x="851" y="396" font-size="12" font-weight="700" fill="#334155">Q</text>
       <text x="459" y="406" font-size="10" fill="#64748B">O</text>
 
-      <!-- AR_lr: narrower/shifted left, tangent to AC. From (470,135) to (770,375) -->
+      <!-- AR_lr: entry erodes demand, AR shifts inward. From (470,135) to (770,375).
+           Tangent to AC at x=600: y_AR=135+(240/300)*130=239 approx AC_lr(600)=240. -->
       <line x1="470" y1="135" x2="770" y2="375" stroke="#2563EB" stroke-width="2.2"/>
       <text x="773" y="372" font-size="12" font-weight="700" fill="#2563EB">AR = D</text>
 
@@ -6112,40 +6116,38 @@ window.ECONOS_ICONS = {
       <line x1="470" y1="135" x2="620" y2="375" stroke="#2563EB" stroke-width="1.8" stroke-dasharray="5 3"/>
       <text x="622" y="382" font-size="12" font-weight="700" fill="#2563EB">MR</text>
 
-      <!-- Same MC curve, shifted right by 415 -->
-      <polyline points="505,340 525,295 545,262 570,240 590,232 610,234 630,245 650,264 670,288 690,318 710,352" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="712" y="360" font-size="12" font-weight="700" fill="#DC2626">MC</text>
+      <!-- MC curve shifted right by 415 (same shape as SR) -->
+      <polyline points="485,160 505,210 525,270 545,310 555,315 570,305 590,275 615,245 635,222 665,200 705,170 755,140" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="758" y="138" font-size="12" font-weight="700" fill="#DC2626">MC</text>
 
-      <!-- Same AC curve shifted right by 415 -->
-      <polyline points="515,340 535,296 560,268 585,252 610,248 635,252 660,264 685,284 710,310 735,342" fill="none" stroke="#0EA5E9" stroke-width="2.2" stroke-linecap="round"/>
-      <text x="737" y="348" font-size="12" font-weight="700" fill="#0EA5E9">AC</text>
+      <!-- AC curve shifted right by 415 (same shape as SR).
+           AC min at x=635 y=222. AR_lr tangent at x=600 y approx 240 (left of AC min = excess capacity). -->
+      <polyline points="495,160 515,185 545,218 575,236 600,240 625,230 635,222 665,208 705,185 755,160" fill="none" stroke="#0EA5E9" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="758" y="158" font-size="12" font-weight="700" fill="#0EA5E9">AC</text>
 
-      <!-- Tangency: AR_lr tangent to AC at approximately x=610.
-           AR_lr at x=610: y = 135 + (240/300)*(610-470) = 135+112 = 247 ≈ AC at x=610 = 248 ✓ -->
-      <!-- Q_lr at x=610, P_lr = 247 -->
-      <line x1="470" y1="247" x2="610" y2="247" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
-      <line x1="610" y1="247" x2="610" y2="390" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
-      <text x="457" y="251" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_lr</text>
-      <text x="610" y="406" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_lr</text>
-      <!-- tangency dot -->
-      <circle cx="610" cy="247" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <!-- Q_lr=600: AR_lr approx AC_lr (tangency = normal profit). P_lr=AC_lr=240. -->
+      <line x1="470" y1="240" x2="600" y2="240" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="600" y1="240" x2="600" y2="390" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <text x="457" y="244" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_lr</text>
+      <text x="600" y="406" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_lr</text>
+      <!-- tangency dot (open circle: AR just touches AC, no supernormal profit) -->
+      <circle cx="600" cy="240" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
 
-      <!-- min AC at x=660: AC=248, show Q_min -->
-      <line x1="660" y1="247" x2="660" y2="390" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
-      <text x="660" y="406" font-size="10" fill="#0EA5E9" text-anchor="middle">Q_minAC</text>
+      <!-- AC min at x=635 y=222 -->
+      <line x1="635" y1="222" x2="635" y2="390" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+      <text x="635" y="406" font-size="10" fill="#0EA5E9" text-anchor="middle">Q_minAC</text>
 
-      <!-- Excess capacity arrow from Q_lr to Q_minAC -->
-      <line x1="610" y1="270" x2="660" y2="270" stroke="#475569" stroke-width="1.5" marker-start="url(#arr-l)" marker-end="url(#arr-r)"/>
-      <text x="635" y="285" font-size="10" fill="#475569" text-anchor="middle">Excess</text>
-      <text x="635" y="297" font-size="10" fill="#475569" text-anchor="middle">capacity</text>
-      <!-- simple arrowheads as polygons -->
-      <polygon points="610,266 610,274 603,270" fill="#475569"/>
-      <polygon points="660,266 660,274 667,270" fill="#475569"/>
+      <!-- Excess capacity arrow from Q_lr (600) to Q_minAC (635) -->
+      <line x1="600" y1="263" x2="635" y2="263" stroke="#475569" stroke-width="1.5"/>
+      <text x="617" y="280" font-size="10" fill="#475569" text-anchor="middle">Excess</text>
+      <text x="617" y="292" font-size="10" fill="#475569" text-anchor="middle">capacity</text>
+      <polygon points="600,259 600,267 593,263" fill="#475569"/>
+      <polygon points="635,259 635,267 642,263" fill="#475569"/>
 
       <!-- LONG RUN title -->
       <text x="658" y="428" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">LONG RUN</text>
     </svg>
-  `,
+  `
 
   cobwebModel: `
     <svg class="cobweb-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -7201,11 +7203,16 @@ window.ECONOS_ICONS = {
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
+      <!-- Geometry: AR (60,80)→(640,380), slope=300/580≈0.517/px.
+           MR same intercept, 2× slope: (60,80)→(370,400).
+           Q_m=x=250: y_AR(250)=80+(300/580)*190=178 (P_m); y_MR(250)=80+(600/580)*190=277 (MR=MC).
+           ATC endpoint-pinned at (250,245)=AC_m; ATC min at (370,260) where MC=ATC also=260. -->
+
       <!-- Supernormal profit rectangle (drawn first so curves sit on top) -->
-      <!-- P_m ≈ y=130, AC_m ≈ y=195, Q_m ≈ x=310 ; rect from x=60 to x=310, y=130 to y=195 -->
-      <rect x="60" y="130" width="250" height="65" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-      <text x="185" y="160" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">Supernormal profit</text>
-      <text x="185" y="175" font-size="10" fill="#D97706" text-anchor="middle">(P_m − AC_m) × Q_m</text>
+      <!-- x=60 to x=250 (Q_m), y=178 (P_m) to y=245 (AC_m): height=67 -->
+      <rect x="60" y="178" width="190" height="67" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+      <text x="155" y="208" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">Supernormal profit</text>
+      <text x="155" y="222" font-size="10" fill="#D97706" text-anchor="middle">(P_m - AC_m) x Q_m</text>
 
       <!-- Y axis -->
       <line x1="60" y1="40" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
@@ -7217,52 +7224,44 @@ window.ECONOS_ICONS = {
       <polygon points="664,400 650,395 650,405" fill="#334155"/>
       <text x="650" y="420" font-size="12" font-weight="600" fill="#334155">Q</text>
 
-      <!-- AR (Demand) curve: downward sloping from (60,80) to (640,380) navy -->
+      <!-- AR (Demand): (60,80) to (640,380) -->
       <line x1="60" y1="80" x2="640" y2="380" stroke="#2563EB" stroke-width="2.5"/>
       <text x="645" y="378" font-size="11" font-weight="600" fill="#2563EB">AR (Demand)</text>
 
-      <!-- MR curve: same y-intercept (60,80), twice slope → hits x-axis at midpoint x=350 -->
-      <line x1="60" y1="80" x2="350" y2="400" stroke="#64748B" stroke-width="2"/>
-      <text x="355" y="398" font-size="11" font-weight="600" fill="#64748B">MR</text>
+      <!-- MR: same intercept (60,80), 2x slope hits (370,400) -->
+      <line x1="60" y1="80" x2="370" y2="400" stroke="#64748B" stroke-width="2"/>
+      <text x="374" y="400" font-size="11" font-weight="600" fill="#64748B">MR</text>
 
-      <!-- ATC curve: U-shaped, min near x=380 -->
-      <!-- path: start high left, curve down to min near (380,220), rise again -->
-      <path d="M80,310 Q200,180 380,220 Q500,250 620,340" stroke="#0EA5E9" stroke-width="2" fill="none"/>
-      <text x="625" y="338" font-size="11" font-weight="600" fill="#0EA5E9">ATC</text>
+      <!-- ATC: U-shaped. Bezier endpoint at (250,245)=AC_m pinned exactly.
+           ATC min at (370,260); MC also =260 there so MC=ATC at minimum. -->
+      <path d="M80,140 C180,245 240,245 250,245 C280,245 355,260 370,260 C385,260 480,230 550,200" stroke="#0EA5E9" stroke-width="2.5" fill="none"/>
+      <text x="555" y="198" font-size="11" font-weight="600" fill="#0EA5E9">ATC</text>
 
-      <!-- MC curve: steeper U-shape, crosses ATC at min near x=380 -->
-      <!-- MC lower than ATC on left, crosses at (380,220), rises steeply -->
-      <path d="M80,370 Q200,220 310,195 Q380,220 500,290 Q560,320 620,370" stroke="#DC2626" stroke-width="2" fill="none"/>
-      <text x="625" y="368" font-size="11" font-weight="600" fill="#DC2626">MC</text>
+      <!-- MC: U-shaped. Passes through (250,277)=MR=MC and (370,260)=ATC min.
+           At Q_m: y_MC(277) > y_ATC(245) in SVG => MC price < ATC price => ATC still falling left of min. -->
+      <path d="M60,270 Q130,330 250,277 Q310,270 370,260 Q440,225 520,185" stroke="#DC2626" stroke-width="2.5" fill="none"/>
+      <text x="525" y="183" font-size="11" font-weight="600" fill="#DC2626">MC</text>
 
-      <!-- MR=MC intersection dot at approximately (310,195) -->
-      <circle cx="310" cy="195" r="5" fill="#334155"/>
-      <text x="316" y="192" font-size="10" font-weight="600" fill="#334155">MR = MC (profit max)</text>
+      <!-- MR=MC dot at (250,277): on both MR line and MC curve -->
+      <circle cx="250" cy="277" r="5" fill="#DC2626"/>
+      <text x="256" y="274" font-size="10" font-weight="600" fill="#334155">MR = MC</text>
 
-      <!-- Q_m dashed vertical from intersection to x-axis at x=310 -->
-      <line x1="310" y1="195" x2="310" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
-      <text x="305" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_m</text>
+      <!-- P_m dot on AR at Q_m: (250,178) on AR line -->
+      <circle cx="250" cy="178" r="4" fill="#2563EB"/>
 
-      <!-- P_m: AR curve at x=310 → y = 80 + (380-80)*(310-60)/(640-60) = 80 + 300*250/580 ≈ 80+129 = ~209
-           Let's use y=130 visually for P_m (above ATC) as diagram needs P_m > AC_m
-           AR at x=310: y = 80 + (380-80)*(310-60)/(640-60) ≈ 80+129 = 209...
-           Adjusting: use AR line actual value. AR goes (60,80)→(640,380): slope=(380-80)/(640-60)=300/580≈0.517/px
-           At x=310: y=80+0.517*(310-60)=80+129=209. But we drew profit rect top at y=130.
-           Let me reconcile: P_m dashed at y=130 means AR point is at (310,130).
-           AR: y=80+(300/580)*(x-60). At y=130: 50=(300/580)*(x-60) → x-60=96.7 → x≈157.
-           So Q_m should be at x=157 for P_m=130 on AR. Let's redefine consistently:
-           Q_m x=290, P_m y=130 means the diagram is illustrative.
-           I'll use the dashed lines as drawn (illustrative, not mathematically exact from pixel coords). -->
+      <!-- Q_m dashed vertical at x=250 -->
+      <line x1="250" y1="178" x2="250" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="250" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_m</text>
 
-      <!-- P_m dashed horizontal from AR at Q_m to y-axis; AR at x=310 is y=209 but visually set P_m=130 -->
-      <line x1="60" y1="130" x2="310" y2="130" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
-      <text x="50" y="134" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_m</text>
+      <!-- P_m dashed horizontal at y=178 (exact AR value at Q_m) -->
+      <line x1="60" y1="178" x2="250" y2="178" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="50" y="182" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_m</text>
 
-      <!-- AC_m dashed horizontal at y=195 (ATC value at Q_m) -->
-      <line x1="60" y1="195" x2="310" y2="195" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
-      <text x="50" y="199" font-size="11" font-weight="700" fill="#334155" text-anchor="end">AC_m</text>
+      <!-- AC_m dashed horizontal at y=245 (exact ATC at Q_m, bezier endpoint-pinned) -->
+      <line x1="60" y1="245" x2="250" y2="245" stroke="#0EA5E9" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <text x="50" y="249" font-size="11" font-weight="700" fill="#0EA5E9" text-anchor="end">AC_m</text>
     </svg>
-  `,
+  `
 
   /* ── Monopoly DWL (welfare analysis) ────────────────────────────────── */
   monopolyDwl: `
@@ -8055,23 +8054,22 @@ window.ECONOS_ICONS = {
       <line x1="380" y1="360" x2="640" y2="110" stroke="#DC2626" stroke-width="2.5"/>
       <text x="641" y="108" font-size="11" font-weight="700" fill="#DC2626">MC</text>
 
-      <!-- Monopoly outcome: Q_m at x=460, P_m = y=170 (from demand) -->
-      <!-- Competitive Q_c: where MC=D: same calc as left ≈ x=508, y=238 -->
+      <!-- Monopoly outcome: Q_m at x=445.
+           D at x=445: y=100+(280/260)*(445-380)=100+70=170 exactly. P_m=170 on D.
+           MC at x=445: y=360-(250/260)*65=297.5 approx 298.
+           Competitive Q_c (D=MC): x=508, y=238. -->
       <!-- Q_m dashed -->
-      <line x1="460" y1="170" x2="460" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
-      <line x1="380" y1="170" x2="460" y2="170" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
-      <text x="460" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_m</text>
+      <line x1="445" y1="170" x2="445" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="380" y1="170" x2="445" y2="170" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="445" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_m</text>
       <text x="375" y="174" font-size="10" font-weight="600" fill="#334155" text-anchor="end">P_m</text>
 
       <!-- Q_c dashed -->
       <line x1="508" y1="238" x2="508" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
       <text x="508" y="416" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Q_c</text>
 
-      <!-- DWL rose triangle: (460,170), (508,238), (460,238) approx
-           At Q_m=460: MC value: y = 360 - (250/260)*(460-380) = 360 - 76.9 ≈ 283
-           DWL triangle: (460,170), (508,238), (460,283)
-      -->
-      <polygon points="460,170 508,238 460,283" fill="#FEE2E2" opacity="0.85"/>
+      <!-- DWL rose triangle: (445,170)=P_m on D, (508,238)=competitive eq, (445,298)=MC at Q_m -->
+      <polygon points="445,170 508,238 445,298" fill="#FEE2E2" opacity="0.85"/>
       <text x="498" y="305" font-size="10" font-weight="600" fill="#DC2626" text-anchor="middle">DWL</text>
 
       <!-- Annotation -->

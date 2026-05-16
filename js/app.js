@@ -1109,7 +1109,7 @@
         <circle cx="55" cy="54" r="3.5" fill="${color}" opacity="0.5"/>
       `,
       hyperbola: `
-        <path d="M 18 72 C 22 34, 46 17, 88 11" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 20 11 C 26 13 35 24 40 26 C 52 30 60 48 63 54 C 68 64 80 71 90 74" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="14" y1="26" x2="40" y2="26" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.65"/>
         <line x1="14" y1="54" x2="63" y2="54" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
         <line x1="40" y1="26" x2="40" y2="78" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>

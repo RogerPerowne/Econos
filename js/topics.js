@@ -8,11 +8,11 @@
 
 window.ECONOS_TOPICS = [
 
-  /* ---- Theme 1: Introduction to Markets and Market Failure ---- */
+  /* ---- Theme 1, Section 1: The Economic Problem (1.1–1.6) ---- */
   {
     id: 'basic_econ_problem',
-    name: 'The Basic Economic Problem',
-    sub: 'Scarcity, choice, opportunity cost and economic agents',
+    name: 'Introduction to Economics',
+    sub: 'Economics as a social science, positive/normative statements, scarcity, choice, opportunity cost',
     color: '#f97316',
     available: { learn: true, link: false, land: false }
   },
@@ -25,7 +25,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'specialisation_money',
-    name: 'Specialisation & Money',
+    name: 'Specialisation & Division of Labour',
     sub: 'Division of labour, functions of money, barter',
     color: '#f59e0b',
     available: { learn: true, link: false, land: false }
@@ -37,25 +37,13 @@ window.ECONOS_TOPICS = [
     color: '#84cc16',
     available: { learn: true, link: false, land: false }
   },
+
+  /* ---- Theme 1, Section 2: How Markets Work (2.1–2.10) ---- */
   {
     id: 'demand',
     name: 'Demand',
     sub: 'Law of demand, shifts, consumer surplus',
     color: '#10b981',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'supply',
-    name: 'Supply',
-    sub: 'Law of supply, shifts, producer surplus',
-    color: '#06b6d4',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'market_equilibrium',
-    name: 'Market Equilibrium',
-    sub: 'Price mechanism, excess demand/supply, rationing',
-    color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
   },
   {
@@ -66,13 +54,6 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'pes',
-    name: 'Price Elasticity of Supply',
-    sub: 'PES formula, determinants, time and stocks',
-    color: '#a855f7',
-    available: { learn: true, link: false, land: false }
-  },
-  {
     id: 'yed_xed',
     name: 'YED & XED',
     sub: 'Income and cross-price elasticity, normal vs inferior',
@@ -80,10 +61,61 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
+    id: 'supply',
+    name: 'Supply',
+    sub: 'Law of supply, shifts, producer surplus',
+    color: '#06b6d4',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'pes',
+    name: 'Price Elasticity of Supply',
+    sub: 'PES formula, determinants, time and stocks',
+    color: '#a855f7',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'market_equilibrium',
+    name: 'Price Determination',
+    sub: 'Equilibrium, excess demand/supply, market clearing',
+    color: '#0ea5e9',
+    available: { learn: true, link: false, land: false }
+  },
+  {
     id: 'price_functions',
-    name: 'Functions of Price',
+    name: 'Price Mechanism',
     sub: 'Rationing, signalling, incentives and resource allocation',
     color: '#14b8a6',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'consumer_producer_surplus',
+    name: 'Consumer & Producer Surplus',
+    sub: 'Welfare triangles, efficiency and the gains from trade',
+    color: '#f59e0b',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'indirect_taxes_subsidies',
+    name: 'Indirect Taxes & Subsidies',
+    sub: 'Tax and subsidy diagrams, incidence, welfare effects and evaluation',
+    color: '#b45309',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'behavioural_econ',
+    name: 'Behavioural Economics',
+    sub: 'Nudge theory, heuristics, biases and bounded rationality',
+    color: '#1d4ed8',
+    available: { learn: true, link: false, land: false }
+  },
+
+  /* ---- Theme 1, Section 3: Market Failure (3.1–3.4) ---- */
+  {
+    id: 'market_failure',
+    name: 'Market Failure',
+    sub: 'Types of market failure and why markets fail to achieve allocative efficiency',
+    color: '#b91c1c',
     available: { learn: true, link: false, land: false }
   },
   {
@@ -114,6 +146,17 @@ window.ECONOS_TOPICS = [
     color: '#7c3aed',
     available: { learn: true, link: false, land: false }
   },
+
+  /* ---- Theme 1, Section 4: Government Intervention (4.1–4.2) ---- */
+  {
+    id: 'govt_failure',
+    name: 'Government Failure',
+    sub: 'Unintended consequences, information failures, regulatory capture',
+    color: '#9f1239',
+    available: { learn: true, link: false, land: false }
+  },
+
+  /* ---- Parked — to be assigned to later themes ---- */
   {
     id: 'environmental_econ',
     name: 'Environmental Economics',
@@ -122,38 +165,10 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'govt_intervention_tax',
-    name: 'Government Intervention: Taxes',
-    sub: 'Indirect taxes, incidence, carbon tax vs cap-and-trade',
-    color: '#b45309',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'govt_intervention_subsidies',
-    name: 'Government Intervention: Subsidies',
-    sub: 'Subsidies, benefits and evaluation',
-    color: '#0f766e',
-    available: { learn: true, link: false, land: false }
-  },
-  {
     id: 'price_controls',
     name: 'Price Controls',
     sub: 'Price ceilings, price floors, effects and evaluation',
     color: '#b91c1c',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'govt_failure',
-    name: 'Government Failure',
-    sub: 'Unintended consequences, information failures, regulatory capture',
-    color: '#9f1239',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'behavioural_econ',
-    name: 'Behavioural Economics',
-    sub: 'Nudge theory, heuristics, biases and bounded rationality',
-    color: '#1d4ed8',
     available: { learn: true, link: false, land: false }
   },
   {

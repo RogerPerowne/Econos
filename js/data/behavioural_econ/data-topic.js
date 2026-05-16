@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'behavioural_econ',
-  topicNum: '1.21',
+  topicNum: '2.10',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Behavioural Economics',

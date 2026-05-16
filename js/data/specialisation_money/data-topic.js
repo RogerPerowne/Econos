@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'specialisation_money',
-  topicNum: '1.3',
+  topicNum: '1.5',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Specialisation & Money',

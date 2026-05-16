@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'public_goods',
-  topicNum: '1.14',
+  topicNum: '3.3',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Public Goods',

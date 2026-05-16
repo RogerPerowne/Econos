@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'ppf',
-  topicNum: '1.2',
+  topicNum: '1.4',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Production Possibility Frontiers',

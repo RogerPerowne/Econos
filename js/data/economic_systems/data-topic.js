@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'economic_systems',
-  topicNum: '1.4',
+  topicNum: '1.6',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Economic Systems',

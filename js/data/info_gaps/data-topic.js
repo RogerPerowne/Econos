@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'info_gaps',
-  topicNum: '1.15',
+  topicNum: '3.4',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Information Gaps',

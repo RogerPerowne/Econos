@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'pes',
-  topicNum: '1.9',
+  topicNum: '2.5',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Elasticity of Supply',

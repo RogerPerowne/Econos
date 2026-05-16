@@ -208,7 +208,7 @@
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
       content += genSecLabel('🔗', 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '280px'},1fr));gap:${hasIcons ? '12px' : '14px'};margin-bottom:26px;">`;
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '220px'},1fr));gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         if (hasIcons) {
@@ -226,9 +226,12 @@
           </div>`;
         }
         return `
-        <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}40;">
-          <div style="padding:12px 18px;background:${t.headerBg};color:#fff;font-weight:800;font-size:15px;">${item.head}</div>
-          <div style="padding:14px 18px;font-size:14px;color:#0B1426;line-height:1.7;">${item.body}</div>
+        <div style="border-radius:12px;background:#fff;border:1px solid ${t.border}22;border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
+            <div style="width:22px;height:22px;border-radius:50%;background:${t.headerBg};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</div>
+            <div style="font-weight:800;font-size:14px;color:${t.label};line-height:1.3;">${item.head}</div>
+          </div>
+          <div style="font-size:13.5px;color:#475569;line-height:1.65;">${item.body}</div>
         </div>`;
       }).join('');
       content += `</div>`;

@@ -204,12 +204,27 @@
         </div>`;
     }
 
-    // Causes: [{head, body}] — big coloured tiles in a 2-col grid
+    // Causes: [{head, body, icon?}] — coloured tiles; icon mode activates richer card layout
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
+      const hasIcons = c.causes.some(item => item.icon);
       content += genSecLabel('🔗', 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:18px;">`;
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(${hasIcons ? '175px' : '280px'},1fr));gap:${hasIcons ? '12px' : '14px'};margin-bottom:18px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
+        if (hasIcons) {
+          const headText = item.head.replace(/^\d+\.\s*/, '');
+          return `
+          <div style="border-radius:14px;overflow:hidden;background:#fff;border:1px solid ${t.border}25;box-shadow:0 2px 12px rgba(0,0,0,0.07);display:flex;flex-direction:column;">
+            <div style="padding:18px 16px 10px;background:${t.bg};text-align:center;">
+              <div style="font-size:30px;line-height:1;">${item.icon}</div>
+            </div>
+            <div style="padding:9px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;gap:7px;">
+              <span style="min-width:19px;height:19px;border-radius:50%;background:rgba(255,255,255,0.25);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;">${i + 1}</span>
+              <span>${headText}</span>
+            </div>
+            <div style="padding:11px 14px 14px;font-size:13px;color:#334155;line-height:1.6;flex:1;">${item.body}</div>
+          </div>`;
+        }
         return `
         <div style="border-radius:12px;overflow:hidden;background:${t.bg};border:1px solid ${t.border}40;">
           <div style="padding:12px 18px;background:${t.headerBg};color:#fff;font-weight:800;font-size:15px;">${item.head}</div>
@@ -217,6 +232,41 @@
         </div>`;
       }).join('');
       content += `</div>`;
+    }
+
+    // Product examples — "Think like an examiner" card grid
+    if (c.productExamples && c.productExamples.length) {
+      const VC = {
+        rose:   { color: '#DC2626', badge: '#FEE2E2' },
+        amber:  { color: '#D97706', badge: '#FEF3C7' },
+        green:  { color: '#059669', badge: '#D1FAE5' },
+        blue:   { color: '#2563EB', badge: '#DBEAFE' },
+        purple: { color: '#7C3AED', badge: '#EDE9FE' },
+      };
+      content += `
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:22px;">
+        <div style="background:#0B1426;padding:14px 18px;display:flex;align-items:center;gap:10px;">
+          <span style="font-size:18px;">🎓</span>
+          <div>
+            <div style="color:#fff;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;">Think like an examiner</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:2px;">Apply the determinants to real-world examples</div>
+          </div>
+        </div>
+        <div style="padding:14px;background:#F8FAFC;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;">
+            ${c.productExamples.map(p => {
+              const vc = VC[p.verdictTone] || VC.amber;
+              return `
+              <div style="background:#fff;border-radius:10px;border:1px solid #E2E8F0;padding:13px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+                <div style="font-size:26px;margin-bottom:7px;">${p.icon}</div>
+                <div style="font-weight:800;font-size:13px;color:#0B1426;margin-bottom:5px;">${p.product}</div>
+                <div style="display:inline-block;padding:2px 9px;border-radius:20px;background:${vc.badge};color:${vc.color};font-size:10px;font-weight:700;margin-bottom:7px;">${p.verdict}</div>
+                <div style="font-size:12px;color:#475569;line-height:1.55;">${p.reasoning}</div>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>`;
     }
 
     // Steps: [{label, text}] — numbered with cycling tones

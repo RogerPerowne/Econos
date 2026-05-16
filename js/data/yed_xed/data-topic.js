@@ -115,6 +115,7 @@ window.ECONOS_TOPIC = {
         icon: '🚌',
         headline: 'Bus travel demand',
         subline: 'Rising incomes — which way does demand move?',
+        currency: '£',
         y1: 100,
         y2: 105,
         q1: 200,

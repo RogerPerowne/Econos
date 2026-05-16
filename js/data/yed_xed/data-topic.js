@@ -134,8 +134,8 @@ window.ECONOS_TOPIC = {
           text: 'Inferior good businesses (budget supermarkets, value airlines like Ryanair) benefit from recessions. Ryanair grew market share in 2008–09 as consumers switched from full-service airlines (normal goods, high YED) to budget options (inferior goods relative to full-service). Understanding YED reveals who gains when others lose.'
         }
       ],
-      keyTakeaway: 'Know your YED: it tells you whether you're pro-cyclical (luxury), counter-cyclical (inferior), or recession-resilient (necessity).',
-      examEdge: 'Ryanair in 2008–09 is a powerful exam example: full-service airlines are normal goods (high YED) → demand collapsed; budget airlines acted as inferior substitutes → demand rose. This shows YED isn't just about the good itself but about relative positioning — what is the alternative consumers switch to?'
+      keyTakeaway: 'Know your YED: it tells you whether you\'re pro-cyclical (luxury), counter-cyclical (inferior), or recession-resilient (necessity).',
+      examEdge: 'Ryanair in 2008–09 is a powerful exam example: full-service airlines are normal goods (high YED) → demand collapsed; budget airlines acted as inferior substitutes → demand rose. This shows YED isn\'t just about the good itself but about relative positioning — what is the alternative consumers switch to?'
     },
 
     /* ================================================================
@@ -224,7 +224,7 @@ window.ECONOS_TOPIC = {
       id: 'yed_xed_6',
       stepLabel: 'Step 6 of 7',
       title: 'Real-World Applications',
-      intro: 'YED and XED aren't just formulas — they drive competition law, pricing strategy, and macroeconomic policy.',
+      intro: 'YED and XED aren\'t just formulas — they drive competition law, pricing strategy, and macroeconomic policy.',
       steps: [
         {
           label: 'Competition law (XED)',
@@ -297,7 +297,7 @@ window.ECONOS_TOPIC = {
   </div>
   <div style="background:#FFF5F5;border:1px solid #DC2626;border-radius:8px;padding:10px;">
     <div style="font-weight:800;font-size:12px;color:#DC2626;margin-bottom:5px;">⚠️ XED magnitude without sign</div>
-    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Saying 'XED = 1.5 so they're substitutes' is fine. Saying 'XED = −1.5 so they're substitutes' is wrong — negative XED means complements.</div>
+    <div style="font-size:12px;color:#0B1426;line-height:1.55;">Saying &#x27;XED = 1.5 so they are substitutes&#x27; is fine. Saying &#x27;XED = −1.5 so they are substitutes&#x27; is wrong — negative XED means complements.</div>
   </div>
 </div>`,
       steps: [

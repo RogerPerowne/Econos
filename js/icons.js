@@ -6048,7 +6048,7 @@ window.ECONOS_ICONS = {
       <text x="230" y="368" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Economies of Scale ↓</text>
       <text x="560" y="368" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Diseconomies of Scale ↑</text>
     </svg>
-  `
+  `,
 
   mcLrTangency: `
     <svg class="mclt-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -6154,7 +6154,7 @@ window.ECONOS_ICONS = {
       <!-- LONG RUN title -->
       <text x="658" y="428" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">LONG RUN</text>
     </svg>
-  `
+  `,
 
   cobwebModel: `
     <svg class="cobweb-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -7268,7 +7268,7 @@ window.ECONOS_ICONS = {
       <line x1="60" y1="245" x2="250" y2="245" stroke="#0EA5E9" stroke-width="1.3" stroke-dasharray="5 4"/>
       <text x="50" y="249" font-size="11" font-weight="700" fill="#0EA5E9" text-anchor="end">AC_m</text>
     </svg>
-  `
+  `,
 
   /* ── Monopoly DWL (welfare analysis) ────────────────────────────────── */
   monopolyDwl: `

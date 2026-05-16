@@ -238,6 +238,8 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
           body: 'Strong brand attachment (Apple, Nike, Chanel) makes consumers perceive no real substitute — even when cheaper alternatives exist. Brand loyalty reduces elasticity by making the good feel unique in consumers\' minds.'
         }
       ],
+      productExamplesTitle: 'How elastic is…?',
+      productExamplesSubtitle: 'Predict the PED verdict for each product, then reveal',
       productExamples: [
         {
           icon: '🧂',

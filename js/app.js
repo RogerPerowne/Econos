@@ -248,8 +248,8 @@
         <div style="background:#0B1426;padding:14px 18px;display:flex;align-items:center;gap:10px;">
           <span style="font-size:18px;">🎓</span>
           <div>
-            <div style="color:#fff;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;">Think like an examiner</div>
-            <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:2px;">Apply the determinants to real-world examples</div>
+            <div style="color:#fff;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;">${c.productExamplesTitle || 'Think like an examiner'}</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:2px;">${c.productExamplesSubtitle || 'Apply the determinants to real-world examples'}</div>
           </div>
         </div>
         <div style="padding:14px;background:#F8FAFC;">

@@ -187,51 +187,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The optimal degree of redistribution is an empirical question, not a theoretical one. Diamond & Saez (2011) estimate optimal top marginal tax rate ~70% for revenue maximisation (above which incentive effects dominate). UK currently at 45% — room for debate. Use this framework to structure equity-efficiency essays.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-    {
-      id: 'inequality-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 9 of 9',
-      question: 'Evaluate the effectiveness of government policies to reduce income inequality. [25 marks]',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define income inequality and state how it is measured (Gini, Lorenz). Outline the main policy toolkit briefly. Signal a conditional, nuanced conclusion.',
-          hint: 'Gini coefficient: 0 = perfect equality, 1 = maximum inequality. UK Gini ≈ 0.35 post-transfers (market income Gini ≈ 0.52). Policy toolkit: progressive taxation, means-tested benefits, NLW, education investment.',
-          model: 'Income inequality refers to the unequal distribution of earned income among households, measured by the Gini coefficient (ranging from 0 for perfect equality to 1 for maximum concentration) and visualised by the Lorenz curve. In the UK, the market income Gini is approximately 0.52 — one of the highest among OECD nations — but the post-tax-and-transfer Gini falls to around 0.35, indicating that existing fiscal redistribution already plays a substantial role in compressing inequality. Government policies operate on two margins: reducing market-generated inequality (through minimum wages and structural policies) and redistributing income after it has been earned (through progressive taxation, benefits, and in-kind public services). The effectiveness of these policies depends on their incentive effects, fiscal cost, targeting accuracy, and structural impact on the causes of inequality — not just its measurement.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis — redistributive tax-and-benefit policies',
-          prompt: 'Explain how progressive income tax and means-tested benefits reduce the Gini. Include NLW/NMW as a market-based approach.',
-          hint: 'Progressive income tax: basic 20%, higher 40%, additional 45%. Income-related benefits raise disposable income of poorest. NLW (£11.44/hr 2024): raises wages of lowest-paid directly. Combined effect: market Gini 0.52 → post-transfer 0.35.',
-          model: 'The primary mechanism for reducing income inequality is fiscal redistribution via the tax and benefit system. Progressive income taxation — with marginal rates rising from 20% to 40% to 45% — transfers a higher proportional burden to top earners, while the personal allowance (£12,570 in 2024) means the lowest earners pay no income tax. The IFS estimates the poorest fifth of households receive approximately £11,000 per year net in benefits and public services, while the richest fifth contribute approximately £26,000 net — a substantial redistribution. The National Living Wage (NLW, £11.44/hour from April 2024) directly raises market incomes of the lowest-paid workers, compressing the lower tail of the income distribution without fiscal transfer. Since 2015, the NLW has risen approximately 50% in real terms; academic evidence suggests the wage gain has broadly outweighed modest job losses for the lowest-paid workers.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter-argument — limitations and equity-efficiency trade-off',
-          prompt: 'Explain the Laffer curve/incentive problem, poverty trap, and why structural causes may not respond to fiscal redistribution.',
-          hint: 'Laffer curve: high top rates may reduce revenue and incentivise avoidance/emigration. Poverty trap: high benefit withdrawal rates (60-80% in UC) reduce incentive to work. Root causes: skill gaps, skill-biased technical change, capital income growth — redistribution treats symptoms not causes.',
-          model: 'Redistribution policies face a fundamental tension with economic efficiency. High marginal income tax rates reduce the after-tax return to additional effort and investment: the Laffer curve suggests that beyond a point, higher rates yield falling revenue as behavioural responses dominate — the UK\'s 50p top rate was cut to 45% in 2012 partly on these grounds. The benefits system creates a parallel disincentive through the poverty trap: when means-tested benefits are withdrawn as earned income rises, the effective marginal withdrawal rate can exceed 60-80% under Universal Credit for some households, dramatically reducing the financial reward from entering employment. More fundamentally, redistributive policies address income after market processes have generated it — but cannot easily address structural drivers of market inequality: skill-biased technical change favouring high-skilled workers, the growing share of capital income (more concentrated than labour income), and educational attainment gaps that begin in early childhood. Redistributing income after-the-fact does not change the underlying skills distribution or regional productivity gap.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — education and structural policy as long-run alternatives',
-          prompt: 'Evaluate education, training, and early-years investment as structural policies that address root causes. Compare short-run vs long-run effectiveness.',
-          hint: 'Heckman: early childhood investment returns 7-13% p.a. SureStart reduced educational attainment gap. Regional policy addresses structural divergence (London GVA/head ~£60k vs NE ~£26k). But all structural policies have 10-20 year lags — political economy challenge.',
-          model: 'Structural policies that address the causes of income inequality may be more durably effective than redistribution, albeit on a much longer time horizon. Nobel laureate James Heckman estimates that investment in early childhood education generates returns of 7-13% per year through improved lifetime earnings and reduced social costs — far exceeding returns to later-stage training. The UK\'s SureStart programme showed measurable positive effects on educational attainment in disadvantaged areas. More broadly, reducing the skills premium requires sustained investment in vocational training and apprenticeships, not just income redistribution. Regional policy matters too: the persistent productivity gap between London/South East and the North East reflects structural underinvestment that tax-and-transfer cannot close. The Levelling Up agenda attempts to address this through infrastructure investment, but at a scale (£4-5bn) far below what independent analysis suggests is needed. Long-run structural policies take 10-20 years to reduce inequality measurably, creating political economy problems for governments with 5-year electoral cycles.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Make a conditional judgement: which policies are most effective and under what conditions? Is complete equality achievable or desirable?',
-          hint: 'Most effective combination: progressive taxation + NLW + targeted benefits for immediate redistribution + education investment for structural change. Complete equality neither achievable nor desirable (incentive effects). UK redistribution already substantial; structural causes persist and require structural solutions.',
-          model: 'Government policies to reduce income inequality are most effective when deployed as a coordinated combination. In the short run, the UK\'s progressive tax-and-transfer system already achieves substantial redistribution — reducing the market Gini from ~0.52 to ~0.35 — and the National Living Wage raises market incomes at the bottom without fiscal cost. These tools are effective within limits but cannot eliminate the equity-efficiency trade-off at higher redistribution levels. In the long run, structural policies — early childhood education, skills investment, regional infrastructure — address root causes and carry fewer efficiency costs than high marginal tax rates, but take 10-20 years to materially reduce the Gini coefficient. Complete income equality is neither achievable (skills and productivity differ genuinely) nor desirable (some inequality provides incentives for effort and entrepreneurship). The appropriate policy goal is equality of opportunity — a distribution consistent with social cohesion and sustainable economic incentives — requiring both immediate fiscal redistribution and long-run structural investment monitored by independent bodies capable of assessing efficiency costs alongside distributional impact.'
-        }
-      ]
     }
+
   ]
 };

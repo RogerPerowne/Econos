@@ -135,61 +135,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The EU block exemption framework acknowledges that not all inter-firm coordination is harmful. R&D agreements between competitors can be exempted from cartel prohibition if they generate innovation benefits that consumers share. Joint purchasing agreements, standardisation agreements, and crisis cartels have been permitted under specific conditions. The principle: prohibition applies to agreements that restrict competition without generating offsetting consumer benefits.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'cc-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: collusion and cartels',
-      question: 'Evaluate the view that collusion between oligopolists is always harmful and should be prohibited. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define collusion and explain the standard welfare case against cartels.',
-          hint: 'Collusion: agreement between competing firms to coordinate price, output, or market allocation — reducing competitive pressure. Explicit (direct agreement) vs tacit (price leadership, parallel pricing). Standard case: collusion → joint profit maximisation → P > MC, DWL, consumers harmed. But some coordination (R&D joint ventures, standards agreements) may benefit consumers.',
-          model: 'Collusion arises when oligopolists coordinate their pricing or output decisions, reducing competitive pressure and moving the market outcome toward the joint-profit-maximising monopoly result. Explicit collusion (formal cartel agreements) and tacit collusion (price leadership, parallel pricing without direct communication) both produce similar welfare outcomes: prices above competitive levels, restricted output, and a deadweight welfare loss. The prima facie case for prohibition is strong. However, not all forms of inter-firm coordination harm consumers — some joint cooperation generates efficiency and innovation benefits. The key is whether coordination restricts competition without generating offsetting consumer benefits.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — How cartels harm consumers: joint profit maximisation',
-          prompt: 'Explain the welfare harm of collusion using the joint profit maximisation framework.',
-          hint: 'Cartel acts as collective monopoly: sets Q where MR = MC (for the group), price at the demand curve above MC → DWL. UK examples: Construction materials cartel (concrete, plasterboard) fined £millions by CMA. LIBOR rigging: banks colluded on benchmark interest rates. Vitamins cartel (Roche, BASF): price 30-40% above competitive level for years.',
-          model: 'A cartel enables oligopolists to act collectively as a monopoly, setting the joint profit-maximising price above competitive levels. Each firm restricts output below its individual profit-maximising level to maintain the agreed higher price, generating supernormal profits for cartel members at the expense of consumer welfare. The deadweight welfare loss from cartel pricing is equivalent to that of monopoly. Real-world examples confirm substantial consumer harm: the vitamins cartel (Roche, BASF, and others) maintained prices 30-40% above competitive levels for nearly a decade, costing consumers billions globally. The UK Construction materials cartel in concrete and plasterboard similarly inflated costs for the housing sector for years. LIBOR manipulation (Barclays, Deutsche Bank) distorted borrowing rates globally, transferring income from borrowers to banks.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Why cartels are inherently unstable: prisoner\'s dilemma',
-          prompt: 'Explain why the prisoner\'s dilemma creates a self-destruct mechanism that limits cartel duration.',
-          hint: 'Each cartel member has incentive to cheat (lower price slightly → capture market share). If all cheat → price wars → cartel collapses. Nash equilibrium of the collusion game is non-cooperation. Leniency programmes exploit this (first to confess gets immunity). The self-defeating incentive structure weakens the case for prohibition as the sole remedy.',
-          model: 'Cartels contain the seeds of their own destruction through the prisoner\'s dilemma. Even when all members prefer the joint profit-maximising outcome, each individual member has a dominant strategy to cheat: by secretly cutting price below the agreed level, a cheating firm can capture market share and earn higher profits — at least until rivals detect the defection. When all firms apply this reasoning, the cartel collapses into competitive pricing. This inherent instability means cartel harm is self-limiting: without strong enforcement mechanisms, cartels tend to break down. The EU and CMA leniency programmes exploit this logic: the first cartel member to confess receives full immunity from fines — creating a race to confess that both detects and destabilises cartels simultaneously.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — When coordination is beneficial: R&D, standards, crisis cartels',
-          prompt: 'Evaluate cases where inter-firm coordination generates consumer benefits that justify exemption from prohibition.',
-          hint: 'EU block exemptions: R&D joint ventures, standardisation agreements, specialisation agreements can be exempted if they generate efficiency gains consumers share. R&D: positive externalities mean firms under-invest alone — coordination raises total innovation. Standards (USB, 5G spectrum) require coordination. Crisis cartels (pandemic, wartime): supply coordination prevents market failure.',
-          model: 'The categorical prohibition of all collusion is too blunt because some coordination between competing firms generates net consumer benefits. EU competition law therefore provides block exemptions for certain forms of coordination. Joint R&D agreements are a major example: because knowledge generates positive externalities, individual firms systematically under-invest in R&D. Allowing competitors to pool R&D investment can produce innovations that benefit consumers more than separate research programmes would. Industry standardisation (USB formats, 5G spectrum, accounting standards) requires competitors to agree on common protocols: without coordination, incompatible standards fragment markets and raise consumer costs. The pharmaceutical industry during the COVID-19 pandemic illustrated how production coordination between normally competing firms can be welfare-improving in crisis conditions.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Explicit vs tacit collusion; per se prohibition vs rule of reason',
-          prompt: 'Weigh per se prohibition of explicit cartels against a more nuanced rule-of-reason approach for tacit collusion.',
-          hint: 'Explicit cartels: per se illegal — no efficiency defence. Justification: no legitimate business reason for secret price-fixing. Tacit collusion: harder to prohibit — emerges from rational competitive behaviour without agreement. Rule of reason: evaluate actual market effects. Digital challenge: algorithmic pricing may enable implicit coordination without explicit agreement.',
-          model: 'Competition law has historically distinguished between explicit cartels (per se illegal) and tacit collusion (generally not prohibited). This distinction is justified: explicit cartel agreements have no legitimate business purpose other than restricting competition — per se prohibition is appropriate. Tacit collusion is more complex: price parallelism in oligopoly can emerge from rational competitive behaviour without explicit coordination, and prohibiting it would require firms not to observe and respond to rivals\' pricing — itself efficient competitive behaviour. The challenge for competition authorities is the digital economy: algorithmic pricing may produce cartel-like outcomes without explicit agreement. The appropriate remedy here is unclear — the current legal framework struggles to address algorithmic coordination.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a reasoned judgement: explicit cartels should be prohibited per se; other coordination requires case-by-case analysis.',
-          hint: 'Explicit cartels: prohibition with leniency programmes well-justified — consumer harm, no offsetting benefits, instability creates enforcement opportunity. Tacit collusion and cooperative R&D: more nuanced approach. The blanket "always harmful" claim fails for coordination that generates efficiency or innovation benefits.',
-          model: 'The view that all collusion is always harmful and should be prohibited is correct for explicit cartel agreements — which harm consumers through monopoly pricing with no offsetting welfare benefit — but is too broad as a universal principle. The prisoner\'s dilemma creates inherent cartel instability that limits the duration of harm and creates enforcement opportunities through leniency programmes. However, some forms of inter-firm coordination generate efficiency and innovation benefits that consumers share, and these are appropriately exempted from categorical prohibition. The most effective competition policy approach distinguishes between forms of coordination: prohibit explicit price-fixing cartels per se, with strong penalties and leniency incentives; apply a rule-of-reason framework to other cooperative agreements that may generate consumer benefits; and develop new tools to address emerging forms of algorithmic tacit collusion that the existing legal framework does not adequately address.'
-        }
-      ]
     }
+
   ]
 };

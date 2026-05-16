@@ -377,61 +377,7 @@ window.ECONOS_TOPIC = {
         text: 'Reducing inflation once it\'s above target is costly. Each percentage point reduction in inflation requires roughly <strong>1-3% of GDP to be sacrificed</strong> in lost output (the sacrifice ratio). This is why central banks work hard to keep inflation anchored — regaining credibility after a shock is far more expensive than never losing it.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 9 — Essay scaffold ----- */
-    {
-      id: 'im-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 9 of 9',
-      title: 'Essay scaffold: measuring inflation',
-      question: 'Evaluate the usefulness of the Consumer Price Index (CPI) as a measure of inflation and its role in informing macroeconomic policy decisions. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define inflation and explain what CPI measures, how it is constructed, and why accurate inflation measurement matters for policy.',
-          hint: 'CPI = weighted average of price changes in a basket of representative goods and services. ONS surveys household spending patterns. Weightings updated annually. Used as the Bank of England\'s inflation target measure. Policy implications: interest rate decisions, benefit uprating, wage negotiations.',
-          model: 'Inflation — a sustained general rise in the price level — is measured in the UK primarily through the Consumer Price Index (CPI), a weighted average of price changes for a basket of around 700 representative goods and services, compiled monthly by the ONS. The basket\'s composition and weightings reflect average household spending patterns, updated annually. CPI is the Bank of England\'s official inflation target measure (2% symmetric target) and informs interest rate decisions by the Monetary Policy Committee. Accurate inflation measurement is therefore critical: errors in the CPI lead directly to mispriced monetary policy, incorrectly uprated benefits, and distorted wage negotiations. This essay evaluates how well CPI performs this function.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — CPI is internationally comparable, transparent, and excludes volatile housing costs',
-          prompt: 'Explain the key methodological advantages of CPI: harmonised with EU HICP, excludes mortgage interest payments (volatile, policy-sensitive), and provides consistent cross-country comparisons.',
-          hint: 'HICP = Harmonised Index of Consumer Prices — used across EU. Excluding housing costs: mortgage payments rise when Bank raises rates, which would perversely show CPI rising when monetary tightening is occurring. CPI captures underlying consumer price trends more cleanly.',
-          model: 'CPI has important methodological advantages that make it the appropriate benchmark for monetary policy. Its construction is harmonised with the EU\'s Harmonised Index of Consumer Prices (HICP), enabling meaningful cross-country comparisons and supporting international policy analysis. Crucially, CPI excludes mortgage interest payments — a deliberate design choice that prevents a dangerous feedback loop: if the MPC raises interest rates to reduce inflation but rising mortgage costs simultaneously raise the measured inflation rate, the MPC would face misleading signals about its own effectiveness. By measuring the prices consumers pay for goods and services rather than housing finance costs, CPI captures underlying inflationary trends that monetary policy is actually designed to address.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — CPI informs multiple critical policy decisions beyond monetary policy',
-          prompt: 'Explain how CPI is used to uprate state benefits (triple lock, Universal Credit), guide wage negotiations, and deflate nominal GDP and wage data to reveal real changes.',
-          hint: 'Triple lock: state pension rises by max(CPI, earnings growth, 2.5%). Benefits uprating: Universal Credit, tax credits. Wage bargaining: real wage = nominal wage - CPI. GDP deflator based on CPI. All these depend on CPI accuracy.',
-          model: 'Beyond monetary policy, CPI permeates a wide range of macroeconomic and social policy decisions. The state pension triple lock uprates the pension by the highest of CPI inflation, earnings growth, or 2.5%, meaning a CPI miscalculation directly affects the incomes of 12 million UK pensioners. Benefits uprating (Universal Credit, child benefit) is typically linked to CPI, affecting the real incomes of the most economically vulnerable households. In labour markets, real wage calculations (nominal wage growth minus CPI) determine whether living standards are rising or falling — a central metric for policy evaluation. If CPI systematically understates the true inflation experienced by lower-income households (who face different consumption baskets), policy relying on it will systematically undercompensate those groups.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — CPI suffers from substitution bias, quality adjustment problems, and fails to capture housing costs',
-          prompt: 'Argue that CPI has systematic measurement biases that cause it to misstate the true cost of living: substitution bias (consumers change behaviour in response to price changes), quality adjustment errors, and the exclusion of housing costs in CPIH.',
-          hint: 'Substitution bias: CPI uses fixed Laspeyres weights — if beef rises, consumers buy chicken, but CPI still weights beef highly → overstates cost of maintaining living standards. Quality adjustment: hard to value quality improvements in electronics, healthcare. CPIH includes owner-occupier costs (OOH) via rental equivalence — better for housing-heavy households.',
-          model: 'CPI contains systematic biases that may cause it to misstate true inflation. Substitution bias arises from CPI\'s use of fixed (Laspeyres) basket weights: as prices change, consumers substitute toward cheaper alternatives, but CPI continues to apply original weights — overstating the cost of maintaining the same living standard. Academic estimates suggest this bias adds approximately 0.3–0.5 percentage points to measured inflation. Quality adjustment presents further challenges: when smartphones, medical devices, or software improve dramatically in capability while prices are stable, CPI may overstate "real" price rises by failing to capture quality gains fully. The exclusion of housing ownership costs from CPI (addressed in CPIH, which uses rental equivalence) means that during housing booms, CPI understates the true cost of living for homeowners with mortgages.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — The appropriate measure depends on the specific policy purpose',
-          prompt: 'Evaluate how RPI, CPIH, and sector-specific price indices are better suited than CPI for certain applications, and assess whether any single index can adequately capture the diverse inflationary experiences of different household types.',
-          hint: 'RPI: includes mortgage interest costs — better for index-linked gilts, rail fares. CPIH: adds owner-occupier costs — more complete living cost measure. But CPIH has its own difficulties (rental equivalence is imputed, not observed). Different households face different inflation rates: elderly spend more on energy/healthcare; young on rent/transport.',
-          model: 'The diversity of inflation experiences across households means no single index is equally fit for all purposes. The Retail Prices Index (RPI), despite being discontinued as a national statistic due to its upward bias, remains used for index-linked gilts and student loan interest — meaning the government benefits from the same bias it acknowledges is problematic. CPIH, which adds owner-occupier housing costs via rental equivalence, provides a more complete picture of living costs but relies on imputed (modelled rather than observed) rental values, introducing its own estimation uncertainty. Fundamentally, average price indices cannot capture the genuinely different inflation rates experienced by different household types: retired households spend more on energy and healthcare (both of which rose sharply in 2021–23), while younger households face disproportionate rent inflation. A single number for "the" inflation rate inevitably masks significant distributional variation.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a judgement: is CPI a useful measure of inflation for policy purposes, and what are its most important limitations?',
-          hint: 'CPI is useful and well-designed for its primary purpose (monetary policy anchor). Its limitations are real but manageable: substitution bias is modest, CPIH addresses housing, and ONS methodology is continuously refined. The most important limitation is distributional: CPI cannot capture the different inflation experiences of different households, which matters for benefits policy. Recommend supplementing with household-group specific indices for social policy.',
-          model: 'In conclusion, CPI is a useful, internationally comparable, and methodologically sound measure for its primary purpose — anchoring monetary policy and enabling cross-country comparison. Its exclusion of mortgage costs is a deliberate strength, not a weakness, for monetary policy purposes. However, its limitations are significant for social policy applications: substitution bias may cause modest overstatement of true inflation, housing cost exclusion affects owner-occupiers, and average indices mask the genuinely different inflationary pressures faced by different household types. The most useful policy framework pairs CPI as the monetary policy anchor with household-type specific inflation measures (energy-intensive household baskets, rental-weighted baskets for young renters) to ensure benefits uprating and social policy responses address actual lived experience rather than an average that may poorly represent the most vulnerable groups.'
-        }
-      ]
     }
+
   ]
 };

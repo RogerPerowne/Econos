@@ -199,61 +199,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Don\'t just list structures — compare them on efficiency and link to policy. Strong analysis: "Unlike PC, monopoly is neither productively nor allocatively efficient in the static model — but may achieve greater dynamic efficiency if Schumpeterian supernormal profit funds R&D. Whether the static losses outweigh dynamic gains is an empirical question, not a theoretical one." Always qualify with contestability.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 9 — Essay scaffold ----- */
-    {
-      id: 'mvc-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 9 of 9',
-      title: 'Essay scaffold: monopoly vs competition',
-      question: 'Evaluate the view that monopoly is always worse for consumers than a competitive market. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define monopoly and competitive market. Explain the standard static efficiency case against monopoly.',
-          hint: 'Monopoly: single seller, significant barriers to entry, price-maker. Competitive market (PC or contestable): many sellers or easy entry, price-taker. Standard case: monopoly → P > MC → allocative inefficiency → DWL. But the "always worse" claim requires evaluation of natural monopoly, dynamic efficiency (Schumpeter), and contestability.',
-          model: 'A monopoly — a market with a single seller protected by significant entry barriers — produces at MR = MC but sets price on the demand curve above marginal cost, generating allocative inefficiency and a deadweight welfare loss. Consumers pay higher prices and receive a smaller quantity than in a competitive market. The static case against monopoly appears clear-cut. However, the claim that monopoly is always worse for consumers is too strong: in some contexts, monopoly enables productive efficiencies, funds the innovation that benefits consumers in the long run, or is the natural outcome of cost structures that a competitive alternative would only replicate less efficiently. This essay evaluates the full range of evidence.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — The static efficiency case against monopoly',
-          prompt: 'Explain allocative and productive inefficiency under monopoly with reference to consumer welfare.',
-          hint: 'Allocative: P > MC → output below social optimum → DWL (area between demand curve and MC from Qm to Qpc). Productive: no competitive pressure → X-inefficiency → higher average costs. Supernormal profit: income redistribution from consumers to shareholders (equity concern). Evidence: pharma (insulin prices in US vs UK), broadband in regions with single operator, energy markets before competition was introduced.',
-          model: 'Under monopoly, the profit-maximising output (MR = MC) lies below the allocatively efficient output (P = MC), generating a deadweight welfare loss equivalent to the triangle between the demand curve and MC. Consumers pay the monopoly price and receive less output — a transfer of consumer surplus to producer profit plus an irreversible welfare loss. Productive inefficiency arises because the absence of competitive pressure removes the incentive for cost minimisation: Leibenstein\'s X-inefficiency concept captures the tendency for protected firms to carry excess costs (overstaffing, bureaucracy, management slack). Real-world examples confirm consumer harm: pharmaceutical patent monopolies in the US produce insulin prices 10 times higher than UK levels; regional monopoly broadband providers charge more and invest less in network upgrades than competitive areas.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Natural monopoly: why competition may harm consumers',
-          prompt: 'Explain natural monopoly and why forcing competitive structure can raise costs for consumers.',
-          hint: 'Natural monopoly: high fixed costs, falling LRAC → single firm can produce total market output at lower unit cost than two or more firms. If broken into competitive firms, each operates at smaller scale → higher average costs → higher consumer prices. Water, gas, electricity, rail infrastructure. Correct response: regulate monopoly price (RPI-X), not force competition. Forcing competition in natural monopoly markets destroys cost efficiency.',
-          model: 'In industries characterised by very high fixed costs and economies of scale over the relevant range of output — water, gas, electricity grid, rail infrastructure — a single firm can produce total market output at lower average cost than any competitive alternative. This is the natural monopoly condition: the cost structure makes competition wasteful, because splitting output among multiple firms simply puts each on a higher point of its AC curve. A competitive water supply industry would require duplicate pipe networks, raising costs to all consumers. Here, monopoly is not "worse" than competition — it is the outcome that minimises consumer prices, provided prices are regulated. Ofwat, Ofgem, and ORR all regulate utility monopoly prices precisely because their structural form is efficient, even though competitive pressure is absent.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Dynamic efficiency and Schumpeterian competition',
-          prompt: 'Evaluate the Schumpeterian argument that monopoly profit funds the innovation that benefits consumers in the long run.',
-          hint: 'Schumpeter: monopoly profit is the reward for innovation — the incentive to invest in R&D. Competitive markets → normal profit → firms cannot afford R&D investment. Large firms with market power invest proportionally more in R&D (pharmaceutical industry: GSK, Pfizer). Creative destruction: monopoly today is replaced by tomorrow\'s innovator. Contestability: even without creative destruction, the threat of entry from innovators disciplines monopoly behaviour. Counter-counter: in digital markets, network effects may prevent creative destruction (Facebook has faced no serious competitor for 15+ years).',
-          model: 'Schumpeter\'s dynamic efficiency argument challenges the static welfare comparison fundamentally: monopoly profit is the incentive for the innovation that creates new products, technologies, and services that benefit consumers over time. Competitive markets, with their thin margins and normal profits, cannot afford the R&D investment that drives long-run consumer welfare. The pharmaceutical industry illustrates this: patent-protected supernormal profit enables the billion-pound R&D programmes that produce vaccines, treatments, and cures that consumers value enormously. Even if static price is higher under monopoly, consumers may be better off in the long run through access to innovations that only monopoly profit incentivised. Schumpeterian competition — competition between successive innovations (smartphones displacing cameras, streaming displacing DVDs) — may deliver more dynamic benefit to consumers than price competition within a static product market. The Apple iPhone, Google Search, and Amazon logistics are all examples where market-dominant firms generated enormous consumer surplus despite high market power.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Context determines whether monopoly harms consumers',
-          prompt: 'Weigh the static harms against natural monopoly, dynamic efficiency, and contestability considerations.',
-          hint: 'Monopoly is most harmful when: no natural monopoly conditions, high barriers prevent entry by innovators, no regulatory constraint, and the industry is not characterised by Schumpeterian competition. Monopoly may be acceptable or beneficial when: natural monopoly (regulate price), strong dynamic competition (tech innovation), or market is contestable (threat of entry disciplines price). The "always worse" claim fails in these cases.',
-          model: 'The view that monopoly is always worse for consumers depends critically on market context. Monopoly is most harmful in industries with no natural monopoly conditions, where entry barriers are strategic rather than structural, and where the dominant firm faces no credible threat of innovation-based displacement. In these cases — protected by barriers that serve no efficiency purpose — monopoly pricing imposes static welfare losses without compensating dynamic benefits. However, in natural monopoly infrastructure, regulated monopoly is superior to forced competition because it preserves scale economies while price regulation limits consumer harm. In innovation-intensive industries, temporary monopoly generates the R&D returns that fund new products — consumers may prefer higher prices today for an innovative product over lower prices for a stagnant one. And in contestable markets, the monopoly may price near the competitive level without any actual competition. These contexts show that "always worse" is too strong: the welfare comparison is industry-specific, and both static and dynamic dimensions must be weighed.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a nuanced judgement: monopoly is often but not always worse for consumers — context, natural monopoly conditions, and dynamic efficiency matter.',
-          hint: 'Monopoly is typically harmful: P > MC, DWL, X-inefficiency, supernormal profit. But natural monopoly (regulated) and Schumpeterian innovation industries are important exceptions. The blanket "always worse" claim fails for natural monopoly infrastructure and innovation-driven markets. Good competition policy targets entry barriers and contestability rather than treating all monopolies equivalently.',
-          model: 'Monopoly is often worse for consumers relative to a competitive alternative — the static efficiency losses, X-inefficiency, and supernormal profit extraction are real and well-documented. However, the claim that this is always the case fails in three important contexts: natural monopoly (where regulated single-firm production is more efficient than competitive alternatives), innovation-intensive industries (where Schumpeterian profit incentives fund the R&D that delivers long-run consumer benefit), and contestable markets (where the threat of entry disciplines monopoly pricing without actual competition). Effective competition policy recognises this nuance: it targets strategic entry barriers and anticompetitive conduct rather than treating all single-firm markets as presumptively harmful. The UK competition framework — prioritising contestability analysis over structural market-share thresholds — reflects this more sophisticated welfare assessment, focusing intervention where market power genuinely reduces consumer welfare rather than where dominant market position merely reflects superior efficiency or innovation.'
-        }
-      ]
     }
+
   ]
 };

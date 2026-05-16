@@ -313,61 +313,7 @@ window.ECONOS_TOPIC = {
         text: "A* BoP evaluation structure: <em>'The preferred correction approach is expenditure-switching via improved competitiveness (supply-side) — it improves the BoP without reducing output. Currency depreciation is a faster route but risks inflation. Expenditure-reducing (austerity/rate rises) corrects the deficit but at the cost of recession. The optimal policy depends on whether the deficit is structural (supply-side needed) or cyclical (demand management appropriate).'</em>"
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'bop-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: BoP correction',
-      question: 'Evaluate the view that expenditure-switching policies are the most effective way to correct a current account deficit. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define the current account deficit and briefly outline the two families of correction policy.',
-          hint: 'Current account deficit = value of imports > value of exports (+ income + transfers). Expenditure-switching diverts spending from imports to domestic output; expenditure-reducing contracts aggregate demand to reduce import demand.',
-          model: 'A current account deficit arises when a country\'s payments to the rest of the world exceed its receipts — primarily because imports exceed exports. Two broad policy approaches exist: expenditure-switching (currency depreciation, protectionism, supply-side competitiveness) and expenditure-reducing (fiscal austerity, monetary tightening). The former aims to redirect spending; the latter reduces the income that drives it. This essay evaluates whether switching is indeed the superior approach.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Currency depreciation as expenditure-switching',
-          prompt: 'Explain how depreciation works and the conditions under which it improves the current account.',
-          hint: 'Marshall-Lerner condition: PEDx + PEDm > 1. If combined elasticities exceed 1, depreciation improves the BoP. UK: export demand reasonably elastic long-run. Mechanism: lower export price → higher export volume; higher import price → lower import volume → (X−M) improves.',
-          model: 'Currency depreciation is the primary expenditure-switching tool under a floating exchange rate. A fall in sterling raises the price of imports and lowers the price of UK exports in foreign currency, switching domestic spending toward UK-produced goods and boosting overseas demand for exports. The Marshall-Lerner condition states this improves the current account provided PEDx + PEDm > 1. For the UK, where export demand is reasonably price-elastic in the long run, depreciation has historically improved the current account — e.g. the effective sterling depreciation post-2007 eventually narrowed the deficit. Crucially, this mechanism improves the BoP without requiring a contraction of output, giving it a clear advantage over expenditure-reducing.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Supply-side as structural expenditure-switching',
-          prompt: 'Explain how improving UK competitiveness addresses the root cause of the structural deficit.',
-          hint: 'UK deficit is primarily structural (persists through cycle), reflecting deindustrialisation and low productivity. Supply-side reform (education, R&D, infrastructure) raises non-price competitiveness, shifting LRAS right and improving X without currency change. No inflationary side-effect.',
-          model: 'The UK\'s current account deficit is largely structural — it persists even at full employment, reflecting decades of deindustrialisation and relatively low productivity growth. Supply-side policies (investment in education, infrastructure, R&D, and skills) represent a deeper form of expenditure-switching: by raising the quality and reducing the unit cost of UK output, they permanently shift foreign demand toward UK exports and domestic demand away from imports. Unlike depreciation, supply-side improvement does not generate inflationary pressure on SRAS. The German model illustrates this: Germany\'s persistent current account surplus reflects world-class export competitiveness built through long-run supply-side investment, not exchange-rate manipulation.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Limitations of expenditure-switching',
-          prompt: 'Evaluate the J-curve, inflation trade-off, and cases where expenditure-reducing may be appropriate.',
-          hint: 'J-curve: in the short run import contracts are fixed → import bill rises → BoP worsens before improving (12-24 months). Depreciation → import prices rise → SRAS shifts left → MPC may raise rates. Cyclical deficits respond better to expenditure-reducing. Protectionism risks WTO action and retaliation.',
-          model: 'Expenditure-switching via depreciation is not without significant costs. The J-curve effect means the current account typically worsens in the short run before improving: import prices rise immediately (fixed contracts, inelastic demand), so the import bill increases before volumes adjust. The 1967 UK devaluation saw the deficit worsen for 12 months before improving. Additionally, depreciation raises import prices, pushing SRAS left and generating cost-push inflation — the MPC may then tighten, partially offsetting the competitiveness gain. Where a deficit is primarily cyclical — driven by an overheating economy with excess import demand — expenditure-reducing policies (fiscal consolidation, rate rises) may be more targeted: contracting domestic income directly reduces the import spending that caused the deficit.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Structural vs cyclical; time horizon',
-          prompt: 'Weigh the two approaches against each other with reference to the nature of the deficit and the time horizon.',
-          hint: 'Key judgement: expenditure-switching is better for structural deficits; expenditure-reducing avoids inflation but causes recession. Supply-side is the ideal long-run fix but takes years. The \'best\' tool depends on diagnosis and the trade-off the government is willing to accept.',
-          model: 'The relative effectiveness of expenditure-switching hinges on the nature of the deficit. For structural deficits — like the UK\'s persistent goods deficit reflecting supply-side weaknesses — expenditure-switching (especially supply-side reform) addresses the root cause, whereas expenditure-reducing merely suppresses the symptoms while creating unemployment. However, supply-side solutions take years to materialise, creating a time-lag problem. For short-term correction of a cyclical deficit, expenditure-reducing (monetary tightening) may be faster and more targeted, though it risks recession. A* answers recognise this conditionality: expenditure-switching is generally superior, but the optimal policy mix depends on whether the deficit is structural or cyclical, and whether the government prioritises short-run stability or long-run adjustment.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a reasoned overall judgement that weighs both approaches.',
-          hint: 'Expenditure-switching is broadly preferable — improves BoP without reducing output. But supply-side reform is the long-run ideal; depreciation is a faster but imperfect route. Expenditure-reducing is a last resort when the deficit is cyclical and inflationary pressure is a concern.',
-          model: 'On balance, expenditure-switching policies are the more effective approach to correcting a current account deficit, because they improve the BoP without necessarily contracting output or employment. Supply-side reform is the most durable route — it raises structural competitiveness and addresses the root cause — but its long implementation timeline means depreciation serves as a faster interim mechanism, notwithstanding the J-curve delay and inflation risk. Expenditure-reducing policies represent a blunter instrument: they can close a cyclical deficit, but at the cost of recession and rising unemployment. The UK\'s structural deficit ultimately requires structural solutions — a supply-side-led approach that rebuilds export capacity — rather than repeated demand management that merely suppresses the visible symptom.'
-        }
-      ]
     }
+
   ]
 };

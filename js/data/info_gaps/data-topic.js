@@ -119,61 +119,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces patient adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems — use this as evaluative balance.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'ig-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: information gaps',
-      question: 'Evaluate the view that information failure is the most significant cause of market failure and that government intervention is required to correct it. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define information failure, adverse selection, and moral hazard. Introduce the debate: is information failure the most significant type of market failure, and does it justify government intervention?',
-          hint: 'Information failure = imperfect or asymmetric information leads to misallocation. Types: adverse selection (hidden quality before deal), moral hazard (hidden action after deal). Other market failures: externalities, public goods, monopoly power.',
-          model: 'Information failure occurs when markets allocate resources inefficiently due to imperfect or asymmetric information — where one party in a transaction systematically knows more than the other. Key forms include adverse selection (Akerlof\'s "lemons" problem, where hidden quality drives good products out of the market) and moral hazard (where hidden action after a transaction leads to excessive risk-taking). While externalities and public goods are other significant sources of market failure, information failure is pervasive across healthcare, insurance, financial services, and education — sectors where the consequences of misallocation are particularly severe. This essay evaluates whether information failure warrants the claim of being the most significant market failure and what interventions are most effective in correcting it.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Adverse selection leads to market collapse and under-provision',
-          prompt: 'Explain Akerlof\'s lemons model: asymmetric information about quality causes good products to leave the market, resulting in adverse selection and potentially market collapse.',
-          hint: 'Used car market: sellers know car quality; buyers do not. Buyers offer average price. Good-car owners withdraw. Only lemons remain. Same logic: insurance (high-risk buyers self-select), financial products (complex, opaque).',
-          model: 'George Akerlof\'s 1970 "market for lemons" model demonstrates how information asymmetry can lead to adverse selection and market collapse. In the used car market, sellers know vehicle quality but buyers do not — so buyers offer a price reflecting average quality. Owners of high-quality cars find this price too low and withdraw, leaving only low-quality ("lemon") cars. As the average quality of remaining cars falls, buyers lower their offer further, driving out more sellers in a self-reinforcing spiral. This mechanism applies across markets: in health insurance, only high-risk individuals self-select into cover, raising premiums and driving out healthy customers. In financial services, complex opaque products (like PPI) exploit buyers\' information deficit. These failures justify disclosure requirements and regulatory intervention.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Moral hazard causes over-consumption and excessive risk-taking',
-          prompt: 'Explain how moral hazard — hidden action after a deal — leads to over-consumption of healthcare, excessive risk-taking by insured parties, and systemic risk in financial markets.',
-          hint: 'Insured drivers take more risks; insured patients over-use healthcare (free at point of use); pre-2008 banks took excessive risks knowing implicit government guarantee (too big to fail). Regulation and co-payments address moral hazard.',
-          model: 'Moral hazard arises when having insurance or protection changes the behaviour of the insured party — hidden from the insurer after the contract is signed. Car insurance reduces the incentive to drive carefully; free-at-point-of-use healthcare may generate some demand for treatment not worth the social cost; and pre-2008 banks took excessive risks, knowing their implicit "too big to fail" status guaranteed government bailout. The 2008 financial crisis illustrated how systemic moral hazard — where rational individual risk-taking generates catastrophic collective outcomes — constitutes a severe form of market failure requiring regulatory intervention (higher capital requirements, bail-in rules, separation of retail and investment banking). This systemic dimension makes information failure uniquely dangerous.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Externalities and public goods may be more significant market failures',
-          prompt: 'Argue that negative externalities (climate change, pollution) and public goods (national defence) represent market failures with greater welfare consequences than information failure, which markets can sometimes correct themselves.',
-          hint: 'Climate change: externality causes potential catastrophic global welfare loss. Public goods: free rider means zero private provision. Markets do self-correct some information failures (signalling, warranties, reputation) — externalities cannot self-correct.',
-          model: 'While information failure is widespread, the claim that it is the most significant market failure can be challenged. The negative externality of carbon emissions poses an existential welfare threat — climate change risks irreversible global damage of a scale that dwarfs most information failures. Public goods such as national defence and flood management generate a complete market failure (zero private provision due to free riding), not merely an inefficiency. Furthermore, markets have some capacity to self-correct information failures through signalling mechanisms: educational qualifications signal ability, warranties signal product quality, and platform reviews reduce information asymmetry in digital markets. These private solutions do not exist for externalities or public goods, making those failures structurally less correctable without government intervention.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Government intervention for information failures risks creating new failures',
-          prompt: 'Evaluate whether government intervention to correct information failure is always effective, or whether it risks government failure through regulatory capture, excessive bureaucracy, or creating moral hazard of its own.',
-          hint: 'Regulatory capture: FCA/banks. Mandatory disclosure may not help if information is complex (financial products). Government guarantee creates moral hazard (too big to fail). Nudge theory offers lower-risk alternative.',
-          model: 'Government intervention to correct information failure is not costless or guaranteed to succeed. Mandatory disclosure may generate information overload — financial product prospectuses run to thousands of pages, which few consumers read. Regulatory agencies are vulnerable to capture by the industries they regulate (e.g. concerns about revolving doors between the FCA and investment banks), undermining the independence needed to protect consumers effectively. Perhaps most importantly, government guarantees themselves create moral hazard: the implicit "too big to fail" backstop for systemically important banks contributed directly to the excessive risk-taking that caused the 2008 crisis. Behavioural interventions — defaults, opt-outs, simplified disclosure — may achieve similar corrections at lower risk of these second-order failures, as Thaler and Sunstein\'s nudge theory proposes.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a balanced judgement: is information failure the most significant market failure, and is government intervention always the right response?',
-          hint: 'Acknowledge information failure is pervasive and often requires intervention, but resist ranking market failures — significance depends on sector and context. Government intervention is justified but must be well-designed to avoid government failure.',
-          model: 'In conclusion, information failure is a pervasive and serious cause of market failure, particularly in healthcare, insurance, and financial services where consequences of misallocation are severe. However, ranking it above externalities or public goods is context-dependent: in environmental economics, externalities dominate; in defence and infrastructure, public goods failure is paramount. Government intervention — through disclosure requirements, regulation, and public provision — is often necessary to address information asymmetry, but carries its own risks of regulatory capture and government-created moral hazard. The most effective response combines targeted mandatory disclosure, independent regulation insulated from capture, and behavioural interventions, calibrated to the specific nature and scale of the information failure in each market.'
-        }
-      ]
     }
+
   ]
 };

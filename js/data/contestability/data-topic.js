@@ -133,61 +133,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'Contestability theory\'s most powerful policy implication: regulators should focus on reducing sunk costs through infrastructure sharing and open access mandates rather than breaking up large firms. Examples: BT Openreach (open access to fibre infrastructure reduces sunk costs for broadband providers — increases contestability). Mobile virtual network operators (MVNOs) access incumbent networks without building their own — reduces sunk costs, increases contestability. The theory directly guides this approach to competition policy.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'cont-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: contestability',
-      question: 'Evaluate the view that contestability is a more effective way of promoting competition than breaking up monopolies. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define contestability and explain the core theoretical claim: even a monopoly will price competitively if entry is sufficiently easy.',
-          hint: 'Contestable market (Baumol, Panzar, Willig 1982): market with no barriers to entry or exit, zero sunk costs. Even a monopoly in a perfectly contestable market prices at P = AC (normal profit) — threat of hit-and-run entry disciplines incumbent. Breaking up monopolies: structural remedy that splits the incumbent into competing firms. Key question: does the threat of entry achieve the same outcome as actual competition?',
-          model: 'Contestability theory (Baumol, Panzar, and Willig, 1982) holds that market structure — the number of firms — is less important than the ease of entry and exit. In a perfectly contestable market, even a single incumbent firm prices at average cost and earns only normal profit: any attempt to earn supernormal profit would attract hit-and-run entry by firms that enter, capture profit, and exit before the incumbent can respond. Under this theory, the threat of entry is as effective as actual competition in disciplining incumbent behaviour. This challenges the conventional remedy of breaking up monopolies — the structural approach — arguing that regulatory focus on reducing barriers to entry achieves competitive outcomes more efficiently.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — How contestability disciplines incumbents without structural change',
-          prompt: 'Explain how the threat of hit-and-run entry constrains monopoly pricing in a contestable market.',
-          hint: 'Mechanism: if P > AC → supernormal profit → attracts entrant → incumbent must cut price or lose market share. If exit is costless (no sunk costs), entrant bears no exit risk → lowers entry threshold. Result: incumbent anticipates entry and prices at P = AC preemptively. No actual entry needed — the THREAT disciplines. Policy application: BT Openreach open access mandate → reduces sunk costs for ISPs → more contestable broadband market → BT pressured to price competitively.',
-          model: 'In a contestable market, the incumbent prices to deter entry rather than to maximise short-run profit. If the incumbent sets P > AC, a new entrant can profitably enter, serve consumers at a lower price, earn profit, and then exit before the incumbent retaliates — a hit-and-run strategy. Since exit is costless (no irrecoverable sunk costs), the entrant faces no downside risk. Knowing this, the incumbent preemptively sets P = AC — extracting only normal profit. The competitive outcome is achieved without any firm entering the market. This mechanism has direct policy applications: UK regulators have pursued infrastructure sharing mandates (BT Openreach, railway track access) specifically to reduce entrants\' sunk costs — making markets more contestable without requiring the costly and disruptive process of breaking up the incumbent firm.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — The case for breaking up monopolies: structural remedies',
-          prompt: 'Explain when breaking up monopolies may be more effective than relying on contestability.',
-          hint: 'Some markets have intrinsic sunk costs that cannot be reduced by regulation — natural monopoly infrastructure (water pipes, electricity grid, gas networks). For these, contestability is impossible regardless of regulatory effort. Structural breakup (or regulated access pricing) may be the only option. Also: breaking up creates actual competition immediately, whereas contestability requires correct conditions. Historical: Standard Oil breakup (1911), AT&T breakup (1982) created vibrant competitive markets.',
-          model: 'Structural remedies — breaking up the incumbent — are most effective in markets where sunk costs cannot be practically reduced to contestable levels. Natural monopoly infrastructure (water networks, electricity grids, railway track) has such high fixed and sunk costs that hit-and-run entry is impossible regardless of regulatory mandates. For these industries, the correct response is regulated access pricing or structural separation (as with British Rail\'s Railtrack/Network Rail structure). Historically, major structural breakups have created competitive markets that did not exist before: the 1982 AT&T breakup transformed US telecommunications from a monopoly to a vibrant competitive sector, and the subsequent innovation explosion (mobile, internet) suggests the structural remedy created more dynamic competition than contestability-based regulation alone could have achieved.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Limits of contestability: sunk costs, asymmetric information, first-mover advantages',
-          prompt: 'Evaluate the theoretical and practical limitations of contestability as a competitive mechanism.',
-          hint: 'Perfect contestability is theoretical — real markets always have some sunk costs (brand building, regulatory approval, customer relationships). Asymmetric information: incumbent has knowledge advantages → entrant uncertainty raises effective entry cost. First-mover advantages: network effects, economies of scale, accumulated customer data create structural advantages that persist even when sunk costs are reduced. Digital markets: platform network effects create winner-takes-all dynamics that contestability cannot dissolve.',
-          model: 'Contestability theory rests on the assumption of zero sunk costs and perfect information, which is rarely satisfied in practice. Brand recognition, customer relationships, regulatory licences, and R&D all involve sunk investments that even the most open access mandate cannot eliminate. In digital platform markets, network effects create structural advantages for incumbents that persist regardless of how low sunk costs are: a new social network faces the cold-start problem (no users → no value → no users) that cannot be resolved by cost-based entry deregulation. Google\'s search algorithm accumulated over two decades of query data represents a competitive asset entrants cannot replicate from scratch, making the market uncontestable despite no formal barriers. In these markets, contestability theory provides an incomplete diagnosis, and structural remedies — or behavioural remedies like data portability and interoperability — may be more effective.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Context determines which approach is superior',
-          prompt: 'Weigh contestability vs structural remedies with reference to market type, sunk costs, and the nature of incumbent advantage.',
-          hint: 'Key judgement: contestability works best when sunk costs can genuinely be reduced (telecommunications infrastructure sharing, aviation airport slots, broadband). Structural breakup works best when: (a) sunk costs are intrinsic, (b) first-mover advantage is structural, (c) incumbent scale creates persistent competitive disadvantage for entrants. Digital markets: neither approach is fully satisfactory — contestability is insufficient, breakup is technically complex and risks destroying value. Behavioural remedies (interoperability, data portability) may be needed.',
-          model: 'The relative merits of contestability-based regulation and structural breakup depend critically on the source of the incumbent\'s market power. Where market power derives primarily from sunk costs that regulation can address — as in fixed-line telecommunications infrastructure and broadband — contestability-enhancing measures are more efficient: they preserve scale economies while disciplining pricing, without the transition costs and complexity of structural breakup. Where market power derives from intrinsic natural monopoly characteristics (water, gas, electricity grids) or self-reinforcing network effects (digital platforms), contestability is insufficient and stronger intervention is required. The most sophisticated competition policy uses a combination: infrastructure sharing mandates to maximise contestability where possible, structural separation where natural monopoly is unavoidable, and behavioural remedies (interoperability, data access) for digital platforms where neither contestability nor breakup fully addresses the competitive problem.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Deliver a reasoned judgement: contestability is often superior to breakup but its effectiveness depends on whether sunk costs can genuinely be reduced.',
-          hint: 'Contestability is the better approach where sunk costs can be reduced through regulation — it achieves competitive outcomes without the disruption of structural breakup. But it is insufficient for intrinsic natural monopoly and digital platform markets where first-mover advantages cannot be regulated away. Context is everything.',
-          model: 'Contestability-based regulation is often more effective than structural breakup in promoting competition efficiently, because it can achieve competitive outcomes without destroying the scale economies that justify large incumbent firms. Where regulators can reduce sunk costs through infrastructure sharing and open access mandates — as in telecommunications and aviation — contestability provides a proportionate and practical remedy. However, it is not a universal solution: in markets with intrinsic natural monopoly characteristics or platform network effects, the conditions for contestability cannot be achieved regardless of regulatory effort, and structural or behavioural remedies are required. The most effective competition policy framework treats contestability and structural remedies as complementary tools, each appropriate in different market contexts, rather than as competing philosophies demanding a single universal answer.'
-        }
-      ]
     }
+
   ]
 };

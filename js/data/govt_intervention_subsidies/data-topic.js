@@ -134,61 +134,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'Additionality problem with subsidies: did the subsidy cause additional activity, or would it have happened anyway? If firms were going to install solar panels without the Feed-in Tariff, the subsidy is pure windfall with no externality benefit. Measuring additionality is difficult — another information challenge for policymakers.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'gis-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: government intervention — subsidies',
-      question: 'Evaluate the view that subsidies are a more effective form of government intervention than taxation to correct market failure. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define market failure, subsidies, and taxation. Introduce the key comparison: subsidy vs tax as policy tools for correcting market failure.',
-          hint: 'Market failure = when free markets fail to allocate resources efficiently. Subsidies correct positive externalities/under-provision; taxes correct negative externalities/over-provision. Both aim to shift output towards the social optimum.',
-          model: 'Market failure arises when free markets fail to allocate resources efficiently, leading to a divergence between private and social costs or benefits. Subsidies are government payments to producers or consumers that reduce the cost of provision and shift the supply curve rightward, correcting under-production of goods with positive externalities. Taxation, by contrast, adds to costs and corrects over-production of goods with negative externalities. Both instruments are grounded in Pigouvian logic — aligning private incentives with social welfare — but differ fundamentally in context, distributional impact, and practical effectiveness.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Subsidies correct under-provision and positive externalities',
-          prompt: 'Explain how a Pigouvian subsidy set equal to the marginal external benefit (MEB) closes the gap between MSB and MPB, raising output to the social optimum.',
-          hint: 'Education, renewable energy, healthcare — all under-consumed without subsidy. Diagram: MPB shifts to MSB via subsidy. Output rises from Qm to Q*. Consumer price falls; producer revenue rises.',
-          model: 'Where a good generates positive externalities — such as education or renewable energy — free markets under-produce because private consumers ignore the external benefit to society (MSB > MPB). A Pigouvian subsidy set equal to the marginal external benefit closes this gap: supply shifts right, market price falls, and consumption rises to the social optimum (Q*). The UK\'s Feed-in Tariff for solar energy successfully raised renewable capacity from under 1GW in 2010 to over 13GW by 2019, demonstrating that subsidies can effectively internalise positive externalities. In this context, subsidies outperform taxes because the problem is under-consumption, not over-consumption.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Subsidies preserve consumer choice and market incentives',
-          prompt: 'Argue that subsidies work through positive incentives (reward desired behaviour) rather than penalties, making them more politically acceptable and less likely to generate black markets or evasion.',
-          hint: 'Subsidies for EVs, insulation, healthy food — positive reinforcement. No black market risk (unlike tobacco/alcohol taxes). Incidence: consumers and producers share benefit depending on PED/PES.',
-          model: 'A key advantage of subsidies over taxes is that they use positive reinforcement — rewarding desired behaviour — rather than penalising undesired activity. This makes them politically more palatable and avoids the behavioural distortions associated with high taxes, such as black markets (illicit tobacco), evasion, and cross-border shopping. Subsidies for electric vehicles (e.g. plug-in car grant) and home insulation raise participation without generating the regressive burden of fuel duty. Furthermore, subsidy incidence is shared between consumers (lower prices) and producers (higher revenues) depending on PED/PES, meaning targeted subsidies can be calibrated to benefit intended groups — a precision that per-unit taxes cannot always achieve.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Taxation is more effective for negative externalities and raises revenue',
-          prompt: 'Argue that for correcting over-production of harmful goods (pollution, smoking, congestion), taxes are the appropriate and often more effective instrument — and they generate revenue unlike subsidies.',
-          hint: 'Carbon tax, tobacco duty, sugar tax — reduce output toward social optimum. Pigouvian tax = MEC. Revenue can be recycled (green dividend). Subsidies cost the public purse; taxes fill it.',
-          model: 'When the market failure involves negative externalities — pollution, smoking, alcohol, congestion — taxation is the more appropriate instrument. A Pigouvian tax set equal to the marginal external cost (MEC) internalises the externality by raising the private cost to reflect the social cost, shifting output left to the social optimum. Unlike subsidies, taxes generate public revenue that can be recycled to address distributional concerns (e.g. British Columbia\'s revenue-neutral carbon tax) or fund public goods. The UK sugar levy on soft drinks raised £340m annually while reducing consumption — a dual fiscal and health benefit that subsidies cannot replicate when the goal is to reduce rather than increase activity.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — Both instruments face information and implementation problems',
-          prompt: 'Evaluate the practical limitations common to both: the information required to set the optimal rate, additionality of subsidies, regressivity of taxes, and government failure risks.',
-          hint: 'Optimal Pigouvian rate requires knowing MEC or MEB — both are uncertain. Subsidy additionality: would activity have happened anyway? Tax regressivity: falls harder on low incomes. Both risk government failure.',
-          model: 'Both subsidies and taxes face a fundamental information problem: setting the optimal rate requires accurate measurement of MEC or MEB, which is inherently uncertain and varies across contexts and individuals. Too high a subsidy wastes public funds through additionality (firms receive payment for activity they would have undertaken anyway); too high a tax creates excessive deadweight loss and may be regressive, imposing a disproportionate burden on lower-income households (as with fuel duty). The UK\'s reversal of the fuel duty escalator illustrates political constraints on optimal tax design. The choice between subsidy and tax must therefore be contextual: subsidies are preferable for under-provided merit goods; taxes for over-produced demerit goods; and neither is immune to the information failures that limit government intervention generally.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a judgement: is the question\'s premise correct that subsidies are more effective than taxes? Commit to a conditional answer.',
-          hint: 'Context is key: subsidies superior for positive externalities; taxes superior for negative externalities. Neither is universally better. The best policy matches the instrument to the nature of the market failure.',
-          model: 'In conclusion, the premise that subsidies are more effective than taxes is too absolute — effectiveness depends entirely on the nature of the market failure. Subsidies are the superior instrument when the failure stems from under-provision or positive externalities, as the goal is to increase activity, not restrict it. Taxes are more effective — and fiscally advantageous — when the failure involves over-production of harmful goods. Neither instrument is universally superior; the most effective intervention deploys the right tool for the specific failure. Where both could apply, the choice should consider distributional effects, revenue implications, practical enforceability, and the risk of government failure in setting optimal rates.'
-        }
-      ]
     }
+
   ]
 };

@@ -133,61 +133,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'Pharmaceutical industry: perfect static efficiency (P = MC) would mean generic drugs immediately, no patent. But this destroys dynamic efficiency (no incentive to spend £2bn developing a new drug). Patent system trades 20 years of monopoly pricing for long-run pharmaceutical innovation. This is the deliberate statutory trade-off between static and dynamic efficiency — and a superb exam example.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
-    },
-
-    /* ----- CARD 8 — Essay scaffold ----- */
-    {
-      id: 'eff-essay',
-      template: 'essay-scaffold',
-      stepLabel: 'Learn: Step 8 of 8',
-      title: 'Essay scaffold: efficiency',
-      question: 'Evaluate the view that perfect competition achieves a more efficient allocation of resources than monopoly. (25 marks)',
-      marks: 25,
-      timeGuide: '35 minutes',
-      paragraphs: [
-        {
-          type: 'intro',
-          label: 'Introduction',
-          prompt: 'Define allocative, productive, and dynamic efficiency. Introduce the comparison between perfect competition and monopoly across all three efficiency concepts.',
-          hint: 'Allocative efficiency: P = MC (resources go where valued most). Productive efficiency: production at minimum AC. Dynamic efficiency: innovation and long-run cost reduction. X-efficiency: no slack within the firm. Perfect competition achieves static efficiency; monopoly may have dynamic advantages.',
-          model: 'Efficiency in economics encompasses multiple dimensions: allocative efficiency (P = MC, so output is at the socially optimal level), productive efficiency (output at minimum average cost, eliminating waste), dynamic efficiency (ongoing investment in R&D and innovation), and X-efficiency (absence of managerial slack within firms). Perfect competition is widely regarded as the benchmark for static efficiency, as the long-run equilibrium produces at P = MC = minimum AC. Monopoly, by contrast, restricts output and sets P > MC, creating deadweight welfare loss. However, the comparison is more nuanced across all efficiency dimensions, and particularly when dynamic considerations are incorporated. This essay evaluates whether perfect competition or monopoly achieves the more efficient outcome overall.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 1 — Perfect competition achieves allocative and productive efficiency',
-          prompt: 'Explain how competitive pressure forces firms to the long-run equilibrium P = MC = minimum AC, achieving both allocative and productive efficiency simultaneously. Contrast with monopoly\'s equilibrium where P > MC and output is restricted.',
-          hint: 'Perfect competition LR equilibrium: P = MC = min AC (normal profit). Monopoly: P > MC (allocative inefficiency) and MC = MR ≠ min AC (typically not productively efficient). Deadweight loss triangle. No supernormal profit in LR for PC → no incentive to restrict output.',
-          model: 'In the long-run equilibrium of perfect competition, free entry eliminates supernormal profit, forcing each firm to produce where P = MC = minimum average cost — simultaneously achieving both allocative efficiency (resources flow to their highest-valued use) and productive efficiency (no waste). Consumers pay a price equal to the true marginal cost of the last unit, and production occurs at the most technically efficient scale. Monopoly fails on both counts: the profit-maximising condition MR = MC leads to an equilibrium where P > MC, meaning the last unit produced is valued more by consumers than it costs to produce — a socially suboptimal restriction of output. The resulting deadweight welfare loss triangle represents permanently forgone gains from trade and constitutes a clear efficiency failure relative to the competitive benchmark.'
-        },
-        {
-          type: 'analysis',
-          label: 'Analysis 2 — Perfect competition also eliminates X-inefficiency through competitive pressure',
-          prompt: 'Explain how the constant threat of losing market share to equally efficient competitors in a perfectly competitive market forces firms to minimise costs and eliminate managerial slack, while monopolists face no such discipline.',
-          hint: 'Monopoly: no competitive pressure → managers may pursue quiet life (Hicks), organisational slack, higher costs. X-inefficiency: actual costs above minimum possible. Perfect competition: any firm with costs above MC loses customers → eliminated. Empirical: nationalised monopolies vs privatised firms.',
-          model: 'Beyond the allocative and productive efficiency comparisons, perfect competition generates X-efficiency — the absence of managerial slack — through the constant competitive discipline of market entry and rivalry. Any firm with costs above the competitive minimum loses customers to more efficient rivals, creating an existential incentive to minimise waste, optimise processes, and eliminate organisational slack. Monopolists, shielded from competitive pressure by barriers to entry, face no such discipline: John Hicks observed that "the best of all monopoly profits is a quiet life." Empirical evidence from the UK\'s privatisation programme — British Telecom, British Gas, British Airways — suggests that exposure to competition (not merely private ownership) reduced costs and improved productivity, consistent with the X-efficiency argument.'
-        },
-        {
-          type: 'counter',
-          label: 'Counter — Monopoly may achieve superior dynamic efficiency through R&D investment',
-          prompt: 'Argue that monopoly supernormal profits provide the financial resources and incentive for R&D investment, generating dynamic efficiency gains that may outweigh static efficiency losses over the long run.',
-          hint: 'Schumpeter\'s creative destruction: monopoly profits fund R&D that destroys existing monopolies. Patents protect innovation returns. Pharmaceutical R&D: £2bn per drug. Perfect competition (normal profits only) → no funds or incentive for costly, risky R&D. Dynamic efficiency: iPhones, vaccines, electric vehicles.',
-          model: 'Joseph Schumpeter argued that the pursuit of monopoly profits is the primary driver of innovation and dynamic efficiency in capitalist economies. The prospect of supernormal profit from a successful innovation motivates costly, risky R&D investment — a rational calculation that requires the expectation of a period of market power to recover the upfront cost. Pharmaceutical companies spend approximately £2bn developing a new drug over 12–15 years, an investment feasible only because patent protection creates a temporary monopoly that allows recovery of this cost. Perfect competition, by eliminating supernormal profits, also eliminates the financial resources and incentive for such R&D. Schumpeter\'s "creative destruction" — where innovative monopolists are periodically displaced by newer innovators — suggests that dynamic efficiency under monopoly may deliver greater long-run welfare than the static efficiency of perfect competition.'
-        },
-        {
-          type: 'evaluation',
-          label: 'Evaluation — The efficiency comparison depends on industry characteristics',
-          prompt: 'Evaluate how the nature of the industry (natural monopoly, R&D intensity, information asymmetry) determines whether the static efficiency of competition or the dynamic advantages of monopoly deliver greater welfare.',
-          hint: 'Natural monopoly: competition wasteful (duplicate infrastructure). R&D-intensive sectors: dynamic efficiency paramount. Homogeneous commodity markets: static efficiency most important. Regulation can capture monopoly scale while limiting static losses (RPI-X).',
-          model: 'The relative efficiency of competition versus monopoly is highly industry-specific. In natural monopoly industries — water, electricity networks, railways — duplication of infrastructure would be technically inefficient, and a regulated monopoly achieves productive efficiency at lower cost than competition. In R&D-intensive sectors (pharmaceuticals, aerospace, semiconductors), the dynamic efficiency case for protected monopoly is strongest: the welfare gains from innovation far exceed the static deadweight loss from monopoly pricing. In homogeneous commodity markets (wheat, cement), where innovation opportunities are limited and scale economies are modest, competitive markets deliver superior allocative efficiency without meaningful dynamic trade-offs. This context-dependency explains why competition policy takes a case-by-case approach rather than mandating competition in all markets.'
-        },
-        {
-          type: 'conclusion',
-          label: 'Conclusion',
-          prompt: 'Reach a judgement: does perfect competition achieve more efficient outcomes than monopoly overall?',
-          hint: 'For static efficiency: yes, clearly. For dynamic efficiency: depends on industry. Overall: regulated markets that combine competitive elements with appropriate protection for innovation represent the most efficient outcome. Policy should target competition where dynamic gains are limited and R&D protection where they are large.',
-          model: 'In conclusion, perfect competition unambiguously achieves superior static efficiency — allocative, productive, and X-efficiency — compared to unregulated monopoly. The deadweight welfare loss and X-inefficiency of monopoly represent real costs to consumers and society. However, in dynamic terms, the comparison is more nuanced: monopoly profits and patent protection drive the R&D investment responsible for the most transformative long-run welfare improvements, from life-saving drugs to digital technologies. The most efficient market structure is therefore industry-dependent: competitive markets should be promoted where innovation opportunities are limited and scale economies modest, while regulated monopoly or patent-protected competition is appropriate in R&D-intensive industries. Competition policy that reflexively breaks up all concentration without considering dynamic efficiency — or that tolerates monopoly power without regulatory oversight — will fail to maximise overall welfare.'
-        }
-      ]
     }
+
   ]
 };

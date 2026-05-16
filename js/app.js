@@ -207,7 +207,7 @@
     // Causes: [{head, body, icon?}] — coloured tiles; icon mode activates richer card layout
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
-      content += genSecLabel('🔗', 'Key mechanisms');
+      content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '220px'},1fr));gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];

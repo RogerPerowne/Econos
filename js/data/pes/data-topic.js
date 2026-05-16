@@ -44,18 +44,20 @@ window.ECONOS_TOPIC = {
   <li><strong>PES = 0:</strong> Perfectly inelastic — fixed supply regardless of price; vertical supply curve.</li>
   <li><strong>PES = ∞:</strong> Perfectly elastic — producers supply any amount at the going price; horizontal supply curve.</li>
 </ul>`,
+      causesEmoji: '📊',
+      causesLabel: 'Supply responsiveness — from fixed to flexible',
       causes: [
         {
           head: '🏗️ Housing — very inelastic (PES ≈ 0.1)',
-          body: 'Planning permission takes years; construction takes 18+ months; land in specific locations is a fixed factor. Demand surges mostly become price spikes, not extra homes.'
+          body: 'Planning permission takes years; construction takes 18+ months; land in specific locations is a fixed factor. A demand surge mostly becomes a price spike — output barely moves. The market adjusts almost entirely through price.'
         },
         {
-          head: '⛽ Oil — inelastic short-run (PES ≈ 0.2)',
-          body: 'Existing wells are already operating at near-full capacity. New drilling and refinery infrastructure takes years. Price signals cannot quickly unlock more output.'
+          head: '🏭 Manufacturing — elastic long-run (PES ≈ 1.5)',
+          body: 'Firms can hire workers, extend shifts, and commission new plant over months. Long-run supply responds more than proportionally to price — a demand surge goes mostly into extra output, not higher prices. Time is the key unlock.'
         },
         {
-          head: '🏭 Manufacturing — more elastic long-run',
-          body: 'Factories can hire workers, add shifts, or build new capacity over time. Long-run supply is considerably more elastic than short-run — the time period is the key factor.'
+          head: '💻 Digital goods — near-perfectly elastic (PES → ∞)',
+          body: 'Once created, software can be replicated at near-zero marginal cost. Any demand surge is met almost instantly and entirely through extra supply — price barely moves. The marginal cost of one more user is effectively zero.'
         }
       ],
       keyTakeaway: 'PES is always positive — price and quantity supplied always move in the same direction.'

@@ -142,20 +142,6 @@
     `;
   }
 
-  function renderKeyTakeaway(t) {
-    if (!t) return '';
-    const text = typeof t === 'object' ? t.text : t;
-    if (!text) return '';
-    return `
-      <div class="key-takeaway">
-        <div class="key-takeaway__star">★</div>
-        <div class="key-takeaway__body">
-          <div class="key-takeaway__label">Key takeaway</div>
-          <div class="key-takeaway__text">${text}</div>
-        </div>
-      </div>
-    `;
-  }
 
   /* ============================================================
      GENERIC CARD RENDERER
@@ -417,11 +403,6 @@
       }
     }
 
-    // Key takeaway (if the card data includes one)
-    if (c.keyTakeaway) {
-      content += renderKeyTakeaway(c.keyTakeaway);
-    }
-
     // Quiz CTA — celebration-style signpost
 
     return `<h1 class="card__title">${c.title}</h1>${content}`;
@@ -429,15 +410,14 @@
 
   function renderKeyTakeaway(k) {
     if (!k) return '';
-    const title = typeof k === 'object' ? (k.title || 'Key takeaway') : 'Key takeaway';
-    const text  = typeof k === 'object' ? k.text : k;
+    const text = typeof k === 'object' ? k.text : k;
     if (!text) return '';
     return `
-      <div class="callout callout--success">
-        <div class="callout__icon">${I.bulb}</div>
-        <div class="callout__body">
-          <div class="callout__title">${title}</div>
-          <div class="callout__text">${text}</div>
+      <div class="key-takeaway">
+        <div class="key-takeaway__star">★</div>
+        <div class="key-takeaway__body">
+          <div class="key-takeaway__label">Key takeaway</div>
+          <div class="key-takeaway__text">${text}</div>
         </div>
       </div>
     `;
@@ -579,9 +559,6 @@
       </div>
 
       ${renderExamEdge(c.examEdge)}
-      <div style="margin-top: var(--sp-4);">
-        ${renderKeyTakeaway(c.keyTakeaway)}
-      </div>
     `;
   }
 

@@ -4111,6 +4111,116 @@ window.ECONOS_ICONS = {
             text-anchor="middle" letter-spacing="2" opacity="0.75">SCARCITY MEANS TRADE-OFFS</text>
     </svg>
   `,
+  heroScarcity: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-scar" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="bg-scar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0F9FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="shadow-scar" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <!-- background -->
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-scar)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-scar)" opacity="0.4"/>
+
+      <!-- header caption -->
+      <text x="140" y="38" font-size="10" font-weight="800" fill="#0F172A"
+            text-anchor="middle" letter-spacing="3" opacity="0.65">THE BASIC ECONOMIC PROBLEM</text>
+
+      <!-- Six reaching hands around the pie. Cuff = slate, palm + fingers = brand colour.
+           Drawn before the pie so the pie sits on top of any overlap. -->
+
+      <!-- Hand: top-right (30 deg from top, clockwise) — green -->
+      <g transform="translate(187.5,92.7) rotate(210)" filter="url(#shadow-scar)">
+        <rect x="-6"   y="13"  width="12" height="10" rx="2.5" fill="#475569"/>
+        <rect x="-9"   y="-1"  width="18" height="17" rx="6"   fill="#1FB574"/>
+        <rect x="-8"   y="-9"  width="3"  height="11" rx="1.5" fill="#1FB574"/>
+        <rect x="-3.5" y="-11" width="3"  height="13" rx="1.5" fill="#1FB574"/>
+        <rect x="0.5"  y="-11" width="3"  height="13" rx="1.5" fill="#1FB574"/>
+        <rect x="5"    y="-9"  width="3"  height="11" rx="1.5" fill="#1FB574"/>
+      </g>
+
+      <!-- Hand: right (90 deg) — blue -->
+      <g transform="translate(235,175) rotate(270)" filter="url(#shadow-scar)">
+        <rect x="-6"   y="13"  width="12" height="10" rx="2.5" fill="#475569"/>
+        <rect x="-9"   y="-1"  width="18" height="17" rx="6"   fill="#2563EB"/>
+        <rect x="-8"   y="-9"  width="3"  height="11" rx="1.5" fill="#2563EB"/>
+        <rect x="-3.5" y="-11" width="3"  height="13" rx="1.5" fill="#2563EB"/>
+        <rect x="0.5"  y="-11" width="3"  height="13" rx="1.5" fill="#2563EB"/>
+        <rect x="5"    y="-9"  width="3"  height="11" rx="1.5" fill="#2563EB"/>
+      </g>
+
+      <!-- Hand: bottom-right (150 deg) — amber -->
+      <g transform="translate(187.5,257.3) rotate(330)" filter="url(#shadow-scar)">
+        <rect x="-6"   y="13"  width="12" height="10" rx="2.5" fill="#475569"/>
+        <rect x="-9"   y="-1"  width="18" height="17" rx="6"   fill="#D97706"/>
+        <rect x="-8"   y="-9"  width="3"  height="11" rx="1.5" fill="#D97706"/>
+        <rect x="-3.5" y="-11" width="3"  height="13" rx="1.5" fill="#D97706"/>
+        <rect x="0.5"  y="-11" width="3"  height="13" rx="1.5" fill="#D97706"/>
+        <rect x="5"    y="-9"  width="3"  height="11" rx="1.5" fill="#D97706"/>
+      </g>
+
+      <!-- Hand: bottom-left (210 deg) — purple -->
+      <g transform="translate(92.5,257.3) rotate(30)" filter="url(#shadow-scar)">
+        <rect x="-6"   y="13"  width="12" height="10" rx="2.5" fill="#475569"/>
+        <rect x="-9"   y="-1"  width="18" height="17" rx="6"   fill="#7C3AED"/>
+        <rect x="-8"   y="-9"  width="3"  height="11" rx="1.5" fill="#7C3AED"/>
+        <rect x="-3.5" y="-11" width="3"  height="13" rx="1.5" fill="#7C3AED"/>
+        <rect x="0.5"  y="-11" width="3"  height="13" rx="1.5" fill="#7C3AED"/>
+        <rect x="5"    y="-9"  width="3"  height="11" rx="1.5" fill="#7C3AED"/>
+      </g>
+
+      <!-- Hand: left (270 deg) — rose -->
+      <g transform="translate(45,175) rotate(90)" filter="url(#shadow-scar)">
+        <rect x="-6"   y="13"  width="12" height="10" rx="2.5" fill="#475569"/>
+        <rect x="-9"   y="-1"  width="18" height="17" rx="6"   fill="#DC2626"/>
+        <rect x="-8"   y="-9"  width="3"  height="11" rx="1.5" fill="#DC2626"/>
+        <rect x="-3.5" y="-11" width="3"  height="13" rx="1.5" fill="#DC2626"/>
+        <rect x="0.5"  y="-11" width="3"  height="13" rx="1.5" fill="#DC2626"/>
+        <rect x="5"    y="-9"  width="3"  height="11" rx="1.5" fill="#DC2626"/>
+      </g>
+
+      <!-- Hand: top-left (330 deg) — teal -->
+      <g transform="translate(92.5,92.7) rotate(150)" filter="url(#shadow-scar)">
+        <rect x="-6"   y="13"  width="12" height="10" rx="2.5" fill="#475569"/>
+        <rect x="-9"   y="-1"  width="18" height="17" rx="6"   fill="#0891B2"/>
+        <rect x="-8"   y="-9"  width="3"  height="11" rx="1.5" fill="#0891B2"/>
+        <rect x="-3.5" y="-11" width="3"  height="13" rx="1.5" fill="#0891B2"/>
+        <rect x="0.5"  y="-11" width="3"  height="13" rx="1.5" fill="#0891B2"/>
+        <rect x="5"    y="-9"  width="3"  height="11" rx="1.5" fill="#0891B2"/>
+      </g>
+
+      <!-- Pie chart in centre — golden pastry with darker crust -->
+      <g filter="url(#shadow-scar)">
+        <circle cx="140" cy="175" r="50" fill="#FBBF24" stroke="#92400E" stroke-width="2.5"/>
+        <!-- slice lines -->
+        <line x1="140" y1="125" x2="140" y2="225" stroke="#92400E" stroke-width="1.5" opacity="0.8"/>
+        <line x1="90"  y1="175" x2="190" y2="175" stroke="#92400E" stroke-width="1.5" opacity="0.8"/>
+        <line x1="104.6" y1="139.6" x2="175.4" y2="210.4" stroke="#92400E" stroke-width="1.5" opacity="0.8"/>
+        <line x1="175.4" y1="139.6" x2="104.6" y2="210.4" stroke="#92400E" stroke-width="1.5" opacity="0.8"/>
+        <!-- centre dot -->
+        <circle cx="140" cy="175" r="3.5" fill="#92400E"/>
+      </g>
+
+      <!-- SCARCE badge sitting on top of the pie -->
+      <g transform="translate(140, 173)" filter="url(#shadow-scar)">
+        <rect x="-30" y="-10" width="60" height="20" rx="10" fill="#FFFFFF" stroke="#92400E" stroke-width="1.5"/>
+        <text x="0" y="4" font-size="10" font-weight="800" fill="#92400E"
+              text-anchor="middle" letter-spacing="2.5">SCARCE</text>
+      </g>
+
+      <!-- footer caption -->
+      <text x="140" y="328" font-size="9" font-weight="700" fill="#475569"
+            text-anchor="middle" letter-spacing="2" opacity="0.75">UNLIMITED WANTS · LIMITED MEANS</text>
+    </svg>
+  `,
   heroPrice: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

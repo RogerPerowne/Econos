@@ -50,11 +50,24 @@ window.ECONOS_TOPIC = {
       id: 'basic_econ_problem_2',
       template: 'framing',
       title: 'Opportunity Cost',
-      body: '<strong>Opportunity cost</strong> is the value of the next best alternative forgone when a choice is made. It is the true cost of any decision — not just the financial cost but what had to be given up.<br><br><strong>Examples:</strong><br>• Government spends \xa310bn on NHS: opportunity cost = the roads, schools or tax cuts that could have been funded instead.<br>• A student studies economics: opportunity cost = the next best use of that time (e.g. working).<br>• A firm uses a factory for production A: opportunity cost = profits forgone from production B.<br><br>Opportunity cost underpins all rational decision-making — including the slopes of demand curves and PPF analysis.',
+      lede: 'Every choice means giving something up. Opportunity cost is the value of the next best alternative forgone — not the money you spent.',
+      body: '<strong>Concrete picture:</strong> imagine you have \xa380 to spend and two options at the same price — a concert ticket and a pair of new trainers. You buy the concert ticket. Your <strong>opportunity cost</strong> is not \xa380 — it is the value of the trainers you gave up.<br><br>Opportunity cost is the true cost of any decision because resources are limited and every choice involves a trade-off. It underpins all rational decision-making, the slope of demand curves, and the shape of the production possibility frontier.',
+      causes: [
+        { head: 'Consumers',  icon: '🛍️', body: 'A consumer choosing a cinema ticket instead of saving that money for next month\'s bills. The opportunity cost is whatever the saved money would have bought.' },
+        { head: 'Firms',      icon: '🏭', body: 'A firm investing in new machines instead of advertising. The opportunity cost is the extra sales the advertising campaign might have produced.' },
+        { head: 'Government', icon: '🏛️', body: 'A government spending £10bn on hospitals instead of building new roads. The opportunity cost is the roads, schools or tax cuts that could have been funded.' }
+      ],
+      causesLabel: 'Who faces it?',
+      causesEmoji: '👥',
+      branches: [
+        { tone: 'green',  label: 'Same choice, different cost',                 sub: 'If the next best alternative changes, so does the opportunity cost — even if the choice itself is identical.' },
+        { tone: 'amber',  label: 'Sunk costs do not count',                     sub: 'Past costs cannot be changed by today\'s decision, so they are never part of the opportunity cost — only the foregone alternatives count.' },
+        { tone: 'blue',   label: 'Better alternatives = higher opportunity cost', sub: 'The more valuable the next best option, the higher the opportunity cost of the choice you made.' }
+      ],
       keyTerms: [
-        { term: 'Opportunity cost', def: 'The next best alternative forgone as a result of making a choice.' },
-        { term: 'Explicit cost', def: 'Actual monetary payment for a resource (e.g. wage paid to a worker).' },
-        { term: 'Implicit cost', def: 'Opportunity cost of a resource you own (e.g. foregone salary of an entrepreneur who works in their own firm).' }
+        { term: 'Opportunity cost', def: 'The value of the next best alternative forgone as a result of making a choice.' },
+        { term: 'Explicit cost',    def: 'Actual monetary payment for a resource (e.g. wage paid to a worker).' },
+        { term: 'Implicit cost',    def: 'Opportunity cost of a resource you own (e.g. foregone salary of an entrepreneur working in their own firm).' }
       ],
       examEdge: 'In exam questions, always state what the opportunity cost IS — not just that "something is given up." For government spending questions, name the alternative use of funds explicitly. Vague answers lose marks.',
       keyTakeaway: 'Opportunity cost is not all the alternatives you give up — it is the value of the next best one.'

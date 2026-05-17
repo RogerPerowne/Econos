@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'collusion_cartels',
-  topicNum: '3.14',
+  topicNum: '4.4.2',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Collusion and Cartels',

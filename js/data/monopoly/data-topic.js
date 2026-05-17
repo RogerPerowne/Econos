@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'monopoly',
-  topicNum: '3.8',
+  topicNum: '4.5',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monopoly',
@@ -133,6 +133,159 @@ window.ECONOS_TOPIC = {
         { term: 'Behavioural remedy', def: 'Impose conditions on firm behaviour (e.g. must supply rivals on fair terms) — preserves market structure but constrains conduct.' }
       ],
       examEdge: 'Structural vs behavioural remedies: structural (break up the firm, force divestiture) is cleaner and more durable — competition is embedded in market structure. Behavioural (conditions on conduct) is less disruptive but requires ongoing monitoring and is vulnerable to regulatory capture. CMA generally prefers structural remedies where possible. This distinction matters for essays on competition policy.'
+    },
+
+    /* ----- Barriers to Entry (merged content) ----- */
+    {
+      id: 'barriers_entry_2',
+      template: 'cause',
+      diagramKey: 'mesBarrierDiagram',
+      title: 'Structural (innocent) barriers to entry',
+      causes: [
+        { head: 'Economies of scale', body: 'Incumbents produce at large scale → low AC. Entrants start small → high AC. Entrant cannot match incumbent prices without making a loss until it reaches scale — by which time it may have failed. Natural monopoly is the extreme case.' },
+        { head: 'High sunk costs', body: 'Sunk costs are irrecoverable if the firm exits. A firm considering entry faces the risk: if unsuccessful, sunk costs are lost. This risk asymmetry (incumbent has already paid; entrant must commit anew) deters entry. Examples: aircraft R&D, brand building, specialist equipment.' },
+        { head: 'Ownership of key resources', body: 'Control of an essential input prevents entry. De Beers: historically controlled 80%+ of global rough diamond supply. OPEC controls oil reserves. UK spectrum licences: limited by physics — only a few firms can hold mobile spectrum.' },
+        { head: 'Product uniqueness', body: 'If the incumbent\'s product cannot be replicated (unique knowledge, accumulated experience, first-mover advantage) → entrants cannot offer an equivalent substitute. Regulatory approval processes (pharmaceutical trials) create a time-cost barrier.' }
+      ],
+      examEdge: 'Sunk costs vs fixed costs: fixed costs can be recovered when exiting (sell machinery, sub-let premises). Sunk costs cannot be recovered (spent on R&D, advertising, regulatory approval). Only sunk costs create entry barriers — if costs are all recoverable, entry is costless and the market is contestable. This distinction is tested in barrier analysis.'
+    },
+    {
+      id: 'barriers_entry_3',
+      template: 'cause',
+      diagramKey: 'limitPricingDiagram',
+      title: 'Strategic (deliberate) barriers to entry',
+      causes: [
+        { head: 'Predatory pricing', body: 'Incumbent prices below cost to drive out or deter new entrants, then raises price once threat is eliminated. Illegal under competition law but difficult to prove intent. Example: alleged predatory pricing by Standard Oil (1900s). Modern concern: Amazon Marketplace pricing.' },
+        { head: 'Limit pricing', body: 'Set price just below the level at which an entrant could make a profit — not necessarily below incumbent\'s own cost. Legitimate but deliberate deterrence. Sacrifices some short-run profit to maintain long-run market position.' },
+        { head: 'Excessive brand proliferation', body: 'Fill product space with variants to deny entrant a market niche. Breakfast cereal market: established brands cover every segment — health, indulgent, children\'s. New entrant struggles to find viable niche.' },
+        { head: 'Exclusive dealing contracts', body: 'Lock suppliers or retailers into exclusive arrangements. Prevents entrants from accessing distribution channels or inputs. Example: exclusive retail agreements, paying for shelf space (slotting fees).' }
+      ],
+      examEdge: 'Predatory pricing is the most legally contested strategic barrier. The test (EU case law): price below average variable cost is presumed predatory; below average total cost may be predatory if it is part of a strategy to eliminate competition. Firms must show legitimate commercial justification for below-cost pricing.'
+    },
+    {
+      id: 'barriers_entry_4',
+      template: 'cause',
+      title: 'Legal and regulatory barriers',
+      causes: [
+        { head: 'Patents', body: '20-year exclusive right to exploit an invention. Creates a legal monopoly as reward for innovation. Pharmaceutical patents: firms spend £1-2bn developing a drug; patent allows 10+ years of monopoly pricing to recover costs before generics enter.' },
+        { head: 'Copyright', body: 'Protects creative works (books, software, music, film) for author\'s life + 70 years. Creates monopoly over specific expression. Enables Disney to sustain revenue from 80-year-old characters.' },
+        { head: 'Operating licences', body: 'Government issues limited licences to operate in regulated industries: aviation (airport slots), banking (banking licence), radio spectrum, gambling. Licence creates a legal barrier — new entrants cannot simply set up without regulatory approval.' },
+        { head: 'Regulatory compliance costs', body: 'High compliance costs (health and safety, environmental, data protection) disadvantage small entrants relative to large incumbents who have already built compliance infrastructure. Regulatory burden is regressive for market structure.' }
+      ],
+      examEdge: 'Patent system is the deliberate policy trade-off: 20 years of legal monopoly to incentivise £billions of R&D. Without it, no private firm would invest in pharmaceutical research (rivals would copy immediately). After patent expiry, generic entry → price falls dramatically (generic drugs 90% cheaper than branded). The system is designed to balance static and dynamic efficiency.'
+    },
+    {
+      id: 'barriers_entry_5',
+      template: 'framing',
+      diagramKey: 'networkEffectDiagram',
+      title: 'Network effects as entry barriers',
+      body: 'A <strong>network effect</strong> occurs when the value of a product increases as more people use it. Network effects create powerful entry barriers because:\n\n• An entrant starts with zero users — its product is less valuable than the incumbent\'s\n• New users join the incumbent (higher value) not the entrant (lower value)\n• The incumbent\'s network advantage compounds over time\n• Result: "winner-take-all" markets dominated by the first platform to achieve critical mass\n\n<strong>Examples:</strong> WhatsApp (switching means losing contacts), LinkedIn (professional network → switching costs high), Windows (software ecosystem). Network effects explain why tech monopolies are more durable than traditional monopolies — competitors face an almost insurmountable chicken-and-egg problem.',
+      keyTerms: [
+        { term: 'Network effect', def: 'Value of the product or service increases with the number of users — creates self-reinforcing incumbency advantage.' },
+        { term: 'Winner-take-all', def: 'Markets where network effects cause one dominant platform to capture most or all users.' },
+        { term: 'Switching cost', def: 'Cost (financial, effort, social) of switching from one product to a rival — locks consumers in and reinforces network effect.' }
+      ],
+      examEdge: 'Competition authorities are increasingly focused on network effects as a structural barrier in digital markets. The CMA Digital Markets Unit (DMU) is specifically tasked with making tech markets more competitive. The challenge: traditional remedies (break-up, behavioural conditions) may not work if network effects mean any separately owned piece has less value. This is unresolved policy frontier.'
+    },
+    {
+      id: 'barriers_entry_7',
+      template: 'paired',
+      title: 'Evaluation: barriers and competition policy',
+      left: {
+        label: 'Why some barriers are justified',
+        points: [
+          'Patents and copyright incentivise innovation — without barriers, no private R&D',
+          'Natural barriers from scale economies are not artificial — they reflect true cost structure',
+          'High sunk costs reward firms that took risks in new market development',
+          'Some barriers protect consumers (safety licensing for banks, medicines)',
+          'International competition: domestic champion may need scale to compete against subsidised foreign rivals'
+        ]
+      },
+      right: {
+        label: 'When barriers should be challenged',
+        points: [
+          'Strategic barriers (predatory pricing, exclusive dealing) are anticompetitive — prohibit under competition law',
+          'Network effects may justify interoperability requirements (force platforms to be open)',
+          'Excess patent protection beyond innovation incentive costs consumers',
+          'Regulatory compliance barriers may be disproportionate — reduce for small entrants',
+          'Data barriers (access to user data gives incumbents advantage) — data access mandates for entrants'
+        ]
+      },
+      examEdge: 'The policy response should match the type of barrier: structural barriers (scale economies) → regulate the firm but do not break it up. Legal barriers (patents, licences) → time-limit and scope carefully. Strategic barriers (predatory pricing, foreclosure) → prohibition and fines. Network effects → interoperability mandates, data portability. Each barrier type requires a specific policy tool.'
+    },
+
+    /* ----- Price Discrimination (merged content) ----- */
+    {
+      id: 'price_discrimination_1',
+      template: 'framing',
+      title: 'Price discrimination: the big picture',
+      lede: 'Same good, different prices. A way for firms with market power to capture surplus that single pricing leaves on the table.',
+      branches: [
+        { tone: 'blue',   label: 'Three conditions',        sub: 'Market power, ability to segment buyers by willingness to pay, and prevention of arbitrage. All three must hold.' },
+        { tone: 'green',  label: 'Three degrees',           sub: 'First (perfect, charge each consumer\'s max), second (by quantity or version), third (by group: students, peak/off-peak).' },
+        { tone: 'purple', label: 'Surplus transfer',        sub: 'Consumer surplus shifts to producer. Some consumers gain access at lower prices; others pay more than before.' },
+        { tone: 'amber',  label: 'Welfare: ambiguous',      sub: 'Output may rise (reducing DWL) but distribution worsens. Whether this is "good" depends on whose welfare you weight.' }
+      ],
+      body: '<strong>Price discrimination</strong> occurs when a firm charges different prices to different consumers (or consumer groups) for the same good or service, where the price difference is NOT justified by cost differences.<br><br><strong>Three conditions required:</strong><br>1. <strong>Market power</strong> — must be a price-setter, not a price-taker<br>2. <strong>Market segmentation</strong> — must identify groups with different willingness to pay (different PED)<br>3. <strong>Prevention of arbitrage</strong> — must prevent resale between segments (or discrimination collapses)',
+      keyTerms: [
+        { term: 'Price discrimination', def: 'Charging different prices to different consumers for the same good, where differences are not cost-based.' },
+        { term: 'Consumer surplus', def: 'Difference between what consumers are willing to pay and what they actually pay — price discrimination transfers this to the producer.' },
+        { term: 'Arbitrage', def: 'Buying in the cheap market and reselling in the expensive market — firms must prevent this for discrimination to work.' }
+      ],
+      examEdge: 'The key phrase is "not justified by cost differences." Charging more for first-class rail travel that costs more to operate is NOT price discrimination — it reflects higher costs. Charging more for the same train ticket on peak services IS price discrimination — the marginal cost of carrying one more passenger is near zero regardless of time. Always check: is the price difference cost-based or demand-based?'
+    },
+    {
+      id: 'price_discrimination_4',
+      template: 'framing',
+      diagramKey: 'thirdDegreePd',
+      title: 'Third-degree price discrimination',
+      body: '<strong>Third-degree price discrimination:</strong> the firm charges different prices to identifiable groups of consumers who have different price elasticities of demand. The most common and most examinable form.<br><br><strong>Pricing rule:</strong> charge higher price to the group with lower PED (less price-sensitive) and lower price to the group with higher PED (more price-sensitive). Profit-maximising condition: MR<sub>A</sub> = MR<sub>B</sub> = MC.<br><br><strong>Classic examples:</strong><br>• Rail: peak (inelastic business travellers) vs off-peak (elastic leisure travellers)<br>• Cinema: adult vs student/senior tickets<br>• Pharmaceuticals: same drug priced higher in USA (inelastic, insured) vs India (elastic, price-sensitive)<br>• International price discrimination: textbooks cheaper in developing markets<br>• Age-based pricing: gym memberships, insurance',
+      keyTerms: [
+        { term: 'Third-degree discrimination', def: 'Identifiable consumer groups charged different prices based on their different price elasticities of demand.' },
+        { term: 'MRₐ = MRₙ = MC', def: 'Profit-maximising condition: equalise marginal revenue across all market segments, set equal to marginal cost.' },
+        { term: 'Elasticity-based pricing', def: 'Lower PED group → higher price; higher PED group → lower price. The firm extracts more surplus from less elastic demand.' }
+      ],
+      examEdge: 'The MR = MR = MC rule is the key analytical framework. In a two-segment market: draw two demand curves (steep for inelastic, flat for elastic); draw corresponding MR curves; find where each MR = MC. The inelastic segment gets higher price, elastic segment gets lower price. Total output is higher than single-price monopoly, and revenue is higher.'
+    },
+    {
+      id: 'price_discrimination_5',
+      template: 'diagnose',
+      title: 'Welfare effects: third-degree discrimination',
+      intro: 'Third-degree discrimination has ambiguous welfare effects — analysis depends on whether the discriminating firm serves both segments or only the high-price segment.',
+      rows: [
+        { label: 'Scenario', colA: 'Discrimination enables entry to new segment', colB: 'Discrimination replaces single-price monopoly' },
+        { label: 'Output effect', colA: 'Total output INCREASES — firm now serves the elastic (low-price) group that it would not serve under a single monopoly price. Additional consumer surplus created.', colB: 'Total output change is ambiguous — depends on demand elasticities. May increase, decrease, or remain the same relative to single-price monopoly.' },
+        { label: 'Welfare verdict', colA: 'Likely welfare-improving: consumers in the new segment gain surplus they would not otherwise have. High-price consumers lose some surplus but net effect is positive.', colB: 'Likely welfare-reducing for consumers: consumer surplus redistributed to producer; some consumer groups pay higher prices than under single pricing. Efficiency unclear.' }
+      ],
+      footer: 'The welfare verdict on price discrimination hinges on the output effect. If discrimination increases output (new segments served), it can improve welfare. If it merely redistributes surplus from consumers to producers without increasing output, it reduces consumer welfare.',
+      examEdge: 'Pharmaceutical price discrimination is the key real-world case. Selling the same drug at high prices in the USA and low prices in India: the US consumer pays more (welfare loss for them), but if the Indian price covers MC, Indian consumers gain access to drugs they would otherwise not afford. Net welfare effect: likely positive globally.'
+    },
+    {
+      id: 'price_discrimination_6',
+      template: 'paired',
+      title: 'Price discrimination: for and against',
+      left: {
+        label: 'Arguments in favour',
+        points: [
+          'Can increase total output — serves market segments that single-price monopoly would exclude',
+          'Cross-subsidy: high prices from inelastic consumers subsidise access for elastic (poorer) consumers',
+          'Pharmaceutical example: funds R&D via high prices in rich markets; enables access in poor markets',
+          'May enable firms to cover high fixed costs that justify production at all (natural monopoly case)',
+          'Rail pricing: peak fares fund off-peak/rural services that would otherwise be unviable'
+        ]
+      },
+      right: {
+        label: 'Arguments against',
+        points: [
+          'Transfers consumer surplus to producers — income redistribution away from consumers',
+          'Requires market power — only possible when competition is already restricted',
+          'Consumer groups with inelastic demand (often lower-income, less mobile) pay highest prices',
+          'Requires costly segmentation and enforcement — resources wasted on discrimination machinery',
+          'Dynamic concern: high prices in protected markets reduce pressure to cut costs or innovate'
+        ]
+      },
+      examEdge: 'The strongest argument FOR price discrimination is the cross-subsidy case: rail operators use peak business fares (inelastic demand, higher price) to subsidise off-peak rural services (elastic demand, lower price). Without peak pricing, rural routes would close. This shows that the welfare effect depends entirely on how the discriminatory profit is used.',
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

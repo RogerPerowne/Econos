@@ -1,9 +1,9 @@
 window.ECONOS_TOPIC = {
   id: 'short_run_costs',
-  topicNum: '3.3',
+  topicNum: '3.2',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
-  title: 'Short-Run Costs',
+  title: 'Costs',
   estTime: '7-9 minutes',
   goal: 'Lock in fixed vs variable costs, total/average/marginal cost, the law of diminishing returns, and U-shaped average cost curves.',
   intro: {

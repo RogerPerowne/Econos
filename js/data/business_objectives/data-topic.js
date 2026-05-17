@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'business_objectives',
-  topicNum: '3.1',
+  topicNum: '2.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Business Objectives',

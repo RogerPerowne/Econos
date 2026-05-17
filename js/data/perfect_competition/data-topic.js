@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'perfect_competition',
-  topicNum: '3.7',
+  topicNum: '4.2',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Perfect Competition',

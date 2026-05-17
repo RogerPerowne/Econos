@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'neg_externalities',
   topicNum: '3.2.1',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Negative Externalities',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Negative externalities: the big picture',
       lede: 'When private costs ignore third-party harm, markets overproduce — and society pays the bill.',
+      tip: 'MSC = MPC + MEC. When external costs (MEC) exist, the market price is too low → too much output. The DWL triangle shows the welfare lost at every unit produced beyond Q*.',
       branches: [
         { tone: 'green',  label: 'The core concept',   sub: 'MSC = MPC + MEC. When MEC > 0, the market price understates true cost and output exceeds the social optimum.' },
         { tone: 'blue',   label: 'The diagram',        sub: 'MSC sits above MPC. Welfare loss is the triangle between MSC and MPB beyond Q*.' },
@@ -80,11 +81,14 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_3',
       template: 'cause',
       title: 'Types of Negative Externalities',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '💨',
+      causesLabel: 'Four categories of external cost',
       causes: [
-        { head: 'Production externalities', body: 'Pollution from manufacturing: chemical plant discharges into river; power station CO2 emissions; noise from airport. The external cost falls on households, other firms, or the environment. Classic for the MSC > MPC diagram.' },
-        { head: 'Consumption externalities', body: 'Negative effects from using a product: passive smoking (tobacco); traffic congestion (car use); noise from music events. The external cost arises from consumption, not production. Demand = MPB < MSB for positive externalities; here MSC ≠ MPC diagram adjusts — MPB > MSB.' },
-        { head: 'Environmental damage', body: 'Carbon emissions, deforestation, overfishing — externalities that damage natural capital with long-run consequences. Characterised by stock externalities (accumulate over time) rather than flow externalities.' },
-        { head: 'Global externalities', body: 'Climate change is a global externality — emissions in one country impose costs worldwide. No single government can internalise all costs; requires international cooperation (Paris Agreement, carbon trading schemes).' }
+        { icon: '🏭', head: 'Production externalities', body: 'Pollution from manufacturing: chemical plant discharges into river; power station CO2 emissions; noise from airport. The external cost falls on households, other firms, or the environment. Classic for the MSC > MPC diagram.' },
+        { icon: '🚗', head: 'Consumption externalities', body: 'Negative effects from using a product: passive smoking (tobacco); traffic congestion (car use); noise from music events. The external cost arises from consumption, not production. The MPB > MSB diagram variant applies here.' },
+        { icon: '🌱', head: 'Environmental damage', body: 'Carbon emissions, deforestation, overfishing — externalities that damage natural capital with long-run consequences. Characterised by stock externalities (accumulate over time) rather than flow externalities.' },
+        { icon: '🌍', head: 'Global externalities', body: 'Climate change is a global externality — emissions in one country impose costs worldwide. No single government can internalise all costs; requires international cooperation (Paris Agreement, carbon trading schemes).' }
       ],
       examEdge: 'Distinguish production from consumption externalities in the diagram: production externality → MSC shifts above MPC (supply side). Consumption externality (negative) → MPB shifts below MSB (demand side — use this when the question involves consumer behaviour, not firm production).'
     },
@@ -104,11 +108,14 @@ window.ECONOS_TOPIC = {
       id: 'neg_externalities_5',
       template: 'cause',
       title: 'Government Policies to Correct Negative Externalities',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🏛️',
+      causesLabel: 'Four policy tools',
       causes: [
-        { head: 'Pigouvian tax', body: 'Tax equal to the marginal external cost at the socially optimal output level. Raises MPC to equal MSC → market produces Q-optimal. Example: UK fuel duty, sugar tax. Advantage: uses price mechanism; raises revenue. Limitation: difficult to measure MEC accurately; may be regressive.' },
-        { head: 'Cap-and-trade (emissions trading)', body: 'Set a total cap on emissions; issue tradeable permits. Firms can only emit within their permit allocation; buy extra permits from firms that reduce emissions cheaply. EU ETS example. Advantage: achieves environmental target efficiently; flexible. Limitation: permit price volatility; lobbying for free permits.' },
-        { head: 'Regulation and legislation', body: 'Legal limits on pollution; mandatory standards (Euro emission standards); outright bans. Advantage: certain outcome if enforced. Limitation: "one size fits all"; compliance costs; regulatory capture risk.' },
-        { head: 'State provision', body: 'Government takes over the externality-creating activity and forces socially optimal output. Nationalised industries can set output at Q-optimal. Limitation: government failure risk; information requirement.' }
+        { icon: '💸', head: 'Pigouvian tax', body: 'Tax equal to the marginal external cost at the socially optimal output level. Raises MPC to equal MSC → market produces Q-optimal. Example: UK fuel duty, sugar tax. Advantage: uses price mechanism; raises revenue. Limitation: difficult to measure MEC accurately; may be regressive.' },
+        { icon: '🔄', head: 'Cap-and-trade (emissions trading)', body: 'Set a total cap on emissions; issue tradeable permits. Firms can only emit within their permit allocation; buy extra permits from firms that reduce emissions cheaply. EU ETS example. Advantage: achieves environmental target efficiently; flexible. Limitation: permit price volatility; lobbying for free permits.' },
+        { icon: '📋', head: 'Regulation and legislation', body: 'Legal limits on pollution; mandatory standards (Euro emission standards); outright bans. Advantage: certain outcome if enforced. Limitation: "one size fits all"; compliance costs; regulatory capture risk.' },
+        { icon: '🏛️', head: 'State provision', body: 'Government takes over the externality-creating activity and forces socially optimal output. Nationalised industries can set output at Q-optimal. Limitation: government failure risk; information requirement.' }
       ],
       examEdge: 'Evaluation framework for Pigouvian taxes: (1) Is the MEC measurable? (2) Is demand sufficiently inelastic to achieve the output reduction? (3) What are the distributional consequences? (4) Risk of evasion/black markets. Use these four questions to structure evaluation paragraphs on any externality policy.'
     },
@@ -119,7 +126,7 @@ window.ECONOS_TOPIC = {
       intro: 'Carbon emissions are the largest-scale negative externality — global, long-lasting, and politically contested.',
       rows: [
         { label: 'Feature', colA: 'Scale of externality', colB: 'Policy response' },
-        { label: 'Detail', colA: 'Global public bad — emissions in any country affect all. MEC is enormous but disputed: social cost of carbon estimated at $51-$185/tonne CO2 (IPCC range). Stock externality — accumulates over centuries.', colB: 'Carbon taxes (UK: ~\xa350/tonne ETS price). EU ETS: cap-and-trade. Paris Agreement: voluntary national targets. No binding global mechanism → free rider problem remains.' },
+        { label: 'Detail', colA: 'Global public bad — emissions in any country affect all. MEC is enormous but disputed: social cost of carbon estimated at $51-$185/tonne CO2 (IPCC range). Stock externality — accumulates over centuries.', colB: 'Carbon taxes (UK: ~£50/tonne ETS price). EU ETS: cap-and-trade. Paris Agreement: voluntary national targets. No binding global mechanism → free rider problem remains.' },
         { label: 'Key tension', colA: 'Measuring MEC requires long-run discounted projections — contested by economists. Lower discount rate (Stern) → higher MEC; higher discount rate (Nordhaus) → lower MEC.', colB: 'Unilateral carbon pricing risks "carbon leakage" — firms relocate to lower-cost jurisdictions. EU CBAM (Carbon Border Adjustment Mechanism) attempts to address this.' }
       ],
       footer: 'Carbon is the ultimate test of externality policy: the polluter is everyone (consumption externality); the victim is everyone (global); and the solution requires unprecedented international coordination.',
@@ -127,26 +134,18 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'neg_externalities_7',
-      template: 'paired',
+      template: 'framing',
       title: 'Taxes vs Regulation: Evaluation',
-      left: {
-        label: 'Taxes (Pigouvian)',
-        points: [
-          'Allows firms to choose how to reduce pollution — minimises total compliance cost',
-          'Generates government revenue for green investment',
-          'Dynamic efficiency: firms continually incentivised to innovate to reduce tax burden',
-          'Limitation: requires accurate measurement of MEC (difficult)',
-          'Limitation: may be regressive — energy taxes hit low-income households hardest'
-        ]
-      },
-      right: {
-        label: 'Regulation (command-and-control)',
-        points: [
-          'Provides certainty about the environmental outcome',
-          'Simple to communicate and enforce (e.g. emission limits)',
-          'Does not require accurate MEC measurement — just a standard',
-          'Limitation: "one size fits all" — may be inefficient if firms have different abatement costs',
-          'Limitation: regulatory capture risk — polluters lobby for weak standards'
+      verdict: {
+        leftLabel: '💸 Taxes (Pigouvian)',
+        rightLabel: '📋 Regulation (command-and-control)',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Flexibility', left: 'Firms choose how to reduce pollution — minimises total compliance cost', right: '"One size fits all" — may be inefficient if firms have different abatement costs' },
+          { aspect: 'Revenue', left: 'Generates government revenue for green investment', right: 'No revenue generated from regulation itself' },
+          { aspect: 'Certainty', left: 'Uncertain quantity outcome — depends on how firms respond to the price', right: 'Provides certainty about the environmental outcome if enforced' },
+          { aspect: 'Dynamic efficiency', left: 'Firms continually incentivised to innovate and reduce their tax burden', right: 'Once compliance standard met, no further incentive to innovate' },
+          { aspect: 'Key limitation', left: 'Requires accurate MEC measurement (difficult) and may be regressive', right: 'Regulatory capture risk — polluters lobby for weak standards' }
         ]
       },
       examEdge: 'Economists generally prefer taxes (price-based instruments) for efficiency; environmentalists may prefer regulations for certainty. A hybrid is often optimal: regulations set a minimum standard; taxes create incentives beyond compliance. Acknowledge this in essays for a balanced evaluation.',

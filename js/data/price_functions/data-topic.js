@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'price_functions',
   topicNum: '2.7',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'The Price Mechanism',
   estTime: '7-9 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Functions of the price mechanism: the big picture',
       lede: 'Prices do three jobs at once — and that is how markets allocate resources without anyone in charge.',
+      tip: 'Hayek\'s insight: prices aggregate millions of individual decisions (harvests, preferences, costs) into a single number. No central planner can match this. When prices are blocked or distorted, this information is lost.',
       branches: [
         { tone: 'blue',   label: 'Signalling',                 sub: 'Prices broadcast information about relative scarcity. A rise tells producers to expand and consumers to economise — no central planner required.' },
         { tone: 'green',  label: 'Incentives',                 sub: 'Higher prices reward producers who supply scarce goods; lower prices punish those producing unwanted ones. Self-interest does the heavy lifting.' },
@@ -75,10 +76,10 @@ window.ECONOS_TOPIC = {
       title: 'How Price Signals Transmit Through Markets',
       intro: 'Price signals cascade through interconnected markets — a change in one market ripples through others via supply chains and complementary/substitute relationships.',
       steps: [
-        { label: 'Initial shock', text: 'Drought reduces wheat harvest → wheat supply falls → wheat price rises sharply. The signal: wheat is scarcer.' },
-        { label: 'Direct response', text: 'Bread producers face higher input costs → reduce output or raise bread prices. Consumers switch to rice or potatoes (substitutes). Farmers incentivised to plant more wheat next season.' },
-        { label: 'Downstream transmission', text: 'Higher bread prices raise costs for sandwich shops, school canteens, catering firms. Profits squeezed → some raise prices, some reduce portion sizes.' },
-        { label: 'Long-run correction', text: 'High wheat prices persist → more farmland switched to wheat next season → supply rises → price falls back. Price signal has coordinated reallocation without central direction.' }
+        { label: '🌾 Initial shock', text: 'Drought reduces wheat harvest → wheat supply falls → wheat price rises sharply. The signal: wheat is scarcer.' },
+        { label: '🍞 Direct response', text: 'Bread producers face higher input costs → reduce output or raise bread prices. Consumers switch to rice or potatoes (substitutes). Farmers incentivised to plant more wheat next season.' },
+        { label: '🥪 Downstream transmission', text: 'Higher bread prices raise costs for sandwich shops, school canteens, catering firms. Profits squeezed → some raise prices, some reduce portion sizes.' },
+        { label: '📈 Long-run correction', text: 'High wheat prices persist → more farmland switched to wheat next season → supply rises → price falls back. Price signal has coordinated reallocation without central direction.' }
       ],
       examEdge: 'Supply chain transmission questions are common in Paper 1 extracts. Trace the chain: input price shock → cost rise for producers → supply shift in output market → price adjustment → consumer and downstream responses. Each step is a transmission of the price signal through the system.'
     },
@@ -98,37 +99,31 @@ window.ECONOS_TOPIC = {
       id: 'price_functions_6',
       template: 'cause',
       title: 'When the Price Mechanism Fails',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '⚠️',
+      causesLabel: 'Five routes to price mechanism failure',
       causes: [
-        { head: 'Externalities', body: 'External costs and benefits are not captured in market prices. Pollution: the social cost exceeds the private cost reflected in price → price signal understates true cost → overproduction of polluting goods.' },
-        { head: 'Public goods', body: 'Non-excludability means the price mechanism cannot charge for public goods → free rider problem → no profit signal → zero market supply of socially valuable goods (defence, street lighting).' },
-        { head: 'Information asymmetries', body: 'Sellers may have better information than buyers (used cars, insurance) → prices don\'t accurately reflect quality → adverse selection and market unravelling (Akerlof\'s "Market for Lemons").' },
-        { head: 'Monopoly power', body: 'Firms with market power set P > MC → price signal overstates scarcity → consumers buy less than optimal. Price signal distorted by market power, not just cost and demand.' },
-        { head: 'Merit and demerit goods', body: 'Consumers may not have perfect information about the value of healthcare, education (merit goods) or the harm of tobacco (demerit goods) → demand signals don\'t reflect true social value.' }
+        { icon: '💨', head: 'Externalities', body: 'External costs and benefits are not captured in market prices. Pollution: the social cost exceeds the private cost reflected in price → price signal understates true cost → overproduction of polluting goods.' },
+        { icon: '🏛️', head: 'Public goods', body: 'Non-excludability means the price mechanism cannot charge for public goods → free rider problem → no profit signal → zero market supply of socially valuable goods (defence, street lighting).' },
+        { icon: '📊', head: 'Information asymmetries', body: 'Sellers may have better information than buyers (used cars, insurance) → prices don\'t accurately reflect quality → adverse selection and market unravelling (Akerlof\'s "Market for Lemons").' },
+        { icon: '🏗️', head: 'Monopoly power', body: 'Firms with market power set P > MC → price signal overstates scarcity → consumers buy less than optimal. Price signal distorted by market power, not just cost and demand.' },
+        { icon: '🍎', head: 'Merit and demerit goods', body: 'Consumers may not have perfect information about the value of healthcare, education (merit goods) or the harm of tobacco (demerit goods) → demand signals don\'t reflect true social value.' }
       ],
       examEdge: 'Market failure = price mechanism failure. Each type of market failure represents a specific way in which prices fail to signal, incentivise, or ration correctly. Always tie market failure back to which function of price has broken down — this earns analytical marks above description.'
     },
     {
       id: 'price_functions_7',
-      template: 'paired',
+      template: 'framing',
       title: 'Price Mechanism vs Government Allocation',
-      left: {
-        label: 'Price mechanism advantages',
-        points: [
-          'Uses dispersed local knowledge — no central information requirement',
-          'Automatic adjustment — no government decisions needed',
-          'Dynamic efficiency — profit signals drive innovation',
-          'Consumer sovereignty — production reflects revealed preferences',
-          'Efficient resource allocation when prices reflect all costs and benefits'
-        ]
-      },
-      right: {
-        label: 'Government allocation advantages',
-        points: [
-          'Can correct externalities by adjusting prices (taxes, subsidies)',
-          'Can provide public goods that markets under-supply',
-          'Can address distributional concerns — price mechanism rations by income, not need',
-          'Can overcome information failures through regulation and standards',
-          'Can take account of long-run social benefits that short-term market prices ignore'
+      verdict: {
+        leftLabel: '📈 Price mechanism',
+        rightLabel: '🏛️ Government allocation',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Information', left: 'Uses dispersed local knowledge — no central information requirement', right: 'Can correct externalities by adjusting prices (taxes, subsidies)' },
+          { aspect: 'Adjustment', left: 'Automatic — no government decisions or delays needed', right: 'Can provide public goods that markets under-supply' },
+          { aspect: 'Efficiency', left: 'Dynamic efficiency — profit signals drive innovation', right: 'Can overcome information failures through regulation and standards' },
+          { aspect: 'Equity', left: 'Rations by ability to pay — may exclude the poorest', right: 'Can address distributional concerns — price mechanism rations by income, not need' }
         ]
       },
       examEdge: 'Neither system is universally superior — the optimal choice is context-specific. Markets excel at allocating private goods with well-defined property rights and no externalities. Government is needed where prices fail to capture social costs/benefits. The debate is always about the marginal case — not an all-or-nothing choice.',

@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'behavioural_econ',
   topicNum: '2.10',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Behavioural Economics',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Behavioural economics: the big picture',
       lede: 'Real people aren\'t perfectly rational — and the systematic patterns of how they go wrong open up new policy tools.',
+      tip: 'Biases are systematic, not random. The same person makes the same mistake in the same context repeatedly. This predictability is what makes behavioural economics useful for policy — you can design around the bias.',
       branches: [
         { tone: 'green',  label: 'Bounded rationality', sub: 'Simon: people use heuristics because full optimisation is cognitively impossible. Errors are systematic, not random.' },
         { tone: 'amber',  label: 'Cognitive biases',    sub: 'Anchoring, availability, herd behaviour, confirmation bias — predictable distortions in decision-making.' },
@@ -49,11 +50,14 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_2',
       template: 'cause',
       title: 'Key Cognitive Biases',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🧠',
+      causesLabel: 'Four biases that shape economic behaviour',
       causes: [
-        { head: 'Loss aversion', body: 'Losses feel approximately twice as painful as equivalent gains feel pleasurable (Kahneman and Tversky). "Don\'t lose \xa350" is more motivating than "Gain \xa350." Firms exploit this: framing a charge as "avoiding a fee" vs "getting a discount." Policy implication: frame messages in terms of what is lost from inaction.' },
-        { head: 'Present bias (hyperbolic discounting)', body: 'People strongly prefer immediate rewards over future ones — more than a standard time preference would justify. "I\'ll start the diet Monday." Under-save for retirement; under-invest in health; fail to take up beneficial insurance. Market failure even with full information.' },
-        { head: 'Anchoring', body: 'First piece of numerical information received disproportionately influences subsequent judgements. Initial salary offer → anchors negotiation. First house price seen → affects willingness to pay. Retailers use fake "was \xa3100, now \xa360" pricing.' },
-        { head: 'Herd behaviour', body: 'People follow what others do — especially under uncertainty. Financial markets: investors buy when others buy → bubbles. Restaurants: follow the crowd to the busy one. Social proof marketing: "9 out of 10 dentists recommend." Policy: publish social norm data to alter behaviour.' }
+        { icon: '😱', head: 'Loss aversion', body: 'Losses feel approximately twice as painful as equivalent gains feel pleasurable (Kahneman and Tversky). "Don\'t lose £50" is more motivating than "Gain £50." Firms exploit this: framing a charge as "avoiding a fee" vs "getting a discount." Policy implication: frame messages in terms of what is lost from inaction.' },
+        { icon: '⏰', head: 'Present bias (hyperbolic discounting)', body: 'People strongly prefer immediate rewards over future ones — more than a standard time preference would justify. "I\'ll start the diet Monday." Under-save for retirement; under-invest in health; fail to take up beneficial insurance. Market failure even with full information.' },
+        { icon: '⚓', head: 'Anchoring', body: 'First piece of numerical information received disproportionately influences subsequent judgements. Initial salary offer → anchors negotiation. First house price seen → affects willingness to pay. Retailers use fake "was £100, now £60" pricing.' },
+        { icon: '🐑', head: 'Herd behaviour', body: 'People follow what others do — especially under uncertainty. Financial markets: investors buy when others buy → bubbles. Restaurants: follow the crowd to the busy one. Social proof marketing: "9 out of 10 dentists recommend." Policy: publish social norm data to alter behaviour.' }
       ],
       examEdge: 'Loss aversion is the most policy-relevant bias. HMRC used it: letters saying "Most people in your area have already paid their taxes" and "You owe tax that was due" (loss frame) significantly increased payment rates compared to standard reminders. Real, low-cost policy effect from behavioural insight.'
     },
@@ -62,7 +66,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       diagramKey: 'prospectTheoryDiagram',
       title: 'Prospect Theory',
-      body: 'Kahneman and Tversky\'s <strong>prospect theory</strong> (1979, Nobel Prize 2002) describes how people actually make decisions under uncertainty — distinct from expected utility theory:<br><br>1. <strong>Reference dependence:</strong> outcomes are evaluated relative to a reference point (current state), not absolute levels.<br>2. <strong>Loss aversion:</strong> losses from the reference point weigh ~2x more than equivalent gains.<br>3. <strong>Diminishing sensitivity:</strong> the first \xa3100 lost hurts more than the next \xa3100 lost — declining marginal impact of further losses or gains.<br>4. <strong>Probability weighting:</strong> people overweight small probabilities (buy lottery tickets, fear plane crashes) and underweight large probabilities.',
+      body: 'Kahneman and Tversky\'s <strong>prospect theory</strong> (1979, Nobel Prize 2002) describes how people actually make decisions under uncertainty — distinct from expected utility theory:<br><br>1. <strong>Reference dependence:</strong> outcomes are evaluated relative to a reference point (current state), not absolute levels.<br>2. <strong>Loss aversion:</strong> losses from the reference point weigh ~2x more than equivalent gains.<br>3. <strong>Diminishing sensitivity:</strong> the first £100 lost hurts more than the next £100 lost — declining marginal impact of further losses or gains.<br>4. <strong>Probability weighting:</strong> people overweight small probabilities (buy lottery tickets, fear plane crashes) and underweight large probabilities.',
       keyTerms: [
         { term: 'Prospect theory', def: 'Kahneman and Tversky\'s model of decision under uncertainty — incorporates reference points, loss aversion, and probability distortion.' },
         { term: 'Reference point', def: 'The status quo against which gains and losses are evaluated — determines whether an outcome feels like a gain or a loss.' },
@@ -87,36 +91,30 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_5',
       template: 'cause',
       title: 'Behavioural Policy Applications',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🏛️',
+      causesLabel: 'Four UK behavioural policy successes',
       causes: [
-        { head: 'Tax compliance (HMRC)', body: 'Behavioural Insights Team tested personalised letters. Social norm messages ("most people pay on time") increased compliance by 5.1 percentage points. Loss framing ("you owe tax that is now overdue") increased payments. Minimal cost intervention. Estimated yield: additional \xa3200m+ in tax revenue.' },
-        { head: 'Organ donation (opt-out)', body: 'Max Bailey\'s campaign: switch from opt-in to opt-out donation default. England switched to soft opt-out 2020. Wales earlier (2015). Evidence: Wales saw significant increase in consent rates. Default matters hugely — same individual, different default → very different outcome.' },
-        { head: 'Pension saving (NEST)', body: 'Auto-enrolment into pension at 8% (employer + employee). Default rate is 8% — most workers remain at default. Before: ~55% of private sector workers had workplace pension. After: ~87%. Largest behavioural intervention in UK economic history.' },
-        { head: 'Energy efficiency', body: 'Smart meter displays show real-time energy usage (salience). Neighbour comparison letters from EDF/Ovo: "Your neighbours use 20% less energy" — social norm nudge. Both reduce energy consumption at low cost.' }
+        { icon: '📋', head: 'Tax compliance (HMRC)', body: 'Behavioural Insights Team tested personalised letters. Social norm messages ("most people pay on time") increased compliance by 5.1 percentage points. Loss framing ("you owe tax that is now overdue") increased payments. Minimal cost intervention. Estimated yield: additional £200m+ in tax revenue.' },
+        { icon: '🫀', head: 'Organ donation (opt-out)', body: 'Switch from opt-in to opt-out donation default. England switched to soft opt-out 2020. Wales earlier (2015). Evidence: Wales saw significant increase in consent rates. Default matters hugely — same individual, different default → very different outcome.' },
+        { icon: '💰', head: 'Pension saving (NEST)', body: 'Auto-enrolment into pension at 8% (employer + employee). Default rate is 8% — most workers remain at default. Before: ~55% of private sector workers had workplace pension. After: ~87%. Largest behavioural intervention in UK economic history.' },
+        { icon: '⚡', head: 'Energy efficiency', body: 'Smart meter displays show real-time energy usage (salience). Neighbour comparison letters from EDF/Ovo: "Your neighbours use 20% less energy" — social norm nudge. Both reduce energy consumption at low cost.' }
       ],
       examEdge: 'The BIT (Behavioural Insights Team, "Nudge Unit") was set up under Cameron government 2010. It demonstrated that small, low-cost changes in communication and defaults could achieve policy goals equivalent to expensive traditional interventions. This represents a genuine evolution in government policy toolkit — and is frequently examined.'
     },
     {
       id: 'behavioural_econ_6',
-      template: 'paired',
+      template: 'framing',
       title: 'Behavioural Economics: Strengths vs Limitations',
-      left: {
-        label: 'Strengths of behavioural approach',
-        points: [
-          'Cost-effective: nudges achieve behaviour change at far lower cost than taxes or regulation',
-          'Preserves freedom of choice — libertarian paternalism respects autonomy',
-          'Evidence-based: rigorously tested via randomised controlled trials (RCTs)',
-          'Addresses market failures from information gaps and biases that taxes/regulation cannot correct',
-          'Politically acceptable: less controversial than tax rises or outright bans'
-        ]
-      },
-      right: {
-        label: 'Limitations of behavioural approach',
-        points: [
-          'Small effects for small nudges: nudges can only go so far — large structural change still needs traditional policy',
-          'Paternalism concern: who decides what is "better"? Government nudging may reflect elite values',
-          'Context-specific: nudges that work in one context may not transfer to another',
-          'Manipulation concern: private sector uses same techniques to exploit consumers (dark patterns, addictive design)',
-          'Does not address structural causes: nudging people to save more doesn\'t solve structural low wages'
+      verdict: {
+        leftLabel: '✅ Strengths of behavioural approach',
+        rightLabel: '⚠️ Limitations of behavioural approach',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Cost', left: 'Cost-effective: nudges achieve behaviour change at far lower cost than taxes or regulation', right: 'Small effects for small nudges: nudges can only go so far — large structural change still needs traditional policy' },
+          { aspect: 'Freedom', left: 'Preserves freedom of choice — libertarian paternalism respects autonomy', right: 'Paternalism concern: who decides what is "better"? Government nudging may reflect elite values' },
+          { aspect: 'Evidence', left: 'Evidence-based: rigorously tested via randomised controlled trials (RCTs)', right: 'Context-specific: nudges that work in one context may not transfer to another' },
+          { aspect: 'Politics', left: 'Politically acceptable: less controversial than tax rises or outright bans', right: 'Manipulation concern: private sector uses same techniques to exploit consumers (dark patterns, addictive design)' }
         ]
       },
       examEdge: 'Top evaluation: nudges are complementary to, not substitutes for, traditional policy. For large-scale market failures (climate change, obesity), nudges help but are insufficient without price signals (carbon tax) or regulation (advertising standards). Behavioural economics enriches the policy toolkit; it doesn\'t replace it.'

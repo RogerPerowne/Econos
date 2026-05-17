@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'info_gaps',
   topicNum: '3.4',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Information Gaps',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Information gaps: the big picture',
       lede: 'When one side of a deal knows more than the other, even competitive markets can unravel.',
+      tip: 'Adverse selection = wrong people selected BEFORE the deal (ex-ante). Moral hazard = bad behaviour AFTER the deal (ex-post). Adverse selection → market composition problem. Moral hazard → behaviour change problem.',
       branches: [
         { tone: 'green',  label: 'Imperfect vs asymmetric', sub: 'All information is imperfect — but asymmetry (one party systematically knows more) is the source of failure.' },
         { tone: 'rose',   label: 'Adverse selection',       sub: 'Akerlof\'s "lemons": hidden quality before a deal drives good goods out of the market.' },
@@ -62,11 +63,14 @@ window.ECONOS_TOPIC = {
       id: 'info_gaps_3',
       template: 'cause',
       title: 'Adverse Selection: Examples',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '📊',
+      causesLabel: 'Where adverse selection occurs',
       causes: [
-        { head: 'Insurance markets', body: 'People who know they are high-risk are most eager to buy insurance. Insurers cannot perfectly distinguish high from low risk → set premiums at the average → low-risk individuals find insurance overpriced → exit → pool worsens → premiums rise further → adverse selection spiral. NHS universal coverage partly avoids this by pooling all risks compulsorily.' },
-        { head: 'Credit markets', body: 'High-risk borrowers want credit most; banks cannot perfectly identify risk → charge average rate → low-risk borrowers may opt out → average borrower risk rises → bank raises rates → adverse selection. Credit scoring, collateral, and credit history requirements are attempts to screen.' },
-        { head: 'Labour markets', body: 'Firms cannot observe worker productivity before hiring → offer average wage → best workers (knowing their quality) may find average wage insufficient → exit labour market for that employer → average quality of applicants falls → classic adverse selection.' },
-        { head: 'Used goods markets', body: 'Used electronics, houses, and cars: seller knows history; buyer cannot verify. Results in price discounts for goods without quality certification — even if genuinely high quality. Market undervalues good-quality used goods.' }
+        { icon: '🏥', head: 'Insurance markets', body: 'People who know they are high-risk are most eager to buy insurance. Insurers cannot perfectly distinguish high from low risk → set premiums at the average → low-risk individuals find insurance overpriced → exit → pool worsens → premiums rise further → adverse selection spiral. NHS universal coverage partly avoids this by pooling all risks compulsorily.' },
+        { icon: '💳', head: 'Credit markets', body: 'High-risk borrowers want credit most; banks cannot perfectly identify risk → charge average rate → low-risk borrowers may opt out → average borrower risk rises → bank raises rates → adverse selection. Credit scoring, collateral, and credit history requirements are attempts to screen.' },
+        { icon: '👔', head: 'Labour markets', body: 'Firms cannot observe worker productivity before hiring → offer average wage → best workers (knowing their quality) may find average wage insufficient → exit labour market for that employer → average quality of applicants falls → classic adverse selection.' },
+        { icon: '🚗', head: 'Used goods markets', body: 'Used electronics, houses, and cars: seller knows history; buyer cannot verify. Results in price discounts for goods without quality certification — even if genuinely high quality. Market undervalues good-quality used goods.' }
       ],
       examEdge: 'Adverse selection occurs BEFORE the contract/transaction (ex-ante). It is about who selects into the market. The policy solution is screening/signalling to reveal private information. This distinguishes it from moral hazard (which occurs after the contract — ex-post).'
     },
@@ -88,10 +92,10 @@ window.ECONOS_TOPIC = {
       title: 'Signalling and Screening Solutions',
       intro: 'When markets fail due to information asymmetry, private solutions emerge to restore information flow.',
       steps: [
-        { label: 'Signalling', text: 'The better-informed party credibly reveals their type. For signalling to work, it must be costly to mimic: education as a signal (Spence) — low-ability workers cannot credibly pretend to have a degree because the cost of completing it is too high. Warranties, brand reputation, guarantees.' },
-        { label: 'Screening', text: 'The less-informed party designs mechanisms to reveal the other\'s type. Insurance deductibles: offering high-deductible/low-premium vs low-deductible/high-premium contracts — low-risk individuals self-select into high-deductible plans.' },
-        { label: 'Reputation mechanisms', text: 'Repeat transactions allow reputation to substitute for direct observation. Airbnb/eBay reviews, TripAdvisor, credit scores all create reputation systems that discipline behaviour.' },
-        { label: 'Third-party certification', text: 'MOT certificates, Michelin stars, credit ratings, regulatory approval — independent certification resolves buyer-seller information asymmetry.' }
+        { label: '📢 Signalling', text: 'The better-informed party credibly reveals their type. For signalling to work, it must be costly to mimic: education as a signal (Spence) — low-ability workers cannot credibly pretend to have a degree because the cost of completing it is too high. Warranties, brand reputation, guarantees.' },
+        { label: '🔍 Screening', text: 'The less-informed party designs mechanisms to reveal the other\'s type. Insurance deductibles: offering high-deductible/low-premium vs low-deductible/high-premium contracts — low-risk individuals self-select into high-deductible plans.' },
+        { label: '⭐ Reputation mechanisms', text: 'Repeat transactions allow reputation to substitute for direct observation. Airbnb/eBay reviews, TripAdvisor, credit scores all create reputation systems that discipline behaviour.' },
+        { label: '✅ Third-party certification', text: 'MOT certificates, Michelin stars, credit ratings, regulatory approval — independent certification resolves buyer-seller information asymmetry.' }
       ],
       examEdge: 'Spence\'s education signalling model: if education is mainly a signal of ability rather than a direct investment in human capital, then its social value is lower than private value — explaining why we might over-invest in education relative to its actual productivity impact. This is an important qualification to the positive externality argument for education subsidies.'
     },
@@ -99,11 +103,14 @@ window.ECONOS_TOPIC = {
       id: 'info_gaps_6',
       template: 'cause',
       title: 'Government Responses to Information Failures',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🏛️',
+      causesLabel: 'Four policy tools',
       causes: [
-        { head: 'Mandatory information disclosure', body: 'Require sellers to reveal information: food labelling laws (nutritional information), financial product prospectuses, energy performance certificates for houses. Reduces information asymmetry directly.' },
-        { head: 'Regulation and standards', body: 'Set minimum quality standards so buyers know the minimum quality they will receive. MOT test, financial services regulation (FCA), food safety standards — protect uninformed consumers.' },
-        { head: 'Public provision', body: 'Where information asymmetry is severe (e.g. complex financial products, medical care), state provision may be preferable to market provision. NHS doctors cannot easily exploit patient ignorance as private doctors potentially could.' },
-        { head: 'Price controls and restrictions', body: 'Cap interest rates, regulate insurance pricing — prevent exploitation of information advantages by the better-informed party. Limitation: may reduce supply of credit or insurance to high-risk groups.' }
+        { icon: '📋', head: 'Mandatory information disclosure', body: 'Require sellers to reveal information: food labelling laws (nutritional information), financial product prospectuses, energy performance certificates for houses. Reduces information asymmetry directly.' },
+        { icon: '📊', head: 'Regulation and standards', body: 'Set minimum quality standards so buyers know the minimum quality they will receive. MOT test, financial services regulation (FCA), food safety standards — protect uninformed consumers.' },
+        { icon: '🏛️', head: 'Public provision', body: 'Where information asymmetry is severe (e.g. complex financial products, medical care), state provision may be preferable to market provision. NHS doctors cannot easily exploit patient ignorance as private doctors potentially could.' },
+        { icon: '💵', head: 'Price controls and restrictions', body: 'Cap interest rates, regulate insurance pricing — prevent exploitation of information advantages by the better-informed party. Limitation: may reduce supply of credit or insurance to high-risk groups.' }
       ],
       examEdge: 'FCA regulation in UK financial services addresses multiple information failures: product mis-selling (PPI scandal — banks had information advantage over consumers), insider trading (market participants with private information gain unfair advantage), and pension advice complexity. Regulatory intervention is justified precisely because market mechanisms fail when information is asymmetric.'
     },

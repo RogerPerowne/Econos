@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'price_controls',
   topicNum: '1.19',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Controls',
   estTime: '9-11 minutes',
@@ -56,10 +56,10 @@ window.ECONOS_TOPIC = {
       title: 'Consequences of Price Ceilings',
       intro: 'Price ceilings solve one problem (high price) while creating several others.',
       steps: [
-        { label: 'Shortage', text: 'At Pc, demand exceeds supply — shortfall = QD − QS. The market cannot clear. Some buyers willing to pay Pc cannot find the good.' },
-        { label: 'Rationing problem', text: 'Who gets the good? Price no longer rations. Alternatives: queuing (first come first served — rewards patience over value), lottery, government allocation (tickets, ration books). All are less efficient than price rationing.' },
-        { label: 'Black markets', text: 'Some sellers and buyers transact above the legal price. Black market price may exceed the original equilibrium — buyers now face higher price AND search costs. Illegal; creates crime and corruption.' },
-        { label: 'Quality deterioration', text: 'Sellers cannot raise prices to cover cost increases → cut costs instead → lower quality. Rent-controlled apartments deteriorate as landlords reduce maintenance. Quality deterioration reduces consumer welfare even at the controlled price.' }
+        { label: '❌ Shortage', text: 'At Pc, demand exceeds supply — shortfall = QD − QS. The market cannot clear. Some buyers willing to pay Pc cannot find the good.' },
+        { label: '🔀 Rationing problem', text: 'Who gets the good? Price no longer rations. Alternatives: queuing (first come first served — rewards patience over value), lottery, government allocation (tickets, ration books). All are less efficient than price rationing.' },
+        { label: '🕵️ Black markets', text: 'Some sellers and buyers transact above the legal price. Black market price may exceed the original equilibrium — buyers now face higher price AND search costs. Illegal; creates crime and corruption.' },
+        { label: '📉 Quality deterioration', text: 'Sellers cannot raise prices to cover cost increases → cut costs instead → lower quality. Rent-controlled apartments deteriorate as landlords reduce maintenance. Quality deterioration reduces consumer welfare even at the controlled price.' }
       ],
       examEdge: 'Black markets are a key unintended consequence. If a ceiling creates a large shortage, the black market price can exceed the original equilibrium price — worse for consumers than no control. This is a powerful evaluation point: price controls intended to help consumers can make them worse off if enforcement is poor.'
     },
@@ -79,6 +79,7 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_4',
       template: 'framing',
       title: 'Price Floors (Minimum Prices)',
+      tip: 'A price floor only bites if set ABOVE equilibrium. A floor below equilibrium has no effect — the market already trades above it. The binding quantity is always the LOWER of QS and QD.',
       body: 'A <strong>price floor</strong> (minimum price) is a legal lower limit on the price that can be charged. It only affects the market if set ABOVE the equilibrium price.<br><br><strong>Mechanism:</strong><br>• Floor price Pf > equilibrium P*<br>• At Pf: QS > QD → surplus<br>• Quantity traded = the lower = QD (demand is the binding constraint)<br>• Unsold surplus = QS − QD<br><br><strong>Rationale:</strong> protect producers from "too low" prices — minimum wage (labour), agricultural price supports, minimum alcohol pricing.',
       keyTerms: [
         { term: 'Price floor', def: 'Legal minimum price set above equilibrium — creates a surplus.' },
@@ -91,35 +92,30 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_5',
       template: 'cause',
       title: 'Price Floor Examples and Consequences',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '📋',
+      causesLabel: 'Three key price floor contexts',
       causes: [
-        { head: 'National Living Wage (minimum wage)', body: 'Floor set at \xa312.21/hr (April 2024). If above market equilibrium wage → employer demand for labour falls; worker supply rises → unemployment. If below equilibrium or at exactly competitive wage → no effect. Evidence: NLW has generally been set near but not far above equilibrium for most workers — limited unemployment effect, significant wage gain for low earners.' },
-        { head: 'Agricultural price supports', body: 'EU CAP: guaranteed minimum prices for agricultural products. At guaranteed price, supply exceeds demand → surplus ("butter mountains", "wine lakes"). EU had to buy and store/destroy surpluses. High cost; distorted trade; harmed developing-country farmers.' },
-        { head: 'Minimum unit pricing for alcohol', body: 'Scotland: 50p/unit minimum since 2018. Floor on alcohol price per unit of ethanol. Reduces consumption of cheap strong alcohol disproportionately affecting heavy drinkers. Evidence: alcohol sales fell 3-7% in Scotland. Aim: reduce alcohol-related harm (positive externality correction).' }
+        { icon: '⚖️', head: 'National Living Wage (minimum wage)', body: 'Floor set at £12.21/hr (April 2024). If above market equilibrium wage → employer demand for labour falls; worker supply rises → unemployment. If below equilibrium or at exactly competitive wage → no effect. Evidence: NLW has generally been set near but not far above equilibrium for most workers — limited unemployment effect, significant wage gain for low earners.' },
+        { icon: '🌾', head: 'Agricultural price supports', body: 'EU CAP: guaranteed minimum prices for agricultural products. At guaranteed price, supply exceeds demand → surplus ("butter mountains", "wine lakes"). EU had to buy and store/destroy surpluses. High cost; distorted trade; harmed developing-country farmers.' },
+        { icon: '🍺', head: 'Minimum unit pricing for alcohol', body: 'Scotland: 50p/unit minimum since 2018. Floor on alcohol price per unit of ethanol. Reduces consumption of cheap strong alcohol disproportionately affecting heavy drinkers. Evidence: alcohol sales fell 3-7% in Scotland. Aim: reduce alcohol-related harm (positive externality correction).' }
       ],
       examEdge: 'Minimum wage debate: monopsony makes the analysis more complex. Under monopsony (one dominant employer), the competitive equilibrium wage is already below the efficient level. A minimum wage can INCREASE employment (unlike in a competitive market where it reduces employment) — because it counters monopsony power. This is a major evaluation upgrade for minimum wage essays.'
     },
     {
       id: 'price_controls_6',
-      template: 'paired',
+      template: 'framing',
       title: 'Price Controls: Evaluation',
-      left: {
-        label: 'Case FOR price controls',
-        points: [
-          'Direct and immediate: price changes are instant, unlike supply-side policies which take years',
-          'Simple to understand and communicate — political appeal',
-          'Protects consumers (ceiling) or producers (floor) from market power or volatility',
-          'Energy price cap during 2022 energy crisis provided immediate consumer relief',
-          'Minimum wage floor has raised incomes of lowest-paid without large disemployment'
-        ]
-      },
-      right: {
-        label: 'Case AGAINST / Limitations',
-        points: [
-          'Price ceilings create shortages and quality deterioration — may not help intended beneficiaries',
-          'Price floors create surpluses — wasted resources (unsold stock)',
-          'Black markets develop — potentially criminal activity',
-          'Inefficient allocation: goods go to those who queue fastest, not those who value them most',
-          'Don\'t address root cause of price problem — if caused by supply shortage, price control doesn\'t fix supply'
+      verdict: {
+        leftLabel: '✅ Case FOR price controls',
+        rightLabel: '❌ Case AGAINST / Limitations',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Speed', left: 'Direct and immediate: price changes are instant, unlike supply-side policies which take years', right: 'Price ceilings create shortages and quality deterioration — may not help intended beneficiaries' },
+          { aspect: 'Communication', left: 'Simple to understand and communicate — political appeal', right: 'Price floors create surpluses — wasted resources (unsold stock)' },
+          { aspect: 'Protection', left: 'Energy price cap during 2022 energy crisis provided immediate consumer relief', right: 'Black markets develop — potentially criminal activity' },
+          { aspect: 'Evidence', left: 'Minimum wage floor has raised incomes of lowest-paid without large disemployment', right: 'Inefficient allocation: goods go to those who queue fastest, not those who value them most' },
+          { aspect: 'Root cause', left: 'Addresses the symptom immediately while longer-run policies are implemented', right: 'Don\'t address root cause: if caused by supply shortage, price control doesn\'t fix supply' }
         ]
       },
       examEdge: 'The key insight: price controls treat the symptom (high/low price) not the cause (insufficient supply or excessive demand). For rent: the solution is to build more housing (supply-side). For low wages: improve labour productivity (supply-side) or strengthen worker bargaining power. Price controls are short-run palliatives; supply-side reforms address root causes.'

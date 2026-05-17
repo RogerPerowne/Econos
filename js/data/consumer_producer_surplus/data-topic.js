@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'consumer_producer_surplus',
   topicNum: '2.8',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Consumer & Producer Surplus',
   estTime: '8-10 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 6',
       title: 'Consumer & producer surplus: the big picture',
       lede: 'The gains from trade do not just go to buyers or sellers — they are shared. Surplus measures exactly who gets what and how much.',
+      tip: 'CS = triangle ABOVE the price line BELOW the demand curve. PS = triangle BELOW the price line ABOVE the supply curve. Total welfare = CS + PS. Any intervention that creates a "wedge" in price destroys some of this surplus — that destroyed portion is the DWL.',
       branches: [
         { tone: 'green',  label: 'Consumer surplus',   sub: 'The difference between what consumers are willing to pay and what they actually pay. Shown as the triangle above price below demand.' },
         { tone: 'blue',   label: 'Producer surplus',   sub: 'The difference between the price producers receive and their minimum acceptable price. Shown as the triangle below price above supply.' },
@@ -37,13 +38,13 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  label: 'Policy effects',     sub: 'Taxes, subsidies and price controls all redistribute surplus between consumers, producers and government — and often destroy some of it (DWL).' },
         { tone: 'rose',   label: 'Efficiency link',    sub: 'Allocative efficiency = total welfare maximised = no deadweight loss. Market failure = some surplus is not captured = DWL exists.' }
       ],
-      body: '<strong>Consumer surplus (CS)</strong> is the benefit consumers receive beyond what they pay. A buyer willing to pay \xa350 for a concert ticket but who pays \xa330 enjoys \xa320 of consumer surplus.<br><br><strong>Producer surplus (PS)</strong> is the benefit producers receive beyond their minimum acceptable price. A seller willing to accept \xa320 for a good but who receives \xa330 enjoys \xa310 of producer surplus.<br><br>These surplus triangles represent the gains from voluntary exchange — trade only occurs when both sides benefit. The total area (CS + PS) is maximised when the market is in free equilibrium at the price where quantity demanded equals quantity supplied.',
+      body: '<strong>Consumer surplus (CS)</strong> is the benefit consumers receive beyond what they pay. A buyer willing to pay £50 for a concert ticket but who pays £30 enjoys £20 of consumer surplus.<br><br><strong>Producer surplus (PS)</strong> is the benefit producers receive beyond their minimum acceptable price. A seller willing to accept £20 for a good but who receives £30 enjoys £10 of producer surplus.<br><br>These surplus triangles represent the gains from voluntary exchange — trade only occurs when both sides benefit. The total area (CS + PS) is maximised when the market is in free equilibrium at the price where quantity demanded equals quantity supplied.',
       keyTerms: [
         { term: 'Consumer surplus', def: 'The difference between the maximum a consumer is willing to pay (their demand price) and the actual market price they pay.' },
         { term: 'Producer surplus', def: 'The difference between the market price received by a producer and the minimum price they would accept to supply (their supply price).' },
         { term: 'Total welfare (social surplus)', def: 'CS + PS — the total gains from trade. Maximised at the competitive equilibrium where MSB = MSC.' }
       ],
-      examEdge: 'Always describe surplus as a triangle with three vertices: (1) the equilibrium price; (2) the point where demand (for CS) or supply (for PS) meets the price axis; (3) the equilibrium quantity. Area = \xbd \xd7 base \xd7 height. A common exam mistake: students shade the wrong side of the supply or demand curve. CS is above the price line; PS is below it.'
+      examEdge: 'Always describe surplus as a triangle with three vertices: (1) the equilibrium price; (2) the point where demand (for CS) or supply (for PS) meets the price axis; (3) the equilibrium quantity. Area = ½ × base × height. A common exam mistake: students shade the wrong side of the supply or demand curve. CS is above the price line; PS is below it.'
     },
     {
       id: 'consumer_producer_surplus_2',
@@ -51,12 +52,12 @@ window.ECONOS_TOPIC = {
       title: 'Drawing and Calculating Surplus',
       intro: 'Follow these steps to correctly identify and calculate consumer and producer surplus on any supply-demand diagram.',
       steps: [
-        { label: 'Find the equilibrium', text: 'Draw supply (S) and demand (D) curves. Find the intersection: equilibrium price P* and equilibrium quantity Q*. This is where total surplus is maximised.' },
-        { label: 'Shade consumer surplus', text: 'CS = triangle above P* below the D curve, from the y-axis to Q*. Vertices: (0, P*), (Q*, P*), and the demand curve\'s y-intercept (where WTP = price and Q demanded = 0).' },
-        { label: 'Shade producer surplus', text: 'PS = triangle below P* above the S curve, from the y-axis to Q*. Vertices: (0, P*), (Q*, P*), and the supply curve\'s y-intercept (where minimum supply price = 0).' },
-        { label: 'Calculate areas', text: 'CS = \xbd \xd7 (max WTP - P*) \xd7 Q*. PS = \xbd \xd7 (P* - min supply price) \xd7 Q*. Total welfare = CS + PS. Check: any wedge between price and quantity that prevents these triangles from forming is a deadweight welfare loss.' }
+        { label: '📍 Find the equilibrium', text: 'Draw supply (S) and demand (D) curves. Find the intersection: equilibrium price P* and equilibrium quantity Q*. This is where total surplus is maximised.' },
+        { label: '🔵 Shade consumer surplus', text: 'CS = triangle above P* below the D curve, from the y-axis to Q*. Vertices: (0, P*), (Q*, P*), and the demand curve\'s y-intercept (where WTP = price and Q demanded = 0).' },
+        { label: '🟢 Shade producer surplus', text: 'PS = triangle below P* above the S curve, from the y-axis to Q*. Vertices: (0, P*), (Q*, P*), and the supply curve\'s y-intercept (where minimum supply price = 0).' },
+        { label: '🧮 Calculate areas', text: 'CS = ½ × (max WTP - P*) × Q*. PS = ½ × (P* - min supply price) × Q*. Total welfare = CS + PS. Check: any wedge between price and quantity that prevents these triangles from forming is a deadweight welfare loss.' }
       ],
-      examEdge: 'Numerical questions on surplus are common. You will be given demand and supply equations or schedules and asked to calculate CS, PS or both. Key formula: area of triangle = \xbd \xd7 base \xd7 height. For CS: base = Q*, height = (y-intercept of demand) - P*. For PS: base = Q*, height = P* - (y-intercept of supply). If supply starts at the origin, PS = \xbd \xd7 P* \xd7 Q*.'
+      examEdge: 'Numerical questions on surplus are common. You will be given demand and supply equations or schedules and asked to calculate CS, PS or both. Key formula: area of triangle = ½ × base × height. For CS: base = Q*, height = (y-intercept of demand) - P*. For PS: base = Q*, height = P* - (y-intercept of supply). If supply starts at the origin, PS = ½ × P* × Q*.'
     },
     {
       id: 'consumer_producer_surplus_3',
@@ -101,12 +102,13 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       causesEmoji: '📊',
       causesLabel: 'Real-world surplus applications',
+      causesStyle: 'tinted-flat',
       title: 'Surplus in the Real World',
       causes: [
-        { head: 'Housing market price ceiling', body: 'Rent controls set below the market rate reduce landlord PS dramatically. Some tenants gain (lower rent), but a shortage develops as Qs < Qd. Total welfare falls — DWL equals the value of housing transactions that do not occur. Evidence: San Francisco rent control reduced rental supply by 15% (Diamond et al., 2019).' },
-        { head: 'Aviation industry subsidies', body: 'Many airports and airlines receive government subsidies. This expands output beyond free-market levels. Some of the subsidy becomes CS (lower fares) and some becomes PS (higher airline revenue), but the DWL represents overproduction unless negative aviation externalities are already very large.' },
-        { head: 'Free trade vs tariffs', body: 'Free trade maximises total surplus in a country by allowing consumers to buy at the world price. A tariff raises the domestic price, transferring CS to domestic producers and the government (tariff revenue), but creating DWL triangles on both sides. Trade theory shows the sum of welfare losses exceeds the gains to producers.' },
-        { head: 'Labour market minimum wage', body: 'A minimum wage above equilibrium creates PS gains for employed workers (higher wage) but may reduce employment. Workers who lose jobs lose their surplus. Total welfare effect depends on the elasticity of demand for labour — inelastic demand means smaller employment loss and net welfare gain for workers.' }
+        { icon: '🏠', head: 'Housing market price ceiling', body: 'Rent controls set below the market rate reduce landlord PS dramatically. Some tenants gain (lower rent), but a shortage develops as Qs < Qd. Total welfare falls — DWL equals the value of housing transactions that do not occur. Evidence: San Francisco rent control reduced rental supply by 15% (Diamond et al., 2019).' },
+        { icon: '✈️', head: 'Aviation industry subsidies', body: 'Many airports and airlines receive government subsidies. This expands output beyond free-market levels. Some of the subsidy becomes CS (lower fares) and some becomes PS (higher airline revenue), but the DWL represents overproduction unless negative aviation externalities are already very large.' },
+        { icon: '🌐', head: 'Free trade vs tariffs', body: 'Free trade maximises total surplus in a country by allowing consumers to buy at the world price. A tariff raises the domestic price, transferring CS to domestic producers and the government (tariff revenue), but creating DWL triangles on both sides. Trade theory shows the sum of welfare losses exceeds the gains to producers.' },
+        { icon: '👷', head: 'Labour market minimum wage', body: 'A minimum wage above equilibrium creates PS gains for employed workers (higher wage) but may reduce employment. Workers who lose jobs lose their surplus. Total welfare effect depends on the elasticity of demand for labour — inelastic demand means smaller employment loss and net welfare gain for workers.' }
       ],
       examEdge: 'Surplus analysis is the standard toolkit for evaluating any price or quantity intervention. For each real-world policy, ask: (1) does consumer price rise or fall? (2) does producer price rise or fall? (3) does output rise or fall? (4) is there a DWL triangle? (5) does the intervention correct a pre-existing market failure or create a new welfare loss? This five-question framework will structure strong exam answers.',
       keyTakeaway: { title: 'The big picture', text: 'Consumer and producer surplus measure the gains from trade. Together they equal total welfare, which is maximised at the free-market equilibrium. Any policy intervention redistributes surplus between consumers, producers, and the government — and typically destroys some surplus as deadweight welfare loss. The key evaluative question is whether the policy corrects a pre-existing market failure large enough to justify the welfare loss it creates.' },

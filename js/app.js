@@ -142,6 +142,21 @@
     `;
   }
 
+  function renderKeyTakeaway(t) {
+    if (!t) return '';
+    const text = typeof t === 'object' ? t.text : t;
+    if (!text) return '';
+    return `
+      <div class="key-takeaway">
+        <div class="key-takeaway__star">★</div>
+        <div class="key-takeaway__body">
+          <div class="key-takeaway__label">Key takeaway</div>
+          <div class="key-takeaway__text">${text}</div>
+        </div>
+      </div>
+    `;
+  }
+
   /* ============================================================
      GENERIC CARD RENDERER
      Handles the standard data format used by all non-inflation
@@ -2354,6 +2369,7 @@
 
           <div class="card">
             ${body}
+            ${renderKeyTakeaway(c.keyTakeaway)}
 
             <div class="card-foot">
               <button class="btn btn--ghost" data-action="prev" ${isFirst ? 'disabled style="opacity:0.4; cursor:not-allowed;"' : ''}>

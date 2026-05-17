@@ -43,7 +43,8 @@ window.ECONOS_TOPIC = {
         { term: 'Factors of production', def: 'Land (natural resources), Labour (human effort), Capital (man-made productive assets), Enterprise (risk-taking ability).' },
         { term: 'Free good', def: 'A good that is not scarce — available in unlimited quantity at zero opportunity cost. True free goods are extremely rare (e.g. air in most locations).' }
       ],
-      examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity — they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.'
+      examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity — they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.',
+      keyTakeaway: 'Scarcity does not mean there is nothing left — it means there is not enough to satisfy all wants at zero cost.'
     },
     {
       id: 'basic_econ_problem_2',
@@ -55,7 +56,8 @@ window.ECONOS_TOPIC = {
         { term: 'Explicit cost', def: 'Actual monetary payment for a resource (e.g. wage paid to a worker).' },
         { term: 'Implicit cost', def: 'Opportunity cost of a resource you own (e.g. foregone salary of an entrepreneur who works in their own firm).' }
       ],
-      examEdge: 'In exam questions, always state what the opportunity cost IS — not just that "something is given up." For government spending questions, name the alternative use of funds explicitly. Vague answers lose marks.'
+      examEdge: 'In exam questions, always state what the opportunity cost IS — not just that "something is given up." For government spending questions, name the alternative use of funds explicitly. Vague answers lose marks.',
+      keyTakeaway: 'Opportunity cost is not all the alternatives you give up — it is the value of the next best one.'
     },
     {
       id: 'basic_econ_problem_3',
@@ -67,7 +69,8 @@ window.ECONOS_TOPIC = {
         { term: 'How to produce', def: 'Factor combination decision: labour vs capital intensity.' },
         { term: 'For whom to produce', def: 'Distribution decision: who receives the output.' }
       ],
-      examEdge: 'The three questions are normative at heart — different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."'
+      examEdge: 'The three questions are normative at heart — different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."',
+      keyTakeaway: 'The three questions sit at the heart of economics because scarcity forces every society to make choices.'
     },
     {
       id: 'basic_econ_problem_4',
@@ -79,7 +82,8 @@ window.ECONOS_TOPIC = {
         { head: 'Government', body: 'Corrects market failures, redistributes income, provides public goods, and stabilises the macroeconomy. Acts in the public interest — though government failure is also possible.' },
         { head: 'Workers', body: 'Supply labour to maximise wages/utility (including leisure). Face work-leisure trade-off. Covered fully in Theme 3 labour markets.' }
       ],
-      examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational — they use heuristics, are loss-averse, and act on incomplete information.'
+      examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational — they use heuristics, are loss-averse, and act on incomplete information.',
+      keyTakeaway: 'Economic decisions reflect objectives — and because objectives differ, conflict and trade-offs are common.'
     },
     {
       id: 'basic_econ_problem_5',
@@ -105,7 +109,8 @@ window.ECONOS_TOPIC = {
           'Policy recommendations are inherently normative'
         ]
       },
-      examEdge: 'Many policy debates contain both positive and normative elements. "Raising minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.'
+      examEdge: 'Many policy debates contain both positive and normative elements. "Raising minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.',
+      keyTakeaway: 'Positive is about what is; normative is about what ought to be.'
     },
     {
       id: 'basic_econ_problem_6',
@@ -118,7 +123,8 @@ window.ECONOS_TOPIC = {
         { label: 'Self-interest assumption', text: 'Traditional models assume agents act in their own interest. Adam Smith: "It is not from the benevolence of the butcher... that we expect our dinner, but from their regard to their own interest."' },
         { label: 'Limitations', text: 'Behavioural economics shows agents use rules of thumb, are altruistic, loss-averse, and present-biased. The rational model is a useful simplification, not a complete description of human behaviour.' }
       ],
-      examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.'
+      examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.',
+      keyTakeaway: 'Rational decision-making is a useful assumption — but in real life, decisions are often less than perfectly rational.'
     },
     {
       id: 'basic_econ_problem_7',
@@ -131,6 +137,7 @@ window.ECONOS_TOPIC = {
         { term: 'Fallacy of composition', def: 'The error of assuming what is true for a part is true for the whole: a wage cut helps one firm but if all firms cut wages, aggregate demand falls.' }
       ],
       examEdge: 'The micro-macro distinction matters for policy evaluation. Supply-side policies (micro-level reforms to labour and product markets) work through micro mechanisms but have macro effects. Always specify the transmission mechanism linking micro behaviour to macro outcomes in essays.',
+      keyTakeaway: 'Micro explains the parts; macro explains the whole — and good economists link both.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

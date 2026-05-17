@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'inflation_meas',
-  topicNum: '2.2.1',
+  topicNum: '1.2.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Inflation: Measurement & Costs',

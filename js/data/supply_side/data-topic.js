@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'supply_side',
-  topicNum: '2.7',
+  topicNum: '6.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Supply-Side Policies',

@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'macro_objectives',
-  topicNum: '2.5',
+  topicNum: '6.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Macroeconomic Objectives & Trade-offs',

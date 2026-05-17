@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'growth_measure',
-  topicNum: '2.1.1',
+  topicNum: '5.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Economic Growth & National Income',

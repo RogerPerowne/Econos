@@ -180,20 +180,7 @@ window.ECONOS_TOPICS = [
   },
 
   /* ---- Theme 2: The National and Global Economy ---- */
-  {
-    id: 'growth_measure',
-    name: 'Economic Growth',
-    sub: 'GDP, GNI, PPP and what growth really means',
-    color: '#0ea5e9',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'sol_wellbeing',
-    name: 'Standard of Living',
-    sub: 'HDI, wellbeing, and beyond GDP',
-    color: '#8b5cf6',
-    available: { learn: true, link: false, land: false }
-  },
+  /* Section 1: Measures of Economic Performance */
   {
     id: 'inflation_meas',
     name: 'Inflation: Measurement',
@@ -210,7 +197,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'unemployment',
-    name: 'Unemployment',
+    name: 'Employment & Unemployment',
     sub: 'Types, causes and policies',
     color: '#10b981',
     available: { learn: true, link: false, land: false }
@@ -222,6 +209,7 @@ window.ECONOS_TOPICS = [
     color: '#6366f1',
     available: { learn: true, link: false, land: false }
   },
+  /* Section 2: Aggregate Demand */
   {
     id: 'ad',
     name: 'Aggregate Demand',
@@ -229,6 +217,7 @@ window.ECONOS_TOPICS = [
     color: '#f59e0b',
     available: { learn: true, link: false, land: false }
   },
+  /* Section 3: Aggregate Supply */
   {
     id: 'agg_supply',
     name: 'Aggregate Supply',
@@ -236,38 +225,69 @@ window.ECONOS_TOPICS = [
     color: '#06b6d4',
     available: { learn: true, link: false, land: false }
   },
+  /* Section 4: National Income */
   {
-    id: 'multiplier',
-    name: 'National Income & Multiplier',
-    sub: 'Circular flow, equilibrium and the multiplier formula',
+    id: 'national_income',
+    name: 'National Income',
+    sub: 'Circular flow, equilibrium income and national income caveats',
     color: '#84cc16',
     available: { learn: true, link: false, land: false }
   },
   {
+    id: 'multiplier',
+    name: 'The Multiplier',
+    sub: 'Multiplier formula, worked examples, accelerator and fiscal policy',
+    color: '#16a34a',
+    available: { learn: true, link: false, land: false }
+  },
+  /* Section 5: Economic Growth */
+  {
+    id: 'growth_measure',
+    name: 'Economic Growth',
+    sub: 'GDP, GNI, PPP, causes of growth and long-run trends',
+    color: '#0ea5e9',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'output_gaps',
+    name: 'Output Gaps',
+    sub: 'Actual vs potential GDP, negative and positive gaps, policy implications',
+    color: '#0284c7',
+    available: { learn: true, link: false, land: false }
+  },
+  {
     id: 'growth_cycle',
-    name: 'Trade Cycle & Growth',
-    sub: 'Booms, recessions, shocks and output gaps',
+    name: 'Trade Cycle',
+    sub: 'Booms, recessions, shocks and the trade cycle',
     color: '#eab308',
     available: { learn: true, link: false, land: false }
   },
   {
+    id: 'growth_impact',
+    name: 'The Impact of Economic Growth',
+    sub: 'Benefits, costs, inequality, environment and sustainability',
+    color: '#15803d',
+    available: { learn: true, link: false, land: false }
+  },
+  /* Section 6: Macroeconomic Objectives & Policies */
+  {
     id: 'macro_objectives',
-    name: 'Macro Objectives',
-    sub: 'Trade-offs, Phillips curve and NAIRU',
+    name: 'Macroeconomic Objectives',
+    sub: 'The five objectives, conflicts and UK macro data',
     color: '#ef4444',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'fiscal_policy',
-    name: 'Fiscal Policy',
-    sub: 'Tax, spending, deficits and crowding out',
+    name: 'Demand-side Policies: Fiscal',
+    sub: 'Tax, spending, deficits, crowding out and fiscal multipliers',
     color: '#3b82f6',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'monetary',
-    name: 'Monetary Policy',
-    sub: 'Interest rates and the Bank of England',
+    name: 'Demand-side Policies: Monetary',
+    sub: 'Interest rates, Bank of England, QE and transmission mechanisms',
     color: '#2563eb',
     available: { learn: true, link: false, land: false }
   },
@@ -276,6 +296,22 @@ window.ECONOS_TOPICS = [
     name: 'Supply-Side Policies',
     sub: 'Market-based vs interventionist approaches',
     color: '#22c55e',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'macro_conflicts',
+    name: 'Macro Conflicts & Trade-offs',
+    sub: 'Phillips curve, NAIRU, stagflation and resolving trade-offs',
+    color: '#dc2626',
+    available: { learn: true, link: false, land: false }
+  },
+
+  /* ---- Parked — to be assigned to later themes ---- */
+  {
+    id: 'sol_wellbeing',
+    name: 'Standard of Living',
+    sub: 'HDI, wellbeing, and beyond GDP',
+    color: '#8b5cf6',
     available: { learn: true, link: false, land: false }
   },
 

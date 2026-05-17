@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'unemployment',
-  topicNum: '2.1.3',
+  topicNum: '1.3',
   theme: 'Theme 2 · The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Employment & Unemployment',

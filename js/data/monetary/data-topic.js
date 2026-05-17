@@ -6,10 +6,10 @@
 
 window.ECONOS_TOPIC = {
   id: 'monetary_policy',
-  topicNum: '2.6.2',
+  topicNum: '6.2.2',
   theme: 'Theme 2 · The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
-  title: 'Monetary Policy',
+  title: 'Demand-side Policies: Monetary',
   estTime: '10-12 minutes',
   goal: 'Master the transmission chain — and when it breaks',
 

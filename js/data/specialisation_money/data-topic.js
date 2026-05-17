@@ -24,114 +24,311 @@ window.ECONOS_TOPIC = {
     ]
   },
   cards: [
+
+    /* ================================================================
+       CARD 1 — The big picture: 5-step chain + "Why this matters"
+       ================================================================ */
     {
       id: 'specialisation_money_1',
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
-      title: 'Specialisation &amp; money: the big picture',
-      lede: 'Specialisation makes us vastly more productive — but only if we have a way to exchange what we produce.',
-      branches: [
-        { tone: 'green',  label: 'Division of labour',          sub: 'Splitting production into specialised tasks raises productivity dramatically — Smith&apos;s pin factory turned 200 pins/day into 48,000.' },
-        { tone: 'blue',   label: 'Gains from specialisation',   sub: 'Higher output, lower unit costs, comparative advantage at the national level — the engine of economic growth and trade.' },
-        { tone: 'amber',  label: 'Limits &amp; downsides',      sub: 'Boredom, structural unemployment, over-reliance on trade and supply-chain fragility. Specialisation is not costless.' },
-        { tone: 'rose',   label: 'The barter problem',          sub: 'Specialisation only works if we can trade. Barter needs a double coincidence of wants — almost impossible at scale.' },
-        { tone: 'purple', label: 'Money &amp; its functions',   sub: 'Medium of exchange, unit of account, store of value, standard of deferred payment. Money is what makes specialised economies possible.' }
+      title: 'Specialisation & money: the big picture',
+      tip: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest.',
+      flow: [
+        { icon: '🛠️', title: 'Specialisation',     sub: 'Focus on what you do relatively well.' },
+        { icon: '📈', title: 'Higher productivity', sub: 'You produce more with the same resources.' },
+        { icon: '🤝', title: 'Exchange',           sub: 'You trade for the goods and services you don\'t produce.' },
+        { icon: '💵', title: 'Money',              sub: 'Money is accepted in exchange, making trade much easier.' },
+        { icon: '🏡', title: 'Higher living standards', sub: 'More goods, more choice, better lives.' }
       ],
-      body: '<strong>Specialisation</strong> occurs when individuals, firms, regions, or countries concentrate on producing what they are relatively most efficient at. <strong>Division of labour</strong> refers to breaking production into specialised tasks, with each worker performing only one or a few.<br><br>Adam Smith (Wealth of Nations, 1776): a pin factory with 10 workers each performing one step produces 48,000 pins/day. The same workers without specialisation could produce perhaps 200. Productivity multiplier: 240x.<br><br>Benefits at the national level: countries specialise in goods where they have comparative advantage, then trade — raising world output above what each could achieve in isolation.',
+      flowTitle: 'The big-picture chain',
+      flowEmoji: '🔗',
       keyTerms: [
-        { term: 'Specialisation', def: 'Concentrating on one good or task in which you have relative efficiency.' },
-        { term: 'Division of labour', def: 'Splitting production into specialised tasks performed by different workers.' },
-        { term: 'Comparative advantage', def: 'Ability to produce a good at lower opportunity cost than another producer — basis for mutually beneficial trade.' }
+        { term: '📈 More output',  def: 'We can produce more with the resources we have.' },
+        { term: '🛒 More choice',  def: 'Trade lets us enjoy a wider variety of goods and services.' },
+        { term: '🤝 Easier trade', def: 'Money removes the "double coincidence of wants" and simplifies exchange.' }
       ],
-      examEdge: 'Smith\'s pin factory is the classic exam example — know the numbers. The link to comparative advantage is crucial: specialisation at the firm level → division of labour gains; specialisation at the national level → comparative advantage gains. Same principle, different scale.'
+      keyTermsLabel: 'Why this matters',
+      keyTermsEmoji: '⭐',
+      examEdge: 'Specialisation only works well when exchange is possible — and money makes exchange far easier than barter. Make this link explicit in any answer that touches on productivity, trade or development.'
     },
+
+    /* ================================================================
+       CARD 2 — Benefits of Specialisation: 4 icon tiles with worker/firm/country examples inline
+       ================================================================ */
     {
       id: 'specialisation_money_2',
       template: 'cause',
       title: 'Benefits of Specialisation',
+      tip: 'By focusing on what we do best, we raise efficiency and output. Specialisation helps workers, firms and countries achieve more.',
       causes: [
-        { head: 'Higher productivity', body: 'Repetition and focus develop skill and speed. A worker who performs the same task thousands of times becomes expert — learning by doing.' },
-        { head: 'Capital efficiency', body: 'Specialised machinery can be used where most productive. Automated assembly lines exploit economies of scale that generalised production cannot.' },
-        { head: 'Time saving', body: 'No time lost switching between tasks. Smith noted workers switching tasks "dawdle" — specialisation eliminates this transition cost.' },
-        { head: 'Innovation', body: 'Specialists notice inefficiencies in their specific task and develop labour-saving improvements. Division of labour drives invention.' },
-        { head: 'International gains', body: 'Countries specialise in goods of comparative advantage, trade, and both gain — global output rises beyond what autarky allows.' }
+        {
+          head: 'Higher productivity & efficiency',
+          icon: '⚡',
+          body: 'Specialists complete tasks faster and with fewer errors, so more can be produced in less time.',
+          example: { icon: '👤', text: 'A baker who focuses on baking gets faster and better, making more loaves and earning more.' }
+        },
+        {
+          head: 'Gains from division of labour',
+          icon: '🔧',
+          body: 'Breaking tasks into steps and repeating them builds skill and speed — Smith\'s pin factory turned 200 pins/day into 48,000.',
+          example: { icon: '🪡', text: 'Adam Smith\'s pin factory: 10 specialised workers produced ~240× more pins than working alone.' }
+        },
+        {
+          head: 'Lower unit costs & economies of scale',
+          icon: '🏭',
+          body: 'Larger, specialised production spreads fixed costs and reduces the cost per unit.',
+          example: { icon: '🚗', text: 'A car factory specialising in engines produces more engines, of higher quality, at lower cost.' }
+        },
+        {
+          head: 'More trade and consumer choice',
+          icon: '🌍',
+          body: 'Specialisation enables trade, bringing more goods of better quality at a wider range of prices.',
+          example: { icon: '🚢', text: 'A country specialising at its comparative advantage trades for the rest — raising living standards.' }
+        }
       ],
-      examEdge: 'Smith identified three main gains: dexterity, time-saving, and invention/machinery. Know this list — it\'s directly quotable. Evaluation: these gains require exchange (and therefore money), and create dependency risks if specialisation is too narrow.'
+      causesLabel: 'The key benefits',
+      causesEmoji: '⭐',
+      examEdge: 'Smith identified three core gains: dexterity, time-saving, and invention/machinery. Know the list verbatim. Evaluation: these gains require exchange — without trade, specialisation cannot deliver.'
     },
+
+    /* ================================================================
+       CARD 3 — Benefits vs Limitations: paired with icon rows + green conclusion
+       ================================================================ */
     {
       id: 'specialisation_money_3',
       template: 'paired',
       title: 'Specialisation: Benefits vs Limitations',
+      tip: 'Specialisation usually raises efficiency but can also create risk.',
       left: {
         label: 'Benefits',
-        points: [
-          'Higher output per worker — productivity gains',
-          'Lower unit costs — enables economies of scale',
-          'Comparative advantage exploited — world output rises',
-          'Innovation spurred by focused expertise',
-          'Higher wages possible from greater productivity surplus'
+        icon: '⭐',
+        tone: 'green',
+        rows: [
+          { icon: '📈', title: 'Higher output',    text: 'People and firms produce more in less time.' },
+          { icon: '🎓', title: 'Expertise',        text: 'Specialists develop skills and produce better quality.' },
+          { icon: '💷', title: 'Lower costs',      text: 'Doing fewer tasks allows firms to cut costs and save resources.' },
+          { icon: '🛒', title: 'Wider choice',     text: 'More products and services are available to consumers.' }
         ]
       },
       right: {
         label: 'Limitations',
-        points: [
-          'Repetitive tasks cause worker alienation, boredom and absenteeism (Marx: "alienation of labour")',
-          'Interdependence — one bottleneck disrupts entire chain (e.g. semiconductor shortage 2021)',
-          'Structural unemployment if specialised skills become obsolete (e.g. coal miners)',
-          'Over-dependence on trade creates vulnerability to supply chain disruption',
-          'Worker specialisation may limit career flexibility and social mobility'
+        icon: '⚠️',
+        tone: 'amber',
+        rows: [
+          { icon: '😐', title: 'Monotony',                  text: 'Repetitive tasks can become boring and less satisfying — Marx\'s "alienation of labour".' },
+          { icon: '🔗', title: 'Dependence on others',     text: 'You rely on others — and global supply chains — for the goods and services you need.' },
+          { icon: '⛈️', title: 'Vulnerability to shocks',  text: 'Disruptions to suppliers or markets can cause large knock-on problems (e.g. semiconductors 2021).' },
+          { icon: '🎯', title: 'Over-specialisation risk', text: 'Focusing too narrowly can limit adaptability — coal regions hit by structural unemployment.' }
         ]
       },
-      examEdge: 'The COVID-19 pandemic and semiconductor crisis perfectly illustrate specialisation\'s vulnerability: global just-in-time supply chains broke down when one node failed. This is premier evaluation material for any essay touching on specialisation or globalisation.'
+      conclusion: {
+        title: 'Best conclusion',
+        text: 'Specialisation is usually beneficial, but the gains depend on flexibility and exchange.'
+      },
+      examEdge: 'Strong evaluation links a benefit to its possible downside. For example: "Specialisation lowers costs, but over-specialisation can leave an economy vulnerable to shocks if it relies too heavily on one industry."'
     },
+
+    /* ================================================================
+       CARD 4 — The Problem with Barter: failure-flow + verdict + 4 limitations
+       ================================================================ */
     {
       id: 'specialisation_money_4',
       template: 'framing',
       title: 'The Problem with Barter',
-      body: 'Specialisation requires exchange. Without money, exchange relies on <strong>barter</strong> — the direct swap of goods for goods. But barter requires a <em>double coincidence of wants</em>: I must want what you have, AND you must want what I have, at the same time and place.<br><br>This becomes exponentially harder as an economy grows. With N goods, there are N(N-1)/2 possible exchange ratios. With 1,000 goods: 499,500 prices to quote. Money reduces this to N prices — one price per good in money terms.<br><br>Barter also fails when goods are indivisible (you cannot give half a cow for a loaf of bread) or non-storable (fresh fish cannot be saved to buy boots later).',
-      keyTerms: [
-        { term: 'Barter', def: 'Direct exchange of goods for goods without a medium of exchange.' },
-        { term: 'Double coincidence of wants', def: 'The requirement in barter that each party must want exactly what the other has.' },
-        { term: 'Transaction costs', def: 'Time, effort and resources spent finding a trading partner — money dramatically reduces these.' }
+      tip: 'Barter means exchanging goods directly without money. Trade is difficult when needs do not match.',
+      flow: [
+        { icon: '🍎', title: 'Tom has apples',      sub: 'He wants bread. The baker has bread, but doesn\'t want apples.', tone: 'rose', status: 'fail' },
+        { icon: '🥖', title: 'The baker has bread', sub: 'She wants milk. The farmer has milk, but doesn\'t want bread.', tone: 'rose', status: 'fail' },
+        { icon: '🥛', title: 'The farmer has milk', sub: 'He wants apples — and Tom has them — but only by chance.',     tone: 'rose', status: 'fail' }
       ],
-      examEdge: 'The double coincidence of wants problem is the definitive exam explanation of why money exists. Express it precisely: "In barter, for exchange to occur, A must want what B has AND B must want what A has, at the same time — a condition that becomes impossibly restrictive as an economy diversifies."'
+      flowTitle: 'Why barter is difficult: the double coincidence of wants',
+      flowEmoji: '🔄',
+      verdict: {
+        title: 'Barter vs money exchange',
+        emoji: '⚖️',
+        columns: [
+          {
+            tone: 'rose',
+            icon: '🤝',
+            label: 'Barter',
+            items: [
+              { ok: false, text: 'Needs must exactly match' },
+              { ok: false, text: 'Hard to find trading partners' },
+              { ok: false, text: 'Time-consuming' },
+              { ok: false, text: 'Limits trade and growth' }
+            ]
+          },
+          {
+            tone: 'green',
+            icon: '💵',
+            label: 'Money exchange',
+            items: [
+              { ok: true, text: 'Anyone can accept money' },
+              { ok: true, text: 'Easy to find trading partners' },
+              { ok: true, text: 'Faster and more convenient' },
+              { ok: true, text: 'Supports more trade and growth' }
+            ]
+          }
+        ]
+      },
+      causes: [
+        { head: 'No common measure of value', icon: '⚖️', body: 'It\'s hard to compare the value of different goods and services without a shared unit.' },
+        { head: 'Indivisibility',             icon: '🧩', body: 'Many goods can\'t be easily split to make exact equal trades — half a cow for a loaf of bread won\'t do.' },
+        { head: 'Lack of store of value',     icon: '🔐', body: 'Goods can spoil, wear out, or lose value over time — savings are difficult.' },
+        { head: 'Double coincidence of wants', icon: '👥', body: 'Trade only happens when both people want what the other has — a punishingly rare match at scale.' }
+      ],
+      causesLabel: 'Key limitations of barter',
+      causesEmoji: '🚫',
+      keyTakeaway: 'Barter can work in small settings, but as economies grow these limits make it hopelessly inefficient. Money solves these problems and lets trade flourish.'
     },
+
+    /* ================================================================
+       CARD 5 — Four Functions of Money: per-tile examples + lean flow
+       ================================================================ */
     {
       id: 'specialisation_money_5',
       template: 'cause',
       title: 'The Four Functions of Money',
+      tip: 'Money solves the problems of barter because it performs four key jobs that make exchange possible, practical and efficient.',
       causes: [
-        { head: 'Medium of exchange', body: 'Money is universally accepted in payment for goods and services — eliminates the double coincidence of wants problem. The primary function.' },
-        { head: 'Store of value', body: 'Money can be saved and used in future. Unlike perishable goods, money holds purchasing power over time (assuming low inflation). Inflation erodes this function.' },
-        { head: 'Unit of account', body: 'Money provides a common measure of value — all prices expressed in the same unit (\xa3, $, €), enabling easy comparison of relative prices.' },
-        { head: 'Standard of deferred payment', body: 'Money enables credit — goods and services can be received now with payment promised later. Essential for investment, mortgages, and complex contracts.' }
+        {
+          head: 'Medium of exchange',
+          icon: '🤝',
+          body: 'Money is accepted to buy and sell goods and services — eliminating the double coincidence of wants problem.',
+          example: { icon: '🛒', text: 'You use money to buy groceries.' }
+        },
+        {
+          head: 'Measure of value',
+          icon: '🏷️',
+          body: 'Money provides a common unit to price and compare goods and services across the whole economy.',
+          example: { icon: '☕', text: 'A coffee is priced at £4.' }
+        },
+        {
+          head: 'Store of value',
+          icon: '🔐',
+          body: 'Money can be saved today and used to buy goods and services in the future (assuming low inflation).',
+          example: { icon: '🐷', text: 'You save money in a savings account.' }
+        },
+        {
+          head: 'Deferred payment',
+          icon: '📅',
+          body: 'Money allows payments to be made in the future for goods and services received today — credit, mortgages, contracts.',
+          example: { icon: '💳', text: 'You buy a laptop now and pay later.' }
+        }
       ],
-      examEdge: 'Inflation attacks two functions: store of value (money buys less in future) and standard of deferred payment (debts repaid in devalued currency — benefits debtors, harms creditors). Hyperinflation (Zimbabwe, Weimar Germany) causes societies to revert to barter — a powerful real-world illustration.'
+      causesLabel: 'The four functions',
+      causesEmoji: '💵',
+      flow: [
+        { icon: '👥', title: 'People want things',    sub: 'Goods and services are demanded.',         tone: 'blue' },
+        { icon: '💵', title: 'Money is accepted',     sub: 'Medium of exchange.',                     tone: 'blue' },
+        { icon: '🏷️', title: 'Prices compared',       sub: 'Measure of value.',                       tone: 'blue' },
+        { icon: '🐷', title: 'Value saved',            sub: 'Store of value.',                        tone: 'blue' },
+        { icon: '📅', title: 'Payments deferred',     sub: 'Deferred payment.',                       tone: 'blue' },
+        { icon: '🔁', title: 'Smoother exchange',     sub: 'Trade is faster and more reliable.',     tone: 'blue' }
+      ],
+      flowTitle: 'How these functions make exchange easier',
+      flowEmoji: '➡️',
+      examEdge: 'Inflation attacks two functions: store of value (money buys less) and deferred payment (debts repaid in devalued currency). Hyperinflation (Zimbabwe, Weimar Germany) causes economies to revert to barter — a powerful real-world illustration.'
     },
+
+    /* ================================================================
+       CARD 6 — Characteristics of Good Money: 6 tiles + 3-col verdict
+       ================================================================ */
     {
       id: 'specialisation_money_6',
       template: 'framing',
       title: 'Characteristics of Good Money',
-      body: 'For money to function effectively, it should possess specific characteristics — summarised by the mnemonic <strong>DAPS + P</strong>:<br><br><strong>Durable:</strong> lasts over time without deteriorating (coins, notes last; salt or tobacco do not).<br><strong>Acceptable:</strong> widely accepted in exchange — requires trust (legal tender status, government backing).<br><strong>Portable:</strong> easy to carry and transfer (notes better than gold bars; electronic transfers best of all).<br><strong>Scarce:</strong> limited supply maintains value — if money can be created freely, inflation destroys purchasing power.<br><strong>Divisible:</strong> can be broken into small units to facilitate small transactions (coins, cents).',
-      keyTerms: [
-        { term: 'Legal tender', def: 'Money that must be accepted by law in settlement of a debt.' },
-        { term: 'Fiat money', def: 'Money with no intrinsic value — its value derives from government decree and public trust.' },
-        { term: 'Commodity money', def: 'Money with intrinsic value (gold, silver) — its value exists independently of its monetary role.' }
+      tip: 'Good money must be widely trusted and practical to use. These characteristics make money effective in everyday life.',
+      causes: [
+        { head: 'Durable',             icon: '🛡️', body: 'It lasts a long time and can withstand regular use.' },
+        { head: 'Portable',            icon: '👛', body: 'It is easy to carry and convenient to transport.' },
+        { head: 'Divisible',           icon: '✂️', body: 'It can be divided into smaller units to make exact payments.' },
+        { head: 'Acceptable',          icon: '✅', body: 'People are willing to accept it in payment for goods and services.' },
+        { head: 'Scarce',              icon: '⚖️', body: 'It is limited in supply, so it holds its value over time.' },
+        { head: 'Difficult to counterfeit', icon: '🔍', body: 'It is hard to fake, protecting trust in the monetary system.' }
       ],
-      examEdge: 'Cryptocurrencies (Bitcoin) are tested as an application. Assessment: Bitcoin is durable and scarce (21m cap), but volatile (poor store of value), limited acceptance (acceptability weak), and divisible. Conclusion: functions as speculative asset better than as money — good evaluation content.'
+      causesLabel: 'The six characteristics',
+      causesEmoji: '⭐',
+      verdict: {
+        title: 'Why shells or livestock are weaker forms of money',
+        emoji: '🔬',
+        layout: 'arrow',
+        columns: [
+          {
+            tone: 'rose',
+            icon: '🐚',
+            label: 'Shells',
+            items: [
+              { ok: false, text: 'Not durable' },
+              { ok: false, text: 'Hard to verify' },
+              { ok: false, text: 'Not divisible' },
+              { ok: false, text: 'Supply can be inconsistent' }
+            ]
+          },
+          {
+            tone: 'amber',
+            icon: '🐄',
+            label: 'Livestock',
+            items: [
+              { ok: false, text: 'Hard to carry' },
+              { ok: false, text: 'Not divisible' },
+              { ok: false, text: 'Care and storage costs' },
+              { ok: false, text: 'Value changes over time' }
+            ]
+          },
+          {
+            tone: 'green',
+            icon: '💵',
+            label: 'Modern currency',
+            items: [
+              { ok: true, text: 'Durable and portable' },
+              { ok: true, text: 'Easily divisible' },
+              { ok: true, text: 'Widely accepted' },
+              { ok: true, text: 'Stable and scarce' }
+            ]
+          }
+        ]
+      },
+      keyTakeaway: 'Good money supports exchange by being trusted, manageable, and stable in value.'
     },
+
+    /* ================================================================
+       CARD 7 — Specialisation, Exchange & Development: 6-step chain + tinted 3-channel + balanced note
+       ================================================================ */
     {
       id: 'specialisation_money_7',
       template: 'framing',
       title: 'Specialisation, Exchange, and Economic Development',
-      body: 'The sequence of development — specialisation → need for exchange → money → markets → financial system — is the foundation of modern economies. Without money facilitating exchange, complex specialisation is impossible; without specialisation, productivity cannot rise far above subsistence.<br><br>Development economists identify the emergence of reliable money (currency stability, banking) as a prerequisite for sustained growth. Countries with hyperinflation or weak currencies (Venezuela, Zimbabwe) see economic activity collapse toward barter as money fails its functions.<br><br>Digital money (contactless, crypto, Central Bank Digital Currencies) extends these functions further — reducing transaction costs of exchange to near-zero.',
-      keyTerms: [
-        { term: 'CBDC', def: 'Central Bank Digital Currency — electronic form of central bank money; e.g. the "digital pound" proposed by the Bank of England.' },
-        { term: 'Hyperinflation', def: 'Extremely rapid inflation (typically >50%/month) destroying money\'s store of value and medium of exchange functions.' },
-        { term: 'Financial intermediation', def: 'Banks channel savings into investment — enables capital accumulation needed for growth.' }
+      tip: 'When people, firms and countries specialise and trade successfully, output and living standards can rise.',
+      flow: [
+        { icon: '🛠️', title: 'Specialisation',     sub: 'Focus on what you do relatively well.' },
+        { icon: '🤝', title: 'Exchange',           sub: 'Trade to get what you don\'t produce as well.' },
+        { icon: '💵', title: 'Money',              sub: 'Money is accepted in exchange, making trade much easier.' },
+        { icon: '🌐', title: 'Larger markets',     sub: 'Access to more buyers and suppliers.' },
+        { icon: '📈', title: 'Higher productivity', sub: 'More efficiency, innovation and better use of skills.' },
+        { icon: '🏙️', title: 'Economic development', sub: 'Higher output, better jobs and rising living standards.' }
       ],
-      examEdge: 'A strong essay note: the link between specialisation and money is circular — specialisation requires money to function; but money\'s development is itself driven by the gains from specialisation that make exchange worthwhile. This mutual reinforcement is a hallmark of market economies.',
+      flowTitle: 'How the ideas connect',
+      flowEmoji: '🔗',
+      causes: [
+        { head: 'Rising incomes',          icon: '💼', tone: 'green',  body: 'Specialisation and trade enable more output and better-paying jobs, lifting incomes over time.' },
+        { head: 'Wider markets and trade', icon: '🌐', tone: 'blue',   body: 'Firms and countries can sell to more customers and source better inputs, spreading opportunity more widely.' },
+        { head: 'Better access to goods',  icon: '🛒', tone: 'purple', body: 'People enjoy greater choice, improved quality and lower prices in everyday life.' }
+      ],
+      causesLabel: 'Three development channels',
+      causesEmoji: '🌱',
+      causesStyle: 'tinted-flat',
+      balancedNote: {
+        title: 'A balanced note',
+        text: 'Dependence on a narrow range of exports or unequal distribution of gains can be risks. Good policies and institutions help ensure the benefits are broad and sustainable.'
+      },
+      keyTakeaway: {
+        title: 'The big takeaway',
+        text: 'Specialisation and money help economies grow because they make exchange easier and more productive — connecting people, firms and countries to create more value and better lives.'
+      },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
+
   ]
 };

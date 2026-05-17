@@ -240,8 +240,43 @@
       `;
     }
 
+    // Verdict comparison — N columns with ✓/✗ item lists, separated by VS or arrow badges.
+    // Pattern: { title?, emoji?, layout?: 'vs' | 'arrow', columns: [{tone, label, icon?, items:[{ok:bool,text}]}] }
+    if (c.verdict && c.verdict.columns && c.verdict.columns.length >= 2) {
+      const v = c.verdict;
+      const sep = (v.layout === 'arrow') ? '→' : 'VS';
+      if (v.title) {
+        content += genSecLabel(v.emoji || '⚖️', v.title);
+      }
+      content += `<div style="display:flex;align-items:stretch;gap:12px;margin-bottom:26px;flex-wrap:wrap;">`;
+      content += v.columns.map((col, i) => {
+        const t = PATTERN_TONES[col.tone || 'slate'] || PATTERN_TONES.slate;
+        const isLast = i === v.columns.length - 1;
+        const colHtml = `
+          <div style="flex:1 1 0;min-width:160px;border-radius:14px;background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
+            <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:8px;">
+              ${col.icon ? `<div style="font-size:20px;line-height:1;">${col.icon}</div>` : ''}
+              <div style="font-size:14px;font-weight:800;color:${t.label};letter-spacing:0.02em;">${col.label}</div>
+            </div>
+            <ul style="list-style:none;margin:0;padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.6;">
+              ${col.items.map(it => {
+                const ok = it.ok !== false;
+                const mark = ok
+                  ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✓</span>`
+                  : `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✕</span>`;
+                return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:7px;">${mark}<span>${it.text}</span></li>`;
+              }).join('')}
+            </ul>
+          </div>`;
+        const separator = !isLast ? `<div style="display:flex;align-items:center;flex-shrink:0;"><div style="width:34px;height:34px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:${sep === '→' ? '15px' : '11px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(11,20,38,0.25);">${sep}</div></div>` : '';
+        return colHtml + separator;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Horizontal step flow — numbered circles connected by dashed arrows.
-    // Each step: { icon, title, sub, tone? }. Cycles through tones if not set.
+    // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
+    // overlays a small badge on the icon — for narrative chains where each step has a verdict.
     if (c.flow && c.flow.length) {
       if (c.flowTitle) {
         content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
@@ -252,10 +287,13 @@
       content += c.flow.map((step, i) => {
         const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
         const isLast = i === n - 1;
+        const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
+                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
+                            step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
         return `
           <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
             <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-            <div style="width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}</div>
+            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}${statusBadge}</div>
             <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
             ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
             ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
@@ -280,36 +318,72 @@
 
     // Paired: left / right — defines the two things being contrasted, so
     // renders before causes / table / branches which build on top of them.
+    //   - Default: each side has `points: [string]` → bullet list.
+    //   - Richer: each side has `rows: [{icon, title, text}]` → numbered icon rows.
+    //   - Each side can optionally specify `tone` + header `icon`.
     if (c.left && c.right) {
+      const renderPairedSide = (side, fallbackTone) => {
+        const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
+        const useRows = Array.isArray(side.rows) && side.rows.length > 0;
+        const inner = useRows
+          ? side.rows.map((r, idx) => `
+              <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
+                <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
+                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
+                </div>
+              </div>`).join('')
+          : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+              ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
+            </ul>`;
+        return `
+          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+              ${side.icon ? `<div style="font-size:20px;line-height:1;">${side.icon}</div>` : ''}
+              <div style="color:${tone.label};font-weight:800;font-size:14px;letter-spacing:0.02em;">${side.label}</div>
+            </div>
+            ${inner}
+          </div>`;
+      };
       content += genSecLabel('⚖️', 'Head to head');
-      const tL = TONES[0];
-      const tR = TONES[2];
       content += `
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
-        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tL.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
-          <div style="color:${tL.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.left.label}</div>
-          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-            ${c.left.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tL.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-          </ul>
-        </div>
-        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tR.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
-          <div style="color:${tR.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.right.label}</div>
-          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-            ${c.right.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tR.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-          </ul>
-        </div>
+        ${renderPairedSide(c.left, 'green')}
+        ${renderPairedSide(c.right, 'amber')}
       </div>`;
     }
 
-    // Causes: [{head, body, icon?}] — coloured tiles; icon mode activates richer card layout
+    // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] — coloured tiles.
+    //   - Icon mode (any item has `icon`) activates richer card layout with photo-style header.
+    //   - `causesStyle: 'tinted-flat'` swaps to flat tinted tiles (icon left, title right, body below).
+    //   - Per-item `example: {icon, text}` adds a small inline sub-callout at the bottom of icon tiles.
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
+      const flat = c.causesStyle === 'tinted-flat';
       content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
+        const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (flat && hasIcons) {
+          const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
         if (hasIcons) {
           const headText = item.head.replace(/^\d+\.\s*/, '');
+          const exampleHtml = item.example ? `
+            <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
+              ${item.example.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${item.example.icon}</div>` : ''}
+              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${item.example.text}</div>
+            </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
             <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
@@ -319,7 +393,8 @@
               <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
               <span style="line-height:1.3;">${headText}</span>
             </div>
-            <div style="padding:13px 14px 16px;font-size:14px;color:#0B1426;line-height:1.65;flex:1;">${item.body}</div>
+            <div style="padding:13px 14px 14px;font-size:14px;color:#0B1426;line-height:1.65;flex:1;">${item.body}</div>
+            ${exampleHtml}
           </div>`;
         }
         return `
@@ -478,6 +553,42 @@
       content += `</div>`;
       if (c.footer) {
         content += `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
+      }
+    }
+
+    // Conclusion — green decisive verdict band. The "given the above, here's the answer".
+    //   Pattern: conclusion: 'string' OR { title?, text }
+    //   (Distinct from c.conclusion used by elasticity-calc / worked-example renderers — only
+    //    fires when this card routes through renderCardGeneric.)
+    if (c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) {
+      const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
+      const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
+      if (conText) {
+        content += `
+          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">↔</div>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
+              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+            </div>
+          </div>`;
+      }
+    }
+
+    // Balanced note — amber caveat band for risks or limitations of the main argument.
+    //   Pattern: balancedNote: 'string' OR { title?, text }
+    if (c.balancedNote) {
+      const noteTitle = typeof c.balancedNote === 'object' ? (c.balancedNote.title || 'A balanced note') : 'A balanced note';
+      const noteText  = typeof c.balancedNote === 'object' ? c.balancedNote.text : c.balancedNote;
+      if (noteText) {
+        content += `
+          <div style="display:flex;gap:14px;align-items:flex-start;background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid #D97706;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:#D97706;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">⚠</div>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:800;color:#92400E;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${noteTitle}</div>
+              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>
+            </div>
+          </div>`;
       }
     }
 
@@ -2411,6 +2522,10 @@
       c.body !== undefined ||
       c.steps !== undefined ||
       c.rows  !== undefined ||
+      c.flow !== undefined ||
+      c.verdict !== undefined ||
+      c.comparison !== undefined ||
+      c.table !== undefined ||
       (c.left !== undefined && c.right !== undefined) ||
       (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
        typeof c.causes[0] === 'object' && 'head' in c.causes[0])

@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in scarcity, choice, opportunity cost, and the three fundamental economic questions that shape every economy.',
   intro: {
-    heroKey: 'heroPPF',
+    heroKey: 'heroScarcity',
     summary: 'Economics begins with one unavoidable fact: resources are scarce but wants are unlimited. Every choice involves giving something up. Understanding this constraint — and how societies resolve it — is the foundation of all economic thinking.',
     doInThis: 'Work through 7 concept cards covering scarcity, choice, opportunity cost, economic agents, rationality assumptions, and the three fundamental economic questions.',
     outcomes: [

@@ -2441,6 +2441,12 @@ img, svg { display: block; max-width: 100%; }
 .scenario__answer.is-hidden {
   display: none;
 }
+.ped-step__answer.is-hidden {
+  display: none;
+}
+.ped-step__answer:not(.is-hidden) {
+  animation: econ-slide-reveal 0.36s ease both;
+}
 .scenario__answer:not(.is-hidden) {
   animation: econ-slide-reveal 0.36s ease both;
 }

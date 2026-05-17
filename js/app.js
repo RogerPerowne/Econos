@@ -159,6 +159,17 @@
     return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
   }
 
+  // Shared tone palette used by tip / comparison / flow / table patterns.
+  // Keeps colour decisions consistent with the rest of the generic renderer.
+  const PATTERN_TONES = {
+    green:  { bg: '#ECFDF5', soft: '#D1FAE5', border: '#A7F3D0', label: '#059669', accent: '#10B981' },
+    amber:  { bg: '#FFFBEB', soft: '#FEF3C7', border: '#FDE68A', label: '#D97706', accent: '#F59E0B' },
+    blue:   { bg: '#EFF6FF', soft: '#DBEAFE', border: '#BFDBFE', label: '#2563EB', accent: '#3B82F6' },
+    purple: { bg: '#F5F3FF', soft: '#EDE9FE', border: '#DDD6FE', label: '#7C3AED', accent: '#8B5CF6' },
+    rose:   { bg: '#FEF2F2', soft: '#FEE2E2', border: '#FECACA', label: '#DC2626', accent: '#F43F5E' },
+    slate:  { bg: '#F8FAFC', soft: '#F1F5F9', border: '#E2E8F0', label: '#475569', accent: '#64748B' }
+  };
+
   // Returns a grid-template-columns value that lays out N items without
   // leaving a single-item orphan row. 4 → 2x2 (not 3+1), 7 → 4+3, etc.
   // Falls back to auto-fill for very long lists.
@@ -178,12 +189,109 @@
       content += `<div class="card__step-label">${c.stepLabel}</div>`;
     }
 
+    // Tip strip — single-sentence essence in a coloured top band.
+    // Cleaner and punchier than `intro`; sits right under the title.
+    if (c.tip) {
+      const tipText = typeof c.tip === 'object' ? c.tip.text : c.tip;
+      const tipIcon = (typeof c.tip === 'object' && c.tip.icon) || '💡';
+      const tipTone = (typeof c.tip === 'object' && c.tip.tone) || 'blue';
+      const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
+      content += `
+        <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div>
+          <div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div>
+        </div>`;
+    }
+
     // Intro/lede — styled as a thought-prompt callout
     if (c.intro) {
       content += `
         <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:#0B1426;line-height:1.65;font-style:italic;">
           💡 ${c.intro}
         </div>`;
+    }
+
+    // Comparison block — two visual cards either side of a "VS" badge.
+    // Pattern: { title?, left: {icon,label,value?,caption?,tone?}, right: {...}, vs?: 'VS' }
+    if (c.comparison) {
+      const cmp = c.comparison;
+      const renderSide = (side) => {
+        const t = PATTERN_TONES[side.tone || 'green'] || PATTERN_TONES.green;
+        return `
+          <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:24px 20px 22px;text-align:center;">
+            <div style="width:64px;height:64px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:30px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${side.icon || ''}</div>
+            <div style="font-size:17px;font-weight:800;color:${t.label};margin-bottom:${side.value ? '4px' : '8px'};">${side.label}</div>
+            ${side.value ? `<div style="font-size:22px;font-weight:800;color:#0B1426;margin-bottom:8px;">${side.value}</div>` : ''}
+            ${side.caption ? `<div style="font-size:13.5px;color:${t.label};line-height:1.55;font-weight:600;">${side.caption}</div>` : ''}
+          </div>
+        `;
+      };
+      if (cmp.title) {
+        content += genSecLabel(cmp.emoji || '⚖️', cmp.title);
+      }
+      content += `
+        <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:26px;">
+          ${renderSide(cmp.left)}
+          <div style="display:flex;align-items:center;flex-shrink:0;">
+            <div style="width:46px;height:46px;border-radius:50%;background:#0B1426;color:#fff;font-weight:800;font-size:13px;letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(11,20,38,0.25);">${cmp.vs || 'VS'}</div>
+          </div>
+          ${renderSide(cmp.right)}
+        </div>
+      `;
+    }
+
+    // Horizontal step flow — numbered circles connected by dashed arrows.
+    // Each step: { icon, title, sub, tone? }. Cycles through tones if not set.
+    if (c.flow && c.flow.length) {
+      if (c.flowTitle) {
+        content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
+      }
+      const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+      const n = c.flow.length;
+      content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">`;
+      content += c.flow.map((step, i) => {
+        const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+        const isLast = i === n - 1;
+        return `
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
+            <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
+            <div style="width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}</div>
+            <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
+            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+            ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
+          </div>
+        `;
+      }).join('');
+      content += `</div>`;
+    }
+
+    // Clean table — light borders, optional icon column, two text columns.
+    // Pattern: { title?, headers?: [labelCol, valueCol], rows: [{icon?, label, value}] }
+    if (c.table && c.table.rows && c.table.rows.length) {
+      const tbl = c.table;
+      const hasIcon = tbl.rows.some(r => r.icon);
+      const headers = tbl.headers || [];
+      if (tbl.title) {
+        content += genSecLabel(tbl.emoji || '📋', tbl.title);
+      }
+      content += `<div style="border-radius:12px;overflow:hidden;border:1px solid #E2E8F0;margin-bottom:26px;background:#fff;">`;
+      if (headers.length === 2) {
+        content += `
+          <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;background:#F8FAFC;border-bottom:1px solid #E2E8F0;">
+            ${hasIcon ? '<div></div>' : ''}
+            <div style="padding:11px 16px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#64748B;">${headers[0]}</div>
+            <div style="padding:11px 16px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#64748B;border-left:1px solid #E2E8F0;">${headers[1]}</div>
+          </div>
+        `;
+      }
+      content += tbl.rows.map((r, i) => `
+        <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;border-top:${i === 0 && headers.length === 0 ? 'none' : '1px solid #E2E8F0'};background:${i % 2 === 0 ? '#fff' : '#FAFBFC'};">
+          ${hasIcon ? `<div style="padding:14px 0 14px 16px;font-size:20px;line-height:1.2;display:flex;align-items:center;">${r.icon || ''}</div>` : ''}
+          <div style="padding:14px 16px;font-size:14px;font-weight:700;color:#0B1426;display:flex;align-items:center;">${r.label}</div>
+          <div style="padding:14px 16px;font-size:14px;color:#0B1426;line-height:1.55;border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
+        </div>
+      `).join('');
+      content += `</div>`;
     }
 
     // Branches — tone-coded tappable callouts (framing-style)

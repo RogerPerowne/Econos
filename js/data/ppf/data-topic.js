@@ -84,12 +84,12 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       title: 'Shifts in the PPF',
       causes: [
-        { head: 'Outward shift (economic growth)', body: 'The PPF shifts out if: more resources are available (population growth, discovery of raw materials), technology improves (more output per input), or productivity increases (better education/training). Not necessarily a parallel shift — if only one industry improves, only that axis shifts.' },
-        { head: 'Inward shift (negative supply shock)', body: 'The PPF shifts in if: war destroys capital, natural disaster depletes resources, disease reduces labour supply, or environmental degradation limits land productivity.' },
-        { head: 'Movement along (reallocation)', body: 'A change in how existing resources are used — moving along the existing PPF. Trade-off between goods; no new capacity.' },
-        { head: 'Investment goods choice', body: 'Producing more capital goods now (forgoing consumer goods) shifts the PPF further out in the future — key choice for long-run growth. Low-consumption, high-investment strategy = faster future expansion.' }
+        { head: 'Short-run growth (move toward the PPF)', body: 'Recovery from recession: unemployment falls, spare capacity is reactivated, output rises by <strong>moving from inside the PPF onto the curve</strong>. The frontier does not move — this is <strong>demand-side</strong> growth.' },
+        { head: 'Long-run growth (PPF₁ → PPF₂)', body: 'The PPF itself shifts <strong>outward</strong>: more or higher-quality factor inputs — population growth, capital investment, better technology, education and training. This is <strong>supply-side</strong> growth and the only route to a permanently higher ceiling.' },
+        { head: 'Inward shift (PPF₁ → PPF₃)', body: 'Negative supply shocks shrink productive capacity: war destroys capital, natural disasters destroy resources, "brain drain" emigration depletes skilled labour, lack of investment lets capital depreciate.' },
+        { head: 'Movement along PPF₁', body: 'Reallocating existing resources between the two goods — opportunity cost in action. No change in capacity, no growth, just a different mix.' }
       ],
-      examEdge: 'A common exam question: "Country A produces more capital goods today." Show this as a point closer to the capital-goods axis on the PPF. Explain this shifts the PPF further outward in the future. This neatly combines PPF analysis with growth theory.'
+      examEdge: 'Two diagrams in one question: "Country A is recovering from recession" → show a point moving from inside the PPF onto the curve (short-run / demand-side). "Country A invests in new technology" → show PPF₁ → PPF₂ shifting outward (long-run / supply-side). Confusing the two is the classic mark loss — name the type of growth explicitly.'
     },
     {
       id: 'ppf_5',
@@ -115,7 +115,7 @@ window.ECONOS_TOPIC = {
           'Risk: capital goods may become obsolete or misallocated'
         ]
       },
-      examEdge: 'Post-war Germany and Japan both chose high investment/low consumption to rebuild. China\'s decades of 35-45% investment/GDP ratios generated rapid PPF expansion. This is the classic "guns vs butter" or "now vs later" trade-off — use historical examples for evaluation credit.'
+      examEdge: 'Where would you place these economies on a consumer–capital PPF? <strong>China</strong> sits close to the capital-goods axis (investment ~42% of GDP — decades of rapid PPF expansion). <strong>Germany</strong> further along the capital side (~22% investment, manufacturing-heavy). <strong>UK and USA</strong> closer to the consumer-goods axis (~18% investment, services-led, higher present consumption). Post-war Germany and Japan both chose high investment / low consumption to rebuild. Use real investment-ratio data with the "guns vs butter" or "now vs later" framing for evaluation credit.'
     },
     {
       id: 'ppf_6',
@@ -128,7 +128,7 @@ window.ECONOS_TOPIC = {
         { label: 'Allocative efficiency', text: 'The OPTIMAL point ON the PPF — where the combination produced reflects consumer preferences (social welfare maximised). A point on the PPF can be productively efficient but allocatively inefficient if it produces the "wrong" combination.' },
         { label: 'Growth', text: 'An outward shift of the PPF — increases productive potential. Previously unattainable points become attainable. Does not guarantee improved welfare if distribution is unequal.' }
       ],
-      examEdge: 'Critical distinction: productive efficiency (on the PPF) ≠ allocative efficiency (right point on the PPF). A command economy might be on its PPF (no wasted resources) but allocatively inefficient (wrong goods produced for consumer preferences). Examiners test this distinction.'
+      examEdge: 'Critical distinction: productive efficiency (on the PPF) ≠ allocative efficiency (right point on the PPF). A command economy might be on its PPF (no wasted resources) but allocatively inefficient (wrong goods produced for consumer preferences). <strong>Pareto efficiency</strong> is the welfare benchmark sitting behind allocative efficiency — a position where no one can be made better off without making someone else worse off. Examiners test the productive ≠ allocative distinction; mentioning Pareto signals A* polish.'
     },
     {
       id: 'ppf_7',

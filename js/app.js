@@ -483,7 +483,7 @@
 
     // Key terms — coloured tiles, definitions always visible, one row
     if (c.keyTerms && c.keyTerms.length) {
-      content += genSecLabel('🔑', 'Key terms');
+      content += genSecLabel(c.keyTermsEmoji || '🔑', c.keyTermsLabel || 'Key terms');
       content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.keyTerms.length, 180)};gap:12px;margin-bottom:28px;">
         ${c.keyTerms.map((kt, i) => {
           const t = TONES[i % TONES.length];

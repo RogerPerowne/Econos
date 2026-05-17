@@ -59,8 +59,7 @@ window.ECONOS_TOPIC = {
           head: '💻 Digital goods — near-perfectly elastic (PES → ∞)',
           body: 'Once created, software can be replicated at near-zero marginal cost. Any demand surge is met almost instantly and entirely through extra supply — price barely moves. The marginal cost of one more user is effectively zero.'
         }
-      ],
-      keyTakeaway: 'PES is always positive — price and quantity supplied always move in the same direction.'
+      ]
     },
 
     /* ================================================================
@@ -259,7 +258,6 @@ window.ECONOS_TOPIC = {
           reasoning: 'PES > 1 long-run. Firms can hire workers, add shifts, and build new plant over 1–3 years. Long-run supply is considerably more elastic than short-run — time is the key.'
         }
       ],
-      keyTakeaway: 'When asked for the \'most important\' determinant: always say time period first.',
       examEdge: {
         title: 'Short-run vs long-run — always distinguish',
         text: 'Short-run vs long-run PES is the single most exam-relevant point. Always state: "In the short run, supply is more inelastic because…" and "In the long run, supply becomes more elastic as…" — this alone can earn a Band 3 mark.'
@@ -292,7 +290,6 @@ window.ECONOS_TOPIC = {
           text: 'Governments can improve PES by removing constraints. Planning reform → higher housing PES. Skills training → higher labour PES. R&D funding → firms can scale output at lower cost. Higher PES means demand growth creates output (good) rather than just inflation (bad).'
         }
       ],
-      keyTakeaway: 'PES determines who gains and who loses when demand shifts — and what governments must do to fix supply-constrained markets.',
       examEdge: 'The housing market is the go-to PES context. Structure your answer: (1) state UK housing PES is very inelastic; (2) explain WHY (planning restrictions, construction time, fixed land); (3) show the consequence (demand shift → price spike); (4) evaluate the policy implication (supply-side reform needed).'
     },
 

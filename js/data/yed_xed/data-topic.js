@@ -97,8 +97,7 @@ window.ECONOS_TOPIC = {
           verdictTone: 'purple',
           reasoning: 'YED > 2. Luxury goods have very high income elasticity — demand rises far more than proportionally when incomes grow. The global luxury market collapsed ~30% in the 2008–09 recession.'
         }
-      ],
-      keyTakeaway: 'The sign of YED classifies the good. The magnitude tells you how sensitive demand is to income changes.'
+      ]
     },
 
     /* ================================================================
@@ -226,7 +225,6 @@ window.ECONOS_TOPIC = {
           reasoning: 'XED > 0 — when train fares rise, some commuters switch to buses. Both serve the same journey need. Rail strikes (effectively infinite price rise) consistently boost bus and coach demand.'
         }
       ],
-      keyTakeaway: 'The sign of XED reveals the relationship. The magnitude tells you how close that relationship is.',
       examEdge: {
         title: 'Always name both goods',
         text: 'Students forget that XED always involves TWO different goods — price of Good B changes, quantity demanded of Good A responds. Always name both goods explicitly. Example: "If coffee prices rise, XED(tea, coffee) > 0 means demand for tea rises."'
@@ -289,7 +287,6 @@ window.ECONOS_TOPIC = {
           text: 'As incomes rise globally, spending patterns shift — food\'s share of income falls (low YED), services and luxuries rise (high YED). This explains why rich countries have mostly service economies, and why development economists track YED across sectors to predict structural transformation from agriculture to manufacturing to services.'
         }
       ],
-      keyTakeaway: 'YED shapes long-run business strategy and macro structure. XED defines who your competitors and complements really are.',
       examEdge: 'Engel\'s Law as a development economics link: UK households spend ~8% of income on food; Ethiopian households ~50%. Rising incomes reduce food\'s share (low YED), freeing spending for manufactured goods and services. This micro concept underpins the entire theory of economic development — a powerful cross-topic connection.'
     },
 

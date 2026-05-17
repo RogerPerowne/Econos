@@ -51,8 +51,7 @@ window.ECONOS_TOPIC = {
         { term: 'Factors of production', def: 'Land (natural resources), Labour (human effort), Capital (man-made productive assets), Enterprise (risk-taking ability).' },
         { term: 'Free good', def: 'A good that is not scarce — available in unlimited quantity at zero opportunity cost. True free goods are extremely rare (e.g. air in most locations).' }
       ],
-      examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity — they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.',
-      keyTakeaway: 'Scarcity does not mean there is nothing left — it means there is not enough to satisfy all wants at zero cost.'
+      examEdge: 'Scarcity is distinct from poverty. A billionaire still faces scarcity — they cannot buy unlimited time or live forever. Scarcity is a universal condition; poverty is a distributional one. Examiners test whether you understand this distinction.'
     },
     {
       id: 'basic_econ_problem_2',
@@ -115,8 +114,7 @@ window.ECONOS_TOPIC = {
         { term: 'How to produce',      def: 'Factor combination decision: labour vs capital intensity, sustainable vs cheapest.' },
         { term: 'For whom to produce', def: 'Distribution decision: who receives the output and on what basis.' }
       ],
-      examEdge: 'The three questions are normative at heart — different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."',
-      keyTakeaway: 'The three questions sit at the heart of economics because scarcity forces every society to make choices.'
+      examEdge: 'The three questions are normative at heart — different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."'
     },
     {
       id: 'basic_econ_problem_4',
@@ -151,8 +149,7 @@ window.ECONOS_TOPIC = {
       ],
       branchesLabel: 'Why objectives can conflict',
       branchesEmoji: '⚔️',
-      examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational — they use heuristics, are loss-averse, and act on incomplete information.',
-      keyTakeaway: 'Economic decisions reflect objectives — and because objectives differ, conflict and trade-offs are common.'
+      examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational — they use heuristics, are loss-averse, and act on incomplete information.'
     },
     {
       id: 'basic_econ_problem_5',
@@ -179,8 +176,7 @@ window.ECONOS_TOPIC = {
           'Policy recommendations are inherently normative'
         ]
       },
-      examEdge: 'Many policy debates contain both positive and normative elements. "Raising minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.',
-      keyTakeaway: 'Positive is about what is; normative is about what ought to be.'
+      examEdge: 'Many policy debates contain both positive and normative elements. "Raising minimum wage will reduce employment" is positive (testable). "We should raise it anyway because fairness matters more" is normative. Identifying this distinction in exam questions signals analytical maturity.'
     },
     {
       id: 'basic_econ_problem_6',
@@ -210,8 +206,7 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   label: 'Time pressure',       sub: 'Decisions often need to be made quickly with limited time to evaluate every option — so people use rules of thumb (heuristics) instead.' }
       ],
       branchesLabel: 'Limits to perfect rationality',
-      examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.',
-      keyTakeaway: 'Rational decision-making is a useful assumption — but in real life, decisions are often less than perfectly rational.'
+      examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.'
     },
     {
       id: 'basic_econ_problem_7',

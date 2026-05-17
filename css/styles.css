@@ -2447,6 +2447,9 @@ img, svg { display: block; max-width: 100%; }
 .ped-step__answer:not(.is-hidden) {
   animation: econ-slide-reveal 0.36s ease both;
 }
+.ped-calc-step.is-solved .ped-step__preview {
+  display: none;
+}
 .scenario__answer:not(.is-hidden) {
   animation: econ-slide-reveal 0.36s ease both;
 }

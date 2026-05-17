@@ -1018,7 +1018,7 @@
     const { scenarioPanel, roadmapStops, steps, conclusion, contextLine, examEdge } = opts;
 
     // Step node helper
-    const stepNode = (n, tone, icon, title, prompt, formula, reveal) => `
+    const stepNode = (n, tone, icon, title, prompt, formula, reveal, preview) => `
       <div class="ped-calc-step" data-ped-step="${n}" data-step-tone="${tone.c}" style="position:relative;border-radius:16px;background:#fff;border:1px solid ${tone.c}25;border-left:6px solid ${tone.c};box-shadow:0 3px 14px rgba(0,0,0,0.08);padding:18px 20px 20px;transition:box-shadow 0.25s ease;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
           <div data-step-num="${n}" style="width:38px;height:38px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;box-shadow:0 2px 8px ${tone.c}55;transition:all 0.3s ease;">${n}</div>
@@ -1028,6 +1028,7 @@
         </div>
         <div style="font-size:14px;color:#0B1426;line-height:1.6;margin-bottom:12px;">${prompt}</div>
         ${formula ? `<div style="background:${tone.bg};border:1px dashed ${tone.c}50;border-radius:10px;padding:11px 14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#0B1426;margin-bottom:12px;text-align:center;letter-spacing:0.02em;">${formula}</div>` : ''}
+        ${preview ? `<div class="ped-step__preview" style="margin-bottom:12px;">${preview}</div>` : ''}
         <button data-action="ped-solve" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;transition:all 0.2s ease;">Solve step ${n} ↓</button>
         <div class="ped-step__answer is-hidden" style="margin-top:14px;padding:14px 16px;background:${tone.soft};border-radius:10px;border-left:4px solid ${tone.c};font-size:14px;color:#0B1426;line-height:1.65;">${reveal}</div>
       </div>
@@ -1098,15 +1099,15 @@
     return `
       ${scenarioPanel}
       ${roadmap}
-      ${stepNode(1, s1.tone, s1.icon, s1.title, s1.prompt, s1.formula, s1.reveal)}
+      ${stepNode(1, s1.tone, s1.icon, s1.title, s1.prompt, s1.formula, s1.reveal, s1.preview)}
       ${connector(1, s2.tone)}
-      ${stepNode(2, s2.tone, s2.icon, s2.title, s2.prompt, s2.formula, s2.reveal)}
+      ${stepNode(2, s2.tone, s2.icon, s2.title, s2.prompt, s2.formula, s2.reveal, s2.preview)}
       ${connector(2, s3.tone)}
-      ${stepNode(3, s3.tone, s3.icon, s3.title, s3.prompt, s3.formula, s3.reveal)}
+      ${stepNode(3, s3.tone, s3.icon, s3.title, s3.prompt, s3.formula, s3.reveal, s3.preview)}
       ${connector(3, s4.tone)}
-      ${stepNode(4, s4.tone, s4.icon, s4.title, s4.prompt, s4.formula, s4.reveal)}
+      ${stepNode(4, s4.tone, s4.icon, s4.title, s4.prompt, s4.formula, s4.reveal, s4.preview)}
       ${connector(4, s5.tone)}
-      ${stepNode(5, s5.tone, s5.icon, s5.title, s5.prompt, s5.formula, s5.reveal)}
+      ${stepNode(5, s5.tone, s5.icon, s5.title, s5.prompt, s5.formula, s5.reveal, s5.preview)}
       ${conclusionBlock}
       ${contextStrip}
       ${renderExamEdge(examEdge)}
@@ -1278,6 +1279,14 @@
           tone: T4, icon: '🎯', title: 'Classify the elasticity',
           prompt: 'Compare the magnitude to 1. Where on the elasticity spectrum does our answer land?',
           formula: `Compare&nbsp;&nbsp;<span style="color:${T4.c};font-weight:800;">|PED|</span>&nbsp;&nbsp;against&nbsp;&nbsp;<span style="color:${T4.c};font-weight:800;">1</span>`,
+          preview: `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;">
+            ${spectrumZones.map(z => `
+              <div style="background:${z.bg};border:1px solid ${z.c}40;border-radius:8px;padding:8px 4px;text-align:center;">
+                <div style="font-size:14px;font-weight:800;color:${z.c};">${z.short}</div>
+                <div style="font-size:10px;font-weight:700;color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
+              </div>
+            `).join('')}
+          </div>`,
           reveal: `<div style="margin-bottom:14px;">
             <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px;">
               ${spectrumZones.map((z, i) => `
@@ -1491,6 +1500,14 @@
             tone: T4, icon: '🎯', title: 'Classify the PES',
             prompt: 'Compare PES to 1. Is oil supply elastic or inelastic?',
             formula: `Compare&nbsp;&nbsp;<span style="color:${T4.c};font-weight:800;">PES</span>&nbsp;&nbsp;against&nbsp;&nbsp;<span style="color:${T4.c};font-weight:800;">1</span>`,
+            preview: `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;">
+              ${spectrumZones.map(z => `
+                <div style="background:${z.bg};border:1px solid ${z.c}40;border-radius:8px;padding:8px 4px;text-align:center;">
+                  <div style="font-size:14px;font-weight:800;color:${z.c};">${z.short}</div>
+                  <div style="font-size:10px;font-weight:700;color:${z.c};margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;">${z.label}</div>
+                </div>
+              `).join('')}
+            </div>`,
             reveal: `<div style="margin-bottom:14px;">
               <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px;">
                 ${spectrumZones.map((z, i) => `

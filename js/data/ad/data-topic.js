@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'aggregate_demand',
-  topicNum: '2.2',
+  topicNum: '2.1-2.5',
   theme: 'Theme 2 · The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Aggregate Demand',

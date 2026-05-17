@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'multiplier',
-  topicNum: '2.4',
+  topicNum: '4.4',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'National Income & The Multiplier',

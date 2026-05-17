@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'growth_cycle',
-  topicNum: '2.5.2',
+  topicNum: '5.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Trade Cycle, Shocks & Economic Growth',

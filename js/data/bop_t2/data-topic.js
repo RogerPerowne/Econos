@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'bop_t2',
-  topicNum: '2.1.4',
+  topicNum: '1.4',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Balance of Payments',

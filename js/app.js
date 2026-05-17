@@ -173,6 +173,17 @@
     return `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">${emoji} <span>${text}</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
   }
 
+  // Returns a grid-template-columns value that lays out N items without
+  // leaving a single-item orphan row. 4 → 2x2 (not 3+1), 7 → 4+3, etc.
+  // Falls back to auto-fill for very long lists.
+  function gridColumnsFor(n, minPx = 155) {
+    if (n === 4) return 'repeat(2, 1fr)';
+    if (n === 7 || n === 8) return 'repeat(4, 1fr)';
+    if (n === 9) return 'repeat(3, 1fr)';
+    if (n >= 1 && n <= 6) return `repeat(${Math.min(n, 3)}, 1fr)`;
+    return `repeat(auto-fill, minmax(${minPx}px, 1fr))`;
+  }
+
   function renderCardGeneric(c) {
     let content = '';
 
@@ -223,7 +234,7 @@
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
       content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(${hasIcons ? '155px' : '220px'},1fr));gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         if (hasIcons) {
@@ -271,7 +282,7 @@
           </div>
         </div>
         <div style="padding:14px;background:#F8FAFC;">
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;">
+          <div style="display:grid;grid-template-columns:${gridColumnsFor(c.productExamples.length, 140)};gap:10px;">
             ${c.productExamples.map(p => {
               const vc = VC[p.verdictTone] || VC.amber;
               return `
@@ -377,7 +388,7 @@
     // Key terms — coloured tiles, definitions always visible, one row
     if (c.keyTerms && c.keyTerms.length) {
       content += genSecLabel('🔑', 'Key terms');
-      content += `<div style="display:grid;grid-template-columns:repeat(${c.keyTerms.length},1fr);gap:12px;margin-bottom:28px;">
+      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.keyTerms.length, 180)};gap:12px;margin-bottom:28px;">
         ${c.keyTerms.map((kt, i) => {
           const t = TONES[i % TONES.length];
           return `

@@ -4302,6 +4302,112 @@ window.ECONOS_ICONS = {
             text-anchor="middle" letter-spacing="2" opacity="0.75">THREE FUNCTIONS, ONE PRICE</text>
     </svg>
   `,
+  heroEconomicSystems: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-es" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="bg-es" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0F9FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <linearGradient id="spectrum-es" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#DC2626"/>
+          <stop offset="50%"  stop-color="#7C3AED"/>
+          <stop offset="100%" stop-color="#059669"/>
+        </linearGradient>
+        <filter id="shadow-es" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        </filter>
+      </defs>
+
+      <!-- background -->
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-es)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-es)" opacity="0.4"/>
+
+      <!-- header -->
+      <text x="140" y="34" font-size="10" font-weight="800" fill="#0F172A"
+            text-anchor="middle" letter-spacing="3" opacity="0.65">ECONOMIC SYSTEMS</text>
+      <text x="140" y="51" font-size="8" font-weight="700" fill="#475569"
+            text-anchor="middle" letter-spacing="2.5" opacity="0.65">WHAT · HOW · FOR WHOM</text>
+
+      <!-- COMMAND pillar (rose) — tallest: state controls everything -->
+      <rect x="18" y="62" width="74" height="203" rx="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.5" filter="url(#shadow-es)"/>
+      <!-- pediment triangle -->
+      <polygon points="26,114 86,114 56,86" fill="#DC2626" opacity="0.85"/>
+      <!-- four columns -->
+      <rect x="29" y="114" width="8"  height="44" rx="2" fill="#DC2626" opacity="0.65"/>
+      <rect x="41" y="114" width="8"  height="44" rx="2" fill="#DC2626" opacity="0.65"/>
+      <rect x="53" y="114" width="8"  height="44" rx="2" fill="#DC2626" opacity="0.65"/>
+      <rect x="65" y="114" width="8"  height="44" rx="2" fill="#DC2626" opacity="0.65"/>
+      <!-- base plinth -->
+      <rect x="23" y="158" width="64" height="8" rx="3" fill="#DC2626" opacity="0.55"/>
+      <!-- STATE OWNED badge -->
+      <rect x="26" y="178" width="56" height="17" rx="5" fill="#DC2626"/>
+      <text x="54" y="190" font-size="7.5" font-weight="800" fill="#fff"
+            text-anchor="middle" letter-spacing="1.5">STATE OWNED</text>
+      <!-- descriptor -->
+      <text x="55" y="218" font-size="8.5" fill="#7F1D1D" text-anchor="middle" opacity="0.8">Central planners</text>
+      <text x="55" y="230" font-size="8.5" fill="#7F1D1D" text-anchor="middle" opacity="0.8">answer all 3 Qs</text>
+      <!-- pillar label below -->
+      <text x="55" y="277" font-size="9.5" font-weight="800" fill="#991B1B" text-anchor="middle" letter-spacing="0.5">COMMAND</text>
+
+      <!-- MIXED pillar (purple) — medium: state + market blend -->
+      <rect x="103" y="103" width="74" height="162" rx="10" fill="#EDE9FE" stroke="#DDD6FE" stroke-width="1.5" filter="url(#shadow-es)"/>
+      <!-- balance scales icon -->
+      <line x1="140" y1="122" x2="140" y2="150" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="134,150 146,150 140,157" fill="#7C3AED"/>
+      <line x1="114" y1="134" x2="166" y2="134" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- left strings -->
+      <line x1="114" y1="134" x2="110" y2="150" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="114" y1="134" x2="120" y2="150" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- right strings -->
+      <line x1="166" y1="134" x2="162" y2="150" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="166" y1="134" x2="172" y2="150" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- left pan -->
+      <path d="M 110 150 Q 115 160 120 150" stroke="#7C3AED" stroke-width="1.5" fill="#C4B5FD" fill-opacity="0.6"/>
+      <text x="115" y="158" font-size="5.5" font-weight="800" fill="#5B21B6" text-anchor="middle">GOV</text>
+      <!-- right pan -->
+      <path d="M 162 150 Q 167 160 172 150" stroke="#7C3AED" stroke-width="1.5" fill="#C4B5FD" fill-opacity="0.6"/>
+      <text x="167" y="158" font-size="5.5" font-weight="800" fill="#5B21B6" text-anchor="middle">MKT</text>
+      <!-- HYBRID badge -->
+      <rect x="111" y="174" width="56" height="17" rx="5" fill="#7C3AED"/>
+      <text x="139" y="186" font-size="7.5" font-weight="800" fill="#fff"
+            text-anchor="middle" letter-spacing="1.5">HYBRID</text>
+      <!-- descriptor -->
+      <text x="140" y="215" font-size="8.5" fill="#4C1D95" text-anchor="middle" opacity="0.8">Markets + govt</text>
+      <text x="140" y="227" font-size="8.5" fill="#4C1D95" text-anchor="middle" opacity="0.8">correct failures</text>
+      <!-- pillar label below -->
+      <text x="140" y="277" font-size="9.5" font-weight="800" fill="#5B21B6" text-anchor="middle" letter-spacing="0.5">MIXED</text>
+
+      <!-- FREE MARKET pillar (green) — shortest: prices do all the work -->
+      <rect x="188" y="138" width="74" height="127" rx="10" fill="#D1FAE5" stroke="#A7F3D0" stroke-width="1.5" filter="url(#shadow-es)"/>
+      <!-- ascending bar chart -->
+      <rect x="200" y="204" width="11" height="28" rx="2" fill="#059669" opacity="0.4"/>
+      <rect x="216" y="191" width="11" height="41" rx="2" fill="#059669" opacity="0.65"/>
+      <rect x="232" y="175" width="11" height="57" rx="2" fill="#059669"/>
+      <!-- trend arrow -->
+      <polyline points="205.5,201 221.5,188 237.5,172" stroke="#065F46" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <polygon points="237.5,172 233,177 241,178" fill="#065F46"/>
+      <!-- PRICE DRIVEN badge -->
+      <rect x="196" y="150" width="64" height="17" rx="5" fill="#059669"/>
+      <text x="228" y="162" font-size="7.5" font-weight="800" fill="#fff"
+            text-anchor="middle" letter-spacing="1.5">PRICE DRIVEN</text>
+      <!-- pillar label below -->
+      <text x="225" y="277" font-size="9.5" font-weight="800" fill="#065F46" text-anchor="middle" letter-spacing="0.5">FREE MARKET</text>
+
+      <!-- spectrum bar -->
+      <rect x="18" y="287" width="244" height="8" rx="4" fill="url(#spectrum-es)" opacity="0.75"/>
+      <!-- axis labels -->
+      <text x="18"  y="306" font-size="7.5" font-weight="700" fill="#991B1B" opacity="0.85">← FULL STATE CONTROL</text>
+      <text x="262" y="306" font-size="7.5" font-weight="700" fill="#065F46" opacity="0.85" text-anchor="end">FULL MARKET →</text>
+
+      <!-- footer -->
+      <text x="140" y="338" font-size="9" font-weight="700" fill="#475569"
+            text-anchor="middle" letter-spacing="2" opacity="0.75">ALLOCATING SCARCE RESOURCES</text>
+    </svg>
+  `,
   heroExternalities: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

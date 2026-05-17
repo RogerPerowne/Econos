@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'globalisation',
-  topicNum: '4.1',
+  topicNum: '1.1',
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Globalisation',

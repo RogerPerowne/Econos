@@ -1,9 +1,9 @@
 window.ECONOS_TOPIC = {
   id: 'poverty',
-  topicNum: '4.7',
+  topicNum: '2.1',
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
-  title: 'Poverty',
+  title: 'Absolute & Relative Poverty',
   estTime: '9-11 minutes',
   goal: 'Lock in the distinction between absolute and relative poverty, their causes, and the range of anti-poverty policies.',
   intro: {

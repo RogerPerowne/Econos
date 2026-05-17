@@ -1,9 +1,9 @@
 window.ECONOS_TOPIC = {
   id: 'trade_spec',
-  topicNum: '4.2',
+  topicNum: '1.2-1.4',
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
-  title: 'Trade & Specialisation',
+  title: 'Specialisation & Trade',
   estTime: '11-13 minutes',
   goal: 'Lock in comparative advantage, the gains from trade, and why specialisation shapes global commerce.',
   intro: {

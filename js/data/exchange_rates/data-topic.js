@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'exchange_rates',
-  topicNum: '4.5',
+  topicNum: '1.8',
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Exchange Rates',

@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'intl_competitiveness',
-  topicNum: '4.6',
+  topicNum: '1.9',
   theme: 'Theme 4 \xb7 A Global Perspective',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'International Competitiveness',

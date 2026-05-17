@@ -30,13 +30,13 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 7',
       title: 'The basic economic problem: the big picture',
       lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited.',
-      branches: [
-        { tone: 'green',  label: 'Scarcity &amp; resources',     sub: 'Unlimited wants meet finite land, labour, capital and enterprise. Every economy, rich or poor, faces it.' },
-        { tone: 'amber',  label: 'Opportunity cost',             sub: 'Every choice means giving something up. The next-best alternative forgone is the true cost of any decision.' },
-        { tone: 'blue',   label: 'What, how, for whom',          sub: 'The three questions every economic system must answer about allocating scarce resources between competing uses.' },
-        { tone: 'purple', label: 'Agents &amp; rationality',     sub: 'Consumers, firms and government each pursue their own objectives — and are assumed (mostly) to do so rationally.' },
-        { tone: 'rose',   label: 'Positive vs normative',        sub: 'Facts versus value judgements. The line that separates economic analysis from political opinion.' }
-      ],
+      tip: 'Economics begins with a simple tension — our wants are unlimited, but the resources to satisfy them are limited.',
+      comparison: {
+        title: 'The core problem',
+        emoji: '⚡',
+        left:  { tone: 'rose',  icon: '❤️', label: 'Unlimited wants',   caption: 'Our wants are endless and ever-changing.' },
+        right: { tone: 'green', icon: '📦', label: 'Limited resources', caption: 'Resources are finite and can be used in many ways.' }
+      },
       body: '<strong>Scarcity</strong> is the fundamental economic problem: human wants are unlimited, but the resources needed to satisfy them are finite. Because resources are scarce, we cannot produce everything we want — so choices must be made.<br><br>Scarcity applies to <em>every</em> economy regardless of wealth. Even the richest country cannot produce unlimited healthcare, education, infrastructure and defence simultaneously. Scarcity forces trade-offs at every level: individual, firm, and government.',
       causes: [
         { head: 'Land',       icon: '🌿', body: 'Natural resources provided by the earth — minerals, forests, fertile soil, water, fish stocks, oil and gas.' },
@@ -59,7 +59,14 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       title: 'Opportunity Cost',
       lede: 'Every choice means giving something up. Opportunity cost is the value of the next best alternative forgone — not the money you spent.',
-      body: '<strong>Concrete picture:</strong> imagine you have \xa380 to spend and two options at the same price — a concert ticket and a pair of new trainers. You buy the concert ticket. Your <strong>opportunity cost</strong> is not \xa380 — it is the value of the trainers you gave up.<br><br>Opportunity cost is the true cost of any decision because resources are limited and every choice involves a trade-off. It underpins all rational decision-making, the slope of demand curves, and the shape of the production possibility frontier.',
+      tip: 'Every choice means giving something up. Opportunity cost is the next best alternative forgone.',
+      comparison: {
+        title: 'A concrete picture — both cost £80',
+        emoji: '🎯',
+        left:  { tone: 'green', icon: '🎫', label: 'Concert ticket',  value: '\xa380', caption: 'What you choose' },
+        right: { tone: 'amber', icon: '👟', label: 'New trainers',    value: '\xa380', caption: 'What you give up' }
+      },
+      body: 'You spent <strong>\xa380</strong> on the concert ticket — but your <strong>opportunity cost</strong> is not \xa380. It is the value of the trainers you gave up. The same logic underpins every economic decision a consumer, firm or government makes — and it shapes demand curves, supply choices and the slope of the production possibility frontier.',
       causes: [
         { head: 'Consumers',  icon: '🛍️', body: 'A consumer choosing a cinema ticket instead of saving that money for next month\'s bills. The opportunity cost is whatever the saved money would have bought.' },
         { head: 'Firms',      icon: '🏭', body: 'A firm investing in new machines instead of advertising. The opportunity cost is the extra sales the advertising campaign might have produced.' },
@@ -87,6 +94,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       title: 'The Three Fundamental Economic Questions',
       lede: 'Because resources are scarce, every economy must answer three core questions — and the answers shape the entire system.',
+      tip: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.',
       branches: [
         { tone: 'green',  label: '1. What to produce?',     sub: 'Decide which goods and services to produce with limited resources. Health care, gaming consoles, renewable energy — every yes is a no to something else.' },
         { tone: 'amber',  label: '2. How to produce?',      sub: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
@@ -115,6 +123,7 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       title: 'Economic Agents and Their Objectives',
       lede: 'An economy is made up of decision-makers — households, firms, governments and workers — each with their own objectives.',
+      tip: 'An economy is made up of decision-makers — households, firms, governments and workers — each with their own objectives.',
       body: 'Standard economic models start by asking <em>who</em> is making the decision. Different agents pursue different objectives, which is why conflict and trade-off are so central to economics.',
       causes: [
         { head: 'Households',  icon: '🏠', body: 'Aim to maximise utility (satisfaction) within a budget. Consume goods and services and supply labour. Assumed to be rational: weigh marginal costs and benefits.' },
@@ -124,12 +133,17 @@ window.ECONOS_TOPIC = {
       ],
       causesLabel: 'Who are the economic agents?',
       causesEmoji: '👥',
-      keyTerms: [
-        { term: 'Households', def: 'Maximise satisfaction / utility.' },
-        { term: 'Firms',      def: 'Profit, growth, survival, market share.' },
-        { term: 'Government', def: 'Growth, low inflation, low unemployment, equity.' },
-        { term: 'Workers',    def: 'Wages, job security, job satisfaction.' }
-      ],
+      table: {
+        title: 'Common objectives',
+        emoji: '🎯',
+        headers: ['Agent', 'Likely objectives'],
+        rows: [
+          { icon: '🏠', label: 'Households', value: 'Maximise satisfaction / utility' },
+          { icon: '🏭', label: 'Firms',      value: 'Profit, growth, survival, market share' },
+          { icon: '🏛️', label: 'Government', value: 'Growth, low inflation, low unemployment, equity' },
+          { icon: '👤', label: 'Workers',    value: 'Wages, job security, job satisfaction' }
+        ]
+      },
       branches: [
         { tone: 'amber',  label: 'Lower prices vs higher profits',     sub: 'Consumers want lower prices; firms want higher profits. Every price tag is a battleground between the two.' },
         { tone: 'rose',   label: 'Higher wages vs lower costs',        sub: 'Workers want higher wages; firms want to keep costs down. Wage bargaining and minimum-wage debates flow from this.' },
@@ -144,6 +158,7 @@ window.ECONOS_TOPIC = {
       id: 'basic_econ_problem_5',
       template: 'paired',
       title: 'Positive vs Normative Statements',
+      tip: { icon: 'ℹ️', text: '<strong>Positive</strong> statements can be tested with evidence. <strong>Normative</strong> statements involve value judgements about what ought to happen.', tone: 'blue' },
       left: {
         label: 'Positive statements',
         points: [
@@ -172,13 +187,16 @@ window.ECONOS_TOPIC = {
       template: 'mechanisms',
       title: 'Rational Economic Decision-Making',
       lede: 'In simple economic models, decision-makers are assumed to act rationally — weighing up costs and benefits to maximise their objective.',
-      intro: 'Rational means making decisions in a logical and consistent way to achieve the best possible outcome. The standard model walks through four steps.',
-      steps: [
-        { label: 'Identify the objective',     text: 'Be clear about the goal you want to achieve — utility for a consumer, profit for a firm, social welfare for a government.' },
-        { label: 'Compare costs and benefits', text: 'List the costs (including opportunity costs) and benefits of each available option. Use marginal analysis — focus on the next unit of activity, not the total.' },
-        { label: 'Choose the best option',     text: 'Select the option that maximises net benefit — i.e. continue the activity as long as marginal benefit ≥ marginal cost. Stop where MB = MC.' },
-        { label: 'Review the outcome',         text: 'Check the result and learn from it. New information feeds into the next decision — rationality is iterative, not one-shot.' }
+      tip: 'In simple economic models, decision-makers are assumed to act <strong>rationally</strong> — weighing up costs and benefits to maximise their objective.',
+      body: 'Rational means making decisions in a logical and consistent way to achieve the best possible outcome. The standard model walks through four steps:',
+      flow: [
+        { icon: '🔍', title: 'Identify the objective',     sub: 'Be clear about the goal you want to achieve.' },
+        { icon: '⚖️', title: 'Compare costs and benefits', sub: 'List the costs and benefits of each available option.' },
+        { icon: '✅', title: 'Choose the best option',     sub: 'Select the option that maximises net benefit (or utility).' },
+        { icon: '🔄', title: 'Review the outcome',         sub: 'Check results and learn from the outcome for future decisions.' }
       ],
+      flowTitle: 'What does rational mean?',
+      flowEmoji: '🧠',
       causes: [
         { head: 'Consumer',   icon: '🛒', body: 'A consumer compares mobile phone plans and picks the cheapest option that gives the same data and minutes.' },
         { head: 'Firm',       icon: '🏭', body: 'A firm compares the cost of hiring extra workers against buying a machine that can do the same job — and chooses the lower-cost option.' },
@@ -200,6 +218,7 @@ window.ECONOS_TOPIC = {
       template: 'paired',
       title: 'Micro vs Macro Economics',
       lede: 'Microeconomics zooms in on individual markets and decision-makers. Macroeconomics zooms out to the whole economy.',
+      tip: '<strong>Microeconomics</strong> zooms in on individual markets and decision-makers. <strong>Macroeconomics</strong> zooms out to the whole economy.',
       left: {
         label: '🔍 Microeconomics',
         points: [

@@ -518,13 +518,14 @@
 
   function renderKeyTakeaway(k) {
     if (!k) return '';
-    const text = typeof k === 'object' ? k.text : k;
+    const text  = typeof k === 'object' ? k.text  : k;
+    const label = typeof k === 'object' && k.title ? k.title : 'Key takeaway';
     if (!text) return '';
     return `
       <div class="key-takeaway">
         <div class="key-takeaway__star">★</div>
         <div class="key-takeaway__body">
-          <div class="key-takeaway__label">Key takeaway</div>
+          <div class="key-takeaway__label">${label}</div>
           <div class="key-takeaway__text">${text}</div>
         </div>
       </div>

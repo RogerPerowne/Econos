@@ -56,10 +56,6 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
           body: '<strong>Few close substitutes</strong> in the short run<br><strong>Essential for many journeys</strong> — commuters must travel regardless<br><strong>Result:</strong> demand barely changes when price rises'
         }
       ],
-      keyTakeaway: {
-        title: 'Key takeaway',
-        text: 'PED is about responsiveness — not just whether demand rises or falls, but by <em>how much</em>. The magnitude is everything.'
-      }
     },
 
     /* ================================================================
@@ -252,10 +248,6 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
         }
       ],
       examEdge: 'Always tie the determinant to the product: “Demand for petrol is inelastic because there are few close substitutes in the short run — most journeys cannot easily switch to other transport modes.” Determinant → mechanism → conclusion.',
-      keyTakeaway: {
-        title: 'Key takeaway',
-        text: 'PED is shaped by context — ask how easy it is for consumers to switch, delay, or do without. The more locked-in consumers are, the more inelastic the demand.'
-      }
     },
 
     /* ================================================================
@@ -351,10 +343,6 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
         { label: 'Apply to the product and context', text: 'Explain why this good has this PED using at least one determinant tied to the specific product.' },
         { label: 'Link to revenue or policy consequences', text: 'State what happens to TR, who bears a tax, or how a firm should price. This is where evaluation marks sit.' }
       ],
-      keyTakeaway: {
-        title: 'Ready for the next step',
-        text: 'You can now apply PED to data-response questions, chains of reasoning, and 25-mark essays. Next topic: cross elasticity and income elasticity of demand.'
-      },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

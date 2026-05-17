@@ -63,11 +63,24 @@ window.ECONOS_TOPIC = {
       id: 'basic_econ_problem_3',
       template: 'framing',
       title: 'The Three Fundamental Economic Questions',
-      body: 'Scarcity forces every society to answer three questions:<br><br><strong>1. What to produce?</strong> Which goods and services, and in what quantities?<br><strong>2. How to produce?</strong> Which combination of factors of production — labour-intensive or capital-intensive?<br><strong>3. For whom to produce?</strong> How is output distributed — by price, need, merit, or government allocation?<br><br>Different economic systems answer these questions differently. A <em>free market</em> uses price signals; a <em>command economy</em> uses central planning; a <em>mixed economy</em> uses both. The "correct" answer is contested — it is a normative question.',
+      lede: 'Because resources are scarce, every economy must answer three core questions — and the answers shape the entire system.',
+      branches: [
+        { tone: 'green',  label: '1. What to produce?',     sub: 'Decide which goods and services to produce with limited resources. Health care, gaming consoles, renewable energy — every yes is a no to something else.' },
+        { tone: 'amber',  label: '2. How to produce?',      sub: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
+        { tone: 'blue',   label: '3. For whom to produce?', sub: 'Decide who gets the output. Distribution is shaped by income, prices, need, merit, and government allocation — never neutral.' }
+      ],
+      body: 'Scarcity forces every society to answer these three questions. They are deceptively simple — but the answers determine production, employment, and the distribution of wealth. Different economic systems answer them very differently, which is what the next section explores.',
+      causes: [
+        { head: 'Market economy',  icon: '🛒', body: 'Individuals and firms answer the three questions through choices made in markets, guided by prices and profit. Decentralised, fast-moving, prone to inequality and market failure.' },
+        { head: 'Command economy', icon: '🏛️', body: 'Central government planners make the main decisions about what, how and for whom to produce. Aims for equity and coordination, but struggles with information and incentive problems.' },
+        { head: 'Mixed economy',   icon: '⚖️', body: 'Markets and government share the decisions, varying by industry and policy goals. The dominant model in the modern world — including the UK.' }
+      ],
+      causesLabel: 'Different systems answer differently',
+      causesEmoji: '🌍',
       keyTerms: [
-        { term: 'What to produce', def: 'Resource allocation decision: which goods/services to create.' },
-        { term: 'How to produce', def: 'Factor combination decision: labour vs capital intensity.' },
-        { term: 'For whom to produce', def: 'Distribution decision: who receives the output.' }
+        { term: 'What to produce',     def: 'Resource allocation decision: which goods and services to create.' },
+        { term: 'How to produce',      def: 'Factor combination decision: labour vs capital intensity, sustainable vs cheapest.' },
+        { term: 'For whom to produce', def: 'Distribution decision: who receives the output and on what basis.' }
       ],
       examEdge: 'The three questions are normative at heart — different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."',
       keyTakeaway: 'The three questions sit at the heart of economics because scarcity forces every society to make choices.'
@@ -128,13 +141,42 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'basic_econ_problem_7',
-      template: 'framing',
+      template: 'paired',
       title: 'Micro vs Macro Economics',
-      body: '<strong>Microeconomics</strong> studies individual markets, firms, and households: how prices are determined, how firms compete, why markets fail. Themes 1 and 3 are primarily micro.<br><br><strong>Macroeconomics</strong> studies the economy as a whole: GDP, inflation, unemployment, and government policy. Themes 2 and 4 are primarily macro.<br><br>The two are connected — micro behaviour aggregates into macro outcomes (e.g. individual spending decisions create aggregate demand). But the models used are distinct and sometimes contradictory (e.g. a wage cut may help a single firm but depress aggregate demand).<br><br>The Edexcel A-level assesses both, and examiners reward candidates who can integrate micro and macro perspectives.',
+      lede: 'Microeconomics zooms in on individual markets and decision-makers. Macroeconomics zooms out to the whole economy.',
+      left: {
+        label: '🔍 Microeconomics',
+        points: [
+          'Looks at individual markets and decision-makers',
+          'Demand and supply in a single market',
+          'How firms compete in an industry',
+          'Wages and employment within a firm',
+          'Market failure and consumer choice',
+          'Primary focus of Themes 1 and 3'
+        ]
+      },
+      right: {
+        label: '🌍 Macroeconomics',
+        points: [
+          'Looks at the economy as a whole',
+          'Inflation and the price level',
+          'Unemployment and economic growth',
+          'Trade, imports and exports',
+          'Fiscal and monetary policy',
+          'Primary focus of Themes 2 and 4'
+        ]
+      },
+      causes: [
+        { head: 'Wages affect inflation',        body: 'Higher wages can raise costs for firms (micro), feeding into higher prices across the whole economy (macro).' },
+        { head: 'Investment affects growth',     body: 'Business investment is a micro decision, but in aggregate it increases productive capacity and boosts national output.' },
+        { head: 'Taxes affect both',             body: 'Taxes change incentives for individual workers and firms, and also shape government revenue and spending in the wider economy.' }
+      ],
+      causesLabel: 'They connect',
+      causesEmoji: '🔗',
       keyTerms: [
-        { term: 'Microeconomics', def: 'Study of individual economic agents, markets, and resource allocation at the level of the firm, household, and industry.' },
-        { term: 'Macroeconomics', def: 'Study of the economy as a whole — national income, price level, employment, and economic policy.' },
-        { term: 'Fallacy of composition', def: 'The error of assuming what is true for a part is true for the whole: a wage cut helps one firm but if all firms cut wages, aggregate demand falls.' }
+        { term: 'Microeconomics',         def: 'Study of individual agents, markets and resource allocation at the level of the firm, household, and industry.' },
+        { term: 'Macroeconomics',         def: 'Study of the economy as a whole — national income, price level, employment, and economic policy.' },
+        { term: 'Fallacy of composition', def: 'The error of assuming what is true for a part is true for the whole: a wage cut helps one firm; if all firms cut wages, aggregate demand falls.' }
       ],
       examEdge: 'The micro-macro distinction matters for policy evaluation. Supply-side policies (micro-level reforms to labour and product markets) work through micro mechanisms but have macro effects. Always specify the transmission mechanism linking micro behaviour to macro outcomes in essays.',
       keyTakeaway: 'Micro explains the parts; macro explains the whole — and good economists link both.',

@@ -278,6 +278,29 @@
         </div>`;
     }
 
+    // Paired: left / right — defines the two things being contrasted, so
+    // renders before causes / table / branches which build on top of them.
+    if (c.left && c.right) {
+      content += genSecLabel('⚖️', 'Head to head');
+      const tL = TONES[0];
+      const tR = TONES[2];
+      content += `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
+        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tL.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
+          <div style="color:${tL.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.left.label}</div>
+          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+            ${c.left.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tL.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
+          </ul>
+        </div>
+        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tR.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
+          <div style="color:${tR.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.right.label}</div>
+          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+            ${c.right.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tR.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
+          </ul>
+        </div>
+      </div>`;
+    }
+
     // Causes: [{head, body, icon?}] — coloured tiles; icon mode activates richer card layout
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
@@ -456,28 +479,6 @@
       if (c.footer) {
         content += `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
       }
-    }
-
-    // Paired: left / right — dramatic header panels
-    if (c.left && c.right) {
-      content += genSecLabel('⚖️', 'Head to head');
-      const tL = TONES[0];
-      const tR = TONES[2];
-      content += `
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
-        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tL.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
-          <div style="color:${tL.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.left.label}</div>
-          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-            ${c.left.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tL.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-          </ul>
-        </div>
-        <div style="border-radius:12px;background:#fff;border-left:4px solid ${tR.border};box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:16px 16px 16px 18px;">
-          <div style="color:${tR.border};font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">${c.right.label}</div>
-          <ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-            ${c.right.points.map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tR.border};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-          </ul>
-        </div>
-      </div>`;
     }
 
     // Key terms — coloured tiles, definitions always visible, one row

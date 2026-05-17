@@ -265,23 +265,6 @@
       content += `</div>`;
     }
 
-    // Branches — tone-coded tappable callouts (framing-style)
-    if (c.branches && c.branches.length) {
-      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture — tap each to recall');
-      content += `<div class="branch-callouts" style="margin-bottom:24px;">
-        ${c.branches.map((b, i) => `
-          <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">
-            <div class="branch-cal__dot"></div>
-            <div style="flex:1; min-width:0;">
-              <div class="branch-cal__label">${b.label}</div>
-              <div class="branch-cal__sub is-hidden">${b.sub}</div>
-              <div class="branch-cal__hint">tap to recall</div>
-            </div>
-          </div>
-        `).join('')}
-      </div>`;
-    }
-
     // Diagram (if card provides a diagramKey)
     if (c.diagramKey && I[c.diagramKey]) {
       content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
@@ -355,6 +338,24 @@
         </div>
       `).join('');
       content += `</div>`;
+    }
+
+    // Branches — tone-coded tappable callouts. Rendered after main content
+    // (body / causes / table) so they read as a "now zoom out" framing block.
+    if (c.branches && c.branches.length) {
+      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture — tap each to recall');
+      content += `<div class="branch-callouts" style="margin-bottom:24px;">
+        ${c.branches.map((b, i) => `
+          <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">
+            <div class="branch-cal__dot"></div>
+            <div style="flex:1; min-width:0;">
+              <div class="branch-cal__label">${b.label}</div>
+              <div class="branch-cal__sub is-hidden">${b.sub}</div>
+              <div class="branch-cal__hint">tap to recall</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>`;
     }
 
     // Product examples — "Think like an examiner" card grid

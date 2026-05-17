@@ -4086,10 +4086,10 @@ window.ECONOS_ICONS = {
 
       <!-- efficient point on curve -->
       <g filter="url(#shadow-ppf)">
-        <circle cx="135" cy="195" r="6" fill="#FFFFFF" stroke="#1FB574" stroke-width="2.2"/>
-        <circle cx="135" cy="195" r="2.5" fill="#1FB574"/>
+        <circle cx="122" cy="230" r="6" fill="#FFFFFF" stroke="#1FB574" stroke-width="2.2"/>
+        <circle cx="122" cy="230" r="2.5" fill="#1FB574"/>
       </g>
-      <g transform="translate(145, 175)">
+      <g transform="translate(130, 208)">
         <rect x="0" y="0" width="70" height="20" rx="10" fill="#DCFCE7" stroke="#1FB574" stroke-width="1.2"/>
         <text x="35" y="14" font-size="9" font-weight="800" fill="#065F46"
               text-anchor="middle" letter-spacing="1.5">EFFICIENT</text>

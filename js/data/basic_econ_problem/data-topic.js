@@ -110,10 +110,12 @@ window.ECONOS_TOPIC = {
       causesLabel: 'Different systems answer differently',
       causesEmoji: '🌍',
       keyTerms: [
-        { term: 'What to produce',     def: 'Resource allocation decision: which goods and services to create.' },
-        { term: 'How to produce',      def: 'Factor combination decision: labour vs capital intensity, sustainable vs cheapest.' },
-        { term: 'For whom to produce', def: 'Distribution decision: who receives the output and on what basis.' }
+        { term: 'Choice',     def: 'Scarcity means we cannot have everything, so choices must be made.' },
+        { term: 'Efficiency', def: 'The right answers aim to use resources well and avoid waste.' },
+        { term: 'Equity',     def: 'Decisions affect how fairly goods and services are shared among people.' }
       ],
+      keyTermsLabel: 'Why this matters',
+      keyTermsEmoji: '💡',
       examEdge: 'The three questions are normative at heart — different political values lead to different answers. Recognising this earns evaluation credit: "The optimal answer depends on value judgements about efficiency, equality, and freedom."'
     },
     {

@@ -2334,7 +2334,7 @@ window.ECONOS_ICONS = {
         <!-- Phase labels -->
         <text x="60" y="218" font-size="11" font-weight="700" fill="#DC2626">A: t=0</text>
         <text x="160" y="350" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">B: trough</text>
-        <text x="270" y="220" font-size="11" font-weight="700" fill="#DC2626">C: back to baseline</text>
+        <text x="270" y="248" font-size="11" font-weight="700" fill="#DC2626">C: back to baseline</text>
         <text x="540" y="128" font-size="11" font-weight="700" fill="#DC2626" text-anchor="end">D: net improvement</text>
         <!-- Curve label -->
         <text x="380" y="210" font-size="13" font-weight="700" fill="#DC2626" font-style="italic">J-curve</text>
@@ -2368,10 +2368,10 @@ window.ECONOS_ICONS = {
                 fill="none" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 5"/>
         </g>
         <text x="445" y="343" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">M-L fails: no recovery</text>
-        <!-- M-L condition box -->
-        <rect x="80" y="65" width="260" height="58" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
-        <text x="210" y="86" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="middle" letter-spacing="1">MARSHALL-LERNER CONDITION</text>
-        <text x="210" y="110" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>
+        <!-- M-L condition box (shifted right to avoid "Depreciation hits" label) -->
+        <rect x="300" y="62" width="260" height="58" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
+        <text x="430" y="83" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="middle" letter-spacing="1">MARSHALL-LERNER CONDITION</text>
+        <text x="430" y="107" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>
       </g>
 
       <!-- ===== LAYER: legend shift ===== -->

@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'game_theory',
-  topicNum: '3.15',
+  topicNum: '4.4.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Game Theory',

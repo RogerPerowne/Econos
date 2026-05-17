@@ -317,13 +317,6 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 3: Business Behaviour and the Labour Market ---- */
   {
-    id: 'business_objectives',
-    name: 'Business Objectives',
-    sub: 'Profit, revenue, growth, satisficing and divorce of ownership',
-    color: '#f97316',
-    available: { learn: true, link: false, land: false }
-  },
-  {
     id: 'business_growth',
     name: 'Business Growth',
     sub: 'Internal vs external growth, mergers, integration types',
@@ -331,122 +324,129 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'short_run_costs',
-    name: 'Short-Run Costs',
-    sub: 'Fixed, variable, total, average and marginal costs',
+    id: 'business_objectives',
+    name: 'Business Objectives',
+    sub: 'Profit, revenue, growth, satisficing and divorce of ownership',
+    color: '#f97316',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'revenue',
+    name: 'Revenue',
+    sub: 'TR, AR, MR — price-taker vs price-maker, revenue maximisation',
     color: '#f59e0b',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'long_run_costs',
-    name: 'Long-Run Costs & Economies of Scale',
-    sub: 'LRAC, MES, economies and diseconomies of scale',
+    id: 'short_run_costs',
+    name: 'Costs',
+    sub: 'Fixed, variable, total, average and marginal costs',
     color: '#84cc16',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'profits_shutdown',
-    name: 'Revenue, Profit & Shutdown',
-    sub: 'AR, MR, TR, normal profit, supernormal profit, shutdown rule',
+    id: 'long_run_costs',
+    name: 'Economies & Diseconomies of Scale',
+    sub: 'LRAC, MES, economies and diseconomies of scale',
     color: '#10b981',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'efficiency',
-    name: 'Types of Efficiency',
-    sub: 'Productive, allocative, dynamic and X-efficiency',
+    id: 'profits_shutdown',
+    name: 'Profits & Losses',
+    sub: 'Normal/supernormal profit, shutdown rule, cost and demand changes',
     color: '#06b6d4',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'efficiency',
+    name: 'Efficiency',
+    sub: 'Productive, allocative, dynamic and X-efficiency',
+    color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'perfect_competition',
     name: 'Perfect Competition',
     sub: 'Assumptions, SR/LR equilibrium, efficiency',
-    color: '#0ea5e9',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'monopoly',
-    name: 'Monopoly',
-    sub: 'Sources of power, profit maximisation, welfare loss',
-    color: '#8b5cf6',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'barriers_entry',
-    name: 'Barriers to Entry',
-    sub: 'Structural, strategic and legal barriers',
-    color: '#a855f7',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'monopoly_vs_competition',
-    name: 'Market Power & Contestability',
-    sub: 'Contestability spectrum, firm-level limit cases, welfare, competition policy',
-    color: '#ec4899',
-    available: { learn: true, link: false, land: false }
-  },
-  {
-    id: 'price_discrimination',
-    name: 'Price Discrimination',
-    sub: '1st, 2nd, 3rd degree: conditions, examples, welfare effects',
-    color: '#14b8a6',
+    color: '#0284c7',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'monopolistic_competition',
     name: 'Monopolistic Competition',
     sub: 'SR/LR equilibrium, differentiation, excess capacity',
-    color: '#dc2626',
+    color: '#7c3aed',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'oligopoly',
     name: 'Oligopoly',
     sub: 'Interdependence, kinked demand, price rigidity',
-    color: '#16a34a',
+    color: '#8b5cf6',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'collusion_cartels',
     name: 'Collusion & Cartels',
     sub: 'Tacit vs explicit collusion, OPEC, instability',
-    color: '#2563eb',
+    color: '#a855f7',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'game_theory',
     name: 'Game Theory',
     sub: "Prisoner's dilemma, Nash equilibrium, dominant strategies",
-    color: '#7c3aed',
+    color: '#ec4899',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'profit_cost_changes',
-    name: 'Profit & Cost Changes',
-    sub: 'Impact of cost/revenue shifts on profit-maximising output',
-    color: '#15803d',
+    id: 'monopoly',
+    name: 'Monopoly',
+    sub: 'Sources of power, profit maximisation, barriers, price discrimination',
+    color: '#dc2626',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'monopsony',
+    name: 'Monopsony',
+    sub: 'Single buyer of labour, MCL > W, wage gap, minimum wage',
+    color: '#b91c1c',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'contestability',
     name: 'Contestability',
-    sub: 'Sunk costs, hit-and-run entry, contestable markets',
+    sub: 'Sunk costs, hit-and-run entry, contestable markets, competition policy',
     color: '#b45309',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'labour_markets',
-    name: 'Labour Markets',
-    sub: 'Demand for labour, MRP theory, wage determination',
+    name: 'Demand for Labour',
+    sub: 'Derived demand, MRP theory, labour demand curve',
     color: '#0f766e',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'labour_supply_nmw',
-    name: 'Labour Supply & Minimum Wage',
-    sub: 'Individual/market labour supply, NMW effects, monopsony',
-    color: '#b91c1c',
+    name: 'Supply of Labour',
+    sub: 'Work-leisure choice, backward-bending curve, trade unions, NMW',
+    color: '#15803d',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'wage_determination',
+    name: 'Wage Determination',
+    sub: 'Labour market equilibrium, wage differentials, monopsony',
+    color: '#16a34a',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'govt_intervention_t3',
+    name: 'Government Intervention',
+    sub: 'Competition policy, regulation, nationalisation vs privatisation',
+    color: '#14b8a6',
     available: { learn: true, link: false, land: false }
   },
 

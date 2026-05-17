@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'monopolistic_competition',
-  topicNum: '3.12',
+  topicNum: '4.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monopolistic Competition',

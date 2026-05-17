@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'efficiency',
-  topicNum: '3.6',
+  topicNum: '4.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Types of Efficiency',

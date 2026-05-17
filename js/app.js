@@ -191,7 +191,7 @@
 
     // Branches — tone-coded tappable callouts (framing-style)
     if (c.branches && c.branches.length) {
-      content += genSecLabel('🧭', 'The big picture — tap each to recall');
+      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture — tap each to recall');
       content += `<div class="branch-callouts" style="margin-bottom:24px;">
         ${c.branches.map((b, i) => `
           <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">

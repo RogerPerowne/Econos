@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'The basic economic problem: the big picture',
-      lede: 'Wants are infinite, resources are not. Every idea in economics flows from this single tension.',
+      lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited.',
       branches: [
         { tone: 'green',  label: 'Scarcity &amp; resources',     sub: 'Unlimited wants meet finite land, labour, capital and enterprise. Every economy, rich or poor, faces it.' },
         { tone: 'amber',  label: 'Opportunity cost',             sub: 'Every choice means giving something up. The next-best alternative forgone is the true cost of any decision.' },
@@ -37,7 +37,15 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', label: 'Agents &amp; rationality',     sub: 'Consumers, firms and government each pursue their own objectives — and are assumed (mostly) to do so rationally.' },
         { tone: 'rose',   label: 'Positive vs normative',        sub: 'Facts versus value judgements. The line that separates economic analysis from political opinion.' }
       ],
-      body: '<strong>Scarcity</strong> is the fundamental economic problem: human wants are unlimited, but the resources needed to satisfy them — land, labour, capital, and enterprise — are finite. Because resources are scarce, we cannot produce everything we want, so choices must be made.<br><br>Scarcity applies to all economies regardless of income level. Even the richest country cannot produce unlimited healthcare, education, infrastructure, and defence simultaneously. Scarcity forces trade-offs at every level: individual, firm, and government.',
+      body: '<strong>Scarcity</strong> is the fundamental economic problem: human wants are unlimited, but the resources needed to satisfy them are finite. Because resources are scarce, we cannot produce everything we want — so choices must be made.<br><br>Scarcity applies to <em>every</em> economy regardless of wealth. Even the richest country cannot produce unlimited healthcare, education, infrastructure and defence simultaneously. Scarcity forces trade-offs at every level: individual, firm, and government.',
+      causes: [
+        { head: 'Land',       icon: '🌿', body: 'Natural resources provided by the earth — minerals, forests, fertile soil, water, fish stocks, oil and gas.' },
+        { head: 'Labour',     icon: '👥', body: 'The mental and physical effort of people — and the skills they bring. Quantity (workforce) and quality (education) both matter.' },
+        { head: 'Capital',    icon: '🏭', body: 'Man-made tools, machinery, factories and infrastructure used to produce other goods and services.' },
+        { head: 'Enterprise', icon: '💡', body: 'The ability to organise the other three factors, take risks and innovate. Without enterprise nothing gets made.' }
+      ],
+      causesLabel: 'Resources are scarce — the four factors of production',
+      causesEmoji: '🏗️',
       keyTerms: [
         { term: 'Scarcity', def: 'The condition where unlimited wants exceed the limited resources available to satisfy them.' },
         { term: 'Factors of production', def: 'Land (natural resources), Labour (human effort), Capital (man-made productive assets), Enterprise (risk-taking ability).' },
@@ -64,6 +72,8 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  label: 'Sunk costs do not count',                     sub: 'Past costs cannot be changed by today\'s decision, so they are never part of the opportunity cost — only the foregone alternatives count.' },
         { tone: 'blue',   label: 'Better alternatives = higher opportunity cost', sub: 'The more valuable the next best option, the higher the opportunity cost of the choice you made.' }
       ],
+      branchesLabel: 'It depends on the next best alternative',
+      branchesEmoji: '⚖️',
       keyTerms: [
         { term: 'Opportunity cost', def: 'The value of the next best alternative forgone as a result of making a choice.' },
         { term: 'Explicit cost',    def: 'Actual monetary payment for a resource (e.g. wage paid to a worker).' },
@@ -82,6 +92,8 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  label: '2. How to produce?',      sub: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
         { tone: 'blue',   label: '3. For whom to produce?', sub: 'Decide who gets the output. Distribution is shaped by income, prices, need, merit, and government allocation — never neutral.' }
       ],
+      branchesLabel: 'The three questions',
+      branchesEmoji: '❓',
       body: 'Scarcity forces every society to answer these three questions. They are deceptively simple — but the answers determine production, employment, and the distribution of wealth. Different economic systems answer them very differently, which is what the next section explores.',
       causes: [
         { head: 'Market economy',  icon: '🛒', body: 'Individuals and firms answer the three questions through choices made in markets, guided by prices and profit. Decentralised, fast-moving, prone to inequality and market failure.' },
@@ -102,12 +114,29 @@ window.ECONOS_TOPIC = {
       id: 'basic_econ_problem_4',
       template: 'cause',
       title: 'Economic Agents and Their Objectives',
+      lede: 'An economy is made up of decision-makers — households, firms, governments and workers — each with their own objectives.',
+      body: 'Standard economic models start by asking <em>who</em> is making the decision. Different agents pursue different objectives, which is why conflict and trade-off are so central to economics.',
       causes: [
-        { head: 'Consumers', body: 'Aim to maximise utility (satisfaction) subject to a budget constraint. Assumed to be rational: prefer more to less, weigh marginal costs and benefits.' },
-        { head: 'Firms', body: 'Assumed to aim for profit maximisation in standard theory. Produce goods and services, employ labour, pay taxes. Alternative objectives: revenue, growth, satisficing (covered in Theme 3).' },
-        { head: 'Government', body: 'Corrects market failures, redistributes income, provides public goods, and stabilises the macroeconomy. Acts in the public interest — though government failure is also possible.' },
-        { head: 'Workers', body: 'Supply labour to maximise wages/utility (including leisure). Face work-leisure trade-off. Covered fully in Theme 3 labour markets.' }
+        { head: 'Households',  icon: '🏠', body: 'Aim to maximise utility (satisfaction) within a budget. Consume goods and services and supply labour. Assumed to be rational: weigh marginal costs and benefits.' },
+        { head: 'Firms',       icon: '🏭', body: 'Produce goods and services to sell in markets. Standard theory assumes profit maximisation, but firms may also pursue revenue, growth or survival (covered in Theme 3).' },
+        { head: 'Government',  icon: '🏛️', body: 'Sets rules, corrects market failures, redistributes income, provides public goods and stabilises the macroeconomy. Acts in the public interest — though government failure is possible.' },
+        { head: 'Workers',     icon: '👤', body: 'Supply labour in return for wages. Face a work-leisure trade-off and care about wages, job security and satisfaction. Covered fully in Theme 3 labour markets.' }
       ],
+      causesLabel: 'Who are the economic agents?',
+      causesEmoji: '👥',
+      keyTerms: [
+        { term: 'Households', def: 'Maximise satisfaction / utility.' },
+        { term: 'Firms',      def: 'Profit, growth, survival, market share.' },
+        { term: 'Government', def: 'Growth, low inflation, low unemployment, equity.' },
+        { term: 'Workers',    def: 'Wages, job security, job satisfaction.' }
+      ],
+      branches: [
+        { tone: 'amber',  label: 'Lower prices vs higher profits',     sub: 'Consumers want lower prices; firms want higher profits. Every price tag is a battleground between the two.' },
+        { tone: 'rose',   label: 'Higher wages vs lower costs',        sub: 'Workers want higher wages; firms want to keep costs down. Wage bargaining and minimum-wage debates flow from this.' },
+        { tone: 'green',  label: 'Economic growth vs the environment', sub: 'Faster growth can increase pollution and resource use; sustainability may slow growth. Modern policy must trade them off.' }
+      ],
+      branchesLabel: 'Why objectives can conflict',
+      branchesEmoji: '⚔️',
       examEdge: 'The rational self-interest assumption is a simplification challenged by behavioural economics (Theme 1.7). Top essays acknowledge that real agents are not always rational — they use heuristics, are loss-averse, and act on incomplete information.',
       keyTakeaway: 'Economic decisions reflect objectives — and because objectives differ, conflict and trade-offs are common.'
     },
@@ -142,13 +171,27 @@ window.ECONOS_TOPIC = {
       id: 'basic_econ_problem_6',
       template: 'mechanisms',
       title: 'Rational Economic Decision-Making',
-      intro: 'Traditional economic theory assumes rational actors who maximise self-interest. This shapes all standard models.',
+      lede: 'In simple economic models, decision-makers are assumed to act rationally — weighing up costs and benefits to maximise their objective.',
+      intro: 'Rational means making decisions in a logical and consistent way to achieve the best possible outcome. The standard model walks through four steps.',
       steps: [
-        { label: 'Marginal analysis', text: 'Rational agents make decisions at the margin — they continue an activity as long as marginal benefit (MB) ≥ marginal cost (MC). Stop when MB = MC for maximum net benefit.' },
-        { label: 'Cost-benefit logic', text: 'Every economic decision involves weighing benefits against costs (including opportunity costs). The rational agent chooses the option with highest net benefit.' },
-        { label: 'Self-interest assumption', text: 'Traditional models assume agents act in their own interest. Adam Smith: "It is not from the benevolence of the butcher... that we expect our dinner, but from their regard to their own interest."' },
-        { label: 'Limitations', text: 'Behavioural economics shows agents use rules of thumb, are altruistic, loss-averse, and present-biased. The rational model is a useful simplification, not a complete description of human behaviour.' }
+        { label: 'Identify the objective',     text: 'Be clear about the goal you want to achieve — utility for a consumer, profit for a firm, social welfare for a government.' },
+        { label: 'Compare costs and benefits', text: 'List the costs (including opportunity costs) and benefits of each available option. Use marginal analysis — focus on the next unit of activity, not the total.' },
+        { label: 'Choose the best option',     text: 'Select the option that maximises net benefit — i.e. continue the activity as long as marginal benefit ≥ marginal cost. Stop where MB = MC.' },
+        { label: 'Review the outcome',         text: 'Check the result and learn from it. New information feeds into the next decision — rationality is iterative, not one-shot.' }
       ],
+      causes: [
+        { head: 'Consumer',   icon: '🛒', body: 'A consumer compares mobile phone plans and picks the cheapest option that gives the same data and minutes.' },
+        { head: 'Firm',       icon: '🏭', body: 'A firm compares the cost of hiring extra workers against buying a machine that can do the same job — and chooses the lower-cost option.' },
+        { head: 'Government', icon: '🏛️', body: 'A government evaluates competing policies and chooses the one with the greatest net benefit per pound spent.' }
+      ],
+      causesLabel: 'Examples',
+      causesEmoji: '💡',
+      branches: [
+        { tone: 'amber',  label: 'Limited information', sub: 'Decision-makers rarely have complete or perfect information about every option — they decide under uncertainty.' },
+        { tone: 'rose',   label: 'Bias and habit',      sub: 'Emotions, habits and cognitive biases (loss aversion, present bias, anchoring) lead to systematically suboptimal choices. Covered in Theme 1.7.' },
+        { tone: 'blue',   label: 'Time pressure',       sub: 'Decisions often need to be made quickly with limited time to evaluate every option — so people use rules of thumb (heuristics) instead.' }
+      ],
+      branchesLabel: 'Limits to perfect rationality',
       examEdge: 'MB = MC is the universal optimising condition in economics: firms maximise profit where MR = MC; consumers maximise utility where MU/P ratio is equalised; governments should intervene until MB of intervention = MC of intervention. Internalise this logic.',
       keyTakeaway: 'Rational decision-making is a useful assumption — but in real life, decisions are often less than perfectly rational.'
     },

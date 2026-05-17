@@ -219,7 +219,7 @@ window.ECONOS_TOPIC = {
       ],
       causesLabel: 'The four functions',
       causesEmoji: '💵',
-      flow: [
+      flowBottom: [
         { icon: '👥', title: 'People want things',    sub: 'Goods and services are demanded.',         tone: 'blue' },
         { icon: '💵', title: 'Money is accepted',     sub: 'Medium of exchange.',                     tone: 'blue' },
         { icon: '🏷️', title: 'Prices compared',       sub: 'Measure of value.',                       tone: 'blue' },
@@ -227,8 +227,8 @@ window.ECONOS_TOPIC = {
         { icon: '📅', title: 'Payments deferred',     sub: 'Deferred payment.',                       tone: 'blue' },
         { icon: '🔁', title: 'Smoother exchange',     sub: 'Trade is faster and more reliable.',     tone: 'blue' }
       ],
-      flowTitle: 'How these functions make exchange easier',
-      flowEmoji: '➡️',
+      flowBottomTitle: 'How these functions make exchange easier',
+      flowBottomEmoji: '➡️',
       examEdge: 'Inflation attacks two functions: store of value (money buys less) and deferred payment (debts repaid in devalued currency). Hyperinflation (Zimbabwe, Weimar Germany) causes economies to revert to barter — a powerful real-world illustration.'
     },
 

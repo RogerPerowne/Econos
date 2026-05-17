@@ -1110,7 +1110,7 @@
       ${stepNode(5, s5.tone, s5.icon, s5.title, s5.prompt, s5.formula, s5.reveal, s5.preview)}
       ${conclusionBlock}
       ${contextStrip}
-      ${renderExamEdge(examEdge)}
+      ${examEdge ? `<div style="margin-top:18px;">${renderExamEdge(examEdge)}</div>` : ''}
     `;
   }
 

@@ -460,7 +460,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'trade_spec',
-    name: 'Trade & Specialisation',
+    name: 'Specialisation & Trade',
     sub: 'Comparative advantage, gains from trade',
     color: '#7c3aed',
     available: { learn: true, link: false, land: false }
@@ -474,9 +474,16 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'protectionism',
-    name: 'Protectionism',
+    name: 'Restrictions on Free Trade',
     sub: 'Tariffs, quotas and arguments for and against',
     color: '#dc2626',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'balance_of_payments',
+    name: 'Balance of Payments',
+    sub: 'Current account, deficits, expenditure-switching vs reducing',
+    color: '#ef4444',
     available: { learn: true, link: false, land: false }
   },
   {
@@ -495,16 +502,86 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'poverty',
-    name: 'Poverty',
+    name: 'Absolute & Relative Poverty',
     sub: 'Absolute vs relative poverty and anti-poverty policies',
     color: '#9333ea',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'income_inequality',
-    name: 'Income & Wealth Inequality',
+    name: 'Inequality',
     sub: 'Gini coefficient, Lorenz curve and redistribution policies',
     color: '#be185d',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'measures_of_development',
+    name: 'Measures of Development',
+    sub: 'GDP per capita, HDI, MPI and other indicators',
+    color: '#16a34a',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'factors_growth_development',
+    name: 'Factors Influencing Growth & Development',
+    sub: 'Economic, institutional and external drivers',
+    color: '#15803d',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'strategies_growth_development',
+    name: 'Strategies Influencing Growth & Development',
+    sub: 'Market-based, interventionist, aid, debt relief',
+    color: '#84cc16',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'financial_markets',
+    name: 'Role of Financial Markets',
+    sub: 'Functions: savings, investment, payments, risk management',
+    color: '#f59e0b',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'financial_market_failure',
+    name: 'Market Failure in the Financial Sector',
+    sub: 'Asymmetric information, moral hazard, externalities, speculation',
+    color: '#d97706',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'central_banks',
+    name: 'Role of Central Banks',
+    sub: 'Monetary policy, lender of last resort, financial stability',
+    color: '#b45309',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'public_expenditure',
+    name: 'Public Expenditure',
+    sub: 'Capital vs current, transfer vs real, composition and trends',
+    color: '#0ea5e9',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'taxation',
+    name: 'Taxation',
+    sub: 'Direct vs indirect, progressivity, Laffer curve',
+    color: '#0284c7',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'public_finances',
+    name: 'Public Sector Finances',
+    sub: 'Deficits, debt sustainability, fiscal rules',
+    color: '#0369a1',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'macro_policies_global',
+    name: 'Macroeconomic Policies in a Global Context',
+    sub: 'Mundell-Fleming trilemma, spillovers, international coordination',
+    color: '#1d4ed8',
     available: { learn: true, link: false, land: false }
   }
 ];

@@ -10383,28 +10383,27 @@ window.ECONOS_ICONS = {
   `,
 
   demandLawCurve: `
-    <svg viewBox="0 0 980 360" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 1040 360" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- single white background; wrapper div in app.js provides the outer border -->
-      <rect width="980" height="360" fill="#FFFFFF"/>
+      <rect width="1040" height="360" fill="#FFFFFF"/>
 
       <!-- ===== LEFT: text content sits on shared white ===== -->
       <text x="40" y="50" font-size="24" font-weight="800" fill="#0F172A">What is demand?</text>
 
-      <text x="40" y="88"  font-size="16" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and</text>
-      <text x="40" y="112" font-size="16" fill="#334155"><tspan font-weight="700" fill="#059669">ability</tspan> of consumers to buy a</text>
-      <text x="40" y="136" font-size="16" fill="#334155">good or service at different</text>
-      <text x="40" y="160" font-size="16" fill="#334155">prices over a period of time.</text>
+      <text x="40" y="90"  font-size="16" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and <tspan font-weight="700" fill="#059669">ability</tspan></text>
+      <text x="40" y="114" font-size="16" fill="#334155">of consumers to buy a good or service</text>
+      <text x="40" y="138" font-size="16" fill="#334155">at different prices over a period of time.</text>
 
       <!-- green callout (light-tinted info box) -->
-      <rect x="32" y="186" width="360" height="124" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
-      <circle cx="62" cy="244" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
-      <text x="62" y="250" text-anchor="middle" font-size="14" font-weight="900" fill="#10B981">✓</text>
-      <text x="88" y="222" font-size="14" fill="#065F46">It shows how much of a good</text>
-      <text x="88" y="244" font-size="14" fill="#065F46">consumers will buy at each</text>
-      <text x="88" y="266" font-size="14" fill="#065F46">possible price.</text>
+      <rect x="32" y="166" width="450" height="130" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
+      <circle cx="62" cy="228" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
+      <text x="62" y="234" text-anchor="middle" font-size="14" font-weight="900" fill="#10B981">✓</text>
+      <text x="88" y="208" font-size="14" fill="#065F46">It shows how much of a good consumers will</text>
+      <text x="88" y="230" font-size="14" fill="#065F46">buy at each possible price — and helps firms,</text>
+      <text x="88" y="252" font-size="14" fill="#065F46">governments and economists predict behaviour.</text>
 
       <!-- ===== RIGHT: chart on shared white background ===== -->
-      <g transform="translate(460,20)">
+      <g transform="translate(560,20)">
         <!-- gridlines only to data points -->
         <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3">
           <line x1="50" y1="34"  x2="140" y2="34"/>
@@ -10462,7 +10461,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <!-- italic caption spanning the panel bottom -->
-      <text x="490" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity demanded increases — shown by a downward-sloping curve.</text>
+      <text x="520" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity demanded increases — shown by a downward-sloping curve.</text>
     </svg>
   `,
   demandScheduleCurve: `

@@ -180,13 +180,10 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   padding: var(--sp-6) 0;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: max(0px, calc((100vw - var(--app-max-w)) / 2));
-  width: var(--sidebar-w);
   height: 100vh;
   overflow-y: auto;
-  z-index: 100;
 }
 
 .sidebar__brand {

@@ -78,16 +78,23 @@ window.ECONOS_TOPIC = {
       id: 'supply_3',
       template: 'cause',
       title: 'Non-Price Determinants of Supply',
+      tip: { icon: '💡', tone: 'blue', text: 'Supply shifts when firms\' costs, productivity or business conditions change — even if the product\'s own price stays the same.' },
+      shiftDiagrams: true,
       causesStyle: 'tinted-flat',
       causesEmoji: '📋',
       causesLabel: 'What shifts the supply curve',
       causes: [
-        { icon: '💰', head: 'Costs of production', body: 'Input prices (wages, raw materials, energy) are the most important supply shifter. Higher costs → less profit at each price → supply decreases (shifts left). Lower costs → supply increases (shifts right).' },
-        { icon: '💻', head: 'Technology', body: 'Improved technology raises productivity — more output per unit of input → lower cost per unit → supply shifts right. Technological progress is the key long-run driver of expanding supply.' },
-        { icon: '🏭', head: 'Number of producers', body: 'More firms in the market → total market supply increases (shifts right). Fewer firms (after exits, consolidation) → supply decreases.' },
-        { icon: '🏛️', head: 'Government policy', body: 'Production subsidies lower effective costs → supply shifts right. Indirect taxes raise effective costs → supply shifts left. Regulation (e.g. environmental standards) adds compliance costs → supply falls.' },
-        { icon: '🌦️', head: 'Natural &amp; external factors', body: 'Weather, natural disasters, pandemics, geopolitical events affect supply of specific goods. Oil supply is affected by OPEC decisions; food supply by harvest quality; manufacturing by component availability.' }
+        { icon: '💰', head: 'Costs of production',       body: 'Higher input costs (wages, raw materials, energy) reduce profit at every price level — supply shifts left. Lower costs shift it right.',                                                    tone: 'green'  },
+        { icon: '⚙️', head: 'Productivity & technology', body: 'Better technology raises output per unit of input, cutting unit costs and shifting supply right. It\'s the main long-run driver of expanding supply.',                                        tone: 'blue'   },
+        { icon: '🏛️', head: 'Indirect taxes & subsidies',body: 'A new indirect tax raises effective costs → supply shifts left. A subsidy lowers effective costs → supply shifts right.',                                                                    tone: 'amber'  },
+        { icon: '🏭', head: 'Number of firms',            body: 'More firms in the market → total market supply rises (right shift). Fewer firms after exits or consolidation → supply decreases.',                                                           tone: 'purple' },
+        { icon: '🌦️', head: 'Weather & natural shocks',  body: 'Floods, droughts and natural disasters disrupt production, shifting supply left. Good conditions increase it — especially relevant for agricultural markets.',                               tone: 'rose'   },
+        { icon: '📋', head: 'Government regulation',      body: 'Environmental standards, health &amp; safety rules and planning restrictions add compliance costs, shifting supply left. Deregulation can shift it right.',                                  tone: 'slate'  }
       ],
+      howToThink: {
+        left:  { icon: '➡️', tone: 'green', head: 'Shifts supply right', body: 'Lower input costs · Better technology · Subsidies · More firms · Good weather · Deregulation' },
+        right: { icon: '⬅️', tone: 'rose',  head: 'Shifts supply left',  body: 'Higher input costs · Indirect taxes · Stricter regulation · Fewer firms · Bad weather · Supply shocks' }
+      },
       examEdge: 'The Ukraine-Russia war (2022) provides excellent exam material: Russian gas and Ukrainian wheat export restrictions caused simultaneous leftward shifts in European energy and food supply curves — illustrating supply shocks and their inflationary consequences.'
     },
     {

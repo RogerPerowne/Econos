@@ -26,23 +26,23 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'demand_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Demand: the big picture',
+      tip: 'Why do queues form for Taylor Swift tickets but shops slash prices on old stock? Demand helps explain how consumers respond to price — and why firms obsess over it.',
       diagramKey: 'demandLawCurve',
-      tip: 'Demand is not just "wanting" something — it requires both willingness AND ability to pay. A wish list without purchasing power is not demand.',
-      branches: [
-        { tone: 'green',  label: 'Law of demand',       sub: 'Ceteris paribus, price ↓ → quantity demanded ↑. Driven by the substitution effect (switching to alternatives) and the income effect (real purchasing power changes).' },
-        { tone: 'amber',  label: 'Movement vs shift',   sub: 'A change in the good\'s own price moves you along the curve. A change in any other determinant (income, tastes, related prices) shifts the whole curve.' },
-        { tone: 'blue',   label: 'Determinants',        sub: 'Income, tastes, prices of related goods (substitutes/complements), expectations, population. Each shifts demand left or right.' },
-        { tone: 'purple', label: 'Consumer surplus',    sub: 'The gap between the maximum a consumer would pay and the price they actually pay. The triangular welfare gain from trade.' }
+      flow: [
+        { icon: '⚖️', title: 'Law of demand',    sub: 'As price falls, quantity demanded usually rises. Consumers buy more when it\'s cheaper and less when it\'s more expensive.', tone: 'green'  },
+        { icon: '💳', title: 'Effective demand',  sub: 'Consumers must both want AND be able to pay. If incomes are too low or credit is unavailable, demand won\'t be realised.', tone: 'amber'  },
+        { icon: '📊', title: 'Demand matters',    sub: 'Firms, governments and economists use demand analysis to predict and influence behaviour — from pricing to policy.', tone: 'blue'   }
       ],
+      flowTitle: 'Three things to know about demand',
+      flowEmoji: '💡',
       keyTerms: [
         { term: 'Law of demand', def: 'Ceteris paribus: a fall in price leads to a rise in quantity demanded; price and quantity demanded move in opposite directions.' },
         { term: 'Substitution effect', def: 'Price rise makes a good relatively expensive vs alternatives → consumers switch away → quantity demanded falls.' },
         { term: 'Income effect', def: 'Price rise reduces real purchasing power → consumers can afford less of the good (and others).' }
       ],
-      examEdge: 'Giffen goods are an exception: for extremely inferior goods with no substitutes (historically: Irish potatoes during famine), a price rise may increase quantity demanded because the negative income effect is overwhelming. Extremely rare in practice — useful for evaluation.'
+      examEdge: 'Always state the ceteris paribus assumption when explaining the law of demand — other things stay the same. Giffen goods are the rare exception: a price rise increases quantity demanded because the income effect overwhelms the substitution effect. Mention this only for evaluation marks.'
     },
     {
       id: 'demand_2',
@@ -146,11 +146,16 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_7',
-      template: 'framing',
       title: 'The Demand Curve and Market Analysis',
+      tip: 'Diagram checklist: label both axes (P, Q), label the curve (D), mark key points (P*, Q*), show any shift as D₂ clearly. Methodical technique earns marks even when written analysis is incomplete.',
       diagramKey: 'demandScheduleCurve',
-      tip: 'Diagram checklist: label both axes (P, Q), label the curve (D or D₁), mark equilibrium (P*, Q*), show shifts clearly (D₂ rightward = increase). Methodical technique earns marks even when written analysis is incomplete.',
-      body: 'The demand schedule and the demand curve are two views of the same data — a table of prices and quantities, and the line that plots them. Every market analysis you do from here on builds on this single picture: read off a price to find the quantity demanded, read off a quantity to find the price consumers are willing to pay.',
+      flow: [
+        { icon: '📖', title: 'Read the curve',  sub: 'The curve slopes downward. There is an inverse relationship between price and quantity demanded.',            tone: 'green'  },
+        { icon: '🔧', title: 'Use the curve',   sub: 'Estimate the effects of price changes, calculate revenue and measure consumer surplus.',                      tone: 'amber'  },
+        { icon: '⚠️', title: 'Limitations',     sub: 'In real life, many other factors change simultaneously. The ceteris paribus assumption rarely holds perfectly.', tone: 'blue'   }
+      ],
+      flowTitle: 'How to use this diagram',
+      flowEmoji: '📈',
       keyTerms: [
         { term: 'Ceteris paribus', def: 'Latin for "all else equal" — the assumption that only one variable changes at a time when analysing its effect.' },
         { term: 'Effective demand', def: 'Demand backed by both willingness AND ability to pay — a wish list without purchasing power is not demand.' },

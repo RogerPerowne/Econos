@@ -10436,7 +10436,7 @@ window.ECONOS_ICONS = {
         </g>
 
         <text x="20" y="12" font-size="15" font-weight="700" fill="#0F172A">Price (£)</text>
-        <text x="430" y="298" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Quantity demanded</text>
+        <text x="430" y="298" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Quantity</text>
 
         <!-- STRAIGHT demand line: A(140,34) B(230,106) C(320,178), extended to axis edges -->
         <line x1="104" y1="5" x2="400" y2="242" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
@@ -10461,7 +10461,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <!-- italic caption spanning the panel bottom -->
-      <text x="520" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity demanded increases — shown by a downward-sloping curve.</text>
+      <text x="520" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity increases — shown by a downward-sloping demand curve.</text>
     </svg>
   `,
   demandScheduleCurve: `

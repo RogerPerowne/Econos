@@ -131,6 +131,7 @@
   --sidebar-w: 240px;
   --rightbar-w: 240px;
   --header-h: 64px;
+  --app-max-w: 1280px;
 }
 
 /* ============================================================
@@ -168,7 +169,7 @@ img, svg { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: var(--sidebar-w) 1fr;
   min-height: 100vh;
-  max-width: 1280px;
+  max-width: var(--app-max-w);
   margin: 0 auto;
 }
 
@@ -179,10 +180,13 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   padding: var(--sp-6) 0;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: max(0px, calc((100vw - var(--app-max-w)) / 2));
+  width: var(--sidebar-w);
   height: 100vh;
   overflow-y: auto;
+  z-index: 100;
 }
 
 .sidebar__brand {

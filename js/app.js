@@ -309,6 +309,29 @@
       content += `</div>`;
     }
 
+    // Key points — flat 3-column takeaway tiles with a coloured bottom border.
+    // Each point: { icon?, title, headline?, body?, tone? }. Used as a punchy
+    // "what to know" summary that complements (or replaces) the chunky `flow`.
+    if (c.keyPoints && c.keyPoints.length) {
+      const kpTones = ['green', 'amber', 'blue', 'purple', 'rose', 'slate'];
+      const n = c.keyPoints.length;
+      content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:14px;margin-bottom:26px;">`;
+      content += c.keyPoints.map((p, i) => {
+        const t = PATTERN_TONES[p.tone || kpTones[i % kpTones.length]];
+        return `
+          <div style="background:#fff;border:1px solid #E2E8F0;border-bottom:4px solid ${t.accent};border-radius:10px;padding:16px 18px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+              ${p.icon ? `<div style="font-size:20px;line-height:1;flex-shrink:0;">${p.icon}</div>` : ''}
+              <div style="font-size:15px;font-weight:800;color:${t.label};letter-spacing:0.01em;">${p.title}</div>
+            </div>
+            ${p.headline ? `<div style="font-size:14px;font-weight:800;color:#0F172A;line-height:1.5;margin-bottom:8px;">${p.headline}</div>` : ''}
+            ${p.body ? `<div style="font-size:13.5px;color:#475569;line-height:1.6;">${p.body}</div>` : ''}
+          </div>`;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Body text — styled as a rich explainer
     if (c.body) {
       content += `
@@ -2553,6 +2576,7 @@
       c.rows  !== undefined ||
       c.flow !== undefined ||
       c.flowBottom !== undefined ||
+      c.keyPoints !== undefined ||
       c.verdict !== undefined ||
       c.comparison !== undefined ||
       c.table !== undefined ||

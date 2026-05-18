@@ -126,6 +126,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_5',
       title: 'Joint Supply and Competing Supply',
+      tip: { icon: '💡', tone: 'blue', text: 'Some products are supplied together, while others compete for the same scarce resources. That means one supply decision can affect another market.' },
       conceptBoxes: [
         {
           tone: 'green',

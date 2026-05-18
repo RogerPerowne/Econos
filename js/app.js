@@ -378,36 +378,37 @@
       </div>`;
     }
 
-    // Concept boxes — full-width tinted panels, one per concept, each with an icon flow and bullets.
+    // Concept boxes — tinted panels side-by-side (2-col responsive grid), each with icon flows + bullets.
     // Data: [{ tone, head, sub?, flows: [{inputs:[{icon,label}], outputs:[{icon,label}], connector}], bullets:[] }]
     if (c.conceptBoxes && c.conceptBoxes.length) {
-      c.conceptBoxes.forEach(box => {
+      const boxesHtml = c.conceptBoxes.map(box => {
         const t = PATTERN_TONES[box.tone || 'blue'] || PATTERN_TONES.blue;
-        const iconCircle = (emoji) => `<div style="width:52px;height:52px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;box-shadow:0 1px 6px rgba(0,0,0,0.10);flex-shrink:0;">${emoji}</div>`;
+        const iconCircle = (emoji) => `<div style="width:44px;height:44px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 5px rgba(0,0,0,0.10);flex-shrink:0;">${emoji}</div>`;
         const iconBlock = (item) => `
-          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;">
             ${iconCircle(item.icon)}
-            <div style="font-size:11px;font-weight:700;color:${t.label};text-align:center;line-height:1.3;max-width:60px;">${item.label}</div>
+            <div style="font-size:10.5px;font-weight:700;color:${t.label};text-align:center;line-height:1.25;max-width:56px;">${item.label}</div>
           </div>`;
-        const connectorBadge = (text) => `<div style="font-size:12px;font-weight:800;color:${t.label};background:#fff;border-radius:99px;padding:3px 10px;border:1.5px solid ${t.border};white-space:nowrap;">${text}</div>`;
+        const connectorText = (text) => `<div style="font-size:12px;font-weight:800;color:${t.label};flex-shrink:0;padding:0 2px;">${text}</div>`;
         const flowsHtml = (box.flows || []).map(flow => `
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
             ${flow.inputs.map(iconBlock).join('')}
-            <div style="font-size:22px;color:${t.label};font-weight:700;flex-shrink:0;">→</div>
-            ${flow.outputs.map((item, i) => `${i > 0 ? connectorBadge(flow.connector) : ''}${iconBlock(item)}`).join('')}
+            <div style="font-size:18px;color:${t.label};font-weight:700;flex-shrink:0;">→</div>
+            ${flow.outputs.map((item, i) => `${i > 0 ? connectorText(flow.connector) : ''}${iconBlock(item)}`).join('')}
           </div>`).join('');
         const bulletsHtml = (box.bullets || []).map(b => `
-          <li style="display:flex;gap:8px;font-size:13.5px;color:#0B1426;line-height:1.65;margin-bottom:5px;">
+          <li style="display:flex;gap:8px;font-size:13px;color:#0B1426;line-height:1.6;margin-bottom:5px;">
             <span style="color:${t.label};flex-shrink:0;margin-top:1px;">•</span><span>${b}</span>
           </li>`).join('');
-        content += `
-          <div style="border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:22px 22px 18px;margin-bottom:14px;">
-            <div style="font-size:18px;font-weight:800;color:${t.label};margin-bottom:4px;">${box.head}</div>
-            ${box.sub ? `<div style="font-size:13.5px;color:${t.label};font-weight:600;opacity:0.85;margin-bottom:16px;">${box.sub}</div>` : ''}
+        return `
+          <div style="border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:22px 20px 18px;display:flex;flex-direction:column;">
+            <div style="text-align:center;font-size:18px;font-weight:800;color:${t.label};margin-bottom:4px;">${box.head}</div>
+            ${box.sub ? `<div style="text-align:center;font-size:13px;color:${t.label};font-weight:600;opacity:0.85;margin-bottom:16px;">${box.sub}</div>` : ''}
             ${flowsHtml}
-            <ul style="margin:10px 0 0;padding:0;list-style:none;">${bulletsHtml}</ul>
+            <ul style="margin:12px 0 0;padding:0;list-style:none;">${bulletsHtml}</ul>
           </div>`;
-      });
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-bottom:22px;">${boxesHtml}</div>`;
     }
 
     // Shift diagrams — two mini SVGs (increase / decrease) side by side.

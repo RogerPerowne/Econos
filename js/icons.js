@@ -10465,108 +10465,95 @@ window.ECONOS_ICONS = {
     </svg>
   `,
   demandScheduleCurve: `
-    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
-      <rect x="8" y="8" width="884" height="424" fill="none" stroke="#E2E8F0" stroke-width="1" rx="10"/>
+    <svg viewBox="0 0 1040 420" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="1040" height="420" fill="#FFFFFF"/>
 
       <!-- panel title -->
-      <text x="32" y="40" font-size="15" font-weight="800" fill="#0F172A">Demand schedule and curve</text>
+      <text x="40" y="40" font-size="22" font-weight="800" fill="#0F172A">Demand schedule and curve</text>
 
       <!-- ============ TABLE (left) ============ -->
-      <g transform="translate(32,60)">
-        <rect x="0" y="0" width="320" height="340" fill="#F8FAFC" stroke="#E2E8F0" rx="8"/>
-
+      <g transform="translate(32,56)">
+        <rect x="0" y="0" width="390" height="330" fill="#F8FAFC" stroke="#E2E8F0" rx="10"/>
         <!-- header -->
-        <rect x="0" y="0" width="320" height="44" fill="#ECFDF5" rx="8"/>
-        <rect x="0" y="36" width="320" height="8" fill="#ECFDF5"/>
-        <line x1="160" y1="0" x2="160" y2="340" stroke="#E2E8F0"/>
-        <line x1="0" y1="44" x2="320" y2="44" stroke="#10B981" stroke-width="1.5"/>
-        <text x="80"  y="28" font-size="12" font-weight="700" fill="#065F46" text-anchor="middle">Price (£)</text>
-        <text x="240" y="28" font-size="12" font-weight="700" fill="#065F46" text-anchor="middle">Quantity demanded</text>
-
-        <!-- rows — collinear schedule: P=14-0.2Q -->
-        <g font-size="13" fill="#0F172A" text-anchor="middle">
-          <text x="80"  y="90">12</text><text x="240" y="90">10</text>
-          <line x1="12" y1="106" x2="308" y2="106" stroke="#E2E8F0"/>
-          <text x="80"  y="138">10</text><text x="240" y="138">20</text>
-          <line x1="12" y1="154" x2="308" y2="154" stroke="#E2E8F0"/>
-          <text x="80"  y="186">8</text><text x="240" y="186">30</text>
-          <line x1="12" y1="202" x2="308" y2="202" stroke="#E2E8F0"/>
-          <text x="80"  y="234">6</text><text x="240" y="234">40</text>
-          <line x1="12" y1="250" x2="308" y2="250" stroke="#E2E8F0"/>
-          <text x="80"  y="282">4</text><text x="240" y="282">50</text>
+        <rect x="0" y="0" width="390" height="48" fill="#ECFDF5" rx="10"/>
+        <rect x="0" y="40" width="390" height="8" fill="#ECFDF5"/>
+        <line x1="195" y1="0" x2="195" y2="330" stroke="#E2E8F0"/>
+        <line x1="0" y1="48" x2="390" y2="48" stroke="#10B981" stroke-width="1.5"/>
+        <text x="97"  y="32" font-size="15" font-weight="700" fill="#065F46" text-anchor="middle">Price (£)</text>
+        <text x="292" y="32" font-size="15" font-weight="700" fill="#065F46" text-anchor="middle">Quantity</text>
+        <!-- rows: P=14-0.2Q — 5 rows in 282px → ~56px each -->
+        <g font-size="16" fill="#0F172A" text-anchor="middle">
+          <text x="97"  y="84">12</text><text x="292" y="84">10</text>
+          <line x1="14" y1="104" x2="376" y2="104" stroke="#E2E8F0"/>
+          <text x="97"  y="140">10</text><text x="292" y="140">20</text>
+          <line x1="14" y1="160" x2="376" y2="160" stroke="#E2E8F0"/>
+          <text x="97"  y="196">8</text><text x="292" y="196">30</text>
+          <line x1="14" y1="216" x2="376" y2="216" stroke="#E2E8F0"/>
+          <text x="97"  y="252">6</text><text x="292" y="252">40</text>
+          <line x1="14" y1="272" x2="376" y2="272" stroke="#E2E8F0"/>
+          <text x="97"  y="308">4</text><text x="292" y="308">50</text>
         </g>
       </g>
 
-      <!-- ============ CHART (right) — uniform Q axis: x = 50 + Q*8 ============ -->
-      <g transform="translate(390,60)">
-        <!-- horizontal gridlines at each P tick -->
-        <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3 3">
-          <line x1="50" y1="42"  x2="470" y2="42"/>
-          <line x1="50" y1="90"  x2="470" y2="90"/>
-          <line x1="50" y1="138" x2="470" y2="138"/>
-          <line x1="50" y1="186" x2="470" y2="186"/>
-          <line x1="50" y1="234" x2="470" y2="234"/>
+      <!-- ============ CHART (right) — Q axis: x=50+Q*8; P axis: y=42+(12-P)*24 ============ -->
+      <g transform="translate(460,46)">
+        <!-- horizontal gridlines at each P -->
+        <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3">
+          <line x1="50" y1="42"  x2="460" y2="42"/>
+          <line x1="50" y1="90"  x2="460" y2="90"/>
+          <line x1="50" y1="138" x2="460" y2="138"/>
+          <line x1="50" y1="186" x2="460" y2="186"/>
+          <line x1="50" y1="234" x2="460" y2="234"/>
         </g>
-        <!-- vertical gridlines at each Q tick: x = 50 + Q*8 -->
-        <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3 3">
-          <line x1="130" y1="20" x2="130" y2="282"/>
-          <line x1="210" y1="20" x2="210" y2="282"/>
-          <line x1="290" y1="20" x2="290" y2="282"/>
-          <line x1="370" y1="20" x2="370" y2="282"/>
-          <line x1="450" y1="20" x2="450" y2="282"/>
+        <!-- vertical gridlines at each Q -->
+        <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3">
+          <line x1="130" y1="14" x2="130" y2="262"/>
+          <line x1="210" y1="14" x2="210" y2="262"/>
+          <line x1="290" y1="14" x2="290" y2="262"/>
+          <line x1="370" y1="14" x2="370" y2="262"/>
+          <line x1="450" y1="14" x2="450" y2="262"/>
         </g>
-
         <!-- axes -->
-        <line x1="50" y1="282" x2="475" y2="282" stroke="#334155" stroke-width="2"/>
-        <polygon points="475,277 475,287 487,282" fill="#334155"/>
-        <line x1="50" y1="282" x2="50" y2="20" stroke="#334155" stroke-width="2"/>
-        <polygon points="45,20 55,20 50,8" fill="#334155"/>
-
+        <line x1="50" y1="262" x2="465" y2="262" stroke="#0F172A" stroke-width="2"/>
+        <polygon points="465,257 465,267 477,262" fill="#0F172A"/>
+        <line x1="50" y1="262" x2="50" y2="10" stroke="#0F172A" stroke-width="2"/>
+        <polygon points="45,10 55,10 50,0" fill="#0F172A"/>
         <!-- P axis tick labels -->
-        <g font-size="11" fill="#334155" text-anchor="end">
-          <text x="42" y="46">12</text>
-          <text x="42" y="94">10</text>
-          <text x="42" y="142">8</text>
-          <text x="42" y="190">6</text>
-          <text x="42" y="238">4</text>
-          <text x="42" y="286">0</text>
+        <g font-size="14" fill="#334155" text-anchor="end">
+          <text x="42" y="47">12</text>
+          <text x="42" y="95">10</text>
+          <text x="42" y="143">8</text>
+          <text x="42" y="191">6</text>
+          <text x="42" y="239">4</text>
         </g>
-        <!-- Q axis tick labels — uniform spacing -->
-        <g font-size="11" fill="#334155" text-anchor="middle">
-          <text x="50"  y="300">0</text>
-          <text x="130" y="300">10</text>
-          <text x="210" y="300">20</text>
-          <text x="290" y="300">30</text>
-          <text x="370" y="300">40</text>
-          <text x="450" y="300">50</text>
+        <!-- Q axis tick labels -->
+        <g font-size="14" fill="#334155" text-anchor="middle">
+          <text x="130" y="282">10</text>
+          <text x="210" y="282">20</text>
+          <text x="290" y="282">30</text>
+          <text x="370" y="282">40</text>
+          <text x="450" y="282">50</text>
         </g>
-
-        <text x="20" y="14" font-size="12" font-weight="700" fill="#0F172A">Price (£)</text>
-        <text x="490" y="316" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity demanded</text>
-
-        <!-- STRAIGHT demand line through all 5 collinear points
-             A(130,42) B(210,90) C(290,138) D(370,186) E(450,234)
-             Extended: from (90,18) to (490,258) -->
-        <line x1="90" y1="18" x2="490" y2="258" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
-
+        <text x="20" y="8" font-size="15" font-weight="700" fill="#0F172A">Price (£)</text>
+        <text x="460" y="308" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Quantity</text>
+        <!-- STRAIGHT demand line: slope 0.6px/px, from (90,18) through A–E to (475,249) -->
+        <line x1="90" y1="18" x2="475" y2="249" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
         <!-- data points -->
-        <circle cx="130" cy="42"  r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
-        <circle cx="210" cy="90"  r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
-        <circle cx="290" cy="138" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
-        <circle cx="370" cy="186" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
-        <circle cx="450" cy="234" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
-
-        <!-- point labels -->
-        <g font-size="12" font-weight="700" fill="#065F46">
-          <text x="142" y="38">A (12, 10)</text>
-          <text x="222" y="86">B (10, 20)</text>
-          <text x="302" y="134">C (8, 30)</text>
-          <text x="382" y="182">D (6, 40)</text>
-          <text x="390" y="252">E (4, 50)</text>
+        <circle cx="130" cy="42"  r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="210" cy="90"  r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="290" cy="138" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="370" cy="186" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="450" cy="234" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <!-- point labels: upper-right of each dot except E which is lower-left -->
+        <g font-size="14" font-weight="700" fill="#065F46">
+          <text x="142" y="36">A (12, 10)</text>
+          <text x="222" y="84">B (10, 20)</text>
+          <text x="302" y="130">C (8, 30)</text>
+          <text x="382" y="178">D (6, 40)</text>
+          <text x="352" y="256">E (4, 50)</text>
         </g>
-
-        <text x="496" y="250" font-size="14" font-weight="800" fill="#10B981">D</text>
+        <!-- demand curve label -->
+        <text x="480" y="244" font-size="18" font-weight="800" fill="#10B981">D</text>
       </g>
     </svg>
   `,

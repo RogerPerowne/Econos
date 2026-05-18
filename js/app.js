@@ -378,6 +378,46 @@
       </div>`;
     }
 
+    // Supply shift diagrams — two mini SVGs (right shift / left shift) side by side.
+    // Activated by `shiftDiagrams: true` on a card. Appears before the causes tile grid.
+    if (c.shiftDiagrams) {
+      const rightSvg = `<svg viewBox="0 0 175 135" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <line x1="22" y1="6" x2="22" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
+        <line x1="22" y1="122" x2="168" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="10" y="14" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">P</text>
+        <text x="163" y="134" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">Q</text>
+        <path d="M 28,110 Q 55,65 95,16" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="5,3"/>
+        <path d="M 68,110 Q 95,65 135,16" fill="none" stroke="#059669" stroke-width="2.2"/>
+        <text x="97" y="13" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">S₁</text>
+        <text x="137" y="13" font-size="10" fill="#059669" font-weight="bold" font-family="system-ui,sans-serif">S₂</text>
+        <line x1="90" y1="75" x2="120" y2="75" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <polygon points="120,72 127,75 120,78" fill="#059669"/>
+      </svg>`;
+      const leftSvg = `<svg viewBox="0 0 175 135" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <line x1="22" y1="6" x2="22" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
+        <line x1="22" y1="122" x2="168" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="10" y="14" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">P</text>
+        <text x="163" y="134" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">Q</text>
+        <path d="M 68,110 Q 95,65 135,16" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="5,3"/>
+        <path d="M 28,110 Q 55,65 95,16" fill="none" stroke="#DC2626" stroke-width="2.2"/>
+        <text x="137" y="13" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">S₁</text>
+        <text x="97" y="13" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui,sans-serif">S₂</text>
+        <line x1="120" y1="75" x2="90" y2="75" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <polygon points="90,72 83,75 90,78" fill="#DC2626"/>
+      </svg>`;
+      content += `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;">
+          <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:14px 14px 10px;">
+            ${rightSvg}
+            <div style="text-align:center;font-size:12px;font-weight:700;color:#059669;margin-top:6px;">Supply increases (right shift)</div>
+          </div>
+          <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:12px;padding:14px 14px 10px;">
+            ${leftSvg}
+            <div style="text-align:center;font-size:12px;font-weight:700;color:#DC2626;margin-top:6px;">Supply decreases (left shift)</div>
+          </div>
+        </div>`;
+    }
+
     // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] — coloured tiles.
     //   - Icon mode (any item has `icon`) activates richer card layout with photo-style header.
     //   - `causesStyle: 'tinted-flat'` swaps to flat tinted tiles (icon left, title right, body below).
@@ -431,6 +471,22 @@
         </div>`;
       }).join('');
       content += `</div>`;
+    }
+
+    // How to think about it — two tinted panels side by side (centered icon + heading + body).
+    // Data: { left: {icon, tone, head, body}, right: {icon, tone, head, body} }
+    if (c.howToThink) {
+      const renderHTTPanel = (side) => {
+        const t = PATTERN_TONES[side.tone || 'green'] || PATTERN_TONES.green;
+        return `
+          <div style="flex:1;min-width:0;border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:24px 20px 22px;text-align:center;">
+            <div style="width:56px;height:56px;border-radius:50%;background:#fff;margin:0 auto 14px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.08);">${side.icon}</div>
+            <div style="font-size:15px;font-weight:800;color:${t.label};margin-bottom:8px;">${side.head}</div>
+            <div style="font-size:13px;color:${t.label};line-height:1.65;font-weight:600;">${side.body}</div>
+          </div>`;
+      };
+      content += genSecLabel('💭', 'How to think about it');
+      content += `<div style="display:flex;gap:14px;margin-bottom:28px;">${renderHTTPanel(c.howToThink.left)}${renderHTTPanel(c.howToThink.right)}</div>`;
     }
 
     // Clean table — light borders, optional icon column, two text columns.

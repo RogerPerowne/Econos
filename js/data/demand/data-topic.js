@@ -91,6 +91,7 @@ window.ECONOS_TOPIC = {
       id: 'demand_3',
       template: 'cause',
       title: 'Non-Price Determinants of Demand',
+      diagramKey: 'demandShiftMini',
       tip: 'Remember PIRATE: Price of Related goods, Income, fashion/Advertising (Tastes), populaTion, Expectations. Any of these can shift demand left or right.',
       causes: [
         { icon: '💰', head: 'Income',                      body: 'For normal goods: higher income → more demand (rightward shift). For inferior goods (value-brand food, bus travel): higher income → less demand (leftward shift). Crucial for YED analysis.' },
@@ -131,6 +132,7 @@ window.ECONOS_TOPIC = {
       id: 'demand_5',
       template: 'framing',
       title: 'Derived Demand',
+      diagramKey: 'derivedDemandFlow',
       tip: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too — making recessions self-reinforcing.',
       flow: [
         { icon: '🛍️', title: 'Consumers demand cars',      sub: 'Rising incomes → demand for vehicles grows.',                tone: 'green'  },
@@ -152,6 +154,7 @@ window.ECONOS_TOPIC = {
       id: 'demand_6',
       template: 'diagnose',
       title: 'Demand in Real Markets',
+      diagramKey: 'realMarketsGrid',
       intro: 'Demand analysis applies to every market — but context-specific factors determine which determinants dominate.',
       rows: [
         { label: 'Market', colA: 'Housing', colB: 'Petrol' },

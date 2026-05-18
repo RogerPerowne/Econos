@@ -27,6 +27,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'consumer_producer_surplus_1',
       template: 'framing',
+      diagramKey: 'heroCPS',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'Consumer & producer surplus: the big picture',
       lede: 'The gains from trade do not just go to buyers or sellers — they are shared. Surplus measures exactly who gets what and how much.',

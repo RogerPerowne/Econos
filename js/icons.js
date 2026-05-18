@@ -3947,6 +3947,84 @@ window.ECONOS_ICONS = {
             text-anchor="middle" letter-spacing="2" opacity="0.75">MARKET CLEARS WHERE S MEETS D</text>
     </svg>
   `,
+  heroCPS: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-cps" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="bg-cps" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0FDF4"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="shadow-cps" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/>
+        </filter>
+      </defs>
+
+      <!-- background -->
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-cps)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-cps)" opacity="0.35"/>
+
+      <!-- chart card -->
+      <g filter="url(#shadow-cps)">
+        <rect x="30" y="50" width="220" height="265" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      </g>
+
+      <!-- caption top -->
+      <text x="140" y="40" font-size="9" font-weight="800" fill="#0F172A"
+            text-anchor="middle" letter-spacing="3" opacity="0.6">CONSUMER &amp; PRODUCER SURPLUS</text>
+
+      <!-- axes -->
+      <line x1="60" y1="80" x2="60" y2="283" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="283" x2="243" y2="283" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
+      <polygon points="247,283 237,279 237,287" fill="#0F172A"/>
+      <text x="52" y="78" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
+      <text x="251" y="297" font-size="11" font-weight="800" fill="#0F172A">Q</text>
+
+      <!-- Consumer surplus triangle — green -->
+      <polygon points="60,95 60,183 159,183" fill="#D1FAE5" opacity="0.85"/>
+
+      <!-- Producer surplus triangle — rose -->
+      <polygon points="60,265 60,183 159,183" fill="#FEE2E2" opacity="0.85"/>
+
+      <!-- Demand curve (teal, straight downward) -->
+      <line x1="60" y1="95" x2="240" y2="255" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="68" y="107" font-size="13" font-weight="800" fill="#059669">D</text>
+
+      <!-- Supply curve (rose, straight upward) -->
+      <line x1="60" y1="265" x2="240" y2="115" stroke="#E11D48" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="226" y="127" font-size="13" font-weight="800" fill="#E11D48">S</text>
+
+      <!-- P* dashed line -->
+      <line x1="60" y1="183" x2="159" y2="183" stroke="#0F172A" stroke-width="1.2"
+            stroke-dasharray="4 3" opacity="0.5"/>
+      <!-- Q* dashed line -->
+      <line x1="159" y1="183" x2="159" y2="283" stroke="#0F172A" stroke-width="1.2"
+            stroke-dasharray="4 3" opacity="0.5"/>
+
+      <!-- equilibrium dot -->
+      <g filter="url(#shadow-cps)">
+        <circle cx="159" cy="183" r="6" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+        <circle cx="159" cy="183" r="2.5" fill="#EC2D68"/>
+      </g>
+
+      <!-- P* and Q* labels -->
+      <text x="52" y="187" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P*</text>
+      <text x="159" y="300" font-size="11" font-weight="800" fill="#0F172A" text-anchor="middle">Q*</text>
+
+      <!-- CS label inside triangle -->
+      <text x="88" y="152" font-size="13" font-weight="900" fill="#059669" text-anchor="middle" opacity="0.9">CS</text>
+
+      <!-- PS label inside triangle -->
+      <text x="88" y="216" font-size="13" font-weight="900" fill="#E11D48" text-anchor="middle" opacity="0.9">PS</text>
+
+      <!-- bottom caption -->
+      <text x="140" y="338" font-size="9" font-weight="700" fill="#475569"
+            text-anchor="middle" letter-spacing="2" opacity="0.7">GAINS FROM TRADE = CS + PS</text>
+    </svg>
+  `,
   heroElasticity: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

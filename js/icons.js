@@ -5434,547 +5434,294 @@ window.ECONOS_ICONS = {
   heroLabour: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-labour" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-labour" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-labour" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="hl-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-labour)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-labour)" opacity="0.4"/>
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="305" rx="115" ry="10" fill="#FEF3C7" opacity="0.7"/>
 
-      <!-- soft floor highlight -->
-      <ellipse cx="140" cy="300" rx="110" ry="14" fill="#1FB574" opacity="0.08"/>
-
-      <!-- ground -->
-      <line x1="40" y1="300" x2="240" y2="300" stroke="#334155" stroke-width="1.2" opacity="0.4"/>
-
-      <!-- WAGE tag (floating, tilted) -->
-      <g transform="translate(170, 70) rotate(-6)" filter="url(#shadow-labour)">
-        <path d="M 0 0 L 70 0 L 86 18 L 70 36 L 0 36 Z"
-              fill="#1FB574" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
-        <circle cx="72" cy="18" r="3.2" fill="#FFFFFF" stroke="#047857" stroke-width="1.2"/>
-        <text x="35" y="24" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">WAGE £</text>
-        <line x1="70" y1="-2" x2="86" y2="-12" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
-      </g>
-      <!-- string down from tag -->
-      <path d="M 195 110 Q 180 160 160 200" stroke="#475569" stroke-width="1" fill="none"
-            stroke-linecap="round" opacity="0.45" stroke-dasharray="3 3"/>
-
-      <!-- Worker 1 (left, standing, blue) -->
-      <g filter="url(#shadow-labour)">
-        <circle cx="80" cy="180" r="14" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
-        <path d="M 80 195 Q 60 210 60 250 L 70 250 L 72 270 L 88 270 L 90 250 L 100 250 Q 100 210 80 195 Z"
-              fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round"/>
-        <!-- arm -->
-        <path d="M 62 218 L 50 240" stroke="#1D4ED8" stroke-width="3" stroke-linecap="round"/>
-        <!-- legs -->
-        <line x1="76" y1="270" x2="74" y2="298" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
-        <line x1="84" y1="270" x2="86" y2="298" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+      <!-- hard hat (centre top) -->
+      <g filter="url(#hl-shadow)">
+        <!-- brim -->
+        <ellipse cx="140" cy="160" rx="60" ry="10" fill="#F59E0B"/>
+        <!-- top dome -->
+        <path d="M 88 160 Q 88 100 140 96 Q 192 100 192 160 Z" fill="#FBBF24" stroke="#D97706" stroke-width="2" stroke-linejoin="round"/>
+        <!-- center ridge -->
+        <path d="M 140 96 L 140 160" stroke="#D97706" stroke-width="1.8"/>
+        <!-- side ridges -->
+        <path d="M 112 105 L 116 160" stroke="#D97706" stroke-width="1.4" opacity="0.6"/>
+        <path d="M 168 105 L 164 160" stroke="#D97706" stroke-width="1.4" opacity="0.6"/>
       </g>
 
-      <!-- Worker 2 (centre, taller, green — leader) -->
-      <g filter="url(#shadow-labour)">
-        <circle cx="140" cy="160" r="16" fill="#1FB574" stroke="#047857" stroke-width="1.6"/>
-        <path d="M 140 176 Q 116 192 116 240 L 128 240 L 130 270 L 150 270 L 152 240 L 164 240 Q 164 192 140 176 Z"
-              fill="#1FB574" stroke="#047857" stroke-width="1.6" stroke-linejoin="round"/>
-        <!-- briefcase in hand -->
-        <rect x="158" y="220" width="16" height="12" rx="1.5" fill="#92400E" stroke="#451A03" stroke-width="1"/>
-        <rect x="163" y="217" width="6" height="3" fill="none" stroke="#451A03" stroke-width="1"/>
-        <line x1="160" y1="218" x2="160" y2="222" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
-        <!-- legs -->
-        <line x1="134" y1="270" x2="132" y2="298" stroke="#065F46" stroke-width="4" stroke-linecap="round"/>
-        <line x1="146" y1="270" x2="148" y2="298" stroke="#065F46" stroke-width="4" stroke-linecap="round"/>
+      <!-- wrench (left, crossing under hat) -->
+      <g transform="translate(78, 230) rotate(-30)" filter="url(#hl-soft)">
+        <!-- handle -->
+        <rect x="0" y="0" width="80" height="14" rx="5" fill="#94A3B8" stroke="#475569" stroke-width="1.5"/>
+        <!-- head left -->
+        <path d="M -8 -8 L 18 -8 L 18 22 L -8 22 Q -16 7 -8 -8 Z" fill="#94A3B8" stroke="#475569" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- inner cut -->
+        <path d="M -2 0 L 12 0 L 12 14 L -2 14 Q -8 7 -2 0 Z" fill="#FFFFFF"/>
       </g>
 
-      <!-- Worker 3 (right, hand raised, blue-green) -->
-      <g filter="url(#shadow-labour)">
-        <circle cx="206" cy="186" r="13" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
-        <path d="M 206 200 Q 188 214 188 252 L 198 252 L 200 270 L 214 270 L 216 252 L 224 252 Q 224 214 206 200 Z"
-              fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round"/>
-        <!-- raised arm -->
-        <path d="M 222 218 L 232 188" stroke="#1D4ED8" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="232" cy="184" r="3" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.2"/>
-        <!-- legs -->
-        <line x1="202" y1="270" x2="200" y2="298" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
-        <line x1="212" y1="270" x2="214" y2="298" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+      <!-- hammer (right) -->
+      <g transform="translate(202, 220) rotate(30)" filter="url(#hl-soft)">
+        <!-- handle -->
+        <rect x="0" y="6" width="60" height="8" rx="3" fill="#92400E" stroke="#451A03" stroke-width="1.5"/>
+        <!-- head -->
+        <rect x="-12" y="-4" width="28" height="28" rx="3" fill="#475569" stroke="#0F172A" stroke-width="1.5"/>
+        <rect x="-2" y="2" width="14" height="14" rx="1" fill="#94A3B8"/>
       </g>
 
-      <!-- subtle motion arcs -->
-      <path d="M 50 250 Q 40 240 42 225" stroke="#1FB574" stroke-width="1.2" fill="none"
-            stroke-linecap="round" opacity="0.4"/>
-      <path d="M 236 184 Q 244 174 242 162" stroke="#1FB574" stroke-width="1.2" fill="none"
-            stroke-linecap="round" opacity="0.4"/>
-
-      <!-- label -->
-      <g transform="translate(140, 332)">
-        <rect x="-36" y="-12" width="72" height="22" rx="11" fill="#047857" filter="url(#shadow-labour)"/>
-        <text x="0" y="3" font-size="10" font-weight="800" fill="#FFFFFF"
-              text-anchor="middle" letter-spacing="3">LABOUR</text>
+      <!-- £ paycheck floating below -->
+      <g filter="url(#hl-soft)">
+        <rect x="100" y="270" width="80" height="30" rx="4" fill="#FFFFFF" stroke="#15803D" stroke-width="2"/>
+        <line x1="108" y1="278" x2="172" y2="278" stroke="#CBD5E1" stroke-width="1"/>
+        <text x="140" y="294" font-size="14" font-weight="800" fill="#15803D" text-anchor="middle">£</text>
       </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="312" rx="110" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroGlobe: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-globe" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-globe" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-globe" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
-        <radialGradient id="globe-sphere" cx="40%" cy="35%" r="65%">
-          <stop offset="0%" stop-color="#DBEAFE"/>
-          <stop offset="60%" stop-color="#3B82F6"/>
+        <filter id="hgl-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hgl-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <radialGradient id="hgl-sphere" cx="38%" cy="32%" r="70%">
+          <stop offset="0%" stop-color="#93C5FD"/>
           <stop offset="100%" stop-color="#1E40AF"/>
         </radialGradient>
-        <clipPath id="globe-clip">
-          <circle cx="140" cy="190" r="92"/>
-        </clipPath>
+        <clipPath id="hgl-clip"><circle cx="140" cy="195" r="90"/></clipPath>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-globe)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-globe)" opacity="0.4"/>
-
-      <!-- faint orbital ring -->
-      <ellipse cx="140" cy="190" rx="116" ry="34" fill="none" stroke="#3B82F6" stroke-width="1.2"
-               stroke-dasharray="2 5" opacity="0.35"/>
-
-      <!-- GLOBAL label -->
-      <text x="140" y="48" font-size="10" font-weight="800" fill="#1E40AF"
-            text-anchor="middle" letter-spacing="6" opacity="0.7">GLOBAL</text>
-      <line x1="92" y1="58" x2="188" y2="58" stroke="#1E40AF" stroke-width="0.8" opacity="0.35"/>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="305" rx="100" ry="10" fill="#DBEAFE" opacity="0.7"/>
 
       <!-- globe sphere -->
-      <g filter="url(#shadow-globe)">
-        <circle cx="140" cy="190" r="92" fill="url(#globe-sphere)"/>
+      <g filter="url(#hgl-shadow)">
+        <circle cx="140" cy="195" r="90" fill="url(#hgl-sphere)"/>
       </g>
 
-      <!-- latitude / longitude grid clipped to sphere -->
-      <g clip-path="url(#globe-clip)" stroke="#BFDBFE" fill="none" opacity="0.7">
-        <!-- equator -->
-        <line x1="48" y1="190" x2="232" y2="190" stroke-width="1.2"/>
-        <!-- latitudes -->
-        <ellipse cx="140" cy="190" rx="92" ry="28" stroke-width="0.9"/>
-        <ellipse cx="140" cy="190" rx="92" ry="56" stroke-width="0.9"/>
-        <ellipse cx="140" cy="190" rx="92" ry="82" stroke-width="0.9" opacity="0.6"/>
-        <!-- longitudes -->
-        <ellipse cx="140" cy="190" rx="22" ry="92" stroke-width="0.9"/>
-        <ellipse cx="140" cy="190" rx="54" ry="92" stroke-width="0.9"/>
-        <ellipse cx="140" cy="190" rx="82" ry="92" stroke-width="0.9" opacity="0.6"/>
-        <line x1="140" y1="98" x2="140" y2="282" stroke-width="1.2"/>
+      <!-- continent shapes -->
+      <g clip-path="url(#hgl-clip)" fill="#22C55E">
+        <path d="M 80 160 Q 100 152 122 158 Q 132 170 120 184 Q 104 188 90 178 Q 78 170 80 160 Z"/>
+        <path d="M 145 180 Q 170 174 190 188 Q 196 210 178 222 Q 152 224 144 206 Q 140 190 145 180 Z"/>
+        <path d="M 100 230 Q 118 226 130 238 Q 130 254 114 256 Q 100 252 100 230 Z"/>
       </g>
 
-      <!-- stylised continent blobs -->
-      <g clip-path="url(#globe-clip)" fill="#1E3A8A" opacity="0.55">
-        <path d="M 95 150 Q 110 142 128 148 Q 138 158 130 172 Q 116 178 102 170 Q 92 162 95 150 Z"/>
-        <path d="M 150 175 Q 172 168 188 182 Q 192 200 178 212 Q 158 216 148 200 Q 144 186 150 175 Z"/>
-        <path d="M 110 215 Q 128 210 138 222 Q 138 238 122 242 Q 108 238 110 215 Z"/>
+      <!-- latitude/longitude lines -->
+      <g clip-path="url(#hgl-clip)" stroke="#BFDBFE" fill="none" opacity="0.55" stroke-width="1.2">
+        <line x1="50" y1="195" x2="230" y2="195"/>
+        <ellipse cx="140" cy="195" rx="90" ry="28"/>
+        <ellipse cx="140" cy="195" rx="90" ry="55"/>
+        <ellipse cx="140" cy="195" rx="22" ry="90"/>
+        <ellipse cx="140" cy="195" rx="55" ry="90"/>
+        <line x1="140" y1="105" x2="140" y2="285"/>
       </g>
 
       <!-- highlight glint -->
-      <ellipse cx="112" cy="158" rx="22" ry="10" fill="#FFFFFF" opacity="0.18"/>
+      <ellipse cx="108" cy="160" rx="20" ry="10" fill="#FFFFFF" opacity="0.25"/>
 
-      <!-- trade route arcs (amber) -->
-      <g fill="none" stroke="#F5B800" stroke-width="2" stroke-linecap="round" filter="url(#shadow-globe)">
-        <path d="M 78 158 Q 140 90 210 142" opacity="0.95"/>
-        <path d="M 96 246 Q 170 280 222 218" opacity="0.9"/>
-        <path d="M 70 200 Q 140 170 214 196" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- trade route arcs (amber) above globe -->
+      <g fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" filter="url(#hgl-soft)">
+        <path d="M 60 130 Q 140 60 220 130" stroke-dasharray="4 4"/>
       </g>
 
-      <!-- trade nodes -->
-      <g>
-        <circle cx="78" cy="158" r="4.5" fill="#F5B800" stroke="#FFFFFF" stroke-width="1.5"/>
-        <circle cx="210" cy="142" r="4.5" fill="#F5B800" stroke="#FFFFFF" stroke-width="1.5"/>
-        <circle cx="96" cy="246" r="4" fill="#F5B800" stroke="#FFFFFF" stroke-width="1.5"/>
-        <circle cx="222" cy="218" r="4" fill="#F5B800" stroke="#FFFFFF" stroke-width="1.5"/>
-      </g>
-
-      <!-- caption -->
-      <text x="140" y="320" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="3" opacity="0.7">TRADE  ·  FLOWS  ·  MARKETS</text>
+      <!-- nodes -->
+      <circle cx="60" cy="130" r="6" fill="#FBBF24" stroke="#D97706" stroke-width="2"/>
+      <circle cx="220" cy="130" r="6" fill="#FBBF24" stroke="#D97706" stroke-width="2"/>
     </svg>
   `,
   heroExchangeRates: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-fx" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-fx" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-fx" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
-        <linearGradient id="fx-line" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#1FB574"/>
-          <stop offset="100%" stop-color="#3B82F6"/>
-        </linearGradient>
+        <filter id="hxr-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hxr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-fx)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-fx)" opacity="0.4"/>
-
-      <!-- RATE label -->
-      <text x="140" y="48" font-size="10" font-weight="800" fill="#0F172A"
-            text-anchor="middle" letter-spacing="6" opacity="0.7">RATE</text>
-      <line x1="108" y1="58" x2="172" y2="58" stroke="#0F172A" stroke-width="0.8" opacity="0.3"/>
-
-      <!-- subtle baseline grid -->
-      <g stroke="#94A3B8" stroke-width="0.6" opacity="0.25">
-        <line x1="40" y1="200" x2="240" y2="200" stroke-dasharray="2 4"/>
-        <line x1="40" y1="160" x2="240" y2="160" stroke-dasharray="2 4"/>
-        <line x1="40" y1="240" x2="240" y2="240" stroke-dasharray="2 4"/>
-      </g>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="300" rx="115" ry="10" fill="#DCFCE7" opacity="0.7"/>
 
       <!-- £ coin (left) -->
-      <g filter="url(#shadow-fx)">
-        <circle cx="68" cy="200" r="40" fill="#1FB574" stroke="#047857" stroke-width="2"/>
-        <circle cx="68" cy="200" r="33" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
-        <text x="68" y="216" font-size="44" font-weight="800" fill="#FFFFFF" text-anchor="middle"
-              font-family="Georgia, serif">£</text>
+      <g filter="url(#hxr-shadow)">
+        <ellipse cx="75" cy="210" rx="44" ry="44" fill="#047857"/>
+        <circle cx="72" cy="206" r="44" fill="#22C55E" stroke="#15803D" stroke-width="2"/>
+        <circle cx="72" cy="206" r="36" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+        <text x="72" y="222" font-size="42" font-weight="800" fill="#FFFFFF" text-anchor="middle" font-family="Georgia, serif">£</text>
       </g>
-      <text x="68" y="262" font-size="9" font-weight="800" fill="#047857"
-            text-anchor="middle" letter-spacing="3">GBP</text>
 
       <!-- $ coin (right) -->
-      <g filter="url(#shadow-fx)">
-        <circle cx="212" cy="200" r="40" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
-        <circle cx="212" cy="200" r="33" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
-        <text x="212" y="216" font-size="42" font-weight="800" fill="#FFFFFF" text-anchor="middle"
-              font-family="Georgia, serif">$</text>
-      </g>
-      <text x="212" y="262" font-size="9" font-weight="800" fill="#1E40AF"
-            text-anchor="middle" letter-spacing="3">USD</text>
-
-      <!-- curved exchange-rate line connecting the two -->
-      <path d="M 108 200 Q 140 100 172 200" fill="none" stroke="url(#fx-line)"
-            stroke-width="3" stroke-linecap="round"/>
-
-      <!-- small tick marks on curve -->
-      <g fill="#F5B800" stroke="#92400E" stroke-width="0.8">
-        <circle cx="124" cy="148" r="3"/>
-        <circle cx="140" cy="130" r="3.5"/>
-        <circle cx="156" cy="148" r="3"/>
+      <g filter="url(#hxr-shadow)">
+        <ellipse cx="211" cy="210" rx="44" ry="44" fill="#1E40AF"/>
+        <circle cx="208" cy="206" r="44" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+        <circle cx="208" cy="206" r="36" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+        <text x="208" y="222" font-size="40" font-weight="800" fill="#FFFFFF" text-anchor="middle" font-family="Georgia, serif">$</text>
       </g>
 
-      <!-- rate readout chip -->
-      <g transform="translate(110, 100)" filter="url(#shadow-fx)">
-        <rect x="0" y="0" width="60" height="22" rx="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.2"/>
-        <text x="30" y="15" font-size="11" font-weight="800" fill="#0F172A" text-anchor="middle">1.27</text>
+      <!-- bidirectional arrow between coins -->
+      <g filter="url(#hxr-soft)">
+        <g stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none">
+          <path d="M 125 180 L 158 180 M 152 174 L 158 180 L 152 186"/>
+          <path d="M 158 230 L 125 230 M 131 224 L 125 230 L 131 236"/>
+        </g>
       </g>
 
-      <!-- bidirectional arrow below -->
-      <g stroke="#0F172A" stroke-width="2" fill="#0F172A" stroke-linecap="round">
-        <line x1="118" y1="300" x2="162" y2="300"/>
-        <polygon points="118,300 126,295 126,305" stroke="none"/>
-        <polygon points="162,300 154,295 154,305" stroke="none"/>
-      </g>
-      <text x="140" y="324" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="2" opacity="0.7">BUY  ·  SELL</text>
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="305" rx="120" ry="5" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroInequality: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-ineq" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-ineq" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-ineq" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
-        <linearGradient id="tall-bar" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FCD34D"/>
-          <stop offset="100%" stop-color="#F5B800"/>
-        </linearGradient>
+        <filter id="hin-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hin-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-ineq)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-ineq)" opacity="0.4"/>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="305" rx="115" ry="10" fill="#FEF3C7" opacity="0.6"/>
 
-      <!-- INEQUALITY label -->
-      <text x="140" y="48" font-size="10" font-weight="800" fill="#92400E"
-            text-anchor="middle" letter-spacing="5" opacity="0.8">INEQUALITY</text>
-      <line x1="78" y1="58" x2="202" y2="58" stroke="#92400E" stroke-width="0.8" opacity="0.35"/>
-
-      <!-- baseline -->
-      <line x1="32" y1="304" x2="248" y2="304" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round"/>
-
-      <!-- y-axis tick marks -->
-      <g stroke="#94A3B8" stroke-width="0.6" opacity="0.4">
-        <line x1="32" y1="100" x2="248" y2="100" stroke-dasharray="2 4"/>
-        <line x1="32" y1="160" x2="248" y2="160" stroke-dasharray="2 4"/>
-        <line x1="32" y1="220" x2="248" y2="220" stroke-dasharray="2 4"/>
+      <!-- short stack of coins (left) -->
+      <g filter="url(#hin-soft)">
+        <ellipse cx="75" cy="295" rx="26" ry="8" fill="#D97706"/>
+        <ellipse cx="75" cy="285" rx="26" ry="8" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="75" y="290" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- Bar 1: short (poorest) -->
-      <g filter="url(#shadow-ineq)">
-        <rect x="50" y="268" width="34" height="36" rx="3" fill="#CBD5E1" stroke="#64748B" stroke-width="1.2"/>
-      </g>
-      <text x="67" y="320" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Q1</text>
-
-      <!-- Bar 2: shorter -->
-      <g filter="url(#shadow-ineq)">
-        <rect x="100" y="244" width="34" height="60" rx="3" fill="#94A3B8" stroke="#475569" stroke-width="1.2"/>
-      </g>
-      <text x="117" y="320" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Q2</text>
-
-      <!-- Bar 3: medium -->
-      <g filter="url(#shadow-ineq)">
-        <rect x="150" y="220" width="34" height="84" rx="3" fill="#64748B" stroke="#334155" stroke-width="1.2"/>
-      </g>
-      <text x="167" y="320" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Q3</text>
-
-      <!-- Bar 4: VERY TALL (top decile) -->
-      <g filter="url(#shadow-ineq)">
-        <rect x="200" y="98" width="34" height="206" rx="3" fill="url(#tall-bar)" stroke="#92400E" stroke-width="1.5"/>
-        <!-- subtle inner line -->
-        <line x1="200" y1="150" x2="234" y2="150" stroke="#FFFFFF" stroke-width="0.8" opacity="0.5"/>
-        <line x1="200" y1="220" x2="234" y2="220" stroke="#FFFFFF" stroke-width="0.8" opacity="0.5"/>
-      </g>
-      <text x="217" y="320" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">Q4</text>
-
-      <!-- star/crown on tall bar -->
-      <g transform="translate(217, 86)" filter="url(#shadow-ineq)">
-        <polygon points="0,-8 2.4,-2.4 8,-2.4 3.6,1.6 5.2,7.6 0,4 -5.2,7.6 -3.6,1.6 -8,-2.4 -2.4,-2.4"
-                 fill="#F5B800" stroke="#92400E" stroke-width="1"/>
+      <!-- medium stack (centre) -->
+      <g filter="url(#hin-soft)">
+        <ellipse cx="140" cy="295" rx="26" ry="8" fill="#D97706"/>
+        <ellipse cx="140" cy="285" rx="26" ry="8" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="140" cy="275" rx="26" ry="8" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="140" cy="265" rx="26" ry="8" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="140" y="270" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- dotted AVERAGE line crossing through -->
-      <line x1="32" y1="232" x2="248" y2="232" stroke="#EC2D68" stroke-width="1.6"
-            stroke-dasharray="5 4" opacity="0.85"/>
-      <g transform="translate(36, 222)">
-        <rect x="0" y="0" width="44" height="14" rx="7" fill="#EC2D68"/>
-        <text x="22" y="10" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle"
-              letter-spacing="1">AVG</text>
+      <!-- VERY tall stack (right) — towering -->
+      <g filter="url(#hin-shadow)">
+        <ellipse cx="205" cy="295" rx="30" ry="9" fill="#D97706"/>
+        <ellipse cx="205" cy="285" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="273" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="261" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="249" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="237" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="225" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="213" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="201" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="189" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="177" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="165" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="205" cy="153" rx="30" ry="9" fill="#D97706" stroke="#92400E" stroke-width="1.5"/>
+        <text x="205" y="159" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">£</text>
       </g>
 
-      <!-- caption -->
-      <text x="140" y="344" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="3" opacity="0.7">WEALTH  ·  DISTRIBUTION</text>
+      <!-- crown on top -->
+      <g filter="url(#hin-soft)">
+        <polygon points="187,140 200,128 205,138 210,128 215,138 222,128 222,144 188,144" fill="#FBBF24" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="205" cy="148" r="3" fill="#EF4444"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="310" rx="120" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroBehavioural: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-behav" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-behav" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-behav" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
-        <linearGradient id="brain-grad" x1="0" y1="0" x2="0" y2="1">
+        <filter id="hbh-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hbh-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <linearGradient id="hbh-brain" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#A78BFA"/>
           <stop offset="100%" stop-color="#7C3AED"/>
         </linearGradient>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-behav)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-behav)" opacity="0.4"/>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="305" rx="105" ry="9" fill="#F5F3FF" opacity="0.7"/>
 
-      <!-- BEHAVE label -->
-      <text x="140" y="48" font-size="10" font-weight="800" fill="#5B21B6"
-            text-anchor="middle" letter-spacing="6" opacity="0.75">BEHAVE</text>
-      <line x1="94" y1="58" x2="186" y2="58" stroke="#5B21B6" stroke-width="0.8" opacity="0.35"/>
-
-      <!-- stylised brain (top centre) -->
-      <g transform="translate(140, 140)" filter="url(#shadow-behav)">
-        <!-- left hemisphere -->
-        <path d="M -4 -38 C -28 -38 -42 -22 -42 -8 C -50 -2 -50 14 -40 20 C -42 32 -28 42 -10 40 L -4 40 Z"
-              fill="url(#brain-grad)" stroke="#5B21B6" stroke-width="1.6" stroke-linejoin="round"/>
-        <!-- right hemisphere -->
-        <path d="M 4 -38 C 28 -38 42 -22 42 -8 C 50 -2 50 14 40 20 C 42 32 28 42 10 40 L 4 40 Z"
-              fill="url(#brain-grad)" stroke="#5B21B6" stroke-width="1.6" stroke-linejoin="round"/>
-        <!-- central fissure -->
-        <line x1="0" y1="-36" x2="0" y2="40" stroke="#5B21B6" stroke-width="1.4" opacity="0.7"/>
-        <!-- gyri (squiggles) -->
-        <path d="M -32 -18 Q -22 -14 -18 -22 Q -12 -18 -8 -24" fill="none"
-              stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M -34 4 Q -22 8 -18 0 Q -10 6 -6 0" fill="none"
-              stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M -28 22 Q -18 28 -10 22" fill="none"
-              stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M 32 -18 Q 22 -14 18 -22 Q 12 -18 8 -24" fill="none"
-              stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M 34 4 Q 22 8 18 0 Q 10 6 6 0" fill="none"
-              stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M 28 22 Q 18 28 10 22" fill="none"
-              stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-      </g>
-
-      <!-- three arrows splitting downward -->
-      <g fill="none" stroke-width="2" stroke-linecap="round">
-        <path d="M 120 200 Q 90 230 76 256" stroke="#EC2D68" stroke-dasharray="4 3"/>
-        <path d="M 140 200 L 140 256" stroke="#F5B800"/>
-        <path d="M 160 200 Q 190 230 204 256" stroke="#3B82F6" stroke-dasharray="4 3"/>
-      </g>
-      <!-- arrowheads -->
-      <polygon points="76,262 70,254 82,254" fill="#EC2D68"/>
-      <polygon points="140,262 134,254 146,254" fill="#F5B800"/>
-      <polygon points="204,262 198,254 210,254" fill="#3B82F6"/>
-
-      <!-- Choice 1: heart (emotion) -->
-      <g transform="translate(76, 290)" filter="url(#shadow-behav)">
-        <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#EC2D68" stroke-width="1.8"/>
-        <path d="M 0 6 C -8 -2 -12 -6 -8 -10 C -4 -12 -1 -10 0 -7 C 1 -10 4 -12 8 -10 C 12 -6 8 -2 0 6 Z"
-              fill="#EC2D68"/>
-      </g>
-
-      <!-- Choice 2: lightning (impulse) -->
-      <g transform="translate(140, 290)" filter="url(#shadow-behav)">
-        <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#F5B800" stroke-width="1.8"/>
-        <polygon points="-3,-11 5,-2 -1,-2 3,11 -5,2 1,2" fill="#F5B800" stroke="#92400E" stroke-width="0.8"/>
-      </g>
-
-      <!-- Choice 3: gear (reason) -->
-      <g transform="translate(204, 290)" filter="url(#shadow-behav)">
-        <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.8"/>
-        <g fill="#3B82F6">
-          <circle cx="0" cy="0" r="4.5" fill="none" stroke="#3B82F6" stroke-width="1.8"/>
-          <rect x="-1.6" y="-12" width="3.2" height="4" rx="0.8"/>
-          <rect x="-1.6" y="8" width="3.2" height="4" rx="0.8"/>
-          <rect x="-12" y="-1.6" width="4" height="3.2" rx="0.8"/>
-          <rect x="8" y="-1.6" width="4" height="3.2" rx="0.8"/>
-          <rect x="-9.5" y="-9.5" width="3.2" height="4" rx="0.8" transform="rotate(-45)"/>
-          <rect x="6.3" y="-9.5" width="3.2" height="4" rx="0.8" transform="rotate(45)"/>
+      <!-- stylised brain (centre top) -->
+      <g transform="translate(140, 160)" filter="url(#hbh-shadow)">
+        <path d="M -4 -50 C -34 -50 -50 -32 -50 -14 C -58 -8 -58 12 -48 18 C -50 32 -34 44 -10 42 L -4 42 Z"
+              fill="url(#hbh-brain)" stroke="#5B21B6" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M 4 -50 C 34 -50 50 -32 50 -14 C 58 -8 58 12 48 18 C 50 32 34 44 10 42 L 4 42 Z"
+              fill="url(#hbh-brain)" stroke="#5B21B6" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="0" y1="-48" x2="0" y2="42" stroke="#5B21B6" stroke-width="1.5" opacity="0.7"/>
+        <!-- gyri squiggles -->
+        <g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
+          <path d="M -38 -28 Q -26 -22 -22 -32"/>
+          <path d="M -40 -4 Q -26 0 -22 -8"/>
+          <path d="M -36 18 Q -22 24 -16 18"/>
+          <path d="M 38 -28 Q 26 -22 22 -32"/>
+          <path d="M 40 -4 Q 26 0 22 -8"/>
+          <path d="M 36 18 Q 22 24 16 18"/>
         </g>
       </g>
 
-      <!-- caption -->
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#5B21B6"
-            text-anchor="middle" letter-spacing="3" opacity="0.7">CHOICE  ·  BIAS  ·  NUDGE</text>
+      <!-- thought bubbles emerging -->
+      <g filter="url(#hbh-soft)">
+        <!-- heart bubble (left, emotion) -->
+        <circle cx="65" cy="240" r="20" fill="#FFFFFF" stroke="#EC4899" stroke-width="2"/>
+        <path d="M 65 247 C 56 240 52 234 58 230 C 62 228 64 230 65 233 C 66 230 68 228 72 230 C 78 234 74 240 65 247 Z" fill="#EC4899"/>
+      </g>
+      <g filter="url(#hbh-soft)">
+        <!-- gear bubble (right, logic) -->
+        <circle cx="215" cy="240" r="20" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+        <circle cx="215" cy="240" r="5" fill="none" stroke="#3B82F6" stroke-width="2"/>
+        <g fill="#3B82F6">
+          <rect x="213" y="225" width="4" height="5"/>
+          <rect x="213" y="250" width="4" height="5"/>
+          <rect x="200" y="238" width="5" height="4"/>
+          <rect x="225" y="238" width="5" height="4"/>
+        </g>
+      </g>
+      <g filter="url(#hbh-soft)">
+        <!-- £ bubble (centre, money decision) -->
+        <circle cx="140" cy="270" r="20" fill="#FFFFFF" stroke="#FBBF24" stroke-width="2"/>
+        <text x="140" y="278" font-size="18" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="310" rx="110" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroIntervention: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-policy" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-policy" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-policy" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
-        <linearGradient id="pan-grad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#60A5FA"/>
-          <stop offset="100%" stop-color="#3B82F6"/>
-        </linearGradient>
+        <filter id="hint-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hint-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-policy)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-policy) " opacity="0.4"/>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="305" rx="100" ry="9" fill="#FEF3C7" opacity="0.7"/>
 
-      <!-- POLICY label -->
-      <text x="140" y="44" font-size="10" font-weight="800" fill="#1E40AF"
-            text-anchor="middle" letter-spacing="6" opacity="0.75">POLICY</text>
-      <line x1="98" y1="54" x2="182" y2="54" stroke="#1E40AF" stroke-width="0.8" opacity="0.35"/>
-
-      <!-- Government building (small, top) -->
-      <g transform="translate(140, 90)" filter="url(#shadow-policy)">
-        <!-- pediment -->
-        <polygon points="-30,-2 30,-2 0,-22" fill="#F5B800" stroke="#92400E" stroke-width="1.4" stroke-linejoin="round"/>
-        <!-- entablature -->
-        <rect x="-32" y="-2" width="64" height="5" fill="#FCD34D" stroke="#92400E" stroke-width="1.2"/>
-        <!-- columns -->
-        <rect x="-26" y="3" width="5" height="22" fill="#FEF3C7" stroke="#92400E" stroke-width="1"/>
-        <rect x="-13" y="3" width="5" height="22" fill="#FEF3C7" stroke="#92400E" stroke-width="1"/>
-        <rect x="0" y="3" width="5" height="22" fill="#FEF3C7" stroke="#92400E" stroke-width="1"/>
-        <rect x="13" y="3" width="5" height="22" fill="#FEF3C7" stroke="#92400E" stroke-width="1"/>
-        <rect x="20" y="3" width="5" height="22" fill="#FEF3C7" stroke="#92400E" stroke-width="1"/>
-        <!-- base -->
-        <rect x="-34" y="25" width="68" height="5" fill="#F5B800" stroke="#92400E" stroke-width="1.2"/>
+      <!-- gavel handle (diagonal) -->
+      <g transform="translate(140, 200) rotate(-20)" filter="url(#hint-shadow)">
+        <!-- handle -->
+        <rect x="-90" y="-6" width="100" height="12" rx="4" fill="#92400E" stroke="#451A03" stroke-width="1.5"/>
+        <rect x="-50" y="-8" width="6" height="16" fill="#451A03"/>
+        <!-- gavel head -->
+        <rect x="10" y="-22" width="60" height="44" rx="6" fill="#A0522D" stroke="#451A03" stroke-width="2"/>
+        <rect x="14" y="-20" width="52" height="6" fill="#451A03" opacity="0.4"/>
+        <rect x="14" y="16" width="52" height="6" fill="#451A03" opacity="0.4"/>
+        <line x1="20" y1="-14" x2="20" y2="16" stroke="#451A03" stroke-width="1" opacity="0.5"/>
+        <line x1="40" y1="-14" x2="40" y2="16" stroke="#451A03" stroke-width="1" opacity="0.5"/>
+        <line x1="60" y1="-14" x2="60" y2="16" stroke="#451A03" stroke-width="1" opacity="0.5"/>
       </g>
 
-      <!-- connector from building to scale top -->
-      <line x1="140" y1="122" x2="140" y2="148" stroke="#92400E" stroke-width="1.2"
-            stroke-dasharray="2 3" opacity="0.5"/>
-
-      <!-- Scales -->
-      <!-- central post + base -->
-      <g filter="url(#shadow-policy)">
-        <rect x="136" y="148" width="8" height="120" rx="2" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.4"/>
-        <!-- finial -->
-        <circle cx="140" cy="148" r="6" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.4"/>
-        <!-- base -->
-        <path d="M 110 268 L 170 268 L 162 282 L 118 282 Z"
-              fill="#1E40AF" stroke="#1E3A8A" stroke-width="1.4" stroke-linejoin="round"/>
-        <ellipse cx="140" cy="282" rx="32" ry="4" fill="#1E3A8A"/>
+      <!-- sound block (the round base the gavel hits) -->
+      <g filter="url(#hint-shadow)">
+        <ellipse cx="140" cy="285" rx="60" ry="12" fill="#451A03"/>
+        <ellipse cx="140" cy="280" rx="60" ry="12" fill="#92400E" stroke="#451A03" stroke-width="1.5"/>
+        <ellipse cx="140" cy="278" rx="56" ry="10" fill="none" stroke="#451A03" stroke-width="1" opacity="0.5"/>
       </g>
 
-      <!-- beam (slightly tilted) -->
-      <g transform="rotate(-6 140 162)">
-        <rect x="62" y="158" width="156" height="6" rx="3" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.4"/>
-        <circle cx="140" cy="161" r="4" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.2"/>
+      <!-- impact lines (just struck) -->
+      <g stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+        <line x1="80"  y1="160" x2="68"  y2="148"/>
+        <line x1="100" y1="140" x2="96"  y2="124"/>
+        <line x1="200" y1="148" x2="212" y2="138"/>
       </g>
-
-      <!-- chains -->
-      <g stroke="#1E40AF" stroke-width="1.2" fill="none" opacity="0.85">
-        <line x1="74" y1="168" x2="74" y2="202"/>
-        <line x1="206" y1="152" x2="206" y2="186"/>
-      </g>
-
-      <!-- Left pan (lower) -->
-      <g filter="url(#shadow-policy)">
-        <path d="M 50 202 Q 74 224 98 202 Q 90 218 74 220 Q 58 218 50 202 Z"
-              fill="url(#pan-grad)" stroke="#1E40AF" stroke-width="1.4" stroke-linejoin="round"/>
-        <ellipse cx="74" cy="202" rx="24" ry="4" fill="#1E40AF" opacity="0.4"/>
-      </g>
-      <!-- weight on left pan -->
-      <g transform="translate(74, 192)" filter="url(#shadow-policy)">
-        <rect x="-9" y="-8" width="18" height="12" rx="2" fill="#F5B800" stroke="#92400E" stroke-width="1.2"/>
-        <rect x="-5" y="-12" width="10" height="4" rx="1" fill="#F5B800" stroke="#92400E" stroke-width="1.2"/>
-      </g>
-
-      <!-- Right pan (higher) -->
-      <g filter="url(#shadow-policy)">
-        <path d="M 182 186 Q 206 208 230 186 Q 222 202 206 204 Q 190 202 182 186 Z"
-              fill="url(#pan-grad)" stroke="#1E40AF" stroke-width="1.4" stroke-linejoin="round"/>
-        <ellipse cx="206" cy="186" rx="24" ry="4" fill="#1E40AF" opacity="0.4"/>
-      </g>
-      <!-- coin stack on right pan -->
-      <g transform="translate(206, 178)" filter="url(#shadow-policy)">
-        <ellipse cx="0" cy="0" rx="10" ry="3" fill="#F5B800" stroke="#92400E" stroke-width="1"/>
-        <ellipse cx="0" cy="-4" rx="10" ry="3" fill="#FCD34D" stroke="#92400E" stroke-width="1"/>
-        <ellipse cx="0" cy="-8" rx="10" ry="3" fill="#F5B800" stroke="#92400E" stroke-width="1"/>
-      </g>
-
-      <!-- side labels -->
-      <text x="74" y="244" font-size="8" font-weight="800" fill="#1E40AF"
-            text-anchor="middle" letter-spacing="2" opacity="0.8">EQUITY</text>
-      <text x="206" y="228" font-size="8" font-weight="800" fill="#1E40AF"
-            text-anchor="middle" letter-spacing="2" opacity="0.8">EFFICIENCY</text>
-
-      <!-- caption -->
-      <text x="140" y="324" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="3" opacity="0.7">TRADE  ·  OFFS</text>
     </svg>
   `,
 

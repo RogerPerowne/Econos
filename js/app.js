@@ -2475,7 +2475,8 @@
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
         }).join('');
-        return `<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:24px 0 28px;">${tiles}</div>`;
+        const label = `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">📋 <span>Movement vs shift at a glance</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
+        return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 28px;">${tiles}</div>`;
       })() : ''}
 
       ${renderExamEdge(c.examEdge)}

@@ -10538,4 +10538,250 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  demandShiftMini: `
+    <svg viewBox="0 0 900 320" width="900" height="320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="320" fill="#F8FAFC" rx="12"/>
+
+      <!-- LEFT: rightward shift D1 → D2 -->
+      <g transform="translate(40,30)">
+        <text x="200" y="0" text-anchor="middle" font-size="13" font-weight="800" fill="#0F172A">Rightward shift: demand rises</text>
+
+        <!-- axes -->
+        <line x1="50" y1="220" x2="370" y2="220" stroke="#334155" stroke-width="2"/>
+        <polygon points="370,215 370,225 380,220" fill="#334155"/>
+        <line x1="50" y1="30" x2="50" y2="220" stroke="#334155" stroke-width="2"/>
+        <polygon points="45,30 55,30 50,20" fill="#334155"/>
+
+        <text x="22" y="34" font-size="11" font-weight="700" fill="#0F172A">P</text>
+        <text x="378" y="240" font-size="11" font-weight="700" fill="#0F172A" text-anchor="end">Q</text>
+
+        <!-- D1 -->
+        <line x1="80" y1="50"  x2="280" y2="210" stroke="#94A3B8" stroke-width="2.5"/>
+        <text x="266" y="220" font-size="12" font-weight="800" fill="#64748B">D₁</text>
+
+        <!-- D2 (rightward) -->
+        <line x1="160" y1="50" x2="360" y2="210" stroke="#10B981" stroke-width="2.5"/>
+        <text x="350" y="220" font-size="12" font-weight="800" fill="#10B981">D₂</text>
+
+        <!-- shift arrows -->
+        <line x1="180" y1="120" x2="240" y2="120" stroke="#10B981" stroke-width="2" marker-end="url(#arr-green-mini)"/>
+        <line x1="180" y1="170" x2="240" y2="170" stroke="#10B981" stroke-width="2" marker-end="url(#arr-green-mini)"/>
+
+        <!-- horizontal price reference -->
+        <line x1="50" y1="145" x2="320" y2="145" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="46" y="149" font-size="10" fill="#64748B" text-anchor="end">P</text>
+        <circle cx="180" cy="145" r="4" fill="#94A3B8"/>
+        <circle cx="240" cy="145" r="4" fill="#10B981"/>
+        <text x="180" y="262" font-size="10" fill="#64748B" text-anchor="middle">Q₁</text>
+        <text x="240" y="262" font-size="10" fill="#10B981" text-anchor="middle">Q₂</text>
+        <line x1="180" y1="225" x2="180" y2="250" stroke="#94A3B8" stroke-dasharray="2 2"/>
+        <line x1="240" y1="225" x2="240" y2="250" stroke="#10B981" stroke-dasharray="2 2"/>
+      </g>
+
+      <!-- RIGHT: leftward shift D1 → D0 -->
+      <g transform="translate(480,30)">
+        <text x="200" y="0" text-anchor="middle" font-size="13" font-weight="800" fill="#0F172A">Leftward shift: demand falls</text>
+
+        <line x1="50" y1="220" x2="370" y2="220" stroke="#334155" stroke-width="2"/>
+        <polygon points="370,215 370,225 380,220" fill="#334155"/>
+        <line x1="50" y1="30" x2="50" y2="220" stroke="#334155" stroke-width="2"/>
+        <polygon points="45,30 55,30 50,20" fill="#334155"/>
+
+        <text x="22" y="34" font-size="11" font-weight="700" fill="#0F172A">P</text>
+        <text x="378" y="240" font-size="11" font-weight="700" fill="#0F172A" text-anchor="end">Q</text>
+
+        <!-- D1 -->
+        <line x1="160" y1="50" x2="360" y2="210" stroke="#94A3B8" stroke-width="2.5"/>
+        <text x="350" y="220" font-size="12" font-weight="800" fill="#64748B">D₁</text>
+
+        <!-- D0 (leftward) -->
+        <line x1="80" y1="50"  x2="280" y2="210" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="266" y="220" font-size="12" font-weight="800" fill="#DC2626">D₀</text>
+
+        <line x1="240" y1="120" x2="180" y2="120" stroke="#DC2626" stroke-width="2" marker-end="url(#arr-red-mini)"/>
+        <line x1="240" y1="170" x2="180" y2="170" stroke="#DC2626" stroke-width="2" marker-end="url(#arr-red-mini)"/>
+
+        <line x1="50" y1="145" x2="320" y2="145" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="46" y="149" font-size="10" fill="#64748B" text-anchor="end">P</text>
+        <circle cx="240" cy="145" r="4" fill="#94A3B8"/>
+        <circle cx="180" cy="145" r="4" fill="#DC2626"/>
+        <text x="240" y="262" font-size="10" fill="#64748B" text-anchor="middle">Q₁</text>
+        <text x="180" y="262" font-size="10" fill="#DC2626" text-anchor="middle">Q₀</text>
+        <line x1="240" y1="225" x2="240" y2="250" stroke="#94A3B8" stroke-dasharray="2 2"/>
+        <line x1="180" y1="225" x2="180" y2="250" stroke="#DC2626" stroke-dasharray="2 2"/>
+      </g>
+
+      <defs>
+        <marker id="arr-green-mini" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="arr-red-mini" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+        </marker>
+      </defs>
+    </svg>
+  `,
+
+  derivedDemandFlow: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <text x="450" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Final demand pulls demand for inputs</text>
+
+      <!-- 3-step top chain -->
+      <g transform="translate(40,60)">
+        <!-- Step 1: Consumers -->
+        <rect x="0" y="0" width="240" height="110" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5" rx="10"/>
+        <text x="120" y="34" text-anchor="middle" font-size="26">🛍️</text>
+        <text x="120" y="62" text-anchor="middle" font-size="13" font-weight="800" fill="#065F46">Consumers buy cars</text>
+        <text x="120" y="86" text-anchor="middle" font-size="11" fill="#065F46">Final demand rises</text>
+
+        <!-- arrow -->
+        <line x1="246" y1="55" x2="286" y2="55" stroke="#10B981" stroke-width="3" marker-end="url(#arr-flow-g)"/>
+
+        <!-- Step 2: Firms -->
+        <rect x="290" y="0" width="240" height="110" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5" rx="10"/>
+        <text x="410" y="34" text-anchor="middle" font-size="26">🏭</text>
+        <text x="410" y="62" text-anchor="middle" font-size="13" font-weight="800" fill="#1E3A8A">Car firms expand</text>
+        <text x="410" y="86" text-anchor="middle" font-size="11" fill="#1E3A8A">Planned output rises</text>
+
+        <line x1="536" y1="55" x2="576" y2="55" stroke="#2563EB" stroke-width="3" marker-end="url(#arr-flow-b)"/>
+
+        <!-- Step 3: Inputs -->
+        <rect x="580" y="0" width="240" height="110" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" rx="10"/>
+        <text x="700" y="34" text-anchor="middle" font-size="26">⚙️</text>
+        <text x="700" y="62" text-anchor="middle" font-size="13" font-weight="800" fill="#92400E">Demand for inputs rises</text>
+        <text x="700" y="86" text-anchor="middle" font-size="11" fill="#92400E">Derived demand</text>
+      </g>
+
+      <!-- 3 case cards bottom -->
+      <text x="450" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">Three derived markets pulled by the same final demand</text>
+
+      <g transform="translate(40,230)">
+        <!-- Labour -->
+        <rect x="0" y="0" width="260" height="170" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="20" y="36" font-size="22">👷</text>
+        <text x="58" y="38" font-size="13" font-weight="800" fill="#0F172A">Labour</text>
+        <text x="20" y="68"  font-size="11" fill="#334155">Assembly-line workers,</text>
+        <text x="20" y="84"  font-size="11" fill="#334155">engineers, technicians.</text>
+        <text x="20" y="112" font-size="11" font-weight="700" fill="#065F46">↑ Hiring, ↑ wages</text>
+        <text x="20" y="132" font-size="10" fill="#64748B" font-style="italic">Recession reverses this — </text>
+        <text x="20" y="148" font-size="10" fill="#64748B" font-style="italic">unemployment rises.</text>
+
+        <!-- Raw materials -->
+        <rect x="280" y="0" width="260" height="170" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="300" y="36" font-size="22">🪨</text>
+        <text x="338" y="38" font-size="13" font-weight="800" fill="#0F172A">Raw materials</text>
+        <text x="300" y="68"  font-size="11" fill="#334155">Steel, aluminium, rubber,</text>
+        <text x="300" y="84"  font-size="11" fill="#334155">glass, plastics.</text>
+        <text x="300" y="112" font-size="11" font-weight="700" fill="#1E3A8A">↑ Demand, ↑ prices</text>
+        <text x="300" y="132" font-size="10" fill="#64748B" font-style="italic">Commodity markets are</text>
+        <text x="300" y="148" font-size="10" fill="#64748B" font-style="italic">highly cyclical.</text>
+
+        <!-- Components -->
+        <rect x="560" y="0" width="260" height="170" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="580" y="36" font-size="22">🔩</text>
+        <text x="618" y="38" font-size="13" font-weight="800" fill="#0F172A">Components</text>
+        <text x="580" y="68"  font-size="11" fill="#334155">Batteries, semiconductors,</text>
+        <text x="580" y="84"  font-size="11" fill="#334155">tyres, electronics.</text>
+        <text x="580" y="112" font-size="11" font-weight="700" fill="#92400E">↑ Supply chain pressure</text>
+        <text x="580" y="132" font-size="10" fill="#64748B" font-style="italic">Bottlenecks ripple through</text>
+        <text x="580" y="148" font-size="10" fill="#64748B" font-style="italic">global production.</text>
+      </g>
+
+      <defs>
+        <marker id="arr-flow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="arr-flow-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+      </defs>
+    </svg>
+  `,
+
+  realMarketsGrid: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <text x="32" y="34" font-size="15" font-weight="800" fill="#0F172A">Demand looks different in every market</text>
+
+      <!-- 2x2 grid of examples (left side) -->
+      <g transform="translate(32,56)">
+        <!-- Taylor Swift -->
+        <rect x="0" y="0" width="280" height="160" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="20" y="36" font-size="22">🎤</text>
+        <text x="58" y="38" font-size="13" font-weight="800" fill="#0F172A">Taylor Swift tickets</text>
+        <text x="20" y="70" font-size="11" fill="#334155">High willingness to pay,</text>
+        <text x="20" y="86" font-size="11" fill="#334155">limited supply, loyal fans.</text>
+        <text x="20" y="116" font-size="11" font-weight="700" fill="#7C3AED">Very strong, very inelastic</text>
+        <text x="20" y="138" font-size="10" fill="#64748B" font-style="italic">Price hikes barely dent demand.</text>
+
+        <!-- Petrol -->
+        <rect x="300" y="0" width="280" height="160" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="320" y="36" font-size="22">⛽</text>
+        <text x="358" y="38" font-size="13" font-weight="800" fill="#0F172A">Petrol</text>
+        <text x="320" y="70" font-size="11" fill="#334155">Needed for commuting,</text>
+        <text x="320" y="86" font-size="11" fill="#334155">few short-run substitutes.</text>
+        <text x="320" y="116" font-size="11" font-weight="700" fill="#1E3A8A">Inelastic in short run</text>
+        <text x="320" y="138" font-size="10" fill="#64748B" font-style="italic">More elastic over years (EVs).</text>
+
+        <!-- Budget supermarkets -->
+        <rect x="0" y="180" width="280" height="160" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="20" y="216" font-size="22">🛒</text>
+        <text x="58" y="218" font-size="13" font-weight="800" fill="#0F172A">Budget supermarkets</text>
+        <text x="20" y="250" font-size="11" fill="#334155">Inferior goods — demand</text>
+        <text x="20" y="266" font-size="11" fill="#334155">rises when incomes fall.</text>
+        <text x="20" y="296" font-size="11" font-weight="700" fill="#065F46">Negative YED</text>
+        <text x="20" y="318" font-size="10" fill="#64748B" font-style="italic">Aldi/Lidl thrive in downturns.</text>
+
+        <!-- Streaming -->
+        <rect x="300" y="180" width="280" height="160" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
+        <text x="320" y="216" font-size="22">📺</text>
+        <text x="358" y="218" font-size="13" font-weight="800" fill="#0F172A">Streaming subscriptions</text>
+        <text x="320" y="250" font-size="11" fill="#334155">Netflix, Disney+, Prime —</text>
+        <text x="320" y="266" font-size="11" fill="#334155">close substitutes.</text>
+        <text x="320" y="296" font-size="11" font-weight="700" fill="#92400E">Highly elastic demand</text>
+        <text x="320" y="318" font-size="10" fill="#64748B" font-style="italic">Easy to switch on price rise.</text>
+      </g>
+
+      <!-- Side panel: real-time shifts -->
+      <g transform="translate(620,56)">
+        <rect x="0" y="0" width="248" height="340" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="1.5" rx="10"/>
+        <text x="124" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="#5B21B6">Demand can shift in real time</text>
+
+        <!-- Heatwave -->
+        <text x="40" y="92" font-size="32">☀️</text>
+        <text x="100" y="78" font-size="11" font-weight="700" fill="#0F172A">Heatwave</text>
+        <line x1="100" y1="86" x2="180" y2="86" stroke="#10B981" stroke-width="2" marker-end="url(#arr-shift-g)"/>
+        <text x="100" y="106" font-size="10" fill="#475569">Ice cream demand →</text>
+        <text x="100" y="122" font-size="11" font-weight="800" fill="#10B981">shifts right</text>
+
+        <!-- Trend ends -->
+        <text x="40" y="186" font-size="32">📉</text>
+        <text x="100" y="172" font-size="11" font-weight="700" fill="#0F172A">Trend fades</text>
+        <line x1="180" y1="180" x2="100" y2="180" stroke="#DC2626" stroke-width="2" marker-end="url(#arr-shift-r)"/>
+        <text x="100" y="200" font-size="10" fill="#475569">Fashion item demand →</text>
+        <text x="100" y="216" font-size="11" font-weight="800" fill="#DC2626">shifts left</text>
+
+        <!-- Health scare -->
+        <text x="40" y="280" font-size="32">⚠️</text>
+        <text x="100" y="266" font-size="11" font-weight="700" fill="#0F172A">Health scare</text>
+        <line x1="180" y1="274" x2="100" y2="274" stroke="#DC2626" stroke-width="2" marker-end="url(#arr-shift-r2)"/>
+        <text x="100" y="294" font-size="10" fill="#475569">Affected good demand →</text>
+        <text x="100" y="310" font-size="11" font-weight="800" fill="#DC2626">shifts left</text>
+      </g>
+
+      <defs>
+        <marker id="arr-shift-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+        <marker id="arr-shift-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+        </marker>
+        <marker id="arr-shift-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+        </marker>
+      </defs>
+    </svg>
+  `,
+
 };

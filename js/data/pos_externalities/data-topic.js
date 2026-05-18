@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'pos_externalities',
   topicNum: '3.2.2',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Positive Externalities',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Positive externalities: the big picture',
       lede: 'When private benefit ignores third-party gain, markets underproduce goods that society values most — like education and healthcare.',
+      tip: 'MSB = MPB + MEB. The market only responds to MPB — the MEB is a free gift to third parties that the market ignores. Result: underconsumption by the amount between Q-market and Q*.',
       branches: [
         { tone: 'green',  label: 'The core concept',  sub: 'MSB = MPB + MEB. When MEB > 0, the market undervalues the good and output falls short of the social optimum.' },
         { tone: 'blue',   label: 'The diagram',       sub: 'MSB sits above MPB. Welfare loss is the triangle of forgone net benefit between Q_market and Q*.' },
@@ -63,11 +64,14 @@ window.ECONOS_TOPIC = {
       id: 'pos_externalities_3',
       template: 'cause',
       title: 'Education as a Positive Externality',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🎓',
+      causesLabel: 'Why education generates spillover benefits',
       causes: [
-        { head: 'Private benefit', body: 'Higher wages and lifetime earnings for educated individuals; greater personal fulfilment; improved health and cognitive function. These private benefits are reflected in demand for education.' },
-        { head: 'External benefits — economic', body: 'A more educated workforce raises national productivity; technology adoption faster; innovation greater. Firms benefit from a skilled labour pool without paying for all the training. Tax base expands.' },
-        { head: 'External benefits — social', body: 'Lower crime rates (more education → lower propensity to commit crime). Greater civic engagement, democracy quality, and institutional trust. Reduced health costs from better health literacy.' },
-        { head: 'Market failure implication', body: 'Left to private markets, education is under-provided (especially for low-income households who cannot afford tuition). This justifies state-funded education, scholarships, and free nursery provision.' }
+        { icon: '👤', head: 'Private benefit', body: 'Higher wages and lifetime earnings for educated individuals; greater personal fulfilment; improved health and cognitive function. These private benefits are reflected in demand for education.' },
+        { icon: '💼', head: 'External benefits — economic', body: 'A more educated workforce raises national productivity; technology adoption faster; innovation greater. Firms benefit from a skilled labour pool without paying for all the training. Tax base expands.' },
+        { icon: '🤝', head: 'External benefits — social', body: 'Lower crime rates (more education → lower propensity to commit crime). Greater civic engagement, democracy quality, and institutional trust. Reduced health costs from better health literacy.' },
+        { icon: '🏫', head: 'Market failure implication', body: 'Left to private markets, education is under-provided (especially for low-income households who cannot afford tuition). This justifies state-funded education, scholarships, and free nursery provision.' }
       ],
       examEdge: 'The positive externality from education is the strongest justification for state education. Key evaluation: does the state education system actually produce these external benefits? Evidence suggests returns to education (externality spillovers) are significant but not unlimited — they decline at higher education levels.'
     },
@@ -87,11 +91,14 @@ window.ECONOS_TOPIC = {
       id: 'pos_externalities_5',
       template: 'cause',
       title: 'Government Policies to Correct Positive Externalities',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🏛️',
+      causesLabel: 'Four policy tools',
       causes: [
-        { head: 'Subsidies to producers', body: 'Government pays producers to lower costs → supply shifts right → output and consumption increase toward socially optimal level. Example: subsidy to renewable energy firms to expand green energy production. Shifts MSC (MPC + subsidy) down to correct under-provision.' },
-        { head: 'Subsidies to consumers', body: 'Direct payment or voucher to consumers → demand (MPB) effectively shifts right → consumption increases. Example: free school meals, childcare subsidy, green home retrofit grants. Corrects underconsumption directly.' },
-        { head: 'Public provision', body: 'Government provides the good free or below cost, funded by taxation. Example: NHS, state schools. Eliminates price barrier entirely — shifts consumption to socially optimal level if tax funding is sufficient.' },
-        { head: 'Regulation', body: 'Compulsory consumption: mandatory education (ages 5-16), compulsory vaccination in some countries. Ensures socially optimal consumption regardless of individual willingness to pay.' }
+        { icon: '💰', head: 'Subsidies to producers', body: 'Government pays producers to lower costs → supply shifts right → output and consumption increase toward socially optimal level. Example: subsidy to renewable energy firms to expand green energy production. Shifts MSC (MPC + subsidy) down to correct under-provision.' },
+        { icon: '🎫', head: 'Subsidies to consumers', body: 'Direct payment or voucher to consumers → demand (MPB) effectively shifts right → consumption increases. Example: free school meals, childcare subsidy, green home retrofit grants. Corrects underconsumption directly.' },
+        { icon: '🏛️', head: 'Public provision', body: 'Government provides the good free or below cost, funded by taxation. Example: NHS, state schools. Eliminates price barrier entirely — shifts consumption to socially optimal level if tax funding is sufficient.' },
+        { icon: '📋', head: 'Regulation', body: 'Compulsory consumption: mandatory education (ages 5-16), compulsory vaccination in some countries. Ensures socially optimal consumption regardless of individual willingness to pay.' }
       ],
       examEdge: 'Subsidy size should equal the MEB at the socially optimal output. In practice, measuring MEB is difficult (what is the precise external benefit of one extra year of education?). This is a key limitation: government cannot know the exact optimal subsidy without knowing the MEB — risks under- or over-correcting.'
     },
@@ -109,26 +116,18 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'pos_externalities_7',
-      template: 'paired',
+      template: 'framing',
       title: 'Subsidies vs Public Provision: Evaluation',
-      left: {
-        label: 'Subsidies',
-        points: [
-          'Preserves market mechanism — still uses price signals and competition',
-          'Can be targeted to those most likely to be excluded from market (means-tested)',
-          'Flexible — size can be adjusted; allows consumer choice of provider',
-          'Risk: subsidy may not be passed on to consumers; producer may pocket it (inelastic demand)',
-          'Requires accurate MEB measurement to set optimal subsidy level'
-        ]
-      },
-      right: {
-        label: 'Public provision (free at point of use)',
-        points: [
-          'Eliminates price as barrier — maximum consumption of good',
-          'Universal access regardless of income — addresses equity concerns',
-          'Avoids need to measure MEB — just provide the good',
-          'Risk: over-consumption if the marginal cost to consumers is zero (moral hazard)',
-          'Fiscal cost: requires taxation which may have its own efficiency costs'
+      verdict: {
+        leftLabel: '💰 Subsidies',
+        rightLabel: '🏛️ Public provision (free at point of use)',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Market mechanism', left: 'Preserves price signals and competition between providers', right: 'Replaces market entirely — government becomes the provider' },
+          { aspect: 'Targeting', left: 'Can be means-tested to reach those most excluded from market', right: 'Universal access regardless of income — maximum equity' },
+          { aspect: 'MEB measurement', left: 'Requires accurate MEB measurement to set optimal subsidy level', right: 'Avoids need to measure MEB — just provide the good' },
+          { aspect: 'Moral hazard', left: 'Limited moral hazard if consumer still pays some portion', right: 'Risk: over-consumption if marginal cost to users is zero (trivial GP appointments)' },
+          { aspect: 'Fiscal cost', left: 'Lower fiscal cost if means-tested; some market cost-discipline', right: 'Requires taxation which may have its own efficiency costs' }
         ]
       },
       examEdge: 'NHS vs private healthcare debate is the definitive policy question here. Free at point of use eliminates underconsumption from positive externality but may create moral hazard (trivial GP appointments). Co-payments (small charges for prescriptions) attempt to limit this without re-creating access barriers. A nuanced evaluation.',

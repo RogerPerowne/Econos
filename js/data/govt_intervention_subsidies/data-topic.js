@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'govt_intervention_subsidies',
   topicNum: '1.18',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Intervention: Subsidies',
   estTime: '9-11 minutes',
@@ -16,7 +16,7 @@ window.ECONOS_TOPIC = {
       'Explain the justification for subsidies in terms of positive externalities and market failure',
       'Evaluate subsidies versus alternatives including regulation and public provision'
     ],
-    tip: 'Subsidy shifts supply RIGHT (increases supply). New equilibrium: price falls, quantity rises. Government cost = subsidy per unit \xd7 new quantity. Benefit splits between consumers (lower price) and producers (higher effective price) by elasticity.',
+    tip: 'Subsidy shifts supply RIGHT (increases supply). New equilibrium: price falls, quantity rises. Government cost = subsidy per unit × new quantity. Benefit splits between consumers (lower price) and producers (higher effective price) by elasticity.',
     stages: [
       { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Subsidies: the big picture',
       lede: 'Subsidies shift supply right to boost production and consumption — but who really benefits depends on elasticities, not intent.',
+      tip: 'Who benefits? The less elastic side. Inelastic demand → consumers keep most of the benefit (lower price). Inelastic supply → producers keep most (higher received price). This is the mirror of tax incidence.',
       branches: [
         { tone: 'green',  label: 'How they work',         sub: 'Government pays per unit → supply shifts right → price falls, quantity rises. The mirror image of a tax.' },
         { tone: 'blue',   label: 'Correcting externalities', sub: 'Pigouvian logic in reverse: subsidy = MEB internalises positive spillover and moves output to social optimum.' },
@@ -52,10 +53,10 @@ window.ECONOS_TOPIC = {
       title: 'The Subsidy Diagram',
       intro: 'The subsidy diagram is the mirror image of the tax diagram — master both for maximum flexibility in exams.',
       steps: [
-        { label: 'Original equilibrium', text: 'S and D intersect at (P1, Q1). CS above P1 below D; PS above S below P1.' },
-        { label: 'Add the subsidy', text: 'Supply shifts RIGHT by the subsidy amount. New supply = S − subsidy. New equilibrium at (P2, Q2). P2 < P1 (consumers pay less); Q2 > Q1 (more is produced and sold).' },
-        { label: 'Government cost', text: 'Government cost = subsidy per unit \xd7 new quantity = (P3 − P2) \xd7 Q2, where P3 = price producers receive (P2 + subsidy).' },
-        { label: 'Welfare distribution', text: 'Consumer benefit = (P1 − P2) \xd7 Q2 (lower price on all units). Producer benefit = (P3 − P1) \xd7 Q2 (higher received price). Government cost > consumer + producer benefit = DWL from subsidy.' }
+        { label: '📍 Original equilibrium', text: 'S and D intersect at (P1, Q1). CS above P1 below D; PS above S below P1.' },
+        { label: '➡️ Add the subsidy', text: 'Supply shifts RIGHT by the subsidy amount. New supply = S − subsidy. New equilibrium at (P2, Q2). P2 < P1 (consumers pay less); Q2 > Q1 (more is produced and sold).' },
+        { label: '💰 Government cost', text: 'Government cost = subsidy per unit × new quantity = (P3 − P2) × Q2, where P3 = price producers receive (P2 + subsidy).' },
+        { label: '📊 Welfare distribution', text: 'Consumer benefit = (P1 − P2) × Q2 (lower price on all units). Producer benefit = (P3 − P1) × Q2 (higher received price). Government cost > consumer + producer benefit = DWL from subsidy.' }
       ],
       examEdge: 'The government cost of a subsidy is the rectangle between the two supply curves over the new quantity. The DWL triangle (between old and new equilibrium) represents the welfare cost of distorting production beyond the free-market level — unless correcting an externality, in which case the subsidy reduces the externality DWL.'
     },
@@ -75,36 +76,31 @@ window.ECONOS_TOPIC = {
       id: 'govt_intervention_subsidies_4',
       template: 'cause',
       title: 'Real-World Subsidy Examples',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '💰',
+      causesLabel: 'Four major UK subsidy contexts',
       causes: [
-        { head: 'Agricultural subsidies', body: 'EU Common Agricultural Policy (CAP): ~€50bn/year in farm subsidies. Justification: food security, rural communities, income stabilisation. Criticism: distorts trade (WTO disputes), benefits large farms disproportionately, environmentally damaging intensive farming incentivised.' },
-        { head: 'Electric vehicle grants', body: 'UK Plug-in Vehicle Grant (up to \xa35,000) to correct positive externality of reduced emissions. Also corrects information failure — consumers may underestimate long-run fuel savings. Phased out 2022 as EV market matured and costs fell.' },
-        { head: 'Renewable energy (Contracts for Difference)', body: 'Government guarantees a "strike price" for electricity from renewables — effectively a subsidy when market price falls below the strike price. Has driven massive expansion of offshore wind.' },
-        { head: 'COVID-19 furlough scheme', body: 'Government paid 80% of wages of furloughed workers — a labour market subsidy. Cost: ~\xa370bn. Prevented mass unemployment during lockdowns. Not correcting market failure — emergency stabilisation policy.' }
+        { icon: '🌾', head: 'Agricultural subsidies', body: 'EU Common Agricultural Policy (CAP): ~€50bn/year in farm subsidies. Justification: food security, rural communities, income stabilisation. Criticism: distorts trade (WTO disputes), benefits large farms disproportionately, environmentally damaging intensive farming incentivised.' },
+        { icon: '⚡', head: 'Electric vehicle grants', body: 'UK Plug-in Vehicle Grant (up to £5,000) to correct positive externality of reduced emissions. Also corrects information failure — consumers may underestimate long-run fuel savings. Phased out 2022 as EV market matured and costs fell.' },
+        { icon: '🌬️', head: 'Renewable energy (Contracts for Difference)', body: 'Government guarantees a "strike price" for electricity from renewables — effectively a subsidy when market price falls below the strike price. Has driven massive expansion of offshore wind.' },
+        { icon: '😷', head: 'COVID-19 furlough scheme', body: 'Government paid 80% of wages of furloughed workers — a labour market subsidy. Cost: ~£70bn. Prevented mass unemployment during lockdowns. Not correcting market failure — emergency stabilisation policy.' }
       ],
       examEdge: 'Agricultural subsidies are a classic example of a subsidy that may have been justified initially (post-WWII food security) but which now persists due to political economy (farmers are a powerful lobby). This illustrates how subsidies, once established, become politically very difficult to remove — a key government failure risk.'
     },
     {
       id: 'govt_intervention_subsidies_5',
-      template: 'paired',
+      template: 'framing',
       title: 'Evaluation: Benefits vs Limitations of Subsidies',
-      left: {
-        label: 'Case FOR subsidies',
-        points: [
-          'Corrects positive externalities — increases production to socially optimal level',
-          'Supports infant industries unable to compete until they achieve economies of scale',
-          'Progressive: can be targeted at goods that improve low-income welfare (childcare, food)',
-          'Preserves market mechanism — firms still compete on price; consumers still choose',
-          'Can drive rapid industry transformation (UK offshore wind subsidised to now cheapest electricity source)'
-        ]
-      },
-      right: {
-        label: 'Case AGAINST / Limitations',
-        points: [
-          'Fiscal cost: funded by taxpayers — opportunity cost of alternative government spending',
-          'Difficult to set optimal amount — requires knowing MEB, which is uncertain',
-          'May distort resource allocation beyond optimal level (over-subsidised industries attract excess resources)',
-          'Vested interests: lobbying to maintain subsidies even when externality is corrected — government failure',
-          'May reduce incentive for innovation if firms rely on subsidy rather than efficiency gains'
+      verdict: {
+        leftLabel: '✅ Case FOR subsidies',
+        rightLabel: '❌ Case AGAINST / Limitations',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Externalities', left: 'Corrects positive externalities — increases production to socially optimal level', right: 'Fiscal cost: funded by taxpayers — opportunity cost of alternative government spending' },
+          { aspect: 'Industries', left: 'Supports infant industries unable to compete until they achieve economies of scale', right: 'Difficult to set optimal amount — requires knowing MEB, which is uncertain' },
+          { aspect: 'Equity', left: 'Progressive: can be targeted at goods that improve low-income welfare (childcare, food)', right: 'May distort resource allocation beyond optimal level (over-subsidised industries attract excess resources)' },
+          { aspect: 'Market mechanism', left: 'Preserves market mechanism — firms still compete on price; consumers still choose', right: 'Vested interests: lobbying to maintain subsidies even when externality is corrected — government failure' },
+          { aspect: 'Track record', left: 'UK offshore wind subsidised to now cheapest electricity source — industrial transformation', right: 'May reduce incentive for innovation if firms rely on subsidy rather than efficiency gains' }
         ]
       },
       examEdge: 'The infant-industry argument for subsidies: justified if the industry will eventually be competitive (comparative advantage will develop); unjustified if protection becomes permanent and the industry never matures. This is why sunset clauses (automatic removal of subsidies after a fixed period) are good policy design — forces reassessment.'

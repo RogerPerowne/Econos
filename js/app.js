@@ -456,6 +456,34 @@
       </div>`;
     }
 
+    // Flow (late position) — renders AFTER causes/table/branches for cards where
+    // the explanatory chain should follow the main content tiles.
+    if (c.flowBottom && c.flowBottom.length) {
+      if (c.flowBottomTitle) {
+        content += genSecLabel(c.flowBottomEmoji || '➡️', c.flowBottomTitle);
+      }
+      const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+      const nb = c.flowBottom.length;
+      content += `<div style="display:grid;grid-template-columns:repeat(${nb},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">`;
+      content += c.flowBottom.map((step, i) => {
+        const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+        const isLast = i === nb - 1;
+        const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
+                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
+                            step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
+        return `
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
+            <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
+            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}${statusBadge}</div>
+            <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
+            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+            ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
+          </div>
+        `;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Product examples — "Think like an examiner" card grid
     if (c.productExamples && c.productExamples.length) {
       const VC = {
@@ -2523,6 +2551,7 @@
       c.steps !== undefined ||
       c.rows  !== undefined ||
       c.flow !== undefined ||
+      c.flowBottom !== undefined ||
       c.verdict !== undefined ||
       c.comparison !== undefined ||
       c.table !== undefined ||

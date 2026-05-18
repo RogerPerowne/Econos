@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'unstable_markets',
   topicNum: '1.22',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Unstable Commodity Markets',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Unstable commodity markets: the big picture',
       lede: 'Food and raw-material prices swing wildly because supply lags, demand is inelastic, and small shocks cause big movements.',
+      tip: '% change in price ≈ % change in supply ÷ (|PED| + PES). If |PED| = 0.2 and PES = 0.3, a 10% supply fall → 20% price rise. The smaller the elasticities, the more volatile the price.',
       branches: [
         { tone: 'green',  label: 'Why prices swing',     sub: 'Inelastic demand <em>and</em> inelastic short-run supply mean small shocks → large price changes.' },
         { tone: 'blue',   label: 'The cobweb model',     sub: 'Production lags + price-based planting decisions create cyclical convergent or divergent oscillations.' },
@@ -43,7 +44,7 @@ window.ECONOS_TOPIC = {
         { term: 'Supply shock', def: 'Sudden unexpected change in supply — drought, disease, geopolitical disruption — causes large price movements when supply is inelastic.' },
         { term: 'Commodity market', def: 'Market for standardised physical goods (wheat, coffee, oil, metals) — often highly volatile due to supply uncertainty and inelastic demand.' }
       ],
-      examEdge: 'The mathematics of commodity price volatility: % change in price ≈ % change in supply \xf7 (|PED| + PES). If |PED| = 0.2 and PES = 0.3, and supply falls 10%, then price rises ≈ 10 \xf7  0.5 = 20%. The smaller the sum of elasticities, the larger the price swing from any supply shock. This formula is useful for estimating price impacts.'
+      examEdge: 'The mathematics of commodity price volatility: % change in price ≈ % change in supply ÷ (|PED| + PES). If |PED| = 0.2 and PES = 0.3, and supply falls 10%, then price rises ≈ 10 ÷ 0.5 = 20%. The smaller the sum of elasticities, the larger the price swing from any supply shock. This formula is useful for estimating price impacts.'
     },
     {
       id: 'unstable_markets_2',
@@ -62,11 +63,14 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_3',
       template: 'cause',
       title: 'Consequences of Price Volatility',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '⚠️',
+      causesLabel: 'Who gets hurt by volatile commodity prices',
       causes: [
-        { head: 'Consumer harm', body: 'Food price spikes reduce real incomes, particularly for low-income households in developing countries where food represents 50-70% of expenditure. Global food price spike (2007-08) contributed to food riots in 30+ countries.' },
-        { head: 'Producer income instability', body: 'Farmers face highly volatile incomes — in bad years (low supply, which often coincides with high prices globally), they may still face local price spikes but lower yields. In good years, gluts depress prices → revenues fall despite high output.' },
-        { head: 'Investment disincentive', body: 'Volatile prices deter long-run investment in agricultural capacity. Farmers uncertain about future prices under-invest in machinery, irrigation, and land improvement — reducing long-run supply capacity.' },
-        { head: 'Macro instability in commodity exporters', body: 'Countries heavily dependent on commodity exports (Nigeria — oil; Zambia — copper; Brazil — soy) face government revenue volatility. Commodity price cycles create boom-bust fiscal and economic cycles.' }
+        { icon: '🛒', head: 'Consumer harm', body: 'Food price spikes reduce real incomes, particularly for low-income households in developing countries where food represents 50-70% of expenditure. Global food price spike (2007-08) contributed to food riots in 30+ countries.' },
+        { icon: '👨‍🌾', head: 'Producer income instability', body: 'Farmers face highly volatile incomes — in bad years (low supply, which often coincides with high prices globally), they may still face local price spikes but lower yields. In good years, gluts depress prices → revenues fall despite high output.' },
+        { icon: '📉', head: 'Investment disincentive', body: 'Volatile prices deter long-run investment in agricultural capacity. Farmers uncertain about future prices under-invest in machinery, irrigation, and land improvement — reducing long-run supply capacity.' },
+        { icon: '🌍', head: 'Macro instability in commodity exporters', body: 'Countries heavily dependent on commodity exports (Nigeria — oil; Zambia — copper; Brazil — soy) face government revenue volatility. Commodity price cycles create boom-bust fiscal and economic cycles.' }
       ],
       examEdge: 'The food price crisis of 2007-08 is the go-to commodity instability case study: drought in Australia + biofuel mandates in US (corn for ethanol) + speculative financial investment in food futures → global food prices doubled → political instability in 30+ countries. Multiple supply and demand shocks combining is typical of real commodity crises.'
     },
@@ -76,10 +80,10 @@ window.ECONOS_TOPIC = {
       title: 'Buffer Stock Schemes',
       intro: 'A buffer stock scheme is a government or international authority intervention to stabilise commodity prices within a target band.',
       steps: [
-        { label: 'Mechanism — abundant year', text: 'Good harvest → price falls below floor. Authority buys surplus at the floor price → removes excess supply → price supported at floor. Stock accumulated in reserve.' },
-        { label: 'Mechanism — scarce year', text: 'Poor harvest → price rises above ceiling. Authority sells from reserve → adds supply → price kept below ceiling. Stock depleted.' },
-        { label: 'Price band', text: 'Authority sets a target price band (floor to ceiling). Within the band, market operates freely. Outside the band, authority intervenes. Long-run equilibrium price should be within the band for the scheme to be self-financing.' },
-        { label: 'Finance requirement', text: 'Authority needs capital to buy stocks in good years. Storage costs must be funded. Risk: sustained low prices → authority runs out of funds; sustained high prices → authority runs out of stocks.' }
+        { label: '📦 Abundant year', text: 'Good harvest → price falls below floor. Authority buys surplus at the floor price → removes excess supply → price supported at floor. Stock accumulated in reserve.' },
+        { label: '📤 Scarce year', text: 'Poor harvest → price rises above ceiling. Authority sells from reserve → adds supply → price kept below ceiling. Stock depleted.' },
+        { label: '📊 Price band', text: 'Authority sets a target price band (floor to ceiling). Within the band, market operates freely. Outside the band, authority intervenes. Long-run equilibrium price should be within the band for the scheme to be self-financing.' },
+        { label: '💰 Finance requirement', text: 'Authority needs capital to buy stocks in good years. Storage costs must be funded. Risk: sustained low prices → authority runs out of funds; sustained high prices → authority runs out of stocks.' }
       ],
       examEdge: 'Buffer stock diagram: draw S and D with equilibrium at P*. Mark floor (Pf) and ceiling (Pc). Show a supply shift that would push price below Pf — government buys the difference (horizontal purchase arrow). Show a supply shift that pushes price above Pc — government sells from reserves. The authority acts as a countercyclical trader.'
     },
@@ -87,35 +91,30 @@ window.ECONOS_TOPIC = {
       id: 'unstable_markets_5',
       template: 'cause',
       title: 'Limitations of Buffer Stock Schemes',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '⚠️',
+      causesLabel: 'Why buffer stocks fail in practice',
       causes: [
-        { head: 'Storage costs', body: 'Storing physical commodities (grain, butter) is expensive. Costs include warehousing, preservation (temperature control, fumigation), transportation, and spoilage. EU "butter mountains" and "grain mountains" from CAP price supports: enormous storage costs and eventual dumping at below-market prices.' },
-        { head: 'Setting the target price', body: 'If the floor price is set above the long-run equilibrium, permanent surplus accumulates. If below, permanent shortage. Identifying the "correct" long-run equilibrium is an information challenge — prices trend over time as technology and tastes change.' },
-        { head: 'Financial sustainability', body: 'Sustained low prices exhaust the authority\'s purchase funds; sustained high prices exhaust reserves. International Tin Council (1985): ran out of money to support the floor price → collapsed → tin price fell 50% instantly.' },
-        { head: 'Speculation and manipulation', body: 'Traders aware of the floor/ceiling can exploit the scheme — buy just before the authority must sell; sell just before the authority must buy. Buffer stock schemes can be destabilised by speculative attacks.' }
+        { icon: '🏪', head: 'Storage costs', body: 'Storing physical commodities (grain, butter) is expensive. Costs include warehousing, preservation (temperature control, fumigation), transportation, and spoilage. EU "butter mountains" and "grain mountains" from CAP price supports: enormous storage costs and eventual dumping at below-market prices.' },
+        { icon: '🎯', head: 'Setting the target price', body: 'If the floor price is set above the long-run equilibrium, permanent surplus accumulates. If below, permanent shortage. Identifying the "correct" long-run equilibrium is an information challenge — prices trend over time as technology and tastes change.' },
+        { icon: '💸', head: 'Financial sustainability', body: 'Sustained low prices exhaust the authority\'s purchase funds; sustained high prices exhaust reserves. International Tin Council (1985): ran out of money to support the floor price → collapsed → tin price fell 50% instantly.' },
+        { icon: '📈', head: 'Speculation and manipulation', body: 'Traders aware of the floor/ceiling can exploit the scheme — buy just before the authority must sell; sell just before the authority must buy. Buffer stock schemes can be destabilised by speculative attacks.' }
       ],
       examEdge: 'The International Tin Agreement collapse (1985) is the definitive buffer stock failure case study. The authority over-committed to a floor price that was above the long-run market equilibrium → bought more than it could finance → ran out of money → floor collapsed → prices crashed far below equilibrium (overcorrection). A devastating real-world test.'
     },
     {
       id: 'unstable_markets_6',
-      template: 'paired',
+      template: 'framing',
       title: 'Buffer Stocks vs Alternatives',
-      left: {
-        label: 'Buffer stock schemes',
-        points: [
-          'Direct price stabilisation within a band — predictable outcome',
-          'Producers and consumers both benefit from price stability',
-          'Can be internationally coordinated (coffee, cocoa agreements)',
-          'Limitation: storage costs; financial sustainability; information requirements',
-          'Historical record is poor — most international commodity agreements have failed'
-        ]
-      },
-      right: {
-        label: 'Alternative approaches',
-        points: [
-          'Futures markets: producers sell forward contracts locking in a price regardless of future spot price. Cost: foregone upside if prices rise.',
-          'Income stabilisation funds: governments save commodity revenue in sovereign wealth funds (Norway, Chile) and draw down in downturns — macro buffer without physical storage.',
-          'Diversification: commodity-dependent countries diversify into manufacturing and services to reduce income volatility.',
-          'R&D investment: develop drought/disease-resistant crop varieties to reduce supply shocks and smooth the cobweb.'
+      verdict: {
+        leftLabel: '📦 Buffer stock schemes',
+        rightLabel: '🔄 Alternative approaches',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Price stability', left: 'Direct price stabilisation within a band — predictable outcome for producers and consumers', right: 'Futures markets: producers sell forward contracts locking in a price — hedges against risk without storage costs' },
+          { aspect: 'Cost', left: 'High storage costs; financial sustainability at risk if prices persistently outside the band', right: 'Income stabilisation funds (Norway, Chile): save commodity revenue in sovereign wealth funds — macro buffer without physical storage' },
+          { aspect: 'Incentives', left: 'Can distort production incentives if floor price set above long-run equilibrium', right: 'Diversification: commodity-dependent countries build manufacturing and services to reduce income volatility' },
+          { aspect: 'Track record', left: 'Historical record poor — most international commodity agreements have failed (Tin Council 1985)', right: 'R&D investment: drought/disease-resistant crop varieties reduce supply shocks and smooth the cobweb' }
         ]
       },
       examEdge: 'Futures markets are the private-sector alternative to buffer stocks. A wheat farmer selling futures contracts in March for September delivery locks in a price — hedges against price risk. The farmer gives up potential gains (if price rises) to avoid losses (if price falls). Financial markets provide price stability without government intervention and storage costs.'

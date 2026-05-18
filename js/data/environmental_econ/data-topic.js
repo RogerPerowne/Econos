@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'environmental_econ',
   topicNum: '1.16',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Environmental Economics',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Environmental economics: the big picture',
       lede: 'The environment is the ultimate under-priced resource — and climate change is the largest market failure in history.',
+      tip: 'Frame environmental problems as economic problems: the atmosphere is running out of waste-sink capacity and the price signal is absent. Carbon pricing is the attempt to create that missing price signal.',
       branches: [
         { tone: 'green',  label: 'The environment as resource', sub: 'Three services markets under-price: raw inputs, waste sink capacity, and amenity value.' },
         { tone: 'rose',   label: 'Climate as market failure',   sub: 'Stern: global, long-horizon, irreversible, pervasive — every textbook failure compounded.' },
@@ -63,10 +64,10 @@ window.ECONOS_TOPIC = {
       title: 'Carbon Taxes (Pigouvian Approach)',
       intro: 'A carbon tax sets a price on emissions equal to the social cost of carbon — internalising the externality into market prices.',
       steps: [
-        { label: 'Mechanism', text: 'Tax per tonne of CO2 equal to MEC at socially optimal output. Raises MPC to equal MSC → firms reduce emissions to socially optimal level. Price signal cascades through the economy: energy prices rise → switch to low-carbon alternatives.' },
-        { label: 'Revenue use', text: 'Carbon tax raises significant revenue. Options: green investment (circular), dividend to citizens (climate dividend — popular), reduce other taxes (revenue-neutral), fund low-income household support (regressive impact mitigation).' },
-        { label: 'UK context', text: 'UK has a carbon floor price for electricity generators (\xa322/tonne CO2) and participates in the UK ETS (\xa340-60/tonne). Fuel duty is a de facto carbon tax (~\xa353p/litre petrol).' },
-        { label: 'Limitations', text: 'Difficult to set at the "correct" level (MEC uncertain); regressive (energy costs are a higher share of low-income budgets); risk of carbon leakage if other countries don\'t impose equivalent taxes.' }
+        { label: '💸 Mechanism', text: 'Tax per tonne of CO2 equal to MEC at socially optimal output. Raises MPC to equal MSC → firms reduce emissions to socially optimal level. Price signal cascades through the economy: energy prices rise → switch to low-carbon alternatives.' },
+        { label: '💰 Revenue use', text: 'Carbon tax raises significant revenue. Options: green investment (circular), dividend to citizens (climate dividend — popular), reduce other taxes (revenue-neutral), fund low-income household support (regressive impact mitigation).' },
+        { label: '🇬🇧 UK context', text: 'UK has a carbon floor price for electricity generators (~£22/tonne CO2) and participates in the UK ETS (~£40-60/tonne). Fuel duty is a de facto carbon tax (~53p/litre petrol).' },
+        { label: '⚠️ Limitations', text: 'Difficult to set at the "correct" level (MEC uncertain); regressive (energy costs are a higher share of low-income budgets); risk of carbon leakage if other countries don\'t impose equivalent taxes.' }
       ],
       examEdge: 'Carbon tax advantages vs cap-and-trade: tax provides price certainty (firms know the cost per tonne); cap-and-trade provides quantity certainty (total emissions capped). If the MEC curve is steeply rising (dangerous tipping points), quantity certainty (cap) is more important. If the MAC (abatement cost) curve is steep, price certainty (tax) prevents catastrophic abatement costs. Weitzman\'s rule — a subtle but high-quality evaluation point.'
     },
@@ -76,10 +77,10 @@ window.ECONOS_TOPIC = {
       title: 'Cap-and-Trade (Emissions Trading)',
       intro: 'Cap-and-trade combines a quantity limit with market-based flexibility for firms in how they achieve it.',
       steps: [
-        { label: 'Cap', text: 'Regulator sets a cap on total emissions across all covered firms. Permits are issued equal to the cap. Total emissions cannot exceed the cap — the quantity target is certain.' },
-        { label: 'Trade', text: 'Firms that reduce emissions below their permit allocation can sell excess permits. Firms that cannot reduce cheaply buy permits. Emission reductions happen where they are cheapest — the market allocates abatement efficiently.' },
-        { label: 'Price signal', text: 'Permit price (EU ETS: ~€60-80/tonne CO2) creates an incentive to invest in clean technology. As the cap tightens over time, permit price rises — increasing incentive to decarbonise.' },
-        { label: 'EU ETS experience', text: 'Launched 2005 — initially over-generous permit allocation → price near zero → little incentive. Post-2018 reforms tightened cap → prices rose → significant investment in clean energy. UK ETS launched post-Brexit 2021.' }
+        { label: '📊 Cap', text: 'Regulator sets a cap on total emissions across all covered firms. Permits are issued equal to the cap. Total emissions cannot exceed the cap — the quantity target is certain.' },
+        { label: '🔄 Trade', text: 'Firms that reduce emissions below their permit allocation can sell excess permits. Firms that cannot reduce cheaply buy permits. Emission reductions happen where they are cheapest — the market allocates abatement efficiently.' },
+        { label: '💡 Price signal', text: 'Permit price (EU ETS: ~€60-80/tonne CO2) creates an incentive to invest in clean technology. As the cap tightens over time, permit price rises — increasing incentive to decarbonise.' },
+        { label: '🇪🇺 EU ETS experience', text: 'Launched 2005 — initially over-generous permit allocation → price near zero → little incentive. Post-2018 reforms tightened cap → prices rose → significant investment in clean energy. UK ETS launched post-Brexit 2021.' }
       ],
       examEdge: 'EU ETS weakness is instructive: free permit allocation to heavy industry (cement, steel) to prevent carbon leakage undermined the price signal initially. The lesson: the effectiveness of cap-and-trade depends critically on the tightness of the cap and the auctioning vs free allocation of permits. Evaluation point: design matters as much as the mechanism.'
     },
@@ -97,24 +98,17 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'environmental_econ_6',
-      template: 'paired',
+      template: 'framing',
       title: 'Growth vs Environmental Protection',
-      left: {
-        label: 'Case that growth and environment can coexist',
-        points: [
-          'Environmental Kuznets Curve: as income rises, environmental quality first falls then rises — rich countries invest in clean technology and regulation',
-          'Technological progress can decouple growth from emissions (UK GDP grew 22% 2000-2020; CO2 fell 44%)',
-          'Green growth: renewable energy, EVs, circular economy can be profitable sectors driving future growth',
-          'Carbon pricing internalises cost → innovation → clean growth'
-        ]
-      },
-      right: {
-        label: 'Case for constraining growth',
-        points: [
-          'Global emissions still rising despite EKC holds for rich countries — EKC may just export pollution',
-          'Doughnut economics (Kate Raworth): growth beyond planetary boundaries is destructive regardless of income level',
-          'GDP growth may be inconsistent with 1.5\xb0C targets — deep cuts require consumption reduction',
-          'Rebound effect: efficiency gains are spent on more consumption, potentially offsetting emissions reductions'
+      verdict: {
+        leftLabel: '🌱 Growth and environment can coexist',
+        rightLabel: '⛔ Case for constraining growth',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Evidence', left: 'Environmental Kuznets Curve: as income rises, environmental quality first falls then rises — rich countries invest in clean technology and regulation', right: 'Global emissions still rising despite EKC holds for rich countries — EKC may just export pollution' },
+          { aspect: 'UK case', left: 'UK GDP grew 22% 2000-2020; CO2 fell 44% — demonstrable decoupling of growth from emissions', right: 'GDP growth may be inconsistent with 1.5°C targets — deep cuts require consumption reduction' },
+          { aspect: 'Green economy', left: 'Green growth: renewable energy, EVs, circular economy can be profitable sectors driving future growth', right: 'Rebound effect: efficiency gains are spent on more consumption, potentially offsetting emissions reductions' },
+          { aspect: 'Policy', left: 'Carbon pricing internalises cost → innovation → clean growth without sacrificing prosperity', right: 'Doughnut economics (Kate Raworth): growth beyond planetary boundaries is destructive regardless of income level' }
         ]
       },
       examEdge: 'The Environmental Kuznets Curve is key exam content: the inverted-U relationship between income and environmental degradation. Supporting evidence: rich countries have cleaner local environments (air, water). Counter-evidence: global carbon emissions still track with global income. Evaluation: EKC may describe pollution shift, not reduction — manufacturing exported to developing countries.'
@@ -123,7 +117,7 @@ window.ECONOS_TOPIC = {
       id: 'environmental_econ_7',
       template: 'framing',
       title: 'International Environmental Agreements',
-      body: '<strong>Paris Agreement (2015):</strong> 196 parties agreed to limit global warming to well below 2\xb0C, pursuing 1.5\xb0C. Nationally Determined Contributions (NDCs) — voluntary national pledges. Mechanism: no enforcement; pledges are politically binding, not legally. Assessment: current NDCs put world on track for ~2.5-3\xb0C warming — insufficient.<br><br><strong>Kyoto Protocol (1997):</strong> binding targets for developed countries; US withdrew; did not include China or India. Limited effectiveness.<br><br><strong>Economic problem:</strong> global commons (the atmosphere) = classic free rider problem at international level. Countries benefit from others\' abatement without reducing their own emissions. Coase solution impossible (too many parties, no enforcement mechanism).',
+      body: '<strong>Paris Agreement (2015):</strong> 196 parties agreed to limit global warming to well below 2°C, pursuing 1.5°C. Nationally Determined Contributions (NDCs) — voluntary national pledges. Mechanism: no enforcement; pledges are politically binding, not legally. Assessment: current NDCs put world on track for ~2.5-3°C warming — insufficient.<br><br><strong>Kyoto Protocol (1997):</strong> binding targets for developed countries; US withdrew; did not include China or India. Limited effectiveness.<br><br><strong>Economic problem:</strong> global commons (the atmosphere) = classic free rider problem at international level. Countries benefit from others\' abatement without reducing their own emissions. Coase solution impossible (too many parties, no enforcement mechanism).',
       keyTerms: [
         { term: 'Paris Agreement', def: '2015 multilateral climate deal — voluntary national pledges to limit warming; no binding enforcement mechanism.' },
         { term: 'Global commons', def: 'Resources shared by all (atmosphere, oceans) — subject to the tragedy of the commons when unregulated.' },

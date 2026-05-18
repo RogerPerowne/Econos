@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'public_goods',
   topicNum: '3.3',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Public Goods',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Public goods: the big picture',
       lede: 'Some goods can\'t be rationed by price — and without government, they won\'t exist at all.',
+      tip: 'Common exam error: "provided by government" ≠ public good. NHS is NOT a public good (doctor\'s time is rival; access is excludable). Public good has a technical meaning: non-rival AND non-excludable.',
       branches: [
         { tone: 'green',  label: 'Two defining properties', sub: 'Non-rival (my use doesn\'t diminish yours) and non-excludable (can\'t stop non-payers benefiting).' },
         { tone: 'rose',   label: 'The free rider problem',  sub: 'Everyone has an incentive not to pay → market under-provides → complete market failure.' },
@@ -62,11 +63,14 @@ window.ECONOS_TOPIC = {
       id: 'public_goods_3',
       template: 'cause',
       title: 'Examples of Public Goods',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🏛️',
+      causesLabel: 'Real-world pure public goods',
       causes: [
-        { head: 'National defence', body: 'Non-rival (one person\'s protection doesn\'t reduce others\') and non-excludable (impossible to defend some residents and not others within a territory). Classic pure public good.' },
-        { head: 'Flood defences', body: 'Once a flood barrier is built, all downstream residents benefit — non-excludable. One person\'s protection doesn\'t reduce another\'s — non-rival. Classic pure public good.' },
-        { head: 'Street lighting', body: 'Non-rival (one person using the light doesn\'t reduce it for others); difficult to exclude (could not switch off light for non-payers on a public street). Quasi-public good in practice.' },
-        { head: 'Police and fire services', body: 'Non-excludable within a jurisdiction — police cannot protect only those who pay. Partly non-rival — up to a capacity limit. Public goods at the societal level.' }
+        { icon: '🛡️', head: 'National defence', body: 'Non-rival (one person\'s protection doesn\'t reduce others\') and non-excludable (impossible to defend some residents and not others within a territory). Classic pure public good.' },
+        { icon: '🌊', head: 'Flood defences', body: 'Once a flood barrier is built, all downstream residents benefit — non-excludable. One person\'s protection doesn\'t reduce another\'s — non-rival. Classic pure public good.' },
+        { icon: '💡', head: 'Street lighting', body: 'Non-rival (one person using the light doesn\'t reduce it for others); difficult to exclude (could not switch off light for non-payers on a public street). Quasi-public good in practice.' },
+        { icon: '👮', head: 'Police and fire services', body: 'Non-excludable within a jurisdiction — police cannot protect only those who pay. Partly non-rival — up to a capacity limit. Public goods at the societal level.' }
       ],
       examEdge: 'BBC broadcasts were once a pure public good (non-rival, non-excludable over-the-air signal). Digital TV introduced technical excludability (encryption) — now more of a club good. This shows how technology changes good characteristics, sometimes allowing market provision of what was previously a public good.'
     },
@@ -109,24 +113,17 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'public_goods_7',
-      template: 'paired',
+      template: 'framing',
       title: 'Public Goods: Policy Debate',
-      left: {
-        label: 'Case for government provision',
-        points: [
-          'Only solution to the free rider problem — taxation makes payment compulsory',
-          'Ensures universal access — public goods protect all citizens equally',
-          'Positive externalities from public goods (security, flood protection) justify funding',
-          'Some public goods have very large social returns (justice system enables market economy)'
-        ]
-      },
-      right: {
-        label: 'Limitations and alternatives',
-        points: [
-          'Preference revelation problem: government cannot know optimal quantity without price signals',
-          'Technology may convert public goods to club goods (GPS was military public good; now largely private)',
-          'Some "public goods" could be privately provided with innovative business models (advertising-funded media)',
-          'Government failure risk: political interference, bureaucratic inefficiency, over-provision for electoral reasons'
+      verdict: {
+        leftLabel: '🏛️ Case for government provision',
+        rightLabel: '⚠️ Limitations and alternatives',
+        separator: '→',
+        rows: [
+          { aspect: 'Free rider solution', left: 'Only solution to free rider problem — taxation makes payment compulsory', right: 'Preference revelation problem: government cannot know optimal quantity without price signals' },
+          { aspect: 'Access', left: 'Ensures universal access — public goods protect all citizens equally', right: 'Technology may convert public goods to club goods (GPS was military; now largely private)' },
+          { aspect: 'Social returns', left: 'Positive externalities from public goods (security, flood protection) justify funding', right: 'Some "public goods" could be privately provided with innovative models (advertising-funded media)' },
+          { aspect: 'Market enabling', left: 'Some public goods have very large returns (justice system enables entire market economy)', right: 'Government failure risk: political interference, bureaucratic inefficiency, over-provision for electoral reasons' }
         ]
       },
       examEdge: 'The internet began as a US Defence Department public good (ARPANET — non-excludable, non-rival). Commercial internet is now a mix: basic infrastructure is quasi-public; web services are private (subscription, advertising). Technology transformed what was a public good into mostly private goods. This evolution is a rich evaluation point.',

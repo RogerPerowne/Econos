@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'govt_failure',
   topicNum: '4.2',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Failure',
   estTime: '9-11 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Government failure: the big picture',
       lede: 'Intervention designed to fix market failure can make things worse — and recognising when is the heart of evaluation.',
+      tip: 'Compare realistic government, not perfect government. The question is never "market failure vs perfect state" — it is "imperfect market vs imperfect government." Both can and do fail.',
       branches: [
         { tone: 'green',  label: 'The core idea',         sub: 'A net welfare loss <em>from</em> intervention. The comparator is realistic government, not a perfect one.' },
         { tone: 'amber',  label: 'Causes',                sub: 'Information failures, conflicting objectives, administrative cost, political short-termism.' },
@@ -50,12 +51,15 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       diagramKey: 'govtFailureDiagram',
       title: 'Causes of Government Failure',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '⚠️',
+      causesLabel: 'Five root causes of government failure',
       causes: [
-        { head: 'Information failure', body: 'Governments face the same information problems as markets — or worse. Setting optimal taxes, subsidies, or production targets requires knowing the MEC or MEB, which is inherently uncertain. Incorrect information → wrong policy level → under- or over-correction.' },
-        { head: 'Political incentives (short-termism)', body: 'Politicians on 4-5 year election cycles prefer visible short-run benefits over long-run welfare gains. Infrastructure investment, climate policy, and pension reform all have costs now and benefits later — systematically under-prioritised.' },
-        { head: 'Regulatory capture', body: 'Regulators are "captured" by the industries they regulate — they adopt the industry\'s perspective and protect incumbent firms rather than consumers. Energy regulators, financial regulators, pharmaceutical approvals all face this risk.' },
-        { head: 'Unintended consequences', body: 'Complex markets produce unexpected reactions to interventions. Biofuel mandates (intended to reduce CO2) caused food price spikes by diverting crops. Rent controls caused housing shortages. Sugar tax caused reformulation (intended) but also smaller portion sizes (unintended).' },
-        { head: 'Spending inefficiency', body: 'Government production lacks profit motive and competitive pressure → productive inefficiency. NHS procurement, defence contracts, and public IT projects have a poor track record of cost and time overruns.' }
+        { icon: '🔍', head: 'Information failure', body: 'Governments face the same information problems as markets — or worse. Setting optimal taxes, subsidies, or production targets requires knowing the MEC or MEB, which is inherently uncertain. Incorrect information → wrong policy level → under- or over-correction.' },
+        { icon: '🗳️', head: 'Political incentives (short-termism)', body: 'Politicians on 4-5 year election cycles prefer visible short-run benefits over long-run welfare gains. Infrastructure investment, climate policy, and pension reform all have costs now and benefits later — systematically under-prioritised.' },
+        { icon: '🔄', head: 'Regulatory capture', body: 'Regulators are "captured" by the industries they regulate — they adopt the industry\'s perspective and protect incumbent firms rather than consumers. Energy regulators, financial regulators, pharmaceutical approvals all face this risk.' },
+        { icon: '⚡', head: 'Unintended consequences', body: 'Complex markets produce unexpected reactions to interventions. Biofuel mandates (intended to reduce CO2) caused food price spikes by diverting crops. Rent controls caused housing shortages. Sugar tax caused reformulation (intended) but also smaller portion sizes (unintended).' },
+        { icon: '💸', head: 'Spending inefficiency', body: 'Government production lacks profit motive and competitive pressure → productive inefficiency. NHS procurement, defence contracts, and public IT projects have a poor track record of cost and time overruns.' }
       ],
       examEdge: 'Hayek\'s knowledge problem applies to government just as it does to central planning: no government can perfectly know all the information needed to set optimal policy. This is not an argument against all intervention — just for humility about what intervention can achieve. Use this framing for evaluation.'
     },
@@ -67,7 +71,7 @@ window.ECONOS_TOPIC = {
       keyTerms: [
         { term: 'Regulatory capture', def: 'Regulatory body that is supposed to protect the public ends up serving the industry it regulates.' },
         { term: 'Revolving door', def: 'Movement of individuals between roles in government regulation and roles in the industries being regulated — creates conflicts of interest.' },
-        { term: 'Concentrated vs diffuse interest', body: 'Industry has high per-firm benefit from favourable regulation → intensive lobbying. Each consumer has tiny interest → weak counter-lobbying. Asymmetry tilts regulation toward industry.' }
+        { term: 'Concentrated vs diffuse interest', def: 'Industry has high per-firm benefit from favourable regulation → intensive lobbying. Each consumer has tiny interest → weak counter-lobbying. Asymmetry tilts regulation toward industry.' }
       ],
       examEdge: 'Pre-2008 financial crisis: FSA\'s "light-touch" regulation was a form of regulatory capture. Banks convinced regulators that self-regulation was sufficient. Result: excessive risk-taking → 2008 crash → £137bn taxpayer bank bailout. Post-crisis: tighter regulation (FPC, PRA), but risk of recapture always present.'
     },
@@ -77,33 +81,26 @@ window.ECONOS_TOPIC = {
       title: 'Unintended Consequences',
       intro: 'Government interventions regularly produce significant unintended consequences — the "law of unintended consequences."',
       steps: [
-        { label: 'Biofuels mandate', text: 'US and EU mandated fuel ethanol from crops (positive externality of lower CO2). Unintended: increased demand for corn/rapeseed → food prices rose globally → food riots in developing countries (2007-08). Cure worse than disease for the poorest.' },
-        { label: 'Right to buy (UK housing)', text: 'Council tenants given right to buy at discounts — aimed at increasing homeownership. Unintended: council housing stock reduced from 6.5m (1979) to 2m (2020); councils lacked funds to build replacements; housing shortage worsened.' },
-        { label: 'Cobra effect', text: 'Colonial India: British government paid bounty for dead cobras to reduce population. Unintended: Indians bred cobras to collect the bounty → cobra population rose. When scheme cancelled, breeders released farmed cobras → worse than before.' },
-        { label: 'Sugary drink tax (smaller cans)', text: 'Sugar levy incentivised manufacturers to reduce can sizes to stay under 5g/100ml threshold. Consumers paid more per litre for smaller portions — higher unit cost, smaller quantity. Unintended redistributive effect.' }
+        { label: '🌽 Biofuels mandate', text: 'US and EU mandated fuel ethanol from crops (positive externality of lower CO2). Unintended: increased demand for corn/rapeseed → food prices rose globally → food riots in developing countries (2007-08). Cure worse than disease for the poorest.' },
+        { label: '🏠 Right to buy (UK housing)', text: 'Council tenants given right to buy at discounts — aimed at increasing homeownership. Unintended: council housing stock reduced from 6.5m (1979) to 2m (2020); councils lacked funds to build replacements; housing shortage worsened.' },
+        { label: '🐍 Cobra effect', text: 'Colonial India: British government paid bounty for dead cobras to reduce population. Unintended: Indians bred cobras to collect the bounty → cobra population rose. When scheme cancelled, breeders released farmed cobras → worse than before.' },
+        { label: '🥤 Sugary drink tax (smaller cans)', text: 'Sugar levy incentivised manufacturers to reduce can sizes to stay under 5g/100ml threshold. Consumers paid more per litre for smaller portions — higher unit cost, smaller quantity. Unintended redistributive effect.' }
       ],
       examEdge: 'The cobra effect is the canonical exam example of perverse incentives and unintended consequences. It illustrates a general principle: when you target a metric (cobra count → bounty), agents game the metric (breed cobras). Goodhart\'s Law: "When a measure becomes a target, it ceases to be a good measure." Apply to any performance target in government policy.'
     },
     {
       id: 'govt_failure_5',
-      template: 'paired',
+      template: 'framing',
       title: 'Market Failure vs Government Failure',
-      left: {
-        label: 'When market failure is severe (intervention justified)',
-        points: [
-          'Public goods: market provides zero; any government provision is better than none',
-          'Large externalities: climate change, pandemics, nuclear risks — market price signals radically understate true costs',
-          'Severe information asymmetry: patients cannot evaluate medical quality; financial products are complex',
-          'Natural monopoly: market provides at P > MC; regulation or public provision improves welfare'
-        ]
-      },
-      right: {
-        label: 'When government failure dominates (caution or restraint)',
-        points: [
-          'Marginal externalities: intervention costs may exceed the modest welfare gain from correction',
-          'Fast-moving markets: government regulation too slow to keep up with technology (social media, crypto)',
-          'Complex supply chains: intervention in one part distorts others (biofuel → food prices)',
-          'High political risk: policy reversal, regulatory capture, or short-termism undermines long-run welfare'
+      verdict: {
+        leftLabel: '📉 When market failure is severe',
+        rightLabel: '🏛️ When government failure dominates',
+        separator: '→',
+        rows: [
+          { aspect: 'Public goods', left: 'Market provides zero; any government provision is better than none', right: 'Preference revelation problem — government cannot know optimal quantity without price signals' },
+          { aspect: 'Large externalities', left: 'Climate change, pandemics, nuclear risks — market price signals radically understate true costs', right: 'Complex supply chains: intervention in one part distorts others (biofuel → food prices)' },
+          { aspect: 'Information asymmetry', left: 'Severe information gaps: patients cannot evaluate medical quality; financial products are complex', right: 'Fast-moving markets: regulation too slow to keep up with technology (social media, crypto)' },
+          { aspect: 'Market power', left: 'Natural monopoly: market provides at P > MC; regulation or public provision improves welfare', right: 'High political risk: policy reversal, regulatory capture, or short-termism undermines long-run welfare' }
         ]
       },
       examEdge: 'The comparison is never "perfect market vs perfect government" — it is "imperfect market vs imperfect government." For climate change: market failure is massive, global, irreversible → intervention justified despite government failure risk. For small local noise externality: market failure is modest → negotiated private solution (Coase) preferred over costly regulation.'
@@ -125,6 +122,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       title: 'Reducing Government Failure',
       body: 'Government failure is not inevitable — better institutional design reduces its likelihood:<br><br>• <strong>Independent regulatory agencies:</strong> Arm\'s-length from political control (Bank of England independence for monetary policy; OBR for fiscal forecasting; Competition and Markets Authority). Reduces short-termism and political capture.<br>• <strong>Sunset clauses:</strong> automatic expiry of regulations forces reassessment — prevents vested interests from making temporary measures permanent.<br>• <strong>Cost-benefit analysis:</strong> rigorous appraisal before intervention (Treasury Green Book). Forces explicit accounting of costs including unintended consequences.<br>• <strong>Pilot schemes:</strong> test policy at small scale before full rollout — reduces scale of unintended consequence risk.',
+      conclusion: { title: 'The institutional design insight', text: 'The best way to reduce government failure is not to avoid all intervention — it is to design intervention with better institutions: independent regulators, transparent appraisal, sunset clauses, and pilots. The Bank of England\'s independence (1997) transformed UK monetary policy by removing day-to-day decisions from electoral politics. Institutional reform matters more than the choice between market and government per se.' },
       keyTerms: [
         { term: 'Independent regulator', def: 'Agency insulated from political interference — reduces short-termism and regulatory capture.' },
         { term: 'Cost-benefit analysis', def: 'Systematic comparison of all costs and benefits of an intervention — required before major UK government spending decisions.' },

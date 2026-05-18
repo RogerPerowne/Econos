@@ -29,20 +29,36 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Demand: the big picture',
-      lede: 'Demand is the most-used concept in microeconomics. Four ideas unlock how it really works.',
+      tip: 'Demand is not just "wanting" something — it requires both willingness AND ability to pay. A wish list without purchasing power is not demand.',
       branches: [
         { tone: 'green',  label: 'Law of demand',       sub: 'Ceteris paribus, price ↓ → quantity demanded ↑. Driven by the substitution effect (switching to alternatives) and the income effect (real purchasing power changes).' },
         { tone: 'amber',  label: 'Movement vs shift',   sub: 'A change in the good\'s own price moves you along the curve. A change in any other determinant (income, tastes, related prices) shifts the whole curve.' },
         { tone: 'blue',   label: 'Determinants',        sub: 'Income, tastes, prices of related goods (substitutes/complements), expectations, population. Each shifts demand left or right.' },
         { tone: 'purple', label: 'Consumer surplus',    sub: 'The gap between the maximum a consumer would pay and the price they actually pay. The triangular welfare gain from trade.' }
       ],
-      body: 'The <strong>law of demand</strong> states that, ceteris paribus (all else equal), as the price of a good falls, the quantity demanded rises; as price rises, quantity demanded falls. This produces a downward-sloping demand curve.<br><br>Two economic effects explain this:<br><br><strong>Substitution effect:</strong> as price rises, the good becomes more expensive relative to substitutes — consumers switch to alternatives, reducing quantity demanded.<br><strong>Income effect:</strong> as price rises, real purchasing power falls — consumers can afford less of everything including the good in question, reducing quantity demanded.',
+      causes: [
+        {
+          icon: '🔄',
+          head: 'Substitution effect',
+          body: 'As price rises, the good becomes more expensive relative to substitutes. Consumers switch to alternatives — reducing quantity demanded. Works for all normal goods.',
+          tone: 'blue'
+        },
+        {
+          icon: '💸',
+          head: 'Income effect',
+          body: 'As price rises, real purchasing power falls. Consumers can afford less of everything — including the good itself. Reinforces the substitution effect for normal goods.',
+          tone: 'purple'
+        }
+      ],
+      causesLabel: 'Why the demand curve slopes downward',
+      causesEmoji: '📉',
+      causesStyle: 'tinted-flat',
       keyTerms: [
         { term: 'Law of demand', def: 'Ceteris paribus: a fall in price leads to a rise in quantity demanded; price and quantity demanded move in opposite directions.' },
         { term: 'Substitution effect', def: 'Price rise makes a good relatively expensive → consumers switch to substitutes.' },
         { term: 'Income effect', def: 'Price rise reduces real purchasing power → less of all normal goods demanded.' }
       ],
-      examEdge: 'Giffen goods are an exception: for extremely inferior goods with no substitutes (historically: Irish potatoes during famine), a price rise may increase quantity demanded because the negative income effect is overwhelming and consumers can afford nothing else. Extremely rare in practice — useful for evaluation.'
+      examEdge: 'Giffen goods are an exception: for extremely inferior goods with no substitutes (historically: Irish potatoes during famine), a price rise may increase quantity demanded because the negative income effect is overwhelming. Extremely rare in practice — useful for evaluation.'
     },
     {
       id: 'demand_2',
@@ -74,32 +90,43 @@ window.ECONOS_TOPIC = {
       id: 'demand_3',
       template: 'cause',
       title: 'Non-Price Determinants of Demand',
+      tip: 'Remember PIRATE: Price of Related goods, Income, fashion/Advertising (Tastes), populaTion, Expectations. Any of these can shift demand left or right.',
       causes: [
-        { head: 'Income', body: 'For normal goods: higher income → more demand (rightward shift). For inferior goods (e.g. value-brand food, bus travel): higher income → less demand (leftward shift). The distinction is crucial for YED analysis.' },
-        { head: 'Price of related goods', body: 'Substitutes: rise in price of Good B → rise in demand for substitute A (rightward shift). Complements: rise in price of Good B → fall in demand for complement A (leftward shift).' },
-        { head: 'Tastes and fashion', body: 'Advertising, social trends, health recommendations shift demand. A celebrity endorsement, a health scare, or a viral trend can cause rapid demand shifts.' },
-        { head: 'Population size and demographics', body: 'Population growth increases market demand. Demographic changes alter composition: ageing population increases healthcare demand; younger population increases education demand.' },
-        { head: 'Expectations', body: 'If consumers expect future price rises, they bring forward purchases → demand rises now. Speculation in asset markets: expected price rises increase demand (bubbles).' }
+        { icon: '💰', head: 'Income',                      body: 'For normal goods: higher income → more demand (rightward shift). For inferior goods (value-brand food, bus travel): higher income → less demand (leftward shift). Crucial for YED analysis.' },
+        { icon: '🔄', head: 'Price of related goods',      body: 'Substitutes: rise in price of Good B → rise in demand for substitute A (rightward shift). Complements: rise in price of Good B → fall in demand for complement A (leftward shift).' },
+        { icon: '🎨', head: 'Tastes and fashion',          body: 'Advertising, social trends, health recommendations shift demand. A celebrity endorsement, a health scare, or a viral trend can cause rapid demand shifts.' },
+        { icon: '👥', head: 'Population and demographics', body: 'Population growth increases market demand. An ageing population increases healthcare demand; a younger population increases education demand.' },
+        { icon: '🔮', head: 'Expectations',                body: 'If consumers expect future price rises, they bring forward purchases → demand rises now. In asset markets, expected price rises increase demand today — driving speculative bubbles.' }
       ],
-      examEdge: 'Mnemonic for non-price demand shifters: <strong>PIRATES</strong> — Price of Related goods, Income, fashion/fRands (Advertising/Tastes), demographics (popuEation), Expectations, Seasonal factors. Examiners expect you to identify the relevant shifter for the context, not just list all of them.'
+      examEdge: 'Examiners expect you to identify the relevant shifter for the specific context, not just list all of them. If the question is about the housing market, identify the most important driver (interest rates, income, expectations) and apply it precisely.'
     },
     {
       id: 'demand_4',
       template: 'framing',
       title: 'Consumer Surplus',
+      tip: 'Consumer surplus falls when price rises and rises when price falls. A tax reduces consumer surplus — part is transferred to government (revenue) and part is simply lost (deadweight loss).',
       body: '<strong>Consumer surplus</strong> is the difference between what a consumer is willing to pay for a good and what they actually pay (the market price). It represents the "bonus" to consumers — the extra welfare they receive above the price they pay.<br><br>On a diagram, consumer surplus is the area below the demand curve and above the equilibrium price — a triangle when the demand curve is straight.<br><br>Consumer surplus increases when price falls (the area of the triangle grows). It decreases when price rises. Monopolists can extract consumer surplus through price discrimination. Market interventions (taxes, price floors) typically reduce consumer surplus.',
       keyTerms: [
         { term: 'Consumer surplus', def: 'The difference between willingness to pay (demand curve) and the price paid — welfare gain to consumers from market exchange.' },
         { term: 'Willingness to pay', def: 'The maximum price a consumer would pay for a unit — the height of the demand curve at that quantity.' },
         { term: 'Deadweight loss', def: 'Loss of consumer and/or producer surplus not transferred to anyone — pure welfare loss from market distortion.' }
       ],
-      examEdge: 'Consumer surplus is more than a diagram concept — it is a welfare measure. A tax on a good causes: (1) consumer surplus loss transferred to government as revenue, (2) consumer surplus loss due to reduced consumption (deadweight loss). Distinguish which part is redistribution and which is pure welfare loss.'
+      examEdge: 'A tax causes: (1) consumer surplus loss transferred to government as revenue, (2) consumer surplus loss due to reduced consumption (deadweight loss). Distinguish which part is redistribution and which is pure welfare loss — this shows you understand welfare analysis, not just diagram labelling.'
     },
     {
       id: 'demand_5',
       template: 'framing',
       title: 'Derived Demand',
-      body: '<strong>Derived demand</strong> occurs when demand for one good exists because of demand for another good. The demand is not intrinsic but derived from the demand for the final product.<br><br><strong>Examples:</strong><br>• Demand for steel is derived from demand for cars, buildings, and ships.<br>• Demand for labour in the car industry is derived from demand for cars.<br>• Demand for advertising agencies is derived from firms\' demand to reach consumers.<br><br>Derived demand is especially important in factor markets (Theme 3): the demand for labour is derived from the demand for the good that labour produces. A fall in product demand directly reduces labour demand — firms shed workers when product markets contract.',
+      tip: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too — making recessions self-reinforcing.',
+      flow: [
+        { icon: '🛍️', title: 'Consumers demand cars',      sub: 'Rising incomes → demand for vehicles grows.',                tone: 'green'  },
+        { icon: '🏭', title: 'Car firms expand output',    sub: 'Firms plan to build more vehicles.',                         tone: 'blue'   },
+        { icon: '⚙️', title: 'Demand for steel rises',    sub: 'More cars → more steel needed → steel market demand shifts right.',  tone: 'amber'  },
+        { icon: '👷', title: 'Demand for labour rises',    sub: 'More production → firms hire more workers in assembly.',     tone: 'purple' },
+        { icon: '📈', title: 'Wages and prices rise',      sub: 'Strong derived demand bids up wages and input costs.',       tone: 'rose'   }
+      ],
+      flowTitle: 'How derived demand flows through markets',
+      flowEmoji: '🔗',
       keyTerms: [
         { term: 'Derived demand', def: 'Demand for a factor or intermediate good arising from demand for the final good it helps produce.' },
         { term: 'Factor market', def: 'Market for inputs to production: labour, capital, land — demand in factor markets is always derived.' },
@@ -118,13 +145,14 @@ window.ECONOS_TOPIC = {
         { label: 'Key shift', colA: 'Interest rate fall → demand rises; immigration → demand rises; house price expectations up → demand rises now', colB: 'Rise in car ownership → derived demand rises; EV adoption → derived demand for petrol falls' }
       ],
       footer: 'For exam questions, always identify the MOST IMPORTANT non-price determinant for the specific market asked about — do not just list all possible factors.',
-      examEdge: 'Housing market is particularly exam-relevant: highly inelastic supply (PES low — takes years to build), volatile demand (interest-rate and sentiment driven) → house price volatility. The interaction of low PES and shifting demand explains why house prices are so unstable.'
+      examEdge: 'Housing market is particularly exam-relevant: highly inelastic supply (takes years to build), volatile demand (interest-rate and sentiment driven) → house price volatility. The interaction of low PES and shifting demand explains why house prices are so unstable.'
     },
     {
       id: 'demand_7',
       template: 'framing',
       title: 'The Demand Curve and Market Analysis',
-      body: 'The demand curve is the foundation of all market analysis in economics. It must be mastered before moving on to supply, equilibrium, elasticity, and market failure.<br><br><strong>Key diagram rules:</strong><br>1. Label axes: Price (P) on vertical, Quantity (Q) on horizontal.<br>2. Label the curve D (or D1 if you will draw D2).<br>3. Mark equilibrium point with coordinates (P*, Q*).<br>4. For a shift, draw D2 and label it clearly.<br>5. Arrow direction: right for increase in demand, left for decrease.<br><br>Methodical diagram technique earns marks even when your written analysis is incomplete — examiners cannot award marks for diagrams they cannot read.',
+      tip: 'Diagram checklist: label both axes (P, Q), label the curve (D or D₁), mark equilibrium (P*, Q*), show shifts clearly (D₂ rightward = increase). Methodical technique earns marks even when written analysis is incomplete.',
+      body: 'The demand curve is the foundation of all market analysis in economics. It must be mastered before moving on to supply, equilibrium, elasticity, and market failure.<br><br><strong>Key diagram rules:</strong><br>1. Label axes: Price (P) on vertical, Quantity (Q) on horizontal.<br>2. Label the curve D (or D1 if you will draw D2).<br>3. Mark equilibrium point with coordinates (P*, Q*).<br>4. For a shift, draw D2 and label it clearly.<br>5. Arrow direction: right for increase in demand, left for decrease.',
       keyTerms: [
         { term: 'Ceteris paribus', def: 'Latin for "all else equal" — the assumption that only one variable changes at a time when analysing its effect.' },
         { term: 'Effective demand', def: 'Demand backed by both willingness AND ability to pay — a wish list without purchasing power is not demand.' },

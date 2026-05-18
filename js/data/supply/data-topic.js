@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'supply',
   topicNum: '2.4',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Supply',
   estTime: '7-9 minutes',
@@ -9,7 +9,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroSupplyDemand',
     summary: 'Supply is the quantity of a good producers are willing and able to offer for sale at each price level. Understanding what moves along the supply curve versus what shifts it is the mirror of demand analysis — both are essential for all market diagrams.',
-    doInThis: 'Work through 7 cards covering the law of supply, movements vs shifts, non-price supply determinants, producer surplus, joint supply, supply in factor markets, and how supply fits into market analysis.',
+    doInThis: 'Work through 7 cards covering the law of supply, movements vs shifts, non-price supply determinants, producer surplus, joint supply, supply in context, and how supply fits into market analysis.',
     outcomes: [
       'State the law of supply and explain why supply curves slope upward',
       'Distinguish a movement along the supply curve from a shift',
@@ -30,9 +30,10 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Supply: the big picture',
       lede: 'Supply is the producer side of every market — and the profit motive is the engine that drives it.',
+      tip: 'Supply ≠ stock. Supply is a relationship between price and quantity — the whole curve. Only a price change moves you along it; everything else shifts the curve.',
       branches: [
-        { tone: 'green',  label: 'Law of supply',           sub: 'Ceteris paribus, price &uarr; &rarr; quantity supplied &uarr;. Higher prices make production more profitable, drawing firms in and existing firms out further.' },
-        { tone: 'amber',  label: 'Movement vs shift',       sub: 'A change in the good&apos;s own price moves you along the curve. Any other determinant (costs, tech, taxes) shifts the whole curve.' },
+        { tone: 'green',  label: 'Law of supply',           sub: 'Ceteris paribus, price ↑ → quantity supplied ↑. Higher prices make production more profitable, drawing firms in and existing firms out further.' },
+        { tone: 'amber',  label: 'Movement vs shift',       sub: 'A change in the good\'s own price moves you along the curve. Any other determinant (costs, tech, taxes) shifts the whole curve.' },
         { tone: 'blue',   label: 'Non-price determinants',  sub: 'Production costs, technology, indirect taxes and subsidies, producer numbers and expectations — the levers that shift S left or right.' },
         { tone: 'purple', label: 'Producer surplus',        sub: 'The gap between the price received and the minimum the producer would accept. The welfare gain to firms from trade.' },
         { tone: 'rose',   label: 'Joint &amp; competing supply', sub: 'Beef &amp; leather rise together; wheat &amp; barley compete for the same fields. Linked supply curves complicate the simple picture.' }
@@ -75,12 +76,15 @@ window.ECONOS_TOPIC = {
       id: 'supply_3',
       template: 'cause',
       title: 'Non-Price Determinants of Supply',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '📋',
+      causesLabel: 'What shifts the supply curve',
       causes: [
-        { head: 'Costs of production', body: 'Input prices (wages, raw materials, energy) are the most important supply shifter. Higher costs → less profit at each price → supply decreases (shifts left). Lower costs → supply increases (shifts right).' },
-        { head: 'Technology', body: 'Improved technology raises productivity — more output per unit of input → lower cost per unit → supply shifts right. Technological progress is the key long-run driver of expanding supply.' },
-        { head: 'Number of producers', body: 'More firms in the market → total market supply increases (shifts right). Fewer firms (after exits, consolidation) → supply decreases.' },
-        { head: 'Government policy', body: 'Production subsidies lower effective costs → supply shifts right. Indirect taxes raise effective costs → supply shifts left. Regulation (e.g. environmental standards) adds compliance costs → supply falls.' },
-        { head: 'Natural and external factors', body: 'Weather, natural disasters, pandemics, geopolitical events affect supply of specific goods. Oil supply is affected by OPEC decisions; food supply by harvest quality; manufacturing by component availability.' }
+        { icon: '💰', head: 'Costs of production', body: 'Input prices (wages, raw materials, energy) are the most important supply shifter. Higher costs → less profit at each price → supply decreases (shifts left). Lower costs → supply increases (shifts right).' },
+        { icon: '💻', head: 'Technology', body: 'Improved technology raises productivity — more output per unit of input → lower cost per unit → supply shifts right. Technological progress is the key long-run driver of expanding supply.' },
+        { icon: '🏭', head: 'Number of producers', body: 'More firms in the market → total market supply increases (shifts right). Fewer firms (after exits, consolidation) → supply decreases.' },
+        { icon: '🏛️', head: 'Government policy', body: 'Production subsidies lower effective costs → supply shifts right. Indirect taxes raise effective costs → supply shifts left. Regulation (e.g. environmental standards) adds compliance costs → supply falls.' },
+        { icon: '🌦️', head: 'Natural &amp; external factors', body: 'Weather, natural disasters, pandemics, geopolitical events affect supply of specific goods. Oil supply is affected by OPEC decisions; food supply by harvest quality; manufacturing by component availability.' }
       ],
       examEdge: 'The Ukraine-Russia war (2022) provides excellent exam material: Russian gas and Ukrainian wheat export restrictions caused simultaneous leftward shifts in European energy and food supply curves — illustrating supply shocks and their inflationary consequences.'
     },
@@ -88,6 +92,7 @@ window.ECONOS_TOPIC = {
       id: 'supply_4',
       template: 'framing',
       title: 'Producer Surplus',
+      tip: 'Producer surplus = the triangle BELOW the market price ABOVE the supply curve. It rises when price rises; falls when price falls. Government taxes reduce it; subsidies increase it.',
       body: '<strong>Producer surplus</strong> is the difference between the price a producer actually receives for a unit and the minimum price they would have accepted (their marginal cost). It represents the "profit" or benefit producers gain from market exchange beyond what they needed to cover costs.<br><br>On a diagram, producer surplus is the area above the supply curve and below the equilibrium price — a triangle for a straight supply curve.<br><br>Producer surplus rises when price rises (and when supply shifts left — fewer units sold but at higher price per unit). It falls when price falls or supply shifts right. Government taxes reduce producer surplus; subsidies increase it.',
       keyTerms: [
         { term: 'Producer surplus', def: 'The difference between price received and minimum acceptable price (marginal cost) — welfare gain to producers from market exchange.' },
@@ -100,7 +105,17 @@ window.ECONOS_TOPIC = {
       id: 'supply_5',
       template: 'framing',
       title: 'Joint Supply and Competing Supply',
-      body: '<strong>Joint supply</strong> (also called "by-product" supply): when producing one good automatically generates another. Increasing output of the first increases supply of the second. Examples: beef and leather; oil and natural gas; electricity and heat.<br><br>A rise in beef production → more leather supply → leather supply shifts right → leather price falls.<br><br><strong>Competing supply</strong>: when factors of production can be used to produce either of two goods. More of one reduces the other. Examples: land for wheat OR oil-seed rape; a factory running product A cannot simultaneously run product B. Rise in wheat price → farmers switch land to wheat → rape supply shifts left → rape price rises.',
+      verdict: {
+        leftLabel: '🔗 Joint supply',
+        rightLabel: '⚔️ Competing supply',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Definition', left: 'Producing one good automatically creates another as a by-product', right: 'The same resources can produce either of two goods — more of one means less of the other' },
+          { aspect: 'Example', left: 'Beef & leather · Oil & natural gas · Electricity & heat', right: 'Wheat & oil-seed rape (same land) · Product A vs B in a factory' },
+          { aspect: 'Price link', left: 'Beef price rises → more beef → more leather → leather price falls', right: 'Wheat price rises → farmers switch to wheat → rape supply falls → rape price rises' },
+          { aspect: 'Exam angle', left: 'Trace the chain step-by-step — two markets linked via a shared production process', right: 'Trace the opportunity cost — switching resources reduces supply in the other market' }
+        ]
+      },
       keyTerms: [
         { term: 'Joint supply', def: 'When two goods are produced together — output of one automatically produces the other.' },
         { term: 'Competing supply', def: 'When the same resources can produce either of two goods — more of one means less of the other.' },
@@ -126,6 +141,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       title: 'Supply and the Profit Motive',
       body: 'Supply in a market economy is ultimately driven by the <strong>profit motive</strong>. Firms supply goods where they can earn a profit — where price exceeds average cost. This means supply responds to price signals because prices signal profit opportunities:<br><br>• Price rises → profit margin rises → existing firms expand, new firms enter → supply increases<br>• Price falls → profit margins squeezed → firms contract, some exit → supply decreases<br><br>This profit-driven supply response is the market\'s mechanism for solving the "what to produce" question. Resources flow to where profits are highest — automatically directing productive capacity to what consumers value most (at current prices).',
+      conclusion: { title: 'The profit motive is the engine of supply', text: 'In a free market, producers supply what is profitable — not what society necessarily needs. This is simultaneously supply\'s greatest strength (efficient resource allocation) and its greatest weakness (ignores externalities and public goods). Theme 1\'s market failure section explores precisely when and why this breaks down.' },
       keyTerms: [
         { term: 'Profit motive', def: 'The incentive for firms to produce goods and services where price exceeds cost — the engine of market supply.' },
         { term: 'Entry and exit', def: 'New firms entering a profitable market increases supply; firms exiting an unprofitable market reduces it — key to long-run equilibrium.' },

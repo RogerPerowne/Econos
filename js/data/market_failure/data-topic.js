@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'market_failure',
   topicNum: '3.1',
-  theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   sessionLabel: 'Session 1 of 3: Learn',
   title: 'Market Failure',
   estTime: '8-10 minutes',
@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 6',
       title: 'Market failure: the big picture',
       lede: 'Free markets are powerful — but they fail when private incentives diverge from social welfare.',
+      tip: 'Private equilibrium: where MPB = MPC. Social optimum: where MSB = MSC. Market failure = the gap between these two points. Government intervention aims to close this gap.',
       branches: [
         { tone: 'green',  label: 'What it means',        sub: 'Market failure = the price mechanism allocates resources in a way that is not socially optimal. Not "broken" — just producing the wrong amount.' },
         { tone: 'blue',   label: 'Externalities',         sub: 'Costs or benefits that spill over to third parties. Negative: over-production. Positive: under-production.' },
@@ -62,12 +63,13 @@ window.ECONOS_TOPIC = {
       template: 'cause',
       causesEmoji: '🔍',
       causesLabel: 'Four types of market failure',
+      causesStyle: 'tinted-flat',
       title: 'The Four Types of Market Failure',
       causes: [
-        { head: 'Externalities', body: '<strong>Negative:</strong> third-party costs ignored by producers/consumers → over-production (pollution, congestion, smoking). <strong>Positive:</strong> third-party benefits ignored → under-production (education, vaccination, R&D). Both create a gap between private and social optimum.' },
-        { head: 'Public goods', body: 'Goods that are non-rival (one person\'s consumption does not reduce availability to others) and non-excludable (cannot prevent non-payers from consuming). Free-rider problem → rational not to pay → private market under-provides. Examples: national defence, street lighting, flood defences.' },
-        { head: 'Information gaps', body: 'Asymmetric information: one party knows more than the other. <strong>Adverse selection:</strong> before a transaction (e.g. used car market, insurance). <strong>Moral hazard:</strong> after a transaction (e.g. insured person takes more risks). Leads to under- or over-consumption relative to the optimum.' },
-        { head: 'Factor immobility', body: 'Labour and capital that cannot move freely between sectors or regions. Geographic immobility (workers cannot move to where jobs are) and occupational immobility (workers lack skills for available jobs) prevent efficient resource allocation, causing structural unemployment and persistent regional inequality.' }
+        { icon: '💨', head: 'Externalities', body: '<strong>Negative:</strong> third-party costs ignored by producers/consumers → over-production (pollution, congestion, smoking). <strong>Positive:</strong> third-party benefits ignored → under-production (education, vaccination, R&D). Both create a gap between private and social optimum.' },
+        { icon: '🏛️', head: 'Public goods', body: 'Goods that are non-rival (one person\'s consumption does not reduce availability to others) and non-excludable (cannot prevent non-payers from consuming). Free-rider problem → rational not to pay → private market under-provides. Examples: national defence, street lighting, flood defences.' },
+        { icon: '📊', head: 'Information gaps', body: 'Asymmetric information: one party knows more than the other. <strong>Adverse selection:</strong> before a transaction (e.g. used car market, insurance). <strong>Moral hazard:</strong> after a transaction (e.g. insured person takes more risks). Leads to under- or over-consumption relative to the optimum.' },
+        { icon: '🚧', head: 'Factor immobility', body: 'Labour and capital that cannot move freely between sectors or regions. Geographic immobility (workers cannot move to where jobs are) and occupational immobility (workers lack skills for available jobs) prevent efficient resource allocation, causing structural unemployment and persistent regional inequality.' }
       ],
       examEdge: 'All four types of market failure can appear in exams. The most common are externalities and public goods. Information gaps and factor immobility are often examined in context (healthcare, labour markets). Make sure you can link each type to a specific real-world example and the relevant government response.'
     },
@@ -87,26 +89,17 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_failure_5',
-      template: 'paired',
+      template: 'framing',
       title: 'Market Failure vs Government Failure',
-      left: {
-        label: 'Market failure — the case for intervention',
-        points: [
-          'Free market ignores external costs/benefits — price mechanism sends wrong signals',
-          'Public goods under-provided because free-rider problem removes private incentive',
-          'Information asymmetries lead to adverse selection and moral hazard',
-          'Without intervention, socially harmful activities are over-produced; beneficial activities under-produced',
-          'Equity concerns: even without efficiency failure, distributional outcomes may be unacceptable'
-        ]
-      },
-      right: {
-        label: 'Government failure — the case against intervention',
-        points: [
-          'Governments lack the information to set optimal taxes, subsidies or regulations',
-          'Unintended consequences: price controls create shortages/surpluses; subsidies create dependency',
-          'Public choice theory: politicians and regulators serve their own interests, not the public interest',
-          'Regulatory capture: industry lobbying shapes regulation to benefit incumbents',
-          'Intervention may be worse than the market failure it is trying to correct'
+      verdict: {
+        leftLabel: '📉 Market failure — case FOR intervention',
+        rightLabel: '🏛️ Government failure — case AGAINST',
+        separator: 'VS',
+        rows: [
+          { aspect: 'Externalities', left: 'Free market ignores external costs/benefits — price mechanism sends wrong signals', right: 'Governments lack the information to set optimal taxes, subsidies or regulations' },
+          { aspect: 'Public goods', left: 'Public goods under-provided because free-rider problem removes private incentive', right: 'Preference revelation problem: government cannot know optimal quantity without price signals' },
+          { aspect: 'Information', left: 'Asymmetric information leads to adverse selection and moral hazard', right: 'Public choice theory: politicians serve their own interests, not the public interest' },
+          { aspect: 'Equity', left: 'Even without efficiency failure, distributional outcomes may be unacceptable', right: 'Regulatory capture: industry lobbying shapes regulation to benefit incumbents' }
         ]
       },
       examEdge: 'The market failure vs government failure comparison is the key evaluative framework for all Section B and Section C questions on microeconomic policy. The existence of market failure justifies the case for intervention; the risk of government failure limits that case. A sophisticated answer considers both sides and evaluates which is likely to dominate in a specific context.'

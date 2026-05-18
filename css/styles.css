@@ -3362,6 +3362,47 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .market-svg .layer-shift { opacity: 1; }
 .show-shift .market-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== CPS (CONSUMER / PRODUCER SURPLUS) INTERACTIVE ===== */
+/* Always visible */
+.cps-svg .layer-axes,
+.cps-svg .layer-curves { opacity: 1; transition: opacity 0.35s ease; }
+/* Hidden by default */
+.cps-svg .layer-cs,
+.cps-svg .layer-ps,
+.cps-svg .layer-eq,
+.cps-svg .layer-cs-label,
+.cps-svg .layer-ps-label,
+.cps-svg .layer-welfare-label,
+.cps-svg .layer-dwl,
+.cps-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
+
+/* show-base: diagram only + intro panel */
+.show-base .cps-svg .layer-legend-base { opacity: 1; }
+
+/* show-cs: equilibrium + CS triangle + CS explanation */
+.show-cs .cps-svg .layer-eq { opacity: 1; }
+.show-cs .cps-svg .layer-cs { opacity: 1; }
+.show-cs .cps-svg .layer-cs-label { opacity: 1; }
+
+/* show-ps: CS fades, PS appears + PS explanation */
+.show-ps .cps-svg .layer-eq { opacity: 1; }
+.show-ps .cps-svg .layer-cs { opacity: 0.3; }
+.show-ps .cps-svg .layer-cs-label { opacity: 0.3; }
+.show-ps .cps-svg .layer-ps { opacity: 1; }
+.show-ps .cps-svg .layer-ps-label { opacity: 1; }
+
+/* show-total: both triangles full + welfare explanation */
+.show-total .cps-svg .layer-eq { opacity: 1; }
+.show-total .cps-svg .layer-cs { opacity: 1; }
+.show-total .cps-svg .layer-ps { opacity: 1; }
+.show-total .cps-svg .layer-welfare-label { opacity: 1; }
+
+/* show-dwl: faded CS/PS + tax wedge + DWL explanation */
+.show-dwl .cps-svg .layer-eq { opacity: 1; }
+.show-dwl .cps-svg .layer-cs { opacity: 0.18; }
+.show-dwl .cps-svg .layer-ps { opacity: 0.18; }
+.show-dwl .cps-svg .layer-dwl { opacity: 1; }
+
 /* ===== PHILLIPS INTERACTIVE ===== */
 .phillips-svg .layer-axes,
 .phillips-svg .layer-srpc1,

@@ -3947,6 +3947,173 @@ window.ECONOS_ICONS = {
             text-anchor="middle" letter-spacing="2" opacity="0.75">MARKET CLEARS WHERE S MEETS D</text>
     </svg>
   `,
+  cpsSvg: `
+    <svg class="cps-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="cps-chart-clip">
+          <rect x="60" y="43" width="520" height="367"/>
+        </clipPath>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="608" y1="16" x2="608" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: CS triangle fill ===== -->
+      <g class="layer-cs">
+        <polygon points="60,65 60,225 310,225" fill="#D1FAE5" opacity="0.9" clip-path="url(#cps-chart-clip)"/>
+      </g>
+
+      <!-- ===== LAYER: PS triangle fill ===== -->
+      <g class="layer-ps">
+        <polygon points="60,375 60,225 310,225" fill="#FEE2E2" opacity="0.9" clip-path="url(#cps-chart-clip)"/>
+      </g>
+
+      <!-- ===== LAYER: DWL tax wedge ===== -->
+      <g class="layer-dwl">
+        <!-- DWL triangle (amber) -->
+        <polygon points="255,190 310,225 255,258" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" clip-path="url(#cps-chart-clip)"/>
+        <!-- Pc dashed line -->
+        <line x1="60" y1="190" x2="310" y2="190" stroke="#334155" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.55"/>
+        <!-- Pp dashed line -->
+        <line x1="60" y1="258" x2="310" y2="258" stroke="#334155" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.55"/>
+        <!-- Q2 dashed vertical -->
+        <line x1="255" y1="190" x2="255" y2="400" stroke="#334155" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.55"/>
+        <!-- Pc dot and label -->
+        <circle cx="255" cy="190" r="4" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+        <circle cx="255" cy="258" r="4" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+        <text x="46" y="194" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">Pc</text>
+        <text x="46" y="262" font-size="11" font-weight="700" fill="#0B1426" text-anchor="end">Pp</text>
+        <text x="255" y="418" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle">Q2</text>
+        <!-- DWL label badge -->
+        <rect x="271" y="214" width="36" height="20" rx="4" fill="#F59E0B" opacity="0.9"/>
+        <text x="289" y="228" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">DWL</text>
+        <!-- Right panel content -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#F59E0B" letter-spacing="2">TAX &amp; DEADWEIGHT LOSS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">A tax drives a wedge between</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">Pc (consumer price) and Pp</text>
+        <text x="628" y="140" font-size="14" font-weight="700" fill="#1E293B">(producer price).</text>
+        <text x="628" y="175" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">OUTPUT FALLS</text>
+        <text x="628" y="198" font-size="13" fill="#334155">Q falls from Q* to Q2 — fewer</text>
+        <text x="628" y="216" font-size="13" fill="#334155">mutually beneficial trades occur.</text>
+        <text x="628" y="248" font-size="10" font-weight="700" fill="#F59E0B" letter-spacing="2">DEADWEIGHT LOSS</text>
+        <text x="628" y="271" font-size="13" fill="#334155">The amber triangle is surplus</text>
+        <text x="628" y="289" font-size="13" fill="#334155">destroyed — lost by everyone,</text>
+        <text x="628" y="307" font-size="13" fill="#334155">captured by no one.</text>
+        <text x="628" y="339" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM POINT</text>
+        <text x="628" y="362" font-size="13" fill="#334155">Only a Pigouvian tax (correcting</text>
+        <text x="628" y="380" font-size="13" fill="#334155">an externality) improves welfare.</text>
+      </g>
+
+      <!-- ===== LAYER: axes (always visible) ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="575" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="575,395 575,405 587,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="591" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: curves (always visible) ===== -->
+      <g class="layer-curves">
+        <!-- Demand (green, downward) -->
+        <line x1="60" y1="65" x2="560" y2="385" stroke="#059669" stroke-width="3.5" stroke-linecap="round" clip-path="url(#cps-chart-clip)"/>
+        <text x="568" y="385" font-size="14" font-weight="800" fill="#059669">D</text>
+        <!-- Supply (rose, upward) -->
+        <line x1="60" y1="375" x2="560" y2="75" stroke="#E11D48" stroke-width="3.5" stroke-linecap="round" clip-path="url(#cps-chart-clip)"/>
+        <text x="568" y="75" font-size="14" font-weight="800" fill="#E11D48">S</text>
+        <!-- Always-on legend stub -->
+        <text x="628" y="32" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TAP A STEP TO BUILD THE DIAGRAM</text>
+      </g>
+
+      <!-- ===== LAYER: equilibrium lines + dot ===== -->
+      <g class="layer-eq">
+        <line x1="60" y1="225" x2="310" y2="225" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="310" y1="225" x2="310" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="310" cy="225" r="7" fill="white" stroke="#0B1426" stroke-width="2.5"/>
+        <circle cx="310" cy="225" r="3" fill="#EC2D68"/>
+        <text x="46" y="229" font-size="12" font-weight="700" fill="#334155" text-anchor="end">P*</text>
+        <text x="310" y="418" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+      </g>
+
+      <!-- ===== LAYER: CS label ===== -->
+      <g class="layer-cs-label">
+        <text x="143" y="172" font-size="18" font-weight="900" fill="#059669" text-anchor="middle" opacity="0.9">CS</text>
+        <!-- Right panel content -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">CONSUMER SURPLUS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">The green triangle = extra</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">benefit consumers receive.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">HOW TO SEE IT</text>
+        <text x="628" y="183" font-size="13" fill="#334155">Each buyer on the demand curve</text>
+        <text x="628" y="201" font-size="13" fill="#334155">was willing to pay MORE than P*.</text>
+        <text x="628" y="219" font-size="13" fill="#334155">CS is their combined saving.</text>
+        <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">FORMULA</text>
+        <text x="628" y="278" font-size="13" fill="#334155">CS = ½ × base × height</text>
+        <text x="628" y="296" font-size="13" fill="#334155">= ½ × Q* × (max WTP − P*)</text>
+        <text x="628" y="332" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VERTICES</text>
+        <text x="628" y="355" font-size="13" fill="#334155">D-axis intercept → P* on P-axis</text>
+        <text x="628" y="373" font-size="13" fill="#334155">→ equilibrium point (Q*, P*).</text>
+      </g>
+
+      <!-- ===== LAYER: PS label ===== -->
+      <g class="layer-ps-label">
+        <text x="143" y="278" font-size="18" font-weight="900" fill="#E11D48" text-anchor="middle" opacity="0.9">PS</text>
+        <!-- Right panel content -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#E11D48" letter-spacing="2">PRODUCER SURPLUS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">The rose triangle = extra</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">revenue producers receive.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">HOW TO SEE IT</text>
+        <text x="628" y="183" font-size="13" fill="#334155">Each seller on the supply curve</text>
+        <text x="628" y="201" font-size="13" fill="#334155">would accept LESS than P*.</text>
+        <text x="628" y="219" font-size="13" fill="#334155">PS is their combined gain.</text>
+        <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">FORMULA</text>
+        <text x="628" y="278" font-size="13" fill="#334155">PS = ½ × base × height</text>
+        <text x="628" y="296" font-size="13" fill="#334155">= ½ × Q* × (P* − min supply P)</text>
+        <text x="628" y="332" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VERTICES</text>
+        <text x="628" y="355" font-size="13" fill="#334155">S-axis intercept → P* on P-axis</text>
+        <text x="628" y="373" font-size="13" fill="#334155">→ equilibrium point (Q*, P*).</text>
+      </g>
+
+      <!-- ===== LAYER: total welfare label ===== -->
+      <g class="layer-welfare-label">
+        <text x="143" y="172" font-size="18" font-weight="900" fill="#059669" text-anchor="middle" opacity="0.9">CS</text>
+        <text x="143" y="278" font-size="18" font-weight="900" fill="#E11D48" text-anchor="middle" opacity="0.9">PS</text>
+        <!-- Right panel content -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">TOTAL WELFARE = CS + PS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">Both triangles together = the</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">total gains from trade.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHY IT'S MAXIMISED HERE</text>
+        <text x="628" y="183" font-size="13" fill="#334155">At Q*, every unit where benefit</text>
+        <text x="628" y="201" font-size="13" fill="#334155">exceeds cost is produced. None</text>
+        <text x="628" y="219" font-size="13" fill="#334155">where cost exceeds benefit.</text>
+        <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">ALLOCATIVE EFFICIENCY</text>
+        <text x="628" y="278" font-size="13" fill="#334155">This is the social optimum:</text>
+        <text x="628" y="296" font-size="13" fill="#334155">MSB = MSC, DWL = 0.</text>
+        <text x="628" y="332" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">KEY PRINCIPLE</text>
+        <text x="628" y="355" font-size="13" fill="#334155">Any policy that moves output</text>
+        <text x="628" y="373" font-size="13" fill="#334155">away from Q* reduces total welfare.</text>
+      </g>
+
+      <!-- ===== LAYER: base state legend ===== -->
+      <g class="layer-legend-base">
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE SUPPLY &amp; DEMAND DIAGRAM</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">S and D intersect at the</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">free-market equilibrium.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHAT HAPPENS HERE</text>
+        <text x="628" y="183" font-size="13" fill="#334155">At price P* and quantity Q*,</text>
+        <text x="628" y="201" font-size="13" fill="#334155">every willing buyer meets a</text>
+        <text x="628" y="219" font-size="13" fill="#334155">willing seller.</text>
+        <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHAT WE'LL BUILD</text>
+        <text x="628" y="278" font-size="13" fill="#334155">Tap each step to reveal the</text>
+        <text x="628" y="296" font-size="13" fill="#334155">surplus areas and see where</text>
+        <text x="628" y="314" font-size="13" fill="#334155">the gains from trade go.</text>
+      </g>
+    </svg>
+  `,
   heroCPS: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

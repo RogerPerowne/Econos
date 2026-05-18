@@ -125,24 +125,41 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_5',
-      template: 'framing',
       title: 'Joint Supply and Competing Supply',
-      verdict: {
-        leftLabel: '🔗 Joint supply',
-        rightLabel: '⚔️ Competing supply',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Definition', left: 'Producing one good automatically creates another as a by-product', right: 'The same resources can produce either of two goods — more of one means less of the other' },
-          { aspect: 'Example', left: 'Beef & leather · Oil & natural gas · Electricity & heat', right: 'Wheat & oil-seed rape (same land) · Product A vs B in a factory' },
-          { aspect: 'Price link', left: 'Beef price rises → more beef → more leather → leather price falls', right: 'Wheat price rises → farmers switch to wheat → rape supply falls → rape price rises' },
-          { aspect: 'Exam angle', left: 'Trace the chain step-by-step — two markets linked via a shared production process', right: 'Trace the opportunity cost — switching resources reduces supply in the other market' }
-        ]
-      },
-      keyTerms: [
-        { term: 'Joint supply', def: 'When two goods are produced together — output of one automatically produces the other.' },
-        { term: 'Competing supply', def: 'When the same resources can produce either of two goods — more of one means less of the other.' },
-        { term: 'By-product', def: 'A secondary output produced alongside the primary output in a production process.' }
+      conceptBoxes: [
+        {
+          tone: 'green',
+          head: 'Joint supply',
+          sub: 'Products are produced together.',
+          flows: [
+            { inputs: [{ icon: '🐄', label: 'Cattle' }],    outputs: [{ icon: '🥩', label: 'Beef' },   { icon: '🟫', label: 'Leather' }], connector: '+' },
+            { inputs: [{ icon: '🛢️', label: 'Crude oil' }], outputs: [{ icon: '⛽', label: 'Petrol' }, { icon: '💧', label: 'Diesel' }],  connector: '+' }
+          ],
+          bullets: [
+            'Two or more products are created in the same production process.',
+            'You cannot get more of one without also getting more of the other.',
+            'When output of one rises, the supply of the joint product also rises.'
+          ]
+        },
+        {
+          tone: 'purple',
+          head: 'Competing supply',
+          sub: 'Products compete for the same scarce resources.',
+          flows: [
+            { inputs: [{ icon: '🌾', label: 'Farmland' }], outputs: [{ icon: '🌽', label: 'Wheat' },  { icon: '🌻', label: 'Rapeseed' }], connector: 'or' },
+            { inputs: [{ icon: '🏭', label: 'Factory' }],  outputs: [{ icon: '🚗', label: 'Cars' },   { icon: '🚐', label: 'Vans' }],    connector: 'or' }
+          ],
+          bullets: [
+            'Resources have alternative uses in different products.',
+            'Using more resources for one product means less for another.',
+            'More resources for one product can reduce supply of the other.'
+          ]
+        }
       ],
+      howToThink: {
+        left:  { icon: '🧩', tone: 'green',  head: 'Key idea — Joint supply',    body: 'Products are produced together. More of one means more of the other.' },
+        right: { icon: '🧩', tone: 'purple', head: 'Key idea — Competing supply', body: 'Products use the same scarce resources. More of one can mean less of the other.' }
+      },
       examEdge: 'Joint supply is regularly tested in context questions. "A rise in demand for beef raises beef prices — what happens to leather prices?" Answer: beef production rises (extension of supply) → more leather produced as joint product → leather supply shifts right → leather price falls. Walk through each step carefully.'
     },
     {

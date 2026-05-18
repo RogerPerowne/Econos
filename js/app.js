@@ -378,6 +378,38 @@
       </div>`;
     }
 
+    // Concept boxes — full-width tinted panels, one per concept, each with an icon flow and bullets.
+    // Data: [{ tone, head, sub?, flows: [{inputs:[{icon,label}], outputs:[{icon,label}], connector}], bullets:[] }]
+    if (c.conceptBoxes && c.conceptBoxes.length) {
+      c.conceptBoxes.forEach(box => {
+        const t = PATTERN_TONES[box.tone || 'blue'] || PATTERN_TONES.blue;
+        const iconCircle = (emoji) => `<div style="width:52px;height:52px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;box-shadow:0 1px 6px rgba(0,0,0,0.10);flex-shrink:0;">${emoji}</div>`;
+        const iconBlock = (item) => `
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            ${iconCircle(item.icon)}
+            <div style="font-size:11px;font-weight:700;color:${t.label};text-align:center;line-height:1.3;max-width:60px;">${item.label}</div>
+          </div>`;
+        const connectorBadge = (text) => `<div style="font-size:12px;font-weight:800;color:${t.label};background:#fff;border-radius:99px;padding:3px 10px;border:1.5px solid ${t.border};white-space:nowrap;">${text}</div>`;
+        const flowsHtml = (box.flows || []).map(flow => `
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+            ${flow.inputs.map(iconBlock).join('')}
+            <div style="font-size:22px;color:${t.label};font-weight:700;flex-shrink:0;">→</div>
+            ${flow.outputs.map((item, i) => `${i > 0 ? connectorBadge(flow.connector) : ''}${iconBlock(item)}`).join('')}
+          </div>`).join('');
+        const bulletsHtml = (box.bullets || []).map(b => `
+          <li style="display:flex;gap:8px;font-size:13.5px;color:#0B1426;line-height:1.65;margin-bottom:5px;">
+            <span style="color:${t.label};flex-shrink:0;margin-top:1px;">•</span><span>${b}</span>
+          </li>`).join('');
+        content += `
+          <div style="border-radius:16px;background:${t.bg};border:1px solid ${t.border};padding:22px 22px 18px;margin-bottom:14px;">
+            <div style="font-size:18px;font-weight:800;color:${t.label};margin-bottom:4px;">${box.head}</div>
+            ${box.sub ? `<div style="font-size:13.5px;color:${t.label};font-weight:600;opacity:0.85;margin-bottom:16px;">${box.sub}</div>` : ''}
+            ${flowsHtml}
+            <ul style="margin:10px 0 0;padding:0;list-style:none;">${bulletsHtml}</ul>
+          </div>`;
+      });
+    }
+
     // Shift diagrams — two mini SVGs (increase / decrease) side by side.
     // `shiftDiagrams: true` → upward-sloping supply curves.
     // `shiftDiagrams: 'demand'` → downward-sloping demand curves.
@@ -2663,6 +2695,7 @@
       c.verdict !== undefined ||
       c.comparison !== undefined ||
       c.table !== undefined ||
+      c.conceptBoxes !== undefined ||
       (c.left !== undefined && c.right !== undefined) ||
       (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
        typeof c.causes[0] === 'object' && 'head' in c.causes[0])

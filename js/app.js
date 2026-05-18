@@ -390,8 +390,8 @@
         <path d="M 68,110 Q 95,65 135,16" fill="none" stroke="#059669" stroke-width="2.2"/>
         <text x="97" y="13" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">S₁</text>
         <text x="137" y="13" font-size="10" fill="#059669" font-weight="bold" font-family="system-ui,sans-serif">S₂</text>
-        <line x1="90" y1="75" x2="120" y2="75" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <polygon points="120,72 127,75 120,78" fill="#059669"/>
+        <line x1="64" y1="64" x2="92" y2="64" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <polygon points="92,61 99,64 92,67" fill="#059669"/>
       </svg>`;
       const leftSvg = `<svg viewBox="0 0 175 135" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
         <line x1="22" y1="6" x2="22" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
@@ -402,8 +402,8 @@
         <path d="M 28,110 Q 55,65 95,16" fill="none" stroke="#DC2626" stroke-width="2.2"/>
         <text x="137" y="13" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">S₁</text>
         <text x="97" y="13" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui,sans-serif">S₂</text>
-        <line x1="120" y1="75" x2="90" y2="75" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <polygon points="90,72 83,75 90,78" fill="#DC2626"/>
+        <line x1="92" y1="64" x2="64" y2="64" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <polygon points="64,61 57,64 64,67" fill="#DC2626"/>
       </svg>`;
       content += `
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;">

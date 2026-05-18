@@ -3362,6 +3362,40 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .market-svg .layer-shift { opacity: 1; }
 .show-shift .market-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== DEMAND CS INTERACTIVE ===== */
+.demand-cs-svg .layer-axes,
+.demand-cs-svg .layer-demand { opacity: 1; transition: opacity 0.35s ease; }
+.demand-cs-svg .layer-eq,
+.demand-cs-svg .layer-cs,
+.demand-cs-svg .layer-cs-label,
+.demand-cs-svg .layer-pfall,
+.demand-cs-svg .layer-pfall-cs,
+.demand-cs-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
+
+.show-base .demand-cs-svg .layer-legend-base { opacity: 1; }
+.show-cs .demand-cs-svg .layer-eq { opacity: 1; }
+.show-cs .demand-cs-svg .layer-cs { opacity: 1; }
+.show-cs .demand-cs-svg .layer-cs-label { opacity: 1; }
+.show-pfall .demand-cs-svg .layer-pfall-cs { opacity: 1; }
+.show-pfall .demand-cs-svg .layer-pfall { opacity: 1; }
+
+/* ===== SUPPLY PS INTERACTIVE ===== */
+.supply-ps-svg .layer-axes,
+.supply-ps-svg .layer-supply { opacity: 1; transition: opacity 0.35s ease; }
+.supply-ps-svg .layer-eq,
+.supply-ps-svg .layer-ps,
+.supply-ps-svg .layer-ps-label,
+.supply-ps-svg .layer-prise,
+.supply-ps-svg .layer-prise-ps,
+.supply-ps-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
+
+.show-base .supply-ps-svg .layer-legend-base { opacity: 1; }
+.show-ps .supply-ps-svg .layer-eq { opacity: 1; }
+.show-ps .supply-ps-svg .layer-ps { opacity: 1; }
+.show-ps .supply-ps-svg .layer-ps-label { opacity: 1; }
+.show-prise .supply-ps-svg .layer-prise-ps { opacity: 1; }
+.show-prise .supply-ps-svg .layer-prise { opacity: 1; }
+
 /* ===== CPS (CONSUMER / PRODUCER SURPLUS) INTERACTIVE ===== */
 /* Always visible */
 .cps-svg .layer-axes,

@@ -3947,6 +3947,237 @@ window.ECONOS_ICONS = {
             text-anchor="middle" letter-spacing="2" opacity="0.75">MARKET CLEARS WHERE S MEETS D</text>
     </svg>
   `,
+  demandCsSvg: `
+    <svg class="demand-cs-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="dcs-clip">
+          <rect x="60" y="43" width="530" height="367"/>
+        </clipPath>
+      </defs>
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <line x1="608" y1="16" x2="608" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- LAYER: original CS triangle (base state) -->
+      <g class="layer-cs">
+        <polygon points="60,65 60,225 318,225" fill="#D1FAE5" opacity="0.85" clip-path="url(#dcs-clip)"/>
+      </g>
+
+      <!-- LAYER: expanded CS triangle (pfall state) — drawn first so curves sit on top -->
+      <g class="layer-pfall-cs">
+        <polygon points="60,65 60,290 423,290" fill="#D1FAE5" opacity="0.85" clip-path="url(#dcs-clip)"/>
+      </g>
+
+      <!-- LAYER: axes (always visible) -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="575" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="575,395 575,405 587,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="591" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- LAYER: demand curve (always visible) -->
+      <g class="layer-demand">
+        <line x1="60" y1="65" x2="560" y2="375" stroke="#059669" stroke-width="3.5" stroke-linecap="round" clip-path="url(#dcs-clip)"/>
+        <text x="565" y="375" font-size="14" font-weight="800" fill="#059669">D</text>
+        <text x="628" y="32" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TAP A STEP TO BUILD THE DIAGRAM</text>
+      </g>
+
+      <!-- LAYER: P* equilibrium marker -->
+      <g class="layer-eq">
+        <line x1="60" y1="225" x2="318" y2="225" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="318" y1="225" x2="318" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="318" cy="225" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="46" y="229" font-size="12" font-weight="700" fill="#334155" text-anchor="end">P*</text>
+        <text x="318" y="418" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+      </g>
+
+      <!-- LAYER: CS label -->
+      <g class="layer-cs-label">
+        <text x="138" y="170" font-size="18" font-weight="900" fill="#059669" text-anchor="middle" opacity="0.9">CS</text>
+        <!-- Right panel -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">CONSUMER SURPLUS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">The green triangle: buyers paid</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">P* but were willing to pay more.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THREE VERTICES</text>
+        <text x="628" y="183" font-size="13" fill="#334155">① P-axis: where D meets the price</text>
+        <text x="628" y="201" font-size="13" fill="#334155">   axis (max willingness to pay)</text>
+        <text x="628" y="222" font-size="13" fill="#334155">② (Q*, P*): equilibrium point</text>
+        <text x="628" y="243" font-size="13" fill="#334155">③ (0, P*): market price on P-axis</text>
+        <text x="628" y="279" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">FORMULA</text>
+        <text x="628" y="302" font-size="13" fill="#334155">CS = ½ × Q* × (max WTP − P*)</text>
+        <text x="628" y="338" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">KEY POINT</text>
+        <text x="628" y="361" font-size="13" fill="#334155">CS is maximised at the free-market</text>
+        <text x="628" y="379" font-size="13" fill="#334155">equilibrium. Any distortion shrinks it.</text>
+      </g>
+
+      <!-- LAYER: pfall — expanded triangle + P₂/Q₂ markers + gain annotation -->
+      <g class="layer-pfall">
+        <!-- Faded original P* reference -->
+        <line x1="60" y1="225" x2="423" y2="225" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+        <line x1="318" y1="225" x2="318" y2="400" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+        <text x="46" y="229" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="end">P*</text>
+        <text x="318" y="418" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">Q*</text>
+        <!-- New P₂ line -->
+        <line x1="60" y1="290" x2="423" y2="290" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="423" y1="290" x2="423" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="423" cy="290" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
+        <text x="46" y="294" font-size="12" font-weight="700" fill="#059669" text-anchor="end">P₂</text>
+        <text x="423" y="418" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Q₂</text>
+        <!-- CS label in expanded triangle -->
+        <text x="155" y="210" font-size="18" font-weight="900" fill="#059669" text-anchor="middle" opacity="0.9">CS</text>
+        <!-- Right panel -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">PRICE FALLS → CS EXPANDS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">When price drops from P* to P₂,</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">consumer surplus gets bigger.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TWO GAINS</text>
+        <text x="628" y="183" font-size="13" fill="#334155">① Existing buyers save (P*−P₂) on</text>
+        <text x="628" y="201" font-size="13" fill="#334155">   every unit — the rectangle widens</text>
+        <text x="628" y="222" font-size="13" fill="#334155">② New buyers enter who weren't</text>
+        <text x="628" y="240" font-size="13" fill="#334155">   willing to pay P* — the triangle</text>
+        <text x="628" y="258" font-size="13" fill="#334155">   extends to Q₂</text>
+        <text x="628" y="294" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REVERSE: PRICE RISES</text>
+        <text x="628" y="317" font-size="13" fill="#334155">CS shrinks — buyers either pay</text>
+        <text x="628" y="335" font-size="13" fill="#334155">more or leave the market entirely.</text>
+        <text x="628" y="371" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM POINT</text>
+        <text x="628" y="394" font-size="13" fill="#334155">A tax raises consumer price → CS</text>
+        <text x="628" y="412" font-size="13" fill="#334155">falls — part lost, part to govt revenue.</text>
+      </g>
+
+      <!-- LAYER: legend base (base state panel) -->
+      <g class="layer-legend-base">
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE DEMAND CURVE</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">Each point on D shows the</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">maximum a buyer would pay.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WILLINGNESS TO PAY</text>
+        <text x="628" y="183" font-size="13" fill="#334155">At Q=1, a buyer might pay £100.</text>
+        <text x="628" y="201" font-size="13" fill="#334155">At Q=10, they'd only pay £40.</text>
+        <text x="628" y="219" font-size="13" fill="#334155">Diminishing marginal utility.</text>
+        <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THE MARKET PRICE</text>
+        <text x="628" y="278" font-size="13" fill="#334155">Everyone pays the same market</text>
+        <text x="628" y="296" font-size="13" fill="#334155">price P* — but those with higher</text>
+        <text x="628" y="314" font-size="13" fill="#334155">WTP get a bonus. Tap to reveal it.</text>
+      </g>
+    </svg>
+  `,
+  supplyPsSvg: `
+    <svg class="supply-ps-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="sps-clip">
+          <rect x="60" y="43" width="530" height="367"/>
+        </clipPath>
+      </defs>
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <line x1="608" y1="16" x2="608" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- LAYER: PS triangle (base state) -->
+      <g class="layer-ps">
+        <polygon points="60,375 60,235 293,235" fill="#FEE2E2" opacity="0.85" clip-path="url(#sps-clip)"/>
+      </g>
+
+      <!-- LAYER: expanded PS triangle (prise state) -->
+      <g class="layer-prise-ps">
+        <polygon points="60,375 60,175 393,175" fill="#FEE2E2" opacity="0.85" clip-path="url(#sps-clip)"/>
+      </g>
+
+      <!-- LAYER: axes (always visible) -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="575" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="575,395 575,405 587,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="591" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- LAYER: supply curve (always visible) -->
+      <g class="layer-supply">
+        <line x1="60" y1="375" x2="560" y2="75" stroke="#E11D48" stroke-width="3.5" stroke-linecap="round" clip-path="url(#sps-clip)"/>
+        <text x="565" y="75" font-size="14" font-weight="800" fill="#E11D48">S</text>
+        <text x="628" y="32" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TAP A STEP TO BUILD THE DIAGRAM</text>
+      </g>
+
+      <!-- LAYER: P* equilibrium marker -->
+      <g class="layer-eq">
+        <line x1="60" y1="235" x2="293" y2="235" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="293" y1="235" x2="293" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="293" cy="235" r="6" fill="white" stroke="#E11D48" stroke-width="2.5"/>
+        <text x="46" y="239" font-size="12" font-weight="700" fill="#334155" text-anchor="end">P*</text>
+        <text x="293" y="418" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
+      </g>
+
+      <!-- LAYER: PS label -->
+      <g class="layer-ps-label">
+        <text x="126" y="295" font-size="18" font-weight="900" fill="#E11D48" text-anchor="middle" opacity="0.9">PS</text>
+        <!-- Right panel -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#E11D48" letter-spacing="2">PRODUCER SURPLUS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">The rose triangle: sellers received</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">P* but would have accepted less.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THREE VERTICES</text>
+        <text x="628" y="183" font-size="13" fill="#334155">① P-axis: where S meets the price</text>
+        <text x="628" y="201" font-size="13" fill="#334155">   axis (min acceptable price)</text>
+        <text x="628" y="222" font-size="13" fill="#334155">② (Q*, P*): equilibrium point</text>
+        <text x="628" y="243" font-size="13" fill="#334155">③ (0, P*): market price on P-axis</text>
+        <text x="628" y="279" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">FORMULA</text>
+        <text x="628" y="302" font-size="13" fill="#334155">PS = ½ × Q* × (P* − min supply P)</text>
+        <text x="628" y="338" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">KEY POINT</text>
+        <text x="628" y="361" font-size="13" fill="#334155">PS is maximised at the free-market</text>
+        <text x="628" y="379" font-size="13" fill="#334155">equilibrium. Taxes reduce it; subsidies</text>
+        <text x="628" y="397" font-size="13" fill="#334155">increase it.</text>
+      </g>
+
+      <!-- LAYER: prise — expanded triangle + P₂/Q₂ markers -->
+      <g class="layer-prise">
+        <!-- Faded original P* reference -->
+        <line x1="60" y1="235" x2="393" y2="235" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+        <line x1="293" y1="235" x2="293" y2="400" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+        <text x="46" y="239" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="end">P*</text>
+        <text x="293" y="418" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">Q*</text>
+        <!-- New P₂ line -->
+        <line x1="60" y1="175" x2="393" y2="175" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="393" y1="175" x2="393" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="393" cy="175" r="6" fill="white" stroke="#E11D48" stroke-width="2.5"/>
+        <text x="46" y="179" font-size="12" font-weight="700" fill="#E11D48" text-anchor="end">P₂</text>
+        <text x="393" y="418" font-size="12" font-weight="700" fill="#E11D48" text-anchor="middle">Q₂</text>
+        <!-- PS label in expanded triangle -->
+        <text x="150" y="295" font-size="18" font-weight="900" fill="#E11D48" text-anchor="middle" opacity="0.9">PS</text>
+        <!-- Right panel -->
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#E11D48" letter-spacing="2">PRICE RISES → PS EXPANDS</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">When price rises from P* to P₂,</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">producer surplus gets bigger.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TWO GAINS</text>
+        <text x="628" y="183" font-size="13" fill="#334155">① Existing sellers earn (P₂−P*) extra</text>
+        <text x="628" y="201" font-size="13" fill="#334155">   on every unit they already supplied</text>
+        <text x="628" y="222" font-size="13" fill="#334155">② New sellers enter who weren't</text>
+        <text x="628" y="240" font-size="13" fill="#334155">   profitable at P* — output expands</text>
+        <text x="628" y="258" font-size="13" fill="#334155">   to Q₂</text>
+        <text x="628" y="294" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REVERSE: PRICE FALLS</text>
+        <text x="628" y="317" font-size="13" fill="#334155">PS shrinks — sellers earn less per</text>
+        <text x="628" y="335" font-size="13" fill="#334155">unit and some exit the market.</text>
+        <text x="628" y="371" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM POINT</text>
+        <text x="628" y="394" font-size="13" fill="#334155">A tax lowers producer price → PS</text>
+        <text x="628" y="412" font-size="13" fill="#334155">falls — part lost, part to govt revenue.</text>
+      </g>
+
+      <!-- LAYER: legend base (base state panel) -->
+      <g class="layer-legend-base">
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE SUPPLY CURVE</text>
+        <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">Each point on S shows the</text>
+        <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">minimum a seller would accept.</text>
+        <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">MINIMUM ACCEPTABLE PRICE</text>
+        <text x="628" y="183" font-size="13" fill="#334155">Low-cost producers are willing to</text>
+        <text x="628" y="201" font-size="13" fill="#334155">supply at low prices. Higher-cost</text>
+        <text x="628" y="219" font-size="13" fill="#334155">sellers need a higher price to enter.</text>
+        <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THE MARKET PRICE</text>
+        <text x="628" y="278" font-size="13" fill="#334155">Everyone receives the same market</text>
+        <text x="628" y="296" font-size="13" fill="#334155">price P* — but low-cost sellers earn</text>
+        <text x="628" y="314" font-size="13" fill="#334155">a surplus above their minimum. Tap to reveal it.</text>
+      </g>
+    </svg>
+  `,
   cpsSvg: `
     <svg class="cps-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

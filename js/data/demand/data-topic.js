@@ -102,16 +102,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_4',
-      template: 'framing',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Consumer Surplus',
-      tip: 'Consumer surplus falls when price rises and rises when price falls. A tax reduces consumer surplus — part is transferred to government (revenue) and part is simply lost (deadweight loss).',
-      body: '<strong>Consumer surplus</strong> is the difference between what a consumer is willing to pay for a good and what they actually pay (the market price). It represents the "bonus" to consumers — the extra welfare they receive above the price they pay.<br><br>On a diagram, consumer surplus is the area below the demand curve and above the equilibrium price — a triangle when the demand curve is straight.<br><br>Consumer surplus increases when price falls (the area of the triangle grows). It decreases when price rises. Monopolists can extract consumer surplus through price discrimination. Market interventions (taxes, price floors) typically reduce consumer surplus.',
-      keyTerms: [
-        { term: 'Consumer surplus', def: 'The difference between willingness to pay (demand curve) and the price paid — welfare gain to consumers from market exchange.' },
-        { term: 'Willingness to pay', def: 'The maximum price a consumer would pay for a unit — the height of the demand curve at that quantity.' },
-        { term: 'Deadweight loss', def: 'Loss of consumer and/or producer surplus not transferred to anyone — pure welfare loss from market distortion.' }
+      lede: 'The demand curve does more than show quantity — it reveals how much buyers gain from market exchange. Tap each step to build the picture.',
+      diagramKey: 'demandCsSvg',
+      steps: [
+        {
+          key: 'base',
+          label: 'Demand curve',
+          text: 'Each point on the demand curve shows the maximum price a buyer would pay for that unit — their willingness to pay (WTP). At lower quantities, WTP is high; it falls as more units are consumed (diminishing marginal utility). The market price P* is the same for every buyer.'
+        },
+        {
+          key: 'cs',
+          label: 'Consumer surplus',
+          text: 'Consumer surplus is the green triangle — the area above the market price P* and below the demand curve. Every buyer who would have paid more than P* receives a "bonus". The triangle\'s area measures the total benefit consumers receive beyond what they actually pay. Formula: CS = ½ × Q* × (max WTP − P*).'
+        },
+        {
+          key: 'pfall',
+          label: 'Price falls → CS grows',
+          text: 'When price falls to P₂, consumer surplus expands in two ways: ① Existing buyers each save (P* − P₂) on every unit — the rectangle between P* and P₂ is their gain. ② New buyers enter who weren\'t willing to pay P* — output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: raising consumer price shrinks CS, with part going to government revenue and part lost as deadweight welfare loss.'
+        }
       ],
-      examEdge: 'A tax causes: (1) consumer surplus loss transferred to government as revenue, (2) consumer surplus loss due to reduced consumption (deadweight loss). Distinguish which part is redistribution and which is pure welfare loss — this shows you understand welfare analysis, not just diagram labelling.'
+      examEdge: 'A tax causes: (1) consumer surplus transferred to government as revenue, (2) consumer surplus destroyed as deadweight loss (DWL). Distinguish which part is redistribution and which is pure welfare loss — this shows you understand welfare analysis, not just diagram labelling.'
     },
     {
       id: 'demand_5',

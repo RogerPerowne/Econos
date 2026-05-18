@@ -90,16 +90,29 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_4',
-      template: 'framing',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Producer Surplus',
-      tip: 'Producer surplus = the triangle BELOW the market price ABOVE the supply curve. It rises when price rises; falls when price falls. Government taxes reduce it; subsidies increase it.',
-      body: '<strong>Producer surplus</strong> is the difference between the price a producer actually receives for a unit and the minimum price they would have accepted (their marginal cost). It represents the "profit" or benefit producers gain from market exchange beyond what they needed to cover costs.<br><br>On a diagram, producer surplus is the area above the supply curve and below the equilibrium price — a triangle for a straight supply curve.<br><br>Producer surplus rises when price rises (and when supply shifts left — fewer units sold but at higher price per unit). It falls when price falls or supply shifts right. Government taxes reduce producer surplus; subsidies increase it.',
-      keyTerms: [
-        { term: 'Producer surplus', def: 'The difference between price received and minimum acceptable price (marginal cost) — welfare gain to producers from market exchange.' },
-        { term: 'Minimum acceptable price', def: 'The price at which a supplier is just willing to sell a unit — equal to marginal cost for a competitive firm.' },
-        { term: 'Total surplus', def: 'Consumer surplus + producer surplus = total welfare gain from market exchange.' }
+      lede: 'The supply curve reveals more than how much firms produce — it shows how much they gain from selling at the market price. Tap each step to build the picture.',
+      diagramKey: 'supplyPsSvg',
+      steps: [
+        {
+          key: 'base',
+          label: 'Supply curve',
+          text: 'Each point on the supply curve shows the minimum price a seller would accept for that unit — their marginal cost. Low-cost producers are willing to supply at low prices; higher-cost producers only enter if the market price is high enough. The market price P* is the same for every seller.'
+        },
+        {
+          key: 'ps',
+          label: 'Producer surplus',
+          text: 'Producer surplus is the rose triangle — the area below the market price P* and above the supply curve. Every seller who would have accepted less than P* receives a "bonus". The triangle\'s area measures the total extra revenue producers receive beyond their minimum acceptable price. Formula: PS = ½ × Q* × (P* − min supply price).'
+        },
+        {
+          key: 'prise',
+          label: 'Price rises → PS grows',
+          text: 'When price rises to P₂, producer surplus expands in two ways: ① Existing sellers earn (P₂ − P*) extra on every unit already supplied — the rectangle between P* and P₂ is their gain. ② New sellers enter who weren\'t profitable at P* — output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: lowering the producer price shrinks PS, with part going to government revenue and part lost as deadweight welfare loss.'
+        }
       ],
-      examEdge: 'Total welfare in a market = consumer surplus + producer surplus. Market efficiency is maximised where total surplus is maximised — the competitive equilibrium. Any distortion (tax, price control, monopoly) creates deadweight loss by reducing total surplus below this maximum.'
+      examEdge: 'Total welfare = CS + PS. Market efficiency is maximised at the competitive equilibrium where total surplus is maximised. Any distortion (tax, price control, monopoly) creates deadweight loss — reducing total surplus below this maximum. In the supply context: a leftward supply shift raises price and PS per unit but reduces quantity — overall PS change depends on elasticity.'
     },
     {
       id: 'supply_5',

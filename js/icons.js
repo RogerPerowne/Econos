@@ -3826,319 +3826,504 @@ window.ECONOS_ICONS = {
   heroFiscalPolicy: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-fp" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-fp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFBEB"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-fp" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hfp-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hfp-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-fp)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-fp)" opacity="0.4"/>
-      <g filter="url(#sh-fp)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">FISCAL POLICY</text>
-      <!-- axes -->
-      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
-      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">£</text>
-      <!-- spending bars (amber) -->
-      <rect x="72"  y="175" width="26" height="95" rx="4" fill="#F59E0B" opacity="0.7"/>
-      <rect x="108" y="145" width="26" height="125" rx="4" fill="#F59E0B" opacity="0.85"/>
-      <rect x="144" y="120" width="26" height="150" rx="4" fill="#F59E0B"/>
-      <rect x="180" y="100" width="26" height="170" rx="4" fill="#D97706"/>
-      <!-- tax bar (slate, shorter) -->
-      <rect x="216" y="195" width="26" height="75" rx="4" fill="#64748B" opacity="0.7"/>
-      <!-- labels -->
-      <text x="85"  y="265" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">G</text>
-      <text x="229" y="265" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">T</text>
-      <!-- legend -->
-      <rect x="58" y="298" width="10" height="10" rx="2" fill="#F59E0B"/>
-      <text x="72" y="307" font-size="9" fill="#475569">Govt spending</text>
-      <rect x="148" y="298" width="10" height="10" rx="2" fill="#64748B"/>
-      <text x="162" y="307" font-size="9" fill="#475569">Taxation</text>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">GOVERNMENT BUDGET &amp; TAXATION</text>
+
+      <!-- government building (treasury / parliament style) -->
+      <g filter="url(#hfp-shadow)">
+        <!-- triangular pediment -->
+        <polygon points="140,80 80,128 200,128" fill="#F1F5F9" stroke="#475569" stroke-width="2" stroke-linejoin="round"/>
+        <!-- top trim -->
+        <rect x="78" y="128" width="124" height="8" fill="#475569"/>
+        <!-- columns (4) -->
+        <rect x="86"  y="140" width="14" height="70" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+        <rect x="114" y="140" width="14" height="70" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+        <rect x="142" y="140" width="14" height="70" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+        <rect x="170" y="140" width="14" height="70" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+        <!-- base steps -->
+        <rect x="80" y="210" width="120" height="8" fill="#94A3B8"/>
+        <rect x="74" y="218" width="132" height="10" fill="#64748B"/>
+      </g>
+
+      <!-- pastel pad behind coins -->
+      <ellipse cx="140" cy="262" rx="80" ry="10" fill="#FEF3C7" opacity="0.7"/>
+
+      <!-- coin stack 1 (left) -->
+      <g filter="url(#hfp-soft)">
+        <ellipse cx="100" cy="270" rx="20" ry="6" fill="#D97706"/>
+        <ellipse cx="100" cy="262" rx="20" ry="6" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="100" cy="254" rx="20" ry="6" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="100" y="258" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- coin stack 2 (center, tallest) -->
+      <g filter="url(#hfp-soft)">
+        <ellipse cx="142" cy="280" rx="22" ry="7" fill="#D97706"/>
+        <ellipse cx="142" cy="270" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="142" cy="260" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="142" cy="250" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="142" y="255" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- coin stack 3 (right) -->
+      <g filter="url(#hfp-soft)">
+        <ellipse cx="186" cy="272" rx="18" ry="6" fill="#D97706"/>
+        <ellipse cx="186" cy="264" rx="18" ry="6" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="186" y="268" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="294" rx="90" ry="4" fill="#0F172A" opacity="0.08"/>
     </svg>
   `,
 
   heroFinancialMarkets: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-fm" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EEF2FF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-fm" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hfm-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hfm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-fm)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-fm)" opacity="0.4"/>
-      <g filter="url(#sh-fm)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">FINANCIAL MARKETS</text>
-      <!-- axes -->
-      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
-      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
-      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">t</text>
-      <!-- gridlines -->
-      <g stroke="#E2E8F0" stroke-width="0.8" opacity="0.7">
-        <line x1="58" y1="130" x2="240" y2="130"/>
-        <line x1="58" y1="180" x2="240" y2="180"/>
-        <line x1="58" y1="230" x2="240" y2="230"/>
+
+      <!-- pastel pad behind whole arrangement -->
+      <ellipse cx="140" cy="285" rx="100" ry="8" fill="#EEF2FF" opacity="0.7"/>
+
+      <!-- 3 coin stacks of differing heights (markets vary) -->
+      <!-- stack 1 (low - bear) -->
+      <g filter="url(#hfm-soft)">
+        <ellipse cx="80" cy="285" rx="22" ry="7" fill="#D97706"/>
+        <ellipse cx="80" cy="275" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="80" y="280" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
-      <!-- volatile line chart (financial market price) -->
-      <polyline points="65,230 85,200 100,220 115,175 130,195 148,145 163,165 178,120 195,140 210,100 228,118" stroke="#6366F1" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- area fill under line -->
-      <polygon points="65,230 85,200 100,220 115,175 130,195 148,145 163,165 178,120 195,140 210,100 228,118 228,270 65,270" fill="#6366F1" opacity="0.08"/>
-      <!-- trend arrow -->
-      <line x1="75" y1="225" x2="218" y2="105" stroke="#6366F1" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.4"/>
-      <!-- label -->
-      <text x="230" y="114" font-size="11" font-weight="800" fill="#6366F1">r</text>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">PRICES · RISK · RETURN</text>
+
+      <!-- stack 2 (medium) -->
+      <g filter="url(#hfm-soft)">
+        <ellipse cx="140" cy="285" rx="22" ry="7" fill="#D97706"/>
+        <ellipse cx="140" cy="275" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="140" cy="265" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="140" cy="255" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="140" y="260" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- stack 3 (tall - bull) -->
+      <g filter="url(#hfm-soft)">
+        <ellipse cx="200" cy="285" rx="22" ry="7" fill="#D97706"/>
+        <ellipse cx="200" cy="275" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="200" cy="265" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="200" cy="255" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="200" cy="245" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <ellipse cx="200" cy="235" rx="22" ry="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="200" y="240" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- volatile market line drifting across (the financial market trend) -->
+      <g filter="url(#hfm-soft)">
+        <path d="M 50 130 Q 80 160 110 110 Q 140 70 170 130 Q 200 85 230 110"
+              stroke="#6366F1" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- dot at endpoint -->
+        <circle cx="230" cy="110" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+      </g>
+
+      <!-- up & down arrows representing volatility -->
+      <g stroke="#22C55E" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M 80 165 L 80 185 M 75 170 L 80 165 L 85 170"/>
+      </g>
+      <g stroke="#EF4444" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M 200 165 L 200 185 M 195 180 L 200 185 L 205 180"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="305" rx="110" ry="4" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
 
   heroDevelopment: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-dev" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-dev" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0FDFA"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-dev" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
-        <marker id="arrowDev" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6 Z" fill="#0D9488"/></marker>
+        <filter id="hdev-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hdev-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-dev)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-dev)" opacity="0.4"/>
-      <g filter="url(#sh-dev)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">DEVELOPMENT</text>
-      <!-- ascending HDI-style bars (countries at different development stages) -->
-      <rect x="62"  y="240" width="28" height="30"  rx="4" fill="#99F6E4"/>
-      <rect x="98"  y="215" width="28" height="55"  rx="4" fill="#2DD4BF"/>
-      <rect x="134" y="185" width="28" height="85"  rx="4" fill="#0D9488"/>
-      <rect x="170" y="150" width="28" height="120" rx="4" fill="#0F766E"/>
-      <rect x="206" y="110" width="28" height="160" rx="4" fill="#134E4A"/>
-      <!-- ascending arrow overlay -->
-      <path d="M 70 245 L 220 115" stroke="#0D9488" stroke-width="2" stroke-dasharray="5 3" opacity="0.5" marker-end="url(#arrowDev)"/>
-      <!-- x-axis -->
-      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <!-- labels -->
-      <text x="76"  y="284" font-size="8" fill="#475569" text-anchor="middle">Low</text>
-      <text x="220" y="284" font-size="8" fill="#0F766E" font-weight="700" text-anchor="middle">High</text>
-      <text x="140" y="296" font-size="8" fill="#475569" text-anchor="middle">HDI →</text>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">LIVING STANDARDS · HUMAN CAPITAL</text>
+
+      <!-- pastel ground pad -->
+      <ellipse cx="140" cy="290" rx="100" ry="8" fill="#CCFBF1" opacity="0.7"/>
+
+      <!-- 3 plants growing — stages of development -->
+      <!-- stage 1: tiny sprout (left) -->
+      <g filter="url(#hdev-soft)">
+        <!-- pot -->
+        <path d="M 60 275 L 90 275 L 88 295 L 62 295 Z" fill="#A78BFA" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="59" y="271" width="32" height="6" fill="#7C3AED" rx="1"/>
+        <!-- sprout -->
+        <path d="M 75 275 L 75 250" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="70" cy="250" rx="6" ry="4" fill="#22C55E" transform="rotate(-30 70 250)"/>
+        <ellipse cx="80" cy="248" rx="6" ry="4" fill="#22C55E" transform="rotate(30 80 248)"/>
+      </g>
+
+      <!-- stage 2: small plant -->
+      <g filter="url(#hdev-soft)">
+        <!-- pot -->
+        <path d="M 122 285 L 158 285 L 156 308 L 124 308 Z" fill="#A78BFA" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="121" y="281" width="38" height="6" fill="#7C3AED" rx="1"/>
+        <!-- stem -->
+        <path d="M 140 285 L 140 220" stroke="#15803D" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- leaves -->
+        <ellipse cx="128" cy="245" rx="9" ry="5" fill="#22C55E" transform="rotate(-30 128 245)"/>
+        <ellipse cx="152" cy="240" rx="9" ry="5" fill="#22C55E" transform="rotate(30 152 240)"/>
+        <ellipse cx="130" cy="225" rx="8" ry="5" fill="#16A34A" transform="rotate(-30 130 225)"/>
+        <ellipse cx="150" cy="220" rx="8" ry="5" fill="#16A34A" transform="rotate(30 150 220)"/>
+      </g>
+
+      <!-- stage 3: tall tree -->
+      <g filter="url(#hdev-shadow)">
+        <!-- pot -->
+        <path d="M 188 295 L 232 295 L 230 320 L 190 320 Z" fill="#A78BFA" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="187" y="291" width="46" height="6" fill="#7C3AED" rx="1"/>
+        <!-- trunk -->
+        <rect x="207" y="200" width="6" height="95" fill="#92400E" rx="2"/>
+        <!-- tree foliage (rounded clusters) -->
+        <circle cx="210" cy="190" r="26" fill="#16A34A"/>
+        <circle cx="195" cy="200" r="20" fill="#22C55E"/>
+        <circle cx="225" cy="200" r="20" fill="#22C55E"/>
+        <circle cx="210" cy="170" r="18" fill="#15803D"/>
+      </g>
+
+      <!-- subtle upward arrow showing progression -->
+      <g stroke="#0D9488" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+        <path d="M 70 130 Q 140 90 210 70 M 210 70 L 200 76 M 210 70 L 207 82" stroke-dasharray="4 4"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="328" rx="100" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
   heroMacroObjectives: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-mo" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-mo" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-mo" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hmo-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hmo-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-mo)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-mo)" opacity="0.4"/>
-      <g filter="url(#sh-mo)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">MACRO OBJECTIVES</text>
-      <!-- bullseye target -->
-      <circle cx="140" cy="175" r="80" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
-      <circle cx="140" cy="175" r="56" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
-      <circle cx="140" cy="175" r="34" fill="#DDD6FE" stroke="#A78BFA" stroke-width="1.5"/>
-      <circle cx="140" cy="175" r="14" fill="#7C3AED"/>
-      <!-- 4 objective labels at compass points -->
-      <text x="140" y="88"  font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Growth</text>
-      <text x="140" y="272" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Low inflation</text>
-      <text x="58"  y="179" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Employment</text>
-      <text x="222" y="148" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Trade</text>
-      <text x="222" y="160" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">balance</text>
-      <!-- trade-off arrow cutting across -->
-      <line x1="90" y1="130" x2="192" y2="222" stroke="#EC4899" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
-      <text x="158" y="145" font-size="9" font-weight="700" fill="#EC4899" transform="rotate(40,158,145)">trade-off</text>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">GROWTH · EMPLOYMENT · STABILITY</text>
+
+      <!-- bullseye target rings -->
+      <g filter="url(#hmo-soft)">
+        <circle cx="140" cy="200" r="78" fill="#F5F3FF"/>
+        <circle cx="140" cy="200" r="58" fill="#EDE9FE"/>
+        <circle cx="140" cy="200" r="38" fill="#DDD6FE"/>
+        <circle cx="140" cy="200" r="18" fill="#7C3AED"/>
+        <circle cx="140" cy="200" r="6"  fill="#FFFFFF"/>
+      </g>
+
+      <!-- 4 objective bubbles at compass points (no text — pure icons) -->
+      <!-- top: growth (upward arrow) -->
+      <g filter="url(#hmo-soft)">
+        <circle cx="140" cy="98" r="22" fill="#FFFFFF" stroke="#22C55E" stroke-width="2"/>
+        <g stroke="#22C55E" stroke-width="3" stroke-linecap="round" fill="none">
+          <path d="M 140 110 L 140 90 M 132 96 L 140 88 L 148 96"/>
+        </g>
+      </g>
+
+      <!-- right: balance (trade) — two arrows opposing -->
+      <g filter="url(#hmo-soft)">
+        <circle cx="242" cy="200" r="22" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+        <g stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" fill="none">
+          <path d="M 232 196 L 252 196 M 246 192 L 252 196 L 246 200"/>
+          <path d="M 252 206 L 232 206 M 238 202 L 232 206 L 238 210"/>
+        </g>
+      </g>
+
+      <!-- bottom: low inflation (basket with checkmark) -->
+      <g filter="url(#hmo-soft)">
+        <circle cx="140" cy="302" r="22" fill="#FFFFFF" stroke="#FBBF24" stroke-width="2"/>
+        <g stroke="#92400E" stroke-width="2.5" stroke-linecap="round" fill="none">
+          <path d="M 130 300 L 138 308 L 152 296"/>
+        </g>
+      </g>
+
+      <!-- left: employment (person silhouette circle) -->
+      <g filter="url(#hmo-soft)">
+        <circle cx="38" cy="200" r="22" fill="#FFFFFF" stroke="#F87171" stroke-width="2"/>
+        <circle cx="38" cy="194" r="5" fill="#F87171"/>
+        <path d="M 28 215 Q 38 204 48 215" stroke="#F87171" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- thin connecting lines from each bubble toward bullseye -->
+      <line x1="140" y1="120" x2="140" y2="140" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.6"/>
+      <line x1="220" y1="200" x2="200" y2="200" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.6"/>
+      <line x1="140" y1="280" x2="140" y2="260" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.6"/>
+      <line x1="60"  y1="200" x2="80"  y2="200" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.6"/>
     </svg>
   `,
 
   heroWellbeing: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-wb" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-wb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFF7ED"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-wb" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hwb-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hwb-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <radialGradient id="hwb-sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FBBF24"/>
+          <stop offset="100%" stop-color="#F59E0B"/>
+        </radialGradient>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-wb)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-wb)" opacity="0.4"/>
-      <g filter="url(#sh-wb)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">WELLBEING</text>
-      <!-- central person -->
-      <circle cx="140" cy="135" r="26" fill="#FED7AA" stroke="#F97316" stroke-width="2"/>
-      <!-- smile -->
-      <path d="M 128 140 Q 140 152 152 140" stroke="#EA580C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <!-- eyes -->
-      <circle cx="133" cy="130" r="2.5" fill="#EA580C"/>
-      <circle cx="147" cy="130" r="2.5" fill="#EA580C"/>
-      <!-- wellbeing indicator bars radiating outward -->
-      <!-- Health -->
-      <rect x="68"  y="185" width="22" height="60" rx="4" fill="#34D399"/>
-      <text x="79" y="256" font-size="8" font-weight="700" fill="#059669" text-anchor="middle">Health</text>
-      <!-- Education -->
-      <rect x="100" y="198" width="22" height="47" rx="4" fill="#60A5FA"/>
-      <text x="111" y="256" font-size="8" font-weight="700" fill="#2563EB" text-anchor="middle">Educ.</text>
-      <!-- Income -->
-      <rect x="132" y="178" width="22" height="67" rx="4" fill="#F59E0B"/>
-      <text x="143" y="256" font-size="8" font-weight="700" fill="#D97706" text-anchor="middle">Income</text>
-      <!-- Safety -->
-      <rect x="164" y="205" width="22" height="40" rx="4" fill="#A78BFA"/>
-      <text x="175" y="256" font-size="8" font-weight="700" fill="#7C3AED" text-anchor="middle">Safety</text>
-      <!-- Environment -->
-      <rect x="196" y="192" width="22" height="53" rx="4" fill="#2DD4BF"/>
-      <text x="207" y="256" font-size="8" font-weight="700" fill="#0D9488" text-anchor="middle">Env.</text>
-      <!-- baseline -->
-      <line x1="60" y1="245" x2="228" y2="245" stroke="#E2E8F0" stroke-width="1.5"/>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">BEYOND GDP · QUALITY OF LIFE</text>
+
+      <!-- sun behind house -->
+      <circle cx="200" cy="105" r="32" fill="url(#hwb-sun)" filter="url(#hwb-soft)"/>
+      <!-- sun rays -->
+      <g stroke="#F59E0B" stroke-width="3" stroke-linecap="round" opacity="0.7">
+        <line x1="200" y1="60" x2="200" y2="70"/>
+        <line x1="240" y1="80" x2="232" y2="85"/>
+        <line x1="252" y1="120" x2="240" y2="118"/>
+        <line x1="160" y1="80" x2="168" y2="85"/>
+      </g>
+
+      <!-- pastel grass pad -->
+      <ellipse cx="140" cy="290" rx="110" ry="10" fill="#D1FAE5" opacity="0.8"/>
+
+      <!-- house -->
+      <g filter="url(#hwb-shadow)">
+        <!-- roof -->
+        <polygon points="140,135 80,195 200,195" fill="#F87171" stroke="#991B1B" stroke-width="2" stroke-linejoin="round"/>
+        <!-- body -->
+        <rect x="90" y="195" width="100" height="85" fill="#FFFFFF" stroke="#475569" stroke-width="2"/>
+        <!-- door -->
+        <rect x="125" y="230" width="30" height="50" rx="2" fill="#22C55E" stroke="#15803D" stroke-width="1.5"/>
+        <circle cx="148" cy="256" r="1.8" fill="#FFFFFF"/>
+        <!-- windows -->
+        <rect x="100" y="210" width="18" height="18" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5"/>
+        <rect x="162" y="210" width="18" height="18" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5"/>
+        <!-- chimney -->
+        <rect x="155" y="148" width="14" height="20" fill="#F87171" stroke="#991B1B" stroke-width="1.5"/>
+      </g>
+
+      <!-- heart symbol floating above house -->
+      <g filter="url(#hwb-soft)">
+        <path d="M 140 105 C 134 95, 122 95, 122 108 C 122 120, 140 132, 140 132 C 140 132, 158 120, 158 108 C 158 95, 146 95, 140 105 Z"
+              fill="#EC4899" stroke="#9D174D" stroke-width="1.5" stroke-linejoin="round"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="296" rx="100" ry="3" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
   heroShortRunCosts: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-src" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-src" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0FDF4"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-src" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hsrc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hsrc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-src)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-src)" opacity="0.4"/>
-      <g filter="url(#sh-src)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">SHORT-RUN COSTS</text>
-      <!-- axes -->
-      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
-      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">£</text>
-      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">Q</text>
-      <!-- grid -->
-      <g stroke="#E2E8F0" stroke-width="0.8" opacity="0.6">
-        <line x1="58" y1="140" x2="240" y2="140"/>
-        <line x1="58" y1="190" x2="240" y2="190"/>
-        <line x1="58" y1="240" x2="240" y2="240"/>
+
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="290" rx="100" ry="9" fill="#D1FAE5" opacity="0.7"/>
+
+      <!-- fixed factory (small, can't grow in short run) -->
+      <g filter="url(#hsrc-shadow)">
+        <!-- chimney -->
+        <rect x="92" y="118" width="14" height="50" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.5"/>
+        <rect x="90" y="116" width="18" height="6" fill="#0D9488"/>
+        <!-- main building -->
+        <rect x="80" y="168" width="80" height="100" fill="#FFFFFF" stroke="#0F766E" stroke-width="2"/>
+        <!-- saw-tooth roof -->
+        <path d="M 80 168 L 95 154 L 110 168 L 125 154 L 140 168 L 155 154 L 160 168 Z" fill="#10B981" stroke="#0F766E" stroke-width="2" stroke-linejoin="round"/>
+        <!-- windows -->
+        <rect x="92" y="180" width="14" height="14" fill="#10B981"/>
+        <rect x="114" y="180" width="14" height="14" fill="#10B981"/>
+        <rect x="136" y="180" width="14" height="14" fill="#10B981"/>
+        <!-- door -->
+        <rect x="106" y="225" width="28" height="43" fill="#0F766E"/>
       </g>
-      <!-- AVC curve (U-shaped, lower, green) -->
-      <path d="M 68 225 Q 130 185 220 210" stroke="#10B981" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <text x="224" y="210" font-size="11" font-weight="800" fill="#10B981">AVC</text>
-      <!-- ATC curve (U-shaped, higher minimum, teal) -->
-      <path d="M 68 200 Q 130 155 220 170" stroke="#0D9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <text x="224" y="170" font-size="11" font-weight="800" fill="#0D9488">ATC</text>
-      <!-- MC curve (steeper U then rising sharply) -->
-      <path d="M 68 240 Q 105 155 150 145 Q 175 140 220 108" stroke="#059669" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <text x="222" y="106" font-size="11" font-weight="800" fill="#059669">MC</text>
-      <!-- intersection dot (MC=ATC minimum) -->
-      <circle cx="152" cy="155" r="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">MC · AVC · ATC · DIMINISHING RETURNS</text>
+
+      <!-- "more workers added" coming in from the right -->
+      <g filter="url(#hsrc-soft)">
+        <!-- worker 1 (single) -->
+        <circle cx="195" cy="215" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <path d="M 184 240 Q 195 226 206 240" stroke="#D97706" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- worker 2 -->
+        <circle cx="225" cy="215" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <path d="M 214 240 Q 225 226 236 240" stroke="#D97706" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- worker 3 (overlapping = crowding) -->
+        <circle cx="238" cy="222" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.5" opacity="0.8"/>
+      </g>
+
+      <!-- subtle arrow showing extra workers being added -->
+      <g stroke="#059669" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M 170 270 L 200 270 M 196 266 L 200 270 L 196 274"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="296" rx="105" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
   heroLongRunCosts: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-lrc" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-lrc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EFF6FF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-lrc" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hlrc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hlrc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-lrc)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-lrc)" opacity="0.4"/>
-      <g filter="url(#sh-lrc)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">LONG-RUN COSTS</text>
-      <!-- axes -->
-      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
-      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">£</text>
-      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">Q</text>
-      <!-- several SRAC curves (light blue, small) -->
-      <path d="M 65 210 Q 90 168 118 195"  stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <path d="M 88 188 Q 118 148 152 170"  stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <path d="M 120 178 Q 152 140 185 162" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <path d="M 155 182 Q 188 148 220 178" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <!-- LRAC envelope (bold blue) -->
-      <path d="M 65 215 Q 152 130 238 215" stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <!-- minimum efficient scale dot -->
-      <circle cx="152" cy="148" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
-      <!-- labels -->
-      <text x="230" y="215" font-size="10" font-weight="800" fill="#2563EB">LRAC</text>
-      <text x="90"  y="185" font-size="9"  font-weight="700" fill="#93C5FD">SRAC</text>
-      <!-- EoS / DiSoS labels -->
-      <text x="90"  y="250" font-size="9" fill="#3B82F6" text-anchor="middle">EoS ↓</text>
-      <text x="195" y="250" font-size="9" fill="#DC2626" text-anchor="middle">DiSoS ↑</text>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">ECONOMIES OF SCALE · LRAC ENVELOPE</text>
+
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="295" rx="115" ry="10" fill="#DBEAFE" opacity="0.7"/>
+
+      <!-- factory 1 — small (left) -->
+      <g filter="url(#hlrc-soft)">
+        <rect x="50"  y="220" width="44" height="60" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+        <path d="M 50 220 L 60 210 L 70 220 L 80 210 L 94 220 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="56" y="228" width="6" height="6" fill="#3B82F6"/>
+        <rect x="68" y="228" width="6" height="6" fill="#3B82F6"/>
+        <rect x="80" y="228" width="6" height="6" fill="#3B82F6"/>
+        <rect x="66" y="250" width="14" height="30" fill="#1E3A8A"/>
+        <rect x="64" y="196" width="6" height="14" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.2"/>
+      </g>
+
+      <!-- factory 2 — medium (centre) -->
+      <g filter="url(#hlrc-soft)">
+        <rect x="108" y="190" width="64" height="90" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+        <path d="M 108 190 L 120 176 L 132 190 L 144 176 L 156 190 L 168 176 L 172 190 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="114" y="200" width="8" height="8" fill="#3B82F6"/>
+        <rect x="128" y="200" width="8" height="8" fill="#3B82F6"/>
+        <rect x="142" y="200" width="8" height="8" fill="#3B82F6"/>
+        <rect x="156" y="200" width="8" height="8" fill="#3B82F6"/>
+        <rect x="128" y="235" width="22" height="45" fill="#1E3A8A"/>
+        <rect x="124" y="160" width="8" height="20" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+      </g>
+
+      <!-- factory 3 — large (right) -->
+      <g filter="url(#hlrc-shadow)">
+        <rect x="186" y="160" width="80" height="120" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+        <path d="M 186 160 L 198 144 L 210 160 L 222 144 L 234 160 L 246 144 L 258 160 L 266 160 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="192" y="170" width="10" height="10" fill="#3B82F6"/>
+        <rect x="208" y="170" width="10" height="10" fill="#3B82F6"/>
+        <rect x="224" y="170" width="10" height="10" fill="#3B82F6"/>
+        <rect x="240" y="170" width="10" height="10" fill="#3B82F6"/>
+        <rect x="192" y="190" width="10" height="10" fill="#3B82F6"/>
+        <rect x="208" y="190" width="10" height="10" fill="#3B82F6"/>
+        <rect x="224" y="190" width="10" height="10" fill="#3B82F6"/>
+        <rect x="240" y="190" width="10" height="10" fill="#3B82F6"/>
+        <rect x="216" y="225" width="28" height="55" fill="#1E3A8A"/>
+        <rect x="204" y="124" width="10" height="22" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+        <ellipse cx="209" cy="118" rx="14" ry="6" fill="#E2E8F0" opacity="0.85"/>
+      </g>
+
+      <!-- subtle growth arrow above factories -->
+      <g stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.65">
+        <path d="M 60 100 Q 140 70 240 95 M 240 95 L 230 100 M 240 95 L 234 107" stroke-dasharray="4 4"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="160" cy="306" rx="120" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
   heroPosExternalities: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-pe" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-pe" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0FDF4"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-pe" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hpe-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hpe-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-pe)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-pe)" opacity="0.4"/>
-      <g filter="url(#sh-pe)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">POSITIVE EXTERNALITY</text>
-      <!-- axes -->
-      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
-      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
-      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">Q</text>
-      <!-- supply / MPC curve (upward, slate) -->
-      <path d="M 68 260 Q 148 190 228 110" stroke="#64748B" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <text x="224" y="108" font-size="10" font-weight="800" fill="#64748B">S=MPC</text>
-      <!-- MPB demand (downward, light green, dashed) -->
-      <path d="M 68 108 Q 148 185 228 258" stroke="#4ADE80" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
-      <text x="68" y="102" font-size="10" font-weight="800" fill="#4ADE80">MPB</text>
-      <!-- MSB demand (downward, bold green, shifted left/up — MSB > MPB) -->
-      <path d="M 68 82 Q 130 165 200 255" stroke="#16A34A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <text x="196" y="262" font-size="10" font-weight="800" fill="#16A34A">MSB</text>
-      <!-- social optimum vertical dashed line -->
-      <line x1="148" y1="175" x2="148" y2="270" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/>
-      <line x1="58"  y1="175" x2="148" y2="175" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/>
-      <!-- market eq vertical dashed line -->
-      <line x1="175" y1="188" x2="175" y2="270" stroke="#64748B" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
-      <!-- welfare loss triangle -->
-      <polygon points="148,175 175,188 175,270 148,270" fill="#16A34A" opacity="0.1"/>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">MSB &gt; MPB · UNDER-PROVISION</text>
+
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="295" rx="105" ry="9" fill="#DCFCE7" opacity="0.8"/>
+
+      <!-- open book base (knowledge / education metaphor) -->
+      <g filter="url(#hpe-shadow)">
+        <!-- book cover/back -->
+        <path d="M 70 268 L 70 250 L 140 240 L 210 250 L 210 268 Z" fill="#1E3A8A" stroke="#0F172A" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- pages left -->
+        <path d="M 75 246 Q 95 238 138 240 L 138 280 Q 100 282 75 280 Z" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/>
+        <!-- pages right -->
+        <path d="M 142 240 Q 185 238 205 246 L 205 280 Q 180 282 142 280 Z" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/>
+        <!-- spine -->
+        <line x1="140" y1="240" x2="140" y2="280" stroke="#0F172A" stroke-width="1.5"/>
+        <!-- text lines on pages -->
+        <line x1="86"  y1="252" x2="128" y2="252" stroke="#CBD5E1" stroke-width="1"/>
+        <line x1="86"  y1="260" x2="128" y2="260" stroke="#CBD5E1" stroke-width="1"/>
+        <line x1="86"  y1="268" x2="128" y2="268" stroke="#CBD5E1" stroke-width="1"/>
+        <line x1="152" y1="252" x2="194" y2="252" stroke="#CBD5E1" stroke-width="1"/>
+        <line x1="152" y1="260" x2="194" y2="260" stroke="#CBD5E1" stroke-width="1"/>
+        <line x1="152" y1="268" x2="194" y2="268" stroke="#CBD5E1" stroke-width="1"/>
+      </g>
+
+      <!-- plant growing UP out of the book (knowledge spillover) -->
+      <g filter="url(#hpe-soft)">
+        <!-- trunk -->
+        <path d="M 140 240 L 140 145" stroke="#92400E" stroke-width="4" stroke-linecap="round"/>
+        <!-- leaves -->
+        <circle cx="140" cy="135" r="24" fill="#22C55E"/>
+        <circle cx="120" cy="155" r="18" fill="#16A34A"/>
+        <circle cx="160" cy="155" r="18" fill="#16A34A"/>
+        <circle cx="140" cy="115" r="16" fill="#15803D"/>
+      </g>
+
+      <!-- benefit dots flowing outward from leaves (positive spillover) -->
+      <circle cx="90"  cy="120" r="5" fill="#86EFAC"/>
+      <circle cx="80"  cy="100" r="4" fill="#22C55E"/>
+      <circle cx="195" cy="120" r="5" fill="#86EFAC"/>
+      <circle cx="208" cy="105" r="4" fill="#22C55E"/>
+      <circle cx="140" cy="80"  r="4" fill="#86EFAC"/>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="296" rx="100" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
   heroPublicGoods: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-pg" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
-        <linearGradient id="bg-pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F8FAFC"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
-        <filter id="sh-pg" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <filter id="hpg-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hpg-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-pg)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-pg)" opacity="0.4"/>
-      <g filter="url(#sh-pg)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">PUBLIC GOODS</text>
-      <!-- lighthouse central icon -->
-      <rect x="123" y="110" width="34" height="70" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
-      <polygon points="106,112 174,112 140,85" fill="#1E40AF" opacity="0.85"/>
-      <rect x="132" y="150" width="16" height="30" rx="2" fill="#93C5FD"/>
-      <!-- light beams from lighthouse -->
-      <line x1="140" y1="98"  x2="90"  y2="68"  stroke="#FDE68A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-      <line x1="140" y1="98"  x2="192" y2="68"  stroke="#FDE68A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-      <line x1="140" y1="98"  x2="140" y2="62"  stroke="#FDE68A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-      <!-- people icons benefiting (non-excludable) -->
-      <circle cx="82" cy="205" r="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
-      <text x="82"  y="209" font-size="14" text-anchor="middle">👤</text>
-      <circle cx="140" cy="215" r="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
-      <text x="140" y="219" font-size="14" text-anchor="middle">👤</text>
-      <circle cx="198" cy="205" r="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
-      <text x="198" y="209" font-size="14" text-anchor="middle">👤</text>
-      <!-- connecting dotted lines from lighthouse to people -->
-      <line x1="133" y1="180" x2="92"  y2="196" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-      <line x1="140" y1="180" x2="140" y2="202" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-      <line x1="147" y1="180" x2="188" y2="196" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-      <!-- property labels -->
-      <rect x="50" y="232" width="80" height="22" rx="6" fill="#DBEAFE"/>
-      <text x="90" y="247" font-size="9" font-weight="700" fill="#1D4ED8" text-anchor="middle">Non-excludable</text>
-      <rect x="148" y="232" width="68" height="22" rx="6" fill="#D1FAE5"/>
-      <text x="182" y="247" font-size="9" font-weight="700" fill="#065F46" text-anchor="middle">Non-rival</text>
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">FREE-RIDER PROBLEM · MARKET FAILURE</text>
+
+      <!-- pastel water/sea pad -->
+      <ellipse cx="140" cy="290" rx="115" ry="14" fill="#DBEAFE" opacity="0.7"/>
+
+      <!-- lighthouse -->
+      <g filter="url(#hpg-shadow)">
+        <!-- base platform -->
+        <rect x="118" y="265" width="44" height="14" fill="#475569" rx="2"/>
+        <!-- body (tapered, white with red stripes) -->
+        <path d="M 122 265 L 130 130 L 150 130 L 158 265 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- red stripes -->
+        <path d="M 126 230 L 154 230 L 156 245 L 124 245 Z" fill="#EF4444"/>
+        <path d="M 124 190 L 156 190 L 158 205 L 122 205 Z" fill="#EF4444"/>
+        <path d="M 122 150 L 158 150 L 160 165 L 120 165 Z" fill="#EF4444"/>
+        <!-- top: glass section with light -->
+        <rect x="124" y="106" width="32" height="22" fill="#FBBF24" stroke="#0F172A" stroke-width="1.5"/>
+        <!-- top dome -->
+        <path d="M 124 106 Q 140 88 156 106 Z" fill="#1E3A8A" stroke="#0F172A" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- spire -->
+        <path d="M 140 88 L 140 76" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="140" cy="74" r="3" fill="#EF4444"/>
+      </g>
+
+      <!-- light beams (4 directions) -->
+      <g opacity="0.6">
+        <polygon points="124,117 60,90 60,144" fill="#FDE68A"/>
+        <polygon points="156,117 220,90 220,144" fill="#FDE68A"/>
+      </g>
+      <g opacity="0.3">
+        <polygon points="124,117 76,76 92,68" fill="#FDE68A"/>
+        <polygon points="156,117 204,76 188,68" fill="#FDE68A"/>
+      </g>
+
+      <!-- small boats below (the public benefiting) -->
+      <g filter="url(#hpg-soft)">
+        <!-- boat left -->
+        <path d="M 50 275 L 88 275 L 82 285 L 56 285 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="65" y="262" width="3" height="14" fill="#0F172A"/>
+        <polygon points="68,262 80,262 68,272" fill="#3B82F6"/>
+        <!-- boat right -->
+        <path d="M 192 275 L 230 275 L 224 285 L 198 285 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="207" y="262" width="3" height="14" fill="#0F172A"/>
+        <polygon points="210,262 222,262 210,272" fill="#3B82F6"/>
+      </g>
+
+      <!-- water waves -->
+      <g stroke="#3B82F6" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55">
+        <path d="M 40 300 Q 50 296 60 300 Q 70 304 80 300"/>
+        <path d="M 180 300 Q 190 296 200 300 Q 210 304 220 300"/>
+        <path d="M 100 305 Q 110 301 120 305"/>
+        <path d="M 160 305 Q 170 301 180 305"/>
+      </g>
     </svg>
   `,
 
@@ -4230,149 +4415,159 @@ window.ECONOS_ICONS = {
   heroSupply: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-sup" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-sup" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#EFF6FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-sup" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/>
+        <filter id="hs-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
         </filter>
-        <marker id="arrowS" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3B82F6"/>
-        </marker>
+        <filter id="hs-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
       </defs>
 
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-sup)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-sup)" opacity="0.4"/>
+      <!-- sun decorative -->
+      <circle cx="220" cy="80" r="10" fill="#F87171" opacity="0.85"/>
 
-      <g filter="url(#shadow-sup)">
-        <rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- background bush behind factory (right side) -->
+      <ellipse cx="218" cy="240" rx="40" ry="22" fill="#DCFCE7" opacity="0.7"/>
+
+      <!-- left bushes (foreground greenery) -->
+      <g filter="url(#hs-soft)">
+        <circle cx="55"  cy="245" r="18" fill="#16A34A"/>
+        <circle cx="68"  cy="232" r="14" fill="#22C55E"/>
+        <ellipse cx="62" cy="258" rx="22" ry="6" fill="#16A34A"/>
+        <path d="M 60 232 L 60 200" stroke="#15803D" stroke-width="3" stroke-linecap="round"/>
       </g>
 
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A"
-            text-anchor="middle" letter-spacing="3" opacity="0.65">SUPPLY</text>
-
-      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
-        <line x1="60" y1="100" x2="240" y2="100"/>
-        <line x1="60" y1="150" x2="240" y2="150"/>
-        <line x1="60" y1="200" x2="240" y2="200"/>
-        <line x1="60" y1="250" x2="240" y2="250"/>
-        <line x1="105" y1="80" x2="105" y2="280"/>
-        <line x1="150" y1="80" x2="150" y2="280"/>
-        <line x1="195" y1="80" x2="195" y2="280"/>
+      <!-- chimney with smoke -->
+      <g filter="url(#hs-soft)">
+        <!-- smoke puffs -->
+        <ellipse cx="92"  cy="80" rx="14" ry="10" fill="#E2E8F0" opacity="0.85"/>
+        <ellipse cx="104" cy="68" rx="11" ry="8"  fill="#E2E8F0" opacity="0.7"/>
+        <ellipse cx="86"  cy="68" rx="9"  ry="7"  fill="#E2E8F0" opacity="0.6"/>
+        <!-- chimney stack -->
+        <rect x="83" y="98" width="20" height="80" rx="2" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+        <rect x="80" y="96" width="26" height="8" rx="1" fill="#3B82F6"/>
       </g>
 
-      <line x1="60" y1="80" x2="60" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="60" y1="280" x2="240" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
-      <polygon points="244,280 234,276 234,284" fill="#0F172A"/>
-      <text x="52" y="78" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
-      <text x="248" y="294" font-size="11" font-weight="800" fill="#0F172A">Q</text>
+      <!-- factory body (white with blue accents) -->
+      <g filter="url(#hs-shadow)">
+        <!-- main building block -->
+        <rect x="100" y="148" width="105" height="100" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+        <!-- zigzag roof -->
+        <path d="M 100 148 L 115 132 L 130 148 L 145 132 L 160 148 L 175 132 L 190 148 L 205 132 L 205 148 Z"
+              fill="#3B82F6" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
+        <!-- small windows -->
+        <rect x="110" y="165" width="9" height="9" rx="1" fill="#3B82F6"/>
+        <rect x="122" y="165" width="9" height="9" rx="1" fill="#3B82F6"/>
+        <rect x="134" y="165" width="9" height="9" rx="1" fill="#3B82F6"/>
+        <!-- output door (dark blue opening on the right) -->
+        <path d="M 160 195 L 205 195 L 205 248 L 160 248 Z" fill="#1E3A8A"/>
+        <rect x="166" y="201" width="34" height="38" fill="#1E40AF"/>
+      </g>
 
-      <!-- S1 original supply curve -->
-      <path d="M 65 268 Q 130 195 215 98" stroke="#3B82F6" stroke-width="2.5"
-            fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5 3"/>
-      <text x="210" y="92" font-size="12" font-weight="800" fill="#3B82F6" opacity="0.6">S₁</text>
+      <!-- conveyor belt with boxes coming out -->
+      <g filter="url(#hs-shadow)">
+        <!-- belt -->
+        <rect x="160" y="240" width="78" height="14" rx="3" fill="#1E40AF"/>
+        <!-- rollers -->
+        <circle cx="166" cy="254" r="5" fill="#94A3B8" stroke="#1E3A8A" stroke-width="1"/>
+        <circle cx="184" cy="254" r="5" fill="#94A3B8" stroke="#1E3A8A" stroke-width="1"/>
+        <circle cx="202" cy="254" r="5" fill="#94A3B8" stroke="#1E3A8A" stroke-width="1"/>
+        <circle cx="220" cy="254" r="5" fill="#94A3B8" stroke="#1E3A8A" stroke-width="1"/>
+      </g>
 
-      <!-- S2 shifted supply curve (rightward = more supply at same price) -->
-      <path d="M 90 270 Q 155 195 238 98" stroke="#3B82F6" stroke-width="3"
-            fill="none" stroke-linecap="round" filter="url(#shadow-sup)"/>
-      <text x="234" y="92" font-size="12" font-weight="800" fill="#3B82F6">S₂</text>
+      <!-- boxes on conveyor -->
+      <g filter="url(#hs-soft)">
+        <rect x="175" y="218" width="22" height="22" rx="2" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <line x1="175" y1="226" x2="197" y2="226" stroke="#92400E" stroke-width="1" opacity="0.7"/>
+        <rect x="201" y="218" width="22" height="22" rx="2" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <line x1="201" y1="226" x2="223" y2="226" stroke="#92400E" stroke-width="1" opacity="0.7"/>
+        <rect x="232" y="222" width="20" height="20" rx="2" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <line x1="232" y1="229" x2="252" y2="229" stroke="#92400E" stroke-width="1" opacity="0.7"/>
+      </g>
 
-      <!-- shift arrow (horizontal, rightward) -->
-      <path d="M 143 200 L 168 200" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" marker-end="url(#arrowS)"/>
-      <text x="155" y="195" font-size="9" font-weight="700" fill="#3B82F6" text-anchor="middle">increase</text>
+      <!-- green output arrow -->
+      <g>
+        <line x1="220" y1="278" x2="252" y2="278" stroke="#22C55E" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="252,278 246,274 246,282" fill="#22C55E"/>
+      </g>
 
-      <!-- producer icon -->
-      <circle cx="95" cy="215" r="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
-      <text x="95" y="219" font-size="12" text-anchor="middle">🏭</text>
-
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="2" opacity="0.75">PRICE RISES · SUPPLY INCREASES</text>
+      <!-- floor shadow -->
+      <ellipse cx="150" cy="296" rx="100" ry="5" fill="#0F172A" opacity="0.06"/>
     </svg>
   `,
 
   heroSupplyDemand: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-sd" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-sd" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-sd" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        <filter id="hsd-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="hsd-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-sd)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-sd)" opacity="0.4"/>
+      <!-- pastel pad behind whole scale -->
+      <ellipse cx="140" cy="320" rx="90" ry="6" fill="#0F172A" opacity="0.07"/>
 
-      <!-- chart frame card -->
-      <g filter="url(#shadow-sd)">
-        <rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- left dish — small green basket (demand) -->
+      <g filter="url(#hsd-soft)">
+        <ellipse cx="80" cy="195" rx="38" ry="6" fill="#15803D"/>
+        <path d="M 50 195 L 110 195 L 102 218 L 58 218 Z" fill="#22C55E" stroke="#15803D" stroke-width="1.8" stroke-linejoin="round"/>
+        <rect x="62" y="200" width="4" height="14" fill="#15803D" opacity="0.5"/>
+        <rect x="72" y="200" width="4" height="14" fill="#15803D" opacity="0.5"/>
+        <rect x="82" y="200" width="4" height="14" fill="#15803D" opacity="0.5"/>
+        <rect x="92" y="200" width="4" height="14" fill="#15803D" opacity="0.5"/>
       </g>
 
-      <!-- caption -->
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A"
-            text-anchor="middle" letter-spacing="3" opacity="0.65">EQUILIBRIUM</text>
-
-      <!-- gridlines -->
-      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
-        <line x1="60" y1="100" x2="240" y2="100"/>
-        <line x1="60" y1="150" x2="240" y2="150"/>
-        <line x1="60" y1="200" x2="240" y2="200"/>
-        <line x1="60" y1="250" x2="240" y2="250"/>
-        <line x1="105" y1="80" x2="105" y2="280"/>
-        <line x1="150" y1="80" x2="150" y2="280"/>
-        <line x1="195" y1="80" x2="195" y2="280"/>
+      <!-- right dish — small blue factory box (supply) -->
+      <g filter="url(#hsd-soft)">
+        <ellipse cx="200" cy="195" rx="38" ry="6" fill="#1E3A8A"/>
+        <path d="M 170 195 L 230 195 L 222 218 L 178 218 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.8" stroke-linejoin="round"/>
+        <rect x="182" y="200" width="4" height="14" fill="#1E3A8A" opacity="0.5"/>
+        <rect x="192" y="200" width="4" height="14" fill="#1E3A8A" opacity="0.5"/>
+        <rect x="202" y="200" width="4" height="14" fill="#1E3A8A" opacity="0.5"/>
+        <rect x="212" y="200" width="4" height="14" fill="#1E3A8A" opacity="0.5"/>
       </g>
 
-      <!-- axes -->
-      <line x1="60" y1="80" x2="60" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="60" y1="280" x2="240" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
-      <polygon points="244,280 234,276 234,284" fill="#0F172A"/>
+      <!-- contents on left dish — small product items (demand) -->
+      <circle cx="80" cy="180" r="9" fill="#86EFAC"/>
+      <circle cx="92" cy="186" r="7" fill="#4ADE80"/>
 
-      <!-- axis labels -->
-      <text x="52" y="78" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
-      <text x="248" y="294" font-size="11" font-weight="800" fill="#0F172A">Q</text>
+      <!-- contents on right dish — small product items (supply) -->
+      <rect x="190" y="175" width="14" height="20" rx="2" fill="#FBBF24"/>
+      <rect x="208" y="180" width="12" height="15" rx="2" fill="#F59E0B"/>
 
-      <!-- Demand curve (green, downward) -->
-      <path d="M 70 100 Q 130 160 240 270" stroke="#1FB574" stroke-width="3"
-            fill="none" stroke-linecap="round" filter="url(#shadow-sd)"/>
-      <text x="80" y="112" font-size="13" font-weight="800" fill="#1FB574">D</text>
+      <!-- chains from dishes to beam -->
+      <line x1="62" y1="195" x2="78" y2="155" stroke="#475569" stroke-width="1.5"/>
+      <line x1="98" y1="195" x2="82" y2="155" stroke="#475569" stroke-width="1.5"/>
+      <line x1="182" y1="195" x2="198" y2="155" stroke="#475569" stroke-width="1.5"/>
+      <line x1="218" y1="195" x2="202" y2="155" stroke="#475569" stroke-width="1.5"/>
 
-      <!-- Supply curve (blue, upward) -->
-      <path d="M 70 270 Q 150 230 240 100" stroke="#3B82F6" stroke-width="3"
-            fill="none" stroke-linecap="round" filter="url(#shadow-sd)"/>
-      <text x="226" y="112" font-size="13" font-weight="800" fill="#3B82F6">S</text>
-
-      <!-- equilibrium dashed lines -->
-      <line x1="60" y1="190" x2="150" y2="190" stroke="#0F172A" stroke-width="1.2"
-            stroke-dasharray="3 3" opacity="0.55"/>
-      <line x1="150" y1="190" x2="150" y2="280" stroke="#0F172A" stroke-width="1.2"
-            stroke-dasharray="3 3" opacity="0.55"/>
-
-      <!-- equilibrium dot -->
-      <g filter="url(#shadow-sd)">
-        <circle cx="150" cy="190" r="6" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
-        <circle cx="150" cy="190" r="2.5" fill="#EC2D68"/>
+      <!-- horizontal beam -->
+      <g filter="url(#hsd-shadow)">
+        <rect x="56" y="148" width="168" height="9" rx="2" fill="#64748B"/>
+        <circle cx="80" cy="152" r="3" fill="#334155"/>
+        <circle cx="200" cy="152" r="3" fill="#334155"/>
       </g>
 
-      <!-- P* and Q* labels -->
-      <text x="52" y="194" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P*</text>
-      <text x="150" y="298" font-size="11" font-weight="800" fill="#0F172A" text-anchor="middle">Q*</text>
+      <!-- pivot triangle -->
+      <g filter="url(#hsd-shadow)">
+        <polygon points="140,155 120,260 160,260" fill="#94A3B8" stroke="#475569" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="140" cy="152" r="6" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+        <circle cx="140" cy="152" r="2.5" fill="#EC2D68"/>
+      </g>
 
-      <!-- bottom caption -->
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="2" opacity="0.75">MARKET CLEARS WHERE S MEETS D</text>
+      <!-- base plate -->
+      <g filter="url(#hsd-shadow)">
+        <rect x="100" y="258" width="80" height="10" rx="3" fill="#475569"/>
+      </g>
+
+      <!-- small floating bubbles overhead to add character (no text) -->
+      <circle cx="80"  cy="100" r="14" fill="#DCFCE7"/>
+      <circle cx="80"  cy="100" r="6"  fill="#22C55E"/>
+      <circle cx="200" cy="100" r="14" fill="#DBEAFE"/>
+      <circle cx="200" cy="100" r="6"  fill="#3B82F6"/>
     </svg>
   `,
   demandCsSvg: `
@@ -4854,80 +5049,54 @@ window.ECONOS_ICONS = {
   heroElasticity: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-el" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-el" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-el" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        <filter id="he-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="he-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-el)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-el)" opacity="0.4"/>
+      <!-- spring/coil running horizontally connecting basket to price tag -->
+      <path d="M 105 200 Q 110 188 120 200 Q 130 212 140 200 Q 150 188 160 200 Q 170 212 180 200 Q 190 188 200 200"
+            stroke="#3B82F6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-      <!-- header caption -->
-      <text x="140" y="38" font-size="10" font-weight="800" fill="#0F172A"
-            text-anchor="middle" letter-spacing="3" opacity="0.65">RESPONSIVENESS</text>
-
-      <!-- chart card -->
-      <g filter="url(#shadow-el)">
-        <rect x="30" y="55" width="220" height="245" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- basket on left (green) -->
+      <g filter="url(#he-shadow)">
+        <!-- handles -->
+        <path d="M 60 180 Q 60 158 75 158" stroke="#15803D" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 100 180 Q 100 158 85 158" stroke="#15803D" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- body -->
+        <path d="M 50 182 L 110 182 L 104 232 L 56 232 Z" fill="#22C55E" stroke="#15803D" stroke-width="2" stroke-linejoin="round"/>
+        <!-- slats -->
+        <rect x="62"  y="192" width="4" height="36" rx="1" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="72"  y="192" width="4" height="36" rx="1" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="82"  y="192" width="4" height="36" rx="1" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="92"  y="192" width="4" height="36" rx="1" fill="#FFFFFF" opacity="0.85"/>
+        <!-- item inside basket (red ball/apple) -->
+        <circle cx="80" cy="180" r="11" fill="#EF4444"/>
+        <path d="M 80 170 Q 82 167 85 168" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round"/>
       </g>
 
-      <!-- gridlines -->
-      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
-        <line x1="60" y1="110" x2="230" y2="110"/>
-        <line x1="60" y1="160" x2="230" y2="160"/>
-        <line x1="60" y1="220" x2="230" y2="220"/>
-        <line x1="110" y1="80" x2="110" y2="270"/>
-        <line x1="165" y1="80" x2="165" y2="270"/>
+      <!-- coil anchor on basket side -->
+      <circle cx="103" cy="200" r="3" fill="#1E40AF"/>
+      <!-- coil anchor on tag side -->
+      <circle cx="202" cy="200" r="3" fill="#1E40AF"/>
+
+      <!-- yellow price tag on right (being pulled by the spring) -->
+      <g transform="translate(202, 180) rotate(8)" filter="url(#he-shadow)">
+        <path d="M 0 0 L 50 0 L 64 20 L 50 40 L 0 40 Z" fill="#FBBF24" stroke="#D97706" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="52" cy="20" r="4" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+        <text x="25" y="28" font-size="16" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- axes -->
-      <line x1="60" y1="80" x2="60" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="60" y1="270" x2="230" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
-      <polygon points="234,270 224,266 224,274" fill="#0F172A"/>
-      <text x="52" y="78" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
-      <text x="238" y="282" font-size="10" font-weight="800" fill="#0F172A">Q</text>
+      <!-- small action lines beside the tag (suggesting it just snapped or moves) -->
+      <line x1="272" y1="170" x2="262" y2="172" stroke="#F87171" stroke-width="2" stroke-linecap="round"/>
+      <line x1="276" y1="180" x2="266" y2="180" stroke="#F87171" stroke-width="2" stroke-linecap="round"/>
+      <line x1="272" y1="195" x2="262" y2="193" stroke="#F87171" stroke-width="2" stroke-linecap="round"/>
 
-      <!-- Inelastic (steep) — amber -->
-      <path d="M 115 90 L 135 270" stroke="#F5B800" stroke-width="3.5"
-            fill="none" stroke-linecap="round" filter="url(#shadow-el)"/>
-      <!-- Elastic (flat) — green -->
-      <path d="M 70 175 L 225 200" stroke="#1FB574" stroke-width="3.5"
-            fill="none" stroke-linecap="round" filter="url(#shadow-el)"/>
-
-      <!-- small reference dots -->
-      <circle cx="125" cy="180" r="4" fill="#FFFFFF" stroke="#F5B800" stroke-width="2"/>
-      <circle cx="150" cy="192" r="4" fill="#FFFFFF" stroke="#1FB574" stroke-width="2"/>
-
-      <!-- inelastic pill -->
-      <g transform="translate(150, 95)" filter="url(#shadow-el)">
-        <rect x="0" y="0" width="80" height="22" rx="11" fill="#FEF3C7" stroke="#F5B800" stroke-width="1.5"/>
-        <text x="40" y="15" font-size="9" font-weight="800" fill="#92400E"
-              text-anchor="middle" letter-spacing="2">INELASTIC</text>
-      </g>
-      <line x1="150" y1="106" x2="135" y2="150" stroke="#F5B800" stroke-width="1.2"
-            stroke-dasharray="3 3" opacity="0.7"/>
-
-      <!-- elastic pill -->
-      <g transform="translate(70, 230)" filter="url(#shadow-el)">
-        <rect x="0" y="0" width="68" height="22" rx="11" fill="#DCFCE7" stroke="#1FB574" stroke-width="1.5"/>
-        <text x="34" y="15" font-size="9" font-weight="800" fill="#065F46"
-              text-anchor="middle" letter-spacing="2">ELASTIC</text>
-      </g>
-      <line x1="138" y1="241" x2="160" y2="195" stroke="#1FB574" stroke-width="1.2"
-            stroke-dasharray="3 3" opacity="0.7"/>
-
-      <!-- footer caption -->
-      <text x="140" y="328" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="2" opacity="0.75">STEEP = NEED. FLAT = CHOICE.</text>
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="248" rx="100" ry="4" fill="#0F172A" opacity="0.08"/>
     </svg>
   `,
   heroPPF: `

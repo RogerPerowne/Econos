@@ -10388,19 +10388,19 @@ window.ECONOS_ICONS = {
       <rect width="1040" height="360" fill="#FFFFFF"/>
 
       <!-- ===== LEFT: text content sits on shared white ===== -->
-      <text x="40" y="50" font-size="24" font-weight="800" fill="#0F172A">What is demand?</text>
+      <text x="40" y="52" font-size="28" font-weight="800" fill="#0F172A">What is demand?</text>
 
-      <text x="40" y="90"  font-size="16" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and <tspan font-weight="700" fill="#059669">ability</tspan></text>
-      <text x="40" y="114" font-size="16" fill="#334155">of consumers to buy a good or service</text>
-      <text x="40" y="138" font-size="16" fill="#334155">at different prices over a period of time.</text>
+      <text x="40" y="92"  font-size="19" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and <tspan font-weight="700" fill="#059669">ability</tspan></text>
+      <text x="40" y="117" font-size="19" fill="#334155">of consumers to buy a good or service</text>
+      <text x="40" y="142" font-size="19" fill="#334155">at different prices over a period of time.</text>
 
       <!-- green callout (light-tinted info box) -->
-      <rect x="32" y="166" width="450" height="130" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
-      <circle cx="62" cy="228" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
-      <text x="62" y="234" text-anchor="middle" font-size="14" font-weight="900" fill="#10B981">✓</text>
-      <text x="88" y="208" font-size="14" fill="#065F46">It shows how much of a good consumers will</text>
-      <text x="88" y="230" font-size="14" fill="#065F46">buy at each possible price — and helps firms,</text>
-      <text x="88" y="252" font-size="14" fill="#065F46">governments and economists predict behaviour.</text>
+      <rect x="32" y="162" width="450" height="112" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
+      <circle cx="62" cy="218" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
+      <text x="62" y="224" text-anchor="middle" font-size="14" font-weight="900" fill="#10B981">✓</text>
+      <text x="88" y="196" font-size="16" fill="#065F46">It shows consumers' willingness to buy</text>
+      <text x="88" y="218" font-size="16" fill="#065F46">at each price — underpinning pricing,</text>
+      <text x="88" y="240" font-size="16" fill="#065F46">policy and economic forecasting.</text>
 
       <!-- ===== RIGHT: chart on shared white background ===== -->
       <g transform="translate(560,20)">

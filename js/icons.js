@@ -3356,471 +3356,262 @@ window.ECONOS_ICONS = {
   heroAggSupply: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-aggSupply" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-aggSupply" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-aggSupply" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="has-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="has-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-aggSupply)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-aggSupply)" opacity="0.4"/>
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="295" rx="115" ry="10" fill="#DBEAFE" opacity="0.7"/>
 
-      <!-- chart frame -->
-      <g transform="translate(40, 60)">
-        <!-- gridlines -->
-        <line x1="0" y1="50"  x2="200" y2="50"  stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2 4"/>
-        <line x1="0" y1="110" x2="200" y2="110" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2 4"/>
-        <line x1="0" y1="170" x2="200" y2="170" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2 4"/>
-
-        <!-- axes -->
-        <line x1="0" y1="0"   x2="0"   y2="220" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        <line x1="0" y1="220" x2="210" y2="220" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        <!-- axis arrowheads -->
-        <polygon points="0,-2 -4,8 4,8" fill="#0F172A"/>
-        <polygon points="212,220 202,216 202,224" fill="#0F172A"/>
-
-        <!-- axis labels -->
-        <text x="-22" y="6" font-size="13" font-weight="700" fill="#0F172A">P</text>
-        <text x="216" y="224" font-size="13" font-weight="700" fill="#0F172A">Y</text>
-
-        <!-- SRAS curve (blue) — upward sloping, slightly concave -->
-        <g filter="url(#shadow-aggSupply)">
-          <path d="M 10 200 Q 70 170 120 120 Q 160 75 195 25"
-                stroke="#3B82F6" stroke-width="3.6" fill="none" stroke-linecap="round"/>
-        </g>
-
-        <!-- LRAS vertical line (green) -->
-        <g filter="url(#shadow-aggSupply)">
-          <line x1="130" y1="10" x2="130" y2="220" stroke="#1FB574" stroke-width="3.6" stroke-linecap="round"/>
-        </g>
-
-        <!-- Yf marker dot -->
-        <circle cx="130" cy="220" r="3.2" fill="#1FB574"/>
-        <text x="125" y="238" font-size="10" font-weight="600" fill="#047857">Yf</text>
-
-        <!-- SRAS label -->
-        <g transform="translate(168, 38)">
-          <rect x="-4" y="-12" width="40" height="18" rx="9" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.4"/>
-          <text x="16" y="1" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">SRAS</text>
-        </g>
-
-        <!-- LRAS label -->
-        <g transform="translate(138, 0)">
-          <rect x="-4" y="-12" width="42" height="18" rx="9" fill="#FFFFFF" stroke="#1FB574" stroke-width="1.4"/>
-          <text x="17" y="1" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">LRAS</text>
-        </g>
-
-        <!-- tiny equilibrium tick where they meet -->
-        <circle cx="130" cy="103" r="3.5" fill="#0F172A"/>
-        <line x1="130" y1="103" x2="0" y2="103" stroke="#0F172A" stroke-width="1" stroke-dasharray="2 3" opacity="0.45"/>
-        <text x="-12" y="107" font-size="9" font-weight="700" fill="#0F172A" text-anchor="middle" opacity="0.7">P*</text>
+      <!-- distant factory left (smaller) -->
+      <g filter="url(#has-soft)">
+        <rect x="48"  y="200" width="42" height="80" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+        <path d="M 48 200 L 60 188 L 72 200 L 84 188 L 90 200 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="56" y="208" width="6" height="6" fill="#3B82F6"/>
+        <rect x="68" y="208" width="6" height="6" fill="#3B82F6"/>
+        <rect x="80" y="208" width="6" height="6" fill="#3B82F6"/>
+        <rect x="60" y="174" width="6" height="18" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.2"/>
+        <ellipse cx="63" cy="170" rx="9" ry="4" fill="#E2E8F0" opacity="0.7"/>
       </g>
 
-      <!-- AS pill label, top-left -->
-      <g transform="translate(22, 30)">
-        <rect x="0" y="0" width="38" height="18" rx="9" fill="#0F172A" opacity="0.92"/>
-        <text x="19" y="12" font-size="10" font-weight="800" fill="#FFFFFF" letter-spacing="2" text-anchor="middle">AS</text>
+      <!-- central factory (largest, prominent) -->
+      <g filter="url(#has-shadow)">
+        <rect x="100" y="148" width="90" height="132" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+        <path d="M 100 148 L 114 132 L 128 148 L 142 132 L 156 148 L 170 132 L 184 148 L 190 148 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="110" y="160" width="10" height="10" fill="#3B82F6"/>
+        <rect x="126" y="160" width="10" height="10" fill="#3B82F6"/>
+        <rect x="142" y="160" width="10" height="10" fill="#3B82F6"/>
+        <rect x="158" y="160" width="10" height="10" fill="#3B82F6"/>
+        <rect x="174" y="160" width="10" height="10" fill="#3B82F6"/>
+        <rect x="110" y="180" width="10" height="10" fill="#3B82F6"/>
+        <rect x="126" y="180" width="10" height="10" fill="#3B82F6"/>
+        <rect x="158" y="180" width="10" height="10" fill="#3B82F6"/>
+        <rect x="174" y="180" width="10" height="10" fill="#3B82F6"/>
+        <rect x="135" y="225" width="20" height="55" fill="#1E3A8A"/>
+        <rect x="118" y="106" width="9" height="28" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+        <ellipse cx="122" cy="100" rx="14" ry="6" fill="#E2E8F0" opacity="0.85"/>
+        <ellipse cx="132" cy="92" rx="10" ry="5" fill="#E2E8F0" opacity="0.7"/>
       </g>
 
-      <!-- decorative dotted curl, top right -->
-      <path d="M 232 60 Q 250 80 240 105" stroke="#3B82F6" stroke-width="1.5"
-            fill="none" stroke-linecap="round" stroke-dasharray="2 4" opacity="0.45"/>
-      <circle cx="240" cy="108" r="2.4" fill="#3B82F6" opacity="0.55"/>
-
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1FB574" opacity="0.1"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#047857" letter-spacing="2" text-anchor="middle">SHORT RUN · LONG RUN</text>
+      <!-- third factory right (medium) -->
+      <g filter="url(#has-soft)">
+        <rect x="200" y="180" width="50" height="100" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
+        <path d="M 200 180 L 210 168 L 222 180 L 234 168 L 246 180 L 250 180 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="206" y="190" width="8" height="8" fill="#3B82F6"/>
+        <rect x="220" y="190" width="8" height="8" fill="#3B82F6"/>
+        <rect x="234" y="190" width="8" height="8" fill="#3B82F6"/>
+        <rect x="218" y="240" width="14" height="40" fill="#1E3A8A"/>
+        <rect x="210" y="148" width="7" height="22" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.2"/>
+        <ellipse cx="213" cy="144" rx="11" ry="5" fill="#E2E8F0" opacity="0.75"/>
       </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="148" cy="305" rx="120" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroFiscal: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-fiscal" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-fiscal" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-fiscal" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="hfis-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hfis-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-fiscal)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-fiscal)" opacity="0.4"/>
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="295" rx="105" ry="9" fill="#FEF3C7" opacity="0.8"/>
 
-      <!-- faint horizontal ground line -->
-      <line x1="20" y1="278" x2="260" y2="278" stroke="#3B82F6" stroke-width="1" opacity="0.25" stroke-dasharray="3 4"/>
-
-      <!-- classical government building -->
-      <g transform="translate(52, 90)" filter="url(#shadow-fiscal)">
-        <!-- base / steps -->
-        <rect x="-6" y="178" width="188" height="10" fill="#CBD5E1"/>
-        <rect x="2"  y="168" width="172" height="10" fill="#E2E8F0"/>
-
-        <!-- main block -->
-        <rect x="14" y="78" width="148" height="90" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.6"/>
-
-        <!-- columns -->
-        <g fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.4">
-          <rect x="24"  y="86" width="14" height="78" rx="2"/>
-          <rect x="50"  y="86" width="14" height="78" rx="2"/>
-          <rect x="76"  y="86" width="14" height="78" rx="2"/>
-          <rect x="102" y="86" width="14" height="78" rx="2"/>
-          <rect x="128" y="86" width="14" height="78" rx="2"/>
-          <rect x="154" y="86" width="14" height="78" rx="2"/>
-        </g>
-
-        <!-- column vertical fluting hints -->
-        <g stroke="#1E3A8A" stroke-width="0.5" opacity="0.35">
-          <line x1="31"  y1="90" x2="31"  y2="160"/>
-          <line x1="57"  y1="90" x2="57"  y2="160"/>
-          <line x1="83"  y1="90" x2="83"  y2="160"/>
-          <line x1="109" y1="90" x2="109" y2="160"/>
-          <line x1="135" y1="90" x2="135" y2="160"/>
-          <line x1="161" y1="90" x2="161" y2="160"/>
-        </g>
-
-        <!-- entablature -->
-        <rect x="10" y="70" width="156" height="10" fill="#1E3A8A"/>
-
-        <!-- pediment (triangle) -->
-        <polygon points="10,70 88,18 166,70" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.6" stroke-linejoin="round"/>
-        <!-- pediment inner ornament: amber laurel circle -->
-        <circle cx="88" cy="52" r="8" fill="#FEF3C7" stroke="#F5B800" stroke-width="1.6"/>
-        <text x="88" y="56" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
-
-        <!-- flag pole -->
-        <line x1="88" y1="18" x2="88" y2="2" stroke="#1E3A8A" stroke-width="1.6" stroke-linecap="round"/>
-        <circle cx="88" cy="2" r="2" fill="#F5B800"/>
+      <!-- £ coins falling into bank -->
+      <g filter="url(#hfis-soft)">
+        <circle cx="100" cy="100" r="14" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="100" y="105" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hfis-soft)">
+        <circle cx="140" cy="80" r="16" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="140" y="86" font-size="16" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hfis-soft)">
+        <circle cx="180" cy="100" r="14" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="180" y="105" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- coin overlapping bottom-right of building -->
-      <g transform="translate(186, 232)" filter="url(#shadow-fiscal)">
-        <!-- coin edge (back) -->
-        <ellipse cx="2" cy="3" rx="34" ry="34" fill="#D97706"/>
-        <!-- coin face -->
-        <circle cx="0" cy="0" r="34" fill="#F5B800" stroke="#D97706" stroke-width="1.8"/>
-        <!-- inner ring -->
-        <circle cx="0" cy="0" r="26" fill="none" stroke="#D97706" stroke-width="1" stroke-dasharray="1 3" opacity="0.7"/>
-        <!-- pound symbol -->
-        <text x="0" y="9" font-size="30" font-weight="800" fill="#FFFFFF" text-anchor="middle" stroke="#92400E" stroke-width="0.8">£</text>
+      <!-- coin trails -->
+      <line x1="100" y1="120" x2="115" y2="160" stroke="#D97706" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.5"/>
+      <line x1="140" y1="100" x2="140" y2="160" stroke="#D97706" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.5"/>
+      <line x1="180" y1="120" x2="165" y2="160" stroke="#D97706" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.5"/>
+
+      <!-- piggy bank -->
+      <g filter="url(#hfis-shadow)">
+        <!-- body -->
+        <ellipse cx="140" cy="225" rx="78" ry="55" fill="#F472B6" stroke="#9F1239" stroke-width="2"/>
+        <!-- snout -->
+        <ellipse cx="218" cy="220" rx="14" ry="18" fill="#EC4899" stroke="#9F1239" stroke-width="1.8"/>
+        <circle cx="218" cy="216" r="2.5" fill="#9F1239"/>
+        <circle cx="218" cy="226" r="2.5" fill="#9F1239"/>
+        <!-- legs -->
+        <rect x="92"  y="270" width="14" height="20" rx="3" fill="#EC4899" stroke="#9F1239" stroke-width="1.5"/>
+        <rect x="170" y="270" width="14" height="20" rx="3" fill="#EC4899" stroke="#9F1239" stroke-width="1.5"/>
+        <!-- ear -->
+        <path d="M 100 178 L 116 168 L 118 195 Z" fill="#EC4899" stroke="#9F1239" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- eye -->
+        <circle cx="160" cy="208" r="3" fill="#9F1239"/>
+        <circle cx="161" cy="207" r="1" fill="#FFFFFF"/>
+        <!-- coin slot on top -->
+        <rect x="125" y="170" width="30" height="6" rx="3" fill="#9F1239"/>
+        <!-- curly tail -->
+        <path d="M 62 215 Q 50 205 56 195 Q 62 188 70 195" stroke="#9F1239" stroke-width="3" fill="none" stroke-linecap="round"/>
       </g>
 
-      <!-- decorative dotted arrow / stream from coin -->
-      <path d="M 158 250 Q 130 268 96 262" stroke="#F5B800" stroke-width="1.8"
-            fill="none" stroke-linecap="round" stroke-dasharray="2 4" opacity="0.7"/>
-
-      <!-- small coins flourish, top right -->
-      <g transform="translate(232, 70)" opacity="0.85">
-        <circle cx="0" cy="0" r="9" fill="#F5B800" stroke="#92400E" stroke-width="1.2"/>
-        <text x="0" y="3" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
-      </g>
-      <g transform="translate(248, 92)" opacity="0.7">
-        <circle cx="0" cy="0" r="6" fill="#F5B800" stroke="#92400E" stroke-width="1"/>
-      </g>
-
-      <!-- FISCAL pill label, top-left -->
-      <g transform="translate(22, 30)">
-        <rect x="0" y="0" width="62" height="18" rx="9" fill="#1E3A8A" opacity="0.95"/>
-        <text x="31" y="12" font-size="10" font-weight="800" fill="#FFFFFF" letter-spacing="2" text-anchor="middle">FISCAL</text>
-      </g>
-
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.1"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">TAX · SPEND · BORROW</text>
-      </g>
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="298" rx="100" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroGrowth: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-growth" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-growth" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <linearGradient id="growth-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1FB574" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#1FB574" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="shadow-growth" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="hg-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hg-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-growth)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-growth)" opacity="0.4"/>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="295" rx="105" ry="9" fill="#DCFCE7" opacity="0.8"/>
 
-      <!-- chart group -->
-      <g transform="translate(44, 70)">
-        <!-- gridlines -->
-        <line x1="0" y1="40"  x2="200" y2="40"  stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2 4"/>
-        <line x1="0" y1="100" x2="200" y2="100" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2 4"/>
-        <line x1="0" y1="160" x2="200" y2="160" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2 4"/>
-
-        <!-- axes -->
-        <line x1="0" y1="0"   x2="0"   y2="220" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        <line x1="0" y1="220" x2="210" y2="220" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        <polygon points="0,-2 -4,8 4,8" fill="#0F172A"/>
-        <polygon points="212,220 202,216 202,224" fill="#0F172A"/>
-
-        <!-- axis labels -->
-        <text x="-22" y="6" font-size="11" font-weight="700" fill="#0F172A">GDP</text>
-        <text x="216" y="224" font-size="11" font-weight="700" fill="#0F172A">t</text>
-
-        <!-- year ticks -->
-        <g font-size="9" fill="#64748B" font-weight="600">
-          <line x1="20"  y1="220" x2="20"  y2="224" stroke="#64748B"/>
-          <line x1="70"  y1="220" x2="70"  y2="224" stroke="#64748B"/>
-          <line x1="120" y1="220" x2="120" y2="224" stroke="#64748B"/>
-          <line x1="170" y1="220" x2="170" y2="224" stroke="#64748B"/>
-          <text x="20"  y="236" text-anchor="middle">'22</text>
-          <text x="70"  y="236" text-anchor="middle">'23</text>
-          <text x="120" y="236" text-anchor="middle">'24</text>
-          <text x="170" y="236" text-anchor="middle">'25</text>
-        </g>
-
-        <!-- area fill under curve -->
-        <path d="M 10 195 L 40 178 L 70 165 L 100 138 L 130 112 L 160 78 L 195 30 L 195 220 L 10 220 Z"
-              fill="url(#growth-fill)"/>
-
-        <!-- main GDP curve -->
-        <g filter="url(#shadow-growth)">
-          <path d="M 10 195 L 40 178 L 70 165 L 100 138 L 130 112 L 160 78 L 195 30"
-                stroke="#1FB574" stroke-width="3.4" fill="none"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-
-        <!-- data dots -->
-        <g fill="#FFFFFF" stroke="#1FB574" stroke-width="2">
-          <circle cx="10"  cy="195" r="3.2"/>
-          <circle cx="40"  cy="178" r="3.2"/>
-          <circle cx="70"  cy="165" r="3.2"/>
-          <circle cx="100" cy="138" r="3.2"/>
-          <circle cx="130" cy="112" r="3.2"/>
-          <circle cx="160" cy="78"  r="3.2"/>
-        </g>
-        <!-- endpoint emphasised -->
-        <circle cx="195" cy="30" r="5" fill="#1FB574" stroke="#FFFFFF" stroke-width="2"/>
-
-        <!-- growth arrow extending the trend -->
-        <g filter="url(#shadow-growth)">
-          <path d="M 195 30 L 215 8" stroke="#1FB574" stroke-width="3.4"
-                fill="none" stroke-linecap="round"/>
-          <polygon points="215,8 206,8 213,18" fill="#1FB574"/>
-        </g>
-
-        <!-- +growth badge -->
-        <g transform="translate(150, -2)">
-          <rect x="0" y="0" width="48" height="20" rx="10" fill="#1FB574" stroke="#047857" stroke-width="1"/>
-          <text x="24" y="14" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">+3.2%</text>
-        </g>
+      <!-- 3 ascending bars representing GDP growth, each topped with a tiny up-arrow -->
+      <!-- bar 1 (shortest, pale) -->
+      <g filter="url(#hg-soft)">
+        <rect x="60" y="220" width="40" height="60" rx="6" fill="#86EFAC"/>
+        <!-- £ icon inside -->
+        <text x="80" y="258" font-size="16" font-weight="800" fill="#15803D" text-anchor="middle">£</text>
       </g>
 
-      <!-- GROWTH pill label, top-left -->
-      <g transform="translate(22, 30)">
-        <rect x="0" y="0" width="64" height="18" rx="9" fill="#047857" opacity="0.95"/>
-        <text x="32" y="12" font-size="10" font-weight="800" fill="#FFFFFF" letter-spacing="2" text-anchor="middle">GROWTH</text>
+      <!-- bar 2 (medium) -->
+      <g filter="url(#hg-soft)">
+        <rect x="120" y="170" width="40" height="110" rx="6" fill="#22C55E"/>
+        <text x="140" y="232" font-size="20" font-weight="800" fill="#14532D" text-anchor="middle">£</text>
       </g>
 
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1FB574" opacity="0.12"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#047857" letter-spacing="2" text-anchor="middle">RISING REAL OUTPUT</text>
+      <!-- bar 3 (tallest) -->
+      <g filter="url(#hg-shadow)">
+        <rect x="180" y="110" width="40" height="170" rx="6" fill="#15803D"/>
+        <text x="200" y="200" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">£</text>
       </g>
+
+      <!-- ascending arrow above bars -->
+      <g stroke="#15803D" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M 70 200 Q 140 130 210 80 M 210 80 L 198 86 M 210 80 L 204 94"/>
+      </g>
+
+      <!-- small leaf/sprout on top of biggest bar (growth) -->
+      <g filter="url(#hg-soft)">
+        <ellipse cx="195" cy="100" rx="8" ry="5" fill="#22C55E" transform="rotate(-30 195 100)"/>
+        <ellipse cx="207" cy="100" rx="8" ry="5" fill="#22C55E" transform="rotate(30 207 100)"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="298" rx="105" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
   heroMultiplier: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-multiplier" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-multiplier" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <radialGradient id="pond-multiplier" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0%" stop-color="#DBEAFE" stop-opacity="0.9"/>
-          <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="shadow-multiplier" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="hm-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hm-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-multiplier)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-multiplier)" opacity="0.4"/>
-
-      <!-- soft pond glow behind ripples -->
-      <ellipse cx="140" cy="200" rx="135" ry="115" fill="url(#pond-multiplier)"/>
-
-      <!-- expanding ripple circles, centred at (140, 200) -->
+      <!-- ripple rings centred on the £ coin -->
       <g fill="none" stroke="#3B82F6">
-        <circle cx="140" cy="200" r="120" stroke-width="1.4" opacity="0.18"/>
-        <circle cx="140" cy="200" r="95"  stroke-width="1.6" opacity="0.28"/>
-        <circle cx="140" cy="200" r="70"  stroke-width="2"   opacity="0.45"/>
-        <circle cx="140" cy="200" r="45"  stroke-width="2.4" opacity="0.65"/>
-        <circle cx="140" cy="200" r="22"  stroke-width="2.8" opacity="0.9"/>
+        <circle cx="140" cy="200" r="110" stroke-width="1.4" opacity="0.18"/>
+        <circle cx="140" cy="200" r="85"  stroke-width="1.6" opacity="0.28"/>
+        <circle cx="140" cy="200" r="60"  stroke-width="2"   opacity="0.40"/>
+        <circle cx="140" cy="200" r="38"  stroke-width="2.4" opacity="0.55"/>
       </g>
 
-      <!-- faint dashed outer ring -->
-      <circle cx="140" cy="200" r="140" fill="none" stroke="#3B82F6"
-              stroke-width="1" stroke-dasharray="2 5" opacity="0.18"/>
-
-      <!-- subtle perspective ellipses to give 'pond' feel -->
-      <ellipse cx="140" cy="200" rx="120" ry="36" fill="none" stroke="#3B82F6"
-               stroke-width="1" stroke-dasharray="3 4" opacity="0.22"/>
-
-      <!-- pebble (focal) -->
-      <g filter="url(#shadow-multiplier)">
-        <ellipse cx="140" cy="202" rx="9" ry="6" fill="#1E40AF"/>
-        <ellipse cx="137" cy="199" rx="3.5" ry="1.8" fill="#60A5FA" opacity="0.85"/>
+      <!-- central £ coin (the original injection) -->
+      <g filter="url(#hm-shadow)">
+        <ellipse cx="142" cy="204" rx="22" ry="22" fill="#D97706"/>
+        <circle cx="140" cy="200" r="22" fill="#FBBF24" stroke="#D97706" stroke-width="2"/>
+        <text x="140" y="208" font-size="22" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- splash drop above pebble -->
-      <g transform="translate(140, 168)">
-        <path d="M 0 0 Q -3 -10 0 -16 Q 3 -10 0 0 Z" fill="#3B82F6" filter="url(#shadow-multiplier)"/>
-        <circle cx="-9" cy="-4" r="2" fill="#3B82F6" opacity="0.7"/>
-        <circle cx="10" cy="-2" r="1.6" fill="#3B82F6" opacity="0.55"/>
+      <!-- smaller satellite £ coins on each ripple -->
+      <g filter="url(#hm-soft)">
+        <circle cx="80"  cy="200" r="13" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="80" y="205" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hm-soft)">
+        <circle cx="200" cy="200" r="13" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="200" y="205" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hm-soft)">
+        <circle cx="55"  cy="148" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="55" y="152" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hm-soft)">
+        <circle cx="225" cy="148" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="225" y="152" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hm-soft)">
+        <circle cx="55"  cy="252" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="55" y="256" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hm-soft)">
+        <circle cx="225" cy="252" r="10" fill="#FBBF24" stroke="#D97706" stroke-width="1.2"/>
+        <text x="225" y="256" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- small floating value tags around the ripples -->
-      <g font-family="Inter, sans-serif">
-        <g transform="translate(58, 152)" filter="url(#shadow-multiplier)">
-          <rect x="-22" y="-10" width="44" height="20" rx="10" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.4"/>
-          <text x="0" y="4" font-size="10" font-weight="800" fill="#1E40AF" text-anchor="middle">£1·k</text>
-        </g>
-        <g transform="translate(218, 168)" filter="url(#shadow-multiplier)">
-          <rect x="-22" y="-10" width="44" height="20" rx="10" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.4"/>
-          <text x="0" y="4" font-size="10" font-weight="800" fill="#1E40AF" text-anchor="middle">£2·k</text>
-        </g>
-        <g transform="translate(74, 268)" filter="url(#shadow-multiplier)">
-          <rect x="-22" y="-10" width="44" height="20" rx="10" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.4"/>
-          <text x="0" y="4" font-size="10" font-weight="800" fill="#1E40AF" text-anchor="middle">£3·k</text>
-        </g>
-        <g transform="translate(214, 264)" filter="url(#shadow-multiplier)">
-          <rect x="-22" y="-10" width="48" height="20" rx="10" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.4"/>
-          <text x="2" y="4" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">×k</text>
-        </g>
-      </g>
-
-      <!-- MULTIPLIER pill label, top-left -->
-      <g transform="translate(22, 30)">
-        <rect x="0" y="0" width="82" height="18" rx="9" fill="#1E40AF" opacity="0.95"/>
-        <text x="41" y="12" font-size="10" font-weight="800" fill="#FFFFFF" letter-spacing="2" text-anchor="middle">MULTIPLIER</text>
-      </g>
-
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#3B82F6" opacity="0.12"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">ONE SPEND · MANY ROUNDS</text>
-      </g>
+      <!-- a few extra tiny satellites further out -->
+      <circle cx="140" cy="100" r="7" fill="#FBBF24" stroke="#D97706" stroke-width="1"/>
+      <circle cx="140" cy="300" r="7" fill="#FBBF24" stroke="#D97706" stroke-width="1"/>
     </svg>
   `,
   heroTradeCycle: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-tradeCycle" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-tradeCycle" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
+        <filter id="htc-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="htc-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <linearGradient id="htc-wave" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#FBBF24"/>
+          <stop offset="50%" stop-color="#EF4444"/>
+          <stop offset="100%" stop-color="#22C55E"/>
         </linearGradient>
-        <linearGradient id="cycle-stroke" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#F5B800"/>
-          <stop offset="50%"  stop-color="#EC2D68"/>
-          <stop offset="100%" stop-color="#F5B800"/>
-        </linearGradient>
-        <filter id="shadow-tradeCycle" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-tradeCycle)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-tradeCycle)" opacity="0.4"/>
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="295" rx="105" ry="9" fill="#FEF3C7" opacity="0.6"/>
 
-      <!-- chart group -->
-      <g transform="translate(36, 80)">
-        <!-- trend line (long-run growth) -->
-        <line x1="0" y1="160" x2="210" y2="100" stroke="#0F172A"
-              stroke-width="1.4" stroke-dasharray="3 5" opacity="0.4"/>
-        <text x="186" y="96" font-size="9" font-weight="700" fill="#0F172A" opacity="0.55" letter-spacing="1">TREND</text>
-
-        <!-- axes -->
-        <line x1="0" y1="0"   x2="0"   y2="200" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        <line x1="0" y1="200" x2="218" y2="200" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        <polygon points="0,-2 -4,8 4,8" fill="#0F172A"/>
-        <polygon points="220,200 210,196 210,204" fill="#0F172A"/>
-
-        <!-- axis labels -->
-        <text x="-22" y="6" font-size="11" font-weight="700" fill="#0F172A">Y</text>
-        <text x="224" y="204" font-size="11" font-weight="700" fill="#0F172A">t</text>
-
-        <!-- the wave: boom ↑ at x≈55, recession ↓ at x≈150 -->
-        <g filter="url(#shadow-tradeCycle)">
-          <path d="M 5 150 Q 30 70 55 60 Q 80 50 105 130 Q 130 200 150 195 Q 175 188 200 110"
-                stroke="url(#cycle-stroke)" stroke-width="3.6" fill="none"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-
-        <!-- BOOM / Peak -->
-        <circle cx="55" cy="60" r="5" fill="#F5B800" stroke="#FFFFFF" stroke-width="2"/>
-        <g transform="translate(55, 36)">
-          <rect x="-26" y="-12" width="52" height="20" rx="10" fill="#FEF3C7" stroke="#F5B800" stroke-width="1.4"/>
-          <text x="0" y="2" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">BOOM</text>
-        </g>
-
-        <!-- TROUGH / Recession -->
-        <circle cx="150" cy="195" r="5" fill="#EC2D68" stroke="#FFFFFF" stroke-width="2"/>
-        <g transform="translate(150, 220)">
-          <rect x="-36" y="-12" width="72" height="20" rx="10" fill="#FCE7F3" stroke="#EC2D68" stroke-width="1.4"/>
-          <text x="0" y="2" font-size="10" font-weight="800" fill="#9D174D" text-anchor="middle">RECESSION</text>
-        </g>
-
-        <!-- mini phase dots: recovery, slowdown -->
-        <circle cx="105" cy="130" r="3.4" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.4"/>
-        <text x="110" y="126" font-size="8" font-weight="700" fill="#0F172A" opacity="0.7">contraction</text>
-
-        <circle cx="195" cy="118" r="3.4" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.4"/>
-        <text x="170" y="112" font-size="8" font-weight="700" fill="#0F172A" opacity="0.7" text-anchor="end">recovery</text>
+      <!-- sine wave (the trade cycle) -->
+      <g filter="url(#htc-shadow)">
+        <path d="M 40 180 Q 80 80 120 180 Q 160 280 200 180 Q 230 110 250 180"
+              stroke="url(#htc-wave)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
 
-      <!-- CYCLE pill label, top-left -->
-      <g transform="translate(22, 30)">
-        <rect x="0" y="0" width="56" height="18" rx="9" fill="#9D174D" opacity="0.95"/>
-        <text x="28" y="12" font-size="10" font-weight="800" fill="#FFFFFF" letter-spacing="2" text-anchor="middle">CYCLE</text>
+      <!-- subtle trend line through middle (long-run growth, dashed) -->
+      <line x1="35" y1="190" x2="255" y2="170" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="4 5" opacity="0.3"/>
+
+      <!-- peak: sun + cloud -->
+      <g filter="url(#htc-soft)">
+        <circle cx="100" cy="105" r="18" fill="#FBBF24"/>
+        <g stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+          <line x1="100" y1="78" x2="100" y2="86"/>
+          <line x1="78" y1="100" x2="86" y2="105"/>
+          <line x1="122" y1="100" x2="114" y2="105"/>
+          <line x1="84" y1="86" x2="89" y2="91"/>
+          <line x1="116" y1="86" x2="111" y2="91"/>
+        </g>
       </g>
 
-      <!-- decorative small arcs, top right -->
-      <path d="M 222 44 Q 240 56 230 74" stroke="#F5B800" stroke-width="1.6"
-            fill="none" stroke-linecap="round" stroke-dasharray="2 4" opacity="0.6"/>
-      <circle cx="230" cy="76" r="2.4" fill="#F5B800" opacity="0.7"/>
-
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#EC2D68" opacity="0.1"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#9D174D" letter-spacing="2" text-anchor="middle">BOOM · SLOWDOWN · BUST · RECOVERY</text>
+      <!-- trough: cloud + rain -->
+      <g filter="url(#htc-soft)">
+        <ellipse cx="160" cy="270" rx="26" ry="14" fill="#94A3B8"/>
+        <ellipse cx="148" cy="262" rx="14" ry="10" fill="#CBD5E1"/>
+        <ellipse cx="172" cy="262" rx="14" ry="10" fill="#CBD5E1"/>
+        <!-- rain drops -->
+        <line x1="148" y1="285" x2="148" y2="292" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+        <line x1="160" y1="285" x2="160" y2="295" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+        <line x1="172" y1="285" x2="172" y2="292" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
       </g>
+
+      <!-- peak/trough dots on the wave -->
+      <circle cx="120" cy="180" r="5" fill="#FFFFFF" stroke="#22C55E" stroke-width="2.5"/>
+      <circle cx="200" cy="180" r="5" fill="#FFFFFF" stroke="#EF4444" stroke-width="2.5"/>
     </svg>
   `,
   heroFiscalPolicy: `

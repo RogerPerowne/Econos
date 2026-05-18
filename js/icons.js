@@ -10383,28 +10383,28 @@ window.ECONOS_ICONS = {
   `,
 
   demandLawCurve: `
-    <svg viewBox="0 0 900 360" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 980 360" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- single white background; wrapper div in app.js provides the outer border -->
-      <rect width="900" height="360" fill="#FFFFFF"/>
+      <rect width="980" height="360" fill="#FFFFFF"/>
 
       <!-- ===== LEFT: text content sits on shared white ===== -->
-      <text x="40" y="48" font-size="22" font-weight="800" fill="#0F172A">What is demand?</text>
+      <text x="40" y="50" font-size="24" font-weight="800" fill="#0F172A">What is demand?</text>
 
-      <text x="40" y="84"  font-size="15" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and</text>
-      <text x="40" y="106" font-size="15" fill="#334155"><tspan font-weight="700" fill="#059669">ability</tspan> of consumers to buy a</text>
-      <text x="40" y="128" font-size="15" fill="#334155">good or service at different</text>
-      <text x="40" y="150" font-size="15" fill="#334155">prices over a period of time.</text>
+      <text x="40" y="88"  font-size="16" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and</text>
+      <text x="40" y="112" font-size="16" fill="#334155"><tspan font-weight="700" fill="#059669">ability</tspan> of consumers to buy a</text>
+      <text x="40" y="136" font-size="16" fill="#334155">good or service at different</text>
+      <text x="40" y="160" font-size="16" fill="#334155">prices over a period of time.</text>
 
       <!-- green callout (light-tinted info box) -->
-      <rect x="32" y="178" width="332" height="118" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
-      <circle cx="60" cy="234" r="13" fill="none" stroke="#10B981" stroke-width="2"/>
-      <text x="60" y="240" text-anchor="middle" font-size="13" font-weight="900" fill="#10B981">✓</text>
-      <text x="84" y="214" font-size="13" fill="#065F46">It shows how much of a good</text>
-      <text x="84" y="234" font-size="13" fill="#065F46">consumers will buy at each</text>
-      <text x="84" y="254" font-size="13" fill="#065F46">possible price.</text>
+      <rect x="32" y="186" width="360" height="124" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
+      <circle cx="62" cy="244" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
+      <text x="62" y="250" text-anchor="middle" font-size="14" font-weight="900" fill="#10B981">✓</text>
+      <text x="88" y="222" font-size="14" fill="#065F46">It shows how much of a good</text>
+      <text x="88" y="244" font-size="14" fill="#065F46">consumers will buy at each</text>
+      <text x="88" y="266" font-size="14" fill="#065F46">possible price.</text>
 
       <!-- ===== RIGHT: chart on shared white background ===== -->
-      <g transform="translate(410,20)">
+      <g transform="translate(460,20)">
         <!-- gridlines only to data points -->
         <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3">
           <line x1="50" y1="34"  x2="140" y2="34"/>
@@ -10428,21 +10428,19 @@ window.ECONOS_ICONS = {
           <text x="42" y="184">4</text>
           <text x="42" y="256">0</text>
         </g>
-        <!-- Q axis tick labels — well clear of axis arrow + label -->
+        <!-- Q axis tick labels -->
         <g font-size="15" fill="#334155" text-anchor="middle">
           <text x="140" y="270">10</text>
           <text x="230" y="270">20</text>
           <text x="320" y="270">30</text>
-          <text x="410" y="270">40</text>
+          <text x="395" y="270">40</text>
         </g>
 
         <text x="20" y="12" font-size="15" font-weight="700" fill="#0F172A">Price (£)</text>
-        <!-- Quantity demanded label moved down to its own row, well below the Q ticks -->
-        <text x="442" y="296" font-size="15" font-weight="700" fill="#0F172A" text-anchor="end">Quantity demanded</text>
+        <text x="430" y="298" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Quantity demanded</text>
 
-        <!-- STRAIGHT demand line through A(140,34) B(230,106) C(320,178)
-             Slope 72/90 = 0.8. Extended from (104,5) to (410,250) — hits bottom-right exactly. -->
-        <line x1="104" y1="5" x2="410" y2="250" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+        <!-- STRAIGHT demand line: A(140,34) B(230,106) C(320,178), extended to axis edges -->
+        <line x1="104" y1="5" x2="400" y2="242" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
 
         <!-- data points -->
         <circle cx="140" cy="34"  r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
@@ -10450,21 +10448,21 @@ window.ECONOS_ICONS = {
         <circle cx="320" cy="178" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
 
         <!-- stacked labels: letter on top, coords below; positioned upper-right of each dot -->
-        <text x="154" y="26" font-size="17" font-weight="800" fill="#065F46">A</text>
-        <text x="154" y="42" font-size="12" fill="#065F46">(£12, 10)</text>
+        <text x="152" y="26" font-size="17" font-weight="800" fill="#065F46">A</text>
+        <text x="152" y="42" font-size="12" fill="#065F46">(£12, 10)</text>
 
-        <text x="244" y="98"  font-size="17" font-weight="800" fill="#065F46">B</text>
-        <text x="244" y="114" font-size="12" fill="#065F46">(£8, 20)</text>
+        <text x="242" y="98"  font-size="17" font-weight="800" fill="#065F46">B</text>
+        <text x="242" y="114" font-size="12" fill="#065F46">(£8, 20)</text>
 
-        <text x="334" y="170" font-size="17" font-weight="800" fill="#065F46">C</text>
-        <text x="334" y="186" font-size="12" fill="#065F46">(£4, 30)</text>
+        <text x="330" y="168" font-size="17" font-weight="800" fill="#065F46">C</text>
+        <text x="330" y="184" font-size="12" fill="#065F46">(£4, 30)</text>
 
-        <!-- D label safely above the line endpoint, clear of axis labels -->
-        <text x="414" y="244" font-size="19" font-weight="800" fill="#10B981">D</text>
+        <!-- D label positioned right of the line end, clear of ticks -->
+        <text x="406" y="238" font-size="19" font-weight="800" fill="#10B981">D</text>
       </g>
 
       <!-- italic caption spanning the panel bottom -->
-      <text x="450" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity demanded increases — shown by a downward-sloping curve.</text>
+      <text x="490" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity demanded increases — shown by a downward-sloping curve.</text>
     </svg>
   `,
   demandScheduleCurve: `

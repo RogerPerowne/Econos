@@ -192,15 +192,23 @@
     // Tip strip — single-sentence essence in a coloured top band.
     // Cleaner and punchier than `intro`; sits right under the title.
     if (c.tip) {
-      const tipText = typeof c.tip === 'object' ? c.tip.text : c.tip;
-      const tipIcon = (typeof c.tip === 'object' && c.tip.icon) || '💡';
-      const tipTone = (typeof c.tip === 'object' && c.tip.tone) || 'blue';
-      const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
-      content += `
-        <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:22px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div>
-          <div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div>
-        </div>`;
+      const tips = Array.isArray(c.tip) ? c.tip : [c.tip];
+      tips.forEach(tip => {
+        const tipText = typeof tip === 'object' ? tip.text : tip;
+        const tipIcon = (typeof tip === 'object' && tip.icon) || '💡';
+        const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
+        const tipHead = (typeof tip === 'object' && tip.head) || null;
+        const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
+        const bodyHtml = tipHead
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.55;">${tipText}</div></div>`
+          : `<div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div>`;
+        content += `
+          <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div>
+            ${bodyHtml}
+          </div>`;
+      });
+      content += `<div style="height:8px;"></div>`;
     }
 
     // Intro/lede — styled as a thought-prompt callout
@@ -475,11 +483,22 @@
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
       const flat = c.causesStyle === 'tinted-flat';
-      content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
+      if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'plain-white' && hasIcons) {
+          const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
         if (flat && hasIcons) {
           const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
           return `

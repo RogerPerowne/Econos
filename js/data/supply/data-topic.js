@@ -165,15 +165,19 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_6',
-      template: 'diagnose',
       title: 'Supply in Context: Key Markets',
-      intro: 'Supply conditions vary significantly across markets — know the specific characteristics that make each unusual.',
-      rows: [
-        { label: 'Market', colA: 'Housing supply', colB: 'Oil supply' },
-        { label: 'Key characteristic', colA: 'Very inelastic in short run (takes years to build); planning restrictions limit supply expansion', colB: 'Controlled by OPEC cartel; supply deliberately restricted to maintain prices above competitive level' },
-        { label: 'Policy implication', colA: 'House price rises are mainly absorbed as price increase, not output increase — planning reform needed', colB: 'Oil market is not a free market; supply management by a cartel distorts the price mechanism' }
+      tip: [
+        { icon: '💡', tone: 'blue', text: 'Supply behaves differently across markets because time, capacity, stock levels and nature all affect how easily producers can respond.' },
+        { icon: '⚖️', tone: 'green', head: 'Short run vs long run', text: 'In the short run, supply is often less responsive due to fixed factors and constraints. In the long run, firms can adjust capacity, resources and technology more fully.' }
       ],
-      footer: 'Agricultural supply is highly weather-dependent — random supply shocks cause large price swings. Buffer stock schemes attempt to stabilise this (covered in Unstable Markets topic).',
+      causesStyle: 'plain-white',
+      causesLabel: null,
+      causes: [
+        { tone: 'green', icon: '🌱', head: 'Agriculture',                  body: 'Supply is strongly affected by weather and growing seasons.<br><br>Bad weather or pests can sharply reduce output in the short run.' },
+        { tone: 'green', icon: '🏠', head: 'Housing',                      body: 'Supply is slow to respond in the short run due to planning, approvals and construction lags.<br><br>More responsive in the long run.' },
+        { tone: 'green', icon: '🛢️', head: 'Energy / oil',                 body: 'Supply requires large capital investment and infrastructure.<br><br>Global shocks, geopolitics and OPEC decisions can shift supply.' },
+        { tone: 'green', icon: '🛒', head: 'Manufactured consumer goods', body: 'Supply can often respond more quickly if spare capacity exists.<br><br>Firms can increase output with existing machinery and labour.' }
+      ],
       examEdge: 'PES (price elasticity of supply) determines how much of a supply shift becomes price vs quantity change. Very inelastic supply (housing): demand shift → mainly price rise, little quantity change. Elastic supply (manufacturing): demand shift → mainly quantity change, small price change.'
     },
     {

@@ -66,6 +66,12 @@ window.ECONOS_TOPIC = {
           text: 'A change in any <strong>non-price determinant</strong> shifts the entire supply curve. <strong>Rightward (S₂ — increase):</strong> more supplied at every price — lower input costs, better technology, more producers, or a subsidy. <strong>Leftward (S₀ — decrease):</strong> less supplied at every price — higher input costs, a new tax, a supply shock, or fewer producers. At every price, producers are now willing to supply a different quantity.'
         }
       ],
+      causes: [
+        { icon: '🏷️', head: 'Price change',       body: 'A change in the good\'s own price causes a movement along the existing supply curve — not a shift.', tone: 'green'  },
+        { icon: '🏭', head: 'Costs of production', body: 'Higher input costs reduce profit at each price, shifting supply left. Lower costs shift it right.',    tone: 'purple' },
+        { icon: '💻', head: 'Technology',           body: 'Better technology raises productivity and lowers unit costs, shifting the supply curve to the right.', tone: 'blue'   },
+        { icon: '🏛️', head: 'Tax or subsidy',       body: 'A new tax raises costs and shifts supply left. A subsidy reduces effective costs and shifts it right.', tone: 'amber'  }
+      ],
       examEdge: 'A leftward shift in supply raises equilibrium price — it looks like an "upward" shift on the diagram. Always describe shifts as left or right (not up or down), then explain the cause and the effect on equilibrium price and quantity. Both cause and effect are needed for full marks.'
     },
     {

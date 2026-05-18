@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '9-11 minutes',
   goal: 'Lock in the positive externality diagram, why markets underprovide goods with external benefits, and how subsidies and regulation correct this.',
   intro: {
-    heroKey: 'heroExternalities',
+    heroKey: 'heroPosExternalities',
     summary: 'Positive externalities create benefits for third parties not captured in market prices. The result is under-consumption or under-production relative to the socially optimal level — the opposite problem to negative externalities.',
     doInThis: 'Work through 7 cards covering the definition of positive externalities, the MSB/MPB diagram, merit goods, education and healthcare as key examples, government policy responses, and evaluation.',
     outcomes: [

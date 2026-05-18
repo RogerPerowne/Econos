@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Evaluate how macro policy is constrained and coordinated in a globalised economy — capital mobility, exchange rate regimes, policy spillovers, international institutions.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroGlobe',
     summary: 'Globalisation has transformed macro policy. Capital flows across borders within seconds; trade integration transmits shocks globally; exchange rates respond to policy choices instantly. National policy autonomy is constrained by the trilemma (fixed FX + open capital + independent monetary policy — pick two). International institutions (IMF, G20) attempt coordination with mixed success.',
     doInThis: 'Content coming soon — this topic will cover the Mundell-Fleming trilemma, international policy spillovers, the role of the IMF, G7/G20 coordination, currency wars, and the synthesis of theme content across global policy challenges (climate, debt, inequality).',
     outcomes: [

@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Evaluate government intervention in markets — competition policy, regulation, nationalisation, price controls, and labour market policy.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroIntervention',
     summary: 'Government intervention in business markets takes many forms: competition law to prevent monopoly abuse, price regulation for natural monopolies, nationalisation and privatisation, minimum wages, and labour market reforms. Evaluating the case for and against each type of intervention is a core analytical skill.',
     doInThis: 'Content coming soon — this topic will cover competition policy (CMA powers), regulation of natural monopolies (RPI-X), nationalisation vs privatisation, and evaluation of government failure risks.',
     outcomes: [

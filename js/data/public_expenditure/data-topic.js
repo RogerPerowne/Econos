@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand the composition of public expenditure, how it has evolved over time, and the economic effects of different spending categories.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroFiscalPolicy',
     summary: 'Public expenditure makes up roughly 45% of UK GDP. Its composition — capital vs current, transfer vs real spending, by department — shapes the economic and social character of the country. Understanding the components and trends is essential for any fiscal policy analysis.',
     doInThis: 'Content coming soon — this topic will cover the categories of public expenditure (capital vs current, transfer vs real), spending by function (NHS, education, defence, debt interest), trends in spending as % of GDP, and the productivity vs welfare debate. Cross-references fiscal policy in Theme 2 (6.2.1).',
     outcomes: [

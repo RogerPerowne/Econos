@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the Phillips curve, NAIRU, stagflation, and the question of whether supply-side policy can resolve macro trade-offs.',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroMacroObjectives',
     summary: "The five macro objectives cannot all be maximised simultaneously. The Phillips curve captures the most famous trade-off — between inflation and unemployment — but the conflicts run deeper: growth vs BoP, growth vs inflation, unemployment vs sustainability. Understanding these trade-offs is the analytical backbone of every macro policy essay.",
     doInThis: 'Work through 4 cards: conflicts between objectives (with real UK scenarios), the Phillips curve and NAIRU, stagflation (the worst-case outcome), and whether supply-side policy can resolve the trade-offs.',
     outcomes: [

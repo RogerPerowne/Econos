@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand the structure of the UK tax system, the distinction between direct and indirect taxes, progressivity, the Laffer curve, and the economic effects of taxation.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroFiscalPolicy',
     summary: 'Taxes fund public spending, redistribute income, correct market failures, and influence behaviour. The UK tax system raises ~37% of GDP, dominated by income tax, National Insurance, and VAT. Understanding the structure, progressivity, and incidence of taxes is essential for evaluating fiscal policy.',
     doInThis: 'Content coming soon — this topic will cover direct vs indirect taxes, the main UK taxes (income tax, NI, VAT, corporation tax, council tax), progressivity (progressive, proportional, regressive), the Laffer curve, and economic effects (incentives, efficiency, equity). Cross-references indirect taxes & subsidies in Theme 1 (2.9).',
     outcomes: [

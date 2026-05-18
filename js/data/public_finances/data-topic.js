@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand the relationship between fiscal deficits, debt, and the economy — including cyclical vs structural deficits, debt sustainability, and the implications of high debt levels.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroFiscalPolicy',
     summary: 'The fiscal deficit is the annual gap between government spending and revenue. The debt stock is the accumulated total of past deficits. UK debt has risen from ~40% of GDP (pre-2008) to ~100% (post-COVID). Understanding debt sustainability and the consequences of high deficits is now a central macro question.',
     doInThis: 'Content coming soon — this topic will cover the fiscal deficit vs debt distinction, automatic stabilisers, cyclical vs structural deficit, debt sustainability (debt dynamics equation), implications of high debt, and fiscal rules. Cross-references fiscal policy in Theme 2 (6.2.1).',
     outcomes: [

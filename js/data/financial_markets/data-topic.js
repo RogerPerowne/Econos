@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand the core functions of financial markets in a modern economy — facilitating saving and borrowing, enabling investment, managing risk, and providing the money supply.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroFinancialMarkets',
     summary: 'Financial markets connect savers to borrowers, enable firms to fund investment, allow households to manage risk, and underpin the payments system. A well-functioning financial sector is essential for growth — but financial markets fail more often than other markets, with consequences that can devastate the wider economy.',
     doInThis: 'Content coming soon — this topic will cover the six functions of financial markets, the distinction between money and capital markets, the role of commercial banks vs investment banks, and the importance of liquidity and credit creation.',
     outcomes: [

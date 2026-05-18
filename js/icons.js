@@ -3867,6 +3867,325 @@ window.ECONOS_ICONS = {
       </g>
     </svg>
   `,
+  heroFiscalPolicy: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-fp" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-fp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFBEB"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-fp" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-fp)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-fp)" opacity="0.4"/>
+      <g filter="url(#sh-fp)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">FISCAL POLICY</text>
+      <!-- axes -->
+      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
+      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">£</text>
+      <!-- spending bars (amber) -->
+      <rect x="72"  y="175" width="26" height="95" rx="4" fill="#F59E0B" opacity="0.7"/>
+      <rect x="108" y="145" width="26" height="125" rx="4" fill="#F59E0B" opacity="0.85"/>
+      <rect x="144" y="120" width="26" height="150" rx="4" fill="#F59E0B"/>
+      <rect x="180" y="100" width="26" height="170" rx="4" fill="#D97706"/>
+      <!-- tax bar (slate, shorter) -->
+      <rect x="216" y="195" width="26" height="75" rx="4" fill="#64748B" opacity="0.7"/>
+      <!-- labels -->
+      <text x="85"  y="265" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">G</text>
+      <text x="229" y="265" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">T</text>
+      <!-- legend -->
+      <rect x="58" y="298" width="10" height="10" rx="2" fill="#F59E0B"/>
+      <text x="72" y="307" font-size="9" fill="#475569">Govt spending</text>
+      <rect x="148" y="298" width="10" height="10" rx="2" fill="#64748B"/>
+      <text x="162" y="307" font-size="9" fill="#475569">Taxation</text>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">GOVERNMENT BUDGET &amp; TAXATION</text>
+    </svg>
+  `,
+
+  heroFinancialMarkets: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-fm" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EEF2FF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-fm" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-fm)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-fm)" opacity="0.4"/>
+      <g filter="url(#sh-fm)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">FINANCIAL MARKETS</text>
+      <!-- axes -->
+      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
+      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
+      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">t</text>
+      <!-- gridlines -->
+      <g stroke="#E2E8F0" stroke-width="0.8" opacity="0.7">
+        <line x1="58" y1="130" x2="240" y2="130"/>
+        <line x1="58" y1="180" x2="240" y2="180"/>
+        <line x1="58" y1="230" x2="240" y2="230"/>
+      </g>
+      <!-- volatile line chart (financial market price) -->
+      <polyline points="65,230 85,200 100,220 115,175 130,195 148,145 163,165 178,120 195,140 210,100 228,118" stroke="#6366F1" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- area fill under line -->
+      <polygon points="65,230 85,200 100,220 115,175 130,195 148,145 163,165 178,120 195,140 210,100 228,118 228,270 65,270" fill="#6366F1" opacity="0.08"/>
+      <!-- trend arrow -->
+      <line x1="75" y1="225" x2="218" y2="105" stroke="#6366F1" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.4"/>
+      <!-- label -->
+      <text x="230" y="114" font-size="11" font-weight="800" fill="#6366F1">r</text>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">PRICES · RISK · RETURN</text>
+    </svg>
+  `,
+
+  heroDevelopment: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-dev" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-dev" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0FDFA"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-dev" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+        <marker id="arrowDev" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M 0 0 L 6 3 L 0 6 Z" fill="#0D9488"/></marker>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-dev)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-dev)" opacity="0.4"/>
+      <g filter="url(#sh-dev)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">DEVELOPMENT</text>
+      <!-- ascending HDI-style bars (countries at different development stages) -->
+      <rect x="62"  y="240" width="28" height="30"  rx="4" fill="#99F6E4"/>
+      <rect x="98"  y="215" width="28" height="55"  rx="4" fill="#2DD4BF"/>
+      <rect x="134" y="185" width="28" height="85"  rx="4" fill="#0D9488"/>
+      <rect x="170" y="150" width="28" height="120" rx="4" fill="#0F766E"/>
+      <rect x="206" y="110" width="28" height="160" rx="4" fill="#134E4A"/>
+      <!-- ascending arrow overlay -->
+      <path d="M 70 245 L 220 115" stroke="#0D9488" stroke-width="2" stroke-dasharray="5 3" opacity="0.5" marker-end="url(#arrowDev)"/>
+      <!-- x-axis -->
+      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <!-- labels -->
+      <text x="76"  y="284" font-size="8" fill="#475569" text-anchor="middle">Low</text>
+      <text x="220" y="284" font-size="8" fill="#0F766E" font-weight="700" text-anchor="middle">High</text>
+      <text x="140" y="296" font-size="8" fill="#475569" text-anchor="middle">HDI →</text>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">LIVING STANDARDS · HUMAN CAPITAL</text>
+    </svg>
+  `,
+
+  heroMacroObjectives: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-mo" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-mo" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5F3FF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-mo" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-mo)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-mo)" opacity="0.4"/>
+      <g filter="url(#sh-mo)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">MACRO OBJECTIVES</text>
+      <!-- bullseye target -->
+      <circle cx="140" cy="175" r="80" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <circle cx="140" cy="175" r="56" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+      <circle cx="140" cy="175" r="34" fill="#DDD6FE" stroke="#A78BFA" stroke-width="1.5"/>
+      <circle cx="140" cy="175" r="14" fill="#7C3AED"/>
+      <!-- 4 objective labels at compass points -->
+      <text x="140" y="88"  font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Growth</text>
+      <text x="140" y="272" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Low inflation</text>
+      <text x="58"  y="179" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Employment</text>
+      <text x="222" y="148" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">Trade</text>
+      <text x="222" y="160" font-size="10" font-weight="800" fill="#7C3AED" text-anchor="middle">balance</text>
+      <!-- trade-off arrow cutting across -->
+      <line x1="90" y1="130" x2="192" y2="222" stroke="#EC4899" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+      <text x="158" y="145" font-size="9" font-weight="700" fill="#EC4899" transform="rotate(40,158,145)">trade-off</text>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">GROWTH · EMPLOYMENT · STABILITY</text>
+    </svg>
+  `,
+
+  heroWellbeing: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-wb" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-wb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFF7ED"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-wb" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-wb)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-wb)" opacity="0.4"/>
+      <g filter="url(#sh-wb)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">WELLBEING</text>
+      <!-- central person -->
+      <circle cx="140" cy="135" r="26" fill="#FED7AA" stroke="#F97316" stroke-width="2"/>
+      <!-- smile -->
+      <path d="M 128 140 Q 140 152 152 140" stroke="#EA580C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- eyes -->
+      <circle cx="133" cy="130" r="2.5" fill="#EA580C"/>
+      <circle cx="147" cy="130" r="2.5" fill="#EA580C"/>
+      <!-- wellbeing indicator bars radiating outward -->
+      <!-- Health -->
+      <rect x="68"  y="185" width="22" height="60" rx="4" fill="#34D399"/>
+      <text x="79" y="256" font-size="8" font-weight="700" fill="#059669" text-anchor="middle">Health</text>
+      <!-- Education -->
+      <rect x="100" y="198" width="22" height="47" rx="4" fill="#60A5FA"/>
+      <text x="111" y="256" font-size="8" font-weight="700" fill="#2563EB" text-anchor="middle">Educ.</text>
+      <!-- Income -->
+      <rect x="132" y="178" width="22" height="67" rx="4" fill="#F59E0B"/>
+      <text x="143" y="256" font-size="8" font-weight="700" fill="#D97706" text-anchor="middle">Income</text>
+      <!-- Safety -->
+      <rect x="164" y="205" width="22" height="40" rx="4" fill="#A78BFA"/>
+      <text x="175" y="256" font-size="8" font-weight="700" fill="#7C3AED" text-anchor="middle">Safety</text>
+      <!-- Environment -->
+      <rect x="196" y="192" width="22" height="53" rx="4" fill="#2DD4BF"/>
+      <text x="207" y="256" font-size="8" font-weight="700" fill="#0D9488" text-anchor="middle">Env.</text>
+      <!-- baseline -->
+      <line x1="60" y1="245" x2="228" y2="245" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">BEYOND GDP · QUALITY OF LIFE</text>
+    </svg>
+  `,
+
+  heroShortRunCosts: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-src" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-src" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0FDF4"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-src" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-src)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-src)" opacity="0.4"/>
+      <g filter="url(#sh-src)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">SHORT-RUN COSTS</text>
+      <!-- axes -->
+      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
+      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">£</text>
+      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">Q</text>
+      <!-- grid -->
+      <g stroke="#E2E8F0" stroke-width="0.8" opacity="0.6">
+        <line x1="58" y1="140" x2="240" y2="140"/>
+        <line x1="58" y1="190" x2="240" y2="190"/>
+        <line x1="58" y1="240" x2="240" y2="240"/>
+      </g>
+      <!-- AVC curve (U-shaped, lower, green) -->
+      <path d="M 68 225 Q 130 185 220 210" stroke="#10B981" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <text x="224" y="210" font-size="11" font-weight="800" fill="#10B981">AVC</text>
+      <!-- ATC curve (U-shaped, higher minimum, teal) -->
+      <path d="M 68 200 Q 130 155 220 170" stroke="#0D9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="224" y="170" font-size="11" font-weight="800" fill="#0D9488">ATC</text>
+      <!-- MC curve (steeper U then rising sharply) -->
+      <path d="M 68 240 Q 105 155 150 145 Q 175 140 220 108" stroke="#059669" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <text x="222" y="106" font-size="11" font-weight="800" fill="#059669">MC</text>
+      <!-- intersection dot (MC=ATC minimum) -->
+      <circle cx="152" cy="155" r="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">MC · AVC · ATC · DIMINISHING RETURNS</text>
+    </svg>
+  `,
+
+  heroLongRunCosts: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-lrc" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-lrc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EFF6FF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-lrc" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-lrc)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-lrc)" opacity="0.4"/>
+      <g filter="url(#sh-lrc)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">LONG-RUN COSTS</text>
+      <!-- axes -->
+      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
+      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">£</text>
+      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">Q</text>
+      <!-- several SRAC curves (light blue, small) -->
+      <path d="M 65 210 Q 90 168 118 195"  stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 88 188 Q 118 148 152 170"  stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 120 178 Q 152 140 185 162" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 155 182 Q 188 148 220 178" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- LRAC envelope (bold blue) -->
+      <path d="M 65 215 Q 152 130 238 215" stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- minimum efficient scale dot -->
+      <circle cx="152" cy="148" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+      <!-- labels -->
+      <text x="230" y="215" font-size="10" font-weight="800" fill="#2563EB">LRAC</text>
+      <text x="90"  y="185" font-size="9"  font-weight="700" fill="#93C5FD">SRAC</text>
+      <!-- EoS / DiSoS labels -->
+      <text x="90"  y="250" font-size="9" fill="#3B82F6" text-anchor="middle">EoS ↓</text>
+      <text x="195" y="250" font-size="9" fill="#DC2626" text-anchor="middle">DiSoS ↑</text>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">ECONOMIES OF SCALE · LRAC ENVELOPE</text>
+    </svg>
+  `,
+
+  heroPosExternalities: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-pe" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-pe" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0FDF4"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-pe" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-pe)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-pe)" opacity="0.4"/>
+      <g filter="url(#sh-pe)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">POSITIVE EXTERNALITY</text>
+      <!-- axes -->
+      <line x1="58" y1="82" x2="58" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="58" y1="270" x2="245" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="58,78 54,88 62,88" fill="#0F172A"/>
+      <text x="50" y="79" font-size="10" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
+      <text x="248" y="284" font-size="10" font-weight="800" fill="#0F172A">Q</text>
+      <!-- supply / MPC curve (upward, slate) -->
+      <path d="M 68 260 Q 148 190 228 110" stroke="#64748B" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <text x="224" y="108" font-size="10" font-weight="800" fill="#64748B">S=MPC</text>
+      <!-- MPB demand (downward, light green, dashed) -->
+      <path d="M 68 108 Q 148 185 228 258" stroke="#4ADE80" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
+      <text x="68" y="102" font-size="10" font-weight="800" fill="#4ADE80">MPB</text>
+      <!-- MSB demand (downward, bold green, shifted left/up — MSB > MPB) -->
+      <path d="M 68 82 Q 130 165 200 255" stroke="#16A34A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <text x="196" y="262" font-size="10" font-weight="800" fill="#16A34A">MSB</text>
+      <!-- social optimum vertical dashed line -->
+      <line x1="148" y1="175" x2="148" y2="270" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/>
+      <line x1="58"  y1="175" x2="148" y2="175" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/>
+      <!-- market eq vertical dashed line -->
+      <line x1="175" y1="188" x2="175" y2="270" stroke="#64748B" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+      <!-- welfare loss triangle -->
+      <polygon points="148,175 175,188 175,270 148,270" fill="#16A34A" opacity="0.1"/>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">MSB &gt; MPB · UNDER-PROVISION</text>
+    </svg>
+  `,
+
+  heroPublicGoods: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-pg" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#CBD5E1"/></pattern>
+        <linearGradient id="bg-pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F8FAFC"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient>
+        <filter id="sh-pg" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+      </defs>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-pg)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-pg)" opacity="0.4"/>
+      <g filter="url(#sh-pg)"><rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/></g>
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="3" opacity="0.65">PUBLIC GOODS</text>
+      <!-- lighthouse central icon -->
+      <rect x="123" y="110" width="34" height="70" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+      <polygon points="106,112 174,112 140,85" fill="#1E40AF" opacity="0.85"/>
+      <rect x="132" y="150" width="16" height="30" rx="2" fill="#93C5FD"/>
+      <!-- light beams from lighthouse -->
+      <line x1="140" y1="98"  x2="90"  y2="68"  stroke="#FDE68A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      <line x1="140" y1="98"  x2="192" y2="68"  stroke="#FDE68A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      <line x1="140" y1="98"  x2="140" y2="62"  stroke="#FDE68A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      <!-- people icons benefiting (non-excludable) -->
+      <circle cx="82" cy="205" r="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="82"  y="209" font-size="14" text-anchor="middle">👤</text>
+      <circle cx="140" cy="215" r="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="140" y="219" font-size="14" text-anchor="middle">👤</text>
+      <circle cx="198" cy="205" r="12" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="198" y="209" font-size="14" text-anchor="middle">👤</text>
+      <!-- connecting dotted lines from lighthouse to people -->
+      <line x1="133" y1="180" x2="92"  y2="196" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+      <line x1="140" y1="180" x2="140" y2="202" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+      <line x1="147" y1="180" x2="188" y2="196" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+      <!-- property labels -->
+      <rect x="50" y="232" width="80" height="22" rx="6" fill="#DBEAFE"/>
+      <text x="90" y="247" font-size="9" font-weight="700" fill="#1D4ED8" text-anchor="middle">Non-excludable</text>
+      <rect x="148" y="232" width="68" height="22" rx="6" fill="#D1FAE5"/>
+      <text x="182" y="247" font-size="9" font-weight="700" fill="#065F46" text-anchor="middle">Non-rival</text>
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="2" opacity="0.75">FREE-RIDER PROBLEM · MARKET FAILURE</text>
+    </svg>
+  `,
+
   heroDemand: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

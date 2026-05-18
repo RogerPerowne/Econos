@@ -44,85 +44,86 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_2',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Movement Along vs Shift of the Supply Curve',
-      lede: 'The same fundamental distinction as demand — but the supply curve slopes the other way. Explore interactively.',
-      diagramKey: 'supplyInteractive',
-      steps: [
-        {
-          key: 'base',
-          label: 'The supply curve',
-          text: 'The supply curve shows the <strong>positive relationship between price and quantity supplied</strong>. Ceteris paribus, as price rises, quantity supplied rises. It slopes upward because higher prices increase the profitability of production — existing firms expand output, new firms enter. Rising output also raises marginal costs (diminishing returns), so higher prices are needed to justify more production.'
-        },
-        {
-          key: 'extension',
-          label: 'Movement along',
-          text: 'A change in the good\'s <strong>own price</strong> causes a movement along the supply curve — nothing else can. A price rise causes an <strong>extension</strong> (E₂: higher P, higher Q supplied). A price fall causes a <strong>contraction</strong> (E₃: lower P, lower Q supplied). The curve itself does not move. Say "quantity supplied rises/falls," not "supply rises/falls."'
-        },
-        {
-          key: 'shift',
-          label: 'Supply shifts',
-          text: 'A change in any <strong>non-price determinant</strong> shifts the entire supply curve. <strong>Rightward (S₂ — increase):</strong> more supplied at every price — lower input costs, better technology, more producers, or a subsidy. <strong>Leftward (S₀ — decrease):</strong> less supplied at every price — higher input costs, a new tax, a supply shock, or fewer producers. At every price, producers are now willing to supply a different quantity.'
-        }
+      tip: 'If the good\'s own price changes, move along the curve. If anything else changes producers\' willingness or ability to sell, the whole curve shifts.',
+      diagramKey: 'supplyMovementVsShift',
+      causesLabel: false,
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '🏷️', head: 'Price change',         body: 'A change in price causes a movement along the existing supply curve.', tone: 'green'  },
+        { icon: '🏭', head: 'Costs of production', body: 'Higher costs shift supply left. Lower costs shift supply right.',         tone: 'purple' },
+        { icon: '💻', head: 'Technology',          body: 'Better technology often reduces costs and shifts supply to the right.',  tone: 'blue'   },
+        { icon: '🏛️', head: 'Tax or subsidy',       body: 'A tax shifts supply left. A subsidy shifts supply right.',               tone: 'amber'  }
       ],
-      examEdge: 'A leftward shift in supply raises equilibrium price — it looks like an "upward" shift on the diagram. Always describe shifts as left or right (not up or down), then explain the cause and the effect on equilibrium price and quantity. Both cause and effect are needed for full marks.'
+      examEdge: 'A very common mistake is to say "demand changed" or "supply shifted" when the only thing that changed was price. In that case, it is a movement along the supply curve.'
     },
     {
       id: 'supply_3',
-      template: 'cause',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Non-Price Determinants of Supply',
+      tip: 'Supply shifts when firms\' costs, productivity or business conditions change — even if the product\'s price stays the same.',
+      diagramKey: 'supplyShiftDualMini',
+      causesLabel: false,
       causesStyle: 'tinted-flat',
-      causesEmoji: '📋',
-      causesLabel: 'What shifts the supply curve',
       causes: [
-        { icon: '💰', head: 'Costs of production', body: 'Input prices (wages, raw materials, energy) are the most important supply shifter. Higher costs → less profit at each price → supply decreases (shifts left). Lower costs → supply increases (shifts right).' },
-        { icon: '💻', head: 'Technology', body: 'Improved technology raises productivity — more output per unit of input → lower cost per unit → supply shifts right. Technological progress is the key long-run driver of expanding supply.' },
-        { icon: '🏭', head: 'Number of producers', body: 'More firms in the market → total market supply increases (shifts right). Fewer firms (after exits, consolidation) → supply decreases.' },
-        { icon: '🏛️', head: 'Government policy', body: 'Production subsidies lower effective costs → supply shifts right. Indirect taxes raise effective costs → supply shifts left. Regulation (e.g. environmental standards) adds compliance costs → supply falls.' },
-        { icon: '🌦️', head: 'Natural &amp; external factors', body: 'Weather, natural disasters, pandemics, geopolitical events affect supply of specific goods. Oil supply is affected by OPEC decisions; food supply by harvest quality; manufacturing by component availability.' }
+        { icon: '💰', head: 'Costs of production',                  body: 'Lower input prices, wages or transport costs reduce costs, shifting supply right.',                                          tone: 'green'  },
+        { icon: '⚙️', head: 'Productivity and technology',          body: 'Better technology or more efficient processes let firms produce more at each price.',                                       tone: 'amber'  },
+        { icon: '🏛️', head: 'Indirect taxes and subsidies',         body: 'Taxes raise costs and shift supply left; subsidies lower costs and shift supply right.',                                    tone: 'blue'   },
+        { icon: '👥', head: 'Number of firms in the market',        body: 'More firms mean a greater quantity supplied at every price (right shift).',                                                  tone: 'purple' },
+        { icon: '⛈️', head: 'Weather / natural shocks',              body: 'Good weather can increase supply (right); bad weather reduces supply (left).',                                              tone: 'green'  },
+        { icon: '📋', head: 'Government regulation / expectations', body: 'Looser regulation or optimistic outlooks increase supply; stricter rules or pessimism reduce it.',                           tone: 'amber'  }
       ],
-      examEdge: 'The Ukraine-Russia war (2022) provides excellent exam material: Russian gas and Ukrainian wheat export restrictions caused simultaneous leftward shifts in European energy and food supply curves — illustrating supply shocks and their inflationary consequences.'
+      summary: {
+        icon: '💭',
+        label: 'How to think about it',
+        items: [
+          { icon: '→', label: 'Shifts supply right', body: 'Lower costs, better technology, subsidy, more firms.', tone: 'green'  },
+          { icon: '←', label: 'Shifts supply left',  body: 'Higher costs, tax, stricter regulation, bad weather.', tone: 'purple' }
+        ]
+      },
+      examEdge: 'Always explain the mechanism: higher costs reduce profitability, so firms are willing and able to supply less at every price.'
     },
     {
       id: 'supply_4',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'Producer Surplus',
-      lede: 'The supply curve reveals more than how much firms produce — it shows how much they gain from selling at the market price. Tap each step to build the picture.',
-      diagramKey: 'supplyPsSvg',
-      steps: [
-        {
-          key: 'base',
-          label: 'Supply curve',
-          text: 'Each point on the supply curve shows the minimum price a seller would accept for that unit — their marginal cost. Low-cost producers are willing to supply at low prices; higher-cost producers only enter if the market price is high enough. The market price P* is the same for every seller.'
-        },
-        {
-          key: 'ps',
-          label: 'Producer surplus',
-          text: 'Producer surplus is the rose triangle — the area below the market price P* and above the supply curve. Every seller who would have accepted less than P* receives a "bonus". The triangle\'s area measures the total extra revenue producers receive beyond their minimum acceptable price. Formula: PS = ½ × Q* × (P* − min supply price).'
-        },
-        {
-          key: 'prise',
-          label: 'Price rises → PS grows',
-          text: 'When price rises to P₂, producer surplus expands in two ways: ① Existing sellers earn (P₂ − P*) extra on every unit already supplied — the rectangle between P* and P₂ is their gain. ② New sellers enter who weren\'t profitable at P* — output extends to Q₂, adding a further triangle of surplus. A tax does the reverse: lowering the producer price shrinks PS, with part going to government revenue and part lost as deadweight welfare loss.'
-        }
+      tip: 'Producer surplus is the difference between the market price firms receive and the minimum price they would have been willing to accept.',
+      diagramKey: 'producerSurplus',
+      keyPoints: [
+        { icon: '📈', title: 'Price rises',             body: 'Surplus expands.',                              tone: 'green'  },
+        { icon: '💸', title: 'Costs fall',              body: 'Supply shifts right and surplus can grow.',     tone: 'amber'  },
+        { icon: '🛡️', title: 'Price controls / shocks', body: 'Surplus may shrink.',                           tone: 'purple' }
       ],
-      examEdge: 'Total welfare = CS + PS. Market efficiency is maximised at the competitive equilibrium where total surplus is maximised. Any distortion (tax, price control, monopoly) creates deadweight loss — reducing total surplus below this maximum. In the supply context: a leftward supply shift raises price and PS per unit but reduces quantity — overall PS change depends on elasticity.'
+      keyTerms: [
+        { term: 'Producer surplus', def: 'The difference between the price a firm receives and the minimum price it would have been willing to accept — the area below market price and above the supply curve.' },
+        { term: 'Marginal cost', def: 'The cost of producing one additional unit — the supply curve shows marginal cost at each level of output.' },
+        { term: 'Welfare', def: 'Total welfare = consumer surplus + producer surplus. Market efficiency is maximised at competitive equilibrium where total surplus is greatest.' }
+      ],
+      examEdge: 'When drawing or explaining producer surplus, be precise about the shaded area and link it to willingness to supply, not willingness to pay.'
     },
     {
       id: 'supply_5',
-      template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Joint Supply and Competing Supply',
-      verdict: {
-        leftLabel: '🔗 Joint supply',
-        rightLabel: '⚔️ Competing supply',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Definition', left: 'Producing one good automatically creates another as a by-product', right: 'The same resources can produce either of two goods — more of one means less of the other' },
-          { aspect: 'Example', left: 'Beef & leather · Oil & natural gas · Electricity & heat', right: 'Wheat & oil-seed rape (same land) · Product A vs B in a factory' },
-          { aspect: 'Price link', left: 'Beef price rises → more beef → more leather → leather price falls', right: 'Wheat price rises → farmers switch to wheat → rape supply falls → rape price rises' },
-          { aspect: 'Exam angle', left: 'Trace the chain step-by-step — two markets linked via a shared production process', right: 'Trace the opportunity cost — switching resources reduces supply in the other market' }
+      tip: 'Some products are supplied together, while others compete for the same scarce resources. That means one supply decision can affect another market.',
+      diagramKey: 'jointVsCompetingSupply',
+      left: {
+        tone: 'green',
+        icon: '🔑',
+        label: 'Key idea — Joint supply',
+        points: [
+          'Products are produced together.',
+          'More of one means more of the other.'
+        ]
+      },
+      right: {
+        tone: 'purple',
+        icon: '⚖️',
+        label: 'Key idea — Competing supply',
+        points: [
+          'Products use the same scarce resources.',
+          'More of one can mean less of the other.'
         ]
       },
       keyTerms: [
@@ -130,33 +131,67 @@ window.ECONOS_TOPIC = {
         { term: 'Competing supply', def: 'When the same resources can produce either of two goods — more of one means less of the other.' },
         { term: 'By-product', def: 'A secondary output produced alongside the primary output in a production process.' }
       ],
-      examEdge: 'Joint supply is regularly tested in context questions. "A rise in demand for beef raises beef prices — what happens to leather prices?" Answer: beef production rises (extension of supply) → more leather produced as joint product → leather supply shifts right → leather price falls. Walk through each step carefully.'
+      examEdge: 'These ideas often help explain why supply changes in related markets, especially agriculture, energy and manufacturing.'
     },
     {
       id: 'supply_6',
-      template: 'diagnose',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Supply in Context: Key Markets',
-      intro: 'Supply conditions vary significantly across markets — know the specific characteristics that make each unusual.',
-      rows: [
-        { label: 'Market', colA: 'Housing supply', colB: 'Oil supply' },
-        { label: 'Key characteristic', colA: 'Very inelastic in short run (takes years to build); planning restrictions limit supply expansion', colB: 'Controlled by OPEC cartel; supply deliberately restricted to maintain prices above competitive level' },
-        { label: 'Policy implication', colA: 'House price rises are mainly absorbed as price increase, not output increase — planning reform needed', colB: 'Oil market is not a free market; supply management by a cartel distorts the price mechanism' }
+      tip: 'Supply behaves differently across markets because time, capacity, stock levels and nature all affect how easily producers can respond.',
+      note: {
+        icon: '⚖️',
+        label: 'Short run vs long run',
+        body: 'In the short run, supply is often less responsive due to fixed factors and constraints. In the long run, firms can adjust capacity, resources and technology more fully.',
+        tone: 'green'
+      },
+      causesLabel: false,
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '🌱', head: 'Agriculture',                  body: 'Supply is strongly affected by weather and growing seasons. Bad weather or pests can sharply reduce output in the short run.',                tone: 'green' },
+        { icon: '🏠', head: 'Housing',                      body: 'Supply is slow to respond in the short run due to planning, approvals and construction lags. More responsive in the long run.',              tone: 'green' },
+        { icon: '🛢️', head: 'Energy / oil',                  body: 'Supply requires large capital investment and infrastructure. Global shocks, geopolitics and OPEC decisions can shift supply.',                tone: 'green' },
+        { icon: '🛒', head: 'Manufactured consumer goods', body: 'Supply can often respond more quickly if spare capacity exists. Firms can increase output with existing machinery and labour.',                tone: 'green' }
       ],
-      footer: 'Agricultural supply is highly weather-dependent — random supply shocks cause large price swings. Buffer stock schemes attempt to stabilise this (covered in Unstable Markets topic).',
-      examEdge: 'PES (price elasticity of supply) determines how much of a supply shift becomes price vs quantity change. Very inelastic supply (housing): demand shift → mainly price rise, little quantity change. Elastic supply (manufacturing): demand shift → mainly quantity change, small price change.'
+      summary: {
+        icon: '❓',
+        label: 'What to ask in context',
+        items: [
+          { icon: '⏱️', label: 'How quickly can output change?', tone: 'purple' },
+          { icon: '⚙️', label: 'Are there spare resources?',     tone: 'purple' },
+          { icon: '🏛️', label: 'Is production limited by nature, capacity or regulation?', tone: 'purple' },
+          { icon: '🌐', label: 'Is the market local, national or global?', tone: 'purple' }
+        ]
+      },
+      examEdge: 'Strong application means using the market context to explain why supply may be more or less responsive.'
     },
     {
       id: 'supply_7',
-      template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Supply and the Profit Motive',
-      body: 'Supply in a market economy is ultimately driven by the <strong>profit motive</strong>. Firms supply goods where they can earn a profit — where price exceeds average cost. This means supply responds to price signals because prices signal profit opportunities:<br><br>• Price rises → profit margin rises → existing firms expand, new firms enter → supply increases<br>• Price falls → profit margins squeezed → firms contract, some exit → supply decreases<br><br>This profit-driven supply response is the market\'s mechanism for solving the "what to produce" question. Resources flow to where profits are highest — automatically directing productive capacity to what consumers value most (at current prices).',
-      conclusion: { title: 'The profit motive is the engine of supply', text: 'In a free market, producers supply what is profitable — not what society necessarily needs. This is simultaneously supply\'s greatest strength (efficient resource allocation) and its greatest weakness (ignores externalities and public goods). Theme 1\'s market failure section explores precisely when and why this breaks down.' },
+      tip: 'The law of supply is rooted in incentives: when selling becomes more profitable, firms usually want to produce more.',
+      chain: {
+        title: 'How the profit motive drives supply',
+        items: [
+          { icon: '🏷️', title: 'Higher market price',           body: 'When the market price rises, each unit sold is worth more.',                              tone: 'green'  },
+          { icon: '📈', title: 'Higher potential revenue / profit', body: 'With costs unchanged in the short run, higher price raises potential profit per unit.', tone: 'amber'  },
+          { icon: '🏭', title: 'Firms expand output or enter the market', body: 'Existing firms produce more and/or new firms are attracted by higher profits.', tone: 'purple' },
+          { icon: '🛒', title: 'Quantity supplied rises',        body: 'More total output is available at each price level.',                                     tone: 'green'  }
+        ]
+      },
+      causesLabel: false,
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '⚖️', head: 'Revenue vs cost', body: 'Firms care about profit, not just price. They compare expected revenue with the cost of production.', tone: 'green'  },
+        { icon: '📣', head: 'Profit signals',  body: 'Rising profit is a signal that attracts expansion (investing more resources) and entry by other firms.', tone: 'amber'  },
+        { icon: '⏳', head: 'Limits',          body: 'Capacity constraints, time lags, regulation and firm objectives can weaken or slow the response.',     tone: 'purple' },
+        { icon: '📉', head: 'When costs rise sharply', body: 'If costs increase (S₁ → S₂), higher prices may not raise profit much, so supply may not rise strongly.', tone: 'green' }
+      ],
       keyTerms: [
         { term: 'Profit motive', def: 'The incentive for firms to produce goods and services where price exceeds cost — the engine of market supply.' },
         { term: 'Entry and exit', def: 'New firms entering a profitable market increases supply; firms exiting an unprofitable market reduces it — key to long-run equilibrium.' },
         { term: 'Sunk costs', def: 'Costs already incurred that cannot be recovered — relevant to exit decisions; high sunk costs create barriers to exit and sustain supply even when unprofitable.' }
       ],
-      examEdge: 'The link between supply and profit connects to market structures (Theme 3). In perfect competition, long-run profits are driven to zero by entry — supply is perfectly elastic in the long run. Monopoly restricts supply to maintain supernormal profit. Oligopoly collude to restrict supply. The supply model underpins all of this.',
+      examEdge: 'Do not treat the law of supply as automatic. It depends on profitability and on firms being willing and able to respond.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

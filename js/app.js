@@ -274,6 +274,12 @@
       content += `</div>`;
     }
 
+    // Diagram (if card provides a diagramKey) — renders BEFORE flow so the
+    // headline visual sits above any 1-2-3 explanatory chain.
+    if (c.diagramKey && I[c.diagramKey]) {
+      content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
+    }
+
     // Horizontal step flow — numbered circles connected by dashed arrows.
     // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
     // overlays a small badge on the icon — for narrative chains where each step has a verdict.
@@ -301,11 +307,6 @@
         `;
       }).join('');
       content += `</div>`;
-    }
-
-    // Diagram (if card provides a diagramKey)
-    if (c.diagramKey && I[c.diagramKey]) {
-      content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
     }
 
     // Body text — styled as a rich explainer

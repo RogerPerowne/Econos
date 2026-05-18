@@ -415,7 +415,7 @@
             <ul style="margin:10px 0 0;padding:0;list-style:none;">${bulletsHtml}</ul>
           </div>`;
       }).join('');
-      content += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:22px;">${boxesHtml}</div>`;
+      content += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${boxesHtml}</div>`;
     }
 
     // Shift diagrams — two mini SVGs (increase / decrease) side by side.

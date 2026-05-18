@@ -10382,4 +10382,160 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  demandLawCurve: `
+    <svg viewBox="0 0 360 320" width="360" height="320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="360" height="320" fill="#F8FAFC" rx="10"/>
+
+      <!-- gridlines -->
+      <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3 3">
+        <line x1="50" y1="40"  x2="140" y2="40"/>
+        <line x1="50" y1="120" x2="230" y2="120"/>
+        <line x1="50" y1="200" x2="320" y2="200"/>
+        <line x1="140" y1="40"  x2="140" y2="280"/>
+        <line x1="230" y1="120" x2="230" y2="280"/>
+        <line x1="320" y1="200" x2="320" y2="280"/>
+      </g>
+
+      <!-- axes -->
+      <line x1="50" y1="280" x2="340" y2="280" stroke="#334155" stroke-width="2"/>
+      <polygon points="340,275 340,285 350,280" fill="#334155"/>
+      <line x1="50" y1="280" x2="50" y2="30" stroke="#334155" stroke-width="2"/>
+      <polygon points="45,30 55,30 50,20" fill="#334155"/>
+
+      <!-- axis labels -->
+      <text x="32"  y="44"  font-size="10" fill="#334155" text-anchor="end">12</text>
+      <text x="32"  y="124" font-size="10" fill="#334155" text-anchor="end">8</text>
+      <text x="32"  y="204" font-size="10" fill="#334155" text-anchor="end">4</text>
+      <text x="32"  y="284" font-size="10" fill="#334155" text-anchor="end">0</text>
+      <text x="140" y="298" font-size="10" fill="#334155" text-anchor="middle">10</text>
+      <text x="230" y="298" font-size="10" fill="#334155" text-anchor="middle">20</text>
+      <text x="320" y="298" font-size="10" fill="#334155" text-anchor="middle">30</text>
+
+      <text x="20" y="25"  font-size="11" font-weight="700" fill="#0F172A">Price (£)</text>
+      <text x="340" y="312" font-size="11" font-weight="700" fill="#0F172A" text-anchor="end">Quantity</text>
+
+      <!-- demand curve through A, B, C -->
+      <path d="M 130 28 Q 180 60 230 120 T 330 215" fill="none" stroke="#10B981" stroke-width="2.5"/>
+
+      <!-- points -->
+      <circle cx="140" cy="40"  r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="230" cy="120" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="320" cy="200" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+
+      <!-- labels -->
+      <text x="152" y="36"  font-size="11" font-weight="700" fill="#065F46">A (£12, 10)</text>
+      <text x="242" y="116" font-size="11" font-weight="700" fill="#065F46">B (£8, 20)</text>
+      <text x="278" y="222" font-size="11" font-weight="700" fill="#065F46">C (£4, 30)</text>
+
+      <!-- D label -->
+      <text x="335" y="232" font-size="13" font-weight="800" fill="#10B981">D</text>
+
+      <!-- caption -->
+      <text x="180" y="312" font-size="10" fill="#64748B" font-style="italic" text-anchor="middle">Price falls → quantity demanded rises</text>
+    </svg>
+  `,
+
+  demandScheduleCurve: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
+      <rect x="8" y="8" width="884" height="424" fill="none" stroke="#E2E8F0" stroke-width="1" rx="10"/>
+
+      <!-- panel title -->
+      <text x="32" y="40" font-size="15" font-weight="800" fill="#0F172A">Demand schedule and curve</text>
+
+      <!-- ============ TABLE (left) ============ -->
+      <g transform="translate(32,60)">
+        <rect x="0" y="0" width="320" height="340" fill="#F8FAFC" stroke="#E2E8F0" rx="8"/>
+
+        <!-- header -->
+        <rect x="0" y="0" width="320" height="44" fill="#ECFDF5" rx="8"/>
+        <rect x="0" y="36" width="320" height="8" fill="#ECFDF5"/>
+        <line x1="160" y1="0" x2="160" y2="340" stroke="#E2E8F0"/>
+        <line x1="0" y1="44" x2="320" y2="44" stroke="#10B981" stroke-width="1.5"/>
+        <text x="80"  y="28" font-size="12" font-weight="700" fill="#065F46" text-anchor="middle">Price (£)</text>
+        <text x="240" y="28" font-size="12" font-weight="700" fill="#065F46" text-anchor="middle">Quantity demanded</text>
+
+        <!-- rows -->
+        <g font-size="13" fill="#0F172A" text-anchor="middle">
+          <text x="80"  y="78">12</text><text x="240" y="78">10</text>
+          <line x1="12" y1="92" x2="308" y2="92" stroke="#E2E8F0"/>
+          <text x="80"  y="118">10</text><text x="240" y="118">15</text>
+          <line x1="12" y1="132" x2="308" y2="132" stroke="#E2E8F0"/>
+          <text x="80"  y="158">8</text><text x="240" y="158">20</text>
+          <line x1="12" y1="172" x2="308" y2="172" stroke="#E2E8F0"/>
+          <text x="80"  y="198">6</text><text x="240" y="198">28</text>
+          <line x1="12" y1="212" x2="308" y2="212" stroke="#E2E8F0"/>
+          <text x="80"  y="238">4</text><text x="240" y="238">38</text>
+        </g>
+      </g>
+
+      <!-- ============ CHART (right) ============ -->
+      <g transform="translate(390,60)">
+        <!-- gridlines -->
+        <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3 3">
+          <line x1="50" y1="42"  x2="430" y2="42"/>
+          <line x1="50" y1="90"  x2="430" y2="90"/>
+          <line x1="50" y1="138" x2="430" y2="138"/>
+          <line x1="50" y1="186" x2="430" y2="186"/>
+          <line x1="50" y1="234" x2="430" y2="234"/>
+          <line x1="150" y1="20" x2="150" y2="282"/>
+          <line x1="200" y1="20" x2="200" y2="282"/>
+          <line x1="250" y1="20" x2="250" y2="282"/>
+          <line x1="330" y1="20" x2="330" y2="282"/>
+          <line x1="430" y1="20" x2="430" y2="282"/>
+        </g>
+
+        <!-- axes -->
+        <line x1="50" y1="282" x2="460" y2="282" stroke="#334155" stroke-width="2"/>
+        <polygon points="460,277 460,287 472,282" fill="#334155"/>
+        <line x1="50" y1="282" x2="50" y2="20" stroke="#334155" stroke-width="2"/>
+        <polygon points="45,20 55,20 50,8" fill="#334155"/>
+
+        <!-- axis tick labels -->
+        <g font-size="11" fill="#334155">
+          <text x="40" y="46"  text-anchor="end">12</text>
+          <text x="40" y="94"  text-anchor="end">10</text>
+          <text x="40" y="142" text-anchor="end">8</text>
+          <text x="40" y="190" text-anchor="end">6</text>
+          <text x="40" y="238" text-anchor="end">4</text>
+          <text x="40" y="286" text-anchor="end">0</text>
+          <text x="50"  y="300" text-anchor="middle">0</text>
+          <text x="150" y="300" text-anchor="middle">10</text>
+          <text x="200" y="300" text-anchor="middle">20</text>
+          <text x="250" y="300" text-anchor="middle">30</text>
+          <text x="330" y="300" text-anchor="middle">40</text>
+          <text x="430" y="300" text-anchor="middle">50</text>
+        </g>
+
+        <text x="20" y="14" font-size="12" font-weight="700" fill="#0F172A">Price (£)</text>
+        <text x="468" y="316" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity demanded</text>
+
+        <!-- demand curve through A(150,42) B(200,90) C(250,138) D(330,186) E(430,234) extending -->
+        <path d="M 140 28 Q 175 60 200 90 T 250 138 T 330 186 T 430 234 L 460 252"
+              fill="none" stroke="#10B981" stroke-width="2.5"/>
+
+        <!-- points -->
+        <g>
+          <circle cx="150" cy="42"  r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="200" cy="90"  r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="250" cy="138" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="330" cy="186" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="430" cy="234" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+        </g>
+
+        <!-- point labels -->
+        <g font-size="12" font-weight="700" fill="#065F46">
+          <text x="162" y="38">A (12, 10)</text>
+          <text x="212" y="86">B (10, 15)</text>
+          <text x="262" y="134">C (8, 20)</text>
+          <text x="342" y="182">D (6, 28)</text>
+          <text x="378" y="252">E (4, 38)</text>
+        </g>
+
+        <!-- D label on curve -->
+        <text x="466" y="262" font-size="14" font-weight="800" fill="#10B981">D</text>
+      </g>
+    </svg>
+  `,
+
 };

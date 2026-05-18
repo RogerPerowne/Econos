@@ -29,6 +29,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Demand: the big picture',
+      diagramKey: 'demandLawCurve',
       tip: 'Demand is not just "wanting" something — it requires both willingness AND ability to pay. A wish list without purchasing power is not demand.',
       branches: [
         { tone: 'green',  label: 'Law of demand',       sub: 'Ceteris paribus, price ↓ → quantity demanded ↑. Driven by the substitution effect (switching to alternatives) and the income effect (real purchasing power changes).' },
@@ -164,6 +165,7 @@ window.ECONOS_TOPIC = {
       id: 'demand_7',
       template: 'framing',
       title: 'The Demand Curve and Market Analysis',
+      diagramKey: 'demandScheduleCurve',
       tip: 'Diagram checklist: label both axes (P, Q), label the curve (D or D₁), mark equilibrium (P*, Q*), show shifts clearly (D₂ rightward = increase). Methodical technique earns marks even when written analysis is incomplete.',
       body: 'The demand curve is the foundation of all market analysis in economics. It must be mastered before moving on to supply, equilibrium, elasticity, and market failure.<br><br><strong>Key diagram rules:</strong><br>1. Label axes: Price (P) on vertical, Quantity (Q) on horizontal.<br>2. Label the curve D (or D1 if you will draw D2).<br>3. Mark equilibrium point with coordinates (P*, Q*).<br>4. For a shift, draw D2 and label it clearly.<br>5. Arrow direction: right for increase in demand, left for decrease.',
       keyTerms: [

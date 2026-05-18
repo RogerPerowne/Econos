@@ -30,13 +30,11 @@ window.ECONOS_TOPIC = {
       title: 'Demand: the big picture',
       tip: 'Why do queues form for Taylor Swift tickets but shops slash prices on old stock? Demand helps explain how consumers respond to price — and why firms obsess over it.',
       diagramKey: 'demandLawCurve',
-      flow: [
-        { icon: '⚖️', title: 'Law of demand',    sub: 'As price falls, quantity demanded usually rises. Consumers buy more when it\'s cheaper and less when it\'s more expensive.', tone: 'green'  },
-        { icon: '💳', title: 'Effective demand',  sub: 'Consumers must both want AND be able to pay. If incomes are too low or credit is unavailable, demand won\'t be realised.', tone: 'amber'  },
-        { icon: '📊', title: 'Demand matters',    sub: 'Firms, governments and economists use demand analysis to predict and influence behaviour — from pricing to policy.', tone: 'blue'   }
+      keyPoints: [
+        { icon: '⚖️',  title: 'Law of demand',    headline: 'As price falls, quantity demanded usually rises.',                                  body: 'Consumers buy more when it\'s cheaper and less when it\'s more expensive.',         tone: 'green' },
+        { icon: '🛒',  title: 'Effective demand',  headline: 'Consumers must both want and be able to pay.',                                       body: 'If incomes are too low or credit is unavailable, demand won\'t be realised.',        tone: 'amber' },
+        { icon: '🏛️', title: 'Demand matters',    headline: 'Firms, governments and economists use demand analysis to predict behaviour.',         body: 'It underpins pricing, marketing, policy and forecasting.',                            tone: 'blue'  }
       ],
-      flowTitle: 'Three things to know about demand',
-      flowEmoji: '💡',
       keyTerms: [
         { term: 'Law of demand', def: 'Ceteris paribus: a fall in price leads to a rise in quantity demanded; price and quantity demanded move in opposite directions.' },
         { term: 'Substitution effect', def: 'Price rise makes a good relatively expensive vs alternatives → consumers switch away → quantity demanded falls.' },

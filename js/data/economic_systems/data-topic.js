@@ -227,7 +227,7 @@ window.ECONOS_TOPIC = {
         columns: [
           {
             tone: 'rose',
-            icon: '🇷🇺',
+            icon: '⚡',
             label: 'Russia — Shock Therapy',
             items: [
               { ok: false, text: 'Rapid simultaneous liberalisation from 1991' },
@@ -239,7 +239,7 @@ window.ECONOS_TOPIC = {
           },
           {
             tone: 'green',
-            icon: '🇨🇳',
+            icon: '🐢',
             label: 'China — Gradualism',
             items: [
               { ok: true,  text: 'Incremental reforms from 1978 under state oversight' },

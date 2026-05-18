@@ -378,42 +378,52 @@
       </div>`;
     }
 
-    // Supply shift diagrams — two mini SVGs (right shift / left shift) side by side.
-    // Activated by `shiftDiagrams: true` on a card. Appears before the causes tile grid.
+    // Shift diagrams — two mini SVGs (increase / decrease) side by side.
+    // `shiftDiagrams: true` → upward-sloping supply curves.
+    // `shiftDiagrams: 'demand'` → downward-sloping demand curves.
     if (c.shiftDiagrams) {
-      const rightSvg = `<svg viewBox="0 0 175 135" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+      const isDemand = c.shiftDiagrams === 'demand';
+      const axes = `
         <line x1="22" y1="6" x2="22" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
         <line x1="22" y1="122" x2="168" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
         <text x="10" y="14" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">P</text>
-        <text x="163" y="134" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">Q</text>
-        <path d="M 28,110 Q 55,65 95,16" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="5,3"/>
-        <path d="M 68,110 Q 95,65 135,16" fill="none" stroke="#059669" stroke-width="2.2"/>
-        <text x="97" y="13" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">S₁</text>
-        <text x="137" y="13" font-size="10" fill="#059669" font-weight="bold" font-family="system-ui,sans-serif">S₂</text>
+        <text x="163" y="134" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">Q</text>`;
+      // Supply curves slope up (bottom-left → top-right); demand curves slope down (top-left → bottom-right).
+      // At t=0.5 both beziers pass through y≈64, x≈58 (curve 1) and x≈98 (curve 2) — arrow sits between.
+      const c1 = isDemand ? 'M 28,16 Q 55,65 95,110'  : 'M 28,110 Q 55,65 95,16';
+      const c2 = isDemand ? 'M 68,16 Q 95,65 135,110' : 'M 68,110 Q 95,65 135,16';
+      // Label positions: supply → top of curve; demand → bottom of curve
+      const lbl1x = isDemand ? 97  : 97;  const lbl1y = isDemand ? 118 : 13;
+      const lbl2x = isDemand ? 137 : 137; const lbl2y = isDemand ? 118 : 13;
+      const curveLabel = isDemand ? ['D', 'D'] : ['S', 'S'];
+      const rightSvg = `<svg viewBox="0 0 175 135" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+        ${axes}
+        <path d="${c1}" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="5,3"/>
+        <path d="${c2}" fill="none" stroke="#059669" stroke-width="2.2"/>
+        <text x="${lbl1x}" y="${lbl1y}" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">${curveLabel[0]}₁</text>
+        <text x="${lbl2x}" y="${lbl2y}" font-size="10" fill="#059669" font-weight="bold" font-family="system-ui,sans-serif">${curveLabel[1]}₂</text>
         <line x1="64" y1="64" x2="92" y2="64" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
         <polygon points="92,61 99,64 92,67" fill="#059669"/>
       </svg>`;
       const leftSvg = `<svg viewBox="0 0 175 135" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
-        <line x1="22" y1="6" x2="22" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
-        <line x1="22" y1="122" x2="168" y2="122" stroke="#CBD5E1" stroke-width="1.5"/>
-        <text x="10" y="14" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">P</text>
-        <text x="163" y="134" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">Q</text>
-        <path d="M 68,110 Q 95,65 135,16" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="5,3"/>
-        <path d="M 28,110 Q 55,65 95,16" fill="none" stroke="#DC2626" stroke-width="2.2"/>
-        <text x="137" y="13" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">S₁</text>
-        <text x="97" y="13" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui,sans-serif">S₂</text>
+        ${axes}
+        <path d="${c2}" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="5,3"/>
+        <path d="${c1}" fill="none" stroke="#DC2626" stroke-width="2.2"/>
+        <text x="${lbl2x}" y="${lbl2y}" font-size="10" fill="#94A3B8" font-family="system-ui,sans-serif">${curveLabel[0]}₁</text>
+        <text x="${lbl1x}" y="${lbl1y}" font-size="10" fill="#DC2626" font-weight="bold" font-family="system-ui,sans-serif">${curveLabel[1]}₂</text>
         <line x1="92" y1="64" x2="64" y2="64" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/>
         <polygon points="64,61 57,64 64,67" fill="#DC2626"/>
       </svg>`;
+      const noun = isDemand ? 'Demand' : 'Supply';
       content += `
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;">
           <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:14px 14px 10px;">
             ${rightSvg}
-            <div style="text-align:center;font-size:12px;font-weight:700;color:#059669;margin-top:6px;">Supply increases (right shift)</div>
+            <div style="text-align:center;font-size:12px;font-weight:700;color:#059669;margin-top:6px;">${noun} increases (right shift)</div>
           </div>
           <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:12px;padding:14px 14px 10px;">
             ${leftSvg}
-            <div style="text-align:center;font-size:12px;font-weight:700;color:#DC2626;margin-top:6px;">Supply decreases (left shift)</div>
+            <div style="text-align:center;font-size:12px;font-weight:700;color:#DC2626;margin-top:6px;">${noun} decreases (left shift)</div>
           </div>
         </div>`;
     }

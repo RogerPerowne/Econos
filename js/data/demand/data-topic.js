@@ -66,20 +66,35 @@ window.ECONOS_TOPIC = {
           text: 'A change in any <strong>non-price determinant</strong> shifts the entire demand curve. <strong>Rightward (D₂ — increase):</strong> more demanded at every price — higher income, changed tastes, or a rise in a substitute\'s price. <strong>Leftward (D₀ — decrease):</strong> less demanded at every price — lower income, or a rise in a complement\'s price. Quantity changes at every price level, not just P₁.'
         }
       ],
+      causes: [
+        { icon: '🏷️', head: 'Price change',          body: 'A change in the good\'s own price causes a movement along the existing demand curve — not a shift.',                                 tone: 'green'  },
+        { icon: '💰', head: 'Income',                 body: 'Higher income raises demand for normal goods (rightward shift). Lower income reduces it. Inferior goods move in the opposite direction.', tone: 'purple' },
+        { icon: '🎨', head: 'Tastes & advertising',  body: 'A shift in consumer preferences, a viral trend or an effective campaign shifts the entire demand curve left or right.',               tone: 'blue'   },
+        { icon: '🔄', head: 'Prices of related goods',body: 'A substitute\'s price rise shifts demand right. A complement\'s price rise shifts demand left.',                                      tone: 'amber'  }
+      ],
       examEdge: 'Never say "demand rises because price falls" — that confuses demand (the whole schedule) with quantity demanded (a point on the schedule). Price falls cause quantity demanded to rise (movement along). Demand rising means the curve shifts right. Examiners specifically test this distinction.'
     },
     {
       id: 'demand_3',
       template: 'cause',
       title: 'Non-Price Determinants of Demand',
-      tip: 'Remember PIRATE: Price of Related goods, Income, fashion/Advertising (Tastes), populaTion, Expectations. Any of these can shift demand left or right.',
+      tip: { icon: '💡', tone: 'blue', text: 'Demand shifts when anything other than the good\'s own price changes — income, tastes, related goods prices, population or expectations.' },
+      shiftDiagrams: 'demand',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '📋',
+      causesLabel: 'What shifts the demand curve',
       causes: [
-        { icon: '💰', head: 'Income',                      body: 'For normal goods: higher income → more demand (rightward shift). For inferior goods (value-brand food, bus travel): higher income → less demand (leftward shift). Crucial for YED analysis.' },
-        { icon: '🔄', head: 'Price of related goods',      body: 'Substitutes: rise in price of Good B → rise in demand for substitute A (rightward shift). Complements: rise in price of Good B → fall in demand for complement A (leftward shift).' },
-        { icon: '🎨', head: 'Tastes and fashion',          body: 'Advertising, social trends, health recommendations shift demand. A celebrity endorsement, a health scare, or a viral trend can cause rapid demand shifts.' },
-        { icon: '👥', head: 'Population and demographics', body: 'Population growth increases market demand. An ageing population increases healthcare demand; a younger population increases education demand.' },
-        { icon: '🔮', head: 'Expectations',                body: 'If consumers expect future price rises, they bring forward purchases → demand rises now. In asset markets, expected price rises increase demand today — driving speculative bubbles.' }
+        { icon: '💰', head: 'Income',                   body: 'For normal goods: higher income → demand shifts right. For inferior goods (value-brand food, bus travel): higher income → demand shifts left. The key driver of YED analysis.',                  tone: 'green'  },
+        { icon: '↔️', head: 'Substitutes',              body: 'A rise in the price of a substitute shifts demand for this good right — consumers switch across. A fall in the substitute\'s price shifts demand left.',                                         tone: 'blue'   },
+        { icon: '🔗', head: 'Complements',              body: 'A rise in the price of a complement shifts demand for this good left — the two are bought together, so demand for both falls. A fall in the complement\'s price shifts demand right.',            tone: 'amber'  },
+        { icon: '🎨', head: 'Tastes & preferences',    body: 'Advertising, health recommendations, celebrity endorsements and social trends all shift demand. Changes can be rapid (viral trends) or gradual (long-run health awareness).',                    tone: 'purple' },
+        { icon: '👥', head: 'Population & demographics',body: 'Population growth increases total market demand. A changing age structure shifts demand between sectors — an ageing population increases healthcare demand; a younger one increases education.', tone: 'rose'   },
+        { icon: '🔮', head: 'Expectations',             body: 'If consumers expect future price rises, they bring purchases forward → demand rises now. In asset markets, expected price rises increase demand today — a key driver of speculative bubbles.',  tone: 'slate'  }
       ],
+      howToThink: {
+        left:  { icon: '➡️', tone: 'green', head: 'Shifts demand right', body: 'Higher income (normal goods) · Substitute\'s price rises · Complement\'s price falls · Positive taste shift · Population growth · Expected price rise' },
+        right: { icon: '⬅️', tone: 'rose',  head: 'Shifts demand left',  body: 'Lower income · Substitute\'s price falls · Complement\'s price rises · Negative taste shift · Population falls · Expected price fall' }
+      },
       examEdge: 'Examiners expect you to identify the relevant shifter for the specific context, not just list all of them. If the question is about the housing market, identify the most important driver (interest rates, income, expectations) and apply it precisely.'
     },
     {

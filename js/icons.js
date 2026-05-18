@@ -66,101 +66,94 @@ window.ECONOS_ICONS = {
   heroBars: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="hero-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        <filter id="hero-bars-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="hero-bars-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/>
         </filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#hero-bg)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#hero-dots)" opacity="0.4"/>
-
-      <!-- faint diagonal CPI line (bottom-left to upper-right, climbing) -->
-      <path d="M 25 320 L 60 308 L 90 295 L 120 275 L 150 245 L 180 200 L 210 130 L 245 70"
-            stroke="#3B82F6" stroke-width="2.5" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" opacity="0.18"/>
-
-      <!-- vertical "prices rising" arrow on the left margin -->
-      <path d="M 32 290 Q 28 200 32 95" stroke="#2563EB" stroke-width="1.8" fill="none"
-            stroke-linecap="round" stroke-dasharray="3 4" opacity="0.5"/>
-      <polygon points="32,90 27,100 37,100" fill="#2563EB" opacity="0.55"/>
-      <text x="14" y="200" font-size="9" font-weight="800" fill="#2563EB"
-            text-anchor="middle" letter-spacing="2"
-            transform="rotate(-90 14 200)" opacity="0.7">PRICES RISING</text>
-
-      <!-- Tag 1: NEWEST (top, £2.40), small, tilted left -->
-      <g transform="translate(150, 40) rotate(-7)" filter="url(#hero-shadow)">
-        <path d="M 0 0 L 60 0 L 75 15 L 60 30 L 0 30 Z"
-              fill="#FECACA" stroke="#DC2626" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="62" cy="15" r="2.8" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
-        <text x="30" y="21" font-size="14" font-weight="800" fill="#991B1B" text-anchor="middle">£2.40</text>
-        <line x1="60" y1="-2" x2="78" y2="-12" stroke="#92400E" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- rising-price balloons (each: balloon body, highlight, knot, string, up-arrow) -->
+      <!-- balloon 1 — blue, lower left -->
+      <g filter="url(#hero-bars-soft)">
+        <path d="M 90 305 Q 88 295 90 285 Q 90 235 70 215 Q 50 200 45 175 Q 42 140 70 130 Q 100 122 118 145 Q 130 165 124 195 Q 118 222 100 240 Q 92 252 92 280 Q 92 295 90 305 Z" fill="#3B82F6"/>
+        <path d="M 60 145 Q 55 160 60 175" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.45"/>
+        <polygon points="86,232 94,232 90,242" fill="#1D4ED8"/>
       </g>
-      <!-- string from £2.40 down to basket -->
-      <path d="M 200 75 Q 205 150 175 240" stroke="#92400E" stroke-width="1" fill="none"
-            stroke-linecap="round" opacity="0.55"/>
-
-      <!-- Tag 2: HERO (middle, £1.80), big, central -->
-      <g transform="translate(70, 130) rotate(2)" filter="url(#hero-shadow)">
-        <path d="M 0 0 L 110 0 L 130 22 L 110 44 L 0 44 Z"
-              fill="#10B981" stroke="#047857" stroke-width="2" stroke-linejoin="round"/>
-        <circle cx="113" cy="22" r="4" fill="#FFFFFF" stroke="#047857" stroke-width="1.5"/>
-        <text x="55" y="30" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">£1.80</text>
-        <!-- +50% badge floating above-right -->
-        <g transform="translate(115, -16)">
-          <rect x="0" y="0" width="42" height="22" rx="11" fill="#E11D48" stroke="#9F1239" stroke-width="1"/>
-          <text x="21" y="16" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">+50%</text>
-        </g>
-      </g>
-      <!-- string from £1.80 down to basket -->
-      <path d="M 130 178 Q 132 220 140 245" stroke="#92400E" stroke-width="1" fill="none"
-            stroke-linecap="round" opacity="0.55"/>
-
-      <!-- Tag 3: OLDEST (low, £1.20), small, tilted right -->
-      <g transform="translate(170, 200) rotate(10)" filter="url(#hero-shadow)">
-        <path d="M 0 0 L 56 0 L 70 14 L 56 28 L 0 28 Z"
-              fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="58" cy="14" r="2.5" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
-        <text x="28" y="20" font-size="13" font-weight="800" fill="#92400E" text-anchor="middle">£1.20</text>
-        <line x1="56" y1="-2" x2="72" y2="-10" stroke="#92400E" stroke-width="1.2" stroke-linecap="round"/>
-      </g>
-      <!-- string from £1.20 down to basket -->
-      <path d="M 200 230 Q 200 245 175 250" stroke="#92400E" stroke-width="1" fill="none"
-            stroke-linecap="round" opacity="0.55"/>
-
-      <!-- shopping basket centred low -->
-      <g transform="translate(70, 245)">
-        <path d="M 22 18 Q 70 -16 118 18" stroke="#92400E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 0 20 L 16 80 L 124 80 L 140 20 Z" fill="#FCD34D" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
-        <line x1="32" y1="20" x2="40" y2="80" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="64" y1="20" x2="68" y2="80" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="96" y1="20" x2="92" y2="80" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="6" y1="40" x2="134" y2="40" stroke="#B45309" stroke-width="1" opacity="0.4"/>
-        <line x1="11" y1="60" x2="129" y2="60" stroke="#B45309" stroke-width="1" opacity="0.4"/>
+      <path d="M 90 244 Q 88 268 95 295" stroke="#94A3B8" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- up arrow icon on balloon 1 -->
+      <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M 70 195 L 90 175 L 90 168 M 90 175 L 82 167 M 90 175 L 98 167"/>
       </g>
 
-      <!-- decorative coins -->
-      <g transform="translate(238, 180)" opacity="0.85">
-        <circle cx="0" cy="0" r="9" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-        <text x="0" y="3" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      <!-- balloon 2 — green, mid-left, slightly higher -->
+      <g filter="url(#hero-bars-soft)">
+        <path d="M 140 245 Q 138 235 140 225 Q 140 180 122 162 Q 102 145 100 118 Q 100 80 132 72 Q 165 65 184 92 Q 200 117 192 148 Q 184 178 162 195 Q 152 205 152 222 Q 150 240 140 245 Z" fill="#22C55E"/>
+        <path d="M 118 90 Q 113 110 120 130" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.45"/>
+        <polygon points="136,184 144,184 140,194" fill="#15803D"/>
       </g>
-      <g transform="translate(245, 305)" opacity="0.75">
-        <circle cx="0" cy="0" r="7" fill="#FBBF24" stroke="#92400E" stroke-width="1"/>
-        <text x="0" y="3" font-size="8" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      <path d="M 140 196 Q 137 220 142 240" stroke="#94A3B8" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- up arrow icon on balloon 2 -->
+      <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M 122 140 L 142 120 L 142 113 M 142 120 L 134 112 M 142 120 L 150 112"/>
       </g>
 
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">SAME BASKET · HIGHER PRICES</text>
+      <!-- balloon 3 — red, top right (highest = biggest price rise) -->
+      <g filter="url(#hero-bars-soft)">
+        <path d="M 210 230 Q 208 220 210 210 Q 210 170 198 152 Q 180 130 178 100 Q 178 50 215 42 Q 255 35 270 75 Q 280 110 268 142 Q 256 170 230 188 Q 220 196 222 215 Q 220 228 210 230 Z" fill="#EF4444"/>
+        <path d="M 195 62 Q 188 85 198 105" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.45"/>
+        <polygon points="206,178 214,178 210,188" fill="#B91C1C"/>
       </g>
+      <path d="M 210 190 Q 208 215 213 235" stroke="#94A3B8" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- up arrow icon on balloon 3 -->
+      <g stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M 192 115 L 218 88 L 218 80 M 218 88 L 209 79 M 218 88 L 227 79"/>
+      </g>
+
+      <!-- balloon 4 — yellow, right side, mid-height -->
+      <g filter="url(#hero-bars-soft)">
+        <path d="M 250 260 Q 248 250 250 240 Q 250 205 234 188 Q 218 170 216 145 Q 216 108 245 100 Q 275 95 290 122 Q 302 145 294 172 Q 286 195 268 212 Q 260 220 260 240 Q 258 255 250 260 Z" fill="#FBBF24"/>
+        <path d="M 232 118 Q 228 135 234 150" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+        <polygon points="246,206 254,206 250,216" fill="#D97706"/>
+      </g>
+      <path d="M 250 218 Q 248 240 253 258" stroke="#94A3B8" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- up arrow icon on balloon 4 -->
+      <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M 234 160 L 254 138 L 254 131 M 254 138 L 246 130 M 254 138 L 262 130"/>
+      </g>
+
+      <!-- basket (blue, with grocery items spilling out) — drawn last so it sits in front -->
+      <!-- basket body -->
+      <g filter="url(#hero-bars-shadow)">
+        <!-- milk bottle (poking out top-left) -->
+        <rect x="100" y="240" width="22" height="40" rx="4" fill="#F8FAFC" stroke="#1E40AF" stroke-width="2"/>
+        <rect x="106" y="232" width="10" height="10" rx="2" fill="#1E40AF"/>
+        <!-- baguette / bread -->
+        <ellipse cx="142" cy="252" rx="18" ry="9" fill="#FBBF24" transform="rotate(-15 142 252)"/>
+        <line x1="132" y1="247" x2="152" y2="257" stroke="#D97706" stroke-width="1" stroke-linecap="round" transform="rotate(-15 142 252)"/>
+        <!-- lettuce -->
+        <circle cx="178" cy="258" r="14" fill="#22C55E"/>
+        <circle cx="174" cy="252" r="6" fill="#16A34A"/>
+        <circle cx="182" cy="250" r="5" fill="#16A34A"/>
+        <!-- apple -->
+        <circle cx="160" cy="266" r="10" fill="#EF4444"/>
+        <path d="M 160 256 Q 162 252 165 254" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- basket main body (trapezoid) -->
+        <path d="M 80 280 L 200 280 L 192 340 L 88 340 Z" fill="#2563EB" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
+        <!-- basket handle (curved bar across top, drawn on top of items) -->
+        <path d="M 100 285 Q 140 250 180 285" stroke="#1E3A8A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- vertical slats -->
+        <rect x="100" y="294" width="6" height="40" rx="2" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="118" y="294" width="6" height="40" rx="2" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="136" y="294" width="6" height="40" rx="2" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="154" y="294" width="6" height="40" rx="2" fill="#FFFFFF" opacity="0.85"/>
+        <rect x="172" y="294" width="6" height="40" rx="2" fill="#FFFFFF" opacity="0.85"/>
+      </g>
+
+      <!-- subtle floor shadow under basket -->
+      <ellipse cx="140" cy="348" rx="60" ry="4" fill="#0F172A" opacity="0.08"/>
     </svg>
   `,
 
@@ -4189,70 +4182,85 @@ window.ECONOS_ICONS = {
   heroDemand: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-dem" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-dem" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0FDF4"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-dem" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/>
+        <filter id="hd-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="hd-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
         </filter>
       </defs>
 
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-dem)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-dem)" opacity="0.4"/>
-
-      <g filter="url(#shadow-dem)">
-        <rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- product bubbles arranged around the upper half -->
+      <!-- bubble 1: pink lipstick (far left) -->
+      <g filter="url(#hd-soft)">
+        <circle cx="50" cy="155" r="28" fill="#FCE7E9"/>
+        <rect x="44" y="142" width="12" height="18" rx="2" fill="#EF4444"/>
+        <rect x="42" y="158" width="16" height="6" rx="1.5" fill="#9F1239"/>
+        <rect x="44" y="164" width="12" height="10" rx="1" fill="#9F1239"/>
       </g>
 
-      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A"
-            text-anchor="middle" letter-spacing="3" opacity="0.65">DEMAND</text>
-
-      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
-        <line x1="60" y1="100" x2="240" y2="100"/>
-        <line x1="60" y1="150" x2="240" y2="150"/>
-        <line x1="60" y1="200" x2="240" y2="200"/>
-        <line x1="60" y1="250" x2="240" y2="250"/>
-        <line x1="105" y1="80" x2="105" y2="280"/>
-        <line x1="150" y1="80" x2="150" y2="280"/>
-        <line x1="195" y1="80" x2="195" y2="280"/>
+      <!-- bubble 2: blue t-shirt (upper-left) -->
+      <g filter="url(#hd-soft)">
+        <circle cx="90" cy="95" r="32" fill="#DBEAFE"/>
+        <path d="M 75 90 L 82 82 L 88 86 L 92 86 L 98 82 L 105 90 L 100 95 L 100 110 L 80 110 L 80 95 Z" fill="#3B82F6"/>
+        <path d="M 88 86 Q 90 88 92 86" stroke="#1E40AF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
       </g>
 
-      <line x1="60" y1="80" x2="60" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="60" y1="280" x2="240" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
-      <polygon points="244,280 234,276 234,284" fill="#0F172A"/>
-      <text x="52" y="78" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
-      <text x="248" y="294" font-size="11" font-weight="800" fill="#0F172A">Q</text>
+      <!-- bubble 3: green handbag (top centre) -->
+      <g filter="url(#hd-soft)">
+        <circle cx="160" cy="75" r="32" fill="#DCFCE7"/>
+        <rect x="148" y="72" width="24" height="22" rx="3" fill="#22C55E"/>
+        <path d="M 152 72 Q 152 60 160 60 Q 168 60 168 72" stroke="#15803D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </g>
 
-      <!-- D1 original demand curve -->
-      <path d="M 65 95 Q 120 160 215 270" stroke="#1FB574" stroke-width="2.5"
-            fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5 3"/>
-      <text x="68" y="108" font-size="12" font-weight="800" fill="#1FB574" opacity="0.6">D₁</text>
+      <!-- bubble 4: yellow sneaker (upper-right) -->
+      <g filter="url(#hd-soft)">
+        <circle cx="225" cy="125" r="32" fill="#FEF3C7"/>
+        <path d="M 208 135 Q 208 122 218 122 L 234 122 L 244 130 L 244 138 L 208 138 Z" fill="#FBBF24"/>
+        <line x1="222" y1="125" x2="225" y2="132" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="228" y1="125" x2="231" y2="132" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="234" y1="125" x2="237" y2="132" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+        <ellipse cx="225" cy="140" rx="20" ry="2" fill="#92400E" opacity="0.3"/>
+      </g>
 
-      <!-- D2 shifted demand curve -->
-      <path d="M 95 95 Q 155 160 238 265" stroke="#1FB574" stroke-width="3"
-            fill="none" stroke-linecap="round" filter="url(#shadow-dem)"/>
-      <text x="228" y="108" font-size="12" font-weight="800" fill="#1FB574">D₂</text>
+      <!-- dotted trails connecting bubbles to basket -->
+      <path d="M 70 180 Q 95 215 130 245" stroke="#CBD5E1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="2 5"/>
+      <path d="M 110 130 Q 120 180 130 235" stroke="#CBD5E1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="2 5"/>
+      <path d="M 160 110 Q 155 175 145 230" stroke="#CBD5E1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="2 5"/>
+      <path d="M 215 160 Q 195 200 175 240" stroke="#CBD5E1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="2 5"/>
 
-      <!-- shift arrow -->
-      <path d="M 135 148 L 162 148" stroke="#1FB574" stroke-width="2" stroke-linecap="round" marker-end="url(#arrowD)"/>
-      <defs>
-        <marker id="arrowD" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#1FB574"/>
-        </marker>
-      </defs>
-      <text x="148" y="143" font-size="9" font-weight="700" fill="#1FB574" text-anchor="middle">increase</text>
+      <!-- small accent dots along the trails -->
+      <circle cx="105" cy="205" r="3" fill="#3B82F6"/>
+      <circle cx="115" cy="195" r="2.5" fill="#22C55E"/>
+      <circle cx="155" cy="180" r="2.5" fill="#FBBF24"/>
+      <circle cx="85" cy="200" r="2" fill="#EF4444"/>
 
-      <!-- consumer icon (person + basket) -->
-      <circle cx="195" cy="215" r="10" fill="#D1FAE5" stroke="#1FB574" stroke-width="1.5"/>
-      <text x="195" y="219" font-size="12" text-anchor="middle">🛒</text>
+      <!-- contents inside basket (drawn before basket body so they appear behind front) -->
+      <rect x="105" y="222" width="22" height="34" rx="3" fill="#3B82F6"/>
+      <rect x="135" y="218" width="18" height="38" rx="4" fill="#FBBF24"/>
+      <circle cx="135" cy="222" r="4" fill="#15803D"/>
+      <circle cx="170" cy="240" r="14" fill="#F87171"/>
+      <path d="M 170 228 Q 172 224 175 226" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round"/>
 
-      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="2" opacity="0.75">PRICE FALLS · DEMAND RISES</text>
+      <!-- basket (green) -->
+      <g filter="url(#hd-shadow)">
+        <!-- handle -->
+        <path d="M 105 250 Q 145 210 185 250" stroke="#15803D" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- body -->
+        <path d="M 85 250 L 205 250 L 196 320 L 94 320 Z" fill="#22C55E" stroke="#15803D" stroke-width="2" stroke-linejoin="round"/>
+        <!-- vertical slats -->
+        <rect x="104" y="262" width="6" height="50" rx="2" fill="#15803D" opacity="0.6"/>
+        <rect x="124" y="262" width="6" height="50" rx="2" fill="#15803D" opacity="0.6"/>
+        <rect x="144" y="262" width="6" height="50" rx="2" fill="#15803D" opacity="0.6"/>
+        <rect x="164" y="262" width="6" height="50" rx="2" fill="#15803D" opacity="0.6"/>
+        <rect x="180" y="262" width="6" height="50" rx="2" fill="#15803D" opacity="0.6"/>
+        <!-- handle hinge dot -->
+        <circle cx="105" cy="250" r="4" fill="#15803D"/>
+        <circle cx="185" cy="250" r="4" fill="#15803D"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="145" cy="328" rx="60" ry="4" fill="#0F172A" opacity="0.08"/>
     </svg>
   `,
 
@@ -4962,86 +4970,68 @@ window.ECONOS_ICONS = {
   heroPPF: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="dots-ppf" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="bg-ppf" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="shadow-ppf" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
+        <filter id="hp-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="hp-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.08"/>
         </filter>
       </defs>
 
-      <!-- background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-ppf)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-ppf)" opacity="0.4"/>
+      <!-- soft pastel pad behind left option (consumer goods — pink shopping bag) -->
+      <ellipse cx="80" cy="245" rx="58" ry="14" fill="#FCE7E9" opacity="0.7"/>
+      <!-- soft pastel pad behind right option (capital / saving — gold coin) -->
+      <ellipse cx="210" cy="115" rx="58" ry="14" fill="#DCFCE7" opacity="0.7"/>
 
-      <!-- header caption -->
-      <text x="140" y="38" font-size="10" font-weight="800" fill="#0F172A"
-            text-anchor="middle" letter-spacing="3" opacity="0.65">PRODUCTION FRONTIER</text>
-
-      <!-- chart card -->
-      <g filter="url(#shadow-ppf)">
-        <rect x="30" y="55" width="220" height="250" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- shopping bag (left option) -->
+      <g filter="url(#hp-soft)">
+        <!-- handles -->
+        <path d="M 65 195 Q 65 175 80 175 Q 95 175 95 195" stroke="#1E3A8A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <!-- bag body -->
+        <path d="M 52 200 L 108 200 L 102 245 L 58 245 Z" fill="#F87171" stroke="#B91C1C" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- soft highlight -->
+        <path d="M 58 205 L 62 240" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
       </g>
 
-      <!-- feasible region (light grey shaded interior under curve) -->
-      <path d="M 60 270 L 60 110 Q 100 270 230 270 Z"
-            fill="#E2E8F0" opacity="0.55"/>
-
-      <!-- gridlines -->
-      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
-        <line x1="60" y1="150" x2="230" y2="150"/>
-        <line x1="60" y1="200" x2="230" y2="200"/>
-        <line x1="120" y1="80" x2="120" y2="270"/>
-        <line x1="180" y1="80" x2="180" y2="270"/>
+      <!-- gold coin (right option) -->
+      <g filter="url(#hp-soft)">
+        <!-- back disc -->
+        <ellipse cx="216" cy="120" rx="28" ry="32" fill="#D97706"/>
+        <!-- front disc -->
+        <circle cx="210" cy="115" r="30" fill="#FBBF24"/>
+        <!-- inner ring -->
+        <circle cx="210" cy="115" r="22" fill="none" stroke="#D97706" stroke-width="1.5" opacity="0.6"/>
+        <!-- highlight -->
+        <path d="M 192 100 Q 196 92 206 92" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.55"/>
+        <!-- sparkle -->
+        <g transform="translate(238, 80)">
+          <path d="M 0 -8 L 0 8 M -8 0 L 8 0" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="0" cy="0" r="2" fill="#FBBF24"/>
+        </g>
       </g>
 
-      <!-- axes -->
-      <line x1="60" y1="80" x2="60" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="60" y1="270" x2="240" y2="270" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
-      <polygon points="244,270 234,266 234,274" fill="#0F172A"/>
+      <!-- two diverging paths (the PPF "choice") -->
+      <!-- left path (to bag) — pale, less prioritised -->
+      <path d="M 140 320 Q 130 275 95 255" stroke="#E2E8F0" stroke-width="22" fill="none" stroke-linecap="round"/>
+      <path d="M 140 320 Q 130 275 95 255" stroke="#CBD5E1" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <!-- right path (to coin) — green, brighter -->
+      <path d="M 140 320 Q 165 240 205 150" stroke="#86EFAC" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.55"/>
+      <path d="M 140 320 Q 165 240 205 150" stroke="#22C55E" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="2 6" opacity="0.7"/>
 
-      <!-- axis labels -->
-      <text x="52" y="92" font-size="8" font-weight="800" fill="#0F172A"
-            text-anchor="end" letter-spacing="1">CAPITAL</text>
-      <text x="52" y="102" font-size="8" font-weight="800" fill="#0F172A"
-            text-anchor="end" letter-spacing="1">GOODS</text>
-      <text x="230" y="288" font-size="8" font-weight="800" fill="#0F172A"
-            text-anchor="end" letter-spacing="1">CONSUMER GOODS</text>
-
-      <!-- PPF curve (bowed out, green) -->
-      <path d="M 60 110 Q 100 270 230 270" stroke="#1FB574" stroke-width="3.5"
-            fill="none" stroke-linecap="round" filter="url(#shadow-ppf)"/>
-
-      <!-- efficient point on curve -->
-      <g filter="url(#shadow-ppf)">
-        <circle cx="122" cy="230" r="6" fill="#FFFFFF" stroke="#1FB574" stroke-width="2.2"/>
-        <circle cx="122" cy="230" r="2.5" fill="#1FB574"/>
-      </g>
-      <g transform="translate(130, 208)">
-        <rect x="0" y="0" width="70" height="20" rx="10" fill="#DCFCE7" stroke="#1FB574" stroke-width="1.2"/>
-        <text x="35" y="14" font-size="9" font-weight="800" fill="#065F46"
-              text-anchor="middle" letter-spacing="1.5">EFFICIENT</text>
+      <!-- decision point (where the paths split) -->
+      <g filter="url(#hp-shadow)">
+        <circle cx="140" cy="320" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+        <circle cx="140" cy="320" r="5" fill="#0F172A"/>
       </g>
 
-      <!-- inefficient point inside region -->
-      <g filter="url(#shadow-ppf)">
-        <circle cx="100" cy="240" r="5" fill="#FFFFFF" stroke="#EC2D68" stroke-width="2"/>
-        <circle cx="100" cy="240" r="2" fill="#EC2D68"/>
-      </g>
-      <g transform="translate(110, 245)">
-        <rect x="0" y="0" width="78" height="20" rx="10" fill="#FFE4E6" stroke="#EC2D68" stroke-width="1.2"/>
-        <text x="39" y="14" font-size="9" font-weight="800" fill="#9F1239"
-              text-anchor="middle" letter-spacing="1.5">INEFFICIENT</text>
+      <!-- tiny "or" indicator between the two paths, near the fork -->
+      <g transform="translate(140, 280)">
+        <circle cx="0" cy="0" r="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="0" y="3" font-size="9" font-weight="800" fill="#64748B" text-anchor="middle" font-family="Inter, sans-serif">OR</text>
       </g>
 
-      <!-- footer caption -->
-      <text x="140" y="328" font-size="9" font-weight="700" fill="#475569"
-            text-anchor="middle" letter-spacing="2" opacity="0.75">SCARCITY MEANS TRADE-OFFS</text>
+      <!-- floor shadow under decision dot -->
+      <ellipse cx="140" cy="340" rx="22" ry="3" fill="#0F172A" opacity="0.10"/>
     </svg>
   `,
   heroScarcity: `

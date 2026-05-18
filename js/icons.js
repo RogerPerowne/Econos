@@ -3867,6 +3867,144 @@ window.ECONOS_ICONS = {
       </g>
     </svg>
   `,
+  heroDemand: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-dem" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="bg-dem" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F0FDF4"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="shadow-dem" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-dem)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-dem)" opacity="0.4"/>
+
+      <g filter="url(#shadow-dem)">
+        <rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      </g>
+
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A"
+            text-anchor="middle" letter-spacing="3" opacity="0.65">DEMAND</text>
+
+      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
+        <line x1="60" y1="100" x2="240" y2="100"/>
+        <line x1="60" y1="150" x2="240" y2="150"/>
+        <line x1="60" y1="200" x2="240" y2="200"/>
+        <line x1="60" y1="250" x2="240" y2="250"/>
+        <line x1="105" y1="80" x2="105" y2="280"/>
+        <line x1="150" y1="80" x2="150" y2="280"/>
+        <line x1="195" y1="80" x2="195" y2="280"/>
+      </g>
+
+      <line x1="60" y1="80" x2="60" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="280" x2="240" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
+      <polygon points="244,280 234,276 234,284" fill="#0F172A"/>
+      <text x="52" y="78" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
+      <text x="248" y="294" font-size="11" font-weight="800" fill="#0F172A">Q</text>
+
+      <!-- D1 original demand curve -->
+      <path d="M 65 95 Q 120 160 215 270" stroke="#1FB574" stroke-width="2.5"
+            fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5 3"/>
+      <text x="68" y="108" font-size="12" font-weight="800" fill="#1FB574" opacity="0.6">D₁</text>
+
+      <!-- D2 shifted demand curve -->
+      <path d="M 95 95 Q 155 160 238 265" stroke="#1FB574" stroke-width="3"
+            fill="none" stroke-linecap="round" filter="url(#shadow-dem)"/>
+      <text x="228" y="108" font-size="12" font-weight="800" fill="#1FB574">D₂</text>
+
+      <!-- shift arrow -->
+      <path d="M 135 148 L 162 148" stroke="#1FB574" stroke-width="2" stroke-linecap="round" marker-end="url(#arrowD)"/>
+      <defs>
+        <marker id="arrowD" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#1FB574"/>
+        </marker>
+      </defs>
+      <text x="148" y="143" font-size="9" font-weight="700" fill="#1FB574" text-anchor="middle">increase</text>
+
+      <!-- consumer icon (person + basket) -->
+      <circle cx="195" cy="215" r="10" fill="#D1FAE5" stroke="#1FB574" stroke-width="1.5"/>
+      <text x="195" y="219" font-size="12" text-anchor="middle">🛒</text>
+
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569"
+            text-anchor="middle" letter-spacing="2" opacity="0.75">PRICE FALLS · DEMAND RISES</text>
+    </svg>
+  `,
+
+  heroSupply: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <pattern id="dots-sup" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
+        </pattern>
+        <linearGradient id="bg-sup" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#EFF6FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <filter id="shadow-sup" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.12"/>
+        </filter>
+        <marker id="arrowS" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3B82F6"/>
+        </marker>
+      </defs>
+
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#bg-sup)"/>
+      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#dots-sup)" opacity="0.4"/>
+
+      <g filter="url(#shadow-sup)">
+        <rect x="30" y="50" width="220" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      </g>
+
+      <text x="140" y="40" font-size="10" font-weight="800" fill="#0F172A"
+            text-anchor="middle" letter-spacing="3" opacity="0.65">SUPPLY</text>
+
+      <g stroke="#E2E8F0" stroke-width="1" opacity="0.6">
+        <line x1="60" y1="100" x2="240" y2="100"/>
+        <line x1="60" y1="150" x2="240" y2="150"/>
+        <line x1="60" y1="200" x2="240" y2="200"/>
+        <line x1="60" y1="250" x2="240" y2="250"/>
+        <line x1="105" y1="80" x2="105" y2="280"/>
+        <line x1="150" y1="80" x2="150" y2="280"/>
+        <line x1="195" y1="80" x2="195" y2="280"/>
+      </g>
+
+      <line x1="60" y1="80" x2="60" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="280" x2="240" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="60,76 56,86 64,86" fill="#0F172A"/>
+      <polygon points="244,280 234,276 234,284" fill="#0F172A"/>
+      <text x="52" y="78" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P</text>
+      <text x="248" y="294" font-size="11" font-weight="800" fill="#0F172A">Q</text>
+
+      <!-- S1 original supply curve -->
+      <path d="M 65 268 Q 130 195 215 98" stroke="#3B82F6" stroke-width="2.5"
+            fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5 3"/>
+      <text x="210" y="92" font-size="12" font-weight="800" fill="#3B82F6" opacity="0.6">S₁</text>
+
+      <!-- S2 shifted supply curve (rightward = more supply at same price) -->
+      <path d="M 90 270 Q 155 195 238 98" stroke="#3B82F6" stroke-width="3"
+            fill="none" stroke-linecap="round" filter="url(#shadow-sup)"/>
+      <text x="234" y="92" font-size="12" font-weight="800" fill="#3B82F6">S₂</text>
+
+      <!-- shift arrow (horizontal, rightward) -->
+      <path d="M 143 200 L 168 200" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" marker-end="url(#arrowS)"/>
+      <text x="155" y="195" font-size="9" font-weight="700" fill="#3B82F6" text-anchor="middle">increase</text>
+
+      <!-- producer icon -->
+      <circle cx="95" cy="215" r="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="95" y="219" font-size="12" text-anchor="middle">🏭</text>
+
+      <text x="140" y="334" font-size="9" font-weight="700" fill="#475569"
+            text-anchor="middle" letter-spacing="2" opacity="0.75">PRICE RISES · SUPPLY INCREASES</text>
+    </svg>
+  `,
+
   heroSupplyDemand: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

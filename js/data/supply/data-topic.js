@@ -182,9 +182,24 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_7',
-      template: 'framing',
       title: 'Supply and the Profit Motive',
-      body: 'Supply in a market economy is ultimately driven by the <strong>profit motive</strong>. Firms supply goods where they can earn a profit — where price exceeds average cost. This means supply responds to price signals because prices signal profit opportunities:<br><br>• Price rises → profit margin rises → existing firms expand, new firms enter → supply increases<br>• Price falls → profit margins squeezed → firms contract, some exit → supply decreases<br><br>This profit-driven supply response is the market\'s mechanism for solving the "what to produce" question. Resources flow to where profits are highest — automatically directing productive capacity to what consumers value most (at current prices).',
+      tip: { icon: '💡', tone: 'blue', text: 'The law of supply is rooted in incentives: when selling becomes more profitable, firms usually want to produce more.' },
+      flowTitle: 'How the profit motive drives supply',
+      flowEmoji: '➡️',
+      flow: [
+        { tone: 'green',  icon: '🏷️', title: 'Higher market price',                     sub: 'When the market price rises, each unit sold is worth more.' },
+        { tone: 'amber',  icon: '📈', title: 'Higher potential revenue / profit',        sub: 'With costs unchanged in the short run, higher price raises potential profit per unit.' },
+        { tone: 'purple', icon: '🏭', title: 'Firms expand output or enter the market',  sub: 'Existing firms produce more and/or new firms are attracted by higher profits.' },
+        { tone: 'green',  icon: '🛒', title: 'Quantity supplied rises',                  sub: 'More total output is available at each price level.' }
+      ],
+      causesStyle: 'plain-white',
+      causesLabel: 'What shapes the response',
+      causesEmoji: '🔍',
+      causes: [
+        { tone: 'green',  icon: '⚖️', head: 'Revenue vs cost',   body: 'Firms care about profit, not just price. They compare expected revenue with the cost of production.' },
+        { tone: 'amber',  icon: '📢', head: 'Profit signals',     body: 'Rising profit is a signal that attracts expansion (investing more resources) and entry by other firms.' },
+        { tone: 'purple', icon: '🕐', head: 'Limits',             body: 'Capacity constraints, time lags, regulation and firm objectives can weaken or slow the response.' }
+      ],
       conclusion: { title: 'The profit motive is the engine of supply', text: 'In a free market, producers supply what is profitable — not what society necessarily needs. This is simultaneously supply\'s greatest strength (efficient resource allocation) and its greatest weakness (ignores externalities and public goods). Theme 1\'s market failure section explores precisely when and why this breaks down.' },
       keyTerms: [
         { term: 'Profit motive', def: 'The incentive for firms to produce goods and services where price exceeds cost — the engine of market supply.' },

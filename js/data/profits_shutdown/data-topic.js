@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '10-12 minutes',
   goal: 'Lock in profit calculation, the shutdown rule, how to read profit/loss rectangles on diagrams, and how cost and demand changes affect the profit equilibrium.',
   intro: {
-    heroKey: 'heroCostCurves',
+    heroKey: 'heroShortRunCosts',
     summary: 'Profit analysis is the backbone of all market structure diagrams. Normal vs supernormal profit, the shutdown rule, reading profit rectangles, and understanding how cost or demand shocks shift the profit-maximising equilibrium — these skills are tested in every Topic 3 exam question.',
     doInThis: 'Work through 11 cards covering profit types, the shutdown condition, reading diagrams, contribution analysis, profit across market structures, and how changes in costs and revenues affect profit-maximising output, price, and profit.',
     outcomes: [

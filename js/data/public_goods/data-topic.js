@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '9-11 minutes',
   goal: 'Lock in non-rivalry, non-excludability, the free rider problem, and why public goods cannot be provided by markets.',
   intro: {
-    heroKey: 'heroExternalities',
+    heroKey: 'heroPublicGoods',
     summary: 'Public goods are the clearest case of market failure: because they are non-excludable and non-rival, no private firm can profitably provide them. Without government provision, they will be drastically under-supplied — the free rider problem ensures this.',
     doInThis: 'Work through 7 cards covering the definition of public goods, the two defining properties, the free rider problem, quasi-public goods, real-world examples, and how government provides public goods.',
     outcomes: [

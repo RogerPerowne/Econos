@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in the five objectives, the Phillips curve, and every major trade-off',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroMacroObjectives',
     summary: "Five objectives. Never all achievable simultaneously. The trade-offs between them — especially growth vs inflation, and the short-run Phillips curve — organise half of all macro essay arguments.",
     doInThis: 'Recap the five macro objectives, the conflicts between them, the Phillips curve, stagflation, and the NAIRU.',
     outcomes: [

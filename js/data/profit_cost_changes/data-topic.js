@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in how changes in costs and revenues shift the profit-maximising output, price, and profit — across all market structures.',
   intro: {
-    heroKey: 'heroCostCurves',
+    heroKey: 'heroShortRunCosts',
     summary: 'The profit-maximising condition MR = MC is the starting point. When costs or revenues change, the equilibrium shifts. Understanding precisely how, and in which direction, is essential for exam diagram analysis across monopoly, perfect competition, and oligopoly.',
     doInThis: 'Work through 7 cards covering cost increases and their effects, revenue changes, shifts in demand and MR, the impact on the profit rectangle, tax incidence, cost-reducing innovation, and a comparison across market structures.',
     outcomes: [

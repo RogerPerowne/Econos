@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Understand the core functions of central banks — monetary policy, financial stability, lender of last resort, and bank regulation.',
 
   intro: {
-    heroKey: 'heroPolicy',
+    heroKey: 'heroMonetary',
     summary: 'Central banks are the institutional backbone of the modern monetary system. The Bank of England has four main roles: setting interest rates to hit the inflation target, acting as lender of last resort in financial crises, regulating banks for financial stability, and managing the payments system. Each function involves trade-offs and political tensions.',
     doInThis: 'Content coming soon — this topic will cover the four roles of central banks, BoE independence and the inflation target, the Monetary Policy Committee, the Financial Policy Committee, and unconventional tools (QE, forward guidance). Cross-references monetary policy content in Theme 2 (6.2.2).',
     outcomes: [

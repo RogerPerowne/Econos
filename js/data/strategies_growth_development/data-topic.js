@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Evaluate the main strategies countries can pursue to promote growth and development: market-based, interventionist, aid, debt relief, and trade liberalisation.',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroDevelopment',
     summary: 'Development strategies have shifted over decades: 1950s-70s import substitution → 1980s-90s Washington Consensus (liberalisation, privatisation) → 2000s post-Washington Consensus (institutions, governance) → 2020s climate-resilient and inclusive growth. Each approach has successes and failures.',
     doInThis: 'Content coming soon — this topic will cover market-oriented strategies (trade liberalisation, FDI, microfinance), interventionist strategies (industrial policy, infrastructure investment, education), aid (forms, conditionality, debate), debt relief (HIPC initiative), and the Millennium / Sustainable Development Goals.',
     outcomes: [

@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   goal: 'Identify the economic, political, social and institutional factors that promote or hinder growth and development.',
 
   intro: {
-    heroKey: 'heroGrowth',
+    heroKey: 'heroDevelopment',
     summary: 'Why do some countries grow rapidly (South Korea, China) while others stagnate (much of Sub-Saharan Africa)? The answer combines economic factors (capital, labour, technology), institutional factors (rule of law, property rights, corruption), and external factors (terms of trade, debt, foreign investment).',
     doInThis: 'Content coming soon — this topic will cover the determinants of growth and development: savings/investment ratios, education and human capital, infrastructure, institutions, governance, trade openness, and the resource curse.',
     outcomes: [

@@ -10558,6 +10558,82 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  supplyCurveBasic: `
+    <svg viewBox="0 0 1040 440" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="1040" height="440" fill="#FFFFFF"/>
+
+      <!-- ===== LEFT: supply curve chart ===== -->
+      <g transform="translate(40,20)">
+        <!-- axes -->
+        <line x1="80" y1="380" x2="450" y2="380" stroke="#0F172A" stroke-width="2"/>
+        <polygon points="450,374 450,386 462,380" fill="#0F172A"/>
+        <line x1="80" y1="380" x2="80" y2="30" stroke="#0F172A" stroke-width="2"/>
+        <polygon points="74,30 86,30 80,18" fill="#0F172A"/>
+
+        <!-- P and Q axis names -->
+        <text x="52" y="36" font-size="26" font-style="italic" font-weight="700" fill="#0F172A">P</text>
+        <text x="476" y="388" font-size="26" font-style="italic" font-weight="700" fill="#0F172A">Q</text>
+
+        <!-- P1, P2 tick labels -->
+        <g font-size="20" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="end">
+          <text x="70" y="275">P<tspan font-size="14" baseline-shift="sub" dx="-1">1</tspan></text>
+          <text x="70" y="184">P<tspan font-size="14" baseline-shift="sub" dx="-1">2</tspan></text>
+        </g>
+        <!-- Q1, Q2 tick labels -->
+        <g font-size="20" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="middle">
+          <text x="200" y="410">Q<tspan font-size="14" baseline-shift="sub" dx="-1">1</tspan></text>
+          <text x="300" y="410">Q<tspan font-size="14" baseline-shift="sub" dx="-1">2</tspan></text>
+        </g>
+
+        <!-- dashed projection lines for (Q1, P1) -->
+        <g stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5 4">
+          <line x1="80" y1="269" x2="200" y2="269"/>
+          <line x1="200" y1="269" x2="200" y2="380"/>
+          <line x1="80" y1="178" x2="300" y2="178"/>
+          <line x1="300" y1="178" x2="300" y2="380"/>
+        </g>
+
+        <!-- straight supply curve, slope (50-360)/(440-100) ≈ -0.912 -->
+        <line x1="100" y1="360" x2="440" y2="50" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- S label -->
+        <text x="448" y="48" font-size="26" font-style="italic" font-weight="800" fill="#10B981">S</text>
+
+        <!-- dots on the curve at Q1/P1 and Q2/P2 -->
+        <circle cx="200" cy="269" r="7" fill="#0F172A"/>
+        <circle cx="300" cy="178" r="7" fill="#0F172A"/>
+      </g>
+
+      <!-- ===== RIGHT: 3 numbered points ===== -->
+      <g transform="translate(560,30)">
+        <!-- Point 1 -->
+        <circle cx="22" cy="30" r="18" fill="none" stroke="#10B981" stroke-width="2.5"/>
+        <text x="22" y="37" text-anchor="middle" font-size="18" font-weight="800" fill="#10B981">1</text>
+        <text x="56" y="36" font-size="20" font-weight="800" fill="#0F172A">What supply means</text>
+        <text x="56" y="64" font-size="17" fill="#334155">Supply is the willingness and ability of</text>
+        <text x="56" y="86" font-size="17" fill="#334155">producers to produce and sell goods and</text>
+        <text x="56" y="108" font-size="17" fill="#334155">services at different prices in a given</text>
+        <text x="56" y="130" font-size="17" fill="#334155">period of time.</text>
+
+        <!-- Point 2 -->
+        <circle cx="22" cy="172" r="18" fill="none" stroke="#10B981" stroke-width="2.5"/>
+        <text x="22" y="179" text-anchor="middle" font-size="18" font-weight="800" fill="#10B981">2</text>
+        <text x="56" y="178" font-size="20" font-weight="800" fill="#0F172A">Law of supply</text>
+        <text x="56" y="206" font-size="17" fill="#334155">As the price of a good rises, the quantity</text>
+        <text x="56" y="228" font-size="17" fill="#334155">supplied rises because production becomes</text>
+        <text x="56" y="250" font-size="17" fill="#334155">more profitable.</text>
+
+        <!-- Point 3 -->
+        <circle cx="22" cy="292" r="18" fill="none" stroke="#10B981" stroke-width="2.5"/>
+        <text x="22" y="299" text-anchor="middle" font-size="18" font-weight="800" fill="#10B981">3</text>
+        <text x="56" y="298" font-size="20" font-weight="800" fill="#0F172A">Ceteris paribus</text>
+        <text x="56" y="326" font-size="17" fill="#334155">The supply curve shows how quantity</text>
+        <text x="56" y="348" font-size="17" fill="#334155">supplied responds to changes in price,</text>
+        <text x="56" y="370" font-size="17" fill="#334155">other things being equal.</text>
+      </g>
+    </svg>
+  `,
+
   demandShiftMini: `
     <svg viewBox="0 0 900 320" width="900" height="320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="900" height="320" fill="#F8FAFC" rx="12"/>

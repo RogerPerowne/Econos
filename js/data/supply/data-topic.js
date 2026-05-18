@@ -26,25 +26,21 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'supply_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Supply: the big picture',
-      lede: 'Supply is the producer side of every market — and the profit motive is the engine that drives it.',
-      tip: 'Supply ≠ stock. Supply is a relationship between price and quantity — the whole curve. Only a price change moves you along it; everything else shifts the curve.',
-      branches: [
-        { tone: 'green',  label: 'Law of supply',           sub: 'Ceteris paribus, price ↑ → quantity supplied ↑. Higher prices make production more profitable, drawing firms in and existing firms out further.' },
-        { tone: 'amber',  label: 'Movement vs shift',       sub: 'A change in the good\'s own price moves you along the curve. Any other determinant (costs, tech, taxes) shifts the whole curve.' },
-        { tone: 'blue',   label: 'Non-price determinants',  sub: 'Production costs, technology, indirect taxes and subsidies, producer numbers and expectations — the levers that shift S left or right.' },
-        { tone: 'purple', label: 'Producer surplus',        sub: 'The gap between the price received and the minimum the producer would accept. The welfare gain to firms from trade.' },
-        { tone: 'rose',   label: 'Joint &amp; competing supply', sub: 'Beef &amp; leather rise together; wheat &amp; barley compete for the same fields. Linked supply curves complicate the simple picture.' }
+      tip: 'A supply curve shows how much producers are willing and able to sell at different prices. Higher price usually means higher quantity supplied — but only ceteris paribus.',
+      diagramKey: 'supplyCurveBasic',
+      keyPoints: [
+        { icon: '🏷️', title: 'Price',             body: 'The market price is what producers receive for each unit sold.',                                 tone: 'green'  },
+        { icon: '📈', title: 'Profit incentive',  body: 'Higher prices increase potential profit, encouraging firms to supply more.',                     tone: 'amber'  },
+        { icon: '📦', title: 'Quantity supplied', body: 'The amount producers are willing and able to sell at a given price.',                            tone: 'purple' }
       ],
-      body: 'The <strong>law of supply</strong> states that, ceteris paribus, as price rises, the quantity supplied rises; as price falls, quantity supplied falls. The supply curve slopes upward from left to right.<br><br><strong>Why?</strong> Higher prices increase the profitability of production — existing firms expand output; new firms enter the market. Lower prices reduce profit margins — firms contract output or exit.<br><br>The upward slope reflects the idea that as output expands, firms must bring in progressively higher-cost factors of production (the law of diminishing returns in the short run) — so higher prices are needed to justify more production.',
       keyTerms: [
         { term: 'Law of supply', def: 'Ceteris paribus: higher price → higher quantity supplied. Price and quantity supplied move in the same direction.' },
         { term: 'Supply curve', def: 'A graph showing quantity supplied at each possible price — upward sloping under normal conditions.' },
         { term: 'Extension of supply', def: 'Rise in quantity supplied caused by a price increase — movement up the existing supply curve.' }
       ],
-      examEdge: 'The upward slope of supply links to cost theory (Theme 3): in the short run, diminishing returns raise marginal cost as output increases, so firms only produce more if price rises to cover the higher MC. A firm produces where P = MC — so supply is effectively a marginal cost curve.'
+      examEdge: 'Do not confuse a movement along the supply curve with a shift of the supply curve — that depends on non-price factors. Always state ceteris paribus when explaining the law of supply.'
     },
     {
       id: 'supply_2',

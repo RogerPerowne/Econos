@@ -37,27 +37,10 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   label: 'Determinants',        sub: 'Income, tastes, prices of related goods (substitutes/complements), expectations, population. Each shifts demand left or right.' },
         { tone: 'purple', label: 'Consumer surplus',    sub: 'The gap between the maximum a consumer would pay and the price they actually pay. The triangular welfare gain from trade.' }
       ],
-      causes: [
-        {
-          icon: '🔄',
-          head: 'Substitution effect',
-          body: 'As price rises, the good becomes more expensive relative to substitutes. Consumers switch to alternatives — reducing quantity demanded. Works for all normal goods.',
-          tone: 'blue'
-        },
-        {
-          icon: '💸',
-          head: 'Income effect',
-          body: 'As price rises, real purchasing power falls. Consumers can afford less of everything — including the good itself. Reinforces the substitution effect for normal goods.',
-          tone: 'purple'
-        }
-      ],
-      causesLabel: 'Why the demand curve slopes downward',
-      causesEmoji: '📉',
-      causesStyle: 'tinted-flat',
       keyTerms: [
         { term: 'Law of demand', def: 'Ceteris paribus: a fall in price leads to a rise in quantity demanded; price and quantity demanded move in opposite directions.' },
-        { term: 'Substitution effect', def: 'Price rise makes a good relatively expensive → consumers switch to substitutes.' },
-        { term: 'Income effect', def: 'Price rise reduces real purchasing power → less of all normal goods demanded.' }
+        { term: 'Substitution effect', def: 'Price rise makes a good relatively expensive vs alternatives → consumers switch away → quantity demanded falls.' },
+        { term: 'Income effect', def: 'Price rise reduces real purchasing power → consumers can afford less of the good (and others).' }
       ],
       examEdge: 'Giffen goods are an exception: for extremely inferior goods with no substitutes (historically: Irish potatoes during famine), a price rise may increase quantity demanded because the negative income effect is overwhelming. Extremely rare in practice — useful for evaluation.'
     },
@@ -91,7 +74,6 @@ window.ECONOS_TOPIC = {
       id: 'demand_3',
       template: 'cause',
       title: 'Non-Price Determinants of Demand',
-      diagramKey: 'demandShiftMini',
       tip: 'Remember PIRATE: Price of Related goods, Income, fashion/Advertising (Tastes), populaTion, Expectations. Any of these can shift demand left or right.',
       causes: [
         { icon: '💰', head: 'Income',                      body: 'For normal goods: higher income → more demand (rightward shift). For inferior goods (value-brand food, bus travel): higher income → less demand (leftward shift). Crucial for YED analysis.' },
@@ -132,7 +114,6 @@ window.ECONOS_TOPIC = {
       id: 'demand_5',
       template: 'framing',
       title: 'Derived Demand',
-      diagramKey: 'derivedDemandFlow',
       tip: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too — making recessions self-reinforcing.',
       flow: [
         { icon: '🛍️', title: 'Consumers demand cars',      sub: 'Rising incomes → demand for vehicles grows.',                tone: 'green'  },
@@ -154,7 +135,6 @@ window.ECONOS_TOPIC = {
       id: 'demand_6',
       template: 'diagnose',
       title: 'Demand in Real Markets',
-      diagramKey: 'realMarketsGrid',
       intro: 'Demand analysis applies to every market — but context-specific factors determine which determinants dominate.',
       rows: [
         { label: 'Market', colA: 'Housing', colB: 'Petrol' },
@@ -170,7 +150,7 @@ window.ECONOS_TOPIC = {
       title: 'The Demand Curve and Market Analysis',
       diagramKey: 'demandScheduleCurve',
       tip: 'Diagram checklist: label both axes (P, Q), label the curve (D or D₁), mark equilibrium (P*, Q*), show shifts clearly (D₂ rightward = increase). Methodical technique earns marks even when written analysis is incomplete.',
-      body: 'The demand curve is the foundation of all market analysis in economics. It must be mastered before moving on to supply, equilibrium, elasticity, and market failure.<br><br><strong>Key diagram rules:</strong><br>1. Label axes: Price (P) on vertical, Quantity (Q) on horizontal.<br>2. Label the curve D (or D1 if you will draw D2).<br>3. Mark equilibrium point with coordinates (P*, Q*).<br>4. For a shift, draw D2 and label it clearly.<br>5. Arrow direction: right for increase in demand, left for decrease.',
+      body: 'The demand schedule and the demand curve are two views of the same data — a table of prices and quantities, and the line that plots them. Every market analysis you do from here on builds on this single picture: read off a price to find the quantity demanded, read off a quantity to find the price consumers are willing to pay.',
       keyTerms: [
         { term: 'Ceteris paribus', def: 'Latin for "all else equal" — the assumption that only one variable changes at a time when analysing its effect.' },
         { term: 'Effective demand', def: 'Demand backed by both willingness AND ability to pay — a wish list without purchasing power is not demand.' },

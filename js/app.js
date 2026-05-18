@@ -203,20 +203,6 @@
         </div>`;
     }
 
-    // Note — labelled tinted callout for "short run vs long run" style framing blocks.
-    // Object: { icon?, label?, body, tone? } (default tone: green).
-    if (c.note) {
-      const nt = PATTERN_TONES[c.note.tone || 'green'];
-      content += `
-        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:${nt.bg};border:1px solid ${nt.border};border-radius:12px;margin-bottom:22px;">
-          ${c.note.icon ? `<div style="width:36px;height:36px;border-radius:50%;background:${nt.accent}20;color:${nt.label};display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${c.note.icon}</div>` : ''}
-          <div style="flex:1;min-width:0;">
-            ${c.note.label ? `<div style="font-weight:800;font-size:14.5px;color:${nt.label};margin-bottom:3px;line-height:1.35;">${c.note.label}</div>` : ''}
-            <div style="font-size:14px;color:#0B1426;line-height:1.6;">${c.note.body}</div>
-          </div>
-        </div>`;
-    }
-
     // Intro/lede — styled as a thought-prompt callout
     if (c.intro) {
       content += `
@@ -323,32 +309,6 @@
       content += `</div>`;
     }
 
-    // Chain — flat horizontal tile chain with arrows between each step.
-    // Wraps the chain in an optional titled panel.
-    //   { title?, items: [{ icon?, title, body?, tone? }] }
-    if (c.chain && c.chain.items && c.chain.items.length) {
-      const chainTones = ['green', 'amber', 'purple', 'green', 'amber', 'purple'];
-      const titleHtml = c.chain.title
-        ? `<div style="font-weight:800;font-size:15px;color:#0F172A;margin-bottom:14px;">${c.chain.title}</div>` : '';
-      const tiles = c.chain.items.map((item, i) => {
-        const t = PATTERN_TONES[item.tone || chainTones[i % chainTones.length]];
-        return `
-          <div style="flex:1;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:18px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0;">
-            <div style="width:54px;height:54px;border-radius:50%;background:#fff;border:2px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${item.icon || ''}</div>
-            <div style="font-size:13.5px;font-weight:800;color:#0F172A;line-height:1.35;margin-bottom:8px;">${i + 1}. ${item.title}</div>
-            ${item.body ? `<div style="font-size:12.5px;color:#475569;line-height:1.55;">${item.body}</div>` : ''}
-          </div>`;
-      });
-      const arrow = `<div style="display:flex;align-items:center;color:#10B981;font-size:22px;font-weight:700;line-height:1;padding:0 8px;flex-shrink:0;">→</div>`;
-      content += `
-        <div style="border:1px solid #E2E8F0;border-radius:14px;padding:18px;background:#FFF;margin-bottom:22px;">
-          ${titleHtml}
-          <div style="display:flex;align-items:stretch;gap:0;">
-            ${tiles.join(arrow)}
-          </div>
-        </div>`;
-    }
-
     // Key points — flat 3-column takeaway tiles with a coloured bottom border.
     // Each point: { icon?, title, headline?, body?, tone? }. Used as a punchy
     // "what to know" summary that complements (or replaces) the chunky `flow`.
@@ -425,9 +385,7 @@
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
       const hasIcons = c.causes.some(item => item.icon);
       const flat = c.causesStyle === 'tinted-flat';
-      if (c.causesLabel !== false) {
-        content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
-      }
+      content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
       content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
@@ -473,35 +431,6 @@
         </div>`;
       }).join('');
       content += `</div>`;
-    }
-
-    // Summary — horizontal quick-ref bar with optional left label panel.
-    //   { icon?, label?, items: [{ icon?, label, body?, tone? }] }
-    // Renders as a single bordered row: [label cell] + N pill cells.
-    if (c.summary && c.summary.items && c.summary.items.length) {
-      const sumTones = ['green', 'purple', 'blue', 'amber'];
-      const labelCell = c.summary.label ? `
-        <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-right:1px solid #E2E8F0;flex-shrink:0;background:#F8FAFC;min-width:180px;">
-          ${c.summary.icon ? `<div style="font-size:22px;line-height:1;color:#0F172A;">${c.summary.icon}</div>` : ''}
-          <div style="font-weight:800;font-size:14px;color:#0F172A;line-height:1.3;">${c.summary.label}</div>
-        </div>` : '';
-      const itemCells = c.summary.items.map((item, i) => {
-        const t = PATTERN_TONES[item.tone || sumTones[i % sumTones.length]];
-        const isLast = i === c.summary.items.length - 1;
-        return `
-          <div style="flex:1;padding:14px 16px;display:flex;align-items:center;gap:10px;${isLast ? '' : 'border-right:1px solid #E2E8F0;'}">
-            ${item.icon ? `<div style="width:32px;height:32px;border-radius:50%;background:${t.bg};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">${item.icon}</div>` : ''}
-            <div style="min-width:0;">
-              <div style="font-weight:800;font-size:13.5px;color:${t.label};margin-bottom:2px;line-height:1.3;">${item.label}</div>
-              ${item.body ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${item.body}</div>` : ''}
-            </div>
-          </div>`;
-      }).join('');
-      content += `
-        <div style="display:flex;align-items:stretch;border:1px solid #E2E8F0;border-radius:12px;background:#fff;margin-bottom:26px;overflow:hidden;">
-          ${labelCell}
-          ${itemCells}
-        </div>`;
     }
 
     // Clean table — light borders, optional icon column, two text columns.
@@ -2648,9 +2577,6 @@
       c.flow !== undefined ||
       c.flowBottom !== undefined ||
       c.keyPoints !== undefined ||
-      c.chain !== undefined ||
-      c.note !== undefined ||
-      c.summary !== undefined ||
       c.verdict !== undefined ||
       c.comparison !== undefined ||
       c.table !== undefined ||

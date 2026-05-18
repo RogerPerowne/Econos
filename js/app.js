@@ -2462,6 +2462,22 @@
         </div>
       </div>
 
+      ${c.causes && c.causes.length ? (() => {
+        const items = c.causes;
+        const tiles = items.map((item, i) => {
+          const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }).join('');
+        return `<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:24px 0 28px;">${tiles}</div>`;
+      })() : ''}
+
       ${renderExamEdge(c.examEdge)}
     `;
   }

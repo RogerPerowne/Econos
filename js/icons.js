@@ -10383,79 +10383,87 @@ window.ECONOS_ICONS = {
   `,
 
   demandLawCurve: `
-    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
-      <rect x="8" y="8" width="884" height="424" fill="none" stroke="#E2E8F0" stroke-width="1" rx="10"/>
+    <svg viewBox="0 0 900 400" width="900" height="400" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- single unified panel -->
+      <rect width="900" height="400" fill="#FFFFFF" rx="14"/>
+      <rect x="10" y="10" width="880" height="380" fill="none" stroke="#E2E8F0" stroke-width="1.5" rx="14"/>
 
-      <!-- ===== LEFT: text definition panel ===== -->
-      <rect x="20" y="20" width="380" height="400" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" rx="10"/>
-      <text x="44" y="64" font-size="22" font-weight="800" fill="#0F172A">What is demand?</text>
-      <text x="44" y="106" font-size="16" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and</text>
-      <text x="44" y="130" font-size="16" fill="#334155"><tspan font-weight="700" fill="#059669">ability</tspan> of consumers to buy a</text>
-      <text x="44" y="154" font-size="16" fill="#334155">good or service at different</text>
-      <text x="44" y="178" font-size="16" fill="#334155">prices over a period of time.</text>
+      <!-- ===== LEFT: text content (no inner box; sits on shared white) ===== -->
+      <text x="46" y="66" font-size="22" font-weight="800" fill="#0F172A">What is demand?</text>
 
-      <!-- green callout -->
-      <rect x="34" y="208" width="352" height="124" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
-      <circle cx="64" cy="270" r="16" fill="#10B981"/>
-      <text x="64" y="276" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">✓</text>
-      <text x="90" y="248" font-size="14" fill="#065F46">It shows how much of a</text>
-      <text x="90" y="270" font-size="14" fill="#065F46">good consumers will buy</text>
-      <text x="90" y="292" font-size="14" fill="#065F46">at each possible price.</text>
+      <text x="46" y="104" font-size="15" fill="#334155">Demand is the <tspan font-weight="700" fill="#059669">willingness</tspan> and</text>
+      <text x="46" y="126" font-size="15" fill="#334155"><tspan font-weight="700" fill="#059669">ability</tspan> of consumers to buy a</text>
+      <text x="46" y="148" font-size="15" fill="#334155">good or service at different</text>
+      <text x="46" y="170" font-size="15" fill="#334155">prices over a period of time.</text>
 
-      <text x="210" y="386" text-anchor="middle" font-size="13" fill="#64748B" font-style="italic">As price falls, quantity demanded increases</text>
+      <!-- green callout (light-tinted info box) -->
+      <rect x="38" y="200" width="332" height="118" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" rx="10"/>
+      <circle cx="66" cy="256" r="13" fill="none" stroke="#10B981" stroke-width="2"/>
+      <text x="66" y="262" text-anchor="middle" font-size="13" font-weight="900" fill="#10B981">✓</text>
+      <text x="90" y="236" font-size="13" fill="#065F46">It shows how much of a good</text>
+      <text x="90" y="256" font-size="13" fill="#065F46">consumers will buy at each</text>
+      <text x="90" y="276" font-size="13" fill="#065F46">possible price.</text>
 
-      <!-- ===== RIGHT: chart ===== -->
-      <g transform="translate(430,30)">
-        <!-- gridlines at the three data-point intersections -->
-        <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3 3">
-          <line x1="60" y1="60"  x2="180" y2="60"/>
-          <line x1="60" y1="160" x2="290" y2="160"/>
-          <line x1="60" y1="260" x2="400" y2="260"/>
-          <line x1="180" y1="60"  x2="180" y2="350"/>
-          <line x1="290" y1="160" x2="290" y2="350"/>
-          <line x1="400" y1="260" x2="400" y2="350"/>
+      <!-- ===== RIGHT: chart on shared white background ===== -->
+      <g transform="translate(420,36)">
+        <!-- gridlines only to data points (cleaner than full-grid) -->
+        <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3">
+          <line x1="60" y1="48"  x2="140" y2="48"/>
+          <line x1="60" y1="120" x2="220" y2="120"/>
+          <line x1="60" y1="192" x2="300" y2="192"/>
+          <line x1="140" y1="48"  x2="140" y2="264"/>
+          <line x1="220" y1="120" x2="220" y2="264"/>
+          <line x1="300" y1="192" x2="300" y2="264"/>
         </g>
 
         <!-- axes -->
-        <line x1="60" y1="350" x2="430" y2="350" stroke="#334155" stroke-width="2"/>
-        <polygon points="430,344 430,356 444,350" fill="#334155"/>
-        <line x1="60" y1="350" x2="60" y2="28" stroke="#334155" stroke-width="2"/>
-        <polygon points="54,28 66,28 60,16" fill="#334155"/>
+        <line x1="60" y1="264" x2="430" y2="264" stroke="#0F172A" stroke-width="2"/>
+        <polygon points="430,258 430,270 442,264" fill="#0F172A"/>
+        <line x1="60" y1="264" x2="60" y2="22" stroke="#0F172A" stroke-width="2"/>
+        <polygon points="54,22 66,22 60,10" fill="#0F172A"/>
 
-        <!-- P axis ticks -->
-        <g font-size="14" fill="#334155" text-anchor="end">
-          <text x="50" y="66">12</text>
-          <text x="50" y="166">8</text>
-          <text x="50" y="266">4</text>
-          <text x="50" y="356">0</text>
+        <!-- P axis tick labels -->
+        <g font-size="15" fill="#334155" text-anchor="end">
+          <text x="50" y="54">12</text>
+          <text x="50" y="126">8</text>
+          <text x="50" y="198">4</text>
+          <text x="50" y="270">0</text>
         </g>
-        <!-- Q axis ticks -->
-        <g font-size="14" fill="#334155" text-anchor="middle">
-          <text x="60"  y="374">0</text>
-          <text x="180" y="374">10</text>
-          <text x="290" y="374">20</text>
-          <text x="400" y="374">30</text>
+        <!-- Q axis tick labels -->
+        <g font-size="15" fill="#334155" text-anchor="middle">
+          <text x="140" y="284">10</text>
+          <text x="220" y="284">20</text>
+          <text x="300" y="284">30</text>
+          <text x="380" y="284">40</text>
         </g>
 
-        <text x="22" y="20" font-size="15" font-weight="700" fill="#0F172A">Price (£)</text>
-        <text x="446" y="392" font-size="15" font-weight="700" fill="#0F172A" text-anchor="end">Quantity demanded</text>
+        <text x="22" y="16" font-size="15" font-weight="700" fill="#0F172A">Price (£)</text>
+        <text x="438" y="284" font-size="15" font-weight="700" fill="#0F172A" text-anchor="end">Quantity demanded</text>
 
-        <!-- STRAIGHT demand line through A(180,60) B(290,160) C(400,260)
-             Slope: 100/110 ≈ 0.909. Extended from (130,15) to (446,302). -->
-        <line x1="130" y1="15" x2="446" y2="302" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+        <!-- STRAIGHT demand line through A(140,48) B(220,120) C(300,192)
+             Slope: 72/80 = 0.9. Extended from (100,12) to (388,272). -->
+        <line x1="100" y1="12" x2="388" y2="272" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
 
         <!-- data points -->
-        <circle cx="180" cy="60"  r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
-        <circle cx="290" cy="160" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
-        <circle cx="400" cy="260" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="140" cy="48"  r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="220" cy="120" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="300" cy="192" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
 
-        <!-- labels -->
-        <text x="196" y="54"  font-size="16" font-weight="700" fill="#065F46">A (£12, 10)</text>
-        <text x="306" y="154" font-size="16" font-weight="700" fill="#065F46">B (£8, 20)</text>
-        <text x="344" y="286" font-size="16" font-weight="700" fill="#065F46">C (£4, 30)</text>
-        <text x="448" y="314" font-size="20" font-weight="800" fill="#10B981">D</text>
+        <!-- stacked labels: letter above coords -->
+        <text x="156" y="38"  font-size="17" font-weight="800" fill="#065F46">A</text>
+        <text x="156" y="56"  font-size="12" fill="#065F46">(£12, 10)</text>
+
+        <text x="236" y="110" font-size="17" font-weight="800" fill="#065F46">B</text>
+        <text x="236" y="128" font-size="12" fill="#065F46">(£8, 20)</text>
+
+        <text x="316" y="182" font-size="17" font-weight="800" fill="#065F46">C</text>
+        <text x="316" y="200" font-size="12" fill="#065F46">(£4, 30)</text>
+
+        <text x="392" y="276" font-size="19" font-weight="800" fill="#10B981">D</text>
       </g>
+
+      <!-- italic caption spanning the panel bottom -->
+      <text x="450" y="368" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity demanded increases — shown by a downward-sloping curve.</text>
     </svg>
   `,
   demandScheduleCurve: `

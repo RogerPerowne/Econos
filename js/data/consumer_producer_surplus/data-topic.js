@@ -49,16 +49,39 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_2',
-      template: 'mechanisms',
-      title: 'Drawing and Calculating Surplus',
-      intro: 'Follow these steps to correctly identify and calculate consumer and producer surplus on any supply-demand diagram.',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 6',
+      title: 'Building the Surplus Diagram',
+      lede: 'Tap each step to build the diagram — watch consumer and producer surplus emerge from the supply and demand framework.',
+      diagramKey: 'cpsSvg',
       steps: [
-        { label: '📍 Find the equilibrium', text: 'Draw supply (S) and demand (D) curves. Find the intersection: equilibrium price P* and equilibrium quantity Q*. This is where total surplus is maximised.' },
-        { label: '🔵 Shade consumer surplus', text: 'CS = triangle above P* below the D curve, from the y-axis to Q*. Vertices: (0, P*), (Q*, P*), and the demand curve\'s y-intercept (where WTP = price and Q demanded = 0).' },
-        { label: '🟢 Shade producer surplus', text: 'PS = triangle below P* above the S curve, from the y-axis to Q*. Vertices: (0, P*), (Q*, P*), and the supply curve\'s y-intercept (where minimum supply price = 0).' },
-        { label: '🧮 Calculate areas', text: 'CS = ½ × (max WTP - P*) × Q*. PS = ½ × (P* - min supply price) × Q*. Total welfare = CS + PS. Check: any wedge between price and quantity that prevents these triangles from forming is a deadweight welfare loss.' }
+        {
+          key: 'base',
+          label: 'S & D curves',
+          text: 'Start with a standard supply and demand diagram. The curves intersect at the free-market equilibrium: price P* and quantity Q*. At this point, every willing buyer meets a willing seller. Surplus analysis begins here.'
+        },
+        {
+          key: 'cs',
+          label: 'Consumer surplus',
+          text: 'Consumer surplus (CS) is the green triangle above the price line P* and below the demand curve. Each buyer on the demand curve was willing to pay more than P* — CS is their combined saving. Formula: CS = ½ × Q* × (max WTP − P*).'
+        },
+        {
+          key: 'ps',
+          label: 'Producer surplus',
+          text: 'Producer surplus (PS) is the rose triangle below the price line P* and above the supply curve. Each seller on the supply curve would have accepted less than P* — PS is their combined extra revenue. Formula: PS = ½ × Q* × (P* − min supply price).'
+        },
+        {
+          key: 'total',
+          label: 'Total welfare',
+          text: 'Total welfare = CS + PS — the entire area between the two curves up to Q*. This is maximised at the free-market equilibrium (the social optimum) where MSB = MSC and deadweight loss = 0. Any policy that moves Q away from Q* reduces this total.'
+        },
+        {
+          key: 'dwl',
+          label: 'Tax & DWL',
+          text: 'A tax drives a wedge between the consumer price (Pc) and the producer price (Pp), reducing output from Q* to Q2. Some CS and PS becomes tax revenue (a transfer). The amber triangle is deadweight welfare loss — surplus destroyed and captured by nobody. Only a Pigouvian tax correcting an externality can improve welfare.'
+        }
       ],
-      examEdge: 'Numerical questions on surplus are common. You will be given demand and supply equations or schedules and asked to calculate CS, PS or both. Key formula: area of triangle = ½ × base × height. For CS: base = Q*, height = (y-intercept of demand) - P*. For PS: base = Q*, height = P* - (y-intercept of supply). If supply starts at the origin, PS = ½ × P* × Q*.'
+      examEdge: 'Numerical surplus questions: area of triangle = ½ × base × height. For CS: height = (D-axis intercept) − P*, base = Q*. For PS: height = P* − (S-axis intercept), base = Q*. When a tax is introduced, remember three things happen: CS falls, PS falls, government gains revenue — but CS + PS lost > revenue gained, leaving the DWL as the net efficiency cost.'
     },
     {
       id: 'consumer_producer_surplus_3',

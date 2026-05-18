@@ -2581,233 +2581,112 @@ window.ECONOS_ICONS = {
   heroAd: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="ad-hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="ad-hero-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="ad-hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="had-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="had-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <!-- Background -->
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#ad-hero-bg)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#ad-hero-dots)" opacity="0.4"/>
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="320" rx="115" ry="11" fill="#FEF3C7" opacity="0.7"/>
 
-      <!-- Faint convergence "GDP growing" arc at top, mirroring inflation hero arc -->
-      <path d="M 245 60 Q 245 170 245 295" stroke="#2563EB" stroke-width="1.8" fill="none"
-            stroke-linecap="round" stroke-dasharray="3 4" opacity="0.45"/>
-      <polygon points="245,295 240,285 250,285" fill="#2563EB" opacity="0.55"/>
-      <text x="262" y="180" font-size="9" font-weight="800" fill="#2563EB"
-            text-anchor="middle" letter-spacing="2"
-            transform="rotate(90 262 180)" opacity="0.7">AD = TOTAL SPEND</text>
-
-      <!-- ===== Four cartoon "spenders" pouring into the central pot ===== -->
-
-      <!-- Tag 1: Consumer (C) — green coin pouch, top-left -->
-      <g transform="translate(38, 50) rotate(-8)" filter="url(#ad-hero-shadow)">
-        <!-- pouch -->
-        <path d="M 4 14 Q 0 8 8 6 L 32 6 Q 40 8 36 14 L 38 36 Q 38 44 30 44 L 10 44 Q 2 44 2 36 Z"
-              fill="#10B981" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- string tie -->
-        <line x1="14" y1="6" x2="14" y2="2" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="26" y1="6" x2="26" y2="2" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- "C" label -->
-        <text x="20" y="29" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">C</text>
-      </g>
-      <!-- C label -->
-      <text x="62" y="115" font-size="10" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="0.5">CONSUMERS</text>
-      <text x="62" y="127" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~60%</text>
-
-      <!-- Tag 2: Investment (I) — amber tool/factory, top-right -->
-      <g transform="translate(170, 45) rotate(6)" filter="url(#ad-hero-shadow)">
-        <!-- factory body -->
-        <rect x="0" y="14" width="42" height="30" fill="#F59E0B" stroke="#B45309" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- roof -->
-        <polygon points="0,14 14,4 28,14" fill="#F59E0B" stroke="#B45309" stroke-width="1.8" stroke-linejoin="round"/>
-        <polygon points="14,14 28,4 42,14" fill="#F59E0B" stroke="#B45309" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- chimney -->
-        <rect x="32" y="0" width="6" height="8" fill="#B45309"/>
-        <!-- "I" label -->
-        <text x="21" y="35" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">I</text>
-      </g>
-      <!-- I label -->
-      <text x="194" y="113" font-size="10" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="0.5">FIRMS</text>
-      <text x="194" y="125" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~17%</text>
-
-      <!-- Tag 3: Government (G) — blue building, mid-left -->
-      <g transform="translate(20, 170) rotate(-4)" filter="url(#ad-hero-shadow)">
-        <!-- column building -->
-        <rect x="0" y="14" width="48" height="28" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- pediment -->
-        <polygon points="-3,14 24,2 51,14" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- columns -->
-        <line x1="10" y1="16" x2="10" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
-        <line x1="20" y1="16" x2="20" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
-        <line x1="30" y1="16" x2="30" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
-        <line x1="40" y1="16" x2="40" y2="40" stroke="#1E40AF" stroke-width="1.2"/>
-        <!-- "G" label -->
-        <text x="24" y="33" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">G</text>
-      </g>
-      <!-- G label -->
-      <text x="46" y="226" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="0.5">GOVERNMENT</text>
-      <text x="46" y="238" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~20%</text>
-
-      <!-- Tag 4: Net Trade (X−M) — purple ship/box, mid-right -->
-      <g transform="translate(170, 170) rotate(8)" filter="url(#ad-hero-shadow)">
-        <!-- crate -->
-        <rect x="0" y="8" width="44" height="32" fill="#7E22CE" stroke="#581C87" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- slats -->
-        <line x1="0" y1="18" x2="44" y2="18" stroke="#581C87" stroke-width="1.2" opacity="0.7"/>
-        <line x1="0" y1="30" x2="44" y2="30" stroke="#581C87" stroke-width="1.2" opacity="0.7"/>
-        <line x1="22" y1="8" x2="22" y2="40" stroke="#581C87" stroke-width="1.2" opacity="0.7"/>
-        <!-- arrow up — exports outflow indicator -->
-        <path d="M 8 5 L 12 1 L 16 5" stroke="#581C87" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- "X−M" label -->
-        <text x="22" y="29" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">X−M</text>
-      </g>
-      <!-- X-M label -->
-      <text x="195" y="226" font-size="10" font-weight="800" fill="#7E22CE" text-anchor="middle" letter-spacing="0.5">NET TRADE</text>
-      <text x="195" y="238" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">~3%</text>
-
-      <!-- ===== Strings/streams from each spender into the central pot ===== -->
-      <!-- C → pot -->
-      <path d="M 64 90 Q 90 200 130 270" stroke="#10B981" stroke-width="1.8" fill="none"
-            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
-      <!-- I → pot -->
-      <path d="M 200 90 Q 175 200 150 270" stroke="#F59E0B" stroke-width="1.8" fill="none"
-            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
-      <!-- G → pot -->
-      <path d="M 60 215 Q 95 245 130 275" stroke="#2563EB" stroke-width="1.8" fill="none"
-            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
-      <!-- X-M → pot -->
-      <path d="M 200 215 Q 175 245 150 275" stroke="#7E22CE" stroke-width="1.8" fill="none"
-            stroke-linecap="round" stroke-dasharray="2 3" opacity="0.55"/>
-
-      <!-- ===== Central pot (the "economy") ===== -->
-      <g transform="translate(95, 265)" filter="url(#ad-hero-shadow)">
-        <!-- Bowl body -->
-        <path d="M 4 6 L 86 6 L 80 60 Q 80 64 76 64 L 14 64 Q 10 64 10 60 Z"
-              fill="#FCD34D" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
-        <!-- Top rim -->
-        <ellipse cx="45" cy="6" rx="42" ry="6" fill="#FBBF24" stroke="#92400E" stroke-width="2"/>
-        <!-- Texture lines -->
-        <line x1="20" y1="22" x2="22" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="44" y1="22" x2="44" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="68" y1="22" x2="66" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <!-- "AD" label inside -->
-        <text x="45" y="42" font-size="18" font-weight="800" fill="#92400E" text-anchor="middle">AD</text>
+      <!-- 4 spender sources floating around -->
+      <!-- C — consumer (green coin pouch top-left) -->
+      <g filter="url(#had-soft)">
+        <circle cx="65" cy="80" r="28" fill="#DCFCE7"/>
+        <path d="M 53 80 Q 50 75 55 73 L 75 73 Q 80 75 77 80 L 79 96 Q 79 100 75 100 L 55 100 Q 51 100 51 96 Z" fill="#22C55E" stroke="#15803D" stroke-width="1.5" stroke-linejoin="round"/>
+        <text x="65" y="92" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">£</text>
       </g>
 
-      <!-- A couple of coin sparkles around the pot -->
-      <g transform="translate(82, 290)" opacity="0.8">
-        <circle cx="0" cy="0" r="7" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-        <text x="0" y="3" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
-      </g>
-      <g transform="translate(200, 305)" opacity="0.75">
-        <circle cx="0" cy="0" r="8" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-        <text x="0" y="3" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      <!-- I — investment (amber factory top-right) -->
+      <g filter="url(#had-soft)">
+        <circle cx="215" cy="80" r="28" fill="#FEF3C7"/>
+        <rect x="200" y="80" width="30" height="20" fill="#F59E0B" stroke="#B45309" stroke-width="1.5"/>
+        <polygon points="200,80 210,72 220,80 230,72 230,80" fill="#F59E0B" stroke="#B45309" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="222" y="68" width="5" height="8" fill="#B45309"/>
       </g>
 
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">FOUR SOURCES · ONE DEMAND</text>
+      <!-- G — government (blue building mid-left) -->
+      <g filter="url(#had-soft)">
+        <circle cx="45" cy="200" r="28" fill="#DBEAFE"/>
+        <polygon points="30,202 60,202 45,190" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="30" y="202" width="30" height="20" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5"/>
+        <line x1="35" y1="208" x2="35" y2="222" stroke="#1E40AF" stroke-width="1.2"/>
+        <line x1="42" y1="208" x2="42" y2="222" stroke="#1E40AF" stroke-width="1.2"/>
+        <line x1="49" y1="208" x2="49" y2="222" stroke="#1E40AF" stroke-width="1.2"/>
+        <line x1="56" y1="208" x2="56" y2="222" stroke="#1E40AF" stroke-width="1.2"/>
       </g>
+
+      <!-- X-M — net trade (purple crate mid-right) -->
+      <g filter="url(#had-soft)">
+        <circle cx="235" cy="200" r="28" fill="#F3E8FF"/>
+        <rect x="220" y="188" width="30" height="24" rx="2" fill="#7C3AED" stroke="#5B21B6" stroke-width="1.5"/>
+        <line x1="220" y1="196" x2="250" y2="196" stroke="#5B21B6" stroke-width="1.2" opacity="0.6"/>
+        <line x1="220" y1="204" x2="250" y2="204" stroke="#5B21B6" stroke-width="1.2" opacity="0.6"/>
+        <line x1="235" y1="188" x2="235" y2="212" stroke="#5B21B6" stroke-width="1.2" opacity="0.6"/>
+      </g>
+
+      <!-- dotted streams flowing into the central pot -->
+      <path d="M 80 110 Q 100 200 130 280" stroke="#22C55E" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
+      <path d="M 200 110 Q 180 200 150 280" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
+      <path d="M 70 220 Q 100 250 132 285" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
+      <path d="M 210 220 Q 180 250 148 285" stroke="#7C3AED" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
+
+      <!-- central pot collecting all spending -->
+      <g filter="url(#had-shadow)">
+        <!-- pot body -->
+        <path d="M 95 280 L 185 280 L 178 318 Q 178 322 174 322 L 106 322 Q 102 322 102 318 Z"
+              fill="#FBBF24" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
+        <!-- rim -->
+        <ellipse cx="140" cy="280" rx="45" ry="8" fill="#FCD34D" stroke="#92400E" stroke-width="2"/>
+        <!-- £ in pot -->
+        <text x="140" y="312" font-size="22" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="328" rx="100" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
   heroUnemployment: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="un-hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="un-hero-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="un-hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="hun-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hun-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#un-hero-bg)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#un-hero-dots)" opacity="0.4"/>
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="310" rx="105" ry="10" fill="#FEE2E2" opacity="0.6"/>
 
-      <!-- Top: working-age population pool -->
-      <g transform="translate(140, 60)">
-        <ellipse cx="0" cy="0" rx="95" ry="22" fill="#FCD34D" stroke="#92400E" stroke-width="2"/>
-        <text x="0" y="-2" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle" letter-spacing="1.5">WORKING-AGE</text>
-        <text x="0" y="10" font-size="9" font-weight="800" fill="#92400E" text-anchor="middle" letter-spacing="1.5">POPULATION (16-64)</text>
+      <!-- closed shop / dark windows building -->
+      <g filter="url(#hun-shadow)">
+        <!-- main building -->
+        <rect x="80" y="140" width="120" height="160" fill="#FFFFFF" stroke="#475569" stroke-width="2"/>
+        <!-- roof -->
+        <polygon points="74,140 206,140 192,118 88,118" fill="#94A3B8" stroke="#475569" stroke-width="2" stroke-linejoin="round"/>
+        <!-- chimney (no smoke - closed) -->
+        <rect x="165" y="92" width="14" height="30" fill="#94A3B8" stroke="#475569" stroke-width="1.5"/>
+        <!-- windows (dark - closed) -->
+        <rect x="92"  y="158" width="22" height="22" fill="#1E293B"/>
+        <rect x="125" y="158" width="22" height="22" fill="#1E293B"/>
+        <rect x="158" y="158" width="22" height="22" fill="#1E293B"/>
+        <rect x="92"  y="190" width="22" height="22" fill="#1E293B"/>
+        <rect x="158" y="190" width="22" height="22" fill="#1E293B"/>
+        <!-- locked door -->
+        <rect x="125" y="222" width="30" height="60" rx="2" fill="#92400E" stroke="#451A03" stroke-width="2"/>
+        <!-- padlock on door -->
+        <rect x="135" y="244" width="10" height="10" rx="1.5" fill="#FBBF24" stroke="#92400E" stroke-width="1.5"/>
+        <path d="M 137 244 L 137 240 Q 140 236 143 240 L 143 244" stroke="#92400E" stroke-width="2" fill="none"/>
       </g>
 
-      <!-- Three flow lines from pool down to the three buckets -->
-      <path d="M 75 70 Q 60 130 50 180"  stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.6"/>
-      <path d="M 140 82 L 140 180"        stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.6"/>
-      <path d="M 205 70 Q 220 130 230 180" stroke="#2563EB" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.6"/>
-
-      <!-- ===== Three figure groups ===== -->
-
-      <!-- EMPLOYED (green, left) — group of 3 figures, briefcase -->
-      <g transform="translate(20, 190)" filter="url(#un-hero-shadow)">
-        <!-- Big rounded panel -->
-        <rect x="0" y="0" width="60" height="70" rx="10" fill="#10B981" stroke="#047857" stroke-width="1.8"/>
-        <!-- Stick figures (3) -->
-        <!-- Figure 1 -->
-        <circle cx="15" cy="22" r="5" fill="#FFFFFF"/>
-        <rect x="11" y="28" width="8" height="14" rx="2" fill="#FFFFFF"/>
-        <!-- Figure 2 -->
-        <circle cx="30" cy="22" r="5" fill="#FFFFFF"/>
-        <rect x="26" y="28" width="8" height="14" rx="2" fill="#FFFFFF"/>
-        <!-- Figure 3 -->
-        <circle cx="45" cy="22" r="5" fill="#FFFFFF"/>
-        <rect x="41" y="28" width="8" height="14" rx="2" fill="#FFFFFF"/>
-        <!-- Briefcase -->
-        <rect x="22" y="50" width="16" height="10" rx="1" fill="#FCD34D" stroke="#92400E" stroke-width="1"/>
-        <rect x="27" y="48" width="6" height="3" fill="#92400E"/>
+      <!-- CLOSED sign hanging at angle -->
+      <g transform="translate(140, 90) rotate(-8)" filter="url(#hun-soft)">
+        <line x1="0" y1="-20" x2="-20" y2="-44" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="0" y1="-20" x2="20" y2="-44" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="-30" y="-20" width="60" height="22" rx="3" fill="#EF4444" stroke="#991B1B" stroke-width="1.8"/>
+        <text x="0" y="-4" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">CLOSED</text>
       </g>
-      <text x="50" y="275" font-size="11" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="0.5">EMPLOYED</text>
-      <text x="50" y="288" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">working</text>
 
-      <!-- UNEMPLOYED (amber, centre) — single figure with question mark / looking -->
-      <g transform="translate(110, 190)" filter="url(#un-hero-shadow)">
-        <rect x="0" y="0" width="60" height="70" rx="10" fill="#F59E0B" stroke="#B45309" stroke-width="1.8"/>
-        <!-- Single figure -->
-        <circle cx="30" cy="25" r="7" fill="#FFFFFF"/>
-        <rect x="24" y="33" width="12" height="20" rx="3" fill="#FFFFFF"/>
-        <!-- Magnifying glass / job search -->
-        <g transform="translate(40, 42)">
-          <circle cx="0" cy="0" r="6" fill="none" stroke="#FFFFFF" stroke-width="2"/>
-          <line x1="4" y1="4" x2="9" y2="9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
-        </g>
-      </g>
-      <text x="140" y="275" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="0.5">UNEMPLOYED</text>
-      <text x="140" y="288" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">actively seeking</text>
-
-      <!-- INACTIVE (blue, right) — single figure with rest/student icon -->
-      <g transform="translate(200, 190)" filter="url(#un-hero-shadow)">
-        <rect x="0" y="0" width="60" height="70" rx="10" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8"/>
-        <!-- Single figure -->
-        <circle cx="30" cy="25" r="7" fill="#FFFFFF"/>
-        <rect x="24" y="33" width="12" height="20" rx="3" fill="#FFFFFF"/>
-        <!-- Book / not seeking -->
-        <g transform="translate(30, 60)">
-          <rect x="-9" y="-4" width="18" height="6" rx="1" fill="#FCD34D" stroke="#92400E" stroke-width="1"/>
-          <line x1="0" y1="-3" x2="0" y2="1" stroke="#92400E" stroke-width="0.8"/>
-        </g>
-      </g>
-      <text x="230" y="275" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="0.5">INACTIVE</text>
-      <text x="230" y="288" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">not seeking</text>
-
-      <!-- Bottom strip -->
-      <g transform="translate(20, 333)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">THREE STATES · ONE WORKFORCE</text>
-      </g>
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="315" rx="110" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
@@ -3036,98 +2915,49 @@ window.ECONOS_ICONS = {
   heroMonetary: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <pattern id="mp-hero-dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1" fill="#CBD5E1"/>
-        </pattern>
-        <linearGradient id="mp-hero-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F0F9FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <filter id="mp-hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.15"/>
-        </filter>
+        <filter id="hmon-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hmon-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
       </defs>
 
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#mp-hero-bg)"/>
-      <rect x="0" y="0" width="280" height="360" rx="16" fill="url(#mp-hero-dots)" opacity="0.4"/>
+      <!-- pastel ground -->
+      <ellipse cx="140" cy="305" rx="105" ry="9" fill="#DBEAFE" opacity="0.7"/>
 
-      <!-- ===== Bank of England building (top) ===== -->
-      <g transform="translate(95, 32)" filter="url(#mp-hero-shadow)">
-        <!-- Pediment / triangle roof -->
-        <polygon points="-5,32 45,8 95,32" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- Main body -->
-        <rect x="0" y="32" width="90" height="56" fill="#2563EB" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
-        <!-- Columns -->
-        <line x1="12" y1="36" x2="12" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
-        <line x1="28" y1="36" x2="28" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
-        <line x1="44" y1="36" x2="44" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
-        <line x1="60" y1="36" x2="60" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
-        <line x1="76" y1="36" x2="76" y2="84" stroke="#FFFFFF" stroke-width="1.4" opacity="0.6"/>
-        <!-- Bank Rate label inside -->
-        <text x="45" y="58" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">BANK RATE</text>
-        <text x="45" y="76" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">↑</text>
-        <!-- Base -->
-        <rect x="-3" y="86" width="96" height="6" fill="#1E40AF" rx="1"/>
-      </g>
-      <text x="140" y="135" font-size="10" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="1.5">BANK OF ENGLAND</text>
-
-      <!-- ===== Five "pipes" (dashed coloured paths) flowing DOWN to the central AD pot ===== -->
-      <!-- All start near the bank base (~y=130), converge to (~140, 268) -->
-      <!-- Borrowing -->
-      <path d="M 100 132 Q 90 200 130 266" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
-      <!-- Mortgages -->
-      <path d="M 115 132 Q 110 200 135 268" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
-      <!-- Savings -->
-      <path d="M 140 132 L 140 268" stroke="#2563EB" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
-      <!-- Exchange rate -->
-      <path d="M 165 132 Q 170 200 145 268" stroke="#7E22CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
-      <!-- Expectations -->
-      <path d="M 180 132 Q 190 200 150 268" stroke="#E11D48" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7"/>
-
-      <!-- ===== Five small channel tags arranged in two rows alongside the pipes ===== -->
-      <!-- Row 1 (left) -->
-      <g transform="translate(14, 155)" filter="url(#mp-hero-shadow)">
-        <rect x="0" y="0" width="62" height="22" rx="11" fill="#10B981" stroke="#047857" stroke-width="1"/>
-        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">BORROWING</text>
-      </g>
-      <g transform="translate(204, 155)" filter="url(#mp-hero-shadow)">
-        <rect x="0" y="0" width="62" height="22" rx="11" fill="#7E22CE" stroke="#581C87" stroke-width="1"/>
-        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">£ vs $/€</text>
+      <!-- Bank of England classical building -->
+      <g filter="url(#hmon-shadow)">
+        <!-- pediment -->
+        <polygon points="140,68 80,120 200,120" fill="#3B82F6" stroke="#1E40AF" stroke-width="2" stroke-linejoin="round"/>
+        <!-- top trim -->
+        <rect x="78" y="120" width="124" height="8" fill="#1E40AF"/>
+        <!-- 5 columns -->
+        <rect x="86"  y="132" width="14" height="100" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5"/>
+        <rect x="108" y="132" width="14" height="100" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5"/>
+        <rect x="130" y="132" width="14" height="100" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5"/>
+        <rect x="152" y="132" width="14" height="100" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5"/>
+        <rect x="174" y="132" width="14" height="100" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5"/>
+        <!-- column flutes -->
+        <line x1="93"  y1="138" x2="93"  y2="226" stroke="#1E40AF" stroke-width="0.6" opacity="0.4"/>
+        <line x1="115" y1="138" x2="115" y2="226" stroke="#1E40AF" stroke-width="0.6" opacity="0.4"/>
+        <line x1="137" y1="138" x2="137" y2="226" stroke="#1E40AF" stroke-width="0.6" opacity="0.4"/>
+        <line x1="159" y1="138" x2="159" y2="226" stroke="#1E40AF" stroke-width="0.6" opacity="0.4"/>
+        <line x1="181" y1="138" x2="181" y2="226" stroke="#1E40AF" stroke-width="0.6" opacity="0.4"/>
+        <!-- base steps -->
+        <rect x="80" y="232" width="120" height="8" fill="#94A3B8"/>
+        <rect x="74" y="240" width="132" height="10" fill="#64748B"/>
       </g>
 
-      <!-- Row 2 (middle) -->
-      <g transform="translate(14, 195)" filter="url(#mp-hero-shadow)">
-        <rect x="0" y="0" width="62" height="22" rx="11" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
-        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">MORTGAGES</text>
-      </g>
-      <g transform="translate(204, 195)" filter="url(#mp-hero-shadow)">
-        <rect x="0" y="0" width="62" height="22" rx="11" fill="#E11D48" stroke="#9F1239" stroke-width="1"/>
-        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">BELIEFS</text>
+      <!-- £ symbol on pediment -->
+      <text x="140" y="108" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">£</text>
+
+      <!-- coin stack at base -->
+      <g filter="url(#hmon-soft)">
+        <ellipse cx="140" cy="280" rx="40" ry="9" fill="#D97706"/>
+        <ellipse cx="140" cy="270" rx="40" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <ellipse cx="140" cy="260" rx="40" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+        <text x="140" y="266" font-size="16" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- Row 3 (centre, single) -->
-      <g transform="translate(109, 235)" filter="url(#mp-hero-shadow)">
-        <rect x="0" y="0" width="62" height="22" rx="11" fill="#2563EB" stroke="#1E40AF" stroke-width="1"/>
-        <text x="31" y="14" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">SAVINGS</text>
-      </g>
-
-      <!-- ===== Central AD pot (the economy) ===== -->
-      <g transform="translate(95, 268)" filter="url(#mp-hero-shadow)">
-        <path d="M 4 6 L 86 6 L 80 60 Q 80 64 76 64 L 14 64 Q 10 64 10 60 Z"
-              fill="#FCD34D" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
-        <ellipse cx="45" cy="6" rx="42" ry="6" fill="#FBBF24" stroke="#92400E" stroke-width="2"/>
-        <line x1="20" y1="22" x2="22" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="44" y1="22" x2="44" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <line x1="68" y1="22" x2="66" y2="58" stroke="#B45309" stroke-width="1" opacity="0.5"/>
-        <text x="45" y="38" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">AD →</text>
-        <text x="45" y="52" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">CPI</text>
-      </g>
-
-      <!-- Bottom strip -->
-      <g transform="translate(20, 343)">
-        <rect x="0" y="0" width="240" height="14" rx="7" fill="#1E40AF" opacity="0.08"/>
-        <text x="120" y="10" font-size="9" font-weight="700" fill="#1E40AF" letter-spacing="2" text-anchor="middle">ONE LEVER · FIVE CHANNELS</text>
-      </g>
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="310" rx="110" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 
@@ -5722,6 +5552,112 @@ window.ECONOS_ICONS = {
         <line x1="100" y1="140" x2="96"  y2="124"/>
         <line x1="200" y1="148" x2="212" y2="138"/>
       </g>
+    </svg>
+  `,
+
+  heroTrade: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="htr-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="htr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+
+      <!-- water/sea pad -->
+      <ellipse cx="140" cy="295" rx="120" ry="14" fill="#DBEAFE" opacity="0.85"/>
+      <!-- water waves -->
+      <g stroke="#3B82F6" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55">
+        <path d="M 30 305 Q 40 301 50 305 Q 60 309 70 305"/>
+        <path d="M 100 310 Q 110 306 120 310 Q 130 314 140 310"/>
+        <path d="M 170 305 Q 180 301 190 305 Q 200 309 210 305"/>
+        <path d="M 230 310 Q 240 306 250 310"/>
+      </g>
+
+      <!-- container ship -->
+      <g filter="url(#htr-shadow)">
+        <!-- hull -->
+        <path d="M 40 240 L 240 240 L 220 280 L 60 280 Z" fill="#1E3A8A" stroke="#0F172A" stroke-width="2" stroke-linejoin="round"/>
+        <!-- white stripe -->
+        <line x1="50" y1="260" x2="230" y2="260" stroke="#FFFFFF" stroke-width="2.5"/>
+        <!-- bridge tower -->
+        <rect x="180" y="200" width="32" height="40" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
+        <rect x="186" y="208" width="6" height="6" fill="#3B82F6"/>
+        <rect x="198" y="208" width="6" height="6" fill="#3B82F6"/>
+        <rect x="186" y="220" width="6" height="6" fill="#3B82F6"/>
+        <!-- smokestack -->
+        <rect x="194" y="176" width="10" height="26" fill="#FBBF24" stroke="#92400E" stroke-width="1.5"/>
+        <rect x="192" y="172" width="14" height="6" fill="#92400E"/>
+        <!-- smoke -->
+        <ellipse cx="200" cy="160" rx="10" ry="6" fill="#E2E8F0" opacity="0.8"/>
+      </g>
+
+      <!-- containers stacked on deck -->
+      <g filter="url(#htr-soft)">
+        <!-- bottom row -->
+        <rect x="56" y="208" width="32" height="32" fill="#EF4444" stroke="#991B1B" stroke-width="1.5"/>
+        <rect x="92" y="208" width="32" height="32" fill="#22C55E" stroke="#15803D" stroke-width="1.5"/>
+        <rect x="128" y="208" width="32" height="32" fill="#FBBF24" stroke="#92400E" stroke-width="1.5"/>
+        <!-- middle row -->
+        <rect x="72" y="184" width="32" height="26" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.5"/>
+        <rect x="108" y="184" width="32" height="26" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.5"/>
+        <!-- corrugation lines on containers -->
+        <line x1="60" y1="216" x2="84" y2="216" stroke="#991B1B" stroke-width="0.6" opacity="0.5"/>
+        <line x1="60" y1="224" x2="84" y2="224" stroke="#991B1B" stroke-width="0.6" opacity="0.5"/>
+        <line x1="96" y1="216" x2="120" y2="216" stroke="#15803D" stroke-width="0.6" opacity="0.5"/>
+        <line x1="96" y1="224" x2="120" y2="224" stroke="#15803D" stroke-width="0.6" opacity="0.5"/>
+      </g>
+
+      <!-- £ tag floating to indicate trade value -->
+      <g transform="translate(40, 80) rotate(-8)" filter="url(#htr-soft)">
+        <path d="M 0 0 L 50 0 L 64 18 L 50 36 L 0 36 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="52" cy="18" r="3.5" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+        <text x="25" y="25" font-size="16" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+    </svg>
+  `,
+
+  heroMarketFailure: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="hmf-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+        <filter id="hmf-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+      </defs>
+
+      <!-- pastel pad -->
+      <ellipse cx="140" cy="305" rx="100" ry="9" fill="#FEE2E2" opacity="0.6"/>
+
+      <!-- broken price tag (the metaphor: market failure) -->
+      <g filter="url(#hmf-shadow)">
+        <!-- left half (jagged right edge) -->
+        <path d="M 50 130 L 110 130 L 124 152 L 116 156 L 122 162 L 114 168 L 122 174 L 110 180 L 50 180 Z"
+              fill="#FBBF24" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="62" cy="155" r="4" fill="#FFFFFF" stroke="#92400E" stroke-width="1.5"/>
+        <text x="80" y="161" font-size="18" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hmf-shadow)">
+        <!-- right half (jagged left edge, dropped lower & tilted) -->
+        <g transform="translate(140, 200) rotate(20)">
+          <path d="M -16 -22 L -8 -16 L -16 -10 L -8 -4 L -16 2 L 0 8 L 60 8 L 80 -10 L 60 -28 L 0 -28 Z"
+                fill="#FBBF24" stroke="#92400E" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="62" cy="-10" r="4" fill="#FFFFFF" stroke="#92400E" stroke-width="1.5"/>
+        </g>
+      </g>
+
+      <!-- warning triangle floating above -->
+      <g filter="url(#hmf-shadow)">
+        <polygon points="140,60 110,108 170,108" fill="#EF4444" stroke="#991B1B" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="137" y="76" width="6" height="16" fill="#FFFFFF"/>
+        <circle cx="140" cy="100" r="3" fill="#FFFFFF"/>
+      </g>
+
+      <!-- spark/crack lines around break -->
+      <g stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+        <line x1="115" y1="148" x2="128" y2="138"/>
+        <line x1="118" y1="172" x2="132" y2="184"/>
+        <line x1="125" y1="160" x2="138" y2="160"/>
+      </g>
+
+      <!-- floor shadow -->
+      <ellipse cx="140" cy="312" rx="105" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>
   `,
 

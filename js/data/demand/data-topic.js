@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in the law of demand, demand curve shifts, consumer surplus, and derived demand — the foundations of all market analysis.',
   intro: {
-    heroKey: 'heroSupplyDemand',
+    heroKey: 'heroDemand',
     summary: 'Demand is the quantity of a good consumers are willing and able to buy at each possible price. The demand curve is the most used diagram in economics — understanding what moves along it vs what shifts it is non-negotiable.',
     doInThis: 'Work through 7 cards covering the law of demand, the demand curve, movements vs shifts, the determinants of demand, consumer surplus, derived demand, and demand in real markets.',
     outcomes: [

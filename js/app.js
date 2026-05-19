@@ -395,7 +395,7 @@
         : kind === 'elastic'
           ? { dx: 92, dy: 24 }
           : { dx: 60, dy: 58 };
-      const renderMiniChart = (item, tone) => {
+      const renderMiniChart = (item, _tone) => {
         const sE = elastDelta(item.supplyElast || 'normal');
         const dE = elastDelta(item.demandElast || 'normal');
         const Ex = 152, Ey = 96;
@@ -2983,7 +2983,14 @@
       c.keyPoints !== undefined ||
       c.verdict !== undefined ||
       c.comparison !== undefined ||
-      c.table !== undefined ||
+      /* Tables with object-row shape ({label, value, icon?}) belong to
+         the generic 2-column renderer. Tables with array-of-arrays
+         rows (N columns + headers, used by diagnose cards in
+         inflation, sol_wellbeing, macro_conflicts, etc.) stay on the
+         dedicated renderCardDiagnose — generic would render every
+         cell as "undefined" because it reads r.label / r.value. */
+      (c.table !== undefined && c.table.rows && c.table.rows.length > 0 &&
+       !Array.isArray(c.table.rows[0])) ||
       c.conceptBoxes !== undefined ||
       c.diagramPanel !== undefined ||
       c.examples !== undefined ||

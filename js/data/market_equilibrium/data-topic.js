@@ -26,25 +26,36 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'market_equilibrium_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Market equilibrium: the big picture',
-      lede: 'Markets settle where supply meets demand — and the way they get there, and what disturbs them, is the heart of microeconomics.',
-      tip: 'At equilibrium: no unsold stock, no unsatisfied buyers, no tendency for price to change. Above P*: surplus → price falls. Below P*: shortage → price rises.',
-      branches: [
-        { tone: 'green',  label: 'Equilibrium price &amp; quantity', sub: 'The unique P* and Q* where quantity demanded equals quantity supplied — the market clears with no shortage or surplus.' },
-        { tone: 'amber',  label: 'Excess demand &amp; supply',       sub: 'Above P*, surpluses force price down. Below P*, shortages force price up. The self-correcting mechanism that gives the model its power.' },
-        { tone: 'blue',   label: 'Shifts &amp; new equilibria',      sub: 'When D or S moves, P* and Q* move with them. Single and simultaneous shifts produce predictable — or ambiguous — outcomes.' },
-        { tone: 'purple', label: 'Allocative efficiency',            sub: 'At equilibrium, marginal benefit equals marginal cost. Consumer plus producer surplus is maximised — society\'s scarce resources are well used.' },
-        { tone: 'rose',   label: 'When markets fail to clear',       sub: 'Price controls, sticky wages, expectations and bubbles can prevent equilibrium being reached. Disequilibrium is the real world.' }
+      tip: { icon: '💡', tone: 'blue', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity.' },
+      diagramPanel: {
+        diagramKey: 'equilibriumBasic',
+        title: 'Market equilibrium',
+        intro: 'At point E:',
+        bullets: [
+          'quantity demanded equals quantity supplied',
+          'there is no pressure for price to rise or fall',
+          'the equilibrium price clears the market'
+        ]
+      },
+      pairLabel: null,
+      left:  { tone: 'blue',  icon: '🛒', iconStyle: 'circle', label: 'Demand', text: 'The demand curve shows how much consumers are willing and able to buy at each price.' },
+      right: { tone: 'amber', icon: '🏭', iconStyle: 'circle', label: 'Supply', text: 'The supply curve shows how much producers are willing and able to sell at each price.' },
+      flowTitle: 'How the market gets there',
+      flowEmoji: '➡️',
+      flow: [
+        { tone: 'blue',  icon: '🔺', title: 'Price too high', sub: 'Surplus appears. Sellers cut price.' },
+        { tone: 'amber', icon: '🔻', title: 'Price too low',  sub: 'Shortage appears. Sellers raise price.' },
+        { tone: 'green', icon: '🎯', title: 'Price adjusts towards equilibrium', sub: 'Market moves back to balance at E.' }
       ],
-      body: '<strong>Market equilibrium</strong> is the price at which quantity demanded equals quantity supplied — the market "clears" with no unsold stock and no unsatisfied buyers. At equilibrium price P* and quantity Q*:<br>• No buyer is unable to find a seller at that price<br>• No seller has unsold stock at that price<br>• There is no tendency for price to change<br><br>Equilibrium is stable: if disturbed by a price above or below P*, forces automatically push price back toward P*. This stability property is what makes the model so powerful.',
+      conclusion: { title: 'Key takeaway', text: 'Equilibrium is the meeting point of demand and supply — not the point that is automatically best for everyone.' },
       keyTerms: [
         { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied — the market clears.' },
-        { term: 'Market clearing', def: 'The state where all goods produced are sold and all buyers willing to pay the market price can purchase.' },
+        { term: 'Market clearing', def: 'All goods produced are sold and all buyers willing to pay the market price can purchase — no shortage, no surplus.' },
         { term: 'Disequilibrium', def: 'Any price where quantity demanded ≠ quantity supplied — creates pressure for price adjustment.' }
       ],
-      examEdge: 'When drawing equilibrium, mark the intersection of D and S clearly. Draw a vertical dashed line from the intersection to the Q-axis (quantity) and a horizontal dashed line to the P-axis (price). Label the equilibrium price P* and quantity Q*. This technique earns diagram marks reliably.'
+      examEdge: 'Always define equilibrium precisely and refer to both price and quantity. When drawing, label the intersection clearly, then drop dashed lines to both axes labelled P* and Q*. Diagram technique earns marks reliably.'
     },
     {
       id: 'market_equilibrium_2',

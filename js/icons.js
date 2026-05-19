@@ -1374,6 +1374,42 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  equilibriumBasic: `
+    <svg viewBox="0 0 460 320" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="460" height="320" fill="#fff" rx="6"/>
+
+      <!-- Axes -->
+      <line x1="60" y1="270" x2="410" y2="270" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="410,265 410,275 422,270" fill="#334155"/>
+      <line x1="60" y1="50" x2="60" y2="270" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="55,50 65,50 60,38" fill="#334155"/>
+
+      <text x="38" y="46" font-size="13" font-weight="700" fill="#334155">Price</text>
+      <text x="380" y="292" font-size="13" font-weight="700" fill="#334155">Quantity</text>
+      <text x="46" y="286" font-size="12" fill="#64748B">O</text>
+
+      <!-- Demand: top-left to bottom-right (blue) -->
+      <line x1="95" y1="75" x2="390" y2="250" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+      <text x="398" y="254" font-size="15" font-weight="800" fill="#2563EB">D</text>
+
+      <!-- Supply: bottom-left to top-right (orange) -->
+      <line x1="95" y1="250" x2="390" y2="75" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+      <text x="398" y="79" font-size="15" font-weight="800" fill="#D97706">S</text>
+
+      <!-- Dashed guidelines to equilibrium E (intersection at ~242,162) -->
+      <line x1="60" y1="162" x2="242" y2="162" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="242" y1="162" x2="242" y2="270" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+      <!-- Equilibrium point E -->
+      <circle cx="242" cy="162" r="6.5" fill="#0B1426"/>
+      <text x="252" y="156" font-size="15" font-weight="800" fill="#0B1426">E</text>
+
+      <!-- Pe and Qe axis labels -->
+      <text x="36" y="167" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
+      <text x="232" y="288" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
+    </svg>
+  `,
+
   marketInteractive: `
     <svg class="market-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

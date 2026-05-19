@@ -493,11 +493,11 @@
       document.getElementById('app-root').innerHTML = ''
         + '<div class="app theme--land">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
-        +   '<div id="main-content" class="main" tabindex="-1">'
+        +   '<div id="main-content" class="main" tabindex="-1" role="main">'
         +     Shell.renderTopbar({ backUrl: T.backUrl, sessionLabel: T.sessionLabel, topicTitle: T.topic })
         +     '<div class="page">'
         +       renderMain()
-        +       '<aside class="right-rail">' + renderRightRail() + '</aside>'
+        +       '<div class="right-rail">' + renderRightRail() + '</div>'
         +     '</div>'
         +   '</div>'
         + '</div>';

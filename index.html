@@ -533,10 +533,10 @@
   <script src="js/auth-check.js"></script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="wrap">
 
-    <!-- ═══ HEADER ═══ -->
-    <header class="header">
+    <header class="header" role="banner">
       <a href="index.html" class="header__logo" aria-label="econos — Learn it. Link it. Land it.">
         <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it.">
       </a>
@@ -550,7 +550,8 @@
       </div>
     </header>
 
-    <!-- ═══ HERO ═══ -->
+    <main id="main-content" tabindex="-1">
+
     <section class="hero">
       <div class="eyebrow">A-Level Economics · Edexcel A</div>
       <h1>Revision built around how examiners actually mark<span class="dot-p">.</span></h1>
@@ -605,8 +606,9 @@
       </div>
     </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <div class="footer">
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="footer__brand">
         <span class="stops">
           <span class="stop stop--g"></span>
@@ -621,7 +623,7 @@
         <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--yellow);"></span>Link it</div>
         <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--pink);"></span>Land it</div>
       </div>
-    </div>
+    </footer>
 
   </div>
 

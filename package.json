@@ -17,6 +17,7 @@
     "test:e2e:install": "playwright install --with-deps chromium"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
     "@playwright/test": "^1.45.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",

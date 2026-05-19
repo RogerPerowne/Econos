@@ -198,7 +198,7 @@
         + '</div>';
 
       return ''
-        + '<aside class="right-rail">' + Shell.renderStages()
+        + '<div class="right-rail">' + Shell.renderStages()
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title">Topic progress</div>'
         +     '<div class="rail-card__sub">Step 2 of 3: Link</div>'
@@ -215,7 +215,7 @@
         +       '<div class="lc-next__text">You\'ll now answer a real exam-style question with instant AI feedback on analysis, application, evaluation and judgement.</div>'
         +     '</div>'
         +   '</div>'
-        + '</aside>';
+        + '</div>';
     }
 
     /* ── Main render ── */
@@ -223,7 +223,7 @@
       document.getElementById('app-root').innerHTML = ''
         + '<div class="app theme--link">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
-        +   '<div id="main-content" class="main" tabindex="-1">'
+        +   '<div id="main-content" class="main" tabindex="-1" role="main">'
         +     Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('link_intro.html'), backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel, topicTitle: DATA.topic })
         +     '<div class="page">'
         +       '<div class="link-station">'

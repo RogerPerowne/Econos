@@ -59,7 +59,7 @@
       { name: 'Settings',     icon: I.settings, href: '#' }
     ];
     return ''
-      + '<aside class="sidebar">'
+      + '<aside class="sidebar" aria-label="Account and global navigation">'
       +   '<div class="sidebar__brand">'
       +     '<a href="index.html" class="sidebar__logo-link">'
       +       '<img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full">'
@@ -113,7 +113,7 @@
     /* Duplicate streak chip removed (was previously rendered here AND in
        the sidebar). Sidebar wins — it's the prominent gamification card. */
     return ''
-      + '<header class="topbar">'
+      + '<div class="topbar" role="region" aria-label="Session header">'
       +   '<a href="' + (opts.backUrl || 'index.html') + '" class="topbar__back" aria-label="Back to ' + (labelText || 'topics') + '">'
       +     (I.arrowLeft || '') + backLabel
       +   '</a>'
@@ -127,7 +127,7 @@
       +       '<span class="topbar__avatar-chev" aria-hidden="true">' + (I.chevDown || '') + '</span>'
       +     '</button>'
       +   '</div>'
-      + '</header>';
+      + '</div>';
   }
 
   /* ------------------------------------------------------------------
@@ -144,7 +144,7 @@
     return ''
       + '<div class="app' + themeCls + '">'
       +   renderSidebar(opts.sidebar || null)
-      +   '<main id="main-content" class="main" tabindex="-1">'
+      +   '<main id="main-content" class="main" tabindex="-1" role="main">'
       +     (opts.topbar || '')
       +     (opts.body || '')
       +   '</main>'
@@ -240,7 +240,7 @@
       });
     }
 
-    var html = '<aside class="stages" data-shell-injected="1" aria-label="Topic progress">';
+    var html = '<nav class="stages" data-shell-injected="1" aria-label="Topic progress">';
     if (title) {
       html += '<div class="stages__title">' + title + '</div>';
     }
@@ -274,7 +274,7 @@
            +   '</div>'
            + (clickable ? '</a>' : '</div>');
     }
-    html += '</aside>';
+    html += '</nav>';
     return html;
   }
 

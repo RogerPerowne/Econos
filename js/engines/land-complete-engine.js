@@ -191,7 +191,7 @@
         + '<div class="session-dot is-done">' + I.check + '</div>'
         + '</div>';
 
-      return '<aside class="right-rail">' + Shell.renderStages()
+      return '<div class="right-rail">' + Shell.renderStages()
         + '<div class="rail-card">'
         +   '<div class="rail-card__title">Topic progress</div>'
         +   '<div class="rail-card__sub">Step 3 of 3: Land It</div>'
@@ -201,7 +201,7 @@
         +   '<div class="rail-card__title" style="margin-bottom:var(--sp-3)">Sections</div>'
         +   '<div class="cards-list">' + sectionItems + '</div>'
         + '</div>'
-        + '</aside>';
+        + '</div>';
     }
 
     /* ── Full page render ────────────────────────────────── */
@@ -209,7 +209,7 @@
       document.getElementById('app-root').innerHTML = ''
         + '<div class="app theme--land">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
-        +   '<div id="main-content" class="main" tabindex="-1">'
+        +   '<div id="main-content" class="main" tabindex="-1" role="main">'
         +     '<div class="page lc-page">'
         +       '<div class="lc-main">'
         +         renderHero()

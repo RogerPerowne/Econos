@@ -95,16 +95,16 @@
         +     '</div>'
         +   '</div>'
 
-        +   '<aside class="right-rail">'
+        +   '<div class="right-rail">'
         +     Shell.renderStages(T.intro.stages)
-        +   '</aside>'
+        +   '</div>'
         + '</div>';
     }
 
     document.getElementById('app-root').innerHTML = ''
       + '<div class="app theme--link">'
       +   Shell.renderSidebar({ activeNav: 'My topics' })
-      +   '<div id="main-content" class="main" tabindex="-1">'
+      +   '<div id="main-content" class="main" tabindex="-1" role="main">'
       +     Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('topic.html'), sessionLabel: T.sessionLabel, topicTitle: T.topic })
       +     renderPage()
       +   '</div>'

@@ -305,13 +305,13 @@
 
         + '</div>'
 
-        + '<aside class="right-rail">'
+        + '<div class="right-rail">'
         +   Shell.renderStages(T.stages)
         +   '<div class="rail-card" id="land-summary-rail">'
         +     '<div class="rail-card__title">This session</div>'
         +     renderRailSummary()
         +   '</div>'
-        + '</aside>'
+        + '</div>'
 
         + '</div>';
     }
@@ -378,7 +378,7 @@
 
     document.getElementById('app-root').innerHTML = '<div class="app theme--land">'
       + Shell.renderSidebar({ activeNav: 'My topics' })
-      + '<div id="main-content" class="main" tabindex="-1">'
+      + '<div id="main-content" class="main" tabindex="-1" role="main">'
       +   Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('topic.html'), sessionLabel: T.sessionLabel, topicTitle: T.topic })
       +   renderPage()
       + '</div>'

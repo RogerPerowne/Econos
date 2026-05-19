@@ -47,7 +47,7 @@
       root.innerHTML = ''
         + '<div class="app theme--link">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
-        +   '<div id="main-content" class="main" tabindex="-1">'
+        +   '<div id="main-content" class="main" tabindex="-1" role="main">'
         +     Shell.renderTopbar({ backUrl: DATA.backUrl, backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel, topicTitle: DATA.topic })
         +     '<div class="page">'
         +       '<div class="link-station">' + renderStation() + '</div>'
@@ -227,7 +227,7 @@
         + '</div>';
 
       return ''
-        + '<aside class="right-rail">' + Shell.renderStages()
+        + '<div class="right-rail">' + Shell.renderStages()
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title">Topic progress</div>'
         +     '<div class="rail-card__sub">Step 2 of 3: Link</div>'
@@ -245,7 +245,7 @@
                 }).join('')
         +     '</div>'
         +   '</div>'
-        + '</aside>';
+        + '</div>';
     }
 
     /* ── Footer ── */

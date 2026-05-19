@@ -75,7 +75,7 @@
         + '</div>';
 
       var rail = ''
-        + '<aside class="right-rail">'
+        + '<div class="right-rail">'
         +   Shell.renderStages()
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title">Topic progress</div>'
@@ -96,7 +96,7 @@
         +     '</div>'
         +     '<button class="deck-download__btn">📥 Download PDF</button>'
         +   '</div>'
-        + '</aside>';
+        + '</div>';
 
       var intro = ''
         + '<div id="quiz-root">'
@@ -116,7 +116,7 @@
       var page = '<div class="page">' + intro + rail + '</div>';
 
       document.getElementById('app-root').innerHTML =
-        '<div class="app">' + sidebar + '<div id="main-content" class="main" tabindex="-1">' + topbar + page + '</div></div>';
+        '<div class="app">' + sidebar + '<div id="main-content" class="main" tabindex="-1" role="main">' + topbar + page + '</div></div>';
 
       document.getElementById('quiz-start').addEventListener('click', function () {
         window.bootQuiz(Q.questions, {

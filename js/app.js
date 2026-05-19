@@ -18,7 +18,7 @@
     return `
       <div class="app">
         ${renderSidebar()}
-        <div id="main-content" class="main" tabindex="-1">
+        <div id="main-content" class="main" tabindex="-1" role="main">
           ${renderTopbar()}
           ${inner}
         </div>
@@ -78,7 +78,7 @@
   function renderTopbar() {
     if (currentView === 'intro') {
       return `
-        <header class="topbar">
+        <div class="topbar" role="region" aria-label="Session header">
           <a href="index.html" class="topbar__back">
             ${I.arrowLeft}
             <span>Back to dashboard</span>
@@ -94,11 +94,11 @@
               <span class="topbar__avatar-chev">${I.chevDown}</span>
             </div>
           </div>
-        </header>
+        </div>
       `;
     } else {
       return `
-        <header class="topbar">
+        <div class="topbar" role="region" aria-label="Session header">
           <a href="#" class="topbar__back" data-action="back-to-intro">
             ${I.arrowLeft}
           </a>
@@ -116,7 +116,7 @@
               <span class="topbar__avatar-chev">${I.chevDown}</span>
             </div>
           </div>
-        </header>
+        </div>
       `;
     }
   }
@@ -909,9 +909,9 @@
           </div>
         </div>
 
-        <aside class="right-rail">
+        <div class="right-rail">
           ${stagesWidget}
-        </aside>
+        </div>
       </div>
     `;
   }
@@ -2781,10 +2781,10 @@
           </div>
         </div>
 
-        <aside class="right-rail">
+        <div class="right-rail">
           ${Shell.renderStages()}
           ${renderCardsRail(idx)}
-        </aside>
+        </div>
       </div>
     `;
   }

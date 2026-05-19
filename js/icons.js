@@ -11637,4 +11637,60 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ─── Rationing scarcity diagram (Demand 1,200 > Supply 500) ─── */
+  priceRationingScarcity: `
+    <svg viewBox="0 0 700 140" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
+      <!-- Left: amber ticket badge + summary -->
+      <g transform="translate(28, 36)">
+        <circle cx="26" cy="32" r="24" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <g transform="translate(10, 22)" fill="#F59E0B">
+          <path d="M 0,4 L 4,0 L 28,0 Q 32,0 32,4 L 32,8 Q 28,8 28,12 Q 28,16 32,16 L 32,20 Q 32,24 28,24 L 4,24 L 0,20 L 0,16 L 4,12 L 0,8 Z"/>
+        </g>
+        <text x="64" y="28" font-size="15" font-weight="800" fill="#0B1426">500 tickets available /</text>
+        <text x="64" y="48" font-size="15" font-weight="800" fill="#0B1426">1,200 people want them</text>
+      </g>
+
+      <!-- Center: Demand crowd -->
+      <g transform="translate(308, 30)">
+        <text x="55" y="0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#475569">Demand (1,200)</text>
+        <!-- 12 person icons (2 rows of 6) -->
+        <g transform="translate(8, 12)" fill="#10B981">
+          <g transform="translate(0,0)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(15,0)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(30,0)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(45,0)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(60,0)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(75,0)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(0,24)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(15,24)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(30,24)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(45,24)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(60,24)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+          <g transform="translate(75,24)"><circle cx="5" cy="3" r="2.8"/><path d="M 1,7 Q 5,9 9,7 L 9,18 L 1,18 Z"/></g>
+        </g>
+      </g>
+
+      <!-- > comparator -->
+      <text x="442" y="82" text-anchor="middle" font-size="40" font-weight="900" fill="#94A3B8">&gt;</text>
+
+      <!-- Right: Supply -->
+      <g transform="translate(482, 30)">
+        <text x="100" y="0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#475569">Supply (500)</text>
+        <!-- 3 blue tickets -->
+        <g transform="translate(12, 18)" fill="#3B82F6">
+          <path d="M 0,4 Q 0,0 4,0 L 44,0 Q 48,0 48,4 L 48,12 Q 44,12 44,16 Q 44,20 48,20 L 48,28 Q 48,32 44,32 L 4,32 Q 0,32 0,28 L 0,20 Q 4,20 4,16 Q 4,12 0,12 Z"/>
+        </g>
+        <line x1="36" y1="24" x2="36" y2="44" stroke="#1E40AF" stroke-width="1" stroke-dasharray="2,2"/>
+        <g transform="translate(70, 18)" fill="#3B82F6">
+          <path d="M 0,4 Q 0,0 4,0 L 44,0 Q 48,0 48,4 L 48,12 Q 44,12 44,16 Q 44,20 48,20 L 48,28 Q 48,32 44,32 L 4,32 Q 0,32 0,28 L 0,20 Q 4,20 4,16 Q 4,12 0,12 Z"/>
+        </g>
+        <line x1="94" y1="24" x2="94" y2="44" stroke="#1E40AF" stroke-width="1" stroke-dasharray="2,2"/>
+        <g transform="translate(128, 18)" fill="#3B82F6">
+          <path d="M 0,4 Q 0,0 4,0 L 44,0 Q 48,0 48,4 L 48,12 Q 44,12 44,16 Q 44,20 48,20 L 48,28 Q 48,32 44,32 L 4,32 Q 0,32 0,28 L 0,20 Q 4,20 4,16 Q 4,12 0,12 Z"/>
+        </g>
+        <line x1="152" y1="24" x2="152" y2="44" stroke="#1E40AF" stroke-width="1" stroke-dasharray="2,2"/>
+      </g>
+    </svg>
+  `,
+
 };

@@ -119,15 +119,48 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'price_functions_3',
-      template: 'framing',
-      title: 'Prices as a Rationing Device',
-      body: 'When supply is scarce relative to demand, prices ration access to the available goods:<br><br>• Price rises until only those willing and able to pay the higher price remain in the market<br>• Goods flow to those who value them most highly (as expressed by willingness to pay)<br>• No government queuing system or central authority is needed<br><br><strong>Criticism of the rationing function:</strong> willingness to pay reflects both value AND income. Rich consumers outbid poor ones even if the poor need the good more urgently. The price mechanism rations by purchasing power, not need — a major objection to pure market allocation of goods like healthcare, education, and housing.',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Prices as a rationing device',
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today — it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.'
+      },
+      diagramKey: 'priceRationingScarcity',
+      flowTitle: 'How rationing works',
+      flowEmoji: '⚖️',
+      flow: [
+        { tone: 'green', icon: '👥', title: 'Shortage',                          sub: 'More people want tickets than are available.' },
+        { tone: 'amber', icon: '📈', title: 'Price rises',                        sub: 'Higher prices signal scarcity and adjust the price.' },
+        { tone: 'blue',  icon: '🚪', title: 'Some buyers drop out',               sub: 'Those not willing or able to pay the higher price choose not to buy.' },
+        { tone: 'green', icon: '🎫', title: 'Remaining buyers obtain the tickets', sub: 'Tickets go to those willing and able to pay the market price.' }
+      ],
+      note: {
+        icon: '⚖️', tone: 'blue', head: 'Central idea',
+        text: 'Prices ration scarce goods. They decide who gets what.'
+      },
+      causesStyle: 'plain-white',
+      causesEmoji: '🔍',
+      causesLabel: 'Three things to know',
+      causes: [
+        { tone: 'green', icon: '❓', head: 'Why it happens',       body: 'Demand exceeds supply. Price rises to balance the quantity people want to buy with the quantity available.' },
+        { tone: 'amber', icon: '🎯', head: 'What it achieves',     body: 'It prevents queues and chaos, allocates goods quickly, and encourages efficient use of scarce resources.' },
+        { tone: 'blue',  icon: '⚠️', head: 'What the drawback is', body: 'People with lower incomes may be excluded even if they need or value the good a lot.' }
+      ],
+      causes2Style: 'plain-white',
+      causes2Emoji: '🌍',
+      causes2Label: 'Real-world examples',
+      causes2: [
+        { tone: 'green', icon: '🎪', head: 'Festival tickets',      body: 'Higher prices mean tickets go to those who value the experience most.' },
+        { tone: 'amber', icon: '🚆', head: 'Peak-time train fares', body: 'Higher fares at busy times reduce crowding and manage limited seats.' },
+        { tone: 'blue',  icon: '🏠', head: 'Rental housing',        body: 'Higher rents ration limited homes to those willing and able to pay.' }
+      ],
       keyTerms: [
-        { term: 'Rationing function', def: 'Prices allocate scarce goods among competing buyers by excluding those unwilling or unable to pay the market price.' },
-        { term: 'Willingness to pay', def: 'The maximum price a buyer would offer for a unit — combines both need and income.' },
+        { term: 'Rationing function',  def: 'Prices allocate scarce goods among competing buyers by excluding those unwilling or unable to pay the market price.' },
+        { term: 'Willingness to pay',  def: 'The maximum price a buyer would offer for a unit — combines both need and income.' },
         { term: 'Non-market rationing', def: 'Alternatives to price rationing: queuing (NHS), vouchers, lottery, merit assessment — used when price rationing produces inequitable outcomes.' }
       ],
-      examEdge: 'The rationing function is why economists argue against rent controls and price ceilings: if price cannot ration, queuing and shortage result — less efficient and often still inequitable. The counter-argument: price rationing excludes low-income consumers regardless of need — normative question about equity vs efficiency.'
+      examEdge: 'The price mechanism rations <strong>efficiently in one sense</strong> — it matches supply and demand quickly and uses resources well. But it is <strong>not always fair</strong>. In exams, mention both <strong>efficiency</strong> (good use of scarce resources) and <strong>equity</strong> (fairness and access).'
     },
     {
       id: 'price_functions_4',

@@ -69,31 +69,6 @@
     /* ── right rail ──────────────────────────────────────── */
 
     function renderRightRail() {
-      var stages = [
-        { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-        { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
-        { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                    }
-      ];
-
-      var stagesHtml = stages.map(function (s) {
-        var cls = 'stage'
-          + (s.state === 'done'    ? ' is-done'    : '')
-          + (s.state === 'current' ? ' is-current' : '');
-        var numHtml = s.state === 'done' ? I.check : s.num;
-        var chipHtml = s.state === 'done'
-          ? '<span class="stage__chip stage__chip--done">Done</span>'
-          : (s.state === 'current' ? '<span class="stage__chip">Current</span>' : '');
-        var inner = '<div class="stage__num">' + numHtml + '</div>'
-          + '<div class="stage__body">'
-          +   '<div class="stage__name">' + s.name + '</div>'
-          +   '<div class="stage__sub">' + s.sub + '</div>'
-          +   chipHtml
-          + '</div>';
-        return s.href && s.state !== 'current'
-          ? '<a href="' + s.href + '" class="' + cls + '">' + inner + '</a>'
-          : '<div class="' + cls + '">' + inner + '</div>';
-      }).join('');
-
       var mins = T.question.suggestedMinutes;
       var minsStr = mins < 60 ? mins + ' min' : Math.floor(mins / 60) + 'h' + (mins % 60 > 0 ? ' ' + (mins % 60) + 'm' : '');
 
@@ -123,10 +98,7 @@
           + '</div>';
       }
 
-      return '<div class="stages">'
-        +   '<div class="stages__title">Your Land It progress</div>'
-        +   stagesHtml
-        + '</div>'
+      return Shell.renderStages(['done', 'done', 'current'], 'Your Land It progress')
         + thisSectionHtml
         + strongHtml;
     }

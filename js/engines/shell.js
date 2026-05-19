@@ -152,17 +152,17 @@
   }
 
   /* ──────────────────────────────────────────────────────────────
-     Auto-inject the 3-stage progress widget
+     3-stage Learn/Link/Land progress widget
      ─────────────────────────────────────────────────────────────
-     The .right-rail on station pages (Link context/chain/etc, Land
-     section A/B/C, Quiz) renders a "Topic progress" + .session-dots
-     horizontal strip — different chrome from the cover pages which
-     show vertical Learn-it / Link-it / Land-it cards. The user wants
-     the cards on every page so the navigation is consistent.
+     Public API:  Shell.renderStages([statesOverride])
 
-     Approach: if a .right-rail loses the .stages widget after a
-     render, build one from the page's URL (learn/link/land/quiz)
-     and prepend it. Re-runs whenever the engine mutates the rail.
+     Each engine that owns a .right-rail calls Shell.renderStages()
+     itself — single source of truth for the widget HTML, and no
+     MutationObserver fallback in shell.js (used to inject after the
+     engine rendered; now engines do it directly).
+
+     statesOverride (optional) — explicit ['done'|'current'|'open', x3]
+     to bypass the URL-derived defaults.
      ────────────────────────────────────────────────────────────── */
   function deriveStageState() {
     var path = location.pathname.toLowerCase();
@@ -186,57 +186,96 @@
     }
     return ['open', 'open', 'open'];
   }
-  function buildStagesWidget() {
+  /* Normalise state aliases. 'open' is the design-tool name; the
+     stylesheet uses '.is-available'. Accept either, emit the latter. */
+  function normaliseState(s) {
+    if (s === 'open') return 'available';
+    return s || 'available';
+  }
+  function chipFor(state) {
+    if (state === 'done')      return { text: 'Done',   modifier: 'stage__chip--done' };
+    if (state === 'current')   return { text: 'Current', modifier: '' };
+    if (state === 'available') return { text: 'Open →', modifier: 'stage__chip--available' };
+    if (state === 'locked')    return { text: 'Locked', modifier: 'stage__chip--locked' };
+    return { text: state, modifier: '' };
+  }
+
+  /* Shell.renderStages([spec], [title])
+
+     spec — one of:
+       • omitted        → URL-derived states + canonical labels
+       • [string,…]     → state strings (length 3, order Learn/Link/Land)
+       • [object,…]     → full stage objects { state, num?, name?, sub?, href? };
+                          missing fields fall back to canonical defaults.
+
+     title — optional string rendered as <div class="stages__title">…</div>
+             before the stages (matches the land-section-A/B/C chrome). */
+  function renderStages(spec, title) {
     var topic = '';
     try {
       topic = new URLSearchParams(location.search).get('topic') || '';
     } catch (e) {}
     var topicQs = topic ? '?topic=' + encodeURIComponent(topic) : '';
-    var states = deriveStageState();
     var I = getIcons();
-    var stages = [
+    var DEFAULTS = [
       { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', href: 'learn.html' + topicQs },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', href: 'link.html'  + topicQs },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    href: 'land.html'  + topicQs }
     ];
+
+    /* Resolve spec → array of merged stage objects with state. */
+    var stages;
+    if (!spec) {
+      var auto = deriveStageState();
+      stages = DEFAULTS.map(function (d, i) {
+        return Object.assign({}, d, { state: auto[i] });
+      });
+    } else if (typeof spec[0] === 'string') {
+      stages = DEFAULTS.map(function (d, i) {
+        return Object.assign({}, d, { state: spec[i] });
+      });
+    } else {
+      stages = DEFAULTS.map(function (d, i) {
+        return Object.assign({}, d, spec[i] || {});
+      });
+    }
+
     var html = '<aside class="stages" data-shell-injected="1" aria-label="Topic progress">';
+    if (title) {
+      html += '<div class="stages__title">' + title + '</div>';
+    }
     for (var i = 0; i < stages.length; i++) {
       var s = stages[i];
-      var state = states[i] || 'open';
-      var cls = 'stage' + (state === 'done' ? ' is-done' : state === 'current' ? ' is-current' : '');
-      // current stage = non-clickable (you're already there); others = links
+      var state = normaliseState(s.state);
+      var cls = 'stage'
+             + (state === 'done'      ? ' is-done'      : '')
+             + (state === 'current'   ? ' is-current'   : '')
+             + (state === 'available' ? ' is-available' : '')
+             + (state === 'locked'    ? ' is-locked'    : '');
       var isCurrent = state === 'current';
+      var isLocked  = state === 'locked';
+      var clickable = !isCurrent && !isLocked;
       var ariaCurrent = isCurrent ? ' aria-current="step"' : '';
-      var openTag = isCurrent
-        ? '<div class="' + cls + '"' + ariaCurrent
-        : '<a href="' + s.href + '" class="' + cls + '"';
-      var numContent = state === 'done' ? (I.check || '✓') : String(s.num);
-      var chipText = state === 'done' ? 'Done' : state === 'current' ? 'Current' : 'Open';
-      var ariaLabel = ' aria-label="' + s.name + ' — ' + chipText + '"';
+      var openTag = clickable
+        ? '<a href="' + s.href + '" class="' + cls + '"'
+        : '<div class="' + cls + '"' + ariaCurrent;
+      var numContent = state === 'done'
+        ? (I.check || '✓')
+        : (state === 'locked' ? (I.lock || '🔒') : String(s.num));
+      var chip = chipFor(state);
+      var chipCls = 'stage__chip' + (chip.modifier ? ' ' + chip.modifier : '');
+      var ariaLabel = ' aria-label="' + s.name + ' — ' + chip.text + '"';
       html += openTag + ' data-stage-pos="' + (i + 1) + '"' + ariaLabel + '>'
            +   '<div class="stage__num" aria-hidden="true">' + numContent + '</div>'
            +   '<div class="stage__body">'
            +     '<div class="stage__name">' + s.name + '</div>'
            +     '<div class="stage__sub">' + s.sub + '</div>'
-           +     '<span class="stage__chip">' + chipText + '</span>'
+           +     '<span class="' + chipCls + '">' + chip.text + '</span>'
            +   '</div>'
-           + (isCurrent ? '</div>' : '</a>');
+           + (clickable ? '</a>' : '</div>');
     }
     html += '</aside>';
     return html;
-  }
-  function ensureStagesIn(rail) {
-    if (!rail) return;
-    if (rail.querySelector(':scope > .stages')) return;
-    var widget = document.createElement('div');
-    widget.innerHTML = buildStagesWidget();
-    rail.insertBefore(widget.firstChild, rail.firstChild);
-    // Tag positions (the MutationObserver further down handles fresh stages too)
-    tagStages(rail);
-  }
-  function ensureStagesEverywhere(root) {
-    var rails = root.querySelectorAll ? root.querySelectorAll('.right-rail') : [];
-    rails.forEach(ensureStagesIn);
   }
 
   /* ------------------------------------------------------------------
@@ -267,57 +306,19 @@
     renderSidebar:   renderSidebar,
     renderTopbar:    renderTopbar,
     renderApp:       renderApp,
+    renderStages:    renderStages,
     renderMobileNav: renderMobileNav,
     mountMobileNav:  mountMobileNav
   };
 
-  /* ──────────────────────────────────────────────────────────────
-     Stage position auto-tagger
-     ─────────────────────────────────────────────────────────────
-     Engine code renders <a class="stage"> elements directly into
-     #app-root. Some engines wrap them after a <div class="stages__title">
-     header, which makes :nth-child(N) selectors misalign.
-
-     This MutationObserver scans every .stages container after a render
-     and stamps each .stage child with data-stage-pos="1|2|3" so the
-     polish-v3 CSS can target the LEARN / LINK / LAND stages by
-     position-among-stages regardless of any sibling title nodes.
-     ────────────────────────────────────────────────────────────── */
-  function tagStages(scope) {
-    var containers = scope.querySelectorAll
-      ? scope.querySelectorAll('.stages')
-      : [];
-    containers.forEach(function (c) {
-      var stages = c.querySelectorAll(':scope > .stage');
-      stages.forEach(function (s, i) {
-        s.setAttribute('data-stage-pos', String(i + 1));
-      });
-    });
-  }
-  function bootStageTagger() {
-    var root = document.getElementById('app-root') || document.body;
+  /* Mobile nav is the one bit of chrome shell.js still auto-injects,
+     since each shell HTML body would otherwise repeat the same block. */
+  function bootShell() {
     mountMobileNav();
-    ensureStagesEverywhere(root);
-    tagStages(root);
-    if ('MutationObserver' in window) {
-      var mo = new MutationObserver(function (mutations) {
-        for (var i = 0; i < mutations.length; i++) {
-          var m = mutations[i];
-          for (var j = 0; j < m.addedNodes.length; j++) {
-            var n = m.addedNodes[j];
-            if (n.nodeType === 1) {
-              ensureStagesEverywhere(n);
-              tagStages(n);
-            }
-          }
-        }
-      });
-      mo.observe(root, { childList: true, subtree: true });
-    }
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bootStageTagger);
+    document.addEventListener('DOMContentLoaded', bootShell);
   } else {
-    bootStageTagger();
+    bootShell();
   }
 })();

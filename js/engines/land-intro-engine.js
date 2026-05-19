@@ -148,30 +148,6 @@
         + '</header>';
     }
 
-    /* ── right-rail stages ───────────────────────────────── */
-
-    function renderStages() {
-      return T.stages.map(function (s) {
-        var cls = 'stage'
-          + (s.state === 'current'   ? ' is-current'   : '')
-          + (s.state === 'available' ? ' is-available' : '')
-          + (s.state === 'done'      ? ' is-done'      : '')
-          + (s.state === 'locked'    ? ' is-locked'    : '');
-        var num = s.state === 'locked' ? I.lock : (s.state === 'done' ? I.check : s.num);
-        var inner = '<div class="stage__num">' + num + '</div>'
-          + '<div class="stage__body">'
-          +   '<div class="stage__name">' + s.name + '</div>'
-          +   '<div class="stage__sub">'  + s.sub  + '</div>'
-          +   (s.state === 'current'   ? '<span class="stage__chip">Current</span>' : '')
-          +   (s.state === 'available' ? '<span class="stage__chip stage__chip--available">Open →</span>' : '')
-          +   (s.state === 'done'      ? '<span class="stage__chip stage__chip--done">Done</span>' : '')
-          + '</div>';
-        return s.href && s.state !== 'locked' && s.state !== 'current'
-          ? '<a href="' + s.href + '" class="' + cls + '">' + inner + '</a>'
-          : '<div class="' + cls + '">'    + inner + '</div>';
-      }).join('');
-    }
-
     /* ── rail summary (partial re-render target) ─────────── */
 
     function renderRailSummary() {
@@ -379,7 +355,7 @@
         + '</div>'
 
         + '<aside class="right-rail">'
-        +   '<div class="stages">' + renderStages() + '</div>'
+        +   Shell.renderStages(T.stages)
         +   '<div class="rail-card" id="land-summary-rail">'
         +     '<div class="rail-card__title">This session</div>'
         +     renderRailSummary()

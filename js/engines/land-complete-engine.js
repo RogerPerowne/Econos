@@ -223,7 +223,7 @@
         + '<div class="session-dot is-done">' + I.check + '</div>'
         + '</div>';
 
-      return '<aside class="right-rail">'
+      return '<aside class="right-rail">' + Shell.renderStages()
         + '<div class="rail-card">'
         +   '<div class="rail-card__title">Topic progress</div>'
         +   '<div class="rail-card__sub">Step 3 of 3: Land It</div>'

@@ -19,7 +19,11 @@
     "Shell": "readonly",
     "LinkRouter": "readonly",
     "LandRouter": "readonly",
-    "Logger": "readonly"
+    "Logger": "readonly",
+    "EconosPdf": "readonly",
+    "EconosElasticityExplorer": "readonly",
+    "EconosPesExplorer": "readonly",
+    "EconosYedXedExplorer": "readonly"
   },
   "rules": {
     "no-undef": "error",

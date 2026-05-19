@@ -692,7 +692,7 @@
         + '</div>';
 
       return ''
-        + '<aside class="right-rail">'
+        + '<aside class="right-rail">' + Shell.renderStages()
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title">Topic progress</div>'
         +     '<div class="rail-card__sub">Step 2 of 3: Link</div>'

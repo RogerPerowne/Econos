@@ -842,24 +842,11 @@
      ============================================================ */
 
   function renderIntro() {
-    const stages = T.intro.stages.map(s => {
-      const cls = 'stage'
-                + (s.state === 'current'   ? ' is-current'   : '')
-                + (s.state === 'available' ? ' is-available' : '')
-                + (s.state === 'locked'    ? ' is-locked'    : '');
-      const inner = `
-        <div class="stage__num">${s.state === 'locked' ? I.lock : s.num}</div>
-        <div class="stage__body">
-          <div class="stage__name">${s.name}</div>
-          <div class="stage__sub">${s.sub}</div>
-          ${s.state === 'current' ? '<span class="stage__chip">Current</span>' : ''}
-          ${s.state === 'available' ? '<span class="stage__chip stage__chip--available">Open →</span>' : ''}
-        </div>
-      `;
-      return s.href && s.state !== 'locked'
-        ? `<a href="${s.href}" class="${cls}">${inner}</a>`
-        : `<div class="${cls}">${inner}</div>`;
-    }).join('');
+    /* Use Shell.renderStages — single source of truth for the
+       Learn / Link / Land 3-stage progress widget. Pass T.intro.stages
+       directly so per-topic copy overrides (e.g. "Recap the three causes")
+       carry through. */
+    const stagesWidget = Shell.renderStages(T.intro.stages);
 
     return `
       <div class="page">
@@ -923,7 +910,7 @@
         </div>
 
         <aside class="right-rail">
-          <div class="stages">${stages}</div>
+          ${stagesWidget}
         </aside>
       </div>
     `;
@@ -2795,6 +2782,7 @@
         </div>
 
         <aside class="right-rail">
+          ${Shell.renderStages()}
           ${renderCardsRail(idx)}
         </aside>
       </div>

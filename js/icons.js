@@ -1374,6 +1374,52 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  allocativeEfficiencyDiagram: `
+    <svg viewBox="0 0 480 340" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="480" height="340" fill="#fff" rx="6"/>
+
+      <!-- Axes -->
+      <line x1="60" y1="290" x2="420" y2="290" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="420,285 420,295 432,290" fill="#334155"/>
+      <line x1="60" y1="50" x2="60" y2="290" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="55,50 65,50 60,38" fill="#334155"/>
+      <text x="38" y="46" font-size="13" font-weight="700" fill="#334155">Price</text>
+      <text x="385" y="312" font-size="13" font-weight="700" fill="#334155">Quantity</text>
+      <text x="46" y="306" font-size="12" fill="#64748B">O</text>
+
+      <!-- Consumer surplus (blue triangle above Pe, under MB curve) -->
+      <polygon points="60,75 60,170 245,170" fill="#3B82F6" fill-opacity="0.18" stroke="none"/>
+      <!-- Producer surplus (orange triangle below Pe, above MC curve) -->
+      <polygon points="60,170 245,170 60,265" fill="#F59E0B" fill-opacity="0.18" stroke="none"/>
+
+      <!-- MB (demand, downward) -->
+      <line x1="90" y1="75" x2="400" y2="265" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+      <text x="408" y="269" font-size="14" font-weight="800" fill="#2563EB">MB</text>
+
+      <!-- MC (supply, upward) -->
+      <line x1="90" y1="265" x2="400" y2="75" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+      <text x="408" y="79" font-size="14" font-weight="800" fill="#D97706">MC</text>
+
+      <!-- Equilibrium dashed guides -->
+      <line x1="60" y1="170" x2="245" y2="170" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="245" y1="170" x2="245" y2="290" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+      <!-- E point -->
+      <circle cx="245" cy="170" r="6" fill="#0B1426"/>
+      <text x="255" y="164" font-size="14" font-weight="800" fill="#0B1426">E</text>
+
+      <!-- Surplus labels -->
+      <text x="125" y="125" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">Consumer</text>
+      <text x="125" y="139" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">surplus</text>
+      <text x="125" y="210" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Producer</text>
+      <text x="125" y="224" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">surplus</text>
+
+      <!-- Axis equilibrium labels -->
+      <text x="36" y="174" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
+      <text x="237" y="308" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
+    </svg>
+  `,
+
   equilibriumBasic: `
     <svg viewBox="0 0 460 320" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="460" height="320" fill="#fff" rx="6"/>

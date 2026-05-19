@@ -230,6 +230,7 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_6',
       template: 'cause',
       title: 'When Markets Fail to Reach Equilibrium',
+      tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly — controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Obstacles to market clearing',
@@ -243,15 +244,77 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_7',
-      template: 'framing',
       title: 'Equilibrium in Different Market Contexts',
-      body: '<strong>Housing:</strong> equilibrium disrupted by planning restrictions (supply can\'t adjust) → persistent shortage → rapidly rising prices. Solution requires supply-side reforms (build more) not just demand-side management.<br><br><strong>Labour market:</strong> wage = price; employment = quantity. Equilibrium wage clears the labour market. If minimum wage is set above equilibrium, excess supply = unemployment. Monopsony power can keep wages below competitive equilibrium — minimum wage then increases both wages AND employment.<br><br><strong>Financial markets:</strong> equilibrium disrupted by speculation — prices diverge from fundamental value; bubbles form. Asset markets are prone to self-reinforcing disequilibrium (Minsky moments).',
-      keyTerms: [
-        { term: 'Equilibrium wage', def: 'The wage at which labour supply equals labour demand — the labour market clears.' },
-        { term: 'Asset bubble', def: 'Market price rising far above fundamental value — driven by expectations of further price rises; unsustainable.' },
-        { term: 'Minsky moment', def: 'The point when a debt-driven asset bubble collapses as borrowers can no longer service debts — named after economist Hyman Minsky.' }
+      tip: { icon: '💡', tone: 'blue', text: 'The same demand-and-supply logic applies across many markets, but the speed of adjustment and the wider effects can differ.' },
+      marketGrid: [
+        {
+          tone: 'green',
+          title: 'Housing market',
+          icon: '🏠',
+          priceLabel: 'Price',
+          priceTick: 'Pe',
+          supplyLabel: 'S',
+          demandLabel: 'D',
+          supplyElast: 'inelastic',
+          demandElast: 'normal',
+          body: 'Equilibrium rent or house price. Supply responds slowly (new homes take time), so shortages are common in the short run.'
+        },
+        {
+          tone: 'blue',
+          title: 'Labour market',
+          icon: '👥',
+          priceLabel: 'Wage',
+          priceTick: 'We',
+          supplyLabel: 'S<tspan font-size="8" baseline-shift="sub">L</tspan>',
+          demandLabel: 'D<tspan font-size="8" baseline-shift="sub">L</tspan>',
+          supplyElast: 'normal',
+          demandElast: 'normal',
+          body: 'Equilibrium wage where labour demand meets labour supply. Higher wages attract more workers; lower wages reduce labour supplied.'
+        },
+        {
+          tone: 'amber',
+          title: 'Commodity market',
+          icon: '🛢️',
+          priceLabel: 'Price',
+          priceTick: 'Pe',
+          supplyLabel: 'S',
+          demandLabel: 'D',
+          supplyElast: 'inelastic',
+          demandElast: 'inelastic',
+          body: 'Equilibrium price for oil, wheat or coffee. Supply and demand can shift sharply due to weather, seasonal changes or geopolitical shocks.'
+        },
+        {
+          tone: 'purple',
+          title: 'Foreign exchange or ticket market',
+          icon: '🌐',
+          priceLabel: 'Exchange rate / Price',
+          priceTick: 'Pe',
+          supplyLabel: 'S',
+          demandLabel: 'D',
+          supplyElast: 'elastic',
+          demandElast: 'elastic',
+          body: 'Equilibrium exchange rate or event ticket price. Demand can change very quickly with expectations, news or popularity.'
+        }
       ],
-      examEdge: 'Context application is rewarded in Edexcel Paper 1. If the question is about housing, apply supply/demand to housing specifically — mention planning restrictions, Help to Buy, interest rates. Don\'t write a generic supply/demand essay — tailor it to the extract context.',
+      left: {
+        tone: 'slate',
+        label: 'What changes across contexts?',
+        checks: [
+          { term: 'Speed of adjustment', body: 'Some markets adjust slowly (e.g. housing), others quickly (e.g. tickets).' },
+          { term: 'Elasticity', body: 'The responsiveness of demand and supply influences outcomes.' },
+          { term: 'Government intervention', body: 'Taxes, subsidies, price controls or regulation can affect equilibrium.' },
+          { term: 'Information', body: 'How quickly and clearly buyers and sellers get information varies.' }
+        ]
+      },
+      right: {
+        tone: 'amber',
+        icon: '💡',
+        label: 'One core idea',
+        text: 'Equilibrium is still where demand equals supply. However, the real-world outcome may be affected by time lags, policy and market structure.'
+      },
+      pairLabel: null,
+      conclusion: { title: 'Key takeaway', text: 'Equilibrium is a flexible framework for analysing many markets. The logic is the same, but the context shapes how it plays out.' },
+      examEdge: 'Context application is rewarded in Edexcel Paper 1. Use market-specific examples and language — for housing, mention planning restrictions, Help to Buy, interest rates; for labour, monopsony and minimum wage; for FX, expectations and capital flows. Don\'t write a generic supply/demand essay — tailor it to the extract.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

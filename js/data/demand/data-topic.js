@@ -155,30 +155,23 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '🛒', title: 'Budget supermarkets',     body: 'Demand rises when incomes fall as people trade down to cheaper options. A rise in incomes can shift demand back.' },
         { tone: 'green', icon: '📺', title: 'Streaming subscriptions', body: 'Many close substitutes mean consumers can switch easily, making demand more elastic.' }
       ],
-      pairLabel: null,
-      left: {
-        tone: 'green',
-        style: 'plain-white',
-        number: 5,
-        label: 'What economists look for',
-        checks: [
-          { term: 'Price sensitivity',     body: 'how much demand changes when price changes.' },
-          { term: 'Substitutes',           body: 'more substitutes usually mean more elastic demand.' },
-          { term: 'Market data',           body: 'sales, prices and volumes reveal real behaviour.' },
-          { term: 'Seasonality',           body: 'demand often follows predictable patterns.' },
-          { term: 'Consumer expectations', body: 'future beliefs influence today\'s demand.' }
-        ]
-      },
-      right: {
-        tone: 'slate',
-        style: 'plain-white',
-        centeredLabel: true,
-        label: 'Demand can shift in real time',
-        scenarios: [
-          { icon: '☀️🍦', arrow: 'right', text: 'Summer heatwave? Demand shifts right for ice cream.' },
-          { icon: '🌧️🍦', arrow: 'left',  text: 'Fad fades or trend ends? Demand shifts left.' }
-        ]
-      },
+      causesStyle: 'plain-white',
+      causesEmoji: '🔍',
+      causesLabel: 'What economists look for',
+      causes: [
+        { tone: 'blue',   icon: '🏷️', head: 'Price sensitivity',     body: 'How much demand changes when price changes.' },
+        { tone: 'amber',  icon: '🔄', head: 'Substitutes',            body: 'More substitutes usually mean more elastic demand.' },
+        { tone: 'green',  icon: '📈', head: 'Market data',            body: 'Sales, prices and volumes reveal real behaviour.' },
+        { tone: 'purple', icon: '🗓️', head: 'Seasonality',            body: 'Demand often follows predictable patterns.' },
+        { tone: 'rose',   icon: '🔮', head: 'Consumer expectations',  body: 'Future beliefs influence today\'s demand.' }
+      ],
+      causes2Style: 'plain-white',
+      causes2Emoji: '⚡',
+      causes2Label: 'Demand can shift in real time',
+      causes2: [
+        { tone: 'green', icon: '☀️', head: 'Summer heatwave',    body: '<strong style="color:#059669;">Demand shifts right →</strong> for ice cream, fans and sun cream as warm weather drives a spike in willingness to buy.' },
+        { tone: 'rose',  icon: '🌧️', head: 'Trend ends or fades', body: '<strong style="color:#DC2626;">← Demand shifts left</strong> as consumers lose interest, switch to the next craze, or the season ends.' }
+      ],
       examEdge: 'Use context: name the market, identify the likely determinant, and explain why demand is likely to be more or less responsive.'
     },
     {

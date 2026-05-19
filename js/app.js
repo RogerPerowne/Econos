@@ -621,6 +621,35 @@
       content += `</div>`;
     }
 
+    // Causes 2 — a second causes-style grid for a separate themed section.
+    //   Pattern: causes2: [{tone,icon,head,body}], causes2Label?, causes2Emoji?, causes2Style? ('plain-white' | default)
+    if (c.causes2 && Array.isArray(c.causes2) && c.causes2.length && typeof c.causes2[0].head !== 'undefined') {
+      if (c.causes2Label !== null) content += genSecLabel(c.causes2Emoji || '🔗', c.causes2Label || 'More to know');
+      const plain2 = c.causes2Style === 'plain-white';
+      const tiles2 = c.causes2.map((item, i) => {
+        const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+        if (plain2) {
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+              <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
+        return `
+          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon || ''}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes2.length, 180)};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
+    }
+
     // How to think about it — two tinted panels side by side (centered icon + heading + body).
     // Data: { left: {icon, tone, head, body}, right: {icon, tone, head, body} }
     if (c.howToThink) {
@@ -2885,6 +2914,8 @@
       c.conceptBoxes !== undefined ||
       c.diagramPanel !== undefined ||
       c.examples !== undefined ||
+      (c.causes2 && Array.isArray(c.causes2) && c.causes2.length > 0 &&
+       typeof c.causes2[0] === 'object' && 'head' in c.causes2[0]) ||
       (c.left !== undefined && c.right !== undefined) ||
       (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
        typeof c.causes[0] === 'object' && 'head' in c.causes[0])

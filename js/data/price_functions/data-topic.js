@@ -25,25 +25,39 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'price_functions_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Functions of the price mechanism: the big picture',
-      lede: 'Prices do three jobs at once — and that is how markets allocate resources without anyone in charge.',
-      tip: 'Hayek\'s insight: prices aggregate millions of individual decisions (harvests, preferences, costs) into a single number. No central planner can match this. When prices are blocked or distorted, this information is lost.',
-      branches: [
-        { tone: 'blue',   label: 'Signalling',                 sub: 'Prices broadcast information about relative scarcity. A rise tells producers to expand and consumers to economise — no central planner required.' },
-        { tone: 'green',  label: 'Incentives',                 sub: 'Higher prices reward producers who supply scarce goods; lower prices punish those producing unwanted ones. Self-interest does the heavy lifting.' },
-        { tone: 'amber',  label: 'Rationing',                  sub: 'When supply is scarce, rising prices ration the good to those who value it most — and choke off lower-value uses.' },
-        { tone: 'purple', label: 'Entrepreneurship',           sub: 'Price gaps between costs and willingness-to-pay reveal profit opportunities. Entrepreneurs spot them and reallocate resources.' },
-        { tone: 'rose',   label: 'When prices fail',           sub: 'Externalities, public goods and information gaps stop prices reflecting true social costs — the bridge into market failure.' }
+      tip: { icon: '💡', tone: 'blue', text: '<em>In a market economy, resources are scarce but wants are unlimited.</em><br><strong>How do prices help decide what gets produced, how much, and who gets it?</strong><br>The price mechanism performs three core functions that keep the economy coordinated and efficient.' },
+      framework: {
+        label: 'The Price Mechanism: 3 Core Functions',
+        tiles: [
+          { tone: 'green', icon: '📡', title: 'Signalling', body: 'Changing prices give information about scarcity and consumer demand.' },
+          { tone: 'amber', icon: '🏃', title: 'Incentive',  body: 'Rising prices encourage producers and consumers to change behaviour.' },
+          { tone: 'blue',  icon: '👥', title: 'Rationing',  body: 'Prices allocate scarce goods to those willing and able to pay.' }
+        ],
+        diagramKey: 'priceMechanismFlow'
+      },
+      economistQuote: {
+        portraitKey: 'economistHayek',
+        tone: 'amber',
+        label: 'Economist insight',
+        quote: 'We must look at the price system as a mechanism for communicating information if we want to understand its real function.',
+        attribution: 'Friedrich Hayek, <em>The Use of Knowledge in Society</em> (1945)'
+      },
+      causesStyle: 'plain-white',
+      causesEmoji: '⭐',
+      causesLabel: 'Why it matters',
+      causes: [
+        { tone: 'green', icon: '🏠', head: 'Housing',              body: 'When prices rise, more homes get built and existing homes change hands to those who value them most.' },
+        { tone: 'amber', icon: '🎫', head: 'Concert tickets',      body: 'Higher prices ration limited tickets to fans who are willing and able to pay more.' },
+        { tone: 'blue',  icon: '⛽', head: 'Petrol & electricity', body: 'Prices guide usage and investment, encouraging conservation and new supply.' }
       ],
-      body: 'Prices communicate information about relative scarcity and value across markets — without anyone needing to understand the big picture.<br><br>A price rise signals that a good is becoming scarcer relative to demand. This information reaches producers, who expand supply, and consumers, who economise. Neither needs to know why the price rose — just that it did.<br><br><strong>Hayek\'s insight:</strong> the price system aggregates dispersed knowledge that no central planner could possess. Millions of individual decisions — crop harvests, consumer preferences, technological costs — are compressed into a single price that guides all market participants simultaneously.',
       keyTerms: [
         { term: 'Price signal', def: 'A price change that communicates information about relative scarcity or value, guiding resource allocation decisions.' },
         { term: 'Dispersed knowledge', def: 'Hayek\'s concept: relevant economic knowledge is distributed across millions of individuals — no central authority can aggregate it as efficiently as prices do.' },
-        { term: 'Information aggregation', def: 'The process by which prices combine information from all market participants into a single number that guides decisions.' }
+        { term: 'Efficient allocation', def: 'A pattern of resource use where goods flow to their most highly-valued uses and producers respond to genuine consumer demand.' }
       ],
-      examEdge: 'Hayek vs Keynes/Pigou on prices: Hayek argues prices convey information that planners cannot access → markets superior to planning. Pigou argues prices fail when external costs exist → government must correct price signals. Both are correct in their domain — high-level evaluation for essays on government vs market.'
+      examEdge: 'Strong answers explain the link between prices and resource allocation. Don\'t just say "prices change behaviour" — show how this leads to efficient allocation.'
     },
     {
       id: 'price_functions_2',

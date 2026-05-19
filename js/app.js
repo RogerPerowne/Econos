@@ -451,6 +451,49 @@
       content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:22px;">${tilesHtml}</div>`;
     }
 
+    // Framework — a bordered container holding a uppercase label, 3 numbered
+    // tinted tiles, and an embedded flow SVG (via diagramKey). Used for
+    // "core functions" overviews like the Price Mechanism big-picture card.
+    //   framework: { label, tiles: [{tone,icon,title,body}], diagramKey }
+    if (c.framework && c.framework.tiles && c.framework.tiles.length) {
+      const fw = c.framework;
+      const fwTiles = fw.tiles.map((tile, i) => {
+        const t = PATTERN_TONES[tile.tone || 'blue'] || PATTERN_TONES.blue;
+        return `
+          <div style="background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:18px 16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;align-self:flex-start;">${i + 1}</div>
+            <div style="font-size:38px;line-height:1;margin-top:-8px;">${tile.icon || ''}</div>
+            <div style="font-size:17px;font-weight:800;color:${t.label};">${tile.title}</div>
+            <div style="font-size:13px;color:#0B1426;line-height:1.55;">${tile.body}</div>
+          </div>`;
+      }).join('');
+      const fwDiagram = fw.diagramKey && I[fw.diagramKey] ? I[fw.diagramKey] : '';
+      content += `
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:22px 22px 18px;margin-bottom:22px;">
+          ${fw.label ? `<div style="text-align:center;font-size:11px;font-weight:800;color:#64748B;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:18px;">${fw.label}</div>` : ''}
+          <div style="display:grid;grid-template-columns:repeat(${fw.tiles.length},1fr);gap:14px;margin-bottom:${fwDiagram ? '14px' : '0'};">${fwTiles}</div>
+          ${fwDiagram ? `<div style="margin-top:6px;">${fwDiagram}</div>` : ''}
+        </div>`;
+    }
+
+    // Economist quote — a portrait + italic quote callout for surfacing
+    // famous economist insights tied to the card's concept.
+    //   economistQuote: { portraitKey, tone, label, quote, attribution }
+    if (c.economistQuote && c.economistQuote.quote) {
+      const eq = c.economistQuote;
+      const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
+      const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+      content += `
+        <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
+          <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+          <div>
+            <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
+            <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+            <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
+          </div>
+        </div>`;
+    }
+
     // Body text — styled as a rich explainer
     if (c.body) {
       content += `
@@ -2995,6 +3038,8 @@
       c.diagramPanel !== undefined ||
       c.examples !== undefined ||
       c.marketGrid !== undefined ||
+      c.framework !== undefined ||
+      c.economistQuote !== undefined ||
       c.note !== undefined ||
       (c.causes2 && Array.isArray(c.causes2) && c.causes2.length > 0 &&
        typeof c.causes2[0] === 'object' && 'head' in c.causes2[0]) ||

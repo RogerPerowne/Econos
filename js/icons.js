@@ -5339,13 +5339,6 @@ window.ECONOS_ICONS = {
       <line x1="252" y1="200" x2="286" y2="184" stroke="#B91C1C" stroke-width="1.4"/>
       <text x="289" y="182" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
       <text x="289" y="196" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
-
-      <!-- Equilibrium callouts -->
-      <line x1="228" y1="160" x2="240" y2="140" stroke="#0F172A" stroke-width="1.2"/>
-      <text x="243" y="138" font-size="11" fill="#0F172A">New equilibrium</text>
-      <line x1="270" y1="200" x2="298" y2="187" stroke="#0F172A" stroke-width="1.2"/>
-      <text x="301" y="185" font-size="11" fill="#0F172A">Original</text>
-      <text x="301" y="198" font-size="11" fill="#0F172A">equilibrium</text>
     </svg>
   `,
   heroElasticity: `

@@ -11204,4 +11204,341 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ─── Economist portraits ─────────────────────────────────────────────── */
+
+  economistSmith: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="as-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="as-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- warm ground -->
+      <ellipse cx="140" cy="342" rx="102" ry="13" fill="#FEF3C7" opacity="0.65"/>
+
+      <!-- COAT BODY (navy) -->
+      <path d="M 32,360 L 60,232 Q 88,217 115,213 L 131,226 L 140,232 L 149,226 L 165,213 Q 192,217 220,232 L 248,360 Z" fill="#1A2B50" filter="url(#as-sh)"/>
+      <!-- lapels -->
+      <path d="M 131,226 L 118,252 L 140,272 L 162,252 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#253768"/>
+      <!-- Coat sleeve cuffs (visible at bottom edge) -->
+      <path d="M 60,232 Q 52,260 48,290" stroke="#253768" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M 220,232 Q 228,260 232,290" stroke="#253768" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+      <!-- White lace cravat / jabot -->
+      <path d="M 132,224 Q 128,268 136,280 Q 140,285 144,280 Q 152,268 148,224" fill="#F6F2EC"/>
+      <path d="M 135,244 Q 140,254 145,244" stroke="#CFC7B6" stroke-width="1.2" fill="none"/>
+      <path d="M 134,260 Q 140,268 146,260" stroke="#CFC7B6" stroke-width="1.2" fill="none"/>
+
+      <!-- Brass coat buttons -->
+      <circle cx="140" cy="293" r="4.5" fill="#C8A030" stroke="#9F7A14" stroke-width="1"/>
+      <circle cx="140" cy="318" r="4.5" fill="#C8A030" stroke="#9F7A14" stroke-width="1"/>
+
+      <!-- NECK -->
+      <path d="M 129,200 L 127,226 L 153,226 L 151,200 Q 145,206 140,207 Q 135,206 129,200 Z" fill="#D4966A"/>
+
+      <!-- WIG PENDANT LEFT (behind face) -->
+      <ellipse cx="90" cy="172" rx="23" ry="43" fill="#E4E4D8"/>
+      <!-- WIG PENDANT RIGHT -->
+      <ellipse cx="190" cy="172" rx="23" ry="43" fill="#E4E4D8"/>
+      <!-- WIG TOP DOME -->
+      <ellipse cx="140" cy="100" rx="66" ry="50" fill="#ECEEE2"/>
+
+      <!-- Curl lines — top -->
+      <path d="M 105,68 Q 124,60 140,62 Q 156,60 175,68" stroke="#C8C8BA" stroke-width="1.6" fill="none"/>
+      <path d="M 97,87 Q 118,78 140,80 Q 162,78 183,87" stroke="#C8C8BA" stroke-width="1.5" fill="none"/>
+      <path d="M 92,108 Q 115,99 140,101 Q 165,99 188,108" stroke="#C8C8BA" stroke-width="1.4" fill="none"/>
+      <!-- Curl lines — left pendant -->
+      <path d="M 72,148 Q 84,160 76,172 Q 88,177 80,191" stroke="#C0C0B2" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+      <path d="M 84,142 Q 96,154 88,166 Q 100,172 92,186" stroke="#C0C0B2" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <!-- Curl lines — right pendant -->
+      <path d="M 208,148 Q 196,160 204,172 Q 192,177 200,191" stroke="#C0C0B2" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+      <path d="M 196,142 Q 184,154 192,166 Q 180,172 188,186" stroke="#C0C0B2" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+      <!-- EARS -->
+      <ellipse cx="95" cy="158" rx="8.5" ry="11" fill="#C88B62"/>
+      <ellipse cx="185" cy="158" rx="8.5" ry="11" fill="#C88B62"/>
+
+      <!-- FACE -->
+      <ellipse cx="140" cy="150" rx="46" ry="52" fill="#DCA876"/>
+
+      <!-- Hairline band (wig edge at forehead) -->
+      <path d="M 103,124 Q 121,116 140,117 Q 159,116 177,124" fill="#DEDED2" stroke="none"/>
+
+      <!-- EYEBROWS (bushy, distinguished) -->
+      <path d="M 113,133 Q 122,129 132,131" stroke="#6B4218" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M 148,131 Q 158,129 167,133" stroke="#6B4218" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+
+      <!-- EYES -->
+      <ellipse cx="122" cy="143" rx="9" ry="6.5" fill="white"/>
+      <ellipse cx="158" cy="143" rx="9" ry="6.5" fill="white"/>
+      <circle cx="123" cy="143" r="4.5" fill="#4A2E10"/>
+      <circle cx="159" cy="143" r="4.5" fill="#4A2E10"/>
+      <circle cx="123" cy="143" r="2.2" fill="#150800"/>
+      <circle cx="159" cy="143" r="2.2" fill="#150800"/>
+      <circle cx="124.5" cy="141.5" r="1.3" fill="white"/>
+      <circle cx="160.5" cy="141.5" r="1.3" fill="white"/>
+
+      <!-- NOSE -->
+      <path d="M 138,154 Q 134,165 134,169 Q 140,173 146,169 Q 146,165 142,154" fill="#B87848" opacity="0.4"/>
+      <circle cx="135" cy="169" r="2.5" fill="#A86838" opacity="0.35"/>
+      <circle cx="145" cy="169" r="2.5" fill="#A86838" opacity="0.35"/>
+
+      <!-- CHEEKS (subtle) -->
+      <ellipse cx="114" cy="162" rx="11" ry="7" fill="#C85A3A" opacity="0.15"/>
+      <ellipse cx="166" cy="162" rx="11" ry="7" fill="#C85A3A" opacity="0.15"/>
+
+      <!-- MOUTH (dignified slight smile) -->
+      <path d="M 127,177 Q 140,184 153,177" stroke="#A85830" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- QUILL (top right, floating) -->
+      <g transform="translate(202, 46) rotate(22)" filter="url(#as-soft)">
+        <path d="M 7,60 Q 28,38 22,0 Q 34,14 30,44 Z" fill="#EEEADB" stroke="#CECC9A" stroke-width="1"/>
+        <path d="M 7,60 Q -4,40 0,8 Q 12,20 10,44 Z" fill="#E5DFD0" stroke="#CECC9A" stroke-width="1"/>
+        <path d="M 7,64 L 13,0" stroke="#A89858" stroke-width="1.8" fill="none"/>
+        <path d="M 7,60 L 3,76" stroke="#181008" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Red book — Wealth of Nations -->
+      <g transform="translate(24, 276)" filter="url(#as-soft)">
+        <rect x="0" y="0" width="46" height="58" rx="3" fill="#8B1A1A" stroke="#5A0E0E" stroke-width="1.5"/>
+        <rect x="4" y="4" width="38" height="50" rx="2" fill="#A42020"/>
+        <rect x="40" y="2" width="4" height="54" rx="1" fill="#F0E8D2"/>
+        <line x1="8" y1="18" x2="36" y2="18" stroke="#FFD080" stroke-width="1.5" opacity="0.85"/>
+        <line x1="10" y1="27" x2="34" y2="27" stroke="#FFD080" stroke-width="1.2" opacity="0.6"/>
+        <line x1="12" y1="36" x2="32" y2="36" stroke="#FFD080" stroke-width="1" opacity="0.45"/>
+        <text x="22" y="52" text-anchor="middle" font-size="9" font-weight="700" fill="#FFD090" font-family="Georgia,serif">WN</text>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#1A2B50" font-family="Georgia,serif">Adam Smith</text>
+    </svg>
+  `,
+
+  economistKeynes: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="jk-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="jk-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- cool blue ground -->
+      <ellipse cx="140" cy="342" rx="102" ry="13" fill="#DBEAFE" opacity="0.65"/>
+
+      <!-- SUIT BODY (charcoal) -->
+      <path d="M 32,360 L 60,232 Q 88,217 115,213 L 131,226 L 140,232 L 149,226 L 165,213 Q 192,217 220,232 L 248,360 Z" fill="#2D3748" filter="url(#jk-sh)"/>
+      <!-- Lapels -->
+      <path d="M 131,226 L 116,255 L 140,274 L 164,255 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#374151"/>
+      <!-- Suit sleeves -->
+      <path d="M 60,232 Q 52,262 48,292" stroke="#374151" stroke-width="13" fill="none" stroke-linecap="round"/>
+      <path d="M 220,232 Q 228,262 232,292" stroke="#374151" stroke-width="13" fill="none" stroke-linecap="round"/>
+
+      <!-- White shirt visible in V of lapels -->
+      <path d="M 131,226 L 125,268 Q 140,276 155,268 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#F8F8F6"/>
+
+      <!-- Tie (Cambridge blue) -->
+      <path d="M 138,228 L 134,300 Q 140,308 146,300 L 142,228 Z" fill="#1D4ED8"/>
+      <path d="M 138,228 L 136,240 Q 140,244 144,240 L 142,228 Q 140,231 138,228 Z" fill="#1E40AF"/>
+      <!-- Tie stripe (subtle) -->
+      <path d="M 135,258 L 137,268" stroke="#3B82F6" stroke-width="2" opacity="0.6"/>
+      <path d="M 143,258 L 141,268" stroke="#3B82F6" stroke-width="2" opacity="0.6"/>
+
+      <!-- NECK -->
+      <path d="M 129,200 L 127,226 L 153,226 L 151,200 Q 145,206 140,207 Q 135,206 129,200 Z" fill="#E8BB8E"/>
+
+      <!-- EARS -->
+      <ellipse cx="95" cy="158" rx="8.5" ry="11" fill="#D4A070"/>
+      <ellipse cx="185" cy="158" rx="8.5" ry="11" fill="#D4A070"/>
+
+      <!-- FACE -->
+      <ellipse cx="140" cy="150" rx="46" ry="52" fill="#ECCAA4"/>
+
+      <!-- HAIR — dark brown, slicked back, side-parted 1930s style -->
+      <!-- Hair base (top of head) -->
+      <path d="M 97,140 Q 99,94 140,92 Q 181,94 183,140 Q 170,126 155,122 Q 142,119 132,122 Q 118,125 110,131 Z" fill="#2A1A0A"/>
+      <!-- Side part detail -->
+      <path d="M 124,122 Q 122,132 118,140" stroke="#4A3018" stroke-width="2" fill="none"/>
+      <!-- Temple hair left -->
+      <path d="M 99,148 Q 97,160 96,172" stroke="#2A1A0A" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <!-- Temple hair right -->
+      <path d="M 181,148 Q 183,160 184,172" stroke="#2A1A0A" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <!-- Small moustache (Keynes had one briefly, but let's keep clean) -->
+
+      <!-- EYEBROWS (dark, prominent) -->
+      <path d="M 112,132 Q 122,127 133,130" stroke="#2A1A0A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <path d="M 147,130 Q 158,127 168,132" stroke="#2A1A0A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+
+      <!-- EYES -->
+      <ellipse cx="122" cy="142" rx="9" ry="6.5" fill="white"/>
+      <ellipse cx="158" cy="142" rx="9" ry="6.5" fill="white"/>
+      <circle cx="123" cy="142" r="4.5" fill="#3A2810"/>
+      <circle cx="159" cy="142" r="4.5" fill="#3A2810"/>
+      <circle cx="123" cy="142" r="2.2" fill="#100800"/>
+      <circle cx="159" cy="142" r="2.2" fill="#100800"/>
+      <circle cx="124.5" cy="140.5" r="1.3" fill="white"/>
+      <circle cx="160.5" cy="140.5" r="1.3" fill="white"/>
+
+      <!-- NOSE -->
+      <path d="M 139,153 Q 135,164 134,168 Q 140,173 146,168 Q 145,164 141,153" fill="#B88040" opacity="0.38"/>
+      <circle cx="135" cy="168" r="2.5" fill="#A87030" opacity="0.32"/>
+      <circle cx="145" cy="168" r="2.5" fill="#A87030" opacity="0.32"/>
+
+      <!-- CHEEKS (fuller — Keynes was well-fed) -->
+      <ellipse cx="113" cy="163" rx="13" ry="9" fill="#C85030" opacity="0.13"/>
+      <ellipse cx="167" cy="163" rx="13" ry="9" fill="#C85030" opacity="0.13"/>
+
+      <!-- MOUTH (confident, knowing) -->
+      <path d="M 126,178 Q 140,185 154,178" stroke="#A85030" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- Small moustache -->
+      <path d="M 130,172 Q 136,170 140,171 Q 144,170 150,172" stroke="#3A2010" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+      <!-- Floating £ COIN (top right) -->
+      <g transform="translate(196, 44)" filter="url(#jk-soft)">
+        <circle cx="24" cy="24" r="24" fill="#F59E0B" stroke="#D97706" stroke-width="2.5"/>
+        <circle cx="24" cy="24" r="18" fill="#FBBF24"/>
+        <text x="24" y="30" text-anchor="middle" font-size="22" font-weight="900" fill="#92400E" font-family="Georgia,serif">£</text>
+      </g>
+
+      <!-- Small bar chart (demand / G spending) bottom left -->
+      <g transform="translate(24, 270)" filter="url(#jk-soft)">
+        <rect x="0" y="38" width="14" height="24" rx="3" fill="#3B82F6" opacity="0.9"/>
+        <rect x="18" y="24" width="14" height="38" rx="3" fill="#2563EB" opacity="0.9"/>
+        <rect x="36" y="10" width="14" height="52" rx="3" fill="#1D4ED8" opacity="0.9"/>
+        <!-- axis -->
+        <line x1="0" y1="62" x2="50" y2="62" stroke="#94A3B8" stroke-width="1.5"/>
+        <line x1="0" y1="4" x2="0" y2="62" stroke="#94A3B8" stroke-width="1.5"/>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#1D3A6A" font-family="Georgia,serif">J. M. Keynes</text>
+    </svg>
+  `,
+
+  economistHayek: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="fh-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="fh-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- warm cream ground -->
+      <ellipse cx="140" cy="342" rx="102" ry="13" fill="#FEF3C7" opacity="0.65"/>
+
+      <!-- TWEED SUIT BODY (warm brown) -->
+      <path d="M 32,360 L 60,232 Q 88,217 115,213 L 131,226 L 140,232 L 149,226 L 165,213 Q 192,217 220,232 L 248,360 Z" fill="#6B4E2A" filter="url(#fh-sh)"/>
+      <!-- Tweed texture (subtle cross-hatch strokes) -->
+      <path d="M 80,260 L 96,280 M 100,244 L 116,264 M 120,236 L 132,250" stroke="#7C5E38" stroke-width="1" opacity="0.5"/>
+      <path d="M 200,260 L 184,280 M 180,244 L 164,264 M 160,236 L 148,250" stroke="#7C5E38" stroke-width="1" opacity="0.5"/>
+      <!-- Lapels -->
+      <path d="M 131,226 L 116,255 L 140,274 L 164,255 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#7C5E38"/>
+      <!-- Suit sleeves -->
+      <path d="M 60,232 Q 52,262 48,292" stroke="#7C5E38" stroke-width="13" fill="none" stroke-linecap="round"/>
+      <path d="M 220,232 Q 228,262 232,292" stroke="#7C5E38" stroke-width="13" fill="none" stroke-linecap="round"/>
+
+      <!-- White shirt + tie (dark burgundy, professorial) -->
+      <path d="M 131,226 L 125,270 Q 140,278 155,270 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#F8F6F4"/>
+      <path d="M 138,228 L 134,302 Q 140,310 146,302 L 142,228 Z" fill="#7B1C1C"/>
+      <path d="M 138,228 L 136,240 Q 140,244 144,240 L 142,228 Q 140,231 138,228 Z" fill="#6B1010"/>
+
+      <!-- NECK -->
+      <path d="M 129,200 L 127,226 L 153,226 L 151,200 Q 145,206 140,207 Q 135,206 129,200 Z" fill="#D4966A"/>
+
+      <!-- EARS -->
+      <ellipse cx="95" cy="158" rx="8.5" ry="11" fill="#C07E55"/>
+      <ellipse cx="185" cy="158" rx="8.5" ry="11" fill="#C07E55"/>
+
+      <!-- FACE (slightly older, more lined) -->
+      <ellipse cx="140" cy="150" rx="46" ry="52" fill="#D9956A"/>
+
+      <!-- HAIR — grey-white, receding temples, side-parted, thin on top -->
+      <!-- Main hair path (receding — only at top sides and back) -->
+      <path d="M 100,150 Q 100,104 118,97 Q 135,93 152,97 Q 168,103 180,150 Q 168,132 155,126 Q 142,122 128,126 Q 114,130 104,142 Z" fill="#B8B0A0"/>
+      <!-- Receding temple left (bare) -->
+      <path d="M 100,150 Q 104,126 112,116 Q 99,118 98,150 Z" fill="#D9956A"/>
+      <!-- Receding temple right (bare) -->
+      <path d="M 180,150 Q 176,126 168,116 Q 181,118 182,150 Z" fill="#D9956A"/>
+      <!-- Hair side left -->
+      <path d="M 100,150 Q 96,165 97,180" stroke="#B0A898" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <!-- Hair side right -->
+      <path d="M 180,150 Q 184,165 183,180" stroke="#B0A898" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+      <!-- EYEBROWS (grey, bushy professor style) -->
+      <path d="M 110,132 Q 121,127 133,130" stroke="#888070" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 147,130 Q 159,127 170,132" stroke="#888070" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- EYES -->
+      <ellipse cx="122" cy="143" rx="9" ry="6.5" fill="white"/>
+      <ellipse cx="158" cy="143" rx="9" ry="6.5" fill="white"/>
+      <circle cx="123" cy="143" r="4.2" fill="#4A3820"/>
+      <circle cx="159" cy="143" r="4.2" fill="#4A3820"/>
+      <circle cx="123" cy="143" r="2" fill="#180E04"/>
+      <circle cx="159" cy="143" r="2" fill="#180E04"/>
+      <circle cx="124.5" cy="141.5" r="1.2" fill="white"/>
+      <circle cx="160.5" cy="141.5" r="1.2" fill="white"/>
+
+      <!-- ROUND GLASSES — Hayek's signature feature -->
+      <!-- Left lens frame -->
+      <circle cx="122" cy="143" r="14" fill="none" stroke="#2D2820" stroke-width="2.5"/>
+      <!-- Right lens frame -->
+      <circle cx="158" cy="143" r="14" fill="none" stroke="#2D2820" stroke-width="2.5"/>
+      <!-- Bridge connecting lenses -->
+      <path d="M 136,141 Q 140,138 144,141" stroke="#2D2820" stroke-width="2" fill="none"/>
+      <!-- Left earpiece -->
+      <path d="M 108,143 Q 98,145 95,152" stroke="#2D2820" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Right earpiece -->
+      <path d="M 172,143 Q 182,145 185,152" stroke="#2D2820" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- NOSE -->
+      <path d="M 139,154 Q 135,165 134,169 Q 140,174 146,169 Q 145,165 141,154" fill="#A87040" opacity="0.38"/>
+      <circle cx="135" cy="169" r="2.5" fill="#986030" opacity="0.32"/>
+      <circle cx="145" cy="169" r="2.5" fill="#986030" opacity="0.32"/>
+
+      <!-- AGE LINES (subtle) -->
+      <path d="M 114,155 Q 112,162 114,168" stroke="#B07048" stroke-width="1" fill="none" opacity="0.35"/>
+      <path d="M 166,155 Q 168,162 166,168" stroke="#B07048" stroke-width="1" fill="none" opacity="0.35"/>
+      <path d="M 108,138 Q 106,132 110,128" stroke="#B07048" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M 172,138 Q 174,132 170,128" stroke="#B07048" stroke-width="1" fill="none" opacity="0.3"/>
+
+      <!-- MOUTH (professorial, slightly pursed) -->
+      <path d="M 128,177 Q 140,183 152,177" stroke="#A06040" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- PRICE TAG (floating, top right — price mechanism symbol) -->
+      <g transform="translate(196, 40)" filter="url(#fh-soft)">
+        <!-- tag body -->
+        <path d="M 4,4 L 46,4 Q 52,4 52,10 L 52,44 Q 52,50 46,50 L 4,50 Q 0,50 0,44 L 0,10 Q 0,4 4,4 Z" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
+        <!-- hole for string -->
+        <circle cx="26" cy="9" r="3.5" fill="white" stroke="#D97706" stroke-width="1.5"/>
+        <!-- P symbol -->
+        <text x="26" y="36" text-anchor="middle" font-size="24" font-weight="900" fill="#D97706" font-family="Georgia,serif">P</text>
+        <!-- small up-arrow -->
+        <path d="M 42,48 L 42,36 M 38,40 L 42,36 L 46,40" stroke="#059669" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- Market signal waves (bottom left) -->
+      <g transform="translate(20, 270)" filter="url(#fh-soft)">
+        <!-- Arrow arcs suggesting price signal spreading out -->
+        <path d="M 8,30 Q 8,6 28,6 Q 48,6 48,30" stroke="#D97706" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+        <path d="M 1,38 Q 1,0 28,0 Q 55,0 55,38" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <!-- Central dot (price signal source) -->
+        <circle cx="28" cy="38" r="5" fill="#D97706"/>
+        <circle cx="28" cy="38" r="2.5" fill="#FEF9EC"/>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#5A3A18" font-family="Georgia,serif">Friedrich Hayek</text>
+    </svg>
+  `,
+
 };

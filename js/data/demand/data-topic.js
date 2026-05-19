@@ -146,16 +146,40 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_6',
-      template: 'diagnose',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Demand in Real Markets',
-      intro: 'Demand analysis applies to every market — but context-specific factors determine which determinants dominate.',
-      rows: [
-        { label: 'Market', colA: 'Housing', colB: 'Petrol' },
-        { label: 'Key demand driver', colA: 'Income, mortgage availability, population in area, expectations of future prices', colB: 'Car ownership, commuting distance, price (relatively inelastic demand)' },
-        { label: 'Key shift', colA: 'Interest rate fall → demand rises; immigration → demand rises; house price expectations up → demand rises now', colB: 'Rise in car ownership → derived demand rises; EV adoption → derived demand for petrol falls' }
+      tip: { icon: '💡', tone: 'blue', text: 'In real markets, demand is shaped by many things at once — price, incomes, tastes, expectations, and market conditions. Understanding the full picture helps explain why demand changes.' },
+      examples: [
+        { tone: 'green', icon: '🎫', title: 'Taylor Swift tickets',   body: 'High willingness to pay, limited supply and loyal fans <strong>mean demand is very strong and not very price sensitive.</strong>' },
+        { tone: 'green', icon: '⛽', title: 'Petrol',                  body: 'Relatively inelastic in the short run. People need it to get to work, school and essentials.' },
+        { tone: 'green', icon: '🛒', title: 'Budget supermarkets',     body: 'Demand rises when incomes fall as people trade down to cheaper options. A rise in incomes can shift demand back.' },
+        { tone: 'green', icon: '📺', title: 'Streaming subscriptions', body: 'Many close substitutes mean consumers can switch easily, making demand more elastic.' }
       ],
-      footer: 'For exam questions, always identify the MOST IMPORTANT non-price determinant for the specific market asked about — do not just list all possible factors.',
-      examEdge: 'Housing market is particularly exam-relevant: highly inelastic supply (takes years to build), volatile demand (interest-rate and sentiment driven) → house price volatility. The interaction of low PES and shifting demand explains why house prices are so unstable.'
+      pairLabel: null,
+      left: {
+        tone: 'green',
+        style: 'plain-white',
+        number: 5,
+        label: 'What economists look for',
+        checks: [
+          { term: 'Price sensitivity',     body: 'how much demand changes when price changes.' },
+          { term: 'Substitutes',           body: 'more substitutes usually mean more elastic demand.' },
+          { term: 'Market data',           body: 'sales, prices and volumes reveal real behaviour.' },
+          { term: 'Seasonality',           body: 'demand often follows predictable patterns.' },
+          { term: 'Consumer expectations', body: 'future beliefs influence today\'s demand.' }
+        ]
+      },
+      right: {
+        tone: 'slate',
+        style: 'plain-white',
+        centeredLabel: true,
+        label: 'Demand can shift in real time',
+        scenarios: [
+          { icon: '☀️🍦', arrow: 'right', text: 'Summer heatwave? Demand shifts right for ice cream.' },
+          { icon: '🌧️🍦', arrow: 'left',  text: 'Fad fades or trend ends? Demand shifts left.' }
+        ]
+      },
+      examEdge: 'Use context: name the market, identify the likely determinant, and explain why demand is likely to be more or less responsive.'
     },
     {
       id: 'demand_7',

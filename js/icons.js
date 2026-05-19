@@ -11541,4 +11541,84 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ─── Price mechanism flow diagram (Consumers ⇆ Prices ⇆ Firms → allocation) ─── */
+  priceMechanismFlow: `
+    <svg viewBox="0 0 700 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
+      <defs>
+        <marker id="pmf-arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0,0 L 10,5 L 0,10 z" fill="#059669"/>
+        </marker>
+        <marker id="pmf-arr-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0,0 L 10,5 L 0,10 z" fill="#2563EB"/>
+        </marker>
+        <marker id="pmf-arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0,0 L 10,5 L 0,10 z" fill="#475569"/>
+        </marker>
+      </defs>
+
+      <!-- CONSUMERS (left) -->
+      <g transform="translate(60, 30)">
+        <!-- three figures -->
+        <circle cx="50" cy="14" r="11" fill="#059669"/>
+        <path d="M 36 26 Q 50 30 64 26 L 68 64 L 32 64 Z" fill="#059669"/>
+        <circle cx="22" cy="22" r="9" fill="#10B981"/>
+        <path d="M 12 32 Q 22 35 32 32 L 32 64 L 12 64 Z" fill="#10B981"/>
+        <circle cx="78" cy="22" r="9" fill="#10B981"/>
+        <path d="M 68 32 Q 78 35 88 32 L 88 64 L 68 64 Z" fill="#10B981"/>
+        <!-- labels -->
+        <text x="50" y="88" text-anchor="middle" font-size="15" font-weight="800" fill="#0B1426">Consumers</text>
+        <text x="50" y="105" text-anchor="middle" font-size="11.5" fill="#475569">have wants</text>
+      </g>
+
+      <!-- PRICES (centre) -->
+      <g transform="translate(280, 30)">
+        <rect x="0" y="0" width="160" height="84" rx="14" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+        <!-- price tag glyph -->
+        <g transform="translate(22, 22)">
+          <path d="M 0,12 L 0,2 L 12,2 L 28,18 L 18,28 L 2,28 Z" fill="#2563EB"/>
+          <circle cx="6" cy="8" r="2.5" fill="#DBEAFE"/>
+        </g>
+        <text x="98" y="38" text-anchor="middle" font-size="17" font-weight="800" fill="#1E3A8A">Prices</text>
+        <text x="80" y="62" text-anchor="middle" font-size="11.5" fill="#475569">reflect scarcity &amp; demand</text>
+      </g>
+
+      <!-- FIRMS (right) -->
+      <g transform="translate(560, 30)">
+        <!-- factory icon -->
+        <rect x="10" y="32" width="74" height="32" fill="#2563EB"/>
+        <path d="M 18 32 L 18 18 L 30 26 L 30 32 Z" fill="#1E40AF"/>
+        <path d="M 36 32 L 36 14 L 50 22 L 50 32 Z" fill="#1E40AF"/>
+        <path d="M 56 32 L 56 22 L 68 28 L 68 32 Z" fill="#1E40AF"/>
+        <rect x="20" y="42" width="10" height="10" fill="#DBEAFE"/>
+        <rect x="38" y="42" width="10" height="10" fill="#DBEAFE"/>
+        <rect x="56" y="42" width="10" height="10" fill="#DBEAFE"/>
+        <text x="47" y="88" text-anchor="middle" font-size="15" font-weight="800" fill="#0B1426">Firms</text>
+        <text x="47" y="105" text-anchor="middle" font-size="11.5" fill="#475569">use resources</text>
+      </g>
+
+      <!-- HORIZONTAL ARROWS at y≈72 -->
+      <line x1="158" y1="72" x2="272" y2="72" stroke="#059669" stroke-width="2.5" marker-end="url(#pmf-arr-g)"/>
+      <text x="215" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">demand signals</text>
+
+      <line x1="556" y1="72" x2="448" y2="72" stroke="#2563EB" stroke-width="2.5" marker-end="url(#pmf-arr-b)"/>
+      <text x="502" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#1E40AF">supply responses</text>
+
+      <!-- VERTICAL arrow Prices → Efficient allocation -->
+      <line x1="360" y1="118" x2="360" y2="216" stroke="#475569" stroke-width="2" marker-end="url(#pmf-arr-d)"/>
+
+      <!-- DASHED arcs from Consumers → Efficient allocation -->
+      <path d="M 110 152 Q 110 230 250 252" stroke="#10B981" stroke-width="1.8" fill="none" stroke-dasharray="6,4" opacity="0.75"/>
+      <text x="170" y="220" text-anchor="middle" font-size="11.5" font-style="italic" fill="#059669">guide choices</text>
+
+      <!-- DASHED arcs from Firms → Efficient allocation -->
+      <path d="M 607 152 Q 607 230 470 252" stroke="#3B82F6" stroke-width="1.8" fill="none" stroke-dasharray="6,4" opacity="0.75"/>
+      <text x="550" y="220" text-anchor="middle" font-size="11.5" font-style="italic" fill="#1E40AF">guide production</text>
+
+      <!-- EFFICIENT ALLOCATION box -->
+      <rect x="240" y="232" width="240" height="50" rx="10" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="360" y="256" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Efficient allocation</text>
+      <text x="360" y="273" text-anchor="middle" font-size="11.5" fill="#475569">resources go to their most valued uses</text>
+    </svg>
+  `,
+
 };

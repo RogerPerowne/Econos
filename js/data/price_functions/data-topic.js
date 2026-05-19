@@ -280,6 +280,7 @@ window.ECONOS_TOPIC = {
         { tone: 'slate',  icon: '📍', head: 'Factor immobility',       body: 'Resources cannot move freely to where they are most productive.' },
         { tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' }
       ],
+      causes2Style: 'plain-white',
       causes2Emoji: '🔬',
       causes2Label: 'Examples',
       causes2: [

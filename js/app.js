@@ -288,6 +288,27 @@
       content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
     }
 
+    // Diagram panel — SVG on the left, annotated bullet notes on the right.
+    //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets:[string], tone? }
+    if (c.diagramPanel && I[c.diagramPanel.diagramKey]) {
+      const dp = c.diagramPanel;
+      const tone = PATTERN_TONES[dp.tone || 'green'] || PATTERN_TONES.green;
+      const bulletsHtml = (dp.bullets || []).map(b => `
+        <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13.5px;color:#0B1426;line-height:1.55;">
+          <span style="flex-shrink:0;width:8px;height:8px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
+          <span>${b}</span>
+        </li>`).join('');
+      content += `
+        <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+          <div style="min-width:0;overflow-x:auto;">${I[dp.diagramKey]}</div>
+          <div style="display:flex;flex-direction:column;padding:0 4px;">
+            ${dp.title ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:6px;">${dp.title}</div>` : ''}
+            ${dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : ''}
+            <ul style="list-style:none;margin:0;padding:0;">${bulletsHtml}</ul>
+          </div>
+        </div>`;
+    }
+
     // Horizontal step flow — numbered circles connected by dashed arrows.
     // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
     // overlays a small badge on the icon — for narrative chains where each step has a verdict.
@@ -357,8 +378,10 @@
       const renderPairedSide = (side, fallbackTone) => {
         const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
         const useRows = Array.isArray(side.rows) && side.rows.length > 0;
-        const inner = useRows
-          ? side.rows.map((r, idx) => `
+        const inner = side.text
+          ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+          : (useRows
+            ? side.rows.map((r, idx) => `
               <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
                 <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
                 <div style="flex:1;min-width:0;">
@@ -366,19 +389,26 @@
                   <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
                 </div>
               </div>`).join('')
-          : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+            : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
               ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-            </ul>`;
+            </ul>`);
+        const iconHtml = side.icon
+          ? (side.iconStyle === 'circle'
+              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
+              : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
+          : '';
         return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-              ${side.icon ? `<div style="font-size:20px;line-height:1;">${side.icon}</div>` : ''}
-              <div style="color:${tone.label};font-weight:800;font-size:14px;letter-spacing:0.02em;">${side.label}</div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              ${iconHtml}
+              <div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>
             </div>
             ${inner}
           </div>`;
       };
-      content += genSecLabel('⚖️', 'Head to head');
+      if (c.pairLabel !== null) {
+        content += genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
+      }
       content += `
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
         ${renderPairedSide(c.left, 'green')}
@@ -2723,6 +2753,7 @@
       c.comparison !== undefined ||
       c.table !== undefined ||
       c.conceptBoxes !== undefined ||
+      c.diagramPanel !== undefined ||
       (c.left !== undefined && c.right !== undefined) ||
       (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
        typeof c.causes[0] === 'object' && 'head' in c.causes[0])

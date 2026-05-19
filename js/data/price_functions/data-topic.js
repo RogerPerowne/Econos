@@ -164,21 +164,49 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'price_functions_4',
-      template: 'mechanisms',
-      title: 'How Price Signals Transmit Through Markets',
-      intro: 'Price signals cascade through interconnected markets — a change in one market ripples through others via supply chains and complementary/substitute relationships.',
-      steps: [
-        { label: '🌾 Initial shock', text: 'Drought reduces wheat harvest → wheat supply falls → wheat price rises sharply. The signal: wheat is scarcer.' },
-        { label: '🍞 Direct response', text: 'Bread producers face higher input costs → reduce output or raise bread prices. Consumers switch to rice or potatoes (substitutes). Farmers incentivised to plant more wheat next season.' },
-        { label: '🥪 Downstream transmission', text: 'Higher bread prices raise costs for sandwich shops, school canteens, catering firms. Profits squeezed → some raise prices, some reduce portion sizes.' },
-        { label: '📈 Long-run correction', text: 'High wheat prices persist → more farmland switched to wheat next season → supply rises → price falls back. Price signal has coordinated reallocation without central direction.' }
+      stepLabel: 'Learn: Step 4 of 7',
+      title: 'How price signals transmit through markets',
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: 'Price changes do more than affect one buyer and one seller. They <strong>transmit information through the whole market system</strong>. A higher price tells firms, workers, and related markets that this product has become more scarce or more demanded.'
+      },
+      flowTitle: 'Following a price signal',
+      flowEmoji: '🔗',
+      flow: [
+        { tone: 'green',  icon: '🌾', title: 'Poor harvest reduces wheat supply' },
+        { tone: 'amber',  icon: '💲', title: 'Wheat price rises' },
+        { tone: 'blue',   icon: '🥖', title: 'Bakers face higher costs and bread prices may rise' },
+        { tone: 'purple', icon: '👨‍🌾', title: 'Consumers adjust spending; farmers consider planting more wheat' },
+        { tone: 'slate',  icon: '🕸️', title: 'Resources and production decisions change across connected markets' }
       ],
-      examEdge: 'Supply chain transmission questions are common in Paper 1 extracts. Trace the chain: input price shock → cost rise for producers → supply shift in output market → price adjustment → consumer and downstream responses. Each step is a transmission of the price signal through the system.'
+      causesStyle: 'plain-white',
+      causesEmoji: '📡',
+      causesLabel: 'What the signal does',
+      causes: [
+        { tone: 'green', icon: '👤',  head: 'To producers',       body: 'Higher prices encourage expansion, innovation, and reallocation of resources to the more valuable use.' },
+        { tone: 'amber', icon: '🛒',  head: 'To consumers',       body: 'Higher prices encourage substitutes, less spending, and more efficient use of the good or service.' },
+        { tone: 'blue',  icon: '🕸️', head: 'To related markets', body: 'Price changes ripple to suppliers and complements (substitutes), affecting many linked markets.' }
+      ],
+      causes2Style: 'plain-white',
+      causes2Emoji: '⭐',
+      causes2Label: 'Why this matters',
+      causes2: [
+        { tone: 'green', icon: '🚗', head: 'Electric vehicles and lithium', body: 'Higher lithium prices encourage new mining, battery innovation, and substitutes like LFP batteries.' },
+        { tone: 'amber', icon: '☕', head: 'Coffee beans',                 body: 'Higher coffee prices lead cafés to adjust prices, consumers to switch brands, and farmers to plant more.' },
+        { tone: 'blue',  icon: '✈️', head: 'Holiday destinations',         body: 'Higher prices for popular destinations shift demand to alternatives and change travel patterns.' }
+      ],
+      keyTerms: [
+        { term: 'Transmission mechanism', def: 'The way price changes in one market propagate through linked markets via supply chains and substitute/complement relationships.' },
+        { term: 'Knock-on effects',        def: 'Secondary consequences of a price change as it cascades through downstream and related markets.' },
+        { term: 'Resource reallocation',   def: 'The shifting of factors of production (land, labour, capital) toward more valuable uses in response to price signals.' }
+      ],
+      examEdge: 'Explain the transmission <strong>mechanism</strong>, not just that "price rises". Use language like <strong>signal</strong>, <strong>response</strong>, <strong>resource reallocation</strong>, and <strong>knock-on effects</strong>.'
     },
     {
       id: 'price_functions_5',
       template: 'framing',
-      title: 'Entrepreneurship and the Price Mechanism',
+      title: 'Entrepreneurship and the price mechanism',
       body: 'The <strong>entrepreneur</strong> (Schumpeter\'s "creative destroyer") plays a crucial role in the price mechanism: by spotting profit opportunities (price signals), taking risks, and bringing new products to market, entrepreneurs drive the allocation of resources toward unmet demand.<br><br><strong>Role in the price mechanism:</strong><br>• Identifies markets where price exceeds cost (abnormal profit signals)<br>• Bears the risk of resource deployment in uncertain environments<br>• Innovates — creating new products and services, destroying old ones<br>• Coordinates factors of production to respond to consumer demand<br><br>Without entrepreneurs, price signals would exist but no one would act on them.',
       keyTerms: [
         { term: 'Entrepreneur', def: 'An economic agent who organises factors of production to create goods/services, bearing risk in search of profit.' },
@@ -190,7 +218,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_functions_6',
       template: 'cause',
-      title: 'When the Price Mechanism Fails',
+      title: 'When the price mechanism fails',
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Five routes to price mechanism failure',
@@ -206,7 +234,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'price_functions_7',
       template: 'framing',
-      title: 'Price Mechanism vs Government Allocation',
+      title: 'Price mechanism vs government allocation',
       verdict: {
         leftLabel: '📈 Price mechanism',
         rightLabel: '🏛️ Government allocation',

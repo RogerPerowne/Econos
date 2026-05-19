@@ -11606,13 +11606,12 @@ window.ECONOS_ICONS = {
       <!-- VERTICAL arrow Prices → Efficient allocation -->
       <line x1="360" y1="118" x2="360" y2="216" stroke="#475569" stroke-width="2" marker-end="url(#pmf-arr-d)"/>
 
-      <!-- DASHED arcs from Consumers → Efficient allocation -->
-      <path d="M 110 152 Q 110 230 250 252" stroke="#10B981" stroke-width="1.8" fill="none" stroke-dasharray="6,4" opacity="0.75"/>
-      <text x="170" y="220" text-anchor="middle" font-size="11.5" font-style="italic" fill="#059669">guide choices</text>
+      <!-- DASHED return arcs from Prices → Consumers / Firms -->
+      <path d="M 283 114 C 185 175 90 178 115 140" stroke="#10B981" stroke-width="1.8" fill="none" stroke-dasharray="6,4" opacity="0.85" marker-end="url(#pmf-arr-g)"/>
+      <text x="168" y="180" text-anchor="middle" font-size="11.5" font-style="italic" fill="#059669">guide choices</text>
 
-      <!-- DASHED arcs from Firms → Efficient allocation -->
-      <path d="M 607 152 Q 607 230 470 252" stroke="#3B82F6" stroke-width="1.8" fill="none" stroke-dasharray="6,4" opacity="0.75"/>
-      <text x="550" y="220" text-anchor="middle" font-size="11.5" font-style="italic" fill="#1E40AF">guide production</text>
+      <path d="M 437 114 C 535 175 625 178 602 140" stroke="#3B82F6" stroke-width="1.8" fill="none" stroke-dasharray="6,4" opacity="0.85" marker-end="url(#pmf-arr-b)"/>
+      <text x="538" y="180" text-anchor="middle" font-size="11.5" font-style="italic" fill="#1E40AF">guide production</text>
 
       <!-- EFFICIENT ALLOCATION box -->
       <rect x="240" y="232" width="240" height="50" rx="10" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>

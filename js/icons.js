@@ -11482,10 +11482,10 @@ window.ECONOS_ICONS = {
       <path d="M 138,104 Q 156,102 172,108" stroke="#8C8478" stroke-width="0.8" fill="none" opacity="0.55"/>
       <path d="M 102,124 Q 118,114 138,114" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.45"/>
       <path d="M 142,114 Q 162,114 178,124" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.45"/>
-      <!-- Hair side-burn left -->
-      <path d="M 96,150 Q 92,166 95,180" stroke="#A89F90" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <!-- Hair side-burn right -->
-      <path d="M 184,150 Q 188,166 185,180" stroke="#A89F90" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <!-- Hair side-burn left (short) -->
+      <path d="M 96,150 Q 94,158 96,164" stroke="#A89F90" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <!-- Hair side-burn right (short) -->
+      <path d="M 184,150 Q 186,158 184,164" stroke="#A89F90" stroke-width="9" fill="none" stroke-linecap="round"/>
 
       <!-- EYEBROWS (grey, bushy) -->
       <path d="M 109,131 Q 121,125 134,129" stroke="#7F7868" stroke-width="3.2" fill="none" stroke-linecap="round"/>
@@ -11520,13 +11520,13 @@ window.ECONOS_ICONS = {
       <path d="M 156,167 Q 158,171 154,172" stroke="#B07048" stroke-width="0.7" fill="none" opacity="0.25"/>
 
       <!-- BUSHY GREY MOUSTACHE — signature feature -->
-      <path d="M 116,184 Q 122,180 130,182 Q 138,184 140,188 Q 142,184 150,182 Q 158,180 164,184 Q 162,192 152,194 Q 144,194 140,192 Q 136,194 128,194 Q 118,192 116,184 Z" fill="#A89F90"/>
+      <path d="M 116,178 Q 122,174 130,176 Q 138,178 140,182 Q 142,178 150,176 Q 158,174 164,178 Q 162,186 152,188 Q 144,188 140,186 Q 136,188 128,188 Q 118,186 116,178 Z" fill="#A89F90"/>
       <!-- Moustache highlight strokes -->
-      <path d="M 120,184 Q 128,182 138,186" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.5"/>
-      <path d="M 142,186 Q 152,182 160,184" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.5"/>
+      <path d="M 120,178 Q 128,176 138,180" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.5"/>
+      <path d="M 142,180 Q 152,176 160,178" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.5"/>
 
       <!-- MOUTH (small, beneath moustache) -->
-      <path d="M 132,200 Q 140,204 148,200" stroke="#8C5238" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M 132,194 Q 140,198 148,194" stroke="#8C5238" stroke-width="1.6" fill="none" stroke-linecap="round"/>
 
       <!-- CHIN shading -->
       <path d="M 130,205 Q 140,212 150,205" stroke="#B07048" stroke-width="0.8" fill="none" opacity="0.25"/>

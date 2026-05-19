@@ -230,6 +230,7 @@ window.ECONOS_TOPIC = {
       id: 'market_equilibrium_6',
       template: 'cause',
       title: 'When Markets Fail to Reach Equilibrium',
+      tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly — controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Obstacles to market clearing',

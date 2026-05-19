@@ -196,15 +196,35 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_5',
-      template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Allocative Efficiency of Market Equilibrium',
-      body: 'A competitive equilibrium is <strong>allocatively efficient</strong>: at Q*, the price paid by the last consumer (marginal benefit) equals the cost of producing the last unit (marginal cost). This is the optimal allocation — P = MC.<br><br>Total welfare (consumer surplus + producer surplus) is maximised at equilibrium. Any other quantity produces less total surplus:<br>• Q < Q*: potential gains from additional exchange are unrealised (deadweight loss)<br>• Q > Q*: units are produced whose cost exceeds their value (negative welfare)<br><br>Market failure occurs when the equilibrium does NOT maximise total social welfare — because prices exclude external costs or benefits.',
+      tip: { icon: '💡', tone: 'blue', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
+      diagramPanel: {
+        diagramKey: 'allocativeEfficiencyDiagram',
+        title: 'Why equilibrium can be efficient',
+        bullets: [
+          'Consumers reveal their willingness to pay through demand.',
+          'Producers reveal their costs through supply.',
+          'At Q<sub>e</sub>, marginal benefit (MB) equals marginal cost (MC).',
+          'Reallocating resources away from E would reduce total welfare.'
+        ]
+      },
+      causesStyle: 'plain-white',
+      causesEmoji: '📐',
+      causesLabel: 'Key welfare concepts',
+      causes: [
+        { tone: 'blue',   icon: '👥', head: 'Consumer surplus',                body: 'The benefit consumers get from paying less than their willingness to pay.' },
+        { tone: 'amber',  icon: '📊', head: 'Producer surplus',                body: 'The benefit producers get from receiving more than their minimum cost.' },
+        { tone: 'purple', icon: '📉', head: 'Deadweight loss off equilibrium', body: 'Moving away from E means some mutually beneficial trades are lost.' }
+      ],
+      note: { icon: 'ℹ️', tone: 'blue', text: 'Allocative efficiency assumes a competitive market with many buyers and sellers and no externalities. When these assumptions do not hold, equilibrium may not be allocatively efficient.' },
+      conclusion: { title: 'Key takeaway', text: 'Market equilibrium can be allocatively efficient because, at E, marginal benefit equals marginal cost (MB = MC).' },
       keyTerms: [
-        { term: 'Allocative efficiency', def: 'P = MC for every good — resources allocated to highest-value uses; no reallocation can increase welfare.' },
+        { term: 'Allocative efficiency', def: 'P = MC for every good — resources allocated to highest-value uses; no reallocation can increase total welfare.' },
         { term: 'Total surplus', def: 'Consumer surplus + producer surplus — the measure of total welfare from market exchange.' },
         { term: 'Deadweight loss', def: 'The reduction in total surplus from producing a quantity different from the efficient level.' }
       ],
-      examEdge: 'P = MC is the allocative efficiency condition. Monopoly produces where MR = MC but charges P > MC → allocative inefficiency → deadweight loss. This is why monopoly is condemned by economists and why competition policy targets market concentration.'
+      examEdge: 'Do not confuse allocative efficiency with equity or fairness — these are separate concepts. P = MC is also why monopoly (which charges P &gt; MC) is allocatively inefficient.'
     },
     {
       id: 'market_equilibrium_6',

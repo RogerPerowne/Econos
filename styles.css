@@ -11915,11 +11915,15 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 
 /* ── 4. The injected .stages widget on station pages was added
        AFTER the .rail-card "Cards" panel in the rail; reorder so
-       the LeRR cards always sit at the top of the rail. ── */
-.right-rail { display: flex; flex-direction: column; gap: var(--sp-4); }
-.right-rail .stages { order: 0; margin-bottom: 0; }
-.right-rail .rail-card,
-.right-rail .deck-download { order: 1; }
+       the LeRR cards always sit at the top of the rail. ──
+       Scoped to non-mobile so the earlier @media <=900px display:none
+       isn't accidentally re-enabled here. */
+@media (min-width: 901px) {
+  .right-rail { display: flex; flex-direction: column; gap: var(--sp-4); }
+  .right-rail .stages { order: 0; margin-bottom: 0; }
+  .right-rail .rail-card,
+  .right-rail .deck-download { order: 1; }
+}
 
 
 /* ============================================================

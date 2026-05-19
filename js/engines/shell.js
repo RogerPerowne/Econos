@@ -330,8 +330,11 @@
   /* shell.js auto-injects skip-link + mobile-nav so each shell HTML
      body doesn't repeat those blocks. Both are idempotent. */
   function bootShell() {
-    mountSkipLink();
+    /* Order matters: each helper inserts at body.firstChild, so the
+       LAST one called ends up at the very top. Skip-link must be the
+       first focusable element on every page → mount it last. */
     mountMobileNav();
+    mountSkipLink();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootShell);

@@ -30,7 +30,15 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] }
+      use: { ...devices['Desktop Chrome'] },
+      testIgnore: /mobile\.spec\.js$/
+    },
+    {
+      /* Catches mobile-only regressions: sidebar hidden, right-rail
+         stacked, mobile-nav visible, no horizontal scroll. */
+      name: 'mobile-chrome',
+      use: { ...devices['Pixel 7'] },
+      testMatch: /mobile\.spec\.js$/
     }
   ],
 

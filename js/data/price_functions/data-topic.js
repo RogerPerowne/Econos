@@ -262,19 +262,37 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'price_functions_6',
-      template: 'cause',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'When the price mechanism fails',
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: '<em>The price mechanism often coordinates markets well — but not always.</em><br><em>If prices do not reflect all costs and benefits, or if markets are distorted, resources may be allocated inefficiently.</em>'
+      },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
-      causesLabel: 'Five routes to price mechanism failure',
+      causesLabel: 'Common sources of failure',
       causes: [
-        { icon: '💨', head: 'Externalities', body: 'External costs and benefits are not captured in market prices. Pollution: the social cost exceeds the private cost reflected in price → price signal understates true cost → overproduction of polluting goods.' },
-        { icon: '🏛️', head: 'Public goods', body: 'Non-excludability means the price mechanism cannot charge for public goods → free rider problem → no profit signal → zero market supply of socially valuable goods (defence, street lighting).' },
-        { icon: '📊', head: 'Information asymmetries', body: 'Sellers may have better information than buyers (used cars, insurance) → prices don\'t accurately reflect quality → adverse selection and market unravelling (Akerlof\'s "Market for Lemons").' },
-        { icon: '🏗️', head: 'Monopoly power', body: 'Firms with market power set P > MC → price signal overstates scarcity → consumers buy less than optimal. Price signal distorted by market power, not just cost and demand.' },
-        { icon: '🍎', head: 'Merit and demerit goods', body: 'Consumers may not have perfect information about the value of healthcare, education (merit goods) or the harm of tobacco (demerit goods) → demand signals don\'t reflect true social value.' }
+        { tone: 'green',  icon: '🏭', head: 'Externalities',           body: 'Costs or benefits affect others not reflected in prices (e.g. pollution).' },
+        { tone: 'blue',   icon: '🏞️', head: 'Public goods',            body: 'Non-excludable and non-rivalrous; markets underprovide them.' },
+        { tone: 'amber',  icon: 'ℹ️',  head: 'Information failure',     body: 'Buyers or sellers lack key information; leads to adverse selection or moral hazard.' },
+        { tone: 'purple', icon: '👑', head: 'Market power / monopoly', body: 'A firm can influence price above competitive levels; restriction of output.' },
+        { tone: 'slate',  icon: '📍', head: 'Factor immobility',       body: 'Resources cannot move freely to where they are most productive.' },
+        { tone: 'rose',   icon: '⚖️',  head: 'Merit and demerit goods', body: 'Markets underprovide merit goods and overprovide demerit goods.' }
       ],
-      examEdge: 'Market failure = price mechanism failure. Each type of market failure represents a specific way in which prices fail to signal, incentivise, or ration correctly. Always tie market failure back to which function of price has broken down — this earns analytical marks above description.'
+      causes2Emoji: '🔬',
+      causes2Label: 'Examples',
+      causes2: [
+        { tone: 'slate', icon: '🏭', head: 'Pollution',                       body: 'Firms don\'t pay for the full environmental cost, so <strong>too much pollution</strong> is produced.' },
+        { tone: 'blue',  icon: '💉', head: 'Vaccination',                     body: 'Benefits extend to others (herd immunity), so private provision is <strong>too low</strong>.' },
+        { tone: 'amber', icon: '🚆', head: 'Rail commuters / local monopoly', body: 'Limited alternatives allow <strong>higher prices</strong> and <strong>poorer service</strong> than competition would deliver.' }
+      ],
+      keyTerms: [
+        { term: 'Market failure',       def: 'A situation where the free market fails to allocate resources efficiently — prices fail to signal, incentivise, or ration correctly.' },
+        { term: 'Externality',          def: 'A cost or benefit of a transaction that falls on a third party not involved in the exchange.' },
+        { term: 'Information asymmetry', def: 'When one side of a transaction has materially better information than the other, distorting decisions and prices.' }
+      ],
+      examEdge: '<strong>Identify why price no longer gives the correct signal.</strong><br>Then explain the consequence for efficiency and why government intervention may be justified.'
     },
     {
       id: 'price_functions_7',

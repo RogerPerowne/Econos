@@ -283,8 +283,12 @@
     }
 
     // Diagram (if card provides a diagramKey) — renders BEFORE flow so the
-    // headline visual sits above any 1-2-3 explanatory chain.
+    // headline visual sits above any 1-2-3 explanatory chain. Optional
+    // diagramLabel/diagramEmoji prepend a genSecLabel section title.
     if (c.diagramKey && I[c.diagramKey]) {
+      if (c.diagramLabel) {
+        content += genSecLabel(c.diagramEmoji || '📊', c.diagramLabel);
+      }
       content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
     }
 

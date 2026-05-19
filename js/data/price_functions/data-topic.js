@@ -127,8 +127,8 @@ window.ECONOS_TOPIC = {
         text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today — it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.'
       },
       diagramKey: 'priceRationingScarcity',
-      flowTitle: 'How rationing works',
-      flowEmoji: '⚖️',
+      diagramLabel: 'How rationing works',
+      diagramEmoji: '⚖️',
       flow: [
         { tone: 'green', icon: '👥', title: 'Shortage',                          sub: 'More people want tickets than are available.' },
         { tone: 'amber', icon: '📈', title: 'Price rises',                        sub: 'Higher prices signal scarcity and adjust the price.' },
@@ -147,7 +147,6 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '🎯', head: 'What it achieves',     body: 'It prevents queues and chaos, allocates goods quickly, and encourages efficient use of scarce resources.' },
         { tone: 'blue',  icon: '⚠️', head: 'What the drawback is', body: 'People with lower incomes may be excluded even if they need or value the good a lot.' }
       ],
-      causes2Style: 'plain-white',
       causes2Emoji: '🌍',
       causes2Label: 'Real-world examples',
       causes2: [

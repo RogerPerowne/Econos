@@ -3368,6 +3368,17 @@ img, svg { display: block; max-width: 100%; }
 .show-supply-right .shifts-svg .layer-supply-right { opacity: 1; }
 .show-supply-left  .shifts-svg .layer-supply-left  { opacity: 1; }
 
+/* ===== SIMULTANEOUS SHIFTS INTERACTIVE (4 states) ===== */
+.sim-shifts-svg .layer-axes { opacity: 1; transition: opacity 0.32s ease; }
+.sim-shifts-svg .layer-both-up,
+.sim-shifts-svg .layer-d-up-s-down,
+.sim-shifts-svg .layer-d-down-s-up,
+.sim-shifts-svg .layer-both-down { opacity: 0; transition: opacity 0.32s ease; }
+.show-both-up      .sim-shifts-svg .layer-both-up      { opacity: 1; }
+.show-d-up-s-down  .sim-shifts-svg .layer-d-up-s-down  { opacity: 1; }
+.show-d-down-s-up  .sim-shifts-svg .layer-d-down-s-up  { opacity: 1; }
+.show-both-down    .sim-shifts-svg .layer-both-down    { opacity: 1; }
+
 /* ===== MARKET INTERACTIVE ===== */
 .market-svg .layer-axes,
 .market-svg .layer-demand-base,

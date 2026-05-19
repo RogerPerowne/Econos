@@ -341,23 +341,33 @@
       content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
     }
 
-    // Diagram panel — SVG on the left, annotated bullet notes on the right.
-    //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets:[string], tone? }
+    // Diagram panel — SVG on the left, annotated notes on the right.
+    //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets?:[string], steps?:[{head,body}], tone? }
+    //   Use `steps` for numbered-circle items with a bold heading + description line.
     if (c.diagramPanel && I[c.diagramPanel.diagramKey]) {
       const dp = c.diagramPanel;
       const tone = PATTERN_TONES[dp.tone || 'green'] || PATTERN_TONES.green;
-      const bulletsHtml = (dp.bullets || []).map(b => `
-        <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13.5px;color:#0B1426;line-height:1.55;">
-          <span style="flex-shrink:0;width:8px;height:8px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
-          <span>${b}</span>
-        </li>`).join('');
+      const rightHtml = dp.steps && dp.steps.length
+        ? `<ol style="list-style:none;margin:0;padding:0;">${dp.steps.map((s, i) => `
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>
+            <div style="flex:1;min-width:0;">
+              <div style="font-weight:800;font-size:13.5px;color:${tone.label};margin-bottom:2px;">${s.head}</div>
+              <div style="font-size:12.5px;color:#475569;line-height:1.55;">${s.body}</div>
+            </div>
+          </li>`).join('')}</ol>`
+        : `<ul style="list-style:none;margin:0;padding:0;">${(dp.bullets || []).map(b => `
+          <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13.5px;color:#0B1426;line-height:1.55;">
+            <span style="flex-shrink:0;width:8px;height:8px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
+            <span>${b}</span>
+          </li>`).join('')}</ul>`;
       content += `
         <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
           <div style="min-width:0;overflow-x:auto;">${I[dp.diagramKey]}</div>
           <div style="display:flex;flex-direction:column;padding:0 4px;">
-            ${dp.title ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:6px;">${dp.title}</div>` : ''}
+            ${dp.title ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:10px;">${dp.title}</div>` : ''}
             ${dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : ''}
-            <ul style="list-style:none;margin:0;padding:0;">${bulletsHtml}</ul>
+            ${rightHtml}
           </div>
         </div>`;
     }

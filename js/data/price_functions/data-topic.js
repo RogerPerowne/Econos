@@ -203,15 +203,61 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'price_functions_5',
-      template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Entrepreneurship and the price mechanism',
-      body: 'The <strong>entrepreneur</strong> (Schumpeter\'s "creative destroyer") plays a crucial role in the price mechanism: by spotting profit opportunities (price signals), taking risks, and bringing new products to market, entrepreneurs drive the allocation of resources toward unmet demand.<br><br><strong>Role in the price mechanism:</strong><br>• Identifies markets where price exceeds cost (abnormal profit signals)<br>• Bears the risk of resource deployment in uncertain environments<br>• Innovates — creating new products and services, destroying old ones<br>• Coordinates factors of production to respond to consumer demand<br><br>Without entrepreneurs, price signals would exist but no one would act on them.',
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: 'Entrepreneurs watch prices closely. <strong>Rising prices and profits reveal unmet demand or scarcity.</strong> That creates an opportunity: enter the market, innovate, or find a cheaper way to supply the product.'
+      },
+      flowTitle: 'How entrepreneurs respond',
+      flowEmoji: '🚀',
+      flow: [
+        { tone: 'green',  icon: '🔍', title: 'Spot a price signal',          sub: 'Notice rising prices, shortages or strong demand.' },
+        { tone: 'amber',  icon: '📈', title: 'See a profit opportunity',     sub: 'Higher prices suggest consumers are willing to pay more.' },
+        { tone: 'blue',   icon: '🌱', title: 'Take a risk / invest',         sub: 'Commit money, time and ideas with uncertainty.' },
+        { tone: 'purple', icon: '🧩', title: 'Bring resources together',     sub: 'Combine labour, capital, ideas and technology.' },
+        { tone: 'green',  icon: '🏆', title: 'Earn profit if the idea works', sub: 'If consumers value it, profits reward success.' }
+      ],
+      pairLabel: null,
+      left: {
+        tone: 'green',
+        icon: '👤',
+        iconStyle: 'circle',
+        label: 'What entrepreneurs do',
+        points: [
+          'Organise resources to create goods and services.',
+          'Innovate with new products, processes or models.',
+          'Take risk by investing under uncertainty.',
+          'Respond to unmet demand and changing needs.'
+        ]
+      },
+      right: {
+        tone: 'blue',
+        icon: '⚖️',
+        iconStyle: 'circle',
+        label: 'Why the price mechanism matters',
+        points: [
+          'It rewards successful ideas.',
+          'It directs resources to where they are valued most.',
+          'It encourages efficiency and improvement.',
+          'It helps new firms enter and compete.'
+        ]
+      },
+      causesStyle: 'plain-white',
+      causesEmoji: '🌍',
+      causesLabel: 'Real-world examples',
+      causes: [
+        { tone: 'green', icon: '🛵', head: 'Food delivery apps', body: '<strong>Price signal:</strong> Busy times mean higher prices and delivery fees.<br><strong>Entrepreneurial response:</strong> Apps enter the market and use tech to match riders with customers.' },
+        { tone: 'amber', icon: '⛽', head: 'EV charging',        body: '<strong>Price signal:</strong> High fuel prices and demand for charging.<br><strong>Entrepreneurial response:</strong> Firms invest in charging networks and fast-charging stations.' },
+        { tone: 'blue',  icon: '📱', head: 'Revision apps',      body: '<strong>Price signal:</strong> Students value convenient, effective study tools.<br><strong>Entrepreneurial response:</strong> Entrepreneurs create apps with notes, quizzes and personalised plans.' }
+      ],
       keyTerms: [
-        { term: 'Entrepreneur', def: 'An economic agent who organises factors of production to create goods/services, bearing risk in search of profit.' },
-        { term: 'Creative destruction', def: 'Schumpeter\'s term for entrepreneurial innovation destroying old industries while creating new ones — the engine of dynamic efficiency.' },
+        { term: 'Entrepreneur',           def: 'An economic agent who organises factors of production to create goods/services, bearing risk in search of profit.' },
+        { term: 'Creative destruction',   def: 'Schumpeter\'s term for entrepreneurial innovation destroying old industries while creating new ones — the engine of dynamic efficiency.' },
         { term: 'Abnormal profit signal', def: 'Profit above normal return — the price signal that attracts entrepreneurs into a profitable market.' }
       ],
-      examEdge: 'Linking entrepreneurship to the price mechanism: "Without entrepreneurship, the price mechanism cannot function — prices signal profit opportunities, but only entrepreneurs convert those signals into new supply. This is why countries with poor property rights, high corruption, or regulatory barriers fail to respond to price signals efficiently." A sophisticated analytical connection.'
+      examEdge: 'Remember: entrepreneurship is linked to <strong>profit incentives</strong> and <strong>dynamic efficiency</strong>. It\'s not just about starting a business — it\'s about <strong>responding to price signals to create value</strong>.'
     },
     {
       id: 'price_functions_6',

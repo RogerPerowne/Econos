@@ -204,6 +204,35 @@ img, svg { display: block; max-width: 100%; }
 #main-content:focus { outline: none; }
 #main-content:focus-visible { outline: none; }
 
+/* ----- Loading skeleton -----
+   Rendered by Link/Land routers AFTER a 180ms grace period so cached
+   or instant navigations never flash a loading state. Animated by a
+   subtle background shimmer. */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--econ-gray-100) 0%,
+    var(--econ-gray-50) 50%,
+    var(--econ-gray-100) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--r-lg);
+  animation: skeleton-shimmer 1.4s linear infinite;
+}
+@keyframes skeleton-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+.skeleton--sidebar { width: var(--sidebar-w); height: 100vh; border-radius: 0; }
+.skeleton--topbar  { height: var(--header-h); border-radius: 0; }
+.skeleton--card    { height: 220px; margin-bottom: var(--sp-4); }
+.skeleton__main    { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.skeleton__page    { padding: var(--sp-6) var(--sp-8); }
+[aria-busy="true"] { display: flex; min-height: 100vh; }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
+
 /* ----- Sidebar ----- */
 .sidebar {
   background: var(--econ-white);

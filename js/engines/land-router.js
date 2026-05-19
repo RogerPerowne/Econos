@@ -104,6 +104,27 @@
 
   function cacheKey(file) { return TopicLoader.getTopic() + '/' + file; }
 
+  /* Skeleton stub identical in spirit to LinkRouter's — see that file
+     for the rationale. Theme class differs (theme--land). */
+  function showLoadingSkeleton() {
+    var root = document.getElementById('app-root');
+    if (!root) return function () {};
+    var timer = setTimeout(function () {
+      root.innerHTML = ''
+        + '<div class="app theme--land" aria-busy="true">'
+        +   '<div class="skeleton skeleton--sidebar"></div>'
+        +   '<div class="skeleton__main">'
+        +     '<div class="skeleton skeleton--topbar"></div>'
+        +     '<div class="skeleton__page">'
+        +       '<div class="skeleton skeleton--card"></div>'
+        +       '<div class="skeleton skeleton--card"></div>'
+        +     '</div>'
+        +   '</div>'
+        + '</div>';
+    }, 180);
+    return function cancel() { clearTimeout(timer); };
+  }
+
   function loadStation(station) {
     var cfg = STATIONS[station];
     if (!cfg) {
@@ -111,12 +132,14 @@
       return;
     }
     setTitle(station);
+    var cancelSkeleton = showLoadingSkeleton();
     if (station === 'quiz') {
       var quizSet = new URLSearchParams(window.location.search).get('quiz') || 'main';
       var dataFile = 'data-land-quiz-' + quizSet + '.js';
       loadScript('js/engines/quiz-engine.js', function () {
         TopicLoader.loadData(dataFile, function () {
           if (typeof window.bootQuizStation === 'function') {
+            cancelSkeleton();
             window.bootQuizStation({ stage: 'land' });
             window.scrollTo(0, 0);
           }
@@ -127,9 +150,11 @@
     var bootFn = function () {
       var fn = window[cfg.boot];
       if (typeof fn === 'function') {
+        cancelSkeleton();
         fn();
         window.scrollTo(0, 0);
       } else {
+        cancelSkeleton();
         renderUnknownStation(station);
       }
     };

@@ -11433,86 +11433,103 @@ window.ECONOS_ICONS = {
         </filter>
       </defs>
 
-      <!-- warm cream ground -->
-      <ellipse cx="140" cy="342" rx="102" ry="13" fill="#FEF3C7" opacity="0.65"/>
-
-      <!-- TWEED SUIT BODY (warm brown) -->
-      <path d="M 32,360 L 60,232 Q 88,217 115,213 L 131,226 L 140,232 L 149,226 L 165,213 Q 192,217 220,232 L 248,360 Z" fill="#6B4E2A" filter="url(#fh-sh)"/>
-      <!-- Tweed texture (subtle cross-hatch strokes) -->
-      <path d="M 80,260 L 96,280 M 100,244 L 116,264 M 120,236 L 132,250" stroke="#7C5E38" stroke-width="1" opacity="0.5"/>
-      <path d="M 200,260 L 184,280 M 180,244 L 164,264 M 160,236 L 148,250" stroke="#7C5E38" stroke-width="1" opacity="0.5"/>
-      <!-- Lapels -->
-      <path d="M 131,226 L 116,255 L 140,274 L 164,255 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#7C5E38"/>
-      <!-- Suit sleeves -->
-      <path d="M 60,232 Q 52,262 48,292" stroke="#7C5E38" stroke-width="13" fill="none" stroke-linecap="round"/>
-      <path d="M 220,232 Q 228,262 232,292" stroke="#7C5E38" stroke-width="13" fill="none" stroke-linecap="round"/>
-
-      <!-- White shirt + tie (dark burgundy, professorial) -->
-      <path d="M 131,226 L 125,270 Q 140,278 155,270 L 149,226 L 144,231 L 140,232 L 136,231 Z" fill="#F8F6F4"/>
-      <path d="M 138,228 L 134,302 Q 140,310 146,302 L 142,228 Z" fill="#7B1C1C"/>
-      <path d="M 138,228 L 136,240 Q 140,244 144,240 L 142,228 Q 140,231 138,228 Z" fill="#6B1010"/>
+      <!-- SUIT — three-piece brown -->
+      <!-- Jacket body -->
+      <path d="M 28,360 L 56,238 Q 86,222 116,218 L 140,244 L 164,218 Q 194,222 224,238 L 252,360 Z" fill="#6B4E2A" filter="url(#fh-sh)"/>
+      <!-- Lapels (slightly lighter brown) -->
+      <path d="M 116,218 L 104,268 L 140,300 L 176,268 L 164,218 L 152,228 L 140,232 L 128,228 Z" fill="#7C5E38"/>
+      <!-- Waistcoat (visible V between lapels) -->
+      <path d="M 124,242 L 119,330 L 140,360 L 161,330 L 156,242 L 148,250 L 140,254 L 132,250 Z" fill="#7C5832"/>
+      <!-- Waistcoat buttons -->
+      <circle cx="140" cy="278" r="1.8" fill="#3A2810"/>
+      <circle cx="140" cy="300" r="1.8" fill="#3A2810"/>
+      <circle cx="140" cy="322" r="1.8" fill="#3A2810"/>
+      <!-- Pocket square -->
+      <path d="M 188,260 L 206,260 L 202,272 L 198,266 L 194,272 Z" fill="#F8F6F4"/>
+      <!-- White shirt collar -->
+      <path d="M 130,222 L 124,250 L 140,260 L 156,250 L 150,222 L 144,228 L 140,230 L 136,228 Z" fill="#F8F6F4"/>
+      <!-- Tie (dark burgundy, narrow, tucked into waistcoat) -->
+      <path d="M 136,232 L 132,256 L 140,260 L 148,256 L 144,232 Z" fill="#7B1C1C"/>
+      <path d="M 132,256 L 130,272 L 140,278 L 150,272 L 148,256 L 140,260 Z" fill="#7B1C1C"/>
+      <!-- Tie dots -->
+      <circle cx="137" cy="244" r="0.9" fill="#D9B5B5"/>
+      <circle cx="143" cy="248" r="0.9" fill="#D9B5B5"/>
+      <circle cx="135" cy="264" r="0.9" fill="#D9B5B5"/>
+      <circle cx="143" cy="268" r="0.9" fill="#D9B5B5"/>
+      <!-- Tie knot shading -->
+      <path d="M 136,232 L 134,240 Q 140,244 146,240 L 144,232 Q 140,234 136,232 Z" fill="#5E1414"/>
 
       <!-- NECK -->
-      <path d="M 129,200 L 127,226 L 153,226 L 151,200 Q 145,206 140,207 Q 135,206 129,200 Z" fill="#D4966A"/>
+      <path d="M 128,200 L 126,228 L 154,228 L 152,200 Q 145,206 140,207 Q 135,206 128,200 Z" fill="#D4966A"/>
 
       <!-- EARS -->
-      <ellipse cx="95" cy="158" rx="8.5" ry="11" fill="#C07E55"/>
-      <ellipse cx="185" cy="158" rx="8.5" ry="11" fill="#C07E55"/>
+      <ellipse cx="94" cy="158" rx="8.5" ry="11" fill="#C07E55"/>
+      <ellipse cx="186" cy="158" rx="8.5" ry="11" fill="#C07E55"/>
 
-      <!-- FACE (slightly older, more lined) -->
-      <ellipse cx="140" cy="150" rx="46" ry="52" fill="#D9956A"/>
+      <!-- FACE -->
+      <ellipse cx="140" cy="150" rx="46" ry="54" fill="#D9956A"/>
 
-      <!-- HAIR — grey-white, receding temples, side-parted, thin on top -->
-      <!-- Main hair path (receding — only at top sides and back) -->
-      <path d="M 100,150 Q 100,104 118,97 Q 135,93 152,97 Q 168,103 180,150 Q 168,132 155,126 Q 142,122 128,126 Q 114,130 104,142 Z" fill="#B8B0A0"/>
-      <!-- Receding temple left (bare) -->
-      <path d="M 100,150 Q 104,126 112,116 Q 99,118 98,150 Z" fill="#D9956A"/>
-      <!-- Receding temple right (bare) -->
-      <path d="M 180,150 Q 176,126 168,116 Q 181,118 182,150 Z" fill="#D9956A"/>
-      <!-- Hair side left -->
-      <path d="M 100,150 Q 96,165 97,180" stroke="#B0A898" stroke-width="10" fill="none" stroke-linecap="round"/>
-      <!-- Hair side right -->
-      <path d="M 180,150 Q 184,165 183,180" stroke="#B0A898" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <!-- HAIR — full grey, combed back with volume on top -->
+      <!-- Back/under layer (darker grey, fills behind) -->
+      <path d="M 92,158 Q 88,108 116,90 Q 140,82 164,90 Q 192,108 188,158 Q 186,130 178,118 Q 158,100 140,100 Q 122,100 102,118 Q 94,130 92,158 Z" fill="#9A9388"/>
+      <!-- Main hair mass (silver-grey, swept back) -->
+      <path d="M 96,150 Q 92,112 118,98 Q 140,90 162,98 Q 188,112 184,150 Q 178,128 168,118 Q 154,108 140,108 Q 126,108 112,118 Q 102,128 96,150 Z" fill="#BFB8AC"/>
+      <!-- Top volume / wave highlights -->
+      <path d="M 110,108 Q 122,98 134,102 Q 130,108 122,112 Q 114,114 110,108 Z" fill="#D6D0C4"/>
+      <path d="M 146,102 Q 158,98 170,108 Q 166,114 158,112 Q 150,108 146,102 Z" fill="#D6D0C4"/>
+      <!-- Swept-back strands (subtle linework) -->
+      <path d="M 108,108 Q 124,102 142,104" stroke="#8C8478" stroke-width="0.8" fill="none" opacity="0.55"/>
+      <path d="M 138,104 Q 156,102 172,108" stroke="#8C8478" stroke-width="0.8" fill="none" opacity="0.55"/>
+      <path d="M 102,124 Q 118,114 138,114" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.45"/>
+      <path d="M 142,114 Q 162,114 178,124" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.45"/>
+      <!-- Hair side-burn left -->
+      <path d="M 96,150 Q 92,166 95,180" stroke="#A89F90" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <!-- Hair side-burn right -->
+      <path d="M 184,150 Q 188,166 185,180" stroke="#A89F90" stroke-width="9" fill="none" stroke-linecap="round"/>
 
-      <!-- EYEBROWS (grey, bushy professor style) -->
-      <path d="M 110,132 Q 121,127 133,130" stroke="#888070" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M 147,130 Q 159,127 170,132" stroke="#888070" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- EYEBROWS (grey, bushy) -->
+      <path d="M 109,131 Q 121,125 134,129" stroke="#7F7868" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      <path d="M 146,129 Q 159,125 171,131" stroke="#7F7868" stroke-width="3.2" fill="none" stroke-linecap="round"/>
 
       <!-- EYES -->
-      <ellipse cx="122" cy="143" rx="9" ry="6.5" fill="white"/>
-      <ellipse cx="158" cy="143" rx="9" ry="6.5" fill="white"/>
-      <circle cx="123" cy="143" r="4.2" fill="#4A3820"/>
-      <circle cx="159" cy="143" r="4.2" fill="#4A3820"/>
-      <circle cx="123" cy="143" r="2" fill="#180E04"/>
-      <circle cx="159" cy="143" r="2" fill="#180E04"/>
-      <circle cx="124.5" cy="141.5" r="1.2" fill="white"/>
-      <circle cx="160.5" cy="141.5" r="1.2" fill="white"/>
+      <ellipse cx="122" cy="144" rx="8.5" ry="6" fill="white"/>
+      <ellipse cx="158" cy="144" rx="8.5" ry="6" fill="white"/>
+      <circle cx="123" cy="144" r="4" fill="#4A3820"/>
+      <circle cx="159" cy="144" r="4" fill="#4A3820"/>
+      <circle cx="123" cy="144" r="1.9" fill="#180E04"/>
+      <circle cx="159" cy="144" r="1.9" fill="#180E04"/>
+      <circle cx="124.5" cy="142.5" r="1.1" fill="white"/>
+      <circle cx="160.5" cy="142.5" r="1.1" fill="white"/>
 
-      <!-- ROUND GLASSES — Hayek's signature feature -->
-      <!-- Left lens frame -->
-      <circle cx="122" cy="143" r="14" fill="none" stroke="#2D2820" stroke-width="2.5"/>
-      <!-- Right lens frame -->
-      <circle cx="158" cy="143" r="14" fill="none" stroke="#2D2820" stroke-width="2.5"/>
-      <!-- Bridge connecting lenses -->
-      <path d="M 136,141 Q 140,138 144,141" stroke="#2D2820" stroke-width="2" fill="none"/>
-      <!-- Left earpiece -->
-      <path d="M 108,143 Q 98,145 95,152" stroke="#2D2820" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <!-- Right earpiece -->
-      <path d="M 172,143 Q 182,145 185,152" stroke="#2D2820" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- ROUND WIRE GLASSES -->
+      <circle cx="122" cy="144" r="13.5" fill="none" stroke="#2D2820" stroke-width="2.2"/>
+      <circle cx="158" cy="144" r="13.5" fill="none" stroke="#2D2820" stroke-width="2.2"/>
+      <path d="M 135.5,142 Q 140,139 144.5,142" stroke="#2D2820" stroke-width="1.8" fill="none"/>
+      <path d="M 108.5,144 Q 99,146 95,154" stroke="#2D2820" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 171.5,144 Q 181,146 185,154" stroke="#2D2820" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 
       <!-- NOSE -->
-      <path d="M 139,154 Q 135,165 134,169 Q 140,174 146,169 Q 145,165 141,154" fill="#A87040" opacity="0.38"/>
-      <circle cx="135" cy="169" r="2.5" fill="#986030" opacity="0.32"/>
-      <circle cx="145" cy="169" r="2.5" fill="#986030" opacity="0.32"/>
+      <path d="M 138,156 Q 134,168 133,174 Q 140,179 147,174 Q 146,168 142,156" fill="#A87040" opacity="0.35"/>
+      <circle cx="135" cy="174" r="2.4" fill="#986030" opacity="0.3"/>
+      <circle cx="145" cy="174" r="2.4" fill="#986030" opacity="0.3"/>
 
       <!-- AGE LINES (subtle) -->
-      <path d="M 114,155 Q 112,162 114,168" stroke="#B07048" stroke-width="1" fill="none" opacity="0.35"/>
-      <path d="M 166,155 Q 168,162 166,168" stroke="#B07048" stroke-width="1" fill="none" opacity="0.35"/>
-      <path d="M 108,138 Q 106,132 110,128" stroke="#B07048" stroke-width="1" fill="none" opacity="0.3"/>
-      <path d="M 172,138 Q 174,132 170,128" stroke="#B07048" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M 113,156 Q 111,164 113,170" stroke="#B07048" stroke-width="0.9" fill="none" opacity="0.3"/>
+      <path d="M 167,156 Q 169,164 167,170" stroke="#B07048" stroke-width="0.9" fill="none" opacity="0.3"/>
+      <path d="M 124,167 Q 122,171 126,172" stroke="#B07048" stroke-width="0.7" fill="none" opacity="0.25"/>
+      <path d="M 156,167 Q 158,171 154,172" stroke="#B07048" stroke-width="0.7" fill="none" opacity="0.25"/>
 
-      <!-- MOUTH (professorial, slightly pursed) -->
-      <path d="M 128,177 Q 140,183 152,177" stroke="#A06040" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <!-- BUSHY GREY MOUSTACHE — signature feature -->
+      <path d="M 116,184 Q 122,180 130,182 Q 138,184 140,188 Q 142,184 150,182 Q 158,180 164,184 Q 162,192 152,194 Q 144,194 140,192 Q 136,194 128,194 Q 118,192 116,184 Z" fill="#A89F90"/>
+      <!-- Moustache highlight strokes -->
+      <path d="M 120,184 Q 128,182 138,186" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.5"/>
+      <path d="M 142,186 Q 152,182 160,184" stroke="#8C8478" stroke-width="0.7" fill="none" opacity="0.5"/>
+
+      <!-- MOUTH (small, beneath moustache) -->
+      <path d="M 132,200 Q 140,204 148,200" stroke="#8C5238" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+      <!-- CHIN shading -->
+      <path d="M 130,205 Q 140,212 150,205" stroke="#B07048" stroke-width="0.8" fill="none" opacity="0.25"/>
 
       <!-- PRICE TAG (floating, top right — price mechanism symbol) -->
       <g transform="translate(196, 40)" filter="url(#fh-soft)">

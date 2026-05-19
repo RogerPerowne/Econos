@@ -149,16 +149,50 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_4',
-      template: 'diagnose',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Simultaneous Shifts',
-      intro: 'When supply and demand both shift, the effect on price or quantity may be indeterminate depending on relative magnitudes.',
-      rows: [
-        { label: 'Shift combination', colA: 'Demand rises AND Supply falls', colB: 'Demand rises AND Supply rises' },
-        { label: 'Price effect', colA: 'Price definitely RISES (both shifts push price up)', colB: 'Indeterminate — depends on relative magnitude of shifts' },
-        { label: 'Quantity effect', colA: 'Indeterminate — demand raises Q, supply reduction lowers Q', colB: 'Quantity definitely RISES (both shifts push quantity up)' }
+      tip: { icon: '💡', tone: 'blue', text: 'When demand and supply both shift, the final effect depends on the direction and relative size of each shift.' },
+      diagramKey: 'simultaneousShiftsInteractive',
+      steps: [
+        {
+          key: 'both-up',
+          label: 'D↑ & S↑',
+          text: '<strong>Both rise — demand right, supply right.</strong> The market clears more units at the new equilibrium. <strong>Quantity definitely rises.</strong> Price could rise, fall, or stay the same — it depends on whether the demand shift or supply shift is larger.'
+        },
+        {
+          key: 'd-up-s-down',
+          label: 'D↑ & S↓',
+          text: '<strong>Demand rises, supply falls.</strong> Both shifts push price up — buyers are bidding more for fewer goods. <strong>Price definitely rises.</strong> Quantity is ambiguous: demand wants to raise Q, supply pulls it down — net effect depends on which shift dominates.'
+        },
+        {
+          key: 'd-down-s-up',
+          label: 'D↓ & S↑',
+          text: '<strong>Demand falls, supply rises.</strong> Both shifts push price down — fewer buyers facing more sellers. <strong>Price definitely falls.</strong> Quantity is ambiguous: lower demand reduces Q, higher supply raises Q — net effect depends on which shift dominates.'
+        },
+        {
+          key: 'both-down',
+          label: 'D↓ & S↓',
+          text: '<strong>Both fall — demand left, supply left.</strong> The market clears fewer units at the new equilibrium. <strong>Quantity definitely falls.</strong> Price could rise, fall, or stay the same depending on whether demand or supply shrinks more.'
+        }
       ],
-      footer: 'Rule: if both shifts work in the same direction for one variable (P or Q), that variable is determinate. If they work in opposite directions, the outcome is ambiguous — state "it depends on the relative magnitude of the shifts."',
-      examEdge: '"Indeterminate" is a perfectly valid and sophisticated answer when both shifts have opposing effects on a variable. Saying so explicitly — and explaining why — earns more marks than guessing a direction without justification.'
+      flowTitle: 'How to answer',
+      flowEmoji: '📋',
+      flow: [
+        { tone: 'blue',  icon: '🔍', title: 'Identify both shifts',        sub: 'State clearly how demand and supply have shifted — direction and reason.' },
+        { tone: 'amber', icon: '⚖️', title: "Decide what's predictable",   sub: 'Same direction for one variable → that variable is determinate. Opposite directions → ambiguous.' },
+        { tone: 'green', icon: '🎯', title: 'Explain the final outcome',   sub: 'State the certain change, then say the other variable depends on the relative magnitude of the shifts.' }
+      ],
+      causes2Emoji: '🌍',
+      causes2Label: 'Real-world examples',
+      causes2: [
+        { tone: 'green',  icon: '🎬', head: 'D↑ S↑ · Streaming (2020–22)',     body: 'Lockdowns and a boom in original content drove demand up. Netflix, Disney+ and Apple TV+ all expanded supply. <strong style="color:#059669;">Q rose sharply</strong>; subscription prices held or rose modestly.' },
+        { tone: 'amber',  icon: '🛢️', head: 'D↑ S↓ · Oil during OPEC+ cuts',    body: 'Post-pandemic global demand recovered while OPEC+ trimmed production. <strong style="color:#059669;">Price rose clearly</strong>; total quantity depended on how deep the cuts were.' },
+        { tone: 'blue',   icon: '📱', head: 'D↓ S↑ · Older smartphone models', body: 'Newer flagships pull demand away from old models while manufacturers flood the market with mid-range variants. <strong style="color:#DC2626;">Price falls clearly</strong>; quantity depends on the strength of each effect.' },
+        { tone: 'rose',   icon: '📰', head: 'D↓ S↓ · Local UK newspapers',     body: 'Digital substitutes crush demand; many titles close, cutting supply. <strong style="color:#DC2626;">Quantity falls clearly</strong>; price varies — some titles raise covers, others discount to survive.' }
+      ],
+      conclusion: { title: 'Key takeaway', text: 'Simultaneous shifts require balanced judgement — not a one-line answer.' },
+      examEdge: 'Use phrases like "the effect on price is ambiguous" or "depends on the relative size of the shifts". Stating ambiguity explicitly — and explaining why — earns more marks than guessing a direction without justification.'
     },
     {
       id: 'market_equilibrium_5',

@@ -2634,6 +2634,62 @@
         return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 28px;">${tiles}</div>`;
       })() : ''}
 
+      ${c.flow && c.flow.length ? (() => {
+        const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+        const n = c.flow.length;
+        const title = c.flowTitle ? genSecLabel(c.flowEmoji || '➡️', c.flowTitle) : '';
+        const tiles = c.flow.map((step, i) => {
+          const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+          const isLast = i === n - 1;
+          return `
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
+              <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
+              <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}</div>
+              <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
+              ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+              ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
+            </div>`;
+        }).join('');
+        return `${title}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">${tiles}</div>`;
+      })() : ''}
+
+      ${c.left && c.right ? (() => {
+        const renderSide = (side, fallbackTone) => {
+          const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
+          const inner = side.text
+            ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+            : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
+          const iconHtml = side.icon
+            ? (side.iconStyle === 'circle'
+                ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
+                : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
+            : '';
+          return `
+            <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                ${iconHtml}
+                <div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>
+              </div>
+              ${inner}
+            </div>`;
+        };
+        const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
+        return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
+      })() : ''}
+
+      ${(c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
+        const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
+        const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
+        return `
+          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
+              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+            </div>
+          </div>`;
+      })() : ''}
+
       ${renderExamEdge(c.examEdge)}
     `;
   }

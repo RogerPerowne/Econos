@@ -3344,6 +3344,19 @@ img, svg { display: block; max-width: 100%; }
 .show-shift .supply-svg .layer-shift { opacity: 1; }
 .show-shift .supply-svg .layer-legend-shift { opacity: 1; }
 
+/* ===== DISEQUILIBRIUM INTERACTIVE ===== */
+.disequilibrium-svg .layer-axes,
+.disequilibrium-svg .layer-demand,
+.disequilibrium-svg .layer-supply,
+.disequilibrium-svg .layer-e1,
+.disequilibrium-svg .layer-base { opacity: 1; transition: opacity 0.32s ease; }
+.disequilibrium-svg .layer-shortage,
+.disequilibrium-svg .layer-surplus { opacity: 0; transition: opacity 0.32s ease; }
+.show-shortage .disequilibrium-svg .layer-base { opacity: 0; }
+.show-shortage .disequilibrium-svg .layer-shortage { opacity: 1; }
+.show-surplus .disequilibrium-svg .layer-base { opacity: 0; }
+.show-surplus .disequilibrium-svg .layer-surplus { opacity: 1; }
+
 /* ===== MARKET INTERACTIVE ===== */
 .market-svg .layer-axes,
 .market-svg .layer-demand-base,

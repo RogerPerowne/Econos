@@ -5504,6 +5504,113 @@ window.ECONOS_ICONS = {
       <rect x="232" y="333" width="6" height="6" fill="#F5B335" stroke="#0B1426" stroke-width="1.5"/>
     </svg>
   `,
+  heroSpecialisationMoney: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="hsm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#0B1426"/>
+        </marker>
+      </defs>
+
+      <!-- signal waves above -->
+      <g fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round">
+        <path d="M 128 90 Q 140 78 152 90"/>
+        <path d="M 122 80 Q 140 62 158 80"/>
+        <path d="M 116 70 Q 140 46 164 70"/>
+      </g>
+      <!-- yellow signal dots -->
+      <circle cx="140" cy="100" r="3" fill="#F5B335"/>
+      <circle cx="140" cy="112" r="3" fill="#F5B335"/>
+      <circle cx="140" cy="124" r="3" fill="#F5B335"/>
+
+      <!-- central large £ coin -->
+      <circle cx="140" cy="190" r="46" fill="#F5B335" stroke="#0B1426" stroke-width="3"/>
+      <circle cx="140" cy="190" r="40" fill="none" stroke="#0B1426" stroke-width="1.6"/>
+      <text x="140" y="206" font-size="44" font-weight="600" fill="#0B1426" text-anchor="middle" font-family="Georgia,serif">£</text>
+      <!-- shadow under coin -->
+      <ellipse cx="140" cy="244" rx="40" ry="3.5" fill="#0B1426" opacity="0.08"/>
+
+      <!-- satellite £ coins -->
+      <g>
+        <circle cx="70" cy="170" r="10" fill="#F5B335" stroke="#0B1426" stroke-width="2"/>
+        <text x="70" y="174" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Georgia,serif">£</text>
+      </g>
+      <g>
+        <circle cx="102" cy="146" r="10" fill="#F5B335" stroke="#0B1426" stroke-width="2"/>
+        <text x="102" y="150" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Georgia,serif">£</text>
+      </g>
+      <g>
+        <circle cx="210" cy="170" r="10" fill="#F5B335" stroke="#0B1426" stroke-width="2"/>
+        <text x="210" y="174" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Georgia,serif">£</text>
+      </g>
+      <g>
+        <circle cx="240" cy="190" r="10" fill="#F5B335" stroke="#0B1426" stroke-width="2"/>
+        <text x="240" y="194" font-size="11" font-weight="700" fill="#0B1426" text-anchor="middle" font-family="Georgia,serif">£</text>
+      </g>
+
+      <!-- curved arrows from baker (left) toward coin -->
+      <path d="M 60 240 Q 80 210 96 198" fill="none" stroke="#0B1426" stroke-width="2.2" stroke-linecap="round" marker-end="url(#hsm-arrow)"/>
+      <path d="M 75 248 Q 90 230 100 215" fill="none" stroke="#0B1426" stroke-width="2.2" stroke-linecap="round" marker-end="url(#hsm-arrow)"/>
+      <!-- curved arrows from carpenter (right) toward coin -->
+      <path d="M 220 240 Q 200 210 184 198" fill="none" stroke="#0B1426" stroke-width="2.2" stroke-linecap="round" marker-end="url(#hsm-arrow)"/>
+      <path d="M 205 248 Q 190 230 180 215" fill="none" stroke="#0B1426" stroke-width="2.2" stroke-linecap="round" marker-end="url(#hsm-arrow)"/>
+
+      <!-- LEFT: baker scene -->
+      <ellipse cx="55" cy="310" rx="44" ry="38" fill="#FCE7E0" opacity="0.5"/>
+      <g fill="none" stroke="#0B1426" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- chef hat -->
+        <path d="M 38 282 Q 38 270 46 270 Q 50 264 56 270 Q 64 270 64 282 L 64 288 L 38 288 Z" fill="#FFFFFF"/>
+        <path d="M 38 288 L 64 288"/>
+        <!-- head -->
+        <circle cx="51" cy="296" r="6" fill="#FFFFFF"/>
+        <!-- apron body -->
+        <path d="M 42 308 L 42 338 L 60 338 L 60 308 Z" fill="#FFFFFF"/>
+        <!-- shoulders -->
+        <path d="M 42 308 L 51 302 L 60 308"/>
+        <!-- arms -->
+        <path d="M 42 314 L 32 330"/>
+        <path d="M 60 314 L 70 326"/>
+        <!-- counter -->
+        <path d="M 22 342 L 86 342"/>
+      </g>
+      <!-- bread loaf -->
+      <ellipse cx="74" cy="335" rx="12" ry="6" fill="#F5B335" stroke="#0B1426" stroke-width="2"/>
+      <path d="M 66 333 L 70 337 M 71 332 L 75 337 M 76 332 L 80 337" fill="none" stroke="#0B1426" stroke-width="1.4" stroke-linecap="round"/>
+
+      <!-- RIGHT: carpenter scene -->
+      <ellipse cx="225" cy="310" rx="44" ry="38" fill="#FCE7E0" opacity="0.5"/>
+      <g fill="none" stroke="#0B1426" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- cap -->
+        <path d="M 200 286 L 220 286 L 220 280 Q 220 274 212 274 Q 204 274 200 280 Z" fill="#FFFFFF"/>
+        <path d="M 200 286 L 196 288 L 200 290" fill="#FFFFFF"/>
+        <!-- head -->
+        <circle cx="210" cy="294" r="6" fill="#FFFFFF"/>
+        <!-- apron body -->
+        <path d="M 200 306 L 200 336 L 220 336 L 220 306 Z" fill="#FFFFFF"/>
+        <!-- shoulders -->
+        <path d="M 200 306 L 210 300 L 220 306"/>
+        <!-- arm holding hammer -->
+        <path d="M 200 314 L 192 326"/>
+        <path d="M 220 314 L 230 322"/>
+        <!-- counter -->
+        <path d="M 188 342 L 262 342"/>
+      </g>
+      <!-- hammer -->
+      <g stroke="#0B1426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="188" y1="324" x2="188" y2="335"/>
+        <rect x="183" y="320" width="12" height="6" fill="#0B1426"/>
+      </g>
+      <!-- chair -->
+      <g fill="#F5B335" stroke="#0B1426" stroke-width="2" stroke-linejoin="round">
+        <rect x="236" y="316" width="18" height="4"/>
+        <rect x="236" y="304" width="3" height="16"/>
+        <rect x="251" y="304" width="3" height="16"/>
+        <line x1="236" y1="312" x2="254" y2="312" stroke="#0B1426"/>
+        <line x1="238" y1="320" x2="238" y2="340" stroke="#0B1426" fill="none"/>
+        <line x1="252" y1="320" x2="252" y2="340" stroke="#0B1426" fill="none"/>
+      </g>
+    </svg>
+  `,
   heroEconomicSystems: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

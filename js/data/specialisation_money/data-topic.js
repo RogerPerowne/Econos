@@ -6,7 +6,7 @@ window.ECONOS_TOPIC = {
   estTime: '7-9 minutes',
   goal: 'Lock in division of labour, the gains from specialisation, the limitations of barter, and the four functions of money.',
   intro: {
-    heroKey: 'heroPrice',
+    heroKey: 'heroSpecialisationMoney',
     summary: 'Specialisation dramatically raises productivity but creates a need for exchange. Barter is too inefficient to support complex trade — money solves this by acting as a medium of exchange, store of value, unit of account, and standard of deferred payment.',
     doInThis: 'Work through 7 cards covering specialisation by individuals and countries, Adam Smith\'s pin factory, the division of labour, barter\'s problems, money\'s four functions, and the characteristics of good money.',
     outcomes: [

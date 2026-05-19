@@ -23,7 +23,6 @@ window.EconosElasticity = (function () {
   function qToX(q) { return CHART.x0 + (q / CHART.qMax) * (CHART.x1 - CHART.x0); }
   function xToQ(x) { return ((x - CHART.x0) / (CHART.x1 - CHART.x0)) * CHART.qMax; }
   function pToY(p) { return CHART.y1 - (p / CHART.pMax) * (CHART.y1 - CHART.y0); }
-  function yToP(y) { return ((CHART.y1 - y) / (CHART.y1 - CHART.y0)) * CHART.pMax; }
 
   /* ---- Curve parametrised by intercept a and slope b: P = a - b·Q ---- */
   function curveP(state, q) { return state.a - state.b * q; }
@@ -265,7 +264,7 @@ window.EconosElasticity = (function () {
       handle.setAttribute('transform', 'translate(' + qToX(q) + ',' + pToY(p) + ')');
     }
 
-    function setRect(rect, p, q, q0) {
+    function setRect(rect, p, q, _q0) {
       // Rectangle from (0, p) down to (q, 0)  — but using q0 for clarity (here q0=0)
       var x = qToX(0);
       var y = pToY(p);

@@ -1503,7 +1503,7 @@
     `;
 
     // Connector arrow between nodes
-    const connector = (n, tone) => `
+    const connector = (n, _tone) => `
       <div class="ped-calc-link" data-ped-connector="${n}" style="display:flex;justify-content:center;align-items:center;height:36px;position:relative;">
         <div class="ped-calc-link__line" style="width:3px;height:100%;background:#CBD5E1;border-radius:2px;transition:background 0.25s ease;" data-link-line></div>
         <div class="ped-calc-link__arrow" style="position:absolute;bottom:-2px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #CBD5E1;transition:border-top-color 0.25s ease;" data-link-arrow></div>
@@ -1562,7 +1562,8 @@
     ` : '';
 
     const [s1, s2, s3, s4, s5] = steps;
-    const [r0, r1, r2, r3, r4] = roadmapStops;
+    /* roadmapStops destructure was here; the values were unused —
+       only roadmap (the string) is consumed below. */
 
     return `
       ${scenarioPanel}
@@ -3006,7 +3007,7 @@
     `;
   }
 
-  function renderSessionDots(currentIdx) {
+  function renderSessionDots(_currentIdx) {
     return `
       <div class="session-dots">
         <div class="session-dot is-current">1</div>

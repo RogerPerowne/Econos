@@ -470,9 +470,6 @@
     }
 
     function renderMain() {
-      var totalMarks = 0;
-      for (var i = 0; i < T.questions.length; i++) { totalMarks += T.questions[i].marks; }
-
       var questionsHtml = T.questions.map(function (q) { return renderQuestion(q); }).join('');
 
       return '<div class="land-main">'
@@ -519,8 +516,8 @@
           badge.textContent = 'Q' + (i + 1);
         }
       }
-      /* Simple approach: highlight Q1 by default, Q2 if scrolled past Q1 */
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      /* Highlight whichever question has its top in the upper 200px
+         of the viewport. */
       var activeIdx = 0;
       for (var j = 0; j < T.questions.length; j++) {
         var el = document.getElementById(T.questions[j].id);

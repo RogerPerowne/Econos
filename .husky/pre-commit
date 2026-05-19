@@ -13,7 +13,7 @@ echo "» repo lint"
 echo "» eslint (changed JS only)"
 STAGED_JS=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.js$' | grep -v -E '^(js/pdf\.js|js/icons\.js|node_modules/)' || true)
 if [ -n "$STAGED_JS" ]; then
-  echo "$STAGED_JS" | xargs ./node_modules/.bin/eslint --max-warnings=20
+  echo "$STAGED_JS" | xargs ./node_modules/.bin/eslint --max-warnings=0
 else
   echo "  (no JS staged)"
 fi

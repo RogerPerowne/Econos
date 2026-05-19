@@ -170,7 +170,7 @@
     }
 
     function renderRail() {
-      var stationsList = DATA.stations.map(function (st, i) {
+      var stationsList = DATA.stations.map(function (st, _i) {
         return ''
           + '<div class="cards-list__item is-done">'
           +   '<div class="cards-list__num">' + I.check + '</div>'

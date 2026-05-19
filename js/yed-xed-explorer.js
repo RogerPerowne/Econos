@@ -213,7 +213,7 @@
         setLine(els.curve, coords.toSvgX(r[0]), coords.toSvgY(ya), coords.toSvgX(r[1]), coords.toSvgY(yb));
 
         /* Curve label — near the end with higher x */
-        var lx = r[1] + 3, ly = curveY(r[1]);
+        var ly = curveY(r[1]);
         els.curveLabel.setAttribute('x', coords.toSvgX(r[1]) + 6);
         els.curveLabel.setAttribute('y', coords.toSvgY(ly) + 4);
 
@@ -241,7 +241,6 @@
         var m = midpoint(state.x1, y1, state.x2, y2);
         if (!m) return;
         var v = m.value;
-        var absV = isFinite(v) ? Math.abs(v) : Infinity;
 
         els.fSub.innerHTML = cfg.formulaName + ' = <span class="ee-frac"><span class="ee-num">' + fmtPct(m.pctY) + '</span><span class="ee-den">' + fmtPct(m.pctX) + '</span></span>';
         els.fRes.innerHTML = cfg.formulaName + ' = <strong>' + fmtV(v) + '</strong>';

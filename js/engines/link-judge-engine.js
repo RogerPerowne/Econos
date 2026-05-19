@@ -59,15 +59,6 @@
       return { correct: correct, total: total };
     }
 
-    function isOverallCorrect(sc) {
-      var opts = sc.overallPosition.options;
-      var sel  = state.overallAnswer;
-      for (var i = 0; i < opts.length; i++) {
-        if (opts[i].id === sel) return !!opts[i].correct;
-      }
-      return false;
-    }
-
     /* -------- render -------- */
 
     function render() {

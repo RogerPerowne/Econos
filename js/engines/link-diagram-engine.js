@@ -40,12 +40,6 @@
       return DATA.label.chips.filter(function (c) { return c.id === id; })[0] || null;
     }
 
-    function zoneLabel(zoneId) {
-      if (!state.placements[zoneId]) return null;
-      var chip = chipById(state.placements[zoneId]);
-      return chip ? chip.text : null;
-    }
-
     /* ── main render ── */
 
     function render() {

@@ -5187,7 +5187,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
   cpsDiagram: `
-    <svg viewBox="0 0 780 310" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 840 310" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- ============= CHART (left) ============= -->
       <!-- Filled surplus triangles -->
       <polygon points="50,28 50,143 210,143" fill="#DBEAFE" opacity="0.85"/>
@@ -5236,32 +5236,32 @@ window.ECONOS_ICONS = {
 
       <!-- ============= LEGEND (right) ============= -->
       <!-- Consumer surplus -->
-      <circle cx="465" cy="30" r="6" fill="#2563EB"/>
-      <text x="482" y="34" font-size="14" font-weight="700" fill="#2563EB">Consumer surplus</text>
-      <text x="482" y="56" font-size="12" fill="#475569">The vertical distance between the</text>
-      <text x="482" y="72" font-size="12" fill="#475569">demand curve (willingness to pay)</text>
-      <text x="482" y="88" font-size="12" fill="#475569">and the market price.</text>
+      <circle cx="525" cy="30" r="6" fill="#2563EB"/>
+      <text x="542" y="34" font-size="14" font-weight="700" fill="#2563EB">Consumer surplus</text>
+      <text x="542" y="56" font-size="12" fill="#475569">The vertical distance between the</text>
+      <text x="542" y="72" font-size="12" fill="#475569">demand curve (willingness to pay)</text>
+      <text x="542" y="88" font-size="12" fill="#475569">and the market price.</text>
 
       <!-- Producer surplus -->
-      <circle cx="465" cy="116" r="6" fill="#F97316"/>
-      <text x="482" y="120" font-size="14" font-weight="700" fill="#F97316">Producer surplus</text>
-      <text x="482" y="142" font-size="12" fill="#475569">The vertical distance between the</text>
-      <text x="482" y="158" font-size="12" fill="#475569">market price and the minimum</text>
-      <text x="482" y="174" font-size="12" fill="#475569">acceptable supply price.</text>
+      <circle cx="525" cy="116" r="6" fill="#F97316"/>
+      <text x="542" y="120" font-size="14" font-weight="700" fill="#F97316">Producer surplus</text>
+      <text x="542" y="142" font-size="12" fill="#475569">The vertical distance between the</text>
+      <text x="542" y="158" font-size="12" fill="#475569">market price and the minimum</text>
+      <text x="542" y="174" font-size="12" fill="#475569">acceptable supply price.</text>
 
       <!-- Equilibrium -->
-      <circle cx="465" cy="202" r="6" fill="#0F172A"/>
-      <text x="482" y="206" font-size="14" font-weight="700" fill="#0F172A">Equilibrium (E)</text>
-      <text x="482" y="228" font-size="12" fill="#475569">Where quantity demanded equals</text>
-      <text x="482" y="244" font-size="12" fill="#475569">quantity supplied.</text>
+      <circle cx="525" cy="202" r="6" fill="#0F172A"/>
+      <text x="542" y="206" font-size="14" font-weight="700" fill="#0F172A">Equilibrium (E)</text>
+      <text x="542" y="228" font-size="12" fill="#475569">Where quantity demanded equals</text>
+      <text x="542" y="244" font-size="12" fill="#475569">quantity supplied.</text>
 
       <!-- P_e and Q_e definitions -->
-      <text x="465" y="276" font-size="12" fill="#0F172A" font-family="Georgia,serif">P</text>
-      <text x="472" y="280" font-size="9" fill="#0F172A" font-family="Georgia,serif" font-style="italic">e</text>
-      <text x="490" y="276" font-size="12" fill="#475569">Equilibrium price</text>
-      <text x="465" y="296" font-size="12" fill="#0F172A" font-family="Georgia,serif">Q</text>
-      <text x="472" y="300" font-size="9" fill="#0F172A" font-family="Georgia,serif" font-style="italic">e</text>
-      <text x="490" y="296" font-size="12" fill="#475569">Equilibrium quantity</text>
+      <text x="525" y="276" font-size="12" fill="#0F172A" font-family="Georgia,serif">P</text>
+      <text x="532" y="280" font-size="9" fill="#0F172A" font-family="Georgia,serif" font-style="italic">e</text>
+      <text x="550" y="276" font-size="12" fill="#475569">Equilibrium price</text>
+      <text x="525" y="296" font-size="12" fill="#0F172A" font-family="Georgia,serif">Q</text>
+      <text x="532" y="300" font-size="9" fill="#0F172A" font-family="Georgia,serif" font-style="italic">e</text>
+      <text x="550" y="296" font-size="12" fill="#475569">Equilibrium quantity</text>
     </svg>
   `,
   heroElasticity: `

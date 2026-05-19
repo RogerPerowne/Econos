@@ -52,9 +52,9 @@ window.ECONOS_ICONS = {
   brandGlyph: `
     <svg viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="econos mark">
       <path d="M 14 46 Q 40 42, 65 28 Q 92 25, 116 12" fill="none" stroke="#0B1426" stroke-width="2.8" stroke-linecap="round"/>
-      <circle cx="14"  cy="46" r="7"   fill="#1FB574"/>
-      <circle cx="65"  cy="28" r="8.5" fill="#F5B800"/>
-      <circle cx="116" cy="12" r="10"  fill="#EC2D68"/>
+      <circle cx="14"  cy="46" r="7"   fill="#10B981"/>
+      <circle cx="65"  cy="28" r="8.5" fill="#F39E0B"/>
+      <circle cx="116" cy="12" r="10"  fill="#E11D48"/>
     </svg>
   `,
 
@@ -1003,10 +1003,10 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: efficiency points (show-efficiency only) ===== -->
       <g class="layer-efficiency">
         <!-- Point F: productive efficiency midpoint t≈0.5 on new PPF₁ → (290, 257) -->
-        <line x1="60" y1="257" x2="290" y2="257" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
-        <line x1="290" y1="400" x2="290" y2="257" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
-        <circle cx="290" cy="257" r="7" fill="#7C3AED"/>
-        <text x="300" y="253" font-size="13" font-weight="700" fill="#7C3AED">F</text>
+        <line x1="60" y1="257" x2="290" y2="257" stroke="#7D23CB" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="290" y1="400" x2="290" y2="257" stroke="#7D23CB" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="290" cy="257" r="7" fill="#7D23CB"/>
+        <text x="300" y="253" font-size="13" font-weight="700" fill="#7D23CB">F</text>
         <text x="314" y="253" font-size="12" fill="#475569">— Productive efficiency</text>
         <!-- Point G: allocative efficiency t≈0.35 on new PPF₁ → (231, 219) -->
         <circle cx="231" cy="219" r="7" fill="#0891B2"/>
@@ -1021,12 +1021,12 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend efficiency (right panel) ===== -->
       <g class="layer-legend-efficiency">
         <!-- Title strip -->
-        <circle cx="612" cy="31" r="6" fill="#7C3AED"/>
+        <circle cx="612" cy="31" r="6" fill="#7D23CB"/>
         <text x="626" y="36" font-size="12" font-weight="700" fill="#334155">Productive ≠ allocative efficiency</text>
         <!-- Header -->
-        <text x="620" y="68" font-size="10" font-weight="800" fill="#7C3AED" letter-spacing="2">EFFICIENCY</text>
+        <text x="620" y="68" font-size="10" font-weight="800" fill="#7D23CB" letter-spacing="2">EFFICIENCY</text>
         <!-- F row -->
-        <circle cx="627" cy="92" r="7" fill="#7C3AED"/>
+        <circle cx="627" cy="92" r="7" fill="#7D23CB"/>
         <text x="642" y="97" font-size="13" font-weight="600" fill="#334155">F — Productive efficiency</text>
         <text x="642" y="113" font-size="12" fill="#475569">ANY point on the PPF — no waste</text>
         <!-- G row -->
@@ -2163,8 +2163,8 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: LRPC (vertical at NAIRU) ===== -->
       <g class="layer-lrpc">
-        <line x1="300" y1="55" x2="300" y2="400" stroke="#7C3AED" stroke-width="3" stroke-dasharray="6 4"/>
-        <text x="308" y="68" font-size="13" font-weight="700" fill="#7C3AED">LRPC</text>
+        <line x1="300" y1="55" x2="300" y2="400" stroke="#7D23CB" stroke-width="3" stroke-dasharray="6 4"/>
+        <text x="308" y="68" font-size="13" font-weight="700" fill="#7D23CB">LRPC</text>
       </g>
 
       <!-- ===== LAYER: SRPC2 solid (new shifted position) ===== -->
@@ -2195,9 +2195,9 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: legend extension ===== -->
       <g class="layer-legend-extension">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Friedman & Phelps (1968): no long-run trade-off — LRPC is vertical</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THREE STAGES</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THREE STAGES</text>
         <text x="620" y="100" font-size="13" font-weight="700" fill="#1E293B">A → B (short run):</text>
         <text x="620" y="118" font-size="13" fill="#334155">stimulus pushes U below U_N,</text>
         <text x="620" y="136" font-size="13" fill="#334155">moving along SRPC₁ to π₁.</text>
@@ -2208,7 +2208,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="250" font-size="13" font-weight="700" fill="#1E293B">At C (long run):</text>
         <text x="620" y="268" font-size="13" fill="#334155">unemployment back at U_N,</text>
         <text x="620" y="286" font-size="13" fill="#334155">but inflation now permanently π₁.</text>
-        <text x="620" y="320" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">EXAM TAKEAWAY</text>
+        <text x="620" y="320" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">EXAM TAKEAWAY</text>
         <text x="620" y="343" font-size="13" fill="#334155">In the long run the Phillips</text>
         <text x="620" y="361" font-size="13" fill="#334155">curve is vertical at U_N (NAIRU).</text>
       </g>
@@ -2304,8 +2304,8 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: equality line (always visible) ===== -->
       <g class="layer-equality">
-        <line x1="60" y1="400" x2="405" y2="55" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="6 4"/>
-        <text x="380" y="80" font-size="11" font-weight="700" fill="#7C3AED" transform="rotate(-45 380 80)">Line of perfect equality</text>
+        <line x1="60" y1="400" x2="405" y2="55" stroke="#7D23CB" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <text x="380" y="80" font-size="11" font-weight="700" fill="#7D23CB" transform="rotate(-45 380 80)">Line of perfect equality</text>
       </g>
 
       <!-- ===== LAYER: UK Lorenz curve (base + extension states) ===== -->
@@ -2340,7 +2340,7 @@ window.ECONOS_ICONS = {
         <text x="455" y="120" font-size="13" fill="#334155">richest. Plot cumulative</text>
         <text x="455" y="138" font-size="13" fill="#334155">share of income (y) against</text>
         <text x="455" y="156" font-size="13" fill="#334155">cumulative share of population (x).</text>
-        <text x="455" y="190" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE 45° LINE</text>
+        <text x="455" y="190" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE 45° LINE</text>
         <text x="455" y="214" font-size="13" fill="#334155">Perfect equality: every</text>
         <text x="455" y="232" font-size="13" fill="#334155">person earns the same share.</text>
         <text x="455" y="265" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">THE FURTHER IT BOWS,</text>
@@ -2513,19 +2513,19 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: MEC bracket (extension only) ===== -->
       <g class="layer-mec">
         <!-- Vertical bracket at x=400 between MPC (155) and MSC (75) -->
-        <line x1="400" y1="75" x2="400" y2="155" stroke="#7C3AED" stroke-width="2"/>
-        <line x1="394" y1="75" x2="406" y2="75" stroke="#7C3AED" stroke-width="2"/>
-        <line x1="394" y1="155" x2="406" y2="155" stroke="#7C3AED" stroke-width="2"/>
-        <text x="410" y="119" font-size="13" font-weight="700" fill="#7C3AED">MEC</text>
+        <line x1="400" y1="75" x2="400" y2="155" stroke="#7D23CB" stroke-width="2"/>
+        <line x1="394" y1="75" x2="406" y2="75" stroke="#7D23CB" stroke-width="2"/>
+        <line x1="394" y1="155" x2="406" y2="155" stroke="#7D23CB" stroke-width="2"/>
+        <text x="410" y="119" font-size="13" font-weight="700" fill="#7D23CB">MEC</text>
         <text x="410" y="134" font-size="10" fill="#64748B">marginal</text>
         <text x="410" y="146" font-size="10" fill="#64748B">external cost</text>
       </g>
 
       <!-- ===== LAYER: legend extension ===== -->
       <g class="layer-legend-extension">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Production imposes external costs → MSC sits above MPC</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">MSC = MPC + MEC</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">MSC = MPC + MEC</text>
         <text x="620" y="100" font-size="13" fill="#334155">MSC adds the cost imposed on</text>
         <text x="620" y="118" font-size="13" fill="#334155">third parties to private cost.</text>
         <text x="620" y="148" font-size="13" font-weight="700" fill="#1E293B">Vertical gap = MEC</text>
@@ -2535,7 +2535,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="240" font-size="13" fill="#334155">Noise from late-night venues</text>
         <text x="620" y="258" font-size="13" fill="#334155">Congestion from extra cars</text>
         <text x="620" y="276" font-size="13" fill="#334155">CO₂ emissions from cement</text>
-        <text x="620" y="310" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE PROBLEM</text>
+        <text x="620" y="310" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE PROBLEM</text>
         <text x="620" y="332" font-size="13" fill="#334155">Producers don't pay MEC →</text>
         <text x="620" y="350" font-size="13" fill="#334155">they produce too much.</text>
       </g>
@@ -2796,16 +2796,16 @@ window.ECONOS_ICONS = {
         <line x1="60" y1="230" x2="560" y2="230" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6 4"/>
         <text x="564" y="234" font-size="11" font-weight="700" fill="#64748B">Pre-dep. CA balance</text>
         <!-- Depreciation event marker at x=60 -->
-        <line x1="60" y1="55" x2="60" y2="400" stroke="#7C3AED" stroke-width="2"/>
-        <text x="68" y="68" font-size="11" font-weight="700" fill="#7C3AED">Depreciation hits</text>
-        <text x="68" y="82" font-size="10" fill="#7C3AED" opacity="0.8">t = 0</text>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#7D23CB" stroke-width="2"/>
+        <text x="68" y="68" font-size="11" font-weight="700" fill="#7D23CB">Depreciation hits</text>
+        <text x="68" y="82" font-size="10" fill="#7D23CB" opacity="0.8">t = 0</text>
       </g>
 
       <!-- ===== LAYER: legend base ===== -->
       <g class="layer-legend-base">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Before depreciation: stable currency, balanced CA</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">STARTING POINT</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">STARTING POINT</text>
         <text x="620" y="100" font-size="13" fill="#334155">Currency is stable and the</text>
         <text x="620" y="118" font-size="13" fill="#334155">current account sits at its</text>
         <text x="620" y="136" font-size="13" fill="#334155">pre-depreciation level.</text>
@@ -2865,20 +2865,20 @@ window.ECONOS_ICONS = {
         <!-- Alternative path: dips but doesn't recover (M-L fails) -->
         <g clip-path="url(#jc-chart-clip)">
           <path d="M 60,230 C 100,270 145,330 160,330 C 175,330 280,350 540,350"
-                fill="none" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 5"/>
+                fill="none" stroke="#7D23CB" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 5"/>
         </g>
-        <text x="445" y="343" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">M-L fails: no recovery</text>
+        <text x="445" y="343" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="end">M-L fails: no recovery</text>
         <!-- M-L condition box (shifted right to avoid "Depreciation hits" label) -->
-        <rect x="300" y="62" width="260" height="58" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
-        <text x="430" y="83" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="middle" letter-spacing="1">MARSHALL-LERNER CONDITION</text>
+        <rect x="300" y="62" width="260" height="58" rx="8" fill="#FFFFFF" stroke="#7D23CB" stroke-width="1.5"/>
+        <text x="430" y="83" font-size="11" font-weight="800" fill="#7D23CB" text-anchor="middle" letter-spacing="1">MARSHALL-LERNER CONDITION</text>
         <text x="430" y="107" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>
       </g>
 
       <!-- ===== LAYER: legend shift ===== -->
       <g class="layer-legend-shift">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Marshall-Lerner: J only completes if elasticities are high enough</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE CONDITION</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE CONDITION</text>
         <text x="620" y="100" font-size="14" font-weight="700" fill="#334155">|PED_X| + |PED_M| &gt; 1</text>
         <text x="620" y="122" font-size="12" fill="#475569">Sum of price elasticities of</text>
         <text x="620" y="138" font-size="12" fill="#475569">demand for X and M.</text>
@@ -2886,7 +2886,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="190" font-size="12" fill="#475569">Volume response large enough</text>
         <text x="620" y="206" font-size="12" fill="#475569">to outweigh price effect → CA</text>
         <text x="620" y="222" font-size="12" fill="#475569">improves (red J-curve).</text>
-        <text x="620" y="250" font-size="13" font-weight="700" fill="#7C3AED">If condition FAILS</text>
+        <text x="620" y="250" font-size="13" font-weight="700" fill="#7D23CB">If condition FAILS</text>
         <text x="620" y="268" font-size="12" fill="#475569">Inelastic X and M → volume</text>
         <text x="620" y="284" font-size="12" fill="#475569">response too weak; CA stays</text>
         <text x="620" y="300" font-size="12" fill="#475569">worse (dashed purple path).</text>
@@ -3012,25 +3012,25 @@ window.ECONOS_ICONS = {
         <!-- B's dominant strategy box: Confess column -->
         <rect x="336" y="116" width="178" height="248" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 4" rx="8" opacity="0.5"/>
         <!-- Nash equilibrium cell highlight -->
-        <rect x="336" y="236" width="178" height="128" fill="none" stroke="#7C3AED" stroke-width="4" rx="8"/>
+        <rect x="336" y="236" width="178" height="128" fill="none" stroke="#7D23CB" stroke-width="4" rx="8"/>
         <!-- Big "Nash" label -->
-        <rect x="358" y="248" width="74" height="18" rx="4" fill="#7C3AED"/>
+        <rect x="358" y="248" width="74" height="18" rx="4" fill="#7D23CB"/>
         <text x="395" y="262" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">NASH EQ</text>
       </g>
 
       <!-- ===== LAYER: legend shift ===== -->
       <g class="layer-legend-shift">
-        <circle cx="612" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="612" cy="32" r="7" fill="#7D23CB"/>
         <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Both play dominant strategy → Nash equilibrium</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE NASH EQUILIBRIUM</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE NASH EQUILIBRIUM</text>
         <text x="620" y="100" font-size="13" fill="#334155">A point where neither player</text>
         <text x="620" y="118" font-size="13" fill="#334155">can do better by unilaterally</text>
         <text x="620" y="136" font-size="13" fill="#334155">switching strategy.</text>
         <text x="620" y="170" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">HERE: (CONFESS, CONFESS)</text>
         <text x="620" y="192" font-size="13" fill="#334155">A: dominant strategy → confess</text>
         <text x="620" y="210" font-size="13" fill="#334155">B: dominant strategy → confess</text>
-        <text x="620" y="228" font-size="13" font-weight="700" fill="#7C3AED">Outcome: 5 years each.</text>
-        <text x="620" y="262" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">CHECK IT'S AN EQUILIBRIUM</text>
+        <text x="620" y="228" font-size="13" font-weight="700" fill="#7D23CB">Outcome: 5 years each.</text>
+        <text x="620" y="262" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">CHECK IT'S AN EQUILIBRIUM</text>
         <text x="620" y="284" font-size="13" fill="#334155">If A switches to silent: gets</text>
         <text x="620" y="302" font-size="13" fill="#334155">10yr instead of 5 → worse.</text>
         <text x="620" y="320" font-size="13" fill="#334155">Same for B. Nobody deviates.</text>
@@ -3159,7 +3159,7 @@ window.ECONOS_ICONS = {
       <!-- X-M — net trade (purple crate mid-right) -->
       <g filter="url(#had-soft)">
         <circle cx="235" cy="200" r="28" fill="#F3E8FF"/>
-        <rect x="220" y="188" width="30" height="24" rx="2" fill="#7C3AED" stroke="#5B21B6" stroke-width="1.5"/>
+        <rect x="220" y="188" width="30" height="24" rx="2" fill="#7D23CB" stroke="#5B21B6" stroke-width="1.5"/>
         <line x1="220" y1="196" x2="250" y2="196" stroke="#5B21B6" stroke-width="1.2" opacity="0.6"/>
         <line x1="220" y1="204" x2="250" y2="204" stroke="#5B21B6" stroke-width="1.2" opacity="0.6"/>
         <line x1="235" y1="188" x2="235" y2="212" stroke="#5B21B6" stroke-width="1.2" opacity="0.6"/>
@@ -3169,7 +3169,7 @@ window.ECONOS_ICONS = {
       <path d="M 80 110 Q 100 200 130 280" stroke="#22C55E" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
       <path d="M 200 110 Q 180 200 150 280" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
       <path d="M 70 220 Q 100 250 132 285" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
-      <path d="M 210 220 Q 180 250 148 285" stroke="#7C3AED" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
+      <path d="M 210 220 Q 180 250 148 285" stroke="#7D23CB" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="2 5" opacity="0.55"/>
 
       <!-- central pot collecting all spending -->
       <g filter="url(#had-shadow)">
@@ -4114,7 +4114,7 @@ window.ECONOS_ICONS = {
       <g filter="url(#hdev-soft)">
         <!-- pot -->
         <path d="M 60 275 L 90 275 L 88 295 L 62 295 Z" fill="#A78BFA" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
-        <rect x="59" y="271" width="32" height="6" fill="#7C3AED" rx="1"/>
+        <rect x="59" y="271" width="32" height="6" fill="#7D23CB" rx="1"/>
         <!-- sprout -->
         <path d="M 75 275 L 75 250" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
         <ellipse cx="70" cy="250" rx="6" ry="4" fill="#22C55E" transform="rotate(-30 70 250)"/>
@@ -4125,7 +4125,7 @@ window.ECONOS_ICONS = {
       <g filter="url(#hdev-soft)">
         <!-- pot -->
         <path d="M 122 285 L 158 285 L 156 308 L 124 308 Z" fill="#A78BFA" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
-        <rect x="121" y="281" width="38" height="6" fill="#7C3AED" rx="1"/>
+        <rect x="121" y="281" width="38" height="6" fill="#7D23CB" rx="1"/>
         <!-- stem -->
         <path d="M 140 285 L 140 220" stroke="#15803D" stroke-width="2.5" stroke-linecap="round"/>
         <!-- leaves -->
@@ -4139,7 +4139,7 @@ window.ECONOS_ICONS = {
       <g filter="url(#hdev-shadow)">
         <!-- pot -->
         <path d="M 188 295 L 232 295 L 230 320 L 190 320 Z" fill="#A78BFA" stroke="#6D28D9" stroke-width="1.5" stroke-linejoin="round"/>
-        <rect x="187" y="291" width="46" height="6" fill="#7C3AED" rx="1"/>
+        <rect x="187" y="291" width="46" height="6" fill="#7D23CB" rx="1"/>
         <!-- trunk -->
         <rect x="207" y="200" width="6" height="95" fill="#92400E" rx="2"/>
         <!-- tree foliage (rounded clusters) -->
@@ -4171,7 +4171,7 @@ window.ECONOS_ICONS = {
         <circle cx="140" cy="200" r="78" fill="#F5F3FF"/>
         <circle cx="140" cy="200" r="58" fill="#EDE9FE"/>
         <circle cx="140" cy="200" r="38" fill="#DDD6FE"/>
-        <circle cx="140" cy="200" r="18" fill="#7C3AED"/>
+        <circle cx="140" cy="200" r="18" fill="#7D23CB"/>
         <circle cx="140" cy="200" r="6"  fill="#FFFFFF"/>
       </g>
 
@@ -4717,7 +4717,7 @@ window.ECONOS_ICONS = {
       <g filter="url(#hsd-shadow)">
         <polygon points="140,155 120,260 160,260" fill="#94A3B8" stroke="#475569" stroke-width="1.5" stroke-linejoin="round"/>
         <circle cx="140" cy="152" r="6" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
-        <circle cx="140" cy="152" r="2.5" fill="#EC2D68"/>
+        <circle cx="140" cy="152" r="2.5" fill="#E11D48"/>
       </g>
 
       <!-- base plate -->
@@ -5051,7 +5051,7 @@ window.ECONOS_ICONS = {
         <line x1="60" y1="225" x2="310" y2="225" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="310" y1="225" x2="310" y2="400" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="310" cy="225" r="7" fill="white" stroke="#0B1426" stroke-width="2.5"/>
-        <circle cx="310" cy="225" r="3" fill="#EC2D68"/>
+        <circle cx="310" cy="225" r="3" fill="#E11D48"/>
         <text x="46" y="229" font-size="12" font-weight="700" fill="#334155" text-anchor="end">P*</text>
         <text x="310" y="418" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Q*</text>
       </g>
@@ -5099,7 +5099,7 @@ window.ECONOS_ICONS = {
         <text x="143" y="172" font-size="18" font-weight="900" fill="#059669" text-anchor="middle" opacity="0.9">CS</text>
         <text x="143" y="278" font-size="18" font-weight="900" fill="#E11D48" text-anchor="middle" opacity="0.9">PS</text>
         <!-- Right panel content -->
-        <text x="628" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">TOTAL WELFARE = CS + PS</text>
+        <text x="628" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">TOTAL WELFARE = CS + PS</text>
         <text x="628" y="100" font-size="14" font-weight="700" fill="#1E293B">Both triangles together = the</text>
         <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">total gains from trade.</text>
         <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHY IT'S MAXIMISED HERE</text>
@@ -5422,13 +5422,13 @@ window.ECONOS_ICONS = {
       <!-- MIXED: balance scale (centre, purple) -->
       <g filter="url(#hes-shadow)">
         <!-- pivot -->
-        <line x1="140" y1="150" x2="140" y2="220" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+        <line x1="140" y1="150" x2="140" y2="220" stroke="#7D23CB" stroke-width="3" stroke-linecap="round"/>
         <polygon points="128,288 152,288 140,220" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.8" stroke-linejoin="round"/>
         <!-- beam -->
-        <line x1="116" y1="160" x2="164" y2="160" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+        <line x1="116" y1="160" x2="164" y2="160" stroke="#7D23CB" stroke-width="3" stroke-linecap="round"/>
         <!-- chains -->
-        <line x1="116" y1="160" x2="116" y2="180" stroke="#7C3AED" stroke-width="1.5"/>
-        <line x1="164" y1="160" x2="164" y2="180" stroke="#7C3AED" stroke-width="1.5"/>
+        <line x1="116" y1="160" x2="116" y2="180" stroke="#7D23CB" stroke-width="1.5"/>
+        <line x1="164" y1="160" x2="164" y2="180" stroke="#7D23CB" stroke-width="1.5"/>
         <!-- dishes -->
         <path d="M 102 180 Q 116 195 130 180" stroke="#5B21B6" stroke-width="1.5" fill="#DDD6FE"/>
         <path d="M 150 180 Q 164 195 178 180" stroke="#5B21B6" stroke-width="1.5" fill="#DDD6FE"/>
@@ -5705,7 +5705,7 @@ window.ECONOS_ICONS = {
         <!-- crown (purple) -->
         <polygon points="100,120 180,120 165,108 162,118 156,108 154,118 148,108 146,118 140,108 138,118 132,108 130,118 124,108 122,118 116,108 114,118" fill="#FBBF24"/>
         <!-- main shaft -->
-        <rect x="100" y="120" width="80" height="170" fill="#7C3AED" stroke="#5B21B6" stroke-width="2"/>
+        <rect x="100" y="120" width="80" height="170" fill="#7D23CB" stroke="#5B21B6" stroke-width="2"/>
         <!-- windows -->
         <g fill="#EDE9FE">
           <rect x="110" y="135" width="11" height="14"/>
@@ -5760,7 +5760,7 @@ window.ECONOS_ICONS = {
       <!-- chess board base -->
       <g filter="url(#hgt-shadow)">
         <ellipse cx="140" cy="280" rx="90" ry="14" fill="#A78BFA"/>
-        <ellipse cx="140" cy="275" rx="90" ry="14" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+        <ellipse cx="140" cy="275" rx="90" ry="14" fill="#EDE9FE" stroke="#7D23CB" stroke-width="2"/>
         <!-- checker squares (front row only - simple) -->
         <rect x="62"  y="270" width="22" height="6" fill="#A78BFA"/>
         <rect x="106" y="270" width="22" height="6" fill="#A78BFA"/>
@@ -6004,7 +6004,7 @@ window.ECONOS_ICONS = {
         <filter id="hbh-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
         <linearGradient id="hbh-brain" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#A78BFA"/>
-          <stop offset="100%" stop-color="#7C3AED"/>
+          <stop offset="100%" stop-color="#7D23CB"/>
         </linearGradient>
       </defs>
 
@@ -6256,18 +6256,18 @@ window.ECONOS_ICONS = {
         <rect x="60" y="190" width="200" height="18" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
         <text x="160" y="203" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">Supernormal profit</text>
         <!-- P_m and Q_m reference lines -->
-        <line x1="60" y1="190" x2="260" y2="190" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <line x1="260" y1="190" x2="260" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="60" y1="190" x2="260" y2="190" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="260" y1="190" x2="260" y2="400" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5 4"/>
         <!-- AC at q_m horizontal tick for reading off -->
         <line x1="60" y1="208" x2="260" y2="208" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
         <!-- MR=MC dot -->
-        <circle cx="260" cy="330" r="5" fill="#7C3AED"/>
-        <text x="268" y="336" font-size="11" font-weight="700" fill="#7C3AED">MR = MC</text>
+        <circle cx="260" cy="330" r="5" fill="#7D23CB"/>
+        <text x="268" y="336" font-size="11" font-weight="700" fill="#7D23CB">MR = MC</text>
         <!-- Monopoly price dot on AR -->
-        <circle cx="260" cy="190" r="7" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
-        <text x="46" y="194" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">P_m</text>
+        <circle cx="260" cy="190" r="7" fill="#FFFFFF" stroke="#7D23CB" stroke-width="2.5"/>
+        <text x="46" y="194" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="end">P_m</text>
         <text x="46" y="212" font-size="11" font-weight="600" fill="#0EA5E9" text-anchor="end">AC_m</text>
-        <text x="260" y="418" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="middle">Q_m</text>
+        <text x="260" y="418" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="middle">Q_m</text>
       </g>
 
       <!-- ===== shift comparison annotation ===== -->
@@ -6313,13 +6313,13 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="layer-panel-shift">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Same costs, different demand → very different outcomes</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">SIDE-BY-SIDE</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">SIDE-BY-SIDE</text>
         <text x="620" y="100" font-size="13" font-weight="700" fill="#059669">PC firm</text>
         <text x="620" y="118" font-size="13" fill="#334155">Q* ≈ 75, P* = min AC ≈ 8.5</text>
         <text x="620" y="136" font-size="13" fill="#334155">Zero economic profit (LR).</text>
-        <text x="620" y="166" font-size="13" font-weight="700" fill="#7C3AED">Monopoly firm</text>
+        <text x="620" y="166" font-size="13" font-weight="700" fill="#7D23CB">Monopoly firm</text>
         <text x="620" y="184" font-size="13" fill="#334155">Q_m = 40, P_m = 12</text>
         <text x="620" y="202" font-size="13" fill="#334155">AC_m = 11, profit ≈ \xa340/period</text>
         <text x="620" y="236" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VERDICT</text>
@@ -6399,16 +6399,16 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: monopoly-eq (extension + shift states) ===== -->
       <g class="layer-monopoly-eq">
         <!-- P_m dashed horizontal at y=170 (monopoly price on D at Q_m) -->
-        <line x1="60" y1="170" x2="250" y2="170" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="60" y1="170" x2="250" y2="170" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5 4"/>
         <!-- Q_m dashed vertical at x=250 -->
-        <line x1="250" y1="170" x2="250" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="250" y1="170" x2="250" y2="400" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5 4"/>
         <!-- MR=MC intersection point (purple dot at 250,296) -->
-        <circle cx="250" cy="296" r="5" fill="#7C3AED"/>
-        <text x="258" y="300" font-size="11" font-weight="700" fill="#7C3AED">MR=MC</text>
+        <circle cx="250" cy="296" r="5" fill="#7D23CB"/>
+        <text x="258" y="300" font-size="11" font-weight="700" fill="#7D23CB">MR=MC</text>
         <!-- Monopoly price point on D (amber dot at 250,170) -->
         <circle cx="250" cy="170" r="6" fill="#D97706"/>
-        <text x="46" y="174" font-size="12" font-weight="600" fill="#7C3AED" text-anchor="end">P_m</text>
-        <text x="250" y="418" font-size="12" font-weight="600" fill="#7C3AED" text-anchor="middle">Q_m</text>
+        <text x="46" y="174" font-size="12" font-weight="600" fill="#7D23CB" text-anchor="end">P_m</text>
+        <text x="250" y="418" font-size="12" font-weight="600" fill="#7D23CB" text-anchor="middle">Q_m</text>
       </g>
 
       <!-- ===== LAYER: welfare-decomp (shift state only) ===== -->
@@ -6442,9 +6442,9 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="layer-panel-ext">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopolist takes over — faces D as AR, with MR below</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">MONOPOLY TAKEOVER</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">MONOPOLY TAKEOVER</text>
         <text x="620" y="100" font-size="13" fill="#334155">Single firm now faces whole D</text>
         <text x="620" y="118" font-size="13" fill="#334155">as its own AR. MR sits below AR</text>
         <text x="620" y="136" font-size="13" fill="#334155">(twice slope for linear D).</text>
@@ -6547,9 +6547,9 @@ window.ECONOS_ICONS = {
 
       <!-- Panels -->
       <g class="layer-panel-base">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Markets sit on a spectrum of entry barriers, not firm count</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE SPECTRUM</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE SPECTRUM</text>
         <text x="620" y="100" font-size="13" fill="#334155">Entry barriers — not the count</text>
         <text x="620" y="118" font-size="13" fill="#334155">of firms — define market type.</text>
         <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Five canonical structures:</text>
@@ -6768,15 +6768,15 @@ window.ECONOS_ICONS = {
       <!-- ===== Crossing markers (shift state only) ===== -->
       <g class="layer-crossings">
         <!-- MC=AVC at min AVC: (360, 304) -->
-        <circle cx="360" cy="304" r="7" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
-        <line x1="360" y1="304" x2="360" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
-        <text x="360" y="418" font-size="11" font-weight="700" fill="#7C3AED" text-anchor="middle">min AVC</text>
+        <circle cx="360" cy="304" r="7" fill="#FFFFFF" stroke="#7D23CB" stroke-width="2.5"/>
+        <line x1="360" y1="304" x2="360" y2="400" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
+        <text x="360" y="418" font-size="11" font-weight="700" fill="#7D23CB" text-anchor="middle">min AVC</text>
         <!-- MC=AC at min AC: (435, 252) -->
-        <circle cx="435" cy="252" r="7" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
-        <line x1="435" y1="252" x2="435" y2="400" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
-        <text x="435" y="418" font-size="11" font-weight="700" fill="#7C3AED" text-anchor="middle">min AC</text>
+        <circle cx="435" cy="252" r="7" fill="#FFFFFF" stroke="#7D23CB" stroke-width="2.5"/>
+        <line x1="435" y1="252" x2="435" y2="400" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
+        <text x="435" y="418" font-size="11" font-weight="700" fill="#7D23CB" text-anchor="middle">min AC</text>
         <!-- Annotation -->
-        <rect x="180" y="56" width="280" height="36" rx="4" fill="#F3E8FF" stroke="#7C3AED" stroke-width="1.2"/>
+        <rect x="180" y="56" width="280" height="36" rx="4" fill="#F3E8FF" stroke="#7D23CB" stroke-width="1.2"/>
         <text x="320" y="72" font-size="11" font-weight="700" fill="#6B21A8" text-anchor="middle">MC crosses AVC at min AVC,</text>
         <text x="320" y="86" font-size="11" font-weight="700" fill="#6B21A8" text-anchor="middle">and AC at min AC</text>
       </g>
@@ -6817,9 +6817,9 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="layer-panel-shift">
-        <circle cx="74" cy="32" r="7" fill="#7C3AED"/>
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC pulls the averages — crosses each at its minimum</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7C3AED" letter-spacing="2">THE CROSSING RULE</text>
+        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE CROSSING RULE</text>
         <text x="620" y="100" font-size="13" fill="#334155">When MC &lt; average → average</text>
         <text x="620" y="118" font-size="13" fill="#334155">is being pulled DOWN.</text>
         <text x="620" y="136" font-size="13" fill="#334155">When MC &gt; average → pulled UP.</text>
@@ -6873,9 +6873,9 @@ window.ECONOS_ICONS = {
         <!-- Q* dashed vertical to x-axis -->
         <line x1="250" y1="200" x2="250" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <!-- Kink point (purple, prominent) -->
-        <circle cx="250" cy="200" r="6.5" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
-        <text x="46" y="204" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="end">P*</text>
-        <text x="250" y="418" font-size="12" font-weight="700" fill="#7C3AED" text-anchor="middle">Q*</text>
+        <circle cx="250" cy="200" r="6.5" fill="#FFFFFF" stroke="#7D23CB" stroke-width="2.5"/>
+        <text x="46" y="204" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="end">P*</text>
+        <text x="250" y="418" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="middle">Q*</text>
       </g>
 
       <!-- ===== LAYER: elastic-d (upper segment of demand — base + later states) ===== -->
@@ -9699,7 +9699,7 @@ window.ECONOS_ICONS = {
       <polygon points="61,39 69,39 65,31" fill="#334155"/>
 
       <!-- Overestimate tax line (purple dashed): MPC shifted up 95px → from (90,260) to (520,45) -->
-      <line x1="90" y1="260" x2="520" y2="45" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="90" y1="260" x2="520" y2="45" stroke="#7D23CB" stroke-width="1.5" stroke-dasharray="4,3"/>
 
       <!-- MSC = MPC + MEC (red dashed): from (90,300) to (540,45) -->
       <line x1="90" y1="300" x2="540" y2="45" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,3"/>
@@ -9718,15 +9718,15 @@ window.ECONOS_ICONS = {
       <text x="522" y="364" font-size="10" fill="#2563EB" font-weight="600">MSB (demand)</text>
       <text x="572" y="74" font-size="10" fill="#059669" font-weight="600">MPC</text>
       <text x="480" y="40" font-size="10" fill="#DC2626" font-weight="600">MSC = MPC + MEC</text>
-      <text x="400" y="52" font-size="10" fill="#7C3AED">Govt tax line (overestimate)</text>
+      <text x="400" y="52" font-size="10" fill="#7D23CB">Govt tax line (overestimate)</text>
 
       <!-- Equilibrium dots -->
       <circle cx="330" cy="218" r="4" fill="#334155"/>
       <circle cx="252" cy="248" r="5" fill="#059669"/>
-      <circle cx="210" cy="265" r="4" fill="#7C3AED"/>
+      <circle cx="210" cy="265" r="4" fill="#7D23CB"/>
 
       <!-- Quantity labels at bottom -->
-      <text x="210" y="392" font-size="10" fill="#7C3AED" text-anchor="middle">Q''</text>
+      <text x="210" y="392" font-size="10" fill="#7D23CB" text-anchor="middle">Q''</text>
       <text x="252" y="392" font-size="10" fill="#059669" text-anchor="middle">Q*</text>
       <text x="330" y="392" font-size="10" fill="#334155" text-anchor="middle">Qm</text>
 
@@ -9734,7 +9734,7 @@ window.ECONOS_ICONS = {
       <rect x="252" y="155" width="160" height="20" fill="#FEE2E2" rx="4"/>
       <text x="332" y="168" font-size="9" fill="#B91C1C" text-anchor="middle">Original market failure DWL</text>
       <rect x="140" y="196" width="110" height="20" fill="#EDE9FE" rx="4"/>
-      <text x="195" y="209" font-size="9" fill="#7C3AED" text-anchor="middle">Govt failure DWL</text>
+      <text x="195" y="209" font-size="9" fill="#7D23CB" text-anchor="middle">Govt failure DWL</text>
 
       <!-- Bottom annotation -->
       <rect x="65" y="397" width="490" height="18" fill="#F1F5F9" rx="4"/>
@@ -11132,7 +11132,7 @@ window.ECONOS_ICONS = {
         <text x="58" y="38" font-size="13" font-weight="800" fill="#0F172A">Taylor Swift tickets</text>
         <text x="20" y="70" font-size="11" fill="#334155">High willingness to pay,</text>
         <text x="20" y="86" font-size="11" fill="#334155">limited supply, loyal fans.</text>
-        <text x="20" y="116" font-size="11" font-weight="700" fill="#7C3AED">Very strong, very inelastic</text>
+        <text x="20" y="116" font-size="11" font-weight="700" fill="#7D23CB">Very strong, very inelastic</text>
         <text x="20" y="138" font-size="10" fill="#64748B" font-style="italic">Price hikes barely dent demand.</text>
 
         <!-- Petrol -->

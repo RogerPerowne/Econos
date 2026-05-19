@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn It — econos topic page.">
+  <meta name="theme-color" content="#FAF8F4">
+  <title>Learn It · econos</title>
+
+  <!-- Fonts: preconnect + non-blocking download -->
+
+  <!-- Icons and favicons -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="econos" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Stylesheet (canonical — root of project, user-customised) -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Preload the big shared scripts so the network grabs them in parallel
+       while HTML parses. `defer` keeps execution ordered. -->
+  <!-- Auth gate runs first; everything else is deferred so it doesn't block paint -->
+  <script src="js/auth-check.js"></script>
+  <script defer src="js/logger.js"></script>
+  <script defer src="js/icons.js"></script>
+  <script defer src="js/pdf.js"></script>
+  <script defer src="js/elasticity-explorer.js"></script>
+  <script defer src="js/pes-explorer.js"></script>
+  <script defer src="js/yed-xed-explorer.js"></script>
+  <script defer src="js/topic-loader.js"></script>
+  <script defer src="js/progress.js"></script>
+  <script defer src="js/engines/shell.js"></script>
+  <script>
+    /* Once deferred scripts have run (DOMContentLoaded), pull the topic
+       data file then load app.js — app.js is an IIFE that reads
+       window.ECONOS_TOPIC and renders into #app-root. */
+    document.addEventListener('DOMContentLoaded', function () {
+      TopicLoader.loadDataThenScript('data-topic.js', 'js/app.js', 'Learn It');
+    });
+  </script>
+</head>
+<body>
+
+  <!-- mobile-nav is auto-injected by js/engines/shell.js -->
+  <div id="app-root"></div>
+
+</body>
+</html>

@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="econos topic quiz.">
   <title>Quiz · econos</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -16,22 +13,21 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="econos" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="js/auth-check.js"></script>
 </head>
 <body>
 
-  <nav class="mobile-nav">
-    <a href="index.html" class="mobile-nav__logo"><img src="assets/econos-icon.png" alt="econos"></a>
-    <div class="mobile-nav__right">
-      <span class="mobile-nav__streak"><span>🔥</span><span>1</span></span>
-      <div class="mobile-nav__avatar">AB</div>
-    </div>
-  </nav>
+  <!-- mobile-nav is auto-injected by js/engines/shell.js -->
   <div id="app-root"></div>
 
+  <script src="js/logger.js"></script>
   <script src="js/icons.js"></script>
   <script src="js/topic-loader.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/engines/shell.js"></script>
   <script src="js/engines/quiz-engine.js"></script>
 
   <script>
@@ -45,59 +41,15 @@
       var Q = window.ECONOS_QUIZ;
       var T = window.ECONOS_TOPIC;
       var SHORT_NAMES = Q.shortNames || {};
-      var topicHref = TopicLoader.buildUrl('topic.html');
+      var topicHref = TopicLoader.buildUrl('learn.html');
 
-      var navItems = [
-        { name: 'Home',         icon: I.home,     href: 'index.html', active: false },
-        { name: 'My topics',    icon: I.topics,   href: '#',          active: true  },
-        { name: 'Progress',     icon: I.progress, href: '#',          active: false },
-        { name: 'Exam practice',icon: I.practice, href: '#',          active: false },
-        { name: 'Study planner',icon: I.planner,  href: '#',          active: false },
-        { name: 'Messages',     icon: I.messages, href: '#',          active: false },
-        { name: 'Settings',     icon: I.settings, href: '#',          active: false }
-      ];
-
-      var sidebar = ''
-        + '<aside class="sidebar">'
-        +   '<div class="sidebar__brand">'
-        +     '<div class="sidebar__logo"><img src="assets/econos-icon.png" alt="econos"></div>'
-        +     '<div class="sidebar__wordmark">econos</div>'
-        +     '<div class="sidebar__tagline">'
-        +       'Learn it<span class="ec-stop-green">.</span> Link it<span class="ec-stop-yellow">.</span> Land it<span class="ec-stop-pink">.</span>'
-        +     '</div>'
-        +   '</div>'
-        +   '<nav class="sidebar__nav">'
-        +     navItems.map(function (n) {
-                return '<a href="' + n.href + '" class="' + (n.active ? 'is-active' : '') + '">' + n.icon + '<span>' + n.name + '</span></a>';
-              }).join('')
-        +   '</nav>'
-        +   '<div class="sidebar__streak">'
-        +     '<div class="sidebar__streak-row"><span class="sidebar__streak-flame">🔥</span><span class="sidebar__streak-num">1</span></div>'
-        +     '<div class="sidebar__streak-label">Day streak</div>'
-        +     '<div class="sidebar__streak-sub">Keep it going!</div>'
-        +   '</div>'
-        +   '<div class="sidebar__user">'
-        +     '<div class="sidebar__user-avatar">AB</div>'
-        +     '<div class="sidebar__user-info">'
-        +       '<div class="sidebar__user-name">Alex Brown</div>'
-        +       '<div class="sidebar__user-role">A-Level Economics</div>'
-        +     '</div>'
-        +     '<div class="sidebar__user-chev">' + I.chevDown + '</div>'
-        +   '</div>'
-        + '</aside>';
-
-      var topbar = ''
-        + '<header class="topbar">'
-        +   '<a href="' + topicHref + '" class="topbar__back">' + I.arrowLeft + '</a>'
-        +   '<div class="topbar__crumbs">'
-        +     '<div class="topbar__session-label">' + Q.sessionLabel + '</div>'
-        +     '<div class="topbar__topic-title">' + Q.title + '</div>'
-        +   '</div>'
-        +   '<div class="topbar__right">'
-        +     '<div class="topbar__streak"><span class="topbar__streak-icon">🔥</span><span>1 day streak</span></div>'
-        +     '<div class="topbar__avatar"><div class="topbar__avatar-circle">AB</div><span class="topbar__avatar-chev">' + I.chevDown + '</span></div>'
-        +   '</div>'
-        + '</header>';
+      var sidebar = Shell.renderSidebar({ activeNav: 'My topics' });
+      var topbar  = Shell.renderTopbar({
+        backUrl:      topicHref,
+        backLabel:    'Topics',
+        sessionLabel: Q.sessionLabel,
+        topicTitle:   Q.title
+      });
 
       var cardsList = T.cards.map(function (c, i) {
         var name = SHORT_NAMES[c.id] || c.id;
@@ -122,7 +74,8 @@
         + '</div>';
 
       var rail = ''
-        + '<aside class="right-rail">'
+        + '<div class="right-rail">'
+        +   Shell.renderStages()
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title">Topic progress</div>'
         +     '<div class="rail-card__sub">Step 1 of 3: Learn</div>'
@@ -142,7 +95,7 @@
         +     '</div>'
         +     '<button class="deck-download__btn">📥 Download PDF</button>'
         +   '</div>'
-        + '</aside>';
+        + '</div>';
 
       var intro = ''
         + '<div id="quiz-root">'
@@ -162,7 +115,7 @@
       var page = '<div class="page">' + intro + rail + '</div>';
 
       document.getElementById('app-root').innerHTML =
-        '<div class="app">' + sidebar + '<div class="main">' + topbar + page + '</div></div>';
+        '<div class="app">' + sidebar + '<div id="main-content" class="main" tabindex="-1" role="main">' + topbar + page + '</div></div>';
 
       document.getElementById('quiz-start').addEventListener('click', function () {
         window.bootQuiz(Q.questions, {

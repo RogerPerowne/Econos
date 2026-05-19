@@ -1,7 +1,5 @@
 window.ECONOS_LAND_INTRO = {
   topic:        'Types of Efficiency',
-  sessionLabel: 'Session 3 of 3: Land',
-
   sectionA: {
     description: 'Short data-response questions worth 5 marks each. Select how many to include in your session.'
   },

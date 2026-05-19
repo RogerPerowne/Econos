@@ -18,7 +18,7 @@
     return `
       <div class="app">
         ${renderSidebar()}
-        <div class="main">
+        <div id="main-content" class="main" tabindex="-1" role="main">
           ${renderTopbar()}
           ${inner}
         </div>
@@ -78,7 +78,7 @@
   function renderTopbar() {
     if (currentView === 'intro') {
       return `
-        <header class="topbar">
+        <div class="topbar" role="region" aria-label="Session header">
           <a href="index.html" class="topbar__back">
             ${I.arrowLeft}
             <span>Back to dashboard</span>
@@ -94,11 +94,11 @@
               <span class="topbar__avatar-chev">${I.chevDown}</span>
             </div>
           </div>
-        </header>
+        </div>
       `;
     } else {
       return `
-        <header class="topbar">
+        <div class="topbar" role="region" aria-label="Session header">
           <a href="#" class="topbar__back" data-action="back-to-intro">
             ${I.arrowLeft}
           </a>
@@ -116,7 +116,7 @@
               <span class="topbar__avatar-chev">${I.chevDown}</span>
             </div>
           </div>
-        </header>
+        </div>
       `;
     }
   }
@@ -1035,24 +1035,11 @@
      ============================================================ */
 
   function renderIntro() {
-    const stages = T.intro.stages.map(s => {
-      const cls = 'stage'
-                + (s.state === 'current'   ? ' is-current'   : '')
-                + (s.state === 'available' ? ' is-available' : '')
-                + (s.state === 'locked'    ? ' is-locked'    : '');
-      const inner = `
-        <div class="stage__num">${s.state === 'locked' ? I.lock : s.num}</div>
-        <div class="stage__body">
-          <div class="stage__name">${s.name}</div>
-          <div class="stage__sub">${s.sub}</div>
-          ${s.state === 'current' ? '<span class="stage__chip">Current</span>' : ''}
-          ${s.state === 'available' ? '<span class="stage__chip stage__chip--available">Open →</span>' : ''}
-        </div>
-      `;
-      return s.href && s.state !== 'locked'
-        ? `<a href="${s.href}" class="${cls}">${inner}</a>`
-        : `<div class="${cls}">${inner}</div>`;
-    }).join('');
+    /* Use Shell.renderStages — single source of truth for the
+       Learn / Link / Land 3-stage progress widget. Pass T.intro.stages
+       directly so per-topic copy overrides (e.g. "Recap the three causes")
+       carry through. */
+    const stagesWidget = Shell.renderStages(T.intro.stages);
 
     return `
       <div class="page">
@@ -1060,7 +1047,7 @@
           <div class="card intro-card">
             <div class="row row--top">
               <div class="intro-card__text">
-                <div class="card__step-label">${T.sessionLabel}</div>
+                <div class="card__step-label">${T.sessionLabel || TopicLoader.sessionLabel('learn')}</div>
                 <h1 class="card__title card__title--lg">${T.title}</h1>
                 <p class="card__lede">${T.intro.summary}</p>
               </div>
@@ -1115,9 +1102,9 @@
           </div>
         </div>
 
-        <aside class="right-rail">
-          <div class="stages">${stages}</div>
-        </aside>
+        <div class="right-rail">
+          ${stagesWidget}
+        </div>
       </div>
     `;
   }
@@ -1630,7 +1617,7 @@
     `;
 
     // Connector arrow between nodes
-    const connector = (n, tone) => `
+    const connector = (n, _tone) => `
       <div class="ped-calc-link" data-ped-connector="${n}" style="display:flex;justify-content:center;align-items:center;height:36px;position:relative;">
         <div class="ped-calc-link__line" style="width:3px;height:100%;background:#CBD5E1;border-radius:2px;transition:background 0.25s ease;" data-link-line></div>
         <div class="ped-calc-link__arrow" style="position:absolute;bottom:-2px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #CBD5E1;transition:border-top-color 0.25s ease;" data-link-arrow></div>
@@ -1689,7 +1676,8 @@
     ` : '';
 
     const [s1, s2, s3, s4, s5] = steps;
-    const [r0, r1, r2, r3, r4] = roadmapStops;
+    /* roadmapStops destructure was here; the values were unused —
+       only roadmap (the string) is consumed below. */
 
     return `
       ${scenarioPanel}
@@ -3074,9 +3062,10 @@
           </div>
         </div>
 
-        <aside class="right-rail">
+        <div class="right-rail">
+          ${Shell.renderStages()}
           ${renderCardsRail(idx)}
-        </aside>
+        </div>
       </div>
     `;
   }
@@ -3136,7 +3125,7 @@
     `;
   }
 
-  function renderSessionDots(currentIdx) {
+  function renderSessionDots(_currentIdx) {
     return `
       <div class="session-dots">
         <div class="session-dot is-current">1</div>
@@ -3171,17 +3160,27 @@
     const inner = currentView === 'intro' ? renderIntro() : renderCard(currentView);
     root.innerHTML = renderShell(inner);
     bindEvents();
-    if (window.EconosElasticity) {
-      root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
-    }
-    if (window.EconosPes) {
-      root.querySelectorAll('.pes-root[data-pes-mount]').forEach(el => window.EconosPes.init(el));
-    }
-    if (window.EconosYed) {
-      root.querySelectorAll('.yed-root[data-yed-mount]').forEach(el => window.EconosYed.init(el));
-    }
-    if (window.EconosXed) {
-      root.querySelectorAll('.xed-root[data-xed-mount]').forEach(el => window.EconosXed.init(el));
+    /* Yield to the browser so paint happens before we initialise the
+       interactive widgets (each explorer can scan tens of DOM nodes
+       and bind handlers — postponing avoids jank on the first frame). */
+    const initWidgets = () => {
+      if (window.EconosElasticity) {
+        root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
+      }
+      if (window.EconosPes) {
+        root.querySelectorAll('.pes-root[data-pes-mount]').forEach(el => window.EconosPes.init(el));
+      }
+      if (window.EconosYed) {
+        root.querySelectorAll('.yed-root[data-yed-mount]').forEach(el => window.EconosYed.init(el));
+      }
+      if (window.EconosXed) {
+        root.querySelectorAll('.xed-root[data-xed-mount]').forEach(el => window.EconosXed.init(el));
+      }
+    };
+    if (typeof requestAnimationFrame === 'function') {
+      requestAnimationFrame(initWidgets);
+    } else {
+      initWidgets();
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }

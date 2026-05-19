@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'govt_intervention_tax',
   topicNum: '1.17',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Intervention: Taxes',
   estTime: '9-11 minutes',
   goal: 'Lock in how indirect taxes work, their welfare effects, tax incidence, and evaluation of taxation as a tool for correcting market failure.',

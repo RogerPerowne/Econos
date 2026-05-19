@@ -12,7 +12,6 @@
     topicId:  'oligopoly_main',
     title:    'Oligopoly',
     subtitle: 'Theme 3.13 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions on oligopoly &#8212; the dominant real-world market structure. Covers strategic interdependence, the kinked demand curve model and price rigidity, non-price competition, the competition-to-collusion spectrum, and the welfare evaluation of oligopoly behaviour.',

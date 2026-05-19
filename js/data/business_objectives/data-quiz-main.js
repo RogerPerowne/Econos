@@ -5,7 +5,6 @@
     topicId:  'business_objectives_main',
     title:    'Business Objectives',
     subtitle: 'Theme 3.1 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the full range of firm objectives &#8212; from profit and revenue maximisation to satisficing, the principal-agent problem, CSR, and public sector goals. Mixed formats designed to test both definitional precision and the evaluative judgements that earn top-band marks.',

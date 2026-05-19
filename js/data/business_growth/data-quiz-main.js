@@ -5,7 +5,6 @@
     topicId:  'business_growth_main',
     title:    'Business Growth',
     subtitle: 'Theme 3.2 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering motives for growth, internal versus external growth, types of integration, why mergers often fail, competition law constraints, and market concentration. Mixed formats spanning classification, calculation, diagram interpretation, and extended evaluation.',

@@ -11,7 +11,6 @@
     topicId:  'sol_wellbeing_main',
     title:    'Standard of Living &amp; Wellbeing',
     subtitle: 'Theme 2.1.2 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the three dimensions of welfare, HDI construction and interpretation, limitations of GDP as a welfare proxy, the Kuznets curve, composite vs single-dimension measures, and the Easterlin paradox. Designed to test the applied analytical reasoning examiners reward in welfare and development essays.',

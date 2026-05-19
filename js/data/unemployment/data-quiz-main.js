@@ -11,7 +11,6 @@
     topicId:  'unemployment_main',
     title:    'Employment &amp; Unemployment',
     subtitle: 'Theme 2.1.3 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the three labour-market states, the ILO and claimant count measures, the five types of unemployment and their cures, cyclical unemployment and wage stickiness, and the long-run consequences including hysteresis. Mixed formats test both classification skills and applied policy reasoning.',

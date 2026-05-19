@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'business_objectives',
   topicNum: '2.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Business Objectives',
   estTime: '9-11 minutes',
   goal: 'Lock in the full range of business objectives beyond profit maximisation — and why different objectives change firm behaviour.',

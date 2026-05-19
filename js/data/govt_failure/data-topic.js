@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'govt_failure',
   topicNum: '4.2',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Failure',
   estTime: '9-11 minutes',
   goal: 'Lock in the causes and types of government failure — and why intervention intended to correct market failure can sometimes make things worse.',

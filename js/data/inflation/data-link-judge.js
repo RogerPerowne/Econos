@@ -5,7 +5,6 @@
 
 window.ECONOS_LINK_JUDGE = {
   topic:        'Causes of Inflation & Deflation',
-  sessionLabel: 'Session 2 of 3: Link',
   backUrl:      TopicLoader.buildUrl('link_intro.html'),
   eyebrow:      'Make the Judgement',
   instruction:  'Use the evidence you have built so far to complete the final judgement. Choose the strongest phrase for each blank.',

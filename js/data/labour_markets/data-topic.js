@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'labour_markets',
   topicNum: '5.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Demand for Labour',
   estTime: '5-7 minutes',
   goal: 'Lock in the demand for labour as a derived demand, MRP theory, and what causes labour demand to shift.',

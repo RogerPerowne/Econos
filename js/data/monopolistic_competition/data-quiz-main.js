@@ -11,7 +11,6 @@
     topicId:  'monopolistic_competition_main',
     title:    'Monopolistic Competition',
     subtitle: 'Theme 3.12 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions on Chamberlin\'s model of monopolistic competition &#8212; the four assumptions, short-run supernormal profit, long-run normal profit through entry, excess capacity, and the efficiency comparison with perfect competition. Real-world applications to restaurants, hairdressers, and fast fashion.',

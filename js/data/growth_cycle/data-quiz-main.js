@@ -11,7 +11,6 @@
     topicId:  'growth_cycle_main',
     title:    'Trade Cycle, Shocks &amp; Economic Growth',
     subtitle: 'Theme 2.5.2 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the four phases of the trade cycle, demand-side and supply-side shocks and their macro effects, leading versus lagging indicators, the multiplier-accelerator interaction, costs and benefits of economic growth, and sustainable growth debates. Designed to develop the applied analysis and evaluation skills Paper 2 rewards.',

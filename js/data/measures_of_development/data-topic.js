@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'measures_of_development',
   topicNum: '3.1',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Measures of Development',
   estTime: '7-9 minutes',
   goal: 'Distinguish economic growth from economic development, and evaluate the main indicators (HDI, GDP per capita PPP, multidimensional measures).',

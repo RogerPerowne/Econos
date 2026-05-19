@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'long_run_costs',
   topicNum: '3.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Economies & Diseconomies of Scale',
   estTime: '7-9 minutes',
   goal: 'Lock in the LRAC curve, minimum efficient scale, economies and diseconomies of scale, and their implications for market structure.',

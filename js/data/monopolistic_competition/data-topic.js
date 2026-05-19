@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'monopolistic_competition',
   topicNum: '4.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monopolistic Competition',
   estTime: '9-11 minutes',
   goal: 'Lock in the assumptions, short-run and long-run equilibria, efficiency properties, and how monopolistic competition explains real markets with product differentiation.',

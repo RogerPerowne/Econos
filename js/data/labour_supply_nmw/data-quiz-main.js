@@ -13,7 +13,6 @@
     topicId:  'labour_supply_nmw_main',
     title:    'Labour Supply, Trade Unions, and the National Minimum Wage',
     subtitle: 'Theme 3.19 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the substitution and income effects on individual labour supply, the backward-bending supply curve, market labour supply determinants, trade union wage bargaining, the bilateral monopoly model, NMW theory under competitive and monopsonistic conditions, and empirical evidence from the UK. Includes real data on NLW rates, union density, and Card-Krueger evidence.',

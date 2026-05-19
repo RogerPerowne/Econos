@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'public_finances',
   topicNum: '5.3',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Public Sector Finances',
   estTime: '9-11 minutes',
   goal: 'Understand the relationship between fiscal deficits, debt, and the economy — including cyclical vs structural deficits, debt sustainability, and the implications of high debt levels.',

@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'multiplier',
   topicNum: '4.4',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'National Income & The Multiplier',
   estTime: '11-13 minutes',
   goal: 'Lock in equilibrium income, the multiplier formula, and the leakages that shrink it',

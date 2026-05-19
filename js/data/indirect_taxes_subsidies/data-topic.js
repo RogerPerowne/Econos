@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'indirect_taxes_subsidies',
   topicNum: '2.9',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Indirect Taxes & Subsidies',
   estTime: '18-22 minutes',
   goal: 'Master how indirect taxes and subsidies shift supply, their welfare effects, who bears the burden, and how to evaluate both as tools for correcting market failure.',

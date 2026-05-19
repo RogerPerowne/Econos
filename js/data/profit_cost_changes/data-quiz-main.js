@@ -36,7 +36,6 @@
     topicId:  'profit_cost_changes_main',
     title:    'Changes in Costs and Revenues',
     subtitle: 'Theme 3.16 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the MR = MC framework for profit maximisation, the effects of cost increases and demand shifts on output, price, and profit, tax incidence under per-unit and lump-sum taxes, cost-reducing innovation, and how the same changes affect firms differently across market structures. Mixed formats with real UK examples.',

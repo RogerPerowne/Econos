@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'monopoly',
   topicNum: '4.5',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monopoly',
   estTime: '10-12 minutes',
   goal: 'Lock in the monopoly model — sources of power, profit maximisation, welfare loss, and when monopoly may be beneficial.',

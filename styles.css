@@ -13,37 +13,37 @@
   --econ-ink-soft:    #2A3650;   /* body text — softer than full ink */
 
   /* GREEN — "Learn" stage · success · progress */
-  --econ-green:       #1FB574;
-  --econ-green-50:    #E8F8F0;
-  --econ-green-100:   #D1F2E1;
-  --econ-green-600:   #168A57;
-  --econ-green-700:   #0E633F;
-  --econ-green-800:   #094128;
+  --econ-green:       #10B981;
+  --econ-green-50:    #ECFDF5;
+  --econ-green-100:   #D1FAE5;
+  --econ-green-600:   #059669;
+  --econ-green-700:   #047857;
+  --econ-green-800:   #065F46;
 
   /* YELLOW — "Link" stage · current state · attention
      (Token name kept as --econ-amber for backwards compatibility with all
       existing class names like .branch-cal--amber. Value is the new yellow.) */
-  --econ-amber:       #F5B800;
-  --econ-amber-50:    #FEF8E0;
-  --econ-amber-100:   #FDF0C2;
-  --econ-amber-600:   #C99500;
-  --econ-amber-700:   #8C6800;
+  --econ-amber:       #F39E0B;
+  --econ-amber-50:    #FFFBEB;
+  --econ-amber-100:   #FEF3C7;
+  --econ-amber-600:   #D97706;
+  --econ-amber-700:   #B45309;
 
   /* PINK — "Land" stage · destination · climax
      (Token name kept as --econ-rose for backwards compatibility.) */
-  --econ-rose:        #EC2D68;
-  --econ-rose-50:     #FCE7EE;
-  --econ-rose-100:    #F9D0DD;
-  --econ-rose-600:    #C71C50;
-  --econ-rose-700:    #95163C;
+  --econ-rose:        #E11D48;
+  --econ-rose-50:     #FFF1F2;
+  --econ-rose-100:    #FFE4E6;
+  --econ-rose-600:    #BE1640;
+  --econ-rose-700:    #9F1239;
 
   /* PURPLE — extended · exam practice · synthesis · advanced */
-  --econ-purple:      #7C3AED;
-  --econ-purple-50:   #F2EBFD;
-  --econ-purple-100:  #E4D7FB;
-  --econ-purple-600:  #6427C2;
-  --econ-purple-700:  #4E1E97;
-  --econ-purple-800:  #381569;
+  --econ-purple:      #7D23CB;
+  --econ-purple-50:   #F4ECFB;
+  --econ-purple-100:  #E5D2F7;
+  --econ-purple-600:  #661AAE;
+  --econ-purple-700:  #501293;
+  --econ-purple-800:  #3B0978;
 
   /* BLUE — extended · data · examples · external links
      Demoted from primary brand to "use when functionally needed". */
@@ -142,7 +142,7 @@
 
 html {
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -153,7 +153,10 @@ body {
   background: var(--econ-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  /* overflow-x removed — it forced overflow-y to auto, which made
+     body its own scroll container and BROKE position:sticky on
+     sidebar/topbar/right-rail. html { overflow-x: clip } handles
+     horizontal overflow without that side-effect. */
 }
 
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
@@ -173,6 +176,63 @@ img, svg { display: block; max-width: 100%; }
   margin: 0 auto;
 }
 
+/* ----- Skip link (a11y) ----- */
+/* Visually hidden until a keyboard user tabs to it. Tabbing reveals
+   a button that jumps focus past the sidebar nav to <main>. */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -40px;
+  z-index: 1000;
+  padding: 8px 14px;
+  background: var(--econ-ink);
+  color: var(--econ-white);
+  font-weight: var(--fw-semi);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: top 120ms ease-out;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 8px;
+  outline: 2px solid var(--econ-blue, #2563EB);
+  outline-offset: 2px;
+}
+
+/* When jumped-to via skip-link, suppress the default focus ring on
+   the <main> wrapper itself — it's not really a focusable widget. */
+#main-content:focus { outline: none; }
+#main-content:focus-visible { outline: none; }
+
+/* ----- Loading skeleton -----
+   Rendered by Link/Land routers AFTER a 180ms grace period so cached
+   or instant navigations never flash a loading state. Animated by a
+   subtle background shimmer. */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--econ-gray-100) 0%,
+    var(--econ-gray-50) 50%,
+    var(--econ-gray-100) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--r-lg);
+  animation: skeleton-shimmer 1.4s linear infinite;
+}
+@keyframes skeleton-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+.skeleton--sidebar { width: var(--sidebar-w); height: 100vh; border-radius: 0; }
+.skeleton--topbar  { height: var(--header-h); border-radius: 0; }
+.skeleton--card    { height: 220px; margin-bottom: var(--sp-4); }
+.skeleton__main    { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.skeleton__page    { padding: var(--sp-6) var(--sp-8); }
+[aria-busy="true"] { display: flex; min-height: 100vh; }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
+
 /* ----- Sidebar ----- */
 .sidebar {
   background: var(--econ-white);
@@ -180,10 +240,14 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   padding: var(--sp-6) 0;
+  /* Sticky chrome: sidebar holds top of viewport. Sits under
+     topbar in z-order so a scrolled topbar can overlap it. */
   position: sticky;
   top: 0;
+  align-self: start;
   height: 100vh;
   overflow-y: auto;
+  z-index: 100;
 }
 
 .sidebar__brand {
@@ -305,13 +369,21 @@ img, svg { display: block; max-width: 100%; }
 
 .topbar {
   height: var(--header-h);
-  background: var(--econ-white);
+  /* Sticky chrome: tops the viewport with a frosted backdrop so the
+     content scrolls under, not over. Sits above sidebar + right-rail
+     in z-order. */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--econ-gray-200);
   padding: 0 var(--sp-8);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-6);
+  position: sticky;
+  top: 0;
+  z-index: 110;
 }
 
 .topbar__back {
@@ -469,6 +541,31 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-xl);
   padding: var(--sp-7) var(--sp-8);
   box-shadow: var(--shadow-sm);
+  /* Theme-scoped top accent stripe in the page's stage colour —
+     green on Learn It (default), amber on Link It, rose on Land It.
+     `.app:not(.theme--…)` makes sure the side borders stay neutral
+     when no theme class is set. */
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: var(--econ-green);
+}
+.theme--link .card,
+.theme--link .card.intro-card {
+  border-color: var(--econ-gray-200);
+  border-top-color: var(--econ-amber);
+}
+.theme--land .card,
+.theme--land .card.intro-card {
+  border-color: var(--econ-gray-200);
+  border-top-color: var(--econ-rose);
+}
+/* Keep the non-themed (Learn It) card's side/bottom borders neutral
+   even after the brand-refresh introduced a green border earlier. */
+.app:not(.theme--link):not(.theme--land) .card,
+.app:not(.theme--link):not(.theme--land) .card.intro-card {
+  border-left-color: var(--econ-gray-200);
+  border-right-color: var(--econ-gray-200);
+  border-bottom-color: var(--econ-gray-200);
 }
 
 .card__step-label {
@@ -690,8 +787,29 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   gap: var(--sp-4);
+  /* Sticky chrome: tucks UNDER the topbar (z-index 110), scrolls
+     internally when content overflows the viewport. */
   position: sticky;
-  top: var(--sp-6);
+  top: calc(var(--header-h) + var(--sp-4));
+  align-self: start;
+  max-height: calc(100vh - var(--header-h) - var(--sp-6));
+  overflow-y: auto;
+  padding-right: 2px;
+  z-index: 20;
+  scrollbar-width: thin;
+}
+.right-rail::-webkit-scrollbar { width: 6px; }
+.right-rail::-webkit-scrollbar-thumb {
+  background: var(--econ-gray-200);
+  border-radius: 999px;
+}
+/* On mobile the rail stops being sticky and stacks below content */
+@media (max-width: 880px) {
+  .right-rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
 }
 
 .rail-card {
@@ -819,10 +937,14 @@ img, svg { display: block; max-width: 100%; }
    ============================================================ */
 
 .session-meta {
-  display: flex;
-  gap: var(--sp-7);
+  /* Grid (not flex) so the CTA can wrap to its own row at narrow
+     widths instead of forcing the column wider. The 900px media
+     query below puts it back on a single row when there's room. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-6);
   align-items: center;
-  padding: var(--sp-5) var(--sp-7);
+  padding: var(--sp-5) var(--sp-6);
   background: var(--econ-white);
   border: 1px solid var(--econ-gray-200);
   border-radius: var(--r-xl);
@@ -833,6 +955,18 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: var(--sp-3);
+  min-width: 0;
+}
+.session-meta__cta {
+  grid-column: 1 / -1;
+  margin-left: 0;
+  display: flex;
+}
+.session-meta__cta .btn { width: 100%; justify-content: center; }
+@media (min-width: 900px) {
+  .session-meta { grid-template-columns: 1fr 1fr auto; }
+  .session-meta__cta { grid-column: auto; width: auto; }
+  .session-meta__cta .btn { width: auto; }
 }
 .session-meta__icon {
   width: 36px;
@@ -9143,19 +9277,29 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* Session meta bar */
 .land-session-meta {
-  display: flex;
+  /* Mirrors .session-meta layout: grid so the CTA wraps to its own
+     row at narrow widths, single row at >=900px. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-6);
   align-items: center;
-  gap: var(--sp-6);
   background: var(--econ-white);
   border: 1px solid var(--econ-gray-200);
   border-radius: var(--r-xl);
-  padding: var(--sp-4) var(--sp-6);
+  padding: var(--sp-5) var(--sp-6);
   box-shadow: var(--shadow-sm);
 }
 .land-session-meta__item {
   display: flex;
   align-items: center;
   gap: var(--sp-3);
+  min-width: 0;
+}
+.land-session-meta__item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 .land-session-meta__icon {
   width: 36px;
@@ -9168,6 +9312,17 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   justify-content: center;
   flex-shrink: 0;
 }
+/* Palette parity with Learn/Link .session-meta — first icon green
+   (total marks), second purple (est. time). CTA is blue (covered by
+   the consistent primary-action rules). */
+.land-session-meta__item:nth-of-type(1) .land-session-meta__icon {
+  background: var(--econ-green-50);
+  color: var(--econ-green-600);
+}
+.land-session-meta__item:nth-of-type(2) .land-session-meta__icon {
+  background: var(--econ-purple-50);
+  color: var(--econ-purple-600);
+}
 .land-session-meta__label {
   font-size: var(--fs-xs);
   color: var(--econ-gray-500);
@@ -9177,7 +9332,17 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-weight: var(--fw-semi);
   color: var(--econ-ink);
 }
-.land-session-meta__cta { margin-left: auto; }
+.land-session-meta__cta {
+  grid-column: 1 / -1;
+  margin-left: 0;
+  display: flex;
+}
+.land-session-meta__cta .btn { width: 100%; justify-content: center; }
+@media (min-width: 900px) {
+  .land-session-meta { grid-template-columns: 1fr 1fr auto; }
+  .land-session-meta__cta { grid-column: auto; width: auto; margin-left: auto; }
+  .land-session-meta__cta .btn { width: auto; }
+}
 
 /* Rail summary panel */
 .land-rs__marks-row {
@@ -9228,7 +9393,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .land-rs__dot--c { background: var(--econ-rose); }
 .land-rs__empty {
   font-size: var(--fs-xs);
-  color: var(--econ-gray-400);
+  /* Bumped from gray-400 (#9ca3af) — fails WCAG AA on white. */
+  color: var(--econ-gray-600);
   font-style: italic;
   line-height: 1.5;
 }
@@ -10638,3 +10804,1223 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-size: 13px;
   line-height: 1.65;
 }
+
+
+/* ============================================================
+   ECONOS DESIGN SYSTEM — Layout & micro-typography refinements
+   (Cascade-last block: card shadows, content rhythm, callout tones,
+    headline letter-spacing tuning. Last-loaded by design — these are
+    cross-cutting refinements layered on top of the section-specific
+    canonical rules above.)
+   ─────────────────────────────────────────────────────────────
+   Final layout + micro-typography fixes layered on top of the
+   v14 stylesheet. Kept here as a single trailing block so it's
+   easy to find and tweak without spelunking the 10K-line core.
+   ============================================================ */
+
+:root {
+  --shadow-ring: 0 0 0 1px rgba(11, 20, 38, 0.04);
+  --shadow-card-rest: 0 1px 2px rgba(11, 20, 38, 0.03), 0 1px 8px rgba(11, 20, 38, 0.025);
+  --shadow-card-hover: 0 1px 2px rgba(11, 20, 38, 0.05), 0 14px 32px -10px rgba(11, 20, 38, 0.18);
+
+  /* Dial WONK back to 0 — keeps Fraunces warm without the wild
+     swashy descenders that overflow the line-box at large sizes. */
+  --fraunces-display: "opsz" 96, "SOFT" 30, "WONK" 0;
+  --fraunces-section: "opsz" 48, "SOFT" 50, "WONK" 0;
+}
+
+/* Re-apply variation settings on type that previously inherited the
+   wonky variant — needed because font-variation-settings is NOT
+   inherited; the original rules baked in WONK 1 inline. */
+.card__title,
+.card__title--lg,
+h1, h2 {
+  font-variation-settings: var(--fraunces-display) !important;
+}
+.theme-num,
+.principle-num,
+.topic__title,
+.intro-card .card__title {
+  font-variation-settings: var(--fraunces-display) !important;
+}
+
+/* Generous line-height on the big display headings so the
+   bottom of descenders never collides with the next block. */
+.card__title { line-height: 1.06; padding-bottom: 4px; }
+.card__title--lg { line-height: 1.02; padding-bottom: 6px; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Crisper focus styles everywhere */
+:focus-visible {
+  outline: 2px solid var(--econ-blue);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ── Session meta — give the two info items room to breathe ── */
+.session-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-5) var(--sp-6);
+  padding: var(--sp-5) var(--sp-6);
+}
+.session-meta__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-width: 0;
+  flex: 1 1 200px;
+}
+.session-meta__item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.session-meta__label {
+  font-size: var(--fs-xs);
+  color: var(--econ-gray-500);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.session-meta__val {
+  font-size: var(--fs-md);
+  color: var(--econ-ink);
+  font-weight: var(--fw-semi);
+  line-height: 1.3;
+}
+.session-meta__cta {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+@media (max-width: 720px) {
+  .session-meta__cta { width: 100%; }
+  .session-meta__cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ── Card shadow refinement — softer rest, lifted hover ── */
+.card { box-shadow: var(--shadow-card-rest); }
+.rail-card { box-shadow: var(--shadow-card-rest); }
+a.stage { box-shadow: var(--shadow-card-rest); }
+
+/* ── Right rail stage cards — make them feel like a single sticky panel ── */
+.right-rail .stage,
+.right-rail a.stage {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-3);
+  transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
+}
+.right-rail .stage:last-child,
+.right-rail a.stage:last-child { margin-bottom: 0; }
+.right-rail a.stage:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Hide the connecting line between stages when they're separate cards */
+.right-rail .stage::after { display: none; }
+
+/* ── Topbar polish — slightly tighter and more elegant ── */
+.topbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--econ-gray-200);
+}
+
+/* ── Sidebar — tighten the logo wrapper ── */
+.sidebar__logo-link { padding: var(--sp-3) var(--sp-6) var(--sp-4); }
+.sidebar__logo-full { width: 144px; }
+.sidebar__brand { padding-bottom: var(--sp-2); }
+
+/* ── Sidebar nav — refined active state and dot indicator ── */
+.sidebar__nav a {
+  position: relative;
+  border-radius: var(--r-md);
+  margin: 2px var(--sp-2);
+  padding: var(--sp-3) var(--sp-3);
+}
+.sidebar__nav a.is-active {
+  background: var(--econ-blue-50);
+  color: var(--econ-blue-700);
+  font-weight: var(--fw-semi);
+}
+.sidebar__nav a.is-active::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--econ-blue);
+}
+
+/* ── Primary button — softer transition, no hard transform ── */
+.btn--primary {
+  background: var(--econ-ink);
+  color: var(--econ-white);
+  box-shadow: 0 2px 6px rgba(11, 20, 38, 0.16);
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.22s ease;
+}
+.btn--primary:hover {
+  background: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(11, 20, 38, 0.22);
+}
+.btn--primary:active { transform: translateY(0); }
+
+/* Ghost button — subtler */
+.btn--ghost {
+  background: var(--econ-white);
+  border-color: var(--econ-gray-200);
+}
+.btn--ghost:hover {
+  background: var(--econ-gray-50);
+  border-color: var(--econ-gray-300);
+}
+
+/* ── Better text rendering on long body copy ── */
+.card__lede, .hero-lede, .topic__sub, .stage__sub, .principle-body {
+  text-wrap: pretty;
+}
+
+/* ── Smooth scroll-margin so anchors don't hide behind sticky topbar ── */
+.card, .rail-card { scroll-margin-top: calc(var(--header-h) + var(--sp-4)); }
+
+/* ── Subtle border on the main content card to anchor it visually ── */
+.card { border-color: var(--econ-gray-200); }
+
+/* ── Tightening the .page columns gap on narrow widths ── */
+@media (max-width: 1024px) {
+  .page { gap: var(--sp-5); padding: var(--sp-5) var(--sp-6) var(--sp-10); }
+}
+@media (max-width: 880px) {
+  /* Single-column on narrow; right rail goes BELOW main */
+  .page { grid-template-columns: 1fr; gap: var(--sp-4); padding: var(--sp-4) var(--sp-4) var(--sp-8); }
+  .right-rail { position: static; }
+}
+
+/* ── Eliminate accidental horizontal scroll ──
+   Using `clip` instead of `hidden`, and ONLY on html — because
+   `overflow-x: hidden` on body forces overflow-y to `auto`, which
+   makes body its own scroll container and BREAKS position:sticky
+   on every descendant (sidebar, topbar, right-rail). */
+html { overflow-x: clip; }
+
+
+/* ============================================================
+   ECONOS DESIGN SYSTEM — Right-rail per-stage colour system
+   (Theme-scoped overrides loaded last to win the cascade over the
+    earlier per-stage neutrals.)
+   ─────────────────────────────────────────────────────────────
+   The 3-stage right-rail card (Learn / Link / Land) is the
+   user's compass through a topic. It MUST be honest about
+   where they are, where they've been, and where they're going,
+   using the brand's own colour code:
+
+       Learn  →  green
+       Link   →  amber
+       Land   →  pink   (--econ-rose)
+
+   The colour belongs to the STAGE, never the page. So:
+
+   • DONE stage      → filled in stage colour, white tick inside,
+                       chip "Done" in stage colour
+   • CURRENT stage   → outline in stage colour, number inside,
+                       chip "Current" in stage colour
+   • PENDING stage   → grey outline only, number inside ink,
+                       chip "Open" / "Locked" in neutral grey
+
+   Blue, anywhere on these cards, is wrong: it breaks the
+   colour code. The hover state expresses "this link works" via
+   an underline-grow animation, not a colour change.
+
+   The implementation uses :nth-of-type so engine code (which
+   renders 3 stages in Learn/Link/Land order) doesn't have to
+   add per-stage classes.
+   ============================================================ */
+
+/* ── Hard reset: kill every blue-tinted stage state ── */
+a.stage:hover .stage__num {
+  /* never re-colour the disc on hover; we use an underline animation instead */
+  background: var(--econ-white);
+  border-color: var(--econ-gray-300);
+  color: var(--econ-ink);
+}
+a.stage:hover .stage__name { color: var(--econ-ink); }
+
+.stage.is-available .stage__num {
+  background: var(--econ-white);
+  border-color: var(--econ-gray-300);
+  color: var(--econ-ink);
+}
+.stage.is-available .stage__name { color: var(--econ-ink); }
+.stage__chip--available {
+  background: var(--econ-gray-100);
+  color: var(--econ-gray-700);
+}
+
+/* ── Base resting state — pending stages ── */
+.stages .stage .stage__num {
+  background: var(--econ-white);
+  border: 2px solid var(--econ-gray-300);
+  color: var(--econ-ink);
+  font-weight: var(--fw-bold);
+}
+.stages .stage .stage__name { color: var(--econ-ink); }
+.stages .stage .stage__sub  { color: var(--econ-gray-500); }
+
+/* ── Per-stage palette tokens (positional, not class-based) ── */
+.stages .stage[data-stage-pos="1"] {
+  --stage-c:       var(--econ-green);
+  --stage-c-700:   var(--econ-green-700);
+  --stage-c-100:   var(--econ-green-100);
+  --stage-c-text:  var(--econ-green-700);
+}
+.stages .stage[data-stage-pos="2"] {
+  --stage-c:       var(--econ-amber);
+  --stage-c-700:   var(--econ-amber-700);
+  --stage-c-100:   var(--econ-amber-100);
+  --stage-c-text:  var(--econ-amber-700);
+}
+.stages .stage[data-stage-pos="3"] {
+  --stage-c:       var(--econ-rose);
+  --stage-c-700:   var(--econ-rose-600);
+  --stage-c-100:   var(--econ-rose-100);
+  --stage-c-text:  var(--econ-rose-600);
+}
+
+/* ── DONE — filled in the stage's own colour, white tick inside ── */
+.stages .stage.is-done .stage__num {
+  background: var(--stage-c);
+  border-color: var(--stage-c);
+  color: var(--econ-white);
+}
+.stages .stage.is-done .stage__num svg { stroke: var(--econ-white); }
+.stages .stage.is-done .stage__name { color: var(--econ-gray-700); font-weight: var(--fw-semi); }
+.stages .stage.is-done .stage__sub  { color: var(--econ-gray-500); }
+.stages .stage.is-done .stage__chip {
+  background: var(--stage-c-100);
+  color: var(--stage-c-text);
+}
+
+/* ── CURRENT — outlined in the stage's own colour, number inside ── */
+.stages .stage.is-current .stage__num {
+  background: var(--econ-white);
+  border: 2px solid var(--stage-c);
+  color: var(--stage-c-text);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--stage-c) 12%, transparent);
+}
+.stages .stage.is-current .stage__name { color: var(--stage-c-text); }
+.stages .stage.is-current .stage__chip {
+  background: var(--stage-c-100);
+  color: var(--stage-c-text);
+}
+
+/* ── PENDING chip ("Open" / no chip) — neutral ── */
+.stages .stage:not(.is-done):not(.is-current) .stage__chip {
+  background: var(--econ-gray-100);
+  color: var(--econ-gray-700);
+}
+
+/* ── Hover: underline-grow on the stage name, no colour shift ── */
+a.stage { text-decoration: none; }
+a.stage .stage__name {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+  display: inline;
+}
+a.stage:hover .stage__name { background-size: 100% 1.5px; }
+@media (prefers-reduced-motion: reduce) {
+  a.stage .stage__name { background-size: 100% 1.5px; transition: none; }
+}
+
+/* ── Right-rail stage card lift on hover (subtle, no colour) ── */
+.right-rail a.stage:hover {
+  border-color: var(--econ-gray-300);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Override the older theme--link / theme--land scoped stage rules
+       (those re-coloured the CURRENT stage based on the PAGE you were
+       on; now stages carry their own colour everywhere). ── */
+.theme--link .stages .stage.is-current .stage__num,
+.theme--land .stages .stage.is-current .stage__num {
+  /* keep the stage's own --stage-c outline; do nothing extra */
+}
+.theme--link .stages .stage.is-current .stage__name { color: var(--stage-c-text); }
+.theme--land .stages .stage.is-current .stage__name { color: var(--stage-c-text); }
+.theme--link .stages .stage__chip,
+.theme--land .stages .stage__chip {
+  /* let the per-stage rules above govern */
+  background: inherit;
+  color: inherit;
+}
+
+/* ── Stage right-arrow indicator (the "Open →" hint) — match stage colour ── */
+.stages .stage svg.stage__arrow,
+.stages .stage .stage__chip svg {
+  stroke: currentColor;
+}
+
+/* ============================================================
+   SESSION DOTS (the horizontal 1-2-3 progress strip in some rail
+   cards) — these tracked Learn/Link/Land progress too, so apply
+   the same per-position colour rule.
+   ============================================================ */
+.session-dots {
+  --dot-c-1: var(--econ-green);
+  --dot-c-2: var(--econ-amber);
+  --dot-c-3: var(--econ-rose);
+}
+.session-dot {
+  background: var(--econ-white);
+  border: 2px solid var(--econ-gray-300);
+  color: var(--econ-ink);
+  font-weight: var(--fw-bold);
+}
+.session-dot:nth-child(1).is-done,
+.session-dot:nth-child(1).is-current { --c: var(--dot-c-1); }
+.session-dot:nth-child(3).is-done,
+.session-dot:nth-child(3).is-current { --c: var(--dot-c-2); }
+.session-dot:nth-child(5).is-done,
+.session-dot:nth-child(5).is-current { --c: var(--dot-c-3); }
+.session-dot.is-done {
+  background: var(--c, var(--econ-green));
+  border-color: var(--c, var(--econ-green));
+  color: var(--econ-white);
+}
+.session-dot.is-current {
+  background: var(--econ-white);
+  border: 2px solid var(--c, var(--econ-green));
+  color: var(--c, var(--econ-green));
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--c, var(--econ-green)) 14%, transparent);
+}
+/* Connector line between dots — done legs match the colour of the
+   stage on the LEFT of that leg, so it reads as "I finished this
+   stage and moved on". */
+.session-line {
+  background: var(--econ-gray-200);
+}
+.session-line:nth-child(2).is-done { background: var(--dot-c-1); }   /* Learn → Link */
+.session-line:nth-child(4).is-done { background: var(--dot-c-2); }   /* Link  → Land */
+
+/* ============================================================
+   CARDS-LIST (the per-step list in the right rail) — same colour
+   philosophy: current = stage colour outline, done = stage fill.
+   The CURRENT stage's colour drives this list because every item
+   here is "within" the current stage.
+   ============================================================ */
+.right-rail { --rail-c: var(--econ-green); }
+body.theme--link .right-rail,
+.theme--link .right-rail   { --rail-c: var(--econ-amber); }
+body.theme--land .right-rail,
+.theme--land .right-rail   { --rail-c: var(--econ-rose); }
+
+.cards-list__item.is-current {
+  background: color-mix(in oklab, var(--rail-c) 8%, var(--econ-white));
+}
+.cards-list__item.is-current .cards-list__num {
+  border-color: var(--rail-c);
+  color: var(--rail-c);
+}
+.cards-list__item.is-current .cards-list__name {
+  color: var(--rail-c);
+  font-weight: var(--fw-semi);
+}
+.cards-list__item.is-done .cards-list__num {
+  background: var(--rail-c);
+  border-color: var(--rail-c);
+  color: var(--econ-white);
+}
+/* Make sure the quiz row at the bottom still looks distinct but never blue. */
+.cards-list__item--quiz .cards-list__num {
+  background: var(--econ-gray-50);
+  border-color: var(--econ-gray-200);
+  color: var(--econ-gray-700);
+}
+.cards-list__item--quiz .cards-list__name {
+  color: var(--econ-ink);
+  font-weight: var(--fw-semi);
+}
+
+/* ============================================================
+   TOPBAR session label — colour the eyebrow to match the page.
+   ============================================================ */
+.topbar__session-label { color: var(--econ-green-700); }
+.theme--link .topbar__session-label { color: var(--econ-amber-700); }
+.theme--land .topbar__session-label { color: var(--econ-rose-600); }
+
+/* ============================================================
+   STAGE CONNECTOR LINE between rail cards (originally a tiny
+   vertical line drawn by ::after). With the new card-per-stage
+   layout it was already hidden, but if it ever returns the
+   colour should match the stage's own colour, not blue.
+   ============================================================ */
+.stages .stage:not(:last-child)::after {
+  background: var(--econ-gray-200);
+}
+.stages .stage.is-done:not(:last-child)::after {
+  background: var(--stage-c);
+}
+
+
+/* ============================================================
+   ECONOS DESIGN SYSTEM — Cross-cutting refinements
+   (Card chrome, callout colours, content widths, focus rings —
+    theme-scoped overrides that must load after the canonical
+    selectors.)
+   ─────────────────────────────────────────────────────────────
+   Now that the right-rail stage system is locked, this block
+   sweeps the rest of the engine surface for the same kind of
+   issues the user flagged:
+
+     1. Topbar title wrap on Link/Land where the eyebrow eats the
+        room for the topic title.
+     2. The session-meta strip on intro pages — "Your goal" wraps
+        one word per line because the column starves.
+     3. "Info" callouts (Tip, UK Examples, etc.) painted in a
+        flat brand-blue that fights the green/amber/pink colour
+        code; retuned to a calmer slate so blue means "data /
+        external evidence", never "stage / state".
+     4. Cards/tiles need clearer hierarchy: stronger shadows on
+        hover, smoother corner radii, refined dividers.
+     5. Comparison grids ("CAUSES" / "CHARACTERISTICS") and tone
+        groups now read as PAIRED rather than competing.
+     6. New primitives: .key-stat, .pillar, .compare-row that
+        engines can opt into as content matures.
+   ============================================================ */
+
+/* ── Retune brand blue: slate, not signal ────────────────────
+   The cool steel below reads as "evidence / external data"
+   instead of "interactive accent". Lets us keep all the
+   .callout--info / UK examples / paired-half--blue surfaces
+   without them yelling at the green/amber/pink stage code. */
+:root {
+  --econ-slate:        #475569;
+  --econ-slate-50:     #F1F5F9;
+  --econ-slate-100:    #E2E8F0;
+  --econ-slate-600:    #334155;
+  --econ-slate-700:    #1E293B;
+}
+
+/* Tip / Info / UK / Example callouts → slate evidence treatment */
+.callout--info {
+  background: var(--econ-slate-50);
+  border-left-color: var(--econ-slate);
+}
+.callout--info .callout__title { color: var(--econ-slate-700); }
+.callout--info .callout__icon  { background: var(--econ-slate); color: #fff; }
+
+.uk-examples {
+  background: var(--econ-slate-50);
+  border-left-color: var(--econ-slate);
+}
+.uk-examples__title { color: var(--econ-slate-700); }
+.uk-examples__flag  { background: var(--econ-slate); }
+
+.def-examples {
+  background: var(--econ-slate-50);
+  border-left-color: var(--econ-slate);
+}
+.def-examples__title { color: var(--econ-slate-700); }
+
+/* Cause/cost two-column comparison — match the slate evidence rule */
+.cause-col--causes               { border-left-color: var(--econ-slate); }
+.cause-col--causes .cause-col__title { color: var(--econ-slate-700); }
+.cause-col--causes li::before    { background: var(--econ-slate); }
+.cause-col--causes::before       { background: var(--econ-slate); }
+
+/* Tinted variant grids ("blue tint" = data tile) → slate */
+.impact-card--blue-tint     { background: var(--econ-slate-50); border-color: var(--econ-slate-100); }
+.summary-tile--blue-tint    { background: var(--econ-slate-50); border-color: var(--econ-slate-100); }
+.wrap-tile--blue-tint       { background: var(--econ-slate-50); }
+.type-col--cost             { background: var(--econ-slate-50); }
+.type-col--cost .type-col__icon  { color: var(--econ-slate-600); }
+.type-col--cost .type-col__title { color: var(--econ-slate-700); }
+.type-col--cost .type-col__row strong:first-child { color: var(--econ-slate-700); }
+.type-col__example-icon { color: var(--econ-slate-600); }
+
+/* Branch callout "blue" tone → slate */
+.branch-cal--blue       { background: var(--econ-slate-50); border-left-color: var(--econ-slate); }
+.branch-cal--blue .branch-cal__dot   { background: var(--econ-slate); }
+.branch-cal--blue .branch-cal__label { color: var(--econ-slate-700); }
+
+/* Tone-coded mech tiles — keep the visual tonality but slate-ify the blue one */
+.mech-tile--blue   { background: var(--econ-slate-50); border-color: var(--econ-slate-100); }
+.paired-half--blue { background: var(--econ-slate-50); border-left-color: var(--econ-slate); }
+.impact-group--blue { background: var(--econ-slate-50); border-color: var(--econ-slate-100); }
+
+/* AD-interactive / transmission tabs — slate active state */
+.ad-tab.is-active {
+  border-color: var(--econ-slate);
+  background: var(--econ-slate-50);
+  box-shadow: 0 2px 10px rgba(71, 85, 105, 0.18);
+}
+.tc-channel--blue.is-active {
+  border-color: var(--econ-slate);
+  background: var(--econ-slate-50);
+  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.18);
+}
+.tc-channel--blue.is-active .tc-channel__dot     { background: var(--econ-slate); }
+.tc-channel--blue.is-active .tc-channel__label   { color: var(--econ-slate-700); }
+.tc-panel--blue .tc-chain__step::before {
+  background: var(--econ-slate-50);
+  color: var(--econ-slate-700);
+}
+
+/* Quiz-engine blue surfaces — slate */
+.quiz-rank-instr   { background: var(--econ-slate-50); border-color: var(--econ-slate-100); border-left-color: var(--econ-slate); }
+.quiz-rank-item.selected,
+.quiz-rank-item.rank-correct .quiz-rank-badge,
+.quiz-blank-pill   { background: var(--econ-slate-50); border-color: var(--econ-slate-100); color: var(--econ-slate-700); }
+.mark-btn:hover    { background: var(--econ-slate-50); border-color: var(--econ-slate); }
+
+/* Link-engine blue surfaces — slate */
+.link-selected     { background: var(--econ-slate-50); border-color: var(--econ-slate-100); }
+.link-picker__opt--blue { background: var(--econ-slate-50); border-color: var(--econ-slate-100); color: var(--econ-slate-700); }
+.link-bucket--blue { background: var(--econ-slate-50); border-color: var(--econ-slate-100); }
+.link-info         { background: var(--econ-slate-50); border-color: var(--econ-slate-100); border-left-color: var(--econ-slate); }
+.extra-chip:hover  { background: var(--econ-slate-50); border-color: var(--econ-slate); }
+.link-rail__station.is-current { background: var(--econ-slate-50); border-color: var(--econ-slate); }
+.link-intro-station:hover   { border-color: var(--econ-slate); background: var(--econ-slate-50); }
+.link-intro-station__num    { background: var(--econ-slate-50); color: var(--econ-slate-700); }
+.link-intro-station__skill--analysis { background: var(--econ-slate-50); color: var(--econ-slate-700); }
+
+/* Quiz "Test yourself" purple area — keep, that one's intentional */
+
+/* ── Topbar layout fix — eyebrow + title needs room ────── */
+.topbar {
+  padding: 0 var(--sp-6);
+  gap: var(--sp-4);
+}
+.topbar__back {
+  flex-shrink: 0;
+}
+.topbar__back > span {
+  display: none;        /* hide "Back to dashboard" label */
+}
+@media (min-width: 1100px) {
+  .topbar__back > span { display: inline; }
+}
+.topbar__crumbs {
+  margin-left: 0;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+.topbar__topic-title {
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-md);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topbar__session-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.topbar__right { flex-shrink: 0; }
+
+/* ── Session-meta — make it readable on narrow content widths ── */
+.session-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-6);
+  align-items: center;
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--econ-white);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--econ-gray-200);
+  box-shadow: var(--shadow-card-rest);
+}
+.session-meta__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-width: 0;
+}
+.session-meta__cta {
+  grid-column: 1 / -1;
+  margin-left: 0;
+  display: flex;
+}
+.session-meta__cta .btn {
+  width: 100%;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  .session-meta { grid-template-columns: 1fr 1fr auto; }
+  .session-meta__cta { grid-column: auto; }
+  .session-meta__cta .btn { width: auto; }
+}
+
+/* ── Callouts — softer, more refined ── */
+.callout {
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: 0 1px 2px rgba(11,20,38,0.03);
+  border: 1px solid color-mix(in oklab, currentColor 10%, transparent);
+}
+.callout__icon {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.callout__title { font-size: var(--fs-md); letter-spacing: -0.005em; }
+.callout__text  { font-size: var(--fs-base); line-height: 1.55; }
+
+/* ── Branch callouts — slightly more lift ── */
+.branch-cal {
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid color-mix(in oklab, currentColor 10%, transparent);
+}
+.branch-cal__label { letter-spacing: -0.005em; }
+
+/* ── Exam-edge gem — already gorgeous, slight refinements ── */
+.exam-edge {
+  background: linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 100%);
+  border-color: var(--econ-purple-100);
+  border-left: 4px solid var(--econ-purple-600);
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.08);
+}
+.exam-edge__star {
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.30);
+}
+
+/* ── Key takeaway — make it pop ── */
+.key-takeaway {
+  background: linear-gradient(135deg, #FFFBEC 0%, #FEF3CD 100%);
+  border-left: 4px solid var(--econ-amber);
+  box-shadow: 0 2px 12px rgba(245, 184, 0, 0.08);
+}
+
+/* ── Progress bar at top of session — refine ── */
+.progress {
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card-rest);
+  padding: var(--sp-3) var(--sp-5);
+}
+.progress__exit {
+  background: var(--econ-white);
+  font-weight: var(--fw-medium);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.progress__exit:hover {
+  background: var(--econ-gray-50);
+}
+
+/* ── Cards: refined shadow + crisper edge ── */
+.card {
+  border-radius: var(--r-xl);
+  border: 1px solid var(--econ-gray-200);
+  box-shadow: var(--shadow-card-rest);
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+/* ── Card foot — softer divider, clearer button hierarchy ── */
+.card-foot {
+  border-top: 1px solid var(--econ-gray-200);
+  padding-top: var(--sp-5);
+  margin-top: var(--sp-6);
+  gap: var(--sp-4);
+}
+.card-foot__counter {
+  color: var(--econ-gray-500);
+  font-weight: var(--fw-medium);
+}
+
+/* ── In-content "section labels" — gorgeous separators ── */
+.scenarios__title,
+.framing-row__label {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 36, "SOFT" 50, "WONK" 0;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ── Diagram option cards — better selection feedback ── */
+.diag-option {
+  border-radius: var(--r-lg);
+  border-width: 2px;
+  transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
+}
+.diag-option:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -8px rgba(11, 20, 38, 0.16);
+}
+
+/* ── Highlightable phrase pills (Link Context) — refine ── */
+[class*="highlight"] {
+  border-radius: 4px;
+  padding: 1px 4px;
+  transition: background 0.18s ease;
+}
+
+/* ── Topic landing page — refined "What you'll do" + intro ── */
+.do-box {
+  border-radius: var(--r-lg);
+  box-shadow: 0 1px 2px rgba(11, 20, 38, 0.03);
+}
+.intro-card {
+  padding: var(--sp-8) var(--sp-8);
+  background: linear-gradient(165deg, var(--econ-white) 50%, #F4FBF7 100%);
+  border-top: 3px solid var(--econ-green);
+}
+
+/* ── Quiz question/option polish ── */
+.quiz-question { font-family: var(--font-display); font-variation-settings: var(--fraunces-section); }
+.quiz-option {
+  transition: transform 0.12s ease, border-color 0.18s ease, background 0.18s ease;
+}
+.quiz-option:hover:not(:disabled) { transform: translateY(-1px); }
+
+/* ── Land Section A/B/C — strengthen the "Question X" header ── */
+.land-q__num {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-display);
+  font-variation-settings: var(--fraunces-section);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--econ-ink);
+}
+.land-q__marks {
+  background: var(--econ-rose-50);
+  color: var(--econ-rose-600);
+  font-weight: var(--fw-bold);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--econ-rose-100);
+}
+
+/* ── Stage chip on cards — consistent uppercase eyebrow ── */
+[class*="__step-label"],
+.card__step-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+}
+
+/* ── "Cards" rail panel — distinguish quiz row without blue ── */
+.cards-list__item--quiz {
+  border-top: 1px dashed var(--econ-gray-200);
+}
+.cards-list__item--quiz .cards-list__num {
+  background: var(--econ-gray-50);
+  border-color: var(--econ-gray-200);
+  color: var(--econ-gray-700);
+}
+.cards-list__item--quiz .cards-list__name {
+  color: var(--econ-ink);
+  font-weight: var(--fw-semi);
+}
+
+/* ── Right rail "deck-download" card — cleaner ── */
+.deck-download {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-card-rest);
+}
+
+/* ── Sidebar active state — no blue, use the page's stage colour ── */
+.sidebar__nav a.is-active {
+  background: var(--econ-gray-50);
+  color: var(--econ-ink);
+  font-weight: var(--fw-semi);
+}
+.sidebar__nav a.is-active::before {
+  background: var(--econ-ink);
+}
+body.theme--link .sidebar__nav a.is-active::before,
+.theme--link .sidebar__nav a.is-active::before { background: var(--econ-amber); }
+body.theme--land .sidebar__nav a.is-active::before,
+.theme--land .sidebar__nav a.is-active::before { background: var(--econ-rose); }
+
+/* Entrance animation removed — too fragile with deferred-script
+   loads and screenshot tools. Static is fine; content reveals
+   when the engine finishes rendering. */
+
+/* ── New primitives engines can opt into ────────────────── */
+
+/* .compare-row — side-by-side comparison without the blue/green
+   competing tints. Each pane has a hairline accent border on the
+   left in the stage colour of its identity (data vs. claim, etc). */
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin: var(--sp-5) 0;
+}
+.compare-row__pane {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-left: 3px solid var(--econ-gray-300);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+.compare-row__pane--evidence { border-left-color: var(--econ-slate); }
+.compare-row__pane--claim    { border-left-color: var(--econ-amber); }
+.compare-row__pane--effect   { border-left-color: var(--econ-rose); }
+.compare-row__pane--cause    { border-left-color: var(--econ-green); }
+.compare-row__pane h4 {
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--econ-gray-500);
+  margin-bottom: var(--sp-3);
+}
+
+/* .key-stat — drop a Big Number into a card */
+.key-stat {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--econ-gray-50);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--econ-gray-200);
+}
+.key-stat__value {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 72, "SOFT" 30, "WONK" 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--econ-ink);
+}
+.key-stat__label {
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--econ-gray-500);
+}
+
+/* .pillar — vertical numbered step (for chain/flow visualisations) */
+.pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+  position: relative;
+  padding: var(--sp-3);
+}
+.pillar__num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-full);
+  background: var(--econ-white);
+  border: 2px solid var(--econ-gray-300);
+  color: var(--econ-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+.pillar--learn .pillar__num { border-color: var(--econ-green); color: var(--econ-green-700); }
+.pillar--link  .pillar__num { border-color: var(--econ-amber); color: var(--econ-amber-700); }
+.pillar--land  .pillar__num { border-color: var(--econ-rose);  color: var(--econ-rose-600); }
+.pillar__title { font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--econ-ink); }
+.pillar__body  { font-size: 12px; color: var(--econ-gray-600); line-height: 1.5; }
+
+/* ── Final cleanup: kill any lingering blue chrome ── */
+.btn--primary { background: var(--econ-ink); color: var(--econ-white); }
+.btn--primary:hover { background: #000; }
+
+/* Hand cursor on every interactive surface (engines sometimes drop it) */
+a.stage, button:not(:disabled), .btn { cursor: pointer; }
+
+/* Selection — brand pink, not OS blue */
+::selection { background: var(--econ-rose-100); color: var(--econ-rose-700); }
+
+
+
+
+/* ============================================================
+   ECONOS DESIGN SYSTEM — Theme coherence
+   (Per-theme accent reinforcement: card top-stripe parity, page
+    grid minmax fix, do-box checks tinted by stage.)
+   ─────────────────────────────────────────────────────────────
+   Four targeted fixes:
+     1. "Session N of 3: Link/Land" eyebrow takes the page's
+        stage colour (was hard-coded green-700).
+     2. "What you'll do in this session" box (.do-box) and the
+        "Tip" callout inherit the page's stage colour too.
+     3. The top-stripe identity stripe ONLY appears on the first
+        (topmost) card in the content column. Inner cards stay
+        neutral so the rhythm reads "page = stage; inside = content".
+     4. Land It session-meta row stops forcing the main column
+        wide — it wraps on its CTA at <600px effective.
+   ============================================================ */
+
+/* ── 1. Card step-label takes the page colour ── */
+.app .card__step-label                    { color: var(--econ-green-700); }
+.theme--link .card__step-label,
+.theme--link .topbar__session-label       { color: var(--econ-amber-700); }
+.theme--land .card__step-label,
+.theme--land .topbar__session-label       { color: var(--econ-rose-600); }
+
+/* ── 2. .do-box and Tip callout match the page colour ── */
+.app .do-box {
+  background: var(--econ-green-50);
+  border: 1px solid color-mix(in oklab, var(--econ-green) 18%, transparent);
+}
+.app .do-box__title { color: var(--econ-green-700); }
+.app .do-box__icon  { color: var(--econ-green-600); }
+.app .do-box__check .check-icon { background: var(--econ-green); }
+
+.theme--link .do-box {
+  background: var(--econ-amber-50);
+  border-color: color-mix(in oklab, var(--econ-amber) 22%, transparent);
+}
+.theme--link .do-box__title { color: var(--econ-amber-700); }
+.theme--link .do-box__icon  { color: var(--econ-amber-600); }
+.theme--link .do-box__check .check-icon { background: var(--econ-amber); }
+
+.theme--land .do-box {
+  background: var(--econ-rose-50);
+  border-color: color-mix(in oklab, var(--econ-rose) 22%, transparent);
+}
+.theme--land .do-box__title { color: var(--econ-rose-600); }
+.theme--land .do-box__icon  { color: var(--econ-rose-600); }
+.theme--land .do-box__check .check-icon { background: var(--econ-rose); }
+
+/* The "Tip" / info callout — match the page colour too */
+.theme--link .callout--info {
+  background: var(--econ-amber-50);
+  border-left-color: var(--econ-amber);
+}
+.theme--link .callout--info .callout__title { color: var(--econ-amber-700); }
+.theme--link .callout--info .callout__icon  { background: var(--econ-amber); color: #fff; }
+.theme--land .callout--info {
+  background: var(--econ-rose-50);
+  border-left-color: var(--econ-rose);
+}
+.theme--land .callout--info .callout__title { color: var(--econ-rose-600); }
+.theme--land .callout--info .callout__icon  { background: var(--econ-rose); color: #fff; }
+
+/* ── 3. Top stripe ONLY on the topmost card per column ── */
+/* Reset the v5 stripe everywhere */
+.app .card,
+.app .card.intro-card {
+  border-top-width: 1px;
+  border-top-color: var(--econ-gray-200);
+}
+/* Then re-apply ONLY to the first .card under a column wrapper.
+   Engines render content as: .page > div > .card …, so :first-of-type
+   on .card inside a column-wrapper isolates the top card. */
+.page > div > .card:first-of-type,
+.page > .card:first-of-type {
+  border-top-width: 3px;
+  border-top-color: var(--econ-green);
+}
+.theme--link .page > div > .card:first-of-type,
+.theme--link .page > .card:first-of-type {
+  border-top-color: var(--econ-amber);
+}
+.theme--land .page > div > .card:first-of-type,
+.theme--land .page > .card:first-of-type {
+  border-top-color: var(--econ-rose);
+}
+/* While we're here: make sure the .page grid never overflows.
+   The 1fr column gets minmax(0, 1fr) so it can shrink past
+   children's intrinsic min-content. This is the actual root cause
+   of the Land overflow — fixing once here, not station-by-station. */
+.page { grid-template-columns: minmax(0, 1fr) var(--rightbar-w); }
+.page--single { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 880px) {
+  .page, .page--single { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+/* ============================================================
+   ECONOS DESIGN SYSTEM — Session-page rhythm + rail ordering
+   (Hide redundant horizontal session-dots strip, theme do-box check
+    rows, tighten content rhythm to a consistent 12px column gap,
+    reorder right-rail so stages widget always sits at the top.)
+   Three previous follow-ups:
+     1. Hide the old "Topic progress" rail-card that holds the
+        horizontal session-dots — shell.js now injects the 3-stage
+        vertical widget on every page, making this strip redundant.
+     2. Theme the do-box check ROW (text + dashed divider) so it
+        matches the page colour, not just the icon dots.
+     3. Tighten Land It content spacing so the gap between the
+        section card and the progress strip matches the 12px gap
+        between the right-rail stage cards.
+   ============================================================ */
+
+/* ── 1. Hide the redundant horizontal-progress rail-card ── */
+.rail-card:has(.session-dots) { display: none; }
+
+/* ── 2. do-box check row colours ── */
+.app .do-box__checks {
+  border-top: 1px dashed color-mix(in oklab, var(--econ-green) 40%, transparent);
+}
+.app .do-box__check { color: var(--econ-green-700); }
+
+.theme--link .do-box__checks {
+  border-top-color: color-mix(in oklab, var(--econ-amber) 50%, transparent);
+}
+.theme--link .do-box__check { color: var(--econ-amber-700); }
+
+.theme--land .do-box__checks {
+  border-top-color: color-mix(in oklab, var(--econ-rose) 50%, transparent);
+}
+.theme--land .do-box__check { color: var(--econ-rose-600); }
+
+/* ── 3. Land It content rhythm — tighten the column gap ────
+   The .page main column rendered each child with the implicit
+   gap of CSS-grid (0) and individual margin-bottom values across
+   ~20px. Pin those to a consistent 12-14px so the Section card →
+   progress strip → Question card chain reads as one tight unit. */
+.theme--land .page > div > * + * {
+  margin-top: var(--sp-3);   /* 12px */
+}
+/* Remove the default margins engines may have added inline */
+.theme--land .page > div > .land-session-meta,
+.theme--land .page > div > .land-progress {
+  margin-top: var(--sp-3) !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── (Generalise the same rhythm to Link and Learn — keeps the
+       whole product feeling tuned) ── */
+.theme--link .page > div > * + *,
+.app:not(.theme--link):not(.theme--land) .page > div > * + * {
+  margin-top: var(--sp-3);
+}
+
+/* ── 4. The injected .stages widget on station pages was added
+       AFTER the .rail-card "Cards" panel in the rail; reorder so
+       the LeRR cards always sit at the top of the rail. ──
+       Scoped to non-mobile so the earlier @media <=900px display:none
+       isn't accidentally re-enabled here. */
+@media (min-width: 901px) {
+  .right-rail { display: flex; flex-direction: column; gap: var(--sp-4); }
+  .right-rail .stages { order: 0; margin-bottom: 0; }
+  .right-rail .rail-card,
+  .right-rail .deck-download { order: 1; }
+}
+
+
+/* ============================================================
+   ECONOS DESIGN SYSTEM — Consistent primary action across themes
+   (One blue button across Learn / Link / Land. Page identity is
+    carried by the top stripe + eyebrow + rail; the primary action
+    stays consistent so users learn one "tap this to advance" cue.)
+   ─────────────────────────────────────────────────────────────
+   Every "Start session / Start Learn / Start Link / Start Land /
+   Continue / Begin" button uses the same primary action style:
+   the brand blue, white text, no theme override.
+
+   The page's identity is carried by the top stripe, the eyebrow,
+   and the right-rail stages. The primary action stays consistent
+   so users learn one "tap this to advance" affordance.
+   ============================================================ */
+
+/* The canonical primary button — covers .btn--primary across
+   every engine + .link-btn--primary + .quiz-btn--primary.
+   Loaded LAST so it wins every prior cascade override. */
+.btn--primary,
+.link-btn--primary,
+.quiz-btn--primary,
+.theme--link .btn--primary,
+.theme--link .link-btn--primary,
+.theme--land .btn--primary,
+.theme--land .link-btn--primary {
+  background: var(--econ-blue);
+  border: 1px solid var(--econ-blue);
+  color: var(--econ-white);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.18);
+  transition: background 0.18s ease, border-color 0.18s ease,
+              transform 0.12s ease, box-shadow 0.22s ease;
+}
+.btn--primary:hover:not(:disabled):not(.is-disabled),
+.link-btn--primary:hover:not(:disabled):not(.is-disabled),
+.quiz-btn--primary:hover:not(:disabled):not(.is-disabled),
+.theme--link .btn--primary:hover:not(:disabled):not(.is-disabled),
+.theme--link .link-btn--primary:hover:not(:disabled):not(.is-disabled),
+.theme--land .btn--primary:hover:not(:disabled):not(.is-disabled),
+.theme--land .link-btn--primary:hover:not(:disabled):not(.is-disabled) {
+  background: var(--econ-blue-700);
+  border-color: var(--econ-blue-700);
+  color: var(--econ-white);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+}
+.btn--primary:active,
+.link-btn--primary:active,
+.quiz-btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.20);
+}
+
+/* Disabled states — always neutral, never themed */
+.btn--primary:disabled,
+.btn--primary.is-disabled,
+.link-btn--primary:disabled,
+.link-btn--primary.is-disabled,
+.quiz-btn--primary:disabled,
+.quiz-btn--primary.is-disabled,
+.theme--link .btn--primary:disabled,
+.theme--link .btn--primary.is-disabled,
+.theme--link .link-btn--primary:disabled,
+.theme--link .link-btn--primary.is-disabled,
+.theme--land .btn--primary:disabled,
+.theme--land .btn--primary.is-disabled,
+.theme--land .link-btn--primary:disabled,
+.theme--land .link-btn--primary.is-disabled {
+  background: var(--econ-gray-100);
+  border-color: var(--econ-gray-200);
+  color: var(--econ-gray-400);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Sidebar nav active state — once again neutral ink, not blue.
+   (Some other v* override may have re-blued it; lock it down.) */
+.sidebar__nav a.is-active {
+  background: var(--econ-gray-50);
+  color: var(--econ-ink);
+}
+
+/* Hand cursor on every active primary surface */
+.btn--primary,
+.link-btn--primary,
+.quiz-btn--primary { cursor: pointer; }
+

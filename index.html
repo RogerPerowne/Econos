@@ -2,298 +2,85 @@
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>econos · A-Level Economics revision</title>
-  <meta name="description" content="Learn it. Link it. Land it. Bite-sized A-level economics revision built around the friction types and frameworks examiners reward.">
+  <meta name="description" content="Learn it. Link it. Land it. Bite-sized A-Level economics revision built around the recurring frameworks examiners reward.">
+  <meta name="theme-color" content="#FAF8F4">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts: preconnect + non-blocking download -->
+
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="econos" />
   <link rel="manifest" href="site.webmanifest" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --ink: #0B1426;
-      --ink-soft: #2A3650;
-      --muted: #6B7280;
-      --line: #E7E7EA;
-      --bg: #FAF8F4;
-      --green: #1FB574;
-      --yellow: #F5B800;
-      --pink: #EC2D68;
-      --purple: #7C3AED;
-      --blue: #2563EB;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.5;
-      padding: 48px 24px 80px;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    .wrap { max-width: 960px; margin: 0 auto; width: 100%; }
+  <!-- Preload logo (above-the-fold) and topics registry (renders the grid) -->
+  <link rel="preload" as="image" href="assets/econos-logo-full.png">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="index.css">
 
-    /* ── Header ── */
-    .header {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 56px;
-    }
-    .header .logo-full {
-      display: block;
-      width: 280px;
-      height: auto;
-    }
-
-    /* ── Hero ── */
-    .hero { margin-bottom: 56px; max-width: 640px; }
-    .eyebrow {
-      font-family: 'Inter';
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--ink);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .eyebrow::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 999px;
-      background: var(--ink);
-    }
-    h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
-      font-weight: 700;
-      font-size: 64px;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 22px;
-    }
-    .hero-lede {
-      font-size: 18px;
-      color: var(--ink);
-      line-height: 1.55;
-      max-width: 580px;
-    }
-    .dg { color: var(--green); }
-    .dy { color: var(--yellow); }
-    .dp { color: var(--pink); }
-
-    /* ── Theme section ── */
-    .theme-section { margin-bottom: 56px; }
-    .theme-header {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
-      border-bottom: 2px solid var(--ink);
-    }
-    .theme-num {
-      font-family: 'Fraunces', Georgia, serif;
-      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 1;
-      color: var(--ink);
-    }
-    .theme-name {
-      font-family: 'Inter';
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-    }
-    .theme-count {
-      margin-left: auto;
-      font-family: 'Inter';
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* ── Topic grid ── */
-    .topics {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 12px;
-    }
-    .topic {
-      display: block;
-      padding: 20px 18px 16px;
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      position: relative;
-    }
-    .topic:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(11, 20, 38, 0.07);
-      border-color: var(--ink);
-    }
-    .topic__accent {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      border-radius: 12px 12px 0 0;
-    }
-    .topic__num {
-      font-family: 'Inter';
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .topic__title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-variation-settings: "opsz" 48, "SOFT" 50, "WONK" 1;
-      font-weight: 700;
-      font-size: 19px;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 6px;
-      color: var(--ink);
-    }
-    .topic__sub {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.45;
-      margin-bottom: 12px;
-    }
-
-    /* ── Availability badges ── */
-    .topic__badges {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      font-family: 'Inter';
-      font-weight: 600;
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 7px;
-      border-radius: 4px;
-    }
-    .badge--learn  { background: #dcfce7; color: #166534; }
-    .badge--link   { background: #fef9c3; color: #854d0e; }
-    .badge--land   { background: #dbeafe; color: #1e3a8a; }
-    .badge--locked { background: #f3f4f6; color: #9ca3af; }
-
-    /* ── Principles strip ── */
-    .principles {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 22px;
-      margin-bottom: 56px;
-    }
-    @media (max-width: 720px) {
-      .principles { grid-template-columns: 1fr; }
-      h1 { font-size: 40px; }
-      .header { align-items: center; }
-      .header .logo-full { width: 200px; }
-      body { padding: 32px 16px 64px; }
-      .hero-lede { font-size: 16px; }
-    }
-    @media (max-width: 480px) {
-      h1 { font-size: 32px; }
-      .header .logo-full { width: 160px; }
-    }
-    .principle { border-top: 2px solid var(--ink); padding-top: 12px; }
-    .principle-num {
-      font-family: 'Fraunces', Georgia, serif;
-      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    .principle-title {
-      font-family: 'Inter';
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .principle-body {
-      font-size: 13px;
-      color: var(--ink);
-      line-height: 1.5;
-    }
-
-    /* ── Footer ── */
-    .footer {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      font-size: 13px;
-      color: var(--ink);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .footer-legend {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .footer-legend-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .footer-legend-dot {
-      width: 8px; height: 8px;
-      border-radius: 2px;
-    }
-  </style>
   <script src="js/auth-check.js"></script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="wrap">
 
-    <!-- ═══ HEADER: logo ═══ -->
-    <header class="header">
-      <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it." class="logo-full">
+    <header class="header" role="banner">
+      <a href="index.html" class="header__logo" aria-label="econos — Learn it. Link it. Land it.">
+        <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it.">
+      </a>
+      <div class="header__meta" aria-hidden="true">
+        <span class="stops">
+          <span class="stop stop--g"></span>
+          <span class="stop stop--y"></span>
+          <span class="stop stop--p"></span>
+        </span>
+        <span>Learn it · Link it · Land it</span>
+      </div>
     </header>
 
-    <!-- ═══ HERO ═══ -->
+    <main id="main-content" tabindex="-1">
+
     <section class="hero">
-      <div class="eyebrow">A-Level Economics · Revision Platform</div>
-      <h1>Revision built around how examiners actually mark<span class="dp">.</span></h1>
-      <p class="hero-lede">Bite-sized cards organised around the recurring friction types and frameworks that real Edexcel questions reward &#8212; not just topic-by-topic memorisation.</p>
+      <div class="eyebrow">A-Level Economics · Edexcel A</div>
+      <h1>Revision built around how examiners actually mark<span class="dot-p">.</span></h1>
+      <p class="hero-lede">Bite-sized cards organised around the recurring frameworks Edexcel questions reward &mdash; <strong>not</strong> just topic-by-topic memorisation. Every concept passes through three stages: <strong>Learn</strong> it, <strong>Link</strong> it, <strong>Land</strong> it.</p>
+    </section>
+
+    <!-- ═══ STAGE PROMISE ═══ -->
+    <section class="stages" aria-label="The three stages">
+      <div class="stage stage--learn">
+        <div class="stage__num">1</div>
+        <div class="stage__body">
+          <div class="stage__name">Learn it</div>
+          <div class="stage__sub">Recap the concept, lock in the mechanics, build clean mental models.</div>
+        </div>
+      </div>
+      <div class="stage stage--link">
+        <div class="stage__num">2</div>
+        <div class="stage__body">
+          <div class="stage__name">Link it</div>
+          <div class="stage__sub">Chain causes, draw diagrams, judge the trade-offs &mdash; the connective tissue of an answer.</div>
+        </div>
+      </div>
+      <div class="stage stage--land">
+        <div class="stage__num">3</div>
+        <div class="stage__body">
+          <div class="stage__name">Land it</div>
+          <div class="stage__sub">Real exam questions across Sections A, B and C, marked the way Edexcel marks them.</div>
+        </div>
+      </div>
     </section>
 
     <!-- ═══ ALL TOPICS (rendered by JS) ═══ -->
     <div id="topics-root"></div>
 
     <!-- ═══ PRINCIPLES ═══ -->
-    <div style="font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:18px;display:flex;align-items:center;gap:10px;"><span style="width:6px;height:6px;border-radius:999px;background:var(--ink);display:inline-block;"></span>How we build it</div>
+    <div class="principles-eyebrow">How we build it</div>
     <div class="principles">
       <div class="principle">
         <div class="principle-num">01</div>
@@ -312,34 +99,42 @@
       </div>
     </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <div class="footer">
-      <div id="footer-count">63 topics across 4 themes</div>
-      <div class="footer-legend">
-        <div class="footer-legend-item">
-          <div class="footer-legend-dot" style="background:#dcfce7;border:1px solid #166534;"></div>
-          Learn it
-        </div>
-        <div class="footer-legend-item">
-          <div class="footer-legend-dot" style="background:#fef9c3;border:1px solid #854d0e;"></div>
-          Link it
-        </div>
-        <div class="footer-legend-item">
-          <div class="footer-legend-dot" style="background:#dbeafe;border:1px solid #1e3a8a;"></div>
-          Land it
-        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer__brand">
+        <span class="stops">
+          <span class="stop stop--g"></span>
+          <span class="stop stop--y"></span>
+          <span class="stop stop--p"></span>
+        </span>
+        econos
       </div>
-    </div>
+      <div class="footer__count" id="footer-count">&hairsp;</div>
+      <div class="footer__legend">
+        <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--green);"></span>Learn it</div>
+        <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--yellow);"></span>Link it</div>
+        <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--pink);"></span>Land it</div>
+      </div>
+    </footer>
 
   </div>
 
-  <script src="js/topics.js"></script>
-  <script>
-    (function () {
+  <!-- SVG icon defs (single arrow glyph reused across topic cards) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 20 20">
+        <path d="M4 10h11M11 6l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script defer src="js/topics.js"></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
       var THEMES = [
         {
-          num: 1,
-          name: 'Introduction to Markets and Market Failure',
+          num: 1, name: 'Introduction to Markets and Market Failure',
           topics: [
             { id: 'basic_econ_problem',        num: '1.1-1.3' },
             { id: 'ppf',                       num: '1.4' },
@@ -367,8 +162,7 @@
           ]
         },
         {
-          num: 2,
-          name: 'The National and Global Economy',
+          num: 2, name: 'The National and Global Economy',
           topics: [
             { id: 'inflation_meas',   num: '1.2.1' },
             { id: 'inflation',        num: '1.2.2' },
@@ -390,8 +184,7 @@
           ]
         },
         {
-          num: 3,
-          name: 'Business Behaviour and the Labour Market',
+          num: 3, name: 'Business Behaviour and the Labour Market',
           topics: [
             { id: 'business_growth',          num: '1.1-1.3' },
             { id: 'business_objectives',      num: '2.1' },
@@ -415,8 +208,7 @@
           ]
         },
         {
-          num: 4,
-          name: 'A Global Perspective',
+          num: 4, name: 'A Global Perspective',
           topics: [
             { id: 'globalisation',                  num: '1.1' },
             { id: 'trade_spec',                     num: '1.2-1.4' },
@@ -441,75 +233,86 @@
         }
       ];
 
+      /* ────────── Build a fast id→topic map ────────── */
       var topicMap = {};
-      for (var i = 0; i < window.ECONOS_TOPICS.length; i++) {
-        var t = window.ECONOS_TOPICS[i];
-        topicMap[t.id] = t;
+      var registry = window.ECONOS_TOPICS || [];
+      for (var i = 0; i < registry.length; i++) {
+        topicMap[registry[i].id] = registry[i];
       }
 
-      function getLandHref(id) {
-        return 'land_intro.html?topic=' + id;
-      }
-      function getLearnHref(id) {
-        return 'topic.html?topic=' + id;
-      }
-      function getLinkHref(id) {
-        return 'link_intro.html?topic=' + id;
-      }
-
-      function getBestHref(topic) {
-        if (topic.available.land) return getLandHref(topic.id);
-        if (topic.available.link) return getLinkHref(topic.id);
-        if (topic.available.learn) return getLearnHref(topic.id);
+      /* ────────── URL helpers ────────── */
+      function bestHref(topic) {
+        if (topic.available.land)  return 'land.html?topic='  + topic.id;
+        if (topic.available.link)  return 'link.html?topic='  + topic.id;
+        if (topic.available.learn) return 'learn.html?topic=' + topic.id;
         return '#';
       }
 
-      function renderBadges(avail) {
-        var html = '<div class="topic__badges">';
-        html += '<span class="badge ' + (avail.learn ? 'badge--learn' : 'badge--locked') + '">Learn it</span>';
-        html += '<span class="badge ' + (avail.link  ? 'badge--link'  : 'badge--locked') + '">Link it</span>';
-        html += '<span class="badge ' + (avail.land  ? 'badge--land'  : 'badge--locked') + '">Land it</span>';
-        html += '</div>';
-        return html;
+      /* ────────── Stage pips (replaces the 3 chunky text badges) ────────── */
+      function pipsHtml(avail) {
+        function pip(num, kind, on) {
+          var name = kind === 'learn' ? 'Learn' : kind === 'link' ? 'Link' : 'Land';
+          return '<span class="pip pip--' + kind + (on ? ' is-on' : '') +
+                 '" title="' + name + ' it — ' + (on ? 'ready' : 'coming soon') + '" aria-label="' +
+                 name + ' it ' + (on ? 'ready' : 'coming soon') + '">' + num + '</span>';
+        }
+        return '<div class="topic__stages">'
+             +   '<span class="topic__stages-label">Stages</span>'
+             +   pip('1', 'learn', !!avail.learn)
+             +   pip('2', 'link',  !!avail.link)
+             +   pip('3', 'land',  !!avail.land)
+             + '</div>';
+      }
+
+      /* ────────── Card markup ────────── */
+      function topicCard(entry, topic) {
+        var href = bestHref(topic);
+        var color = topic.color || '#0B1426';
+        return '<a class="topic" href="' + href + '" style="--topic-color:' + color + '">'
+             +   '<div class="topic__head">'
+             +     '<div class="topic__num">' + entry.num + '</div>'
+             +     '<svg class="topic__arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>'
+             +   '</div>'
+             +   '<div class="topic__title">' + topic.name + '</div>'
+             +   '<div class="topic__sub">' + topic.sub + '</div>'
+             +   pipsHtml(topic.available)
+             + '</a>';
       }
 
       function renderTheme(theme) {
-        var html = '<div class="theme-section">';
-        html += '<div class="theme-header">';
-        html += '<div class="theme-num">Theme ' + theme.num + '</div>';
-        html += '<div class="theme-name">' + theme.name + '</div>';
-        html += '<div class="theme-count">' + theme.topics.length + ' topics</div>';
-        html += '</div>';
-        html += '<div class="topics">';
-
+        var html = '<div class="theme-section">'
+                 + '<div class="theme-header">'
+                 +   '<div>'
+                 +     '<span class="theme-num__theme">Theme</span>'
+                 +     '<div class="theme-num">' + theme.num + '</div>'
+                 +   '</div>'
+                 +   '<div class="theme-name">' + theme.name + '</div>'
+                 +   '<div class="theme-count">' + theme.topics.length + ' topics</div>'
+                 + '</div>'
+                 + '<div class="topics">';
         for (var i = 0; i < theme.topics.length; i++) {
           var entry = theme.topics[i];
           var topic = topicMap[entry.id];
           if (!topic) continue;
-
-          var num = entry.num;
-          var href = getBestHref(topic);
-
-          html += '<a class="topic" href="' + href + '">';
-          html += '<div class="topic__accent" style="background:' + topic.color + '"></div>';
-          html += '<div class="topic__num">' + num + '</div>';
-          html += '<div class="topic__title">' + topic.name + '</div>';
-          html += '<div class="topic__sub">' + topic.sub + '</div>';
-          html += renderBadges(topic.available);
-          html += '</a>';
+          html += topicCard(entry, topic);
         }
-
         html += '</div></div>';
         return html;
       }
 
       var root = document.getElementById('topics-root');
       var html = '';
+      var total = 0;
       for (var t = 0; t < THEMES.length; t++) {
         html += renderTheme(THEMES[t]);
+        total += THEMES[t].topics.length;
       }
       root.innerHTML = html;
-    })();
+
+      /* Dynamic footer count — never lies, even if the registry changes */
+      document.getElementById('footer-count').textContent =
+        total + ' topics · ' + THEMES.length + ' themes · Edexcel A spec';
+    });
   </script>
 </body>
 </html>

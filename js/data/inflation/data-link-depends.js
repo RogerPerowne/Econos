@@ -5,7 +5,6 @@
 
 window.ECONOS_LINK_DEPENDS = {
   topic:        'Causes of Inflation & Deflation',
-  sessionLabel: 'Session 2 of 3: Link',
   backUrl:      TopicLoader.buildUrl('link_intro.html'),
   eyebrow:      'It Depends On',
   instruction:  'Pick the three factors that most change the answer to this claim. Explain why each one matters, then check against the ideal evaluation.',

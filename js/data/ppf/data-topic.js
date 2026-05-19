@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'ppf',
   topicNum: '1.4',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Production Possibility Frontiers',
   estTime: '7-9 minutes',
   goal: 'Lock in PPF construction, opportunity cost along the frontier, shifts, and how the PPF illustrates core economic concepts.',

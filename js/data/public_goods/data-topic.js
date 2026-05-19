@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'public_goods',
   topicNum: '3.3',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Public Goods',
   estTime: '9-11 minutes',
   goal: 'Lock in non-rivalry, non-excludability, the free rider problem, and why public goods cannot be provided by markets.',

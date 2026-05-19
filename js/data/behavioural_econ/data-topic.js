@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'behavioural_econ',
   topicNum: '2.10',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Behavioural Economics',
   estTime: '9-11 minutes',
   goal: 'Lock in the key cognitive biases, nudge theory, and how behavioural insights change the case for government intervention.',

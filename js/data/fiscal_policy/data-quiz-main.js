@@ -11,7 +11,6 @@
     topicId:  'fiscal_policy_main',
     title:    'Fiscal Policy',
     subtitle: 'Theme 2.6 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering expansionary and contractionary fiscal policy, direct and indirect taxes with distributional effects, government spending composition, the deficit versus debt distinction, automatic stabilisers, discretionary policy, the crowding-out debate, and the evaluation framework for fiscal policy effectiveness. Designed for the applied analysis and conditional evaluation Edexcel Paper 2 rewards.',

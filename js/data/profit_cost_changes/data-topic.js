@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'profit_cost_changes',
   topicNum: '3.16',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Changes in Costs and Revenues',
   estTime: '7-9 minutes',
   goal: 'Lock in how changes in costs and revenues shift the profit-maximising output, price, and profit — across all market structures.',

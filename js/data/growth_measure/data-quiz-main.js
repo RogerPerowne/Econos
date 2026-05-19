@@ -11,7 +11,6 @@
     topicId:  'growth_measure_main',
     title:    'Economic Growth &amp; National Income',
     subtitle: 'Theme 2.1.1 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the three GDP measurement approaches, real versus nominal GDP, GNI and PPP, short and long run growth, and the limitations of GDP as a welfare measure. Mixed formats test both knowledge recall and applied analytical reasoning.',

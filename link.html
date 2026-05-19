@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Link It — chain it, draw it, judge it.">
+  <meta name="theme-color" content="#FAF8F4">
+  <title>Link It · econos</title>
+
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="econos" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Only icons + topic-loader + shell + router are eagerly needed; engines
+       are lazy-loaded by the router on the first station visit. -->
+  <script src="js/auth-check.js"></script>
+  <script defer src="js/logger.js"></script>
+  <script defer src="js/icons.js"></script>
+  <script defer src="js/topic-loader.js"></script>
+  <script defer src="js/progress.js"></script>
+  <script defer src="js/engines/shell.js"></script>
+  <script defer src="js/engines/link-router.js"></script>
+  <script>
+    /* Read ?station=<id> and let the router boot the right engine.
+       Defaults to 'intro' so /link.html?topic=… lands sensibly. */
+    document.addEventListener('DOMContentLoaded', function () {
+      var params  = new URLSearchParams(window.location.search);
+      var station = params.get('station') || 'intro';
+      LinkRouter.start(station);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- mobile-nav is auto-injected by js/engines/shell.js -->
+  <div id="app-root"></div>
+
+</body>
+</html>

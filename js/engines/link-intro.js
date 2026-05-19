@@ -10,57 +10,6 @@
     var I = window.ECONOS_ICONS;
     var T = window.ECONOS_LINK_INTRO;
 
-    function renderSidebar() {
-      var nav = [
-        { name: 'Home',         icon: I.home,     href: 'index.html', active: false },
-        { name: 'My topics',    icon: I.topics,   href: '#',          active: true  },
-        { name: 'Progress',     icon: I.progress, href: '#',          active: false },
-        { name: 'Exam practice',icon: I.practice, href: '#',          active: false },
-        { name: 'Study planner',icon: I.planner,  href: '#',          active: false },
-        { name: 'Messages',     icon: I.messages, href: '#',          active: false },
-        { name: 'Settings',     icon: I.settings, href: '#',          active: false }
-      ];
-      return ''
-        + '<aside class="sidebar">'
-        +   '<div class="sidebar__brand">'
-        +     '<a href="index.html" class="sidebar__logo-link"><img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full"></a>'
-        +   '</div>'
-        +   '<nav class="sidebar__nav">'
-        +     nav.map(function (n) {
-                return '<a href="' + n.href + '" class="' + (n.active ? 'is-active' : '') + '">' + n.icon + '<span>' + n.name + '</span></a>';
-              }).join('')
-        +   '</nav>'
-        +   '<div class="sidebar__streak">'
-        +     '<div class="sidebar__streak-row"><span class="sidebar__streak-flame">🔥</span><span class="sidebar__streak-num">1</span></div>'
-        +     '<div class="sidebar__streak-label">Day streak</div>'
-        +     '<div class="sidebar__streak-sub">Keep it going!</div>'
-        +   '</div>'
-        +   '<div class="sidebar__user">'
-        +     '<div class="sidebar__user-avatar">AB</div>'
-        +     '<div class="sidebar__user-info">'
-        +       '<div class="sidebar__user-name">Alex Brown</div>'
-        +       '<div class="sidebar__user-role">A-Level Economics</div>'
-        +     '</div>'
-        +     '<div class="sidebar__user-chev">' + I.chevDown + '</div>'
-        +   '</div>'
-        + '</aside>';
-    }
-
-    function renderTopbar() {
-      return ''
-        + '<header class="topbar">'
-        +   '<a href="' + TopicLoader.buildUrl('topic.html') + '" class="topbar__back">' + I.arrowLeft + '</a>'
-        +   '<div class="topbar__crumbs">'
-        +     '<div class="topbar__session-label">' + T.sessionLabel + '</div>'
-        +     '<div class="topbar__topic-title">' + T.topic + '</div>'
-        +   '</div>'
-        +   '<div class="topbar__right">'
-        +     '<div class="topbar__streak"><span class="topbar__streak-icon">🔥</span><span>1 day streak</span></div>'
-        +     '<div class="topbar__avatar"><div class="topbar__avatar-circle">AB</div><span class="topbar__avatar-chev">' + I.chevDown + '</span></div>'
-        +   '</div>'
-        + '</header>';
-    }
-
     function renderStations() {
       return T.intro.stations.map(function (s) {
         var locked = s.state === 'locked';
@@ -82,29 +31,6 @@
       }).join('');
     }
 
-    function renderStages() {
-      return T.intro.stages.map(function (s) {
-        var cls = 'stage'
-                + (s.state === 'current'   ? ' is-current'   : '')
-                + (s.state === 'available' ? ' is-available' : '')
-                + (s.state === 'done'      ? ' is-done'      : '')
-                + (s.state === 'locked'    ? ' is-locked'    : '');
-        var num = s.state === 'locked' ? I.lock : (s.state === 'done' ? I.check : s.num);
-        var inner = ''
-          + '<div class="stage__num">' + num + '</div>'
-          + '<div class="stage__body">'
-          +   '<div class="stage__name">' + s.name + '</div>'
-          +   '<div class="stage__sub">' + s.sub + '</div>'
-          +   (s.state === 'current'   ? '<span class="stage__chip">Current</span>' : '')
-          +   (s.state === 'available' ? '<span class="stage__chip stage__chip--available">Open →</span>' : '')
-          +   (s.state === 'done'      ? '<span class="stage__chip stage__chip--done">Done</span>' : '')
-          + '</div>';
-        return s.href && s.state !== 'locked' && s.state !== 'current'
-          ? '<a href="' + s.href + '" class="' + cls + '">' + inner + '</a>'
-          : '<div class="' + cls + '">' + inner + '</div>';
-      }).join('');
-    }
-
     function renderPage() {
       var hero = T.intro.heroKey && I[T.intro.heroKey] ? I[T.intro.heroKey] : I.heroBars;
 
@@ -114,7 +40,7 @@
         +     '<div class="card intro-card">'
         +       '<div class="row row--top">'
         +         '<div class="intro-card__text">'
-        +           '<div class="card__step-label">' + T.sessionLabel + '</div>'
+        +           '<div class="card__step-label">' + (T.sessionLabel || TopicLoader.sessionLabel('link')) + '</div>'
         +           '<h1 class="card__title card__title--lg">' + T.topic + '</h1>'
         +           '<p class="card__lede">' + T.intro.summary + '</p>'
         +         '</div>'
@@ -169,17 +95,17 @@
         +     '</div>'
         +   '</div>'
 
-        +   '<aside class="right-rail">'
-        +     '<div class="stages">' + renderStages() + '</div>'
-        +   '</aside>'
+        +   '<div class="right-rail">'
+        +     Shell.renderStages(T.intro.stages)
+        +   '</div>'
         + '</div>';
     }
 
     document.getElementById('app-root').innerHTML = ''
       + '<div class="app theme--link">'
-      +   renderSidebar()
-      +   '<div class="main">'
-      +     renderTopbar()
+      +   Shell.renderSidebar({ activeNav: 'My topics' })
+      +   '<div id="main-content" class="main" tabindex="-1" role="main">'
+      +     Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('topic.html'), sessionLabel: T.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: T.topic })
       +     renderPage()
       +   '</div>'
       + '</div>';

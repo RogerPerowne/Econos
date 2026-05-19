@@ -5,7 +5,6 @@
     topicId:  'supply_main',
     title:    'Supply',
     subtitle: 'Theme 1.6 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the law of supply, movement along vs shift, non-price determinants, producer surplus, joint and competing supply, and the profit motive. Mixed formats &#8212; sort, calculation, paragraph completion, diagnostic pair, data table &#8212; designed for the analysis marks Edexcel rewards.',

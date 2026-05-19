@@ -5,7 +5,6 @@
     topicId:  'unstable_markets_main',
     title:    'Unstable Commodity Markets',
     subtitle: 'Theme 1.22 \xb7 Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering why commodity markets are volatile, the cobweb model, buffer stock mechanisms and failures (International Tin Agreement), OPEC, futures markets, and evaluation of price stabilisation schemes. Mixed formats test calculation, diagram analysis, and evaluative depth.',

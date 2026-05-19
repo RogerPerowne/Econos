@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'monopoly_vs_competition',
   topicNum: '3.10',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Market Power & Contestability',
   estTime: '12-14 minutes',
   goal: 'Understand that competitive outcomes depend on the threat of entry — not just the number of firms. Place real markets on the contestability spectrum.',

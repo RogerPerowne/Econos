@@ -29,7 +29,6 @@
     topicId:  'exchange_rates_main',
     title:    'Exchange Rates',
     subtitle: 'Theme 4.5 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering FOREX market determination, the effects of depreciation on trade and macroeconomic objectives, the Marshall-Lerner condition, the J-curve effect, floating versus fixed exchange rate systems, and currency manipulation. Includes calculation, diagram interpretation, and chain questions.',

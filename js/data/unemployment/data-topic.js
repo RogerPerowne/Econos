@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'unemployment',
   topicNum: '1.3',
   theme: 'Theme 2 · The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Employment & Unemployment',
   estTime: '9-11 minutes',
   goal: 'Lock in the types, the diagnostic, and the cure',

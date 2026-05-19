@@ -11,7 +11,6 @@
     topicId:  'macro_objectives_main',
     title:    'Macroeconomic Objectives &amp; Trade-offs',
     subtitle: 'Theme 2.5 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the five macro objectives, the conflicts between them, the short-run and long-run Phillips curve, the NAIRU and its policy implications, stagflation and the Thatcher response, and whether supply-side policy can resolve trade-offs. Mixed formats develop the analytical depth and evaluative precision that A* macro essays require.',

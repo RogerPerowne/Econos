@@ -1,6 +1,5 @@
 window.ECONOS_LAND_SECTION_A = {
   topic:        'Perfect Competition',
-  sessionLabel: 'Session 3 of 3: Land',
   sectionLabel: 'Section A &#8212; Short questions',
   backUrl:      TopicLoader.buildUrl('land_intro.html'),
 

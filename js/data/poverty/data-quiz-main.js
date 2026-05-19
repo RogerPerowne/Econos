@@ -11,7 +11,6 @@
     topicId:  'poverty_main',
     title:    'Poverty',
     subtitle: 'Theme 4.7 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering absolute and relative poverty definitions, multi-dimensional poverty measurement, the causes of poverty, the poverty trap mechanism, anti-poverty policies, and the aid versus trade debate. Includes calculation, para-fill, and diagnostic pair questions in Edexcel style.',

@@ -11,7 +11,6 @@
     topicId:  'inflation_meas_main',
     title:    'Inflation: Measurement &amp; Costs',
     subtitle: 'Theme 2.2.1 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the definition of inflation, CPI construction, RPI versus CPIH, the limitations of price indices, the costs of inflation, the deflationary spiral, and the rationale for the 2% target. Mixed question formats target the analytical reasoning that distinguishes A* from B grade answers.',

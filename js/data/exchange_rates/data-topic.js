@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'exchange_rates',
   topicNum: '1.8',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Exchange Rates',
   estTime: '11-13 minutes',
   goal: 'Lock in what determines exchange rates, how changes affect trade and macro objectives, and the floating vs fixed debate.',

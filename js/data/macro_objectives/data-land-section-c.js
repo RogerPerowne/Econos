@@ -1,6 +1,5 @@
 window.ECONOS_LAND_SECTION_C = {
   topic:        'Macroeconomic Objectives and Conflicts',
-  sessionLabel: 'Session 3 of 3: Land',
   sectionLabel: 'Section C &#8212; Essay',
   backUrl:      TopicLoader.buildUrl('land_intro.html'),
 

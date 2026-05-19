@@ -11,7 +11,6 @@
     topicId:  'supply_side_main',
     title:    'Supply-Side Policies',
     subtitle: 'Theme 2.7 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-quality questions covering market-based and interventionist supply-side policies, the Laffer curve, UK privatisation, the productivity puzzle, the NAIRU reduction mechanism, and the evaluation framework for supply-side essays. The mix of formats develops the analytical precision that distinguishes A* answers in Paper 2 macro essays.',

@@ -12,7 +12,6 @@
     topicId:  'game_theory_main',
     title:    'Game Theory',
     subtitle: 'Theme 3.15 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering payoff matrices, dominant strategies, Nash equilibria, the prisoner\'s dilemma and its applications to cartels and trade policy, repeated games and the Folk Theorem, sequential games and first-mover advantage, and behavioural limits to the theory. Designed for the analytical depth Edexcel rewards at Levels 3 and 4.',

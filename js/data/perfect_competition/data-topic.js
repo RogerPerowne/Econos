@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'perfect_competition',
   topicNum: '4.2',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Perfect Competition',
   estTime: '9-11 minutes',
   goal: 'Lock in the assumptions, short-run and long-run equilibria, efficiency properties, and limitations of the perfect competition model.',

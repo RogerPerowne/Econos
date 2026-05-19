@@ -11,7 +11,6 @@
     topicId:  'ad_main',
     title:    'Aggregate Demand',
     subtitle: 'Theme 2.2 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the four AD components and their UK shares, the three reasons for the downward slope, the distinction between movement along and shift of AD, the drivers of consumption and investment, and the multiplier. Mixed formats develop the analytical precision that distinguishes A* answers from B answers.',

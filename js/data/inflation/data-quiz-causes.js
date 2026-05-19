@@ -31,7 +31,6 @@
     topicId:  'inflation_causes',
     title:    'Causes of Inflation &amp; Deflation',
     subtitle: 'Theme 2.4 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering demand-pull, cost-push, monetary theory, the 2022 episode and the wage-price spiral. Mixed formats — multiple choice, calculation, diagram, ranking, paragraph completion — designed for the analysis and evaluation marks examiners reward.',

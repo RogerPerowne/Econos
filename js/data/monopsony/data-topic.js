@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'monopsony',
   topicNum: '4.6',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Monopsony',
   estTime: '7-9 minutes',
   goal: 'Understand monopsony power in labour markets — how a single buyer of labour can pay wages below the competitive level, and the policy implications.',

@@ -1,0 +1,89 @@
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF8F4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #E7E7EA;
+      border-radius: 16px;
+      padding: 48px 40px 40px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 4px 24px rgba(11,20,38,0.07);
+    }
+    .logo {
+      display: block;
+      height: 28px;
+      margin: 0 auto 32px;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #0B1426;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #6B7280;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      color: #0B1426;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.15s;
+      margin-bottom: 16px;
+    }
+    input:focus { border-color: #2563EB; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      background: #0B1426;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #1a2d4d; }
+    .error {
+      font-size: 13px;
+      color: #DC2626;
+      text-align: center;
+      margin-top: 14px;
+      min-height: 18px;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: #9CA3AF;
+      text-align: center;
+      margin-top: 24px;
+    }

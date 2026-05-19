@@ -5,7 +5,6 @@
     topicId:  'economic_systems_main',
     title:    'Economic Systems',
     subtitle: 'Theme 1.4 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the free market economy, the price mechanism as allocator, command economy advantages and failures, the mixed economy rationale, transition economies, and Hayek\'s knowledge problem. Mixed formats &#8212; sort, para fill, diagnostic pair, data table &#8212; designed for the evaluation marks Edexcel rewards.',

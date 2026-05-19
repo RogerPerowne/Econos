@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'macro_policies_global',
   topicNum: '5.4',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Macroeconomic Policies in a Global Context',
   estTime: '9-11 minutes',
   goal: 'Evaluate how macro policy is constrained and coordinated in a globalised economy — capital mobility, exchange rate regimes, policy spillovers, international institutions.',

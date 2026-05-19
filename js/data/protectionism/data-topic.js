@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'protectionism',
   topicNum: '1.6',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Restrictions on Free Trade',
   estTime: '9-11 minutes',
   goal: 'Lock in the tools of protectionism, the arguments for and against, and how to evaluate them for essay questions.',

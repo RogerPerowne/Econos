@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+# ─────────────────────────────────────────────────────────────
+# econos — pre-commit hook
+# Runs the repo lint + eslint before every commit. Bypass with
+# `git commit --no-verify` only when you genuinely know better.
+# ─────────────────────────────────────────────────────────────
+
+set -e
+
+echo "» repo lint"
+./scripts/lint.sh
+
+echo "» eslint (changed JS only)"
+STAGED_JS=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.js$' | grep -v -E '^(js/pdf\.js|js/icons\.js|node_modules/)' || true)
+if [ -n "$STAGED_JS" ]; then
+  echo "$STAGED_JS" | xargs ./node_modules/.bin/eslint --max-warnings=0
+else
+  echo "  (no JS staged)"
+fi
+
+echo "» pre-commit OK"

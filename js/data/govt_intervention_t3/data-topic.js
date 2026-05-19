@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'govt_intervention_t3',
   topicNum: '6.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Intervention',
   estTime: '7-9 minutes',
   goal: 'Evaluate government intervention in markets — competition policy, regulation, nationalisation, price controls, and labour market policy.',

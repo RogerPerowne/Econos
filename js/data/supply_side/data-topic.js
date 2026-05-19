@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'supply_side',
   topicNum: '6.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Supply-Side Policies',
   estTime: '9-11 minutes',
   goal: 'Master market-based and interventionist supply-side tools and their trade-offs',

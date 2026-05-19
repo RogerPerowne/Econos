@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'agg_supply',
   topicNum: '3.1-3.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Aggregate Supply',
   estTime: '9-11 minutes',
   goal: 'Master SRAS, LRAS and the Classical vs Keynesian debate',

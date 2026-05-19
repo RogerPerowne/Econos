@@ -12,7 +12,6 @@
     topicId:  'intl_competitiveness_main',
     title:    'International Competitiveness',
     subtitle: 'Theme 4.6 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering unit labour costs, price and non-price competitiveness, the UK productivity puzzle, the link between competitiveness and the current account, and supply-side policies. Includes calculation, diagnostic pair, and data table questions in Edexcel A-level style.',

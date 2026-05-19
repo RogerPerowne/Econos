@@ -6,7 +6,7 @@
   'use strict';
 
   window.bootLinkJudge = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 3) { window.location.replace(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
+    if (Progress.getLinkUnlocked() < 3) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; }
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_JUDGE;
@@ -59,24 +59,15 @@
       return { correct: correct, total: total };
     }
 
-    function isOverallCorrect(sc) {
-      var opts = sc.overallPosition.options;
-      var sel  = state.overallAnswer;
-      for (var i = 0; i < opts.length; i++) {
-        if (opts[i].id === sel) return !!opts[i].correct;
-      }
-      return false;
-    }
-
     /* -------- render -------- */
 
     function render() {
       var root = document.getElementById('app-root');
       root.innerHTML = ''
         + '<div class="app theme--link">'
-        +   renderSidebar()
-        +   '<div class="main">'
-        +     renderTopbar()
+        +   Shell.renderSidebar({ activeNav: 'My topics' })
+        +   '<div id="main-content" class="main" tabindex="-1" role="main">'
+        +     Shell.renderTopbar({ backUrl: DATA.backUrl, backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: DATA.topic })
         +     '<div class="page">'
         +       '<div class="link-station">' + renderStation() + '</div>'
         +       renderRail()
@@ -84,57 +75,6 @@
         +   '</div>'
         + '</div>';
       attachHandlers();
-    }
-
-    function renderSidebar() {
-      var nav = [
-        { name: 'Home',          icon: I.home,     href: 'index.html', active: false },
-        { name: 'My topics',     icon: I.topics,   href: '#',          active: true  },
-        { name: 'Progress',      icon: I.progress, href: '#',          active: false },
-        { name: 'Exam practice', icon: I.practice, href: '#',          active: false },
-        { name: 'Study planner', icon: I.planner,  href: '#',          active: false },
-        { name: 'Messages',      icon: I.messages, href: '#',          active: false },
-        { name: 'Settings',      icon: I.settings, href: '#',          active: false }
-      ];
-      return ''
-        + '<aside class="sidebar">'
-        +   '<div class="sidebar__brand">'
-        +     '<a href="index.html" class="sidebar__logo-link"><img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full"></a>'
-        +   '</div>'
-        +   '<nav class="sidebar__nav">'
-        +     nav.map(function (n) {
-                return '<a href="' + n.href + '" class="' + (n.active ? 'is-active' : '') + '">' + n.icon + '<span>' + n.name + '</span></a>';
-              }).join('')
-        +   '</nav>'
-        +   '<div class="sidebar__streak">'
-        +     '<div class="sidebar__streak-row"><span class="sidebar__streak-flame">🔥</span><span class="sidebar__streak-num">1</span></div>'
-        +     '<div class="sidebar__streak-label">Day streak</div>'
-        +     '<div class="sidebar__streak-sub">Keep it going!</div>'
-        +   '</div>'
-        +   '<div class="sidebar__user">'
-        +     '<div class="sidebar__user-avatar">AB</div>'
-        +     '<div class="sidebar__user-info">'
-        +       '<div class="sidebar__user-name">Alex Brown</div>'
-        +       '<div class="sidebar__user-role">A-Level Economics</div>'
-        +     '</div>'
-        +     '<div class="sidebar__user-chev">' + I.chevDown + '</div>'
-        +   '</div>'
-        + '</aside>';
-    }
-
-    function renderTopbar() {
-      return ''
-        + '<header class="topbar">'
-        +   '<a href="' + DATA.backUrl + '" class="topbar__back">' + I.arrowLeft + '<span>Back to dashboard</span></a>'
-        +   '<div class="topbar__crumbs">'
-        +     '<div class="topbar__session-label">' + DATA.sessionLabel + '</div>'
-        +     '<div class="topbar__topic-title">' + DATA.topic + '</div>'
-        +   '</div>'
-        +   '<div class="topbar__right">'
-        +     '<div class="topbar__streak"><span class="topbar__streak-icon">🔥</span><span>1 day streak</span></div>'
-        +     '<div class="topbar__avatar"><div class="topbar__avatar-circle">AB</div><span class="topbar__avatar-chev">' + I.chevDown + '</span></div>'
-        +   '</div>'
-        + '</header>';
     }
 
     function renderStation() {
@@ -258,7 +198,7 @@
 
     /* ── Rail ── */
     function renderRail() {
-      var unlockedIdx = (function () { try { return parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10); } catch (e) { return -1; } })();
+      var unlockedIdx = Progress.getLinkUnlocked();
       var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
         var isDone    = i <= unlockedIdx && !isCurrent;
@@ -299,7 +239,7 @@
         : '';
 
       return ''
-        + '<aside class="right-rail">'
+        + '<div class="right-rail">' + Shell.renderStages()
         +   '<div class="rail-card">'
         +     '<div class="rail-card__title">Topic progress</div>'
         +     '<div class="rail-card__sub">Step 2 of 3: Link</div>'
@@ -318,7 +258,7 @@
         +     '</div>'
         +   '</div>'
         +   readyLandIt
-        + '</aside>';
+        + '</div>';
     }
 
     /* -------- handlers -------- */
@@ -384,10 +324,10 @@
           var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
           stored.judge = summary.correct;
           localStorage.setItem('econos_link_scores', JSON.stringify(stored));
-          var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
-          localStorage.setItem('econos_link_unlocked', String(Math.max(u, 4)));
+          var u = Progress.getLinkUnlocked();
+          Progress.setLinkUnlocked(Math.max(u, 4));
         } catch (e) {}
-        window.location.href = DATA.nextUrl || DATA.backUrl;
+        TopicLoader.go(DATA.nextUrl || DATA.backUrl);
       });
     }
 

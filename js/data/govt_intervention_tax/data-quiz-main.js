@@ -5,7 +5,6 @@
     topicId:  'govt_intervention_tax_main',
     title:    'Government Intervention: Taxes',
     subtitle: 'Theme 1.17 \xb7 Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering indirect tax mechanics, the tax diagram, Pigouvian taxes, tax incidence, real-world UK examples, and evaluation of taxation as a market failure correction tool. Mixed formats testing both diagram analysis and evaluative writing skills.',

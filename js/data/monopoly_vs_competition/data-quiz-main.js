@@ -11,7 +11,6 @@
     topicId:  'monopoly_vs_competition_main',
     title:    'Monopoly vs Competition',
     subtitle: 'Theme 3.10 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions comparing monopoly and perfect competition on price, output, and welfare. Covers natural monopoly, the static vs dynamic efficiency trade-off, contestability, and CMA competition policy tools.',

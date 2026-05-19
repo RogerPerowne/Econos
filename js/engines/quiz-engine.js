@@ -699,8 +699,8 @@
       return '<details class="quiz-rvrow"' + (hasExp ? '' : ' open') + '>' + header + body + '</details>';
     }).join('');
 
-    var backHref  = TOPIC.backUrl  || TopicLoader.buildUrl('topic.html');
-    var backLabel = TOPIC.backLabel || 'Back to topic';
+    /* TOPIC.backUrl / backLabel are read inside the chrome render
+       elsewhere; the local copies were dead. */
 
     r('<div class="quiz-results">' +
 

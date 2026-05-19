@@ -163,7 +163,8 @@ window.ECONOS_TOPIC = {
         { tone: 'amber',  icon: '🔄', head: 'Substitutes',            body: 'More substitutes usually mean more elastic demand.' },
         { tone: 'green',  icon: '📈', head: 'Market data',            body: 'Sales, prices and volumes reveal real behaviour.' },
         { tone: 'purple', icon: '🗓️', head: 'Seasonality',            body: 'Demand often follows predictable patterns.' },
-        { tone: 'rose',   icon: '🔮', head: 'Consumer expectations',  body: 'Future beliefs influence today\'s demand.' }
+        { tone: 'rose',   icon: '🔮', head: 'Consumer expectations',  body: 'Future beliefs influence today\'s demand.' },
+        { tone: 'slate',  icon: '💰', head: 'Income levels',          body: 'Changes in income shift demand — especially for normal and inferior goods.' }
       ],
       causes2Style: 'plain-white',
       causes2Emoji: '⚡',

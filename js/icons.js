@@ -1374,7 +1374,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  allocativeEfficiencyDiagram: `
+  welfareSurplusDiagram: `
     <svg viewBox="0 0 480 340" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="480" height="340" fill="#fff" rx="6"/>
 

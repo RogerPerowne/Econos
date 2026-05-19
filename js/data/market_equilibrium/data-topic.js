@@ -200,7 +200,7 @@ window.ECONOS_TOPIC = {
       title: 'Allocative Efficiency of Market Equilibrium',
       tip: { icon: '💡', tone: 'blue', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
       diagramPanel: {
-        diagramKey: 'allocativeEfficiencyDiagram',
+        diagramKey: 'welfareSurplusDiagram',
         title: 'Why equilibrium can be efficient',
         bullets: [
           'Consumers reveal their willingness to pay through demand.',

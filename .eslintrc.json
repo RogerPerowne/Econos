@@ -57,7 +57,10 @@
         "vite.config.js",
         "playwright.config.js"
       ],
-      "parserOptions": { "sourceType": "module" },
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2022
+      },
       "env": { "node": true }
     }
   ],

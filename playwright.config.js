@@ -44,11 +44,19 @@ export default defineConfig({
 
   /* Build once, then preview the static /dist directory. The
      `reuseExistingServer` flag lets `npm run test:e2e` re-use an
-     already-running server during local iteration. */
+     already-running server during local iteration.
+
+     `npm run preview` already specifies `--port 4173 --host 127.0.0.1`
+     — IPv4 binding is required because CI runners can resolve
+     `localhost` to IPv6 only, while Playwright's baseURL is 127.0.0.1.
+     stdout/stderr are surfaced so a build/preview failure on CI shows
+     up in the test logs instead of hiding behind ERR_CONNECTION_REFUSED. */
   webServer: {
-    command: 'npm run build && npm run preview -- --port ' + PORT,
-    port: PORT,
+    command: 'npm run build && npm run preview',
+    url: BASE,
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000
+    timeout: 120_000,
+    stdout: 'pipe',
+    stderr: 'pipe'
   }
 });

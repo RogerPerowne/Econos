@@ -148,33 +148,88 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_4',
-      template: 'diagnose',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Simultaneous Shifts',
-      intro: 'When supply and demand both shift, the effect on price or quantity may be indeterminate depending on relative magnitudes.',
-      rows: [
-        { label: 'Shift combination', colA: 'Demand rises AND Supply falls', colB: 'Demand rises AND Supply rises' },
-        { label: 'Price effect', colA: 'Price definitely RISES (both shifts push price up)', colB: 'Indeterminate — depends on relative magnitude of shifts' },
-        { label: 'Quantity effect', colA: 'Indeterminate — demand raises Q, supply reduction lowers Q', colB: 'Quantity definitely RISES (both shifts push quantity up)' }
+      tip: { icon: '💡', tone: 'blue', text: 'When demand and supply both shift, the final effect depends on the direction and relative size of each shift.' },
+      diagramKey: 'simultaneousShiftsInteractive',
+      steps: [
+        {
+          key: 'both-up',
+          label: 'D↑ & S↑',
+          text: '<strong>Both rise — demand right, supply right.</strong> The market clears more units at the new equilibrium. <strong>Quantity definitely rises.</strong> Price could rise, fall, or stay the same — it depends on whether the demand shift or supply shift is larger.'
+        },
+        {
+          key: 'd-up-s-down',
+          label: 'D↑ & S↓',
+          text: '<strong>Demand rises, supply falls.</strong> Both shifts push price up — buyers are bidding more for fewer goods. <strong>Price definitely rises.</strong> Quantity is ambiguous: demand wants to raise Q, supply pulls it down — net effect depends on which shift dominates.'
+        },
+        {
+          key: 'd-down-s-up',
+          label: 'D↓ & S↑',
+          text: '<strong>Demand falls, supply rises.</strong> Both shifts push price down — fewer buyers facing more sellers. <strong>Price definitely falls.</strong> Quantity is ambiguous: lower demand reduces Q, higher supply raises Q — net effect depends on which shift dominates.'
+        },
+        {
+          key: 'both-down',
+          label: 'D↓ & S↓',
+          text: '<strong>Both fall — demand left, supply left.</strong> The market clears fewer units at the new equilibrium. <strong>Quantity definitely falls.</strong> Price could rise, fall, or stay the same depending on whether demand or supply shrinks more.'
+        }
       ],
-      footer: 'Rule: if both shifts work in the same direction for one variable (P or Q), that variable is determinate. If they work in opposite directions, the outcome is ambiguous — state "it depends on the relative magnitude of the shifts."',
-      examEdge: '"Indeterminate" is a perfectly valid and sophisticated answer when both shifts have opposing effects on a variable. Saying so explicitly — and explaining why — earns more marks than guessing a direction without justification.'
+      flowTitle: 'How to answer',
+      flowEmoji: '📋',
+      flow: [
+        { tone: 'blue',  icon: '🔍', title: 'Identify both shifts',        sub: 'State clearly how demand and supply have shifted — direction and reason.' },
+        { tone: 'amber', icon: '⚖️', title: "Decide what's predictable",   sub: 'Same direction for one variable → that variable is determinate. Opposite directions → ambiguous.' },
+        { tone: 'green', icon: '🎯', title: 'Explain the final outcome',   sub: 'State the certain change, then say the other variable depends on the relative magnitude of the shifts.' }
+      ],
+      causes2Emoji: '🌍',
+      causes2Label: 'Real-world examples',
+      causes2: [
+        { tone: 'green',  icon: '🎬', head: 'D↑ S↑ · Streaming (2020–22)',     body: 'Lockdowns and a boom in original content drove demand up. Netflix, Disney+ and Apple TV+ all expanded supply. <strong style="color:#059669;">Q rose sharply</strong>; subscription prices held or rose modestly.' },
+        { tone: 'amber',  icon: '🛢️', head: 'D↑ S↓ · Oil during OPEC+ cuts',    body: 'Post-pandemic global demand recovered while OPEC+ trimmed production. <strong style="color:#059669;">Price rose clearly</strong>; total quantity depended on how deep the cuts were.' },
+        { tone: 'blue',   icon: '📱', head: 'D↓ S↑ · Older smartphone models', body: 'Newer flagships pull demand away from old models while manufacturers flood the market with mid-range variants. <strong style="color:#DC2626;">Price falls clearly</strong>; quantity depends on the strength of each effect.' },
+        { tone: 'rose',   icon: '📰', head: 'D↓ S↓ · Local UK newspapers',     body: 'Digital substitutes crush demand; many titles close, cutting supply. <strong style="color:#DC2626;">Quantity falls clearly</strong>; price varies — some titles raise covers, others discount to survive.' }
+      ],
+      conclusion: { title: 'Key takeaway', text: 'Simultaneous shifts require balanced judgement — not a one-line answer.' },
+      examEdge: 'Use phrases like "the effect on price is ambiguous" or "depends on the relative size of the shifts". Stating ambiguity explicitly — and explaining why — earns more marks than guessing a direction without justification.'
     },
     {
       id: 'market_equilibrium_5',
-      template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Allocative Efficiency of Market Equilibrium',
-      body: 'A competitive equilibrium is <strong>allocatively efficient</strong>: at Q*, the price paid by the last consumer (marginal benefit) equals the cost of producing the last unit (marginal cost). This is the optimal allocation — P = MC.<br><br>Total welfare (consumer surplus + producer surplus) is maximised at equilibrium. Any other quantity produces less total surplus:<br>• Q < Q*: potential gains from additional exchange are unrealised (deadweight loss)<br>• Q > Q*: units are produced whose cost exceeds their value (negative welfare)<br><br>Market failure occurs when the equilibrium does NOT maximise total social welfare — because prices exclude external costs or benefits.',
+      tip: { icon: '💡', tone: 'blue', text: 'In a competitive market, equilibrium allocates output to the consumers who value it most and the producers who can supply it at the lowest cost.' },
+      diagramPanel: {
+        diagramKey: 'welfareSurplusDiagram',
+        title: 'Why equilibrium can be efficient',
+        bullets: [
+          'Consumers reveal their willingness to pay through demand.',
+          'Producers reveal their costs through supply.',
+          'At Q<sub>e</sub>, marginal benefit (MB) equals marginal cost (MC).',
+          'Reallocating resources away from E would reduce total welfare.'
+        ]
+      },
+      causesStyle: 'plain-white',
+      causesEmoji: '📐',
+      causesLabel: 'Key welfare concepts',
+      causes: [
+        { tone: 'blue',   icon: '👥', head: 'Consumer surplus',                body: 'The benefit consumers get from paying less than their willingness to pay.' },
+        { tone: 'amber',  icon: '📊', head: 'Producer surplus',                body: 'The benefit producers get from receiving more than their minimum cost.' },
+        { tone: 'purple', icon: '📉', head: 'Deadweight loss off equilibrium', body: 'Moving away from E means some mutually beneficial trades are lost.' }
+      ],
+      note: { icon: 'ℹ️', tone: 'blue', text: 'Allocative efficiency assumes a competitive market with many buyers and sellers and no externalities. When these assumptions do not hold, equilibrium may not be allocatively efficient.' },
+      conclusion: { title: 'Key takeaway', text: 'Market equilibrium can be allocatively efficient because, at E, marginal benefit equals marginal cost (MB = MC).' },
       keyTerms: [
-        { term: 'Allocative efficiency', def: 'P = MC for every good — resources allocated to highest-value uses; no reallocation can increase welfare.' },
+        { term: 'Allocative efficiency', def: 'P = MC for every good — resources allocated to highest-value uses; no reallocation can increase total welfare.' },
         { term: 'Total surplus', def: 'Consumer surplus + producer surplus — the measure of total welfare from market exchange.' },
         { term: 'Deadweight loss', def: 'The reduction in total surplus from producing a quantity different from the efficient level.' }
       ],
-      examEdge: 'P = MC is the allocative efficiency condition. Monopoly produces where MR = MC but charges P > MC → allocative inefficiency → deadweight loss. This is why monopoly is condemned by economists and why competition policy targets market concentration.'
+      examEdge: 'Do not confuse allocative efficiency with equity or fairness — these are separate concepts. P = MC is also why monopoly (which charges P &gt; MC) is allocatively inefficient.'
     },
     {
       id: 'market_equilibrium_6',
       template: 'cause',
       title: 'When Markets Fail to Reach Equilibrium',
+      tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly — controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Obstacles to market clearing',
@@ -188,15 +243,77 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_7',
-      template: 'framing',
       title: 'Equilibrium in Different Market Contexts',
-      body: '<strong>Housing:</strong> equilibrium disrupted by planning restrictions (supply can\'t adjust) → persistent shortage → rapidly rising prices. Solution requires supply-side reforms (build more) not just demand-side management.<br><br><strong>Labour market:</strong> wage = price; employment = quantity. Equilibrium wage clears the labour market. If minimum wage is set above equilibrium, excess supply = unemployment. Monopsony power can keep wages below competitive equilibrium — minimum wage then increases both wages AND employment.<br><br><strong>Financial markets:</strong> equilibrium disrupted by speculation — prices diverge from fundamental value; bubbles form. Asset markets are prone to self-reinforcing disequilibrium (Minsky moments).',
-      keyTerms: [
-        { term: 'Equilibrium wage', def: 'The wage at which labour supply equals labour demand — the labour market clears.' },
-        { term: 'Asset bubble', def: 'Market price rising far above fundamental value — driven by expectations of further price rises; unsustainable.' },
-        { term: 'Minsky moment', def: 'The point when a debt-driven asset bubble collapses as borrowers can no longer service debts — named after economist Hyman Minsky.' }
+      tip: { icon: '💡', tone: 'blue', text: 'The same demand-and-supply logic applies across many markets, but the speed of adjustment and the wider effects can differ.' },
+      marketGrid: [
+        {
+          tone: 'green',
+          title: 'Housing market',
+          icon: '🏠',
+          priceLabel: 'Price',
+          priceTick: 'Pe',
+          supplyLabel: 'S',
+          demandLabel: 'D',
+          supplyElast: 'inelastic',
+          demandElast: 'normal',
+          body: 'Equilibrium rent or house price. Supply responds slowly (new homes take time), so shortages are common in the short run.'
+        },
+        {
+          tone: 'blue',
+          title: 'Labour market',
+          icon: '👥',
+          priceLabel: 'Wage',
+          priceTick: 'We',
+          supplyLabel: 'S<tspan font-size="8" baseline-shift="sub">L</tspan>',
+          demandLabel: 'D<tspan font-size="8" baseline-shift="sub">L</tspan>',
+          supplyElast: 'normal',
+          demandElast: 'normal',
+          body: 'Equilibrium wage where labour demand meets labour supply. Higher wages attract more workers; lower wages reduce labour supplied.'
+        },
+        {
+          tone: 'amber',
+          title: 'Commodity market',
+          icon: '🛢️',
+          priceLabel: 'Price',
+          priceTick: 'Pe',
+          supplyLabel: 'S',
+          demandLabel: 'D',
+          supplyElast: 'inelastic',
+          demandElast: 'inelastic',
+          body: 'Equilibrium price for oil, wheat or coffee. Supply and demand can shift sharply due to weather, seasonal changes or geopolitical shocks.'
+        },
+        {
+          tone: 'purple',
+          title: 'Foreign exchange or ticket market',
+          icon: '🌐',
+          priceLabel: 'Exchange rate / Price',
+          priceTick: 'Pe',
+          supplyLabel: 'S',
+          demandLabel: 'D',
+          supplyElast: 'elastic',
+          demandElast: 'elastic',
+          body: 'Equilibrium exchange rate or event ticket price. Demand can change very quickly with expectations, news or popularity.'
+        }
       ],
-      examEdge: 'Context application is rewarded in Edexcel Paper 1. If the question is about housing, apply supply/demand to housing specifically — mention planning restrictions, Help to Buy, interest rates. Don\'t write a generic supply/demand essay — tailor it to the extract context.',
+      left: {
+        tone: 'slate',
+        label: 'What changes across contexts?',
+        checks: [
+          { term: 'Speed of adjustment', body: 'Some markets adjust slowly (e.g. housing), others quickly (e.g. tickets).' },
+          { term: 'Elasticity', body: 'The responsiveness of demand and supply influences outcomes.' },
+          { term: 'Government intervention', body: 'Taxes, subsidies, price controls or regulation can affect equilibrium.' },
+          { term: 'Information', body: 'How quickly and clearly buyers and sellers get information varies.' }
+        ]
+      },
+      right: {
+        tone: 'amber',
+        icon: '💡',
+        label: 'One core idea',
+        text: 'Equilibrium is still where demand equals supply. However, the real-world outcome may be affected by time lags, policy and market structure.'
+      },
+      pairLabel: null,
+      conclusion: { title: 'Key takeaway', text: 'Equilibrium is a flexible framework for analysing many markets. The logic is the same, but the context shapes how it plays out.' },
+      examEdge: 'Context application is rewarded in Edexcel Paper 1. Use market-specific examples and language — for housing, mention planning restrictions, Help to Buy, interest rates; for labour, monopsony and minimum wage; for FX, expectations and capital flows. Don\'t write a generic supply/demand essay — tailor it to the extract.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

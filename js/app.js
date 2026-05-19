@@ -384,6 +384,73 @@
       content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:18px;">${tiles}</div>`;
     }
 
+    // Market grid — 2x2 of market-context tiles with mini D/S charts whose
+    // gradients reflect each market's elasticity profile.
+    //   marketGrid: [{ tone, title, icon, body, supplyElast, demandElast,
+    //                  priceLabel, quantityLabel, supplyLabel, demandLabel }]
+    //   *Elast: 'inelastic' | 'normal' | 'elastic'
+    if (c.marketGrid && c.marketGrid.length) {
+      const elastDelta = (kind) => kind === 'inelastic'
+        ? { dx: 15, dy: 58 }
+        : kind === 'elastic'
+          ? { dx: 92, dy: 24 }
+          : { dx: 60, dy: 58 };
+      const renderMiniChart = (item, tone) => {
+        const sE = elastDelta(item.supplyElast || 'normal');
+        const dE = elastDelta(item.demandElast || 'normal');
+        const Ex = 152, Ey = 96;
+        const sx1 = Ex - sE.dx, sy1 = Ey + sE.dy;
+        const sx2 = Ex + sE.dx, sy2 = Ey - sE.dy;
+        const dx1 = Ex - dE.dx, dy1 = Ey - dE.dy;
+        const dx2 = Ex + dE.dx, dy2 = Ey + dE.dy;
+        const clip = (x, y) => {
+          const minX = 42, maxX = 262, minY = 22, maxY = 168;
+          return [Math.max(minX, Math.min(maxX, x)), Math.max(minY, Math.min(maxY, y))];
+        };
+        const [sX1, sY1] = clip(sx1, sy1);
+        const [sX2, sY2] = clip(sx2, sy2);
+        const [dX1, dY1] = clip(dx1, dy1);
+        const [dX2, dY2] = clip(dx2, dy2);
+        const sColor = '#F97316';
+        const dColor = '#2563EB';
+        const supplyLabel = item.supplyLabel || 'S';
+        const demandLabel = item.demandLabel || 'D';
+        const pLabel = item.priceLabel || 'Price';
+        return `
+          <svg viewBox="0 0 290 200" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+            <line x1="42" y1="18" x2="42" y2="172" stroke="#94A3B8" stroke-width="1.5"/>
+            <line x1="38" y1="168" x2="270" y2="168" stroke="#94A3B8" stroke-width="1.5"/>
+            <text x="6" y="28" font-size="11" fill="#475569" font-family="Georgia,serif" font-style="italic">${pLabel}</text>
+            <text x="240" y="190" font-size="11" fill="#475569" font-family="Georgia,serif" font-style="italic">Quantity</text>
+            <text x="32" y="184" font-size="11" fill="#475569" font-family="Georgia,serif" font-style="italic">0</text>
+            <line x1="42" y1="${Ey}" x2="${Ex}" y2="${Ey}" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="${Ex}" y1="${Ey}" x2="${Ex}" y2="168" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="${dX1}" y1="${dY1}" x2="${dX2}" y2="${dY2}" stroke="${dColor}" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="${sX1}" y1="${sY1}" x2="${sX2}" y2="${sY2}" stroke="${sColor}" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="${Ex}" cy="${Ey}" r="3.5" fill="#0B1426"/>
+            <text x="${Ex + 6}" y="${Ey - 6}" font-size="12" font-weight="700" fill="#0B1426" font-family="Georgia,serif">E</text>
+            <text x="${sX2 + 4}" y="${sY2 + 4}" font-size="12" font-weight="700" fill="${sColor}" font-family="Georgia,serif">${supplyLabel}</text>
+            <text x="${dX2 + 4}" y="${dY2 + 4}" font-size="12" font-weight="700" fill="${dColor}" font-family="Georgia,serif">${demandLabel}</text>
+            <text x="22" y="${Ey + 4}" font-size="11" fill="#475569" font-family="Georgia,serif" font-style="italic">${item.priceTick || 'Pe'}</text>
+            <text x="${Ex - 8}" y="184" font-size="11" fill="#475569" font-family="Georgia,serif" font-style="italic">Qe</text>
+          </svg>`;
+      };
+      const tilesHtml = c.marketGrid.map((item, i) => {
+        const t = PATTERN_TONES[item.tone || 'green'] || PATTERN_TONES.green;
+        return `
+          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${i + 1}</div>
+              <div style="font-size:16px;font-weight:800;color:${t.label};line-height:1.3;">${item.title}</div>
+            </div>
+            <div style="display:flex;justify-content:center;align-items:center;height:64px;font-size:42px;line-height:1;margin-bottom:4px;">${item.icon || ''}</div>
+            ${renderMiniChart(item, t)}
+            <div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:10px;">${item.body}</div>
+          </div>`;
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:22px;">${tilesHtml}</div>`;
+    }
+
     // Body text — styled as a rich explainer
     if (c.body) {
       content += `
@@ -621,6 +688,35 @@
       content += `</div>`;
     }
 
+    // Causes 2 — a second causes-style grid for a separate themed section.
+    //   Pattern: causes2: [{tone,icon,head,body}], causes2Label?, causes2Emoji?, causes2Style? ('plain-white' | default)
+    if (c.causes2 && Array.isArray(c.causes2) && c.causes2.length && typeof c.causes2[0].head !== 'undefined') {
+      if (c.causes2Label !== null) content += genSecLabel(c.causes2Emoji || '🔗', c.causes2Label || 'More to know');
+      const plain2 = c.causes2Style === 'plain-white';
+      const tiles2 = c.causes2.map((item, i) => {
+        const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+        if (plain2) {
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon || ''}</div>
+              <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
+        return `
+          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon || ''}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes2.length, 180)};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
+    }
+
     // How to think about it — two tinted panels side by side (centered icon + heading + body).
     // Data: { left: {icon, tone, head, body}, right: {icon, tone, head, body} }
     if (c.howToThink) {
@@ -810,6 +906,24 @@
       if (c.footer) {
         content += `<p style="font-size:13px;color:#0B1426;font-style:italic;margin-bottom:18px;padding:0 2px;">${c.footer}</p>`;
       }
+    }
+
+    // Note — tip-style callout that renders later in the card (e.g. assumptions, caveats).
+    //   Pattern: note: {icon?, tone?, head?, text} OR string OR array.
+    //   Default icon: ℹ️, default tone: blue.
+    if (c.note) {
+      const notes = Array.isArray(c.note) ? c.note : [c.note];
+      notes.forEach(note => {
+        const noteText = typeof note === 'object' ? note.text : note;
+        const noteIcon = (typeof note === 'object' && note.icon) || 'ℹ️';
+        const noteTone = (typeof note === 'object' && note.tone) || 'blue';
+        const noteHead = (typeof note === 'object' && note.head) || null;
+        const t = PATTERN_TONES[noteTone] || PATTERN_TONES.blue;
+        const bodyHtml = noteHead
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};">${noteHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div></div>`
+          : `<div style="font-size:14px;color:#0B1426;line-height:1.6;">${noteText}</div>`;
+        content += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:14px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
+      });
     }
 
     // Conclusion — green decisive verdict band. The "given the above, here's the answer".
@@ -2873,6 +2987,10 @@
       c.conceptBoxes !== undefined ||
       c.diagramPanel !== undefined ||
       c.examples !== undefined ||
+      c.marketGrid !== undefined ||
+      c.note !== undefined ||
+      (c.causes2 && Array.isArray(c.causes2) && c.causes2.length > 0 &&
+       typeof c.causes2[0] === 'object' && 'head' in c.causes2[0]) ||
       (c.left !== undefined && c.right !== undefined) ||
       (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
        typeof c.causes[0] === 'object' && 'head' in c.causes[0])

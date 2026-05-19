@@ -1374,6 +1374,52 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  welfareSurplusDiagram: `
+    <svg viewBox="0 0 480 420" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="480" height="420" fill="#fff" rx="6"/>
+
+      <!-- Axes -->
+      <line x1="60" y1="370" x2="420" y2="370" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="420,365 420,375 432,370" fill="#334155"/>
+      <line x1="60" y1="50" x2="60" y2="370" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="55,50 65,50 60,38" fill="#334155"/>
+      <text x="38" y="46" font-size="13" font-weight="700" fill="#334155">Price</text>
+      <text x="385" y="392" font-size="13" font-weight="700" fill="#334155">Quantity</text>
+      <text x="46" y="386" font-size="12" fill="#64748B">O</text>
+
+      <!-- Consumer surplus: bounded by MB curve (top), Pe line (bottom), y-axis (left) -->
+      <polygon points="60,70 230,210 60,210" fill="#3B82F6" fill-opacity="0.18" stroke="none"/>
+      <!-- Producer surplus: bounded by MC curve (bottom), Pe line (top), y-axis (left) -->
+      <polygon points="60,210 230,210 60,350" fill="#F59E0B" fill-opacity="0.18" stroke="none"/>
+
+      <!-- MB (demand, downward) — starts at y-axis -->
+      <line x1="60" y1="70" x2="400" y2="350" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+      <text x="408" y="354" font-size="14" font-weight="800" fill="#2563EB">MB</text>
+
+      <!-- MC (supply, upward) — starts at y-axis -->
+      <line x1="60" y1="350" x2="400" y2="70" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+      <text x="408" y="74" font-size="14" font-weight="800" fill="#D97706">MC</text>
+
+      <!-- Equilibrium dashed guides -->
+      <line x1="60" y1="210" x2="230" y2="210" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="230" y1="210" x2="230" y2="370" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+      <!-- E point -->
+      <circle cx="230" cy="210" r="6" fill="#0B1426"/>
+      <text x="240" y="204" font-size="14" font-weight="800" fill="#0B1426">E</text>
+
+      <!-- Surplus labels -->
+      <text x="115" y="145" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">Consumer</text>
+      <text x="115" y="159" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">surplus</text>
+      <text x="115" y="260" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Producer</text>
+      <text x="115" y="274" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">surplus</text>
+
+      <!-- Axis equilibrium labels -->
+      <text x="36" y="214" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
+      <text x="222" y="388" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
+    </svg>
+  `,
+
   equilibriumBasic: `
     <svg viewBox="0 0 460 320" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="460" height="320" fill="#fff" rx="6"/>
@@ -1407,6 +1453,173 @@ window.ECONOS_ICONS = {
       <!-- Pe and Qe axis labels -->
       <text x="36" y="167" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
       <text x="232" y="288" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
+    </svg>
+  `,
+
+  simultaneousShiftsInteractive: `
+    <svg class="sim-shifts-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="ss-clip">
+          <rect x="60" y="43" width="508" height="362"/>
+        </clipPath>
+      </defs>
+
+      <rect width="900" height="440" fill="#FFFFFF" rx="12"/>
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="32" y="48" font-size="14" font-weight="700" fill="#334155">Price</text>
+        <text x="510" y="424" font-size="14" font-weight="700" fill="#334155">Quantity</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ── STATE 1: Both shift right (D↑ S↑) → Q rises certain, P ambiguous ── -->
+      <g class="layer-both-up">
+        <circle cx="74" cy="32" r="7" fill="#10B981"/>
+        <text x="90" y="37" font-size="13" font-weight="700" fill="#334155">Demand and supply both increase → Q rises, P ambiguous</text>
+        <g clip-path="url(#ss-clip)">
+          <line x1="100" y1="90"  x2="490" y2="370" stroke="#93C5FD" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="180" y1="90"  x2="560" y2="363" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="100" y1="370" x2="490" y2="90"  stroke="#FCD34D" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="180" y1="370" x2="560" y2="97"  stroke="#D97706" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="376" font-size="14" font-weight="700" fill="#93C5FD">D₁</text>
+        <text x="565" y="367" font-size="14" font-weight="800" fill="#2563EB">D₂</text>
+        <text x="498" y="92"  font-size="14" font-weight="700" fill="#FCD34D">S₁</text>
+        <text x="565" y="95"  font-size="14" font-weight="800" fill="#D97706">S₂</text>
+
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="4.5" fill="#94A3B8"/>
+        <text x="300" y="222" font-size="12" font-weight="600" fill="#94A3B8">E₁</text>
+        <text x="46" y="234" font-size="12" fill="#64748B" text-anchor="end">P₁</text>
+        <text x="295" y="418" font-size="12" fill="#94A3B8" text-anchor="middle">Q₁</text>
+
+        <line x1="375" y1="230" x2="375" y2="400" stroke="#059669" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <circle cx="375" cy="230" r="6.5" fill="#059669"/>
+        <text x="383" y="222" font-size="13" font-weight="800" fill="#059669">E₂</text>
+        <text x="375" y="418" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">Q₂</text>
+
+        <text x="620" y="78"  font-size="10" font-weight="800" fill="#10B981" letter-spacing="2">D AND S BOTH RISE</text>
+        <text x="620" y="106" font-size="13" fill="#334155">D shifts right · S shifts right.</text>
+        <text x="620" y="148" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">PREDICTABLE</text>
+        <text x="620" y="173" font-size="14" font-weight="800" fill="#059669">Quantity   RISES ↑</text>
+        <text x="620" y="218" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">AMBIGUOUS</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Price depends on which</text>
+        <text x="620" y="262" font-size="13" fill="#334155">shift is larger.</text>
+      </g>
+
+      <!-- ── STATE 2: D↑ S↓ → P rises certain, Q ambiguous ── -->
+      <g class="layer-d-up-s-down">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="13" font-weight="700" fill="#334155">Demand rises, supply falls → P rises, Q ambiguous</text>
+        <g clip-path="url(#ss-clip)">
+          <line x1="100" y1="90"  x2="490" y2="370" stroke="#93C5FD" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="180" y1="90"  x2="560" y2="363" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="100" y1="370" x2="490" y2="90"  stroke="#FCD34D" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="20"  y1="370" x2="410" y2="90"  stroke="#D97706" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="376" font-size="14" font-weight="700" fill="#93C5FD">D₁</text>
+        <text x="565" y="367" font-size="14" font-weight="800" fill="#2563EB">D₂</text>
+        <text x="498" y="92"  font-size="14" font-weight="700" fill="#FCD34D">S₁</text>
+        <text x="415" y="88"  font-size="14" font-weight="800" fill="#D97706">S₂</text>
+
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="4.5" fill="#94A3B8"/>
+        <text x="302" y="248" font-size="12" font-weight="600" fill="#94A3B8">E₁</text>
+        <text x="46" y="234" font-size="12" fill="#94A3B8" text-anchor="end">P₁</text>
+        <text x="295" y="418" font-size="12" fill="#64748B" text-anchor="middle">Q₁</text>
+
+        <line x1="60" y1="173" x2="295" y2="173" stroke="#059669" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="173" r="6.5" fill="#059669"/>
+        <text x="302" y="167" font-size="13" font-weight="800" fill="#059669">E₂</text>
+        <text x="46" y="177" font-size="13" font-weight="800" fill="#059669" text-anchor="end">P₂</text>
+
+        <text x="620" y="78"  font-size="10" font-weight="800" fill="#2563EB" letter-spacing="2">D RIGHT · S LEFT</text>
+        <text x="620" y="106" font-size="13" fill="#334155">D shifts right (more buyers).</text>
+        <text x="620" y="124" font-size="13" fill="#334155">S shifts left (less production).</text>
+        <text x="620" y="166" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">PREDICTABLE</text>
+        <text x="620" y="191" font-size="14" font-weight="800" fill="#059669">Price   RISES ↑</text>
+        <text x="620" y="234" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">AMBIGUOUS</text>
+        <text x="620" y="260" font-size="13" fill="#334155">Quantity could go either way.</text>
+      </g>
+
+      <!-- ── STATE 3: D↓ S↑ → P falls certain, Q ambiguous ── -->
+      <g class="layer-d-down-s-up">
+        <circle cx="74" cy="32" r="7" fill="#2563EB"/>
+        <text x="90" y="37" font-size="13" font-weight="700" fill="#334155">Demand falls, supply rises → P falls, Q ambiguous</text>
+        <g clip-path="url(#ss-clip)">
+          <line x1="100" y1="90"  x2="490" y2="370" stroke="#93C5FD" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="20"  y1="90"  x2="410" y2="370" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="100" y1="370" x2="490" y2="90"  stroke="#FCD34D" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="180" y1="370" x2="560" y2="97"  stroke="#D97706" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="376" font-size="14" font-weight="700" fill="#93C5FD">D₁</text>
+        <text x="415" y="374" font-size="14" font-weight="800" fill="#2563EB">D₂</text>
+        <text x="498" y="92"  font-size="14" font-weight="700" fill="#FCD34D">S₁</text>
+        <text x="565" y="95"  font-size="14" font-weight="800" fill="#D97706">S₂</text>
+
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="4.5" fill="#94A3B8"/>
+        <text x="302" y="222" font-size="12" font-weight="600" fill="#94A3B8">E₁</text>
+        <text x="46" y="234" font-size="12" fill="#94A3B8" text-anchor="end">P₁</text>
+        <text x="295" y="418" font-size="12" fill="#64748B" text-anchor="middle">Q₁</text>
+
+        <line x1="60" y1="287" x2="295" y2="287" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="287" r="6.5" fill="#DC2626"/>
+        <text x="302" y="303" font-size="13" font-weight="800" fill="#DC2626">E₂</text>
+        <text x="46" y="291" font-size="13" font-weight="800" fill="#DC2626" text-anchor="end">P₂</text>
+
+        <text x="620" y="78"  font-size="10" font-weight="800" fill="#2563EB" letter-spacing="2">D LEFT · S RIGHT</text>
+        <text x="620" y="106" font-size="13" fill="#334155">D shifts left (fewer buyers).</text>
+        <text x="620" y="124" font-size="13" fill="#334155">S shifts right (more production).</text>
+        <text x="620" y="166" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">PREDICTABLE</text>
+        <text x="620" y="191" font-size="14" font-weight="800" fill="#DC2626">Price   FALLS ↓</text>
+        <text x="620" y="234" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">AMBIGUOUS</text>
+        <text x="620" y="260" font-size="13" fill="#334155">Quantity could go either way.</text>
+      </g>
+
+      <!-- ── STATE 4: Both shift left (D↓ S↓) → Q falls certain, P ambiguous ── -->
+      <g class="layer-both-down">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="13" font-weight="700" fill="#334155">Demand and supply both decrease → Q falls, P ambiguous</text>
+        <g clip-path="url(#ss-clip)">
+          <line x1="100" y1="90"  x2="490" y2="370" stroke="#93C5FD" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="20"  y1="90"  x2="410" y2="370" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="100" y1="370" x2="490" y2="90"  stroke="#FCD34D" stroke-width="2.5" stroke-dasharray="8 5"/>
+          <line x1="20"  y1="370" x2="410" y2="90"  stroke="#D97706" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="376" font-size="14" font-weight="700" fill="#93C5FD">D₁</text>
+        <text x="415" y="374" font-size="14" font-weight="800" fill="#2563EB">D₂</text>
+        <text x="498" y="92"  font-size="14" font-weight="700" fill="#FCD34D">S₁</text>
+        <text x="415" y="88"  font-size="14" font-weight="800" fill="#D97706">S₂</text>
+
+        <line x1="60" y1="230" x2="295" y2="230" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <line x1="295" y1="230" x2="295" y2="400" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <circle cx="295" cy="230" r="4.5" fill="#94A3B8"/>
+        <text x="302" y="222" font-size="12" font-weight="600" fill="#94A3B8">E₁</text>
+        <text x="46" y="234" font-size="12" fill="#64748B" text-anchor="end">P₁</text>
+        <text x="295" y="418" font-size="12" fill="#94A3B8" text-anchor="middle">Q₁</text>
+
+        <line x1="215" y1="230" x2="215" y2="400" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <circle cx="215" cy="230" r="6.5" fill="#DC2626"/>
+        <text x="195" y="222" font-size="13" font-weight="800" fill="#DC2626">E₂</text>
+        <text x="215" y="418" font-size="13" font-weight="800" fill="#DC2626" text-anchor="middle">Q₂</text>
+
+        <text x="620" y="78"  font-size="10" font-weight="800" fill="#DC2626" letter-spacing="2">D AND S BOTH FALL</text>
+        <text x="620" y="106" font-size="13" fill="#334155">D shifts left · S shifts left.</text>
+        <text x="620" y="148" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">PREDICTABLE</text>
+        <text x="620" y="173" font-size="14" font-weight="800" fill="#DC2626">Quantity   FALLS ↓</text>
+        <text x="620" y="218" font-size="10" font-weight="800" fill="#64748B" letter-spacing="2">AMBIGUOUS</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Price depends on which</text>
+        <text x="620" y="262" font-size="13" fill="#334155">shift is larger.</text>
+      </g>
     </svg>
   `,
 

@@ -5,7 +5,6 @@
     topicId:  'perfect_competition_main',
     title:    'Perfect Competition',
     subtitle: 'Theme 3.7 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the five assumptions, price-taking behaviour, short-run and long-run equilibrium, the long-run adjustment mechanism, efficiency properties, dynamic efficiency limitations, and the realism of the model. Includes diagram interpretation, chain reasoning, and extended evaluation formats.',

@@ -5,7 +5,6 @@
     topicId:  'demand_main',
     title:    'Demand',
     subtitle: 'Theme 1.5 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the law of demand, movement along vs shift of the demand curve, non-price determinants, consumer surplus, derived demand, and real-market applications. Mixed formats &#8212; sort, paragraph completion, data table, chain &#8212; designed for the analysis marks Edexcel rewards.',

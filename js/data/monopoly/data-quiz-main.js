@@ -10,7 +10,6 @@
     topicId:  'monopoly_main',
     title:    'Monopoly',
     subtitle: 'Theme 3.8 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering monopoly power, the profit-maximisation diagram, deadweight welfare loss, natural monopoly, and UK competition policy. Mixed formats designed to build the analytical and evaluative skills examiners reward at A-level.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'revenue',
   topicNum: '3.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Revenue',
   estTime: '5-7 minutes',
   goal: 'Lock in total, average, and marginal revenue concepts, and understand how revenue behaviour differs between price-takers and price-makers.',

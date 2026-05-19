@@ -12,7 +12,6 @@
     topicId:  'trading_blocs_main',
     title:    'Trading Blocs &amp; WTO',
     subtitle: 'Theme 4.3 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the spectrum of economic integration, Viner\'s trade creation and trade diversion, the WTO\'s principles and limitations, and the debate between regional and multilateral liberalisation. Includes chain reasoning, calculation, and diagnostic pair questions.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'business_growth',
   topicNum: '1.1-1.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Business Growth',
   estTime: '7-9 minutes',
   goal: 'Lock in why firms grow, internal vs external growth, types of integration, and the conditions under which growth creates or destroys value.',

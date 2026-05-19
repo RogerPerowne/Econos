@@ -11,7 +11,6 @@
     topicId:  'trade_spec_main',
     title:    'Trade &amp; Specialisation',
     subtitle: 'Theme 4.2 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering absolute and comparative advantage, opportunity cost calculations, gains from trade, terms of trade, and the limitations of the free-trade model. Mixed formats including calculation, chain reasoning, and diagnostic pair questions.',

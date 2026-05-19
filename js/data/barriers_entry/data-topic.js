@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'barriers_entry',
   topicNum: '3.9',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Barriers to Entry',
   estTime: '9-11 minutes',
   goal: 'Lock in the types of entry barriers, how they sustain supernormal profit, and their implications for competition policy.',

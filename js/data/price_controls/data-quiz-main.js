@@ -5,7 +5,6 @@
     topicId:  'price_controls_main',
     title:    'Price Controls',
     subtitle: 'Theme 1.19 \xb7 Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering price ceilings, price floors, shortages and surpluses, unintended consequences (black markets, quality deterioration), real-world UK cases (energy price cap, minimum wage, rent controls), and evaluation against market-based alternatives.',

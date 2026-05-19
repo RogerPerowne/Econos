@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'neg_externalities',
   topicNum: '3.2.1',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Negative Externalities',
   estTime: '9-11 minutes',
   goal: 'Lock in the externality framework — MSC vs MPC, deadweight welfare loss, and how to draw and evaluate the negative externality diagram.',

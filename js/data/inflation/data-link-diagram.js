@@ -5,7 +5,6 @@
 
 window.ECONOS_LINK_DIAGRAM = {
   topic:        'Causes of Inflation & Deflation',
-  sessionLabel: 'Session 2 of 3: Link',
   backUrl:      TopicLoader.buildUrl('link_intro.html'),
   nextUrl:      TopicLoader.buildUrl('link_depends.html'),
 

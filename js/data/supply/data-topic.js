@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'supply',
   topicNum: '2.4',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Supply',
   estTime: '7-9 minutes',
   goal: 'Lock in the law of supply, supply curve analysis, producer surplus, and all the non-price determinants that shift the supply curve.',

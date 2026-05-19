@@ -11,7 +11,6 @@
     topicId:  'price_discrimination_main',
     title:    'Price Discrimination',
     subtitle: 'Theme 3.11 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions on the three conditions for price discrimination, the three degrees (perfect, quantity-based, group-based), welfare effects, and how digital technology is expanding discriminatory pricing. Covers rail pricing, pharmaceutical access, and algorithmic pricing.',

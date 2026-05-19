@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'pos_externalities',
   topicNum: '3.2.2',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Positive Externalities',
   estTime: '9-11 minutes',
   goal: 'Lock in the positive externality diagram, why markets underprovide goods with external benefits, and how subsidies and regulation correct this.',

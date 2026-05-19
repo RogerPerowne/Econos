@@ -5,7 +5,6 @@
     topicId:  'govt_intervention_subsidies_main',
     title:    'Government Intervention: Subsidies',
     subtitle: 'Theme 1.18 \xb7 Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering how subsidies shift supply, the subsidy diagram, welfare effects, incidence, real-world UK examples (EVs, renewables, CAP), and evaluation of subsidies versus alternative policies. Formats test diagram analysis, calculation, and evaluative depth.',

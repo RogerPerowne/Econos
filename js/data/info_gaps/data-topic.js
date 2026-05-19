@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'info_gaps',
   topicNum: '3.4',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Information Gaps',
   estTime: '9-11 minutes',
   goal: 'Lock in asymmetric information, adverse selection, moral hazard, and how information failures cause market outcomes to diverge from optimal.',

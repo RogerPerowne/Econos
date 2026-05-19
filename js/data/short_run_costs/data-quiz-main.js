@@ -5,7 +5,6 @@
     topicId:  'short_run_costs_main',
     title:    'Short-Run Costs',
     subtitle: 'Theme 3.3 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering fixed and variable costs, total and marginal cost relationships, the law of diminishing marginal returns, the U-shaped average cost curve, and the link between MC and firm supply. Includes calculation, diagram interpretation, and extended evaluation questions.',

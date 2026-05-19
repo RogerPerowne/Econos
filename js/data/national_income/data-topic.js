@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'national_income',
   topicNum: '4.1-4.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'National Income',
   estTime: '8-10 minutes',
   goal: 'Lock in the circular flow of income, equilibrium national income, and the caveats that make national income data meaningful.',

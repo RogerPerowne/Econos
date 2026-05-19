@@ -7,7 +7,6 @@ window.ECONOS_TOPIC = {
   id: 'inflation_causes',
   topicNum: '1.2.2',
   theme: 'Theme 2 · The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Causes of Inflation & Deflation',
   estTime: '8-10 minutes',
   goal: 'Lock in the gems that lift your answers',

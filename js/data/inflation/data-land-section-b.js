@@ -4,7 +4,6 @@
 
 window.ECONOS_LAND_SECTION_B = {
   topic:        'Causes of Inflation & Deflation',
-  sessionLabel: 'Session 3 of 3: Land',
   sectionLabel: 'Section B — Extended response',
   backUrl:      TopicLoader.buildUrl('land_intro.html'),
 

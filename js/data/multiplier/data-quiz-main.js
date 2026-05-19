@@ -11,7 +11,6 @@
     topicId:  'multiplier_main',
     title:    'National Income &amp; The Multiplier',
     subtitle: 'Theme 2.4 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the circular flow of income, the paradox of thrift, equilibrium national income, the multiplier formula and its leakages, factors affecting the multiplier, the accelerator, and the caveats for using national income as a welfare measure. Mixed formats develop the quantitative and applied analytical skills that Paper 2 consistently tests.',

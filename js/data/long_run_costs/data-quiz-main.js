@@ -5,7 +5,6 @@
     topicId:  'long_run_costs_main',
     title:    'Long-Run Costs &amp; Economies of Scale',
     subtitle: 'Theme 3.4 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the LRAC envelope curve, internal and external economies of scale, minimum efficient scale, diseconomies of scale, natural monopoly, and RPI-X regulation. Mixed formats including classification, data analysis, and evaluative essay diagnosis.',

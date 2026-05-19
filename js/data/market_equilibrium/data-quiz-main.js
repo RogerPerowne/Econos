@@ -5,7 +5,6 @@
     topicId:  'market_equilibrium_main',
     title:    'Market Equilibrium',
     subtitle: 'Theme 1.7 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering market clearing, excess demand and supply, the price mechanism restoring equilibrium, simultaneous supply and demand shifts, allocative efficiency of equilibrium, price controls, and real-market applications. Mixed formats &#8212; sort, calculation, diagram interp, diagnostic pair, data table &#8212; designed for the analysis marks Edexcel rewards.',

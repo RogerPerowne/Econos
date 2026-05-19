@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'consumer_producer_surplus',
   topicNum: '2.8',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Consumer & Producer Surplus',
   estTime: '8-10 minutes',
   goal: 'Lock in consumer surplus, producer surplus, and total welfare — and understand how they change when markets are interfered with through taxes, subsidies, or price controls.',

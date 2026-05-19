@@ -11,7 +11,6 @@
     topicId:  'collusion_cartels_main',
     title:    'Collusion and Cartels',
     subtitle: 'Theme 3.14 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering explicit and tacit collusion, the prisoner\'s dilemma and cartel instability, OPEC as a real-world case study, competition law tools including leniency programmes, and evaluation of when cartels are most harmful. Mixed formats designed for the analysis and evaluation marks Edexcel examiners reward.',

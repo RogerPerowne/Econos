@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'environmental_econ',
   topicNum: '1.16',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Environmental Economics',
   estTime: '9-11 minutes',
   goal: 'Lock in the economics of environmental degradation, carbon markets, the sustainability debate, and the policy toolkit for environmental protection.',

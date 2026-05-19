@@ -5,7 +5,6 @@
     topicId:  'efficiency_main',
     title:    'Types of Efficiency',
     subtitle: 'Theme 3.6 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering productive, allocative, dynamic, and X-efficiency &#8212; their conditions, how different market structures perform against each criterion, the static&#8211;dynamic trade-off, and social efficiency. Includes classification, diagnosis, and evaluative question formats.',

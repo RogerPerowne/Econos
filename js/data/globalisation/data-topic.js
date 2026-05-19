@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'globalisation',
   topicNum: '1.1',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Globalisation',
   estTime: '9-11 minutes',
   goal: 'Lock in the causes, benefits, costs and the de-globalisation debate',

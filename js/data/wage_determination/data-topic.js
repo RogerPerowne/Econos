@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'wage_determination',
   topicNum: '5.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Wage Determination',
   estTime: '9-11 minutes',
   goal: 'Lock in how wages are determined in competitive and imperfect labour markets — equilibrium analysis, wage differentials, monopsony power, and evaluation of labour market outcomes.',

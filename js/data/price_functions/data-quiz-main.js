@@ -5,7 +5,6 @@
     topicId:  'price_functions_main',
     title:    'Functions of the Price Mechanism',
     subtitle: 'Theme 1.11 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the signalling, incentive, and rationing functions of prices, Hayek\'s dispersed knowledge argument, the entrepreneur\'s role, transmission of price signals through supply chains, and how market failures break down each price function. Mixed formats targeted at analysis and evaluation marks.',

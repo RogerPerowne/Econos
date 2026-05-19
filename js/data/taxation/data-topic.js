@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'taxation',
   topicNum: '5.2',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Taxation',
   estTime: '9-11 minutes',
   goal: 'Understand the structure of the UK tax system, the distinction between direct and indirect taxes, progressivity, the Laffer curve, and the economic effects of taxation.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'labour_supply_nmw',
   topicNum: '5.2',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Supply of Labour',
   estTime: '10-12 minutes',
   goal: 'Lock in the individual and market labour supply curve, the role of trade unions in wage bargaining, and the economics of the National Minimum Wage under competitive and monopsonistic conditions.',

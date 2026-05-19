@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'price_discrimination',
   topicNum: '3.11',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Discrimination',
   estTime: '9-11 minutes',
   goal: 'Lock in the three degrees of price discrimination, the conditions required, the welfare effects, and how to evaluate whether it is good or bad for consumers.',

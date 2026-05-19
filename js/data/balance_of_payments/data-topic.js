@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'balance_of_payments',
   topicNum: '1.7',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Balance of Payments',
   estTime: '7-9 minutes',
   goal: 'Understand the structure of the balance of payments, the meaning of current account deficits and surpluses, and the policies available to correct imbalances.',

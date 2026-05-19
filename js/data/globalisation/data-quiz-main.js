@@ -10,7 +10,6 @@
     topicId:  'globalisation_main',
     title:    'Globalisation',
     subtitle: 'Theme 4.1 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the causes and characteristics of globalisation, its benefits and costs for developed and developing economies, multinational corporations, and the de-globalisation trend. Mixed formats targeting the analysis and evaluation marks that separate A from A*.',

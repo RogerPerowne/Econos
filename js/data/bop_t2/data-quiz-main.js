@@ -11,7 +11,6 @@
     topicId:  'bop_t2_main',
     title:    'Balance of Payments',
     subtitle: 'Theme 2.1.4 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the three BoP accounts, UK current account deficit causes, consequences and financing, the Marshall-Lerner condition, the J-curve effect, and expenditure-switching versus expenditure-reducing correction policies. Designed to develop the applied analytical and evaluation skills Edexcel Paper 2 requires.',

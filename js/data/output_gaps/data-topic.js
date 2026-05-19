@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'output_gaps',
   topicNum: '5.2',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Output Gaps',
   estTime: '7-9 minutes',
   goal: 'Understand positive and negative output gaps, their causes, how they are measured, and their policy implications.',

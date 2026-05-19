@@ -11,7 +11,6 @@
     topicId:  'barriers_entry_main',
     title:    'Barriers to Entry',
     subtitle: 'Theme 3.9 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions on structural, strategic, and legal barriers to entry &#8212; from sunk costs and network effects to predatory pricing and patents. Covers why barriers sustain supernormal profit and how competition policy can address them.',

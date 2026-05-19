@@ -11,7 +11,6 @@
     topicId:  'monetary_main',
     title:    'Monetary Policy',
     subtitle: 'Theme 2.6.2 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the five monetary transmission channels, the Bank of England\'s mandate and independence, conventional versus unconventional (QE) policy, four circumstances where monetary policy fails, central bank credibility and the 2022 mini-budget, distributional effects of rate changes, and fiscal-monetary interaction. Mixed formats test both analytical precision and applied evaluative reasoning.',

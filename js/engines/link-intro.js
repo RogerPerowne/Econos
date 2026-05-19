@@ -40,7 +40,7 @@
         +     '<div class="card intro-card">'
         +       '<div class="row row--top">'
         +         '<div class="intro-card__text">'
-        +           '<div class="card__step-label">' + T.sessionLabel + '</div>'
+        +           '<div class="card__step-label">' + (T.sessionLabel || TopicLoader.sessionLabel('link')) + '</div>'
         +           '<h1 class="card__title card__title--lg">' + T.topic + '</h1>'
         +           '<p class="card__lede">' + T.intro.summary + '</p>'
         +         '</div>'

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'economic_systems',
   topicNum: '1.6',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Economic Systems',
   estTime: '7-9 minutes',
   goal: 'Lock in the free market, command, and mixed economy models — their mechanisms, advantages, and failures.',

@@ -5,7 +5,6 @@
     topicId:  'profits_shutdown_main',
     title:    'Revenue, Profit &amp; Shutdown',
     subtitle: 'Theme 3.5 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering TR, AR, and MR relationships, normal and supernormal profit, economic loss, the shutdown rule, contribution analysis, and profit behaviour across market structures. Includes calculation, diagram reading, and extended evaluation formats.',

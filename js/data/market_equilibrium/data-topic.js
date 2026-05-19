@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'market_equilibrium',
   topicNum: '2.6',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Determination',
   estTime: '7-9 minutes',
   goal: 'Lock in equilibrium, disequilibrium, the price mechanism in action, and how to analyse supply and demand shifts simultaneously.',

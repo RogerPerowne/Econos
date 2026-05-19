@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'pes',
   topicNum: '2.5',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Elasticity of Supply',
   estTime: '8–10 minutes',
   goal: 'Understand what PES measures, how to calculate it, how to read the coefficient, what determines it, and how it shapes prices, policy, and real markets.',

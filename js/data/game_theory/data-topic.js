@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'game_theory',
   topicNum: '4.4.3',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Game Theory',
   estTime: '9-11 minutes',
   goal: 'Lock in the prisoner\'s dilemma, dominant strategies, Nash equilibrium, repeated games, and how game theory explains oligopoly behaviour and competition policy.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'income_inequality',
   topicNum: '2.2',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Inequality',
   estTime: '11-13 minutes',
   goal: 'Lock in Gini coefficient, Lorenz curve, causes and consequences of inequality, and the redistribution policy toolkit.',

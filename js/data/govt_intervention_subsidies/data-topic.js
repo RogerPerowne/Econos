@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'govt_intervention_subsidies',
   topicNum: '1.18',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Government Intervention: Subsidies',
   estTime: '9-11 minutes',
   goal: 'Lock in how subsidies shift supply, their welfare effects, who benefits, and when they are justified as a market failure correction.',

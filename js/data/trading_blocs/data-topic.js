@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'trading_blocs',
   topicNum: '1.5',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Trading Blocs & WTO',
   estTime: '9-11 minutes',
   goal: 'Lock in the hierarchy of trade agreements, Viner\'s trade creation vs diversion, and the WTO\'s role and limitations.',

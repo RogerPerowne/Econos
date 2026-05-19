@@ -11,7 +11,6 @@
     topicId:  'agg_supply_main',
     title:    'Aggregate Supply',
     subtitle: 'Theme 2.3 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering SRAS and LRAS shapes and shifters, the Classical and Keynesian models, macro equilibrium analysis, stagflation and the policy dilemma, and output gap dynamics. Mixed formats test both conceptual precision and the applied model-switching that A* macro essays require.',

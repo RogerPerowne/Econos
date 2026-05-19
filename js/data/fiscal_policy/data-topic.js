@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'fiscal_policy',
   topicNum: '6.2.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Demand-side Policies: Fiscal',
   estTime: '9-11 minutes',
   goal: 'Lock in tax, spending, deficits, debt, and the crowding-out debate',

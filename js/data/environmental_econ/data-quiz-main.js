@@ -5,7 +5,6 @@
     topicId:  'environmental_econ_main',
     title:    'Environmental Economics',
     subtitle: 'Theme 1.16 \xb7 Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering environmental market failure, carbon taxes, cap-and-trade, sustainability, the Stern Review, and the growth versus environment debate. Mixed formats designed to test both knowledge of mechanisms and evaluative depth on real policy dilemmas.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'demand',
   topicNum: '2.1',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Demand',
   estTime: '7-9 minutes',
   goal: 'Lock in the law of demand, demand curve shifts, consumer surplus, and derived demand — the foundations of all market analysis.',

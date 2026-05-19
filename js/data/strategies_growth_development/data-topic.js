@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'strategies_growth_development',
   topicNum: '3.3',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Strategies Influencing Growth & Development',
   estTime: '9-11 minutes',
   goal: 'Evaluate the main strategies countries can pursue to promote growth and development: market-based, interventionist, aid, debt relief, and trade liberalisation.',

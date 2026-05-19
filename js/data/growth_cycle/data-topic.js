@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'growth_cycle',
   topicNum: '5.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Trade Cycle, Shocks & Economic Growth',
   estTime: '9-11 minutes',
   goal: 'Lock in the trade cycle, output gaps, shocks and the costs and benefits of growth',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'macro_conflicts',
   topicNum: '6.4',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Macro Conflicts & Trade-offs',
   estTime: '9-11 minutes',
   goal: 'Lock in the Phillips curve, NAIRU, stagflation, and the question of whether supply-side policy can resolve macro trade-offs.',

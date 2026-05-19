@@ -5,7 +5,6 @@
     topicId:  'ppf_main',
     title:    'Production Possibility Frontiers',
     subtitle: 'Theme 1.2 &#183; Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering PPF construction, productive efficiency, opportunity cost, the bowed-out shape, shifts of the frontier, the consumer&#8211;capital goods trade-off, and applications to trade and development. Mixed formats designed for the analysis and evaluation marks Edexcel rewards.',

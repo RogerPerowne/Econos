@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'financial_markets',
   topicNum: '4.1',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Role of Financial Markets',
   estTime: '7-9 minutes',
   goal: 'Understand the core functions of financial markets in a modern economy — facilitating saving and borrowing, enabling investment, managing risk, and providing the money supply.',

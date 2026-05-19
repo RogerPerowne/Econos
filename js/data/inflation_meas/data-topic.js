@@ -8,7 +8,6 @@ window.ECONOS_TOPIC = {
   id: 'inflation_meas',
   topicNum: '1.2.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Inflation: Measurement & Costs',
   estTime: '11-13 minutes',
   goal: 'Lock in CPI, RPI, CPIH and who wins and loses from inflation',

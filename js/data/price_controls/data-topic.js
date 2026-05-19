@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'price_controls',
   topicNum: '1.19',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Controls',
   estTime: '9-11 minutes',
   goal: 'Lock in how price ceilings and price floors work, their intended effects and unintended consequences, and how to evaluate them as policy tools.',

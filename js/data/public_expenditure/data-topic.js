@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'public_expenditure',
   topicNum: '5.1',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Public Expenditure',
   estTime: '7-9 minutes',
   goal: 'Understand the composition of public expenditure, how it has evolved over time, and the economic effects of different spending categories.',

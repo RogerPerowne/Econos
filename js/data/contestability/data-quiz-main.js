@@ -12,7 +12,6 @@
     topicId:  'contestability_main',
     title:    'Contestable Markets',
     subtitle: 'Theme 3.17 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the contestability framework, sunk costs as the key variable, hit-and-run entry mechanics, incumbent entry-deterrence strategies, real-world approximations from airlines to pharmaceuticals, and evaluation of the theory\'s policy implications. Designed to sharpen the analysis and evaluation marks Edexcel rewards.',

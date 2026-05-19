@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'factors_growth_development',
   topicNum: '3.2',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Factors Influencing Growth & Development',
   estTime: '9-11 minutes',
   goal: 'Identify the economic, political, social and institutional factors that promote or hinder growth and development.',

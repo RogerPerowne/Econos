@@ -30,7 +30,6 @@
     topicId:  'labour_markets_main',
     title:    'Labour Markets',
     subtitle: 'Theme 3.18 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering derived demand, MRP theory of labour demand, labour market equilibrium, shifts in demand and supply, wage differentials and their causes, monopsony power, and labour market failures including the gig economy. Real UK context throughout, including NHS, NMW, and gender pay data.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'profits_shutdown',
   topicNum: '3.4',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Profits & Losses',
   estTime: '10-12 minutes',
   goal: 'Lock in profit calculation, the shutdown rule, how to read profit/loss rectangles on diagrams, and how cost and demand changes affect the profit equilibrium.',

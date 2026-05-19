@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'financial_market_failure',
   topicNum: '4.2',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Market Failure in the Financial Sector',
   estTime: '9-11 minutes',
   goal: 'Identify and evaluate the main types of market failure in finance — asymmetric information, moral hazard, externalities, market rigging, and speculation.',

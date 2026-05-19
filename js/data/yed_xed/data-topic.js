@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'yed_xed',
   topicNum: '2.3',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Income & Cross-Price Elasticity',
   estTime: '10–12 minutes',
   goal: 'Understand YED and XED — their formulas, signs, magnitudes, and how they classify goods, reveal market relationships, and drive business and policy decisions.',

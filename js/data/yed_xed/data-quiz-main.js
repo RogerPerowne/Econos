@@ -5,7 +5,6 @@
     topicId:  'yed_xed_main',
     title:    'YED &amp; XED',
     subtitle: 'Theme 1.10 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering income elasticity of demand (YED), cross-price elasticity (XED), classifying normal, inferior and luxury goods, business strategy applications, and the macro implications of Engel\'s Law. Mixed formats &#8212; calculation, sorting, diagnostic pair, data table, paragraph completion &#8212; aimed at the higher analysis and evaluation marks.',

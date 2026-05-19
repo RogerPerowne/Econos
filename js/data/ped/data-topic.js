@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'ped',
   topicNum: '2.2',
   theme: 'Theme 1 \xb7 Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Price Elasticity of Demand',
   estTime: '8–10 minutes',
   goal: 'Understand what PED measures, how to calculate it, how to read the coefficient, what determines it, and how firms and governments use it in practice.',

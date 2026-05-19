@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'unstable_markets',
   topicNum: '1.22',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Unstable Commodity Markets',
   estTime: '9-11 minutes',
   goal: 'Lock in why commodity markets are volatile, the buffer stock model, and the evaluation of price stabilisation schemes.',

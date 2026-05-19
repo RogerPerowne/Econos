@@ -5,7 +5,6 @@
     topicId:  'behavioural_econ_main',
     title:    'Behavioural Economics',
     subtitle: 'Theme 1.21 \xb7 Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering bounded rationality, cognitive biases, prospect theory, nudge theory, and UK policy applications (pension auto-enrolment, organ donation, HMRC compliance). Mixed formats test understanding of theory and evaluation of behavioural vs traditional policy tools.',

@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'central_banks',
   topicNum: '4.3',
   theme: 'Theme 4 \xb7 A Global Perspective',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Role of Central Banks',
   estTime: '7-9 minutes',
   goal: 'Understand the core functions of central banks — monetary policy, financial stability, lender of last resort, and bank regulation.',

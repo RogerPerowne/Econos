@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'growth_impact',
   topicNum: '5.4',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'The Impact of Economic Growth',
   estTime: '7-9 minutes',
   goal: 'Evaluate the benefits and costs of economic growth, including distributional effects, environmental impact, and the distinction between short-run and long-run growth.',

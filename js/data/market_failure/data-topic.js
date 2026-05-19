@@ -2,7 +2,6 @@ window.ECONOS_TOPIC = {
   id: 'market_failure',
   topicNum: '3.1',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  sessionLabel: 'Session 1 of 3: Learn',
   title: 'Market Failure',
   estTime: '8-10 minutes',
   goal: 'Understand what market failure is, why free markets fail to achieve allocative efficiency, and how the four main types of market failure connect to the government interventions that follow.',

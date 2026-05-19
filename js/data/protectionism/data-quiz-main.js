@@ -11,7 +11,6 @@
     topicId:  'protectionism_main',
     title:    'Protectionism',
     subtitle: 'Theme 4.4 · Edexcel A-Level',
-    sessionLabel: 'Session 1 of 3: Learn',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the tools of protectionism, welfare analysis of tariffs and quotas, the infant-industry and strategic trade arguments, the costs of protection, and the US-China trade war. Includes calculation, diagram interpretation, and chain questions.',

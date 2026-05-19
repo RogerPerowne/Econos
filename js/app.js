@@ -361,6 +361,29 @@
       content += `</div>`;
     }
 
+    // Examples — 2-col responsive grid of numbered tiles, each with a large illustration
+    // icon on the left and a body paragraph on the right. Used for "real markets" style cards.
+    //   Pattern: examples: [{ tone, icon, title, body, startNumber? }]
+    if (c.examples && c.examples.length) {
+      const exTones = ['green', 'amber', 'blue', 'purple', 'rose', 'slate'];
+      const startNum = c.examplesStartNumber || 1;
+      const tiles = c.examples.map((p, i) => {
+        const t = PATTERN_TONES[p.tone || exTones[i % exTones.length]];
+        return `
+          <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 20px 18px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${startNum + i}</div>
+              <div style="font-size:17px;font-weight:800;color:${t.label};line-height:1.3;">${p.title}</div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="flex-shrink:0;width:88px;height:88px;border-radius:14px;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:48px;line-height:1;">${p.icon || ''}</div>
+              <div style="flex:1;min-width:0;font-size:14px;color:#0B1426;line-height:1.65;">${p.body}</div>
+            </div>
+          </div>`;
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:18px;">${tiles}</div>`;
+    }
+
     // Body text — styled as a rich explainer
     if (c.body) {
       content += `
@@ -378,30 +401,56 @@
       const renderPairedSide = (side, fallbackTone) => {
         const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
         const useRows = Array.isArray(side.rows) && side.rows.length > 0;
-        const inner = side.text
-          ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
-          : (useRows
-            ? side.rows.map((r, idx) => `
-              <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
-                <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
-                <div style="flex:1;min-width:0;">
-                  <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
-                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
-                </div>
-              </div>`).join('')
-            : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-              ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-            </ul>`);
+        const useChecks = Array.isArray(side.checks) && side.checks.length > 0;
+        const useScenarios = Array.isArray(side.scenarios) && side.scenarios.length > 0;
+        const inner = useScenarios
+          ? `<div style="display:grid;grid-template-columns:repeat(${side.scenarios.length},1fr);gap:14px;">${side.scenarios.map(s => {
+              const arrow = s.arrow === 'left'
+                ? `<div style="font-size:22px;color:#DC2626;font-weight:800;line-height:1;">←</div>`
+                : `<div style="font-size:22px;color:#059669;font-weight:800;line-height:1;">→</div>`;
+              return `
+                <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;">
+                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:36px;line-height:1;">${s.icon || ''}${arrow}</div>
+                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${s.text || ''}</div>
+                </div>`;
+            }).join('')}</div>`
+          : useChecks
+            ? `<ul style="list-style:none;margin:0;padding:0;">${side.checks.map(ch => `
+                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:#0B1426;line-height:1.6;">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">✓</span>
+                  <span><strong style="color:${tone.label};">${ch.term}</strong> — ${ch.body}</span>
+                </li>`).join('')}</ul>`
+            : side.text
+              ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+              : (useRows
+                ? side.rows.map((r, idx) => `
+                  <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
+                      <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
+                    </div>
+                  </div>`).join('')
+                : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
+                  </ul>`);
+        const numberHtml = (side.number != null)
+          ? `<div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${tone.accent};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${side.number}</div>`
+          : '';
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
               ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
               : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
           : '';
+        const plain = side.style === 'plain-white';
+        const bg = plain ? '#fff' : tone.bg;
+        const border = plain ? '#E7E7EA' : tone.border;
+        const headerAlign = side.centeredLabel ? 'center' : 'flex-start';
         return `
-          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              ${iconHtml}
-              <div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>
+          <div style="border-radius:14px;background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;">
+            <div style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
+              ${numberHtml}${iconHtml}
+              <div style="color:${tone.label};font-weight:800;font-size:16px;letter-spacing:0.01em;">${side.label}</div>
             </div>
             ${inner}
           </div>`;
@@ -2835,6 +2884,7 @@
       c.table !== undefined ||
       c.conceptBoxes !== undefined ||
       c.diagramPanel !== undefined ||
+      c.examples !== undefined ||
       (c.left !== undefined && c.right !== undefined) ||
       (c.causes && Array.isArray(c.causes) && c.causes.length > 0 &&
        typeof c.causes[0] === 'object' && 'head' in c.causes[0])

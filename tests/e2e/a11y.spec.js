@@ -23,20 +23,18 @@ async function login(page) {
 
 async function assertAxeClean(page, label) {
   const results = await new AxeBuilder({ page })
-    /* WCAG 2.1 A and AA — colour-contrast handled separately because
-       it produces noise during font load. We re-add it once self-hosted
-       fonts ship (#14). */
     .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
     .disableRules([
-      /* Font-load flicker causes false positives; re-add when
-         self-hosted fonts ship (#14). */
-      'color-contrast',
       /* "All page content should be contained by landmarks" — fails
-         on skip-link + mobile-nav at top of body. The skip-link
-         is a deliberate top-level escape hatch; mobile-nav IS a
-         nav landmark. Best-practice noise, not a real bug. */
+         on skip-link + mobile-nav at top of body. The skip-link is
+         a deliberate top-level escape hatch; mobile-nav IS a nav
+         landmark. Best-practice noise, not a real bug. */
       'region'
     ])
+    /* WCAG 1.4.3 explicitly exempts disabled controls from
+       colour-contrast requirements; axe doesn't know that. */
+    .exclude('.is-disabled')
+    .exclude('[disabled]')
     .analyze();
   if (results.violations.length) {
     console.log(`\nAxe violations on ${label}:`);

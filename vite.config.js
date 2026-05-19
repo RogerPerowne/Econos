@@ -59,6 +59,7 @@ export default defineConfig({
       targets: [
         { src: 'js/**/*',     dest: 'js' },
         { src: 'assets/**/*', dest: 'assets' },
+        { src: 'fonts/**/*',  dest: 'fonts' },
         { src: 'favicon.*',                  dest: '.' },
         { src: 'apple-touch-icon.png',       dest: '.' },
         { src: 'web-app-manifest-*.png',     dest: '.' },

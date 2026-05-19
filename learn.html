@@ -8,10 +8,6 @@
   <title>Learn It · econos</title>
 
   <!-- Fonts: preconnect + non-blocking download -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
   <!-- Icons and favicons -->
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
@@ -22,6 +18,8 @@
   <link rel="manifest" href="site.webmanifest" />
 
   <!-- Stylesheet (canonical — root of project, user-customised) -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Preload the big shared scripts so the network grabs them in parallel

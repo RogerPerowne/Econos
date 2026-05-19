@@ -9224,7 +9224,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .land-rs__dot--c { background: var(--econ-rose); }
 .land-rs__empty {
   font-size: var(--fs-xs);
-  color: var(--econ-gray-400);
+  /* Bumped from gray-400 (#9ca3af) — fails WCAG AA on white. */
+  color: var(--econ-gray-600);
   font-style: italic;
   line-height: 1.5;
 }

@@ -1,0 +1,33 @@
+/* ============================================================
+   ECONOS — self-hosted font subsets
+   ─────────────────────────────────────────────────────────────
+   Inter and Fraunces, latin subset only, served from /fonts/
+   so we don't take a third-party RTT on every cold load.
+
+   Both files are variable so a single WOFF2 covers every weight
+   used across the site (Inter 400..800, Fraunces 400..700 +
+   the SOFT / WONK axes the design tool tuned).
+
+   This file replaces the previous Google Fonts <link> tags in
+   every HTML shell. Once it ships we can also re-enable
+   axe-core's `color-contrast` rule (was disabled to dodge
+   font-load flicker false positives).
+   ============================================================ */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-variable.woff2') format('woff2-variations'),
+       url('fonts/inter-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('fonts/fraunces-variable.woff2') format('woff2-variations'),
+       url('fonts/fraunces-variable.woff2') format('woff2');
+}

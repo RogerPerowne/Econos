@@ -74,6 +74,7 @@ window.ECONOS_TOPIC = {
       },
       diagramPanel: {
         diagramKey: 'cpsDiagram',
+        layout: 'stacked',
         title: 'Build it in this order',
         tone: 'green',
         steps: [

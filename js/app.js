@@ -2603,10 +2603,18 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      <p class="card__lede">${c.lede}</p>
+      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+
+      ${c.tip ? (() => {
+        const tipText = typeof c.tip === 'object' && !Array.isArray(c.tip) ? c.tip.text : (typeof c.tip === 'string' ? c.tip : '');
+        const tipIcon = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.icon) || '💡';
+        const tipTone = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.tone) || 'blue';
+        const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
+        return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${tipText}</div></div>` : '';
+      })() : ''}
 
       <div class="ad-interactive">
-        <div class="ad-interactive__diagram show-base" data-ad-state="base">
+        <div class="ad-interactive__diagram show-${c.steps[0].key}" data-ad-state="${c.steps[0].key}">
           ${diagram}
         </div>
         <div class="ad-interactive__tabs" style="grid-template-columns: repeat(${c.steps.length}, 1fr);">
@@ -2630,8 +2638,25 @@
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
         }).join('');
-        const label = `<div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:#0B1426;margin:24px 0 18px;">📋 <span>Movement vs shift at a glance</span><div style="flex:1;height:1px;background:#E7E7EA;margin-left:6px;"></div></div>`;
+        const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
         return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 28px;">${tiles}</div>`;
+      })() : ''}
+
+      ${c.causes2 && c.causes2.length ? (() => {
+        const items2 = c.causes2;
+        const tiles2 = items2.map((item, i) => {
+          const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }).join('');
+        const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
+        return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 28px;">${tiles2}</div>`;
       })() : ''}
 
       ${c.flow && c.flow.length ? (() => {

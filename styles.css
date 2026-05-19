@@ -908,10 +908,14 @@ img, svg { display: block; max-width: 100%; }
    ============================================================ */
 
 .session-meta {
-  display: flex;
-  gap: var(--sp-7);
+  /* Grid (not flex) so the CTA can wrap to its own row at narrow
+     widths instead of forcing the column wider. The 900px media
+     query below puts it back on a single row when there's room. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-6);
   align-items: center;
-  padding: var(--sp-5) var(--sp-7);
+  padding: var(--sp-5) var(--sp-6);
   background: var(--econ-white);
   border: 1px solid var(--econ-gray-200);
   border-radius: var(--r-xl);
@@ -922,6 +926,18 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: var(--sp-3);
+  min-width: 0;
+}
+.session-meta__cta {
+  grid-column: 1 / -1;
+  margin-left: 0;
+  display: flex;
+}
+.session-meta__cta .btn { width: 100%; justify-content: center; }
+@media (min-width: 900px) {
+  .session-meta { grid-template-columns: 1fr 1fr auto; }
+  .session-meta__cta { grid-column: auto; width: auto; }
+  .session-meta__cta .btn { width: auto; }
 }
 .session-meta__icon {
   width: 36px;
@@ -9221,19 +9237,29 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 /* Session meta bar */
 .land-session-meta {
-  display: flex;
+  /* Mirrors .session-meta layout: grid so the CTA wraps to its own
+     row at narrow widths, single row at >=900px. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-6);
   align-items: center;
-  gap: var(--sp-6);
   background: var(--econ-white);
   border: 1px solid var(--econ-gray-200);
   border-radius: var(--r-xl);
-  padding: var(--sp-4) var(--sp-6);
+  padding: var(--sp-5) var(--sp-6);
   box-shadow: var(--shadow-sm);
 }
 .land-session-meta__item {
   display: flex;
   align-items: center;
   gap: var(--sp-3);
+  min-width: 0;
+}
+.land-session-meta__item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 .land-session-meta__icon {
   width: 36px;
@@ -9246,6 +9272,17 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   justify-content: center;
   flex-shrink: 0;
 }
+/* Palette parity with Learn/Link .session-meta — first icon green
+   (total marks), second purple (est. time). CTA is blue (covered by
+   the consistent primary-action rules). Was POLISH v9. */
+.land-session-meta__item:nth-of-type(1) .land-session-meta__icon {
+  background: var(--econ-green-50);
+  color: var(--econ-green-600);
+}
+.land-session-meta__item:nth-of-type(2) .land-session-meta__icon {
+  background: var(--econ-purple-50);
+  color: var(--econ-purple-600);
+}
 .land-session-meta__label {
   font-size: var(--fs-xs);
   color: var(--econ-gray-500);
@@ -9255,7 +9292,17 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   font-weight: var(--fw-semi);
   color: var(--econ-ink);
 }
-.land-session-meta__cta { margin-left: auto; }
+.land-session-meta__cta {
+  grid-column: 1 / -1;
+  margin-left: 0;
+  display: flex;
+}
+.land-session-meta__cta .btn { width: 100%; justify-content: center; }
+@media (min-width: 900px) {
+  .land-session-meta { grid-template-columns: 1fr 1fr auto; }
+  .land-session-meta__cta { grid-column: auto; width: auto; margin-left: auto; }
+  .land-session-meta__cta .btn { width: auto; }
+}
 
 /* Rail summary panel */
 .land-rs__marks-row {
@@ -11758,28 +11805,6 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 .theme--land .page > .card:first-of-type {
   border-top-color: var(--econ-rose);
 }
-
-/* ── 4. Land It session-meta layout — let it shrink/wrap ── */
-.land-session-meta {
-  flex-wrap: wrap;
-  gap: var(--sp-4) var(--sp-5);
-}
-.land-session-meta__item {
-  min-width: 0;
-  flex: 0 1 auto;
-}
-.land-session-meta__cta {
-  margin-left: auto;
-  flex-shrink: 0;
-}
-/* On narrow content widths, drop the row layout entirely so the column
-   no longer forces 490px min-width on the page grid. */
-@media (max-width: 1100px) {
-  .land-session-meta { flex-direction: column; align-items: stretch; gap: var(--sp-3); }
-  .land-session-meta__cta { margin-left: 0; width: 100%; }
-  .land-session-meta__cta .btn { width: 100%; justify-content: center; }
-}
-
 /* While we're here: make sure the .page grid never overflows.
    The 1fr column gets minmax(0, 1fr) so it can shrink past
    children's intrinsic min-content. This is the actual root cause
@@ -11938,84 +11963,3 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 .link-btn--primary,
 .quiz-btn--primary { cursor: pointer; }
 
-
-
-/* ============================================================
-   ECONOS — POLISH v9 (May 2026)  LAND-IT META PALETTE PARITY
-   ─────────────────────────────────────────────────────────────
-   The Land It "build my session" bar uses a separate class
-   (.land-session-meta) which was painted entirely rose. Make
-   it match Learn/Link visual rhythm:
-
-       icon 1 (Total marks)  → green
-       icon 2 (Est. time)    → purple
-       primary CTA           → blue (already from v7)
-   ============================================================ */
-
-/* Override the all-rose icon treatment */
-.land-session-meta__item:nth-of-type(1) .land-session-meta__icon {
-  background: var(--econ-green-50);
-  color: var(--econ-green-600);
-}
-.land-session-meta__item:nth-of-type(2) .land-session-meta__icon {
-  background: var(--econ-purple-50);
-  color: var(--econ-purple-600);
-}
-
-/* Keep the layout robust at narrow widths — same pattern as the
-   Learn/Link .session-meta polish in v6. */
-.land-session-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-4) var(--sp-6);
-  align-items: center;
-  padding: var(--sp-5) var(--sp-6);
-}
-.land-session-meta__item {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  min-width: 0;
-}
-.land-session-meta__item > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-.land-session-meta__cta {
-  grid-column: 1 / -1;
-  margin-left: 0;
-  display: flex;
-}
-.land-session-meta__cta .btn {
-  width: 100%;
-  justify-content: center;
-}
-@media (min-width: 900px) {
-  .land-session-meta { grid-template-columns: 1fr 1fr auto; }
-  .land-session-meta__cta { grid-column: auto; width: auto; }
-  .land-session-meta__cta .btn { width: auto; }
-}
-
-/* Same robust layout for the Learn/Link .session-meta — already
-   set by v6 but ensure it survives later cascade hits. */
-.session-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-4) var(--sp-6);
-  align-items: center;
-  padding: var(--sp-5) var(--sp-6);
-}
-.session-meta__item { display: flex; align-items: center; gap: var(--sp-3); min-width: 0; }
-.session-meta__cta {
-  grid-column: 1 / -1;
-  margin-left: 0;
-  display: flex;
-}
-.session-meta__cta .btn { width: 100%; justify-content: center; }
-@media (min-width: 900px) {
-  .session-meta { grid-template-columns: 1fr 1fr auto; }
-  .session-meta__cta { grid-column: auto; width: auto; }
-  .session-meta__cta .btn { width: auto; }
-}

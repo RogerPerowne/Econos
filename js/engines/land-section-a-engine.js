@@ -92,54 +92,7 @@
 
     /* ── sidebar ─────────────────────────────────────────── */
 
-    function renderSidebar() {
-      var nav = [
-        { name: 'Home',         icon: I.home,     href: 'index.html', active: false },
-        { name: 'My topics',    icon: I.topics,   href: '#',          active: true  },
-        { name: 'Progress',     icon: I.progress, href: '#',          active: false },
-        { name: 'Exam practice',icon: I.practice, href: '#',          active: false },
-        { name: 'Settings',     icon: I.settings, href: '#',          active: false }
-      ];
-      return '<aside class="sidebar">'
-        + '<div class="sidebar__brand">'
-        +   '<a href="index.html" class="sidebar__logo-link"><img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full"></a>'
-        + '</div>'
-        + '<nav class="sidebar__nav">'
-        +   nav.map(function (n) {
-              return '<a href="' + n.href + '" class="' + (n.active ? 'is-active' : '') + '">' + n.icon + '<span>' + n.name + '</span></a>';
-            }).join('')
-        + '</nav>'
-        + '<div class="sidebar__streak">'
-        +   '<div class="sidebar__streak-row"><span class="sidebar__streak-flame">🔥</span><span class="sidebar__streak-num">1</span></div>'
-        +   '<div class="sidebar__streak-label">Day streak</div>'
-        +   '<div class="sidebar__streak-sub">Keep it going!</div>'
-        + '</div>'
-        + '<div class="sidebar__user">'
-        +   '<div class="sidebar__user-avatar">AB</div>'
-        +   '<div class="sidebar__user-info">'
-        +     '<div class="sidebar__user-name">Alex Bennett</div>'
-        +     '<div class="sidebar__user-role">A-Level Economics</div>'
-        +   '</div>'
-        +   '<div class="sidebar__user-chev">' + I.chevDown + '</div>'
-        + '</div>'
-        + '</aside>';
-    }
-
     /* ── topbar ──────────────────────────────────────────── */
-
-    function renderTopbar() {
-      return '<header class="topbar">'
-        +   '<a href="' + T.backUrl + '" class="topbar__back">' + I.arrowLeft + '</a>'
-        +   '<div class="topbar__crumbs">'
-        +     '<div class="topbar__session-label">' + T.sessionLabel + '</div>'
-        +     '<div class="topbar__topic-title">' + T.topic + '</div>'
-        +   '</div>'
-        +   '<div class="topbar__right">'
-        +     '<div class="topbar__streak"><span class="topbar__streak-icon">🔥</span><span>1 day streak</span></div>'
-        +     '<div class="topbar__avatar"><div class="topbar__avatar-circle">AB</div><span class="topbar__avatar-chev">' + I.chevDown + '</span></div>'
-        +   '</div>'
-        + '</header>';
-    }
 
     /* ── right rail ──────────────────────────────────────── */
 
@@ -539,9 +492,9 @@
     function render() {
       document.getElementById('app-root').innerHTML = ''
         + '<div class="app theme--land">'
-        +   renderSidebar()
+        +   Shell.renderSidebar({ activeNav: 'My topics' })
         +   '<div id="main-content" class="main" tabindex="-1">'
-        +     renderTopbar()
+        +     Shell.renderTopbar({ backUrl: T.backUrl, sessionLabel: T.sessionLabel, topicTitle: T.topic })
         +     '<div class="page">'
         +       renderMain()
         +       '<aside class="right-rail">' + renderRightRail() + '</aside>'

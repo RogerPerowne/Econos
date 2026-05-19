@@ -26,64 +26,126 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'market_equilibrium_1',
-      template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Market equilibrium: the big picture',
-      lede: 'Markets settle where supply meets demand — and the way they get there, and what disturbs them, is the heart of microeconomics.',
-      tip: 'At equilibrium: no unsold stock, no unsatisfied buyers, no tendency for price to change. Above P*: surplus → price falls. Below P*: shortage → price rises.',
-      branches: [
-        { tone: 'green',  label: 'Equilibrium price &amp; quantity', sub: 'The unique P* and Q* where quantity demanded equals quantity supplied — the market clears with no shortage or surplus.' },
-        { tone: 'amber',  label: 'Excess demand &amp; supply',       sub: 'Above P*, surpluses force price down. Below P*, shortages force price up. The self-correcting mechanism that gives the model its power.' },
-        { tone: 'blue',   label: 'Shifts &amp; new equilibria',      sub: 'When D or S moves, P* and Q* move with them. Single and simultaneous shifts produce predictable — or ambiguous — outcomes.' },
-        { tone: 'purple', label: 'Allocative efficiency',            sub: 'At equilibrium, marginal benefit equals marginal cost. Consumer plus producer surplus is maximised — society\'s scarce resources are well used.' },
-        { tone: 'rose',   label: 'When markets fail to clear',       sub: 'Price controls, sticky wages, expectations and bubbles can prevent equilibrium being reached. Disequilibrium is the real world.' }
+      tip: { icon: '💡', tone: 'blue', text: 'When the plans of buyers and sellers match, the market settles at an equilibrium price and quantity.' },
+      diagramPanel: {
+        diagramKey: 'equilibriumBasic',
+        title: 'Market equilibrium',
+        intro: 'At point E:',
+        bullets: [
+          'quantity demanded equals quantity supplied',
+          'there is no pressure for price to rise or fall',
+          'the equilibrium price clears the market'
+        ]
+      },
+      pairLabel: null,
+      left:  { tone: 'blue',  icon: '🛒', iconStyle: 'circle', label: 'Demand', text: 'The demand curve shows how much consumers are willing and able to buy at each price.' },
+      right: { tone: 'amber', icon: '🏭', iconStyle: 'circle', label: 'Supply', text: 'The supply curve shows how much producers are willing and able to sell at each price.' },
+      flowTitle: 'How the market gets there',
+      flowEmoji: '➡️',
+      flow: [
+        { tone: 'blue',  icon: '🔺', title: 'Price too high', sub: 'Surplus appears. Sellers cut price.' },
+        { tone: 'amber', icon: '🔻', title: 'Price too low',  sub: 'Shortage appears. Sellers raise price.' },
+        { tone: 'green', icon: '🎯', title: 'Price adjusts towards equilibrium', sub: 'Market moves back to balance at E.' }
       ],
-      body: '<strong>Market equilibrium</strong> is the price at which quantity demanded equals quantity supplied — the market "clears" with no unsold stock and no unsatisfied buyers. At equilibrium price P* and quantity Q*:<br>• No buyer is unable to find a seller at that price<br>• No seller has unsold stock at that price<br>• There is no tendency for price to change<br><br>Equilibrium is stable: if disturbed by a price above or below P*, forces automatically push price back toward P*. This stability property is what makes the model so powerful.',
+      conclusion: { title: 'Key takeaway', text: 'Equilibrium is the meeting point of demand and supply — not the point that is automatically best for everyone.' },
       keyTerms: [
         { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied — the market clears.' },
-        { term: 'Market clearing', def: 'The state where all goods produced are sold and all buyers willing to pay the market price can purchase.' },
+        { term: 'Market clearing', def: 'All goods produced are sold and all buyers willing to pay the market price can purchase — no shortage, no surplus.' },
         { term: 'Disequilibrium', def: 'Any price where quantity demanded ≠ quantity supplied — creates pressure for price adjustment.' }
       ],
-      examEdge: 'When drawing equilibrium, mark the intersection of D and S clearly. Draw a vertical dashed line from the intersection to the Q-axis (quantity) and a horizontal dashed line to the P-axis (price). Label the equilibrium price P* and quantity Q*. This technique earns diagram marks reliably.'
+      examEdge: 'Always define equilibrium precisely and refer to both price and quantity. When drawing, label the intersection clearly, then drop dashed lines to both axes labelled P* and Q*. Diagram technique earns marks reliably.'
     },
     {
       id: 'market_equilibrium_2',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Excess Demand and Excess Supply',
-      intro: 'When price is below or above equilibrium, the market is in disequilibrium. The price mechanism restores equilibrium.',
+      lede: 'When the market price is above or below equilibrium, shortages or surpluses appear. Price pressure pushes the market back towards equilibrium.',
+      diagramKey: 'disequilibriumInteractive',
       steps: [
-        { label: 'Excess demand (shortage)', text: 'Price is below P*. Quantity demanded > quantity supplied. Unsatisfied buyers compete for scarce supply → bid up the price. Rising price: reduces QD (movement up demand curve) and increases QS (movement up supply curve) → equilibrium restored.' },
-        { label: 'Excess supply (surplus)', text: 'Price is above P*. Quantity supplied > quantity demanded. Sellers with unsold stock reduce price to clear inventory. Falling price: increases QD and decreases QS → equilibrium restored.' },
-        { label: 'Speed of adjustment', text: 'Markets adjust at different speeds. Financial markets clear almost instantly. Housing markets adjust over years (supply is slow to respond). Agricultural markets may not fully adjust within a season.' },
-        { label: 'Diagram technique', text: 'Mark price Px below P*. Draw an arrow on the price axis pointing upward. Show QD exceeds QS at Px. State: "price will rise until Q* is reached."' }
+        {
+          key: 'base',
+          label: 'Market in equilibrium',
+          text: 'At point <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to rise or fall — the market clears at equilibrium price <strong>P<sub>e</sub></strong> and quantity <strong>Q<sub>e</sub></strong>. Now disturb the price above or below P<sub>e</sub> and watch the market self-correct.'
+        },
+        {
+          key: 'shortage',
+          label: 'Excess demand (shortage)',
+          text: 'At price <strong>P₁</strong> (below P<sub>e</sub>), <strong>quantity demanded exceeds quantity supplied</strong> (Q<sub>d</sub> &gt; Q<sub>s</sub>). Buyers compete for limited stock and bid the price up. Rising price reduces Q<sub>d</sub> (movement up D) and expands Q<sub>s</sub> (movement up S) → the market returns to E.'
+        },
+        {
+          key: 'surplus',
+          label: 'Excess supply (surplus)',
+          text: 'At price <strong>P₂</strong> (above P<sub>e</sub>), <strong>quantity supplied exceeds quantity demanded</strong> (Q<sub>s</sub> &gt; Q<sub>d</sub>). Unsold stock builds up and sellers cut prices to clear inventory. Falling price raises Q<sub>d</sub> and contracts Q<sub>s</sub> → the market returns to E.'
+        }
       ],
-      examEdge: 'The speed of adjustment matters for policy analysis. If markets adjust slowly (e.g. housing), a government intervention may be needed in the interim even if the free market would eventually clear. Slow-adjusting markets are prime candidates for price controls.'
+      flowTitle: 'How the price adjusts',
+      flowEmoji: '➡️',
+      flow: [
+        { tone: 'blue',  icon: '🔺', title: 'Shortage', sub: 'Excess demand creates upward pressure on price.' },
+        { tone: 'amber', icon: '🔻', title: 'Surplus',  sub: 'Excess supply creates downward pressure on price.' },
+        { tone: 'green', icon: '🎯', title: 'Adjustment continues', sub: 'Until equilibrium is restored at E.' }
+      ],
+      pairLabel: 'Real-world examples',
+      pairEmoji: '🌍',
+      left:  { tone: 'blue',  icon: '🎫', iconStyle: 'circle', label: 'Shortage example', text: 'Concert tickets sell out within minutes. Fans compete on resale platforms and prices rise well above face value until supply and willingness-to-pay align.' },
+      right: { tone: 'amber', icon: '🛒', iconStyle: 'circle', label: 'Surplus example',  text: 'Supermarkets discount fresh stock near closing time. Cutting price clears the shelves before goods perish — the surplus disappears as Q<sub>d</sub> rises.' },
+      conclusion: { title: 'Key takeaway', text: 'Market prices self-correct when there is competition and flexibility — shortages bid prices up, surpluses force prices down, both routes lead back to E.' },
+      examEdge: 'Always relate shortage or surplus to both quantity and price pressure. Markets that adjust slowly — housing, labour, agriculture — are prime candidates for policy intervention because the free-market correction can take years.'
     },
     {
       id: 'market_equilibrium_3',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Analysing Shifts: Demand and Supply',
-      lede: 'When D or S shifts, the equilibrium price and quantity both change — explore how interactively.',
-      diagramKey: 'marketInteractive',
+      tip: { icon: '💡', tone: 'blue', text: 'Any shift in demand or supply changes the equilibrium price and quantity. Movements along the curve, caused by a price change, do not shift the whole curve.' },
+      diagramKey: 'shiftsInteractive',
       steps: [
         {
-          key: 'base',
-          label: 'Market equilibrium',
-          text: '<strong>Equilibrium</strong> is where D meets S — the price P* that clears the market. At P*, quantity demanded equals quantity supplied, there is no shortage and no surplus, and there is no tendency for price to change. The <strong>price mechanism</strong> restores equilibrium automatically: above P*, surplus forces price down; below P*, shortage forces price up.'
+          key: 'demand-right',
+          label: 'Demand increases',
+          text: '<strong>D shifts right (D₁ → D₂)</strong> — a non-price demand factor improves (higher income, changed tastes, substitute\'s price rises). At old P₁, excess demand appears → price rises → Qs extends up S → new equilibrium E₂. Result: <strong>P rises, Q rises</strong>. Both move in the same direction — an unambiguous outcome.'
         },
         {
-          key: 'extension',
-          label: 'Demand shift',
-          text: '<strong>Demand shifts right (D₁ → D₂)</strong> when a non-price demand determinant changes favourably — higher income, changed tastes, or a rise in a substitute\'s price. At the original P*, there is now excess demand → price rises → quantity supplied extends up S₁ → new equilibrium E₂. Result: <strong>both P and Q rise</strong>. This is an unambiguous outcome when only demand shifts.'
+          key: 'demand-left',
+          label: 'Demand decreases',
+          text: '<strong>D shifts left (D₁ → D₂)</strong> — a non-price demand factor worsens (lower income, changed tastes, substitute\'s price falls). At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q falls</strong>. Both fall — the mirror image of a demand increase.'
         },
         {
-          key: 'shift',
-          label: 'Supply shift',
-          text: '<strong>Supply shifts right (S₁ → S₂)</strong> when a non-price supply determinant improves — lower input costs, better technology, more producers, or a subsidy. At the original P*, there is now excess supply → price falls → quantity demanded extends down D₁ → new equilibrium E₃. Result: <strong>Q rises but P falls</strong>. Opposite direction to a demand shift — a key exam comparison.'
+          key: 'supply-right',
+          label: 'Supply increases',
+          text: '<strong>S shifts right (S₁ → S₂)</strong> — costs fall, technology improves, more producers enter, or a subsidy is granted. At old P₁, excess supply appears → price falls → Qd extends down D → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a demand shift — a key exam distinction.'
+        },
+        {
+          key: 'supply-left',
+          label: 'Supply decreases',
+          text: '<strong>S shifts left (S₁ → S₂)</strong> — costs rise, a tax is imposed, a supply shock hits, or producers leave. At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q falls</strong>. Classic stagflationary supply shock: higher price, lower output.'
         }
       ],
-      examEdge: 'For any shift question: (1) identify which curve shifts and why, (2) draw the shift clearly with D₂ or S₂ labelled, (3) mark the new equilibrium with dashed gridlines to both axes, (4) state the direction of change in both P and Q. Missing any of these steps loses marks — diagram technique is as important as the analysis.'
+      flowTitle: 'A 3-step method',
+      flowEmoji: '📋',
+      flow: [
+        { tone: 'blue',  icon: '🔍', title: 'Identify which curve shifts and why',   sub: 'D shifts if a non-price demand factor changes. S shifts if a non-price supply factor changes.' },
+        { tone: 'amber', icon: '↔️', title: 'Say the direction of the shift',         sub: 'Right = increase. Left = decrease. Draw D₂ or S₂ clearly on the diagram.' },
+        { tone: 'green', icon: '🎯', title: 'State the new equilibrium P and Q',      sub: 'Use dashed gridlines to both axes. Label E₂, P₂ and Q₂. State the direction of change.' }
+      ],
+      causesEmoji: '↔️',
+      causesLabel: 'Movement along vs shift',
+      causes: [
+        { tone: 'blue',   icon: '🏷️', head: 'Movement along the curve', body: 'A change in the good\'s own price causes a movement along the existing curve — not a shift. Quantity demanded or supplied changes; the curve itself stays put.' },
+        { tone: 'purple', icon: '🔄', head: 'Shift of the curve',        body: 'A change in any non-price determinant shifts the entire curve. At every price, quantity demanded or supplied is now different.' }
+      ],
+      causes2Emoji: '💡',
+      causes2Label: 'Mini examples',
+      causes2: [
+        { tone: 'blue',  icon: '👥', head: 'Rising incomes → Demand for holidays right',    body: 'Higher income is a non-price demand factor for a normal good. D shifts right → P and Q rise.' },
+        { tone: 'amber', icon: '⚙️', head: 'Better technology → Supply right',              body: 'Improved production methods lower unit costs. S shifts right → P falls, Q rises.' },
+        { tone: 'purple',icon: '⚡', head: 'Higher energy costs → Supply left',             body: 'Energy is a major input cost. A price rise shifts S left → P rises, Q falls.' }
+      ],
+      conclusion: { title: 'Key takeaway', text: 'Shifts change the equilibrium position — affecting both price and quantity — not just the quantity traded.' },
+      examEdge: 'Always separate the cause of the shift (non-price determinant) from the effect on equilibrium (price and quantity). Draw the new curve clearly labelled D₂ or S₂, drop dashed lines to both axes at E₂, and state both changes in P and Q for full marks.'
     },
     {
       id: 'market_equilibrium_4',

@@ -5264,6 +5264,78 @@ window.ECONOS_ICONS = {
       <text x="550" y="296" font-size="12" fill="#475569">Equilibrium quantity</text>
     </svg>
   `,
+  taxSurplusDiagram: `
+    <svg viewBox="0 0 470 330" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- ===== shaded regions ===== -->
+      <!-- Consumer surplus (above Pc, below D, left of Qt) -->
+      <polygon points="50,50 50,140 193,140" fill="#DBEAFE" opacity="0.85"/>
+      <!-- Producer surplus (below Pp, above S, left of Qt) -->
+      <polygon points="50,270 50,180 193,180" fill="#FEF3C7" opacity="0.85"/>
+      <!-- Government tax revenue rectangle -->
+      <rect x="50" y="140" width="143" height="40" fill="#D1FAE5" opacity="0.9"/>
+      <!-- Deadweight loss triangle (between equilibria) -->
+      <polygon points="193,140 193,180 225,160" fill="#FECACA" opacity="0.9"/>
+
+      <!-- ===== axes ===== -->
+      <line x1="50" y1="30" x2="50" y2="285" stroke="#94A3B8" stroke-width="2"/>
+      <line x1="50" y1="285" x2="415" y2="285" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="50,26 46,34 54,34" fill="#94A3B8"/>
+      <polygon points="419,285 411,281 411,289" fill="#94A3B8"/>
+
+      <!-- axis labels -->
+      <text x="34" y="22" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">Price</text>
+      <text x="425" y="290" font-size="13" font-weight="600" fill="#0F172A">Quantity</text>
+      <text x="42" y="300" font-size="12" fill="#64748B" text-anchor="middle">0</text>
+
+      <!-- ===== curves ===== -->
+      <!-- Demand -->
+      <line x1="50" y1="50" x2="400" y2="270" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="406" y="274" font-size="15" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
+      <!-- Supply (original) -->
+      <line x1="50" y1="270" x2="400" y2="50" stroke="#F97316" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="406" y="54" font-size="15" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
+      <!-- Supply + tax (dashed, shifted up by 40) -->
+      <line x1="50" y1="230" x2="400" y2="10" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6,4"/>
+      <text x="406" y="14" font-size="13" font-weight="700" fill="#F97316" font-family="Georgia,serif">S + tax</text>
+
+      <!-- ===== dashed reference lines & dots ===== -->
+      <line x1="50" y1="140" x2="193" y2="140" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+      <line x1="50" y1="180" x2="193" y2="180" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+      <line x1="193" y1="140" x2="193" y2="285" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+      <circle cx="193" cy="140" r="5" fill="#0F172A"/>
+      <circle cx="225" cy="160" r="5" fill="#0F172A"/>
+
+      <!-- ===== axis ticks ===== -->
+      <text x="42" y="144" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="48" y="148" font-size="9" fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">c</text>
+      <text x="42" y="160" font-size="11" fill="#64748B" text-anchor="end">(buyer price)</text>
+      <text x="42" y="164" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="48" y="168" font-size="9" fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">e</text>
+      <text x="42" y="184" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="48" y="188" font-size="9" fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">p</text>
+      <text x="42" y="200" font-size="11" fill="#64748B" text-anchor="end">(seller price)</text>
+      <text x="193" y="302" font-size="13" fill="#0F172A" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="200" y="306" font-size="9" fill="#0F172A" text-anchor="middle" font-family="Georgia,serif" font-style="italic">t</text>
+
+      <!-- ===== region labels ===== -->
+      <text x="100" y="98" font-size="12" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer</text>
+      <text x="100" y="113" font-size="12" font-weight="700" fill="#1D4ED8" text-anchor="middle">surplus</text>
+      <text x="115" y="165" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">Government</text>
+      <text x="115" y="178" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">tax revenue</text>
+      <text x="100" y="220" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">Producer</text>
+      <text x="100" y="235" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">surplus</text>
+
+      <!-- Deadweight loss callout -->
+      <line x1="240" y1="170" x2="280" y2="190" stroke="#B91C1C" stroke-width="1.4"/>
+      <text x="284" y="186" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
+      <text x="284" y="200" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
+
+      <!-- Equilibrium callouts -->
+      <text x="200" y="132" font-size="11" fill="#0F172A">New equilibrium</text>
+      <text x="232" y="158" font-size="11" fill="#0F172A">Original</text>
+      <text x="232" y="170" font-size="11" fill="#0F172A">equilibrium</text>
+    </svg>
+  `,
   heroElasticity: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

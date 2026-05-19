@@ -95,16 +95,53 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_3',
-      template: 'diagnose',
+      stepLabel: 'Learn: Step 3 of 6',
       title: 'How Taxes Affect Surplus',
-      intro: 'An indirect tax drives a wedge between the price consumers pay and the price producers receive, reducing both CS and PS and creating a deadweight welfare loss.',
-      rows: [
-        { label: 'Who is affected', colA: 'Consumers', colB: 'Producers' },
-        { label: 'What happens', colA: 'Price rises from P* to Pc (consumer price). CS shrinks — the triangle loses the region between P* and Pc over Q2.', colB: 'Price received falls from P* to Pp (producer price = Pc - tax). PS shrinks — the triangle loses the region between Pp and P* over Q2.' },
-        { label: 'Where the lost surplus goes', colA: 'Part of lost CS goes to government as tax revenue (the rectangle from P* to Pc over Q2).', colB: 'Part of lost PS goes to government as tax revenue (the rectangle from Pp to P* over Q2).' }
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: 'A per-unit tax creates a wedge between the price buyers pay and the price sellers receive. It transfers some surplus to the government and destroys some welfare.'
+      },
+      diagramPanel: {
+        diagramKey: 'taxSurplusDiagram',
+        steps: [
+          {
+            tone: 'blue',
+            icon: '📊',
+            head: 'What changes',
+            body: [
+              'A per-unit tax shifts the supply curve upward by the amount of the tax.',
+              'Buyers pay P<sub>c</sub>; sellers receive P<sub>p</sub>.'
+            ]
+          },
+          {
+            tone: 'amber',
+            icon: '🧍',
+            head: 'Who loses?',
+            body: ['CS falls.', 'PS falls.']
+          },
+          {
+            tone: 'green',
+            icon: '🏛️',
+            head: 'Who gains?',
+            body: ['Government gains tax revenue.']
+          },
+          {
+            tone: 'rose',
+            icon: '📉',
+            head: 'What is deadweight loss?',
+            body: ['Total surplus falls because mutually beneficial trades no longer happen.']
+          }
+        ]
+      },
+      causes: [
+        { tone: 'blue',  icon: '🧑', head: 'Consumer burden',    body: 'Higher market price paid by buyers.' },
+        { tone: 'amber', icon: '🧑', head: 'Producer burden',    body: 'Lower net price received by sellers.' },
+        { tone: 'green', icon: '🔁', head: 'Incidence reminder', body: 'The more inelastic side of the market bears more of the tax burden.' }
       ],
-      footer: 'The portion of lost surplus that does not become tax revenue is the deadweight welfare loss — the triangle between Q2 and Q* between the supply and demand curves. This is the efficiency cost of the tax, which cannot be recovered by anyone.',
-      examEdge: 'For a tax: CS falls, PS falls, government revenue rises, but CS + PS lost > government revenue gained. The difference is the DWL. Only if the tax corrects a market failure (e.g. Pigouvian tax on a negative externality) does this DWL represent an improvement in social welfare — because it eliminates the even larger externality DWL.'
+      causesStyle: 'plain-white',
+      causesLabel: null,
+      examEdge: '<strong>Key idea:</strong> Tax revenue is a transfer, but deadweight loss is welfare lost forever. Always distinguish between the tax rectangle and the deadweight loss triangle.<br><br>For a tax: CS falls, PS falls, government revenue rises, but CS + PS lost > government revenue gained. The difference is the DWL. Only if the tax corrects a market failure (e.g. Pigouvian tax on a negative externality) does this DWL represent an improvement in social welfare — because it eliminates the even larger externality DWL.'
     },
     {
       id: 'consumer_producer_surplus_4',

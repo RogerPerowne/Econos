@@ -66,7 +66,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '💡',
         tone: 'blue',
-        text: '<em>Higher prices encourage producers to supply more and consumers to buy less.</em><br>Lower prices do the opposite.<br>Prices therefore act like <strong>signals with consequences</strong> — they change behaviour.'
+        text: '<em>Higher prices encourage producers to supply more and consumers to buy less — lower prices do the opposite.</em><br>Prices therefore act like <strong>signals with consequences</strong> — they change behaviour.'
       },
       pairLabel: 'How prices change behaviour',
       pairEmoji: '⚖️',

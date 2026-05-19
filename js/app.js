@@ -135,7 +135,7 @@
         <div class="exam-edge__star">⭐</div>
         <div class="exam-edge__body">
           <div class="exam-edge__label">Exam edge</div>
-          <div class="exam-edge__title">${title}</div>
+          ${title !== 'Exam edge' ? `<div class="exam-edge__title">${title}</div>` : ''}
           <div class="exam-edge__text">${text}</div>
         </div>
       </div>
@@ -987,7 +987,7 @@
             <div class="exam-edge__star">⭐</div>
             <div class="exam-edge__body">
               <div class="exam-edge__label">Exam edge</div>
-              <div class="exam-edge__title">${edgeTitle}</div>
+              ${edgeTitle !== 'Exam edge' ? `<div class="exam-edge__title">${edgeTitle}</div>` : ''}
               <div class="exam-edge__text" style="margin-top:8px;">${edgeText}</div>
             </div>
           </div>`;

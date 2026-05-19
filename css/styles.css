@@ -3357,6 +3357,17 @@ img, svg { display: block; max-width: 100%; }
 .show-surplus .disequilibrium-svg .layer-base { opacity: 0; }
 .show-surplus .disequilibrium-svg .layer-surplus { opacity: 1; }
 
+/* ===== SHIFTS INTERACTIVE (4 states) ===== */
+.shifts-svg .layer-axes { opacity: 1; transition: opacity 0.32s ease; }
+.shifts-svg .layer-demand-right,
+.shifts-svg .layer-demand-left,
+.shifts-svg .layer-supply-right,
+.shifts-svg .layer-supply-left { opacity: 0; transition: opacity 0.32s ease; }
+.show-demand-right .shifts-svg .layer-demand-right { opacity: 1; }
+.show-demand-left  .shifts-svg .layer-demand-left  { opacity: 1; }
+.show-supply-right .shifts-svg .layer-supply-right { opacity: 1; }
+.show-supply-left  .shifts-svg .layer-supply-left  { opacity: 1; }
+
 /* ===== MARKET INTERACTIVE ===== */
 .market-svg .layer-axes,
 .market-svg .layer-demand-base,

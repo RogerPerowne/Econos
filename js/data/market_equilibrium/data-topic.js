@@ -100,26 +100,52 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Analysing Shifts: Demand and Supply',
-      lede: 'When D or S shifts, the equilibrium price and quantity both change — explore how interactively.',
-      diagramKey: 'marketInteractive',
+      tip: { icon: '💡', tone: 'blue', text: 'Any shift in demand or supply changes the equilibrium price and quantity. Movements along the curve, caused by a price change, do not shift the whole curve.' },
+      diagramKey: 'shiftsInteractive',
       steps: [
         {
-          key: 'base',
-          label: 'Market equilibrium',
-          text: '<strong>Equilibrium</strong> is where D meets S — the price P* that clears the market. At P*, quantity demanded equals quantity supplied, there is no shortage and no surplus, and there is no tendency for price to change. The <strong>price mechanism</strong> restores equilibrium automatically: above P*, surplus forces price down; below P*, shortage forces price up.'
+          key: 'demand-right',
+          label: 'Demand increases',
+          text: '<strong>D shifts right (D₁ → D₂)</strong> — a non-price demand factor improves (higher income, changed tastes, substitute\'s price rises). At old P₁, excess demand appears → price rises → Qs extends up S → new equilibrium E₂. Result: <strong>P rises, Q rises</strong>. Both move in the same direction — an unambiguous outcome.'
         },
         {
-          key: 'extension',
-          label: 'Demand shift',
-          text: '<strong>Demand shifts right (D₁ → D₂)</strong> when a non-price demand determinant changes favourably — higher income, changed tastes, or a rise in a substitute\'s price. At the original P*, there is now excess demand → price rises → quantity supplied extends up S₁ → new equilibrium E₂. Result: <strong>both P and Q rise</strong>. This is an unambiguous outcome when only demand shifts.'
+          key: 'demand-left',
+          label: 'Demand decreases',
+          text: '<strong>D shifts left (D₁ → D₂)</strong> — a non-price demand factor worsens (lower income, changed tastes, substitute\'s price falls). At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q falls</strong>. Both fall — the mirror image of a demand increase.'
         },
         {
-          key: 'shift',
-          label: 'Supply shift',
-          text: '<strong>Supply shifts right (S₁ → S₂)</strong> when a non-price supply determinant improves — lower input costs, better technology, more producers, or a subsidy. At the original P*, there is now excess supply → price falls → quantity demanded extends down D₁ → new equilibrium E₃. Result: <strong>Q rises but P falls</strong>. Opposite direction to a demand shift — a key exam comparison.'
+          key: 'supply-right',
+          label: 'Supply increases',
+          text: '<strong>S shifts right (S₁ → S₂)</strong> — costs fall, technology improves, more producers enter, or a subsidy is granted. At old P₁, excess supply appears → price falls → Qd extends down D → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a demand shift — a key exam distinction.'
+        },
+        {
+          key: 'supply-left',
+          label: 'Supply decreases',
+          text: '<strong>S shifts left (S₁ → S₂)</strong> — costs rise, a tax is imposed, a supply shock hits, or producers leave. At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q falls</strong>. Classic stagflationary supply shock: higher price, lower output.'
         }
       ],
-      examEdge: 'For any shift question: (1) identify which curve shifts and why, (2) draw the shift clearly with D₂ or S₂ labelled, (3) mark the new equilibrium with dashed gridlines to both axes, (4) state the direction of change in both P and Q. Missing any of these steps loses marks — diagram technique is as important as the analysis.'
+      flowTitle: 'A 3-step method',
+      flowEmoji: '📋',
+      flow: [
+        { tone: 'blue',  icon: '🔍', title: 'Identify which curve shifts and why',   sub: 'D shifts if a non-price demand factor changes. S shifts if a non-price supply factor changes.' },
+        { tone: 'amber', icon: '↔️', title: 'Say the direction of the shift',         sub: 'Right = increase. Left = decrease. Draw D₂ or S₂ clearly on the diagram.' },
+        { tone: 'green', icon: '🎯', title: 'State the new equilibrium P and Q',      sub: 'Use dashed gridlines to both axes. Label E₂, P₂ and Q₂. State the direction of change.' }
+      ],
+      causesEmoji: '↔️',
+      causesLabel: 'Movement along vs shift',
+      causes: [
+        { tone: 'blue',   icon: '🏷️', head: 'Movement along the curve', body: 'A change in the good\'s own price causes a movement along the existing curve — not a shift. Quantity demanded or supplied changes; the curve itself stays put.' },
+        { tone: 'purple', icon: '🔄', head: 'Shift of the curve',        body: 'A change in any non-price determinant shifts the entire curve. At every price, quantity demanded or supplied is now different.' }
+      ],
+      causes2Emoji: '💡',
+      causes2Label: 'Mini examples',
+      causes2: [
+        { tone: 'blue',  icon: '👥', head: 'Rising incomes → Demand for holidays right',    body: 'Higher income is a non-price demand factor for a normal good. D shifts right → P and Q rise.' },
+        { tone: 'amber', icon: '⚙️', head: 'Better technology → Supply right',              body: 'Improved production methods lower unit costs. S shifts right → P falls, Q rises.' },
+        { tone: 'purple',icon: '⚡', head: 'Higher energy costs → Supply left',             body: 'Energy is a major input cost. A price rise shifts S left → P rises, Q falls.' }
+      ],
+      conclusion: { title: 'Key takeaway', text: 'Shifts change the equilibrium position — affecting both price and quantity — not just the quantity traded.' },
+      examEdge: 'Always separate the cause of the shift (non-price determinant) from the effect on equilibrium (price and quantity). Draw the new curve clearly labelled D₂ or S₂, drop dashed lines to both axes at E₂, and state both changes in P and Q for full marks.'
     },
     {
       id: 'market_equilibrium_4',

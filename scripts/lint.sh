@@ -66,6 +66,7 @@ check_no_legacy_html_refs() {
   hits=$(grep -nE "(topic|link_(intro|context|chain|chain_open|diagram|depends|judge|complete)|land_(intro|section_a|section_b|section_c|complete))\.html" \
           --include='*.js' --include='*.html' -r . \
           --exclude-dir=node_modules --exclude-dir=.git \
+          --exclude-dir=dist --exclude-dir=test-results --exclude-dir=playwright-report \
         | grep -vE '(js/topic-loader\.js|js/engines/shell\.js|scripts/lint\.sh|CHANGELOG\.md|tests/)' \
         | grep -vE "buildUrl\(['\"](topic|link_|land_)" || true)
   # Drop hits from legacy redirect stub files

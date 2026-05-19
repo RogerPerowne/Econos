@@ -211,10 +211,14 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   padding: var(--sp-6) 0;
+  /* Sticky chrome: sidebar holds top of viewport. Sits under
+     topbar in z-order so a scrolled topbar can overlap it. */
   position: sticky;
   top: 0;
+  align-self: start;
   height: 100vh;
   overflow-y: auto;
+  z-index: 100;
 }
 
 .sidebar__brand {
@@ -336,13 +340,21 @@ img, svg { display: block; max-width: 100%; }
 
 .topbar {
   height: var(--header-h);
-  background: var(--econ-white);
+  /* Sticky chrome: tops the viewport with a frosted backdrop so the
+     content scrolls under, not over. Sits above sidebar + right-rail
+     in z-order. */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--econ-gray-200);
   padding: 0 var(--sp-8);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-6);
+  position: sticky;
+  top: 0;
+  z-index: 110;
 }
 
 .topbar__back {
@@ -500,6 +512,31 @@ img, svg { display: block; max-width: 100%; }
   border-radius: var(--r-xl);
   padding: var(--sp-7) var(--sp-8);
   box-shadow: var(--shadow-sm);
+  /* Theme-scoped top accent stripe in the page's stage colour —
+     green on Learn It (default), amber on Link It, rose on Land It.
+     `.app:not(.theme--…)` makes sure the side borders stay neutral
+     when no theme class is set. */
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: var(--econ-green);
+}
+.theme--link .card,
+.theme--link .card.intro-card {
+  border-color: var(--econ-gray-200);
+  border-top-color: var(--econ-amber);
+}
+.theme--land .card,
+.theme--land .card.intro-card {
+  border-color: var(--econ-gray-200);
+  border-top-color: var(--econ-rose);
+}
+/* Keep the non-themed (Learn It) card's side/bottom borders neutral
+   even after the brand-refresh introduced a green border earlier. */
+.app:not(.theme--link):not(.theme--land) .card,
+.app:not(.theme--link):not(.theme--land) .card.intro-card {
+  border-left-color: var(--econ-gray-200);
+  border-right-color: var(--econ-gray-200);
+  border-bottom-color: var(--econ-gray-200);
 }
 
 .card__step-label {
@@ -721,8 +758,29 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   gap: var(--sp-4);
+  /* Sticky chrome: tucks UNDER the topbar (z-index 110), scrolls
+     internally when content overflows the viewport. */
   position: sticky;
-  top: var(--sp-6);
+  top: calc(var(--header-h) + var(--sp-4));
+  align-self: start;
+  max-height: calc(100vh - var(--header-h) - var(--sp-6));
+  overflow-y: auto;
+  padding-right: 2px;
+  z-index: 20;
+  scrollbar-width: thin;
+}
+.right-rail::-webkit-scrollbar { width: 6px; }
+.right-rail::-webkit-scrollbar-thumb {
+  background: var(--econ-gray-200);
+  border-radius: 999px;
+}
+/* On mobile the rail stops being sticky and stacks below content */
+@media (max-width: 880px) {
+  .right-rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
 }
 
 .rail-card {
@@ -11590,41 +11648,6 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 ::selection { background: var(--econ-rose-100); color: var(--econ-rose-700); }
 
 
-/* ============================================================
-   ECONOS — POLISH v5 (May 2026)  THEME-SCOPED CARD ACCENT STRIPE
-   ─────────────────────────────────────────────────────────────
-   Every engine card gets a top accent stripe in its page's
-   stage colour — green on Learn It, amber on Link It, rose on
-   Land It. The rest of the card border stays neutral grey so
-   only the stripe shouts "you are here".
-
-   `:root` colour-stop literals are inlined so the rule still
-   works on engines that render BEFORE the token cascade lands.
-   ============================================================ */
-.app .card,
-.app .card.intro-card {
-  border-top-width: 3px;
-  border-top-style: solid;
-  border-top-color: var(--econ-green);   /* default: Learn It theme */
-}
-.theme--link .card,
-.theme--link .card.intro-card {
-  border-color: var(--econ-gray-200);
-  border-top-color: var(--econ-amber);
-}
-.theme--land .card,
-.theme--land .card.intro-card {
-  border-color: var(--econ-gray-200);
-  border-top-color: var(--econ-rose);
-}
-/* Reset Learn-It override to gray sides too (the intro-card had a green
-   border applied earlier through the brand-refresh block). */
-.app:not(.theme--link):not(.theme--land) .card,
-.app:not(.theme--link):not(.theme--land) .card.intro-card {
-  border-left-color: var(--econ-gray-200);
-  border-right-color: var(--econ-gray-200);
-  border-bottom-color: var(--econ-gray-200);
-}
 
 
 /* ============================================================
@@ -11891,59 +11914,6 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 .link-btn--primary,
 .quiz-btn--primary { cursor: pointer; }
 
-
-/* ============================================================
-   ECONOS — POLISH v8 (May 2026)  STICKY CHROME
-   ─────────────────────────────────────────────────────────────
-   Once we stop forcing body to be its own scroll container
-   (see html { overflow-x: clip } above), position:sticky works
-   again. This block tightens the offsets so the right-rail
-   tucks UNDER the topbar instead of scrolling under it, and
-   gives each surface a proper z-order:
-
-       topbar  z 110   stays at top: 0
-       sidebar z 100   stays at top: 0, height: 100vh
-       rail    z  20   sticks below the topbar
-   ============================================================ */
-.sidebar {
-  position: sticky;
-  top: 0;
-  align-self: start;
-  height: 100vh;
-  z-index: 100;
-}
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 110;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: saturate(140%) blur(10px);
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
-}
-.right-rail {
-  position: sticky;
-  top: calc(var(--header-h) + var(--sp-4));
-  align-self: start;
-  max-height: calc(100vh - var(--header-h) - var(--sp-6));
-  overflow-y: auto;
-  padding-right: 2px;
-  z-index: 20;
-  scrollbar-width: thin;
-}
-.right-rail::-webkit-scrollbar { width: 6px; }
-.right-rail::-webkit-scrollbar-thumb {
-  background: var(--econ-gray-200);
-  border-radius: 999px;
-}
-
-/* On mobile the rail stops being sticky and stacks below content */
-@media (max-width: 880px) {
-  .right-rail {
-    position: static;
-    max-height: none;
-    overflow: visible;
-  }
-}
 
 
 /* ============================================================

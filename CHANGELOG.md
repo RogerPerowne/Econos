@@ -5,6 +5,40 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Build / tooling
+- **Vite multi-page build** — `npm run dev` (HMR), `npm run build` (emits
+  `/dist`), `npm run preview` (serves `/dist` at port 4173). Classic
+  IIFE scripts copied verbatim via `vite-plugin-static-copy`; HTML +
+  CSS get hashed asset URLs.
+- **Playwright CI** — `npm run test:e2e` runs 18 tests (13 desktop +
+  5 mobile) on every push. axe-core a11y included; `region` rule
+  disabled (skip-link false positive). GitHub Actions workflow at
+  `.github/workflows/ci.yml`.
+- **ESLint + Prettier** with a custom `no-restricted-properties` rule
+  blocking `window.location.*` in engines (the SPA contract).
+- **`scripts/lint.sh`** — repo-local checks: no `window.location.*` in
+  engines, no `POLISH v#` headers in styles.css, no legacy HTML refs
+  outside `TopicLoader.buildUrl()`.
+
+### Performance / a11y / hardening
+- **Self-hosted Inter + Fraunces latin** subsets (165 KB combined). No
+  more Google Fonts CDN round-trip on cold load. axe-core's
+  `color-contrast` rule is back on now that font-load flicker is gone.
+- **Content Security Policy** meta tag on every HTML shell:
+  `default-src 'self'`, no third-party script/connect/iframe/object
+  sources, `data:` allowed only for fonts + images (Land diagrams).
+- **Loading skeleton** rendered after a 180 ms grace period when the
+  Link/Land routers lazy-fetch an engine + data file. Cancelled the
+  moment the real engine paints; respects `prefers-reduced-motion`.
+- **Inline CSS extracted** — `index.html` 825 → 319 lines (`index.css`),
+  `login.html` 175 → 78 lines (`login.css`).
+- **POLISH v# stigma gone** — v5 (card top stripe), v8 (sticky chrome),
+  v9 (land-meta palette parity) inlined into canonical sections. The
+  rest (v2 / v3 / v4 / v6 / v7×2) renamed to descriptive *DESIGN
+  SYSTEM* headers; lint blocks any new `POLISH v#`.
+- **Mobile breakpoints verified** — Pixel 7 viewport tests assert no
+  horizontal scroll, sidebar hidden, right-rail hidden, skip-link first.
+
 ### Added
 - **SPA shell architecture** — three thin shells (`learn.html`, `link.html`,
   `land.html`) replace the 13 per-section pages. `link.html` and

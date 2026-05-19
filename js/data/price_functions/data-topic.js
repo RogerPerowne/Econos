@@ -297,20 +297,58 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'price_functions_7',
-      template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Price mechanism vs government allocation',
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: 'Markets often allocate resources through prices, but governments also allocate resources through planning, rules, taxes, subsidies, and direct provision. The key question is not <em>"market or government?"</em> but <em>"which works better in this context?"</em>'
+      },
       verdict: {
-        leftLabel: '📈 Price mechanism',
-        rightLabel: '🏛️ Government allocation',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Information', left: 'Uses dispersed local knowledge — no central information requirement', right: 'Can correct externalities by adjusting prices (taxes, subsidies)' },
-          { aspect: 'Adjustment', left: 'Automatic — no government decisions or delays needed', right: 'Can provide public goods that markets under-supply' },
-          { aspect: 'Efficiency', left: 'Dynamic efficiency — profit signals drive innovation', right: 'Can overcome information failures through regulation and standards' },
-          { aspect: 'Equity', left: 'Rations by ability to pay — may exclude the poorest', right: 'Can address distributional concerns — price mechanism rations by income, not need' }
+        title: 'Two ways to allocate resources',
+        emoji: '⚖️',
+        columns: [
+          {
+            tone: 'green',
+            icon: '⚖️',
+            label: 'Price mechanism',
+            items: [
+              { text: 'Decentralised decisions use local knowledge' },
+              { text: 'Strong incentives to innovate and improve' },
+              { text: 'Quick and flexible responses to change' },
+              { text: 'Consumer sovereignty reflects preferences' },
+              { text: 'Can be unequal', ok: false },
+              { text: 'May fail with market failure', ok: false }
+            ]
+          },
+          {
+            tone: 'blue',
+            icon: '🏛️',
+            label: 'Government allocation',
+            items: [
+              { text: 'Can pursue equity and redistribution' },
+              { text: 'Provide public goods and merit goods' },
+              { text: 'Can correct market failure' },
+              { text: 'May suffer from bureaucracy and red tape', ok: false },
+              { text: 'Weak incentives and less innovation', ok: false },
+              { text: 'Risk of government failure and inefficiency', ok: false }
+            ]
+          }
         ]
       },
-      examEdge: 'Neither system is universally superior — the optimal choice is context-specific. Markets excel at allocating private goods with well-defined property rights and no externalities. Government is needed where prices fail to capture social costs/benefits. The debate is always about the marginal case — not an all-or-nothing choice.',
+      causesEmoji: '🎯',
+      causesLabel: 'When each may work best',
+      causes: [
+        { tone: 'amber', icon: '🎫', head: 'Concert tickets',         body: '<strong style="display:block;color:#D97706;margin-bottom:4px;">Markets work well</strong>Prices reflect demand and signal scarcity.' },
+        { tone: 'rose',  icon: '🏥', head: 'Healthcare',              body: '<strong style="display:block;color:#2563EB;margin-bottom:4px;">Government (or hybrid) works best</strong>Equity, merit good, and information asymmetry.' },
+        { tone: 'green', icon: '🌱', head: 'Vaccination / pollution', body: '<strong style="display:block;color:#2563EB;margin-bottom:4px;">Government (or hybrid) works best</strong>Positive/negative externalities affect society as a whole.' }
+      ],
+      keyTerms: [
+        { term: 'Government failure', def: 'When government intervention produces a worse allocation than the market would — through bureaucracy, poor information, or distorted incentives.' },
+        { term: 'Hybrid allocation',  def: 'Combining market exchange with government regulation, subsidies, or direct provision — common in healthcare, education, transport.' },
+        { term: 'Contextual judgement', def: 'The exam skill of weighing efficiency vs equity, market failure vs government failure, on the facts of the specific market or policy.' }
+      ],
+      examEdge: 'Strong answers compare <strong>efficiency and equity</strong>. Recognise <strong>market failure</strong> and <strong>government failure</strong>. Use <strong>examples</strong> and reach a balanced, <strong>contextual judgement</strong> rather than a blanket conclusion.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

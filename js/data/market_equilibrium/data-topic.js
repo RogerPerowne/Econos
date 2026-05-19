@@ -295,23 +295,16 @@ window.ECONOS_TOPIC = {
           body: 'Equilibrium exchange rate or event ticket price. Demand can change very quickly with expectations, news or popularity.'
         }
       ],
-      left: {
-        tone: 'slate',
-        label: 'What changes across contexts?',
-        checks: [
-          { term: 'Speed of adjustment', body: 'Some markets adjust slowly (e.g. housing), others quickly (e.g. tickets).' },
-          { term: 'Elasticity', body: 'The responsiveness of demand and supply influences outcomes.' },
-          { term: 'Government intervention', body: 'Taxes, subsidies, price controls or regulation can affect equilibrium.' },
-          { term: 'Information', body: 'How quickly and clearly buyers and sellers get information varies.' }
-        ]
-      },
-      right: {
-        tone: 'amber',
-        icon: '💡',
-        label: 'One core idea',
-        text: 'Equilibrium is still where demand equals supply. However, the real-world outcome may be affected by time lags, policy and market structure.'
-      },
-      pairLabel: null,
+      causesStyle: 'plain-white',
+      causesEmoji: '🔍',
+      causesLabel: 'What changes across contexts?',
+      causes: [
+        { tone: 'blue',   icon: '⏱️', head: 'Speed of adjustment', body: 'Some markets adjust slowly (e.g. housing), others quickly (e.g. tickets).' },
+        { tone: 'green',  icon: '📈', head: 'Elasticity',           body: 'The responsiveness of demand and supply influences outcomes.' },
+        { tone: 'amber',  icon: '🏛️', head: 'Government intervention', body: 'Taxes, subsidies, price controls or regulation can affect equilibrium.' },
+        { tone: 'purple', icon: 'ℹ️', head: 'Information',          body: 'How quickly and clearly buyers and sellers get information varies.' }
+      ],
+      note: { icon: '💡', tone: 'amber', head: 'One core idea', text: 'Equilibrium is still where demand equals supply. However, the real-world outcome may be affected by time lags, policy and market structure.' },
       conclusion: { title: 'Key takeaway', text: 'Equilibrium is a flexible framework for analysing many markets. The logic is the same, but the context shapes how it plays out.' },
       examEdge: 'Context application is rewarded in Edexcel Paper 1. Use market-specific examples and language — for housing, mention planning restrictions, Help to Buy, interest rates; for labour, monopsony and minimum wage; for FX, expectations and capital flows. Don\'t write a generic supply/demand essay — tailor it to the extract.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }

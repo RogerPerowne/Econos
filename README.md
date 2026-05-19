@@ -20,25 +20,52 @@ either with `--no-verify` or `ECONOS_SKIP_E2E=1` if you really mean it.
 
 ## Architecture
 
-Three thin HTML "shells" host every interactive page:
+There are **exactly six** HTML files served from the repo root.
+Three of them are "shells" — interactive entry points parameterised
+by query string:
 
 | Shell        | URL pattern                                  | Hosts                       |
 | ------------ | -------------------------------------------- | --------------------------- |
+| `index.html` | none                                         | Topic grid                  |
 | `learn.html` | `?topic=<id>`                                | Learn It cards (`app.js`)   |
-| `link.html`  | `?topic=<id>&station=<intro\|context\|…>`    | Link It stations            |
-| `land.html`  | `?topic=<id>&station=<intro\|a\|b\|c\|…>`    | Land It sections            |
+| `link.html`  | `?topic=<id>&station=<intro\|context\|chain\|chain_open\|diagram\|depends\|judge\|complete\|quiz>` | Link It stations |
+| `land.html`  | `?topic=<id>&station=<intro\|a\|b\|c\|complete\|quiz>` | Land It sections   |
 | `quiz.html`  | `?topic=<id>&quiz=<set>`                     | Topic quizzes               |
+| `login.html` | none                                         | Demo gate                   |
 
 `link.html` and `land.html` delegate to `LinkRouter` / `LandRouter`
-which lazy-load each station's engine + data file on first visit,
-cache by `${topic}/${file}`, prefetch likely next stations, and
-swap stations in place via `history.pushState`.
+(`js/engines/link-router.js`, `land-router.js`) which lazy-load
+each station's engine + data file on first visit, cache by
+`${topic}/${file}`, prefetch the likely next station during
+`requestIdleCallback`, and swap stations in place via
+`history.pushState`.
 
-Chrome (sidebar, topbar, mobile-nav, skip-link, 3-stage progress)
-is rendered by `js/engines/shell.js` — a single source of truth.
+Chrome (sidebar, topbar, mobile-nav, skip-link, 3-stage progress
+widget) is rendered by `js/engines/shell.js` — a single source of
+truth used by every engine.
 
-Legacy per-section URLs (`link_chain.html`, `land_section_a.html`, …)
-are kept as redirect stubs at the same paths for one release.
+### URL conventions
+
+**Do not introduce new HTML files at the repo root.** A new topic
+or a new station never needs new HTML — only a new data file under
+`js/data/<topic>/` (and a station entry in the relevant router if
+the station itself is new).
+
+The legacy per-section URLs (`topic.html`, `link_chain.html`,
+`land_section_a.html`, etc.) **have been deleted** as of commit
+following d2cb5e1. They no longer exist as files or HTTP routes.
+`scripts/lint.sh` blocks them from being re-introduced.
+
+The aliasing layer in `js/topic-loader.js` (`PAGE_MAP`) is kept,
+because **data files still write the legacy names** for back-compat
+— e.g. `backUrl: TopicLoader.buildUrl('link_intro.html')`. The
+loader rewrites that to `link.html?topic=…&station=intro` before
+the URL ever reaches the network. New code can write the canonical
+form directly: `TopicLoader.buildUrl('link.html', { station: 'intro' })`.
+
+If a station's URL is mistyped, the router renders an in-place
+"Station not found" message with a link back to the section intro
+— not a 404.
 
 ```
 /

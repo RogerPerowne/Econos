@@ -54,30 +54,38 @@ check_no_new_polish_blocks() {
 # them to learn.html / link.html / land.html shells. Hard-coded
 # refs would silently 404 after the SPA migration.
 # ------------------------------------------------------------
+LEGACY_FILES_RE='(topic|link_(intro|context|chain|chain_open|diagram|depends|judge|complete)|land_(intro|section_a|section_b|section_c|complete))\.html'
+
 check_no_legacy_html_refs() {
   # Allowed:
   #   - js/topic-loader.js (PAGE_MAP),
   #   - js/engines/shell.js (defensive URL-alias check),
-  #   - the legacy redirect stubs (marked with LEGACY_REDIRECT — see #65),
   #   - inside TopicLoader.buildUrl('...') calls (the supported entry-point).
-  # Files containing the marker comment are auto-detected via grep -L below.
-  local legacy_stubs allowed_files hits
-  legacy_stubs=$(grep -l 'LEGACY_REDIRECT' -- *.html 2>/dev/null || true)
-  hits=$(grep -nE "(topic|link_(intro|context|chain|chain_open|diagram|depends|judge|complete)|land_(intro|section_a|section_b|section_c|complete))\.html" \
+  local hits
+  hits=$(grep -nE "$LEGACY_FILES_RE" \
           --include='*.js' --include='*.html' -r . \
           --exclude-dir=node_modules --exclude-dir=.git \
           --exclude-dir=dist --exclude-dir=test-results --exclude-dir=playwright-report \
         | grep -vE '(js/topic-loader\.js|js/engines/shell\.js|scripts/lint\.sh|CHANGELOG\.md|tests/)' \
         | grep -vE "buildUrl\(['\"](topic|link_|land_)" || true)
-  # Drop hits from legacy redirect stub files
-  if [ -n "$legacy_stubs" ]; then
-    while IFS= read -r stub; do
-      [ -z "$stub" ] && continue
-      hits=$(echo "$hits" | grep -vE "^\./${stub//./\\.}:") || true
-    done <<< "$legacy_stubs"
-  fi
   if [ -n "$hits" ]; then
     echo "lint: legacy per-section HTML names referenced outside TopicLoader.buildUrl():"
+    echo "$hits"
+    fail=1
+  fi
+}
+
+# ------------------------------------------------------------
+# Forbid re-introducing the legacy per-section HTML files at the
+# repo root. The 14 redirect stubs were retired — any new file
+# matching the legacy pattern is a regression.
+# ------------------------------------------------------------
+check_no_legacy_stub_files() {
+  local hits
+  hits=$(find . -maxdepth 1 -name '*.html' -printf '%f\n' 2>/dev/null \
+        | grep -E "^$LEGACY_FILES_RE\$" || true)
+  if [ -n "$hits" ]; then
+    echo "lint: legacy per-section HTML stub file(s) re-introduced at repo root:"
     echo "$hits"
     fail=1
   fi
@@ -87,6 +95,7 @@ main() {
   check_engine_navigation
   check_no_new_polish_blocks
   check_no_legacy_html_refs
+  check_no_legacy_stub_files
   if [ "$fail" -ne 0 ]; then
     echo
     echo "lint: FAILED"

@@ -107,19 +107,10 @@ test.describe('Land It shell', () => {
   });
 });
 
-test.describe('Legacy redirects', () => {
-  test('link_chain.html redirects to link.html?station=chain', async ({ page }) => {
-    await login(page);
-    await page.goto('/link_chain.html?topic=inflation');
-    await page.waitForURL(/link\.html\?topic=inflation&station=chain/, { timeout: 5000 });
-  });
-
-  test('topic.html redirects to learn.html', async ({ page }) => {
-    await login(page);
-    await page.goto('/topic.html?topic=inflation');
-    await page.waitForURL(/learn\.html\?topic=inflation/, { timeout: 5000 });
-  });
-});
+/* Legacy redirect stubs were retired — see commit history. PAGE_MAP
+   still rewrites legacy filenames inside TopicLoader.buildUrl(); the
+   topic-loader.spec.js test covers that rewrite. Hitting the old
+   URLs over HTTP now 404s by design. */
 
 test.describe('Accessibility — keyboard navigation', () => {
   test('Tab reveals skip-link first on the learn shell', async ({ page }) => {

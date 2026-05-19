@@ -5,6 +5,24 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Routing
+
+- **Legacy redirect stubs deleted.** The 14 per-section HTML files
+  (`topic.html`, `link_intro.html`, `link_chain.html`,
+  `link_chain_open.html`, `link_diagram.html`, `link_depends.html`,
+  `link_judge.html`, `link_complete.html`, `link_context.html`,
+  `land_intro.html`, `land_section_a.html`, `land_section_b.html`,
+  `land_section_c.html`, `land_complete.html`) no longer exist as
+  files or HTTP routes. Repo root now ships **exactly six HTMLs**:
+  `index`, `learn`, `link`, `land`, `quiz`, `login`.
+- **`scripts/lint.sh` tightened** with `check_no_legacy_stub_files`
+  — a new HTML file matching the legacy pattern at the repo root
+  now fails the build.
+- **`PAGE_MAP` retained** in `js/topic-loader.js` because per-topic
+  data files still write the legacy filenames for back-compat. New
+  code may use the canonical form
+  `TopicLoader.buildUrl('link.html', { station: 'intro' })`.
+
 ### Code health
 - **Zero ESLint warnings.** 18 dead-variable / unused-parameter warnings
   cleaned up; `npm run lint:js` enforces `--max-warnings=0`. Pre-commit

@@ -5,6 +5,25 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Code health
+- **Zero ESLint warnings.** 18 dead-variable / unused-parameter warnings
+  cleaned up; `npm run lint:js` enforces `--max-warnings=0`. Pre-commit
+  hook fails fast on any new warning.
+- **`.editorconfig`** for cross-IDE consistency (LF, UTF-8, 2-space).
+- **husky hooks**: pre-commit (lint), pre-push (e2e). Override with
+  `--no-verify` or `ECONOS_SKIP_E2E=1` for deliberate WIP pushes.
+- **219 redundant `sessionLabel:` lines deleted** from `js/data/`;
+  every read site now uses `T.sessionLabel || TopicLoader.sessionLabel(stage)`.
+- **41 KB of unused logo PNGs deleted** from `assets/`.
+- **Legacy global localStorage key** (`econos_link_unlocked` /
+  `econos_land_unlocked`) no longer written; read kept as one-release
+  migration fallback.
+
+### Performance
+- **rAF-deferred widget init** in `js/app.js`: the 4× explorer DOM
+  scans now run after the next paint, so card transitions show
+  content before the interactive widgets warm up.
+
 ### Build / tooling
 - **Vite multi-page build** — `npm run dev` (HMR), `npm run build` (emits
   `/dist`), `npm run preview` (serves `/dist` at port 4173). Classic

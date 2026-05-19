@@ -15,7 +15,7 @@
     try {
       localStorage.setItem('econos_link_start', Date.now().toString());
       localStorage.setItem('econos_link_scores', '{}');
-      localStorage.setItem('econos_link_unlocked', '-1');
+      /* legacy init removed; Progress.getLinkUnlocked() returns -1 when unset */
     } catch (e) {}
 
     var state = {
@@ -270,7 +270,7 @@
     }
 
     function renderRail() {
-      var unlockedIdx = (function () { try { return parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10); } catch (e) { return -1; } })();
+      var unlockedIdx = Progress.getLinkUnlocked();
       var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
         var isDone    = i <= unlockedIdx && !isCurrent;
@@ -389,8 +389,8 @@
           var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
           stored.context = score;
           localStorage.setItem('econos_link_scores', JSON.stringify(stored));
-          var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
-          localStorage.setItem('econos_link_unlocked', String(Math.max(u, 0)));
+          var u = Progress.getLinkUnlocked();
+          Progress.setLinkUnlocked(Math.max(u, 0));
         } catch (e) {}
         TopicLoader.go(TopicLoader.buildUrl('link_chain.html'));
       });

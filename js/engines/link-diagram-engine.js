@@ -7,7 +7,7 @@
   'use strict';
 
   window.bootLinkDiagram = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 1) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
+    if (Progress.getLinkUnlocked() < 1) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; }
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_DIAGRAM;
@@ -644,7 +644,7 @@
     /* ── Right rail ── */
 
     function renderRail() {
-      var unlockedIdx = (function () { try { return parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10); } catch (e) { return -1; } })();
+      var unlockedIdx = Progress.getLinkUnlocked();
       var stationsList = DATA.stations.map(function (st, i) {
         var isCurrent = i === DATA.currentStationIdx;
         var isDone    = i <= unlockedIdx && !isCurrent;
@@ -867,8 +867,8 @@
           var stored = JSON.parse(localStorage.getItem('econos_link_scores') || '{}');
           stored.diagram = state.score;
           localStorage.setItem('econos_link_scores', JSON.stringify(stored));
-          var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
-          localStorage.setItem('econos_link_unlocked', String(Math.max(u, 2)));
+          var u = Progress.getLinkUnlocked();
+          Progress.setLinkUnlocked(Math.max(u, 2));
         } catch (e) {}
         TopicLoader.go(DATA.nextUrl || DATA.backUrl);
       });

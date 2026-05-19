@@ -8,7 +8,7 @@
   'use strict';
 
   window.bootLinkComplete = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 4) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
+    if (Progress.getLinkUnlocked() < 4) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; }
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_COMPLETE;

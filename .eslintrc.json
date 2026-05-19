@@ -20,6 +20,7 @@
     "LinkRouter": "readonly",
     "LandRouter": "readonly",
     "Logger": "readonly",
+    "Progress": "readonly",
     "EconosPdf": "readonly",
     "EconosElasticityExplorer": "readonly",
     "EconosPesExplorer": "readonly",

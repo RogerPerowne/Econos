@@ -469,8 +469,8 @@
       }).join('');
       const fwDiagram = fw.diagramKey && I[fw.diagramKey] ? I[fw.diagramKey] : '';
       content += `
-        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:22px 22px 18px;margin-bottom:22px;">
-          ${fw.label ? `<div style="text-align:center;font-size:11px;font-weight:800;color:#64748B;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:18px;">${fw.label}</div>` : ''}
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:6px 22px 18px;margin-bottom:22px;">
+          ${fw.label ? genSecLabel(fw.labelEmoji || '⭐', fw.label) : ''}
           <div style="display:grid;grid-template-columns:repeat(${fw.tiles.length},1fr);gap:14px;margin-bottom:${fwDiagram ? '14px' : '0'};">${fwTiles}</div>
           ${fwDiagram ? `<div style="margin-top:6px;">${fwDiagram}</div>` : ''}
         </div>`;

@@ -5186,6 +5186,51 @@ window.ECONOS_ICONS = {
       </g>
     </svg>
   `,
+  cpsDiagram: `
+    <svg viewBox="0 0 420 290" width="420" height="290" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- Filled surplus triangles (behind the curves) -->
+      <polygon points="50,18 50,133 210,133" fill="#DBEAFE" opacity="0.85"/>
+      <polygon points="50,133 50,248 210,133" fill="#FEF3C7" opacity="0.85"/>
+
+      <!-- Axes -->
+      <line x1="50" y1="8" x2="50" y2="258" stroke="#94A3B8" stroke-width="2"/>
+      <line x1="50" y1="258" x2="390" y2="258" stroke="#94A3B8" stroke-width="2"/>
+      <!-- Axis arrowheads -->
+      <polygon points="50,6 46,14 54,14" fill="#94A3B8"/>
+      <polygon points="392,258 384,254 384,262" fill="#94A3B8"/>
+      <!-- Axis labels -->
+      <text x="25" y="140" font-size="12" fill="#64748B" font-family="Georgia,serif" font-style="italic" text-anchor="middle" transform="rotate(-90,25,140)">Price (P)</text>
+      <text x="384" y="274" font-size="12" fill="#64748B" font-family="Georgia,serif" font-style="italic">Q</text>
+
+      <!-- Demand curve (downward sloping, blue) -->
+      <line x1="50" y1="18" x2="370" y2="248" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="374" y="252" font-size="14" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
+
+      <!-- Supply curve (upward sloping, orange) -->
+      <line x1="50" y1="248" x2="370" y2="18" stroke="#F97316" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="374" y="22" font-size="14" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
+
+      <!-- Dashed reference lines to axes -->
+      <line x1="50" y1="133" x2="210" y2="133" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="210" y1="133" x2="210" y2="258" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+      <!-- Equilibrium dot and label -->
+      <circle cx="210" cy="133" r="5" fill="#0F172A"/>
+      <text x="216" y="126" font-size="11" font-weight="700" fill="#0F172A" font-family="Georgia,serif">E</text>
+
+      <!-- P* and Q* axis ticks and labels -->
+      <line x1="46" y1="133" x2="54" y2="133" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="40" y="137" font-size="11" fill="#475569" text-anchor="end" font-family="Georgia,serif" font-style="italic">P*</text>
+      <line x1="210" y1="254" x2="210" y2="262" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="210" y="274" font-size="11" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">Q*</text>
+
+      <!-- CS label (inside blue triangle, near centroid) -->
+      <text x="103" y="92" font-size="15" font-weight="800" fill="#1D4ED8" text-anchor="middle">CS</text>
+
+      <!-- PS label (inside amber triangle, near centroid) -->
+      <text x="103" y="175" font-size="15" font-weight="800" fill="#C2410C" text-anchor="middle">PS</text>
+    </svg>
+  `,
   heroElasticity: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

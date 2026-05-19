@@ -91,12 +91,7 @@ window.ECONOS_TOPIC = {
       ],
       causesStyle: 'plain-white',
       causesLabel: null,
-      causes2: [
-        { tone: 'green', icon: '⭐', head: 'Key idea', body: 'Surplus is always measured relative to the equilibrium price.' },
-        { tone: 'green', icon: '✅', head: 'Exam edge', body: 'If the diagram changes, redraw the new equilibrium before discussing surplus.' }
-      ],
-      causes2Style: 'plain-white',
-      causes2Label: null
+      examEdge: '<strong>Key idea:</strong> Surplus is always measured relative to the equilibrium price. If the diagram changes, redraw the new equilibrium before discussing surplus.<br><br><strong>Numerical questions:</strong> Area of triangle = ½ × base × height. For CS: height = (D-axis intercept) − P<sub>e</sub>, base = Q<sub>e</sub>. For PS: height = P<sub>e</sub> − (S-axis intercept), base = Q<sub>e</sub>. When a tax is introduced, remember three things happen: CS falls, PS falls, government gains revenue — but CS + PS lost > revenue gained, leaving the DWL as the net efficiency cost.'
     },
     {
       id: 'consumer_producer_surplus_3',

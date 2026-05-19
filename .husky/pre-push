@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+# ─────────────────────────────────────────────────────────────
+# econos — pre-push hook
+# Runs the full Playwright suite so a broken push can't reach
+# the remote. Override with `git push --no-verify` if a deliberate
+# WIP push is needed (e.g. snapshot for collaboration).
+# ─────────────────────────────────────────────────────────────
+
+set -e
+
+# Skip the heavy run when pushing tags only, or when explicitly
+# requested via env (handy for branch backups during long sessions).
+if [ "$ECONOS_SKIP_E2E" = "1" ]; then
+  echo "» pre-push: ECONOS_SKIP_E2E=1 set, skipping e2e"
+  exit 0
+fi
+
+echo "» e2e suite (npm run test:e2e)"
+npm run test:e2e
+
+echo "» pre-push OK"

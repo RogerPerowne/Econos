@@ -3042,17 +3042,27 @@
     const inner = currentView === 'intro' ? renderIntro() : renderCard(currentView);
     root.innerHTML = renderShell(inner);
     bindEvents();
-    if (window.EconosElasticity) {
-      root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
-    }
-    if (window.EconosPes) {
-      root.querySelectorAll('.pes-root[data-pes-mount]').forEach(el => window.EconosPes.init(el));
-    }
-    if (window.EconosYed) {
-      root.querySelectorAll('.yed-root[data-yed-mount]').forEach(el => window.EconosYed.init(el));
-    }
-    if (window.EconosXed) {
-      root.querySelectorAll('.xed-root[data-xed-mount]').forEach(el => window.EconosXed.init(el));
+    /* Yield to the browser so paint happens before we initialise the
+       interactive widgets (each explorer can scan tens of DOM nodes
+       and bind handlers — postponing avoids jank on the first frame). */
+    const initWidgets = () => {
+      if (window.EconosElasticity) {
+        root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
+      }
+      if (window.EconosPes) {
+        root.querySelectorAll('.pes-root[data-pes-mount]').forEach(el => window.EconosPes.init(el));
+      }
+      if (window.EconosYed) {
+        root.querySelectorAll('.yed-root[data-yed-mount]').forEach(el => window.EconosYed.init(el));
+      }
+      if (window.EconosXed) {
+        root.querySelectorAll('.xed-root[data-xed-mount]').forEach(el => window.EconosXed.init(el));
+      }
+    };
+    if (typeof requestAnimationFrame === 'function') {
+      requestAnimationFrame(initWidgets);
+    } else {
+      initWidgets();
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }

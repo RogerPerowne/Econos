@@ -50,6 +50,15 @@
           "message": "Engines must navigate via TopicLoader.go() so SPA routers can intercept."
         }]
       }
+    },
+    {
+      "files": [
+        "tests/**/*.js",
+        "vite.config.js",
+        "playwright.config.js"
+      ],
+      "parserOptions": { "sourceType": "module" },
+      "env": { "node": true }
     }
   ],
   "ignorePatterns": [

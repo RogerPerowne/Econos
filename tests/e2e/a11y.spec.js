@@ -58,10 +58,11 @@ test('home page is accessible', async ({ page }) => {
 test('Learn It shell is accessible', async ({ page }) => {
   await login(page);
   await page.goto('/learn.html?topic=inflation');
+  /* Wait for the engine to paint #main-content, then for the
+     interactive-widget init RAF to settle. */
+  await page.waitForSelector('#main-content', { state: 'attached' });
   await page.waitForLoadState('networkidle');
-  /* Give the engine a moment after networkidle for the second render
-     pass (card view). */
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
   await assertAxeClean(page, 'learn.html?topic=inflation');
 });
 

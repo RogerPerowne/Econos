@@ -313,6 +313,83 @@
         </div>`;
     }
 
+    // Paired left/right HTML is built once via a closure so it can be emitted
+    // either before the flow (c.pairFirst === true) or in its default slot
+    // further down the renderer, without duplicating ~60 lines of markup.
+    const buildPairHtml = () => {
+      if (!c.left || !c.right) return '';
+      const renderPairedSide = (side, fallbackTone) => {
+        const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
+        const useRows = Array.isArray(side.rows) && side.rows.length > 0;
+        const useChecks = Array.isArray(side.checks) && side.checks.length > 0;
+        const useScenarios = Array.isArray(side.scenarios) && side.scenarios.length > 0;
+        const inner = useScenarios
+          ? `<div style="display:grid;grid-template-columns:repeat(${side.scenarios.length},1fr);gap:14px;">${side.scenarios.map(s => {
+              const arrow = s.arrow === 'left'
+                ? `<div style="font-size:22px;color:#DC2626;font-weight:800;line-height:1;">←</div>`
+                : `<div style="font-size:22px;color:#059669;font-weight:800;line-height:1;">→</div>`;
+              return `
+                <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;">
+                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:36px;line-height:1;">${s.icon || ''}${arrow}</div>
+                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${s.text || ''}</div>
+                </div>`;
+            }).join('')}</div>`
+          : useChecks
+            ? `<ul style="list-style:none;margin:0;padding:0;">${side.checks.map(ch => `
+                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:#0B1426;line-height:1.6;">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">✓</span>
+                  <span><strong style="color:${tone.label};">${ch.term}</strong> — ${ch.body}</span>
+                </li>`).join('')}</ul>`
+            : side.text
+              ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+              : (useRows
+                ? side.rows.map((r, idx) => `
+                  <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
+                      <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
+                    </div>
+                  </div>`).join('')
+                : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
+                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
+                  </ul>`);
+        const numberHtml = (side.number != null)
+          ? `<div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${tone.accent};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${side.number}</div>`
+          : '';
+        const iconHtml = side.icon
+          ? (side.iconStyle === 'circle'
+              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
+              : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
+          : '';
+        const plain = side.style === 'plain-white';
+        const bg = plain ? '#fff' : tone.bg;
+        const border = plain ? '#E7E7EA' : tone.border;
+        const headerAlign = side.centeredLabel ? 'center' : 'flex-start';
+        return `
+          <div style="border-radius:14px;background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;">
+            <div style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
+              ${numberHtml}${iconHtml}
+              <div style="color:${tone.label};font-weight:800;font-size:16px;letter-spacing:0.01em;">${side.label}</div>
+            </div>
+            ${inner}
+          </div>`;
+      };
+      let html = '';
+      if (c.pairLabel !== null) {
+        html += genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
+      }
+      html += `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
+        ${renderPairedSide(c.left, 'green')}
+        ${renderPairedSide(c.right, 'amber')}
+      </div>`;
+      return html;
+    };
+    if (c.pairFirst && c.left && c.right) {
+      content += buildPairHtml();
+    }
+
     // Horizontal step flow — numbered circles connected by dashed arrows.
     // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
     // overlays a small badge on the icon — for narrative chains where each step has a verdict.
@@ -511,72 +588,8 @@
     //   - Default: each side has `points: [string]` → bullet list.
     //   - Richer: each side has `rows: [{icon, title, text}]` → numbered icon rows.
     //   - Each side can optionally specify `tone` + header `icon`.
-    if (c.left && c.right) {
-      const renderPairedSide = (side, fallbackTone) => {
-        const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
-        const useRows = Array.isArray(side.rows) && side.rows.length > 0;
-        const useChecks = Array.isArray(side.checks) && side.checks.length > 0;
-        const useScenarios = Array.isArray(side.scenarios) && side.scenarios.length > 0;
-        const inner = useScenarios
-          ? `<div style="display:grid;grid-template-columns:repeat(${side.scenarios.length},1fr);gap:14px;">${side.scenarios.map(s => {
-              const arrow = s.arrow === 'left'
-                ? `<div style="font-size:22px;color:#DC2626;font-weight:800;line-height:1;">←</div>`
-                : `<div style="font-size:22px;color:#059669;font-weight:800;line-height:1;">→</div>`;
-              return `
-                <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;">
-                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:36px;line-height:1;">${s.icon || ''}${arrow}</div>
-                  <div style="font-size:13px;color:#0B1426;line-height:1.55;">${s.text || ''}</div>
-                </div>`;
-            }).join('')}</div>`
-          : useChecks
-            ? `<ul style="list-style:none;margin:0;padding:0;">${side.checks.map(ch => `
-                <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:#0B1426;line-height:1.6;">
-                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">✓</span>
-                  <span><strong style="color:${tone.label};">${ch.term}</strong> — ${ch.body}</span>
-                </li>`).join('')}</ul>`
-            : side.text
-              ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
-              : (useRows
-                ? side.rows.map((r, idx) => `
-                  <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;${idx === 0 ? '' : `border-top:1px solid ${tone.border}40;`}">
-                    <div style="width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">${r.icon || ''}</div>
-                    <div style="flex:1;min-width:0;">
-                      <div style="font-weight:800;font-size:14px;color:${tone.label};line-height:1.3;margin-bottom:3px;">${idx + 1}. ${r.title}</div>
-                      <div style="font-size:13px;color:#0B1426;line-height:1.55;">${r.text}</div>
-                    </div>
-                  </div>`).join('')
-                : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">
-                    ${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}
-                  </ul>`);
-        const numberHtml = (side.number != null)
-          ? `<div style="width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid ${tone.accent};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;">${side.number}</div>`
-          : '';
-        const iconHtml = side.icon
-          ? (side.iconStyle === 'circle'
-              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
-              : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
-          : '';
-        const plain = side.style === 'plain-white';
-        const bg = plain ? '#fff' : tone.bg;
-        const border = plain ? '#E7E7EA' : tone.border;
-        const headerAlign = side.centeredLabel ? 'center' : 'flex-start';
-        return `
-          <div style="border-radius:14px;background:${bg};border:1px solid ${border};box-shadow:0 1px 3px rgba(0,0,0,0.04);padding:18px 20px;">
-            <div style="display:flex;align-items:center;justify-content:${headerAlign};gap:12px;margin-bottom:14px;">
-              ${numberHtml}${iconHtml}
-              <div style="color:${tone.label};font-weight:800;font-size:16px;letter-spacing:0.01em;">${side.label}</div>
-            </div>
-            ${inner}
-          </div>`;
-      };
-      if (c.pairLabel !== null) {
-        content += genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
-      }
-      content += `
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">
-        ${renderPairedSide(c.left, 'green')}
-        ${renderPairedSide(c.right, 'amber')}
-      </div>`;
+    if (c.left && c.right && !c.pairFirst) {
+      content += buildPairHtml();
     }
 
     // Concept boxes — tinted panels side-by-side (2-col responsive grid), each with icon flows + bullets.

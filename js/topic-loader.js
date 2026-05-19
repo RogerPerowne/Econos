@@ -1,14 +1,48 @@
 /* ============================================================
    ECONOS — Topic loader & URL builder
+   ─────────────────────────────────────────────────────────────
    Reads ?topic=<id> from the URL, dynamically loads the right
-   per-topic data file(s), and provides a single helper for
-   engines and data files to build topic-aware navigation URLs.
+   per-topic data file(s), and provides URL builders that bridge
+   the old per-section page names (link_chain.html etc.) to the
+   new consolidated SPA shells (learn.html / link.html / land.html).
+
+   The page-map keeps engine code untouched: an engine asks for
+   `TopicLoader.buildUrl('link_chain.html')` and gets back
+   `link.html?topic=<id>&station=chain`. If the page IS one of the
+   SPA shells AND the matching router is already loaded,
+   `TopicLoader.go(url)` performs an in-place SPA navigation
+   instead of a full reload.
    ============================================================ */
 
 (function () {
   'use strict';
 
   var DEFAULT_TOPIC = 'inflation';
+
+  /* Legacy per-section page → new shell + station mapping.
+     Anything not listed here passes through buildUrl unchanged
+     (index.html, login.html, quiz.html, learn.html itself, …). */
+  var PAGE_MAP = {
+    /* Learn It — collapsed to a single page */
+    'topic.html':           { page: 'learn.html' },
+
+    /* Link It stations */
+    'link_intro.html':      { page: 'link.html', station: 'intro'      },
+    'link_context.html':    { page: 'link.html', station: 'context'    },
+    'link_chain.html':      { page: 'link.html', station: 'chain'      },
+    'link_chain_open.html': { page: 'link.html', station: 'chain_open' },
+    'link_diagram.html':    { page: 'link.html', station: 'diagram'    },
+    'link_depends.html':    { page: 'link.html', station: 'depends'    },
+    'link_judge.html':      { page: 'link.html', station: 'judge'      },
+    'link_complete.html':   { page: 'link.html', station: 'complete'   },
+
+    /* Land It sections */
+    'land_intro.html':       { page: 'land.html', station: 'intro'    },
+    'land_section_a.html':   { page: 'land.html', station: 'a'        },
+    'land_section_b.html':   { page: 'land.html', station: 'b'        },
+    'land_section_c.html':   { page: 'land.html', station: 'c'        },
+    'land_complete.html':    { page: 'land.html', station: 'complete' }
+  };
 
   function getTopic() {
     try {
@@ -19,9 +53,22 @@
     return DEFAULT_TOPIC;
   }
 
+  /* Build `page?topic=...&...extras`. If `page` is a legacy
+     per-section file, transparently rewrite to the consolidated
+     shell + ?station=... — caller code stays identical. */
   function buildUrl(page, extra) {
     var topic = getTopic();
+    var target = page;
+    var station = null;
+    if (PAGE_MAP.hasOwnProperty(page)) {
+      var mapped = PAGE_MAP[page];
+      target = mapped.page;
+      station = mapped.station || null;
+    }
     var qs = '?topic=' + encodeURIComponent(topic);
+    if (station) {
+      qs += '&station=' + encodeURIComponent(station);
+    }
     if (extra) {
       for (var k in extra) {
         if (extra.hasOwnProperty(k)) {
@@ -29,7 +76,26 @@
         }
       }
     }
-    return page + qs;
+    return target + qs;
+  }
+
+  /* Programmatic navigation. If the URL is a station inside the
+     currently-loaded SPA shell, hand off to that router for a
+     pushState SPA transition. Otherwise do a normal full nav so
+     the right HTML shell takes over. */
+  function go(url) {
+    if (!url) { return; }
+    try {
+      if (window.LinkRouter && /(^|\/)link\.html(\?|$)/.test(url) &&
+          /[?&]station=/.test(url)) {
+        window.LinkRouter.navigate(url); return;
+      }
+      if (window.LandRouter && /(^|\/)land\.html(\?|$)/.test(url) &&
+          /[?&]station=/.test(url)) {
+        window.LandRouter.navigate(url); return;
+      }
+    } catch (e) { /* fall through to full nav */ }
+    window.location.href = url;
   }
 
   function showMissingTopicMessage(topic, section) {
@@ -78,10 +144,11 @@
   }
 
   window.TopicLoader = {
-    getTopic: getTopic,
-    buildUrl: buildUrl,
-    loadData: loadData,
-    loadDataAndBoot: loadDataAndBoot,
-    loadDataThenScript: loadDataThenScript
+    getTopic:            getTopic,
+    buildUrl:            buildUrl,
+    go:                  go,
+    loadData:            loadData,
+    loadDataAndBoot:     loadDataAndBoot,
+    loadDataThenScript:  loadDataThenScript
   };
 })();

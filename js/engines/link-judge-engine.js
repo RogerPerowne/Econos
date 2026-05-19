@@ -6,7 +6,7 @@
   'use strict';
 
   window.bootLinkJudge = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 3) { window.location.replace(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
+    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 3) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_JUDGE;
@@ -387,7 +387,7 @@
           var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
           localStorage.setItem('econos_link_unlocked', String(Math.max(u, 4)));
         } catch (e) {}
-        window.location.href = DATA.nextUrl || DATA.backUrl;
+        TopicLoader.go(DATA.nextUrl || DATA.backUrl);
       });
     }
 

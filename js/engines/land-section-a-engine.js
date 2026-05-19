@@ -668,7 +668,7 @@
       if (continueBtn) {
         continueBtn.addEventListener('click', function () {
           saveSectionEnd('A', { mcqScore: countAnswered(), mcqTotal: T.questions.length });
-          window.location.href = continueBtn.getAttribute('data-href');
+          TopicLoader.go(continueBtn.getAttribute('data-href'));
         });
       }
 

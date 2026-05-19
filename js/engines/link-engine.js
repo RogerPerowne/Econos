@@ -392,7 +392,7 @@
           var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
           localStorage.setItem('econos_link_unlocked', String(Math.max(u, 0)));
         } catch (e) {}
-        window.location.href = TopicLoader.buildUrl('link_chain.html');
+        TopicLoader.go(TopicLoader.buildUrl('link_chain.html'));
       });
     }
 

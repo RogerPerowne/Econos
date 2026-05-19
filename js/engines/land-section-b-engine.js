@@ -524,7 +524,7 @@
             if (tas[i].value && tas[i].value.replace(/\s+/g, '').length > 20) { attempted = true; break; }
           }
           saveSectionEnd('B', { attempted: attempted });
-          window.location.href = continueBtn.getAttribute('data-href');
+          TopicLoader.go(continueBtn.getAttribute('data-href'));
         });
       }
 

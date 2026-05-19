@@ -7,7 +7,7 @@
   'use strict';
 
   window.bootLinkDiagram = function () {
-    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 1) { window.location.replace(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
+    try { if (parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10) < 1) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; } } catch (e) {}
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_DIAGRAM;
@@ -870,7 +870,7 @@
           var u = parseInt(localStorage.getItem('econos_link_unlocked') || '-1', 10);
           localStorage.setItem('econos_link_unlocked', String(Math.max(u, 2)));
         } catch (e) {}
-        window.location.href = DATA.nextUrl || DATA.backUrl;
+        TopicLoader.go(DATA.nextUrl || DATA.backUrl);
       });
     }
 

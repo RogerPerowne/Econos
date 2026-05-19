@@ -367,7 +367,7 @@
         continueBtn.addEventListener('click', function () {
           var attempted = state.text && state.text.replace(/\s+/g, '').length > 20;
           saveSectionEnd('C', { attempted: attempted });
-          window.location.href = continueBtn.getAttribute('data-href');
+          TopicLoader.go(continueBtn.getAttribute('data-href'));
         });
       }
 

@@ -18,10 +18,25 @@
 (function () {
   'use strict';
 
-  var STREAK_DAYS    = 1;
-  var USER_INITIALS  = 'AB';
-  var USER_NAME      = 'Alex Brown';
-  var USER_ROLE      = 'A-Level Economics';
+  /* User state lives on window.ECONOS_USER. Set it before shell.js loads
+     (eg. from a server-rendered <script> or a fetch in auth-check.js) and
+     the chrome picks it up automatically. Defaults below are placeholders
+     used in dev when nothing has populated the global yet. */
+  var USER_DEFAULTS = {
+    initials: 'AB',
+    name:     'Alex Brown',
+    role:     'A-Level Economics',
+    streak:   1
+  };
+  function getUser() {
+    var u = window.ECONOS_USER || {};
+    return {
+      initials: u.initials || USER_DEFAULTS.initials,
+      name:     u.name     || USER_DEFAULTS.name,
+      role:     u.role     || USER_DEFAULTS.role,
+      streak:   (typeof u.streak === 'number') ? u.streak : USER_DEFAULTS.streak
+    };
+  }
 
   function getIcons() { return window.ECONOS_ICONS || {}; }
 
@@ -33,6 +48,7 @@
     opts = opts || {};
     var active = opts.activeNav || 'My topics';
     var I = getIcons();
+    var U = getUser();
     var nav = [
       { name: 'Home',         icon: I.home,     href: 'index.html' },
       { name: 'My topics',    icon: I.topics,   href: '#' },
@@ -49,28 +65,30 @@
       +       '<img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full">'
       +     '</a>'
       +   '</div>'
-      +   '<nav class="sidebar__nav">'
+      +   '<nav class="sidebar__nav" aria-label="Main">'
       +     nav.map(function (n) {
-              var cls = n.name === active ? 'is-active' : '';
-              return '<a href="' + n.href + '" class="' + cls + '">' + (n.icon || '') + '<span>' + n.name + '</span></a>';
+              var isActive = n.name === active;
+              var cls = isActive ? 'is-active' : '';
+              var ariaCurrent = isActive ? ' aria-current="page"' : '';
+              return '<a href="' + n.href + '" class="' + cls + '"' + ariaCurrent + '>' + (n.icon || '') + '<span>' + n.name + '</span></a>';
             }).join('')
       +   '</nav>'
-      +   '<div class="sidebar__streak">'
+      +   '<div class="sidebar__streak" aria-label="' + U.streak + ' day streak. Keep it going!">'
       +     '<div class="sidebar__streak-row">'
-      +       '<span class="sidebar__streak-flame">🔥</span>'
-      +       '<span class="sidebar__streak-num">' + STREAK_DAYS + '</span>'
+      +       '<span class="sidebar__streak-flame" aria-hidden="true">🔥</span>'
+      +       '<span class="sidebar__streak-num">' + U.streak + '</span>'
       +     '</div>'
       +     '<div class="sidebar__streak-label">Day streak</div>'
       +     '<div class="sidebar__streak-sub">Keep it going!</div>'
       +   '</div>'
-      +   '<div class="sidebar__user">'
-      +     '<div class="sidebar__user-avatar">' + USER_INITIALS + '</div>'
-      +     '<div class="sidebar__user-info">'
-      +       '<div class="sidebar__user-name">' + USER_NAME + '</div>'
-      +       '<div class="sidebar__user-role">' + USER_ROLE + '</div>'
-      +     '</div>'
-      +     '<div class="sidebar__user-chev">' + (I.chevDown || '') + '</div>'
-      +   '</div>'
+      +   '<button type="button" class="sidebar__user" aria-label="Account menu">'
+      +     '<span class="sidebar__user-avatar">' + U.initials + '</span>'
+      +     '<span class="sidebar__user-info">'
+      +       '<span class="sidebar__user-name">' + U.name + '</span>'
+      +       '<span class="sidebar__user-role">' + U.role + '</span>'
+      +     '</span>'
+      +     '<span class="sidebar__user-chev" aria-hidden="true">' + (I.chevDown || '') + '</span>'
+      +   '</button>'
       + '</aside>';
   }
 
@@ -86,10 +104,17 @@
   function renderTopbar(opts) {
     opts = opts || {};
     var I = getIcons();
-    var backLabel = opts.backLabel ? '<span>' + opts.backLabel + '</span>' : '';
+    var U = getUser();
+    /* Default back label: "Topics" — covers the common case of returning
+       to the index from inside a topic. Engines that need different copy
+       can pass opts.backLabel explicitly. */
+    var labelText = (opts.backLabel === undefined) ? 'Topics' : opts.backLabel;
+    var backLabel = labelText ? '<span>' + labelText + '</span>' : '';
+    /* Duplicate streak chip removed (was previously rendered here AND in
+       the sidebar). Sidebar wins — it's the prominent gamification card. */
     return ''
       + '<header class="topbar">'
-      +   '<a href="' + (opts.backUrl || 'index.html') + '" class="topbar__back">'
+      +   '<a href="' + (opts.backUrl || 'index.html') + '" class="topbar__back" aria-label="Back to ' + (labelText || 'topics') + '">'
       +     (I.arrowLeft || '') + backLabel
       +   '</a>'
       +   '<div class="topbar__crumbs">'
@@ -97,14 +122,10 @@
       +     (opts.topicTitle ? '<div class="topbar__topic-title">' + opts.topicTitle + '</div>' : '')
       +   '</div>'
       +   '<div class="topbar__right">'
-      +     '<div class="topbar__streak">'
-      +       '<span class="topbar__streak-icon">🔥</span>'
-      +       '<span>' + STREAK_DAYS + ' day streak</span>'
-      +     '</div>'
-      +     '<div class="topbar__avatar">'
-      +       '<div class="topbar__avatar-circle">' + USER_INITIALS + '</div>'
-      +       '<span class="topbar__avatar-chev">' + (I.chevDown || '') + '</span>'
-      +     '</div>'
+      +     '<button type="button" class="topbar__avatar" aria-label="Account menu">'
+      +       '<span class="topbar__avatar-circle">' + U.initials + '</span>'
+      +       '<span class="topbar__avatar-chev" aria-hidden="true">' + (I.chevDown || '') + '</span>'
+      +     '</button>'
       +   '</div>'
       + '</header>';
   }
@@ -178,19 +199,22 @@
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', href: 'link.html'  + topicQs },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    href: 'land.html'  + topicQs }
     ];
-    var html = '<aside class="stages" data-shell-injected="1">';
+    var html = '<aside class="stages" data-shell-injected="1" aria-label="Topic progress">';
     for (var i = 0; i < stages.length; i++) {
       var s = stages[i];
       var state = states[i] || 'open';
       var cls = 'stage' + (state === 'done' ? ' is-done' : state === 'current' ? ' is-current' : '');
       // current stage = non-clickable (you're already there); others = links
       var isCurrent = state === 'current';
-      var tag = isCurrent ? 'div' : 'a';
-      var openTag = isCurrent ? '<div class="' + cls + '"' : '<a href="' + s.href + '" class="' + cls + '"';
+      var ariaCurrent = isCurrent ? ' aria-current="step"' : '';
+      var openTag = isCurrent
+        ? '<div class="' + cls + '"' + ariaCurrent
+        : '<a href="' + s.href + '" class="' + cls + '"';
       var numContent = state === 'done' ? (I.check || '✓') : String(s.num);
       var chipText = state === 'done' ? 'Done' : state === 'current' ? 'Current' : 'Open';
-      html += openTag + ' data-stage-pos="' + (i + 1) + '">'
-           +   '<div class="stage__num">' + numContent + '</div>'
+      var ariaLabel = ' aria-label="' + s.name + ' — ' + chipText + '"';
+      html += openTag + ' data-stage-pos="' + (i + 1) + '"' + ariaLabel + '>'
+           +   '<div class="stage__num" aria-hidden="true">' + numContent + '</div>'
            +   '<div class="stage__body">'
            +     '<div class="stage__name">' + s.name + '</div>'
            +     '<div class="stage__sub">' + s.sub + '</div>'
@@ -215,10 +239,36 @@
     rails.forEach(ensureStagesIn);
   }
 
+  /* ------------------------------------------------------------------
+     Mobile nav — auto-injected at the top of <body> on every page so
+     each shell HTML can stop hand-rolling the same 5-line block.
+     ------------------------------------------------------------------ */
+  function renderMobileNav() {
+    var U = getUser();
+    return ''
+      + '<nav class="mobile-nav" aria-label="Mobile">'
+      +   '<a href="index.html" class="mobile-nav__logo" aria-label="Home"><img src="assets/econos-icon.png" alt="econos"></a>'
+      +   '<div class="mobile-nav__right">'
+      +     '<span class="mobile-nav__streak" aria-label="' + U.streak + ' day streak">'
+      +       '<span aria-hidden="true">🔥</span><span>' + U.streak + '</span>'
+      +     '</span>'
+      +     '<button type="button" class="mobile-nav__avatar" aria-label="Account menu">' + U.initials + '</button>'
+      +   '</div>'
+      + '</nav>';
+  }
+  function mountMobileNav() {
+    if (document.querySelector('.mobile-nav')) return; // already in HTML; leave alone
+    var wrap = document.createElement('div');
+    wrap.innerHTML = renderMobileNav();
+    document.body.insertBefore(wrap.firstChild, document.body.firstChild);
+  }
+
   window.Shell = {
-    renderSidebar: renderSidebar,
-    renderTopbar:  renderTopbar,
-    renderApp:     renderApp
+    renderSidebar:   renderSidebar,
+    renderTopbar:    renderTopbar,
+    renderApp:       renderApp,
+    renderMobileNav: renderMobileNav,
+    mountMobileNav:  mountMobileNav
   };
 
   /* ──────────────────────────────────────────────────────────────
@@ -246,6 +296,7 @@
   }
   function bootStageTagger() {
     var root = document.getElementById('app-root') || document.body;
+    mountMobileNav();
     ensureStagesEverywhere(root);
     tagStages(root);
     if ('MutationObserver' in window) {

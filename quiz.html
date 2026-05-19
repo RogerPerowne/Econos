@@ -21,17 +21,12 @@
 </head>
 <body>
 
-  <nav class="mobile-nav">
-    <a href="index.html" class="mobile-nav__logo"><img src="assets/econos-icon.png" alt="econos"></a>
-    <div class="mobile-nav__right">
-      <span class="mobile-nav__streak"><span>🔥</span><span>1</span></span>
-      <div class="mobile-nav__avatar">AB</div>
-    </div>
-  </nav>
+  <!-- mobile-nav is auto-injected by js/engines/shell.js -->
   <div id="app-root"></div>
 
   <script src="js/icons.js"></script>
   <script src="js/topic-loader.js"></script>
+  <script src="js/engines/shell.js"></script>
   <script src="js/engines/quiz-engine.js"></script>
 
   <script>
@@ -45,59 +40,15 @@
       var Q = window.ECONOS_QUIZ;
       var T = window.ECONOS_TOPIC;
       var SHORT_NAMES = Q.shortNames || {};
-      var topicHref = TopicLoader.buildUrl('topic.html');
+      var topicHref = TopicLoader.buildUrl('learn.html');
 
-      var navItems = [
-        { name: 'Home',         icon: I.home,     href: 'index.html', active: false },
-        { name: 'My topics',    icon: I.topics,   href: '#',          active: true  },
-        { name: 'Progress',     icon: I.progress, href: '#',          active: false },
-        { name: 'Exam practice',icon: I.practice, href: '#',          active: false },
-        { name: 'Study planner',icon: I.planner,  href: '#',          active: false },
-        { name: 'Messages',     icon: I.messages, href: '#',          active: false },
-        { name: 'Settings',     icon: I.settings, href: '#',          active: false }
-      ];
-
-      var sidebar = ''
-        + '<aside class="sidebar">'
-        +   '<div class="sidebar__brand">'
-        +     '<div class="sidebar__logo"><img src="assets/econos-icon.png" alt="econos"></div>'
-        +     '<div class="sidebar__wordmark">econos</div>'
-        +     '<div class="sidebar__tagline">'
-        +       'Learn it<span class="ec-stop-green">.</span> Link it<span class="ec-stop-yellow">.</span> Land it<span class="ec-stop-pink">.</span>'
-        +     '</div>'
-        +   '</div>'
-        +   '<nav class="sidebar__nav">'
-        +     navItems.map(function (n) {
-                return '<a href="' + n.href + '" class="' + (n.active ? 'is-active' : '') + '">' + n.icon + '<span>' + n.name + '</span></a>';
-              }).join('')
-        +   '</nav>'
-        +   '<div class="sidebar__streak">'
-        +     '<div class="sidebar__streak-row"><span class="sidebar__streak-flame">🔥</span><span class="sidebar__streak-num">1</span></div>'
-        +     '<div class="sidebar__streak-label">Day streak</div>'
-        +     '<div class="sidebar__streak-sub">Keep it going!</div>'
-        +   '</div>'
-        +   '<div class="sidebar__user">'
-        +     '<div class="sidebar__user-avatar">AB</div>'
-        +     '<div class="sidebar__user-info">'
-        +       '<div class="sidebar__user-name">Alex Brown</div>'
-        +       '<div class="sidebar__user-role">A-Level Economics</div>'
-        +     '</div>'
-        +     '<div class="sidebar__user-chev">' + I.chevDown + '</div>'
-        +   '</div>'
-        + '</aside>';
-
-      var topbar = ''
-        + '<header class="topbar">'
-        +   '<a href="' + topicHref + '" class="topbar__back">' + I.arrowLeft + '</a>'
-        +   '<div class="topbar__crumbs">'
-        +     '<div class="topbar__session-label">' + Q.sessionLabel + '</div>'
-        +     '<div class="topbar__topic-title">' + Q.title + '</div>'
-        +   '</div>'
-        +   '<div class="topbar__right">'
-        +     '<div class="topbar__streak"><span class="topbar__streak-icon">🔥</span><span>1 day streak</span></div>'
-        +     '<div class="topbar__avatar"><div class="topbar__avatar-circle">AB</div><span class="topbar__avatar-chev">' + I.chevDown + '</span></div>'
-        +   '</div>'
-        + '</header>';
+      var sidebar = Shell.renderSidebar({ activeNav: 'My topics' });
+      var topbar  = Shell.renderTopbar({
+        backUrl:      topicHref,
+        backLabel:    'Topics',
+        sessionLabel: Q.sessionLabel,
+        topicTitle:   Q.title
+      });
 
       var cardsList = T.cards.map(function (c, i) {
         var name = SHORT_NAMES[c.id] || c.id;

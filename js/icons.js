@@ -1375,48 +1375,48 @@ window.ECONOS_ICONS = {
   `,
 
   welfareSurplusDiagram: `
-    <svg viewBox="0 0 480 340" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="480" height="340" fill="#fff" rx="6"/>
+    <svg viewBox="0 0 480 420" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="480" height="420" fill="#fff" rx="6"/>
 
       <!-- Axes -->
-      <line x1="60" y1="290" x2="420" y2="290" stroke="#334155" stroke-width="1.8"/>
-      <polygon points="420,285 420,295 432,290" fill="#334155"/>
-      <line x1="60" y1="50" x2="60" y2="290" stroke="#334155" stroke-width="1.8"/>
+      <line x1="60" y1="370" x2="420" y2="370" stroke="#334155" stroke-width="1.8"/>
+      <polygon points="420,365 420,375 432,370" fill="#334155"/>
+      <line x1="60" y1="50" x2="60" y2="370" stroke="#334155" stroke-width="1.8"/>
       <polygon points="55,50 65,50 60,38" fill="#334155"/>
       <text x="38" y="46" font-size="13" font-weight="700" fill="#334155">Price</text>
-      <text x="385" y="312" font-size="13" font-weight="700" fill="#334155">Quantity</text>
-      <text x="46" y="306" font-size="12" fill="#64748B">O</text>
+      <text x="385" y="392" font-size="13" font-weight="700" fill="#334155">Quantity</text>
+      <text x="46" y="386" font-size="12" fill="#64748B">O</text>
 
-      <!-- Consumer surplus (blue triangle above Pe, under MB curve) -->
-      <polygon points="60,75 60,170 245,170" fill="#3B82F6" fill-opacity="0.18" stroke="none"/>
-      <!-- Producer surplus (orange triangle below Pe, above MC curve) -->
-      <polygon points="60,170 245,170 60,265" fill="#F59E0B" fill-opacity="0.18" stroke="none"/>
+      <!-- Consumer surplus: bounded by MB curve (top), Pe line (bottom), y-axis (left) -->
+      <polygon points="60,70 230,210 60,210" fill="#3B82F6" fill-opacity="0.18" stroke="none"/>
+      <!-- Producer surplus: bounded by MC curve (bottom), Pe line (top), y-axis (left) -->
+      <polygon points="60,210 230,210 60,350" fill="#F59E0B" fill-opacity="0.18" stroke="none"/>
 
-      <!-- MB (demand, downward) -->
-      <line x1="90" y1="75" x2="400" y2="265" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
-      <text x="408" y="269" font-size="14" font-weight="800" fill="#2563EB">MB</text>
+      <!-- MB (demand, downward) — starts at y-axis -->
+      <line x1="60" y1="70" x2="400" y2="350" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+      <text x="408" y="354" font-size="14" font-weight="800" fill="#2563EB">MB</text>
 
-      <!-- MC (supply, upward) -->
-      <line x1="90" y1="265" x2="400" y2="75" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
-      <text x="408" y="79" font-size="14" font-weight="800" fill="#D97706">MC</text>
+      <!-- MC (supply, upward) — starts at y-axis -->
+      <line x1="60" y1="350" x2="400" y2="70" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+      <text x="408" y="74" font-size="14" font-weight="800" fill="#D97706">MC</text>
 
       <!-- Equilibrium dashed guides -->
-      <line x1="60" y1="170" x2="245" y2="170" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
-      <line x1="245" y1="170" x2="245" y2="290" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="60" y1="210" x2="230" y2="210" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="230" y1="210" x2="230" y2="370" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="5 4"/>
 
       <!-- E point -->
-      <circle cx="245" cy="170" r="6" fill="#0B1426"/>
-      <text x="255" y="164" font-size="14" font-weight="800" fill="#0B1426">E</text>
+      <circle cx="230" cy="210" r="6" fill="#0B1426"/>
+      <text x="240" y="204" font-size="14" font-weight="800" fill="#0B1426">E</text>
 
       <!-- Surplus labels -->
-      <text x="125" y="125" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">Consumer</text>
-      <text x="125" y="139" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">surplus</text>
-      <text x="125" y="210" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Producer</text>
-      <text x="125" y="224" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">surplus</text>
+      <text x="115" y="145" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">Consumer</text>
+      <text x="115" y="159" font-size="12" font-weight="700" fill="#2563EB" text-anchor="middle">surplus</text>
+      <text x="115" y="260" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Producer</text>
+      <text x="115" y="274" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">surplus</text>
 
       <!-- Axis equilibrium labels -->
-      <text x="36" y="174" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
-      <text x="237" y="308" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
+      <text x="36" y="214" font-size="13" font-weight="700" fill="#334155">P<tspan font-size="10" dy="3">e</tspan></text>
+      <text x="222" y="388" font-size="13" font-weight="700" fill="#334155">Q<tspan font-size="10" dy="3">e</tspan></text>
     </svg>
   `,
 

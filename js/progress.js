@@ -56,9 +56,12 @@
   /* ──────────────────────────────────────────────────────────────
      Link / Land unlocked-station tracking
      ─────────────────────────────────────────────────────────────
-     The legacy key `econos_link_unlocked` is global (not per-topic).
-     New code uses the per-topic key but falls back to the legacy
-     value while the migration finishes. */
+     All callers now go through Progress.* so storage is per-topic
+     under `econos:<topic>:link_unlocked`. The legacy global key
+     (`econos_link_unlocked`) is still READ as a one-time fallback so
+     existing users get migrated on first load — first setLinkUnlocked
+     call after that lands the value in the per-topic key. Writes to
+     the legacy key were dropped after the engine sweep. */
   function getLinkUnlocked() {
     var perTopic = readInt(topicKey('link_unlocked'), -1);
     if (perTopic !== -1) return perTopic;
@@ -67,9 +70,6 @@
   function setLinkUnlocked(n) {
     var v = String(parseInt(n, 10) || 0);
     writeRaw(topicKey('link_unlocked'), v);
-    /* Keep legacy key in sync so old engines reading it directly
-       still see the new value. Removed once all callers migrate. */
-    writeRaw('econos_link_unlocked', v);
   }
 
   function getLandUnlocked() {
@@ -80,7 +80,6 @@
   function setLandUnlocked(n) {
     var v = String(parseInt(n, 10) || 0);
     writeRaw(topicKey('land_unlocked'), v);
-    writeRaw('econos_land_unlocked', v);
   }
 
   /* ──────────────────────────────────────────────────────────────

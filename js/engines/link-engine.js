@@ -32,7 +32,7 @@
         + '<div class="app theme--link">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
         +   '<div id="main-content" class="main" tabindex="-1" role="main">'
-        +     Shell.renderTopbar({ backUrl: DATA.backUrl, backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel, topicTitle: DATA.topic })
+        +     Shell.renderTopbar({ backUrl: DATA.backUrl, backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: DATA.topic })
         +     '<div class="page">'
         +       '<div class="link-station">' + renderStation() + '</div>'
         +       renderRail()

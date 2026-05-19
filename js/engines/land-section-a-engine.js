@@ -494,7 +494,7 @@
         + '<div class="app theme--land">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
         +   '<div id="main-content" class="main" tabindex="-1" role="main">'
-        +     Shell.renderTopbar({ backUrl: T.backUrl, sessionLabel: T.sessionLabel, topicTitle: T.topic })
+        +     Shell.renderTopbar({ backUrl: T.backUrl, sessionLabel: T.sessionLabel || TopicLoader.sessionLabel('land'), topicTitle: T.topic })
         +     '<div class="page">'
         +       renderMain()
         +       '<div class="right-rail">' + renderRightRail() + '</div>'

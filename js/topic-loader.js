@@ -53,6 +53,20 @@
     return DEFAULT_TOPIC;
   }
 
+  /* Canonical session labels — single source of truth so data files
+     don't all need to repeat 'Session N of 3: …'. Engines should pass
+     `T.sessionLabel || TopicLoader.sessionLabel('link')` when rendering
+     the topbar. Stage is one of 'learn' | 'link' | 'land' | 'quiz'. */
+  var SESSION_LABELS = {
+    learn: 'Session 1 of 3: Learn',
+    link:  'Session 2 of 3: Link',
+    land:  'Session 3 of 3: Land',
+    quiz:  'Quiz'
+  };
+  function sessionLabel(stage) {
+    return SESSION_LABELS[stage] || '';
+  }
+
   /* Build `page?topic=...&...extras`. If `page` is a legacy
      per-section file, transparently rewrite to the consolidated
      shell + ?station=... — caller code stays identical. */
@@ -150,6 +164,7 @@
     getTopic:            getTopic,
     buildUrl:            buildUrl,
     go:                  go,
+    sessionLabel:        sessionLabel,
     loadData:            loadData,
     loadDataAndBoot:     loadDataAndBoot,
     loadDataThenScript:  loadDataThenScript

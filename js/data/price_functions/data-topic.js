@@ -187,7 +187,6 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '🛒',  head: 'To consumers',       body: 'Higher prices encourage substitutes, less spending, and more efficient use of the good or service.' },
         { tone: 'blue',  icon: '🕸️', head: 'To related markets', body: 'Price changes ripple to suppliers and complements (substitutes), affecting many linked markets.' }
       ],
-      causes2Style: 'plain-white',
       causes2Emoji: '⭐',
       causes2Label: 'Why this matters',
       causes2: [

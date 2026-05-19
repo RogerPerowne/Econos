@@ -339,9 +339,9 @@ window.ECONOS_TOPIC = {
       causesEmoji: '🎯',
       causesLabel: 'When each may work best',
       causes: [
-        { tone: 'amber', icon: '🎫', head: 'Concert tickets',         body: '<strong style="display:block;color:#D97706;margin-bottom:4px;">Markets work well</strong>Prices reflect demand and signal scarcity.' },
-        { tone: 'rose',  icon: '🏥', head: 'Healthcare',              body: '<strong style="display:block;color:#2563EB;margin-bottom:4px;">Government (or hybrid) works best</strong>Equity, merit good, and information asymmetry.' },
-        { tone: 'green', icon: '🌱', head: 'Vaccination / pollution', body: '<strong style="display:block;color:#2563EB;margin-bottom:4px;">Government (or hybrid) works best</strong>Positive/negative externalities affect society as a whole.' }
+        { tone: 'amber', icon: '🎫', head: 'Concert tickets', body: '<strong style="display:block;color:#059669;margin-bottom:4px;">Markets work best</strong>Prices respond quickly to demand and supply, ration scarce seats and signal popularity.' },
+        { tone: 'blue',  icon: '🏥', head: 'Health care',     body: '<strong style="display:block;color:#2563EB;margin-bottom:4px;">Hybrid works best</strong>Markets can improve efficiency, but government helps with equity, regulation and information gaps.' },
+        { tone: 'green', icon: '💡', head: 'Street lighting', body: '<strong style="display:block;color:#0F766E;margin-bottom:4px;">Government works best</strong>A public good — hard to charge users individually, so markets would underprovide it.' }
       ],
       keyTerms: [
         { term: 'Government failure', def: 'When government intervention produces a worse allocation than the market would — through bureaucracy, poor information, or distorted incentives.' },

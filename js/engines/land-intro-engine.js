@@ -427,7 +427,7 @@
 
     document.getElementById('app-root').innerHTML = '<div class="app theme--land">'
       + renderSidebar()
-      + '<div class="main">'
+      + '<div id="main-content" class="main" tabindex="-1">'
       +   renderTopbar()
       +   renderPage()
       + '</div>'

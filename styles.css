@@ -176,6 +176,34 @@ img, svg { display: block; max-width: 100%; }
   margin: 0 auto;
 }
 
+/* ----- Skip link (a11y) ----- */
+/* Visually hidden until a keyboard user tabs to it. Tabbing reveals
+   a button that jumps focus past the sidebar nav to <main>. */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -40px;
+  z-index: 1000;
+  padding: 8px 14px;
+  background: var(--econ-ink);
+  color: var(--econ-white);
+  font-weight: var(--fw-semi);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: top 120ms ease-out;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 8px;
+  outline: 2px solid var(--econ-blue, #2563EB);
+  outline-offset: 2px;
+}
+
+/* When jumped-to via skip-link, suppress the default focus ring on
+   the <main> wrapper itself — it's not really a focusable widget. */
+#main-content:focus { outline: none; }
+#main-content:focus-visible { outline: none; }
+
 /* ----- Sidebar ----- */
 .sidebar {
   background: var(--econ-white);

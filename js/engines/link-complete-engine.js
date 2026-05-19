@@ -274,7 +274,7 @@
       document.getElementById('app-root').innerHTML = ''
         + '<div class="app theme--link">'
         +   renderSidebar()
-        +   '<div class="main">'
+        +   '<div id="main-content" class="main" tabindex="-1">'
         +     renderTopbar()
         +     '<div class="page">'
         +       '<div class="link-station">'

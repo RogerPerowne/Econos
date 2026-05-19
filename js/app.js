@@ -18,7 +18,7 @@
     return `
       <div class="app">
         ${renderSidebar()}
-        <div class="main">
+        <div id="main-content" class="main" tabindex="-1">
           ${renderTopbar()}
           ${inner}
         </div>

@@ -144,10 +144,10 @@
     return ''
       + '<div class="app' + themeCls + '">'
       +   renderSidebar(opts.sidebar || null)
-      +   '<div class="main">'
+      +   '<main id="main-content" class="main" tabindex="-1">'
       +     (opts.topbar || '')
       +     (opts.body || '')
-      +   '</div>'
+      +   '</main>'
       + '</div>';
   }
 
@@ -279,6 +279,20 @@
   }
 
   /* ------------------------------------------------------------------
+     Skip link — first focusable element on every page so keyboard
+     users can jump past the sidebar nav to the main content.
+     ------------------------------------------------------------------ */
+  function renderSkipLink() {
+    return '<a href="#main-content" class="skip-link">Skip to main content</a>';
+  }
+  function mountSkipLink() {
+    if (document.querySelector('.skip-link')) return;
+    var wrap = document.createElement('div');
+    wrap.innerHTML = renderSkipLink();
+    document.body.insertBefore(wrap.firstChild, document.body.firstChild);
+  }
+
+  /* ------------------------------------------------------------------
      Mobile nav — auto-injected at the top of <body> on every page so
      each shell HTML can stop hand-rolling the same 5-line block.
      ------------------------------------------------------------------ */
@@ -307,13 +321,16 @@
     renderTopbar:    renderTopbar,
     renderApp:       renderApp,
     renderStages:    renderStages,
+    renderSkipLink:  renderSkipLink,
+    mountSkipLink:   mountSkipLink,
     renderMobileNav: renderMobileNav,
     mountMobileNav:  mountMobileNav
   };
 
-  /* Mobile nav is the one bit of chrome shell.js still auto-injects,
-     since each shell HTML body would otherwise repeat the same block. */
+  /* shell.js auto-injects skip-link + mobile-nav so each shell HTML
+     body doesn't repeat those blocks. Both are idempotent. */
   function bootShell() {
+    mountSkipLink();
     mountMobileNav();
   }
   if (document.readyState === 'loading') {

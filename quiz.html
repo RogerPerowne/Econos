@@ -116,7 +116,7 @@
       var page = '<div class="page">' + intro + rail + '</div>';
 
       document.getElementById('app-root').innerHTML =
-        '<div class="app">' + sidebar + '<div class="main">' + topbar + page + '</div></div>';
+        '<div class="app">' + sidebar + '<div id="main-content" class="main" tabindex="-1">' + topbar + page + '</div></div>';
 
       document.getElementById('quiz-start').addEventListener('click', function () {
         window.bootQuiz(Q.questions, {

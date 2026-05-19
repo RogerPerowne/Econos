@@ -3,15 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "description": "A-Level economics revision — bite-sized topics around the frameworks examiners reward.",
+  "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
     "lint:repo": "./scripts/lint.sh",
     "lint:js": "eslint 'js/**/*.js' 'index.html'",
     "lint": "npm run lint:repo && npm run lint:js",
     "format": "prettier --write 'js/**/*.js' '*.html' '*.json' '*.md'",
-    "format:check": "prettier --check 'js/**/*.js' '*.html' '*.json' '*.md'"
+    "format:check": "prettier --check 'js/**/*.js' '*.html' '*.json' '*.md'",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.0",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vite": "^6.4.2",
+    "vite-plugin-static-copy": "^2.3.2"
   }
 }

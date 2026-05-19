@@ -26,9 +26,6 @@
 
   <!-- Preload the big shared scripts so the network grabs them in parallel
        while HTML parses. `defer` keeps execution ordered. -->
-  <link rel="preload" as="script" href="js/icons.js">
-  <link rel="preload" as="script" href="js/app.js">
-
   <!-- Auth gate runs first; everything else is deferred so it doesn't block paint -->
   <script src="js/auth-check.js"></script>
   <script defer src="js/logger.js"></script>

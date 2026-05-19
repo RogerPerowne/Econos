@@ -282,6 +282,55 @@
       content += `</div>`;
     }
 
+    // Continuum — three-tile spectrum with a gradient connector bar and
+    // positional dots, plus verdict-strip cards underneath. Visually
+    // emphasises a "markets ↔ government" continuum and is intentionally
+    // distinct from the plain-white tile patterns used elsewhere.
+    //   Pattern: continuum: { title?, emoji?, leftCap?, rightCap?, items: [{icon, title, verdict, verdictTone, body, dotColor?}] }
+    if (c.continuum && c.continuum.items && c.continuum.items.length) {
+      const con = c.continuum;
+      const nC = con.items.length;
+      if (con.title) content += genSecLabel(con.emoji || '🎯', con.title);
+      const dotColors = con.items.map(it => {
+        const t = PATTERN_TONES[it.verdictTone] || PATTERN_TONES.slate;
+        return it.dotColor || t.accent;
+      });
+      const gradient = `linear-gradient(90deg, ${dotColors.join(', ')})`;
+      const positions = [];
+      for (let i = 0; i < nC; i++) positions.push(`${(100 * (i + 0.5) / nC).toFixed(2)}%`);
+      const cards = con.items.map(it => {
+        const t = PATTERN_TONES[it.verdictTone] || PATTERN_TONES.slate;
+        return `
+          <div style="border:1px solid #E7E7EA;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+            <div style="background:${t.bg};padding:9px 12px;border-bottom:1px solid ${t.border};text-align:center;">
+              <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.09em;">${it.verdict}</div>
+            </div>
+            <div style="padding:18px 16px 20px;text-align:center;flex:1;display:flex;flex-direction:column;">
+              <div style="font-size:34px;margin-bottom:8px;line-height:1;">${it.icon || ''}</div>
+              <div style="font-size:16px;font-weight:800;color:#0B1426;margin-bottom:8px;">${it.title}</div>
+              <div style="font-size:13px;color:#475569;line-height:1.6;">${it.body}</div>
+            </div>
+          </div>`;
+      }).join('');
+      const dots = positions.map((pos, i) =>
+        `<div style="position:absolute;left:${pos};top:0;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:${dotColors[i]};border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.25);"></div>`
+      ).join('');
+      content += `
+        <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:22px 24px 22px;margin-bottom:22px;">
+          <div style="position:relative;padding:0 0 22px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#0B1426;margin-bottom:12px;">
+              <span>← ${con.leftCap || 'Markets'}</span>
+              <span>${con.rightCap || 'Government'} →</span>
+            </div>
+            <div style="position:relative;height:14px;">
+              <div style="position:absolute;left:0;right:0;top:5px;height:4px;border-radius:2px;background:${gradient};"></div>
+              ${dots}
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(${nC},1fr);gap:14px;">${cards}</div>
+        </div>`;
+    }
+
     // Diagram (if card provides a diagramKey) — renders BEFORE flow so the
     // headline visual sits above any 1-2-3 explanatory chain. Optional
     // diagramLabel/diagramEmoji prepend a genSecLabel section title.
@@ -3057,6 +3106,7 @@
       c.marketGrid !== undefined ||
       c.framework !== undefined ||
       c.economistQuote !== undefined ||
+      c.continuum !== undefined ||
       c.note !== undefined ||
       (c.causes2 && Array.isArray(c.causes2) && c.causes2.length > 0 &&
        typeof c.causes2[0] === 'object' && 'head' in c.causes2[0]) ||

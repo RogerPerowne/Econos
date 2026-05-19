@@ -61,15 +61,61 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'price_functions_2',
-      template: 'framing',
-      title: 'Prices as Incentives',
-      body: 'Prices create incentives to respond to scarcity signals:<br><br>• <strong>Rising prices</strong> incentivise producers to expand output, invest in new capacity, and innovate to reduce costs. New entrepreneurs enter profitable markets, drawn by the profit signal.<br>• <strong>Falling prices</strong> signal oversupply — incentivise firms to reduce output, shift to other products, or exit the market.<br><br>The <strong>profit motive</strong> is the engine of the incentive function. Profit = the difference between price and cost. High prices → higher profit → strong incentive to supply. Loss → incentive to exit or cut costs.',
+      stepLabel: 'Learn: Step 2 of 7',
+      title: 'Prices as incentives',
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: '<em>Higher prices encourage producers to supply more and consumers to buy less.</em><br>Lower prices do the opposite.<br>Prices therefore act like <strong>signals with consequences</strong> — they change behaviour.'
+      },
+      pairLabel: 'How prices change behaviour',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green',
+        icon: '🏭',
+        iconStyle: 'circle',
+        centeredLabel: true,
+        label: 'Producers respond',
+        points: [
+          'Price rises → potential profit rises',
+          'Firms increase output',
+          'New firms may enter',
+          'Resources move into this market'
+        ]
+      },
+      right: {
+        tone: 'amber',
+        icon: '👥',
+        iconStyle: 'circle',
+        centeredLabel: true,
+        label: 'Consumers respond',
+        points: [
+          'Price rises → quantity demanded falls',
+          'Consumers switch to substitutes',
+          'Some delay purchases',
+          'Scarce goods are used more carefully'
+        ]
+      },
+      flow: [
+        { tone: 'green', icon: '📈', title: 'Price rises' },
+        { tone: 'green', icon: '⬆️', title: 'Stronger incentive to supply' },
+        { tone: 'amber', icon: '⬇️', title: 'Weaker incentive to buy' },
+        { tone: 'blue',  icon: '⚖️', title: 'Market moves toward balance' }
+      ],
+      causesStyle: 'plain-white',
+      causesEmoji: '🌍',
+      causesLabel: 'Real-world examples',
+      causes: [
+        { tone: 'green', icon: '⛽', head: 'Petrol prices',          body: 'Higher petrol prices encourage less car use and more fuel efficiency.' },
+        { tone: 'amber', icon: '🏠', head: 'House prices',           body: 'Higher house prices encourage more housebuilding.' },
+        { tone: 'blue',  icon: '🍓', head: 'Strawberries in winter', body: 'High winter strawberry prices attract imports and greenhouse production.' }
+      ],
       keyTerms: [
         { term: 'Incentive function', def: 'Prices motivate producers and consumers to adjust behaviour in response to scarcity signals — the mechanism by which markets self-correct.' },
-        { term: 'Profit signal', def: 'Abnormal profit signals under-supply of a good, attracting new entrants. Losses signal over-supply, causing exit.' },
-        { term: 'Entry and exit', def: 'The mechanism by which the incentive function restores equilibrium — new firms enter profitable markets; unprofitable firms exit.' }
+        { term: 'Profit signal',      def: 'Abnormal profit signals under-supply of a good, attracting new entrants. Losses signal over-supply, causing exit.' },
+        { term: 'Entry and exit',     def: 'The mechanism by which the incentive function restores equilibrium — new firms enter profitable markets; unprofitable firms exit.' }
       ],
-      examEdge: 'The incentive function is undermined by barriers to entry. If firms cannot enter profitable markets (e.g. natural monopoly, legal protections), the price signal is present but the incentive cannot be acted on — market stays below efficient output. This is one reason monopoly is inefficient.'
+      examEdge: 'Don\'t stop at "price rises". Explain the incentive: firms chase profit, consumers reconsider value, and resources reallocate.'
     },
     {
       id: 'price_functions_3',

@@ -311,7 +311,7 @@ window.ECONOS_TOPIC = {
         title: 'The policy hierarchy for BoP correction',
         text: "A* BoP evaluation structure: <em>'The preferred correction approach is expenditure-switching via improved competitiveness (supply-side) — it improves the BoP without reducing output. Currency depreciation is a faster route but risks inflation. Expenditure-reducing (austerity/rate rises) corrects the deficit but at the cost of recession. The optimal policy depends on whether the deficit is structural (supply-side needed) or cyclical (demand management appropriate).'</em>"
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

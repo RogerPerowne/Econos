@@ -62,7 +62,7 @@ window.ECONOS_LAND_SECTION_B = {
         tips: [
           'Identify two distinct assumptions &#8212; do not repeat the same point.',
           'For each assumption, explain the market condition it describes and then explain what that means for how firms behave.',
-          'The strongest answers link each assumption to a specific behavioural implication: e.g. homogeneous product &#8594; price-taking; no barriers to entry &#8594; long-run normal profit.'
+          'The strongest answers link each assumption to a specific behavioural implication: e.g. homogeneous product → price-taking; no barriers to entry → long-run normal profit.'
         ],
         modelAnswer: 'First, the assumption of homogeneous product means that goods sold by different firms are identical &#8212; buyers are completely indifferent between sellers. The implication is that no firm can charge a price above the market price without losing all its customers to rivals offering an equivalent good at a lower price. This makes each firm a price-taker with a perfectly elastic demand curve. Second, the assumption of no barriers to entry or exit means that firms can freely enter a market if supernormal profit exists, and exit if losses persist. The implication is that supernormal profit is competed away in the long run: new entrants increase market supply, driving the price down until P = AC and only normal profit remains. This entry/exit mechanism disciplines firms and ensures the long-run equilibrium achieves normal profit &#8212; unlike monopoly, where barriers protect supernormal profit indefinitely.'
       },
@@ -75,7 +75,7 @@ window.ECONOS_LAND_SECTION_B = {
         tips: [
           'Start by identifying the characteristics of perfect competition present in UK wheat markets, using specific evidence from Extract A.',
           'Explain how these characteristics produce price-taking behaviour and income volatility.',
-          'Use the price data (&#163;150 &#8594; &#163;340 &#8594; &#163;180) to illustrate how competitive adjustment works.',
+          'Use the price data (&#163;150 → &#163;340 → &#163;180) to illustrate how competitive adjustment works.',
           'Assess whether the competitive adjustment is beneficial or harmful for farmers.',
           'Consider limitations: is the wheat market truly perfectly competitive? (subsidies, forward contracts, informational asymmetries)'
         ],

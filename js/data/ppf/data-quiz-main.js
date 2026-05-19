@@ -39,18 +39,18 @@
         working: [
           'From B to C: consumer goods fall from 80 to 50 (&#8722;30 units) while capital goods rise from 10 to 20 (+10 units).',
           'Opportunity cost per capital good = 30 &#247; 10 = 3 consumer goods per capital good.',
-          'From A to B: consumer goods fall by 20; capital goods rise by 10 &#8594; OC = 2 consumer goods per capital good.',
+          'From A to B: consumer goods fall by 20; capital goods rise by 10 → OC = 2 consumer goods per capital good.',
           'The opportunity cost is increasing as more capital goods are produced &#8212; consistent with a bowed-out PPF.'
         ],
         stem: 'Moving from point B to point C, what is the <strong>opportunity cost of each additional capital good</strong>?',
         opts: [
-          { ped: '3 consumer goods per capital good', typ: 'Consumer goods fall by 30 (80&#8594;50) as capital goods rise by 10 (10&#8594;20): 30&#247;10 = 3', rev: 'Divide the consumer goods given up by the capital goods gained' },
+          { ped: '3 consumer goods per capital good', typ: 'Consumer goods fall by 30 (80→50) as capital goods rise by 10 (10→20): 30&#247;10 = 3', rev: 'Divide the consumer goods given up by the capital goods gained' },
           { ped: '2 consumer goods per capital good', typ: 'This is the opportunity cost between A and B, not B and C', rev: 'Read the correct row: from B to C' },
           { ped: '10 capital goods per consumer good', typ: 'Inverted the ratio &#8212; should be consumer goods given up per capital good gained', rev: 'Opportunity cost of capital goods is measured in consumer goods per capital good' },
           { ped: '1.5 consumer goods per capital good', typ: 'Arithmetic error &#8212; 30&#247;10 = 3, not 1.5', rev: 'Check the arithmetic: 30 consumer goods &#247; 10 capital goods' }
         ],
         ans: 0,
-        exp: 'From B to C, consumer goods fall from 80 to 50 (a sacrifice of <strong>30 units</strong>) while capital goods increase from 10 to 20 (a gain of <strong>10 units</strong>). Opportunity cost per capital good = 30 &#247; 10 = <strong>3 consumer goods</strong>. Compare this with A&#8594;B (OC = 2 consumer goods per capital good) &#8212; the opportunity cost is rising, confirming the bowed-out shape. The law of increasing opportunity cost: as production of one good expands, progressively more of the other must be sacrificed because resources are not equally suited to all uses.'
+        exp: 'From B to C, consumer goods fall from 80 to 50 (a sacrifice of <strong>30 units</strong>) while capital goods increase from 10 to 20 (a gain of <strong>10 units</strong>). Opportunity cost per capital good = 30 &#247; 10 = <strong>3 consumer goods</strong>. Compare this with A→B (OC = 2 consumer goods per capital good) &#8212; the opportunity cost is rising, confirming the bowed-out shape. The law of increasing opportunity cost: as production of one good expands, progressively more of the other must be sacrificed because resources are not equally suited to all uses.'
       },
 
       /* 3 &#8212; Elastic sort: causes of PPF shifts */
@@ -81,7 +81,7 @@
           }
         ],
         ans: 0,
-        exp: '<strong>Amir</strong> gives the stronger answer. He uses PPF diagram logic (moving along the frontier, shifting it outward), provides precise historical evidence with data (investment-to-GDP ratios), identifies specific risks (obsolescence, misallocation), and qualifies his conclusion based on context (developing vs developed economies). Leila identifies the same core point but uses vague language ("things like factories"), no data, and superficial evaluation ("pros and cons"). Amir would access Level 4; Leila Level 2. The analytical hierarchy: mechanism &#8594; evidence &#8594; qualification is the A-level essay structure.'
+        exp: '<strong>Amir</strong> gives the stronger answer. He uses PPF diagram logic (moving along the frontier, shifting it outward), provides precise historical evidence with data (investment-to-GDP ratios), identifies specific risks (obsolescence, misallocation), and qualifies his conclusion based on context (developing vs developed economies). Leila identifies the same core point but uses vague language ("things like factories"), no data, and superficial evaluation ("pros and cons"). Amir would access Level 4; Leila Level 2. The analytical hierarchy: mechanism → evidence → qualification is the A-level essay structure.'
       },
 
       /* 5 &#8212; Multi-select: statements true of PPF */

@@ -103,7 +103,7 @@ window.ECONOS_LAND_SECTION_B = {
   strongAnswers: [
     'Name the specific conflict and explain the mechanism &#8212; not just state it exists',
     'Use data from the extracts precisely &#8212; cite figures',
-    'Develop chains of analysis: cause &#8594; mechanism &#8594; consequence',
+    'Develop chains of analysis: cause → mechanism → consequence',
     'Reach a balanced, conditional judgement in part c'
   ]
 };

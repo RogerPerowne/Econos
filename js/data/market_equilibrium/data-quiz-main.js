@@ -46,7 +46,7 @@
           { icon: '&#128664;', label: 'A government subsidy to car manufacturers lowers production costs, increasing supply at the existing market price', note: '', ans: 'excess_s' },
           { icon: '&#127922;', label: 'A maximum ticket price for a football final is set below the level that would clear the market', note: '', ans: 'excess_d' }
         ],
-        exp: '<strong>Excess demand</strong> (price below equilibrium): rent control (price ceiling &#8594; shortage), face-value concert tickets (black market emerges), football ticket cap. <strong>Excess supply</strong> (price above equilibrium): bumper harvest kept at old price (surplus), minimum wage above equilibrium (unemployment = excess supply of labour), government subsidy expanding supply at fixed price. The general rule: price ceiling below equilibrium &#8594; shortage; price floor above equilibrium &#8594; surplus.'
+        exp: '<strong>Excess demand</strong> (price below equilibrium): rent control (price ceiling → shortage), face-value concert tickets (black market emerges), football ticket cap. <strong>Excess supply</strong> (price above equilibrium): bumper harvest kept at old price (surplus), minimum wage above equilibrium (unemployment = excess supply of labour), government subsidy expanding supply at fixed price. The general rule: price ceiling below equilibrium → shortage; price floor above equilibrium → surplus.'
       },
 
       /* 3 &#8212; MCQ: simultaneous shifts */
@@ -59,7 +59,7 @@
           'Both price and quantity are indeterminate &#8212; we can say nothing about the outcome without more information'
         ],
         ans: 0,
-        exp: 'When both supply and demand shift: (1) higher consumer incomes &#8594; demand shifts right (raises P and Q); (2) higher production costs &#8594; supply shifts left (raises P, reduces Q). For <strong>price</strong>: both shifts push price upward &#8594; price <strong>definitely rises</strong>. For <strong>quantity</strong>: demand increase pushes Q up; supply decrease pushes Q down &#8594; quantity is <strong>indeterminate</strong> without knowing relative magnitudes. This is the key rule for simultaneous shifts: if both shifts affect a variable in the <em>same</em> direction, that variable is determinate; if they affect it in <em>opposite</em> directions, it is ambiguous. State "indeterminate" and explain why &#8212; this earns more marks than guessing.'
+        exp: 'When both supply and demand shift: (1) higher consumer incomes → demand shifts right (raises P and Q); (2) higher production costs → supply shifts left (raises P, reduces Q). For <strong>price</strong>: both shifts push price upward → price <strong>definitely rises</strong>. For <strong>quantity</strong>: demand increase pushes Q up; supply decrease pushes Q down → quantity is <strong>indeterminate</strong> without knowing relative magnitudes. This is the key rule for simultaneous shifts: if both shifts affect a variable in the <em>same</em> direction, that variable is determinate; if they affect it in <em>opposite</em> directions, it is ambiguous. State "indeterminate" and explain why &#8212; this earns more marks than guessing.'
       },
 
       /* 4 &#8212; Calculation: equilibrium */
@@ -67,10 +67,10 @@
         context: 'A market has the following demand and supply schedules:<br><br>Price (&#163;): 10, 20, 30, 40, 50<br>Quantity demanded: 500, 400, 300, 200, 100<br>Quantity supplied: 100, 200, 300, 400, 500',
         working: [
           'Equilibrium where quantity demanded = quantity supplied.',
-          'At &#163;10: QD = 500, QS = 100 &#8594; excess demand = 400',
-          'At &#163;20: QD = 400, QS = 200 &#8594; excess demand = 200',
-          'At &#163;30: QD = 300, QS = 300 &#8594; QD = QS &#8594; EQUILIBRIUM',
-          'At &#163;40: QD = 200, QS = 400 &#8594; excess supply = 200',
+          'At &#163;10: QD = 500, QS = 100 → excess demand = 400',
+          'At &#163;20: QD = 400, QS = 200 → excess demand = 200',
+          'At &#163;30: QD = 300, QS = 300 → QD = QS → EQUILIBRIUM',
+          'At &#163;40: QD = 200, QS = 400 → excess supply = 200',
           'Equilibrium price = &#163;30; equilibrium quantity = 300 units'
         ],
         stem: 'What is the <strong>equilibrium price</strong> and <strong>equilibrium quantity</strong> in this market?',
@@ -96,7 +96,7 @@
           }
         ],
         ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She introduces the distinction between short-run and long-run effects, uses precise economic language (excess demand, allocative efficiency P=MC, supply deterrence), applies the concept of elasticity to justify the equity argument (necessity with inelastic demand &#8594; high burden on low-income households), and reaches a context-dependent conclusion (crisis vs permanent). Sam identifies the same basic arguments but without the analytical framework &#8212; no mention of excess demand, no elasticity reasoning, no efficiency analysis. Priya accesses Level 4; Sam Level 2&#8211;3.'
+        exp: '<strong>Priya</strong> gives the stronger answer. She introduces the distinction between short-run and long-run effects, uses precise economic language (excess demand, allocative efficiency P=MC, supply deterrence), applies the concept of elasticity to justify the equity argument (necessity with inelastic demand → high burden on low-income households), and reaches a context-dependent conclusion (crisis vs permanent). Sam identifies the same basic arguments but without the analytical framework &#8212; no mention of excess demand, no elasticity reasoning, no efficiency analysis. Priya accesses Level 4; Sam Level 2&#8211;3.'
       },
 
       /* 6 &#8212; Multi-select: true about allocative efficiency */

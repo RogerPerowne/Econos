@@ -18,7 +18,7 @@ window.ECONOS_LAND_SECTION_C = {
 
     structureTips: [
       'Define monopoly and its key features: single seller, barriers to entry, downward-sloping demand, MR below AR.',
-      'Explain why monopoly is harmful: MR = MC profit-max rule &#8594; P &gt; MC &#8594; allocative inefficiency and deadweight welfare loss.',
+      'Explain why monopoly is harmful: MR = MC profit-max rule → P &gt; MC → allocative inefficiency and deadweight welfare loss.',
       'Add X-inefficiency: reduced competitive pressure lowers productive efficiency.',
       'Present the case that monopoly is NOT always harmful: economies of scale, dynamic efficiency (Schumpeter hypothesis), natural monopoly.',
       'Use UK examples: pharmaceutical patents (dynamic efficiency), Thames Water natural monopoly, Google (network effects and innovation).',
@@ -38,7 +38,7 @@ window.ECONOS_LAND_SECTION_C = {
 
   strongAnswers: [
     'Challenge the word &#8220;always&#8221; explicitly in your introduction &#8212; this frames a strong evaluative essay',
-    'Apply the MR = MC &#8594; P &gt; MC &#8594; deadweight welfare loss chain precisely, with reference to a UK example',
+    'Apply the MR = MC → P &gt; MC → deadweight welfare loss chain precisely, with reference to a UK example',
     'Give the Schumpeter dynamic efficiency argument a full paragraph &#8212; it is the strongest counter-argument',
     'Distinguish natural monopoly from standard monopoly &#8212; they require different policy responses',
     'Conclude with a conditional judgement tied to industry characteristics, not a blanket statement either way'

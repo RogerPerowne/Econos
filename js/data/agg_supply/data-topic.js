@@ -301,7 +301,7 @@ window.ECONOS_TOPIC = {
         title: 'Estimate size, not just direction',
         text: 'A* macro answers <strong>estimate the size of the output gap</strong>, not just its direction. \'A negative output gap of approximately 2-3% of GDP suggests significant spare capacity — sufficient for AD stimulus without triggering inflation.\' Quantification is the mark-up.'
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

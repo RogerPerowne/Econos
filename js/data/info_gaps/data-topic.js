@@ -124,7 +124,7 @@ window.ECONOS_TOPIC = {
         { term: 'GMC', def: 'General Medical Council — regulates doctors in UK; a government solution to information asymmetry by certifying doctor quality and disciplining misconduct.' }
       ],
       examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces patient adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems — use this as evaluative balance.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

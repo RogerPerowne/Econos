@@ -53,7 +53,7 @@
           { ped: 'AC and MC are equal at all output levels because both are derived from TC', typ: 'MC = change in TC; AC = level of TC/Q; they only coincide at the minimum of AC', rev: 'MC and AC are derived differently from TC; they are only equal at AC minimum' }
         ],
         ans: 0,
-        exp: 'MC values: Q=1&#8594;80, Q=2&#8594;70, Q=3&#8594;60, Q=4&#8594;80, Q=5&#8594;110. MC <strong>falls up to Q=3 then rises</strong>, consistent with first increasing then diminishing marginal returns. AC values: 280, 175, 136.7, 122.5, 120 &#8212; falling throughout the data range because fixed costs are still being spread and MC is still below AC (MC &lt; AC pulls AC down). AC will eventually reach a minimum and rise once MC exceeds it. At Q=5, MC (110) is approaching but still below AC (120), so AC is still falling slightly. The minimum AC lies beyond Q=5 in this data set.'
+        exp: 'MC values: Q=1→80, Q=2→70, Q=3→60, Q=4→80, Q=5→110. MC <strong>falls up to Q=3 then rises</strong>, consistent with first increasing then diminishing marginal returns. AC values: 280, 175, 136.7, 122.5, 120 &#8212; falling throughout the data range because fixed costs are still being spread and MC is still below AC (MC &lt; AC pulls AC down). AC will eventually reach a minimum and rise once MC exceeds it. At Q=5, MC (110) is approaching but still below AC (120), so AC is still falling slightly. The minimum AC lies beyond Q=5 in this data set.'
       },
 
       /* 3 — Para fill: law of diminishing returns */
@@ -167,7 +167,7 @@
           'The MC curve above minimum AVC is the supply curve because fixed costs are zero at this output range'
         ],
         ans: 0,
-        exp: 'A perfectly competitive firm is a price-taker: it maximises profit by producing where <strong>P = MC</strong> (since MR = P for a price-taker). At any given market price, the firm expands to the output where that price equals marginal cost. This means the MC curve directly gives the quantity the firm will supply at each possible price &#8212; the definition of a supply curve. The curve is only the supply curve <strong>above minimum AVC</strong> because below this price the firm shuts down (P &lt; AVC &#8594; output = 0, not a point on the supply curve). This is why the short-run supply curve is the MC curve starting from the shutdown point, explaining why supply curves slope upward: higher prices justify producing at higher marginal cost (i.e. higher output).'
+        exp: 'A perfectly competitive firm is a price-taker: it maximises profit by producing where <strong>P = MC</strong> (since MR = P for a price-taker). At any given market price, the firm expands to the output where that price equals marginal cost. This means the MC curve directly gives the quantity the firm will supply at each possible price &#8212; the definition of a supply curve. The curve is only the supply curve <strong>above minimum AVC</strong> because below this price the firm shuts down (P &lt; AVC → output = 0, not a point on the supply curve). This is why the short-run supply curve is the MC curve starting from the shutdown point, explaining why supply curves slope upward: higher prices justify producing at higher marginal cost (i.e. higher output).'
       }
 
     ]

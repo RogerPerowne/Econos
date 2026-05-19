@@ -129,7 +129,7 @@ window.ECONOS_TOPIC = {
         { term: 'Commodity futures', def: 'Contracts to buy/sell a fixed quantity of a commodity at a set price on a future date — allow producers and consumers to hedge price risk.' }
       ],
       examEdge: 'OPEC is a supply-side price stabilisation mechanism: restrict supply to raise price (floor management). Contrast with buffer stocks: buffer stocks use reserves to stabilise (buying/selling existing stocks); OPEC manages new production. Both aim to reduce price volatility but OPEC\'s primary goal is actually to raise prices above competitive equilibrium — a cartel, not a neutral stabilisation scheme.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

@@ -19,7 +19,7 @@ window.ECONOS_LAND_SECTION_C = {
     structureTips: [
       'Define recession and expansionary fiscal policy; distinguish from automatic stabilisers.',
       'Explain the Keynesian case: the paradox of thrift, the multiplier, and the role of government as &#8220;spender of last resort&#8221;.',
-      'Apply the AD&#47;AS diagram: rightward shift of AD from higher G or tax cuts &#8594; higher real GDP, lower unemployment.',
+      'Apply the AD&#47;AS diagram: rightward shift of AD from higher G or tax cuts → higher real GDP, lower unemployment.',
       'Present the case for using monetary policy instead &#8212; speed, flexibility, and independence from political pressures.',
       'Evaluate the limits of expansionary fiscal policy: crowding out, time lags, debt sustainability, inflationary risk.',
       'Consider when fiscal policy is most effective: liquidity trap, zero lower bound, large negative output gap.',

@@ -46,7 +46,7 @@
           { icon: '&#128664;', label: 'A rise in petrol prices reduces quantity demanded of petrol', note: '', ans: 'move' },
           { icon: '&#128661;', label: 'A sharp fall in bus fares increases demand for bus journeys', note: '', ans: 'move' }
         ],
-        exp: '<strong>Movement along</strong> the demand curve: caused ONLY by a change in the good\'s own price. An extension (price falls &#8594; QD rises) or contraction (price rises &#8594; QD falls). The demand curve does not move. <strong>Shift</strong> of the demand curve: caused by any change in a non-price determinant &#8212; income, tastes, prices of related goods, demographics, expectations. The entire curve moves left (decrease) or right (increase). The most common exam error is saying "demand falls because price rises" &#8212; a price rise causes a contraction in quantity demanded, not a fall in demand.'
+        exp: '<strong>Movement along</strong> the demand curve: caused ONLY by a change in the good\'s own price. An extension (price falls → QD rises) or contraction (price rises → QD falls). The demand curve does not move. <strong>Shift</strong> of the demand curve: caused by any change in a non-price determinant &#8212; income, tastes, prices of related goods, demographics, expectations. The entire curve moves left (decrease) or right (increase). The most common exam error is saying "demand falls because price rises" &#8212; a price rise causes a contraction in quantity demanded, not a fall in demand.'
       },
 
       /* 3 &#8212; MCQ: inferior vs normal good */
@@ -59,7 +59,7 @@
           'Demand for both goods falls, as rising incomes cause consumers to shift toward investment and savings'
         ],
         ans: 0,
-        exp: 'This tests the <strong>normal vs inferior good</strong> distinction. A <strong>normal good</strong> has positive income elasticity of demand (YED > 0): demand rises with income. A <strong>inferior good</strong> has negative income elasticity (YED < 0): demand falls when income rises, as consumers switch to superior alternatives. Restaurant meals are a normal good (possibly a luxury with YED > 1). Own-brand value food is an inferior good &#8212; with higher incomes, consumers switch to branded or premium products. Option B is wrong: public bus travel is typically an inferior good (higher incomes &#8594; cars instead). Option C reverses the relationship. Option D applies no standard economic framework.'
+        exp: 'This tests the <strong>normal vs inferior good</strong> distinction. A <strong>normal good</strong> has positive income elasticity of demand (YED > 0): demand rises with income. A <strong>inferior good</strong> has negative income elasticity (YED < 0): demand falls when income rises, as consumers switch to superior alternatives. Restaurant meals are a normal good (possibly a luxury with YED > 1). Own-brand value food is an inferior good &#8212; with higher incomes, consumers switch to branded or premium products. Option B is wrong: public bus travel is typically an inferior good (higher incomes → cars instead). Option C reverses the relationship. Option D applies no standard economic framework.'
       },
 
       /* 4 &#8212; Calculation: consumer surplus */
@@ -129,7 +129,7 @@
           { id: 6, opts: ['lay off', 'hire', 'train', 'promote'], ans: 0 },
           { id: 7, opts: ['derived', 'direct', 'joint', 'independent'], ans: 0 }
         ],
-        exp: '(1) Derived demand: demand for a factor/intermediate good exists because of demand for <strong>another (final) good</strong>. (2) Steel demand is <strong>derived</strong> from car/construction demand. (3) In a <strong>factor</strong> market (labour, land, capital), demand is always derived. (4) Labour demand depends on demand for the final <strong>product</strong>. (5) In a <strong>recession</strong>, AD falls &#8212; this is the macroeconomic shock that triggers the chain. (6) Firms <strong>lay off</strong> workers when output demand falls &#8212; rising unemployment. (7) The chain operates through <strong>derived</strong> demand. This links macro shocks to micro labour markets: recession &#8594; falling product demand &#8594; falling derived demand for labour &#8594; unemployment.'
+        exp: '(1) Derived demand: demand for a factor/intermediate good exists because of demand for <strong>another (final) good</strong>. (2) Steel demand is <strong>derived</strong> from car/construction demand. (3) In a <strong>factor</strong> market (labour, land, capital), demand is always derived. (4) Labour demand depends on demand for the final <strong>product</strong>. (5) In a <strong>recession</strong>, AD falls &#8212; this is the macroeconomic shock that triggers the chain. (6) Firms <strong>lay off</strong> workers when output demand falls &#8212; rising unemployment. (7) The chain operates through <strong>derived</strong> demand. This links macro shocks to micro labour markets: recession → falling product demand → falling derived demand for labour → unemployment.'
       },
 
       /* 8 &#8212; Odd one out: demand curve shifts */
@@ -164,7 +164,7 @@
           'Only income changes affect demand; the other factors are irrelevant to demand analysis'
         ],
         ans: 0,
-        exp: 'Three factors increase demand for coffee shop visits: higher income (normal/luxury good &#8594; rightward shift), cheaper sandwiches (complementary good &#8594; rightward shift), and the social media trend (taste shift &#8594; rightward shift). One factor reduces demand: cheaper home coffee machines (substitute &#8594; leftward shift). The <strong>net effect is ambiguous</strong> without knowing the relative magnitudes. Option B over-claims &#8212; the substitute effect may be very strong. Option C over-claims the substitute effect. Option D is wrong &#8212; all non-price determinants shift demand. Acknowledging ambiguity and explaining why is a mark of A-level analytical maturity.'
+        exp: 'Three factors increase demand for coffee shop visits: higher income (normal/luxury good → rightward shift), cheaper sandwiches (complementary good → rightward shift), and the social media trend (taste shift → rightward shift). One factor reduces demand: cheaper home coffee machines (substitute → leftward shift). The <strong>net effect is ambiguous</strong> without knowing the relative magnitudes. Option B over-claims &#8212; the substitute effect may be very strong. Option C over-claims the substitute effect. Option D is wrong &#8212; all non-price determinants shift demand. Acknowledging ambiguity and explaining why is a mark of A-level analytical maturity.'
       },
 
       /* 10 &#8212; Chain: demand shock to new equilibrium */

@@ -197,7 +197,7 @@ window.ECONOS_TOPIC = {
         { label: 'UK examples',     pc: 'Foreign exchange, commodity markets', mc: 'Coffee shops, hairdressers, restaurants', ol: 'Supermarkets (Big 4), banks, airlines', mo: 'Water utilities, Royal Mail (letters)' }
       ],
       examEdge: 'Don\'t just list structures — compare them on efficiency and link to policy. Strong analysis: "Unlike PC, monopoly is neither productively nor allocatively efficient in the static model — but may achieve greater dynamic efficiency if Schumpeterian supernormal profit funds R&D. Whether the static losses outweigh dynamic gains is an empirical question, not a theoretical one." Always qualify with contestability.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

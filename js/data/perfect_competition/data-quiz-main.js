@@ -92,7 +92,7 @@
           { icon: '&#128176;', label: 'Market price of &#163;50 is far above AC of &#163;35 &#8212; short-run boom conditions', note: '', ans: 'sp' },
           { icon: '&#128680;', label: 'Market price of &#163;10 falls below minimum AVC of &#163;12 &#8212; firm cannot cover variable costs', note: '', ans: 'sd' }
         ],
-        exp: '<strong>Supernormal profit</strong>: P &gt; AC (P=40&gt;AC=32; P=50&gt;AC=35). <strong>Normal profit</strong>: P = AC (P=28=AC=28). <strong>Economic loss &#8212; continue</strong>: AVC &le; P &lt; AC (P=22: AVC=18&le;22&lt;AC=30 &#8594; positive contribution; continue). <strong>Shutdown</strong>: P &lt; AVC (P=14&lt;AVC=17; P=10&lt;AVC=12). In both shutdown cases, TR &lt; VC &#8212; producing increases the loss beyond the fixed cost that the firm would pay anyway. The firm minimises losses by outputting zero and bearing only the fixed cost.'
+        exp: '<strong>Supernormal profit</strong>: P &gt; AC (P=40&gt;AC=32; P=50&gt;AC=35). <strong>Normal profit</strong>: P = AC (P=28=AC=28). <strong>Economic loss &#8212; continue</strong>: AVC &le; P &lt; AC (P=22: AVC=18&le;22&lt;AC=30 → positive contribution; continue). <strong>Shutdown</strong>: P &lt; AVC (P=14&lt;AVC=17; P=10&lt;AVC=12). In both shutdown cases, TR &lt; VC &#8212; producing increases the loss beyond the fixed cost that the firm would pay anyway. The firm minimises losses by outputting zero and bearing only the fixed cost.'
       },
 
       /* 6 — Diagnostic pair: long-run adjustment from loss */
@@ -155,7 +155,7 @@
           'The data show that Year 5 is the inefficient outcome because firms earn zero economic profit, which discourages investment'
         ],
         ans: 0,
-        exp: 'The data trace the textbook <strong>long-run competitive adjustment</strong>. Year 1: supernormal profit (P=25 &gt; AC=20) &#8594; Year 2&#8211;3: entry increases number of firms from 100 to 130, market supply rises, price falls &#8594; Year 4&#8211;5: long-run equilibrium at P = AC = &#163;20, zero economic profit (normal profit), stable at 140 firms. No further incentive to enter or exit. This is the efficient long-run outcome: P = AC (normal profit) and &#8212; since this is a constant cost industry (AC constant at &#163;20) &#8212; P = MC = min AC (both efficiency conditions met). Option D reflects the "zero economic profit = bad" misconception: zero economic profit means normal profit, which means all costs including opportunity cost are covered &#8212; this is the efficient outcome, not a failure.'
+        exp: 'The data trace the textbook <strong>long-run competitive adjustment</strong>. Year 1: supernormal profit (P=25 &gt; AC=20) → Year 2&#8211;3: entry increases number of firms from 100 to 130, market supply rises, price falls → Year 4&#8211;5: long-run equilibrium at P = AC = &#163;20, zero economic profit (normal profit), stable at 140 firms. No further incentive to enter or exit. This is the efficient long-run outcome: P = AC (normal profit) and &#8212; since this is a constant cost industry (AC constant at &#163;20) &#8212; P = MC = min AC (both efficiency conditions met). Option D reflects the "zero economic profit = bad" misconception: zero economic profit means normal profit, which means all costs including opportunity cost are covered &#8212; this is the efficient outcome, not a failure.'
       },
 
       /* 10 — Chain: demand increase in competitive market */

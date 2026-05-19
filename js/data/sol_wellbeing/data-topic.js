@@ -316,7 +316,7 @@ window.ECONOS_TOPIC = {
         title: 'Where to next',
         text: 'Inflation Measurement & Costs builds on the price level concepts introduced here — how we measure the cost of living, and who gains and loses from inflation.'
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

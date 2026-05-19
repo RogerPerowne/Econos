@@ -144,7 +144,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'The growth-efficiency-competition trade-off is the central theme of competition policy. Large firms are often more productively efficient (scale economies) but allocatively inefficient (market power). Dynamic efficiency complicates this further: monopoly profits fund R&D (Schumpeter); but lack of competitive pressure reduces incentive to innovate. There is no clean answer — evaluate both directions.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]
 };

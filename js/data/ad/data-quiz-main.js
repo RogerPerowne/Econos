@@ -82,7 +82,7 @@
           }
         ],
         ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She quantifies the volatility (25% fall in 2008-09, 15% during COVID, 2-3% cumulative GDP cost from Brexit uncertainty), states the accelerator relationship with the formula (&#8710;I = v&#215;&#8710;Y), names \'animal spirits\' as the mechanism, and links to the multiplier explicitly. Tom makes the same core point but without quantification, without the accelerator formula, and without named examples beyond a generic \'2008 recession\'. The analytical pattern &#8212; mechanism &#8594; evidence &#8594; quantification &#8212; is what separates the two answers.'
+        exp: '<strong>Priya</strong> gives the stronger answer. She quantifies the volatility (25% fall in 2008-09, 15% during COVID, 2-3% cumulative GDP cost from Brexit uncertainty), states the accelerator relationship with the formula (&#8710;I = v&#215;&#8710;Y), names \'animal spirits\' as the mechanism, and links to the multiplier explicitly. Tom makes the same core point but without quantification, without the accelerator formula, and without named examples beyond a generic \'2008 recession\'. The analytical pattern &#8212; mechanism → evidence → quantification &#8212; is what separates the two answers.'
       },
 
       /* 5 &#8212; Calculation: multiplier */

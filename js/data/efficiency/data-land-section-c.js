@@ -31,7 +31,7 @@ window.ECONOS_LAND_SECTION_C = {
   strongAnswers: [
     'Define all four types of efficiency at the outset &#8212; the essay must assess monopoly against each separately',
     'Use the BT privatisation example for X-efficiency and pharmaceutical pricing for allocative inefficiency &#8212; UK-specific evidence',
-    'Apply Schumpeter&#39;s argument for dynamic efficiency clearly: supernormal profits &#8594; R&#38;D funding &#8594; innovation &#8594; long-run consumer benefit',
+    'Apply Schumpeter&#39;s argument for dynamic efficiency clearly: supernormal profits → R&#38;D funding → innovation → long-run consumer benefit',
     'Acknowledge that &#8220;always&#8221; is the key word in the question &#8212; finding one counter-example (dynamic efficiency) is sufficient to reject the absolute claim',
     'Conclude conditionally: monopoly is inferior on static criteria; may be superior on dynamic efficiency; the overall verdict depends on which criterion matters most in the specific industry context'
   ]

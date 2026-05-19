@@ -342,7 +342,7 @@ window.ECONOS_TOPIC = {
         title: "Where to next",
         text: "You've got the chains, the constraints, and the credibility story. Now apply them: try the <strong>monetary policy simulator</strong> in <em>Land it</em> — given a scenario, choose the rate move and walk one chain."
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

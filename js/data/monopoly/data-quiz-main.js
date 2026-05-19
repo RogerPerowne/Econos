@@ -125,7 +125,7 @@
           'TR = P &#215; Q = (100 &#8722; 2Q)Q = 100Q &#8722; 2Q&#178;',
           'MR = dTR/dQ = 100 &#8722; 4Q',
           'Step 2: set MR = MC',
-          '100 &#8722; 4Q = 20 &#8594; 4Q = 80 &#8594; Q* = 20',
+          '100 &#8722; 4Q = 20 → 4Q = 80 → Q* = 20',
           'Step 3: find P*',
           'P* = 100 &#8722; 2(20) = 100 &#8722; 40 = &#163;60',
           'Step 4: calculate profit',
@@ -141,7 +141,7 @@
           { ped: '&#163;1,600', typ: 'Used competitive output (Q = 40) rather than profit-maximising output Q* = 20', rev: 'Monopolist sets MR = MC, not P = MC' }
         ],
         ans: 0,
-        exp: 'Setting MR = MC: 100 &#8722; 4Q = 20 &#8594; Q* = 20. Price from demand: P* = 100 &#8722; 2(20) = <strong>&#163;60</strong>. TR = 60 &#215; 20 = &#163;1,200. Variable costs = MC &#215; Q = 20 &#215; 20 = &#163;400. Total cost = &#163;400 (VC) + &#163;400 (FC) = &#163;800. Supernormal profit = &#163;1,200 &#8722; &#163;800 = <strong>&#163;400</strong>. Note: the competitive output would be where P = MC: 100 &#8722; 2Q = 20 &#8594; Q_c = 40. Restricting output from 40 to 20 is the source of the DWL &#8212; and of the supernormal profit.'
+        exp: 'Setting MR = MC: 100 &#8722; 4Q = 20 → Q* = 20. Price from demand: P* = 100 &#8722; 2(20) = <strong>&#163;60</strong>. TR = 60 &#215; 20 = &#163;1,200. Variable costs = MC &#215; Q = 20 &#215; 20 = &#163;400. Total cost = &#163;400 (VC) + &#163;400 (FC) = &#163;800. Supernormal profit = &#163;1,200 &#8722; &#163;800 = <strong>&#163;400</strong>. Note: the competitive output would be where P = MC: 100 &#8722; 2Q = 20 → Q_c = 40. Restricting output from 40 to 20 is the source of the DWL &#8212; and of the supernormal profit.'
       },
 
       /* 8 — Odd one out: natural monopoly */

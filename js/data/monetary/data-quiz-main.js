@@ -170,7 +170,7 @@
           'Monetary policy always dominates fiscal policy because the BoE is independent, so inflation will be controlled and the fiscal expansion will have no effect'
         ],
         ans: 0,
-        exp: 'Policy conflicts produce ambiguous macro outcomes and signal institutional credibility problems. The fiscal expansion (&#8593;G &#8594; AD right) and monetary tightening (&#8593;r &#8594; AD left) partially offset each other &#8212; but markets observe the contradiction. The 2022 mini-budget was exactly this: the government cut taxes (expansionary fiscal) while the BoE was raising rates. Markets priced in that the BoE would have to raise rates even higher to counteract the fiscal impulse &#8212; gilt yields spiked. The net effect is not neutral (option B) &#8212; the conflict forces the BoE to tighten more than otherwise necessary, at greater cost to growth. Neither policy \'dominates\' automatically.'
+        exp: 'Policy conflicts produce ambiguous macro outcomes and signal institutional credibility problems. The fiscal expansion (&#8593;G → AD right) and monetary tightening (&#8593;r → AD left) partially offset each other &#8212; but markets observe the contradiction. The 2022 mini-budget was exactly this: the government cut taxes (expansionary fiscal) while the BoE was raising rates. Markets priced in that the BoE would have to raise rates even higher to counteract the fiscal impulse &#8212; gilt yields spiked. The net effect is not neutral (option B) &#8212; the conflict forces the BoE to tighten more than otherwise necessary, at greater cost to growth. Neither policy \'dominates\' automatically.'
       },
 
       /* 10 &#8212; Chain: monetary tightening cycle */

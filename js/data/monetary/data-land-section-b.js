@@ -73,7 +73,7 @@ window.ECONOS_LAND_SECTION_B = {
         type:   'freetext',
         stem:   'With reference to Extract B, examine the distributional effects of quantitative easing on UK households.',
         tips: [
-          'Define QE briefly and explain how it works (bond purchases &#8594; lower yields &#8594; higher asset prices).',
+          'Define QE briefly and explain how it works (bond purchases → lower yields → higher asset prices).',
           'Use the data in Extract B: wealthiest 5% own 40%+ of financial assets.',
           'Explain why rising asset prices primarily benefit wealthier households.',
           'Consider the counter-argument (Extract B paragraph 3): QE may have benefited all through avoiding recession.',

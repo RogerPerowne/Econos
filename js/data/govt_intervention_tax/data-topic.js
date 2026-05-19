@@ -128,7 +128,7 @@ window.ECONOS_TOPIC = {
         { term: 'Polluter pays principle', def: 'The idea that those who generate pollution should bear the full cost — the philosophical foundation for Pigouvian taxes.' }
       ],
       examEdge: 'Exam essays often ask to "compare two policies." Tax vs regulation structure: tax = flexibility, efficiency, revenue generation, but uncertain quantity outcome and regressive. Regulation = certainty, simplicity, but inflexibility, no revenue, may be inefficient. Both have a role — hybrid approaches (set a regulatory floor + carbon tax above it) often optimal.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

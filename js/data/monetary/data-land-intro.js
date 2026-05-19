@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
     'Practising extended writing under exam-style time pressure'
   ],
 
-  tip: 'Always trace the full transmission mechanism: Bank Rate &#8594; commercial interest rates &#8594; consumption and investment &#8594; aggregate demand &#8594; price level and output. Do not just say &#8220;raising rates reduces inflation&#8221; &#8212; show the mechanism step by step.',
+  tip: 'Always trace the full transmission mechanism: Bank Rate → commercial interest rates → consumption and investment → aggregate demand → price level and output. Do not just say &#8220;raising rates reduces inflation&#8221; &#8212; show the mechanism step by step.',
 
   stages: [
     { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },

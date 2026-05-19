@@ -68,7 +68,7 @@ window.ECONOS_LAND_SECTION_B = {
         tips: [
           'Identify two distinct causes (e.g. lower interest rates, rising consumer confidence, fiscal stimulus).',
           'For each cause, explain the mechanism by which it shifts aggregate demand to the right.',
-          'Use the language of the AD/AS model: AD shifts right &#8594; rising price level if economy is near full capacity.'
+          'Use the language of the AD/AS model: AD shifts right → rising price level if economy is near full capacity.'
         ],
         modelAnswer: 'One cause of demand-pull inflation is a cut in interest rates. Lower borrowing costs encourage households to take out loans and mortgages, increasing consumption, while firms borrow more cheaply to fund investment. Total spending rises, shifting aggregate demand (AD) to the right. If the economy is operating near full capacity, this excess demand pulls the price level up. A second cause is an expansionary fiscal policy &#8212; for example, tax cuts or higher government spending. Tax cuts raise households&#39; disposable income, boosting consumption, while higher government spending directly adds to AD. Again, the rightward shift in AD against a relatively inelastic short-run aggregate supply curve pulls prices up.'
       },
@@ -80,7 +80,7 @@ window.ECONOS_LAND_SECTION_B = {
         stem:   'With reference to Extract A, examine the likely impact of quantitative easing on the UK price level.',
         tips: [
           'Briefly define quantitative easing and link it to the &#163;200bn figure in Extract A.',
-          'Trace the transmission mechanism: asset purchases &#8594; higher bond prices, lower yields &#8594; lower borrowing costs &#8594; higher AD.',
+          'Trace the transmission mechanism: asset purchases → higher bond prices, lower yields → lower borrowing costs → higher AD.',
           'Explain why QE may help avoid deflation when interest rates are near the zero lower bound.',
           'Use a balanced view: some commentators in Extract A argue QE later contributed to inflation, others that the money stayed in financial markets.'
         ],

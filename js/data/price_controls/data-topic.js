@@ -130,7 +130,7 @@ window.ECONOS_TOPIC = {
         { term: 'Supply-side solution', def: 'Expanding supply to reduce the equilibrium price — addresses root cause of high prices unlike price controls.' }
       ],
       examEdge: 'Means-tested targeted subsidies are generally more efficient than price controls because: (1) they do not create shortages, (2) they reach those most in need rather than all consumers, (3) they preserve price signals. The main disadvantage is stigma of means-testing and complexity of administration. This comparison earns evaluation marks in any price controls essay.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

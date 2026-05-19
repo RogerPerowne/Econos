@@ -157,7 +157,7 @@
           }
         ],
         ans: 0,
-        exp: '<strong>Nadia</strong> gives the more nuanced answer. She starts from the theoretical premise (free rider &#8594; no private provision) and then systematically challenges it with three mechanisms that enable private provision: technological excludability (GPS, digital TV), advertising funding, and historical private provision of lighthouses. She distinguishes between technological and fundamental non-excludability &#8212; the key analytical insight. Oliver identifies the same core argument and notes private security as an exception but does not develop why private provision sometimes works (the excludability mechanism). Nadia\'s conclusion &#8212; "the public goods category shrinks as excludability technology improves" &#8212; is a sophisticated evaluative insight that earns Level 4. Oliver: Level 2&#8211;3.'
+        exp: '<strong>Nadia</strong> gives the more nuanced answer. She starts from the theoretical premise (free rider → no private provision) and then systematically challenges it with three mechanisms that enable private provision: technological excludability (GPS, digital TV), advertising funding, and historical private provision of lighthouses. She distinguishes between technological and fundamental non-excludability &#8212; the key analytical insight. Oliver identifies the same core argument and notes private security as an exception but does not develop why private provision sometimes works (the excludability mechanism). Nadia\'s conclusion &#8212; "the public goods category shrinks as excludability technology improves" &#8212; is a sophisticated evaluative insight that earns Level 4. Oliver: Level 2&#8211;3.'
       },
 
       /* 10 — chain: free rider problem sequence */

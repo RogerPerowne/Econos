@@ -120,11 +120,11 @@
         context: 'A rail operator faces two market segments. <strong>Business:</strong> demand P_B = 120 &#8722; 2Q_B; <strong>Leisure:</strong> demand P_L = 80 &#8722; 2Q_L. Marginal cost = &#163;20 (constant, same for both segments).',
         working: [
           'Step 1: find MR for each segment',
-          'Business: TR_B = (120 &#8722; 2Q_B)Q_B &#8594; MR_B = 120 &#8722; 4Q_B',
-          'Leisure: TR_L = (80 &#8722; 2Q_L)Q_L &#8594; MR_L = 80 &#8722; 4Q_L',
+          'Business: TR_B = (120 &#8722; 2Q_B)Q_B → MR_B = 120 &#8722; 4Q_B',
+          'Leisure: TR_L = (80 &#8722; 2Q_L)Q_L → MR_L = 80 &#8722; 4Q_L',
           'Step 2: set MR = MC for each segment',
-          'Business: 120 &#8722; 4Q_B = 20 &#8594; Q_B = 25; P_B = 120 &#8722; 2(25) = &#163;70',
-          'Leisure: 80 &#8722; 4Q_L = 20 &#8594; Q_L = 15; P_L = 80 &#8722; 2(15) = &#163;50',
+          'Business: 120 &#8722; 4Q_B = 20 → Q_B = 25; P_B = 120 &#8722; 2(25) = &#163;70',
+          'Leisure: 80 &#8722; 4Q_L = 20 → Q_L = 15; P_L = 80 &#8722; 2(15) = &#163;50',
           'Step 3: profit',
           'Profit = (P_B &#8722; MC)Q_B + (P_L &#8722; MC)Q_L = (70&#8722;20)&#215;25 + (50&#8722;20)&#215;15 = 1,250 + 450 = &#163;1,700'
         ],
@@ -136,7 +136,7 @@
           { ped: '&#163;900', typ: 'Charged a single price of &#163;60 (average of 70 and 50) to both segments', rev: 'Third-degree discrimination sets optimal separate prices in each segment &#8212; do not average' }
         ],
         ans: 0,
-        exp: '<strong>Business segment:</strong> MR_B = MC &#8594; 120 &#8722; 4Q_B = 20 &#8594; Q_B = 25. P_B = 120 &#8722; 50 = <strong>&#163;70</strong>. Profit_B = (70 &#8722; 20) &#215; 25 = <strong>&#163;1,250</strong>.<br><strong>Leisure segment:</strong> MR_L = MC &#8594; 80 &#8722; 4Q_L = 20 &#8594; Q_L = 15. P_L = 80 &#8722; 30 = <strong>&#163;50</strong>. Profit_L = (50 &#8722; 20) &#215; 15 = <strong>&#163;450</strong>.<br><strong>Total profit = &#163;1,700</strong>. The business segment generates more than 2.7&#215; the leisure segment\'s profit because of its higher price and lower price elasticity. This ratio illustrates why businesses pay such significantly more for peak rail travel.'
+        exp: '<strong>Business segment:</strong> MR_B = MC → 120 &#8722; 4Q_B = 20 → Q_B = 25. P_B = 120 &#8722; 50 = <strong>&#163;70</strong>. Profit_B = (70 &#8722; 20) &#215; 25 = <strong>&#163;1,250</strong>.<br><strong>Leisure segment:</strong> MR_L = MC → 80 &#8722; 4Q_L = 20 → Q_L = 15. P_L = 80 &#8722; 30 = <strong>&#163;50</strong>. Profit_L = (50 &#8722; 20) &#215; 15 = <strong>&#163;450</strong>.<br><strong>Total profit = &#163;1,700</strong>. The business segment generates more than 2.7&#215; the leisure segment\'s profit because of its higher price and lower price elasticity. This ratio illustrates why businesses pay such significantly more for peak rail travel.'
       },
 
       /* 8 — Data table: digital price discrimination */

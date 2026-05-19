@@ -31,9 +31,9 @@
         ],
         stem: 'What is the <strong>price elasticity of demand</strong> for this train season ticket, and what does it imply for the train operator\'s total revenue?',
         opts: [
-          { ped: 'PED = &#8722;0.5; demand is price inelastic, so the price rise increases total revenue', typ: '%&#916;QD = &#8722;5%; %&#916;P = +10%; PED = &#8722;0.5; |PED| < 1 &#8594; inelastic &#8594; price rise raises TR', rev: 'TR = P&#215;Q: rises from &#163;100m to &#163;104.5m &#8212; verify numerically' },
+          { ped: 'PED = &#8722;0.5; demand is price inelastic, so the price rise increases total revenue', typ: '%&#916;QD = &#8722;5%; %&#916;P = +10%; PED = &#8722;0.5; |PED| < 1 → inelastic → price rise raises TR', rev: 'TR = P&#215;Q: rises from &#163;100m to &#163;104.5m &#8212; verify numerically' },
           { ped: 'PED = &#8722;2; demand is price elastic, so the price rise reduces total revenue', typ: 'Inverted the formula: &#916;P/&#916;Q instead of &#916;Q/&#916;P', rev: 'PED = %&#916;QD &#247; %&#916;P; the quantity change is the numerator' },
-          { ped: 'PED = &#8722;0.5; demand is price inelastic, so the price rise reduces total revenue', typ: 'PED calculation correct but TR conclusion wrong &#8212; inelastic demand means TR rises when price rises', rev: 'Inelastic: price up &#8594; QD falls proportionally less &#8594; TR rises' },
+          { ped: 'PED = &#8722;0.5; demand is price inelastic, so the price rise reduces total revenue', typ: 'PED calculation correct but TR conclusion wrong &#8212; inelastic demand means TR rises when price rises', rev: 'Inelastic: price up → QD falls proportionally less → TR rises' },
           { ped: 'PED = &#8722;0.5; demand is price elastic', typ: 'PED calculated correctly but misclassified: |PED| = 0.5 < 1, which is inelastic not elastic', rev: '|PED| > 1 = elastic; |PED| < 1 = inelastic; 0.5 < 1 = inelastic' }
         ],
         ans: 0,
@@ -66,7 +66,7 @@
           'Total revenue will rise slightly &#8212; elastic demand means consumers are more sensitive to price but will still buy almost the same amount'
         ],
         ans: 0,
-        exp: 'With |PED| = 2.5, a 10% price rise causes approximately a 25% fall in quantity demanded (10% &#215; 2.5 = 25%). Total revenue = P &#215; Q. The revenue gain from +10% price is outweighed by the revenue loss from &#8722;25% quantity &#8594; <strong>TR falls</strong>. TR rule: <strong>elastic demand</strong> &#8594; price rise &#8594; TR falls; price cut &#8594; TR rises. <strong>Inelastic demand</strong> &#8594; price rise &#8594; TR rises; price cut &#8594; TR falls. Unit elastic (|PED| = 1) &#8594; TR unchanged by price change. Firms in elastic markets (many substitutes) should cut prices to grow revenue; firms in inelastic markets should raise them.'
+        exp: 'With |PED| = 2.5, a 10% price rise causes approximately a 25% fall in quantity demanded (10% &#215; 2.5 = 25%). Total revenue = P &#215; Q. The revenue gain from +10% price is outweighed by the revenue loss from &#8722;25% quantity → <strong>TR falls</strong>. TR rule: <strong>elastic demand</strong> → price rise → TR falls; price cut → TR rises. <strong>Inelastic demand</strong> → price rise → TR rises; price cut → TR falls. Unit elastic (|PED| = 1) → TR unchanged by price change. Firms in elastic markets (many substitutes) should cut prices to grow revenue; firms in inelastic markets should raise them.'
       },
 
       /* 4 &#8212; Multi-select: tax incidence */
@@ -81,7 +81,7 @@
           'Elastic supply means the full tax is absorbed by producers through lower profit margins'
         ],
         correct: [0, 1, 2, 3],
-        exp: 'Options A, B, C, and D are all correct. <strong>A</strong>: inelastic demand &#8594; consumers bear most of the tax (price rises significantly). <strong>B</strong>: inelastic demand &#8594; little quantity reduction &#8594; large tax revenue (the Laffer argument for taxing inelastic goods). <strong>C</strong>: deadweight loss = triangle proportional to quantity reduction; inelastic demand &#8594; small quantity fall &#8594; small deadweight loss. <strong>D</strong>: cigarette consumption is higher among lower-income groups as a share of income &#8212; a regressive tax. Option E is wrong: precisely the opposite &#8212; inelastic demand allows producers to pass the tax on. Option F confuses supply elasticity with demand elasticity in this context.'
+        exp: 'Options A, B, C, and D are all correct. <strong>A</strong>: inelastic demand → consumers bear most of the tax (price rises significantly). <strong>B</strong>: inelastic demand → little quantity reduction → large tax revenue (the Laffer argument for taxing inelastic goods). <strong>C</strong>: deadweight loss = triangle proportional to quantity reduction; inelastic demand → small quantity fall → small deadweight loss. <strong>D</strong>: cigarette consumption is higher among lower-income groups as a share of income &#8212; a regressive tax. Option E is wrong: precisely the opposite &#8212; inelastic demand allows producers to pass the tax on. Option F confuses supply elasticity with demand elasticity in this context.'
       },
 
       /* 5 &#8212; Diagnostic pair: PED and pricing strategy */
@@ -96,7 +96,7 @@
           }
         ],
         ans: 0,
-        exp: '<strong>Ella</strong> gives the stronger answer. She explicitly labels the PED of each segment (|PED| > 1 and < 1), explains the determinants behind each elasticity value (substitutes, necessity, brand loyalty), and shows precisely why each strategy maximises revenue. She also introduces price discrimination as the integrating concept. Tom identifies the correct direction for each firm but at a descriptive level &#8212; he mentions the PED formula without using it analytically. Ella accesses Level 4; Tom Level 2. The key analytical move is connecting PED value &#8594; TR rule &#8594; pricing strategy as a chain of reasoning.'
+        exp: '<strong>Ella</strong> gives the stronger answer. She explicitly labels the PED of each segment (|PED| > 1 and < 1), explains the determinants behind each elasticity value (substitutes, necessity, brand loyalty), and shows precisely why each strategy maximises revenue. She also introduces price discrimination as the integrating concept. Tom identifies the correct direction for each firm but at a descriptive level &#8212; he mentions the PED formula without using it analytically. Ella accesses Level 4; Tom Level 2. The key analytical move is connecting PED value → TR rule → pricing strategy as a chain of reasoning.'
       },
 
       /* 6 &#8212; Para fill: PED and total revenue rule */
@@ -113,7 +113,7 @@
           { id: 6, opts: ['increases', 'decreases', 'stabilises', 'halves'], ans: 0 },
           { id: 7, opts: ['smaller', 'larger', 'equal', 'indeterminate'], ans: 0 }
         ],
-        exp: '(1+2) Total Revenue = <strong>Price</strong> &#215; <strong>Quantity</strong>. (3) <strong>Elastic</strong> demand: |PED| > 1. (4) Quantity demanded falls <strong>more</strong> than proportionally &#8212; the percentage fall in Q exceeds the percentage rise in P &#8594; TR falls. (5) <strong>Inelastic</strong> demand: |PED| < 1. (6) TR <strong>increases</strong> &#8212; the revenue gain from higher price outweighs the revenue loss from lower quantity. (7) The quantity fall is <strong>smaller</strong> in proportional terms than the price rise &#8594; the price effect dominates &#8594; TR rises. Summary table: Elastic + price rise &#8594; TR falls; Inelastic + price rise &#8594; TR rises; Unit elastic &#8594; TR unchanged.'
+        exp: '(1+2) Total Revenue = <strong>Price</strong> &#215; <strong>Quantity</strong>. (3) <strong>Elastic</strong> demand: |PED| > 1. (4) Quantity demanded falls <strong>more</strong> than proportionally &#8212; the percentage fall in Q exceeds the percentage rise in P → TR falls. (5) <strong>Inelastic</strong> demand: |PED| < 1. (6) TR <strong>increases</strong> &#8212; the revenue gain from higher price outweighs the revenue loss from lower quantity. (7) The quantity fall is <strong>smaller</strong> in proportional terms than the price rise → the price effect dominates → TR rises. Summary table: Elastic + price rise → TR falls; Inelastic + price rise → TR rises; Unit elastic → TR unchanged.'
       },
 
       /* 7 &#8212; Odd one out: determinants making demand elastic */

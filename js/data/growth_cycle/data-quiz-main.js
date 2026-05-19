@@ -52,7 +52,7 @@
           'AD shifts right; output rises and the price level rises &#8212; demand-pull inflation with falling unemployment'
         ],
         ans: 0,
-        exp: 'The key analytical signature of a <strong>demand-side shock</strong>: output and price level <em>move in the same direction</em>. AD falls left &#8594; output falls (unemployment rises) AND price level falls (or stays low). This is the opposite of a supply shock, where output and price move in opposite directions. The 2008-09 crisis is the textbook example: AD collapsed via the credit crunch, driving UK GDP down 5% and inflation toward zero. Option B describes a supply shock (stagflation). Option C describes a permanent supply-side failure. Option D is a positive demand shock. Knowing the AD vs AS shock signature instantly organises any macro scenario question.'
+        exp: 'The key analytical signature of a <strong>demand-side shock</strong>: output and price level <em>move in the same direction</em>. AD falls left → output falls (unemployment rises) AND price level falls (or stays low). This is the opposite of a supply shock, where output and price move in opposite directions. The 2008-09 crisis is the textbook example: AD collapsed via the credit crunch, driving UK GDP down 5% and inflation toward zero. Option B describes a supply shock (stagflation). Option C describes a permanent supply-side failure. Option D is a positive demand shock. Knowing the AD vs AS shock signature instantly organises any macro scenario question.'
       },
 
       /* 3 &#8212; Diagnostic pair: growth evaluation */
@@ -114,7 +114,7 @@
           'Unemployment rises by 1 percentage point because above-trend growth causes inflationary pressure that leads firms to cut jobs'
         ],
         ans: 0,
-        exp: 'Okun\'s Law: ~2% above-trend growth &#8594; ~1pp fall in unemployment. With actual growth at 4% and trend at 2%, growth is 2pp above trend &#8594; unemployment falls by approximately <strong>1 percentage point</strong>. This is the empirical relationship between GDP and labour market absorption. A* answers note the caveats: (1) Okun\'s Law is an approximation &#8212; the coefficient varies across cycles; (2) \'jobless growth\' (capital-intensive, technology-replacing) can occur &#8212; GDP rises without proportionate job creation; (3) structural unemployment can persist alongside GDP growth if skills mismatch is severe.'
+        exp: 'Okun\'s Law: ~2% above-trend growth → ~1pp fall in unemployment. With actual growth at 4% and trend at 2%, growth is 2pp above trend → unemployment falls by approximately <strong>1 percentage point</strong>. This is the empirical relationship between GDP and labour market absorption. A* answers note the caveats: (1) Okun\'s Law is an approximation &#8212; the coefficient varies across cycles; (2) \'jobless growth\' (capital-intensive, technology-replacing) can occur &#8212; GDP rises without proportionate job creation; (3) structural unemployment can persist alongside GDP growth if skills mismatch is severe.'
       },
 
       /* 7 &#8212; Odd one out */
@@ -176,7 +176,7 @@
           { label: 'Recovery: output returns towards potential; unemployment falls; inflation edges back to target', note: '' }
         ],
         correctOrder: [1, 4, 2, 3, 0, 5],
-        exp: '<strong>Recession and recovery cycle:</strong><br>1. Financial crisis &#8212; confidence collapses.<br>2. GDP falls; negative output gap; unemployment rises.<br>3. Automatic stabilisers activate &#8212; the first line of defence.<br>4. Discretionary policy response: rate cuts + fiscal stimulus.<br>5. Investment recovers (accelerator) as confidence returns.<br>6. Full recovery &#8212; output closes the gap.<br><br>The 2008-09 UK episode followed this pattern closely: banking crisis &#8594; GDP -5% &#8594; automatic stabilisers &#8594; BoE cuts to 0.5% + QE + fiscal stimulus &#8594; slow investment recovery (took until 2013 to close the output gap). A* essays name each mechanism explicitly and cite the policy time lags as the reason recovery was slower than the Classical model predicted.'
+        exp: '<strong>Recession and recovery cycle:</strong><br>1. Financial crisis &#8212; confidence collapses.<br>2. GDP falls; negative output gap; unemployment rises.<br>3. Automatic stabilisers activate &#8212; the first line of defence.<br>4. Discretionary policy response: rate cuts + fiscal stimulus.<br>5. Investment recovers (accelerator) as confidence returns.<br>6. Full recovery &#8212; output closes the gap.<br><br>The 2008-09 UK episode followed this pattern closely: banking crisis → GDP -5% → automatic stabilisers → BoE cuts to 0.5% + QE + fiscal stimulus → slow investment recovery (took until 2013 to close the output gap). A* essays name each mechanism explicitly and cite the policy time lags as the reason recovery was slower than the Classical model predicted.'
       }
 
     ]

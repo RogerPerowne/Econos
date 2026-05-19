@@ -106,7 +106,7 @@ window.ECONOS_LAND_SECTION_A = {
           { color: 'blue',  icon: '&#163;', label: 'UK total advertising spend (2023)',         value: '&#163;35.5bn'  },
           { color: 'green', icon: '#',      label: 'Tesco Clubcard members (2024)',              value: '&#8776; 22m'   },
           { color: 'rose',  icon: '&#163;', label: 'UK supermarket advertising (est. 2023)',     value: '&#163;800m+'   },
-          { color: 'blue',  icon: '%',      label: 'Tesco market share (Clubcard launch 1995 vs 2024)', value: '20% &#8594; 27%' }
+          { color: 'blue',  icon: '%',      label: 'Tesco market share (Clubcard launch 1995 vs 2024)', value: '20% → 27%' }
         ]
       },
 

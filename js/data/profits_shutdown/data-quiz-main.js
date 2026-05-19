@@ -84,7 +84,7 @@
           { icon: '&#9940;', label: 'P = &#163;8; AC = &#163;20; AVC = &#163;12 at profit-max output', note: '', ans: 'sd' },
           { icon: '&#128176;', label: 'P = &#163;25; AC = &#163;18; AVC = &#163;11 at profit-max output', note: '', ans: 'sn' }
         ],
-        exp: '<strong>Supernormal profit</strong>: P &gt; AC (P=30&gt;AC=20; P=25&gt;AC=18). <strong>Normal profit</strong>: P = AC exactly (P=20=AC=20). <strong>Economic loss &#8212; continue</strong>: AC &gt; P &ge; AVC (P=16: AVC=12&le;P&lt;AC=20 &#8594; TR covers VC, positive contribution; P=10: AVC=14&gt;P?&#8230; wait: AVC=14&gt;P=10 &#8594; actually shutdown. Re-check: P=16, AVC=12: P&gt;AVC &#8594; continue. P=10, AVC=14: P&lt;AVC &#8594; shutdown). <strong>Shutdown</strong>: P &lt; AVC (P=8&lt;AVC=12; P=10&lt;AVC=14). The rule: always compare P to AVC first for the shutdown decision, then compare P to AC to determine profit/loss.'
+        exp: '<strong>Supernormal profit</strong>: P &gt; AC (P=30&gt;AC=20; P=25&gt;AC=18). <strong>Normal profit</strong>: P = AC exactly (P=20=AC=20). <strong>Economic loss &#8212; continue</strong>: AC &gt; P &ge; AVC (P=16: AVC=12&le;P&lt;AC=20 → TR covers VC, positive contribution; P=10: AVC=14&gt;P?&#8230; wait: AVC=14&gt;P=10 → actually shutdown. Re-check: P=16, AVC=12: P&gt;AVC → continue. P=10, AVC=14: P&lt;AVC → shutdown). <strong>Shutdown</strong>: P &lt; AVC (P=8&lt;AVC=12; P=10&lt;AVC=14). The rule: always compare P to AVC first for the shutdown decision, then compare P to AC to determine profit/loss.'
       },
 
       /* 5 — Diagnostic pair: shutdown rule application */

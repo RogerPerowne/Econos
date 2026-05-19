@@ -185,7 +185,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'The optimal degree of redistribution is an empirical question, not a theoretical one. Diamond & Saez (2011) estimate optimal top marginal tax rate ~70% for revenue maximisation (above which incentive effects dominate). UK currently at 45% — room for debate. Use this framework to structure equity-efficiency essays.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

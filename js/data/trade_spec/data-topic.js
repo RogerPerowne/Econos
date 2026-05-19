@@ -132,7 +132,7 @@ window.ECONOS_TOPIC = {
         { term: 'Services trade', def: 'Financial services, tourism, education — the UK’s main trade strength.' }
       ],
       examEdge: 'Examiners reward awareness that the UK runs a structural goods deficit but services surplus. Mentioning global value chains as a reason why simple comparative advantage models are insufficient earns evaluation credit.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     },
     {
       id: 'ca-worked',

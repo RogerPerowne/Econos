@@ -1,10 +1,27 @@
 <!DOCTYPE html>
+<!--
+  Generic quiz shell.
+
+  Accepts `?topic=<id>&quiz=<set>` and loads
+  `js/data/<id>/data-quiz-<set>.js` via the quiz engine. Today every
+  link passes `quiz=main` (the topic-level "Test yourself" CTA), but
+  the URL shape is intentionally generic so future quiz types
+  (past-paper practice, adaptive weakness-targeted, daily mixed-topic
+  warm-ups, predicted-paper mocks) can ship under the same route by
+  adding a new data file — no new HTML, no engine changes.
+
+  This is the canonical quiz route. Link It and Land It also host
+  *stage-specific* quizzes inline as `?station=quiz` (because those
+  are tightly coupled to the work just done in those sections) —
+  see js/engines/link-router.js + land-router.js. quiz.html stays
+  separate for the cross-section / standalone use cases.
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="econos topic quiz.">
+  <meta name="description" content="econos quiz.">
   <title>Quiz · econos</title>
 
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />

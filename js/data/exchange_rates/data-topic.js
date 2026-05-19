@@ -183,7 +183,7 @@ window.ECONOS_TOPIC = {
       ],
       footer: 'Balance of payments: depreciation helps current account (if M-L holds) but appreciation worsens it. Employment: depreciation boosts export-sector jobs but raises input costs and may shrink import-competing firms. No free lunch in exchange rate policy.',
       examEdge: 'A 25-mark essay on exchange rate policy requires systematic treatment of ALL objectives — growth, inflation, BoP, and employment — and how policy-makers face impossible trade-offs when these conflict. "It depends on the cause of the change" is valid evaluation.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

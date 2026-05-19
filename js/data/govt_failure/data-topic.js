@@ -128,7 +128,7 @@ window.ECONOS_TOPIC = {
         { term: 'OBR', def: 'Office for Budget Responsibility — independent UK body forecasting public finances; reduces government\'s ability to manipulate its own fiscal projections.' }
       ],
       examEdge: 'Bank of England independence (granted 1997) is the most successful institutional reform to reduce government failure in economic policy: central bank sets interest rates free from electoral cycle pressure → lower and more stable inflation than before. It demonstrates that delegating decisions to independent bodies with clear mandates can significantly reduce government failure in key policy areas.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself &#8594;' }
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 
   ]

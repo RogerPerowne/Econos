@@ -46,7 +46,7 @@
           { icon: '&#128202;', label: 'Higher profit margins in the coffee shop sector attract 500 new outlets to open', note: '', ans: 'shift' },
           { icon: '&#128738;', label: 'A fall in the price of fish reduces the quantity supplied by fishing boats', note: '', ans: 'move' }
         ],
-        exp: '<strong>Movements along</strong> supply: caused only by a change in the good\'s own price. Extension (price up &#8594; QS up) or contraction (price down &#8594; QS down). <strong>Shifts</strong> of supply: any non-price change. Technology improvement shifts supply right (more at every price). Higher input costs (steel prices) shift supply left (less profitable at every price). Natural events (crop destruction) shift supply left. New entrants shift supply right. The key test: did the good\'s own price change? If yes &#8594; movement. If no &#8594; shift.'
+        exp: '<strong>Movements along</strong> supply: caused only by a change in the good\'s own price. Extension (price up → QS up) or contraction (price down → QS down). <strong>Shifts</strong> of supply: any non-price change. Technology improvement shifts supply right (more at every price). Higher input costs (steel prices) shift supply left (less profitable at every price). Natural events (crop destruction) shift supply left. New entrants shift supply right. The key test: did the good\'s own price change? If yes → movement. If no → shift.'
       },
 
       /* 3 &#8212; MCQ: joint supply */
@@ -59,7 +59,7 @@
           'Leather demand falls as consumers switch away from animal products following the drought news'
         ],
         ans: 0,
-        exp: '<strong>Joint supply</strong>: beef and leather are by-products &#8212; slaughtering cattle for beef also produces hides for leather. If beef production falls (drought &#8594; fewer cattle &#8594; beef supply shifts left), <em>fewer</em> hides are produced as a by-product &#8594; leather supply shifts <strong>left</strong> &#8594; leather price <strong>rises</strong>. This is a textbook joint supply chain: disruption to one market transmits through the by-product link to the other. Other joint supply examples: oil and natural gas; beef tallow and soap; wheat and straw. These frequently appear in data-response questions.'
+        exp: '<strong>Joint supply</strong>: beef and leather are by-products &#8212; slaughtering cattle for beef also produces hides for leather. If beef production falls (drought → fewer cattle → beef supply shifts left), <em>fewer</em> hides are produced as a by-product → leather supply shifts <strong>left</strong> → leather price <strong>rises</strong>. This is a textbook joint supply chain: disruption to one market transmits through the by-product link to the other. Other joint supply examples: oil and natural gas; beef tallow and soap; wheat and straw. These frequently appear in data-response questions.'
       },
 
       /* 4 &#8212; Calculation: producer surplus */
@@ -128,7 +128,7 @@
           { id: 6, opts: ['leftward', 'rightward', 'upward along', 'downward along'], ans: 0 },
           { id: 7, opts: ['rises', 'falls', 'stays constant', 'becomes indeterminate'], ans: 0 }
         ],
-        exp: '(1) <strong>Land</strong> is the classic competing supply factor &#8212; a farmer can grow wheat OR oilseed rape, not both on the same field. (2) <strong>Substitute</strong> is the key word for competing supply &#8212; the goods compete for the same resources. (3) Higher price increases <strong>profitability</strong>, drawing resources in. (4) <strong>Productive</strong> resources (land, labour, capital) are switched. (5) Supply of Good B <strong>falls</strong>. (6) Supply curve shifts <strong>leftward</strong> (decrease in supply). (7) With unchanged demand and lower supply, price of Good B <strong>rises</strong>. Example: if wheat prices rise, farmers switch land to wheat &#8594; rapeseed supply falls &#8594; rapeseed price rises.'
+        exp: '(1) <strong>Land</strong> is the classic competing supply factor &#8212; a farmer can grow wheat OR oilseed rape, not both on the same field. (2) <strong>Substitute</strong> is the key word for competing supply &#8212; the goods compete for the same resources. (3) Higher price increases <strong>profitability</strong>, drawing resources in. (4) <strong>Productive</strong> resources (land, labour, capital) are switched. (5) Supply of Good B <strong>falls</strong>. (6) Supply curve shifts <strong>leftward</strong> (decrease in supply). (7) With unchanged demand and lower supply, price of Good B <strong>rises</strong>. Example: if wheat prices rise, farmers switch land to wheat → rapeseed supply falls → rapeseed price rises.'
       },
 
       /* 8 &#8212; Odd one out: causes of rightward supply shift */
@@ -141,7 +141,7 @@
           { icon: '&#127970;', label: 'Twenty new overseas firms enter the UK market, expanding total industry capacity', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is a <strong>rise in the market price</strong>. A price rise causes an extension of quantity supplied &#8212; a movement <em>up</em> the existing supply curve &#8212; not a rightward shift of the curve. The other three are non-price changes that shift the entire supply curve rightward: new technology lowers cost per unit; a production subsidy effectively reduces firms\' costs; new entrants expand total market supply. When answering supply questions, always ask: "Did the good\'s own price change? Yes &#8594; movement along. No &#8594; possible shift."'
+        exp: 'The odd one out is a <strong>rise in the market price</strong>. A price rise causes an extension of quantity supplied &#8212; a movement <em>up</em> the existing supply curve &#8212; not a rightward shift of the curve. The other three are non-price changes that shift the entire supply curve rightward: new technology lowers cost per unit; a production subsidy effectively reduces firms\' costs; new entrants expand total market supply. When answering supply questions, always ask: "Did the good\'s own price change? Yes → movement along. No → possible shift."'
       },
 
       /* 9 &#8212; Data table: supply shocks */
@@ -163,7 +163,7 @@
           'North Sea gas production data is irrelevant to household energy bills because the UK imports most of its gas from overseas'
         ],
         ans: 0,
-        exp: 'The data show a clear negative supply shock: wholesale gas prices surged 700% (50p to 400p/therm), representing a massive increase in the key input cost for energy suppliers &#8212; shifting the household energy supply curve leftward and raising equilibrium prices. Declining North Sea production (40&#8594;35 bcm) reduced domestic supply further. New renewables added capacity but too slowly to offset the gas shock (generation share actually fell). Option B incorrectly attributes the bill rise to demand &#8212; the shock was supply-side. Option C is refuted by the bill data (&#163;1,100 to &#163;2,500). Option D is too strong &#8212; North Sea production affects domestic supply and prices at the margin.'
+        exp: 'The data show a clear negative supply shock: wholesale gas prices surged 700% (50p to 400p/therm), representing a massive increase in the key input cost for energy suppliers &#8212; shifting the household energy supply curve leftward and raising equilibrium prices. Declining North Sea production (40→35 bcm) reduced domestic supply further. New renewables added capacity but too slowly to offset the gas shock (generation share actually fell). Option B incorrectly attributes the bill rise to demand &#8212; the shock was supply-side. Option C is refuted by the bill data (&#163;1,100 to &#163;2,500). Option D is too strong &#8212; North Sea production affects domestic supply and prices at the margin.'
       },
 
       /* 10 &#8212; Chain: supply-side improvement to new equilibrium */

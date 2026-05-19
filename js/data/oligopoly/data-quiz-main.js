@@ -53,7 +53,7 @@
           { icon: '&#128683;', label: 'Demand above current price is elastic &#8212; large customer loss from small price increase', note: '', ans: 'rise' },
           { icon: '&#128200;', label: 'Demand below current price is inelastic &#8212; small customer gain from price reduction', note: '', ans: 'cut' }
         ],
-        exp: 'The kinked demand model\'s asymmetric assumption: <strong>rivals do NOT follow price rises</strong> (they sit tight and poach your customers &#8212; you lose a lot of sales &#8594; elastic demand above current price). <strong>Rivals DO match price cuts</strong> (they refuse to lose market share &#8594; you gain few extra customers &#8594; inelastic demand below current price). Combining these creates the "kink" at the current price P*: elastic above, inelastic below. The kink generates a vertical gap in the MR curve, explaining why moderate cost changes do not alter the profit-maximising price &#8212; the price rigidity result.'
+        exp: 'The kinked demand model\'s asymmetric assumption: <strong>rivals do NOT follow price rises</strong> (they sit tight and poach your customers &#8212; you lose a lot of sales → elastic demand above current price). <strong>Rivals DO match price cuts</strong> (they refuse to lose market share → you gain few extra customers → inelastic demand below current price). Combining these creates the "kink" at the current price P*: elastic above, inelastic below. The kink generates a vertical gap in the MR curve, explaining why moderate cost changes do not alter the profit-maximising price &#8212; the price rigidity result.'
       },
 
       /* 3 — Diagram interpretation: kinked demand */

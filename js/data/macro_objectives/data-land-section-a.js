@@ -222,7 +222,7 @@ window.ECONOS_LAND_SECTION_A = {
           ],
           correct:         'opt-b',
           feedbackCorrect: 'Correct. A carbon tax internalises the external cost of carbon emissions (environmental sustainability) while also correcting the market failure that leads to over-production of carbon-intensive goods &#8212; bringing the private cost closer to the social cost and improving allocative efficiency (P = MSC).',
-          feedbackWrong:   'The correct answer is B. A carbon tax prices the negative externality of carbon emissions, correcting the market failure and improving allocative efficiency (P &#8594; MSC). Simultaneously, by discouraging carbon-intensive production and consumption, it promotes environmental sustainability. Both objectives are served by a single policy instrument.'
+          feedbackWrong:   'The correct answer is B. A carbon tax prices the negative externality of carbon emissions, correcting the market failure and improving allocative efficiency (P → MSC). Simultaneously, by discouraging carbon-intensive production and consumption, it promotes environmental sustainability. Both objectives are served by a single policy instrument.'
         }
       ]
     }

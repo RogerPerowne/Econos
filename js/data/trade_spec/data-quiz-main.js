@@ -36,7 +36,7 @@
           'Neither country has comparative advantage because there is no trade possible when one country has absolute advantage in one good only'
         ],
         ans: 0,
-        exp: '<strong>Opportunity cost calculation:</strong><br>Country A: 1 wheat costs 0.5 cloth (gives up 4/8 cloth per wheat). 1 cloth costs 2 wheat.<br>Country B: 1 wheat costs 1 cloth (gives up 6/6 cloth per wheat). 1 cloth costs 1 wheat.<br><br>A has lower OC in wheat (0.5 &lt; 1) &#8594; comparative advantage in wheat. B has lower OC in cloth (1 &lt; 2) &#8594; comparative advantage in cloth. Note: A has <em>absolute advantage</em> in wheat (8 &gt; 6) — but comparative advantage is about OC, not absolute output. Specialisation and trade at any terms between 0.5 and 1 cloth per wheat benefits both countries.'
+        exp: '<strong>Opportunity cost calculation:</strong><br>Country A: 1 wheat costs 0.5 cloth (gives up 4/8 cloth per wheat). 1 cloth costs 2 wheat.<br>Country B: 1 wheat costs 1 cloth (gives up 6/6 cloth per wheat). 1 cloth costs 1 wheat.<br><br>A has lower OC in wheat (0.5 &lt; 1) → comparative advantage in wheat. B has lower OC in cloth (1 &lt; 2) → comparative advantage in cloth. Note: A has <em>absolute advantage</em> in wheat (8 &gt; 6) — but comparative advantage is about OC, not absolute output. Specialisation and trade at any terms between 0.5 and 1 cloth per wheat benefits both countries.'
       },
 
       /* 2 — Calculation: gains from specialisation */

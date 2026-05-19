@@ -105,7 +105,7 @@ window.ECONOS_LAND_SECTION_B = {
   strongAnswers: [
     'Define barriers to entry precisely &#8212; structural vs strategic, and the asymmetry between incumbent and entrant',
     'Use specific data from Extract A: $30bn sunk costs, 15-year COMAC development, certification requirements',
-    'Explain self-reinforcing digital barriers (Extract B): data &#8594; algorithm &#8594; revenue &#8594; more users &#8594; more data',
+    'Explain self-reinforcing digital barriers (Extract B): data → algorithm → revenue → more users → more data',
     'Distinguish between harmful barriers (strategic, evergreening) and potentially beneficial ones (patents incentivising R&#38;D)',
     'Conclude conditionally: the verdict depends on the type of barrier and whether it serves any legitimate economic purpose'
   ]

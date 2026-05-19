@@ -123,7 +123,7 @@
           'Before depreciation: &#163;1 = &#8364;1.20, so &#8364;12 &#247; 1.20 = &#163;10 per bottle',
           'After depreciation: &#163;1 = &#8364;1.00, so &#8364;12 &#247; 1.00 = &#163;12 per bottle',
           'Sterling price rise = &#163;2 per bottle = 20% increase',
-          'The depreciation of &#163;1.20 &#8594; &#163;1.00 is a 16.7% depreciation against the euro',
+          'The depreciation of &#163;1.20 → &#163;1.00 is a 16.7% depreciation against the euro',
           'Sterling prices of all euro-denominated imports rise by the same proportion'
         ],
         stem: 'After the depreciation, what is the new sterling price of the wine, and what does this illustrate about the BoP?',

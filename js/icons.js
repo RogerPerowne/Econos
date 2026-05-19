@@ -5438,41 +5438,70 @@ window.ECONOS_ICONS = {
   heroPrice: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <filter id="hpr-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
-        <filter id="hpr-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <marker id="hpr-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#0B1426"/>
+        </marker>
       </defs>
 
-      <!-- pastel pad behind tag -->
-      <ellipse cx="140" cy="200" rx="100" ry="14" fill="#FEF3C7" opacity="0.5"/>
+      <!-- signal waves above the tag -->
+      <g fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round">
+        <path d="M 122 70 Q 140 56 158 70"/>
+        <path d="M 116 60 Q 140 38 164 60"/>
+        <path d="M 110 50 Q 140 22 170 50"/>
+      </g>
+      <!-- yellow signal dots between waves and tag -->
+      <circle cx="140" cy="85" r="3.2" fill="#F59E0B"/>
+      <circle cx="140" cy="100" r="3.2" fill="#F59E0B"/>
 
-      <!-- string tied to tag -->
-      <line x1="180" y1="120" x2="200" y2="95" stroke="#92400E" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="200" cy="95" r="3" fill="#92400E"/>
+      <!-- price tag (vertical) -->
+      <g>
+        <path d="M 108 115 L 172 115 L 172 245 L 140 270 L 108 245 Z"
+              fill="#F5B335" stroke="#0B1426" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="140" cy="135" r="5.5" fill="#FFFFFF" stroke="#0B1426" stroke-width="2.4"/>
+        <text x="140" y="205" font-size="48" font-weight="600" fill="#0B1426" text-anchor="middle" font-family="Georgia,serif">£</text>
+      </g>
+      <!-- soft shadow under tag -->
+      <ellipse cx="140" cy="278" rx="38" ry="4" fill="#0B1426" opacity="0.08"/>
 
-      <!-- big central price tag (£) -->
-      <g transform="translate(60, 145) rotate(-6)" filter="url(#hpr-shadow)">
-        <path d="M 0 0 L 130 0 L 160 32 L 130 64 L 0 64 Z"
-              fill="#FBBF24" stroke="#92400E" stroke-width="2.5" stroke-linejoin="round"/>
-        <circle cx="134" cy="32" r="6" fill="#FFFFFF" stroke="#92400E" stroke-width="2"/>
-        <text x="64" y="44" font-size="32" font-weight="800" fill="#FFFFFF" stroke="#92400E" stroke-width="1" text-anchor="middle">£</text>
+      <!-- curved arrows from tag to consumer (left) and producer (right) -->
+      <path d="M 118 252 Q 80 270 60 290" fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round" marker-end="url(#hpr-arrow)"/>
+      <circle cx="118" cy="252" r="3.2" fill="#F59E0B"/>
+      <path d="M 162 252 Q 200 270 220 290" fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round" marker-end="url(#hpr-arrow)"/>
+      <circle cx="162" cy="252" r="3.2" fill="#F59E0B"/>
+
+      <!-- LEFT: consumer scene -->
+      <ellipse cx="50" cy="318" rx="40" ry="34" fill="#FCE7E0" opacity="0.5"/>
+      <g fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- head -->
+        <circle cx="42" cy="298" r="7" fill="#FFFFFF"/>
+        <!-- body -->
+        <path d="M 42 305 L 42 338"/>
+        <!-- arms -->
+        <path d="M 42 315 L 32 322"/>
+        <path d="M 42 315 L 55 320"/>
+        <!-- legs -->
+        <path d="M 42 338 L 36 350"/>
+        <path d="M 42 338 L 48 350"/>
+        <!-- basket -->
+        <path d="M 53 322 L 70 322 L 67 335 L 56 335 Z" fill="#FFFFFF"/>
+        <path d="M 56 322 L 58 318 L 65 318 L 67 322"/>
+        <path d="M 58 325 L 58 333 M 62 325 L 62 333 M 65 325 L 65 333"/>
       </g>
 
-      <!-- 3 small satellite coins floating around -->
-      <g filter="url(#hpr-soft)">
-        <circle cx="60" cy="280" r="14" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
-        <text x="60" y="285" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
+      <!-- RIGHT: producer scene -->
+      <ellipse cx="230" cy="318" rx="40" ry="34" fill="#FCE7E0" opacity="0.5"/>
+      <g fill="none" stroke="#0B1426" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- factory body w/ sawtooth roof -->
+        <path d="M 208 348 L 208 318 L 218 308 L 218 318 L 228 308 L 228 318 L 238 308 L 238 348 Z" fill="#FFFFFF"/>
+        <!-- chimney -->
+        <path d="M 244 308 L 244 285 L 252 285 L 252 318" fill="#FFFFFF"/>
+        <!-- baseline -->
+        <path d="M 200 348 L 256 348"/>
       </g>
-      <g filter="url(#hpr-soft)">
-        <circle cx="220" cy="280" r="14" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
-        <text x="220" y="285" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
-      </g>
-      <g filter="url(#hpr-soft)">
-        <circle cx="140" cy="300" r="14" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
-        <text x="140" y="305" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
-      </g>
-
-      <!-- floor shadow -->
-      <ellipse cx="140" cy="320" rx="110" ry="4" fill="#0F172A" opacity="0.06"/>
+      <!-- factory windows -->
+      <rect x="212" y="333" width="6" height="6" fill="#F5B335" stroke="#0B1426" stroke-width="1.5"/>
+      <rect x="222" y="333" width="6" height="6" fill="#F5B335" stroke="#0B1426" stroke-width="1.5"/>
+      <rect x="232" y="333" width="6" height="6" fill="#F5B335" stroke="#0B1426" stroke-width="1.5"/>
     </svg>
   `,
   heroEconomicSystems: `

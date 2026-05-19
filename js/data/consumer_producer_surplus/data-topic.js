@@ -65,39 +65,37 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_2',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 6',
       title: 'Building the Surplus Diagram',
-      lede: 'Tap each step to build the diagram — watch consumer and producer surplus emerge from the supply and demand framework.',
-      diagramKey: 'cpsSvg',
-      steps: [
-        {
-          key: 'base',
-          label: 'S & D curves',
-          text: 'Start with a standard supply and demand diagram. The curves intersect at the free-market equilibrium: price P* and quantity Q*. At this point, every willing buyer meets a willing seller. Surplus analysis begins here.'
-        },
-        {
-          key: 'cs',
-          label: 'Consumer surplus',
-          text: 'Consumer surplus (CS) is the green triangle above the price line P* and below the demand curve. Each buyer on the demand curve was willing to pay more than P* — CS is their combined saving. Formula: CS = ½ × Q* × (max WTP − P*).'
-        },
-        {
-          key: 'ps',
-          label: 'Producer surplus',
-          text: 'Producer surplus (PS) is the rose triangle below the price line P* and above the supply curve. Each seller on the supply curve would have accepted less than P* — PS is their combined extra revenue. Formula: PS = ½ × Q* × (P* − min supply price).'
-        },
-        {
-          key: 'total',
-          label: 'Total welfare',
-          text: 'Total welfare = CS + PS — the entire area between the two curves up to Q*. This is maximised at the free-market equilibrium (the social optimum) where MSB = MSC and deadweight loss = 0. Any policy that moves Q away from Q* reduces this total.'
-        },
-        {
-          key: 'dwl',
-          label: 'Tax & DWL',
-          text: 'A tax drives a wedge between the consumer price (Pc) and the producer price (Pp), reducing output from Q* to Q2. Some CS and PS becomes tax revenue (a transfer). The amber triangle is deadweight welfare loss — surplus destroyed and captured by nobody. Only a Pigouvian tax correcting an externality can improve welfare.'
-        }
+      tip: {
+        icon: '💡',
+        tone: 'amber',
+        text: 'To find consumer and producer surplus, first identify equilibrium. Then use the market price as the divider — shade above price and below demand for consumer surplus, and below price and above supply for producer surplus.'
+      },
+      diagramPanel: {
+        diagramKey: 'cpsDiagram',
+        title: 'Build it in this order',
+        tone: 'green',
+        steps: [
+          { head: 'Plot demand and supply',   body: 'Draw demand (D) sloping down and supply (S) sloping up.' },
+          { head: 'Find equilibrium E',        body: 'Locate where D and S intersect.' },
+          { head: 'Mark P<sub>e</sub> and Q<sub>e</sub>', body: 'Draw dashed lines to the price (P<sub>e</sub>) and quantity (Q<sub>e</sub>) axes.' },
+          { head: 'Shade CS and PS',           body: 'Shade consumer surplus (CS) and producer surplus (PS) using P<sub>e</sub> as the divider.' }
+        ]
+      },
+      causes: [
+        { tone: 'rose',  icon: '❌', head: 'Common mistake',               body: 'Students shade the whole triangle. Surplus must be measured using the market price line, not the axes.' },
+        { tone: 'blue',  icon: '🎓', head: 'Exam habit',                   body: 'Always label CS, PS, E, P<sub>e</sub> and Q<sub>e</sub> clearly.' },
+        { tone: 'amber', icon: '⭐', head: 'Why the market price matters', body: 'The market price separates buyer gains (above price) from seller gains (below price).' }
       ],
-      examEdge: 'Numerical surplus questions: area of triangle = ½ × base × height. For CS: height = (D-axis intercept) − P*, base = Q*. For PS: height = P* − (S-axis intercept), base = Q*. When a tax is introduced, remember three things happen: CS falls, PS falls, government gains revenue — but CS + PS lost > revenue gained, leaving the DWL as the net efficiency cost.'
+      causesStyle: 'plain-white',
+      causesLabel: null,
+      causes2: [
+        { tone: 'green', icon: '⭐', head: 'Key idea', body: 'Surplus is always measured relative to the equilibrium price.' },
+        { tone: 'green', icon: '✅', head: 'Exam edge', body: 'If the diagram changes, redraw the new equilibrium before discussing surplus.' }
+      ],
+      causes2Style: 'plain-white',
+      causes2Label: null
     },
     {
       id: 'consumer_producer_surplus_3',

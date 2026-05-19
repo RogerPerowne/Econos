@@ -350,14 +350,26 @@
       const stacked = dp.layout === 'stacked';
       const stepsGridCols = stacked && dp.steps && dp.steps.length >= 3 ? 'repeat(2, 1fr)' : '1fr';
       const notesHtml = dp.steps && dp.steps.length
-        ? `<ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:${stepsGridCols};gap:${stacked ? '14px 22px' : '0'};">${dp.steps.map((s, i) => `
-          <li style="display:flex;align-items:flex-start;gap:10px;${stacked ? '' : 'margin-bottom:12px;'}">
-            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>
+        ? `<ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:${stepsGridCols};gap:${stacked ? '14px 22px' : '0'};">${dp.steps.map((s, i) => {
+          const stepTone = s.tone ? (PATTERN_TONES[s.tone] || tone) : tone;
+          const marker = s.icon
+            ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${s.icon}</span>`
+            : `<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>`;
+          const bodyHtml = Array.isArray(s.body)
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#475569;line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13px;color:#475569;line-height:1.55;">${s.body}</div>`;
+          const divider = i < dp.steps.length - 1 && !stacked
+            ? `border-bottom:1px solid #E7E7EA;padding-bottom:12px;margin-bottom:12px;`
+            : '';
+          return `
+          <li style="display:flex;align-items:flex-start;gap:12px;${divider}">
+            ${marker}
             <div style="flex:1;min-width:0;">
-              <div style="font-weight:800;font-size:14px;color:${tone.label};margin-bottom:2px;">${s.head}</div>
-              <div style="font-size:13px;color:#475569;line-height:1.55;">${s.body}</div>
+              <div style="font-weight:800;font-size:15px;color:${stepTone.label};margin-bottom:4px;">${s.head}</div>
+              ${bodyHtml}
             </div>
-          </li>`).join('')}</ol>`
+          </li>`;
+        }).join('')}</ol>`
         : `<ul style="list-style:none;margin:0;padding:0;">${(dp.bullets || []).map(b => `
           <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13.5px;color:#0B1426;line-height:1.55;">
             <span style="flex-shrink:0;width:8px;height:8px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>

@@ -9,14 +9,14 @@
   'use strict';
 
   var STATIONS = {
-    intro:    { data: 'data-land-intro.js',     boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js' },
-    a:        { data: 'data-land-section-a.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js' },
-    b:        { data: 'data-land-section-b.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js' },
-    c:        { data: 'data-land-section-c.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js' },
-    complete: { data: 'data-land-complete.js',  boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js' },
+    intro:    { data: 'data-land-intro.js',     boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js',    title: 'Intro' },
+    a:        { data: 'data-land-section-a.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js',title: 'Section A' },
+    b:        { data: 'data-land-section-b.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js',title: 'Section B' },
+    c:        { data: 'data-land-section-c.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js',title: 'Section C' },
+    complete: { data: 'data-land-complete.js',  boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js', title: 'Complete' },
     /* Quiz station — see LinkRouter for the same pattern. Loads
        data-land-quiz-<set>.js (default 'main') + quiz-engine. */
-    quiz:     {}
+    quiz:     { title: 'Quiz' }
   };
 
   var dataLoaded = {};
@@ -79,12 +79,38 @@
     return file === 'land.html' && !!urlToStation(url);
   }
 
+  function setTitle(station) {
+    var cfg = STATIONS[station];
+    var label = (cfg && cfg.title) || station;
+    document.title = 'Land it · ' + label + ' · econos';
+  }
+
+  function renderUnknownStation(station) {
+    var topic = TopicLoader.getTopic();
+    var qs = topic ? '?topic=' + encodeURIComponent(topic) : '';
+    var root = document.getElementById('app-root');
+    if (!root) return;
+    root.innerHTML = ''
+      + '<div style="padding:64px 24px;text-align:center;max-width:520px;margin:0 auto;">'
+      +   '<h1 style="font-family:Fraunces,serif;font-size:28px;margin-bottom:12px;color:var(--econ-ink,#0B1426);">Station not found</h1>'
+      +   '<p style="color:var(--econ-muted,#6B7280);margin-bottom:24px;">'
+      +     'The Land It station <code>' + (station || '?') + '</code> doesn\'t exist for this topic.'
+      +   '</p>'
+      +   '<a href="land.html' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
+      +     '← Back to Land It intro'
+      +   '</a>'
+      + '</div>';
+  }
+
+  function cacheKey(file) { return TopicLoader.getTopic() + '/' + file; }
+
   function loadStation(station) {
     var cfg = STATIONS[station];
     if (!cfg) {
-      console.error('LandRouter: unknown station', station);
+      renderUnknownStation(station);
       return;
     }
+    setTitle(station);
     if (station === 'quiz') {
       var quizSet = new URLSearchParams(window.location.search).get('quiz') || 'main';
       var dataFile = 'data-land-quiz-' + quizSet + '.js';
@@ -104,15 +130,16 @@
         fn();
         window.scrollTo(0, 0);
       } else {
-        console.error('LandRouter: boot function not defined', cfg.boot);
+        renderUnknownStation(station);
       }
     };
     var loadDataThenBoot = function () {
-      if (dataLoaded[cfg.data]) {
+      var key = cacheKey(cfg.data);
+      if (dataLoaded[key]) {
         bootFn();
       } else {
         TopicLoader.loadData(cfg.data, function () {
-          dataLoaded[cfg.data] = true;
+          dataLoaded[key] = true;
           bootFn();
         }, 'Land It ' + station);
       }
@@ -138,7 +165,7 @@
 
   function start(station) {
     if (!STATIONS[station]) {
-      console.error('LandRouter.start: unknown station', station);
+      renderUnknownStation(station);
       return;
     }
 

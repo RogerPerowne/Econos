@@ -99,7 +99,10 @@
   }
 
   function showMissingTopicMessage(topic, section) {
-    document.body.innerHTML = ''
+    /* Render into #app-root so sidebar/topbar chrome survives where present.
+       Fall back to document.body only when the page has no app root. */
+    var target = document.getElementById('app-root') || document.body;
+    target.innerHTML = ''
       + '<div style="padding:48px 24px;font-family:Inter,sans-serif;text-align:center;max-width:520px;margin:0 auto;">'
       +   '<h1 style="font-family:Fraunces,serif;font-size:28px;margin-bottom:12px;color:#0B1426;">Content not ready yet</h1>'
       +   '<p style="color:#6B7280;margin-bottom:24px;">The <strong>' + section + '</strong> content for <strong>' + topic + '</strong> hasn\'t been added yet. Check back soon.</p>'

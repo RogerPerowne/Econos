@@ -12,19 +12,19 @@
 (function () {
   'use strict';
 
-  /* station name → { data file, boot function, engine script } */
+  /* station name → { data file, boot function, engine script, title } */
   var STATIONS = {
-    intro:       { data: 'data-link-intro.js',    boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js' },
-    context:     { data: 'data-link-context.js',  boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js' },
-    chain:       { data: 'data-link-chain.js',    boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js' },
-    chain_open:  { data: 'data-link-chain.js',    boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js' },
-    diagram:     { data: 'data-link-diagram.js',  boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js' },
-    depends:     { data: 'data-link-depends.js',  boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js' },
-    judge:       { data: 'data-link-judge.js',    boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js' },
-    complete:    { data: 'data-link-complete.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js' },
+    intro:       { data: 'data-link-intro.js',    boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js',          title: 'Intro' },
+    context:     { data: 'data-link-context.js',  boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',         title: 'Context' },
+    chain:       { data: 'data-link-chain.js',    boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',   title: 'Chain' },
+    chain_open:  { data: 'data-link-chain.js',    boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
+    diagram:     { data: 'data-link-diagram.js',  boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js', title: 'Diagram' },
+    depends:     { data: 'data-link-depends.js',  boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js', title: 'It depends' },
+    judge:       { data: 'data-link-judge.js',    boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',   title: 'Judge' },
+    complete:    { data: 'data-link-complete.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js',title: 'Complete' },
     /* Quiz station — lazy-loads quiz-engine + a data-link-quiz-<set>.js
        file. The data file is resolved at call time. */
-    quiz:        {}
+    quiz:        { title: 'Quiz' }
   };
 
   var dataLoaded = {};
@@ -99,12 +99,40 @@
     return file === 'link.html' && !!urlToStation(url);
   }
 
+  function setTitle(station) {
+    var cfg = STATIONS[station];
+    var label = (cfg && cfg.title) || station;
+    document.title = 'Link it · ' + label + ' · econos';
+  }
+
+  function renderUnknownStation(station) {
+    var topic = TopicLoader.getTopic();
+    var qs = topic ? '?topic=' + encodeURIComponent(topic) : '';
+    var root = document.getElementById('app-root');
+    if (!root) return;
+    root.innerHTML = ''
+      + '<div style="padding:64px 24px;text-align:center;max-width:520px;margin:0 auto;">'
+      +   '<h1 style="font-family:Fraunces,serif;font-size:28px;margin-bottom:12px;color:var(--econ-ink,#0B1426);">Station not found</h1>'
+      +   '<p style="color:var(--econ-muted,#6B7280);margin-bottom:24px;">'
+      +     'The Link It station <code>' + (station || '?') + '</code> doesn\'t exist for this topic.'
+      +   '</p>'
+      +   '<a href="link.html' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
+      +     '← Back to Link It intro'
+      +   '</a>'
+      + '</div>';
+  }
+
+  /* Key the data-loaded cache by topic+file so a topic switch
+     doesn't reuse stale data. */
+  function cacheKey(file) { return TopicLoader.getTopic() + '/' + file; }
+
   function loadStation(station) {
     var cfg = STATIONS[station];
     if (!cfg) {
-      console.error('LinkRouter: unknown station', station);
+      renderUnknownStation(station);
       return;
     }
+    setTitle(station);
     /* Special: quiz station — lazy-load engine + chosen question set */
     if (station === 'quiz') {
       var quizSet = new URLSearchParams(window.location.search).get('quiz') || 'main';
@@ -126,15 +154,16 @@
         fn();
         window.scrollTo(0, 0);
       } else {
-        console.error('LinkRouter: boot function not defined', cfg.boot);
+        renderUnknownStation(station);
       }
     };
     var loadDataThenBoot = function () {
-      if (dataLoaded[cfg.data]) {
+      var key = cacheKey(cfg.data);
+      if (dataLoaded[key]) {
         bootFn();
       } else {
         TopicLoader.loadData(cfg.data, function () {
-          dataLoaded[cfg.data] = true;
+          dataLoaded[key] = true;
           bootFn();
         }, 'Link It ' + station);
       }
@@ -163,7 +192,7 @@
   /* Boot entry point: called once from each link_*.html. */
   function start(station) {
     if (!STATIONS[station]) {
-      console.error('LinkRouter.start: unknown station', station);
+      renderUnknownStation(station);
       return;
     }
 

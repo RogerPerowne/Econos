@@ -25,20 +25,37 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'consumer_producer_surplus_1',
-      template: 'framing',
-      diagramKey: 'heroCPS',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'Consumer & producer surplus: the big picture',
-      lede: 'The gains from trade do not just go to buyers or sellers — they are shared. Surplus measures exactly who gets what and how much.',
-      tip: 'CS = triangle ABOVE the price line BELOW the demand curve. PS = triangle BELOW the price line ABOVE the supply curve. Total welfare = CS + PS. Any intervention that creates a "wedge" in price destroys some of this surplus — that destroyed portion is the DWL.',
-      branches: [
-        { tone: 'green',  label: 'Consumer surplus',   sub: 'The difference between what consumers are willing to pay and what they actually pay. Shown as the triangle above price below demand.' },
-        { tone: 'blue',   label: 'Producer surplus',   sub: 'The difference between the price producers receive and their minimum acceptable price. Shown as the triangle below price above supply.' },
-        { tone: 'purple', label: 'Total welfare',      sub: 'CS + PS = total welfare (social surplus). Maximised at the free-market equilibrium where D = S.' },
-        { tone: 'amber',  label: 'Policy effects',     sub: 'Taxes, subsidies and price controls all redistribute surplus between consumers, producers and government — and often destroy some of it (DWL).' },
-        { tone: 'rose',   label: 'Efficiency link',    sub: 'Allocative efficiency = total welfare maximised = no deadweight loss. Market failure = some surplus is not captured = DWL exists.' }
+      tip: {
+        icon: '📊',
+        tone: 'blue',
+        text: '<strong>Consumer surplus</strong> is the gap between what consumers are willing to pay and the market price. <strong>Producer surplus</strong> is the gap between the market price and the minimum price producers are willing to accept.'
+      },
+      diagramKey: 'cpsDiagram',
+      diagramLabel: 'The surplus diagram',
+      diagramEmoji: '📐',
+      causes: [
+        {
+          tone: 'blue',
+          icon: '🧠',
+          head: 'What the two surpluses show',
+          body: 'CS captures every buyer\'s saving: the gap between their maximum willingness to pay and P*. PS captures every seller\'s gain: the gap between P* and their minimum acceptable price. Both are shown as triangles on the D/S diagram.'
+        },
+        {
+          tone: 'green',
+          icon: '⚖️',
+          head: 'Why total surplus matters',
+          body: 'Total welfare = CS + PS. It measures the aggregate gains from all voluntary transactions. The free-market equilibrium maximises this total — any policy that moves price away from P* reduces total welfare, creating deadweight loss.'
+        },
+        {
+          tone: 'amber',
+          icon: '🤝',
+          head: 'How markets create gains from trade',
+          body: 'Trade is voluntary: a transaction only happens when both parties benefit. CS and PS together measure the full value created by exchange. This is why competitive markets are efficient — they extract the maximum possible gains from trade.'
+        }
       ],
-      body: '<strong>Consumer surplus (CS)</strong> is the benefit consumers receive beyond what they pay. A buyer willing to pay £50 for a concert ticket but who pays £30 enjoys £20 of consumer surplus.<br><br><strong>Producer surplus (PS)</strong> is the benefit producers receive beyond their minimum acceptable price. A seller willing to accept £20 for a good but who receives £30 enjoys £10 of producer surplus.<br><br>These surplus triangles represent the gains from voluntary exchange — trade only occurs when both sides benefit. The total area (CS + PS) is maximised when the market is in free equilibrium at the price where quantity demanded equals quantity supplied.',
+      causesStyle: 'plain-white',
       keyTerms: [
         { term: 'Consumer surplus', def: 'The difference between the maximum a consumer is willing to pay (their demand price) and the actual market price they pay.' },
         { term: 'Producer surplus', def: 'The difference between the market price received by a producer and the minimum price they would accept to supply (their supply price).' },

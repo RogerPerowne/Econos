@@ -1,0 +1,17 @@
+{
+  "name": "econos",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A-Level economics revision — bite-sized topics around the frameworks examiners reward.",
+  "scripts": {
+    "lint:repo": "./scripts/lint.sh",
+    "lint:js": "eslint 'js/**/*.js' 'index.html'",
+    "lint": "npm run lint:repo && npm run lint:js",
+    "format": "prettier --write 'js/**/*.js' '*.html' '*.json' '*.md'",
+    "format:check": "prettier --check 'js/**/*.js' '*.html' '*.json' '*.md'"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+js/pdf.js
+js/icons.js
+*.min.js
+*.min.css
+CHANGELOG.md

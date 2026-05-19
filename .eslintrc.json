@@ -1,0 +1,55 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2017": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "script"
+  },
+  "globals": {
+    "ECONOS_TOPIC": "readonly",
+    "ECONOS_TOPICS": "readonly",
+    "ECONOS_ICONS": "readonly",
+    "ECONOS_QUIZ": "readonly",
+    "ECONOS_USER": "writable",
+    "ECONOS_LOG": "writable",
+    "TopicLoader": "readonly",
+    "Shell": "readonly",
+    "LinkRouter": "readonly",
+    "LandRouter": "readonly",
+    "Logger": "readonly"
+  },
+  "rules": {
+    "no-undef": "error",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-redeclare": "error",
+    "no-dupe-keys": "error",
+    "no-unreachable": "error",
+    "no-empty": ["warn", { "allowEmptyCatch": true }],
+    "no-implicit-globals": "error",
+    "no-var": "off",
+    "prefer-const": "off",
+    "eqeqeq": ["warn", "smart"],
+    "semi": ["warn", "always"],
+    "no-trailing-spaces": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["js/engines/*-engine.js", "js/engines/link-intro.js"],
+      "rules": {
+        "no-restricted-properties": ["error", {
+          "object": "window",
+          "property": "location",
+          "message": "Engines must navigate via TopicLoader.go() so SPA routers can intercept."
+        }]
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "js/pdf.js",
+    "*.min.js"
+  ]
+}

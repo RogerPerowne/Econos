@@ -9274,7 +9274,7 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 }
 /* Palette parity with Learn/Link .session-meta — first icon green
    (total marks), second purple (est. time). CTA is blue (covered by
-   the consistent primary-action rules). Was POLISH v9. */
+   the consistent primary-action rules). */
 .land-session-meta__item:nth-of-type(1) .land-session-meta__icon {
   background: var(--econ-green-50);
   color: var(--econ-green-600);
@@ -10767,7 +10767,11 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 
 
 /* ============================================================
-   ECONOS — POLISH v2 (Nov 2025)
+   ECONOS DESIGN SYSTEM — Layout & micro-typography refinements
+   (Cascade-last block: card shadows, content rhythm, callout tones,
+    headline letter-spacing tuning. Last-loaded by design — these are
+    cross-cutting refinements layered on top of the section-specific
+    canonical rules above.)
    ─────────────────────────────────────────────────────────────
    Final layout + micro-typography fixes layered on top of the
    v14 stylesheet. Kept here as a single trailing block so it's
@@ -10977,7 +10981,9 @@ html { overflow-x: clip; }
 
 
 /* ============================================================
-   ECONOS — POLISH v3 (May 2026)  RIGHT-RAIL STAGE OVERHAUL
+   ECONOS DESIGN SYSTEM — Right-rail per-stage colour system
+   (Theme-scoped overrides loaded last to win the cascade over the
+    earlier per-stage neutrals.)
    ─────────────────────────────────────────────────────────────
    The 3-stage right-rail card (Learn / Link / Land) is the
    user's compass through a topic. It MUST be honest about
@@ -11236,7 +11242,10 @@ body.theme--land .right-rail,
 
 
 /* ============================================================
-   ECONOS — POLISH v4 (May 2026)  THE BIG SWEEP
+   ECONOS DESIGN SYSTEM — Cross-cutting refinements
+   (Card chrome, callout colours, content widths, focus rings —
+    theme-scoped overrides that must load after the canonical
+    selectors.)
    ─────────────────────────────────────────────────────────────
    Now that the right-rail stage system is locked, this block
    sweeps the rest of the engine surface for the same kind of
@@ -11722,7 +11731,9 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 
 
 /* ============================================================
-   ECONOS — POLISH v6 (May 2026)  THEME COHERENCE
+   ECONOS DESIGN SYSTEM — Theme coherence
+   (Per-theme accent reinforcement: card top-stripe parity, page
+    grid minmax fix, do-box checks tinted by stage.)
    ─────────────────────────────────────────────────────────────
    Four targeted fixes:
      1. "Session N of 3: Link/Land" eyebrow takes the page's
@@ -11817,8 +11828,11 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 
 
 /* ============================================================
-   ECONOS — POLISH v7 (May 2026)
-   Three follow-ups:
+   ECONOS DESIGN SYSTEM — Session-page rhythm + rail ordering
+   (Hide redundant horizontal session-dots strip, theme do-box check
+    rows, tighten content rhythm to a consistent 12px column gap,
+    reorder right-rail so stages widget always sits at the top.)
+   Three previous follow-ups:
      1. Hide the old "Topic progress" rail-card that holds the
         horizontal session-dots — shell.js now injects the 3-stage
         vertical widget on every page, making this strip redundant.
@@ -11880,7 +11894,10 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 
 
 /* ============================================================
-   ECONOS — POLISH v7 (May 2026)  CONSISTENT PRIMARY ACTION
+   ECONOS DESIGN SYSTEM — Consistent primary action across themes
+   (One blue button across Learn / Link / Land. Page identity is
+    carried by the top stripe + eyebrow + rail; the primary action
+    stays consistent so users learn one "tap this to advance" cue.)
    ─────────────────────────────────────────────────────────────
    Every "Start session / Start Learn / Start Link / Start Land /
    Continue / Begin" button uses the same primary action style:

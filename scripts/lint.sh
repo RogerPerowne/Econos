@@ -32,17 +32,17 @@ check_engine_navigation() {
 }
 
 # ------------------------------------------------------------
-# #59 — no new POLISH v* blocks at the bottom of styles.css
+# #59 — no POLISH v* blocks in styles.css
 # ------------------------------------------------------------
-# The polish-vN pattern was a temporary scaffold while the
-# design tool and live repo were merging. Going forward, fixes
-# go into the canonical sections of styles.css — no v10, v11, ...
-# We allow v2..v9 (the historical blocks). New ones fail the lint.
+# All historical POLISH v# blocks have been renamed to descriptive
+# DESIGN SYSTEM section headers or inlined into the canonical
+# rules. No POLISH v# headers should exist any more — new fixes
+# go straight into the appropriate section.
 check_no_new_polish_blocks() {
   local hits
-  hits=$(grep -nE 'POLISH v(1[0-9]|[2-9][0-9])' styles.css 2>/dev/null || true)
+  hits=$(grep -nE 'POLISH v[0-9]+' styles.css 2>/dev/null || true)
   if [ -n "$hits" ]; then
-    echo "lint: new POLISH v* block(s) introduced (inline fixes into canonical sections instead):"
+    echo "lint: POLISH v* block(s) found (rename to descriptive DESIGN SYSTEM section header, or inline):"
     echo "$hits"
     fail=1
   fi

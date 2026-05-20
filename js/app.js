@@ -341,6 +341,37 @@
       content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
     }
 
+    // Diagram grid — 3-up row of policy comparison mini-diagrams, each with a
+    // header, an SVG, and colour-coded dot-bullets.
+    //   Pattern: diagramGrid: [{svgKey, tone, icon, head, bullets:[{tone,text}]}]
+    //            diagramGridLabel?, diagramGridEmoji?
+    if (c.diagramGrid && c.diagramGrid.length) {
+      if (c.diagramGridLabel !== null) content += genSecLabel(c.diagramGridEmoji || '📊', c.diagramGridLabel || 'Policy comparison');
+      const dotCol = { blue:'#2563EB', amber:'#D97706', green:'#059669', slate:'#94A3B8', rose:'#E11D48', purple:'#7C3AED' };
+      content += `<div style="display:grid;grid-template-columns:repeat(${Math.min(c.diagramGrid.length, 3)}, minmax(0, 1fr));gap:14px;margin-bottom:26px;">`;
+      c.diagramGrid.forEach(item => {
+        const t = PATTERN_TONES[item.tone || 'blue'] || PATTERN_TONES.blue;
+        const svgHtml = I[item.svgKey] || '';
+        const bulletsHtml = (item.bullets || []).map(b => {
+          const col = dotCol[b.tone || 'slate'] || dotCol.slate;
+          return `<div style="display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#374151;line-height:1.5;margin-bottom:5px;">
+            <span style="flex-shrink:0;width:7px;height:7px;border-radius:50%;background:${col};margin-top:5px;"></span>
+            <span>${b.text}</span>
+          </div>`;
+        }).join('');
+        content += `
+          <div style="border-radius:14px;background:#fff;border:1px solid ${t.border};overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            <div style="padding:11px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.1);flex-shrink:0;">${item.icon || '📊'}</div>
+              <div style="font-weight:800;font-size:14px;color:${t.label};">${item.head}</div>
+            </div>
+            <div style="padding:8px 10px 4px;overflow-x:auto;">${svgHtml}</div>
+            <div style="padding:8px 12px 12px;">${bulletsHtml}</div>
+          </div>`;
+      });
+      content += `</div>`;
+    }
+
     // Diagram panel — SVG on the left, annotated notes on the right (default),
     // or SVG full-width on top with notes below when layout:'stacked'.
     //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets?:[string], steps?:[{head,body}], tone?, layout?:'side'|'stacked' }
@@ -1072,15 +1103,17 @@
 
     // Steps: [{label, text}] — numbered with cycling tones
     if (c.steps && c.steps.length) {
-      content += genSecLabel('📋', 'How it works');
+      content += genSecLabel(c.stepsEmoji || '📋', c.stepsLabel || 'How it works');
       content += c.steps.map((s, i) => {
         const t = TONES[i % TONES.length];
+        const head = s.head || s.label || '';
+        const body = s.body || s.text || '';
         return `
         <div style="display:flex;gap:16px;margin-bottom:18px;padding:16px 18px;background:${t.bg};border-radius:12px;border:1px solid ${t.border}40;border-left:5px solid ${t.border};">
           <div style="width:34px;height:34px;border-radius:50%;background:${t.headerBg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;">${i + 1}</div>
           <div>
-            <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:5px;">${s.label}</div>
-            <div style="font-size:14px;color:#0B1426;line-height:1.65;">${s.text}</div>
+            <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:5px;">${head}</div>
+            <div style="font-size:14px;color:#0B1426;line-height:1.65;">${body}</div>
           </div>
         </div>`;
       }).join('');
@@ -3217,6 +3250,7 @@
        !Array.isArray(c.table.rows[0])) ||
       c.conceptBoxes !== undefined ||
       c.diagramPanel !== undefined ||
+      c.diagramGrid !== undefined ||
       c.interactiveDiagram !== undefined ||
       c.examples !== undefined ||
       c.marketGrid !== undefined ||

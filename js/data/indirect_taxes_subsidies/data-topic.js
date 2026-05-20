@@ -43,14 +43,14 @@ window.ECONOS_TOPIC = {
             label: 'Specific tax',
             tone: 'blue',
             head: 'Specific tax — parallel shift (e.g. fuel duty)',
-            body: 'A fixed amount per unit (e.g. 53p/litre of fuel duty). To stay viable, sellers need an extra £T per unit — so the supply curve shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to Pc; producer net price falls to Pp; quantity falls from Q₀ to Qt.',
-            analysis: 'The constant gap between S and S+T equals £T regardless of price level. Total government revenue = £T × Qt — the rectangle between Pc and Pp up to Qt.'
+            body: 'A fixed amount per unit (e.g. 53p/litre of fuel duty). Sellers need an extra £T per unit — so the supply curve shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to <strong>Pc</strong>; quantity falls to <strong>Qt</strong>.',
+            analysis: 'The gap between S and S+T is the same at every quantity — that constant gap is £T. Government revenue = £T × Qt (the area of the wedge up to Qt).'
           },
           {
             label: 'Ad valorem tax',
             tone: 'amber',
             head: 'Ad valorem tax — pivot shift (e.g. 20% VAT)',
-            body: 'A percentage of price (e.g. 20% VAT). At a low price the £ amount of tax is small; at a high price it is large. This makes the supply curve <strong>pivot</strong> upward — the gap between S and S+T% widens as price rises. Both lines are shown here: S₁ (blue, parallel — constant gap) and S₂ (amber, pivoted — widening gap).',
+            body: 'A percentage of price (e.g. 20% VAT). At a low price the £ amount of tax is small; at a high price it is large. This makes the supply curve <strong>pivot</strong> upward — the gap between S and S+T% widens as price rises. Both shifts are shown: S+T in blue (parallel — constant gap) and S+T% in amber (pivoted — widening gap).',
             analysis: 'Practical implication: ad valorem taxes yield more revenue on expensive goods and scale automatically with inflation. Specific taxes erode in real terms unless manually uprated — which is why UK alcohol duties were frozen for years while VAT revenue grew automatically.'
           }
         ]
@@ -98,8 +98,8 @@ window.ECONOS_TOPIC = {
       keyTerms: [
         { term: 'Legal incidence',    def: 'Who is legally responsible for remitting the tax to government — typically the seller for indirect taxes.' },
         { term: 'Economic incidence', def: 'Who actually bears the burden through higher prices paid (consumers) or lower net receipts (producers) — determined by relative PED and PES.' },
-        { term: 'Consumer burden',    def: 'The portion of the tax borne by buyers: (P<sub>c</sub> − P<sub>e</sub>) × Q<sub>t</sub>. Larger when demand is inelastic relative to supply.' },
-        { term: 'Producer burden',    def: 'The portion of the tax borne by sellers: (P<sub>e</sub> − P<sub>p</sub>) × Q<sub>t</sub>. Larger when supply is inelastic relative to demand.' }
+        { term: 'Consumer burden',    def: 'The portion of the tax borne by buyers: (P<sub>c</sub> − P<sub>0</sub>) × Q<sub>t</sub>. Larger when demand is inelastic relative to supply.' },
+        { term: 'Producer burden',    def: 'The portion of the tax borne by sellers: (P<sub>0</sub> − P<sub>p</sub>) × Q<sub>t</sub>. Larger when supply is inelastic relative to demand.' }
       ],
       examEdge: 'Always draw both the consumer burden and producer burden rectangles explicitly — many students draw the diagram correctly but forget to <strong>label and shade</strong> the burden split. A 25-mark answer needs both rectangles visible, both labelled, and a clear statement that Pc − Pp = £T per unit.'
     },

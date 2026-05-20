@@ -6068,7 +6068,7 @@ window.ECONOS_ICONS = {
         <text x="64" y="148" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">Consumer</text>
         <text x="64" y="158" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">pays most</text>
         <rect x="30" y="184" width="120" height="16" rx="4" fill="#DBEAFE"/>
-        <text x="90" y="195" font-size="9" fill="#1d4ed8" font-weight="700" text-anchor="middle">↑ Consumer bears 87%</text>
+        <text x="90" y="195" font-size="9" fill="#1d4ed8" font-weight="700" text-anchor="middle">Consumer bears most (~87%)</text>
         <rect x="245" y="117" width="77" height="16" fill="#DBEAFE" fill-opacity="0.9"/>
         <rect x="245" y="117" width="77" height="16" fill="none" stroke="#2563EB" stroke-width="1"/>
         <rect x="245" y="133" width="77" height="29" fill="#FEE2E2" fill-opacity="0.9"/>
@@ -6083,7 +6083,7 @@ window.ECONOS_ICONS = {
         <text x="283" y="149" font-size="8" fill="#dc2626" text-anchor="middle" font-weight="700">Producer</text>
         <text x="283" y="159" font-size="8" fill="#dc2626" text-anchor="middle" font-weight="700">pays most</text>
         <rect x="245" y="184" width="120" height="16" rx="4" fill="#FEE2E2"/>
-        <text x="305" y="195" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">↑ Producer bears 64%</text>
+        <text x="305" y="195" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">Producer bears most (~64%)</text>
       </g>
     </svg>
   `,

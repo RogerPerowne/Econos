@@ -2,7 +2,7 @@ window.ECONOS_TOPIC = {
   id: 'efficiency',
   topicNum: '4.1',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  title: 'Types of Efficiency',
+  title: 'Efficiency',
   estTime: '9-11 minutes',
   goal: 'Lock in productive, allocative, dynamic, and X-efficiency — their definitions, conditions, and how different market structures perform against each criterion.',
   intro: {

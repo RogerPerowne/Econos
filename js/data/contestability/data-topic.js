@@ -2,7 +2,7 @@ window.ECONOS_TOPIC = {
   id: 'contestability',
   topicNum: '4.7',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
-  title: 'Contestable Markets',
+  title: 'Contestability',
   estTime: '9-11 minutes',
   goal: 'Lock in the theory of contestable markets, the role of sunk costs, hit-and-run entry, and how contestability reshapes competition policy beyond market structure.',
   intro: {

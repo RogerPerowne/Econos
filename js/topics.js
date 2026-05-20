@@ -25,7 +25,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'specialisation_money',
-    name: 'Specialisation & Division of Labour',
+    name: 'Specialisation & Money',
     sub: 'Division of labour, functions of money, barter',
     color: '#f59e0b',
     available: { learn: true, link: false, land: false }

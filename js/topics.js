@@ -55,7 +55,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'yed_xed',
-    name: 'YED & XED',
+    name: 'Income & Cross-Price Elasticity',
     sub: 'Income and cross-price elasticity, normal vs inferior',
     color: '#ec4899',
     available: { learn: true, link: false, land: false }
@@ -83,7 +83,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'price_functions',
-    name: 'Price Mechanism',
+    name: 'The Price Mechanism',
     sub: 'Rationing, signalling, incentives and resource allocation',
     color: '#14b8a6',
     available: { learn: true, link: false, land: false }
@@ -183,14 +183,14 @@ window.ECONOS_TOPICS = [
   /* Section 1: Measures of Economic Performance */
   {
     id: 'inflation_meas',
-    name: 'Inflation: Measurement',
+    name: 'Inflation: Measurement & Costs',
     sub: 'CPI, RPI, CPIH and the costs of inflation',
     color: '#f97316',
     available: { learn: true, link: false, land: false }
   },
   {
     id: 'inflation',
-    name: 'Inflation: Causes',
+    name: 'Causes of Inflation & Deflation',
     sub: 'Demand-pull, cost-push and monetary',
     color: '#ec2d68',
     available: { learn: true, link: true, land: true }
@@ -235,7 +235,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'multiplier',
-    name: 'The Multiplier',
+    name: 'National Income & The Multiplier',
     sub: 'Multiplier formula, worked examples, accelerator and fiscal policy',
     color: '#16a34a',
     available: { learn: true, link: false, land: false }
@@ -243,7 +243,7 @@ window.ECONOS_TOPICS = [
   /* Section 5: Economic Growth */
   {
     id: 'growth_measure',
-    name: 'Economic Growth',
+    name: 'Economic Growth & National Income',
     sub: 'GDP, GNI, PPP, causes of growth and long-run trends',
     color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
@@ -257,7 +257,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'growth_cycle',
-    name: 'Trade Cycle',
+    name: 'Trade Cycle, Shocks & Economic Growth',
     sub: 'Booms, recessions, shocks and the trade cycle',
     color: '#eab308',
     available: { learn: true, link: false, land: false }
@@ -272,7 +272,7 @@ window.ECONOS_TOPICS = [
   /* Section 6: Macroeconomic Objectives & Policies */
   {
     id: 'macro_objectives',
-    name: 'Macroeconomic Objectives',
+    name: 'Macroeconomic Objectives & Trade-offs',
     sub: 'The five objectives, conflicts and UK macro data',
     color: '#ef4444',
     available: { learn: true, link: false, land: false }
@@ -309,7 +309,7 @@ window.ECONOS_TOPICS = [
   /* ---- Parked — to be assigned to later themes ---- */
   {
     id: 'sol_wellbeing',
-    name: 'Standard of Living',
+    name: 'Standard of Living & Wellbeing',
     sub: 'HDI, wellbeing, and beyond GDP',
     color: '#8b5cf6',
     available: { learn: true, link: false, land: false }
@@ -360,7 +360,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'efficiency',
-    name: 'Efficiency',
+    name: 'Types of Efficiency',
     sub: 'Productive, allocative, dynamic and X-efficiency',
     color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
@@ -388,7 +388,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'collusion_cartels',
-    name: 'Collusion & Cartels',
+    name: 'Collusion and Cartels',
     sub: 'Tacit vs explicit collusion, OPEC, instability',
     color: '#a855f7',
     available: { learn: true, link: false, land: false }
@@ -416,7 +416,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'contestability',
-    name: 'Contestability',
+    name: 'Contestable Markets',
     sub: 'Sunk costs, hit-and-run entry, contestable markets, competition policy',
     color: '#b45309',
     available: { learn: true, link: false, land: false }

@@ -64,7 +64,11 @@ export default defineConfig({
         { src: 'apple-touch-icon.png',       dest: '.' },
         { src: 'web-app-manifest-*.png',     dest: '.' },
         { src: 'site.webmanifest',           dest: '.' },
-        { src: 'CNAME',                      dest: '.' }
+        { src: 'CNAME',                      dest: '.' },
+        { src: 'robots.txt',                 dest: '.' },
+        { src: 'sitemap.xml',                dest: '.' },
+        { src: 'sw.js',                      dest: '.' },
+        { src: '.well-known/**/*',           dest: '.well-known' }
       ]
     })
   ],

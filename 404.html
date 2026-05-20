@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <title>404 · Page Not Found · econos</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-96x96.png" sizes="96x96" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #FAF8F4;
+      color: #0B1426;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #E7E7EA;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo { height: 40px; margin-bottom: 32px; }
+    .error-number {
+      font-size: 96px;
+      font-weight: 800;
+      color: #059669;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0B1426;
+      margin-bottom: 12px;
+    }
+    .sub {
+      font-size: 15px;
+      color: #6B7280;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary {
+      background: #059669;
+      color: #fff;
+      border: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #059669;
+      border: 2px solid #059669;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="assets/econos-logo-full.png" alt="econos" class="logo">
+    <div class="error-number">404</div>
+    <h1>Page not found</h1>
+    <p class="sub">The page you're looking for doesn't exist or has been moved.</p>
+    <div class="btn-row">
+      <a href="index.html" class="btn btn-primary">Go to home</a>
+      <a href="index.html#topics" class="btn btn-secondary">Go to my topics</a>
+    </div>
+  </div>
+</body>
+</html>

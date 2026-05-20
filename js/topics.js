@@ -149,6 +149,13 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 1, Section 4: Government Intervention (4.1–4.2) ---- */
   {
+    id: 'taxes_subsidies_policy',
+    name: 'Taxes & Subsidies as Policy Tools',
+    sub: 'When taxes and subsidies are justified, UK case studies and evaluation framework',
+    color: '#0f766e',
+    available: { learn: true, link: false, land: false }
+  },
+  {
     id: 'govt_failure',
     name: 'Government Failure',
     sub: 'Unintended consequences, information failures, regulatory capture',

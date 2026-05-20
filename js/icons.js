@@ -5843,6 +5843,255 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ── Interactive diagrams for Indirect Taxes & Subsidies topic ── */
+  taxTypesInteractive: `
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <g class="idl-base">
+        <line x1="55" y1="265" x2="415" y2="265" stroke="#334155" stroke-width="1.5"/>
+        <line x1="55" y1="265" x2="55" y2="18" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="415,265 406,261 406,269" fill="#334155"/>
+        <polygon points="55,18 51,27 59,27" fill="#334155"/>
+        <text x="33" y="22" font-size="10" fill="#475569" font-weight="700">Price</text>
+        <text x="418" y="269" font-size="10" fill="#475569" font-weight="700">Q</text>
+        <line x1="80" y1="42" x2="405" y2="242" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="408" y="246" fill="#2563EB" font-weight="800" font-size="12">D</text>
+        <line x1="80" y1="242" x2="395" y2="68" stroke="#059669" stroke-width="2.5"/>
+        <text x="397" y="66" fill="#059669" font-weight="800" font-size="12">S</text>
+        <circle cx="251" cy="147" r="4.5" fill="#334155"/>
+        <line x1="55" y1="147" x2="251" y2="147" stroke="#94A3B8" stroke-dasharray="4,3"/>
+        <line x1="251" y1="265" x2="251" y2="147" stroke="#94A3B8" stroke-dasharray="4,3"/>
+        <text x="49" y="151" text-anchor="end" font-weight="700" font-size="10" fill="#334155">P₀</text>
+        <text x="251" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
+      </g>
+      <g class="idl-1" style="display:none">
+        <line x1="80" y1="182" x2="395" y2="8" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="7,4"/>
+        <text x="235" y="6" font-size="10" fill="#1d4ed8" font-weight="700">S₁ (specific)</text>
+        <line x1="63" y1="182" x2="63" y2="242" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="60" y1="182" x2="66" y2="182" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="60" y1="242" x2="66" y2="242" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="50" y="212" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="700">£T</text>
+        <text x="50" y="222" font-size="8" fill="#1d4ed8" text-anchor="middle">fixed</text>
+        <rect x="140" y="24" width="148" height="18" rx="5" fill="#DBEAFE"/>
+        <text x="214" y="37" font-size="10" fill="#1d4ed8" font-weight="600" text-anchor="middle">Parallel shift — constant gap</text>
+        <circle cx="200" cy="116" r="4.5" fill="#1d4ed8"/>
+        <line x1="55" y1="116" x2="200" y2="116" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.6"/>
+        <line x1="200" y1="265" x2="200" y2="116" stroke="#94A3B8" stroke-dasharray="4,3" opacity="0.6"/>
+        <text x="49" y="120" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
+        <text x="200" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
+      </g>
+      <g class="idl-2" style="display:none">
+        <line x1="80" y1="212" x2="395" y2="15" stroke="#d97706" stroke-width="2" stroke-dasharray="7,4"/>
+        <text x="303" y="13" font-size="10" fill="#d97706" font-weight="700">S₂ (ad val.)</text>
+        <line x1="113" y1="187" x2="113" y2="220" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="110" y1="187" x2="116" y2="187" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="110" y1="220" x2="116" y2="220" stroke="#d97706" stroke-width="1.5"/>
+        <text x="100" y="204" font-size="8" fill="#d97706" text-anchor="middle" font-weight="600">T% (small)</text>
+        <line x1="380" y1="27" x2="380" y2="78" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="377" y1="27" x2="383" y2="27" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="377" y1="78" x2="383" y2="78" stroke="#d97706" stroke-width="1.5"/>
+        <text x="402" y="55" font-size="8" fill="#d97706" text-anchor="middle" font-weight="600">T% (large)</text>
+        <rect x="220" y="48" width="150" height="18" rx="5" fill="#FEF3C7"/>
+        <text x="295" y="61" font-size="10" fill="#d97706" font-weight="600" text-anchor="middle">Pivot shift — widening gap</text>
+        <circle cx="217" cy="126" r="4.5" fill="#d97706"/>
+      </g>
+    </svg>
+  `,
+
+  taxIncidenceInteractive: `
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <g class="idl-base">
+        <line x1="55" y1="265" x2="415" y2="265" stroke="#334155" stroke-width="1.5"/>
+        <line x1="55" y1="265" x2="55" y2="18" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="415,265 406,261 406,269" fill="#334155"/>
+        <polygon points="55,18 51,27 59,27" fill="#334155"/>
+        <text x="33" y="22" font-size="10" fill="#475569" font-weight="700">Price</text>
+        <text x="418" y="269" font-size="10" fill="#475569" font-weight="700">Q</text>
+        <line x1="80" y1="42" x2="405" y2="242" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="408" y="246" fill="#2563EB" font-weight="800" font-size="12">D</text>
+        <line x1="80" y1="242" x2="395" y2="68" stroke="#059669" stroke-width="2.5"/>
+        <text x="397" y="66" fill="#059669" font-weight="800" font-size="12">S</text>
+      </g>
+      <g class="idl-1" style="display:none">
+        <circle cx="251" cy="147" r="4.5" fill="#334155"/>
+        <line x1="55" y1="147" x2="251" y2="147" stroke="#94A3B8" stroke-dasharray="4,3"/>
+        <line x1="251" y1="265" x2="251" y2="147" stroke="#94A3B8" stroke-dasharray="4,3"/>
+        <text x="49" y="151" text-anchor="end" font-weight="700" font-size="10" fill="#334155">P₀</text>
+        <text x="251" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
+      </g>
+      <g class="idl-2" style="display:none">
+        <line x1="80" y1="182" x2="395" y2="8" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="7,4"/>
+        <text x="397" y="8" font-size="11" fill="#1d4ed8" font-weight="700">S+T</text>
+        <circle cx="200" cy="116" r="4.5" fill="#1d4ed8"/>
+        <line x1="200" y1="265" x2="200" y2="116" stroke="#94A3B8" stroke-dasharray="4,3" opacity="0.6"/>
+        <text x="49" y="120" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
+        <text x="200" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
+      </g>
+      <g class="idl-3" style="display:none">
+        <rect x="55" y="116" width="145" height="31" fill="#DBEAFE" fill-opacity="0.85"/>
+        <rect x="55" y="116" width="145" height="31" fill="none" stroke="#2563EB" stroke-width="1"/>
+        <rect x="55" y="147" width="145" height="29" fill="#FEE2E2" fill-opacity="0.85"/>
+        <rect x="55" y="147" width="145" height="29" fill="none" stroke="#dc2626" stroke-width="1"/>
+        <line x1="55" y1="176" x2="200" y2="176" stroke="#dc2626" stroke-dasharray="4,3" opacity="0.7"/>
+        <text x="49" y="180" text-anchor="end" font-weight="700" font-size="10" fill="#dc2626">Pp</text>
+        <text x="127" y="135" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="600">Consumer burden</text>
+        <text x="127" y="161" font-size="9" fill="#dc2626" text-anchor="middle" font-weight="600">Producer burden</text>
+        <line x1="205" y1="116" x2="205" y2="176" stroke="#374151" stroke-width="1.5"/>
+        <line x1="202" y1="116" x2="208" y2="116" stroke="#374151" stroke-width="1.5"/>
+        <line x1="202" y1="176" x2="208" y2="176" stroke="#374151" stroke-width="1.5"/>
+        <text x="215" y="150" font-size="9" fill="#374151" text-anchor="start" font-weight="600">Tax = £T</text>
+      </g>
+    </svg>
+  `,
+
+  subsidyInteractive: `
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <g class="idl-base">
+        <line x1="55" y1="265" x2="415" y2="265" stroke="#334155" stroke-width="1.5"/>
+        <line x1="55" y1="265" x2="55" y2="18" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="415,265 406,261 406,269" fill="#334155"/>
+        <polygon points="55,18 51,27 59,27" fill="#334155"/>
+        <text x="33" y="22" font-size="10" fill="#475569" font-weight="700">Price</text>
+        <text x="418" y="269" font-size="10" fill="#475569" font-weight="700">Q</text>
+        <line x1="80" y1="42" x2="405" y2="242" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="408" y="246" fill="#2563EB" font-weight="800" font-size="12">D</text>
+        <line x1="110" y1="210" x2="395" y2="80" stroke="#059669" stroke-width="2.5"/>
+        <text x="397" y="78" fill="#059669" font-weight="800" font-size="12">S</text>
+      </g>
+      <g class="idl-1" style="display:none">
+        <circle cx="250" cy="146" r="4.5" fill="#334155"/>
+        <line x1="55" y1="146" x2="250" y2="146" stroke="#94A3B8" stroke-dasharray="4,3"/>
+        <line x1="250" y1="265" x2="250" y2="146" stroke="#94A3B8" stroke-dasharray="4,3"/>
+        <text x="49" y="150" text-anchor="end" font-weight="700" font-size="10" fill="#334155">P₀</text>
+        <text x="250" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
+      </g>
+      <g class="idl-2" style="display:none">
+        <line x1="110" y1="250" x2="395" y2="120" stroke="#059669" stroke-width="2" stroke-dasharray="7,4" opacity="0.85"/>
+        <text x="397" y="120" font-size="11" fill="#059669" font-weight="700">S₁</text>
+        <circle cx="287" cy="169" r="4.5" fill="#059669"/>
+        <line x1="287" y1="265" x2="287" y2="169" stroke="#94A3B8" stroke-dasharray="4,3" opacity="0.6"/>
+        <text x="49" y="173" text-anchor="end" font-weight="700" font-size="10" fill="#059669">Pc</text>
+        <text x="287" y="279" text-anchor="middle" font-size="10" fill="#059669">Qs</text>
+        <rect x="155" y="228" width="130" height="18" rx="5" fill="#D1FAE5"/>
+        <text x="220" y="241" font-size="10" fill="#059669" font-weight="600" text-anchor="middle">Subsidy → Q rises, P falls</text>
+      </g>
+      <g class="idl-3" style="display:none">
+        <rect x="55" y="129" width="232" height="17" fill="#D1FAE5" fill-opacity="0.85"/>
+        <rect x="55" y="129" width="232" height="17" fill="none" stroke="#059669" stroke-width="1"/>
+        <rect x="55" y="146" width="232" height="23" fill="#DBEAFE" fill-opacity="0.85"/>
+        <rect x="55" y="146" width="232" height="23" fill="none" stroke="#2563EB" stroke-width="1"/>
+        <line x1="55" y1="129" x2="287" y2="129" stroke="#059669" stroke-dasharray="4,3" opacity="0.7"/>
+        <text x="49" y="133" text-anchor="end" font-weight="700" font-size="10" fill="#059669">Pp</text>
+        <text x="171" y="141" font-size="9" fill="#059669" text-anchor="middle" font-weight="600">Producer benefit</text>
+        <text x="171" y="161" font-size="9" fill="#2563EB" text-anchor="middle" font-weight="600">Consumer benefit</text>
+        <line x1="292" y1="129" x2="292" y2="169" stroke="#374151" stroke-width="1.5"/>
+        <line x1="289" y1="129" x2="295" y2="129" stroke="#374151" stroke-width="1.5"/>
+        <line x1="289" y1="169" x2="295" y2="169" stroke="#374151" stroke-width="1.5"/>
+        <text x="302" y="152" font-size="9" fill="#374151" text-anchor="start" font-weight="600">Subsidy = £S</text>
+      </g>
+    </svg>
+  `,
+
+  taxSubsidyElasticityStatic: `
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <line x1="10" y1="150" x2="430" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="220" y1="10" x2="220" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+
+      <g transform="translate(10,10)">
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Tax — Inelastic demand</text>
+        <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#1d4ed8">Consumers bear more</text>
+        <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="60" y1="32" x2="82" y2="115" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="83" y="118" font-size="10" fill="#2563EB">D</text>
+        <line x1="35" y1="112" x2="188" y2="40" stroke="#059669" stroke-width="1.8"/>
+        <text x="190" y="38" font-size="10" fill="#059669">S</text>
+        <line x1="35" y1="82" x2="188" y2="10" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="155" y="8" font-size="9" fill="#1d4ed8">S+T</text>
+        <rect x="35" y="60" width="30" height="24" fill="#DBEAFE" fill-opacity="0.85"/>
+        <rect x="35" y="60" width="30" height="24" fill="none" stroke="#2563EB" stroke-width="0.8"/>
+        <rect x="35" y="84" width="30" height="6" fill="#FEE2E2" fill-opacity="0.85"/>
+        <rect x="35" y="84" width="30" height="6" fill="none" stroke="#dc2626" stroke-width="0.8"/>
+        <circle cx="68" cy="84" r="3" fill="#334155"/>
+        <circle cx="65" cy="60" r="3" fill="#1d4ed8"/>
+        <text x="30" y="63" font-size="8" fill="#1d4ed8" text-anchor="end" font-weight="700">Pc</text>
+        <text x="30" y="87" font-size="8" fill="#334155" text-anchor="end" font-weight="700">P₀</text>
+        <text x="30" y="93" font-size="8" fill="#dc2626" text-anchor="end" font-weight="700">Pp</text>
+      </g>
+
+      <g transform="translate(228,10)">
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Tax — Elastic demand</text>
+        <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#dc2626">Producers bear more</text>
+        <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="35" y1="42" x2="190" y2="90" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="192" y="93" font-size="10" fill="#2563EB">D</text>
+        <line x1="35" y1="112" x2="188" y2="40" stroke="#059669" stroke-width="1.8"/>
+        <text x="190" y="38" font-size="10" fill="#059669">S</text>
+        <line x1="35" y1="82" x2="188" y2="10" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="155" y="8" font-size="9" fill="#1d4ed8">S+T</text>
+        <rect x="35" y="52" width="82" height="12" fill="#DBEAFE" fill-opacity="0.85"/>
+        <rect x="35" y="52" width="82" height="12" fill="none" stroke="#2563EB" stroke-width="0.8"/>
+        <rect x="35" y="64" width="82" height="24" fill="#FEE2E2" fill-opacity="0.85"/>
+        <rect x="35" y="64" width="82" height="24" fill="none" stroke="#dc2626" stroke-width="0.8"/>
+        <circle cx="122" cy="64" r="3" fill="#334155"/>
+        <circle cx="84" cy="52" r="3" fill="#1d4ed8"/>
+        <line x1="35" y1="88" x2="117" y2="88" stroke="#dc2626" stroke-dasharray="3,2" opacity="0.6"/>
+        <text x="30" y="55" font-size="8" fill="#1d4ed8" text-anchor="end" font-weight="700">Pc</text>
+        <text x="30" y="67" font-size="8" fill="#334155" text-anchor="end" font-weight="700">P₀</text>
+        <text x="30" y="91" font-size="8" fill="#dc2626" text-anchor="end" font-weight="700">Pp</text>
+      </g>
+
+      <g transform="translate(10,158)">
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#059669">Subsidy — Inelastic demand</text>
+        <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#059669">Producers capture more</text>
+        <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="60" y1="32" x2="82" y2="115" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="83" y="118" font-size="10" fill="#2563EB">D</text>
+        <line x1="35" y1="98" x2="188" y2="35" stroke="#059669" stroke-width="1.8"/>
+        <text x="190" y="33" font-size="10" fill="#059669">S</text>
+        <line x1="35" y1="118" x2="188" y2="55" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="190" y="55" font-size="9" fill="#059669">S₁</text>
+        <rect x="35" y="67" width="30" height="15" fill="#D1FAE5" fill-opacity="0.85"/>
+        <rect x="35" y="67" width="30" height="15" fill="none" stroke="#059669" stroke-width="0.8"/>
+        <rect x="35" y="82" width="30" height="8" fill="#DBEAFE" fill-opacity="0.85"/>
+        <rect x="35" y="82" width="30" height="8" fill="none" stroke="#2563EB" stroke-width="0.8"/>
+        <circle cx="65" cy="82" r="3" fill="#334155"/>
+        <circle cx="68" cy="90" r="3" fill="#059669"/>
+        <text x="30" y="70" font-size="8" fill="#059669" text-anchor="end" font-weight="700">Pp</text>
+        <text x="30" y="85" font-size="8" fill="#334155" text-anchor="end" font-weight="700">P₀</text>
+        <text x="30" y="93" font-size="8" fill="#2563EB" text-anchor="end" font-weight="700">Pc</text>
+      </g>
+
+      <g transform="translate(228,158)">
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#059669">Subsidy — Elastic demand</text>
+        <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#2563EB">Consumers capture more</text>
+        <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
+        <line x1="35" y1="42" x2="190" y2="90" stroke="#2563EB" stroke-width="1.8"/>
+        <text x="192" y="93" font-size="10" fill="#2563EB">D</text>
+        <line x1="35" y1="98" x2="188" y2="35" stroke="#059669" stroke-width="1.8"/>
+        <text x="190" y="33" font-size="10" fill="#059669">S</text>
+        <line x1="35" y1="118" x2="188" y2="55" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="190" y="55" font-size="9" fill="#059669">S₁</text>
+        <rect x="35" y="60" width="143" height="8" fill="#D1FAE5" fill-opacity="0.85"/>
+        <rect x="35" y="60" width="143" height="8" fill="none" stroke="#059669" stroke-width="0.8"/>
+        <rect x="35" y="68" width="143" height="22" fill="#DBEAFE" fill-opacity="0.85"/>
+        <rect x="35" y="68" width="143" height="22" fill="none" stroke="#2563EB" stroke-width="0.8"/>
+        <circle cx="118" cy="68" r="3" fill="#334155"/>
+        <circle cx="148" cy="90" r="3" fill="#059669"/>
+        <line x1="35" y1="60" x2="148" y2="60" stroke="#059669" stroke-dasharray="3,2" opacity="0.6"/>
+        <text x="30" y="63" font-size="8" fill="#059669" text-anchor="end" font-weight="700">Pp</text>
+        <text x="30" y="71" font-size="8" fill="#334155" text-anchor="end" font-weight="700">P₀</text>
+        <text x="30" y="93" font-size="8" fill="#2563EB" text-anchor="end" font-weight="700">Pc</text>
+      </g>
+    </svg>
+  `,
+
   /* ── Mini policy-comparison diagrams used on Card 7 ── */
   taxMiniDiagram: `
     <svg viewBox="0 0 270 205" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">

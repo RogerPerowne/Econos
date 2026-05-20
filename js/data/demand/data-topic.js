@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'demand_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Demand: the big picture',
-      tip: 'Why do queues form for Taylor Swift tickets but shops slash prices on old stock? Demand helps explain how consumers respond to price — and why firms obsess over it.',
+      tip: { icon: '💡', tone: 'blue', text: 'Why do queues form for Taylor Swift tickets but shops slash prices on old stock? Demand helps explain how consumers respond to price — and why firms obsess over it.' },
       diagramKey: 'demandLawCurve',
       keyPoints: [
         { icon: '⚖️',  title: 'Law of demand',    headline: 'As price falls, quantity demanded usually rises.',                                  body: 'Consumers buy more when it\'s cheaper and less when it\'s more expensive.',         tone: 'green' },
@@ -76,6 +76,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'demand_3',
       template: 'cause',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Non-Price Determinants of Demand',
       tip: { icon: '💡', tone: 'blue', text: 'Demand shifts when anything other than the good\'s own price changes — income, tastes, related goods prices, population or expectations.' },
       shiftDiagrams: 'demand',
@@ -125,8 +126,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'demand_5',
       template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Derived Demand',
-      tip: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too — making recessions self-reinforcing.',
+      tip: { icon: '💡', tone: 'blue', text: 'Derived demand links product and factor markets. If demand for cars falls in a recession, derived demand for car workers, steel, and components falls too — making recessions self-reinforcing.' },
       flow: [
         { icon: '🛍️', title: 'Consumers demand cars',      sub: 'Rising incomes → demand for vehicles grows.',                tone: 'green'  },
         { icon: '🏭', title: 'Car firms expand output',    sub: 'Firms plan to build more vehicles.',                         tone: 'blue'   },
@@ -176,8 +178,9 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'demand_7',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'The Demand Curve and Market Analysis',
-      tip: 'Diagram checklist: label both axes (P, Q), label the curve (D), mark key points (P*, Q*), show any shift as D₂ clearly. Methodical technique earns marks even when written analysis is incomplete.',
+      tip: { icon: '💡', tone: 'blue', text: 'Diagram checklist: label both axes (P, Q), label the curve (D), mark key points (P*, Q*), show any shift as D₂ clearly. Methodical technique earns marks even when written analysis is incomplete.' },
       diagramKey: 'demandScheduleCurve',
       flow: [
         { icon: '📖', title: 'Read the curve',  sub: 'The curve slopes downward. There is an inverse relationship between price and quantity demanded.',            tone: 'green'  },

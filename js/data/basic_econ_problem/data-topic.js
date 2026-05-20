@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 7',
       title: 'The basic economic problem: the big picture',
       lede: 'Economics begins with a simple tension: our wants are unlimited, but the resources to satisfy them are limited.',
-      tip: 'Economics begins with a simple tension — our wants are unlimited, but the resources to satisfy them are limited.',
+      tip: { icon: '💡', tone: 'blue', text: 'Economics begins with a simple tension — our wants are unlimited, but the resources to satisfy them are limited.' },
       comparison: {
         title: 'The core problem',
         emoji: '⚡',
@@ -55,9 +55,10 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_2',
       template: 'framing',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Opportunity Cost',
       lede: 'Every choice means giving something up. Opportunity cost is the value of the next best alternative forgone — not the money you spent.',
-      tip: 'Every choice means giving something up. Opportunity cost is the next best alternative forgone.',
+      tip: { icon: '💡', tone: 'blue', text: 'Every choice means giving something up. Opportunity cost is the next best alternative forgone.' },
       comparison: {
         title: 'A concrete picture — both cost £80',
         emoji: '🎯',
@@ -90,9 +91,10 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_3',
       template: 'framing',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'The Three Fundamental Economic Questions',
       lede: 'Because resources are scarce, every economy must answer three core questions — and the answers shape the entire system.',
-      tip: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.',
+      tip: { icon: '💡', tone: 'blue', text: 'Because resources are scarce, every economy must answer three core questions: <strong>what</strong> to produce, <strong>how</strong> to produce, and <strong>for whom</strong> to produce.' },
       branches: [
         { tone: 'green',  label: '1. What to produce?',     sub: 'Decide which goods and services to produce with limited resources. Health care, gaming consoles, renewable energy — every yes is a no to something else.' },
         { tone: 'amber',  label: '2. How to produce?',      sub: 'Decide which combination of factors to use. Labour-intensive or capital-intensive? Local or imported inputs? Sustainable or fastest?' },
@@ -120,9 +122,10 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_4',
       template: 'cause',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Economic Agents and Their Objectives',
       lede: 'An economy is made up of decision-makers — households, firms, governments and workers — each with their own objectives.',
-      tip: 'An economy is made up of decision-makers — households, firms, governments and workers — each with their own objectives.',
+      tip: { icon: '💡', tone: 'blue', text: 'An economy is made up of decision-makers — households, firms, governments and workers — each with their own objectives.' },
       body: 'Standard economic models start by asking <em>who</em> is making the decision. Different agents pursue different objectives, which is why conflict and trade-off are so central to economics.',
       causes: [
         { head: 'Households',  icon: '🏠', body: 'Aim to maximise utility (satisfaction) within a budget. Consume goods and services and supply labour. Assumed to be rational: weigh marginal costs and benefits.' },
@@ -155,6 +158,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_5',
       template: 'paired',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Positive vs Normative Statements',
       tip: { icon: 'ℹ️', text: '<strong>Positive</strong> statements can be tested with evidence. <strong>Normative</strong> statements involve value judgements about what ought to happen.', tone: 'blue' },
       left: {
@@ -182,9 +186,10 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_6',
       template: 'mechanisms',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Rational Economic Decision-Making',
       lede: 'In simple economic models, decision-makers are assumed to act rationally — weighing up costs and benefits to maximise their objective.',
-      tip: 'In simple economic models, decision-makers are assumed to act <strong>rationally</strong> — weighing up costs and benefits to maximise their objective.',
+      tip: { icon: '💡', tone: 'blue', text: 'In simple economic models, decision-makers are assumed to act <strong>rationally</strong> — weighing up costs and benefits to maximise their objective.' },
       body: 'Rational means making decisions in a logical and consistent way to achieve the best possible outcome. The standard model walks through four steps:',
       flow: [
         { icon: '🔍', title: 'Identify the objective',     sub: 'Be clear about the goal you want to achieve.' },
@@ -212,9 +217,10 @@ window.ECONOS_TOPIC = {
     {
       id: 'basic_econ_problem_7',
       template: 'paired',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Micro vs Macro Economics',
       lede: 'Microeconomics zooms in on individual markets and decision-makers. Macroeconomics zooms out to the whole economy.',
-      tip: '<strong>Microeconomics</strong> zooms in on individual markets and decision-makers. <strong>Macroeconomics</strong> zooms out to the whole economy.',
+      tip: { icon: '💡', tone: 'blue', text: '<strong>Microeconomics</strong> zooms in on individual markets and decision-makers. <strong>Macroeconomics</strong> zooms out to the whole economy.' },
       left: {
         label: '🔍 Microeconomics',
         points: [

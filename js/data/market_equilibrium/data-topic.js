@@ -228,6 +228,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'market_equilibrium_6',
       template: 'cause',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'When Markets Fail to Reach Equilibrium',
       tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly — controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
       causesStyle: 'tinted-flat',
@@ -243,6 +244,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'market_equilibrium_7',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Equilibrium in Different Market Contexts',
       tip: { icon: '💡', tone: 'blue', text: 'The same demand-and-supply logic applies across many markets, but the speed of adjustment and the wider effects can differ.' },
       marketGrid: [

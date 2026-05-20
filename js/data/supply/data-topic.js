@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'supply_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Supply: the big picture',
-      tip: 'A supply curve shows how much producers are willing and able to sell at different prices. Higher price usually means higher quantity supplied — but only ceteris paribus.',
+      tip: { icon: '💡', tone: 'blue', text: 'A supply curve shows how much producers are willing and able to sell at different prices. Higher price usually means higher quantity supplied — but only ceteris paribus.' },
       diagramKey: 'supplyCurveBasic',
       keyPoints: [
         { icon: '🏷️', title: 'Price',             body: 'The market price is what producers receive for each unit sold.',                                 tone: 'green'  },
@@ -76,6 +76,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'supply_3',
       template: 'cause',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Non-Price Determinants of Supply',
       tip: { icon: '💡', tone: 'blue', text: 'Supply shifts when firms\' costs, productivity or business conditions change — even if the product\'s own price stays the same.' },
       shiftDiagrams: true,
@@ -124,6 +125,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_5',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Joint Supply and Competing Supply',
       tip: { icon: '💡', tone: 'blue', text: 'Some products are supplied together, while others compete for the same scarce resources. That means one supply decision can affect another market.' },
       conceptBoxes: [
@@ -164,11 +166,9 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_6',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Supply in Context: Key Markets',
-      tip: [
-        { icon: '💡', tone: 'blue', text: 'Supply behaves differently across markets because time, capacity, stock levels and nature all affect how easily producers can respond.' },
-        { icon: '⚖️', tone: 'green', head: 'Short run vs long run', text: 'In the short run, supply is often less responsive due to fixed factors and constraints. In the long run, firms can adjust capacity, resources and technology more fully.' }
-      ],
+      tip: { icon: '💡', tone: 'blue', text: 'Supply behaves differently across markets because time, capacity, stock levels and nature all affect how easily producers can respond. In the short run supply is often less responsive; in the long run firms can adjust capacity more fully.' },
       causesStyle: 'plain-white',
       causesLabel: null,
       causes: [
@@ -181,6 +181,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'supply_7',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Supply and the Profit Motive',
       tip: { icon: '💡', tone: 'blue', text: 'The law of supply is rooted in incentives: when selling becomes more profitable, firms usually want to produce more.' },
       flowTitle: 'How the profit motive drives supply',

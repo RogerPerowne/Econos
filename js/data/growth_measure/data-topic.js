@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   id: 'growth_measure',
   topicNum: '5.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  title: 'Economic Growth',
+  title: 'Economic Growth & National Income',
   estTime: '9-11 minutes',
   goal: 'Lock in GDP, GNP, PPP and what growth really means',
 

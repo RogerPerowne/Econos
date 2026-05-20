@@ -2,7 +2,7 @@ window.ECONOS_TOPIC = {
   id: 'price_functions',
   topicNum: '2.7',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  title: 'Price Mechanism',
+  title: 'The Price Mechanism',
   estTime: '7-9 minutes',
   goal: 'Lock in how prices signal, incentivise, ration and transmit information — and why market failure occurs when these functions break down.',
   intro: {

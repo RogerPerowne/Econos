@@ -833,7 +833,7 @@ window.ECONOS_ICONS = {
     <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfoc-ax)"/>
     <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfoc-ax)"/>
     <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Consumer Goods</text>
-    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Capital Goods</text>
+    <text x="235" y="289" font-size="10" fill="#475569" text-anchor="middle">Capital Goods</text>
     <!-- PPF curve -->
     <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
     <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF</text>
@@ -862,11 +862,10 @@ window.ECONOS_ICONS = {
     <line x1="37" y1="114" x2="37" y2="212" stroke="#DC2626" stroke-width="1.8" marker-end="url(#ppfoc-sac)"/>
     <line x1="33" y1="114" x2="41" y2="114" stroke="#DC2626" stroke-width="1.5"/>
     <line x1="33" y1="207" x2="41" y2="207" stroke="#DC2626" stroke-width="1.5"/>
-    <text x="26" y="165" font-size="9" fill="#DC2626" text-anchor="middle" transform="rotate(-90,26,165)">sacrifice a₁−a₂</text>
     <!-- Gain bracket (green, bottom) -->
     <line x1="208" y1="280" x2="330" y2="280" stroke="#059669" stroke-width="1.8" marker-end="url(#ppfoc-gn)"/>
     <line x1="208" y1="276" x2="208" y2="284" stroke="#059669" stroke-width="1.5"/>
-    <text x="271" y="295" font-size="9" fill="#059669" text-anchor="middle">gain b₂−b₁</text>
+    <text x="271" y="298" font-size="9" fill="#059669" text-anchor="middle">gain b₂−b₁</text>
     <!-- OC label box -->
     <rect x="300" y="88" width="130" height="36" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
     <text x="365" y="103" font-size="10" font-weight="600" fill="#1E40AF" text-anchor="middle">Opportunity cost</text>
@@ -902,8 +901,8 @@ window.ECONOS_ICONS = {
     <line x1="271" y1="153" x2="301" y2="153" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfbo-gn)"/>
     <line x1="301" y1="153" x2="301" y2="129" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfbo-sac)"/>
     <line x1="271" y1="153" x2="301" y2="129" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
-    <rect x="225" y="130" width="78" height="16" rx="4" fill="#FEF3C7"/>
-    <text x="264" y="142" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">Rising OC</text>
+    <rect x="192" y="130" width="78" height="16" rx="4" fill="#FEF3C7"/>
+    <text x="231" y="142" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">Rising OC</text>
     <!-- Point Pc (t≈0.75 → 359,232) HIGH OC -->
     <circle cx="359" cy="232" r="4.5" fill="#2563EB"/>
     <!-- Trade-off triangle at Pc: gain +20px right, sacrifice ~40px up -->
@@ -1101,11 +1100,11 @@ window.ECONOS_ICONS = {
     <text x="99" y="131" font-size="9" font-weight="600" fill="#5B21B6" text-anchor="middle">UK / USA</text>
     <text x="99" y="141" font-size="9" fill="#64748B" text-anchor="middle">~18% investment</text>
     <!-- Point L: China style (lower consumer, high investment) -->
+    <rect x="332" y="133" width="76" height="28" rx="5" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="370" y="146" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">China 🇨🇳</text>
+    <text x="370" y="157" font-size="9" fill="#64748B" text-anchor="middle">~42% investment</text>
+    <line x1="370" y1="161" x2="330" y2="183" stroke="#D97706" stroke-width="1.2" stroke-dasharray="3 2"/>
     <circle cx="328" cy="186" r="6" fill="#D97706"/>
-    <text x="325" y="162" font-size="10" font-weight="700" fill="#D97706">🇨🇳</text>
-    <rect x="310" y="165" width="70" height="28" rx="5" fill="#FFFBEB" stroke="#FDE68A"/>
-    <text x="345" y="178" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">China</text>
-    <text x="345" y="188" font-size="9" fill="#64748B" text-anchor="middle">~42% investment</text>
     <!-- Annotation: more capital now = bigger PPF later -->
     <rect x="62" y="230" width="310" height="28" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
     <text x="217" y="243" font-size="10" font-weight="600" fill="#065F46" text-anchor="middle">More capital goods now → PPF shifts outward later</text>
@@ -1188,10 +1187,10 @@ window.ECONOS_ICONS = {
     <!-- Shaded region beyond PPF -->
     <text x="290" y="105" font-size="10" fill="#059669" font-style="italic">Gains from trade</text>
     <!-- Before/After callout -->
-    <rect x="62" y="30" width="195" height="52" rx="6" fill="white" stroke="#E2E8F0"/>
-    <text x="72" y="48" font-size="9.5" font-weight="700" fill="#2563EB">With specialisation + trade:</text>
-    <text x="72" y="62" font-size="9.5" fill="#334155">Country produces at P (lowest OC)</text>
-    <text x="72" y="75" font-size="9.5" fill="#059669">↗ Consumes at C — beyond own PPF</text>
+    <rect x="130" y="30" width="210" height="52" rx="6" fill="white" stroke="#E2E8F0"/>
+    <text x="140" y="48" font-size="9.5" font-weight="700" fill="#2563EB">With specialisation + trade:</text>
+    <text x="140" y="62" font-size="9.5" fill="#334155">Country produces at P (lowest OC)</text>
+    <text x="140" y="75" font-size="9.5" fill="#059669">↗ Consumes at C — beyond own PPF</text>
     <!-- Label: unattainable without trade -->
     <text x="320" y="145" font-size="8.5" fill="#64748B" text-anchor="middle">previously</text>
     <text x="320" y="155" font-size="8.5" fill="#64748B" text-anchor="middle">unattainable</text>

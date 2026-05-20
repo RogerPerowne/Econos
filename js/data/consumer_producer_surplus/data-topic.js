@@ -304,22 +304,24 @@ window.ECONOS_TOPIC = {
       },
       diagramPanel: {
         diagramKey: 'allocativeEfficiencyDiagram',
-        title: 'Why equilibrium is efficient',
+        title: 'Total surplus at equilibrium',
         tone: 'blue',
         layout: 'side',
-        steps: [
-          { tone: 'blue',  icon: '⚖️', head: 'Marginal benefit equals marginal cost', body: 'At equilibrium, MB = MC. The value of the next unit to consumers exactly equals its cost to producers.' },
-          { tone: 'green', icon: '✓',  head: 'No reallocation can raise total welfare', body: 'Moving resources into or out of this market reduces total surplus.' },
-          { tone: 'amber', icon: '⭐', head: 'Gains from trade are exhausted at this output', body: 'Every mutually beneficial trade has been realised. Any further unit would cost more than it benefits.' }
-        ]
+        intro: 'At <strong>E</strong> (where MB = MC), total surplus (CS + PS) is maximised.<br><br>If output is <strong>below Qe</strong>, there are unexploited gains from trade — total surplus is lower.<br><br>If output is <strong>above Qe</strong>, units are produced whose cost exceeds their benefit — total surplus is lower.'
       },
       causes: [
+        { tone: 'blue',  icon: '⚖️', head: 'Marginal benefit equals marginal cost', body: 'At equilibrium, MB = MC. The value of the next unit to consumers exactly equals its cost to producers — no further reallocation can raise welfare.' },
+        { tone: 'green', icon: '✓',  head: 'No reallocation can raise total welfare', body: 'Moving output into or out of this market reduces total surplus. The competitive equilibrium achieves the social optimum without central coordination.' },
+        { tone: 'amber', icon: '⭐', head: 'Gains from trade are exhausted', body: 'Every mutually beneficial trade has been realised at Qe. Any further unit would cost more to produce than the benefit it delivers to consumers.' }
+      ],
+      causesStyle: 'plain-white',
+      causesLabel: 'Why equilibrium is efficient',
+      causes2: [
         { tone: 'blue',  icon: '📊', head: 'Underproduction',   body: 'Quantity is less than the efficient level. Misses beneficial trades where benefit exceeds cost. Usually linked to <em>positive external benefits</em>.' },
         { tone: 'amber', icon: '🏭', head: 'Overproduction',    body: 'Quantity is greater than the efficient level. Produces units where cost exceeds benefit. Often linked to <em>negative external costs</em>.' },
         { tone: 'green', icon: '🧮', head: 'Total surplus test', body: 'The best allocation is the one with the largest <strong>CS + PS</strong>. Equilibrium in a competitive market passes this test.' }
       ],
-      causesStyle: 'tinted-flat',
-      causesLabel: null,
+      causes2Label: null,
       keyTakeaway: { title: 'Key idea', text: 'Allocative efficiency means maximising total surplus at the equilibrium where <strong>MB = MC</strong>. Any departure — from a tax, subsidy, price control, externality, or public good problem — creates a deadweight loss whose size measures the efficiency cost of the deviation.' },
       examEdge: '<strong>Don\'t confuse the three efficiencies.</strong> <em>Allocative</em> efficiency = maximising total surplus (MB = MC). <em>Productive</em> efficiency = producing at lowest cost (on the LRAC minimum). <em>Equity</em> = fairness of the distribution. They can pull in different directions: a perfectly competitive market is allocatively efficient but may produce unequal outcomes; a regulated monopoly can be productively efficient but allocatively inefficient.<br><br><strong>Welfare-effects exam method:</strong> draw the before/after diagram, shade CS and PS, identify what changed (some CS → tax revenue, some destroyed → DWL), and state the net effect on total welfare. A policy that destroys less surplus than the market failure it corrects <em>improves</em> total welfare; one that operates in an otherwise efficient market reduces it.<br><br><strong>Market failure reframed:</strong> market failure occurs when the <em>private</em> equilibrium (where MPB = MPC) differs from the <em>social</em> optimum (where MSB = MSC). The externality shifts one of the social curves, moving the socially optimal output away from the private equilibrium — and the DWL triangle measures the gap.'
     },

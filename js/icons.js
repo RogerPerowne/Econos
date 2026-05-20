@@ -5345,7 +5345,7 @@ window.ECONOS_ICONS = {
   `,
 
   allocativeEfficiencyDiagram: `
-    <svg viewBox="0 0 470 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 540 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Shaded surplus regions (behind curves) -->
       <polygon points="100,60 100,200 270,200" fill="#DBEAFE" opacity="0.75"/>
       <polygon points="100,340 100,200 270,200" fill="#FED7AA" opacity="0.6"/>

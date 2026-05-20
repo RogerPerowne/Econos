@@ -140,7 +140,7 @@ window.ECONOS_TOPIC = {
       },
       causes: [
         { tone: 'blue',  icon: '🧑', head: 'Consumer burden',    body: 'Higher market price paid by buyers.' },
-        { tone: 'amber', icon: '🧑', head: 'Producer burden',    body: 'Lower net price received by sellers.' },
+        { tone: 'amber', icon: '🏭', head: 'Producer burden',    body: 'Lower net price received by sellers.' },
         { tone: 'green', icon: '🔁', head: 'Incidence reminder', body: 'The more inelastic side of the market bears more of the tax burden.' }
       ],
       causesStyle: 'plain-white',

@@ -331,19 +331,79 @@ window.ECONOS_TOPIC = {
     {
       id: 'consumer_producer_surplus_6',
       stepLabel: 'Learn: Step 7 of 7',
-      template: 'cause',
-      causesEmoji: '📊',
-      causesLabel: 'Real-world surplus applications',
-      causesStyle: 'tinted-flat',
       title: 'Surplus in the Real World',
-      causes: [
-        { icon: '🏠', head: 'Housing market price ceiling', body: 'Rent controls set below the market rate reduce landlord PS dramatically. Some tenants gain (lower rent), but a shortage develops as Qs < Qd. Total welfare falls — DWL equals the value of housing transactions that do not occur. Evidence: San Francisco rent control reduced rental supply by 15% (Diamond et al., 2019).' },
-        { icon: '✈️', head: 'Aviation industry subsidies', body: 'Many airports and airlines receive government subsidies. This expands output beyond free-market levels. Some of the subsidy becomes CS (lower fares) and some becomes PS (higher airline revenue), but the DWL represents overproduction unless negative aviation externalities are already very large.' },
-        { icon: '🌐', head: 'Free trade vs tariffs', body: 'Free trade maximises total surplus in a country by allowing consumers to buy at the world price. A tariff raises the domestic price, transferring CS to domestic producers and the government (tariff revenue), but creating DWL triangles on both sides. Trade theory shows the sum of welfare losses exceeds the gains to producers.' },
-        { icon: '👷', head: 'Labour market minimum wage', body: 'A minimum wage above equilibrium creates PS gains for employed workers (higher wage) but may reduce employment. Workers who lose jobs lose their surplus. Total welfare effect depends on the elasticity of demand for labour — inelastic demand means smaller employment loss and net welfare gain for workers.' }
+      tip: {
+        icon: '📊',
+        tone: 'blue',
+        text: 'Surplus analysis is not just a diagram technique — it is the exam toolkit for evaluating any real-world policy. Every tax, subsidy, and price control creates winners, losers, and usually a deadweight welfare loss.'
+      },
+      diagramGridEmoji: '📐',
+      diagramGridLabel: 'Three policies at a glance',
+      diagramGrid: [
+        {
+          svgKey: 'taxMiniDiagram',
+          tone: 'blue',
+          icon: '💰',
+          head: 'Excise tax',
+          bullets: [
+            { tone: 'blue',  text: 'CS falls — buyers pay Pc above Pe' },
+            { tone: 'amber', text: 'PS falls — sellers receive Pp below Pe' },
+            { tone: 'green', text: 'Government collects tax revenue (Pc − Pp) × Qt' },
+            { tone: 'slate', text: 'DWL: output falls from Qe to Qt' }
+          ]
+        },
+        {
+          svgKey: 'priceCeilingMiniDiagram',
+          tone: 'purple',
+          icon: '🏠',
+          head: 'Price ceiling (Pmax)',
+          bullets: [
+            { tone: 'blue',  text: 'CS may rise for consumers who can buy at Pmax' },
+            { tone: 'amber', text: 'PS falls — sellers receive less than Pe' },
+            { tone: 'purple', text: 'Shortage: Qd > Qs at the ceiling price' },
+            { tone: 'slate', text: 'DWL from transactions that no longer occur' }
+          ]
+        },
+        {
+          svgKey: 'subsidyMiniDiagram',
+          tone: 'green',
+          icon: '💉',
+          head: 'Subsidy',
+          bullets: [
+            { tone: 'blue',  text: 'CS rises — buyers pay Pc below Pe' },
+            { tone: 'amber', text: 'PS rises — sellers receive Ps above Pe' },
+            { tone: 'green', text: 'Government pays subsidy cost (Ps − Pc) × Qs' },
+            { tone: 'slate', text: 'DWL if output overshoots the efficient level' }
+          ]
+        }
       ],
-      examEdge: 'Surplus analysis is the standard toolkit for evaluating any price or quantity intervention. For each real-world policy, ask: (1) does consumer price rise or fall? (2) does producer price rise or fall? (3) does output rise or fall? (4) is there a DWL triangle? (5) does the intervention correct a pre-existing market failure or create a new welfare loss? This five-question framework will structure strong exam answers.',
-      keyTakeaway: { title: 'The big picture', text: 'Consumer and producer surplus measure the gains from trade. Together they equal total welfare, which is maximised at the free-market equilibrium. Any policy intervention redistributes surplus between consumers, producers, and the government — and typically destroys some surplus as deadweight welfare loss. The key evaluative question is whether the policy corrects a pre-existing market failure large enough to justify the welfare loss it creates.' },
+      stepsEmoji: '✍️',
+      stepsLabel: 'How to use surplus in exam answers',
+      steps: [
+        {
+          head: 'Identify the policy',
+          body: 'State what the policy is (tax, subsidy, price ceiling, price floor) and whether it raises or lowers the price consumers and producers face.'
+        },
+        {
+          head: 'Explain how CS and PS change',
+          body: 'Identify winners and losers. Use the diagram — shade the CS and PS areas before and after, and identify the government revenue rectangle or subsidy cost.'
+        },
+        {
+          head: 'Judge the overall welfare effect',
+          body: 'Does total surplus (CS + PS + gov revenue) rise, fall, or stay the same? Is there a DWL triangle? Does the policy correct a market failure — if so, welfare may improve despite redistribution.'
+        }
+      ],
+      causesEmoji: '🌍',
+      causesLabel: 'Real-world applications',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { tone: 'blue',   icon: '🏠', head: 'Rent controls',       body: 'Rent controls set below Pe reduce landlord PS and create a shortage (Qs < Qd). Some tenants gain lower rents, but others cannot find housing. Total welfare falls — DWL equals the value of housing transactions that do not occur. Evidence: San Francisco rent control reduced rental supply by 15% (Diamond et al., 2019).' },
+        { tone: 'amber',  icon: '✈️', head: 'Aviation subsidies',  body: 'Government subsidies to airports and airlines expand output beyond free-market levels. CS rises (lower fares) and PS rises (higher revenue), but the government subsidy cost may exceed the welfare gain unless aviation corrects a genuine positive externality.' },
+        { tone: 'green',  icon: '🌐', head: 'Trade tariffs',       body: 'A tariff raises the domestic price above the world price, transferring CS to domestic producers and the government, while creating DWL triangles on both sides. Free trade maximises total surplus; the welfare losses from tariffs typically exceed the gains to protected producers.' },
+        { tone: 'purple', icon: '👷', head: 'Minimum wage',        body: 'A minimum wage above Pe transfers surplus from employers to employed workers, but may reduce employment. Workers who lose jobs lose their surplus. Total welfare effect depends on labour demand elasticity — inelastic demand means smaller employment loss and a net welfare gain for workers.' }
+      ],
+      keyTakeaway: { title: 'The big picture', text: 'Consumer and producer surplus measure the gains from trade. Any policy intervention redistributes surplus between consumers, producers, and the government — and typically destroys some as deadweight welfare loss. The key evaluative question is always: does the policy correct a pre-existing market failure large enough to justify the welfare loss it creates?' },
+      examEdge: '<strong>Three-step method for any welfare question:</strong> (1) Draw the before/after diagram and label all areas. (2) Identify who gains and who loses — some CS may transfer to government revenue, some to DWL. (3) State the net effect on total surplus and say whether a market failure justifies the intervention.<br><br><strong>Evaluation trick:</strong> a policy that destroys less surplus than the market failure it corrects <em>improves</em> total welfare; one that operates in an already-efficient market reduces it. Examiners reward candidates who make this distinction explicit.<br><br><strong>Watch the language:</strong> "redistribution" ≠ "welfare loss". Tax revenue is a transfer — it does not destroy welfare. Only the DWL triangle (the area no one gets) is a true welfare loss.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

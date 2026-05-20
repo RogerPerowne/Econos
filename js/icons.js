@@ -5386,6 +5386,172 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ── Mini policy-comparison diagrams used on Card 7 ── */
+  taxMiniDiagram: `
+    <svg viewBox="0 0 270 205" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- Shaded regions drawn first so curves sit on top -->
+      <!-- CS: triangle above Pc, below D, 0→Qt -->
+      <polygon points="45,22 45,87 126,87" fill="#DBEAFE" opacity="0.85"/>
+      <!-- PS: triangle above S, below Pp, 0→Qt -->
+      <polygon points="45,117 45,182 126,117" fill="#FED7AA" opacity="0.75"/>
+      <!-- Gov revenue: rectangle Pp→Pc, 0→Qt -->
+      <rect x="45" y="87" width="81" height="30" fill="#D1FAE5" opacity="0.85"/>
+      <!-- DWL: triangle Qt→E between Pc and Pp -->
+      <polygon points="126,87 126,117 145,102" fill="#FECACA" opacity="0.9"/>
+      <!-- Axes -->
+      <line x1="45" y1="18" x2="45" y2="185" stroke="#94A3B8" stroke-width="1.8"/>
+      <line x1="45" y1="185" x2="258" y2="185" stroke="#94A3B8" stroke-width="1.8"/>
+      <polygon points="45,14 41,22 49,22" fill="#94A3B8"/>
+      <polygon points="262,185 254,181 254,189" fill="#94A3B8"/>
+      <text x="42" y="11" font-size="10" fill="#64748B" text-anchor="end">P</text>
+      <text x="264" y="189" font-size="10" fill="#64748B">Q</text>
+      <!-- S+tax: dashed, same slope as S shifted up 30px -->
+      <line x1="45" y1="152" x2="208" y2="22" stroke="#F97316" stroke-width="1.8" stroke-dasharray="5,3"/>
+      <text x="210" y="20" font-size="10" font-weight="700" fill="#F97316">S+tax</text>
+      <!-- D curve -->
+      <line x1="45" y1="22" x2="245" y2="182" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="247" y="184" font-size="12" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
+      <!-- S curve -->
+      <line x1="45" y1="182" x2="245" y2="22" stroke="#F97316" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="247" y="24" font-size="12" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
+      <!-- Dashed reference lines -->
+      <line x1="45" y1="87" x2="126" y2="87" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="45" y1="102" x2="145" y2="102" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,2"/>
+      <line x1="45" y1="117" x2="126" y2="117" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="126" y1="87" x2="126" y2="185" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="145" y1="102" x2="145" y2="185" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,2"/>
+      <!-- E dot -->
+      <circle cx="145" cy="102" r="4" fill="#0F172A"/>
+      <!-- Y-axis labels -->
+      <line x1="41" y1="87" x2="49" y2="87" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="91" font-size="10" fill="#1D4ED8" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="95" font-size="7.5" fill="#1D4ED8" text-anchor="end" font-family="Georgia,serif" font-style="italic">c</text>
+      <line x1="41" y1="102" x2="49" y2="102" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="106" font-size="10" fill="#475569" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="110" font-size="7.5" fill="#475569" text-anchor="end" font-family="Georgia,serif" font-style="italic">e</text>
+      <line x1="41" y1="117" x2="49" y2="117" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="121" font-size="10" fill="#D97706" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="125" font-size="7.5" fill="#D97706" text-anchor="end" font-family="Georgia,serif" font-style="italic">p</text>
+      <!-- X-axis labels -->
+      <line x1="126" y1="181" x2="126" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="126" y="198" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="132" y="201" font-size="7.5" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">t</text>
+      <line x1="145" y1="181" x2="145" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="145" y="198" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="151" y="201" font-size="7.5" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">e</text>
+    </svg>
+  `,
+
+  priceCeilingMiniDiagram: `
+    <svg viewBox="0 0 270 205" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- CS: triangle above Pmax, below D, 0→Qs -->
+      <polygon points="45,22 45,122 120,122" fill="#DBEAFE" opacity="0.85"/>
+      <!-- PS: triangle above S, below Pmax, 0→Qs -->
+      <polygon points="45,122 45,182 120,122" fill="#FED7AA" opacity="0.75"/>
+      <!-- DWL: triangle (D at Qs, Pmax, E) -->
+      <polygon points="120,82 120,122 145,102" fill="#FECACA" opacity="0.9"/>
+      <!-- Axes -->
+      <line x1="45" y1="18" x2="45" y2="185" stroke="#94A3B8" stroke-width="1.8"/>
+      <line x1="45" y1="185" x2="258" y2="185" stroke="#94A3B8" stroke-width="1.8"/>
+      <polygon points="45,14 41,22 49,22" fill="#94A3B8"/>
+      <polygon points="262,185 254,181 254,189" fill="#94A3B8"/>
+      <text x="42" y="11" font-size="10" fill="#64748B" text-anchor="end">P</text>
+      <text x="264" y="189" font-size="10" fill="#64748B">Q</text>
+      <!-- D curve -->
+      <line x1="45" y1="22" x2="245" y2="182" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="247" y="184" font-size="12" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
+      <!-- S curve -->
+      <line x1="45" y1="182" x2="245" y2="22" stroke="#F97316" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="247" y="24" font-size="12" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
+      <!-- Pmax ceiling line (purple dashed, extends to Qd) -->
+      <line x1="45" y1="122" x2="171" y2="122" stroke="#7C3AED" stroke-width="1.8" stroke-dasharray="5,3"/>
+      <!-- Pe reference (light) -->
+      <line x1="45" y1="102" x2="145" y2="102" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,2"/>
+      <!-- Vertical dashes at Qs and Qd -->
+      <line x1="120" y1="82" x2="120" y2="185" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="171" y1="122" x2="171" y2="185" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="145" y1="102" x2="145" y2="185" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,2"/>
+      <!-- E dot -->
+      <circle cx="145" cy="102" r="4" fill="#0F172A"/>
+      <!-- Shortage bracket -->
+      <line x1="120" y1="158" x2="171" y2="158" stroke="#7C3AED" stroke-width="1.4"/>
+      <line x1="120" y1="153" x2="120" y2="163" stroke="#7C3AED" stroke-width="1.4"/>
+      <line x1="171" y1="153" x2="171" y2="163" stroke="#7C3AED" stroke-width="1.4"/>
+      <text x="145" y="173" font-size="9" fill="#7C3AED" text-anchor="middle" font-weight="700">Shortage</text>
+      <!-- Y-axis labels -->
+      <line x1="41" y1="102" x2="49" y2="102" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="106" font-size="10" fill="#475569" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="110" font-size="7.5" fill="#475569" text-anchor="end" font-family="Georgia,serif" font-style="italic">e</text>
+      <line x1="41" y1="122" x2="49" y2="122" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="126" font-size="10" fill="#7C3AED" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="130" font-size="7.5" fill="#7C3AED" text-anchor="end" font-family="Georgia,serif" font-style="italic">max</text>
+      <!-- X-axis labels -->
+      <line x1="120" y1="181" x2="120" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="120" y="198" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="126" y="201" font-size="7.5" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">s</text>
+      <line x1="145" y1="181" x2="145" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="145" y="198" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="151" y="201" font-size="7.5" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">e</text>
+      <line x1="171" y1="181" x2="171" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="171" y="198" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="177" y="201" font-size="7.5" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">d</text>
+    </svg>
+  `,
+
+  subsidyMiniDiagram: `
+    <svg viewBox="0 0 270 205" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- CS: triangle above Pc, below D, 0→Qs -->
+      <polygon points="45,22 45,116 162,116" fill="#DBEAFE" opacity="0.85"/>
+      <!-- Gov cost rectangle: Ps→Pc, 0→Qs -->
+      <rect x="45" y="88" width="117" height="28" fill="#D1FAE5" opacity="0.85"/>
+      <!-- DWL: overproduction triangle Qe→Qs between D and S -->
+      <polygon points="145,102 162,88 162,116" fill="#FECACA" opacity="0.9"/>
+      <!-- Axes -->
+      <line x1="45" y1="18" x2="45" y2="185" stroke="#94A3B8" stroke-width="1.8"/>
+      <line x1="45" y1="185" x2="258" y2="185" stroke="#94A3B8" stroke-width="1.8"/>
+      <polygon points="45,14 41,22 49,22" fill="#94A3B8"/>
+      <polygon points="262,185 254,181 254,189" fill="#94A3B8"/>
+      <text x="42" y="11" font-size="10" fill="#64748B" text-anchor="end">P</text>
+      <text x="264" y="189" font-size="10" fill="#64748B">Q</text>
+      <!-- S−subsidy dashed line (parallel to S, shifted down 28px) -->
+      <line x1="76" y1="185" x2="245" y2="50" stroke="#F97316" stroke-width="1.8" stroke-dasharray="5,3"/>
+      <text x="220" y="45" font-size="9" font-weight="700" fill="#F97316">S−sub</text>
+      <!-- D curve -->
+      <line x1="45" y1="22" x2="245" y2="182" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="247" y="184" font-size="12" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
+      <!-- S curve -->
+      <line x1="45" y1="182" x2="245" y2="22" stroke="#F97316" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="247" y="24" font-size="12" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
+      <!-- Dashed reference lines -->
+      <line x1="45" y1="88" x2="162" y2="88" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="45" y1="102" x2="145" y2="102" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,2"/>
+      <line x1="45" y1="116" x2="162" y2="116" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <line x1="145" y1="102" x2="145" y2="185" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,2"/>
+      <line x1="162" y1="88" x2="162" y2="185" stroke="#64748B" stroke-width="1.1" stroke-dasharray="4,2"/>
+      <!-- E dot -->
+      <circle cx="145" cy="102" r="4" fill="#0F172A"/>
+      <!-- New equilibrium dot (D meets S-sub) -->
+      <circle cx="162" cy="116" r="3.5" fill="#059669"/>
+      <!-- Y-axis labels -->
+      <line x1="41" y1="88" x2="49" y2="88" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="92" font-size="10" fill="#D97706" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="96" font-size="7.5" fill="#D97706" text-anchor="end" font-family="Georgia,serif" font-style="italic">s</text>
+      <line x1="41" y1="102" x2="49" y2="102" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="106" font-size="10" fill="#475569" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="110" font-size="7.5" fill="#475569" text-anchor="end" font-family="Georgia,serif" font-style="italic">e</text>
+      <line x1="41" y1="116" x2="49" y2="116" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="38" y="120" font-size="10" fill="#1D4ED8" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="44" y="124" font-size="7.5" fill="#1D4ED8" text-anchor="end" font-family="Georgia,serif" font-style="italic">c</text>
+      <!-- X-axis labels -->
+      <line x1="145" y1="181" x2="145" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="145" y="198" font-size="10" fill="#475569" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="151" y="201" font-size="7.5" fill="#475569" text-anchor="middle" font-family="Georgia,serif" font-style="italic">e</text>
+      <line x1="162" y1="181" x2="162" y2="189" stroke="#94A3B8" stroke-width="1.2"/>
+      <text x="162" y="198" font-size="10" fill="#059669" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="168" y="201" font-size="7.5" fill="#059669" text-anchor="middle" font-family="Georgia,serif" font-style="italic">s</text>
+    </svg>
+  `,
+
   priceCeilingDiagramInteractive: `
     <svg viewBox="0 0 470 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- LAYER 2 rendered first so shaded regions sit behind curves -->

@@ -112,25 +112,29 @@ window.ECONOS_TOPIC = {
             label: 'Free market',
             tone: 'blue',
             head: 'The free-market baseline',
-            body: 'D and S intersect at P<sub>e</sub> and Q<sub>e</sub>. Total welfare = CS (above P<sub>e</sub>, below D) + PS (below P<sub>e</sub>, above S). No welfare is lost here.'
+            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no government intervention.',
+            analysis: 'Without intervention, the market is <strong>allocatively efficient</strong>: every unit produced has marginal benefit ≥ marginal cost, and total surplus is at its maximum. Any policy that moves price or quantity away from this equilibrium <em>must</em> reduce total welfare — unless it corrects an underlying market failure (e.g. an externality).'
           },
           {
             label: 'Tax shifts supply',
             tone: 'amber',
-            head: 'A per-unit tax shifts supply upward',
-            body: 'The S curve shifts up by the tax amount. Buyers pay P<sub>c</sub> (consumer price); sellers receive P<sub>p</sub> (producer price). Output falls from Q<sub>e</sub> to Q<sub>t</sub>.'
+            head: 'The tax wedge',
+            body: 'S shifts up by the tax amount. Buyers now pay P<sub>c</sub>; sellers keep only P<sub>p</sub>. Output falls from Q<sub>e</sub> to Q<sub>t</sub>.',
+            analysis: 'The vertical gap P<sub>c</sub> − P<sub>p</sub> equals the per-unit tax. <strong>Incidence</strong> — how the burden splits between buyers and sellers — depends on relative elasticity: the more <em>inelastic</em> side bears more of the tax. Quantity always falls because at every quantity the price buyers pay now exceeds the price sellers receive by the tax.'
           },
           {
             label: 'Revenue & surplus',
             tone: 'green',
-            head: 'CS and PS shrink; government gains revenue',
-            body: 'Consumer surplus (blue triangle) and producer surplus (amber triangle) are both smaller. The green rectangle = government tax revenue = (P<sub>c</sub> − P<sub>p</sub>) × Q<sub>t</sub>.'
+            head: 'CS and PS shrink; government collects revenue',
+            body: 'CS (blue) and PS (amber) are both smaller. The green rectangle = tax revenue = (P<sub>c</sub> − P<sub>p</sub>) × Q<sub>t</sub>.',
+            analysis: 'The tax <strong>redistributes</strong> surplus: part of what used to be CS and PS is now government revenue. This is a <em>transfer</em>, not a welfare loss — the money still exists in the economy and can fund public spending. Evaluation hinges on whether the social value of that public spending exceeds the surplus given up by buyers and sellers.'
           },
           {
             label: 'Deadweight loss',
             tone: 'rose',
-            head: 'The DWL triangle: welfare lost forever',
-            body: 'The red triangle = deadweight welfare loss. These are trades that <em>would have occurred</em> at the free-market price but no longer happen. This surplus is destroyed — not transferred to anyone.'
+            head: 'Welfare lost forever',
+            body: 'The red triangle = DWL: surplus from trades that <em>would have occurred</em> at P<sub>e</sub> but no longer happen.',
+            analysis: 'DWL is the <strong>efficiency cost</strong> of the tax — surplus that is destroyed, not transferred to anyone. Its size grows with the tax rate (DWL ≈ ½ × tax² × elasticity) and is larger when supply or demand is more elastic. <strong>Exception:</strong> a <em>Pigouvian</em> tax on a negative externality can <em>increase</em> welfare, because the DWL it creates in the private market is smaller than the externality DWL it eliminates.'
           }
         ]
       },

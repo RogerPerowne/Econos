@@ -149,16 +149,57 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_4',
-      template: 'diagnose',
-      title: 'How Subsidies and Price Controls Affect Surplus',
-      intro: 'Subsidies expand output beyond the free-market level; price controls prevent the market from clearing. Both create welfare effects worth knowing.',
-      rows: [
-        { label: 'Policy', colA: 'Subsidy (supply shifts right)', colB: 'Price ceiling (max price below P*)' },
-        { label: 'Price and quantity', colA: 'Consumer price falls to Pc; producer received price rises to Pp (= Pc + subsidy). Quantity rises to Q2 > Q*.', colB: 'Price is held below equilibrium at Pmax. Quantity supplied falls; quantity demanded rises. Shortage = Qd - Qs.' },
-        { label: 'Surplus effects', colA: 'CS rises (lower consumer price). PS rises (higher producer price). Government cost = subsidy rectangle. DWL = triangle between Q* and Q2 — unless correcting a positive externality.', colB: 'CS changes ambiguously (lower price but rationing). PS falls substantially (producers receive less). DWL = triangle between Qs and Q* — output that could have been traded but is not.' }
+      stepLabel: 'Learn: Step 4 of 6',
+      title: 'How Subsidies Affect Surplus',
+      tip: {
+        icon: '💡',
+        tone: 'green',
+        text: 'A per-unit subsidy is the mirror image of a tax. It lowers the price buyers pay and raises the price sellers receive, expanding output beyond the free-market level. CS and PS both rise, but government spending exceeds the gain — leaving a deadweight loss from overproduction, unless the subsidy corrects a positive externality.'
+      },
+      interactiveDiagram: {
+        svgKey: 'subsidyDiagramInteractive',
+        label: 'How a subsidy reshapes surplus',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Free market',
+            tone: 'blue',
+            head: 'The free-market baseline',
+            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no government intervention.',
+            analysis: 'Without intervention, the market is <strong>allocatively efficient</strong>: every unit produced has marginal benefit ≥ marginal cost, and total surplus is at its maximum. Any policy that moves price or quantity away from this equilibrium <em>must</em> reduce total welfare — unless it corrects an underlying market failure (e.g. a positive externality).'
+          },
+          {
+            label: 'Subsidy shifts supply',
+            tone: 'amber',
+            head: 'The subsidy wedge',
+            body: 'S shifts down by the subsidy amount. Buyers now pay P<sub>b</sub>; sellers receive P<sub>s</sub> = P<sub>b</sub> + subsidy. Output rises from Q<sub>e</sub> to Q<sub>s</sub>.',
+            analysis: 'The vertical gap P<sub>s</sub> − P<sub>b</sub> equals the per-unit subsidy. As with a tax, <strong>incidence</strong> depends on relative elasticity: the more <em>inelastic</em> side captures more of the subsidy benefit. Quantity always rises because at every quantity the price sellers receive now exceeds the price buyers pay by the subsidy.'
+          },
+          {
+            label: 'Surplus & gov. cost',
+            tone: 'green',
+            head: 'CS and PS expand; the government pays',
+            body: 'CS (blue) and PS (amber) are both larger than at the free-market equilibrium. The green rectangle = government spending = (P<sub>s</sub> − P<sub>b</sub>) × Q<sub>s</sub>.',
+            analysis: 'The subsidy is funded by taxpayers, so the gain to buyers and sellers comes at a public cost. Total private surplus rises by less than the cost of the subsidy: the difference is welfare that is <em>spent</em> but not received by anyone in the market. Evaluation hinges on whether the wider social benefit (e.g. equity, externality correction) justifies that gap.'
+          },
+          {
+            label: 'Deadweight loss',
+            tone: 'rose',
+            head: 'Welfare lost from overproduction',
+            body: 'The red triangle = DWL: units between Q<sub>e</sub> and Q<sub>s</sub> whose <em>marginal cost</em> exceeds their <em>marginal benefit</em> — produced only because the subsidy distorts incentives.',
+            analysis: 'DWL is the <strong>efficiency cost</strong> of the subsidy — resources used to produce units society values less than they cost. Its size grows with the subsidy rate and is larger when supply or demand is more elastic. <strong>Exception:</strong> a subsidy that corrects a <em>positive externality</em> can <em>increase</em> welfare, because the DWL it creates in the private market is smaller than the externality DWL it eliminates.'
+          }
+        ]
+      },
+      causes: [
+        { tone: 'blue',  icon: '🧑', head: 'Consumer benefit',  body: 'Lower market price paid by buyers.' },
+        { tone: 'amber', icon: '🏭', head: 'Producer benefit',  body: 'Higher effective price received by sellers.' },
+        { tone: 'green', icon: '🏛️', head: 'Taxpayer cost',    body: 'Government spending = subsidy per unit × quantity sold.' }
       ],
-      footer: 'Price ceilings reduce total welfare unless they correct a market failure (e.g. monopsony power). Subsidies also reduce total welfare unless they correct a positive externality. The key evaluative question is always: does the policy close a pre-existing gap between private and social optimum, or does it open a new one?',
-      examEdge: 'Price ceiling exam trap: students often say CS always rises with a price ceiling. In fact, with rationing, some consumers who would have bought at P* now cannot — losing their surplus. Whether total CS rises or falls depends on the shapes of the curves and how rationing works. Play safe: say CS may rise for those who successfully buy, but DWL means total welfare falls.'
+      causesStyle: 'plain-white',
+      causesLabel: null,
+      examEdge: '<strong>Key idea:</strong> A subsidy is the mirror image of a tax. Both create a wedge between the price buyers pay and the price sellers receive, both shift quantity away from Q<sub>e</sub>, and both create a deadweight loss triangle. The difference is direction: a tax shrinks output and transfers surplus to the government, while a subsidy expands output and transfers government money to the market.<br><br>For a subsidy: CS rises, PS rises, but government cost > CS + PS gained. The difference is the DWL. Only if the subsidy corrects a market failure (e.g. positive externality) does the DWL represent an improvement in social welfare — because it eliminates the even larger externality DWL.'
     },
     {
       id: 'consumer_producer_surplus_5',

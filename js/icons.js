@@ -5264,6 +5264,86 @@ window.ECONOS_ICONS = {
       <text x="550" y="296" font-size="12" fill="#475569">Equilibrium quantity</text>
     </svg>
   `,
+  subsidyDiagramInteractive: `
+    <svg viewBox="0 0 470 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- LAYER 2 rendered first so shaded regions appear behind curves -->
+      <g class="idl-2" style="display:none">
+        <!-- CS triangle after subsidy: (100,40)(100,230)(302,230) -->
+        <polygon points="100,40 100,230 302,230" fill="#DBEAFE" opacity="0.85"/>
+        <!-- PS triangle after subsidy: (100,360)(100,170)(302,170) -->
+        <polygon points="100,360 100,170 302,170" fill="#FEF3C7" opacity="0.85"/>
+        <!-- Government subsidy-spending rectangle (between Ps and Pb, from 0 to Qs) -->
+        <rect x="100" y="170" width="202" height="60" fill="#D1FAE5" opacity="0.9"/>
+        <!-- Region labels -->
+        <text x="158" y="135" font-size="12" font-weight="700" fill="#1D4ED8" text-anchor="middle">Consumer</text>
+        <text x="158" y="150" font-size="12" font-weight="700" fill="#1D4ED8" text-anchor="middle">surplus</text>
+        <text x="201" y="196" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">Government</text>
+        <text x="201" y="210" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">spending</text>
+        <text x="158" y="288" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">Producer</text>
+        <text x="158" y="303" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">surplus</text>
+      </g>
+      <!-- LAYER 3: DWL polygon behind curves, callout on top -->
+      <g class="idl-3" style="display:none">
+        <polygon points="270,200 302,170 302,230" fill="#FECACA" opacity="0.9"/>
+        <line x1="302" y1="200" x2="342" y2="200" stroke="#B91C1C" stroke-width="1.4"/>
+        <text x="345" y="198" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
+        <text x="345" y="212" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
+      </g>
+      <!-- ===== BASE LAYER: axes, D, S, free-market equilibrium ===== -->
+      <line x1="100" y1="26" x2="100" y2="374" stroke="#94A3B8" stroke-width="2"/>
+      <line x1="100" y1="374" x2="448" y2="374" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="100,22 96,30 104,30" fill="#94A3B8"/>
+      <polygon points="452,374 444,370 444,378" fill="#94A3B8"/>
+      <text x="82" y="18" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">Price</text>
+      <text x="456" y="379" font-size="13" font-weight="600" fill="#0F172A">Quantity</text>
+      <text x="88" y="392" font-size="12" fill="#64748B" text-anchor="middle">0</text>
+      <!-- D: (100,40)→(440,360) -->
+      <line x1="100" y1="40" x2="440" y2="360" stroke="#2563EB" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="444" y="364" font-size="15" font-weight="700" fill="#2563EB" font-family="Georgia,serif">D</text>
+      <!-- S: (100,360)→(440,40) -->
+      <line x1="100" y1="360" x2="440" y2="40" stroke="#F97316" stroke-width="2.8" stroke-linecap="round"/>
+      <text x="444" y="44" font-size="15" font-weight="700" fill="#F97316" font-family="Georgia,serif">S</text>
+      <!-- Free-market equilibrium E = (270,200) -->
+      <line x1="100" y1="200" x2="270" y2="200" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+      <line x1="270" y1="200" x2="270" y2="374" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+      <circle cx="270" cy="200" r="5.5" fill="#0F172A"/>
+      <line x1="96" y1="200" x2="104" y2="200" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="90" y="204" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
+      <text x="96" y="208" font-size="9"  fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">e</text>
+      <line x1="270" y1="370" x2="270" y2="378" stroke="#94A3B8" stroke-width="1.5"/>
+      <text x="270" y="392" font-size="13" fill="#0F172A" text-anchor="middle" font-family="Georgia,serif">Q</text>
+      <text x="277" y="396" font-size="9"  fill="#0F172A" text-anchor="middle" font-family="Georgia,serif" font-style="italic">e</text>
+      <!-- ===== LAYER 1: subsidy shift ===== -->
+      <g class="idl-1" style="display:none">
+        <!-- S - subsidy dashed: parallel to S, shifted down 60px; clipped at x-axis -->
+        <line x1="149" y1="374" x2="440" y2="100" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6,4"/>
+        <text x="340" y="180" font-size="12" font-weight="700" fill="#F97316">S - subsidy</text>
+        <!-- New equilibrium at (302, 230) -->
+        <circle cx="302" cy="230" r="5.5" fill="#0F172A"/>
+        <!-- Pb dashed horizontal (buyer price, lower) -->
+        <line x1="100" y1="230" x2="302" y2="230" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+        <!-- Ps dashed horizontal (seller price, higher) -->
+        <line x1="100" y1="170" x2="302" y2="170" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+        <!-- Qs dashed vertical -->
+        <line x1="302" y1="170" x2="302" y2="374" stroke="#64748B" stroke-width="1.4" stroke-dasharray="5,3"/>
+        <!-- Ps tick + label (seller price, above Pe) -->
+        <line x1="96" y1="170" x2="104" y2="170" stroke="#94A3B8" stroke-width="1.5"/>
+        <text x="90" y="160" font-size="10" fill="#64748B" text-anchor="end">(seller price)</text>
+        <text x="90" y="174" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
+        <text x="96" y="178" font-size="9"  fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">s</text>
+        <!-- Pb tick + label (buyer price, below Pe) -->
+        <line x1="96" y1="230" x2="104" y2="230" stroke="#94A3B8" stroke-width="1.5"/>
+        <text x="90" y="234" font-size="13" fill="#0F172A" text-anchor="end" font-family="Georgia,serif">P</text>
+        <text x="96" y="238" font-size="9"  fill="#0F172A" text-anchor="end" font-family="Georgia,serif" font-style="italic">b</text>
+        <text x="90" y="252" font-size="10" fill="#64748B" text-anchor="end">(buyer price)</text>
+        <!-- Qs tick + label -->
+        <line x1="302" y1="370" x2="302" y2="378" stroke="#94A3B8" stroke-width="1.5"/>
+        <text x="305" y="392" font-size="13" fill="#0F172A" text-anchor="middle" font-family="Georgia,serif">Q</text>
+        <text x="312" y="396" font-size="9"  fill="#0F172A" text-anchor="middle" font-family="Georgia,serif" font-style="italic">s</text>
+      </g>
+    </svg>
+  `,
+
   taxDiagramInteractive: `
     <svg viewBox="0 0 470 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- LAYER 2 rendered first so shaded regions appear behind curves -->

@@ -393,13 +393,12 @@
       }
     }
 
-    // Interactive diagram — progressive layer-reveal with click-to-advance tabs.
-    // Styling mirrors the `.ad-tab` / `.ad-panel` and stacked `diagramPanel`
-    // patterns so static and interactive diagrams feel like siblings.
+    // Interactive diagram — SVG on the left, clickable step list on the right.
+    // The step list doubles as tabs: clicking a step reveals SVG layers up to
+    // that step (cumulative) and highlights that step (single-active).
     //   Pattern: interactiveDiagram: { svgKey, layers:[string], label?, emoji?,
     //                                  views:[{label, tone?, icon?, head, body}] }
     //   `layers` lists SVG group class names ('idl-1', 'idl-2', …) in reveal order.
-    //   Clicking view N shows layers[0..N-1] (cumulative) and panel N (single).
     if (c.interactiveDiagram && I[c.interactiveDiagram.svgKey]) {
       const id = c.interactiveDiagram;
       const uid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
@@ -408,46 +407,35 @@
       const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
       if (id.label) content += genSecLabel(id.emoji || '📊', id.label);
 
-      const stepStrip = views.map((v, i) => {
+      const stepItems = views.map((v, i) => {
         const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
         const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
         const isActive = i === 0;
+        const bodyHtml = Array.isArray(v.body)
+          ? `<ul style="margin:4px 0 0;padding:0 0 0 18px;font-size:13px;color:#475569;line-height:1.55;">${v.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
+          : `<div style="margin-top:4px;font-size:13px;color:#475569;line-height:1.6;">${v.body}</div>`;
+        const marker = v.icon
+          ? `<span data-id-marker style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;transition:background 0.15s,color 0.15s;">${v.icon}</span>`
+          : `<span data-id-marker style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;transition:background 0.15s,color 0.15s;">${i + 1}</span>`;
         return `<button
           type="button"
           data-action="id-advance"
           data-id-uid="${uid}"
           data-id-vi="${i}"
           data-id-tone="${toneName}"
-          style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${isActive ? t.bg : '#fff'};border:1px solid ${isActive ? t.border : '#E7E7EA'};border-radius:10px;box-shadow:${isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)'};cursor:pointer;font-family:inherit;text-align:left;transition:background 0.18s,border-color 0.18s,box-shadow 0.18s;">
-          <span data-id-circle style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">${i + 1}</span>
-          <span data-id-label style="flex:1;min-width:0;font-size:13px;font-weight:700;color:${isActive ? t.label : '#0B1426'};line-height:1.3;">${v.label}</span>
-        </button>`;
-      }).join('');
-
-      const panelItems = views.map((v, i) => {
-        const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-        const bodyHtml = Array.isArray(v.body)
-          ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:#0B1426;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:3px;">${b}</li>`).join('')}</ul>`
-          : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${v.body}</div>`;
-        const marker = v.icon
-          ? `<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;">${v.icon}</span>`
-          : `<span style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
-        return `<div data-id-panel="${i}" data-id-tone="${toneName}" style="display:${i === 0 ? 'flex' : 'none'};align-items:flex-start;gap:14px;background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:16px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
+          style="all:unset;display:flex;align-items:flex-start;gap:11px;padding:12px 14px;background:${isActive ? t.bg : 'transparent'};border-left:4px solid ${isActive ? t.accent : 'transparent'};border-radius:8px;cursor:pointer;font-family:inherit;text-align:left;transition:background 0.15s,border-color 0.15s;width:100%;box-sizing:border-box;">
           ${marker}
           <div style="flex:1;min-width:0;">
-            <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${v.head}</div>
+            <div data-id-head style="font-weight:800;font-size:14px;color:${isActive ? t.label : '#0B1426'};line-height:1.3;letter-spacing:0.01em;transition:color 0.15s;">${v.head}</div>
             ${bodyHtml}
           </div>
-        </div>`;
-      }).join('');
+        </button>`;
+      }).join('<div style="height:1px;background:#EEF2F6;margin:2px 6px;"></div>');
 
-      const stripCols = `repeat(${views.length}, minmax(0, 1fr))`;
       content += `
-        <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(11,20,38,0.04);">
-          <div style="overflow-x:auto;margin-bottom:16px;">${I[id.svgKey]}</div>
-          <div style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:14px;">${stepStrip}</div>
-          ${panelItems}
+        <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;align-items:center;box-shadow:0 2px 8px rgba(11,20,38,0.04);">
+          <div style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
+          <div style="display:flex;flex-direction:column;padding:2px 0;">${stepItems}</div>
         </div>`;
     }
 
@@ -3596,8 +3584,8 @@
         }
       }
     } else if (action === 'id-advance') {
-      // Interactive diagram: reveal SVG layers up to the clicked step and show its panel.
-      // Cumulative SVG reveal, but only one tab and one panel are "active" at a time.
+      // Interactive diagram: reveal SVG layers cumulatively up to the clicked step,
+      // and highlight that step in the right-hand step list (single-active).
       const uid = target.dataset.idUid;
       const vi  = parseInt(target.dataset.idVi, 10);
       const idRoot = root.querySelector(`[data-id-root="${uid}"]`);
@@ -3615,22 +3603,17 @@
         const toneName = btn.dataset.idTone || 'blue';
         const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
         const isActive = bvi === vi;
-        btn.style.background   = isActive ? t.bg : '#fff';
-        btn.style.borderColor  = isActive ? t.border : '#E7E7EA';
-        btn.style.boxShadow    = isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)';
-        const circle = btn.querySelector('[data-id-circle]');
-        if (circle) {
-          circle.style.background = isActive ? t.accent : '#E2E8F0';
-          circle.style.color      = isActive ? '#fff'   : '#475569';
+        btn.style.background     = isActive ? t.bg : 'transparent';
+        btn.style.borderLeftColor = isActive ? t.accent : 'transparent';
+        const marker = btn.querySelector('[data-id-marker]');
+        if (marker) {
+          marker.style.background = isActive ? t.accent : '#E2E8F0';
+          marker.style.color      = isActive ? '#fff'   : '#475569';
         }
-        const label = btn.querySelector('[data-id-label]');
-        if (label) {
-          label.style.color = isActive ? t.label : '#0B1426';
+        const head = btn.querySelector('[data-id-head]');
+        if (head) {
+          head.style.color = isActive ? t.label : '#0B1426';
         }
-      });
-
-      idRoot.querySelectorAll('[data-id-panel]').forEach(panel => {
-        panel.style.display = parseInt(panel.dataset.idPanel, 10) === vi ? 'flex' : 'none';
       });
     } else if (action === 'tc-channel') {
       // Transmission chain: highlight the chosen channel and reveal its panel

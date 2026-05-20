@@ -71,34 +71,27 @@ window.ECONOS_TOPIC = {
       tip: { icon: '⚖️', tone: 'rose', text: '<strong>Legal incidence</strong> (who hands over the cash) ≠ <strong>economic incidence</strong> (who bears the burden). The burden splits between consumers and producers — build up the diagram below to see who pays what.' },
       interactiveDiagram: {
         svgKey: 'taxIncidenceInteractive',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layers: ['idl-1', 'idl-2'],
         views: [
           {
             label: 'The market',
             tone: 'blue',
-            head: 'Step 1 — the supply and demand framework',
-            body: 'Start with demand (D) and supply (S) — two curves that together determine the price and quantity in any market. The tax will shift one of these curves.'
+            head: 'Supply, demand and the pre-tax equilibrium',
+            body: 'Demand (D) slopes down; supply (S) slopes up. The market clears at <strong>P₀ and Q₀</strong> — the benchmark for measuring every effect of the tax.'
           },
           {
-            label: 'Pre-tax equilibrium',
+            label: 'Tax shifts supply up',
             tone: 'blue',
-            head: 'Step 2 — the pre-tax equilibrium (P₀, Q₀)',
-            body: 'Before the tax, the market clears at price P₀ and quantity Q₀. This is the benchmark — every effect of the tax is measured as a departure from this point.',
-            analysis: 'Producers receive exactly P₀ per unit and consumers pay exactly P₀ — there is no wedge between them.'
-          },
-          {
-            label: 'Supply shifts up',
-            tone: 'blue',
-            head: 'Step 3 — the tax shifts supply up',
-            body: "The tax increases sellers' costs. To supply the same quantity they now need a higher market price, so the effective supply curve shifts up to S+T. The market moves to a new equilibrium: <strong>consumer price rises to Pc, quantity falls to Qt.</strong>",
-            analysis: 'Pc is the price consumers pay. It is higher than P₀ — part of the tax has been passed through. But Pc has not risen by the full £T amount, because sellers are absorbing part too.'
+            head: "The tax raises sellers' costs — supply shifts up to S+T",
+            body: 'Sellers now need a higher price to supply each quantity. The supply curve shifts up by £T. The new equilibrium: consumer price rises to <strong>Pc</strong>, quantity falls to <strong>Qt</strong>.',
+            analysis: 'Pc is above P₀ but has not risen by the full £T — producers are absorbing part of the tax too.'
           },
           {
             label: 'Burden split',
             tone: 'rose',
-            head: 'Step 4 — the burden splits between consumers and producers',
-            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer burden — (Pc − P₀) × Qt, the extra amount consumers pay per unit × the units bought. The <strong style="color:#dc2626">red rectangle</strong> is the producer burden — (P₀ − Pp) × Qt, the reduction in net receipts. Together they equal total tax revenue.',
-            analysis: 'Pp is the net price producers receive — market price minus the tax they remit. Pp < P₀ means producers are worse off. The split between the two rectangles depends on relative elasticity — covered on card 4.'
+            head: 'The burden splits between consumers and producers',
+            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer burden — (Pc − P₀) × Qt. The <strong style="color:#dc2626">red rectangle</strong> is the producer burden — (P₀ − Pp) × Qt. Together they equal total tax revenue.',
+            analysis: 'Pp is the net price producers receive after paying the tax. Pp < P₀ means producers are worse off. The split depends on relative elasticity — covered in card 4.'
           }
         ]
       },
@@ -118,34 +111,27 @@ window.ECONOS_TOPIC = {
       tip: { icon: '💡', tone: 'green', text: 'A subsidy is the mirror image of a tax — a government payment that shifts supply <em>down</em>, lowering the consumer price and raising the producer net price. Build up the diagram to see who captures the benefit.' },
       interactiveDiagram: {
         svgKey: 'subsidyInteractive',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
+        layers: ['idl-1', 'idl-2'],
         views: [
           {
             label: 'The market',
             tone: 'green',
-            head: 'Step 1 — the supply and demand framework',
-            body: 'Same framework as the tax diagram. Demand (D) slopes down; supply (S) slopes up. The subsidy will shift supply in the <em>opposite</em> direction to a tax.'
-          },
-          {
-            label: 'Pre-subsidy',
-            tone: 'green',
-            head: 'Step 2 — the pre-subsidy equilibrium (P₀, Q₀)',
-            body: 'The market clears at P₀ and Q₀. This is the benchmark — the subsidy moves the market away from this point toward a higher quantity and a lower consumer price.',
-            analysis: 'Without intervention, markets may under-provide goods with positive externalities (e.g. vaccines, clean energy). The subsidy is designed to correct this.'
+            head: 'Supply, demand and the pre-subsidy equilibrium',
+            body: 'Same framework as the tax diagram. Demand (D) slopes down; supply (S) slopes up. The market clears at <strong>P₀ and Q₀</strong>.'
           },
           {
             label: 'Supply shifts down',
             tone: 'green',
-            head: 'Step 3 — the subsidy shifts supply down',
-            body: "The subsidy reduces sellers' effective costs by £S per unit. They can now supply each quantity at a lower market price, so S shifts <strong>down</strong> to S₁. The new equilibrium: <strong>consumer price falls to Pc, quantity rises to Qs.</strong>",
-            analysis: 'This is the exact mirror of the tax shift: instead of supply going up (consumers pay more, producers receive less), it goes down — consumers pay less, producers receive more.'
+            head: "The subsidy cuts sellers' costs — supply shifts down to S₁",
+            body: "The subsidy reduces sellers' effective costs by £S per unit. Supply shifts <strong>down</strong> to S₁. The new equilibrium: consumer price falls to <strong>Pc</strong>, quantity rises to <strong>Qs</strong>.",
+            analysis: 'This is the mirror image of the tax shift: supply going down means consumers pay less and producers receive more.'
           },
           {
             label: 'Benefit split',
             tone: 'green',
-            head: 'Step 4 — the benefit splits between consumers and producers',
-            body: 'The <strong style="color:#059669">green rectangle</strong> is the producer benefit — (Pp − P₀) × Qs: producers now receive a higher net price than before. The <strong style="color:#2563EB">blue rectangle</strong> is the consumer benefit — (P₀ − Pc) × Qs: consumers pay a lower price. Together they equal total government subsidy cost.',
-            analysis: 'Pp > P₀ > Pc. Producers receive market price Pc plus the subsidy payment from government, giving net price Pp. The benefit split depends on relative elasticity — covered next.'
+            head: 'The benefit splits between consumers and producers',
+            body: 'The <strong style="color:#059669">green rectangle</strong> is the producer benefit — (Pp − P₀) × Qs. The <strong style="color:#2563EB">blue rectangle</strong> is the consumer benefit — (P₀ − Pc) × Qs. Together they equal total government subsidy cost.',
+            analysis: 'Pp > P₀ > Pc. Producers receive market price Pc plus the government subsidy payment, giving net price Pp. The benefit split depends on relative elasticity — covered in card 4.'
           }
         ]
       },
@@ -163,14 +149,39 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 4',
       title: 'Elasticity and who pays',
       tip: { icon: '⚖️', tone: 'blue', text: 'The same tax or subsidy falls differently on different markets. One rule governs both: <strong>the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).</strong>' },
-      diagramKey: 'taxSubsidyElasticityStatic',
+      interactiveDiagram: {
+        svgKey: 'elasticityIncidenceInteractive',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'Same tax, two markets',
+            tone: 'blue',
+            head: 'The same tax — but two different markets',
+            body: 'Both markets have the same supply curve and the same specific tax (S+T). The only difference is how elastic demand is. This alone changes who pays.'
+          },
+          {
+            label: 'Add demand',
+            tone: 'blue',
+            head: 'Add the demand curves — steep (inelastic) vs flat (elastic)',
+            body: 'Left: demand is steep — consumers <em>must</em> buy regardless of price. Right: demand is flat — consumers can switch to substitutes if the price rises.',
+            analysis: 'The pre-tax equilibrium (P₀, Q₀) appears in both panels. Notice it is at a similar price in both markets — the difference is purely in how responsive buyers are.'
+          },
+          {
+            label: 'Who pays?',
+            tone: 'rose',
+            head: 'The burden follows the less elastic side',
+            body: 'Left (inelastic D): the consumer price Pc rises sharply — consumers bear ~87% of the tax. The tiny red strip shows the small producer burden. Right (elastic D): Pc barely rises — consumers bear only ~36%. Producers absorb ~64% because they cannot afford to lose the elastic buyers.',
+            analysis: 'One rule covers both taxes and subsidies: the <strong>less elastic side</strong> bears more of a tax and captures more of a subsidy. Elasticity determines the split — not who hands over the money to government.'
+          }
+        ]
+      },
       keyTerms: [
         { term: 'Legal incidence',    def: 'Who is legally responsible for remitting the tax — typically the seller. NOT the same as who bears the economic cost.' },
         { term: 'Economic incidence', def: 'Who actually bears the burden or captures the benefit, determined by relative PED and PES.' },
         { term: 'Consumer burden',    def: '(Pc − P₀) × Qt. Larger when demand is inelastic — consumers have few substitutes and cannot avoid the tax.' },
         { term: 'Producer burden',    def: '(P₀ − Pp) × Qt. Larger when supply is inelastic — producers cannot easily redirect output to other markets.' }
       ],
-      examEdge: 'The incidence rule in one sentence: <strong>the more inelastic side bears more of a tax / captures more of a subsidy.</strong> UK tobacco duty (PED ≈ −0.4): inelastic demand → consumers bear nearly all of it (~£10bn/year). UK farm subsidies (EU CAP): inelastic land supply → subsidies capitalised into farmland prices, accruing to landowners not farmers. The 1990 US luxury yacht tax (elastic demand for US-built yachts): producers bore the burden — the domestic industry collapsed within two years. Always state the elasticity assumption before judging who pays.',
+      examEdge: 'One rule governs both taxes and subsidies: <strong>the less elastic side bears more of a tax / captures more of a subsidy.</strong> For a 25-mark essay: state the elasticity assumption first, then use the diagram rectangles to show the split, then link to a real example — UK tobacco duty (PED ≈ −0.4, consumers bear most), EU farm subsidies (inelastic land supply, landlords capture most), or the 1990 US luxury yacht tax (elastic demand for US yachts, domestic producers bore the burden and the industry collapsed).',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

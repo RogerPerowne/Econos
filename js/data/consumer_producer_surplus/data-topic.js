@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'consumer_producer_surplus_1',
-      stepLabel: 'Learn: Step 1 of 7',
+      stepLabel: 'Learn: Step 1 of 6',
       title: 'Consumer & producer surplus: the big picture',
       tip: {
         icon: '📊',
@@ -65,7 +65,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_2',
-      stepLabel: 'Learn: Step 2 of 7',
+      stepLabel: 'Learn: Step 2 of 6',
       title: 'Building the Surplus Diagram',
       tip: {
         icon: '💡',
@@ -95,7 +95,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_3',
-      stepLabel: 'Learn: Step 3 of 7',
+      stepLabel: 'Learn: Step 3 of 6',
       title: 'How Taxes Affect Surplus',
       tip: {
         icon: '💡',
@@ -149,7 +149,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_4',
-      stepLabel: 'Learn: Step 4 of 7',
+      stepLabel: 'Learn: Step 4 of 6',
       title: 'How Subsidies Affect Surplus',
       tip: {
         icon: '💡',
@@ -202,100 +202,8 @@ window.ECONOS_TOPIC = {
       examEdge: '<strong>Key idea:</strong> A subsidy is the mirror image of a tax. Both create a wedge between the price buyers pay and the price sellers receive, both shift quantity away from Q<sub>e</sub>, and both create a deadweight loss triangle. The difference is direction: a tax shrinks output and transfers surplus to the government, while a subsidy expands output and transfers government money to the market.<br><br>For a subsidy: CS rises, PS rises, but government cost > CS + PS gained. The difference is the DWL. Only if the subsidy corrects a market failure (e.g. positive externality) does the DWL represent an improvement in social welfare — because it eliminates the even larger externality DWL.'
     },
     {
-      id: 'consumer_producer_surplus_price_controls',
-      stepLabel: 'Learn: Step 5 of 7',
-      title: 'How Price Controls Affect Surplus',
-      tip: {
-        icon: '💡',
-        tone: 'purple',
-        text: 'A price control holds the market price away from P<sub>e</sub>. A <strong>price ceiling</strong> (legal maximum) set below P<sub>e</sub> creates a <em>shortage</em>; a <strong>price floor</strong> (legal minimum) set above P<sub>e</sub> creates an <em>excess supply</em>. Both reduce the quantity actually traded, and both destroy welfare unless they correct a pre-existing market failure.'
-      },
-      interactiveDiagram: [
-        {
-          svgKey: 'priceCeilingDiagramInteractive',
-          label: 'Price ceiling (legal maximum)',
-          emoji: '🧢',
-          layers: ['idl-1', 'idl-2', 'idl-3'],
-          views: [
-            {
-              label: 'Free market',
-              tone: 'blue',
-              head: 'The free-market baseline',
-              body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no price control in place.',
-              analysis: 'Without intervention, the market clears: every buyer willing to pay P<sub>e</sub> can buy, and every seller willing to sell at P<sub>e</sub> can sell. Allocative efficiency holds. Any binding price control will move the market away from this point and create a welfare cost — unless it corrects a market failure like monopoly power.'
-            },
-            {
-              label: 'Ceiling imposed',
-              tone: 'purple',
-              head: 'P<sub>max</sub> below P<sub>e</sub> — a shortage opens up',
-              body: 'At P<sub>max</sub>, sellers supply only Q<sub>s</sub>, but buyers demand Q<sub>d</sub>. The horizontal gap Q<sub>d</sub> − Q<sub>s</sub> is the <strong>shortage</strong>. Trades are rationed to Q<sub>s</sub>.',
-              analysis: 'A ceiling is only <em>binding</em> if it sits below P<sub>e</sub>; above P<sub>e</sub> it has no effect. Because quantity supplied (Q<sub>s</sub>) is now the short side of the market, Q<sub>s</sub> becomes the quantity actually traded. Non-price rationing fills the gap — queues, waiting lists, black markets, or quality reductions are all common real-world responses.'
-            },
-            {
-              label: 'Surplus shifts',
-              tone: 'amber',
-              head: 'PS shrinks; CS effect is ambiguous',
-              body: 'PS (amber) shrinks: sellers transact fewer units at a lower price. CS (blue) <em>may</em> rise if buyers who value the good most get the rationed quantity — but with random rationing or queueing costs, CS can fall.',
-              analysis: 'Textbook CS under a ceiling assumes <strong>efficient rationing</strong> — that the Q<sub>s</sub> units go to the buyers who value them most. In reality, rationing is rarely efficient: queueing wastes time, black-market markups erode the price benefit, and quality often drops to compensate sellers. So the “CS rises” result is a best case, not a guarantee.'
-            },
-            {
-              label: 'Deadweight loss',
-              tone: 'rose',
-              head: 'Welfare lost from trades that no longer happen',
-              body: 'The red triangle = DWL: surplus from units between Q<sub>s</sub> and Q<sub>e</sub> that <em>would have been traded</em> at P<sub>e</sub>, but are now prevented by the ceiling.',
-              analysis: 'DWL grows with the gap between P<sub>max</sub> and P<sub>e</sub> and with elasticity. A ceiling raises welfare only if it offsets a larger pre-existing distortion — for instance, capping the price a monopolist can charge can <em>increase</em> total welfare by pushing output toward the competitive level. Most consumer-facing rent controls and energy price caps do not meet this bar.'
-            }
-          ]
-        },
-        {
-          svgKey: 'priceFloorDiagramInteractive',
-          label: 'Price floor (legal minimum)',
-          emoji: '🪜',
-          layers: ['idl-1', 'idl-2', 'idl-3'],
-          views: [
-            {
-              label: 'Free market',
-              tone: 'blue',
-              head: 'The free-market baseline',
-              body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no price control in place.',
-              analysis: 'The same starting point as the ceiling case: the market clears at P<sub>e</sub>, Q<sub>e</sub>, with CS + PS at its maximum. A binding floor pushes price <em>above</em> this point and is the mirror image of a binding ceiling.'
-            },
-            {
-              label: 'Floor imposed',
-              tone: 'green',
-              head: 'P<sub>min</sub> above P<sub>e</sub> — excess supply emerges',
-              body: 'At P<sub>min</sub>, buyers only want Q<sub>d</sub>, but sellers would supply Q<sub>s</sub>. The horizontal gap Q<sub>s</sub> − Q<sub>d</sub> is the <strong>excess supply</strong>. Trades are limited to Q<sub>d</sub>.',
-              analysis: 'A floor is only <em>binding</em> if it sits above P<sub>e</sub>; below P<sub>e</sub> it has no effect. Now buyers are the short side of the market, so Q<sub>d</sub> becomes the quantity actually traded. The excess supply often shows up as <em>unsold output</em> (e.g. EU butter mountains, US dairy stockpiles) or, in the labour market, as <em>unemployment</em> from a minimum wage set above the market-clearing wage.'
-            },
-            {
-              label: 'Surplus shifts',
-              tone: 'amber',
-              head: 'CS shrinks; PS effect is ambiguous',
-              body: 'CS (blue) shrinks: buyers pay a higher price and transact fewer units. PS (amber) <em>may</em> rise if the higher per-unit price outweighs the lost quantity — but if demand is elastic, PS can fall.',
-              analysis: 'The PS effect depends on the elasticity of demand. If demand is inelastic, the higher price compensates for the lost quantity and PS rises. If demand is elastic, the quantity loss dominates and PS falls. In labour markets, this translates into a real exam debate: a minimum wage may raise total worker income (if labour demand is inelastic) or lower it (if elastic).'
-            },
-            {
-              label: 'Deadweight loss',
-              tone: 'rose',
-              head: 'Welfare lost from trades that no longer happen',
-              body: 'The red triangle = DWL: surplus from units between Q<sub>d</sub> and Q<sub>e</sub> that <em>would have been traded</em> at P<sub>e</sub>, but are now prevented by the floor.',
-              analysis: 'As with a ceiling, DWL grows with the gap between P<sub>min</sub> and P<sub>e</sub> and with elasticity. The floor raises total welfare only if it offsets a larger pre-existing distortion — for example, a minimum wage in a <em>monopsonistic</em> labour market can raise both wages <em>and</em> employment, because monopsony already suppressed both. The textbook DWL result assumes a competitive market with no offsetting failure.'
-            }
-          ]
-        }
-      ],
-      causes: [
-        { tone: 'purple', icon: '🧢', head: 'Ceiling → shortage',     body: 'Q<sub>d</sub> > Q<sub>s</sub> at P<sub>max</sub>. Rationing fills the gap (queues, black markets, quality drops).' },
-        { tone: 'green',  icon: '🪜', head: 'Floor → excess supply',  body: 'Q<sub>s</sub> > Q<sub>d</sub> at P<sub>min</sub>. Unsold output, stockpiles, or unemployment in labour markets.' },
-        { tone: 'rose',   icon: '⚖️', head: 'Both → DWL',             body: 'Quantity traded falls below Q<sub>e</sub>. Lost surplus from trades that no longer happen.' }
-      ],
-      causesStyle: 'plain-white',
-      causesLabel: null,
-      examEdge: '<strong>Symmetry trap:</strong> ceilings and floors are mirror images, but their distributional effects are <em>not</em> symmetric. For a <strong>ceiling</strong>: PS unambiguously falls, CS effect is ambiguous, DWL appears. For a <strong>floor</strong>: CS unambiguously falls, PS effect is ambiguous, DWL appears. Always state the binding direction (P<sub>max</sub> < P<sub>e</sub>; P<sub>min</sub> > P<sub>e</sub>) before drawing the diagram — a non-binding control has zero effect.<br><br><strong>Evaluation hook:</strong> the same diagram supports very different verdicts depending on context. A minimum wage may destroy welfare in a competitive labour market <em>or</em> raise it in a monopsonistic one. A rent ceiling may worsen housing access via reduced supply <em>or</em> correct landlord market power in a constrained city. Strong answers identify the underlying market structure before judging the policy.'
-    },
-    {
       id: 'consumer_producer_surplus_5',
-      stepLabel: 'Learn: Step 6 of 7',
+      stepLabel: 'Learn: Step 5 of 6',
       title: 'Surplus and Allocative Efficiency',
       tip: {
         icon: '💡',
@@ -330,7 +238,7 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'consumer_producer_surplus_6',
-      stepLabel: 'Learn: Step 7 of 7',
+      stepLabel: 'Learn: Step 6 of 6',
       title: 'Surplus in the Real World',
       tip: {
         icon: '📊',

@@ -104,6 +104,8 @@ window.ECONOS_TOPIC = {
       },
       interactiveDiagram: {
         svgKey: 'taxDiagramInteractive',
+        label: 'How a tax reshapes surplus',
+        emoji: '📊',
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {

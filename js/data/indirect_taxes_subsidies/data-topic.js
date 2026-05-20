@@ -30,6 +30,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '💡', tone: 'amber', text: 'An indirect tax is collected by sellers but borne by whoever is less elastic. Two forms — specific (fixed £ per unit) and ad valorem (% of price) — shift supply in different ways.' },
       interactiveDiagram: {
         svgKey: 'taxTypesInteractive',
+        layers: ['idl-1', 'idl-2'],
         views: [
           {
             label: 'Free market',
@@ -70,6 +71,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '⚖️', tone: 'rose', text: '<strong>Legal incidence</strong> (who hands over the cash) ≠ <strong>economic incidence</strong> (who bears the burden). The burden splits between consumers and producers — build up the diagram below to see who pays what.' },
       interactiveDiagram: {
         svgKey: 'taxIncidenceInteractive',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {
             label: 'The market',
@@ -116,6 +118,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '💡', tone: 'green', text: 'A subsidy is the mirror image of a tax — a government payment that shifts supply <em>down</em>, lowering the consumer price and raising the producer net price. Build up the diagram to see who captures the benefit.' },
       interactiveDiagram: {
         svgKey: 'subsidyInteractive',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {
             label: 'The market',

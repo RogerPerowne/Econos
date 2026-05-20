@@ -820,6 +820,266 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* === PPF static diagrams (cards 2-7) === */
+
+  ppfOpportunityCost: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <defs>
+      <marker id="ppfoc-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
+      <marker id="ppfoc-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
+      <marker id="ppfoc-gn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+    </defs>
+    <!-- Axes -->
+    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfoc-ax)"/>
+    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfoc-ax)"/>
+    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Consumer Goods</text>
+    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Capital Goods</text>
+    <!-- PPF curve -->
+    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF</text>
+    <!-- Dashed projections from D (t≈0.3 → 208,114) -->
+    <line x1="55" y1="114" x2="208" y2="114" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/>
+    <line x1="208" y1="114" x2="208" y2="268" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/>
+    <!-- Dashed projections from E (t≈0.65 → 335,207) -->
+    <line x1="55" y1="207" x2="335" y2="207" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/>
+    <line x1="335" y1="207" x2="335" y2="268" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/>
+    <!-- Points D and E -->
+    <circle cx="208" cy="114" r="5" fill="#7C3AED"/>
+    <text x="195" y="108" font-size="12" font-weight="700" fill="#7C3AED">D</text>
+    <circle cx="335" cy="207" r="5" fill="#7C3AED"/>
+    <text x="341" y="203" font-size="12" font-weight="700" fill="#7C3AED">E</text>
+    <!-- Y-axis ticks and labels -->
+    <line x1="49" y1="114" x2="55" y2="114" stroke="#64748B" stroke-width="1.5"/>
+    <text x="46" y="118" font-size="9" fill="#64748B" text-anchor="end">a₁</text>
+    <line x1="49" y1="207" x2="55" y2="207" stroke="#64748B" stroke-width="1.5"/>
+    <text x="46" y="211" font-size="9" fill="#64748B" text-anchor="end">a₂</text>
+    <!-- X-axis ticks and labels -->
+    <line x1="208" y1="268" x2="208" y2="274" stroke="#64748B" stroke-width="1.5"/>
+    <text x="208" y="284" font-size="9" fill="#64748B" text-anchor="middle">b₁</text>
+    <line x1="335" y1="268" x2="335" y2="274" stroke="#64748B" stroke-width="1.5"/>
+    <text x="335" y="284" font-size="9" fill="#64748B" text-anchor="middle">b₂</text>
+    <!-- Sacrifice bracket (rose, left side) -->
+    <line x1="37" y1="114" x2="37" y2="212" stroke="#DC2626" stroke-width="1.8" marker-end="url(#ppfoc-sac)"/>
+    <line x1="33" y1="114" x2="41" y2="114" stroke="#DC2626" stroke-width="1.5"/>
+    <line x1="33" y1="207" x2="41" y2="207" stroke="#DC2626" stroke-width="1.5"/>
+    <text x="26" y="165" font-size="9" fill="#DC2626" text-anchor="middle" transform="rotate(-90,26,165)">sacrifice a₁−a₂</text>
+    <!-- Gain bracket (green, bottom) -->
+    <line x1="208" y1="280" x2="330" y2="280" stroke="#059669" stroke-width="1.8" marker-end="url(#ppfoc-gn)"/>
+    <line x1="208" y1="276" x2="208" y2="284" stroke="#059669" stroke-width="1.5"/>
+    <text x="271" y="295" font-size="9" fill="#059669" text-anchor="middle">gain b₂−b₁</text>
+    <!-- OC label box -->
+    <rect x="300" y="88" width="130" height="36" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="365" y="103" font-size="10" font-weight="600" fill="#1E40AF" text-anchor="middle">Opportunity cost</text>
+    <text x="365" y="117" font-size="10" fill="#1E40AF" text-anchor="middle">= (a₁−a₂) ÷ (b₂−b₁)</text>
+  </svg>`,
+
+  ppfBowedOut: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <defs>
+      <marker id="ppfbo-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
+      <marker id="ppfbo-sac" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
+      <marker id="ppfbo-gn" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+    </defs>
+    <!-- Axes -->
+    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfbo-ax)"/>
+    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfbo-ax)"/>
+    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
+    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
+    <!-- PPF curve -->
+    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF</text>
+    <!-- Point Pa (t≈0.15 → 135,86) LOW OC -->
+    <circle cx="135" cy="86" r="4.5" fill="#2563EB"/>
+    <!-- Trade-off triangle at Pa: gain +30px right, sacrifice ~11px up -->
+    <line x1="135" y1="86" x2="165" y2="86" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfbo-gn)"/>
+    <line x1="165" y1="86" x2="165" y2="75" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfbo-sac)"/>
+    <line x1="135" y1="86" x2="165" y2="75" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="90" y="62" width="62" height="16" rx="4" fill="#DBEAFE"/>
+    <text x="121" y="74" font-size="9" font-weight="600" fill="#1E40AF" text-anchor="middle">Low OC</text>
+    <!-- Point Pb (t≈0.45 → 271,153) MEDIUM OC -->
+    <circle cx="271" cy="153" r="4.5" fill="#2563EB"/>
+    <!-- Trade-off triangle at Pb: gain +30px right, sacrifice ~24px up -->
+    <line x1="271" y1="153" x2="301" y2="153" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfbo-gn)"/>
+    <line x1="301" y1="153" x2="301" y2="129" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfbo-sac)"/>
+    <line x1="271" y1="153" x2="301" y2="129" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="225" y="130" width="78" height="16" rx="4" fill="#FEF3C7"/>
+    <text x="264" y="142" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">Rising OC</text>
+    <!-- Point Pc (t≈0.75 → 359,232) HIGH OC -->
+    <circle cx="359" cy="232" r="4.5" fill="#2563EB"/>
+    <!-- Trade-off triangle at Pc: gain +20px right, sacrifice ~40px up -->
+    <line x1="359" y1="232" x2="379" y2="232" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfbo-gn)"/>
+    <line x1="379" y1="232" x2="379" y2="192" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfbo-sac)"/>
+    <line x1="359" y1="232" x2="379" y2="192" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="300" y="195" width="66" height="16" rx="4" fill="#FEE2E2"/>
+    <text x="333" y="207" font-size="9" font-weight="600" fill="#991B1B" text-anchor="middle">High OC</text>
+    <!-- Same-length gain indicator label -->
+    <text x="220" y="260" font-size="9" fill="#059669" text-anchor="middle" font-style="italic">same gain in B →</text>
+    <text x="420" y="155" font-size="9" fill="#DC2626" text-anchor="start" font-style="italic">↑ rising</text>
+    <text x="420" y="166" font-size="9" fill="#DC2626" text-anchor="start" font-style="italic">sacrifice</text>
+    <text x="420" y="177" font-size="9" fill="#DC2626" text-anchor="start" font-style="italic">of A</text>
+  </svg>`,
+
+  ppfShifts: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <defs>
+      <marker id="ppfsh-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
+      <marker id="ppfsh-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+      <marker id="ppfsh-rd" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
+      <marker id="ppfsh-bl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2563EB"/></marker>
+    </defs>
+    <!-- Axes -->
+    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfsh-ax)"/>
+    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfsh-ax)"/>
+    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
+    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
+    <!-- PPF₃ inward (dashed red) -->
+    <path d="M 55,105 C 215,105 355,248 355,258" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="7 4"/>
+    <text x="330" y="248" font-size="11" font-weight="700" fill="#DC2626">PPF₃</text>
+    <!-- PPF₁ base (solid blue) -->
+    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF₁</text>
+    <!-- PPF₂ outward (dashed green) -->
+    <path d="M 55,48 C 255,48 410,250 410,268" fill="none" stroke="#059669" stroke-width="1.8" stroke-dasharray="7 4"/>
+    <text x="388" y="44" font-size="11" font-weight="700" fill="#059669">PPF₂</text>
+    <!-- Point inside PPF₁ (short-run recovery) -->
+    <circle cx="200" cy="190" r="5" fill="#D97706"/>
+    <text x="207" y="187" font-size="10" font-weight="700" fill="#D97706">X</text>
+    <!-- Arrow from X toward PPF₁ -->
+    <line x1="220" y1="182" x2="248" y2="163" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ppfsh-bl)"/>
+    <!-- Outward shift arrow -->
+    <path d="M 330,90 Q 360,68 388,58" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfsh-gr)"/>
+    <!-- Inward shift arrow -->
+    <path d="M 290,115 Q 320,130 340,142" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfsh-rd)"/>
+    <!-- Legend box -->
+    <rect x="62" y="28" width="180" height="76" rx="6" fill="white" stroke="#E2E8F0"/>
+    <circle cx="76" cy="44" r="4" fill="#2563EB"/>
+    <text x="86" y="48" font-size="10" fill="#334155">PPF₁ — current frontier</text>
+    <circle cx="76" cy="61" r="4" fill="#059669"/>
+    <text x="86" y="65" font-size="10" fill="#334155">PPF₂ — outward: LR growth</text>
+    <circle cx="76" cy="78" r="4" fill="#DC2626"/>
+    <text x="86" y="82" font-size="10" fill="#334155">PPF₃ — inward: supply shock</text>
+    <circle cx="76" cy="95" r="4" fill="#D97706"/>
+    <text x="86" y="99" font-size="10" fill="#334155">X — inside: SR recovery</text>
+  </svg>`,
+
+  ppfConsumerCapital: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <defs>
+      <marker id="ppfcc-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
+      <marker id="ppfcc-bl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2563EB"/></marker>
+      <marker id="ppfcc-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+    </defs>
+    <!-- Axes -->
+    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfcc-ax)"/>
+    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfcc-ax)"/>
+    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Consumer Goods (now)</text>
+    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Capital Goods (investment)</text>
+    <!-- PPF₁ current -->
+    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="358" y="70" font-size="11" font-weight="700" fill="#2563EB">PPF</text>
+    <!-- PPF₂ shifted out (future) -->
+    <path d="M 55,45 C 255,45 410,250 410,268" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="388" y="42" font-size="10" font-weight="700" fill="#059669">Future PPF</text>
+    <!-- Arrow showing outward shift -->
+    <line x1="340" y1="120" x2="370" y2="90" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#ppfcc-gr)"/>
+    <!-- Point K: UK/USA style (high consumer goods, low investment) -->
+    <circle cx="145" cy="118" r="6" fill="#7C3AED"/>
+    <text x="108" y="108" font-size="10" font-weight="700" fill="#7C3AED">🇬🇧🇺🇸</text>
+    <rect x="62" y="118" width="74" height="28" rx="5" fill="#F5F3FF" stroke="#C4B5FD"/>
+    <text x="99" y="131" font-size="9" font-weight="600" fill="#5B21B6" text-anchor="middle">UK / USA</text>
+    <text x="99" y="141" font-size="9" fill="#64748B" text-anchor="middle">~18% investment</text>
+    <!-- Point L: China style (lower consumer, high investment) -->
+    <circle cx="328" cy="186" r="6" fill="#D97706"/>
+    <text x="325" y="162" font-size="10" font-weight="700" fill="#D97706">🇨🇳</text>
+    <rect x="310" y="165" width="70" height="28" rx="5" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="345" y="178" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">China</text>
+    <text x="345" y="188" font-size="9" fill="#64748B" text-anchor="middle">~42% investment</text>
+    <!-- Annotation: more capital now = bigger PPF later -->
+    <rect x="62" y="230" width="310" height="28" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="217" y="243" font-size="10" font-weight="600" fill="#065F46" text-anchor="middle">More capital goods now → PPF shifts outward later</text>
+    <text x="217" y="253" font-size="9" fill="#065F46" text-anchor="middle">The trade-off between living standards today vs tomorrow</text>
+  </svg>`,
+
+  ppfEfficiency: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <defs>
+      <marker id="ppfef-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
+    </defs>
+    <!-- Axes -->
+    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfef-ax)"/>
+    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfef-ax)"/>
+    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
+    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
+    <!-- PPF curve -->
+    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF</text>
+    <!-- Point H — inside (inefficient) rose -->
+    <circle cx="185" cy="195" r="7" fill="#DC2626"/>
+    <text x="195" y="190" font-size="12" font-weight="700" fill="#DC2626">H</text>
+    <!-- Point F — on curve (productive efficiency) green, t≈0.45 → (271,153) -->
+    <circle cx="271" cy="153" r="7" fill="#059669"/>
+    <text x="278" y="148" font-size="12" font-weight="700" fill="#059669">F</text>
+    <!-- Point G — allocative efficiency star, t≈0.35 → slightly left of F -->
+    <circle cx="210" cy="122" r="7" fill="#D97706"/>
+    <text x="218" y="117" font-size="12" font-weight="700" fill="#D97706">G★</text>
+    <!-- Point C — outside (unattainable) slate -->
+    <circle cx="340" cy="110" r="7" fill="#94A3B8"/>
+    <text x="349" y="105" font-size="12" font-weight="700" fill="#64748B">C</text>
+    <!-- Labels for each zone -->
+    <text x="120" y="235" font-size="10" fill="#DC2626" font-style="italic">Inefficient zone</text>
+    <text x="330" y="155" font-size="10" fill="#64748B" font-style="italic">Unattainable zone</text>
+    <!-- Legend -->
+    <rect x="62" y="28" width="185" height="90" rx="6" fill="white" stroke="#E2E8F0"/>
+    <circle cx="76" cy="44" r="5" fill="#DC2626"/>
+    <text x="87" y="48" font-size="9.5" fill="#334155">H — inside: productively inefficient</text>
+    <circle cx="76" cy="62" r="5" fill="#059669"/>
+    <text x="87" y="66" font-size="9.5" fill="#334155">F — on PPF: productively efficient</text>
+    <circle cx="76" cy="80" r="5" fill="#D97706"/>
+    <text x="87" y="84" font-size="9.5" fill="#334155">G★ — on PPF: allocatively efficient</text>
+    <circle cx="76" cy="98" r="5" fill="#94A3B8"/>
+    <text x="87" y="102" font-size="9.5" fill="#334155">C — outside: unattainable</text>
+    <!-- Note: F is productive but NOT allocative -->
+    <line x1="271" y1="160" x2="220" y2="130" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="168" y="148" font-size="8.5" fill="#64748B" text-anchor="middle">F is productively efficient</text>
+    <text x="168" y="158" font-size="8.5" fill="#64748B" text-anchor="middle">but NOT allocatively efficient</text>
+  </svg>`,
+
+  ppfTrade: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+    <defs>
+      <marker id="ppftr-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
+      <marker id="ppftr-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
+    </defs>
+    <!-- Axes -->
+    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppftr-ax)"/>
+    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppftr-ax)"/>
+    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
+    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
+    <!-- PPF curve (before trade) -->
+    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="358" y="70" font-size="11" font-weight="700" fill="#2563EB">PPF</text>
+    <!-- Production point P: specialise at comparative advantage -->
+    <circle cx="289" cy="167" r="6" fill="#2563EB"/>
+    <text x="296" y="163" font-size="11" font-weight="700" fill="#2563EB">P</text>
+    <text x="296" y="176" font-size="9" fill="#475569">production</text>
+    <!-- Consumption point C: beyond PPF thanks to trade -->
+    <circle cx="340" cy="118" r="6" fill="#059669"/>
+    <text x="348" y="114" font-size="11" font-weight="700" fill="#059669">C</text>
+    <text x="348" y="127" font-size="9" fill="#475569">consumption</text>
+    <!-- Arrow from P to C showing gain from trade -->
+    <line x1="295" y1="161" x2="335" y2="124" stroke="#059669" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#ppftr-gr)"/>
+    <!-- Shaded region beyond PPF -->
+    <text x="290" y="105" font-size="10" fill="#059669" font-style="italic">Gains from trade</text>
+    <!-- Before/After callout -->
+    <rect x="62" y="30" width="195" height="52" rx="6" fill="white" stroke="#E2E8F0"/>
+    <text x="72" y="48" font-size="9.5" font-weight="700" fill="#2563EB">With specialisation + trade:</text>
+    <text x="72" y="62" font-size="9.5" fill="#334155">Country produces at P (lowest OC)</text>
+    <text x="72" y="75" font-size="9.5" fill="#059669">↗ Consumes at C — beyond own PPF</text>
+    <!-- Label: unattainable without trade -->
+    <text x="320" y="145" font-size="8.5" fill="#64748B" text-anchor="middle">previously</text>
+    <text x="320" y="155" font-size="8.5" fill="#64748B" text-anchor="middle">unattainable</text>
+  </svg>`,
+
   /* === PPF interactive diagram === */
   ppfInteractive: `
     <svg class="ppf-svg" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

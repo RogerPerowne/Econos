@@ -57,17 +57,11 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_2',
-      template: 'framing',
       stepLabel: 'Learn: Step 2 of 7',
+      diagramKey: 'ppfOpportunityCost',
       title: 'Opportunity Cost on the PPF',
       tip: { icon: '💡', tone: 'blue', text: 'The opportunity cost of moving along the PPF is the units of one good sacrificed to produce one more unit of the other — it changes at every point on the curve.' },
-      comparison: {
-        title: 'Two types of PPF',
-        emoji: '📊',
-        left:  { tone: 'blue',  icon: '📏', label: 'Straight-line PPF',  caption: 'Constant opportunity cost. Resources are perfectly substitutable — the trade-off is fixed regardless of how much you produce.' },
-        right: { tone: 'amber', icon: '〰️', label: 'Bowed-out PPF',      caption: 'Increasing opportunity cost. Resources are specialised — switching them becomes progressively more costly.' }
-      },
-      body: 'Moving along the PPF from one point to another shows the <strong>opportunity cost</strong> of producing more of one good: the units of the other good that must be sacrificed.<br><br>On a <em>straight-line PPF</em> (constant opportunity cost), the trade-off ratio is constant — e.g., every 1 extra unit of Good A always costs 2 units of Good B.<br><br>On a <em>bowed-out PPF</em> (increasing opportunity cost), the trade-off worsens as you produce more of one good — resources are not perfectly suited to all uses, so switching becomes increasingly costly.',
+      comparison: { title: 'Two types of PPF', emoji: '📊', left: { tone: 'blue', icon: '📏', label: 'Straight-line PPF', caption: 'Constant opportunity cost — resources perfectly substitutable. The trade-off ratio stays fixed regardless of how much you produce.' }, right: { tone: 'amber', icon: '〰️', label: 'Bowed-out PPF', caption: 'Increasing opportunity cost — resources are specialised. Each extra unit of Good B costs progressively more Good A.' } },
       keyTerms: [
         { term: 'Opportunity cost on PPF', def: 'The quantity of Good B given up to produce one more unit of Good A — the gradient of the PPF at that point.' },
         { term: 'Constant opportunity cost', def: 'Straight-line PPF: resources perfectly substitutable; trade-off is constant.' },
@@ -78,8 +72,8 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_3',
-      template: 'framing',
       stepLabel: 'Learn: Step 3 of 7',
+      diagramKey: 'ppfBowedOut',
       title: 'Why the PPF Is Bowed Out',
       tip: { icon: '💡', tone: 'blue', text: 'Resources are not equally suited to all uses. Switch the easy ones first — then the increasingly costly ones follow, driving the curve outward.' },
       flow: [
@@ -90,7 +84,6 @@ window.ECONOS_TOPIC = {
       ],
       flowTitle: 'Why opportunity cost rises as you specialise',
       flowEmoji: '📈',
-      body: 'A realistic PPF is concave to the origin (bowed out) because of the <strong>law of increasing opportunity cost</strong>: resources are not perfectly suited to producing all goods equally. As you transfer resources from one good to another, you first move the resources least suited to the first good (low opportunity cost), then progressively the resources more suited to it (higher opportunity cost).<br><br><strong>Example:</strong> Transferring farmland to car production — the least fertile land moves first, then increasingly fertile land must be converted, causing a rising opportunity cost per car produced.',
       keyTerms: [
         { term: 'Concave to origin', def: 'The PPF bows outward — reflecting increasing opportunity cost as specialisation in one good deepens.' },
         { term: 'Law of increasing opportunity cost', def: 'As more of one good is produced, progressively more of the other must be sacrificed.' },
@@ -103,14 +96,16 @@ window.ECONOS_TOPIC = {
       id: 'ppf_4',
       template: 'cause',
       stepLabel: 'Learn: Step 4 of 7',
+      diagramKey: 'ppfShifts',
       title: 'Shifts in the PPF',
       tip: { icon: '💡', tone: 'blue', text: 'Movement <em>along</em> the PPF = reallocation of existing resources. Movement <em>of</em> the PPF = a change in productive capacity.' },
       causes: [
-        { head: 'Movement along PPF₁',               icon: '↔️', body: 'Reallocating existing resources between the two goods — opportunity cost in action. No change in total capacity, just a different mix of the two goods.' },
-        { head: 'Short-run growth (toward the PPF)',  icon: '🔄', body: 'Recovery from recession: unemployment falls, spare capacity is reactivated, output rises by <strong>moving from inside the PPF onto the curve</strong>. The frontier itself does not move — this is <strong>demand-side</strong> growth.' },
-        { head: 'Long-run growth (PPF₁ → PPF₂)',     icon: '📈', body: 'The PPF shifts <strong>outward</strong>: more or higher-quality factor inputs — population growth, capital investment, better technology, education and training. This is <strong>supply-side</strong> growth and the only route to a permanently higher ceiling.' },
-        { head: 'Inward shift (PPF₁ → PPF₃)',        icon: '📉', body: 'Negative supply shocks shrink productive capacity: war destroys capital, natural disasters destroy resources, "brain drain" emigration depletes skilled labour, lack of investment lets capital depreciate.' }
+        { head: 'Movement along PPF₁', icon: '↔️', body: 'Reallocating existing resources between the two goods — opportunity cost in action. No change in total capacity, just a different mix of the two goods.', tone: 'blue' },
+        { head: 'Short-run growth (→ PPF)', icon: '🔄', body: 'Recovery from recession: unemployment falls, spare capacity is reactivated, output rises by moving from inside the PPF onto the curve. The frontier itself does not move — this is demand-side growth.', tone: 'amber' },
+        { head: 'Long-run growth (PPF₁ → PPF₂)', icon: '📈', body: 'The PPF shifts outward: more or higher-quality factor inputs — population growth, capital investment, better technology, education and training. This is supply-side growth and the only route to a permanently higher ceiling.', tone: 'green' },
+        { head: 'Inward shift (PPF₁ → PPF₃)', icon: '📉', body: 'Negative supply shocks shrink productive capacity: war destroys capital, natural disasters destroy resources, "brain drain" emigration depletes skilled labour, lack of investment lets capital depreciate.', tone: 'rose' }
       ],
+      causesStyle: 'tinted-flat',
       causesLabel: 'Four types of PPF movement',
       causesEmoji: '🧭',
       examEdge: 'Two diagrams in one question: "Country A is recovering from recession" → show a point moving from inside the PPF onto the curve (short-run / demand-side). "Country A invests in new technology" → show PPF₁ → PPF₂ shifting outward (long-run / supply-side). Confusing the two is the classic mark loss — name the type of growth explicitly.'
@@ -120,6 +115,7 @@ window.ECONOS_TOPIC = {
       id: 'ppf_5',
       template: 'paired',
       stepLabel: 'Learn: Step 5 of 7',
+      diagramKey: 'ppfConsumerCapital',
       title: 'Consumer vs Capital Goods Trade-Off',
       tip: { icon: '💡', tone: 'blue', text: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.' },
       left: {
@@ -160,6 +156,7 @@ window.ECONOS_TOPIC = {
       id: 'ppf_6',
       template: 'mechanisms',
       stepLabel: 'Learn: Step 6 of 7',
+      diagramKey: 'ppfEfficiency',
       title: 'PPF and Economic Efficiency',
       tip: { icon: '💡', tone: 'blue', text: 'Productive efficiency = ON the PPF. Allocative efficiency = the <em>right</em> point on the PPF. These are different — and examiners test whether you know it.' },
       causes: [
@@ -175,8 +172,8 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_7',
-      template: 'framing',
       stepLabel: 'Learn: Step 7 of 7',
+      diagramKey: 'ppfTrade',
       title: 'PPF Applications: Trade and Development',
       tip: { icon: '💡', tone: 'blue', text: 'Trade lets both countries consume <em>outside</em> their own PPF — that is the core economic argument for free trade.' },
       comparison: {
@@ -185,7 +182,6 @@ window.ECONOS_TOPIC = {
         left:  { tone: 'blue',  icon: '🤝', label: 'International trade',  caption: 'Specialise at your lowest opportunity-cost point. Trade lets both partners consume beyond their individual PPFs.' },
         right: { tone: 'green', icon: '🌱', label: 'Economic development', caption: 'Development = shifting the PPF outward. The binding constraint is resources and productivity, not preference.' }
       },
-      body: 'The PPF has several real-world applications beyond illustrating scarcity.<br><br><strong>Trade:</strong> Comparative advantage means each country specialises on the PPF point corresponding to its lowest-opportunity-cost good. Trade enables both countries to consume outside their individual PPFs — a key argument for free trade (covered in Theme 4).<br><br><strong>Development:</strong> The key constraint for developing countries is not preference (they want more of everything) but resource availability and productivity — their PPF is small. Development economics is fundamentally about shifting the PPF outward through investment, institutional reform, and technology transfer.',
       keyTerms: [
         { term: 'Specialisation', def: 'Concentrating production on goods where a country has comparative advantage — maximises combined output.' },
         { term: 'Gains from trade', def: 'Both trading partners can consume beyond their individual PPFs when specialisation and trade occur.' },

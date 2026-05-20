@@ -94,21 +94,18 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_4',
-      template: 'cause',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 7',
-      diagramKey: 'ppfShifts',
-      title: 'Shifts in the PPF',
-      tip: { icon: '💡', tone: 'blue', text: 'Movement <em>along</em> the PPF = reallocation of existing resources. Movement <em>of</em> the PPF = a change in productive capacity.' },
-      causes: [
-        { head: 'Movement along PPF₁', icon: '↔️', body: 'Reallocating existing resources between the two goods — opportunity cost in action. No change in total capacity, just a different mix of the two goods.', tone: 'blue' },
-        { head: 'Short-run growth (→ PPF)', icon: '🔄', body: 'Recovery from recession: unemployment falls, spare capacity is reactivated, output rises by moving from inside the PPF onto the curve. The frontier itself does not move — this is demand-side growth.', tone: 'amber' },
-        { head: 'Long-run growth (PPF₁ → PPF₂)', icon: '📈', body: 'The PPF shifts outward: more or higher-quality factor inputs — population growth, capital investment, better technology, education and training. This is supply-side growth and the only route to a permanently higher ceiling.', tone: 'green' },
-        { head: 'Inward shift (PPF₁ → PPF₃)', icon: '📉', body: 'Negative supply shocks shrink productive capacity: war destroys capital, natural disasters destroy resources, "brain drain" emigration depletes skilled labour, lack of investment lets capital depreciate.', tone: 'rose' }
+      diagramKey: 'ppfMovesInteractive',
+      title: 'Four Types of PPF Movement',
+      lede: 'Not all output changes are equal — explore the four distinct ways an economy can change its production position and what each one means for capacity.',
+      steps: [
+        { key: 'along',    label: 'Movement along', text: 'Moving from D to E along PPF₁ means choosing to produce <strong>more capital goods</strong> but <strong>fewer consumer goods</strong>. The PPF itself does not move — existing resources are just reallocated. Every step along the curve has an <strong>opportunity cost</strong> equal to the slope of the PPF at that point.' },
+        { key: 'recovery', label: 'Short-run recovery', text: 'Point X is <strong>inside</strong> the PPF — resources are idle (unemployment, spare capacity). As aggregate demand recovers, firms rehire workers and reactivate capacity. Output rises from X toward PPF₁. The frontier does NOT shift — this is <strong>demand-side / short-run growth</strong>.' },
+        { key: 'outward',  label: 'Outward shift',   text: 'The PPF shifts outward from PPF₁ to PPF₂ when <strong>productive capacity permanently increases</strong>: better technology, more capital investment, population growth, or improved skills. This is <strong>supply-side / long-run growth</strong> — the economy\'s ceiling rises for good.' },
+        { key: 'inward',   label: 'Inward shift',    text: 'Negative supply shocks push the PPF inward to PPF₃: war destroys capital, natural disasters eliminate resources, "brain drain" depletes skilled labour, or sustained disinvestment causes capital depreciation. <strong>Maximum productive capacity falls permanently.</strong>' }
       ],
-      causesStyle: 'tinted-flat',
-      causesLabel: 'Four types of PPF movement',
-      causesEmoji: '🧭',
-      examEdge: 'Two diagrams in one question: "Country A is recovering from recession" → show a point moving from inside the PPF onto the curve (short-run / demand-side). "Country A invests in new technology" → show PPF₁ → PPF₂ shifting outward (long-run / supply-side). Confusing the two is the classic mark loss — name the type of growth explicitly.'
+      examEdge: 'Classic exam trap: "Country A recovers from recession" → a point inside moves ONTO PPF₁ — do NOT draw an outward shift. "Country A invests in new technology" → PPF₁ shifts out to PPF₂. Naming the type of growth (demand-side vs supply-side) earns a mark in its own right — always state it explicitly.'
     },
 
     {

@@ -377,20 +377,26 @@ window.ECONOS_TOPIC = {
           ]
         }
       ],
-      stepsEmoji: '✍️',
-      stepsLabel: 'How to use surplus in exam answers',
-      steps: [
+      flowEmoji: '✍️',
+      flowTitle: 'How to use surplus in exam answers',
+      flow: [
         {
-          head: 'Identify the policy',
-          body: 'State what the policy is (tax, subsidy, price ceiling, price floor) and whether it raises or lowers the price consumers and producers face.'
+          tone: 'blue',
+          icon: '🔍',
+          title: 'Identify the policy',
+          sub: 'State what it is (tax, subsidy, price ceiling, floor) and whether it raises or lowers the price consumers and producers face.'
         },
         {
-          head: 'Explain how CS and PS change',
-          body: 'Identify winners and losers. Use the diagram — shade the CS and PS areas before and after, and identify the government revenue rectangle or subsidy cost.'
+          tone: 'amber',
+          icon: '📊',
+          title: 'Explain how CS and PS change',
+          sub: 'Identify winners and losers. Shade the CS and PS areas before and after, and identify the government revenue rectangle or subsidy cost.'
         },
         {
-          head: 'Judge the overall welfare effect',
-          body: 'Does total surplus (CS + PS + gov revenue) rise, fall, or stay the same? Is there a DWL triangle? Does the policy correct a market failure — if so, welfare may improve despite redistribution.'
+          tone: 'green',
+          icon: '⚖️',
+          title: 'Judge the overall welfare effect',
+          sub: 'Does total surplus rise, fall, or stay the same? Is there a DWL triangle? Does the policy correct a market failure — if so, welfare may improve.'
         }
       ],
       causesEmoji: '🌍',

@@ -151,20 +151,46 @@ window.ECONOS_TOPIC = {
 
     {
       id: 'ppf_6',
-      template: 'mechanisms',
       stepLabel: 'Learn: Step 6 of 7',
-      diagramKey: 'ppfEfficiency',
       title: 'PPF and Economic Efficiency',
       tip: { icon: '💡', tone: 'blue', text: 'Productive efficiency = ON the PPF. Allocative efficiency = the <em>right</em> point on the PPF. These are different — and examiners test whether you know it.' },
-      causes: [
-        { head: 'Productive efficiency',   icon: '✅', body: 'Any point <strong>ON the PPF</strong> — maximum output from available resources. Impossible to produce more of one good without producing less of another.' },
-        { head: 'Productive inefficiency', icon: '❌', body: 'Any point <strong>INSIDE the PPF</strong> — output could be increased without sacrificing the other good. Caused by unemployment, idle capital, poor management, or structural barriers.' },
-        { head: 'Allocative efficiency',   icon: '🎯', body: 'The <strong>optimal point ON the PPF</strong> — where the combination produced matches consumer preferences (social welfare maximised). A point on the PPF can be productively efficient but allocatively inefficient.' },
-        { head: 'Economic growth',         icon: '📈', body: 'An <strong>outward shift</strong> of the PPF — increases productive potential. Previously unattainable points become attainable. Does not guarantee improved welfare if distribution is unequal.' }
-      ],
-      causesLabel: 'Four efficiency concepts',
-      causesEmoji: '⚙️',
-      examEdge: 'Critical distinction: productive efficiency (on the PPF) ≠ allocative efficiency (right point on the PPF). A command economy might be on its PPF (no wasted resources) but allocatively inefficient (wrong goods produced for consumer preferences). <strong>Pareto efficiency</strong> is the welfare benchmark sitting behind allocative efficiency — a position where no one can be made better off without making someone else worse off. Examiners test the productive ≠ allocative distinction; mentioning Pareto signals A* polish.'
+      interactiveDiagram: {
+        svgKey: 'ppfEfficiencyInteractive',
+        label: 'Build the efficiency picture step by step',
+        emoji: '⚙️',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Three zones',
+            tone: 'blue',
+            head: 'The PPF defines three zones',
+            body: 'Any combination ON the curve is productively feasible and uses all resources fully. Inside is achievable but wastes capacity. Outside is currently impossible.',
+            analysis: 'The PPF is the maximum output frontier: every point on it represents a fully employed economy at the limit of its technology and resources. This boundary separates achievable from unachievable — not by price or policy, but by the hard constraint of productive capacity. Economists use it to define two distinct efficiency concepts that are often confused: productive efficiency (any point on the curve) and allocative efficiency (a specific point on the curve).'
+          },
+          {
+            label: 'Productive inefficiency',
+            tone: 'rose',
+            head: 'H — inside the PPF',
+            body: 'Point H represents idle resources: unemployed workers, spare factory capacity, misallocated inputs. Output could rise without any sacrifice — moving H to the frontier costs nothing.',
+            analysis: 'Common causes: cyclical unemployment (recession leaves capital and labour idle), structural barriers (skills mismatches, immobility of factors), X-inefficiency (management slack in firms insulated from competition). Key exam point: a <em>recession</em> moves the whole-economy point inside the PPF — it does not shift the frontier itself. The frontier only shifts with a change in productive <em>capacity</em>, not how fully that capacity is used.'
+          },
+          {
+            label: 'Productive efficiency',
+            tone: 'green',
+            head: 'Any point ON PPF₁ — productively efficient',
+            body: 'Multiple points sit on the curve. All are productively efficient: resources are fully and efficiently employed. You cannot raise output of one good without reducing the other.',
+            analysis: 'Productive efficiency does NOT mean the right goods are produced — only that production is at maximum capacity. A command economy could be on its PPF while producing only guns and no butter: productively efficient but allocatively catastrophic. The market test is P = minimum LRAC — firms produce at the lowest point on their long-run average cost curve, as competitive pressure forces in the long run.'
+          },
+          {
+            label: 'Allocative efficiency',
+            tone: 'amber',
+            head: 'G★ — the one allocatively efficient point',
+            body: 'G★ is the single combination on PPF₁ that society values most: P = MC. Every other on-curve point is productively efficient but allocatively wrong — producing too much of one good relative to what consumers want.',
+            analysis: 'Allocative efficiency requires P = MC at every point: the marginal benefit to society equals the marginal cost of production. This is a single point on the PPF reflecting consumer preferences. Competitive markets drive P → MC through profit-maximisation. For A* marks: mention <strong>Pareto efficiency</strong> — G★ is Pareto optimal, meaning no-one can be made better off without making someone else worse off. Command economies cannot identify G★ without price signals — this is the socialist calculation problem.'
+          }
+        ]
+      },
+      examEdge: 'Critical distinction: productive efficiency (on the PPF) ≠ allocative efficiency (right point on the PPF). A command economy might be on its PPF (no wasted resources) but allocatively inefficient (wrong goods produced for consumer preferences). <strong>Pareto efficiency</strong> is the welfare benchmark behind allocative efficiency — a position where no one can be made better off without making someone else worse off. Examiners test the productive ≠ allocative distinction explicitly; mentioning Pareto signals A* polish.'
     },
 
     {

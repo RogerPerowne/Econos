@@ -9,13 +9,11 @@
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering price ceilings, price floors, shortages and surpluses, unintended consequences (black markets, quality deterioration), real-world UK cases (energy price cap, minimum wage, rent controls), and evaluation against market-based alternatives.',
     shortNames: {
-      'price_controls_1': 'Price ceilings',
-      'price_controls_2': 'Ceiling consequences',
-      'price_controls_3': 'Ceilings in practice',
-      'price_controls_4': 'Price floors',
-      'price_controls_5': 'Floor examples',
-      'price_controls_6': 'Evaluation',
-      'price_controls_7': 'Alternatives'
+      'price_controls_1': 'The big picture',
+      'price_controls_2': 'Price ceilings',
+      'price_controls_3': 'Price floors',
+      'price_controls_4': 'Real-world cases',
+      'price_controls_5': 'Evaluation & alternatives'
     },
 
     questions: [

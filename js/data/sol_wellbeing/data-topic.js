@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   id: 'sol_wellbeing',
   topicNum: '2.1.2',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  title: 'Standard of Living & Wellbeing',
+  title: 'Standard of Living',
   estTime: '9-11 minutes',
   goal: 'Move beyond GDP to measure what actually matters',
 

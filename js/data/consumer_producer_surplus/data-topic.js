@@ -296,15 +296,32 @@ window.ECONOS_TOPIC = {
     {
       id: 'consumer_producer_surplus_5',
       stepLabel: 'Learn: Step 6 of 7',
-      template: 'framing',
       title: 'Surplus and Allocative Efficiency',
-      body: 'Allocative efficiency is achieved when total welfare (CS + PS) is maximised — which occurs at the free-market equilibrium where D = S, or equivalently where MSB = MSC.<br><br>At this point, every unit that generates more benefit than cost is produced, and no unit is produced that costs more than it benefits. This is the social optimum.<br><br>Any departure from this output level — whether from a tax, subsidy, price control, externality, or public good problem — reduces total welfare and creates a deadweight loss triangle. The size of this triangle measures the efficiency cost of the deviation.<br><br><strong>Market failure reframed:</strong> market failure occurs when the <em>private</em> equilibrium (where MPB = MPC) differs from the <em>social</em> optimum (where MSB = MSC). The externality shifts one of the social curves, moving the socially optimal output away from the private equilibrium.',
-      keyTerms: [
-        { term: 'Deadweight welfare loss (DWL)', def: 'The loss of total surplus (CS + PS) that occurs when output differs from the socially optimal level — represents pure waste that no one captures.' },
-        { term: 'Allocative efficiency', def: 'Achieved when P = MC (or MSB = MSC) — total welfare is maximised and DWL = 0.' },
-        { term: 'Pareto efficiency', def: 'A state where no one can be made better off without making someone else worse off — the free-market competitive equilibrium is Pareto efficient (absent market failures).' }
+      tip: {
+        icon: '💡',
+        tone: 'blue',
+        text: 'A market is <strong>allocatively efficient</strong> when resources are allocated to the uses consumers value most and total surplus is maximised. In a simple competitive diagram, this occurs where demand equals supply — equivalently, where <strong>MB = MC</strong>.'
+      },
+      diagramPanel: {
+        diagramKey: 'allocativeEfficiencyDiagram',
+        title: 'Why equilibrium is efficient',
+        tone: 'blue',
+        layout: 'side',
+        steps: [
+          { tone: 'blue',  icon: '⚖️', head: 'Marginal benefit equals marginal cost', body: 'At equilibrium, MB = MC. The value of the next unit to consumers exactly equals its cost to producers.' },
+          { tone: 'green', icon: '✓',  head: 'No reallocation can raise total welfare', body: 'Moving resources into or out of this market reduces total surplus.' },
+          { tone: 'amber', icon: '⭐', head: 'Gains from trade are exhausted at this output', body: 'Every mutually beneficial trade has been realised. Any further unit would cost more than it benefits.' }
+        ]
+      },
+      causes: [
+        { tone: 'blue',  icon: '📊', head: 'Underproduction',   body: 'Quantity is less than the efficient level. Misses beneficial trades where benefit exceeds cost. Usually linked to <em>positive external benefits</em>.' },
+        { tone: 'amber', icon: '🏭', head: 'Overproduction',    body: 'Quantity is greater than the efficient level. Produces units where cost exceeds benefit. Often linked to <em>negative external costs</em>.' },
+        { tone: 'green', icon: '🧮', head: 'Total surplus test', body: 'The best allocation is the one with the largest <strong>CS + PS</strong>. Equilibrium in a competitive market passes this test.' }
       ],
-      examEdge: 'The connection between surplus and efficiency is the analytical backbone of microeconomics. When asked about "welfare effects" in an exam, draw the before/after diagram, shade CS and PS, identify what changed (some CS → tax revenue, some destroyed → DWL), and state the net effect on total welfare. A policy that destroys less surplus than the market failure it corrects improves total welfare.'
+      causesStyle: 'tinted-flat',
+      causesLabel: null,
+      keyTakeaway: { title: 'Key idea', text: 'Allocative efficiency means maximising total surplus at the equilibrium where <strong>MB = MC</strong>. Any departure — from a tax, subsidy, price control, externality, or public good problem — creates a deadweight loss whose size measures the efficiency cost of the deviation.' },
+      examEdge: '<strong>Don\'t confuse the three efficiencies.</strong> <em>Allocative</em> efficiency = maximising total surplus (MB = MC). <em>Productive</em> efficiency = producing at lowest cost (on the LRAC minimum). <em>Equity</em> = fairness of the distribution. They can pull in different directions: a perfectly competitive market is allocatively efficient but may produce unequal outcomes; a regulated monopoly can be productively efficient but allocatively inefficient.<br><br><strong>Welfare-effects exam method:</strong> draw the before/after diagram, shade CS and PS, identify what changed (some CS → tax revenue, some destroyed → DWL), and state the net effect on total welfare. A policy that destroys less surplus than the market failure it corrects <em>improves</em> total welfare; one that operates in an otherwise efficient market reduces it.<br><br><strong>Market failure reframed:</strong> market failure occurs when the <em>private</em> equilibrium (where MPB = MPC) differs from the <em>social</em> optimum (where MSB = MSC). The externality shifts one of the social curves, moving the socially optimal output away from the private equilibrium — and the DWL triangle measures the gap.'
     },
     {
       id: 'consumer_producer_surplus_6',

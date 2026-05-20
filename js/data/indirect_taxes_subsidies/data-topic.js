@@ -3,241 +3,178 @@ window.ECONOS_TOPIC = {
   topicNum: '2.9',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Indirect Taxes & Subsidies',
-  estTime: '18-22 minutes',
-  goal: 'Master how indirect taxes and subsidies shift supply, their welfare effects, who bears the burden, and how to evaluate both as tools for correcting market failure.',
+  estTime: '9-11 minutes',
+  goal: 'Master how indirect taxes and subsidies shift supply, who really bears the burden or captures the benefit, when they are justified by market failure, and how to evaluate them as policy tools.',
   intro: {
     heroKey: 'heroIntervention',
-    summary: 'Indirect taxes raise the price of goods (shifting supply left) while subsidies lower costs (shifting supply right). Both affect consumer and producer welfare, and who really gains or loses depends on price elasticities, not on who hands over the money.',
-    doInThis: 'Work through 14 cards covering indirect taxes (how they work, diagrams, incidence, real-world examples, evaluation) and subsidies (how they work, diagrams, incidence, real-world examples, evaluation) — plus a final comparison of both against alternative policy tools.',
+    summary: 'Indirect taxes raise the consumer price and lower the producer net price; subsidies do the opposite. In both cases the burden or benefit splits between consumers and producers depending on relative elasticity — not on who hands over the cash. The welfare case for either tool depends on the underlying market failure they correct.',
+    doInThis: 'Work through 6 cards covering the mechanics of indirect taxes, tax incidence and elasticity, the mirror-image mechanics of subsidies, when taxes and subsidies are justified by market failure, real-world UK case studies, and exam technique.',
     outcomes: [
-      'Show on a diagram how an indirect tax or subsidy shifts the supply curve and creates a new equilibrium',
-      'Identify consumer incidence, producer incidence, tax revenue / government cost, and deadweight loss',
-      'Explain what makes a Pigouvian tax or optimal subsidy',
-      'Evaluate both instruments versus each other and versus alternative policies'
+      'Draw and label specific and ad valorem tax diagrams correctly, identifying Pc, Pp, Qt and the tax wedge',
+      'Apply the incidence rule (the less elastic side bears more of the burden) to real cases like fuel duty and luxury taxes',
+      'Draw and label subsidy diagrams and identify who captures the benefit under different elasticities',
+      'Evaluate indirect taxes and subsidies as tools for correcting externalities, weighing effectiveness, efficiency, and equity'
     ],
-    tip: 'Tax → supply shifts LEFT (higher price, lower quantity). Subsidy → supply shifts RIGHT (lower price, higher quantity). In both cases, who really pays or benefits is determined by relative PED/PES — the less elastic side bears more of the burden or receives less of the benefit.',
+    tip: 'Tax → supply shifts UP (higher Pc, lower Pp, lower Q). Subsidy → supply shifts DOWN (lower Pc, higher Pp, higher Q). The wedge between Pc and Pp = the tax or subsidy per unit. The split between consumer and producer depends on elasticity — the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '14 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
 
-    /* ===== PART 1: INDIRECT TAXES ===== */
     {
       id: 'indirect_taxes_subsidies_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 14',
-      title: 'Indirect taxes: the big picture',
-      lede: 'Taxes shift supply left to curb consumption and raise revenue — but the real burden falls where elasticity allows it.',
-      tip: 'Specific tax → parallel leftward shift of supply (gap between old S and new S is constant). Ad valorem tax → supply pivots (gap widens at higher prices — tax is a % of price). Either way: consumer pays more, producer receives less, government keeps the wedge.',
-      branches: [
-        { tone: 'green',  label: 'How they work',     sub: 'Specific (per unit) or ad valorem (% of price). Supply shifts left → higher price, lower quantity.' },
-        { tone: 'blue',   label: 'Pigouvian taxes',   sub: 'Set tax = MEC to internalise the externality and move output to the social optimum.' },
-        { tone: 'purple', label: 'Tax incidence',     sub: 'Who really pays depends on PED vs PES. Inelastic demand → consumer bears most; inelastic supply → producer bears most.' },
-        { tone: 'amber',  label: 'Limitations',       sub: 'Information problem (true MEC unknown), regressive impact, black markets, evasion.' },
-        { tone: 'rose',   label: 'Alternatives',      sub: 'Regulation, tradable permits, subsidies for substitutes, behavioural nudges — each with different efficiency and equity trade-offs.' }
-      ],
-      body: 'An <strong>indirect tax</strong> is a tax levied on goods and services (rather than directly on income or profits). It is collected by producers but ultimately borne by both producers and consumers depending on price elasticities.<br><br><strong>Types:</strong><br>• <em>Specific tax (unit tax):</em> a fixed amount per unit (e.g. £1 per litre of petrol). On a diagram: parallel leftward shift of supply curve.<br>• <em>Ad valorem tax:</em> a percentage of the price (e.g. 20% VAT). On a diagram: supply curve pivots (shifts left by a larger absolute amount at higher prices).<br><br><strong>Mechanism:</strong> tax raises the effective cost of production for every unit → supply curve shifts left → new equilibrium at higher price and lower quantity.',
-      keyTerms: [
-        { term: 'Indirect tax', def: 'Tax on spending rather than income — collected at the point of sale. Examples: VAT (20%), fuel duty, sugar levy.' },
-        { term: 'Specific tax', def: 'Fixed money amount per unit — parallel leftward shift of supply curve.' },
-        { term: 'Ad valorem tax', def: 'Percentage of price per unit — supply curve pivots (bigger shift at higher prices).' }
-      ],
-      examEdge: 'For diagram questions: specific tax → parallel shift. Ad valorem → pivot. Most exam questions use specific taxes for simplicity. Always shift the supply curve LEFT (decrease in supply) by the amount of the tax. Do not shift the demand curve — tax affects supply, not demand (assuming tax is on sellers).'
-    },
-    {
-      id: 'indirect_taxes_subsidies_2',
-      template: 'mechanisms',
-      diagramKey: 'taxDiagram',
-      title: 'The Tax Diagram: Full Analysis',
-      intro: 'Mastering this diagram is essential — it appears in many different exam contexts.',
-      steps: [
-        { label: '📍 Start with equilibrium', text: 'Draw original S and D. Equilibrium at (P1, Q1). Mark consumer surplus (CS) triangle above P1 below D. Mark producer surplus (PS) triangle above S below P1.' },
-        { label: '⬅️ Add the tax', text: 'Shift supply left by the tax amount (t). New supply = S + tax. New equilibrium at (P2, Q2). P2 > P1; Q2 < Q1. Price rises by less than the full tax.' },
-        { label: '💰 Identify tax revenue', text: 'Tax revenue = (P2 - P3) × Q2, where P3 = P2 - t (the price sellers actually receive after paying tax). Tax revenue = rectangle between P2 and P3, width Q2.' },
-        { label: '📊 Identify DWL and incidence', text: 'Consumer incidence = (P2 - P1) × Q2. Producer incidence = (P1 - P3) × Q2. DWL = triangle to the right of Q2 between old supply and demand — potential surplus lost.' }
-      ],
-      examEdge: 'Consumer incidence = rise in price paid by buyers × new quantity. Producer incidence = fall in price received by sellers × new quantity. DWL = triangle between old and new equilibrium — the surplus neither the government, consumers, nor producers receive. Always label all four areas on the diagram for full marks.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_3',
-      template: 'framing',
-      title: 'Pigouvian Taxes: Correcting Externalities',
-      body: 'A <strong>Pigouvian tax</strong> (named after economist A.C. Pigou) is set equal to the marginal external cost (MEC) at the socially optimal output. It internalises the externality — making the private cost equal to the social cost.<br><br><strong>Effect:</strong> the tax shifts MPC up to MSC. The new market equilibrium is at the socially optimal output Q*, where MSC = MSB. The deadweight welfare loss from the externality is eliminated.<br><br><strong>Perfect Pigouvian tax:</strong> tax per unit = MEC at Q*. In practice, MEC is very difficult to measure accurately — estimates for the social cost of carbon vary from $50 to $200/tonne CO2.',
-      keyTerms: [
-        { term: 'Pigouvian tax', def: 'A tax equal to the marginal external cost — designed to internalise a negative externality and restore allocative efficiency.' },
-        { term: 'Optimal tax rate', def: 'The tax rate that makes private cost = social cost, achieving socially optimal output.' },
-        { term: 'Internalise', def: 'To incorporate external costs into the private price mechanism — so that decision-makers face the full social cost of their actions.' }
-      ],
-      examEdge: 'The ideal Pigouvian tax is elegant in theory but faces three key limitations: (1) measuring MEC accurately is difficult (different estimates for social cost of carbon vary by 4x); (2) MEC may vary by firm/location (one tax rate may not fit all); (3) the tax may be regressive. These limitations are essential evaluation points.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_4',
-      template: 'cause',
-      title: 'Real-World Tax Examples',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '🏛️',
-      causesLabel: 'Four key UK indirect taxes',
-      causes: [
-        { icon: '⛽', head: 'UK Fuel Duty', body: 'Currently ~53p per litre of petrol/diesel. Corrects for CO2 emissions, local air pollution, and congestion. Partially Pigouvian — not perfectly calibrated to the social cost. Raises ~£28bn/year. Frozen since 2010 — has fallen in real terms.' },
-        { icon: '🥤', head: 'Sugar Levy (SDIL)', body: 'Soft drinks industry levy (2018): 18p/litre for drinks with 5-8g sugar per 100ml; 24p/litre above 8g. Led to significant reformulation by manufacturers (firms chose to reduce sugar content rather than pay tax). Revenue earmarked for school sports.' },
-        { icon: '🚬', head: 'Cigarette Taxes', body: 'UK tobacco duty: £4.14 per pack plus 16.5% ad valorem. Total tax ~75% of retail price. Inelastic demand means large revenue; significant price signal to deter smoking. Evidence: smoking rates fell sharply with rising tax, especially among younger and lower-income groups.' },
-        { icon: '🗑️', head: 'Landfill Tax', body: 'Tax on waste deposited at landfill sites. Incentivises firms to reduce waste, recycle, and use alternative disposal. UK rate: £102.10/tonne (active waste). Has driven significant reduction in landfill use and increased recycling rates.' }
-      ],
-      examEdge: 'Sugar levy is the best exam case for an "effective" tax: demand was elastic (producers reformulated to avoid the tax rather than pass it on to consumers) → significant public health benefit without large consumer price rise. This shows tax design matters — a well-designed tax can change behaviour even without being fully passed on.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_5',
-      template: 'diagnose',
-      diagramKey: 'taxIncidenceDiagram',
-      title: 'Tax Incidence: Who Really Pays?',
-      intro: 'The legal incidence (who pays the tax) differs from the economic incidence (who bears the burden).',
-      rows: [
-        { label: 'Scenario', colA: 'Inelastic demand, elastic supply (cigarettes)', colB: 'Elastic demand, inelastic supply (luxury goods)' },
-        { label: 'Effect', colA: 'Most of the tax is passed on to consumers as higher prices. Quantity falls only slightly. Tax revenue is large. Government captures most of the externality correction.', colB: 'Producers cannot raise prices much (consumers would switch). Most of the tax is absorbed as lower profit margins. Quantity may fall more. Revenue is lower.' },
-        { label: 'Who bears the burden', colA: 'Consumers: they pay substantially higher prices. Incidence falls on the less elastic side.', colB: 'Producers: their net price falls substantially. They bear the burden because they are less elastic.' }
-      ],
-      footer: 'General rule: the less price-elastic side of the market bears more of the tax burden. This is why sin taxes (cigarettes, alcohol) on inelastic goods raise large revenue and fall mainly on consumers.',
-      examEdge: 'Fuel duty incidence: demand is inelastic (few alternatives for most journeys), supply is elastic (global oil market). Consumers bear most of the burden — the tax is regressive (low-income households spend a higher proportion of income on fuel). This is a key equity criticism of Pigouvian taxes even when they correct externalities.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_6',
-      template: 'framing',
-      title: 'Evaluation: Taxation to Correct Externalities',
-      verdict: {
-        leftLabel: '✅ Case FOR taxation',
-        rightLabel: '❌ Case AGAINST (limitations)',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Consumer choice', left: 'Preserves consumer choice — reduces but does not eliminate the externality-generating activity', right: 'Difficult to set optimal rate — MEC is uncertain and varies by context' },
-          { aspect: 'Revenue', left: 'Revenue can be used to fund green investment or compensate affected parties', right: 'Regressive impact: energy and fuel taxes take a higher share of low-income budgets' },
-          { aspect: 'Dynamic efficiency', left: 'Firms continually incentivised to innovate to reduce the tax burden', right: 'Risk of evasion and black markets (especially for high-tax goods like tobacco)' },
-          { aspect: 'Evidence', left: 'Carbon taxes in Sweden (highest global) have reduced emissions with limited growth cost', right: 'Political resistance: "fuel duty escalator" abandoned in UK due to political pressure' }
-        ]
+      stepLabel: 'Learn: Step 1 of 6',
+      title: 'The anatomy of an indirect tax',
+      tip: { icon: '💡', tone: 'amber', text: 'An indirect tax is collected by the seller but paid by whoever bears the burden — and that may not be who hands over the cash. Two forms: a flat per-unit amount (specific) or a percentage of price (ad valorem).' },
+      comparison: {
+        title: 'Two types of indirect tax',
+        emoji: '📊',
+        left:  { tone: 'blue',  icon: '📏', label: 'Specific tax',   caption: 'A fixed amount per unit (e.g. £8.06/litre of pure alcohol in UK spirits duty). Shifts the supply curve <strong>parallel</strong> upward by the tax amount — same vertical gap at every quantity.' },
+        right: { tone: 'amber', icon: '%',  label: 'Ad valorem tax', caption: 'A percentage of price (e.g. 20% VAT). <strong>Pivots</strong> the supply curve upward — vertical gap widens as price rises. The same percentage produces a much larger absolute tax on expensive goods.' }
       },
-      examEdge: 'Regressivity is the most important equity objection to environmental taxes. Solution: use tax revenue for cash transfers to low-income households (green dividend). British Columbia carbon tax (Canada) returns revenue as equal-per-capita dividend — net benefit to below-median income households. This "feebate" model addresses the regressivity concern while maintaining the incentive.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_7',
-      template: 'framing',
-      title: 'Tax vs Other Policy Tools',
-      body: 'Taxation is one of several tools for government intervention. Comparing it with alternatives is essential for evaluation:<br><br><strong>Tax vs regulation:</strong> tax allows flexibility (firms choose how much to reduce); regulation sets a firm standard. Tax raises revenue; regulation does not. Tax works through price; regulation works through quantity constraint. Both can achieve the same environmental target, but tax does so at lower total cost (abatement where cheapest).<br><br><strong>Tax vs subsidy:</strong> tax reduces the externality-generating activity; subsidy promotes the alternative (e.g. solar panels). Both can move market toward social optimum. Tax raises revenue; subsidy costs revenue. Tax punishes the polluter; subsidy rewards the clean alternative.',
-      keyTerms: [
-        { term: 'Incentive-based instruments', def: 'Policies (taxes, tradeable permits) that use price signals to achieve environmental goals — more efficient than command-and-control.' },
-        { term: 'Command-and-control', def: 'Regulations setting standards (e.g. emission limits) — certain outcome but less flexible and potentially less efficient.' },
-        { term: 'Polluter pays principle', def: 'The idea that those who generate pollution should bear the full cost — the philosophical foundation for Pigouvian taxes.' }
+      diagramKey: 'taxMiniDiagram',
+      flow: [
+        { icon: '🏛️', title: 'Government imposes the tax',           sub: 'Legal incidence: sellers must remit £T per unit (or T% of price) to HMRC. Drinks producers, fuel retailers, importers all act as collection agents.' },
+        { icon: '⬆️',  title: 'Effective supply shifts up',           sub: 'To stay viable, sellers must receive an extra £T per unit. The effective supply curve shifts up by the tax (specific) or pivots up (ad valorem).' },
+        { icon: '⚖️', title: 'New equilibrium',                       sub: 'Quantity falls from Q<sub>e</sub> to Q<sub>t</sub>. Consumer price rises from P<sub>e</sub> to P<sub>c</sub>; producer net price falls from P<sub>e</sub> to P<sub>p</sub>. The market does NOT fully pass the tax through — the split depends on elasticity (card 2).' },
+        { icon: '💰', title: 'Tax wedge = government revenue',        sub: 'The vertical gap between P<sub>c</sub> and P<sub>p</sub> equals the tax per unit. Multiplied by Q<sub>t</sub>, this is total tax revenue (the green rectangle in the diagram).' }
       ],
-      examEdge: 'Exam essays often ask to "compare two policies." Tax vs regulation structure: tax = flexibility, efficiency, revenue generation, but uncertain quantity outcome and regressive. Regulation = certainty, simplicity, but inflexibility, no revenue, may be inefficient. Both have a role — hybrid approaches (set a regulatory floor + carbon tax above it) often optimal.'
+      flowTitle: 'How an indirect tax works',
+      flowEmoji: '⚙️',
+      keyTerms: [
+        { term: 'Indirect tax',  def: 'A tax on spending — collected by sellers from buyers when goods or services are purchased. VAT and excise duties are the main UK examples.' },
+        { term: 'Specific tax',  def: 'A fixed monetary amount per unit (e.g. £8.06 per litre of pure alcohol in UK spirits duty). Produces a parallel upward shift in supply.' },
+        { term: 'Ad valorem tax', def: 'A percentage of the price (e.g. 20% VAT). Produces a pivoting upward shift in supply — the absolute tax grows with the price.' },
+        { term: 'Tax wedge',     def: 'The vertical gap between the price consumers pay (P<sub>c</sub>) and the net price producers receive (P<sub>p</sub>) — equal to the tax per unit. Tax revenue = wedge × Q<sub>t</sub>.' }
+      ],
+      examEdge: 'Specific taxes shift S <em>parallel</em> upward (constant gap); ad valorem taxes <em>pivot</em> S upward (gap widens as price rises). Drawing the wrong shift is a common mark loser. Always label P<sub>c</sub>, P<sub>p</sub>, Q<sub>t</sub>, and the wedge between P<sub>c</sub> and P<sub>p</sub> — that wedge is the per-unit tax and its area (wedge × Q<sub>t</sub>) is government revenue.'
     },
 
-    /* ===== PART 2: SUBSIDIES ===== */
     {
-      id: 'indirect_taxes_subsidies_8',
-      template: 'framing',
-      stepLabel: 'Learn: Step 8 of 14',
-      title: 'Subsidies: the big picture',
-      lede: 'Subsidies shift supply right to boost production and consumption — but who really benefits depends on elasticities, not intent.',
-      tip: 'Subsidy is the mirror of a tax: shifts supply RIGHT by the subsidy amount (parallel shift for a specific subsidy). Consumer price falls, producer received price rises — the subsidy fills the gap between them.',
-      branches: [
-        { tone: 'green',  label: 'How they work',         sub: 'Government pays per unit → supply shifts right → price falls, quantity rises. The mirror image of a tax.' },
-        { tone: 'blue',   label: 'Correcting externalities', sub: 'Pigouvian logic in reverse: subsidy = MEB internalises positive spillover and moves output to social optimum.' },
-        { tone: 'purple', label: 'Incidence',             sub: 'Producer vs consumer share of the benefit depends on relative PED/PES — not on who receives the cheque.' },
-        { tone: 'amber',  label: 'Limitations',           sub: 'Opportunity cost of public funds, risk of producer inefficiency, persistence after the original case has gone.' },
-        { tone: 'rose',   label: 'Alternative policies',  sub: 'Direct provision, regulation, vouchers, info campaigns — each may achieve the same goal at lower cost.' }
-      ],
-      body: 'A <strong>subsidy</strong> is a government payment to producers or consumers that lowers the effective cost of a good or service, aiming to increase its production or consumption.<br><br><strong>Types:</strong><br>• <em>Producer subsidy:</em> paid to firms → reduces cost per unit → supply shifts RIGHT → price falls, quantity rises.<br>• <em>Consumer subsidy:</em> paid to buyers (voucher, benefit) → increases effective purchasing power for that good → demand shifts RIGHT → price rises, quantity rises.<br><br>Subsidies are the mirror of taxes: a tax shifts supply left; a subsidy shifts supply right. Both change equilibrium, create transfers, and affect welfare. Subsidies cost the government revenue (opportunity cost).',
-      keyTerms: [
-        { term: 'Subsidy', def: 'A government payment per unit to reduce the cost of production or consumption — shifts supply rightward.' },
-        { term: 'Producer subsidy', def: 'Payment to firms per unit of output — lowers MPC, shifts supply right, reduces price to consumers.' },
-        { term: 'Consumer subsidy', def: 'Payment to consumers (voucher or credit) for a specific good — increases effective demand, shifts demand right.' }
-      ],
-      examEdge: 'Producer subsidy vs consumer subsidy achieve different outcomes: producer subsidy → price falls (consumers benefit); consumer subsidy → price rises (producers benefit more). For correcting a positive externality (underconsumption), both work. Producer subsidy corrects underproduction; consumer subsidy corrects underconsumption. Match the tool to the source of market failure.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_9',
-      template: 'mechanisms',
-      diagramKey: 'subsidyDiagram',
-      title: 'The Subsidy Diagram',
-      intro: 'The subsidy diagram is the mirror image of the tax diagram — master both for maximum flexibility in exams.',
-      steps: [
-        { label: '📍 Original equilibrium', text: 'S and D intersect at (P1, Q1). CS above P1 below D; PS above S below P1.' },
-        { label: '➡️ Add the subsidy', text: 'Supply shifts RIGHT by the subsidy amount. New supply = S − subsidy. New equilibrium at (P2, Q2). P2 < P1 (consumers pay less); Q2 > Q1 (more is produced and sold).' },
-        { label: '💰 Government cost', text: 'Government cost = subsidy per unit × new quantity = (P3 − P2) × Q2, where P3 = price producers receive (P2 + subsidy).' },
-        { label: '📊 Welfare distribution', text: 'Consumer benefit = (P1 − P2) × Q2 (lower price on all units). Producer benefit = (P3 − P1) × Q2 (higher received price). Government cost > consumer + producer benefit = DWL from subsidy.' }
-      ],
-      examEdge: 'The government cost of a subsidy is the rectangle between the two supply curves over the new quantity. The DWL triangle (between old and new equilibrium) represents the welfare cost of distorting production beyond the free-market level — unless correcting an externality, in which case the subsidy reduces the externality DWL.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_10',
-      template: 'framing',
-      title: 'Correcting Positive Externalities with Subsidies',
-      body: 'Where a positive externality exists (MSB > MPB), the market under-produces relative to the social optimum. A subsidy can correct this by increasing production to the socially optimal level Q*.<br><br><strong>Optimal subsidy:</strong> set equal to the marginal external benefit (MEB) at Q*. This effectively shifts MPB up to equal MSB (or MPC down to equal MSC for a production subsidy).<br><br><strong>Examples:</strong> solar panel installation subsidy (UK Feed-in Tariff — corrects underproduction of renewable energy); childcare subsidy (corrects under-provision of childcare that enables female workforce participation); R&D tax credits (corrects underinvestment in research with positive knowledge spillovers).',
-      keyTerms: [
-        { term: 'Optimal subsidy', def: 'Subsidy equal to the marginal external benefit at the socially optimal output — the exact correction needed.' },
-        { term: 'Feed-in Tariff', def: 'UK scheme (2010-2019) paying households a guaranteed price for solar electricity generated — subsidy to correct underproduction of renewable energy.' },
-        { term: 'R&D spillovers', def: 'Knowledge created by firms\' research spills over to other firms — a positive externality justifying R&D subsidies.' }
-      ],
-      examEdge: 'Subsidy size calibration problem: optimal subsidy = MEB at Q*. But MEB is hard to measure. Over-subsidy → more than socially optimal production → government failure. Under-subsidy → insufficient correction → market failure persists. This is the same problem as Pigouvian taxes — information requirement is the key limitation.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_11',
-      template: 'cause',
-      title: 'Real-World Subsidy Examples',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '💰',
-      causesLabel: 'Four major subsidy contexts',
-      causes: [
-        { icon: '🌾', head: 'Agricultural subsidies', body: 'EU Common Agricultural Policy (CAP): ~€50bn/year in farm subsidies. Justification: food security, rural communities, income stabilisation. Criticism: distorts trade (WTO disputes), benefits large farms disproportionately, environmentally damaging intensive farming incentivised.' },
-        { icon: '⚡', head: 'Electric vehicle grants', body: 'UK Plug-in Vehicle Grant (up to £5,000) to correct positive externality of reduced emissions. Also corrects information failure — consumers may underestimate long-run fuel savings. Phased out 2022 as EV market matured and costs fell.' },
-        { icon: '🌬️', head: 'Renewable energy (Contracts for Difference)', body: 'Government guarantees a "strike price" for electricity from renewables — effectively a subsidy when market price falls below the strike price. Has driven massive expansion of offshore wind.' },
-        { icon: '😷', head: 'COVID-19 furlough scheme', body: 'Government paid 80% of wages of furloughed workers — a labour market subsidy. Cost: ~£70bn. Prevented mass unemployment during lockdowns. Not correcting market failure — emergency stabilisation policy.' }
-      ],
-      examEdge: 'Agricultural subsidies are a classic example of a subsidy that may have been justified initially (post-WWII food security) but which now persists due to political economy (farmers are a powerful lobby). This illustrates how subsidies, once established, become politically very difficult to remove — a key government failure risk.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_12',
-      template: 'framing',
-      title: 'Evaluation: Benefits vs Limitations of Subsidies',
-      verdict: {
-        leftLabel: '✅ Case FOR subsidies',
-        rightLabel: '❌ Case AGAINST / Limitations',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Externalities', left: 'Corrects positive externalities — increases production to socially optimal level', right: 'Fiscal cost: funded by taxpayers — opportunity cost of alternative government spending' },
-          { aspect: 'Industries', left: 'Supports infant industries unable to compete until they achieve economies of scale', right: 'Difficult to set optimal amount — requires knowing MEB, which is uncertain' },
-          { aspect: 'Equity', left: 'Progressive: can be targeted at goods that improve low-income welfare (childcare, food)', right: 'May distort resource allocation beyond optimal level — over-subsidised industries attract excess resources' },
-          { aspect: 'Track record', left: 'UK offshore wind subsidised to now cheapest electricity source — industrial transformation', right: 'Vested interests lobby to maintain subsidies even when externality is corrected — government failure' }
-        ]
+      id: 'indirect_taxes_subsidies_2',
+      stepLabel: 'Learn: Step 2 of 6',
+      title: 'Tax incidence: who really pays?',
+      tip: { icon: '⚖️', tone: 'rose', text: '<strong>Legal incidence</strong> (who hands over the cash) is not the same as <strong>economic incidence</strong> (who bears the burden). The less price-elastic side of the market always carries more of the tax.' },
+      diagramKey: 'taxIncidenceDiagram',
+      comparison: {
+        title: 'Same tax, different incidence',
+        emoji: '🎯',
+        left:  { tone: 'blue',  icon: '🚬', label: 'Inelastic demand — consumer bears most',  caption: 'Cigarettes, fuel, prescription drugs. PED ≈ 0.3–0.5: consumers have few substitutes and cannot easily reduce consumption. The seller passes most of the tax through as a higher P<sub>c</sub>; quantity falls only slightly; revenue is large.' },
+        right: { tone: 'green', icon: '🛥️', label: 'Elastic demand — producer bears most',    caption: 'Luxury goods, restaurant meals, branded fashion. PED &gt; 1: buyers switch easily to substitutes or simply do without. Sellers cannot pass the tax through — they absorb most of it as lower P<sub>p</sub>; quantity falls sharply; revenue is small.' }
       },
-      examEdge: 'The infant-industry argument for subsidies: justified if the industry will eventually be competitive (comparative advantage will develop); unjustified if protection becomes permanent and the industry never matures. This is why sunset clauses (automatic removal of subsidies after a fixed period) are good policy design — forces reassessment.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_13',
-      template: 'diagnose',
-      title: 'Who Benefits from a Subsidy?',
-      intro: 'The distribution of subsidy benefit between consumers and producers depends on price elasticities — the same logic as tax incidence.',
-      rows: [
-        { label: 'Scenario', colA: 'Elastic supply, inelastic demand (food staples)', colB: 'Inelastic supply, elastic demand (luxury market)' },
-        { label: 'Subsidy effect', colA: 'Supply can expand easily; demand doesn\'t respond much to price. Most of subsidy passed to consumers as lower prices. Government achieves consumption goal.', colB: 'Supply can\'t expand much; consumers respond strongly to lower prices. Most of subsidy absorbed by higher producer revenue, not consumer price reduction.' },
-        { label: 'Policy implication', colA: 'Subsidy is efficient at reducing consumer prices — correct instrument if goal is affordability. Subsidy mostly benefits consumers (inelastic demand side).', colB: 'Subsidy mostly benefits producers — may not achieve consumption goal. Alternative (direct consumer voucher) more effective at targeting consumption.' }
-      ],
-      footer: 'Rule: the more elastic side of the market passes more of the subsidy to the other side. Policymakers should consider who they want to benefit when choosing producer vs consumer subsidy and setting the size.',
-      examEdge: 'Agricultural subsidy incidence: demand for food is inelastic; supply is moderately elastic. Result: much of the CAP subsidy is retained by farmers (less elastic side) rather than passed to consumers as lower food prices. This partly explains why CAP is costly but does not dramatically reduce food prices for EU consumers.'
-    },
-    {
-      id: 'indirect_taxes_subsidies_14',
-      template: 'framing',
-      title: 'Taxes vs Subsidies: Final Comparison',
-      body: '<strong>When to use a tax:</strong> when the market over-produces a good with negative externalities. Tax raises price, reduces quantity, raises government revenue, and forces the polluter to pay.<br><br><strong>When to use a subsidy:</strong> when the market under-produces a good with positive externalities. Subsidy lowers price, raises quantity, costs government revenue, and rewards beneficial behaviour.<br><br><strong>Subsidy vs public provision:</strong> subsidy supports private providers; public provision replaces them. NHS provides healthcare directly (public provision); childcare voucher subsidises private nurseries. Public provision may be more equitable (universal access); subsidy maintains market diversity and competition.<br><br><strong>Key similarity:</strong> both face the same core challenge — you need accurate information about the size of the externality (MEC or MEB) to set the right tax or subsidy level. This information is rarely available, making both instruments imperfect in practice.',
       keyTerms: [
-        { term: 'Green incentive', def: 'Subsidy or tax break for environmentally beneficial behaviour — positive reinforcement rather than negative (tax) approach.' },
-        { term: 'Sunset clause', def: 'Predetermined end date for a policy or subsidy — forces reassessment and reduces risk of permanent distortion.' },
-        { term: 'Additionality', def: 'Whether a subsidy causes additional activity that would not have happened anyway — hard to measure and a key challenge for policymakers.' }
+        { term: 'Legal incidence',    def: 'Who is legally responsible for remitting the tax to government — typically the seller for indirect taxes.' },
+        { term: 'Economic incidence', def: 'Who actually bears the burden through higher prices paid (consumers) or lower net receipts (producers) — determined by relative PED and PES.' },
+        { term: 'Consumer burden',    def: 'The portion of the tax borne by buyers: (P<sub>c</sub> − P<sub>e</sub>) × Q<sub>t</sub>. Larger when demand is inelastic relative to supply.' },
+        { term: 'Producer burden',    def: 'The portion of the tax borne by sellers: (P<sub>e</sub> − P<sub>p</sub>) × Q<sub>t</sub>. Larger when supply is inelastic relative to demand.' }
       ],
-      examEdge: 'Exam essays comparing two policies: tax vs subsidy structure — tax = revenue-raising, punishes bad behaviour, can be regressive; subsidy = revenue-costing, rewards good behaviour, can be progressive. Both require accurate externality data. Both may distort markets if set at the wrong level. Both preserve consumer/producer choice (unlike regulation).',
-      keyTakeaway: { title: 'The big picture', text: 'Indirect taxes and subsidies are mirror images: taxes shift supply left and raise revenue; subsidies shift supply right and cost revenue. Both change equilibrium price and quantity, both create welfare transfers, and in both cases who really pays or benefits is determined by relative price elasticities — not by who hands over the money.' },
+      examEdge: 'The incidence rule in one line: <strong>the more inelastic side bears more of the tax</strong>. If PED &lt; PES (demand more inelastic), consumers bear more — UK tobacco duty raises ~£10bn/year because smokers cannot easily quit. If PES &lt; PED (supply more inelastic), producers bear more — the 1990 US luxury yacht tax destroyed the domestic industry because buyers switched to foreign builders while US shipyards could not redeploy quickly. Always state the elasticity assumption explicitly before judging who pays.'
+    },
+
+    {
+      id: 'indirect_taxes_subsidies_3',
+      stepLabel: 'Learn: Step 3 of 6',
+      title: 'The anatomy of a subsidy',
+      tip: { icon: '💡', tone: 'green', text: 'A subsidy is the mirror image of a tax — a government payment to sellers (or buyers) that lowers the effective price. Supply shifts <em>down</em> by the subsidy per unit. The benefit splits between consumers and producers — and again, the less elastic side captures more.' },
+      diagramKey: 'subsidyMiniDiagram',
+      flow: [
+        { icon: '🏛️', title: 'Government pays the subsidy',          sub: 'Sellers receive £S per unit produced (or buyers receive a price reduction). Common forms: per-unit production grants, feed-in tariffs, refundable tax credits, voucher schemes.' },
+        { icon: '⬇️',  title: 'Effective supply shifts down',         sub: 'The producer\'s effective cost falls by £S per unit. The supply curve shifts down by the subsidy amount — sellers will now supply each quantity at a lower market price.' },
+        { icon: '⚖️', title: 'New equilibrium',                       sub: 'Quantity rises from Q<sub>e</sub> to Q<sub>s</sub>. Consumer price falls from P<sub>e</sub> to P<sub>c</sub>; producer net price (market price + subsidy) rises from P<sub>e</sub> to P<sub>p</sub>. The benefit splits — split depends on elasticity (mirror of card 2).' },
+        { icon: '💸', title: 'Subsidy wedge = government cost',       sub: 'The vertical gap between P<sub>p</sub> (producer net) and P<sub>c</sub> (consumer price) equals the subsidy per unit. Total cost = wedge × Q<sub>s</sub> — usually <em>larger</em> than CS + PS gain. The difference is DWL.' }
+      ],
+      flowTitle: 'How a subsidy works (the mirror of a tax)',
+      flowEmoji: '🔄',
+      keyTerms: [
+        { term: 'Subsidy',            def: 'A government payment to producers (or consumers) that reduces the effective cost of a good or service. Shifts supply rightward / downward.' },
+        { term: 'Production subsidy', def: 'Paid per unit of output to sellers (e.g. UK Contracts for Difference for renewable energy). Shifts S down by the subsidy amount.' },
+        { term: 'Consumer subsidy',   def: 'A direct reduction in the price buyers face — childcare vouchers, EV grants, fuel poverty support. Effectively shifts D right or lowers P paid by consumers.' },
+        { term: 'Subsidy wedge',      def: 'The vertical gap between the producer net price (P<sub>p</sub>) and the consumer price (P<sub>c</sub>) — equal to the subsidy per unit. Government cost = wedge × Q<sub>s</sub>.' }
+      ],
+      examEdge: 'A subsidy mirrors a tax: same wedge geometry, opposite direction. The benefit split follows the same elasticity rule in reverse — <strong>the less elastic side captures MORE of the benefit</strong>. With inelastic demand (e.g. insulin), consumers gain little because they would buy anyway — producers capture most of the subsidy. With elastic demand, consumers gain more. Critical for evaluation: a subsidy meant to help consumers may end up enriching producers if demand is highly inelastic — or worse, capitalised into asset prices (as with farm subsidies inflating land values).'
+    },
+
+    {
+      id: 'indirect_taxes_subsidies_4',
+      stepLabel: 'Learn: Step 4 of 6',
+      title: 'When are taxes and subsidies justified?',
+      tip: { icon: '🎯', tone: 'blue', text: 'A tax or subsidy in an otherwise efficient market destroys welfare. The case for either rests on a market failure they correct — typically a negative externality (tax) or a positive externality / merit good (subsidy).' },
+      comparison: {
+        title: 'Taxes and subsidies as corrective tools',
+        emoji: '🛠️',
+        left:  { tone: 'rose',  icon: '🏭', label: 'Pigouvian tax — shrink output',    caption: 'When private cost &lt; social cost, the market over-produces. A tax equal to the marginal external cost shifts S up to the social-cost curve, moving the market to the socially optimal Q*. Examples: carbon tax, sugar tax, congestion charge, alcohol duty.' },
+        right: { tone: 'green', icon: '📚', label: 'Merit good subsidy — grow output', caption: 'When private benefit &lt; social benefit (or information is imperfect), the market under-consumes. A subsidy equal to the marginal external benefit shifts the relevant curve to reach Q*. Examples: NHS, public education, vaccinations, renewable energy, childcare.' }
+      },
+      causes: [
+        { tone: 'rose',  icon: '☣️', head: 'Negative externality (tax case)',     body: 'Pollution, smoking, sugar consumption, traffic congestion. Private agents ignore costs imposed on others. Market output exceeds the social optimum. A Pigouvian tax internalises the external cost — sellers and buyers now face the full social cost in the price.' },
+        { tone: 'green', icon: '☀️', head: 'Positive externality (subsidy case)', body: 'Vaccinations protect others; education raises everyone\'s productivity; renewable energy reduces shared climate risk. Private agents ignore benefits enjoyed by others. Market output falls short of the social optimum. A subsidy internalises the external benefit.' },
+        { tone: 'blue',  icon: '⭐', head: 'Merit good rationale',                 body: 'Even without a clear externality, society judges some goods to be under-consumed because of imperfect information or short-term myopia (e.g. dental care, financial advice). Subsidies push consumption up toward what informed long-run choice would deliver.' }
+      ],
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🧩',
+      causesLabel: 'Three justification logics',
+      keyTerms: [
+        { term: 'Pigouvian tax',     def: 'A tax equal to the marginal external cost of a negative externality — internalises the externality and restores the socially optimal output level.' },
+        { term: 'Merit good',        def: 'A good that society judges to be under-consumed relative to the social optimum, often due to imperfect information or positive externalities. Education, healthcare, vaccinations.' },
+        { term: 'Internalisation',   def: 'Forcing private decision-makers to face the full social cost (via tax) or benefit (via subsidy) of their choices, so the market reaches the social optimum.' },
+        { term: 'Welfare net gain',  def: 'A Pigouvian tax can <em>raise</em> total welfare because the welfare gain from eliminating the externality DWL exceeds the tax\'s own DWL.' }
+      ],
+      examEdge: 'The decisive question for any tax or subsidy: <strong>does the welfare gain from correcting the market failure exceed the DWL the policy itself creates?</strong> A revenue-raising tax in an otherwise-efficient market only destroys welfare. A well-targeted Pigouvian tax can raise welfare by eliminating a larger externality DWL. Identify the market failure (or its absence) explicitly before judging the policy. See the <strong>Negative Externalities</strong> and <strong>Positive Externalities</strong> topics for the full Pigouvian and merit-good frameworks.'
+    },
+
+    {
+      id: 'indirect_taxes_subsidies_5',
+      template: 'cause',
+      stepLabel: 'Learn: Step 5 of 6',
+      title: 'Five UK case studies — what actually happens',
+      tip: { icon: '🌍', tone: 'amber', text: 'In practice, the effectiveness of taxes and subsidies depends on the elasticity of behaviour, the size of the externality, and unintended consequences. Five UK examples show theory meeting reality.' },
+      causesStyle: 'tinted-flat',
+      causesEmoji: '📋',
+      causesLabel: 'Real-world tax and subsidy outcomes',
+      causes: [
+        { tone: 'amber', icon: '🥤', head: 'Soft Drinks Industry Levy (sugar tax, 2018–)',   body: 'Ad valorem on drinks above 5g sugar/100ml; higher rate above 8g. Drove ~50% reformulation by manufacturers within 18 months — most cut sugar to avoid the tax altogether. Sales of taxed drinks fell 21%. Effective Pigouvian design: producers had an elastic response (reformulate), so welfare gains came largely without consumer regressivity.' },
+        { tone: 'rose',  icon: '⛽', head: 'Fuel duty (UK, ~£24bn/yr)',                        body: 'Large excise (~53p/litre, plus VAT). Demand is inelastic in the short run (PED ~0.2–0.4) — consumers bear most. Revenue is huge but regressive (lower-income households spend a higher share of income on fuel). Climate justification holds, but political pressure froze the duty rate for 13 years (2011–2024).' },
+        { tone: 'rose',  icon: '🚬', head: 'Tobacco duty (~£8/pack, world-leading rate)',     body: 'Among the highest in the world. Demand is inelastic for adults (PED ~0.4); consumers bear nearly all the burden. Combined with public health measures, smoking prevalence fell from 27% (2000) to 13% (2023) — strong Pigouvian effect. Side effect: illicit tobacco now ~12% of consumption, eroding revenue.' },
+        { tone: 'green', icon: '🌾', head: 'EU Common Agricultural Policy (~€55bn/yr)',        body: 'Large producer subsidies for cereals, dairy, livestock. Heavy capitalisation: roughly 30–50% of subsidies inflate farmland values, so the benefit accrues to landowners rather than working farmers. Distorted production led to historic "butter mountains". Reformed since 1992 toward direct income support and environmental conditions.' },
+        { tone: 'green', icon: '☀️', head: 'UK Contracts for Difference (renewable energy)',   body: 'Guaranteed prices via auction for offshore wind. Drove huge cost reductions — auction strike prices fell ~70% (2015–2022). Successful market-creation subsidy: initial DWL offset by long-run productivity gains. Demonstrates that subsidies can work when targeting infant industries with steep learning curves.' }
+      ],
+      keyTerms: [
+        { term: 'Sin tax',         def: 'Indirect tax on goods generating negative externalities or judged harmful (alcohol, tobacco, sugar). Effective when PED is low — high revenue and behaviour change in the long run.' },
+        { term: 'Regressive tax',  def: 'A tax taking a higher share of income from poorer households than richer ones. Most indirect taxes (VAT, fuel duty) are regressive unless essentials are exempted.' },
+        { term: 'Capitalisation',  def: 'When a subsidy raises the price of an underlying asset (e.g. CAP subsidies inflating farmland prices), so the subsidy ends up rewarding existing owners rather than the intended beneficiary.' },
+        { term: 'Reformulation',   def: 'Producer response to a tax by changing the product itself to avoid liability (e.g. drinks manufacturers cutting sugar content below the SDIL threshold). A major channel through which Pigouvian taxes deliver welfare gains.' }
+      ],
+      examEdge: 'Three evaluation moves worth memorising: <strong>(1) Did behaviour change?</strong> The sugar tax worked partly because producers had an elastic response (reformulation); fuel duty changes little because consumers do not. <strong>(2) Who bore the burden?</strong> Tobacco and fuel duty fall on consumers (inelastic demand) and are regressive; sugar tax fell mainly on producers via reformulation. <strong>(3) Was the welfare gain larger than the DWL?</strong> Strong Pigouvian designs (sugar, carbon, tobacco) clear this bar; pure revenue taxes do not. Naming the underlying elasticity and market failure before judging earns evaluation marks.'
+    },
+
+    {
+      id: 'indirect_taxes_subsidies_6',
+      stepLabel: 'Learn: Step 6 of 6',
+      title: 'Exam technique: drawing, analysis, evaluation',
+      tip: { icon: '✍️', tone: 'blue', text: 'Indirect taxes and subsidies appear in 25-mark essays, 9-mark questions, and short numerical questions. Master the four diagrams below and the three-axis evaluation structure to handle any of them.' },
+      flow: [
+        { icon: '📈', title: 'Diagram 1 — tax shift',           sub: 'S to S+tax (parallel for specific, pivoted for ad valorem). Label P<sub>c</sub>, P<sub>p</sub>, Q<sub>t</sub>, the wedge, and the revenue rectangle. Most common diagram type — fluent execution earns the foundation marks.' },
+        { icon: '🎯', title: 'Diagram 2 — tax incidence',       sub: 'Same diagram but draw inelastic vs elastic D side-by-side. Show the burden split as two rectangles. Label which side bears more and link to PED magnitude.' },
+        { icon: '📉', title: 'Diagram 3 — subsidy shift',       sub: 'S to S–subsidy. Label new lower P<sub>c</sub>, new higher P<sub>p</sub>, higher Q<sub>s</sub>, the subsidy wedge, and the government cost rectangle (wedge × Q<sub>s</sub>).' },
+        { icon: '🌳', title: 'Diagram 4 — Pigouvian correction', sub: 'MPC, MSC, MPB curves. Show the external cost gap and the tax that shifts MPC up to MSC, moving the market from private equilibrium to social optimum Q*. Critical for externalities-linked questions.' }
+      ],
+      flowTitle: 'The four diagrams every student should draw fluently',
+      flowEmoji: '📐',
+      comparison: {
+        title: 'Common exam errors',
+        emoji: '⚠️',
+        left:  { tone: 'rose', icon: '❌', label: 'Drawing errors',  caption: 'Wrong shift direction (subsidy drawn as shift left); ad valorem drawn parallel (should pivot from origin); missing P<sub>c</sub>, P<sub>p</sub>, or Q<sub>t</sub> labels; revenue rectangle not shaded; wedge not clearly identified.' },
+        right: { tone: 'rose', icon: '❌', label: 'Analysis errors', caption: 'Confusing legal and economic incidence (assuming the seller pays just because they remit the cash); failing to identify the underlying market failure before judging; ignoring elasticity entirely; treating tax revenue as a welfare loss (it is a transfer, not a destruction).' }
+      },
+      keyTerms: [
+        { term: 'The three labels',  def: 'P<sub>c</sub> (consumer price), P<sub>p</sub> (producer net price), Q<sub>t</sub> (post-tax / post-subsidy quantity). Missing any of these is the most frequent single mark loss on tax/subsidy diagrams.' },
+        { term: 'Revenue rectangle', def: 'Wedge × Q<sub>t</sub>. For a tax this is government income; for a subsidy this is government cost. Always shade and label it explicitly.' },
+        { term: 'DWL triangle',      def: 'The small triangle to the right of Q<sub>t</sub>, bounded by D and S. Trades that would have happened at P<sub>e</sub> but no longer occur. The welfare cost of the policy in an otherwise-efficient market.' }
+      ],
+      examEdge: 'For any 25-mark tax/subsidy essay, structure your evaluation around three axes: <strong>(1) Effectiveness</strong> — did the policy actually change behaviour? Depends on PED and producer response (reformulation, substitution). <strong>(2) Efficiency</strong> — did it improve welfare? Compare the policy\'s DWL to the offsetting market failure. <strong>(3) Equity</strong> — who gained and who lost? Indirect taxes are typically regressive; subsidies can be captured by unintended beneficiaries (e.g. landowners under CAP). A strong answer hits all three axes and reaches a <em>context-aware</em> judgement. <strong>A* upgrade</strong>: name the elasticity assumption, the size of the externality (or its absence), and cite a real-world case (sugar tax, fuel duty, CAP, CfD) to ground the analysis.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

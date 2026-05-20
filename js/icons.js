@@ -919,47 +919,159 @@ window.ECONOS_ICONS = {
     <text x="420" y="177" font-size="9" fill="#DC2626" text-anchor="start" font-style="italic">of A</text>
   </svg>`,
 
-  ppfShifts: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-    <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+  ppfMovesInteractive: `<svg class="ppf-moves-svg" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
     <defs>
-      <marker id="ppfsh-ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#475569"/></marker>
-      <marker id="ppfsh-gr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#059669"/></marker>
-      <marker id="ppfsh-rd" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#DC2626"/></marker>
-      <marker id="ppfsh-bl" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2563EB"/></marker>
+      <marker id="ppfmv-ax" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#334155"/></marker>
+      <marker id="ppfmv-along-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7C3AED"/></marker>
+      <marker id="ppfmv-rec-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>
+      <marker id="ppfmv-out-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#059669"/></marker>
+      <marker id="ppfmv-out-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#059669"/></marker>
+      <marker id="ppfmv-in-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#DC2626"/></marker>
+      <marker id="ppfmv-in-start" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#DC2626"/></marker>
     </defs>
-    <!-- Axes -->
-    <line x1="55" y1="268" x2="55" y2="18" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfsh-ax)"/>
-    <line x1="55" y1="268" x2="415" y2="268" stroke="#334155" stroke-width="1.5" marker-end="url(#ppfsh-ax)"/>
-    <text x="32" y="145" font-size="10" fill="#475569" text-anchor="middle" transform="rotate(-90,32,145)">Good A</text>
-    <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
-    <!-- PPF₃ inward (dashed red) -->
-    <path d="M 55,105 C 215,105 355,248 355,258" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="7 4"/>
-    <text x="330" y="248" font-size="11" font-weight="700" fill="#DC2626">PPF₃</text>
-    <!-- PPF₁ base (solid blue) -->
-    <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
-    <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF₁</text>
-    <!-- PPF₂ outward (dashed green) -->
-    <path d="M 55,48 C 255,48 410,250 410,268" fill="none" stroke="#059669" stroke-width="1.8" stroke-dasharray="7 4"/>
-    <text x="388" y="44" font-size="11" font-weight="700" fill="#059669">PPF₂</text>
-    <!-- Point inside PPF₁ (short-run recovery) -->
-    <circle cx="200" cy="190" r="5" fill="#D97706"/>
-    <text x="207" y="187" font-size="10" font-weight="700" fill="#D97706">X</text>
-    <!-- Arrow from X toward PPF₁ -->
-    <line x1="220" y1="182" x2="248" y2="163" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ppfsh-bl)"/>
-    <!-- Outward shift arrow -->
-    <path d="M 330,90 Q 360,68 388,58" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfsh-gr)"/>
-    <!-- Inward shift arrow -->
-    <path d="M 290,115 Q 320,130 340,142" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ppfsh-rd)"/>
-    <!-- Legend box -->
-    <rect x="62" y="28" width="180" height="76" rx="6" fill="white" stroke="#E2E8F0"/>
-    <circle cx="76" cy="44" r="4" fill="#2563EB"/>
-    <text x="86" y="48" font-size="10" fill="#334155">PPF₁ — current frontier</text>
-    <circle cx="76" cy="61" r="4" fill="#059669"/>
-    <text x="86" y="65" font-size="10" fill="#334155">PPF₂ — outward: LR growth</text>
-    <circle cx="76" cy="78" r="4" fill="#DC2626"/>
-    <text x="86" y="82" font-size="10" fill="#334155">PPF₃ — inward: supply shock</text>
-    <circle cx="76" cy="95" r="4" fill="#D97706"/>
-    <text x="86" y="99" font-size="10" fill="#334155">X — inside: SR recovery</text>
+
+    <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+    <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+    <!-- ===== LAYER: axes (always visible) ===== -->
+    <g class="layer-axes">
+      <line x1="60" y1="400" x2="60" y2="55" stroke="#334155" stroke-width="2"/>
+      <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+      <polygon points="60,50 56,62 64,62" fill="#334155"/>
+      <polygon points="565,400 553,396 553,404" fill="#334155"/>
+      <text x="55" y="42" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Consumer</text>
+      <text x="55" y="56" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Goods</text>
+      <text x="570" y="404" font-size="12" font-weight="700" fill="#334155" text-anchor="start">Capital Goods</text>
+      <text x="48" y="416" font-size="11" fill="#94A3B8" text-anchor="middle">O</text>
+    </g>
+
+    <!-- ===== LAYER: PPF₁ base curve (always visible, dims on shift steps) ===== -->
+    <g class="layer-ppf1">
+      <path d="M 60,175 C 240,175 385,320 385,395" fill="none" stroke="#2563EB" stroke-width="3"/>
+      <text x="390" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₁</text>
+    </g>
+
+    <!-- ===== LAYER: movement along (show-along) ===== -->
+    <g class="layer-along">
+      <line x1="60" y1="208" x2="210" y2="208" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="210" y1="400" x2="210" y2="208" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+      <circle cx="210" cy="208" r="7" fill="#7C3AED"/>
+      <text x="218" y="203" font-size="13" font-weight="700" fill="#7C3AED">D</text>
+      <text x="48" y="212" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">C₁</text>
+      <text x="210" y="416" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">K₁</text>
+      <line x1="60" y1="314" x2="349" y2="314" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="349" y1="400" x2="349" y2="314" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4 3"/>
+      <circle cx="349" cy="314" r="7" fill="#7C3AED"/>
+      <text x="356" y="309" font-size="13" font-weight="700" fill="#7C3AED">E</text>
+      <text x="48" y="318" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">C₂</text>
+      <text x="349" y="416" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">K₂</text>
+      <path d="M 218,211 Q 290,255 342,312" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ppfmv-along-end)"/>
+      <text x="72" y="265" font-size="12" font-weight="600" fill="#7C3AED">−ΔC</text>
+      <text x="275" y="416" font-size="12" font-weight="600" fill="#7C3AED">+ΔK</text>
+    </g>
+
+    <!-- ===== LAYER: legend along (show-along) ===== -->
+    <g class="layer-legend-along">
+      <circle cx="612" cy="31" r="6" fill="#7C3AED"/>
+      <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Moving along the PPF: reallocation</text>
+      <text x="620" y="74" font-size="10" font-weight="800" fill="#7C3AED" letter-spacing="2">WHAT HAPPENS</text>
+      <text x="620" y="96" font-size="13" font-weight="600" fill="#334155">D → E: produce more</text>
+      <text x="620" y="114" font-size="13" font-weight="600" fill="#059669">+ capital goods (K)</text>
+      <text x="620" y="132" font-size="13" font-weight="600" fill="#DC2626">− consumer goods (C)</text>
+      <text x="620" y="168" font-size="10" font-weight="800" fill="#7C3AED" letter-spacing="2">KEY POINT</text>
+      <text x="620" y="190" font-size="13" font-weight="600" fill="#334155">The frontier does NOT move.</text>
+      <text x="620" y="208" font-size="13" font-weight="600" fill="#334155">Existing resources are just</text>
+      <text x="620" y="226" font-size="13" font-weight="600" fill="#334155">reallocated between uses.</text>
+      <text x="620" y="262" font-size="10" font-weight="800" fill="#7C3AED" letter-spacing="2">OPPORTUNITY COST</text>
+      <text x="620" y="284" font-size="12" fill="#475569">Every step along the curve</text>
+      <text x="620" y="302" font-size="12" fill="#475569">has an opportunity cost —</text>
+      <text x="620" y="320" font-size="12" fill="#475569">the slope of the PPF at that point.</text>
+    </g>
+
+    <!-- ===== LAYER: short-run recovery (show-recovery) ===== -->
+    <g class="layer-recovery">
+      <circle cx="190" cy="318" r="8" fill="#D97706"/>
+      <text x="202" y="314" font-size="13" font-weight="700" fill="#D97706">X</text>
+      <text x="218" y="314" font-size="12" fill="#475569">— Underemployment</text>
+      <line x1="205" y1="310" x2="278" y2="262" stroke="#D97706" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#ppfmv-rec-end)"/>
+      <text x="120" y="372" font-size="11" fill="#D97706" font-style="italic">Inefficient zone</text>
+    </g>
+
+    <!-- ===== LAYER: legend recovery (show-recovery) ===== -->
+    <g class="layer-legend-recovery">
+      <circle cx="612" cy="31" r="6" fill="#D97706"/>
+      <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Short-run recovery: X moves to PPF₁</text>
+      <text x="620" y="74" font-size="10" font-weight="800" fill="#D97706" letter-spacing="2">WHAT X REPRESENTS</text>
+      <text x="620" y="96" font-size="13" font-weight="600" fill="#334155">Inside the frontier:</text>
+      <text x="620" y="114" font-size="12" fill="#475569">unemployment, idle capacity,</text>
+      <text x="620" y="132" font-size="12" fill="#475569">resources not fully used.</text>
+      <text x="620" y="168" font-size="10" font-weight="800" fill="#D97706" letter-spacing="2">THE RECOVERY</text>
+      <text x="620" y="190" font-size="13" font-weight="600" fill="#334155">Demand rises → firms rehire,</text>
+      <text x="620" y="208" font-size="13" font-weight="600" fill="#334155">spare capacity reactivated.</text>
+      <text x="620" y="226" font-size="13" font-weight="600" fill="#059669">X moves onto PPF₁.</text>
+      <text x="620" y="262" font-size="10" font-weight="800" fill="#D97706" letter-spacing="2">KEY POINT</text>
+      <text x="620" y="284" font-size="12" fill="#475569">PPF₁ itself does NOT shift.</text>
+      <text x="620" y="302" font-size="12" fill="#475569">This is demand-side / SR growth.</text>
+      <text x="620" y="320" font-size="12" fill="#475569">The capacity ceiling is unchanged.</text>
+    </g>
+
+    <!-- ===== LAYER: PPF₂ outward curve (show-outward) ===== -->
+    <g class="layer-ppf2">
+      <path d="M 60,115 C 280,115 460,310 460,395" fill="none" stroke="#059669" stroke-width="3"/>
+      <text x="464" y="390" font-size="13" font-weight="700" fill="#059669">PPF₂</text>
+    </g>
+
+    <!-- ===== LAYER: outward shift arrows (show-outward) ===== -->
+    <g class="layer-outward">
+      <line x1="292" y1="252" x2="345" y2="212" stroke="#059669" stroke-width="3" stroke-linecap="round" marker-start="url(#ppfmv-out-start)" marker-end="url(#ppfmv-out-end)"/>
+    </g>
+
+    <!-- ===== LAYER: legend outward (show-outward) ===== -->
+    <g class="layer-legend-outward">
+      <circle cx="612" cy="31" r="6" fill="#059669"/>
+      <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Outward shift: long-run growth</text>
+      <text x="620" y="74" font-size="10" font-weight="800" fill="#059669" letter-spacing="2">CAUSES OF OUTWARD SHIFT</text>
+      <text x="620" y="96" font-size="12" fill="#334155">⊕  Better technology</text>
+      <text x="620" y="114" font-size="12" fill="#334155">⊕  More capital investment</text>
+      <text x="620" y="132" font-size="12" fill="#334155">⊕  Population / labour growth</text>
+      <text x="620" y="150" font-size="12" fill="#334155">⊕  Education and training</text>
+      <text x="620" y="168" font-size="12" fill="#334155">⊕  Improved infrastructure</text>
+      <text x="620" y="204" font-size="10" font-weight="800" fill="#059669" letter-spacing="2">KEY POINT</text>
+      <text x="620" y="226" font-size="13" font-weight="600" fill="#334155">This is supply-side growth.</text>
+      <text x="620" y="244" font-size="13" font-weight="600" fill="#334155">Productive capacity permanently</text>
+      <text x="620" y="262" font-size="13" font-weight="600" fill="#059669">increases.</text>
+      <text x="620" y="298" font-size="12" fill="#64748B" font-style="italic">Previously unattainable combinations</text>
+      <text x="620" y="316" font-size="12" fill="#64748B" font-style="italic">become achievable on PPF₂.</text>
+    </g>
+
+    <!-- ===== LAYER: PPF₃ inward curve (show-inward) ===== -->
+    <g class="layer-ppf3">
+      <path d="M 60,240 C 175,240 300,350 300,395" fill="none" stroke="#DC2626" stroke-width="3"/>
+      <text x="305" y="390" font-size="13" font-weight="700" fill="#DC2626">PPF₃</text>
+    </g>
+
+    <!-- ===== LAYER: inward shift arrows (show-inward) ===== -->
+    <g class="layer-inward">
+      <line x1="258" y1="268" x2="207" y2="302" stroke="#DC2626" stroke-width="3" stroke-linecap="round" marker-start="url(#ppfmv-in-start)" marker-end="url(#ppfmv-in-end)"/>
+    </g>
+
+    <!-- ===== LAYER: legend inward (show-inward) ===== -->
+    <g class="layer-legend-inward">
+      <circle cx="612" cy="31" r="6" fill="#DC2626"/>
+      <text x="626" y="36" font-size="13" font-weight="700" fill="#334155">Inward shift: supply shock</text>
+      <text x="620" y="74" font-size="10" font-weight="800" fill="#DC2626" letter-spacing="2">CAUSES OF INWARD SHIFT</text>
+      <text x="620" y="96" font-size="12" fill="#334155">⊖  War / conflict (destroys capital)</text>
+      <text x="620" y="114" font-size="12" fill="#334155">⊖  Natural disasters</text>
+      <text x="620" y="132" font-size="12" fill="#334155">⊖  "Brain drain" emigration</text>
+      <text x="620" y="150" font-size="12" fill="#334155">⊖  Capital depreciation</text>
+      <text x="620" y="168" font-size="12" fill="#334155">⊖  Disease / population decline</text>
+      <text x="620" y="204" font-size="10" font-weight="800" fill="#DC2626" letter-spacing="2">KEY POINT</text>
+      <text x="620" y="226" font-size="13" font-weight="600" fill="#334155">Productive capacity falls.</text>
+      <text x="620" y="244" font-size="13" font-weight="600" fill="#334155">Previously attainable combinations</text>
+      <text x="620" y="262" font-size="13" font-weight="600" fill="#DC2626">become unachievable.</text>
+      <text x="620" y="298" font-size="12" fill="#64748B" font-style="italic">Most acute after sudden shocks:</text>
+      <text x="620" y="316" font-size="12" fill="#64748B" font-style="italic">war, pandemic, major disaster.</text>
+    </g>
   </svg>`,
 
   ppfConsumerCapital: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">

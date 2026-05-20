@@ -177,7 +177,7 @@
     if (n === 4) return 'repeat(2, 1fr)';
     if (n === 7 || n === 8) return 'repeat(4, 1fr)';
     if (n === 9) return 'repeat(3, 1fr)';
-    if (n >= 1 && n <= 6) return `repeat(${Math.min(n, 3)}, 1fr)`;
+    if (n >= 1 && n <= 6) return `repeat(${Math.min(n, 3)}, minmax(0, 1fr))`;
     return `repeat(auto-fill, minmax(${minPx}px, 1fr))`;
   }
 
@@ -375,9 +375,11 @@
             <span style="flex-shrink:0;width:8px;height:8px;border-radius:50%;background:${tone.accent};margin-top:7px;"></span>
             <span>${b}</span>
           </li>`).join('')}</ul>`;
+      const titleOutside = dp.titleAbove && dp.title;
       const headerHtml = `
-        ${dp.title ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:10px;">${dp.title}</div>` : ''}
+        ${(!titleOutside && dp.title) ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:10px;">${dp.title}</div>` : ''}
         ${dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : ''}`;
+      if (titleOutside) content += genSecLabel(dp.titleEmoji || '⚖️', dp.title);
       if (stacked) {
         content += `
           <div style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">

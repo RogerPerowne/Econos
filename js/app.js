@@ -393,6 +393,55 @@
       }
     }
 
+    // Interactive diagram — progressive layer-reveal with click-to-advance step strip.
+    //   Pattern: interactiveDiagram: { svgKey, layers:[string], title?, emoji?, views:[{label,tone?,head,body}] }
+    //   `layers` lists SVG group class names ('idl-1', 'idl-2', …) in reveal order.
+    //   Clicking step N shows layers[0..N-1] and panel N.
+    if (c.interactiveDiagram && I[c.interactiveDiagram.svgKey]) {
+      const id = c.interactiveDiagram;
+      const uid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
+      const layers = id.layers || [];
+      const views = id.views || [];
+      const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
+      if (id.title) content += genSecLabel(id.emoji || '📊', id.title);
+
+      const stepStrip = views.map((v, i) => {
+        const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+        const isFirst = i === 0;
+        const borderR = i < views.length - 1 ? `border-right:1px solid #E7E7EA;` : '';
+        return `<button
+          type="button"
+          data-action="id-advance"
+          data-id-uid="${uid}"
+          data-id-vi="${i}"
+          data-id-tone="${toneName}"
+          style="flex:1;min-width:72px;padding:10px 8px;border:none;${borderR}background:${isFirst ? t.bg : '#fff'};color:${isFirst ? t.label : '#64748B'};font-size:12px;font-weight:${isFirst ? '800' : '600'};cursor:pointer;text-align:center;line-height:1.35;transition:background 0.12s,color 0.12s;">
+          <span data-id-circle style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:${isFirst ? t.accent : '#E2E8F0'};color:${isFirst ? '#fff' : '#94A3B8'};font-size:11px;font-weight:900;margin-bottom:4px;">${i + 1}</span><br>
+          ${v.label}
+        </button>`;
+      }).join('');
+
+      const panelItems = views.map((v, i) => {
+        const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+        const bodyHtml = Array.isArray(v.body)
+          ? v.body.map(b => `<div style="display:flex;gap:8px;margin-bottom:3px;"><span style="color:${t.accent};flex-shrink:0;">•</span><span>${b}</span></div>`).join('')
+          : `<div>${v.body}</div>`;
+        return `<div data-id-panel="${i}" data-id-uid="${uid}" style="display:${i === 0 ? '' : 'none'};">
+          <div style="font-weight:800;font-size:15px;color:${t.label};margin-bottom:6px;">${v.head}</div>
+          <div style="font-size:13.5px;color:#475569;line-height:1.6;">${bodyHtml}</div>
+        </div>`;
+      }).join('');
+
+      content += `
+        <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04);overflow:hidden;">
+          <div style="overflow-x:auto;border-bottom:1px solid #E7E7EA;">${I[id.svgKey]}</div>
+          <div style="display:flex;border-bottom:1px solid #E7E7EA;">${stepStrip}</div>
+          <div style="padding:16px 20px;min-height:72px;">${panelItems}</div>
+        </div>`;
+    }
+
     // Paired left/right HTML is built once via a closure so it can be emitted
     // either before the flow (c.pairFirst === true) or in its default slot
     // further down the renderer, without duplicating ~60 lines of markup.
@@ -3133,6 +3182,7 @@
        !Array.isArray(c.table.rows[0])) ||
       c.conceptBoxes !== undefined ||
       c.diagramPanel !== undefined ||
+      c.interactiveDiagram !== undefined ||
       c.examples !== undefined ||
       c.marketGrid !== undefined ||
       c.framework !== undefined ||
@@ -3536,6 +3586,41 @@
           payoff.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       }
+    } else if (action === 'id-advance') {
+      // Interactive diagram: reveal SVG layers up to the clicked step and show its panel
+      const uid = target.dataset.idUid;
+      const vi  = parseInt(target.dataset.idVi, 10);
+      const idRoot = root.querySelector(`[data-id-root="${uid}"]`);
+      if (!idRoot) return;
+      const layers = JSON.parse(idRoot.dataset.idLayers || '[]');
+
+      // Show layers[0..vi-1], hide the rest
+      layers.forEach((cls, i) => {
+        idRoot.querySelectorAll('.' + cls).forEach(el => {
+          el.style.display = i < vi ? '' : 'none';
+        });
+      });
+
+      // Update step button styles
+      idRoot.querySelectorAll('[data-id-vi]').forEach(btn => {
+        const bvi = parseInt(btn.dataset.idVi, 10);
+        const toneName = btn.dataset.idTone || 'blue';
+        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+        const active = bvi <= vi;
+        btn.style.background  = active ? t.bg  : '#fff';
+        btn.style.color       = active ? t.label : '#64748B';
+        btn.style.fontWeight  = bvi === vi ? '800' : '600';
+        const circle = btn.querySelector('[data-id-circle]');
+        if (circle) {
+          circle.style.background = active ? t.accent : '#E2E8F0';
+          circle.style.color      = active ? '#fff'   : '#94A3B8';
+        }
+      });
+
+      // Show the matching panel, hide others
+      idRoot.querySelectorAll('[data-id-panel]').forEach(panel => {
+        panel.style.display = parseInt(panel.dataset.idPanel, 10) === vi ? '' : 'none';
+      });
     } else if (action === 'tc-channel') {
       // Transmission chain: highlight the chosen channel and reveal its panel
       const key = target.dataset.channelKey;

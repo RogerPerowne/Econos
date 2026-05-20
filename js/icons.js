@@ -5925,15 +5925,13 @@ window.ECONOS_ICONS = {
         <text x="408" y="246" fill="#2563EB" font-weight="800" font-size="12">D</text>
         <line x1="80" y1="242" x2="395" y2="68" stroke="#059669" stroke-width="2.5"/>
         <text x="397" y="66" fill="#059669" font-weight="800" font-size="12">S</text>
-      </g>
-      <g class="idl-1" style="display:none">
         <circle cx="251" cy="147" r="4.5" fill="#334155"/>
         <line x1="55" y1="147" x2="251" y2="147" stroke="#94A3B8" stroke-dasharray="4,3"/>
         <line x1="251" y1="265" x2="251" y2="147" stroke="#94A3B8" stroke-dasharray="4,3"/>
         <text x="49" y="151" text-anchor="end" font-weight="700" font-size="10" fill="#334155">P₀</text>
         <text x="251" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
       </g>
-      <g class="idl-2" style="display:none">
+      <g class="idl-1" style="display:none">
         <!-- S+T parallel shift up by 60px -->
         <line x1="80" y1="182" x2="395" y2="8" stroke="#1d4ed8" stroke-width="2.2" stroke-dasharray="7,4"/>
         <text x="370" y="6" font-size="11" fill="#1d4ed8" font-weight="700">S + T</text>
@@ -5943,7 +5941,7 @@ window.ECONOS_ICONS = {
         <text x="49" y="120" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
         <text x="200" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
       </g>
-      <g class="idl-3" style="display:none">
+      <g class="idl-2" style="display:none">
         <!-- Pp = price producers receive after tax. From S at Qt=200: y=242-0.552*120=175.8 ≈ 176 -->
         <!-- Consumer burden: from y=116 (Pc) to y=147 (P0), width = Qt - 0 = 200-55 = 145 -->
         <rect x="55" y="116" width="145" height="31" fill="#DBEAFE" fill-opacity="0.85"/>
@@ -5979,25 +5977,22 @@ window.ECONOS_ICONS = {
         <text x="408" y="246" fill="#2563EB" font-weight="800" font-size="12">D</text>
         <line x1="110" y1="210" x2="395" y2="80" stroke="#059669" stroke-width="2.5"/>
         <text x="397" y="78" fill="#059669" font-weight="800" font-size="12">S</text>
-      </g>
-      <g class="idl-1" style="display:none">
         <circle cx="250" cy="146" r="4.5" fill="#334155"/>
         <line x1="55" y1="146" x2="250" y2="146" stroke="#94A3B8" stroke-dasharray="4,3"/>
         <line x1="250" y1="265" x2="250" y2="146" stroke="#94A3B8" stroke-dasharray="4,3"/>
         <text x="49" y="150" text-anchor="end" font-weight="700" font-size="10" fill="#334155">P₀</text>
         <text x="250" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
       </g>
-      <g class="idl-2" style="display:none">
+      <g class="idl-1" style="display:none">
         <line x1="110" y1="250" x2="395" y2="120" stroke="#059669" stroke-width="2" stroke-dasharray="7,4" opacity="0.85"/>
         <text x="397" y="120" font-size="11" fill="#059669" font-weight="700">S₁</text>
         <circle cx="287" cy="169" r="4.5" fill="#059669"/>
+        <line x1="55" y1="169" x2="287" y2="169" stroke="#059669" stroke-dasharray="4,3" opacity="0.7"/>
         <line x1="287" y1="265" x2="287" y2="169" stroke="#94A3B8" stroke-dasharray="4,3" opacity="0.6"/>
         <text x="49" y="173" text-anchor="end" font-weight="700" font-size="10" fill="#059669">Pc</text>
         <text x="287" y="279" text-anchor="middle" font-size="10" fill="#059669">Qs</text>
-        <rect x="155" y="228" width="130" height="18" rx="5" fill="#D1FAE5"/>
-        <text x="220" y="241" font-size="10" fill="#059669" font-weight="600" text-anchor="middle">Subsidy → Q rises, P falls</text>
       </g>
-      <g class="idl-3" style="display:none">
+      <g class="idl-2" style="display:none">
         <rect x="55" y="129" width="232" height="17" fill="#D1FAE5" fill-opacity="0.85"/>
         <rect x="55" y="129" width="232" height="17" fill="none" stroke="#059669" stroke-width="1"/>
         <rect x="55" y="146" width="232" height="23" fill="#DBEAFE" fill-opacity="0.85"/>
@@ -6010,6 +6005,85 @@ window.ECONOS_ICONS = {
         <line x1="289" y1="129" x2="295" y2="129" stroke="#374151" stroke-width="1.5"/>
         <line x1="289" y1="169" x2="295" y2="169" stroke="#374151" stroke-width="1.5"/>
         <text x="302" y="152" font-size="9" fill="#374151" text-anchor="start" font-weight="600">Subsidy = £S</text>
+      </g>
+    </svg>
+  `,
+
+  elasticityIncidenceInteractive: `
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
+      <line x1="220" y1="15" x2="220" y2="260" stroke="#e2e8f0" stroke-width="1"/>
+      <g class="idl-base">
+        <line x1="30" y1="250" x2="210" y2="250" stroke="#334155" stroke-width="1.5"/>
+        <line x1="30" y1="250" x2="30" y2="20" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="210,250 201,246 201,254" fill="#334155"/>
+        <polygon points="30,20 26,29 34,29" fill="#334155"/>
+        <text x="8" y="24" font-size="9" fill="#475569" font-weight="700">Price</text>
+        <text x="213" y="254" font-size="9" fill="#475569" font-weight="700">Q</text>
+        <line x1="45" y1="228" x2="205" y2="58" stroke="#059669" stroke-width="2"/>
+        <text x="207" y="56" fill="#059669" font-weight="800" font-size="11">S</text>
+        <line x1="45" y1="183" x2="205" y2="13" stroke="#1d4ed8" stroke-width="1.8" stroke-dasharray="7,4"/>
+        <text x="140" y="11" font-size="9" fill="#1d4ed8" font-weight="700">S+T</text>
+        <line x1="245" y1="250" x2="425" y2="250" stroke="#334155" stroke-width="1.5"/>
+        <line x1="245" y1="250" x2="245" y2="20" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="425,250 416,246 416,254" fill="#334155"/>
+        <polygon points="245,20 241,29 249,29" fill="#334155"/>
+        <text x="223" y="24" font-size="9" fill="#475569" font-weight="700">Price</text>
+        <text x="428" y="254" font-size="9" fill="#475569" font-weight="700">Q</text>
+        <line x1="260" y1="228" x2="420" y2="58" stroke="#059669" stroke-width="2"/>
+        <text x="422" y="56" fill="#059669" font-weight="800" font-size="11">S</text>
+        <line x1="260" y1="183" x2="420" y2="13" stroke="#1d4ed8" stroke-width="1.8" stroke-dasharray="7,4"/>
+        <text x="352" y="11" font-size="9" fill="#1d4ed8" font-weight="700">S+T</text>
+        <text x="111" y="270" font-size="10" font-weight="700" text-anchor="middle" fill="#374151">Inelastic demand</text>
+        <text x="326" y="270" font-size="10" font-weight="700" text-anchor="middle" fill="#374151">Elastic demand</text>
+      </g>
+      <g class="idl-1" style="display:none">
+        <line x1="80" y1="28" x2="120" y2="248" stroke="#2563EB" stroke-width="2"/>
+        <text x="122" y="250" fill="#2563EB" font-weight="800" font-size="11">D</text>
+        <circle cx="105" cy="166" r="3.5" fill="#334155"/>
+        <line x1="30" y1="166" x2="105" y2="166" stroke="#94A3B8" stroke-dasharray="3,2"/>
+        <line x1="105" y1="250" x2="105" y2="166" stroke="#94A3B8" stroke-dasharray="3,2"/>
+        <text x="26" y="170" text-anchor="end" font-weight="700" font-size="9" fill="#334155">P₀</text>
+        <text x="105" y="261" text-anchor="middle" font-size="9" fill="#334155">Q₀</text>
+        <line x1="245" y1="65" x2="425" y2="185" stroke="#2563EB" stroke-width="2"/>
+        <text x="427" y="188" fill="#2563EB" font-weight="800" font-size="11">D</text>
+        <circle cx="349" cy="133" r="3.5" fill="#334155"/>
+        <line x1="245" y1="133" x2="349" y2="133" stroke="#94A3B8" stroke-dasharray="3,2"/>
+        <line x1="349" y1="250" x2="349" y2="133" stroke="#94A3B8" stroke-dasharray="3,2"/>
+        <text x="241" y="137" text-anchor="end" font-weight="700" font-size="9" fill="#334155">P₀</text>
+        <text x="349" y="261" text-anchor="middle" font-size="9" fill="#334155">Q₀</text>
+      </g>
+      <g class="idl-2" style="display:none">
+        <rect x="30" y="127" width="68" height="39" fill="#DBEAFE" fill-opacity="0.9"/>
+        <rect x="30" y="127" width="68" height="39" fill="none" stroke="#2563EB" stroke-width="1"/>
+        <rect x="30" y="166" width="68" height="6" fill="#FEE2E2" fill-opacity="0.9"/>
+        <rect x="30" y="166" width="68" height="6" fill="none" stroke="#dc2626" stroke-width="1"/>
+        <circle cx="98" cy="127" r="3.5" fill="#1d4ed8"/>
+        <line x1="30" y1="127" x2="98" y2="127" stroke="#1d4ed8" stroke-dasharray="3,2" opacity="0.7"/>
+        <line x1="98" y1="250" x2="98" y2="127" stroke="#1d4ed8" stroke-dasharray="3,2" opacity="0.7"/>
+        <text x="26" y="131" text-anchor="end" font-weight="700" font-size="9" fill="#1d4ed8">Pc</text>
+        <text x="98" y="261" text-anchor="middle" font-size="9" fill="#1d4ed8">Qt</text>
+        <line x1="30" y1="172" x2="98" y2="172" stroke="#dc2626" stroke-dasharray="3,2" opacity="0.7"/>
+        <text x="26" y="176" text-anchor="end" font-weight="700" font-size="9" fill="#dc2626">Pp</text>
+        <text x="64" y="148" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">Consumer</text>
+        <text x="64" y="158" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">pays most</text>
+        <rect x="30" y="184" width="120" height="16" rx="4" fill="#DBEAFE"/>
+        <text x="90" y="195" font-size="9" fill="#1d4ed8" font-weight="700" text-anchor="middle">↑ Consumer bears 87%</text>
+        <rect x="245" y="117" width="77" height="16" fill="#DBEAFE" fill-opacity="0.9"/>
+        <rect x="245" y="117" width="77" height="16" fill="none" stroke="#2563EB" stroke-width="1"/>
+        <rect x="245" y="133" width="77" height="29" fill="#FEE2E2" fill-opacity="0.9"/>
+        <rect x="245" y="133" width="77" height="29" fill="none" stroke="#dc2626" stroke-width="1"/>
+        <circle cx="322" cy="117" r="3.5" fill="#1d4ed8"/>
+        <line x1="245" y1="117" x2="322" y2="117" stroke="#1d4ed8" stroke-dasharray="3,2" opacity="0.7"/>
+        <line x1="322" y1="250" x2="322" y2="117" stroke="#1d4ed8" stroke-dasharray="3,2" opacity="0.7"/>
+        <text x="241" y="121" text-anchor="end" font-weight="700" font-size="9" fill="#1d4ed8">Pc</text>
+        <text x="322" y="261" text-anchor="middle" font-size="9" fill="#1d4ed8">Qt</text>
+        <line x1="245" y1="162" x2="322" y2="162" stroke="#dc2626" stroke-dasharray="3,2" opacity="0.7"/>
+        <text x="241" y="166" text-anchor="end" font-weight="700" font-size="9" fill="#dc2626">Pp</text>
+        <text x="283" y="149" font-size="8" fill="#dc2626" text-anchor="middle" font-weight="700">Producer</text>
+        <text x="283" y="159" font-size="8" fill="#dc2626" text-anchor="middle" font-weight="700">pays most</text>
+        <rect x="245" y="184" width="120" height="16" rx="4" fill="#FEE2E2"/>
+        <text x="305" y="195" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">↑ Producer bears 64%</text>
       </g>
     </svg>
   `,

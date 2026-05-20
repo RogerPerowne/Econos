@@ -102,35 +102,33 @@ window.ECONOS_TOPIC = {
         tone: 'blue',
         text: 'A per-unit tax creates a wedge between the price buyers pay and the price sellers receive. It transfers some surplus to the government and destroys some welfare.'
       },
-      diagramPanel: {
-        diagramKey: 'taxSurplusDiagram',
-        steps: [
+      interactiveDiagram: {
+        svgKey: 'taxDiagramInteractive',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
           {
+            label: 'Free market',
             tone: 'blue',
-            icon: '📊',
-            head: 'What changes',
-            body: [
-              'A per-unit tax shifts the supply curve upward by the amount of the tax.',
-              'Buyers pay P<sub>c</sub>; sellers receive P<sub>p</sub>.'
-            ]
+            head: 'The free-market baseline',
+            body: 'D and S intersect at P<sub>e</sub> and Q<sub>e</sub>. Total welfare = CS (above P<sub>e</sub>, below D) + PS (below P<sub>e</sub>, above S). No welfare is lost here.'
           },
           {
+            label: 'Tax shifts supply',
             tone: 'amber',
-            icon: '🧍',
-            head: 'Who loses?',
-            body: ['CS falls.', 'PS falls.']
+            head: 'A per-unit tax shifts supply upward',
+            body: 'The S curve shifts up by the tax amount. Buyers pay P<sub>c</sub> (consumer price); sellers receive P<sub>p</sub> (producer price). Output falls from Q<sub>e</sub> to Q<sub>t</sub>.'
           },
           {
+            label: 'Revenue & surplus',
             tone: 'green',
-            icon: '🏛️',
-            head: 'Who gains?',
-            body: ['Government gains tax revenue.']
+            head: 'CS and PS shrink; government gains revenue',
+            body: 'Consumer surplus (blue triangle) and producer surplus (amber triangle) are both smaller. The green rectangle = government tax revenue = (P<sub>c</sub> − P<sub>p</sub>) × Q<sub>t</sub>.'
           },
           {
+            label: 'Deadweight loss',
             tone: 'rose',
-            icon: '📉',
-            head: 'What is deadweight loss?',
-            body: ['Total surplus falls because mutually beneficial trades no longer happen.']
+            head: 'The DWL triangle: welfare lost forever',
+            body: 'The red triangle = deadweight welfare loss. These are trades that <em>would have occurred</em> at the free-market price but no longer happen. This surplus is destroyed — not transferred to anyone.'
           }
         ]
       },

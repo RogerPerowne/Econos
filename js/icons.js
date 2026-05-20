@@ -5285,9 +5285,9 @@ window.ECONOS_ICONS = {
       <!-- LAYER 3: DWL polygon behind curves, callout on top -->
       <g class="idl-3" style="display:none">
         <polygon points="228,160 228,240 270,200" fill="#FECACA" opacity="0.9"/>
-        <line x1="252" y1="200" x2="286" y2="184" stroke="#B91C1C" stroke-width="1.4"/>
-        <text x="289" y="182" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
-        <text x="289" y="196" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
+        <line x1="252" y1="210" x2="296" y2="236" stroke="#B91C1C" stroke-width="1.4"/>
+        <text x="299" y="234" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
+        <text x="299" y="248" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
       </g>
       <!-- ===== BASE LAYER: axes, D, S, free-market equilibrium ===== -->
       <!-- Axes -->
@@ -5419,9 +5419,9 @@ window.ECONOS_ICONS = {
       <text x="150" y="303" font-size="12" font-weight="700" fill="#C2410C" text-anchor="middle">surplus</text>
 
       <!-- DWL callout -->
-      <line x1="252" y1="200" x2="286" y2="184" stroke="#B91C1C" stroke-width="1.4"/>
-      <text x="289" y="182" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
-      <text x="289" y="196" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
+      <line x1="252" y1="210" x2="296" y2="236" stroke="#B91C1C" stroke-width="1.4"/>
+      <text x="299" y="234" font-size="11" font-weight="700" fill="#B91C1C">Deadweight</text>
+      <text x="299" y="248" font-size="11" font-weight="700" fill="#B91C1C">loss</text>
     </svg>
   `,
   heroElasticity: `

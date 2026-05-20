@@ -5865,35 +5865,48 @@ window.ECONOS_ICONS = {
         <text x="251" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
       </g>
       <g class="idl-1" style="display:none">
-        <line x1="80" y1="182" x2="395" y2="8" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="7,4"/>
-        <text x="235" y="6" font-size="10" fill="#1d4ed8" font-weight="700">S₁ (specific)</text>
-        <line x1="63" y1="182" x2="63" y2="242" stroke="#1d4ed8" stroke-width="1.5"/>
-        <line x1="60" y1="182" x2="66" y2="182" stroke="#1d4ed8" stroke-width="1.5"/>
-        <line x1="60" y1="242" x2="66" y2="242" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="50" y="212" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="700">£T</text>
-        <text x="50" y="222" font-size="8" fill="#1d4ed8" text-anchor="middle">fixed</text>
-        <rect x="140" y="24" width="148" height="18" rx="5" fill="#DBEAFE"/>
-        <text x="214" y="37" font-size="10" fill="#1d4ed8" font-weight="600" text-anchor="middle">Parallel shift — constant gap</text>
-        <circle cx="200" cy="116" r="4.5" fill="#1d4ed8"/>
-        <line x1="55" y1="116" x2="200" y2="116" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.6"/>
-        <line x1="200" y1="265" x2="200" y2="116" stroke="#94A3B8" stroke-dasharray="4,3" opacity="0.6"/>
-        <text x="49" y="120" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
-        <text x="200" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
+        <!-- Specific tax: parallel shift up by constant 40px -->
+        <line x1="80" y1="202" x2="395" y2="28" stroke="#1d4ed8" stroke-width="2.2" stroke-dasharray="7,4"/>
+        <text x="312" y="24" font-size="10" fill="#1d4ed8" font-weight="700">S + T (specific)</text>
+        <!-- Constant gap bracket at left -->
+        <line x1="68" y1="202" x2="68" y2="242" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="64" y1="202" x2="72" y2="202" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="64" y1="242" x2="72" y2="242" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="76" y="226" font-size="9" fill="#1d4ed8" font-weight="700">£T</text>
+        <!-- Constant gap bracket at right -->
+        <line x1="388" y1="28" x2="388" y2="68" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="384" y1="28" x2="392" y2="28" stroke="#1d4ed8" stroke-width="1.5"/>
+        <line x1="384" y1="68" x2="392" y2="68" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="396" y="52" font-size="9" fill="#1d4ed8" font-weight="700">£T</text>
+        <!-- New equilibrium Pc, Qt -->
+        <circle cx="212" cy="123" r="4.5" fill="#1d4ed8"/>
+        <line x1="55" y1="123" x2="212" y2="123" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
+        <line x1="212" y1="265" x2="212" y2="123" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
+        <text x="49" y="127" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
+        <text x="212" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
+        <!-- Annotation -->
+        <rect x="138" y="40" width="166" height="18" rx="5" fill="#DBEAFE" stroke="#1d4ed8" stroke-width="0.6"/>
+        <text x="221" y="53" font-size="10" fill="#1d4ed8" font-weight="700" text-anchor="middle">Parallel shift — constant gap</text>
       </g>
       <g class="idl-2" style="display:none">
-        <line x1="80" y1="212" x2="395" y2="15" stroke="#d97706" stroke-width="2" stroke-dasharray="7,4"/>
-        <text x="303" y="13" font-size="10" fill="#d97706" font-weight="700">S₂ (ad val.)</text>
-        <line x1="113" y1="187" x2="113" y2="220" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="110" y1="187" x2="116" y2="187" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="110" y1="220" x2="116" y2="220" stroke="#d97706" stroke-width="1.5"/>
-        <text x="100" y="204" font-size="8" fill="#d97706" text-anchor="middle" font-weight="600">T% (small)</text>
-        <line x1="380" y1="27" x2="380" y2="78" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="377" y1="27" x2="383" y2="27" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="377" y1="78" x2="383" y2="78" stroke="#d97706" stroke-width="1.5"/>
-        <text x="402" y="55" font-size="8" fill="#d97706" text-anchor="middle" font-weight="600">T% (large)</text>
-        <rect x="220" y="48" width="150" height="18" rx="5" fill="#FEF3C7"/>
-        <text x="295" y="61" font-size="10" fill="#d97706" font-weight="600" text-anchor="middle">Pivot shift — widening gap</text>
-        <circle cx="217" cy="126" r="4.5" fill="#d97706"/>
+        <!-- Ad valorem: pivots from near S at left (small gap) widening to right (large gap) -->
+        <line x1="80" y1="236" x2="395" y2="10" stroke="#d97706" stroke-width="2.2" stroke-dasharray="7,4"/>
+        <text x="298" y="8" font-size="10" fill="#d97706" font-weight="700">S + T% (ad valorem)</text>
+        <!-- Small gap bracket at left (between S and S+T%) -->
+        <line x1="98" y1="231" x2="98" y2="227" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="94" y1="231" x2="102" y2="231" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="94" y1="227" x2="102" y2="227" stroke="#d97706" stroke-width="1.5"/>
+        <text x="116" y="232" font-size="9" fill="#d97706" font-weight="700">small T%</text>
+        <!-- Large gap bracket at right (between S and S+T%) -->
+        <line x1="385" y1="78" x2="385" y2="22" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="381" y1="78" x2="389" y2="78" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="381" y1="22" x2="389" y2="22" stroke="#d97706" stroke-width="1.5"/>
+        <text x="378" y="52" font-size="9" fill="#d97706" font-weight="700" text-anchor="end">large T%</text>
+        <!-- New equilibrium amber -->
+        <circle cx="226" cy="132" r="4.5" fill="#d97706"/>
+        <!-- Annotation -->
+        <rect x="138" y="64" width="166" height="18" rx="5" fill="#FEF3C7" stroke="#d97706" stroke-width="0.6"/>
+        <text x="221" y="77" font-size="10" fill="#d97706" font-weight="700" text-anchor="middle">Pivot shift — widening gap</text>
       </g>
     </svg>
   `,
@@ -5921,26 +5934,33 @@ window.ECONOS_ICONS = {
         <text x="251" y="279" text-anchor="middle" font-size="10" fill="#334155">Q₀</text>
       </g>
       <g class="idl-2" style="display:none">
-        <line x1="80" y1="182" x2="395" y2="8" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="7,4"/>
-        <text x="397" y="8" font-size="11" fill="#1d4ed8" font-weight="700">S+T</text>
+        <!-- S+T parallel shift up by 60px -->
+        <line x1="80" y1="182" x2="395" y2="8" stroke="#1d4ed8" stroke-width="2.2" stroke-dasharray="7,4"/>
+        <text x="370" y="6" font-size="11" fill="#1d4ed8" font-weight="700">S + T</text>
         <circle cx="200" cy="116" r="4.5" fill="#1d4ed8"/>
-        <line x1="200" y1="265" x2="200" y2="116" stroke="#94A3B8" stroke-dasharray="4,3" opacity="0.6"/>
+        <line x1="55" y1="116" x2="200" y2="116" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
+        <line x1="200" y1="265" x2="200" y2="116" stroke="#1d4ed8" stroke-dasharray="4,3" opacity="0.7"/>
         <text x="49" y="120" text-anchor="end" font-weight="700" font-size="10" fill="#1d4ed8">Pc</text>
         <text x="200" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
       </g>
       <g class="idl-3" style="display:none">
+        <!-- Pp = price producers receive after tax. From S at Qt=200: y=242-0.552*120=175.8 ≈ 176 -->
+        <!-- Consumer burden: from y=116 (Pc) to y=147 (P0), width = Qt - 0 = 200-55 = 145 -->
         <rect x="55" y="116" width="145" height="31" fill="#DBEAFE" fill-opacity="0.85"/>
         <rect x="55" y="116" width="145" height="31" fill="none" stroke="#2563EB" stroke-width="1"/>
+        <!-- Producer burden: from y=147 to y=176 -->
         <rect x="55" y="147" width="145" height="29" fill="#FEE2E2" fill-opacity="0.85"/>
         <rect x="55" y="147" width="145" height="29" fill="none" stroke="#dc2626" stroke-width="1"/>
-        <line x1="55" y1="176" x2="200" y2="176" stroke="#dc2626" stroke-dasharray="4,3" opacity="0.7"/>
+        <!-- Pp guides -->
+        <line x1="55" y1="176" x2="200" y2="176" stroke="#dc2626" stroke-dasharray="4,3" opacity="0.75"/>
         <text x="49" y="180" text-anchor="end" font-weight="700" font-size="10" fill="#dc2626">Pp</text>
-        <text x="127" y="135" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="600">Consumer burden</text>
-        <text x="127" y="161" font-size="9" fill="#dc2626" text-anchor="middle" font-weight="600">Producer burden</text>
-        <line x1="205" y1="116" x2="205" y2="176" stroke="#374151" stroke-width="1.5"/>
-        <line x1="202" y1="116" x2="208" y2="116" stroke="#374151" stroke-width="1.5"/>
-        <line x1="202" y1="176" x2="208" y2="176" stroke="#374151" stroke-width="1.5"/>
-        <text x="215" y="150" font-size="9" fill="#374151" text-anchor="start" font-weight="600">Tax = £T</text>
+        <text x="127" y="135" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="700">Consumer burden</text>
+        <text x="127" y="164" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="700">Producer burden</text>
+        <!-- Tax wedge brace on right side of rectangles -->
+        <line x1="208" y1="116" x2="208" y2="176" stroke="#374151" stroke-width="1.5"/>
+        <line x1="204" y1="116" x2="212" y2="116" stroke="#374151" stroke-width="1.5"/>
+        <line x1="204" y1="176" x2="212" y2="176" stroke="#374151" stroke-width="1.5"/>
+        <text x="218" y="150" font-size="10" fill="#374151" text-anchor="start" font-weight="700">Tax = £T</text>
       </g>
     </svg>
   `,

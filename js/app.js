@@ -402,9 +402,13 @@
     // right-column description and bottom analysis panel in unison.
     //   Pattern: interactiveDiagram: { svgKey, layers:[string], label?, emoji?,
     //                                  views:[{label, tone?, icon?, head, body, analysis?}] }
-    if (c.interactiveDiagram && I[c.interactiveDiagram.svgKey]) {
-      const id = c.interactiveDiagram;
-      const uid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
+    const idList = Array.isArray(c.interactiveDiagram)
+      ? c.interactiveDiagram
+      : (c.interactiveDiagram ? [c.interactiveDiagram] : []);
+    idList.forEach((id, idIdx) => {
+      if (!I[id.svgKey]) return;
+      const baseUid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
+      const uid = idList.length > 1 ? `${baseUid}_${idIdx}` : baseUid;
       const layers = id.layers || [];
       const views = id.views || [];
       const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
@@ -469,7 +473,7 @@
           <div style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
           ${analysisItems}
         </div>`;
-    }
+    });
 
     // Paired left/right HTML is built once via a closure so it can be emitted
     // either before the flow (c.pairFirst === true) or in its default slot

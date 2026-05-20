@@ -12024,3 +12024,36 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 .link-btn--primary,
 .quiz-btn--primary { cursor: pointer; }
 
+/* ============================================================
+   Session-meta — goal gets the wide column; time stacks above CTA
+   on the right at >=900px. Mobile keeps the original stack.
+   ============================================================ */
+@media (min-width: 900px) {
+  .session-meta {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: start;
+    column-gap: var(--sp-6);
+    row-gap: var(--sp-4);
+  }
+  .session-meta__item:nth-child(1) {
+    grid-column: 2;
+    grid-row: 1;
+    align-items: center;
+    justify-self: start;
+  }
+  .session-meta__item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-items: flex-start;
+  }
+  .session-meta__cta {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    margin-left: 0;
+    justify-self: stretch;
+  }
+  .session-meta__cta .btn { width: 100%; justify-content: center; }
+}
+

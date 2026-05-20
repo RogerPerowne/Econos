@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Economic systems: the big picture',
-      tip: 'Every economy faces the same three questions: What to produce? How to produce it? For whom? The difference between systems is simply who decides the answers.',
+      tip: { icon: '💡', tone: 'blue', text: 'Every economy faces the same three questions: What to produce? How to produce it? For whom? The difference between systems is simply who decides the answers.' },
       flow: [
         { icon: '⚠️', title: 'Scarcity',            sub: 'Resources are limited. Choices must be made.',                     tone: 'rose'   },
         { icon: '❓', title: 'Three questions',      sub: 'What? How? For whom?',                                            tone: 'amber'  },
@@ -59,8 +59,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_2',
       template: 'paired',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Free Market: Advantages vs Disadvantages',
-      tip: 'The free market\'s strengths and weaknesses are two sides of the same coin: the profit motive drives efficiency but ignores social costs.',
+      tip: { icon: '💡', tone: 'blue', text: 'The free market\'s strengths and weaknesses are two sides of the same coin: the profit motive drives efficiency but ignores social costs.' },
       left: {
         label: 'Advantages of free markets',
         tone: 'green',
@@ -94,8 +95,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_3',
       template: 'framing',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'The Command Economy',
-      tip: 'In a command economy, the state answers all three economic questions. Prices don\'t signal scarcity — directives do.',
+      tip: { icon: '💡', tone: 'blue', text: 'In a command economy, the state answers all three economic questions. Prices don\'t signal scarcity — directives do.' },
       causes: [
         { icon: '🏛️', head: 'State ownership',      body: 'The government owns the means of production — land, factories, capital. No private property in the means of production.' },
         { icon: '📋', head: 'Central planning',      body: 'Government agencies (e.g. Soviet Gosplan) set production targets, input allocation, and price levels across the whole economy.' },
@@ -115,8 +117,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_4',
       template: 'paired',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Command Economy: Advantages vs Disadvantages',
-      tip: 'The command economy\'s theoretical strengths are real — but Hayek\'s knowledge problem means they rarely survived contact with reality.',
+      tip: { icon: '💡', tone: 'blue', text: 'The command economy\'s theoretical strengths are real — but Hayek\'s knowledge problem means they rarely survived contact with reality.' },
       left: {
         label: 'Potential advantages',
         tone: 'purple',
@@ -151,8 +154,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_5',
       template: 'framing',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'The Mixed Economy',
-      tip: 'All real-world economies are mixed. The debate is never "market vs state" — it\'s always "what degree of each, and where?"',
+      tip: { icon: '💡', tone: 'blue', text: 'All real-world economies are mixed. The debate is never "market vs state" — it\'s always "what degree of each, and where?"' },
       body: 'A <strong>mixed economy</strong> combines private market allocation with government intervention. Markets handle most goods efficiently — but they fail in specific, well-defined ways. Government intervenes in those areas while leaving markets to function elsewhere.<br><br>The UK is a textbook mixed economy: private markets for most goods and services; NHS (public provision); state education; regulated utilities; progressive taxation; welfare state.',
       causes: [
         { icon: '🏭', head: 'Externalities',           body: 'Pollution and congestion are not priced by markets — government taxes, caps, or regulates to correct this.', tone: 'rose'   },
@@ -173,8 +177,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_6',
       template: 'mechanisms',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'The Price Mechanism as Allocator',
-      tip: 'Prices perform three simultaneous functions — signal, incentive, ration — all without any central coordination.',
+      tip: { icon: '💡', tone: 'blue', text: 'Prices perform three simultaneous functions — signal, incentive, ration — all without any central coordination.' },
       flow: [
         {
           icon: '📡',
@@ -217,8 +222,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'economic_systems_7',
       template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Transition Economies: Russia vs China',
-      tip: 'The contrast between Russia (shock therapy) and China (gradualism) is one of the most important natural experiments in modern economics.',
+      tip: { icon: '💡', tone: 'blue', text: 'The contrast between Russia (shock therapy) and China (gradualism) is one of the most important natural experiments in modern economics.' },
       verdict: {
         title: 'Two routes from plan to market',
         emoji: '🌍',

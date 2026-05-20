@@ -58,8 +58,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_2',
       template: 'framing',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Opportunity Cost on the PPF',
-      tip: 'The opportunity cost of moving along the PPF is the units of one good sacrificed to produce one more unit of the other — it changes at every point on the curve.',
+      tip: { icon: '💡', tone: 'blue', text: 'The opportunity cost of moving along the PPF is the units of one good sacrificed to produce one more unit of the other — it changes at every point on the curve.' },
       comparison: {
         title: 'Two types of PPF',
         emoji: '📊',
@@ -78,8 +79,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_3',
       template: 'framing',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Why the PPF Is Bowed Out',
-      tip: 'Resources are not equally suited to all uses. Switch the easy ones first — then the increasingly costly ones follow, driving the curve outward.',
+      tip: { icon: '💡', tone: 'blue', text: 'Resources are not equally suited to all uses. Switch the easy ones first — then the increasingly costly ones follow, driving the curve outward.' },
       flow: [
         { icon: '🏭', title: 'All resources in Good A',       sub: 'Economy starts at one end of the PPF — maximum Good A, zero Good B.' },
         { icon: '🔄', title: 'Least suited resources switch',  sub: 'Resources poorly suited to Good A move first — small sacrifice, decent gain in Good B. Low opportunity cost.' },
@@ -100,8 +102,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_4',
       template: 'cause',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Shifts in the PPF',
-      tip: 'Movement <em>along</em> the PPF = reallocation of existing resources. Movement <em>of</em> the PPF = a change in productive capacity.',
+      tip: { icon: '💡', tone: 'blue', text: 'Movement <em>along</em> the PPF = reallocation of existing resources. Movement <em>of</em> the PPF = a change in productive capacity.' },
       causes: [
         { head: 'Movement along PPF₁',               icon: '↔️', body: 'Reallocating existing resources between the two goods — opportunity cost in action. No change in total capacity, just a different mix of the two goods.' },
         { head: 'Short-run growth (toward the PPF)',  icon: '🔄', body: 'Recovery from recession: unemployment falls, spare capacity is reactivated, output rises by <strong>moving from inside the PPF onto the curve</strong>. The frontier itself does not move — this is <strong>demand-side</strong> growth.' },
@@ -116,8 +119,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_5',
       template: 'paired',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Consumer vs Capital Goods Trade-Off',
-      tip: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.',
+      tip: { icon: '💡', tone: 'blue', text: 'Every economy chooses where to sit on the consumer–capital goods PPF. The choice today shapes where the PPF will be tomorrow.' },
       left: {
         label: 'Produce more consumer goods now',
         points: [
@@ -155,8 +159,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_6',
       template: 'mechanisms',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'PPF and Economic Efficiency',
-      tip: 'Productive efficiency = ON the PPF. Allocative efficiency = the <em>right</em> point on the PPF. These are different — and examiners test whether you know it.',
+      tip: { icon: '💡', tone: 'blue', text: 'Productive efficiency = ON the PPF. Allocative efficiency = the <em>right</em> point on the PPF. These are different — and examiners test whether you know it.' },
       causes: [
         { head: 'Productive efficiency',   icon: '✅', body: 'Any point <strong>ON the PPF</strong> — maximum output from available resources. Impossible to produce more of one good without producing less of another.' },
         { head: 'Productive inefficiency', icon: '❌', body: 'Any point <strong>INSIDE the PPF</strong> — output could be increased without sacrificing the other good. Caused by unemployment, idle capital, poor management, or structural barriers.' },
@@ -171,8 +176,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_7',
       template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'PPF Applications: Trade and Development',
-      tip: 'Trade lets both countries consume <em>outside</em> their own PPF — that is the core economic argument for free trade.',
+      tip: { icon: '💡', tone: 'blue', text: 'Trade lets both countries consume <em>outside</em> their own PPF — that is the core economic argument for free trade.' },
       comparison: {
         title: 'Two big applications of the PPF',
         emoji: '🌐',

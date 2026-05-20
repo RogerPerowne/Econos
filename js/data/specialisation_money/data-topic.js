@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Specialisation & money: the big picture',
-      tip: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest.',
+      tip: { icon: '💡', tone: 'blue', text: 'Resources are scarce. People, firms and countries therefore specialise in what they do relatively well, then trade for the rest.' },
       flow: [
         { icon: '🛠️', title: 'Specialisation',     sub: 'Focus on what you do relatively well.' },
         { icon: '📈', title: 'Higher productivity', sub: 'You produce more with the same resources.' },
@@ -58,8 +58,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_2',
       template: 'cause',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Benefits of Specialisation',
-      tip: 'By focusing on what we do best, we raise efficiency and output. Specialisation helps workers, firms and countries achieve more.',
+      tip: { icon: '💡', tone: 'blue', text: 'By focusing on what we do best, we raise efficiency and output. Specialisation helps workers, firms and countries achieve more.' },
       causes: [
         {
           head: 'Higher productivity & efficiency',
@@ -97,8 +98,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_3',
       template: 'paired',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Specialisation: Benefits vs Limitations',
-      tip: 'Specialisation usually raises efficiency but can also create risk.',
+      tip: { icon: '💡', tone: 'blue', text: 'Specialisation usually raises efficiency but can also create risk.' },
       left: {
         label: 'Benefits',
         icon: '⭐',
@@ -134,8 +136,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_4',
       template: 'framing',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'The Problem with Barter',
-      tip: 'Barter means exchanging goods directly without money. Trade is difficult when needs do not match.',
+      tip: { icon: '💡', tone: 'blue', text: 'Barter means exchanging goods directly without money. Trade is difficult when needs do not match.' },
       flow: [
         { icon: '🍎', title: 'Tom has apples',      sub: 'He wants bread. The baker has bread, but doesn\'t want apples.', tone: 'rose', status: 'fail' },
         { icon: '🥖', title: 'The baker has bread', sub: 'She wants milk. The farmer has milk, but doesn\'t want bread.', tone: 'rose', status: 'fail' },
@@ -188,8 +191,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_5',
       template: 'cause',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'The Four Functions of Money',
-      tip: 'Money solves the problems of barter because it performs four key jobs that make exchange possible, practical and efficient.',
+      tip: { icon: '💡', tone: 'blue', text: 'Money solves the problems of barter because it performs four key jobs that make exchange possible, practical and efficient.' },
       causes: [
         {
           head: 'Medium of exchange',
@@ -237,8 +241,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_6',
       template: 'framing',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Characteristics of Good Money',
-      tip: 'Good money must be widely trusted and practical to use. These characteristics make money effective in everyday life.',
+      tip: { icon: '💡', tone: 'blue', text: 'Good money must be widely trusted and practical to use. These characteristics make money effective in everyday life.' },
       causes: [
         { head: 'Durable',             icon: '🛡️', body: 'It lasts a long time and can withstand regular use.' },
         { head: 'Portable',            icon: '👛', body: 'It is easy to carry and convenient to transport.' },
@@ -298,8 +303,9 @@ window.ECONOS_TOPIC = {
     {
       id: 'specialisation_money_7',
       template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Specialisation, Exchange, and Economic Development',
-      tip: 'When people, firms and countries specialise and trade successfully, output and living standards can rise.',
+      tip: { icon: '💡', tone: 'blue', text: 'When people, firms and countries specialise and trade successfully, output and living standards can rise.' },
       flow: [
         { icon: '🛠️', title: 'Specialisation',     sub: 'Focus on what you do relatively well.' },
         { icon: '🤝', title: 'Exchange',           sub: 'Trade to get what you don\'t produce as well.' },

@@ -2,20 +2,27 @@
 
 ## Git workflow
 
-1. **Always develop on `claude/development`** — never create new feature branches.
-2. After completing any task, **create a PR from `claude/development` into `main`** and **merge it** (squash merge).
-3. After merging, **pull `main` locally and reset `claude/development` to match main**, so the branch stays up to date.
+**Default for every push.** Every time you push work to the active development
+branch (whether `claude/development` or a session-specific `claude/...` branch),
+follow the full flow automatically — do not stop at the push and wait for the
+user to ask for a PR. The user has standing authorisation for this sequence.
 
-### Standard sequence after finishing work
+1. Develop on the session's designated branch (the one specified in the system
+   prompt — typically `claude/development`, sometimes a session-specific
+   `claude/...` branch). Never create extra feature branches.
+2. **Push → PR → squash-merge → reset → force-push** as a single unit:
 
 ```bash
-git push -u origin claude/development
-# create PR via GitHub MCP → merge (squash) into main
+git push -u origin <dev-branch>
+# open PR via GitHub MCP (head=<dev-branch>, base=main) → squash-merge
 git fetch origin main
-git checkout claude/development
-git reset --hard origin/main
-git push -u origin claude/development --force
+git reset --hard origin/main           # while still on <dev-branch>
+git push -u origin <dev-branch> --force
 ```
+
+3. Do this once per logical task — not after every individual commit. If
+   several commits land before the PR is opened, that's fine; the squash
+   collapses them.
 
 ## Repository
 

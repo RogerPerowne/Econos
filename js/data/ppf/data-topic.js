@@ -58,18 +58,44 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_2',
       stepLabel: 'Learn: Step 2 of 6',
-      diagramKey: 'ppfOpportunityCost',
       title: 'Opportunity Cost and the Bowed-Out Shape',
       tip: { icon: '💡', tone: 'blue', text: 'Opportunity cost changes at every point on the curve — and the bowed-out shape is what makes it rise as you specialise in one good.' },
-      comparison: { title: 'Two types of PPF', emoji: '📊', left: { tone: 'blue', icon: '📏', label: 'Straight-line PPF', caption: 'Constant opportunity cost — resources are perfectly substitutable. The trade-off ratio stays fixed regardless of output mix.' }, right: { tone: 'amber', icon: '〰️', label: 'Bowed-out PPF', caption: 'Increasing opportunity cost — resources are specialised. Switching the easy ones first keeps cost low; the better-suited ones follow at progressively higher cost.' } },
-      flow: [
-        { icon: '🏭', title: 'All resources in Good A',       sub: 'Economy starts at one end of the PPF — maximum Good A, zero Good B.' },
-        { icon: '🔄', title: 'Least suited resources switch',  sub: 'Resources poorly suited to Good A move first — small sacrifice, decent gain in Good B. Low opportunity cost.' },
-        { icon: '⬆️', title: 'Better-suited resources follow', sub: 'Now you must transfer resources well-suited to Good A. Each extra unit of Good B costs progressively more Good A.' },
-        { icon: '〰️', title: 'Result: the curve bows out',    sub: 'Rising sacrifice per extra unit = a curve that bends away from the origin. Only a straight line if resources are identical.' }
-      ],
-      flowTitle: 'Why opportunity cost rises as you specialise',
-      flowEmoji: '📈',
+      interactiveDiagram: {
+        svgKey: 'ppfBowedOutInteractive',
+        label: 'See opportunity cost rise as you move along the curve',
+        emoji: '📈',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'The PPF',
+            tone: 'blue',
+            head: 'The production possibility frontier',
+            body: 'This bowed-out curve reflects a key property of real economies: resources are not equally suited to producing both goods. Move along the curve from left to right and watch how the trade-off changes at each point.',
+            analysis: 'The shape encodes information about resource adaptability. A straight-line PPF would mean perfect homogeneity — every unit of labour, land, and capital equally suited to either good. Real economies have specialists: surgeons, farmers, software engineers, factories. The bowed-out (concave) curve is the visual signature of that specialisation.'
+          },
+          {
+            label: 'Low opportunity cost',
+            tone: 'green',
+            head: 'Pa — small sacrifice, decent gain',
+            body: 'A 30-unit gain in Good B costs only 11 units of Good A. The first resources to transfer are those least suited to Good A — moving them costs little because they were barely productive there anyway.',
+            analysis: 'Early specialisation is cheap. The economy deploys its most adaptable resources first — those with the weakest attachment to Good A. They were only marginally productive there; moving them to Good B yields a large gain at a small sacrifice. The opportunity cost ratio (vertical leg ÷ horizontal leg of the triangle) is small.'
+          },
+          {
+            label: 'Rising opportunity cost',
+            tone: 'amber',
+            head: 'Pb — same gain, bigger sacrifice',
+            body: 'The same gain in Good B now costs roughly twice as much Good A. The resources switching now were better suited to Good A — their transfer is proportionally costlier. Compare the two triangles: equal width, but Pb\'s is visibly taller.',
+            analysis: 'The economy has used up its easy transfers. Remaining resources in Good A are progressively more specialised — more productive there and less adaptable to Good B. Transferring them yields a smaller gain relative to the sacrifice. The ratio grows. This is increasing opportunity cost made visible: the triangle taller despite the same horizontal step.'
+          },
+          {
+            label: 'High opportunity cost',
+            tone: 'rose',
+            head: 'Pc — steep sacrifice for modest gain',
+            body: 'A smaller gain in Good B now costs far more Good A. All three triangles share similar widths, but the vertical sacrifices are 11, 24, and 40 units respectively. The law of increasing opportunity cost, graphed.',
+            analysis: 'The most specialised resources — those most highly adapted to Good A — are the last to transfer. Their opportunity cost is enormous. The PPF steepens sharply near the axis. A straight-line PPF only arises if resources are perfectly homogeneous: equally suited to both goods at every point on the curve. Draw a straight line only when a question explicitly specifies constant opportunity cost — otherwise the bowed-out curve is more realistic and earns the mark.'
+          }
+        ]
+      },
       keyTerms: [
         { term: 'Opportunity cost on PPF', def: 'The quantity of one good given up to produce one more unit of the other — equal to the gradient of the PPF at that point.' },
         { term: 'Constant opportunity cost', def: 'Straight-line PPF: resources are perfectly substitutable; the trade-off ratio is fixed regardless of output mix.' },
@@ -183,21 +209,43 @@ window.ECONOS_TOPIC = {
     {
       id: 'ppf_6',
       stepLabel: 'Learn: Step 6 of 6',
-      diagramKey: 'ppfTrade',
       title: 'PPF Applications: Trade and Development',
       tip: { icon: '💡', tone: 'blue', text: 'Trade lets both countries consume <em>outside</em> their own PPF — that is the core economic argument for free trade.' },
-      comparison: {
-        title: 'Two big applications of the PPF',
+      interactiveDiagram: {
+        svgKey: 'ppfTradeInteractive',
+        label: 'Follow the logic of gains from trade',
         emoji: '🌐',
-        left:  { tone: 'blue',  icon: '🤝', label: 'International trade',  caption: 'Specialise at your comparative-advantage good — where your opportunity cost is lowest. Trade then unlocks combinations neither country could reach alone.' },
-        right: { tone: 'green', icon: '🌱', label: 'Economic development', caption: 'Development = shifting the PPF outward. The binding constraint is resources and productivity, not preference.' }
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'The production frontier',
+            tone: 'blue',
+            head: "A closed economy's consumption ceiling",
+            body: 'Without trade, a country can only consume what it produces. Any consumption point must lie on or inside its own PPF — the frontier is a hard limit set by its resources and technology alone.',
+            analysis: "In autarky, the PPF is simultaneously the production frontier and the consumption possibility set. No point beyond it is achievable, regardless of preferences or willingness to pay. This constraint can only be relaxed in two ways: by shifting the frontier outward (economic growth) or by separating production from consumption through trade."
+          },
+          {
+            label: 'Specialise at P',
+            tone: 'green',
+            head: 'Produce at P — comparative advantage',
+            body: "The economy concentrates production at P, the point where its opportunity cost is lowest. This is comparative advantage: produce what you give up least, not necessarily what you're best at in absolute terms.",
+            analysis: "Comparative advantage doesn't require absolute superiority. Even if a country is less efficient at producing both goods, it still gains from specialising in whichever good it sacrifices less to produce. The gains come from differences in opportunity costs between countries, not absolute productivity gaps. P is the optimal production point given those relative costs."
+          },
+          {
+            label: 'Consume at C',
+            tone: 'amber',
+            head: 'C is outside the PPF — only possible with trade',
+            body: 'By exporting its surplus from specialising at P and importing the other good, the economy reaches consumption point C — a combination it could never produce alone. C lies outside its own PPF.',
+            analysis: "This is the core welfare case for free trade: trade separates the production decision (where to produce on the PPF) from the consumption decision (where to end up). Both partners reach points beyond their individual frontiers, consuming more of both goods than autarky allows. For A*: draw C clearly outside the PPF, label it 'consumption point (with trade)', and note that both trading partners benefit — this single diagram captures the entire gains-from-trade argument."
+          }
+        ]
       },
       keyTerms: [
-        { term: 'Specialisation', def: 'Concentrating production on goods where a country has comparative advantage — maximises combined output.' },
+        { term: 'Comparative advantage', def: 'The ability to produce a good at a lower opportunity cost than a trading partner — the basis for mutually beneficial specialisation even when one country has absolute advantage in all goods.' },
         { term: 'Gains from trade', def: 'The welfare improvement from countries specialising in their comparative-advantage goods and exchanging output — total production rises and both partners can consume more.' },
-        { term: 'Development constraint', def: 'Poor countries face inward PPFs due to capital scarcity, low productivity, and weak institutions — development policy shifts the frontier outward.' }
+        { term: 'Development constraint', def: 'Poor countries face inward PPFs due to capital scarcity, low productivity, and weak institutions — development policy shifts the frontier outward through investment, technology transfer, and reform.' }
       ],
-      examEdge: 'Trade allows consumption outside the PPF — this is why free trade is welfare-improving even for a country with absolute advantage in all goods. Illustrating this with a PPF diagram, showing consumption points beyond the frontier after trade, is an A*-level response.',
+      examEdge: 'Illustrating C beyond the PPF in your exam diagram is an A*-level response — it shows trade separating production from consumption decisions. The development application uses the same logic in reverse: poor countries have inward PPFs due to capital scarcity and low productivity; outward shifts require investment, technology transfer, or institutional reform — not just trade liberalisation.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

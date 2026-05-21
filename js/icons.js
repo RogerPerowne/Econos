@@ -10962,38 +10962,44 @@ window.ECONOS_ICONS = {
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
       <text x="220" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#0B1426">Two systems thinking — one head</text>
-      <line x1="220" y1="40" x2="220" y2="252" stroke="#E2E8F0" stroke-width="1.5"/>
 
-      <rect x="20" y="40" width="190" height="212" rx="10" fill="#FEF3C7" opacity="0.55" stroke="#FDE68A"/>
-      <text x="115" y="60" font-size="12" font-weight="800" text-anchor="middle" fill="#92400E">System 1</text>
-      <text x="115" y="74" font-size="9.5" text-anchor="middle" fill="#92400E" font-weight="600">fast · automatic · biased</text>
+      <rect x="20" y="30" width="190" height="224" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="115" y="52" font-size="13" font-weight="900" text-anchor="middle" fill="#92400E">System 1</text>
+      <text x="115" y="66" font-size="9.5" text-anchor="middle" fill="#92400E" font-weight="600">fast · automatic · biased</text>
+      <line x1="35" y1="73" x2="195" y2="73" stroke="#FDE68A" stroke-width="1"/>
       <g font-size="10.5" fill="#78350F">
-        <text x="32" y="100">⚡ Recognising a friend's face</text>
-        <text x="32" y="120">⚡ Driving on autopilot</text>
-        <text x="32" y="140">⚡ Sensing danger</text>
-        <text x="32" y="160">⚡ Reading these words</text>
-        <text x="32" y="180">⚡ Picking the usual coffee</text>
+        <text x="32" y="92">⚡ Recognising a friend's face</text>
+        <text x="32" y="110">⚡ Driving on autopilot</text>
+        <text x="32" y="128">⚡ Sensing danger</text>
+        <text x="32" y="146">⚡ Reading these words</text>
+        <text x="32" y="164">⚡ Picking the usual coffee</text>
       </g>
-      <rect x="35" y="200" width="160" height="38" rx="6" fill="#FDE68A"/>
-      <text x="115" y="216" font-size="10" font-weight="800" text-anchor="middle" fill="#92400E">Handles ~95% of</text>
-      <text x="115" y="230" font-size="10" font-weight="800" text-anchor="middle" fill="#92400E">your daily decisions</text>
+      <rect x="28" y="180" width="174" height="60" rx="8" fill="#FDE68A"/>
+      <text x="115" y="200" font-size="22" font-weight="900" text-anchor="middle" fill="#92400E">~95%</text>
+      <text x="115" y="216" font-size="9.5" font-weight="700" text-anchor="middle" fill="#92400E">of all your daily decisions</text>
+      <text x="115" y="230" font-size="9" text-anchor="middle" fill="#78350F">effortless, instant, habitual</text>
 
-      <rect x="230" y="40" width="190" height="212" rx="10" fill="#DBEAFE" opacity="0.55" stroke="#BFDBFE"/>
-      <text x="325" y="60" font-size="12" font-weight="800" text-anchor="middle" fill="#1E40AF">System 2</text>
-      <text x="325" y="74" font-size="9.5" text-anchor="middle" fill="#1E40AF" font-weight="600">slow · deliberate · effortful</text>
+      <rect x="230" y="30" width="190" height="224" rx="10" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1.5"/>
+      <text x="325" y="52" font-size="13" font-weight="900" text-anchor="middle" fill="#1E40AF">System 2</text>
+      <text x="325" y="66" font-size="9.5" text-anchor="middle" fill="#1E40AF" font-weight="600">slow · deliberate · effortful</text>
+      <line x1="245" y1="73" x2="405" y2="73" stroke="#BFDBFE" stroke-width="1"/>
       <g font-size="10.5" fill="#1E3A8A">
-        <text x="244" y="100">🧮 27 × 43 in your head</text>
-        <text x="244" y="120">📋 Filling in a tax form</text>
-        <text x="244" y="140">🏠 Comparing mortgages</text>
-        <text x="244" y="160">🎓 Learning to drive</text>
-        <text x="244" y="180">📄 Reading a dense contract</text>
+        <text x="244" y="92">🧮 27 × 43 in your head</text>
+        <text x="244" y="110">📋 Filling in a tax form</text>
+        <text x="244" y="128">🏠 Comparing mortgages</text>
+        <text x="244" y="146">🎓 Learning to drive</text>
+        <text x="244" y="164">📄 Reading a dense contract</text>
       </g>
-      <rect x="245" y="200" width="160" height="38" rx="6" fill="#BFDBFE"/>
-      <text x="325" y="216" font-size="10" font-weight="800" text-anchor="middle" fill="#1E40AF">Engaged only when</text>
-      <text x="325" y="230" font-size="10" font-weight="800" text-anchor="middle" fill="#1E40AF">you force it to be</text>
+      <rect x="238" y="180" width="174" height="60" rx="8" fill="#BFDBFE"/>
+      <text x="325" y="200" font-size="22" font-weight="900" text-anchor="middle" fill="#1E40AF">~5%</text>
+      <text x="325" y="216" font-size="9.5" font-weight="700" text-anchor="middle" fill="#1E40AF">engaged only when forced</text>
+      <text x="325" y="230" font-size="9" text-anchor="middle" fill="#1E3A8A">conscious, slow, deliberate</text>
 
-      <rect x="20" y="262" width="400" height="26" rx="8" fill="#F3E8FF" stroke="#DDD6FE"/>
-      <text x="220" y="279" font-size="10.5" font-weight="700" text-anchor="middle" fill="#7C3AED">Biases happen when System 1 answers a question System 2 should have answered.</text>
+      <circle cx="220" cy="142" r="16" fill="#0B1426"/>
+      <text x="220" y="147" font-size="10" font-weight="900" text-anchor="middle" fill="#fff">VS</text>
+
+      <rect x="20" y="264" width="400" height="26" rx="8" fill="#F3E8FF" stroke="#DDD6FE"/>
+      <text x="220" y="281" font-size="10.5" font-weight="700" text-anchor="middle" fill="#7C3AED">Biases happen when System 1 answers a question System 2 should have handled.</text>
     </svg>
   `,
 
@@ -11002,19 +11008,21 @@ window.ECONOS_ICONS = {
       <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
       <g class="idl-base"></g>
 
-      <g class="idl-1" style="display:none">
-        <text x="220" y="34" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Anchoring — the first number sticks</text>
-        <text x="160" y="130" font-size="36" font-weight="900" text-anchor="middle" fill="#94A3B8" text-decoration="line-through">£100</text>
-        <text x="160" y="152" font-size="11" text-anchor="middle" fill="#64748B" font-weight="600">"Original price"</text>
-        <text x="220" y="135" font-size="26" text-anchor="middle" fill="#94A3B8">→</text>
-        <text x="290" y="130" font-size="36" font-weight="900" text-anchor="middle" fill="#dc2626">£60</text>
-        <text x="290" y="152" font-size="11" text-anchor="middle" fill="#dc2626" font-weight="600">"Sale!"</text>
-        <text x="220" y="188" font-size="11.5" text-anchor="middle" fill="#475569">Feels like a generous 40% discount.</text>
-        <text x="220" y="206" font-size="11.5" text-anchor="middle" fill="#475569">But was the item ever worth £100?</text>
-        <rect x="30" y="226" width="380" height="54" rx="8" fill="#DBEAFE" stroke="#BFDBFE"/>
-        <text x="220" y="246" font-size="10.5" font-weight="800" text-anchor="middle" fill="#1d4ed8">UK examples of anchoring in action</text>
-        <text x="220" y="263" font-size="10" text-anchor="middle" fill="#1e3a8a">Estate agents list high · Charities suggest "£20 / £50 / £100"</text>
-        <text x="220" y="276" font-size="10" text-anchor="middle" fill="#1e3a8a">ASA polices fake "was £100" prices</text>
+      <g class="idl-1">
+        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Anchoring — the first number sticks</text>
+        <rect x="30" y="42" width="380" height="74" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
+        <text x="135" y="72" font-size="42" font-weight="900" text-anchor="middle" fill="#94A3B8" text-decoration="line-through">£100</text>
+        <text x="135" y="94" font-size="10" text-anchor="middle" fill="#94A3B8" font-weight="600">"Original price"</text>
+        <text x="220" y="84" font-size="30" text-anchor="middle" fill="#CBD5E1">→</text>
+        <text x="310" y="72" font-size="42" font-weight="900" text-anchor="middle" fill="#dc2626">£60</text>
+        <text x="310" y="94" font-size="10" text-anchor="middle" fill="#dc2626" font-weight="600">"40% off — today only!"</text>
+        <text x="220" y="140" font-size="12" font-weight="800" text-anchor="middle" fill="#334155">Your brain treats £100 as the reference point.</text>
+        <text x="220" y="158" font-size="11.5" text-anchor="middle" fill="#475569">It feels like a bargain — but was the item ever worth £100?</text>
+        <rect x="30" y="176" width="380" height="50" rx="8" fill="#DBEAFE" stroke="#BFDBFE"/>
+        <text x="220" y="197" font-size="10.5" font-weight="800" text-anchor="middle" fill="#1d4ed8">Anchoring in the real UK economy</text>
+        <text x="220" y="213" font-size="10" text-anchor="middle" fill="#1e3a8a">Estate agents list high to anchor negotiations · Charities prompt "£20 / £50 / £100"</text>
+        <text x="220" y="241" font-size="11.5" font-weight="800" text-anchor="middle" fill="#7c3aed">The anchor shapes every judgement that follows.</text>
+        <text x="220" y="260" font-size="10" text-anchor="middle" fill="#475569">ASA now polices fake "was £X" prices precisely because anchors work so powerfully.</text>
       </g>
 
       <g class="idl-2" style="display:none">
@@ -11070,37 +11078,28 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-4" style="display:none">
-        <text x="220" y="34" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Habit — defaults win by inertia</text>
-        <g font-size="26">
-          <text x="50" y="105" text-anchor="middle">🏠</text>
-          <text x="90" y="105" text-anchor="middle">🏠</text>
-          <text x="130" y="105" text-anchor="middle">🏠</text>
-          <text x="170" y="105" text-anchor="middle">🏠</text>
-          <text x="210" y="105" text-anchor="middle">🏠</text>
-          <text x="250" y="105" text-anchor="middle">🏠</text>
-          <text x="290" y="105" text-anchor="middle" opacity="0.32">🏠</text>
-          <text x="330" y="105" text-anchor="middle" opacity="0.32">🏠</text>
-          <text x="370" y="105" text-anchor="middle" opacity="0.32">🏠</text>
-          <text x="410" y="105" text-anchor="middle" opacity="0.32">🏠</text>
-        </g>
-        <g>
-          <circle cx="50" cy="125" r="4.5" fill="#7c3aed"/>
-          <circle cx="90" cy="125" r="4.5" fill="#7c3aed"/>
-          <circle cx="130" cy="125" r="4.5" fill="#7c3aed"/>
-          <circle cx="170" cy="125" r="4.5" fill="#7c3aed"/>
-          <circle cx="210" cy="125" r="4.5" fill="#7c3aed"/>
-          <circle cx="250" cy="125" r="4.5" fill="#7c3aed"/>
-          <circle cx="290" cy="125" r="4" fill="#CBD5E1"/>
-          <circle cx="330" cy="125" r="4" fill="#CBD5E1"/>
-          <circle cx="370" cy="125" r="4" fill="#CBD5E1"/>
-          <circle cx="410" cy="125" r="4" fill="#CBD5E1"/>
-        </g>
-        <text x="220" y="160" font-size="11.5" text-anchor="middle" fill="#475569" font-weight="600">~6 in 10 UK households have <tspan font-weight="800">never</tspan> switched supplier</text>
-        <rect x="40" y="180" width="360" height="52" rx="8" fill="#F3E8FF" stroke="#DDD6FE"/>
-        <text x="220" y="201" font-size="12" font-weight="900" text-anchor="middle" fill="#7C3AED">Average annual loss: £200+</text>
-        <text x="220" y="220" font-size="10" text-anchor="middle" fill="#5b21b6">Same energy, identical service — just inertia.</text>
-        <text x="220" y="266" font-size="9.5" text-anchor="middle" fill="#64748B" font-style="italic">Why Ofgem keeps regulating: a competitive market can't punish bad</text>
-        <text x="220" y="280" font-size="9.5" text-anchor="middle" fill="#64748B" font-style="italic">suppliers if customers never compare and switch.</text>
+        <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Habit — defaults win by inertia</text>
+        <circle cx="120" cy="155" r="65" fill="none" stroke="#E2E8F0" stroke-width="22"/>
+        <circle cx="120" cy="155" r="65" fill="none" stroke="#7c3aed" stroke-width="22"
+          stroke-dasharray="245 160" stroke-dashoffset="0" transform="rotate(-90 120 155)"
+          stroke-linecap="round"/>
+        <text x="120" y="146" font-size="28" font-weight="900" text-anchor="middle" fill="#7c3aed">60%</text>
+        <text x="120" y="163" font-size="10" font-weight="700" text-anchor="middle" fill="#475569">never switched</text>
+        <text x="120" y="178" font-size="9.5" text-anchor="middle" fill="#94A3B8">energy supplier</text>
+        <text x="120" y="235" font-size="9.5" font-style="italic" text-anchor="middle" fill="#64748B">UK households</text>
+        <rect x="220" y="50" width="200" height="58" rx="8" fill="#F3E8FF" stroke="#DDD6FE"/>
+        <text x="320" y="71" font-size="11" font-weight="900" text-anchor="middle" fill="#7C3AED">£200+ / year</text>
+        <text x="320" y="87" font-size="9.5" text-anchor="middle" fill="#5b21b6">average overpayment</text>
+        <text x="320" y="100" font-size="9" text-anchor="middle" fill="#5b21b6">same energy · same service · just inertia</text>
+        <rect x="220" y="120" width="200" height="50" rx="8" fill="#FEF3C7" stroke="#FDE68A"/>
+        <text x="320" y="139" font-size="10.5" font-weight="800" text-anchor="middle" fill="#92400E">Why switching feels hard:</text>
+        <text x="320" y="156" font-size="9.5" text-anchor="middle" fill="#78350F">Status quo bias + loss aversion</text>
+        <text x="320" y="169" font-size="9" text-anchor="middle" fill="#78350F">"What if the new one is worse?"</text>
+        <rect x="220" y="182" width="200" height="50" rx="8" fill="#fff" stroke="#E2E8F0"/>
+        <text x="320" y="200" font-size="10" font-weight="800" text-anchor="middle" fill="#334155">Policy response:</text>
+        <text x="320" y="217" font-size="9.5" text-anchor="middle" fill="#475569">Ofgem default tariff price cap —</text>
+        <text x="320" y="230" font-size="9.5" text-anchor="middle" fill="#475569">protects those who never switch</text>
+        <text x="220" y="266" font-size="10" font-weight="800" text-anchor="middle" fill="#7c3aed">A competitive market fails if habit stops consumers from comparing.</text>
       </g>
     </svg>
   `,
@@ -11110,40 +11109,48 @@ window.ECONOS_ICONS = {
       <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
       <g class="idl-base">
         <text x="220" y="24" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two pairs of choices — same one-week gap</text>
-        <text x="220" y="42" font-size="10.5" text-anchor="middle" fill="#64748B">A rational agent should answer both pairs the same way.</text>
+        <text x="220" y="42" font-size="10.5" text-anchor="middle" fill="#64748B">A rational person should give the same answer to both. Do they?</text>
+        <line x1="40" y1="110" x2="400" y2="110" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="40" y1="200" x2="400" y2="200" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="22" y="58" width="60" height="148" rx="6" fill="#fff" stroke="#E2E8F0"/>
+        <text x="52" y="130" font-size="10" font-weight="800" text-anchor="middle" fill="#94A3B8" transform="rotate(-90 52 130)">A</text>
+        <text x="52" y="150" font-size="10" font-weight="800" text-anchor="middle" fill="#94A3B8" transform="rotate(-90 52 150)">B</text>
       </g>
 
       <g class="idl-1" style="display:none">
-        <text x="30" y="80" font-size="11" font-weight="800" fill="#1d4ed8">Choice A</text>
-        <rect x="80" y="62" width="115" height="50" rx="8" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
-        <text x="137" y="83" font-size="15" font-weight="900" text-anchor="middle" fill="#1d4ed8">£100</text>
-        <text x="137" y="101" font-size="9.5" text-anchor="middle" fill="#1d4ed8" font-weight="700">today</text>
-        <text x="210" y="92" font-size="10" font-weight="700" text-anchor="middle" fill="#94A3B8">OR</text>
-        <rect x="225" y="62" width="115" height="50" rx="8" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-        <text x="282" y="83" font-size="15" font-weight="900" text-anchor="middle" fill="#94A3B8">£110</text>
-        <text x="282" y="101" font-size="9.5" text-anchor="middle" fill="#94A3B8" font-weight="700">in 1 week</text>
-        <rect x="92" y="118" width="90" height="16" rx="4" fill="#2563EB"/>
-        <text x="137" y="130" font-size="9" font-weight="800" text-anchor="middle" fill="#fff">✓ Most pick this</text>
+        <rect x="22" y="58" width="60" height="46" rx="6" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+        <text x="52" y="79" font-size="12" font-weight="900" text-anchor="middle" fill="#1d4ed8">A</text>
+        <text x="52" y="96" font-size="8.5" text-anchor="middle" fill="#1d4ed8" font-weight="600">now</text>
+        <rect x="95" y="62" width="130" height="54" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="160" y="85" font-size="20" font-weight="900" text-anchor="middle" fill="#1d4ed8">£100</text>
+        <text x="160" y="104" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">today</text>
+        <text x="240" y="93" font-size="11" font-weight="700" text-anchor="middle" fill="#94A3B8">OR</text>
+        <rect x="260" y="62" width="130" height="54" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="325" y="85" font-size="20" font-weight="900" text-anchor="middle" fill="#94A3B8">£110</text>
+        <text x="325" y="104" font-size="10" font-weight="700" text-anchor="middle" fill="#94A3B8">in 1 week</text>
+        <rect x="100" y="122" width="120" height="18" rx="6" fill="#2563EB"/>
+        <text x="160" y="135" font-size="9.5" font-weight="800" text-anchor="middle" fill="#fff">✓ Most choose £100 today</text>
       </g>
 
       <g class="idl-2" style="display:none">
-        <text x="30" y="166" font-size="11" font-weight="800" fill="#d97706">Choice B</text>
-        <rect x="80" y="148" width="115" height="50" rx="8" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-        <text x="137" y="169" font-size="15" font-weight="900" text-anchor="middle" fill="#94A3B8">£100</text>
-        <text x="137" y="187" font-size="9.5" text-anchor="middle" fill="#94A3B8" font-weight="700">in 52 weeks</text>
-        <text x="210" y="178" font-size="10" font-weight="700" text-anchor="middle" fill="#94A3B8">OR</text>
-        <rect x="225" y="148" width="115" height="50" rx="8" fill="#FEF3C7" stroke="#d97706" stroke-width="2.5"/>
-        <text x="282" y="169" font-size="15" font-weight="900" text-anchor="middle" fill="#d97706">£110</text>
-        <text x="282" y="187" font-size="9.5" text-anchor="middle" fill="#d97706" font-weight="700">in 53 weeks</text>
-        <rect x="237" y="204" width="90" height="16" rx="4" fill="#d97706"/>
-        <text x="282" y="216" font-size="9" font-weight="800" text-anchor="middle" fill="#fff">✓ Most pick this</text>
+        <rect x="22" y="150" width="60" height="46" rx="6" fill="#FEF3C7" stroke="#d97706" stroke-width="1.5"/>
+        <text x="52" y="170" font-size="12" font-weight="900" text-anchor="middle" fill="#d97706">B</text>
+        <text x="52" y="187" font-size="8.5" text-anchor="middle" fill="#d97706" font-weight="600">future</text>
+        <rect x="95" y="152" width="130" height="54" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="160" y="176" font-size="20" font-weight="900" text-anchor="middle" fill="#94A3B8">£100</text>
+        <text x="160" y="194" font-size="10" font-weight="700" text-anchor="middle" fill="#94A3B8">in 52 weeks</text>
+        <text x="240" y="183" font-size="11" font-weight="700" text-anchor="middle" fill="#94A3B8">OR</text>
+        <rect x="260" y="152" width="130" height="54" rx="10" fill="#FEF3C7" stroke="#d97706" stroke-width="2.5"/>
+        <text x="325" y="176" font-size="20" font-weight="900" text-anchor="middle" fill="#d97706">£110</text>
+        <text x="325" y="194" font-size="10" font-weight="700" text-anchor="middle" fill="#d97706">in 53 weeks</text>
+        <rect x="270" y="212" width="110" height="18" rx="6" fill="#d97706"/>
+        <text x="325" y="225" font-size="9.5" font-weight="800" text-anchor="middle" fill="#fff">✓ Most choose £110 later</text>
       </g>
 
       <g class="idl-3" style="display:none">
-        <rect x="20" y="230" width="400" height="60" rx="10" fill="#F3E8FF" stroke="#7c3aed" stroke-width="1.5"/>
-        <text x="220" y="251" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Same one-week gap. Same £10 reward. Different decision.</text>
-        <text x="220" y="270" font-size="10.5" text-anchor="middle" fill="#5b21b6">That's <tspan font-weight="800">present bias</tspan> — and it is why people under-save for retirement.</text>
-        <text x="220" y="284" font-size="9.5" text-anchor="middle" fill="#7c3aed" font-style="italic">Pre-2012: ~55% of UK private-sector workers had a pension. Card 4 shows how this was fixed.</text>
+        <rect x="20" y="240" width="400" height="50" rx="10" fill="#F3E8FF" stroke="#7c3aed" stroke-width="2"/>
+        <text x="220" y="261" font-size="11.5" font-weight="900" text-anchor="middle" fill="#7c3aed">Same one-week gap. Same £10. But different decisions.</text>
+        <text x="220" y="278" font-size="10.5" text-anchor="middle" fill="#5b21b6">That's <tspan font-weight="800">present bias</tspan> — the "now" feels worth far more than the future.</text>
       </g>
     </svg>
   `,
@@ -11153,7 +11160,7 @@ window.ECONOS_ICONS = {
       <rect width="440" height="300" fill="#F8FAFC" rx="10"/>
       <g class="idl-base"></g>
 
-      <g class="idl-1" style="display:none">
+      <g class="idl-1">
         <text x="220" y="24" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Pension auto-enrolment (UK, 2012–2018)</text>
         <text x="220" y="42" font-size="10.5" text-anchor="middle" fill="#64748B">Same wages. Same tax relief. Only the default changed.</text>
         <line x1="65" y1="65" x2="65" y2="245" stroke="#334155" stroke-width="1.5"/>

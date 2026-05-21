@@ -11426,7 +11426,7 @@ window.ECONOS_ICONS = {
         <text x="320" y="318" font-size="11" font-weight="800" text-anchor="middle" fill="#334155">Post-2018</text>
         <text x="320" y="334" font-size="9.5" text-anchor="middle" fill="#64748B">Auto-enrolment</text>
         <line x1="392" y1="112" x2="392" y2="240" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,2"/>
-        <text x="402" y="180" font-size="12" font-weight="900" fill="#059669">+32pp</text>
+        <text x="436" y="180" font-size="12" font-weight="900" text-anchor="end" fill="#059669">+32pp</text>
         <text x="220" y="364" font-size="10.5" font-weight="700" text-anchor="middle" fill="#059669">The single most successful nudge in economic history.</text>
       </g>
 
@@ -11512,7 +11512,7 @@ window.ECONOS_ICONS = {
         <text x="272" y="84" font-size="9" text-anchor="end" fill="#475569">15%</text>
         <text x="272" y="189" font-size="9" text-anchor="end" fill="#475569">7%</text>
         <text x="272" y="294" font-size="9" text-anchor="end" fill="#475569">0%</text>
-        <text x="350" y="68" font-size="10" font-weight="800" text-anchor="middle" fill="#0B1426">Missed appointments</text>
+        <text x="350" y="60" font-size="10" font-weight="800" text-anchor="middle" fill="#0B1426">Missed appointments</text>
         <rect x="298" y="82" width="36" height="208" fill="#FEE2E2" stroke="#dc2626" stroke-width="1.5"/>
         <text x="316" y="76" font-size="11" font-weight="900" text-anchor="middle" fill="#dc2626">15%</text>
         <text x="316" y="308" font-size="9.5" font-weight="700" text-anchor="middle" fill="#334155">Standard</text>

@@ -14103,17 +14103,17 @@ window.ECONOS_ICONS = {
       <!-- Private costs box -->
       <rect x="10" y="26" width="112" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
       <!-- Factory: chimneys -->
-      <rect x="52" y="40" width="6" height="14" rx="1" fill="#dc2626"/>
-      <rect x="62" y="36" width="6" height="18" rx="1" fill="#dc2626"/>
+      <rect x="52" y="40" width="6" height="14" rx="1" fill="#0F172A"/>
+      <rect x="62" y="36" width="6" height="18" rx="1" fill="#0F172A"/>
       <!-- smoke puffs -->
-      <circle cx="55" cy="37" r="3.5" fill="#dc2626" opacity="0.3"/>
-      <circle cx="65" cy="33" r="4" fill="#dc2626" opacity="0.25"/>
+      <circle cx="55" cy="37" r="3.5" fill="#475569" opacity="0.45"/>
+      <circle cx="65" cy="33" r="4" fill="#475569" opacity="0.4"/>
       <!-- factory body -->
-      <rect x="42" y="54" width="34" height="16" rx="2" fill="#dc2626"/>
-      <rect x="46" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.8"/>
-      <rect x="56" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.8"/>
-      <rect x="66" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.8"/>
-      <line x1="38" y1="70" x2="82" y2="70" stroke="#dc2626" stroke-width="1.5" opacity="0.4"/>
+      <rect x="42" y="54" width="34" height="16" rx="2" fill="#0F172A"/>
+      <rect x="46" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.85"/>
+      <rect x="56" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.85"/>
+      <rect x="66" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.85"/>
+      <line x1="38" y1="70" x2="82" y2="70" stroke="#0F172A" stroke-width="1.5" opacity="0.35"/>
       <text x="66" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">Private costs</text>
       <text x="66" y="106" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Costs paid by the</text>
       <text x="66" y="117" font-size="8.5" text-anchor="middle" fill="#7F1D1D">producer or consumer</text>
@@ -14126,11 +14126,11 @@ window.ECONOS_ICONS = {
       <!-- External costs box -->
       <rect x="158" y="26" width="112" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
       <!-- Person (third party) -->
-      <circle cx="198" cy="42" r="7" fill="#dc2626"/>
-      <line x1="198" y1="49" x2="198" y2="62" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M190 58 Q198 52 206 58" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="198" cy="42" r="7" fill="#0F172A"/>
+      <line x1="198" y1="49" x2="198" y2="62" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M190 58 Q198 52 206 58" stroke="#0F172A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <!-- lightning bolt -->
-      <path d="M218 36 L213 49 L218 49 L213 62 L224 47 L219 47 Z" fill="#dc2626" opacity="0.7"/>
+      <path d="M218 36 L213 49 L218 49 L213 62 L224 47 L219 47 Z" fill="#0F172A" opacity="0.85"/>
       <text x="214" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">External costs</text>
       <text x="214" y="106" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Costs imposed on</text>
       <text x="214" y="117" font-size="8.5" text-anchor="middle" fill="#7F1D1D">third parties not</text>
@@ -14162,10 +14162,10 @@ window.ECONOS_ICONS = {
       <!-- Private benefits box -->
       <rect x="280" y="26" width="112" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
       <!-- Happy person -->
-      <circle cx="336" cy="42" r="7" fill="#059669"/>
+      <circle cx="336" cy="42" r="7" fill="#0F172A"/>
       <path d="M330 41 Q336 48 342 41" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <line x1="336" y1="49" x2="336" y2="62" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M328 56 Q336 50 344 56" stroke="#059669" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <line x1="336" y1="49" x2="336" y2="62" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M328 56 Q336 50 344 56" stroke="#0F172A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <text x="336" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">Private benefits</text>
       <text x="336" y="106" font-size="8.5" text-anchor="middle" fill="#064E3B">Benefits received by</text>
       <text x="336" y="117" font-size="8.5" text-anchor="middle" fill="#064E3B">the consumer or</text>
@@ -14178,13 +14178,13 @@ window.ECONOS_ICONS = {
       <!-- External benefits box -->
       <rect x="420" y="26" width="110" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
       <!-- Group of 3 people -->
-      <circle cx="462" cy="38" r="5.5" fill="#059669"/>
-      <line x1="462" y1="44" x2="462" y2="55" stroke="#059669" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M455 52 Q462 46 469 52" stroke="#059669" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <circle cx="474" cy="41" r="4.5" fill="#059669" opacity="0.65"/>
-      <circle cx="450" cy="41" r="4.5" fill="#059669" opacity="0.65"/>
+      <circle cx="462" cy="38" r="5.5" fill="#0F172A"/>
+      <line x1="462" y1="44" x2="462" y2="55" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M455 52 Q462 46 469 52" stroke="#0F172A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="474" cy="41" r="4.5" fill="#0F172A" opacity="0.75"/>
+      <circle cx="450" cy="41" r="4.5" fill="#0F172A" opacity="0.75"/>
       <!-- sparkle -->
-      <path d="M488 34 L489.2 38.5 L494 38.5 L490.2 41.5 L491.5 46 L488 43.2 L484.5 46 L485.8 41.5 L482 38.5 L486.8 38.5 Z" fill="#059669" opacity="0.75"/>
+      <path d="M488 34 L489.2 38.5 L494 38.5 L490.2 41.5 L491.5 46 L488 43.2 L484.5 46 L485.8 41.5 L482 38.5 L486.8 38.5 Z" fill="#0F172A" opacity="0.85"/>
       <text x="475" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">External benefits</text>
       <text x="475" y="106" font-size="8.5" text-anchor="middle" fill="#064E3B">Benefits enjoyed by</text>
       <text x="475" y="117" font-size="8.5" text-anchor="middle" fill="#064E3B">third parties not in</text>

@@ -180,61 +180,137 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'neg_externalities_4',
-      template: 'framing',
-      title: 'Coase Theorem and Private Solutions',
-      body: 'Ronald Coase (1960) argued that if property rights are well-defined and transaction costs are zero, private bargaining will internalise externalities without government intervention — regardless of who holds the property right.<br><br><strong>Example:</strong> Factory (polluter) and fishermen (victim). If fishermen have right to clean water: factory will compensate fishermen to permit some pollution, up to the point where marginal profit from pollution = marginal external cost. Efficient outcome reached privately.<br><br><strong>Limitation:</strong> Transaction costs are rarely zero. When many parties are affected (climate change), private bargaining is impossible. Public goods nature of the environment means Coasian solutions apply only to small numbers of identifiable parties.',
-      keyTerms: [
-        { term: 'Coase theorem', def: 'With well-defined property rights and zero transaction costs, private bargaining will internalise externalities efficiently.' },
-        { term: 'Transaction costs', def: 'Costs of identifying parties, negotiating, and enforcing agreements — often too high for large-scale externalities.' },
-        { term: 'Property rights', def: 'Legal rights over resources — Coase argued that clear property rights are sufficient for efficient externality resolution.' }
+      stepLabel: 'Learn: Step 4 of 7',
+      title: 'Market-based interventions',
+      tip: { icon: '🎯', tone: 'green', text: '<strong>Aim:</strong> to <em>internalise</em> the externality by making firms face the external cost.' },
+      keyPointsLabel: 'Two market-based tools',
+      keyPointsEmoji: '💸',
+      keyPointsCols: 2,
+      keyPoints: [
+        {
+          tone: 'green', icon: '1️⃣', title: 'Pigouvian tax',
+          headline: 'A tax equal to the size of MEC at Q* shifts MPC up to MSC, restoring the social optimum.',
+          body: '<strong>Live examples:</strong> UK fuel duty · sugar levy · UK Plastic Packaging Tax.<br><br><strong>Evaluation.</strong> <em>Theoretically efficient:</em> achieves allocative efficiency at Q*. <em>Practically difficult:</em> government must estimate the true MEC, which is hard to measure accurately.'
+        },
+        {
+          tone: 'blue', icon: '2️⃣', title: 'Tradeable pollution permits (cap-and-trade)',
+          headline: 'Government caps total emissions, issues permits, and firms trade them. The market creates a price for pollution.',
+          body: '<strong>Live examples:</strong> UK ETS (UK Emissions Trading Scheme) · EU ETS (EU Emissions Trading System).<br><br><strong>Mechanism.</strong> Firms with low abatement costs sell permits; firms with high abatement costs buy them. The total cap guarantees the environmental outcome.'
+        }
       ],
-      examEdge: 'Coase is the strongest theoretical argument against government intervention for externalities — but its limitations (high transaction costs, many affected parties, global spillovers) explain why most externality corrections do require government action. Using Coase as an evaluation point in essays gains credit.'
+      causesLabel: 'Comparing the two tools',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '💰', head: 'Who pays?',         body: '<strong>Pigouvian tax:</strong> producers (higher costs) and possibly consumers (higher prices). <strong>Cap-and-trade:</strong> producers (cost of permits passed on), and possibly consumers.', tone: 'green' },
+        { icon: '🌱', head: 'Who benefits?',     body: '<strong>Both schemes:</strong> third parties and the environment (less pollution); government raises revenue under a tax.', tone: 'blue'  },
+        { icon: '🏭', head: 'Who is worse off?', body: '<strong>Both schemes:</strong> high-polluting firms — they face higher costs or must buy permits. Innovation that lowers abatement costs reduces this burden.', tone: 'purple' }
+      ],
+      causes2Label: 'Spec point (e): impact on economic agents',
+      causes2Emoji: '👥',
+      causes2: [
+        { icon: '🛒', head: 'Consumers',    body: 'May face higher prices or fewer choices on the externality-causing good.',                  tone: 'green'  },
+        { icon: '🏭', head: 'Producers',    body: 'Higher costs; low-polluters gain competitiveness vs. high-polluters under both schemes.',  tone: 'purple' },
+        { icon: '🏛️', head: 'Government',    body: 'Raises revenue (Pigouvian tax) or sets and enforces the emissions cap (permits).',         tone: 'blue'   },
+        { icon: '👥', head: 'Third parties', body: 'Benefit from cleaner air, better health and wellbeing.',                                    tone: 'amber'  }
+      ],
+      tipLate: { icon: '💡', tone: 'blue', head: 'Key idea', text: 'Market-based interventions use <strong>prices or markets</strong> to make firms internalise external costs. Remember — <strong>a tax targets the level of pollution; cap-and-trade targets the total</strong>.' },
+      examEdge: '“A Pigouvian tax is theoretically efficient but practically difficult to calibrate” — a high-mark phrase. For top marks compare tax vs. permits on flexibility, revenue, certainty and dynamic efficiency.'
     },
     {
       id: 'neg_externalities_5',
-      template: 'cause',
-      title: 'Government Policies to Correct Negative Externalities',
+      stepLabel: 'Learn: Step 5 of 7',
+      title: 'Command-and-control interventions',
+      tip: { icon: '⚖️', tone: 'green', text: '<strong>Regulation</strong> does not primarily work through the price signal — it sets <strong>rules, standards, restrictions or bans</strong> to change behaviour or protect people and the environment.' },
+      causesLabel: 'Common command-and-control interventions',
+      causesEmoji: '📋',
       causesStyle: 'tinted-flat',
-      causesEmoji: '🏛️',
-      causesLabel: 'Four policy tools',
       causes: [
-        { icon: '💸', head: 'Pigouvian tax', body: 'Tax equal to the marginal external cost at the socially optimal output level. Raises MPC to equal MSC → market produces Q-optimal. Example: UK fuel duty, sugar tax. Advantage: uses price mechanism; raises revenue. Limitation: difficult to measure MEC accurately; may be regressive.' },
-        { icon: '🔄', head: 'Cap-and-trade (emissions trading)', body: 'Set a total cap on emissions; issue tradeable permits. Firms can only emit within their permit allocation; buy extra permits from firms that reduce emissions cheaply. EU ETS example. Advantage: achieves environmental target efficiently; flexible. Limitation: permit price volatility; lobbying for free permits.' },
-        { icon: '📋', head: 'Regulation and legislation', body: 'Legal limits on pollution; mandatory standards (Euro emission standards); outright bans. Advantage: certain outcome if enforced. Limitation: "one size fits all"; compliance costs; regulatory capture risk.' },
-        { icon: '🏛️', head: 'State provision', body: 'Government takes over the externality-creating activity and forces socially optimal output. Nationalised industries can set output at Q-optimal. Limitation: government failure risk; information requirement.' }
+        { icon: '🚫',  head: 'Outright bans',                       body: 'The most direct form of regulation. <strong>Examples:</strong> ban on CFCs in aerosols; ban on leaded petrol.',                                              tone: 'rose'   },
+        { icon: '🚗',  head: 'Emission standards',                  body: 'Set a legal limit on the amount of pollution allowed. <strong>Example:</strong> Euro 6 emissions standard for cars.',                                       tone: 'purple' },
+        { icon: '🏢',  head: 'Planning restrictions',               body: 'Limit where or how certain activities can take place. <strong>Examples:</strong> zoning laws; limits on industrial developments near homes or schools.',     tone: 'blue'   },
+        { icon: '🚭',  head: 'Smoking bans in enclosed public places', body: 'Protect public health by restricting harmful behaviour rather than taxing it.',                                                                        tone: 'green'  },
+        { icon: '💷',  head: 'Congestion charge',                   body: 'A <em>hybrid</em> between regulation and market pricing — access is restricted by rule, with a price used to manage demand.',                                tone: 'amber'  }
       ],
-      examEdge: 'Evaluation framework for Pigouvian taxes: (1) Is the MEC measurable? (2) Is demand sufficiently inelastic to achieve the output reduction? (3) What are the distributional consequences? (4) Risk of evasion/black markets. Use these four questions to structure evaluation paragraphs on any externality policy.'
+      keyPointsLabel: 'Blunter, but more certain',
+      keyPointsEmoji: '✅',
+      keyPointsCols: 2,
+      keyPoints: [
+        { tone: 'blue', icon: '🔒', title: 'Less flexible',                       headline: 'One-size-fits-all rules may not reflect different firms\' costs or circumstances.',          body: '' },
+        { tone: 'blue', icon: '💸', title: 'More costly to comply with',          headline: 'Firms may face high compliance and monitoring costs.',                                       body: '' },
+        { tone: 'blue', icon: '🎯', title: 'More certain in outcome',             headline: 'The regulator directly limits harmful activity — no reliance on how firms respond to prices.', body: '' },
+        { tone: 'blue', icon: '🛡️', title: 'Essential when harm is severe or irreversible', headline: 'Toxic substances, serious health risks, endangered species — bans dominate taxes here.', body: '' }
+      ],
+      causes2Label: 'Impact on different agents',
+      causes2Emoji: '👥',
+      causes2: [
+        { icon: '🛒', head: 'Consumers',     body: 'May face higher prices or restricted choice.',                            tone: 'green'  },
+        { icon: '🏭', head: 'Producers',     body: 'Face compliance costs and less freedom to choose how to operate.',         tone: 'purple' },
+        { icon: '👥', head: 'Third parties', body: 'Gain protection from harm (health, environment, wellbeing).',              tone: 'blue'   },
+        { icon: '🏛️', head: 'Government',    body: 'Must monitor, enforce and may incur administration costs.',                tone: 'amber'  }
+      ],
+      tipLate: [
+        { icon: '⚖️', tone: 'amber', head: 'Hybrid note', text: 'The <strong>congestion charge</strong> straddles regulation and pricing — access is restricted by rule, with a price used to manage demand.' },
+        { icon: '⭐', tone: 'green', head: 'Exam tip',    text: 'Command-and-control gives <strong>greater certainty of outcome</strong>, especially where harm is irreversible.' }
+      ],
+      examEdge: 'Distinguish market-based vs. command-and-control by the mechanism: prices vs. rules. Use command-and-control as your dominant answer where harm is severe, irreversible or monitoring is feasible (e.g. CFCs, leaded petrol).'
     },
     {
       id: 'neg_externalities_6',
-      template: 'diagnose',
-      title: 'Case Study: Carbon Emissions',
-      intro: 'Carbon emissions are the largest-scale negative externality — global, long-lasting, and politically contested.',
-      rows: [
-        { label: 'Feature', colA: 'Scale of externality', colB: 'Policy response' },
-        { label: 'Detail', colA: 'Global public bad — emissions in any country affect all. MEC is enormous but disputed: social cost of carbon estimated at $51-$185/tonne CO2 (IPCC range). Stock externality — accumulates over centuries.', colB: 'Carbon taxes (UK: ~£50/tonne ETS price). EU ETS: cap-and-trade. Paris Agreement: voluntary national targets. No binding global mechanism → free rider problem remains.' },
-        { label: 'Key tension', colA: 'Measuring MEC requires long-run discounted projections — contested by economists. Lower discount rate (Stern) → higher MEC; higher discount rate (Nordhaus) → lower MEC.', colB: 'Unilateral carbon pricing risks "carbon leakage" — firms relocate to lower-cost jurisdictions. EU CBAM (Carbon Border Adjustment Mechanism) attempts to address this.' }
+      stepLabel: 'Learn: Step 6 of 7',
+      title: 'Evaluation: why intervention can fail',
+      tip: { icon: '⚖️', tone: 'green', text: 'Interventions aim to correct market failure, but correcting externalities can itself create <strong>government failure</strong>. Below are key reasons why intervention may be ineffective, inefficient or have unintended consequences.' },
+      keyPointsLabel: 'Five reasons intervention can fail',
+      keyPointsEmoji: '⚠️',
+      keyPointsCols: 5,
+      keyPoints: [
+        { tone: 'green',  icon: '🔍', title: '1. Information failure',     headline: 'The MEC is unobservable, so the tax or cap may be set incorrectly.',                                 body: '' },
+        { tone: 'purple', icon: '🗣️', title: '2. Regulatory capture',      headline: 'Firms lobby for weaker rules, loopholes or delayed implementation.',                                body: '' },
+        { tone: 'blue',   icon: '🏛️', title: '3. Political short-termism', headline: 'Costs are immediate and visible; benefits may be decades away and politically costly.',              body: '' },
+        { tone: 'amber',  icon: '🌍', title: '4. Carbon leakage',          headline: 'Firms relocate to countries with laxer rules, so emissions fall domestically but rise elsewhere.',  body: '' },
+        { tone: 'rose',   icon: '👥', title: '5. Regressive incidence',    headline: 'Fuel duty and similar measures can hit low-income households hardest.',                              body: '' }
       ],
-      footer: 'Carbon is the ultimate test of externality policy: the polluter is everyone (consumption externality); the victim is everyone (global); and the solution requires unprecedented international coordination.',
-      examEdge: 'Climate change demonstrates both the limits of market solutions (Coase impossible at global scale) and the limits of government solutions (free rider problem across nations). Top essays acknowledge this double failure and evaluate the feasibility of international agreements.'
+      left:  { tone: 'blue',  icon: '🤝', label: 'Coase theorem — a counterpoint', text: 'When property rights are clearly defined and transaction costs are low, parties may <strong>bargain to the efficient (optimal) outcome</strong> without state intervention.' },
+      right: { tone: 'slate', icon: '⚠️', label: 'Limitations of Coasian bargaining', points: ['High transaction costs', 'Many affected parties', 'Hard to coordinate', 'Power imbalance'] },
+      pairLabel: null,
+      tipLate: [
+        { icon: '💡', tone: 'amber', head: 'What the best evaluation does', text: 'Compare the market failure with the <em>government failure</em>. Ask whether the intervention improves on the market outcome, even if it is imperfect.' },
+        { icon: '⭐', tone: 'rose',  head: 'Exam edge',                     text: 'The key issue is not whether the intervention is perfect, but whether it produces a <strong>better outcome than the unregulated market</strong>.' }
+      ],
+      conclusion: { title: 'Bottom line', text: 'Judging intervention is about <strong>trade-offs</strong>. We accept some government failure if the net benefit is an improvement on the market outcome.' },
+      examEdge: 'Top evaluations name a specific failure (e.g. carbon leakage in unilateral pricing) and show a fix (e.g. EU CBAM border adjustment). Avoid generic phrases like “government failure” without an example.'
     },
     {
       id: 'neg_externalities_7',
-      template: 'framing',
-      title: 'Taxes vs Regulation: Evaluation',
-      verdict: {
-        leftLabel: '💸 Taxes (Pigouvian)',
-        rightLabel: '📋 Regulation (command-and-control)',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Flexibility', left: 'Firms choose how to reduce pollution — minimises total compliance cost', right: '"One size fits all" — may be inefficient if firms have different abatement costs' },
-          { aspect: 'Revenue', left: 'Generates government revenue for green investment', right: 'No revenue generated from regulation itself' },
-          { aspect: 'Certainty', left: 'Uncertain quantity outcome — depends on how firms respond to the price', right: 'Provides certainty about the environmental outcome if enforced' },
-          { aspect: 'Dynamic efficiency', left: 'Firms continually incentivised to innovate and reduce their tax burden', right: 'Once compliance standard met, no further incentive to innovate' },
-          { aspect: 'Key limitation', left: 'Requires accurate MEC measurement (difficult) and may be regressive', right: 'Regulatory capture risk — polluters lobby for weak standards' }
-        ]
+      stepLabel: 'Learn: Step 7 of 7',
+      title: 'Exam edge & economist insight',
+      tip: { icon: '⭐', tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div>✅ &ldquo;The size of the welfare loss depends on the <em>price elasticity of demand and supply</em>.&rdquo;</div><div>✅ &ldquo;A Pigouvian tax is <em>theoretically efficient</em> but <em>practically difficult to calibrate</em>.&rdquo;</div><div>✅ &ldquo;Market-based policies are more <em>cost-effective</em>; <em>command-and-control gives greater certainty</em>.&rdquo;</div></div>' },
+      flow: [
+        { tone: 'blue', icon: '📘', title: 'Define & explain', sub: 'Define the externality (type and cause) and explain the negative production externality diagram.' },
+        { tone: 'blue', icon: '💸', title: 'Analyse market-based', sub: 'Evaluate policies like Pigouvian tax, subsidies and tradable permits using costs, benefits and efficiency.' },
+        { tone: 'blue', icon: '📋', title: 'Compare command-and-control', sub: 'Assess regulations, standards and bans for effectiveness, certainty and compliance costs.' },
+        { tone: 'blue', icon: '⚖️', title: 'Reach a judgement', sub: 'Weigh up the evidence and make a clear, supported judgement on the best approach.' }
+      ],
+      flowTitle: 'How to evaluate a 25-mark essay',
+      flowEmoji: '📖',
+      causesLabel: 'Judgement framework — use these criteria to compare policies',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '📈', head: 'Size of the externality',  body: 'How large is the welfare loss? Larger externalities justify stronger intervention.',                            tone: 'green'  },
+        { icon: '📉', head: 'Elasticity',                body: 'How responsive are demand and supply? Inelastic demand means taxes raise revenue but cut quantity less.',        tone: 'blue'   },
+        { icon: '🗣️', head: 'Political feasibility',     body: 'Is the policy likely to be accepted and enforced? Regulatory capture, electoral cycles and public buy-in matter.', tone: 'purple' },
+        { icon: '🌱', head: 'Irreversibility of harm',  body: 'Would the damage persist or be hard to reverse? Irreversible harms favour command-and-control.',                  tone: 'amber'  }
+      ],
+      economistQuote: {
+        portraitKey: 'economistPigou',
+        tone: 'green',
+        label: 'Arthur Pigou (1877–1959) · British economist and pioneer of welfare economics',
+        quote: 'one person A… incidentally also renders services or disservices to other persons',
+        attribution: 'Pigou, <em>The Economics of Welfare</em>, 1920. He showed that a tax equal to the marginal external cost can align private and social costs — the <strong>Pigouvian tax</strong>.'
       },
-      examEdge: 'Economists generally prefer taxes (price-based instruments) for efficiency; environmentalists may prefer regulations for certainty. A hybrid is often optimal: regulations set a minimum standard; taxes create incentives beyond compliance. Acknowledge this in essays for a balanced evaluation.',
+      conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
+      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

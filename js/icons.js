@@ -14879,4 +14879,55 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ─── Economist portrait: Arthur Pigou (1877–1959) ─── */
+  economistPigou: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ap-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+      <ellipse cx="140" cy="342" rx="102" ry="13" fill="#E2E8F0" opacity="0.55"/>
+      <!-- DARK ACADEMIC GOWN -->
+      <path d="M 36,360 L 64,238 Q 92,222 118,218 L 132,232 L 140,238 L 148,232 L 162,218 Q 188,222 216,238 L 244,360 Z" fill="#1F2937" filter="url(#ap-sh)"/>
+      <!-- Lapels -->
+      <path d="M 132,232 L 120,260 L 140,278 L 160,260 L 148,232 L 144,236 L 140,238 L 136,236 Z" fill="#374151"/>
+      <!-- High wing-collar shirt -->
+      <path d="M 124,232 Q 116,256 124,272 L 156,272 Q 164,256 156,232 L 148,232 L 140,238 L 132,232 Z" fill="#F8FAFC"/>
+      <!-- Tie knot + tie -->
+      <path d="M 134,250 L 146,250 L 144,258 L 136,258 Z" fill="#475569"/>
+      <path d="M 136,258 L 144,258 L 142,288 L 138,288 Z" fill="#475569"/>
+      <!-- NECK -->
+      <path d="M 124,212 Q 126,228 132,232 L 148,232 Q 154,228 156,212 Z" fill="#E8C9A4"/>
+      <!-- HEAD (oval, slightly long) -->
+      <ellipse cx="140" cy="170" rx="48" ry="56" fill="#EDD2B0" filter="url(#ap-sh)"/>
+      <!-- HAIR — centre-parted, brushed back -->
+      <path d="M 92,158 Q 90,118 122,104 Q 140,98 158,104 Q 190,118 188,158 Q 184,140 168,130 Q 154,124 144,128 L 140,138 L 136,128 Q 126,124 112,130 Q 96,140 92,158 Z" fill="#3E2A1D"/>
+      <!-- Centre part line -->
+      <path d="M 140,108 L 140,142" stroke="#2A1B10" stroke-width="1.5"/>
+      <!-- EARS -->
+      <ellipse cx="92" cy="172" rx="6" ry="9" fill="#E8C9A4"/>
+      <ellipse cx="188" cy="172" rx="6" ry="9" fill="#E8C9A4"/>
+      <!-- BROWS -->
+      <path d="M 110,154 Q 120,150 130,154" stroke="#3E2A1D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 150,154 Q 160,150 170,154" stroke="#3E2A1D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- EYES (slightly serious, looking forward) -->
+      <ellipse cx="120" cy="166" rx="3.5" ry="2.5" fill="#1F2937"/>
+      <ellipse cx="160" cy="166" rx="3.5" ry="2.5" fill="#1F2937"/>
+      <circle cx="121" cy="165" r="0.9" fill="#F8FAFC"/>
+      <circle cx="161" cy="165" r="0.9" fill="#F8FAFC"/>
+      <!-- NOSE -->
+      <path d="M 140,170 Q 137,184 134,194 Q 138,198 140,198 Q 142,198 146,194 Q 143,184 140,170" fill="none" stroke="#C9A47E" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- DISTINCTIVE WALRUS-STYLE MOUSTACHE -->
+      <path d="M 110,206 Q 116,200 130,202 Q 140,200 150,202 Q 164,200 170,206 Q 162,214 150,212 Q 140,210 130,212 Q 118,214 110,206 Z" fill="#3E2A1D"/>
+      <path d="M 124,206 Q 130,208 140,208 Q 150,208 156,206" stroke="#2A1B10" stroke-width="0.8" fill="none"/>
+      <!-- MOUTH (subtle under moustache) -->
+      <path d="M 132,216 Q 140,219 148,216" stroke="#6B3F2A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <!-- CHIN shadow -->
+      <path d="M 128,224 Q 140,230 152,224" stroke="#C9A47E" stroke-width="0.9" fill="none"/>
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="Georgia,serif">Arthur Pigou</text>
+    </svg>
+  `,
+
 };

@@ -39,6 +39,13 @@ window.ECONOS_TOPIC = {
         { title: 'Status & heuristics', icon: '👥', headline: 'We copy others and follow rules of thumb', body: 'Mental shortcuts work well most of the time and fail predictably in specific contexts. Social norms and default options exploit this directly.', tone: 'purple' },
         { title: 'Present bias', icon: '⏱️', headline: 'We overweight today vs every future day', body: 'The planner self sets intentions; the doer self acts in the moment. Pensions, diets and exercise routines all suffer from this structural gap.', tone: 'blue' }
       ],
+      economistQuote: {
+        portraitKey: 'economistDanielKahneman',
+        tone: 'blue',
+        label: 'Economist insight',
+        quote: 'Nothing in life is as important as you think it is, while you are thinking about it.',
+        attribution: 'Daniel Kahneman, <em>Thinking, Fast and Slow</em> (2011)'
+      },
       keyTerms: [
         { term: 'Bounded rationality', def: 'Decision-making that is rational within cognitive limits — uses heuristics rather than full optimisation (Simon).' },
         { term: 'Bounded self-control', def: 'The gap between what we know we should do and what we actually do — present preferences override long-term interest.' },

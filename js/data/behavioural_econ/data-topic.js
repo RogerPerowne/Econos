@@ -141,7 +141,12 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 5',
       title: 'Nudges that worked — Britain\'s behavioural revolution',
       tip: { icon: '🇬🇧', tone: 'blue', text: 'Britain runs the world\'s most active behavioural government. The <strong>Behavioural Insights Team</strong> (BIT, founded 2010 under the Cameron government) has delivered measurable policy wins at near-zero cost. Four UK case studies below — each illustrating the framework in action.' },
-      diagramKey: 'bitFrameworkDiagram',
+      flowTitle: 'The BIT framework — small tweaks, big effects',
+      flow: [
+        { icon: '🏗️', title: 'Choose architecture', sub: 'Redesign the choice environment — defaults, framing, sequencing — without removing options.', tone: 'blue' },
+        { icon: '🧭', title: 'Behaviour change', sub: 'Freedom is preserved and cost is near-zero. People stay on the default; the planner\'s choice wins.', tone: 'purple' },
+        { icon: '📊', title: 'Test and scale', sub: 'Every BIT intervention runs as an RCT. Evidence-tested results are measured, refined and rolled out nationally.', tone: 'green' }
+      ],
       interactiveDiagram: {
         svgKey: 'ukNudgesInteractive',
         label: 'Four UK cases in action',
@@ -203,7 +208,34 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 5 of 5',
       title: 'When nudges work, and when they don\'t',
       tip: { icon: '⚖️', tone: 'slate', text: 'Nudges <strong>complement</strong> traditional policy — they do not replace taxes or regulation. The art is knowing which lever fits which market failure. For a carbon price or sugar tax, behavioural insight <em>supports</em> the tax; it does not substitute for it.' },
-      diagramKey: 'policySpectrumDiagram',
+      continuum: {
+        title: 'The policy spectrum — choosing the right lever',
+        leftCap: 'Softest',
+        rightCap: 'Strongest',
+        items: [
+          {
+            icon: '💬',
+            title: 'Information & Nudge',
+            verdict: 'Bias is binding',
+            verdictTone: 'blue',
+            body: 'When the problem is knowledge gaps or cognitive bias. Near-zero cost; choice preserved. Default changes and social-norm messages sit here.'
+          },
+          {
+            icon: '💰',
+            title: 'Tax & Subsidy',
+            verdict: 'Price is binding',
+            verdictTone: 'amber',
+            body: 'When behaviour persists despite awareness. Carbon taxes, sugar levies. Behavioural framing helps, but the price instrument is still required.'
+          },
+          {
+            icon: '⛔',
+            title: 'Regulation & Ban',
+            verdict: 'Harm too severe',
+            verdictTone: 'rose',
+            body: 'When market failure is too large for price signals alone. Seatbelt laws, tobacco ad bans. Individual choice is overridden because harm extends beyond the individual.'
+          }
+        ]
+      },
       verdict: {
         leftLabel: '✅ Strengths of the behavioural approach',
         rightLabel: '⚠️ Limitations and risks',

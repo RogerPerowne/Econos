@@ -1400,7 +1400,8 @@
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
       }).join('');
-      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes2.length, 180)};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
+      const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols}, 1fr)` : gridColumnsFor(c.causes2.length, 180);
+      content += `<div style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
     }
 
     // How to think about it — two tinted panels side by side (centered icon + heading + body).

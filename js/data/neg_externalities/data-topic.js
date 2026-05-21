@@ -208,6 +208,7 @@ window.ECONOS_TOPIC = {
       ],
       causes2Label: 'Spec point (e): impact on economic agents',
       causes2Emoji: '👥',
+      causes2Cols: 4,
       causes2: [
         { icon: '🛒', head: 'Consumers',    body: 'May face higher prices or fewer choices on the externality-causing good.',                  tone: 'green'  },
         { icon: '🏭', head: 'Producers',    body: 'Higher costs; low-polluters gain competitiveness vs. high-polluters under both schemes.',  tone: 'purple' },
@@ -243,6 +244,7 @@ window.ECONOS_TOPIC = {
       ],
       causes2Label: 'Impact on different agents',
       causes2Emoji: '👥',
+      causes2Cols: 4,
       causes2: [
         { icon: '🛒', head: 'Consumers',     body: 'May face higher prices or restricted choice.',                            tone: 'green'  },
         { icon: '🏭', head: 'Producers',     body: 'Face compliance costs and less freedom to choose how to operate.',         tone: 'purple' },
@@ -286,10 +288,10 @@ window.ECONOS_TOPIC = {
       title: 'Exam edge & economist insight',
       tip: { icon: '⭐', tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div>✅ &ldquo;The size of the welfare loss depends on the <em>price elasticity of demand and supply</em>.&rdquo;</div><div>✅ &ldquo;A Pigouvian tax is <em>theoretically efficient</em> but <em>practically difficult to calibrate</em>.&rdquo;</div><div>✅ &ldquo;Market-based policies are more <em>cost-effective</em>; <em>command-and-control gives greater certainty</em>.&rdquo;</div></div>' },
       flow: [
-        { tone: 'blue', icon: '📘', title: 'Define & explain', sub: 'Define the externality (type and cause) and explain the negative production externality diagram.' },
-        { tone: 'blue', icon: '💸', title: 'Analyse market-based', sub: 'Evaluate policies like Pigouvian tax, subsidies and tradable permits using costs, benefits and efficiency.' },
-        { tone: 'blue', icon: '📋', title: 'Compare command-and-control', sub: 'Assess regulations, standards and bans for effectiveness, certainty and compliance costs.' },
-        { tone: 'blue', icon: '⚖️', title: 'Reach a judgement', sub: 'Weigh up the evidence and make a clear, supported judgement on the best approach.' }
+        { tone: 'blue',   icon: '📘', title: 'Define & explain',            sub: 'Define the externality (type and cause) and explain the negative production externality diagram with MSC above MPC.' },
+        { tone: 'green',  icon: '💸', title: 'Analyse market-based',        sub: 'Evaluate Pigouvian tax and tradeable permits: efficiency, revenue, certainty, and the difficulty of measuring MEC.' },
+        { tone: 'purple', icon: '📋', title: 'Compare command-and-control', sub: 'Assess regulations, standards and bans on certainty of outcome, compliance costs and fairness.' },
+        { tone: 'amber',  icon: '⚖️', title: 'Reach a judgement',          sub: 'Weigh size of externality, elasticity, political feasibility and irreversibility. Make a clear, supported conclusion.' }
       ],
       flowTitle: 'How to evaluate a 25-mark essay',
       flowEmoji: '📖',
@@ -306,8 +308,12 @@ window.ECONOS_TOPIC = {
         portraitKey: 'economistPigou',
         tone: 'green',
         label: 'Arthur Pigou (1877–1959) · British economist and pioneer of welfare economics',
-        quote: 'one person A… incidentally also renders services or disservices to other persons',
-        attribution: 'Pigou, <em>The Economics of Welfare</em>, 1920. He showed that a tax equal to the marginal external cost can align private and social costs — the <strong>Pigouvian tax</strong>.'
+        quote: '…one person A, in the course of rendering some service for which payment is made to a second person B, incidentally also renders services or disservices to other persons, of such a sort that payment cannot be exacted from the benefited parties or compensation enforced on behalf of the injured parties.',
+        attribution: 'Pigou, <em>The Economics of Welfare</em>, 1920'
+      },
+      tipLate: {
+        icon: '💡', tone: 'green', head: 'Why this matters',
+        text: 'This passage defines the externality problem: A imposes a cost on others, but no one can compel A to pay. Pigou\'s solution was a corrective tax — set equal to the <strong>marginal external cost at Q*</strong> — so firms face the full social cost of their output. This <strong>Pigouvian tax</strong> shifts MPC up to MSC, closing the wedge between private and social optima.'
       },
       conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
       examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list.',

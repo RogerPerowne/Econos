@@ -261,6 +261,9 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      keyPointsLabel: 'Four features of an effective nudge',
+      keyPointsEmoji: '✨',
+      keyPointsCols: 2,
       keyPoints: [
         { title: 'Timely', icon: '⏱️', headline: 'Reaches people at the moment of decision', body: 'An NHS reminder lands just before an appointment; auto-enrolment fires at job-start. Timing is the mechanism.', tone: 'green' },
         { title: 'Simple', icon: '✏️', headline: 'One idea, delivered in a sentence', body: '"9 of 10 people in your area paid" — not a paragraph, not a threat. A single social fact.', tone: 'blue' },

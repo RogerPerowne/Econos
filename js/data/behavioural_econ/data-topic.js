@@ -92,10 +92,12 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
-      causes: [
-        { icon: '🏷️', head: 'Anchoring in retail & negotiation', tone: 'blue', body: 'Fake "was £100, now £60" prices work even when the original price was fictitious — why the ASA polices them. Salary negotiations are anchored by whoever names a number first; estate agents list high deliberately to shift expectations.' },
-        { icon: '📉', head: 'Loss aversion in finance', tone: 'rose', body: 'Investors hold losing shares to avoid "crystallising" a loss, even when selling is rationally correct. Status-quo bias keeps households on worse energy tariffs and mortgages for years after better options appear.' },
-        { icon: '📱', head: 'Social norms in compliance', tone: 'green', body: 'HMRC\'s "9 of 10 people in your area paid on time" added ~£200m+ in annual revenue at zero cost. Hotel towel reuse signs ("75% of guests reuse") consistently outperform environmental-appeal messaging.' }
+      keyPointsLabel: 'Biases in the wild',
+      keyPointsEmoji: '🔎',
+      keyPoints: [
+        { title: 'Anchoring in retail & negotiation', icon: '🏷️', tone: 'blue', headline: 'Fake "was £100, now £60" prices work even if the original price was fictitious', body: 'That\'s why the ASA polices them. Salary negotiations are anchored by whoever names a number first; estate agents list high deliberately to shift expectations.' },
+        { title: 'Loss aversion in finance', icon: '📉', tone: 'rose', headline: 'Investors hold losing shares to avoid "crystallising" the loss', body: 'Even when selling is rationally correct. Status-quo bias keeps households on worse energy tariffs and mortgages for years after better options appear.' },
+        { title: 'Social norms in compliance', icon: '📱', tone: 'green', headline: 'HMRC\'s "9 of 10 paid on time" line added ~£200m+ at zero cost', body: 'Hotel towel-reuse signs ("75% of guests reuse") consistently outperform environmental-appeal messaging — and the underlying mechanism is identical.' }
       ],
       keyTerms: [
         { term: 'Anchoring', def: 'Over-weighting the first piece of numerical information when making a judgement — even if irrelevant.' },
@@ -142,10 +144,12 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
-      causes: [
-        { icon: '🏋️', head: 'Gym contracts & quit-dates', tone: 'blue', body: 'NHS Stop Smoking quit-dates commit the planner\'s resolve before the doer can veto it. Gym auto-renewal contracts exploit the same mechanism in reverse — the doer\'s past self locks the present self in.' },
-        { icon: '🧾', head: 'Direct debits & savings round-ups', tone: 'green', body: 'Standing orders for savings automate the planner\'s decision before payday — the doer never sees the money. App round-ups (Monzo, Revolut) turn every purchase into a micro-saving without any willpower required.' },
-        { icon: '📵', head: 'Digital temptation removal', tone: 'purple', body: 'Phone-free study apps (Forest, Freedom) remove the temptation option rather than relying on willpower. Online supermarket shopping prevents impulse purchases in the snack aisle — changing the environment beats changing the person.' }
+      keyPointsLabel: 'Commitment devices in practice',
+      keyPointsEmoji: '🔒',
+      keyPoints: [
+        { title: 'Gym contracts & quit-dates', icon: '🏋️', tone: 'blue', headline: 'Lock in the planner\'s resolve before the doer can veto', body: 'NHS Stop Smoking quit-dates commit you to a specific date in advance. Gym auto-renewal contracts exploit the same mechanism in reverse — the doer\'s past self locks the present self in.' },
+        { title: 'Direct debits & savings round-ups', icon: '🧾', tone: 'green', headline: 'Automate the saving before payday — so the doer never sees the money', body: 'Standing orders move savings on payday. App round-ups (Monzo, Revolut) turn every purchase into a micro-saving without any willpower required.' },
+        { title: 'Digital temptation removal', icon: '📵', tone: 'purple', headline: 'Remove the temptation rather than rely on willpower', body: 'Phone-free study apps (Forest, Freedom) take the doer\'s options away. Online supermarket shopping prevents impulse purchases in the snack aisle — changing the environment beats changing the person.' }
       ],
       keyTerms: [
         { term: 'Present bias', def: 'Over-weighting immediate rewards relative to future ones — beyond any normal time preference.' },

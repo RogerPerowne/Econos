@@ -10959,44 +10959,79 @@ window.ECONOS_ICONS = {
   `,
 
   whyNotRationalDiagram: `
-    <svg viewBox="0 0 440 244" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="244" fill="#F8FAFC" rx="10"/>
+    <svg viewBox="0 0 440 220" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
 
-      <text x="220" y="26" font-size="13" font-weight="700" text-anchor="middle" fill="#0B1426">The gap between ideal and real decision-making</text>
+      <!-- Left: Textbook consumer panel -->
+      <rect x="4" y="4" width="148" height="212" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="78" y="27" font-size="10.5" font-weight="800" text-anchor="middle" fill="#065F46">The textbook consumer</text>
+      <circle cx="22" cy="50" r="7.5" fill="none" stroke="#059669" stroke-width="1.5"/>
+      <path d="M19.5 50 L22 52.5 L26 46.5" stroke="#059669" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="34" y="54" font-size="9.5" fill="#065F46">Compares all options</text>
+      <circle cx="22" cy="76" r="7.5" fill="none" stroke="#059669" stroke-width="1.5"/>
+      <path d="M19.5 76 L22 78.5 L26 72.5" stroke="#059669" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="34" y="74" font-size="9.5" fill="#065F46">Calculates costs</text>
+      <text x="34" y="86" font-size="9.5" fill="#065F46">and benefits</text>
+      <circle cx="22" cy="104" r="7.5" fill="none" stroke="#059669" stroke-width="1.5"/>
+      <path d="M19.5 104 L22 106.5 L26 100.5" stroke="#059669" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="34" y="102" font-size="9.5" fill="#065F46">Chooses what</text>
+      <text x="34" y="114" font-size="9.5" fill="#065F46">maximises utility</text>
+      <text x="78" y="190" font-size="8.5" fill="#6EE7B7" font-style="italic" text-anchor="middle">homo economicus</text>
+      <text x="78" y="202" font-size="8" fill="#6EE7B7" text-anchor="middle">"the model"</text>
 
-      <rect x="20" y="40" width="190" height="196" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="20" y="40" width="190" height="5" rx="4" fill="#059669"/>
-      <text x="115" y="63" font-size="11.5" font-weight="700" text-anchor="middle" fill="#059669">Textbook consumer</text>
-      <text x="115" y="77" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">homo economicus</text>
-      <line x1="30" y1="85" x2="200" y2="85" stroke="#F1F5F9"/>
-      <circle cx="34" cy="104" r="3.5" fill="#059669"/>
-      <text x="44" y="108" font-size="10.5" fill="#334155">Compares all options</text>
-      <circle cx="34" cy="126" r="3.5" fill="#059669"/>
-      <text x="44" y="130" font-size="10.5" fill="#334155">Calculates costs &amp; benefits</text>
-      <circle cx="34" cy="148" r="3.5" fill="#059669"/>
-      <text x="44" y="152" font-size="10.5" fill="#334155">Stable preferences</text>
-      <circle cx="34" cy="170" r="3.5" fill="#059669"/>
-      <text x="44" y="174" font-size="10.5" fill="#334155">Maximises utility</text>
-      <text x="115" y="220" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"the model"</text>
+      <!-- Straight green line: brain top, dots mid, checkmark bottom -->
+      <circle cx="170" cy="18" r="14" fill="#059669"/>
+      <path d="M162 19 Q162 13 166 13 Q168 11 170 13 Q172 11 174 13 Q178 13 178 19 Q178 23 170 23 Q162 23 162 19Z" fill="none" stroke="white" stroke-width="1.3"/>
+      <line x1="170" y1="13" x2="170" y2="23" stroke="white" stroke-width="0.8"/>
+      <line x1="170" y1="32" x2="170" y2="190" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="170" cy="84" r="4.5" fill="#059669"/>
+      <circle cx="170" cy="136" r="4.5" fill="#059669"/>
+      <circle cx="170" cy="202" r="13" fill="#059669"/>
+      <path d="M163 202 L168.5 207.5 L179 196" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-      <line x1="215" y1="50" x2="215" y2="228" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
-      <rect x="205" y="128" width="20" height="18" rx="3" fill="#E2E8F0"/>
-      <text x="215" y="141" font-size="9" font-weight="700" text-anchor="middle" fill="#64748B">vs</text>
+      <!-- VS badge -->
+      <circle cx="220" cy="111" r="18" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+      <text x="220" y="116.5" font-size="12" font-weight="800" text-anchor="middle" fill="#94A3B8">VS</text>
 
-      <rect x="230" y="40" width="190" height="196" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="230" y="40" width="190" height="5" rx="4" fill="#7c3aed"/>
-      <text x="325" y="63" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7c3aed">Real human</text>
-      <text x="325" y="77" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">what we actually see</text>
-      <line x1="240" y1="85" x2="410" y2="85" stroke="#F1F5F9"/>
-      <circle cx="244" cy="104" r="3.5" fill="#7c3aed"/>
-      <text x="254" y="108" font-size="10.5" fill="#334155">Uses mental shortcuts</text>
-      <circle cx="244" cy="126" r="3.5" fill="#7c3aed"/>
-      <text x="254" y="130" font-size="10.5" fill="#334155">Affected by framing</text>
-      <circle cx="244" cy="148" r="3.5" fill="#7c3aed"/>
-      <text x="254" y="152" font-size="10.5" fill="#334155">Present-biased</text>
-      <circle cx="244" cy="170" r="3.5" fill="#7c3aed"/>
-      <text x="254" y="174" font-size="10.5" fill="#334155">Follows defaults &amp; norms</text>
-      <text x="325" y="220" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"the reality"</text>
+      <!-- Wiggly purple line: head top, coloured icons at peaks, ? bottom -->
+      <circle cx="270" cy="18" r="14" fill="#7C3AED"/>
+      <circle cx="270" cy="13.5" r="4.5" fill="none" stroke="white" stroke-width="1.3"/>
+      <path d="M263 25 Q263 21 270 21 Q277 21 277 25" fill="none" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M270 32 Q242 61 270 90 Q298 119 270 148 Q242 172 270 190" stroke="#7C3AED" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Heart icon at left peak (256, 61) -->
+      <circle cx="256" cy="61" r="9" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+      <path d="M256 64.5 C256 64.5 250 61 250 57.5 C250 55 252.5 54 256 56.5 C259.5 54 262 55 262 57.5 C262 61 256 64.5 256 64.5Z" fill="#EF4444"/>
+      <!-- Clock icon at right peak (284, 119) -->
+      <circle cx="284" cy="119" r="9" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+      <circle cx="284" cy="119" r="5.5" fill="none" stroke="#D97706" stroke-width="1.2"/>
+      <line x1="284" y1="119" x2="284" y2="115" stroke="#D97706" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="284" y1="119" x2="288" y2="121" stroke="#D97706" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Person icon at left peak (256, 171) -->
+      <circle cx="256" cy="171" r="9" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+      <circle cx="256" cy="168" r="3" fill="#3B82F6"/>
+      <path d="M251 176 Q256 172.5 261 176" fill="none" stroke="#3B82F6" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Question mark bottom -->
+      <circle cx="270" cy="202" r="13" fill="#7C3AED"/>
+      <text x="270" y="207.5" font-size="14" font-weight="700" text-anchor="middle" fill="white">?</text>
+
+      <!-- Right: Real human panel -->
+      <rect x="298" y="4" width="138" height="212" rx="12" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <text x="367" y="27" font-size="10.5" font-weight="800" text-anchor="middle" fill="#5B21B6">The real human</text>
+      <circle cx="314" cy="50" r="7.5" fill="#7C3AED"/>
+      <path d="M311.5 50 L314 52.5 L318 46.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="326" y="54" font-size="9.5" fill="#3B0764">Uses shortcuts</text>
+      <circle cx="314" cy="76" r="7.5" fill="#7C3AED"/>
+      <path d="M311.5 76 L314 78.5 L318 72.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="326" y="80" font-size="9.5" fill="#3B0764">Affected by framing</text>
+      <circle cx="314" cy="100" r="7.5" fill="#7C3AED"/>
+      <path d="M311.5 100 L314 102.5 L318 96.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="326" y="104" font-size="9.5" fill="#3B0764">Present-biased</text>
+      <circle cx="314" cy="124" r="7.5" fill="#7C3AED"/>
+      <path d="M311.5 124 L314 126.5 L318 120.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="326" y="122" font-size="9.5" fill="#3B0764">Follows defaults</text>
+      <text x="326" y="134" font-size="9.5" fill="#3B0764">and social cues</text>
+      <text x="367" y="190" font-size="8.5" fill="#C4B5FD" font-style="italic" text-anchor="middle">what we actually see</text>
+      <text x="367" y="202" font-size="8" fill="#C4B5FD" text-anchor="middle">"the reality"</text>
+
     </svg>
   `,
 

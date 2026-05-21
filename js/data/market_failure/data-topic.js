@@ -60,9 +60,10 @@ window.ECONOS_TOPIC = {
       keyPointsLabel: 'Two real-world examples',
       keyPointsEmoji: '🌍',
       keyPointsCols: 2,
+      keyPointsCompare: true,
       keyPoints: [
-        { title: 'Negative externality (social cost)', icon: '🏭', headline: 'A factory produces goods — but locals breathe the pollution', body: 'It bears the cost of production, but local residents suffer health problems from the emissions. <strong>Private cost: ££. Social cost: £££.</strong> Social cost &gt; private cost, so the factory over-produces relative to the social optimum.', tone: 'rose' },
-        { title: 'Positive externality (social benefit)', icon: '💉', headline: 'A vaccinated person also protects the community', body: 'They gain personal protection, and others are less likely to catch the disease (herd immunity). <strong>Private benefit: ££. Social benefit: £££.</strong> Social benefit &gt; private benefit, so the market under-produces vaccinations.', tone: 'green' }
+        { title: 'Negative externality', icon: '🏭', headline: 'A factory produces goods — but locals breathe the pollution', body: 'It bears the cost of production, but local residents suffer health problems from the emissions.<br><br><strong>Private cost: ££</strong><br><strong>Social cost: £££</strong><br><br>Social cost &gt; private cost, so the factory over-produces relative to the social optimum.', tone: 'rose' },
+        { title: 'Positive externality', icon: '💉', headline: 'A vaccinated person also protects the community', body: 'They gain personal protection, and others are less likely to catch the disease (herd immunity).<br><br><strong>Private benefit: ££</strong><br><strong>Social benefit: £££</strong><br><br>Social benefit &gt; private benefit, so the market under-produces vaccinations.', tone: 'green' }
       ],
       keyTerms: [
         { term: 'Private cost / benefit', def: 'The cost (or benefit) borne by the individual consumer or producer making the decision — what the price mechanism responds to.' },

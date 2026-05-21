@@ -51,6 +51,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '🎯', tone: 'rose', text: 'These four biases aren\'t quirks — they\'re predictable shortcuts. Click through each one, and read the <em>mini-test</em> at the bottom of every panel. If you would have fallen for it, you\'ve felt the bias in action.' },
       interactiveDiagram: {
         svgKey: 'biasGalleryInteractive',
+        wide: true,
         layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
         views: [
           {
@@ -108,6 +109,7 @@ window.ECONOS_TOPIC = {
       tip: { icon: '⏳', tone: 'amber', text: 'We genuinely want to act in our long-term interest — but in the moment the present self wins. This is <strong>not laziness</strong>. It is a structural feature of how humans weigh time. It is also why pension under-saving remained a problem for decades despite tax relief and employer matches.' },
       interactiveDiagram: {
         svgKey: 'boundedSelfControlInteractive',
+        wide: true,
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {
@@ -163,6 +165,7 @@ window.ECONOS_TOPIC = {
       ],
       interactiveDiagram: {
         svgKey: 'ukNudgesInteractive',
+        wide: true,
         label: 'Four UK cases in action',
         layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4', 'idl-6'],
         views: [

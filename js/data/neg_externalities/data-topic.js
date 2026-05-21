@@ -135,18 +135,48 @@ window.ECONOS_TOPIC = {
     },
     {
       id: 'neg_externalities_3',
-      template: 'cause',
-      title: 'Types of Negative Externalities',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '💨',
-      causesLabel: 'Four categories of external cost',
-      causes: [
-        { icon: '🏭', head: 'Production externalities', body: 'Pollution from manufacturing: chemical plant discharges into river; power station CO2 emissions; noise from airport. The external cost falls on households, other firms, or the environment. Classic for the MSC > MPC diagram.' },
-        { icon: '🚗', head: 'Consumption externalities', body: 'Negative effects from using a product: passive smoking (tobacco); traffic congestion (car use); noise from music events. The external cost arises from consumption, not production. The MPB > MSB diagram variant applies here.' },
-        { icon: '🌱', head: 'Environmental damage', body: 'Carbon emissions, deforestation, overfishing — externalities that damage natural capital with long-run consequences. Characterised by stock externalities (accumulate over time) rather than flow externalities.' },
-        { icon: '🌍', head: 'Global externalities', body: 'Climate change is a global externality — emissions in one country impose costs worldwide. No single government can internalise all costs; requires international cooperation (Paris Agreement, carbon trading schemes).' }
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Real-world examples',
+      tip: { icon: 'ℹ️', tone: 'green', text: '<strong>Strong exam answers improve when you name the third party harmed.</strong> Here are the most commonly examined externalities and who bears the cost.' },
+      illustratedGridLabel: 'Production externalities',
+      illustratedGridEmoji: '🏭',
+      illustratedGrid: [
+        {
+          scene: 'steelCement', tone: 'green',
+          title: 'Steel and cement production',
+          body: 'Emissions and dust cause air pollution and contribute to climate change.',
+          thirdParty: 'Nearby residents and future generations'
+        },
+        {
+          scene: 'shippingAviation', tone: 'blue',
+          title: 'Shipping and aviation emissions',
+          body: 'Greenhouse gases and air pollution damage health and the climate.',
+          thirdParty: 'Future generations and communities exposed to pollution'
+        },
+        {
+          scene: 'deforestation', tone: 'amber',
+          title: 'Deforestation',
+          body: 'Loss of forests reduces biodiversity, increases flooding risk and releases carbon.',
+          thirdParty: 'Ecosystems, indigenous communities and future generations'
+        },
+        {
+          scene: 'intensiveFarming', tone: 'green',
+          title: 'Intensive farming and fertiliser runoff',
+          body: 'Nutrient runoff pollutes rivers and harms aquatic life.',
+          thirdParty: 'Rivers, fisheries, biodiversity and nearby residents'
+        }
       ],
-      examEdge: 'Distinguish production from consumption externalities in the diagram: production externality → MSC shifts above MPC (supply side). Consumption externality (negative) → MPB shifts below MSB (demand side — use this when the question involves consumer behaviour, not firm production).'
+      causesLabel: 'Also examinable: negative consumption externalities',
+      causesEmoji: '🥃',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '🚬', head: 'Smoking',       body: 'Harms non-smokers through second-hand smoke and higher public health costs.',                    tone: 'rose'   },
+        { icon: '🍺', head: 'Alcohol',        body: 'Harms others through anti-social behaviour and NHS/emergency-service costs.',                    tone: 'amber'  },
+        { icon: '🥤', head: 'Sugary drinks',  body: 'Imposes higher healthcare costs on society via obesity and diabetes-related illness.',          tone: 'purple' },
+        { icon: '🚗', head: 'Petrol cars',    body: 'Air pollution and accelerated climate change harm third parties not paying at the pump.',       tone: 'slate'  }
+      ],
+      tipLate: { icon: '⭐', tone: 'blue', head: 'Exam move', text: 'Identify the producer or consumer, then name the external harm and the third party affected.' },
+      examEdge: 'The spec leans towards production externalities, but consumption examples often appear in 5- and 8-mark questions. Always distinguish: production externality → MSC above MPC; consumption externality → MPB below MSB.'
     },
     {
       id: 'neg_externalities_4',

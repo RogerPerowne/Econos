@@ -125,7 +125,7 @@ window.ECONOS_TOPIC = {
             label: 'Subsidy in place',
             tone: 'green',
             head: 'The subsidy in place — Pc, Pp and the £S wedge',
-            body: 'The subsidy has shifted supply down to S₁. Quantity rises to <strong>Qs</strong>. Consumers pay <strong>Pc</strong> (below P₀); producers receive net price <strong>Pp</strong> (above P₀) once the subsidy is added on top of the market price. The gap between Pp and Pc is the per-unit subsidy, <strong>£S</strong>.',
+            body: 'The subsidy shifts supply down to S₁, raising quantity to <strong>Qs</strong>. Consumers pay <strong>Pc</strong> below P₀, while producers receive <strong>Pp</strong> above P₀ once the subsidy is added. The gap between Pp and Pc is the per-unit subsidy, <strong>£S</strong>.',
             analysis: 'Pp > P₀ > Pc — producers receive more, consumers pay less, and the difference comes from government. The next steps split the wedge into who captures how much, then total it as cost.'
           },
           {

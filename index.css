@@ -227,9 +227,13 @@
     .hp-hero__illustration {
       width: 100%;
       height: auto;
+      aspect-ratio: 13 / 10;
+      object-fit: cover;
+      object-position: 60% center;
       display: block;
       border-radius: 16px;
-      filter: drop-shadow(0 4px 24px rgba(11,20,38,0.10));
+      box-shadow: 0 4px 24px rgba(11,20,38,0.10);
+      background: #F4EFE8;
     }
 
     /* Floating progress card */

@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroExternalities',
     summary: 'Negative externalities arise when production or consumption imposes costs on third parties not reflected in market prices. The result: the market overproduces relative to the socially optimal level, creating a welfare loss.',
-    doInThis: 'Work through 8 cards covering the definition and types of negative externalities, the MSC/MPC diagram, welfare loss triangle, real-world examples, production vs consumption externalities, policy responses, and a 25-mark essay scaffold on correcting negative externalities.',
+    doInThis: 'Work through 7 cards covering the costs trilogy (MPC, MEC, MSC), the negative production externality diagram, real-world examples, market-based and command-and-control interventions, why intervention can fail, and the exam moves that distinguish top-grade answers.',
     outcomes: [
       'Define negative externality and distinguish production from consumption externalities',
       'Draw and interpret the negative production externality diagram with MSC above MPC',
@@ -17,7 +17,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Negative externality → MSC > MPC → market overproduces. Deadweight welfare loss = triangle between market output and socially optimal output. Government corrects via Pigouvian tax to shift MPC up to MSC.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -25,30 +25,49 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'neg_externalities_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
-      title: 'Negative externalities: the big picture',
-      lede: 'When private costs ignore third-party harm, markets overproduce — and society pays the bill.',
-      tip: 'MSC = MPC + MEC. When external costs (MEC) exist, the market price is too low → too much output. The DWL triangle shows the welfare lost at every unit produced beyond Q*.',
-      branches: [
-        { tone: 'green',  label: 'The core concept',   sub: 'MSC = MPC + MEC. When MEC > 0, the market price understates true cost and output exceeds the social optimum.' },
-        { tone: 'blue',   label: 'The diagram',        sub: 'MSC sits above MPC. Welfare loss is the triangle between MSC and MPB beyond Q*.' },
-        { tone: 'amber',  label: 'Types & examples',   sub: 'Production externalities (pollution, congestion) and consumption externalities (smoking, alcohol).' },
-        { tone: 'purple', label: 'Coase & private fixes', sub: 'With clear property rights and low transaction costs, parties can bargain to the efficient outcome — no government needed.' },
-        { tone: 'rose',   label: 'Government policies', sub: 'Pigouvian taxes, regulation, tradable permits — each with strengths, weaknesses, and information demands.' }
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'The costs trilogy',
+      tip: [
+        {
+          icon: '🏭',
+          tone: 'green',
+          head: 'The steel plant',
+          text: 'A steel plant produces one more tonne of steel. To do so, it burns coal and emits smoke. The firm pays for wages, energy and raw materials — those are <em>its</em> costs. But the smoke harms nearby residents, causing coughs, asthma and lower quality of life. Those costs are not paid by the firm — they are borne by third parties.<br><br><strong>The producer faces a private cost, but third parties face an external cost.</strong>'
+        }
       ],
-      body: 'An <strong>externality</strong> occurs when a third party (not the buyer or seller) is affected by an economic transaction. A <strong>negative externality</strong> is an external cost — a cost imposed on third parties who receive no compensation.<br><br>Key terminology:<br>• <strong>Private cost (MPC):</strong> the cost borne by the producer or consumer directly.<br>• <strong>External cost (MEC):</strong> the cost borne by third parties not party to the transaction.<br>• <strong>Social cost (MSC):</strong> MSC = MPC + MEC — the total cost to society of producing one more unit.<br><br>When negative externalities exist, MSC > MPC. Market prices only reflect MPC, so the market overproduces — more output is produced than is socially optimal.',
+      keyPointsLabel: 'The three costs',
+      keyPointsEmoji: '💰',
+      keyPointsCols: 3,
+      keyPoints: [
+        { tone: 'green',  icon: '💼', title: 'Marginal Private Cost (MPC)',  headline: 'The cost to the producer of one more unit',         body: '<em>Memory cue:</em> the costs <strong>I pay</strong>.' },
+        { tone: 'purple', icon: '👥', title: 'Marginal External Cost (MEC)', headline: 'The cost imposed on third parties by that unit',    body: '<em>Memory cue:</em> the <strong>harm they pay</strong>.' },
+        { tone: 'blue',   icon: '🌍', title: 'Marginal Social Cost (MSC)',   headline: 'The total cost to society of producing that unit', body: '<em>Memory cue:</em> the <strong>true cost to all</strong>.<br><br><strong>MSC = MPC + MEC</strong>' }
+      ],
+      causesLabel: 'Worked example: the steel plant',
+      causesEmoji: '🏭',
+      causesStyle: 'plain-white',
+      causes: [
+        { head: 'MPC (private costs)',  icon: '💼', body: 'Wages, energy, raw materials, machine depreciation.',                            tone: 'green'  },
+        { head: 'MEC (external costs)', icon: '👥', body: 'Smoke, health damage to local residents, cleaning costs for nearby properties.', tone: 'purple' },
+        { head: 'MSC (social costs)',   icon: '🌍', body: 'All private costs + all external costs combined — the true cost to society.',    tone: 'blue'   }
+      ],
+      tipLate: {
+        icon: '⭐',
+        tone: 'blue',
+        head: 'Key idea',
+        text: 'In a negative externality, the free market ignores external costs, so <strong>output is too high</strong> relative to the social optimum.'
+      },
       keyTerms: [
-        { term: 'Negative externality', def: 'An external cost imposed on third parties as a result of economic activity — not reflected in market price.' },
-        { term: 'MSC', def: 'Marginal Social Cost = MPC + MEC. The true cost to society of one more unit of output.' },
-        { term: 'Overproduction', def: 'Market output exceeds socially optimal output because private costs understate social costs.' }
+        { term: 'Marginal Private Cost (MPC)',  def: 'The additional cost borne by the producer of supplying one more unit of output.' },
+        { term: 'Marginal External Cost (MEC)', def: 'The additional cost imposed on third parties by the production (or consumption) of one more unit.' },
+        { term: 'Marginal Social Cost (MSC)',   def: 'The total additional cost to society of one more unit — equal to MPC + MEC. The true cost the market should respond to but does not.' }
       ],
-      examEdge: 'Always distinguish private cost from social cost. The market fails because prices reflect MPC, not MSC. If MPC = MSC (no externality), market is efficient. If MSC > MPC (negative externality), market overproduces by the amount between Q-market and Q-optimal. This logic must be explicit in any externality answer.'
+      examEdge: 'Remember the trilogy — <strong>private</strong> is paid by the producer; <strong>external</strong> is paid by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the positive mirror, see <a href="learn.html?topic=pos_externalities" style="color:#2563EB;font-weight:700;">Positive Externalities</a>.'
     },
     {
       id: 'neg_externalities_2',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 2 of 8',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'The Negative Production Externality Diagram',
       lede: 'The most important diagram in market failure. Build it in four moves — every label matters.',
       diagramKey: 'negExternalityInteractive',

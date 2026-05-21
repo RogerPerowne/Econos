@@ -14015,62 +14015,80 @@ window.ECONOS_ICONS = {
   `,
 
   marketFailureOverview: `
-    <svg viewBox="0 0 440 290" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 0 540 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <!-- LEFT: When markets work well -->
-      <text x="110" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#059669">When markets work well</text>
-      <text x="110" y="40" font-size="9" text-anchor="middle" fill="#64748B">Prices reflect costs and benefits;</text>
-      <text x="110" y="52" font-size="9" text-anchor="middle" fill="#64748B">resources go where valued most.</text>
-      <line x1="40" y1="72" x2="40" y2="200" stroke="#334155" stroke-width="1.3"/>
-      <polygon points="40,68 36,76 44,76" fill="#334155"/>
-      <text x="33" y="76" font-size="10" font-weight="700" fill="#0B1426">P</text>
-      <line x1="40" y1="200" x2="200" y2="200" stroke="#334155" stroke-width="1.3"/>
-      <polygon points="204,200 196,196 196,204" fill="#334155"/>
-      <text x="200" y="215" font-size="10" font-weight="700" fill="#0B1426">Q</text>
-      <line x1="56" y1="184" x2="186" y2="92" stroke="#059669" stroke-width="2.2"/>
-      <text x="190" y="94" font-size="11" font-weight="800" fill="#059669">S</text>
-      <line x1="56" y1="92" x2="186" y2="184" stroke="#059669" stroke-width="2.2"/>
-      <text x="190" y="187" font-size="11" font-weight="800" fill="#059669">D</text>
-      <circle cx="121" cy="138" r="5.5" fill="#059669"/>
-      <line x1="40" y1="138" x2="121" y2="138" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="34" y="142" font-size="9" text-anchor="end" fill="#475569">P*</text>
-      <line x1="121" y1="138" x2="121" y2="200" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="121" y="215" font-size="9" text-anchor="middle" fill="#475569">Q*</text>
-      <rect x="135" y="146" width="62" height="40" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
-      <text x="166" y="159" font-size="9" font-weight="800" text-anchor="middle" fill="#059669">Efficient</text>
-      <text x="166" y="171" font-size="9" font-weight="800" text-anchor="middle" fill="#059669">outcome</text>
-      <text x="166" y="182" font-size="7.5" text-anchor="middle" fill="#065F46">Max total surplus</text>
+      <text x="115" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#059669">When markets work well</text>
+      <text x="115" y="40" font-size="9" text-anchor="middle" fill="#64748B">Prices reflect costs and benefits;</text>
+      <text x="115" y="52" font-size="9" text-anchor="middle" fill="#64748B">resources go where valued most.</text>
+      <!-- Y-axis -->
+      <line x1="48" y1="76" x2="48" y2="208" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="48,70 44,78 52,78" fill="#334155"/>
+      <text x="54" y="78" font-size="11" font-weight="700" fill="#0B1426">P</text>
+      <!-- X-axis -->
+      <line x1="48" y1="208" x2="210" y2="208" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="216,208 208,204 208,212" fill="#334155"/>
+      <text x="212" y="222" font-size="11" font-weight="700" fill="#0B1426">Q</text>
+      <!-- S & D -->
+      <line x1="64" y1="192" x2="196" y2="98" stroke="#059669" stroke-width="2.2"/>
+      <text x="200" y="100" font-size="11" font-weight="800" fill="#059669">S</text>
+      <line x1="64" y1="98" x2="196" y2="192" stroke="#059669" stroke-width="2.2"/>
+      <text x="200" y="195" font-size="11" font-weight="800" fill="#059669">D</text>
+      <!-- Equilibrium -->
+      <circle cx="130" cy="145" r="5.5" fill="#059669"/>
+      <line x1="48" y1="145" x2="130" y2="145" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="42" y="149" font-size="9" text-anchor="end" fill="#475569">P*</text>
+      <line x1="130" y1="145" x2="130" y2="208" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="130" y="222" font-size="9" text-anchor="middle" fill="#475569">Q*</text>
+      <!-- Efficient outcome tag -->
+      <rect x="148" y="150" width="62" height="46" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+      <text x="179" y="166" font-size="10" font-weight="800" text-anchor="middle" fill="#059669">Efficient</text>
+      <text x="179" y="178" font-size="10" font-weight="800" text-anchor="middle" fill="#059669">outcome</text>
+      <text x="179" y="191" font-size="7.5" text-anchor="middle" fill="#065F46">Max total surplus</text>
 
       <!-- RIGHT: When markets fail -->
       <text x="335" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#dc2626">When markets fail</text>
       <text x="335" y="40" font-size="9" text-anchor="middle" fill="#64748B">Prices send the wrong signal — too much</text>
       <text x="335" y="52" font-size="9" text-anchor="middle" fill="#64748B">or too little is produced or consumed.</text>
-      <line x1="240" y1="72" x2="240" y2="200" stroke="#334155" stroke-width="1.3"/>
-      <polygon points="240,68 236,76 244,76" fill="#334155"/>
-      <text x="233" y="76" font-size="10" font-weight="700" fill="#0B1426">P</text>
-      <line x1="240" y1="200" x2="400" y2="200" stroke="#334155" stroke-width="1.3"/>
-      <polygon points="404,200 396,196 396,204" fill="#334155"/>
-      <text x="400" y="215" font-size="10" font-weight="700" fill="#0B1426">Q</text>
-      <line x1="256" y1="184" x2="386" y2="92" stroke="#059669" stroke-width="2.2"/>
-      <text x="390" y="94" font-size="11" font-weight="800" fill="#059669">S</text>
-      <line x1="256" y1="92" x2="386" y2="184" stroke="#059669" stroke-width="2.2"/>
-      <text x="390" y="187" font-size="11" font-weight="800" fill="#059669">D</text>
-      <circle cx="321" cy="138" r="5" fill="#059669"/>
-      <line x1="240" y1="138" x2="321" y2="138" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="234" y="142" font-size="9" text-anchor="end" fill="#475569">P*</text>
-      <line x1="321" y1="138" x2="321" y2="200" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="319" y="215" font-size="9" text-anchor="end" fill="#059669" font-weight="700">Q*</text>
-      <circle cx="350" cy="165" r="5" fill="#dc2626"/>
-      <line x1="350" y1="165" x2="350" y2="200" stroke="#dc2626" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="352" y="215" font-size="9" text-anchor="start" fill="#dc2626" font-weight="700">Qm</text>
+      <!-- Y-axis -->
+      <line x1="262" y1="76" x2="262" y2="208" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="262,70 258,78 266,78" fill="#334155"/>
+      <text x="268" y="78" font-size="11" font-weight="700" fill="#0B1426">P</text>
+      <!-- X-axis -->
+      <line x1="262" y1="208" x2="402" y2="208" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="408,208 400,204 400,212" fill="#334155"/>
+      <text x="404" y="222" font-size="11" font-weight="700" fill="#0B1426">Q</text>
+      <!-- S & D -->
+      <line x1="278" y1="192" x2="388" y2="98" stroke="#059669" stroke-width="2.2"/>
+      <text x="392" y="100" font-size="11" font-weight="800" fill="#059669">S</text>
+      <line x1="278" y1="98" x2="388" y2="192" stroke="#059669" stroke-width="2.2"/>
+      <text x="392" y="195" font-size="11" font-weight="800" fill="#059669">D</text>
+      <!-- Equilibrium Q* -->
+      <circle cx="333" cy="145" r="5" fill="#059669"/>
+      <line x1="262" y1="145" x2="333" y2="145" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="256" y="149" font-size="9" text-anchor="end" fill="#475569">P*</text>
+      <line x1="333" y1="145" x2="333" y2="208" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="333" y="222" font-size="10" text-anchor="middle" fill="#059669" font-weight="700">Q*</text>
+      <!-- Qm on D curve: D goes from (278,98) to (388,192). At x=362, y = 98 + (362-278)*(94/110) = 98 + 71.8 = 170 -->
+      <circle cx="362" cy="170" r="5" fill="#dc2626"/>
+      <line x1="362" y1="170" x2="362" y2="208" stroke="#dc2626" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="362" y="222" font-size="10" text-anchor="middle" fill="#dc2626" font-weight="700">Qm</text>
+
+      <!-- Right-side callouts -->
+      <rect x="416" y="90" width="118" height="38" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.2"/>
+      <text x="475" y="106" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">Market outcome</text>
+      <text x="475" y="120" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">(Qm)</text>
+      <line x1="475" y1="136" x2="475" y2="160" stroke="#94A3B8" stroke-width="1.5"/>
+      <polygon points="475,134 471,140 479,140" fill="#94A3B8"/>
+      <polygon points="475,162 471,156 479,156" fill="#94A3B8"/>
+      <rect x="416" y="166" width="118" height="38" rx="8" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.2"/>
+      <text x="475" y="182" font-size="10.5" font-weight="800" text-anchor="middle" fill="#d97706">Socially best</text>
+      <text x="475" y="196" font-size="10.5" font-weight="800" text-anchor="middle" fill="#d97706">outcome (Q*)</text>
 
       <!-- Bottom banner -->
-      <rect x="20" y="240" width="400" height="44" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
-      <circle cx="48" cy="262" r="14" fill="#FCD34D"/>
-      <path d="M40 262 L56 262 M48 255 L48 269 M44 269 L52 269" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-      <text x="74" y="267" font-size="12.5" font-weight="800" fill="#0B1426">Market failure = </text>
-      <text x="178" y="267" font-size="12.5" font-weight="800" fill="#d97706">misallocation</text>
-      <text x="255" y="267" font-size="12.5" font-weight="800" fill="#0B1426"> of resources + </text>
-      <text x="345" y="267" font-size="12.5" font-weight="800" fill="#dc2626">welfare loss</text>
+      <rect x="20" y="248" width="500" height="44" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+      <circle cx="48" cy="270" r="14" fill="#FCD34D"/>
+      <path d="M40 270 L56 270 M48 263 L48 277 M44 277 L52 277" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="74" y="275" font-size="13" font-weight="800" fill="#0B1426">Market failure = <tspan fill="#d97706">misallocation</tspan> of resources + <tspan fill="#dc2626">welfare loss</tspan></text>
     </svg>
   `,
 

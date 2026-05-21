@@ -10959,8 +10959,8 @@ window.ECONOS_ICONS = {
   `,
 
   whyNotRationalDiagram: `
-    <svg viewBox="0 0 440 506" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="506" fill="#F8FAFC" rx="10"/>
+    <svg viewBox="0 0 440 244" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="244" fill="#F8FAFC" rx="10"/>
 
       <text x="220" y="26" font-size="13" font-weight="700" text-anchor="middle" fill="#0B1426">The gap between ideal and real decision-making</text>
 
@@ -10997,30 +10997,6 @@ window.ECONOS_ICONS = {
       <circle cx="244" cy="170" r="3.5" fill="#7c3aed"/>
       <text x="254" y="174" font-size="10.5" fill="#334155">Follows defaults &amp; norms</text>
       <text x="325" y="220" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"the reality"</text>
-
-      <line x1="20" y1="250" x2="420" y2="250" stroke="#E2E8F0" stroke-width="1.5"/>
-      <text x="220" y="272" font-size="12" font-weight="700" text-anchor="middle" fill="#0B1426">Three systematic departures from rationality</text>
-
-      <rect x="20" y="284" width="400" height="66" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="20" y="284" width="4" height="66" rx="2" fill="#059669"/>
-      <text x="36" y="304" font-size="11" font-weight="700" fill="#059669">Limited attention</text>
-      <text x="36" y="320" font-size="9.5" fill="#475569">We can't process everything — so we focus on what's easiest,</text>
-      <text x="36" y="335" font-size="9.5" fill="#475569">not what's most relevant.</text>
-      <text x="415" y="320" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">card 2 →</text>
-
-      <rect x="20" y="358" width="400" height="66" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="20" y="358" width="4" height="66" rx="2" fill="#d97706"/>
-      <text x="36" y="378" font-size="11" font-weight="700" fill="#d97706">Biases &amp; heuristics</text>
-      <text x="36" y="394" font-size="9.5" fill="#475569">Mental shortcuts let us act fast but mislead us in</text>
-      <text x="36" y="409" font-size="9.5" fill="#475569">systematic, predictable ways.</text>
-      <text x="415" y="394" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">card 2 →</text>
-
-      <rect x="20" y="432" width="400" height="66" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="20" y="432" width="4" height="66" rx="2" fill="#7c3aed"/>
-      <text x="36" y="452" font-size="11" font-weight="700" fill="#7c3aed">Self-control problems</text>
-      <text x="36" y="468" font-size="9.5" fill="#475569">Long-term goals consistently lose to short-term</text>
-      <text x="36" y="483" font-size="9.5" fill="#475569">temptations — even when we know better.</text>
-      <text x="415" y="468" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">card 3 →</text>
     </svg>
   `,
 

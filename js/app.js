@@ -650,7 +650,8 @@
       if (c.keyPointsLabel) content += genSecLabel(c.keyPointsEmoji || '🔑', c.keyPointsLabel);
       const kpTones = ['green', 'amber', 'blue', 'purple', 'rose', 'slate'];
       const n = c.keyPoints.length;
-      content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:14px;margin-bottom:26px;">`;
+      const cols = c.keyPointsCols || n;
+      content += `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:14px;margin-bottom:26px;">`;
       content += c.keyPoints.map((p, i) => {
         const t = PATTERN_TONES[p.tone || kpTones[i % kpTones.length]];
         return `

@@ -14405,4 +14405,480 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* ─── Economist portrait: Adam Smith ─── */
+  economistAdamSmith: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="fas-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="fas-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- DARK FROCK COAT -->
+      <path d="M 28,360 L 52,240 Q 82,224 112,220 L 140,246 L 168,220 Q 198,224 228,240 L 252,360 Z" fill="#1E2A3A" filter="url(#fas-sh)"/>
+      <!-- Lapels -->
+      <path d="M 112,220 L 102,268 L 140,298 L 178,268 L 168,220 L 154,230 L 140,234 L 126,230 Z" fill="#263446"/>
+      <!-- White stock/cravat -->
+      <path d="M 126,224 L 120,254 L 140,262 L 160,254 L 154,224 L 148,232 L 140,236 L 132,232 Z" fill="#F4F0EC"/>
+      <!-- Stock bow knot -->
+      <ellipse cx="130" cy="230" rx="7" ry="4" fill="#E8E4DE" transform="rotate(-20,130,230)"/>
+      <ellipse cx="150" cy="230" rx="7" ry="4" fill="#E8E4DE" transform="rotate(20,150,230)"/>
+      <!-- Gold coat buttons -->
+      <circle cx="140" cy="280" r="3.5" fill="#C8A040"/>
+      <circle cx="140" cy="306" r="3.5" fill="#C8A040"/>
+      <circle cx="140" cy="332" r="3.5" fill="#C8A040"/>
+
+      <!-- NECK -->
+      <path d="M 130,202 L 128,230 L 152,230 L 150,202 Q 143,208 140,209 Q 137,208 130,202 Z" fill="#C07850"/>
+
+      <!-- EARS -->
+      <ellipse cx="95" cy="158" rx="8" ry="11" fill="#BA7048"/>
+      <ellipse cx="185" cy="158" rx="8" ry="11" fill="#BA7048"/>
+
+      <!-- FACE (round, well-fed 18th-century scholar) -->
+      <ellipse cx="140" cy="152" rx="46" ry="55" fill="#CC8058"/>
+      <ellipse cx="109" cy="168" rx="13" ry="8" fill="#D06050" opacity="0.18"/>
+      <ellipse cx="171" cy="168" rx="13" ry="8" fill="#D06050" opacity="0.18"/>
+
+      <!-- POWDERED WIG — 18th-century full wig with side curls -->
+      <path d="M 93,155 Q 86,100 118,84 Q 140,76 162,84 Q 194,100 187,155 Q 182,120 168,106 Q 152,92 140,90 Q 128,92 112,106 Q 98,120 93,155 Z" fill="#D6D2CA"/>
+      <path d="M 92,148 Q 87,102 118,90 Q 140,84 162,90 Q 193,102 188,148 Q 184,118 170,106 Q 155,96 140,96 Q 125,96 110,106 Q 96,118 92,148 Z" fill="#ECEAE4"/>
+      <!-- Side rolls -->
+      <path d="M 90,148 Q 80,162 80,182 Q 82,198 90,208" stroke="#DEDAD2" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <path d="M 190,148 Q 200,162 200,182 Q 198,198 190,208" stroke="#DEDAD2" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <!-- Curl highlights -->
+      <path d="M 83,156 Q 76,170 78,188" stroke="#F0EEE8" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 197,156 Q 204,170 202,188" stroke="#F0EEE8" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Top wig roll -->
+      <path d="M 112,92 Q 126,80 140,84 Q 154,80 168,92 Q 164,100 154,100 Q 146,96 140,98 Q 134,96 126,100 Q 116,100 112,92 Z" fill="#F4F2EC"/>
+      <path d="M 108,96 Q 124,88 140,92" stroke="#C8C4BA" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M 140,92 Q 156,88 172,96" stroke="#C8C4BA" stroke-width="0.8" fill="none" opacity="0.5"/>
+
+      <!-- EYEBROWS (fair, arched) -->
+      <path d="M 110,130 Q 122,125 136,129" stroke="#7A5C38" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 144,129 Q 158,125 170,130" stroke="#7A5C38" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+      <!-- EYES -->
+      <ellipse cx="122" cy="143" rx="9" ry="6" fill="white"/>
+      <ellipse cx="158" cy="143" rx="9" ry="6" fill="white"/>
+      <circle cx="123" cy="143" r="4.5" fill="#3A2C18"/>
+      <circle cx="159" cy="143" r="4.5" fill="#3A2C18"/>
+      <circle cx="123" cy="143" r="2" fill="#0E0A04"/>
+      <circle cx="159" cy="143" r="2" fill="#0E0A04"/>
+      <circle cx="124.5" cy="141.5" r="1" fill="white"/>
+      <circle cx="160.5" cy="141.5" r="1" fill="white"/>
+
+      <!-- PROMINENT AQUILINE NOSE (Smith's noted feature) -->
+      <path d="M 139,156 Q 131,170 129,180 Q 138,188 140,188 Q 142,188 151,180 Q 149,170 141,156" fill="#A06038" opacity="0.35"/>
+      <ellipse cx="140" cy="183" rx="9" ry="5.5" fill="#A06038" opacity="0.28"/>
+      <ellipse cx="134" cy="182" rx="2.5" ry="1.8" fill="#8A4A28" opacity="0.28"/>
+      <ellipse cx="146" cy="182" rx="2.5" ry="1.8" fill="#8A4A28" opacity="0.28"/>
+
+      <!-- SLIGHT AGE LINES -->
+      <path d="M 112,155 Q 110,162 112,168" stroke="#A86040" stroke-width="0.8" fill="none" opacity="0.25"/>
+      <path d="M 168,155 Q 170,162 168,168" stroke="#A86040" stroke-width="0.8" fill="none" opacity="0.25"/>
+
+      <!-- MOUTH (scholarly half-smile) -->
+      <path d="M 130,196 Q 140,202 150,196" stroke="#884030" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- CHIN shading -->
+      <path d="M 130,207 Q 140,214 150,207" stroke="#A86840" stroke-width="0.8" fill="none" opacity="0.22"/>
+
+      <!-- BOOK PROP top-right (Wealth of Nations, 1776) -->
+      <g transform="translate(190, 28)" filter="url(#fas-soft)">
+        <rect x="0" y="0" width="38" height="52" rx="3" fill="#8B2A14"/>
+        <rect x="36" y="0" width="38" height="52" rx="3" fill="#A33A20"/>
+        <line x1="36" y1="0" x2="36" y2="52" stroke="#5A1206" stroke-width="2.5"/>
+        <line x1="4" y1="14" x2="32" y2="14" stroke="#D4A888" stroke-width="1" opacity="0.7"/>
+        <line x1="4" y1="22" x2="32" y2="22" stroke="#D4A888" stroke-width="1" opacity="0.7"/>
+        <line x1="4" y1="30" x2="32" y2="30" stroke="#D4A888" stroke-width="1" opacity="0.7"/>
+        <line x1="40" y1="14" x2="70" y2="14" stroke="#D4A888" stroke-width="1" opacity="0.7"/>
+        <line x1="40" y1="22" x2="70" y2="22" stroke="#D4A888" stroke-width="1" opacity="0.7"/>
+        <line x1="40" y1="30" x2="70" y2="30" stroke="#D4A888" stroke-width="1" opacity="0.7"/>
+        <text x="18" y="9" text-anchor="middle" font-size="5" font-weight="800" fill="#F5E8D8" font-family="Georgia,serif">WEALTH</text>
+        <text x="18" y="17" text-anchor="middle" font-size="4.5" fill="#F5E8D8" font-family="Georgia,serif">of Nations</text>
+        <text x="18" y="25" text-anchor="middle" font-size="4" fill="#E0C8B0" font-family="Georgia,serif">1776</text>
+      </g>
+
+      <!-- QUILL PEN bottom-left -->
+      <g transform="translate(20, 260)" filter="url(#fas-soft)">
+        <path d="M 24,6 Q 46,2 50,18 Q 46,34 26,58 Q 16,36 24,6 Z" fill="#E8DDB4" opacity="0.9"/>
+        <path d="M 26,10 Q 44,6 46,20 Q 42,34 26,56" stroke="#CCC898" stroke-width="1" fill="none" opacity="0.5"/>
+        <path d="M 26,56 L 22,70 L 26,66 L 30,70 L 26,56 Z" fill="#1A1208"/>
+        <ellipse cx="26" cy="72" rx="2.5" ry="1.5" fill="#1A1208" opacity="0.65"/>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#1E2A3A" font-family="Georgia,serif">Adam Smith</text>
+    </svg>
+  `,
+
+  /* ─── Economist portrait: Joan Robinson ─── */
+  economistJoanRobinson: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="fjr-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="fjr-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- NAVY ACADEMIC BLAZER -->
+      <path d="M 28,360 L 52,240 Q 82,224 110,220 L 140,246 L 170,220 Q 198,224 228,240 L 252,360 Z" fill="#1A3356" filter="url(#fjr-sh)"/>
+      <!-- Lapels -->
+      <path d="M 110,220 L 100,266 L 140,294 L 180,266 L 170,220 L 156,230 L 140,234 L 124,230 Z" fill="#234068"/>
+      <!-- White blouse/collar -->
+      <path d="M 126,224 L 120,252 L 140,260 L 160,252 L 154,224 L 148,230 L 140,234 L 132,230 Z" fill="#EEF0F4"/>
+      <!-- Small collar brooch -->
+      <path d="M 136,238 Q 140,244 144,238 Q 142,248 140,250 Q 138,248 136,238 Z" fill="#B0A020"/>
+      <!-- Buttons -->
+      <circle cx="140" cy="276" r="3" fill="#8090A8"/>
+      <circle cx="140" cy="298" r="3" fill="#8090A8"/>
+
+      <!-- NECK -->
+      <path d="M 130,202 L 128,228 L 152,228 L 150,202 Q 143,208 140,209 Q 137,208 130,202 Z" fill="#BF7855"/>
+
+      <!-- PEARL EARRINGS -->
+      <ellipse cx="97" cy="158" rx="8.5" ry="11" fill="#B87050"/>
+      <ellipse cx="183" cy="158" rx="8.5" ry="11" fill="#B87050"/>
+      <circle cx="96" cy="163" r="5" fill="#F0ECEA" stroke="#D8C8C0" stroke-width="1.2"/>
+      <circle cx="184" cy="163" r="5" fill="#F0ECEA" stroke="#D8C8C0" stroke-width="1.2"/>
+
+      <!-- FACE (angular, intelligent) -->
+      <ellipse cx="140" cy="152" rx="45" ry="55" fill="#C88060"/>
+
+      <!-- HAIR — short dark waves, gray streaks at temples -->
+      <path d="M 95,152 Q 88,104 118,88 Q 140,80 162,88 Q 192,104 185,152 Q 180,120 166,106 Q 152,94 140,92 Q 128,94 114,106 Q 100,120 95,152 Z" fill="#2E2018"/>
+      <path d="M 96,146 Q 90,104 118,92 Q 140,86 162,92 Q 190,104 184,146 Q 180,118 166,106 Q 152,96 140,94 Q 128,96 114,106 Q 100,118 96,146 Z" fill="#3A2818"/>
+      <!-- Gray temples -->
+      <path d="M 108,96 Q 114,90 120,94" stroke="#8A8070" stroke-width="2.5" fill="none" opacity="0.7"/>
+      <path d="M 160,94 Q 166,90 172,96" stroke="#8A8070" stroke-width="2.5" fill="none" opacity="0.7"/>
+      <path d="M 104,108 Q 110,102 118,106" stroke="#7A7060" stroke-width="2" fill="none" opacity="0.5"/>
+      <path d="M 162,106 Q 170,102 176,108" stroke="#7A7060" stroke-width="2" fill="none" opacity="0.5"/>
+      <!-- Side waves -->
+      <path d="M 96,110 Q 98,124 94,136 Q 92,144 96,152" stroke="#4A3424" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M 184,110 Q 182,124 186,136 Q 188,144 184,152" stroke="#4A3424" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <!-- Top hair wave -->
+      <path d="M 112,92 Q 126,80 140,84 Q 154,80 168,92" stroke="#3A2818" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+      <!-- EYEBROWS (strong, dark, determined) -->
+      <path d="M 109,130 Q 121,124 136,128" stroke="#2E2018" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      <path d="M 144,128 Q 159,124 171,130" stroke="#2E2018" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+
+      <!-- EYES -->
+      <ellipse cx="122" cy="143" rx="9" ry="6" fill="white"/>
+      <ellipse cx="158" cy="143" rx="9" ry="6" fill="white"/>
+      <circle cx="123" cy="143" r="4.5" fill="#2E2818"/>
+      <circle cx="159" cy="143" r="4.5" fill="#2E2818"/>
+      <circle cx="123" cy="143" r="2" fill="#0C0808"/>
+      <circle cx="159" cy="143" r="2" fill="#0C0808"/>
+      <circle cx="124.5" cy="141.5" r="1" fill="white"/>
+      <circle cx="160.5" cy="141.5" r="1" fill="white"/>
+
+      <!-- RECTANGULAR ACADEMIC GLASSES -->
+      <rect x="107" y="135" width="27" height="16" rx="2" fill="none" stroke="#1A1810" stroke-width="2"/>
+      <rect x="143" y="135" width="27" height="16" rx="2" fill="none" stroke="#1A1810" stroke-width="2"/>
+      <path d="M 134,141 Q 140,139 146,141" stroke="#1A1810" stroke-width="1.8" fill="none"/>
+      <path d="M 107,143 Q 98,144 95,152" stroke="#1A1810" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 170,143 Q 179,144 181,152" stroke="#1A1810" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- NOSE -->
+      <path d="M 138,156 Q 134,168 133,176 Q 140,180 147,176 Q 146,168 142,156" fill="#9E5C38" opacity="0.32"/>
+      <circle cx="135" cy="175" r="2.2" fill="#8E4C2C" opacity="0.28"/>
+      <circle cx="145" cy="175" r="2.2" fill="#8E4C2C" opacity="0.28"/>
+
+      <!-- AGE LINES -->
+      <path d="M 112,155 Q 110,162 112,168" stroke="#9E5C38" stroke-width="0.9" fill="none" opacity="0.28"/>
+      <path d="M 168,155 Q 170,162 168,168" stroke="#9E5C38" stroke-width="0.9" fill="none" opacity="0.28"/>
+
+      <!-- PURPOSEFUL MOUTH -->
+      <path d="M 130,192 Q 140,196 150,192" stroke="#804030" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- DEMAND CURVE PROP top-right (price discrimination) -->
+      <g transform="translate(190, 26)" filter="url(#fjr-soft)">
+        <rect x="0" y="0" width="72" height="60" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+        <line x1="10" y1="8" x2="10" y2="52" stroke="#94A3B8" stroke-width="1.5"/>
+        <line x1="10" y1="52" x2="66" y2="52" stroke="#94A3B8" stroke-width="1.5"/>
+        <text x="5" y="12" font-size="7" fill="#64748B">P</text>
+        <text x="60" y="58" font-size="7" fill="#64748B">Q</text>
+        <!-- D1 steep/inelastic -->
+        <line x1="14" y1="12" x2="40" y2="50" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        <text x="42" y="48" font-size="7.5" font-weight="700" fill="#2563EB">D₁</text>
+        <!-- D2 gentle/elastic (dashed) -->
+        <line x1="14" y1="28" x2="62" y2="50" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="3,2"/>
+        <text x="53" y="27" font-size="7.5" font-weight="700" fill="#7C3AED">D₂</text>
+      </g>
+
+      <!-- SMALL BOOK bottom-left (Economics of Imperfect Competition, 1933) -->
+      <g transform="translate(16, 268)" filter="url(#fjr-soft)">
+        <rect x="0" y="0" width="34" height="48" rx="3" fill="#1A3356"/>
+        <rect x="32" y="0" width="34" height="48" rx="3" fill="#234068"/>
+        <line x1="32" y1="0" x2="32" y2="48" stroke="#8090A8" stroke-width="2"/>
+        <line x1="4" y1="14" x2="28" y2="14" stroke="#4A6090" stroke-width="1" opacity="0.8"/>
+        <line x1="4" y1="22" x2="28" y2="22" stroke="#4A6090" stroke-width="1" opacity="0.8"/>
+        <line x1="4" y1="30" x2="28" y2="30" stroke="#4A6090" stroke-width="1" opacity="0.8"/>
+        <line x1="36" y1="14" x2="62" y2="14" stroke="#4A6090" stroke-width="1" opacity="0.8"/>
+        <line x1="36" y1="22" x2="62" y2="22" stroke="#4A6090" stroke-width="1" opacity="0.8"/>
+        <line x1="36" y1="30" x2="62" y2="30" stroke="#4A6090" stroke-width="1" opacity="0.8"/>
+        <text x="32" y="43" text-anchor="middle" font-size="5.5" fill="#8090A8" font-family="Georgia,serif">1933</text>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#1A3356" font-family="Georgia,serif">Joan Robinson</text>
+    </svg>
+  `,
+
+  /* ─── Economist portrait: Elinor Ostrom ─── */
+  economistElinorOstrom: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="feo-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="feo-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- WARM TAN JACKET -->
+      <path d="M 28,360 L 52,240 Q 82,224 110,220 L 140,246 L 170,220 Q 198,224 228,240 L 252,360 Z" fill="#B89860" filter="url(#feo-sh)"/>
+      <!-- Lapels -->
+      <path d="M 110,220 L 100,266 L 140,294 L 180,266 L 170,220 L 156,230 L 140,234 L 124,230 Z" fill="#C8A870"/>
+      <!-- White blouse -->
+      <path d="M 126,224 L 120,252 L 140,260 L 160,252 L 154,224 L 148,232 L 140,236 L 132,232 Z" fill="#F4F2EE"/>
+      <!-- Buttons -->
+      <circle cx="140" cy="278" r="3" fill="#8A7040"/>
+      <circle cx="140" cy="302" r="3" fill="#8A7040"/>
+
+      <!-- NECK -->
+      <path d="M 130,202 L 128,230 L 152,230 L 150,202 Q 143,208 140,209 Q 137,208 130,202 Z" fill="#C07858"/>
+
+      <!-- GOLD STUD EARRINGS -->
+      <ellipse cx="97" cy="159" rx="8" ry="10.5" fill="#BA7050"/>
+      <ellipse cx="183" cy="159" rx="8" ry="10.5" fill="#BA7050"/>
+      <circle cx="96" cy="163" r="4" fill="#C8A040"/>
+      <circle cx="184" cy="163" r="4" fill="#C8A040"/>
+
+      <!-- FACE (rounder, warm, elder stateswoman) -->
+      <ellipse cx="140" cy="154" rx="47" ry="55" fill="#CC8862"/>
+      <ellipse cx="108" cy="170" rx="14" ry="9" fill="#BA7050" opacity="0.18"/>
+      <ellipse cx="172" cy="170" rx="14" ry="9" fill="#BA7050" opacity="0.18"/>
+
+      <!-- WHITE/SILVER SHORT BOB HAIR -->
+      <path d="M 92,152 Q 86,102 118,88 Q 140,80 162,88 Q 194,102 188,152 Q 182,118 166,106 Q 152,94 140,92 Q 128,94 114,106 Q 100,118 92,152 Z" fill="#AEA8A0"/>
+      <path d="M 92,146 Q 88,104 118,92 Q 140,86 162,92 Q 192,104 188,146 Q 183,120 168,108 Q 154,98 140,96 Q 126,98 112,108 Q 97,120 92,146 Z" fill="#CCCABF"/>
+      <!-- Silver highlights -->
+      <path d="M 106,96 Q 118,86 132,90" stroke="#E0DED8" stroke-width="3" fill="none" opacity="0.7"/>
+      <path d="M 148,90 Q 162,86 174,96" stroke="#E0DED8" stroke-width="3" fill="none" opacity="0.7"/>
+      <!-- Short bob sides (ends at jaw) -->
+      <path d="M 92,146 Q 88,162 90,178 Q 92,190 94,200" stroke="#BFBDB4" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <path d="M 188,146 Q 192,162 190,178 Q 188,190 186,200" stroke="#BFBDB4" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <path d="M 94,200 Q 98,208 102,212" stroke="#B4B2AA" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M 186,200 Q 182,208 178,212" stroke="#B4B2AA" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+      <!-- EYEBROWS (thin, silver, arched) -->
+      <path d="M 110,130 Q 122,126 136,129" stroke="#9A9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 144,129 Q 158,126 170,130" stroke="#9A9488" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+      <!-- EYES (warm, wise, friendly) -->
+      <ellipse cx="122" cy="143" rx="9" ry="6.5" fill="white"/>
+      <ellipse cx="158" cy="143" rx="9" ry="6.5" fill="white"/>
+      <circle cx="123" cy="143" r="4" fill="#4A3420"/>
+      <circle cx="159" cy="143" r="4" fill="#4A3420"/>
+      <circle cx="123" cy="143" r="2" fill="#1A0A04"/>
+      <circle cx="159" cy="143" r="2" fill="#1A0A04"/>
+      <circle cx="124.5" cy="142" r="1" fill="white"/>
+      <circle cx="160.5" cy="142" r="1" fill="white"/>
+      <!-- Laugh-line crinkles -->
+      <path d="M 131,147 Q 133,150 136,149" stroke="#B06844" stroke-width="0.8" fill="none" opacity="0.3"/>
+      <path d="M 144,149 Q 147,150 149,147" stroke="#B06844" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+      <!-- WIRE-FRAME GLASSES -->
+      <ellipse cx="122" cy="143" rx="13" ry="9" fill="none" stroke="#8A7040" stroke-width="1.8"/>
+      <ellipse cx="158" cy="143" rx="13" ry="9" fill="none" stroke="#8A7040" stroke-width="1.8"/>
+      <path d="M 135,142 Q 140,140 145,142" stroke="#8A7040" stroke-width="1.5" fill="none"/>
+      <path d="M 109,143 Q 102,145 98,152" stroke="#8A7040" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 171,143 Q 178,145 182,152" stroke="#8A7040" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- NOSE -->
+      <path d="M 138,157 Q 134,168 133,176 Q 140,181 147,176 Q 146,168 142,157" fill="#9E5C3A" opacity="0.3"/>
+      <circle cx="135" cy="174" r="2.2" fill="#8E4C2C" opacity="0.25"/>
+      <circle cx="145" cy="174" r="2.2" fill="#8E4C2C" opacity="0.25"/>
+
+      <!-- AGE LINES (gentle, distinguished) -->
+      <path d="M 111,155 Q 109,162 111,168" stroke="#A86040" stroke-width="0.9" fill="none" opacity="0.28"/>
+      <path d="M 169,155 Q 171,162 169,168" stroke="#A86040" stroke-width="0.9" fill="none" opacity="0.28"/>
+      <path d="M 116,172 Q 114,180 116,186" stroke="#A86040" stroke-width="0.8" fill="none" opacity="0.2"/>
+      <path d="M 164,172 Q 166,180 164,186" stroke="#A86040" stroke-width="0.8" fill="none" opacity="0.2"/>
+
+      <!-- WARM SMILE -->
+      <path d="M 126,193 Q 140,202 154,193" stroke="#804030" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- COMMUNITY NETWORK PROP top-right -->
+      <g transform="translate(188, 24)" filter="url(#feo-soft)">
+        <rect x="0" y="0" width="72" height="64" rx="6" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+        <!-- Edges -->
+        <line x1="36" y1="14" x2="14" y2="40" stroke="#F59E0B" stroke-width="1.5" opacity="0.7"/>
+        <line x1="36" y1="14" x2="58" y2="40" stroke="#F59E0B" stroke-width="1.5" opacity="0.7"/>
+        <line x1="14" y1="40" x2="36" y2="52" stroke="#F59E0B" stroke-width="1.5" opacity="0.7"/>
+        <line x1="58" y1="40" x2="36" y2="52" stroke="#F59E0B" stroke-width="1.5" opacity="0.7"/>
+        <line x1="14" y1="40" x2="58" y2="40" stroke="#F59E0B" stroke-width="1.2" opacity="0.5"/>
+        <!-- Nodes -->
+        <circle cx="36" cy="14" r="8" fill="#D97706"/>
+        <text x="36" y="18" text-anchor="middle" font-size="10">👥</text>
+        <circle cx="14" cy="40" r="6" fill="#F59E0B"/>
+        <circle cx="58" cy="40" r="6" fill="#F59E0B"/>
+        <circle cx="36" cy="52" r="6" fill="#FBBF24"/>
+        <text x="36" y="61" text-anchor="middle" font-size="6" font-weight="700" fill="#B45309">Commons</text>
+      </g>
+
+      <!-- FISH / COMMONS RESOURCE bottom-left -->
+      <g transform="translate(14, 268)" filter="url(#feo-soft)">
+        <path d="M 10,24 Q 30,10 50,24 Q 30,38 10,24 Z" fill="#22D3EE" opacity="0.7"/>
+        <path d="M 4,18 L 14,24 L 4,30 Z" fill="#22D3EE" opacity="0.7"/>
+        <circle cx="44" cy="22" r="2" fill="#0C4A6E" opacity="0.6"/>
+        <path d="M 0,40 Q 10,36 20,40 Q 30,44 40,40 Q 50,36 62,40" stroke="#7DD3FC" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M 0,48 Q 12,44 24,48 Q 36,52 48,48 Q 56,45 64,48" stroke="#7DD3FC" stroke-width="1.5" fill="none" opacity="0.4"/>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#8A6020" font-family="Georgia,serif">Elinor Ostrom</text>
+    </svg>
+  `,
+
+  /* ─── Economist portrait: Daniel Kahneman ─── */
+  economistDanielKahneman: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="fdk-sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+        <filter id="fdk-soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/>
+        </filter>
+      </defs>
+
+      <!-- DARK NAVY CASUAL JACKET (open collar) -->
+      <path d="M 28,360 L 52,240 Q 82,224 110,220 L 140,246 L 170,220 Q 198,224 228,240 L 252,360 Z" fill="#1E2B4A" filter="url(#fdk-sh)"/>
+      <!-- Open-collar lapels -->
+      <path d="M 110,220 L 100,266 L 140,294 L 180,266 L 170,220 L 156,230 L 140,234 L 124,230 Z" fill="#263860"/>
+      <!-- Blue-grey open-collar shirt visible -->
+      <path d="M 126,224 L 122,252 L 140,260 L 158,252 L 154,224 L 148,230 L 140,234 L 132,230 Z" fill="#3A5280"/>
+      <path d="M 126,224 L 132,238" stroke="#4A6298" stroke-width="1.5" fill="none"/>
+      <path d="M 154,224 L 148,238" stroke="#4A6298" stroke-width="1.5" fill="none"/>
+
+      <!-- NECK -->
+      <path d="M 130,202 L 128,228 L 152,228 L 150,202 Q 143,208 140,209 Q 137,208 130,202 Z" fill="#C07050"/>
+
+      <!-- EARS (somewhat large, prominent) -->
+      <ellipse cx="96" cy="158" rx="8" ry="12" fill="#B86848"/>
+      <ellipse cx="184" cy="158" rx="8" ry="12" fill="#B86848"/>
+      <ellipse cx="96" cy="168" rx="5" ry="3" fill="#A85E3E"/>
+      <ellipse cx="184" cy="168" rx="5" ry="3" fill="#A85E3E"/>
+
+      <!-- FACE (broad, distinguished) -->
+      <ellipse cx="140" cy="152" rx="47" ry="56" fill="#C87858"/>
+
+      <!-- BALD HEAD — warm scalp with thin gray fringe -->
+      <ellipse cx="140" cy="108" rx="48" ry="46" fill="#B86848"/>
+      <ellipse cx="132" cy="98" rx="18" ry="12" fill="#CC8060" opacity="0.35"/>
+      <!-- Gray fringe left -->
+      <path d="M 92,152 Q 88,128 90,110 Q 94,98 104,94 Q 96,110 94,130 Q 92,142 94,152" fill="#8A8278"/>
+      <!-- Gray fringe right -->
+      <path d="M 188,152 Q 192,128 190,110 Q 186,98 176,94 Q 184,110 186,130 Q 188,142 186,152" fill="#8A8278"/>
+      <!-- Fringe strand detail -->
+      <path d="M 92,130 Q 94,120 100,112 Q 104,106 108,106" stroke="#9A9288" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 188,130 Q 186,120 180,112 Q 176,106 172,106" stroke="#9A9288" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Very thin side fringe -->
+      <path d="M 94,152 Q 92,160 94,170" stroke="#9A9288" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M 186,152 Q 188,160 186,170" stroke="#9A9288" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+      <!-- EYEBROWS (grey, expressive) -->
+      <path d="M 108,129 Q 121,122 136,127" stroke="#707060" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 144,127 Q 159,122 172,129" stroke="#707060" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- Inner brow raised (thoughtful expression) -->
+      <path d="M 108,129 Q 114,124 118,127" stroke="#585850" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+      <path d="M 162,127 Q 166,124 172,129" stroke="#585850" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+      <!-- EYES (wide, curious, thoughtful) -->
+      <ellipse cx="122" cy="142" rx="9.5" ry="7" fill="white"/>
+      <ellipse cx="158" cy="142" rx="9.5" ry="7" fill="white"/>
+      <circle cx="123" cy="142" r="4.5" fill="#3A2C20"/>
+      <circle cx="159" cy="142" r="4.5" fill="#3A2C20"/>
+      <circle cx="123" cy="142" r="2" fill="#0E0804"/>
+      <circle cx="159" cy="142" r="2" fill="#0E0804"/>
+      <circle cx="124.5" cy="140.5" r="1.1" fill="white"/>
+      <circle cx="160.5" cy="140.5" r="1.1" fill="white"/>
+
+      <!-- WIRE-FRAME GLASSES -->
+      <ellipse cx="122" cy="142" rx="14" ry="10" fill="none" stroke="#3A3428" stroke-width="1.8"/>
+      <ellipse cx="158" cy="142" rx="14" ry="10" fill="none" stroke="#3A3428" stroke-width="1.8"/>
+      <path d="M 136,141 Q 140,139 144,141" stroke="#3A3428" stroke-width="1.5" fill="none"/>
+      <path d="M 108,142 Q 100,144 96,153" stroke="#3A3428" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 172,142 Q 180,144 184,153" stroke="#3A3428" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- NOSE (prominent, angular) -->
+      <path d="M 138,155 Q 132,168 131,178 Q 140,184 149,178 Q 148,168 142,155" fill="#9E5838" opacity="0.35"/>
+      <ellipse cx="140" cy="178" rx="8" ry="5" fill="#8E4828" opacity="0.25"/>
+      <ellipse cx="134" cy="177" rx="3" ry="2.2" fill="#7A3820" opacity="0.3"/>
+      <ellipse cx="146" cy="177" rx="3" ry="2.2" fill="#7A3820" opacity="0.3"/>
+
+      <!-- AGE LINES (distinguished) -->
+      <path d="M 112,154 Q 110,162 112,170" stroke="#A06038" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M 168,154 Q 170,162 168,170" stroke="#A06038" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M 115,170 Q 112,177 115,182" stroke="#A06038" stroke-width="0.9" fill="none" opacity="0.22"/>
+      <path d="M 165,170 Q 168,177 165,182" stroke="#A06038" stroke-width="0.9" fill="none" opacity="0.22"/>
+      <!-- Forehead lines -->
+      <path d="M 116,118 Q 140,114 164,118" stroke="#A06038" stroke-width="0.8" fill="none" opacity="0.18"/>
+      <path d="M 114,124 Q 140,120 166,124" stroke="#A06038" stroke-width="0.8" fill="none" opacity="0.14"/>
+
+      <!-- SLIGHT AMUSED SMILE -->
+      <path d="M 128,193 Q 140,199 152,193" stroke="#804030" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- BRAIN "FAST / SLOW" PROP top-right -->
+      <g transform="translate(186, 22)" filter="url(#fdk-soft)">
+        <rect x="0" y="0" width="76" height="64" rx="8" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"/>
+        <!-- Brain shape -->
+        <path d="M 8,36 Q 4,22 14,14 Q 22,8 32,10 Q 38,4 44,10 Q 54,8 62,16 Q 72,24 68,36 Q 70,50 60,54 Q 50,60 38,56 Q 26,60 16,54 Q 6,50 8,36 Z" fill="#FDBA74" opacity="0.6"/>
+        <!-- Division line -->
+        <line x1="38" y1="10" x2="38" y2="56" stroke="#FB923C" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.8"/>
+        <!-- System 1 — FAST -->
+        <text x="22" y="30" text-anchor="middle" font-size="10" font-weight="900" fill="#C2410C">1</text>
+        <text x="22" y="42" text-anchor="middle" font-size="5.5" font-weight="800" fill="#C2410C">FAST</text>
+        <!-- System 2 — SLOW -->
+        <text x="54" y="30" text-anchor="middle" font-size="10" font-weight="900" fill="#1D4ED8">2</text>
+        <text x="54" y="42" text-anchor="middle" font-size="5.5" font-weight="800" fill="#1D4ED8">SLOW</text>
+        <!-- Lightning bolt (System 1) -->
+        <path d="M 20,14 L 17,24 L 21,22 L 18,32" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Cog (System 2) -->
+        <circle cx="54" cy="18" r="6" fill="none" stroke="#3B82F6" stroke-width="1.8"/>
+        <circle cx="54" cy="18" r="2.5" fill="#3B82F6"/>
+      </g>
+
+      <!-- TILTED BALANCE SCALES bottom-left (anchoring bias) -->
+      <g transform="translate(16, 264)" filter="url(#fdk-soft)">
+        <line x1="32" y1="8" x2="32" y2="60" stroke="#94A3B8" stroke-width="2.5"/>
+        <!-- Tilted beam (biased) -->
+        <line x1="6" y1="20" x2="58" y2="30" stroke="#64748B" stroke-width="2"/>
+        <!-- Light pan left -->
+        <path d="M 2,20 Q 10,36 18,20" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+        <ellipse cx="10" cy="20" rx="8" ry="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+        <!-- Heavy pan right (lower, "biased") -->
+        <path d="M 42,30 Q 50,46 58,30" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+        <ellipse cx="50" cy="30" rx="8" ry="3" fill="#FCD34D" stroke="#F59E0B" stroke-width="1"/>
+        <text x="50" y="33" text-anchor="middle" font-size="8" font-weight="700" fill="#92400E">A</text>
+        <!-- Base -->
+        <ellipse cx="32" cy="62" rx="14" ry="4" fill="#CBD5E1"/>
+      </g>
+
+      <!-- Name -->
+      <text x="140" y="356" text-anchor="middle" font-size="12" font-weight="700" fill="#1A2840" font-family="Georgia,serif">Daniel Kahneman</text>
+    </svg>
+  `,
+
 };

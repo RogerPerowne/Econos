@@ -128,6 +128,13 @@ window.ECONOS_TOPIC = {
         { title: 'Street lighting or flood defences', icon: '💡', headline: 'Everyone benefits and no-one can be excluded', body: '<strong>Route:</strong> <em>Public good</em>.<br><strong>What goes wrong:</strong> Under-provision since people can free-ride on others\' payments — no-one has an incentive to pay.', tone: 'amber' },
         { title: 'Food labels, used cars, vaping info', icon: '🏷️', headline: 'One side has more or better information', body: '<strong>Route:</strong> <em>Information gap</em>.<br><strong>What goes wrong:</strong> Poor-quality and biased choices → inefficient outcomes; the price reflects misperception, not reality.', tone: 'purple' }
       ],
+      economistQuote: {
+        portraitKey: 'economistElinorOstrom',
+        tone: 'amber',
+        label: 'Economist insight',
+        quote: 'A core goal of public policy should be to facilitate the development of institutions that bring out the best in humans.',
+        attribution: 'Elinor Ostrom, Nobel Prize Lecture (2009)'
+      },
       flowTitle: 'How to diagnose market failure',
       flowEmoji: '🧭',
       flow: [

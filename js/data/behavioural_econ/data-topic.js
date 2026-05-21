@@ -175,7 +175,7 @@ window.ECONOS_TOPIC = {
         svgKey: 'ukNudgesInteractive',
         wide: true,
         label: 'Four UK cases in action',
-        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4', 'idl-6'],
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4'],
         views: [
           {
             label: 'Pension auto-enrol',
@@ -208,17 +208,18 @@ window.ECONOS_TOPIC = {
             head: 'NHS appointment reminders — saving clinician time at scale',
             body: 'The UK NHS loses ~7m appointments a year to no-shows — costing around <strong>£300m</strong> in wasted clinician time. BIT-redesigned <strong>SMS reminders</strong> using social norms ("9 of 10 people attend their appointment") cut no-shows by roughly <strong>25-35%</strong> in trial settings.',
             analysis: 'Why it works: the SMS hits at the right moment (just before the appointment), is simple, costs pennies per message, and aligns with how patients decide — adding social-proof information that the standard reminder didn\'t carry. <br><br>This is the four-pillar test of card 4 in miniature: <strong>timely · simple · low cost · aligned</strong>.'
-          },
-          {
-            label: 'Why they worked',
-            tone: 'slate',
-            show: ['idl-6'],
-            head: 'The four-pillar test — and how to use it in an essay',
-            body: 'Every successful UK nudge above shares four features: <strong>Timely · Simple · Low cost · Aligned</strong> with how people decide. When all four are present, nudges deliver outsized returns. When one is missing, they tend to fail.',
-            analysis: 'Use this directly in essays: "The HMRC nudge worked because it was timely (at the point of payment), simple (six extra words), low cost (no implementation expense), and aligned with how people decide (social norms beat moral appeals)." That single sentence shows you understand the mechanism, not just the example.'
           }
         ]
       },
+      keyPointsLabel: 'Why these four nudges actually worked',
+      keyPointsEmoji: '🧪',
+      keyPointsCols: 2,
+      keyPoints: [
+        { title: 'Timely', icon: '⏱️', headline: 'Right message at the right moment', body: 'The NHS SMS lands just before the appointment; auto-enrolment fires at job-start. Hit users when they\'re actively deciding — not weeks before.', tone: 'green' },
+        { title: 'Simple', icon: '✏️', headline: 'One idea, delivered in a sentence', body: '"9 of 10 paid on time" — a single social fact, no forms, no comprehension cost. The HMRC letter is six extra words, not six extra paragraphs.', tone: 'amber' },
+        { title: 'Low cost', icon: '💰', headline: 'Pennies per nudge, not millions per programme', body: 'A default flip, a wording change, an SMS. The HMRC line generated £200m+ at zero marginal cost — vs the price of an enforcement team.', tone: 'blue' },
+        { title: 'Aligned', icon: '🎯', headline: 'Works with how people decide, not against', body: 'Pension auto-enrol exploits loss aversion and inertia. Organ donation rides defaults. The norm-letter borrows authority from peers. Each goes with the grain.', tone: 'purple' }
+      ],
       keyTerms: [
         { term: 'Nudge', def: 'Any aspect of choice architecture that alters behaviour in a predictable way without forbidding options or significantly changing financial incentives (Thaler & Sunstein, 2008).' },
         { term: 'Choice architecture', def: 'The way options are presented — the order, the default, the framing — which shapes choice without changing the options themselves.' },

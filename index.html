@@ -8,8 +8,6 @@
   <meta name="description" content="Learn it. Link it. Land it. Bite-sized A-Level economics revision built around the recurring frameworks examiners reward.">
   <meta name="theme-color" content="#FAF8F4">
 
-  <!-- Fonts: preconnect + non-blocking download -->
-
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="shortcut icon" href="favicon.ico" />
@@ -17,7 +15,6 @@
   <meta name="apple-mobile-web-app-title" content="econos" />
   <link rel="manifest" href="site.webmanifest" />
 
-  <!-- Preload logo (above-the-fold) and topics registry (renders the grid) -->
   <link rel="preload" as="image" href="assets/econos-logo-full.png">
   <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
@@ -40,82 +37,623 @@
   <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
 </head>
 <body>
-  <div class="wrap">
 
-    <header class="header" role="banner">
-      <a href="index.html" class="header__logo" aria-label="econos — Learn it. Link it. Land it.">
-        <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it.">
-      </a>
-      <div class="header__meta" aria-hidden="true">
-        <span class="stops">
-          <span class="stop stop--g"></span>
-          <span class="stop stop--y"></span>
-          <span class="stop stop--p"></span>
-        </span>
-        <span>Learn it · Link it · Land it</span>
-      </div>
-    </header>
-
-    <main id="main-content" tabindex="-1">
-
-    <section class="hero">
-      <div class="eyebrow">A-Level Economics · Edexcel A</div>
-      <h1>Revision built around how examiners actually mark<span class="dot-p">.</span></h1>
-      <p class="hero-lede">Bite-sized cards organised around the recurring frameworks Edexcel questions reward &mdash; <strong>not</strong> just topic-by-topic memorisation. Every concept passes through three stages: <strong>Learn</strong> it, <strong>Link</strong> it, <strong>Land</strong> it.</p>
-    </section>
-
-    <!-- ═══ STAGE PROMISE ═══ -->
-    <section class="stages" aria-label="The three stages">
-      <div class="stage stage--learn">
-        <div class="stage__num">1</div>
-        <div class="stage__body">
-          <div class="stage__name">Learn it</div>
-          <div class="stage__sub">Recap the concept, lock in the mechanics, build clean mental models.</div>
-        </div>
-      </div>
-      <div class="stage stage--link">
-        <div class="stage__num">2</div>
-        <div class="stage__body">
-          <div class="stage__name">Link it</div>
-          <div class="stage__sub">Chain causes, draw diagrams, judge the trade-offs &mdash; the connective tissue of an answer.</div>
-        </div>
-      </div>
-      <div class="stage stage--land">
-        <div class="stage__num">3</div>
-        <div class="stage__body">
-          <div class="stage__name">Land it</div>
-          <div class="stage__sub">Real exam questions across Sections A, B and C, marked the way Edexcel marks them.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ALL TOPICS (rendered by JS) ═══ -->
-    <div id="topics-root"></div>
-
-    <!-- ═══ PRINCIPLES ═══ -->
-    <div class="principles-eyebrow">How we build it</div>
-    <div class="principles">
-      <div class="principle">
-        <div class="principle-num">01</div>
-        <div class="principle-title">Function before flourish</div>
-        <div class="principle-body">Colours mean something. Green is progress, yellow is current state, pink is destination. Never decorative.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-num">02</div>
-        <div class="principle-title">Earned warmth</div>
-        <div class="principle-body">Fraunces serif and cream background give warmth. Inter and ink keep it credible. Both, always.</div>
-      </div>
-      <div class="principle">
-        <div class="principle-num">03</div>
-        <div class="principle-title">Small details, repeated</div>
-        <div class="principle-body">Coloured stops, dot indicators, the accelerating curve. Same system across every screen.</div>
-      </div>
+  <!-- ═══ STICKY NAV ═══ -->
+  <nav class="topnav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="topnav__logo" aria-label="econos home">
+      <img src="assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it." height="36">
+    </a>
+    <ul class="topnav__links" role="list">
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="#audience">About</a></li>
+    </ul>
+    <div class="topnav__actions">
+      <a href="login.html" class="btn btn--outline">Log in</a>
+      <a href="learn.html" class="btn btn--solid">Get started</a>
     </div>
+  </nav>
 
-    </main>
+  <!-- ═══ HERO ═══ -->
+  <section class="hp-hero" aria-labelledby="hero-heading">
+    <div class="hp-container">
 
-    <footer class="footer" role="contentinfo">
-      <div class="footer__brand">
+      <!-- Left column -->
+      <div class="hp-hero__left">
+        <div class="hp-eyebrow">
+          <span class="hp-eyebrow__dot" aria-hidden="true"></span>
+          A-Level Economics &middot; Edexcel A
+        </div>
+
+        <h1 id="hero-heading" class="hp-hero__headline">
+          Master economics.<br>
+          <span class="hp-hero__headline--blue">Step by step.</span>
+        </h1>
+
+        <p class="hp-hero__sub">
+          The structured learning system that helps A-level students build understanding,
+          write stronger essays and achieve their best marks.
+        </p>
+
+        <div class="hp-hero__ctas">
+          <a href="learn.html" class="btn btn--solid btn--lg">
+            Start learning
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="hp-ghost-link">
+            See how it works
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hp-trust">
+          <!-- Shield icon -->
+          <svg class="hp-trust__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M9 1.5L2.25 4.5v4.25c0 3.9 2.85 7.55 6.75 8.5 3.9-.95 6.75-4.6 6.75-8.5V4.5L9 1.5z" stroke="#10B981" stroke-width="1.5" stroke-linejoin="round" fill="#E8F8F0"/>
+            <path d="M6 9l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Trusted by students, parents and teachers
+        </div>
+      </div>
+
+      <!-- Right column: illustration + floating card -->
+      <div class="hp-hero__right">
+
+        <!-- Main SVG illustration -->
+        <svg class="hp-hero__illustration" viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Economics learning platform illustration showing a Price Elasticity of Demand study card with supply and demand diagram">
+
+          <!-- Warm background -->
+          <rect width="520" height="400" rx="20" fill="#F5F3EE"/>
+
+          <!-- Decorative low-opacity circles -->
+          <circle cx="60" cy="340" r="70" fill="#10B981" opacity="0.07"/>
+          <circle cx="460" cy="360" r="90" fill="#2563EB" opacity="0.06"/>
+          <circle cx="420" cy="60" r="50" fill="#F39E0B" opacity="0.08"/>
+          <circle cx="30" cy="80" r="40" fill="#E11D48" opacity="0.06"/>
+
+          <!-- Drop shadow filter for card -->
+          <defs>
+            <filter id="card-shadow" x="-5%" y="-5%" width="115%" height="125%">
+              <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#0B1426" flood-opacity="0.10"/>
+            </filter>
+            <filter id="chip-shadow" x="-10%" y="-10%" width="130%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0B1426" flood-opacity="0.08"/>
+            </filter>
+          </defs>
+
+          <!-- Main white card -->
+          <rect x="24" y="20" width="340" height="268" rx="14" fill="white" filter="url(#card-shadow)"/>
+          <!-- Green top band -->
+          <rect x="24" y="20" width="340" height="4" rx="2" fill="#10B981"/>
+          <!-- Fix sharp top-left and top-right corners of band to match card radius -->
+          <rect x="24" y="20" width="14" height="4" fill="#10B981"/>
+          <rect x="350" y="20" width="14" height="4" fill="#10B981"/>
+          <rect x="24" y="20" width="340" height="4" rx="2" fill="#10B981"/>
+
+          <!-- Green chip: 2.2 PED -->
+          <rect x="40" y="38" width="68" height="22" rx="11" fill="#E8F8F0"/>
+          <text x="74" y="53" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="11" fill="#0E633F" letter-spacing="0.02em">2.2  PED</text>
+
+          <!-- Title -->
+          <text x="40" y="84" font-family="Georgia, serif" font-weight="700" font-size="15" fill="#0B1426">Price Elasticity of Demand</text>
+
+          <!-- Axes -->
+          <!-- Y axis -->
+          <line x1="72" y1="100" x2="72" y2="220" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- X axis -->
+          <line x1="72" y1="220" x2="300" y2="220" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Arrow heads -->
+          <polyline points="68,106 72,99 76,106" fill="none" stroke="#9CA3AF" stroke-width="1.2" stroke-linejoin="round"/>
+          <polyline points="294,216 301,220 294,224" fill="none" stroke="#9CA3AF" stroke-width="1.2" stroke-linejoin="round"/>
+
+          <!-- Axis labels -->
+          <text x="58" y="104" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#6B7280" text-anchor="middle">P</text>
+          <text x="306" y="224" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#6B7280">Q</text>
+
+          <!-- Demand curve (blue, downward slope) - cubic bezier -->
+          <path d="M90 108 C130 120, 160 148, 200 170 S250 200, 288 216" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <!-- D label -->
+          <text x="290" y="214" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#2563EB">D</text>
+
+          <!-- Supply curve (green, upward slope) -->
+          <path d="M90 218 C120 200, 148 182, 180 168 S230 145, 270 120" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <!-- S label -->
+          <text x="272" y="118" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#10B981">S</text>
+
+          <!-- Equilibrium point (approx intersection ~195,170) -->
+          <circle cx="192" cy="170" r="5" fill="#0B1426" stroke="white" stroke-width="1.5"/>
+
+          <!-- Dashed guide lines -->
+          <line x1="72" y1="170" x2="192" y2="170" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="192" y1="170" x2="192" y2="220" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4,3"/>
+
+          <!-- P* and Q* labels -->
+          <text x="56" y="174" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#6B7280" text-anchor="middle">P*</text>
+          <text x="192" y="233" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#6B7280" text-anchor="middle">Q*</text>
+
+          <!-- Stage pills at base of card -->
+          <!-- Learn pill -->
+          <rect x="40" y="252" width="60" height="22" rx="11" fill="#E8F8F0"/>
+          <text x="70" y="267" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="10" fill="#0E633F">1 Learn</text>
+          <!-- Link pill -->
+          <rect x="108" y="252" width="56" height="22" rx="11" fill="#FEF8E0"/>
+          <text x="136" y="267" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="10" fill="#8C6800">2 Link</text>
+          <!-- Land pill -->
+          <rect x="172" y="252" width="56" height="22" rx="11" fill="#FCE7EE"/>
+          <text x="200" y="267" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="10" fill="#95163C">3 Land</text>
+
+          <!-- Stat chips on the right -->
+          <!-- Chip 1: Topics covered -->
+          <rect x="378" y="40" width="124" height="68" rx="12" fill="white" filter="url(#chip-shadow)"/>
+          <text x="394" y="62" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#6B7280">Topics covered</text>
+          <text x="394" y="84" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#10B981">24</text>
+          <text x="420" y="84" font-family="Inter, sans-serif" font-weight="500" font-size="13" fill="#9CA3AF">/36</text>
+
+          <!-- Chip 2: Link it done -->
+          <rect x="378" y="124" width="124" height="68" rx="12" fill="white" filter="url(#chip-shadow)"/>
+          <text x="394" y="146" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#6B7280">Link it done</text>
+          <text x="394" y="168" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#F39E0B">18</text>
+          <text x="420" y="168" font-family="Inter, sans-serif" font-weight="500" font-size="13" fill="#9CA3AF">/25</text>
+
+          <!-- Chip 3: Land it done -->
+          <rect x="378" y="208" width="124" height="68" rx="12" fill="white" filter="url(#chip-shadow)"/>
+          <text x="394" y="230" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#6B7280">Land it done</text>
+          <text x="394" y="252" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#E11D48">12</text>
+          <text x="420" y="252" font-family="Inter, sans-serif" font-weight="500" font-size="13" fill="#9CA3AF">/15</text>
+
+          <!-- Small decorative dots bottom area -->
+          <circle cx="310" cy="360" r="6" fill="#2563EB" opacity="0.15"/>
+          <circle cx="330" cy="350" r="4" fill="#10B981" opacity="0.18"/>
+          <circle cx="350" cy="365" r="5" fill="#F39E0B" opacity="0.15"/>
+          <circle cx="130" cy="355" r="5" fill="#E11D48" opacity="0.12"/>
+          <circle cx="155" cy="368" r="4" fill="#2563EB" opacity="0.12"/>
+        </svg>
+
+        <!-- Floating progress card -->
+        <div class="hp-progress-card" aria-label="Progress summary">
+          <div class="hp-progress-card__label">
+            <!-- Rocket icon inline -->
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="display:inline;vertical-align:middle;margin-right:4px" aria-hidden="true">
+              <path d="M6 1C6 1 9.5 2.5 9.5 5.5C9.5 7.5 8 9 6.5 9.5L5.5 8C6.8 7.5 7.5 6.5 7.5 5.5C7.5 3.5 6 2.5 6 2.5V1Z" fill="#10B981"/>
+              <path d="M4.5 8L3 9.5C2.5 10 2 10.5 3 11C4 11.5 4.5 11 5 10.5L6.5 9.5" stroke="#10B981" stroke-width="0.8"/>
+              <circle cx="4.5" cy="7.5" r="1" fill="#0E633F"/>
+            </svg>
+            Keep going!
+          </div>
+          <div class="hp-progress-card__title">Overall progress</div>
+          <div class="hp-progress-bar-wrap">
+            <div class="hp-progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+              <div class="hp-progress-bar__fill" style="width:67%"></div>
+            </div>
+            <span class="hp-progress-bar__pct">67%</span>
+          </div>
+          <div class="hp-progress-card__stats">
+            <div class="hp-progress-card__stat">
+              <!-- Book icon -->
+              <svg class="hp-progress-card__stat-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 2.5C2 2.5 4 2 7 2s5 .5 5 .5v9S9.5 11 7 11s-5 .5-5 .5V2.5z" stroke="#10B981" stroke-width="1.2" fill="#E8F8F0"/>
+                <line x1="7" y1="2" x2="7" y2="11" stroke="#10B981" stroke-width="1" stroke-dasharray="2,1"/>
+              </svg>
+              Topics
+              <span class="hp-progress-card__stat-val">24/36</span>
+            </div>
+            <div class="hp-progress-card__stat">
+              <!-- Link icon -->
+              <svg class="hp-progress-card__stat-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M5.5 8.5C6 9.2 7 10 8.5 9.5l2-2a2.12 2.12 0 00-3-3L6.5 5.5" stroke="#F39E0B" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M8.5 5.5C8 4.8 7 4 5.5 4.5l-2 2a2.12 2.12 0 003 3L7.5 8.5" stroke="#F39E0B" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Link it
+              <span class="hp-progress-card__stat-val">18/25</span>
+            </div>
+            <div class="hp-progress-card__stat">
+              <!-- Target icon -->
+              <svg class="hp-progress-card__stat-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="5" stroke="#E11D48" stroke-width="1.2"/>
+                <circle cx="7" cy="7" r="2.5" stroke="#E11D48" stroke-width="1.2"/>
+                <circle cx="7" cy="7" r="0.8" fill="#E11D48"/>
+              </svg>
+              Land it
+              <span class="hp-progress-card__stat-val">12/15</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.hp-hero__right -->
+    </div><!-- /.hp-container -->
+  </section>
+
+  <!-- ═══ THREE-FEATURE STRIP ═══ -->
+  <section class="hp-3up" id="how-it-works" aria-labelledby="3up-heading">
+    <div class="hp-container">
+
+      <!-- Learn it -->
+      <div class="hp-3up__item">
+        <div class="hp-3up__icon hp-3up__icon--green" aria-hidden="true">
+          <!-- Book icon -->
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M4 4C4 4 7 3 11 3s7 1 7 1v14s-3-1-7-1-7 1-7 1V4z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+            <line x1="11" y1="3" x2="11" y2="17" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5,1.5"/>
+          </svg>
+        </div>
+        <h2 class="hp-3up__title" id="3up-heading">Learn it</h2>
+        <p class="hp-3up__body">Clear explanations that build strong foundations.</p>
+      </div>
+
+      <!-- Link it -->
+      <div class="hp-3up__item">
+        <div class="hp-3up__icon hp-3up__icon--amber" aria-hidden="true">
+          <!-- Chain/link icon -->
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M9 13C9.6 13.9 10.8 15 12.5 14.4l3-3a3.18 3.18 0 00-4.5-4.5L9.8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M13 9C12.4 8.1 11.2 7 9.5 7.6l-3 3a3.18 3.18 0 004.5 4.5l1.2-1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="hp-3up__title">Link it</h3>
+        <p class="hp-3up__body">Connect ideas and concepts with confidence.</p>
+      </div>
+
+      <!-- Land it -->
+      <div class="hp-3up__item">
+        <div class="hp-3up__icon hp-3up__icon--pink" aria-hidden="true">
+          <!-- Target/bullseye icon -->
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="11" cy="11" r="4" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="11" cy="11" r="1.2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="hp-3up__title">Land it</h3>
+        <p class="hp-3up__body">Apply your knowledge and land the marks.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES SECTION ═══ -->
+  <section class="hp-features-section" id="features" aria-labelledby="features-heading">
+    <div class="hp-container">
+
+      <div class="hp-features__left">
+        <h2 class="hp-features__heading" id="features-heading">Everything you need to succeed</h2>
+        <p class="hp-features__sub">Expert content, smart practice and personalised feedback &ndash; all in one place.</p>
+        <a href="#topics" class="hp-features__link">
+          Explore all topics
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2.5 7h9M8 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hp-features__cards">
+
+        <div class="hp-feat-card">
+          <div class="hp-feat-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 5C4 5 7.5 4 12 4s8 1 8 1v14s-3.5-1-8-1-8 1-8 1V5z" stroke="#2563EB" stroke-width="1.6" fill="#EFF6FF" stroke-linejoin="round"/>
+              <line x1="12" y1="4" x2="12" y2="18" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="3,2"/>
+            </svg>
+          </div>
+          <div class="hp-feat-card__title">Topic learning</div>
+          <div class="hp-feat-card__body">Concise lessons that make complex ideas simple.</div>
+          <a href="learn.html" class="hp-feat-card__link">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hp-feat-card">
+          <div class="hp-feat-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="3" fill="#FEF8E0" stroke="#F39E0B" stroke-width="1.6"/>
+              <line x1="8" y1="9" x2="16" y2="9" stroke="#F39E0B" stroke-width="1.4" stroke-linecap="round"/>
+              <line x1="8" y1="12" x2="14" y2="12" stroke="#F39E0B" stroke-width="1.4" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="12" y2="15" stroke="#F39E0B" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M15 14l1.5 1.5L19 12" stroke="#F39E0B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hp-feat-card__title">Practice questions</div>
+          <div class="hp-feat-card__body">Exam-style questions with step-by-step worked solutions.</div>
+          <a href="quiz.html" class="hp-feat-card__link">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hp-feat-card">
+          <div class="hp-feat-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="4" y="3" width="16" height="18" rx="3" fill="#FCE7EE" stroke="#E11D48" stroke-width="1.6"/>
+              <line x1="8" y1="8" x2="16" y2="8" stroke="#E11D48" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="8" y1="11" x2="16" y2="11" stroke="#E11D48" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="8" y1="14" x2="13" y2="14" stroke="#E11D48" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Pencil -->
+              <path d="M14 16l3.5-3.5 1 1L15 17l-1.5.5.5-1.5z" fill="#E11D48" stroke="#E11D48" stroke-width="0.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hp-feat-card__title">Essay practice</div>
+          <div class="hp-feat-card__body">Plan, write and refine essays with expert feedback.</div>
+          <a href="land.html" class="hp-feat-card__link">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hp-feat-card">
+          <div class="hp-feat-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="3" fill="#E8F8F0" stroke="#10B981" stroke-width="1.6"/>
+              <!-- Bar chart bars -->
+              <rect x="6" y="14" width="3" height="4" rx="1" fill="#10B981"/>
+              <rect x="10.5" y="11" width="3" height="7" rx="1" fill="#10B981"/>
+              <rect x="15" y="8" width="3" height="10" rx="1" fill="#10B981"/>
+              <!-- Trend line -->
+              <path d="M6 14L10.5 11L15 8" stroke="#0E633F" stroke-width="1" stroke-dasharray="2,1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hp-feat-card__title">Progress tracking</div>
+          <div class="hp-feat-card__body">See your progress and focus on what matters most.</div>
+          <a href="learn.html" class="hp-feat-card__link">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div><!-- /.hp-features__cards -->
+    </div><!-- /.hp-container -->
+  </section>
+
+  <!-- ═══ ALL TOPICS ═══ -->
+  <section class="hp-all-topics" id="topics" aria-labelledby="topics-heading">
+    <div class="hp-container">
+      <h2 class="hp-section-heading" id="topics-heading">Browse all topics</h2>
+      <p class="hp-section-sub">All four Edexcel A themes, fully mapped &mdash; with study content growing every week.</p>
+      <div id="topics-root"></div>
+    </div>
+  </section>
+
+  <!-- ═══ AUDIENCE SECTION ═══ -->
+  <section class="hp-audience" id="audience" aria-labelledby="audience-heading">
+    <div class="hp-container">
+
+      <div class="hp-audience__intro">
+        <h2 class="hp-section-heading" id="audience-heading">Built for everyone in the learning journey</h2>
+        <p class="hp-section-sub" style="text-align:center;">Students, parents and teachers &ndash; all working towards better results.</p>
+      </div>
+
+      <div class="hp-audience__grid">
+
+        <!-- For students -->
+        <div class="hp-audience-card">
+          <svg class="hp-audience-card__illo" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Green gradient bg -->
+            <defs>
+              <linearGradient id="grad-students" x1="0" y1="0" x2="360" y2="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#059669" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="220" fill="url(#grad-students)"/>
+            <!-- Decorative circles -->
+            <circle cx="310" cy="30" r="60" fill="white" opacity="0.06"/>
+            <circle cx="40" cy="190" r="50" fill="white" opacity="0.06"/>
+
+            <!-- Desk surface -->
+            <rect x="100" y="148" width="160" height="10" rx="4" fill="white" opacity="0.25"/>
+            <!-- Desk legs -->
+            <rect x="108" y="155" width="6" height="28" rx="2" fill="white" opacity="0.2"/>
+            <rect x="246" y="155" width="6" height="28" rx="2" fill="white" opacity="0.2"/>
+
+            <!-- Open book on desk -->
+            <path d="M135 148 L160 132 L185 148Z" fill="white" opacity="0.4"/>
+            <path d="M185 148 L210 132 L235 148Z" fill="white" opacity="0.3"/>
+            <line x1="185" y1="132" x2="185" y2="148" stroke="white" stroke-width="1" opacity="0.5"/>
+            <!-- Book lines -->
+            <line x1="148" y1="142" x2="172" y2="138" stroke="white" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+            <line x1="148" y1="146" x2="172" y2="142" stroke="white" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+            <line x1="198" y1="138" x2="222" y2="142" stroke="white" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+            <line x1="198" y1="142" x2="222" y2="146" stroke="white" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+
+            <!-- Person body (seated) -->
+            <!-- Head -->
+            <circle cx="180" cy="100" r="18" fill="white" opacity="0.55"/>
+            <!-- Neck -->
+            <rect x="174" y="116" width="12" height="10" rx="3" fill="white" opacity="0.45"/>
+            <!-- Torso -->
+            <path d="M155 125 Q180 120 205 125 L208 148 L152 148Z" fill="white" opacity="0.35"/>
+            <!-- Arms -->
+            <path d="M155 130 Q140 138 135 145" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.35" fill="none"/>
+            <path d="M205 130 Q220 138 225 145" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.35" fill="none"/>
+            <!-- Hair suggestion -->
+            <path d="M163 96 Q180 82 197 96" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+            <!-- Pencil -->
+            <line x1="228" y1="140" x2="240" y2="120" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+            <polygon points="240,120 244,113 236,116" fill="white" opacity="0.6"/>
+
+            <!-- Floating chip -->
+            <rect x="20" y="20" width="108" height="28" rx="14" fill="white" opacity="0.95"/>
+            <text x="74" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#059669">Learn it</text>
+            <!-- Book icon in chip -->
+            <rect x="30" y="28" width="12" height="12" rx="2" fill="#10B981"/>
+            <line x1="36" y1="28" x2="36" y2="40" stroke="white" stroke-width="1"/>
+          </svg>
+          <div class="hp-audience-card__body">
+            <div class="hp-audience-card__title">For students</div>
+            <p class="hp-audience-card__desc">Learn smarter, stay organised and achieve your goals.</p>
+            <a href="learn.html" class="hp-audience-card__link hp-audience-card__link--green">
+              Get started
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7h9M8 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- For parents -->
+        <div class="hp-audience-card">
+          <svg class="hp-audience-card__illo" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="grad-parents" x1="0" y1="0" x2="360" y2="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F39E0B" stop-opacity="0.92"/>
+                <stop offset="100%" stop-color="#d97706" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="220" fill="url(#grad-parents)"/>
+            <circle cx="320" cy="40" r="70" fill="white" opacity="0.06"/>
+            <circle cx="30" cy="200" r="55" fill="white" opacity="0.06"/>
+
+            <!-- Adult figure (left, taller) -->
+            <!-- Head -->
+            <circle cx="148" cy="88" r="20" fill="white" opacity="0.5"/>
+            <!-- Hair -->
+            <path d="M130 82 Q148 68 166 82" stroke="white" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.45"/>
+            <!-- Neck -->
+            <rect x="141" y="106" width="14" height="12" rx="4" fill="white" opacity="0.4"/>
+            <!-- Torso -->
+            <path d="M120 118 Q148 112 176 118 L180 165 L116 165Z" fill="white" opacity="0.3"/>
+            <!-- Arms -->
+            <path d="M122 124 Q108 136 104 148" stroke="white" stroke-width="9" stroke-linecap="round" opacity="0.3" fill="none"/>
+            <!-- Right arm reaching toward student -->
+            <path d="M174 124 Q192 130 200 136" stroke="white" stroke-width="9" stroke-linecap="round" opacity="0.3" fill="none"/>
+
+            <!-- Student figure (right, shorter) -->
+            <!-- Head -->
+            <circle cx="222" cy="100" r="16" fill="white" opacity="0.5"/>
+            <!-- Hair -->
+            <path d="M208 95 Q222 84 236 95" stroke="white" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.45"/>
+            <!-- Neck -->
+            <rect x="216" y="115" width="12" height="10" rx="3" fill="white" opacity="0.4"/>
+            <!-- Torso (shorter figure) -->
+            <path d="M200 124 Q222 118 244 124 L247 165 L197 165Z" fill="white" opacity="0.3"/>
+            <!-- Left arm reaching toward adult -->
+            <path d="M202 130 Q196 136 196 140" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.3" fill="none"/>
+
+            <!-- Graduation cap between/above them -->
+            <rect x="172" y="54" width="36" height="5" rx="1" fill="white" opacity="0.7"/>
+            <polygon points="180,54 190,42 200,54" fill="white" opacity="0.7"/>
+            <!-- tassel -->
+            <line x1="200" y1="54" x2="204" y2="66" stroke="white" stroke-width="2" opacity="0.6"/>
+            <circle cx="204" cy="68" r="2.5" fill="white" opacity="0.6"/>
+
+            <!-- Heart / connection symbol -->
+            <path d="M180 76 C180 73 176 70 173 73 C170 76 176 82 180 86 C184 82 190 76 187 73 C184 70 180 73 180 76Z" fill="white" opacity="0.4"/>
+
+            <!-- Floating chip -->
+            <rect x="230" y="18" width="110" height="28" rx="14" fill="white" opacity="0.95"/>
+            <text x="285" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#d97706">Together</text>
+            <!-- star/grad icon in chip -->
+            <circle cx="242" cy="32" r="7" fill="#F39E0B"/>
+            <polygon points="242,27 243.4,30.5 247,30.5 244.2,32.6 245.2,36 242,34 238.8,36 239.8,32.6 237,30.5 240.6,30.5" fill="white" opacity="0.9"/>
+          </svg>
+          <div class="hp-audience-card__body">
+            <div class="hp-audience-card__title">For parents</div>
+            <p class="hp-audience-card__desc">Support with confidence and see real progress every step of the way.</p>
+            <a href="#" class="hp-audience-card__link hp-audience-card__link--amber">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7h9M8 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- For teachers -->
+        <div class="hp-audience-card">
+          <svg class="hp-audience-card__illo" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="grad-teachers" x1="0" y1="0" x2="360" y2="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2563EB" stop-opacity="0.92"/>
+                <stop offset="100%" stop-color="#1d4ed8" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="220" fill="url(#grad-teachers)"/>
+            <circle cx="300" cy="25" r="65" fill="white" opacity="0.06"/>
+            <circle cx="50" cy="195" r="55" fill="white" opacity="0.06"/>
+
+            <!-- Whiteboard / presentation board -->
+            <rect x="160" y="40" width="148" height="100" rx="8" fill="white" opacity="0.25"/>
+            <rect x="160" y="40" width="148" height="8" rx="4" fill="white" opacity="0.3"/>
+            <!-- Board content: mini S&D diagram -->
+            <!-- Axes -->
+            <line x1="176" y1="58" x2="176" y2="124" stroke="white" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+            <line x1="176" y1="124" x2="296" y2="124" stroke="white" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+            <!-- D curve on board -->
+            <path d="M182 66 C210 76 230 98 288 120" stroke="white" stroke-width="2" opacity="0.7" stroke-linecap="round" fill="none"/>
+            <!-- S curve on board -->
+            <path d="M182 122 C210 110 240 90 278 66" stroke="white" stroke-width="2" opacity="0.5" stroke-linecap="round" fill="none"/>
+            <!-- Board labels -->
+            <text x="170" y="62" font-family="Inter, sans-serif" font-weight="700" font-size="9" fill="white" opacity="0.8">P</text>
+            <text x="292" y="132" font-family="Inter, sans-serif" font-weight="700" font-size="9" fill="white" opacity="0.8">Q</text>
+            <text x="290" y="118" font-family="Inter, sans-serif" font-weight="700" font-size="9" fill="white" opacity="0.7">D</text>
+            <text x="280" y="63" font-family="Inter, sans-serif" font-weight="700" font-size="9" fill="white" opacity="0.6">S</text>
+            <!-- Equilibrium dot on board -->
+            <circle cx="228" cy="96" r="3.5" fill="white" opacity="0.8"/>
+            <!-- Board stand -->
+            <line x1="234" y1="140" x2="220" y2="168" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            <line x1="234" y1="140" x2="248" y2="168" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            <line x1="208" y1="168" x2="260" y2="168" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+            <!-- Teacher figure (left of board) -->
+            <!-- Head -->
+            <circle cx="118" cy="86" r="19" fill="white" opacity="0.5"/>
+            <!-- Glasses suggestion -->
+            <path d="M108 86 Q113 82 118 86 Q123 82 128 86" stroke="white" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <!-- Hair -->
+            <path d="M101 80 Q118 66 135 80" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.4"/>
+            <!-- Neck -->
+            <rect x="111" y="103" width="14" height="10" rx="3" fill="white" opacity="0.4"/>
+            <!-- Torso -->
+            <path d="M90 113 Q118 106 146 113 L150 165 L86 165Z" fill="white" opacity="0.3"/>
+            <!-- Left arm down -->
+            <path d="M92 118 Q78 132 74 150" stroke="white" stroke-width="9" stroke-linecap="round" opacity="0.3" fill="none"/>
+            <!-- Right arm pointing to board -->
+            <path d="M144 116 Q155 110 162 100" stroke="white" stroke-width="9" stroke-linecap="round" opacity="0.3" fill="none"/>
+            <!-- Pointer/stick -->
+            <line x1="162" y1="100" x2="175" y2="88" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+            <!-- Floating chip -->
+            <rect x="20" y="18" width="96" height="28" rx="14" fill="white" opacity="0.95"/>
+            <text x="68" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#1d4ed8">Track</text>
+            <!-- Bar chart icon in chip -->
+            <rect x="30" y="28" width="14" height="12" rx="2" fill="#2563EB"/>
+            <rect x="33" y="34" width="2" height="6" fill="white" rx="0.5"/>
+            <rect x="36" y="31" width="2" height="9" fill="white" rx="0.5"/>
+            <rect x="39" y="29" width="2" height="11" fill="white" rx="0.5"/>
+          </svg>
+          <div class="hp-audience-card__body">
+            <div class="hp-audience-card__title">For teachers</div>
+            <p class="hp-audience-card__desc">Powerful resources and insights to save time and improve outcomes.</p>
+            <a href="#" class="hp-audience-card__link hp-audience-card__link--blue">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7h9M8 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /.hp-audience__grid -->
+    </div><!-- /.hp-container -->
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="hp-footer" role="contentinfo">
+    <div class="hp-container">
+      <div class="hp-footer__brand">
         <span class="stops">
           <span class="stop stop--g"></span>
           <span class="stop stop--y"></span>
@@ -123,15 +661,23 @@
         </span>
         econos
       </div>
-      <div class="footer__count" id="footer-count">&hairsp;</div>
-      <div class="footer__legend">
-        <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--green);"></span>Learn it</div>
-        <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--yellow);"></span>Link it</div>
-        <div class="footer__legend-item"><span class="footer__legend-dot" style="background:var(--pink);"></span>Land it</div>
+      <div class="hp-footer__count" id="footer-count">&hairsp;</div>
+      <div class="hp-footer__legend">
+        <div class="hp-footer__legend-item">
+          <span class="hp-footer__legend-dot" style="background:var(--green);"></span>
+          Learn it
+        </div>
+        <div class="hp-footer__legend-item">
+          <span class="hp-footer__legend-dot" style="background:var(--yellow);"></span>
+          Link it
+        </div>
+        <div class="hp-footer__legend-item">
+          <span class="hp-footer__legend-dot" style="background:var(--pink);"></span>
+          Land it
+        </div>
       </div>
-    </footer>
-
-  </div>
+    </div>
+  </footer>
 
   <!-- SVG icon defs (single arrow glyph reused across topic cards) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -261,7 +807,7 @@
         return '#';
       }
 
-      /* ────────── Stage pips (replaces the 3 chunky text badges) ────────── */
+      /* ────────── Stage pips ────────── */
       function pipsHtml(avail) {
         function pip(num, kind, on) {
           var name = kind === 'learn' ? 'Learn' : kind === 'link' ? 'Link' : 'Land';
@@ -322,7 +868,7 @@
       }
       root.innerHTML = html;
 
-      /* Dynamic footer count — never lies, even if the registry changes */
+      /* Dynamic footer count */
       document.getElementById('footer-count').textContent =
         total + ' topics · ' + THEMES.length + ' themes · Edexcel A spec';
     });

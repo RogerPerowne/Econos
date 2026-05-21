@@ -11081,7 +11081,8 @@ window.ECONOS_ICONS = {
   `,
 
   biasGalleryInteractive: `
-    <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 0 440 350" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <g transform="translate(0, -18)">
       <g class="idl-base"></g>
 
       <g class="idl-1">
@@ -11213,6 +11214,7 @@ window.ECONOS_ICONS = {
 
         <text x="220" y="364" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful — opting out is framed as a "loss".</text>
       </g>
+      </g>
     </svg>
   `,
 
@@ -11267,7 +11269,8 @@ window.ECONOS_ICONS = {
   `,
 
   boundedSelfControlInteractive: `
-    <svg viewBox="0 0 440 426" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 0 440 400" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <g transform="translate(0, -18)">
       <g class="idl-base"></g>
 
       <g class="idl-1">
@@ -11394,11 +11397,13 @@ window.ECONOS_ICONS = {
         <text x="220" y="395" font-size="9.5" text-anchor="middle" fill="#1d4ed8">Bounded self-control creates <tspan font-weight="700">internalities</tspan> — costs we impose on our future self.</text>
         <text x="220" y="410" font-size="9.5" text-anchor="middle" fill="#1d4ed8">Card 4 shows the policy response.</text>
       </g>
+      </g>
     </svg>
   `,
 
   ukNudgesInteractive: `
-    <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 0 440 360" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <g transform="translate(0, -18)">
       <g class="idl-base"></g>
 
       <g class="idl-1">
@@ -11612,6 +11617,7 @@ window.ECONOS_ICONS = {
         <text x="220" y="320" font-size="11.5" font-weight="800" text-anchor="middle" fill="#0B1426">Use this in an essay:</text>
         <text x="220" y="338" font-size="10" text-anchor="middle" fill="#475569">"The HMRC nudge worked because it was <tspan font-weight="800">timely</tspan> (at point of payment),</text>
         <text x="220" y="354" font-size="10" text-anchor="middle" fill="#475569"><tspan font-weight="800">simple</tspan>, <tspan font-weight="800">low cost</tspan>, and <tspan font-weight="800">aligned</tspan> with how people decide."</text>
+      </g>
       </g>
     </svg>
   `,

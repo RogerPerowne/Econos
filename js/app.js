@@ -675,16 +675,30 @@
       content += `</div>`;
 
       // Formula pill row — renders immediately after the keyPoints grid.
+      // Pills sit in a grid that mirrors keyPointsCols so each pill lines up
+      // with the column above. Operators are absolutely positioned in the gap
+      // between pills.
       // Pattern: keyPointsFormula: [{ label, tone } | { op: '+' }]
       if (c.keyPointsFormula && c.keyPointsFormula.length) {
-        const pillParts = c.keyPointsFormula.map(item => {
+        const pills = [];
+        let pending = null;
+        for (const item of c.keyPointsFormula) {
           if (item.op) {
-            return `<span style="font-size:22px;font-weight:900;color:#94A3B8;padding:0 4px;">${item.op}</span>`;
+            if (pending) pending.op = item.op;
+          } else {
+            if (pending) pills.push(pending);
+            pending = Object.assign({}, item);
           }
-          const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
-          return `<span style="display:inline-flex;align-items:center;padding:7px 18px;border-radius:999px;background:${t.bg};border:2px solid ${t.accent};color:${t.label};font-size:15px;font-weight:800;letter-spacing:0.03em;white-space:nowrap;">${item.label}</span>`;
+        }
+        if (pending) pills.push(pending);
+        const fCols = c.keyPointsCols || pills.length;
+        const cells = pills.map(p => {
+          const t = PATTERN_TONES[p.tone] || PATTERN_TONES.blue;
+          const pill = `<span style="display:flex;align-items:center;justify-content:center;width:100%;padding:10px 18px;border-radius:999px;background:${t.bg};border:2px solid ${t.accent};color:${t.label};font-size:16px;font-weight:800;letter-spacing:0.03em;">${p.label}</span>`;
+          const op = p.op ? `<span style="position:absolute;right:-14px;top:50%;transform:translate(50%,-50%);font-size:22px;font-weight:900;color:#94A3B8;z-index:1;line-height:1;">${p.op}</span>` : '';
+          return `<div style="position:relative;">${pill}${op}</div>`;
         }).join('');
-        content += `<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:-10px;margin-bottom:26px;flex-wrap:wrap;">${pillParts}</div>`;
+        content += `<div style="display:grid;grid-template-columns:repeat(${fCols},1fr);gap:14px;margin-top:-10px;margin-bottom:26px;">${cells}</div>`;
       }
     }
 

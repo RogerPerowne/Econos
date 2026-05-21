@@ -1257,6 +1257,28 @@
       }
     }
 
+    // Tip late — a second tip block rendered after causes/keyPoints but
+    // before keyTerms. Used for "Key idea" callouts that need to follow
+    // the worked example, not lead the card.
+    if (c.tipLate) {
+      const lateTips = Array.isArray(c.tipLate) ? c.tipLate : [c.tipLate];
+      lateTips.forEach(tip => {
+        const tipText = typeof tip === 'object' ? tip.text : tip;
+        const tipIcon = (typeof tip === 'object' && tip.icon) || '💡';
+        const tipTone = (typeof tip === 'object' && tip.tone) || 'blue';
+        const tipHead = (typeof tip === 'object' && tip.head) || null;
+        const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
+        const bodyHtml = tipHead
+          ? `<div style="display:flex;flex-direction:column;gap:2px;"><div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;">${tipHead}</div><div style="font-size:14px;color:#0B1426;line-height:1.55;">${tipText}</div></div>`
+          : `<div style="font-size:15px;color:#0B1426;line-height:1.55;">${tipText}</div>`;
+        content += `
+          <div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div>
+            ${bodyHtml}
+          </div>`;
+      });
+    }
+
     // Key terms — coloured tiles, definitions always visible, one row
     if (c.keyTerms && c.keyTerms.length) {
       content += genSecLabel(c.keyTermsEmoji || '🔑', c.keyTermsLabel || 'Key terms');

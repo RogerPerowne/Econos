@@ -14014,4 +14014,296 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  marketFailureOverview: `
+    <svg viewBox="0 0 440 290" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- LEFT: When markets work well -->
+      <text x="110" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#059669">When markets work well</text>
+      <text x="110" y="40" font-size="9" text-anchor="middle" fill="#64748B">Prices reflect costs and benefits;</text>
+      <text x="110" y="52" font-size="9" text-anchor="middle" fill="#64748B">resources go where valued most.</text>
+      <line x1="40" y1="72" x2="40" y2="200" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="40,68 36,76 44,76" fill="#334155"/>
+      <text x="33" y="76" font-size="10" font-weight="700" fill="#0B1426">P</text>
+      <line x1="40" y1="200" x2="200" y2="200" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="204,200 196,196 196,204" fill="#334155"/>
+      <text x="200" y="215" font-size="10" font-weight="700" fill="#0B1426">Q</text>
+      <line x1="56" y1="184" x2="186" y2="92" stroke="#059669" stroke-width="2.2"/>
+      <text x="190" y="94" font-size="11" font-weight="800" fill="#059669">S</text>
+      <line x1="56" y1="92" x2="186" y2="184" stroke="#059669" stroke-width="2.2"/>
+      <text x="190" y="187" font-size="11" font-weight="800" fill="#059669">D</text>
+      <circle cx="121" cy="138" r="5.5" fill="#059669"/>
+      <line x1="40" y1="138" x2="121" y2="138" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="34" y="142" font-size="9" text-anchor="end" fill="#475569">P*</text>
+      <line x1="121" y1="138" x2="121" y2="200" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="121" y="215" font-size="9" text-anchor="middle" fill="#475569">Q*</text>
+      <rect x="135" y="146" width="62" height="40" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+      <text x="166" y="159" font-size="9" font-weight="800" text-anchor="middle" fill="#059669">Efficient</text>
+      <text x="166" y="171" font-size="9" font-weight="800" text-anchor="middle" fill="#059669">outcome</text>
+      <text x="166" y="182" font-size="7.5" text-anchor="middle" fill="#065F46">Max total surplus</text>
+
+      <!-- RIGHT: When markets fail -->
+      <text x="335" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#dc2626">When markets fail</text>
+      <text x="335" y="40" font-size="9" text-anchor="middle" fill="#64748B">Prices send the wrong signal — too much</text>
+      <text x="335" y="52" font-size="9" text-anchor="middle" fill="#64748B">or too little is produced or consumed.</text>
+      <line x1="240" y1="72" x2="240" y2="200" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="240,68 236,76 244,76" fill="#334155"/>
+      <text x="233" y="76" font-size="10" font-weight="700" fill="#0B1426">P</text>
+      <line x1="240" y1="200" x2="400" y2="200" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="404,200 396,196 396,204" fill="#334155"/>
+      <text x="400" y="215" font-size="10" font-weight="700" fill="#0B1426">Q</text>
+      <line x1="256" y1="184" x2="386" y2="92" stroke="#059669" stroke-width="2.2"/>
+      <text x="390" y="94" font-size="11" font-weight="800" fill="#059669">S</text>
+      <line x1="256" y1="92" x2="386" y2="184" stroke="#059669" stroke-width="2.2"/>
+      <text x="390" y="187" font-size="11" font-weight="800" fill="#059669">D</text>
+      <circle cx="321" cy="138" r="5" fill="#059669"/>
+      <line x1="240" y1="138" x2="321" y2="138" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="234" y="142" font-size="9" text-anchor="end" fill="#475569">P*</text>
+      <line x1="321" y1="138" x2="321" y2="200" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="319" y="215" font-size="9" text-anchor="end" fill="#059669" font-weight="700">Q*</text>
+      <circle cx="350" cy="165" r="5" fill="#dc2626"/>
+      <line x1="350" y1="165" x2="350" y2="200" stroke="#dc2626" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="352" y="215" font-size="9" text-anchor="start" fill="#dc2626" font-weight="700">Qm</text>
+
+      <!-- Bottom banner -->
+      <rect x="20" y="240" width="400" height="44" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+      <circle cx="48" cy="262" r="14" fill="#FCD34D"/>
+      <path d="M40 262 L56 262 M48 255 L48 269 M44 269 L52 269" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="74" y="267" font-size="12.5" font-weight="800" fill="#0B1426">Market failure = </text>
+      <text x="178" y="267" font-size="12.5" font-weight="800" fill="#d97706">misallocation</text>
+      <text x="255" y="267" font-size="12.5" font-weight="800" fill="#0B1426"> of resources + </text>
+      <text x="345" y="267" font-size="12.5" font-weight="800" fill="#dc2626">welfare loss</text>
+    </svg>
+  `,
+
+  privateVsSocialDiagram: `
+    <svg viewBox="0 0 440 250" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- Headers -->
+      <text x="110" y="20" font-size="14" font-weight="800" text-anchor="middle" fill="#dc2626">Costs</text>
+      <text x="330" y="20" font-size="14" font-weight="800" text-anchor="middle" fill="#059669">Benefits</text>
+      <line x1="220" y1="34" x2="220" y2="240" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <!-- LEFT: Costs -->
+      <rect x="14" y="34" width="92" height="116" rx="10" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <rect x="48" y="58" width="26" height="20" rx="2" fill="#dc2626"/>
+      <rect x="53" y="50" width="4" height="8" fill="#dc2626"/>
+      <rect x="62" y="46" width="4" height="12" fill="#dc2626"/>
+      <text x="60" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">Private costs</text>
+      <text x="60" y="114" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Costs borne by the</text>
+      <text x="60" y="125" font-size="8.5" text-anchor="middle" fill="#7F1D1D">consumer or producer</text>
+      <text x="60" y="136" font-size="8.5" text-anchor="middle" fill="#7F1D1D">making the decision.</text>
+
+      <text x="115" y="98" font-size="22" font-weight="900" text-anchor="middle" fill="#dc2626">+</text>
+
+      <rect x="124" y="34" width="92" height="116" rx="10" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <circle cx="164" cy="58" r="4" fill="#dc2626"/>
+      <circle cx="176" cy="58" r="4" fill="#dc2626"/>
+      <circle cx="170" cy="70" r="4" fill="#dc2626"/>
+      <path d="M156 78 Q170 72 184 78" stroke="#dc2626" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="170" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">External costs</text>
+      <text x="170" y="114" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Spillover costs</text>
+      <text x="170" y="125" font-size="8.5" text-anchor="middle" fill="#7F1D1D">imposed on</text>
+      <text x="170" y="136" font-size="8.5" text-anchor="middle" fill="#7F1D1D">third parties.</text>
+
+      <line x1="60" y1="156" x2="60" y2="180" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="60,184 56,176 64,176" fill="#dc2626"/>
+      <line x1="170" y1="156" x2="170" y2="180" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="170,184 166,176 174,176" fill="#dc2626"/>
+
+      <rect x="14" y="190" width="202" height="44" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <circle cx="34" cy="212" r="11" fill="#dc2626"/>
+      <path d="M28 210 L40 210 M34 207 L34 217 M30 217 L38 217" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+      <text x="52" y="209" font-size="11" font-weight="800" fill="#dc2626">Social costs</text>
+      <text x="52" y="224" font-size="8" fill="#7F1D1D">Social costs = private costs + external costs</text>
+
+      <!-- RIGHT: Benefits -->
+      <rect x="234" y="34" width="92" height="116" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="280" cy="60" r="6" fill="#059669"/>
+      <path d="M270 76 Q280 66 290 76" stroke="#059669" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <text x="280" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">Private benefits</text>
+      <text x="280" y="114" font-size="8.5" text-anchor="middle" fill="#064E3B">Benefits gained by</text>
+      <text x="280" y="125" font-size="8.5" text-anchor="middle" fill="#064E3B">the consumer or</text>
+      <text x="280" y="136" font-size="8.5" text-anchor="middle" fill="#064E3B">producer.</text>
+
+      <text x="335" y="98" font-size="22" font-weight="900" text-anchor="middle" fill="#059669">+</text>
+
+      <rect x="344" y="34" width="92" height="116" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="384" cy="58" r="4" fill="#059669"/>
+      <circle cx="396" cy="58" r="4" fill="#059669"/>
+      <circle cx="390" cy="70" r="4" fill="#059669"/>
+      <path d="M376 78 Q390 72 404 78" stroke="#059669" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="390" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">External benefits</text>
+      <text x="390" y="114" font-size="8.5" text-anchor="middle" fill="#064E3B">Spillover benefits</text>
+      <text x="390" y="125" font-size="8.5" text-anchor="middle" fill="#064E3B">enjoyed by</text>
+      <text x="390" y="136" font-size="8.5" text-anchor="middle" fill="#064E3B">third parties.</text>
+
+      <line x1="280" y1="156" x2="280" y2="180" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="280,184 276,176 284,176" fill="#059669"/>
+      <line x1="390" y1="156" x2="390" y2="180" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="390,184 386,176 394,176" fill="#059669"/>
+
+      <rect x="234" y="190" width="202" height="44" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="254" cy="212" r="11" fill="#059669"/>
+      <path d="M248 210 L260 210 M254 207 L254 217 M250 217 L258 217" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+      <text x="272" y="209" font-size="11" font-weight="800" fill="#059669">Social benefits</text>
+      <text x="272" y="224" font-size="7.5" fill="#064E3B">Social benefits = private benefits + external benefits</text>
+    </svg>
+  `,
+
+  threeRoutesDiagram: `
+    <svg viewBox="0 0 440 390" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <text x="220" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#0B1426">Types of market failure</text>
+
+      <!-- Trunk circle with balance icon -->
+      <circle cx="220" cy="52" r="18" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+      <path d="M210 52 L230 52 M220 44 L220 60 M214 60 L226 60" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- Branches -->
+      <path d="M210 65 Q140 80 80 102" stroke="#059669" stroke-width="2" fill="none"/>
+      <line x1="220" y1="71" x2="220" y2="102" stroke="#d97706" stroke-width="2"/>
+      <path d="M230 65 Q300 80 360 102" stroke="#2563eb" stroke-width="2" fill="none"/>
+
+      <!-- Box 1: Externalities (green) -->
+      <rect x="14" y="100" width="132" height="116" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+      <circle cx="80" cy="124" r="15" fill="#059669"/>
+      <rect x="73" y="122" width="14" height="10" fill="#fff"/>
+      <rect x="76" y="117" width="2" height="5" fill="#fff"/>
+      <rect x="82" y="114" width="2" height="8" fill="#fff"/>
+      <text x="80" y="156" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1. Externalities</text>
+      <text x="80" y="172" font-size="8.5" text-anchor="middle" fill="#065F46">Decisions create spillover</text>
+      <text x="80" y="183" font-size="8.5" text-anchor="middle" fill="#065F46">costs or benefits for others.</text>
+      <line x1="28" y1="192" x2="132" y2="192" stroke="#BBF7D0" stroke-dasharray="2,2"/>
+      <text x="80" y="203" font-size="8" font-weight="800" text-anchor="middle" fill="#059669">Example</text>
+      <text x="80" y="213" font-size="8" text-anchor="middle" fill="#065F46">Pollution from a factory.</text>
+
+      <!-- Box 2: Public goods (amber) -->
+      <rect x="154" y="100" width="132" height="116" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <circle cx="220" cy="124" r="15" fill="#d97706"/>
+      <path d="M213 124 L227 124 M220 117 L220 131 M215 131 L225 131" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="220" y="156" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">2. Public goods</text>
+      <text x="220" y="172" font-size="8.5" text-anchor="middle" fill="#92400E">Markets under-provide goods</text>
+      <text x="220" y="183" font-size="8.5" text-anchor="middle" fill="#92400E">that are non-rival and non-excludable.</text>
+      <line x1="168" y1="192" x2="272" y2="192" stroke="#FDE68A" stroke-dasharray="2,2"/>
+      <text x="220" y="203" font-size="8" font-weight="800" text-anchor="middle" fill="#d97706">Example</text>
+      <text x="220" y="213" font-size="8" text-anchor="middle" fill="#92400E">Street lighting; national defence.</text>
+
+      <!-- Box 3: Information gaps (blue) -->
+      <rect x="294" y="100" width="132" height="116" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <circle cx="360" cy="124" r="15" fill="#2563eb"/>
+      <text x="360" y="130" font-size="16" font-weight="900" text-anchor="middle" fill="#fff">i</text>
+      <text x="360" y="156" font-size="11" font-weight="800" text-anchor="middle" fill="#2563eb">3. Information gaps</text>
+      <text x="360" y="172" font-size="8.5" text-anchor="middle" fill="#1E3A8A">Consumers or producers lack</text>
+      <text x="360" y="183" font-size="8.5" text-anchor="middle" fill="#1E3A8A">information, so choices are poor.</text>
+      <line x1="308" y1="192" x2="412" y2="192" stroke="#BFDBFE" stroke-dasharray="2,2"/>
+      <text x="360" y="203" font-size="8" font-weight="800" text-anchor="middle" fill="#2563eb">Example</text>
+      <text x="360" y="213" font-size="8" text-anchor="middle" fill="#1E3A8A">Misleading health claims.</text>
+
+      <!-- Comparison table -->
+      <text x="86" y="248" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">Problem</text>
+      <text x="232" y="248" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">What goes wrong</text>
+      <text x="370" y="248" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">Typical result</text>
+      <line x1="14" y1="258" x2="426" y2="258" stroke="#CBD5E1" stroke-width="1"/>
+
+      <text x="22" y="280" font-size="10" font-weight="800" fill="#059669">1. Externalities</text>
+      <text x="160" y="280" font-size="9" fill="#475569">Price system misses</text>
+      <text x="160" y="292" font-size="9" fill="#475569">spillover costs or benefits.</text>
+      <text x="306" y="280" font-size="9" fill="#475569">Too much or too little</text>
+      <text x="306" y="292" font-size="9" fill="#475569">output.</text>
+      <line x1="14" y1="304" x2="426" y2="304" stroke="#F1F5F9"/>
+
+      <text x="22" y="324" font-size="10" font-weight="800" fill="#d97706">2. Public goods</text>
+      <text x="160" y="324" font-size="9" fill="#475569">Free-rider problem — people</text>
+      <text x="160" y="336" font-size="9" fill="#475569">benefit without paying.</text>
+      <text x="306" y="324" font-size="9" fill="#475569">Under-provision of the</text>
+      <text x="306" y="336" font-size="9" fill="#475569">good or service.</text>
+      <line x1="14" y1="348" x2="426" y2="348" stroke="#F1F5F9"/>
+
+      <text x="22" y="368" font-size="10" font-weight="800" fill="#2563eb">3. Information gaps</text>
+      <text x="160" y="368" font-size="9" fill="#475569">Decisions based on incomplete</text>
+      <text x="160" y="380" font-size="9" fill="#475569">or imperfect information.</text>
+      <text x="306" y="368" font-size="9" fill="#475569">Bad decisions and</text>
+      <text x="306" y="380" font-size="9" fill="#475569">welfare loss.</text>
+    </svg>
+  `,
+
+  welfareLossDiagram: `
+    <svg viewBox="0 0 440 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- Y-axis (P) -->
+      <line x1="50" y1="32" x2="50" y2="234" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="50,28 46,36 54,36" fill="#334155"/>
+      <text x="42" y="38" font-size="11" font-weight="700" fill="#0B1426">P</text>
+      <!-- X-axis (Q) -->
+      <line x1="50" y1="234" x2="252" y2="234" stroke="#334155" stroke-width="1.3"/>
+      <polygon points="256,234 248,230 248,238" fill="#334155"/>
+      <text x="252" y="250" font-size="11" font-weight="700" fill="#0B1426">Q</text>
+
+      <!-- Supply (upward) -->
+      <line x1="68" y1="214" x2="240" y2="72" stroke="#059669" stroke-width="2.2"/>
+      <text x="244" y="74" font-size="12" font-weight="800" fill="#059669">S</text>
+      <!-- Demand (downward) -->
+      <line x1="68" y1="72" x2="240" y2="214" stroke="#059669" stroke-width="2.2"/>
+      <text x="244" y="218" font-size="12" font-weight="800" fill="#059669">D</text>
+
+      <!-- Welfare loss triangle (between Q* and Qm) -->
+      <polygon points="154,143 196,113 196,173" fill="#FECACA" stroke="#dc2626" stroke-width="1.2" opacity="0.9"/>
+
+      <!-- Equilibrium dot at Q* -->
+      <circle cx="154" cy="143" r="5" fill="#059669"/>
+      <!-- Qm dot (on D curve right of Q*) -->
+      <circle cx="196" cy="173" r="5" fill="#0B1426"/>
+
+      <!-- Welfare loss annotation -->
+      <text x="222" y="130" font-size="10" font-weight="800" fill="#dc2626">Welfare</text>
+      <text x="222" y="142" font-size="10" font-weight="800" fill="#dc2626">loss</text>
+      <text x="222" y="154" font-size="8" fill="#dc2626" font-style="italic">(deadweight</text>
+      <text x="222" y="164" font-size="8" fill="#dc2626" font-style="italic">loss)</text>
+      <path d="M218 150 Q205 150 200 145" stroke="#dc2626" stroke-width="1" fill="none"/>
+
+      <!-- P* line -->
+      <line x1="50" y1="143" x2="154" y2="143" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="44" y="147" font-size="10" font-weight="700" text-anchor="end" fill="#475569">P*</text>
+      <!-- Pm line -->
+      <line x1="50" y1="173" x2="196" y2="173" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="2,2"/>
+      <text x="44" y="177" font-size="10" font-weight="700" text-anchor="end" fill="#475569">Pm</text>
+
+      <!-- Q* dashed -->
+      <line x1="154" y1="143" x2="154" y2="234" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="154" y="250" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Q*</text>
+      <text x="154" y="262" font-size="8" text-anchor="middle" fill="#059669">Socially</text>
+      <text x="154" y="272" font-size="8" text-anchor="middle" fill="#059669">efficient</text>
+
+      <!-- Qm dashed -->
+      <line x1="196" y1="173" x2="196" y2="234" stroke="#0B1426" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="196" y="250" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">Qm</text>
+      <text x="196" y="262" font-size="8" text-anchor="middle" fill="#0B1426">Market</text>
+      <text x="196" y="272" font-size="8" text-anchor="middle" fill="#0B1426">quantity</text>
+
+      <!-- Allocative efficiency tag -->
+      <rect x="62" y="184" width="86" height="40" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+      <text x="105" y="198" font-size="9" font-weight="800" text-anchor="middle" fill="#059669">Allocative</text>
+      <text x="105" y="210" font-size="9" font-weight="800" text-anchor="middle" fill="#059669">efficiency</text>
+      <text x="105" y="220" font-size="8" text-anchor="middle" fill="#065F46">at Q*</text>
+
+      <!-- Right-side numbered points -->
+      <circle cx="290" cy="54" r="12" fill="none" stroke="#059669" stroke-width="2"/>
+      <text x="290" y="59" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1</text>
+      <text x="310" y="50" font-size="9.5" font-weight="800" fill="#0B1426">Allocative efficiency</text>
+      <text x="310" y="62" font-size="9" fill="#475569">occurs where social marginal</text>
+      <text x="310" y="74" font-size="9" fill="#475569">benefit = social marginal cost.</text>
+
+      <line x1="290" y1="92" x2="430" y2="92" stroke="#F1F5F9"/>
+
+      <circle cx="290" cy="124" r="12" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <text x="290" y="129" font-size="11" font-weight="800" text-anchor="middle" fill="#94A3B8">2</text>
+      <text x="310" y="120" font-size="9" fill="#475569">If output is too high or too low,</text>
+      <text x="310" y="132" font-size="9" fill="#475569">the market is allocatively</text>
+      <text x="310" y="144" font-size="9" fill="#475569">inefficient.</text>
+
+      <line x1="290" y1="162" x2="430" y2="162" stroke="#F1F5F9"/>
+
+      <circle cx="290" cy="192" r="12" fill="none" stroke="#dc2626" stroke-width="2"/>
+      <text x="290" y="197" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">3</text>
+      <text x="310" y="194" font-size="9" fill="#475569">The lost surplus is</text>
+      <text x="310" y="206" font-size="10" font-weight="800" fill="#dc2626">welfare loss.</text>
+    </svg>
+  `,
+
 };

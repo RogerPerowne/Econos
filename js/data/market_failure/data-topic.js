@@ -4,118 +4,145 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Market Failure',
   estTime: '8-10 minutes',
-  goal: 'Understand what market failure is, why free markets fail to achieve allocative efficiency, and how the four main types of market failure connect to the government interventions that follow.',
+  goal: 'Understand what market failure is, why the price mechanism sometimes produces the wrong quantity, and how to spot it in real-world contexts.',
   intro: {
     heroKey: 'heroMarketFailure',
-    summary: 'A free market achieves allocative efficiency when price equals marginal social cost and benefit. Market failure occurs when the price mechanism produces an outcome that is not socially optimal — either through externalities, public goods characteristics, information gaps, or factor immobility.',
-    doInThis: 'Work through 6 cards covering the definition of market failure, allocative efficiency and the price mechanism, the four types of market failure, a framework for diagnosing failures, and an introduction to government responses.',
+    summary: 'A free market achieves allocative efficiency when price equals marginal social cost and benefit. Market failure occurs when private incentives diverge from social welfare — through externalities, public goods, or information gaps — so the market produces too much or too little for society.',
+    doInThis: 'Work through 5 cards covering the big picture of market failure, the private-vs-social framework, three routes to failure, welfare loss and allocative inefficiency, and how to diagnose market failure in real contexts.',
     outcomes: [
       'Define market failure and explain its link to allocative efficiency',
-      'Identify the four main types of market failure with examples',
-      'Explain why private markets may over- or under-produce relative to the social optimum',
-      'Set up the framework for evaluating government intervention'
+      'Distinguish private vs social costs and benefits, and explain why their divergence causes failure',
+      'Identify the three core routes to market failure with real-world examples',
+      'Draw and interpret the welfare-loss (deadweight loss) triangle',
+      'Diagnose market failure in unseen contexts using a four-step framework'
     ],
-    tip: 'Market failure does not mean markets "break down" — it means the price mechanism produces the wrong quantity from society\'s perspective. The output is not zero, it is just above or below the socially optimal level.',
+    tip: 'Market failure does not mean markets "break down" — it means the price mechanism produces the wrong quantity from society\'s perspective. The output is not zero; it is just above or below the socially optimal level.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
+
     {
       id: 'market_failure_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 6',
-      title: 'Market failure: the big picture',
-      lede: 'Free markets are powerful — but they fail when private incentives diverge from social welfare.',
-      tip: 'Private equilibrium: where MPB = MPC. Social optimum: where MSB = MSC. Market failure = the gap between these two points. Government intervention aims to close this gap.',
-      branches: [
-        { tone: 'green',  label: 'What it means',        sub: 'Market failure = the price mechanism allocates resources in a way that is not socially optimal. Not "broken" — just producing the wrong amount.' },
-        { tone: 'blue',   label: 'Externalities',         sub: 'Costs or benefits that spill over to third parties. Negative: over-production. Positive: under-production.' },
-        { tone: 'purple', label: 'Public goods',          sub: 'Non-rival and non-excludable goods. Free-rider problem → private market will under-provide or not provide at all.' },
-        { tone: 'amber',  label: 'Information gaps',      sub: 'Asymmetric information between buyers and sellers leads to adverse selection and moral hazard.' },
-        { tone: 'rose',   label: 'Factor immobility',     sub: 'Labour and capital that cannot move to where they are most productive — persistent unemployment and inefficiency.' }
+      stepLabel: 'Learn: Step 1 of 5',
+      title: 'Market failure',
+      tip: { icon: '💡', tone: 'blue', text: 'Markets usually coordinate resources well — but sometimes private choices create social outcomes that are inefficient. The market still functions; it just produces the wrong amount from society\'s point of view.' },
+      diagramKey: 'marketFailureOverview',
+      diagramLabel: 'When markets work, and when they fail',
+      diagramEmoji: '⚖️',
+      keyPointsLabel: 'What market failure means',
+      keyPointsEmoji: '🔍',
+      keyPointsCols: 3,
+      keyPoints: [
+        { title: 'Misallocation of resources', icon: '👥', headline: 'Resources are used by the wrong people or in the wrong quantities', body: 'The price mechanism sends signals based on private costs and benefits, missing the wider picture. So inputs flow to uses that society does not value most.', tone: 'green' },
+        { title: 'Allocative inefficiency', icon: '📊', headline: 'The market outcome does not maximise total surplus', body: 'When MSB ≠ MSC at the market quantity, reallocating could make society better off overall. The market sits short of the socially optimal point.', tone: 'amber' },
+        { title: 'Welfare loss', icon: '📉', headline: 'The gap between actual and best outcome is a deadweight loss', body: 'The lost potential surplus — neither captured by consumers, producers, nor the third parties affected — is the cost of the failure.', tone: 'rose' }
       ],
-      body: '<strong>Market failure</strong> occurs when the free price mechanism fails to achieve an allocation of resources that maximises social welfare — i.e., when the market does not produce the socially optimal output level.<br><br>This happens when there is a divergence between private costs/benefits (what individuals face) and social costs/benefits (what society as a whole faces). When this gap exists, the market equilibrium is not allocatively efficient.<br><br><strong>Why it matters:</strong> market failure is the primary justification for government intervention in a market economy. Without market failure, there is no efficiency case for intervention — though equity arguments may still apply.',
       keyTerms: [
         { term: 'Market failure', def: 'A situation in which the free market fails to produce the socially optimal quantity of a good or service, leading to a misallocation of resources.' },
-        { term: 'Allocative efficiency', def: 'Achieved when resources are allocated so that P = MC (or MSB = MSC) — no reallocation can improve overall welfare.' },
+        { term: 'Allocative efficiency', def: 'Achieved when resources are allocated so that price equals marginal cost (P = MC, or MSB = MSC) — no reallocation can improve overall welfare.' },
         { term: 'Social optimum', def: 'The output level at which marginal social benefit equals marginal social cost — maximises total social welfare.' }
       ],
-      examEdge: 'Market failure is NOT the same as market collapse. Markets can "fail" while still functioning — they just produce too much or too little of a good. The key distinction: private equilibrium (where MPB = MPC) vs social optimum (where MSB = MSC). Market failure = the gap between these two.'
+      examEdge: 'Market failure is NOT the same as market collapse. Markets can "fail" while still functioning — they just produce too much or too little of a good. The key distinction: <strong>private equilibrium</strong> (where MPB = MPC) vs <strong>social optimum</strong> (where MSB = MSC). Market failure = the gap between these two.'
     },
+
     {
       id: 'market_failure_2',
-      template: 'framing',
-      title: 'Allocative Efficiency and the Price Mechanism',
-      body: 'In a perfectly competitive market with no externalities and full information, the price mechanism achieves allocative efficiency: P = MC, which means MSB = MSC at the market equilibrium.<br><br>At this point, total surplus (consumer surplus + producer surplus) is maximised. Any deviation — producing more or less than this quantity — creates a deadweight welfare loss (DWL): a triangle of surplus that no one receives.<br><br><strong>When markets fail:</strong> the private equilibrium (where MPB = MPC) differs from the social optimum (where MSB = MSC). The gap between private and social marginal costs/benefits is the externality — the part the price mechanism ignores.',
-      keyTerms: [
-        { term: 'Marginal private cost (MPC)', def: 'The additional cost borne by the producer of producing one more unit — what the price mechanism responds to.' },
-        { term: 'Marginal social cost (MSC)', def: 'MPC + any negative externality costs imposed on third parties. MSC = MPC + MEC.' },
-        { term: 'Deadweight welfare loss (DWL)', def: 'The loss of total surplus (consumer + producer + external) when output differs from the social optimum — the cost of market failure.' }
+      stepLabel: 'Learn: Step 2 of 5',
+      title: 'Private vs social costs and benefits',
+      tip: { icon: '💡', tone: 'blue', text: 'A decision can look worthwhile to the individual, but once spillover effects are included, the answer for society may be very different.' },
+      diagramKey: 'privateVsSocialDiagram',
+      diagramLabel: 'The private vs social framework',
+      diagramEmoji: '⚖️',
+      keyPointsLabel: 'Two real-world examples',
+      keyPointsEmoji: '🌍',
+      keyPointsCols: 2,
+      keyPoints: [
+        { title: 'Negative externality (social cost)', icon: '🏭', headline: 'A factory produces goods — but locals breathe the pollution', body: 'It bears the cost of production, but local residents suffer health problems from the emissions. <strong>Private cost: ££. Social cost: £££.</strong> Social cost &gt; private cost, so the factory over-produces relative to the social optimum.', tone: 'rose' },
+        { title: 'Positive externality (social benefit)', icon: '💉', headline: 'A vaccinated person also protects the community', body: 'They gain personal protection, and others are less likely to catch the disease (herd immunity). <strong>Private benefit: ££. Social benefit: £££.</strong> Social benefit &gt; private benefit, so the market under-produces vaccinations.', tone: 'green' }
       ],
-      examEdge: 'The DWL triangle is the key diagram tool for market failure. It shows the welfare cost of producing the wrong quantity. With a negative externality: market over-produces, DWL is the triangle above MSC below MSB between Q* and Qm. With a positive externality: market under-produces, DWL is the triangle above MSB below MSC between Qm and Q*. Learn both orientations.'
+      keyTerms: [
+        { term: 'Private cost / benefit', def: 'The cost (or benefit) borne by the individual consumer or producer making the decision — what the price mechanism responds to.' },
+        { term: 'External cost / benefit', def: 'A spillover cost or benefit imposed on (or enjoyed by) third parties not involved in the transaction.' },
+        { term: 'Social cost / benefit', def: 'Private + external. The full cost or benefit to society as a whole. Market failure begins when social and private values diverge.' }
+      ],
+      examEdge: 'The exam trick: market failure begins the moment <strong>private and social costs (or benefits) diverge</strong>. State this explicitly, then identify whether the divergence is on the cost or the benefit side — that tells the examiner whether the market is over- or under-producing.'
     },
+
     {
       id: 'market_failure_3',
-      template: 'cause',
-      causesEmoji: '🔍',
-      causesLabel: 'Four types of market failure',
-      causesStyle: 'tinted-flat',
-      title: 'The Four Types of Market Failure',
-      causes: [
-        { icon: '💨', head: 'Externalities', body: '<strong>Negative:</strong> third-party costs ignored by producers/consumers → over-production (pollution, congestion, smoking). <strong>Positive:</strong> third-party benefits ignored → under-production (education, vaccination, R&D). Both create a gap between private and social optimum.' },
-        { icon: '🏛️', head: 'Public goods', body: 'Goods that are non-rival (one person\'s consumption does not reduce availability to others) and non-excludable (cannot prevent non-payers from consuming). Free-rider problem → rational not to pay → private market under-provides. Examples: national defence, street lighting, flood defences.' },
-        { icon: '📊', head: 'Information gaps', body: 'Asymmetric information: one party knows more than the other. <strong>Adverse selection:</strong> before a transaction (e.g. used car market, insurance). <strong>Moral hazard:</strong> after a transaction (e.g. insured person takes more risks). Leads to under- or over-consumption relative to the optimum.' },
-        { icon: '🚧', head: 'Factor immobility', body: 'Labour and capital that cannot move freely between sectors or regions. Geographic immobility (workers cannot move to where jobs are) and occupational immobility (workers lack skills for available jobs) prevent efficient resource allocation, causing structural unemployment and persistent regional inequality.' }
+      stepLabel: 'Learn: Step 3 of 5',
+      title: 'Three routes to market failure',
+      tip: { icon: '💡', tone: 'blue', text: 'At this stage you only need the map: three broad reasons markets may fail. Each one gets a dedicated topic later — for now, secure the framework.' },
+      diagramKey: 'threeRoutesDiagram',
+      diagramLabel: 'The three routes — and what each one breaks',
+      diagramEmoji: '🌳',
+      keyTerms: [
+        { term: 'Externality', def: 'A cost or benefit imposed on a third party that is not reflected in the market price. Negative externalities cause over-production; positive externalities cause under-production.' },
+        { term: 'Public good', def: 'A good that is non-rival (one person\'s use does not reduce availability) and non-excludable (you cannot stop non-payers from consuming). Free markets under-provide them.' },
+        { term: 'Asymmetric information', def: 'When one party in a transaction has materially better information than the other — leading to adverse selection or moral hazard.' },
+        { term: 'Free-rider problem', def: 'When people benefit from a good without paying for it. Because no-one can be excluded, no-one has an incentive to pay — so the market under-provides.' }
       ],
-      examEdge: 'All four types of market failure can appear in exams. The most common are externalities and public goods. Information gaps and factor immobility are often examined in context (healthcare, labour markets). Make sure you can link each type to a specific real-world example and the relevant government response.'
+      examEdge: 'You do not need every detail yet — first secure the map, then study each failure type in depth. In an essay, naming the route correctly is the first credit-earning step. After that, link the route to the divergence (cost or benefit) and the direction of the failure (over- or under-production).'
     },
+
     {
       id: 'market_failure_4',
-      template: 'diagnose',
-      title: 'Diagnosing Market Failure: A Framework',
-      intro: 'Use this framework to structure any market failure question.',
-      rows: [
-        { label: 'Type of failure', colA: 'Negative externality / public bad', colB: 'Positive externality / public good / info gap' },
-        { label: 'Market outcome', colA: 'Over-production relative to social optimum. MSC > MSB at market output. DWL above MSC.', colB: 'Under-production relative to social optimum. MSB > MSC at market output. DWL below MSB.' },
-        { label: 'Welfare effect', colA: 'Excess production imposes costs on third parties not reflected in price. Total social cost exceeds total social benefit at market output.', colB: 'Too little production means positive spillover benefits are foregone. Total social benefit exceeds total social cost at market output.' },
-        { label: 'Policy response', colA: 'Tax, regulation, cap-and-trade, information campaigns to reduce consumption/production.', colB: 'Subsidy, public provision, regulation (minimum consumption), information campaigns to increase consumption/production.' }
+      stepLabel: 'Learn: Step 4 of 5',
+      title: 'Welfare loss and allocative inefficiency',
+      tip: { icon: '💡', tone: 'amber', text: 'When the market produces the wrong quantity, society misses out on potential welfare. That missing value is <strong>deadweight loss</strong> — surplus no-one receives.' },
+      diagramKey: 'welfareLossDiagram',
+      diagramLabel: 'The welfare loss triangle',
+      diagramEmoji: '📐',
+      keyPointsLabel: 'How welfare is lost',
+      keyPointsEmoji: '📉',
+      keyPointsCols: 3,
+      keyPoints: [
+        { title: 'Too much output', icon: '📈', headline: 'The market produces beyond Q*', body: 'Consumers value the last units less than they cost society to produce. The extra output creates welfare loss. <strong>Example:</strong> traffic congestion from the over-use of roads.', tone: 'rose' },
+        { title: 'Too little output', icon: '📉', headline: 'The market produces below Q*', body: 'People value additional units more than the cost of providing them. The under-production creates welfare loss. <strong>Example:</strong> under-provision of vaccines for a contagious disease.', tone: 'amber' },
+        { title: 'Why society loses', icon: '👥', headline: 'Resources are pulled away from their most valued use', body: 'In both cases the market allocates resources away from where they would do most good. The gap between benefit and cost is the deadweight loss to society. <strong>Example:</strong> pollution damages from over-production.', tone: 'green' }
       ],
-      footer: 'The direction of the failure (over vs under-production) determines whether you need a "stick" (tax/regulation) or a "carrot" (subsidy/provision). Always identify the direction first.',
-      examEdge: 'For any market failure question: (1) identify the type of failure; (2) state whether market over- or under-produces; (3) show the DWL on a diagram; (4) explain the government response; (5) evaluate whether the response corrects the failure or creates new problems (government failure).'
+      keyTerms: [
+        { term: 'Marginal social cost (MSC)', def: 'The total cost to society of producing one more unit — private cost plus any external cost. MSC = MPC + MEC.' },
+        { term: 'Marginal social benefit (MSB)', def: 'The total benefit to society from consuming one more unit — private benefit plus any external benefit. MSB = MPB + MEB.' },
+        { term: 'Deadweight welfare loss (DWL)', def: 'The loss of total surplus when output differs from the social optimum — the welfare cost of market failure, shown as a triangle on the diagram.' }
+      ],
+      examEdge: 'Always link market failure to the <strong>wrong quantity</strong> and the resulting <strong>loss of total surplus</strong>. Show the welfare-loss triangle on the diagram, identify Q* and Qm, and state which direction the market has missed. That sequence — direction, quantity gap, surplus lost — is what earns the marks.'
     },
+
     {
       id: 'market_failure_5',
-      template: 'framing',
-      title: 'Market Failure vs Government Failure',
-      verdict: {
-        leftLabel: '📉 Market failure — case FOR intervention',
-        rightLabel: '🏛️ Government failure — case AGAINST',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Externalities', left: 'Free market ignores external costs/benefits — price mechanism sends wrong signals', right: 'Governments lack the information to set optimal taxes, subsidies or regulations' },
-          { aspect: 'Public goods', left: 'Public goods under-provided because free-rider problem removes private incentive', right: 'Preference revelation problem: government cannot know optimal quantity without price signals' },
-          { aspect: 'Information', left: 'Asymmetric information leads to adverse selection and moral hazard', right: 'Public choice theory: politicians serve their own interests, not the public interest' },
-          { aspect: 'Equity', left: 'Even without efficiency failure, distributional outcomes may be unacceptable', right: 'Regulatory capture: industry lobbying shapes regulation to benefit incumbents' }
-        ]
-      },
-      examEdge: 'The market failure vs government failure comparison is the key evaluative framework for all Section B and Section C questions on microeconomic policy. The existence of market failure justifies the case for intervention; the risk of government failure limits that case. A sophisticated answer considers both sides and evaluates which is likely to dominate in a specific context.'
-    },
-    {
-      id: 'market_failure_6',
-      template: 'framing',
-      title: 'From Market Failure to Policy: The Roadmap Ahead',
-      body: 'The next topics in this section explore each type of market failure in depth and evaluate the policy responses available.<br><br><strong>3.2a — Negative Externalities:</strong> pollution, smoking, congestion. Policy tools: Pigouvian taxes, regulation, tradeable permits.<br><br><strong>3.2b — Positive Externalities:</strong> education, healthcare, R&D. Policy tools: subsidies, public provision, regulation (minimum requirements).<br><br><strong>3.3 — Public Goods:</strong> national defence, lighthouses. Policy tools: government provision, contracting out.<br><br><strong>3.4 — Information Gaps:</strong> used cars, insurance, healthcare. Policy tools: information provision, regulation, mandatory disclosure.',
-      keyTerms: [
-        { term: 'Government intervention', def: 'Any action by government to correct a market failure — taxes, subsidies, regulation, public provision, or information campaigns.' },
-        { term: 'Second-best solution', def: 'When the first-best (perfectly correcting market failure) is unavailable due to information constraints, governments aim for the best achievable outcome.' },
-        { term: 'Cost-benefit analysis', def: 'A framework for evaluating whether the benefits of government intervention outweigh the costs — including the risk of government failure.' }
+      stepLabel: 'Learn: Step 5 of 5',
+      title: 'Spotting market failure in the real world',
+      tip: { icon: '💡', tone: 'blue', text: 'The final skill is diagnosis: can you recognise where the price mechanism is misfiring in real contexts? Each case below maps onto one of the three routes.' },
+      keyPointsLabel: 'Four cases to diagnose',
+      keyPointsEmoji: '🔬',
+      keyPointsCols: 2,
+      keyPoints: [
+        { title: 'Petrol, congestion and emissions', icon: '🚗', headline: 'Drivers ignore the full impact of driving', body: '<strong>Route:</strong> <em>Externality</em>.<br><strong>What goes wrong:</strong> Too much driving → pollution, congestion and higher social costs that the price of petrol doesn\'t capture.', tone: 'rose' },
+        { title: 'Vaccination or education', icon: '💉', headline: 'Benefits extend well beyond the individual', body: '<strong>Route:</strong> <em>Positive externality / public good characteristics</em>.<br><strong>What goes wrong:</strong> Under-provision because individuals don\'t capture the full social benefits when deciding.', tone: 'blue' },
+        { title: 'Street lighting or flood defences', icon: '💡', headline: 'Everyone benefits and no-one can be excluded', body: '<strong>Route:</strong> <em>Public good</em>.<br><strong>What goes wrong:</strong> Under-provision since people can free-ride on others\' payments — no-one has an incentive to pay.', tone: 'amber' },
+        { title: 'Food labels, used cars, vaping info', icon: '🏷️', headline: 'One side has more or better information', body: '<strong>Route:</strong> <em>Information gap</em>.<br><strong>What goes wrong:</strong> Poor-quality and biased choices → inefficient outcomes; the price reflects misperception, not reality.', tone: 'purple' }
       ],
-      keyTakeaway: { title: 'The big picture', text: 'Market failure occurs when the price mechanism produces outcomes that are not socially optimal. The four main types — externalities, public goods, information gaps, and factor immobility — each create a specific gap between private and social optimum. Government intervention can correct these failures, but risks creating new ones (government failure). The goal is always to maximise total social welfare.' },
-      examEdge: 'Market failure topics account for a significant portion of Theme 1 marks. Make sure you can: (1) define each type; (2) draw the relevant diagram; (3) calculate or estimate the DWL; (4) propose an appropriate policy; (5) evaluate the policy against alternatives. Breadth of knowledge and quality of evaluation are both rewarded.',
+      flowTitle: 'How to diagnose market failure',
+      flowEmoji: '🧭',
+      flow: [
+        { icon: '⚖️', title: 'Costs/benefits gap?', sub: 'Is there a divergence between private and social costs or benefits?', tone: 'green' },
+        { icon: '👥', title: 'Non-rival or non-excludable?', sub: 'Does the good have public-good characteristics that the market can\'t price?', tone: 'amber' },
+        { icon: '🔍', title: 'Information missing?', sub: 'Do buyers or sellers lack key information that the price should reflect?', tone: 'blue' },
+        { icon: '📉', title: 'Welfare loss?', sub: 'Does the market outcome leave society worse off than at the social optimum?', tone: 'rose' }
+      ],
+      keyTerms: [
+        { term: 'Diagnosis', def: 'In an exam context: identifying which type of failure is occurring in an unseen scenario, justified by the cost/benefit divergence and the direction of misallocation.' },
+        { term: 'Adverse selection', def: 'When asymmetric information before a transaction causes the wrong people to participate — e.g., used-car buyers fearing "lemons", so the market for good used cars shrinks.' },
+        { term: 'Moral hazard', def: 'When asymmetric information after a transaction changes behaviour — e.g., an insured person takes more risks because they no longer bear the full cost.' }
+      ],
+      examEdge: 'A strong answer does more than name the failure — it explains <strong>why</strong> the market outcome is allocatively inefficient. Use the four-step diagnostic: divergence → direction → quantity gap → welfare loss. That structure works for any market failure question.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
+
   ]
 };

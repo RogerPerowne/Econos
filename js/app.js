@@ -266,6 +266,184 @@
     <rect x="-2" y="0" width="4" height="12" fill="#78350F"/>
     <circle cx="0" cy="-5" r="10" fill="#16A34A"/>
   </g>
+</svg>`,
+
+    steelCement: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="sc_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBD5E1"/><stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="160" fill="url(#sc_sky)"/>
+  <rect x="0" y="135" width="600" height="25" fill="#94A3B8"/>
+  <rect x="80" y="80" width="200" height="55" fill="#475569"/>
+  <polygon points="80,80 105,65 130,80" fill="#334155"/>
+  <polygon points="130,80 155,65 180,80" fill="#334155"/>
+  <polygon points="180,80 205,65 230,80" fill="#334155"/>
+  <polygon points="230,80 255,65 280,80" fill="#334155"/>
+  <rect x="110" y="30" width="18" height="50" fill="#475569"/>
+  <rect x="108" y="27" width="22" height="7" fill="#334155"/>
+  <rect x="170" y="42" width="14" height="38" fill="#475569"/>
+  <rect x="168" y="39" width="18" height="6" fill="#334155"/>
+  <rect x="220" y="36" width="16" height="44" fill="#475569"/>
+  <rect x="218" y="33" width="20" height="6" fill="#334155"/>
+  <rect x="95" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="115" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="135" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="155" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="175" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="195" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="215" y="96" width="12" height="16" fill="#FCD34D"/>
+  <ellipse cx="120" cy="22" rx="30" ry="14" fill="#475569" opacity="0.85"/>
+  <ellipse cx="160" cy="14" rx="38" ry="16" fill="#475569" opacity="0.78"/>
+  <ellipse cx="210" cy="18" rx="44" ry="15" fill="#64748B" opacity="0.7"/>
+  <ellipse cx="272" cy="12" rx="48" ry="18" fill="#64748B" opacity="0.6"/>
+  <ellipse cx="345" cy="18" rx="52" ry="16" fill="#94A3B8" opacity="0.5"/>
+  <ellipse cx="425" cy="24" rx="54" ry="14" fill="#94A3B8" opacity="0.4"/>
+  <ellipse cx="505" cy="20" rx="52" ry="13" fill="#CBD5E1" opacity="0.35"/>
+  <ellipse cx="575" cy="28" rx="44" ry="11" fill="#CBD5E1" opacity="0.28"/>
+</svg>`,
+
+    shippingAviation: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="sa_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFDBFE"/><stop offset="1" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="sa_sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1D4ED8" stop-opacity="0.7"/><stop offset="1" stop-color="#1E40AF"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="108" fill="url(#sa_sky)"/>
+  <rect x="0" y="104" width="600" height="56" fill="url(#sa_sea)"/>
+  <path d="M0 118 Q50 113 100 118 Q150 123 200 118 Q250 113 300 118" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M200 132 Q260 127 320 132 Q380 137 440 132" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M55 112 L55 97 L350 97 L366 112 Z" fill="#334155"/>
+  <rect x="60" y="86" width="270" height="13" fill="#475569"/>
+  <rect x="240" y="64" width="72" height="24" fill="#64748B"/>
+  <rect x="256" y="52" width="42" height="14" fill="#64748B"/>
+  <rect x="286" y="41" width="12" height="20" fill="#DC2626"/>
+  <rect x="284" y="39" width="16" height="5" fill="#991B1B"/>
+  <rect x="76" y="77" width="35" height="11" fill="#EF4444"/>
+  <rect x="116" y="77" width="35" height="11" fill="#3B82F6"/>
+  <rect x="156" y="77" width="35" height="11" fill="#F59E0B"/>
+  <rect x="196" y="77" width="35" height="11" fill="#10B981"/>
+  <ellipse cx="293" cy="31" rx="16" ry="10" fill="#1E293B" opacity="0.85"/>
+  <ellipse cx="320" cy="22" rx="22" ry="12" fill="#334155" opacity="0.75"/>
+  <ellipse cx="360" cy="18" rx="28" ry="12" fill="#475569" opacity="0.6"/>
+  <ellipse cx="408" cy="22" rx="32" ry="11" fill="#64748B" opacity="0.45"/>
+  <ellipse cx="460" cy="26" rx="30" ry="10" fill="#94A3B8" opacity="0.3"/>
+  <line x1="80" y1="46" x2="480" y2="22" stroke="white" stroke-width="2" opacity="0.65"/>
+  <line x1="80" y1="50" x2="480" y2="26" stroke="white" stroke-width="1.5" opacity="0.45"/>
+  <g transform="translate(446 17)">
+    <ellipse cx="18" cy="3" rx="22" ry="4" fill="#334155"/>
+    <polygon points="0,3 -8,-1 -8,7" fill="#334155"/>
+    <polygon points="28,3 40,3 30,0" fill="#475569"/>
+    <polygon points="10,0 14,-6 18,0" fill="#475569"/>
+    <polygon points="10,6 14,12 18,6" fill="#475569"/>
+  </g>
+</svg>`,
+
+    deforestation: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="df_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FEF9C3"/><stop offset="1" stop-color="#FFF7ED"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="160" fill="url(#df_sky)"/>
+  <path d="M0 105 L80 75 L160 90 L250 65 L340 82 L440 68 L520 80 L600 72 L600 160 L0 160 Z" fill="#D1FAE5"/>
+  <rect x="0" y="130" width="600" height="30" fill="#78350F" opacity="0.55"/>
+  <rect x="0" y="128" width="600" height="4" fill="#92400E"/>
+  <rect x="26" y="108" width="8" height="22" fill="#78350F"/>
+  <polygon points="30,30 8,82 52,82" fill="#166534"/>
+  <polygon points="30,50 12,90 48,90" fill="#15803D"/>
+  <polygon points="30,68 14,102 46,102" fill="#16A34A"/>
+  <rect x="76" y="108" width="8" height="22" fill="#78350F"/>
+  <polygon points="80,24 56,78 104,78" fill="#14532D"/>
+  <polygon points="80,46 58,88 102,88" fill="#166534"/>
+  <polygon points="80,64 60,102 100,102" fill="#16A34A"/>
+  <rect x="126" y="108" width="8" height="22" fill="#78350F"/>
+  <polygon points="130,34 106,84 154,84" fill="#166534"/>
+  <polygon points="130,54 108,94 152,94" fill="#15803D"/>
+  <polygon points="130,70 110,106 150,106" fill="#16A34A"/>
+  <rect x="176" y="108" width="8" height="22" fill="#78350F"/>
+  <polygon points="180,40 156,86 204,86" fill="#14532D"/>
+  <polygon points="180,58 158,96 202,96" fill="#166534"/>
+  <polygon points="180,74 160,108 200,108" fill="#16A34A"/>
+  <line x1="218" y1="52" x2="218" y2="136" stroke="#92400E" stroke-width="3" stroke-dasharray="6 3" opacity="0.55"/>
+  <rect x="248" y="118" width="30" height="12" fill="#78350F"/>
+  <ellipse cx="263" cy="118" rx="16" ry="5" fill="#92400E"/>
+  <ellipse cx="263" cy="118" rx="9" ry="3" fill="#A16207" opacity="0.6"/>
+  <rect x="308" y="121" width="24" height="9" fill="#78350F"/>
+  <ellipse cx="320" cy="121" rx="13" ry="4" fill="#92400E"/>
+  <rect x="368" y="116" width="28" height="14" fill="#78350F"/>
+  <ellipse cx="382" cy="116" rx="15" ry="5" fill="#92400E"/>
+  <rect x="428" y="120" width="22" height="10" fill="#78350F"/>
+  <ellipse cx="439" cy="120" rx="12" ry="4" fill="#92400E"/>
+  <rect x="488" y="118" width="26" height="12" fill="#78350F"/>
+  <ellipse cx="501" cy="118" rx="14" ry="4" fill="#92400E"/>
+  <rect x="272" y="127" width="75" height="7" rx="4" fill="#92400E" transform="rotate(-8 272 127)"/>
+  <rect x="392" y="124" width="58" height="6" rx="3" fill="#78350F" transform="rotate(5 392 124)"/>
+  <rect x="344" y="107" width="30" height="11" rx="3" fill="#F59E0B"/>
+  <rect x="374" y="109" width="18" height="3" fill="#334155"/>
+  <rect x="374" y="115" width="18" height="3" fill="#334155"/>
+  <circle cx="346" cy="113" r="4" fill="#334155"/>
+</svg>`,
+
+    intensiveFarming: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="if_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D1FAE5"/><stop offset="1" stop-color="#ECFDF5"/>
+    </linearGradient>
+    <linearGradient id="if_river" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6EAA8A"/><stop offset="1" stop-color="#4A7C62"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="62" fill="url(#if_sky)"/>
+  <rect x="0" y="62" width="600" height="26" fill="#4ADE80" opacity="0.55"/>
+  <rect x="0" y="88" width="600" height="4" fill="#16A34A" opacity="0.35"/>
+  <rect x="0" y="92" width="600" height="22" fill="#22C55E" opacity="0.55"/>
+  <rect x="0" y="114" width="600" height="4" fill="#15803D" opacity="0.35"/>
+  <rect x="0" y="118" width="600" height="16" fill="#86EFAC" opacity="0.65"/>
+  <line x1="0" y1="70" x2="600" y2="70" stroke="#16A34A" stroke-width="1" opacity="0.35"/>
+  <line x1="0" y1="78" x2="600" y2="78" stroke="#16A34A" stroke-width="1" opacity="0.35"/>
+  <line x1="0" y1="100" x2="600" y2="100" stroke="#16A34A" stroke-width="1" opacity="0.35"/>
+  <line x1="0" y1="108" x2="600" y2="108" stroke="#16A34A" stroke-width="1" opacity="0.35"/>
+  <g transform="translate(80 68)">
+    <rect x="20" y="8" width="55" height="30" rx="4" fill="#F59E0B"/>
+    <rect x="55" y="0" width="26" height="20" rx="3" fill="#D97706"/>
+    <rect x="58" y="3" width="10" height="8" fill="#BFDBFE" opacity="0.8"/>
+    <circle cx="35" cy="42" r="22" fill="#334155"/>
+    <circle cx="35" cy="42" r="15" fill="#475569"/>
+    <circle cx="35" cy="42" r="5" fill="#64748B"/>
+    <circle cx="85" cy="46" r="14" fill="#334155"/>
+    <circle cx="85" cy="46" r="9" fill="#475569"/>
+    <rect x="52" y="-8" width="6" height="16" fill="#334155"/>
+    <rect x="0" y="28" width="20" height="8" fill="#6B7280"/>
+    <line x1="8" y1="36" x2="-5" y2="56" stroke="#A3E635" stroke-width="2" opacity="0.7"/>
+    <line x1="12" y1="36" x2="2" y2="60" stroke="#A3E635" stroke-width="2" opacity="0.7"/>
+    <line x1="16" y1="36" x2="10" y2="60" stroke="#A3E635" stroke-width="2" opacity="0.7"/>
+  </g>
+  <rect x="0" y="134" width="600" height="26" fill="url(#if_river)"/>
+  <path d="M300 118 L300 134" stroke="#6B4226" stroke-width="4" opacity="0.7"/>
+  <ellipse cx="315" cy="145" rx="42" ry="6" fill="#6B4226" opacity="0.32"/>
+  <ellipse cx="295" cy="148" rx="30" ry="4" fill="#5A3A1A" opacity="0.28"/>
+  <g transform="translate(365 142)" fill="#0F172A" opacity="0.55">
+    <ellipse cx="0" cy="0" rx="10" ry="3"/>
+    <polygon points="10,0 16,-4 16,4"/>
+    <circle cx="-6" cy="-1" r="1.5" fill="white" opacity="0.8"/>
+  </g>
+  <g transform="translate(420 147) rotate(20)" fill="#0F172A" opacity="0.5">
+    <ellipse cx="0" cy="0" rx="8" ry="2.5"/>
+    <polygon points="8,0 13,-3 13,3"/>
+  </g>
+  <ellipse cx="100" cy="22" rx="40" ry="12" fill="white" opacity="0.65"/>
+  <ellipse cx="132" cy="16" rx="28" ry="9" fill="white" opacity="0.55"/>
+  <ellipse cx="450" cy="26" rx="50" ry="14" fill="white" opacity="0.65"/>
+  <ellipse cx="492" cy="20" rx="34" ry="10" fill="white" opacity="0.55"/>
 </svg>`
   };
 
@@ -1096,6 +1274,38 @@
         }).join('');
         content += `<div style="display:flex;align-items:center;justify-content:center;gap:6px;background:${PATTERN_TONES.green.bg};border:1px solid ${PATTERN_TONES.green.border};border-radius:14px;padding:14px 20px;margin-bottom:26px;flex-wrap:wrap;">${segs}</div>`;
       }
+    }
+
+    // Illustrated grid — 2-col (or custom) grid of example cards with a full-width
+    // scene header (SVG), a numbered title, body text and an optional third-party badge.
+    //   Pattern: illustratedGrid: [{ scene?, tone, title, body, thirdParty? }]
+    //            illustratedGridLabel?, illustratedGridEmoji?, illustratedGridCols?
+    if (c.illustratedGrid && c.illustratedGrid.length) {
+      if (c.illustratedGridLabel !== null)
+        content += genSecLabel(c.illustratedGridEmoji || '📋', c.illustratedGridLabel || 'Examples');
+      const igCols = c.illustratedGridCols || 2;
+      const igCells = c.illustratedGrid.map((item, i) => {
+        const t = PATTERN_TONES[item.tone] || PATTERN_TONES.green;
+        const sceneHtml = item.scene && SCENES[item.scene]
+          ? `<div style="height:120px;overflow:hidden;flex-shrink:0;">${SCENES[item.scene]}</div>`
+          : '';
+        const thirdPartyHtml = item.thirdParty
+          ? `<div style="display:flex;align-items:center;gap:8px;background:${t.soft};border-radius:8px;padding:8px 10px;margin-top:auto;">
+               <span style="font-size:16px;flex-shrink:0;">👥</span>
+               <div style="font-size:12.5px;line-height:1.4;"><span style="font-weight:600;color:#475569;">Third party harmed: </span><span style="font-weight:700;color:${t.label};">${item.thirdParty}</span></div>
+             </div>`
+          : '';
+        return `
+          <div style="border-radius:14px;border:1px solid #E7E7EA;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+            ${sceneHtml}
+            <div style="padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;gap:8px;">
+              <div style="font-size:15px;font-weight:800;color:${t.label};line-height:1.3;">${i + 1}. ${item.title}</div>
+              <div style="font-size:13px;color:#334155;line-height:1.6;flex:1;">${item.body}</div>
+              ${thirdPartyHtml}
+            </div>
+          </div>`;
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:repeat(${igCols},1fr);gap:14px;margin-bottom:26px;">${igCells}</div>`;
     }
 
     // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] — coloured tiles.

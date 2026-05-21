@@ -11600,6 +11600,54 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  bitFrameworkDiagram: `
+    <svg viewBox="0 0 440 310" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="310" fill="#F8FAFC" rx="10"/>
+
+      <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework — small tweaks, big effects</text>
+      <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK Behavioural Insights Team (founded 2010). Same mechanism every time.</text>
+
+      <rect x="18" y="68" width="120" height="150" rx="10" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1.5"/>
+      <circle cx="78" cy="94" r="20" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+      <text x="78" y="102" font-size="22" text-anchor="middle">🏛️</text>
+      <text x="78" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">Choice</text>
+      <text x="78" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">architecture</text>
+      <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">Redesign the choice</text>
+      <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment — the</text>
+      <text x="78" y="200" font-size="9.5" text-anchor="middle" fill="#1e3a8a">default, the framing,</text>
+      <text x="78" y="214" font-size="9.5" text-anchor="middle" fill="#1e3a8a">the wording.</text>
+
+      <text x="160" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+      <rect x="182" y="68" width="120" height="150" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <circle cx="242" cy="94" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
+      <text x="242" y="102" font-size="22" text-anchor="middle">🧑</text>
+      <text x="242" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Behaviour</text>
+      <text x="242" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">shifts</text>
+      <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">People keep their</text>
+      <text x="242" y="186" font-size="9.5" text-anchor="middle" fill="#5b21b6">freedom of choice</text>
+      <text x="242" y="200" font-size="9.5" text-anchor="middle" fill="#5b21b6">— but the easy path</text>
+      <text x="242" y="214" font-size="9.5" text-anchor="middle" fill="#5b21b6">leads to a better one.</text>
+
+      <text x="324" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+      <rect x="346" y="68" width="74" height="150" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="383" cy="94" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+      <text x="383" y="102" font-size="22" text-anchor="middle">🏅</text>
+      <text x="383" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Better</text>
+      <text x="383" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">outcomes</text>
+      <text x="383" y="172" font-size="9" text-anchor="middle" fill="#065f46">For people</text>
+      <text x="383" y="186" font-size="9" text-anchor="middle" fill="#065f46">&amp; society</text>
+      <text x="383" y="202" font-size="9" text-anchor="middle" fill="#065f46">— measured</text>
+      <text x="383" y="214" font-size="9" text-anchor="middle" fill="#065f46">via RCTs.</text>
+
+      <rect x="20" y="236" width="400" height="60" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
+      <text x="220" y="256" font-size="11" font-weight="800" text-anchor="middle" fill="#92400E">Three features of every successful nudge:</text>
+      <text x="220" y="274" font-size="10.5" text-anchor="middle" fill="#78350F">① near-zero cost  ②  preserves choice  ③  evidence-tested via RCT</text>
+      <text x="220" y="292" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Thaler &amp; Sunstein call this "libertarian paternalism".</text>
+    </svg>
+  `,
+
   policySpectrumDiagram: `
     <svg viewBox="0 0 440 460" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="460" fill="#F8FAFC" rx="10"/>

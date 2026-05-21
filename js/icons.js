@@ -14093,76 +14093,124 @@ window.ECONOS_ICONS = {
   `,
 
   privateVsSocialDiagram: `
-    <svg viewBox="0 0 440 250" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <!-- Headers -->
-      <text x="110" y="20" font-size="14" font-weight="800" text-anchor="middle" fill="#dc2626">Costs</text>
-      <text x="330" y="20" font-size="14" font-weight="800" text-anchor="middle" fill="#059669">Benefits</text>
-      <line x1="220" y1="34" x2="220" y2="240" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+    <svg viewBox="0 0 540 258" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <!-- Column headers -->
+      <text x="135" y="18" font-size="14" font-weight="800" text-anchor="middle" fill="#dc2626">Costs</text>
+      <text x="405" y="18" font-size="14" font-weight="800" text-anchor="middle" fill="#059669">Benefits</text>
+      <line x1="270" y1="26" x2="270" y2="250" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
 
-      <!-- LEFT: Costs -->
-      <rect x="14" y="34" width="92" height="116" rx="10" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
-      <rect x="48" y="58" width="26" height="20" rx="2" fill="#dc2626"/>
-      <rect x="53" y="50" width="4" height="8" fill="#dc2626"/>
-      <rect x="62" y="46" width="4" height="12" fill="#dc2626"/>
-      <text x="60" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">Private costs</text>
-      <text x="60" y="114" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Costs borne by the</text>
-      <text x="60" y="125" font-size="8.5" text-anchor="middle" fill="#7F1D1D">consumer or producer</text>
-      <text x="60" y="136" font-size="8.5" text-anchor="middle" fill="#7F1D1D">making the decision.</text>
+      <!-- ===== LEFT: COSTS ===== -->
+      <!-- Private costs box -->
+      <rect x="10" y="26" width="112" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <!-- Factory: chimneys -->
+      <rect x="52" y="40" width="6" height="14" rx="1" fill="#dc2626"/>
+      <rect x="62" y="36" width="6" height="18" rx="1" fill="#dc2626"/>
+      <!-- smoke puffs -->
+      <circle cx="55" cy="37" r="3.5" fill="#dc2626" opacity="0.3"/>
+      <circle cx="65" cy="33" r="4" fill="#dc2626" opacity="0.25"/>
+      <!-- factory body -->
+      <rect x="42" y="54" width="34" height="16" rx="2" fill="#dc2626"/>
+      <rect x="46" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.8"/>
+      <rect x="56" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.8"/>
+      <rect x="66" y="58" width="6" height="6" rx="1" fill="#fff" opacity="0.8"/>
+      <line x1="38" y1="70" x2="82" y2="70" stroke="#dc2626" stroke-width="1.5" opacity="0.4"/>
+      <text x="66" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">Private costs</text>
+      <text x="66" y="106" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Costs paid by the</text>
+      <text x="66" y="117" font-size="8.5" text-anchor="middle" fill="#7F1D1D">producer or consumer</text>
+      <text x="66" y="128" font-size="8.5" text-anchor="middle" fill="#7F1D1D">making the decision.</text>
 
-      <text x="115" y="98" font-size="22" font-weight="900" text-anchor="middle" fill="#dc2626">+</text>
+      <!-- + badge -->
+      <circle cx="136" cy="86" r="13" fill="#dc2626"/>
+      <text x="136" y="91" font-size="17" font-weight="900" text-anchor="middle" fill="#fff">+</text>
 
-      <rect x="124" y="34" width="92" height="116" rx="10" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
-      <circle cx="164" cy="58" r="4" fill="#dc2626"/>
-      <circle cx="176" cy="58" r="4" fill="#dc2626"/>
-      <circle cx="170" cy="70" r="4" fill="#dc2626"/>
-      <path d="M156 78 Q170 72 184 78" stroke="#dc2626" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <text x="170" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">External costs</text>
-      <text x="170" y="114" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Spillover costs</text>
-      <text x="170" y="125" font-size="8.5" text-anchor="middle" fill="#7F1D1D">imposed on</text>
-      <text x="170" y="136" font-size="8.5" text-anchor="middle" fill="#7F1D1D">third parties.</text>
+      <!-- External costs box -->
+      <rect x="158" y="26" width="112" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <!-- Person (third party) -->
+      <circle cx="198" cy="42" r="7" fill="#dc2626"/>
+      <line x1="198" y1="49" x2="198" y2="62" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M190 58 Q198 52 206 58" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- lightning bolt -->
+      <path d="M218 36 L213 49 L218 49 L213 62 L224 47 L219 47 Z" fill="#dc2626" opacity="0.7"/>
+      <text x="214" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">External costs</text>
+      <text x="214" y="106" font-size="8.5" text-anchor="middle" fill="#7F1D1D">Costs imposed on</text>
+      <text x="214" y="117" font-size="8.5" text-anchor="middle" fill="#7F1D1D">third parties not</text>
+      <text x="214" y="128" font-size="8.5" text-anchor="middle" fill="#7F1D1D">in the transaction.</text>
 
-      <line x1="60" y1="156" x2="60" y2="180" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <polygon points="60,184 56,176 64,176" fill="#dc2626"/>
-      <line x1="170" y1="156" x2="170" y2="180" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <polygon points="170,184 166,176 174,176" fill="#dc2626"/>
+      <!-- Dashed arrows to summary -->
+      <line x1="66" y1="150" x2="66" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="66,179 62,171 70,171" fill="#dc2626"/>
+      <line x1="214" y1="150" x2="214" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="214,179 210,171 218,171" fill="#dc2626"/>
 
-      <rect x="14" y="190" width="202" height="44" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
-      <circle cx="34" cy="212" r="11" fill="#dc2626"/>
-      <path d="M28 210 L40 210 M34 207 L34 217 M30 217 L38 217" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
-      <text x="52" y="209" font-size="11" font-weight="800" fill="#dc2626">Social costs</text>
-      <text x="52" y="224" font-size="8" fill="#7F1D1D">Social costs = private costs + external costs</text>
+      <!-- Social costs summary box -->
+      <rect x="10" y="185" width="260" height="58" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <!-- Balance scale icon -->
+      <line x1="32" y1="193" x2="32" y2="231" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="202" x2="44" y2="202" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+      <line x1="21" y1="202" x2="18" y2="214" stroke="#dc2626" stroke-width="1.3"/>
+      <line x1="23" y1="202" x2="26" y2="214" stroke="#dc2626" stroke-width="1.3"/>
+      <path d="M16 214 Q22 219 28 214" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+      <line x1="41" y1="202" x2="38" y2="214" stroke="#dc2626" stroke-width="1.3"/>
+      <line x1="43" y1="202" x2="46" y2="214" stroke="#dc2626" stroke-width="1.3"/>
+      <path d="M36 214 Q42 219 48 214" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+      <line x1="26" y1="231" x2="38" y2="231" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+      <text x="56" y="205" font-size="11" font-weight="800" fill="#dc2626">Social costs</text>
+      <text x="56" y="219" font-size="8" fill="#7F1D1D">= private costs + external costs</text>
+      <text x="56" y="231" font-size="8" fill="#7F1D1D">The full cost to society of the activity.</text>
 
-      <!-- RIGHT: Benefits -->
-      <rect x="234" y="34" width="92" height="116" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="280" cy="60" r="6" fill="#059669"/>
-      <path d="M270 76 Q280 66 290 76" stroke="#059669" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <text x="280" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">Private benefits</text>
-      <text x="280" y="114" font-size="8.5" text-anchor="middle" fill="#064E3B">Benefits gained by</text>
-      <text x="280" y="125" font-size="8.5" text-anchor="middle" fill="#064E3B">the consumer or</text>
-      <text x="280" y="136" font-size="8.5" text-anchor="middle" fill="#064E3B">producer.</text>
+      <!-- ===== RIGHT: BENEFITS ===== -->
+      <!-- Private benefits box -->
+      <rect x="280" y="26" width="112" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+      <!-- Happy person -->
+      <circle cx="336" cy="42" r="7" fill="#059669"/>
+      <path d="M330 41 Q336 48 342 41" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line x1="336" y1="49" x2="336" y2="62" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M328 56 Q336 50 344 56" stroke="#059669" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <text x="336" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">Private benefits</text>
+      <text x="336" y="106" font-size="8.5" text-anchor="middle" fill="#064E3B">Benefits received by</text>
+      <text x="336" y="117" font-size="8.5" text-anchor="middle" fill="#064E3B">the consumer or</text>
+      <text x="336" y="128" font-size="8.5" text-anchor="middle" fill="#064E3B">producer.</text>
 
-      <text x="335" y="98" font-size="22" font-weight="900" text-anchor="middle" fill="#059669">+</text>
+      <!-- + badge -->
+      <circle cx="406" cy="86" r="13" fill="#059669"/>
+      <text x="406" y="91" font-size="17" font-weight="900" text-anchor="middle" fill="#fff">+</text>
 
-      <rect x="344" y="34" width="92" height="116" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="384" cy="58" r="4" fill="#059669"/>
-      <circle cx="396" cy="58" r="4" fill="#059669"/>
-      <circle cx="390" cy="70" r="4" fill="#059669"/>
-      <path d="M376 78 Q390 72 404 78" stroke="#059669" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <text x="390" y="98" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">External benefits</text>
-      <text x="390" y="114" font-size="8.5" text-anchor="middle" fill="#064E3B">Spillover benefits</text>
-      <text x="390" y="125" font-size="8.5" text-anchor="middle" fill="#064E3B">enjoyed by</text>
-      <text x="390" y="136" font-size="8.5" text-anchor="middle" fill="#064E3B">third parties.</text>
+      <!-- External benefits box -->
+      <rect x="420" y="26" width="110" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+      <!-- Group of 3 people -->
+      <circle cx="462" cy="38" r="5.5" fill="#059669"/>
+      <line x1="462" y1="44" x2="462" y2="55" stroke="#059669" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M455 52 Q462 46 469 52" stroke="#059669" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="474" cy="41" r="4.5" fill="#059669" opacity="0.65"/>
+      <circle cx="450" cy="41" r="4.5" fill="#059669" opacity="0.65"/>
+      <!-- sparkle -->
+      <path d="M488 34 L489.2 38.5 L494 38.5 L490.2 41.5 L491.5 46 L488 43.2 L484.5 46 L485.8 41.5 L482 38.5 L486.8 38.5 Z" fill="#059669" opacity="0.75"/>
+      <text x="475" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#059669">External benefits</text>
+      <text x="475" y="106" font-size="8.5" text-anchor="middle" fill="#064E3B">Benefits enjoyed by</text>
+      <text x="475" y="117" font-size="8.5" text-anchor="middle" fill="#064E3B">third parties not in</text>
+      <text x="475" y="128" font-size="8.5" text-anchor="middle" fill="#064E3B">the transaction.</text>
 
-      <line x1="280" y1="156" x2="280" y2="180" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <polygon points="280,184 276,176 284,176" fill="#059669"/>
-      <line x1="390" y1="156" x2="390" y2="180" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <polygon points="390,184 386,176 394,176" fill="#059669"/>
+      <!-- Dashed arrows to summary -->
+      <line x1="336" y1="150" x2="336" y2="175" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="336,179 332,171 340,171" fill="#059669"/>
+      <line x1="475" y1="150" x2="475" y2="175" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="475,179 471,171 479,171" fill="#059669"/>
 
-      <rect x="234" y="190" width="202" height="44" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="254" cy="212" r="11" fill="#059669"/>
-      <path d="M248 210 L260 210 M254 207 L254 217 M250 217 L258 217" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
-      <text x="272" y="209" font-size="11" font-weight="800" fill="#059669">Social benefits</text>
-      <text x="272" y="224" font-size="7.5" fill="#064E3B">Social benefits = private benefits + external benefits</text>
+      <!-- Social benefits summary box -->
+      <rect x="280" y="185" width="250" height="58" rx="8" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <!-- Balance scale icon -->
+      <line x1="302" y1="193" x2="302" y2="231" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+      <line x1="290" y1="202" x2="314" y2="202" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+      <line x1="291" y1="202" x2="288" y2="214" stroke="#059669" stroke-width="1.3"/>
+      <line x1="293" y1="202" x2="296" y2="214" stroke="#059669" stroke-width="1.3"/>
+      <path d="M286 214 Q292 219 298 214" stroke="#059669" stroke-width="1.5" fill="none"/>
+      <line x1="311" y1="202" x2="308" y2="214" stroke="#059669" stroke-width="1.3"/>
+      <line x1="313" y1="202" x2="316" y2="214" stroke="#059669" stroke-width="1.3"/>
+      <path d="M306 214 Q312 219 318 214" stroke="#059669" stroke-width="1.5" fill="none"/>
+      <line x1="296" y1="231" x2="308" y2="231" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+      <text x="326" y="205" font-size="11" font-weight="800" fill="#059669">Social benefits</text>
+      <text x="326" y="219" font-size="8" fill="#064E3B">= private benefits + external benefits</text>
+      <text x="326" y="231" font-size="8" fill="#064E3B">The full benefit to society of the activity.</text>
     </svg>
   `,
 

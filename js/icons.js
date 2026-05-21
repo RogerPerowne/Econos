@@ -10958,6 +10958,89 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  whyNotRationalDiagram: `
+    <svg viewBox="0 0 440 500" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="500" fill="#F8FAFC" rx="10"/>
+
+      <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The gap between ideal and real decision-making</text>
+
+      <rect x="20" y="42" width="190" height="232" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="115" cy="72" r="20" fill="#fff" stroke="#86EFAC" stroke-width="2"/>
+      <text x="115" y="80" font-size="22" text-anchor="middle">🧠</text>
+      <text x="115" y="112" font-size="13" font-weight="900" text-anchor="middle" fill="#059669">Textbook consumer</text>
+      <text x="115" y="128" font-size="10" font-style="italic" text-anchor="middle" fill="#059669">homo economicus</text>
+      <line x1="34" y1="138" x2="196" y2="138" stroke="#86EFAC"/>
+      <g font-size="11" fill="#065f46">
+        <circle cx="40" cy="158" r="6" fill="#059669"/>
+        <text x="38.7" y="161" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
+        <text x="54" y="162">Compares all options</text>
+        <circle cx="40" cy="186" r="6" fill="#059669"/>
+        <text x="38.7" y="189" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
+        <text x="54" y="190">Calculates costs &amp; benefits</text>
+        <circle cx="40" cy="214" r="6" fill="#059669"/>
+        <text x="38.7" y="217" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
+        <text x="54" y="218">Stable preferences</text>
+        <circle cx="40" cy="242" r="6" fill="#059669"/>
+        <text x="38.7" y="245" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
+        <text x="54" y="246">Maximises utility</text>
+      </g>
+      <text x="115" y="266" font-size="9.5" text-anchor="middle" fill="#059669" font-style="italic">"the model"</text>
+
+      <rect x="230" y="42" width="190" height="232" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <circle cx="325" cy="72" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="2"/>
+      <text x="325" y="80" font-size="22" text-anchor="middle">🧑</text>
+      <text x="325" y="112" font-size="13" font-weight="900" text-anchor="middle" fill="#7c3aed">Real human</text>
+      <text x="325" y="128" font-size="10" font-style="italic" text-anchor="middle" fill="#7c3aed">what we actually see</text>
+      <line x1="244" y1="138" x2="406" y2="138" stroke="#DDD6FE"/>
+      <g font-size="11" fill="#5b21b6">
+        <circle cx="250" cy="158" r="6" fill="#7c3aed"/>
+        <text x="254" y="162">Uses mental shortcuts</text>
+        <circle cx="250" cy="186" r="6" fill="#7c3aed"/>
+        <text x="254" y="190">Affected by framing</text>
+        <circle cx="250" cy="214" r="6" fill="#7c3aed"/>
+        <text x="254" y="218">Present-biased</text>
+        <circle cx="250" cy="242" r="6" fill="#7c3aed"/>
+        <text x="254" y="246">Follows defaults &amp; norms</text>
+      </g>
+      <text x="325" y="266" font-size="9.5" text-anchor="middle" fill="#7c3aed" font-style="italic">"the reality"</text>
+
+      <circle cx="220" cy="158" r="20" fill="#0B1426"/>
+      <text x="220" y="164" font-size="12" font-weight="900" text-anchor="middle" fill="#fff">VS</text>
+
+      <text x="220" y="306" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Three big reasons people aren't rational</text>
+
+      <rect x="20" y="318" width="130" height="160" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="85" cy="346" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+      <text x="85" y="354" font-size="22" text-anchor="middle">👁️</text>
+      <text x="85" y="386" font-size="12" font-weight="800" text-anchor="middle" fill="#059669">Limited</text>
+      <text x="85" y="402" font-size="12" font-weight="800" text-anchor="middle" fill="#059669">attention</text>
+      <text x="85" y="424" font-size="9.5" text-anchor="middle" fill="#065f46">We can't process</text>
+      <text x="85" y="437" font-size="9.5" text-anchor="middle" fill="#065f46">everything — so we</text>
+      <text x="85" y="450" font-size="9.5" text-anchor="middle" fill="#065f46">focus on what's easiest</text>
+      <text x="85" y="468" font-size="9" font-style="italic" text-anchor="middle" fill="#059669">explored in card 2</text>
+
+      <rect x="155" y="318" width="130" height="160" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+      <circle cx="220" cy="346" r="20" fill="#fff" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="220" y="354" font-size="22" text-anchor="middle">🧠</text>
+      <text x="220" y="386" font-size="12" font-weight="800" text-anchor="middle" fill="#d97706">Biases &amp;</text>
+      <text x="220" y="402" font-size="12" font-weight="800" text-anchor="middle" fill="#d97706">heuristics</text>
+      <text x="220" y="424" font-size="9.5" text-anchor="middle" fill="#92400E">Shortcuts let us act</text>
+      <text x="220" y="437" font-size="9.5" text-anchor="middle" fill="#92400E">fast — but mislead us</text>
+      <text x="220" y="450" font-size="9.5" text-anchor="middle" fill="#92400E">systematically</text>
+      <text x="220" y="468" font-size="9" font-style="italic" text-anchor="middle" fill="#d97706">explored in card 2</text>
+
+      <rect x="290" y="318" width="130" height="160" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <circle cx="355" cy="346" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
+      <text x="355" y="354" font-size="22" text-anchor="middle">⏳</text>
+      <text x="355" y="386" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Self-control</text>
+      <text x="355" y="402" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">problems</text>
+      <text x="355" y="424" font-size="9.5" text-anchor="middle" fill="#5b21b6">Long-term goals lose</text>
+      <text x="355" y="437" font-size="9.5" text-anchor="middle" fill="#5b21b6">to short-term</text>
+      <text x="355" y="450" font-size="9.5" text-anchor="middle" fill="#5b21b6">temptations</text>
+      <text x="355" y="468" font-size="9" font-style="italic" text-anchor="middle" fill="#7c3aed">explored in card 3</text>
+    </svg>
+  `,
+
   twoSystemsDiagram: `
     <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="380" fill="#F8FAFC" rx="10"/>
@@ -11091,34 +11174,30 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-4" style="display:none">
-        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Habit — defaults win by inertia</text>
-        <circle cx="120" cy="170" r="72" fill="none" stroke="#E2E8F0" stroke-width="26"/>
-        <circle cx="120" cy="170" r="72" fill="none" stroke="#7c3aed" stroke-width="26"
-          stroke-dasharray="271 181" stroke-dashoffset="0" transform="rotate(-90 120 170)"
-          stroke-linecap="round"/>
-        <text x="120" y="162" font-size="34" font-weight="900" text-anchor="middle" fill="#7c3aed">60%</text>
-        <text x="120" y="184" font-size="11" font-weight="700" text-anchor="middle" fill="#475569">never switched</text>
-        <text x="120" y="200" font-size="10" text-anchor="middle" fill="#94A3B8">energy supplier</text>
-        <text x="120" y="266" font-size="10" font-style="italic" text-anchor="middle" fill="#64748B">of UK households</text>
+        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Loss aversion — losses hurt twice as much as gains feel good</text>
+        <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Kahneman &amp; Tversky: pain of losing £100 ≈ joy of gaining ~£200.</text>
 
-        <rect x="226" y="58" width="190" height="62" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-        <text x="321" y="80" font-size="13" font-weight="900" text-anchor="middle" fill="#7C3AED">£200+ / year</text>
-        <text x="321" y="98" font-size="10" text-anchor="middle" fill="#5b21b6">average overpayment</text>
-        <text x="321" y="112" font-size="9.5" text-anchor="middle" fill="#5b21b6">same energy · same service</text>
+        <line x1="220" y1="78" x2="220" y2="208" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="220" y="74" font-size="9" font-weight="700" text-anchor="middle" fill="#94A3B8">£0 reference point</text>
 
-        <rect x="226" y="130" width="190" height="62" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-        <text x="321" y="152" font-size="11" font-weight="800" text-anchor="middle" fill="#92400E">Why switching feels hard:</text>
-        <text x="321" y="170" font-size="10" text-anchor="middle" fill="#78350F">Status-quo bias + loss aversion</text>
-        <text x="321" y="184" font-size="9.5" text-anchor="middle" fill="#78350F">"What if the new one is worse?"</text>
+        <text x="35" y="108" font-size="11" font-weight="800" fill="#059669">Gain £100</text>
+        <text x="35" y="125" font-size="22">😊</text>
+        <rect x="220" y="102" width="60" height="24" rx="3" fill="#DCFCE7" stroke="#059669" stroke-width="1.5"/>
+        <text x="250" y="118" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">+1 joy</text>
 
-        <rect x="226" y="202" width="190" height="62" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
-        <text x="321" y="224" font-size="11" font-weight="800" text-anchor="middle" fill="#334155">Policy response:</text>
-        <text x="321" y="242" font-size="10" text-anchor="middle" fill="#475569">Ofgem default tariff price cap</text>
-        <text x="321" y="256" font-size="9.5" text-anchor="middle" fill="#475569">protects those who never switch</text>
+        <text x="35" y="170" font-size="11" font-weight="800" fill="#dc2626">Lose £100</text>
+        <text x="35" y="187" font-size="22">😖</text>
+        <rect x="100" y="164" width="120" height="24" rx="3" fill="#FEE2E2" stroke="#dc2626" stroke-width="1.5"/>
+        <text x="160" y="180" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">−2 pain</text>
 
-        <text x="220" y="306" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">A competitive market fails if habit stops consumers</text>
-        <text x="220" y="324" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">from comparing — so defaults must be designed for them.</text>
-        <text x="220" y="354" font-size="9.5" text-anchor="middle" fill="#64748B" font-style="italic">This is the bias card 4 turns into Britain's biggest nudge wins.</text>
+        <rect x="30" y="222" width="380" height="78" rx="10" fill="#F3E8FF" stroke="#DDD6FE"/>
+        <text x="220" y="242" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Behaviour this produces:</text>
+        <text x="220" y="262" font-size="10" text-anchor="middle" fill="#5b21b6">• Holding losing shares to avoid "crystallising" the loss</text>
+        <text x="220" y="278" font-size="10" text-anchor="middle" fill="#5b21b6">• The endowment effect — we overvalue what we already own</text>
+        <text x="220" y="294" font-size="10" text-anchor="middle" fill="#5b21b6">• Staying in worse mortgages / energy tariffs to dodge the "switch" decision</text>
+
+        <text x="220" y="328" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Status quo wins — even when the status quo is objectively worse.</text>
+        <text x="220" y="354" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful: opting out is framed as a "loss".</text>
       </g>
     </svg>
   `,
@@ -11169,6 +11248,134 @@ window.ECONOS_ICONS = {
         <text x="220" y="332" font-size="12.5" font-weight="900" text-anchor="middle" fill="#7c3aed">Same one-week gap. Same £10. Different decisions.</text>
         <text x="220" y="354" font-size="11" text-anchor="middle" fill="#5b21b6">That is <tspan font-weight="800">present bias</tspan> — the "now" feels worth far more than the future.</text>
         <text x="220" y="374" font-size="10" text-anchor="middle" fill="#7c3aed" font-style="italic">It is why pension under-saving needed auto-enrolment (card 4).</text>
+      </g>
+    </svg>
+  `,
+
+  boundedSelfControlInteractive: `
+    <svg viewBox="0 0 440 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="420" fill="#F8FAFC" rx="10"/>
+      <g class="idl-base"></g>
+
+      <g class="idl-1">
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Planner self vs Doer self — the conflict inside us</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Same person, two voices. One plans. The other does.</text>
+
+        <rect x="20" y="64" width="190" height="200" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+        <circle cx="115" cy="90" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="115" y="97" font-size="18" text-anchor="middle">🧠</text>
+        <text x="115" y="128" font-size="12" font-weight="900" text-anchor="middle" fill="#059669">Planner self</text>
+        <text x="115" y="142" font-size="9.5" text-anchor="middle" fill="#059669" font-style="italic">wants the long-term best</text>
+        <g font-size="10.5" fill="#065f46">
+          <text x="38" y="170">✓ Revise for exams</text>
+          <text x="38" y="190">✓ Save for retirement</text>
+          <text x="38" y="210">✓ Eat well</text>
+          <text x="38" y="230">✓ Exercise regularly</text>
+        </g>
+        <text x="115" y="254" font-size="9" text-anchor="middle" fill="#059669" font-style="italic">"future me will thank me"</text>
+
+        <rect x="230" y="64" width="190" height="200" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+        <circle cx="325" cy="90" r="18" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
+        <text x="325" y="97" font-size="18" text-anchor="middle">😈</text>
+        <text x="325" y="128" font-size="12" font-weight="900" text-anchor="middle" fill="#7c3aed">Doer self</text>
+        <text x="325" y="142" font-size="9.5" text-anchor="middle" fill="#7c3aed" font-style="italic">wants the easy option now</text>
+        <g font-size="10.5" fill="#5b21b6">
+          <text x="248" y="170">✗ Scroll TikTok</text>
+          <text x="248" y="190">✗ Spend the bonus</text>
+          <text x="248" y="210">✗ Order Deliveroo</text>
+          <text x="248" y="230">✗ Skip the gym</text>
+        </g>
+        <text x="325" y="254" font-size="9" text-anchor="middle" fill="#7c3aed" font-style="italic">"future me's problem"</text>
+
+        <rect x="60" y="280" width="320" height="40" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="100" y="304" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">Today</text>
+        <text x="100" y="316" font-size="14" text-anchor="middle">📅</text>
+        <text x="220" y="304" font-size="11" font-weight="700" text-anchor="middle" fill="#475569">→ time passes →</text>
+        <text x="340" y="304" font-size="11" font-weight="800" fill="#7c3aed" text-anchor="middle">Future</text>
+        <text x="340" y="316" font-size="14" text-anchor="middle">🏆</text>
+
+        <rect x="20" y="336" width="400" height="74" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
+        <text x="220" y="358" font-size="12" font-weight="900" text-anchor="middle" fill="#92400E">We overweight the present and undervalue the future.</text>
+        <text x="220" y="378" font-size="10.5" text-anchor="middle" fill="#78350F">This is <tspan font-weight="800">bounded self-control</tspan> — the gap between knowing better and doing better.</text>
+        <text x="220" y="396" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Not laziness. A structural feature of how humans weigh time.</text>
+      </g>
+
+      <g class="idl-2" style="display:none">
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The classic experiment — same gap, different choice</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">A rational person should answer both pairs the same way. Almost no-one does.</text>
+
+        <text x="42" y="92" font-size="11" font-weight="800" fill="#1d4ed8">PAIR A</text>
+        <rect x="92" y="74" width="138" height="56" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+        <text x="161" y="98" font-size="20" font-weight="900" text-anchor="middle" fill="#1d4ed8">£100</text>
+        <text x="161" y="118" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">today</text>
+        <text x="248" y="108" font-size="11" font-weight="700" text-anchor="middle" fill="#94A3B8">OR</text>
+        <rect x="266" y="74" width="138" height="56" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="335" y="98" font-size="20" font-weight="900" text-anchor="middle" fill="#94A3B8">£110</text>
+        <text x="335" y="118" font-size="10" font-weight="700" text-anchor="middle" fill="#94A3B8">in 1 week</text>
+        <rect x="92" y="138" width="138" height="18" rx="6" fill="#2563EB"/>
+        <text x="161" y="151" font-size="10" font-weight="800" text-anchor="middle" fill="#fff">✓ Most choose £100 today</text>
+
+        <text x="42" y="200" font-size="11" font-weight="800" fill="#d97706">PAIR B</text>
+        <rect x="92" y="182" width="138" height="56" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="161" y="206" font-size="20" font-weight="900" text-anchor="middle" fill="#94A3B8">£100</text>
+        <text x="161" y="226" font-size="10" font-weight="700" text-anchor="middle" fill="#94A3B8">in 52 weeks</text>
+        <text x="248" y="216" font-size="11" font-weight="700" text-anchor="middle" fill="#94A3B8">OR</text>
+        <rect x="266" y="182" width="138" height="56" rx="10" fill="#FEF3C7" stroke="#d97706" stroke-width="2.5"/>
+        <text x="335" y="206" font-size="20" font-weight="900" text-anchor="middle" fill="#d97706">£110</text>
+        <text x="335" y="226" font-size="10" font-weight="700" text-anchor="middle" fill="#d97706">in 53 weeks</text>
+        <rect x="266" y="246" width="138" height="18" rx="6" fill="#d97706"/>
+        <text x="335" y="259" font-size="10" font-weight="800" text-anchor="middle" fill="#fff">✓ Most choose £110 later</text>
+
+        <rect x="20" y="284" width="400" height="120" rx="10" fill="#F3E8FF" stroke="#7c3aed" stroke-width="2"/>
+        <text x="220" y="306" font-size="12" font-weight="900" text-anchor="middle" fill="#7c3aed">Same one-week gap. Same £10. Different decisions.</text>
+        <text x="220" y="326" font-size="11" text-anchor="middle" fill="#5b21b6">That is <tspan font-weight="800">present bias</tspan> (hyperbolic discounting):</text>
+        <text x="220" y="342" font-size="10.5" text-anchor="middle" fill="#5b21b6">we discount the near future steeply, the far future barely at all.</text>
+        <text x="220" y="370" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Real-world cost:</text>
+        <text x="220" y="386" font-size="10.5" text-anchor="middle" fill="#5b21b6">Pre-2012, only ~55% of UK private-sector workers had a pension.</text>
+        <text x="220" y="400" font-size="10" text-anchor="middle" fill="#7c3aed" font-style="italic">Tax relief and employer matches weren't enough. Card 4 shows what was.</text>
+      </g>
+
+      <g class="idl-3" style="display:none">
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Commitment devices — how to beat your future self</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">If the present self is unreliable, lock the choice in advance.</text>
+
+        <rect x="20" y="68" width="130" height="120" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+        <circle cx="85" cy="92" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="85" y="99" font-size="18" text-anchor="middle">🔒</text>
+        <text x="85" y="126" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Auto-defaults</text>
+        <text x="85" y="148" font-size="9.5" text-anchor="middle" fill="#065f46">Decision pre-made</text>
+        <text x="85" y="162" font-size="9.5" text-anchor="middle" fill="#065f46">on your behalf</text>
+        <text x="85" y="180" font-size="9" text-anchor="middle" fill="#059669" font-style="italic">e.g. pension enrolment</text>
+
+        <rect x="155" y="68" width="130" height="120" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <circle cx="220" cy="92" r="18" fill="#fff" stroke="#FDE68A" stroke-width="1.5"/>
+        <text x="220" y="99" font-size="18" text-anchor="middle">⏱️</text>
+        <text x="220" y="126" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">Pre-commitment</text>
+        <text x="220" y="148" font-size="9.5" text-anchor="middle" fill="#92400E">Make the future</text>
+        <text x="220" y="162" font-size="9.5" text-anchor="middle" fill="#92400E">choice irreversible</text>
+        <text x="220" y="180" font-size="9" text-anchor="middle" fill="#d97706" font-style="italic">e.g. gym contracts</text>
+
+        <rect x="290" y="68" width="130" height="120" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+        <circle cx="355" cy="92" r="18" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
+        <text x="355" y="99" font-size="18" text-anchor="middle">📵</text>
+        <text x="355" y="126" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Remove temptation</text>
+        <text x="355" y="148" font-size="9.5" text-anchor="middle" fill="#5b21b6">Take the doer's</text>
+        <text x="355" y="162" font-size="9.5" text-anchor="middle" fill="#5b21b6">options away</text>
+        <text x="355" y="180" font-size="9" text-anchor="middle" fill="#7c3aed" font-style="italic">e.g. app blockers</text>
+
+        <rect x="20" y="204" width="400" height="120" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
+        <text x="220" y="226" font-size="12" font-weight="800" text-anchor="middle" fill="#0B1426">Real-life UK examples</text>
+        <g font-size="10.5" fill="#334155">
+          <text x="40" y="252">💷 <tspan font-weight="700">Pensions:</tspan> auto-enrolment locks you in unless you opt out</text>
+          <text x="40" y="272">🥗 <tspan font-weight="700">Diet:</tspan> meal-prep on Sunday removes the daily Deliveroo temptation</text>
+          <text x="40" y="292">📚 <tspan font-weight="700">Revision:</tspan> phone in another room → can't doomscroll mid-essay</text>
+          <text x="40" y="312">🚭 <tspan font-weight="700">Smoking:</tspan> NHS Stop Smoking quit-dates &amp; nicotine patches</text>
+        </g>
+
+        <rect x="20" y="338" width="400" height="68" rx="10" fill="#DBEAFE" stroke="#BFDBFE"/>
+        <text x="220" y="360" font-size="11.5" font-weight="800" text-anchor="middle" fill="#1d4ed8">Why this matters for policy</text>
+        <text x="220" y="380" font-size="10.5" text-anchor="middle" fill="#1e3a8a">Bounded self-control creates <tspan font-weight="800">internalities</tspan> — costs we impose on our future self.</text>
+        <text x="220" y="396" font-size="10" text-anchor="middle" fill="#1e3a8a">It justifies paternalistic nudges even without externalities. Card 4 shows how.</text>
       </g>
     </svg>
   `,
@@ -11258,40 +11465,219 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-4" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Smart meters &amp; neighbour comparisons</text>
-        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Making the invisible visible — cuts use by ~2-3%.</text>
-        <rect x="22" y="66" width="196" height="232" rx="14" fill="#1E293B"/>
-        <text x="120" y="92" font-size="9.5" font-weight="700" text-anchor="middle" fill="#94A3B8">YOUR ENERGY TODAY</text>
-        <text x="120" y="156" font-size="40" font-weight="900" text-anchor="middle" fill="#10B981">£3.42</text>
-        <text x="120" y="180" font-size="10" text-anchor="middle" fill="#94A3B8">≈ 14.2 kWh used</text>
-        <rect x="48" y="204" width="144" height="10" rx="5" fill="#374151"/>
-        <rect x="48" y="204" width="72" height="10" rx="5" fill="#10B981"/>
-        <text x="120" y="238" font-size="11" text-anchor="middle" fill="#10B981" font-weight="800">▼ 18% vs yesterday</text>
-        <text x="120" y="282" font-size="9.5" text-anchor="middle" fill="#94A3B8" font-style="italic">Smart meter</text>
-        <text x="120" y="294" font-size="9" text-anchor="middle" fill="#64748B">(makes the invisible visible)</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">NHS appointment reminders — the ~£300m text message</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK NHS misses ~7m appointments / year. BIT trial: a few words cut "no-shows" sharply.</text>
 
-        <rect x="226" y="66" width="192" height="232" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-        <text x="322" y="90" font-size="11.5" font-weight="800" text-anchor="middle" fill="#0B1426">⚡ Your Energy Report</text>
-        <line x1="240" y1="100" x2="404" y2="100" stroke="#E2E8F0"/>
-        <text x="240" y="124" font-size="10" fill="#334155">You</text>
-        <rect x="280" y="116" width="92" height="11" fill="#dc2626" rx="2"/>
-        <text x="384" y="125" font-size="10" font-weight="800" fill="#dc2626">100</text>
-        <text x="240" y="148" font-size="10" fill="#334155">Neighbours</text>
-        <rect x="280" y="140" width="72" height="11" fill="#94A3B8" rx="2"/>
-        <text x="384" y="149" font-size="10" font-weight="800" fill="#475569">80</text>
-        <text x="240" y="172" font-size="10" fill="#334155">Efficient ones</text>
-        <rect x="280" y="164" width="54" height="11" fill="#10B981" rx="2"/>
-        <text x="384" y="173" font-size="10" font-weight="800" fill="#059669">60</text>
-        <rect x="240" y="194" width="164" height="58" rx="8" fill="#FEF3C7"/>
-        <text x="322" y="216" font-size="11" font-weight="800" text-anchor="middle" fill="#92400E">Your neighbours used</text>
-        <text x="322" y="232" font-size="14" font-weight="900" text-anchor="middle" fill="#92400E">20% less than you</text>
-        <text x="322" y="248" font-size="9" text-anchor="middle" fill="#78350F">(last billing period)</text>
-        <text x="322" y="282" font-size="9.5" text-anchor="middle" fill="#475569" font-style="italic">Social-norm letter</text>
-        <text x="322" y="294" font-size="9" text-anchor="middle" fill="#64748B">(Ovo, EDF, British Gas)</text>
+        <rect x="60" y="70" width="180" height="220" rx="18" fill="#1E293B"/>
+        <rect x="68" y="78" width="164" height="204" rx="14" fill="#0B1426"/>
+        <rect x="92" y="92" width="116" height="8" rx="4" fill="#1E293B"/>
+        <text x="150" y="118" font-size="9" font-weight="700" text-anchor="middle" fill="#94A3B8">NHS · today 09:14</text>
+        <rect x="80" y="128" width="148" height="64" rx="10" fill="#10B981"/>
+        <text x="154" y="146" font-size="9" font-weight="700" text-anchor="middle" fill="#fff">SOCIAL-NORM REMINDER</text>
+        <text x="154" y="162" font-size="9" text-anchor="middle" fill="#fff">9 out of 10 people attend</text>
+        <text x="154" y="174" font-size="9" text-anchor="middle" fill="#fff">their hospital appointment.</text>
+        <text x="154" y="186" font-size="9" font-weight="700" text-anchor="middle" fill="#fff">Yours: Tue 14 May, 10:30</text>
+        <rect x="80" y="200" width="148" height="42" rx="10" fill="#374151"/>
+        <text x="154" y="216" font-size="8.5" font-weight="700" text-anchor="middle" fill="#94A3B8">STANDARD REMINDER</text>
+        <text x="154" y="230" font-size="8.5" text-anchor="middle" fill="#CBD5E1">"Your appointment is on…"</text>
+        <text x="150" y="266" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">Same SMS infrastructure.</text>
+        <text x="150" y="278" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">A few extra words.</text>
 
-        <text x="220" y="338" font-size="11.5" font-weight="800" text-anchor="middle" fill="#7c3aed">2-3% reduction × 28m households</text>
-        <text x="220" y="358" font-size="11" text-anchor="middle" fill="#5b21b6">= material carbon and bill savings at near-zero cost.</text>
+        <line x1="280" y1="80" x2="280" y2="290" stroke="#334155" stroke-width="1.5"/>
+        <line x1="280" y1="290" x2="420" y2="290" stroke="#334155" stroke-width="1.5"/>
+        <line x1="275" y1="80" x2="280" y2="80" stroke="#334155"/>
+        <line x1="275" y1="185" x2="280" y2="185" stroke="#334155"/>
+        <line x1="275" y1="290" x2="280" y2="290" stroke="#334155"/>
+        <text x="272" y="84" font-size="9" text-anchor="end" fill="#475569">15%</text>
+        <text x="272" y="189" font-size="9" text-anchor="end" fill="#475569">7%</text>
+        <text x="272" y="294" font-size="9" text-anchor="end" fill="#475569">0%</text>
+        <text x="350" y="68" font-size="10" font-weight="800" text-anchor="middle" fill="#0B1426">Missed appointments</text>
+        <rect x="298" y="82" width="36" height="208" fill="#FEE2E2" stroke="#dc2626" stroke-width="1.5"/>
+        <text x="316" y="76" font-size="11" font-weight="900" text-anchor="middle" fill="#dc2626">15%</text>
+        <text x="316" y="308" font-size="9.5" font-weight="700" text-anchor="middle" fill="#334155">Standard</text>
+        <text x="316" y="320" font-size="9" text-anchor="middle" fill="#64748B">reminder</text>
+        <rect x="362" y="158" width="36" height="132" fill="#DCFCE7" stroke="#059669" stroke-width="1.5"/>
+        <text x="380" y="152" font-size="11" font-weight="900" text-anchor="middle" fill="#059669">9.5%</text>
+        <text x="380" y="308" font-size="9.5" font-weight="700" text-anchor="middle" fill="#334155">Social-norm</text>
+        <text x="380" y="320" font-size="9" text-anchor="middle" fill="#64748B">SMS</text>
+
+        <text x="220" y="350" font-size="11.5" font-weight="800" text-anchor="middle" fill="#7c3aed">~25–35% fewer no-shows. NHS clinician time saved ≈ £300m/year.</text>
+        <text x="220" y="368" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">Same SMS, same patients — just the wording carries social-proof information.</text>
       </g>
+
+      <g class="idl-5" style="display:none">
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework — small tweaks, big effects</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK Behavioural Insights Team (founded 2010). Same mechanism every time.</text>
+
+        <rect x="18" y="68" width="120" height="150" rx="10" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1.5"/>
+        <circle cx="78" cy="94" r="20" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+        <text x="78" y="102" font-size="22" text-anchor="middle">🏛️</text>
+        <text x="78" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">Choice</text>
+        <text x="78" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">architecture</text>
+        <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">Redesign the choice</text>
+        <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment — the</text>
+        <text x="78" y="200" font-size="9.5" text-anchor="middle" fill="#1e3a8a">default, the framing,</text>
+        <text x="78" y="214" font-size="9.5" text-anchor="middle" fill="#1e3a8a">the wording.</text>
+
+        <text x="160" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+        <rect x="182" y="68" width="120" height="150" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+        <circle cx="242" cy="94" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
+        <text x="242" y="102" font-size="22" text-anchor="middle">🧑</text>
+        <text x="242" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Behaviour</text>
+        <text x="242" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">shifts</text>
+        <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">People keep their</text>
+        <text x="242" y="186" font-size="9.5" text-anchor="middle" fill="#5b21b6">freedom of choice</text>
+        <text x="242" y="200" font-size="9.5" text-anchor="middle" fill="#5b21b6">— but the easy path</text>
+        <text x="242" y="214" font-size="9.5" text-anchor="middle" fill="#5b21b6">leads to a better one.</text>
+
+        <text x="324" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+        <rect x="346" y="68" width="74" height="150" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+        <circle cx="383" cy="94" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="383" y="102" font-size="22" text-anchor="middle">🏅</text>
+        <text x="383" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Better</text>
+        <text x="383" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">outcomes</text>
+        <text x="383" y="172" font-size="9" text-anchor="middle" fill="#065f46">For people</text>
+        <text x="383" y="186" font-size="9" text-anchor="middle" fill="#065f46">&amp; society</text>
+        <text x="383" y="202" font-size="9" text-anchor="middle" fill="#065f46">— measured</text>
+        <text x="383" y="214" font-size="9" text-anchor="middle" fill="#065f46">via RCTs.</text>
+
+        <rect x="20" y="236" width="400" height="60" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
+        <text x="220" y="256" font-size="11" font-weight="800" text-anchor="middle" fill="#92400E">Three features of every successful nudge:</text>
+        <text x="220" y="274" font-size="10.5" text-anchor="middle" fill="#78350F">① near-zero cost  ②  preserves choice  ③  evidence-tested via RCT</text>
+        <text x="220" y="288" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Thaler &amp; Sunstein call this "libertarian paternalism".</text>
+
+        <text x="220" y="328" font-size="11.5" font-weight="800" text-anchor="middle" fill="#7c3aed">Four UK cases below show this in action.</text>
+        <text x="220" y="350" font-size="10" text-anchor="middle" fill="#64748B">Pension auto-enrolment · Organ donation · HMRC letters · NHS reminders</text>
+      </g>
+
+      <g class="idl-6" style="display:none">
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Why these nudges actually worked</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">A four-part evaluation framework you can deploy in any essay.</text>
+
+        <rect x="20" y="68" width="200" height="100" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+        <circle cx="48" cy="96" r="14" fill="#fff" stroke="#86EFAC"/>
+        <text x="48" y="102" font-size="14" text-anchor="middle">⏰</text>
+        <text x="74" y="92" font-size="12" font-weight="800" fill="#059669">Timely</text>
+        <text x="74" y="116" font-size="10" fill="#065f46">Right message at the right</text>
+        <text x="74" y="130" font-size="10" fill="#065f46">moment — when the user</text>
+        <text x="74" y="144" font-size="10" fill="#065f46">is actively deciding.</text>
+        <text x="74" y="160" font-size="9" font-style="italic" fill="#059669">SMS just before the appt.</text>
+
+        <rect x="232" y="68" width="200" height="100" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+        <circle cx="260" cy="96" r="14" fill="#fff" stroke="#FDE68A"/>
+        <text x="260" y="102" font-size="14" text-anchor="middle">✏️</text>
+        <text x="286" y="92" font-size="12" font-weight="800" fill="#d97706">Simple</text>
+        <text x="286" y="116" font-size="10" fill="#92400E">Easy to understand and</text>
+        <text x="286" y="130" font-size="10" fill="#92400E">to act on — no forms,</text>
+        <text x="286" y="144" font-size="10" fill="#92400E">no comprehension cost.</text>
+        <text x="286" y="160" font-size="9" font-style="italic" fill="#d97706">"9 of 10 pay on time."</text>
+
+        <rect x="20" y="180" width="200" height="100" rx="10" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1.5"/>
+        <circle cx="48" cy="208" r="14" fill="#fff" stroke="#BFDBFE"/>
+        <text x="48" y="214" font-size="14" text-anchor="middle">£</text>
+        <text x="74" y="204" font-size="12" font-weight="800" fill="#1d4ed8">Low cost</text>
+        <text x="74" y="228" font-size="10" fill="#1e3a8a">Pennies per nudge —</text>
+        <text x="74" y="242" font-size="10" fill="#1e3a8a">vs millions for an</text>
+        <text x="74" y="256" font-size="10" fill="#1e3a8a">enforcement team.</text>
+        <text x="74" y="272" font-size="9" font-style="italic" fill="#1d4ed8">£200m+ from one letter.</text>
+
+        <rect x="232" y="180" width="200" height="100" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+        <circle cx="260" cy="208" r="14" fill="#fff" stroke="#DDD6FE"/>
+        <text x="260" y="214" font-size="14" text-anchor="middle">🧑</text>
+        <text x="286" y="204" font-size="12" font-weight="800" fill="#7c3aed">Aligned</text>
+        <text x="286" y="228" font-size="10" fill="#5b21b6">Works <tspan font-weight="800">with</tspan> how people</text>
+        <text x="286" y="242" font-size="10" fill="#5b21b6">decide (defaults, norms)</text>
+        <text x="286" y="256" font-size="10" fill="#5b21b6">— not against them.</text>
+        <text x="286" y="272" font-size="9" font-style="italic" fill="#7c3aed">Opt-out beats opt-in.</text>
+
+        <rect x="20" y="298" width="400" height="68" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
+        <text x="220" y="320" font-size="11.5" font-weight="800" text-anchor="middle" fill="#0B1426">Use this in an essay:</text>
+        <text x="220" y="338" font-size="10" text-anchor="middle" fill="#475569">"The HMRC nudge worked because it was <tspan font-weight="800">timely</tspan> (at point of payment),</text>
+        <text x="220" y="354" font-size="10" text-anchor="middle" fill="#475569"><tspan font-weight="800">simple</tspan>, <tspan font-weight="800">low cost</tspan>, and <tspan font-weight="800">aligned</tspan> with how people decide."</text>
+      </g>
+    </svg>
+  `,
+
+  policySpectrumDiagram: `
+    <svg viewBox="0 0 440 460" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="460" fill="#F8FAFC" rx="10"/>
+
+      <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The policy spectrum — nudge or something stronger?</text>
+      <text x="220" y="46" font-size="10.5" text-anchor="middle" fill="#64748B">Different problems need different tools. Nudges sit between information and force.</text>
+
+      <line x1="40" y1="120" x2="400" y2="120" stroke="#CBD5E1" stroke-width="2"/>
+      <polygon points="400,114 400,126 410,120" fill="#CBD5E1"/>
+      <text x="36" y="142" font-size="9" font-weight="700" fill="#94A3B8">soft</text>
+      <text x="404" y="142" font-size="9" font-weight="700" text-anchor="end" fill="#94A3B8">hard</text>
+
+      <rect x="20" y="78" width="92" height="84" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <circle cx="66" cy="104" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
+      <text x="66" y="111" font-size="18" text-anchor="middle">ℹ️</text>
+      <text x="66" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Information</text>
+      <text x="66" y="152" font-size="9" text-anchor="middle" fill="#065f46">give the facts</text>
+
+      <text x="120" y="124" font-size="22" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+      <rect x="130" y="78" width="92" height="84" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <circle cx="176" cy="104" r="18" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
+      <text x="176" y="111" font-size="18" text-anchor="middle">👆</text>
+      <text x="176" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Nudge</text>
+      <text x="176" y="152" font-size="9" text-anchor="middle" fill="#5b21b6">design the choice</text>
+
+      <text x="230" y="124" font-size="22" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+      <rect x="240" y="78" width="92" height="84" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+      <circle cx="286" cy="104" r="18" fill="#fff" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="286" y="111" font-size="18" text-anchor="middle">💷</text>
+      <text x="286" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">Tax / subsidy</text>
+      <text x="286" y="152" font-size="9" text-anchor="middle" fill="#92400E">change the price</text>
+
+      <text x="340" y="124" font-size="22" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+
+      <rect x="348" y="78" width="72" height="84" rx="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.5"/>
+      <circle cx="384" cy="104" r="18" fill="#fff" stroke="#FECACA" stroke-width="1.5"/>
+      <text x="384" y="111" font-size="18" text-anchor="middle">🛡️</text>
+      <text x="384" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">Regulation</text>
+      <text x="384" y="152" font-size="9" text-anchor="middle" fill="#7f1d1d">ban / require</text>
+
+      <text x="220" y="184" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">UK examples at each level:</text>
+      <g font-size="9" fill="#475569">
+        <text x="66" y="202" text-anchor="middle">Calorie labels</text>
+        <text x="66" y="214" text-anchor="middle">on menus</text>
+        <text x="176" y="202" text-anchor="middle">Auto-enrol</text>
+        <text x="176" y="214" text-anchor="middle">into pension</text>
+        <text x="286" y="202" text-anchor="middle">Sugar tax</text>
+        <text x="286" y="214" text-anchor="middle">on drinks</text>
+        <text x="384" y="202" text-anchor="middle">Smoking</text>
+        <text x="384" y="214" text-anchor="middle">indoor ban</text>
+      </g>
+
+      <rect x="20" y="234" width="400" height="92" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="220" y="256" font-size="12" font-weight="800" text-anchor="middle" fill="#0B1426">Choosing the right tool</text>
+      <g font-size="10" fill="#475569">
+        <text x="40" y="278"><tspan font-weight="700" fill="#059669">Information</tspan>: when people just don't know</text>
+        <text x="40" y="294"><tspan font-weight="700" fill="#7c3aed">Nudge</tspan>: when the bias is attention, inertia, or default-stickiness</text>
+        <text x="40" y="310"><tspan font-weight="700" fill="#d97706">Tax / subsidy</tspan>: when there is an externality to price (carbon, sugar)</text>
+        <text x="40" y="326"><tspan font-weight="700" fill="#dc2626">Regulation</tspan>: when harm is severe, addictive, or affects others</text>
+      </g>
+
+      <rect x="20" y="342" width="195" height="106" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+      <text x="117" y="362" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">✓ Nudge is enough</text>
+      <text x="117" y="380" font-size="9.5" text-anchor="middle" fill="#065f46">Auto-enrolment lifted pension</text>
+      <text x="117" y="394" font-size="9.5" text-anchor="middle" fill="#065f46">participation 55% → 87%.</text>
+      <text x="117" y="412" font-size="9" text-anchor="middle" fill="#065f46" font-style="italic">The barrier was inertia,</text>
+      <text x="117" y="426" font-size="9" text-anchor="middle" fill="#065f46" font-style="italic">not money or knowledge —</text>
+      <text x="117" y="440" font-size="9" text-anchor="middle" fill="#065f46" font-style="italic">so a nudge fit perfectly.</text>
+
+      <rect x="225" y="342" width="195" height="106" rx="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.5"/>
+      <text x="322" y="362" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">✗ Nudge is not enough</text>
+      <text x="322" y="380" font-size="9.5" text-anchor="middle" fill="#7f1d1d">Carbon at scale, addictive</text>
+      <text x="322" y="394" font-size="9.5" text-anchor="middle" fill="#7f1d1d">products, severe poverty.</text>
+      <text x="322" y="412" font-size="9" text-anchor="middle" fill="#7f1d1d" font-style="italic">The bias isn't the binding</text>
+      <text x="322" y="426" font-size="9" text-anchor="middle" fill="#7f1d1d" font-style="italic">constraint — affordability,</text>
+      <text x="322" y="440" font-size="9" text-anchor="middle" fill="#7f1d1d" font-style="italic">addiction, or price is.</text>
     </svg>
   `,
 

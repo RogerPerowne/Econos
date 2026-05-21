@@ -7,7 +7,7 @@
     subtitle: 'Theme 1.21 \xb7 Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering bounded rationality, the four key biases, present bias and internalities, UK nudges (pension auto-enrolment, organ donation, HMRC compliance, smart meters), and evaluation of behavioural vs traditional policy.',
+    lede: 'Ten exam-style questions covering bounded rationality, the four key biases (anchoring, loss aversion, availability, social norms), bounded self-control and commitment devices, UK nudges (pension auto-enrolment, organ donation, HMRC letters, NHS reminders), and evaluation across the policy spectrum.',
     shortNames: {
       'behavioural_econ_1': 'Why people aren\'t rational',
       'behavioural_econ_2': 'The four biases',

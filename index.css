@@ -229,9 +229,11 @@
       height: auto;
       aspect-ratio: 5 / 4;
       object-fit: cover;
-      object-position: 60% center;
+      object-position: 40% center;
       display: block;
       background: transparent;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 22%);
+      mask-image: linear-gradient(to right, transparent 0%, black 22%);
     }
 
     /* Floating progress card */

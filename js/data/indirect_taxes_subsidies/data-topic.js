@@ -185,8 +185,8 @@ window.ECONOS_TOPIC = {
             label: 'Who pays?',
             tone: 'rose',
             head: 'The burden follows the less elastic side',
-            body: 'The tax burden falls on the less elastic side. Left (inelastic D): Pc rises sharply, so consumers bear about 87% of the tax; the small red strip shows the limited producer burden. Right (elastic D): Pc barely rises, so consumers bear only 36%, while producers absorb 64% to avoid losing price-sensitive buyers.',
-            analysis: 'One rule covers both taxes and subsidies: the <strong>less elastic side</strong> bears more of a tax and captures more of a subsidy. Elasticity determines the split — not who hands over the money to government.'
+            body: 'Left (inelastic D): Pc rises sharply, so consumers bear about <strong>87%</strong> of the tax. Right (elastic D): Pc barely rises, so consumers bear only <strong>36%</strong>; producers absorb <strong>64%</strong>.',
+            analysis: 'Producers absorb more when demand is elastic — they cannot afford to lose price-sensitive buyers. One rule covers both taxes and subsidies: the <strong>less elastic side</strong> bears more of a tax and captures more of a subsidy.'
           }
         ]
       },

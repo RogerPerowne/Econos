@@ -14220,78 +14220,106 @@ window.ECONOS_ICONS = {
   `,
 
   threeRoutesDiagram: `
-    <svg viewBox="0 0 440 390" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <text x="220" y="22" font-size="13" font-weight="800" text-anchor="middle" fill="#0B1426">Types of market failure</text>
+    <svg viewBox="0 0 440 405" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <text x="220" y="22" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Types of market failure</text>
 
-      <!-- Trunk circle with balance icon -->
-      <circle cx="220" cy="52" r="18" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
-      <path d="M210 52 L230 52 M220 44 L220 60 M214 60 L226 60" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Trunk circle with balance-scale icon -->
+      <circle cx="220" cy="56" r="18" fill="#fff" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="220" y1="46" x2="220" y2="66" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="212" y1="50" x2="228" y2="50" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M209 50 L213 58 L216 50 Z" fill="#fff" stroke="#0F172A" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M224 50 L227 58 L231 50 Z" fill="#fff" stroke="#0F172A" stroke-width="1.2" stroke-linejoin="round"/>
+      <line x1="216" y1="66" x2="224" y2="66" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round"/>
 
       <!-- Branches -->
-      <path d="M210 65 Q140 80 80 102" stroke="#059669" stroke-width="2" fill="none"/>
-      <line x1="220" y1="71" x2="220" y2="102" stroke="#d97706" stroke-width="2"/>
-      <path d="M230 65 Q300 80 360 102" stroke="#2563eb" stroke-width="2" fill="none"/>
+      <path d="M212 70 Q160 86 90 100" stroke="#059669" stroke-width="2" fill="none"/>
+      <line x1="220" y1="74" x2="220" y2="100" stroke="#d97706" stroke-width="2"/>
+      <path d="M228 70 Q280 86 350 100" stroke="#2563eb" stroke-width="2" fill="none"/>
 
       <!-- Box 1: Externalities (green) -->
-      <rect x="14" y="100" width="132" height="116" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+      <rect x="14" y="100" width="132" height="140" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+      <!-- factory in green circle -->
       <circle cx="80" cy="124" r="15" fill="#059669"/>
-      <rect x="73" y="122" width="14" height="10" fill="#fff"/>
-      <rect x="76" y="117" width="2" height="5" fill="#fff"/>
-      <rect x="82" y="114" width="2" height="8" fill="#fff"/>
-      <text x="80" y="156" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1. Externalities</text>
-      <text x="80" y="172" font-size="8.5" text-anchor="middle" fill="#065F46">Decisions create spillover</text>
-      <text x="80" y="183" font-size="8.5" text-anchor="middle" fill="#065F46">costs or benefits for others.</text>
-      <line x1="28" y1="192" x2="132" y2="192" stroke="#BBF7D0" stroke-dasharray="2,2"/>
-      <text x="80" y="203" font-size="8" font-weight="800" text-anchor="middle" fill="#059669">Example</text>
-      <text x="80" y="213" font-size="8" text-anchor="middle" fill="#065F46">Pollution from a factory.</text>
+      <rect x="73" y="124" width="14" height="8" fill="#fff"/>
+      <rect x="73" y="121" width="3" height="3" fill="#fff"/>
+      <rect x="79" y="118" width="3" height="6" fill="#fff"/>
+      <rect x="83" y="115" width="2" height="6" fill="#fff"/>
+      <text x="80" y="160" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1. Externalities</text>
+      <text x="80" y="176" font-size="8.5" text-anchor="middle" fill="#0F172A">Decisions create spillover</text>
+      <text x="80" y="187" font-size="8.5" text-anchor="middle" fill="#0F172A">costs or benefits</text>
+      <text x="80" y="198" font-size="8.5" text-anchor="middle" fill="#0F172A">for others.</text>
+      <line x1="28" y1="207" x2="132" y2="207" stroke="#BBF7D0" stroke-dasharray="2,2"/>
+      <text x="80" y="219" font-size="8.5" font-weight="800" text-anchor="middle" fill="#059669">Example</text>
+      <text x="80" y="230" font-size="8.5" text-anchor="middle" fill="#0F172A">Pollution from a factory</text>
+      <text x="80" y="240" font-size="8.5" text-anchor="middle" fill="#0F172A">affects nearby residents.</text>
 
       <!-- Box 2: Public goods (amber) -->
-      <rect x="154" y="100" width="132" height="116" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <rect x="154" y="100" width="132" height="140" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <!-- mini balance-scale in orange circle -->
       <circle cx="220" cy="124" r="15" fill="#d97706"/>
-      <path d="M213 124 L227 124 M220 117 L220 131 M215 131 L225 131" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-      <text x="220" y="156" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">2. Public goods</text>
-      <text x="220" y="172" font-size="8.5" text-anchor="middle" fill="#92400E">Markets under-provide goods</text>
-      <text x="220" y="183" font-size="8.5" text-anchor="middle" fill="#92400E">that are non-rival and non-excludable.</text>
-      <line x1="168" y1="192" x2="272" y2="192" stroke="#FDE68A" stroke-dasharray="2,2"/>
-      <text x="220" y="203" font-size="8" font-weight="800" text-anchor="middle" fill="#d97706">Example</text>
-      <text x="220" y="213" font-size="8" text-anchor="middle" fill="#92400E">Street lighting; national defence.</text>
+      <line x1="220" y1="116" x2="220" y2="132" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="213" y1="119" x2="227" y2="119" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M210 119 L213 126 L216 119 Z" fill="#fff"/>
+      <path d="M224 119 L227 126 L230 119 Z" fill="#fff"/>
+      <line x1="217" y1="132" x2="223" y2="132" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+      <text x="220" y="160" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">2. Public goods</text>
+      <text x="220" y="176" font-size="8.5" text-anchor="middle" fill="#0F172A">Markets under-provide goods</text>
+      <text x="220" y="187" font-size="8.5" text-anchor="middle" fill="#0F172A">that are non-rival and</text>
+      <text x="220" y="198" font-size="8.5" text-anchor="middle" fill="#0F172A">non-excludable.</text>
+      <line x1="168" y1="207" x2="272" y2="207" stroke="#FDE68A" stroke-dasharray="2,2"/>
+      <text x="220" y="219" font-size="8.5" font-weight="800" text-anchor="middle" fill="#d97706">Example</text>
+      <text x="220" y="230" font-size="8.5" text-anchor="middle" fill="#0F172A">Street lighting or national</text>
+      <text x="220" y="240" font-size="8.5" text-anchor="middle" fill="#0F172A">defence benefits everyone.</text>
 
       <!-- Box 3: Information gaps (blue) -->
-      <rect x="294" y="100" width="132" height="116" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <rect x="294" y="100" width="132" height="140" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
       <circle cx="360" cy="124" r="15" fill="#2563eb"/>
-      <text x="360" y="130" font-size="16" font-weight="900" text-anchor="middle" fill="#fff">i</text>
-      <text x="360" y="156" font-size="11" font-weight="800" text-anchor="middle" fill="#2563eb">3. Information gaps</text>
-      <text x="360" y="172" font-size="8.5" text-anchor="middle" fill="#1E3A8A">Consumers or producers lack</text>
-      <text x="360" y="183" font-size="8.5" text-anchor="middle" fill="#1E3A8A">information, so choices are poor.</text>
-      <line x1="308" y1="192" x2="412" y2="192" stroke="#BFDBFE" stroke-dasharray="2,2"/>
-      <text x="360" y="203" font-size="8" font-weight="800" text-anchor="middle" fill="#2563eb">Example</text>
-      <text x="360" y="213" font-size="8" text-anchor="middle" fill="#1E3A8A">Misleading health claims.</text>
+      <text x="360" y="131" font-size="17" font-weight="900" font-family="Georgia,serif" text-anchor="middle" fill="#fff">i</text>
+      <text x="360" y="160" font-size="11" font-weight="800" text-anchor="middle" fill="#2563eb">3. Information gaps</text>
+      <text x="360" y="176" font-size="8.5" text-anchor="middle" fill="#0F172A">Consumers or producers</text>
+      <text x="360" y="187" font-size="8.5" text-anchor="middle" fill="#0F172A">lack full information, so</text>
+      <text x="360" y="198" font-size="8.5" text-anchor="middle" fill="#0F172A">choices are poor.</text>
+      <line x1="308" y1="207" x2="412" y2="207" stroke="#BFDBFE" stroke-dasharray="2,2"/>
+      <text x="360" y="219" font-size="8.5" font-weight="800" text-anchor="middle" fill="#2563eb">Example</text>
+      <text x="360" y="230" font-size="8.5" text-anchor="middle" fill="#0F172A">Misleading health claims</text>
+      <text x="360" y="240" font-size="8.5" text-anchor="middle" fill="#0F172A">lead to poor choices.</text>
 
       <!-- Comparison table -->
-      <text x="86" y="248" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">Problem</text>
-      <text x="232" y="248" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">What goes wrong</text>
-      <text x="370" y="248" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">Typical result</text>
-      <line x1="14" y1="258" x2="426" y2="258" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="22" y="270" font-size="11" font-weight="800" fill="#0B1426">Problem</text>
+      <text x="148" y="270" font-size="11" font-weight="800" fill="#0B1426">What goes wrong</text>
+      <text x="296" y="270" font-size="11" font-weight="800" fill="#0B1426">Typical result</text>
+      <line x1="14" y1="280" x2="426" y2="280" stroke="#CBD5E1" stroke-width="1"/>
 
-      <text x="22" y="280" font-size="10" font-weight="800" fill="#059669">1. Externalities</text>
-      <text x="160" y="280" font-size="9" fill="#475569">Price system misses</text>
-      <text x="160" y="292" font-size="9" fill="#475569">spillover costs or benefits.</text>
-      <text x="306" y="280" font-size="9" fill="#475569">Too much or too little</text>
-      <text x="306" y="292" font-size="9" fill="#475569">output.</text>
-      <line x1="14" y1="304" x2="426" y2="304" stroke="#F1F5F9"/>
+      <!-- Row 1: Externalities -->
+      <text x="22" y="302" font-size="10" font-weight="800" fill="#059669">1. Externalities</text>
+      <text x="148" y="302" font-size="9" fill="#0F172A">Price system misses</text>
+      <text x="148" y="314" font-size="9" fill="#0F172A">spillover costs or benefits.</text>
+      <text x="296" y="302" font-size="9" fill="#0F172A">Too much or too little</text>
+      <text x="296" y="314" font-size="9" fill="#0F172A">output.</text>
+      <circle cx="415" cy="308" r="11" fill="#DCFCE7"/>
+      <path d="M411 304 L411 312 M408 307 L411 304 L414 307" stroke="#059669" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M419 312 L419 304 M416 309 L419 312 L422 309" stroke="#059669" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="14" y1="326" x2="426" y2="326" stroke="#F1F5F9"/>
 
-      <text x="22" y="324" font-size="10" font-weight="800" fill="#d97706">2. Public goods</text>
-      <text x="160" y="324" font-size="9" fill="#475569">Free-rider problem — people</text>
-      <text x="160" y="336" font-size="9" fill="#475569">benefit without paying.</text>
-      <text x="306" y="324" font-size="9" fill="#475569">Under-provision of the</text>
-      <text x="306" y="336" font-size="9" fill="#475569">good or service.</text>
-      <line x1="14" y1="348" x2="426" y2="348" stroke="#F1F5F9"/>
+      <!-- Row 2: Public goods -->
+      <text x="22" y="346" font-size="10" font-weight="800" fill="#d97706">2. Public goods</text>
+      <text x="148" y="346" font-size="9" fill="#0F172A">Free-rider problem — people</text>
+      <text x="148" y="358" font-size="9" fill="#0F172A">benefit without paying.</text>
+      <text x="296" y="346" font-size="9" fill="#0F172A">Under-provision of the</text>
+      <text x="296" y="358" font-size="9" fill="#0F172A">good or service.</text>
+      <circle cx="415" cy="352" r="11" fill="#FEF3C7"/>
+      <circle cx="415" cy="349" r="2.6" fill="#d97706"/>
+      <path d="M410 358 Q415 352 420 358 L420 360 L410 360 Z" fill="#d97706"/>
+      <line x1="14" y1="370" x2="426" y2="370" stroke="#F1F5F9"/>
 
-      <text x="22" y="368" font-size="10" font-weight="800" fill="#2563eb">3. Information gaps</text>
-      <text x="160" y="368" font-size="9" fill="#475569">Decisions based on incomplete</text>
-      <text x="160" y="380" font-size="9" fill="#475569">or imperfect information.</text>
-      <text x="306" y="368" font-size="9" fill="#475569">Bad decisions and</text>
-      <text x="306" y="380" font-size="9" fill="#475569">welfare loss.</text>
+      <!-- Row 3: Information gaps -->
+      <text x="22" y="390" font-size="10" font-weight="800" fill="#2563eb">3. Information gaps</text>
+      <text x="148" y="390" font-size="9" fill="#0F172A">Decisions based on incomplete</text>
+      <text x="148" y="402" font-size="9" fill="#0F172A">or imperfect information.</text>
+      <text x="296" y="390" font-size="9" fill="#0F172A">Bad decisions and</text>
+      <text x="296" y="402" font-size="9" fill="#0F172A">welfare loss.</text>
+      <circle cx="415" cy="396" r="11" fill="#DBEAFE"/>
+      <polyline points="408,392 412,396 416,393 422,402" stroke="#2563eb" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `,
 

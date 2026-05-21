@@ -11082,7 +11082,6 @@ window.ECONOS_ICONS = {
 
   biasGalleryInteractive: `
     <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="380" fill="#F8FAFC" rx="10"/>
       <g class="idl-base"></g>
 
       <g class="idl-1">
@@ -11174,32 +11173,45 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-4" style="display:none">
-        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Loss aversion — losses hurt twice as much as gains feel good</text>
-        <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Kahneman &amp; Tversky: pain of losing £100 ≈ joy of gaining ~£200.</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Loss aversion — losses hurt twice as much as gains feel good</text>
+        <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Kahneman &amp; Tversky: pain of losing £100 ≈ joy of gaining ~£200.</text>
 
-        <line x1="120" y1="74" x2="120" y2="212" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <text x="120" y="70" font-size="9" font-weight="700" text-anchor="middle" fill="#94A3B8">£0 reference</text>
+        <!-- Vertical axis labels (rotated) -->
+        <text x="32" y="115" font-size="9.5" font-weight="700" fill="#059669" transform="rotate(-90 32 115)" text-anchor="middle">+ wellbeing</text>
+        <text x="32" y="235" font-size="9.5" font-weight="700" fill="#dc2626" transform="rotate(-90 32 235)" text-anchor="middle">− wellbeing</text>
 
-        <text x="36" y="106" font-size="11" font-weight="700" fill="#334155">Gain £100</text>
-        <text x="36" y="122" font-size="9.5" fill="#64748B">+1 unit of wellbeing</text>
-        <rect x="120" y="96" width="80" height="22" rx="3" fill="#DCFCE7" stroke="#059669" stroke-width="1"/>
-        <text x="162" y="111" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">+1×</text>
+        <!-- Y-axis with ticks -->
+        <line x1="60" y1="75" x2="60" y2="285" stroke="#94A3B8" stroke-width="1"/>
+        <line x1="56" y1="130" x2="60" y2="130" stroke="#94A3B8" stroke-width="1"/>
+        <text x="54" y="134" font-size="9" text-anchor="end" fill="#64748B">+1</text>
+        <line x1="56" y1="180" x2="60" y2="180" stroke="#334155" stroke-width="1.5"/>
+        <text x="54" y="184" font-size="10" font-weight="800" text-anchor="end" fill="#334155">0</text>
+        <line x1="56" y1="230" x2="60" y2="230" stroke="#94A3B8" stroke-width="1"/>
+        <text x="54" y="234" font-size="9" text-anchor="end" fill="#64748B">−1</text>
+        <line x1="56" y1="280" x2="60" y2="280" stroke="#94A3B8" stroke-width="1"/>
+        <text x="54" y="284" font-size="9" text-anchor="end" fill="#64748B">−2</text>
 
-        <text x="36" y="162" font-size="11" font-weight="700" fill="#334155">Lose £100</text>
-        <text x="36" y="178" font-size="9.5" fill="#64748B">−2 units of wellbeing</text>
-        <rect x="120" y="152" width="160" height="22" rx="3" fill="#FEE2E2" stroke="#dc2626" stroke-width="1"/>
-        <text x="202" y="167" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">−2×</text>
-        <text x="120" y="200" font-size="9" fill="#94A3B8" font-style="italic">same £100, same reference point →</text>
+        <!-- X-axis (£0 reference) -->
+        <line x1="60" y1="180" x2="410" y2="180" stroke="#334155" stroke-width="1.5"/>
+        <text x="414" y="184" font-size="9" font-weight="700" fill="#94A3B8">£0</text>
 
-        <rect x="30" y="216" width="380" height="80" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-        <rect x="30" y="216" width="4" height="80" rx="2" fill="#7c3aed"/>
-        <text x="46" y="235" font-size="11" font-weight="700" fill="#7c3aed">Behaviour this produces:</text>
-        <text x="46" y="253" font-size="10" fill="#475569">Holding losing shares to avoid "crystallising" the loss</text>
-        <text x="46" y="269" font-size="10" fill="#475569">Overvaluing what you already own (the endowment effect)</text>
-        <text x="46" y="285" font-size="10" fill="#475569">Staying on worse mortgage / energy tariffs to avoid switching</text>
+        <!-- Gain bar above axis (+1 unit, 50px tall) -->
+        <rect x="130" y="130" width="100" height="50" fill="#DCFCE7" stroke="#059669" stroke-width="1.5" rx="3"/>
+        <text x="180" y="120" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Gain £100</text>
+        <text x="180" y="162" font-size="16" font-weight="900" text-anchor="middle" fill="#059669">+1×</text>
 
-        <text x="220" y="330" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Status quo wins — even when objectively worse.</text>
-        <text x="220" y="354" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful: opting out is framed as a "loss".</text>
+        <!-- Loss bar below axis (−2 units, 100px tall — twice as deep) -->
+        <rect x="250" y="180" width="100" height="100" fill="#FEE2E2" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+        <text x="300" y="298" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">Lose £100</text>
+        <text x="300" y="237" font-size="16" font-weight="900" text-anchor="middle" fill="#dc2626">−2×</text>
+
+        <!-- Behaviour strip -->
+        <rect x="20" y="312" width="400" height="32" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="20" y="312" width="4" height="32" rx="2" fill="#7c3aed"/>
+        <text x="34" y="332" font-size="10" font-weight="700" fill="#7c3aed">Behaviour:</text>
+        <text x="98" y="332" font-size="9.5" fill="#475569">hold losing shares · endowment effect · stick with worse mortgages</text>
+
+        <text x="220" y="364" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful — opting out is framed as a "loss".</text>
       </g>
     </svg>
   `,
@@ -11256,7 +11268,6 @@ window.ECONOS_ICONS = {
 
   boundedSelfControlInteractive: `
     <svg viewBox="0 0 440 426" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="426" fill="#F8FAFC" rx="10"/>
       <g class="idl-base"></g>
 
       <g class="idl-1">
@@ -11388,7 +11399,6 @@ window.ECONOS_ICONS = {
 
   ukNudgesInteractive: `
     <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="380" fill="#F8FAFC" rx="10"/>
       <g class="idl-base"></g>
 
       <g class="idl-1">

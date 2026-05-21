@@ -14220,7 +14220,7 @@ window.ECONOS_ICONS = {
   `,
 
   threeRoutesDiagram: `
-    <svg viewBox="0 0 440 405" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 0 440 413" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <text x="220" y="22" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Types of market failure</text>
 
       <!-- Trunk circle with balance-scale icon -->
@@ -14231,13 +14231,13 @@ window.ECONOS_ICONS = {
       <path d="M224 50 L227 58 L231 50 Z" fill="#fff" stroke="#0F172A" stroke-width="1.2" stroke-linejoin="round"/>
       <line x1="216" y1="66" x2="224" y2="66" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round"/>
 
-      <!-- Branches -->
-      <path d="M212 70 Q160 86 90 100" stroke="#059669" stroke-width="2" fill="none"/>
-      <line x1="220" y1="74" x2="220" y2="100" stroke="#d97706" stroke-width="2"/>
-      <path d="M228 70 Q280 86 350 100" stroke="#2563eb" stroke-width="2" fill="none"/>
+      <!-- Branches (start ~3px clear of trunk circle so they don't poke into it) -->
+      <path d="M200 63 Q160 80 90 100" stroke="#059669" stroke-width="2" fill="none"/>
+      <line x1="220" y1="77" x2="220" y2="100" stroke="#d97706" stroke-width="2"/>
+      <path d="M240 63 Q280 80 350 100" stroke="#2563eb" stroke-width="2" fill="none"/>
 
       <!-- Box 1: Externalities (green) -->
-      <rect x="14" y="100" width="132" height="140" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+      <rect x="14" y="100" width="132" height="148" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
       <!-- factory in green circle -->
       <circle cx="80" cy="124" r="15" fill="#059669"/>
       <rect x="73" y="124" width="14" height="8" fill="#fff"/>
@@ -14254,7 +14254,7 @@ window.ECONOS_ICONS = {
       <text x="80" y="240" font-size="8.5" text-anchor="middle" fill="#0F172A">affects nearby residents.</text>
 
       <!-- Box 2: Public goods (amber) -->
-      <rect x="154" y="100" width="132" height="140" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <rect x="154" y="100" width="132" height="148" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
       <!-- mini balance-scale in orange circle -->
       <circle cx="220" cy="124" r="15" fill="#d97706"/>
       <line x1="220" y1="116" x2="220" y2="132" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
@@ -14272,7 +14272,7 @@ window.ECONOS_ICONS = {
       <text x="220" y="240" font-size="8.5" text-anchor="middle" fill="#0F172A">defence benefits everyone.</text>
 
       <!-- Box 3: Information gaps (blue) -->
-      <rect x="294" y="100" width="132" height="140" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <rect x="294" y="100" width="132" height="148" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
       <circle cx="360" cy="124" r="15" fill="#2563eb"/>
       <text x="360" y="131" font-size="17" font-weight="900" font-family="Georgia,serif" text-anchor="middle" fill="#fff">i</text>
       <text x="360" y="160" font-size="11" font-weight="800" text-anchor="middle" fill="#2563eb">3. Information gaps</text>
@@ -14285,41 +14285,41 @@ window.ECONOS_ICONS = {
       <text x="360" y="240" font-size="8.5" text-anchor="middle" fill="#0F172A">lead to poor choices.</text>
 
       <!-- Comparison table -->
-      <text x="22" y="270" font-size="11" font-weight="800" fill="#0B1426">Problem</text>
-      <text x="148" y="270" font-size="11" font-weight="800" fill="#0B1426">What goes wrong</text>
-      <text x="296" y="270" font-size="11" font-weight="800" fill="#0B1426">Typical result</text>
-      <line x1="14" y1="280" x2="426" y2="280" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="22" y="278" font-size="11" font-weight="800" fill="#0B1426">Problem</text>
+      <text x="148" y="278" font-size="11" font-weight="800" fill="#0B1426">What goes wrong</text>
+      <text x="296" y="278" font-size="11" font-weight="800" fill="#0B1426">Typical result</text>
+      <line x1="14" y1="288" x2="426" y2="288" stroke="#CBD5E1" stroke-width="1"/>
 
       <!-- Row 1: Externalities -->
-      <text x="22" y="302" font-size="10" font-weight="800" fill="#059669">1. Externalities</text>
-      <text x="148" y="302" font-size="9" fill="#0F172A">Price system misses</text>
-      <text x="148" y="314" font-size="9" fill="#0F172A">spillover costs or benefits.</text>
-      <text x="296" y="302" font-size="9" fill="#0F172A">Too much or too little</text>
-      <text x="296" y="314" font-size="9" fill="#0F172A">output.</text>
-      <circle cx="415" cy="308" r="11" fill="#DCFCE7"/>
-      <path d="M411 304 L411 312 M408 307 L411 304 L414 307" stroke="#059669" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M419 312 L419 304 M416 309 L419 312 L422 309" stroke="#059669" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <line x1="14" y1="326" x2="426" y2="326" stroke="#F1F5F9"/>
+      <text x="22" y="310" font-size="10" font-weight="800" fill="#059669">1. Externalities</text>
+      <text x="148" y="310" font-size="9" fill="#0F172A">Price system misses</text>
+      <text x="148" y="322" font-size="9" fill="#0F172A">spillover costs or benefits.</text>
+      <text x="296" y="310" font-size="9" fill="#0F172A">Too much or too little</text>
+      <text x="296" y="322" font-size="9" fill="#0F172A">output.</text>
+      <circle cx="415" cy="316" r="11" fill="#DCFCE7"/>
+      <path d="M411 312 L411 320 M408 315 L411 312 L414 315" stroke="#059669" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M419 320 L419 312 M416 317 L419 320 L422 317" stroke="#059669" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="14" y1="334" x2="426" y2="334" stroke="#F1F5F9"/>
 
       <!-- Row 2: Public goods -->
-      <text x="22" y="346" font-size="10" font-weight="800" fill="#d97706">2. Public goods</text>
-      <text x="148" y="346" font-size="9" fill="#0F172A">Free-rider problem — people</text>
-      <text x="148" y="358" font-size="9" fill="#0F172A">benefit without paying.</text>
-      <text x="296" y="346" font-size="9" fill="#0F172A">Under-provision of the</text>
-      <text x="296" y="358" font-size="9" fill="#0F172A">good or service.</text>
-      <circle cx="415" cy="352" r="11" fill="#FEF3C7"/>
-      <circle cx="415" cy="349" r="2.6" fill="#d97706"/>
-      <path d="M410 358 Q415 352 420 358 L420 360 L410 360 Z" fill="#d97706"/>
-      <line x1="14" y1="370" x2="426" y2="370" stroke="#F1F5F9"/>
+      <text x="22" y="354" font-size="10" font-weight="800" fill="#d97706">2. Public goods</text>
+      <text x="148" y="354" font-size="9" fill="#0F172A">Free-rider problem — people</text>
+      <text x="148" y="366" font-size="9" fill="#0F172A">benefit without paying.</text>
+      <text x="296" y="354" font-size="9" fill="#0F172A">Under-provision of the</text>
+      <text x="296" y="366" font-size="9" fill="#0F172A">good or service.</text>
+      <circle cx="415" cy="360" r="11" fill="#FEF3C7"/>
+      <circle cx="415" cy="357" r="2.6" fill="#d97706"/>
+      <path d="M410 366 Q415 360 420 366 L420 368 L410 368 Z" fill="#d97706"/>
+      <line x1="14" y1="378" x2="426" y2="378" stroke="#F1F5F9"/>
 
       <!-- Row 3: Information gaps -->
-      <text x="22" y="390" font-size="10" font-weight="800" fill="#2563eb">3. Information gaps</text>
-      <text x="148" y="390" font-size="9" fill="#0F172A">Decisions based on incomplete</text>
-      <text x="148" y="402" font-size="9" fill="#0F172A">or imperfect information.</text>
-      <text x="296" y="390" font-size="9" fill="#0F172A">Bad decisions and</text>
-      <text x="296" y="402" font-size="9" fill="#0F172A">welfare loss.</text>
-      <circle cx="415" cy="396" r="11" fill="#DBEAFE"/>
-      <polyline points="408,392 412,396 416,393 422,402" stroke="#2563eb" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="22" y="398" font-size="10" font-weight="800" fill="#2563eb">3. Information gaps</text>
+      <text x="148" y="398" font-size="9" fill="#0F172A">Decisions based on incomplete</text>
+      <text x="148" y="410" font-size="9" fill="#0F172A">or imperfect information.</text>
+      <text x="296" y="398" font-size="9" fill="#0F172A">Bad decisions and</text>
+      <text x="296" y="410" font-size="9" fill="#0F172A">welfare loss.</text>
+      <circle cx="415" cy="404" r="11" fill="#DBEAFE"/>
+      <polyline points="408,400 412,404 416,401 422,410" stroke="#2563eb" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `,
 

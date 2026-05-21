@@ -14328,7 +14328,7 @@ window.ECONOS_ICONS = {
       <!-- Y-axis (P) -->
       <line x1="50" y1="32" x2="50" y2="234" stroke="#334155" stroke-width="1.3"/>
       <polygon points="50,28 46,36 54,36" fill="#334155"/>
-      <text x="42" y="38" font-size="11" font-weight="700" fill="#0B1426">P</text>
+      <text x="50" y="22" font-size="11" font-weight="700" text-anchor="middle" fill="#0B1426">P</text>
       <!-- X-axis (Q) -->
       <line x1="50" y1="234" x2="252" y2="234" stroke="#334155" stroke-width="1.3"/>
       <polygon points="256,234 248,230 248,238" fill="#334155"/>
@@ -14341,13 +14341,13 @@ window.ECONOS_ICONS = {
       <line x1="68" y1="72" x2="240" y2="214" stroke="#059669" stroke-width="2.2"/>
       <text x="244" y="218" font-size="12" font-weight="800" fill="#059669">D</text>
 
-      <!-- Welfare loss triangle (between Q* and Qm) -->
-      <polygon points="154,143 196,113 196,173" fill="#FECACA" stroke="#dc2626" stroke-width="1.2" opacity="0.9"/>
+      <!-- Welfare loss triangle: vertices on equilibrium (154,143), on S at Qm (196,108), on D at Qm (196,178) -->
+      <polygon points="154,143 196,108 196,178" fill="#FECACA" stroke="#dc2626" stroke-width="1.2" opacity="0.9"/>
 
       <!-- Equilibrium dot at Q* -->
       <circle cx="154" cy="143" r="5" fill="#059669"/>
-      <!-- Qm dot (on D curve right of Q*) -->
-      <circle cx="196" cy="173" r="5" fill="#0B1426"/>
+      <!-- Qm dot ON the demand line at x=196 -->
+      <circle cx="196" cy="178" r="5" fill="#0B1426"/>
 
       <!-- Welfare loss annotation -->
       <text x="222" y="130" font-size="10" font-weight="800" fill="#dc2626">Welfare</text>
@@ -14360,8 +14360,8 @@ window.ECONOS_ICONS = {
       <line x1="50" y1="143" x2="154" y2="143" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
       <text x="44" y="147" font-size="10" font-weight="700" text-anchor="end" fill="#475569">P*</text>
       <!-- Pm line -->
-      <line x1="50" y1="173" x2="196" y2="173" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="2,2"/>
-      <text x="44" y="177" font-size="10" font-weight="700" text-anchor="end" fill="#475569">Pm</text>
+      <line x1="50" y1="178" x2="196" y2="178" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="2,2"/>
+      <text x="44" y="182" font-size="10" font-weight="700" text-anchor="end" fill="#475569">Pm</text>
 
       <!-- Q* dashed -->
       <line x1="154" y1="143" x2="154" y2="234" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3,2"/>
@@ -14370,7 +14370,7 @@ window.ECONOS_ICONS = {
       <text x="154" y="272" font-size="8" text-anchor="middle" fill="#059669">efficient</text>
 
       <!-- Qm dashed -->
-      <line x1="196" y1="173" x2="196" y2="234" stroke="#0B1426" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <line x1="196" y1="178" x2="196" y2="234" stroke="#0B1426" stroke-width="0.8" stroke-dasharray="3,2"/>
       <text x="196" y="250" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">Qm</text>
       <text x="196" y="262" font-size="8" text-anchor="middle" fill="#0B1426">Market</text>
       <text x="196" y="272" font-size="8" text-anchor="middle" fill="#0B1426">quantity</text>
@@ -14384,7 +14384,7 @@ window.ECONOS_ICONS = {
       <!-- Right-side numbered points -->
       <circle cx="290" cy="54" r="12" fill="none" stroke="#059669" stroke-width="2"/>
       <text x="290" y="59" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1</text>
-      <text x="310" y="50" font-size="9.5" font-weight="800" fill="#0B1426">Allocative efficiency</text>
+      <text x="310" y="50" font-size="9.5" font-weight="800" fill="#059669">Allocative efficiency</text>
       <text x="310" y="62" font-size="9" fill="#475569">occurs where social marginal</text>
       <text x="310" y="74" font-size="9" fill="#475569">benefit = social marginal cost.</text>
 
@@ -14393,8 +14393,8 @@ window.ECONOS_ICONS = {
       <circle cx="290" cy="124" r="12" fill="none" stroke="#94A3B8" stroke-width="2"/>
       <text x="290" y="129" font-size="11" font-weight="800" text-anchor="middle" fill="#94A3B8">2</text>
       <text x="310" y="120" font-size="9" fill="#475569">If output is too high or too low,</text>
-      <text x="310" y="132" font-size="9" fill="#475569">the market is allocatively</text>
-      <text x="310" y="144" font-size="9" fill="#475569">inefficient.</text>
+      <text x="310" y="132" font-size="9" fill="#475569">the market is <tspan font-weight="800" fill="#0B1426">allocatively</tspan></text>
+      <text x="310" y="144" font-size="9" font-weight="800" fill="#0B1426">inefficient.</text>
 
       <line x1="290" y1="162" x2="430" y2="162" stroke="#F1F5F9"/>
 

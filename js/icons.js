@@ -2940,23 +2940,23 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend base ===== -->
       <g class="layer-legend-base">
         <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Free market equilibrium: MPC = MSB</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">FREE MARKET OUTCOME</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Producers maximise profit at</text>
-        <text x="620" y="118" font-size="13" fill="#334155">MPC = MSB → equilibrium at</text>
-        <text x="620" y="136" font-size="13" font-weight="700" fill="#1E293B">(Q_m, P_m).</text>
-        <text x="620" y="172" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHAT EACH CURVE MEANS</text>
-        <line x1="620" y1="194" x2="650" y2="194" stroke="#D97706" stroke-width="3"/>
-        <text x="658" y="198" font-size="13" font-weight="700" fill="#D97706">D = MSB</text>
-        <text x="620" y="216" font-size="12" fill="#334155">Marginal social benefit (= private</text>
-        <text x="620" y="232" font-size="12" fill="#334155">benefit if no positive externality)</text>
-        <line x1="620" y1="258" x2="650" y2="258" stroke="#059669" stroke-width="3"/>
-        <text x="658" y="262" font-size="13" font-weight="700" fill="#059669">MPC</text>
-        <text x="620" y="280" font-size="12" fill="#334155">Marginal private cost — what the</text>
-        <text x="620" y="296" font-size="12" fill="#334155">firm pays to produce</text>
-        <text x="620" y="328" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">BUT THIS IGNORES…</text>
-        <text x="620" y="350" font-size="13" fill="#334155">External costs imposed on third</text>
-        <text x="620" y="368" font-size="13" fill="#334155">parties (pollution, congestion).</text>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Free market equilibrium: MPC = MSB</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">FREE MARKET OUTCOME</text>
+        <text x="620" y="100" font-size="14" fill="#334155">Producers maximise profit at</text>
+        <text x="620" y="120" font-size="14" fill="#334155">MPC = MSB → equilibrium at</text>
+        <text x="620" y="140" font-size="14" font-weight="700" fill="#1E293B">(Q_m, P_m).</text>
+        <text x="620" y="176" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">WHAT EACH CURVE MEANS</text>
+        <line x1="620" y1="200" x2="650" y2="200" stroke="#D97706" stroke-width="3"/>
+        <text x="658" y="204" font-size="14" font-weight="700" fill="#D97706">D = MSB</text>
+        <text x="620" y="224" font-size="13" fill="#334155">Marginal social benefit — value</text>
+        <text x="620" y="242" font-size="13" fill="#334155">to society of one more unit.</text>
+        <line x1="620" y1="266" x2="650" y2="266" stroke="#059669" stroke-width="3"/>
+        <text x="658" y="270" font-size="14" font-weight="700" fill="#059669">MPC</text>
+        <text x="620" y="290" font-size="13" fill="#334155">Marginal private cost — what</text>
+        <text x="620" y="308" font-size="13" fill="#334155">the firm itself pays.</text>
+        <text x="620" y="340" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">BUT THIS IGNORES…</text>
+        <text x="620" y="364" font-size="14" fill="#334155">External costs on third parties</text>
+        <text x="620" y="384" font-size="14" fill="#334155">(pollution, congestion).</text>
       </g>
 
       <!-- ===== LAYER: MSC curve (extension + shift + efficiency states) — blue to match Card 1 ===== -->
@@ -2979,20 +2979,20 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend extension ===== -->
       <g class="layer-legend-extension">
         <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Production imposes external costs → MSC sits above MPC</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">MSC = MPC + MEC</text>
-        <text x="620" y="100" font-size="13" fill="#334155">MSC adds the cost imposed on</text>
-        <text x="620" y="118" font-size="13" fill="#334155">third parties to private cost.</text>
-        <text x="620" y="148" font-size="13" font-weight="700" fill="#1E293B">Vertical gap = MEC</text>
-        <text x="620" y="166" font-size="12" fill="#475569">(marginal external cost)</text>
-        <text x="620" y="200" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAMPLES OF MEC</text>
-        <text x="620" y="222" font-size="13" fill="#334155">Air pollution from a factory</text>
-        <text x="620" y="240" font-size="13" fill="#334155">Noise from late-night venues</text>
-        <text x="620" y="258" font-size="13" fill="#334155">Congestion from extra cars</text>
-        <text x="620" y="276" font-size="13" fill="#334155">CO₂ emissions from cement</text>
-        <text x="620" y="310" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE PROBLEM</text>
-        <text x="620" y="332" font-size="13" fill="#334155">Producers don't pay MEC →</text>
-        <text x="620" y="350" font-size="13" fill="#334155">they produce too much.</text>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Production imposes external costs → MSC sits above MPC</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#7D23CB" letter-spacing="2">MSC = MPC + MEC</text>
+        <text x="620" y="100" font-size="14" fill="#334155">MSC adds the cost imposed on</text>
+        <text x="620" y="120" font-size="14" fill="#334155">third parties to private cost.</text>
+        <text x="620" y="152" font-size="14" font-weight="700" fill="#1E293B">Vertical gap = MEC</text>
+        <text x="620" y="172" font-size="13" fill="#475569">(marginal external cost)</text>
+        <text x="620" y="208" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">EXAMPLES OF MEC</text>
+        <text x="620" y="232" font-size="14" fill="#334155">Air pollution from a factory</text>
+        <text x="620" y="252" font-size="14" fill="#334155">Noise from late-night venues</text>
+        <text x="620" y="272" font-size="14" fill="#334155">Congestion from extra cars</text>
+        <text x="620" y="292" font-size="14" fill="#334155">CO₂ emissions from cement</text>
+        <text x="620" y="326" font-size="11" font-weight="700" fill="#7D23CB" letter-spacing="2">THE PROBLEM</text>
+        <text x="620" y="352" font-size="14" fill="#334155">Producers don't pay MEC, so</text>
+        <text x="620" y="372" font-size="14" fill="#334155">they produce too much.</text>
       </g>
 
       <!-- ===== LAYER: optimal point (shift + efficiency states) ===== -->
@@ -3008,19 +3008,19 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend shift ===== -->
       <g class="layer-legend-shift">
         <circle cx="74" cy="32" r="7" fill="#059669"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Socially optimal output: where MSC = MSB</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE OPTIMUM</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Society maximises welfare</text>
-        <text x="620" y="118" font-size="13" fill="#334155">where MSC = MSB at</text>
-        <text x="620" y="138" font-size="14" font-weight="700" fill="#059669">(Q*, P*).</text>
-        <text x="620" y="172" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">COMPARISON</text>
-        <text x="620" y="194" font-size="13" font-weight="700" fill="#1E293B">Q* &lt; Q_m</text>
-        <text x="620" y="212" font-size="13" fill="#334155">Society wants less output.</text>
-        <text x="620" y="238" font-size="13" font-weight="700" fill="#1E293B">P* &gt; P_m</text>
-        <text x="620" y="256" font-size="13" fill="#334155">Optimal price is higher.</text>
-        <text x="620" y="290" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">FREE MARKET FAILS</text>
-        <text x="620" y="312" font-size="13" fill="#334155">Without intervention the market</text>
-        <text x="620" y="330" font-size="13" fill="#334155">overproduces by (Q_m − Q*).</text>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Socially optimal output: where MSC = MSB</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#059669" letter-spacing="2">THE OPTIMUM</text>
+        <text x="620" y="100" font-size="14" fill="#334155">Society maximises welfare</text>
+        <text x="620" y="120" font-size="14" fill="#334155">where MSC = MSB at</text>
+        <text x="620" y="142" font-size="15" font-weight="700" fill="#059669">(Q*, P*).</text>
+        <text x="620" y="176" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">COMPARISON</text>
+        <text x="620" y="200" font-size="14" font-weight="700" fill="#1E293B">Q* &lt; Q_m</text>
+        <text x="620" y="220" font-size="14" fill="#334155">Society wants less output.</text>
+        <text x="620" y="248" font-size="14" font-weight="700" fill="#1E293B">P* &gt; P_m</text>
+        <text x="620" y="268" font-size="14" fill="#334155">Optimal price is higher.</text>
+        <text x="620" y="302" font-size="11" font-weight="700" fill="#059669" letter-spacing="2">FREE MARKET FAILS</text>
+        <text x="620" y="326" font-size="14" fill="#334155">Without intervention the market</text>
+        <text x="620" y="346" font-size="14" fill="#334155">overproduces by (Q_m − Q*).</text>
       </g>
 
       <!-- ===== LAYER: DWL triangle (efficiency only) ===== -->
@@ -3033,21 +3033,21 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend efficiency ===== -->
       <g class="layer-legend-efficiency">
         <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Overproduction → deadweight welfare loss triangle</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">DEADWEIGHT WELFARE LOSS</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Shaded triangle between Q* and</text>
-        <text x="620" y="118" font-size="13" fill="#334155">Q_m, bounded above by MSC and</text>
-        <text x="620" y="136" font-size="13" fill="#334155">below by MSB.</text>
-        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">For each over-produced unit:</text>
-        <text x="620" y="190" font-size="13" fill="#334155">MSC &gt; MSB → society loses</text>
-        <text x="620" y="208" font-size="13" fill="#334155">(MSC − MSB) of welfare.</text>
-        <text x="620" y="244" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">POLICY RESPONSE</text>
-        <text x="620" y="266" font-size="13" fill="#334155">A Pigouvian tax = MEC at Q*</text>
-        <text x="620" y="284" font-size="13" fill="#334155">internalises the externality</text>
-        <text x="620" y="302" font-size="13" fill="#334155">and eliminates the DWL.</text>
-        <text x="620" y="334" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM TECHNIQUE</text>
-        <text x="620" y="356" font-size="12" fill="#334155">Label all six elements: D=MSB,</text>
-        <text x="620" y="372" font-size="12" fill="#334155">MPC, MSC, E_m, E*, DWL.</text>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Overproduction → deadweight welfare loss triangle</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">DEADWEIGHT WELFARE LOSS</text>
+        <text x="620" y="100" font-size="14" fill="#334155">Shaded triangle between Q*</text>
+        <text x="620" y="120" font-size="14" fill="#334155">and Q_m, bounded above by</text>
+        <text x="620" y="140" font-size="14" fill="#334155">MSC and below by MSB.</text>
+        <text x="620" y="174" font-size="14" font-weight="700" fill="#1E293B">For each over-produced unit:</text>
+        <text x="620" y="196" font-size="14" fill="#334155">MSC &gt; MSB → society loses</text>
+        <text x="620" y="216" font-size="14" fill="#334155">(MSC − MSB) of welfare.</text>
+        <text x="620" y="252" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">POLICY RESPONSE</text>
+        <text x="620" y="276" font-size="14" fill="#334155">A Pigouvian tax = MEC at Q*</text>
+        <text x="620" y="296" font-size="14" fill="#334155">internalises the externality</text>
+        <text x="620" y="316" font-size="14" fill="#334155">and eliminates the DWL.</text>
+        <text x="620" y="350" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">EXAM TECHNIQUE</text>
+        <text x="620" y="374" font-size="13" fill="#334155">Label all six elements: D=MSB,</text>
+        <text x="620" y="392" font-size="13" fill="#334155">MPC, MSC, E_m, E*, DWL.</text>
       </g>
     </svg>
   `,

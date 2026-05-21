@@ -10959,85 +10959,65 @@ window.ECONOS_ICONS = {
   `,
 
   whyNotRationalDiagram: `
-    <svg viewBox="0 0 440 500" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="500" fill="#F8FAFC" rx="10"/>
+    <svg viewBox="0 0 440 478" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="478" fill="#F8FAFC" rx="10"/>
 
-      <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The gap between ideal and real decision-making</text>
+      <text x="220" y="26" font-size="13" font-weight="700" text-anchor="middle" fill="#0B1426">The gap between ideal and real decision-making</text>
 
-      <rect x="20" y="42" width="190" height="232" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="115" cy="72" r="20" fill="#fff" stroke="#86EFAC" stroke-width="2"/>
-      <text x="115" y="80" font-size="22" text-anchor="middle">🧠</text>
-      <text x="115" y="112" font-size="13" font-weight="900" text-anchor="middle" fill="#059669">Textbook consumer</text>
-      <text x="115" y="128" font-size="10" font-style="italic" text-anchor="middle" fill="#059669">homo economicus</text>
-      <line x1="34" y1="138" x2="196" y2="138" stroke="#86EFAC"/>
-      <g font-size="11" fill="#065f46">
-        <circle cx="40" cy="158" r="6" fill="#059669"/>
-        <text x="38.7" y="161" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
-        <text x="54" y="162">Compares all options</text>
-        <circle cx="40" cy="186" r="6" fill="#059669"/>
-        <text x="38.7" y="189" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
-        <text x="54" y="190">Calculates costs &amp; benefits</text>
-        <circle cx="40" cy="214" r="6" fill="#059669"/>
-        <text x="38.7" y="217" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
-        <text x="54" y="218">Stable preferences</text>
-        <circle cx="40" cy="242" r="6" fill="#059669"/>
-        <text x="38.7" y="245" font-size="8" font-weight="900" fill="#fff" text-anchor="middle">✓</text>
-        <text x="54" y="246">Maximises utility</text>
-      </g>
-      <text x="115" y="266" font-size="9.5" text-anchor="middle" fill="#059669" font-style="italic">"the model"</text>
+      <rect x="20" y="40" width="190" height="196" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="20" y="40" width="190" height="5" rx="4" fill="#059669"/>
+      <text x="115" y="63" font-size="11.5" font-weight="700" text-anchor="middle" fill="#059669">Textbook consumer</text>
+      <text x="115" y="77" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">homo economicus</text>
+      <line x1="30" y1="85" x2="200" y2="85" stroke="#F1F5F9"/>
+      <circle cx="34" cy="104" r="3.5" fill="#059669"/>
+      <text x="44" y="108" font-size="10.5" fill="#334155">Compares all options</text>
+      <circle cx="34" cy="126" r="3.5" fill="#059669"/>
+      <text x="44" y="130" font-size="10.5" fill="#334155">Calculates costs &amp; benefits</text>
+      <circle cx="34" cy="148" r="3.5" fill="#059669"/>
+      <text x="44" y="152" font-size="10.5" fill="#334155">Stable preferences</text>
+      <circle cx="34" cy="170" r="3.5" fill="#059669"/>
+      <text x="44" y="174" font-size="10.5" fill="#334155">Maximises utility</text>
+      <text x="115" y="220" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"the model"</text>
 
-      <rect x="230" y="42" width="190" height="232" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-      <circle cx="325" cy="72" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="2"/>
-      <text x="325" y="80" font-size="22" text-anchor="middle">🧑</text>
-      <text x="325" y="112" font-size="13" font-weight="900" text-anchor="middle" fill="#7c3aed">Real human</text>
-      <text x="325" y="128" font-size="10" font-style="italic" text-anchor="middle" fill="#7c3aed">what we actually see</text>
-      <line x1="244" y1="138" x2="406" y2="138" stroke="#DDD6FE"/>
-      <g font-size="11" fill="#5b21b6">
-        <circle cx="250" cy="158" r="6" fill="#7c3aed"/>
-        <text x="254" y="162">Uses mental shortcuts</text>
-        <circle cx="250" cy="186" r="6" fill="#7c3aed"/>
-        <text x="254" y="190">Affected by framing</text>
-        <circle cx="250" cy="214" r="6" fill="#7c3aed"/>
-        <text x="254" y="218">Present-biased</text>
-        <circle cx="250" cy="242" r="6" fill="#7c3aed"/>
-        <text x="254" y="246">Follows defaults &amp; norms</text>
-      </g>
-      <text x="325" y="266" font-size="9.5" text-anchor="middle" fill="#7c3aed" font-style="italic">"the reality"</text>
+      <line x1="215" y1="50" x2="215" y2="228" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+      <rect x="205" y="128" width="20" height="18" rx="3" fill="#E2E8F0"/>
+      <text x="215" y="141" font-size="9" font-weight="700" text-anchor="middle" fill="#64748B">vs</text>
 
-      <circle cx="220" cy="158" r="20" fill="#0B1426"/>
-      <text x="220" y="164" font-size="12" font-weight="900" text-anchor="middle" fill="#fff">VS</text>
+      <rect x="230" y="40" width="190" height="196" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="230" y="40" width="190" height="5" rx="4" fill="#7c3aed"/>
+      <text x="325" y="63" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7c3aed">Real human</text>
+      <text x="325" y="77" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">what we actually see</text>
+      <line x1="240" y1="85" x2="410" y2="85" stroke="#F1F5F9"/>
+      <circle cx="244" cy="104" r="3.5" fill="#7c3aed"/>
+      <text x="254" y="108" font-size="10.5" fill="#334155">Uses mental shortcuts</text>
+      <circle cx="244" cy="126" r="3.5" fill="#7c3aed"/>
+      <text x="254" y="130" font-size="10.5" fill="#334155">Affected by framing</text>
+      <circle cx="244" cy="148" r="3.5" fill="#7c3aed"/>
+      <text x="254" y="152" font-size="10.5" fill="#334155">Present-biased</text>
+      <circle cx="244" cy="170" r="3.5" fill="#7c3aed"/>
+      <text x="254" y="174" font-size="10.5" fill="#334155">Follows defaults &amp; norms</text>
+      <text x="325" y="220" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"the reality"</text>
 
-      <text x="220" y="306" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Three big reasons people aren't rational</text>
+      <line x1="20" y1="250" x2="420" y2="250" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="220" y="272" font-size="12" font-weight="700" text-anchor="middle" fill="#0B1426">Three systematic departures from rationality</text>
 
-      <rect x="20" y="318" width="130" height="160" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="85" cy="346" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
-      <text x="85" y="354" font-size="22" text-anchor="middle">👁️</text>
-      <text x="85" y="386" font-size="12" font-weight="800" text-anchor="middle" fill="#059669">Limited</text>
-      <text x="85" y="402" font-size="12" font-weight="800" text-anchor="middle" fill="#059669">attention</text>
-      <text x="85" y="424" font-size="9.5" text-anchor="middle" fill="#065f46">We can't process</text>
-      <text x="85" y="437" font-size="9.5" text-anchor="middle" fill="#065f46">everything — so we</text>
-      <text x="85" y="450" font-size="9.5" text-anchor="middle" fill="#065f46">focus on what's easiest</text>
-      <text x="85" y="468" font-size="9" font-style="italic" text-anchor="middle" fill="#059669">explored in card 2</text>
+      <rect x="20" y="284" width="400" height="52" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="20" y="284" width="4" height="52" rx="2" fill="#059669"/>
+      <text x="36" y="304" font-size="11" font-weight="700" fill="#059669">Limited attention</text>
+      <text x="36" y="320" font-size="9.5" fill="#475569">We can't process everything — so we focus on what's easiest, not what's most relevant.</text>
+      <text x="415" y="322" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">card 2 →</text>
 
-      <rect x="155" y="318" width="130" height="160" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-      <circle cx="220" cy="346" r="20" fill="#fff" stroke="#FDE68A" stroke-width="1.5"/>
-      <text x="220" y="354" font-size="22" text-anchor="middle">🧠</text>
-      <text x="220" y="386" font-size="12" font-weight="800" text-anchor="middle" fill="#d97706">Biases &amp;</text>
-      <text x="220" y="402" font-size="12" font-weight="800" text-anchor="middle" fill="#d97706">heuristics</text>
-      <text x="220" y="424" font-size="9.5" text-anchor="middle" fill="#92400E">Shortcuts let us act</text>
-      <text x="220" y="437" font-size="9.5" text-anchor="middle" fill="#92400E">fast — but mislead us</text>
-      <text x="220" y="450" font-size="9.5" text-anchor="middle" fill="#92400E">systematically</text>
-      <text x="220" y="468" font-size="9" font-style="italic" text-anchor="middle" fill="#d97706">explored in card 2</text>
+      <rect x="20" y="344" width="400" height="52" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="20" y="344" width="4" height="52" rx="2" fill="#d97706"/>
+      <text x="36" y="364" font-size="11" font-weight="700" fill="#d97706">Biases &amp; heuristics</text>
+      <text x="36" y="380" font-size="9.5" fill="#475569">Mental shortcuts let us act fast but mislead us in systematic, predictable ways.</text>
+      <text x="415" y="382" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">card 2 →</text>
 
-      <rect x="290" y="318" width="130" height="160" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-      <circle cx="355" cy="346" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
-      <text x="355" y="354" font-size="22" text-anchor="middle">⏳</text>
-      <text x="355" y="386" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Self-control</text>
-      <text x="355" y="402" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">problems</text>
-      <text x="355" y="424" font-size="9.5" text-anchor="middle" fill="#5b21b6">Long-term goals lose</text>
-      <text x="355" y="437" font-size="9.5" text-anchor="middle" fill="#5b21b6">to short-term</text>
-      <text x="355" y="450" font-size="9.5" text-anchor="middle" fill="#5b21b6">temptations</text>
-      <text x="355" y="468" font-size="9" font-style="italic" text-anchor="middle" fill="#7c3aed">explored in card 3</text>
+      <rect x="20" y="404" width="400" height="52" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="20" y="404" width="4" height="52" rx="2" fill="#7c3aed"/>
+      <text x="36" y="424" font-size="11" font-weight="700" fill="#7c3aed">Self-control problems</text>
+      <text x="36" y="440" font-size="9.5" fill="#475569">Long-term goals consistently lose to short-term temptations — even when we know better.</text>
+      <text x="415" y="442" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">card 3 →</text>
     </svg>
   `,
 
@@ -11113,29 +11093,35 @@ window.ECONOS_ICONS = {
 
       <g class="idl-2" style="display:none">
         <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Availability — vivid examples warp risk</text>
-        <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Which mode of UK travel do you fear more? Which actually kills?</text>
-        <rect x="30" y="68" width="180" height="222" rx="12" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.5"/>
-        <text x="120" y="108" font-size="40" text-anchor="middle">✈️</text>
-        <text x="120" y="138" font-size="12" font-weight="800" text-anchor="middle" fill="#7f1d1d">Commercial flight</text>
-        <text x="120" y="194" font-size="44" font-weight="900" text-anchor="middle" fill="#dc2626">0</text>
-        <text x="120" y="218" font-size="10" text-anchor="middle" fill="#7f1d1d" font-weight="600">UK passenger deaths</text>
-        <text x="120" y="232" font-size="10" text-anchor="middle" fill="#7f1d1d" font-weight="600">in the last decade</text>
-        <line x1="50" y1="248" x2="190" y2="248" stroke="#FECACA"/>
-        <text x="120" y="266" font-size="10" font-weight="700" text-anchor="middle" fill="#dc2626">Headlines: ★★★★★</text>
-        <text x="120" y="280" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">"feels terrifying"</text>
+        <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Which UK travel risk feels higher? Which actually is?</text>
 
-        <rect x="230" y="68" width="180" height="222" rx="12" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-        <text x="320" y="108" font-size="40" text-anchor="middle">🚗</text>
-        <text x="320" y="138" font-size="12" font-weight="800" text-anchor="middle" fill="#78350F">Road travel</text>
-        <text x="320" y="194" font-size="36" font-weight="900" text-anchor="middle" fill="#d97706">~1,700</text>
-        <text x="320" y="218" font-size="10" text-anchor="middle" fill="#78350F" font-weight="600">UK road deaths</text>
-        <text x="320" y="232" font-size="10" text-anchor="middle" fill="#78350F" font-weight="600">every single year</text>
-        <line x1="240" y1="248" x2="400" y2="248" stroke="#FDE68A"/>
-        <text x="320" y="266" font-size="10" font-weight="700" text-anchor="middle" fill="#d97706">Headlines: ★</text>
-        <text x="320" y="280" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">"feels routine"</text>
+        <rect x="30" y="68" width="180" height="208" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="30" y="68" width="180" height="4" rx="3" fill="#dc2626"/>
+        <text x="120" y="90" font-size="11.5" font-weight="700" text-anchor="middle" fill="#dc2626">Commercial flight</text>
+        <text x="120" y="106" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">perceived as dangerous</text>
+        <line x1="42" y1="114" x2="198" y2="114" stroke="#F1F5F9"/>
+        <text x="120" y="158" font-size="40" font-weight="900" text-anchor="middle" fill="#dc2626">0</text>
+        <text x="120" y="180" font-size="10" text-anchor="middle" fill="#475569">UK passenger deaths</text>
+        <text x="120" y="194" font-size="10" text-anchor="middle" fill="#475569">in the last decade</text>
+        <line x1="42" y1="210" x2="198" y2="210" stroke="#F1F5F9"/>
+        <text x="120" y="228" font-size="10" font-weight="700" text-anchor="middle" fill="#dc2626">Media coverage: very high</text>
+        <text x="120" y="246" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">"feels terrifying"</text>
 
-        <text x="220" y="332" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">We judge risk by how easily examples come to mind —</text>
-        <text x="220" y="352" font-size="11" text-anchor="middle" fill="#475569">not by how often the event actually happens.</text>
+        <rect x="230" y="68" width="180" height="208" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="230" y="68" width="180" height="4" rx="3" fill="#d97706"/>
+        <text x="320" y="90" font-size="11.5" font-weight="700" text-anchor="middle" fill="#d97706">Road travel</text>
+        <text x="320" y="106" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">perceived as safe</text>
+        <line x1="242" y1="114" x2="398" y2="114" stroke="#F1F5F9"/>
+        <text x="320" y="155" font-size="32" font-weight="900" text-anchor="middle" fill="#d97706">~1,700</text>
+        <text x="320" y="180" font-size="10" text-anchor="middle" fill="#475569">UK road deaths</text>
+        <text x="320" y="194" font-size="10" text-anchor="middle" fill="#475569">every single year</text>
+        <line x1="242" y1="210" x2="398" y2="210" stroke="#F1F5F9"/>
+        <text x="320" y="228" font-size="10" font-weight="700" text-anchor="middle" fill="#d97706">Media coverage: very low</text>
+        <text x="320" y="246" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">"feels routine"</text>
+
+        <text x="220" y="316" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">We judge risk by how easily examples come to mind —</text>
+        <text x="220" y="336" font-size="11" text-anchor="middle" fill="#475569">not by how often the event actually happens.</text>
+        <text x="220" y="360" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">The vivid plane-crash image is overweighted. The daily road accident is not.</text>
       </g>
 
       <g class="idl-3" style="display:none">
@@ -11177,26 +11163,28 @@ window.ECONOS_ICONS = {
         <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Loss aversion — losses hurt twice as much as gains feel good</text>
         <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Kahneman &amp; Tversky: pain of losing £100 ≈ joy of gaining ~£200.</text>
 
-        <line x1="220" y1="78" x2="220" y2="208" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
-        <text x="220" y="74" font-size="9" font-weight="700" text-anchor="middle" fill="#94A3B8">£0 reference point</text>
+        <line x1="120" y1="74" x2="120" y2="212" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <text x="120" y="70" font-size="9" font-weight="700" text-anchor="middle" fill="#94A3B8">£0 reference</text>
 
-        <text x="35" y="108" font-size="11" font-weight="800" fill="#059669">Gain £100</text>
-        <text x="35" y="125" font-size="22">😊</text>
-        <rect x="220" y="102" width="60" height="24" rx="3" fill="#DCFCE7" stroke="#059669" stroke-width="1.5"/>
-        <text x="250" y="118" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">+1 joy</text>
+        <text x="36" y="106" font-size="11" font-weight="700" fill="#334155">Gain £100</text>
+        <text x="36" y="122" font-size="9.5" fill="#64748B">+1 unit of wellbeing</text>
+        <rect x="120" y="96" width="80" height="22" rx="3" fill="#DCFCE7" stroke="#059669" stroke-width="1"/>
+        <text x="162" y="111" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">+1×</text>
 
-        <text x="35" y="170" font-size="11" font-weight="800" fill="#dc2626">Lose £100</text>
-        <text x="35" y="187" font-size="22">😖</text>
-        <rect x="100" y="164" width="120" height="24" rx="3" fill="#FEE2E2" stroke="#dc2626" stroke-width="1.5"/>
-        <text x="160" y="180" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">−2 pain</text>
+        <text x="36" y="162" font-size="11" font-weight="700" fill="#334155">Lose £100</text>
+        <text x="36" y="178" font-size="9.5" fill="#64748B">−2 units of wellbeing</text>
+        <rect x="120" y="152" width="160" height="22" rx="3" fill="#FEE2E2" stroke="#dc2626" stroke-width="1"/>
+        <text x="202" y="167" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">−2×</text>
+        <text x="120" y="200" font-size="9" fill="#94A3B8" font-style="italic">same £100, same reference point →</text>
 
-        <rect x="30" y="222" width="380" height="78" rx="10" fill="#F3E8FF" stroke="#DDD6FE"/>
-        <text x="220" y="242" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Behaviour this produces:</text>
-        <text x="220" y="262" font-size="10" text-anchor="middle" fill="#5b21b6">• Holding losing shares to avoid "crystallising" the loss</text>
-        <text x="220" y="278" font-size="10" text-anchor="middle" fill="#5b21b6">• The endowment effect — we overvalue what we already own</text>
-        <text x="220" y="294" font-size="10" text-anchor="middle" fill="#5b21b6">• Staying in worse mortgages / energy tariffs to dodge the "switch" decision</text>
+        <rect x="30" y="216" width="380" height="80" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="30" y="216" width="4" height="80" rx="2" fill="#7c3aed"/>
+        <text x="46" y="235" font-size="11" font-weight="700" fill="#7c3aed">Behaviour this produces:</text>
+        <text x="46" y="253" font-size="10" fill="#475569">Holding losing shares to avoid "crystallising" the loss</text>
+        <text x="46" y="269" font-size="10" fill="#475569">Overvaluing what you already own (the endowment effect)</text>
+        <text x="46" y="285" font-size="10" fill="#475569">Staying on worse mortgage / energy tariffs to avoid switching</text>
 
-        <text x="220" y="328" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Status quo wins — even when the status quo is objectively worse.</text>
+        <text x="220" y="330" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Status quo wins — even when objectively worse.</text>
         <text x="220" y="354" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful: opting out is framed as a "loss".</text>
       </g>
     </svg>
@@ -11253,51 +11241,58 @@ window.ECONOS_ICONS = {
   `,
 
   boundedSelfControlInteractive: `
-    <svg viewBox="0 0 440 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="420" fill="#F8FAFC" rx="10"/>
+    <svg viewBox="0 0 440 424" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <rect width="440" height="424" fill="#F8FAFC" rx="10"/>
       <g class="idl-base"></g>
 
       <g class="idl-1">
         <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Planner self vs Doer self — the conflict inside us</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Same person, two voices. One plans. The other does.</text>
 
-        <rect x="20" y="64" width="190" height="200" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-        <circle cx="115" cy="90" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
-        <text x="115" y="97" font-size="18" text-anchor="middle">🧠</text>
-        <text x="115" y="128" font-size="12" font-weight="900" text-anchor="middle" fill="#059669">Planner self</text>
-        <text x="115" y="142" font-size="9.5" text-anchor="middle" fill="#059669" font-style="italic">wants the long-term best</text>
-        <g font-size="10.5" fill="#065f46">
-          <text x="38" y="170">✓ Revise for exams</text>
-          <text x="38" y="190">✓ Save for retirement</text>
-          <text x="38" y="210">✓ Eat well</text>
-          <text x="38" y="230">✓ Exercise regularly</text>
-        </g>
-        <text x="115" y="254" font-size="9" text-anchor="middle" fill="#059669" font-style="italic">"future me will thank me"</text>
+        <rect x="20" y="64" width="190" height="188" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="20" y="64" width="190" height="5" rx="4" fill="#059669"/>
+        <text x="115" y="87" font-size="11.5" font-weight="700" text-anchor="middle" fill="#059669">Planner self</text>
+        <text x="115" y="101" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">wants the long-term best</text>
+        <line x1="30" y1="109" x2="200" y2="109" stroke="#F1F5F9"/>
+        <circle cx="34" cy="128" r="3.5" fill="#059669"/>
+        <text x="44" y="132" font-size="10.5" fill="#334155">Revise for exams</text>
+        <circle cx="34" cy="150" r="3.5" fill="#059669"/>
+        <text x="44" y="154" font-size="10.5" fill="#334155">Save for retirement</text>
+        <circle cx="34" cy="172" r="3.5" fill="#059669"/>
+        <text x="44" y="176" font-size="10.5" fill="#334155">Eat well</text>
+        <circle cx="34" cy="194" r="3.5" fill="#059669"/>
+        <text x="44" y="198" font-size="10.5" fill="#334155">Exercise regularly</text>
+        <text x="115" y="238" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"future me will thank me"</text>
 
-        <rect x="230" y="64" width="190" height="200" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-        <circle cx="325" cy="90" r="18" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
-        <text x="325" y="97" font-size="18" text-anchor="middle">😈</text>
-        <text x="325" y="128" font-size="12" font-weight="900" text-anchor="middle" fill="#7c3aed">Doer self</text>
-        <text x="325" y="142" font-size="9.5" text-anchor="middle" fill="#7c3aed" font-style="italic">wants the easy option now</text>
-        <g font-size="10.5" fill="#5b21b6">
-          <text x="248" y="170">✗ Scroll TikTok</text>
-          <text x="248" y="190">✗ Spend the bonus</text>
-          <text x="248" y="210">✗ Order Deliveroo</text>
-          <text x="248" y="230">✗ Skip the gym</text>
-        </g>
-        <text x="325" y="254" font-size="9" text-anchor="middle" fill="#7c3aed" font-style="italic">"future me's problem"</text>
+        <line x1="215" y1="74" x2="215" y2="244" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3"/>
+        <rect x="205" y="150" width="20" height="18" rx="3" fill="#E2E8F0"/>
+        <text x="215" y="163" font-size="9" font-weight="700" text-anchor="middle" fill="#64748B">vs</text>
 
-        <rect x="60" y="280" width="320" height="40" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-        <text x="100" y="304" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">Today</text>
-        <text x="100" y="316" font-size="14" text-anchor="middle">📅</text>
-        <text x="220" y="304" font-size="11" font-weight="700" text-anchor="middle" fill="#475569">→ time passes →</text>
-        <text x="340" y="304" font-size="11" font-weight="800" fill="#7c3aed" text-anchor="middle">Future</text>
-        <text x="340" y="316" font-size="14" text-anchor="middle">🏆</text>
+        <rect x="230" y="64" width="190" height="188" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="230" y="64" width="190" height="5" rx="4" fill="#7c3aed"/>
+        <text x="325" y="87" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7c3aed">Doer self</text>
+        <text x="325" y="101" font-size="9" text-anchor="middle" fill="#64748B" font-style="italic">wants the easy option now</text>
+        <line x1="240" y1="109" x2="410" y2="109" stroke="#F1F5F9"/>
+        <circle cx="244" cy="128" r="3.5" fill="#7c3aed"/>
+        <text x="254" y="132" font-size="10.5" fill="#334155">Scroll TikTok</text>
+        <circle cx="244" cy="150" r="3.5" fill="#7c3aed"/>
+        <text x="254" y="154" font-size="10.5" fill="#334155">Spend the bonus</text>
+        <circle cx="244" cy="172" r="3.5" fill="#7c3aed"/>
+        <text x="254" y="176" font-size="10.5" fill="#334155">Order a takeaway</text>
+        <circle cx="244" cy="194" r="3.5" fill="#7c3aed"/>
+        <text x="254" y="198" font-size="10.5" fill="#334155">Skip the gym</text>
+        <text x="325" y="238" font-size="9" fill="#64748B" font-style="italic" text-anchor="middle">"future me's problem"</text>
 
-        <rect x="20" y="336" width="400" height="74" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
-        <text x="220" y="358" font-size="12" font-weight="900" text-anchor="middle" fill="#92400E">We overweight the present and undervalue the future.</text>
-        <text x="220" y="378" font-size="10.5" text-anchor="middle" fill="#78350F">This is <tspan font-weight="800">bounded self-control</tspan> — the gap between knowing better and doing better.</text>
-        <text x="220" y="396" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Not laziness. A structural feature of how humans weigh time.</text>
+        <rect x="40" y="260" width="360" height="28" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <text x="96" y="278" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Today</text>
+        <line x1="126" y1="274" x2="314" y2="274" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <polygon points="312,270 312,278 320,274" fill="#CBD5E1"/>
+        <text x="354" y="278" font-size="11" font-weight="700" fill="#7c3aed" text-anchor="middle">Future</text>
+
+        <rect x="20" y="304" width="400" height="74" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+        <text x="220" y="326" font-size="11.5" font-weight="800" text-anchor="middle" fill="#92400E">We overweight the present and undervalue the future.</text>
+        <text x="220" y="346" font-size="10.5" text-anchor="middle" fill="#78350F">This is <tspan font-weight="800">bounded self-control</tspan> — the gap between knowing better and doing better.</text>
+        <text x="220" y="364" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Not laziness — a structural feature of how humans weigh time.</text>
       </g>
 
       <g class="idl-2" style="display:none">
@@ -11339,43 +11334,36 @@ window.ECONOS_ICONS = {
         <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Commitment devices — how to beat your future self</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">If the present self is unreliable, lock the choice in advance.</text>
 
-        <rect x="20" y="68" width="130" height="120" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-        <circle cx="85" cy="92" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
-        <text x="85" y="99" font-size="18" text-anchor="middle">🔒</text>
-        <text x="85" y="126" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Auto-defaults</text>
-        <text x="85" y="148" font-size="9.5" text-anchor="middle" fill="#065f46">Decision pre-made</text>
-        <text x="85" y="162" font-size="9.5" text-anchor="middle" fill="#065f46">on your behalf</text>
-        <text x="85" y="180" font-size="9" text-anchor="middle" fill="#059669" font-style="italic">e.g. pension enrolment</text>
+        <rect x="20" y="68" width="400" height="68" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="20" y="68" width="4" height="68" rx="2" fill="#059669"/>
+        <circle cx="44" cy="100" r="11" fill="#DCFCE7" stroke="#059669" stroke-width="1"/>
+        <text x="44" y="105" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1</text>
+        <text x="64" y="92" font-size="11" font-weight="700" fill="#059669">Auto-defaults</text>
+        <text x="64" y="108" font-size="9.5" fill="#475569">Decision pre-made on your behalf — e.g. pension auto-enrolment, savings round-ups.</text>
+        <text x="415" y="100" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">lowest friction</text>
 
-        <rect x="155" y="68" width="130" height="120" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-        <circle cx="220" cy="92" r="18" fill="#fff" stroke="#FDE68A" stroke-width="1.5"/>
-        <text x="220" y="99" font-size="18" text-anchor="middle">⏱️</text>
-        <text x="220" y="126" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">Pre-commitment</text>
-        <text x="220" y="148" font-size="9.5" text-anchor="middle" fill="#92400E">Make the future</text>
-        <text x="220" y="162" font-size="9.5" text-anchor="middle" fill="#92400E">choice irreversible</text>
-        <text x="220" y="180" font-size="9" text-anchor="middle" fill="#d97706" font-style="italic">e.g. gym contracts</text>
+        <rect x="20" y="146" width="400" height="68" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="20" y="146" width="4" height="68" rx="2" fill="#d97706"/>
+        <circle cx="44" cy="178" r="11" fill="#FEF3C7" stroke="#d97706" stroke-width="1"/>
+        <text x="44" y="183" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">2</text>
+        <text x="64" y="170" font-size="11" font-weight="700" fill="#d97706">Pre-commitment</text>
+        <text x="64" y="186" font-size="9.5" fill="#475569">Make the future choice costly to reverse — gym contracts, investment lock-ins, NHS quit-dates.</text>
+        <text x="415" y="178" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">medium friction</text>
 
-        <rect x="290" y="68" width="130" height="120" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-        <circle cx="355" cy="92" r="18" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
-        <text x="355" y="99" font-size="18" text-anchor="middle">📵</text>
-        <text x="355" y="126" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Remove temptation</text>
-        <text x="355" y="148" font-size="9.5" text-anchor="middle" fill="#5b21b6">Take the doer's</text>
-        <text x="355" y="162" font-size="9.5" text-anchor="middle" fill="#5b21b6">options away</text>
-        <text x="355" y="180" font-size="9" text-anchor="middle" fill="#7c3aed" font-style="italic">e.g. app blockers</text>
+        <rect x="20" y="224" width="400" height="68" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="20" y="224" width="4" height="68" rx="2" fill="#7c3aed"/>
+        <circle cx="44" cy="256" r="11" fill="#F3E8FF" stroke="#7c3aed" stroke-width="1"/>
+        <text x="44" y="261" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">3</text>
+        <text x="64" y="248" font-size="11" font-weight="700" fill="#7c3aed">Remove temptation</text>
+        <text x="64" y="264" font-size="9.5" fill="#475569">Take the doer's options away — phone-free study apps, leaving credit cards at home.</text>
+        <text x="415" y="256" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">highest friction</text>
 
-        <rect x="20" y="204" width="400" height="120" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
-        <text x="220" y="226" font-size="12" font-weight="800" text-anchor="middle" fill="#0B1426">Real-life UK examples</text>
-        <g font-size="10.5" fill="#334155">
-          <text x="40" y="252">💷 <tspan font-weight="700">Pensions:</tspan> auto-enrolment locks you in unless you opt out</text>
-          <text x="40" y="272">🥗 <tspan font-weight="700">Diet:</tspan> meal-prep on Sunday removes the daily Deliveroo temptation</text>
-          <text x="40" y="292">📚 <tspan font-weight="700">Revision:</tspan> phone in another room → can't doomscroll mid-essay</text>
-          <text x="40" y="312">🚭 <tspan font-weight="700">Smoking:</tspan> NHS Stop Smoking quit-dates &amp; nicotine patches</text>
-        </g>
+        <rect x="20" y="308" width="400" height="58" rx="6" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+        <text x="220" y="330" font-size="11.5" font-weight="800" text-anchor="middle" fill="#92400E">All three work because the planner's goal is locked before</text>
+        <text x="220" y="348" font-size="11" text-anchor="middle" fill="#78350F">the doer gets to vote — bypassing the present-bias problem.</text>
 
-        <rect x="20" y="338" width="400" height="68" rx="10" fill="#DBEAFE" stroke="#BFDBFE"/>
-        <text x="220" y="360" font-size="11.5" font-weight="800" text-anchor="middle" fill="#1d4ed8">Why this matters for policy</text>
-        <text x="220" y="380" font-size="10.5" text-anchor="middle" fill="#1e3a8a">Bounded self-control creates <tspan font-weight="800">internalities</tspan> — costs we impose on our future self.</text>
-        <text x="220" y="396" font-size="10" text-anchor="middle" fill="#1e3a8a">It justifies paternalistic nudges even without externalities. Card 4 shows how.</text>
+        <rect x="20" y="378" width="400" height="34" rx="6" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1"/>
+        <text x="220" y="400" font-size="10" text-anchor="middle" fill="#1d4ed8">Bounded self-control creates <tspan font-weight="700">internalities</tspan> — costs we impose on our future self. Card 4 shows the policy response.</text>
       </g>
     </svg>
   `,
@@ -11607,39 +11595,41 @@ window.ECONOS_ICONS = {
       <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework — small tweaks, big effects</text>
       <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK Behavioural Insights Team (founded 2010). Same mechanism every time.</text>
 
-      <rect x="18" y="68" width="120" height="150" rx="10" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1.5"/>
-      <circle cx="78" cy="94" r="20" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
-      <text x="78" y="102" font-size="22" text-anchor="middle">🏛️</text>
-      <text x="78" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">Choice</text>
-      <text x="78" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">architecture</text>
-      <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">Redesign the choice</text>
-      <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment — the</text>
-      <text x="78" y="200" font-size="9.5" text-anchor="middle" fill="#1e3a8a">default, the framing,</text>
-      <text x="78" y="214" font-size="9.5" text-anchor="middle" fill="#1e3a8a">the wording.</text>
+      <rect x="18" y="68" width="120" height="150" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
+      <rect x="18" y="68" width="120" height="4" rx="3" fill="#2563EB"/>
+      <circle cx="78" cy="93" r="13" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="78" y="98" font-size="13" font-weight="800" text-anchor="middle" fill="#1d4ed8">1</text>
+      <text x="78" y="122" font-size="11" font-weight="700" text-anchor="middle" fill="#1d4ed8">Choice</text>
+      <text x="78" y="136" font-size="11" font-weight="700" text-anchor="middle" fill="#1d4ed8">architecture</text>
+      <text x="78" y="158" font-size="9.5" text-anchor="middle" fill="#1e3a8a">Redesign the choice</text>
+      <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment — default,</text>
+      <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">framing, wording.</text>
 
-      <text x="160" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+      <line x1="138" y1="148" x2="182" y2="148" stroke="#CBD5E1" stroke-width="1.5"/>
+      <polygon points="180,144 180,152 188,148" fill="#CBD5E1"/>
 
-      <rect x="182" y="68" width="120" height="150" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-      <circle cx="242" cy="94" r="20" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
-      <text x="242" y="102" font-size="22" text-anchor="middle">🧑</text>
-      <text x="242" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Behaviour</text>
-      <text x="242" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">shifts</text>
-      <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">People keep their</text>
-      <text x="242" y="186" font-size="9.5" text-anchor="middle" fill="#5b21b6">freedom of choice</text>
-      <text x="242" y="200" font-size="9.5" text-anchor="middle" fill="#5b21b6">— but the easy path</text>
-      <text x="242" y="214" font-size="9.5" text-anchor="middle" fill="#5b21b6">leads to a better one.</text>
+      <rect x="182" y="68" width="120" height="150" rx="8" fill="#fff" stroke="#DDD6FE" stroke-width="1"/>
+      <rect x="182" y="68" width="120" height="4" rx="3" fill="#7c3aed"/>
+      <circle cx="242" cy="93" r="13" fill="#F3E8FF" stroke="#C4B5FD" stroke-width="1.5"/>
+      <text x="242" y="98" font-size="13" font-weight="800" text-anchor="middle" fill="#7c3aed">2</text>
+      <text x="242" y="122" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">Behaviour</text>
+      <text x="242" y="136" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">shifts</text>
+      <text x="242" y="158" font-size="9.5" text-anchor="middle" fill="#5b21b6">Freedom preserved</text>
+      <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">— but the easy path</text>
+      <text x="242" y="186" font-size="9.5" text-anchor="middle" fill="#5b21b6">leads to a better one.</text>
 
-      <text x="324" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+      <line x1="302" y1="148" x2="346" y2="148" stroke="#CBD5E1" stroke-width="1.5"/>
+      <polygon points="344,144 344,152 352,148" fill="#CBD5E1"/>
 
-      <rect x="346" y="68" width="74" height="150" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="383" cy="94" r="20" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
-      <text x="383" y="102" font-size="22" text-anchor="middle">🏅</text>
-      <text x="383" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Better</text>
-      <text x="383" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">outcomes</text>
-      <text x="383" y="172" font-size="9" text-anchor="middle" fill="#065f46">For people</text>
-      <text x="383" y="186" font-size="9" text-anchor="middle" fill="#065f46">&amp; society</text>
-      <text x="383" y="202" font-size="9" text-anchor="middle" fill="#065f46">— measured</text>
-      <text x="383" y="214" font-size="9" text-anchor="middle" fill="#065f46">via RCTs.</text>
+      <rect x="346" y="68" width="74" height="150" rx="8" fill="#fff" stroke="#86EFAC" stroke-width="1"/>
+      <rect x="346" y="68" width="74" height="4" rx="3" fill="#059669"/>
+      <circle cx="383" cy="93" r="13" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.5"/>
+      <text x="383" y="98" font-size="13" font-weight="800" text-anchor="middle" fill="#059669">3</text>
+      <text x="383" y="122" font-size="11" font-weight="700" text-anchor="middle" fill="#059669">Better</text>
+      <text x="383" y="136" font-size="11" font-weight="700" text-anchor="middle" fill="#059669">outcomes</text>
+      <text x="383" y="158" font-size="9" text-anchor="middle" fill="#065f46">For people</text>
+      <text x="383" y="172" font-size="9" text-anchor="middle" fill="#065f46">&amp; society</text>
+      <text x="383" y="188" font-size="9" text-anchor="middle" fill="#065f46">Tested via RCT.</text>
 
       <rect x="20" y="236" width="400" height="60" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
       <text x="220" y="256" font-size="11" font-weight="800" text-anchor="middle" fill="#92400E">Three features of every successful nudge:</text>
@@ -11660,35 +11650,42 @@ window.ECONOS_ICONS = {
       <text x="36" y="142" font-size="9" font-weight="700" fill="#94A3B8">soft</text>
       <text x="404" y="142" font-size="9" font-weight="700" text-anchor="end" fill="#94A3B8">hard</text>
 
-      <rect x="20" y="78" width="92" height="84" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <circle cx="66" cy="104" r="18" fill="#fff" stroke="#86EFAC" stroke-width="1.5"/>
-      <text x="66" y="111" font-size="18" text-anchor="middle">ℹ️</text>
-      <text x="66" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Information</text>
-      <text x="66" y="152" font-size="9" text-anchor="middle" fill="#065f46">give the facts</text>
+      <rect x="20" y="78" width="92" height="84" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="20" y="78" width="92" height="4" rx="3" fill="#059669"/>
+      <circle cx="66" cy="107" r="13" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.5"/>
+      <text x="66" y="112" font-size="12" font-weight="800" text-anchor="middle" fill="#059669">I</text>
+      <text x="66" y="138" font-size="11" font-weight="700" text-anchor="middle" fill="#059669">Information</text>
+      <text x="66" y="152" font-size="9" text-anchor="middle" fill="#475569">give the facts</text>
 
-      <text x="120" y="124" font-size="22" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+      <line x1="112" y1="120" x2="130" y2="120" stroke="#CBD5E1" stroke-width="1.5"/>
+      <polygon points="128,116 128,124 136,120" fill="#CBD5E1"/>
 
-      <rect x="130" y="78" width="92" height="84" rx="10" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="1.5"/>
-      <circle cx="176" cy="104" r="18" fill="#fff" stroke="#DDD6FE" stroke-width="1.5"/>
-      <text x="176" y="111" font-size="18" text-anchor="middle">👆</text>
-      <text x="176" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">Nudge</text>
-      <text x="176" y="152" font-size="9" text-anchor="middle" fill="#5b21b6">design the choice</text>
+      <rect x="130" y="78" width="92" height="84" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="130" y="78" width="92" height="4" rx="3" fill="#7c3aed"/>
+      <circle cx="176" cy="107" r="13" fill="#F3E8FF" stroke="#C4B5FD" stroke-width="1.5"/>
+      <text x="176" y="112" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">N</text>
+      <text x="176" y="138" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">Nudge</text>
+      <text x="176" y="152" font-size="9" text-anchor="middle" fill="#475569">design the choice</text>
 
-      <text x="230" y="124" font-size="22" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+      <line x1="222" y1="120" x2="240" y2="120" stroke="#CBD5E1" stroke-width="1.5"/>
+      <polygon points="238,116 238,124 246,120" fill="#CBD5E1"/>
 
-      <rect x="240" y="78" width="92" height="84" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-      <circle cx="286" cy="104" r="18" fill="#fff" stroke="#FDE68A" stroke-width="1.5"/>
-      <text x="286" y="111" font-size="18" text-anchor="middle">💷</text>
-      <text x="286" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">Tax / subsidy</text>
-      <text x="286" y="152" font-size="9" text-anchor="middle" fill="#92400E">change the price</text>
+      <rect x="240" y="78" width="92" height="84" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="240" y="78" width="92" height="4" rx="3" fill="#d97706"/>
+      <circle cx="286" cy="107" r="13" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="286" y="112" font-size="12" font-weight="800" text-anchor="middle" fill="#d97706">T</text>
+      <text x="286" y="138" font-size="11" font-weight="700" text-anchor="middle" fill="#d97706">Tax / subsidy</text>
+      <text x="286" y="152" font-size="9" text-anchor="middle" fill="#475569">change the price</text>
 
-      <text x="340" y="124" font-size="22" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
+      <line x1="332" y1="120" x2="348" y2="120" stroke="#CBD5E1" stroke-width="1.5"/>
+      <polygon points="346,116 346,124 354,120" fill="#CBD5E1"/>
 
-      <rect x="348" y="78" width="72" height="84" rx="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.5"/>
-      <circle cx="384" cy="104" r="18" fill="#fff" stroke="#FECACA" stroke-width="1.5"/>
-      <text x="384" y="111" font-size="18" text-anchor="middle">🛡️</text>
-      <text x="384" y="138" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">Regulation</text>
-      <text x="384" y="152" font-size="9" text-anchor="middle" fill="#7f1d1d">ban / require</text>
+      <rect x="348" y="78" width="72" height="84" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="348" y="78" width="72" height="4" rx="3" fill="#dc2626"/>
+      <circle cx="384" cy="107" r="13" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <text x="384" y="112" font-size="12" font-weight="800" text-anchor="middle" fill="#dc2626">R</text>
+      <text x="384" y="138" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">Regulation</text>
+      <text x="384" y="152" font-size="9" text-anchor="middle" fill="#475569">ban / require</text>
 
       <text x="220" y="184" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">UK examples at each level:</text>
       <g font-size="9" fill="#475569">
@@ -11711,21 +11708,23 @@ window.ECONOS_ICONS = {
         <text x="40" y="326"><tspan font-weight="700" fill="#dc2626">Regulation</tspan>: when harm is severe, addictive, or affects others</text>
       </g>
 
-      <rect x="20" y="342" width="195" height="106" rx="10" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
-      <text x="117" y="362" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">✓ Nudge is enough</text>
-      <text x="117" y="380" font-size="9.5" text-anchor="middle" fill="#065f46">Auto-enrolment lifted pension</text>
-      <text x="117" y="394" font-size="9.5" text-anchor="middle" fill="#065f46">participation 55% → 87%.</text>
-      <text x="117" y="412" font-size="9" text-anchor="middle" fill="#065f46" font-style="italic">The barrier was inertia,</text>
-      <text x="117" y="426" font-size="9" text-anchor="middle" fill="#065f46" font-style="italic">not money or knowledge —</text>
-      <text x="117" y="440" font-size="9" text-anchor="middle" fill="#065f46" font-style="italic">so a nudge fit perfectly.</text>
+      <rect x="20" y="342" width="195" height="106" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="20" y="342" width="4" height="106" rx="2" fill="#059669"/>
+      <text x="118" y="362" font-size="11" font-weight="700" text-anchor="middle" fill="#059669">When a nudge is enough</text>
+      <text x="38" y="380" font-size="9.5" fill="#475569">Auto-enrolment: pension</text>
+      <text x="38" y="394" font-size="9.5" fill="#475569">participation 55% → 87%.</text>
+      <text x="38" y="412" font-size="9" fill="#64748B" font-style="italic">The barrier was inertia,</text>
+      <text x="38" y="426" font-size="9" fill="#64748B" font-style="italic">not money — so a nudge</text>
+      <text x="38" y="440" font-size="9" fill="#64748B" font-style="italic">fit perfectly.</text>
 
-      <rect x="225" y="342" width="195" height="106" rx="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.5"/>
-      <text x="322" y="362" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">✗ Nudge is not enough</text>
-      <text x="322" y="380" font-size="9.5" text-anchor="middle" fill="#7f1d1d">Carbon at scale, addictive</text>
-      <text x="322" y="394" font-size="9.5" text-anchor="middle" fill="#7f1d1d">products, severe poverty.</text>
-      <text x="322" y="412" font-size="9" text-anchor="middle" fill="#7f1d1d" font-style="italic">The bias isn't the binding</text>
-      <text x="322" y="426" font-size="9" text-anchor="middle" fill="#7f1d1d" font-style="italic">constraint — affordability,</text>
-      <text x="322" y="440" font-size="9" text-anchor="middle" fill="#7f1d1d" font-style="italic">addiction, or price is.</text>
+      <rect x="225" y="342" width="195" height="106" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="225" y="342" width="4" height="106" rx="2" fill="#dc2626"/>
+      <text x="323" y="362" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">When a nudge isn't enough</text>
+      <text x="243" y="380" font-size="9.5" fill="#475569">Carbon at scale, addictive</text>
+      <text x="243" y="394" font-size="9.5" fill="#475569">products, severe poverty.</text>
+      <text x="243" y="412" font-size="9" fill="#64748B" font-style="italic">The binding constraint is</text>
+      <text x="243" y="426" font-size="9" fill="#64748B" font-style="italic">affordability, addiction,</text>
+      <text x="243" y="440" font-size="9" fill="#64748B" font-style="italic">or price — not inertia.</text>
     </svg>
   `,
 

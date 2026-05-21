@@ -174,12 +174,12 @@
       font-family: 'Fraunces', Georgia, serif;
       font-variation-settings: var(--fr-h);
       font-weight: 700;
-      font-size: clamp(44px, 5.5vw, 68px);
+      font-size: clamp(40px, 4.4vw, 60px);
       letter-spacing: -0.032em;
       line-height: 1.04;
       color: var(--ink);
       margin-bottom: 24px;
-      text-wrap: balance;
+      white-space: nowrap;
     }
     .hp-hero__headline--blue { color: var(--blue); }
 
@@ -232,8 +232,14 @@
       object-position: 55% 8%;
       display: block;
       background: transparent;
-      -webkit-mask-image: linear-gradient(160deg, transparent 0%, rgba(0,0,0,0.6) 25%, black 45%);
-      mask-image: linear-gradient(160deg, transparent 0%, rgba(0,0,0,0.6) 25%, black 45%);
+      -webkit-mask-image:
+        linear-gradient(160deg, transparent 0%, rgba(0,0,0,0.6) 25%, black 45%),
+        linear-gradient(to top, transparent 0%, black 18%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(160deg, transparent 0%, rgba(0,0,0,0.6) 25%, black 45%),
+        linear-gradient(to top, transparent 0%, black 18%);
+      mask-composite: intersect;
     }
     .hp-hero__right {
       position: relative;

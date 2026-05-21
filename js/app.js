@@ -470,12 +470,13 @@
         const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
         const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
         const isActive = i === 0;
+        const showAttr = Array.isArray(v.show) ? ` data-id-show='${JSON.stringify(v.show)}'` : '';
         return `<button
           type="button"
           data-action="id-advance"
           data-id-uid="${uid}"
           data-id-vi="${i}"
-          data-id-tone="${toneName}"
+          data-id-tone="${toneName}"${showAttr}
           style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${isActive ? t.bg : '#fff'};border:1px solid ${isActive ? t.border : '#E7E7EA'};border-radius:10px;box-shadow:${isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)'};cursor:pointer;font-family:inherit;text-align:left;transition:background 0.18s,border-color 0.18s,box-shadow 0.18s;">
           <span data-id-circle style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">${i + 1}</span>
           <span data-id-label style="flex:1;min-width:0;font-size:13px;font-weight:700;color:${isActive ? t.label : '#0B1426'};line-height:1.3;">${v.label}</span>
@@ -3663,10 +3664,12 @@
       const idRoot = root.querySelector(`[data-id-root="${uid}"]`);
       if (!idRoot) return;
       const layers = JSON.parse(idRoot.dataset.idLayers || '[]');
+      const explicitShow = target.dataset.idShow ? JSON.parse(target.dataset.idShow) : null;
 
       layers.forEach((cls, i) => {
+        const visible = explicitShow ? explicitShow.includes(cls) : i < vi;
         idRoot.querySelectorAll('.' + cls).forEach(el => {
-          el.style.display = i < vi ? '' : 'none';
+          el.style.display = visible ? '' : 'none';
         });
       });
 

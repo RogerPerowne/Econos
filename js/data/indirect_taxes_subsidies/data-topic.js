@@ -49,9 +49,10 @@ window.ECONOS_TOPIC = {
           {
             label: 'Ad valorem tax',
             tone: 'amber',
+            show: ['idl-2'],
             head: 'Ad valorem tax — pivot shift (e.g. 20% VAT)',
-            body: 'A percentage of price (e.g. 20% VAT). At a low price the £ amount of tax is small; at a high price it is large. This makes the supply curve <strong>pivot</strong> upward — the gap between S and S+T% widens as price rises. Both shifts are shown: S+T in blue (parallel — constant gap) and S+T% in amber (pivoted — widening gap).',
-            analysis: 'Practical implication: ad valorem taxes yield more revenue on expensive goods and scale automatically with inflation. Specific taxes erode in real terms unless manually uprated — which is why UK alcohol duties were frozen for years while VAT revenue grew automatically.'
+            body: 'A percentage of price (e.g. 20% VAT). The £ amount of tax is small at low prices and large at high prices — so the supply curve <strong>pivots</strong> upward. The gap between S and S+T% widens as price rises.',
+            analysis: 'Ad valorem taxes yield more revenue on expensive goods and scale automatically with inflation. Specific taxes erode in real terms unless manually uprated — which is why UK alcohol duties were frozen for years while VAT revenue grew automatically.'
           }
         ]
       },

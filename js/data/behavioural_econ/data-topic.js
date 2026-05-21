@@ -140,19 +140,13 @@ window.ECONOS_TOPIC = {
       id: 'behavioural_econ_4',
       stepLabel: 'Learn: Step 4 of 5',
       title: 'Nudges that worked — Britain\'s behavioural revolution',
-      tip: { icon: '🇬🇧', tone: 'blue', text: 'Britain runs the world\'s most active behavioural government. The <strong>Behavioural Insights Team</strong> (BIT, founded 2010 under the Cameron government) has delivered measurable policy wins at near-zero cost. Click through the framework, four case studies, and the four-pillar test for why each one worked.' },
+      tip: { icon: '🇬🇧', tone: 'blue', text: 'Britain runs the world\'s most active behavioural government. The <strong>Behavioural Insights Team</strong> (BIT, founded 2010 under the Cameron government) has delivered measurable policy wins at near-zero cost. Four UK case studies below — each illustrating the framework in action.' },
+      diagramKey: 'bitFrameworkDiagram',
       interactiveDiagram: {
         svgKey: 'ukNudgesInteractive',
-        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4', 'idl-5', 'idl-6'],
+        label: 'Four UK cases in action',
+        layers: ['idl-1', 'idl-2', 'idl-3', 'idl-4', 'idl-6'],
         views: [
-          {
-            label: 'BIT framework',
-            tone: 'blue',
-            show: ['idl-5'],
-            head: 'The mechanism — choice architecture in three steps',
-            body: 'Every BIT intervention follows the same template: redesign the <strong>choice architecture</strong> → people\'s <strong>behaviour</strong> shifts → <strong>better outcomes</strong> follow. Freedom of choice is preserved — only the path of least resistance changes.',
-            analysis: 'Thaler &amp; Sunstein call this <strong>libertarian paternalism</strong>: a paternalist outcome with libertarian means. Every successful nudge has the same three features — <strong>near-zero cost</strong>, <strong>choice preserved</strong>, and <strong>evidence-tested via RCT</strong>. The next four tabs are real UK cases.'
-          },
           {
             label: 'Pension auto-enrol',
             tone: 'green',

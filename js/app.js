@@ -647,6 +647,7 @@
     // Each point: { icon?, title, headline?, body?, tone? }. Used as a punchy
     // "what to know" summary that complements (or replaces) the chunky `flow`.
     if (c.keyPoints && c.keyPoints.length) {
+      if (c.keyPointsLabel) content += genSecLabel(c.keyPointsEmoji || '🔑', c.keyPointsLabel);
       const kpTones = ['green', 'amber', 'blue', 'purple', 'rose', 'slate'];
       const n = c.keyPoints.length;
       content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:14px;margin-bottom:26px;">`;

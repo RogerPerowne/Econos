@@ -30,6 +30,10 @@ window.ECONOS_TOPIC = {
       title: 'Why people aren\'t rational',
       tip: { icon: '🧠', tone: 'amber', text: 'Kahneman\'s two-systems framework underpins all of behavioural economics. <strong>System 1</strong> is fast, automatic and biased. <strong>System 2</strong> is slow, deliberate and rarely engaged. Almost every bias in this topic happens when System 1 takes over a job that needed System 2.' },
       diagramKey: 'whyNotRationalDiagram',
+      diagramLabel: 'Rational vs real',
+      diagramEmoji: '🧠',
+      keyPointsLabel: 'Three departures from rationality',
+      keyPointsEmoji: '🔍',
       keyPoints: [
         { title: 'Limited attention', icon: '🔍', headline: 'We process what\'s easiest, not most relevant', body: 'System 1 filters ruthlessly — first numbers, familiar brands, vivid images. Whatever is most salient gets weighted, regardless of statistical importance.', tone: 'amber' },
         { title: 'Status & heuristics', icon: '👥', headline: 'We copy others and follow rules of thumb', body: 'Mental shortcuts work well most of the time and fail predictably in specific contexts. Social norms and default options exploit this directly.', tone: 'purple' },

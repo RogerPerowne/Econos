@@ -2932,7 +2932,7 @@ window.ECONOS_ICONS = {
         <line x1="60" y1="230" x2="295" y2="230" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="295" y1="230" x2="295" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="295" cy="230" r="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
-        <text x="305" y="222" font-size="12" font-weight="700" fill="#DC2626">E_market</text>
+        <text x="305" y="252" font-size="12" font-weight="700" fill="#DC2626">E_market</text>
         <text x="46" y="234" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">P_m</text>
         <text x="295" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Q_m</text>
       </g>
@@ -2964,7 +2964,7 @@ window.ECONOS_ICONS = {
         <g clip-path="url(#ne-chart-clip)">
           <line x1="100" y1="290" x2="490" y2="10" stroke="#2563EB" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round"/>
         </g>
-        <text x="498" y="14" font-size="13" font-weight="700" fill="#2563EB">MSC</text>
+        <text x="452" y="34" font-size="13" font-weight="700" fill="#2563EB">MSC</text>
       </g>
 
       <!-- ===== LAYER: MEC bracket (extension only) ===== -->
@@ -3000,7 +3000,7 @@ window.ECONOS_ICONS = {
         <line x1="60" y1="190" x2="239" y2="190" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="239" y1="190" x2="239" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="239" cy="190" r="7" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
-        <text x="230" y="182" font-size="13" font-weight="700" fill="#059669" text-anchor="end">E*</text>
+        <text x="224" y="174" font-size="13" font-weight="700" fill="#059669" text-anchor="end">E*</text>
         <text x="46" y="194" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P*</text>
         <text x="239" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q*</text>
       </g>

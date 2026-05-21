@@ -673,6 +673,19 @@
         content += tiles.join('');
       }
       content += `</div>`;
+
+      // Formula pill row — renders immediately after the keyPoints grid.
+      // Pattern: keyPointsFormula: [{ label, tone } | { op: '+' }]
+      if (c.keyPointsFormula && c.keyPointsFormula.length) {
+        const pillParts = c.keyPointsFormula.map(item => {
+          if (item.op) {
+            return `<span style="font-size:22px;font-weight:900;color:#94A3B8;padding:0 4px;">${item.op}</span>`;
+          }
+          const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
+          return `<span style="display:inline-flex;align-items:center;padding:7px 18px;border-radius:999px;background:${t.bg};border:2px solid ${t.accent};color:${t.label};font-size:15px;font-weight:800;letter-spacing:0.03em;white-space:nowrap;">${item.label}</span>`;
+        }).join('');
+        content += `<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:-10px;margin-bottom:26px;flex-wrap:wrap;">${pillParts}</div>`;
+      }
     }
 
     // Examples — 2-col responsive grid of numbered tiles, each with a large illustration

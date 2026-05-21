@@ -30,7 +30,11 @@ window.ECONOS_TOPIC = {
       title: 'Why people aren\'t rational',
       tip: { icon: '🧠', tone: 'amber', text: 'Kahneman\'s two-systems framework underpins all of behavioural economics. <strong>System 1</strong> is fast, automatic and biased. <strong>System 2</strong> is slow, deliberate and rarely engaged. Almost every bias in this topic happens when System 1 takes over a job that needed System 2.' },
       diagramKey: 'whyNotRationalDiagram',
-      body: 'Traditional economics assumes <em>homo economicus</em> — fully rational, perfectly informed, with stable preferences. Behavioural economics shows real people depart from this in <strong>systematic, predictable</strong> ways. Daniel Kahneman won the 2002 Nobel for explaining why: two distinct mental systems share the workload, but the fast one dominates.<br><br>This topic builds outward from there. <strong>Card 2</strong> shows four specific biases System 1 produces; <strong>card 3</strong> shows how the present self over-rules the future self; <strong>card 4</strong> shows the UK policies built on these insights; <strong>card 5</strong> places nudges on the policy spectrum.',
+      keyPoints: [
+        { title: 'Limited attention', icon: '🔍', headline: 'We process what\'s easiest, not most relevant', body: 'System 1 filters ruthlessly — first numbers, familiar brands, vivid images. Whatever is most salient gets weighted, regardless of statistical importance.', tone: 'amber' },
+        { title: 'Status & heuristics', icon: '👥', headline: 'We copy others and follow rules of thumb', body: 'Mental shortcuts work well most of the time and fail predictably in specific contexts. Social norms and default options exploit this directly.', tone: 'purple' },
+        { title: 'Present bias', icon: '⏱️', headline: 'We overweight today vs every future day', body: 'The planner self sets intentions; the doer self acts in the moment. Pensions, diets and exercise routines all suffer from this structural gap.', tone: 'blue' }
+      ],
       keyTerms: [
         { term: 'Bounded rationality', def: 'Decision-making that is rational within cognitive limits — uses heuristics rather than full optimisation (Simon).' },
         { term: 'Bounded self-control', def: 'The gap between what we know we should do and what we actually do — present preferences override long-term interest.' },
@@ -83,6 +87,11 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      causes: [
+        { icon: '🏷️', head: 'Anchoring in retail & negotiation', tone: 'blue', body: 'Fake "was £100, now £60" prices work even when the original price was fictitious — why the ASA polices them. Salary negotiations are anchored by whoever names a number first; estate agents list high deliberately to shift expectations.' },
+        { icon: '📉', head: 'Loss aversion in finance', tone: 'rose', body: 'Investors hold losing shares to avoid "crystallising" a loss, even when selling is rationally correct. Status-quo bias keeps households on worse energy tariffs and mortgages for years after better options appear.' },
+        { icon: '📱', head: 'Social norms in compliance', tone: 'green', body: 'HMRC\'s "9 of 10 people in your area paid on time" added ~£200m+ in annual revenue at zero cost. Hotel towel reuse signs ("75% of guests reuse") consistently outperform environmental-appeal messaging.' }
+      ],
       keyTerms: [
         { term: 'Anchoring', def: 'Over-weighting the first piece of numerical information when making a judgement — even if irrelevant.' },
         { term: 'Loss aversion', def: 'Losses feel about twice as bad as equivalent gains feel good. Underlies the endowment effect, status-quo bias, and disposition effect (Kahneman & Tversky).' },
@@ -127,6 +136,11 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      causes: [
+        { icon: '🏋️', head: 'Gym contracts & quit-dates', tone: 'blue', body: 'NHS Stop Smoking quit-dates commit the planner\'s resolve before the doer can veto it. Gym auto-renewal contracts exploit the same mechanism in reverse — the doer\'s past self locks the present self in.' },
+        { icon: '🧾', head: 'Direct debits & savings round-ups', tone: 'green', body: 'Standing orders for savings automate the planner\'s decision before payday — the doer never sees the money. App round-ups (Monzo, Revolut) turn every purchase into a micro-saving without any willpower required.' },
+        { icon: '📵', head: 'Digital temptation removal', tone: 'purple', body: 'Phone-free study apps (Forest, Freedom) remove the temptation option rather than relying on willpower. Online supermarket shopping prevents impulse purchases in the snack aisle — changing the environment beats changing the person.' }
+      ],
       keyTerms: [
         { term: 'Present bias', def: 'Over-weighting immediate rewards relative to future ones — beyond any normal time preference.' },
         { term: 'Hyperbolic discounting', def: 'The technical name for present bias — the rate at which we discount future rewards is steeper for the near future than the far future.' },
@@ -236,6 +250,12 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      keyPoints: [
+        { title: 'Timely', icon: '⏱️', headline: 'Reaches people at the moment of decision', body: 'An NHS reminder lands just before an appointment; auto-enrolment fires at job-start. Timing is the mechanism.', tone: 'green' },
+        { title: 'Simple', icon: '✏️', headline: 'One idea, delivered in a sentence', body: '"9 of 10 people in your area paid" — not a paragraph, not a threat. A single social fact.', tone: 'blue' },
+        { title: 'Low cost', icon: '💰', headline: 'Near-zero marginal cost', body: 'A wording change, a default flip, an SMS — a fraction of the cost of a tax credit or enforcement team.', tone: 'amber' },
+        { title: 'Aligned', icon: '🎯', headline: 'Works with how people actually decide', body: 'Targets System 1 directly — norms, loss aversion, inertia — rather than relying on System 2 deliberation.', tone: 'purple' }
+      ],
       verdict: {
         leftLabel: '✅ Strengths of the behavioural approach',
         rightLabel: '⚠️ Limitations and risks',

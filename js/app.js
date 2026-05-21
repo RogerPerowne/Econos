@@ -426,6 +426,35 @@
       }
     }
 
+    // Horizontal step flow — numbered circles connected by dashed arrows.
+    // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
+    // overlays a small badge on the icon — for narrative chains where each step has a verdict.
+    if (c.flow && c.flow.length) {
+      if (c.flowTitle) {
+        content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
+      }
+      const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+      const n = c.flow.length;
+      content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">`;
+      content += c.flow.map((step, i) => {
+        const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+        const isLast = i === n - 1;
+        const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
+                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
+                            step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
+        return `
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
+            <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
+            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}${statusBadge}</div>
+            <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
+            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+            ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
+          </div>
+        `;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Interactive diagram — three-region pattern matching other interactive
     // charts in the project (e.g. PPF):
     //   Top:    SVG on the left, per-step chart description on the right
@@ -584,35 +613,6 @@
     };
     if (c.pairFirst && c.left && c.right) {
       content += buildPairHtml();
-    }
-
-    // Horizontal step flow — numbered circles connected by dashed arrows.
-    // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
-    // overlays a small badge on the icon — for narrative chains where each step has a verdict.
-    if (c.flow && c.flow.length) {
-      if (c.flowTitle) {
-        content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
-      }
-      const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
-      const n = c.flow.length;
-      content += `<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">`;
-      content += c.flow.map((step, i) => {
-        const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-        const isLast = i === n - 1;
-        const statusBadge = step.status === 'fail' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✕</div>` :
-                            step.status === 'pass' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">✓</div>` :
-                            step.status === 'warn' ? `<div style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;box-shadow:0 1px 4px rgba(0,0,0,0.2);">!</div>` : '';
-        return `
-          <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
-            <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-            <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}${statusBadge}</div>
-            <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
-            ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
-            ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
-          </div>
-        `;
-      }).join('');
-      content += `</div>`;
     }
 
     // Key points — flat 3-column takeaway tiles with a coloured bottom border.

@@ -3283,6 +3283,7 @@
       c.diagramPanel !== undefined ||
       c.diagramGrid !== undefined ||
       c.interactiveDiagram !== undefined ||
+      c.diagramKey !== undefined ||
       c.examples !== undefined ||
       c.marketGrid !== undefined ||
       c.framework !== undefined ||

@@ -3276,6 +3276,21 @@
         </div>
       </div>
 
+      ${c.diagramCallouts && c.diagramCallouts.length ? (() => {
+        const tiles = c.diagramCallouts.map(item => {
+          const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
+          return `
+            <div style="display:flex;align-items:flex-start;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:14px 16px;">
+              <div style="width:40px;height:40px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${item.icon || '•'}</div>
+              <div style="flex:1;">
+                ${item.head ? `<div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:4px;">${item.head}</div>` : ''}
+                <div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${item.body}</div>
+              </div>
+            </div>`;
+        }).join('');
+        return `<div style="display:grid;grid-template-columns:repeat(${c.diagramCallouts.length},1fr);gap:12px;margin:18px 0 26px;">${tiles}</div>`;
+      })() : ''}
+
       ${c.flow && c.flow.length ? (() => {
         const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
         const n = c.flow.length;

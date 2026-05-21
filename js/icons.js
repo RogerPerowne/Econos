@@ -2915,16 +2915,16 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: base curves (Demand=MSB and MPC=Supply) — always visible ===== -->
       <g class="layer-base-curves">
-        <!-- Demand = MSB (blue downward) -->
+        <!-- Demand = MSB (amber downward) -->
         <g clip-path="url(#ne-chart-clip)">
-          <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+          <line x1="100" y1="90" x2="490" y2="370" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
         </g>
-        <text x="498" y="372" font-size="13" font-weight="700" fill="#2563EB">D = MSB</text>
-        <!-- MPC = private supply (red upward) -->
+        <text x="498" y="372" font-size="13" font-weight="700" fill="#D97706">D = MSB</text>
+        <!-- MPC = private supply (green upward, matches Card 1 MPC tone) -->
         <g clip-path="url(#ne-chart-clip)">
-          <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+          <line x1="100" y1="370" x2="490" y2="90" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
         </g>
-        <text x="498" y="88" font-size="13" font-weight="700" fill="#DC2626">MPC</text>
+        <text x="498" y="88" font-size="13" font-weight="700" fill="#059669">MPC</text>
       </g>
 
       <!-- ===== LAYER: market equilibrium (base + all later states) ===== -->
@@ -2946,12 +2946,12 @@ window.ECONOS_ICONS = {
         <text x="620" y="118" font-size="13" fill="#334155">MPC = MSB → equilibrium at</text>
         <text x="620" y="136" font-size="13" font-weight="700" fill="#1E293B">(Q_m, P_m).</text>
         <text x="620" y="172" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WHAT EACH CURVE MEANS</text>
-        <line x1="620" y1="194" x2="650" y2="194" stroke="#2563EB" stroke-width="3"/>
-        <text x="658" y="198" font-size="13" font-weight="700" fill="#2563EB">D = MSB</text>
+        <line x1="620" y1="194" x2="650" y2="194" stroke="#D97706" stroke-width="3"/>
+        <text x="658" y="198" font-size="13" font-weight="700" fill="#D97706">D = MSB</text>
         <text x="620" y="216" font-size="12" fill="#334155">Marginal social benefit (= private</text>
         <text x="620" y="232" font-size="12" fill="#334155">benefit if no positive externality)</text>
-        <line x1="620" y1="258" x2="650" y2="258" stroke="#DC2626" stroke-width="3"/>
-        <text x="658" y="262" font-size="13" font-weight="700" fill="#DC2626">MPC</text>
+        <line x1="620" y1="258" x2="650" y2="258" stroke="#059669" stroke-width="3"/>
+        <text x="658" y="262" font-size="13" font-weight="700" fill="#059669">MPC</text>
         <text x="620" y="280" font-size="12" fill="#334155">Marginal private cost — what the</text>
         <text x="620" y="296" font-size="12" fill="#334155">firm pays to produce</text>
         <text x="620" y="328" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">BUT THIS IGNORES…</text>
@@ -2959,12 +2959,12 @@ window.ECONOS_ICONS = {
         <text x="620" y="368" font-size="13" fill="#334155">parties (pollution, congestion).</text>
       </g>
 
-      <!-- ===== LAYER: MSC curve (extension + shift + efficiency states) ===== -->
+      <!-- ===== LAYER: MSC curve (extension + shift + efficiency states) — blue to match Card 1 ===== -->
       <g class="layer-msc">
         <g clip-path="url(#ne-chart-clip)">
-          <line x1="100" y1="290" x2="490" y2="10" stroke="#DC2626" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round"/>
+          <line x1="100" y1="290" x2="490" y2="10" stroke="#2563EB" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round"/>
         </g>
-        <text x="498" y="14" font-size="13" font-weight="700" fill="#DC2626">MSC</text>
+        <text x="498" y="14" font-size="13" font-weight="700" fill="#2563EB">MSC</text>
       </g>
 
       <!-- ===== LAYER: MEC bracket (extension only) ===== -->
@@ -2974,8 +2974,6 @@ window.ECONOS_ICONS = {
         <line x1="394" y1="75" x2="406" y2="75" stroke="#7D23CB" stroke-width="2"/>
         <line x1="394" y1="155" x2="406" y2="155" stroke="#7D23CB" stroke-width="2"/>
         <text x="410" y="119" font-size="13" font-weight="700" fill="#7D23CB">MEC</text>
-        <text x="410" y="134" font-size="10" fill="#64748B">marginal</text>
-        <text x="410" y="146" font-size="10" fill="#64748B">external cost</text>
       </g>
 
       <!-- ===== LAYER: legend extension ===== -->
@@ -3002,7 +3000,7 @@ window.ECONOS_ICONS = {
         <line x1="60" y1="190" x2="239" y2="190" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="239" y1="190" x2="239" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="239" cy="190" r="7" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
-        <text x="248" y="184" font-size="13" font-weight="700" fill="#059669">E*</text>
+        <text x="230" y="182" font-size="13" font-weight="700" fill="#059669" text-anchor="end">E*</text>
         <text x="46" y="194" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P*</text>
         <text x="239" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q*</text>
       </g>

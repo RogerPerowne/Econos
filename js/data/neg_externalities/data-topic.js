@@ -104,6 +104,11 @@ window.ECONOS_TOPIC = {
       title: 'The Negative Production Externality Diagram',
       lede: 'The most important diagram in market failure. Build it in four moves — every label matters.',
       diagramKey: 'negExternalityInteractive',
+      diagramCallouts: [
+        { tone: 'green',  icon: '📈', head: 'Free market output is too high', body: 'At Q_market the market produces beyond the socially optimal Q*.' },
+        { tone: 'purple', icon: '🔻', head: 'Deadweight welfare loss',        body: 'The shaded triangle is the value to society of units overproduced beyond the social optimum.' },
+        { tone: 'blue',   icon: '💡', head: 'Vertical gap = MEC',             body: 'The vertical distance between MSC and MPC is the marginal external cost imposed on third parties.' }
+      ],
       steps: [
         {
           key: 'base',

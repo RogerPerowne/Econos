@@ -170,6 +170,105 @@
     slate:  { bg: '#F8FAFC', soft: '#F1F5F9', border: '#E2E8F0', label: '#475569', accent: '#64748B' }
   };
 
+  // Inline SVG scene illustrations for the `workedExample` renderer.
+  // Each value is a complete <svg>…</svg> string sized to the host container.
+  const SCENES = {
+    steelPlant: `
+<svg viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:170px;display:block;">
+  <defs>
+    <linearGradient id="sps_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="220" fill="url(#sps_sky)"/>
+  <path d="M0 150 L80 110 L160 130 L260 95 L350 120 L450 105 L560 125 L680 100 L780 120 L880 110 L1000 130 L1000 220 L0 220 Z" fill="#E2E8F0"/>
+  <path d="M0 165 L100 138 L210 155 L320 128 L420 148 L520 138 L640 152 L740 132 L860 148 L1000 142 L1000 220 L0 220 Z" fill="#CBD5E1"/>
+  <rect x="0" y="180" width="1000" height="40" fill="#F1F5F9"/>
+  <rect x="0" y="178" width="1000" height="3" fill="#CBD5E1"/>
+  <g>
+    <ellipse cx="190" cy="48" rx="42" ry="22" fill="#475569" opacity="0.55"/>
+    <ellipse cx="245" cy="40" rx="40" ry="20" fill="#475569" opacity="0.5"/>
+    <ellipse cx="305" cy="48" rx="46" ry="22" fill="#64748B" opacity="0.45"/>
+    <ellipse cx="375" cy="42" rx="48" ry="20" fill="#64748B" opacity="0.38"/>
+    <ellipse cx="455" cy="52" rx="50" ry="18" fill="#94A3B8" opacity="0.32"/>
+    <ellipse cx="535" cy="48" rx="48" ry="16" fill="#94A3B8" opacity="0.24"/>
+    <ellipse cx="615" cy="56" rx="46" ry="14" fill="#94A3B8" opacity="0.18"/>
+    <ellipse cx="690" cy="52" rx="44" ry="12" fill="#94A3B8" opacity="0.12"/>
+  </g>
+  <g>
+    <rect x="105" y="55" width="22" height="125" fill="#475569"/>
+    <rect x="103" y="52" width="26" height="8" fill="#334155"/>
+    <rect x="108" y="66" width="16" height="3" fill="#334155" opacity="0.6"/>
+    <rect x="155" y="75" width="18" height="105" fill="#475569"/>
+    <rect x="153" y="72" width="22" height="7" fill="#334155"/>
+    <rect x="40" y="110" width="220" height="70" fill="#64748B"/>
+    <polygon points="40,110 70,92 100,110" fill="#475569"/>
+    <polygon points="100,110 130,92 160,110" fill="#475569"/>
+    <polygon points="160,110 190,92 220,110" fill="#475569"/>
+    <polygon points="220,110 250,92 260,110" fill="#475569"/>
+    <polygon points="40,110 70,92 100,110 100,114 40,114" fill="#334155" opacity="0.4"/>
+    <rect x="50" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="72" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="94" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="116" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="138" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="160" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="182" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="204" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="226" y="125" width="14" height="18" fill="#FCD34D"/>
+    <rect x="50" y="155" width="200" height="3" fill="#334155" opacity="0.35"/>
+    <rect x="248" y="135" width="36" height="45" fill="#475569"/>
+    <polygon points="248,135 266,122 284,135" fill="#334155"/>
+  </g>
+  <ellipse cx="500" cy="196" rx="220" ry="18" fill="#E2E8F0"/>
+  <g transform="translate(720 178)" fill="#0F172A">
+    <circle cx="0" cy="-22" r="5.5"/>
+    <rect x="-5" y="-17" width="10" height="22" rx="2"/>
+    <rect x="-5" y="3" width="4" height="6"/><rect x="1" y="3" width="4" height="6"/>
+  </g>
+  <g transform="translate(735 178)" fill="#0F172A">
+    <circle cx="0" cy="-19" r="4.5"/>
+    <rect x="-4" y="-15" width="8" height="18" rx="2"/>
+    <rect x="-4" y="3" width="3.5" height="5"/><rect x="0.5" y="3" width="3.5" height="5"/>
+  </g>
+  <g transform="translate(770 132)">
+    <polygon points="0,18 32,-6 64,18" fill="#B91C1C"/>
+    <rect x="6" y="18" width="52" height="42" fill="#FEF3C7"/>
+    <rect x="26" y="34" width="14" height="26" fill="#7C2D12"/>
+    <rect x="14" y="26" width="8" height="8" fill="#BFDBFE"/>
+    <rect x="44" y="26" width="8" height="8" fill="#BFDBFE"/>
+  </g>
+  <g transform="translate(842 124)">
+    <polygon points="0,20 36,-8 72,20" fill="#0E7490"/>
+    <rect x="6" y="20" width="60" height="48" fill="#FFFBEB"/>
+    <rect x="28" y="38" width="16" height="30" fill="#7C2D12"/>
+    <rect x="14" y="28" width="9" height="9" fill="#BFDBFE"/>
+    <rect x="49" y="28" width="9" height="9" fill="#BFDBFE"/>
+  </g>
+  <g transform="translate(922 132)">
+    <polygon points="0,18 30,-6 60,18" fill="#9A3412"/>
+    <rect x="5" y="18" width="50" height="42" fill="#FEF3C7"/>
+    <rect x="24" y="34" width="13" height="26" fill="#7C2D12"/>
+    <rect x="12" y="26" width="8" height="8" fill="#BFDBFE"/>
+    <rect x="40" y="26" width="8" height="8" fill="#BFDBFE"/>
+  </g>
+  <g transform="translate(685 168)">
+    <rect x="-2.5" y="0" width="5" height="18" fill="#78350F"/>
+    <circle cx="0" cy="-10" r="16" fill="#16A34A"/>
+    <circle cx="-7" cy="-3" r="11" fill="#15803D"/>
+    <circle cx="7" cy="-3" r="11" fill="#22C55E"/>
+  </g>
+  <g transform="translate(818 173)">
+    <rect x="-2" y="0" width="4" height="14" fill="#78350F"/>
+    <circle cx="0" cy="-6" r="11" fill="#15803D"/>
+  </g>
+  <g transform="translate(905 174)">
+    <rect x="-2" y="0" width="4" height="12" fill="#78350F"/>
+    <circle cx="0" cy="-5" r="10" fill="#16A34A"/>
+  </g>
+</svg>`
+  };
+
   // Returns a grid-template-columns value that lays out N items without
   // leaving a single-item orphan row. 4 → 2x2 (not 3+1), 7 → 4+3, etc.
   // Falls back to auto-fill for very long lists.
@@ -940,6 +1039,63 @@
             <div style="text-align:center;font-size:12px;font-weight:700;color:#DC2626;margin-top:6px;">${noun} decreases (left shift)</div>
           </div>
         </div>`;
+    }
+
+    // Worked example — illustrated scenario header + N tone-coded cards
+    // separated by circular operators, with an optional summary equation bar.
+    //   Pattern: workedExample: {
+    //     label?, emoji?, scene?: 'steelPlant' | ...,
+    //     cards: [{ tone, icon, title, subtitle?, bullets?:[string], body?, badge?:{icon,text}, op?:'+'|'=' }],
+    //     summary?: [{ icon, label, tone } | { op:'+'|'=' }]
+    //   }
+    if (c.workedExample) {
+      const we = c.workedExample;
+      if (we.label !== null) content += genSecLabel(we.emoji || '🔬', we.label || 'Worked example');
+      if (we.scene && SCENES[we.scene]) {
+        content += `<div style="margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;">${SCENES[we.scene]}</div>`;
+      }
+      const weCards = we.cards || [];
+      const weCols = weCards.length;
+      const weCellGap = 28;
+      const weCells = weCards.map(card => {
+        const t = PATTERN_TONES[card.tone] || PATTERN_TONES.blue;
+        const bulletsHtml = card.bullets && card.bullets.length ? `
+          <ul style="list-style:none;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:8px;">
+            ${card.bullets.map(b => `<li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#0B1426;line-height:1.5;"><span style="width:7px;height:7px;border-radius:50%;background:${t.accent};margin-top:8px;flex-shrink:0;"></span><span>${b}</span></li>`).join('')}
+          </ul>` : '';
+        const bodyHtml = card.body ? `<div style="font-size:14px;color:#0B1426;line-height:1.6;margin-bottom:14px;flex:1;">${card.body}</div>` : '';
+        const badgeHtml = card.badge ? `
+          <div style="display:flex;align-items:center;gap:10px;background:${t.soft};border-radius:10px;padding:9px 12px;margin-top:auto;">
+            <div style="width:26px;height:26px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">${card.badge.icon}</div>
+            <div style="font-size:13px;font-weight:800;color:${t.label};line-height:1.3;">${card.badge.text}</div>
+          </div>` : '';
+        const opHtml = card.op ? `<div style="position:absolute;top:50%;left:calc(100% + ${weCellGap / 2}px);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,0.06);">${card.op}</div>` : '';
+        return `
+          <div style="position:relative;">
+            <div style="background:#fff;border:1px solid #E7E7EA;border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+                <div style="width:44px;height:44px;border-radius:50%;background:${t.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${card.icon}</div>
+                <div style="display:flex;flex-direction:column;line-height:1.2;">
+                  <div style="font-size:18px;font-weight:800;color:${t.label};">${card.title}</div>
+                  ${card.subtitle ? `<div style="font-size:13px;color:#64748B;margin-top:2px;">${card.subtitle}</div>` : ''}
+                </div>
+              </div>
+              ${bulletsHtml}
+              ${bodyHtml}
+              ${badgeHtml}
+            </div>
+            ${opHtml}
+          </div>`;
+      }).join('');
+      content += `<div style="display:grid;grid-template-columns:repeat(${weCols},1fr);gap:${weCellGap}px;margin-bottom:18px;">${weCells}</div>`;
+      if (we.summary && we.summary.length) {
+        const segs = we.summary.map(s => {
+          if (s.op) return `<span style="font-size:20px;font-weight:900;color:${PATTERN_TONES.green.accent};padding:0 8px;">${s.op}</span>`;
+          const t = PATTERN_TONES[s.tone] || PATTERN_TONES.blue;
+          return `<span style="display:inline-flex;align-items:center;gap:8px;color:${t.label};font-size:15px;font-weight:800;"><span style="font-size:18px;">${s.icon}</span>${s.label}</span>`;
+        }).join('');
+        content += `<div style="display:flex;align-items:center;justify-content:center;gap:6px;background:${PATTERN_TONES.green.bg};border:1px solid ${PATTERN_TONES.green.border};border-radius:14px;padding:14px 20px;margin-bottom:26px;flex-wrap:wrap;">${segs}</div>`;
+      }
     }
 
     // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] — coloured tiles.

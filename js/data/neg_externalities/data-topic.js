@@ -50,14 +50,40 @@ window.ECONOS_TOPIC = {
         { op: '=' },
         { label: 'MSC', tone: 'blue' }
       ],
-      causesLabel: 'Worked example: the steel plant',
-      causesEmoji: '🏭',
-      causesStyle: 'plain-white',
-      causes: [
-        { head: 'MPC (private costs)',  icon: '💼', body: 'Wages, energy, raw materials, machine depreciation.',                            tone: 'green'  },
-        { head: 'MEC (external costs)', icon: '👥', body: 'Smoke, health damage to local residents, cleaning costs for nearby properties.', tone: 'purple' },
-        { head: 'MSC (social costs)',   icon: '🌍', body: 'All private costs + all external costs combined — the true cost to society.',    tone: 'blue'   }
-      ],
+      workedExample: {
+        label: 'Worked example: the steel plant',
+        emoji: '🏭',
+        scene: 'steelPlant',
+        cards: [
+          {
+            tone: 'green', icon: '💼',
+            title: 'MPC', subtitle: '(private costs)',
+            bullets: ['Wages', 'Energy', 'Raw materials', 'Machine depreciation'],
+            badge: { icon: '👤', text: 'Paid by firm' },
+            op: '+'
+          },
+          {
+            tone: 'purple', icon: '👥',
+            title: 'MEC', subtitle: '(external costs)',
+            bullets: ['Smoke', 'Health damage to local residents', 'Cleaning costs for nearby properties'],
+            badge: { icon: '👥', text: 'Borne by third parties' },
+            op: '='
+          },
+          {
+            tone: 'blue', icon: '🌍',
+            title: 'MSC', subtitle: '(social costs)',
+            body: 'All private costs <strong>+</strong> all external costs combined — the true cost to society.',
+            badge: { icon: '🌍', text: 'Total social burden' }
+          }
+        ],
+        summary: [
+          { icon: '💼', label: 'Private cost', tone: 'green' },
+          { op: '+' },
+          { icon: '👥', label: 'External harm', tone: 'purple' },
+          { op: '=' },
+          { icon: '🌍', label: 'True social cost', tone: 'blue' }
+        ]
+      },
       tipLate: {
         icon: '⭐',
         tone: 'blue',

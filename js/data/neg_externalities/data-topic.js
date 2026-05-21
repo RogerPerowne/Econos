@@ -41,7 +41,14 @@ window.ECONOS_TOPIC = {
       keyPoints: [
         { tone: 'green',  icon: '💼', title: 'Marginal Private Cost (MPC)',  headline: 'The cost to the producer of one more unit',         body: '<em>Memory cue:</em> the costs <strong>I pay</strong>.' },
         { tone: 'purple', icon: '👥', title: 'Marginal External Cost (MEC)', headline: 'The cost imposed on third parties by that unit',    body: '<em>Memory cue:</em> the <strong>harm they pay</strong>.' },
-        { tone: 'blue',   icon: '🌍', title: 'Marginal Social Cost (MSC)',   headline: 'The total cost to society of producing that unit', body: '<em>Memory cue:</em> the <strong>true cost to all</strong>.<br><br><strong>MSC = MPC + MEC</strong>' }
+        { tone: 'blue',   icon: '🌍', title: 'Marginal Social Cost (MSC)',   headline: 'The total cost to society of producing that unit', body: '<em>Memory cue:</em> the <strong>true cost to all</strong>.' }
+      ],
+      keyPointsFormula: [
+        { label: 'MPC', tone: 'green' },
+        { op: '+' },
+        { label: 'MEC', tone: 'purple' },
+        { op: '=' },
+        { label: 'MSC', tone: 'blue' }
       ],
       causesLabel: 'Worked example: the steel plant',
       causesEmoji: '🏭',

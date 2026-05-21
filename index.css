@@ -174,7 +174,7 @@
       font-family: 'Fraunces', Georgia, serif;
       font-variation-settings: var(--fr-h);
       font-weight: 700;
-      font-size: clamp(40px, 4.4vw, 60px);
+      font-size: clamp(46px, 5.2vw, 72px);
       letter-spacing: -0.032em;
       line-height: 1.04;
       color: var(--ink);

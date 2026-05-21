@@ -7,15 +7,13 @@
     subtitle: 'Theme 1.21 \xb7 Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering bounded rationality, cognitive biases, prospect theory, nudge theory, and UK policy applications (pension auto-enrolment, organ donation, HMRC compliance). Mixed formats test understanding of theory and evaluation of behavioural vs traditional policy tools.',
+    lede: 'Ten exam-style questions covering bounded rationality, the four key biases, present bias and internalities, UK nudges (pension auto-enrolment, organ donation, HMRC compliance, smart meters), and evaluation of behavioural vs traditional policy.',
     shortNames: {
-      'behavioural_econ_1': 'Bounded rationality',
-      'behavioural_econ_2': 'Cognitive biases',
-      'behavioural_econ_3': 'Prospect theory',
-      'behavioural_econ_4': 'Nudge theory',
-      'behavioural_econ_5': 'Policy applications',
-      'behavioural_econ_6': 'Strengths vs limits',
-      'behavioural_econ_7': 'Internalities'
+      'behavioural_econ_1': 'Why people aren\'t rational',
+      'behavioural_econ_2': 'The four biases',
+      'behavioural_econ_3': 'Bounded self-control',
+      'behavioural_econ_4': 'UK nudges',
+      'behavioural_econ_5': 'Evaluation'
     },
 
     questions: [

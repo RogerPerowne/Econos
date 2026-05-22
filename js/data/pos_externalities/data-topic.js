@@ -255,51 +255,53 @@ window.ECONOS_TOPIC = {
       id: 'pos_externalities_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Evaluation: why intervention can fail',
-      tip: { icon: '⚖️', tone: 'green', text: 'Interventions aim to correct market failure, but correcting positive externalities can itself create <strong>government failure</strong>. Below are key reasons why intervention may be ineffective, inefficient or have unintended consequences.' },
-      flowTitle: 'Five reasons intervention can fail',
-      flowEmoji: '⚠️',
+      tip: { icon: '💡', tone: 'blue', text: '<em>Correcting positive externalities is not straightforward. Intervention can raise welfare, but it also creates trade-offs and risks of government failure.</em>' },
+      flowTitle: 'Key evaluation points',
+      flowEmoji: '⚖️',
       flow: [
-        { tone: 'green',  icon: '🔍', title: 'Information failure',             sub: 'The MEB is unobservable, so the subsidy or provision level may be set incorrectly.' },
-        { tone: 'purple', icon: '🚪', title: 'Moral hazard & over-use',         sub: 'Free at point of use → trivial GP appointments; subsidised degrees taken for the wrong reasons.' },
-        { tone: 'blue',   icon: '🔁', title: 'Crowding out private supply',     sub: 'Public schools and NHS may displace private alternatives that would have served some users more efficiently.' },
-        { tone: 'amber',  icon: '💰', title: 'Fiscal cost & tax distortion',    sub: 'Subsidies and public provision must be funded; taxes raised to pay for them create their own deadweight losses elsewhere.' },
-        { tone: 'rose',   icon: '🗳️', title: 'Politically captured allocation', sub: 'Subsidies and grants steered to politically favoured groups or regions rather than where MEB is highest.' }
+        { tone: 'purple', icon: '🔍', title: 'Information failure on MEB', sub: 'Government may misjudge the true spillover benefit and set the subsidy or scale wrongly.' },
+        { tone: 'amber',  icon: '🛡️', title: 'Moral hazard',               sub: 'If services are free or heavily subsidised, some users may over-consume or take less care.' },
+        { tone: 'blue',   icon: '👥', title: 'Crowding out',                sub: 'Public support may displace private provision or personal responsibility.' },
+        { tone: 'green',  icon: '🏛️', title: 'Fiscal cost',                 sub: 'Subsidies and direct provision use tax revenue and create opportunity costs elsewhere.' },
+        { tone: 'rose',   icon: '👥', title: 'Political capture',           sub: 'Organised interest groups may shape policy in their own favour rather than the social interest.' }
       ],
-      tipLate: [
-        { icon: '💡', tone: 'amber', head: 'What the best evaluation does', text: 'Compare the market failure with the <em>government failure</em>. Ask whether the intervention improves on the market outcome, even if it is imperfect.' },
-        { icon: '⭐', tone: 'rose',  head: 'Exam edge',                     text: 'The key issue is not whether the intervention is perfect, but whether it produces a <strong>better outcome than the unregulated market</strong>.' }
-      ],
-      conclusion: { title: 'Bottom line', text: 'Judging intervention is about <strong>trade-offs</strong>. We accept some government failure if the net benefit is an improvement on the market outcome.' },
-      examEdge: 'Top evaluations name a specific failure (e.g. moral hazard from free university tuition) and show a fix (e.g. income-contingent loans). Avoid generic phrases like "government failure" without an example.'
+      conclusion: { title: 'Bottom line: trade-offs', text: '<div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;"><div>• Intervention can still be justified — it can correct market failure and raise welfare.</div><div>• The question is not perfect or imperfect, but <strong>better or worse</strong>.</div><div>• Evaluation depends on how large the external benefit is and how well policy is targeted.</div></div>' },
+      tipLate: { icon: '➡️', tone: 'blue', text: 'Always <strong>compare market failure with possible government failure</strong> in essays — weigh the benefits of intervention against the risks and costs.' }
     },
     {
       id: 'pos_externalities_7',
       stepLabel: 'Learn: Step 7 of 7',
-      title: 'Exam edge & economist insight',
-      tip: { icon: null, tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The optimal subsidy equals the <em>MEB at the socially optimal output</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Public provision avoids the <em>measurement problem</em> at the cost of <em>moral hazard</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The case for intervention strengthens when external benefits are <em>large, persistent, and concentrated in groups with low willingness to pay</em>.&rdquo;</span></div></div>' },
-      flow: [
-        { tone: 'blue',   icon: '📘', title: 'Define & explain',         sub: 'Define the externality (type and cause) and explain the positive consumption externality diagram with MSB above MPB.' },
-        { tone: 'green',  icon: '💸', title: 'Analyse market-based',     sub: 'Evaluate Pigouvian subsidies (consumer- and producer-side) and outcome-based payments: efficiency, calibration to MEB, fiscal cost.' },
-        { tone: 'purple', icon: '🏛️', title: 'Compare direct provision', sub: 'Assess public provision and regulation on certainty of outcome, moral hazard, fiscal commitment, and access as a right.' },
-        { tone: 'amber',  icon: '⚖️', title: 'Reach a judgement',        sub: 'Weigh size of externality, elasticity, equity and political feasibility. Make a clear, supported conclusion.' }
+      title: 'Exam edge',
+      tip: { icon: '💡', tone: 'blue', text: '<em>This page turns positive externalities into exam technique: strong phrases, a reliable evaluation flow, and a judgement framework you can adapt to any scenario.</em>' },
+      keyPointsLabel: '1. Best phrases to use',
+      keyPointsEmoji: '💬',
+      keyPointsCols: 5,
+      keyPointsStyle: 'minimal',
+      keyPoints: [
+        { tone: 'blue', icon: '“', title: 'MSB exceeds MPB',                                       headline: '', body: '' },
+        { tone: 'blue', icon: '“', title: 'The market under-consumes the good',                    headline: '', body: '' },
+        { tone: 'blue', icon: '“', title: 'A subsidy can internalise the external benefit',         headline: '', body: '' },
+        { tone: 'blue', icon: '“', title: 'The size of the welfare gain depends on elasticity',     headline: '', body: '' },
+        { tone: 'blue', icon: '“', title: 'Intervention may be justified despite government failure', headline: '', body: '' }
       ],
-      flowTitle: 'How to evaluate a 25-mark essay',
-      flowEmoji: '📖',
-      causesLabel: 'Judgement framework — use these criteria to compare policies',
+      flowTitle: '2. A 4-step evaluation flow',
+      flowEmoji: '🧭',
+      flow: [
+        { tone: 'blue',   icon: '1️⃣', title: 'Identify the intervention',  sub: 'and how it moves output toward Q*.' },
+        { tone: 'green',  icon: '2️⃣', title: 'Explain the likely benefits', sub: 'to consumers, producers, and third parties.' },
+        { tone: 'purple', icon: '3️⃣', title: 'Evaluate practical limits',   sub: 'or government failure.' },
+        { tone: 'amber',  icon: '4️⃣', title: 'Reach a clear judgement',     sub: 'on when the policy works best.' }
+      ],
+      causesLabel: '3. A 4-criterion judgement framework',
       causesEmoji: '⚖️',
       causesStyle: 'tinted-flat',
       causes: [
-        { icon: '📈', head: 'Size of the externality', body: 'How large is the welfare gain forgone? Larger externalities justify stronger intervention.',                tone: 'green'  },
-        { icon: '📉', head: 'Elasticity',               body: 'How responsive are MPB and MPC? Inelastic demand means subsidies raise quantity little.',                   tone: 'blue'   },
-        { icon: '⚖️', head: 'Equity &amp; access',      body: 'Where consumption is a right (healthcare, education), distribution matters more than efficiency.',          tone: 'purple' },
-        { icon: '🗳️', head: 'Political feasibility',    body: 'Will the intervention survive electoral cycles, lobbying, and fiscal pressure?',                            tone: 'amber'  }
+        { icon: '📈', head: 'Size of the external benefit', body: 'How large is the gap (MSB − MPB)? Big gaps justify stronger action.',         tone: 'green'  },
+        { icon: '🎯', head: 'Accuracy of targeting',         body: 'Does the policy reach those creating or receiving the benefit?',              tone: 'blue'   },
+        { icon: '💷', head: 'Fiscal affordability',          body: 'Can it be funded sustainably, with good value for money?',                    tone: 'purple' },
+        { icon: '⚖️', head: 'Equity / access',               body: 'Does it improve fairness and access, not just total welfare?',                tone: 'amber'  }
       ],
-      tipLate: {
-        icon: '💡', tone: 'green', head: 'Why this matters',
-        text: 'Externality questions often combine with <strong>merit goods</strong> and <strong>information failure</strong>. The strongest answers explain how the <em>three market failures stack</em> to justify especially strong intervention in health and education — and the matching three <em>government</em> failures (info failure on MEB, moral hazard, political capture) that explain why no system is perfect.'
-      },
-      conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external benefit</em>, the <em>information available</em>, and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more flexible; direct provision may be preferred when certainty and access matter most.' },
-      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · equity / access · political feasibility</strong>. Top answers reach a judgement, not a list.',
+      examEdge: 'Strong answers <strong>compare market failure with government failure</strong> and finish with a conditional judgement: the policy is likely to work best when the external benefit is large, targeting is accurate, costs are manageable, and the design is fair and accessible.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

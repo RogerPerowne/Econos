@@ -4,20 +4,20 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Positive Externalities',
   estTime: '9-11 minutes',
-  goal: 'Lock in the positive externality diagram, why markets underprovide goods with external benefits, and how subsidies and regulation correct this.',
+  goal: 'Lock in the externality framework — MSB vs MPB, welfare gain forgone, and how to draw and evaluate the positive consumption externality diagram.',
   intro: {
     heroKey: 'heroPosExternalities',
-    summary: 'Positive externalities create benefits for third parties not captured in market prices. The result is under-consumption or under-production relative to the socially optimal level — the opposite problem to negative externalities.',
-    doInThis: 'Work through 7 cards covering the definition of positive externalities, the MSB/MPB diagram, merit goods, education and healthcare as key examples, government policy responses, and evaluation.',
+    summary: 'Positive externalities arise when production or consumption creates benefits for third parties not reflected in market prices. The result: the market under-produces relative to the socially optimal level, leaving welfare gains on the table.',
+    doInThis: 'Work through 7 cards covering the benefits trilogy (MPB, MEB, MSB), the positive consumption externality diagram, real-world examples, market-based and direct-provision interventions, why intervention can fail, and the exam moves that distinguish top-grade answers.',
     outcomes: [
-      'Define positive externality and distinguish production from consumption externalities',
-      'Draw the positive externality diagram showing MSB above MPB with underconsumption',
-      'Explain why education and healthcare generate positive externalities',
-      'Evaluate subsidies, regulation, and public provision as policy responses'
+      'Define positive externality and distinguish consumption from production externalities',
+      'Draw and interpret the positive consumption externality diagram with MSB above MPB',
+      'Identify the market output, socially optimal output, and welfare gain forgone',
+      'Evaluate government policies to correct positive externalities'
     ],
-    tip: 'Positive externality → MSB > MPB → market underproduces/underconsumes. Policy: subsidy to shift MPB up to MSB (consumption side) or MPC down to MSC (production side). Socially optimal output > market output.',
+    tip: 'Positive externality → MSB > MPB → market under-produces. Welfare gain forgone = triangle between market output and socially optimal output. Government corrects via Pigouvian subsidy to shift MPB up to MSB.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
@@ -25,111 +25,281 @@ window.ECONOS_TOPIC = {
   cards: [
     {
       id: 'pos_externalities_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
-      title: 'Positive externalities: the big picture',
-      lede: 'When private benefit ignores third-party gain, markets underproduce goods that society values most — like education and healthcare.',
-      tip: 'MSB = MPB + MEB. The market only responds to MPB — the MEB is a free gift to third parties that the market ignores. Result: underconsumption by the amount between Q-market and Q*.',
-      branches: [
-        { tone: 'green',  label: 'The core concept',  sub: 'MSB = MPB + MEB. When MEB > 0, the market undervalues the good and output falls short of the social optimum.' },
-        { tone: 'blue',   label: 'The diagram',       sub: 'MSB sits above MPB. Welfare loss is the triangle of forgone net benefit between Q_market and Q*.' },
-        { tone: 'amber',  label: 'Education & healthcare', sub: 'The classic case studies: spillover benefits for productivity, public health, and social cohesion.' },
-        { tone: 'purple', label: 'Merit goods',       sub: 'Goods under-consumed due to both information failure <em>and</em> positive externalities — overlapping but distinct concepts.' },
-        { tone: 'rose',   label: 'Policy responses',  sub: 'Subsidies, direct public provision, regulation (compulsory schooling). Each trades efficiency against equity and cost.' }
+      stepLabel: 'Learn: Step 1 of 7',
+      title: 'Positive externalities: the benefits trilogy',
+      tip: { icon: '💡', tone: 'blue', text: '<em>A market can create benefits that spill over to people who were not directly involved. When that happens, private benefit is less than social benefit — and the market tends to produce too little.</em>' },
+      keyPointsLabel: 'The three benefits',
+      keyPointsEmoji: '🎁',
+      keyPointsCols: 3,
+      keyPoints: [
+        { tone: 'green',  icon: '💼', title: 'Marginal Private Benefit (MPB)',  headline: 'The benefit received by the consumer from one more unit',  body: '<em>Memory cue:</em> the benefit <strong>I get</strong>.' },
+        { tone: 'purple', icon: '👥', title: 'Marginal External Benefit (MEB)', headline: 'The benefit enjoyed by third parties from that unit',      body: '<em>Memory cue:</em> the <strong>bonus others get</strong>.' },
+        { tone: 'blue',   icon: '🌍', title: 'Marginal Social Benefit (MSB)',   headline: 'The total benefit to society from consuming that unit',     body: '<em>Memory cue:</em> the <strong>true benefit to all</strong>.' }
       ],
-      body: 'A <strong>positive externality</strong> occurs when economic activity generates benefits for third parties who are not party to the transaction and who do not pay for those benefits.<br><br>Key framework:<br>• <strong>Private benefit (MPB):</strong> the benefit received directly by the consumer.<br>• <strong>External benefit (MEB):</strong> additional benefit received by third parties.<br>• <strong>Social benefit (MSB):</strong> MSB = MPB + MEB — total benefit to society.<br><br>When positive externalities exist, MSB > MPB. The market, responding only to MPB, produces less than the socially optimal quantity where MSB = MSC. The result is <strong>underconsumption</strong> or <strong>underproduction</strong>.',
+      keyPointsFormula: [
+        { label: 'MPB', tone: 'green' },
+        { op: '+' },
+        { label: 'MEB', tone: 'purple' },
+        { op: '=' },
+        { label: 'MSB', tone: 'blue' }
+      ],
+      workedExample: {
+        label: 'Worked example: the flu vaccine',
+        emoji: '💉',
+        cards: [
+          {
+            tone: 'green', icon: '💼',
+            title: 'MPB', subtitle: '(private benefits)',
+            bullets: ['Reduced chance of illness', 'Less time off work or study', 'Peace of mind'],
+            badge: { icon: '👤', text: 'Captured by you' },
+            op: '+'
+          },
+          {
+            tone: 'purple', icon: '👥',
+            title: 'MEB', subtitle: '(external benefits)',
+            bullets: ['Fewer infections passed to others', 'Protection for vulnerable people', 'Lower pressure on hospitals'],
+            badge: { icon: '👥', text: 'Captured by third parties' },
+            op: '='
+          },
+          {
+            tone: 'blue', icon: '🌍',
+            title: 'MSB', subtitle: '(social benefits)',
+            body: 'All private benefits <strong>+</strong> all external benefits combined — the true benefit to society.',
+            badge: { icon: '🌍', text: 'Total social gain' }
+          }
+        ],
+        summary: [
+          { icon: '💼', label: 'Private benefit', tone: 'green' },
+          { op: '+' },
+          { icon: '👥', label: 'External benefit', tone: 'purple' },
+          { op: '=' },
+          { icon: '🌍', label: 'True social benefit', tone: 'blue' }
+        ]
+      },
+      tipLate: {
+        icon: '✅',
+        tone: 'green',
+        head: 'Why the market under-provides',
+        text: 'Because consumers usually think about MPB, not the full MSB. If MEB is positive, the market quantity is too low — some of the benefits to society are simply ignored.'
+      },
       keyTerms: [
-        { term: 'Positive externality', def: 'External benefit to third parties from economic activity — not reflected in market price or private cost-benefit calculations.' },
-        { term: 'MSB', def: 'Marginal Social Benefit = MPB + MEB. The total benefit to society of one more unit of consumption.' },
-        { term: 'Underconsumption', def: 'Market output is below the socially optimal level because private benefits understate social benefits.' }
+        { term: 'Marginal Private Benefit (MPB)',  def: 'The additional benefit received by the consumer from one more unit of consumption.' },
+        { term: 'Marginal External Benefit (MEB)', def: 'The additional benefit enjoyed by third parties from the consumption (or production) of one more unit.' },
+        { term: 'Marginal Social Benefit (MSB)',   def: 'The total additional benefit to society from one more unit — equal to MPB + MEB. The true benefit the market should respond to but does not.' }
       ],
-      examEdge: 'The positive externality diagram is the mirror of the negative one. For positive consumption externality: draw MPB (demand), then MSB above it (shift up by MEB), with MSC = MPC (supply). Market = MPB intersects MSC; optimal = MSB intersects MSC. Gap between them = underconsumption. DWL triangle is between Q-market and Q-optimal.'
+      examEdge: 'Remember the trilogy — <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="learn.html?topic=neg_externalities" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.'
     },
     {
       id: 'pos_externalities_2',
-      template: 'mechanisms',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 7',
+      title: 'The positive consumption externality diagram',
+      lede: 'The mirror of the negative diagram. Build it in four moves — every label matters.',
       diagramKey: 'posExternalityDiagram',
-      title: 'The Positive Externality Diagram',
-      intro: 'For a positive consumption externality, the demand curve (MPB) understates the true social benefit.',
-      steps: [
-        { label: 'Draw the framework', text: 'Axes: P vertical, Q horizontal. Draw MSC = MPC (supply — no production externality). Draw MPB (private demand) downward sloping. Draw MSB above MPB — the vertical gap is MEB at each quantity.' },
-        { label: 'Market equilibrium', text: 'Where MPB = MSC. Mark this Q-market and P-market. This is what the free market produces — too little.' },
-        { label: 'Social optimum', text: 'Where MSB = MSC. Mark Q-optimal > Q-market and P-optimal. Society would benefit from greater consumption than the free market provides.' },
-        { label: 'Deadweight welfare loss', text: 'Triangle between Q-market and Q-optimal, bounded above by MSB and below by MSC. Represents the welfare loss from underconsumption — potential gains from expanding output that are not realised.' }
+      diagramCallouts: [
+        { tone: 'green',  icon: '📉', head: 'Free market output is too low', body: 'At Q_market the market produces below the socially optimal Q*.' },
+        { tone: 'purple', icon: '🔺', head: 'Welfare gain forgone',          body: 'The shaded triangle is the welfare society foregoes by under-consuming.' },
+        { tone: 'blue',   icon: '💡', head: 'Vertical gap = MEB',            body: 'The vertical distance between MSB and MPB is the marginal external benefit captured by third parties.' }
       ],
-      examEdge: 'Positive production externality is less commonly examined but important. Example: a firm trains workers who then leave to work for rivals. Social benefit (training) exceeds private benefit to the firm → underinvestment in training. For production: MSB = MPB; draw MSC below MPC (MEC is a benefit, reducing social cost). Optimal output > market output.'
+      steps: [
+        {
+          key: 'base',
+          label: 'Market equilibrium',
+          text: 'Start with the free market: <strong>MPB</strong> (marginal private benefit, demand) meets <strong>MPC = MSC</strong> (supply) at the market equilibrium <strong>(Q_m, P_m)</strong>. The market ignores any benefit captured by third parties.'
+        },
+        {
+          key: 'extension',
+          label: 'Add MSB and MEB',
+          text: 'Add <strong>MSB</strong> (marginal social benefit) above MPB. The vertical gap is the <strong>MEB</strong> — marginal external benefit enjoyed by third parties: herd immunity, productivity, lower crime. MSB = MPB + MEB. The market ignores this gap, so it under-consumes.'
+        },
+        {
+          key: 'shift',
+          label: 'Socially optimal output',
+          text: 'The socially optimal point is where <strong>MSB = MSC</strong> at <strong>(Q*, P*)</strong>. Compare: <strong>Q* &gt; Q_m</strong> (society wants more output) and <strong>P* &gt; P_m</strong> (optimal price is higher). The free market under-produces by (Q* − Q_m).'
+        },
+        {
+          key: 'efficiency',
+          label: 'Welfare gain forgone',
+          text: 'Shade the triangle bounded by MSB (above), MSC (below), and the vertical between Q_m and Q*. For every unit not produced between Q_m and Q*, society loses (MSB − MSC) of welfare. A <strong>Pigouvian subsidy = MEB at Q*</strong> internalises the externality and closes the wedge.'
+        }
+      ],
+      tipLate: [
+        { icon: '✅', tone: 'green', head: 'What the diagram shows',  text: 'The market produces too little. At Q_market, only private benefits (MPB) are counted, so price is lower (P_market) and quantity is below the efficient level (Q*). The shaded triangle is the welfare gain society forgoes when consumption stays at the market level.' },
+        { icon: 'ℹ️',  tone: 'blue',  head: 'Production-side mirror', text: 'For a positive production externality, think MSC below MPC instead. The logic is identical — the market still produces too little.' }
+      ],
+      examEdge: 'Diagram technique: label all six elements — MSC = MPC, MPB, MSB, E_market (Q_m, P_m), E* (Q*, P*), and shade the welfare-gain triangle. Missing any of these loses marks. Draw MSB as a parallel shift above MPB for a constant external benefit.'
     },
     {
       id: 'pos_externalities_3',
-      template: 'cause',
-      title: 'Education as a Positive Externality',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '🎓',
-      causesLabel: 'Why education generates spillover benefits',
-      causes: [
-        { icon: '👤', head: 'Private benefit', body: 'Higher wages and lifetime earnings for educated individuals; greater personal fulfilment; improved health and cognitive function. These private benefits are reflected in demand for education.' },
-        { icon: '💼', head: 'External benefits — economic', body: 'A more educated workforce raises national productivity; technology adoption faster; innovation greater. Firms benefit from a skilled labour pool without paying for all the training. Tax base expands.' },
-        { icon: '🤝', head: 'External benefits — social', body: 'Lower crime rates (more education → lower propensity to commit crime). Greater civic engagement, democracy quality, and institutional trust. Reduced health costs from better health literacy.' },
-        { icon: '🏫', head: 'Market failure implication', body: 'Left to private markets, education is under-provided (especially for low-income households who cannot afford tuition). This justifies state-funded education, scholarships, and free nursery provision.' }
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Real-world examples',
+      tip: { icon: '💡', tone: 'blue', text: '<em>Positive externalities arise when consumption or production creates benefits for people beyond the direct buyer or seller.</em>' },
+      illustratedGridLabel: 'Four case studies',
+      illustratedGridEmoji: '⭐',
+      illustratedGrid: [
+        {
+          tone: 'green',
+          title: '💉 Vaccination and herd immunity',
+          body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> lower risk of illness</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> fewer infections spread to others</div></div>',
+          thirdPartyLabel: 'Third-party gain', thirdParty: 'wider community, especially vulnerable groups'
+        },
+        {
+          tone: 'purple',
+          title: '🎓 Education',
+          body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> better earnings and skills</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> higher productivity, lower crime, more informed citizens</div></div>',
+          thirdPartyLabel: 'Third-party gain', thirdParty: 'employers and society'
+        },
+        {
+          tone: 'blue',
+          title: '🏥 Healthcare beyond vaccination',
+          body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> better health and longer life</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> fewer absences, lower strain on public services, healthier families</div></div>',
+          thirdPartyLabel: 'Third-party gain', thirdParty: 'firms, households, government'
+        },
+        {
+          tone: 'amber',
+          title: '🐝 Beekeeping and pollination',
+          body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> honey and bee products</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> nearby crops are pollinated, boosting agricultural output</div></div>',
+          thirdPartyLabel: 'Third-party gain', thirdParty: 'farmers, consumers, ecosystem'
+        }
       ],
-      examEdge: 'The positive externality from education is the strongest justification for state education. Key evaluation: does the state education system actually produce these external benefits? Evidence suggests returns to education (externality spillovers) are significant but not unlimited — they decline at higher education levels.'
+      causesLabel: 'What they all have in common',
+      causesEmoji: '✅',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '1️⃣', head: 'Private benefit understates total benefit', body: 'Consumers decide on MPB alone — they don\'t account for the spillover.',                                tone: 'green'  },
+        { icon: '2️⃣', head: 'Market quantity is too low',                 body: 'Under-consumption: Q_market sits below the socially optimal Q*.',                                       tone: 'blue'   },
+        { icon: '3️⃣', head: 'Intervention may raise welfare',             body: 'Subsidies, public provision, or regulation can move output closer to Q* and capture the welfare gain.', tone: 'purple' }
+      ],
+      tipLate: { icon: 'ℹ️', tone: 'blue', text: 'These examples can be used in 5-, 8-, 12-, and 25-mark answers — pick one and name the third party who gains.' },
+      examEdge: 'Examiners reward specificity. "Education has positive externalities" → low marks. "Higher educational attainment raises national productivity and lowers crime rates — clear external benefits captured by employers and society" → high marks.'
     },
     {
       id: 'pos_externalities_4',
-      template: 'framing',
-      title: 'Healthcare as a Positive Externality',
-      body: 'Healthcare generates positive externalities:<br><br><strong>Vaccinations:</strong> classic case — when an individual is vaccinated, they become immune AND reduce transmission to others (herd immunity). The external benefit to non-vaccinated individuals is not reflected in their private demand for vaccines → underconsumption → pandemic risk.<br><br><strong>Treatment:</strong> treating infectious diseases reduces transmission; treating mental health conditions reduces impact on carers and society.<br><br><strong>Policy implication:</strong> free or subsidised healthcare and vaccination programmes correct the market failure. NHS provides healthcare free at point of use — removes the underconsumption problem for most healthcare.',
-      keyTerms: [
-        { term: 'Herd immunity', def: 'When enough of a population is immune, disease transmission falls even for the unvaccinated — a classic positive externality of vaccination.' },
-        { term: 'Free at point of use', def: 'NHS model: healthcare funded by taxation, provided free to users — removes price as a barrier and corrects underconsumption from positive externality.' },
-        { term: 'Merit good', def: 'A good with positive externalities that would be underconsumed if left entirely to the market — education and healthcare are the canonical examples.' }
+      stepLabel: 'Learn: Step 4 of 7',
+      title: 'Market-based interventions',
+      tip: { icon: '💡', tone: 'blue', text: '<em>Governments can use prices and financial incentives to internalise positive externalities and move output closer to the social optimum.</em>' },
+      keyPointsLabel: 'Three main interventions',
+      keyPointsEmoji: '🏛️',
+      keyPointsCols: 3,
+      keyPoints: [
+        {
+          tone: 'green', icon: '🎫', title: 'Pigouvian subsidy to consumers',
+          headline: 'Lower the effective price faced by consumers so they consume more of the good or activity.',
+          body: '<span style="font-weight:800;color:#059669;">Flow:</span> subsidy provided → lower consumer price → higher demand → more spillover benefits.<br><br><span style="font-weight:800;color:#059669;">Live examples:</span> free school meals · childcare vouchers · EV purchase grants.'
+        },
+        {
+          tone: 'purple', icon: '🏭', title: 'Pigouvian subsidy to producers',
+          headline: 'Subsidise supply by lowering firms\' costs, making it more profitable to produce socially beneficial goods or services.',
+          body: '<span style="font-weight:800;color:#7C3AED;">Flow:</span> subsidy reduces costs → higher supply → more output of positive good.<br><br><span style="font-weight:800;color:#7C3AED;">Live examples:</span> renewable energy subsidies · R&amp;D tax credits · apprenticeship levies.'
+        },
+        {
+          tone: 'blue', icon: '🏆', title: 'Outcome-based payments',
+          headline: 'Government rewards results rather than inputs. Payments are made for verified outcomes that generate positive externalities.',
+          body: '<span style="font-weight:800;color:#2563EB;">Examples of outcomes:</span> vaccinations completed · apprentices trained · ecosystem services delivered (e.g. tree planting).'
+        }
       ],
-      examEdge: 'Vaccination is the best single positive externality example: clearly defined MEB (herd immunity), easily understood market failure (unvaccinated individuals benefit without paying), and strong policy justification (free or mandatory vaccination). Use this as your go-to when a specific example is requested.'
+      table: {
+        title: 'Who pays, who gains, who loses?',
+        emoji: '👥',
+        headers: ['Agent', 'Impact'],
+        rows: [
+          { icon: '🛒', tone: 'green',  label: 'Consumers',     value: 'Pay less or get more access. Benefit from lower effective prices or more availability.' },
+          { icon: '🏭', tone: 'purple', label: 'Producers',     value: 'Receive higher revenue or more demand. Subsidies improve profitability of socially valuable output.' },
+          { icon: '🏛️', tone: 'blue',   label: 'Government',    value: 'Bears a fiscal cost through subsidy spending. Must balance cost with social benefits.' },
+          { icon: '👥', tone: 'amber',  label: 'Third parties', value: 'Gain from spillover benefits such as better health, cleaner environment or skills.' }
+        ]
+      },
+      causesLabel: 'Real-world examples',
+      causesEmoji: '🌍',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '🌳', head: 'Payments for tree planting', body: 'Governments pay landowners per hectare planted and maintained. Trees provide carbon storage, cleaner air, and habitat — benefits that extend to the whole community.', tone: 'green' },
+        { icon: '🔋', head: 'EV purchase grants',         body: 'Consumers receive grants or rebates for electric vehicles, reducing the upfront cost and encouraging adoption that lowers emissions for everyone.',              tone: 'blue'  }
+      ],
+      tipLate: { icon: '✅', tone: 'green', head: 'When this works best', text: 'Best when the main problem is <strong>under-consumption</strong> and the social benefit can be reasonably identified.' },
+      examEdge: '"A Pigouvian subsidy is theoretically efficient but practically difficult to calibrate" — a high-mark phrase. For top marks, compare subsidies to consumers vs producers on incidence, fiscal cost, and equity.'
     },
     {
       id: 'pos_externalities_5',
-      template: 'cause',
-      title: 'Government Policies to Correct Positive Externalities',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '🏛️',
-      causesLabel: 'Four policy tools',
-      causes: [
-        { icon: '💰', head: 'Subsidies to producers', body: 'Government pays producers to lower costs → supply shifts right → output and consumption increase toward socially optimal level. Example: subsidy to renewable energy firms to expand green energy production. Shifts MSC (MPC + subsidy) down to correct under-provision.' },
-        { icon: '🎫', head: 'Subsidies to consumers', body: 'Direct payment or voucher to consumers → demand (MPB) effectively shifts right → consumption increases. Example: free school meals, childcare subsidy, green home retrofit grants. Corrects underconsumption directly.' },
-        { icon: '🏛️', head: 'Public provision', body: 'Government provides the good free or below cost, funded by taxation. Example: NHS, state schools. Eliminates price barrier entirely — shifts consumption to socially optimal level if tax funding is sufficient.' },
-        { icon: '📋', head: 'Regulation', body: 'Compulsory consumption: mandatory education (ages 5-16), compulsory vaccination in some countries. Ensures socially optimal consumption regardless of individual willingness to pay.' }
+      stepLabel: 'Learn: Step 5 of 7',
+      title: 'Direct provision & regulation',
+      tip: { icon: '💡', tone: 'blue', text: '<em>Some positive externalities are so important that government does not just nudge the market — it directly provides the good or requires its consumption.</em>' },
+      keyPointsLabel: 'Two direct tools',
+      keyPointsEmoji: '🏛️',
+      keyPointsCols: 2,
+      keyPoints: [
+        {
+          tone: 'green', icon: '🏛️', title: 'Public provision',
+          headline: 'Government funds or supplies the service directly.',
+          body: '<span style="font-weight:800;color:#059669;">Examples:</span><br>• <strong>NHS healthcare</strong> — funded and delivered by the state to ensure everyone can access essential care.<br>• <strong>State schools</strong> — publicly funded education so children can learn, regardless of family income.<br><br><em>Widening access and treating merit goods partly as a right, not just a purchase.</em>'
+        },
+        {
+          tone: 'blue', icon: '🛡️', title: 'Mandatory consumption / regulation',
+          headline: 'Government requires or strongly enforces consumption.',
+          body: '<span style="font-weight:800;color:#2563EB;">Examples:</span><br>• <strong>Compulsory schooling</strong> — children must attend school until a minimum age because education benefits society.<br>• <strong>Vaccination mandates</strong> — required for certain jobs or activities to protect public health and prevent disease spread.<br><br><em>Ensuring everyone takes up the good when the social benefits are large.</em>'
+        }
       ],
-      examEdge: 'Subsidy size should equal the MEB at the socially optimal output. In practice, measuring MEB is difficult (what is the precise external benefit of one extra year of education?). This is a key limitation: government cannot know the exact optimal subsidy without knowing the MEB — risks under- or over-correcting.'
+      causesLabel: 'Trade-offs',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '🔁', head: 'Flexibility',          body: 'Market approaches are more flexible and adapt to preferences and new information. Direct tools are less flexible.', tone: 'green'  },
+        { icon: '💸', head: 'Fiscal cost',          body: 'Public provision is usually expensive and puts pressure on public finances. Mandates can be cheaper to deliver.',   tone: 'purple' },
+        { icon: '🎯', head: 'Certainty of outcome', body: 'Mandates provide greater certainty that the good will be consumed. Market approaches can leave under-consumption.', tone: 'blue'   },
+        { icon: '⚖️', head: 'Access / equity',      body: 'Public provision improves access and reduces inequalities. Market tools can exclude those who can\'t pay.',         tone: 'amber'  }
+      ],
+      tipLate: { icon: '✅', tone: 'green', head: 'When these tools are strongest', text: 'Use direct provision or regulation when the social benefit is large, access matters, and leaving it purely to the market would underprovide the good.' },
+      examEdge: 'Distinguish market-based vs direct tools by the mechanism: prices vs rules/provision. Use direct provision as your dominant answer when access matters morally (healthcare, education) or when the externality is large enough that voluntary uptake won\'t reach Q*.'
     },
     {
       id: 'pos_externalities_6',
-      template: 'framing',
-      title: 'Merit Goods vs Positive Externalities',
-      body: 'A <strong>merit good</strong> is a good that society judges should be consumed more than individuals would choose if left to their own devices. This may be due to:<br>1. Positive externalities (as above — others benefit)<br>2. Information failure — individuals underestimate the private benefit of education, healthcare, or exercise due to myopia or lack of information. Even without external benefits, the market underprovides.<br><br>Merit goods are different from pure externality cases because even the private benefit may be underestimated. This strengthens the case for government intervention — even if there were no external benefits, markets would under-supply due to information failure and present bias.',
-      keyTerms: [
-        { term: 'Merit good', def: 'A good with positive externalities or information failure that leads to underconsumption — society judges it should be consumed more than markets provide.' },
-        { term: 'Present bias', def: 'Tendency to overweight immediate costs (school effort, medical procedures) relative to future benefits — leads to underinvestment in education and health.' },
-        { term: 'Information failure', def: 'Consumers underestimate the benefits of merit goods — a separate justification for intervention from externalities.' }
+      stepLabel: 'Learn: Step 6 of 7',
+      title: 'Evaluation: why intervention can fail',
+      tip: { icon: '⚖️', tone: 'green', text: 'Interventions aim to correct market failure, but correcting positive externalities can itself create <strong>government failure</strong>. Below are key reasons why intervention may be ineffective, inefficient or have unintended consequences.' },
+      flowTitle: 'Five reasons intervention can fail',
+      flowEmoji: '⚠️',
+      flow: [
+        { tone: 'green',  icon: '🔍', title: 'Information failure',             sub: 'The MEB is unobservable, so the subsidy or provision level may be set incorrectly.' },
+        { tone: 'purple', icon: '🚪', title: 'Moral hazard & over-use',         sub: 'Free at point of use → trivial GP appointments; subsidised degrees taken for the wrong reasons.' },
+        { tone: 'blue',   icon: '🔁', title: 'Crowding out private supply',     sub: 'Public schools and NHS may displace private alternatives that would have served some users more efficiently.' },
+        { tone: 'amber',  icon: '💰', title: 'Fiscal cost & tax distortion',    sub: 'Subsidies and public provision must be funded; taxes raised to pay for them create their own deadweight losses elsewhere.' },
+        { tone: 'rose',   icon: '🗳️', title: 'Politically captured allocation', sub: 'Subsidies and grants steered to politically favoured groups or regions rather than where MEB is highest.' }
       ],
-      examEdge: 'The distinction between merit goods (information failure + externality) and pure positive externality goods (externality only) is important for evaluation. For merit goods, even a perfectly informed consumer might rationally underconsume — justifying stronger intervention than just correcting the externality.'
+      tipLate: [
+        { icon: '💡', tone: 'amber', head: 'What the best evaluation does', text: 'Compare the market failure with the <em>government failure</em>. Ask whether the intervention improves on the market outcome, even if it is imperfect.' },
+        { icon: '⭐', tone: 'rose',  head: 'Exam edge',                     text: 'The key issue is not whether the intervention is perfect, but whether it produces a <strong>better outcome than the unregulated market</strong>.' }
+      ],
+      conclusion: { title: 'Bottom line', text: 'Judging intervention is about <strong>trade-offs</strong>. We accept some government failure if the net benefit is an improvement on the market outcome.' },
+      examEdge: 'Top evaluations name a specific failure (e.g. moral hazard from free university tuition) and show a fix (e.g. income-contingent loans). Avoid generic phrases like "government failure" without an example.'
     },
     {
       id: 'pos_externalities_7',
-      template: 'framing',
-      title: 'Subsidies vs Public Provision: Evaluation',
-      verdict: {
-        leftLabel: '💰 Subsidies',
-        rightLabel: '🏛️ Public provision (free at point of use)',
-        separator: 'VS',
-        rows: [
-          { aspect: 'Market mechanism', left: 'Preserves price signals and competition between providers', right: 'Replaces market entirely — government becomes the provider' },
-          { aspect: 'Targeting', left: 'Can be means-tested to reach those most excluded from market', right: 'Universal access regardless of income — maximum equity' },
-          { aspect: 'MEB measurement', left: 'Requires accurate MEB measurement to set optimal subsidy level', right: 'Avoids need to measure MEB — just provide the good' },
-          { aspect: 'Moral hazard', left: 'Limited moral hazard if consumer still pays some portion', right: 'Risk: over-consumption if marginal cost to users is zero (trivial GP appointments)' },
-          { aspect: 'Fiscal cost', left: 'Lower fiscal cost if means-tested; some market cost-discipline', right: 'Requires taxation which may have its own efficiency costs' }
-        ]
+      stepLabel: 'Learn: Step 7 of 7',
+      title: 'Exam edge & economist insight',
+      tip: { icon: null, tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The optimal subsidy equals the <em>MEB at the socially optimal output</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Public provision avoids the <em>measurement problem</em> at the cost of <em>moral hazard</em>.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The case for intervention strengthens when external benefits are <em>large, persistent, and concentrated in groups with low willingness to pay</em>.&rdquo;</span></div></div>' },
+      flow: [
+        { tone: 'blue',   icon: '📘', title: 'Define & explain',         sub: 'Define the externality (type and cause) and explain the positive consumption externality diagram with MSB above MPB.' },
+        { tone: 'green',  icon: '💸', title: 'Analyse market-based',     sub: 'Evaluate Pigouvian subsidies (consumer- and producer-side) and outcome-based payments: efficiency, calibration to MEB, fiscal cost.' },
+        { tone: 'purple', icon: '🏛️', title: 'Compare direct provision', sub: 'Assess public provision and regulation on certainty of outcome, moral hazard, fiscal commitment, and access as a right.' },
+        { tone: 'amber',  icon: '⚖️', title: 'Reach a judgement',        sub: 'Weigh size of externality, elasticity, equity and political feasibility. Make a clear, supported conclusion.' }
+      ],
+      flowTitle: 'How to evaluate a 25-mark essay',
+      flowEmoji: '📖',
+      causesLabel: 'Judgement framework — use these criteria to compare policies',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '📈', head: 'Size of the externality', body: 'How large is the welfare gain forgone? Larger externalities justify stronger intervention.',                tone: 'green'  },
+        { icon: '📉', head: 'Elasticity',               body: 'How responsive are MPB and MPC? Inelastic demand means subsidies raise quantity little.',                   tone: 'blue'   },
+        { icon: '⚖️', head: 'Equity &amp; access',      body: 'Where consumption is a right (healthcare, education), distribution matters more than efficiency.',          tone: 'purple' },
+        { icon: '🗳️', head: 'Political feasibility',    body: 'Will the intervention survive electoral cycles, lobbying, and fiscal pressure?',                            tone: 'amber'  }
+      ],
+      tipLate: {
+        icon: '💡', tone: 'green', head: 'Why this matters',
+        text: 'Externality questions often combine with <strong>merit goods</strong> and <strong>information failure</strong>. The strongest answers explain how the <em>three market failures stack</em> to justify especially strong intervention in health and education — and the matching three <em>government</em> failures (info failure on MEB, moral hazard, political capture) that explain why no system is perfect.'
       },
-      examEdge: 'NHS vs private healthcare debate is the definitive policy question here. Free at point of use eliminates underconsumption from positive externality but may create moral hazard (trivial GP appointments). Co-payments (small charges for prescriptions) attempt to limit this without re-creating access barriers. A nuanced evaluation.',
+      conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external benefit</em>, the <em>information available</em>, and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more flexible; direct provision may be preferred when certainty and access matter most.' },
+      examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · equity / access · political feasibility</strong>. Top answers reach a judgement, not a list.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

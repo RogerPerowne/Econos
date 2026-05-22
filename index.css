@@ -178,10 +178,24 @@
       letter-spacing: -0.032em;
       line-height: 1.04;
       color: var(--ink);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       white-space: nowrap;
     }
     .hp-hero__headline--blue { color: var(--blue); }
+
+    .hp-tagline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    .hp-tagline__learn { color: var(--green); }
+    .hp-tagline__link  { color: var(--yellow); }
+    .hp-tagline__land  { color: var(--pink); }
+    .hp-tagline__sep   { color: var(--line); font-weight: 400; }
 
     .hp-hero__sub {
       font-size: clamp(16px, 1.6vw, 18px);

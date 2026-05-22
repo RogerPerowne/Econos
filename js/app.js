@@ -1295,7 +1295,7 @@
         const thirdPartyHtml = item.thirdParty
           ? `<div style="display:flex;align-items:center;gap:8px;background:${t.soft};border-radius:8px;padding:8px 10px;margin-top:auto;">
                <span style="font-size:16px;flex-shrink:0;">👥</span>
-               <div style="font-size:12.5px;line-height:1.4;"><span style="font-weight:600;color:#475569;">Third party harmed: </span><span style="font-weight:700;color:${t.label};">${item.thirdParty}</span></div>
+               <div style="font-size:12.5px;line-height:1.4;"><span style="font-weight:600;color:#475569;">${item.thirdPartyLabel || 'Third party harmed'}: </span><span style="font-weight:700;color:${t.label};">${item.thirdParty}</span></div>
              </div>`
           : '';
         return `

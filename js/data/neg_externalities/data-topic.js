@@ -53,7 +53,7 @@ window.ECONOS_TOPIC = {
       workedExample: {
         label: 'Worked example: the steel plant',
         emoji: '🏭',
-        scene: 'steelPlant',
+        heroImage: 'assets/steel-hero.png',
         cards: [
           {
             tone: 'green', icon: '💼',
@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
       illustratedGridEmoji: '🏭',
       illustratedGrid: [
         {
-          heroImage: 'assets/steel-hero.png', tone: 'green',
+          scene: 'steelCement', tone: 'green',
           title: 'Steel and cement production',
           body: 'Emissions and dust cause air pollution and contribute to climate change.',
           thirdParty: 'Nearby residents and future generations'

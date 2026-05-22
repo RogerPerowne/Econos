@@ -14122,31 +14122,31 @@ window.ECONOS_ICONS = {
       <text x="66" y="128" font-size="8.5" text-anchor="middle" fill="#0F172A">making the decision.</text>
 
       <!-- + badge (grey with black plus) -->
-      <circle cx="136" cy="86" r="13" fill="#E2E8F0"/>
-      <text x="136" y="92" font-size="18" font-weight="900" text-anchor="middle" fill="#0F172A">+</text>
+      <circle cx="135" cy="86" r="13" fill="#E2E8F0"/>
+      <text x="135" y="92" font-size="18" font-weight="900" text-anchor="middle" fill="#0F172A">+</text>
 
       <!-- External costs box -->
-      <rect x="158" y="26" width="112" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
-      <!-- Two-people icon (third parties) centred at cx=214 -->
+      <rect x="148" y="26" width="112" height="120" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <!-- Two-people icon (third parties) centred at cx=204 -->
       <!-- back person (smaller, behind right) -->
-      <circle cx="221" cy="42" r="5" fill="#0F172A" opacity="0.7"/>
-      <path d="M214 62 Q221 53 228 62 L228 66 L214 66 Z" fill="#0F172A" opacity="0.7"/>
+      <circle cx="211" cy="42" r="5" fill="#0F172A" opacity="0.7"/>
+      <path d="M204 62 Q211 53 218 62 L218 66 L204 66 Z" fill="#0F172A" opacity="0.7"/>
       <!-- front person -->
-      <circle cx="208" cy="44" r="6" fill="#0F172A"/>
-      <path d="M199 66 Q208 55 217 66 L217 70 L199 70 Z" fill="#0F172A"/>
-      <text x="214" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">External costs</text>
-      <text x="214" y="106" font-size="8.5" text-anchor="middle" fill="#0F172A">Costs imposed on</text>
-      <text x="214" y="117" font-size="8.5" text-anchor="middle" fill="#0F172A">third parties not</text>
-      <text x="214" y="128" font-size="8.5" text-anchor="middle" fill="#0F172A">in the transaction.</text>
+      <circle cx="198" cy="44" r="6" fill="#0F172A"/>
+      <path d="M189 66 Q198 55 207 66 L207 70 L189 70 Z" fill="#0F172A"/>
+      <text x="204" y="92" font-size="10.5" font-weight="800" text-anchor="middle" fill="#dc2626">External costs</text>
+      <text x="204" y="106" font-size="8.5" text-anchor="middle" fill="#0F172A">Costs imposed on</text>
+      <text x="204" y="117" font-size="8.5" text-anchor="middle" fill="#0F172A">third parties not</text>
+      <text x="204" y="128" font-size="8.5" text-anchor="middle" fill="#0F172A">in the transaction.</text>
 
       <!-- Dashed arrows to summary -->
       <line x1="66" y1="150" x2="66" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
       <polygon points="66,179 62,171 70,171" fill="#dc2626"/>
-      <line x1="214" y1="150" x2="214" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <polygon points="214,179 210,171 218,171" fill="#dc2626"/>
+      <line x1="204" y1="150" x2="204" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="204,179 200,171 208,171" fill="#dc2626"/>
 
       <!-- Social costs summary box -->
-      <rect x="10" y="185" width="260" height="58" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <rect x="10" y="185" width="250" height="58" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
       <!-- Balance scale icon -->
       <line x1="32" y1="193" x2="32" y2="231" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
       <line x1="20" y1="202" x2="44" y2="202" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
@@ -14173,11 +14173,11 @@ window.ECONOS_ICONS = {
       <text x="336" y="128" font-size="8.5" text-anchor="middle" fill="#0F172A">producer.</text>
 
       <!-- + badge (grey with black plus) -->
-      <circle cx="406" cy="86" r="13" fill="#E2E8F0"/>
-      <text x="406" y="92" font-size="18" font-weight="900" text-anchor="middle" fill="#0F172A">+</text>
+      <circle cx="405" cy="86" r="13" fill="#E2E8F0"/>
+      <text x="405" y="92" font-size="18" font-weight="900" text-anchor="middle" fill="#0F172A">+</text>
 
       <!-- External benefits box -->
-      <rect x="420" y="26" width="110" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+      <rect x="418" y="26" width="112" height="120" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
       <!-- Three-people group icon centred at cx=475 -->
       <!-- left back person -->
       <circle cx="463" cy="44" r="5" fill="#0F172A" opacity="0.7"/>

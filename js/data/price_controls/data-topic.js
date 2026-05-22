@@ -2,7 +2,7 @@ window.ECONOS_TOPIC = {
   id: 'price_controls',
   topicNum: '4.1',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  title: '4.1 Government Intervention',
+  title: '4.1 Government Intervention in Markets',
   estTime: '8-10 minutes',
   goal: 'Lock in how price ceilings and price floors work, the welfare effects, real-world UK applications, and how to evaluate them against alternative policies.',
   intro: {

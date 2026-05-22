@@ -142,7 +142,7 @@ window.ECONOS_TOPIC = {
       illustratedGridEmoji: '🏭',
       illustratedGrid: [
         {
-          scene: 'steelCement', tone: 'green',
+          heroImage: 'assets/steel-hero.png', tone: 'green',
           title: 'Steel and cement production',
           body: 'Emissions and dust cause air pollution and contribute to climate change.',
           thirdParty: 'Nearby residents and future generations'

@@ -33,9 +33,10 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 10',
       title: 'The big picture: why governments intervene',
       tip: { icon: '🎯', tone: 'blue', text: 'Governments intervene to improve economic welfare when markets fail. The spec gives you <strong>seven tools</strong> split into two families — price-changing tools and "other" tools. Different problems need different tools.' },
+      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: null, layout: 'stacked' },
       causesStyle: 'tinted-flat',
       causesEmoji: '🧭',
-      causesLabel: 'The market failures intervention tries to fix',
+      causesLabel: 'The four market failures intervention tries to fix',
       causes: [
         { tone: 'rose',   icon: '🏭', head: 'Externalities',              body: 'Third-party costs (pollution) or benefits (vaccination) the market ignores. The market over- or under-produces relative to the social optimum.' },
         { tone: 'amber',  icon: '🏛️', head: 'Under-provision of public goods', body: 'Non-rival, non-excludable goods (defence, street lighting) the private sector won\'t provide because of the free-rider problem.' },
@@ -64,42 +65,66 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 10',
       title: 'Indirect taxation — specific vs ad valorem',
       tip: { icon: '💷', tone: 'green', text: 'An <strong>indirect tax</strong> is a tax on spending, paid by the producer but usually passed (at least partly) to the consumer. A <strong>specific tax</strong> shifts supply up by a fixed amount per unit; an <strong>ad valorem tax</strong> pivots supply because it is a percentage of price.' },
-      interactiveDiagram: {
-        svgKey: 'taxDiagramInteractive',
-        label: 'Build the indirect-tax diagram step by step',
-        emoji: '📊',
-        layers: ['idl-1', 'idl-2', 'idl-3'],
-        views: [
-          {
-            label: 'Free market',
-            tone: 'blue',
-            head: 'The free-market baseline',
-            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no tax in place.',
-            analysis: 'Without intervention the market is allocatively efficient. Any tax moves price and quantity away from this point and creates a welfare cost — <em>unless</em> it corrects a negative externality, in which case the welfare cost in the private market can be smaller than the externality DWL it eliminates.'
-          },
-          {
-            label: 'Tax shifts supply',
-            tone: 'amber',
-            head: 'The tax wedge: P<sub>c</sub> vs P<sub>p</sub>',
-            body: 'A <strong>specific tax</strong> (e.g. £2 per litre of fuel) shifts S <em>up by a fixed amount</em> — a parallel shift. An <strong>ad valorem tax</strong> (e.g. 20% VAT) shifts S up by a <em>percentage</em> — supply <em>pivots</em>, with a wider gap at higher prices.',
-            analysis: 'Buyers pay P<sub>c</sub>, sellers receive P<sub>p</sub>; the vertical gap = the per-unit tax. Output falls from Q<sub>e</sub> to Q<sub>t</sub>. The choice between specific and ad valorem matters: specific taxes give predictable revenue per unit (good for tobacco / fuel duties); ad valorem taxes scale with price (good for general VAT and luxury goods).'
-          },
-          {
-            label: 'Revenue & incidence',
-            tone: 'green',
-            head: 'CS and PS shrink; government collects revenue',
-            body: 'CS and PS are both smaller. The green rectangle = tax revenue = (P<sub>c</sub> − P<sub>p</sub>) × Q<sub>t</sub>. <strong>The more inelastic side bears more of the tax</strong>.',
-            analysis: 'Incidence is the killer evaluation point. Cigarettes have very inelastic demand → consumers pay almost all the tax → tax is regressive but raises stable revenue. Fuel duty: demand inelastic in short run, more elastic in long run as drivers switch to EVs. Identifying who actually bears the burden — not who legally pays — is what earns analysis marks.'
-          },
-          {
-            label: 'Deadweight loss',
-            tone: 'rose',
-            head: 'Welfare lost from trades that no longer happen',
-            body: 'The red triangle = DWL: surplus from trades between Q<sub>t</sub> and Q<sub>e</sub> that would have occurred at P<sub>e</sub> but the tax prevents.',
-            analysis: 'DWL grows with the tax rate and with elasticity. <strong>Exception:</strong> a Pigouvian tax on a negative externality (carbon, alcohol, tobacco) can <em>raise</em> welfare because it eliminates the larger externality DWL. This is why economists prefer "sin taxes" to bans — they preserve the choice for low-harm consumers while pricing in the social cost.'
-          }
-        ]
-      },
+      interactiveDiagram: [
+        {
+          svgKey: 'taxTypesInteractive',
+          label: 'Specific vs ad valorem — how supply shifts differently',
+          emoji: '📐',
+          layers: ['idl-1', 'idl-2'],
+          views: [
+            {
+              label: 'Free market',
+              tone: 'blue',
+              head: 'The free-market baseline',
+              body: 'D and S intersect at P₀, Q₀. No tax wedge, no distortion — this is the benchmark every policy is judged against.',
+              analysis: 'Without intervention the market is allocatively efficient: every unit produced has MB ≥ MC and total surplus is maximised. Any tax that moves price and quantity away from this point creates a welfare cost — unless it corrects a negative externality larger than the DWL it creates.'
+            },
+            {
+              label: 'Specific tax',
+              tone: 'amber',
+              head: 'Specific tax — parallel shift (e.g. fuel duty, alcohol duty)',
+              body: 'A fixed £ per unit (e.g. 57.95p/litre of petrol). Supply shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to <strong>P<sub>c</sub></strong>; quantity falls to <strong>Q<sub>t</sub></strong>.',
+              analysis: 'Parallel shift means the tax gap is constant at all prices. <strong>Real UK examples:</strong> fuel duty (57.95p/litre), tobacco duty (£7.01 per 20 cigarettes + 16.5% ad valorem), alcohol duty (per unit of pure alcohol). Specific taxes are easy to administer but erode in real terms with inflation unless manually uprated.'
+            },
+            {
+              label: 'Ad valorem tax',
+              tone: 'purple',
+              head: 'Ad valorem tax — pivot shift (e.g. 20% VAT)',
+              body: 'A percentage of price (e.g. 20% VAT). The £ amount of tax is <em>small at low prices, large at high prices</em> — so supply <strong>pivots</strong> upward. The gap between S and S+T% widens as price rises.',
+              analysis: 'Pivoting supply means higher-priced goods carry more tax in £ terms. <strong>Key difference:</strong> ad valorem taxes grow automatically with inflation (VAT revenue rises when prices rise); specific taxes don\'t. This makes VAT more stable as a revenue source but less predictable in its quantity effect for expensive goods.'
+            }
+          ]
+        },
+        {
+          svgKey: 'taxIncidenceInteractive',
+          label: 'Tax incidence — who actually pays?',
+          emoji: '⚖️',
+          layers: ['idl-1', 'idl-2', 'idl-3'],
+          views: [
+            {
+              label: 'Tax in place',
+              tone: 'blue',
+              head: 'The tax wedge: P<sub>c</sub>, P<sub>p</sub> and £T',
+              body: 'Supply has shifted to S+T. Quantity falls to Q<sub>t</sub>. Consumers pay P<sub>c</sub>; producers receive net price P<sub>p</sub>. The vertical gap P<sub>c</sub> − P<sub>p</sub> = the per-unit tax £T.',
+              analysis: 'P<sub>c</sub> > P₀ > P<sub>p</sub> — consumers pay more, producers receive less. <strong>Legal vs economic incidence:</strong> the seller remits the tax to HMRC, but the economic burden falls on whoever is less elastic. The next two steps split that burden explicitly.'
+            },
+            {
+              label: 'Consumer burden',
+              tone: 'blue',
+              head: 'The consumer burden: (P<sub>c</sub> − P₀) × Q<sub>t</sub>',
+              body: 'The <strong style="color:#2563EB">blue rectangle</strong> = the consumer burden. Consumers pay P<sub>c</sub> instead of P₀ on Q<sub>t</sub> units. The more <em>inelastic demand</em> is, the larger this rectangle.',
+              analysis: '<strong>Inelastic demand → consumers bear more.</strong> Cigarettes: PED ≈ −0.3 → consumers absorb ~75% of tobacco duty. Petrol: PED ≈ −0.1 in the short run → consumers absorb almost all fuel duty. This makes these taxes regressive — low-income households spend a higher share of income on these goods.'
+            },
+            {
+              label: 'Producer burden',
+              tone: 'rose',
+              head: 'The producer burden: (P₀ − P<sub>p</sub>) × Q<sub>t</sub>',
+              body: 'The <strong style="color:#dc2626">red rectangle</strong> = the producer burden. Producers receive P<sub>p</sub> instead of P₀ on Q<sub>t</sub> units. The more <em>inelastic supply</em> is, the larger this rectangle.',
+              analysis: '<strong>Inelastic supply → producers bear more.</strong> Together the blue + red rectangles = total tax revenue. The DWL triangle (the area between Q<sub>t</sub> and Q₀ that is neither consumer burden nor producer burden nor government revenue) is welfare lost permanently — not transferred to anyone.'
+            }
+          ]
+        }
+      ],
       keyTerms: [
         { term: 'Specific tax',   def: 'A fixed amount per unit (e.g. 57.95p per litre of petrol). Causes a <strong>parallel</strong> upward shift in supply.' },
         { term: 'Ad valorem tax', def: 'A percentage of price (e.g. 20% VAT, tobacco at 16.5% of retail). Causes supply to <strong>pivot</strong> upward — gap widens at higher prices.' },
@@ -153,6 +178,14 @@ window.ECONOS_TOPIC = {
           }
         ]
       },
+      illustratedGrid: [
+        { tone: 'green',  title: '🚌 £2 bus fare cap (2023–24)', body: 'Government subsidy capped single bus fares nationally at £2. Large CS gain for regular commuters; modest effect on modal shift. Cost ~£600m/year — opportunity cost against other transport priorities.' },
+        { tone: 'blue',   title: '🔬 R&D tax credits',           body: 'Firms claim 20–27% of qualifying R&D costs back against corporation tax. Strong evidence of additionality — firms do more R&D than without the subsidy, because innovation has large positive MEB (spillovers to the wider economy).' },
+        { tone: 'purple', title: '🌱 Boiler Upgrade Scheme',     body: 'Grant of £7,500 toward a heat pump. Producer subsidy shifting consumer demand toward low-carbon heating. Slow take-up suggests elasticity of demand for heat pumps is low despite the large subsidy — supply constraint dominates.' },
+        { tone: 'amber',  title: '🚜 Agricultural support (post-CAP)', body: 'UK\'s Environmental Land Management (ELM) pays farmers per hectare of habitat they restore. Producer subsidy targeting positive externalities (biodiversity, flood prevention) rather than output volume.' }
+      ],
+      illustratedGridLabel: 'UK subsidy case studies',
+      illustratedGridEmoji: '📋',
       keyTerms: [
         { term: 'Producer subsidy', def: 'Payment per unit to suppliers — used for solar PV, agricultural support, public transport.' },
         { term: 'Consumer subsidy', def: 'Payment to buyers (vouchers, free provision) — used for free school meals, NHS prescriptions for under-16s.' },
@@ -276,6 +309,15 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 10',
       title: 'Tradable pollution permits (cap-and-trade)',
       tip: { icon: '🏭', tone: 'blue', text: 'Government <strong>sets a cap</strong> on total emissions and issues permits equal to the cap. Firms must hold a permit for every tonne they emit. They can <strong>trade</strong> permits — creating a market price for pollution.' },
+      workedExample: {
+        scene: 'capAndTrade',
+        label: null,
+        cards: [
+          { tone: 'blue',   icon: '🏛️', title: 'Government sets the cap',    body: 'The regulator decides the total annual emissions allowed (e.g. 87 Mt CO₂e for UK power & industry). This is the hard environmental ceiling — unlike a Pigouvian tax, the quantity outcome is <em>certain</em>.' },
+          { tone: 'green',  icon: '🔄', title: 'Firms trade permits',          body: 'Firms with <em>low</em> abatement costs cut emissions and <strong>sell</strong> spare permits. Firms with <em>high</em> abatement costs <strong>buy</strong> them. The market finds the cheapest abatement first — cost-efficient by design.' },
+          { tone: 'amber',  icon: '💰', title: 'Market sets the price',        body: 'The permit price (UK ETS ≈ £35–50/tCO₂ in 2024) is set by supply and demand between firms. Firms compare the permit price against their internal abatement cost: if abating is cheaper, cut; if buying is cheaper, buy a permit.' }
+        ]
+      },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚙️',
       causesLabel: 'How cap-and-trade works in four steps',
@@ -310,6 +352,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 7 of 10',
       title: 'State provision of public goods',
       tip: { icon: '🏛️', tone: 'purple', text: '<strong>Public goods</strong> are non-rival (one person\'s use doesn\'t reduce another\'s) and non-excludable (no one can be prevented from using them). The free-rider problem means the private sector under-provides — so the state steps in and funds provision via taxation.' },
+      workedExample: { scene: 'publicGoods', label: null, cards: [] },
       causes: [
         { tone: 'purple', icon: '🔓', head: 'Non-excludable',
           body: 'Once provided, no one can be prevented from benefiting — e.g. you cannot stop someone watching the fireworks display from a nearby hill.' },
@@ -379,6 +422,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 9 of 10',
       title: 'Regulation',
       tip: { icon: '🛡️', tone: 'rose', text: '<strong>Regulation</strong> sets rules, standards or outright bans on behaviour. It is <em>command-and-control</em>: no reliance on price signals, just legal compliance. Best when harm is severe or irreversible and price-based tools are too slow or uncertain.' },
+      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'Where regulation sits on the policy spectrum', layout: 'stacked' },
       causesStyle: 'tinted-flat',
       causesEmoji: '📜',
       causesLabel: 'Four regulatory tools — examples',
@@ -413,6 +457,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 10 of 10',
       title: 'Choosing the right tool + evaluation',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure — the question is whether the gain outweighs the new distortion.' },
+      diagramPanel: { diagramKey: 'govtFailureDiagram', title: 'Government failure in the welfare diagram', layout: 'stacked' },
       colA: 'Best-fit tool(s)',
       colB: 'Why it fits',
       rows: [

@@ -27,10 +27,18 @@
 
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, statSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { execSync } from 'node:child_process';
 
 const ROOT = process.cwd();
+
+/* Short git SHA used as a per-deploy cache-bust token. Falls back to a
+   timestamp so `npm run build` works without a git repo. */
+const BUILD_HASH = (() => {
+  try { return execSync('git rev-parse --short HEAD', { cwd: ROOT }).toString().trim(); }
+  catch { return Date.now().toString(36); }
+})();
 
 /* Every .html in the repo root is an entry point. Includes the
    four shells + index/login/quiz + the 14 legacy redirect stubs
@@ -53,6 +61,28 @@ export default defineConfig({
   appType: 'mpa',
 
   plugins: [
+    /* Append ?v=<git-sha> to every <script src="js/..."> reference in the
+       emitted HTML so browsers and CDNs never serve stale JS after a deploy. */
+    {
+      name: 'js-cache-bust',
+      transformIndexHtml(html) {
+        return html.replace(/(src=")(js\/[^"]+)(")/g, `$1$2?v=${BUILD_HASH}$3`);
+      }
+    },
+
+    /* Patch CACHE_NAME in dist/sw.js so the service worker invalidates its
+       cache-first store on every deploy. */
+    {
+      name: 'sw-version',
+      closeBundle() {
+        const swPath = resolve(ROOT, 'dist/sw.js');
+        try {
+          const src = readFileSync(swPath, 'utf8');
+          writeFileSync(swPath, src.replace(/('econos-v)[^']*(')/g, `$1${BUILD_HASH}$2`));
+        } catch { /* sw.js absent in dev mode — safe to skip */ }
+      }
+    },
+
     /* Copy classic JS + assets verbatim. They're loaded at runtime
        by paths the bundler would otherwise rewrite or drop. */
     viteStaticCopy({

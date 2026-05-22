@@ -274,7 +274,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam edge',
       tip: { icon: null, tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style=”display:flex;flex-direction:column;gap:8px;margin-top:4px;”><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;MSB exceeds MPB, so the market under-produces relative to the socially optimal output.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;The market under-consumes the good because private decisions ignore the external benefit.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;A subsidy can internalise the external benefit by shifting MPB up towards MSB.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;The size of the welfare gain forgone depends on the price elasticity of demand and supply.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;Intervention may be justified despite government failure if the external benefit is large and well-targeted.&rdquo;</span></div></div>' },
-      flowTitle: '2. A 4-step evaluation flow',
+      flowTitle: 'A 4-step evaluation flow',
       flowEmoji: '🧭',
       flow: [
         { tone: 'blue',   icon: '1️⃣', title: 'Identify the intervention',  sub: 'and how it moves output toward Q*.' },
@@ -282,7 +282,7 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '3️⃣', title: 'Evaluate practical limits',   sub: 'or government failure.' },
         { tone: 'amber',  icon: '4️⃣', title: 'Reach a clear judgement',     sub: 'on when the policy works best.' }
       ],
-      causesLabel: '3. A 4-criterion judgement framework',
+      causesLabel: 'A 4-criterion judgement framework',
       causesEmoji: '⚖️',
       causesStyle: 'tinted-flat',
       causes: [

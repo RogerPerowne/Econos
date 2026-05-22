@@ -3,58 +3,173 @@ window.ECONOS_TOPIC = {
   topicNum: '4.1',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: '4.1 Government Intervention in Markets',
-  estTime: '8-10 minutes',
-  goal: 'Lock in how price ceilings and price floors work, the welfare effects, real-world UK applications, and how to evaluate them against alternative policies.',
+  estTime: '15-18 minutes',
+  goal: 'Master the seven Edexcel intervention tools — indirect taxes, subsidies, maximum and minimum prices, tradable pollution permits, state provision, information provision and regulation — and learn to pick the right tool for the right market failure.',
   intro: {
     heroKey: 'heroPrice',
-    summary: 'Price controls set legal limits on the market price — a ceiling caps it from above, a floor props it up from below. They are used with good intentions but create predictable side-effects: shortages, surpluses, black markets, quality decline, and deadweight loss.',
-    doInThis: 'Work through 5 cards covering price ceilings and floors with full interactive welfare analysis, five real-world UK and international case studies, and an evaluation card weighing controls against alternative policies.',
+    summary: 'Governments intervene when markets fail. The spec lists seven tools that split into two families: price-changing interventions (taxes, subsidies, max/min prices) that work through the price mechanism, and other tools (permits, state provision, information, regulation) that work directly on quantities, access or behaviour.',
+    doInThis: 'Work through 10 cards: an overview map, four price-changing tools with interactive welfare diagrams, four "other" tools with case studies, and a synthesis card that matches each market failure to its best-fit policy.',
     outcomes: [
-      'Distinguish binding price ceilings from price floors and identify the resulting shortage or surplus',
-      'Use the welfare diagram to show how surplus is redistributed and where deadweight loss appears',
-      'Apply the analysis to rent control, the UK energy price cap, the National Living Wage, the EU CAP, and Scotland\'s minimum unit pricing on alcohol',
-      'Evaluate price controls against targeted subsidies, income transfers, and supply-side reforms'
+      'Distinguish specific from ad valorem indirect taxes and identify tax incidence using PED and PES',
+      'Use the welfare diagram to show how taxes, subsidies, ceilings and floors redistribute surplus and create DWL',
+      'Explain how tradable pollution permits, state provision, information and regulation work and where each is most effective',
+      'Match each market failure (externalities, public goods, info gaps, market power) to the best-fit policy tool',
+      'Evaluate every intervention against the risk of government failure: distorted price signals, unintended consequences, admin costs and information gaps'
     ],
-    tip: 'A ceiling only bites if set BELOW equilibrium (creates a shortage); a floor only bites if set ABOVE equilibrium (creates a surplus). Both cut the quantity traded, both create DWL — unless they correct a pre-existing market failure larger than the welfare loss they cause.',
+    tip: 'For every intervention ask three things: (1) What market failure does it address? (2) Who gains, who loses, and who pays? (3) Could a different tool do the same job with less distortion? These three questions earn the bulk of the evaluation marks.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '10 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
+
+    /* ============================================================
+       CARD 1 — The big picture: why governments intervene
+       ============================================================ */
     {
       id: 'price_controls_1',
-      template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 5',
-      title: 'Price controls: the big picture',
-      lede: 'Governments set legal maximum or minimum prices to protect consumers or producers — but every binding control distorts the market and creates a deadweight loss.',
-      diagramKey: 'priceControlsInteractive',
-      steps: [
-        {
-          key: 'base',
-          label: 'Free market benchmark',
-          text: 'Without intervention the market clears at <strong>(Q*, P*)</strong> — supply meets demand, no shortage or surplus, total welfare (CS + PS) is maximised. This is the benchmark every price control is judged against. <strong>Cards 2 and 3</strong> build the ceiling and floor cases in depth.'
-        },
-        {
-          key: 'extension',
-          label: 'Price ceiling overview',
-          text: 'A <strong>price ceiling</strong> (legal maximum) set <em>below</em> P* creates a <strong>shortage</strong> — buyers want more than sellers will supply. Aim: protect consumers from "too high" prices. <strong>Card 2</strong> unpacks how the ceiling shifts CS, PS, and welfare step by step.'
-        },
-        {
-          key: 'shift',
-          label: 'Price floor overview',
-          text: 'A <strong>price floor</strong> (legal minimum) set <em>above</em> P* creates a <strong>surplus</strong> — sellers want to supply more than buyers will buy. Aim: protect producers or workers from "too low" prices. <strong>Card 3</strong> unpacks the floor mechanics, including the mirror-image welfare effects.'
-        }
+      stepLabel: 'Learn: Step 1 of 10',
+      title: 'The big picture: why governments intervene',
+      tip: { icon: '🎯', tone: 'blue', text: 'Governments intervene to improve economic welfare when markets fail. The spec gives you <strong>seven tools</strong> split into two families — price-changing tools and "other" tools. Different problems need different tools.' },
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🧭',
+      causesLabel: 'The market failures intervention tries to fix',
+      causes: [
+        { tone: 'rose',   icon: '🏭', head: 'Externalities',              body: 'Third-party costs (pollution) or benefits (vaccination) the market ignores. The market over- or under-produces relative to the social optimum.' },
+        { tone: 'amber',  icon: '🏛️', head: 'Under-provision of public goods', body: 'Non-rival, non-excludable goods (defence, street lighting) the private sector won\'t provide because of the free-rider problem.' },
+        { tone: 'blue',   icon: '🔍', head: 'Information gaps',            body: 'Asymmetric or imperfect information leads consumers and producers to make poor decisions — e.g. demerit goods like cigarettes or unsafe products.' },
+        { tone: 'purple', icon: '⚖️', head: 'Market power / inequity',     body: 'Monopolies set prices above marginal cost; very unequal income distributions create welfare and political concerns the market alone cannot correct.' }
       ],
-      examEdge: 'For each control, label six things on the diagram: D, S, free-market (Q*, P*), the controlled price (Pc or Pf), the binding quantity (Qs or Qd), and the deadweight loss triangle. A ceiling above P* — or a floor below P* — has no effect: the market price already complies, so the control is non-binding.'
+      framework: {
+        label: 'The seven spec tools — two families',
+        diagramKey: null,
+        tiles: [
+          { tone: 'green',  icon: '💸', title: 'Price-changing tools',
+            body: 'Work through the price mechanism — change relative prices to shift behaviour.<br><br><strong>1. Indirect taxes</strong> (specific & ad valorem)<br><strong>2. Subsidies</strong><br><strong>3. Maximum prices</strong> (ceilings)<br><strong>4. Minimum prices</strong> (floors)' },
+          { tone: 'purple', icon: '🛠️', title: 'Other tools',
+            body: 'Work directly on quantities, access or behaviour — they don\'t rely on prices.<br><br><strong>5. Tradable pollution permits</strong><br><strong>6. State provision of public goods</strong><br><strong>7. Provision of information</strong><br><strong>8. Regulation</strong>' }
+        ]
+      },
+      tipLate: { icon: '⚖️', tone: 'amber', text: '<strong>The aim is allocative efficiency and equity</strong> — but every tool brings risks of government failure (distorted signals, unintended consequences, admin costs, info gaps). The next nine cards build each tool and then bring them together in a decision matrix.' },
+      examEdge: 'Top answers <em>name the market failure first, then choose the tool</em>. "Tradable permits work better than a Pigouvian tax for CO₂ because the regulator can set the total emissions cap with certainty even when abatement costs are uncertain." Linking the tool to the specific failure it addresses is what separates A from B grades.'
     },
 
+    /* ============================================================
+       CARD 2 — Indirect taxation: specific vs ad valorem
+       ============================================================ */
     {
       id: 'price_controls_2',
-      stepLabel: 'Learn: Step 2 of 5',
-      title: 'Price ceilings (legal maxima)',
-      tip: { icon: '💡', tone: 'purple', text: 'A price ceiling is binding only when set <strong>below</strong> equilibrium. It creates a shortage, redistributes surplus from sellers to lucky buyers, and destroys welfare through the DWL triangle.' },
+      stepLabel: 'Learn: Step 2 of 10',
+      title: 'Indirect taxation — specific vs ad valorem',
+      tip: { icon: '💷', tone: 'green', text: 'An <strong>indirect tax</strong> is a tax on spending, paid by the producer but usually passed (at least partly) to the consumer. A <strong>specific tax</strong> shifts supply up by a fixed amount per unit; an <strong>ad valorem tax</strong> pivots supply because it is a percentage of price.' },
+      interactiveDiagram: {
+        svgKey: 'taxDiagramInteractive',
+        label: 'Build the indirect-tax diagram step by step',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Free market',
+            tone: 'blue',
+            head: 'The free-market baseline',
+            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no tax in place.',
+            analysis: 'Without intervention the market is allocatively efficient. Any tax moves price and quantity away from this point and creates a welfare cost — <em>unless</em> it corrects a negative externality, in which case the welfare cost in the private market can be smaller than the externality DWL it eliminates.'
+          },
+          {
+            label: 'Tax shifts supply',
+            tone: 'amber',
+            head: 'The tax wedge: P<sub>c</sub> vs P<sub>p</sub>',
+            body: 'A <strong>specific tax</strong> (e.g. £2 per litre of fuel) shifts S <em>up by a fixed amount</em> — a parallel shift. An <strong>ad valorem tax</strong> (e.g. 20% VAT) shifts S up by a <em>percentage</em> — supply <em>pivots</em>, with a wider gap at higher prices.',
+            analysis: 'Buyers pay P<sub>c</sub>, sellers receive P<sub>p</sub>; the vertical gap = the per-unit tax. Output falls from Q<sub>e</sub> to Q<sub>t</sub>. The choice between specific and ad valorem matters: specific taxes give predictable revenue per unit (good for tobacco / fuel duties); ad valorem taxes scale with price (good for general VAT and luxury goods).'
+          },
+          {
+            label: 'Revenue & incidence',
+            tone: 'green',
+            head: 'CS and PS shrink; government collects revenue',
+            body: 'CS and PS are both smaller. The green rectangle = tax revenue = (P<sub>c</sub> − P<sub>p</sub>) × Q<sub>t</sub>. <strong>The more inelastic side bears more of the tax</strong>.',
+            analysis: 'Incidence is the killer evaluation point. Cigarettes have very inelastic demand → consumers pay almost all the tax → tax is regressive but raises stable revenue. Fuel duty: demand inelastic in short run, more elastic in long run as drivers switch to EVs. Identifying who actually bears the burden — not who legally pays — is what earns analysis marks.'
+          },
+          {
+            label: 'Deadweight loss',
+            tone: 'rose',
+            head: 'Welfare lost from trades that no longer happen',
+            body: 'The red triangle = DWL: surplus from trades between Q<sub>t</sub> and Q<sub>e</sub> that would have occurred at P<sub>e</sub> but the tax prevents.',
+            analysis: 'DWL grows with the tax rate and with elasticity. <strong>Exception:</strong> a Pigouvian tax on a negative externality (carbon, alcohol, tobacco) can <em>raise</em> welfare because it eliminates the larger externality DWL. This is why economists prefer "sin taxes" to bans — they preserve the choice for low-harm consumers while pricing in the social cost.'
+          }
+        ]
+      },
+      keyTerms: [
+        { term: 'Specific tax',   def: 'A fixed amount per unit (e.g. 57.95p per litre of petrol). Causes a <strong>parallel</strong> upward shift in supply.' },
+        { term: 'Ad valorem tax', def: 'A percentage of price (e.g. 20% VAT, tobacco at 16.5% of retail). Causes supply to <strong>pivot</strong> upward — gap widens at higher prices.' },
+        { term: 'Tax incidence',  def: 'How the burden of a tax is split between buyers and sellers. The more <strong>inelastic</strong> side of the market pays more of the tax.' },
+        { term: 'Pigouvian tax',  def: 'A tax set equal to the marginal external cost of a negative externality. Internalises the externality and can raise welfare even though it creates private-market DWL.' }
+      ],
+      examEdge: '<strong>Three evaluation moves:</strong> (1) <em>Name the incidence</em> — "demand for cigarettes is inelastic, so consumers bear ~80% of the duty." (2) <em>Distinguish revenue from welfare</em> — tax revenue is a <strong>transfer</strong> (not lost), only the DWL triangle is welfare lost forever. (3) <em>Test for Pigouvian justification</em> — if the tax targets a negative externality and the rate is set close to MEC, the welfare verdict flips from "bad" to "good".'
+    },
+
+    /* ============================================================
+       CARD 3 — Subsidies
+       ============================================================ */
+    {
+      id: 'price_controls_3',
+      stepLabel: 'Learn: Step 3 of 10',
+      title: 'Subsidies',
+      tip: { icon: '🎁', tone: 'purple', text: 'A <strong>subsidy</strong> is a payment from government to producers (or consumers) that lowers the cost of supply. Supply shifts <em>right</em>, price falls, quantity rises. It is the mirror image of an indirect tax.' },
+      interactiveDiagram: {
+        svgKey: 'subsidyDiagramInteractive',
+        label: 'Build the subsidy diagram step by step',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Free market',
+            tone: 'blue',
+            head: 'The free-market baseline',
+            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no subsidy in place.',
+            analysis: 'The free market under-produces goods with positive externalities (vaccination, education, EV charging infrastructure). A subsidy is the standard tool to push output toward the socially optimal level — it expands quantity past the private market equilibrium.'
+          },
+          {
+            label: 'Subsidy shifts supply',
+            tone: 'green',
+            head: 'S shifts right by the subsidy',
+            body: 'Buyers now pay P<sub>1</sub> (lower); sellers receive P<sub>1</sub> + subsidy. Output rises from Q<sub>0</sub> to Q<sub>1</sub>.',
+            analysis: 'The vertical gap between the new and old supply curves equals the per-unit subsidy. Quantity always rises because at every quantity producers now receive more than buyers pay. Common UK examples: solar PV (Smart Export Guarantee), EV purchase grants (now retired), bus operator subsidies, R&D tax credits.'
+          },
+          {
+            label: 'Who benefits?',
+            tone: 'amber',
+            head: 'Both CS and PS expand',
+            body: 'CS rises (buyers pay less); PS rises (sellers receive more per unit and sell more units). <strong>The more inelastic side captures more of the subsidy benefit.</strong>',
+            analysis: 'Incidence works the same way as a tax. If demand is inelastic (e.g. insulin), most of the subsidy passes through to consumers as lower prices. If supply is inelastic (e.g. central London housing), most goes to producers as higher receipts. This is why housing subsidies often inflate land values rather than helping renters.'
+          },
+          {
+            label: 'Cost to government',
+            tone: 'rose',
+            head: 'Subsidy cost vs welfare gain',
+            body: 'Government spending = subsidy × Q<sub>1</sub>. CS + PS rise by <em>less</em> than this — the gap is DWL from over-consumption beyond the free-market level.',
+            analysis: 'Unless the subsidy corrects a positive externality (MEB > 0), it creates DWL by pushing output past the socially optimal level. <strong>Verdict flips</strong> when MEB exists and is large enough: vaccination subsidies, R&D subsidies and free school meals are usually welfare-improving. <strong>Opportunity cost</strong> always applies — subsidy money cannot also be spent on hospitals or schools.'
+          }
+        ]
+      },
+      keyTerms: [
+        { term: 'Producer subsidy', def: 'Payment per unit to suppliers — used for solar PV, agricultural support, public transport.' },
+        { term: 'Consumer subsidy', def: 'Payment to buyers (vouchers, free provision) — used for free school meals, NHS prescriptions for under-16s.' },
+        { term: 'Subsidy incidence', def: 'How the benefit splits between buyers and sellers — more inelastic side captures more of the gain.' },
+        { term: 'Positive externality (MEB)', def: 'The third-party benefit a subsidy is often designed to internalise. If MEB > 0, the subsidy can raise welfare.' }
+      ],
+      examEdge: '<strong>Three classic UK case studies:</strong> (1) <em>EV plug-in grant</em> — boosted EV adoption but disproportionately benefited high-income buyers; retired in 2022. (2) <em>Bus operator subsidy (£2 fare cap)</em> — large CS gain, but cost ~£600m/year and may not be sustainable. (3) <em>R&D tax credits</em> — strong evidence of additionality (firms do more R&D than they would have done) because innovation has large MEB. <strong>Evaluation upgrade:</strong> always check (a) is there an externality, (b) does the subsidy actually change behaviour or just transfer cash, and (c) what is the opportunity cost.'
+    },
+
+    /* ============================================================
+       CARD 4 — Maximum prices (price ceilings) — from old card 2
+       ============================================================ */
+    {
+      id: 'price_controls_4',
+      stepLabel: 'Learn: Step 4 of 10',
+      title: 'Maximum prices (price ceilings)',
+      tip: { icon: '🧢', tone: 'amber', text: 'A price ceiling is binding only when set <strong>below</strong> equilibrium. It creates a shortage, redistributes surplus from sellers to lucky buyers, and destroys welfare through the DWL triangle.' },
       interactiveDiagram: {
         svgKey: 'priceCeilingDiagramInteractive',
         label: 'Build the price ceiling diagram step by step',
@@ -70,7 +185,7 @@ window.ECONOS_TOPIC = {
           },
           {
             label: 'Ceiling imposed',
-            tone: 'purple',
+            tone: 'amber',
             head: 'P<sub>max</sub> below P<sub>e</sub> — a shortage opens up',
             body: 'At P<sub>max</sub>, sellers supply only Q<sub>s</sub>, but buyers demand Q<sub>d</sub>. The horizontal gap Q<sub>d</sub> − Q<sub>s</sub> is the <strong>shortage</strong>. Trades are rationed to Q<sub>s</sub>.',
             analysis: 'A ceiling is only <em>binding</em> if it sits below P<sub>e</sub>; above P<sub>e</sub> it has no effect. Because quantity supplied (Q<sub>s</sub>) is now the short side of the market, Q<sub>s</sub> becomes the quantity actually traded. Non-price rationing fills the gap — queues, waiting lists, black markets, or quality reductions are all common real-world responses.'
@@ -79,7 +194,7 @@ window.ECONOS_TOPIC = {
             label: 'Surplus shifts',
             tone: 'amber',
             head: 'PS shrinks; CS effect is ambiguous',
-            body: 'PS (amber) shrinks: sellers transact fewer units at a lower price. CS (blue) <em>may</em> rise if buyers who value the good most get the rationed quantity — but with random rationing or queueing costs, CS can fall.',
+            body: 'PS shrinks: sellers transact fewer units at a lower price. CS <em>may</em> rise if buyers who value the good most get the rationed quantity — but with random rationing or queueing costs, CS can fall.',
             analysis: 'Textbook CS under a ceiling assumes <strong>efficient rationing</strong> — that the Q<sub>s</sub> units go to the buyers who value them most. In reality, rationing is rarely efficient: queueing wastes time, black-market markups erode the price benefit, and quality often drops to compensate sellers. So the "CS rises" result is a best case, not a guarantee.'
           },
           {
@@ -100,11 +215,14 @@ window.ECONOS_TOPIC = {
       examEdge: 'Two classic UK applications: <strong>rent controls</strong> (NYC, Berlin, Stockholm — produce shortages and quality decline, deter new building) and the <strong>UK energy price cap</strong> (Ofgem, 2019–) — protected consumers but pushed 25+ suppliers into bankruptcy in 2021–22 when wholesale prices spiked above the cap. A ceiling does not make the underlying cost problem disappear; it shifts who bears it — consumers, suppliers, or taxpayers via bailouts. Naming the bearer of the cost is a strong evaluation move.'
     },
 
+    /* ============================================================
+       CARD 5 — Minimum prices (price floors) — from old card 3
+       ============================================================ */
     {
-      id: 'price_controls_3',
-      stepLabel: 'Learn: Step 3 of 5',
-      title: 'Price floors (legal minima)',
-      tip: { icon: '💡', tone: 'green', text: 'A price floor is binding only when set <strong>above</strong> equilibrium. It creates a surplus, redistributes surplus from buyers to sellers (often), and destroys welfare through the DWL triangle.' },
+      id: 'price_controls_5',
+      stepLabel: 'Learn: Step 5 of 10',
+      title: 'Minimum prices (price floors)',
+      tip: { icon: '🪜', tone: 'green', text: 'A price floor is binding only when set <strong>above</strong> equilibrium. It creates a surplus, redistributes surplus from buyers to sellers (often), and destroys welfare through the DWL triangle.' },
       interactiveDiagram: {
         svgKey: 'priceFloorDiagramInteractive',
         label: 'Build the price floor diagram step by step',
@@ -129,7 +247,7 @@ window.ECONOS_TOPIC = {
             label: 'Surplus shifts',
             tone: 'amber',
             head: 'CS shrinks; PS effect is ambiguous',
-            body: 'CS (blue) shrinks: buyers pay a higher price and transact fewer units. PS (amber) <em>may</em> rise if the higher per-unit price outweighs the lost quantity — but if demand is elastic, PS can fall.',
+            body: 'CS shrinks: buyers pay a higher price and transact fewer units. PS <em>may</em> rise if the higher per-unit price outweighs the lost quantity — but if demand is elastic, PS can fall.',
             analysis: 'The PS effect depends on the elasticity of demand. If demand is inelastic, the higher price compensates for the lost quantity and PS rises. If demand is elastic, the quantity loss dominates and PS falls. In labour markets, this translates into a real exam debate: a minimum wage may raise total worker income (if labour demand is inelastic) or lower it (if elastic).'
           },
           {
@@ -150,43 +268,171 @@ window.ECONOS_TOPIC = {
       examEdge: 'Three classic floor examples: <strong>National Living Wage</strong> (£12.21/hr from April 2024 — limited disemployment evidence suggests the floor sits close to equilibrium for most workers); <strong>EU Common Agricultural Policy</strong> (guaranteed prices produced "butter mountains" and "wine lakes" that had to be bought, stored, or destroyed); <strong>Scotland minimum unit pricing on alcohol</strong> (50p/unit since 2018 — alcohol sales fell 3–7%, targeting heavy drinkers as positive-externality correction). The labour-market case has an evaluation upgrade: in a monopsonistic market, a minimum wage can <em>raise</em> employment and wages simultaneously by counteracting employer power.'
     },
 
+    /* ============================================================
+       CARD 6 — Tradable pollution permits (cap-and-trade)
+       ============================================================ */
     {
-      id: 'price_controls_4',
-      template: 'cause',
-      stepLabel: 'Learn: Step 4 of 5',
-      title: 'Price controls in the real world',
-      tip: { icon: '🌍', tone: 'blue', text: 'Every real-world price control creates predictable side-effects. The pattern: short-term win for the protected group, long-term distortion, and unintended consequences that often hit the very people the policy was meant to help.' },
+      id: 'price_controls_6',
+      stepLabel: 'Learn: Step 6 of 10',
+      title: 'Tradable pollution permits (cap-and-trade)',
+      tip: { icon: '🏭', tone: 'blue', text: 'Government <strong>sets a cap</strong> on total emissions and issues permits equal to the cap. Firms must hold a permit for every tonne they emit. They can <strong>trade</strong> permits — creating a market price for pollution.' },
       causesStyle: 'tinted-flat',
-      causesEmoji: '📋',
-      causesLabel: 'Five UK and international examples',
+      causesEmoji: '⚙️',
+      causesLabel: 'How cap-and-trade works in four steps',
       causes: [
-        { tone: 'purple', icon: '🏠', head: 'Rent control (NYC, Berlin, parts of UK)',  body: 'Maximum rents set below market clearing. Shortages emerge as landlords exit (sell to owner-occupiers) and skip maintenance. Existing tenants who hold their flats benefit; new arrivals cannot find anything. Berlin\'s 2020 Mietendeckel was struck down by the courts after rental listings collapsed by ~50% within months.' },
-        { tone: 'purple', icon: '⚡', head: 'UK energy price cap (Ofgem, 2019–)',         body: 'Cap on unit prices for default tariffs. Worked smoothly while wholesale prices were low; in 2021–22, wholesale costs surged above the cap and forced 25+ suppliers into bankruptcy. Government had to step in via Bulb administration and the Energy Price Guarantee — costs ultimately borne by taxpayers, not consumers.' },
-        { tone: 'green',  icon: '💷', head: 'National Living Wage (UK, 2016–)',            body: 'Floor at £12.21/hr from April 2024. Set deliberately close to equilibrium for low-wage workers — Low Pay Commission research finds limited disemployment and significant income gains for the lowest paid. Careful floor-setting design avoids the textbook unemployment trap.' },
-        { tone: 'green',  icon: '🌾', head: 'EU Common Agricultural Policy',              body: 'Guaranteed minimum prices for cereals, dairy, and beef from the 1960s. Produced enormous surpluses ("butter mountains", "wine lakes") that had to be stored, dumped, or destroyed. Distorted world prices and harmed developing-country farmers. Reformed from 1992 to direct income support instead of price guarantees.' },
-        { tone: 'green',  icon: '🍷', head: 'Scotland minimum unit pricing on alcohol',    body: '50p/unit since May 2018. Floor targets cheap, strong alcohol disproportionately consumed by heavy drinkers. Evidence: alcohol-attributable deaths fell ~13%; cheap cider and own-brand spirits saw the biggest consumption drops. A floor justified by positive welfare gains from externality correction.' }
+        { tone: 'blue',   icon: '1️⃣', head: 'Government sets a cap',          body: 'Total annual emissions are capped (e.g. UK ETS 2024 cap ≈ 87 Mt CO₂e for power and industry). The cap usually <strong>tightens each year</strong> to drive abatement.' },
+        { tone: 'purple', icon: '2️⃣', head: 'Permits issued or auctioned',    body: 'One permit = one tonne of CO₂e. Firms buy permits at auction (most) or get them free (declining share to protect trade-exposed industries).' },
+        { tone: 'green',  icon: '3️⃣', head: 'Firms trade permits',            body: 'Firms with <em>low</em> abatement costs cut emissions and sell spare permits. Firms with <em>high</em> abatement costs buy permits. The market finds the cheapest cuts first.' },
+        { tone: 'amber',  icon: '4️⃣', head: 'Market sets the permit price',   body: 'Permit price reflects the marginal cost of abatement. UK ETS price ≈ £35-50/tCO₂ in 2024. Firms decide: pay this, or abate.' }
       ],
-      examEdge: 'Three evaluation moves worth memorising: (1) <strong>Who really benefits?</strong> Ceilings often help insiders (existing tenants) at the expense of outsiders (new tenants who cannot find anywhere). (2) <strong>Who really pays?</strong> Energy price caps shift costs from consumers to suppliers and then taxpayers — they do not make the cost disappear. (3) <strong>Does the offsetting market failure justify the DWL?</strong> Alcohol MUP corrects a negative externality, so the welfare loss may be smaller than the externality it offsets; rent control rarely meets this bar.'
-    },
-
-    {
-      id: 'price_controls_5',
-      stepLabel: 'Learn: Step 5 of 5',
-      title: 'Evaluation and alternatives',
-      tip: { icon: '⚖️', tone: 'amber', text: 'Price controls treat the symptom (price). Targeted subsidies and supply-side reforms address the cause. The right policy depends on the underlying market failure — and on which group you weight most.' },
       comparison: {
-        title: 'When do price controls help — or hurt?',
+        title: 'Why economists prefer cap-and-trade',
         emoji: '⚖️',
-        left:  { tone: 'green', icon: '✅', label: 'Case FOR price controls', caption: 'Fast to implement and politically appealing; protect vulnerable groups in the short term; can offset monopoly or monopsony power (e.g. minimum wage in a monopsonistic labour market); justified when the offsetting market failure is larger than the DWL the control creates (e.g. Scotland MUP).' },
-        right: { tone: 'rose',  icon: '❌', label: 'Case AGAINST',            caption: 'Treat symptoms not causes; create shortages, surpluses, black markets, and quality decline; deadweight loss; insiders gain at the expense of outsiders; the cost burden shifts opaquely (suppliers, then taxpayers); poorly targeted compared with means-tested support.' }
+        left:  { tone: 'green', icon: '✅', label: 'Strengths',
+          caption: '<strong>Environmental certainty</strong> — the cap guarantees the emissions outcome. <strong>Cost-efficient</strong> — the market finds the cheapest abatement opportunities first. <strong>Flexible</strong> — firms choose whether to abate or buy permits. <strong>Dynamic incentive</strong> — firms profit from innovating to cut emissions and sell spare permits.' },
+        right: { tone: 'rose',  icon: '❌', label: 'Weaknesses',
+          caption: '<strong>Price volatility</strong> — permit prices swing with the business cycle (EU ETS collapsed to €5 in the 2010s). <strong>Carbon leakage</strong> — firms relocate to uncapped jurisdictions. <strong>Distributional</strong> — free allocations can over-compensate incumbents. <strong>Coverage gaps</strong> — UK ETS excludes agriculture and most transport.' }
       },
       keyTerms: [
-        { term: 'Targeted subsidy', def: 'A subsidy directed only at households below an income threshold — more efficient than a universal price control because it preserves price signals for everyone else.' },
-        { term: 'Income transfer', def: 'A direct cash payment (e.g. Universal Credit uplift, cost-of-living payment) — improves affordability without distorting the market.' },
-        { term: 'Supply-side solution', def: 'Building more housing, training more workers, or increasing competition — addresses the root cause of high prices rather than capping the symptom. Slower but more durable.' },
-        { term: 'Competition policy', def: 'Where high prices reflect monopoly power, breaking up or regulating dominant firms moves price toward the competitive level — fixing the failure without a price cap.' }
+        { term: 'Cap',                 def: 'The total quantity of emissions allowed across all covered firms in a period. The binding environmental constraint.' },
+        { term: 'Permit (allowance)',  def: 'A tradable right to emit one tonne of CO₂e. Firms must surrender permits equal to verified emissions each year.' },
+        { term: 'Abatement cost',      def: 'The cost to a firm of cutting one tonne of emissions. Firms compare this to the permit price: if abatement is cheaper, cut; if dearer, buy a permit.' },
+        { term: 'Carbon leakage',      def: 'When a cap pushes emissions abroad instead of cutting them globally — firms relocate to jurisdictions without a carbon price.' }
       ],
-      examEdge: '<strong>The alternative-policy menu</strong> earns evaluation marks in any price-controls essay: <strong>(1) targeted subsidies</strong> reach those most in need without distorting prices for everyone; <strong>(2) income transfers</strong> preserve consumer choice; <strong>(3) supply expansion</strong> (build more houses, train more workers) addresses root causes but takes years; <strong>(4) competition policy</strong> pushes monopoly-driven prices toward competitive levels. <strong>A* upgrade</strong>: name the market structure before judging. A minimum wage in a competitive labour market destroys welfare; in a monopsonistic one, it may raise both wages and employment. Strong answers identify the underlying failure before reaching a verdict.',
+      examEdge: '<strong>UK ETS vs EU ETS:</strong> the UK launched its own ETS in 2021 after Brexit. Covers power, industry, aviation. <strong>EU ETS</strong> is the world\'s largest carbon market — 40% of EU emissions, with a Carbon Border Adjustment Mechanism (CBAM) from 2026 to tackle leakage. <strong>Tax vs permits — the killer comparison:</strong> a Pigouvian tax fixes the <em>price</em> of carbon and lets quantity adjust; cap-and-trade fixes the <em>quantity</em> and lets price adjust. Use a tax when you know MEC precisely; use permits when the environmental target is non-negotiable (e.g. legally binding net zero).'
+    },
+
+    /* ============================================================
+       CARD 7 — State provision of public goods
+       ============================================================ */
+    {
+      id: 'price_controls_7',
+      stepLabel: 'Learn: Step 7 of 10',
+      title: 'State provision of public goods',
+      tip: { icon: '🏛️', tone: 'purple', text: '<strong>Public goods</strong> are non-rival (one person\'s use doesn\'t reduce another\'s) and non-excludable (no one can be prevented from using them). The free-rider problem means the private sector under-provides — so the state steps in and funds provision via taxation.' },
+      causes: [
+        { tone: 'purple', icon: '🔓', head: 'Non-excludable',
+          body: 'Once provided, no one can be prevented from benefiting — e.g. you cannot stop someone watching the fireworks display from a nearby hill.' },
+        { tone: 'blue',   icon: '🤝', head: 'Non-rival',
+          body: 'One person\'s consumption doesn\'t reduce the amount available to others — your enjoyment of street lighting doesn\'t dim it for the next pedestrian.' },
+        { tone: 'amber',  icon: '🪤', head: 'Free-rider problem',
+          body: 'No one will pay if they can use the good without paying. So private firms cannot capture enough revenue and the market under-provides — or fails to provide at all.' }
+      ],
+      causesStyle: 'tinted-flat',
+      causesLabel: 'Why the market fails for public goods',
+      illustratedGrid: [
+        { tone: 'purple', title: '🛡️ Defence',          body: 'The classic non-rival, non-excludable case. National defence protects all citizens at once; no one can be excluded. UK defence spending ≈ 2.3% of GDP.' },
+        { tone: 'blue',   title: '🗼 Lighthouses',      body: 'Historically cited as the textbook public good — once the light is on, every passing ship benefits whether or not the owner pays.' },
+        { tone: 'amber',  title: '💡 Street lighting', body: 'Non-rival (everyone benefits) and non-excludable (you cannot bill individual pedestrians). Funded by local council tax.' },
+        { tone: 'green',  title: '🌊 Flood defences',  body: 'Sea walls and river barriers protect everyone in the catchment area. Private provision would suffer from a massive free-rider problem.' }
+      ],
+      illustratedGridLabel: 'Public goods the state provides',
+      illustratedGridEmoji: '📋',
+      tipLate: { icon: '💸', tone: 'amber', text: '<strong>Funded by taxation → opportunity cost.</strong> Every £1 spent on defence is £1 not spent on hospitals, schools or tax cuts. State provision also risks government failure: bureaucratic inefficiency, political capture, and the difficulty of measuring how much to provide without a price signal.' },
+      keyTerms: [
+        { term: 'Pure public good',  def: 'A good that is both <em>fully</em> non-rival and <em>fully</em> non-excludable — defence, lighthouses, clean air.' },
+        { term: 'Quasi-public good', def: 'Partially non-rival or non-excludable — e.g. roads (rival when congested, excludable with tolls). Most "public goods" in practice are quasi-public.' },
+        { term: 'Free-rider',        def: 'A consumer who enjoys a good without paying for it. The reason private firms cannot profitably supply public goods.' },
+        { term: 'Direct provision',  def: 'The state itself produces and distributes the good, funded by taxation — as opposed to contracting it out or subsidising private firms.' }
+      ],
+      examEdge: '<strong>Public goods ≠ goods provided by government.</strong> The NHS, state schools and council housing are <em>merit goods</em> (rival and excludable) provided by the state for equity reasons — not pure public goods. Mixing these up loses easy marks. <strong>Evaluation:</strong> direct provision risks government failure (inefficiency, capture), so economists often prefer the state to <em>fund</em> rather than <em>operate</em> — e.g. paying private contractors to maintain street lighting under competitive tender.'
+    },
+
+    /* ============================================================
+       CARD 8 — Provision of information
+       ============================================================ */
+    {
+      id: 'price_controls_8',
+      stepLabel: 'Learn: Step 8 of 10',
+      title: 'Provision of information',
+      tip: { icon: 'ℹ️', tone: 'blue', text: 'Information failures and asymmetric information lead consumers to misjudge benefits and costs — over-consuming demerit goods, under-consuming merit goods. <strong>Better information shifts demand toward the social optimum</strong> without distorting prices.' },
+      illustratedGrid: [
+        { tone: 'green',  title: '🥗 Calorie labelling',      body: 'Since April 2022, large UK restaurants must display calorie counts on menus. Aims to shift consumption away from very-high-calorie items by closing the information gap on demerit consumption.' },
+        { tone: 'blue',   title: '🚗 MPG ratings & EV range', body: 'Mandatory fuel-economy labelling helps buyers internalise lifetime running costs and CO₂ emissions — shifts demand toward more efficient cars without taxing fuel directly.' },
+        { tone: 'amber',  title: '🏫 School league tables',   body: 'Ofsted ratings and Progress 8 scores reduce information asymmetry for parents choosing schools — supports a quasi-market in education by letting demand respond to performance.' },
+        { tone: 'rose',   title: '🚬 Cigarette warnings',     body: 'Graphic warnings and plain packaging (UK from 2017) correct the systematic under-estimation of long-run health costs. Smoking prevalence fell from ~20% (2011) to ~12% (2023).' }
+      ],
+      illustratedGridLabel: 'Real-world UK information policies',
+      illustratedGridEmoji: '📋',
+      comparison: {
+        title: 'Strengths vs limits of information provision',
+        emoji: '⚖️',
+        left:  { tone: 'green', icon: '✅', label: 'Strengths',
+          caption: '<strong>Preserves choice</strong> — no ban, no tax distortion, just better-informed decisions. <strong>Low cost</strong> compared with subsidies or direct provision. <strong>Targets the root cause</strong> when the failure is genuinely an info gap. <strong>Encourages competition</strong> — informed consumers reward quality.' },
+        right: { tone: 'rose',  icon: '❌', label: 'Limits',
+          caption: '<strong>Behavioural bias</strong> — even with info, people discount future harms (smoking, sugar). <strong>Slow</strong> to shift behaviour. <strong>Limited reach</strong> if labels are ignored or misunderstood. <strong>Producer pushback</strong> — industry lobbies against mandatory disclosure.' }
+      },
+      keyTerms: [
+        { term: 'Asymmetric information', def: 'When one side of a transaction knows more than the other — e.g. a used-car seller knows more about reliability than the buyer ("lemons" problem).' },
+        { term: 'Information failure',    def: 'Imperfect, incomplete or misleading information causing consumers to make decisions that don\'t maximise welfare.' },
+        { term: 'Nudge',                  def: 'A behavioural-economics tool that changes the default or framing without restricting choice — e.g. opt-out organ donation, salary-pension auto-enrolment.' },
+        { term: 'Mandatory disclosure',   def: 'A regulatory requirement to publish information (calorie counts, MPG, school results) — government-mandated rather than voluntary.' }
+      ],
+      examEdge: '<strong>The behavioural-economics upgrade:</strong> classic theory assumes information instantly fixes the gap. Behavioural economics shows that even informed consumers <em>discount future costs</em> and <em>follow social norms</em>. So information is often necessary but not sufficient — pairing it with a Pigouvian tax (sugar levy + calorie labels) or a default change (auto-enrolment) tends to outperform either tool alone.'
+    },
+
+    /* ============================================================
+       CARD 9 — Regulation
+       ============================================================ */
+    {
+      id: 'price_controls_9',
+      stepLabel: 'Learn: Step 9 of 10',
+      title: 'Regulation',
+      tip: { icon: '🛡️', tone: 'rose', text: '<strong>Regulation</strong> sets rules, standards or outright bans on behaviour. It is <em>command-and-control</em>: no reliance on price signals, just legal compliance. Best when harm is severe or irreversible and price-based tools are too slow or uncertain.' },
+      causesStyle: 'tinted-flat',
+      causesEmoji: '📜',
+      causesLabel: 'Four regulatory tools — examples',
+      causes: [
+        { tone: 'rose',   icon: '🚫', head: 'Bans',           body: '<em>Outlaw the activity outright.</em> CFC ban (Montreal Protocol, 1989), ivory trade ban, leaded petrol ban (UK 2000), single-use plastic items (UK Oct 2023).' },
+        { tone: 'amber',  icon: '📊', head: 'Limits / standards', body: '<em>Cap pollution, emissions or quantity per unit.</em> Euro 6 vehicle emissions standards, food hygiene ratings, building energy efficiency (EPC rating ≥ E for rentals).' },
+        { tone: 'blue',   icon: '🎓', head: 'Licensing',      body: '<em>Require permission to operate.</em> Medical and legal professions, taxi licences (TfL), pub alcohol licences, broadcasting licences (Ofcom).' },
+        { tone: 'green',  icon: '🧾', head: 'Disclosure rules', body: '<em>Mandatory reporting / labelling.</em> Financial product risk warnings, pension fund charge caps, mandatory ESG reporting for large firms.' }
+      ],
+      comparison: {
+        title: 'Regulation — strengths vs weaknesses',
+        emoji: '⚖️',
+        left:  { tone: 'green', icon: '✅', label: 'Pros',
+          caption: '<strong>Certainty of outcome</strong> — direct quantity control, not reliant on firms\' price responses. <strong>Acts quickly</strong> when speed matters (pandemic, environmental emergencies). <strong>Essential for severe or irreversible harm</strong> — toxic substances, endangered species, child safety. <strong>Easy to communicate</strong> — "this is illegal" is clearer than a tax.' },
+        right: { tone: 'rose',  icon: '❌', label: 'Cons',
+          caption: '<strong>Rigid / less flexible</strong> — one-size-fits-all doesn\'t reflect firms\' differing costs. <strong>Compliance costs</strong> — monitoring, reporting, enforcement. <strong>Regulatory capture</strong> — firms lobby regulators for weaker rules. <strong>Unintended consequences</strong> — bans create black markets (prohibition, drug bans).' }
+      },
+      keyTerms: [
+        { term: 'Command-and-control', def: 'Direct regulation that mandates specific behaviour or outcomes — as opposed to market-based tools (taxes, permits) that change incentives.' },
+        { term: 'Regulatory capture',  def: 'When a regulator comes to act in the interest of the firms it regulates rather than the public interest — e.g. via lobbying, industry hiring, or information dependence.' },
+        { term: 'Compliance cost',     def: 'The cost to firms of meeting a regulation — monitoring, paperwork, capital upgrades. Often passed on to consumers as higher prices.' },
+        { term: 'Self-regulation',     def: 'When an industry sets and enforces its own rules (e.g. the Advertising Standards Authority). Cheaper but vulnerable to capture.' }
+      ],
+      examEdge: '<strong>When to choose regulation over a price tool:</strong> (1) when the marginal external cost is impossible to estimate (so a Pigouvian tax cannot be calibrated); (2) when harm is severe and irreversible (lead, asbestos, CFCs — a tax that under-prices these would be catastrophic); (3) when speed matters more than efficiency. <strong>Top-band evaluation:</strong> "Regulation is the right tool for the chlorofluorocarbons problem because the harm to the ozone layer is irreversible and the marginal damage curve is effectively vertical above safe thresholds — a tax cannot give the same certainty."'
+    },
+
+    /* ============================================================
+       CARD 10 — Choosing the right tool + evaluation
+       ============================================================ */
+    {
+      id: 'price_controls_10',
+      stepLabel: 'Learn: Step 10 of 10',
+      title: 'Choosing the right tool + evaluation',
+      tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure — the question is whether the gain outweighs the new distortion.' },
+      colA: 'Best-fit tool(s)',
+      colB: 'Why it fits',
+      rows: [
+        { label: 'Negative externality',     colA: 'Indirect tax (Pigouvian) · Tradable permits · Regulation', colB: 'Internalises MEC; permits cap total emissions; regulation when harm is severe or irreversible.' },
+        { label: 'Positive externality',     colA: 'Subsidy · Information provision · State provision',        colB: 'Subsidy expands output to social optimum; info corrects under-estimation of MEB; state provision for merit goods (NHS, schools).' },
+        { label: 'Public goods',             colA: 'State provision (tax-funded)',                              colB: 'Free-rider problem prevents private supply; only the state can fund through compulsory taxation.' },
+        { label: 'Information gaps',         colA: 'Mandatory disclosure · Regulation · Nudges',                 colB: 'Cheapest fix when the root failure is missing information; regulation backs up labels when behaviour is sticky.' },
+        { label: 'Market power',             colA: 'Price cap · Competition regulation · Antitrust',             colB: 'Caps prevent monopoly pricing; competition policy attacks the structure rather than just the symptom.' },
+        { label: 'Inequity',                 colA: 'Targeted subsidy · Income transfer · Progressive tax',       colB: 'Equity tools preserve price signals while redistributing — usually more efficient than universal price controls.' }
+      ],
+      causesStyle: 'tinted-flat',
+      causesEmoji: '⚠️',
+      causesLabel: 'Risks of government failure — every tool faces these',
+      causes: [
+        { tone: 'rose',   icon: '🔀', head: 'Distorted price signals',  body: 'Taxes, subsidies and price controls move prices away from marginal cost — sending the wrong scarcity signals to other parts of the economy.' },
+        { tone: 'amber',  icon: '🎲', head: 'Unintended consequences', body: 'Bans create black markets; rent caps reduce housing supply; sugar taxes shift consumption to unflavoured-but-still-unhealthy alternatives.' },
+        { tone: 'blue',   icon: '💼', head: 'High administrative costs', body: 'Monitoring, enforcement, compliance and revenue collection all cost real resources — sometimes larger than the welfare gain.' },
+        { tone: 'purple', icon: '🔍', head: 'Information problems',      body: 'Regulators rarely know the true MEC or MEB. Set the tax/cap/subsidy wrong and you create distortion without the welfare correction.' }
+      ],
+      examEdge: '<strong>The synthesis answer:</strong> no tool is perfect. The best policy is usually a <em>policy mix</em> — e.g. carbon pricing (permits) + R&D subsidies (technology push) + regulation (banning new gas boilers from 2035) + information (EPC ratings). <strong>A* upgrade:</strong> identify the underlying market failure first, then propose the best-fit tool, then add an evaluation of which government-failure risk is most likely to bite. Real-world policy is always a balance between the original market failure and the new distortions intervention creates.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

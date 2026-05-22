@@ -268,6 +268,43 @@
   </g>
 </svg>`,
 
+    steelCement: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="sc_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBD5E1"/><stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="160" fill="url(#sc_sky)"/>
+  <rect x="0" y="135" width="600" height="25" fill="#94A3B8"/>
+  <rect x="80" y="80" width="200" height="55" fill="#475569"/>
+  <polygon points="80,80 105,65 130,80" fill="#334155"/>
+  <polygon points="130,80 155,65 180,80" fill="#334155"/>
+  <polygon points="180,80 205,65 230,80" fill="#334155"/>
+  <polygon points="230,80 255,65 280,80" fill="#334155"/>
+  <rect x="110" y="30" width="18" height="50" fill="#475569"/>
+  <rect x="108" y="27" width="22" height="7" fill="#334155"/>
+  <rect x="170" y="42" width="14" height="38" fill="#475569"/>
+  <rect x="168" y="39" width="18" height="6" fill="#334155"/>
+  <rect x="220" y="36" width="16" height="44" fill="#475569"/>
+  <rect x="218" y="33" width="20" height="6" fill="#334155"/>
+  <rect x="95" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="115" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="135" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="155" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="175" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="195" y="96" width="12" height="16" fill="#FCD34D"/>
+  <rect x="215" y="96" width="12" height="16" fill="#FCD34D"/>
+  <ellipse cx="120" cy="22" rx="30" ry="14" fill="#475569" opacity="0.85"/>
+  <ellipse cx="160" cy="14" rx="38" ry="16" fill="#475569" opacity="0.78"/>
+  <ellipse cx="210" cy="18" rx="44" ry="15" fill="#64748B" opacity="0.7"/>
+  <ellipse cx="272" cy="12" rx="48" ry="18" fill="#64748B" opacity="0.6"/>
+  <ellipse cx="345" cy="18" rx="52" ry="16" fill="#94A3B8" opacity="0.5"/>
+  <ellipse cx="425" cy="24" rx="54" ry="14" fill="#94A3B8" opacity="0.4"/>
+  <ellipse cx="505" cy="20" rx="52" ry="13" fill="#CBD5E1" opacity="0.35"/>
+  <ellipse cx="575" cy="28" rx="44" ry="11" fill="#CBD5E1" opacity="0.28"/>
+</svg>`,
+
     shippingAviation: `
 <svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
   <defs>

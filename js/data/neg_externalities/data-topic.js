@@ -312,9 +312,9 @@ window.ECONOS_TOPIC = {
       economistQuote: {
         portraitKey: 'economistPigou',
         tone: 'green',
-        label: 'Arthur Pigou (1877–1959) · British economist and pioneer of welfare economics',
+        label: 'Economist insight',
         quote: '…one person A, in the course of rendering some service for which payment is made to a second person B, incidentally also renders services or disservices to other persons, of such a sort that payment cannot be exacted from the benefited parties or compensation enforced on behalf of the injured parties.',
-        attribution: 'Pigou, <em>The Economics of Welfare</em>, 1920'
+        attribution: 'Arthur Pigou, <em>The Economics of Welfare</em> (1920)'
       },
       tipLate: {
         icon: '💡', tone: 'green', head: 'Why this matters',

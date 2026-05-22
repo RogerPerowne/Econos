@@ -10699,6 +10699,184 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  posExternalityInteractive: `
+    <svg class="posext-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <clipPath id="pe-chart-clip">
+          <rect x="60" y="43" width="502" height="357"/>
+        </clipPath>
+      </defs>
+
+      <!-- Background -->
+      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+
+      <!-- Right panel divider -->
+      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+
+      <!-- ===== LAYER: axes ===== -->
+      <g class="layer-axes">
+        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="560,395 560,405 572,400" fill="#334155"/>
+        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
+        <polygon points="55,55 65,55 60,43" fill="#334155"/>
+        <text x="55" y="46" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">P</text>
+        <text x="570" y="406" font-size="14" font-weight="700" fill="#334155">Q</text>
+        <text x="48" y="416" font-size="12" fill="#64748B">O</text>
+      </g>
+
+      <!-- ===== LAYER: base curves (MPB=Demand and MPC=MSC=Supply) — always visible =====
+           MPC: from (100, 370) to (490, 90)   — slope ≈ -0.718
+           MPB: from (100, 200) to (490, 380)  — slope ≈ +0.462
+           Intersection (Q_market): x ≈ 244, y ≈ 267
+      -->
+      <g class="layer-base-curves">
+        <!-- MPB = private demand (amber downward) -->
+        <g clip-path="url(#pe-chart-clip)">
+          <line x1="100" y1="200" x2="490" y2="380" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="382" font-size="13" font-weight="700" fill="#D97706">D = MPB</text>
+        <!-- MPC = MSC = supply (green upward) -->
+        <g clip-path="url(#pe-chart-clip)">
+          <line x1="100" y1="370" x2="490" y2="90" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="88" font-size="13" font-weight="700" fill="#059669">MPC = MSC</text>
+      </g>
+
+      <!-- ===== LAYER: market equilibrium (always visible after base) =====
+           Q_m at x=244, P_m at y=267
+      -->
+      <g class="layer-market-eq">
+        <line x1="60" y1="267" x2="244" y2="267" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="244" y1="267" x2="244" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="244" cy="267" r="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
+        <text x="255" y="271" font-size="12" font-weight="700" fill="#DC2626">E_market</text>
+        <text x="46" y="271" font-size="12" font-weight="600" fill="#DC2626" text-anchor="end">P_m</text>
+        <text x="244" y="418" font-size="12" font-weight="600" fill="#DC2626" text-anchor="middle">Q_m</text>
+      </g>
+
+      <!-- ===== LAYER: legend base ===== -->
+      <g class="layer-legend-base">
+        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Free market equilibrium: MPC = MPB</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">FREE MARKET OUTCOME</text>
+        <text x="620" y="100" font-size="14" fill="#334155">Consumers maximise utility at</text>
+        <text x="620" y="120" font-size="14" fill="#334155">MPC = MPB → equilibrium at</text>
+        <text x="620" y="140" font-size="14" font-weight="700" fill="#1E293B">(Q_m, P_m).</text>
+        <text x="620" y="176" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">WHAT EACH CURVE MEANS</text>
+        <line x1="620" y1="200" x2="650" y2="200" stroke="#D97706" stroke-width="3"/>
+        <text x="658" y="204" font-size="14" font-weight="700" fill="#D97706">D = MPB</text>
+        <text x="620" y="224" font-size="13" fill="#334155">Marginal private benefit — value</text>
+        <text x="620" y="242" font-size="13" fill="#334155">to the consumer of one more unit.</text>
+        <line x1="620" y1="266" x2="650" y2="266" stroke="#059669" stroke-width="3"/>
+        <text x="658" y="270" font-size="14" font-weight="700" fill="#059669">MPC = MSC</text>
+        <text x="620" y="290" font-size="13" fill="#334155">Supply cost — same private and</text>
+        <text x="620" y="308" font-size="13" fill="#334155">social cost (no production externality).</text>
+        <text x="620" y="340" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">BUT THIS IGNORES…</text>
+        <text x="620" y="364" font-size="14" fill="#334155">External benefits to third parties</text>
+        <text x="620" y="384" font-size="14" fill="#334155">(herd immunity, productivity).</text>
+      </g>
+
+      <!-- ===== LAYER: MSB curve (extension + shift + efficiency states) =====
+           MSB: parallel to MPB but shifted up by ~70px
+           From (100, 130) to (490, 310)
+      -->
+      <g class="layer-msb">
+        <g clip-path="url(#pe-chart-clip)">
+          <line x1="100" y1="130" x2="490" y2="310" stroke="#2563EB" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round"/>
+        </g>
+        <text x="498" y="312" font-size="13" font-weight="700" fill="#2563EB">MSB</text>
+      </g>
+
+      <!-- ===== LAYER: MEB bracket (extension only) =====
+           Vertical bracket at x=380 between MSB (y=259) and MPB (y=329)
+      -->
+      <g class="layer-meb">
+        <line x1="380" y1="259" x2="380" y2="329" stroke="#7D23CB" stroke-width="2"/>
+        <line x1="374" y1="259" x2="386" y2="259" stroke="#7D23CB" stroke-width="2"/>
+        <line x1="374" y1="329" x2="386" y2="329" stroke="#7D23CB" stroke-width="2"/>
+        <text x="390" y="298" font-size="13" font-weight="700" fill="#7D23CB">MEB</text>
+      </g>
+
+      <!-- ===== LAYER: legend extension ===== -->
+      <g class="layer-legend-extension">
+        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Consumption creates external benefits → MSB sits above MPB</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#7D23CB" letter-spacing="2">MSB = MPB + MEB</text>
+        <text x="620" y="100" font-size="14" fill="#334155">MSB adds the benefit enjoyed by</text>
+        <text x="620" y="120" font-size="14" fill="#334155">third parties to private benefit.</text>
+        <text x="620" y="152" font-size="14" font-weight="700" fill="#1E293B">Vertical gap = MEB</text>
+        <text x="620" y="172" font-size="13" fill="#475569">(marginal external benefit)</text>
+        <text x="620" y="208" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">EXAMPLES OF MEB</text>
+        <text x="620" y="232" font-size="14" fill="#334155">Herd immunity from vaccination</text>
+        <text x="620" y="252" font-size="14" fill="#334155">Productivity from education</text>
+        <text x="620" y="272" font-size="14" fill="#334155">Lower crime from schooling</text>
+        <text x="620" y="292" font-size="14" fill="#334155">Pollination from beekeeping</text>
+        <text x="620" y="326" font-size="11" font-weight="700" fill="#7D23CB" letter-spacing="2">THE PROBLEM</text>
+        <text x="620" y="352" font-size="14" fill="#334155">Consumers don't capture MEB,</text>
+        <text x="620" y="372" font-size="14" fill="#334155">so they consume too little.</text>
+      </g>
+
+      <!-- ===== LAYER: optimal point (shift + efficiency states) =====
+           Q* at x=303, P* at y=224 — to the RIGHT of Q_m
+      -->
+      <g class="layer-optimal">
+        <line x1="60" y1="224" x2="303" y2="224" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="303" y1="224" x2="303" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="303" cy="224" r="7" fill="#FFFFFF" stroke="#059669" stroke-width="2.5"/>
+        <text x="303" y="208" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">E*</text>
+        <text x="46" y="228" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P*</text>
+        <text x="303" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q*</text>
+      </g>
+
+      <!-- ===== LAYER: legend shift ===== -->
+      <g class="layer-legend-shift">
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Socially optimal output: where MSB = MSC</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#059669" letter-spacing="2">THE OPTIMUM</text>
+        <text x="620" y="100" font-size="14" fill="#334155">Society maximises welfare</text>
+        <text x="620" y="120" font-size="14" fill="#334155">where MSB = MSC at</text>
+        <text x="620" y="142" font-size="15" font-weight="700" fill="#059669">(Q*, P*).</text>
+        <text x="620" y="176" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">COMPARISON</text>
+        <text x="620" y="200" font-size="14" font-weight="700" fill="#1E293B">Q* &gt; Q_m</text>
+        <text x="620" y="220" font-size="14" fill="#334155">Society wants more output.</text>
+        <text x="620" y="248" font-size="14" font-weight="700" fill="#1E293B">P* &gt; P_m</text>
+        <text x="620" y="268" font-size="14" fill="#334155">Optimal price is higher.</text>
+        <text x="620" y="302" font-size="11" font-weight="700" fill="#059669" letter-spacing="2">FREE MARKET FAILS</text>
+        <text x="620" y="326" font-size="14" fill="#334155">Without intervention the market</text>
+        <text x="620" y="346" font-size="14" fill="#334155">under-produces by (Q* − Q_m).</text>
+      </g>
+
+      <!-- ===== LAYER: welfare-gain triangle (efficiency only) =====
+           Vertices: E_market (244,267), E* (303,224), MSB@Q_m at (244, 197)
+      -->
+      <g class="layer-wfg">
+        <polygon points="244,197 303,224 244,267" fill="#DCFCE7" fill-opacity="0.85" stroke="#059669" stroke-width="2"/>
+        <text x="263" y="234" font-size="12" font-weight="800" fill="#059669" text-anchor="middle">Welfare</text>
+        <text x="263" y="248" font-size="12" font-weight="800" fill="#059669" text-anchor="middle">gain</text>
+      </g>
+
+      <!-- ===== LAYER: legend efficiency ===== -->
+      <g class="layer-legend-efficiency">
+        <circle cx="74" cy="32" r="7" fill="#059669"/>
+        <text x="90" y="37" font-size="13" font-weight="600" fill="#334155">Under-consumption → welfare gain triangle forgone</text>
+        <text x="620" y="74" font-size="11" font-weight="700" fill="#059669" letter-spacing="2">WELFARE GAIN FORGONE</text>
+        <text x="620" y="100" font-size="14" fill="#334155">Shaded triangle between Q_m</text>
+        <text x="620" y="120" font-size="14" fill="#334155">and Q*, bounded above by</text>
+        <text x="620" y="140" font-size="14" fill="#334155">MSB and below by MSC.</text>
+        <text x="620" y="174" font-size="14" font-weight="700" fill="#1E293B">For each unit between Q_m and Q*:</text>
+        <text x="620" y="196" font-size="14" fill="#334155">MSB &gt; MSC → society gains</text>
+        <text x="620" y="216" font-size="14" fill="#334155">(MSB − MSC) of welfare.</text>
+        <text x="620" y="252" font-size="11" font-weight="700" fill="#059669" letter-spacing="2">POLICY RESPONSE</text>
+        <text x="620" y="276" font-size="14" fill="#334155">A Pigouvian subsidy = MEB at Q*</text>
+        <text x="620" y="296" font-size="14" fill="#334155">internalises the externality</text>
+        <text x="620" y="316" font-size="14" fill="#334155">and captures the welfare gain.</text>
+        <text x="620" y="350" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">EXAM TECHNIQUE</text>
+        <text x="620" y="374" font-size="13" fill="#334155">Label all six elements: MPB,</text>
+        <text x="620" y="392" font-size="13" fill="#334155">MSB, MPC=MSC, E_m, E*, WFG.</text>
+      </g>
+    </svg>
+  `,
+
   lemonMarketDiagram: `
     <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>

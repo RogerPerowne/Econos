@@ -3714,6 +3714,32 @@ img, svg { display: block; max-width: 100%; }
 .show-efficiency .negext-svg .layer-dwl { opacity: 1; }
 .show-efficiency .negext-svg .layer-legend-efficiency { opacity: 1; }
 
+/* ===== POSITIVE EXTERNALITY INTERACTIVE ===== */
+.posext-svg .layer-axes,
+.posext-svg .layer-base-curves,
+.posext-svg .layer-market-eq,
+.posext-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.posext-svg .layer-msb,
+.posext-svg .layer-meb,
+.posext-svg .layer-legend-extension,
+.posext-svg .layer-optimal,
+.posext-svg .layer-legend-shift,
+.posext-svg .layer-wfg,
+.posext-svg .layer-legend-efficiency { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .posext-svg .layer-legend-base { opacity: 0; }
+.show-extension .posext-svg .layer-msb { opacity: 1; }
+.show-extension .posext-svg .layer-meb { opacity: 1; }
+.show-extension .posext-svg .layer-legend-extension { opacity: 1; }
+.show-shift .posext-svg .layer-legend-base { opacity: 0; }
+.show-shift .posext-svg .layer-msb { opacity: 1; }
+.show-shift .posext-svg .layer-optimal { opacity: 1; }
+.show-shift .posext-svg .layer-legend-shift { opacity: 1; }
+.show-efficiency .posext-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .posext-svg .layer-msb { opacity: 1; }
+.show-efficiency .posext-svg .layer-optimal { opacity: 1; }
+.show-efficiency .posext-svg .layer-wfg { opacity: 1; }
+.show-efficiency .posext-svg .layer-legend-efficiency { opacity: 1; }
+
 /* ===== PRICE CONTROLS INTERACTIVE ===== */
 .pc-svg .layer-axes,
 .pc-svg .layer-base-curves,

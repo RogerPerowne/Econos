@@ -95,7 +95,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 7',
       title: 'The positive consumption externality diagram',
       lede: 'The mirror of the negative diagram. Build it in four moves — every label matters.',
-      diagramKey: 'posExternalityDiagram',
+      diagramKey: 'posExternalityInteractive',
       diagramCallouts: [
         { tone: 'green',  icon: '📉', head: 'Free market output is too low', body: 'At Q_market the market produces below the socially optimal Q*.' },
         { tone: 'purple', icon: '🔺', head: 'Welfare gain forgone',          body: 'The shaded triangle is the welfare society foregoes by under-consuming.' },

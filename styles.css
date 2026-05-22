@@ -131,7 +131,7 @@
   --sidebar-w: 240px;
   --rightbar-w: 240px;
   --header-h: 64px;
-  --app-max-w: 1080px;
+  --app-max-w: 1024px;
 }
 
 /* ============================================================
@@ -143,6 +143,11 @@
 html {
   font-size: 16px;
   overflow-x: clip;
+}
+
+#app-root {
+  max-width: var(--app-max-w);
+  margin: 0 auto;
 }
 
 body {

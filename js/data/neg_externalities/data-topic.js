@@ -188,14 +188,14 @@ window.ECONOS_TOPIC = {
       keyPointsCols: 2,
       keyPoints: [
         {
-          tone: 'green', icon: '1️⃣', title: 'Pigouvian tax',
+          tone: 'green', icon: '💸', title: 'Pigouvian tax',
           headline: 'A tax equal to the size of MEC at Q* shifts MPC up to MSC, restoring the social optimum.',
-          body: '<strong>Live examples:</strong> UK fuel duty · sugar levy · UK Plastic Packaging Tax.<br><br><strong>Evaluation.</strong> <em>Theoretically efficient:</em> achieves allocative efficiency at Q*. <em>Practically difficult:</em> government must estimate the true MEC, which is hard to measure accurately.'
+          body: '<span style="font-weight:800;color:#059669;">Live examples:</span> UK fuel duty · sugar levy · UK Plastic Packaging Tax.<br><br><span style="font-weight:800;color:#059669;">Evaluation.</span> <em>Theoretically efficient:</em> achieves allocative efficiency at Q*. <em>Practically difficult:</em> government must estimate the true MEC, which is hard to measure accurately.'
         },
         {
-          tone: 'blue', icon: '2️⃣', title: 'Tradeable pollution permits (cap-and-trade)',
+          tone: 'blue', icon: '🔄', title: 'Tradeable pollution permits (cap-and-trade)',
           headline: 'Government caps total emissions, issues permits, and firms trade them. The market creates a price for pollution.',
-          body: '<strong>Live examples:</strong> UK ETS (UK Emissions Trading Scheme) · EU ETS (EU Emissions Trading System).<br><br><strong>Mechanism.</strong> Firms with low abatement costs sell permits; firms with high abatement costs buy them. The total cap guarantees the environmental outcome.'
+          body: '<span style="font-weight:800;color:#2563EB;">Live examples:</span> UK ETS (UK Emissions Trading Scheme) · EU ETS (EU Emissions Trading System).<br><br><span style="font-weight:800;color:#2563EB;">Mechanism.</span> Firms with low abatement costs sell permits; firms with high abatement costs buy them. The total cap guarantees the environmental outcome.'
         }
       ],
       causesLabel: 'Comparing the two tools',
@@ -206,15 +206,17 @@ window.ECONOS_TOPIC = {
         { icon: '🌱', head: 'Who benefits?',     body: '<strong>Both schemes:</strong> third parties and the environment (less pollution); government raises revenue under a tax.', tone: 'blue'  },
         { icon: '🏭', head: 'Who is worse off?', body: '<strong>Both schemes:</strong> high-polluting firms — they face higher costs or must buy permits. Innovation that lowers abatement costs reduces this burden.', tone: 'purple' }
       ],
-      causes2Label: 'Spec point (e): impact on economic agents',
-      causes2Emoji: '👥',
-      causes2Cols: 4,
-      causes2: [
-        { icon: '🛒', head: 'Consumers',    body: 'May face higher prices or fewer choices on the externality-causing good.',                  tone: 'green'  },
-        { icon: '🏭', head: 'Producers',    body: 'Higher costs; low-polluters gain competitiveness vs. high-polluters under both schemes.',  tone: 'purple' },
-        { icon: '🏛️', head: 'Government',    body: 'Raises revenue (Pigouvian tax) or sets and enforces the emissions cap (permits).',         tone: 'blue'   },
-        { icon: '👥', head: 'Third parties', body: 'Benefit from cleaner air, better health and wellbeing.',                                    tone: 'amber'  }
-      ],
+      table: {
+        title: 'Impact on economic agents',
+        emoji: '👥',
+        headers: ['Agent', 'Impact'],
+        rows: [
+          { icon: '🛒', tone: 'green',  label: 'Consumers',     value: 'May face higher prices or fewer choices on the externality-causing good.' },
+          { icon: '🏭', tone: 'purple', label: 'Producers',     value: 'Higher costs; low-polluters gain competitiveness vs. high-polluters under both schemes.' },
+          { icon: '🏛️', tone: 'blue',   label: 'Government',    value: 'Raises revenue (Pigouvian tax) or sets and enforces the emissions cap (permits).' },
+          { icon: '👥', tone: 'amber',  label: 'Third parties', value: 'Benefit from cleaner air, better health and wellbeing.' }
+        ]
+      },
       tipLate: { icon: '💡', tone: 'blue', head: 'Key idea', text: 'Market-based interventions use <strong>prices or markets</strong> to make firms internalise external costs. Remember — <strong>a tax targets the level of pollution; cap-and-trade targets the total</strong>.' },
       examEdge: '“A Pigouvian tax is theoretically efficient but practically difficult to calibrate” — a high-mark phrase. For top marks compare tax vs. permits on flexibility, revenue, certainty and dynamic efficiency.'
     },

@@ -65,7 +65,7 @@
     .topnav__logo { display: block; flex-shrink: 0; }
     .topnav__logo img {
       display: block;
-      height: 36px;
+      height: 44px;
       width: auto;
     }
     .topnav__links {
@@ -141,7 +141,7 @@
     ══════════════════════════════════════════ */
     .hp-hero {
       background: var(--white);
-      padding: 80px 0 96px;
+      padding: 48px 0 72px;
     }
     .hp-hero .hp-container {
       display: grid;

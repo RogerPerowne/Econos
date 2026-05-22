@@ -233,26 +233,30 @@ window.ECONOS_TOPIC = {
         { icon: '🚗',  head: 'Emission standards',                  body: 'Set a legal limit on the amount of pollution allowed. <strong>Example:</strong> Euro 6 emissions standard for cars.',                                       tone: 'purple' },
         { icon: '🏢',  head: 'Planning restrictions',               body: 'Limit where or how certain activities can take place. <strong>Examples:</strong> zoning laws; limits on industrial developments near homes or schools.',     tone: 'blue'   },
         { icon: '🚭',  head: 'Smoking bans in enclosed public places', body: 'Protect public health by restricting harmful behaviour rather than taxing it.',                                                                        tone: 'green'  },
+        { icon: '🪪',  head: 'Minimum legal age',                    body: 'Restrict who can legally buy harmful goods. <strong>Examples:</strong> alcohol and tobacco purchase age (18 in the UK); vaping age limits.',                tone: 'slate'  },
         { icon: '💷',  head: 'Congestion charge',                   body: 'A <em>hybrid</em> between regulation and market pricing — access is restricted by rule, with a price used to manage demand.',                                tone: 'amber'  }
       ],
-      keyPointsLabel: 'Blunter, but more certain',
-      keyPointsEmoji: '✅',
+      keyPointsLabel: 'Trade-offs of command-and-control',
+      keyPointsEmoji: '⚖️',
       keyPointsCols: 2,
+      keyPointsStyle: 'minimal',
       keyPoints: [
         { tone: 'blue', icon: '🔒', title: 'Less flexible',                       headline: 'One-size-fits-all rules may not reflect different firms\' costs or circumstances.',          body: '' },
         { tone: 'blue', icon: '💸', title: 'More costly to comply with',          headline: 'Firms may face high compliance and monitoring costs.',                                       body: '' },
         { tone: 'blue', icon: '🎯', title: 'More certain in outcome',             headline: 'The regulator directly limits harmful activity — no reliance on how firms respond to prices.', body: '' },
         { tone: 'blue', icon: '🛡️', title: 'Essential when harm is severe or irreversible', headline: 'Toxic substances, serious health risks, endangered species — bans dominate taxes here.', body: '' }
       ],
-      causes2Label: 'Impact on different agents',
-      causes2Emoji: '👥',
-      causes2Cols: 4,
-      causes2: [
-        { icon: '🛒', head: 'Consumers',     body: 'May face higher prices or restricted choice.',                            tone: 'green'  },
-        { icon: '🏭', head: 'Producers',     body: 'Face compliance costs and less freedom to choose how to operate.',         tone: 'purple' },
-        { icon: '👥', head: 'Third parties', body: 'Gain protection from harm (health, environment, wellbeing).',              tone: 'blue'   },
-        { icon: '🏛️', head: 'Government',    body: 'Must monitor, enforce and may incur administration costs.',                tone: 'amber'  }
-      ],
+      table: {
+        title: 'Impact on different agents',
+        emoji: '👥',
+        headers: ['Agent', 'Impact'],
+        rows: [
+          { icon: '🛒', tone: 'green',  label: 'Consumers',     value: 'May face higher prices or restricted choice.' },
+          { icon: '🏭', tone: 'purple', label: 'Producers',     value: 'Face compliance costs and less freedom to choose how to operate.' },
+          { icon: '👥', tone: 'blue',   label: 'Third parties', value: 'Gain protection from harm (health, environment, wellbeing).' },
+          { icon: '🏛️', tone: 'amber',  label: 'Government',    value: 'Must monitor, enforce and may incur administration costs.' }
+        ]
+      },
       tipLate: [
         { icon: '⚖️', tone: 'amber', head: 'Hybrid note', text: 'The <strong>congestion charge</strong> straddles regulation and pricing — access is restricted by rule, with a price used to manage demand.' },
         { icon: '⭐', tone: 'green', head: 'Exam tip',    text: 'Command-and-control gives <strong>greater certainty of outcome</strong>, especially where harm is irreversible.' }

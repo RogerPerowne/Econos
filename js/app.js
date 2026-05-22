@@ -928,6 +928,7 @@
       const kpTones = ['green', 'amber', 'blue', 'purple', 'rose', 'slate'];
       const n = c.keyPoints.length;
       const compare = c.keyPointsCompare && n === 2;
+      const minimal = c.keyPointsStyle === 'minimal';
       const cols = compare ? '1fr auto 1fr' : `repeat(${c.keyPointsCols || n},1fr)`;
       content += `<div style="display:grid;grid-template-columns:${cols};gap:14px;margin-bottom:26px;align-items:stretch;">`;
       const tiles = c.keyPoints.map((p, i) => {
@@ -935,11 +936,11 @@
         return `
           <div style="background:#fff;border:1px solid #E2E8F0;border-bottom:4px solid ${t.accent};border-radius:10px;padding:16px 18px 18px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-              ${compare ? '' : `<div style="width:26px;height:26px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>`}
+              ${(compare || minimal) ? '' : `<div style="width:26px;height:26px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>`}
               ${p.icon ? `<div style="font-size:20px;line-height:1;flex-shrink:0;">${p.icon}</div>` : ''}
               <div style="font-size:15px;font-weight:800;color:${t.label};letter-spacing:0.01em;">${p.title}</div>
             </div>
-            ${p.headline ? `<div style="font-size:14px;font-weight:800;color:#0F172A;line-height:1.5;margin-bottom:8px;">${p.headline}</div>` : ''}
+            ${p.headline ? `<div style="font-size:14px;font-weight:${minimal ? '500' : '800'};color:#0F172A;line-height:1.5;margin-bottom:8px;">${p.headline}</div>` : ''}
             ${p.body ? `<div style="font-size:13.5px;color:#475569;line-height:1.6;">${p.body}</div>` : ''}
           </div>`;
       });

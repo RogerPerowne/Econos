@@ -268,6 +268,138 @@
   </g>
 </svg>`,
 
+    vaccineClinic: `
+<svg viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:170px;display:block;">
+  <defs>
+    <linearGradient id="vac_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="220" fill="url(#vac_sky)"/>
+  <path d="M0 150 L80 110 L160 130 L260 95 L350 120 L450 105 L560 125 L680 100 L780 120 L880 110 L1000 130 L1000 220 L0 220 Z" fill="#DBEAFE" opacity="0.55"/>
+  <path d="M0 165 L100 138 L210 155 L320 128 L420 148 L520 138 L640 152 L740 132 L860 148 L1000 142 L1000 220 L0 220 Z" fill="#BFDBFE" opacity="0.45"/>
+  <rect x="0" y="180" width="1000" height="40" fill="#F1F5F9"/>
+  <rect x="0" y="178" width="1000" height="3" fill="#E2E8F0"/>
+  <ellipse cx="200" cy="50" rx="34" ry="10" fill="#FFFFFF" opacity="0.85"/>
+  <ellipse cx="260" cy="42" rx="40" ry="11" fill="#FFFFFF" opacity="0.85"/>
+  <ellipse cx="780" cy="46" rx="38" ry="11" fill="#FFFFFF" opacity="0.85"/>
+  <g>
+    <rect x="60" y="90" width="180" height="90" fill="#FFFFFF"/>
+    <rect x="60" y="90" width="180" height="90" fill="none" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="58" y="84" width="184" height="10" fill="#475569"/>
+    <rect x="100" y="135" width="22" height="45" fill="#1E293B"/>
+    <rect x="170" y="115" width="22" height="18" fill="#BFDBFE"/>
+    <rect x="200" y="115" width="22" height="18" fill="#BFDBFE"/>
+    <circle cx="140" cy="115" r="16" fill="#3B82F6"/>
+    <rect x="135" y="106" width="10" height="18" fill="#FFFFFF"/>
+    <rect x="126" y="110" width="28" height="10" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(305 138)">
+    <rect x="-12" y="14" width="24" height="22" rx="3" fill="#94A3B8"/>
+    <rect x="-14" y="32" width="28" height="4" fill="#64748B"/>
+    <rect x="-10" y="-6" width="20" height="24" rx="4" fill="#60A5FA"/>
+    <circle cx="0" cy="-14" r="9" fill="#7C2D12"/>
+    <path d="M-9 -12 Q0 -24 9 -12 L9 -8 L-9 -8 Z" fill="#1E293B"/>
+    <rect x="-12" y="-6" width="6" height="14" fill="#60A5FA"/>
+    <rect x="6" y="-6" width="6" height="14" fill="#60A5FA"/>
+    <rect x="10" y="2" width="14" height="3" fill="#FBCFE8"/>
+  </g>
+  <g transform="translate(355 138)">
+    <rect x="-12" y="14" width="24" height="22" rx="3" fill="#94A3B8"/>
+    <rect x="-14" y="32" width="28" height="4" fill="#64748B"/>
+    <rect x="-10" y="-6" width="20" height="24" rx="4" fill="#16A34A"/>
+    <circle cx="0" cy="-14" r="9" fill="#FBCFE8"/>
+    <path d="M-9 -16 Q0 -24 9 -16 L9 -10 L-9 -10 Z" fill="#1E293B"/>
+    <rect x="-12" y="-6" width="6" height="14" fill="#FBCFE8"/>
+    <rect x="6" y="-6" width="6" height="14" fill="#FBCFE8"/>
+  </g>
+  <g transform="translate(500 110)">
+    <path d="M0 -32 L26 -22 L26 4 Q26 22 0 32 Q-26 22 -26 4 L-26 -22 Z" fill="#3B82F6"/>
+    <path d="M0 -32 L26 -22 L26 4 Q26 22 0 32 Q-26 22 -26 4 L-26 -22 Z" fill="none" stroke="#1D4ED8" stroke-width="1.5"/>
+    <rect x="-4" y="-18" width="8" height="22" fill="#FFFFFF"/>
+    <rect x="-11" y="-11" width="22" height="8" fill="#FFFFFF"/>
+  </g>
+  <g fill="#60A5FA" opacity="0.85">
+    <g transform="translate(590 70)"><path d="M0 -12 L10 -8 L10 2 Q10 10 0 14 Q-10 10 -10 2 L-10 -8 Z" fill="#60A5FA"/><rect x="-1.6" y="-7" width="3.2" height="9" fill="#FFFFFF"/><rect x="-4.5" y="-4" width="9" height="3.2" fill="#FFFFFF"/></g>
+    <g transform="translate(660 100)"><path d="M0 -12 L10 -8 L10 2 Q10 10 0 14 Q-10 10 -10 2 L-10 -8 Z" fill="#93C5FD"/><rect x="-1.6" y="-7" width="3.2" height="9" fill="#FFFFFF"/><rect x="-4.5" y="-4" width="9" height="3.2" fill="#FFFFFF"/></g>
+    <g transform="translate(620 130)"><path d="M0 -10 L8 -7 L8 2 Q8 9 0 12 Q-8 9 -8 2 L-8 -7 Z" fill="#60A5FA"/><rect x="-1.3" y="-6" width="2.6" height="7.5" fill="#FFFFFF"/><rect x="-3.5" y="-3.5" width="7" height="2.6" fill="#FFFFFF"/></g>
+    <g transform="translate(700 75)"><path d="M0 -12 L10 -8 L10 2 Q10 10 0 14 Q-10 10 -10 2 L-10 -8 Z" fill="#93C5FD"/><rect x="-1.6" y="-7" width="3.2" height="9" fill="#FFFFFF"/><rect x="-4.5" y="-4" width="9" height="3.2" fill="#FFFFFF"/></g>
+    <g transform="translate(560 115)"><path d="M0 -10 L8 -7 L8 2 Q8 9 0 12 Q-8 9 -8 2 L-8 -7 Z" fill="#60A5FA"/><rect x="-1.3" y="-6" width="2.6" height="7.5" fill="#FFFFFF"/><rect x="-3.5" y="-3.5" width="7" height="2.6" fill="#FFFFFF"/></g>
+  </g>
+  <g stroke="#93C5FD" stroke-width="1.4" stroke-dasharray="3 4" fill="none" opacity="0.8">
+    <path d="M524 100 Q557 60 588 70"/>
+    <path d="M524 110 Q557 95 558 115"/>
+    <path d="M524 118 Q570 138 618 130"/>
+    <path d="M526 96 Q610 60 658 100"/>
+    <path d="M526 92 Q620 30 698 75"/>
+  </g>
+  <g transform="translate(770 140)">
+    <rect x="-2" y="14" width="4" height="26" fill="#78350F"/>
+    <circle cx="0" cy="-6" r="8" fill="#FBCFE8"/>
+    <path d="M-8 -8 Q0 -18 8 -8 L8 -2 L-8 -2 Z" fill="#1E293B"/>
+    <rect x="-7" y="2" width="14" height="14" fill="#16A34A"/>
+    <rect x="-9" y="40" width="6" height="6" fill="#1E293B"/>
+    <rect x="3" y="40" width="6" height="6" fill="#1E293B"/>
+    <rect x="-13" y="6" width="6" height="10" fill="#0F766E"/>
+  </g>
+  <g transform="translate(810 132)">
+    <rect x="-2.5" y="16" width="5" height="30" fill="#78350F"/>
+    <circle cx="0" cy="-2" r="10" fill="#FBCFE8"/>
+    <path d="M-10 -3 Q0 -16 10 -3 L10 4 L-10 4 Z" fill="#1E293B"/>
+    <path d="M-12 6 L12 6 L10 28 L-10 28 Z" fill="#14B8A6"/>
+    <rect x="-10" y="46" width="6" height="6" fill="#1E293B"/>
+    <rect x="4" y="46" width="6" height="6" fill="#1E293B"/>
+  </g>
+  <g transform="translate(848 132)">
+    <rect x="-2.5" y="16" width="5" height="30" fill="#78350F"/>
+    <circle cx="0" cy="-2" r="10" fill="#7C2D12"/>
+    <path d="M-10 -4 Q0 -16 10 -4 L10 3 L-10 3 Z" fill="#1E293B"/>
+    <path d="M-12 6 L12 6 L11 28 L-11 28 Z" fill="#0F766E"/>
+    <rect x="-10" y="46" width="6" height="6" fill="#1E293B"/>
+    <rect x="4" y="46" width="6" height="6" fill="#1E293B"/>
+    <g transform="translate(14 6)">
+      <circle cx="0" cy="0" r="6" fill="#FBCFE8"/>
+      <rect x="-4" y="4" width="8" height="10" fill="#FCD34D"/>
+    </g>
+  </g>
+  <g transform="translate(884 138)">
+    <rect x="-2" y="14" width="4" height="26" fill="#78350F"/>
+    <circle cx="0" cy="-4" r="8" fill="#E5E7EB"/>
+    <path d="M-8 -6 Q0 -14 8 -6 L8 0 L-8 0 Z" fill="#9CA3AF"/>
+    <path d="M-9 2 L9 2 L8 22 L-8 22 Z" fill="#A78BFA"/>
+    <rect x="-9" y="40" width="6" height="6" fill="#1E293B"/>
+    <rect x="3" y="40" width="6" height="6" fill="#1E293B"/>
+    <rect x="9" y="6" width="2" height="34" fill="#78350F"/>
+  </g>
+  <g>
+    <rect x="918" y="108" width="58" height="72" fill="#FEF3C7"/>
+    <polygon points="918,108 947,86 976,108" fill="#B91C1C"/>
+    <rect x="943" y="140" width="12" height="40" fill="#7C2D12"/>
+    <rect x="924" y="120" width="10" height="10" fill="#BFDBFE"/>
+    <rect x="960" y="120" width="10" height="10" fill="#BFDBFE"/>
+  </g>
+  <g>
+    <rect x="982" y="118" width="18" height="62" fill="#FFFFFF"/>
+    <polygon points="982,118 991,108 1000,118" fill="#475569"/>
+    <rect x="988" y="148" width="6" height="32" fill="#7C2D12"/>
+    <rect x="986" y="124" width="5" height="5" fill="#BFDBFE"/>
+    <rect x="993" y="124" width="5" height="5" fill="#BFDBFE"/>
+  </g>
+  <g transform="translate(22 168)">
+    <rect x="-2" y="0" width="4" height="14" fill="#78350F"/>
+    <circle cx="0" cy="-6" r="11" fill="#15803D"/>
+  </g>
+  <g transform="translate(252 172)">
+    <rect x="-2" y="0" width="4" height="10" fill="#78350F"/>
+    <circle cx="0" cy="-4" r="8" fill="#16A34A"/>
+  </g>
+  <g transform="translate(960 174)">
+    <rect x="-2" y="0" width="4" height="10" fill="#78350F"/>
+    <circle cx="0" cy="-5" r="9" fill="#15803D"/>
+  </g>
+  <ellipse cx="500" cy="196" rx="240" ry="14" fill="#E0E7FF" opacity="0.55"/>
+</svg>`,
+
     steelCement: `
 <svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
   <defs>

@@ -46,6 +46,7 @@ window.ECONOS_TOPIC = {
       workedExample: {
         label: 'Worked example: the flu vaccine',
         emoji: '💉',
+        scene: 'vaccineClinic',
         cards: [
           {
             tone: 'green', icon: '💼',

@@ -272,18 +272,7 @@ window.ECONOS_TOPIC = {
       id: 'pos_externalities_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam edge',
-      tip: { icon: '💡', tone: 'blue', text: '<em>This page turns positive externalities into exam technique: strong phrases, a reliable evaluation flow, and a judgement framework you can adapt to any scenario.</em>' },
-      keyPointsLabel: '1. Best phrases to use',
-      keyPointsEmoji: '💬',
-      keyPointsCols: 5,
-      keyPointsStyle: 'minimal',
-      keyPoints: [
-        { tone: 'blue', icon: '“', title: 'MSB exceeds MPB',                                       headline: '', body: '' },
-        { tone: 'blue', icon: '“', title: 'The market under-consumes the good',                    headline: '', body: '' },
-        { tone: 'blue', icon: '“', title: 'A subsidy can internalise the external benefit',         headline: '', body: '' },
-        { tone: 'blue', icon: '“', title: 'The size of the welfare gain depends on elasticity',     headline: '', body: '' },
-        { tone: 'blue', icon: '“', title: 'Intervention may be justified despite government failure', headline: '', body: '' }
-      ],
+      tip: { icon: null, tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style=”display:flex;flex-direction:column;gap:8px;margin-top:4px;”><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;MSB exceeds MPB, so the market under-produces relative to the socially optimal output.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;The market under-consumes the good because private decisions ignore the external benefit.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;A subsidy can internalise the external benefit by shifting MPB up towards MSB.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;The size of the welfare gain forgone depends on the price elasticity of demand and supply.&rdquo;</span></div><div style=”display:flex;gap:10px;align-items:flex-start;”><span style=”flex-shrink:0;line-height:1.55;”>✅</span><span>&ldquo;Intervention may be justified despite government failure if the external benefit is large and well-targeted.&rdquo;</span></div></div>' },
       flowTitle: '2. A 4-step evaluation flow',
       flowEmoji: '🧭',
       flow: [

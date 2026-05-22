@@ -139,25 +139,25 @@ window.ECONOS_TOPIC = {
       illustratedGridEmoji: '⭐',
       illustratedGrid: [
         {
-          tone: 'green',
+          scene: 'vaccinationHerdImmunity', tone: 'green',
           title: '💉 Vaccination and herd immunity',
           body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> lower risk of illness</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> fewer infections spread to others</div></div>',
           thirdPartyLabel: 'Third-party gain', thirdParty: 'wider community, especially vulnerable groups'
         },
         {
-          tone: 'purple',
+          scene: 'education', tone: 'purple',
           title: '🎓 Education',
           body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> better earnings and skills</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> higher productivity, lower crime, more informed citizens</div></div>',
           thirdPartyLabel: 'Third-party gain', thirdParty: 'employers and society'
         },
         {
-          tone: 'blue',
+          scene: 'healthcareGeneral', tone: 'blue',
           title: '🏥 Healthcare beyond vaccination',
           body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> better health and longer life</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> fewer absences, lower strain on public services, healthier families</div></div>',
           thirdPartyLabel: 'Third-party gain', thirdParty: 'firms, households, government'
         },
         {
-          tone: 'amber',
+          scene: 'beekeepingPollination', tone: 'amber',
           title: '🐝 Beekeeping and pollination',
           body: '<div style="display:flex;flex-direction:column;gap:6px;"><div><span style="font-weight:700;color:#0B1426;">Private benefit:</span> honey and bee products</div><div><span style="font-weight:700;color:#0B1426;">External benefit:</span> nearby crops are pollinated, boosting agricultural output</div></div>',
           thirdPartyLabel: 'Third-party gain', thirdParty: 'farmers, consumers, ecosystem'

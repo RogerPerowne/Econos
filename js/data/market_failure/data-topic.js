@@ -131,7 +131,7 @@ window.ECONOS_TOPIC = {
       economistQuote: {
         portraitKey: 'economistElinorOstrom',
         tone: 'amber',
-        label: 'Economist insight',
+        label: 'Economist insight on market failure',
         quote: 'A core goal of public policy should be to facilitate the development of institutions that bring out the best in humans.',
         attribution: 'Elinor Ostrom, Nobel Prize Lecture (2009)'
       },

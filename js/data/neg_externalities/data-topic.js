@@ -311,8 +311,8 @@ window.ECONOS_TOPIC = {
       ],
       economistQuote: {
         portraitKey: 'economistPigou',
-        tone: 'green',
-        label: 'Economist insight',
+        tone: 'amber',
+        label: 'Economist insight on externalities',
         quote: '…one person A, in the course of rendering some service for which payment is made to a second person B, incidentally also renders services or disservices to other persons, of such a sort that payment cannot be exacted from the benefited parties or compensation enforced on behalf of the injured parties.',
         attribution: 'Arthur Pigou, <em>The Economics of Welfare</em> (1920)'
       },

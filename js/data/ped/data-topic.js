@@ -260,8 +260,8 @@ PED is <strong>always negative</strong> — price and quantity demanded move in 
       intro: 'PED determines who pays a tax, what firms charge, and whether government policy works as intended. It is the bridge between economic theory and practical decision-making.',
       economistQuote: {
         portraitKey: 'economistJoanRobinson',
-        tone: 'blue',
-        label: 'Economist insight',
+        tone: 'amber',
+        label: 'Economist insight on elasticity',
         quote: 'The purpose of studying economics is not to acquire a set of ready-made answers to economic questions, but to learn how to avoid being deceived by economists.',
         attribution: 'Joan Robinson, <em>Economic Philosophy</em> (1962)'
       },

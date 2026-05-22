@@ -41,8 +41,8 @@ window.ECONOS_TOPIC = {
       ],
       economistQuote: {
         portraitKey: 'economistDanielKahneman',
-        tone: 'blue',
-        label: 'Economist insight',
+        tone: 'amber',
+        label: 'Economist insight on behavioural economics',
         quote: 'Nothing in life is as important as you think it is, while you are thinking about it.',
         attribution: 'Daniel Kahneman, <em>Thinking, Fast and Slow</em> (2011)'
       },

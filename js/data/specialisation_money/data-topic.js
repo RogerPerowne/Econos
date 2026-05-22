@@ -63,8 +63,8 @@ window.ECONOS_TOPIC = {
       tip: { icon: '💡', tone: 'blue', text: 'By focusing on what we do best, we raise efficiency and output. Specialisation helps workers, firms and countries achieve more.' },
       economistQuote: {
         portraitKey: 'economistAdamSmith',
-        tone: 'green',
-        label: 'Economist insight',
+        tone: 'amber',
+        label: 'Economist insight on specialisation',
         quote: 'The division of labour is limited by the extent of the market.',
         attribution: 'Adam Smith, <em>Wealth of Nations</em> (1776)'
       },

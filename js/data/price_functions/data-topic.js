@@ -40,7 +40,7 @@ window.ECONOS_TOPIC = {
       economistQuote: {
         portraitKey: 'economistHayek',
         tone: 'amber',
-        label: 'Economist insight',
+        label: 'Economist insight on the price mechanism',
         quote: 'We must look at the price system as a mechanism for communicating information if we want to understand its real function.',
         attribution: 'Friedrich Hayek, <em>The Use of Knowledge in Society</em> (1945)'
       },

@@ -1439,13 +1439,17 @@
           </div>
         `;
       }
-      content += tbl.rows.map((r, i) => `
+      content += tbl.rows.map((r, i) => {
+        const rowTone = r.tone ? PATTERN_TONES[r.tone] : null;
+        const labelCol = rowTone ? rowTone.label : '#0B1426';
+        return `
         <div style="display:grid;grid-template-columns:${hasIcon ? '52px ' : ''}minmax(120px,1fr) 2fr;border-top:${i === 0 && headers.length === 0 ? 'none' : '1px solid #E2E8F0'};background:${i % 2 === 0 ? '#fff' : '#FAFBFC'};">
           ${hasIcon ? `<div style="padding:14px 0 14px 16px;font-size:20px;line-height:1.2;display:flex;align-items:center;">${r.icon || ''}</div>` : ''}
-          <div style="padding:14px 16px;font-size:14px;font-weight:700;color:#0B1426;display:flex;align-items:center;">${r.label}</div>
+          <div style="padding:14px 16px;font-size:14px;font-weight:700;color:${labelCol};display:flex;align-items:center;">${r.label}</div>
           <div style="padding:14px 16px;font-size:14px;color:#0B1426;line-height:1.55;border-left:1px solid #E2E8F0;display:flex;align-items:center;">${r.value}</div>
         </div>
-      `).join('');
+      `;
+      }).join('');
       content += `</div>`;
     }
 

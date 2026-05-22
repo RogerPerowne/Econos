@@ -268,15 +268,14 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Evaluation: why intervention can fail',
       tip: { icon: '⚖️', tone: 'green', text: 'Interventions aim to correct market failure, but correcting externalities can itself create <strong>government failure</strong>. Below are key reasons why intervention may be ineffective, inefficient or have unintended consequences.' },
-      keyPointsLabel: 'Five reasons intervention can fail',
-      keyPointsEmoji: '⚠️',
-      keyPointsCols: 5,
-      keyPoints: [
-        { tone: 'green',  icon: '🔍', title: '1. Information failure',     headline: 'The MEC is unobservable, so the tax or cap may be set incorrectly.',                                 body: '' },
-        { tone: 'purple', icon: '🗣️', title: '2. Regulatory capture',      headline: 'Firms lobby for weaker rules, loopholes or delayed implementation.',                                body: '' },
-        { tone: 'blue',   icon: '🏛️', title: '3. Political short-termism', headline: 'Costs are immediate and visible; benefits may be decades away and politically costly.',              body: '' },
-        { tone: 'amber',  icon: '🌍', title: '4. Carbon leakage',          headline: 'Firms relocate to countries with laxer rules, so emissions fall domestically but rise elsewhere.',  body: '' },
-        { tone: 'rose',   icon: '👥', title: '5. Regressive incidence',    headline: 'Fuel duty and similar measures can hit low-income households hardest.',                              body: '' }
+      flowTitle: 'Five reasons intervention can fail',
+      flowEmoji: '⚠️',
+      flow: [
+        { tone: 'green',  icon: '🔍', title: 'Information failure',     sub: 'The MEC is unobservable, so the tax or cap may be set incorrectly.' },
+        { tone: 'purple', icon: '🗣️', title: 'Regulatory capture',      sub: 'Firms lobby for weaker rules, loopholes or delayed implementation.' },
+        { tone: 'blue',   icon: '🏛️', title: 'Political short-termism', sub: 'Costs are immediate and visible; benefits may be decades away and politically costly.' },
+        { tone: 'amber',  icon: '🌍', title: 'Carbon leakage',          sub: 'Firms relocate to countries with laxer rules, so emissions fall domestically but rise elsewhere.' },
+        { tone: 'rose',   icon: '👥', title: 'Regressive incidence',    sub: 'Fuel duty and similar measures can hit low-income households hardest.' }
       ],
       left:  { tone: 'blue',  icon: '🤝', label: 'Coase theorem — a counterpoint', text: 'When property rights are clearly defined and transaction costs are low, parties may <strong>bargain to the efficient (optimal) outcome</strong> without state intervention.' },
       right: { tone: 'slate', icon: '⚠️', label: 'Limitations of Coasian bargaining', points: ['High transaction costs', 'Many affected parties', 'Hard to coordinate', 'Power imbalance'] },

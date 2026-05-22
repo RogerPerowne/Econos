@@ -734,6 +734,124 @@
   <ellipse cx="132" cy="16" rx="28" ry="9" fill="white" opacity="0.55"/>
   <ellipse cx="450" cy="26" rx="50" ry="14" fill="white" opacity="0.65"/>
   <ellipse cx="492" cy="20" rx="34" ry="10" fill="white" opacity="0.55"/>
+</svg>`,
+
+    capAndTrade: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="cat_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DBEAFE"/><stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="160" fill="url(#cat_sky)"/>
+  <path d="M0 118 L70 100 L160 112 L260 98 L370 108 L470 96 L560 106 L600 100 L600 160 L0 160 Z" fill="#BFDBFE" opacity="0.55"/>
+  <rect x="0" y="135" width="600" height="25" fill="#F1F5F9"/>
+  <rect x="0" y="133" width="600" height="3" fill="#E2E8F0"/>
+  <!-- Cap line -->
+  <line x1="30" y1="42" x2="570" y2="42" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.7"/>
+  <text x="574" y="47" font-size="9" font-weight="700" fill="#DC2626" font-family="Inter,sans-serif">Cap</text>
+  <!-- Factory left (high emitter, buying permits) -->
+  <rect x="28" y="82" width="58" height="54" fill="#94A3B8"/>
+  <rect x="38" y="72" width="12" height="46" fill="#64748B"/>
+  <rect x="58" y="64" width="14" height="54" fill="#475569"/>
+  <ellipse cx="44" cy="70" rx="8" ry="12" fill="#CBD5E1" opacity="0.7"/>
+  <ellipse cx="44" cy="60" rx="5" ry="8" fill="#E2E8F0" opacity="0.5"/>
+  <ellipse cx="65" cy="62" rx="9" ry="14" fill="#CBD5E1" opacity="0.75"/>
+  <ellipse cx="65" cy="48" rx="6" ry="10" fill="#E2E8F0" opacity="0.5"/>
+  <text x="57" y="150" font-size="9" text-anchor="middle" fill="#475569" font-family="Inter,sans-serif">High emitter</text>
+  <text x="57" y="160" font-size="8" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif">buys permits</text>
+  <!-- Permit cards floating in middle -->
+  <rect x="170" y="55" width="38" height="26" rx="4" fill="#1D4ED8" opacity="0.9"/>
+  <text x="189" y="65" font-size="7" font-weight="700" text-anchor="middle" fill="white" font-family="Inter,sans-serif">PERMIT</text>
+  <text x="189" y="75" font-size="7" text-anchor="middle" fill="#BFDBFE" font-family="Inter,sans-serif">1 tonne CO₂</text>
+  <rect x="220" y="65" width="38" height="26" rx="4" fill="#1D4ED8" opacity="0.75"/>
+  <text x="239" y="75" font-size="7" font-weight="700" text-anchor="middle" fill="white" font-family="Inter,sans-serif">PERMIT</text>
+  <text x="239" y="85" font-size="7" text-anchor="middle" fill="#BFDBFE" font-family="Inter,sans-serif">1 tonne CO₂</text>
+  <rect x="195" y="75" width="38" height="26" rx="4" fill="#1E40AF" opacity="0.85"/>
+  <text x="214" y="85" font-size="7" font-weight="700" text-anchor="middle" fill="white" font-family="Inter,sans-serif">PERMIT</text>
+  <text x="214" y="95" font-size="7" text-anchor="middle" fill="#BFDBFE" font-family="Inter,sans-serif">1 tonne CO₂</text>
+  <!-- Arrows showing trading -->
+  <path d="M128 105 L168 85" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr_b)"/>
+  <path d="M270 85 L316 105" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr_g)"/>
+  <defs>
+    <marker id="arr_b" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 Z" fill="#2563EB"/></marker>
+    <marker id="arr_g" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 Z" fill="#059669"/></marker>
+  </defs>
+  <!-- Factory right (low emitter, selling permits) -->
+  <rect x="318" y="90" width="52" height="46" fill="#6EE7B7" opacity="0.7"/>
+  <rect x="328" y="82" width="10" height="38" fill="#34D399" opacity="0.8"/>
+  <ellipse cx="333" cy="80" rx="5" ry="7" fill="#A7F3D0" opacity="0.65"/>
+  <text x="344" y="150" font-size="9" text-anchor="middle" fill="#065F46" font-family="Inter,sans-serif">Low emitter</text>
+  <text x="344" y="160" font-size="8" text-anchor="middle" fill="#059669" font-family="Inter,sans-serif">sells permits</text>
+  <!-- Price badge -->
+  <rect x="420" y="60" width="110" height="46" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="475" y="78" font-size="9" font-weight="700" text-anchor="middle" fill="#1D4ED8" font-family="Inter,sans-serif">Market permit price</text>
+  <text x="475" y="94" font-size="13" font-weight="800" text-anchor="middle" fill="#1E40AF" font-family="Inter,sans-serif">£35–50 / tCO₂</text>
+  <text x="475" y="108" font-size="8" text-anchor="middle" fill="#64748B" font-family="Inter,sans-serif">UK ETS 2024</text>
+</svg>`,
+
+    publicGoods: `
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <linearGradient id="pg_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <radialGradient id="pg_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FEF9C3" stop-opacity="0.9"/><stop offset="1" stop-color="#FEF9C3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="160" fill="url(#pg_sky)"/>
+  <!-- Stars -->
+  <circle cx="60" cy="18" r="1.2" fill="white" opacity="0.8"/>
+  <circle cx="130" cy="12" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="220" cy="22" r="1" fill="white" opacity="0.6"/>
+  <circle cx="310" cy="10" r="1.3" fill="white" opacity="0.8"/>
+  <circle cx="400" cy="18" r="1" fill="white" opacity="0.7"/>
+  <circle cx="490" cy="8" r="1.5" fill="white" opacity="0.75"/>
+  <circle cx="555" cy="20" r="1.2" fill="white" opacity="0.6"/>
+  <circle cx="165" cy="32" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="445" cy="28" r="0.9" fill="white" opacity="0.6"/>
+  <!-- Ground -->
+  <rect x="0" y="130" width="600" height="30" fill="#1E293B"/>
+  <rect x="0" y="128" width="600" height="4" fill="#334155"/>
+  <!-- Lighthouse (left) -->
+  <rect x="58" y="68" width="22" height="62" fill="#E2E8F0"/>
+  <rect x="54" y="58" width="30" height="12" rx="2" fill="#CBD5E1"/>
+  <rect x="60" y="46" width="18" height="14" rx="2" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1"/>
+  <ellipse cx="69" cy="53" rx="7" ry="5" fill="url(#pg_glow)"/>
+  <polygon points="52,46 86,46 69,26" fill="#94A3B8"/>
+  <rect x="65" y="26" width="8" height="20" fill="#CBD5E1"/>
+  <circle cx="69" cy="40" r="5" fill="#FEF08A"/>
+  <line x1="69" y1="40" x2="30" y2="18" stroke="#FEF08A" stroke-width="0.8" opacity="0.4"/>
+  <line x1="69" y1="40" x2="105" y2="20" stroke="#FEF08A" stroke-width="0.8" opacity="0.4"/>
+  <text x="69" y="152" font-size="9" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif">Lighthouse</text>
+  <!-- Street lamp (centre-left) -->
+  <rect x="208" y="62" width="5" height="68" fill="#475569"/>
+  <path d="M210 62 Q210 48 228 48" stroke="#475569" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <rect x="222" y="42" width="22" height="10" rx="3" fill="#FEF08A"/>
+  <ellipse cx="233" cy="47" rx="11" ry="6" fill="url(#pg_glow)"/>
+  <text x="220" y="152" font-size="9" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif">Street lighting</text>
+  <!-- Defence shield (centre-right) -->
+  <path d="M330 42 L370 42 L370 78 Q370 100 350 112 Q330 100 330 78 Z" fill="#1D4ED8" stroke="#1E3A8A" stroke-width="2"/>
+  <rect x="347" y="56" width="6" height="28" fill="white"/>
+  <rect x="338" y="67" width="24" height="6" fill="white"/>
+  <text x="350" y="152" font-size="9" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif">Defence</text>
+  <!-- Flood barrier (right) -->
+  <rect x="440" y="88" width="80" height="42" rx="3" fill="#374151" stroke="#4B5563" stroke-width="1.5"/>
+  <rect x="440" y="88" width="80" height="8" rx="3" fill="#6B7280"/>
+  <rect x="444" y="102" width="8" height="20" fill="#4B5563"/>
+  <rect x="458" y="102" width="8" height="20" fill="#4B5563"/>
+  <rect x="472" y="102" width="8" height="20" fill="#4B5563"/>
+  <rect x="486" y="102" width="8" height="20" fill="#4B5563"/>
+  <rect x="500" y="102" width="8" height="20" fill="#4B5563"/>
+  <!-- Wave being blocked -->
+  <path d="M430 100 Q436 90 442 98" stroke="#60A5FA" stroke-width="2.5" fill="none" opacity="0.7"/>
+  <path d="M424 106 Q432 92 440 102" stroke="#93C5FD" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <text x="480" y="152" font-size="9" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif">Flood defences</text>
+  <!-- Non-excludable label -->
+  <rect x="540" y="50" width="52" height="32" rx="5" fill="#1E3A8A" stroke="#3B82F6" stroke-width="1" opacity="0.8"/>
+  <text x="566" y="63" font-size="7.5" font-weight="700" text-anchor="middle" fill="#93C5FD" font-family="Inter,sans-serif">Non-rival</text>
+  <text x="566" y="75" font-size="7" text-anchor="middle" fill="#BFDBFE" font-family="Inter,sans-serif">Non-excludable</text>
 </svg>`
   };
 

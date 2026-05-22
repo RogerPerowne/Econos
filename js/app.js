@@ -1523,7 +1523,7 @@
       const we = c.workedExample;
       if (we.label !== null) content += genSecLabel(we.emoji || '🔬', we.label || 'Worked example');
       if (we.heroImage) {
-        content += `<div style="margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;"><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></div>`;
+        content += `<div style="margin-bottom:20px;border-radius:14px;overflow:hidden;"><img src="${we.heroImage}" alt="" style="display:block;width:100%;height:auto;" /></div>`;
       } else if (we.scene && SCENES[we.scene]) {
         content += `<div style="margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;">${SCENES[we.scene]}</div>`;
       }

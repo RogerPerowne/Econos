@@ -4,10 +4,10 @@
     id:       'supply_main',
     topicId:  'supply_main',
     title:    'Supply',
-    subtitle: 'Theme 1.6 &#183; Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 2.4 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the law of supply, movement along vs shift, non-price determinants, producer surplus, joint and competing supply, and the profit motive. Mixed formats &#8212; sort, calculation, paragraph completion, diagnostic pair, data table &#8212; designed for the analysis marks Edexcel rewards.',
+    lede: 'Ten exam-style questions covering the law of supply, movement along vs shift, non-price determinants, producer surplus, joint and competing supply, and the profit motive. Mixed formats &#8212; sort, calculation, paragraph completion, evaluation multi-select, data table &#8212; designed for the analysis marks Edexcel rewards.',
     shortNames: {
       'supply_1': 'Law of supply',
       'supply_2': 'Movement vs shift',

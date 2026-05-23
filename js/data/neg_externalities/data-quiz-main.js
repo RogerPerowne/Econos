@@ -4,10 +4,10 @@
     id:       'neg_externalities_main',
     topicId:  'neg_externalities_main',
     title:    'Negative Externalities',
-    subtitle: 'Theme 1.12 · Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 3.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the MSC/MPC diagram, deadweight welfare loss, Coase theorem, Pigouvian taxes, cap-and-trade, regulation, and the carbon emissions case study. Mixed formats &#8212; diagram interpretation, calculation, sorting, diagnostic pair, paragraph fill &#8212; aimed at the analysis and evaluation marks.',
+    lede: 'Ten exam-style questions covering the MSC/MPC diagram, deadweight welfare loss, Coase theorem, Pigouvian taxes, cap-and-trade, regulation, and the carbon emissions case study. Mixed formats &#8212; diagram interpretation, calculation, sorting, evaluation multi-select, paragraph fill &#8212; aimed at the analysis and evaluation marks.',
     shortNames: {
       'neg_externalities_1': 'What is a negative externality?',
       'neg_externalities_2': 'The MSC/MPC diagram',

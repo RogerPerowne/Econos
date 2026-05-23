@@ -4,10 +4,10 @@
     id:       'economic_systems_main',
     topicId:  'economic_systems_main',
     title:    'Economic Systems',
-    subtitle: 'Theme 1.4 &#183; Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 1.6 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the free market economy, the price mechanism as allocator, command economy advantages and failures, the mixed economy rationale, transition economies, and Hayek\'s knowledge problem. Mixed formats &#8212; sort, para fill, diagnostic pair, data table &#8212; designed for the evaluation marks Edexcel rewards.',
+    lede: 'Ten exam-style questions covering the free market economy, the price mechanism as allocator, command economy advantages and failures, the mixed economy rationale, transition economies, and Hayek\'s knowledge problem. Mixed formats &#8212; sort, para fill, evaluation multi-select, data table &#8212; designed for the evaluation marks Edexcel rewards.',
     shortNames: {
       'economic_systems_1': 'Free market',
       'economic_systems_2': 'Free market pros/cons',

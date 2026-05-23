@@ -4,10 +4,10 @@
     id:       'govt_failure_main',
     topicId:  'govt_failure_main',
     title:    'Government Failure',
-    subtitle: 'Theme 1.20 \xb7 Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 4.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the definition of government failure, information problems, regulatory capture, unintended consequences, the cobra effect, HS2, and when to prefer market solutions over intervention. Mixed formats including diagnostic pairs, chains, and data analysis.',
+    lede: 'Ten exam-style questions covering the definition of government failure, information problems, regulatory capture, unintended consequences, the cobra effect, HS2, and when to prefer market solutions over intervention. Mixed formats including evaluation multi-selects, chains, and data analysis.',
     shortNames: {
       'govt_failure_1': 'What is govt failure',
       'govt_failure_2': 'Causes',

@@ -31,7 +31,7 @@
     subtitle: 'Theme 4.8 · Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the Lorenz curve, Gini coefficient, income vs wealth inequality, causes and consequences of rising inequality, redistribution policies, and the equity-efficiency trade-off. Includes diagram interpretation, para-fill, diagnostic pair, and calculation questions.',
+    lede: 'Ten exam-style questions covering the Lorenz curve, Gini coefficient, income vs wealth inequality, causes and consequences of rising inequality, redistribution policies, and the equity-efficiency trade-off. Includes diagram interpretation, para-fill, evaluation multi-select, and calculation questions.',
     shortNames: {
       'income_inequality_1': 'Lorenz curve and Gini',
       'income_inequality_2': 'Income vs wealth inequality',

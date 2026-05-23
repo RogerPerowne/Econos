@@ -13,7 +13,7 @@
     subtitle: 'Theme 4.7 · Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering absolute and relative poverty definitions, multi-dimensional poverty measurement, the causes of poverty, the poverty trap mechanism, anti-poverty policies, and the aid versus trade debate. Includes calculation, para-fill, and diagnostic pair questions in Edexcel style.',
+    lede: 'Ten exam-style questions covering absolute and relative poverty definitions, multi-dimensional poverty measurement, the causes of poverty, the poverty trap mechanism, anti-poverty policies, and the aid versus trade debate. Includes calculation, para-fill, and evaluation multi-select questions in Edexcel style.',
     shortNames: {
       'poverty_1': 'Absolute vs relative poverty',
       'poverty_2': 'Measuring poverty',

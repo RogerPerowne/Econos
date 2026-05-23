@@ -7,7 +7,7 @@
     subtitle: 'Theme 1 &middot; Topic 4.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering Pigouvian logic (when taxes and subsidies are justified), five real UK case studies (SDIL, fuel duty, tobacco, CAP, Contracts for Difference), the three-axis evaluation framework (effectiveness, efficiency, equity), and exam technique for 25-mark essays. Mixed formats: mcq, sort, diagnostic pair, data table, chain, paragraph fill, and multi-select.',
+    lede: 'Ten exam-style questions covering Pigouvian logic (when taxes and subsidies are justified), five real UK case studies (SDIL, fuel duty, tobacco, CAP, Contracts for Difference), the three-axis evaluation framework (effectiveness, efficiency, equity), and exam technique for 25-mark essays. Mixed formats: mcq, sort, evaluation multi-select, data table, chain, paragraph fill, and multi-select.',
     shortNames: {
       'taxes_subsidies_policy_1': 'When intervention is justified',
       'taxes_subsidies_policy_2': 'Five UK case studies',

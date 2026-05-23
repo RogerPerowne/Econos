@@ -7,7 +7,7 @@
     subtitle: 'Theme 1 &middot; Topic 2.8 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the definitions and diagrams for consumer and producer surplus, how to calculate both, the effects of taxes and subsidies on surplus, allocative efficiency, and real-world applications including rent controls and tariffs. Mixed formats: calculation, sort, diagnostic pair, chain, paragraph fill, and data analysis.',
+    lede: 'Ten exam-style questions covering the definitions and diagrams for consumer and producer surplus, how to calculate both, the effects of taxes and subsidies on surplus, allocative efficiency, and real-world applications including rent controls and tariffs. Mixed formats: calculation, sort, evaluation multi-select, chain, paragraph fill, and data analysis.',
     shortNames: {
       'consumer_producer_surplus_1': 'CS &amp; PS overview',
       'consumer_producer_surplus_2': 'Building the diagram',

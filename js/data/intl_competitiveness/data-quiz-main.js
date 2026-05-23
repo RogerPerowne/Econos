@@ -14,7 +14,7 @@
     subtitle: 'Theme 4.6 · Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering unit labour costs, price and non-price competitiveness, the UK productivity puzzle, the link between competitiveness and the current account, and supply-side policies. Includes calculation, diagnostic pair, and data table questions in Edexcel A-level style.',
+    lede: 'Ten exam-style questions covering unit labour costs, price and non-price competitiveness, the UK productivity puzzle, the link between competitiveness and the current account, and supply-side policies. Includes calculation, evaluation multi-select, and data table questions in Edexcel A-level style.',
     shortNames: {
       'intl_competitiveness_1': 'Defining competitiveness',
       'intl_competitiveness_2': 'Unit labour costs',

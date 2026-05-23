@@ -4,7 +4,7 @@
     id:       'basic_econ_problem_main',
     topicId:  'basic_econ_problem_main',
     title:    'The Basic Economic Problem',
-    subtitle: 'Theme 1.1 &#183; Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 1.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering scarcity, opportunity cost, the three fundamental economic questions, economic agents, positive vs normative statements, rational decision-making, and the micro&#8211;macro distinction. Mixed formats &#8212; sort, calculation, paragraph completion, chain &#8212; designed for the analysis marks Edexcel rewards.',

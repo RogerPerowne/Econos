@@ -4,7 +4,7 @@
     id:       'pes_main',
     topicId:  'pes_main',
     title:    'Price Elasticity of Supply',
-    subtitle: 'Theme 1.9 · Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 2.5 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the PES formula, determinants of supply elasticity, how PES governs the price-quantity split when demand shifts, tax incidence, and supply-side policy. Mixed formats — calculation, sorting, diagram, data table, paragraph completion — pitched at the analysis and evaluation marks.',

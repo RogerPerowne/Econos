@@ -1098,7 +1098,14 @@
         ${(!titleOutside && dp.title) ? `<div style="font-weight:800;font-size:17px;color:#0B1426;margin-bottom:10px;">${dp.title}</div>` : ''}
         ${dp.intro ? `<div style="font-size:13.5px;color:#475569;margin-bottom:12px;">${dp.intro}</div>` : ''}`;
       if (titleOutside) content += genSecLabel(dp.titleEmoji || '⚖️', dp.title);
-      if (stacked) {
+      const hasBody = (headerHtml.trim() || notesHtml.trim());
+      if (stacked && dp.bare) {
+        content += `
+          <div style="margin-bottom:26px;">
+            <div style="overflow-x:auto;${hasBody ? 'margin-bottom:18px;' : ''}">${I[dp.diagramKey]}</div>
+            ${hasBody ? `<div>${headerHtml}${notesHtml}</div>` : ''}
+          </div>`;
+      } else if (stacked) {
         content += `
           <div style="margin-bottom:26px;border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
             <div style="overflow-x:auto;margin-bottom:18px;">${I[dp.diagramKey]}</div>

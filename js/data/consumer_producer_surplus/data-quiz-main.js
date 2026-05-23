@@ -74,21 +74,6 @@
         exp: 'A per-unit tax shifts supply upward, creating a wedge between Pc (what buyers pay) and Pp (what sellers keep). <strong>CS falls</strong> because Pc &gt; Pe. <strong>PS falls</strong> because Pp &lt; Pe. <strong>Government revenue rises</strong> by (Pc &minus; Pp) &times; Qt &mdash; this is a transfer, not a welfare loss. <strong>DWL rises</strong> because output falls from Qe to Qt, destroying the surplus on those transactions. <strong>Quantity falls</strong>, Pc rises, and Pp falls. Note: tax revenue being a \'rise\' does not mean welfare is created &mdash; it is transferred from consumers and producers to government.'
       },
 
-      /* 4 — diagnostic_pair: welfare analysis of a tax */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Using a diagram, analyse the welfare effects of a per-unit indirect tax on a good with inelastic demand."</em> Which student provides the more analytically precise answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Imposing a per-unit indirect tax shifts the supply curve up by the tax amount. The tax creates a wedge between the consumer price Pc and the producer net price Pp, with the gap equalling the tax per unit. <br><br>Three distributional effects follow. First, consumer surplus falls by the rectangle (Pc &minus; Pe) &times; Qt plus the small CS triangle lost from reduced quantity. Second, producer surplus falls by the rectangle (Pe &minus; Pp) &times; Qt plus the small PS triangle. Third, the government collects tax revenue equal to (Pc &minus; Pp) &times; Qt &mdash; this is a <em>transfer</em> of surplus, not a welfare loss. The deadweight welfare loss is the two small triangles (the "Harberger triangles") representing trades that no longer occur and whose surplus is captured by no-one.<br><br>With inelastic demand, Pc rises substantially but quantity falls only slightly &mdash; so the DWL triangle is small and the consumer burden rectangle is large. This is why governments prefer inelastic markets (tobacco, alcohol, fuel) for indirect taxation: large revenue at low efficiency cost. The evaluation: the tax is welfare-improving <em>only if</em> it corrects a market failure (negative externality) whose social cost exceeds the DWL it creates.'
-          },
-          { name: 'Tomás', badge: 'Candidate B',
-            answer: 'When the government imposes an indirect tax, the supply curve shifts to the left and the equilibrium price rises while quantity falls. Consumer surplus falls because consumers are paying a higher price. Producer surplus also falls because the price producers receive (after paying the tax) is lower than before. The government collects some of the surplus that used to belong to consumers and producers, which is the tax revenue. There is also some welfare that is lost because some trades that would have happened no longer do &mdash; this is the deadweight loss. With inelastic demand the quantity falls by less, so the deadweight loss is smaller and the tax revenue is higher. This makes inelastic markets better for raising revenue. The tax could improve welfare if the market has a negative externality like pollution.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the analytically stronger answer. She uses the correct technical terminology throughout (Pc, Pp, Qt, Harberger triangles), distinguishes precisely between <em>transfers</em> (tax revenue) and <em>welfare destruction</em> (DWL), and breaks the CS and PS changes into their component rectangles and triangles. Her evaluation condition &mdash; "welfare-improving only if it corrects a market failure whose cost exceeds the DWL" &mdash; is a Level 4 application of Pigouvian logic. Tomás covers the same concepts but with less precision: "supply curve shifts to the left" (technically it shifts up/left), and he does not distinguish the transfer and destruction components of the welfare loss. He accesses Level 3; Priya Level 4.'
-      },
-
       /* 5 — multi_select: effects of a subsidy */
       { type: 'multi_select',
         stem: 'Which of the following are correct statements about the welfare effects of a per-unit subsidy in an otherwise competitive market?',

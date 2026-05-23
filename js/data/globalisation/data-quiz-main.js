@@ -82,22 +82,7 @@
         exp: 'The odd one out is <strong>export-led growth</strong>. This is a <em>benefit</em> of globalisation for developing countries — the strategy used by South Korea, China, and Vietnam to achieve rapid industrialisation and poverty reduction. The other three are genuine costs: brain drain depletes human capital; the Prebisch-Singer hypothesis describes structural deterioration in developing country terms of trade over time; and footloose capital means MNC investment may depart when wages rise, leaving behind economic disruption without lasting productive capacity.'
       },
 
-      /* 5 — Diagnostic pair: distributional impact */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the impact of globalisation on income inequality."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'The distributional impact of globalisation must be analysed at two levels: <strong>between-country</strong> and <strong>within-country</strong>. Between countries, globalisation has narrowed inequality dramatically — the global Gini coefficient has fallen as China, India, and other emerging economies have converged toward developed-country income levels, lifting 800m+ from absolute poverty. However, <strong>within</strong> developed countries, inequality has <em>risen</em> — because globalisation redistributes income from low-skill workers in import-competing sectors (manufacturing) to capital owners and high-skill workers in export sectors. The Autor et al. "China Shock" study found long-lasting unemployment in US manufacturing regions with no recovery even decades later. Crucially, compensation mechanisms — theoretically possible since winners can compensate losers — have not functioned in practice, generating the political backlash (Brexit, Trump) that now threatens de-globalisation.'
-          },
-          { name: 'Ben', badge: 'Candidate B',
-            answer: 'Globalisation has both increased and decreased inequality depending on who you look at. Rich countries have seen inequality rise because factory jobs have been moved to China and other cheap countries. Poor countries have become less poor overall as globalisation has given them access to world markets and they can sell their goods abroad. Some workers in developing countries earn more now than before. However, not everyone benefits equally and some poor countries especially in Africa have not seen much improvement. Overall whether globalisation increases or decreases inequality depends on the country and the time period you are looking at.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She explicitly distinguishes the <em>between-country</em> dimension (where globalisation reduced inequality) from the <em>within-country</em> dimension (where it often raised it) — a conceptual framework examiners reward. She cites the Autor et al. empirical evidence with institutional specificity and connects the distributional failure to the political response. Ben identifies the same broad ideas but at a narrative level without the analytical framework, specific evidence, or causal linkages. Priya would access Level 4; Ben Level 2-3. The key phrase is: "compensation mechanisms have not functioned in practice" — this lifts description into evaluation.'
-      },
-
-      /* 6 — Calculation: terms of trade */
+      /* 5 (was 6) — Calculation: terms of trade */
       { type: 'calculation',
         context: 'In 2020, a developing country has an export price index of <strong>100</strong> and an import price index of <strong>100</strong>. By 2024, its export price index (mainly commodities) has risen to <strong>115</strong> while its import price index (mainly manufactured goods) has risen to <strong>138</strong>.',
         working: [
@@ -117,7 +102,7 @@
         exp: 'Terms of Trade = (Export price index ÷ Import price index) × 100 = (115 ÷ 138) × 100 ≈ <strong>83.3</strong>. The ToT has <strong>deteriorated</strong> — the country must now export more commodities to buy the same quantity of manufactured imports. This is consistent with the Prebisch-Singer hypothesis: commodity prices tend to rise less than manufactured goods prices over time, worsening the real terms of exchange for primary exporters. A ToT deterioration reduces real national income even if export volumes and nominal revenues rise.'
       },
 
-      /* 7 — Para fill: MNC costs and benefits */
+      /* 6 (was 7) — Para fill: MNC costs and benefits */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph by selecting the correct word or phrase for each numbered blank.',
         anchor: 'The net welfare impact of MNC investment on host countries is contested.',
@@ -134,7 +119,7 @@
         exp: '(1) <strong>Direct</strong> jobs — employment in the MNC facility itself plus supply-chain linkages. (2) <strong>Technology</strong> transfer — management practices, production techniques, know-how. (3) <strong>Profits</strong> — repatriation reduces GNI even as GDP rises; widens the GDP-GNI gap visible in Ireland and Luxembourg. (4) Transfer <strong>pricing</strong> — manipulating the prices charged in intra-firm transactions to shift taxable profits. (5) <strong>Tax</strong> revenue — Apple\'s 0.005% effective EU tax rate (2016 ruling) illustrates the scale. (6) <strong>Capacity</strong> — absorptive capacity: education, infrastructure, institutional quality. (7) <strong>Regulation</strong> — competition law, environmental rules, labour standards; weak regulation enables a race to the bottom.'
       },
 
-      /* 8 — Data table: de-globalisation indicators */
+      /* 7 (was 8) — Data table: de-globalisation indicators */
       { type: 'data_table',
         stem: 'The table shows selected indicators of globalisation and de-globalisation trends.',
         headers: ['Indicator', '2008', '2016', '2023'],

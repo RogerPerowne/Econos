@@ -70,22 +70,7 @@
         exp: '<strong>Shift of AD</strong>: any non-price change in C, I, G, or (X&#8722;M) &#8212; interest rate cuts, fiscal stimulus, exchange rate changes, confidence shocks. The entire curve moves to a new position. <strong>Movement along AD</strong>: caused by a change in the <em>price level</em> &#8212; moving the economy from one point on the existing AD curve to another. When SRAS shifts right and prices fall, the economy slides down the existing AD curve (movement). The distinction is the most commonly marked-down error in AD/AS essays &#8212; opening with \'this causes a shift of AD because...\' is the A* analytical move.'
       },
 
-      /* 4 &#8212; Diagnostic pair: investment and the cycle */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain why investment is described as the \'engine of the business cycle\' despite being only ~17% of UK aggregate demand."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Although investment (I) represents approximately 17% of UK AD, it is the most <strong>volatile</strong> component &#8212; driven by business expectations (\'animal spirits\'), interest rates, and the accelerator relationship. Consumer spending (~60% of AD) is relatively stable because households smooth consumption over time. Government spending (~20%) is set by policy and changes slowly. Investment, however, can fall 20-30% in a single recession (UK business investment fell ~25% in 2008-09 and ~15% during COVID). It responds to both demand changes (via the accelerator: &#8710;I = v&#215;&#8710;Y) and to confidence (which can collapse suddenly). The multiplier then amplifies each &#163;1 fall in I into multiple &#163; of GDP loss. The combination of high volatility and multiplier amplification means I drives most of the cycle\'s amplitude despite its moderate size. Post-Brexit uncertainty (2016-19) is a key example: UK business investment flatlined for three years, costing ~2-3% of cumulative GDP relative to peers.'
-          },
-          { name: 'Tom', badge: 'Candidate B',
-            answer: 'Investment is only 17% of GDP but it is more important than this share suggests because it is very volatile compared to other components. In recessions, businesses lose confidence and stop investing. This can cause big falls in AD even though investment is not the biggest component. For example, in the 2008 recession investment fell a lot. Also, the multiplier effect means that when investment falls, the total impact on the economy is bigger than the initial fall. Consumer spending is much more stable because people still need to spend money on essentials. Investment can go up and down a lot depending on how confident businesses feel about the future.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She quantifies the volatility (25% fall in 2008-09, 15% during COVID, 2-3% cumulative GDP cost from Brexit uncertainty), states the accelerator relationship with the formula (&#8710;I = v&#215;&#8710;Y), names \'animal spirits\' as the mechanism, and links to the multiplier explicitly. Tom makes the same core point but without quantification, without the accelerator formula, and without named examples beyond a generic \'2008 recession\'. The analytical pattern &#8212; mechanism → evidence → quantification &#8212; is what separates the two answers.'
-      },
-
-      /* 5 &#8212; Calculation: multiplier */
+      /* 4 &#8212; Calculation: multiplier */
       { type: 'calculation',
         context: 'The UK government announces a <strong>&#163;15 billion</strong> infrastructure investment programme. Assume the marginal propensity to consume (MPC) is <strong>0.75</strong>.',
         working: [
@@ -106,7 +91,7 @@
         exp: 'Simple multiplier: k = 1 &#247; (1 &#8722; 0.75) = <strong>4</strong>. Total GDP change = &#163;15bn &#215; 4 = <strong>&#163;60bn</strong>. However, the full-leakage formula &#8212; k = 1 &#247; (MPS + MRT + MPM) &#8212; gives a much more realistic UK figure. With MPS~0.10, MRT~0.35, MPM~0.30, k &#8776; 1/(0.75) &#8776; 1.3. The realistic impact is ~&#163;20bn &#8212; far smaller than the simple formula implies. The gap illustrates why open economies with high tax rates have smaller multipliers. A* answers always note both the simple and full-leakage versions, explaining why the latter is more appropriate for the UK.'
       },
 
-      /* 6 &#8212; Para fill: consumption function */
+      /* 5 &#8212; Para fill: consumption function */
       { type: 'para_fill',
         stem: 'Complete the paragraph describing the main determinants of consumer spending.',
         anchor: 'Consumption is the largest component of UK aggregate demand, accounting for approximately 60% of GDP.',
@@ -124,7 +109,7 @@
         exp: '(1) <strong>Disposable</strong>: income after income tax and National Insurance. (2) <strong>Interest</strong>: the Bank Rate transmission mechanism works largely through its effect on consumption via mortgage and credit costs. (3) <strong>Wealth</strong>: the wealth effect &#8212; one of the three reasons AD slopes downward. (4) <strong>Confidence</strong>: consumer confidence is a leading indicator &#8212; when it falls, households precautionarily save. (5) <strong>Savings</strong>: the savings ratio spiked to ~25% during COVID-19 lockdowns. (6) <strong>0.6&#8211;0.8</strong>: the typical range for UK MPC. (7) <strong>Size</strong>: the multiplier k = 1/(1&#8722;MPC), so higher MPC means larger multiplier.'
       },
 
-      /* 7 &#8212; Odd one out */
+      /* 6 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these cause a <strong>rightward shift of the AD curve</strong>. Which is the ODD ONE OUT?',
         items: [

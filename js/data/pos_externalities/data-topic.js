@@ -1,6 +1,6 @@
 window.ECONOS_TOPIC = {
   id: 'pos_externalities',
-  topicNum: '3.2.2',
+  topicNum: '3.2',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Positive Externalities',
   estTime: '9-11 minutes',

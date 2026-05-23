@@ -4,7 +4,7 @@
     id:       'pos_externalities_main',
     topicId:  'pos_externalities_main',
     title:    'Positive Externalities',
-    subtitle: 'Theme 1.13 · Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 3.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering the MSB/MPB diagram, underconsumption and DWL, education and vaccination as canonical examples, merit goods, subsidies versus public provision, and evaluation of government policy. Mixed formats designed to stretch analysis and evaluation skills.',

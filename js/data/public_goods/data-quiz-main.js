@@ -4,7 +4,7 @@
     id:       'public_goods_main',
     topicId:  'public_goods_main',
     title:    'Public Goods',
-    subtitle: 'Theme 1.14 · Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 3.3 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering non-rivalry, non-excludability, the free rider problem, quasi-public and club goods, government provision, and the preference revelation problem. Mixed question types testing classification, analysis, and the ability to evaluate real-world examples from defence, roads, and digital infrastructure.',

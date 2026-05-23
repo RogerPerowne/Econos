@@ -4,10 +4,10 @@
     id:       'ped_main',
     topicId:  'ped_main',
     title:    'Price Elasticity of Demand',
-    subtitle: 'Theme 1.8 &#183; Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 2.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the PED formula, elastic and inelastic cases, determinants, the PED&#8211;total revenue relationship, tax incidence, pricing strategy, and special cases. Mixed formats &#8212; calculation, sort, paragraph completion, diagnostic pair, data table, chain &#8212; designed for the analysis marks Edexcel rewards.',
+    lede: 'Ten exam-style questions covering the PED formula, elastic and inelastic cases, determinants, the PED&#8211;total revenue relationship, tax incidence, pricing strategy, and special cases. Mixed formats &#8212; calculation, sort, paragraph completion, evaluation multi-select, data table, chain &#8212; designed for the analysis marks Edexcel rewards.',
     shortNames: {
       'ped_1': 'PED formula',
       'ped_2': 'Determinants of PED',

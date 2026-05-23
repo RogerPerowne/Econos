@@ -7,7 +7,7 @@
     subtitle: 'Theme 1 &middot; Topic 2.9 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the mechanics of indirect taxes (specific vs ad valorem, the tax wedge, government revenue), tax incidence (legal vs economic, who really pays), the mirror-image mechanics of subsidies, and how elasticity determines the split between consumers and producers. Mixed formats: mcq, calculation, sort, diagnostic pair, chain, paragraph fill, and data analysis.',
+    lede: 'Ten exam-style questions covering the mechanics of indirect taxes (specific vs ad valorem, the tax wedge, government revenue), tax incidence (legal vs economic, who really pays), the mirror-image mechanics of subsidies, and how elasticity determines the split between consumers and producers. Mixed formats: mcq, calculation, sort, evaluation multi-select, chain, paragraph fill, and data analysis.',
     shortNames: {
       'indirect_taxes_subsidies_1': 'How indirect taxes work',
       'indirect_taxes_subsidies_2': 'Tax incidence',

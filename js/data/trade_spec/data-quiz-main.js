@@ -13,7 +13,7 @@
     subtitle: 'Theme 4.2 · Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering absolute and comparative advantage, opportunity cost calculations, gains from trade, terms of trade, and the limitations of the free-trade model. Mixed formats including calculation, chain reasoning, and diagnostic pair questions.',
+    lede: 'Ten exam-style questions covering absolute and comparative advantage, opportunity cost calculations, gains from trade, terms of trade, and the limitations of the free-trade model. Mixed formats including calculation, chain reasoning, and evaluation multi-select questions.',
     shortNames: {
       'trade_spec_1': 'Absolute vs comparative advantage',
       'trade_spec_2': 'Calculating comparative advantage',

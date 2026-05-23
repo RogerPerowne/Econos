@@ -14,7 +14,7 @@
     subtitle: 'Theme 4.3 · Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the spectrum of economic integration, Viner\'s trade creation and trade diversion, the WTO\'s principles and limitations, and the debate between regional and multilateral liberalisation. Includes chain reasoning, calculation, and diagnostic pair questions.',
+    lede: 'Ten exam-style questions covering the spectrum of economic integration, Viner\'s trade creation and trade diversion, the WTO\'s principles and limitations, and the debate between regional and multilateral liberalisation. Includes chain reasoning, calculation, and evaluation multi-select questions.',
     shortNames: {
       'trading_blocs_1': 'Spectrum of integration',
       'trading_blocs_2': 'Trade creation',

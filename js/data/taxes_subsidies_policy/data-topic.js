@@ -1,7 +1,7 @@
 window.ECONOS_TOPIC = {
   id: 'taxes_subsidies_policy',
   topicNum: '4.1',
-  theme: 'Theme 1 · Government Intervention',
+  theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Taxes & Subsidies as Policy Tools',
   estTime: '7-9 minutes',
   goal: 'Move from the mechanics of indirect taxes and subsidies to the policy question: when are they justified, how do real UK schemes perform, and how do you evaluate them in a 25-mark essay?',

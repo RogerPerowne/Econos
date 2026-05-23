@@ -4,10 +4,10 @@
     id:       'specialisation_money_main',
     topicId:  'specialisation_money_main',
     title:    'Specialisation &amp; Money',
-    subtitle: 'Theme 1.3 &#183; Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 1.5 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the division of labour, gains from specialisation, Smith\'s pin factory, the double coincidence of wants problem, the four functions of money, and the characteristics of good money. Mixed formats &#8212; classification, paragraph completion, diagnostic pair, data table &#8212; designed for the analysis marks Edexcel rewards.',
+    lede: 'Ten exam-style questions covering the division of labour, gains from specialisation, Smith\'s pin factory, the double coincidence of wants problem, the four functions of money, and the characteristics of good money. Mixed formats &#8212; classification, paragraph completion, evaluation multi-select, data table &#8212; designed for the analysis marks Edexcel rewards.',
     shortNames: {
       'specialisation_money_1': 'Division of labour',
       'specialisation_money_2': 'Benefits of specialisation',

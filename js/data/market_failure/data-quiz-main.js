@@ -7,7 +7,7 @@
     subtitle: 'Theme 1 &middot; Topic 3.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the definition of market failure and its link to allocative efficiency, the private-vs-social framework, the three routes to failure (externalities, public goods, information gaps), deadweight welfare loss, and real-world diagnosis. Mixed formats including diagnostic pair, sort, chain, paragraph fill, calculation, and data analysis.',
+    lede: 'Ten exam-style questions covering the definition of market failure and its link to allocative efficiency, the private-vs-social framework, the three routes to failure (externalities, public goods, information gaps), deadweight welfare loss, and real-world diagnosis. Mixed formats including evaluation multi-select, sort, chain, paragraph fill, calculation, and data analysis.',
     shortNames: {
       'market_failure_1': 'What market failure is',
       'market_failure_2': 'Private vs social',

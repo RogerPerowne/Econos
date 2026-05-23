@@ -4,7 +4,7 @@
     id:       'behavioural_econ_main',
     topicId:  'behavioural_econ_main',
     title:    'Behavioural Economics',
-    subtitle: 'Theme 1.21 \xb7 Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 2.10 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering bounded rationality, the four key biases (anchoring, loss aversion, availability, social norms), bounded self-control and commitment devices, UK nudges (pension auto-enrolment, organ donation, HMRC letters, NHS reminders), and evaluation across the policy spectrum.',

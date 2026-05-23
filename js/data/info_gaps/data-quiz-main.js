@@ -4,7 +4,7 @@
     id:       'info_gaps_main',
     topicId:  'info_gaps_main',
     title:    'Information Gaps',
-    subtitle: 'Theme 1.15 · Edexcel A-Level',
+    subtitle: 'Theme 1 &middot; Topic 3.4 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('topic.html'),
     backLabel: 'Back to topic',
     lede: 'Ten exam-style questions covering asymmetric information, Akerlof\'s market for lemons, adverse selection, moral hazard, signalling and screening, principal-agent problems, and government responses including the FCA and NHS. Mixed formats targeting the analysis and evaluation marks at A-Level.',

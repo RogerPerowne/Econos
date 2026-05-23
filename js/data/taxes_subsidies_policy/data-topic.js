@@ -3,18 +3,18 @@ window.ECONOS_TOPIC = {
   topicNum: '4.1',
   theme: 'Theme 1 · Government Intervention',
   title: 'Taxes & Subsidies as Policy Tools',
-  estTime: '5-7 minutes',
-  goal: 'Move from the mechanics of indirect taxes and subsidies to the policy question: when are they justified, how do real UK schemes actually perform, and how do you evaluate them in an exam?',
+  estTime: '7-9 minutes',
+  goal: 'Move from the mechanics of indirect taxes and subsidies to the policy question: when are they justified, how do real UK schemes perform, and how do you evaluate them in a 25-mark essay?',
   intro: {
     heroKey: 'heroIntervention',
-    summary: 'A tax or subsidy in an otherwise efficient market destroys welfare. The case for either rests on a market failure they correct — a negative externality (tax) or a positive externality / merit good (subsidy). Whether the policy actually works depends on elasticity, the size of the externality, and unintended consequences.',
-    doInThis: 'Work through 3 cards covering the justification logic (Pigouvian taxes, merit-good subsidies), five UK case studies (sugar levy, fuel duty, tobacco, CAP, CfD), and the three-axis evaluation framework you need for 25-mark essays. <strong>Mechanics and incidence are covered in topic 2.9 — Indirect Taxes & Subsidies.</strong>',
+    summary: 'A tax or subsidy in an otherwise efficient market destroys welfare. The case for either rests on a market failure they correct — a negative externality (tax) or a positive externality / merit good (subsidy). Whether the policy works depends on elasticity, the size of the externality, and unintended consequences.',
+    doInThis: 'Work through 3 cards covering the justification logic (Pigouvian taxes, merit-good subsidies), five UK case studies (sugar levy, fuel duty, tobacco, CAP, Contracts for Difference), and the three-axis evaluation framework you need for 25-mark essays. <strong>Mechanics and incidence are covered in topic 2.9 — Indirect Taxes & Subsidies.</strong>',
     outcomes: [
-      'Identify when an indirect tax or subsidy is justified by a market failure (negative externality, positive externality, merit good)',
-      'Evaluate real UK schemes — SDIL, fuel duty, tobacco duty, EU CAP, UK Contracts for Difference — against the theory',
-      'Structure a 25-mark essay around the three axes: effectiveness, efficiency, equity'
+      'Identify when a tax or subsidy is justified by a market failure',
+      'Evaluate five real UK schemes against the theory',
+      'Structure a 25-mark essay around effectiveness, efficiency, and equity'
     ],
-    tip: 'The decisive question for any tax or subsidy: <strong>does the welfare gain from correcting the market failure exceed the DWL the policy itself creates?</strong> If yes, the policy raises welfare. If no, it destroys welfare. Always identify the underlying market failure (or its absence) explicitly before judging the policy.',
+    tip: 'The decisive question for any tax or subsidy: does the welfare gain from correcting the market failure exceed the deadweight loss the policy itself creates? If yes → welfare rises. If no → welfare falls. Always identify the underlying market failure first.',
     stages: [
       { num: 1, name: 'Learn it', sub: '3 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -23,84 +23,136 @@ window.ECONOS_TOPIC = {
   },
   cards: [
 
+    /* ── Card 1: When are taxes and subsidies justified? ─────────────── */
     {
       id: 'taxes_subsidies_policy_1',
       stepLabel: 'Learn: Step 1 of 3',
       title: 'When are taxes and subsidies justified?',
-      tip: { icon: '🎯', tone: 'blue', text: 'A tax or subsidy in an otherwise efficient market destroys welfare. The case for either rests on a market failure they correct — typically a negative externality (tax) or a positive externality / merit good (subsidy).' },
-      comparison: {
-        title: 'Taxes and subsidies as corrective tools',
-        emoji: '🛠️',
-        left:  { tone: 'rose',  icon: '🏭', label: 'Pigouvian tax — shrink output',    caption: 'When private cost &lt; social cost, the market over-produces. A tax equal to the marginal external cost shifts S up to the social-cost curve, moving the market to the socially optimal Q*. Examples: carbon tax, sugar tax, congestion charge, alcohol duty.' },
-        right: { tone: 'green', icon: '📚', label: 'Merit good subsidy — grow output', caption: 'When private benefit &lt; social benefit (or information is imperfect), the market under-consumes. A subsidy equal to the marginal external benefit shifts the relevant curve to reach Q*. Examples: NHS, public education, vaccinations, renewable energy, childcare.' }
-      },
-      causes: [
-        { tone: 'rose',  icon: '☣️', head: 'Negative externality (tax case)',     body: 'Pollution, smoking, sugar consumption, traffic congestion. Private agents ignore costs imposed on others. Market output exceeds the social optimum. A Pigouvian tax internalises the external cost — sellers and buyers now face the full social cost in the price.' },
-        { tone: 'green', icon: '☀️', head: 'Positive externality (subsidy case)', body: 'Vaccinations protect others; education raises everyone\'s productivity; renewable energy reduces shared climate risk. Private agents ignore benefits enjoyed by others. Market output falls short of the social optimum. A subsidy internalises the external benefit.' },
-        { tone: 'blue',  icon: '⭐', head: 'Merit good rationale',                 body: 'Even without a clear externality, society judges some goods to be under-consumed because of imperfect information or short-term myopia (e.g. dental care, financial advice). Subsidies push consumption up toward what informed long-run choice would deliver.' }
+      tip: { icon: '⚖️', tone: 'blue', text: 'Taxes discourage socially harmful behaviour. Subsidies encourage socially beneficial behaviour. Both are tools for correcting a market failure — not instruments for raising revenue in an otherwise efficient market.' },
+      flow: [
+        { icon: '🏭', tone: 'rose',  title: 'Pigouvian tax',              sub: 'Tax equal to the marginal external cost (MEC). Shifts S up to the social-cost curve, moving the market to Q*. Examples: carbon tax, sugar levy, tobacco duty, congestion charge.' },
+        { icon: '🎓', tone: 'green', title: 'Merit-good subsidy',          sub: 'Subsidy equal to the marginal external benefit (MEB). Shifts S down (lowers price) to reach socially optimal Q*. Examples: NHS, vaccinations, education, renewables.' }
       ],
-      causesStyle: 'tinted-flat',
-      causesEmoji: '🧩',
+      flowTitle: 'Pigouvian tax → internalises external costs           Subsidy → increases socially desirable activity',
+      flowEmoji: '🛠️',
       causesLabel: 'Three justification logics',
-      keyTerms: [
-        { term: 'Pigouvian tax',     def: 'A tax equal to the marginal external cost of a negative externality — internalises the externality and restores the socially optimal output level.' },
-        { term: 'Merit good',        def: 'A good that society judges to be under-consumed relative to the social optimum, often due to imperfect information or positive externalities. Education, healthcare, vaccinations.' },
-        { term: 'Internalisation',   def: 'Forcing private decision-makers to face the full social cost (via tax) or benefit (via subsidy) of their choices, so the market reaches the social optimum.' },
-        { term: 'Welfare net gain',  def: 'A Pigouvian tax can <em>raise</em> total welfare because the welfare gain from eliminating the externality DWL exceeds the tax\'s own DWL.' }
+      causesEmoji: '🧩',
+      causesStyle: 'tinted-flat',
+      causes: [
+        {
+          icon: '🏭', tone: 'rose', head: 'Negative externality — tax case',
+          body: 'Pollution, smoking, sugar, traffic congestion. Private agents ignore costs imposed on others → market over-produces beyond the social optimum. A Pigouvian tax internalises the external cost so price reflects the full social cost.<br><strong style="font-size:11px;">Key terms:</strong> MPC, MEC, MSC, internalisation<br><span style="font-size:11px;color:#9F1239;">e.g. tobacco, sugar tax, carbon tax</span>'
+        },
+        {
+          icon: '☀️', tone: 'green', head: 'Positive externality — subsidy case',
+          body: 'Vaccinations protect others; education raises social productivity; renewable energy cuts shared climate risk. Private agents ignore benefits for others → market under-produces. A subsidy shifts the effective supply curve down to reach Q*.<br><strong style="font-size:11px;">Key terms:</strong> MPB, MEB, MSB<br><span style="font-size:11px;color:#065F46;">e.g. vaccines, education, renewable energy</span>'
+        },
+        {
+          icon: '⭐', tone: 'amber', head: 'Merit good and underconsumption',
+          body: 'Even without a clear externality, people under-consume goods due to imperfect information, present bias, or affordability constraints. Subsidies push consumption toward what an informed long-run choice would deliver.<br><strong style="font-size:11px;">Key terms:</strong> merit good, information failure, present bias<br><span style="font-size:11px;color:#92400E;">e.g. school meals, preventive healthcare</span>'
+        }
       ],
-      examEdge: 'The decisive question for any tax or subsidy: <strong>does the welfare gain from correcting the market failure exceed the DWL the policy itself creates?</strong> A revenue-raising tax in an otherwise-efficient market only destroys welfare. A well-targeted Pigouvian tax can raise welfare by eliminating a larger externality DWL. Identify the market failure (or its absence) explicitly before judging the policy. See the <strong>Negative Externalities</strong> and <strong>Positive Externalities</strong> topics for the full Pigouvian and merit-good frameworks.'
+      keyTerms: [
+        { term: 'Pigouvian tax',   def: 'A tax equal to the MEC — internalises the externality and restores Q*. Named after Arthur Pigou.' },
+        { term: 'Internalisation', def: 'Forcing private decisions to reflect the full social cost (via tax) or benefit (via subsidy) so the market reaches Q*.' },
+        { term: 'Welfare net gain', def: 'A well-targeted Pigouvian tax can <em>raise</em> welfare: the gain from eliminating the externality DWL exceeds the policy\'s own DWL.' }
+      ],
+      examEdge: 'The decisive question: does the welfare gain from correcting the externality exceed the DWL from the policy? A revenue-raising tax in an otherwise efficient market only destroys welfare. A well-targeted Pigouvian tax corrects a larger externality DWL. Identify the market failure (or its absence) explicitly — this is what distinguishes a Level 3 from a Level 4 answer.'
     },
 
+    /* ── Card 2: Five UK case studies ────────────────────────────────── */
     {
       id: 'taxes_subsidies_policy_2',
-      template: 'cause',
       stepLabel: 'Learn: Step 2 of 3',
       title: 'Five UK case studies — what actually happens',
-      tip: { icon: '🌍', tone: 'amber', text: 'In practice, the effectiveness of taxes and subsidies depends on the elasticity of behaviour, the size of the externality, and unintended consequences. Five UK examples show theory meeting reality.' },
-      causesStyle: 'tinted-flat',
+      tip: { icon: '🌍', tone: 'amber', text: 'Real policy outcomes depend on three questions: Does it change behaviour (effectiveness)? Is the welfare gain worth the cost (efficiency)? Who gains and who loses (equity)? These five cases show theory meeting reality.' },
+      causesLabel: 'Five UK policy case studies',
       causesEmoji: '📋',
-      causesLabel: 'Real-world tax and subsidy outcomes',
+      causesStyle: 'tinted-flat',
       causes: [
-        { tone: 'amber', icon: '🥤', head: 'Soft Drinks Industry Levy (sugar tax, 2018–)',   body: 'Ad valorem on drinks above 5g sugar/100ml; higher rate above 8g. Drove ~50% reformulation by manufacturers within 18 months — most cut sugar to avoid the tax altogether. Sales of taxed drinks fell 21%. Effective Pigouvian design: producers had an elastic response (reformulate), so welfare gains came largely without consumer regressivity.' },
-        { tone: 'rose',  icon: '⛽', head: 'Fuel duty (UK, ~£24bn/yr)',                        body: 'Large excise (~53p/litre, plus VAT). Demand is inelastic in the short run (PED ~0.2–0.4) — consumers bear most. Revenue is huge but regressive (lower-income households spend a higher share of income on fuel). Climate justification holds, but political pressure froze the duty rate for 13 years (2011–2024).' },
-        { tone: 'rose',  icon: '🚬', head: 'Tobacco duty (~£8/pack, world-leading rate)',     body: 'Among the highest in the world. Demand is inelastic for adults (PED ~0.4); consumers bear nearly all the burden. Combined with public health measures, smoking prevalence fell from 27% (2000) to 13% (2023) — strong Pigouvian effect. Side effect: illicit tobacco now ~12% of consumption, eroding revenue.' },
-        { tone: 'green', icon: '🌾', head: 'EU Common Agricultural Policy (~€55bn/yr)',        body: 'Large producer subsidies for cereals, dairy, livestock. Heavy capitalisation: roughly 30–50% of subsidies inflate farmland values, so the benefit accrues to landowners rather than working farmers. Distorted production led to historic "butter mountains". Reformed since 1992 toward direct income support and environmental conditions.' },
-        { tone: 'green', icon: '☀️', head: 'UK Contracts for Difference (renewable energy)',   body: 'Guaranteed prices via auction for offshore wind. Drove huge cost reductions — auction strike prices fell ~70% (2015–2022). Successful market-creation subsidy: initial DWL offset by long-run productivity gains. Demonstrates that subsidies can work when targeting infant industries with steep learning curves.' }
+        {
+          icon: '🥤', tone: 'rose', head: 'Sugar Levy (SDIL, 2018–)',
+          body: '<span style="font-size:10.5px;color:#9F1239;font-style:italic;">Tax on sugary drinks. Tiered by sugar content.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Strong: reformulation saw average sugar content fall sharply. Sales of taxed drinks fell ~21%.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Relatively efficient: low admin cost; revenue used for school sports.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Mixed: healthier outcomes benefit low-income groups, but taxes can feel regressive.</span>'
+        },
+        {
+          icon: '⛽', tone: 'blue', head: 'Fuel duty (ongoing, ~£24bn/yr)',
+          body: '<span style="font-size:10.5px;color:#1E3A8A;font-style:italic;">Large excise on petrol and diesel (~53p/litre + VAT).</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Can reduce car use and emissions somewhat. PED ≈ 0.2–0.4 short run.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Good revenue raiser; low collection cost. Frozen 2011–2024 due to political pressure.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Regressive: hits rural and lower-income drivers harder as share of income.</span>'
+        },
+        {
+          icon: '🚬', tone: 'amber', head: 'Tobacco duty (ongoing)',
+          body: '<span style="font-size:10.5px;color:#92400E;font-style:italic;">Among the world\'s highest rates, ~£8/pack.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Cuts smoking, especially among the young. Prevalence: 27% (2000) → 13% (2023).</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Raises revenue but high duty encourages smuggling (~12% of market is illicit).</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Regressive in incidence but progressive in health effects (benefits poorest most).</span>'
+        },
+        {
+          icon: '🌾', tone: 'green', head: 'EU Common Agricultural Policy (~€55bn/yr)',
+          body: '<span style="font-size:10.5px;color:#065F46;font-style:italic;">Subsidies to farmers across the EU (ongoing).</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Supports farmer incomes and food security. Historic "butter mountains" from over-production.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Expensive and distorts prices/output. 30–50% capitalised into farmland values.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Benefits unevenly distributed — large landowners capture most. Harms developing-country farmers.</span>'
+        },
+        {
+          icon: '🌬️', tone: 'purple', head: 'UK Contracts for Difference (renewables)',
+          body: '<span style="font-size:10.5px;color:#5B21B6;font-style:italic;">Guaranteed prices for offshore wind via auction (ongoing).</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#DC2626;">🎯 Effectiveness</span> <span style="font-size:11.5px;"> Highly effective: offshore wind strike prices fell ~70% (2015–2022). Drove rapid deployment.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#059669;">💰 Efficiency</span> <span style="font-size:11.5px;"> Fiscally costly initially; long-run cost reductions make this look efficient in hindsight.</span><br>'
+            + '<span style="font-size:11px;font-weight:800;color:#2563EB;">👥 Equity</span> <span style="font-size:11.5px;"> Equity depends on pass-through of energy costs to households. Regressive if bills rise.</span>'
+        }
       ],
-      keyTerms: [
-        { term: 'Sin tax',         def: 'Indirect tax on goods generating negative externalities or judged harmful (alcohol, tobacco, sugar). Effective when PED is low — high revenue and behaviour change in the long run.' },
-        { term: 'Regressive tax',  def: 'A tax taking a higher share of income from poorer households than richer ones. Most indirect taxes (VAT, fuel duty) are regressive unless essentials are exempted.' },
-        { term: 'Capitalisation',  def: 'When a subsidy raises the price of an underlying asset (e.g. CAP subsidies inflating farmland prices), so the subsidy ends up rewarding existing owners rather than the intended beneficiary.' },
-        { term: 'Reformulation',   def: 'Producer response to a tax by changing the product itself to avoid liability (e.g. drinks manufacturers cutting sugar content below the SDIL threshold). A major channel through which Pigouvian taxes deliver welfare gains.' }
+      causes2Label: 'What economists ask',
+      causes2Emoji: '❓',
+      causes2: [
+        { icon: '🎯', tone: 'rose',  head: 'Effectiveness = did behaviour change?', body: 'Sugar tax worked partly because producers had an elastic response (reformulate). Fuel duty changes behaviour less because PED is low and substitutes are limited.' },
+        { icon: '💰', tone: 'green', head: 'Efficiency = was the welfare gain worth the cost?', body: 'Compare the DWL eliminated from the externality with the new DWL created by the policy. Strong Pigouvian designs (sugar, tobacco) clear this bar. Revenue taxes in efficient markets do not.' },
+        { icon: '👥', tone: 'blue',  head: 'Equity = who gained and who lost?', body: 'Most indirect taxes are regressive (higher % of income from poorer households). Subsidies can be captured by unintended beneficiaries (landowners under CAP, developers under Help to Buy).' }
       ],
-      examEdge: 'Three evaluation moves worth memorising: <strong>(1) Did behaviour change?</strong> The sugar tax worked partly because producers had an elastic response (reformulation); fuel duty changes little because consumers do not. <strong>(2) Who bore the burden?</strong> Tobacco and fuel duty fall on consumers (inelastic demand) and are regressive; sugar tax fell mainly on producers via reformulation. <strong>(3) Was the welfare gain larger than the DWL?</strong> Strong Pigouvian designs (sugar, carbon, tobacco) clear this bar; pure revenue taxes do not. Naming the underlying elasticity and market failure before judging earns evaluation marks.'
+      examEdge: 'Three evaluation moves worth memorising: (1) Did behaviour change — name the elasticity assumption. (2) Who bore the burden — economic incidence ≠ legal incidence; cite PED to show who paid. (3) Was the welfare gain larger than the DWL — strong Pigouvian designs pass this test; pure revenue taxes do not. A strong answer hits all three axes with a context-aware conclusion.'
     },
 
+    /* ── Card 3: Exam technique ───────────────────────────────────────── */
     {
       id: 'taxes_subsidies_policy_3',
       stepLabel: 'Learn: Step 3 of 3',
       title: 'Exam technique: drawing, analysis, evaluation',
-      tip: { icon: '✍️', tone: 'blue', text: 'Indirect taxes and subsidies appear in 25-mark essays, 9-mark questions, and short numerical questions. Master the four diagrams below and the three-axis evaluation structure to handle any of them.' },
-      flow: [
-        { icon: '📈', title: 'Diagram 1 — tax shift',           sub: 'S to S+tax (parallel for specific, pivoted for ad valorem). Label P<sub>c</sub>, P<sub>p</sub>, Q<sub>t</sub>, the wedge, and the revenue rectangle. Most common diagram type — fluent execution earns the foundation marks.' },
-        { icon: '🎯', title: 'Diagram 2 — tax incidence',       sub: 'Same diagram but draw inelastic vs elastic D side-by-side. Show the burden split as two rectangles. Label which side bears more and link to PED magnitude.' },
-        { icon: '📉', title: 'Diagram 3 — subsidy shift',       sub: 'S to S–subsidy. Label new lower P<sub>c</sub>, new higher P<sub>p</sub>, higher Q<sub>s</sub>, the subsidy wedge, and the government cost rectangle (wedge × Q<sub>s</sub>).' },
-        { icon: '🌳', title: 'Diagram 4 — Pigouvian correction', sub: 'MPC, MSC, MPB curves. Show the external cost gap and the tax that shifts MPC up to MSC, moving the market from private equilibrium to social optimum Q*. Critical for externalities-linked questions.' }
-      ],
-      flowTitle: 'The four diagrams every student should draw fluently',
-      flowEmoji: '📐',
-      comparison: {
-        title: 'Common exam errors',
-        emoji: '⚠️',
-        left:  { tone: 'rose', icon: '❌', label: 'Drawing errors',  caption: 'Wrong shift direction (subsidy drawn as shift left); ad valorem drawn parallel (should pivot from origin); missing P<sub>c</sub>, P<sub>p</sub>, or Q<sub>t</sub> labels; revenue rectangle not shaded; wedge not clearly identified.' },
-        right: { tone: 'rose', icon: '❌', label: 'Analysis errors', caption: 'Confusing legal and economic incidence (assuming the seller pays just because they remit the cash); failing to identify the underlying market failure before judging; ignoring elasticity entirely; treating tax revenue as a welfare loss (it is a transfer, not a destruction).' }
+      tip: { icon: '✍️', tone: 'blue', text: 'This card turns your content knowledge into high-mark exam performance. Master the four diagrams below and the three-axis evaluation structure to handle any tax/subsidy question.' },
+      diagramPanel: {
+        diagramKey: 'taxSubsidyFourPanels',
+        layout: 'stacked',
+        bare: true
       },
-      keyTerms: [
-        { term: 'The three labels',  def: 'P<sub>c</sub> (consumer price), P<sub>p</sub> (producer net price), Q<sub>t</sub> (post-tax / post-subsidy quantity). Missing any of these is the most frequent single mark loss on tax/subsidy diagrams.' },
-        { term: 'Revenue rectangle', def: 'Wedge × Q<sub>t</sub>. For a tax this is government income; for a subsidy this is government cost. Always shade and label it explicitly.' },
-        { term: 'DWL triangle',      def: 'The small triangle to the right of Q<sub>t</sub>, bounded by D and S. Trades that would have happened at P<sub>e</sub> but no longer occur. The welfare cost of the policy in an otherwise-efficient market.' }
+      keyPointsLabel: 'A three-axis evaluation framework',
+      keyPointsEmoji: '⚖️',
+      keyPoints: [
+        { icon: '🎯', tone: 'rose',  title: 'Effectiveness',  headline: 'Did output or consumption move toward the social optimum?', body: 'Was the market failure reduced? By how much? Depends on PED/PES and producer response (reformulation, substitution). Name the elasticity assumption.' },
+        { icon: '💰', tone: 'green', title: 'Efficiency',     headline: 'Was the welfare gain worth the cost?',                    body: 'Consider DWL from the policy, admin costs, and deadweight burdens. Could a better tool achieve more for less? Compare to the externality DWL it eliminates.' },
+        { icon: '👥', tone: 'blue',  title: 'Equity',         headline: 'Who pays? Who benefits? Is it fair?',                    body: 'Identify incidence (PED tells you who pays). Is it regressive? Do benefits reach the intended group — or are they captured by landowners, developers, or producers?' }
       ],
-      examEdge: 'For any 25-mark tax/subsidy essay, structure your evaluation around three axes: <strong>(1) Effectiveness</strong> — did the policy actually change behaviour? Depends on PED and producer response (reformulation, substitution). <strong>(2) Efficiency</strong> — did it improve welfare? Compare the policy\'s DWL to the offsetting market failure. <strong>(3) Equity</strong> — who gained and who lost? Indirect taxes are typically regressive; subsidies can be captured by unintended beneficiaries (e.g. landowners under CAP). A strong answer hits all three axes and reaches a <em>context-aware</em> judgement. <strong>A* upgrade</strong>: name the elasticity assumption, the size of the externality (or its absence), and cite a real-world case (sugar tax, fuel duty, CAP, CfD) to ground the analysis.'
+      causesLabel: 'Common exam errors to avoid',
+      causesEmoji: '❌',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '❌', tone: 'rose', head: 'Wrong shift direction', body: 'A tax shifts S <strong>up/left</strong> — NOT down. A subsidy shifts S <strong>down/right</strong>. Many students reverse these. The curve label (S+tax or S−sub) must appear at the new curve.' },
+        { icon: '❌', tone: 'rose', head: 'Missing labels', body: 'Always label <strong>P<sub>c</sub></strong> (consumer price), <strong>P<sub>p</sub></strong> (producer net price), and <strong>Q<sub>t</sub></strong> (post-tax quantity). Missing any one of these is the most frequent single mark loss.' },
+        { icon: '❌', tone: 'rose', head: 'Confusing incidence and impact', body: 'The seller remits the cash to HMRC — that does not mean the seller bears the burden. Economic incidence depends on relative elasticities: inelastic side bears more.' },
+        { icon: '❌', tone: 'rose', head: 'Assuming all subsidies are good', body: 'A subsidy in an otherwise efficient market destroys welfare (DWL + fiscal cost). Always identify the underlying market failure before judging whether the subsidy is justified.' },
+        { icon: '❌', tone: 'rose', head: 'Evaluation with no judgement', body: 'A high-mark answer reaches a <em>context-aware</em> conclusion. "It depends on elasticity" is not a conclusion — state WHICH direction elasticity pushes the outcome AND for the specific good.' }
+      ],
+      flowBottomTitle: 'Exam edge — the 4-step method',
+      flowBottomEmoji: '🏆',
+      flowBottom: [
+        { icon: '📐', tone: 'blue',   title: 'Draw accurately',            sub: 'Correct axes, correct shift direction, shaded DWL triangle, revenue rectangle. Label Pc, Pp, Qt, Qe.' },
+        { icon: '🔧', tone: 'green',  title: 'Explain the mechanism',      sub: 'State what the policy does and why. Link the shift to the externality or merit good. Avoid "the government imposes a tax therefore price rises."' },
+        { icon: '👥', tone: 'amber',  title: 'Analyse who gains and loses', sub: 'Use incidence — cite PED/PES to show burden split. State redistribution effects. Who captures the subsidy?' },
+        { icon: '⚖️', tone: 'purple', title: 'Reach a judgement',          sub: 'Use effectiveness–efficiency–equity to conclude. Is the welfare gain larger than the DWL? Is a better tool available? Apply to the specific context.' }
+      ],
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
     }
 
   ]

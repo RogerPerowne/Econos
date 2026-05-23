@@ -33,7 +33,26 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 10',
       title: 'The big picture: why governments intervene',
       tip: { icon: '🎯', tone: 'blue', text: 'Governments intervene to improve economic welfare when markets fail. The spec gives you <strong>seven tools</strong> split into two families — price-changing tools and "other" tools. Different problems need different tools.' },
-      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'The policy spectrum — soft to hard', titleAbove: true, titleEmoji: '🧭', layout: 'stacked' },
+      diagramPanel: {
+        diagramKey: 'policySpectrumDiagram',
+        title: 'The policy spectrum — soft to hard',
+        titleAbove: true,
+        titleEmoji: '🧭',
+        layout: 'stacked',
+        bare: true,
+        steps: [
+          { tone: 'green',  icon: 'ℹ️', head: 'Information — when people just don\'t know',                    body: 'Calorie labels on menus, MPG ratings, school league tables, plain-pack cigarette warnings.' },
+          { tone: 'purple', icon: '👉', head: 'Nudge — when the bias is attention, inertia or default-stickiness', body: 'Auto-enrolment into pensions (participation 55% → 87%); opt-out organ donation; smaller default plate sizes.' },
+          { tone: 'amber',  icon: '💷', head: 'Tax / subsidy — when there is an externality to price',         body: 'Carbon pricing, sugar levy on drinks, fuel duty; R&D tax credits, £2 bus fare cap.' },
+          { tone: 'rose',   icon: '🚫', head: 'Regulation — when harm is severe, addictive or affects others',  body: 'Smoking indoor ban, CFC ban (Montreal Protocol), leaded petrol ban, Euro 6 vehicle emissions standards.' }
+        ]
+      },
+      illustratedGridLabel: 'When does a nudge cut it — and when doesn\'t it?',
+      illustratedGridEmoji: '⚖️',
+      illustratedGrid: [
+        { tone: 'green', title: '✅ When a nudge is enough', body: '<strong>Auto-enrolment</strong> took pension participation from 55% to 87%. The binding constraint was <em>inertia</em>, not money — so a default change fit perfectly without restricting choice or spending taxpayer money.' },
+        { tone: 'rose',  title: '❌ When a nudge isn\'t enough', body: 'Carbon emissions at scale, addictive products, severe poverty. The binding constraint is <em>affordability, addiction or price</em> — not inertia. Nudges underperform; pricing tools or regulation do the heavy lifting.' }
+      ],
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'The four market failures intervention tries to fix',
@@ -419,7 +438,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 9 of 10',
       title: 'Regulation',
       tip: { icon: '🛡️', tone: 'rose', text: '<strong>Regulation</strong> sets rules, standards or outright bans on behaviour. It is <em>command-and-control</em>: no reliance on price signals, just legal compliance. Best when harm is severe or irreversible and price-based tools are too slow or uncertain.' },
-      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'Where regulation sits on the policy spectrum', titleAbove: true, titleEmoji: '🛡️', layout: 'stacked' },
+      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'Where regulation sits on the policy spectrum', titleAbove: true, titleEmoji: '🛡️', layout: 'stacked', bare: true },
       causesStyle: 'tinted-flat',
       causesEmoji: '📜',
       causesLabel: 'Four regulatory tools — examples',
@@ -454,7 +473,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 10 of 10',
       title: 'Choosing the right tool + evaluation',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure — the question is whether the gain outweighs the new distortion.' },
-      diagramPanel: { diagramKey: 'govtFailureDiagram', title: 'Government failure in the welfare diagram', titleAbove: true, titleEmoji: '⚠️', layout: 'stacked' },
+      diagramPanel: { diagramKey: 'govtFailureDiagram', title: 'Government failure in the welfare diagram', titleAbove: true, titleEmoji: '⚠️', layout: 'stacked', bare: true },
       colA: 'Best-fit tool(s)',
       colB: 'Why it fits',
       rows: [

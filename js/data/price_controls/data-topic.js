@@ -2,7 +2,7 @@ window.ECONOS_TOPIC = {
   id: 'price_controls',
   topicNum: '4.1',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
-  title: '4.1 Government Intervention in Markets',
+  title: 'Government Intervention in Markets',
   estTime: '15-18 minutes',
   goal: 'Master the seven Edexcel intervention tools — indirect taxes, subsidies, maximum and minimum prices, tradable pollution permits, state provision, information provision and regulation — and learn to pick the right tool for the right market failure.',
   intro: {

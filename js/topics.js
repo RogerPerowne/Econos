@@ -173,7 +173,7 @@ window.ECONOS_TOPICS = [
   },
   {
     id: 'price_controls',
-    name: '4.1 Government Intervention in Markets',
+    name: 'Government Intervention in Markets',
     sub: 'Price ceilings, price floors, effects and evaluation',
     color: '#b91c1c',
     available: { learn: true, link: false, land: false }

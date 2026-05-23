@@ -898,6 +898,71 @@
       content += `<div style="height:8px;"></div>`;
     }
 
+    // Early causes — when c.causesPosition === 'top', render the causes block here,
+    // right after the tip, before comparison/verdict/diagramPanel. The main causes
+    // block lower in this function will skip itself in that case.
+    if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined' && c.causesPosition === 'top') {
+      const hasIcons = c.causes.some(item => item.icon);
+      const flat = c.causesStyle === 'tinted-flat';
+      if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
+      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      content += c.causes.map((item, i) => {
+        const t = TONES[i % TONES.length];
+        const pt = item.tone ? PATTERN_TONES[item.tone] : null;
+        if (c.causesStyle === 'plain-white' && hasIcons) {
+          const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
+        if (flat && hasIcons) {
+          const tone = pt || PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }
+        if (hasIcons) {
+          const headText = item.head.replace(/^\d+\.\s*/, '');
+          const exampleHtml = item.example ? `
+            <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
+              ${item.example.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${item.example.icon}</div>` : ''}
+              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${item.example.text}</div>
+            </div>` : '';
+          return `
+          <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
+            <div style="padding:20px 16px 14px;background:${t.bg};text-align:center;">
+              <div style="width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.10);display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;">${item.icon}</div>
+            </div>
+            <div style="padding:11px 14px;background:${t.headerBg};color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;">
+              <span style="min-width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.30);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</span>
+              <span style="line-height:1.3;">${headText}</span>
+            </div>
+            <div style="padding:13px 14px 14px;font-size:14px;color:#0B1426;line-height:1.65;flex:1;">${item.body}</div>
+            ${exampleHtml}
+          </div>`;
+        }
+        return `
+        <div style="border-radius:12px;background:#fff;border:1px solid ${t.border}22;border-left:4px solid ${t.border};padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px;">
+            <div style="width:22px;height:22px;border-radius:50%;background:${t.headerBg};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;">${i + 1}</div>
+            <div style="font-weight:800;font-size:14px;color:${t.label};line-height:1.3;">${item.head}</div>
+          </div>
+          <div style="font-size:13.5px;color:#475569;line-height:1.65;">${item.body}</div>
+        </div>`;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Intro/lede — styled as a thought-prompt callout
     if (c.intro) {
       content += `
@@ -907,8 +972,9 @@
     }
 
     // Comparison block — two visual cards either side of a "VS" badge.
-    // Pattern: { title?, left: {icon,label,value?,caption?,tone?}, right: {...}, vs?: 'VS' }
-    if (c.comparison) {
+    // Pattern: { title?, left: {icon,label,value?,caption?,tone?}, right: {...}, vs?: 'VS', position?: 'after-diagram' }
+    // When position === 'after-diagram', rendering is deferred until after the diagramPanel block below.
+    const renderComparison = () => {
       const cmp = c.comparison;
       const renderSide = (side) => {
         const t = PATTERN_TONES[side.tone || 'green'] || PATTERN_TONES.green;
@@ -933,6 +999,9 @@
           ${renderSide(cmp.right)}
         </div>
       `;
+    };
+    if (c.comparison && c.comparison.position !== 'after-diagram') {
+      renderComparison();
     }
 
     // Verdict comparison — N columns with ✓/✗ item lists, separated by VS or arrow badges.
@@ -1124,6 +1193,11 @@
             <div style="display:flex;flex-direction:column;padding:0 4px;">${headerHtml}${notesHtml}</div>
           </div>`;
       }
+    }
+
+    // Late comparison — rendered here when c.comparison.position === 'after-diagram'.
+    if (c.comparison && c.comparison.position === 'after-diagram') {
+      renderComparison();
     }
 
     // Horizontal step flow — numbered circles connected by dashed arrows.
@@ -1740,7 +1814,8 @@
     //   - Icon mode (any item has `icon`) activates richer card layout with photo-style header.
     //   - `causesStyle: 'tinted-flat'` swaps to flat tinted tiles (icon left, title right, body below).
     //   - Per-item `example: {icon, text}` adds a small inline sub-callout at the bottom of icon tiles.
-    if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined') {
+    //   - `causesPosition: 'top'` renders this block right after `tip` (handled below); skip here.
+    if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined' && c.causesPosition !== 'top') {
       const hasIcons = c.causes.some(item => item.icon);
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');

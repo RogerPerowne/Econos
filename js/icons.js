@@ -13675,4 +13675,55 @@ window.ECONOS_ICONS = {
   economistDanielKahneman: '<img src="assets/economists/kahneman.png"   alt="Daniel Kahneman"  style="max-width:100%;max-height:100%;object-fit:contain;">',
   economistElinorOstrom:   '<img src="assets/economists/ostrom.png"     alt="Elinor Ostrom"    style="max-width:100%;max-height:100%;object-fit:contain;">',
 
+  regulatoryCaptureSvg: `
+    <svg viewBox="0 0 640 196" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="rc-fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+        </marker>
+        <marker id="rc-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+        </marker>
+      </defs>
+
+      <!-- Forward arrows (public mandate + oversight) -->
+      <line x1="184" y1="116" x2="239" y2="116" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#rc-fwd)"/>
+      <line x1="402" y1="116" x2="459" y2="116" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#rc-fwd)"/>
+
+      <!-- Dashed reverse capture arc: Industry back to Regulator -->
+      <path d="M 542 82 Q 431 12 321 82" stroke="#DC2626" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#rc-back)"/>
+
+      <!-- Capture arc label -->
+      <rect x="300" y="14" width="262" height="34" fill="#FEF2F2" rx="6"/>
+      <text x="431" y="30" text-anchor="middle" font-size="10.5" font-weight="800" fill="#B91C1C">⚠️  Industry captures the regulator</text>
+      <text x="431" y="44" text-anchor="middle" font-size="9.5" fill="#DC2626">Revolving door · Information asymmetry · Lobbying</text>
+
+      <!-- Arrow legend labels -->
+      <text x="212" y="133" text-anchor="middle" font-size="9" fill="#64748B">Public mandate</text>
+      <text x="431" y="133" text-anchor="middle" font-size="9" fill="#64748B">Regulatory oversight</text>
+
+      <!-- Box: Public (green) -->
+      <rect x="22" y="80" width="160" height="72" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5" rx="10"/>
+      <text x="102" y="103" text-anchor="middle" font-size="10.5" font-weight="800" fill="#065F46">PUBLIC</text>
+      <text x="102" y="120" text-anchor="middle" font-size="9.5" fill="#065F46">Mandates regulator to</text>
+      <text x="102" y="136" text-anchor="middle" font-size="9.5" fill="#065F46">act in the public interest</text>
+
+      <!-- Box: Regulator (blue) -->
+      <rect x="242" y="80" width="158" height="72" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5" rx="10"/>
+      <text x="321" y="103" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1E3A8A">REGULATOR</text>
+      <text x="321" y="120" text-anchor="middle" font-size="9.5" fill="#1E3A8A">Sets rules, monitors</text>
+      <text x="321" y="136" text-anchor="middle" font-size="9.5" fill="#1E3A8A">compliance, enforces law</text>
+
+      <!-- Box: Industry (amber) -->
+      <rect x="460" y="80" width="158" height="72" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5" rx="10"/>
+      <text x="539" y="103" text-anchor="middle" font-size="10.5" font-weight="800" fill="#92400E">INDUSTRY</text>
+      <text x="539" y="120" text-anchor="middle" font-size="9.5" fill="#92400E">Lobbies, supplies info</text>
+      <text x="539" y="136" text-anchor="middle" font-size="9.5" fill="#92400E">offers jobs to regulators</text>
+
+      <!-- Bottom caption -->
+      <rect x="22" y="163" width="596" height="20" fill="#FEF2F2" rx="5"/>
+      <text x="320" y="177" text-anchor="middle" font-size="9" fill="#B91C1C">Result: regulator adopts industry\'s perspective → weak enforcement, barriers to entry, consumer harm</text>
+    </svg>
+  `,
+
 };

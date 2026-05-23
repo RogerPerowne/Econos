@@ -4491,6 +4491,40 @@
     const isLast = idx === T.cards.length - 1;
     const isFirst = idx === 0;
 
+    // On the last card, compute quiz and next-topic destinations.
+    let quizHref = null, quizLabel = 'Test yourself';
+    let nextTopicId = null, nextTopicName = null;
+    if (isLast) {
+      const lastCard = T.cards[T.cards.length - 1];
+      if (lastCard && lastCard.quizCta) {
+        quizHref = lastCard.quizCta.href;
+        quizLabel = lastCard.quizCta.label || 'Test yourself';
+      }
+      if (window.ECONOS_TOPICS) {
+        const tidx = window.ECONOS_TOPICS.findIndex(t => t.id === T.id);
+        if (tidx >= 0 && tidx < window.ECONOS_TOPICS.length - 1) {
+          const nt = window.ECONOS_TOPICS[tidx + 1];
+          if (nt && nt.available && nt.available.learn) {
+            nextTopicId = nt.id;
+            nextTopicName = nt.name;
+          }
+        }
+      }
+    }
+
+    const prevBtn = `<button class="btn btn--ghost" data-action="prev" ${isFirst ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>${I.arrowLeft} Previous</button>`;
+    const counter = `<span class="card-foot__counter">Card ${idx + 1} of ${T.cards.length}</span>`;
+
+    let cardFoot;
+    if (isLast) {
+      const quizBtn  = quizHref   ? `<a href="${quizHref}"                    class="btn btn--primary"    style="text-decoration:none;">${quizLabel} ${I.arrowRight}</a>` : '';
+      const nextBtn  = nextTopicId ? `<a href="learn.html?topic=${nextTopicId}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
+      const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
+      cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
+    } else {
+      cardFoot = `<div class="card-foot">${prevBtn}${counter}<button class="btn btn--primary" data-action="next" data-next-button>Next card ${I.arrowRight}</button></div>`;
+    }
+
     return `
       <div class="page">
         <div>
@@ -4504,16 +4538,7 @@
           <div class="card">
             ${body}
             ${renderKeyTakeaway(c.keyTakeaway)}
-
-            <div class="card-foot">
-              <button class="btn btn--ghost" data-action="prev" ${isFirst ? 'disabled style="opacity:0.4; cursor:not-allowed;"' : ''}>
-                ${I.arrowLeft} Previous
-              </button>
-              <span class="card-foot__counter">Card ${idx + 1} of ${T.cards.length}</span>
-              <button class="btn btn--primary" data-action="next" data-next-button>
-                ${isLast ? 'Next: Quick check' : 'Next card'} ${I.arrowRight}
-              </button>
-            </div>
+            ${cardFoot}
           </div>
         </div>
 

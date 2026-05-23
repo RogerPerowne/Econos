@@ -852,6 +852,182 @@
   <rect x="540" y="50" width="52" height="32" rx="5" fill="#1E3A8A" stroke="#3B82F6" stroke-width="1" opacity="0.8"/>
   <text x="566" y="63" font-size="7.5" font-weight="700" text-anchor="middle" fill="#93C5FD" font-family="Inter,sans-serif">Non-rival</text>
   <text x="566" y="75" font-size="7" text-anchor="middle" fill="#BFDBFE" font-family="Inter,sans-serif">Non-excludable</text>
+</svg>`,
+
+    /* ============================================================
+       Public goods scenes — used by Public Goods topic illustrated grid
+       ============================================================ */
+    defenceScene: `
+<svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <rect width="240" height="160" fill="#DCFCE7"/>
+  <rect x="0" y="120" width="240" height="40" fill="#86EFAC"/>
+  <!-- Flag pole and flag -->
+  <rect x="170" y="40" width="2" height="80" fill="#059669"/>
+  <path d="M172,40 L210,46 L195,55 L210,64 L172,60 Z" fill="#059669"/>
+  <!-- Soldier silhouette -->
+  <circle cx="80" cy="62" r="14" fill="#059669"/>
+  <rect x="72" y="50" width="16" height="6" rx="2" fill="#065F46"/>
+  <path d="M62,76 L98,76 L94,120 L66,120 Z" fill="#059669"/>
+  <rect x="58" y="86" width="10" height="22" rx="3" fill="#065F46"/>
+  <rect x="92" y="86" width="10" height="22" rx="3" fill="#065F46"/>
+  <rect x="68" y="118" width="14" height="6" rx="2" fill="#065F46"/>
+  <rect x="78" y="118" width="14" height="6" rx="2" fill="#065F46"/>
+  <!-- Small figures behind -->
+  <circle cx="120" cy="78" r="8" fill="#059669" opacity="0.7"/>
+  <path d="M114,86 L126,86 L124,118 L116,118 Z" fill="#059669" opacity="0.7"/>
+  <circle cx="138" cy="78" r="8" fill="#059669" opacity="0.6"/>
+  <path d="M132,86 L144,86 L142,118 L134,118 Z" fill="#059669" opacity="0.6"/>
+</svg>`,
+
+    floodDefenceScene: `
+<svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <rect width="240" height="160" fill="#DBEAFE"/>
+  <!-- Sky -->
+  <circle cx="200" cy="32" r="14" fill="#FEF3C7" opacity="0.7"/>
+  <!-- Clouds -->
+  <ellipse cx="50" cy="36" rx="22" ry="8" fill="#fff" opacity="0.8"/>
+  <ellipse cx="160" cy="42" rx="18" ry="6" fill="#fff" opacity="0.7"/>
+  <!-- Houses on left, protected side -->
+  <rect x="20" y="80" width="30" height="36" fill="#A78BFA"/>
+  <polygon points="18,80 35,66 52,80" fill="#7C3AED"/>
+  <rect x="32" y="96" width="8" height="14" fill="#5B21B6"/>
+  <rect x="60" y="86" width="28" height="30" fill="#C4B5FD"/>
+  <polygon points="58,86 74,72 90,86" fill="#7C3AED"/>
+  <rect x="68" y="100" width="8" height="14" fill="#5B21B6"/>
+  <!-- Sea wall in middle -->
+  <rect x="108" y="62" width="22" height="58" fill="#475569"/>
+  <rect x="108" y="58" width="22" height="6" fill="#334155"/>
+  <!-- Water on right, dangerous side -->
+  <path d="M130,90 Q160,82 190,90 Q220,82 240,90 L240,160 L130,160 Z" fill="#3B82F6"/>
+  <path d="M130,100 Q160,94 190,100 Q220,94 240,100" fill="none" stroke="#60A5FA" stroke-width="2"/>
+  <path d="M130,114 Q160,108 190,114 Q220,108 240,114" fill="none" stroke="#60A5FA" stroke-width="2"/>
+  <!-- Ground left -->
+  <rect x="0" y="116" width="130" height="44" fill="#86EFAC"/>
+</svg>`,
+
+    streetLightScene: `
+<svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <defs>
+    <radialGradient id="sl_glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0" stop-color="#FEF9C3" stop-opacity="0.95"/>
+      <stop offset="0.6" stop-color="#FDE047" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FDE047" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="240" height="160" fill="#1E293B"/>
+  <rect x="0" y="120" width="240" height="40" fill="#0F172A"/>
+  <!-- Buildings background -->
+  <rect x="170" y="60" width="38" height="60" fill="#334155"/>
+  <rect x="174" y="68" width="6" height="6" fill="#FBBF24" opacity="0.7"/>
+  <rect x="186" y="78" width="6" height="6" fill="#FBBF24" opacity="0.6"/>
+  <rect x="198" y="68" width="6" height="6" fill="#FBBF24" opacity="0.7"/>
+  <!-- Lamp post -->
+  <rect x="95" y="36" width="4" height="84" fill="#475569"/>
+  <rect x="78" y="30" width="38" height="8" rx="2" fill="#64748B"/>
+  <rect x="84" y="32" width="26" height="4" fill="#FBBF24"/>
+  <!-- Light glow -->
+  <ellipse cx="97" cy="62" rx="78" ry="60" fill="url(#sl_glow)"/>
+  <!-- Pavement -->
+  <line x1="0" y1="130" x2="240" y2="130" stroke="#1F2937" stroke-width="1" stroke-dasharray="6,4"/>
+</svg>`,
+
+    policeScene: `
+<svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
+  <rect width="240" height="160" fill="#DBEAFE"/>
+  <!-- City skyline -->
+  <rect x="0" y="50" width="40" height="70" fill="#64748B"/>
+  <rect x="40" y="40" width="36" height="80" fill="#475569"/>
+  <rect x="76" y="60" width="44" height="60" fill="#64748B"/>
+  <rect x="120" y="44" width="40" height="76" fill="#475569"/>
+  <rect x="160" y="56" width="36" height="64" fill="#64748B"/>
+  <rect x="196" y="48" width="44" height="72" fill="#475569"/>
+  <!-- Building windows -->
+  <g fill="#FBBF24" opacity="0.5">
+    <rect x="10" y="62" width="5" height="5"/><rect x="22" y="62" width="5" height="5"/>
+    <rect x="48" y="54" width="5" height="5"/><rect x="60" y="68" width="5" height="5"/>
+    <rect x="84" y="74" width="5" height="5"/><rect x="100" y="86" width="5" height="5"/>
+    <rect x="128" y="58" width="5" height="5"/><rect x="148" y="74" width="5" height="5"/>
+    <rect x="170" y="72" width="5" height="5"/><rect x="184" y="88" width="5" height="5"/>
+    <rect x="206" y="62" width="5" height="5"/><rect x="224" y="78" width="5" height="5"/>
+  </g>
+  <!-- Road -->
+  <rect x="0" y="120" width="240" height="40" fill="#1F2937"/>
+  <!-- Road dashes -->
+  <g fill="#FBBF24">
+    <rect x="14" y="138" width="20" height="3"/>
+    <rect x="58" y="138" width="20" height="3"/>
+    <rect x="102" y="138" width="20" height="3"/>
+    <rect x="146" y="138" width="20" height="3"/>
+    <rect x="190" y="138" width="20" height="3"/>
+  </g>
+  <!-- Police car -->
+  <rect x="76" y="94" width="100" height="22" rx="4" fill="#fff"/>
+  <path d="M88,94 L98,80 L154,80 L164,94 Z" fill="#fff" stroke="#1E293B" stroke-width="1"/>
+  <rect x="76" y="106" width="100" height="10" fill="#1E3A8A"/>
+  <rect x="76" y="116" width="100" height="6" fill="#1E293B"/>
+  <!-- Lights -->
+  <rect x="108" y="74" width="14" height="6" rx="1" fill="#DC2626"/>
+  <rect x="122" y="74" width="14" height="6" rx="1" fill="#1E3A8A"/>
+  <!-- Windows -->
+  <rect x="100" y="84" width="42" height="10" fill="#93C5FD" opacity="0.8"/>
+  <!-- Wheels -->
+  <circle cx="96" cy="120" r="7" fill="#1F2937"/>
+  <circle cx="156" cy="120" r="7" fill="#1F2937"/>
+  <circle cx="96" cy="120" r="3" fill="#64748B"/>
+  <circle cx="156" cy="120" r="3" fill="#64748B"/>
+  <!-- POLICE text -->
+  <text x="126" y="103" font-size="7" font-weight="900" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif">POLICE</text>
+</svg>`,
+
+    privateDemandMini: `
+<svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;" font-family="Inter,sans-serif">
+  <rect width="260" height="180" fill="#F3E8FF" rx="8"/>
+  <!-- Axes -->
+  <line x1="40" y1="150" x2="240" y2="150" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="236,146 236,154 244,150" fill="#1F2937"/>
+  <line x1="40" y1="150" x2="40" y2="30" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="36,34 44,34 40,26" fill="#1F2937"/>
+  <!-- Axis labels -->
+  <text x="22" y="38" font-size="9" font-weight="700" fill="#1F2937">Price</text>
+  <text x="22" y="48" font-size="8" fill="#475569">($)</text>
+  <text x="240" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">Quantity</text>
+  <!-- Horizontal dashed line at price P -->
+  <line x1="40" y1="78" x2="200" y2="78" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="30" y="82" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">P</text>
+  <!-- Demand line - downward slope -->
+  <line x1="60" y1="42" x2="220" y2="148" stroke="#7C3AED" stroke-width="2.5"/>
+  <!-- Q1, Q2 markers -->
+  <line x1="120" y1="78" x2="120" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="170" y1="78" x2="170" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="120" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₁</text>
+  <text x="170" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Q₂</text>
+</svg>`,
+
+    publicDemandMini: `
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;" font-family="Inter,sans-serif">
+  <rect width="320" height="180" fill="#DCFCE7" rx="8"/>
+  <!-- Axes -->
+  <line x1="40" y1="150" x2="280" y2="150" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="276,146 276,154 284,150" fill="#1F2937"/>
+  <line x1="40" y1="150" x2="40" y2="30" stroke="#1F2937" stroke-width="1.5"/>
+  <polygon points="36,34 44,34 40,26" fill="#1F2937"/>
+  <!-- Axis labels -->
+  <text x="22" y="38" font-size="9" font-weight="700" fill="#1F2937">Willingness</text>
+  <text x="22" y="48" font-size="9" font-weight="700" fill="#1F2937">to pay ($)</text>
+  <text x="160" y="174" font-size="9" font-weight="700" fill="#1F2937" text-anchor="middle">Quantity (same unit for all)</text>
+  <text x="278" y="166" font-size="9" font-weight="700" fill="#1F2937" text-anchor="end">Q</text>
+  <!-- Individual 2 (bottom blue) -->
+  <line x1="50" y1="100" x2="230" y2="142" stroke="#2563EB" stroke-width="2"/>
+  <text x="240" y="142" font-size="9" font-weight="700" fill="#2563EB">Individual 2</text>
+  <text x="240" y="152" font-size="8" fill="#475569">marginal benefit</text>
+  <!-- Individual 1 (middle purple) -->
+  <line x1="50" y1="80" x2="230" y2="125" stroke="#7C3AED" stroke-width="2"/>
+  <text x="240" y="120" font-size="9" font-weight="700" fill="#7C3AED">Individual 1</text>
+  <text x="240" y="130" font-size="8" fill="#475569">marginal benefit</text>
+  <!-- Social marginal benefit (top green - sum) -->
+  <line x1="50" y1="42" x2="230" y2="90" stroke="#059669" stroke-width="2.5"/>
+  <text x="240" y="62" font-size="9" font-weight="700" fill="#059669">Social marginal benefit</text>
+  <text x="240" y="72" font-size="8" fill="#475569">(sum of all individuals)</text>
 </svg>`
   };
 
@@ -2064,38 +2240,48 @@
     if (c.rows && c.rows.length) {
       const REVEAL_RE = /interpretation|verdict|diagnosis|conclusion|takeaway|what it means|what it tells|policy implication|^\s*answer|^\s*outcome|^\s*result/i;
       const anyReveal = c.rows.some(r => REVEAL_RE.test(r.label));
-      content += genSecLabel('📊', anyReveal ? 'Compare — think before you reveal' : 'Compare');
+      const rowsTitle = c.rowsLabel !== undefined ? c.rowsLabel : (anyReveal ? 'Compare — think before you reveal' : 'Compare');
+      if (rowsTitle !== null && rowsTitle !== '') content += genSecLabel(c.rowsEmoji || '📊', rowsTitle);
       const colA = c.colA || '';
       const colB = c.colB || '';
+      const colC = c.colC || '';
+      const useThree = !!c.colC;
+      const gridCols = useThree ? '140px 1fr 1fr 1fr' : '140px 1fr 1fr';
       content += `<div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7EA;margin-bottom:20px;">`;
-      if (colA || colB) {
-        content += `<div style="display:grid;grid-template-columns:140px 1fr 1fr;background:#0B1426;">
-          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);"></div>
+      if (colA || colB || colC) {
+        content += `<div style="display:grid;grid-template-columns:${gridCols};background:#0B1426;">
+          <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);">${c.rowsHeader || ''}</div>
           <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colA}</div>
           <div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colB}</div>
+          ${useThree ? `<div style="padding:11px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;border-left:1px solid rgba(255,255,255,0.1);">${colC}</div>` : ''}
         </div>`;
       }
       content += c.rows.map((r, i) => {
         const reveal = REVEAL_RE.test(r.label);
         if (reveal) {
           return `
-          <div style="display:grid;grid-template-columns:140px 1fr 1fr;background:#FEFCE8;border-top:1px solid #E7E7EA;">
+          <div style="display:grid;grid-template-columns:${gridCols};background:#FEFCE8;border-top:1px solid #E7E7EA;">
             <div style="padding:12px 14px;font-weight:800;font-size:13px;color:#92400E;border-right:1px solid #E7E7EA;">⭐ ${r.label}</div>
             <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">
               <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
               <div class="reveal-cell__body is-hidden">${r.colA}</div>
             </div>
-            <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">
+            <div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;${useThree ? 'border-right:1px solid #E7E7EA;' : ''}">
               <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
               <div class="reveal-cell__body is-hidden">${r.colB}</div>
             </div>
+            ${useThree ? `<div class="reveal-cell" style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">
+              <button data-action="reveal-cell" style="background:#fff;border:1.5px dashed #D97706;color:#92400E;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;">Reveal answer ↓</button>
+              <div class="reveal-cell__body is-hidden">${r.colC || ''}</div>
+            </div>` : ''}
           </div>`;
         }
         return `
-        <div style="display:grid;grid-template-columns:140px 1fr 1fr;background:${i % 2 === 0 ? '#f8fafc' : '#fff'};border-top:1px solid #E7E7EA;">
+        <div style="display:grid;grid-template-columns:${gridCols};background:${i % 2 === 0 ? '#f8fafc' : '#fff'};border-top:1px solid #E7E7EA;">
           <div style="padding:12px 14px;font-weight:700;font-size:13px;color:#0B1426;border-right:1px solid #E7E7EA;">${r.label}</div>
           <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;border-right:1px solid #E7E7EA;">${r.colA}</div>
-          <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${r.colB}</div>
+          <div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;${useThree ? 'border-right:1px solid #E7E7EA;' : ''}">${r.colB}</div>
+          ${useThree ? `<div style="padding:12px 14px;font-size:13px;color:#0B1426;line-height:1.55;">${r.colC || ''}</div>` : ''}
         </div>`;
       }).join('');
       content += `</div>`;
@@ -2193,6 +2379,29 @@
           </div>`;
         }).join('')}
       </div>`;
+    }
+
+    // Lock-in strip — green-tinted footer with a row of checkmark items.
+    //   Pattern: lockIn: { title?, items: [string] }  OR  lockIn: [string]
+    if (c.lockIn) {
+      const liData = Array.isArray(c.lockIn) ? { items: c.lockIn } : c.lockIn;
+      if (liData.items && liData.items.length) {
+        const liTitle = liData.title || 'What you need to lock in';
+        const liIcon  = liData.icon  || '🎯';
+        const liItemsHtml = liData.items.map(it => `
+          <div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:140px;">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">✓</span>
+            <span style="font-size:13px;color:#0B1426;font-weight:600;line-height:1.4;">${it}</span>
+          </div>`).join('');
+        content += `
+          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:14px 18px 12px;margin-bottom:22px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+              <span style="font-size:15px;line-height:1;">${liIcon}</span>
+              <span style="font-size:12px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
+          </div>`;
+      }
     }
 
     // Exam edge — always visible

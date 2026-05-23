@@ -43,15 +43,13 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',   icon: '🔍', head: 'Information gaps',            body: 'Asymmetric or imperfect information leads consumers and producers to make poor decisions — e.g. demerit goods like cigarettes or unsafe products.' },
         { tone: 'purple', icon: '⚖️', head: 'Market power / inequity',     body: 'Monopolies set prices above marginal cost; very unequal income distributions create welfare and political concerns the market alone cannot correct.' }
       ],
-      framework: {
-        label: 'The seven spec tools — two families',
-        diagramKey: null,
-        tiles: [
-          { tone: 'green',  icon: '💸', title: 'Price-changing tools',
-            body: 'Work through the price mechanism — change relative prices to shift behaviour.<br><br><strong>1. Indirect taxes</strong> (specific & ad valorem)<br><strong>2. Subsidies</strong><br><strong>3. Maximum prices</strong> (ceilings)<br><strong>4. Minimum prices</strong> (floors)' },
-          { tone: 'purple', icon: '🛠️', title: 'Other tools',
-            body: 'Work directly on quantities, access or behaviour — they don\'t rely on prices.<br><br><strong>5. Tradable pollution permits</strong><br><strong>6. State provision of public goods</strong><br><strong>7. Provision of information</strong><br><strong>8. Regulation</strong>' }
-        ]
+      comparison: {
+        title: 'The seven spec tools — two families',
+        emoji: '⭐',
+        left:  { tone: 'green',  icon: '💸', label: 'Price-changing tools',
+          caption: 'Work through the price mechanism — change relative prices to shift behaviour.<br><br><strong>1. Indirect taxes</strong> (specific & ad valorem)<br><strong>2. Subsidies</strong><br><strong>3. Maximum prices</strong> (ceilings)<br><strong>4. Minimum prices</strong> (floors)' },
+        right: { tone: 'purple', icon: '🛠️', label: 'Other tools',
+          caption: 'Work directly on quantities, access or behaviour — they don\'t rely on prices.<br><br><strong>5. Tradable pollution permits</strong><br><strong>6. State provision of public goods</strong><br><strong>7. Provision of information</strong><br><strong>8. Regulation</strong>' }
       },
       tipLate: { icon: '⚖️', tone: 'amber', text: '<strong>The aim is allocative efficiency and equity</strong> — but every tool brings risks of government failure (distorted signals, unintended consequences, admin costs, info gaps). The next nine cards build each tool and then bring them together in a decision matrix.' },
       examEdge: 'Top answers <em>name the market failure first, then choose the tool</em>. "Tradable permits work better than a Pigouvian tax for CO₂ because the regulator can set the total emissions cap with certainty even when abatement costs are uncertain." Linking the tool to the specific failure it addresses is what separates A from B grades.'
@@ -422,7 +420,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 9 of 10',
       title: 'Regulation',
       tip: { icon: '🛡️', tone: 'rose', text: '<strong>Regulation</strong> sets rules, standards or outright bans on behaviour. It is <em>command-and-control</em>: no reliance on price signals, just legal compliance. Best when harm is severe or irreversible and price-based tools are too slow or uncertain.' },
-      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: 'Where regulation sits on the policy spectrum', layout: 'stacked' },
+      diagramPanel: { diagramKey: 'policySpectrumDiagram', title: null, layout: 'stacked' },
       causesStyle: 'tinted-flat',
       causesEmoji: '📜',
       causesLabel: 'Four regulatory tools — examples',
@@ -457,7 +455,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 10 of 10',
       title: 'Choosing the right tool + evaluation',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure — the question is whether the gain outweighs the new distortion.' },
-      diagramPanel: { diagramKey: 'govtFailureDiagram', title: 'Government failure in the welfare diagram', layout: 'stacked' },
+      diagramPanel: { diagramKey: 'govtFailureDiagram', title: null, layout: 'stacked' },
       colA: 'Best-fit tool(s)',
       colB: 'Why it fits',
       rows: [

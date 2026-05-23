@@ -11849,11 +11849,8 @@ window.ECONOS_ICONS = {
   `,
 
   policySpectrumDiagram: `
-    <svg viewBox="0 0 440 460" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+    <svg viewBox="0 54 440 406" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="460" fill="#F8FAFC" rx="10"/>
-
-      <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The policy spectrum — nudge or something stronger?</text>
-      <text x="220" y="46" font-size="10.5" text-anchor="middle" fill="#64748B">Different problems need different tools. Nudges sit between information and force.</text>
 
       <line x1="40" y1="120" x2="400" y2="120" stroke="#CBD5E1" stroke-width="2"/>
       <polygon points="400,114 400,126 410,120" fill="#CBD5E1"/>
@@ -11910,7 +11907,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <rect x="20" y="234" width="400" height="92" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
-      <text x="220" y="256" font-size="12" font-weight="800" text-anchor="middle" fill="#0B1426">Choosing the right tool</text>
+      <text x="220" y="256" font-size="10.5" font-weight="700" text-anchor="middle" fill="#475569">Choosing the right tool</text>
       <g font-size="10" fill="#475569">
         <text x="40" y="278"><tspan font-weight="700" fill="#059669">Information</tspan>: when people just don't know</text>
         <text x="40" y="294"><tspan font-weight="700" fill="#7c3aed">Nudge</tspan>: when the bias is attention, inertia, or default-stickiness</text>

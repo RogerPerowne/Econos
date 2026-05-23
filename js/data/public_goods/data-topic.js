@@ -18,8 +18,8 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Non-rival = one person\'s use does not reduce availability to others. Non-excludable = impossible to prevent non-payers from benefiting. BOTH must apply for a pure public good. Either alone is not sufficient.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'done' },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },

@@ -39,16 +39,15 @@ window.ECONOS_TOPIC = {
         titleAbove: true,
         titleEmoji: '🧭',
         layout: 'stacked',
-        bare: true
+        bare: true,
+        stepsStyle: 'boxed',
+        steps: [
+          { tone: 'green',  icon: 'ℹ️', head: 'Information — when people just don\'t know',                     body: 'Calorie labels on menus, MPG ratings, school league tables, plain-pack cigarette warnings.' },
+          { tone: 'purple', icon: '👉', head: 'Nudge — when the bias is attention, inertia or default-stickiness', body: 'Auto-enrolment into pensions (participation 55% → 87%); opt-out organ donation; smaller default plate sizes.' },
+          { tone: 'amber',  icon: '💷', head: 'Tax / subsidy — when there is an externality to price',          body: 'Carbon pricing, sugar levy on drinks, fuel duty; R&D tax credits, £2 bus fare cap.' },
+          { tone: 'rose',   icon: '🚫', head: 'Regulation — when harm is severe, addictive or affects others',   body: 'Smoking indoor ban, CFC ban (Montreal Protocol), leaded petrol ban, Euro 6 vehicle emissions standards.' }
+        ]
       },
-      causes2Label: 'Choosing the right tool',
-      causes2Emoji: '🎯',
-      causes2: [
-        { tone: 'green',  icon: 'ℹ️', head: 'Information — when people just don\'t know',                     body: 'Calorie labels on menus, MPG ratings, school league tables, plain-pack cigarette warnings.' },
-        { tone: 'purple', icon: '👉', head: 'Nudge — when the bias is attention, inertia or default-stickiness', body: 'Auto-enrolment into pensions (participation 55% → 87%); opt-out organ donation; smaller default plate sizes.' },
-        { tone: 'amber',  icon: '💷', head: 'Tax / subsidy — when there is an externality to price',          body: 'Carbon pricing, sugar levy on drinks, fuel duty; R&D tax credits, £2 bus fare cap.' },
-        { tone: 'rose',   icon: '🚫', head: 'Regulation — when harm is severe, addictive or affects others',   body: 'Smoking indoor ban, CFC ban (Montreal Protocol), leaded petrol ban, Euro 6 vehicle emissions standards.' }
-      ],
       illustratedGridLabel: 'When does a nudge cut it — and when doesn\'t it?',
       illustratedGridEmoji: '⚖️',
       illustratedGrid: [

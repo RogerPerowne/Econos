@@ -1067,20 +1067,26 @@
       const tone = PATTERN_TONES[dp.tone || 'green'] || PATTERN_TONES.green;
       const stacked = dp.layout === 'stacked';
       const stepsGridCols = stacked && dp.steps && dp.steps.length >= 3 ? 'repeat(2, 1fr)' : '1fr';
+      const stepsBoxed = dp.stepsStyle === 'boxed';
       const notesHtml = dp.steps && dp.steps.length
         ? `<ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:${stepsGridCols};gap:${stacked ? '14px 22px' : '0'};">${dp.steps.map((s, i) => {
           const stepTone = s.tone ? (PATTERN_TONES[s.tone] || tone) : tone;
-          const marker = s.icon
-            ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${s.icon}</span>`
-            : `<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>`;
+          const marker = stepsBoxed
+            ? `<span style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);">${s.icon || (i + 1)}</span>`
+            : (s.icon
+              ? `<span style="flex-shrink:0;width:34px;height:34px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${s.icon}</span>`
+              : `<span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:${stepTone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">${i + 1}</span>`);
           const bodyHtml = Array.isArray(s.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#475569;line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13px;color:#475569;line-height:1.55;">${s.body}</div>`;
-          const divider = i < dp.steps.length - 1 && !stacked
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:${stepsBoxed ? '#0B1426' : '#475569'};line-height:1.55;">${s.body.map(b => `<li style="margin-bottom:2px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13px;color:${stepsBoxed ? '#0B1426' : '#475569'};line-height:1.55;">${s.body}</div>`;
+          const divider = !stepsBoxed && i < dp.steps.length - 1 && !stacked
             ? `border-bottom:1px solid #E7E7EA;padding-bottom:12px;margin-bottom:12px;`
             : '';
+          const liStyle = stepsBoxed
+            ? `display:flex;align-items:flex-start;gap:12px;border-radius:14px;background:${stepTone.bg};border:1px solid ${stepTone.border};padding:16px 16px 14px;`
+            : `display:flex;align-items:flex-start;gap:12px;${divider}`;
           return `
-          <li style="display:flex;align-items:flex-start;gap:12px;${divider}">
+          <li style="${liStyle}">
             ${marker}
             <div style="flex:1;min-width:0;">
               <div style="font-weight:800;font-size:15px;color:${stepTone.label};margin-bottom:4px;">${s.head}</div>

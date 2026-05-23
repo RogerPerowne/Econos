@@ -94,23 +94,24 @@ window.ECONOS_TOPIC = {
             {
               label: 'Free market',
               tone: 'blue',
-              head: 'The free-market baseline',
-              body: 'D and S intersect at P₀, Q₀. No tax wedge, no distortion — this is the benchmark every policy is judged against.',
-              analysis: 'Without intervention the market is allocatively efficient: every unit produced has MB ≥ MC and total surplus is maximised. Any tax that moves price and quantity away from this point creates a welfare cost — unless it corrects a negative externality larger than the DWL it creates.'
+              head: 'The free-market equilibrium',
+              body: 'Before any tax, supply and demand determine price P₀ and quantity Q₀. Producers receive exactly what consumers pay — there is no wedge between the two.',
+              analysis: 'This is the benchmark. Every effect of the tax is measured as a departure from P₀ and Q₀.'
             },
             {
               label: 'Specific tax',
-              tone: 'amber',
-              head: 'Specific tax — parallel shift (e.g. fuel duty, alcohol duty)',
-              body: 'A fixed £ per unit (e.g. 57.95p/litre of petrol). Supply shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to <strong>P<sub>c</sub></strong>; quantity falls to <strong>Q<sub>t</sub></strong>.',
-              analysis: 'Parallel shift means the tax gap is constant at all prices. <strong>Real UK examples:</strong> fuel duty (57.95p/litre), tobacco duty (£7.01 per 20 cigarettes + 16.5% ad valorem), alcohol duty (per unit of pure alcohol). Specific taxes are easy to administer but erode in real terms with inflation unless manually uprated.'
+              tone: 'blue',
+              head: 'Specific tax — parallel shift (e.g. fuel duty)',
+              body: 'A fixed amount per unit (e.g. 53p/litre of fuel duty). Sellers need an extra £T per unit — so the supply curve shifts <strong>parallel</strong> upward by exactly £T at every quantity. Consumer price rises to <strong>Pc</strong>; quantity falls to <strong>Qt</strong>.',
+              analysis: 'The gap between S and S+T is the same at every quantity — that constant gap is £T. Government revenue = £T × Qt (the area of the wedge up to Qt).'
             },
             {
               label: 'Ad valorem tax',
-              tone: 'purple',
+              tone: 'amber',
+              show: ['idl-2'],
               head: 'Ad valorem tax — pivot shift (e.g. 20% VAT)',
-              body: 'A percentage of price (e.g. 20% VAT). The £ amount of tax is <em>small at low prices, large at high prices</em> — so supply <strong>pivots</strong> upward. The gap between S and S+T% widens as price rises.',
-              analysis: 'Pivoting supply means higher-priced goods carry more tax in £ terms. <strong>Key difference:</strong> ad valorem taxes grow automatically with inflation (VAT revenue rises when prices rise); specific taxes don\'t. This makes VAT more stable as a revenue source but less predictable in its quantity effect for expensive goods.'
+              body: 'A percentage of price (e.g. 20% VAT). The £ amount of tax is small at low prices and large at high prices — so the supply curve <strong>pivots</strong> upward. The gap between S and S+T% widens as price rises.',
+              analysis: 'Ad valorem taxes yield more revenue on expensive goods and scale automatically with inflation. Specific taxes erode in real terms unless manually uprated — which is why UK alcohol duties were frozen for years while VAT revenue grew automatically.'
             }
           ]
         },
@@ -123,23 +124,29 @@ window.ECONOS_TOPIC = {
             {
               label: 'Tax in place',
               tone: 'blue',
-              head: 'The tax wedge: P<sub>c</sub>, P<sub>p</sub> and £T',
-              body: 'Supply has shifted to S+T. Quantity falls to Q<sub>t</sub>. Consumers pay P<sub>c</sub>; producers receive net price P<sub>p</sub>. The vertical gap P<sub>c</sub> − P<sub>p</sub> = the per-unit tax £T.',
-              analysis: 'P<sub>c</sub> > P₀ > P<sub>p</sub> — consumers pay more, producers receive less. <strong>Legal vs economic incidence:</strong> the seller remits the tax to HMRC, but the economic burden falls on whoever is less elastic. The next two steps split that burden explicitly.'
+              head: 'The tax in place — Pc, Pp and the £T wedge',
+              body: 'The tax has shifted supply up to S+T. Quantity falls to <strong>Qt</strong>. Consumers pay <strong>Pc</strong>; producers receive net price <strong>Pp</strong> after remitting the tax. The vertical gap between Pc and Pp is the per-unit tax, <strong>£T</strong>.',
+              analysis: 'Pc > P₀ > Pp — consumers pay more, producers receive less, and the gap goes to government. The next steps split that gap into who bears how much, then total it as revenue.'
             },
             {
               label: 'Consumer burden',
               tone: 'blue',
-              head: 'The consumer burden: (P<sub>c</sub> − P₀) × Q<sub>t</sub>',
-              body: 'The <strong style="color:#2563EB">blue rectangle</strong> = the consumer burden. Consumers pay P<sub>c</sub> instead of P₀ on Q<sub>t</sub> units. The more <em>inelastic demand</em> is, the larger this rectangle.',
-              analysis: '<strong>Inelastic demand → consumers bear more.</strong> Cigarettes: PED ≈ −0.3 → consumers absorb ~75% of tobacco duty. Petrol: PED ≈ −0.1 in the short run → consumers absorb almost all fuel duty. This makes these taxes regressive — low-income households spend a higher share of income on these goods.'
+              head: 'Step 2 — the consumer burden',
+              body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer burden: <strong>(Pc − P₀) × Qt</strong>. It is the extra price consumers pay per unit times the quantity they actually buy.'
             },
             {
               label: 'Producer burden',
               tone: 'rose',
-              head: 'The producer burden: (P₀ − P<sub>p</sub>) × Q<sub>t</sub>',
-              body: 'The <strong style="color:#dc2626">red rectangle</strong> = the producer burden. Producers receive P<sub>p</sub> instead of P₀ on Q<sub>t</sub> units. The more <em>inelastic supply</em> is, the larger this rectangle.',
-              analysis: '<strong>Inelastic supply → producers bear more.</strong> Together the blue + red rectangles = total tax revenue. The DWL triangle (the area between Q<sub>t</sub> and Q₀ that is neither consumer burden nor producer burden nor government revenue) is welfare lost permanently — not transferred to anyone.'
+              head: 'Step 3 — the producer burden',
+              body: 'The <strong style="color:#dc2626">red rectangle</strong> is the producer burden: <strong>(P₀ − Pp) × Qt</strong>. It is the reduction in net price per unit times the quantity sold.',
+              analysis: 'Together the blue and red rectangles partition the tax wedge. The relative size of each depends on elasticity — covered in card 4.'
+            },
+            {
+              label: 'Tax revenue',
+              tone: 'purple',
+              head: 'Step 4 — total tax revenue',
+              body: 'The purple-outlined area is total <strong>tax revenue = £T × Qt</strong>. It is exactly the sum of the consumer and producer burdens — every penny paid by buyers and sellers above/below P₀ ends up at HMRC.',
+              analysis: 'Whether this revenue is worth the deadweight loss and behavioural distortions is a policy judgement addressed in the surrounding cards.'
             }
           ]
         }

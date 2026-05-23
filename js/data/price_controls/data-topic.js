@@ -32,7 +32,17 @@ window.ECONOS_TOPIC = {
       id: 'price_controls_1',
       stepLabel: 'Learn: Step 1 of 10',
       title: 'The big picture: why governments intervene',
-      tip: { icon: '🎯', tone: 'blue', text: 'Governments intervene to improve economic welfare when markets fail. The spec gives you <strong>seven tools</strong> split into two families — price-changing tools and "other" tools. Different problems need different tools.' },
+      tip: { icon: '🎯', tone: 'blue', text: 'Markets sometimes fail. When they do, governments have a toolkit of interventions — but no single tool fits every problem. <strong>Name the failure first, then choose the tool.</strong>' },
+      causesPosition: 'top',
+      causesStyle: 'tinted-flat',
+      causesEmoji: '🚨',
+      causesLabel: 'The four market failures intervention tries to fix',
+      causes: [
+        { tone: 'rose',   icon: '🏭', head: 'Externalities',              body: 'Third-party costs (pollution) or benefits (vaccination) the market ignores. The market over- or under-produces relative to the social optimum.' },
+        { tone: 'amber',  icon: '🏛️', head: 'Under-provision of public goods', body: 'Non-rival, non-excludable goods (defence, street lighting) the private sector won\'t provide because of the free-rider problem.' },
+        { tone: 'blue',   icon: '🔍', head: 'Information gaps',            body: 'Asymmetric or imperfect information leads consumers and producers to make poor decisions — e.g. demerit goods like cigarettes or unsafe products.' },
+        { tone: 'purple', icon: '⚖️', head: 'Market power / inequity',     body: 'Monopolies set prices above marginal cost; very unequal income distributions create welfare and political concerns the market alone cannot correct.' }
+      ],
       diagramPanel: {
         diagramKey: 'policySpectrumDiagram',
         title: 'The policy spectrum — soft to hard',
@@ -48,28 +58,15 @@ window.ECONOS_TOPIC = {
           { tone: 'rose',   icon: '🚫', head: 'Regulation — when harm is severe, addictive or affects others',   body: 'Smoking indoor ban, CFC ban (Montreal Protocol), leaded petrol ban, Euro 6 vehicle emissions standards.' }
         ]
       },
-      illustratedGridLabel: 'When does a nudge cut it — and when doesn\'t it?',
-      illustratedGridEmoji: '⚖️',
-      illustratedGrid: [
-        { tone: 'green', title: '✅ When a nudge is enough', body: '<strong>Auto-enrolment</strong> took pension participation from 55% to 87%. The binding constraint was <em>inertia</em>, not money — so a default change fit perfectly without restricting choice or spending taxpayer money.' },
-        { tone: 'rose',  title: '❌ When a nudge isn\'t enough', body: 'Carbon emissions at scale, addictive products, severe poverty. The binding constraint is <em>affordability, addiction or price</em> — not inertia. Nudges underperform; pricing tools or regulation do the heavy lifting.' }
-      ],
-      causesStyle: 'tinted-flat',
-      causesEmoji: '⚠️',
-      causesLabel: 'The four market failures intervention tries to fix',
-      causes: [
-        { tone: 'rose',   icon: '🏭', head: 'Externalities',              body: 'Third-party costs (pollution) or benefits (vaccination) the market ignores. The market over- or under-produces relative to the social optimum.' },
-        { tone: 'amber',  icon: '🏛️', head: 'Under-provision of public goods', body: 'Non-rival, non-excludable goods (defence, street lighting) the private sector won\'t provide because of the free-rider problem.' },
-        { tone: 'blue',   icon: '🔍', head: 'Information gaps',            body: 'Asymmetric or imperfect information leads consumers and producers to make poor decisions — e.g. demerit goods like cigarettes or unsafe products.' },
-        { tone: 'purple', icon: '⚖️', head: 'Market power / inequity',     body: 'Monopolies set prices above marginal cost; very unequal income distributions create welfare and political concerns the market alone cannot correct.' }
-      ],
       comparison: {
-        title: 'The seven spec tools — two families',
-        emoji: '⭐',
-        left:  { tone: 'green',  icon: '💸', label: 'Price-changing tools',
-          caption: 'Work through the price mechanism — change relative prices to shift behaviour.<br><br><strong>1. Indirect taxes</strong> (specific & ad valorem)<br><strong>2. Subsidies</strong><br><strong>3. Maximum prices</strong> (ceilings)<br><strong>4. Minimum prices</strong> (floors)' },
-        right: { tone: 'purple', icon: '🛠️', label: 'Other tools',
-          caption: 'Work directly on quantities, access or behaviour — they don\'t rely on prices.<br><br><strong>5. Tradable pollution permits</strong><br><strong>6. State provision of public goods</strong><br><strong>7. Provision of information</strong><br><strong>8. Regulation</strong>' }
+        title: 'When does a nudge cut it — and when doesn\'t it?',
+        emoji: '⚖️',
+        vs: 'VS',
+        position: 'after-diagram',
+        left:  { tone: 'green', icon: '✅', label: 'When a nudge is enough',
+          caption: '<strong>Auto-enrolment</strong> took pension participation from 55% to 87%. The binding constraint was <em>inertia</em>, not money — so a default change fit perfectly without restricting choice or spending taxpayer money.' },
+        right: { tone: 'rose',  icon: '❌', label: 'When a nudge isn\'t enough',
+          caption: 'Carbon emissions at scale, addictive products, severe poverty. The binding constraint is <em>affordability, addiction or price</em> — not inertia. Nudges underperform; pricing tools or regulation do the heavy lifting.' }
       },
       tipLate: { icon: '⚖️', tone: 'amber', text: '<strong>The aim is allocative efficiency and equity</strong> — but every tool brings risks of government failure (distorted signals, unintended consequences, admin costs, info gaps). The next nine cards build each tool and then bring them together in a decision matrix.' },
       examEdge: 'Top answers <em>name the market failure first, then choose the tool</em>. "Tradable permits work better than a Pigouvian tax for CO₂ because the regulator can set the total emissions cap with certainty even when abatement costs are uncertain." Linking the tool to the specific failure it addresses is what separates A from B grades.'

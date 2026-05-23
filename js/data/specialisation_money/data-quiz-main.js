@@ -77,22 +77,7 @@
         exp: 'The four functions of money are: (1) <strong>Medium of exchange</strong> &#8212; eliminates the double coincidence of wants problem; the primary function. (2) <strong>Store of value</strong> &#8212; holds purchasing power over time (inflation erodes this). (3) <strong>Unit of account</strong> &#8212; common measure allowing price comparison (&#163;, $, &#8364;). (4) <strong>Standard of deferred payment</strong> &#8212; enables mortgages, credit, and commercial contracts. "Instrument of taxation" and "source of wealth" are not standard economic functions of money &#8212; they describe uses of money rather than its defining properties as a monetary instrument.'
       },
 
-      /* 5 &#8212; Diagnostic pair: evaluating Bitcoin as money */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the extent to which Bitcoin fulfils the functions of money."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Zoe', badge: 'Candidate A',
-            answer: 'Bitcoin partially fulfils the functions of money. As a <strong>medium of exchange</strong>: Bitcoin is accepted by a growing but still limited number of merchants; its volatility creates practical barriers (a purchase priced in Bitcoin may double in cost hours later). As a <strong>store of value</strong>: severely compromised by extreme price volatility &#8212; Bitcoin fell ~65% in 2022, wiping savings measured in Bitcoin. Gold is a more reliable store of value. As a <strong>unit of account</strong>: almost no prices are quoted in Bitcoin in everyday commerce, preventing it functioning as a common measure. As a <strong>standard of deferred payment</strong>: long-term contracts in Bitcoin are impractical given price instability &#8212; the real value of a debt repaid years later is unpredictable. Conclusion: Bitcoin currently functions better as a speculative asset than as money. Its 21-million supply cap makes it scarce and durable, but without price stability, its monetary functions remain severely constrained.'
-          },
-          { name: 'Marcus', badge: 'Candidate B',
-            answer: 'Bitcoin is a type of digital currency that some people use to buy things online. It can be used as money in some places but not everywhere. Its price changes a lot which can be a problem. Some people use it to save money. The government does not control it so it is independent. Some countries have banned it. Overall Bitcoin has some features of money but also some problems, especially the fact that not many people accept it and the price is not stable.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Zoe</strong> gives the stronger answer. She structures her analysis explicitly around the four functions of money, gives specific evidence (Bitcoin\'s 2022 price fall, the 21m cap), and reaches a nuanced conclusion that distinguishes Bitcoin as a speculative asset from its role as money. Marcus identifies the same issues (volatility, acceptance, storage) but at a narrative level without the analytical framework. The four-functions structure is the examiner\'s expected framework; applying it systematically is what earns Level 4 marks. Marcus would access Level 2.'
-      },
-
-      /* 6 &#8212; Para fill: characteristics of good money */
+      /* 5 &#8212; Para fill: characteristics of good money */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the characteristics of good money using the correct term.',
         anchor: 'For money to perform its functions effectively, it must possess specific properties.',
@@ -108,7 +93,7 @@
         exp: 'The characteristics of good money are summarised as <strong>DAPS+D</strong>: <strong>D</strong>urable (lasts over time), <strong>A</strong>cceptable (widely accepted, usually via legal tender status), <strong>P</strong>ortable (easy to carry/transfer), <strong>S</strong>carce (limited supply prevents inflation), <strong>D</strong>ivisible (can make small transactions). The blank about consequences of unlimited money creation is <strong>inflation</strong> &#8212; as more money chases the same goods, prices rise and purchasing power falls. Hyperinflation (Zimbabwe 2008, Weimar Germany 1923) destroyed money\'s store-of-value function and drove economies toward barter.'
       },
 
-      /* 7 &#8212; Data table: money functions under stress */
+      /* 6 &#8212; Data table: money functions under stress */
       { type: 'data_table',
         stem: 'The table shows data for Zimbabwe during its 2007&#8211;2009 hyperinflation episode.',
         headers: ['Indicator', '2007', 'Nov 2008 (peak)'],
@@ -127,6 +112,21 @@
         ],
         ans: 0,
         exp: 'Zimbabwe\'s hyperinflation is the definitive modern illustration of money\'s functions under stress. The <strong>store of value</strong> function collapsed first: money held overnight lost enormous purchasing power. The <strong>unit of account</strong> function broke down as prices changed hourly. The <strong>medium of exchange</strong> function eroded as sellers refused to accept Zimbabwean dollars. The result was widespread barter &#8212; confirming that money and specialisation are co-dependent: when money fails its functions, complex exchange collapses. Real GDP halving reflects the collapse of the market economy, not just the monetary system. Barter is an extremely inefficient substitute &#8212; it cannot restore complex economic activity.'
+      },
+
+      /* 7 &#8212; multi_select: evaluation of Bitcoin as money */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the extent to which Bitcoin fulfils the functions of money</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Bitcoin\'s price volatility means its store-of-value function is severely compromised &#8212; falling ~65% in 2022 alone &#8212; but this does not disqualify it from functioning as a medium of exchange in low-value or time-sensitive transactions where parties accept the short-run price risk',
+          'Bitcoin is accepted as payment in some places, so it functions as a medium of exchange',
+          'Bitcoin\'s fixed supply cap of 21 million units satisfies the scarcity characteristic, making it durable and resistant to inflation &#8212; but scarcity alone is insufficient for monetary function without the price stability that allows it to serve as a unit of account or standard of deferred payment',
+          'Bitcoin is not controlled by any government, which is different from traditional currencies',
+          'The relevant comparison for Bitcoin\'s monetary fitness is not ideal money but the alternative &#8212; in countries experiencing hyperinflation (e.g. Venezuela, Zimbabwe), Bitcoin\'s volatility may still make it a superior store of value compared to a rapidly depreciating national currency',
+          'Bitcoin fulfils all four functions of money because it is decentralised and widely discussed'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Option A</strong> is strong evaluation: it acknowledges Bitcoin\'s volatility weakness on the store-of-value function but then qualifies the conclusion &#8212; arguing the medium-of-exchange function can still partially work in specific transactional contexts. This is a genuine weighing of competing factors with a directional but nuanced conclusion. <strong>Option C</strong> is strong evaluation: it grants that scarcity is satisfied (conceding a point) and then identifies the precise additional condition &#8212; price stability &#8212; that scarcity alone cannot provide, making the evaluation conditional and specific. <strong>Option E</strong> is strong evaluation: it reframes the comparison set rather than evaluating against an absolute standard &#8212; a sophisticated move that shows the student is aware the verdict depends on the counterfactual, and reaches a directional conclusion for a specific context. <strong>Option B</strong> is a distractor: it states a fact (some merchants accept Bitcoin) without evaluating the significance, scale, or limitations of that acceptance. <strong>Option D</strong> is a distractor: it describes a feature of Bitcoin (decentralisation) without connecting it to any of the four monetary functions or reaching a directional evaluative conclusion. <strong>Option F</strong> is a distractor: it is an overclaim with no evidence or mechanism &#8212; Bitcoin does not function as a unit of account in everyday commerce, so the assertion is factually wrong as well as unevaluated.'
       },
 
       /* 8 &#8212; Odd one out: functions of money */

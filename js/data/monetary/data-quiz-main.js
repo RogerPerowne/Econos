@@ -74,22 +74,7 @@
         exp: '(1) <strong>Bonds</strong>: gilt purchases are the primary QE instrument. (2) <strong>Central bank</strong>: new reserves created by the BoE &#8212; \'printing money\' electronically. (3) <strong>Bond</strong>: buying drives up bond prices. (4) <strong>Bond</strong>: higher bond prices → lower yields (they move inversely). (5) <strong>Bonds</strong>: low-yield bonds become less attractive, pushing investors into riskier assets. (6) <strong>Asset</strong>: equity and property prices rise &#8212; the QE wealth effect. (7) <strong>AD</strong>: the final objective is to shift AD right to hit the inflation target. (8) <strong>&#163;895bn</strong>: total BoE QE accumulated by 2021 (&#163;375bn GFC-era + additional rounds post-Brexit and COVID).'
       },
 
-      /* 4 &#8212; Diagnostic pair: 2022 cost-push dilemma */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the effectiveness of monetary policy in controlling UK inflation in 2022-23, when inflation was primarily cost-push in origin."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Grace', badge: 'Candidate A',
-            answer: 'Monetary policy targets demand-pull inflation most effectively via the five transmission channels &#8212; but the 2022 UK inflation was primarily <strong>cost-push</strong> (energy price shock from Ukraine war, supply chain bottlenecks, tight labour market). The BoE raised Bank Rate from 0.1% to 5.25% (Nov 2021 &#8211; Aug 2023) &#8212; the fastest tightening cycle in decades. <strong>Limited direct effectiveness against the supply shock:</strong> higher rates cannot lower gas prices or fix supply chains &#8212; the root causes. The channels primarily operate through reducing domestic demand (C and I fall), which can reduce second-round wage-price effects and anchor expectations &#8212; the expectations channel is crucial here. The risk: rate rises tighten into near-zero growth (GDP growth was close to zero throughout 2022-23), risking recession. <strong>Partial effectiveness:</strong> the rate cycle did help anchor expectations (wage growth did not fully spiral despite 7-8% wage gains in 2022-23), and falling energy prices from mid-2023 helped CPI fall back. The conclusion: monetary policy was a necessary but insufficient response to cost-push inflation &#8212; supply-side interventions (energy price guarantee, windfall taxes) were needed as a complement, addressing the root cause rather than the symptoms.'
-          },
-          { name: 'Noah', badge: 'Candidate B',
-            answer: 'Monetary policy was partially effective in controlling UK inflation in 2022-23. The Bank of England raised interest rates many times, from 0.1% to over 5%. This made borrowing more expensive, which reduced consumer spending and investment. Lower AD helped reduce demand-pull inflation. However, much of the 2022 inflation was cost-push, caused by high energy prices from the Ukraine war. Monetary policy cannot directly reduce energy prices. By 2024, inflation had fallen back to around 2%, which suggests the policy worked. However, growth was very low throughout this period, suggesting there was a cost in terms of slower economic growth. Overall, monetary policy was helpful but not as effective as it would have been against purely demand-pull inflation.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Grace</strong> gives the stronger answer. She identifies the specific type of inflation (cost-push, named causes), the rate path with specific figures (0.1% to 5.25% over a named period), the mechanism by which monetary policy can still help (anchoring expectations, reducing second-round effects), the limits (cannot lower gas prices), the risk (recession with near-zero growth), and provides a conditional conclusion with the specific policy complement (energy price guarantee). Noah covers the basic story but without specific rate figures, without identifying which specific channel matters for cost-push (expectations), without the supply-side complement point, and with only vague timing. Grace\'s precision and structure place her firmly at Level 4; Noah at Level 2-3.'
-      },
-
-      /* 5 &#8212; Multi-select: when monetary policy is limited */
+      /* 4 &#8212; Multi-select: when monetary policy is limited */
       { type: 'multi_select',
         stem: 'In which of the following circumstances is <strong>monetary policy most likely to be ineffective</strong>?',
         opts: [
@@ -104,7 +89,7 @@
         exp: 'Options A, C, and D represent genuine transmission failures. (A) Liquidity trap: the ZLB means rate cuts cannot stimulate; Keynes\'s original insight, confirmed in Japan 1990s-2010s. (C) Bank deleveraging: the credit channel is blocked &#8212; even if Bank Rate falls, banks do not reduce lending rates (post-2008 UK). (D) Cost-push inflation: monetary tightening reduces AD but cannot address supply-side causes &#8212; it raises unemployment without removing the underlying cost pressure. Options B (overheating), E (high confidence), and F (credible commitment) are all circumstances where monetary policy is comparatively <em>effective</em>.'
       },
 
-      /* 6 &#8212; Odd one out: distributional effects */
+      /* 5 &#8212; Odd one out: distributional effects */
       { type: 'odd_one_out',
         stem: 'Three of these are <strong>distributional consequences of a Bank Rate rise</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -117,7 +102,7 @@
         exp: 'The odd one out is option D. Cheaper borrowing is a consequence of a rate <em>cut</em>, not a rate rise. A Bank Rate rise makes borrowing more expensive for firms &#8212; the opposite of what option D states. The other three are genuine distributional consequences of a rate rise: (A) mortgage holders lose &#8212; higher repayments squeeze disposable income; (B) savers gain &#8212; better returns on cash deposits; (C) export sector loses &#8212; sterling appreciation makes UK goods less competitive. A* answers note that rate rises are therefore distributionally regressive for indebted households (mortgages, credit cards) while benefiting asset-rich savers.'
       },
 
-      /* 7 &#8212; Data table: 2022 mini-budget */
+      /* 6 &#8212; Data table: 2022 mini-budget */
       { type: 'data_table',
         stem: 'The table shows UK financial market data around the September 2022 mini-budget.',
         headers: ['Date', '10-year gilt yield', 'GBP/USD exchange rate', 'BoE action'],
@@ -139,7 +124,7 @@
         exp: 'The data sequence is unmistakable: gilt yields jumped ~130 basis points (3.2% to 4.5%) in 4 days following the mini-budget announcement &#8212; far faster than any normal market movement. Sterling fell ~5 cents. The BoE was forced into emergency purchases to prevent pension fund collapse. When the budget was reversed, markets stabilised. This is a textbook example of fiscal credibility loss &#8212; markets priced in unsustainable borrowing. Option B is incorrect &#8212; the yield spike started specifically on 23 September (budget day), not on 22 September (rate rise). Option D inverts the lesson &#8212; the episode shows limits of BoE power, not that fiscal credibility is unnecessary.'
       },
 
-      /* 8 &#8212; Calculation: real interest rate */
+      /* 7 &#8212; Calculation: real interest rate */
       { type: 'calculation',
         context: 'The Bank of England sets Bank Rate at <strong>5.25%</strong>. CPI inflation is running at <strong>7.3%</strong>.',
         working: [
@@ -160,7 +145,22 @@
         exp: 'Real rate = 5.25% &#8722; 7.3% = <strong>&#8722;2.05%</strong>. Despite a historically high nominal rate, the real rate is negative &#8212; borrowers pay back less in purchasing power than they borrow. This means monetary policy, while tightening, was still accommodative in real terms during this phase of the 2022-23 UK inflation episode. A* answers use the real interest rate framework to evaluate whether monetary policy is genuinely restrictive &#8212; nominal rates alone can be misleading when inflation is high. The BoE continued raising rates precisely because the real rate needed to become positive to genuinely restrain demand.'
       },
 
-      /* 9 &#8212; MCQ: fiscal-monetary interaction */
+      /* 9 &#8212; Multi-select: evaluation of monetary policy effectiveness */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>monetary policy</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Monetary policy is most effective when it operates via the expectations channel: a credible BoE commitment to the 2% target can anchor wage and price-setting without requiring large rate rises, reducing the sacrifice ratio compared to a less-trusted central bank',
+          'The BoE raises interest rates to reduce inflation by making borrowing more expensive, which reduces consumer spending and investment',
+          'Whether monetary tightening causes a recession depends on the size of the output gap and the share of variable-rate mortgages &#8212; in 2022-23 the UK\'s high proportion of short-fix mortgages amplified the contractionary effect relative to the euro area',
+          'The Bank of England is independent from the government, which means it can set interest rates without political interference',
+          'A negative real interest rate &#8212; where nominal Bank Rate is below CPI inflation &#8212; indicates that monetary policy remains accommodative despite headline rate rises, qualifying any claim that tightening was genuinely restrictive in 2022',
+          'Monetary policy always works through five channels: borrowing cost, mortgage channel, savings and wealth, exchange rate, and expectations'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Options A, C, and E are evaluation.</strong> (A) makes the evaluative move of weighing <em>which</em> channel matters most and why, reaching a directional conclusion about the sacrifice ratio &#8212; not just listing channels. (C) qualifies the claim about recession risk by identifying the specific conditions that determine impact (output gap size, mortgage structure), and uses comparative evidence (UK vs euro area) to reach a direction. (E) uses the real interest rate framework to qualify the claim that tightening was genuinely restrictive, reaching a specific conclusion about 2022 policy. <strong>Options B, D, and F are not evaluation.</strong> (B) is one-sided analysis &#8212; it correctly describes the transmission chain but reaches no qualified conclusion and ignores countervailing factors. (D) is pure description of BoE independence with no evaluative judgement. (F) lists the five channels as fact without weighing their relative importance or qualifying their operation in any specific context.'
+      },
+
+      /* 10 &#8212; MCQ: fiscal-monetary interaction */
       { type: 'mcq',
         stem: 'The government announces a large, unfunded fiscal expansion at the same time as the Bank of England is trying to reduce inflation by raising interest rates. What is the likely macroeconomic outcome of this policy <strong>conflict</strong>?',
         opts: [

@@ -62,22 +62,7 @@
         exp: 'Options A, B, D, and F correctly characterise pure public goods. <strong>Non-rival (A)</strong>: national defence protects everyone simultaneously &mdash; one person\'s protection does not reduce another\'s. <strong>Non-excludable (B)</strong>: once provided, exclusion is impossible or impractical. <strong>Free-rider problem (D)</strong>: because no-one can be excluded, rational individuals wait for others to pay &mdash; causing the good to be under-provided or not provided at all. <strong>National defence &amp; flood defences (F)</strong>: canonical examples. Option C is wrong &mdash; precisely because of the free-rider problem, private firms cannot profitably supply public goods. Option E is backwards: markets <em>under-provide</em> (not over-provide) public goods.'
       },
 
-      /* 4 — diagnostic_pair: negative externality analysis */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain, using a diagram, why the free market over-produces a good with a negative externality."</em> Which student gives the more analytically developed answer?',
-        students: [
-          { name: 'Saoirse', badge: 'Candidate A',
-            answer: 'A negative externality exists when the act of production or consumption imposes a cost on a third party not involved in the transaction. Because this cost is borne by the third party &mdash; not the producer or consumer &mdash; it is not reflected in the market price. The supply curve (which tracks MPC) lies below the socially optimal MSC curve. MSC = MPC + MEC, where MEC is the marginal external cost. The gap between S (MPC) and MSC at any quantity equals the MEC per unit.<br><br>The free market equilibrates where MPB = MPC (demand meets supply), producing Qm. The social optimum is where MSB = MSC, at Q*. Since MSC &gt; MPC throughout, Q* &lt; Qm &mdash; the free market over-produces. The welfare loss is the triangular area between MSC and MSB (or D) for all units between Q* and Qm: these are units whose social cost exceeds their social benefit but which the market still produces. This deadweight welfare loss represents the net cost to society of the externality &mdash; it would not be eliminated even if the producer\'s profits and consumer surplus were counted in full.'
-          },
-          { name: 'Matteo', badge: 'Candidate B',
-            answer: 'A negative externality means that producing or consuming a good creates costs for other people. For example, a factory pollutes the air and causes health problems for nearby residents. These people are not part of the transaction but still suffer. Because the factory doesn\'t have to pay for this pollution, it produces too much &mdash; more than is good for society. On the diagram, the supply curve shows the costs to producers but doesn\'t include the costs to third parties. If we added those costs the true social cost would be higher, meaning the market should produce less. The difference between what the market produces and what is best for society is the welfare loss. The government could use a Pigouvian tax equal to the external cost to shift supply up to the socially optimal level.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Saoirse</strong> gives the analytically stronger answer. She uses precise terminology (MPC, MEC, MSC = MPC + MEC, MPB, MSB), derives the over-production result rigorously (Q* &lt; Qm because MSC &gt; MPC throughout), and defines the DWL triangle with precision. Crucially, she notes the DWL is the net social cost even accounting for producer profits and CS &mdash; a Level 4 insight. Matteo covers the intuition correctly but without the formal terminology. He does not distinguish MPC from MSC, does not label Q* and Qm, and does not define the DWL triangle precisely. He also brings in the policy (Pigouvian tax) which was not asked. Matteo accesses Level 3; Saoirse Level 4.'
-      },
-
-      /* 5 — para_fill: private vs social framework */
+      /* 4 — para_fill: private vs social framework */
       { type: 'para_fill',
         stem: 'Complete the paragraph explaining the private vs social cost-benefit framework.',
         anchor: 'Market failure begins when private and social values diverge.',
@@ -95,7 +80,7 @@
         exp: '(1) <strong>Private</strong>: the price mechanism reflects private costs/benefits only. (2) <strong>Parties</strong>: buyer and seller. (3) <strong>Third</strong>: people outside the transaction. (4) <strong>Externalities</strong>: the technical term for spillovers. (5) <strong>External</strong>: Social cost = MPC + MEC. (6) <strong>MPC</strong>: the supply curve represents marginal private cost. (7) <strong>MSC</strong>: the socially optimal supply schedule. (8) <strong>Above</strong>: if MSC &gt; MPC (negative externality), the market quantity is above Q*, creating over-production DWL. The framework is symmetric for the benefit side: when MSB &gt; MPB (positive externality), market quantity is <em>below</em> Q*.'
       },
 
-      /* 6 — chain: four-step diagnosis method */
+      /* 5 — chain: four-step diagnosis method */
       { type: 'chain',
         stem: 'Place the four steps of the market failure diagnosis framework in the correct analytical order.',
         items: [
@@ -108,7 +93,7 @@
         exp: '<strong>Correct sequence:</strong><br>1. Identify the divergence &mdash; this is the root cause of the failure. Without a cost-benefit divergence, there is no market failure.<br>2. Identify the direction &mdash; negative externality pushes toward over-production (MSC &gt; MPC); positive externality or public-good characteristics push toward under-production (MSB &gt; MPB).<br>3. State the quantity gap &mdash; locate Qm and Q* on the diagram to quantify the failure.<br>4. Identify the welfare loss &mdash; the DWL triangle is the measurable consequence. Its size depends on the elasticities of supply and demand and the magnitude of the externality.<br><br>This four-step structure earns the analysis marks on any market failure question, for any route (externality, public good, information gap).'
       },
 
-      /* 7 — odd_one_out: which is NOT a market failure */
+      /* 6 — odd_one_out: which is NOT a market failure */
       { type: 'odd_one_out',
         stem: 'Three of these are genuine examples of market failure. Which is the ODD ONE OUT?',
         items: [
@@ -121,7 +106,7 @@
         exp: 'The odd one out is option D. A private school raising fees and remaining solvent is a market functioning normally &mdash; it is a distributional outcome (fewer low-income students can attend), not a market failure in the technical sense. There is no externality, public-good problem, or information gap necessarily involved. Options A (road congestion &mdash; negative externality), B (monopoly pricing &mdash; a standard source of allocative inefficiency and market failure), and C (overfishing &mdash; a common-pool resource tragedy of the commons) are genuine market failures. Note: some economists also class monopoly pricing as a market structure problem rather than a \'failure\' in the externality sense, but at A-level it is typically classified as market failure because P &gt; MC creates allocative inefficiency and DWL.'
       },
 
-      /* 8 — data_table: vaccination under-provision */
+      /* 7 — data_table: vaccination under-provision */
       { type: 'data_table',
         stem: 'The table shows UK childhood vaccination coverage rates and associated disease data.',
         headers: ['Vaccine', 'UK 2022/23 coverage', 'WHO target', 'Gap', 'Disease risk at this coverage'],
@@ -140,6 +125,21 @@
         ],
         ans: 0,
         exp: 'Option A is correct. Vaccination generates a <strong>positive externality</strong>: the benefit to society (herd immunity, reduced transmission) exceeds the benefit to the individual. Private individuals base their decision on private benefit (personal protection), ignoring the external benefit they provide to others by being vaccinated. This means private demand lies below social demand, and the free market (without subsidy or mandate) would under-provide vaccination relative to Q*. The WHO 95% herd immunity threshold is effectively Q* for measles. All four vaccines in the table show coverage below Q*, confirming the under-provision prediction. Option B confuses market failure with government failure (and is empirically unsound). Option C misidentifies the direction of the externality. Option D is wrong &mdash; NHS provision is precisely the <em>intervention</em> designed to correct the market failure; the shortfalls show even subsidised provision is insufficient.'
+      },
+
+      /* 8 — multi_select: evaluation of negative externalities and market failure */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>why the free market over-produces goods with negative externalities</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &mdash; as opposed to description or one-sided analysis?',
+        opts: [
+          'The standard externality diagram assumes the MEC is constant and easily measurable, but in practice (e.g. carbon emissions) the MEC is disputed, changes over time, and depends on cumulative stock rather than flow &mdash; which means the Pigouvian tax rate set today may be systematically too low, qualifying the claim that a tax can straightforwardly achieve Q*.',
+          'When a firm produces a negative externality, MSC exceeds MPC, so the market over-produces relative to Q*.',
+          'While Pigouvian taxation can theoretically internalise a negative externality, it is only allocatively efficient if the tax exactly equals the MEC at Q* &mdash; and governments rarely have the information needed to set this rate correctly, making the welfare gain from a poorly calibrated tax uncertain and potentially less than the DWL it is supposed to eliminate.',
+          'The size of the DWL from over-production depends on both the magnitude of the MEC and the elasticities of supply and demand &mdash; industries with inelastic supply and demand (such as energy) generate larger welfare losses from a given externality than industries with elastic responses, qualifying any generalisation about whether market failure is severe.',
+          'Carbon emissions cause global warming.',
+          'The government can use taxes and regulations to correct market failures caused by negative externalities.'
+        ],
+        correct: [0, 2, 3],
+        exp: '<strong>Option A</strong> is genuine evaluation: it challenges the implicit assumption of the standard model (constant, measurable MEC), uses carbon as a specific counter-example, and reaches the direction that real-world calibration of taxes may be systematically flawed &#8212; qualifying the policy prescription. <strong>Option C</strong> is evaluation: it identifies the precise condition under which Pigouvian taxation achieves the welfare gain (tax = MEC at Q*), then argues governments rarely meet this condition, reaching a sceptical qualified direction about the policy\'s effectiveness in practice. <strong>Option D</strong> is evaluation: it uses the relationship between elasticities and DWL size to make the evaluative point that the severity of market failure varies by industry &#8212; reaching a direction about when externalities are most damaging and when intervention is most urgent. <strong>Option B</strong> is description &#8212; restating the core model result (MSC &gt; MPC → over-production) with no qualification, no evidence, no direction beyond the model itself. <strong>Option E</strong> is description of an empirical fact with no analytical content. <strong>Option F</strong> is description of policy tools with no weighing of their effectiveness or conditions under which they work.'
       },
 
       /* 9 — calculation: DWL triangle size */
@@ -167,7 +167,7 @@
         exp: 'DWL = &frac12; &times; (Qm &minus; Q*) &times; MEC = &frac12; &times; 40 &times; &pound;10 = <strong>&pound;200</strong>. The triangle arises because the gap between MSC and MSB is zero at Q* and widens to &pound;10 (the constant MEC) by Qm. This is only a triangle because the D (MPB) and S curves are straight lines. With constant MEC (a parallel shift of S to get MSC), the DWL is this neat triangle. Option B computes the rectangle of total external cost on the overproduced units &mdash; the wrong shape. Option C uses the total quantity. When the government imposes a Pigouvian tax of &pound;10/unit, it recovers this &pound;200 DWL for society.'
       },
 
-      /* 10 — mcq: adverse selection vs moral hazard */
+      /* 10 — mcq: adverse selection vs moral hazard (bonus) */
       { type: 'mcq',
         stem: 'Which scenario correctly illustrates <strong>adverse selection</strong> (rather than moral hazard)?',
         opts: [

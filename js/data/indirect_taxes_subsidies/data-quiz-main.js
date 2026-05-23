@@ -72,22 +72,7 @@
         exp: 'Consumer burden = Pc &minus; P&sub0; = &pound;24 &minus; &pound;20 = <strong>&pound;4/unit</strong>. Producer burden = P&sub0; &minus; Pp = &pound;20 &minus; &pound;18 = <strong>&pound;2/unit</strong>. Together: &pound;4 + &pound;2 = &pound;6 = the tax. Revenue = &pound;6 &times; 50 = <strong>&pound;300</strong>. The consumer bears 67% because demand is more inelastic (less responsive to price) than supply. The split is always driven by relative elasticities &mdash; a common exam question is to infer the relative elasticity from the burden split: here, the consumer bears more &Rightarrow; demand is more inelastic than supply.'
       },
 
-      /* 4 — diagnostic_pair: legal vs economic incidence */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain the difference between legal incidence and economic incidence of an indirect tax, and analyse what determines the economic incidence."</em> Which student gives the more precise answer?',
-        students: [
-          { name: 'Kezia', badge: 'Candidate A',
-            answer: '<strong>Legal incidence</strong> is who is legally obligated to remit the tax to HMRC &mdash; for an indirect tax, typically the seller. But legal incidence tells us nothing about who actually bears the economic cost. <strong>Economic incidence</strong> describes who ultimately bears the burden through changes in the prices they pay or receive after the market has adjusted.<br><br>Economic incidence is determined by <strong>relative price elasticity of demand (PED) and price elasticity of supply (PES)</strong>. The less elastic side of the market is less able to respond to the price change, so it absorbs more of the tax. Formally:<br>&bull; If PED is low relative to PES: consumers bear more, because they cannot easily switch to substitutes. The consumer burden rectangle (Pc &minus; P&sub0;) &times; Qt is large.<br>&bull; If PES is low relative to PED: producers bear more, because they cannot easily redirect output. The producer burden rectangle (P&sub0; &minus; Pp) &times; Qt is large.<br><br>A real-world illustration: UK tobacco duty. PED for cigarettes is approximately &minus;0.4 (very inelastic). Consumers bear the majority &mdash; around 70&ndash;80% &mdash; of the duty, even though producers remit it to HMRC. This is precisely why governments target inelastic goods for excise duties: the burden falls heavily on consumers, and quantity falls only slightly, maximising revenue per unit.'
-          },
-          { name: 'Javier', badge: 'Candidate B',
-            answer: 'Legal incidence is about who pays the tax to the government. For example, a shop might collect VAT and send it to HMRC. But this doesn\'t mean the shop bears the full cost of the tax. Economic incidence is about who really ends up worse off after the tax is imposed. If a shop can raise its prices, consumers bear more of the burden. If it can\'t raise prices, the shop bears more. Whether consumers or producers bear more depends on elasticity. If consumers are very price-sensitive (elastic demand), sellers find it hard to raise prices and bear more of the tax themselves. If consumers are not price-sensitive (inelastic), the seller can pass on most of the tax through higher prices. UK cigarette duty is an example where consumers bear most of the tax because demand is inelastic.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Kezia</strong> provides the analytically stronger answer. She uses precise technical terms throughout (PED, PES, consumer burden rectangle (Pc &minus; P&sub0;) &times; Qt, producer burden rectangle (P&sub0; &minus; Pp) &times; Qt) and states the incidence rule formally. Her application of the rule to UK tobacco duty &mdash; citing PED &asymp; &minus;0.4 and the 70&ndash;80% consumer share &mdash; is a Level 4 application of theory to context. Javier explains the same concept clearly but without the formal vocabulary. He does not use PED and PES as labels, does not write the burden rectangles algebraically, and his explanation of the elasticity rule is slightly imprecise ("price-sensitive" is correct but less rigorous than "price elasticity of demand"). Javier accesses Level 3; Kezia Level 4.'
-      },
-
-      /* 5 — chain: steps to draw a tax diagram */
+      /* 4 — chain: steps to draw a tax diagram */
       { type: 'chain',
         stem: 'Place the steps for drawing a complete, correctly labelled <strong>indirect tax diagram</strong> in the right order.',
         items: [
@@ -101,7 +86,7 @@
         exp: '<strong>Correct sequence:</strong><br>1. Draw the base diagram (axes, D, S, Pe, Qe) &mdash; you need the baseline before you can show any change.<br>2. Draw S + tax (parallel shift upward by £T) and label it.<br>3. Find the new equilibrium: where D meets S + tax. Read Pc from the price axis. Compute Pp = Pc &minus; £T.<br>4. Draw dashed lines and label Pc, Pp, Qt precisely &mdash; this is where most marks are earned.<br>5. Shade the burden rectangles and identify the DWL triangle.<br><br>A common error: students skip step 4 or mislabel which horizontal line is Pc and which is Pp. Remember: Pc is above Pe (consumers pay more); Pp is below Pe (producers receive less).'
       },
 
-      /* 6 — multi_select: effects of a subsidy */
+      /* 5 — multi_select: effects of a subsidy */
       { type: 'multi_select',
         stem: 'Which of the following correctly describe the effects of a per-unit production subsidy?',
         opts: [
@@ -116,7 +101,7 @@
         exp: 'Options A, B, C, and D are correct. <strong>A</strong>: Subsidy shifts S downward; firms will supply the same quantity at a lower price. <strong>B</strong>: The subsidy wedge separates Pc (paid by buyer) from Pp (received by seller); both are better off than at Pe. <strong>C</strong>: Identical to the tax incidence rule but in reverse &mdash; the inelastic side captures more benefit. With inelastic demand, consumers gain more (prices fall substantially); with inelastic supply, producers gain more. <strong>D</strong>: Government cost = wedge &times; post-subsidy quantity. Option E is wrong: total welfare <em>falls</em> unless the subsidy corrects a positive externality &mdash; government cost exceeds CS + PS gain by the DWL. Option F is wrong: just as with taxes, economic incidence depends on elasticity; the legal recipient does not necessarily keep the benefit.'
       },
 
-      /* 7 — odd_one_out: which is NOT an effect of an indirect tax */
+      /* 6 — odd_one_out: which is NOT an effect of an indirect tax */
       { type: 'odd_one_out',
         stem: 'Three of the following are effects of a per-unit indirect tax. Which is the ODD ONE OUT?',
         items: [
@@ -129,7 +114,7 @@
         exp: 'The odd one out is option B. An indirect tax <em>reduces</em> producer surplus &mdash; it does not raise it. The tax shifts supply upward, meaning producers receive a lower net price (Pp &lt; Pe) for each unit they sell. PS is the area below price and above supply, and this area shrinks. The description in option B (a "government guarantee of a minimum net price") actually describes a <em>price floor</em> or minimum price &mdash; a different policy instrument entirely. Options A (output falls), C (DWL triangle appears), and D (government collects revenue) are all standard, correct consequences of an indirect tax.'
       },
 
-      /* 8 — para_fill: incidence rule */
+      /* 7 — para_fill: incidence rule */
       { type: 'para_fill',
         stem: 'Complete the paragraph explaining the elasticity rule for tax incidence.',
         anchor: 'One rule governs tax incidence: the less elastic side of the market bears more of the burden.',
@@ -144,6 +129,21 @@
           { id: 7, opts: ['shared', 'one-sided', 'equal', 'uniform'], ans: 0 }
         ],
         exp: '(1) <strong>Economic</strong>: who bears the economic cost, as opposed to the legal liability. (2) <strong>Relative elasticities</strong>: the ratio of PES to PED drives the incidence split. (3) <strong>Inelastic</strong>: consumers who cannot switch buy almost the same quantity and absorb the price rise. (4) <strong>Inelastic</strong>: producers who cannot redirect output accept a lower net price. (5) <strong>Perfectly inelastic</strong>: a vertical demand curve means consumers buy the same quantity regardless of price &mdash; 100% of the tax falls on them (e.g., insulin). (6) <strong>Perfectly inelastic</strong>: a vertical supply curve means producers supply the same quantity regardless of price &mdash; 100% falls on them (e.g., land in a fixed location). (7) <strong>Shared</strong>: in typical markets, both sides bear some portion.'
+      },
+
+      /* 8 — multi_select: evaluation of tax incidence and subsidy policy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>indirect taxes and subsidies as market intervention tools</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'The legal incidence of an indirect tax falling on producers does not determine who bears the economic burden — UK tobacco duty is remitted by manufacturers but consumers bear ~70–80% because PED for cigarettes is approximately −0.4, illustrating that governments can tax inelastic goods to raise revenue without significantly reducing consumption.',
+          'A production subsidy always increases total welfare because consumer surplus and producer surplus both rise when the market price falls and quantity increases.',
+          'For goods with highly inelastic demand (such as insulin), a consumer subsidy is more efficient at reducing patient costs than a producer subsidy, because the price reduction passes almost entirely to consumers rather than being partially retained as higher producer surplus when producers face a more elastic supply curve.',
+          'Indirect taxes are regressive — they take a larger share of income from lower-income households — which means they should never be used as a policy tool regardless of other benefits.',
+          'The DWL from an indirect tax falls as demand becomes more inelastic, which means that Pigouvian taxes on goods like cigarettes and petrol — where demand is price-inelastic — impose a smaller efficiency cost per pound of revenue raised than taxes on more elastic goods, making them relatively effective revenue instruments.',
+          'Subsidies are better than taxes for correcting market failures because they encourage more production rather than restricting it.'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Option A</strong> is strong evaluation: it uses the legal vs economic incidence distinction with a specific PED estimate for cigarettes and a quantified consumer burden share, reaching the directional conclusion that governments exploit inelastic demand to raise revenue efficiently. This is evidence-grounded evaluation with analytical precision. <strong>Option C</strong> is strong evaluation: it identifies the specific condition (inelastic demand, elastic supply) under which a consumer subsidy is more efficient than a producer subsidy for reaching the intended beneficiary, and explains the mechanism (near-complete pass-through). This is a policy-instrument comparison with a directional recommendation. <strong>Option E</strong> is strong evaluation: it correctly applies the relationship between elasticity and DWL to reach the counter-intuitive but analytically sound conclusion that Pigouvian taxes on inelastic goods impose relatively low efficiency costs per pound of revenue — justifying their use despite apparent regressivity. <strong>Option B</strong> is factually wrong: total welfare falls unless the subsidy corrects a positive externality, because government cost exceeds combined CS and PS gains by the DWL of over-production. <strong>Option D</strong> overclaims ("should never be used") — the regressivity concern is valid but must be weighed against revenue efficiency, health benefits, and the availability of compensating transfers. Dismissing the policy wholesale is one-sided. <strong>Option F</strong> is a false dichotomy — taxes and subsidies address different market failures (negative vs positive externalities), and neither is universally better.'
       },
 
       /* 9 — data_table: tobacco duty effectiveness */
@@ -167,7 +167,7 @@
         exp: 'Option A is the most analytically complete because it evaluates tobacco duty on both the effectiveness axis (smoking down from 27% to 13%) and the efficiency axis (illicit market). The illicit market creates three problems: (1) reduces tax revenue (the illicit product pays no duty); (2) stimulates criminal supply chains; (3) caps how high the duty can be raised without further diversion. This is a genuine trade-off &mdash; higher duties reduce smoking more but increase the incentive to smuggle. Option B overclaims: "always eliminate" is wrong, and 13% prevalence is not zero. Option C treats 12% illicit share as complete failure, ignoring the 13-percentage-point fall in prevalence. Option D raises the equity dimension (valid) but dismissing the policy "regardless of effectiveness" is poor evaluation &mdash; the equity cost must be weighed against the health benefit, which falls disproportionately on lower-income groups (a genuine distributional complexity).'
       },
 
-      /* 10 — mcq: subsidy benefit with inelastic demand */
+      /* 10 — mcq: subsidy benefit with perfectly inelastic demand */
       { type: 'mcq',
         stem: 'A government subsidises insulin production. Demand for insulin is <strong>highly inelastic</strong> (PED &asymp; &minus;0.05). Which outcome correctly describes how the subsidy benefit is distributed between consumers and producers?',
         opts: [

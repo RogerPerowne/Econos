@@ -66,22 +66,7 @@
         exp: '(1) <strong>Efficient</strong>: X-efficient means operating on the cost frontier. (2) <strong>Frontier</strong>: the production cost frontier &#8212; the minimum cost achievable with existing technology and management. (3) <strong>Inefficiency</strong>: X-inefficiency = operating above the frontier. (4) <strong>Slack</strong>: management slack &#8212; lower effort, unnecessary costs, failure to adopt best practice. (5) <strong>Competitive</strong>: competition disciplines firms to minimise costs; its absence allows slack. (6) <strong>Larger</strong>: Leibenstein\'s empirical work suggested X-inefficiency costs can exceed the DWL triangle. (7) <strong>Larger</strong>: total monopoly welfare cost = DWL (allocative inefficiency) + X-inefficiency (productive cost elevation) &#8212; both working against consumers.'
       },
 
-      /* 4 — Diagnostic pair: static vs dynamic efficiency */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Perfect competition achieves allocative and productive efficiency. Does this make it the best market structure?"</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Sara', badge: 'Candidate A',
-            answer: 'Perfect competition achieves <strong>static efficiency</strong> simultaneously: P = MC (allocative), P = min AC (productive), and maximum consumer surplus. In this narrow sense it is the welfare economics benchmark. However, it performs poorly on <strong>dynamic efficiency</strong> &#8212; precisely because static efficiency eliminates the supernormal profit that funds innovation. With zero long-run profit (P = AC), firms have no retained earnings for R&D. With perfect information and homogeneous products, any innovation is instantly copied &#8212; so no first-mover advantage exists, eliminating the innovation incentive. Schumpeter argued that dynamically efficient markets require market power: only firms earning supernormal profit have both the means and incentive to invest in long-run innovation. The pharmaceutical industry illustrates this directly: the patent system deliberately creates temporary monopoly to fund the &#163;1&#8211;2bn cost of developing new drugs. A fully competitive pharmaceutical market with P = MC would generate no investment in new medicines. Furthermore, if minimum efficient scale is large relative to market size, perfect competition may be <em>unsustainable</em> &#8212; firms cannot reach MES and cost per unit remains high. Whether perfect competition is "best" therefore depends on whether static or dynamic efficiency matters more in the specific industry &#8212; a judgment that varies dramatically across sectors.'
-          },
-          { name: 'Oli', badge: 'Candidate B',
-            answer: 'Perfect competition achieves allocative and productive efficiency, which means resources are used in the best possible way and goods are produced at the lowest cost. This is good for consumers because prices are kept as low as possible. However, perfect competition may not be the best market structure in every situation. For example, firms in perfect competition do not make supernormal profit in the long run, so they do not have money to invest in research and development. Monopolies can use their supernormal profits to fund R&D and come up with new products, which is good for the economy in the long run. So while perfect competition is efficient in the short run, monopoly might lead to more innovation which benefits consumers in the long run. Overall it is not clear which market structure is best because it depends on whether short-run or long-run benefits are more important.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Sara</strong> gives the stronger answer. She names the efficiency types precisely (static vs dynamic), identifies the mechanism by which static efficiency undermines dynamic efficiency (zero profit, instant imitation), uses Schumpeter by name with his specific argument, and provides a highly relevant institutional example (pharmaceutical patents as a deliberate trade-off). Her conclusion is properly conditional &#8212; referencing MES sustainability as an additional consideration. Oli identifies the R&D argument correctly but lacks the Schumpeter framework, the institutional example, the mechanism for why zero profit eliminates innovation incentive, and the MES point. Sara accesses Level 4; Oli Level 3.'
-      },
-
-      /* 5 — Multi-select: conditions for efficiency types */
+      /* 4 — Multi-select: conditions for efficiency types */
       { type: 'multi_select',
         stem: 'Which of the following conditions correctly define the named efficiency type?',
         opts: [
@@ -96,7 +81,7 @@
         exp: 'Options A&#8211;E are all correct definitions. <strong>Productive</strong>: P = min LRAC &#8212; minimum cost production. <strong>Allocative</strong>: P = MC &#8212; no welfare gain from reallocation. <strong>Dynamic</strong>: long-run innovation and investment (not a single precise condition but a concept of improvement over time). <strong>X-efficiency</strong>: operating on (not inside) the cost frontier. <strong>Social efficiency</strong>: MSB = MSC &#8212; extends allocative efficiency to include externalities. Option F is incorrect: <strong>P = MR is the condition for a price-taker</strong> (perfectly competitive firm where P = MR because P is constant), not an efficiency condition. In perfect competition, the fact that P = MR &#8212; combined with the profit-maximising condition MR = MC &#8212; gives P = MC (allocative efficiency). But P = MR alone is not an efficiency condition.'
       },
 
-      /* 6 — Odd one out: efficiency performance of perfect competition */
+      /* 5 — Odd one out: efficiency performance of perfect competition */
       { type: 'odd_one_out',
         stem: 'Three of these are efficiency advantages of <strong>perfect competition</strong> relative to monopoly. Which is the ODD ONE OUT?',
         items: [
@@ -109,7 +94,7 @@
         exp: 'The odd one out is the claim that perfect competition has <strong>strong innovation incentives from supernormal profits</strong>. In fact, the opposite is true: perfect competition earns only <em>normal</em> profit in the long run &#8212; zero supernormal profit, hence zero internally generated R&D funding. This is the Schumpeterian critique of perfect competition: static efficiency (productive + allocative) comes at the cost of dynamic efficiency. Monopoly, despite its static inefficiencies (P &gt; MC, above minimum AC), may have superior innovation incentives because it retains supernormal profit to fund R&D. The other three are genuine advantages: minimum AC, P = MC, and competitive pressure on X-efficiency are all real benefits of competitive markets.'
       },
 
-      /* 7 — MCQ: social efficiency definition */
+      /* 6 — MCQ: social efficiency definition */
       { type: 'mcq',
         stem: 'Social efficiency is achieved when:',
         opts: [
@@ -120,6 +105,21 @@
         ],
         ans: 0,
         exp: '<strong>Social efficiency</strong> requires MSB = MSC. This condition ensures that the benefit to society from the last unit produced equals its cost to society &#8212; including all externalities (both positive and negative). At this output, no reallocation of resources can increase total social welfare. In a competitive market with no externalities: MSB = MPB (demand) and MSC = MPC (supply), so competitive equilibrium achieves social efficiency. With negative externalities: MSC &gt; MPC &#8212; the market overproduces relative to the social optimum. With positive externalities: MSB &gt; MPB &#8212; the market underproduces. Social efficiency is the comprehensive welfare standard; allocative efficiency (P = MC) is the special case with no externalities.'
+      },
+
+      /* 7 — multi_select: evaluating efficiency trade-offs */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>types of efficiency and market structure performance</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Productive efficiency (P = min LRAC) is achieved in long-run perfect competition',
+          'The case for tolerating monopoly on dynamic efficiency grounds is strongest in industries where R&D costs are very high relative to market size and imitation is easy — as in pharmaceuticals — but weakest in mature industries with stable technology, where the dynamic efficiency argument becomes a fig leaf for rent extraction',
+          'While perfect competition achieves productive and allocative efficiency simultaneously, this combination is static: it sacrifices the supernormal profit that funds Schumpeterian innovation, so judging market structures by static efficiency criteria alone risks locking in low-innovation equilibria in high-technology sectors',
+          'Allocative efficiency occurs when P = MC, meaning the last unit\'s value to consumers equals the cost of producing it',
+          'X-inefficiency is a separate welfare cost of monopoly from the deadweight loss triangle: Leibenstein\'s evidence suggests it can exceed the DWL in magnitude, meaning competition policy that focuses only on deadweight loss significantly underestimates the total cost of market power',
+          'Dynamic efficiency is better than static efficiency because innovation benefits consumers in the long run'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Options B, C, and E are genuine evaluation moves.</strong> Option B qualifies the dynamic efficiency argument: it applies it conditionally — the argument is strong in pharmaceuticals (high R&D, easy imitation) but weak in mature industries — avoiding the common error of either accepting or rejecting the argument in all cases. Option C identifies the specific trade-off between static and dynamic efficiency and draws a directional conclusion: using only static criteria risks a systematic error in high-tech sectors. This is evaluation through identifying the direction and conditions of the trade-off. Option E makes an empirical claim (Leibenstein\'s evidence) and uses it to derive a policy implication: standard competition policy underestimates monopoly costs by ignoring X-inefficiency. <strong>Option A</strong> is a definition of productive efficiency. <strong>Option D</strong> is a definition of allocative efficiency. <strong>Option F</strong> makes an unsupported assertion that dynamic efficiency is "better" — this is a conclusion without conditions, evidence, or any acknowledgment of the trade-off; it is exactly the kind of one-sided claim evaluation must avoid.'
       },
 
       /* 8 — Data table: efficiency comparison */

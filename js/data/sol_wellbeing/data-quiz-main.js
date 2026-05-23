@@ -39,22 +39,7 @@
         exp: 'The HDI uses: (1) <strong>Health</strong> &#8212; life expectancy at birth; (2) <strong>Education</strong> &#8212; mean years of schooling for adults plus expected years for children; (3) <strong>Income</strong> &#8212; GNI per capita at PPP, converted to a log scale to reflect diminishing marginal utility. Using GNI (not GDP) corrects for income that leaves a country via profit repatriation. The log scale is an A* point &#8212; it reflects the insight that each extra dollar matters less as income rises. The composite is calculated as a <em>geometric mean</em> of the three sub-indices.'
       },
 
-      /* 2 &#8212; Diagnostic pair: Kuznets curve */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the Kuznets curve as a description of the relationship between economic development and income inequality."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Fatima', badge: 'Candidate A',
-            answer: 'The Kuznets curve (1955) hypothesises an inverted-U relationship between per capita income and inequality: as countries industrialise, inequality first rises as workers move from low-wage agriculture to higher-wage manufacturing, then eventually falls as welfare states, education, and service-sector expansion share growth more widely. Supporting evidence: the UK and other early-industrialised nations broadly followed this pattern. However, significant counter-evidence challenges the universality of the curve. First, the East Asian \'tigers\' (South Korea, Taiwan) achieved rapid growth <em>with</em> declining inequality &#8212; contradicting the inevitable rise phase. Second, the US and UK saw <em>rising</em> inequality in the 1980s-2000s despite high income levels &#8212; a \'second hump\' the original curve cannot explain, attributable to skill-biased technological change and globalisation. Third, the curve is a statistical hypothesis, not a causal mechanism &#8212; the relationship is mediated by institutions and policy choices, not automatically determined by income level.'
-          },
-          { name: 'Ben', badge: 'Candidate B',
-            answer: 'The Kuznets curve says that as countries get richer, inequality goes up and then comes down, making an upside-down U shape. This happens because at first only some workers get higher wages in the new industries, but later more people benefit. There is some evidence for this in countries like the UK where inequality did eventually fall after industrialisation. However, not all countries follow this pattern &#8212; some countries in East Asia managed to grow without much inequality. Also, in recent years rich countries like the USA have seen inequality rise again even though they are very wealthy, which the Kuznets curve doesn\'t explain. So the Kuznets curve is useful but not completely accurate.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Fatima</strong> gives the stronger answer. She correctly attributes the hypothesis to Kuznets (1955) with a date &#8212; an immediate credibility signal. She explains the underlying mechanism (agricultural-industrial labour shift), provides specific counter-evidence (East Asian tigers, US/UK second hump), names the explanatory factor for the counter-evidence (skill-biased technological change), and crucially describes the Kuznets curve as a <em>hypothesis</em> mediated by institutions &#8212; not a law. Ben covers similar ground but without dates, economists\' names, named mechanisms, or the critical point about institutional mediation. Fatima\'s answer accesses Level 4; Ben\'s Level 2-3.'
-      },
-
-      /* 3 &#8212; Elastic sort: GDP limitation */
+      /* 2 &#8212; Elastic sort: GDP limitation */
       { type: 'elastic_sort',
         stem: 'For each scenario, classify the relevant <strong>GDP welfare limitation</strong>.',
         categories: ['dist', 'env', 'inf', 'def'],
@@ -70,7 +55,7 @@
         exp: '<strong>Defensive expenditures</strong>: spending that fixes problems (crime security, oil clean-up) counts as positive GDP but does not improve welfare. <strong>Distribution</strong>: GDP averages hide inequality &#8212; rising GDP can coexist with stagnant median incomes. <strong>Environmental cost</strong>: pollution and carbon emissions reduce welfare without being subtracted from GDP. <strong>Informal economy</strong>: unpaid work and subsistence farming have real value omitted from official statistics. A* welfare essays match the correct limitation to the specific context rather than listing all limitations generically.'
       },
 
-      /* 4 &#8212; MCQ: geometric mean */
+      /* 3 &#8212; MCQ: geometric mean */
       { type: 'mcq',
         stem: 'The HDI uses a <strong>geometric mean</strong> rather than an arithmetic mean to aggregate its three sub-indices. What is the key implication of this choice?',
         opts: [
@@ -83,7 +68,7 @@
         exp: 'The <strong>geometric mean</strong> penalises imbalances between dimensions. If one sub-index is very low, the geometric mean will be much lower than an arithmetic average of the same numbers. This means a country with high income but very low health (e.g. a wealthy authoritarian state with poor public health) cannot hide its human development deficit behind high income. An A* answer states this explicitly: \'Unlike a simple average, the geometric mean ensures that poor health or poor education cannot be compensated by high income &#8212; reflecting the view that human development requires progress across all three dimensions simultaneously.\''
       },
 
-      /* 5 &#8212; Multi-select: HDI limitations */
+      /* 4 &#8212; Multi-select: HDI limitations */
       { type: 'multi_select',
         stem: 'Which of the following are genuine <strong>limitations of the HDI</strong> as a measure of welfare?',
         opts: [
@@ -98,7 +83,7 @@
         exp: 'Options A, C, and E are genuine HDI limitations. (A) The Inequality-Adjusted HDI (IHDI) attempts to address within-country inequality &#8212; the gap between HDI and IHDI reveals how much development is lost to inequality. (C) The HDI covers only three dimensions; political freedom, environmental quality, and social connection are excluded &#8212; the OECD Better Life Index is broader. (E) Equal weighting is a value judgment &#8212; why not weight health more, or include sustainability? Option B is false (the HDI is published annually). Option D is incorrect (GNI is <em>more</em> appropriate than GDP for welfare). Option F is unfounded.'
       },
 
-      /* 6 &#8212; Para fill: Easterlin paradox */
+      /* 5 &#8212; Para fill: Easterlin paradox */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the Easterlin paradox by selecting the correct word or phrase for each blank.',
         anchor: 'The Easterlin paradox challenges the assumption that rising incomes always raise welfare.',
@@ -116,7 +101,7 @@
         exp: '(1) <strong>Richer</strong>: within a given country at a point in time, higher income correlates with higher reported happiness. (2) <strong>Over time</strong>: the paradox is about the time-series &#8212; as countries grow richer, happiness does not keep rising. (3) <strong>Relative</strong>: comparing yourself to peers may drive wellbeing more than absolute level. (4) <strong>Absolute</strong>: absolute income is the total level of income, not relative to others. (5) <strong>Hedonic</strong>: hedonic adaptation &#8212; the hedonic treadmill &#8212; means gains are temporary. (6) <strong>Baseline</strong>: people return to their baseline happiness level. (7) <strong>GDP</strong>: the policy implication is that GDP-centred growth strategies may not maximise welfare.'
       },
 
-      /* 7 &#8212; Odd one out: welfare measures */
+      /* 6 &#8212; Odd one out: welfare measures */
       { type: 'odd_one_out',
         stem: 'Three of these are <strong>composite welfare measures</strong> that go beyond single-dimension GDP. Which is the ODD ONE OUT?',
         items: [
@@ -127,6 +112,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is the <strong>Gini coefficient</strong>. Unlike the HDI, Happy Planet Index, and MPI, the Gini coefficient is a <em>single-dimension</em> measure &#8212; it captures only income distribution, not multiple dimensions of welfare simultaneously. The other three are composite measures that deliberately combine multiple indicators to give a broader picture of human welfare. The Gini is an important supplementary measure for distribution but is not a composite welfare index.'
+      },
+
+      /* 7 &#8212; multi_select: evaluation of the Kuznets curve */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the Kuznets curve as a description of the relationship between economic development and income inequality</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'The Kuznets curve predicts that as per capita income rises, inequality first rises then falls, forming an inverted-U shape',
+          'The East Asian tigers (South Korea, Taiwan) achieved rapid industrialisation with declining rather than rising inequality, directly contradicting the inevitable rise phase &#8212; suggesting the curve describes one historical path, not a universal law',
+          'The Kuznets curve is a statistical hypothesis mediated by institutional choices rather than an automatic causal mechanism &#8212; countries can policy-design their way around the inequality-rise phase if redistribution is prioritised early in development',
+          'The UK and other early-industrialised nations show evidence of an inverted-U pattern in inequality over time',
+          'The re-emergence of rising inequality in high-income countries like the US and UK since the 1980s &#8212; a \'second hump\' attributable to skill-biased technological change and globalisation &#8212; suggests the curve understates the role of structural forces beyond income level alone',
+          'The Kuznets curve is wrong because inequality has risen in some rich countries'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option B</strong> is strong evaluation: it uses a specific counter-example (East Asian tigers) to challenge the universality of the rise phase, and reaches a directional conclusion &#8212; the curve describes one historical path rather than a law. This is a genuine evaluative move because it qualifies the scope of the argument with evidence. <strong>Option C</strong> is strong evaluation: it identifies the key analytical distinction between a statistical relationship and a causal mechanism, and argues that policy choices can alter the outcome &#8212; a sophisticated qualification that goes beyond description. <strong>Option E</strong> is strong evaluation: it introduces a specific mechanism (skill-biased technological change) to explain the second hump, directly challenging the curve\'s completeness and reaching a directional verdict that the model underestimates non-income structural forces. <strong>Option A</strong> is a distractor: it accurately describes the Kuznets hypothesis but makes no evaluative move &#8212; no weighing, qualification, or directional conclusion. <strong>Option D</strong> is a distractor: it offers one-sided supporting evidence without weighing it against counter-evidence or qualifying the claim. <strong>Option F</strong> is a distractor: it asserts the curve is wrong without a named mechanism, specific example, or directional argument &#8212; an overclaim with no analytical support.'
       },
 
       /* 8 &#8212; Data table: UK wellbeing evidence */
@@ -150,7 +150,7 @@
         exp: 'The data tell a nuanced story. GDP per capita has grown steadily (+13% over the period) &#8212; a positive material story. But life satisfaction peaked at 7.7 in 2019 and fell back to 7.3 by 2023 (below 2010). The Gini is broadly flat, worsening slightly by 2023. Mental health problems have risen consistently. This divergence &#8212; rising GDP but stagnant or falling wellbeing indicators &#8212; is precisely the pattern that motivates composite welfare measures like the ONS Wellbeing Framework. Option B is too optimistic (not all indicators improved). Option C overstates the 2019-23 decline. Option D attributes the entire pattern to inequality, ignoring other factors including the 2022-23 cost-of-living crisis.'
       },
 
-      /* 9 &#8212; Chain: HDI > GDP for welfare comparisons */
+      /* 9 &#8212; Chain: HDI &gt; GDP for welfare comparisons */
       { type: 'chain',
         stem: 'Place the steps in the correct order to explain why the HDI is <strong>preferable to GDP per capita</strong> for welfare comparisons between a high-income country and a middle-income developing country.',
         items: [

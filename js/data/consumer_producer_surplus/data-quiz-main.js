@@ -74,22 +74,7 @@
         exp: 'A per-unit tax shifts supply upward, creating a wedge between Pc (what buyers pay) and Pp (what sellers keep). <strong>CS falls</strong> because Pc &gt; Pe. <strong>PS falls</strong> because Pp &lt; Pe. <strong>Government revenue rises</strong> by (Pc &minus; Pp) &times; Qt &mdash; this is a transfer, not a welfare loss. <strong>DWL rises</strong> because output falls from Qe to Qt, destroying the surplus on those transactions. <strong>Quantity falls</strong>, Pc rises, and Pp falls. Note: tax revenue being a \'rise\' does not mean welfare is created &mdash; it is transferred from consumers and producers to government.'
       },
 
-      /* 4 — diagnostic_pair: welfare analysis of a tax */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Using a diagram, analyse the welfare effects of a per-unit indirect tax on a good with inelastic demand."</em> Which student provides the more analytically precise answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Imposing a per-unit indirect tax shifts the supply curve up by the tax amount. The tax creates a wedge between the consumer price Pc and the producer net price Pp, with the gap equalling the tax per unit. <br><br>Three distributional effects follow. First, consumer surplus falls by the rectangle (Pc &minus; Pe) &times; Qt plus the small CS triangle lost from reduced quantity. Second, producer surplus falls by the rectangle (Pe &minus; Pp) &times; Qt plus the small PS triangle. Third, the government collects tax revenue equal to (Pc &minus; Pp) &times; Qt &mdash; this is a <em>transfer</em> of surplus, not a welfare loss. The deadweight welfare loss is the two small triangles (the "Harberger triangles") representing trades that no longer occur and whose surplus is captured by no-one.<br><br>With inelastic demand, Pc rises substantially but quantity falls only slightly &mdash; so the DWL triangle is small and the consumer burden rectangle is large. This is why governments prefer inelastic markets (tobacco, alcohol, fuel) for indirect taxation: large revenue at low efficiency cost. The evaluation: the tax is welfare-improving <em>only if</em> it corrects a market failure (negative externality) whose social cost exceeds the DWL it creates.'
-          },
-          { name: 'Tomás', badge: 'Candidate B',
-            answer: 'When the government imposes an indirect tax, the supply curve shifts to the left and the equilibrium price rises while quantity falls. Consumer surplus falls because consumers are paying a higher price. Producer surplus also falls because the price producers receive (after paying the tax) is lower than before. The government collects some of the surplus that used to belong to consumers and producers, which is the tax revenue. There is also some welfare that is lost because some trades that would have happened no longer do &mdash; this is the deadweight loss. With inelastic demand the quantity falls by less, so the deadweight loss is smaller and the tax revenue is higher. This makes inelastic markets better for raising revenue. The tax could improve welfare if the market has a negative externality like pollution.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the analytically stronger answer. She uses the correct technical terminology throughout (Pc, Pp, Qt, Harberger triangles), distinguishes precisely between <em>transfers</em> (tax revenue) and <em>welfare destruction</em> (DWL), and breaks the CS and PS changes into their component rectangles and triangles. Her evaluation condition &mdash; "welfare-improving only if it corrects a market failure whose cost exceeds the DWL" &mdash; is a Level 4 application of Pigouvian logic. Tomás covers the same concepts but with less precision: "supply curve shifts to the left" (technically it shifts up/left), and he does not distinguish the transfer and destruction components of the welfare loss. He accesses Level 3; Priya Level 4.'
-      },
-
-      /* 5 — multi_select: effects of a subsidy */
+      /* 4 — multi_select: effects of a subsidy */
       { type: 'multi_select',
         stem: 'Which of the following are correct statements about the welfare effects of a per-unit subsidy in an otherwise competitive market?',
         opts: [
@@ -104,7 +89,7 @@
         exp: 'Options A, B, D, and F are correct. <strong>A</strong>: Buyers pay Pc &lt; Pe &rarr; CS rises. <strong>B</strong>: Sellers receive Ps &gt; Pe &rarr; PS rises. <strong>D</strong>: Government cost = subsidy per unit &times; post-subsidy quantity; Ps &minus; Pc = subsidy amount. <strong>F</strong>: The gain in CS + PS is less than the subsidy bill &mdash; the difference is the DWL triangle from the units between Qe and Qs, which cost more to produce than consumers value them at. Option C is wrong: welfare falls unless the subsidy corrects a positive externality. Option E is wrong: DWL arises regardless of demand elasticity whenever output is pushed beyond Qe (though the triangle is smaller with more inelastic demand).'
       },
 
-      /* 6 — para_fill: allocative efficiency */
+      /* 5 — para_fill: allocative efficiency */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about allocative efficiency and total surplus.',
         anchor: 'The competitive equilibrium is allocatively efficient because it maximises total surplus.',
@@ -122,7 +107,7 @@
         exp: '(1) <strong>Marginal benefit</strong>: what the next unit is worth to the buyer. (2) <strong>Marginal cost</strong>: what the next unit costs to produce. (3) <strong>Marginal benefit</strong>: the demand curve represents MB. (4) <strong>Welfare</strong>: CS + PS is maximised at the competitive equilibrium. (5) <strong>Mutually beneficial</strong>: below Qe, there are trades where MB &gt; MC that do not occur &mdash; both buyer and seller could gain. (6) <strong>Marginal cost</strong>. (7) <strong>Marginal benefit</strong>: above Qe, MC &gt; MB &mdash; producing those units consumes more resources than the benefit delivered. (8) <strong>Deadweight</strong>: the technical term for surplus lost, not transferred.'
       },
 
-      /* 7 — chain: three-step welfare analysis method */
+      /* 6 — chain: three-step welfare analysis method */
       { type: 'chain',
         stem: 'Place the steps of the three-step welfare analysis method in the correct order for an exam answer.',
         items: [
@@ -135,7 +120,22 @@
         exp: '<strong>Correct sequence:</strong><br>1. Identify the policy — you cannot draw or analyse before you know what the intervention is.<br>2. Draw the diagram — this is your evidence base for all subsequent analysis.<br>3. Classify each area — separate transfer (government revenue, redistribution between CS and PS) from destruction (DWL). This is the key analytical step many students skip.<br>4. State the net welfare effect and evaluate — only after the analysis is done. A conclusion like "welfare falls by the DWL triangle unless the externality corrected is larger" earns the evaluation mark.<br><br>Common errors: jumping to the conclusion before classifying areas, or describing only the CS fall without noting the revenue transfer.'
       },
 
-      /* 8 — odd_one_out: consequences of a price ceiling */
+      /* 8 — multi_select: evaluation of consumer and producer surplus */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>consumer and producer surplus and the welfare effects of government intervention</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'A per-unit tax always reduces total welfare, but the size of the welfare loss depends on the price elasticities of supply and demand — with very inelastic demand, the DWL triangle is small relative to the tax revenue rectangle, so the efficiency cost may be modest',
+          'Consumer surplus falls when a tax is imposed because consumers pay a higher price',
+          'Whether an indirect tax improves or reduces net social welfare depends on whether it corrects a pre-existing market failure: a tax on a negative externality can raise total welfare if the marginal external cost exceeds the DWL it creates',
+          'Rent control transfers surplus from producers to some consumers, but the evidence from Diamond et al. (2019) suggests the supply-reducing effect dominates in the long run, resulting in a net welfare loss even from the perspective of renters as a group',
+          'Producer surplus is the area above the supply curve and below the market price',
+          'Government intervention in markets is always justified when consumer surplus is low'
+        ],
+        correct: [0, 2, 3],
+        exp: '<strong>Options A, C, and D are genuine evaluation moves.</strong> Option A weighs the DWL against revenue and qualifies the conclusion by elasticity — this is evaluation through the use of evidence to reach a direction. Option C applies the Pigouvian logic to give a conditional verdict: the tax may improve welfare, but only if the externality correction exceeds the DWL — a precise evaluative condition. Option D uses named empirical evidence (Diamond et al.) to reach a qualified conclusion that goes beyond describing the transfer: the supply effect dominates, reversing the simple story. <strong>Option B</strong> is pure description — stating what happens to CS without weighing or qualifying. <strong>Option E</strong> is a definition, not evaluation. <strong>Option F</strong> is an unsupported overclaim with no direction or weighing of competing factors.'
+      },
+
+      /* 9 — odd_one_out: consequences of a price ceiling */
       { type: 'odd_one_out',
         stem: 'Three of the following are consequences of a price ceiling set <em>below</em> the free-market equilibrium. Which is the ODD ONE OUT?',
         items: [
@@ -148,7 +148,7 @@
         exp: 'The odd one out is option B. A price ceiling set below Pe reduces producer surplus &mdash; it does <em>not</em> increase it. Producers are forced to sell at a price below the free-market equilibrium, reducing the gap between price received and their minimum supply price. Some producers exit the market entirely. Options A, C, and D are genuine consequences. <strong>A</strong>: shortage is the defining result of any binding price ceiling (Qd &gt; Qs at Pmax &lt; Pe). <strong>C</strong>: DWL arises from the units between Qs and Qe that are no longer traded. <strong>D</strong>: sitting tenants under rent control are the classic example &mdash; those lucky enough to get the controlled good gain.'
       },
 
-      /* 9 — data_table: rent control evidence */
+      /* 10 — data_table: rent control evidence */
       { type: 'data_table',
         stem: 'The table summarises findings from a 2019 study of San Francisco rent control (Diamond et al.).',
         headers: ['Group affected', 'Outcome measured', 'Finding'],

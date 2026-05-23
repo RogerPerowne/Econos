@@ -102,22 +102,7 @@
         exp: 'Options A, C, D, and F justify tolerating monopoly under specific conditions. <strong>Natural monopoly</strong> (A): breaking it up would raise costs for all &#8212; regulate rather than fragment. <strong>Schumpeterian R&D</strong> (C): supernormal profit funds innovation that benefits consumers in the long run (pharmaceuticals, tech). <strong>Global competition</strong> (D): a domestic "champion" may need scale to compete against state-backed foreign rivals &#8212; the UK government\'s justification for allowing some concentration in sectors facing international competition. <strong>Cross-subsidy</strong> (F): Royal Mail\'s profitable urban mail subsidises the universal service obligation for rural deliveries. Option B (25% share, free entry) does not justify tolerance &#8212; free entry means the market is self-correcting. Option D describes predatory pricing &#8212; an anticompetitive strategy that should be prohibited, not tolerated.'
       },
 
-      /* 6 — Diagnostic pair: CMA effectiveness */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the effectiveness of the CMA in promoting competition in UK markets."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Fatima', badge: 'Candidate A',
-            answer: 'The CMA has demonstrated effectiveness in several areas: blocking the Meta/Giphy acquisition (structural remedy, 2021); forcing Google to change practices in search advertising; and requiring transparency in funeral services (market investigation, 2022). Fines up to 10% of global revenue provide significant deterrence for cartels. <strong>However</strong>, three systemic limitations reduce overall effectiveness. First, <em>speed</em>: the Microsoft/Activision investigation took 18 months, during which the merger\'s competitive effects were already being felt. Fast-moving digital markets evolve faster than investigations conclude. Second, <em>global platforms</em>: firms like Google and Meta operate globally &#8212; the CMA acts nationally, creating regulatory gaps and forum shopping. Third, <em>information asymmetry</em>: firms submitting evidence to the CMA control the data; the CMA relies partly on the very firms it is investigating. The new Digital Markets Unit (DMU) with ex-ante powers (binding codes of conduct before harm occurs) addresses the speed problem but faces implementation challenges. Overall: effective at blocking large mergers; less effective at disciplining the ongoing behaviour of established tech platforms.'
-          },
-          { name: 'James', badge: 'Candidate B',
-            answer: 'The CMA is effective because it can block mergers and fine companies. For example, it blocked some big tech mergers and investigated the funeral industry. The fines can be up to 10% of global revenue which is very large and should stop companies from breaking competition rules. However, the CMA is not always effective because investigations take a long time, so by the time they finish the market has already changed. Also, global companies like Google and Amazon operate in many countries so the CMA cannot control everything they do. In conclusion, the CMA is partially effective but faces challenges especially with large technology companies.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Fatima</strong> gives the stronger answer. She cites specific cases with dates and outcomes (Meta/Giphy 2021, Microsoft/Activision, funeral services), identifies three named, distinct limitations with clear explanations (speed, global platforms, information asymmetry), and demonstrates knowledge of the DMU as a policy development. Her conclusion is differentiated &#8212; effective at mergers, less at platform behaviour &#8212; rather than a blanket judgement. James covers the same broad points but at a generic level: "fines are large," "investigations take long," "global companies." The absence of specific cases, named limitations, or awareness of the DMU means James accesses Level 2&#8211;3; Fatima Level 4&#8211;5.'
-      },
-
-      /* 7 — Calculation: DWL estimation */
+      /* 6 — Calculation: DWL estimation */
       { type: 'calculation',
         context: 'A market has the following equilibrium data. Under <strong>perfect competition</strong>: P_c = &#163;20, Q_c = 100 units. Under <strong>monopoly</strong>: P_m = &#163;40, Q_m = 60 units. Assume the demand curve is linear and the MC curve is horizontal.',
         working: [
@@ -137,7 +122,7 @@
         exp: 'The DWL triangle has: base = Q_c &#8722; Q_m = 100 &#8722; 60 = 40 units; height = P_m &#8722; P_c = &#163;40 &#8722; &#163;20 = &#163;20. DWL = 0.5 &#215; 40 &#215; 20 = <strong>&#163;400</strong>. The rectangle (P_m &#8722; P_c) &#215; Q_m = &#163;20 &#215; 60 = &#163;1,200 is the consumer surplus <em>transferred</em> to the monopolist as supernormal profit &#8212; redistribution, not destruction. Total CS loss = &#163;1,200 (transferred) + &#163;400 (destroyed) = &#163;1,600. Only the &#163;400 triangle is unambiguous welfare destruction &#8212; the &#163;1,200 transfer is a distributional concern, not an efficiency loss.'
       },
 
-      /* 8 — Odd one out: competition policy tools */
+      /* 7 — Odd one out: competition policy tools */
       { type: 'odd_one_out',
         stem: 'Three of these are tools available to the CMA to address competition concerns. Which is the <strong>ODD ONE OUT</strong>?',
         items: [
@@ -148,6 +133,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is <strong>setting interest rates</strong>. Interest rate policy is the responsibility of the Bank of England\'s Monetary Policy Committee (MPC) &#8212; not the CMA. The CMA\'s toolkit comprises: (1) <strong>merger control</strong> (block or conditionally approve mergers); (2) <strong>structural remedies</strong> (require divestiture to restore competition); (3) <strong>market investigations</strong> (investigate markets not working well and impose behavioural or structural remedies); (4) <strong>antitrust enforcement</strong> (investigate cartels and abuse of dominance, impose fines). The distinction between monetary policy (Bank of England) and competition policy (CMA) is a standard knowledge test.'
+      },
+
+      /* 8 — Multi-select: evaluation of monopoly vs competition */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>monopoly versus competition</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Monopoly causes a deadweight welfare loss triangle because output is restricted below the competitive level, and P &gt; MC represents allocative inefficiency',
+          'The Schumpeterian dynamic efficiency argument has greatest force in markets with high R&D expenditure relative to output &#8212; such as pharmaceuticals &#8212; but weakest force in utilities, where the natural monopoly argument depends on cost structure rather than innovation incentives',
+          'Contestability matters more than the number of firms: a monopolist facing a credible threat of hit-and-run entry (zero sunk costs) may price near average cost, delivering near-competitive outcomes despite having 100% market share',
+          'Perfect competition achieves both allocative efficiency (P = MC) and productive efficiency (P = min AC) in long-run equilibrium, while monopoly achieves neither',
+          'Whether monopoly profit represents a welfare loss or a socially useful investment fund depends on the R&D intensity of the sector, the contestability of the market, and the strength of CMA enforcement &#8212; a blanket verdict is unlikely to be supported by the evidence across all industries',
+          'The Competition and Markets Authority has the power to block mergers and require divestiture when a substantial lessening of competition is found'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Options B, C, and E are evaluation.</strong> (B) qualifies the Schumpeterian argument by specifying the conditions under which it holds most and least strongly, reaching a directional conclusion that the argument is sector-dependent &#8212; a genuine evaluative move that avoids one-sided analysis. (C) introduces contestability as a factor that can override the structure-conduct-performance assumption, reaching the conclusion that market share is an unreliable guide to outcomes and that conduct depends on sunk costs &#8212; this directly qualifies any claim that monopoly is always harmful. (E) explicitly weighs three competing factors before concluding that a blanket verdict is unjustified &#8212; the evaluative move of identifying the conditions that determine the outcome rather than asserting a single direction. <strong>Options A, D, and F are not evaluation.</strong> (A) accurately describes the standard welfare analysis but is one-sided &#8212; it makes no attempt to weigh this against dynamic efficiency or natural monopoly arguments. (D) correctly contrasts long-run equilibrium outcomes but is pure description of the static efficiency comparison without evaluative qualification. (F) is factual description of CMA powers with zero evaluative content &#8212; it would score knowledge marks but not evaluation marks.'
       },
 
       /* 9 — MCQ: Bertrand paradox */

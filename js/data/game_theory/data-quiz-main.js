@@ -129,7 +129,22 @@
         exp: 'The odd one out is <strong>backward induction in chess</strong>. Backward induction is a method for solving <em>sequential</em> games — it is a solution technique, not an application of the prisoner\'s dilemma. The other three are all prisoner\'s dilemma structures: trade tariffs (dominant strategy: impose tariffs regardless of rival; mutual tariffs = trade war = mutually harmful outcome); arms races (dominant strategy: arm; mutual arming = costly and risky for all); advertising (dominant strategy: advertise; mutual advertising = same market share but higher costs for all). Each has the hallmark prisoner\'s dilemma structure: dominant strategy leads to a mutually suboptimal Nash equilibrium.'
       },
 
-      /* 8 — calculation: evaluating the grim trigger */
+      /* 8 — multi_select: evaluating game theory */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>game theory as an explanation of oligopoly behaviour</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'In a prisoner\'s dilemma, both players have a dominant strategy to defect, producing a Nash equilibrium that is worse for both than mutual cooperation',
+          'The Folk Theorem provides an apparent solution to the prisoner\'s dilemma in repeated games, but its practical relevance to oligopoly is limited by the end-game problem: as firms anticipate exit, merger, or regulatory intervention, cooperation unravels from the last period backwards, suggesting that game theory\'s prediction of sustained collusion relies on an infinite-horizon assumption that is rarely satisfied in real markets',
+          'The assumption of rational, payoff-maximising players is the most significant limitation of applying game theory to oligopoly: experimental evidence from ultimatum games and public goods experiments consistently shows that individuals value fairness and are willing to forgo personal gains to punish perceived unfairness — a pattern that standard game theory cannot explain without importing behavioural assumptions',
+          'Nash equilibrium is a situation where no player can improve their payoff by unilaterally changing their strategy',
+          'Game theory is a powerful framework for analysing oligopoly, but it generates multiple predictions (many games have several Nash equilibria) without a mechanism for selecting which will prevail — in markets with asymmetric information about costs and capacities, the "correct" equilibrium is indeterminate, limiting game theory\'s usefulness as a predictive tool rather than a descriptive framework',
+          'Firms in oligopoly are interdependent because the profit of each depends on the strategies of rivals'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Options B, C, and E are genuine evaluation moves.</strong> Option B identifies a specific internal weakness in the Folk Theorem argument: the end-game problem means infinite-horizon cooperation assumptions are violated in real oligopolies — this is evaluation by testing the theory\'s key assumption against market reality and drawing a conditional conclusion about its practical relevance. Option C engages with the rationality assumption using specific behavioural evidence (ultimatum games, public goods experiments) and explains why standard game theory cannot accommodate the finding — this is evaluation by contrasting the theory\'s assumptions with empirical evidence. Option E identifies the multiple-equilibria problem and derives its implication: game theory describes possibilities but cannot predict outcomes in information-asymmetric markets — this is evaluation by diagnosing the precise source of the theory\'s predictive limits. <strong>Option A</strong> describes the prisoner\'s dilemma structure — pure description. <strong>Option D</strong> defines Nash equilibrium — definition, not evaluation. <strong>Option F</strong> describes interdependence — a background fact, not evaluation of the framework\'s explanatory scope.'
+      },
+
+      /* 9 — calculation: evaluating the grim trigger */
       { type: 'calculation',
         context: 'Firm A and Firm B are in a duopoly. If both cooperate (honour quotas), each earns <strong>&#163;100m per year</strong>. If Firm A defects while B cooperates, A earns <strong>&#163;140m</strong> this year but then both earn <strong>&#163;60m per year forever</strong> (punishment phase under grim trigger). The discount factor is <strong>&#948; = 0.9</strong>.',
         working: [
@@ -149,21 +164,6 @@
         ],
         ans: 0,
         exp: '<strong>Cooperate.</strong> Cooperative stream: &#163;100m per year from this period = &#163;100m &#247; (1 &#8722; 0.9) = <strong>&#163;1,000m</strong>. Defect then punishment: &#163;140m today + &#163;60m &#247; (1 &#8722; 0.9) &#215; 0.9 = &#163;140m + &#163;540m = <strong>&#163;680m</strong>. Since &#163;1,000m > &#163;680m, cooperation dominates. Intuitively: the short-run gain from defecting (&#163;40m extra this year) is outweighed by the permanent reduction in future payoffs (from &#163;100m to &#163;60m per year — &#163;40m loss compounded forever). At high &#948; (patient firms), the future matters a lot, making cooperation individually rational. This is why OPEC can sustain coordination: the value of future oil revenues (&#948; high) exceeds the gain from unilateral overproduction.'
-      },
-
-      /* 9 — diagnostic_pair: game theory limits */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the extent to which game theory provides a complete explanation of oligopoly behaviour."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Game theory provides powerful insights: the prisoner\'s dilemma explains cartel instability (dominant strategy: cheat), the Folk Theorem explains why real cartels persist longer than one-shot analysis predicts (repeated game + high discount factor), and sequential game theory explains entry deterrence through capacity commitment. However, game theory has significant limitations. First, it assumes full <strong>rationality</strong> — experimental economics (ultimatum games, public goods experiments) consistently shows humans cooperate more than pure self-interest predicts; they value fairness and reciprocity. Second, game theory requires <strong>known payoffs</strong> — in practice, firms do not know rivals\' exact profit functions. Third, <strong>multiple Nash equilibria</strong> exist in many games — theory cannot predict which is selected without additional assumptions. Fourth, the <strong>Folk Theorem</strong> shows that almost any outcome can be sustained in repeated games — which makes the theory less predictively powerful (it explains everything, therefore predicts nothing specific). Overall, game theory provides a rigorous framework but should be complemented by behavioural economics and empirical evidence.'
-          },
-          { name: 'Jamie', badge: 'Candidate B',
-            answer: 'Game theory is useful for explaining oligopoly behaviour because it helps us understand why firms act the way they do when they know their rivals are also making decisions. The prisoner\'s dilemma shows why cartels are unstable and why firms often end up competing even when they would prefer to collude. Game theory also helps explain why some firms might advertise a lot even though it doesn\'t really increase the overall market. However, game theory has some limitations. It assumes firms act rationally and know all the possible outcomes, which is not always realistic. Firms may not know what their rivals will do. Also, in the real world there are often more than two firms which makes the analysis more complicated. Overall, game theory is useful but not a complete explanation of oligopoly behaviour.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She uses specific game theory concepts (dominant strategy, Folk Theorem, capacity commitment) to demonstrate breadth of understanding — not just the prisoner\'s dilemma. Her evaluation engages with <em>specific</em> named limitations: the rationality assumption (with behavioural evidence), unknown payoffs, multiple equilibria, and the over-breadth of the Folk Theorem. The phrase "explains everything, therefore predicts nothing specific" is analytically sophisticated. Jamie identifies real limitations (rationality, more than two firms) but at a descriptive level — the game theory vocabulary and analytical structure are less precise. Priya accesses Level 4; Jamie Level 2–3. The key differentiator: Priya names and applies concepts; Jamie describes general ideas.'
       },
 
       /* 10 — data_table: trade policy as prisoner's dilemma */

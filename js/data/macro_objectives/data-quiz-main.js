@@ -55,22 +55,7 @@
         exp: 'The <strong>Phillips curve mechanism</strong> runs through the labour market. When unemployment is low (workers scarce), workers have bargaining power and secure higher nominal wages. Higher wages raise firms\' unit labour costs. Firms pass costs onto consumers as higher prices &#8212; inflation rises. The reverse: when unemployment is high, workers accept lower or flat wages &#8212; cost pressures ease and inflation falls. This is a real mechanism, not just an observed correlation. Option B skips the wage mechanism. Option C describes a different (real wage flexibility) mechanism. Option D is wrong &#8212; the relationship is probabilistic and changes over time, not mechanically fixed.'
       },
 
-      /* 3 &#8212; Diagnostic pair: NAIRU application */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"In 2022, UK unemployment fell to 3.7% &#8212; below most estimates of the NAIRU. Analyse the likely consequences."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Chloe', badge: 'Candidate A',
-            answer: 'The NAIRU (Non-Accelerating Inflation Rate of Unemployment) is the unemployment rate consistent with stable inflation &#8212; estimated at ~4-4.5% for the UK. When actual unemployment falls below the NAIRU, the labour market is tight: workers have bargaining power and secure above-equilibrium wage settlements. With UK wage growth accelerating to 7-8% in 2022-23 (ONS data), unit labour costs rose sharply. Firms with pricing power passed these costs onto consumers via higher prices &#8212; second-round effects from the initial energy-price shock. The Bank of England, recognising that below-NAIRU unemployment was fuelling the wage-price spiral risk, raised Bank Rate from 0.1% to 5.25% between 2021 and 2023 &#8212; the fastest tightening cycle in decades. The consequence: below-NAIRU unemployment contributed to the inflation persistence above the 2% target even as energy price effects faded in 2023. The evaluation: the NAIRU is unobservable &#8212; if the MPC overestimated it, they may have tightened more than necessary, unnecessarily slowing growth.'
-          },
-          { name: 'Oliver', badge: 'Candidate B',
-            answer: 'When unemployment falls below the NAIRU, inflation tends to rise. This is because workers have more bargaining power and can demand higher wages. Companies then have to pay more in wages and pass these costs onto consumers through higher prices. In 2022, UK unemployment was very low and wage growth was high, which contributed to the high inflation we saw. The Bank of England responded by raising interest rates to reduce demand and bring inflation back down. The NAIRU is not directly observable, which makes policy difficult. If the Bank of England raises rates too much, they could cause a recession. Overall, falling below the NAIRU puts upward pressure on inflation and requires a monetary policy response.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Chloe</strong> gives the stronger answer. She defines the NAIRU precisely with the UK estimate (4-4.5%), quantifies the wage growth data (7-8%), names the mechanism (second-round effects via labour costs), cites the specific BoE policy response with the full rate path (0.1% to 5.25%), and crucially includes an evaluation point about NAIRU unobservability and the risk of over-tightening. Oliver covers the core logic but without quantification, without naming the second-round mechanism, without specific rate data, and without the unobservability evaluation point. Chloe\'s answer is evidence-dense and structurally complete; Oliver\'s is correct but sparse.'
-      },
-
-      /* 4 &#8212; Multi-select: growth-inflation conflict */
+      /* 3 &#8212; Multi-select: growth-inflation conflict */
       { type: 'multi_select',
         stem: 'Which of the following are examples of the <strong>trade-off between economic growth and low inflation</strong>?',
         opts: [
@@ -85,7 +70,7 @@
         exp: 'Options A, C, and D are direct examples of the growth-inflation trade-off. (A) Fiscal stimulus grows output but risks inflation. (C) Rate cuts stimulate growth but risk overheating. (D) Higher unemployment reduced wage-inflation linkage but at growth cost &#8212; the Phillips curve trade-off. Option B is an example of inflation harming competitiveness (not the direct growth-inflation trade-off). Option E is <em>incorrect</em> &#8212; even supply-side policies face a trade-off in the short run (they require spending that may be inflationary); only in the <em>long run</em> do they resolve the trade-off by shifting LRAS. Option F is primarily a growth-inflation conflict via exchange rate, but the mechanism is BoP-linked, not a pure growth-inflation trade-off.'
       },
 
-      /* 5 &#8212; Para fill: long-run Phillips curve */
+      /* 4 &#8212; Para fill: long-run Phillips curve */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the long-run Phillips curve.',
         anchor: 'Friedman and Phelps independently challenged the original Phillips curve in 1968.',
@@ -104,7 +89,7 @@
         exp: '(1) <strong>Short</strong>: the trade-off is temporary. (2) <strong>Money</strong>: money illusion &#8212; workers confuse nominal with real wages initially. (3) <strong>Below</strong>: pushing below the natural rate. (4) <strong>Adjust</strong>: adaptive expectations &#8212; workers adjust their wage demands. (5) <strong>Upward</strong>: the SRPC shifts up as expectations of higher inflation become embedded. (6) <strong>Long</strong>: in the long run, there is no trade-off. (7) <strong>Inflation</strong>: only ever-accelerating inflation, not permanently lower unemployment, results. (8) <strong>Vertical</strong>: the LRPC is vertical at the NAIRU &#8212; the graphical representation of no long-run trade-off.'
       },
 
-      /* 6 &#8212; Odd one out */
+      /* 5 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these are consistent with the <strong>1970s breakdown of the Phillips curve</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -117,7 +102,7 @@
         exp: 'The odd one out is option B. Late 1960s low unemployment with rising wages <em>confirms</em> the original Phillips curve &#8212; it is consistent with, not evidence against, the Phillips relationship. The other three all represent the 1970s breakdown: (A) the OPEC supply shock produced stagflation &#8212; the original Phillips curve predicted this was impossible because output and price should move in opposite directions via demand; (C) high inflation alongside above-frictional unemployment &#8212; simultaneous occurrence breaks the downward-sloping relationship; (D) upward SRPC shifts from de-anchored expectations &#8212; the Friedman/Phelps adaptive expectations mechanism confirmed empirically.'
       },
 
-      /* 7 &#8212; Data table: trade-offs in UK data */
+      /* 6 &#8212; Data table: trade-offs in UK data */
       { type: 'data_table',
         stem: 'The table shows selected UK macro indicators during key episodes.',
         headers: ['Year', 'CPI inflation', 'Unemployment rate', 'Real GDP growth', 'Bank Rate'],
@@ -138,7 +123,7 @@
         exp: 'Both A and B are correct &#8212; the 2022-24 transition illustrates multiple trade-offs simultaneously. The growth-inflation trade-off: real GDP growth fell from 4.1% to 0.5% as the BoE raised rates from 3.5% to 5.25% to combat 9.1% inflation. The Phillips curve dimension: unemployment rose from 3.7% (below NAIRU) to 4.2% as tighter policy reduced demand; inflation fell from 9.1% to 2.5% &#8212; consistent with a movement along (or a downward shift of) the SRPC. Option D is incorrect &#8212; 0.5% growth and rising unemployment are not \'costless\'; the cost of tightening was borne in lower growth and higher unemployment, even if less severe than feared.'
       },
 
-      /* 8 &#8212; Calculation: sacrifice ratio */
+      /* 7 &#8212; Calculation: sacrifice ratio */
       { type: 'calculation',
         context: 'The Bank of England raises Bank Rate from <strong>0.1% to 5.25%</strong> over 18 months. CPI falls from <strong>11.1% to 2.5%</strong> &#8212; a reduction of 8.6 percentage points. Real GDP growth falls from <strong>4.1% to 0.5%</strong> over the same period.',
         working: [
@@ -159,6 +144,21 @@
         exp: 'Approximate output cost: UK growth at 0.5% vs trend ~2%, so ~1.5pp below trend per year &#215; 2 years = ~3% of GDP. Inflation reduction = 8.6pp. Sacrifice ratio = 3/8.6 &#8776; <strong>0.35</strong>. This is relatively low historically &#8212; past disinflation episodes (1979-83 Thatcher, Volcker tightening in US) had sacrifice ratios of 1-3. The comparatively low 2022-24 UK sacrifice ratio reflects: (a) inflation partly fell automatically as energy prices eased; (b) strong employment during the tightening. A* answers note the sacrifice ratio as a concrete evaluation tool for monetary policy effectiveness.'
       },
 
+      /* 8 &#8212; multi_select: evaluation of macroeconomic objectives and trade-offs */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the conflicts between macroeconomic objectives</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'While demand stimulus reduces unemployment via the Phillips curve mechanism, this trade-off is only reliable in the short run: Friedman\'s adaptive expectations model shows that any attempt to hold unemployment persistently below the NAIRU results in ever-accelerating inflation rather than permanently lower unemployment &#8212; making the long-run growth-unemployment trade-off illusory.',
+          'There is a trade-off between economic growth and low inflation.',
+          'Supply-side policies can theoretically resolve the inflation-unemployment trade-off by reducing the NAIRU through better skills matching and job search improvements &#8212; but the 2022-24 UK episode illustrates that supply-side gains take years to materialise, offering no short-run relief when inflation is already above 9%.',
+          'The 2022-24 UK tightening episode demonstrates that the sacrifice ratio need not be large: the BoE raised Bank Rate to 5.25% and achieved an 8.6pp inflation reduction with real growth falling only from 4.1% to 0.5% &#8212; a sacrifice ratio of approximately 0.35%, well below historical disinflation episodes, qualifying the view that fighting inflation is always costly.',
+          'Higher interest rates reduce inflation and unemployment simultaneously.',
+          'Macroeconomic objectives sometimes conflict with each other.'
+        ],
+        correct: [0, 2, 3],
+        exp: '<strong>Option A</strong> is genuine evaluation: it concedes the short-run Phillips curve trade-off, but uses the Friedman adaptive expectations model to reach the direction that the long-run trade-off is fundamentally different &#8212; qualifying any policy that tries to exploit it permanently. <strong>Option C</strong> is evaluation: it concedes the theoretical power of supply-side resolution, but uses the specific 2022-24 episode to qualify the timing &#8212; reaching the direction that supply-side policy is the wrong tool for an acute inflation crisis. <strong>Option D</strong> is evaluation: it uses specific data (Bank Rate 5.25%, 8.6pp inflation reduction, sacrifice ratio 0.35%) to reach a qualified conclusion that the 2022-24 cost of disinflation was lower than feared, challenging a pessimistic prior about the costs of monetary tightening. <strong>Option B</strong> is description &#8212; stating the existence of a trade-off without specifying the mechanism, the conditions under which it holds, or any qualification. <strong>Option E</strong> is factually wrong and lacks analytical direction &#8212; higher rates typically raise unemployment, not reduce it. <strong>Option F</strong> is a vague observation with no direction, mechanism, or evidence.'
+      },
+
       /* 9 &#8212; MCQ: supply-side resolution */
       { type: 'mcq',
         stem: 'Which of the following best explains why <strong>supply-side policies</strong> can theoretically resolve the inflation-unemployment trade-off that demand management cannot?',
@@ -172,7 +172,7 @@
         exp: 'The theoretical power of supply-side policy: by reducing the NAIRU &#8212; through better skills matching (reducing structural unemployment) or improved job search (reducing frictional) &#8212; the economy can sustain lower unemployment <em>at stable inflation</em>. This is equivalent to shifting the LRPC left, so a given inflation rate corresponds to lower unemployment. Demand management cannot do this &#8212; it moves the economy along the SRPC, trading one problem for another. Option B is incorrect &#8212; supply-side policies affect LRAS/SRAS, not AD. Option C is incorrect &#8212; supply-side policies typically have much longer time lags than monetary policy. Option D overstates the credibility mechanism.'
       },
 
-      /* 10 &#8212; Chain: 1970s stagflation to monetarism */
+      /* 10 &#8212; chain: 1970s stagflation to monetarism */
       { type: 'chain',
         stem: 'Place the events in the correct order to describe how the 1970s stagflation episode led to the adoption of monetarist policy.',
         items: [

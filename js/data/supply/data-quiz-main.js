@@ -99,22 +99,7 @@
         exp: 'Options A, B, D, and F shift car supply <strong>leftward</strong>: higher steel prices raise input costs; stricter emissions regulations add compliance costs; semiconductor shortage limits production; factory closures reduce the number of producers. Option C (technology improvement) shifts supply <strong>rightward</strong> &#8212; lower cost per unit at every output level. Option D (price of new cars rises) is a movement <strong>along</strong> the supply curve, not a shift &#8212; a price change causes an extension of quantity supplied, not a shift. This mirrors the demand side: always check whether it is a price change (movement along) or a non-price change (shift).'
       },
 
-      /* 6 &#8212; Diagnostic pair: supply-side analysis */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Analyse why UK housing supply has failed to keep pace with housing demand over the past 20 years."</em> Which student demonstrates stronger analysis?',
-        students: [
-          { name: 'Anna', badge: 'Candidate A',
-            answer: 'UK housing supply is highly <strong>price inelastic</strong> (PES very low) due to structural constraints that prevent supply from responding adequately to rising prices. First, <strong>planning restrictions</strong>: the UK planning system requires local authority permission for new development; green belt protections and NIMBYism frequently delay or prevent new housing. Second, <strong>construction lead times</strong>: even with permission, building homes takes 2&#8211;4 years &#8212; so supply cannot respond quickly even if the price signal is strong. Third, <strong>land constraints</strong>: in high-demand areas (London, South East), suitable land is scarce and expensive; competition from commercial development limits residential supply. Fourth, <strong>speculative land banking</strong>: developers holding land without building reduces the supply response. The result: demand shifts from rising incomes, population growth, and low mortgage rates translate almost entirely into price rises rather than quantity increases &#8212; a classic consequence of very inelastic supply.'
-          },
-          { name: 'Dan', badge: 'Candidate B',
-            answer: 'Housing supply has not kept up because it is very hard to build new houses in the UK. Planning permission is slow and sometimes refused. There are not enough construction workers. Land in cities is expensive. The government has tried to help but not enough houses are being built. As a result there are not enough houses for everyone and prices are high. If more houses were built then prices would come down. The main problem is the planning system which needs to be reformed.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Anna</strong> gives the stronger answer. She introduces the economic concept of <strong>price elasticity of supply</strong> (PES) upfront, explaining what makes supply inelastic. She identifies four distinct, named supply constraints with precise detail (planning, lead times, land, land banking), and connects them back to the key analytical point: inelastic supply means demand shifts translate to price rather than quantity changes. Dan identifies the same practical issues but without the economic framework &#8212; no mention of PES, no mechanism connecting supply constraints to price outcomes. Anna accesses Level 4; Dan Level 2.'
-      },
-
-      /* 7 &#8212; Para fill: competing supply */
+      /* 6 &#8212; Para fill: competing supply */
       { type: 'para_fill',
         stem: 'Complete the paragraph about competing supply.',
         anchor: 'Competing supply arises when the same resources can produce either of two goods.',
@@ -129,6 +114,21 @@
           { id: 7, opts: ['rises', 'falls', 'stays constant', 'becomes indeterminate'], ans: 0 }
         ],
         exp: '(1) <strong>Land</strong> is the classic competing supply factor &#8212; a farmer can grow wheat OR oilseed rape, not both on the same field. (2) <strong>Substitute</strong> is the key word for competing supply &#8212; the goods compete for the same resources. (3) Higher price increases <strong>profitability</strong>, drawing resources in. (4) <strong>Productive</strong> resources (land, labour, capital) are switched. (5) Supply of Good B <strong>falls</strong>. (6) Supply curve shifts <strong>leftward</strong> (decrease in supply). (7) With unchanged demand and lower supply, price of Good B <strong>rises</strong>. Example: if wheat prices rise, farmers switch land to wheat → rapeseed supply falls → rapeseed price rises.'
+      },
+
+      /* 7 &#8212; multi_select: evaluation of UK housing supply */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>why UK housing supply has failed to keep pace with housing demand over the past 20 years</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'UK housing supply is constrained by planning restrictions and green belt protections',
+          'Because the price elasticity of supply (PES) for housing is very low, demand increases from rising incomes and population growth translate almost entirely into price rises rather than quantity increases &#8212; meaning reforms that ease supply constraints would have proportionally large price effects',
+          'Land banking by developers is the single definitive cause of the housing shortage; once eliminated, supply would respond adequately to demand',
+          'Even if planning restrictions were fully removed, the 2&#8211;4 year construction lead time would prevent supply from responding to demand shocks within any single Parliament &#8212; suggesting short-run policy interventions face an irreducible time-lag constraint regardless of their design',
+          'Both supply-side constraints (planning, land scarcity) and demand-side pressures (low mortgage rates, rising incomes, population growth) have contributed to the housing gap, making supply-only reforms necessary but insufficient without demand management',
+          'The government should build more houses to solve the housing crisis'
+        ],
+        correct: [1, 3, 4],
+        exp: '<strong>Option B</strong> is strong evaluation: it uses the PES framework to derive a specific directional implication &#8212; that supply reform would have a large price effect precisely because PES is low. This is analytical reasoning that goes beyond describing the problem. <strong>Option D</strong> is strong evaluation: it identifies a specific limiting condition (the construction lead time) and draws a directional conclusion &#8212; even ideal policy cannot produce short-run supply responses, constraining the set of effective interventions. This is a genuine qualification, not a blanket criticism. <strong>Option E</strong> is strong evaluation: it weighs both supply and demand-side factors, reaching a balanced directional conclusion &#8212; supply reform is necessary but insufficient without demand-side consideration. This is a classic evaluative move that avoids one-sided analysis. <strong>Option A</strong> is a distractor: it accurately describes supply-side constraints but makes no evaluative move &#8212; no mechanism connecting them to outcomes, no qualification, no directional conclusion. <strong>Option C</strong> is a distractor: it is an overclaim that attributes the entire housing shortage to one cause (land banking), ignoring planning, lead times, and infrastructure constraints &#8212; a one-sided assertion without evidence or qualification. <strong>Option F</strong> is a distractor: it states a policy preference without any mechanism, evaluation of effectiveness, or acknowledgement of constraints.'
       },
 
       /* 8 &#8212; Odd one out: causes of rightward supply shift */

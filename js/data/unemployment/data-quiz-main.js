@@ -70,22 +70,7 @@
         exp: '<strong>Frictional</strong>: short-term job search &#8212; always present, self-correcting. <strong>Structural</strong>: skills/location mismatch from deindustrialisation or technology change &#8212; long-term, needs retraining. <strong>Seasonal</strong>: predictable within-year demand variation &#8212; short-term. <strong>Real-wage</strong>: wages above market-clearing level &#8212; persistent while rigidity lasts. <strong>Cyclical</strong>: caused by a fall in AD (Keynesian unemployment) &#8212; the only demand-side type. The policy implication: only cyclical unemployment responds to fiscal or monetary stimulus. Applying demand-side policy to structural unemployment creates inflation without reducing unemployment.'
       },
 
-      /* 4 &#8212; Diagnostic pair: policy match */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess whether fiscal stimulus is an appropriate policy response to rising UK unemployment."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Marcus', badge: 'Candidate A',
-            answer: 'The appropriateness of fiscal stimulus depends critically on the <strong>type</strong> of unemployment. Cyclical unemployment &#8212; caused by a deficiency of aggregate demand &#8212; is best addressed by demand-side policies. Fiscal stimulus (&#8593;G or &#8595;T) shifts AD right, raising output and employment. The 2020 furlough scheme is a direct example: it maintained &#163;68bn of household income, preventing demand from collapsing and cyclical unemployment from soaring. However, fiscal stimulus is largely <strong>ineffective against structural unemployment</strong> &#8212; caused by skills mismatches between available workers and available jobs. Even if stimulus raises demand, employers cannot fill vacancies with structurally unemployed workers. The result is inflation without employment gain. Since the UK\'s current unemployment challenge contains a significant structural component &#8212; post-pandemic skills mismatches, regional divergences &#8212; fiscal stimulus alone is insufficient. Supply-side policies (retraining, apprenticeships, regional investment) are the appropriate complement.'
-          },
-          { name: 'Amy', badge: 'Candidate B',
-            answer: 'Fiscal stimulus can help reduce unemployment by boosting spending in the economy. If the government spends more money on things like infrastructure, this creates jobs and raises incomes. Higher incomes mean more spending, and the multiplier effect means the total impact is larger. However, fiscal stimulus might not work in all cases. If unemployment is because workers don\'t have the right skills, giving them more jobs through government spending won\'t work because businesses still need skilled workers. Also, fiscal stimulus can cause inflation if the economy is already near full capacity. So fiscal stimulus is a good policy for some types of unemployment but not others, and the government needs to consider the causes before deciding on the policy.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Marcus</strong> gives the stronger answer. He explicitly identifies the type of unemployment as the key determinant of policy appropriateness &#8212; the analytical framework the examiner is looking for. He uses a specific quantified example (&#163;68bn furlough scheme), names the mechanism for failure against structural unemployment (inflation without employment gain), and reaches a specific policy recommendation (supply-side complement). Amy covers similar ground but without the explicit type-to-policy mapping, without specific examples, and without quantification. The diagnostic structure &#8212; \'name the type first\' &#8212; is what distinguishes A* from B.'
-      },
-
-      /* 5 &#8212; MCQ: wage stickiness */
+      /* 4 &#8212; MCQ: wage stickiness */
       { type: 'mcq',
         stem: 'Keynes argued that <strong>wages are sticky downward</strong>. What is the implication of this for cyclical unemployment?',
         opts: [
@@ -98,7 +83,7 @@
         exp: 'The Classical model says: if AD falls, wages fall → labour market clears → unemployment is temporary. Keynes challenged this: <strong>nominal wages are sticky downward</strong> because of union contracts, employee morale, and social norms against pay cuts. If wages cannot fall, the self-correcting mechanism is blocked. Cyclical unemployment persists, and active demand stimulus (fiscal or monetary) is needed to shift AD back. Option B inverts the logic &#8212; firms respond to lower revenues by cutting jobs (the stickiness is in wages, not employment decisions). The derived demand mechanism: falling AD reduces demand for output, which reduces demand for labour.'
       },
 
-      /* 6 &#8212; Para fill: hysteresis */
+      /* 5 &#8212; Para fill: hysteresis */
       { type: 'para_fill',
         stem: 'Complete the paragraph about hysteresis and long-term unemployment.',
         anchor: 'Hysteresis is the term for the long-term scarring effects of unemployment.',
@@ -116,7 +101,7 @@
         exp: '(1) <strong>Long-term</strong>: hysteresis operates through extended unemployment spells. (2) <strong>Atrophy</strong>: skills deteriorate through non-use. (3) <strong>Employment</strong>: gaps in CVs trigger employer discrimination. (4) <strong>Cyclical</strong>: the initial shock is demand-driven (cyclical). (5) <strong>Structural</strong>: the scarring converts it into a structural problem (skills mismatch). (6) <strong>NAIRU</strong>: the natural rate rises because structural unemployment has increased. (7) <strong>Shallow</strong>: shallow recessions prevent the hysteresis channel from activating &#8212; another Keynesian argument for timely counter-cyclical intervention.'
       },
 
-      /* 7 &#8212; Multi-select: economic costs */
+      /* 6 &#8212; Multi-select: economic costs */
       { type: 'multi_select',
         stem: 'Which of the following are genuine <strong>economic costs of unemployment</strong>?',
         opts: [
@@ -129,6 +114,21 @@
         ],
         correct: [0, 1, 2, 4],
         exp: 'Options A, B, C, and E are genuine economic costs. (A) Below-PPF output is a permanent welfare loss &#8212; it cannot be recovered. (B) The fiscal hit is ~&#163;10-15bn per percentage point of UK unemployment (lost income tax + VAT + NI + higher JSA). (C) Hysteresis converts cyclical into structural unemployment, raising the NAIRU. (E) The multiplier works in reverse: unemployed workers cut consumption, which further reduces AD. Option D is incorrect &#8212; unemployment is <em>deflationary</em> (workers lack bargaining power, wage growth falls). Option F is a contested efficiency argument, not a cost of unemployment as such.'
+      },
+
+      /* 7 &#8212; multi_select: evaluation of fiscal stimulus for unemployment */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>whether fiscal stimulus is an appropriate policy response to rising UK unemployment</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Fiscal stimulus shifts AD rightward and creates jobs through the multiplier effect',
+          'The appropriateness of fiscal stimulus depends critically on the type of unemployment: it is effective against cyclical unemployment (AD deficiency) but largely ineffective against structural unemployment &#8212; where applying it causes inflation without employment gain rather than reducing the unemployment rate',
+          'Fiscal stimulus is always the correct response to rising unemployment because unemployment causes falling incomes and reduced tax revenue',
+          'Even where fiscal stimulus is appropriate for cyclical unemployment, its effectiveness depends on the size of the fiscal multiplier &#8212; which is larger when the economy has significant spare capacity, when interest rates are at the lower bound (crowding-out is limited), and when households have a high marginal propensity to consume &#8212; conditions that do not always hold',
+          'The 2020 UK furlough scheme (&#163;68bn of household income maintained) demonstrates fiscal intervention preventing a demand-driven unemployment spike &#8212; but this was a supply-side shock context where the intervention preserved employment relationships rather than creating new demand, illustrating that policy design must match the specific shock, not just the aggregate unemployment rate',
+          'Supply-side policies like retraining are better than fiscal stimulus because they address structural unemployment'
+        ],
+        correct: [1, 3, 4],
+        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it identifies the type of unemployment as the key determinant of fiscal stimulus effectiveness, derives a directional conclusion for each type (effective for cyclical; causes inflation for structural), and avoids the common error of applying the policy universally. This is the central evaluative distinction in any unemployment policy essay. <strong>Option D (index 3)</strong> is strong evaluation: it qualifies the effectiveness of fiscal stimulus even within its appropriate domain (cyclical unemployment) by identifying three conditions for a large multiplier, drawing a directional conclusion &#8212; the policy only works well when these conditions hold. This conditional analysis earns Level 4. <strong>Option E (index 4)</strong> is strong evaluation: it uses the furlough scheme as a specific quantified example, but then qualifies its applicability by noting the policy design was preservation of employment relationships during a supply-side shock &#8212; a more sophisticated point than simply citing the furlough as evidence that fiscal policy works. <strong>Option A (index 0)</strong> is a distractor: it describes the mechanism of fiscal stimulus without evaluation &#8212; no conditions, no type-of-unemployment analysis, no qualifying argument. <strong>Option C (index 2)</strong> is a distractor: an overclaim that ignores the type of unemployment (structural unemployment does not respond to AD stimulus) and ignores crowding-out and debt sustainability concerns. <strong>Option F (index 5)</strong> is a distractor: it makes a one-sided comparison without acknowledging that supply-side policies have long time lags and are themselves ineffective against cyclical unemployment &#8212; both instruments are necessary in different contexts.'
       },
 
       /* 8 &#8212; Data table: UK unemployment episodes */

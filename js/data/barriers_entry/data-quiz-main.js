@@ -86,22 +86,7 @@
         exp: '(1) <strong>Use</strong>: network effects depend on usage, not just purchase. (2) <strong>Chicken-and-egg</strong>: a new entrant needs users to be valuable, but needs to be valuable to attract users &#8212; a classic catch-22. (3) <strong>Winner-take-all</strong>: network effects compound over time, driving all users to the dominant platform. (4) <strong>Network</strong>: switching from WhatsApp means losing access to all your contacts on WhatsApp &#8212; the "network" is the value. (5) <strong>Interoperability</strong>: if platforms must allow users to message across services, the network advantage of incumbents is reduced. (6) <strong>Facebook</strong>: Meta owns both WhatsApp and Facebook/Instagram &#8212; the most cited example of platform network effects under regulatory scrutiny.'
       },
 
-      /* 5 — Diagnostic pair: patent system */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate whether the patent system is beneficial or harmful for economic welfare."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Chiara', badge: 'Candidate A',
-            answer: 'Patents create a deliberate trade-off: 20 years of legal monopoly to incentivise private R&D investment. <strong>The case for</strong>: without patents, firms investing &#163;1&#8211;2bn in pharmaceutical development face immediate imitation by rivals who bear no R&D cost &#8212; private returns fall below social returns, so under-investment in innovation follows. Patents temporarily correct this market failure by creating a temporary monopoly as reward. <strong>The case against</strong>: during the patent term, P &gt; MC creates a DWL and restricts access &#8212; HIV/AIDS drugs patented at $10,000 per course while generic equivalents cost $300 illustrates the access problem for low-income consumers. The welfare verdict is industry-specific: pharmaceutical patents are most justified (high R&D cost, large social value of drugs); software patents are more questionable (low marginal replication cost, "patent trolls" weaponising broad patents to block innovation). A TRIPS-style compulsory licensing mechanism for essential medicines attempts to balance access and incentive, but imperfectly.'
-          },
-          { name: 'Raj', badge: 'Candidate B',
-            answer: 'The patent system is good because it encourages firms to spend money on research and development. Without patents, other firms could copy the invention and sell it cheaper, so the inventing firm would not be able to recover its costs. For example, drug companies spend billions developing medicines and need patents to earn back their money. However, patents are bad for consumers because they allow firms to charge high prices. Poor countries cannot afford expensive medicines. Also, patents last 20 years which is a long time to have a monopoly. After patents expire, cheaper generic drugs come onto the market. Overall, patents are mostly good because they lead to innovation which benefits society in the long run.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Chiara</strong> gives the stronger answer. She frames the patent system as a policy response to a <em>market failure</em> (divergence of private and social returns to R&D) &#8212; not just a "reward for effort." She uses specific data (&#163;1&#8211;2bn R&D, HIV drug pricing) and applies the welfare framework (DWL, access). Most importantly, she provides a <em>context-dependent</em> conclusion &#8212; patents are more justified in pharmaceuticals than software &#8212; and mentions TRIPS/compulsory licensing as a policy refinement. Raj captures the key ideas at a descriptive level but without the analytical structure (market failure, efficiency criteria, industry-specific evaluation). Raj accesses Level 2&#8211;3; Chiara Level 4&#8211;5.'
-      },
-
-      /* 6 — Odd one out: types of barrier */
+      /* 5 — Odd one out: types of barrier */
       { type: 'odd_one_out',
         stem: 'Three of these create barriers to entry by raising <strong>sunk costs</strong> or <strong>capital requirements</strong> for new entrants. Which is the <strong>ODD ONE OUT</strong>?',
         items: [
@@ -114,7 +99,7 @@
         exp: 'The odd one out is the <strong>supermarket price cut</strong>. This is a <em>strategic barrier</em> (specifically, a form of limit or predatory pricing behaviour) rather than a cost-based entry barrier. Options A, B, and D all involve high financial outlays that constitute barriers because they must be committed before entry &#8212; aircraft engine R&D and water infrastructure are structural barriers (large capital/sunk cost requirements), while a large advertising spend to build brand awareness is a sunk cost barrier (once spent on advertising, the money cannot be recovered). The temporary price cut is a <em>reaction</em> by the incumbent, not a fixed cost that deters entry &#8212; it is a strategic action.'
       },
 
-      /* 7 — Data table: barrier height by industry */
+      /* 6 — Data table: barrier height by industry */
       { type: 'data_table',
         stem: 'The table shows estimated entry conditions across four UK industries.',
         headers: ['Industry', 'Typical sunk costs', 'Scale economies', 'Key legal barriers', 'Ease of entry (1=easy, 5=hard)'],
@@ -135,7 +120,7 @@
         exp: 'Option A is most consistent with the data. Banking (ease of entry = 5) combines all three barrier types: high sunk IT/compliance costs, meaningful scale economies, and a strict legal licence requirement from the Prudential Regulation Authority. This "stacking" of barriers explains why new challenger banks (Monzo, Starling) required years of regulatory preparation and significant capital. Option B is wrong &#8212; streaming scores 4 despite having no legal barriers, because content sunk costs and network effects substitute for legal barriers. Option C is wrong &#8212; hairdressing\'s low barriers reflect low sunk costs and minimal scale requirements, not merely regulation. Option D is wrong &#8212; petrol retailing has moderate scale economies but scores only 2, showing scale economies alone are insufficient.'
       },
 
-      /* 8 — MCQ: predatory pricing test */
+      /* 7 — MCQ: predatory pricing test */
       { type: 'mcq',
         stem: 'Under EU and UK competition law, which cost benchmark is most commonly used to establish a <em>presumption</em> of predatory pricing?',
         opts: [
@@ -146,6 +131,21 @@
         ],
         ans: 0,
         exp: 'The <strong>AVC benchmark</strong> is the standard presumption test (following the EU <em>AKZO</em> case, 1991). If a firm prices below AVC, it is covering neither fixed nor variable costs on those sales &#8212; the only rational explanation is a strategy to eliminate the rival (you must earn at least AVC for each unit to be better off producing than not). Pricing below ATC but above AVC is more ambiguous &#8212; it could be a legitimate response to market conditions or predatory; the burden of proof lies with the competition authority. Pricing below a rival\'s price (Option C) is not inherently predatory &#8212; price competition is desirable. Industry average (Option D) is not a legal standard.'
+      },
+
+      /* 8 — Multi-select: evaluation of barriers to entry */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>barriers to entry and their effects on competition</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Whether high barriers to entry harm consumers depends on the type of barrier: structural barriers (economies of scale, natural monopoly) may lower average costs and reduce prices even while limiting entry, whereas strategic barriers (predatory pricing, patent flooding) raise prices without any countervailing efficiency benefit',
+          'Barriers to entry allow incumbent firms to earn supernormal profit in the long run',
+          'The patent system creates a deliberate welfare trade-off: the 20-year monopoly causes deadweight loss and access problems (HIV/AIDS drugs patented at $10,000 vs $300 for generics) but corrects the market failure of under-investment in R&D &#8212; making the welfare verdict industry-specific rather than uniformly positive or negative',
+          'Sunk costs are irrecoverable costs that deter entry by raising the financial commitment required',
+          'Network effects are a particularly durable barrier because they are self-reinforcing &#8212; yet the UK CMA&#8217;s push for interoperability requirements on messaging platforms shows that regulatory reform can reduce incumbent network advantages without breaking up the firm, offering a less disruptive remedy than divestiture',
+          'Legal barriers such as patents and licences create monopoly power for incumbent firms'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it distinguishes two categories of barrier by their welfare implications (efficiency-enhancing vs purely exclusionary), reaches a directional conclusion that the harm depends on type &#8212; this is the highest-level analytical move in barriers essays. Option C is strong evaluation: it frames patents as a policy response to a specific market failure, uses concrete evidence ($10,000 vs $300) to quantify the access cost, and reaches a qualified, industry-specific verdict rather than a blanket judgement. Option E is strong evaluation: it identifies a reinforcing mechanism (self-reinforcing nature of network effects), then qualifies the implication by noting a specific regulatory remedy (interoperability) that addresses the problem proportionately &#8212; weighing remedies against each other is a genuine evaluative move. Option B describes a consequence of barriers without any qualification, context, or counter-argument &#8212; it is analysis, not evaluation. Option D is definitional description of sunk costs &#8212; it states a fact rather than weighing competing considerations or qualifying a claim. Option F describes the effect of legal barriers without evaluating their justification, magnitude, or conditions.'
       },
 
       /* 9 — Chain: entry barrier life cycle */

@@ -108,22 +108,7 @@
         exp: '(1) <strong>Change</strong>: the accelerator is driven by &#8710;Y, not Y itself. (2) <strong>&#916;Y</strong>: I = v &#215; &#8710;Y where v is the capital-output ratio. (3) <strong>Falls</strong>: if &#8710;Y falls (growth slows), investment falls even though the level of Y is still rising. (4) <strong>Volatile</strong>: UK investment fell 25% in 2008-09 despite I being only 17% of AD. (5) <strong>Multiplier</strong>: multiplier-accelerator interaction amplifies cycles. (6) <strong>Accelerates</strong>: rising income accelerates investment which raises income further. (7) <strong>Spare capacity</strong>: firms with idle machinery will use it before investing &#8212; the accelerator is a tendency, not a mechanical rule.'
       },
 
-      /* 6 &#8212; Diagnostic pair: multiplier and austerity */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"In 2010, the UK coalition government began a significant programme of fiscal austerity to reduce the budget deficit. Evaluate the economic consequences of this approach."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Lydia', badge: 'Candidate A',
-            answer: 'Fiscal austerity (&#8595;G or &#8593;T) reduces aggregate demand directly, with a multiplied effect on national income. The policy aimed to reduce the structural deficit &#8212; which was approximately 10% of GDP post-2008. The Treasury initially assumed a fiscal multiplier of ~0.5, implying modest output costs. However, the IMF\'s 2012 World Economic Outlook revised its multiplier estimates for recession contexts upward to 0.9-1.7 &#8212; implying the 2010-12 austerity programme was significantly more contractionary than anticipated. UK GDP growth halved from ~2% to ~1% between 2010-12, consistent with larger multipliers. In the Keynesian model, with the economy on the horizontal LRAS (spare capacity), fiscal contraction is maximally contractionary &#8212; exactly the wrong time to reduce G. The paradox of thrift compounds this: if households are simultaneously deleveraging, additional public sector withdrawal further collapses AD. However, a counter-argument is that fiscal credibility (reducing the deficit) prevented a gilt market crisis and kept borrowing costs low &#8212; maintaining the conditions for eventual recovery.'
-          },
-          { name: 'Sam', badge: 'Candidate B',
-            answer: 'Austerity means cutting government spending or raising taxes. This reduces aggregate demand through the multiplier effect. In 2010 the government did this because the deficit was very high after the 2008 financial crisis. The effect was that economic growth slowed down. The multiplier worked in reverse, so the total cut in AD was bigger than the initial reduction in spending. Critics argued this was the wrong policy because the economy was in recession and needed demand stimulus, not cuts. The 2010 austerity is still debated today. Some economists think it was necessary to restore confidence, while others think it went too far and slowed the recovery.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Lydia</strong> gives the stronger answer. She quantifies the deficit (10% of GDP), names the specific multiplier revision (IMF 2012, 0.9-1.7) with a source, applies the Keynesian horizontal LRAS argument to the spare capacity context, names the paradox of thrift as a compounding mechanism, and then provides a genuine counter-argument (gilt market credibility). Sam covers the core logic but without quantification, without the IMF evidence, without the LRAS context, and with only a vague \'some economists\' counter-argument. Lydia\'s answer is evidence-based, conditional, and structurally complete &#8212; the A* pattern.'
-      },
-
-      /* 7 &#8212; Multi-select: factors raising multiplier */
+      /* 6 &#8212; Multi-select: factors raising multiplier */
       { type: 'multi_select',
         stem: 'Which of the following would tend to <strong>increase the size of the fiscal multiplier</strong>?',
         opts: [
@@ -138,7 +123,7 @@
         exp: 'Options A, C, D, and F all increase the multiplier. (A) Spare capacity: with a negative output gap, extra AD becomes real output not inflation, maximising the multiplier. (C) Low-income, high-MPC targeting: each &#163;1 circulates more, with less leaking into savings. (D) No import leakage: a closed economy retains all spending domestically. (F) ZLB: no crowding out via interest rate rises. Option B (rate rises) and E (high-income earners, low MPC) both <em>reduce</em> the multiplier &#8212; option B through crowding out, option E through high savings rates.'
       },
 
-      /* 8 &#8212; Odd one out */
+      /* 7 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these are <strong>reasons to use national income per capita cautiously as a welfare measure</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -149,6 +134,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is option C. International comparability using PPP-adjusted data is a <strong>strength</strong> of GDP per capita &#8212; it allows meaningful cross-country welfare comparisons. The other three are genuine caveats: (A) distribution &#8212; average income can rise while median income falls; (B) environmental externalities are omitted from GDP; (D) leisure and work-life balance are not captured by output measures. A* welfare essays always include at least two of these caveats, matched to the specific country context in the question.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of the multiplier and fiscal policy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the multiplier and fiscal policy</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'The fiscal multiplier is larger in a recession with a negative output gap than at full employment because spare capacity means extra AD translates into real output growth rather than inflation, amplifying the income effect of any injection',
+          'The multiplier works by causing a chain of spending: an initial injection raises income, which raises consumption by the marginal propensity to consume, which raises income again, and so on until leakages absorb the full injection',
+          'Infrastructure investment has a higher multiplier (1.5&#8211;2.0) than corporation tax cuts (0.2&#8211;0.4) because construction workers have higher MPC and the spending stays largely domestic &#8212; making the composition of fiscal stimulus as important as its size',
+          'Government spending increases aggregate demand through the multiplier effect, with the size of the total increase depending on the marginal propensity to consume and the rate of leakages',
+          'A fiscal credibility argument qualifies the Keynesian case for stimulus: if markets doubt the government\'s ability to stabilise debt, gilt yields rise and crowd out private investment, potentially offsetting the multiplier effect &#8212; as illustrated by the UK\'s experience during the 2022 mini-budget',
+          'The marginal propensity to save, the marginal rate of taxation, and the marginal propensity to import all act as leakages that reduce the size of the multiplier below the simple 1/(1&#8722;MPC) formula'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Options A, C, and E are evaluation.</strong> (A) qualifies the size of the multiplier by specifying the macroeconomic conditions (negative output gap vs full employment) that determine whether it is large or small &#8212; reaching a directional conclusion that the multiplier is context-dependent, not a fixed number. (C) uses the comparison between infrastructure and corporate tax multipliers to reach the evaluative conclusion that stimulus composition matters as much as scale &#8212; a genuine weighing of evidence with a specific direction. (E) introduces the fiscal credibility counter-argument to the Keynesian stimulus case, specifying the mechanism (gilt yield rise → crowding out) and citing the 2022 mini-budget as evidence, reaching a qualified conclusion that the multiplier effect may be offset in certain fiscal contexts. <strong>Options B, D, and F are not evaluation.</strong> (B) is an accurate description of the multiplier mechanism but is pure description with no evaluative content &#8212; it does not qualify the conclusion or weigh competing factors. (D) is a general statement of how fiscal policy works through the multiplier &#8212; correct but entirely descriptive. (F) correctly identifies the three leakages and their effect on the multiplier but is description of a formula rather than evaluation of when or how much the multiplier matters in a specific context.'
       },
 
       /* 9 &#8212; Data table: multiplier policy types */

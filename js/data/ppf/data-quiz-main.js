@@ -69,22 +69,7 @@
         exp: '<strong>Outward shifts</strong> occur when the economy gains productive potential: new technology, improved skills, greater resource availability (new oil, more land in use). These represent <em>economic growth</em> &#8212; previously unattainable combinations become possible. <strong>Inward shifts</strong> occur when productive capacity is lost: war destroys capital, environmental damage reduces land, a pandemic permanently reduces labour supply. Note: a movement from inside the PPF to the frontier (reducing unemployment) is not a shift &#8212; it is recovery of existing potential.'
       },
 
-      /* 4 &#8212; Diagnostic pair: capital goods investment */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the view that an economy should sacrifice present consumption to invest more heavily in capital goods."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Amir', badge: 'Candidate A',
-            answer: 'Producing more capital goods now means moving along the PPF toward the capital-goods axis &#8212; sacrificing consumer goods (lower living standards today). However, capital goods (machinery, infrastructure, technology) expand productive capacity, shifting the PPF <strong>outward further in the future</strong> than it would otherwise move. This is the classic inter-temporal trade-off: consume less now for greater output capacity later. Historical evidence supports this: South Korea and China both sustained investment-to-GDP ratios above 35% during their high-growth decades, enabling rapid PPF expansion. However, the strategy requires institutional capacity to maintain low consumption politically, and carries risks &#8212; capital goods may become obsolete (e.g. steel mills in the UK) or be misallocated through poor central planning. The optimal balance depends on time preferences, existing capital stock, and political feasibility. For a capital-poor developing country, the case for prioritising capital investment is stronger than for an already capital-rich economy.'
-          },
-          { name: 'Leila', badge: 'Candidate B',
-            answer: 'If a country produces more capital goods it will be able to produce more in the future because capital goods are things like factories and machines that help make other things. This means the PPF will shift outward. Countries like China did this and grew very fast. However, people today will have fewer consumer goods and might not be happy with this. Also it depends on whether the capital goods are useful &#8212; if nobody wants what they produce then there is no point making them. So there are pros and cons and it depends on the circumstances.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Amir</strong> gives the stronger answer. He uses PPF diagram logic (moving along the frontier, shifting it outward), provides precise historical evidence with data (investment-to-GDP ratios), identifies specific risks (obsolescence, misallocation), and qualifies his conclusion based on context (developing vs developed economies). Leila identifies the same core point but uses vague language ("things like factories"), no data, and superficial evaluation ("pros and cons"). Amir would access Level 4; Leila Level 2. The analytical hierarchy: mechanism → evidence → qualification is the A-level essay structure.'
-      },
-
-      /* 5 &#8212; Multi-select: statements true of PPF */
+      /* 4 &#8212; Multi-select: statements true of PPF */
       { type: 'multi_select',
         stem: 'Select ALL statements that are <strong>correct</strong> about a production possibility frontier.',
         opts: [
@@ -99,7 +84,7 @@
         exp: 'Options A, B, C, E, and F are all correct. Option D is <strong>incorrect</strong>: moving from inside the frontier to the frontier (for example by reducing unemployment) is not an outward shift &#8212; it is recovery of existing productive capacity. An outward shift requires additional resources or improved technology. The key distinctions: <em>on</em> the PPF = productively efficient; <em>inside</em> = inefficient; <em>outside</em> = unattainable; <em>shift</em> = change in productive potential; <em>movement along</em> = reallocation of existing resources.'
       },
 
-      /* 6 &#8212; Para fill: PPF and trade */
+      /* 5 &#8212; Para fill: PPF and trade */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the PPF and gains from trade by selecting the correct word or phrase.',
         anchor: 'The PPF explains why specialisation and trade can benefit both trading partners.',
@@ -116,7 +101,7 @@
         exp: '(1) Each country is bounded by its own <strong>production possibility</strong> frontier. (2) Comparative advantage is defined by <strong>opportunity</strong> cost &#8212; not absolute productivity. (3) Lower opportunity cost = <strong>comparative</strong> advantage (not absolute advantage). (4) Specialisation only generates gains if countries then <strong>trade</strong> their surpluses. (5) Trade allows consumption <strong>beyond</strong> the PPF &#8212; the fundamental welfare case for free trade. (6) This is the core argument for <strong>free</strong> trade. (7) Even if Country A has an absolute <strong>advantage</strong> in all goods, Country B can still specialise and gain &#8212; this is the Ricardian insight.'
       },
 
-      /* 7 &#8212; Odd one out: outward PPF shift causes */
+      /* 6 &#8212; Odd one out: outward PPF shift causes */
       { type: 'odd_one_out',
         stem: 'Three of these will cause the PPF to shift <strong>outward</strong>. Which is the <strong>odd one out</strong>?',
         items: [
@@ -129,7 +114,7 @@
         exp: 'The odd one out is <strong>reducing unemployment</strong>. Moving unemployed workers into employment increases actual output and moves the economy from inside the PPF toward the frontier &#8212; but this does not shift the frontier itself. The PPF represents <em>maximum possible output</em> with given resources and technology. Reducing unemployment realises existing potential; it does not create new potential. Education, technological progress, and new resource discovery all expand the <em>maximum</em> output possible &#8212; they shift the PPF outward.'
       },
 
-      /* 8 &#8212; MCQ: productive vs allocative efficiency */
+      /* 7 &#8212; MCQ: productive vs allocative efficiency */
       { type: 'mcq',
         stem: 'A country is producing at a point on its PPF, but is producing far more military goods than its population wants relative to consumer goods. Which statement is correct?',
         opts: [
@@ -140,6 +125,21 @@
         ],
         ans: 0,
         exp: 'Being on the PPF guarantees <strong>productive efficiency</strong> &#8212; maximum output from resources, no waste. But productive efficiency does not imply <strong>allocative efficiency</strong>. Allocative efficiency requires producing the combination that maximises consumer welfare &#8212; the "right" point on the PPF. A command economy might achieve productive efficiency (no idle resources) while being severely allocatively inefficient (producing too many tanks, not enough consumer goods). This distinction is central to the critique of central planning.'
+      },
+
+      /* 8 &#8212; multi_select: evaluation of capital goods investment */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on the inter-temporal trade-off between consumer and capital goods on the PPF. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Producing more capital goods shifts the PPF outward in the future, enabling higher future consumption.',
+          'The case for prioritising capital goods investment is strongest in capital-poor developing economies where the marginal return to new capital is high; in already capital-rich economies, the opportunity cost in foregone consumption is harder to justify because diminishing returns reduce the expected PPF shift.',
+          'Although higher investment-to-GDP ratios (South Korea 33%, China 43%) are associated with faster PPF expansion, this correlation does not establish causation: institutional quality, rule of law, and human capital may explain both the willingness to save and the growth rate &#8212; meaning capital investment alone is insufficient without complementary factors.',
+          'Capital goods help countries grow because they are used to make other goods.',
+          'The inter-temporal trade-off depends critically on whether sacrificed consumer goods today create genuine productive capacity or merely resource misallocation: Soviet-era capital investment was high but produced obsolete industries, demonstrating that the quality and direction of investment matters as much as its quantity.',
+          'It is better to invest in capital goods than to consume, because future generations will benefit.'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option A</strong> is description: it states the PPF mechanism correctly but makes no evaluative move &#8212; no conditions, no weighing, no qualification. <strong>Option B</strong> is strong evaluation: it identifies the condition under which the argument is strongest (capital-poor economy, high marginal return) and the condition under which it weakens (capital-rich, diminishing returns), giving a directional conclusion. This weighs the trade-off contextually. <strong>Option C</strong> is evaluation: it raises the causation problem with the investment-growth correlation using specific data (South Korea, China), identifies omitted variables (institutions, human capital), and reaches a qualified conclusion about what additional factors are needed. <strong>Option D</strong> is pure description with no analytical content. <strong>Option E</strong> is evaluation: it introduces a counter-example (Soviet misallocation) to qualify the general principle that more capital investment equals more future output, making the crucial distinction between quantity and quality of investment. <strong>Option F</strong> is a one-sided claim with no weighing &#8212; it ignores the legitimate claim of present generations to consumption, the risk of misallocation, and the political constraints on sustained low consumption. This is descriptive advocacy, not evaluation.'
       },
 
       /* 9 &#8212; Data table: PPF and growth */

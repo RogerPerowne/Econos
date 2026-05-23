@@ -87,22 +87,7 @@
         exp: '<strong>Supernormal profit</strong>: P &gt; AC (P=30&gt;AC=20; P=25&gt;AC=18). <strong>Normal profit</strong>: P = AC exactly (P=20=AC=20). <strong>Economic loss &#8212; continue</strong>: AC &gt; P &ge; AVC (P=16: AVC=12&le;P&lt;AC=20 → TR covers VC, positive contribution; P=10: AVC=14&gt;P?&#8230; wait: AVC=14&gt;P=10 → actually shutdown. Re-check: P=16, AVC=12: P&gt;AVC → continue. P=10, AVC=14: P&lt;AVC → shutdown). <strong>Shutdown</strong>: P &lt; AVC (P=8&lt;AVC=12; P=10&lt;AVC=14). The rule: always compare P to AVC first for the shutdown decision, then compare P to AC to determine profit/loss.'
       },
 
-      /* 5 — Diagnostic pair: shutdown rule application */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"A firm\'s price falls below average cost. Should it shut down immediately?"</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Freya', badge: 'Candidate A',
-            answer: 'Not necessarily. The shutdown decision depends on whether price has fallen below <strong>average variable cost (AVC)</strong>, not merely below average cost. In the short run, fixed costs must be paid regardless of output &#8212; they are sunk. If P &ge; AVC, the firm generates a positive <em>contribution</em> (TR &#8722; VC &gt; 0) toward fixed costs, so producing reduces the loss below what it would be if the firm shut down (loss = FC). For example, if FC = &#163;10,000, VC = &#163;6,000, and TR = &#163;8,000: contribution = &#163;2,000; loss = FC &#8722; contribution = &#163;8,000 &lt; &#163;10,000 (shutdown loss). Shutting down would increase the loss by &#163;2,000. Only if P &lt; AVC (TR &lt; VC) should the firm shut down immediately, because at that point producing actually <em>increases</em> the loss beyond FC. In the <strong>long run</strong>, if P &lt; AC persists, the firm should exit &#8212; since all costs (including FC) are avoidable in the long run. This is why airlines fill planes at heavily discounted last-minute prices: as long as P &gt; AVC (marginal fuel and service costs), any price generates positive contribution.'
-          },
-          { name: 'Ethan', badge: 'Candidate B',
-            answer: 'A firm should not necessarily shut down if price falls below average cost. This is because in the short run, the firm still has to pay its fixed costs whether it produces or not. As long as the firm can cover its variable costs, it is better off continuing to produce because it will at least be contributing something to the fixed costs. If the firm shuts down, it loses all its revenue but still has to pay its fixed costs, so it makes a bigger loss. Only if the price falls so low that it cannot even cover its variable costs should the firm shut down in the short run. In the long run, if the price stays below average cost, the firm should exit the industry because it cannot cover all its costs and is making a persistent loss.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Freya</strong> gives the stronger answer. She precisely identifies the relevant threshold (P = AVC, not P = AC), introduces the contribution concept with a numerical example that makes the logic concrete, and correctly distinguishes the short-run and long-run decisions. The airline example demonstrates real-world application. Ethan covers the same logic correctly but without a specific numerical example, the contribution concept by name, or the AVC threshold terminology. Freya accesses Level 4; Ethan Level 3.'
-      },
-
-      /* 6 — MCQ: MR under monopoly */
+      /* 5 — MCQ: MR under monopoly */
       { type: 'mcq',
         stem: 'For a monopolist facing a <strong>linear downward-sloping demand curve</strong>, the Marginal Revenue (MR) curve:',
         opts: [
@@ -115,7 +100,7 @@
         exp: 'For a linear demand curve P = a &#8722; bQ, Total Revenue TR = PQ = aQ &#8722; bQ&#178;. Differentiating: MR = a &#8722; 2bQ. This has the <strong>same intercept (a) as the demand curve</strong> but the coefficient on Q is 2b instead of b &#8212; <strong>twice the slope</strong>. Geometrically, the MR curve starts at the same point on the price axis as the demand curve but falls twice as fast. When MR = 0: Q = a/(2b), which is exactly half the quantity at which demand hits the quantity axis. This geometric property &#8212; MR bisects the horizontal distance between the demand curve and the price axis &#8212; is essential for drawing monopoly diagrams correctly.'
       },
 
-      /* 7 — Multi-select: profit across market structures */
+      /* 6 — Multi-select: profit across market structures */
       { type: 'multi_select',
         stem: 'Which of the following statements about profit in different market structures are <strong>correct</strong> in the <strong>long run</strong>?',
         opts: [
@@ -130,7 +115,7 @@
         exp: 'Options A, B, and C are correct. <strong>Perfect competition</strong>: free entry erodes supernormal profit; long-run equilibrium at P = AC (normal profit). <strong>Monopoly</strong>: high barriers (legal, technical, scale) prevent entry; supernormal profit persists in the long run. <strong>Monopolistic competition</strong>: low barriers allow entry; each entrant takes customers from existing firms, reducing demand until P = AC, but each firm operates at less than MES (excess capacity theorem). Option D is incorrect: the kinked demand curve explains price rigidity in oligopoly but does not eliminate supernormal profit &#8212; barriers to entry allow oligopolists to sustain above-normal profits. Option E is wrong: perfect competition achieves productive efficiency but normal profit only. Option F is incorrect: monopoly can sustain supernormal profit indefinitely.'
       },
 
-      /* 8 — Odd one out: revenue concepts */
+      /* 7 — Odd one out: revenue concepts */
       { type: 'odd_one_out',
         stem: 'Three of these are true of a <strong>perfectly competitive firm\'s revenue</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -141,6 +126,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is that <strong>TR rises then falls as output increases</strong>. This describes a monopolist\'s TR curve &#8212; for a monopolist, MR eventually becomes negative (when the demand curve is elastic), causing TR to fall. For a <em>perfectly competitive firm</em>, demand is perfectly elastic at the market price: MR = P at all output levels. Since MR is always positive (and constant), TR <strong>rises continuously</strong> with output (TR = P &#215; Q, linear relationship). The other three statements are all correct for a competitive firm: MR = AR = P; horizontal demand; and the firm is a price-taker that can sell any quantity at market price.'
+      },
+
+      /* 8 — multi_select: evaluation of shutdown rule */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on the short-run shutdown decision and profit in different market structures. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'A firm should shut down if price falls below average cost because it is making a loss.',
+          'The short-run shutdown threshold (P = AVC) is the correct benchmark for whether to continue operating, but this assumes fixed costs are truly unavoidable in the short run &#8212; where some "fixed" costs are actually escapable (e.g. a lease that can be broken with a penalty), the shutdown threshold is lower and the firm should close sooner than the simple P = AVC rule suggests.',
+          'Airlines systematically sell last-minute seats below average total cost because P > AVC still generates positive contribution toward fixed costs &#8212; this is rational profit-minimising loss behaviour in the short run, not irrational or predatory. The key evaluative point is that the standard shutdown rule applies even in competitive markets with high fixed costs.',
+          'In perfect competition, firms exit in the long run if P < AC, as supernormal profits attract entry and push prices down to normal profit.',
+          'Under monopoly, barriers to entry allow supernormal profit to persist in the long run, but the welfare cost of this depends on the height of the barrier: where barriers are contestable (entry threatened even if not occurring), the monopolist may be forced to price close to AC to deter entry &#8212; making the welfare damage of monopoly power context-dependent rather than an invariant result.',
+          'A firm making normal profit is just covering all its costs and should consider whether to continue or exit depending on its future prospects.'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option A</strong> is a common student error &#8212; it misidentifies the shutdown threshold. A firm should shut down only if P < AVC, not merely if P < AC. This statement is analytically wrong and therefore not a valid evaluative claim. <strong>Option B</strong> is evaluation: it accepts the P = AVC rule but qualifies it with the condition that fixed costs must genuinely be unavoidable &#8212; when they are partially escapable, the rule changes. This introduces a real-world qualification that converts a simple principle into a conditional one. <strong>Option C</strong> is evaluation: it uses the airline example to illustrate the shutdown rule in practice, explains why the behaviour is rational (positive contribution even when AC is not covered), and draws the explicit conclusion that the rule applies universally. This is an evidence-grounded evaluative statement with a clear direction. <strong>Option D</strong> is description of a long-run competitive equilibrium mechanism &#8212; accurate but no weighing, no condition, no qualification. <strong>Option E</strong> is strong evaluation: it qualifies the standard monopoly welfare verdict by introducing contestability theory &#8212; the welfare damage depends on whether barriers are high enough to prevent the threat of entry. This converts a categorical claim into a conditional one with specific logic. <strong>Option F</strong> is vague description &#8212; "consider whether to continue" provides no analytical framework, no threshold, and no mechanism to evaluate the decision.'
       },
 
       /* 9 — Data table: objectives and profit outcomes */

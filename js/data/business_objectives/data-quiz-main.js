@@ -64,22 +64,7 @@
         exp: '(1) <strong>Marginal</strong>: revenue max occurs at MR = 0, where marginal revenue is zero. (2) <strong>Fall</strong>: beyond MR = 0, MR is negative so each extra unit reduces TR. (3) <strong>Higher</strong>: the MR = 0 output lies to the right of MR = MC on any standard demand curve, so revenue-max output exceeds profit-max output. (4) <strong>Lower</strong>: with a downward-sloping demand curve, higher output requires a lower price. (5) <strong>Minimum</strong>: shareholders set a floor on profit to prevent managers from sacrificing all profit for revenue growth.'
       },
 
-      /* 4 — Diagnostic pair: satisficing vs profit max */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain why firms may satisfice rather than profit-maximise."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Maya', badge: 'Candidate A',
-            answer: 'Firms satisfice rather than profit-maximise because of <strong>bounded rationality</strong> (Simon, 1957): managers lack the information and cognitive capacity to calculate MR = MC precisely. Instead, they set <em>minimum acceptable targets</em> across multiple objectives &#8212; a target return on investment, a minimum market share, an acceptable quality standard &#8212; and aim to satisfy all simultaneously. In practice this leads to <em>cost-plus pricing</em> (average cost + markup) as a rule of thumb, which approximates profit-max without requiring precise marginal cost data. Multiple stakeholders also impose conflicting demands that make single-objective maximisation impossible. Importantly, satisficing is not irrational &#8212; the decision-making costs of perfect optimisation may exceed the gains. Evidence from surveys of actual firm pricing behaviour strongly supports satisficing over pure profit maximisation.'
-          },
-          { name: 'Liam', badge: 'Candidate B',
-            answer: 'Firms may satisfice rather than profit-maximise because managers do not always want to maximise profit. They may want to achieve a good enough result across several areas such as profit, quality and employee welfare rather than focusing on just one thing. It is also difficult to work out exactly where MR = MC in practice because firms do not always have perfect information about their costs and revenues. So instead they use simpler rules like adding a percentage to their costs to set price. This means firms end up producing at a level that is satisfactory rather than optimal, which is what satisficing means. Real-world evidence suggests most firms do use these rules of thumb rather than calculating marginal costs precisely.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Maya</strong> gives the stronger answer. She uses Simon\'s precise term &#8220;bounded rationality,&#8221; defines satisficing correctly as simultaneous satisfaction of multiple minimum targets (not just approximate profit-max), and links it to a specific pricing mechanism (cost-plus). She also provides the insight that satisficing may be rational given decision-making costs. Liam covers similar ground but at a descriptive level &#8212; he says managers "do not always want to maximise profit" without explaining why satisficing emerges from bounded rationality as a rational response. Maya\'s answer would access Level 4; Liam\'s Level 2&#8211;3.'
-      },
-
-      /* 5 — Multi-select: principal-agent problem solutions */
+      /* 4 — Multi-select: principal-agent problem solutions */
       { type: 'multi_select',
         stem: 'Which of the following are recognised mechanisms for reducing the <strong>principal-agent problem</strong> between shareholders and managers?',
         opts: [
@@ -94,7 +79,7 @@
         exp: 'Options A&#8211;D all align manager incentives with shareholder interests or impose external discipline. <strong>Performance-related pay</strong> and <strong>share options</strong> make managers financially benefit from good shareholder outcomes. <strong>Independent non-executive directors</strong> monitor management on behalf of shareholders. <strong>Hostile takeover threat</strong> disciplines underperforming managers by threatening replacement. Options E and F worsen the principal-agent problem &#8212; unilateral salary-setting removes shareholder oversight, and a single-member board eliminates monitoring entirely.'
       },
 
-      /* 6 — Odd one out: objectives */
+      /* 5 — Odd one out: objectives */
       { type: 'odd_one_out',
         stem: 'Three of these are examples of <strong>managerial objectives</strong> (principal-agent driven). Which is the ODD ONE OUT?',
         items: [
@@ -107,7 +92,7 @@
         exp: 'The odd one out is <strong>paying out 80% of profits as dividends</strong>. This is a shareholder-aligned objective &#8212; it maximises the return to shareholders (principals) and leaves little cash for managers to pursue empire-building. The other three are classic principal-agent (managerial) objectives: acquisition for size, revenue maximisation for salary, and overstaffing for prestige. All three divert resources from shareholder value toward managerial benefit. High dividend payout ratios are a shareholder governance mechanism that reduces free cash flow available for managerial discretion.'
       },
 
-      /* 7 — MCQ: CSR and Friedman */
+      /* 6 — MCQ: CSR and Friedman */
       { type: 'mcq',
         stem: 'Milton Friedman\'s argument against Corporate Social Responsibility (CSR) is best summarised as:',
         opts: [
@@ -120,7 +105,7 @@
         exp: 'Friedman\'s (1970) argument in <em>The New York Times</em> was that <strong>CSR is a form of unilateral taxation</strong>: when managers spend company money on social causes, they are using shareholders\' resources for purposes shareholders did not approve. Shareholders can donate to social causes themselves if they choose. This argument distinguishes between shareholders choosing to pursue social objectives (fine) and managers making that choice for them (a violation of the principal-agent relationship). The counter-argument (Porter-Kramer; Freeman\'s stakeholder theory) is that CSR and profit can be complementary if strategically managed &#8212; "enlightened shareholder value."'
       },
 
-      /* 8 — Data table: objectives comparison */
+      /* 7 — Data table: objectives comparison */
       { type: 'data_table',
         stem: 'The table shows output and profit data for a firm with different pricing objectives.',
         headers: ['Objective', 'Output (000 units)', 'Price (&#163;)', 'Total Revenue (&#163;000)', 'Total Cost (&#163;000)', 'Profit (&#163;000)'],
@@ -138,6 +123,21 @@
         ],
         ans: 0,
         exp: 'The data confirm the standard theory: <strong>revenue-maximising output (80k) exceeds profit-maximising output (50k)</strong>, consistent with MR = 0 being to the right of MR = MC. Revenue-max total revenue (&#163;1,200k) exceeds profit-max revenue (&#163;1,000k) but profit is lower (&#163;150k vs &#163;200k) &#8212; exactly as theory predicts. Sales maximisation produces even more output (100k) but profit falls to near-zero (&#163;20k) as the firm approaches the break-even constraint. The data show the output and price ordering: profit-max Q &lt; revenue-max Q &lt; sales-max Q, and the corresponding price ordering in reverse.'
+      },
+
+      /* 8 — Multi-select: evaluation of business objectives */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>business objectives and whether firms profit-maximise</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Profit maximisation (MR = MC) may be the dominant objective in competitive markets where weak firms are driven out, but in oligopolistic industries with high barriers to entry, managers enjoy discretion to pursue revenue growth or satisficing &#8212; meaning the assumption of profit maximisation is most valid precisely where it is least testable (many firms, easy exit)',
+          'A profit-maximising firm produces where marginal revenue equals marginal cost',
+          'CSR is not necessarily in conflict with shareholder interests: Porter and Kramer\'s &#8220;shared value&#8221; argument holds that socially responsible firms build reputational capital, attract higher-quality employees, and reduce regulatory risk &#8212; making CSR complementary to long-run profit rather than a diversion of shareholders&#8217; resources',
+          'Revenue maximisation occurs where marginal revenue equals zero, producing more output at a lower price than profit maximisation',
+          'Whether the principal-agent problem is severe depends on ownership concentration: in owner-managed firms, principals and agents are identical and the problem disappears; in widely-held PLCs with dispersed shareholders and professional managers, monitoring is costly and agent discretion is largest &#8212; so the problem is most severe precisely in the largest, most publicly prominent companies',
+          'The principal-agent problem arises because managers (agents) do not always act in the interests of shareholders (principals)'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it conditions the validity of profit maximisation on market structure, identifies the specific context (oligopoly with barriers) where the assumption breaks down, and notes the methodological irony that the assumption is hardest to test where it most plausibly holds &#8212; this is a sophisticated qualifying move that limits the generality of a standard model. Option C is strong evaluation: it directly challenges the Friedman dichotomy between CSR and profit by presenting a competing theoretical framework (Porter-Kramer shared value), identifies specific mechanisms (reputational capital, talent attraction, regulatory risk), and reaches a directional conclusion that CSR complements rather than conflicts with long-run profit. Option E is strong evaluation: it conditions the severity of the principal-agent problem on ownership structure, identifies the specific context (widely-held PLCs) where it is most severe, and notes the irony that the problem is largest in the most prominent firms &#8212; context-dependence with a direction and a specific mechanism. Option B states the profit-maximising condition without qualification or evaluative reasoning. Option D describes the revenue maximisation condition accurately but does not weigh it against alternatives, qualify it, or use it to reach any conditional conclusion. Option F states the definition of the principal-agent problem without applying it, qualifying it, or identifying conditions under which it is more or less severe.'
       },
 
       /* 9 — Chain: long-run competitive adjustment */

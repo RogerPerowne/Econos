@@ -104,22 +104,7 @@
         exp: '(1) <strong>Prisoner\'s</strong>: the classic game theory model of strategic interaction with a dominance trap. (2) <strong>Nash equilibrium</strong>: the self-enforcing outcome where no player can improve by unilaterally changing strategy &#8212; even if it is collectively suboptimal. (3) <strong>Collude</strong>: joint monopoly pricing is the collectively preferred outcome; competition is the individually dominant strategy. (4) <strong>Dominant</strong>: a dominant strategy is the best response regardless of what the rival does &#8212; compete always beats collude against any rival choice. (5) <strong>Higher</strong>: collusion raises prices above the competitive Nash equilibrium. (6) <strong>Tit-for-tat</strong>: cooperate until a rival defects, then retaliate in kind &#8212; the strategy that can sustain cooperation in repeated games. (7) <strong>Collusion</strong>: tacit collusion (without explicit agreement) can be stable in repeated interactions.'
       },
 
-      /* 6 — Diagnostic pair: oligopoly welfare */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the view that oligopoly is harmful for consumer welfare."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Layla', badge: 'Candidate A',
-            answer: 'The welfare verdict on oligopoly depends on which tendency dominates in a specific market. <strong>Case against</strong>: oligopolists with significant market power set P &gt; MC (allocative inefficiency), reduce output, and transfer consumer surplus to supernormal profit. Tacit collusion &#8212; without explicit agreement &#8212; can mimic monopoly pricing (UK banking: interest rate convergence; petrol retailing: near-simultaneous price moves). X-inefficiency is possible when high barriers reduce competitive discipline. <strong>Case for</strong> (or against the "always harmful" view): competitive oligopoly (e.g., the 2015&#8211;17 UK supermarket price war triggered by Aldi/Lidl entry) produces near-competitive prices. Schumpeterian dynamics: oligopolists\' supernormal profits fund substantial R&D &#8212; pharmaceutical oligopolists (AstraZeneca, GSK) invest billions in drug development. The inverted-U hypothesis suggests intermediate concentration may be <em>optimal</em> for innovation. The CMA can address excessive concentration through merger control and market investigations. <strong>Overall</strong>: the "harmful" assessment is not predetermined. The outcome depends on whether rivalry (supermarket price war) or coordination (banking fees) dominates &#8212; which is itself determined by sunk costs, product homogeneity, frequency of interaction, and regulatory environment.'
-          },
-          { name: 'Marcus', badge: 'Candidate B',
-            answer: 'Oligopoly can be harmful for consumers because the few large firms can work together to keep prices high. This is called collusion and it is illegal if done formally. However, firms can also collude informally or "tacitly" without breaking the law. When prices are above the competitive level, consumers pay more and the firms make extra profit. This reduces consumer surplus. However, oligopoly might not be harmful because the large firms can invest in research and development, creating better products. Also, the firms do compete on things like advertising and loyalty schemes which gives consumers more choice. Overall, oligopoly has both good and bad effects on consumers, so it is not always harmful.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Layla</strong> gives the stronger answer. She applies a conditional framework &#8212; which tendency (competition vs coordination) dominates depends on market conditions &#8212; and supports each argument with specific evidence: the 2015&#8211;17 UK supermarket price war (competitive oligopoly outcome), banking/petrol tacit collusion (harmful coordination), AstraZeneca/GSK R&D investment (dynamic efficiency). She names the inverted-U hypothesis for a sophisticated evaluation point and identifies the CMA\'s role. Marcus covers the same broad territory (collusion harms, R&D benefits, non-price competition) but at a generic level without evidence or named concepts beyond "tacit collusion." Marcus accesses Level 2&#8211;3; Layla Level 4&#8211;5.'
-      },
-
-      /* 7 — Calculation: Herfindahl-Hirschman Index */
+      /* 6 — Calculation: Herfindahl-Hirschman Index */
       { type: 'calculation',
         context: 'A market has four firms with market shares of <strong>40%, 30%, 20%, and 10%</strong>. The <strong>Herfindahl-Hirschman Index (HHI)</strong> is calculated as the sum of the squared market shares (using percentages). Competition authorities typically regard HHI &gt; 2,500 as indicating a highly concentrated market.',
         working: [
@@ -142,7 +127,7 @@
         exp: 'HHI = 40&#178; + 30&#178; + 20&#178; + 10&#178; = 1,600 + 900 + 400 + 100 = <strong>3,000</strong>. This exceeds the CMA\'s threshold of 2,500 for high concentration. A post-merger HHI above 2,500 with a delta (increase in HHI from the merger) above 150 triggers detailed CMA scrutiny. For context: a pure monopoly (one firm, 100%) gives HHI = 10,000; four perfectly equal firms (25% each) gives HHI = 2,500; ten equal firms (10% each) gives HHI = 1,000. The HHI is more sensitive than CR4 to the distribution of shares &#8212; it penalises concentration more heavily when one firm is dominant.'
       },
 
-      /* 8 — Odd one out: examples of non-price competition */
+      /* 7 — Odd one out: examples of non-price competition */
       { type: 'odd_one_out',
         stem: 'Three of these are examples of the <strong>advertising arms race</strong> phenomenon in UK oligopoly. Which is the <strong>ODD ONE OUT</strong>?',
         items: [
@@ -153,6 +138,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is <strong>Aldi\'s entry triggering a price war</strong>. This is an example of <em>price competition</em> driven by a genuine structural change (low-cost entry by a discount retailer with a different business model) &#8212; not an advertising arms race. The advertising arms race occurs when oligopolists simultaneously increase advertising spending to compete for market share, but none gains net customers because rivals also increase spending. The result: higher costs for all, same market shares, wasted resources. The supermarkets, mobile networks, and beer brands all illustrate this &#8212; matched advertising investments with broadly stable market shares. Aldi\'s price competition represents a fundamentally different competitive dynamic.'
+      },
+
+      /* 8 — Multi-select: evaluation of oligopoly */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>oligopoly</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Oligopoly involves a small number of interdependent firms, where each firm must consider the likely reactions of rivals before changing price or output',
+          'Whether oligopoly is harmful for consumer welfare depends on whether rivalry or coordination dominates: the 2015&#8211;17 UK supermarket price war (triggered by Aldi/Lidl entry) produced near-competitive prices, while the convergence of bank overdraft rates in the same period exemplified the welfare costs of tacit coordination',
+          'The kinked demand curve predicts price rigidity because moderate cost changes do not alter the profit-maximising price &#8212; the discontinuity in the MR curve means MC can shift within the gap without changing Q* or P*',
+          'Oligopolists prefer non-price competition to price competition because the kinked demand model predicts rivals will match price cuts but not price rises, making price reductions unprofitable; non-price moves are also harder to immediately replicate',
+          'The inverted-U hypothesis (Aghion et al.) suggests innovation may peak at intermediate concentration &#8212; where firms have both the profit to fund R&D and the competitive pressure to use it &#8212; which qualifies any blanket claim that oligopoly is innovatively inferior to competition',
+          'Tacit collusion in oligopoly is illegal under UK competition law and can result in fines of up to 10% of global revenue from the CMA'
+        ],
+        correct: [1, 4],
+        exp: '<strong>Options B and E are evaluation.</strong> (B) explicitly weighs the competition vs coordination tendencies in oligopoly against each other, uses specific UK evidence for each direction (supermarket price war vs bank rate convergence), and reaches the conclusion that the welfare verdict depends on which tendency dominates in the specific market &#8212; a conditional conclusion with named evidence. (E) introduces the inverted-U hypothesis as a qualification of the claim that oligopoly is always innovatively inferior, specifying the mechanism (both funding and incentive at intermediate concentration) and reaching a directional conclusion that the standard critique is overstated. <strong>Options A, C, D, and F are not evaluation.</strong> (A) defines strategic interdependence accurately but is definitional description with no evaluative content. (C) correctly explains the kinked demand price rigidity result but is one-sided analysis of a model &#8212; it describes what the model predicts without weighing its limitations (the model does not explain how P* was determined in the first place) or reaching a qualified conclusion. (D) accurately explains why non-price competition dominates but is one-sided analysis &#8212; it makes no attempt to weigh this tendency against the conditions under which price competition can still emerge (e.g. low-cost entry). (F) is a factual statement about competition law with no evaluative content.'
       },
 
       /* 9 — Data table: Bertrand vs Cournot */

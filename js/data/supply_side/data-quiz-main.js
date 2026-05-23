@@ -72,22 +72,7 @@
         exp: '(1) <strong>Revenue</strong>: the relationship being described is between the tax rate and total tax collected. (2) <strong>Work less</strong>: at high rates, the substitution effect (leisure vs work) dominates, reducing labour supply. (3) <strong>Increase</strong>: the supply-side argument that cuts pay for themselves. (4) <strong>40%</strong>: the top rate fell from 83% to 40% under Thatcher (with an intermediate cut to 60%). (5) <strong>Downward slope</strong>: the slope where the rate is above the optimum and revenue falls as rates rise. (6) <strong>Marginal</strong>: the UK 45% additional rate &#8212; debate centres on whether this is above the Laffer peak. (7) <strong>Incentive</strong>: behavioural responses (work less, evade, emigrate) only dominate revenue effects at very high rates.'
       },
 
-      /* 4 &#8212; Diagnostic pair: productivity puzzle */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate whether market-based supply-side policies can solve the UK productivity puzzle."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'The UK productivity puzzle &#8212; output per worker growing at only ~0.3%/year since 2008 versus ~2%/year pre-2008 &#8212; is a structural failure that market-based supply-side policies have not resolved despite two decades of implementation. Market-based tools (corporation tax cuts from 28% to 25%, R&D tax credits, deregulation) are designed to improve allocative efficiency where markets function well. <strong>However, the productivity puzzle has multiple potential causes</strong>: zombie firms sustained by low interest rates misallocating capital; severe skills mismatch (UK PISA scores and vocational qualification gaps); chronically low business investment (lowest in G7 at ~10% of GDP vs Germany\'s ~12%); and post-2016 Brexit uncertainty reducing investment. Market-based policies address incentives but not the market failures in education, infrastructure, and R&D that may be the binding constraints. The interventionist case is strongest where market failure is most severe: the UK underinvests in education relative to Germany (where Berufsausbildung vocational training produces measurably better skills matches) and infrastructure. The conclusion: market-based supply-side is necessary but insufficient &#8212; resolving the productivity puzzle likely requires interventionist supply-side investment in the areas where market failure, not market distortion, is the binding constraint.'
-          },
-          { name: 'Ethan', badge: 'Candidate B',
-            answer: 'Market-based supply-side policies can help solve the UK productivity puzzle. Lower corporation tax encourages businesses to invest more, which raises capital per worker and increases productivity. Deregulation reduces the costs businesses face, freeing up resources for investment. However, market-based policies alone may not be enough because some of the reasons for low productivity are market failures. For example, firms underinvest in training because workers can leave and go to competitors, taking the skills with them. This positive externality means the government needs to intervene directly. Supply-side policies take a long time to work, so even if they are effective, the results will not be seen quickly. Overall, market-based supply-side policies are part of the answer but need to be combined with interventionist policies to fully solve the productivity puzzle.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She quantifies the puzzle (0.3% vs 2%/year), names the multiple causes specifically (zombie firms, skills mismatch, investment ratio with UK vs Germany comparison, Brexit uncertainty), and structures the evaluation around where market failure vs market distortion is the binding constraint &#8212; the sophisticated analytical distinction. She cites Germany\'s Berufsausbildung as comparative evidence. Ethan makes valid points but stays at an abstract level: \'firms invest more\', \'deregulation reduces costs\', without data or specific UK examples. The market failure point about training externalities is correct but undeveloped. Priya\'s answer shows the \'mechanism → evidence → evaluation of conditions\' structure.'
-      },
-
-      /* 5 &#8212; Multi-select: reducing the NAIRU */
+      /* 4 &#8212; Multi-select: reducing the NAIRU */
       { type: 'multi_select',
         stem: 'Which of the following supply-side policies would most directly <strong>reduce the NAIRU</strong> &#8212; enabling lower unemployment without accelerating inflation?',
         opts: [
@@ -102,7 +87,7 @@
         exp: 'The NAIRU is determined by <strong>structural and frictional unemployment</strong>, not cyclical unemployment. Policies that reduce it permanently: (A) retraining reduces structural unemployment (skills mismatch &#8212; the largest component of the UK NAIRU). (C) job-matching services reduce frictional unemployment by speeding up search. (E) childcare expansion raises labour force participation, reducing the NAIRU and increasing labour supply. (F) targeted immigration fills skill gaps, reducing structural mismatches immediately. Options B (Bank Rate cut) and D (G increase) are demand-side tools that reduce cyclical unemployment below the NAIRU &#8212; they do not shift the NAIRU itself. Using them to push unemployment below the NAIRU only works temporarily and accelerates inflation &#8212; the Phillips curve mechanism.'
       },
 
-      /* 6 &#8212; Odd one out: interventionist supply-side */
+      /* 5 &#8212; Odd one out: interventionist supply-side */
       { type: 'odd_one_out',
         stem: 'Three of the following are <strong>interventionist supply-side policies</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -115,7 +100,7 @@
         exp: 'The odd one out is option B. Financial sector deregulation is a classic <strong>market-based</strong> supply-side policy &#8212; removing regulatory barriers to allow markets to allocate resources more efficiently. The market-based philosophy underpins this: regulation distorts market prices and imposes costs without proportionate benefits; remove the barriers and market efficiency improves. Options A (R&D subsidy to correct positive externalities), C (infrastructure investment addressing public goods underprovision), and D (universal childcare expanding labour supply) are all interventionist &#8212; they involve government spending or provision to address market failures. The distinction matters because the two approaches have different ideological foundations, different time horizons, and different distributional consequences.'
       },
 
-      /* 7 &#8212; Data table: UK productivity vs G7 */
+      /* 6 &#8212; Data table: UK productivity vs G7 */
       { type: 'data_table',
         stem: 'The table shows labour productivity growth (output per hour, % annual average) across G7 economies.',
         headers: ['Country', '1990&#8211;2007', '2008&#8211;2019', 'Change'],
@@ -135,6 +120,21 @@
         ],
         ans: 0,
         exp: 'The data shows a global productivity slowdown post-2008 &#8212; all G7 economies experienced a decline. However, the UK\'s fall of &#8722;1.8pp is the <strong>largest</strong> among the five countries shown, suggesting UK-specific factors beyond the common global slowdown. Possible UK-specific causes: chronically low business investment (lowest G7 ratio), post-2016 Brexit uncertainty, financial sector dominance with lower productivity spillovers, and underinvestment in infrastructure/education vs Germany. Option B is wrong &#8212; the fact that all economies slowed does not mean the UK\'s relative underperformance is acceptable or lacks explanation. Option C makes an ideological claim the data cannot support. Option D confuses manufacturing intensity with productivity growth capacity.'
+      },
+
+      /* 7 &#8212; multi_select: evaluation of market-based supply-side policies */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>whether market-based supply-side policies can solve the UK productivity puzzle</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Market-based supply-side policies such as corporation tax cuts and deregulation aim to improve allocative efficiency by removing distortions',
+          'The UK productivity puzzle &#8212; output per worker growing at only ~0.3%/year since 2008 versus ~2%/year pre-2008 &#8212; has multiple structural causes including skills mismatch and chronically low business investment; market-based policies address incentives but cannot directly correct these market failures, suggesting interventionist supply-side investment is needed as a complement',
+          'Corporation tax cuts automatically raise productivity by incentivising firms to invest more',
+          'Market-based supply-side policies are ineffective because only government intervention can raise productivity',
+          'Whether market-based or interventionist supply-side tools are more appropriate depends on the binding constraint: where the problem is market distortion (excessive regulation, tax wedges), market-based reform is the right tool; where the problem is market failure (underinvestment in education, R&amp;D, infrastructure), interventionist spending is needed &#8212; and the UK productivity evidence points disproportionately to the latter',
+          'Supply-side policies take a long time to affect LRAS &#8212; the 10&#8211;20 year time lag for education investment and the multi-year lag for infrastructure spending mean market-based tools that work through incentive changes are likely to show results sooner, giving them a short-run advantage even if their long-run impact is smaller'
+        ],
+        correct: [1, 4, 5],
+        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it uses specific data (0.3% vs 2%/year) and identifies named structural causes to argue that market-based policies are insufficient as a stand-alone solution, reaching a directional conclusion (interventionist complement needed) that is conditional on the evidence. <strong>Option E</strong> is strong evaluation: it identifies the critical analytical distinction between market distortion (the domain of market-based tools) and market failure (the domain of interventionist tools), applies it to the UK productivity context with a directional verdict &#8212; this is the sophisticated evaluative move that earns Level 4. <strong>Option F</strong> is strong evaluation: it identifies time lags as a differentiating factor between the two policy approaches and draws a directional comparative conclusion &#8212; market-based tools show results sooner, even if their long-run impact differs. This is a nuanced weighing of competing criteria. <strong>Option A</strong> is a distractor: it describes the aim of market-based policies without evaluating whether those aims are achieved in the UK context or under what conditions. <strong>Option C</strong> is a distractor: an overclaim that ignores the conditions under which corporation tax cuts affect investment (animal spirits, capacity utilisation, credit availability) and assumes automatic causation. <strong>Option D</strong> is a distractor: a one-sided assertion that market-based policies are always ineffective &#8212; an overclaim in the opposite direction with no evidence, conditions, or qualification.'
       },
 
       /* 8 &#8212; MCQ: time lags evaluation */

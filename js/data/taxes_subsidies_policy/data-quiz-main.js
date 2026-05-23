@@ -45,22 +45,7 @@
         exp: '<strong>Pigouvian/justified</strong>: SDIL (corrects sugar externality / information failure), Contracts for Difference (corrects under-provision of low-carbon energy, a positive externality), congestion charge (internalises external congestion and pollution costs), NHS vaccines (corrects under-consumption from herd-immunity externality). Each has a specific market failure it targets. <strong>Revenue-raising/unjustified (in the Pigouvian sense)</strong>: the diamond surcharge and uniform VAT are primarily fiscal instruments. They create DWL without correcting a pre-existing externality DWL. This does not make them wrong in policy terms &mdash; governments must raise revenue &mdash; but they cannot claim an efficiency justification in the same way Pigouvian instruments can.'
       },
 
-      /* 3 — diagnostic_pair: evaluating the sugar levy */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the effectiveness of the UK Soft Drinks Industry Levy (SDIL) as a Pigouvian tax."</em> Which student provides the stronger evaluation?',
-        students: [
-          { name: 'Amara', badge: 'Candidate A',
-            answer: 'The SDIL (2018&ndash;) is a tiered tax on soft drinks by sugar content: 24p/litre for &gt;8g per 100ml, 18p/litre for 5&ndash;8g/100ml, with pure fruit juices and drinks under 5g untaxed.<br><br><strong>Effectiveness:</strong> The levy produced strong reformulation effects &mdash; average sugar content in taxed drinks fell sharply before the tax came into force, because producers had an elastic response on the supply side (reformulating costs less than paying the duty). Sales of taxed drinks fell ~21%. The tiered structure created an incentive to reduce sugar below the 8g/100ml threshold &mdash; a design feature that maximises Pigouvian effectiveness.<br><br><strong>Efficiency:</strong> Admin costs are low (collected from a small number of manufacturers). Revenue (&asymp;&pound;330m/yr) was earmarked for school sports and breakfast clubs. The welfare question is whether the DWL from the levy is smaller than the externality DWL from excess sugar consumption &mdash; the reformulation evidence suggests the tax largely avoided creating its own DWL by shifting production rather than destroying it.<br><br><strong>Equity:</strong> There is a genuine tension here. Sugary drinks taxes tend to be regressive in incidence (lower-income households spend a higher share of income on affected goods). However, health benefits from reduced sugar consumption are progressive in impact (lower-income groups bear a disproportionate burden of diet-related illness). Which effect dominates is an empirical question &mdash; but the equity case is stronger than for fuel duty, where health externalities do not similarly offset the regressive incidence.<br><br><strong>Evaluation:</strong> SDIL is close to the Pigouvian ideal &mdash; targeted, behaviour-changing, and low-cost to administer. Its main limitation is that it targets drinks, not overall sugar consumption; a broader levy or nutrient tax might be more complete. Overall: a welfare-improving tax because the externality DWL eliminated likely exceeds the policy\'s own DWL.'
-          },
-          { name: 'Finn', badge: 'Candidate B',
-            answer: 'The UK sugar levy is a tax on sugary drinks introduced in 2018. It was meant to reduce sugar consumption and improve health in the UK. The tax works by raising the price of sugary drinks, making them more expensive, so people buy less of them. This is like a Pigouvian tax because it tries to correct a negative externality from unhealthy eating. The levy has been successful because many companies reformulated their drinks to avoid the tax, and sales of taxed drinks have gone down. This shows the tax changed behaviour, which is what a Pigouvian tax is supposed to do. However, the tax is regressive because poor people spend a higher percentage of their income on these drinks. This means it is unfair even if it reduces sugar consumption. Also, people might just switch to other sugary foods, which the levy does not cover, so the overall health benefit might be smaller than expected. Overall, the levy has been effective at reducing sugar in drinks but might not have fully solved the health problem.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Amara</strong> gives the analytically stronger answer. She applies all three evaluation axes (effectiveness, efficiency, equity) with specific evidence: reformulation before the levy came into force (elastic producer response), ~&pound;330m revenue, and the distributional tension between regressive incidence and progressive health impact. Her final judgement &mdash; the externality DWL eliminated likely exceeds the policy DWL &mdash; is the Pigouvian welfare test applied explicitly. Finn covers the main points but lacks the technical structure. He does not distinguish Pigouvian welfare logic (externality DWL vs policy DWL), does not apply the effectiveness-efficiency-equity framework explicitly, and his equity section does not resolve the tension between incidence and health impact. Finn accesses Level 3; Amara Level 4.'
-      },
-
-      /* 4 — multi_select: criticisms of the EU Common Agricultural Policy */
+      /* 3 — multi_select: criticisms of the EU Common Agricultural Policy */
       { type: 'multi_select',
         stem: 'Which of the following are valid economic criticisms of the EU Common Agricultural Policy (CAP)?',
         opts: [
@@ -75,7 +60,7 @@
         exp: 'Options A, C, D, and F are valid criticisms. <strong>A</strong>: Historic price supports produced chronic over-supply &mdash; a classic example of overproduction DWL when the externality justification (food security) is insufficient to justify the scale of support. <strong>C</strong>: Subsidy capitalisation means farmers who sell or rent land capture the benefit, not necessarily those producing food &mdash; this is a misallocation of the intended support. <strong>D</strong>: CAP depresses world food prices, harming developing-country exports and undermining comparative advantage in agriculture. <strong>F</strong>: CAP payments are area-based, so large landholdings receive the most &mdash; a highly unequal distribution. Option B is too strong: CAP has a partial food-security justification, but the scale of subsidy far exceeds any externality correction, making it at best partially Pigouvian. Option E is directly wrong &mdash; price supports create higher consumer prices (transferring surplus from consumers to producers) AND create DWL from over-production.'
       },
 
-      /* 5 — chain: 4-step exam method */
+      /* 4 — chain: 4-step exam method */
       { type: 'chain',
         stem: 'Place the four steps of the exam technique for a tax or subsidy question in the correct order.',
         items: [
@@ -88,7 +73,7 @@
         exp: '<strong>Correct sequence:</strong><br>1. Draw the diagram accurately &mdash; this is your evidence. Without a correct diagram you cannot analyse surplus areas or incidence.<br>2. Explain the mechanism &mdash; connect the diagram to the economic logic. Why does the market fail? How does the tax/subsidy correct it? This earns analysis marks.<br>3. Analyse who gains and who loses &mdash; use PED/PES to show incidence. Name the redistribution effect.<br>4. Reach a judgement &mdash; this must be context-aware. "It depends on elasticity" earns no marks. State which direction elasticity pushes the outcome for this specific good and reach a conclusion using all three evaluation axes (effectiveness, efficiency, equity).<br><br>Exam alert: most students lose marks on step 4. "On balance, the welfare gain is likely positive because the externality DWL eliminated (e.g. &pound;X bn) exceeds the policy\'s own DWL" is the target statement.'
       },
 
-      /* 6 — data_table: offshore wind strike prices */
+      /* 5 — data_table: offshore wind strike prices */
       { type: 'data_table',
         stem: 'The table shows UK Contracts for Difference (CfD) strike prices for offshore wind energy.',
         headers: ['CfD allocation round', 'Year', 'Strike price (2012 £/MWh)', 'Capacity awarded (MW)'],
@@ -110,7 +95,7 @@
         exp: 'Option A is the most analytically complete. The CfD scheme addresses a genuine market failure: low-carbon energy generates positive externalities (reduced CO&sup2;, avoided climate damage) that the market price does not capture. The CfD provides a guaranteed revenue floor ("strike price"), eliminating investors\' revenue uncertainty and allowing deployment at scale. As scale increased, learning-by-doing and economies of scale drove costs down sharply &mdash; from &pound;119/MWh (2015) to &pound;37/MWh (2022), a 69% fall. This is a case where the subsidy\'s own DWL may be small relative to the climate externality it corrects. Option B ignores that the market would under-provide even at lower cost without the certainty mechanism. Option C draws a sweeping conclusion from a single round &mdash; Round 5 failed because construction inflation pushed costs above the reserve price, not because the policy failed. Option D confuses the incidence of the strike price with the Pigouvian logic; the relevant comparison is the strike price vs the social cost of carbon in fossil-fuel generation.'
       },
 
-      /* 7 — odd_one_out: which is NOT an exam error */
+      /* 6 — odd_one_out: which is NOT an exam error */
       { type: 'odd_one_out',
         stem: 'Three of the following are common exam errors when answering tax or subsidy questions. Which is the ODD ONE OUT?',
         items: [
@@ -121,6 +106,21 @@
         ],
         ans: 0,
         exp: 'The odd one out is option A. Correctly labelling Pc, Pp, and the tax wedge on the diagram is <em>good</em> exam technique, not an error &mdash; it earns marks. It is specifically what the exam marking scheme requires. Options B, C, and D are genuine errors. <strong>B</strong>: A subsidy shifts S downward (down/right), not upward. Drawing it upward is the same as drawing a tax &mdash; a common mark-losing error. <strong>C</strong>: Inelastic demand tells you who bears the tax burden; it does not justify imposing the tax. Justification requires a market failure. Conflating these two ideas is a Level 3 &rarr; Level 4 boundary error. <strong>D</strong>: Legal incidence (who hands the cash to HMRC) does not determine economic incidence (who bears the cost). This is one of the most frequently examined distinctions.'
+      },
+
+      /* 7 — multi_select: evaluation of the UK Soft Drinks Industry Levy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the effectiveness of the UK Soft Drinks Industry Levy (SDIL) as a Pigouvian tax</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'The SDIL raised the price of sugary drinks and reduced their consumption',
+          'The SDIL\'s tiered structure (24p/litre for &gt;8g sugar per 100ml; 18p/litre for 5&ndash;8g) created a reformulation incentive that changed producer behaviour before the tax even came into force, suggesting a Pigouvian tax can correct an externality more through supply-side restructuring than through consumer price rises alone',
+          'The regressive incidence of the SDIL (lower-income households spend a larger share of income on affected drinks) is partially offset by the progressive health impact (lower-income groups bear a disproportionate burden of diet-related illness) &#8212; meaning the equity verdict depends on which effect dominates, not simply on the tax incidence',
+          'The SDIL is unfair because it hits poor people harder than rich people',
+          'The SDIL targets drinks only, not total sugar consumption &#8212; so substitution toward untaxed confectionery and processed foods may significantly reduce its net health impact, limiting the externality correction even if drinks consumption falls',
+          'All indirect taxes on demerit goods are regressive, so the SDIL is both inequitable and ineffective'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it identifies a specific mechanism (tiered structure creates reformulation incentive) and draws a directional conclusion that goes beyond description &#8212; arguing the Pigouvian correction works through supply-side behavioural change more than through consumer price response. This is a genuine evaluative insight about how the policy works and why it may be more effective than simpler designs. <strong>Option C (index 2)</strong> is strong evaluation: it identifies the equity tension (regressive incidence vs progressive health impact), presents both sides accurately, and reaches a conditional conclusion &#8212; the verdict depends on which effect dominates. This is textbook evaluative weighing of competing factors rather than a one-sided equity claim. <strong>Option E (index 4)</strong> is strong evaluation: it identifies a specific limitation (substitution to untaxed sugar sources), draws a directional implication for the net health impact, and qualifies the conclusion even when the narrowly measured outcome (drinks consumption) is positive. <strong>Option A (index 0)</strong> is a distractor: it accurately describes the mechanism but makes no evaluative move about effectiveness, efficiency, or equity. <strong>Option D (index 3)</strong> is a distractor: it states the regressive incidence point without weighing it against the progressive health impact, making a one-sided equity claim. <strong>Option F (index 5)</strong> is a distractor: a sweeping generalisation that is factually inaccurate (demerit taxes are not always both regressive and ineffective) and makes no conditional or evidence-based argument.'
       },
 
       /* 8 — para_fill: Pigouvian tax logic */

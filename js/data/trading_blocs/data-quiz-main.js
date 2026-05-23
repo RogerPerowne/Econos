@@ -107,22 +107,7 @@
         exp: 'The odd one out is <strong>trade creation</strong>. This is a <em>benefit</em> of joining a trading bloc — replacing inefficient domestic production with cheaper bloc imports raises allocative efficiency and lowers consumer prices. The other three are genuine costs: trade diversion wastes global resources; loss of external trade policy sovereignty constrains future policy choices; fiscal transfers to weaker members generate political tension (as demonstrated by EU debates over Greek bailouts and structural fund contributions). A well-structured essay on trading blocs weighs trade creation (benefit) against trade diversion and sovereignty costs — the Viner framework.'
       },
 
-      /* 6 — Diagnostic pair: evaluating EU membership */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate whether UK membership of the EU single market was economically beneficial."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Sophie', badge: 'Candidate A',
-            answer: 'UK EU membership produced substantial <strong>trade creation</strong>: UK firms could source inputs from the EU single market without tariffs or non-tariff barriers, reducing costs and expanding market access. Estimates by the OECD and CEP suggest UK-EU trade was ~70% higher due to single market membership than it would have been under WTO terms alone. The EU\'s common external tariff also involved some <strong>trade diversion</strong> — the UK imported from less-efficient EU partners rather than more-efficient non-EU suppliers in some sectors. However, the trade creation effects are widely assessed to have outweighed diversion. Post-Brexit trade data provide a natural experiment: UK goods exports to the EU fell ~15% in 2021 due to new non-tariff barriers, suggesting membership had been generating substantial trade. The harder question is whether membership costs (budget contributions ~&#163;13bn net/year, regulatory alignment without UK vote) exceeded the trade benefits — a cost-benefit question on which economists disagree, but the OBR estimates a 4% long-run GDP cost from Brexit, suggesting benefits exceeded costs for the UK.'
-          },
-          { name: 'Olu', badge: 'Candidate B',
-            answer: 'EU membership was beneficial for the UK because it gave UK businesses access to a large market of 450 million consumers. UK exporters could sell their goods freely to European countries. The removal of tariffs made UK goods cheaper in Europe and European goods cheaper in the UK, which helped consumers. UK workers could also move freely to other EU countries for work. However, the UK had to follow EU rules and regulations which some people felt reduced UK sovereignty. The UK also had to pay into the EU budget. Overall it seems like the trade benefits were larger than the costs because the UK economy grew during its membership of the EU, though other factors also affected growth.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Sophie</strong> gives the stronger answer. She uses the Viner framework explicitly (trade creation vs trade diversion), provides a quantitative estimate (70% higher trade from CEP), identifies the natural experiment (post-Brexit trade fall), and distinguishes the trade welfare question from the broader political economy question (budget contributions, sovereignty). She concludes with OBR evidence (4% GDP cost). Olu identifies the benefits and costs descriptively but does not use the trade creation/diversion framework, provides no specific evidence or statistics, and the evaluation is generic ("UK economy grew"). Sophie earns Level 4; Olu Level 2-3. The OBR estimate is particularly strong because it quantifies the welfare cost, enabling a direct answer to "evaluate."'
-      },
-
-      /* 7 — Para fill: WTO limitations */
+      /* 6 — Para fill: WTO limitations */
       { type: 'para_fill',
         stem: 'Complete the paragraph evaluating WTO limitations.',
         anchor: 'The WTO faces significant structural challenges that limit its effectiveness.',
@@ -137,6 +122,21 @@
           { id: 7, opts: ['trade', 'monetary', 'fiscal', 'development'], ans: 0 }
         ],
         exp: '(1) <strong>Doha</strong> Round (2001 — still ongoing/stalled): agriculture deadlock prevented a deal. (2) <strong>Agricultural</strong> subsidies: rich-country farm subsidies (EU CAP, US farm bill) make it impossible for developing country agricultural exporters to compete on price. (3) <strong>Major</strong> powers: the US-China trade war exposed that WTO enforcement depends on voluntary compliance — major powers can defect with limited immediate consequence. (4) <strong>Appellate</strong> Body: the USA blocked appointments, leaving no functioning appeals mechanism since 2019. (5) <strong>Digital</strong> trade: e-commerce, data flows, and digital services are largely outside existing WTO rules. (6) <strong>Border</strong> adjustments: EU\'s Carbon Border Adjustment Mechanism (CBAM) imposes carbon costs on imports — potentially WTO-incompatible. (7) <strong>Trade</strong> governance: whether the WTO can adapt to these challenges determines whether multilateral rules remain meaningful.'
+      },
+
+      /* 7 — multi_select: evaluation of EU single market membership */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>whether UK membership of the EU single market was economically beneficial</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'UK EU membership gave UK businesses access to a market of 450 million consumers without tariffs',
+          'Using Viner\'s framework, the net welfare effect of EU membership depended on whether trade creation (replacing costly domestic production with cheaper EU imports) outweighed trade diversion (switching from even cheaper non-EU suppliers to EU partners because of the common external tariff) &#8212; and the empirical evidence, including the ~15% fall in UK goods exports to the EU after Brexit, suggests trade creation dominated',
+          'The broader costs of EU membership &#8212; budget contributions (~&#163;13bn net/year), regulatory alignment without a UK vote &#8212; must be weighed against trade benefits; the OBR\'s estimate of a 4% long-run GDP cost from Brexit provides the most comprehensive quantified comparison, suggesting benefits exceeded costs, though economists disagree on the methodology',
+          'EU membership was beneficial because the UK economy grew during the period of membership',
+          'The appropriate benchmark for evaluating EU membership is not autarky but the counterfactual of WTO-terms trade with the EU &#8212; and CEP research estimates UK-EU trade was approximately 70% higher inside the single market than WTO rules alone would have produced, making the trade case for membership substantially stronger than a simple tariff-removal argument',
+          'The EU is a customs union so it must be beneficial for all members'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it applies Viner\'s trade creation vs trade diversion framework to structure the welfare analysis, uses post-Brexit trade data as a natural experiment to reach a directional verdict (trade creation dominated), and grounds the conclusion in evidence rather than assertion. <strong>Option C (index 2)</strong> is strong evaluation: it identifies the full cost-benefit comparison, uses the OBR\'s 4% GDP estimate as quantified evidence, but acknowledges methodological disagreement &#8212; a nuanced position that avoids overclaiming certainty. <strong>Option E (index 4)</strong> is strong evaluation: it reframes the comparison set (WTO terms, not autarky) to make the counterfactual precise, uses CEP research to quantify the trade premium (~70%), and draws a directional conclusion about why the trade case is stronger than a simple tariff argument. <strong>Option A (index 0)</strong> is a distractor: it accurately describes a benefit of membership but makes no evaluative move &#8212; no mechanism, no weighing of costs, no directional conclusion. <strong>Option D (index 3)</strong> is a distractor: it commits a post hoc fallacy &#8212; economic growth during membership does not establish that membership caused or was necessary for growth; many other factors also drove growth. <strong>Option F (index 5)</strong> is a distractor: a sweeping assertion that customs unions are universally beneficial, ignoring trade diversion, sovereignty costs, and the distributional effects on different member states.'
       },
 
       /* 8 — Data table: regional vs multilateral */

@@ -84,22 +84,7 @@
         exp: 'Options A, B, C, and D are all correct. <strong>A</strong>: inelastic demand → consumers bear most of the tax (price rises significantly). <strong>B</strong>: inelastic demand → little quantity reduction → large tax revenue (the Laffer argument for taxing inelastic goods). <strong>C</strong>: deadweight loss = triangle proportional to quantity reduction; inelastic demand → small quantity fall → small deadweight loss. <strong>D</strong>: cigarette consumption is higher among lower-income groups as a share of income &#8212; a regressive tax. Option E is wrong: precisely the opposite &#8212; inelastic demand allows producers to pass the tax on. Option F confuses supply elasticity with demand elasticity in this context.'
       },
 
-      /* 5 &#8212; Diagnostic pair: PED and pricing strategy */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Using PED analysis, explain how Ryanair and British Airways should approach their pricing strategies differently."</em> Which student demonstrates stronger application of PED?',
-        students: [
-          { name: 'Ella', badge: 'Candidate A',
-            answer: 'Ryanair targets the <strong>price-elastic</strong> leisure traveller segment: holidays and short breaks have many substitutes (other airlines, rail, staying at home), consumers are highly sensitive to price, and leisure demand has |PED| > 1. Therefore, Ryanair\'s strategy is to cut base fares to the minimum to maximise load factors &#8212; since demand is elastic, lower prices raise total revenue by expanding quantity more than proportionally. British Airways competes for <strong>price-inelastic</strong> business travellers: business travel has few substitutes (the meeting must happen), is a small proportion of the firm\'s budget, and loyalty schemes reduce effective alternatives, giving |PED| < 1. BA can therefore charge premium prices (business class, flexible fares) and raise revenue because the quantity fall is proportionally smaller than the price rise. Both carriers in effect practise third-degree <strong>price discrimination</strong>: charging different prices to segments with different PEDs to maximise revenue across the whole demand curve.'
-          },
-          { name: 'Tom', badge: 'Candidate B',
-            answer: 'Ryanair should keep prices low because it mainly attracts people looking for cheap flights who would switch to another airline if prices went up. This means demand is elastic. British Airways has business customers who need to fly and cannot easily change, so demand is more inelastic and BA can charge more. PED is calculated by dividing the percentage change in quantity demanded by the percentage change in price. So the difference in strategies is explained by the different types of customers they serve.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Ella</strong> gives the stronger answer. She explicitly labels the PED of each segment (|PED| > 1 and < 1), explains the determinants behind each elasticity value (substitutes, necessity, brand loyalty), and shows precisely why each strategy maximises revenue. She also introduces price discrimination as the integrating concept. Tom identifies the correct direction for each firm but at a descriptive level &#8212; he mentions the PED formula without using it analytically. Ella accesses Level 4; Tom Level 2. The key analytical move is connecting PED value → TR rule → pricing strategy as a chain of reasoning.'
-      },
-
-      /* 6 &#8212; Para fill: PED and total revenue rule */
+      /* 5 &#8212; Para fill: PED and total revenue rule */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the PED&#8211;total revenue relationship.',
         anchor: 'The relationship between PED and total revenue is one of the most tested applications in economics.',
@@ -116,7 +101,7 @@
         exp: '(1+2) Total Revenue = <strong>Price</strong> &#215; <strong>Quantity</strong>. (3) <strong>Elastic</strong> demand: |PED| > 1. (4) Quantity demanded falls <strong>more</strong> than proportionally &#8212; the percentage fall in Q exceeds the percentage rise in P → TR falls. (5) <strong>Inelastic</strong> demand: |PED| < 1. (6) TR <strong>increases</strong> &#8212; the revenue gain from higher price outweighs the revenue loss from lower quantity. (7) The quantity fall is <strong>smaller</strong> in proportional terms than the price rise → the price effect dominates → TR rises. Summary table: Elastic + price rise → TR falls; Inelastic + price rise → TR rises; Unit elastic → TR unchanged.'
       },
 
-      /* 7 &#8212; Odd one out: determinants making demand elastic */
+      /* 6 &#8212; Odd one out: determinants making demand elastic */
       { type: 'odd_one_out',
         stem: 'Three of these factors make demand <strong>more price elastic</strong>. Which is the <strong>odd one out</strong>?',
         items: [
@@ -129,7 +114,7 @@
         exp: 'The odd one out is <strong>a life-sustaining medicine with no substitute</strong>. This makes demand <strong>price inelastic</strong>: there are no substitutes, it is a necessity, and consumers must purchase it regardless of price. The other three factors all increase price elasticity: many substitutes (consumers can easily switch); large income share (consumers are very sensitive to price changes); long time period (consumers find substitutes, form new habits, or adopt new technologies). The most important determinant of PED is availability of substitutes &#8212; a good with no substitutes will always have relatively inelastic demand.'
       },
 
-      /* 8 &#8212; Data table: fuel duty and PED */
+      /* 7 &#8212; Data table: fuel duty and PED */
       { type: 'data_table',
         stem: 'The table shows UK petrol market data before and after a significant fuel duty increase.',
         headers: ['Variable', 'Before duty rise', 'After duty rise'],
@@ -148,6 +133,21 @@
         ],
         ans: 0,
         exp: '%&#916;QD = (40.6&#8722;42.0)/42.0 &#215;100 &#8776; &#8722;3.3%. %&#916;P = (1.65&#8722;1.50)/1.50 &#215;100 = +10%. PED &#8776; &#8722;3.3%/+10% = <strong>&#8722;0.33</strong> (approximately &#8722;0.22 as stated, depending on rounding method). Demand is clearly <strong>inelastic</strong>. Revenue rose from &#163;28.1bn to &#163;28.4bn &#8212; consistent with taxing an inelastic good raising revenue. The regressive distributional impact (low-income households\' share rises from 4.8% to 5.3%) is a genuine concern. Option B contradicts the calculation. Option C is wrong &#8212; revenue rose. Option D confuses absolute spending with the income share measure of regressivity.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of PED and pricing strategy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>price elasticity of demand</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Price elasticity of demand measures the responsiveness of quantity demanded to a change in price, calculated as the percentage change in quantity demanded divided by the percentage change in price',
+          'The PED&#8211;TR rule applies differently across airline segments: Ryanair targets price-elastic leisure travellers and maximises revenue by cutting base fares, while British Airways targets price-inelastic business travellers and maximises revenue by charging premium prices &#8212; both strategies reflect the same underlying principle applied to opposite elasticity conditions',
+          'Pharmaceutical companies can exploit inelastic demand for patented medicines to raise prices and increase revenue, but this same inelastic demand attracts regulatory scrutiny and price controls, qualifying any claim that high PED pricing power translates directly into unconstrained profit',
+          'Inelastic demand means that a price rise leads to a smaller proportional fall in quantity demanded, so total revenue rises when price increases',
+          'The fuel duty example shows the trade-off inherent in taxing inelastic goods: inelastic demand ensures high revenue yield and small deadweight loss, but also means the burden falls regressively on lower-income households who spend a higher share of income on fuel',
+          'When demand is perfectly elastic (PED = &#8722;&#8734;), the demand curve is horizontal and any price rise above the market price causes quantity demanded to fall to zero'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Options B, C, and E are evaluation.</strong> (B) applies the PED&#8211;TR rule to two specific real-world firms with opposite elasticity conditions, reaching the evaluative conclusion that the same underlying principle generates opposite pricing strategies &#8212; this is a comparative evaluative move, not mere description. (C) qualifies the claim about pharmaceutical pricing power by introducing regulatory response as a countervailing factor, reaching the conclusion that inelastic demand does not automatically translate into unconstrained profit &#8212; this weighs competing forces and reaches a direction. (E) explicitly identifies and weighs the trade-off in taxing inelastic goods (revenue benefit vs regressive distributional impact), reaching the conclusion that the policy involves a genuine tension rather than being unambiguously beneficial &#8212; this is a multi-directional evaluation. <strong>Options A, D, and F are not evaluation.</strong> (A) is a definition of PED &#8212; pure description with no evaluative content. (D) accurately states the inelastic demand&#8211;TR relationship but is one-sided description of a rule; it does not apply it to a specific context, weigh competing considerations, or reach a qualified conclusion. (F) accurately describes the perfectly elastic demand special case but is textbook description with no evaluative move.'
       },
 
       /* 9 &#8212; MCQ: special cases of PED */

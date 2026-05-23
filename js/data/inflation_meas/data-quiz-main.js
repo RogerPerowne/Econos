@@ -70,22 +70,7 @@
         exp: 'Correct statements: (A) RPI includes mortgage interest payments &#8212; a key structural difference. (B) The formula effect: CPI\'s geometric mean within categories produces systematically lower results than RPI\'s arithmetic mean. (D) RPI runs ~1pp above CPI on average due to these structural differences. (E) Rail fares use RPI+X &#8212; governments prefer CPI for benefits uprating (lower) and operators prefer RPI for fares (higher). Incorrect: (C) The BoE targets <em>CPI</em> at 2%. (F) CPIH is the ONS preferred measure since 2017, not RPI.'
       },
 
-      /* 4 &#8212; Diagnostic pair: inflation winners and losers */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Using examples, analyse who wins and who loses from a sustained period of high inflation."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Sofia', badge: 'Candidate A',
-            answer: 'High inflation creates clear redistributional effects. <strong>Borrowers gain</strong> because the real value of their debt erodes: a &#163;200,000 mortgage fixed in nominal terms falls in real value as inflation rises, reducing the real burden of repayment &#8212; provided nominal wages keep pace. The government also gains as inflation reduces the real value of public debt (currently ~&#163;2.7trn). <strong>Savers lose</strong> if nominal interest rates are below inflation &#8212; real returns turn negative, as occurred with Bank Rate at 0.1% and CPI at 11.1% in late 2022, when real returns on cash savings were approximately &#8722;11%. <strong>Workers on fixed wages and pensioners</strong> on fixed nominal incomes also lose as their real purchasing power falls. The worst-off households are disproportionately hurt because they spend a higher share of income on food and energy &#8212; the items whose prices rose most in 2022-23. ONS data showed the poorest decile faced ~15% inflation while the richest faced ~8%.'
-          },
-          { name: 'Callum', badge: 'Candidate B',
-            answer: 'Inflation creates winners and losers. Winners include borrowers because the money they owe is worth less in real terms when inflation is high. Also governments gain because the national debt is worth less. Losers include savers because their money loses value over time. Workers on fixed wages also lose out because prices rise but their pay does not. Poor people are hit harder by inflation because they spend more of their money on things like food which went up a lot in 2022. In general, inflation hurts people who have fixed incomes more than those whose incomes can rise with inflation.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Sofia</strong> gives the stronger answer. She quantifies the examples (&#163;200,000 mortgage, &#163;2.7trn debt, 0.1% Bank Rate vs 11.1% CPI giving -11% real return, 15% vs 8% inflation by decile). She explains the <em>mechanism</em> for each group, not just the conclusion. The ONS distributional data point is A*-level evidence. Callum reaches the same conclusions but with no quantification, no institutional references, and no mechanism beyond \'money loses value\'. Sofia\'s answer would access Level 4; Callum\'s Level 2-3.'
-      },
-
-      /* 5 &#8212; MCQ: substitution bias */
+      /* 4 &#8212; MCQ: substitution bias */
       { type: 'mcq',
         stem: 'In 2020, UK CPI fell to very low levels despite many households feeling financially squeezed. This was partly because holiday and clothing prices fell (sectors consumers could not use during lockdown). Which <strong>price index limitation</strong> does this best illustrate?',
         opts: [
@@ -98,7 +83,7 @@
         exp: 'The 2020 CPI anomaly illustrates the <strong>basket composition problem</strong>. CPI weights each category by its share of normal household spending. In lockdown, consumers could not buy holidays or eat out &#8212; but these categories still carried large weights in the basket. Their falling prices pulled CPI down, even as food and energy (what locked-down households <em>actually</em> spent on) rose sharply. The basket weights lagged the radical shift in spending patterns. Option C is a definition error &#8212; substitution bias is about consumers switching to cheaper alternatives within a category, not the basket weight problem described here.'
       },
 
-      /* 6 &#8212; Para fill: deflationary spiral */
+      /* 5 &#8212; Para fill: deflationary spiral */
       { type: 'para_fill',
         stem: 'Complete the paragraph explaining the deflationary spiral by selecting the correct word or phrase for each blank.',
         anchor: 'Deflation is feared by central banks because it can create a self-reinforcing trap.',
@@ -116,7 +101,7 @@
         exp: '(1) <strong>Falling</strong>: deflation means prices are going down. (2) <strong>Cheaper</strong>: delay purchases because tomorrow the same item costs less. (3) <strong>Consumption</strong>: delayed spending reduces aggregate demand. (4) <strong>Incomes</strong>: lower firm revenues mean lower wages and employment &#8212; incomes fall further. (5) <strong>Debt</strong>: the Fisher debt-deflation mechanism &#8212; real debt rises as prices fall. (6) <strong>Nominal interest</strong>: the zero lower bound means nominal rates cannot go negative (though some central banks briefly tried mildly negative rates). (7) <strong>The Great Depression</strong>: the textbook deflationary episode &#8212; US prices fell ~25%, recovery required WWII fiscal stimulus.'
       },
 
-      /* 7 &#8212; Calculation: real interest rate */
+      /* 6 &#8212; Calculation: real interest rate */
       { type: 'calculation',
         context: 'A UK saver holds &#163;10,000 in a savings account paying a <strong>nominal interest rate of 3%</strong>. The current CPI inflation rate is <strong>6%</strong>.',
         working: [
@@ -138,7 +123,22 @@
         exp: 'Real interest rate = nominal rate &#8722; inflation = 3% &#8722; 6% = <strong>&#8722;3%</strong>. Despite nominally receiving &#163;300 in interest, the saver\'s &#163;10,300 balance after one year buys only &#163;10,300 &#247; 1.06 &#8776; &#163;9,717 in today\'s prices &#8212; a real loss of ~&#163;283. This is the mechanism by which high inflation transfers wealth from savers to borrowers. The 2022-23 UK episode (Bank Rate 0.5-4%, CPI 6-11%) left real interest rates deeply negative for much of the period, imposing significant losses on cautious savers.'
       },
 
-      /* 8 &#8212; Odd one out */
+      /* 7 &#8212; Multi-select: evaluation of inflation costs and redistribution */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on the <strong>costs and redistribution effects of inflation</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'While borrowers gain as the real value of debt falls, this benefit is conditional on nominal wages rising in line with inflation &#8212; if wages lag (as for many workers in 2022-23), even mortgaged homeowners saw real income fall despite debt erosion.',
+          'Inflation hurts savers because the real value of their savings falls.',
+          'The distributional impact of inflation depends heavily on whether monetary policy responds: the BoE\'s rate rises to 5.25% by 2023 largely restored positive real returns on savings, qualifying the simple \'savers always lose\' conclusion.',
+          'Shoe-leather costs and menu costs are costs of high inflation.',
+          'The ONS distributional data showing the poorest decile faced ~15% inflation versus ~8% for the richest in 2022-23 suggests that aggregate CPI understates the true welfare cost &#8212; a measure that ignores distributional impact may mislead policy-makers targeting the 2% headline figure.',
+          'Inflation is always bad for the economy and should be kept as low as possible.'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Option A</strong> is genuine evaluation: it weighs the borrower-gains argument against the necessary condition (wage growth must keep pace), using UK 2022-23 experience to show the caveat is empirically binding &#8212; a qualified, evidence-grounded conclusion. <strong>Option C</strong> is evaluation: it challenges the one-sided \'savers always lose\' claim by tracing the full policy response, reaching a direction (the simple conclusion needs qualifying). <strong>Option E</strong> is evaluation: it uses specific ONS data to reach a qualified conclusion about the adequacy of aggregate CPI as a welfare measure, directly addressing the essay topic. <strong>Option B</strong> is pure description &#8212; it states a conclusion without mechanism, qualification, or direction. <strong>Option D</strong> is description &#8212; naming costs with no comparative weight, no qualification, no direction. <strong>Option F</strong> overclaims certainty and ignores the positive case for a 2% buffer (deflation risk, wage flexibility), making it a one-sided analytical claim, not evaluation.'
+      },
+
+      /* 8 &#8212; Odd one out: costs of high inflation */
       { type: 'odd_one_out',
         stem: 'Three of these are <strong>costs of high inflation</strong>. Which is the ODD ONE OUT?',
         items: [

@@ -83,22 +83,7 @@
         exp: 'Options A&#8211;E all represent valid XED applications. (A) Razor-blade complement strategy &#8212; cutting console price boosts game software revenue through negative XED. (B) Supermarket competitive analysis &#8212; high positive XED identifies close rivals. (C) CMA market definition &#8212; high positive XED means products constrain each other\'s pricing; relevant to merger review. (D) Market definition for regulation &#8212; zero/near-zero XED argues two products are not in the same market. (E) Carbon tax modelling &#8212; negative XED between fuel and cars predicts second-order demand effects on vehicle market. Option F is <strong>incorrect</strong>: if XED between a firm\'s own products is positive (they are substitutes for each other), then raising the price of one would increase demand for the other &#8212; not reduce it. The firm has confused the direction.'
       },
 
-      /* 5 — diagnostic_pair: recession and YED */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain how YED analysis can help businesses plan for a recession."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Fatima', badge: 'Candidate A',
-            answer: 'YED measures the responsiveness of demand to income changes. In a recession, household incomes fall &#8212; and the <em>magnitude and sign</em> of YED determines how hard each product is hit. For luxury goods (YED &gt; 1), revenue collapses disproportionately: a 5% fall in income causes more than 5% decline in demand. This means premium hotel chains, luxury car manufacturers, and high-end restaurants are extremely vulnerable &#8212; evidenced by sharp falls in luxury goods sales in 2008&#8211;09. Conversely, inferior goods (YED &lt; 0) experience rising demand &#8212; discount retailers (Aldi, Lidl) and budget airlines (Ryanair) see counter-cyclical demand surges. A diversified portfolio &#8212; mixing products with high positive YED (growth in booms) and near-zero or negative YED (resilience in downturns) &#8212; reduces overall revenue volatility. This is the analytical basis for conglomerate diversification strategies.'
-          },
-          { name: 'Ben', badge: 'Candidate B',
-            answer: 'In a recession, incomes fall and people have less money to spend. This means demand for expensive goods will fall as people cannot afford them. Cheaper goods will do better. YED tells us whether a good is normal or inferior. If YED is positive, demand falls in a recession; if it is negative, demand rises. Businesses should think about this when planning. Luxury businesses will suffer more in a recession than businesses that sell basic necessities. This is why discount supermarkets do well when times are bad &#8212; people switch to cheaper options. Companies should try to have a mix of products so that if some do badly, others do well.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Fatima</strong> gives the stronger answer. She precisely links YED values to revenue changes in recessions, uses specific numerical examples (5% income fall &#8658; &gt;5% demand fall for YED &gt; 1), cites real firms (Aldi, Ryanair), and articulates the portfolio diversification logic analytically. She correctly distinguishes the sign and magnitude of YED and links it to cyclical risk. Ben covers the same ideas but at a descriptive level &#8212; "expensive goods fall" and "cheaper goods do better" lacks the YED framework. Fatima would access Level 4; Ben Level 2. The key marker of quality: Fatima states the analytical mechanism explicitly (YED &gt; 1 &#8658; revenue falls more than income) rather than just describing the outcome.'
-      },
-
-      /* 6 — para_fill: Engel's Law */
+      /* 5 — para_fill: Engel's Law */
       { type: 'para_fill',
         stem: 'Complete the paragraph about Engel\'s Law and structural change.',
         anchor: 'Rising incomes change the composition of household spending over time.',
@@ -115,7 +100,7 @@
         exp: '(1) <strong>Proportion</strong>: Engel\'s Law is about budget share, not absolute spending &#8212; absolute food spending may still rise, but as a fraction of income it falls. (2) <strong>Engel\'s</strong> Law: named after Ernst Engel (1857). (3) <strong>Necessity</strong>: YED between 0 and 1 &#8212; demand rises with income but sub-proportionally. (4) <strong>Less rapidly</strong>: this is the definition of a necessity &#8212; income-inelastic demand. (5) <strong>Higher-YED</strong> goods: as necessities are satisfied, spending shifts to discretionary goods. (6) <strong>Higher</strong> YED: manufactured goods and services have higher income sensitivity than food. (7) <strong>Structural</strong> transformation: the agriculture → industry → services transition observed in all developing economies is demand-driven through rising YED for non-food goods.'
       },
 
-      /* 7 — odd_one_out: negative XED (complements) */
+      /* 6 — odd_one_out: negative XED (complements) */
       { type: 'odd_one_out',
         stem: 'Three of these pairs of goods are <strong>complements</strong> (negative XED). Which is the ODD ONE OUT?',
         items: [
@@ -126,6 +111,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is <strong>burgers and hot dogs</strong>. These are substitutes (positive XED): if the price of burgers rises, consumers switch to hot dogs &#8212; demand for hot dogs increases. The other three are complements (negative XED): petrol and cars are used together (higher petrol prices reduce demand for cars &#8212; a key relationship in the EV transition); coffee machines and pods are the razor-blade complement relationship (Nespresso model); smartphones and data contracts are inseparable &#8212; a price rise in one reduces demand for the other. Identifying whether goods are substitutes or complements is the first step in XED analysis &#8212; and the sign of XED is the test.'
+      },
+
+      /* 7 — multi_select: evaluation of YED analysis for business planning */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>how YED analysis can help businesses plan for a recession</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'YED measures how demand responds to changes in income; a positive YED means demand rises with income',
+          'For firms selling luxury goods (YED &gt; 1), a recession causes a disproportionate revenue collapse &#8212; a 3% fall in real incomes can cause a &gt;3% fall in demand &#8212; meaning these firms face greater cyclical risk than the macroeconomic data alone would suggest; the 2008&#8211;09 data for Rolls-Royce (revenue &#8722;25% against a ~3% income fall, implying YED &#8776; 8) illustrates this amplification',
+          'Businesses should sell inferior goods to be safe in recessions',
+          'YED analysis has a key limitation as a planning tool: YED estimates are derived from historical data and may not accurately predict future demand responses if consumer preferences, credit availability, or the income distribution shifts &#8212; meaning firms cannot simply read off a historical YED and assume it will hold in the next downturn',
+          'A portfolio strategy that combines products with high positive YED (for boom-time revenue growth) and negative or near-zero YED (for recession resilience) reduces overall revenue volatility &#8212; but this diversification benefit only works if the firm can manage the operational complexity of serving fundamentally different market segments simultaneously',
+          'Inferior goods always perform well in recessions because consumers always switch to cheaper options when incomes fall'
+        ],
+        correct: [1, 3, 4],
+        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it uses the YED framework to derive a specific directional implication (revenue falls more than proportionally for luxury firms), quantifies this with the 2008&#8211;09 Rolls-Royce data (YED &#8776; 8), and reaches a directional conclusion about the amplification of cyclical risk. This is evaluation through mechanism plus evidence plus direction. <strong>Option D (index 3)</strong> is strong evaluation: it identifies a genuine limitation of YED as a forecasting tool &#8212; historical estimates may not hold when structural conditions change &#8212; and qualifies the practical usefulness of the analysis rather than accepting it at face value. This is a conditional evaluation of the framework itself. <strong>Option E (index 4)</strong> is strong evaluation: it grants the portfolio diversification logic (conceding the benefit) but then qualifies its applicability by identifying the operational complexity condition &#8212; the strategy only works under a specific condition (ability to manage diverse segments). This conditional qualifier is the evaluative move. <strong>Option A (index 0)</strong> is a distractor: it accurately defines YED but makes no evaluative move &#8212; no application, no conditions, no directional conclusion about business planning. <strong>Option C (index 2)</strong> is a distractor: it offers a simplistic one-sided recommendation without acknowledging the operational challenges, brand positioning constraints, or the fact that very inferior goods (budget own-brands) may not suit all firms\' existing strategies. <strong>Option F (index 5)</strong> is a distractor: an overclaim that ignores the fact that not all consumers are willing or able to switch to inferior goods (habits, quality preferences, availability), and that some inferior goods categories are highly context-specific.'
       },
 
       /* 8 — data_table: luxury goods and recession */

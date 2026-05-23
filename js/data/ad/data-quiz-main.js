@@ -70,22 +70,7 @@
         exp: '<strong>Shift of AD</strong>: any non-price change in C, I, G, or (X&#8722;M) &#8212; interest rate cuts, fiscal stimulus, exchange rate changes, confidence shocks. The entire curve moves to a new position. <strong>Movement along AD</strong>: caused by a change in the <em>price level</em> &#8212; moving the economy from one point on the existing AD curve to another. When SRAS shifts right and prices fall, the economy slides down the existing AD curve (movement). The distinction is the most commonly marked-down error in AD/AS essays &#8212; opening with \'this causes a shift of AD because...\' is the A* analytical move.'
       },
 
-      /* 4 &#8212; Diagnostic pair: investment and the cycle */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain why investment is described as the \'engine of the business cycle\' despite being only ~17% of UK aggregate demand."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Although investment (I) represents approximately 17% of UK AD, it is the most <strong>volatile</strong> component &#8212; driven by business expectations (\'animal spirits\'), interest rates, and the accelerator relationship. Consumer spending (~60% of AD) is relatively stable because households smooth consumption over time. Government spending (~20%) is set by policy and changes slowly. Investment, however, can fall 20-30% in a single recession (UK business investment fell ~25% in 2008-09 and ~15% during COVID). It responds to both demand changes (via the accelerator: &#8710;I = v&#215;&#8710;Y) and to confidence (which can collapse suddenly). The multiplier then amplifies each &#163;1 fall in I into multiple &#163; of GDP loss. The combination of high volatility and multiplier amplification means I drives most of the cycle\'s amplitude despite its moderate size. Post-Brexit uncertainty (2016-19) is a key example: UK business investment flatlined for three years, costing ~2-3% of cumulative GDP relative to peers.'
-          },
-          { name: 'Tom', badge: 'Candidate B',
-            answer: 'Investment is only 17% of GDP but it is more important than this share suggests because it is very volatile compared to other components. In recessions, businesses lose confidence and stop investing. This can cause big falls in AD even though investment is not the biggest component. For example, in the 2008 recession investment fell a lot. Also, the multiplier effect means that when investment falls, the total impact on the economy is bigger than the initial fall. Consumer spending is much more stable because people still need to spend money on essentials. Investment can go up and down a lot depending on how confident businesses feel about the future.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She quantifies the volatility (25% fall in 2008-09, 15% during COVID, 2-3% cumulative GDP cost from Brexit uncertainty), states the accelerator relationship with the formula (&#8710;I = v&#215;&#8710;Y), names \'animal spirits\' as the mechanism, and links to the multiplier explicitly. Tom makes the same core point but without quantification, without the accelerator formula, and without named examples beyond a generic \'2008 recession\'. The analytical pattern &#8212; mechanism → evidence → quantification &#8212; is what separates the two answers.'
-      },
-
-      /* 5 &#8212; Calculation: multiplier */
+      /* 4 &#8212; Calculation: multiplier */
       { type: 'calculation',
         context: 'The UK government announces a <strong>&#163;15 billion</strong> infrastructure investment programme. Assume the marginal propensity to consume (MPC) is <strong>0.75</strong>.',
         working: [
@@ -106,7 +91,7 @@
         exp: 'Simple multiplier: k = 1 &#247; (1 &#8722; 0.75) = <strong>4</strong>. Total GDP change = &#163;15bn &#215; 4 = <strong>&#163;60bn</strong>. However, the full-leakage formula &#8212; k = 1 &#247; (MPS + MRT + MPM) &#8212; gives a much more realistic UK figure. With MPS~0.10, MRT~0.35, MPM~0.30, k &#8776; 1/(0.75) &#8776; 1.3. The realistic impact is ~&#163;20bn &#8212; far smaller than the simple formula implies. The gap illustrates why open economies with high tax rates have smaller multipliers. A* answers always note both the simple and full-leakage versions, explaining why the latter is more appropriate for the UK.'
       },
 
-      /* 6 &#8212; Para fill: consumption function */
+      /* 5 &#8212; Para fill: consumption function */
       { type: 'para_fill',
         stem: 'Complete the paragraph describing the main determinants of consumer spending.',
         anchor: 'Consumption is the largest component of UK aggregate demand, accounting for approximately 60% of GDP.',
@@ -124,7 +109,7 @@
         exp: '(1) <strong>Disposable</strong>: income after income tax and National Insurance. (2) <strong>Interest</strong>: the Bank Rate transmission mechanism works largely through its effect on consumption via mortgage and credit costs. (3) <strong>Wealth</strong>: the wealth effect &#8212; one of the three reasons AD slopes downward. (4) <strong>Confidence</strong>: consumer confidence is a leading indicator &#8212; when it falls, households precautionarily save. (5) <strong>Savings</strong>: the savings ratio spiked to ~25% during COVID-19 lockdowns. (6) <strong>0.6&#8211;0.8</strong>: the typical range for UK MPC. (7) <strong>Size</strong>: the multiplier k = 1/(1&#8722;MPC), so higher MPC means larger multiplier.'
       },
 
-      /* 7 &#8212; Odd one out */
+      /* 6 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these cause a <strong>rightward shift of the AD curve</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -137,7 +122,7 @@
         exp: 'The odd one out is option B. A rise in the domestic price level does not shift AD &#8212; it causes a <em>movement along</em> the existing AD curve (a contraction). The wealth effect from rising prices reduces the quantity of AD demanded but this is already captured in the downward slope, not a separate shift. Options A (&#8593;G), C (&#8593;X via depreciation), and D (&#8593;C and &#8593;I via lower interest rates) are all non-price changes to the components of AD that shift the entire curve rightward.'
       },
 
-      /* 8 &#8212; Data table: consumption signals */
+      /* 7 &#8212; Data table: consumption signals */
       { type: 'data_table',
         stem: 'The table shows UK consumer indicators over a period of change.',
         headers: ['Indicator', 'Q1', 'Q2', 'Q3', 'Q4'],
@@ -156,6 +141,21 @@
         ],
         ans: 0,
         exp: 'The leading indicators all point to a weakening of AD through the period. Consumer confidence turned negative in Q3 and fell sharply in Q4. The savings ratio jumped from 5.2% to 11.4% &#8212; households precautionarily saving rather than spending (the reverse multiplier). Retail sales growth declined and turned negative in Q4. These are classic signals of a consumption-led AD deceleration. Option B overstates the rate cut effect &#8212; the policy transmission lag is 12-24 months, so Q4\'s minor cut would not show up immediately. Option C ignores the leading indicator signals. Option D is backward-looking &#8212; Q3 positive retail sales do not negate the Q4 contraction.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of AD and the multiplier */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>aggregate demand and the multiplier</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'The simple multiplier overstates the real-world impact of fiscal stimulus in the UK because import and tax leakages reduce the multiplier to approximately 1.0&#8211;1.5 &#8212; meaning a &#163;15bn injection raises GDP by roughly &#163;15&#8211;23bn, not &#163;60bn',
+          'Aggregate demand has four components: consumption, investment, government spending, and net exports',
+          'Although investment is only ~17% of UK AD, it is the most volatile component and therefore drives most of the business cycle&#8217;s amplitude &#8212; a small share does not mean a small influence',
+          'A rise in consumer confidence will increase consumption and shift the AD curve to the right',
+          'Fiscal stimulus is more effective at closing a negative output gap than at full employment: when there is spare capacity, the multiplier operates without crowding out or inflation, so the same &#163;10bn injection has a larger real effect in a recession than at full employment',
+          'Investment is important because when it rises, aggregate demand increases'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it qualifies the multiplier claim with a specific real-world adjustment (import/tax leakages), names the full-leakage formula, and provides a quantified range &#8212; this is a weighing move that limits the scope of a theoretical claim. Option C is strong evaluation: it resolves an apparent contradiction (small share, large impact) by identifying the key variable (volatility), reaching a directional conclusion. Option E is strong evaluation: it conditions the effectiveness of fiscal stimulus on the state of the economy, using spare capacity and the crowding-out mechanism to differentiate contexts &#8212; the hallmark of conditional evaluation. Option B is pure description &#8212; listing AD components is a knowledge statement, not an evaluative move. Option D is one-sided analysis &#8212; it states a mechanism without any qualification, context, or counter-argument. Option F is vague and circular &#8212; it merely restates the definition of investment as an AD component without adding analytical insight.'
       },
 
       /* 9 &#8212; MCQ: government spending */

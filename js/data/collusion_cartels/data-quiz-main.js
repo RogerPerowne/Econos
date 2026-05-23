@@ -100,22 +100,7 @@
         exp: 'Options A, B, D, E, and F are all correct. The incorrect statement is C — in reality, <strong>OPEC members frequently exceed their quotas</strong> (classic cheating behaviour from the prisoner\'s dilemma). Saudi Arabia acts as swing producer <em>because</em> other members cheat — it adjusts its own output to compensate for others\' excess production and maintain the cartel price. The 2020 OPEC+ collapse (option E) is a perfect real-world demonstration of cartel instability: when Saudi Arabia and Russia failed to agree cuts during the COVID demand shock, Saudi Arabia launched a price war that crashed oil to $20/barrel — damaging all parties, exactly as the prisoner\'s dilemma predicts.'
       },
 
-      /* 6 — diagnostic_pair: evaluating competition policy */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the effectiveness of competition policy in tackling cartels."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Maya', badge: 'Candidate A',
-            answer: 'Competition policy uses two main tools: <strong>leniency programmes</strong> and <strong>fines/prosecution</strong>. Leniency (the "immunity" programme) is clever game theory: by giving the first cartel member to confess full immunity, it turns the prisoner\'s dilemma against the cartel. Members face a new dilemma — confess first or risk being exposed by a rival. Over 50% of EU cartel cases are now initiated by leniency applicants. However, leniency only breaks up existing cartels; it does nothing to prevent formation. Fines (up to 10% of global turnover, plus criminal prosecution of individuals in the UK) aim to deter through expected cost exceeding expected gain. But deterrence depends on the probability of detection — if detection is low, even large fines may not deter. The 2001 UK vitamins cartel (&#163;750m EU fines) shows leniency working well. Evaluation: competition policy is more effective at cartel detection than prevention, and is better suited to explicit cartels than tacit collusion — the latter is very difficult to prosecute without evidence of direct communication.'
-          },
-          { name: 'Daniel', badge: 'Candidate B',
-            answer: 'Competition policy can be effective at tackling cartels. The CMA can impose large fines on companies that break the law. There is also a leniency programme where the first firm to tell the authorities gets immunity from fines. This means companies might decide to confess because they don\'t want to be caught and have to pay the fine. However, competition policy has limitations because it is hard to find evidence of a cartel when the meetings are secret. Tacit collusion is also very difficult to prosecute because the companies have not actually agreed anything. Overall, competition policy is quite effective but needs to be improved to deal with new challenges like digital markets.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Maya</strong> gives the stronger answer. She uses the game theory framework (prisoner\'s dilemma, dominant strategy) to explain WHY leniency works — not just describing what it does. She quantifies (50% of EU cases, 10% fine cap, &#163;750m vitamins case) and distinguishes the detection vs prevention limitation, and explicit vs tacit collusion as a key boundary. Daniel identifies the right tools and limitations but stays at the descriptive level — the analytical framework (why leniency changes the payoff structure) is missing. Maya accesses Level 4; Daniel Level 2–3. The phrase "turns the prisoner\'s dilemma against the cartel" is the kind of analytical insight examiners reward at the top of the mark scheme.'
-      },
-
-      /* 7 — odd_one_out: tacit collusion mechanisms */
+      /* 6 — odd_one_out: tacit collusion mechanisms */
       { type: 'odd_one_out',
         stem: 'Three of these are mechanisms that facilitate <strong>tacit collusion</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -128,7 +113,7 @@
         exp: 'The odd one out is the <strong>leniency programme</strong>. This is a <em>competition policy tool designed to break up cartels</em> — it is the opposite of a tacit collusion mechanism. Most-favoured-nation (MFN) clauses, price leadership, and transparent pricing all facilitate tacit collusion without explicit agreement. MFN clauses remove the incentive to discount selectively. Price leadership coordinates prices through a dominant firm\'s signal. Transparent pricing enables instant retaliation against cheating. The leniency programme exploits the prisoner\'s dilemma to destabilise cartel cooperation — it is the CMA\'s most powerful cartel-breaking tool, not a collusion mechanism.'
       },
 
-      /* 8 — para_fill: cartel instability */
+      /* 7 — para_fill: cartel instability */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph by selecting the correct word or phrase for each numbered blank.',
         anchor: 'The prisoner\'s dilemma explains why cartels are inherently unstable.',
@@ -143,6 +128,21 @@
           { id: 7, opts: ['normal (competitive)', 'monopoly', 'supernormal', 'abnormal'], ans: 0 }
         ],
         exp: '(1) <strong>Output</strong>: cartel restricts supply to raise price. (2) <strong>Dominant</strong>: cheating is the dominant strategy — better regardless of what others do. (3) <strong>Profit</strong>: the cheater sells more units at still-high price → earns more. (4) <strong>Every</strong>: all members face identical incentives — this is what makes it a prisoner\'s dilemma rather than an isolated defection. (5) <strong>Down</strong>: total output rises → price falls back toward the competitive level. (6) <strong>Collapses</strong>: the enforcement mechanism breaks down. (7) <strong>Normal (competitive)</strong>: Nash equilibrium (cheat, cheat) gives competitive profit — collectively worse than (cooperate, cooperate) = monopoly profit.'
+      },
+
+      /* 8 — multi_select: evaluation of collusion and competition policy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>collusion, cartels, and the effectiveness of competition policy</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Leniency programmes are effective at detecting existing cartels &#8212; over 50% of EU cartel cases are now initiated by leniency applicants &#8212; but they do nothing to prevent cartel formation: they change the payoff structure only after a cartel exists, leaving the initial incentive to collude intact',
+          'Cartels are more stable when there are few firms, a homogeneous product, high barriers to entry, and stable demand',
+          'The consumer harm from a cartel depends critically on the price elasticity of demand for the cartelised good: a cartel in an inelastic-demand market (such as insulin or aviation fuel) causes a far larger welfare loss than a cartel in a competitive market with close substitutes, because consumers cannot escape the elevated price',
+          'Fines of up to 10% of global turnover can be imposed on firms found to have participated in a cartel under UK and EU competition law',
+          'Tacit collusion is significantly harder for competition authorities to address than explicit collusion, because parallel pricing behaviour &#8212; which looks identical to the consumer &#8212; requires proof of direct communication to prosecute, meaning that the most observable harm (coordinated high prices) may be legally unaddressable even when the authority suspects coordination',
+          'The prisoner\'s dilemma explains why each member of a cartel has an individual incentive to cheat by producing above its agreed quota'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it acknowledges the proven effectiveness of leniency (50% of EU cases), then qualifies it with a specific limitation (prevention vs detection), and explains the mechanism by which the limitation operates (the initial incentive to collude is unchanged) &#8212; this is a genuine two-sided analysis that reaches a directional conclusion about the boundary of the policy&#8217;s effectiveness. Option C is strong evaluation: it conditions the magnitude of cartel harm on a specific variable (price elasticity of demand), uses concrete examples (insulin, aviation fuel) to anchor the claim, and reaches a directional conclusion that not all cartels are equally harmful &#8212; exactly the context-dependent reasoning examiners reward. Option E is strong evaluation: it identifies the asymmetry between observed harm (coordinated prices) and legal addressability (proof of communication required), explains why this gap exists (parallel behaviour is legal without evidence of agreement), and concludes that the most visible consumer harm may be the hardest to remedy &#8212; a nuanced evaluative move about the limits of existing law. Option B describes cartel stability conditions accurately but without qualifying, weighing, or reaching a conditional conclusion &#8212; it is analysis, not evaluation. Option D states the fine cap correctly but without evaluating whether fines actually deter, what affects deterrence, or when fines are insufficient &#8212; description of the policy, not evaluation of its effectiveness. Option F correctly states the prisoner&#8217;s dilemma incentive but does not use it to reach any evaluative conclusion about cartel stability, policy effectiveness, or context-dependence.'
       },
 
       /* 9 — data_table: cartel fines */

@@ -80,22 +80,7 @@
         exp: '<strong>Tariff barriers</strong> are explicit taxes on imports: ad valorem (percentage) or specific (per unit) duties. They raise the domestic price and generate government revenue. <strong>Non-tariff barriers</strong> cover all other restrictions: quotas (physical import limits), subsidies (reduce domestic costs without raising import prices), technical standards (may exclude imports that do not comply), and sanitary rules (can be used protectionistically even if nominally for safety). NTBs are increasingly important — average tariff rates have fallen dramatically since 1947, but NTBs have proliferated. Post-Brexit UK-EU trade friction is almost entirely NTBs (border checks, rules of origin, regulatory divergence) rather than tariffs.'
       },
 
-      /* 4 — Diagnostic pair: infant industry */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate whether the infant-industry argument justifies protectionism in developing countries."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Ana', badge: 'Candidate A',
-            answer: 'The infant-industry argument provides the strongest theoretical case for temporary protection. It rests on <strong>dynamic comparative advantage</strong>: with learning-by-doing, scale economies, and first-mover advantages, an industry that appears uncompetitive today may become efficient if given time to develop. South Korea\'s protection of Hyundai and POSCO steel in the 1970s-80s provides empirical support — both became globally competitive exporters. However, the argument requires three conditions to hold: the <strong>market failure</strong> (learning externality) must be demonstrable; protection must be <strong>temporary</strong> with a credible sunset clause; and the government must be able to identify which industries have genuine future comparative advantage. These conditions rarely hold simultaneously. Many Latin American import-substitution industrialisation programmes failed because protection became permanent and protected industries never became competitive. The argument is empirically strongest in countries with strong institutions and state capacity — which narrows its applicability considerably.'
-          },
-          { name: 'Finn', badge: 'Candidate B',
-            answer: 'The infant industry argument says that new industries need protection because they cannot compete against big established companies in rich countries. This seems fair because developing countries need to build their economies. However the problem is that protected companies might not try hard enough to become competitive if they know the government will always protect them. The government also has to know which industries will become competitive in the future which is very hard. Some countries like South Korea have used protection successfully. But others have protected industries that never became efficient. So protection sometimes works and sometimes does not. Overall the infant industry argument is sometimes justified but governments need to be careful.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Ana</strong> gives the stronger answer. She names the theoretical mechanism precisely (dynamic comparative advantage, learning-by-doing, first-mover advantages), cites specific institutional cases (Hyundai, POSCO), articulates the three necessary conditions for the argument to hold, and contrasts the South Korean success with Latin American failure. The phrase "these conditions rarely hold simultaneously" is analytical evaluation, not hedging. Finn identifies the same ideas but at description level — no theoretical framework, no conditions, no contrast between success and failure cases. Ana accesses Level 4; Finn Level 2-3. The key evaluative move is specifying the conditions under which the argument holds — this converts a vague "sometimes yes, sometimes no" into a structured conditional argument.'
-      },
-
-      /* 5 — Multi-select: costs of protectionism */
+      /* 4 — Multi-select: costs of protectionism */
       { type: 'multi_select',
         stem: 'Which of the following are recognised <strong>costs of protectionism</strong> for the economy imposing it?',
         opts: [
@@ -110,7 +95,7 @@
         exp: 'Options A, B, C, and D are genuine costs. <strong>Deadweight loss</strong> is the core welfare cost of any tariff or quota. <strong>Higher input costs</strong>: US steel tariffs (2018) are the textbook case — steel-using industries (cars, appliances, construction) faced higher costs that reduced their competitiveness and employment, partially offsetting the jobs saved in steel. <strong>Retaliation</strong>: China\'s retaliatory tariffs on US agricultural exports targeted politically sensitive states; the 1930s Smoot-Hawley spiral caused a 66% collapse in world trade. <strong>Rent-seeking</strong>: protected industries invest in lobbying rather than productivity. Option E is incorrect — tariffs raise import prices, adding to <em>cost-push inflation</em>, not reducing it. Option F is incorrect — structural unemployment in import-competing industries may be temporarily reduced, but the efficiency costs and retaliation risks mean long-run employment effects are typically neutral or negative.'
       },
 
-      /* 6 — Para fill: US-China trade war */
+      /* 5 — Para fill: US-China trade war */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about the US-China trade war.',
         anchor: 'The US-China trade war provides a live test of the costs of protectionism.',
@@ -127,7 +112,7 @@
         exp: '(1) <strong>Tariffs</strong> — originally 25% on $250bn of goods, escalated to 145% by 2025. (2) <strong>Subsidies</strong> — China\'s state subsidies for steel, electric vehicles, and technology were the primary US complaint, alongside IP theft. (3) <strong>Retaliated</strong> — China\'s agricultural tariffs deliberately targeted soybean, pork, and corn exports from politically important US states. (4) <strong>Consumers</strong> — empirical studies (Furman et al., Amiti et al.) found US importers bore ~100% of tariff costs through higher prices, at ~$831 extra per US household per year. (5) <strong>Trade diversion</strong> — US imports shifted to Vietnam, Mexico, Taiwan; Chinese production rerouted via third countries. (6) <strong>Diversion</strong> — resources used less efficiently than under free trade. (7) <strong>Trade</strong> — the US bilateral trade deficit with China fell modestly but the overall US trade deficit was unchanged as spending shifted to other suppliers.'
       },
 
-      /* 7 — Odd one out: arguments FOR protectionism */
+      /* 6 — Odd one out: arguments FOR protectionism */
       { type: 'odd_one_out',
         stem: 'Three of these are standard <strong>arguments FOR protectionism</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -140,7 +125,7 @@
         exp: 'The odd one out is <strong>deadweight loss</strong>. This is an argument <em>against</em> protectionism, not for it — it describes the permanent efficiency cost of tariffs and quotas that cannot be recovered by any party (not government revenue, not producer surplus). The other three are standard arguments used to <em>justify</em> protectionism: the infant-industry argument (dynamic comparative advantage); national security (WTO-permitted exception); and anti-dumping duties (WTO-permitted if predatory pricing is proven). In essays, identifying these arguments and then evaluating their limitations — particularly the risk that protection becomes permanent — earns top-band marks.'
       },
 
-      /* 8 — Data table: retaliation spiral */
+      /* 7 — Data table: retaliation spiral */
       { type: 'data_table',
         stem: 'The table shows world trade data around the 1930s Smoot-Hawley tariff.',
         headers: ['Year', 'US average tariff rate', 'World merchandise trade (index)', 'US industrial output (index)'],
@@ -160,6 +145,21 @@
         ],
         ans: 0,
         exp: 'The data show a near-perfect inverse relationship between rising US tariffs and collapsing world trade. The Smoot-Hawley Tariff Act (1930) raised average US tariffs from 38% to 45% initially, then higher as the Depression deepened. Trading partners retaliated: over 25 countries raised their own tariffs within months. World trade fell by <strong>48%</strong> between 1929 and 1933. US industrial output fell by <strong>52%</strong>. While the Great Depression had multiple causes (banking collapse, gold standard deflation), the retaliation spiral significantly worsened the downturn. This is the definitive historical case against beggar-thy-neighbour protectionism and is cited in the WTO\'s founding rationale. Option B ignores the retaliation mechanism. Option C understates the tariff increases. Option D misreads the data — trade continued to fall in 1933.'
+      },
+
+      /* 8 — multi_select: evaluation of infant-industry argument */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on whether the infant-industry argument justifies protectionism in developing countries. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'The infant-industry argument says that new industries in developing countries need temporary protection to become competitive.',
+          'The infant-industry argument is theoretically valid only where a demonstrable learning externality exists &#8212; the protected firm cannot capture the full returns to its investment in skills and knowledge because workers and knowledge spill over to competitors. Without this market failure, protection merely subsidises inefficiency rather than correcting a genuine divergence between private and social returns.',
+          'South Korea\'s successful development of Hyundai and POSCO under protection suggests the infant-industry argument works, but the Latin American import-substitution experience (where protection became permanent and industries never became competitive) demonstrates that success depends critically on whether protection has a credible sunset clause and the government has the capacity to identify genuine comparative advantage &#8212; conditions that are country-specific, not universal.',
+          'Protectionism is bad because it creates deadweight welfare losses and may provoke retaliation from trading partners.',
+          'Even where the infant-industry argument is valid in theory, an industrial subsidy financed from taxation is a superior instrument to a tariff: it corrects the learning externality directly, avoids the consumption distortion cost of higher import prices, and is more transparent for WTO compliance &#8212; meaning the argument for protection over subsidy must rest on practical fiscal constraints rather than theoretical superiority.',
+          'Some developing countries have used protectionism successfully and some have not, so it is impossible to draw a general conclusion.'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option A</strong> is description: it restates the basic claim of the argument with no evaluative content &#8212; no conditions, no weighing of evidence, no direction. <strong>Option B</strong> is strong evaluation: it identifies the specific market failure (learning externality, knowledge spillovers) that justifies the argument and derives the implication that without this failure, protection is harmful. This converts the argument from an assertion into a conditional that must be tested empirically. <strong>Option C</strong> is evaluation: it uses contrasting cases (South Korea vs Latin America) to identify the conditions under which protection succeeds (sunset clause, government capacity to pick winners), explicitly concluding these conditions are country-specific. This is evidence-grounded conditional reasoning rather than "sometimes it works." <strong>Option D</strong> is description of arguments against protectionism &#8212; valid points but no evaluative move that weighs these against the infant-industry justification or specifies when they dominate. <strong>Option E</strong> is strong evaluation: it accepts the theoretical validity of the infant-industry argument but proposes a superior instrument (industrial subsidy over tariff), giving three specific reasons and qualifying the case for tariffs to situations of fiscal constraint. This is the key evaluative insight that separates A* from A answers. <strong>Option F</strong> is a hedge &#8212; invoking case variability as a conclusion rather than as a starting point for identifying the conditions that explain the variation. This is the evaluative move that is missing.'
       },
 
       /* 9 — Chain: tariff transmission */

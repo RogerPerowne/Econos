@@ -129,7 +129,22 @@
         exp: 'A <strong>sunk cost</strong> is a past expenditure that cannot be recovered irrespective of future decisions. Since the &#163;2 million factory is already built and cannot be unsold, it should not influence forward-looking decisions &#8212; only <em>incremental future costs and revenues</em> are relevant. This is rational: including sunk costs leads to the "sunk cost fallacy" &#8212; continuing with a loss-making project because of past investment ("we\'ve already spent &#163;2 million, we can\'t stop now"). Option C is too strong &#8212; some specific capital retains scrap or alternative-use value. Option D describes how accountants (not economists) approach costs &#8212; full-cost pricing is a satisficing rule, not economically optimal forward-looking behaviour.'
       },
 
-      /* 8 — Odd one out: cost concepts */
+      /* 8 — multi_select: evaluation of the law of diminishing returns */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the law of diminishing marginal returns and its significance for short-run costs</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Diminishing returns is a short-run concept only &#8212; in the long run, all factors are variable, so the fixed factor that causes diminishing marginal product no longer exists, limiting its relevance to firms facing significant long-run expansion decisions',
+          'As more workers are added to a fixed amount of capital, the marginal product of labour eventually falls',
+          'The relationship MC = w/MPL means that rising MC in the short run reflects falling marginal product, not rising wages &#8212; distinguishing these two sources of cost increase is essential for correctly diagnosing whether cost problems are supply-side structural or input-price driven',
+          'Diminishing returns explains why MC curves slope upward',
+          'While diminishing returns guarantees that MC eventually rises, the <em>rate</em> at which it rises depends on capital intensity: highly automated production lines with high capital-to-labour ratios experience diminishing returns more slowly, meaning the practical relevance of the law varies significantly across industries',
+          'Firms can avoid diminishing returns by hiring better workers or paying higher wages, so the law has limited applicability in skilled labour markets'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Option A</strong> is strong evaluation: it correctly identifies the time-horizon boundary of the law, qualifying its applicability to the short run and drawing a directional inference about when the concept matters most. This is a genuine analytical distinction, not mere description. <strong>Option C</strong> is strong evaluation: it uses the MC = w/MPL relationship to distinguish between two sources of rising cost &#8212; a move that shows the student is weighing competing explanations and reaching a precise direction about what the law actually tells us. <strong>Option E</strong> is strong evaluation: it qualifies the law by noting that capital intensity determines how quickly diminishing returns sets in, using a directional inference about industry variation rather than applying the law universally. <strong>Option B</strong> is a distractor: it accurately describes the mechanism of diminishing returns but makes no evaluative move &#8212; it is pure description. <strong>Option D</strong> is a distractor: a one-line statement that repeats textbook content without weighing, qualifying, or drawing a directional inference. <strong>Option F</strong> is a distractor: it contains a common misconception (better workers increase MPL but do not eliminate diminishing returns once capital is fixed) and represents an overclaim without supporting argument.'
+      },
+
+      /* 9 — Odd one out: cost concepts */
       { type: 'odd_one_out',
         stem: 'Three of these describe relationships between MC and AC that are always true. Which is the ODD ONE OUT?',
         items: [
@@ -140,21 +155,6 @@
         ],
         ans: 3,
         exp: 'The odd one out is that <strong>MC is always lower than AC at every level of output</strong>. This is false: MC is below AC only while AC is falling (to the left of AC\'s minimum). Once AC reaches its minimum, MC = AC. Beyond the minimum, MC exceeds AC (which is why AC starts rising). The other three statements are all universally true mathematical relationships between MC and AC that must hold for any standard U-shaped average cost curve. These relationships flow directly from the mathematical definition: AC = TC/Q and MC = dTC/dQ (or &#916;TC/&#916;Q in discrete form).'
-      },
-
-      /* 9 — Diagnostic pair: diminishing returns explanation */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain why a firm\'s marginal cost curve rises in the short run."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Zara', badge: 'Candidate A',
-            answer: 'A firm\'s MC curve rises in the short run because of the <strong>law of diminishing marginal returns</strong>. In the short run, at least one factor &#8212; typically capital &#8212; is fixed. As the firm expands output by employing more of the variable factor (labour), each additional worker has less of the fixed factor to work with. The <em>marginal product of labour</em> (MPL) therefore falls beyond some level of employment. Since MC = wage rate / MPL, when MPL falls, MC rises: it takes more labour (more cost) to produce each additional unit. Specifically, if the wage is &#163;500 per week and each worker initially produces 50 units (MPL=50), then MC = &#163;500/50 = &#163;10 per unit. If MPL falls to 25 units, MC = &#163;500/25 = &#163;20. The rising MC curve therefore directly reflects diminishing returns to the variable factor in the short run &#8212; it is not a rising curve in the long run when all factors can be varied.'
-          },
-          { name: 'Jack', badge: 'Candidate B',
-            answer: 'A firm\'s MC curve rises in the short run because as it produces more output, costs go up. This is because of diminishing returns: when a firm adds more workers to a fixed amount of capital, the extra output from each worker gets smaller. So producing extra units becomes more expensive. For example, if a factory has a fixed number of machines and keeps hiring more workers, eventually the workers will get in each other\'s way and produce less extra output. This means each extra unit costs more to produce, which is why marginal cost is rising. The MC curve shows the cost of producing one extra unit, and since this rises due to diminishing returns, the MC curve slopes upward.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Zara</strong> gives the stronger answer. She explicitly states the law of diminishing marginal returns, identifies the fixed factor (capital) and variable factor (labour), derives the relationship MC = w/MPL, and provides a numerical example that makes the logic unambiguous. She also notes the short-run specificity &#8212; rising MC is a short-run phenomenon, not a long-run one. Jack captures the core idea correctly but lacks the algebraic precision (MC = w/MPL) and the crucial clarification that this is a <em>short-run</em> concept. Zara accesses Level 4; Jack Level 3.'
       },
 
       /* 10 — MCQ: MC as supply curve */

@@ -49,22 +49,7 @@
         exp: '<strong>Information failure</strong>: the government lacks the knowledge to set the correct policy level or predict indirect effects. This is distinct from market information failure &mdash; governments face their own information constraints (Hayek\'s knowledge problem applied to policy). <strong>Political incentive failure</strong>: governments face short-run electoral incentives that conflict with long-run welfare maximisation. Politicians on 4&ndash;5 year election cycles discount future costs; voters reward visible short-run benefits; lobbying distorts policy toward special interests.'
       },
 
-      /* 3 — diagnostic_pair: regulatory capture */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Analyse the causes and consequences of regulatory capture."</em> Which student gives the more analytically developed answer?',
-        students: [
-          { name: 'Nia', badge: 'Candidate A',
-            answer: 'Regulatory capture occurs when a regulator, established to protect the public, ends up serving the interests of the industry it regulates. Three mechanisms drive this: (1) <strong>Revolving door</strong>: regulators are recruited from industry (and return post-tenure), creating shared perspectives and implicit loyalty. (2) <strong>Information asymmetry</strong>: regulated firms possess superior technical knowledge about their costs and technology &mdash; they can manipulate regulatory decisions by selective disclosure. (3) <strong>Concentrated vs diffuse interests</strong>: industry has large per-firm benefit from favourable regulation and intense lobbying incentive; each consumer has tiny individual interest and weak counter-lobbying. The consequence is that regulation protects incumbents from competition (raising barriers to entry) and allows monopoly pricing &mdash; the regulatory failure mimics the original market failure (monopoly) it was designed to correct. Pre-2008 FSA "light-touch" regulation is the canonical UK example: bank lobbying produced a permissive regulatory environment that allowed excessive risk-taking, contributing to the financial crisis and &#163;137bn taxpayer bailout.'
-          },
-          { name: 'Kwame', badge: 'Candidate B',
-            answer: 'Regulatory capture happens when a regulator starts working in the interests of the companies it is supposed to regulate rather than the public. This can happen because regulators often come from the same industry and go back to work in it after they finish. They may also rely on information from the industry to understand what is happening, which means they can be misled. When regulators are captured, they may allow companies to charge high prices, reduce competition by stopping new firms entering the market, and not enforce rules properly. This happened before the 2008 financial crisis when the FSA did not properly regulate banks and allowed them to take too many risks, which caused the financial crash and cost taxpayers billions. To prevent regulatory capture, regulators should be more independent, have diverse backgrounds, and face stronger oversight.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Nia</strong> gives the stronger answer. She identifies three specific mechanisms with analytical labels (revolving door, information asymmetry, concentrated vs diffuse interests), provides a theoretical framework for why each occurs, and links the consequence (protecting incumbents) back to the original market failure (monopoly). The phrase "regulatory failure mimics the original market failure" is Level 4 analysis. Kwame covers the same content narratively but without the theoretical structure. He does not name information asymmetry explicitly, does not use the "concentrated vs diffuse interests" logic, and does not connect capture to the wider principal-agent framework. Kwame accesses Level 3; Nia Level 4.'
-      },
-
-      /* 4 — multi_select: unintended consequences */
+      /* 3 — multi_select: unintended consequences */
       { type: 'multi_select',
         stem: 'Which of the following are genuine examples of <strong>unintended consequences</strong> of government interventions?',
         opts: [
@@ -79,7 +64,7 @@
         exp: 'Options A, B, D, and E are genuine unintended consequences. <strong>Right to Buy</strong>: intended to increase homeownership; unintended: permanently reduced social housing stock, councils could not fund replacements. <strong>Biofuel mandates</strong>: intended to reduce CO2; unintended: food price spikes harming the poorest globally. <strong>CAP surpluses</strong>: intended to support farm incomes; unintended: chronic over-production at great storage and disposal cost. <strong>Smaller cans</strong>: intended to reduce sugar consumption; unintended: consumers pay higher unit prices for reduced portions. Options C and F describe <em>intended</em> outcomes &mdash; the policies worked as designed.'
       },
 
-      /* 5 — odd_one_out */
+      /* 4 — odd_one_out */
       { type: 'odd_one_out',
         stem: 'Three of these are examples of <strong>government failure</strong> in practice. Which is the ODD ONE OUT?',
         items: [
@@ -92,7 +77,7 @@
         exp: 'The odd one out is option B &mdash; Bank of England independence is an example of <strong>successful institutional reform to reduce</strong> government failure, not an example of government failure itself. By delegating interest rate decisions to an independent Monetary Policy Committee with a clear 2% inflation mandate, the government removed monetary policy from short-term electoral pressures &mdash; reducing political incentive failure. Options A (HS2 cost overruns), C (cobra bounty perverse incentive), and D (PFI poor contract design) are all classic cases of government failure: information failure, perverse incentive design, and principal-agent problems respectively.'
       },
 
-      /* 6 — para_fill: Hayek's knowledge problem */
+      /* 5 — para_fill: Hayek's knowledge problem */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about Hayek\'s knowledge problem and its implications for government intervention.',
         anchor: 'Hayek\'s knowledge problem challenges the assumption that governments have sufficient information to improve on market outcomes.',
@@ -109,7 +94,7 @@
         exp: '(1) <strong>Dispersed</strong>: Hayek\'s key insight &mdash; knowledge is not centralised. (2) <strong>Aggregate</strong>: no central planner can replicate what the price mechanism achieves. (3) <strong>Local</strong>: local knowledge of time and place &mdash; specific, contextual, tacit. (4) <strong>MEC</strong>: marginal external cost &mdash; the key input for Pigouvian tax calibration; uncertain and contested. (5) <strong>Under-correcting</strong>: information gaps lead to under- or over-correction. (6) <strong>Failures</strong>: market failures. (7) <strong>Strong</strong>: irreversible, catastrophic market failures strengthen the case for intervention despite imperfect information.'
       },
 
-      /* 7 — data_table: HS2 cost escalation */
+      /* 6 — data_table: HS2 cost escalation */
       { type: 'data_table',
         stem: 'The table shows HS2 cost estimates and scope at different points in time.',
         headers: ['Year', 'Official estimate', 'Scope', 'Key development'],
@@ -131,7 +116,7 @@
         exp: 'Option A is best supported. Costs rose nearly three-fold (&#163;37.5bn to &#163;100bn+) over 13 years, consistent with Flyvbjerg\'s research on the "megaproject paradox" &mdash; systematic underestimation of costs and overestimation of benefits in major government projects. <strong>Optimism bias</strong>: the 2010 estimate was not a neutral forecast; it reflected political incentives to present a favourable cost-benefit ratio to secure approval. <strong>Sunk cost fallacy</strong>: by 2023, &#163;20bn+ had been spent &mdash; political difficulty of cancelling increased with sunk cost. Phase 2 was eventually cancelled, but the core project continues despite cost overruns. Option B is too absolute. Option C lacks evidence. Option D confuses review effectiveness with project management outcomes.'
       },
 
-      /* 8 — calculation: cost-benefit of intervention */
+      /* 7 — calculation: cost-benefit of intervention */
       { type: 'calculation',
         context: 'A government is considering a regulation to reduce factory air pollution. The regulation costs industry <strong>&#163;500 million per year</strong> in compliance costs. Independent studies estimate the health benefits are between <strong>&#163;200 million and &#163;900 million per year</strong> (range due to valuation uncertainty).',
         working: [
@@ -156,6 +141,21 @@
         exp: 'The regulation is <strong>uncertain</strong>. At the low estimate (&#163;200m), costs (&#163;500m) exceed benefits &mdash; the regulation would create a net welfare loss (government failure). At the central estimate (&#163;550m), there is a modest net benefit. At the high estimate (&#163;900m), it is clearly justified. This illustrates why information failure is a key source of government failure: the optimal decision depends on MEC estimates that are genuinely uncertain. The Treasury Green Book requires sensitivity analysis across different assumptions for exactly this reason. The "correct" decision depends on risk preferences (how much weight to give the low-end scenario) and the cost of delay.'
       },
 
+      /* 8 — Multi-select: evaluation of government failure */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>government failure</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Government failure is not inevitable: Bank of England independence and OBR scrutiny show that institutional design can reduce political incentive failure, so the strength of the case against intervention depends on the quality of the regulatory architecture in place.',
+          'The presence of government failure does not automatically justify non-intervention — the correct test is whether the net welfare loss from intervention is smaller than the net welfare loss from the uncorrected market failure, which must be assessed case by case.',
+          'Government failure occurs when intervention produces a net welfare loss, and this means governments should never intervene in markets.',
+          'HS2 cost escalation illustrates optimism bias, but this tendency can be partly corrected through independent appraisal and reference-class forecasting — suggesting reform of the appraisal process rather than abandonment of public infrastructure investment.',
+          'Government failure is bad because it wastes taxpayers\' money and produces bad outcomes for society.',
+          'It depends on the situation — sometimes government intervention works and sometimes it does not.'
+        ],
+        correct: [0, 1, 3],
+        exp: '<strong>Option A</strong> is strong evaluation: it rejects a blanket conclusion (government failure is inevitable) using specific UK institutional evidence (BoE independence, OBR), reaching the qualified direction that quality of institutional design determines the severity of government failure. <strong>Option B</strong> is strong evaluation: it makes the evaluative move of rejecting the implied binary (government failure → no intervention) by identifying the correct comparative test — net welfare losses must be compared on both sides. This is a direction with a stated reasoning framework. <strong>Option D</strong> is strong evaluation: it accepts the HS2 evidence of optimism bias but qualifies the policy conclusion — the failure points to appraisal reform, not a blanket case against public investment. This is exactly the "nuanced conclusion based on evidence" that distinguishes Level 4. <strong>Option C</strong> overclaims certainty (\'should never intervene\') — one-sided analysis that ignores market failures requiring correction. <strong>Option E</strong> is vague description with no analytical framework or direction. <strong>Option F</strong> is a formulaic \'it depends\' with no analytical content — the most common low-scoring evaluation mistake.'
+      },
+
       /* 9 — chain: regulatory capture sequence */
       { type: 'chain',
         stem: 'Place the sequence of events leading to regulatory capture in the correct logical order.',
@@ -171,7 +171,7 @@
         exp: '<strong>The correct sequence:</strong><br>1. Market failure identified (monopoly, systemic risk) &mdash; the original justification for regulation.<br>2. Independent regulator established to protect public interest.<br>3. Industry engages regulator; revolving door and information asymmetry operate.<br>4. Regulator adopts industry perspective; standards become permissive.<br>5. Market failure recurs or worsens &mdash; regulatory failure materialises.<br>6. Post-crisis reforms; new architecture; but structural incentives remain.<br><br>The pre-2008 FSA followed this pattern exactly. Awareness of this cycle is why post-2008 regulatory reform separated prudential regulation (PRA) from conduct regulation (FCA) and created the Financial Policy Committee (FPC) with a systemic-stability mandate.'
       },
 
-      /* 10 — multi_select: reducing government failure */
+      /* 10 — multi_select: institutional mechanisms to reduce government failure */
       { type: 'multi_select',
         stem: 'Which institutional mechanisms are specifically designed to <strong>reduce government failure</strong> by improving the quality of policy decisions?',
         opts: [

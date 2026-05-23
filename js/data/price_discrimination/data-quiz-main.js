@@ -87,22 +87,7 @@
         exp: 'Options A, C, E, and F are correct. (A) If discrimination enables a firm to enter a new segment (e.g. sell a drug at low prices in developing markets it would not serve at the high Western price), total output rises and welfare may improve. (C) The high-price inelastic group is always worse off &#8212; they pay more than under a single monopoly price. (E) If discrimination merely redistributes output between segments without increasing the total, consumer welfare falls overall (more CS transferred to producer, no new trades created). (F) First-degree discrimination is allocatively efficient (no DWL &#8212; all mutually beneficial trades occur) but extracts all CS as producer surplus &#8212; a massive distributional concern. Options B and D are wrong: CS does not always increase (the inelastic group loses), and DWL is not necessarily eliminated by third-degree discrimination.'
       },
 
-      /* 5 — Diagnostic pair: pharmaceutical price discrimination */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate whether pharmaceutical price discrimination between high-income and low-income countries is beneficial for global welfare."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Amara', badge: 'Candidate A',
-            answer: 'Pharmaceutical price discrimination involves charging high prices in wealthy markets (USA, UK &#8212; inelastic demand, insured populations) and lower prices in developing markets (India, sub-Saharan Africa &#8212; elastic demand, out-of-pocket costs). <strong>The welfare case for</strong>: if the low price in developing markets exceeds marginal cost, those consumers gain access to treatments they would otherwise be completely excluded from at the Western price. Global output increases; global welfare may improve. Cross-subsidy interpretation: high prices in rich markets fund R&D; low prices provide access. HIV/AIDS antiretrovirals are the canonical example &#8212; generic production at $300/course vs $10,000+ branded. <strong>The welfare case against</strong>: the high-price group (often insured patients in wealthy countries) ultimately pays &#8212; insurance cost increases fall on taxpayers or employees. The discriminatory profits may fund share buybacks rather than R&D. Arbitrage risk: parallel imports can undermine the system if not legally prevented (TRIPS flexibilities partly address this). <strong>Overall verdict</strong>: discrimination is welfare-improving if it genuinely increases access AND the surplus funds real innovation; welfare-harmful if it merely extracts maximum revenue without extending access or funding R&D. The empirical evidence is mixed, and the policy challenge is designing rules that reward innovation without permitting exploitative pricing in rich markets.'
-          },
-          { name: 'Oliver', badge: 'Candidate B',
-            answer: 'Pharmaceutical price discrimination can be good because it allows poor countries to afford medicines that they could not otherwise buy. If the price in developing countries is lower, more people can access treatment and this is good for their health. However, it is bad because people in rich countries end up paying very high prices for the same drugs. This seems unfair. Also, some companies might not actually use the profits from high prices to fund research &#8212; they might just keep the money as profit. Overall, I think pharmaceutical price discrimination is mostly good because it helps people in poor countries access medicines, but it needs to be regulated to make sure that the profits are used for new drug research.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Amara</strong> gives the stronger answer. She applies the technical framework (inelastic vs elastic demand, MR = MR = MC), uses specific real-world evidence (HIV/AIDS antiretrovirals, $300 vs $10,000 prices), distinguishes welfare effects across groups (access in developing markets vs cost in rich markets), and considers counterarguments (profit use, arbitrage risk, TRIPS). Her conclusion is genuinely conditional and evidence-dependent &#8212; welfare-improving only under specific conditions. Oliver identifies the same basic arguments but at a descriptive level ("good for poor countries," "unfair for rich countries") without applying economic analysis. The absence of the output-expansion welfare condition &#8212; the key analytical pivot &#8212; limits Oliver to Level 2&#8211;3; Amara accesses Level 4&#8211;5.'
-      },
-
-      /* 6 — Odd one out: conditions for discrimination */
+      /* 5 — Odd one out: conditions for discrimination */
       { type: 'odd_one_out',
         stem: 'Three of these features <strong>support</strong> price discrimination in the UK rail market. Which is the <strong>ODD ONE OUT</strong>?',
         items: [
@@ -115,7 +100,7 @@
         exp: 'The odd one out is the description of National Rail as a <strong>price-taker</strong>. Rail operators are decidedly <em>not</em> price-takers &#8212; they are route monopolists (or near-monopolists) facing the downward-sloping market demand curve on each route. This market power is the first condition for price discrimination. Options A, B, and D all support price discrimination: different PED across groups (condition 2 &#8212; market segmentation); non-transferable named tickets (condition 3 &#8212; arbitrage prevention); and ability to identify and verify group membership (a practical requirement for condition 2). Without market power (the monopolist condition), there is no ability to set price above MC and no basis for discrimination &#8212; price-takers have no pricing discretion.'
       },
 
-      /* 7 — Calculation: profit under discrimination */
+      /* 6 — Calculation: profit under discrimination */
       { type: 'calculation',
         context: 'A rail operator faces two market segments. <strong>Business:</strong> demand P_B = 120 &#8722; 2Q_B; <strong>Leisure:</strong> demand P_L = 80 &#8722; 2Q_L. Marginal cost = &#163;20 (constant, same for both segments).',
         working: [
@@ -139,7 +124,7 @@
         exp: '<strong>Business segment:</strong> MR_B = MC → 120 &#8722; 4Q_B = 20 → Q_B = 25. P_B = 120 &#8722; 50 = <strong>&#163;70</strong>. Profit_B = (70 &#8722; 20) &#215; 25 = <strong>&#163;1,250</strong>.<br><strong>Leisure segment:</strong> MR_L = MC → 80 &#8722; 4Q_L = 20 → Q_L = 15. P_L = 80 &#8722; 30 = <strong>&#163;50</strong>. Profit_L = (50 &#8722; 20) &#215; 15 = <strong>&#163;450</strong>.<br><strong>Total profit = &#163;1,700</strong>. The business segment generates more than 2.7&#215; the leisure segment\'s profit because of its higher price and lower price elasticity. This ratio illustrates why businesses pay such significantly more for peak rail travel.'
       },
 
-      /* 8 — Data table: digital price discrimination */
+      /* 7 — Data table: digital price discrimination */
       { type: 'data_table',
         stem: 'The table shows examples of digital pricing practices and their characteristics.',
         headers: ['Firm / Platform', 'Practice', 'Degree of discrimination', 'Arbitrage prevention method'],
@@ -158,6 +143,21 @@
         ],
         ans: 0,
         exp: 'Option A correctly identifies that digital platforms use a <em>range</em> of discrimination forms with digital technology enabling better segmentation and arbitrage prevention. Amazon approaches first-degree (individual-level algorithmic pricing); Uber uses dynamic third-degree (time and location segmentation); Netflix uses second-degree (versioning/self-selection); rail uses third-degree (peak/off-peak). Technology advantages: real-time price adjustment, personalisation at scale, non-transferable digital access. Option B is wrong &#8212; Netflix versioning is second-degree, not first. Option C is wrong &#8212; inelastic-demand consumers (Option C\'s "benefit" ignores the high-price group who pay more). Option D is wrong &#8212; Netflix versioning is second-degree (self-selection), not third-degree (identifiable groups).'
+      },
+
+      /* 8 — multi_select: evaluation of pharmaceutical price discrimination */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on whether price discrimination between high-income and low-income countries is beneficial for global welfare. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Pharmaceutical companies charge higher prices in wealthy markets because demand is inelastic there, and lower prices in developing markets because demand is elastic.',
+          'Price discrimination is welfare-improving only if it genuinely increases total output: for HIV/AIDS antiretrovirals, charging $300 in developing markets (above MC) while charging $10,000+ in the USA means previously excluded patients gain access &#8212; a net output expansion. If the low price merely diverts existing supply without increasing total production, the welfare case collapses.',
+          'Price discrimination is unfair because it means people in rich countries pay more for the same drug than people in poor countries.',
+          'Even where pharmaceutical discrimination expands access, welfare depends critically on what happens to the discriminatory profit: if it funds genuine R&D for neglected tropical diseases, the dynamic efficiency gain may outweigh the static welfare cost to high-price consumers; if it funds share buybacks, the justification weakens considerably &#8212; making the welfare verdict empirically contingent rather than theoretically determinate.',
+          'Pharmaceutical price discrimination always benefits global welfare because it allows firms to recover R&D costs while providing access to treatments in developing countries.',
+          'The welfare case for pharmaceutical discrimination is weakened by arbitrage risk: if parallel imports are not legally prevented (via patent law or TRIPS waivers), cheap exports from low-price markets will undermine the high price in wealthy markets, causing firms to either raise prices universally or exit developing markets &#8212; meaning the long-run availability of access pricing depends on the legal architecture surrounding intellectual property.'
+        ],
+        correct: [1, 3, 5],
+        exp: '<strong>Option A</strong> is description of the mechanism &#8212; accurate but entirely analytical framework with no evaluative judgement about whether the outcome is good or bad, conditional or unconditional. <strong>Option B</strong> is strong evaluation: it identifies the precise condition under which discrimination is welfare-improving (output expansion) and shows when it fails (mere diversion). Using the HIV/AIDS case as evidence to illustrate the condition makes this concrete and directional. <strong>Option C</strong> is a one-sided equity observation with no economic framework &#8212; it does not engage with the efficiency-access trade-off that constitutes the analytical core of this question. <strong>Option D</strong> is evaluation: it introduces the dynamic efficiency dimension (R&D incentives), qualifies the case with an empirical condition (what happens to profit), and explicitly states the verdict is contingent rather than categorical. This is genuine higher-order evaluation. <strong>Option E</strong> overclaims universality &#8212; it ignores the conditions under which discrimination fails (no output expansion, profit not reinvested) and is therefore one-sided analysis rather than evaluation. <strong>Option F</strong> is evaluation: it identifies a structural risk (arbitrage undermining the pricing architecture) and traces the long-run consequences for developing country access, reaching a conclusion about the dependency of the policy on legal complementary institutions.'
       },
 
       /* 9 — Chain: third-degree discrimination mechanism */

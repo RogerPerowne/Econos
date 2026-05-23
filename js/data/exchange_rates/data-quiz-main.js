@@ -110,22 +110,7 @@
         exp: '<strong>The J-curve</strong> explains why depreciation initially <em>worsens</em> the current account before improving it. In the <strong>short run</strong>: contracts are fixed in foreign currency; the import bill rises immediately in &#163; terms (more &#163; needed to pay the same $) but export volumes do not yet rise (buyers need time to adjust). Current account worsens. In the <strong>medium run</strong>: price signals filter through; export volumes rise (foreign buyers respond to cheaper &#163; prices); imports substitute to domestically produced goods. In the <strong>long run</strong>: full adjustment; if Marshall-Lerner holds (|PEDx| + |PEDm| &gt; 1), the current account improves. The UK J-curve lasts approximately 12-18 months empirically. This explains why currency depreciation alone is rarely a sufficient short-run current account policy &#8212; patience and supporting policies are needed.'
       },
 
-      /* 5 — Diagnostic pair: floating vs fixed */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the relative merits of floating and fixed exchange rate systems."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Yuki', badge: 'Candidate A',
-            answer: 'A <strong>floating exchange rate</strong> provides automatic adjustment: a current account deficit causes currency depreciation, which improves competitiveness and partially corrects the deficit without requiring active policy intervention. It also preserves monetary policy independence &#8212; the central bank can set interest rates to target domestic inflation rather than defend a peg. The UK\'s free float since 1992 is consistent with operational independence of the Bank of England. However, floating rates introduce volatility that can deter trade and investment &#8212; businesses cannot price long-term contracts with certainty. A <strong>fixed rate</strong> provides certainty for traders but creates two critical vulnerabilities: (1) the rate must be defended with foreign reserves &#8212; the 1992 UK ERM crisis (Black Wednesday) shows that this is unsustainable if domestic fundamentals diverge from the anchor country; and (2) the country loses the exchange rate as an adjustment tool for external imbalances. The optimal choice depends on the country\'s trade openness, labour market flexibility, and whether it faces symmetric shocks &#8212; the Mundell optimal currency area criteria. There is no universally superior system.'
-          },
-          { name: 'Dom', badge: 'Candidate B',
-            answer: 'A floating exchange rate is when the exchange rate is set by market forces and changes according to supply and demand. A fixed exchange rate is when the government sets the exchange rate at a specific level. Floating rates are good because they adjust automatically and the central bank does not have to worry about defending the rate. Fixed rates are good because they give certainty to businesses. The problem with fixed rates is that they can be attacked by speculators as happened in the UK in 1992. Overall floating rates are probably better for most countries because they give more flexibility, but some countries prefer fixed rates for stability.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Yuki</strong> gives the stronger answer. She explains the automatic adjustment mechanism precisely, identifies the monetary policy independence gain, uses the 1992 ERM case with institutional detail (Black Wednesday), specifies the two vulnerabilities of fixed rates, and references the Mundell optimal currency area theory as a framework for evaluation. The conclusion &#8212; "no universally superior system; it depends on the criteria" &#8212; is evaluative rather than a simple verdict. Dom identifies the same features but at descriptive level with no mechanisms, no quantified evidence, and no evaluative framework. Yuki accesses Level 4; Dom Level 2. The Mundell OCA reference is an A* differentiator.'
-      },
-
-      /* 6 — Multi-select: factors causing depreciation */
+      /* 5 — Multi-select: factors causing depreciation */
       { type: 'multi_select',
         stem: 'Which of the following would cause the &#163; to <strong>depreciate</strong> against the US dollar?',
         opts: [
@@ -140,7 +125,7 @@
         exp: 'Options A, B, D, and E all cause &#163; depreciation. <strong>A: Inflation</strong> &#8212; higher UK inflation reduces UK export price competitiveness, reducing demand for &#163; (PPP mechanism, long-run). <strong>B: Interest rate cut</strong> &#8212; a lower UK-US differential reduces hot-money inflows, reducing demand for &#163; (main short-run driver). <strong>D: Deficit speculation</strong> &#8212; expectation of persistent current account deficits implies net &#163; supply exceeds demand. <strong>E: Import demand</strong> &#8212; UK residents buying US imports must supply &#163; (buy $), increasing S&#163; on FOREX. Options C and F cause <em>appreciation</em>: strong UK growth attracts FDI (demand for &#163; rises); higher gilt yields attract capital inflows (foreigners buy &#163; to purchase UK bonds).'
       },
 
-      /* 7 — Para fill: Black Wednesday */
+      /* 6 — Para fill: Black Wednesday */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about the 1992 UK ERM crisis.',
         anchor: 'Black Wednesday 1992 illustrates the fundamental weakness of fixed exchange rate systems.',
@@ -155,6 +140,21 @@
           { id: 7, opts: ['convergent', 'divergent', 'independent', 'flexible'], ans: 0 }
         ],
         exp: '(1) <strong>Deutschmark</strong> &#8212; the DM was the anchor currency of the ERM; the UK fixed &#163; = DM 2.95. (2) <strong>Recession</strong> &#8212; UK economy was contracting; high interest rates needed to defend the peg were inappropriate for domestic conditions. (3) <strong>Speculators</strong> &#8212; Soros\'s Quantum Fund made ~$1bn shorting &#163; when it was clear the peg was unsustainable. (4) <strong>&#163;15 billion</strong> in reserves spent defending the rate. (5) <strong>15%</strong> &#8212; rates raised from 10% to 12% then to 15% in a single day; announced but not implemented at 15%. (6) <strong>Left</strong> &#8212; the UK withdrew from the ERM on 16 September 1992; &#163; depreciated ~20% and UK growth recovered. (7) <strong>Convergent</strong> &#8212; fixed rates require economic convergence (similar inflation, growth cycles) to be stable long-run &#8212; the Mundell OCA criterion.'
+      },
+
+      /* 7 — multi_select: evaluating exchange rate policy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>exchange rates and their effects on the macroeconomy</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'A currency depreciation improves export competitiveness by reducing the foreign-currency price of UK goods',
+          'The J-curve effect means depreciation typically worsens the current account in the short run before improving it — but the net long-run benefit only materialises if the Marshall-Lerner condition holds (|PEDx| + |PEDm| &gt; 1); for the UK, where demand for many exports is inelastic (specialised capital goods, pharmaceuticals), the long-run improvement may be smaller than standard theory predicts',
+          'A floating exchange rate provides automatic adjustment to external imbalances, but this advantage is reduced when the economy is highly financially integrated: capital flows responding to interest rate differentials can cause exchange rate overshooting, generating volatility that disrupts trade and investment beyond any current account benefit',
+          'The Marshall-Lerner condition states that a depreciation will improve the current account if the sum of export and import demand elasticities exceeds one',
+          'Fixed exchange rates eliminate currency risk for international traders and investors, but the 1992 UK ERM crisis illustrates that the credibility cost of maintaining a peg under asymmetric shocks can outweigh the trade stability benefit — particularly when the anchor country\'s monetary policy is misaligned with the domestic cycle',
+          'Currency depreciation always causes inflation because imported goods become more expensive'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Options B, C, and E are genuine evaluation moves.</strong> Option B qualifies the standard Marshall-Lerner conclusion with a sector-specific condition: UK export demand elasticity may be low for specialised goods, limiting the current account improvement — this is evaluation through applying the condition to reality. Option C identifies a trade-off within floating rates: the automatic adjustment benefit is partially offset by overshooting-driven volatility when capital is mobile — this weighs the advantage against a real-world limitation with a specific mechanism. Option E uses the 1992 ERM case to derive a general evaluative principle: the credibility cost of defending a peg under asymmetric shocks can exceed the stability benefit, and the conclusion is conditional on policy alignment between countries. <strong>Option A</strong> describes the mechanism of depreciation — not evaluation. <strong>Option D</strong> states the Marshall-Lerner condition — definition, not evaluation. <strong>Option F</strong> overclaims with "always" — inflation from depreciation depends on the degree of pass-through, the openness of the economy, and spare domestic capacity; it is never universal.'
       },
 
       /* 8 — Data table: exchange rate and macro objectives */

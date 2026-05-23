@@ -92,22 +92,7 @@
         exp: 'Options A, B, C, and E are all offered as serious explanations in the economics literature. <strong>Zombie firms</strong> (A): kept alive by near-zero interest rates, they absorbed labour and capital that could have moved to high-productivity uses. <strong>Credit misallocation</strong> (B): banks preferred property lending (lower regulatory capital requirements, rising collateral values) over riskier business lending. <strong>Skills gaps</strong> (C): the UK has relatively weak vocational education compared to Germany; persistent engineering, digital, and construction skill shortages constrain output per worker. <strong>Post-Brexit investment uncertainty</strong> (E): multiple studies (LSE, UK in a Changing Europe) find ~15-25% reduction in business investment intentions linked to Brexit uncertainty. Option D is contested and not a mainstream explanation &#8212; real interest rates were at historic lows after 2008. Option F is not an economic explanation &#8212; no evidence supports it.'
       },
 
-      /* 5 — Diagnostic pair: policy to improve competitiveness */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate supply-side policies to improve the UK\'s international competitiveness."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Asel', badge: 'Candidate A',
-            answer: 'Supply-side policies to improve UK competitiveness include investment in <strong>infrastructure</strong>, <strong>education and skills</strong>, and <strong>R&D incentives</strong>. Infrastructure investment (e.g. HS2 phase 1, National Grid upgrade) reduces logistics costs and connectivity, directly lowering ULC for firms dependent on transport networks. However, the impact is subject to long time lags &#8212; HS2 took 15 years from proposal to first operation. Education and skills investment (STEM, apprenticeships, T-levels) addresses structural skill shortages in engineering and digital that constrain non-price competitiveness; effects take 10-20 years to appear in productivity data. R&D tax credits and innovation clusters (Cambridge, Oxford) incentivise the product differentiation needed to compete on non-price grounds rather than cost alone. Key evaluation: these policies are supply-side in nature and take 5-20 years to show results &#8212; unlike monetary policy (12-18 month lag) or depreciation (immediate price effect). This makes competitiveness policy inherently a long-term structural commitment, not a short-run fix. The UK\'s productivity gap relative to the G7 (18% below average) suggests these policies have been insufficient or too slowly implemented.'
-          },
-          { name: 'Tom', badge: 'Candidate B',
-            answer: 'The government can improve competitiveness by investing in education so workers are more productive, building better infrastructure such as roads and railways, and giving tax incentives to companies who invest in research. These policies would help UK businesses become more competitive because they would be able to produce better goods and services at lower costs. However these policies take a long time to work and can be expensive. The government might not have enough money to fund all these policies especially if it has a large budget deficit. Currency depreciation could also be used to improve competitiveness in the short term. Overall a combination of supply-side policies and exchange rate management would be most effective.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Asel</strong> gives the stronger answer. She names specific policies with specific examples (HS2, National Grid, T-levels, Cambridge cluster), analyses the transmission mechanism for each (how infrastructure reduces ULC; how skills investment addresses specific shortages), and critically the evaluation is <em>comparative</em>: she explicitly contrasts the 10-20 year lag of supply-side policies with the 12-18 month lag of monetary policy &#8212; a direct answer to the "evaluate" instruction. She quantifies the productivity gap (18% below G7). Tom identifies the same policies but at description level &#8212; no mechanisms, no specific examples, no timeframe comparison. The budget constraint point is valid but undeveloped. Asel accesses Level 4; Tom Level 2. The key move is the time-lag comparison &#8212; it directly addresses the policy evaluation question.'
-      },
-
-      /* 6 — Para fill: competitiveness and current account */
+      /* 5 — Para fill: competitiveness and current account */
       { type: 'para_fill',
         stem: 'Complete the paragraph linking competitiveness to the current account.',
         anchor: 'Declining international competitiveness directly worsens the current account balance.',
@@ -124,7 +109,7 @@
         exp: '(1) <strong>Unit</strong> labour costs &#8212; ULC = wage rate ÷ productivity; rising ULC is the direct price competitiveness measure. (2) <strong>Expensive</strong> &#8212; higher ULC translates into higher export prices in foreign currency terms, losing market share. (3) <strong>Volumes</strong> &#8212; export volumes fall as buyers switch to cheaper foreign alternatives. (4) <strong>Imports</strong> &#8212; as domestic goods become relatively expensive, consumers and firms substitute towards imports. (5) <strong>Widens</strong> &#8212; falling exports + rising imports = widening current account deficit. (6) <strong>Productivity</strong> &#8212; structural productivity weakness (like the UK\'s post-2008 puzzle) makes the deficit structural rather than cyclical. (7) <strong>Demand-management</strong> &#8212; demand restraint (higher interest rates, fiscal austerity) reduces the deficit cyclically but does not address the underlying competitiveness problem; supply-side reform is required.'
       },
 
-      /* 7 — Odd one out: non-price competitiveness */
+      /* 6 — Odd one out: non-price competitiveness */
       { type: 'odd_one_out',
         stem: 'Three of these help explain Germany\'s strong export performance despite relatively <strong>high wages</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -137,7 +122,7 @@
         exp: 'The odd one out is <strong>Euro membership</strong>. While euro membership is a feature of the German economy, it is not a factor that <em>explains</em> Germany\'s strong exports &#8212; in fact, it <em>prevents</em> Germany from using currency depreciation as a competitiveness tool. Germany\'s export success despite high wages must therefore be explained entirely by non-price factors &#8212; which is precisely the point. Options A, C (R&D), and B (vocational training) are the genuine explanations: engineering quality and brand command price premiums; dual vocational training produces the skilled workers who build high-quality complex products; R&D investment generates the product innovation that creates market niches. Germany is the benchmark counter-example for any answer that claims high wages necessarily harm export performance.'
       },
 
-      /* 8 — Data table: Global Competitiveness Index */
+      /* 7 — Data table: Global Competitiveness Index */
       { type: 'data_table',
         stem: 'The table shows selected WEF Global Competitiveness Index rankings.',
         headers: ['Country', 'Overall rank (2023)', 'Infrastructure', 'Skills', 'Innovation'],
@@ -159,7 +144,22 @@
         exp: 'The data reveal a clear pattern for the UK: <strong>relative strengths</strong> in skills (7th) and innovation (8th), consistent with the UK\'s higher education system and financial/tech services. But a significant <strong>relative weakness</strong> in infrastructure (24th) &#8212; far behind Germany (9th) and the USA (13th). This suggests that infrastructure is where the UK loses most ground competitively and where policy could yield the highest marginal return. The skills and innovation scores support the view that the UK should compete on non-price grounds in high-value sectors. China\'s relatively low scores (Option C) should not be dismissed &#8212; China has been rapidly improving its competitiveness ranking and its infrastructure investment is the largest in human history (Belt and Road Initiative). Rankings are a snapshot, not a destiny.'
       },
 
-      /* 9 — Chain: low productivity to current account deficit */
+      /* 8 — multi_select: evaluation of supply-side policies to improve UK competitiveness */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>supply-side policies to improve the UK\'s international competitiveness</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Supply-side policies such as infrastructure investment and skills training have 10-20 year implementation lags, making them poorly suited to addressing the UK\'s current account deficit in the near term &#8212; currency depreciation or demand restraint may be more effective in the short run, despite their own limitations.',
+          'Investment in education, infrastructure, and R&D are examples of supply-side policies.',
+          'While R&D tax credits raise innovation incentives for profitable firms, they offer little benefit to start-ups without taxable profits &#8212; the policy may thus strengthen established incumbents while failing to generate the disruptive innovation that drives comparative advantage gains.',
+          'The UK\'s post-2008 productivity puzzle (18% below G7 average) suggests that supply-side policies implemented over the past two decades have been either insufficient in scale or too slowly phased in to reverse structural competitiveness decline &#8212; past experience therefore qualifies optimism about current policy commitments.',
+          'Supply-side policies always improve competitiveness by raising productivity.',
+          'Better infrastructure reduces transport costs for exporters.'
+        ],
+        correct: [0, 2, 3],
+        exp: '<strong>Option A</strong> is genuine evaluation: it weighs supply-side policies against the time-horizon constraint, uses a comparison with alternatives, and reaches a qualified direction &#8212; not blanket support or rejection. <strong>Option C</strong> is evaluation: it identifies a specific design flaw in R&D tax credits (no benefit for loss-making start-ups), uses this to qualify the policy\'s effectiveness, and reaches a direction about who benefits and who doesn\'t. <strong>Option D</strong> is evaluation: it uses the UK\'s own productivity data as evidence to assess whether existing supply-side policies have delivered, reaching a sceptical but qualified conclusion about future policy optimism. <strong>Option B</strong> is description &#8212; it names examples without weighing their effectiveness. <strong>Option E</strong> overclaims certainty, ignoring implementation lags, design flaws, and evidence that past supply-side investment has not closed the UK\'s productivity gap. <strong>Option F</strong> is description &#8212; stating a mechanism without comparing it to alternatives, qualifying by context, or using evidence.'
+      },
+
+      /* 10 — Chain: low productivity to current account deficit */
       { type: 'chain',
         stem: 'Arrange the following steps in the correct causal order from weak productivity growth to a wider current account deficit.',
         items: [

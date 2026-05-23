@@ -95,22 +95,7 @@
         exp: '<strong>Supernormal profit</strong>: P &gt; AC (P=40&gt;AC=32; P=50&gt;AC=35). <strong>Normal profit</strong>: P = AC (P=28=AC=28). <strong>Economic loss &#8212; continue</strong>: AVC &le; P &lt; AC (P=22: AVC=18&le;22&lt;AC=30 → positive contribution; continue). <strong>Shutdown</strong>: P &lt; AVC (P=14&lt;AVC=17; P=10&lt;AVC=12). In both shutdown cases, TR &lt; VC &#8212; producing increases the loss beyond the fixed cost that the firm would pay anyway. The firm minimises losses by outputting zero and bearing only the fixed cost.'
       },
 
-      /* 6 — Diagnostic pair: long-run adjustment from loss */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Using a diagram, explain the long-run adjustment process in perfect competition when firms are making economic losses."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Niamh', badge: 'Candidate A',
-            answer: 'When market price falls below average cost in perfect competition, firms make economic losses (P &lt; AC). Because there are no barriers to exit, loss-making firms leave the industry. This can be shown on two diagrams: the <em>market diagram</em> (D and S curves) shows the market supply curve shifting <strong>leftward</strong> as firms exit &#8212; fewer firms in the industry reduces total supply. On the <em>firm diagram</em>, the market price therefore rises; the firm\'s horizontal demand line shifts <strong>upward</strong> as the market price rises. This process continues until price rises back to average cost. At long-run equilibrium: P = AC, firms earn normal profit (zero economic profit), losses have been eliminated, and there is no further incentive to exit. The equilibrium is simultaneously at P = MC = min AC &#8212; both allocative and productive efficiency are achieved. A critical point is that this mechanism only works because of the <em>assumption</em> of no exit barriers &#8212; in real markets with sunk costs, exit is slower and losses may persist longer.'
-          },
-          { name: 'Ryan', badge: 'Candidate B',
-            answer: 'When firms in perfect competition make losses, they will leave the industry because they are not making enough profit to stay in business. As firms exit, the supply in the market decreases, which causes prices to rise. When prices rise, the remaining firms start to make normal profit again and the losses stop. This continues until all firms are making normal profit and the market is in equilibrium. I would draw a diagram showing the supply curve shifting left and the price rising. The firm diagram would show the price line moving up from below AC to exactly equal to AC, where the firm makes normal profit. This is the long-run equilibrium.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Niamh</strong> gives the stronger answer. She explicitly references the two-diagram approach (market and firm), names the direction of the supply shift (leftward) and the demand line shift (upward), and correctly identifies the mechanism (exit reduces market supply, raising price). She also states the long-run equilibrium conditions precisely (P = AC = MC = min AC), connects to both efficiency types, and critically notes that the mechanism relies on the no-barriers-to-exit assumption &#8212; raising a genuine limitation. Ryan describes the correct process but lacks diagram precision (no direction of shifts named), does not state the equilibrium conditions formally, and omits the efficiency conclusion. Niamh accesses Level 4; Ryan Level 2&#8211;3.'
-      },
-
-      /* 7 — MCQ: perfect competition and dynamic efficiency */
+      /* 6 — MCQ: perfect competition and dynamic efficiency */
       { type: 'mcq',
         stem: 'Schumpeter\'s critique of perfect competition as a market structure is that it:',
         opts: [
@@ -123,7 +108,7 @@
         exp: '<strong>Schumpeter\'s critique</strong> is that perfect competition is dynamically inferior: (1) zero long-run supernormal profit means firms have no retained earnings for R&D; (2) perfect information means any innovation is instantly imitated &#8212; no first-mover advantage; (3) price-taking means no pricing power to raise prices to fund investment. Schumpeter argued that "creative destruction" &#8212; the process of long-run growth and technological progress &#8212; requires firms with market power that can earn and invest supernormal profit. Option B is incorrect: price-taking firms do achieve P = MC (allocative efficiency). Option C is incorrect: perfect competition drives price toward AC, not toward monopoly. Option D reverses the critique.'
       },
 
-      /* 8 — Odd one out: real-world approximations */
+      /* 7 — Odd one out: real-world approximations */
       { type: 'odd_one_out',
         stem: 'Three of these markets most closely approximate <strong>perfect competition</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -134,6 +119,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is the <strong>UK new car market</strong>. This market violates multiple perfect competition assumptions: products are highly differentiated (brands, models, specifications); there are a small number of large manufacturers with market power (oligopoly); there are significant barriers to entry (capital, regulation, dealer networks); and information is imperfect (complex pricing, finance packages). Wheat futures, forex, and wholesale produce markets all approximate competitive conditions: standardised products, many participants, transparent prices, and easy arbitrage. These real-world approximations are why commodity and financial markets are studied in relation to competitive theory.'
+      },
+
+      /* 8 — Multi-select: evaluation of perfect competition */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>perfect competition</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Perfect competition achieves allocative efficiency (P = MC) and productive efficiency (P = min AC) in long-run equilibrium &#8212; outcomes that no other market structure replicates simultaneously',
+          'The static efficiency advantages of perfect competition come at the cost of dynamic efficiency: zero long-run supernormal profit removes both the means and the incentive to invest in R&D, which is why real-world commodity markets &#8212; the closest approximation to perfect competition &#8212; generate little product innovation',
+          'The self-correcting mechanism of perfect competition (entry and exit driven by profit signals) relies on the absence of barriers to exit as well as entry; in markets with significant sunk costs, exit is slow and losses can persist for years, limiting the real-world applicability of the long-run adjustment story',
+          'In perfect competition, firms are price-takers because each firm is too small relative to the total market to influence the equilibrium price',
+          'The perfect information assumption of perfect competition is violated in most real-world markets &#8212; even commodity and financial markets rely on costly research, price discovery mechanisms, and dealer networks &#8212; meaning the efficiency results depend on assumptions that are never fully met',
+          'Perfect competition results in the long-run equilibrium where P = AC, so firms earn only normal profit and there is no incentive for further entry or exit'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Options B, C, and E are evaluation.</strong> (B) explicitly identifies the trade-off between static and dynamic efficiency in perfect competition, using real-world evidence (commodity markets generate little innovation) to reach the conclusion that the model\'s static advantages come at a genuine dynamic cost &#8212; a weighing of competing criteria with a directional conclusion. (C) qualifies the self-correcting mechanism by identifying the condition (no exit barriers) on which it depends, and uses sunk costs as a reason why the condition fails in practice, reaching the conclusion that the long-run adjustment story has limited real-world applicability &#8212; this is a genuine limitation with a specific mechanism. (E) challenges the perfect information assumption by identifying specific real-world frictions (research costs, price discovery, dealer networks) even in markets thought to approximate the model, reaching the conclusion that the efficiency results are model-dependent rather than universal. <strong>Options A, D, and F are not evaluation.</strong> (A) correctly identifies the efficiency properties of perfect competition but is one-sided description of the model\'s strengths &#8212; it makes no attempt to qualify these or weigh them against any countervailing consideration. (D) accurately describes price-taking behaviour but is definitional description &#8212; it explains a feature of the model without evaluating its implications or limitations. (F) is an accurate description of the normal profit condition in long-run equilibrium &#8212; pure description with no evaluative content.'
       },
 
       /* 9 — Data table: long-run equilibrium evidence */

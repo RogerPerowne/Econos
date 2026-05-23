@@ -68,21 +68,6 @@
         exp: 'The <strong>deficit is a flow</strong>: how much more the government spends than it raises in tax in a given year. The <strong>debt is a stock</strong>: the accumulation of all past deficits (net of any surpluses) that has never been repaid. Running a &#163;100bn annual deficit adds &#163;100bn to the national debt each year. The UK has run deficits for most of the post-war period, accumulating ~&#163;2.7trn in debt. Debt interest (~&#163;100bn/year) is itself a major spending item &#8212; which widens the deficit further, creating a fiscal self-reinforcing dynamic. The debt-to-GDP ratio (currently ~100%) is the key sustainability metric.'
       },
 
-      /* 4 &#8212; Diagnostic pair: automatic stabilisers */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain how automatic stabilisers cushion the impact of a recession without any deliberate government policy action."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Amara', badge: 'Candidate A',
-            answer: 'Automatic stabilisers are features of the fiscal system that <strong>automatically</strong> reduce the fall in aggregate demand during a recession &#8212; without requiring any government decision or parliamentary action. On the revenue side: as GDP falls, household incomes fall → income tax receipts fall automatically. Firm profits fall → corporation tax receipts fall. Consumer spending falls → VAT receipts fall. These automatic tax reductions leave more disposable income with households than would otherwise exist, partially offsetting the fall in AD. On the expenditure side: as unemployment rises, Jobseekers Allowance and Universal Credit payments rise automatically. These transfers replace some of the income lost by newly unemployed workers, supporting consumption. Both mechanisms work <strong>instantly</strong> &#8212; unlike discretionary fiscal policy, which requires a recognition lag, decision lag, and implementation lag of up to 12-24 months. The 2009 UK recession demonstrated this: automatic stabilisers added ~3-4% of GDP in fiscal support without any active decision. The limitation: they cushion but cannot fully eliminate the downturn &#8212; discretionary stimulus is needed for severe recessions.'
-          },
-          { name: 'Jamie', badge: 'Candidate B',
-            answer: 'Automatic stabilisers work by automatically increasing government spending and reducing taxes when the economy is in recession. This happens because when people are unemployed they claim benefits, which is government spending that happens without any decision being made. Also, when people earn less they pay less tax, so the government takes less money from the economy. Both of these effects help to keep spending going in the economy during a recession. The good thing about automatic stabilisers is that they work straight away, unlike other government policies which take a long time. However, they are not enough to fully stop a recession so sometimes the government also needs to use deliberate fiscal policy.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Amara</strong> gives the stronger answer. She names the specific taxes involved (income tax, corporation tax, VAT), explains both the revenue and expenditure side with mechanisms, provides the quantified evidence (2009: ~3-4% of GDP automatic support), names the three types of fiscal policy lag (recognition, decision, implementation), and ends with a limitation. Jamie covers the core logic but without specific tax names, without quantification, without named lags, and without the mechanism of how each stabiliser works. Amara\'s structural precision &#8212; both sides, mechanism, evidence, limit &#8212; is the A* pattern.'
-      },
-
       /* 5 &#8212; Multi-select: crowding out conditions */
       { type: 'multi_select',
         stem: 'In which of the following circumstances is <strong>crowding out most likely to be significant</strong>, reducing the effectiveness of fiscal stimulus?',
@@ -129,7 +114,22 @@
         exp: 'The odd one out is option B. Automatic stabilisers are a <strong>feature</strong> of the fiscal system &#8212; they represent its automatic counter-cyclical capacity. They are not a limitation of discretionary policy; they are a complementary first line of defence that reduces the need for discretionary intervention. The three genuine limitations are: (A) time lags &#8212; the policy may be mistimed; (C) debt sustainability &#8212; repeated stimulus raises the debt burden and may trigger market confidence crises; (D) political economy bias &#8212; the democratic cycle creates systematic bias toward deficits. A* answers note that automatic stabilisers reduce the need for discretionary fiscal policy, thus partially addressing the time lag limitation.'
       },
 
-      /* 8 &#8212; Data table: UK fiscal position */
+      /* 8 &#8212; multi_select: evaluating fiscal policy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>fiscal policy and its effectiveness as a macroeconomic tool</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Expansionary fiscal policy increases aggregate demand through the government spending multiplier',
+          'The effectiveness of fiscal stimulus depends critically on the size of the multiplier, which itself depends on the marginal propensity to consume — in recessions with high household debt, households may use tax cuts to repay debt rather than consume, reducing the multiplier and limiting the stimulus effect compared to direct public spending',
+          'Crowding out is a decisive objection to fiscal stimulus in all circumstances, making discretionary fiscal policy uniformly ineffective',
+          'The balanced budget multiplier is approximately one, meaning a simultaneous increase in government spending and taxes of equal size still raises national income — which challenges the intuition that a balanced budget is macroeconomically neutral and suggests that the composition of the budget matters as much as its size',
+          'Fiscal policy is subject to time lags, but the significance of these lags depends on the type of intervention: automatic stabilisers avoid recognition and decision lags entirely, while discretionary infrastructure spending can have implementation lags of several years — meaning the optimal fiscal response often combines rapid automatic action with longer-term structural investment rather than relying on short-run discretionary spending',
+          'The national debt is the total accumulation of past government borrowing'
+        ],
+        correct: [1, 3, 4],
+        exp: '<strong>Options B, D, and E are genuine evaluation moves.</strong> Option B qualifies the multiplier effect: it identifies a specific condition (high household debt) under which the tax-cut multiplier is reduced, and draws a policy implication (direct spending is more effective than tax cuts) — evaluation through conditional reasoning. Option D uses the balanced budget multiplier result to challenge an intuitive but incorrect assumption (neutrality of a balanced budget) and derives an evaluative conclusion: the composition of fiscal policy matters. Option E weighs different types of fiscal instrument against each other using the lag criterion, reaching a directed conclusion about the optimal policy mix — this is evaluation by comparing instruments on a specific criterion. <strong>Option A</strong> describes the mechanism of expansionary fiscal policy — pure description. <strong>Option C</strong> overclaims: crowding out is context-dependent and minimal during recessions with spare capacity or at the zero lower bound — "all circumstances" and "uniformly" are unsupported. <strong>Option F</strong> defines national debt — not evaluation.'
+      },
+
+      /* 9 &#8212; Data table: UK fiscal position */
       { type: 'data_table',
         stem: 'The table shows selected UK fiscal data.',
         headers: ['Year', 'Budget deficit (% GDP)', 'National debt (% GDP)', 'Debt interest (&#163;bn)'],

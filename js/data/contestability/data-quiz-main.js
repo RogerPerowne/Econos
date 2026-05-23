@@ -70,22 +70,7 @@
         exp: '<strong>Correct sequence:</strong><br>1. Incumbent prices above AC, earning supernormal profit.<br>2. Potential entrant spots the opportunity (P > AC).<br>3. Zero sunk costs means the risk of entry is zero — no capital at stake.<br>4. Entrant enters and undercuts, earning profit during the window.<br>5. Entrant exits before incumbent can retaliate — all costs recovered.<br>6. Incumbent is disciplined to price at AC to prevent future hit-and-run.<br><br>The key mechanism: <em>the threat of entry</em>, not actual entry, disciplines the incumbent. In equilibrium, hit-and-run entry never actually occurs because the rational incumbent pre-empts it by pricing at P = AC. This is why perfectly contestable markets produce the competitive outcome even with a single firm — the threat is self-enforcing.'
       },
 
-      /* 4 — diagnostic_pair: evaluating a market's contestability */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess whether the UK commercial aviation market is contestable."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Sofia', badge: 'Candidate A',
-            answer: 'UK aviation has elements of both high and low contestability. <strong>High contestability</strong>: aircraft are highly mobile assets — an airline can redeploy a plane from Manchester–Madrid to London–Amsterdam at low incremental cost. Entry to new routes (e.g., easyJet entering a Ryanair route) involves minimal sunk costs because the asset (aircraft) is recoverable. This mobile asset contestability explains the proliferation of budget carriers on European routes. <strong>Low contestability</strong>: Heathrow and Gatwick airport <strong>slots</strong> are scarce and trade at &#163;50m+ per pair. An entrant wanting to serve Heathrow must acquire slots — these involve large sunk costs (slots must be surrendered on exit at lower value, or if market falls). So the <em>route market</em> is contestable but the <em>slot market</em> is not. Policy implication: competition authorities should regulate slot allocation separately from route entry. Using one contestability verdict for the whole aviation market is analytically imprecise.'
-          },
-          { name: 'Leo', badge: 'Candidate B',
-            answer: 'The UK aviation market has some contestability. Airlines can enter new routes if they have aircraft available, and budget airlines like Ryanair and easyJet have shown that entry is possible on many routes. However, contestability is limited because airports like Heathrow are very congested and slots are difficult to obtain. New entrants would also need to invest in brand advertising to attract passengers. The market is dominated by a few large airlines, which suggests limited competition. Overall, the market is partially contestable — it is easier to enter some routes than others, and the availability of airport slots is the main barrier to contestability for routes serving major airports.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Sofia</strong> gives the stronger answer. She makes the precise analytical distinction between route contestability (high — aircraft are mobile) and slot contestability (low — slots are sunk commitments). This shows deep understanding of the theory: contestability is asset-specific, not industry-wide. She uses specific evidence (&#163;50m slot prices, easyJet/Ryanair examples) and derives a policy implication. Leo identifies the same factors but without the analytical framework — he notes slots are hard to obtain and that the market is "partially contestable" but does not deploy the sunk cost framework to explain WHY. Sofia accesses Level 4; Leo Level 2–3. The slot-route distinction is the kind of nuanced application examiners reward with top marks.'
-      },
-
-      /* 5 — multi_select: incumbent responses */
+      /* 4 — multi_select: incumbent responses */
       { type: 'multi_select',
         stem: 'Which of the following are legitimate strategies an incumbent firm might use to <strong>deter entry</strong> by exploiting contestability concerns? Select all that apply.',
         opts: [
@@ -100,7 +85,7 @@
         exp: 'Options A–D are entry-deterrence strategies related to contestability. (A) <strong>Excess capacity</strong>: makes the threat of output flooding credible — rational entrant anticipates post-entry price war and stays out. (B) <strong>Limit pricing</strong>: pricing below the short-run profit-maximising level to remove the profit opportunity that would attract entry. (C) <strong>MFN supply contracts</strong>: lock up inputs, raising potential entrants\' costs — reduces the entrant\'s ability to achieve the same cost structure as the incumbent. (D) <strong>Predatory pricing</strong>: once entry occurs, below-cost pricing to force exit — not a deterrent per se but a post-entry response. Option E (genuine quality improvement) is legitimate competitive behaviour, not strategic entry deterrence. Option F (cartel with entrants) is illegal under competition law — this would violate the Competition Act 1998.'
       },
 
-      /* 6 — mcq: contestability and competition policy */
+      /* 5 — mcq: contestability and competition policy */
       { type: 'mcq',
         stem: 'Contestability theory implies that competition policy should focus primarily on:',
         opts: [
@@ -113,7 +98,7 @@
         exp: 'Contestability theory\'s central policy implication is to <strong>reduce sunk costs</strong> to increase the credibility of entry threats. If entry is costless, even a monopolist must price competitively. Examples: <strong>BT Openreach</strong> (mandated open access to fibre infrastructure reduces sunk costs for broadband ISPs — Ofcom/CMA policy directly informed by contestability); <strong>MVNOs</strong> (Mobile Virtual Network Operators access incumbent mobile networks without building infrastructure — reduces sunk costs, increases market contestability). Option B (breaking up firms) is the structural approach that contestability explicitly challenged — structure alone does not determine performance. Option C (price caps) is direct regulation that creates its own distortions. Option D (banning mergers) is also a structural remedy that contestability theory suggests may be unnecessary in markets with low sunk costs.'
       },
 
-      /* 7 — odd_one_out: real-world contestability */
+      /* 6 — odd_one_out: real-world contestability */
       { type: 'odd_one_out',
         stem: 'Three of these markets display <strong>high contestability</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -126,7 +111,22 @@
         exp: 'The odd one out is <strong>nuclear power station construction</strong>. This market has extremely low contestability — the &#163;20bn+ construction cost is almost entirely sunk (specialist plant, site preparation, regulatory approval, decommissioning liability). No firm can enter, compete briefly, and exit without catastrophic losses. The other three have high contestability: food delivery apps deploy standard technology and no specialist assets; Ryanair routes use redeployable aircraft; online retail requires no specialist physical sunk costs. The nuclear sector is a natural case for price regulation or public ownership rather than reliance on market competition — because the market cannot be made contestable by any reasonable policy intervention. This illustrates why industry-by-industry sunk cost analysis is the correct approach in competition policy.'
       },
 
-      /* 8 — para_fill: sunk costs and contestability */
+      /* 8 — multi_select: evaluating contestable markets */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>contestable markets</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Contestability theory implies that a market with one firm can still produce competitive outcomes, but this conclusion holds only if sunk costs are genuinely zero — in most real industries, at least some costs are irrecoverable, so perfectly contestable markets are a theoretical benchmark rather than an empirical reality',
+          'Sunk costs reduce contestability because potential entrants face the risk of losing capital if they exit the market',
+          'The policy prescription to reduce sunk costs through infrastructure sharing (such as Ofcom\'s open-access mandates for Openreach) is more targeted than structural break-up, because it addresses the root cause of entry barriers without destroying scale economies that might lower costs for consumers',
+          'A market is perfectly contestable when sunk costs are zero and entry and exit are costless',
+          'Contestability theory challenges the traditional structure-conduct-performance view, but its empirical relevance is limited because the conditions required — zero sunk costs, instantaneous entry, no retaliation — are rarely met simultaneously, making the theory more useful as an evaluative lens than a predictive model',
+          'Hit-and-run entry is always profitable in contestable markets because the incumbent cannot respond in time'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Options A, C, and E are genuine evaluation moves.</strong> Option A identifies the theoretical-empirical gap: perfect contestability is a benchmark, not a description of reality — this is evaluation by qualifying the scope of the theory. Option C evaluates the policy implication: infrastructure sharing is superior to break-up because it targets the mechanism (sunk costs) rather than the structure; this weighs competing policy approaches. Option E reaches a nuanced verdict — the theory is useful as a lens but not a predictive model because its strict conditions are rarely met simultaneously. <strong>Option B</strong> is description of the mechanism, not evaluation. <strong>Option D</strong> is a definition. <strong>Option F</strong> is an overclaim — hit-and-run entry is only profitable when P &gt; AC, and the threat of it (not actual entry) is the equilibrating mechanism; moreover, the incumbent rationally prices at AC to pre-empt it.'
+      },
+
+      /* 7 — para_fill: sunk costs and contestability */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph by selecting the correct word or phrase for each numbered blank.',
         anchor: 'Sunk costs are the primary determinant of market contestability.',

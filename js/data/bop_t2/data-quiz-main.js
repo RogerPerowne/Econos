@@ -55,22 +55,7 @@
         exp: '<strong>Trade in goods</strong>: physical exports/imports (cars, food, electronics). UK runs a large goods deficit (~&#163;150-180bn). <strong>Trade in services</strong>: financial services, education, tourism, legal fees. UK runs a consistent services surplus. <strong>Primary income</strong>: investment returns &#8212; dividends, profits, interest. Outflows (profits repatriated by foreign-owned UK firms) reduce this. <strong>Secondary income</strong>: foreign aid, remittances, government transfers. UK runs a small deficit here. The overall current account is the net of all four &#8212; goods deficit partially offset by services surplus and historically positive primary income.'
       },
 
-      /* 3 &#8212; Diagnostic pair: structural vs cyclical deficit */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain why the UK current account deficit is considered structural rather than cyclical."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Zara', badge: 'Candidate A',
-            answer: 'A <strong>cyclical</strong> deficit widens during booms (higher incomes boost import demand) and narrows automatically during recessions. A <strong>structural</strong> deficit persists even at full employment, reflecting fundamental competitiveness weaknesses rather than temporary demand fluctuations. The UK current account deficit is structural for three reasons. First, the UK has undergone severe deindustrialisation since the 1980s, drastically reducing its capacity to export manufactured goods &#8212; the goods deficit (~&#163;150-180bn) reflects this permanent supply-side change. Second, productivity growth has lagged major competitors, raising unit labour costs relative to trading partners. Third, Brexit introduced non-tariff barriers that have eroded the services surplus (reduced EU financial passporting, lower EU student numbers) &#8212; the one sub-account that partially offset the goods deficit. The structural nature is evidenced by the deficit persisting through multiple business cycles, including when GDP growth was near zero.'
-          },
-          { name: 'Liam', badge: 'Candidate B',
-            answer: 'A structural deficit is one that exists regardless of the state of the economy, while a cyclical deficit only exists when the economy is in recession. The UK\'s current account deficit is structural because it has existed for many years through good and bad economic periods. This is because the UK imports many more goods than it exports &#8212; partly due to deindustrialisation. The services sector does produce a surplus but not enough to compensate for the goods deficit. Brexit has also made trade harder with EU countries. Because the deficit exists even when the economy is growing, it is structural rather than cyclical.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Zara</strong> gives the stronger answer. She defines both structural and cyclical precisely before applying the distinction &#8212; a key exam technique. She names three specific structural causes with quantification where possible (&#163;150-180bn goods deficit), names the mechanism for each (deindustrialisation, relative productivity, Brexit passporting), and provides the empirical test (persists through multiple cycles). Liam correctly identifies the key points but without quantification, without the precise structural/cyclical definition, and without naming Brexit\'s specific channel (passporting). Zara\'s analytical layering is the A* pattern.'
-      },
-
-      /* 4 &#8212; MCQ: Marshall-Lerner condition */
+      /* 3 &#8212; MCQ: Marshall-Lerner condition */
       { type: 'mcq',
         stem: 'The <strong>Marshall-Lerner condition</strong> states that a currency depreciation will improve the current account <em>only if</em>:',
         opts: [
@@ -83,7 +68,7 @@
         exp: 'The Marshall-Lerner condition: for depreciation to improve the BoP, <strong>PEDx + PEDm &gt; 1</strong>. If demand for exports and imports is sufficiently price-elastic (combined &gt; 1), the volume effects (more exports, fewer imports) outweigh the price effects. If combined elasticity &lt; 1 (inelastic in the short run &#8212; contracts already signed, limited substitutes), the import bill actually rises after depreciation &#8212; explaining the J-curve. In the long run, elasticities are larger (more time to adjust), so the Marshall-Lerner condition tends to be satisfied eventually. A* answers always pair the Marshall-Lerner condition with the J-curve when discussing depreciation as a BoP correction.'
       },
 
-      /* 5 &#8212; Para fill: J-curve */
+      /* 4 &#8212; Para fill: J-curve */
       { type: 'para_fill',
         stem: 'Complete the paragraph describing the J-curve effect.',
         anchor: 'The J-curve explains why exchange rate depreciation does not improve the current account immediately.',
@@ -101,7 +86,7 @@
         exp: '(1) <strong>Rise</strong>: depreciation means each unit of foreign currency costs more &#163;, so import prices rise. (2) <strong>Demand</strong>: it is the demand for imports that matters for the bill. (3) <strong>Inelastic</strong>: short-run inelasticity &#8212; existing contracts, limited alternatives. (4) <strong>Bill</strong>: higher prices on unchanged (inelastic) volumes means the bill rises. (5) <strong>Elastic</strong>: long-run elasticity rises as consumers and firms adjust their buying decisions. (6) <strong>Marshall-Lerner</strong>: once demand is sufficiently elastic, the condition is satisfied. (7) <strong>12-24</strong>: empirical estimates suggest 12-24 months for the J-curve to turn positive. The UK\'s 1967 devaluation took 12 months before the BoP improved.'
       },
 
-      /* 6 &#8212; Multi-select: expenditure-switching */
+      /* 5 &#8212; Multi-select: expenditure-switching */
       { type: 'multi_select',
         stem: 'Which of the following are examples of <strong>expenditure-switching policies</strong> designed to reduce a current account deficit?',
         opts: [
@@ -116,7 +101,7 @@
         exp: 'Expenditure-switching policies redirect spending from imports to domestic goods without necessarily reducing domestic income. Options A (depreciation), C (tariffs), D (productivity), and F (devaluation) all change relative prices to favour domestic production. Options B (government spending cuts) and D (interest rate rises) are <em>expenditure-reducing</em> &#8212; they cut domestic income to reduce import demand, but at the cost of lower output and employment. A* answers always contrast the two approaches: expenditure-switching is preferred because it can improve the BoP without sacrificing domestic output, whereas expenditure-reducing \'corrects the deficit by impoverishing the population.\''
       },
 
-      /* 7 &#8212; Calculation: depreciation effect */
+      /* 6 &#8212; Calculation: depreciation effect */
       { type: 'calculation',
         context: 'The &#163; depreciates against the euro from <strong>&#163;1 = &#8364;1.20</strong> to <strong>&#163;1 = &#8364;1.00</strong>. A UK consumer imports a French wine that costs <strong>&#8364;12 per bottle</strong> in France.',
         working: [
@@ -137,7 +122,7 @@
         exp: 'Before: &#8364;12 &#247; 1.20 = <strong>&#163;10</strong>. After: &#8364;12 &#247; 1.00 = <strong>&#163;12</strong>. The sterling price rises 20% &#8212; illustrating cost-push inflation from a weaker pound. If demand for French wine is inelastic (no close domestic substitute), UK consumers continue buying similar volumes and the import bill rises from ~&#163;10 to ~&#163;12 per bottle &#8212; worsening the current account initially (J-curve). Only as consumers switch to domestic alternatives over time does the volume fall and the deficit improve. This is why the Marshall-Lerner condition depends on long-run elasticities.'
       },
 
-      /* 8 &#8212; Odd one out */
+      /* 7 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these are potential <strong>problems caused by a persistent current account deficit</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -148,6 +133,21 @@
         ],
         ans: 1,
         exp: 'The odd one out is option B. A current account deficit does <em>not</em> directly cause domestic inflation &#8212; it actually represents a net demand leakage (imports exceed exports), which is <em>deflationary</em> for domestic demand (reduces the net exports component of AD). The other three are genuine problems: (A) financial account financing dependence is the Mervyn King \'kindness of strangers\' vulnerability; (C) rising net foreign liabilities constrain future policy options; (D) excess &#163; supply on FOREX markets puts downward pressure on sterling, which can then cause import price inflation &#8212; but that is a secondary effect through the exchange rate, not a direct effect of the deficit.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of the UK current account deficit */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the UK current account deficit and policies to correct it</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Currency depreciation will only improve the current account if the Marshall-Lerner condition is satisfied (PEDx + PEDm &gt; 1), and in the short run &#8212; when trade contracts are pre-committed and demand is inelastic &#8212; depreciation typically worsens the deficit before improving it, making the J-curve a binding constraint on the short-run effectiveness of this policy',
+          'The UK current account deficit means that the UK imports more than it exports in goods, services, and income combined',
+          'Expenditure-reducing policies (cutting government spending or raising interest rates) can reduce the current account deficit by lowering domestic income and hence import demand, but at the cost of higher unemployment and slower growth &#8212; meaning the policy &#8220;corrects the deficit by impoverishing the population&#8221; rather than by improving underlying competitiveness',
+          'The UK has run a persistent current account deficit for several decades',
+          'Whether the UK current account deficit is sustainable depends on the willingness of foreign investors to continue financing it via capital inflows: as long as the UK attracts net FDI and portfolio investment (the &#8216;kindness of strangers&#8217;), the deficit is financed &#8212; but a sudden reversal of capital flows would require sharp sterling depreciation and potentially a recession to restore balance',
+          'Depreciation makes UK exports cheaper in foreign currency terms and imports more expensive in sterling terms'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it states the Marshall-Lerner condition as a prerequisite for the policy to work, applies it to the short-run context using a specific mechanism (inelastic demand due to pre-committed contracts), and identifies the J-curve as a limiting constraint &#8212; this qualifies the standard &#8220;depreciation improves the deficit&#8221; claim with a precise condition and direction. Option C is strong evaluation: it acknowledges the mechanism by which expenditure reduction works, then identifies the trade-off (unemployment and growth costs), and uses the memorable &#8220;impoverishing the population&#8221; framing to reach a direction &#8212; distinguishing expenditure reduction from the superior expenditure-switching approach. Option E is strong evaluation: it reframes the sustainability question from &#8220;is there a deficit?&#8221; to &#8220;can it be financed?&#8221;, identifies the condition for sustainability (continued capital inflows), names the risk (sudden stop), and specifies the consequences (depreciation, recession) &#8212; conditional reasoning with a named direction. Option B describes the definition of a current account deficit &#8212; knowledge content, not evaluation. Option D states a fact about the UK deficit without qualifying it, exploring its causes, or reaching a directional conclusion. Option F describes the mechanism of depreciation accurately but without condition, qualification, or two-sided reasoning.'
       },
 
       /* 9 &#8212; Data table: UK current account */

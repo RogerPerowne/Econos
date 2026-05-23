@@ -55,22 +55,7 @@
         exp: '<strong>SRAS only</strong>: factors affecting immediate production costs &#8212; oil prices, VAT, short-term supply chain disruptions. <strong>LRAS only</strong>: factors affecting the economy\'s long-run capacity over years or decades &#8212; major infrastructure, sustained education investment. <strong>Both</strong>: factors with both short and long-run effects &#8212; skilled immigration raises short-run productive capacity (SRAS right) and long-run potential output (LRAS right); AI productivity improvements similarly operate on both. A* answers distinguish the time horizon of each shifter and explain why supply-side policies primarily target LRAS, taking years or decades to materialise.'
       },
 
-      /* 3 &#8212; Diagnostic pair: Classical vs Keynesian */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess whether fiscal stimulus is effective in raising real output in the long run."</em> Which student uses the AD/AS model more effectively?',
-        students: [
-          { name: 'Anika', badge: 'Candidate A',
-            answer: 'The answer depends critically on which model of LRAS is used. <strong>In the Classical model</strong>, LRAS is vertical at potential output Y*. Fiscal stimulus shifts AD right, but with a vertical LRAS, the only long-run effect is a higher price level &#8212; real output returns to Y*. The mechanism: increased government borrowing raises interest rates (crowding out), private investment falls by an equal amount, and net AD is unchanged. <strong>In the Keynesian model</strong>, with the economy on the horizontal portion of LRAS (large negative output gap), AD stimulus does raise real output because spare capacity can absorb the extra demand without inflationary pressure. The multiplier amplifies the initial injection. The 2009-12 recession provides evidence for the Keynesian position: IMF analysis found multipliers of 0.9-1.7 &#8212; fiscal consolidation had larger-than-expected contractionary effects, suggesting the economy was operating on the Keynesian horizontal portion. <strong>Conclusion</strong>: fiscal stimulus raises long-run output only if there is spare capacity and crowding out is limited &#8212; conditions that vary with the economic cycle.'
-          },
-          { name: 'Raj', badge: 'Candidate B',
-            answer: 'Fiscal stimulus can raise real output by shifting AD to the right. If the government spends more, this increases demand in the economy. Firms will respond by increasing output and hiring more workers. The multiplier effect means the final impact on GDP is larger than the initial injection. This is the Keynesian view &#8212; that governments can and should use fiscal policy in recessions. However, Classical economists disagree and say the economy will return to its natural level of output on its own. They argue that fiscal stimulus just raises prices rather than real output in the long run because of crowding out. So the effectiveness of fiscal stimulus depends on which economic model you believe.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Anika</strong> gives the stronger answer. She states the AS model assumption before any analysis &#8212; the key exam technique. She explains the Classical mechanism precisely (crowding out → net AD unchanged), applies the Keynesian horizontal portion logic to the spare capacity context, and cites specific IMF evidence (multipliers 0.9-1.7) with dates. Her conclusion is conditional &#8212; effectiveness depends on spare capacity and crowding out &#8212; which is the A* structure. Raj covers the same ground conceptually but without model precision (he doesn\'t state \'which portion of LRAS\'), without evidence, and without a conditional conclusion. Anika accesses Level 4; Raj Level 2-3.'
-      },
-
-      /* 4 &#8212; MCQ: stagflation */
+      /* 3 &#8212; MCQ: stagflation */
       { type: 'mcq',
         stem: 'The term <strong>stagflation</strong> refers to:',
         opts: [
@@ -83,7 +68,7 @@
         exp: '<strong>Stagflation</strong> = stagnation + inflation. It arises when SRAS shifts left (cost-push shock): output falls (stagnation/unemployment rises) AND prices rise simultaneously. This is the worst macroeconomic scenario because demand-side policy cannot solve both problems: tightening policy combats inflation but worsens the output fall; loosening policy protects output but worsens inflation. The 1970s OPEC oil shocks produced classic stagflation. The 2022 UK episode (CPI 11.1%, near-zero growth) is a milder modern parallel. Key point: stagflation breaks the original Phillips curve relationship, which assumed unemployment and inflation move in opposite directions.'
       },
 
-      /* 5 &#8212; Para fill: output gap */
+      /* 4 &#8212; Para fill: output gap */
       { type: 'para_fill',
         stem: 'Complete the paragraph about output gaps and their consequences.',
         anchor: 'The output gap measures the difference between actual and potential GDP.',
@@ -101,7 +86,7 @@
         exp: '(1) <strong>Below</strong>: actual output falls short of potential in a negative gap. (2) <strong>Spare</strong>: idle workers, underutilised capital. (3) <strong>Downward</strong>: deflationary pressure from weak demand. (4) <strong>Nominal</strong>: the Classical mechanism requires nominal wages to fall (not just real wages). (5) <strong>Right</strong>: lower wages reduce costs; SRAS shifts right, raising output back to potential at a lower price level. (6) <strong>Sticky</strong>: the Keynesian objection &#8212; nominal wages are rigid downward due to contracts, unions, and morale effects. (7) <strong>Fiscal or monetary</strong>: demand-side policies shift AD right, closing the gap via the demand side rather than waiting for supply-side adjustment.'
       },
 
-      /* 6 &#8212; Multi-select: SRAS shifters */
+      /* 5 &#8212; Multi-select: SRAS shifters */
       { type: 'multi_select',
         stem: 'Which of the following will cause the <strong>SRAS curve to shift left</strong> (cost-push shock)?',
         opts: [
@@ -116,7 +101,7 @@
         exp: 'SRAS shifts left when <strong>production costs rise</strong>. Options A (oil price), B (import costs from depreciation), C (wage costs above productivity), and E (indirect tax cost-push &#8212; VAT shifts SRAS left, raising prices at each output level) all directly raise firms\' costs and shift SRAS left. Option D (NHS spending) is a fiscal stimulus &#8212; it shifts AD right, not SRAS. Option F (rate cut) shifts AD right via reduced borrowing costs &#8212; no direct SRAS effect. The A* point: when SRAS shifts left, output falls AND the price level rises simultaneously &#8212; creating the policy dilemma that neither tightening nor loosening solves without cost.'
       },
 
-      /* 7 &#8212; Odd one out */
+      /* 6 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these are consistent with the <strong>Classical view of LRAS</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -129,7 +114,7 @@
         exp: 'The odd one out is option C, which describes the <strong>Keynesian</strong> model (horizontal LRAS with spare capacity). The Classical model asserts vertical LRAS at full employment &#8212; there is no spare capacity scenario where AD raises output without raising prices, because wages and prices are fully flexible and the economy is always at Y*. Options A (self-correction), B (stimulus is purely inflationary at capacity), and D (full crowding out) are all consistent with the Classical vertical LRAS model. Option C is the defining feature of Keynesian macro: spare capacity exists and AD stimulus is non-inflationary.'
       },
 
-      /* 8 &#8212; Data table: UK supply shock 2022 */
+      /* 7 &#8212; Data table: UK supply shock 2022 */
       { type: 'data_table',
         stem: 'The table shows UK macroeconomic data during the 2022 supply shock episode.',
         headers: ['Indicator', '2021', 'Q1 2022', 'Q3 2022', 'Q4 2022'],
@@ -148,6 +133,21 @@
         ],
         ans: 0,
         exp: 'The data shows the textbook negative supply shock: oil prices doubled from ~$71 to ~$100, driving CPI from 2.5% to ~11% while real GDP growth stalled and turned negative in Q3. This is SRAS shifting left &#8212; higher costs → higher prices AND lower output simultaneously (stagflation). The BoE raised rates aggressively (0.1% to 3.5% in one year) to fight inflation, but this risked worsening the output stagnation &#8212; the classic policy dilemma from a supply shock. Option B is incorrect &#8212; the demand-pull explanation cannot account for near-zero growth alongside high inflation. Option C confuses SRAS and LRAS. Option D is incorrect &#8212; the episode was a supply shock, not a Keynesian demand deficiency.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of aggregate supply policy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>aggregate supply and macroeconomic policy</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Supply-side policies that target LRAS take years or decades to raise potential output &#8212; making them inappropriate as a short-run response to a negative output gap, where demand-side intervention operates in months rather than a decade',
+          'A leftward shift of SRAS causes stagflation &#8212; rising prices and falling output simultaneously',
+          'The Classical self-correcting mechanism relies on nominal wage flexibility, but if wages are sticky downward (due to contracts and union bargaining), the correction could take years &#8212; justifying active demand-side policy rather than waiting for the market to clear',
+          'LRAS is vertical in the Classical model because the economy is always at full employment in the long run',
+          'Whether fiscal stimulus raises real output depends critically on the position of the economy relative to LRAS: in a deep recession with spare capacity (Keynesian horizontal range), stimulus is non-inflationary; at full employment (Classical vertical range), the same stimulus only raises the price level',
+          'A cost-push shock shifts SRAS to the left, increasing both the price level and unemployment at the same time'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it weighs supply-side policy against a specific criterion (speed of effect relative to need), reaches a directional conclusion (inappropriate for short-run gaps), and uses a time-based comparison &#8212; this is a genuine analytical weighing move. Option C is strong evaluation: it identifies the key condition on which the Classical mechanism depends (nominal wage flexibility), explains what breaks that condition (stickiness from contracts/unions), and reaches a qualified policy conclusion &#8212; exactly the structure examiners reward. Option E is strong evaluation: it conditions the effectiveness of fiscal stimulus on where the economy sits on the AS curve, distinguishing two explicitly contrasting scenarios &#8212; the highest-level evaluative technique in macro. Option B describes a known outcome without qualification, weighing, or context &#8212; it is analysis, not evaluation. Option D is pure description of the Classical model &#8212; it states a position without questioning it, applying it, or reaching a conditional conclusion. Option F restates the definition of stagflation without any evaluative direction.'
       },
 
       /* 9 &#8212; Calculation: output gap */

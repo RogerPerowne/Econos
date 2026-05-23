@@ -102,22 +102,7 @@
         exp: 'Options A, B, D, and E are recognised barriers to entry. <strong>Scale economies</strong> mean entrants face higher unit costs until they reach scale &#8212; a structural barrier. A <strong>patent</strong> is a legal barrier granting 20 years of exclusive rights. <strong>Network effects</strong> mean the incumbent platform is intrinsically more valuable (WhatsApp, LinkedIn) &#8212; an almost insurmountable incumbent advantage. <strong>High sunk costs</strong> deter entry because if the entrant fails, irrecoverable spending is lost &#8212; the risk asymmetry (incumbent has already paid) favours the incumbent. Option C (low prices) is not a barrier &#8212; if anything, low prices reduce the incentive to enter. Option F (homogeneous product) describes a feature, not a barrier; without other barriers it enables easier entry and competition.'
       },
 
-      /* 6 — Diagnostic pair: evaluating monopoly */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the view that monopoly is always harmful to consumers and society."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Monopoly causes static welfare losses: the monopolist restricts output below the competitive level and charges P &gt; MC, creating a deadweight welfare loss (DWL triangle) and transferring consumer surplus to the producer. X-inefficiency may also arise &#8212; without competitive pressure, management slack raises costs above the minimum. However, "always harmful" overstates the case. <strong>Natural monopoly</strong> is the key counterargument: where LRAC is still falling at market output, a single firm produces at lower unit cost than fragmented competition &#8212; regulation (RPI-X cap) can capture these economies while preventing exploitation. The <strong>Schumpeterian</strong> argument also applies: in pharmaceuticals and tech, supernormal profits fund R&D, generating dynamic efficiency gains that can exceed the static DWL. The appropriate conclusion is industry-specific: in water/rail infrastructure, regulated monopoly is optimal; in retail or professional services, competition is clearly preferable. "Always harmful" is therefore an overstatement.'
-          },
-          { name: 'Ben', badge: 'Candidate B',
-            answer: 'Monopoly is bad for consumers because monopolists charge high prices and produce less output than competitive firms. This means consumers have fewer choices and pay more. The monopolist makes supernormal profits which is unfair. Monopoly also reduces innovation because the firm does not need to innovate to survive. However, some monopolies are natural monopolies, like water companies, where having one firm is cheaper. Also, patents allow monopolies to exist in order to encourage firms to invent new drugs. So monopoly is not always bad. The government can regulate monopolies through the CMA to stop them from abusing their position.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She applies precise terminology (DWL, P &gt; MC, X-inefficiency, natural monopoly, Schumpeterian dynamic efficiency) and structures the evaluation around the word "always" &#8212; directly engaging with the claim. Her counter-arguments are specific (LRAC still falling, RPI-X regulation, pharmaceutical R&D) and she concludes with a context-dependent judgement. Ben identifies the same broad ideas but at a descriptive level &#8212; "high prices," "unfair," "does not need to innovate" &#8212; without the analytical framework (diagrams, efficiency criteria, formal models). Ben accesses Level 2&#8211;3; Priya Level 4. The phrase "industry-specific" in Priya\'s conclusion is exactly the kind of qualified evaluative judgement that earns the highest marks.'
-      },
-
-      /* 7 — Calculation: monopoly profit */
+      /* 6 — Calculation: monopoly profit */
       { type: 'calculation',
         context: 'A monopolist faces demand: P = 100 &#8722; 2Q. Its marginal cost is constant at MC = 20. Fixed costs are &#163;400.',
         working: [
@@ -144,7 +129,7 @@
         exp: 'Setting MR = MC: 100 &#8722; 4Q = 20 → Q* = 20. Price from demand: P* = 100 &#8722; 2(20) = <strong>&#163;60</strong>. TR = 60 &#215; 20 = &#163;1,200. Variable costs = MC &#215; Q = 20 &#215; 20 = &#163;400. Total cost = &#163;400 (VC) + &#163;400 (FC) = &#163;800. Supernormal profit = &#163;1,200 &#8722; &#163;800 = <strong>&#163;400</strong>. Note: the competitive output would be where P = MC: 100 &#8722; 2Q = 20 → Q_c = 40. Restricting output from 40 to 20 is the source of the DWL &#8212; and of the supernormal profit.'
       },
 
-      /* 8 — Odd one out: natural monopoly */
+      /* 7 — Odd one out: natural monopoly */
       { type: 'odd_one_out',
         stem: 'Three of these are examples of <strong>natural monopoly</strong> in the UK. Which is the <strong>ODD ONE OUT</strong>?',
         items: [
@@ -155,6 +140,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is <strong>Tesco</strong>. While Tesco has a large market share (approximately 27%), grocery retail is <em>not</em> a natural monopoly &#8212; there are four major supermarket chains (Tesco, Sainsbury\'s, Asda, Morrisons) competing, plus discounters (Aldi, Lidl). Grocery retail does not exhibit continuously falling LRAC at the market scale. By contrast, <strong>Thames Water, National Grid, and Network Rail</strong> are genuine natural monopolies &#8212; the fixed infrastructure costs of water pipes, electricity pylons, and railway track are so high that duplicating them would be deeply inefficient. Each has LRAC still falling at the relevant market scale &#8212; hence regulated monopoly, not competition, is the appropriate structure.'
+      },
+
+      /* 8 — Multi-select: evaluation of monopoly */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>monopoly</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'A monopolist restricts output below the competitive level and charges P &gt; MC, creating a deadweight welfare loss triangle and transferring consumer surplus to the producer as supernormal profit',
+          'The Schumpeterian counter-argument has most force in sectors with high R&D intensity and long development cycles &#8212; such as pharmaceuticals, where patent monopoly profits fund drug development &#8212; but carries little weight in, for example, water distribution, where innovation incentives are weak regardless of market structure',
+          'Whether a monopoly should be regulated or broken up depends on whether LRAC is still falling at the market output level: if it is, fragmentation raises unit costs for all consumers and regulated monopoly is superior to competition',
+          'Monopoly leads to allocative inefficiency because P &gt; MC, and productive inefficiency due to X-inefficiency arising from reduced competitive pressure',
+          'Monopoly is always harmful to consumers and society because it restricts output, raises prices, and reduces consumer surplus without any countervailing benefits',
+          'The Competition and Markets Authority can investigate mergers and impose fines on firms found guilty of abusing a dominant position'
+        ],
+        correct: [1, 2],
+        exp: '<strong>Options B and C are evaluation.</strong> (B) qualifies the Schumpeterian dynamic efficiency argument by distinguishing the contexts in which it holds (high R&D sectors like pharmaceuticals) from those in which it does not (water distribution), reaching a directional conclusion that the argument\'s strength is sector-specific. This is a genuine evaluative move &#8212; weighing competing factors and specifying conditions. (C) identifies the specific analytical condition (LRAC still falling) under which regulated monopoly dominates competition, reaching the conclusion that the policy response should depend on cost structure rather than market share alone. <strong>Options A, D, E, and F are not evaluation.</strong> (A) accurately describes the welfare analysis but is one-sided &#8212; it lists costs without weighing any countervailing factor or qualifying the conclusion. (D) correctly identifies static inefficiency but remains one-sided, ignoring the dynamic efficiency debate entirely. (E) overclaims: asserting monopoly is \'always\' harmful without any qualification directly contradicts the natural monopoly and Schumpeterian counter-arguments; this is the claim an evaluative essay must push back on. (F) is a factual description of CMA powers with no evaluative content.'
       },
 
       /* 9 — Data table: CMA cases */

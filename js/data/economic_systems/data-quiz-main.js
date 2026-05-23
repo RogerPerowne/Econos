@@ -77,22 +77,7 @@
         exp: 'The potential advantages of command economies are A, B, C, and F. Option D is <strong>incorrect</strong>: command economies remove the price mechanism, so prices cannot signal true social costs &#8212; this is precisely the problem. Option E is <strong>incorrect</strong>: consumer sovereignty is typically absent in command economies; citizens receive what planners decide. The Soviet Union achieved rapid industrialisation in the 1930s&#8211;50s through resource mobilisation (advantage C) and virtually eliminated homelessness and mass poverty (advantages A, B), but collapsed under the weight of misallocation, innovation stagnation, and consumer goods shortages by the 1980s.'
       },
 
-      /* 5 &#8212; Diagnostic pair: market vs state */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the case for government intervention in a free market economy."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Sophie', badge: 'Candidate A',
-            answer: 'The case for government intervention rests on market failure &#8212; the situations where the price mechanism fails to allocate resources optimally. The four main failures are: <strong>externalities</strong> (prices exclude social costs/benefits); <strong>public goods</strong> (non-excludable, non-rival goods are under-provided because of the free rider problem); <strong>information asymmetries</strong> (adverse selection and moral hazard); and <strong>inequality</strong> (market outcomes reflect factor endowments, not need). Each failure justifies a specific intervention: taxes/subsidies for externalities; public provision for public goods; disclosure regulation for information failures; progressive taxation for inequality. However, the case against intervention &#8212; government failure &#8212; is equally important: rent-seeking, regulatory capture, information deficits, and policy distortions mean government intervention can worsen outcomes. The optimal level of intervention depends on the relative magnitude of market failure vs government failure in each specific context &#8212; a normative judgement about which efficiency cost is larger.'
-          },
-          { name: 'Jake', badge: 'Candidate B',
-            answer: 'Governments should intervene in free markets when markets fail. Markets fail when they produce too much or too little of a good. For example, pollution is a negative externality and firms produce too much of it, so the government should tax polluters. Public goods like defence need to be provided by the government because private firms won\'t provide them. However, governments don\'t always get it right and can make mistakes too. For example, they might waste money or make wrong decisions. So intervention is sometimes good and sometimes bad and it depends on the situation.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Sophie</strong> gives the stronger answer. She names all four types of market failure precisely, links each to the appropriate policy response (a causal chain), and then introduces the counter-argument (government failure) with specific mechanisms (rent-seeking, regulatory capture). Her conclusion is properly nuanced: the optimal intervention level depends on comparing the magnitude of market failure vs government failure in each case. Jake identifies the same two themes (externalities, public goods, government failure) but without precise mechanisms, no taxonomy of failure types, and a superficial conclusion. Sophie accesses Level 4; Jake Level 2&#8211;3.'
-      },
-
-      /* 6 &#8212; Para fill: mixed economy */
+      /* 5 &#8212; Para fill: mixed economy */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the rationale for a mixed economy.',
         anchor: 'All real-world economies are mixed &#8212; the debate is about the degree of intervention.',
@@ -109,7 +94,7 @@
         exp: '(1) <strong>Private</strong> market allocation &#8212; most goods produced by private firms responding to price signals. (2) Government <strong>intervention</strong> &#8212; taxes, subsidies, regulation, public provision. (3) Markets <strong>allocate</strong> most goods efficiently &#8212; the comparative advantage of markets. (4) <strong>Externalities</strong> &#8212; the leading cause of market failure. (5) <strong>Allocative</strong> efficiency &#8212; ensuring resources go to their highest social value use. (6) <strong>Private</strong> provision &#8212; supermarkets, housing, etc. (7) <strong>Progressive</strong> taxation &#8212; higher earners pay higher rates, reducing inequality.'
       },
 
-      /* 7 &#8212; Data table: comparing systems */
+      /* 6 &#8212; Data table: comparing systems */
       { type: 'data_table',
         stem: 'The table shows indicators for three economies in a given year.',
         headers: ['Indicator', 'Economy A (market-led)', 'Economy B (state-led)', 'Economy C (mixed)'],
@@ -129,6 +114,21 @@
         ],
         ans: 0,
         exp: 'The data illustrate the classic trade-off: Economy A (free market) generates higher income and innovation (market incentives, decentralised decisions) but at the cost of greater inequality (Gini 0.41). Economy B (command/state-led) achieves greater equality but lower income and innovation &#8212; consistent with theory on the knowledge problem and incentive failures of central planning. Economy C (mixed) achieves intermediate outcomes on all indicators. Option B is oversimplified: public expenditure is not the only cause of low income; institutional quality, incentives, and historical factors also matter. Option C applies a single value judgement. Option D overstates the case &#8212; "always" is not supported by the data or theory.'
+      },
+
+      /* 7 &#8212; multi_select: evaluating economic systems */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>economic systems and the role of the price mechanism</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'The price mechanism efficiently aggregates dispersed local knowledge, as Hayek argued, but this advantage holds only for private goods with well-defined property rights — it breaks down for public goods (non-excludable, non-rival) and goods with significant externalities, where the price signal systematically misfires',
+          'The invisible hand refers to the way free markets coordinate individual decisions without central planning',
+          'While command economies achieved notable successes in rapid industrialisation (the USSR\'s GDP grew roughly sevenfold between 1928 and 1970), their failure to generate consumer goods diversity and to match price signals with actual preferences ultimately led to chronic shortages and systemic collapse — suggesting that resource mobilisation without price-based allocation is sustainable in the short run but not the long run',
+          'Free markets tend to produce inequality because they reward ability to pay rather than need',
+          'The shift from command to market economy in Russia demonstrates that the sequencing of liberalisation matters as much as the direction: rapid privatisation without establishing property rights and competitive institutions produced oligarchic capture and a 45% GDP collapse, whereas China\'s gradualist approach generated growth with stability',
+          'Mixed economies are better than both pure free markets and pure command economies'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Options A, C, and E are genuine evaluation moves.</strong> Option A identifies precisely when the invisible hand mechanism fails — it qualifies Hayek\'s argument by specifying the conditions under which price signals misfire (public goods, externalities). This is evaluation by scoping the claim. Option C uses evidence (USSR industrialisation data) to reach a qualified temporal conclusion: resource mobilisation is viable short-run but unsustainable long-run without price allocation — this is evaluation through evidence to a direction. Option E draws a specific policy lesson from the Russia-China comparison: sequencing matters as much as the goal — this uses cross-country evidence to reach a directive conclusion. <strong>Option B</strong> defines the invisible hand — description only. <strong>Option D</strong> describes a consequence of free markets with no weighing, qualification, or evaluative direction. <strong>Option F</strong> asserts a verdict without any analysis of conditions, evidence, or trade-offs — it is a conclusion without argument.'
       },
 
       /* 8 &#8212; Odd one out: price mechanism functions */

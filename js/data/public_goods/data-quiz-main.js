@@ -132,7 +132,22 @@
         exp: 'The key public good characteristic in the data: each country\'s entire population benefits from its defence umbrella simultaneously &#8212; non-rivalry (UK\'s 67 million all benefit from the same defence; one person\'s protection doesn\'t reduce another\'s) and non-excludability (HMRC cannot choose not to defend tax non-payers). Option B is incorrect: Germany spends less but achieves a <em>higher</em> security index &#8212; there is no simple spending-outcome relationship, reflecting differences in geopolitical risk, alliances (NATO), and efficiency. Option C confuses spending differences (reflecting political choices) with rivalry &#8212; lower German spending means less defence overall, not that some Germans are excluded. Option D misunderstands the concept: spending variation between countries does not affect the within-country public good properties.'
       },
 
-      /* 8 — mcq: preference revelation problem */
+      /* 8 — multi_select: evaluation of government provision of public goods */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>whether public goods can only be provided by the government</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Technology can convert public goods into club goods over time: GPS was a non-excludable military good, but commercial encryption created excludability &#8212; suggesting the government-provision argument weakens as excludability technology improves',
+          'Public goods are non-rival and non-excludable, so private firms cannot charge for them and will not provide them',
+          'Where non-excludability is truly fundamental rather than technological &#8212; as with national defence or flood barriers &#8212; the free rider problem cannot be solved by the market regardless of technological development, so government provision remains essential',
+          'Government provides public goods because they are good for society',
+          'The case for government provision is strongest precisely in the goods where excludability technology is weakest &#8212; qualifying the argument to contexts rather than applying it universally is more analytically defensible than a blanket claim',
+          'Lighthouses were historically provided by private associations funded by port fees, showing private provision can work; but this model depends on a concentrated group of identifiable beneficiaries &#8212; a condition that rarely holds for national-scale public goods like defence'
+        ],
+        correct: [0, 2, 5],
+        exp: '<strong>Option A</strong> is strong evaluation: it uses a specific mechanism (encryption technology) to qualify when the government-provision argument holds and when it weakens, reaching a directional conclusion about how the argument changes over time. <strong>Option C</strong> is strong evaluation: it distinguishes between technological and fundamental non-excludability, identifying the conditions under which government provision is genuinely necessary rather than asserting it universally. <strong>Option F</strong> is strong evaluation: it uses a real historical example (lighthouse private provision) and then qualifies its applicability &#8212; identifying the condition (concentrated identifiable beneficiaries) that made it work, and noting this condition rarely holds at scale. <strong>Option B</strong> is a distractor: it is correct description of the free rider mechanism but does not evaluate &#8212; it states the one-sided argument without qualification or counter-evidence. <strong>Option D</strong> is a distractor: vague assertion with no mechanism, evidence, or directional reasoning. <strong>Option E</strong> partially evaluates but is too abstract to earn full credit without specifying which contexts or naming examples.'
+      },
+
+      /* 9 — mcq: preference revelation problem */
       { type: 'mcq',
         stem: 'The <strong>preference revelation problem</strong> for public goods means that:',
         opts: [
@@ -143,21 +158,6 @@
         ],
         ans: 0,
         exp: 'The preference revelation problem is a fundamental challenge for public goods provision. If government asks individuals how much they value defence or flood barriers, rational individuals will <strong>understate their WTP</strong> &#8212; hoping others\' truthful answers will justify provision while they free ride on the cost. This makes cost-benefit analysis for public goods inherently difficult. Without market prices to reveal preferences, government must rely on imperfect substitutes: elections (crude aggregation of preferences), surveys (strategically manipulated), stated preference surveys (susceptible to hypothetical bias), and revealed preference methods (inferred from related private market choices). None of these are as informative as the competitive price mechanism. This is one reason why government provision of public goods is always contested &#8212; we genuinely do not know the optimal quantity, unlike private goods where the market price reveals this.'
-      },
-
-      /* 9 — diagnostic_pair: government vs private provision */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the view that public goods can only be provided by the government."</em> Which student gives the more nuanced answer?',
-        students: [
-          { name: 'Nadia', badge: 'Candidate A',
-            answer: 'The argument for exclusively government provision rests on the free rider problem: non-excludability means no private firm can recover costs through voluntary payment. This is theoretically compelling &#8212; for perfectly non-excludable goods, private provision is impossible. However, the empirical picture is more nuanced. Technology can convert public goods into club goods: GPS was a US military public good (non-excludable); commercial GPS services now use encryption to create excludability. Over-the-air television (historically non-excludable) became a club good with digital encryption. Private provision funded by advertising (broadcast TV, free newspapers) can fund non-excludable content. Lighthouses &#8212; Samuelson\'s classic public good &#8212; were historically provided by private associations funded by port fees. The qualification is crucial: if the non-excludability is technological rather than fundamental, private solutions emerge over time. Where non-excludability is truly fundamental (national defence, flood barriers, disease surveillance), only government provision can resolve the free rider problem. The real-world answer is that the public goods category shrinks as excludability technology improves.'
-          },
-          { name: 'Oliver', badge: 'Candidate B',
-            answer: 'Public goods can only be provided by government because of the free rider problem. Since no one can be excluded from public goods, private firms would not be able to make a profit and would not supply them. This is why we have government defence, street lighting and flood barriers. However, some goods that seem like public goods are provided by private firms. For example, private security companies provide security services that might seem like public goods. This shows that in some cases private provision is possible. But for major public goods like defence, government provision is essential. Overall, most public goods do require government provision, though there may be some exceptions.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Nadia</strong> gives the more nuanced answer. She starts from the theoretical premise (free rider → no private provision) and then systematically challenges it with three mechanisms that enable private provision: technological excludability (GPS, digital TV), advertising funding, and historical private provision of lighthouses. She distinguishes between technological and fundamental non-excludability &#8212; the key analytical insight. Oliver identifies the same core argument and notes private security as an exception but does not develop why private provision sometimes works (the excludability mechanism). Nadia\'s conclusion &#8212; "the public goods category shrinks as excludability technology improves" &#8212; is a sophisticated evaluative insight that earns Level 4. Oliver: Level 2&#8211;3.'
       },
 
       /* 10 — chain: free rider problem sequence */

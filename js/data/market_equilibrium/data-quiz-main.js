@@ -84,22 +84,7 @@
         exp: 'Equilibrium is where <strong>QD = QS = 300 units at &#163;30</strong>. At any price above &#163;30 (e.g. &#163;40), QS > QD &#8212; excess supply &#8212; forces the price down. At any price below &#163;30 (e.g. &#163;20), QD > QS &#8212; excess demand &#8212; forces the price up. The price mechanism automatically restores the &#163;30 equilibrium. The equilibrium quantity is 300 &#8212; the amount actually traded when the market clears. This is the stable, self-correcting property of competitive equilibrium.'
       },
 
-      /* 5 &#8212; Diagnostic pair: price controls analysis */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the case for introducing a maximum price (price ceiling) on domestic energy bills."</em> Which student gives the stronger evaluation?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'A maximum price set below the equilibrium price for domestic energy has two effects. In the <strong>short run</strong>, it protects consumers &#8212; particularly lower-income households spending a higher proportion of income on energy &#8212; from unaffordable bills. This is a strong equity argument: energy is a necessity (inelastic demand), so price spikes cause severe real income falls for vulnerable households. However, <strong>efficiency arguments cut against it</strong>: (1) a ceiling below equilibrium creates excess demand &#8212; energy suppliers may reduce supply or investment in new capacity if returns are capped; (2) allocative efficiency requires P = MC; a ceiling distorts this signal; (3) long-run investment in new energy infrastructure may be deterred, worsening supply and ultimately raising future bills. Whether the policy is justified depends on the time horizon and the magnitude of the equity gain versus the efficiency loss. During a genuine energy crisis (as in 2022), short-term intervention protecting households from a supply-shock spike has stronger justification than a permanent cap that would chronically deter investment.'
-          },
-          { name: 'Sam', badge: 'Candidate B',
-            answer: 'A maximum price on energy bills means that energy companies cannot charge more than a set amount. This helps people who struggle to pay their bills. However, it could mean energy companies make less profit and might not want to invest in new energy sources. Also there could be shortages if the price is too low. So there are arguments for and against. During the 2022 energy crisis the government did introduce an energy price guarantee which helped many families afford to heat their homes. Overall the policy may be justified in a crisis but not permanently.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She introduces the distinction between short-run and long-run effects, uses precise economic language (excess demand, allocative efficiency P=MC, supply deterrence), applies the concept of elasticity to justify the equity argument (necessity with inelastic demand → high burden on low-income households), and reaches a context-dependent conclusion (crisis vs permanent). Sam identifies the same basic arguments but without the analytical framework &#8212; no mention of excess demand, no elasticity reasoning, no efficiency analysis. Priya accesses Level 4; Sam Level 2&#8211;3.'
-      },
-
-      /* 6 &#8212; Multi-select: true about allocative efficiency */
+      /* 5 &#8212; Multi-select: true about allocative efficiency */
       { type: 'multi_select',
         stem: 'Select ALL statements that are <strong>correct</strong> regarding the allocative efficiency of competitive market equilibrium.',
         opts: [
@@ -114,7 +99,7 @@
         exp: 'Options A, B, C, and E are correct. Option D is <strong>incorrect</strong>: at Q > Q*, the cost of producing additional units exceeds the benefit to consumers &#8212; society wastes resources, reducing welfare. Option F is <strong>incorrect</strong>: monopoly produces where MR = MC but charges P > MC &#8212; this creates allocative inefficiency and deadweight loss. Competitive equilibrium uniquely achieves P = MC because firms are price-takers, making it the welfare-maximising outcome for society. Market failures (externalities, public goods, information failures) break this result because prices no longer capture all social costs and benefits.'
       },
 
-      /* 7 &#8212; Para fill: the market clearing mechanism */
+      /* 6 &#8212; Para fill: the market clearing mechanism */
       { type: 'para_fill',
         stem: 'Complete the paragraph explaining how the price mechanism restores equilibrium after a positive demand shock.',
         anchor: 'Markets have a self-correcting mechanism that restores equilibrium after disturbances.',
@@ -131,7 +116,7 @@
         exp: '(1) Demand shifts <strong>rightward</strong> &#8212; an increase in demand. (2) Creates <strong>excess</strong> demand &#8212; a shortage at the original price. (3) Unsatisfied buyers <strong>bid</strong> up the price &#8212; competing for scarce supply. (4) Quantity <strong>demanded</strong> falls (movement along demand curve as price rises). (5) Quantity <strong>supplied</strong> rises (extension of supply as price rises &#8212; movement along supply curve). (6) New <strong>equilibrium</strong> is reached &#8212; market clears again. (7) <strong>Higher</strong> price and quantity than the original equilibrium (standard result of a positive demand shock with upward-sloping supply).'
       },
 
-      /* 8 &#8212; Odd one out: market clearing */
+      /* 7 &#8212; Odd one out: market clearing */
       { type: 'odd_one_out',
         stem: 'Three of these describe situations where the price mechanism <strong>successfully clears the market</strong>. Which is the <strong>odd one out</strong>?',
         items: [
@@ -142,6 +127,21 @@
         ],
         ans: 2,
         exp: 'The odd one out is the <strong>government rent freeze</strong>. This is an intervention that prevents the price mechanism from clearing the market &#8212; if demand rises but prices cannot adjust, excess demand (housing shortage) persists. The other three all describe price flexibility enabling market clearing: concert ticket discounts (price falls to clear excess supply); dynamic airline pricing (price rises to ration scarce seats); used car price fall in 2023 as supply normalised (price adjustment to new equilibrium). The rent freeze illustrates government failure: well-intentioned intervention creates persistent disequilibrium.'
+      },
+
+      /* 8 &#8212; multi_select: evaluation of price controls on domestic energy */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the case for introducing a maximum price (price ceiling) on domestic energy bills</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'A price ceiling protects consumers in the short run, but the strength of the equity argument depends on price elasticity of demand: energy is a necessity with inelastic demand, so a price spike imposes a proportionally larger real income burden on lower-income households &#8212; making the case for intervention stronger than for goods with elastic demand.',
+          'A maximum price set below the equilibrium creates excess demand.',
+          'Whether a price ceiling is justified depends critically on time horizon: a temporary ceiling during a supply shock (as in the UK\'s 2022 Energy Price Guarantee) can protect consumers without permanently deterring investment, whereas a structural, permanent cap risks chronically reducing energy supply by capping returns below the level needed to attract new capacity.',
+          'Price ceilings always lead to shortages in the long run.',
+          'The allocative efficiency cost of a price ceiling is real but must be weighed against the distributional gain: if energy is under-provided to low-income households without intervention (because markets respond to willingness-to-pay rather than need), a temporary ceiling may improve overall welfare even while introducing a short-run DWL.',
+          'Energy companies make large profits.'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Option A</strong> is genuine evaluation: it concedes the equity argument, but specifies the condition under which it is strongest (inelastic demand, necessity goods) and uses that to reach a direction &#8212; the case is stronger here than for luxury goods. <strong>Option C</strong> is evaluation: it introduces the time-horizon distinction as the key evaluative dimension, uses the 2022 UK example to show temporary ceilings can work, and reaches a qualified direction &#8212; context determines whether a ceiling is justified. <strong>Option E</strong> is evaluation: it weighs the allocative efficiency cost against the distributional gain using the concept of need vs. willingness-to-pay, reaching the direction that the welfare calculation may favour intervention even when efficiency is reduced. <strong>Option B</strong> is description &#8212; restating the standard model prediction without qualification, mechanism, or evidence. <strong>Option D</strong> overclaims &#8212; "always" ignores the time-horizon qualification and cases where demand or supply is relatively inelastic, making it a one-sided claim rather than evaluation. <strong>Option F</strong> is a vague observation with no analytical direction or evaluative content.'
       },
 
       /* 9 &#8212; Data table: labour market equilibrium */

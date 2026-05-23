@@ -48,22 +48,7 @@
         exp: 'The <strong>winner\'s curse</strong> is a well-documented phenomenon in auction theory: in competitive bidding situations, the winning bid systematically exceeds the object\'s true value, because the most <em>optimistic</em> bidder wins. In M&A, this means the acquirer overpays for the target. Combined with integration difficulties and overestimated synergies, this explains why 70&#8211;80% of mergers fail to create shareholder value. The RBS acquisition of ABN AMRO in 2007 (&#163;49bn at the peak of a credit bubble) is the canonical UK example: competitive bidding against Barclays drove the price well above fundamental value, contributing to the largest UK corporate bailout.'
       },
 
-      /* 3 — Diagnostic pair: evaluate M&A */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the view that merger activity is beneficial for consumers."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Mergers can benefit consumers through <strong>economies of scale</strong>: a merged firm combines production capacity and can spread fixed costs over greater output, potentially reducing unit costs and passing savings on through lower prices. Horizontal mergers in particular may generate purchasing economies and technical economies. However, this consumer benefit is conditional on the merged firm facing sufficient <strong>competitive discipline</strong> to pass on savings rather than retain them as supernormal profit. The empirical evidence is mixed: evidence suggests most mergers fail to create value for acquirers (McKinsey: 80% of deals underperform), meaning projected cost savings frequently do not materialise &#8212; so consumers rarely see price falls. Moreover, horizontal mergers directly reduce competition, and <strong>higher market concentration</strong> (rising CR4, HHI) can enable coordinated behaviour, harming consumers. The CMA therefore scrutinises deals that create combined market shares above 25&#8211;33%. On balance, the consumer benefit of mergers is context-dependent: in industries with significant unrealised scale economies and robust regulatory oversight, mergers may reduce prices; in oligopolistic markets with weak regulation, they are more likely to harm consumers.'
-          },
-          { name: 'Ben', badge: 'Candidate B',
-            answer: 'Mergers can be good for consumers if they lead to economies of scale, which means the firm\'s average costs fall and it can charge lower prices. This means consumers benefit from cheaper goods and services. However, mergers can also be bad for consumers if they reduce competition and allow the merged firm to raise prices because there are fewer rivals. The government can try to prevent harmful mergers through competition law &#8212; the CMA investigates mergers and can block them if they think it will reduce competition. Most mergers probably do not benefit consumers very much because the evidence shows many mergers do not create the cost savings that were promised. So overall the effect on consumers depends on whether the firm passes cost savings on.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She specifies which economies of scale are relevant (purchasing, technical), makes the crucial point that benefits are conditional on competitive discipline, integrates empirical evidence with appropriate attribution, and uses precise concepts (CR4, HHI, foreclosure). Her conclusion is properly conditional &#8212; "context-dependent" rather than a blanket yes or no. Ben covers the correct ground but lacks analytical precision: he does not explain <em>why</em> economies of scale might not materialise, nor does he quantify the concentration risk. Priya would access Level 4; Ben Level 2&#8211;3.'
-      },
-
-      /* 4 — Multi-select: why mergers fail */
+      /* 3 — Multi-select: why mergers fail */
       { type: 'multi_select',
         stem: 'Which of the following are recognised reasons why mergers and acquisitions frequently <strong>fail to create shareholder value</strong>?',
         opts: [
@@ -78,7 +63,7 @@
         exp: 'Options A&#8211;D are all well-evidenced reasons for M&A underperformance. <strong>Overpayment</strong> (winner\'s curse) is structural: the most optimistic bidder wins, but optimism correlates with overvaluation. <strong>Integration difficulties</strong> are the most common post-deal failure &#8212; IT systems, cultures, and management styles often conflict. <strong>Synergy overestimation</strong> is systematic: investment banks earn fees on completed deals, creating incentives to project large savings. <strong>Management distraction</strong> erodes the acquirer\'s core business performance during years of integration. Option E is false: the CMA regularly blocks or conditionally approves mergers (Microsoft/Activision faced CMA challenge). Option F is simply incorrect.'
       },
 
-      /* 5 — Odd one out: constraints on growth */
+      /* 4 — Odd one out: constraints on growth */
       { type: 'odd_one_out',
         stem: 'Three of these are recognised <strong>constraints on firm growth</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -91,7 +76,7 @@
         exp: 'The odd one out is <strong>growing market demand</strong>. This is a <em>driver</em> of growth rather than a constraint &#8212; it creates the opportunity for firms to expand. The other three are all constraints: finance limits the resources available for growth; diseconomies of scale mean growth beyond optimal size raises unit costs; competition law directly blocks growth through merger regulation. When evaluating business growth questions, it is important to distinguish factors that enable growth (demand, retained profits, managerial talent) from factors that constrain it (finance, scale limits, regulation, market size).'
       },
 
-      /* 6 — Calculation: market concentration */
+      /* 5 — Calculation: market concentration */
       { type: 'calculation',
         context: 'The UK supermarket sector has the following market shares: Tesco 27%, Sainsbury\'s 15%, Asda 14%, Morrisons 10%, Lidl 8%, Aldi 7%, Waitrose 5%, Co-op 5%, Other 9%.',
         working: [
@@ -113,7 +98,7 @@
         exp: '<strong>CR4 = 27 + 15 + 14 + 10 = 66%</strong>. This indicates a <strong>moderately concentrated oligopoly</strong>: the four largest retailers control two-thirds of the market. The HHI &#8776; 1,494, which is below 2,500 (highly concentrated threshold) but indicates significant concentration. UK supermarkets exhibit classic oligopolistic features: interdependent pricing, periodic price wars, high barriers to entry (planning permission, supply chain relationships), and significant brand differentiation. The sector attracts regular CMA scrutiny &#8212; the 2023 inquiry into grocery price inflation examined whether oligopoly structure was enabling excessive profit-taking.'
       },
 
-      /* 7 — MCQ: vertical integration foreclosure */
+      /* 6 — MCQ: vertical integration foreclosure */
       { type: 'mcq',
         stem: 'When a vertically integrated firm controls a key input and refuses to supply it to rival downstream firms, this is known as:',
         opts: [
@@ -126,7 +111,7 @@
         exp: '<strong>Input foreclosure</strong> is the competition concern with vertical backward integration: the integrated firm controls a key input and can either refuse to supply rivals or supply them on worse terms (higher prices, delayed delivery). This forecloses downstream competition. The equivalent concept downstream is <strong>customer foreclosure</strong> (controlling distribution channels, refusing to stock rivals\' products). Both are concerns for competition authorities reviewing vertical mergers. Amazon\'s control of its marketplace platform and logistics infrastructure raises both types of foreclosure concern, since Amazon competes with third-party sellers on its own platform.'
       },
 
-      /* 8 — Para fill: organic vs external growth */
+      /* 7 — Para fill: organic vs external growth */
       { type: 'para_fill',
         stem: 'Complete the paragraph comparing internal and external growth strategies.',
         anchor: 'The choice between organic and acquisition growth has important strategic implications.',
@@ -140,6 +125,21 @@
           { id: 6, opts: ['shareholder', 'social', 'managerial', 'regulatory'], ans: 0 }
         ],
         exp: '(1) <strong>Own</strong>: internal/organic growth uses the firm\'s own investment. (2) <strong>Integration risk</strong>: organic growth avoids the cultural, IT, and organisational challenges of combining two firms. (3) <strong>Faster</strong>: acquiring an existing firm provides immediate access to scale, brands, and markets. (4) <strong>Overpay</strong>: competitive bidding systematically drives prices above fundamental value. (5) <strong>Winner\'s</strong>: the winner\'s curse &#8212; the winning bidder in a competitive auction systematically overpays. (6) <strong>Shareholder</strong>: the benchmark for M&A success is whether the combined firm\'s value exceeds the pre-merger sum of parts &#8212; typically measured by acquirer share price performance.'
+      },
+
+      /* 8 — Multi-select: evaluation of business growth and mergers */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>business growth and whether merger activity benefits consumers</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Economies of scale from a horizontal merger may reduce unit costs, but this consumer benefit is conditional on the merged firm facing sufficient competitive discipline to pass savings on rather than retaining them as supernormal profit &#8212; evidence suggests 70&#8211;80% of mergers fail to create shareholder value, implying the projected cost savings rarely materialise',
+          'Horizontal integration occurs when firms at the same stage of production in the same industry combine',
+          'The winner\'s curse creates a systematic tendency for acquirers to overpay: in competitive bidding, the most optimistic bidder wins, but optimism correlates with overvaluation &#8212; meaning the acquisition price systematically exceeds fundamental value and destroys acquirer shareholder value even before integration problems arise',
+          'A firm can grow internally (organically) through its own investment or externally through mergers and acquisitions',
+          'Whether a merger harms consumers depends on the type of integration: horizontal mergers directly reduce competition (rising CR4 and HHI), whereas vertical mergers may harm consumers through input or customer foreclosure rather than direct price-setting power &#8212; the competition authority must therefore apply different analytical tests to each type',
+          'Conglomerate mergers involve firms in unrelated industries combining to diversify risk'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it acknowledges the theoretical benefit of economies of scale but conditions it on competitive discipline, then uses empirical evidence (70&#8211;80% failure rate) to show that the benefit rarely materialises in practice &#8212; this is a qualifying move that uses evidence to limit the scope of a theoretical claim. Option C is strong evaluation: it explains the winner\'s curse as a systematic (not random) mechanism rooted in the structure of competitive bidding, links optimism to overvaluation explicitly, and reaches a direction &#8212; acquirers overpay before integration problems are even considered, making M&A value destruction predictable rather than accidental. Option E is strong evaluation: it distinguishes types of merger by the mechanism of consumer harm, notes that competition authorities must apply different tests accordingly, and reaches a qualified conclusion about context-dependence &#8212; exactly the analytical sophistication that earns top marks. Option B is the definitional description of horizontal integration &#8212; knowledge content, not evaluation. Option D states the two growth modes without comparing their relative merits, risks, or conditions &#8212; it is description. Option F defines conglomerate mergers without any qualifying, weighing, or conditional reasoning.'
       },
 
       /* 9 — Data table: M&A outcomes */

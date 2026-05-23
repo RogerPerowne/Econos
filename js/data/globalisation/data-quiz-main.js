@@ -82,7 +82,7 @@
         exp: 'The odd one out is <strong>export-led growth</strong>. This is a <em>benefit</em> of globalisation for developing countries — the strategy used by South Korea, China, and Vietnam to achieve rapid industrialisation and poverty reduction. The other three are genuine costs: brain drain depletes human capital; the Prebisch-Singer hypothesis describes structural deterioration in developing country terms of trade over time; and footloose capital means MNC investment may depart when wages rise, leaving behind economic disruption without lasting productive capacity.'
       },
 
-      /* 5 (was 6) — Calculation: terms of trade */
+      /* 5 — Calculation: terms of trade */
       { type: 'calculation',
         context: 'In 2020, a developing country has an export price index of <strong>100</strong> and an import price index of <strong>100</strong>. By 2024, its export price index (mainly commodities) has risen to <strong>115</strong> while its import price index (mainly manufactured goods) has risen to <strong>138</strong>.',
         working: [
@@ -102,7 +102,7 @@
         exp: 'Terms of Trade = (Export price index ÷ Import price index) × 100 = (115 ÷ 138) × 100 ≈ <strong>83.3</strong>. The ToT has <strong>deteriorated</strong> — the country must now export more commodities to buy the same quantity of manufactured imports. This is consistent with the Prebisch-Singer hypothesis: commodity prices tend to rise less than manufactured goods prices over time, worsening the real terms of exchange for primary exporters. A ToT deterioration reduces real national income even if export volumes and nominal revenues rise.'
       },
 
-      /* 6 (was 7) — Para fill: MNC costs and benefits */
+      /* 6 — Para fill: MNC costs and benefits */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph by selecting the correct word or phrase for each numbered blank.',
         anchor: 'The net welfare impact of MNC investment on host countries is contested.',
@@ -119,7 +119,7 @@
         exp: '(1) <strong>Direct</strong> jobs — employment in the MNC facility itself plus supply-chain linkages. (2) <strong>Technology</strong> transfer — management practices, production techniques, know-how. (3) <strong>Profits</strong> — repatriation reduces GNI even as GDP rises; widens the GDP-GNI gap visible in Ireland and Luxembourg. (4) Transfer <strong>pricing</strong> — manipulating the prices charged in intra-firm transactions to shift taxable profits. (5) <strong>Tax</strong> revenue — Apple\'s 0.005% effective EU tax rate (2016 ruling) illustrates the scale. (6) <strong>Capacity</strong> — absorptive capacity: education, infrastructure, institutional quality. (7) <strong>Regulation</strong> — competition law, environmental rules, labour standards; weak regulation enables a race to the bottom.'
       },
 
-      /* 7 (was 8) — Data table: de-globalisation indicators */
+      /* 7 — Data table: de-globalisation indicators */
       { type: 'data_table',
         stem: 'The table shows selected indicators of globalisation and de-globalisation trends.',
         headers: ['Indicator', '2008', '2016', '2023'],
@@ -138,6 +138,21 @@
         ],
         ans: 0,
         exp: 'All four rows point to a <strong>slowdown in globalisation</strong> since 2008, with some reversal. World trade as % of GDP peaked in 2008 and has not recovered. FDI flows have fallen by more than half from their 2008 peak. Average tariffs rose between 2016 and 2023 (reversing decades of liberalisation). UK-EU goods trade fell from an index of 118 (2016) to 95 (2023) — consistent with the non-tariff barrier effects of Brexit. Option B ignores all the negative signals. Option C overstates the reversal — globalisation has slowed, not reversed to 1990s levels. Option D misreads the UK-EU trade data, which shows a <em>fall</em> in UK-EU trade after Brexit.'
+      },
+
+      /* 8 — Multi-select: evaluation of globalisation and inequality */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the impact of globalisation on income inequality</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Globalisation has reduced between-country inequality as emerging economies converged, but has simultaneously raised within-country inequality in developed economies — the net welfare effect therefore depends on the weight given to the distribution across countries versus within countries.',
+          'Although the Autor et al. "China Shock" evidence shows persistent regional unemployment in US manufacturing areas, compensation through redistribution was theoretically possible but politically failed — suggesting the problem is one of domestic policy design, not globalisation itself.',
+          'Globalisation increases inequality because jobs move to China and wages fall for poor workers in rich countries.',
+          'The Prebisch-Singer hypothesis predicts commodity exporters face deteriorating terms of trade, but empirical evidence since 2000 shows commodity prices surged through the 2000s supercycle — indicating the hypothesis is context-dependent rather than a universal law.',
+          'Whether globalisation raises or lowers inequality depends on the country and the time period, so it is impossible to draw any firm conclusion.',
+          'Globalisation is bad for developing countries because multinational corporations repatriate profits and exploit cheap labour.'
+        ],
+        correct: [0, 1, 3],
+        exp: '<strong>Option A</strong> is strong evaluation: it uses a two-level analytical framework (between vs within country), acknowledges competing evidence on each level, and reaches a qualified conclusion that depends on a stated value judgement — a genuine evaluative move. <strong>Option B</strong> is strong evaluation: it accepts the empirical evidence (Autor et al.) but reframes the conclusion — the distributional failure reflects domestic redistribution policy, not globalisation per se. This is a "direction given with reasoning" evaluation. <strong>Option D</strong> is strong evaluation: it tests the Prebisch-Singer hypothesis against specific counter-evidence (commodity supercycle), concluding the hypothesis is conditional rather than universal — exactly the kind of evidence-based qualification examiners reward. <strong>Option C</strong> is weak — it is one-sided analysis (only the negative distributional effect) with no weighing or qualification. <strong>Option E</strong> is a vague "it depends" with no analytical direction — a classic student mistake that mimics evaluation without providing it. <strong>Option F</strong> is pure description/assertion with no weighing of the countervailing benefits of FDI.'
       },
 
       /* 9 — Chain: globalisation transmission to wage inequality */

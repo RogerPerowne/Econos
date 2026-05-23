@@ -62,22 +62,7 @@
         exp: 'Options A, B, D, and F are nudges. <strong>Auto-enrolment</strong> (A): changes the default without removing choice &mdash; workers can still opt out. <strong>Calorie display</strong> (B): makes information more salient; does not restrict choice. <strong>HMRC social norm</strong> (D): alters the information context to activate social comparison; no financial change. <strong>Supermarket placement</strong> (F): changes the choice architecture (what you see first) without any restriction. Option C (size ban) is a <em>regulation</em> &mdash; it removes the option of large drinks entirely. Option E (tobacco tax) is a <em>price incentive</em>, not a nudge &mdash; it changes the financial cost of the choice.'
       },
 
-      /* 4 — diagnostic_pair */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the effectiveness of nudge theory in addressing market failure."</em> Which student gives the stronger evaluative answer?',
-        students: [
-          { name: 'Zara', badge: 'Candidate A',
-            answer: 'Nudge theory (Thaler and Sunstein) can address market failures arising from cognitive biases &mdash; a category of market failure that traditional price-based interventions cannot easily correct. UK pension auto-enrolment (opt-out default at 8%) increased private sector participation from ~55% to ~87%, addressing the under-saving caused by present bias and status quo bias. The cost was near-zero compared with an equivalent tax incentive. However, nudges have clear limitations: (1) <strong>Scale</strong>: nudges can modify behaviour at the margin but cannot address large structural market failures (climate change, monopoly) on their own. (2) <strong>Paternalism concern</strong>: the choice architect decides what is "better" &mdash; who governs the governor? (3) <strong>Context-specificity</strong>: nudges tested in one setting (UK HMRC tax letters) may not transfer to different cultures or contexts. (4) <strong>Exploitation risk</strong>: the same techniques are used by firms to manipulate consumers ("dark patterns", subscription traps). On balance, nudges are a valuable addition to the policy toolkit &mdash; particularly cost-effective for biases driving under-saving, non-compliance, and low health-screening uptake &mdash; but they complement rather than replace traditional regulation and taxation for structural market failures.'
-          },
-          { name: 'Dan', badge: 'Candidate B',
-            answer: 'Nudge theory can be effective because it helps people make better decisions without taking away their freedom of choice. For example, automatically enrolling workers in pension schemes means more people save for retirement, which helps address the problem of people not saving enough due to present bias. The government\'s Behavioural Insights Team has shown nudges can work in many areas like organ donation and tax compliance. However, nudges are not always effective for big problems like climate change where stronger action like taxes or regulations is needed. Also, nudges can be seen as paternalistic because the government is deciding what is best for people. There is also a risk that private companies can use the same techniques to manipulate consumers. Overall nudges are useful but should be used alongside other policies.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Zara</strong> gives the stronger answer. She identifies the specific market failure nudges correct (cognitive biases as a source of market failure &mdash; distinct from externalities), uses precise terminology (present bias, status quo bias), provides quantitative evidence (55% to 87% pension participation), and evaluates limitations using specific analytical labels (scale, paternalism, context-specificity, exploitation). Her conclusion is conditional and balanced: nudges complement traditional tools for specific failure types. Dan covers broadly similar content but at a narrative level without the market-failure framework, specific bias names, or evaluative structure. Zara accesses Level 4; Dan Level 2&ndash;3.'
-      },
-
-      /* 5 — odd_one_out */
+      /* 4 — odd_one_out */
       { type: 'odd_one_out',
         stem: 'Three of these are features of <strong>prospect theory</strong> (Kahneman and Tversky). Which is the ODD ONE OUT?',
         items: [
@@ -90,7 +75,7 @@
         exp: 'The odd one out is option B &mdash; this describes <strong>expected utility theory</strong>, the neoclassical model that prospect theory was designed to challenge. Prospect theory (1979) departed from expected utility theory in three key ways: (A) <strong>reference dependence</strong>: outcomes evaluated relative to a reference point, not absolute; (C) <strong>loss aversion</strong>: the loss function is steeper than the gain function; (D) <strong>probability weighting</strong>: people distort probabilities (overweighting small chances, underweighting large ones). Kahneman and Tversky won the Nobel Prize (2002) precisely because prospect theory provides a better empirical description of actual decision-making than expected utility theory.'
       },
 
-      /* 6 — para_fill: auto-enrolment */
+      /* 5 — para_fill: auto-enrolment */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about UK pension auto-enrolment as a nudge.',
         anchor: 'Pension auto-enrolment exploits status quo bias to dramatically increase retirement saving.',
@@ -108,7 +93,7 @@
         exp: '(1) <strong>In</strong>: the old system required active opt-in. (2) <strong>Status quo</strong>: status quo bias means people stick with the default. (3) <strong>Default</strong>: the default determined outcomes for the majority who never actively decided. (4) <strong>Out</strong>: auto-enrolment makes membership the default &mdash; workers must opt out to leave. (5) <strong>8%</strong>: total minimum contribution (5% employee + 3% employer). (6) <strong>55%</strong>: approximately 55% before 2012 reforms. (7) <strong>87%</strong>: approximately 87% by 2022 &mdash; a 32 percentage point increase at near-zero policy cost. (8) <strong>Default</strong>: the power of defaults is the central behavioural insight; the same person makes different decisions under different defaults.'
       },
 
-      /* 7 — calculation: nudge vs tax cost comparison */
+      /* 6 — calculation: nudge vs tax cost comparison */
       { type: 'calculation',
         context: 'The government wants to increase the pension saving rate. <strong>Option A (nudge):</strong> auto-enrolment default, implementation cost &#163;50 million. This raises pension participation by 30 percentage points, benefiting 8 million workers.<br><strong>Option B (tax incentive):</strong> increase pension tax relief, cost &#163;2 billion per year. This raises pension participation by 12 percentage points, benefiting 3 million workers.',
         working: [
@@ -132,7 +117,7 @@
         exp: 'Nudge cost per worker: &#163;50m &#247; 8m = <strong>&#163;6.25/worker</strong>. Tax relief cost per worker: &#163;2,000m &#247; 3m = <strong>&#163;666.67/worker</strong>. The nudge is approximately <strong>107 times more cost-effective</strong> per worker helped. This is the key policy case for nudge theory: achieving equivalent or better outcomes at a fraction of the fiscal cost. Additional equity argument: pension tax relief disproportionately benefits higher-rate taxpayers (who get 40% relief vs 20% for basic rate), making it regressive as well as expensive. Auto-enrolment benefits all workers equally as a proportion of salary.'
       },
 
-      /* 8 — data_table */
+      /* 7 — data_table */
       { type: 'data_table',
         stem: 'The HMRC Behavioural Insights Team tested different letter formats to improve tax compliance. The table shows response rates for unpaid tax.',
         headers: ['Letter type', 'Payment rate (%)', 'Incremental payments vs control (&#163;m)', 'Key psychological technique'],
@@ -152,6 +137,21 @@
         ],
         ans: 0,
         exp: 'Option A is best supported. The combined letter achieves the highest payment rate (45% vs 33% control), and the incremental revenue (&#163;420m) significantly exceeds the near-zero cost of changing letter text. The loss frame (40%) outperforms the social norm (38%), consistent with Kahneman and Tversky\'s finding that loss framing is more motivating than gain framing. Personalisation (42%) achieves even more &mdash; consistent with salience increasing attention to the message. Combining techniques achieves 45% (not 33% + 12pp for each technique &mdash; there are diminishing marginal returns to stacking nudges). Options B, C, and D all misread the data or over-claim for nudge effectiveness.'
+      },
+
+      /* 8 — multi_select: evaluation of behavioural economics */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>behavioural economics and nudge theory</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &mdash; as opposed to description or one-sided analysis?',
+        opts: [
+          'UK pension auto-enrolment raised participation from ~55% to ~87% at near-zero policy cost, but this success is specific to a context where status quo bias is strong &#8212; nudges will be far less effective where the target behaviour requires sustained active effort (such as regular exercise) rather than a one-off default change',
+          'Nudge theory is based on the idea that people are not fully rational and use heuristics that lead to systematic biases',
+          'The same techniques that make nudges effective for policymakers &#8212; exploiting status quo bias, loss framing, and social norms &#8212; are used by firms to trap consumers in unwanted subscriptions and manipulate purchasing decisions, which means that validating nudge policy also legitimises commercial manipulation and may weaken consumer protection norms',
+          'Loss aversion means people feel losses approximately twice as strongly as equivalent gains, so loss-framed messages tend to be more persuasive than gain-framed ones',
+          'Nudges are best evaluated against a specific counterfactual: not \'do they change behaviour?\' but \'are they more cost-effective than the alternative (taxation, regulation, information campaigns)?\' &#8212; the HMRC personalised letter raised &#163;330m at near-zero cost versus the multi-billion-pound cost of equivalent tax relief, making it the dominant policy instrument for this specific compliance problem',
+          'The government\'s Behavioural Insights Team has applied nudge theory across a range of policy areas including tax compliance, organ donation, and pension saving'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it uses specific evidence (55% to 87%) to establish the success of auto-enrolment, then qualifies it with a mechanistic limitation (defaults only work where behaviour is passive, not active), reaching a direction &#8212; nudges have differential effectiveness by context. Option C is strong evaluation: it identifies a genuine symmetry between policy nudges and commercial manipulation, draws out the implication (validating nudge policy may weaken consumer protection norms), and reaches a conditional conclusion &#8212; this is genuine two-sided reasoning with a specific concern. Option E is strong evaluation: it reframes the evaluation criterion from a binary (does it work?) to a comparative (is it more cost-effective than alternatives?), applies specific quantified evidence (&#163;330m revenue vs multi-billion-pound tax relief cost), and reaches a directional conclusion &#8212; the hallmark of top-band essay evaluation. Option B describes bounded rationality and heuristics &#8212; knowledge content, not evaluation. Option D describes loss aversion accurately but does not weigh it, qualify it, or use it to reach any conditional conclusion. Option F is pure description of where nudge theory has been applied &#8212; a knowledge statement without analytical direction.'
       },
 
       /* 9 — chain: nudge policy sequence */

@@ -94,22 +94,7 @@
         exp: 'The Terms of Trade (ToT) index = (Export price index ÷ Import price index) × 100. A rise from 100 to 112 means <strong>export prices have risen relative to import prices</strong> — the UK can now buy more imports with each unit of exports. This is an <strong>improvement</strong> in the ToT. Important caveat: if the rise is caused by UK exports becoming more expensive due to falling competitiveness (not rising quality), export volumes may fall. An improvement in ToT is only unambiguously beneficial if driven by productivity gains or quality improvements, not by falling export demand. Option B confuses price changes with volume changes. Option C gets the direction wrong.'
       },
 
-      /* 5 — Diagnostic pair: infant industry argument */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Assess the case for protecting infant industries in developing countries."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Mei', badge: 'Candidate A',
-            answer: 'The infant-industry argument is the strongest theoretical case for temporary protection. It rests on the idea that comparative advantage is <strong>dynamic</strong>, not static: with learning-by-doing, economies of scale, and first-mover advantages, a currently uncompetitive industry may become competitive if given time to develop. South Korea used precisely this logic — protecting its steel and electronics sectors in the 1970s before they became world-leading exporters. However, the argument requires a <strong>credible commitment to remove protection</strong> once the industry matures, which is politically extremely difficult in practice. Protected industries lobby to maintain protection, and governments face \'knowledge problems\' in identifying which industries have genuine future comparative advantage. The empirical record is mixed — protection succeeded in South Korea but failed in many Latin American import-substitution industrialisation attempts. The case is stronger where the market failure (learning-by-doing externality, first-mover advantage) is demonstrable and where governments have strong institutional capacity to impose a sunset clause.'
-          },
-          { name: 'Jack', badge: 'Candidate B',
-            answer: 'Developing countries might need to protect their industries because they are not as advanced as those in developed countries. Free trade would mean that foreign companies who have been around for a long time and are very big would outcompete new businesses in developing countries before they get a chance to grow. This is unfair. Protecting infant industries gives them time to catch up and eventually they can compete on their own. However, the problem is that companies might get used to being protected and not try to compete. So the government should only protect industries for a short time. Countries like South Korea have done this successfully. Overall the infant industry argument is a good reason for some protectionism.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Mei</strong> gives the stronger answer. She identifies the theoretical basis precisely (<em>dynamic comparative advantage, learning-by-doing, first-mover advantage</em>), uses a specific empirical case (South Korea, 1970s), and then evaluates the argument against the key counterpoint — the political economy problem of credible commitment. She references the contrast between South Korean success and Latin American failure. Jack identifies the same broad ideas but at descriptive level: no theoretical framework, no institutional detail, no contrast between successes and failures. Mei operates at Level 4; Jack at Level 2-3. The phrase "the market failure is demonstrable" signals analytical rigour — it makes protection conditional on evidence, not rhetoric.'
-      },
-
-      /* 6 — Multi-select: limitations of comparative advantage */
+      /* 5 — Multi-select: limitations of comparative advantage */
       { type: 'multi_select',
         stem: 'Which of the following are valid <strong>limitations of the comparative advantage model</strong> of trade?',
         opts: [
@@ -124,7 +109,7 @@
         exp: 'Options A, B, C, E, and F are all valid limitations. A: the adjustment assumption is unrealistic — structural unemployment is persistent. B: comparative advantage is static; dynamic models (Krugman, Porter) show it can be created through policy. C: comparative advantage cannot explain intra-industry trade (Germany-France car trade) — scale economies and product differentiation models (Krugman) are needed. E: comparative advantage models use market prices; if those prices do not reflect environmental externalities, the implied specialisation pattern may not maximise social welfare. F: constant returns is a standard assumption but many modern industries (tech, pharma) exhibit increasing returns. Option D is incorrect — comparative advantage predicts that <em>both</em> free trade and specialisation raise welfare relative to autarky.'
       },
 
-      /* 7 — Para fill: pattern of world trade */
+      /* 6 — Para fill: pattern of world trade */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about the changing pattern of world trade.',
         anchor: 'The pattern of world trade has shifted dramatically since 1945.',
@@ -138,6 +123,21 @@
           { id: 6, opts: ['exports', 'imports', 'subsidies', 'tariffs'], ans: 0 }
         ],
         exp: '(1) <strong>Services</strong> — financial services, tourism, education, software: ~25% of world trade and the fastest-growing category. (2) <strong>Trade</strong> surplus — the UK runs a chronic goods deficit but a services surplus; financial services is the UK\'s primary export strength. (3) <strong>Intra-industry</strong> trade — same-category goods exchanged between similar countries, explained by Krugman\'s new trade theory (scale + differentiation) not Ricardo. (4) <strong>Value</strong> chains — global value chains: each country specialises in a production stage. (5) <strong>China</strong> — China\'s WTO accession transformed its share of global manufacturing exports from ~3% (1990) to ~15%+ (2023). (6) <strong>Exports</strong> — China exports manufactured goods; its comparative advantage has shifted from low-value assembly to increasingly high-tech sectors.'
+      },
+
+      /* 7 — multi_select: evaluation of the infant industry argument */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the case for protecting infant industries in developing countries</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Developing countries should protect their industries because free trade is unfair to less-developed economies',
+          'The infant-industry argument rests on dynamic comparative advantage &#8212; learning-by-doing and economies of scale can shift a country\'s competitive position over time; South Korea\'s protection of steel and electronics in the 1970s before they became world-leading exporters demonstrates this mechanism working in practice',
+          'Temporary protection is only justifiable where the market failure (learning-by-doing externality or first-mover advantage) is demonstrable; where industries simply wish to avoid competition rather than develop a genuine dynamic advantage, protection generates permanent welfare loss with no payoff',
+          'Infant industry protection always succeeds if maintained long enough',
+          'The empirical record is mixed: South Korea\'s success contrasts with the failure of Latin American import-substitution industrialisation, suggesting the outcome depends on institutional quality and the government\'s capacity to impose a credible sunset clause &#8212; a variable that the theory itself cannot determine',
+          'Infant industries should be protected indefinitely because competitive markets disadvantage developing countries'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it identifies the theoretical mechanism (dynamic comparative advantage, learning-by-doing) and anchors it in a specific real-world example (South Korea, 1970s) to show the conditions under which the argument holds. This moves beyond description by linking mechanism to evidence. <strong>Option C (index 2)</strong> is strong evaluation: it makes protection conditional on a demonstrable market failure rather than accepting the argument universally, drawing a directional conclusion (unconditional protection causes permanent welfare loss). This is a genuine analytical distinction between valid and invalid uses of the infant-industry case. <strong>Option E (index 4)</strong> is strong evaluation: it uses the contrast between South Korean success and Latin American failure to identify the key variable (institutional quality, sunset clause credibility) that determines outcomes, reaching a conditional verdict rather than a one-sided claim. <strong>Option A (index 0)</strong> is a distractor: it invokes fairness rather than economic welfare analysis, with no mechanism, evidence, or directional argument. <strong>Option D (index 3)</strong> is a distractor: an overclaim that ignores the political economy problem (protected industries lobby for permanent protection) and the knowledge problem (governments cannot reliably identify industries with genuine dynamic advantage). <strong>Option F (index 5)</strong> is a distractor: another overclaim that advocates indefinite protection &#8212; contradicting the core infant-industry logic that protection should end once the industry reaches competitive maturity.'
       },
 
       /* 8 — Odd one out: gains from trade */

@@ -76,22 +76,7 @@
         exp: 'Real GDP = (&#163;2,050bn &#247; 115) &#215; 100 = <strong>&#163;1,783bn</strong>. The deflator of 115 indicates prices are 15% higher than in the 2015 base year. Dividing removes this inflation so we compare output at constant prices. This is why real GDP growth &#8212; not nominal &#8212; is the correct measure of genuine economic expansion. Stating "real GDP" in essays signals you have removed the distortion of price changes.'
       },
 
-      /* 4 &#8212; Diagnostic pair: GNI distinction */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Explain why GNI may be a better measure of welfare than GDP for a developing country heavily dependent on foreign direct investment."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'GDP measures all output produced <em>within</em> a country\'s borders, including the output of foreign-owned firms. When multinational corporations repatriate profits to their home countries, those profits leave the developing country and do not benefit its residents. <strong>GNI</strong> (= GDP + net income from abroad) subtracts these outflows, giving a more accurate picture of the income actually available to the country\'s residents. For a country with large FDI inflows &#8212; such as sub-Saharan African nations with foreign-owned extractive industries &#8212; GDP can <strong>significantly overstate</strong> resident welfare because a substantial share of value added leaves as profit repatriation. GNI corrects for this: it adds income earned by residents abroad and subtracts income paid to foreign residents in the home country.'
-          },
-          { name: 'James', badge: 'Candidate B',
-            answer: 'GDP is the total value of goods and services in a country. GNI is different because it includes income from abroad. In developing countries that have a lot of foreign companies, the GDP can be quite high but some of the money goes abroad. So GNI would be lower than GDP and is a better measure of what people in the country actually earn. For example, if a mining company is based abroad and sends its profits home, that counts in the country\'s GDP but not in the money left for residents. Therefore GNI is better because it shows the income that stays in the country.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She precisely defines both GDP and GNI, explains the mechanism (profit repatriation reducing resident income), and provides a specific example (sub-Saharan extractive industries). The analytical phrase \'GDP significantly overstates resident welfare\' targets the exact point the examiner is looking for. James reaches the same conclusion but without the precise terminology (he does not use \'net income from abroad\' or \'profit repatriation\') and without a sufficiently specific example. Priya\'s structural clarity &#8212; definition, mechanism, application &#8212; is the A* pattern.'
-      },
-
-      /* 5 &#8212; MCQ: PPP */
+      /* 4 &#8212; MCQ: PPP */
       { type: 'mcq',
         stem: 'A <strong>Purchasing Power Parity (PPP)</strong> adjustment is necessary when comparing living standards across countries because:',
         opts: [
@@ -104,7 +89,7 @@
         exp: 'PPP adjusts for the fact that <strong>the cost of living varies dramatically between countries</strong>. A &#163;30,000 income buys far more in India than in London because non-traded goods (haircuts, housing, local services) are much cheaper in lower-income countries. Converting at market exchange rates understates real purchasing power in developing economies. This is why India\'s GDP per capita rises from ~$2,400 to ~$9,200 when PPP-adjusted. The IMF and World Bank use PPP for international welfare comparisons; the HDI uses GNI per capita at PPP for its income dimension.'
       },
 
-      /* 6 &#8212; Para fill: short vs long run growth */
+      /* 5 &#8212; Para fill: short vs long run growth */
       { type: 'para_fill',
         stem: 'Complete the paragraph by selecting the correct word or phrase for each blank.',
         anchor: 'The distinction between short run and long run growth is fundamental to macro policy analysis.',
@@ -121,7 +106,7 @@
         exp: '(1) <strong>Towards</strong>: the economy moves closer to its existing PPF by using idle resources. (2) <strong>Spare</strong>: spare capacity &#8212; unemployed workers and underused capital. (3) <strong>Aggregate</strong>: AD shifts right, moving the economy towards its frontier. (4) <strong>Outward</strong>: long run growth pushes the PPF outward, creating new capacity. (5) <strong>Factors</strong>: factors of production (capital, labour, technology). (6) <strong>LRAS</strong>: the Long Run Aggregate Supply curve is the AS-model equivalent of the PPF. (7) <strong>Potential</strong>: potential (trend) output rises, so actual output can grow without inflationary pressure.'
       },
 
-      /* 7 &#8212; Odd one out: GDP limitations */
+      /* 6 &#8212; Odd one out: GDP limitations */
       { type: 'odd_one_out',
         stem: 'Three of these are genuine <strong>limitations of GDP as a welfare measure</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -134,7 +119,7 @@
         exp: 'The odd one out is option C: <strong>international comparability is a strength of GDP</strong>, not a limitation. GDP\'s widespread use and standardisation make it valuable for cross-country comparison &#8212; exactly the opposite of a limitation. The other three are genuine welfare measurement problems: (A) the Gini coefficient better captures distribution; (B) informal and unpaid activity is a major omission, especially in developing countries; (D) defensive expenditures (road accident costs, oil-spill clean-up) inflate GDP without improving welfare.'
       },
 
-      /* 8 &#8212; Multi-select: causes of long run growth */
+      /* 7 &#8212; Multi-select: causes of long run growth */
       { type: 'multi_select',
         stem: 'Which of the following are causes of <strong>long run economic growth</strong> (i.e. they shift LRAS right / the PPF outward)?',
         opts: [
@@ -147,6 +132,21 @@
         ],
         correct: [0, 2, 4, 5],
         exp: 'Options A, C, E and F all increase the <strong>productive capacity</strong> of the economy by adding to capital, labour quality, labour supply, or technology &#8212; the determinants of LRAS. Options B and D are demand-side factors: income tax cuts and interest rate cuts raise AD, which can achieve short run growth up to the PPF, but they do not shift the PPF itself. The distinction matters for policy: only supply-side improvements enable <em>non-inflationary</em> long run growth.'
+      },
+
+      /* 8 — Multi-select: evaluation of GDP and GNI as welfare measures */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>whether GDP is an adequate measure of economic welfare</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'For developing countries with large FDI inflows, GNI is a better welfare proxy than GDP because profit repatriation means a significant share of GDP-measured output never reaches domestic residents — Ireland\'s GDP exceeded GNI by ~40% in 2015 due to multinational profit booking, making GDP a severe overstatement of resident living standards.',
+          'GDP fails as a welfare measure because it does not include happiness, leisure, or unpaid domestic work, so it tells us nothing useful about living standards.',
+          'Although GDP excludes informal activity and ignores distribution, it remains a superior tool for measuring short-run economic momentum — such as recession diagnosis and business cycle tracking — precisely because it is standardised, timely, and internationally comparable, even if alternatives like the HDI or Genuine Progress Indicator are better welfare proxies.',
+          'PPP-adjusted GNI per capita corrects two important distortions simultaneously: the domestic–foreign income split (GNI vs GDP) and the purchasing power variation across countries (PPP adjustment) — making it more appropriate than raw GDP for cross-country welfare comparisons, as used in the UN Human Development Index.',
+          'GDP is a good measure of welfare because countries with higher GDP generally have better health outcomes, longer life expectancy, and more developed public services.',
+          'GDP is a bad measure because it counts negative things like oil spill clean-ups and arms spending as positive contributions to the economy.'
+        ],
+        correct: [0, 2, 3],
+        exp: '<strong>Option A</strong> is strong evaluation: it applies the GDP–GNI distinction to a specific country (Ireland), uses a precise statistic (GDP exceeding GNI by ~40%), and reaches a directional conclusion — for FDI-heavy economies, GNI is significantly more accurate. This is evidence-grounded evaluation with a clear direction. <strong>Option C</strong> is strong evaluation: it accepts GDP\'s limitations but makes the evaluative move of specifying the <em>purpose</em> for which GDP remains superior — short-run cycle tracking and international comparison. This is a "fitness for purpose" evaluation that refuses to reject GDP wholesale. <strong>Option D</strong> is strong evaluation: it identifies two simultaneous corrections provided by PPP-adjusted GNI, explains why each matters, and links to a specific institutional application (UN HDI). This is precisely the kind of evaluative comparison that accesses Level 4. <strong>Option B</strong> correctly identifies GDP limitations but then overclaims ("tells us nothing useful") — this is one-sided analysis that ignores GDP\'s genuine strengths and fails to reach a balanced direction. <strong>Option E</strong> is one-sided endorsement — the correlation with health outcomes is a genuine pattern, but the claim ignores distribution, composition problems, and whether it is GDP causing these outcomes or reverse causality. <strong>Option F</strong> is description of the composition problem — it correctly identifies the issue but offers no direction, no weighing against GDP\'s strengths, and no conclusion.'
       },
 
       /* 9 &#8212; Data table: real vs nominal */
@@ -169,7 +169,7 @@
         exp: 'Real GDP in 2021 = &#163;2,200bn (deflator=100). Real GDP in 2023 = (&#163;2,580 &#247; 115) &#215; 100 &#8776; &#163;2,243bn. Real growth = ~2%. Nominal growth = 17.3%. The gap is almost entirely due to the 15-point rise in the deflator. Real GDP per capita: &#163;2,243bn / 67.6m &#8776; &#163;33,180 vs &#163;2,200bn / 67.0m &#8776; &#163;32,836 &#8212; a real per capita rise of ~1%. Option B confuses nominal with real. Option C overstates &#8212; real output did grow, just by much less than the nominal figure suggests. Option D is incorrect because nominal GDP grew faster than population.'
       },
 
-      /* 10 &#8212; Chain: PPP comparison */
+      /* 10 &#8212; Chain: PPP comparison logic */
       { type: 'chain',
         stem: 'Place these steps in the correct logical order to explain why <strong>PPP adjustment</strong> is necessary for cross-country income comparisons.',
         items: [

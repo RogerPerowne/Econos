@@ -93,21 +93,6 @@
         exp: 'Options A, C, and F have the most <em>immediate</em> impact on absolute poverty. <strong>Direct cash transfers</strong> (A) raise household incomes above the poverty line immediately &#8212; the most direct anti-poverty tool. <strong>Emergency food provision</strong> (C) addresses subsistence needs directly for those in deepest poverty. <strong>National Living Wage increases</strong> (F) raise the income of the lowest-paid workers from the next pay period. Options B and D are long-run investments with high eventual payoffs but time lags of years to decades before affecting poverty rates. Option E (R&D credits) has no direct poverty-reduction effect and works through productivity growth over the long run. The distinction between <em>immediate relief</em> and <em>long-run structural solutions</em> is important for essays: strong answers acknowledge both dimensions and the trade-offs.'
       },
 
-      /* 5 — Diagnostic pair: aid vs trade */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate whether international aid or trade liberalisation is more effective at reducing absolute poverty in developing countries."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Amara', badge: 'Candidate A',
-            answer: 'The "aid vs trade" debate requires a nuanced view: both have roles but operate differently. <strong>Aid</strong> &#8212; particularly budget support and emergency relief &#8212; provides immediate income transfer that can lift households above the absolute poverty line in the short run. The Sachs "poverty trap" argument is that the poorest countries cannot generate the savings needed to invest, so external transfers break the cycle. Evidence from conditional cash transfer programmes (Brazil\'s Bolsa Fam&#237;lia, Mexico\'s Oportunidades) shows measurable poverty reduction. However, Dambisa Moyo\'s critique is that systematic ODA can reduce incentives for African governments to develop domestic tax bases, create accountability, and attract private investment &#8212; a dependency concern. <strong>Trade liberalisation</strong> generates sustainable income through markets rather than transfers: evidence from East Asia (South Korea, Vietnam) shows export-led growth is the most powerful poverty-reduction mechanism historically. The Doha Development Round failure to cut rich-country agricultural subsidies arguably does more damage to developing country poverty than ODA provides. The synthesis is that trade and aid are <em>complementary</em>: ODA to build the institutions and infrastructure that make trade integration possible; then trade to generate sustainable development. The answer depends on the country\'s institutional capacity.'
-          },
-          { name: 'Leo', badge: 'Candidate B',
-            answer: 'Aid and trade can both reduce poverty in developing countries. Aid is good because it gives money directly to poor countries that need it. However the problem with aid is that it does not always reach the poorest people because of corruption, and it might make countries dependent on aid rather than developing their own economies. Trade liberalisation is when countries reduce tariffs and trade more freely. This can help developing countries by giving them access to global markets to sell their goods. The downside is that developing countries might not be competitive enough to benefit from free trade right away. Overall I think both are needed and the best approach depends on the situation in each country.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Amara</strong> gives the stronger answer. She provides the theoretical frameworks for both positions (Sachs poverty trap; Moyo dependency critique), cites specific evidence (Bolsa Fam&#237;lia, East Asian export-led growth, Doha Round failure), and synthesises the debate with a conditional conclusion: "ODA to build institutions; trade to generate sustainable development &#8212; complementary, not alternatives." Leo covers the same ground at descriptive level without frameworks, evidence, or a reasoned synthesis. Amara accesses Level 4; Leo Level 2. The Moyo reference is an A* differentiator &#8212; it shows awareness of the academic debate rather than simply reciting the case for aid. The Doha Round point is particularly strong: it connects trade policy in rich countries directly to developing-country poverty outcomes.'
-      },
-
       /* 6 — Odd one out: relative poverty measures */
       { type: 'odd_one_out',
         stem: 'Three of these are measures of <strong>relative poverty</strong> or multi-dimensional deprivation. Which is the ODD ONE OUT?',
@@ -138,7 +123,22 @@
         exp: '(1) <strong>Incentives</strong> &#8212; simplifying to Universal Credit was explicitly designed to "make work pay" by replacing overlapping means-tested benefits. (2) <strong>Taper</strong> &#8212; the UC taper rate determines how quickly benefits are withdrawn as earnings rise. (3) <strong>Tax</strong> &#8212; effective marginal tax rates facing low earners can exceed 70-87% when taper, income tax, and NI are combined. (4) <strong>In-work</strong> poverty &#8212; the UK has a persistent and growing in-work poverty problem: 60% of those in poverty live in working households. (5) <strong>Employment</strong> &#8212; the assumption that "work pays" is challenged by in-work poverty; wage levels, hours, and housing costs matter as much as employment status. (6) <strong>29%</strong> &#8212; approximately 29% of UK children are in relative poverty (2023). (7) <strong>Limit</strong> &#8212; the two-child limit restricts UC/child tax credit to the first two children; the IFS estimates this directly causes increased child poverty.'
       },
 
-      /* 8 — Data table: poverty measurement */
+      /* 8 — multi_select: evaluation of aid vs trade */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on reducing absolute poverty in developing countries. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Aid is good because it transfers money to poor countries that need it, and trade liberalisation is good because it opens up markets.',
+          'The effectiveness of international aid depends critically on institutional quality: conditional cash transfers (Brazil\'s Bolsa Fam&#237;lia) demonstrate measurable poverty reduction where governance is adequate, but Moyo\'s evidence suggests systematic ODA may entrench dependency and undermine domestic tax-raising capacity in weak-state contexts &#8212; so aid effectiveness is conditional, not universal.',
+          'Trade liberalisation reduces absolute poverty by enabling export-led growth, as demonstrated by South Korea and Vietnam, but its benefits are concentrated among countries with competitive manufacturing capacity; for commodity-dependent economies facing unfavourable terms of trade and rich-country agricultural subsidies, trade liberalisation may deepen rather than reduce poverty.',
+          'Developing countries need both aid and trade to reduce poverty.',
+          'Aid and trade are best understood as complements rather than substitutes: ODA directed at building institutional capacity, infrastructure, and human capital creates the preconditions that make trade integration poverty-reducing &#8212; without this sequencing, trade liberalisation alone may expose vulnerable populations to import competition before domestic industries are able to compete.',
+          'It is impossible to say whether aid or trade is better at reducing poverty because all countries are different.'
+        ],
+        correct: [1, 2, 4],
+        exp: '<strong>Option A</strong> is pure description &#8212; it restates the basic case for each instrument with no weighing, no qualification, and no direction. <strong>Option B</strong> is strong evaluation: it uses specific evidence (Bolsa Fam&#237;lia, Moyo) to derive a conditional conclusion &#8212; aid is effective conditional on institutional quality. This weighs competing evidence and reaches a qualified direction. <strong>Option C</strong> is evaluation: it acknowledges the pro-trade evidence from East Asia but qualifies it with an important counter-case (commodity-dependent economies, terms of trade, agricultural subsidies), reaching a contextual conclusion. <strong>Option D</strong> is a vague assertion of complementarity with no mechanism, no evidence, and no direction &#8212; description masquerading as synthesis. <strong>Option E</strong> is evaluation: it proposes a sequencing logic (aid builds capacity; trade delivers growth) that converts the "aid vs trade" binary into a conditional argument about ordering, drawing on causal reasoning. <strong>Option F</strong> is a hedge that abandons analysis &#8212; invoking heterogeneity without using it to structure a conditional argument. A genuine evaluator uses "all countries are different" as a starting point to identify which conditions matter, not as a conclusion.'
+      },
+
+      /* 9 — Data table: poverty measurement */
       { type: 'data_table',
         stem: 'The table shows poverty data for three countries with similar GDP per capita (~$15,000 PPP).',
         headers: ['Country', 'GDP/capita ($PPP)', 'Absolute poverty rate', 'Relative poverty rate', 'Gini coefficient'],
@@ -158,7 +158,7 @@
         exp: 'The data powerfully illustrate that <strong>distribution, not just income level, determines poverty outcomes</strong>. Countries X, Y, and Z have almost identical GDP per capita (~$15,000), but very different poverty profiles. Country X (Gini 0.52 &#8212; high inequality) has the lowest absolute poverty (2%) but the highest relative poverty (28%) &#8212; its income is concentrated, lifting most above the basic needs threshold but leaving many far below the median. Country Y (Gini 0.29 &#8212; low inequality) has higher absolute poverty (8%) but much lower relative poverty (14%). This pattern is consistent with comparing Brazil (high growth, high inequality, persistently high relative poverty) with South Korea or Nordic countries. Option C is wrong &#8212; the data directly refute it. Option D overstates &#8212; Country Y still has 14% in relative poverty. The key examiner-rewarded insight is the absolute/relative distinction applied to data.'
       },
 
-      /* 9 — Chain: poverty trap mechanism */
+      /* 10 — Chain: poverty trap mechanism */
       { type: 'chain',
         stem: 'Arrange the following steps in the correct order showing how the <strong>poverty trap</strong> operates under the UK Universal Credit system.',
         items: [

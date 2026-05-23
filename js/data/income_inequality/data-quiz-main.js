@@ -131,22 +131,7 @@
         exp: 'Options A, C, D, and F are supported by empirical evidence. <strong>Social mobility</strong> (A): Krueger\'s "Great Gatsby curve" shows a strong cross-country correlation between inequality and low inter-generational mobility. <strong>Political polarisation</strong> (C): OECD studies link rising inequality to populist voting patterns and declining institutional trust. <strong>Health/social outcomes</strong> (D): Wilkinson and Pickett\'s "Spirit Level" documents worse outcomes (health, crime, trust) in more unequal countries. <strong>Aggregate demand</strong> (F): if high-MPC lower earners receive less income, consumption may be weaker than under more equal distribution (Keynesian argument). Option B is incorrect &#8212; high-income households have lower marginal propensity to consume; redistribution from rich to poor typically raises not lowers aggregate demand. Option E overstates &#8212; while some inequality creates incentives, <em>excessive</em> inequality reduces equality of opportunity and may suppress aggregate human capital accumulation, harming long-run growth.'
       },
 
-      /* 6 — Diagnostic pair: UBI evaluation */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate Universal Basic Income (UBI) as a policy to reduce income inequality and poverty."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Clara', badge: 'Candidate A',
-            answer: 'UBI &#8212; an unconditional cash payment to every citizen regardless of employment &#8212; has two powerful theoretical advantages over means-tested benefits. First, it eliminates the <strong>poverty trap</strong>: because there is no taper, the EMTR equals only the marginal income tax rate (typically 20-40%), massively improving work incentives for low earners. Second, it eliminates the stigma and administrative burden of means-testing. Pilot evidence (Finland 2017-18, Kenya GiveDirectly) shows positive effects on wellbeing and modest effects on employment. However, the <strong>fiscal cost is prohibitive</strong> at realistic payment levels: a &#163;10,000/year UBI for all UK adults would cost ~&#163;520bn &#8212; roughly 70% of total UK public spending. This requires either very high tax rates (raising the equity-efficiency trade-off concern) or replacing existing benefits (potentially leaving the most vulnerable worse off if their current entitlements exceed the UBI amount). The optimal policy may be a partial UBI (say &#163;5,000/year, retained alongside a reduced UC system) &#8212; capturing incentive gains while remaining fiscally manageable. Whether UBI is better than the current system ultimately depends on the tax rate required to fund it and whether behavioural effects reduce the labour supply sufficiently to erode the tax base.'
-          },
-          { name: 'Jake', badge: 'Candidate B',
-            answer: 'Universal Basic Income means giving every citizen a set amount of money from the government each month regardless of whether they work or not. This is a good idea because it would help people who are in poverty by giving them a basic income. It would also remove the problem of the poverty trap because people would not lose their benefits when they start working. However UBI is expensive and the government would need to raise taxes to pay for it. Some people argue that giving people money without them having to work might reduce how much people want to work. There have been some trials of UBI which show it can work but we cannot be sure it works on a large scale. Overall UBI has some good features but the high cost makes it difficult to implement.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Clara</strong> gives the stronger answer. She names the two theoretical advantages of UBI precisely (poverty trap elimination; stigma/administration costs), cites specific pilot evidence with locations, quantifies the fiscal cost (&#163;520bn, 70% of public spending), identifies the key trade-off (tax rates required), considers the risk to vulnerable groups whose entitlements exceed UBI, and proposes a middle ground (partial UBI). The conclusion is conditional: "depends on the tax rate required and behavioural effects" &#8212; this is genuine evaluation, not hedging. Jake covers the same ideas at description level without quantification, without the poverty trap mechanism, and without the fiscal analysis. Clara accesses Level 4; Jake Level 2-3. The &#163;520bn figure and the risk-to-vulnerable-groups point are strong A* differentiators.'
-      },
-
-      /* 7 — Para fill: Piketty r>g */
+      /* 6 — Para fill: Piketty r>g */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about Piketty\'s argument on wealth inequality.',
         anchor: 'Thomas Piketty\'s Capital in the Twenty-First Century argues that wealth inequality has a structural tendency to rise.',
@@ -163,7 +148,7 @@
         exp: '(1) <strong>Return</strong> on capital &#8212; r = the annual return earned on wealth (dividends, rent, interest, capital gains) as a percentage of wealth. (2) <strong>Rate</strong> of economic growth &#8212; g = annual GDP growth rate. When r &gt; g, wealth income grows faster than the economy, increasing wealth owners\' share. (3) <strong>Invest</strong> &#8212; the wealthy save and invest more of their income than lower-income households (lower MPC), so their wealth base grows. (4) <strong>Compounds</strong> &#8212; compounding: wealth grows on wealth, creating exponential concentration over time. (5) <strong>Wars</strong> &#8212; Piketty\'s historical analysis shows the two world wars (capital destruction, emergency taxation, nationalisation) broke the r &gt; g dynamic in the 20th century &#8212; the "Great Compression" of inequality 1945-1975. (6) <strong>Progressive</strong> &#8212; progressive wealth and income taxes reduce post-tax r, slowing the compounding. (7) <strong>Constant</strong> &#8212; critics (Acemoglu, others) note that r varies with economic conditions and is not mechanically fixed above g.'
       },
 
-      /* 8 — Data table: redistribution effects */
+      /* 7 — Data table: redistribution effects */
       { type: 'data_table',
         stem: 'The table shows UK income distribution data.',
         headers: ['Income quintile', 'Pre-tax income (&#163;k)', 'Post-tax income (&#163;k)', 'After benefits (&#163;k)'],
@@ -185,6 +170,21 @@
         exp: 'The data reveal a <strong>strongly redistributive</strong> system. Looking at the bottom quintile: pre-tax income &#163;5.2k, post-tax &#163;4.8k (modest tax, as low incomes are near the personal allowance), then <strong>after benefits: &#163;16.4k</strong> &#8212; income more than triples due to transfers. The top quintile: pre-tax &#163;112.4k reduced to &#163;78.6k post-tax (30% effective tax rate) and minimal benefit additions. The system dramatically compresses the distribution. However, the post-redistribution ratio (bottom &#163;16.4k vs top &#163;80.1k) is still nearly 5:1 &#8212; substantial inequality persists even after full redistribution. Option B misidentifies progressivity &#8212; the bottom quintile\'s small pre-tax to post-tax reduction reflects low tax liability (personal allowance protection), not regressivity. The fall from &#163;5.2k to &#163;4.8k may reflect indirect taxes (VAT, excise duties) not accounted for here.'
       },
 
+      /* 8 — Multi-select: evaluation of policies to reduce income inequality */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>policies to reduce income and wealth inequality</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Progressive income taxation reduces the post-tax income Gini significantly — the UK system narrows the Gini from ~0.52 to ~0.35 — but indirect taxes (VAT, excise duties) partially offset this by taking a higher share of income from lower quintiles, so the net redistributive effect is smaller than direct tax data alone suggests.',
+          'Universal Basic Income eliminates the poverty trap (the EMTR falls from 60-80% to the marginal tax rate) but a &#163;10,000/year payment for all UK adults would cost ~&#163;520bn, requiring tax rises or benefit cuts that may leave the most vulnerable worse off if their current entitlements exceed the UBI amount.',
+          'The government should raise income taxes on the rich to reduce inequality because wealth inequality in the UK is very high.',
+          'Piketty\'s r &gt; g thesis predicts a structural tendency for wealth to concentrate, but critics note that r is not constant — capital returns fell sharply when growth was rapid (1945–1973), suggesting the tendency can be broken by sustained supply-side investment that raises g, not only by redistributive taxation.',
+          'Inequality is a serious problem and all governments should do more to address it through spending and taxation.',
+          'Reducing inequality always involves a trade-off with economic efficiency, so any redistribution policy will reduce GDP growth.'
+        ],
+        correct: [0, 1, 3],
+        exp: '<strong>Option A</strong> is strong evaluation: it accepts the redistributive success of direct taxes (citing a specific Gini reduction) but qualifies the conclusion by introducing the offsetting effect of indirect taxes — giving a more accurate net assessment. This is the "yes, but with an important qualification" evaluative move. <strong>Option B</strong> is strong evaluation: it presents the case for UBI (poverty trap elimination with the specific EMTR mechanism) alongside a precisely quantified fiscal cost and the risk to vulnerable groups — then implies the policy\'s net effect is conditional on how it is funded. This is a fully balanced direction. <strong>Option D</strong> is strong evaluation: it challenges Piketty\'s r &gt; g by citing the historical counter-evidence (the 1945–1973 Great Compression when high growth kept r low), concludes the tendency is not mechanical, and identifies an alternative policy direction (raising g, not only taxing r). This is an evidence-based challenge with a clear qualified conclusion. <strong>Option C</strong> is one-sided advocacy — it asserts what should happen without any weighing of costs, trade-offs, or conditions. The descriptive claim that wealth inequality is high is not evaluation. <strong>Option E</strong> is vague normative assertion — it names the problem and calls for action but provides no analytical direction, no mechanism, and no weighing of instruments. <strong>Option F</strong> overclaims certainty: the equity-efficiency trade-off is real in some contexts but the evidence is mixed — some redistribution (e.g. early childcare investment) may raise long-run efficiency by improving human capital formation.'
+      },
+
       /* 9 — Chain: technology and inequality */
       { type: 'chain',
         stem: 'Arrange the following steps in the correct order showing how <strong>automation and technological change</strong> contribute to rising income inequality.',
@@ -200,7 +200,7 @@
         exp: '<strong>The correct sequence:</strong><br>1. Computing advances make automation of routine tasks economically viable.<br>2. Firms invest in automation to replace routine tasks.<br>3. Routine middle-skill jobs are replaced or deskilled (the "hollowing out" of the distribution).<br>4. Demand rises for cognitive/creative workers; falls for routine workers.<br>5. Wage premium for high-skill workers rises; wages for routine workers stagnate.<br>6. Income distribution becomes more unequal: high-skill workers gain, middle-skill lose.<br><br>This is <strong>skill-biased technological change (SBTC)</strong> &#8212; the dominant explanation for rising income inequality in advanced economies since the 1980s. It helps explain why inequality rose even in countries with relatively equal institutions (Sweden, Germany), suggesting a structural rather than purely policy-driven cause. Policy response: invest in skills that complement rather than compete with automation (creativity, complex problem-solving, interpersonal skills).'
       },
 
-      /* 10 — MCQ: equity-efficiency trade-off */
+      /* 10 — MCQ: equity-efficiency trade-off (Diamond-Saez) */
       { type: 'mcq',
         stem: 'Diamond and Saez (2011) estimate the revenue-maximising top marginal income tax rate is approximately 70%. The UK\'s current top rate is 45%. Which is the most analytically complete interpretation of this evidence for a policy essay?',
         opts: [

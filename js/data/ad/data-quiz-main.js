@@ -122,7 +122,7 @@
         exp: 'The odd one out is option B. A rise in the domestic price level does not shift AD &#8212; it causes a <em>movement along</em> the existing AD curve (a contraction). The wealth effect from rising prices reduces the quantity of AD demanded but this is already captured in the downward slope, not a separate shift. Options A (&#8593;G), C (&#8593;X via depreciation), and D (&#8593;C and &#8593;I via lower interest rates) are all non-price changes to the components of AD that shift the entire curve rightward.'
       },
 
-      /* 8 &#8212; Data table: consumption signals */
+      /* 7 &#8212; Data table: consumption signals */
       { type: 'data_table',
         stem: 'The table shows UK consumer indicators over a period of change.',
         headers: ['Indicator', 'Q1', 'Q2', 'Q3', 'Q4'],
@@ -141,6 +141,21 @@
         ],
         ans: 0,
         exp: 'The leading indicators all point to a weakening of AD through the period. Consumer confidence turned negative in Q3 and fell sharply in Q4. The savings ratio jumped from 5.2% to 11.4% &#8212; households precautionarily saving rather than spending (the reverse multiplier). Retail sales growth declined and turned negative in Q4. These are classic signals of a consumption-led AD deceleration. Option B overstates the rate cut effect &#8212; the policy transmission lag is 12-24 months, so Q4\'s minor cut would not show up immediately. Option C ignores the leading indicator signals. Option D is backward-looking &#8212; Q3 positive retail sales do not negate the Q4 contraction.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of AD and the multiplier */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>aggregate demand and the multiplier</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'The simple multiplier overstates the real-world impact of fiscal stimulus in the UK because import and tax leakages reduce the multiplier to approximately 1.0&#8211;1.5 &#8212; meaning a &#163;15bn injection raises GDP by roughly &#163;15&#8211;23bn, not &#163;60bn',
+          'Aggregate demand has four components: consumption, investment, government spending, and net exports',
+          'Although investment is only ~17% of UK AD, it is the most volatile component and therefore drives most of the business cycle&#8217;s amplitude &#8212; a small share does not mean a small influence',
+          'A rise in consumer confidence will increase consumption and shift the AD curve to the right',
+          'Fiscal stimulus is more effective at closing a negative output gap than at full employment: when there is spare capacity, the multiplier operates without crowding out or inflation, so the same &#163;10bn injection has a larger real effect in a recession than at full employment',
+          'Investment is important because when it rises, aggregate demand increases'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it qualifies the multiplier claim with a specific real-world adjustment (import/tax leakages), names the full-leakage formula, and provides a quantified range &#8212; this is a weighing move that limits the scope of a theoretical claim. Option C is strong evaluation: it resolves an apparent contradiction (small share, large impact) by identifying the key variable (volatility), reaching a directional conclusion. Option E is strong evaluation: it conditions the effectiveness of fiscal stimulus on the state of the economy, using spare capacity and the crowding-out mechanism to differentiate contexts &#8212; the hallmark of conditional evaluation. Option B is pure description &#8212; listing AD components is a knowledge statement, not an evaluative move. Option D is one-sided analysis &#8212; it states a mechanism without any qualification, context, or counter-argument. Option F is vague and circular &#8212; it merely restates the definition of investment as an AD component without adding analytical insight.'
       },
 
       /* 9 &#8212; MCQ: government spending */

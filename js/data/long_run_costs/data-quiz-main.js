@@ -111,22 +111,7 @@
         exp: 'A <strong>natural monopoly</strong> is defined by the cost structure of the industry, not by law or market share. It exists when the LRAC is still falling across the full range of market demand &#8212; technically, when the cost function is <em>sub-additive</em>: it costs less for one firm to produce total market output than for two or more firms to divide production. Water pipes, electricity networks, and rail track are classic examples: duplicating the infrastructure would be enormously wasteful. Options B and C describe legal or intellectual property monopolies &#8212; artificial, not natural. Option D describes high market concentration but not sub-additive costs.'
       },
 
-      /* 7 — Diagnostic pair: RPI-X regulation */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate RPI-X regulation as a solution to the natural monopoly problem."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Aisha', badge: 'Candidate A',
-            answer: 'RPI-X regulation addresses the natural monopoly problem by capping annual price increases at RPI minus X, where X represents a required efficiency improvement. This creates an <strong>incentive to innovate</strong>: if the firm cuts costs faster than X, it retains the savings &#8212; unlike cost-of-service regulation where savings are passed straight on (reducing the incentive). The mechanism has broadly succeeded in raising productive efficiency in UK utilities post-privatisation. However, it suffers from <strong>information asymmetry</strong>: the regulated firm knows its own cost structure far better than the regulator, enabling it to lobby for a low X factor. UK water companies provide a clear example of the system\'s failure: Ofwat set weak investment targets, companies generated large profits while underinvesting in infrastructure, resulting in the sewage spills crisis of 2023&#8211;24. There is also <strong>regulatory capture</strong> risk &#8212; regulators may come to represent the interests of the regulated industry rather than consumers. A further weakness is that RPI-X focuses on price not quality: firms facing cost pressure may cut service quality to maintain margins. On balance, RPI-X is superior to direct nationalisation for productive efficiency incentives, but requires rigorous, well-resourced regulatory oversight to prevent underinvestment.'
-          },
-          { name: 'Tom', badge: 'Candidate B',
-            answer: 'RPI-X regulation works by limiting price rises to below the rate of inflation, which is good for consumers because it means prices go up more slowly. The X factor represents the efficiency improvement the regulator expects. This encourages firms to become more efficient because they can keep any extra savings. However, the regulator may not know the right level for X &#8212; if it is too low, firms make excess profits; if it is too high, the firm may go bust. UK water companies are a good example of the problems with this regulation because they have been making large profits while the quality of water has been getting worse and there have been sewage spills in rivers. So the regulation has not worked as well as it could. Overall RPI-X is better than having no regulation but it has problems.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Aisha</strong> gives the stronger answer. She uses precise terminology (information asymmetry, regulatory capture), explains the mechanism behind RPI-X\'s efficiency incentive (retained savings), provides a specific and detailed contemporary case study (UK water/Ofwat), and identifies multiple distinct weaknesses (information asymmetry, regulatory capture, quality-price trade-off). She ends with a genuinely conditional evaluation. Tom covers similar ground but lacks precision: he says the regulator "may not know the right level for X" without calling it information asymmetry, and his case study reference is vague. Aisha accesses Level 4; Tom Level 2&#8211;3.'
-      },
-
-      /* 8 — Multi-select: internal economies of scale */
+      /* 7 — Multi-select: internal economies of scale */
       { type: 'multi_select',
         stem: 'Which of the following are genuine sources of <strong>internal economies of scale</strong>?',
         opts: [
@@ -139,6 +124,21 @@
         ],
         correct: [0, 1, 2, 4],
         exp: 'Options A, B, C, and E are all <strong>internal</strong> economies: they arise from the individual firm\'s own growth. Technical (cube-square), purchasing (bulk buying), financial (credit rating), and managerial (specialist staff) economies all accrue specifically to the growing firm. Options D and F are <strong>external</strong> economies of scale: the skilled labour pool and knowledge spillovers arise from industry or cluster growth, benefiting all firms in the area, not just large individual firms. The distinction matters: internal economies give the growing firm a competitive advantage; external economies benefit the whole industry and may justify government investment in cluster infrastructure.'
+      },
+
+      /* 8 — multi_select: evaluation of RPI-X regulation */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>RPI-X regulation as a solution to the natural monopoly problem</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'RPI-X is superior to cost-of-service regulation on productive efficiency grounds because it allows the regulated firm to retain cost savings achieved beyond the X target &#8212; creating an incentive to innovate. However, this advantage is conditional on the regulator setting X correctly, which is undermined by information asymmetry: the firm knows its own cost structure far better than Ofwat or Ofgem.',
+          'RPI-X regulation caps annual price increases at RPI minus X, where X is the efficiency improvement the regulator requires.',
+          'The UK water sector provides evidence that RPI-X has failed in practice: Ofwat set weak X factors, enabling Thames Water and others to generate large profits while underinvesting in infrastructure &#8212; resulting in the 2023-24 sewage spills crisis. This suggests the regulation\'s effectiveness depends critically on regulator resourcing and independence, not just its theoretical design.',
+          'RPI-X regulation reduces prices for consumers.',
+          'Regulatory capture presents a specific risk that worsens over time: as regulators develop long-term relationships with regulated firms, they may come to prioritise industry interests over consumers\', gradually hollowing out the effectiveness of even a well-designed RPI-X regime &#8212; qualifying any optimistic assessment of regulation as a permanent solution.',
+          'Natural monopolies exist because average costs fall across the full range of market demand.'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Option A</strong> is genuine evaluation: it identifies the mechanism behind RPI-X\'s advantage (retained savings incentive), then immediately qualifies it with the information asymmetry problem, reaching a direction that the advantage is conditional rather than guaranteed. <strong>Option C</strong> is evaluation: it uses a specific, contemporary case study (UK water/Ofwat/sewage crisis) to assess whether RPI-X has delivered in practice, reaching a qualified conclusion that effectiveness depends on regulator quality, not just scheme design. <strong>Option E</strong> is evaluation: it uses the regulatory capture concept to make a time-dynamic argument &#8212; that regulation degrades over time even if initially effective &#8212; reaching a direction that qualifies long-run optimism about RPI-X. <strong>Option B</strong> is description &#8212; defining the mechanism with no weighing, no qualification, no direction. <strong>Option D</strong> is description &#8212; stating a benefit without comparing it to alternatives, qualifying by conditions, or using evidence. <strong>Option F</strong> is a definition of natural monopoly &#8212; no evaluative content.'
       },
 
       /* 9 — Calculation: RPI-X price cap */
@@ -165,7 +165,7 @@
         exp: 'Allowed annual nominal price increase = RPI &#8722; X = 4% &#8722; 3% = <strong>1% per year</strong>. Over 5 years: &#163;400 &#215; (1.01)&#8309; &#8776; <strong>&#163;420</strong> nominally. However, in real terms (adjusting for inflation at 4%): &#163;420 &#247; (1.04)&#8309; &#8776; &#163;345 &#8212; a real price fall of about 14%. This is exactly the mechanism\'s intent: nominal prices can rise slowly, but real prices must fall as the firm improves efficiency. The X = 3% targets an efficiency improvement that should reduce real costs by 3% annually, enabling the firm to be profitable even as real prices fall.'
       },
 
-      /* 10 — Chain: entry into a market with scale economies */
+      /* 10 — chain: entry into a market with scale economies */
       { type: 'chain',
         stem: 'A new firm attempts to enter an industry dominated by one large incumbent with significant economies of scale. Place the events in the correct logical order.',
         items: [

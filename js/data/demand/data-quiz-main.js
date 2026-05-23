@@ -100,22 +100,7 @@
         exp: 'Options A, C, D, and F shift the demand curve <strong>rightward</strong>: higher incomes increase demand for a normal good; competitor recall reduces supply of substitutes, increasing demand for this phone; cheaper contracts (complementary good) increase joint demand; larger student population expands the market. Option B shifts demand <strong>leftward</strong> (taste/health concern reduces demand). Option E &#8212; the company\'s own price cut &#8212; causes a <strong>movement along</strong> the demand curve (extension of quantity demanded), NOT a shift. This is the most important distinction in demand analysis.'
       },
 
-      /* 6 &#8212; Diagnostic pair: housing demand analysis */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Analyse the factors that have caused UK house prices to rise significantly over the past 20 years."</em> Which student demonstrates stronger analytical technique?',
-        students: [
-          { name: 'Rena', badge: 'Candidate A',
-            answer: 'UK house prices have risen due to a persistent rightward shift in demand combined with highly inelastic supply (planning restrictions, slow construction). On the demand side: (1) <strong>population growth</strong> (net immigration of ~250,000/year) expanded the number of households; (2) <strong>income growth</strong> increased willingness to pay for housing (a normal and luxury good); (3) <strong>historically low mortgage interest rates</strong> (2009&#8211;2021 base rate &#8804; 0.5%) reduced the monthly cost of borrowing, increasing effective demand; (4) <strong>price expectations</strong> &#8212; buyers anticipated further rises, increasing speculative demand. On the supply side, new housing construction consistently fell below household formation, creating chronic excess demand. The interaction of elastic demand and very inelastic supply means demand shifts feed almost entirely into price rises rather than quantity increases.'
-          },
-          { name: 'Callum', badge: 'Candidate B',
-            answer: 'House prices have gone up because more people want houses than there are houses available. People want houses because they need somewhere to live and because prices keep going up so it is a good investment. Interest rates were low for a long time which meant mortgages were cheaper. Immigration also increased demand. The government has tried to help with schemes like Help to Buy. Supply has not kept up with demand because it takes a long time to build new houses and planning permission is difficult to get. This is why prices went up so much.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Rena</strong> gives the stronger answer. She identifies and separately analyses four distinct demand shifters, provides data (250,000 net immigration, base rate &#8804; 0.5%), and crucially integrates the supply-side context (price elasticity of supply) to explain why demand shifts translate to price rises rather than quantity increases. This integration of both sides of the market is the mark of A-level analysis. Callum identifies the same factors but without the analytical structure &#8212; no mention of PES, no data, no framework of demand-shift types. Rena accesses Level 4; Callum Level 2&#8211;3.'
-      },
-
-      /* 7 &#8212; Para fill: derived demand */
+      /* 6 &#8212; Para fill: derived demand */
       { type: 'para_fill',
         stem: 'Complete the paragraph explaining derived demand.',
         anchor: 'Derived demand links product markets to factor markets through the demand chain.',
@@ -130,6 +115,21 @@
           { id: 7, opts: ['derived', 'direct', 'joint', 'independent'], ans: 0 }
         ],
         exp: '(1) Derived demand: demand for a factor/intermediate good exists because of demand for <strong>another (final) good</strong>. (2) Steel demand is <strong>derived</strong> from car/construction demand. (3) In a <strong>factor</strong> market (labour, land, capital), demand is always derived. (4) Labour demand depends on demand for the final <strong>product</strong>. (5) In a <strong>recession</strong>, AD falls &#8212; this is the macroeconomic shock that triggers the chain. (6) Firms <strong>lay off</strong> workers when output demand falls &#8212; rising unemployment. (7) The chain operates through <strong>derived</strong> demand. This links macro shocks to micro labour markets: recession → falling product demand → falling derived demand for labour → unemployment.'
+      },
+
+      /* 7 &#8212; multi_select: evaluating demand analysis */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the factors that determine demand in a market</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'While lower mortgage interest rates increase demand for housing by raising affordability, the effect is asymmetric: rate cuts when credit is already loose produce smaller demand increases than equivalent rate rises produce demand falls, because households at their borrowing limit cannot increase demand further regardless of price',
+          'Demand for a good shifts rightward when consumer incomes rise, if the good is normal',
+          'Rising house prices in the UK reflect both genuine demand increases (income growth, population rise) and price expectations effects that may be self-reinforcing — which means the price signal overstates fundamental scarcity and could be corrected by a supply-side intervention rather than demand management',
+          'An inferior good is one where demand falls as income rises, because consumers switch to superior alternatives',
+          'The distinction between a movement along and a shift of the demand curve matters analytically: a price cut by a firm expands quantity demanded along the existing curve, while a marketing campaign that changes tastes shifts the entire curve — confusing the two leads to incorrect policy prescriptions about whether price or non-price strategies are more effective',
+          'Derived demand means that when consumer demand falls, firms lay off workers'
+        ],
+        correct: [0, 2, 4],
+        exp: '<strong>Options A, C, and E are genuine evaluation moves.</strong> Option A qualifies the income effect of interest rate cuts: it identifies an asymmetry and explains why — the borrowing constraint means demand responses are not symmetric around equilibrium. This weighs the theoretical prediction against a real-world limiting condition. Option C identifies a self-reinforcing expectations mechanism in UK house prices and draws a policy implication from it — supply intervention rather than demand-side management — which is evaluation through directing analysis toward a conclusion. Option E identifies why the movement/shift distinction has practical policy consequences rather than just defining the terms. <strong>Option B</strong> is a definition of a normal good — description. <strong>Option D</strong> is a definition of an inferior good — description. <strong>Option F</strong> describes the derived demand mechanism at a surface level with no evaluation of significance, conditions, or implications.'
       },
 
       /* 8 &#8212; Odd one out: demand curve shifts */

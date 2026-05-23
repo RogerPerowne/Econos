@@ -55,22 +55,7 @@
         exp: 'The key analytical signature of a <strong>demand-side shock</strong>: output and price level <em>move in the same direction</em>. AD falls left → output falls (unemployment rises) AND price level falls (or stays low). This is the opposite of a supply shock, where output and price move in opposite directions. The 2008-09 crisis is the textbook example: AD collapsed via the credit crunch, driving UK GDP down 5% and inflation toward zero. Option B describes a supply shock (stagflation). Option C describes a permanent supply-side failure. Option D is a positive demand shock. Knowing the AD vs AS shock signature instantly organises any macro scenario question.'
       },
 
-      /* 3 &#8212; Diagnostic pair: growth evaluation */
-      { type: 'diagnostic_pair',
-        stem: 'Exam question: <em>"Evaluate the view that economic growth always improves living standards."</em> Which student gives the stronger answer?',
-        students: [
-          { name: 'Kezia', badge: 'Candidate A',
-            answer: 'Economic growth (rising real GDP) generally improves material living standards through higher average incomes, greater tax revenues for public services, and lower unemployment. Historically, growth has correlated with improvements in life expectancy, child mortality, and literacy &#8212; supporting the view. <strong>However, \'always\' is too strong.</strong> Four counterarguments are critical. First, distribution: UK GDP grew throughout 2010-19 but median real wages stagnated &#8212; average growth concealed distributional divergence. The Gini coefficient is a better welfare measure than per capita GDP. Second, environmental sustainability: GDP growth historically correlates with CO₂ emissions &#8212; the Environmental Kuznets Curve suggests only local pollutants eventually fall with income; global carbon emissions are harder to decouple. Third, composition: military spending and oil-spill clean-up both count in GDP but do not improve welfare. Fourth, Easterlin paradox: despite decades of real income growth in the UK, ONS life satisfaction scores have shown no long-run upward trend. The type of growth matters: export-led and investment-led growth is more likely to improve welfare broadly than consumption-led growth financed by unsustainable debt.'
-          },
-          { name: 'Dan', badge: 'Candidate B',
-            answer: 'Economic growth improves living standards because higher GDP means more goods and services are available for people to consume. Governments can also collect more tax and spend more on public services like the NHS and education. However, growth does not always improve living standards. If growth comes with higher inequality, some people may not benefit. Also, if growth causes environmental damage like pollution, this reduces wellbeing for some people. Another issue is that GDP does not measure everything &#8212; it doesn\'t include leisure time or happiness. So while growth usually improves living standards, it depends on who benefits and whether it causes negative side effects.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Kezia</strong> gives the stronger answer. She opens by acknowledging the validity of the view before systematically challenging the word \'always\' &#8212; the analytical move examiners look for. She provides four distinct counterarguments with specific evidence: 2010-19 wage stagnation data, the Kuznets environmental distinction (local vs CO₂), composition issue with specific examples (oil-spill), and the Easterlin paradox. She concludes by distinguishing types of growth. Dan makes the same core points but without named economists, without specific data, without the type-of-growth distinction, and with only vague \'some people\' framing. The systematic evidence-based structure is the A* hallmark.'
-      },
-
-      /* 4 &#8212; Para fill: supply shock policy dilemma */
+      /* 3 &#8212; Para fill: supply shock policy dilemma */
       { type: 'para_fill',
         stem: 'Complete the paragraph about the policy dilemma from a negative supply shock.',
         anchor: 'A negative supply shock creates the hardest macroeconomic policy problem.',
@@ -89,7 +74,7 @@
         exp: '(1) <strong>Left</strong>: leftward SRAS shift &#8212; higher costs at each output level. (2) <strong>Falling</strong>: output falls as costs rise. (3) <strong>Rising</strong>: inflation rises as prices increase with costs. (4) <strong>Stagflation</strong>: the simultaneous rise in inflation and unemployment. (5) <strong>Raises</strong>: tightening fights inflation. (6) <strong>Output gap</strong>: tightening deepens the negative output gap. (7) <strong>Cuts</strong>: easing protects output. (8) <strong>Supply-side</strong>: only supply-side interventions (SRAS shifting right) can reduce costs while raising output, addressing both problems. The 2022 UK episode &#8212; energy subsidies (energy price guarantee) acting alongside rate rises &#8212; was an attempt to use both tools.'
       },
 
-      /* 5 &#8212; Multi-select: leading indicators */
+      /* 4 &#8212; Multi-select: leading indicators */
       { type: 'multi_select',
         stem: 'Which of the following are <strong>leading indicators</strong> of the trade cycle &#8212; data that changes <em>before</em> GDP moves?',
         opts: [
@@ -104,7 +89,7 @@
         exp: 'Leading indicators: PMI (changes 1-3 months before GDP), consumer confidence surveys (forward-looking), the yield curve (inverted curve has predicted all post-war US recessions, with 6-18 month lead), and business investment announcements. <strong>Lagging indicators</strong>: unemployment (firms wait to hire/fire until recovery is confirmed &#8212; peaks after GDP trough); GDP data itself (published with delay, reflects past activity). A* answers explain the timing asymmetry: policymakers use leading indicators to anticipate the cycle, but cannot respond until lagging data confirms the diagnosis &#8212; contributing to policy lags.'
       },
 
-      /* 6 &#8212; MCQ: Okun's Law */
+      /* 5 &#8212; MCQ: Okun's Law */
       { type: 'mcq',
         stem: '<strong>Okun\'s Law</strong> states that approximately 2% of GDP growth above trend reduces unemployment by about 1 percentage point. If UK trend growth is 2% and actual growth is 4% (2% above trend), what does Okun\'s Law predict?',
         opts: [
@@ -117,7 +102,7 @@
         exp: 'Okun\'s Law: ~2% above-trend growth → ~1pp fall in unemployment. With actual growth at 4% and trend at 2%, growth is 2pp above trend → unemployment falls by approximately <strong>1 percentage point</strong>. This is the empirical relationship between GDP and labour market absorption. A* answers note the caveats: (1) Okun\'s Law is an approximation &#8212; the coefficient varies across cycles; (2) \'jobless growth\' (capital-intensive, technology-replacing) can occur &#8212; GDP rises without proportionate job creation; (3) structural unemployment can persist alongside GDP growth if skills mismatch is severe.'
       },
 
-      /* 7 &#8212; Odd one out */
+      /* 6 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these are potential <strong>costs of economic growth</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -130,7 +115,7 @@
         exp: 'The odd one out is option B. Rising tax revenues are a <strong>benefit</strong> of economic growth &#8212; they give governments more fiscal space for public services, infrastructure, and welfare without raising tax rates. This is precisely one of the arguments in favour of prioritising growth. The other three are genuine costs: (A) environmental impact &#8212; the growth-carbon tension central to modern policy debates; (C) inequality &#8212; the Kuznets curve\'s rising phase; (D) transitional unemployment &#8212; structural change creates winners and losers even when the economy overall gains.'
       },
 
-      /* 8 &#8212; Data table: UK growth performance */
+      /* 7 &#8212; Data table: UK growth performance */
       { type: 'data_table',
         stem: 'The table shows UK economic growth performance across different periods.',
         headers: ['Period', 'Average real GDP growth', 'Key characteristics'],
@@ -151,6 +136,21 @@
         exp: 'The data shows a declining trend in UK average growth across periods. The post-2008 period (~1.5%) and post-2020 period (~0.5%) represent significant underperformance relative to the UK\'s historical trend (~2-2.5%). The productivity puzzle &#8212; output per worker growing at only ~0.3%/year since 2008 vs ~2%/year before &#8212; is the deepest structural explanation, suggesting the supply-side capacity to convert AD into non-inflationary growth has weakened. Option B and C make dogmatic claims about policy approaches that the data cannot fully support. Option D dismisses domestic policy excessively &#8212; productivity, investment, and Brexit are partly within policy control.'
       },
 
+      /* 8 &#8212; Multi-select: evaluation of economic growth and living standards */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>whether economic growth always improves living standards</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+        opts: [
+          'Growth improved average material living standards in the UK between 2010 and 2019, but the Gini coefficient rose and median real wages stagnated — this distributional evidence suggests GDP per capita is an unreliable welfare proxy when the gains are concentrated among high earners.',
+          'The Environmental Kuznets Curve supports the view that growth eventually improves environmental quality for local pollutants like SO&#x2082;, but the absence of a similar turning point for CO&#x2082; means growth alone cannot be relied upon to resolve climate change without explicit carbon pricing.',
+          'Economic growth improves living standards because it raises GDP, which means more goods and services are available.',
+          'The Easterlin paradox — stable life satisfaction despite decades of rising real incomes — suggests that once basic material needs are met, further GDP growth contributes diminishing marginal welfare gains, so the case for prioritising growth weakens at higher income levels.',
+          'Whether growth improves living standards depends on many factors including distribution, the environment, and what GDP measures.',
+          'Economic growth is always good because it reduces unemployment and increases tax revenue for public services.'
+        ],
+        correct: [0, 1, 3],
+        exp: '<strong>Option A</strong> is strong evaluation: it accepts that growth raised average incomes but uses distributional evidence (stagnant median wages, rising Gini 2010–19) to reach the qualified conclusion that GDP per capita is an unreliable welfare proxy. This is a specific, evidence-grounded challenge to the proposition — not a blanket rejection. <strong>Option B</strong> is strong evaluation: it makes a distinction within the EKC hypothesis (works for local pollutants, not CO&#x2082;), uses that distinction to reach a directional conclusion (growth alone insufficient for climate), and implies a policy response (carbon pricing). This is the kind of conditional, evidence-based direction that earns Level 4. <strong>Option D</strong> is strong evaluation: it applies the Easterlin paradox to derive a directional conclusion — diminishing marginal welfare gains from growth at higher income levels weakens the case for prioritising growth. This is a named-economist argument with a clear implication. <strong>Option C</strong> is pure description — it states what growth does with no weighing, qualification, or counter-argument. <strong>Option E</strong> is a formulaic "it depends" with a list of relevant factors but no direction, no framework, and no conclusion — a structural substitute for evaluation that earns few marks. <strong>Option F</strong> is one-sided advocacy with no acknowledgement of costs — exactly the kind of analysis the exam question is designed to probe beyond.'
+      },
+
       /* 9 &#8212; MCQ: Environmental Kuznets Curve */
       { type: 'mcq',
         stem: 'The <strong>Environmental Kuznets Curve (EKC)</strong> predicts that pollution first rises then falls as income grows. Which statement best evaluates this relationship?',
@@ -164,7 +164,7 @@
         exp: 'The EKC has <strong>mixed evidence</strong>: it works reasonably well for local air and water pollutants (SO&#x2082;, particulates) where richer countries invest in abatement technology. But CO&#x2082; and greenhouse gas emissions do not clearly follow the EKC &#8212; high-income countries remain the largest per-capita emitters. This distinction is the A* analytical point: the EKC may \'work\' for problems where the costs are locally borne (clean local air) but not for global public goods (stable climate) where the externality is diffuse and market mechanisms fail. Without explicit carbon pricing or regulation, growth cannot be assumed to solve climate change.'
       },
 
-      /* 10 &#8212; Chain: from recession to recovery */
+      /* 10 &#8212; Chain: recession to recovery */
       { type: 'chain',
         stem: 'Place the events in the correct order to describe a complete <strong>demand-led recession and recovery</strong> cycle.',
         items: [

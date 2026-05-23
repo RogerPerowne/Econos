@@ -83,22 +83,7 @@
         exp: 'The three fundamental questions are <strong>What, How, and For Whom</strong>. These are forced on every economy by scarcity. "When to produce" is not one of the three (it is a macroeconomic stabilisation issue, not a fundamental allocation question). "Why to produce" is a philosophical question outside the standard economic framework. Different systems answer the three questions differently: free markets use price signals; command economies use directives; mixed economies use both.'
       },
 
-      /* 5 &#8212; Diagnostic pair: positive vs normative */
-      { type: 'diagnostic_pair',
-        stem: 'A teacher asks students to identify which statements are <strong>positive</strong> and which are <strong>normative</strong>. Which student gives the more precise and complete answer?',
-        students: [
-          { name: 'Priya', badge: 'Candidate A',
-            answer: 'Statement 1 &#8212; "UK unemployment was 4.2% in January 2025" &#8212; is <strong>positive</strong>: it is a factual, measurable claim about the world as it is, testable against official ONS data. Statement 2 &#8212; "The government should raise the minimum wage to &#163;15 per hour to reduce inequality" &#8212; is <strong>normative</strong>: it contains a value judgement ("should") about what policy ought to be, which cannot be resolved purely by evidence. People with identical economic knowledge can disagree because they hold different values about the trade-off between equality and employment. Many policy debates contain both elements: the positive claim that raising the minimum wage reduces employment is testable; the normative claim that we should raise it anyway for equity reasons is not.'
-          },
-          { name: 'Ben', badge: 'Candidate B',
-            answer: 'Positive statements are about facts and normative statements are about opinions. "Unemployment was 4.2%" is positive because it is a fact you can check. "The government should raise the minimum wage" is normative because it is an opinion about what the government should do. Different people have different opinions about this because they have different values. Economists try to be objective and use evidence but sometimes they cannot agree because the questions involve values.'
-          }
-        ],
-        ans: 0,
-        exp: '<strong>Priya</strong> gives the stronger answer. She names the specific test that distinguishes positive from normative (testability against evidence), links to the ONS as the authoritative source, and explains precisely <em>why</em> normative statements cannot be resolved by evidence alone (value judgements, not knowledge gaps). She also notes that policy debates often contain both elements &#8212; a sophisticated observation. Ben captures the same idea in lay language but lacks the analytical framework: he uses "fact vs opinion" rather than "testable vs value-laden," and does not explain what "values" means in this context. Priya would access Level 3&#8211;4; Ben Level 2.'
-      },
-
-      /* 6 &#8212; Para fill: rational decision-making */
+      /* 5 &#8212; Para fill: rational decision-making */
       { type: 'para_fill',
         stem: 'Complete the analytical paragraph about rational decision-making by selecting the correct term for each blank.',
         anchor: 'Traditional economic theory assumes that agents are rational maximisers.',
@@ -115,7 +100,7 @@
         exp: '(1&#8211;4) The rational consumer optimises at the <strong>margin</strong>: continue as long as MB &#8805; MC; stop when MB = MC. Using "average" or "total" would describe a different (incorrect) decision rule. (5&#8211;6) Firms maximise profit where <strong>MR = MC</strong> (marginal revenue = marginal cost). (7) This is the <strong>marginal</strong> principle: the universal optimising condition in economics. It applies to consumers (MU/P ratio equalised), firms (MR = MC), and governments (MB of intervention = MC of intervention).'
       },
 
-      /* 7 &#8212; Odd one out: economic agents */
+      /* 6 &#8212; Odd one out: economic agents */
       { type: 'odd_one_out',
         stem: 'Three of these are <strong>standard economic agents</strong> covered in microeconomic theory. Which is the <strong>odd one out</strong>?',
         items: [
@@ -128,7 +113,7 @@
         exp: 'The <strong>global climate</strong> is not an economic agent &#8212; it is an environmental resource or externality, not a decision-maker with objectives. The standard economic agents are <strong>consumers</strong> (maximise utility), <strong>firms</strong> (maximise profit), <strong>government</strong> (maximise social welfare / correct market failures), and <strong>workers</strong> (maximise utility including leisure). Households combine consumer and worker roles. The climate matters enormously in economics (externalities, public goods) but it is the context in which agents operate, not an agent itself.'
       },
 
-      /* 8 &#8212; Data table: government spending trade-offs */
+      /* 7 &#8212; Data table: government spending trade-offs */
       { type: 'data_table',
         stem: 'The table shows UK government spending allocations (&#163;bn) across selected departments in a hypothetical spending review.',
         headers: ['Department', 'Current spend (&#163;bn)', 'Proposed spend (&#163;bn)', 'Change'],
@@ -148,6 +133,21 @@
         ],
         ans: 0,
         exp: 'Opportunity cost applies to <em>all</em> economic agents, including governments. Increasing NHS spending by &#163;18bn while cutting transport (&#8722;&#163;8bn) and education (&#8722;&#163;5bn) illustrates the trade-off: the main opportunity cost of more health spending is the infrastructure improvements and educational investment that are forgone. Monetary cost (&#163;18bn) is the explicit cost, not the opportunity cost. Governments do face borrowing constraints and always face scarcity &#8212; the spending review process exists precisely to manage these trade-offs.'
+      },
+
+      /* 8 &#8212; Multi-select: evaluation of the basic economic problem */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>the basic economic problem and how societies allocate scarce resources</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        opts: [
+          'Free markets answer the three fundamental economic questions through the price mechanism, but may produce outcomes that are allocatively efficient yet deeply inequitable &#8212; meaning that efficiency and equity are often competing objectives that require normative judgement to weigh against each other',
+          'All economies face the basic economic problem of scarcity because human wants are unlimited but resources are finite',
+          'The opportunity cost of any resource allocation decision is not fixed &#8212; it changes as circumstances change: the opportunity cost of spending &#163;20bn on defence differs in peacetime from wartime, making context essential to any evaluation of government spending choices',
+          'Opportunity cost is the value of the next best alternative forgone when a decision is made',
+          'Whether a market or planned economy better solves the basic economic problem cannot be answered in the abstract: historical evidence (Soviet planning failures, market failures in healthcare) suggests both systems have systematic weaknesses, and the best outcome typically involves a mixed economy that combines price signals with corrective intervention',
+          'Positive economics is about facts while normative economics is about opinions'
+        ],
+        correct: [0, 2, 4],
+        exp: 'Option A is strong evaluation: it identifies a genuine tension between two policy objectives (efficiency vs equity), explains that the tension requires a normative judgement rather than a purely economic answer, and thereby limits the scope of any claim that free markets &#8220;solve&#8221; the allocation problem &#8212; this is a qualifying, direction-giving move. Option C is strong evaluation: it challenges the implicit assumption that opportunity cost is a fixed datum, demonstrates that context changes the ranking of alternatives, and uses a concrete contrast (peacetime vs wartime defence) to reach a directional conclusion about the importance of context &#8212; exactly the sophistication examiners reward. Option E is strong evaluation: it explicitly refuses to answer a comparative question in the abstract, marshals historical evidence from both systems to demonstrate systematic failure on each side, and reaches a qualified conclusion (mixed economy) &#8212; this is conditional evaluation at its best. Option B is pure description &#8212; it defines scarcity without any qualifying, weighing, or conditional reasoning. Option D is a definitional statement of opportunity cost &#8212; knowledge content, not evaluation. Option F describes the positive/normative distinction without applying it, qualifying it, or using it to reach any conclusion.'
       },
 
       /* 9 &#8212; MCQ: micro vs macro */

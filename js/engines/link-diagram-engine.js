@@ -80,7 +80,7 @@
         + '</div>';
     }
 
-    /* ── AD/AS Diagram SVG — data-driven renderer ──
+    /* ── Diagram SVG — data-driven renderer ──
        DATA.diagram specifies:
          xLabel / yLabel   : axis titles
          lines[]           : { x1,y1,x2,y2, stroke, strokeWidth, label,labelX,labelY,labelFill }
@@ -321,11 +321,103 @@
         + '</svg>';
     }
 
+    /* ── Micro (supply/demand) thumbnails ──
+       Thumbnail chart area: x=[21,113], y=[6,84]. Axes at x=20 (vertical) / y=85 (horizontal).
+       S (blue, upward slope): (35,84)→(100,10).  D (green, downward): (22,10)→(108,78).
+       E₁ intersection ≈ (68,46).  Shifted curve is dashed at 0.6 opacity. */
+    function thumbSRight() {
+      /* Supply shifts right: P↓, Q↑ — E₂≈(80,56) */
+      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+        + thumbDefs('clip-sr', 'arr-sr', '#2563eb')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-sr)">'
+          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="55" y1="84" x2="120" y2="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
+        + '</g>'
+        + '<circle cx="68" cy="46" r="5" fill="white"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#2563eb"/>'
+        + '<circle cx="80" cy="56" r="5" fill="white"/>'
+        + '<circle cx="80" cy="56" r="3" fill="#2563eb" opacity="0.6"/>'
+        + '<text x="55" y="42" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="83" y="65" font-size="9" font-weight="600" fill="#2563eb" opacity="0.8">E₂</text>'
+        /* Arrow at y=30 from S₁ (x≈78) to S₂ (x≈98), 4px buffer */
+        + '<line x1="82" y1="30" x2="93" y2="30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-sr)"/>'
+        + '</svg>';
+    }
+
+    function thumbSLeft() {
+      /* Supply shifts left: P↑, Q↓ — E₂≈(57,38) */
+      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+        + thumbDefs('clip-sl', 'arr-sl', '#2563eb')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-sl)">'
+          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="17" y1="84" x2="82"  y2="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
+        + '</g>'
+        + '<circle cx="68" cy="46" r="5" fill="white"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#2563eb"/>'
+        + '<circle cx="57" cy="38" r="5" fill="white"/>'
+        + '<circle cx="57" cy="38" r="3" fill="#2563eb" opacity="0.6"/>'
+        + '<text x="71" y="54" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="44" y="35" font-size="9" font-weight="600" fill="#2563eb" opacity="0.8">E₂</text>'
+        /* Arrow at y=30 from S₁ (x≈78) to S₂ (x≈60), 4px buffer, points left */
+        + '<line x1="74" y1="30" x2="64" y2="30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-sl)"/>'
+        + '</svg>';
+    }
+
+    function thumbDRight() {
+      /* Demand shifts right: P↑, Q↑ — E₂≈(76,37) */
+      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+        + thumbDefs('clip-dr', 'arr-dr', '#059669')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-dr)">'
+          + '<line x1="35"  y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="22"  y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
+          + '<line x1="42"  y1="10" x2="128" y2="78" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+        + '</g>'
+        + '<circle cx="68" cy="46" r="5" fill="white"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#059669"/>'
+        + '<circle cx="76" cy="37" r="5" fill="white"/>'
+        + '<circle cx="76" cy="37" r="3" fill="#059669" opacity="0.6"/>'
+        + '<text x="55" y="56" font-size="9" font-weight="600" fill="#059669">E₁</text>'
+        + '<text x="79" y="34" font-size="9" font-weight="600" fill="#059669" opacity="0.8">E₂</text>'
+        /* Arrow at y=26 from D₁ (x≈47) to D₂ (x≈67), 4px buffer, points right */
+        + '<line x1="51" y1="26" x2="62" y2="26" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-dr)"/>'
+        + '</svg>';
+    }
+
+    function thumbDLeft() {
+      /* Demand shifts left: P↓, Q↓ — E₂≈(61,55) */
+      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+        + thumbDefs('clip-dl', 'arr-dl', '#059669')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-dl)">'
+          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
+          + '<line x1="4"  y1="10" x2="90"  y2="78" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+        + '</g>'
+        + '<circle cx="68" cy="46" r="5" fill="white"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#059669"/>'
+        + '<circle cx="61" cy="55" r="5" fill="white"/>'
+        + '<circle cx="61" cy="55" r="3" fill="#059669" opacity="0.6"/>'
+        + '<text x="71" y="43" font-size="9" font-weight="600" fill="#059669">E₁</text>'
+        + '<text x="46" y="68" font-size="9" font-weight="600" fill="#059669" opacity="0.8">E₂</text>'
+        /* Arrow at y=26 from D₁ (x≈47) to D₂ (x≈29), 4px buffer, points left */
+        + '<line x1="43" y1="26" x2="33" y2="26" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-dl)"/>'
+        + '</svg>';
+    }
+
     var THUMBS = {
       'sras-left':  thumbSRASLeft,
       'ad-right':   thumbADRight,
       'lras-right': thumbLRASRight,
-      'ad-left':    thumbADLeft
+      'ad-left':    thumbADLeft,
+      's-right':    thumbSRight,
+      's-left':     thumbSLeft,
+      'd-right':    thumbDRight,
+      'd-left':     thumbDLeft
     };
 
     /* ── Stage 0: Select the Diagram ── */
@@ -576,12 +668,19 @@
     }
 
     function renderDiagLegend() {
-      return ''
-        + '<div class="diag-legend">'
-        +   '<span class="diag-legend__item"><span class="diag-legend__line" style="background:#2563eb"></span>SRAS = Short-run Aggregate Supply</span>'
-        +   '<span class="diag-legend__item"><span class="diag-legend__line" style="background:#374151"></span>LRAS = Long-run Aggregate Supply</span>'
-        +   '<span class="diag-legend__item"><span class="diag-legend__line" style="background:#059669"></span>AD = Aggregate Demand</span>'
-        + '</div>';
+      var D = DATA.diagram || {};
+      var items;
+      if (D.legend && D.legend.length) {
+        items = D.legend.map(function (l) {
+          return '<span class="diag-legend__item"><span class="diag-legend__line" style="background:' + l.color + '"></span>' + l.text + '</span>';
+        }).join('');
+      } else {
+        /* Default: AD/AS macro legend (backwards-compatible) */
+        items = '<span class="diag-legend__item"><span class="diag-legend__line" style="background:#2563eb"></span>SRAS = Short-run Aggregate Supply</span>'
+              + '<span class="diag-legend__item"><span class="diag-legend__line" style="background:#374151"></span>LRAS = Long-run Aggregate Supply</span>'
+              + '<span class="diag-legend__item"><span class="diag-legend__line" style="background:#059669"></span>AD = Aggregate Demand</span>';
+      }
+      return '<div class="diag-legend">' + items + '</div>';
     }
 
     /* ── Right rail ── */

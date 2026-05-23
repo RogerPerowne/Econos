@@ -16,9 +16,9 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Tax → supply shifts UP (higher Pc, lower Pp, lower Q). Subsidy → supply shifts DOWN (lower Pc, higher Pp, higher Q). The wedge between Pc and Pp = the tax or subsidy per unit. The split between consumer and producer depends on elasticity — the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '4 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
-      { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
+      { num: 1, name: 'Learn it', sub: '4 concept cards',          state: 'done',      href: TopicLoader.buildUrl('topic.html')      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills in context',  state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 3, name: 'Land it',  sub: 'Exam paper',               state: 'locked'                                                  }
     ]
   },
   cards: [

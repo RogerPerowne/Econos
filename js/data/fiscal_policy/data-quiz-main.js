@@ -68,7 +68,7 @@
         exp: 'The <strong>deficit is a flow</strong>: how much more the government spends than it raises in tax in a given year. The <strong>debt is a stock</strong>: the accumulation of all past deficits (net of any surpluses) that has never been repaid. Running a &#163;100bn annual deficit adds &#163;100bn to the national debt each year. The UK has run deficits for most of the post-war period, accumulating ~&#163;2.7trn in debt. Debt interest (~&#163;100bn/year) is itself a major spending item &#8212; which widens the deficit further, creating a fiscal self-reinforcing dynamic. The debt-to-GDP ratio (currently ~100%) is the key sustainability metric.'
       },
 
-      /* 5 &#8212; Multi-select: crowding out conditions */
+      /* 4 &#8212; Multi-select: crowding out conditions */
       { type: 'multi_select',
         stem: 'In which of the following circumstances is <strong>crowding out most likely to be significant</strong>, reducing the effectiveness of fiscal stimulus?',
         opts: [
@@ -83,7 +83,7 @@
         exp: 'Crowding out is most significant when: (A) no spare capacity &#8212; extra G competes directly with private sector for real resources; (D) tight financial markets &#8212; government borrowing raises interest rates, reducing private investment; (E) simultaneous monetary tightening &#8212; amplifies the interest rate channel; (F) high-confidence investment climate &#8212; firms are most sensitive to interest rate rises when credit is demanded. Crowding out is <em>minimal</em> in options B and C: in recession with high private saving (loanable funds supply rises), interest rates do not rise much from extra borrowing. At the ZLB with QE, bond purchases offset the crowding-out pressure. The context-dependence of crowding out is the A* evaluation framework.'
       },
 
-      /* 6 &#8212; Para fill: types of government spending */
+      /* 5 &#8212; Para fill: types of government spending */
       { type: 'para_fill',
         stem: 'Complete the paragraph distinguishing types of government spending.',
         anchor: 'UK government spending (~42% of GDP) is composed of several distinct categories with different macroeconomic effects.',
@@ -101,7 +101,7 @@
         exp: '(1) <strong>Current</strong>: day-to-day spending without long-run capacity effects. (2) <strong>Aggregate</strong>: current spending directly adds to AD (G component). (3) <strong>Capital</strong>: investment spending creates infrastructure and assets. (4) <strong>LRAS</strong>: capital spending shifts the productive frontier &#8212; dual demand and supply effect. (5) <strong>Transfer</strong>: welfare payments redistribute income. (6) <strong>GDP</strong>: transfer payments are not government purchases of output &#8212; they do not add to GDP directly (one of the most commonly confused exam points). (7) <strong>Interest</strong>: UK debt interest costs now ~&#163;100bn+/year &#8212; the fastest-growing spending category.'
       },
 
-      /* 7 &#8212; Odd one out */
+      /* 6 &#8212; Odd one out */
       { type: 'odd_one_out',
         stem: 'Three of these are genuine <strong>limitations of discretionary fiscal policy</strong>. Which is the ODD ONE OUT?',
         items: [
@@ -114,7 +114,7 @@
         exp: 'The odd one out is option B. Automatic stabilisers are a <strong>feature</strong> of the fiscal system &#8212; they represent its automatic counter-cyclical capacity. They are not a limitation of discretionary policy; they are a complementary first line of defence that reduces the need for discretionary intervention. The three genuine limitations are: (A) time lags &#8212; the policy may be mistimed; (C) debt sustainability &#8212; repeated stimulus raises the debt burden and may trigger market confidence crises; (D) political economy bias &#8212; the democratic cycle creates systematic bias toward deficits. A* answers note that automatic stabilisers reduce the need for discretionary fiscal policy, thus partially addressing the time lag limitation.'
       },
 
-      /* 8 &#8212; multi_select: evaluating fiscal policy */
+      /* 7 &#8212; multi_select: evaluating fiscal policy */
       { type: 'multi_select',
         stem: 'A student is writing a 25-mark essay on <strong>fiscal policy and its effectiveness as a macroeconomic tool</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
         opts: [
@@ -129,7 +129,7 @@
         exp: '<strong>Options B, D, and E are genuine evaluation moves.</strong> Option B qualifies the multiplier effect: it identifies a specific condition (high household debt) under which the tax-cut multiplier is reduced, and draws a policy implication (direct spending is more effective than tax cuts) — evaluation through conditional reasoning. Option D uses the balanced budget multiplier result to challenge an intuitive but incorrect assumption (neutrality of a balanced budget) and derives an evaluative conclusion: the composition of fiscal policy matters. Option E weighs different types of fiscal instrument against each other using the lag criterion, reaching a directed conclusion about the optimal policy mix — this is evaluation by comparing instruments on a specific criterion. <strong>Option A</strong> describes the mechanism of expansionary fiscal policy — pure description. <strong>Option C</strong> overclaims: crowding out is context-dependent and minimal during recessions with spare capacity or at the zero lower bound — "all circumstances" and "uniformly" are unsupported. <strong>Option F</strong> defines national debt — not evaluation.'
       },
 
-      /* 9 &#8212; Data table: UK fiscal position */
+      /* 8 &#8212; Data table: UK fiscal position */
       { type: 'data_table',
         stem: 'The table shows selected UK fiscal data.',
         headers: ['Year', 'Budget deficit (% GDP)', 'National debt (% GDP)', 'Debt interest (&#163;bn)'],

@@ -127,6 +127,21 @@
         exp: 'Option A is correct. Vaccination generates a <strong>positive externality</strong>: the benefit to society (herd immunity, reduced transmission) exceeds the benefit to the individual. Private individuals base their decision on private benefit (personal protection), ignoring the external benefit they provide to others by being vaccinated. This means private demand lies below social demand, and the free market (without subsidy or mandate) would under-provide vaccination relative to Q*. The WHO 95% herd immunity threshold is effectively Q* for measles. All four vaccines in the table show coverage below Q*, confirming the under-provision prediction. Option B confuses market failure with government failure (and is empirically unsound). Option C misidentifies the direction of the externality. Option D is wrong &mdash; NHS provision is precisely the <em>intervention</em> designed to correct the market failure; the shortfalls show even subsidised provision is insufficient.'
       },
 
+      /* 8 — multi_select: evaluation of negative externalities and market failure */
+      { type: 'multi_select',
+        stem: 'A student is writing a 25-mark essay on <strong>why the free market over-produces goods with negative externalities</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &mdash; as opposed to description or one-sided analysis?',
+        opts: [
+          'The standard externality diagram assumes the MEC is constant and easily measurable, but in practice (e.g. carbon emissions) the MEC is disputed, changes over time, and depends on cumulative stock rather than flow &mdash; which means the Pigouvian tax rate set today may be systematically too low, qualifying the claim that a tax can straightforwardly achieve Q*.',
+          'When a firm produces a negative externality, MSC exceeds MPC, so the market over-produces relative to Q*.',
+          'While Pigouvian taxation can theoretically internalise a negative externality, it is only allocatively efficient if the tax exactly equals the MEC at Q* &mdash; and governments rarely have the information needed to set this rate correctly, making the welfare gain from a poorly calibrated tax uncertain and potentially less than the DWL it is supposed to eliminate.',
+          'The size of the DWL from over-production depends on both the magnitude of the MEC and the elasticities of supply and demand &mdash; industries with inelastic supply and demand (such as energy) generate larger welfare losses from a given externality than industries with elastic responses, qualifying any generalisation about whether market failure is severe.',
+          'Carbon emissions cause global warming.',
+          'The government can use taxes and regulations to correct market failures caused by negative externalities.'
+        ],
+        correct: [0, 2, 3],
+        exp: '<strong>Option A</strong> is genuine evaluation: it challenges the implicit assumption of the standard model (constant, measurable MEC), uses carbon as a specific counter-example, and reaches the direction that real-world calibration of taxes may be systematically flawed &#8212; qualifying the policy prescription. <strong>Option C</strong> is evaluation: it identifies the precise condition under which Pigouvian taxation achieves the welfare gain (tax = MEC at Q*), then argues governments rarely meet this condition, reaching a sceptical qualified direction about the policy\'s effectiveness in practice. <strong>Option D</strong> is evaluation: it uses the relationship between elasticities and DWL size to make the evaluative point that the severity of market failure varies by industry &#8212; reaching a direction about when externalities are most damaging and when intervention is most urgent. <strong>Option B</strong> is description &#8212; restating the core model result (MSC &gt; MPC → over-production) with no qualification, no evidence, no direction beyond the model itself. <strong>Option E</strong> is description of an empirical fact with no analytical content. <strong>Option F</strong> is description of policy tools with no weighing of their effectiveness or conditions under which they work.'
+      },
+
       /* 9 — calculation: DWL triangle size */
       { type: 'calculation',
         context: 'A market has a negative externality. The marginal external cost (MEC) is constant at <strong>&pound;10 per unit</strong>. At the free-market quantity of <strong>Qm = 200 units</strong>, the social optimum is <strong>Q* = 160 units</strong>.',
@@ -152,7 +167,7 @@
         exp: 'DWL = &frac12; &times; (Qm &minus; Q*) &times; MEC = &frac12; &times; 40 &times; &pound;10 = <strong>&pound;200</strong>. The triangle arises because the gap between MSC and MSB is zero at Q* and widens to &pound;10 (the constant MEC) by Qm. This is only a triangle because the D (MPB) and S curves are straight lines. With constant MEC (a parallel shift of S to get MSC), the DWL is this neat triangle. Option B computes the rectangle of total external cost on the overproduced units &mdash; the wrong shape. Option C uses the total quantity. When the government imposes a Pigouvian tax of &pound;10/unit, it recovers this &pound;200 DWL for society.'
       },
 
-      /* 10 — mcq: adverse selection vs moral hazard */
+      /* 10 — mcq: adverse selection vs moral hazard (bonus) */
       { type: 'mcq',
         stem: 'Which scenario correctly illustrates <strong>adverse selection</strong> (rather than moral hazard)?',
         opts: [

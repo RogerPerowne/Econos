@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
     tip: 'Market failure does not mean markets "break down" — it means the price mechanism produces the wrong quantity from society\'s perspective. The output is not zero; it is just above or below the socially optimal level.',
     stages: [
       { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },

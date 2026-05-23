@@ -11849,9 +11849,7 @@ window.ECONOS_ICONS = {
   `,
 
   policySpectrumDiagram: `
-    <svg viewBox="0 54 440 406" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
-      <rect width="440" height="460" fill="#F8FAFC" rx="10"/>
-
+    <svg viewBox="0 64 440 168" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <line x1="40" y1="120" x2="400" y2="120" stroke="#CBD5E1" stroke-width="2"/>
       <polygon points="400,114 400,126 410,120" fill="#CBD5E1"/>
       <text x="36" y="142" font-size="9" font-weight="700" fill="#94A3B8">soft</text>
@@ -11894,44 +11892,16 @@ window.ECONOS_ICONS = {
       <text x="384" y="138" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">Regulation</text>
       <text x="384" y="152" font-size="9" text-anchor="middle" fill="#475569">ban / require</text>
 
-      <text x="220" y="184" font-size="11" font-weight="800" text-anchor="middle" fill="#0B1426">UK examples at each level:</text>
       <g font-size="9" fill="#475569">
-        <text x="66" y="202" text-anchor="middle">Calorie labels</text>
-        <text x="66" y="214" text-anchor="middle">on menus</text>
-        <text x="176" y="202" text-anchor="middle">Auto-enrol</text>
-        <text x="176" y="214" text-anchor="middle">into pension</text>
-        <text x="286" y="202" text-anchor="middle">Sugar tax</text>
-        <text x="286" y="214" text-anchor="middle">on drinks</text>
-        <text x="384" y="202" text-anchor="middle">Smoking</text>
-        <text x="384" y="214" text-anchor="middle">indoor ban</text>
+        <text x="66" y="200" text-anchor="middle">Calorie labels</text>
+        <text x="66" y="212" text-anchor="middle">on menus</text>
+        <text x="176" y="200" text-anchor="middle">Auto-enrol</text>
+        <text x="176" y="212" text-anchor="middle">into pension</text>
+        <text x="286" y="200" text-anchor="middle">Sugar tax</text>
+        <text x="286" y="212" text-anchor="middle">on drinks</text>
+        <text x="384" y="200" text-anchor="middle">Smoking</text>
+        <text x="384" y="212" text-anchor="middle">indoor ban</text>
       </g>
-
-      <rect x="20" y="234" width="400" height="92" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
-      <text x="220" y="256" font-size="10.5" font-weight="700" text-anchor="middle" fill="#475569">Choosing the right tool</text>
-      <g font-size="10" fill="#475569">
-        <text x="40" y="278"><tspan font-weight="700" fill="#059669">Information</tspan>: when people just don't know</text>
-        <text x="40" y="294"><tspan font-weight="700" fill="#7c3aed">Nudge</tspan>: when the bias is attention, inertia, or default-stickiness</text>
-        <text x="40" y="310"><tspan font-weight="700" fill="#d97706">Tax / subsidy</tspan>: when there is an externality to price (carbon, sugar)</text>
-        <text x="40" y="326"><tspan font-weight="700" fill="#dc2626">Regulation</tspan>: when harm is severe, addictive, or affects others</text>
-      </g>
-
-      <rect x="20" y="342" width="195" height="106" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="20" y="342" width="4" height="106" rx="2" fill="#059669"/>
-      <text x="118" y="362" font-size="11" font-weight="700" text-anchor="middle" fill="#059669">When a nudge is enough</text>
-      <text x="38" y="380" font-size="9.5" fill="#475569">Auto-enrolment: pension</text>
-      <text x="38" y="394" font-size="9.5" fill="#475569">participation 55% → 87%.</text>
-      <text x="38" y="412" font-size="9" fill="#64748B" font-style="italic">The barrier was inertia,</text>
-      <text x="38" y="426" font-size="9" fill="#64748B" font-style="italic">not money — so a nudge</text>
-      <text x="38" y="440" font-size="9" fill="#64748B" font-style="italic">fit perfectly.</text>
-
-      <rect x="225" y="342" width="195" height="106" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
-      <rect x="225" y="342" width="4" height="106" rx="2" fill="#dc2626"/>
-      <text x="323" y="362" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">When a nudge isn't enough</text>
-      <text x="243" y="380" font-size="9.5" fill="#475569">Carbon at scale, addictive</text>
-      <text x="243" y="394" font-size="9.5" fill="#475569">products, severe poverty.</text>
-      <text x="243" y="412" font-size="9" fill="#64748B" font-style="italic">The binding constraint is</text>
-      <text x="243" y="426" font-size="9" fill="#64748B" font-style="italic">affordability, addiction,</text>
-      <text x="243" y="440" font-size="9" fill="#64748B" font-style="italic">or price — not inertia.</text>
     </svg>
   `,
 
@@ -12172,9 +12142,6 @@ window.ECONOS_ICONS = {
 
   govtFailureDiagram: `
     <svg viewBox="0 0 620 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <!-- Background -->
-      <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
-
       <!-- DWL shading (draw before curves) -->
       <!-- Original market failure DWL (rose): triangle (252,248),(330,218),(252,218) -->
       <polygon points="252,248 330,218 252,218" fill="#FEE2E2" opacity="0.7"/>

@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Consumer surplus = area of triangle above price below demand curve. Producer surplus = area of triangle below price above supply curve. Both are maximised at the free-market equilibrium — any intervention that moves price away from equilibrium reduces total welfare unless it corrects a market failure.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },

@@ -16,9 +16,9 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'The decisive question for any tax or subsidy: does the welfare gain from correcting the market failure exceed the deadweight loss the policy itself creates? If yes → welfare rises. If no → welfare falls. Always identify the underlying market failure first.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '3 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
-      { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
+      { num: 1, name: 'Learn it', sub: '3 concept cards',               state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked'                                                 }
     ]
   },
   cards: [

@@ -17,9 +17,9 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Excess demand → price rises → quantity demanded falls + quantity supplied rises → market clears. Excess supply → price falls → quantity demanded rises + quantity supplied falls → market clears.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
-      { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
+      { num: 1, name: 'Learn it', sub: '7 concept cards',              state: 'done',      href: TopicLoader.buildUrl('topic.html')        },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html')   },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked'                                                     }
     ]
   },
   cards: [

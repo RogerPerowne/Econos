@@ -17,9 +17,9 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
-      { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
+      { num: 1, name: 'Learn it', sub: '7 concept cards',            state: 'done',      href: TopicLoader.buildUrl('topic.html')      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with context',  state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions', state: 'locked'                                                   }
     ]
   },
   cards: [

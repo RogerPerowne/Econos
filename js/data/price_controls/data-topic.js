@@ -141,38 +141,37 @@ window.ECONOS_TOPIC = {
       title: 'Subsidies',
       tip: { icon: '🎁', tone: 'purple', text: 'A <strong>subsidy</strong> is a payment from government to producers (or consumers) that lowers the cost of supply. Supply shifts <em>right</em>, price falls, quantity rises. It is the mirror image of an indirect tax.' },
       interactiveDiagram: {
-        svgKey: 'subsidyDiagramInteractive',
+        svgKey: 'subsidyInteractive',
         label: 'Build the subsidy diagram step by step',
         emoji: '📊',
         layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {
-            label: 'Free market',
-            tone: 'blue',
-            head: 'The free-market baseline',
-            body: 'D and S intersect at P<sub>e</sub>, Q<sub>e</sub>. Total welfare = CS + PS, with no subsidy in place.',
-            analysis: 'The free market under-produces goods with positive externalities (vaccination, education, EV charging infrastructure). A subsidy is the standard tool to push output toward the socially optimal level — it expands quantity past the private market equilibrium.'
-          },
-          {
-            label: 'Subsidy shifts supply',
+            label: 'Subsidy in place',
             tone: 'green',
-            head: 'S shifts right by the subsidy',
-            body: 'Buyers now pay P<sub>1</sub> (lower); sellers receive P<sub>1</sub> + subsidy. Output rises from Q<sub>0</sub> to Q<sub>1</sub>.',
-            analysis: 'The vertical gap between the new and old supply curves equals the per-unit subsidy. Quantity always rises because at every quantity producers now receive more than buyers pay. Common UK examples: solar PV (Smart Export Guarantee), EV purchase grants (now retired), bus operator subsidies, R&D tax credits.'
+            head: 'Subsidy in place — Pc, Pp and £S wedge',
+            body: 'The subsidy shifts supply down to S₁, raising quantity to <strong>Qs</strong>. Consumers pay <strong>Pc</strong> below P₀, while producers receive <strong>Pp</strong> above P₀ once the subsidy is added. The gap between Pp and Pc is the per-unit subsidy, <strong>£S</strong>.',
+            analysis: 'Pp > P₀ > Pc — producers receive more, consumers pay less, and the difference comes from government. The next steps split the wedge into who captures how much, then total it as cost.'
           },
           {
-            label: 'Who benefits?',
-            tone: 'amber',
-            head: 'Both CS and PS expand',
-            body: 'CS rises (buyers pay less); PS rises (sellers receive more per unit and sell more units). <strong>The more inelastic side captures more of the subsidy benefit.</strong>',
-            analysis: 'Incidence works the same way as a tax. If demand is inelastic (e.g. insulin), most of the subsidy passes through to consumers as lower prices. If supply is inelastic (e.g. central London housing), most goes to producers as higher receipts. This is why housing subsidies often inflate land values rather than helping renters.'
+            label: 'Consumer benefit',
+            tone: 'blue',
+            head: 'Step 2 — the consumer benefit',
+            body: 'The <strong style="color:#2563EB">blue rectangle</strong> is the consumer benefit: <strong>(P₀ − Pc) × Qs</strong>. It is the price reduction per unit times the quantity bought at the new lower price.'
           },
           {
-            label: 'Cost to government',
-            tone: 'rose',
-            head: 'Subsidy cost vs welfare gain',
-            body: 'Government spending = subsidy × Q<sub>1</sub>. CS + PS rise by <em>less</em> than this — the gap is DWL from over-consumption beyond the free-market level.',
-            analysis: 'Unless the subsidy corrects a positive externality (MEB > 0), it creates DWL by pushing output past the socially optimal level. <strong>Verdict flips</strong> when MEB exists and is large enough: vaccination subsidies, R&D subsidies and free school meals are usually welfare-improving. <strong>Opportunity cost</strong> always applies — subsidy money cannot also be spent on hospitals or schools.'
+            label: 'Producer benefit',
+            tone: 'green',
+            head: 'Step 3 — the producer benefit',
+            body: 'The <strong style="color:#059669">green rectangle</strong> is the producer benefit: <strong>(Pp − P₀) × Qs</strong>. It is the rise in net price per unit times the quantity sold.',
+            analysis: 'Together the blue and green rectangles partition the subsidy wedge. The relative size depends on elasticity — covered in card 4.'
+          },
+          {
+            label: 'Government cost',
+            tone: 'purple',
+            head: 'Step 4 — total government cost',
+            body: 'The purple-outlined area is total <strong>subsidy cost = £S × Qs</strong>. It is exactly the sum of the consumer and producer benefits — every penny granted to buyers and sellers comes from the Treasury.',
+            analysis: 'Whether this cost delivers value for money — whether £S × Qs is justified by the externality being corrected — is the policy question this topic addresses in the surrounding cards.'
           }
         ]
       },

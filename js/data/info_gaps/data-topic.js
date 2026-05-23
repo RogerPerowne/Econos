@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroBehavioural',
     summary: 'Perfect information is an assumption of competitive markets. When buyers and sellers have different information, markets can unravel entirely (Akerlof\'s market for lemons), produce moral hazard, or systematically underprovide valuable goods.',
-    doInThis: 'Work through 7 cards covering symmetric vs asymmetric information, Akerlof\'s lemons, adverse selection, moral hazard, signalling, information gaps as market failure, and policy responses.',
+    doInThis: 'Work through 7 cards covering symmetric vs asymmetric information, Akerlof\'s lemons, adverse selection, moral hazard, signalling, government responses, and information failure in healthcare.',
     outcomes: [
       'Explain asymmetric information and why it creates market failure',
       'Define and distinguish adverse selection and moral hazard with examples',
@@ -17,113 +17,345 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Asymmetric information: one party knows more than the other. Before the deal → adverse selection risk. After the deal → moral hazard risk. Both lead to market failure.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards', state: 'current' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
   cards: [
+
     {
       id: 'info_gaps_1',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'Information gaps: the big picture',
-      lede: 'When one side of a deal knows more than the other, even competitive markets can unravel.',
-      tip: 'Adverse selection = wrong people selected BEFORE the deal (ex-ante). Moral hazard = bad behaviour AFTER the deal (ex-post). Adverse selection → market composition problem. Moral hazard → behaviour change problem.',
-      branches: [
-        { tone: 'green',  label: 'Imperfect vs asymmetric', sub: 'All information is imperfect — but asymmetry (one party systematically knows more) is the source of failure.' },
-        { tone: 'rose',   label: 'Adverse selection',       sub: 'Akerlof\'s "lemons": hidden quality before a deal drives good goods out of the market.' },
-        { tone: 'amber',  label: 'Moral hazard',            sub: 'Hidden action <em>after</em> a deal — insured drivers take more risks, banks underwrite riskier loans.' },
-        { tone: 'blue',   label: 'Market solutions',        sub: 'Signalling (degrees, warranties) and screening (insurance excesses, credit checks) help reveal hidden information.' },
-        { tone: 'purple', label: 'Government responses',    sub: 'Mandatory disclosure, regulation, public provision — especially in healthcare and financial services.' }
+      tip: { icon: '💡', tone: 'blue', text: 'Information gaps are a type of market failure. They occur when one party in a transaction has more or better information than the other. This leads to poor decisions, lower trust, and inefficient outcomes.' },
+      flowTitle: 'The big picture: five key areas',
+      flowEmoji: '🗺️',
+      flow: [
+        { icon: '⚖️', tone: 'blue',   title: 'Imperfect vs asymmetric information', sub: 'Imperfect information means both sides lack some facts. Asymmetric information means one side knows more than the other.' },
+        { icon: '🔍', tone: 'amber',  title: 'Adverse selection',                   sub: 'An ex-ante information problem — hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
+        { icon: '🛡️', tone: 'rose',   title: 'Moral hazard',                        sub: 'An ex-post information problem — behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
+        { icon: '📢', tone: 'green',  title: 'Private market solutions',            sub: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
+        { icon: '🏛️', tone: 'purple', title: 'Government responses',               sub: 'Governments can improve outcomes through disclosure, regulation, provision of information, and behavioural nudges.' }
       ],
-      body: 'Standard market theory assumes <strong>perfect information</strong>: all buyers and sellers know prices, quality, and each other\'s characteristics. In reality, information is often:<br><br>• <strong>Imperfect:</strong> no one has complete information (normal and manageable)<br>• <strong>Asymmetric:</strong> one party systematically knows more than the other — this creates market failure<br>• <strong>Hidden action:</strong> one party cannot observe the other\'s behaviour after a deal<br><br>Asymmetric information problems arise in: used car markets, insurance, labour markets, healthcare, financial services, and credit markets. They lead to inefficient outcomes even when markets are competitive.',
-      keyTerms: [
-        { term: 'Asymmetric information', def: 'One party to a transaction has systematically better information than the other — creates market failure.' },
-        { term: 'Information failure', def: 'A market failure caused by imperfect or asymmetric information leading to inefficient resource allocation.' },
-        { term: 'Perfect information', def: 'The assumption that all market participants know all relevant facts — a theoretical ideal rarely met in practice.' }
+      causesLabel: 'The logic flow',
+      causesEmoji: '➡️',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: 'ℹ️', tone: 'blue',  head: 'Information gap',              body: 'One side has more or better information' },
+        { icon: '⚠️', tone: 'amber', head: 'Poor decisions / missing trust', body: 'Wrong choices, higher risk, lower willingness to trade' },
+        { icon: '📉', tone: 'rose',  head: 'Market failure',               body: 'Inefficient outcomes, reduced welfare, lower trust in markets' }
+      ],
+      causes2Label: 'Why this matters',
+      causes2Emoji: '⭐',
+      causes2: [
+        { icon: '📉', tone: 'rose',  head: 'Markets may unravel',               body: 'Loss of trust can cause good markets to break down.' },
+        { icon: '🏆', tone: 'amber', head: 'Good products can be driven out',    body: 'Bad products survive when information is hidden.' },
+        { icon: '🏛️', tone: 'blue',  head: 'Government may need to intervene',  body: 'To correct failures and protect consumers.' }
       ],
       examEdge: 'Information failure is distinct from other market failures: it does not necessarily involve externalities or public goods. The market may be perfectly competitive and yet produce inefficient outcomes because information is unequally distributed. Identifying this as a separate cause of market failure is analytically important.'
     },
+
     {
       id: 'info_gaps_2',
-      template: 'framing',
-      diagramKey: 'lemonMarketDiagram',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Akerlof\'s Market for Lemons',
-      body: 'George Akerlof\'s 1970 paper "The Market for Lemons" showed how asymmetric information can destroy entire markets.<br><br><strong>Used cars example:</strong><br>• Sellers know the quality of their car ("peach" or "lemon")<br>• Buyers cannot distinguish quality before purchase<br>• Buyers offer an average price reflecting average quality<br>• Sellers of peaches (high quality) find the average price too low — they withdraw<br>• Market now only has lemons — average quality falls<br>• Buyers lower their offer price further — more peaches exit<br>• Market unravels until only lemons remain or the market collapses entirely<br><br>The result: a market that should function destroys itself due to information asymmetry.',
-      keyTerms: [
-        { term: 'Lemons problem', def: 'Akerlof\'s model: information asymmetry causes quality goods to exit the market as buyers cannot distinguish them from bad goods.' },
-        { term: 'Adverse selection', def: 'When asymmetric information causes systematically worse options to be selected — bad goods crowd out good goods.' },
-        { term: 'Market unravelling', def: 'The process by which adverse selection progressively destroys a market — progressively worse average quality as good sellers exit.' }
+      tip: { icon: '💡', tone: 'blue', text: 'In Akerlof\'s used car market, sellers know the true quality of their cars, but buyers do not. Because of this information gap, buyers only pay an average price. This pushes high-quality sellers out of the market, leaving only low-quality ("lemons") cars. The market can unravel and shrink.' },
+      flowTitle: 'How the market unravels — 5 stages',
+      flowEmoji: '🚗',
+      flow: [
+        { icon: '🚗', tone: 'blue',   title: 'Seller knows quality',                  sub: 'Seller knows whether the car is high quality ("peach") or low quality ("lemon").' },
+        { icon: '❓', tone: 'amber',  title: 'Buyer cannot tell good car from lemon', sub: 'Buyer cannot observe quality — both cars look the same.' },
+        { icon: '💰', tone: 'green',  title: 'Buyer offers average price',            sub: 'Buyer offers one average price based on expected quality.' },
+        { icon: '🚘', tone: 'rose',   title: 'Good sellers exit market',              sub: 'Average price is too low for good cars, so high-quality sellers leave.' },
+        { icon: '🚕', tone: 'purple', title: 'Only lemons remain / market shrinks',   sub: 'Only low-quality cars remain. Fewer buyers enter → the market shrinks or collapses.' }
       ],
-      examEdge: 'Akerlof\'s model applies beyond cars: insurance (unhealthy individuals select into health insurance; the "pool" worsens, premiums rise, healthy people exit, pool worsens further — adverse selection spiral). Credit markets: high-risk borrowers seek credit most avidly. Financial securities: sellers know more about quality than buyers (e.g. mortgage-backed securities pre-2008).'
+      rowsHeader: 'Worked example',
+      colA: 'Buyer\'s estimate of value',
+      colB: 'Outcome at average price (£5,000)',
+      rows: [
+        { label: '🚙 Peach', colA: '£8,000 (high quality). Seller\'s minimum acceptable price: £7,000.', colB: '❌ Seller exits — offer is below cost. Loss at £5,000.' },
+        { label: '🚕 Lemon', colA: '£2,000 (low quality). Seller\'s minimum acceptable price: £1,000.', colB: '✅ Seller stays — profit at £5,000. Only lemons remain.' }
+      ],
+      footer: 'Average price offered = £5,000. Too low for the peach seller (needs £7,000), so only lemons remain in the market.',
+      causes2Label: 'Applications: information gaps in other markets',
+      causes2Emoji: '🌐',
+      causes2: [
+        { icon: '☂️', tone: 'amber', head: 'Insurance',                           body: 'People with higher risk are more likely to buy insurance → average risk rises → premiums rise → low-risk people leave → adverse selection spiral.' },
+        { icon: '🏛️', tone: 'blue',  head: 'Credit markets',                     body: 'High-risk borrowers are more likely to borrow → average risk rises → lenders charge higher rates → low-risk borrowers stop applying.' },
+        { icon: '🏠', tone: 'rose',  head: 'Mortgage-backed securities (pre-2008)', body: 'Hidden default risk in complex products led to overpricing and eventual market collapse.' }
+      ],
+      keyTerms: [
+        { term: 'Lemons problem',    def: 'Akerlof\'s model: asymmetric information causes quality goods to exit the market as buyers cannot distinguish them from bad goods.' },
+        { term: 'Adverse selection', def: 'When asymmetric information causes systematically worse options to be selected — bad goods crowd out good goods.' },
+        { term: 'Market unravelling', def: 'Progressive market destruction as adverse selection causes progressively worse average quality and good sellers exit.' }
+      ],
+      examEdge: 'Akerlof\'s model applies beyond cars: insurance markets (unhealthy individuals select in; premiums rise; healthy people exit — adverse selection spiral), credit markets (high-risk borrowers seek credit most avidly), and pre-2008 mortgage-backed securities (sellers knew more about quality than buyers). Nobel Prize 2001.'
     },
+
     {
       id: 'info_gaps_3',
-      template: 'cause',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Adverse Selection: Examples',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '📊',
+      tip: { icon: '⚖️', tone: 'amber', text: 'Adverse selection is an ex-ante information problem: before a transaction, one side cannot tell high risk from low risk, or high quality from low quality.' },
       causesLabel: 'Where adverse selection occurs',
+      causesEmoji: '📊',
+      causesStyle: 'tinted-flat',
       causes: [
-        { icon: '🏥', head: 'Insurance markets', body: 'People who know they are high-risk are most eager to buy insurance. Insurers cannot perfectly distinguish high from low risk → set premiums at the average → low-risk individuals find insurance overpriced → exit → pool worsens → premiums rise further → adverse selection spiral. NHS universal coverage partly avoids this by pooling all risks compulsorily.' },
-        { icon: '💳', head: 'Credit markets', body: 'High-risk borrowers want credit most; banks cannot perfectly identify risk → charge average rate → low-risk borrowers may opt out → average borrower risk rises → bank raises rates → adverse selection. Credit scoring, collateral, and credit history requirements are attempts to screen.' },
-        { icon: '👔', head: 'Labour markets', body: 'Firms cannot observe worker productivity before hiring → offer average wage → best workers (knowing their quality) may find average wage insufficient → exit labour market for that employer → average quality of applicants falls → classic adverse selection.' },
-        { icon: '🚗', head: 'Used goods markets', body: 'Used electronics, houses, and cars: seller knows history; buyer cannot verify. Results in price discounts for goods without quality certification — even if genuinely high quality. Market undervalues good-quality used goods.' }
+        {
+          icon: '⚖️', tone: 'blue', head: '1. Insurance markets',
+          body: '<span style="font-size:11px;font-weight:800;color:#2563EB;text-transform:uppercase;letter-spacing:0.06em;">Who knows more:</span> Individuals<br><span style="font-size:11px;font-weight:800;color:#2563EB;text-transform:uppercase;letter-spacing:0.06em;">Hidden information:</span> True risk of claim<br><span style="font-size:11px;font-weight:800;color:#2563EB;text-transform:uppercase;letter-spacing:0.06em;">Market distorted by:</span> Higher premiums; market may unravel without action<br><br>Riskier individuals are more likely to buy insurance, so the pool attracts more claims. Premiums rise and low-risk people drop out.<br><br><strong style="color:#2563EB;">Response:</strong> Risk pooling and compulsory insurance (e.g., NHS-style risk sharing).'
+        },
+        {
+          icon: '🏛️', tone: 'green', head: '2. Credit markets',
+          body: '<span style="font-size:11px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.06em;">Who knows more:</span> Borrowers<br><span style="font-size:11px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.06em;">Hidden information:</span> Probability of default<br><span style="font-size:11px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.06em;">Market distorted by:</span> Less credit available or higher borrowing costs<br><br>Risky borrowers may be more likely to seek loans. Lenders face higher defaults and may ration credit or charge higher interest rates.<br><br><strong style="color:#059669;">Response:</strong> Credit scoring, collateral requirements, credit history checks.'
+        },
+        {
+          icon: '👥', tone: 'purple', head: '3. Labour markets',
+          body: '<span style="font-size:11px;font-weight:800;color:#7C3AED;text-transform:uppercase;letter-spacing:0.06em;">Who knows more:</span> Workers<br><span style="font-size:11px;font-weight:800;color:#7C3AED;text-transform:uppercase;letter-spacing:0.06em;">Hidden information:</span> True ability/productivity<br><span style="font-size:11px;font-weight:800;color:#7C3AED;text-transform:uppercase;letter-spacing:0.06em;">Market distorted by:</span> Lower average productivity and lower overall output<br><br>If firms cannot identify talent before hiring, average wages may be set by the less productive workers, driving out the best.<br><br><strong style="color:#7C3AED;">Response:</strong> Screening (education, references, tests), probation periods, signalling.'
+        },
+        {
+          icon: '🏷️', tone: 'amber', head: '4. Used goods markets',
+          body: '<span style="font-size:11px;font-weight:800;color:#D97706;text-transform:uppercase;letter-spacing:0.06em;">Who knows more:</span> Sellers<br><span style="font-size:11px;font-weight:800;color:#D97706;text-transform:uppercase;letter-spacing:0.06em;">Hidden information:</span> True quality/condition<br><span style="font-size:11px;font-weight:800;color:#D97706;text-transform:uppercase;letter-spacing:0.06em;">Market distorted by:</span> Lower prices and reduced variety (market for lemons)<br><br>Without certification or warranties, buyers cannot be sure of quality. Better-quality sellers may leave, leaving mostly low quality.<br><br><strong style="color:#D97706;">Response:</strong> Certification, warranties, third-party inspections, reputational platforms.'
+        }
       ],
-      examEdge: 'Adverse selection occurs BEFORE the contract/transaction (ex-ante). It is about who selects into the market. The policy solution is screening/signalling to reveal private information. This distinguishes it from moral hazard (which occurs after the contract — ex-post).'
+      pairLabel: 'Key distinction',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'amber', icon: '📅', label: 'Adverse selection (ex-ante)',
+        text: 'Before the contract or exchange. Adverse selection occurs before choices are made. One party has private information about their type before the contract is agreed.'
+      },
+      right: {
+        tone: 'blue', icon: '🔍', label: 'Moral hazard (ex-post)',
+        text: 'Contrast: Moral hazard is ex-post. It occurs after the contract, when actions cannot be fully observed by the other party.'
+      },
+      rowsHeader: 'Summary',
+      colA: 'Hidden information',
+      colB: 'Result',
+      colC: 'Typical solution',
+      rows: [
+        { label: '⚖️ Insurance',   colA: 'True risk of claim',           colB: 'Higher premiums; low-risk drop out',      colC: 'Risk pooling; compulsory cover' },
+        { label: '🏛️ Credit',      colA: 'Probability of default',        colB: 'Credit rationing; higher interest rates', colC: 'Credit scoring; collateral; history' },
+        { label: '👥 Labour',       colA: 'True ability/productivity',    colB: 'Average wages; best workers leave',       colC: 'Screening; signalling; probation' },
+        { label: '🏷️ Used goods',  colA: 'True quality/condition',       colB: 'Lower prices; fewer good sellers',        colC: 'Certification; warranties; inspections' }
+      ],
+      examEdge: 'Adverse selection occurs BEFORE the contract/transaction (ex-ante) — it is about who selects into the market. The policy solution is screening or signalling to reveal private information before the deal. This distinguishes it sharply from moral hazard (ex-post — behaviour changes after the contract).'
     },
+
     {
       id: 'info_gaps_4',
-      template: 'framing',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'Moral Hazard',
-      body: '<strong>Moral hazard</strong> occurs when one party takes greater risks because they do not bear the full consequences — they are insulated from the downside. It arises after a contract is in place (ex-post), when the other party cannot observe behaviour.<br><br><strong>Examples:</strong><br>• <em>Insurance:</em> once insured, individuals take less care with their property (car, health) because the cost of loss is now borne by the insurer.<br>• <em>Banking:</em> banks with implicit government bailout guarantees (Too Big to Fail) take excessive risk — profits are privatised, losses are socialised.<br>• <em>Employment:</em> once employed on a permanent contract, workers may reduce effort if monitoring is poor.',
-      keyTerms: [
-        { term: 'Moral hazard', def: 'When having insurance or protection changes behaviour — inducing greater risk-taking because the cost of negative outcomes is partly borne by another.' },
-        { term: 'Ex-post information asymmetry', def: 'After the contract, the party at risk cannot fully observe the behaviour of the insured/hired party.' },
-        { term: 'Too Big to Fail', def: 'When a firm is so systemically important that government will bail it out — creating moral hazard for risk-taking.' }
+      tip: { icon: '💡', tone: 'blue', text: 'Moral hazard is an <strong>ex-post</strong> information asymmetry: once people are insured, protected, or bailed out, they may behave differently because they do not bear the full cost of their actions.' },
+      flowTitle: 'The causal chain',
+      flowEmoji: '⛓️',
+      flow: [
+        { icon: '🛡️', tone: 'blue',   title: 'Protection or insurance', sub: 'Risk is shifted away from the individual.' },
+        { icon: '⏱️', tone: 'amber',  title: 'Weaker incentives',       sub: 'Lower personal cost of risky choices.' },
+        { icon: '⚠️', tone: 'rose',   title: 'Riskier behaviour',       sub: 'More risk-taking becomes likely.' },
+        { icon: '📈', tone: 'purple', title: 'Higher social cost',       sub: 'More claims, bailouts or taxpayer costs.' }
       ],
-      examEdge: 'Banking moral hazard is the most powerful exam example: pre-2008, investment banks knew they were too big to fail → took excessive leverage risks → when losses crystallised, governments bailed them out. Dodd-Frank (US) and UK bank ring-fencing attempts to reduce this moral hazard by making failure possible again.'
+      causesLabel: 'Real-world examples',
+      causesEmoji: '🌍',
+      causesStyle: 'tinted-flat',
+      causes: [
+        {
+          icon: '🚗', tone: 'blue', head: 'Insured drivers take more risks',
+          body: 'Drivers may speed or drive less carefully because the insurer covers some loss.<br><br><strong>Why behaviour changes:</strong> The cost of an accident is partly borne by the insurer, not the driver.'
+        },
+        {
+          icon: '🏛️', tone: 'amber', head: 'Too Big to Fail banks take excessive leverage',
+          body: 'Banks expect to be rescued by the government if things go wrong.<br><br><strong>Why behaviour changes:</strong> Profits are kept by the bank, but large losses are shifted to taxpayers.'
+        },
+        {
+          icon: '💼', tone: 'green', head: 'Permanent employment contracts may weaken effort',
+          body: 'Employees may exert less effort if dismissal is costly and monitoring is weak.<br><br><strong>Why behaviour changes:</strong> The cost of low effort is not fully borne by the employee.'
+        }
+      ],
+      tipLate: {
+        icon: '📋', tone: 'slate',
+        head: 'Case study: 2008 Financial Crisis',
+        text: '<strong>Banks:</strong> Investment banks and lenders took on high leverage and held risky assets.<br><strong>Implicit guarantees:</strong> They expected governments to rescue them if losses mounted.<br><strong>Excessive risk-taking:</strong> The expectation of bailout encouraged riskier lending and complex products.<br><strong>Taxpayer exposure:</strong> Public funds were used to stabilise banks and the financial system.'
+      },
+      pairLabel: 'Key distinction',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'amber', icon: '📅', label: 'Adverse selection',
+        text: 'Before the contract / Hidden type. One party has private information about their type before the contract is agreed.'
+      },
+      right: {
+        tone: 'blue', icon: '🔍', label: 'Moral hazard',
+        text: 'After the contract / Hidden action. One party\'s actions are hidden after the contract is in place.'
+      },
+      lockIn: {
+        title: 'Exam essential',
+        icon: '🎓',
+        items: [
+          'Moral hazard = ex-post (after the contract)',
+          'Protection shifts costs to another party',
+          'TBTF banking is the strongest exam example',
+          'Solution: make failure credible again (ring-fencing, bail-in rules)'
+        ]
+      },
+      examEdge: 'Banking moral hazard is the most powerful exam example: pre-2008, investment banks knew they were too big to fail → took excessive leverage risks → when losses crystallised, governments bailed them out. Dodd-Frank (US) and UK bank ring-fencing attempt to reduce moral hazard by making failure credible again.'
     },
+
     {
       id: 'info_gaps_5',
-      template: 'mechanisms',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Signalling and Screening Solutions',
-      intro: 'When markets fail due to information asymmetry, private solutions emerge to restore information flow.',
-      steps: [
-        { label: '📢 Signalling', text: 'The better-informed party credibly reveals their type. For signalling to work, it must be costly to mimic: education as a signal (Spence) — low-ability workers cannot credibly pretend to have a degree because the cost of completing it is too high. Warranties, brand reputation, guarantees.' },
-        { label: '🔍 Screening', text: 'The less-informed party designs mechanisms to reveal the other\'s type. Insurance deductibles: offering high-deductible/low-premium vs low-deductible/high-premium contracts — low-risk individuals self-select into high-deductible plans.' },
-        { label: '⭐ Reputation mechanisms', text: 'Repeat transactions allow reputation to substitute for direct observation. Airbnb/eBay reviews, TripAdvisor, credit scores all create reputation systems that discipline behaviour.' },
-        { label: '✅ Third-party certification', text: 'MOT certificates, Michelin stars, credit ratings, regulatory approval — independent certification resolves buyer-seller information asymmetry.' }
+      tip: { icon: '💡', tone: 'blue', text: 'Private markets often face information problems: one side knows more than the other. Firms and individuals respond with signalling and screening — strategies that reduce information gaps and improve outcomes.' },
+      comparison: {
+        title: 'Two private solutions',
+        emoji: '⚖️',
+        left: {
+          tone: 'blue', icon: '📢', label: 'Signalling',
+          caption: 'Informed party sends a credible signal.<br>• The informed party takes an action that is costly (or otherwise hard) to fake.<br>• The signal helps the uninformed party infer true quality.'
+        },
+        right: {
+          tone: 'amber', icon: '🔍', label: 'Screening',
+          caption: 'Uninformed party designs choices to sort people.<br>• The uninformed party offers a menu of options.<br>• Different types self-select the option that suits them.'
+        }
+      },
+      causesLabel: 'Four mechanisms in practice',
+      causesEmoji: '🔧',
+      causesStyle: 'tinted-flat',
+      causes: [
+        { icon: '🎓', tone: 'blue',   head: '1. Signalling: Spence\'s education model',  body: 'Education and qualifications are costly to acquire but raise productivity. High-ability workers are more likely to invest, signalling their quality to employers. The signal works because it is harder to fake for low-ability workers.' },
+        { icon: '🛡️', tone: 'amber',  head: '2. Screening: insurance deductibles',       body: 'Higher deductibles discourage high-risk customers (who expect to claim), while low-risk customers choose lower deductibles. The menu of contracts sorts customers by risk type.' },
+        { icon: '⭐', tone: 'green',  head: '3. Reputation systems',                     body: 'Past behaviour becomes information. Airbnb and eBay reviews, and credit scores, build trust and reduce uncertainty. Repeat transactions allow reputation to substitute for direct observation.' },
+        { icon: '✅', tone: 'purple', head: '4. Third-party certification',              body: 'Independent assessments signal quality and safety: MOT tests, Michelin stars, product safety marks, credit ratings. Resolves buyer-seller information asymmetry through trusted verification.' }
       ],
-      examEdge: 'Spence\'s education signalling model: if education is mainly a signal of ability rather than a direct investment in human capital, then its social value is lower than private value — explaining why we might over-invest in education relative to its actual productivity impact. This is an important qualification to the positive externality argument for education subsidies.'
+      rowsHeader: 'Summary',
+      colA: 'Who acts',
+      colB: 'How it reduces the gap',
+      colC: 'Key limitation',
+      rows: [
+        { label: '📢 Signalling',    colA: 'Informed party',           colB: 'Costly action signals true quality',       colC: 'Signals can be faked if not costly' },
+        { label: '🔍 Screening',     colA: 'Uninformed party',         colB: 'Designs choices to sort different types', colC: 'May exclude some good customers' },
+        { label: '⭐ Reputation',    colA: 'Third parties / markets',  colB: 'History reveals type over time',          colC: 'New entrants lack a track record' },
+        { label: '✅ Certification', colA: 'Independent certifier',    colB: 'Trusted verification reduces uncertainty', colC: 'Certification can be costly or captured' }
+      ],
+      lockIn: {
+        title: 'Key insight',
+        icon: '🔑',
+        items: [
+          'Solutions work when signals are credible and hard to fake',
+          'Screening separates types via self-selection',
+          'Reputation systems build information over time',
+          'None is perfect — information gaps persist'
+        ]
+      },
+      examEdge: 'Spence\'s education signalling model: if education is mainly a signal of ability rather than a direct investment in human capital, its social value is lower than its private value — explaining why we might over-invest in education relative to its actual productivity impact. This qualifies the positive externality argument for education subsidies.'
     },
+
     {
       id: 'info_gaps_6',
-      template: 'cause',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Government Responses to Information Failures',
-      causesStyle: 'tinted-flat',
-      causesEmoji: '🏛️',
-      causesLabel: 'Four policy tools',
+      tip: { icon: '💡', tone: 'blue', text: 'When markets suffer from information gaps, private solutions may be insufficient. Governments can intervene to improve transparency, protect consumers and ensure outcomes are efficient and fair.' },
+      causesLabel: 'The policy toolkit',
+      causesEmoji: '🗂️',
       causes: [
-        { icon: '📋', head: 'Mandatory information disclosure', body: 'Require sellers to reveal information: food labelling laws (nutritional information), financial product prospectuses, energy performance certificates for houses. Reduces information asymmetry directly.' },
-        { icon: '📊', head: 'Regulation and standards', body: 'Set minimum quality standards so buyers know the minimum quality they will receive. MOT test, financial services regulation (FCA), food safety standards — protect uninformed consumers.' },
-        { icon: '🏛️', head: 'Public provision', body: 'Where information asymmetry is severe (e.g. complex financial products, medical care), state provision may be preferable to market provision. NHS doctors cannot easily exploit patient ignorance as private doctors potentially could.' },
-        { icon: '💵', head: 'Price controls and restrictions', body: 'Cap interest rates, regulate insurance pricing — prevent exploitation of information advantages by the better-informed party. Limitation: may reduce supply of credit or insurance to high-risk groups.' }
+        {
+          icon: '📋', tone: 'green', head: 'Mandatory disclosure',
+          body: '<strong>What it does:</strong> Forces firms to reveal key information so consumers can make informed choices.<br><strong>Example:</strong> Nutritional labels, financial product key information documents, energy ratings.<br><strong>When it is useful:</strong> When information is hidden but standardised and can be disclosed clearly.'
+        },
+        {
+          icon: '🛡️', tone: 'blue', head: 'Regulation and licensing',
+          body: '<strong>What it does:</strong> Sets rules and entry standards to ensure competence and quality.<br><strong>Example:</strong> Financial advisers, doctors, food safety rules.<br><strong>When it is useful:</strong> When expertise or quality matters and consumers cannot easily judge it.'
+        },
+        {
+          icon: '🏛️', tone: 'purple', head: 'Public provision',
+          body: '<strong>What it does:</strong> Provides the good or service directly, removing market transactions altogether.<br><strong>Example:</strong> NHS provides healthcare, removing some transactions from the market altogether.<br><strong>When it is useful:</strong> When markets would underprovide or access would be unfair.'
+        },
+        {
+          icon: '🧠', tone: 'amber', head: 'Behavioural nudges',
+          body: '<strong>What it does:</strong> Shapes choices without restricting freedom, improving decisions.<br><strong>Example:</strong> Reminders, framing, simplified information, default options (e.g. pension opt-out).<br><strong>When it is useful:</strong> When biases or complexity lead to predictable decision errors.'
+        }
       ],
+      left: {
+        tone: 'green', icon: '⚖️', label: 'When intervention is justified',
+        checks: [
+          { term: 'Severe harm',            body: 'Significant risk to health, safety or financial wellbeing.' },
+          { term: 'Complex products',       body: 'Information is hard to understand or compare.' },
+          { term: 'Vulnerable consumers',   body: 'Consumers lack expertise, power or confidence.' },
+          { term: 'Persistent market failure', body: 'Private solutions have not emerged or are ineffective.' }
+        ]
+      },
+      right: {
+        tone: 'rose', icon: '⚠️', label: 'Risk of government failure',
+        points: [
+          'Poor information → wrong rules or over-regulation.',
+          'Compliance costs → higher prices, less innovation.',
+          'Regulatory capture → firms influence the rules.',
+          'Unintended consequences → create new problems.'
+        ]
+      },
+      lockIn: {
+        title: 'Exam takeaway',
+        icon: '🎓',
+        items: [
+          'Intervention most justified where information gaps are large',
+          'And private solutions are weak or absent',
+          'But intervention itself may create government failure',
+          'Balance the size of market failure vs cost of intervention'
+        ]
+      },
       examEdge: 'FCA regulation in UK financial services addresses multiple information failures: product mis-selling (PPI scandal — banks had information advantage over consumers), insider trading (market participants with private information gain unfair advantage), and pension advice complexity. Regulatory intervention is justified precisely because market mechanisms fail when information is asymmetric.'
     },
+
     {
       id: 'info_gaps_7',
-      template: 'framing',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Information Failure in Healthcare',
-      body: '<strong>Doctor-patient relationship:</strong> Classic information asymmetry — doctors have medical expertise that patients lack. This creates:<br>• <em>Supplier-induced demand:</em> doctors can recommend treatments patients cannot evaluate — potential for over-prescription or unnecessary procedures.<br>• <em>Principal-agent problem:</em> patients (principal) rely on doctors (agent) to act in their interest — but doctors may have financial incentives (in private healthcare) to prescribe more.<br><br><strong>NHS solution:</strong> salaried doctors have weaker financial incentive to over-prescribe. GMC regulation, clinical guidelines, and second-opinion rights reduce moral hazard. Pooled public funding removes the incentive for doctors to exploit patient ignorance for profit.',
-      keyTerms: [
-        { term: 'Supplier-induced demand', def: 'When a supplier uses information advantage to create demand beyond what the consumer would choose with full information — common in healthcare and financial advice.' },
-        { term: 'Principal-agent problem', def: 'When an agent (doctor, financial advisor) has different interests from the principal (patient, client) and exploits information asymmetry — moral hazard for agents.' },
-        { term: 'GMC', def: 'General Medical Council — regulates doctors in UK; a government solution to information asymmetry by certifying doctor quality and disciplining misconduct.' }
+      tip: { icon: '💡', tone: 'blue', text: 'Healthcare markets combine adverse selection, moral hazard, and imperfect information all at once. Because patients, insurers and providers do not have the same information, markets can produce inefficient, unfair or unsustainable outcomes without policy.' },
+      causesLabel: 'Three information problems in healthcare',
+      causesEmoji: '🏥',
+      causesStyle: 'tinted-flat',
+      causes: [
+        {
+          icon: '👥', tone: 'purple', head: '1. Adverse selection',
+          body: 'Unhealthy people are more likely to buy insurance because they expect to claim more. Insurers may raise premiums to cover higher expected costs, causing low-risk people to exit the market.<br><br><strong style="color:#7C3AED;">Result: risk pool worsens and premiums rise further.</strong>'
+        },
+        {
+          icon: '☂️', tone: 'amber', head: '2. Moral hazard',
+          body: 'Once insured, patients may over-consume care (e.g. choose extra tests or procedures) or take fewer precautions because they do not bear the full marginal cost.<br><br><strong style="color:#D97706;">Result: higher costs and inefficient use of resources.</strong>'
+        },
+        {
+          icon: '🔍', tone: 'blue', head: '3. Imperfect information',
+          body: 'Patients cannot easily judge treatment quality, need, or provider performance. They must rely on doctors and hospitals, creating information asymmetry and trust issues.<br><br><strong style="color:#2563EB;">Result: hard to compare quality and hold providers accountable.</strong>'
+        }
       ],
-      examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces patient adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems — use this as evaluative balance.',
+      rowsHeader: 'Two ways to provide healthcare',
+      colA: '🇬🇧 UK NHS model',
+      colB: '🇺🇸 US-style insurance model',
+      rows: [
+        { label: '💰 Funding',              colA: 'Tax-funded and free at point of use.',                                    colB: 'Private insurance, employer-based or individual plans; out-of-pocket costs.' },
+        { label: '👥 Risk pooling',         colA: 'Universal, automatic pooling across the whole population.',              colB: 'Based on ability to pay and plan choice; higher-risk people cost more to insure.' },
+        { label: '📋 Access',               colA: 'Universal entitlement; no price barrier. May face waiting times.',        colB: 'Faster access for those with good insurance; gaps for the uninsured.' },
+        { label: '🎯 Incentives',           colA: 'Focus on need, not profit. Providers incentivised to control costs.',    colB: 'Providers paid per service in many cases; incentive to supply more.' },
+        { label: '🔍 Information problems', colA: 'Information asymmetry remains; government sets standards and oversight.', colB: 'Information asymmetry compounded by insurance complexity and marketing.' }
+      ],
+      causes2Label: 'Evaluation: trade-offs',
+      causes2Emoji: '⚖️',
+      causes2: [
+        { icon: '✅', tone: 'green', head: 'NHS strengths',                  body: 'Universal access and strong risk pooling. Lower admin costs. Focus on equity and need.' },
+        { icon: '⚠️', tone: 'amber', head: 'NHS weaknesses',                 body: 'Rationing through waiting times and limited choice. Budget constraints can lead to underinvestment.' },
+        { icon: '✅', tone: 'blue',  head: 'Private insurance strengths',    body: 'More choice and faster access for many. Can drive innovation and higher-quality care.' },
+        { icon: '⚠️', tone: 'rose',  head: 'Private insurance weaknesses',   body: 'Can intensify information failures and moral hazard. Higher costs and inequity for the uninsured.' }
+      ],
+      lockIn: {
+        title: 'Judgement',
+        icon: '⭐',
+        items: [
+          'Healthcare is a classic case for government involvement',
+          'Well-designed public system can correct market failures',
+          'But no system removes all trade-offs',
+          'Balancing efficiency, equity and information is the central challenge'
+        ]
+      },
+      examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems — use this evaluative balance in essays.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

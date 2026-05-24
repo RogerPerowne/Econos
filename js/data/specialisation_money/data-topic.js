@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Money functions: Medium of Exchange (lubricates trade), Store of Value (holds purchasing power), Unit of Account (common measure of price), Standard of Deferred Payment (enables credit).',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },

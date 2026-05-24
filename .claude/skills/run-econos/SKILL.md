@@ -11,7 +11,9 @@ All commands below are run from the repo root (`/home/user/Econos`).
 
 ## Prerequisites
 
-Playwright is already a devDependency. Chromium binaries are pre-installed at `/opt/pw-browsers/chromium-1223/chrome-linux64/chrome` (the driver hard-codes this path). If running on a different host where browsers must be installed:
+Playwright (`playwright-core`) is already a devDependency. The driver lets Playwright auto-discover the chromium binary, so as long as `playwright install chromium` has been run at least once on this host, no path configuration is needed. Verified working on this container — chromium is at `/opt/pw-browsers/chromium-1223/` and Playwright finds it automatically.
+
+If the driver errors with `browserType.launch: Executable doesn't exist`:
 
 ```bash
 npx playwright install chromium
@@ -73,7 +75,7 @@ Runs the Playwright tests in `tests/e2e/`. Note: as of the last verified run, on
 |---------|-----|
 | Screenshot shows login page | Auth bypass failed. Verify origin matches: driver visits `${origin}/` before setting localStorage. |
 | Driver hangs at `goto` | Static server didn't start. `curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/learn.html` should return 200. |
-| `Error: browserType.launch: Executable doesn't exist` | Chromium binary moved — `find / -name chrome -type f 2>/dev/null` and update `PW_CHROMIUM` in `driver.mjs`. |
+| `Error: browserType.launch: Executable doesn't exist` | Chromium not installed for Playwright on this host — run `npx playwright install chromium`. |
 | Blank page on screenshot | Card index too high — exceeded `cards.length - 1`. Check the topic's `data-topic.js`. |
 | Screenshot taken but card content missing | Increase `waitForTimeout` to 1500ms after `start-session` click; some cards have heavy DOM. |
 

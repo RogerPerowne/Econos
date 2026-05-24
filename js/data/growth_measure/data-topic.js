@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   id: 'growth_measure',
   topicNum: '2.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
-  title: 'Economic Growth & National Income',
+  title: 'Measures of Economic Performance',
   estTime: '10-12 minutes',
   goal: 'Understand how GDP is measured, what it misses, and how to read growth data like an examiner.',
 

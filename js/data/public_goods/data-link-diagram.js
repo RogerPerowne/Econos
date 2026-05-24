@@ -86,7 +86,7 @@ window.ECONOS_LINK_DIAGRAM = {
         label: 'S (cost)', labelX: 494, labelY: 28, labelFill: '#2563eb' },
       /* D_social — true WTP if free riding prevented — amber downward-sloping */
       { x1: 110, y1: 50,  x2: 514, y2: 381, stroke: '#d97706', strokeWidth: 2.5,
-        label: 'D_social (true WTP)', labelX: 516, labelY: 381, labelFill: '#d97706' },
+        label: 'D_social', labelX: 455, labelY: 372, labelFill: '#d97706' },
       /* D_private — collapsed demand due to free riding — red downward-sloping, near x-axis */
       { x1: 110, y1: 300, x2: 340, y2: 381, stroke: '#dc2626', strokeWidth: 2.5,
         label: 'D_private (free riding)', labelX: 344, labelY: 381, labelFill: '#dc2626' }

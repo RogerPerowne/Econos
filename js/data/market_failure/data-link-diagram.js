@@ -90,7 +90,7 @@ window.ECONOS_LINK_DIAGRAM = {
         label: 'S', labelX: 494, labelY: 28, labelFill: '#2563eb' },
       /* D₁ (full-information demand) — amber downward-sloping */
       { x1: 110, y1: 50,  x2: 514, y2: 381, stroke: '#d97706', strokeWidth: 2.5,
-        label: 'D₁ (full info)', labelX: 516, labelY: 381, labelFill: '#d97706' },
+        label: 'D₁ (full info)', labelX: 462, labelY: 381, labelFill: '#d97706' },
       /* D₂ (information-gap demand) — green downward-sloping, shifted left */
       { x1: 110, y1: 100, x2: 449, y2: 381, stroke: '#059669', strokeWidth: 2.5,
         label: 'D₂ (info gap)', labelX: 453, labelY: 381, labelFill: '#059669' }

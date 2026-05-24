@@ -327,34 +327,26 @@ window.ECONOS_TOPIC = {
           tone: 'green',
           icon: '🏞️',
           head: 'Land → Rent',
-          body: '<strong>Definition:</strong> payment for the use of natural resources.<br><br><strong>Why this reward?</strong> Land is in fixed supply. Whoever owns it can charge others to use it for production, earning rent.'
+          body: '<strong>Definition:</strong> payment for the use of natural resources.<br><br><strong>Why this reward?</strong> Land is in fixed supply. Whoever owns it can charge others to use it for production, earning rent.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(6,95,70,0.08);font-size:13px;font-style:italic;color:#065F46;">🧠 Remember: natural resources earn rent because supply is fixed.</span>'
         },
         {
           tone: 'purple',
           icon: '👥',
           head: 'Labour → Wages',
-          body: '<strong>Definition:</strong> payment for the physical and mental effort of people.<br><br><strong>Why this reward?</strong> Workers give up their time and energy. Wages compensate them for this contribution to production.'
+          body: '<strong>Definition:</strong> payment for the physical and mental effort of people.<br><br><strong>Why this reward?</strong> Workers give up their time and energy. Wages compensate them for this contribution to production.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(91,33,182,0.08);font-size:13px;font-style:italic;color:#5B21B6;">🧠 Remember: human effort earns wages — payment for time and skill.</span>'
         },
         {
           tone: 'amber',
           icon: '🏭',
           head: 'Capital → Interest',
-          body: '<strong>Definition:</strong> payment for the use of man-made productive resources.<br><br><strong>Why this reward?</strong> Capital wears out or could be used elsewhere. Interest rewards owners for use and the opportunity cost.'
+          body: '<strong>Definition:</strong> payment for the use of man-made productive resources.<br><br><strong>Why this reward?</strong> Capital wears out or could be used elsewhere. Interest rewards owners for use and the opportunity cost.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(146,64,14,0.08);font-size:13px;font-style:italic;color:#92400E;">🧠 Remember: productive assets earn interest — reward for use and waiting.</span>'
         },
         {
           tone: 'rose',
           icon: '🚀',
           head: 'Enterprise → Profit',
-          body: '<strong>Definition:</strong> the residual return after all other costs have been paid.<br><br><strong>Why this reward?</strong> Entrepreneurs take risks and make decisions. Profit is what is <em>left over</em> — it is not guaranteed.'
+          body: '<strong>Definition:</strong> the residual return after all other costs have been paid.<br><br><strong>Why this reward?</strong> Entrepreneurs take risks and make decisions. Profit is what is <em>left over</em> — it is not guaranteed.<br><br><span style="display:block;margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(185,28,28,0.08);font-size:13px;font-style:italic;color:#B91C1C;">🧠 Remember: risk-taking earns profit — the residual, not guaranteed.</span>'
         }
-      ],
-      causes2Label: 'Memory strip',
-      causes2Emoji: '🧠',
-      causes2: [
-        { tone: 'green',  icon: '🏞️', head: 'Land → Rent',         body: 'Natural resources earn rent because supply is fixed.' },
-        { tone: 'purple', icon: '👥', head: 'Labour → Wages',      body: 'Human effort earns wages — payment for time and skill.' },
-        { tone: 'amber',  icon: '🏭', head: 'Capital → Interest',  body: 'Productive assets earn interest — reward for use and waiting.' },
-        { tone: 'rose',   icon: '🚀', head: 'Enterprise → Profit', body: 'Risk-taking earns profit — the residual, not guaranteed.' }
       ],
       examEdge: {
         title: 'Exam tip: never mix these up',

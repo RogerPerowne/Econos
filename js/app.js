@@ -4411,9 +4411,161 @@
   }
 
   /* === full card view === */
+  function renderCardRegulatoryCaptureExplorer(c) {
+    const steps = [
+      { key: 'stage1', label: 'Design intent',  text: 'Parliament creates an independent regulator to act as a buffer between industry and consumers. The regulator has statutory powers: it can set prices, investigate anti-competitive conduct, and impose fines. In this design, the regulator\'s loyalty runs exclusively to the public — not to the firms it oversees.' },
+      { key: 'stage2', label: 'Info asymmetry', text: 'The regulator knows little about the industry\'s real costs, technology, and margins. Industry is the primary — often only — source of this data. By supplying selective, strategically framed information, firms shift the regulatory agenda in their favour. The regulator becomes intellectually dependent on the entity it is supposed to police.' },
+      { key: 'stage3', label: 'Revolving door', text: 'Regulators recruit from industry (they need technical expertise), and staff leave to take senior roles in the firms they regulated (industry pays far more). This creates a structural conflict: incoming staff arrive with industry\'s perspective; departing staff are incentivised to maintain good relations with future employers. Regulatory zeal is suppressed at both ends.' },
+      { key: 'stage4', label: 'Capture',        text: 'Over time, the regulator adopts industry\'s worldview. Price caps are set above competitive levels; new entrants face bureaucratic barriers; enforcement actions are slow and light. The public — the regulator\'s original principal — receives no effective protection. Government failure is complete: the correction mechanism has been captured by the problem it was meant to fix.' }
+    ];
+
+    const svgDiagram = `
+      <svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <defs>
+          <marker id="rc-ag" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L0,7 L8,3.5 z" fill="#10b981"/></marker>
+          <marker id="rc-ab" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L0,7 L8,3.5 z" fill="#3b82f6"/></marker>
+          <marker id="rc-aa" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L0,7 L8,3.5 z" fill="#f59e0b"/></marker>
+          <marker id="rc-ar" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L0,7 L8,3.5 z" fill="#ef4444"/></marker>
+          <marker id="rc-as" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L0,7 L8,3.5 z" fill="#94a3b8"/></marker>
+          <marker id="rc-ap" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L0,7 L8,3.5 z" fill="#8b5cf6"/></marker>
+        </defs>
+
+        <!-- Stage 1: Design intent -->
+        <g class="rc-stage rc-stage-1">
+          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">Intended principal–agent chain</text>
+          <rect x="10" y="80" width="120" height="58" rx="10" fill="#D1FAE5" stroke="#10b981" stroke-width="2"/>
+          <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">PUBLIC</text>
+          <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#047857">Citizens / voters</text>
+          <rect x="260" y="80" width="120" height="58" rx="10" fill="#DBEAFE" stroke="#3b82f6" stroke-width="2"/>
+          <text x="320" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e40af">REGULATOR</text>
+          <text x="320" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1d4ed8">Ofgem / FCA etc.</text>
+          <rect x="510" y="80" width="120" height="58" rx="10" fill="#F1F5F9" stroke="#94a3b8" stroke-width="2"/>
+          <text x="570" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">INDUSTRY</text>
+          <text x="570" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#475569">Firms / incumbents</text>
+          <line x1="130" y1="109" x2="258" y2="109" stroke="#10b981" stroke-width="2.5" marker-end="url(#rc-ag)"/>
+          <text x="194" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#10b981">Delegates</text>
+          <text x="194" y="109" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#10b981">oversight</text>
+          <line x1="380" y1="109" x2="508" y2="109" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#rc-ab)"/>
+          <text x="444" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#3b82f6">Regulates</text>
+          <text x="70" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#065f46">✓ Principal</text>
+          <text x="320" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#1e40af">✓ Agent (aligned)</text>
+          <text x="570" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#475569">Constrained</text>
+        </g>
+
+        <!-- Stage 2: Information asymmetry -->
+        <g class="rc-stage rc-stage-2">
+          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">Industry gains control of information flow</text>
+          <rect x="10" y="80" width="120" height="58" rx="10" fill="#D1FAE5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">PUBLIC</text>
+          <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#047857">Citizens / voters</text>
+          <rect x="260" y="80" width="120" height="58" rx="10" fill="#FEF3C7" stroke="#f59e0b" stroke-width="2"/>
+          <text x="320" y="103" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#92400e">REGULATOR</text>
+          <text x="320" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#b45309">⚠ data-dependent</text>
+          <rect x="510" y="80" width="120" height="58" rx="10" fill="#F1F5F9" stroke="#94a3b8" stroke-width="2"/>
+          <text x="570" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">INDUSTRY</text>
+          <text x="570" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#475569">Firms / incumbents</text>
+          <line x1="130" y1="109" x2="258" y2="109" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#rc-as)"/>
+          <line x1="380" y1="109" x2="508" y2="109" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#rc-as)"/>
+          <path d="M 570,138 Q 445,202 320,138" stroke="#f59e0b" stroke-width="2.5" fill="none" marker-end="url(#rc-aa)"/>
+          <text x="445" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#92400e">Selective data supply</text>
+          <text x="445" y="216" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#b45309">Industry controls what the regulator sees</text>
+        </g>
+
+        <!-- Stage 3: Revolving door -->
+        <g class="rc-stage rc-stage-3">
+          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">Staff cycle between regulator and industry</text>
+          <rect x="10" y="80" width="120" height="58" rx="10" fill="#D1FAE5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">PUBLIC</text>
+          <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#047857">Citizens / voters</text>
+          <rect x="260" y="80" width="120" height="58" rx="10" fill="#EDE9FE" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="320" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#4c1d95">REGULATOR</text>
+          <text x="320" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#6d28d9">conflicted</text>
+          <rect x="510" y="80" width="120" height="58" rx="10" fill="#F1F5F9" stroke="#94a3b8" stroke-width="2"/>
+          <text x="570" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">INDUSTRY</text>
+          <text x="570" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#475569">Firms / incumbents</text>
+          <line x1="130" y1="109" x2="258" y2="109" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#rc-as)"/>
+          <line x1="382" y1="99" x2="508" y2="99" stroke="#8b5cf6" stroke-width="2" marker-end="url(#rc-ap)"/>
+          <text x="445" y="91" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#4c1d95">joins industry after tenure</text>
+          <line x1="508" y1="119" x2="382" y2="119" stroke="#8b5cf6" stroke-width="2" marker-end="url(#rc-ap)"/>
+          <text x="445" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#4c1d95">recruited from industry</text>
+          <text x="445" y="163" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#4c1d95">🔄 Structural conflict of interest</text>
+          <text x="445" y="177" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#6d28d9">Incentives run to the industry, not the public</text>
+        </g>
+
+        <!-- Stage 4: Regulatory capture -->
+        <g class="rc-stage rc-stage-4">
+          <text x="320" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#7f1d1d">Non-ideal outcome: regulator serves industry, not the public</text>
+          <path d="M 566,80 Q 444,28 324,80" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="7,3" marker-end="url(#rc-ar)"/>
+          <text x="444" y="42" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#dc2626">🎯 REGULATORY CAPTURE</text>
+          <text x="444" y="58" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#ef4444">Industry controls the regulator</text>
+          <rect x="10" y="80" width="120" height="58" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="70" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#94a3b8">PUBLIC</text>
+          <text x="70" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">unprotected</text>
+          <rect x="260" y="80" width="120" height="58" rx="10" fill="#FEE2E2" stroke="#ef4444" stroke-width="2.5"/>
+          <text x="320" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#7f1d1d">REGULATOR</text>
+          <text x="320" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#b91c1c">⚠ CAPTURED</text>
+          <rect x="510" y="80" width="120" height="58" rx="10" fill="#F1F5F9" stroke="#94a3b8" stroke-width="2"/>
+          <text x="570" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e293b">INDUSTRY</text>
+          <text x="570" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#475569">in control</text>
+          <line x1="130" y1="109" x2="258" y2="109" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <text x="70" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#94a3b8">✗ No protection</text>
+          <text x="320" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#b91c1c">✗ Captured agent</text>
+          <text x="570" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#475569">✓ Protected</text>
+          <text x="320" y="195" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#7f1d1d">Government failure: the correction mechanism has been captured</text>
+        </g>
+      </svg>`;
+
+    const tabs = steps.map(function(s, i) {
+      return '<button class="ad-tab ' + (i === 0 ? 'is-active' : '') + '" type="button" data-action="ad-step" data-ad-state="' + s.key + '"><span class="ad-tab__num">' + (i + 1) + '</span><span class="ad-tab__label">' + s.label + '</span></button>';
+    }).join('');
+
+    const panels = steps.map(function(s, i) {
+      return '<div class="ad-panel ' + (i === 0 ? 'is-active' : '') + '" data-panel-key="' + s.key + '"><div class="ad-panel__title">' + s.label + '</div><div class="ad-panel__body">' + s.text + '</div></div>';
+    }).join('');
+
+    const tipTone = (c.tip && typeof c.tip === 'object' && c.tip.tone) || 'blue';
+    const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
+    const tipHtml = (c.tip && typeof c.tip === 'object' && c.tip.text)
+      ? '<div style="display:flex;align-items:center;gap:14px;background:' + t.bg + ';border:1px solid ' + t.border + ';border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:' + t.accent + ';color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">' + (c.tip.icon || '💡') + '</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">' + c.tip.text + '</div></div>'
+      : '';
+
+    let out = '<div class="card__step-label">' + c.stepLabel + '</div>';
+    out += '<h1 class="card__title">' + c.title + '</h1>';
+    if (c.lede) out += '<p class="card__lede">' + c.lede + '</p>';
+    out += tipHtml;
+    out += '<div class="ad-interactive"><div class="ad-interactive__diagram rc-explorer show-stage1" data-ad-state="stage1">' + svgDiagram + '</div>';
+    out += '<div class="ad-interactive__tabs" style="grid-template-columns:repeat(4,1fr);">' + tabs + '</div>';
+    out += '<div class="ad-interactive__panels">' + panels + '</div></div>';
+
+    if (c.causesLabel && c.causes && c.causes.length) {
+      const causesTiles = c.causes.map(function(item, i) {
+        const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+        return '<div style="border-radius:16px;background:' + tone.bg + ';border:1px solid ' + tone.border + ';padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:15px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + item.body + '</div></div>';
+      }).join('');
+      out += genSecLabel(c.causesEmoji || '📋', c.causesLabel);
+      out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes.length, 155) + ';gap:12px;margin:0 0 28px;">' + causesTiles + '</div>';
+    }
+
+    if (c.causes2Label && c.causes2 && c.causes2.length) {
+      const causes2Tiles = c.causes2.map(function(item, i) {
+        const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+        return '<div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:42px;height:42px;border-radius:50%;background:' + tone.bg + ';display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">' + item.icon + '</div><div style="font-weight:800;font-size:15px;color:' + tone.label + ';line-height:1.3;">' + item.head + '</div></div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + item.body + '</div></div>';
+      }).join('');
+      out += genSecLabel(c.causes2Emoji || '⚙️', c.causes2Label);
+      out += '<div style="display:grid;grid-template-columns:' + gridColumnsFor(c.causes2.length, 155) + ';gap:12px;margin:0 0 28px;">' + causes2Tiles + '</div>';
+    }
+
+    if (c.examEdge) {
+      const et = PATTERN_TONES['purple'];
+      out += '<div style="background:' + et.bg + ';border:1px solid ' + et.border + ';border-radius:12px;padding:16px 18px;margin-top:10px;"><div style="font-size:12px;font-weight:700;color:' + et.label + ';text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Exam edge</div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + c.examEdge + '</div></div>';
+    }
+
+    return out;
+  }
+
   function isGenericCard(c) {
     // These two templates always need their own dedicated renderer regardless of fields present
-    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold') return false;
+    if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold' || c.template === 'regulatory-capture-explorer') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
     // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
     return !!(
@@ -4483,8 +4635,9 @@
         case 'pes-explorer':       body = renderCardPesExplorer(c);        break;
         case 'yed-explorer':       body = renderCardYedExplorer(c);        break;
         case 'xed-explorer':       body = renderCardXedExplorer(c);        break;
-        case 'market-structures-comparison': body = renderCardMarketStructuresComparison(c);  break;
-        case 'essay-scaffold':               body = renderCardEssayScaffold(c);               break;
+        case 'market-structures-comparison':      body = renderCardMarketStructuresComparison(c);      break;
+        case 'essay-scaffold':                     body = renderCardEssayScaffold(c);                     break;
+        case 'regulatory-capture-explorer':        body = renderCardRegulatoryCaptureExplorer(c);        break;
       }
     }
 

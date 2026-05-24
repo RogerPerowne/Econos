@@ -4016,6 +4016,20 @@ img, svg { display: block; max-width: 100%; }
 
 
 /* ============================================================
+   REGULATORY CAPTURE EXPLORER
+   Interactive 4-stage SVG diagram for govt_failure Card 3.
+   Reuses .ad-interactive tab/panel layout; stage visibility
+   is toggled by .show-stageN on the .rc-explorer wrapper.
+   ============================================================ */
+
+.rc-explorer .rc-stage { display: none; }
+.rc-explorer.show-stage1 .rc-stage-1,
+.rc-explorer.show-stage2 .rc-stage-2,
+.rc-explorer.show-stage3 .rc-stage-3,
+.rc-explorer.show-stage4 .rc-stage-4 { display: block; }
+
+
+/* ============================================================
    ============================================================
    V12 — TRANSMISSION-CHAIN TEMPLATE
    Card 3 of Monetary Policy topic.

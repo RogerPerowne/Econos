@@ -82,14 +82,10 @@ window.ECONOS_TOPIC = {
     /* ── Card 3: Regulatory Capture ─────────────────────────────────── */
     {
       id: 'govt_failure_3',
+      template: 'regulatory-capture-explorer',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Regulatory capture',
       tip: { icon: '🔄', tone: 'rose', text: 'Regulatory capture: a regulatory body set up to protect the public ends up serving the industry it regulates. The regulator is "captured" — it adopts the industry\'s perspective, weakens enforcement, and protects incumbent firms from competition.' },
-      diagramPanel: {
-        diagramKey: 'regulatoryCaptureSvg',
-        layout: 'stacked',
-        bare: true
-      },
       causesLabel: 'Real-world examples',
       causesEmoji: '📌',
       causes: [

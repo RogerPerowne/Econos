@@ -8,7 +8,7 @@ window.ECONOS_LINK_COMPLETE = {
   stations: [
     { id: 'context', label: 'Use the context',    max: 5, color: '#059669' },
     { id: 'chain',   label: 'Build the chain',    max: 3, color: '#f59e0b' },
-    { id: 'diagram', label: 'Diagram connector',  max: 9, color: '#7c3aed' },
+    { id: 'calc',    label: 'Calculate It',        max: 6, color: '#3B82F6' },
     { id: 'depends', label: 'It depends on',      max: 3, color: '#2563eb' },
     { id: 'judge',   label: 'Make the judgement', max: 8, color: '#0891b2' }
   ],

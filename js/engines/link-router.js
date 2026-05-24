@@ -18,6 +18,10 @@
     context:     { data: 'data-link-context.js',  boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',         title: 'Context' },
     chain:       { data: 'data-link-chain.js',    boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',   title: 'Chain' },
     chain_open:  { data: 'data-link-chain.js',    boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
+    calc:        { data: 'data-link-calc.js',     boot: 'bootLinkCalc',      engine: 'js/engines/link-calc-engine.js',        title: 'Calculate It'      },
+    data:        { data: 'data-link-data.js',     boot: 'bootLinkData',      engine: 'js/engines/link-data-engine.js',        title: 'Read the Data'     },
+    extract:     { data: 'data-link-extract.js',  boot: 'bootLinkExtract',   engine: 'js/engines/link-extract-engine.js',     title: 'Read the Extract'  },
+    predict:     { data: 'data-link-predict.js',  boot: 'bootLinkPredict',   engine: 'js/engines/link-predict-engine.js',     title: 'Predict Outcome'   },
     diagram:     { data: 'data-link-diagram.js',  boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js', title: 'Diagram' },
     depends:     { data: 'data-link-depends.js',  boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js', title: 'It depends' },
     judge:       { data: 'data-link-judge.js',    boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',   title: 'Judge' },
@@ -65,10 +69,14 @@
   var NEXT_HINTS = {
     intro:      ['context', 'chain', 'diagram'],
     context:    ['chain'],
-    chain:      ['diagram'],
-    chain_open: ['diagram'],
+    chain:      ['calc', 'extract', 'predict', 'diagram'],
+    chain_open: ['calc', 'extract', 'predict', 'diagram'],
+    calc:       ['diagram', 'depends'],
+    data:       ['depends', 'judge'],
+    extract:    ['diagram', 'depends'],
+    predict:    ['judge', 'depends'],
     diagram:    ['depends'],
-    depends:    ['judge'],
+    depends:    ['judge', 'predict'],
     judge:      ['complete'],
     complete:   []
   };

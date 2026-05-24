@@ -21,11 +21,12 @@ window.ECONOS_LINK_INTRO = {
     tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
-      { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for intervention.',           href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
-      { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps that explain why the market overproduces beyond the social optimum.',      href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
-      { num: 3, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label and explain the supply and demand diagram for a negative externality.',        href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
-      { num: 4, name: 'It depends on',      skill: 'Evaluation',  sub: 'Rank the factors that most change whether a Pigouvian tax corrects the externality.',      href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, diagram and conditions into an exam-quality judgement.',        href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
+      { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for intervention.',                    href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
+      { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps that explain why the market overproduces beyond the social optimum.',               href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
+      { num: 3, name: 'Read the Extract',   skill: 'Application', sub: 'Analyse a real policy extract (ULEZ) and identify the market failure and intervention type.',      href: TopicLoader.buildUrl('link_extract.html'), state: 'available' },
+      { num: 4, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label and explain the supply and demand diagram for a negative externality.',                href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
+      { num: 5, name: 'It depends on',      skill: 'Evaluation',  sub: 'Rank the factors that most change whether a Pigouvian tax corrects the externality.',               href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
+      { num: 6, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, diagram and conditions into an exam-quality judgement.',                 href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
     ],
 
     stages: [

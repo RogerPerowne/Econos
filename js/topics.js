@@ -257,8 +257,8 @@ window.ECONOS_TOPICS = [
   /* Section 5: Economic Growth */
   {
     id: 'growth_measure',
-    name: 'Economic Growth & National Income',
-    sub: 'GDP, GNI, PPP, causes of growth and long-run trends',
+    name: 'Measures of Economic Performance',
+    sub: 'The macro dashboard, GDP, real vs nominal, GNI, PPP and the limits of GDP',
     color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
   },

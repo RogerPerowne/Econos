@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🥤',
         prompt: 'Policy claim',
-        text:   'Nudge-based interventions are more effective than Pigouvian taxes for correcting irrational overconsumption of unhealthy goods because they correct the behavioural failure without the regressive costs of a tax.'
+        text:   'Nudges beat Pigouvian taxes for correcting irrational overconsumption.'
       },
       factors: [
         {

@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🏗️',
         prompt: 'Policy claim',
-        text:   'Help to Buy is an example of government failure because it raised demand without addressing supply constraints.'
+        text:   'Help to Buy is government failure — demand boost, supply unfixed.'
       },
       factors: [
         {

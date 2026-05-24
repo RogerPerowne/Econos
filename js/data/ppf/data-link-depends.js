@@ -25,7 +25,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🌱',
         prompt: 'Claim',
-        text:   'Investment in green infrastructure represents a rational choice on the PPF — accepting a short-run sacrifice of consumption to achieve long-run outward PPF shift through sustainable economic growth.'
+        text:   'Green investment is a rational PPF trade — SR sacrifice for LR shift.'
       },
       factors: [
         {
@@ -73,7 +73,7 @@ window.ECONOS_LINK_DEPENDS = {
         {
           id:    'alternative-investment',
           icon:  '🏗️',
-          label: 'Opportunity cost relative to alternative investments (health, education, housing)',
+          label: 'Opportunity cost vs alternatives (health, education, housing)',
           why:   'Green infrastructure is not the only way to shift the PPF outward. Investment in healthcare capacity, education quality, or housing infrastructure also raises productive potential. The PPF argument for green investment is strongest when its productivity return exceeds that of alternatives — which requires careful cost-benefit comparison across competing investment categories.'
         }
       ],

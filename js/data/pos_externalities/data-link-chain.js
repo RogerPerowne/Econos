@@ -29,30 +29,30 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Individual MPB of vaccination = own protection from illness. MSB = MPB + MEB (herd immunity: protection conferred on unvaccinated/vulnerable third parties). Free market produces Q_market where S = MPB — systematically below Q* where S = MSB.'
       },
-      anchor: 'Individual MPB of vaccination = own protection from illness. MSB = MPB + MEB (herd immunity: protection conferred on unvaccinated/vulnerable third parties). Free market produces Q_market where S = MPB — systematically below Q* where S = MSB.',
+      anchor: 'MSB = MPB + MEB (herd immunity); free market gives Q_market < Q*.',
       tiles: [
         {
           id:  'step-market',
           icon: '👤',
-          text: 'Market failure: without intervention, consumers equate MPB with price → only those whose personal benefit exceeds the market price vaccinate → Q_market < Q* — the social optimum is not reached',
+          text: 'Market failure: consumers equate MPB with price → Q_market < Q*',
           pos:  0
         },
         {
           id:  'step-provision',
           icon: '🏥',
-          text: 'Government correction: NHS provides free vaccinations → effective cost to consumer = £0 (below MPC) → equivalent to subsidy shifting supply right from MPC to MPC − subsidy → quantity rises from Q_market toward Q*',
+          text: 'NHS free provision → cost = £0 → supply shifts right → Q rises toward Q*',
           pos:  1
         },
         {
           id:  'step-herd',
           icon: '🌐',
-          text: 'Herd immunity: as vaccination coverage crosses the threshold (95% for measles), the MEB becomes non-rival and non-excludable — unvaccinated individuals benefit from reduced transmission even without being vaccinated, demonstrating the positive externality is fully internalised',
+          text: 'At ≥95% coverage, herd immunity internalises the MEB',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '💰',
-          text: 'Government imposes a tax on unhealthy lifestyle choices to cross-subsidise vaccines',
+          text: 'Government taxes unhealthy choices to cross-subsidise vaccines',
           pos:  null
         },
         {

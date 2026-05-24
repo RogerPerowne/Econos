@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🏠',
         prompt: 'Policy claim',
-        text:   'The UK government should introduce rent controls to make housing more affordable in UK cities.'
+        text:   'The UK should use rent controls to improve city housing affordability.'
       },
       factors: [
         {

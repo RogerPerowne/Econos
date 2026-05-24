@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Record net migration (745,000) and post-COVID urban return increase demand for rental housing sharply, but supply is constrained by long construction lead times (PES ≈ 0.2 in SR).'
       },
-      anchor: 'Record net migration (745,000) and post-COVID urban return increase demand for rental housing sharply, but supply is constrained by long construction lead times (PES ≈ 0.2 in SR).',
+      anchor: 'Migration (745k) and urban return push rental demand right; SR PES ≈ 0.2.',
       tiles: [
         {
           id:   'step-demand',
           icon: '📈',
-          text: 'Demand surge: demand for rental housing shifts right → at existing rents, quantity demanded exceeds quantity supplied → excess demand emerges',
+          text: 'Demand for rental housing shifts right → excess demand at old rent',
           pos:  0
         },
         {
           id:   'step-signal',
           icon: '💸',
-          text: 'Price signal: rents rise sharply, signalling developers and landlords to increase supply → but the supply response is slow (PES ≈ 0.2) because new builds take 24–36 months to complete',
+          text: 'Rents rise sharply; supply response slow (PES ≈ 0.2, 24–36 mth builds)',
           pos:  1
         },
         {
           id:   'step-welfare',
           icon: '⚖️',
-          text: 'Welfare effect: rents stay elevated for years — consumer surplus for tenants falls substantially; developers and existing landlords capture higher producer surplus',
+          text: 'Rents stay elevated for years → tenant CS falls; landlord PS rises',
           pos:  2
         },
         {

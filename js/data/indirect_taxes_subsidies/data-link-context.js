@@ -25,19 +25,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      '[[health-costs|The NHS spends an estimated £6.1 billion per year treating obesity-related conditions]], including type 2 diabetes, cardiovascular disease and joint replacements — costs ultimately borne by taxpayers rather than those consuming excess sugar.',
-      'Supporters of extension argue that the existing levy has already reduced sugar content in drinks by 28.8% on average, with manufacturers reformulating products to avoid the charge — evidence that [[reformulation|the tax incentivises producers to change behaviour without raising prices for consumers who choose reformulated products]].',
-      'However, food industry groups warn that applying the levy to confectionery and baked goods would [[regressive|disproportionately raise costs for low-income households, who spend a larger share of income on these goods]], making the tax regressive in its distributional impact.',
-      'Nutritionists point out that [[substitutes|demand for chocolate and biscuits is relatively price inelastic in the short run — PED estimated at −0.3 — meaning a levy would raise prices without significantly reducing consumption]].',
-      'New research suggests that [[evidence-base|a 10% rise in price from the existing sugar drinks levy led to a 12% fall in sales volume]], indicating the original levy worked as intended where demand was more elastic than initially forecast.'
+      '[[health-costs|The NHS spends £6.1bn per year treating obesity-related conditions]], including type 2 diabetes, cardiovascular disease and joint replacements — costs ultimately borne by taxpayers rather than those consuming excess sugar.',
+      'Supporters of extension argue that the existing levy has already reduced sugar content in drinks by 28.8% on average, with manufacturers reformulating products to avoid the charge — evidence that [[reformulation|the tax drives producer behaviour change without raising consumer prices]] for those choosing reformulated products.',
+      'However, food industry groups warn that applying the levy to confectionery and baked goods would [[regressive|raise costs disproportionately for low-income households]], who spend a larger share of income on these goods, making the tax regressive in its distributional impact.',
+      'Nutritionists point out that [[substitutes|demand for chocolate and biscuits is price inelastic short-run — PED ≈ −0.3]] — meaning a levy would raise prices without significantly reducing consumption.',
+      'New research suggests that [[evidence-base|a 10% price rise from the sugar drinks levy cut sales 12%]], indicating the original levy worked as intended where demand was more elastic than initially forecast.'
     ],
 
     evidence: {
-      'health-costs':  { text: 'The NHS spends an estimated £6.1 billion per year treating obesity-related conditions' },
-      'reformulation': { text: 'the tax incentivises producers to change behaviour without raising prices for consumers who choose reformulated products' },
-      'regressive':    { text: 'disproportionately raise costs for low-income households, who spend a larger share of income on these goods' },
-      'substitutes':   { text: 'demand for chocolate and biscuits is relatively price inelastic in the short run — PED estimated at −0.3 — meaning a levy would raise prices without significantly reducing consumption' },
-      'evidence-base': { text: 'a 10% rise in price from the existing sugar drinks levy led to a 12% fall in sales volume' }
+      'health-costs':  { text: 'The NHS spends £6.1bn per year treating obesity-related conditions' },
+      'reformulation': { text: 'the tax drives producer behaviour change without raising consumer prices' },
+      'regressive':    { text: 'raise costs disproportionately for low-income households' },
+      'substitutes':   { text: 'demand for chocolate and biscuits is price inelastic short-run — PED ≈ −0.3' },
+      'evidence-base': { text: 'a 10% price rise from the sugar drinks levy cut sales 12%' }
     },
 
     buckets: [

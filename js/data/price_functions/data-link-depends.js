@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🌾',
         prompt: 'Policy claim',
-        text:   'The price mechanism is the most efficient allocator of scarce food resources when supply is disrupted, because higher prices simultaneously ration existing supply and signal producers to expand output.'
+        text:   'The price mechanism best allocates scarce food after a supply shock.'
       },
       factors: [
         {

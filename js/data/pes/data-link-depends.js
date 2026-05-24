@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🏠',
         prompt: 'Policy claim',
-        text:   'The low price elasticity of supply of rental housing is the primary reason UK rents rose faster than inflation in 2022–23.'
+        text:   'Low PES of rental housing is the main reason UK rents outpaced inflation.'
       },
       factors: [
         {

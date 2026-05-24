@@ -29,30 +29,30 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Ukraine and Russia supplied approximately 30% of world wheat exports. The 2022 war disrupted these exports severely, creating an immediate global wheat shortage and triggering a cascade through the price mechanism.'
       },
-      anchor: 'Ukraine war disrupts global wheat exports, removing ~30% of world wheat supply from markets and creating an immediate global shortage.',
+      anchor: 'Ukraine war removes ~30% of world wheat supply → global shortage.',
       tiles: [
         {
           id:  'step-ration',
           icon: '⚖️',
-          text: 'Rationing function: at the original price P₁, quantity demanded exceeds quantity supplied (excess demand) → price rises to P₂ → higher price rations existing supply to consumers with highest WTP',
+          text: 'Rationing: excess demand at P₁ → P rises to P₂ → rations to high-WTP buyers',
           pos:  0
         },
         {
           id:  'step-signal',
           icon: '📡',
-          text: 'Signalling function: the higher price P₂ transmits a clear signal to UK and global farmers → farmland prices and wheat futures rise → farmers plan to increase planting area and investment in the next season',
+          text: 'Signalling: P₂ tells farmers to plant more next season',
           pos:  1
         },
         {
           id:  'step-incentive',
           icon: '🌱',
-          text: 'Incentive function: profit opportunity created by P₂ > long-run average cost → new entry and investment → supply eventually increases → price gradually falls back toward long-run equilibrium (though slowly, given low agricultural PES in SR)',
+          text: 'Incentive: P₂ > LRAC → entry and investment → supply rises over time',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🏛️',
-          text: 'Government introduces a maximum price on bread to protect consumers from inflation',
+          text: 'Government sets a maximum bread price to shield consumers',
           pos:  null
         },
         {

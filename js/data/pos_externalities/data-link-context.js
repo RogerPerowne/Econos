@@ -26,18 +26,18 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'NHS England data for 2023–24 show that [[mmr-coverage|MMR vaccination coverage for children aged 5 reached 95.1%]] — meeting the WHO herd immunity threshold of 95% for measles, which requires sustained national uptake to prevent outbreaks.',
-      'UK Health Security Agency analysis estimates that [[meb-size|each percentage point increase in measles vaccination coverage prevents approximately 24,000 cases of measles per year in England]] — providing a large, quantifiable marginal external benefit that the free market systematically fails to deliver.',
+      'UK Health Security Agency analysis estimates that [[meb-size|each 1 ppt rise in measles coverage prevents ~24,000 cases per year]] in England — providing a large, quantifiable marginal external benefit that the free market systematically fails to deliver.',
       'Research on UK private flu vaccination (employer schemes and pharmacies) shows [[private-uptake|only 8% uptake before NHS programme expansion]] — compared with 73% of at-risk adults covered under the NHS flu programme (2022–23) — confirming that the unsubsidised market produces well below the social optimum.',
-      'Evidence from vaccine hesitancy surveys (2022) suggests that [[hesitancy|approximately 15% of parents who declined MMR vaccination cited ideological concerns rather than cost or access as their primary reason]] for non-vaccination.',
-      'The 2019 measles outbreak in England (991 cases) followed [[coverage-fall|a drop in MMR coverage to 91.2% in 2018 — 3.8 percentage points below the herd immunity threshold]] — illustrating that small coverage falls can trigger large externality losses and that the benefit of public provision is sensitive to near-threshold effects.'
+      'Evidence from vaccine hesitancy surveys (2022) suggests that [[hesitancy|~15% of MMR-declining parents cited ideology, not cost or access]] for non-vaccination.',
+      'The 2019 measles outbreak in England (991 cases) followed [[coverage-fall|MMR coverage falling to 91.2% in 2018 — 3.8 ppt below herd immunity]] — illustrating that small coverage falls can trigger large externality losses and that the benefit of public provision is sensitive to near-threshold effects.'
     ],
 
     evidence: {
       'mmr-coverage':    { text: 'MMR vaccination coverage for children aged 5 reached 95.1%' },
-      'meb-size':        { text: 'each percentage point increase in measles vaccination coverage prevents approximately 24,000 cases of measles per year in England' },
+      'meb-size':        { text: 'each 1 ppt rise in measles coverage prevents ~24,000 cases per year' },
       'private-uptake':  { text: 'only 8% uptake before NHS programme expansion' },
-      'hesitancy':       { text: 'approximately 15% of parents who declined MMR vaccination cited ideological concerns rather than cost or access as their primary reason' },
-      'coverage-fall':   { text: 'a drop in MMR coverage to 91.2% in 2018 — 3.8 percentage points below the herd immunity threshold' }
+      'hesitancy':       { text: '~15% of MMR-declining parents cited ideology, not cost or access' },
+      'coverage-fall':   { text: 'MMR coverage falling to 91.2% in 2018 — 3.8 ppt below herd immunity' }
     },
 
     buckets: [

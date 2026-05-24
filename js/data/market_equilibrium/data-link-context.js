@@ -25,19 +25,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'Data from the Office for National Statistics confirms that [[shortage|average London rents rose by 11.2% in 2023, with the ratio of median rent to median earnings now at 46%]] — above the 30% threshold economists typically consider affordable.',
-      'Advocates of rent control point out that [[short-supply|private housing completions in London fell to 29,000 in 2023, well below the 66,000 new homes per year estimated to be needed]], suggesting that supply-side responses to high prices are structurally constrained by planning restrictions and land costs.',
-      'However, economic analysis shows that [[disincentive|rent controls in Stockholm led landlords to withdraw properties from the rental market, reducing supply by 15% over ten years]], demonstrating how a price ceiling below equilibrium can shrink the very supply it is meant to make affordable.',
-      'New modelling by the Resolution Foundation suggests that [[multiplier|for every 10% rise in average rent, net migration into London from other UK regions falls by 6%]], indicating that high rents impose economic costs beyond individual households — reducing labour market flexibility and productivity.',
-      'The London School of Economics notes that [[elastic|the long-run price elasticity of housing supply in London is approximately 0.4 — far below the national average of 1.2 — due to planning constraints, green belt restrictions and high land costs]].'
+      'Data from the Office for National Statistics confirms that [[shortage|London rents rose 11.2% in 2023; median rent now 46% of median earnings]] — above the 30% threshold economists typically consider affordable.',
+      'Advocates of rent control point out that [[short-supply|London completions fell to 29,000 in 2023, below the 66,000 needed]], suggesting that supply-side responses to high prices are structurally constrained by planning restrictions and land costs.',
+      'However, economic analysis shows that [[disincentive|Stockholm rent controls cut rental supply 15% over ten years]], as landlords withdrew properties — demonstrating how a price ceiling below equilibrium can shrink the very supply it is meant to make affordable.',
+      'New modelling by the Resolution Foundation suggests that [[multiplier|every 10% London rent rise cuts net in-migration from UK regions by 6%]], indicating that high rents impose economic costs beyond individual households — reducing labour market flexibility and productivity.',
+      'The London School of Economics notes that [[elastic|long-run PES of London housing ≈ 0.4 vs national 1.2]] — due to planning constraints, green belt restrictions and high land costs.'
     ],
 
     evidence: {
-      'shortage':    { text: 'average London rents rose by 11.2% in 2023, with the ratio of median rent to median earnings now at 46%' },
-      'short-supply':{ text: 'private housing completions in London fell to 29,000 in 2023, well below the 66,000 new homes per year estimated to be needed' },
-      'disincentive':{ text: 'rent controls in Stockholm led landlords to withdraw properties from the rental market, reducing supply by 15% over ten years' },
-      'multiplier':  { text: 'for every 10% rise in average rent, net migration into London from other UK regions falls by 6%' },
-      'elastic':     { text: 'the long-run price elasticity of housing supply in London is approximately 0.4 — far below the national average of 1.2 — due to planning constraints, green belt restrictions and high land costs' }
+      'shortage':    { text: 'London rents rose 11.2% in 2023; median rent now 46% of median earnings' },
+      'short-supply':{ text: 'London completions fell to 29,000 in 2023, below the 66,000 needed' },
+      'disincentive':{ text: 'Stockholm rent controls cut rental supply 15% over ten years' },
+      'multiplier':  { text: 'every 10% London rent rise cuts net in-migration from UK regions by 6%' },
+      'elastic':     { text: 'long-run PES of London housing ≈ 0.4 vs national 1.2' }
     },
 
     buckets: [

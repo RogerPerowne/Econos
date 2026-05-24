@@ -28,24 +28,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'The UK government allocates resources to green infrastructure — offshore wind farms, battery storage and solar — rather than current public services. Resources (engineers, capital, land) shift from consumption goods (NHS capacity, welfare services) to investment goods (clean energy infrastructure).'
       },
-      anchor: 'The UK produces two broad categories of output: investment goods (infrastructure, R&D, green energy) and current consumption goods (NHS, welfare, public services). These compete for the same finite resources.',
+      anchor: 'Investment goods vs current consumption compete for finite resources.',
       tiles: [
         {
           id:  'step-movement',
           icon: '📍',
-          text: 'PPF position: the economy currently operates near or on its PPF — all scarce resources (workers, capital, land) are roughly fully employed. A decision to increase green investment necessarily means less resource for current consumption goods — the economy moves along the frontier',
+          text: 'Economy near PPF: more green investment → less for consumption (move along)',
           pos:  0
         },
         {
           id:  'step-opp-cost',
           icon: '💷',
-          text: 'Short-run trade-off: allocating resources from NHS/welfare to offshore wind reduces current consumption of public services → opportunity cost is the forgone health, education or welfare spending — this is a movement along the PPF, not a shift of it',
+          text: 'SR trade-off: wind investment → forgone NHS/welfare spend (along PPF)',
           pos:  1
         },
         {
           id:  'step-shift',
           icon: '📈',
-          text: 'Long-run PPF shift: if green investment raises productive capacity (energy independence, cheaper electricity, new industries), the PPF shifts outward → in future periods, society can produce more of both investment AND consumption goods — the short-run sacrifice is justified if the long-run shift exceeds the opportunity cost',
+          text: 'LR: green investment raises capacity → PPF shifts outward',
           pos:  2
         },
         {
@@ -63,7 +63,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:  'dist-3',
           icon: '🏛️',
-          text: 'Moving to a point outside the PPF is possible if the government increases taxation',
+          text: 'Moving outside the PPF is possible if government raises taxation',
           pos:  null
         }
       ],

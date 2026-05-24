@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'The UK government launches the Help to Buy equity loan scheme in 2013. First-time buyers can borrow up to 20% of a new-build\'s purchase price from the government, interest-free for five years. Housing supply is highly inelastic (PES ≈ 0.4).'
       },
-      anchor: 'UK housing supply is highly price inelastic (PES ≈ 0.4) due to planning constraints, construction labour shortages, and land banking by developers — meaning that demand-side stimulus raises prices more than it raises output.',
+      anchor: 'UK housing supply is highly inelastic (PES ≈ 0.4).',
       tiles: [
         {
           id:  'step-policy',
           icon: '💰',
-          text: 'Policy design: Help to Buy provides equity loans (up to 20% of purchase price) → effective purchasing power of first-time buyers rises → demand for new-build homes shifts right from D₁ to D₂',
+          text: 'Help to Buy equity loans raise buyer purchasing power → demand shifts right',
           pos:  0
         },
         {
           id:  'step-unintended',
           icon: '📊',
-          text: 'Unintended consequence: housing supply is inelastic (PES ≈ 0.4) → demand stimulus raises price far more than quantity → developers capture the subsidy as higher new-build prices (£8,000 average premium per OBR)',
+          text: 'Inelastic supply → demand stimulus raises P far more than Q (+£8k per OBR)',
           pos:  1
         },
         {
           id:  'step-failure',
           icon: '⚠️',
-          text: 'Government failure: buyers without Help to Buy face higher prices than before the policy → scheme transfers wealth to developers → housing becomes less affordable for those outside the scheme → policy worsens the problem it was designed to solve',
+          text: 'Non-scheme buyers face higher prices → subsidy captured by developers',
           pos:  2
         },
         {
@@ -64,7 +64,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:  'dist-3',
           icon: '⏱️',
-          text: 'Planning reforms reduce the time from planning permission to build completion',
+          text: 'Planning reforms cut time from permission to build completion',
           pos:  null
         }
       ],

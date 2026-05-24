@@ -28,24 +28,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'A city government imposes a legally binding rent cap at 2022 levels — roughly 20% below the current market-clearing rent — on all private rental flats.'
       },
-      anchor: 'The maximum price (P_max) is set below the free-market equilibrium rent (P_e), so the ceiling is binding',
+      anchor: 'P_max is set below P_e — the ceiling binds.',
       tiles: [
         {
           id:   'step-shortage',
           icon: '📉',
-          text: 'At P_max, quantity supplied (Q_s) falls below quantity demanded (Q_d) — the horizontal gap Q_d − Q_s is the shortage',
+          text: 'At P_max, Q_s < Q_d — the gap Q_d − Q_s is the shortage',
           pos:  0
         },
         {
           id:   'step-rationing',
           icon: '🎟️',
-          text: 'Because price cannot clear the market, flats are allocated through non-price rationing — queues, waiting lists, personal networks or key-money payments',
+          text: 'Price cannot clear → non-price rationing: queues, networks, key-money',
           pos:  1
         },
         {
           id:   'step-welfare',
           icon: '⚖️',
-          text: 'Sitting tenants gain a transfer from landlords, but trades between Q_s and Q_e no longer happen — creating a deadweight welfare loss and risking quality decline as landlords cut maintenance',
+          text: 'Sitting tenants gain; lost trades Q_s–Q_e → DWL; quality decline',
           pos:  2
         },
         {
@@ -57,7 +57,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:   'dist-2',
           icon: '🏗️',
-          text: 'The supply of rental housing immediately expands as developers respond to the cap',
+          text: 'Rental supply expands immediately as developers respond to the cap',
           pos:  null
         },
         {

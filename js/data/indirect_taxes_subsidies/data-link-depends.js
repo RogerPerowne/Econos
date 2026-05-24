@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🍭',
         prompt: 'Policy claim',
-        text:   'An indirect tax on sugary foods and drinks is the most effective way to reduce obesity-related negative externalities.'
+        text:   'A sugar tax is the most effective way to cut obesity externalities.'
       },
       factors: [
         {

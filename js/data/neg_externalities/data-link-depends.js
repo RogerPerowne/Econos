@@ -27,7 +27,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '💸',
         prompt: 'Policy claim',
-        text:   'A Pigouvian tax is the most effective policy to correct negative externalities from industrial pollution.'
+        text:   'A Pigouvian tax best corrects negative externalities from pollution.'
       },
       factors: [
         {

@@ -27,36 +27,36 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'NHS England has a budget of £167bn in 2023–24. Demand for healthcare — driven by an ageing population, new medical technologies, and 7.7 million patients already waiting — is effectively unlimited. There is no government policy that can make all health needs simultaneously affordable.'
       },
-      anchor: 'NHS budget of £167bn is finite; demand for healthcare treatments is effectively unlimited — scarcity forces allocation choices.',
+      anchor: 'NHS budget (£167bn) is finite; healthcare demand is effectively unlimited.',
       tiles: [
         {
           id:  'step-questions',
           icon: '❓',
-          text: 'Scarcity forces prioritisation: unlimited health needs cannot all be met with a £167bn budget → NHS must decide WHAT to produce (which treatments), HOW (surgery vs medication vs prevention), and FOR WHOM (triage, waiting lists, QALY thresholds)',
+          text: 'Scarcity forces NHS to decide WHAT, HOW and FOR WHOM to produce',
           pos:  0
         },
         {
           id:  'step-opp-cost',
           icon: '💷',
-          text: 'Every choice has an opportunity cost: approving a cancer drug at £30,000/QALY means the same £50m cannot fund mental health services → the forgone benefit is the real cost of the decision, even if no price is paid',
+          text: 'Every choice has an opportunity cost — the forgone next-best alternative',
           pos:  1
         },
         {
           id:  'step-universal',
           icon: '🌍',
-          text: 'The economic problem is universal: even with a larger NHS budget, new medical technologies (gene therapy, robotics) would create fresh demand — scarcity is a permanent feature of economic life, not a temporary funding shortfall',
+          text: 'Scarcity is permanent — new tech and needs always create fresh demand',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🏛️',
-          text: 'The NHS is inefficient — better management could eliminate scarcity without more funding',
+          text: 'Better NHS management could eliminate scarcity without more funding',
           pos:  null
         },
         {
           id:  'dist-2',
           icon: '💊',
-          text: 'Private healthcare eliminates the economic problem by letting price allocate resources',
+          text: 'Private healthcare ends the economic problem via price rationing',
           pos:  null
         },
         {

@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'UK consumers regularly buy high-sugar soft drinks. At the point of purchase, they focus on immediate taste enjoyment and do not account for the future health costs of diabetes and obesity. The government introduces the Soft Drinks Industry Levy (SDIL) in 2018 and extends mandatory traffic light nutritional labelling.'
       },
-      anchor: 'Present bias: consumers systematically underweight future health costs (diabetes risk, obesity) relative to immediate taste enjoyment — so effective demand for high-sugar products exceeds the rational level.',
+      anchor: 'Present bias: consumers underweight future health costs vs taste.',
       tiles: [
         {
           id:  'step-failure',
           icon: '🧠',
-          text: 'Behavioural market failure: present bias inflates demand from D_rational to D_biased → market equilibrium Q_biased > Q_rational → overconsumption of high-sugar products → welfare loss (future health costs borne by consumers and NHS)',
+          text: 'Present bias inflates demand D_rational → D_biased → overconsumption',
           pos:  0
         },
         {
           id:  'step-correction',
           icon: '↩️',
-          text: 'Policy correction (nudge + SDIL): traffic light labelling makes health costs salient at point of decision → corrects present bias by making future cost present → SDIL incentivises producer reformulation → effective demand shifts left from D_biased toward D_rational',
+          text: 'Labels + SDIL make cost salient → effective demand shifts left',
           pos:  1
         },
         {
           id:  'step-outcome',
           icon: '✅',
-          text: 'Outcome: Q falls toward Q_rational; NHS long-run health costs reduced; regressive distributional impact minimised (SDIL on producers, not a direct consumption tax); reformulation preserves consumer choice rather than restricting it',
+          text: 'Q falls toward Q_rational; NHS costs cut; reformulation, not regressive tax',
           pos:  2
         },
         {
@@ -58,13 +58,13 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:  'dist-2',
           icon: '🏋️',
-          text: 'Government subsidises sports facilities to encourage physical activity as a complement to diet change',
+          text: 'Government subsidises sports facilities as a complement to diet change',
           pos:  null
         },
         {
           id:  'dist-3',
           icon: '📉',
-          text: 'Bank of England raises interest rates, reducing consumer spending on discretionary goods',
+          text: 'Bank of England raises rates, reducing spending on discretionary goods',
           pos:  null
         }
       ],

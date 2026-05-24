@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'UK leisure sector, summer 2021. Restaurants and hospitality venues reopen after COVID restrictions lift.'
       },
-      anchor: 'Accumulated savings (£190bn) and rising consumer confidence release pent-up demand for leisure.',
+      anchor: '£190bn savings + rising confidence release pent-up leisure demand.',
       tiles: [
         {
           id:   'step-shift',
           icon: '💰',
-          text: 'Consumer income and confidence rise → willingness and ability to pay for leisure increases → demand curve shifts right',
+          text: 'Income and confidence rise → demand curve shifts right',
           pos:  0
         },
         {
           id:   'step-excess',
           icon: '📊',
-          text: 'At the existing market price, quantity demanded now exceeds quantity supplied → excess demand creates upward pressure on prices',
+          text: 'At P₁, Q_d > Q_s → excess demand pushes prices up',
           pos:  1
         },
         {
           id:   'step-eq',
           icon: '📈',
-          text: 'Price rises to a new equilibrium P₂ > P₁, and quantity rises to Q₂ > Q₁ — restaurants, hotels, and event venues expand output',
+          text: 'New equilibrium at P₂ > P₁, Q₂ > Q₁ — venues expand output',
           pos:  2
         },
         {

@@ -29,42 +29,42 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Population grows and real incomes rise in a major UK city. Demand for housing increases while new supply is slow to respond due to planning restrictions.'
       },
-      anchor: 'Rising incomes and population growth increase the number of households willing and able to pay for housing at every price',
+      anchor: 'Rising incomes and population push up housing demand at every price.',
       tiles: [
         {
           id:  'step-shift',
           icon: '📈',
-          text: 'Demand shifts right — at the existing equilibrium rent, there is now a housing shortage',
+          text: 'Demand shifts right — at existing rent, a shortage emerges',
           pos:  0
         },
         {
           id:  'step-signal',
           icon: '💰',
-          text: 'Rents rise, signalling to developers that building is profitable; existing landlords earn higher returns',
+          text: 'Rents rise → signal of profit to developers; landlords earn more',
           pos:  1
         },
         {
           id:  'step-supply',
           icon: '🏗️',
-          text: 'Over time, higher rents attract new supply — but with inelastic supply (PES ≈ 0.4), quantity responds slowly, keeping rents high',
+          text: 'Inelastic supply (PES ≈ 0.4) → quantity adjusts slowly → rents stay high',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🏛️',
-          text: 'The government immediately imposes a rent ceiling, freezing rents at the old level',
+          text: 'Government imposes a rent ceiling, freezing rents at the old level',
           pos:  null
         },
         {
           id:  'dist-2',
           icon: '💼',
-          text: 'Higher wages allow workers to save more, eliminating the housing problem automatically',
+          text: 'Higher wages let workers save more, ending the housing problem',
           pos:  null
         },
         {
           id:  'dist-3',
           icon: '⚡',
-          text: 'Supply shifts right instantly in response to the shortage, restoring the original rent level',
+          text: 'Supply shifts right instantly, restoring the original rent level',
           pos:  null
         }
       ],

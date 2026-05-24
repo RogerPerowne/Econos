@@ -24,8 +24,8 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'NHS England operated with a budget of [[budget|£167 billion in 2023–24]] — the largest in the organisation\'s history — yet NHS waiting lists reached [[waiting|7.7 million patients]], the highest since records began, confirming that demand for healthcare consistently outstrips the resources available to meet it.',
-      'NICE (National Institute for Health and Care Excellence) uses a [[qaly|cost-effectiveness threshold of approximately £20,000–£30,000 per Quality-Adjusted Life Year (QALY)]] to approve drugs for NHS use — making the opportunity cost of every treatment decision explicit in institutional policy.',
-      'Comparative data show that [[spending|UK NHS spending per capita is lower than comparable European health systems (Germany, France, Netherlands)]] — raising the question of whether NHS scarcity reflects fixed resource constraints or political choices about taxation and public spending.',
+      'NICE (National Institute for Health and Care Excellence) uses a [[qaly|cost-effectiveness threshold of ~£20,000–£30,000 per QALY]] to approve drugs for NHS use — making the opportunity cost of every treatment decision explicit in institutional policy.',
+      'Comparative data show that [[spending|UK NHS spending per capita is below peer European systems]] (Germany, France, Netherlands) — raising the question of whether NHS scarcity reflects fixed resource constraints or political choices about taxation and public spending.',
       'The NHS faces a projected [[workforce|shortfall of 264,000 clinical staff by 2036–37]] (NHS Long Term Workforce Plan 2023), demonstrating that scarcity is not purely financial — labour is a scarce factor of production even within the world\'s largest employer in Europe.',
       'In 2022–23, NHS spending of £10.8 billion on cancer treatments [[crowding|crowded out investment in mental health services and preventive care]], illustrating the three central economic questions — what, how, and for whom — in real allocation decisions.'
     ],
@@ -33,8 +33,8 @@ window.ECONOS_LINK_STATION = {
     evidence: {
       'budget':    { text: '£167 billion in 2023–24' },
       'waiting':   { text: '7.7 million patients' },
-      'qaly':      { text: 'cost-effectiveness threshold of approximately £20,000–£30,000 per Quality-Adjusted Life Year (QALY)' },
-      'spending':  { text: 'UK NHS spending per capita is lower than comparable European health systems (Germany, France, Netherlands)' },
+      'qaly':      { text: 'cost-effectiveness threshold of ~£20,000–£30,000 per QALY' },
+      'spending':  { text: 'UK NHS spending per capita is below peer European systems' },
       'workforce': { text: 'shortfall of 264,000 clinical staff by 2036–37' },
       'crowding':  { text: 'crowded out investment in mental health services and preventive care' }
     },

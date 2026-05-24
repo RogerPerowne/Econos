@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🌊',
         prompt: 'Policy claim',
-        text:   'State provision financed by general taxation is the only effective solution to the under-provision of public goods.'
+        text:   'Tax-funded state provision is the only fix for public good under-supply.'
       },
       factors: [
         {

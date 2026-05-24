@@ -29,30 +29,30 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'A specific tax of £0.24 per litre is imposed on soft drinks with more than 8g of sugar per 100ml. The tax is levied on producers at the point of manufacture.'
       },
-      anchor: 'The specific tax raises the marginal cost of production for every litre of high-sugar drink produced',
+      anchor: 'The specific tax raises MC for every litre of high-sugar drink.',
       tiles: [
         {
           id:   'step-supply',
           icon: '🏭',
-          text: 'Producers face higher costs — the supply curve shifts left by the amount of the tax at every quantity',
+          text: 'Supply shifts left by the tax amount at every quantity',
           pos:  0
         },
         {
           id:   'step-prices',
           icon: '💰',
-          text: 'The new market equilibrium has a higher consumer price (P_c) and lower producer price (P_p = P_c − tax)',
+          text: 'New equilibrium: higher P_c, lower P_p (P_p = P_c − tax)',
           pos:  1
         },
         {
           id:   'step-incidence',
           icon: '📊',
-          text: 'Output falls from Q₀ to Q_t; the tax burden is split between consumers and producers based on PED and PES',
+          text: 'Q₀ → Q_t; tax burden splits between consumers/producers per PED, PES',
           pos:  2
         },
         {
           id:   'dist-1',
           icon: '🛒',
-          text: 'Consumers immediately pay the full tax as a direct charge at the point of sale',
+          text: 'Consumers immediately pay the full tax at the point of sale',
           pos:  null
         },
         {
@@ -64,7 +64,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:   'dist-3',
           icon: '🏛️',
-          text: 'The government sets the new market price directly, removing the price mechanism',
+          text: 'Government sets the new market price directly, ousting the mechanism',
           pos:  null
         }
       ],

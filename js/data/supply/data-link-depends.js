@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🏭',
         prompt: 'Claim',
-        text:   'Rising energy input costs are the most significant supply-side shock facing UK energy-intensive manufacturing industries in 2021–22.'
+        text:   'Energy costs were the top supply shock for UK manufacturing in 2021–22.'
       },
       factors: [
         {

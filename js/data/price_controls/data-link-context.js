@@ -24,19 +24,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'Average market rents in the city have risen 32% over the last three years, and [[affordability|nearly 40% of private renters now spend more than half their post-tax income on housing]] — a level widely classed as severely unaffordable.',
-      'Campaigners argue that an immediate cap holding rents at 2022 levels would [[short-run-gain|protect the roughly 180,000 existing tenants who already hold a tenancy, locking in lower payments and preventing further displacement]].',
-      'However, landlord associations warn that [[supply-response|the price elasticity of supply of rental housing is high in the long run — analyses of Berlin\'s 2020 cap suggest new listings fell by around 50% within a year]], as landlords sell to owner-occupiers or convert flats to short-term lets.',
-      'City planning data show that [[quality-decline|maintenance spending per rented flat in San Francisco fell by roughly 8% in the decade after its rent stabilisation rules were tightened]], with landlords cutting non-essential repairs to offset capped revenue.',
-      'A recent LSE study finds that [[targeting|under non-price rationing, capped flats are increasingly allocated through personal networks and large key-money payments — disproportionately reaching higher-income or better-connected tenants rather than those in greatest need]].'
+      'Average market rents in the city have risen 32% over the last three years, and [[affordability|~40% of private renters spend over half their post-tax income on housing]] — a level widely classed as severely unaffordable.',
+      'Campaigners argue that an immediate cap holding rents at 2022 levels would [[short-run-gain|protect ~180,000 sitting tenants, locking in lower payments]] and preventing further displacement.',
+      'However, landlord associations warn that [[supply-response|LR PES is high — Berlin\'s 2020 cap cut listings ~50% in a year]], as landlords sell to owner-occupiers or convert flats to short-term lets.',
+      'City planning data show that [[quality-decline|SF maintenance per flat fell ~8% in the decade after rent stabilisation]], with landlords cutting non-essential repairs to offset capped revenue.',
+      'A recent LSE study finds that [[targeting|capped flats are increasingly allocated via networks and key-money payments]] — disproportionately reaching higher-income or better-connected tenants rather than those in greatest need.'
     ],
 
     evidence: {
-      'affordability':  { text: 'nearly 40% of private renters now spend more than half their post-tax income on housing' },
-      'short-run-gain': { text: 'protect the roughly 180,000 existing tenants who already hold a tenancy, locking in lower payments and preventing further displacement' },
-      'supply-response':{ text: 'the price elasticity of supply of rental housing is high in the long run — analyses of Berlin\'s 2020 cap suggest new listings fell by around 50% within a year' },
-      'quality-decline':{ text: 'maintenance spending per rented flat in San Francisco fell by roughly 8% in the decade after its rent stabilisation rules were tightened' },
-      'targeting':      { text: 'under non-price rationing, capped flats are increasingly allocated through personal networks and large key-money payments — disproportionately reaching higher-income or better-connected tenants rather than those in greatest need' }
+      'affordability':  { text: '~40% of private renters spend over half their post-tax income on housing' },
+      'short-run-gain': { text: 'protect ~180,000 sitting tenants, locking in lower payments' },
+      'supply-response':{ text: 'LR PES is high — Berlin\'s 2020 cap cut listings ~50% in a year' },
+      'quality-decline':{ text: 'SF maintenance per flat fell ~8% in the decade after rent stabilisation' },
+      'targeting':      { text: 'capped flats are increasingly allocated via networks and key-money payments' }
     },
 
     buckets: [

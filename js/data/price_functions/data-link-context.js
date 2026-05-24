@@ -28,7 +28,7 @@ window.ECONOS_LINK_STATION = {
       'UK food price inflation hit [[inflation|19.2% in March 2023]] — the highest rate since 1977 (ONS) — indicating that the supply shock transmitted a large price signal to consumers, rationing demand for food at the original price level.',
       'UK farmland prices rose [[farmland|14% in 2023, the highest annual rise in 15 years]] (Savills), reflecting farmer investment responses to high commodity prices and confirming that the incentive function of the price mechanism was operating.',
       'UK wheat planting area rose [[planting|3% in 2023]] (AHDB) as farmers responded to high prices, providing direct evidence that the signalling function of the price mechanism was translating into expanded future supply.',
-      'Global wheat output recovered by [[global-recovery|2023–24 as non-Ukraine producers (Argentina, Australia, Canada) expanded production]] in response to the price signal, suggesting the international price mechanism was successfully reallocating supply.',
+      'Global wheat output recovered by [[global-recovery|2023–24 as non-Ukraine producers expanded production]] (Argentina, Australia, Canada) in response to the price signal, suggesting the international price mechanism was successfully reallocating supply.',
       'UK food banks reported a [[foodbanks|37% increase in demand]] (Trussell Trust 2023), suggesting the rationing function of price excludes the lowest-income households from access to basic food.'
     ],
 
@@ -36,7 +36,7 @@ window.ECONOS_LINK_STATION = {
       'inflation':        { text: '19.2% in March 2023' },
       'farmland':         { text: '14% in 2023, the highest annual rise in 15 years' },
       'planting':         { text: '3% in 2023' },
-      'global-recovery':  { text: '2023–24 as non-Ukraine producers (Argentina, Australia, Canada) expanded production' },
+      'global-recovery':  { text: '2023–24 as non-Ukraine producers expanded production' },
       'foodbanks':        { text: '37% increase in demand' }
     },
 

@@ -27,7 +27,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '⛽',
         prompt: 'Policy claim',
-        text:   'Raising fuel duty is the most effective policy for reducing carbon emissions from road transport.'
+        text:   'Raising fuel duty best cuts road transport carbon emissions.'
       },
       factors: [
         {

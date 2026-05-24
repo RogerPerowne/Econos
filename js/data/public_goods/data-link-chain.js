@@ -29,36 +29,36 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'The UK Environment Agency is considering whether to build new coastal flood defences protecting 5,000 households in a coastal community. There is no current government provision and no private firm is building defences.'
       },
-      anchor: "Coastal flood defences are non-rival (one household's protection does not reduce availability to others) and non-excludable (impossible to charge individual households for coastal protection).",
+      anchor: 'Coastal flood defences are non-rival and non-excludable.',
       tiles: [
         {
           id:  'step-freerider',
           icon: '🎭',
-          text: "Free rider problem: because flood protection cannot be withheld from non-payers, each household has an incentive to wait for others to fund it → no one reveals true WTP → effective market demand collapses to near zero (D_private << D_social)",
+          text: 'Free rider problem: WTP hidden → D_private ≪ D_social',
           pos:  0
         },
         {
           id:  'step-market-fail',
           icon: '📉',
-          text: "Market failure: private firms cannot profitably provide flood defences — they cannot charge non-payers → no revenue stream → zero private provision → Q_market ≈ 0, far below Q* (the socially optimal level of flood protection)",
+          text: 'Private firms cannot charge non-payers → Q_market ≈ 0 ≪ Q*',
           pos:  1
         },
         {
           id:  'step-state',
           icon: '🏛️',
-          text: "State solution: government provides flood defences via general taxation — using compulsory payment to solve the free rider problem → Q rises toward Q* → welfare gain (£8 per £1 invested) is realised without relying on voluntary revealed preference",
+          text: 'State funds via taxation → free-rider solved → Q rises toward Q*',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '📈',
-          text: 'Rising sea levels increase the marginal social cost of not providing flood defences',
+          text: 'Rising sea levels increase the MSC of not providing flood defences',
           pos:  null
         },
         {
           id:  'dist-2',
           icon: '☂️',
-          text: 'Insurance companies price flood risk accurately, providing an alternative to state provision',
+          text: 'Insurers price flood risk accurately, an alternative to state provision',
           pos:  null
         },
         {

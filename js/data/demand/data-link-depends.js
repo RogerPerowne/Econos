@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🎭',
         prompt: 'Claim',
-        text:   'Rising consumer income and confidence are the primary drivers of increased demand for UK leisure and hospitality services post-pandemic.'
+        text:   'Income and confidence are the primary drivers of UK leisure demand.'
       },
       factors: [
         {

@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '💉',
         prompt: 'Policy claim',
-        text:   'Direct public provision is the most effective policy to correct the underproduction caused by positive consumption externalities.'
+        text:   'Direct public provision best corrects positive consumption externalities.'
       },
       factors: [
         {

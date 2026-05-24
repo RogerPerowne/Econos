@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'UK real household disposable income falls 2.5% in 2022 — the largest annual fall since records began — driven by inflation (11.1% CPI peak) outpacing wage growth.'
       },
-      anchor: 'UK real household disposable income falls 2.5% in 2022 — the largest annual fall since records began — driven by inflation (11.1% CPI peak) outpacing wage growth.',
+      anchor: 'UK real disposable income falls 2.5% in 2022 (CPI peak 11.1%).',
       tiles: [
         {
           id:   'step-income',
           icon: '📉',
-          text: 'Income effect: real income falls → households reduce non-essential spending → demand for luxury and premium goods falls → demand curve shifts left',
+          text: 'Real income falls → luxury demand cut → demand curve shifts left',
           pos:  0
         },
         {
           id:   'step-yed',
           icon: '📊',
-          text: 'YED amplification: for goods with YED > 1 (luxury cars, premium hotels, overseas holidays), a 2.5% income fall generates a more-than-proportional demand fall — e.g. 5–18% quantity reduction',
+          text: 'YED > 1: 2.5% income fall → 5–18% demand drop for luxuries',
           pos:  1
         },
         {
           id:   'step-market',
           icon: '⚖️',
-          text: 'Market adjustment: leftward demand shift → new equilibrium at lower price P₂ and lower quantity Q₂ → luxury sector revenues fall; value/budget substitutes gain market share (positive XED for substitutes)',
+          text: 'New equilibrium: lower P₂, Q₂; budget substitutes gain (positive XED)',
           pos:  2
         },
         {
@@ -58,7 +58,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:   'dist-2',
           icon: '🏛️',
-          text: 'Government increases income tax, directly reducing disposable income through the budget',
+          text: 'Government raises income tax, cutting disposable income via the budget',
           pos:  null
         },
         {

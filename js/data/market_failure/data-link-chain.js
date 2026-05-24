@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Car sellers know whether their vehicle has hidden defects (\'lemons\') or is high quality; buyers cannot reliably distinguish quality before purchase.'
       },
-      anchor: 'Car sellers know whether their vehicle has hidden defects (\'lemons\') or is high quality; buyers cannot reliably distinguish quality before purchase.',
+      anchor: 'Sellers know if cars are lemons; buyers cannot verify quality.',
       tiles: [
         {
           id:  'step-adverse',
           icon: '❓',
-          text: 'Adverse selection: buyers assume average quality → WTP reflects average quality price → high-quality sellers cannot achieve their asking price → good cars exit the market first (adverse selection: only worse-than-average cars remain)',
+          text: 'Adverse selection: buyers pay average-quality price → good cars exit',
           pos:  0
         },
         {
           id:  'step-spiral',
           icon: '📉',
-          text: 'Spiral: as high-quality cars exit, average quality falls further → buyers\' WTP for any car falls → more good cars exit → market for quality vehicles collapses → effective demand shifts left from full-information D to information-gap D',
+          text: 'Spiral: quality ↓ → WTP ↓ → more exits → demand shifts left',
           pos:  1
         },
         {
           id:  'step-dwl',
           icon: '⚖️',
-          text: 'Market failure: the information-gap equilibrium produces fewer quality cars than socially optimal → deadweight welfare loss from unexploited gains from trade — the deal between a quality seller and an informed buyer that would have been mutually beneficial never happens',
+          text: 'Market failure: too few quality cars → DWL from lost gains from trade',
           pos:  2
         },
         {

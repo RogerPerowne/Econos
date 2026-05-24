@@ -5,181 +5,167 @@
     topicId:  'consumer_producer_surplus_main',
     title:    'Consumer &amp; Producer Surplus',
     subtitle: 'Theme 1 &middot; Topic 2.8 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the definitions and diagrams for consumer and producer surplus, how to calculate both, the effects of taxes and subsidies on surplus, allocative efficiency, and real-world applications including rent controls and tariffs. Mixed formats: calculation, sort, evaluation multi-select, chain, paragraph fill, and data analysis.',
-    shortNames: {
-      'consumer_producer_surplus_1': 'CS &amp; PS overview',
-      'consumer_producer_surplus_2': 'Building the diagram',
-      'consumer_producer_surplus_3': 'Taxes and surplus',
-      'consumer_producer_surplus_4': 'Subsidies and surplus',
-      'consumer_producer_surplus_5': 'Allocative efficiency',
-      'consumer_producer_surplus_6': 'Real-world applications'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'consumer_producer_surplus_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers CS and PS definitions, calculation, total welfare, deadweight loss, and policy effects on surplus',
+    shortNames: [
+      'CS definition MCQ', 'PS definition MCQ', 'Numeric CS', 'Total welfare',
+      'DWL from tax', 'Price ceiling effect', 'Match pairs', 'Cause & effect',
+      'Odd one out', 'Data table'
+    ],
 
     questions: [
 
-      /* 1 — mcq: definition of consumer surplus */
+      /* 1 — MCQ: consumer surplus */
       { type: 'mcq',
-        stem: 'Which statement most precisely defines <strong>consumer surplus</strong>?',
+        id: 'q_cps_1',
+        stem: '<strong>Consumer surplus</strong> is best defined as:',
         opts: [
-          'The sum, across all buyers, of the difference between each buyer\'s maximum willingness to pay and the market price they actually pay',
-          'The total amount consumers spend on a good at the equilibrium market price',
-          'The profit consumers make from purchasing goods at a price lower than the average across all markets',
-          'The area beneath the demand curve up to the quantity demanded, measured from the origin'
+          'The difference between what consumers are willing to pay (maximum willingness to pay) and what they actually pay (market price) — the welfare gain from market exchange',
+          'The profit earned by consumers from buying goods at prices below the cost of production',
+          'The total amount that consumers spend in a market in any given period',
+          'The difference between the highest price charged and the lowest price charged for the same good'
         ],
         ans: 0,
-        exp: 'Consumer surplus is the <strong>aggregate gain to buyers</strong>: for each unit purchased, the difference between the buyer\'s maximum willingness to pay (their demand price, read off the demand curve) and the market price. Summed across all units, this is the triangle above the market price and below the demand curve. Option B describes total spending (P × Q), not the gain. Option C conflates surplus with profit in an unrelated sense. Option D describes the entire area under the demand curve &mdash; this includes both consumer surplus and the expenditure rectangle.'
+        exp: '<strong>Consumer surplus (CS)</strong>: for each unit purchased, the consumer\'s welfare gain = (maximum WTP − price paid). CS is the area below the demand curve and above the market price — the triangle between the demand curve, the price level, and the quantity axis (up to equilibrium quantity). CS represents the "bonus" to consumers from market exchange — the gain above what was paid. A lower market price increases CS; a higher price decreases it. CS is the welfare measure used to assess consumer gains from markets, price changes, and policy interventions.'
       },
 
-      /* 2 — calculation: find CS, PS, and total welfare */
-      { type: 'calculation',
-        context: 'In a market, the demand equation is <strong>P = 100 &minus; Q</strong> and the supply equation is <strong>P = 20 + Q</strong>.',
-        working: [
-          'Step 1: Find equilibrium',
-          '100 &minus; Q = 20 + Q &rarr; 80 = 2Q &rarr; Q* = 40, P* = 60',
-          'Step 2: Consumer surplus (triangle above P*, below demand)',
-          'Height = demand intercept &minus; P* = 100 &minus; 60 = 40',
-          'CS = &frac12; &times; base &times; height = &frac12; &times; 40 &times; 40 = &pound;800',
-          'Step 3: Producer surplus (triangle below P*, above supply)',
-          'Height = P* &minus; supply intercept = 60 &minus; 20 = 40',
-          'PS = &frac12; &times; 40 &times; 40 = &pound;800',
-          'Step 4: Total welfare = CS + PS = &pound;800 + &pound;800 = &pound;1,600'
-        ],
-        stem: 'Which set of values is correct for this market?',
+      /* 2 — MCQ: producer surplus */
+      { type: 'mcq',
+        id: 'q_cps_2',
+        stem: '<strong>Producer surplus</strong> is best defined as:',
         opts: [
-          { ped: 'CS = &pound;800, PS = &pound;800, total welfare = &pound;1,600', typ: 'Both triangles have height 40 and base 40', rev: 'Use &frac12; &times; base &times; height for each' },
-          { ped: 'CS = &pound;1,600, PS = &pound;800, total welfare = &pound;2,400', typ: 'CS double-counts the equilibrium rectangle', rev: 'CS is only the triangle above P*, not below it too' },
-          { ped: 'CS = &pound;800, PS = &pound;40, total welfare = &pound;840', typ: 'PS uses quantity, not the height of the triangle', rev: 'PS = &frac12; &times; Q* &times; (P* &minus; supply intercept)' },
-          { ped: 'CS = &pound;2,400, PS = &pound;2,400, total welfare = &pound;4,800', typ: 'Uses P &times; Q for both, not triangle areas', rev: 'Surplus is a triangle, not a rectangle' }
+          'The difference between the price received by producers (market price) and their minimum acceptable price (marginal cost) — the welfare gain from selling in the market',
+          'The total revenue earned by firms in a market — the sum of all prices received for goods sold',
+          'The profit earned by firms after all costs are deducted — synonymous with economic profit',
+          'The difference between the market price and the average cost of production for all firms'
         ],
         ans: 0,
-        exp: 'At equilibrium P* = 60, Q* = 40. <strong>CS</strong> = &frac12; &times; 40 &times; (100 &minus; 60) = &pound;800. <strong>PS</strong> = &frac12; &times; 40 &times; (60 &minus; 20) = &pound;800. <strong>Total welfare</strong> = &pound;1,600. This symmetric result arises because both lines have the same slope in absolute value (&plusmn;1). In asymmetric cases (different slopes), CS &ne; PS even at the same equilibrium.'
+        exp: '<strong>Producer surplus (PS)</strong>: for each unit sold, the firm\'s welfare gain = (price received − minimum acceptable price, i.e. marginal cost). PS is the area above the supply curve and below the market price — the triangle between the supply curve, the price level, and the quantity axis. PS is NOT the same as profit (which deducts fixed costs); PS = total revenue − variable costs. A higher market price increases PS; a lower price decreases it. Together, CS + PS = total welfare (total surplus) in the market — the measure of net gains from trade.'
       },
 
-      /* 3 — elastic_sort: classify effects of a per-unit tax */
-      { type: 'elastic_sort',
-        stem: 'When a per-unit indirect tax is imposed on a competitive market, classify each effect correctly.',
-        categories: ['falls', 'rises'],
-        categoryLabels: ['Falls / decreases', 'Rises / increases'],
-        goods: [
-          { icon: '🛒', label: 'Consumer surplus', note: 'Buyers pay a higher price', ans: 'falls' },
-          { icon: '🏭', label: 'Producer surplus', note: 'Sellers receive a lower net price', ans: 'falls' },
-          { icon: '🏛️', label: 'Government tax revenue', note: 'The wedge &times; quantity sold', ans: 'rises' },
-          { icon: '📉', label: 'Deadweight welfare loss', note: 'Surplus destroyed by reduced output', ans: 'rises' },
-          { icon: '📊', label: 'Market quantity traded', note: 'Fewer units sold at the higher price', ans: 'falls' },
-          { icon: '💳', label: 'Price consumers pay (Pc)', note: 'Supply shift raises the buyer price', ans: 'rises' },
-          { icon: '💰', label: 'Net price producers receive (Pp)', note: 'After remitting the tax', ans: 'falls' }
+      /* 3 — Numeric input: consumer surplus calculation */
+      { type: 'numeric_input',
+        id: 'q_cps_3',
+        stem: 'Calculate the <strong>consumer surplus</strong> (£) in this market.',
+        context: 'In a competitive market for concert tickets: maximum WTP = £100 (top of demand curve); equilibrium market price = £40; equilibrium quantity = 500 tickets sold. Assume a straight-line (linear) demand curve.',
+        answer: 15000,
+        tolerance: 500,
+        unit: '£',
+        hint: 'CS = ½ × (max WTP − market price) × equilibrium quantity. This is the area of the triangle above price and below demand curve.',
+        workingSteps: [
+          'Height of CS triangle = max WTP − market price = £100 − £40 = £60',
+          'Base of CS triangle = equilibrium quantity = 500 tickets',
+          'CS = ½ × base × height = ½ × 500 × £60 = £15,000'
         ],
-        exp: 'A per-unit tax shifts supply upward, creating a wedge between Pc (what buyers pay) and Pp (what sellers keep). <strong>CS falls</strong> because Pc &gt; Pe. <strong>PS falls</strong> because Pp &lt; Pe. <strong>Government revenue rises</strong> by (Pc &minus; Pp) &times; Qt &mdash; this is a transfer, not a welfare loss. <strong>DWL rises</strong> because output falls from Qe to Qt, destroying the surplus on those transactions. <strong>Quantity falls</strong>, Pc rises, and Pp falls. Note: tax revenue being a \'rise\' does not mean welfare is created &mdash; it is transferred from consumers and producers to government.'
+        exp: 'CS = ½ × (£100 − £40) × 500 = ½ × £60 × 500 = <strong>£15,000</strong>. This is the area of the triangle above the market price and below the demand curve. Each ticket purchaser enjoys a welfare gain equal to their WTP minus the £40 they paid — ranging from £60 for the highest-WTP buyer (who valued it at £100) to £0 for the marginal buyer (who valued it at exactly £40). Total CS is the sum of all individual surpluses = £15,000. If price falls to £30, CS increases; if a concert is cancelled entirely (zero provision), CS falls to zero.'
       },
 
-      /* 4 — multi_select: effects of a subsidy */
-      { type: 'multi_select',
-        stem: 'Which of the following are correct statements about the welfare effects of a per-unit subsidy in an otherwise competitive market?',
+      /* 4 — MCQ: total welfare */
+      { type: 'mcq',
+        id: 'q_cps_4',
+        stem: 'In a competitive market at equilibrium, <strong>total economic welfare</strong> (total surplus) equals:',
         opts: [
-          'Consumer surplus increases because buyers pay a price below the free-market equilibrium',
-          'Producer surplus increases because sellers receive a higher effective net price',
-          'Total welfare always rises because both CS and PS increase',
-          'Government expenditure equals (Ps &minus; Pc) &times; Qs, where Ps is the producer net price and Pc is the consumer price',
-          'Deadweight welfare loss cannot arise from a subsidy if demand is inelastic',
-          'Government expenditure exceeds the combined gain in CS and PS, with the difference equal to the deadweight welfare loss'
+          'Consumer surplus + producer surplus — the sum of all gains from trade to both buyers and sellers',
+          'Consumer surplus only — producer surplus is not counted as it reflects profit extraction rather than genuine welfare',
+          'Producer surplus only — firms are the creators of value so their surplus is the true welfare measure',
+          'Total revenue — this represents the total value created by market exchange'
         ],
-        correct: [0, 1, 3, 5],
-        exp: 'Options A, B, D, and F are correct. <strong>A</strong>: Buyers pay Pc &lt; Pe &rarr; CS rises. <strong>B</strong>: Sellers receive Ps &gt; Pe &rarr; PS rises. <strong>D</strong>: Government cost = subsidy per unit &times; post-subsidy quantity; Ps &minus; Pc = subsidy amount. <strong>F</strong>: The gain in CS + PS is less than the subsidy bill &mdash; the difference is the DWL triangle from the units between Qe and Qs, which cost more to produce than consumers value them at. Option C is wrong: welfare falls unless the subsidy corrects a positive externality. Option E is wrong: DWL arises regardless of demand elasticity whenever output is pushed beyond Qe (though the triangle is smaller with more inelastic demand).'
+        ans: 0,
+        exp: '<strong>Total welfare (W) = CS + PS</strong>. This is maximised at the competitive equilibrium where supply = demand. CS captures the welfare gains to buyers; PS captures the welfare gains to sellers. Both are genuine welfare measures: CS reflects the "bonus" to consumers (paid less than they were willing to); PS reflects the "bonus" to producers (received more than their minimum acceptable price). Policies that reduce total welfare (taxes not correcting externalities, price controls, monopoly pricing) create a <strong>deadweight welfare loss</strong> — the reduction in (CS + PS) that is not transferred to anyone else.'
       },
 
-      /* 5 — para_fill: allocative efficiency */
-      { type: 'para_fill',
-        stem: 'Complete the analytical paragraph about allocative efficiency and total surplus.',
-        anchor: 'The competitive equilibrium is allocatively efficient because it maximises total surplus.',
-        para: 'Allocative efficiency occurs when [1] equals [2] &mdash; the price mechanism drives the market to this outcome. At this point the [3] of the last unit to consumers exactly equals its cost to producers, so no reallocation of resources can raise total [4]. Any output below equilibrium creates a surplus loss from missed [5] trades. Any output above equilibrium destroys welfare because units are produced where [6] exceeds [7]. Both deviations generate a [8] welfare loss &mdash; the area of foregone net surplus that accrues to no-one.',
-        blanks: [
-          { id: 1, opts: ['marginal benefit', 'total revenue', 'consumer surplus', 'average cost'], ans: 0 },
-          { id: 2, opts: ['marginal cost', 'total cost', 'average revenue', 'fixed cost'], ans: 0 },
-          { id: 3, opts: ['marginal benefit', 'average benefit', 'consumer expenditure', 'total benefit'], ans: 0 },
-          { id: 4, opts: ['welfare', 'revenue', 'output', 'profit'], ans: 0 },
-          { id: 5, opts: ['mutually beneficial', 'loss-making', 'unregulated', 'bilateral'], ans: 0 },
-          { id: 6, opts: ['marginal cost', 'average cost', 'total cost', 'fixed cost'], ans: 0 },
-          { id: 7, opts: ['marginal benefit', 'average benefit', 'total benefit', 'consumer surplus'], ans: 0 },
-          { id: 8, opts: ['deadweight', 'net', 'gross', 'social'], ans: 0 }
-        ],
-        exp: '(1) <strong>Marginal benefit</strong>: what the next unit is worth to the buyer. (2) <strong>Marginal cost</strong>: what the next unit costs to produce. (3) <strong>Marginal benefit</strong>: the demand curve represents MB. (4) <strong>Welfare</strong>: CS + PS is maximised at the competitive equilibrium. (5) <strong>Mutually beneficial</strong>: below Qe, there are trades where MB &gt; MC that do not occur &mdash; both buyer and seller could gain. (6) <strong>Marginal cost</strong>. (7) <strong>Marginal benefit</strong>: above Qe, MC &gt; MB &mdash; producing those units consumes more resources than the benefit delivered. (8) <strong>Deadweight</strong>: the technical term for surplus lost, not transferred.'
-      },
-
-      /* 6 — chain: three-step welfare analysis method */
-      { type: 'chain',
-        stem: 'Place the steps of the three-step welfare analysis method in the correct order for an exam answer.',
-        items: [
-          { label: 'State the net effect on total surplus and evaluate whether a market failure justifies the intervention', note: '' },
-          { label: 'Identify the policy type (tax, subsidy, price ceiling, floor) and state whether it raises or lowers the price consumers and producers face', note: '' },
-          { label: 'Classify each area of the diagram: label what transferred to government revenue, what transferred between CS and PS, and what was destroyed as DWL', note: '' },
-          { label: 'Draw the supply-demand diagram before and after the policy, and label Pc, Pp, and the new quantity', note: '' }
-        ],
-        correctOrder: [1, 3, 2, 0],
-        exp: '<strong>Correct sequence:</strong><br>1. Identify the policy — you cannot draw or analyse before you know what the intervention is.<br>2. Draw the diagram — this is your evidence base for all subsequent analysis.<br>3. Classify each area — separate transfer (government revenue, redistribution between CS and PS) from destruction (DWL). This is the key analytical step many students skip.<br>4. State the net welfare effect and evaluate — only after the analysis is done. A conclusion like "welfare falls by the DWL triangle unless the externality corrected is larger" earns the evaluation mark.<br><br>Common errors: jumping to the conclusion before classifying areas, or describing only the CS fall without noting the revenue transfer.'
-      },
-
-      /* 8 — multi_select: evaluation of consumer and producer surplus */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>consumer and producer surplus and the welfare effects of government intervention</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
+      /* 5 — MCQ: deadweight loss from tax */
+      { type: 'mcq',
+        id: 'q_cps_5',
+        stem: 'A non-corrective indirect tax reduces <strong>consumer surplus</strong>, <strong>producer surplus</strong>, and creates a <strong>deadweight welfare loss</strong>. Which of the following correctly accounts for all these effects?',
         opts: [
-          'A per-unit tax always reduces total welfare, but the size of the welfare loss depends on the price elasticities of supply and demand — with very inelastic demand, the DWL triangle is small relative to the tax revenue rectangle, so the efficiency cost may be modest',
-          'Consumer surplus falls when a tax is imposed because consumers pay a higher price',
-          'Whether an indirect tax improves or reduces net social welfare depends on whether it corrects a pre-existing market failure: a tax on a negative externality can raise total welfare if the marginal external cost exceeds the DWL it creates',
-          'Rent control transfers surplus from producers to some consumers, but the evidence from Diamond et al. (2019) suggests the supply-reducing effect dominates in the long run, resulting in a net welfare loss even from the perspective of renters as a group',
-          'Producer surplus is the area above the supply curve and below the market price',
-          'Government intervention in markets is always justified when consumer surplus is low'
+          'CS falls (higher consumer price); PS falls (lower producer net price); the tax revenue (CS + PS transferred to government) and deadweight loss (triangle of lost trades) together account for the full reduction in (CS + PS)',
+          'CS falls; PS is unchanged because producers simply pass the full tax to consumers; DWL equals the tax revenue collected',
+          'CS is unchanged; PS falls by the full amount of the tax; DWL equals the change in PS',
+          'Both CS and PS fall by identical amounts; DWL is zero because the tax revenue exactly equals the combined CS and PS reduction'
         ],
-        correct: [0, 2, 3],
-        exp: '<strong>Options A, C, and D are genuine evaluation moves.</strong> Option A weighs the DWL against revenue and qualifies the conclusion by elasticity — this is evaluation through the use of evidence to reach a direction. Option C applies the Pigouvian logic to give a conditional verdict: the tax may improve welfare, but only if the externality correction exceeds the DWL — a precise evaluative condition. Option D uses named empirical evidence (Diamond et al.) to reach a qualified conclusion that goes beyond describing the transfer: the supply effect dominates, reversing the simple story. <strong>Option B</strong> is pure description — stating what happens to CS without weighing or qualifying. <strong>Option E</strong> is a definition, not evaluation. <strong>Option F</strong> is an unsupported overclaim with no direction or weighing of competing factors.'
+        ans: 0,
+        exp: 'An indirect tax: <strong>CS falls</strong> (consumer price rises); <strong>PS falls</strong> (producer net price falls); the reduction in (CS + PS) = <strong>tax revenue</strong> (transferred to government) + <strong>DWL</strong> (pure welfare loss from suppressed trades). The DWL is the triangle between the pre-tax and post-tax equilibria — trades that were mutually beneficial (WTP > MC) but are suppressed by the tax-inclusive price. Total: reduction in CS + reduction in PS = government revenue + DWL. This accounting identity is essential for welfare analysis of taxation.'
       },
 
-      /* 9 — odd_one_out: consequences of a price ceiling */
+      /* 6 — MCQ: price ceiling and welfare */
+      { type: 'mcq',
+        id: 'q_cps_6',
+        stem: 'A price ceiling set <strong>below</strong> the equilibrium price: what happens to <strong>consumer surplus</strong>?',
+        opts: [
+          'CS is ambiguous — some consumers gain (those who can still buy pay less); but CS is lost for consumers who can no longer find the good due to the shortage the ceiling creates',
+          'CS definitely increases — all consumers pay less, so all consumer surplus increases unambiguously',
+          'CS definitely decreases — lower prices mean consumers value the good less, reducing their welfare',
+          'CS is unchanged — the price ceiling transfers welfare from producers to consumers dollar for dollar'
+        ],
+        ans: 0,
+        exp: 'Price ceiling below equilibrium: the controlled price is lower than P* → some CS is gained by those who can still buy (rectangle between old and new price). But the shortage (QD > QS at controlled price) means some consumers who would have bought at P* cannot find the good → their CS is lost. Net effect on CS is <strong>ambiguous</strong>: if the quantity reduction is large relative to the price saving, CS may fall overall. PS definitely falls (lower price and possibly lower quantity). A DWL triangle emerges (trades between P* quantity and QS quantity that no longer occur). The price ceiling is not a "free" benefit to consumers — it has welfare costs.'
+      },
+
+      /* 7 — Match pairs: welfare concepts */
+      { type: 'match_pairs',
+        id: 'q_cps_7',
+        stem: 'Match each concept to its definition in welfare analysis.',
+        pairs: [
+          { a: 'Consumer surplus', b: 'Area below demand curve and above market price — welfare gain to buyers' },
+          { a: 'Producer surplus', b: 'Area above supply curve and below market price — welfare gain to sellers' },
+          { a: 'Total welfare (total surplus)', b: 'CS + PS — maximised at competitive equilibrium' },
+          { a: 'Deadweight welfare loss', b: 'Loss of welfare not transferred to anyone — pure efficiency cost of market distortion' },
+          { a: 'Allocative efficiency', b: 'Resources allocated to uses where MSB = MSC — all beneficial trades occur; DWL = 0' },
+          { a: 'Price discrimination', b: 'Charging different prices to different consumers — converts CS into PS' }
+        ],
+        exp: 'Welfare analysis vocabulary: CS and PS together = total surplus, maximised at competitive equilibrium where supply = demand (P = MC = MB). Any distortion (monopoly, tax, price control not correcting an externality) reduces total surplus, creating DWL. <strong>Allocative efficiency</strong> requires DWL = 0 (all beneficial trades occurring). <strong>Price discrimination</strong>: allows firms to extract CS — a redistribution from consumers to producers that may or may not change total welfare depending on whether it allows additional trades.'
+      },
+
+      /* 8 — Cause & effect: policies and welfare */
+      { type: 'cause_effect',
+        id: 'q_cps_8',
+        stem: 'Match each policy to its effect on consumer surplus, producer surplus, and total welfare.',
+        pairs: [
+          { cause: 'Monopoly restricts output and raises price above MC', effect: 'CS falls; PS may rise (transfer from consumers); DWL created — total welfare falls' },
+          { cause: 'Government introduces per-unit production subsidy (no externality)', effect: 'CS rises (lower price); PS rises (higher effective price); total welfare falls (DWL from overproduction)' },
+          { cause: 'Competitive market reaches equilibrium without intervention', effect: 'CS + PS maximised; no DWL; allocative efficiency achieved' },
+          { cause: 'Corrective Pigouvian tax on negative externality', effect: 'CS falls; PS falls; tax revenue collected; DWL eliminated; total social welfare rises' },
+          { cause: 'Price floor above equilibrium (minimum wage)', effect: 'Some PS rises (higher wage for those employed); CS may fall; DWL if employment falls' },
+          { cause: 'Perfect price discrimination by monopolist', effect: 'All CS converted to PS; total welfare same as competitive outcome; distribution shifts to firm' }
+        ],
+        exp: 'Welfare analysis applied: <strong>monopoly</strong> — DWL from restricted output (classic inefficiency); <strong>non-corrective subsidy</strong> — DWL from overproduction; <strong>competitive equilibrium</strong> — optimal (no DWL); <strong>corrective tax</strong> — removes DWL from externality (increases social welfare even as CS and PS fall); <strong>price floor</strong> — DWL from reduced quantity; <strong>perfect price discrimination</strong> — no quantity DWL but massive distributional shift. Always ask: does an intervention create or eliminate a DWL? Corrective policies eliminate existing DWL; non-corrective policies create new DWL.'
+      },
+
+      /* 9 — Odd one out: effects on consumer surplus */
       { type: 'odd_one_out',
-        stem: 'Three of the following are consequences of a price ceiling set <em>below</em> the free-market equilibrium. Which is the ODD ONE OUT?',
+        id: 'q_cps_9',
+        stem: 'Three of these would <strong>increase consumer surplus</strong> in a market. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '📉', label: 'Excess demand (shortage): at the ceiling price, quantity demanded exceeds quantity supplied', note: '' },
-          { icon: '📈', label: 'Producer surplus increases as more producers can participate in the market at the regulated price', note: '' },
-          { icon: '💔', label: 'A deadweight welfare loss arises from the mutually beneficial transactions that no longer occur', note: '' },
-          { icon: '🏠', label: 'Some consumers who can obtain the good at the ceiling price gain &mdash; their consumer surplus increases', note: '' }
+          { icon: '📉', label: 'Market price falls due to a rightward shift in supply (technology improvement)', note: '' },
+          { icon: '🏛️', label: 'A per-unit production subsidy lowers the market price paid by consumers', note: '' },
+          { icon: '📈', label: 'The market price rises due to a leftward shift in supply (input cost increase)', note: '' },
+          { icon: '✅', label: 'New firms enter the market, increasing competition and driving down prices', note: '' }
         ],
-        ans: 1,
-        exp: 'The odd one out is option B. A price ceiling set below Pe reduces producer surplus &mdash; it does <em>not</em> increase it. Producers are forced to sell at a price below the free-market equilibrium, reducing the gap between price received and their minimum supply price. Some producers exit the market entirely. Options A, C, and D are genuine consequences. <strong>A</strong>: shortage is the defining result of any binding price ceiling (Qd &gt; Qs at Pmax &lt; Pe). <strong>C</strong>: DWL arises from the units between Qs and Qe that are no longer traded. <strong>D</strong>: sitting tenants under rent control are the classic example &mdash; those lucky enough to get the controlled good gain.'
+        ans: 2,
+        exp: 'The odd one out is <strong>market price rising due to a supply contraction</strong>. A higher price reduces consumer surplus — consumers pay more and the area between the demand curve and price line shrinks. The other three all lower the market price, increasing CS: technology improvement shifts supply right → lower equilibrium price → higher CS; production subsidy shifts supply right → lower consumer price → higher CS; new firm entry increases competition → lower prices → higher CS. Consumer surplus moves inversely with price: lower price → higher CS; higher price → lower CS.'
       },
 
-      /* 10 — data_table: rent control evidence */
+      /* 10 — Data table: monopoly vs competition welfare */
       { type: 'data_table',
-        stem: 'The table summarises findings from a 2019 study of San Francisco rent control (Diamond et al.).',
-        headers: ['Group affected', 'Outcome measured', 'Finding'],
+        id: 'q_cps_10',
+        stem: 'The table compares market outcomes under perfect competition and monopoly.',
+        headers: ['Market structure', 'Price', 'Quantity', 'Consumer Surplus', 'Producer Surplus', 'DWL'],
         rows: [
-          ['Tenants in rent-controlled units', 'Tenure length', 'Stayed 19% longer in same accommodation'],
-          ['Landlords (multi-family pre-1980 buildings)', 'Supply of rental units', 'Reduced rental supply by ~15% through conversion and redevelopment'],
-          ['All renters seeking housing (wider market)', 'Uncontrolled rents', 'Rents in uncontrolled market rose 5&ndash;7% (fewer units available)'],
-          ['Economy-wide welfare', 'Net welfare effect', 'Estimated net welfare loss of $2.9bn over 10 years']
+          ['Perfect competition', '£20', '1,000', '£5,000', '£2,500', '£0'],
+          ['Monopoly', '£30', '600', '£1,800', '£4,200', '£1,500'],
+          ['Change (monopoly vs competition)', '+£10', '−400', '−£3,200', '+£1,700', '+£1,500']
         ],
-        question: 'Which analysis of rent control is best supported by this evidence?',
+        question: 'Which conclusion is <strong>best supported</strong> by the data?',
         opts: [
-          'Rent control illustrates how a price ceiling can simultaneously benefit some consumers and reduce overall welfare: sitting tenants gain, but reduced supply and higher uncontrolled rents harm the broader rental market',
-          'Rent control is economically efficient because it transfers surplus from landlords to tenants at zero net welfare cost',
-          'The evidence shows rent control has no measurable effect on housing supply, so market failure in unaffordable housing is effectively corrected',
-          'Rent control should be extended to all housing types since the data shows it successfully stabilises tenancies'
+          'Monopoly transfers £1,700 of CS to PS (producer gains at consumer expense) and destroys £1,500 of welfare as DWL — total welfare is lower under monopoly by £1,500; the monopolist gains less than consumers lose',
+          'Monopoly is more efficient because producer surplus is higher under monopoly than perfect competition',
+          'The DWL of £1,500 equals the consumer surplus loss — all CS is destroyed by the monopoly',
+          'The data show that consumers are better off under monopoly because fewer units are produced and higher prices indicate greater quality'
         ],
         ans: 0,
-        exp: 'Option A is best supported. The study shows rent control produces a <em>mixed</em> distributional outcome: tenants in controlled units benefit (longer tenure, lower rent) but the overall market loses (15% less supply, 5&ndash;7% higher uncontrolled rents, $2.9bn net welfare loss). This is the classic economist critique of price ceilings: they transfer some CS from producers to consumers but destroy more welfare (DWL) than they transfer. Option B is directly contradicted by the $2.9bn net loss. Option C is directly contradicted by the 15% supply reduction. Option D ignores both the supply-destruction mechanism and the wider-market rental price increases.'
-      },
-
-      /* 10 — mcq: transfer vs welfare loss */
-      { type: 'mcq',
-        stem: 'An indirect tax generates government revenue and causes a deadweight welfare loss. Which statement correctly distinguishes the two?',
-        opts: [
-          'Tax revenue is a transfer of surplus from consumers and producers to the government &mdash; it still exists in the economy and can fund public services; deadweight welfare loss is surplus destroyed entirely and received by no-one',
-          'Both tax revenue and deadweight welfare loss represent permanent destructions of economic welfare that cannot be recovered',
-          'Deadweight welfare loss can be recovered by increasing the tax rate further, generating more revenue to redistribute',
-          'Tax revenue represents a welfare loss because it reduces both CS and PS; deadweight welfare loss is the surplus that accrues to the government instead'
-        ],
-        ans: 0,
-        exp: 'Option A is correct. <strong>Tax revenue</strong> is a <em>transfer</em>: the surplus originally held by consumers and producers is redistributed to government, which can deploy it on public goods, welfare payments, or deficit reduction. The money still exists in the economy. <strong>Deadweight welfare loss</strong> is genuine destruction: the mutually beneficial trades that no longer occur represent value that is eliminated entirely &mdash; no party (buyer, seller, or government) captures it. Option B is wrong &mdash; only DWL is permanent destruction. Option C is wrong &mdash; a higher tax raises the DWL (it grows with the square of the tax rate). Option D has the definitions completely reversed.'
+        exp: 'The data show the standard monopoly welfare analysis: CS falls by £3,200 (consumers pay more for fewer units). PS rises by £1,700 (the monopolist captures this from consumers through higher price). DWL = £1,500 (the 400 units of suppressed output where MB > MC — pure welfare loss). Accounting: CS loss (£3,200) = PS gain (£1,700) + DWL (£1,500). The transfer from CS to PS is a distributional effect — not a welfare loss itself. The DWL is the real efficiency cost of monopoly. Total welfare falls by £1,500 — the competitive outcome maximises (CS + PS). This is the core economic case against monopoly power: it creates DWL by restricting output below the social optimum.'
       }
 
     ]

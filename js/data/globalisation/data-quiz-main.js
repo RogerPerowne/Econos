@@ -1,188 +1,143 @@
-/* ============================================================
-   ECONOS — Quiz content for: Globalisation
-   10 questions covering causes, benefits, costs, MNCs and de-globalisation.
-   ============================================================ */
-
 (function () {
 
   window.ECONOS_QUIZ = {
     id:       'globalisation_main',
     topicId:  'globalisation_main',
     title:    'Globalisation',
-    subtitle: 'Theme 4.1 · Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the causes and characteristics of globalisation, its benefits and costs for developed and developing economies, multinational corporations, and the de-globalisation trend. Mixed formats targeting the analysis and evaluation marks that separate A from A*.',
-    shortNames: {
-      'globalisation-framing':    'What is globalisation?',
-      'globalisation-causes':     'Causes',
-      'globalisation-benefits':   'Benefits',
-      'globalisation-costs':      'Costs',
-      'globalisation-developing': 'Development impact',
-      'de-globalisation':         'De-globalisation',
-      'mncs':                     'MNCs'
-    },
-
+    subtitle: 'International Economics',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'globalisation' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers causes, benefits, costs, multinational corporations, and de-globalisation',
+    shortNames: [
+      'Globalisation defined','Drivers','Benefits','Costs','MNCs',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 — MCQ: definition of globalisation */
-      { type: 'mcq',
-        stem: 'Which statement best defines <strong>globalisation</strong> as an economic concept?',
+      {
+        id:   'q_glob_1',
+        type: 'mcq',
+        q:    'Globalisation refers to:',
         opts: [
-          'The growing integration of national economies through flows of trade, capital, labour, and information, driven by technology and policy liberalisation',
-          'The spread of American consumer culture and the dominance of the US dollar in international transactions',
-          'A permanent, irreversible process by which all countries converge to the same level of income per capita',
-          'The removal of all government regulations on domestic businesses to promote free competition'
+          'The process by which countries build trade barriers to protect domestic industries',
+          'The increasing integration of world economies through trade, investment, and migration',
+          'The convergence of all countries to identical economic systems',
+          'The dominance of one country\'s culture and economic model worldwide'
         ],
-        ans: 0,
-        exp: 'Globalisation is defined by <strong>economic integration</strong> across four dimensions: trade in goods and services, capital flows (FDI and portfolio), migration of labour, and flows of information and technology. It is driven by both technology (containerisation, internet) and deliberate policy choices (WTO, deregulation). It is <em>not</em> simply cultural Americanisation, it is not irreversible (2008 and COVID showed it can contract), and it is distinct from domestic deregulation.'
+        ans:  1,
+        exp:  'Globalisation is the growing interconnection of world economies: goods, services, capital, and people flow more freely across borders. It is driven by technology, trade liberalisation, and reduced transport costs.'
       },
-
-      /* 2 — Elastic sort: classify causes */
-      { type: 'elastic_sort',
-        stem: 'Classify each factor as a cause of globalisation driven primarily by <strong>technology</strong> or by <strong>policy liberalisation</strong>.',
-        categories: ['tech', 'policy'],
-        categoryLabels: ['Technological driver', 'Policy driver'],
-        goods: [
-          { icon: '🚢', label: 'Shipping containerisation cutting freight costs by ~90% since the 1960s', note: '', ans: 'tech' },
-          { icon: '🌐', label: 'GATT/WTO rounds reducing average tariffs from 40% (1947) to 3% (2023)', note: '', ans: 'policy' },
-          { icon: '📡', label: 'Internet and mobile technology enabling real-time global supply-chain coordination', note: '', ans: 'tech' },
-          { icon: '🏦', label: 'UK Big Bang deregulation (1986) removing capital controls on cross-border flows', note: '', ans: 'policy' },
-          { icon: '✈️', label: 'Commercial jet aviation making international business travel routine', note: '', ans: 'tech' },
-          { icon: '🇨🇳', label: "China's WTO accession (2001) opening the world's largest labour force to global trade", note: '', ans: 'policy' }
-        ],
-        exp: '<strong>Technological drivers</strong> reduced the physical and informational costs of trade: containerisation transformed shipping; aviation shrank distances; the internet made global coordination feasible. <strong>Policy drivers</strong> were deliberate choices to allow these technologies to be used across borders: GATT/WTO liberalised goods trade; capital deregulation freed financial flows; China\'s WTO entry added 1.3bn workers to tradeable labour markets. A key A* point: technology <em>enabled</em> globalisation but policy <em>chose</em> it — de-globalisation is therefore also a policy choice, not a technological reversal.'
-      },
-
-      /* 3 — Multi-select: benefits of globalisation */
-      { type: 'multi_select',
-        stem: 'Which of the following are recognised <strong>benefits of globalisation</strong> for developed economies such as the UK?',
+      {
+        id:   'q_glob_2',
+        type: 'mcq',
+        q:    'Which of the following has been a major driver of globalisation?',
         opts: [
-          'Access to cheaper imported consumer goods, holding down inflation for two decades (1990-2010)',
-          'London\'s role as a global financial hub generating substantial income and tax revenues',
-          'Inward FDI creating manufacturing jobs (e.g. Nissan Sunderland, Toyota Derby)',
-          'Elimination of structural unemployment in all regions as workers move to higher-productivity sectors',
-          'Complete elimination of within-country income inequality as global wages converge',
-          'Lower average costs for firms via access to global-scale production and supply chains'
+          'Rising trade tariffs between nations',
+          'Decreasing internet penetration globally',
+          'Falling transport costs and improvements in communications technology',
+          'Increasing restrictions on foreign direct investment'
         ],
-        correct: [0, 1, 2, 5],
-        exp: 'Options A, B, C, and F are genuine benefits for developed economies. The "China price" held down UK inflation; financial globalisation turned London into the world\'s leading financial centre; Japanese FDI into the UK created over 30,000 supply-chain jobs around Nissan Sunderland; and access to global markets enables scale economies. Options D and E are <em>not</em> consequences of globalisation — structural unemployment in deindustrialised regions actually <em>increased</em> as manufacturing moved to lower-cost countries, and within-country inequality in most developed economies has <em>risen</em> even as global (between-country) inequality has fallen.'
+        ans:  2,
+        exp:  'Containerisation cut shipping costs dramatically; digital communications enabled global supply chains and financial markets. Combined with WTO trade liberalisation, these reduced the cost of doing business across borders.'
       },
-
-      /* 4 — Odd one out: costs of globalisation for developing countries */
-      { type: 'odd_one_out',
-        stem: 'Three of these are costs of globalisation for <strong>developing countries</strong>. Which is the ODD ONE OUT?',
+      {
+        id:   'q_glob_3',
+        type: 'mcq',
+        q:    'A key benefit of globalisation for developing countries is:',
+        opts: [
+          'Protection of infant industries from foreign competition',
+          'Access to FDI, technology transfer, and larger export markets',
+          'Reduced dependence on primary commodity exports',
+          'Lower rates of urbanisation and migration'
+        ],
+        ans:  1,
+        exp:  'Globalisation can bring FDI (creating jobs and tax revenue), technology transfer, access to global markets, and integration into global value chains — all of which can accelerate development.'
+      },
+      {
+        id:   'q_glob_4',
+        type: 'mcq',
+        q:    'A multinational corporation (MNC) is a firm that:',
+        opts: [
+          'Trades internationally but produces only in its home country',
+          'Has production operations in multiple countries',
+          'Is owned by citizens of more than one country',
+          'Is regulated by an international body'
+        ],
+        ans:  1,
+        exp:  'An MNC (or transnational corporation, TNC) maintains significant business activities — production, sales, R&D — in more than one country. Examples include Toyota, Apple, and Shell.'
+      },
+      {
+        id:   'q_glob_5',
+        type: 'numeric_input',
+        q:    'Global FDI inflows were $1,200bn in 2010 and $1,900bn in 2022. Calculate the percentage increase.',
+        answer: 58.3,
+        tolerance: 1,
+        unit: '%',
+        hint: 'Growth rate = ((new − old) / old) × 100.',
+        workingSteps: ['Growth = ((1,900 − 1,200) / 1,200) × 100','= (700/1,200) × 100 = 58.3%']
+      },
+      {
+        id:   'q_glob_6',
+        type: 'categorise',
+        q:    'Categorise each outcome as a potential benefit or potential cost of globalisation.',
+        categories: ['Potential benefit','Potential cost'],
         items: [
-          { icon: '🧠', label: 'Brain drain: skilled workers emigrate, reducing the domestic human capital stock', note: '' },
-          { icon: '📉', label: 'Prebisch-Singer hypothesis: commodity export prices fall relative to manufactured imports over time', note: '' },
-          { icon: '🏭', label: 'Export-led growth: FDI and manufacturing exports enabling rapid industrialisation and poverty reduction', note: '' },
-          { icon: '🦶', label: 'Footloose capital: MNC manufacturing investment can leave when wages rise, creating economic instability', note: '' }
-        ],
-        ans: 2,
-        exp: 'The odd one out is <strong>export-led growth</strong>. This is a <em>benefit</em> of globalisation for developing countries — the strategy used by South Korea, China, and Vietnam to achieve rapid industrialisation and poverty reduction. The other three are genuine costs: brain drain depletes human capital; the Prebisch-Singer hypothesis describes structural deterioration in developing country terms of trade over time; and footloose capital means MNC investment may depart when wages rise, leaving behind economic disruption without lasting productive capacity.'
+          { item: 'Lower consumer prices through global competition',     category: 'Potential benefit' },
+          { item: 'Deindustrialisation in developed economies',          category: 'Potential cost' },
+          { item: 'Technology transfer to developing countries',         category: 'Potential benefit' },
+          { item: 'Exploitation of low-wage workers in supply chains',   category: 'Potential cost' },
+          { item: 'Economic growth through specialisation',              category: 'Potential benefit' },
+          { item: 'Loss of national sovereignty over economic policy',   category: 'Potential cost' }
+        ]
       },
-
-      /* 5 — Calculation: terms of trade */
-      { type: 'calculation',
-        context: 'In 2020, a developing country has an export price index of <strong>100</strong> and an import price index of <strong>100</strong>. By 2024, its export price index (mainly commodities) has risen to <strong>115</strong> while its import price index (mainly manufactured goods) has risen to <strong>138</strong>.',
-        working: [
-          'Formula: Terms of Trade (ToT) = (Export price index ÷ Import price index) × 100',
-          '2020: ToT = (100 ÷ 100) × 100 = 100',
-          '2024: ToT = (115 ÷ 138) × 100 = 83.3',
-          'Change: ToT has fallen from 100 to 83.3 — a deterioration of 16.7 index points'
-        ],
-        stem: 'What has happened to the developing country\'s <strong>terms of trade</strong> between 2020 and 2024?',
-        opts: [
-          { ped: 'Deteriorated by approximately 17 index points to 83', typ: 'Export prices rose less than import prices: ToT = (115 ÷ 138) × 100 ≈ 83', rev: 'A fall in ToT means each unit of exports buys fewer imports — real purchasing power falls' },
-          { ped: 'Improved to approximately 120', typ: 'Confused direction — subtracted import price rise from export price rise without correct formula', rev: 'Apply the formula: (export price index ÷ import price index) × 100' },
-          { ped: 'Unchanged at 100, as both indices rose', typ: 'Ignored the difference in magnitudes of the price changes', rev: 'What matters is the relative change — exports rose 15% but imports rose 38%' },
-          { ped: 'Improved to 115, since export prices rose', typ: 'Used only the export price index and ignored import prices', rev: 'ToT compares export prices to import prices — both must be included' }
-        ],
-        ans: 0,
-        exp: 'Terms of Trade = (Export price index ÷ Import price index) × 100 = (115 ÷ 138) × 100 ≈ <strong>83.3</strong>. The ToT has <strong>deteriorated</strong> — the country must now export more commodities to buy the same quantity of manufactured imports. This is consistent with the Prebisch-Singer hypothesis: commodity prices tend to rise less than manufactured goods prices over time, worsening the real terms of exchange for primary exporters. A ToT deterioration reduces real national income even if export volumes and nominal revenues rise.'
+      {
+        id:   'q_glob_7',
+        type: 'cause_effect',
+        q:    'Match each aspect of globalisation to its effect.',
+        pairs: [
+          { cause: 'MNC sets up production in a developing country',  effect: 'FDI inflow; jobs created; technology transferred' },
+          { cause: 'Free trade increases import competition',         effect: 'Domestic firms face pressure; some may close' },
+          { cause: 'Global supply chain develops',                   effect: 'Production fragmented across countries to reduce costs' },
+          { cause: 'Financial markets become globally integrated',   effect: 'Financial crises can spread rapidly across borders' },
+          { cause: 'Trade liberalisation reduces tariffs',           effect: 'Comparative advantage drives specialisation and trade growth' },
+          { cause: 'Labour migrates from low- to high-wage countries',effect: 'Brain drain in sending countries; wage pressure in receiving countries' }
+        ]
       },
-
-      /* 6 — Para fill: MNC costs and benefits */
-      { type: 'para_fill',
-        stem: 'Complete the analytical paragraph by selecting the correct word or phrase for each numbered blank.',
-        anchor: 'The net welfare impact of MNC investment on host countries is contested.',
-        para: 'MNCs create [1] jobs and bring [2] transfer that raises local productivity. However, they may repatriate [3] to their home countries, reducing the host country\'s GNI relative to GDP. Transfer [4] allows MNCs to shift profits to low-tax jurisdictions, depriving host governments of [5] revenue. Whether FDI is net beneficial depends on host country [6] to absorb technology spillovers and the strength of domestic [7] to limit exploitation.',
-        blanks: [
-          { id: 1, opts: ['direct', 'informal', 'seasonal', 'public'], ans: 0 },
-          { id: 2, opts: ['technology', 'labour', 'environmental', 'fiscal'], ans: 0 },
-          { id: 3, opts: ['profits', 'debts', 'tariffs', 'subsidies'], ans: 0 },
-          { id: 4, opts: ['pricing', 'barriers', 'creation', 'diversion'], ans: 0 },
-          { id: 5, opts: ['tax', 'export', 'wage', 'tariff'], ans: 0 },
-          { id: 6, opts: ['capacity', 'debt', 'tariffs', 'imports'], ans: 0 },
-          { id: 7, opts: ['regulation', 'consumption', 'exports', 'currency'], ans: 0 }
-        ],
-        exp: '(1) <strong>Direct</strong> jobs — employment in the MNC facility itself plus supply-chain linkages. (2) <strong>Technology</strong> transfer — management practices, production techniques, know-how. (3) <strong>Profits</strong> — repatriation reduces GNI even as GDP rises; widens the GDP-GNI gap visible in Ireland and Luxembourg. (4) Transfer <strong>pricing</strong> — manipulating the prices charged in intra-firm transactions to shift taxable profits. (5) <strong>Tax</strong> revenue — Apple\'s 0.005% effective EU tax rate (2016 ruling) illustrates the scale. (6) <strong>Capacity</strong> — absorptive capacity: education, infrastructure, institutional quality. (7) <strong>Regulation</strong> — competition law, environmental rules, labour standards; weak regulation enables a race to the bottom.'
+      {
+        id:   'q_glob_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['FDI','MNC','Trade liberalisation','Protectionism'],
+        ans:  3,
+        exp:  'FDI, MNCs, and trade liberalisation are all drivers or features of globalisation. Protectionism (tariffs, quotas, subsidies) is the opposite of globalisation — it restricts international economic integration.'
       },
-
-      /* 7 — Data table: de-globalisation indicators */
-      { type: 'data_table',
-        stem: 'The table shows selected indicators of globalisation and de-globalisation trends.',
-        headers: ['Indicator', '2008', '2016', '2023'],
-        rows: [
-          ['World trade as % of GDP', '61%', '56%', '57%'],
-          ['Global FDI flows (US$bn)', '3,000', '1,750', '1,300'],
-          ['Average global tariff rate', '5.5%', '5.0%', '6.2%'],
-          ['UK-EU goods trade (index, 2020=100)', '—', '118', '95']
+      {
+        id:   'q_glob_9',
+        type: 'data_table',
+        q:    'Use the trade openness data to identify the most globalised economy.',
+        tableHeaders: ['Country','Exports + Imports as % GDP (Trade Openness)'],
+        tableData: [
+          ['USA','27%'],
+          ['UK','67%'],
+          ['Singapore','320%'],
+          ['Brazil','38%']
         ],
-        question: 'Which interpretation is most consistent with all four indicators?',
-        opts: [
-          'Globalisation slowed markedly after 2008 and has not recovered to its pre-crisis trajectory; tariff increases and Brexit have reinforced the de-globalisation trend since 2016',
-          'Globalisation has continued to accelerate since 2008 — the falling FDI numbers simply reflect improved efficiency of capital allocation rather than a retreat from integration',
-          'The data show that de-globalisation is complete: world trade has returned to its 1990s level and all forms of cross-border integration have reversed entirely',
-          'Brexit has been entirely beneficial for UK trade — the data show UK-EU trade has risen strongly since the referendum'
-        ],
-        ans: 0,
-        exp: 'All four rows point to a <strong>slowdown in globalisation</strong> since 2008, with some reversal. World trade as % of GDP peaked in 2008 and has not recovered. FDI flows have fallen by more than half from their 2008 peak. Average tariffs rose between 2016 and 2023 (reversing decades of liberalisation). UK-EU goods trade fell from an index of 118 (2016) to 95 (2023) — consistent with the non-tariff barrier effects of Brexit. Option B ignores all the negative signals. Option C overstates the reversal — globalisation has slowed, not reversed to 1990s levels. Option D misreads the UK-EU trade data, which shows a <em>fall</em> in UK-EU trade after Brexit.'
+        opts: ['USA','UK','Singapore','Brazil'],
+        ans:  2,
+        exp:  'Trade openness = (X + M) / GDP × 100. Singapore\'s ratio of 320% reflects its role as a major trade and re-export hub — it is the most globally integrated economy in the table.'
       },
-
-      /* 8 — Multi-select: evaluation of globalisation and inequality */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>the impact of globalisation on income inequality</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
-        opts: [
-          'Globalisation has reduced between-country inequality as emerging economies converged, but has simultaneously raised within-country inequality in developed economies — the net welfare effect therefore depends on the weight given to the distribution across countries versus within countries.',
-          'Although the Autor et al. "China Shock" evidence shows persistent regional unemployment in US manufacturing areas, compensation through redistribution was theoretically possible but politically failed — suggesting the problem is one of domestic policy design, not globalisation itself.',
-          'Globalisation increases inequality because jobs move to China and wages fall for poor workers in rich countries.',
-          'The Prebisch-Singer hypothesis predicts commodity exporters face deteriorating terms of trade, but empirical evidence since 2000 shows commodity prices surged through the 2000s supercycle — indicating the hypothesis is context-dependent rather than a universal law.',
-          'Whether globalisation raises or lowers inequality depends on the country and the time period, so it is impossible to draw any firm conclusion.',
-          'Globalisation is bad for developing countries because multinational corporations repatriate profits and exploit cheap labour.'
-        ],
-        correct: [0, 1, 3],
-        exp: '<strong>Option A</strong> is strong evaluation: it uses a two-level analytical framework (between vs within country), acknowledges competing evidence on each level, and reaches a qualified conclusion that depends on a stated value judgement — a genuine evaluative move. <strong>Option B</strong> is strong evaluation: it accepts the empirical evidence (Autor et al.) but reframes the conclusion — the distributional failure reflects domestic redistribution policy, not globalisation per se. This is a "direction given with reasoning" evaluation. <strong>Option D</strong> is strong evaluation: it tests the Prebisch-Singer hypothesis against specific counter-evidence (commodity supercycle), concluding the hypothesis is conditional rather than universal — exactly the kind of evidence-based qualification examiners reward. <strong>Option C</strong> is weak — it is one-sided analysis (only the negative distributional effect) with no weighing or qualification. <strong>Option E</strong> is a vague "it depends" with no analytical direction — a classic student mistake that mimics evaluation without providing it. <strong>Option F</strong> is pure description/assertion with no weighing of the countervailing benefits of FDI.'
-      },
-
-      /* 9 — Chain: globalisation transmission to wage inequality */
-      { type: 'chain',
-        stem: 'Arrange the following steps in the correct causal order showing how globalisation in developed countries leads to rising within-country inequality.',
-        items: [
-          { label: 'Low-skill workers in import-competing industries face wage pressure or unemployment', note: '' },
-          { label: 'MNCs locate manufacturing in low-wage developing countries to minimise production costs', note: '' },
-          { label: 'The wage gap between high-skill and low-skill workers in developed economies widens', note: '' },
-          { label: 'Trade liberalisation and FDI flows increase as tariffs fall and capital controls are removed', note: '' },
-          { label: 'High-skill workers in export sectors and finance gain from globalised markets and higher demand', note: '' },
-          { label: 'Compensation mechanisms fail — redistribution is insufficient — and political backlash grows', note: '' }
-        ],
-        correctOrder: [3, 1, 0, 4, 2, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Trade liberalisation and capital deregulation create the conditions for globalisation.<br>2. MNCs offshore manufacturing to low-wage countries.<br>3. Low-skill workers in developed economies face competition, losing jobs or wage growth.<br>4. High-skill workers and capital owners gain from global markets.<br>5. The wage gap widens — rising within-country inequality.<br>6. Compensation fails — political backlash (Brexit, Trump) follows.<br><br>This chain connects micro (firm location decisions) to macro (wage distribution) to political economy (de-globalisation backlash). Explaining each link explicitly is what separates Level 3 from Level 4 exam answers.'
-      },
-
-      /* 10 — Diagram interpretation: de-globalisation */
-      { type: 'mcq',
-        stem: 'The COVID-19 pandemic in 2020-21 exposed severe fragilities in global just-in-time supply chains (e.g. semiconductor shortages). Which of the following <strong>best evaluates</strong> whether this represents structural de-globalisation or merely a temporary disruption?',
-        opts: [
-          'It is likely structural if firms and governments permanently re-design supply chains for resilience rather than pure efficiency, and if geopolitical fragmentation (US-China tech decoupling, sanctions) continues to fragment the global economy',
-          'It is definitely structural because any supply disruption lasting more than one year automatically causes permanent reversal of trade integration, as supply chains cannot be rebuilt once broken',
-          'It is definitely temporary because comparative advantage is an immutable law of economics that always drives global specialisation back to its optimal configuration once shocks pass',
-          'Whether it is structural or cyclical is irrelevant to economic analysis since de-globalisation has no measurable effect on price levels, growth, or welfare'
-        ],
-        ans: 0,
-        exp: 'Whether COVID-19 disruption leads to <strong>structural de-globalisation</strong> depends on <em>permanence of the response</em>. If firms merely rebuilt the same supply chains after the shock, it was cyclical. But evidence suggests structural change: the US CHIPS Act ($53bn), EU Critical Raw Materials Act, and \'friend-shoring\' policies represent deliberate policy re-orientation toward supply chain security over pure efficiency. The US-China technology decoupling (semiconductors, AI hardware) adds a geopolitical dimension that is not easily reversible. Option B incorrectly asserts a mechanical rule. Option C misrepresents comparative advantage — it explains trade patterns but does not make globalisation irreversible. Option D is wrong — de-globalisation would raise import prices, reduce competition, and potentially slow productivity growth.'
+      {
+        id:   'q_glob_10',
+        type: 'match_pairs',
+        q:    'Match each globalisation concept to its description.',
+        pairs: [
+          { a: 'FDI',                    b: 'Investment in productive assets in a foreign country' },
+          { a: 'MNC',                    b: 'Firm with operations across multiple countries' },
+          { a: 'Trade liberalisation',   b: 'Reduction of barriers to international trade' },
+          { a: 'De-globalisation',       b: 'Trend toward more protectionism and reduced economic integration' },
+          { a: 'Global value chain',     b: 'Production fragmented across countries, each adding value' },
+          { a: 'Technology transfer',    b: 'Movement of knowledge and production methods across borders' }
+        ]
       }
-
     ]
   };
 

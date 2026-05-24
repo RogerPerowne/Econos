@@ -5,171 +5,172 @@
     topicId:  'economic_systems_main',
     title:    'Economic Systems',
     subtitle: 'Theme 1 &middot; Topic 1.6 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the free market economy, the price mechanism as allocator, command economy advantages and failures, the mixed economy rationale, transition economies, and Hayek\'s knowledge problem. Mixed formats &#8212; sort, para fill, evaluation multi-select, data table &#8212; designed for the evaluation marks Edexcel rewards.',
-    shortNames: {
-      'economic_systems_1': 'Free market',
-      'economic_systems_2': 'Free market pros/cons',
-      'economic_systems_3': 'Command economy',
-      'economic_systems_4': 'Command pros/cons',
-      'economic_systems_5': 'Mixed economy',
-      'economic_systems_6': 'Price mechanism',
-      'economic_systems_7': 'Transition economies'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'economic_systems_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers free market, command, mixed economy, the price mechanism as allocator, Hayek, and transition economies',
+    shortNames: [
+      'Systems categorise', 'Free market MCQ', 'Command economy', 'Price mechanism',
+      'Hayek knowledge', 'Match pairs', 'Cause & effect', 'Odd one out',
+      'Data table', 'Evaluation multi-select'
+    ],
 
     questions: [
 
-      /* 1 &#8212; MCQ: invisible hand */
-      { type: 'mcq',
-        stem: 'Adam Smith\'s concept of the <strong>invisible hand</strong> suggests that:',
-        opts: [
-          'Individuals pursuing their own self-interest unintentionally promote society\'s interest &#8212; price signals coordinate decentralised decisions without central direction',
-          'A visible government hand is needed in all markets to ensure that resources are allocated efficiently and equitably',
-          'The invisible hand guarantees optimal outcomes in all markets, including those with externalities, public goods, and information asymmetries',
-          'Free markets always produce a more equal distribution of income than command economies'
-        ],
-        ans: 0,
-        exp: 'The invisible hand is Adam Smith\'s metaphor for how price signals coordinate millions of decentralised decisions &#8212; as if guided by an unseen hand &#8212; without requiring central direction. Crucially, the invisible hand works only when prices reflect all costs and benefits. Market failures (externalities, public goods, information asymmetries, monopoly) break the invisible hand mechanism: prices no longer accurately signal true social costs and benefits. This is precisely why Theme 1 moves from free markets to market failure. The invisible hand is not a guarantee of equity &#8212; it reflects ability to pay, not need.'
-      },
-
-      /* 2 &#8212; Elastic sort: price mechanism functions */
-      { type: 'elastic_sort',
-        stem: 'Match each scenario with the function of the price mechanism it best illustrates.',
-        categories: ['signal', 'incentive', 'ration'],
-        categoryLabels: ['Signalling', 'Incentive', 'Rationing'],
-        goods: [
-          { icon: '&#128200;', label: 'Rising house prices indicate that housing is scarce relative to demand, prompting developers to build more', note: '', ans: 'signal' },
-          { icon: '&#128176;', label: 'Higher oil prices attract new producers into exploration and increase global oil supply', note: '', ans: 'incentive' },
-          { icon: '&#128722;', label: 'During a shortage of concert tickets, rising prices ensure only those willing to pay the market price obtain a ticket', note: '', ans: 'ration' },
-          { icon: '&#127807;', label: 'Falling wheat prices tell farmers to reduce wheat production and switch to more profitable crops', note: '', ans: 'signal' },
-          { icon: '&#128202;', label: 'Profit opportunities in electric vehicle manufacturing attract capital and entrepreneurship into the sector', note: '', ans: 'incentive' },
-          { icon: '&#9981;', label: 'Rising energy prices during a gas shortage reduce consumption by pricing out lower-value uses', note: '', ans: 'ration' }
-        ],
-        exp: '<strong>Signalling</strong>: prices convey information about relative scarcity &#8212; rising prices signal scarcity; falling prices signal surplus. <strong>Incentives</strong>: rising prices increase profit margins, attracting more resources into the market; falling prices squeeze margins, driving resources out. <strong>Rationing</strong>: when demand exceeds supply, rising prices allocate available supply to those who value it most highly (or can pay most). All three functions must operate simultaneously for the price mechanism to allocate resources efficiently &#8212; market failures disrupt one or more functions.'
-      },
-
-      /* 3 &#8212; MCQ: Hayek's knowledge problem */
-      { type: 'mcq',
-        stem: 'Friedrich Hayek\'s <strong>"knowledge problem"</strong> is best described as:',
-        opts: [
-          'No central authority can possess the dispersed, local, and tacit knowledge that millions of price signals aggregate &#8212; making central planning inevitably inferior to market allocation',
-          'Consumers lack the information to make rational decisions, so government must intervene to correct information failures in all markets',
-          'Firms in free markets withhold information from consumers to maximise profits, requiring mandatory disclosure regulation',
-          'The problem that governments do not have enough economists to analyse all available economic data when setting policy'
-        ],
-        ans: 0,
-        exp: 'Hayek argued that the essential information needed for efficient resource allocation (local knowledge of preferences, production possibilities, opportunity costs) is dispersed across millions of individuals and cannot be centrally gathered or processed. The price mechanism aggregates this dispersed knowledge into a single signal (the price). Central planners &#8212; like Soviet Gosplan &#8212; cannot replicate this information system. The result is chronic misallocation: shortages, surpluses, and wrong goods produced. This insight is the most powerful economic critique of command economies and is directly relevant to contemporary debates about government vs market.'
-      },
-
-      /* 4 &#8212; Multi-select: advantages of command economy */
-      { type: 'multi_select',
-        stem: 'Which of the following are <strong>potential advantages</strong> of a command economy compared to a free market?',
-        opts: [
-          'Resources can be directed to social priorities (healthcare, education, defence) regardless of ability to pay',
-          'Greater equality of income and wealth distribution through state wage and price setting',
-          'Capacity to mobilise resources rapidly in national emergencies such as wartime',
-          'Prices accurately signal all social costs and benefits, enabling optimal resource allocation',
-          'Consumer sovereignty &#8212; citizens receive exactly the goods and services they prefer',
-          'Avoidance of speculative boom-bust cycles driven by financial markets'
-        ],
-        correct: [0, 1, 2, 5],
-        exp: 'The potential advantages of command economies are A, B, C, and F. Option D is <strong>incorrect</strong>: command economies remove the price mechanism, so prices cannot signal true social costs &#8212; this is precisely the problem. Option E is <strong>incorrect</strong>: consumer sovereignty is typically absent in command economies; citizens receive what planners decide. The Soviet Union achieved rapid industrialisation in the 1930s&#8211;50s through resource mobilisation (advantage C) and virtually eliminated homelessness and mass poverty (advantages A, B), but collapsed under the weight of misallocation, innovation stagnation, and consumer goods shortages by the 1980s.'
-      },
-
-      /* 5 &#8212; Para fill: mixed economy */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph about the rationale for a mixed economy.',
-        anchor: 'All real-world economies are mixed &#8212; the debate is about the degree of intervention.',
-        para: 'A mixed economy combines [1] market allocation with government [2]. The rationale is that markets [3] most goods and services efficiently, but fail in specific, well-defined areas. Where markets fail &#8212; due to [4], public goods, or information asymmetries &#8212; government intervention can improve [5] efficiency. The UK is an example: [6] provision for most goods; NHS and state education as areas of public provision; regulated utilities; and a [7] tax system to redistribute income.',
-        blanks: [
-          { id: 1, opts: ['private', 'public', 'central', 'collective'], ans: 0 },
-          { id: 2, opts: ['intervention', 'ownership', 'production', 'subsidy'], ans: 0 },
-          { id: 3, opts: ['allocate', 'restrict', 'nationalise', 'control'], ans: 0 },
-          { id: 4, opts: ['externalities', 'profits', 'competition', 'wages'], ans: 0 },
-          { id: 5, opts: ['allocative', 'productive', 'dynamic', 'technical'], ans: 0 },
-          { id: 6, opts: ['private', 'state', 'collective', 'cooperative'], ans: 0 },
-          { id: 7, opts: ['progressive', 'regressive', 'flat', 'indirect'], ans: 0 }
-        ],
-        exp: '(1) <strong>Private</strong> market allocation &#8212; most goods produced by private firms responding to price signals. (2) Government <strong>intervention</strong> &#8212; taxes, subsidies, regulation, public provision. (3) Markets <strong>allocate</strong> most goods efficiently &#8212; the comparative advantage of markets. (4) <strong>Externalities</strong> &#8212; the leading cause of market failure. (5) <strong>Allocative</strong> efficiency &#8212; ensuring resources go to their highest social value use. (6) <strong>Private</strong> provision &#8212; supermarkets, housing, etc. (7) <strong>Progressive</strong> taxation &#8212; higher earners pay higher rates, reducing inequality.'
-      },
-
-      /* 6 &#8212; Data table: comparing systems */
-      { type: 'data_table',
-        stem: 'The table shows indicators for three economies in a given year.',
-        headers: ['Indicator', 'Economy A (market-led)', 'Economy B (state-led)', 'Economy C (mixed)'],
-        rows: [
-          ['Gini coefficient (0 = equal)', '0.41', '0.28', '0.35'],
-          ['GDP per capita (&#163;000)', '52', '18', '44'],
-          ['Public expenditure (% GDP)', '18%', '55%', '38%'],
-          ['Innovation index (1-100)', '78', '34', '65'],
-          ['Consumer goods availability', 'High', 'Low&#8211;medium', 'High']
-        ],
-        question: 'Which interpretation is <strong>most consistent</strong> with economic theory on the trade-offs between economic systems?',
-        opts: [
-          'Economy A achieves higher income per capita and innovation but at the cost of greater inequality; Economy B achieves more equality but lower income and innovation; Economy C sits between the two on most indicators',
-          'Economy B\'s high public expenditure is the primary cause of its low GDP per capita; cutting state spending would automatically raise income per capita to Economy A\'s level',
-          'The Gini coefficient is the best measure of economic success; Economy B is therefore the most successful economy',
-          'Economy A\'s high innovation index proves that free markets always produce more innovation than any degree of state intervention'
-        ],
-        ans: 0,
-        exp: 'The data illustrate the classic trade-off: Economy A (free market) generates higher income and innovation (market incentives, decentralised decisions) but at the cost of greater inequality (Gini 0.41). Economy B (command/state-led) achieves greater equality but lower income and innovation &#8212; consistent with theory on the knowledge problem and incentive failures of central planning. Economy C (mixed) achieves intermediate outcomes on all indicators. Option B is oversimplified: public expenditure is not the only cause of low income; institutional quality, incentives, and historical factors also matter. Option C applies a single value judgement. Option D overstates the case &#8212; "always" is not supported by the data or theory.'
-      },
-
-      /* 7 &#8212; multi_select: evaluating economic systems */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>economic systems and the role of the price mechanism</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
-        opts: [
-          'The price mechanism efficiently aggregates dispersed local knowledge, as Hayek argued, but this advantage holds only for private goods with well-defined property rights — it breaks down for public goods (non-excludable, non-rival) and goods with significant externalities, where the price signal systematically misfires',
-          'The invisible hand refers to the way free markets coordinate individual decisions without central planning',
-          'While command economies achieved notable successes in rapid industrialisation (the USSR\'s GDP grew roughly sevenfold between 1928 and 1970), their failure to generate consumer goods diversity and to match price signals with actual preferences ultimately led to chronic shortages and systemic collapse — suggesting that resource mobilisation without price-based allocation is sustainable in the short run but not the long run',
-          'Free markets tend to produce inequality because they reward ability to pay rather than need',
-          'The shift from command to market economy in Russia demonstrates that the sequencing of liberalisation matters as much as the direction: rapid privatisation without establishing property rights and competitive institutions produced oligarchic capture and a 45% GDP collapse, whereas China\'s gradualist approach generated growth with stability',
-          'Mixed economies are better than both pure free markets and pure command economies'
-        ],
-        correct: [0, 2, 4],
-        exp: '<strong>Options A, C, and E are genuine evaluation moves.</strong> Option A identifies precisely when the invisible hand mechanism fails — it qualifies Hayek\'s argument by specifying the conditions under which price signals misfire (public goods, externalities). This is evaluation by scoping the claim. Option C uses evidence (USSR industrialisation data) to reach a qualified temporal conclusion: resource mobilisation is viable short-run but unsustainable long-run without price allocation — this is evaluation through evidence to a direction. Option E draws a specific policy lesson from the Russia-China comparison: sequencing matters as much as the goal — this uses cross-country evidence to reach a directive conclusion. <strong>Option B</strong> defines the invisible hand — description only. <strong>Option D</strong> describes a consequence of free markets with no weighing, qualification, or evaluative direction. <strong>Option F</strong> asserts a verdict without any analysis of conditions, evidence, or trade-offs — it is a conclusion without argument.'
-      },
-
-      /* 8 &#8212; Odd one out: price mechanism functions */
-      { type: 'odd_one_out',
-        stem: 'Three of these describe how the price mechanism <strong>allocates resources efficiently</strong>. Which is the <strong>odd one out</strong>?',
+      /* 1 — Categorise: economic systems */
+      { type: 'categorise',
+        id: 'q_es_1',
+        stem: 'Sort each policy or feature into the correct economic system.',
+        categories: ['Free market economy', 'Command economy', 'Mixed economy'],
         items: [
-          { icon: '&#128200;', label: 'Rising oil prices signal scarcity and incentivise producers to expand supply', note: '' },
-          { icon: '&#128722;', label: 'High prices ration scarce goods to consumers who value them most', note: '' },
-          { icon: '&#127968;', label: 'Rent controls set maximum rents below the equilibrium, preventing the price mechanism from clearing the housing market', note: '' },
-          { icon: '&#128202;', label: 'Profit opportunities in a growing market attract new firms, expanding supply', note: '' }
+          { text: 'The government owns all major industries and sets production quotas centrally', category: 'Command economy' },
+          { text: 'Private firms compete to produce goods; prices are set by supply and demand', category: 'Free market economy' },
+          { text: 'NHS provides healthcare free at point of use; private sector provides most other goods', category: 'Mixed economy' },
+          { text: 'A central planning bureau allocates steel, coal, and labour between sectors', category: 'Command economy' },
+          { text: 'Government regulates pollution but leaves pricing and production to markets', category: 'Mixed economy' },
+          { text: 'No government intervention; consumer sovereignty determines what is produced', category: 'Free market economy' }
+        ],
+        exp: '<strong>Free market</strong>: private ownership, price mechanism allocates resources, consumer sovereignty, profit motive drives production. <strong>Command economy</strong>: state ownership, central planning bureau allocates resources, production quotas rather than prices. <strong>Mixed economy</strong>: combination — markets for most goods, government provision for public goods and merit goods, regulation of externalities and market power. In practice, all modern economies are mixed — the question is the balance between market and state.'
+      },
+
+      /* 2 — MCQ: free market advantages */
+      { type: 'mcq',
+        id: 'q_es_2',
+        stem: 'A key advantage of a <strong>free market economy</strong> over central planning is:',
+        opts: [
+          'The price mechanism aggregates dispersed information efficiently — no central body needs to know everything; prices coordinate millions of individual decisions automatically',
+          'Free markets always achieve allocative efficiency — the goods produced always reflect society\'s true welfare',
+          'Free markets eliminate inequality by rewarding effort and punishing idleness',
+          'Free markets have no transaction costs — the price mechanism coordinates exchange without any cost to buyers or sellers'
+        ],
+        ans: 0,
+        exp: 'Hayek\'s knowledge argument: information about local preferences, costs, and opportunities is dispersed across millions of agents. No central planner can collect, process, and act on this information effectively. The price mechanism aggregates this dispersed knowledge into a single number (price) that coordinates actions automatically — rising prices signal where resources are needed; falling prices signal where they are in surplus. This is the core economic case for markets over planning. Option B overstates — markets fail in the presence of externalities, public goods, and information asymmetry.'
+      },
+
+      /* 3 — MCQ: command economy problems */
+      { type: 'mcq',
+        id: 'q_es_3',
+        stem: 'The <strong>Soviet Union\'s planned economy</strong> achieved rapid industrialisation in the 1930s but faced growing inefficiencies by the 1980s. Which economic explanation best accounts for this?',
+        opts: [
+          'Central planners could not process the billions of pieces of information required to set prices and quantities efficiently for a complex modern economy; shortages and surpluses became endemic',
+          'The Soviet Union lacked natural resources and a sufficiently large population to sustain industrial growth',
+          'Soviet workers were not educated enough to operate the complex machinery required by a modern economy',
+          'The collapse was caused entirely by US military spending forcing excessive Soviet defence expenditure — the economic system itself was fundamentally sound'
+        ],
+        ans: 0,
+        exp: 'The Soviet economic system worked relatively well for simple industrialisation (build factories, produce steel and coal) where planners could set clear targets. As the economy became more complex (consumer goods, electronics, services), the information requirements exploded. Planners set prices without market feedback, creating chronic shortages (under-priced goods) and surpluses (over-priced goods). The incentive problem also mattered: firms had no profit motive to innovate or reduce costs. By the 1980s, the system produced poor quality goods in the wrong quantities — the quintessential planning failure Hayek predicted in 1945.'
+      },
+
+      /* 4 — Sequence: how the price mechanism allocates resources */
+      { type: 'sequence',
+        id: 'q_es_4',
+        stem: 'An increase in demand for electric vehicles. Place the steps showing how the <strong>price mechanism allocates resources</strong> in the correct order.',
+        instr: 'Tap the steps in the correct order, from first to last.',
+        items: [
+          { label: 'Consumer demand for EVs rises — demand curve shifts rightward', note: '' },
+          { label: 'EV prices rise — a signal of increased scarcity and value', note: '' },
+          { label: 'Higher EV prices create profit opportunities for car manufacturers', note: '' },
+          { label: 'Car firms invest in EV production; new firms enter the market', note: '' },
+          { label: 'Resources (steel, lithium, engineers) are drawn into EV production', note: '' },
+          { label: 'EV output expands; prices stabilise at a new higher equilibrium', note: '' }
+        ],
+        correctOrder: [0, 1, 2, 3, 4, 5],
+        exp: 'The price mechanism allocates resources through three functions: <strong>signalling</strong> (rising EV prices communicate scarcity and value to producers and consumers); <strong>incentive</strong> (profit opportunity motivates firms to invest and enter); <strong>rationing</strong> (higher price rations EVs to those with highest WTP, while signalling manufacturers to expand). This happens without central direction — millions of agents respond to price signals independently. The contrast with central planning: no one "ordered" resources into EV production; prices did the coordinating work.'
+      },
+
+      /* 5 — MCQ: mixed economy rationale */
+      { type: 'mcq',
+        id: 'q_es_5',
+        stem: 'The UK is a <strong>mixed economy</strong>. Which statement best explains why governments intervene even in predominantly market-based economies?',
+        opts: [
+          'Markets fail in the presence of externalities, public goods, information asymmetry, and inequality — government intervention corrects failures that the price mechanism cannot resolve alone',
+          'Governments intervene because politicians prefer to control the economy rather than leave decisions to the private sector',
+          'Markets always achieve full employment — government intervention is only needed to manage foreign trade',
+          'The price mechanism only works for manufactured goods; all services must be government-provided'
+        ],
+        ans: 0,
+        exp: 'The mixed economy rationale: markets are efficient in most cases but fail systematically in four areas: <strong>externalities</strong> (costs and benefits not reflected in prices — pollution, vaccines); <strong>public goods</strong> (non-excludable, non-rival — cannot be provided by markets); <strong>information asymmetry</strong> (market power through information gaps — healthcare, insurance); <strong>inequality</strong> (markets may produce an efficient but socially unacceptable distribution). Government corrects these failures through taxes, subsidies, regulation, and direct provision — but government intervention also has costs and risks government failure.'
+      },
+
+      /* 6 — Match pairs: economic systems vocabulary */
+      { type: 'match_pairs',
+        id: 'q_es_6',
+        stem: 'Match each concept to its correct description.',
+        pairs: [
+          { a: 'Consumer sovereignty', b: 'Consumers\' preferences determine what is produced — "voting with wallets"' },
+          { a: 'Producer sovereignty', b: 'Firms (not consumers) determine what is produced — common in command economies' },
+          { a: 'Allocative efficiency', b: 'Resources allocated to their highest-valued uses; P = MC' },
+          { a: 'Government failure', b: 'State intervention makes resource allocation worse rather than better' },
+          { a: 'Transition economy', b: 'Economy moving from central planning toward market allocation (e.g. post-Soviet Russia)' },
+          { a: 'Laissez-faire', b: 'Minimal government intervention — markets left to operate freely' }
+        ],
+        exp: 'Economic systems vocabulary: <strong>consumer sovereignty</strong> is the key virtue of market economies — consumer preferences drive production decisions through the price mechanism. <strong>Producer sovereignty</strong> is the risk in monopoly and command economies. <strong>Allocative efficiency</strong> is the normative benchmark (P = MC). <strong>Government failure</strong> is the counterpart to market failure — intervention can fail due to information problems, political distortions, or unintended consequences. <strong>Transition economies</strong> face the challenge of building market institutions (property rights, rule of law, price liberalisation) simultaneously.'
+      },
+
+      /* 7 — Cause & effect: market vs command economy */
+      { type: 'cause_effect',
+        id: 'q_es_7',
+        stem: 'Match each feature of economic systems to its consequence.',
+        pairs: [
+          { cause: 'Free market: prices rise when demand exceeds supply', effect: 'Resources automatically flow to profitable areas without central direction' },
+          { cause: 'Command economy: prices set below market equilibrium', effect: 'Chronic shortages — queues, black markets, non-price rationing' },
+          { cause: 'Free market: no regulation of pollution', effect: 'Market failure — negative externalities lead to overproduction of polluting goods' },
+          { cause: 'Mixed economy: government subsidises vaccines', effect: 'Positive externality internalised — consumption rises to socially optimal level' },
+          { cause: 'Command economy: no profit motive for firms', effect: 'Weak incentive to innovate, cut costs, or respond to consumer preferences' },
+          { cause: 'Free market: unequal income distribution', effect: 'Goods produced for those with highest WTP, not greatest need — distributional concern' }
+        ],
+        exp: 'Each economic system has structural consequences: <strong>free markets</strong> efficiently allocate through prices but fail on externalities and distribution; <strong>command economies</strong> create incentive and information failures — planners cannot replicate market signals; <strong>mixed economies</strong> try to combine market efficiency with government correction of failures. The debate is not "markets vs planning" but "how much intervention, in which areas, using which instruments" — the practical policy question in all real economies.'
+      },
+
+      /* 8 — Odd one out: advantages of free markets */
+      { type: 'odd_one_out',
+        id: 'q_es_8',
+        stem: 'Three of these are genuine <strong>advantages of free market economies</strong>. Which is the <strong>odd one out</strong>?',
+        items: [
+          { icon: '🚀', label: 'Profit motive incentivises innovation and entrepreneurship', note: '' },
+          { icon: '📊', label: 'Price mechanism aggregates dispersed information efficiently', note: '' },
+          { icon: '⚖️', label: 'Free markets automatically achieve an equitable distribution of income', note: '' },
+          { icon: '🔄', label: 'Consumer sovereignty ensures goods are produced to match consumer preferences', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is <strong>rent controls</strong>. Rent controls are an intervention that <em>prevents</em> the price mechanism from operating &#8212; they set a ceiling below equilibrium, creating a persistent excess demand (housing shortage). The other three describe the price mechanism working: oil price rises signal scarcity (signalling function); high prices ration scarce goods (rationing function); profit opportunities attract new entrants (incentive function). Rent controls illustrate a case where government intervention disrupts the price mechanism, leading to market failure of a different kind.'
+        exp: 'The odd one out is <strong>equitable income distribution</strong>. Free markets do not automatically produce equitable distribution — they produce an efficient allocation, but efficiency and equity are distinct. Free markets reward scarce skills and capital ownership highly, which may produce high inequality. This is a classic market failure (or market limitation) — markets are not designed to produce fairness, only efficiency. Redistribution requires government intervention (progressive taxation, welfare transfers). The other three are genuine advantages: profit motive, information aggregation, and consumer sovereignty are the core economic case for markets.'
       },
 
-      /* 9 &#8212; MCQ: transition economies */
-      { type: 'mcq',
-        stem: 'Russia\'s rapid privatisation and price liberalisation in the early 1990s ("shock therapy") led to which of the following outcomes?',
+      /* 9 — Data table: market vs command economy performance */
+      { type: 'data_table',
+        id: 'q_es_9',
+        stem: 'The table compares economic performance indicators for market-oriented and command economies (approximate data).',
+        headers: ['Indicator', 'USSR 1980', 'USA 1980', 'China (plan) 1978', 'China (market) 2010'],
+        rows: [
+          ['GDP per capita (PPP, 2015 USD)', '$9,600', '$26,000', '$880', '$8,800'],
+          ['Annual GDP growth (5-yr avg)', '2.1%', '3.5%', '5.0%', '10.5%'],
+          ['Consumer goods availability', 'Chronic shortages', 'Wide choice', 'Severe shortages', 'Broad range'],
+          ['Innovation index (approx ranking)', 'Low', 'High', 'Very low', 'Rising rapidly']
+        ],
+        question: 'Which conclusion is <strong>best supported</strong> by the data?',
         opts: [
-          'GDP fell by approximately 45% between 1990 and 1998; oligarchs acquired state assets cheaply; many citizens experienced sharp declines in living standards',
-          'Rapid, stable economic growth as free market incentives immediately raised productivity and innovation across the economy',
-          'A smooth transition to a well-functioning market economy with strong property rights and competitive markets by 1995',
-          'Inflation fell to zero as price liberalisation removed all distortions from the Soviet planning system'
+          'Market-oriented economies have generally achieved higher living standards and more dynamic growth — China\'s rapid improvement after market reforms is particularly striking',
+          'Command economies outperform market economies on growth — the USSR\'s 2.1% growth proves planning is effective',
+          'Innovation only occurs in pure free-market economies like the USA — mixed economies cannot innovate',
+          'The data show China\'s command period (1978) achieved higher living standards than the USSR, proving planning works'
         ],
         ans: 0,
-        exp: 'Russia\'s shock therapy is the cautionary tale of transition economics. GDP fell approximately <strong>45% between 1990 and 1998</strong> &#8212; a depression deeper than the US in the 1930s. The rapid privatisation allowed politically connected individuals (oligarchs) to acquire state assets at below-market prices. Institutional prerequisites for market functioning &#8212; property rights, contract law, competitive markets, financial regulation &#8212; were absent. China\'s gradualist approach (maintaining state control while gradually introducing market elements from 1978) achieved faster growth with more stability, suggesting the sequencing and speed of liberalisation matter enormously.'
+        exp: 'The data support the argument that market-oriented economies generally achieve higher living standards: USA GDP per capita (£26k) far exceeded USSR (£9.6k) despite similar resource endowments. Most strikingly, China\'s transition from central planning to market allocation (post-1978 Deng reforms) produced spectacular growth (GDP per capita from $880 to $8,800 by 2010, 10.5% annual growth). Option B: 2.1% Soviet growth is actually below the USA\'s 3.5%, undermining the claim. Option C overstates — mixed economies also innovate. Option D: China in 1978 had far lower living standards than the USSR.'
       },
 
-      /* 10 &#8212; Chain: from price signal to resource reallocation */
-      { type: 'chain',
-        stem: 'A new technology significantly reduces the cost of producing solar panels. Place the following events in the correct order of the price mechanism\'s response.',
-        items: [
-          { label: 'Investment and entrepreneurship flow into solar panel manufacturing as profits attract entry', note: '' },
-          { label: 'Solar panel supply increases substantially; prices fall further toward the new lower cost level', note: '' },
-          { label: 'Production costs for solar panels fall significantly due to the technological improvement', note: '' },
-          { label: 'Falling solar panel prices signal to consumers that solar energy has become more affordable', note: '' },
-          { label: 'Demand for solar panels rises as more consumers and businesses switch from conventional energy', note: '' },
-          { label: 'Resources (labour, capital) shift toward solar manufacturing and away from fossil-fuel energy production', note: '' }
+      /* 10 — Multi-select: evaluation of economic systems */
+      { type: 'multi_select',
+        id: 'q_es_10',
+        stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the relative merits of free market versus command economies?',
+        opts: [
+          'In a free market economy, resources are allocated through the price mechanism',
+          'While free markets excel at coordinating complex consumption decisions through price signals, they systematically fail for goods with large externalities or public good characteristics — suggesting the optimal system is context-dependent rather than universally "more market" or "more state"',
+          'Command economies always fail because central planners are less intelligent than market participants',
+          'The Chinese case qualifies both the pure market and pure planning positions: market reforms produced dramatic growth, but state direction of investment in infrastructure and strategic industries played a significant role — suggesting that successful development may require selective state intervention rather than blanket liberalisation',
+          'Mixed economies have both government and private sector activity',
+          'Hayek\'s knowledge argument is strongest against comprehensive central planning of consumer goods markets, but may be weaker against targeted industrial policy in sectors with clear market failures (R&D, green energy) — distinguishing the strength of the argument by context is essential to genuine evaluation'
         ],
-        correctOrder: [2, 3, 4, 0, 1, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Technology reduces production costs (initial supply-side shock).<br>2. Lower costs signal to consumers that solar is cheaper &#8212; signalling function.<br>3. Demand rises as affordability improves.<br>4. Profit opportunities attract investment and new entrants &#8212; incentive function.<br>5. Supply increases further; prices fall more.<br>6. Resources reallocate from fossil fuels to solar &#8212; the price mechanism solving the "what to produce" question automatically.<br><br>This sequence illustrates all three functions (signalling, incentive, rationing/reallocation) operating simultaneously and without central coordination &#8212; Smith\'s invisible hand in action.'
+        correct: [1, 3, 5],
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: qualifies the free market argument by identifying contexts where it systematically fails, reaching the conclusion that optimal system choice is context-dependent — avoiding the error of universal prescription. D: uses the China case to qualify both pure positions, reaching a nuanced conclusion about selective state intervention — neither pure market nor pure planning, but targeted dirigisme. F: directly limits the scope of Hayek\'s argument, distinguishing contexts where it applies (consumer goods planning) from those where it may not (targeted industrial policy) — a sophisticated contextual evaluation. A and E are descriptions. C is an unsupported assertion.'
       }
 
     ]

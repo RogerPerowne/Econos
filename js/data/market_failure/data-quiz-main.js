@@ -5,179 +5,168 @@
     topicId:  'market_failure_main',
     title:    'Market Failure',
     subtitle: 'Theme 1 &middot; Topic 3.1 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the definition of market failure and its link to allocative efficiency, the private-vs-social framework, the three routes to failure (externalities, public goods, information gaps), deadweight welfare loss, and real-world diagnosis. Mixed formats including evaluation multi-select, sort, chain, paragraph fill, calculation, and data analysis.',
-    shortNames: {
-      'market_failure_1': 'What market failure is',
-      'market_failure_2': 'Private vs social',
-      'market_failure_3': 'Three routes',
-      'market_failure_4': 'Welfare loss',
-      'market_failure_5': 'Diagnosing failure'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'market_failure_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers types of market failure, externalities, public goods, information gaps, and deadweight loss',
+    shortNames: [
+      'Market failure definition', 'Types categorise', 'Negative externality MCQ', 'Public goods MCQ',
+      'Information asymmetry', 'Deadweight loss MCQ', 'Match pairs', 'Cause & effect',
+      'Odd one out', 'Data table'
+    ],
 
     questions: [
 
-      /* 1 — mcq: definition of market failure */
+      /* 1 — MCQ: market failure definition */
       { type: 'mcq',
-        stem: 'Which definition of <strong>market failure</strong> is most analytically precise?',
+        id: 'q_mf_1',
+        stem: 'Which statement best defines <strong>market failure</strong>?',
         opts: [
-          'Market failure occurs when the free market produces a quantity that diverges from the social optimum &mdash; because private costs or benefits differ from social costs or benefits &mdash; resulting in misallocation of resources and a deadweight welfare loss',
-          'Market failure occurs when a market collapses completely and no transactions take place between buyers and sellers',
-          'Market failure refers only to cases where businesses exploit monopoly power to charge prices above marginal cost',
-          'Market failure occurs whenever the government decides that a market outcome is unfair or distributes income unequally'
+          'A situation where the free market misallocates resources — failing to achieve allocative efficiency (P ≠ MSC) and producing at a socially suboptimal output level',
+          'A situation where a business goes bankrupt and closes — failing to generate sufficient revenue to cover costs',
+          'A situation where demand falls and prices drop below the equilibrium price, causing unsold stock',
+          'A situation where government intervention prevents the market from reaching equilibrium'
         ],
         ans: 0,
-        exp: 'The economically precise definition is option A: market failure is a <strong>divergence between the private equilibrium and the social optimum</strong>. The market still functions &mdash; it is not absent or collapsed. The failure is that the price mechanism responds to private costs and benefits, missing spillover effects on third parties, public-good characteristics, or information gaps. Option B confuses market failure with market absence. Option C identifies only one cause (monopoly) and misses externalities, public goods, and information failures. Option D conflates allocative inefficiency with distributional concerns &mdash; inequality is a separate issue from whether Q* is being produced.'
+        exp: '<strong>Market failure</strong> is the failure of the price mechanism to allocate resources efficiently from a social perspective. It occurs when private costs and benefits diverge from social costs and benefits, causing over- or under-production relative to the social optimum. Key types: externalities (costs/benefits not reflected in prices), public goods (non-excludable/non-rival), information asymmetry, and inequality. Market failure justifies potential government intervention — though intervention itself can fail.'
       },
 
-      /* 2 — elastic_sort: over- vs under-production */
-      { type: 'elastic_sort',
-        stem: 'Classify each example as a case of <strong>over-production</strong> (market produces too much) or <strong>under-production</strong> (market produces too little) relative to the social optimum.',
-        categories: ['over', 'under'],
-        categoryLabels: ['Over-production (too much)', 'Under-production (too little)'],
-        goods: [
-          { icon: '🏭', label: 'A steel factory emits carbon dioxide that imposes health costs on surrounding communities', note: '', ans: 'over' },
-          { icon: '💉', label: 'The market provides fewer vaccinations than the socially optimal level because individuals ignore the herd-immunity benefit', note: '', ans: 'under' },
-          { icon: '🚗', label: 'Congestion pricing is absent &mdash; drivers do not pay for the time delays they impose on other road users', note: '', ans: 'over' },
-          { icon: '📚', label: 'University education raises social productivity and innovation beyond the benefits the graduate captures', note: '', ans: 'under' },
-          { icon: '🌊', label: 'Deep-sea fishing fleets harvest at levels that deplete fish stocks, reducing future catches for all', note: '', ans: 'over' },
-          { icon: '💡', label: 'Street lighting is under-provided because the free-rider problem means no private firm can profitably supply it', note: '', ans: 'under' }
-        ],
-        exp: '<strong>Over-production</strong> occurs when MSC &gt; MSB at the market quantity &mdash; typically driven by negative externalities (pollution, congestion, overfishing) where private agents ignore costs they impose on others. The market\'s private equilibrium lies to the <em>right</em> of Q*. <strong>Under-production</strong> occurs when MSB &gt; MSC at the market quantity &mdash; driven by positive externalities (vaccination, education), public goods (street lighting), or information gaps. The market\'s private equilibrium lies to the <em>left</em> of Q*. In both cases, the deviation from Q* generates a DWL triangle.'
-      },
-
-      /* 3 — multi_select: public good characteristics */
-      { type: 'multi_select',
-        stem: 'Which of the following correctly describe the defining characteristics of a <strong>pure public good</strong>?',
-        opts: [
-          'Non-rival: one person\'s consumption of the good does not reduce the amount available for others',
-          'Non-excludable: it is impossible (or prohibitively costly) to prevent non-payers from consuming the good',
-          'The good is produced and sold entirely by private firms without government involvement',
-          'The free-rider problem arises: rational agents have no incentive to pay for the good if they can consume it for free',
-          'Markets will over-provide public goods because of the high consumer surplus they generate',
-          'National defence and flood defences are examples of pure public goods'
-        ],
-        correct: [0, 1, 3, 5],
-        exp: 'Options A, B, D, and F correctly characterise pure public goods. <strong>Non-rival (A)</strong>: national defence protects everyone simultaneously &mdash; one person\'s protection does not reduce another\'s. <strong>Non-excludable (B)</strong>: once provided, exclusion is impossible or impractical. <strong>Free-rider problem (D)</strong>: because no-one can be excluded, rational individuals wait for others to pay &mdash; causing the good to be under-provided or not provided at all. <strong>National defence &amp; flood defences (F)</strong>: canonical examples. Option C is wrong &mdash; precisely because of the free-rider problem, private firms cannot profitably supply public goods. Option E is backwards: markets <em>under-provide</em> (not over-provide) public goods.'
-      },
-
-      /* 4 — para_fill: private vs social framework */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph explaining the private vs social cost-benefit framework.',
-        anchor: 'Market failure begins when private and social values diverge.',
-        para: 'The free market responds to [1] costs and benefits &mdash; the costs and benefits experienced by the [2] involved in a transaction. But a transaction can also affect [3] parties not party to the exchange. These spillover effects are called [4]. Social cost equals private cost plus [5] cost. When social cost exceeds private cost, the supply curve (which tracks [6]) lies below the true [7] curve. The market therefore produces at a quantity that is [8] the social optimum, generating a welfare loss from over-production.',
-        blanks: [
-          { id: 1, opts: ['private', 'social', 'external', 'marginal'], ans: 0 },
-          { id: 2, opts: ['parties', 'firms', 'regulators', 'shareholders'], ans: 0 },
-          { id: 3, opts: ['third', 'second', 'foreign', 'regulated'], ans: 0 },
-          { id: 4, opts: ['externalities', 'subsidies', 'taxes', 'transfers'], ans: 0 },
-          { id: 5, opts: ['external', 'average', 'fixed', 'variable'], ans: 0 },
-          { id: 6, opts: ['MPC', 'MSC', 'AVC', 'AFC'], ans: 0 },
-          { id: 7, opts: ['MSC', 'MPC', 'ATC', 'AFC'], ans: 0 },
-          { id: 8, opts: ['above', 'below', 'equal to', 'approaching'], ans: 0 }
-        ],
-        exp: '(1) <strong>Private</strong>: the price mechanism reflects private costs/benefits only. (2) <strong>Parties</strong>: buyer and seller. (3) <strong>Third</strong>: people outside the transaction. (4) <strong>Externalities</strong>: the technical term for spillovers. (5) <strong>External</strong>: Social cost = MPC + MEC. (6) <strong>MPC</strong>: the supply curve represents marginal private cost. (7) <strong>MSC</strong>: the socially optimal supply schedule. (8) <strong>Above</strong>: if MSC &gt; MPC (negative externality), the market quantity is above Q*, creating over-production DWL. The framework is symmetric for the benefit side: when MSB &gt; MPB (positive externality), market quantity is <em>below</em> Q*.'
-      },
-
-      /* 5 — chain: four-step diagnosis method */
-      { type: 'chain',
-        stem: 'Place the four steps of the market failure diagnosis framework in the correct analytical order.',
+      /* 2 — Categorise: types of market failure */
+      { type: 'categorise',
+        id: 'q_mf_2',
+        stem: 'Sort each example into the correct type of market failure.',
+        categories: ['Negative externality', 'Positive externality', 'Public good', 'Information gap'],
         items: [
-          { label: 'Identify the <strong>welfare loss</strong>: show the DWL triangle and state the direction of misallocation (over- or under-production)', note: '' },
-          { label: 'Identify the <strong>divergence</strong>: state whether private and social costs or benefits differ, and explain why', note: '' },
-          { label: 'State the <strong>quantity gap</strong>: locate Qm (market output) and Q* (social optimum) and show that they differ', note: '' },
-          { label: 'Identify the <strong>direction</strong>: state whether social cost exceeds private cost (over-production) or social benefit exceeds private benefit (under-production)', note: '' }
+          { text: 'A factory pollutes a river — costs borne by local residents not reflected in the product price', category: 'Negative externality' },
+          { text: 'Street lighting — non-excludable and non-rival; no firm can profitably charge for it', category: 'Public good' },
+          { text: 'Getting vaccinated reduces disease transmission to others not party to the transaction', category: 'Positive externality' },
+          { text: 'Used car sellers know quality but buyers do not — adverse selection causes market collapse', category: 'Information gap' },
+          { text: 'A motorist\'s exhaust fumes impose air pollution costs on pedestrians who paid nothing', category: 'Negative externality' },
+          { text: 'Education creates skilled workers who benefit employers and society beyond the individual', category: 'Positive externality' }
         ],
-        correctOrder: [1, 3, 2, 0],
-        exp: '<strong>Correct sequence:</strong><br>1. Identify the divergence &mdash; this is the root cause of the failure. Without a cost-benefit divergence, there is no market failure.<br>2. Identify the direction &mdash; negative externality pushes toward over-production (MSC &gt; MPC); positive externality or public-good characteristics push toward under-production (MSB &gt; MPB).<br>3. State the quantity gap &mdash; locate Qm and Q* on the diagram to quantify the failure.<br>4. Identify the welfare loss &mdash; the DWL triangle is the measurable consequence. Its size depends on the elasticities of supply and demand and the magnitude of the externality.<br><br>This four-step structure earns the analysis marks on any market failure question, for any route (externality, public good, information gap).'
+        exp: '<strong>Negative externality</strong>: cost imposed on third parties → overproduction. <strong>Positive externality</strong>: benefit to third parties not rewarded → underproduction. <strong>Public good</strong>: non-excludable and non-rival → free-rider problem → market underprovides. <strong>Information gap</strong>: asymmetric information → adverse selection or moral hazard → wrong quantities or quality mix. Each type requires a different policy response.'
       },
 
-      /* 6 — odd_one_out: which is NOT a market failure */
+      /* 3 — MCQ: negative externality and overproduction */
+      { type: 'mcq',
+        id: 'q_mf_3',
+        stem: 'In a market with a <strong>negative externality of production</strong>, the free market equilibrium compared to the social optimum shows:',
+        opts: [
+          'Output is too high and price is too low — the private cost curve lies below the social cost curve; producers do not bear the external cost',
+          'Output is too low and price is too high — external costs make production expensive and under-incentivised',
+          'Output and price are both at the social optimum — externalities affect distribution but not efficiency',
+          'Output is too high and price is too high — firms charge above marginal social cost to cover external costs'
+        ],
+        ans: 0,
+        exp: 'With a negative externality of production: <strong>MSC > MPC</strong>. The market only reflects MPC, so the equilibrium price is too low and output too high. Consumers don\'t pay the full social cost — production continues beyond the social optimum (where MSC = MSB), creating a <strong>deadweight welfare loss</strong>. Policy response: Pigouvian tax equal to the marginal external cost, shifting MPC up to MSC, reducing output to the social optimum.'
+      },
+
+      /* 4 — MCQ: public goods */
+      { type: 'mcq',
+        id: 'q_mf_4',
+        stem: 'Which combination of properties defines a <strong>pure public good</strong>?',
+        opts: [
+          'Non-excludable (cannot prevent non-payers from consuming) AND non-rival (one person\'s consumption does not reduce availability to others)',
+          'Non-excludable AND rival (one person\'s consumption reduces availability to others)',
+          'Excludable (can charge for access) AND non-rival',
+          'Excludable AND rival — standard private goods that happen to be produced by the government'
+        ],
+        ans: 0,
+        exp: '<strong>Non-excludability</strong>: impossible to prevent non-payers from benefiting → free-rider problem → rational to not pay. <strong>Non-rivalry</strong>: one person\'s consumption does not reduce others\' consumption → marginal cost of an extra user is zero. Together these cause market failure: no firm can profitably provide the good (cannot exclude free-riders), so the market fails to provide it. Government must provide from general taxation. Examples: national defence, flood defences, street lighting, public fireworks.'
+      },
+
+      /* 5 — MCQ: information asymmetry */
+      { type: 'mcq',
+        id: 'q_mf_5',
+        stem: 'Akerlof\'s "Market for Lemons" model shows that information asymmetry in used car markets can cause:',
+        opts: [
+          'Market collapse through adverse selection — buyers cannot distinguish good from bad cars, offer average price; sellers of good cars exit; only "lemons" remain',
+          'Higher prices overall — since buyers cannot assess quality, they assume all cars are high quality and overpay',
+          'Perfect market outcomes — buyers and sellers negotiate until information is fully revealed',
+          'A positive externality — one buyer\'s experience informs others, increasing market information over time'
+        ],
+        ans: 0,
+        exp: 'Akerlof (1970): sellers know car quality; buyers don\'t. Buyers offer an average price reflecting their uncertainty. This average is too low for sellers of good cars → good sellers exit → market contains more lemons → buyers\' offer falls further → potential market collapse. This is <strong>adverse selection</strong>: information asymmetry systematically selects for the worse option. Policy responses: warranties (quality signals), car history reports, consumer protection law, third-party inspections.'
+      },
+
+      /* 6 — MCQ: deadweight loss */
+      { type: 'mcq',
+        id: 'q_mf_6',
+        stem: 'The <strong>deadweight welfare loss</strong> from a negative externality represents:',
+        opts: [
+          'The net welfare cost of overproduction — social costs that exceed social benefits in the units produced beyond the social optimum',
+          'The total profit earned by firms that impose negative externalities on third parties',
+          'The total tax revenue collected by the government from Pigouvian taxes on polluters',
+          'The cost to firms of complying with environmental regulations'
+        ],
+        ans: 0,
+        exp: 'Deadweight welfare loss (DWL) is the triangle between market equilibrium and social optimum. For a negative externality: each unit beyond the social optimum has MSC > MSB — social cost exceeds social benefit. The DWL is the sum of these net losses. A Pigouvian tax equal to the marginal external cost eliminates the DWL by making producers face the full social cost. DWL also arises from monopoly, taxes (if not correcting externalities), and price controls.'
+      },
+
+      /* 7 — Match pairs: market failure concepts */
+      { type: 'match_pairs',
+        id: 'q_mf_7',
+        stem: 'Match each concept to its definition or example.',
+        pairs: [
+          { a: 'External cost', b: 'Cost imposed on third parties not reflected in market price' },
+          { a: 'External benefit', b: 'Benefit to third parties not captured in the market price' },
+          { a: 'Free-rider problem', b: 'Rational agents consume without paying — prevents profitable private provision' },
+          { a: 'Moral hazard', b: 'Party changes behaviour after gaining protection (e.g. more risk once insured)' },
+          { a: 'Adverse selection', b: 'Information gap causes market to select for worse-quality participants' },
+          { a: 'Pigouvian tax', b: 'Tax equal to marginal external cost — corrects overproduction from negative externality' }
+        ],
+        exp: 'Market failure vocabulary is highly examinable: <strong>external cost/benefit</strong> — divergence between private and social; <strong>free-rider</strong> — public good mechanism; <strong>moral hazard</strong> — post-contract information asymmetry (insurance); <strong>adverse selection</strong> — pre-contract information asymmetry (used cars, insurance pools); <strong>Pigouvian tax</strong> — named after A.C. Pigou, equal to marginal external cost. Using these terms precisely earns AO1 marks.'
+      },
+
+      /* 8 — Cause & effect: externalities */
+      { type: 'cause_effect',
+        id: 'q_mf_8',
+        stem: 'Match each scenario to the market failure mechanism it illustrates.',
+        pairs: [
+          { cause: 'A steel mill dumps waste in a river; fishing communities suffer losses', effect: 'Negative production externality — MPC < MSC; overproduction of steel' },
+          { cause: 'A homeowner beautifies their garden; neighbours\' property values rise', effect: 'Positive consumption externality — MPB < MSB; underinvestment in gardens' },
+          { cause: 'Citizens plan to watch national fireworks without paying', effect: 'Public good free-rider problem — market cannot profitably provide' },
+          { cause: 'People with pre-existing conditions disproportionately buy health insurance', effect: 'Adverse selection — insurer cannot distinguish risk types; pool becomes high-risk' },
+          { cause: 'A driver insured for all risks drives more recklessly than before', effect: 'Moral hazard — full insurance removes incentive for careful driving' },
+          { cause: 'Workers underestimate health risks of smoking and overconsume', effect: 'Information failure — rational behaviour based on incorrect beliefs' }
+        ],
+        exp: 'Each failure maps to a distinct policy response: <strong>negative externality</strong> → Pigouvian tax; <strong>positive externality</strong> → subsidy; <strong>public good</strong> → direct government provision; <strong>adverse selection</strong> → compulsory insurance, disclosure; <strong>moral hazard</strong> → co-payments, deductibles; <strong>information failure</strong> → education, labelling. Identifying the type of failure correctly is essential for choosing the right policy instrument.'
+      },
+
+      /* 9 — Odd one out: public goods */
       { type: 'odd_one_out',
-        stem: 'Three of these are genuine examples of market failure. Which is the ODD ONE OUT?',
+        id: 'q_mf_9',
+        stem: 'Three of these are <strong>pure public goods</strong>. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '🚗', label: 'Road congestion: drivers do not pay for the time delays they impose on other motorists, leading to excessive car use', note: '' },
-          { icon: '💊', label: 'A pharmaceutical company earns monopoly profits from a patented drug, charging a price above marginal cost', note: '' },
-          { icon: '🌊', label: 'Deep-sea fishing: a fishing fleet harvests cod to the point of near-depletion, because each boat ignores the impact of its catch on future stock', note: '' },
-          { icon: '🏫', label: 'A school raises its fees, reducing the number of pupils who can afford to attend, but remaining financially solvent and filling its places', note: '' }
+          { icon: '🛡️', label: 'National defence — protects all citizens simultaneously; non-payers cannot be excluded', note: '' },
+          { icon: '🌊', label: 'Flood defences for a coastal town — non-rival and non-excludable benefit', note: '' },
+          { icon: '🎠', label: 'A theme park — can charge admission and exclude non-payers', note: '' },
+          { icon: '💡', label: 'Street lighting in a public area — non-rival and non-excludable', note: '' }
         ],
-        ans: 3,
-        exp: 'The odd one out is option D. A private school raising fees and remaining solvent is a market functioning normally &mdash; it is a distributional outcome (fewer low-income students can attend), not a market failure in the technical sense. There is no externality, public-good problem, or information gap necessarily involved. Options A (road congestion &mdash; negative externality), B (monopoly pricing &mdash; a standard source of allocative inefficiency and market failure), and C (overfishing &mdash; a common-pool resource tragedy of the commons) are genuine market failures. Note: some economists also class monopoly pricing as a market structure problem rather than a \'failure\' in the externality sense, but at A-level it is typically classified as market failure because P &gt; MC creates allocative inefficiency and DWL.'
+        ans: 2,
+        exp: 'The odd one out is a <strong>theme park</strong>. It is both <strong>excludable</strong> (fences and ticketing prevent non-payers from entering) and <strong>rival</strong> (at capacity, additional visitors cause congestion). It is therefore a <strong>private good</strong> — the market can provide it profitably. National defence, flood defences, and street lighting are all non-excludable (cannot charge non-beneficiaries) and non-rival (one person\'s benefit does not reduce others\') — the defining properties of a pure public good.'
       },
 
-      /* 7 — data_table: vaccination under-provision */
+      /* 10 — Data table: pollution and social optimum */
       { type: 'data_table',
-        stem: 'The table shows UK childhood vaccination coverage rates and associated disease data.',
-        headers: ['Vaccine', 'UK 2022/23 coverage', 'WHO target', 'Gap', 'Disease risk at this coverage'],
+        id: 'q_mf_10',
+        stem: 'The table shows marginal costs and benefits of steel production with a negative externality.',
+        headers: ['Output (000 tonnes)', 'Marginal Private Cost (£)', 'Marginal External Cost (£)', 'Marginal Social Benefit (£)'],
         rows: [
-          ['MMR (measles, 2-dose)', '85.7%', '95%', '&minus;9.3pp', 'Herd immunity threshold not reached; measles outbreaks possible'],
-          ['DTaP/IPV/Hib (5-in-1)', '92.7%', '95%', '&minus;2.3pp', 'Near-threshold; pertussis (whooping cough) still circulating'],
-          ['MenACWY (meningitis)', '83.4%', '95%', '&minus;11.6pp', 'Significant shortfall; outbreaks in unvaccinated clusters'],
-          ['Flu (2&ndash;3 year olds)', '42.6%', '75%', '&minus;32.4pp', 'Major shortfall; community transmission sustained']
+          ['1', '50', '20', '90'],
+          ['2', '60', '20', '80'],
+          ['3', '70', '20', '70'],
+          ['4', '80', '20', '60'],
+          ['5', '90', '20', '50']
         ],
-        question: 'Which analysis of the vaccination data best illustrates the market failure concept?',
+        question: 'What is the <strong>socially optimal output</strong> and at what output does the <strong>free market settle</strong>?',
         opts: [
-          'The data illustrates under-provision caused by a positive externality: individuals who are vaccinated protect others (herd immunity), but because this benefit accrues to non-payers, private demand lies below the socially optimal level. Without intervention, coverage falls short of Q*.',
-          'The data shows government failure: NHS vaccine programmes are clearly ineffective at reaching the WHO 95% target, suggesting private markets would achieve better outcomes.',
-          'The data illustrates a negative externality: unvaccinated individuals impose costs on the vaccinated population by requiring booster doses.',
-          'The shortfall in coverage is irrelevant to market failure analysis because vaccines are provided by the NHS, not the free market.'
+          'Social optimum: 3,000 tonnes (MSC = MSB = £90). Free market: 4,000 tonnes (MPC = MSB = £80). Overproduction of 1,000 tonnes creates deadweight loss',
+          'Social optimum is 4,000 tonnes — this is where the market and social optimum coincide',
+          'Social optimum cannot be determined without knowing total demand, not just marginal benefit',
+          'Social optimum is 2,000 tonnes — the government should aim for minimum pollution'
         ],
         ans: 0,
-        exp: 'Option A is correct. Vaccination generates a <strong>positive externality</strong>: the benefit to society (herd immunity, reduced transmission) exceeds the benefit to the individual. Private individuals base their decision on private benefit (personal protection), ignoring the external benefit they provide to others by being vaccinated. This means private demand lies below social demand, and the free market (without subsidy or mandate) would under-provide vaccination relative to Q*. The WHO 95% herd immunity threshold is effectively Q* for measles. All four vaccines in the table show coverage below Q*, confirming the under-provision prediction. Option B confuses market failure with government failure (and is empirically unsound). Option C misidentifies the direction of the externality. Option D is wrong &mdash; NHS provision is precisely the <em>intervention</em> designed to correct the market failure; the shortfalls show even subsidised provision is insufficient.'
-      },
-
-      /* 8 — multi_select: evaluation of negative externalities and market failure */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>why the free market over-produces goods with negative externalities</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &mdash; as opposed to description or one-sided analysis?',
-        opts: [
-          'The standard externality diagram assumes the MEC is constant and easily measurable, but in practice (e.g. carbon emissions) the MEC is disputed, changes over time, and depends on cumulative stock rather than flow &mdash; which means the Pigouvian tax rate set today may be systematically too low, qualifying the claim that a tax can straightforwardly achieve Q*.',
-          'When a firm produces a negative externality, MSC exceeds MPC, so the market over-produces relative to Q*.',
-          'While Pigouvian taxation can theoretically internalise a negative externality, it is only allocatively efficient if the tax exactly equals the MEC at Q* &mdash; and governments rarely have the information needed to set this rate correctly, making the welfare gain from a poorly calibrated tax uncertain and potentially less than the DWL it is supposed to eliminate.',
-          'The size of the DWL from over-production depends on both the magnitude of the MEC and the elasticities of supply and demand &mdash; industries with inelastic supply and demand (such as energy) generate larger welfare losses from a given externality than industries with elastic responses, qualifying any generalisation about whether market failure is severe.',
-          'Carbon emissions cause global warming.',
-          'The government can use taxes and regulations to correct market failures caused by negative externalities.'
-        ],
-        correct: [0, 2, 3],
-        exp: '<strong>Option A</strong> is genuine evaluation: it challenges the implicit assumption of the standard model (constant, measurable MEC), uses carbon as a specific counter-example, and reaches the direction that real-world calibration of taxes may be systematically flawed &#8212; qualifying the policy prescription. <strong>Option C</strong> is evaluation: it identifies the precise condition under which Pigouvian taxation achieves the welfare gain (tax = MEC at Q*), then argues governments rarely meet this condition, reaching a sceptical qualified direction about the policy\'s effectiveness in practice. <strong>Option D</strong> is evaluation: it uses the relationship between elasticities and DWL size to make the evaluative point that the severity of market failure varies by industry &#8212; reaching a direction about when externalities are most damaging and when intervention is most urgent. <strong>Option B</strong> is description &#8212; restating the core model result (MSC &gt; MPC → over-production) with no qualification, no evidence, no direction beyond the model itself. <strong>Option E</strong> is description of an empirical fact with no analytical content. <strong>Option F</strong> is description of policy tools with no weighing of their effectiveness or conditions under which they work.'
-      },
-
-      /* 9 — calculation: DWL triangle size */
-      { type: 'calculation',
-        context: 'A market has a negative externality. The marginal external cost (MEC) is constant at <strong>&pound;10 per unit</strong>. At the free-market quantity of <strong>Qm = 200 units</strong>, the social optimum is <strong>Q* = 160 units</strong>.',
-        working: [
-          'Step 1: Identify the base of the DWL triangle',
-          'Base = Qm &minus; Q* = 200 &minus; 160 = 40 units',
-          'Step 2: Identify the height of the DWL triangle',
-          'At Q*, MSC &minus; MSB = MEC = &pound;10 (the wedge between social cost and benefit)',
-          'Height = &pound;10',
-          'Step 3: Calculate DWL',
-          'DWL = &frac12; &times; base &times; height = &frac12; &times; 40 &times; &pound;10 = &pound;200',
-          'Step 4: Interpret',
-          'This &pound;200 is lost surplus from units 161&ndash;200 that are produced even though their social cost exceeds their social benefit.'
-        ],
-        stem: 'What is the deadweight welfare loss from this externality?',
-        opts: [
-          { ped: '&pound;200, representing the lost social surplus from the 40 units of over-production', typ: 'Triangle: &frac12; &times; (Qm &minus; Q*) &times; MEC', rev: 'DWL = &frac12; &times; 40 &times; &pound;10' },
-          { ped: '&pound;400, representing the total external cost imposed at the market quantity', typ: 'Uses rectangle not triangle: 40 &times; &pound;10 = &pound;400', rev: 'DWL is a triangle (the MEC tapers from &pound;10 to 0 between Qm and Q*)' },
-          { ped: '&pound;2,000, representing the total MEC at the market equilibrium', typ: 'Uses total quantity, not overproduction: 200 &times; &pound;10', rev: 'DWL is only the triangle on the overproduced units' },
-          { ped: '&pound;100, as only half the externality falls on third parties', typ: 'Halves the triangle again without justification', rev: 'The &frac12; is already in the triangle formula' }
-        ],
-        ans: 0,
-        exp: 'DWL = &frac12; &times; (Qm &minus; Q*) &times; MEC = &frac12; &times; 40 &times; &pound;10 = <strong>&pound;200</strong>. The triangle arises because the gap between MSC and MSB is zero at Q* and widens to &pound;10 (the constant MEC) by Qm. This is only a triangle because the D (MPB) and S curves are straight lines. With constant MEC (a parallel shift of S to get MSC), the DWL is this neat triangle. Option B computes the rectangle of total external cost on the overproduced units &mdash; the wrong shape. Option C uses the total quantity. When the government imposes a Pigouvian tax of &pound;10/unit, it recovers this &pound;200 DWL for society.'
-      },
-
-      /* 10 — mcq: adverse selection vs moral hazard (bonus) */
-      { type: 'mcq',
-        stem: 'Which scenario correctly illustrates <strong>adverse selection</strong> (rather than moral hazard)?',
-        opts: [
-          'An insurance company cannot observe whether prospective customers are high-risk or low-risk, so it charges a single average premium. High-risk individuals are more likely to buy the policy; low-risk individuals find the premium too expensive and decline. The insurer ends up with a pool of customers riskier than average.',
-          'A homeowner, having taken out comprehensive home insurance, decides not to install a burglar alarm because the insurance makes theft less costly to bear personally.',
-          'A bank, knowing it is too important to be allowed to fail, takes on riskier investments than it would without the implicit government guarantee.',
-          'A used-car dealer only offers cars of unknown quality, but buyers, unable to tell good cars from bad, reduce their bids &mdash; so sellers of good cars withdraw from the market.'
-        ],
-        ans: 0,
-        exp: 'Option A is the cleanest illustration of <strong>adverse selection</strong>: the information asymmetry operates <em>before</em> the contract is signed. High-risk customers self-select into insurance at the average premium, producing a pool of customers whose expected claims exceed the premium, potentially causing the market to unravel (Akerlof\'s "market for lemons" applied to insurance). Options B and C describe <strong>moral hazard</strong>: the information asymmetry affects behaviour <em>after</em> the contract or guarantee is in place (the homeowner takes less care; the bank takes more risk). Option D &mdash; Akerlof\'s used-car market &mdash; is actually another example of adverse selection, but here the direction is sellers withdrawing when buyers cannot distinguish quality, leading to market thinning rather than adverse pooling. Option A is the most textbook-precise adverse selection example.'
+        exp: 'Social optimum: MSC = MSB. MSC = MPC + MEC. At 3,000: MSC = £70 + £20 = £90 = MSB ✓. Free market: MPC = MSB → at 4,000 (£80 = £80). The free market overproduces by 1,000 units. A Pigouvian tax of £20/tonne (= MEC) would shift MPC up to MSC, reducing output from 4,000 to 3,000 tonnes and eliminating the deadweight welfare loss. This illustrates why Pigouvian taxes are set equal to the marginal external cost, not to eliminate all output.'
       }
 
     ]

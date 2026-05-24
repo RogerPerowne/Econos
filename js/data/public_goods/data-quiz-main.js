@@ -5,174 +5,173 @@
     topicId:  'public_goods_main',
     title:    'Public Goods',
     subtitle: 'Theme 1 &middot; Topic 3.3 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering non-rivalry, non-excludability, the free rider problem, quasi-public and club goods, government provision, and the preference revelation problem. Mixed question types testing classification, analysis, and the ability to evaluate real-world examples from defence, roads, and digital infrastructure.',
-    shortNames: {
-      'public_goods_1': 'Defining public goods',
-      'public_goods_2': 'Free rider problem',
-      'public_goods_3': 'Examples of public goods',
-      'public_goods_4': 'Public vs quasi-public goods',
-      'public_goods_5': 'Why markets fail',
-      'public_goods_6': 'Government solutions',
-      'public_goods_7': 'Policy debate'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'public_goods_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers the non-excludability and non-rivalry properties, the free-rider problem, and quasi-public goods',
+    shortNames: [
+      'Definition MCQ', 'Classify goods', 'Free-rider problem', 'Quasi-public goods',
+      'Sequence', 'Match pairs', 'Cause & effect', 'Odd one out',
+      'Data table', 'Evaluation multi-select'
+    ],
 
     questions: [
 
-      /* 1 — MCQ: public good definition */
+      /* 1 — MCQ: pure public good definition */
       { type: 'mcq',
-        stem: 'Which of the following statements gives the most precise economic definition of a <strong>pure public good</strong>?',
+        id: 'q_pg_1',
+        stem: 'Which combination of properties defines a <strong>pure public good</strong>?',
         opts: [
-          'A good that is both non-rival in consumption (one person\'s use does not reduce availability to others) and non-excludable (impossible to prevent non-payers from benefiting)',
-          'Any good provided by the government or funded through general taxation, regardless of its characteristics in the marketplace',
-          'A good that is free at the point of use, such as the NHS or state education, because society judges that everyone should have access',
-          'A good with very strong positive externalities that generates spillover benefits for third parties beyond the direct consumer'
+          'Non-excludable (impossible to prevent non-payers from consuming) AND non-rival (one person\'s consumption does not reduce availability to others)',
+          'Non-excludable AND rival (one person\'s use reduces availability to others)',
+          'Excludable AND non-rival (can charge, but consumption doesn\'t reduce others\' access)',
+          'Excludable AND rival — all goods produced by the government are public goods'
         ],
         ans: 0,
-        exp: 'A <strong>pure public good</strong> must satisfy two conditions simultaneously: (1) <strong>non-rival</strong> &#8212; one person\'s consumption does not diminish the amount available for anyone else (marginal cost of providing to an additional consumer is zero); and (2) <strong>non-excludable</strong> &#8212; once provided, it is impossible or prohibitively expensive to prevent non-payers from enjoying the good. Both conditions are necessary. Option B is a common exam error: government provision does not make a good a public good (the NHS is not a public good &#8212; a doctor\'s time is rival and patients could in principle be excluded). Option D describes a positive externality good (merit good), not a public good. The distinction is examinable and critical.'
+        exp: '<strong>Non-excludability</strong>: technically impossible or prohibitively costly to prevent non-payers from benefiting → creates the free-rider problem. <strong>Non-rivalry</strong>: one person\'s consumption does not reduce the quantity or quality available to others → marginal cost of providing to one more person is zero. Together these make profitable private provision impossible: consumers free-ride rather than pay, so no revenue is collected, and private firms cannot supply the good. Government must provide from taxation. Examples: national defence, flood defences, public fireworks, public broadcast signals.'
       },
 
-      /* 2 — elastic_sort: classify goods */
-      { type: 'elastic_sort',
-        stem: 'Classify each good as a <strong>pure public good</strong>, <strong>quasi-public (club) good</strong>, or <strong>private good</strong>.',
-        categories: ['pure_public', 'quasi_public', 'private'],
-        categoryLabels: ['Pure public good', 'Quasi-public (club) good', 'Private good'],
-        goods: [
-          { icon: '&#128081;', label: 'National defence protecting all UK residents simultaneously', note: '', ans: 'pure_public' },
-          { icon: '&#127968;', label: 'A house &#8212; rival (owner-occupied) and excludable (you can lock the door)', note: '', ans: 'private' },
-          { icon: '&#127966;', label: 'An uncrowded motorway &#8212; non-rival until congested; technically excludable by toll', note: '', ans: 'quasi_public' },
-          { icon: '&#127754;', label: 'Flood defences along a river &#8212; all nearby residents protected simultaneously', note: '', ans: 'pure_public' },
-          { icon: '&#128249;', label: 'A Netflix subscription &#8212; non-rival (one viewer doesn\'t reduce others\') but excludable (password required)', note: '', ans: 'quasi_public' },
-          { icon: '&#127829;', label: 'A pizza &#8212; rival (eaten by one person) and excludable (restaurant can charge)', note: '', ans: 'private' }
-        ],
-        exp: '<strong>Pure public goods</strong>: defence and flood defences satisfy both non-rivalry (protecting one resident doesn\'t reduce protection for others) and non-excludability (impossible to defend some taxpayers and not others). <strong>Quasi-public (club) goods</strong>: motorways (non-rival when uncongested, but congestion can make them rival; tolls technically possible &#8212; excludable) and Netflix (non-rival as streaming doesn\'t reduce quality for others, but excludable via subscription). <strong>Private goods</strong>: houses and pizzas are both rival and excludable &#8212; classic private goods allocated efficiently by the price mechanism. The key is applying both criteria carefully &#8212; not just one.'
-      },
-
-      /* 3 — para_fill: free rider problem */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph explaining the free rider problem.',
-        anchor: 'The free rider problem explains why public goods cannot be provided by markets.',
-        para: 'Because public goods are [1], individuals cannot be prevented from benefiting even if they do not pay. This creates an incentive to [2] &#8212; to benefit without contributing. If everyone reasons this way, no one [3], and the good is not provided at all. This is a form of the [4] dilemma &#8212; where individual rationality leads to [5] irrationality. The only solution is [6] provision funded by compulsory [7], which bypasses the free rider problem by forcing everyone to contribute.',
-        blanks: [
-          { id: 1, opts: ['non-excludable', 'non-rival', 'positive', 'complementary'], ans: 0 },
-          { id: 2, opts: ['free ride', 'overproduce', 'invest', 'compete'], ans: 0 },
-          { id: 3, opts: ['contributes', 'benefits', 'consumes', 'invests'], ans: 0 },
-          { id: 4, opts: ['prisoner\'s', 'commons', 'market', 'public'], ans: 0 },
-          { id: 5, opts: ['collective', 'individual', 'government', 'market'], ans: 0 },
-          { id: 6, opts: ['government', 'market', 'private', 'charitable'], ans: 0 },
-          { id: 7, opts: ['taxation', 'borrowing', 'pricing', 'rationing'], ans: 0 }
-        ],
-        exp: '(1) <strong>Non-excludable</strong>: the inability to exclude non-payers is the direct cause of the free rider problem &#8212; non-rivalry alone would not create the free rider incentive. (2) <strong>Free ride</strong>: benefit without contributing to the cost. (3) <strong>Contributes</strong>: if everyone free rides, no revenue is raised and no firm will supply. (4) <strong>Prisoner\'s</strong> dilemma: individually rational (don\'t pay) leads to collectively irrational (no public good). (5) <strong>Collective</strong>: the collective outcome is worse for all &#8212; everyone would prefer the good to be provided, but individual incentives prevent it. (6) <strong>Government</strong>: only compulsory provision overcomes the free rider problem. (7) <strong>Taxation</strong>: compulsory &#8212; the coercive element is essential because voluntary payment suffers from free riding.'
-      },
-
-      /* 4 — multi_select: pure public goods */
-      { type: 'multi_select',
-        stem: 'Which of the following are <strong>pure public goods</strong> (both non-rival AND non-excludable)?',
-        opts: [
-          'A lighthouse beam warning all ships in the area simultaneously',
-          'A state school &#8212; provided free but each pupil takes up a place that another cannot',
-          'Street lighting on a public road &#8212; difficult to exclude residents; one person\'s use does not reduce illumination for others',
-          'A fireworks display that can be seen by anyone within range',
-          'Clean air in an urban environment, assuming no one can be excluded from breathing it',
-          'A toll bridge &#8212; excludable via the toll booth; congested at peak times'
-        ],
-        correct: [0, 2, 3, 4],
-        exp: 'Pure public goods: (A) <strong>Lighthouse</strong>: non-rival (beam doesn\'t "use up") and non-excludable (all ships in range benefit &#8212; Samuelson\'s classic example). (C) <strong>Street lighting</strong>: non-rival (one person walking under it doesn\'t dim it for others) and non-excludable on a public road. (D) <strong>Public fireworks</strong>: non-rival (watching doesn\'t stop others watching) and non-excludable (impossible to charge all viewers, especially at outdoor displays). (E) <strong>Clean air</strong>: non-rival (breathing doesn\'t reduce it for others in normal conditions) and non-excludable (cannot prevent non-payers from breathing). <strong>Not pure public goods</strong>: (B) State school &#8212; <em>rival</em> (a place taken by one pupil cannot be taken by another; class size is finite); (F) Toll bridge &#8212; <em>excludable</em> (toll booth prevents non-payers) and potentially rival (congestion at peak times).'
-      },
-
-      /* 5 — diagram_interp: vertical demand summation */
-      { type: 'diagram_interp',
-        stem: 'For a public good, three individuals (A, B, C) have the following willingness to pay for flood defences at different levels of protection: A = &#163;200, B = &#163;150, C = &#163;100. The marginal cost of flood protection is &#163;400.',
-        svg: '<svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="55" y1="20" x2="55" y2="260" stroke="#0B1426" stroke-width="2"/><line x1="55" y1="260" x2="400" y2="260" stroke="#0B1426" stroke-width="2"/><text x="42" y="22" fill="#0B1426" font-size="12" text-anchor="end" font-weight="700">WTP (&#163;)</text><text x="398" y="278" fill="#0B1426" font-size="12" font-weight="700">Q</text><line x1="80" y1="80" x2="80" y2="260" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4,3"/><line x1="80" y1="80" x2="120" y2="80" stroke="#2563EB" stroke-width="2"/><text x="55" y="80" fill="#2563EB" font-size="11" text-anchor="end" font-weight="700">&#163;200</text><line x1="80" y1="130" x2="120" y2="130" stroke="#1FB574" stroke-width="2"/><text x="55" y="130" fill="#1FB574" font-size="11" text-anchor="end" font-weight="700">&#163;150</text><line x1="80" y1="170" x2="120" y2="170" stroke="#EC2D68" stroke-width="2"/><text x="55" y="170" fill="#EC2D68" font-size="11" text-anchor="end" font-weight="700">&#163;100</text><line x1="80" y1="30" x2="120" y2="30" stroke="#F5B800" stroke-width="2.5"/><text x="55" y="30" fill="#F5B800" font-size="11" text-anchor="end" font-weight="700">&#163;450</text><line x1="55" y1="50" x2="400" y2="50" stroke="#0B1426" stroke-width="1.5" stroke-dasharray="6,3"/><text x="405" y="54" fill="#0B1426" font-size="11" font-weight="700">MC=&#163;400</text></svg>',
-        caption: 'Individual WTP: A = &#163;200 (blue), B = &#163;150 (green), C = &#163;100 (red). Vertical sum = &#163;450 (amber). MC = &#163;400 (dashed line).',
-        question: 'Using vertical demand summation, should flood defences be provided? Why is this method used rather than horizontal summation?',
-        opts: [
-          'Yes, flood defences should be provided: the vertical sum of WTP (&#163;450) exceeds MC (&#163;400). Vertical summation is used because all three individuals consume the same unit of the public good simultaneously &#8212; unlike private goods where each unit is consumed by one person',
-          'No, flood defences should not be provided: no individual\'s WTP (max &#163;200) covers the MC (&#163;400), so no market transaction is possible',
-          'The provision decision depends on horizontal summation of demand: if three units of flood protection are demanded at &#163;400 or more, provision is justified',
-          'Vertical summation is only used for private goods; public goods require comparing MC with the highest individual WTP'
-        ],
-        ans: 0,
-        exp: 'For public goods, we use <strong>vertical summation</strong>: because all individuals simultaneously consume the same unit, their willingness to pay is <em>added together</em> to find total social value. A + B + C = &#163;200 + &#163;150 + &#163;100 = <strong>&#163;450</strong>. Since &#163;450 &gt; MC (&#163;400), it is socially efficient to provide flood defences &#8212; total social value exceeds cost. <strong>Horizontal summation</strong> is used for private goods because each unit is consumed by one person &#8212; we ask how many units total are demanded at each price. For a public good, there is only one "unit" (one level of flood protection) consumed by everyone; so we ask how much in total they would pay for it. Option B shows why the market fails: no individual has WTP &gt; &#163;400, so no private firm can cover costs &#8212; yet the good should be provided because aggregate value exceeds cost.'
-      },
-
-      /* 6 — odd_one_out: free rider illustrations */
-      { type: 'odd_one_out',
-        stem: 'Three of these scenarios illustrate the <strong>free rider problem</strong>. Which is the ODD ONE OUT?',
+      /* 2 — Categorise: types of goods */
+      { type: 'categorise',
+        id: 'q_pg_2',
+        stem: 'Sort each good into the correct category based on excludability and rivalry.',
+        categories: ['Pure public good', 'Pure private good', 'Club good', 'Common resource'],
         items: [
-          { icon: '&#127981;', label: 'A firm benefits from the national road network without contributing to its cost through road tax', note: '' },
-          { icon: '&#128293;', label: 'A household benefits from the local fire service that would attend a fire at their house even if they refused to pay council tax', note: '' },
-          { icon: '&#127869;', label: 'A customer at a restaurant eats a meal and refuses to pay the bill after eating', note: '' },
-          { icon: '&#127972;', label: 'Countries with no climate commitments benefit from CO&#178; reductions made by countries that have signed the Paris Agreement', note: '' }
+          { text: 'National defence — non-excludable, non-rival', category: 'Pure public good' },
+          { text: 'A sandwich — excludable, rival', category: 'Pure private good' },
+          { text: 'Netflix subscription — excludable (password), non-rival (one more viewer costs nothing)', category: 'Club good' },
+          { text: 'Fish in an open ocean — non-excludable, rival (overfishing depletes stock)', category: 'Common resource' },
+          { text: 'A toll motorway — excludable (toll booth), rival (congestion occurs)', category: 'Pure private good' },
+          { text: 'A lighthouse warning signal — non-excludable, non-rival', category: 'Pure public good' }
+        ],
+        exp: 'The 2×2 goods classification: <strong>Pure public</strong>: non-excludable + non-rival → free-rider problem → government must provide. <strong>Pure private</strong>: excludable + rival → markets work well. <strong>Club goods</strong>: excludable + non-rival → profitable private provision possible (streaming, golf clubs, cable TV). <strong>Common resources</strong>: non-excludable + rival → "tragedy of the commons" — overuse without property rights. Toll roads are private when uncongested (non-rival) but become common resources at capacity. Classification can change with technology (encryption made TV excludable).'
+      },
+
+      /* 3 — MCQ: free-rider problem */
+      { type: 'mcq',
+        id: 'q_pg_3',
+        stem: 'The <strong>free-rider problem</strong> arises because of:',
+        opts: [
+          'Non-excludability — rational consumers know they can benefit from the good without paying, so they do not reveal their true willingness to pay',
+          'Non-rivalry — since consuming the good does not reduce others\' consumption, there is no incentive to pay for it',
+          'Government ownership — public provision removes the profit motive and reduces the incentive to produce',
+          'Scarcity — public goods are too rare for everyone to benefit, so free-riding only benefits the first users'
+        ],
+        ans: 0,
+        exp: 'The free-rider problem stems from <strong>non-excludability</strong>: if you cannot be excluded from a good for not paying, rational self-interest says "don\'t pay — consume for free." Since everyone reasons this way, no revenue is collected → private market cannot provide the good → market failure. Non-rivalry means the free-rider\'s consumption doesn\'t harm others (no rivalry loss), reinforcing the incentive to free-ride. Together they make public goods unprofitable to provide privately — the fundamental argument for government provision and public finance through taxation.'
+      },
+
+      /* 4 — MCQ: quasi-public goods */
+      { type: 'mcq',
+        id: 'q_pg_4',
+        stem: 'A busy motorway at peak hours could be described as a <strong>quasi-public good</strong>. Why?',
+        opts: [
+          'The road is non-excludable (free to use without a toll) but becomes rival at capacity — congestion means additional users reduce the quality of service for existing users',
+          'The road is excludable (toll booths) and non-rival — once built, one more car does not reduce others\' ability to travel',
+          'The road is a pure public good at all times — non-excludable and non-rival regardless of traffic levels',
+          'The road is a pure private good — firms could profitably provide all roads without government subsidy'
+        ],
+        ans: 0,
+        exp: 'Quasi-public goods (or impure public goods) have characteristics of both public and private goods depending on context. A road without tolls is <strong>non-excludable</strong> (anyone can use it). When uncongested, it is also <strong>non-rival</strong> → pure public good characteristics. But at peak hours, it becomes <strong>rival</strong> — additional cars cause congestion, reducing journey quality and speed for existing users → the road gains private good characteristics. This is why congestion charging (making roads excludable through pricing) is a potential policy solution — converting a quasi-public good into a club good during peak periods.'
+      },
+
+      /* 5 — Sequence: free-rider problem to government provision */
+      { type: 'sequence',
+        id: 'q_pg_5',
+        stem: 'Place the steps in the correct order showing how the <strong>free-rider problem leads to market failure</strong> for a pure public good.',
+        instr: 'Tap the steps in the correct order, from first to last.',
+        items: [
+          { label: 'A pure public good is non-excludable — no one can be prevented from benefiting', note: '' },
+          { label: 'Rational consumers choose not to pay — they can consume the good for free if others pay', note: '' },
+          { label: 'Firms cannot collect revenue — consumers do not reveal their willingness to pay', note: '' },
+          { label: 'Private provision is unprofitable — no firm will supply the good commercially', note: '' },
+          { label: 'Market failure results — the socially beneficial good is not produced at all', note: '' },
+          { label: 'Government must provide the good, funded by compulsory taxation', note: '' }
+        ],
+        correctOrder: [0, 1, 2, 3, 4, 5],
+        exp: 'The free-rider chain: non-excludability → rational self-interest to free-ride → consumers don\'t reveal WTP → no revenue → unprofitable provision → market failure (zero provision) → government must provide via compulsory taxation. Taxation is the only mechanism that overcomes the free-rider problem: it is compulsory, so everyone contributes regardless of whether they individually value the good. The government then acts as the "revealed preference aggregator" — making collective provision decisions on behalf of society.'
+      },
+
+      /* 6 — Match pairs: public good concepts */
+      { type: 'match_pairs',
+        id: 'q_pg_6',
+        stem: 'Match each concept to its definition.',
+        pairs: [
+          { a: 'Non-excludability', b: 'Cannot prevent non-payers from consuming the good' },
+          { a: 'Non-rivalry', b: 'One person\'s consumption does not reduce availability to others' },
+          { a: 'Free-rider', b: 'Person who benefits from a public good without paying for it' },
+          { a: 'Quasi-public good', b: 'Good that is non-excludable but becomes rival at high usage' },
+          { a: 'Club good', b: 'Good that is excludable but non-rival — e.g. streaming services' },
+          { a: 'Tragedy of the commons', b: 'Overuse of a common resource because non-excludable but rival — leads to depletion' }
+        ],
+        exp: 'Public good concepts: <strong>non-excludability</strong> causes the free-rider problem; <strong>non-rivalry</strong> means the marginal cost of serving one more user is zero; <strong>free-rider</strong> is the individual whose rational behaviour causes collective market failure; <strong>quasi-public good</strong> adds congestion — becomes rival at capacity; <strong>club good</strong> is excludable+non-rival — markets can provide profitably; <strong>tragedy of the commons</strong> applies to common resources (non-excludable+rival) — overfishing, overgrazing, traffic congestion without pricing.'
+      },
+
+      /* 7 — Cause & effect: non-excludability consequences */
+      { type: 'cause_effect',
+        id: 'q_pg_7',
+        stem: 'Match each public good characteristic to its economic consequence.',
+        pairs: [
+          { cause: 'National defence is non-excludable', effect: 'All citizens are protected whether or not they pay taxes — free-riding is inevitable' },
+          { cause: 'Lighthouse signal is non-rival', effect: 'Marginal cost of warning one more ship is zero — exclusion would be allocatively inefficient' },
+          { cause: 'Open-access fishery is non-excludable but rival', effect: 'Overfishing leads to stock depletion — tragedy of the commons' },
+          { cause: 'Netflix encrypts its content', effect: 'Transforms a non-rival good into a club good — enables private profitable provision' },
+          { cause: 'Flood defences protect an entire area', effect: 'Costs are non-rivalrously shared — government provision is efficient; charging is impractical' },
+          { cause: 'Congestion pricing introduced on London roads', effect: 'Converts a quasi-public good into an excludable good — reduces free-riding and congestion' }
+        ],
+        exp: 'Non-excludability and non-rivalry have distinct but related consequences. Non-excludability → free-rider problem → private underprovision → government provision needed. Non-rivalry → zero marginal cost of additional users → exclusion is allocatively inefficient (users who value the good at above zero but below the price are excluded from beneficial consumption). Technology can change the classification: encryption makes digital goods excludable → enables market provision. Pricing (tolls, congestion charges) can make non-excludable goods excludable → reduces overuse.'
+      },
+
+      /* 8 — Odd one out: pure public goods */
+      { type: 'odd_one_out',
+        id: 'q_pg_8',
+        stem: 'Three of these are <strong>pure public goods</strong>. Which is the <strong>odd one out</strong>?',
+        items: [
+          { icon: '🛡️', label: 'National defence — protection covers all citizens; non-payers cannot be excluded', note: '' },
+          { icon: '🎆', label: 'A public fireworks display — everyone in the area can watch; watching doesn\'t reduce others\' view', note: '' },
+          { icon: '🏟️', label: 'A football stadium — seating is limited (rival) and tickets exclude non-payers (excludable)', note: '' },
+          { icon: '🌊', label: 'Flood defences for a coastal community — all residents benefit; benefit is non-rival', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is the <strong>restaurant customer who refuses to pay</strong>. This is not a free rider problem in the economic sense &#8212; it is theft or breach of contract. A restaurant meal is a <em>private good</em> (rival and excludable). The restaurant could refuse to serve customers who don\'t pay in advance, and once consumed, one person\'s meal is unavailable to others. The free rider problem specifically arises with <em>non-excludable</em> goods: the firm benefiting from roads without paying (excludability is imperfect); households benefiting from fire services regardless of council tax payment; and countries free-riding on others\' climate action (no country can be excluded from a stable global climate). These three illustrate the public goods problem; the restaurant example illustrates contract enforcement.'
+        exp: 'The odd one out is a <strong>football stadium</strong>. It is both <strong>excludable</strong> (ticketing and gates prevent non-payers) and <strong>rival</strong> (limited seating means one more spectator displaces another at capacity). It is therefore a pure <strong>private good</strong> — and the market provides football stadiums profitably. National defence, public fireworks, and flood defences are all non-excludable (cannot exclude non-contributors) and non-rival (one person\'s benefit doesn\'t reduce others\') — the defining properties of pure public goods.'
       },
 
-      /* 7 — data_table: government provision efficiency */
+      /* 9 — Data table: UK public goods provision */
       { type: 'data_table',
-        stem: 'The table shows government defence spending and security outcomes for selected countries.',
-        headers: ['Country', 'Defence spending (% GDP)', 'Population (millions)', 'Cost per citizen (&#163;)', 'Security index (0&#8211;100)'],
+        id: 'q_pg_9',
+        stem: 'The table shows public goods provision data for the UK.',
+        headers: ['Public good', 'Annual government spending (£bn)', 'Private sector could provide?', 'Free-rider severity'],
         rows: [
-          ['UK', '2.3%', '67', '640', '78'],
-          ['Germany', '1.8%', '84', '490', '82'],
-          ['France', '2.1%', '68', '590', '76'],
-          ['Netherlands', '1.7%', '18', '610', '88'],
-          ['Poland', '3.9%', '38', '590', '70']
+          ['National defence', '57', 'No — non-excludable', 'Very high'],
+          ['BBC World Service', '0.3', 'Partially — some broadcasting is excludable', 'High'],
+          ['Street lighting (local)', '0.5 est.', 'No — non-excludable in practice', 'High'],
+          ['Flood defences', '1.2', 'No — protects all in area', 'Very high'],
+          ['Road network (non-toll)', '8.0', 'With tolls — but impractical on all roads', 'Moderate']
         ],
-        question: 'Which observation is most consistent with defence being a public good?',
+        question: 'Which conclusion about public good provision is <strong>best supported</strong> by the data?',
         opts: [
-          'All citizens within each country receive protection simultaneously regardless of individual contribution &#8212; consistent with non-rivalry and non-excludability; no country can charge individual citizens on a usage basis',
-          'Countries spending more on defence always achieve higher security scores &#8212; showing a direct market relationship between spending and output',
-          'Defence spending per citizen varies between countries, showing that the good is rival &#8212; Germany\'s lower spending means fewer citizens can be protected',
-          'The data show that defence is a quasi-public good because some countries spend more than others, allowing some citizens to be excluded from protection'
+          'Government provision is necessary for goods with high free-rider severity — these are cases where non-excludability makes private provision unviable without compulsory taxation',
+          'All the goods shown would be better provided by the private sector — government provision crowds out more efficient private alternatives',
+          'The BBC World Service should be privatised immediately — partial excludability through encryption means the free-rider problem can be solved without public funding',
+          'Road spending at £8bn shows government over-invests in quasi-public goods — tolling all roads would eliminate the need for public spending'
         ],
         ans: 0,
-        exp: 'The key public good characteristic in the data: each country\'s entire population benefits from its defence umbrella simultaneously &#8212; non-rivalry (UK\'s 67 million all benefit from the same defence; one person\'s protection doesn\'t reduce another\'s) and non-excludability (HMRC cannot choose not to defend tax non-payers). Option B is incorrect: Germany spends less but achieves a <em>higher</em> security index &#8212; there is no simple spending-outcome relationship, reflecting differences in geopolitical risk, alliances (NATO), and efficiency. Option C confuses spending differences (reflecting political choices) with rivalry &#8212; lower German spending means less defence overall, not that some Germans are excluded. Option D misunderstands the concept: spending variation between countries does not affect the within-country public good properties.'
+        exp: 'The data support government provision for goods with very high free-rider severity (defence, flood defences, street lighting) — these are genuinely non-excludable and non-rival, making private provision unviable. The road network is a quasi-public good — partial tolling exists on motorways, but not practical for all roads. The BBC World Service has partial excludability through broadcasting but serves as a public good globally (non-excludable to foreign audiences). Option B overclaims. Option C ignores the global non-excludability of broadcast signals. Option D ignores the practical costs of universal tolling.'
       },
 
-      /* 8 — multi_select: evaluation of government provision of public goods */
+      /* 10 — Multi-select: evaluation of public good theory */
       { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>whether public goods can only be provided by the government</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+        id: 'q_pg_10',
+        stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of public good theory and government provision?',
         opts: [
-          'Technology can convert public goods into club goods over time: GPS was a non-excludable military good, but commercial encryption created excludability &#8212; suggesting the government-provision argument weakens as excludability technology improves',
-          'Public goods are non-rival and non-excludable, so private firms cannot charge for them and will not provide them',
-          'Where non-excludability is truly fundamental rather than technological &#8212; as with national defence or flood barriers &#8212; the free rider problem cannot be solved by the market regardless of technological development, so government provision remains essential',
-          'Government provides public goods because they are good for society',
-          'The case for government provision is strongest precisely in the goods where excludability technology is weakest &#8212; qualifying the argument to contexts rather than applying it universally is more analytically defensible than a blanket claim',
-          'Lighthouses were historically provided by private associations funded by port fees, showing private provision can work; but this model depends on a concentrated group of identifiable beneficiaries &#8212; a condition that rarely holds for national-scale public goods like defence'
+          'Pure public goods are non-excludable and non-rival — the free-rider problem makes private provision impossible',
+          'While pure public good theory provides a strong case for government provision, the binary classification (public/private) is increasingly challenged by technology: digital goods were once non-excludable (copied freely), but encryption and digital rights management have made many excludable — potentially reversing the case for government provision in areas like broadcasting',
+          'The government provides national defence because it is a public good',
+          'The government\'s information advantage does not solve the free-rider problem — it creates a different one: government must estimate the public\'s willingness to pay for public goods without market price signals, risking under- or over-provision based on political, rather than efficiency, criteria',
+          'Public goods should always be provided free at the point of use',
+          'The tragedy of the commons shows that extending the public good framework to common resources (non-excludable + rival) requires a different solution — property rights or quotas rather than simply "government provision" — suggesting that different failure mechanisms warrant different instruments'
         ],
-        correct: [0, 2, 5],
-        exp: '<strong>Option A</strong> is strong evaluation: it uses a specific mechanism (encryption technology) to qualify when the government-provision argument holds and when it weakens, reaching a directional conclusion about how the argument changes over time. <strong>Option C</strong> is strong evaluation: it distinguishes between technological and fundamental non-excludability, identifying the conditions under which government provision is genuinely necessary rather than asserting it universally. <strong>Option F</strong> is strong evaluation: it uses a real historical example (lighthouse private provision) and then qualifies its applicability &#8212; identifying the condition (concentrated identifiable beneficiaries) that made it work, and noting this condition rarely holds at scale. <strong>Option B</strong> is a distractor: it is correct description of the free rider mechanism but does not evaluate &#8212; it states the one-sided argument without qualification or counter-evidence. <strong>Option D</strong> is a distractor: vague assertion with no mechanism, evidence, or directional reasoning. <strong>Option E</strong> partially evaluates but is too abstract to earn full credit without specifying which contexts or naming examples.'
-      },
-
-      /* 9 — mcq: preference revelation problem */
-      { type: 'mcq',
-        stem: 'The <strong>preference revelation problem</strong> for public goods means that:',
-        opts: [
-          'Individuals have an incentive to understate their willingness to pay for public goods, hoping others will pay &#8212; making it impossible for government to determine the optimal level of provision without relying on political processes',
-          'Private firms can solve the public goods problem by revealing preferences through market research and subscription models, eliminating the need for government provision',
-          'Government always over-provides public goods because voters prefer more public spending than is economically optimal',
-          'The optimal quantity of a public good is revealed automatically by the price mechanism through vertical demand summation in competitive markets'
-        ],
-        ans: 0,
-        exp: 'The preference revelation problem is a fundamental challenge for public goods provision. If government asks individuals how much they value defence or flood barriers, rational individuals will <strong>understate their WTP</strong> &#8212; hoping others\' truthful answers will justify provision while they free ride on the cost. This makes cost-benefit analysis for public goods inherently difficult. Without market prices to reveal preferences, government must rely on imperfect substitutes: elections (crude aggregation of preferences), surveys (strategically manipulated), stated preference surveys (susceptible to hypothetical bias), and revealed preference methods (inferred from related private market choices). None of these are as informative as the competitive price mechanism. This is one reason why government provision of public goods is always contested &#8212; we genuinely do not know the optimal quantity, unlike private goods where the market price reveals this.'
-      },
-
-      /* 10 — chain: free rider problem sequence */
-      { type: 'chain',
-        stem: 'A community considers funding a flood barrier through voluntary contributions. Place the sequence of events in the correct logical order.',
-        items: [
-          { label: 'The flood barrier is not built &#8212; collective action failure despite community valuing it more than its cost', note: '' },
-          { label: 'Households reason: "If others fund it, I benefit anyway; if they don\'t, my contribution alone won\'t be enough"', note: '' },
-          { label: 'Voluntary contribution scheme announced &#8212; households asked to pledge based on their WTP', note: '' },
-          { label: 'Households understate their true WTP to avoid paying &#8212; each hopes others will fund the barrier', note: '' },
-          { label: 'Pledges fall far short of the &#163;500,000 cost; the scheme fails to raise sufficient funds', note: '' },
-          { label: 'Council introduces compulsory local levy &#8212; bypassing the free rider problem; barrier is funded and built', note: '' }
-        ],
-        correctOrder: [2, 1, 3, 4, 0, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Voluntary scheme announced.<br>2. Each household reasons they can free ride on others.<br>3. Households strategically understate WTP (preference revelation problem).<br>4. Pledges fall short &#8212; scheme fails.<br>5. Barrier not built &#8212; collective action failure (despite total WTP &gt; cost).<br>6. Compulsory levy resolves the problem &#8212; everyone pays, barrier is built.<br><br>This sequence shows that the free rider problem is not caused by selfishness or irrationality &#8212; each household is <em>rationally</em> responding to the non-excludable nature of the good. The solution (compulsory levy/taxation) is the only mechanism that removes the incentive to free ride. This is the economic justification for compulsory local taxation &#8212; not just national taxes. The willingness to pay &gt; cost condition ensures that provision is socially beneficial; the problem is purely one of mechanism design.'
+        correct: [1, 3, 5],
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: shows how the classification itself is contingent on technology — encryption changed the public good status of digital content, qualifying the case for government broadcasting. D: identifies a second-order failure in government provision of public goods — the absence of price signals creates a different information problem for planners, not just a solution to the free-rider problem. F: distinguishes common resource failures from pure public good failures and concludes that different instruments are warranted — showing analytical sophistication about the scope of the framework. A and E are descriptions; C is description without qualification.'
       }
 
     ]

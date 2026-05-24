@@ -1,192 +1,147 @@
-/* ============================================================
-   ECONOS — Quiz content for: Trading Blocs & WTO
-   10 questions covering integration hierarchy, trade creation,
-   trade diversion, WTO principles, and evaluation of regional
-   vs multilateral agreements.
-   ============================================================ */
-
 (function () {
 
   window.ECONOS_QUIZ = {
     id:       'trading_blocs_main',
     topicId:  'trading_blocs_main',
-    title:    'Trading Blocs &amp; WTO',
-    subtitle: 'Theme 4.3 · Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the spectrum of economic integration, Viner\'s trade creation and trade diversion, the WTO\'s principles and limitations, and the debate between regional and multilateral liberalisation. Includes chain reasoning, calculation, and evaluation multi-select questions.',
-    shortNames: {
-      'trading_blocs_1': 'Spectrum of integration',
-      'trading_blocs_2': 'Trade creation',
-      'trading_blocs_3': 'Trade diversion',
-      'trading_blocs_4': 'Benefits vs costs of blocs',
-      'trading_blocs_5': 'WTO: role and principles',
-      'trading_blocs_6': 'WTO limitations',
-      'trading_blocs_7': 'Regional vs multilateral'
-    },
-
+    title:    'Trading Blocs & the WTO',
+    subtitle: 'International Economics',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'trading_blocs' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers integration hierarchy, trade creation/diversion, WTO, and Brexit evaluation',
+    shortNames: [
+      'Integration types','FTA vs Customs Union','Trade creation','Trade diversion','WTO role',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 — Elastic sort: levels of integration */
-      { type: 'elastic_sort',
-        stem: 'Match each feature to the <strong>deepest level of integration</strong> that first introduces it.',
-        categories: ['fta', 'cu', 'sm', 'mu'],
-        categoryLabels: ['Free Trade Area', 'Customs Union', 'Single Market', 'Monetary Union'],
-        goods: [
-          { icon: '🚫', label: 'Tariffs removed between member countries on goods trade', note: '', ans: 'fta' },
-          { icon: '📋', label: 'Common external tariff applied to all imports from non-members', note: '', ans: 'cu' },
-          { icon: '🏃', label: 'Free movement of labour between member states', note: '', ans: 'sm' },
-          { icon: '💶', label: 'Shared currency and single central bank', note: '', ans: 'mu' },
-          { icon: '📊', label: 'Harmonised product standards eliminating non-tariff barriers', note: '', ans: 'sm' },
-          { icon: '🌍', label: 'Each member retains its own independent external trade policy', note: '', ans: 'fta' }
-        ],
-        exp: '<strong>Free Trade Area (FTA):</strong> removes tariffs between members but each keeps its own external tariffs — hence rules-of-origin checks needed at internal borders (e.g. USMCA). <strong>Customs Union (CU):</strong> adds a common external tariff — no internal border checks needed for goods, but external trade policy is shared. <strong>Single Market:</strong> extends to the four freedoms including free movement of labour and harmonised standards removing non-tariff barriers. <strong>Monetary Union:</strong> adds a shared currency and single central bank, removing exchange rate risk but sacrificing independent monetary policy. Each step deepens integration and gains but also increases policy constraint on members — the UK post-Brexit debate centres precisely on how much integration is desirable.'
-      },
-
-      /* 2 — MCQ: trade creation definition */
-      { type: 'mcq',
-        stem: 'According to Viner\'s analysis, <strong>trade creation</strong> occurs when:',
+      {
+        id:   'q_tb_1',
+        type: 'mcq',
+        q:    'In a Free Trade Area (FTA), member countries:',
         opts: [
-          'Joining a customs union causes a country to switch from high-cost domestic production to cheaper imports from a bloc partner — a welfare-improving reallocation',
-          'Joining a customs union causes a country to switch from cheap rest-of-world imports to more expensive bloc-partner imports due to the common external tariff',
-          'A country creates new exports by discovering a comparative advantage it did not previously recognise',
-          'A trading bloc negotiates new access to markets in third countries through multilateral WTO rounds'
+          'Adopt a common external tariff against non-members',
+          'Remove tariffs between themselves but each sets its own tariffs against non-members',
+          'Use a single currency and a common central bank',
+          'Harmonise all economic policies including fiscal and monetary'
         ],
-        ans: 0,
-        exp: '<strong>Trade creation</strong> (Viner, 1950) is the welfare-improving effect of joining a customs union: domestic production that was protected and expensive is replaced by cheaper imports from a bloc partner once internal tariffs are removed. Resources are released from inefficient domestic production and reallocated to areas of comparative advantage — allocative efficiency improves. This is distinct from <strong>trade diversion</strong> (option B), which is the potentially welfare-reducing effect: the common external tariff may cause the country to switch from cheap rest-of-world suppliers to more expensive bloc partners. Whether joining a bloc is net beneficial depends on whether trade creation exceeds trade diversion — an empirical question.'
+        ans:  1,
+        exp:  'In an FTA (e.g., EFTA, USMCA), barriers between members are removed, but each member maintains its own trade policy toward non-members. This is less integrated than a customs union.'
       },
-
-      /* 3 — Calculation: trade diversion welfare cost */
-      { type: 'calculation',
-        context: 'Before joining a customs union, Country A imports steel from the rest of the world at &#163;400 per tonne with a 25% tariff (domestic price &#163;500). After joining, the common external tariff is 30%. The bloc partner charges &#163;420 per tonne (tariff-free within the bloc). Rest-of-world price remains &#163;400 (plus 30% tariff = &#163;520 domestic).',
-        working: [
-          'Before joining: RoW price + 25% tariff = £400 × 1.25 = £500 domestic price',
-          'After joining: Bloc partner price (tariff-free) = £420',
-          'After joining: RoW price + 30% tariff = £400 × 1.30 = £520 domestic price',
-          'Country A now imports from bloc partner at £420 (cheaper than RoW post-tariff at £520)',
-          'But compared to the true world price, A pays £420 vs the efficient price of £400',
-          'Per-tonne extra cost = £420 - £400 = £20 (trade diversion cost)',
-          'Government also loses tariff revenue from RoW imports (was collecting 25% × £400 = £100 per tonne)'
-        ],
-        stem: 'After joining the customs union, Country A switches steel imports from the rest of the world to the bloc partner. What is the <strong>trade diversion cost</strong> per tonne to Country A?',
+      {
+        id:   'q_tb_2',
+        type: 'mcq',
+        q:    'A Customs Union differs from a Free Trade Area because it also has:',
         opts: [
-          { ped: '&#163;20 per tonne above the true world price, plus lost tariff revenue of &#163;100 per tonne previously collected on RoW imports', typ: 'A now pays £420 vs efficient world price of £400. Also loses £100/tonne tariff revenue it previously earned on RoW imports.', rev: 'Trade diversion: pays more than efficient world price AND loses government revenue' },
-          { ped: '&#163;80 per tonne saving, so trade diversion is actually beneficial', typ: 'Compared only to the post-tariff RoW price (£520) not the true world price (£400)', rev: 'The relevant comparison is to the efficient world price, not the protected domestic price' },
-          { ped: 'No cost — A pays less than the pre-joining price', typ: 'Compared only to the old domestic price of £500 — true, but this is welfare analysis, not price comparison', rev: 'Welfare cost is measured against the counterfactual free-trade world price, not the protected price' },
-          { ped: '&#163;120 per tonne — the full difference between the bloc price and the old domestic price', typ: 'Subtracted the wrong pair of prices', rev: 'Trade diversion cost = bloc price (£420) minus world free-trade price (£400) = £20/tonne, plus lost tariff revenue' }
+          'A common currency',
+          'A common external tariff applied to all non-member imports',
+          'Free movement of labour and capital',
+          'A unified fiscal policy'
         ],
-        ans: 0,
-        exp: 'The <strong>trade diversion cost</strong> has two components. First, Country A now pays &#163;420 per tonne (bloc partner) instead of the true world price of &#163;400 — an <strong>extra cost of &#163;20 per tonne</strong>. Second, A previously earned &#163;100 per tonne in tariff revenue on RoW imports (25% &#215; &#163;400) — this revenue is now <strong>lost</strong> (transferred to the bloc partner in the form of the lower price accepted). Total welfare cost = &#163;120 per tonne vs the free-trade counterfactual. Note: consumers in A do gain from lower prices (&#163;420 vs old &#163;500) — but this gain is partly at the expense of lost government revenue, and the difference reflects resources used less efficiently than under free trade.'
+        ans:  1,
+        exp:  'A customs union (e.g., the EU customs union, Mercosur) removes internal barriers AND establishes a Common External Tariff (CET) against non-members. This adds a layer of coordination beyond an FTA.'
       },
-
-      /* 4 — Multi-select: WTO principles */
-      { type: 'multi_select',
-        stem: 'Which of the following are core <strong>WTO principles</strong>?',
+      {
+        id:   'q_tb_3',
+        type: 'mcq',
+        q:    'Trade creation occurs when:',
         opts: [
-          'Most Favoured Nation (MFN): any trade concession given to one member must be extended to all members',
-          'National treatment: once imported goods have cleared customs, they must be treated the same as domestic goods',
-          'Transparency: trade rules and regulations must be published and accessible',
-          'Free trade absolutism: all tariffs must be zero; any protectionism is automatically illegal under WTO rules',
-          'Dispute settlement: the WTO arbitrates trade disputes and can authorise retaliatory measures against violators',
-          'Development preference: developing countries receive no special treatment regardless of income level'
+          'A new trade barrier redirects trade to less efficient producers',
+          'Joining a bloc causes a country to import from a lower-cost member instead of a higher-cost domestic producer',
+          'A country creates new export markets by signing bilateral deals',
+          'Trade volumes fall due to increased tariffs on imports'
         ],
-        correct: [0, 1, 2, 4],
-        exp: 'Options A, B, C, and E are genuine WTO principles. MFN ensures non-discrimination — you cannot give preferential tariffs to one member without extending them to all. National treatment prevents countries from discriminating against imports after they enter. Transparency ensures rules are publicly known. Dispute settlement — the WTO\'s most important innovation over GATT — allows enforceable arbitration with authorised retaliation. Option D is incorrect: the WTO permits tariffs, subsidies (with rules), and protectionist measures in many circumstances (anti-dumping, safeguards, national security). Option F is incorrect: the WTO has Generalised System of Preferences (GSP) allowing developed countries to give lower tariffs to developing countries — a major exception to MFN.'
+        ans:  1,
+        exp:  'Trade creation is a welfare gain: joining a bloc replaces expensive domestic production with cheaper imports from a more efficient bloc member. This increases specialisation and economic efficiency.'
       },
-
-      /* 5 — Odd one out: trade diversion consequences */
-      { type: 'odd_one_out',
-        stem: 'Three of these are <strong>potential costs of joining a trading bloc</strong>. Which is the ODD ONE OUT?',
+      {
+        id:   'q_tb_4',
+        type: 'mcq',
+        q:    'Trade diversion is a welfare loss because:',
+        opts: [
+          'It increases competition from non-member countries',
+          'It redirects imports from an efficient non-member to a less efficient bloc member due to the common external tariff',
+          'It causes a current account deficit to worsen',
+          'It prevents firms from achieving economies of scale'
+        ],
+        ans:  1,
+        exp:  'Trade diversion occurs when the common external tariff makes non-member imports more expensive, diverting trade to less efficient bloc producers. The net welfare effect of joining a bloc depends on whether trade creation exceeds trade diversion.'
+      },
+      {
+        id:   'q_tb_5',
+        type: 'numeric_input',
+        q:    'Before joining a bloc, a country imports good X at £10/unit (world price + 30% tariff = £13). After joining, it imports from a bloc member at £11 (no tariff). What is the trade creation saving per unit?',
+        answer: 2,
+        tolerance: 0,
+        unit: '£',
+        hint: 'Saving = old import cost − new import cost.',
+        workingSteps: ['Old cost (domestic/tariff protected): £13','New cost (bloc member, no tariff): £11','Saving = £13 − £11 = £2 per unit']
+      },
+      {
+        id:   'q_tb_6',
+        type: 'categorise',
+        q:    'Categorise each level of economic integration in order from least to most integrated.',
+        categories: ['Less integrated','More integrated'],
         items: [
-          { icon: '📉', label: 'Trade diversion: bloc\'s common external tariff redirects imports away from the most efficient global producers', note: '' },
-          { icon: '🏛️', label: 'Loss of sovereign control over external trade policy — the common external tariff is set collectively', note: '' },
-          { icon: '📈', label: 'Trade creation: replacing expensive domestic production with cheaper imports from bloc partners raises allocative efficiency', note: '' },
-          { icon: '🔄', label: 'Potential fiscal transfers to weaker bloc members in a deeper economic union — politically unpopular', note: '' }
-        ],
-        ans: 2,
-        exp: 'The odd one out is <strong>trade creation</strong>. This is a <em>benefit</em> of joining a trading bloc — replacing inefficient domestic production with cheaper bloc imports raises allocative efficiency and lowers consumer prices. The other three are genuine costs: trade diversion wastes global resources; loss of external trade policy sovereignty constrains future policy choices; fiscal transfers to weaker members generate political tension (as demonstrated by EU debates over Greek bailouts and structural fund contributions). A well-structured essay on trading blocs weighs trade creation (benefit) against trade diversion and sovereignty costs — the Viner framework.'
+          { item: 'Free Trade Area (remove internal tariffs)',       category: 'Less integrated' },
+          { item: 'Economic Union (common policies + single market)',category: 'More integrated' },
+          { item: 'Customs Union (CET + free internal trade)',       category: 'Less integrated' },
+          { item: 'Monetary Union (single currency)',                category: 'More integrated' },
+          { item: 'Preferential Trade Agreement (reduced tariffs)',  category: 'Less integrated' },
+          { item: 'Common Market (free movement of factors)',        category: 'More integrated' }
+        ]
       },
-
-      /* 6 — Para fill: WTO limitations */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph evaluating WTO limitations.',
-        anchor: 'The WTO faces significant structural challenges that limit its effectiveness.',
-        para: 'The [1] Round of trade negotiations, launched in 2001, has largely stalled because developed nations refused to reduce [2] subsidies, which developing countries regard as essential for fair competition. The US-China trade war demonstrated that the WTO struggles to enforce compliance when [3] powers choose to impose tariffs outside WTO rules. The WTO\'s dispute settlement mechanism was further weakened when the USA blocked appointments to the [4] Body, preventing binding rulings. New issues such as [5] trade, state subsidies, and climate-related [6] adjustments at borders are not adequately covered by existing WTO rules. These challenges raise questions about whether the multilateral trading system can remain the foundation of global [7] governance.',
-        blanks: [
-          { id: 1, opts: ['Doha', 'Uruguay', 'Kennedy', 'Tokyo'], ans: 0 },
-          { id: 2, opts: ['agricultural', 'manufacturing', 'services', 'financial'], ans: 0 },
-          { id: 3, opts: ['major', 'minor', 'developing', 'emerging'], ans: 0 },
-          { id: 4, opts: ['Appellate', 'Dispute', 'Committee', 'Panel'], ans: 0 },
-          { id: 5, opts: ['digital', 'bilateral', 'regional', 'multilateral'], ans: 0 },
-          { id: 6, opts: ['border', 'tax', 'quota', 'subsidy'], ans: 0 },
-          { id: 7, opts: ['trade', 'monetary', 'fiscal', 'development'], ans: 0 }
-        ],
-        exp: '(1) <strong>Doha</strong> Round (2001 — still ongoing/stalled): agriculture deadlock prevented a deal. (2) <strong>Agricultural</strong> subsidies: rich-country farm subsidies (EU CAP, US farm bill) make it impossible for developing country agricultural exporters to compete on price. (3) <strong>Major</strong> powers: the US-China trade war exposed that WTO enforcement depends on voluntary compliance — major powers can defect with limited immediate consequence. (4) <strong>Appellate</strong> Body: the USA blocked appointments, leaving no functioning appeals mechanism since 2019. (5) <strong>Digital</strong> trade: e-commerce, data flows, and digital services are largely outside existing WTO rules. (6) <strong>Border</strong> adjustments: EU\'s Carbon Border Adjustment Mechanism (CBAM) imposes carbon costs on imports — potentially WTO-incompatible. (7) <strong>Trade</strong> governance: whether the WTO can adapt to these challenges determines whether multilateral rules remain meaningful.'
+      {
+        id:   'q_tb_7',
+        type: 'cause_effect',
+        q:    'Match each trading bloc concept to its effect.',
+        pairs: [
+          { cause: 'Country joins customs union',               effect: 'Common external tariff applied; trade with non-members may fall' },
+          { cause: 'Trade creation exceeds trade diversion',    effect: 'Net welfare gain from joining the bloc' },
+          { cause: 'Single market eliminates non-tariff barriers',effect: 'Trade costs fall further; integration deepens' },
+          { cause: 'WTO Most Favoured Nation principle',        effect: 'Trade concessions to one member must be extended to all' },
+          { cause: 'Regional bloc forms',                       effect: 'Potential stumbling block for multilateral WTO liberalisation' },
+          { cause: 'UK exits EU Single Market',                effect: 'Non-tariff barriers and customs checks raise trade costs' }
+        ]
       },
-
-      /* 7 — multi_select: evaluation of EU single market membership */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>whether UK membership of the EU single market was economically beneficial</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
+      {
+        id:   'q_tb_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['Free Trade Area','Customs Union','Common Market','Laffer Curve'],
+        ans:  3,
+        exp:  'Free Trade Area, Customs Union, and Common Market are all levels of regional economic integration. The Laffer Curve is a fiscal policy concept about the tax rate–revenue relationship, not trade integration.'
+      },
+      {
+        id:   'q_tb_9',
+        type: 'data_table',
+        q:    'Use the cost data to identify whether joining a trading bloc creates trade or diverts it.',
+        tableHeaders: ['Supplier','Unit cost before bloc (incl. tariff)','Unit cost after bloc (incl. tariff)'],
+        tableData: [
+          ['Domestic producer','£15','£15 (unchanged)'],
+          ['Bloc member (no tariff)','£18 + 20% = £21.60','£18 (tariff removed)'],
+          ['Non-member (tariff maintained)','£10 + 20% = £12','£10 + 20% = £12']
+        ],
         opts: [
-          'UK EU membership gave UK businesses access to a market of 450 million consumers without tariffs',
-          'Using Viner\'s framework, the net welfare effect of EU membership depended on whether trade creation (replacing costly domestic production with cheaper EU imports) outweighed trade diversion (switching from even cheaper non-EU suppliers to EU partners because of the common external tariff) &#8212; and the empirical evidence, including the ~15% fall in UK goods exports to the EU after Brexit, suggests trade creation dominated',
-          'The broader costs of EU membership &#8212; budget contributions (~&#163;13bn net/year), regulatory alignment without a UK vote &#8212; must be weighed against trade benefits; the OBR\'s estimate of a 4% long-run GDP cost from Brexit provides the most comprehensive quantified comparison, suggesting benefits exceeded costs, though economists disagree on the methodology',
-          'EU membership was beneficial because the UK economy grew during the period of membership',
-          'The appropriate benchmark for evaluating EU membership is not autarky but the counterfactual of WTO-terms trade with the EU &#8212; and CEP research estimates UK-EU trade was approximately 70% higher inside the single market than WTO rules alone would have produced, making the trade case for membership substantially stronger than a simple tariff-removal argument',
-          'The EU is a customs union so it must be beneficial for all members'
+          'Trade creation: country switches from £15 domestic to £18 bloc member',
+          'Trade diversion: country switches from £12 non-member to £18 bloc member',
+          'No trade effect: domestic production is always chosen',
+          'Trade creation: country switches from non-member to domestic producer'
         ],
-        correct: [1, 2, 4],
-        exp: '<strong>Option B (index 1)</strong> is strong evaluation: it applies Viner\'s trade creation vs trade diversion framework to structure the welfare analysis, uses post-Brexit trade data as a natural experiment to reach a directional verdict (trade creation dominated), and grounds the conclusion in evidence rather than assertion. <strong>Option C (index 2)</strong> is strong evaluation: it identifies the full cost-benefit comparison, uses the OBR\'s 4% GDP estimate as quantified evidence, but acknowledges methodological disagreement &#8212; a nuanced position that avoids overclaiming certainty. <strong>Option E (index 4)</strong> is strong evaluation: it reframes the comparison set (WTO terms, not autarky) to make the counterfactual precise, uses CEP research to quantify the trade premium (~70%), and draws a directional conclusion about why the trade case is stronger than a simple tariff argument. <strong>Option A (index 0)</strong> is a distractor: it accurately describes a benefit of membership but makes no evaluative move &#8212; no mechanism, no weighing of costs, no directional conclusion. <strong>Option D (index 3)</strong> is a distractor: it commits a post hoc fallacy &#8212; economic growth during membership does not establish that membership caused or was necessary for growth; many other factors also drove growth. <strong>Option F (index 5)</strong> is a distractor: a sweeping assertion that customs unions are universally beneficial, ignoring trade diversion, sovereignty costs, and the distributional effects on different member states.'
+        ans:  1,
+        exp:  'After joining: cheapest source = bloc member at £18 (tariff removed). Before joining: cheapest was non-member at £12. The bloc\'s common external tariff now makes the cheaper non-member uncompetitive. This is trade diversion — a welfare loss.'
       },
-
-      /* 8 — Data table: regional vs multilateral */
-      { type: 'data_table',
-        stem: 'The table shows selected trade agreement data.',
-        headers: ['Agreement type', 'Example', 'Average tariff reduction', 'Estimated trade gain', 'Time to negotiate'],
-        rows: [
-          ['Bilateral FTA', 'UK-Australia FTA (2023)', '98% tariffs removed', '+&#163;2.9bn long-run', '18 months'],
-          ['Regional bloc', 'UK-CPTPP accession (2023)', 'Most tariffs removed', '+&#163;1.8bn long-run', '3 years'],
-          ['Multilateral (WTO)', 'Doha Round', 'Stalled — no deal', 'Estimated +$360bn globally', '22+ years (ongoing)']
-        ],
-        question: 'What does the data suggest about the trade-offs between bilateral, regional, and multilateral liberalisation?',
-        opts: [
-          'Bilateral and regional FTAs are faster to negotiate and deliver certainty for specific partners; multilateral deals would generate much larger global gains but are extremely slow due to consensus requirements among 164 WTO members',
-          'The data shows bilateral FTAs are definitively superior to multilateral agreements in all respects — countries should abandon the WTO and focus entirely on bilateral deals',
-          'The Doha Round should be declared a success since negotiations are continuing; the 22-year timeline is normal for trade agreements of any type',
-          'The UK-Australia FTA is more valuable than CPTPP membership because it took less time to negotiate and produced a larger estimated gain'
-        ],
-        ans: 0,
-        exp: 'The data illustrate the classic trade-off in trade policy. <strong>Bilateral and regional FTAs</strong> are faster (months to years) and provide certainty, but their welfare gains are limited to the specific parties (UK-Australia &#163;2.9bn). A successful <strong>multilateral Doha Round</strong> would generate an estimated $360bn in global welfare gains — orders of magnitude larger — but has stalled for 22+ years because 164 members must agree. This explains why most trade liberalisation since 2001 has shifted to bilateral and regional routes. The risk is the "spaghetti bowl" of overlapping agreements with different rules. Option B overstates the case — bilateral deals cannot replicate the non-discrimination of multilateral agreements. Option C misreads the data — 22 years with no deal is a failure, not normal. Option D miscompares — CPTPP gives access to 11 economies; Australia alone is smaller.'
-      },
-
-      /* 9 — Chain: trade diversion mechanism */
-      { type: 'chain',
-        stem: 'Arrange the following steps in the correct order describing how <strong>trade diversion</strong> harms welfare after a country joins a customs union.',
-        items: [
-          { label: 'Country A switches steel imports from the cheap rest-of-world supplier to the higher-cost bloc partner', note: '' },
-          { label: 'Country A joins a customs union with partners B and C', note: '' },
-          { label: 'Net welfare loss: A pays more per unit than under free trade; global resources used less efficiently', note: '' },
-          { label: 'Before joining: Country A imports steel cheaply from rest of world (RoW), paying world price plus a modest tariff', note: '' },
-          { label: 'The common external tariff makes RoW steel more expensive than the tariff-free bloc partner price', note: '' },
-          { label: 'Government loses tariff revenue previously earned on RoW imports — transferred to the bloc partner', note: '' }
-        ],
-        correctOrder: [3, 1, 4, 0, 5, 2],
-        exp: '<strong>The correct sequence:</strong><br>1. Before joining: A imports cheaply from RoW at world price + tariff.<br>2. A joins the customs union — common external tariff now applies to RoW.<br>3. The common external tariff makes RoW steel artificially expensive inside the bloc.<br>4. A switches imports to the bloc partner (tariff-free but higher base price).<br>5. Government loses tariff revenue — it now accrues to the bloc partner instead.<br>6. Net welfare loss: A pays more than the world price; global resources are used less efficiently.<br><br>This is Viner\'s trade diversion — the negative counterpart to trade creation. Whether a customs union is net beneficial depends on the balance of trade creation (welfare-improving) against trade diversion (welfare-reducing). Empirically, the EU is generally assessed to have generated net trade creation for members, but the diversion costs are real and concentrated in specific import-competing sectors.'
-      },
-
-      /* 10 — MCQ: spaghetti bowl */
-      { type: 'mcq',
-        stem: 'The "spaghetti bowl effect" (Bhagwati) refers to which problem in international trade?',
-        opts: [
-          'The complex and overlapping network of bilateral and regional FTAs with different rules of origin, creating administrative costs and trade distortions for businesses operating across multiple agreements',
-          'The tendency for protectionism to spread globally in a self-reinforcing spiral, as each country retaliates against other countries\' tariffs with its own tariff increases',
-          'The difficulty for developing countries of exporting agricultural products (including pasta and wheat) due to rich-country agricultural subsidies under the WTO',
-          'The structural inefficiency of very large trading blocs where the logistics of coordinating economic policy across many nations becomes unmanageable'
-        ],
-        ans: 0,
-        exp: 'The <strong>spaghetti bowl effect</strong> (Bhagwati, 1995) describes the complexity created by the proliferation of bilateral and regional FTAs. Each agreement has its own <em>rules of origin</em> (specifying how much local content a product must have to qualify for preferential tariffs) — and these rules differ across agreements. A firm operating across multiple FTAs must comply with potentially dozens of different rules-of-origin requirements simultaneously, creating substantial administrative costs. The "spaghetti bowl" metaphor captures the resulting tangle of overlapping obligations. This is a key argument for multilateral liberalisation through the WTO — a single set of rules applying to all 164 members. Post-Brexit UK has signed ~70+ bilateral FTAs to replace EU membership, making this problem highly relevant to A-level exam analysis of UK trade policy.'
+      {
+        id:   'q_tb_10',
+        type: 'match_pairs',
+        q:    'Match each trading bloc term to its description.',
+        pairs: [
+          { a: 'Free Trade Area',    b: 'Internal tariffs removed; each member sets own external tariffs' },
+          { a: 'Customs Union',      b: 'Internal free trade plus common external tariff' },
+          { a: 'Common Market',      b: 'Customs union plus free movement of labour and capital' },
+          { a: 'Trade creation',     b: 'Welfare gain: high-cost domestic production replaced by lower-cost bloc imports' },
+          { a: 'Trade diversion',    b: 'Welfare loss: efficient non-member excluded by common external tariff' },
+          { a: 'WTO',                b: 'Multilateral organisation promoting global free trade and dispute resolution' }
+        ]
       }
-
     ]
   };
 

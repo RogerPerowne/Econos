@@ -1,184 +1,143 @@
-/* ============================================================
-   ECONOS — Quiz content for: Fiscal Policy
-   10 questions covering taxation types, government spending,
-   deficit vs debt, automatic stabilisers, crowding out, evaluation.
-   ============================================================ */
-
 (function () {
 
   window.ECONOS_QUIZ = {
     id:       'fiscal_policy_main',
     topicId:  'fiscal_policy_main',
     title:    'Fiscal Policy',
-    subtitle: 'Theme 2.6 &#183; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering expansionary and contractionary fiscal policy, direct and indirect taxes with distributional effects, government spending composition, the deficit versus debt distinction, automatic stabilisers, discretionary policy, the crowding-out debate, and the evaluation framework for fiscal policy effectiveness. Designed for the applied analysis and conditional evaluation Edexcel Paper 2 rewards.',
-    shortNames: {
-      'fiscal-framing':   'What is fiscal policy?',
-      'taxation':         'Types of taxation',
-      'gov-spending':     'Government spending',
-      'deficit-debt':     'Deficit vs debt',
-      'auto-stabilisers': 'Automatic stabilisers',
-      'crowding-out':     'Crowding out',
-      'fiscal-evaluation': 'Evaluating fiscal policy'
-    },
-
+    subtitle: 'Macroeconomics',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'fiscal_policy' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers government spending, taxation, deficit/debt, automatic stabilisers, and crowding out',
+    shortNames: [
+      'Fiscal policy defined','Expansionary','Contractionary','Deficit vs debt','Automatic stabilisers',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 &#8212; MCQ: direct vs indirect tax */
-      { type: 'mcq',
-        stem: 'Which of the following correctly distinguishes <strong>progressive</strong> from <strong>regressive</strong> taxation?',
+      {
+        id:   'q_fp_1',
+        type: 'mcq',
+        q:    'Fiscal policy refers to the use of:',
         opts: [
-          'A progressive tax takes a higher average proportion of income from higher earners; a regressive tax takes a higher average proportion from lower earners',
-          'A progressive tax increases in rate as income falls; a regressive tax is a flat rate applied uniformly to all income levels',
-          'Progressive taxes are always direct (on income); regressive taxes are always indirect (on spending)',
-          'Progressive taxes raise more total revenue than regressive taxes because they tax higher incomes at lower rates'
+          'Interest rates and money supply to influence the economy',
+          'Government spending and taxation to influence aggregate demand and supply',
+          'Exchange rates to manage the current account',
+          'Regulatory controls on bank lending'
         ],
-        ans: 0,
-        exp: '<strong>Progressive</strong>: average tax rate <em>rises</em> with income &#8212; higher earners pay a larger share. UK income tax: 0% on the first &#163;12,570; 20% basic rate; 40% higher rate; 45% additional rate. <strong>Regressive</strong>: average tax rate <em>falls</em> with income &#8212; lower earners pay a higher share of income. VAT is technically a flat rate (20%) but regressive in impact: lower-income households spend a higher fraction of income on consumption, so VAT takes a larger share of their income. This distinction is central to distributional analysis &#8212; a A* point: a tax can be flat-rate but still regressive in its incidence.'
+        ans:  1,
+        exp:  'Fiscal policy involves deliberate changes in government spending (G) and/or taxation (T) to influence macroeconomic objectives such as growth, inflation, and unemployment.'
       },
-
-      /* 2 &#8212; Elastic sort: tax types */
-      { type: 'elastic_sort',
-        stem: 'Classify each tax as <strong>direct</strong> or <strong>indirect</strong>, and as <strong>progressive</strong>, <strong>regressive</strong>, or <strong>proportional</strong>.',
-        categories: ['dir_prog', 'indir_reg', 'dir_prop'],
-        categoryLabels: ['Direct and progressive', 'Indirect and regressive', 'Direct and proportional/flat'],
-        goods: [
-          { icon: '&#128176;', label: 'UK income tax: 20% basic, 40% higher, 45% additional rate bands', note: '', ans: 'dir_prog' },
-          { icon: '&#128176;', label: 'VAT at 20% on most goods and services', note: '', ans: 'indir_reg' },
-          { icon: '&#128664;', label: 'Fuel duty (excise duty) levied per litre of petrol', note: '', ans: 'indir_reg' },
-          { icon: '&#128176;', label: 'National Insurance Contributions (employee band: 8-12% with upper earnings threshold)', note: '', ans: 'dir_prog' },
-          { icon: '&#127866;', label: 'Alcohol duty levied at a fixed rate per unit of alcohol', note: '', ans: 'indir_reg' },
-          { icon: '&#127968;', label: 'Council tax: fixed charge per property band (proportional within a band)', note: '', ans: 'indir_reg' }
-        ],
-        exp: '<strong>Direct taxes</strong> are levied on income or wealth. <strong>Indirect taxes</strong> are levied on spending. Progressive: average rate rises with income (income tax, NICs). Regressive: lower earners pay higher share of income (VAT, fuel duty, alcohol duty, council tax &#8212; all charge a fixed amount regardless of income). Council tax is technically a local government direct charge but functions regressively &#8212; a 3-bedroom house in Band D pays the same whether the occupier earns &#163;20k or &#163;200k. A* answers note that the UK tax mix (~50% direct, ~50% indirect) reflects the deliberate balance between incentive and distributional effects.'
-      },
-
-      /* 3 &#8212; MCQ: deficit vs debt */
-      { type: 'mcq',
-        stem: 'The UK <strong>budget deficit</strong> is approximately &#163;100-120bn per year, while the <strong>national debt</strong> stands at approximately &#163;2.7 trillion. Which statement correctly explains the relationship between them?',
+      {
+        id:   'q_fp_2',
+        type: 'mcq',
+        q:    'An expansionary fiscal policy involves:',
         opts: [
-          'The deficit is the annual flow (gap between G and T in one year); the debt is the stock of accumulated past deficits; each year the government runs a deficit, the debt increases by that amount',
-          'The deficit and debt are the same thing expressed in different units &#8212; both represent the government\'s total financial obligations to creditors',
-          'The national debt is the interest payment on the deficit; paying &#163;100bn interest per year produces &#163;2.7tn of outstanding debt over 27 years',
-          'A &#163;100bn deficit means the government owes &#163;100bn more to foreign investors; &#163;2.7tn is the total owed specifically to international creditors'
+          'Raising taxes and cutting government spending',
+          'Cutting taxes and/or increasing government spending to boost AD',
+          'Raising interest rates to reduce consumer borrowing',
+          'Quantitative easing to increase the money supply'
         ],
-        ans: 0,
-        exp: 'The <strong>deficit is a flow</strong>: how much more the government spends than it raises in tax in a given year. The <strong>debt is a stock</strong>: the accumulation of all past deficits (net of any surpluses) that has never been repaid. Running a &#163;100bn annual deficit adds &#163;100bn to the national debt each year. The UK has run deficits for most of the post-war period, accumulating ~&#163;2.7trn in debt. Debt interest (~&#163;100bn/year) is itself a major spending item &#8212; which widens the deficit further, creating a fiscal self-reinforcing dynamic. The debt-to-GDP ratio (currently ~100%) is the key sustainability metric.'
+        ans:  1,
+        exp:  'Expansionary (loose) fiscal policy stimulates aggregate demand by cutting taxes (boosting disposable income) and/or increasing G. It shifts AD to the right.'
       },
-
-      /* 4 &#8212; Multi-select: crowding out conditions */
-      { type: 'multi_select',
-        stem: 'In which of the following circumstances is <strong>crowding out most likely to be significant</strong>, reducing the effectiveness of fiscal stimulus?',
+      {
+        id:   'q_fp_3',
+        type: 'mcq',
+        q:    'The national debt is best described as:',
         opts: [
-          'The economy is operating at or near full employment, with limited spare capacity',
-          'The economy is in a deep recession with a large negative output gap and high private saving',
-          'Interest rates are at the zero lower bound and quantitative easing is in operation',
-          'Financial markets are tight and government borrowing competes strongly with private sector for loanable funds',
-          'The central bank is raising rates simultaneously in response to fiscal expansion',
-          'Businesses have high levels of confidence and many profitable investment projects waiting to be funded'
+          'The annual shortfall between government spending and tax revenue',
+          'The total stock of government borrowing accumulated over time',
+          'The UK\'s total trade deficit with the rest of the world',
+          'The amount the government borrows from the central bank per year'
         ],
-        correct: [0, 3, 4, 5],
-        exp: 'Crowding out is most significant when: (A) no spare capacity &#8212; extra G competes directly with private sector for real resources; (D) tight financial markets &#8212; government borrowing raises interest rates, reducing private investment; (E) simultaneous monetary tightening &#8212; amplifies the interest rate channel; (F) high-confidence investment climate &#8212; firms are most sensitive to interest rate rises when credit is demanded. Crowding out is <em>minimal</em> in options B and C: in recession with high private saving (loanable funds supply rises), interest rates do not rise much from extra borrowing. At the ZLB with QE, bond purchases offset the crowding-out pressure. The context-dependence of crowding out is the A* evaluation framework.'
+        ans:  1,
+        exp:  'The budget deficit is the annual flow (spending minus tax revenue). The national debt is the stock — total outstanding government borrowing accumulated over many years. Running a deficit adds to the debt.'
       },
-
-      /* 5 &#8212; Para fill: types of government spending */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph distinguishing types of government spending.',
-        anchor: 'UK government spending (~42% of GDP) is composed of several distinct categories with different macroeconomic effects.',
-        para: '[1] spending covers day-to-day costs: public sector wages, NHS supplies, welfare benefits. It adds directly to [2] Demand. [3] spending (investment in infrastructure, schools, hospitals) adds to AD now AND shifts [4] right over time &#8212; a dual effect. [5] payments (welfare, pensions, tax credits) redistribute income but do NOT directly add to [6] because no new output is produced. The component of government spending that has grown fastest since 2020 is debt [7], now exceeding &#163;100bn per year, which crowds out spending on other priorities.'
-        ,
-        blanks: [
-          { id: 1, opts: ['Current', 'Capital', 'Transfer', 'Autonomous'], ans: 0 },
-          { id: 2, opts: ['Aggregate', 'Consumer', 'Export', 'Investment'], ans: 0 },
-          { id: 3, opts: ['Capital', 'Current', 'Welfare', 'Emergency'], ans: 0 },
-          { id: 4, opts: ['LRAS', 'SRAS', 'AD', 'LM'], ans: 0 },
-          { id: 5, opts: ['Transfer', 'Capital', 'Current', 'Defence'], ans: 0 },
-          { id: 6, opts: ['GDP', 'consumption', 'inflation', 'unemployment'], ans: 0 },
-          { id: 7, opts: ['interest', 'principal', 'redemption', 'premium'], ans: 0 }
+      {
+        id:   'q_fp_4',
+        type: 'mcq',
+        q:    'Automatic stabilisers work by:',
+        opts: [
+          'The government actively changing tax rates during a recession',
+          'Built-in fiscal mechanisms that automatically offset economic cycles without policy changes',
+          'The central bank lowering interest rates when GDP falls',
+          'Exporters adjusting prices when the exchange rate changes'
         ],
-        exp: '(1) <strong>Current</strong>: day-to-day spending without long-run capacity effects. (2) <strong>Aggregate</strong>: current spending directly adds to AD (G component). (3) <strong>Capital</strong>: investment spending creates infrastructure and assets. (4) <strong>LRAS</strong>: capital spending shifts the productive frontier &#8212; dual demand and supply effect. (5) <strong>Transfer</strong>: welfare payments redistribute income. (6) <strong>GDP</strong>: transfer payments are not government purchases of output &#8212; they do not add to GDP directly (one of the most commonly confused exam points). (7) <strong>Interest</strong>: UK debt interest costs now ~&#163;100bn+/year &#8212; the fastest-growing spending category.'
+        ans:  1,
+        exp:  'Automatic stabilisers (e.g., unemployment benefits and progressive income tax) work without discretionary policy. In a recession: tax revenue falls, benefits spending rises — both support AD automatically.'
       },
-
-      /* 6 &#8212; Odd one out */
-      { type: 'odd_one_out',
-        stem: 'Three of these are genuine <strong>limitations of discretionary fiscal policy</strong>. Which is the ODD ONE OUT?',
+      {
+        id:   'q_fp_5',
+        type: 'numeric_input',
+        q:    'Government spending = £800bn. Tax revenue = £720bn. Calculate the budget deficit (£bn).',
+        answer: 80,
+        tolerance: 0,
+        unit: '£bn',
+        hint: 'Budget deficit = Government spending − Tax revenue.',
+        workingSteps: ['Deficit = £800bn − £720bn = £80bn']
+      },
+      {
+        id:   'q_fp_6',
+        type: 'categorise',
+        q:    'Categorise each as a direct tax or an indirect tax.',
+        categories: ['Direct tax','Indirect tax'],
         items: [
-          { icon: '&#9203;', label: 'Time lags: recognition, decision, and implementation lags mean the recession may have passed before stimulus is deployed', note: '' },
-          { icon: '&#127968;', label: 'Automatic stabilisers: the fiscal system already cushions recessions without any government action', note: '' },
-          { icon: '&#128200;', label: 'Debt sustainability: repeated deficits raise the debt-to-GDP ratio, increasing debt interest costs and crowding future spending', note: '' },
-          { icon: '&#127968;', label: 'Political economy bias: politicians prefer spending increases and tax cuts (expansion) to the contractionary measures needed to balance budgets', note: '' }
-        ],
-        ans: 1,
-        exp: 'The odd one out is option B. Automatic stabilisers are a <strong>feature</strong> of the fiscal system &#8212; they represent its automatic counter-cyclical capacity. They are not a limitation of discretionary policy; they are a complementary first line of defence that reduces the need for discretionary intervention. The three genuine limitations are: (A) time lags &#8212; the policy may be mistimed; (C) debt sustainability &#8212; repeated stimulus raises the debt burden and may trigger market confidence crises; (D) political economy bias &#8212; the democratic cycle creates systematic bias toward deficits. A* answers note that automatic stabilisers reduce the need for discretionary fiscal policy, thus partially addressing the time lag limitation.'
+          { item: 'Income tax',          category: 'Direct tax' },
+          { item: 'VAT',                 category: 'Indirect tax' },
+          { item: 'Corporation tax',     category: 'Direct tax' },
+          { item: 'Excise duty on fuel', category: 'Indirect tax' },
+          { item: 'National Insurance',  category: 'Direct tax' },
+          { item: 'Council tax',         category: 'Direct tax' }
+        ]
       },
-
-      /* 7 &#8212; multi_select: evaluating fiscal policy */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>fiscal policy and its effectiveness as a macroeconomic tool</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
-        opts: [
-          'Expansionary fiscal policy increases aggregate demand through the government spending multiplier',
-          'The effectiveness of fiscal stimulus depends critically on the size of the multiplier, which itself depends on the marginal propensity to consume — in recessions with high household debt, households may use tax cuts to repay debt rather than consume, reducing the multiplier and limiting the stimulus effect compared to direct public spending',
-          'Crowding out is a decisive objection to fiscal stimulus in all circumstances, making discretionary fiscal policy uniformly ineffective',
-          'The balanced budget multiplier is approximately one, meaning a simultaneous increase in government spending and taxes of equal size still raises national income — which challenges the intuition that a balanced budget is macroeconomically neutral and suggests that the composition of the budget matters as much as its size',
-          'Fiscal policy is subject to time lags, but the significance of these lags depends on the type of intervention: automatic stabilisers avoid recognition and decision lags entirely, while discretionary infrastructure spending can have implementation lags of several years — meaning the optimal fiscal response often combines rapid automatic action with longer-term structural investment rather than relying on short-run discretionary spending',
-          'The national debt is the total accumulation of past government borrowing'
-        ],
-        correct: [1, 3, 4],
-        exp: '<strong>Options B, D, and E are genuine evaluation moves.</strong> Option B qualifies the multiplier effect: it identifies a specific condition (high household debt) under which the tax-cut multiplier is reduced, and draws a policy implication (direct spending is more effective than tax cuts) — evaluation through conditional reasoning. Option D uses the balanced budget multiplier result to challenge an intuitive but incorrect assumption (neutrality of a balanced budget) and derives an evaluative conclusion: the composition of fiscal policy matters. Option E weighs different types of fiscal instrument against each other using the lag criterion, reaching a directed conclusion about the optimal policy mix — this is evaluation by comparing instruments on a specific criterion. <strong>Option A</strong> describes the mechanism of expansionary fiscal policy — pure description. <strong>Option C</strong> overclaims: crowding out is context-dependent and minimal during recessions with spare capacity or at the zero lower bound — "all circumstances" and "uniformly" are unsupported. <strong>Option F</strong> defines national debt — not evaluation.'
+      {
+        id:   'q_fp_7',
+        type: 'cause_effect',
+        q:    'Match each fiscal policy action to its macroeconomic effect.',
+        pairs: [
+          { cause: 'Government increases infrastructure spending',   effect: 'AD shifts right; multiplier amplifies effect on income' },
+          { cause: 'Income tax rates cut',                          effect: 'Disposable income rises; consumption increases' },
+          { cause: 'Contractionary fiscal policy in boom',          effect: 'AD growth slows; inflationary pressure eases' },
+          { cause: 'Large budget deficit causes crowding out',      effect: 'Government borrowing raises interest rates; private investment falls' },
+          { cause: 'Automatic stabilisers activate in recession',   effect: 'Budget deficit rises; AD partially cushioned' },
+          { cause: 'Supply-side tax cuts (e.g., corporation tax)',  effect: 'Investment incentivised; LRAS shifts right over time' }
+        ]
       },
-
-      /* 8 &#8212; Data table: UK fiscal position */
-      { type: 'data_table',
-        stem: 'The table shows selected UK fiscal data.',
-        headers: ['Year', 'Budget deficit (% GDP)', 'National debt (% GDP)', 'Debt interest (&#163;bn)'],
-        rows: [
-          ['2007', '&#8722;2.6%', '43%', '31'],
-          ['2010', '&#8722;9.9%', '76%', '43'],
-          ['2019', '&#8722;2.1%', '85%', '51'],
-          ['2020', '&#8722;15.0%', '99%', '55'],
-          ['2024', '&#8722;4.0%', '100%', '102']
-        ],
-        question: 'Which evaluation of UK fiscal policy performance is most analytically defensible?',
-        opts: [
-          'The UK\'s fiscal position has deteriorated structurally since 2007: the national debt has more than doubled as a share of GDP, debt interest has tripled to &#163;102bn, constraining future fiscal policy at exactly the time of new economic shocks',
-          'The 2010-19 austerity programme was entirely successful: it reduced the deficit from 9.9% to 2.1% of GDP and fully restored the fiscal position to pre-crisis sustainability',
-          'COVID-19 explains the entire deterioration in the UK\'s fiscal position since 2007, as all the debt accumulation occurred in 2020',
-          'Rising debt interest to &#163;102bn is not a problem because the government can always print money to service its obligations'
-        ],
-        ans: 0,
-        exp: 'The data tells a clear structural deterioration story: debt-to-GDP has risen from 43% to 100%, and debt interest has tripled from &#163;31bn to &#163;102bn. This constrains future fiscal policy &#8212; &#163;102bn on debt service crowds out health, education, and infrastructure. Option B overstates austerity success &#8212; despite deficit reduction, debt continued rising as a share of GDP throughout 2010-19 because growth was insufficient. Option C is incorrect &#8212; debt had already risen sharply by 2010 and 2019, well before COVID. Option D is incorrect &#8212; printing money to service debt causes inflation and would destroy the BoE\'s credibility, as well as being practically unavailable for UK gilts held by external investors.'
+      {
+        id:   'q_fp_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['Budget deficit','National debt','Quantitative easing','Automatic stabiliser'],
+        ans:  2,
+        exp:  'Budget deficit, national debt, and automatic stabilisers are all fiscal policy concepts. Quantitative easing is a monetary policy tool used by the central bank — not fiscal policy.'
       },
-
-      /* 9 &#8212; MCQ: balanced budget multiplier */
-      { type: 'mcq',
-        stem: 'If the government simultaneously increases spending (G) by &#163;10bn and raises taxes (T) by &#163;10bn to maintain a balanced budget, what is the likely net effect on national income?',
-        opts: [
-          'National income rises by approximately &#163;10bn, because the spending multiplier exceeds the tax multiplier &#8212; the \'balanced budget multiplier\' is approximately 1',
-          'National income is unchanged, because the &#163;10bn increase in G is exactly offset by the &#163;10bn increase in T &#8212; net injection equals zero',
-          'National income falls by approximately &#163;10bn, because higher taxes reduce household income by more than the government spending raises it',
-          'The effect is indeterminate without knowing the exact interest rate and crowding-out conditions at the time'
+      {
+        id:   'q_fp_9',
+        type: 'data_table',
+        q:    'Use the data to calculate the budget deficit/surplus for each year and identify the year with the largest deficit.',
+        tableHeaders: ['Year','G (£bn)','T (£bn)','Balance (£bn)'],
+        tableData: [
+          ['2020','900','750','?'],
+          ['2021','870','800','?'],
+          ['2022','830','850','?'],
+          ['2023','860','830','?']
         ],
-        ans: 0,
-        exp: 'The <strong>balanced budget multiplier</strong> is approximately 1. Why? The government spending multiplier is 1/(1-MPC). The tax multiplier is -MPC/(1-MPC) (smaller in absolute value because some of the tax reduction would have been saved anyway). The net effect: 1/(1-MPC) &#8722; MPC/(1-MPC) = (1-MPC)/(1-MPC) = 1. A &#163;10bn increase in both G and T raises national income by ~&#163;10bn &#8212; not zero. This is an A* insight that challenges the intuition that a balanced budget is macroeconomically neutral. Government spending goes directly into AD; the tax rise reduces consumption by only MPC &#215; &#163;10bn (the rest was going to be saved).'
+        opts: ['2020 (−£150bn)','2021 (−£70bn)','2022 (+£20bn)','2023 (−£30bn)'],
+        ans:  0,
+        exp:  '2020: 900−750=−£150bn deficit; 2021: 870−800=−£70bn; 2022: 830−850=+£20bn surplus; 2023: 860−830=−£30bn. 2020 had the largest deficit of £150bn.'
       },
-
-      /* 10 &#8212; Chain: 2009 fiscal crisis response */
-      { type: 'chain',
-        stem: 'Place the steps in the correct order to describe the UK fiscal policy response to the 2008-09 financial crisis.',
-        items: [
-          { label: 'The government announces discretionary fiscal stimulus: VAT cut from 17.5% to 15%, capital spending brought forward, and a car scrappage scheme', note: '' },
-          { label: 'The financial crisis hits: banks reduce lending, business investment collapses, AD falls sharply', note: '' },
-          { label: 'Automatic stabilisers activate: income tax and corporation tax revenues fall; JSA and welfare spending rise automatically', note: '' },
-          { label: 'The deficit rises sharply from ~2% to ~10% of GDP, reflecting both automatic and discretionary fiscal expansion', note: '' },
-          { label: 'GDP falls ~5%; unemployment rises from ~5% to ~8%; a large negative output gap opens', note: '' },
-          { label: 'The BoE cuts Bank Rate to 0.5% and launches QE &#8212; coordinating monetary and fiscal stimulus', note: '' }
-        ],
-        correctOrder: [1, 4, 2, 0, 5, 3],
-        exp: '<strong>UK 2009 fiscal response sequence:</strong><br>1. Financial crisis &#8212; credit crunch, AD collapses.<br>2. GDP falls ~5%; negative output gap opens.<br>3. Automatic stabilisers activate immediately &#8212; first line of defence.<br>4. Discretionary stimulus announced (VAT cut, capital spending).<br>5. BoE monetary coordination &#8212; Bank Rate to 0.5%, QE launched.<br>6. Deficit rises to ~10% of GDP &#8212; the fiscal cost of the combined response.<br><br>This sequence illustrates the correct order: automatic first, then discretionary, then monetary coordination. A* essays note that the stimulus worked &#8212; the UK avoided a depression &#8212; but at the cost of a debt legacy that constrained subsequent fiscal policy for a decade.'
+      {
+        id:   'q_fp_10',
+        type: 'match_pairs',
+        q:    'Match each fiscal concept to its correct description.',
+        pairs: [
+          { a: 'Expansionary fiscal policy', b: 'Cut taxes and/or raise spending to stimulate AD' },
+          { a: 'Budget deficit',             b: 'Annual shortfall when government spending exceeds tax revenue' },
+          { a: 'National debt',              b: 'Accumulated stock of government borrowing over time' },
+          { a: 'Crowding out',               b: 'Government borrowing raises interest rates, reducing private investment' },
+          { a: 'Automatic stabiliser',       b: 'Built-in mechanism that smooths the cycle without policy action' },
+          { a: 'Progressive tax',            b: 'Tax rate rises as income rises; acts as an automatic stabiliser' }
+        ]
       }
-
     ]
   };
 

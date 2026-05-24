@@ -5,180 +5,177 @@
     topicId:  'market_equilibrium_main',
     title:    'Market Equilibrium',
     subtitle: 'Theme 1 &middot; Topic 2.6 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering market clearing, excess demand and supply, the price mechanism restoring equilibrium, simultaneous supply and demand shifts, allocative efficiency of equilibrium, price controls, and real-market applications. Mixed formats &#8212; sort, calculation, diagram interp, evaluation multi-select, data table &#8212; designed for the analysis marks Edexcel rewards.',
-    shortNames: {
-      'market_equilibrium_1': 'Market equilibrium',
-      'market_equilibrium_2': 'Excess demand/supply',
-      'market_equilibrium_3': 'Analysing a shift',
-      'market_equilibrium_4': 'Simultaneous shifts',
-      'market_equilibrium_5': 'Allocative efficiency',
-      'market_equilibrium_6': 'Markets not clearing',
-      'market_equilibrium_7': 'Different market contexts'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'market_equilibrium_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers market clearing, excess demand/supply, the price mechanism, simultaneous shifts, allocative efficiency, and price controls',
+    shortNames: [
+      'Rent control', 'Excess demand/supply', 'Price mechanism sequence',
+      'Simultaneous shifts', 'Categorise goods', 'Match pairs', 'Cause & effect',
+      'Odd one out', 'Data table', 'Para fill'
+    ],
 
     questions: [
 
-      /* 1 &#8212; MCQ: excess demand */
+      /* 1 — MCQ: rent control and excess demand */
       { type: 'mcq',
+        id: 'q_mkeq_1',
         stem: 'The market price for a rental flat is set <strong>below</strong> the equilibrium rent by a government rent control policy. What will happen in this market?',
         opts: [
-          'Excess demand (shortage) will emerge &#8212; more tenants want flats at the controlled rent than landlords are willing to supply; the market cannot clear at that price',
-          'Excess supply will emerge &#8212; the controlled rent is below equilibrium, so more landlords will offer flats than tenants will want',
-          'The market will automatically adjust back to the equilibrium rent through the price mechanism, eliminating the shortage',
+          'Excess demand (shortage) will emerge — more tenants want flats at the controlled rent than landlords are willing to supply; the market cannot clear at that price',
+          'Excess supply will emerge — the controlled rent is below equilibrium, so more landlords will offer flats than tenants will want',
+          'The market will automatically adjust back to equilibrium through the price mechanism, eliminating the shortage',
           'The quantity of flats supplied will increase to match demand, because landlords have a legal obligation to provide housing at controlled rents'
         ],
         ans: 0,
-        exp: 'A price ceiling set <strong>below</strong> equilibrium creates a persistent <strong>excess demand (shortage)</strong>. At the controlled rent, quantity demanded exceeds quantity supplied. The price mechanism cannot restore equilibrium because the ceiling prevents the price from rising. Consequences include: housing shortages (long waiting lists), black markets, deteriorating housing quality (landlords reduce maintenance when margins are squeezed), and reduced new supply (investment in rental property becomes less attractive). This is why economists generally argue that rent controls solve affordability in the short run but worsen housing availability in the long run.'
+        exp: 'Below-equilibrium price: at the controlled (lower) price, quantity demanded exceeds quantity supplied → <strong>excess demand (shortage)</strong>. The price mechanism is blocked from clearing the market, so the shortage persists. Landlords have no incentive to increase supply at the below-market rent; indeed, some may withdraw properties. This is the fundamental problem with price ceilings set below equilibrium — they create persistent shortages and non-price allocation methods (queues, connections, discrimination).'
       },
 
-      /* 2 &#8212; Elastic sort: excess demand vs excess supply */
+      /* 2 — Elastic sort: excess demand vs excess supply */
       { type: 'elastic_sort',
-        stem: 'Classify each situation as creating <strong>excess demand</strong> or <strong>excess supply</strong> in the market.',
-        categories: ['excess_d', 'excess_s'],
+        id: 'q_mkeq_2',
+        stem: 'Classify each scenario as producing <strong>excess demand</strong> or <strong>excess supply</strong> in the market.',
+        categories: ['excess_demand', 'excess_supply'],
         categoryLabels: ['Excess demand (shortage)', 'Excess supply (surplus)'],
         goods: [
-          { icon: '&#127968;', label: 'The government sets a maximum rent of &#163;800/month in a market where equilibrium is &#163;1,200/month', note: '', ans: 'excess_d' },
-          { icon: '&#127807;', label: 'A bumper harvest doubles wheat output, but the government keeps the price at last year\'s level', note: '', ans: 'excess_s' },
-          { icon: '&#128176;', label: 'The minimum wage is set at &#163;15/hour in a market where equilibrium wage is &#163;12/hour', note: '', ans: 'excess_s' },
-          { icon: '&#9992;', label: 'Concert tickets are sold at face value (&#163;50) for a show whose secondary market price is &#163;300', note: '', ans: 'excess_d' },
-          { icon: '&#128664;', label: 'A government subsidy to car manufacturers lowers production costs, increasing supply at the existing market price', note: '', ans: 'excess_s' },
-          { icon: '&#127922;', label: 'A maximum ticket price for a football final is set below the level that would clear the market', note: '', ans: 'excess_d' }
+          { icon: '🏠', label: 'Government sets a rent ceiling below the equilibrium rent', note: '', ans: 'excess_demand' },
+          { icon: '🌾', label: 'Government sets a price floor above the equilibrium price for wheat', note: '', ans: 'excess_supply' },
+          { icon: '💊', label: 'A new drug becomes available at a price far below equilibrium willingness to pay', note: '', ans: 'excess_demand' },
+          { icon: '🚗', label: 'Car manufacturers produce far more cars than consumers are willing to buy at the listed price', note: '', ans: 'excess_supply' },
+          { icon: '🎫', label: 'Concert tickets priced below the market-clearing level — queues form at box offices', note: '', ans: 'excess_demand' },
+          { icon: '🥛', label: 'EU milk quotas set supply above what the market will absorb at the guaranteed price', note: '', ans: 'excess_supply' }
         ],
-        exp: '<strong>Excess demand</strong> (price below equilibrium): rent control (price ceiling → shortage), face-value concert tickets (black market emerges), football ticket cap. <strong>Excess supply</strong> (price above equilibrium): bumper harvest kept at old price (surplus), minimum wage above equilibrium (unemployment = excess supply of labour), government subsidy expanding supply at fixed price. The general rule: price ceiling below equilibrium → shortage; price floor above equilibrium → surplus.'
+        exp: '<strong>Excess demand (shortage)</strong>: price is set below equilibrium → QD > QS → queue/shortage. <strong>Excess supply (surplus)</strong>: price is set above equilibrium → QS > QD → unsold stock. The price mechanism resolves imbalances: shortage → upward price pressure → price rises until QD = QS; surplus → downward price pressure → price falls until QD = QS. Government intervention (price controls) prevents this adjustment.'
       },
 
-      /* 3 &#8212; MCQ: simultaneous shifts */
-      { type: 'mcq',
-        stem: 'Consumer incomes rise simultaneously with a significant increase in production costs for firms. What happens to <strong>equilibrium price and quantity</strong>?',
-        opts: [
-          'Price definitely rises (both shifts raise price); quantity change is indeterminate &#8212; demand increase raises Q but supply decrease reduces Q; net effect on Q depends on relative shift magnitudes',
-          'Both price and quantity definitely rise &#8212; the income rise and the supply shock both raise prices and quantities',
-          'Price is indeterminate; quantity definitely rises because the demand increase outweighs the supply reduction',
-          'Both price and quantity are indeterminate &#8212; we can say nothing about the outcome without more information'
-        ],
-        ans: 0,
-        exp: 'When both supply and demand shift: (1) higher consumer incomes → demand shifts right (raises P and Q); (2) higher production costs → supply shifts left (raises P, reduces Q). For <strong>price</strong>: both shifts push price upward → price <strong>definitely rises</strong>. For <strong>quantity</strong>: demand increase pushes Q up; supply decrease pushes Q down → quantity is <strong>indeterminate</strong> without knowing relative magnitudes. This is the key rule for simultaneous shifts: if both shifts affect a variable in the <em>same</em> direction, that variable is determinate; if they affect it in <em>opposite</em> directions, it is ambiguous. State "indeterminate" and explain why &#8212; this earns more marks than guessing.'
-      },
-
-      /* 4 &#8212; Calculation: equilibrium */
-      { type: 'calculation',
-        context: 'A market has the following demand and supply schedules:<br><br>Price (&#163;): 10, 20, 30, 40, 50<br>Quantity demanded: 500, 400, 300, 200, 100<br>Quantity supplied: 100, 200, 300, 400, 500',
-        working: [
-          'Equilibrium where quantity demanded = quantity supplied.',
-          'At &#163;10: QD = 500, QS = 100 → excess demand = 400',
-          'At &#163;20: QD = 400, QS = 200 → excess demand = 200',
-          'At &#163;30: QD = 300, QS = 300 → QD = QS → EQUILIBRIUM',
-          'At &#163;40: QD = 200, QS = 400 → excess supply = 200',
-          'Equilibrium price = &#163;30; equilibrium quantity = 300 units'
-        ],
-        stem: 'What is the <strong>equilibrium price</strong> and <strong>equilibrium quantity</strong> in this market?',
-        opts: [
-          { ped: '&#163;30 and 300 units', typ: 'At &#163;30: QD = 300 = QS = 300 &#8212; the market clears; there is neither shortage nor surplus', rev: 'Find the price where QD equals QS' },
-          { ped: '&#163;20 and 400 units', typ: 'At &#163;20: QD = 400 but QS = 200 &#8212; excess demand of 200 means this is not equilibrium', rev: 'Equilibrium requires QD = QS, not just finding the middle price' },
-          { ped: '&#163;40 and 200 units', typ: 'At &#163;40: QD = 200 but QS = 400 &#8212; excess supply of 200 means this is not equilibrium', rev: 'Check: at &#163;40 there is a surplus, so price would fall, not stay' },
-          { ped: '&#163;30 and 600 units', typ: 'At &#163;30, both QD and QS = 300; total "units" of 600 adds both sides incorrectly', rev: 'Equilibrium quantity is the quantity traded = 300 (one side of the market, not both)' }
-        ],
-        ans: 0,
-        exp: 'Equilibrium is where <strong>QD = QS = 300 units at &#163;30</strong>. At any price above &#163;30 (e.g. &#163;40), QS > QD &#8212; excess supply &#8212; forces the price down. At any price below &#163;30 (e.g. &#163;20), QD > QS &#8212; excess demand &#8212; forces the price up. The price mechanism automatically restores the &#163;30 equilibrium. The equilibrium quantity is 300 &#8212; the amount actually traded when the market clears. This is the stable, self-correcting property of competitive equilibrium.'
-      },
-
-      /* 5 &#8212; Multi-select: true about allocative efficiency */
-      { type: 'multi_select',
-        stem: 'Select ALL statements that are <strong>correct</strong> regarding the allocative efficiency of competitive market equilibrium.',
-        opts: [
-          'At equilibrium Q*, price equals marginal cost &#8212; the allocative efficiency condition P = MC is satisfied',
-          'Total welfare (consumer surplus + producer surplus) is maximised at the competitive equilibrium',
-          'Any output below Q* implies a deadweight loss &#8212; potential gains from further exchange are unrealised',
-          'Any output above Q* is also allocatively efficient because more goods are always better for society',
-          'Market failure occurs when externalities mean prices do not reflect the true social marginal cost',
-          'A monopoly achieves allocative efficiency because it maximises producer surplus'
-        ],
-        correct: [0, 1, 2, 4],
-        exp: 'Options A, B, C, and E are correct. Option D is <strong>incorrect</strong>: at Q > Q*, the cost of producing additional units exceeds the benefit to consumers &#8212; society wastes resources, reducing welfare. Option F is <strong>incorrect</strong>: monopoly produces where MR = MC but charges P > MC &#8212; this creates allocative inefficiency and deadweight loss. Competitive equilibrium uniquely achieves P = MC because firms are price-takers, making it the welfare-maximising outcome for society. Market failures (externalities, public goods, information failures) break this result because prices no longer capture all social costs and benefits.'
-      },
-
-      /* 6 &#8212; Para fill: the market clearing mechanism */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph explaining how the price mechanism restores equilibrium after a positive demand shock.',
-        anchor: 'Markets have a self-correcting mechanism that restores equilibrium after disturbances.',
-        para: 'When consumer incomes rise, demand for a normal good shifts [1], creating [2] demand at the original price. Unsatisfied buyers [3] up the price. The rising price causes two simultaneous adjustments: quantity [4] falls (movement up the demand curve) and quantity [5] rises (movement up the supply curve). This process continues until a new [6] is reached at a [7] price and quantity than before.',
-        blanks: [
-          { id: 1, opts: ['rightward', 'leftward', 'upward along', 'downward along'], ans: 0 },
-          { id: 2, opts: ['excess', 'insufficient', 'equal', 'stable'], ans: 0 },
-          { id: 3, opts: ['bid', 'drive', 'push', 'hold'], ans: 0 },
-          { id: 4, opts: ['demanded', 'supplied', 'produced', 'exported'], ans: 0 },
-          { id: 5, opts: ['supplied', 'demanded', 'consumed', 'imported'], ans: 0 },
-          { id: 6, opts: ['equilibrium', 'shortage', 'surplus', 'disequilibrium'], ans: 0 },
-          { id: 7, opts: ['higher', 'lower', 'the same', 'indeterminate'], ans: 0 }
-        ],
-        exp: '(1) Demand shifts <strong>rightward</strong> &#8212; an increase in demand. (2) Creates <strong>excess</strong> demand &#8212; a shortage at the original price. (3) Unsatisfied buyers <strong>bid</strong> up the price &#8212; competing for scarce supply. (4) Quantity <strong>demanded</strong> falls (movement along demand curve as price rises). (5) Quantity <strong>supplied</strong> rises (extension of supply as price rises &#8212; movement along supply curve). (6) New <strong>equilibrium</strong> is reached &#8212; market clears again. (7) <strong>Higher</strong> price and quantity than the original equilibrium (standard result of a positive demand shock with upward-sloping supply).'
-      },
-
-      /* 7 &#8212; Odd one out: market clearing */
-      { type: 'odd_one_out',
-        stem: 'Three of these describe situations where the price mechanism <strong>successfully clears the market</strong>. Which is the <strong>odd one out</strong>?',
+      /* 3 — Sequence: price mechanism restoring equilibrium */
+      { type: 'sequence',
+        id: 'q_mkeq_3',
+        stem: 'A harvest failure reduces wheat supply. Place the steps in the correct order showing how the <strong>price mechanism restores equilibrium</strong>.',
+        instr: 'Tap the steps in the correct order, from first to last.',
         items: [
-          { icon: '&#128200;', label: 'Unsold concert tickets are discounted online the day before the show until sold', note: '' },
-          { icon: '&#9992;', label: 'Airline ticket prices rise automatically as departure date approaches and seats fill up', note: '' },
-          { icon: '&#127968;', label: 'A government rent freeze is introduced at current levels, preventing landlords from charging higher rents even as demand rises', note: '' },
-          { icon: '&#128665;', label: 'The price of used cars fell significantly in 2023 as semiconductor supplies recovered and new car production normalised', note: '' }
+          { label: 'Wheat supply curve shifts leftward — less wheat available at every price', note: '' },
+          { label: 'At the old equilibrium price, quantity demanded now exceeds quantity supplied', note: '' },
+          { label: 'Wheat prices begin to rise — upward pressure from the excess demand', note: '' },
+          { label: 'Rising prices signal scarcity to bakers and consumers; both reduce wheat demand', note: '' },
+          { label: 'Higher prices also incentivise farmers to maximise remaining supply', note: '' },
+          { label: 'A new, higher equilibrium price is reached where QD = QS at lower quantity', note: '' }
+        ],
+        correctOrder: [0, 1, 2, 3, 4, 5],
+        exp: 'The price mechanism operates through <strong>signalling</strong> (price rise signals scarcity), <strong>incentives</strong> (rising prices incentivise producers to supply more and consumers to economise), and <strong>rationing</strong> (the higher price rations the scarce wheat to those willing and able to pay). The market self-corrects without central direction — this is Hayek\'s argument for market superiority over planning. The new equilibrium has a higher price and lower quantity than before the supply shock.'
+      },
+
+      /* 4 — MCQ: simultaneous shifts */
+      { type: 'mcq',
+        id: 'q_mkeq_4',
+        stem: 'Both demand and supply for electric vehicles (EVs) increase simultaneously. What can we say with certainty about the new equilibrium?',
+        opts: [
+          'Equilibrium quantity will rise; equilibrium price is indeterminate (depends on relative magnitude of shifts)',
+          'Both equilibrium price and quantity will definitely rise',
+          'Equilibrium price will rise; equilibrium quantity is indeterminate',
+          'Both equilibrium price and quantity are indeterminate'
+        ],
+        ans: 0,
+        exp: 'When demand increases (rightward shift), both P and Q tend to rise. When supply increases (rightward shift), Q tends to rise but P tends to fall. With both shifts together: <strong>quantity definitely rises</strong> (both forces push Q up). But the price effects oppose each other: demand increase pushes P up; supply increase pushes P down. The net effect on price is <strong>indeterminate</strong> — it depends on which shift is larger. This is a common exam trap: candidates assume both shifts mean both P and Q rise.'
+      },
+
+      /* 5 — Categorise: types of equilibrium outcomes */
+      { type: 'categorise',
+        id: 'q_mkeq_5',
+        stem: 'Sort each scenario into the correct market outcome category.',
+        categories: ['Market clears', 'Excess demand', 'Excess supply'],
+        items: [
+          { text: 'Price is set at the equilibrium level; all buyers willing to pay that price find sellers', category: 'Market clears' },
+          { text: 'A minimum wage is set above the equilibrium wage in a low-skill labour market', category: 'Excess supply' },
+          { text: 'Ticket pricing for a major concert is set below what the market would bear', category: 'Excess demand' },
+          { text: 'The EU sets a guaranteed price for butter above its equilibrium — butter mountains emerge', category: 'Excess supply' },
+          { text: 'After a shock, the price mechanism adjusts until quantity demanded equals quantity supplied again', category: 'Market clears' },
+          { text: 'A shortage of semiconductors means manufacturers cannot source enough chips at current prices', category: 'Excess demand' }
+        ],
+        exp: '<strong>Market clears</strong>: price adjusts until QD = QS — no persistent shortages or surpluses. <strong>Excess demand</strong>: price is below equilibrium (price ceiling, mispricing, unexpected demand surge) — QD > QS, shortage. <strong>Excess supply</strong>: price is above equilibrium (price floor, minimum wage, guaranteed prices) — QS > QD, surplus. Price controls that prevent market clearing always create one of the two disequilibria.'
+      },
+
+      /* 6 — Match pairs: equilibrium concepts */
+      { type: 'match_pairs',
+        id: 'q_mkeq_6',
+        stem: 'Match each term to its correct definition or example.',
+        pairs: [
+          { a: 'Equilibrium price', b: 'Price at which quantity demanded equals quantity supplied' },
+          { a: 'Excess demand', b: 'QD > QS — shortage; upward pressure on price' },
+          { a: 'Excess supply', b: 'QS > QD — surplus; downward pressure on price' },
+          { a: 'Price ceiling', b: 'Legal maximum price set below equilibrium, causing shortage' },
+          { a: 'Price floor', b: 'Legal minimum price set above equilibrium, causing surplus' },
+          { a: 'Market-clearing', b: 'No tendency for price to change; market is in balance' }
+        ],
+        exp: 'Core equilibrium vocabulary: equilibrium (QD = QS, no tendency to change); excess demand (shortage, upward price pressure); excess supply (surplus, downward pressure); price ceiling (max below equilibrium → shortage); price floor (min above equilibrium → surplus); market-clearing (equilibrium state). These six concepts form the analytical toolkit for any market analysis question.'
+      },
+
+      /* 7 — Cause & effect: supply and demand shocks */
+      { type: 'cause_effect',
+        id: 'q_mkeq_7',
+        stem: 'Match each market shock to its effect on equilibrium price and quantity.',
+        pairs: [
+          { cause: 'Demand increases, supply unchanged', effect: 'Price rises, quantity rises' },
+          { cause: 'Supply decreases, demand unchanged', effect: 'Price rises, quantity falls' },
+          { cause: 'Both demand and supply increase equally', effect: 'Quantity rises, price unchanged' },
+          { cause: 'Demand decreases, supply increases', effect: 'Price falls, quantity change indeterminate' },
+          { cause: 'Supply increases, demand unchanged', effect: 'Price falls, quantity rises' },
+          { cause: 'Both demand and supply decrease equally', effect: 'Quantity falls, price unchanged' }
+        ],
+        exp: 'Framework for analysing shifts: demand right → P↑ Q↑; demand left → P↓ Q↓; supply right → P↓ Q↑; supply left → P↑ Q↓. Simultaneous shifts: when both shift in same direction, Q change is certain but P is indeterminate (depends on relative magnitudes). When they shift in opposite directions, P change may be certain but Q is indeterminate. Always draw the diagram to check.'
+      },
+
+      /* 8 — Odd one out: allocative efficiency */
+      { type: 'odd_one_out',
+        id: 'q_mkeq_8',
+        stem: 'Three of these are conditions or implications of <strong>allocative efficiency</strong> in a market. Which is the <strong>odd one out</strong>?',
+        items: [
+          { icon: '⚖️', label: 'Resources are allocated to their highest-valued use as judged by consumers\' willingness to pay', note: '' },
+          { icon: '📊', label: 'The equilibrium price equals the marginal cost of production (P = MC)', note: '' },
+          { icon: '🏭', label: 'Firms produce at the minimum point of their long-run average cost curve', note: '' },
+          { icon: '🎯', label: 'There is no deadweight loss — all mutually beneficial trades take place', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is the <strong>government rent freeze</strong>. This is an intervention that prevents the price mechanism from clearing the market &#8212; if demand rises but prices cannot adjust, excess demand (housing shortage) persists. The other three all describe price flexibility enabling market clearing: concert ticket discounts (price falls to clear excess supply); dynamic airline pricing (price rises to ration scarce seats); used car price fall in 2023 as supply normalised (price adjustment to new equilibrium). The rent freeze illustrates government failure: well-intentioned intervention creates persistent disequilibrium.'
+        exp: 'The odd one out is <strong>producing at minimum long-run average cost</strong> — this describes <strong>productive efficiency</strong>, not allocative efficiency. Allocative efficiency requires: resources allocated to highest-valued uses (WTP reflects social value); P = MC (price signals accurately reflect resource cost); no deadweight loss (all beneficial trades occur). Productive efficiency (minimum AC) and allocative efficiency (P = MC) are distinct concepts — a firm can be productively efficient but allocatively inefficient (e.g. a monopolist).'
       },
 
-      /* 8 &#8212; multi_select: evaluation of price controls on domestic energy */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>the case for introducing a maximum price (price ceiling) on domestic energy bills</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'A price ceiling protects consumers in the short run, but the strength of the equity argument depends on price elasticity of demand: energy is a necessity with inelastic demand, so a price spike imposes a proportionally larger real income burden on lower-income households &#8212; making the case for intervention stronger than for goods with elastic demand.',
-          'A maximum price set below the equilibrium creates excess demand.',
-          'Whether a price ceiling is justified depends critically on time horizon: a temporary ceiling during a supply shock (as in the UK\'s 2022 Energy Price Guarantee) can protect consumers without permanently deterring investment, whereas a structural, permanent cap risks chronically reducing energy supply by capping returns below the level needed to attract new capacity.',
-          'Price ceilings always lead to shortages in the long run.',
-          'The allocative efficiency cost of a price ceiling is real but must be weighed against the distributional gain: if energy is under-provided to low-income households without intervention (because markets respond to willingness-to-pay rather than need), a temporary ceiling may improve overall welfare even while introducing a short-run DWL.',
-          'Energy companies make large profits.'
-        ],
-        correct: [0, 2, 4],
-        exp: '<strong>Option A</strong> is genuine evaluation: it concedes the equity argument, but specifies the condition under which it is strongest (inelastic demand, necessity goods) and uses that to reach a direction &#8212; the case is stronger here than for luxury goods. <strong>Option C</strong> is evaluation: it introduces the time-horizon distinction as the key evaluative dimension, uses the 2022 UK example to show temporary ceilings can work, and reaches a qualified direction &#8212; context determines whether a ceiling is justified. <strong>Option E</strong> is evaluation: it weighs the allocative efficiency cost against the distributional gain using the concept of need vs. willingness-to-pay, reaching the direction that the welfare calculation may favour intervention even when efficiency is reduced. <strong>Option B</strong> is description &#8212; restating the standard model prediction without qualification, mechanism, or evidence. <strong>Option D</strong> overclaims &#8212; "always" ignores the time-horizon qualification and cases where demand or supply is relatively inelastic, making it a one-sided claim rather than evaluation. <strong>Option F</strong> is a vague observation with no analytical direction or evaluative content.'
-      },
-
-      /* 9 &#8212; Data table: labour market equilibrium */
+      /* 9 — Data table: UK housing market */
       { type: 'data_table',
-        stem: 'The table shows data for the UK labour market in a particular sector.',
-        headers: ['Wage (&#163;/hr)', 'Workers willing to work (\'000s)', 'Jobs available (\'000s)'],
+        id: 'q_mkeq_9',
+        stem: 'The table shows UK housing market data 2010–2022.',
+        headers: ['Year', 'Avg house price (£000)', 'Mortgage rate (%)', 'New homes built (000/yr)', 'Population (m)'],
         rows: [
-          ['8', '40', '100'],
-          ['10', '60', '80'],
-          ['12', '80', '60'],
-          ['14', '100', '40'],
-          ['16', '120', '20']
+          ['2010', '167', '3.5', '103', '62.8'],
+          ['2014', '189', '2.8', '118', '64.6'],
+          ['2018', '228', '2.2', '165', '66.4'],
+          ['2022', '292', '4.1', '178', '67.0']
         ],
-        question: 'What is the equilibrium wage, and what would happen if the minimum wage were set at <strong>&#163;14 per hour</strong>?',
+        question: 'Which conclusion is <strong>best supported</strong> by the data?',
         opts: [
-          'Equilibrium wage is &#163;11 (interpolating: QD=QS at approximately 70k workers); a minimum wage of &#163;14 creates excess supply of labour (unemployment) of approximately 60,000 workers',
-          'Equilibrium wage is &#163;12, where 80,000 workers want to work and 60,000 jobs are available &#8212; this shows excess supply at &#163;12',
-          'A minimum wage of &#163;14 eliminates unemployment because higher wages attract more workers into the labour force',
-          'The equilibrium wage is &#163;16 because at that point all workers who want to work are employed'
+          'The sustained price rise reflects demand growing faster than supply — rising population, falling mortgage rates (to 2018), and supply that grew but failed to keep pace with demand',
+          'Rising house prices are explained entirely by falling mortgage rates — the supply and population data are irrelevant',
+          'Supply growth (103,000 to 178,000 new homes) has been sufficient to meet demand, so prices should have stabilised',
+          'The data proves that rent controls would solve the housing affordability crisis'
         ],
         ans: 0,
-        exp: 'Equilibrium is where labour supply = labour demand. From the table: at &#163;12, supply = 80k > demand = 60k (excess supply). At &#163;10, supply = 60k < demand = 80k (excess demand). Equilibrium lies between &#163;10 and &#163;12 &#8212; approximately &#163;11 with ~70k workers. A minimum wage of <strong>&#163;14</strong> is <em>above</em> equilibrium: at &#163;14, 100k workers want to work but only 40k jobs are available &#8212; <strong>excess supply of 60,000</strong> (unemployment). This is the textbook price floor argument. However, if employers have monopsony power (hold wages below competitive equilibrium), a minimum wage may increase both wages AND employment &#8212; a qualification examiners reward.'
+        exp: 'The data support a demand-supply imbalance explanation: population rose by 4.2m (demand driver); mortgage rates fell from 3.5% to 2.2% by 2018 (demand driver — lower borrowing cost); new home building rose from 103,000 to 178,000 but with ~300,000 households formed annually (estimated), supply fell short of demand. The result: prices rose 75% over 12 years. Option B is too narrow. Option C ignores the population/demand side and the scale of need. Option D is a policy proposal not supported by the data presented.'
       },
 
-      /* 10 &#8212; Chain: supply shock to new equilibrium */
-      { type: 'chain',
-        stem: 'Russia restricts gas exports to Europe. Place the following consequences for the European gas market in the correct order.',
-        items: [
-          { label: 'Gas prices rise sharply as the market adjusts toward the new higher equilibrium', note: '' },
-          { label: 'Russian gas supply to Europe is sharply reduced', note: '' },
-          { label: 'At the old price, excess demand emerges &#8212; buyers want more gas than is available', note: '' },
-          { label: 'European gas supply curve shifts leftward &#8212; less available at every price', note: '' },
-          { label: 'Buyers compete for scarce gas, bidding up the price; industrial users reduce consumption', note: '' },
-          { label: 'New equilibrium reached at higher price and lower quantity; European countries seek alternative suppliers', note: '' }
+      /* 10 — Para fill: market equilibrium */
+      { type: 'para_fill',
+        id: 'q_mkeq_10',
+        stem: 'Complete the paragraph about how markets reach and maintain equilibrium.',
+        anchor: 'The price mechanism is the process by which markets resolve imbalances between supply and demand.',
+        para: 'At the equilibrium price, quantity [1] equals quantity [2] — the market clears with no unsatisfied buyers or sellers. If demand increases and supply is unchanged, there is initially [3] demand at the old price. This creates upward pressure on [4], which rises until the market [5] again. The price serves as a [6] to producers that resources should be reallocated toward this market, and as a [7] device, restricting consumption to those willing to pay.',
+        blanks: [
+          { id: 1, opts: ['demanded', 'supplied', 'produced', 'consumed'], ans: 0 },
+          { id: 2, opts: ['supplied', 'demanded', 'produced', 'wanted'], ans: 0 },
+          { id: 3, opts: ['excess', 'insufficient', 'perfect', 'falling'], ans: 0 },
+          { id: 4, opts: ['price', 'quantity', 'supply', 'demand'], ans: 0 },
+          { id: 5, opts: ['clears', 'fails', 'grows', 'contracts'], ans: 0 },
+          { id: 6, opts: ['signal', 'barrier', 'cost', 'subsidy'], ans: 0 },
+          { id: 7, opts: ['rationing', 'signalling', 'incentive', 'planning'], ans: 0 }
         ],
-        correctOrder: [1, 3, 2, 4, 0, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Russia restricts gas supply (initial shock).<br>2. European supply curve shifts leftward.<br>3. Excess demand emerges at the old price.<br>4. Buyers compete and bid up the price &#8212; rationing function of the price mechanism.<br>5. Price rises to a new higher level.<br>6. New equilibrium at higher price, lower quantity; adjustment includes seeking alternative suppliers (Norway, LNG from US).<br><br>This is the 2022 European energy crisis in a supply-demand framework. The speed of adjustment depends on PES: gas supply is very inelastic in the short run (fixed pipeline infrastructure), so the price rise was dramatic. In the long run, new LNG terminals and renewables shift supply back rightward.'
+        exp: '(1)(2) At equilibrium, quantity <strong>demanded</strong> = quantity <strong>supplied</strong>. (3) A demand increase creates <strong>excess</strong> demand at the old price. (4) Upward pressure on <strong>price</strong>. (5) Price rises until the market <strong>clears</strong>. (6) Price acts as a <strong>signal</strong> — the profit opportunity tells producers where resources are needed. (7) Price as <strong>rationing</strong> device — only those willing to pay the higher price can access the good. These three functions (signal, incentive, rationing) are how the price mechanism allocates resources in a market economy.'
       }
 
     ]

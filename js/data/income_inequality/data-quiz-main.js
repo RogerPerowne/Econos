@@ -1,218 +1,143 @@
-/* ============================================================
-   ECONOS — Quiz content for: Income & Wealth Inequality
-   10 questions covering Lorenz curve, Gini coefficient, causes
-   and consequences of inequality, and redistribution policies.
-   ============================================================ */
-
 (function () {
-
-  // Lorenz curve SVG
-  var LORENZ_SVG =
-    '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif">' +
-    '<line x1="50" y1="20" x2="50" y2="260" stroke="#0B1426" stroke-width="2"/>' +
-    '<line x1="50" y1="260" x2="350" y2="260" stroke="#0B1426" stroke-width="2"/>' +
-    '<text x="36" y="22" fill="#0B1426" font-size="11" text-anchor="end">Cumulative</text>' +
-    '<text x="36" y="34" fill="#0B1426" font-size="11" text-anchor="end">income share</text>' +
-    '<text x="348" y="278" fill="#0B1426" font-size="11">Population</text>' +
-    '<line x1="50" y1="260" x2="350" y2="20" stroke="#2563EB" stroke-width="2" stroke-dasharray="6,4"/>' +
-    '<text x="315" y="16" fill="#2563EB" font-size="11" font-weight="700">Line of equality</text>' +
-    '<path d="M 50 260 Q 140 255 200 220 Q 270 175 350 20" fill="none" stroke="#EC2D68" stroke-width="2.5"/>' +
-    '<text x="258" y="200" fill="#EC2D68" font-size="12" font-weight="700">Lorenz curve</text>' +
-    '<text x="130" y="185" fill="#F5B800" font-size="12" font-weight="700">A</text>' +
-    '<text x="175" y="240" fill="#1FB574" font-size="12" font-weight="700">B</text>' +
-    '<text x="190" y="15" fill="#0B1426" font-size="10">100%</text>' +
-    '<text x="30" y="264" fill="#0B1426" font-size="10">0%</text>' +
-    '</svg>';
 
   window.ECONOS_QUIZ = {
     id:       'income_inequality_main',
     topicId:  'income_inequality_main',
-    title:    'Income &amp; Wealth Inequality',
-    subtitle: 'Theme 4.8 · Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the Lorenz curve, Gini coefficient, income vs wealth inequality, causes and consequences of rising inequality, redistribution policies, and the equity-efficiency trade-off. Includes diagram interpretation, para-fill, evaluation multi-select, and calculation questions.',
-    shortNames: {
-      'income_inequality_1': 'Lorenz curve and Gini',
-      'income_inequality_2': 'Income vs wealth inequality',
-      'income_inequality_3': 'Causes of inequality',
-      'income_inequality_4': 'Consequences of inequality',
-      'income_inequality_5': 'Tax and benefits redistribution',
-      'income_inequality_6': 'Other redistribution policies',
-      'income_inequality_7': 'Equity-efficiency trade-off'
-    },
-
+    title:    'Income & Wealth Inequality',
+    subtitle: 'Labour Markets & Distribution',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'income_inequality' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers Lorenz curve, Gini coefficient, causes, and redistribution policies',
+    shortNames: [
+      'Lorenz curve','Gini coefficient','Causes of inequality','Wealth vs income','Redistribution',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 — Diagram interpretation: Lorenz curve */
-      { type: 'diagram_interp',
-        stem: 'The diagram shows a Lorenz curve and the line of perfect equality.',
-        svg: LORENZ_SVG,
-        caption: 'Area A is between the line of perfect equality and the Lorenz curve. Area B is below the Lorenz curve.',
-        question: 'A government implements a major progressive tax reform. What would this change show on the Lorenz curve diagram?',
+      {
+        id:   'q_ineq_1',
+        type: 'mcq',
+        q:    'The Lorenz curve shows:',
         opts: [
-          'The Lorenz curve shifts closer to the line of perfect equality (reduces area A); the Gini coefficient falls, indicating lower income inequality',
-          'The line of perfect equality shifts right, reflecting higher average incomes after the tax reform',
-          'The Lorenz curve shifts further from the line of equality, as higher taxes on the rich cause capital flight and wider pre-tax income gaps',
-          'Area B increases while area A decreases, causing the Gini coefficient to rise above 1'
+          'The relationship between price and quantity demanded',
+          'The cumulative share of income received by cumulative share of population',
+          'The trade-off between inflation and unemployment',
+          'The distribution of wealth among countries'
         ],
-        ans: 0,
-        exp: 'A <strong>progressive tax reform</strong> takes a higher proportion of income from higher earners and redistributes via spending or transfers. The after-tax-and-transfer income distribution is more equal &#8212; the Lorenz curve moves <strong>towards</strong> the line of perfect equality (area A shrinks). The <strong>Gini coefficient</strong> = A ÷ (A + B) therefore falls, indicating reduced inequality. The UK\'s tax-benefit system reduces the Gini from ~0.52 (pre-tax) to ~0.35 (post-tax and transfers) &#8212; a reduction of 0.17 Gini points. Option B is incorrect &#8212; the line of perfect equality (45° line) is fixed; it represents hypothetical perfect equality and is a reference point, not an empirical measure. Option C describes a possible long-run behavioural response but is not the direct diagram impact of the tax reform itself.'
+        ans:  1,
+        exp:  'The Lorenz curve plots cumulative % of income (y-axis) against cumulative % of population (x-axis), ranked from poorest to richest. The further the curve bows from the diagonal, the greater the inequality.'
       },
-
-      /* 2 — MCQ: Gini coefficient */
-      { type: 'mcq',
-        stem: 'The UK\'s Gini coefficient for income is approximately 0.35 while for wealth it is approximately 0.63. What does this comparison reveal?',
+      {
+        id:   'q_ineq_2',
+        type: 'mcq',
+        q:    'A Gini coefficient of 0 means:',
         opts: [
-          'Wealth is distributed much more unequally than income; the top 10% own ~43% of total wealth but receive ~28% of income &#8212; reflecting inherited wealth, compounding asset returns, and housing appreciation',
-          'Income inequality is higher than wealth inequality because the Gini coefficient is lower for wealth, indicating a more equal distribution',
-          'A Gini of 0.35 for income means the richest 35% of households receive all income, while the poorest 65% receive nothing',
-          'The difference between the two Gini coefficients exactly equals the amount of income converted to wealth each year'
+          'Complete inequality — one person has all income',
+          'The Lorenz curve lies along the horizontal axis',
+          'Perfect equality — everyone has the same income',
+          'The economy has zero GDP'
         ],
-        ans: 0,
-        exp: 'The <strong>Gini coefficient</strong> ranges from 0 (perfect equality) to 1 (maximum inequality). A higher Gini means greater inequality. <strong>Wealth</strong> (Gini ~0.63) is far more unequally distributed than <strong>income</strong> (Gini ~0.35). In the UK, the top 10% own approximately 43% of total wealth but receive about 28% of income. Wealth inequality persists and compounds over time through inheritance, rising property values, and financial asset returns &#8212; benefiting those who already hold assets. Income inequality can be reduced relatively quickly through progressive taxes and benefits; wealth inequality is much harder to address because wealth taxes face valuation difficulties, capital flight risk, and political resistance. Option B confuses direction &#8212; a higher Gini means <em>more</em> inequality, not less.'
+        ans:  2,
+        exp:  'Gini = 0 means perfect equality (Lorenz curve = diagonal). Gini = 1 means perfect inequality (one person has all income). Most countries have Gini coefficients between 0.25 and 0.60.'
       },
-
-      /* 3 — Elastic sort: causes of inequality */
-      { type: 'elastic_sort',
-        stem: 'Classify each factor as a cause of <strong>rising income inequality</strong> or <strong>rising wealth inequality</strong> in advanced economies.',
-        categories: ['income', 'wealth'],
-        categoryLabels: ['Rising income inequality', 'Rising wealth inequality'],
-        goods: [
-          { icon: '🤖', label: 'Automation substituting routine labour and raising returns to high-skill cognitive workers', note: '', ans: 'income' },
-          { icon: '🏡', label: 'Rising house prices enabling existing homeowners to accumulate equity while renters are excluded', note: '', ans: 'wealth' },
-          { icon: '📉', label: 'Declining trade union membership weakening collective bargaining for lower-wage workers', note: '', ans: 'income' },
-          { icon: '📈', label: 'Compounding financial asset returns benefiting those who already own shares and bonds (Piketty: r &gt; g)', note: '', ans: 'wealth' },
-          { icon: '🌍', label: 'Globalisation reducing wages of low-skill workers exposed to EM competition while high-skill global demand rises', note: '', ans: 'income' },
-          { icon: '👴', label: 'Intergenerational wealth transfers (inheritance) concentrating assets among older, wealthier cohorts', note: '', ans: 'wealth' }
-        ],
-        exp: '<strong>Income inequality drivers</strong>: automation (skill-biased technological change hollows out middle-skill jobs); declining union membership (weakens worker bargaining power, widening wage dispersion); globalisation (compresses wages in import-competing sectors). <strong>Wealth inequality drivers</strong>: rising house prices (homeowners accumulate equity; renters cannot); Piketty\'s r &gt; g (return on capital exceeds growth, compounding wealth of asset holders); inheritance (transmits and concentrates wealth intergenerationally). The distinction matters for policy: income inequality can be addressed by labour market policy (NLW, union rights, progressive taxation); wealth inequality requires asset-based policies (inheritance tax reform, capital gains tax, housing supply). The UK has been relatively more successful at compressing income inequality than wealth inequality.'
-      },
-
-      /* 4 — Calculation: tax redistribution */
-      { type: 'calculation',
-        context: 'Before taxes and benefits: Household A earns &#163;120,000/year; Household B earns &#163;15,000/year. Tax system: 45% above &#163;125,140 (additional rate), 40% on &#163;50,271-&#163;125,140 (higher rate), 20% on &#163;12,571-&#163;50,270 (basic rate). Household B receives &#163;8,000/year in benefits.',
-        working: [
-          'Household A tax liability:',
-          '£12,570 tax-free (personal allowance)',
-          '£(50,270 - 12,571) × 20% = £37,699 × 0.20 = £7,540',
-          '£(120,000 - 50,270) × 40% = £69,730 × 0.40 = £27,892',
-          'Total tax A = £7,540 + £27,892 = £35,432 (approximately)',
-          'Post-tax income A = £120,000 - £35,432 = £84,568',
-          'Household B tax liability:',
-          '£15,000 - £12,570 = £2,430 taxable at 20% = £486',
-          'Post-tax income B = £15,000 - £486 + £8,000 benefits = £22,514',
-          'Pre-tax ratio A:B = 120,000/15,000 = 8:1',
-          'Post-tax-and-benefits ratio = 84,568/22,514 ≈ 3.75:1'
-        ],
-        stem: 'What is the approximate ratio of Household A\'s income to Household B\'s income <strong>before</strong> and <strong>after</strong> taxes and benefits?',
+      {
+        id:   'q_ineq_3',
+        type: 'mcq',
+        q:    'Which of the following is a cause of income inequality?',
         opts: [
-          { ped: 'Before: 8:1; After taxes and benefits: approximately 3.75:1 &#8212; taxes and benefits compress the income ratio significantly', typ: 'Pre: 120,000/15,000 = 8:1. Post: ~84,568/22,514 ≈ 3.75:1', rev: 'The tax-benefit system reduces the income gap by more than half — but large inequality remains post-redistribution' },
-          { ped: 'Before: 8:1; After: still approximately 8:1 &#8212; taxes and benefits have no redistributive effect', typ: 'Ignored that the tax system is progressive and that B receives benefits', rev: 'Progressive taxes take a higher proportion from A; benefits add to B\'s income — both compress inequality' },
-          { ped: 'Before: 8:1; After: 1:1 &#8212; full equality achieved through the tax-benefit system', typ: 'Overstated the redistributive effect — the post-tax ratio is still about 3.75:1', rev: 'The UK system significantly reduces inequality but does not eliminate it; the Gini falls from ~0.52 to ~0.35' },
-          { ped: 'Before: 4:1; After: 2:1 &#8212; the tax-free allowance equalises the pre-tax ratio', typ: 'Misread the pre-tax ratio: £120,000 ÷ £15,000 = 8, not 4', rev: 'Pre-tax ratio is straightforward: 120,000 ÷ 15,000 = 8. No adjustment needed.' }
+          'Progressive income tax',
+          'Means-tested benefits',
+          'Differences in human capital and education',
+          'Universal basic income'
         ],
-        ans: 0,
-        exp: '<strong>Pre-tax ratio:</strong> &#163;120,000 &#247; &#163;15,000 = <strong>8:1</strong>. <strong>Post-tax Household A:</strong> &#163;120,000 &#8722; ~&#163;35,432 tax = ~&#163;84,568. <strong>Post-tax + benefits Household B:</strong> &#163;15,000 &#8722; &#163;486 tax + &#163;8,000 benefits = ~&#163;22,514. <strong>Post ratio:</strong> &#163;84,568 &#247; &#163;22,514 &#8776; <strong>3.75:1</strong>. The progressive tax system and benefit transfers compress the income ratio from 8:1 to ~3.75:1 &#8212; roughly halving the gap. This illustrates why the UK Gini falls from ~0.52 (pre-tax) to ~0.35 (post-tax and benefits). But note: even after redistribution, significant inequality remains. And this calculation ignores indirect taxes (VAT, excise duties) which are regressive and partially offset direct redistribution.'
+        ans:  2,
+        exp:  'Human capital differences (education, skills, experience) lead to wage differentials. Workers with higher human capital earn more, widening the distribution of income.'
       },
-
-      /* 5 — Multi-select: consequences of inequality */
-      { type: 'multi_select',
-        stem: 'According to the economic evidence, which of the following are recognised <strong>consequences of high income inequality</strong>?',
+      {
+        id:   'q_ineq_4',
+        type: 'mcq',
+        q:    'Wealth inequality is generally greater than income inequality because:',
         opts: [
-          'Reduced inter-generational social mobility (the "Great Gatsby curve": Krueger)',
-          'Higher aggregate demand due to increased consumer spending by high-income households',
-          'Political polarisation and erosion of social trust, linked to populist movements (OECD evidence)',
-          'Worse population health and social outcomes in more unequal societies (Wilkinson and Pickett)',
-          'Faster economic growth in all cases because inequality creates stronger incentives for effort and risk-taking',
-          'Risk of macroeconomic instability if high-MPC lower earners have reduced income share (Keynesian concern)'
+          'Wages are rising faster than asset prices',
+          'Wealth accumulates over generations and assets generate returns that compound',
+          'Income includes benefits but wealth does not',
+          'Governments tax wealth more heavily than income'
         ],
-        correct: [0, 2, 3, 5],
-        exp: 'Options A, C, D, and F are supported by empirical evidence. <strong>Social mobility</strong> (A): Krueger\'s "Great Gatsby curve" shows a strong cross-country correlation between inequality and low inter-generational mobility. <strong>Political polarisation</strong> (C): OECD studies link rising inequality to populist voting patterns and declining institutional trust. <strong>Health/social outcomes</strong> (D): Wilkinson and Pickett\'s "Spirit Level" documents worse outcomes (health, crime, trust) in more unequal countries. <strong>Aggregate demand</strong> (F): if high-MPC lower earners receive less income, consumption may be weaker than under more equal distribution (Keynesian argument). Option B is incorrect &#8212; high-income households have lower marginal propensity to consume; redistribution from rich to poor typically raises not lowers aggregate demand. Option E overstates &#8212; while some inequality creates incentives, <em>excessive</em> inequality reduces equality of opportunity and may suppress aggregate human capital accumulation, harming long-run growth.'
+        ans:  1,
+        exp:  'Wealth (assets minus liabilities) compounds over time — returns on wealth generate more wealth. Intergenerational transfers (inheritance) further concentrate wealth at the top, widening the distribution beyond income inequality.'
       },
-
-      /* 6 — Para fill: Piketty r>g */
-      { type: 'para_fill',
-        stem: 'Complete the analytical paragraph about Piketty\'s argument on wealth inequality.',
-        anchor: 'Thomas Piketty\'s Capital in the Twenty-First Century argues that wealth inequality has a structural tendency to rise.',
-        para: 'Piketty\'s central argument is that when the [1] on capital (r) exceeds the [2] of economic growth (g), the share of income going to wealth-owners rises over time. Because wealthy households save and [3] a higher proportion of their income, their wealth [4] faster than the economy as a whole. The mechanism can be disrupted by [5] (which destroyed capital and created emergency redistribution), or by [6] taxes on wealth and high incomes. Critics note that r is not [7] and can fall when economies grow slowly or capital becomes abundant &#8212; suggesting the mechanical tendency may not hold in all conditions.',
-        blanks: [
-          { id: 1, opts: ['return', 'tax', 'risk', 'inflation'], ans: 0 },
-          { id: 2, opts: ['rate', 'level', 'trend', 'cycle'], ans: 0 },
-          { id: 3, opts: ['invest', 'consume', 'borrow', 'redistribute'], ans: 0 },
-          { id: 4, opts: ['compounds', 'decreases', 'transfers', 'taxes'], ans: 0 },
-          { id: 5, opts: ['wars', 'technology', 'globalisation', 'inflation'], ans: 0 },
-          { id: 6, opts: ['progressive', 'regressive', 'proportional', 'indirect'], ans: 0 },
-          { id: 7, opts: ['constant', 'variable', 'measurable', 'positive'], ans: 0 }
-        ],
-        exp: '(1) <strong>Return</strong> on capital &#8212; r = the annual return earned on wealth (dividends, rent, interest, capital gains) as a percentage of wealth. (2) <strong>Rate</strong> of economic growth &#8212; g = annual GDP growth rate. When r &gt; g, wealth income grows faster than the economy, increasing wealth owners\' share. (3) <strong>Invest</strong> &#8212; the wealthy save and invest more of their income than lower-income households (lower MPC), so their wealth base grows. (4) <strong>Compounds</strong> &#8212; compounding: wealth grows on wealth, creating exponential concentration over time. (5) <strong>Wars</strong> &#8212; Piketty\'s historical analysis shows the two world wars (capital destruction, emergency taxation, nationalisation) broke the r &gt; g dynamic in the 20th century &#8212; the "Great Compression" of inequality 1945-1975. (6) <strong>Progressive</strong> &#8212; progressive wealth and income taxes reduce post-tax r, slowing the compounding. (7) <strong>Constant</strong> &#8212; critics (Acemoglu, others) note that r varies with economic conditions and is not mechanically fixed above g.'
+      {
+        id:   'q_ineq_5',
+        type: 'numeric_input',
+        q:    'If the area between the Lorenz curve and the line of equality is 0.18 and the total area below the diagonal is 0.5, what is the Gini coefficient?',
+        answer: 0.36,
+        tolerance: 0.01,
+        unit: '',
+        hint: 'Gini = (area between Lorenz curve and diagonal) ÷ (total area below diagonal).',
+        workingSteps: ['Gini = 0.18 ÷ 0.50 = 0.36']
       },
-
-      /* 7 — Data table: redistribution effects */
-      { type: 'data_table',
-        stem: 'The table shows UK income distribution data.',
-        headers: ['Income quintile', 'Pre-tax income (&#163;k)', 'Post-tax income (&#163;k)', 'After benefits (&#163;k)'],
-        rows: [
-          ['Bottom 20%', '5.2', '4.8', '16.4'],
-          ['Second 20%', '14.1', '12.4', '22.1'],
-          ['Middle 20%', '28.3', '23.1', '29.8'],
-          ['Fourth 20%', '47.2', '36.9', '40.2'],
-          ['Top 20%', '112.4', '78.6', '80.1']
-        ],
-        question: 'What does the data reveal about the UK redistribution system?',
-        opts: [
-          'Benefits are heavily concentrated on the bottom quintiles (bottom 20% income triples from &#163;4.8k to &#163;16.4k after benefits), while progressive taxes compress the top quintile\'s income — but large post-redistribution inequality remains',
-          'The UK tax system is regressive: the bottom quintile pays the most tax in absolute terms as its post-tax income falls from &#163;5.2k to &#163;4.8k',
-          'Benefits are distributed equally across all quintiles — each quintile receives approximately the same benefit amount from the government',
-          'The top quintile receives more benefits than any other quintile because it pays the most in taxes'
-        ],
-        ans: 0,
-        exp: 'The data reveal a <strong>strongly redistributive</strong> system. Looking at the bottom quintile: pre-tax income &#163;5.2k, post-tax &#163;4.8k (modest tax, as low incomes are near the personal allowance), then <strong>after benefits: &#163;16.4k</strong> &#8212; income more than triples due to transfers. The top quintile: pre-tax &#163;112.4k reduced to &#163;78.6k post-tax (30% effective tax rate) and minimal benefit additions. The system dramatically compresses the distribution. However, the post-redistribution ratio (bottom &#163;16.4k vs top &#163;80.1k) is still nearly 5:1 &#8212; substantial inequality persists even after full redistribution. Option B misidentifies progressivity &#8212; the bottom quintile\'s small pre-tax to post-tax reduction reflects low tax liability (personal allowance protection), not regressivity. The fall from &#163;5.2k to &#163;4.8k may reflect indirect taxes (VAT, excise duties) not accounted for here.'
-      },
-
-      /* 8 — Multi-select: evaluation of policies to reduce income inequality */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>policies to reduce income and wealth inequality</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
-        opts: [
-          'Progressive income taxation reduces the post-tax income Gini significantly — the UK system narrows the Gini from ~0.52 to ~0.35 — but indirect taxes (VAT, excise duties) partially offset this by taking a higher share of income from lower quintiles, so the net redistributive effect is smaller than direct tax data alone suggests.',
-          'Universal Basic Income eliminates the poverty trap (the EMTR falls from 60-80% to the marginal tax rate) but a &#163;10,000/year payment for all UK adults would cost ~&#163;520bn, requiring tax rises or benefit cuts that may leave the most vulnerable worse off if their current entitlements exceed the UBI amount.',
-          'The government should raise income taxes on the rich to reduce inequality because wealth inequality in the UK is very high.',
-          'Piketty\'s r &gt; g thesis predicts a structural tendency for wealth to concentrate, but critics note that r is not constant — capital returns fell sharply when growth was rapid (1945–1973), suggesting the tendency can be broken by sustained supply-side investment that raises g, not only by redistributive taxation.',
-          'Inequality is a serious problem and all governments should do more to address it through spending and taxation.',
-          'Reducing inequality always involves a trade-off with economic efficiency, so any redistribution policy will reduce GDP growth.'
-        ],
-        correct: [0, 1, 3],
-        exp: '<strong>Option A</strong> is strong evaluation: it accepts the redistributive success of direct taxes (citing a specific Gini reduction) but qualifies the conclusion by introducing the offsetting effect of indirect taxes — giving a more accurate net assessment. This is the "yes, but with an important qualification" evaluative move. <strong>Option B</strong> is strong evaluation: it presents the case for UBI (poverty trap elimination with the specific EMTR mechanism) alongside a precisely quantified fiscal cost and the risk to vulnerable groups — then implies the policy\'s net effect is conditional on how it is funded. This is a fully balanced direction. <strong>Option D</strong> is strong evaluation: it challenges Piketty\'s r &gt; g by citing the historical counter-evidence (the 1945–1973 Great Compression when high growth kept r low), concludes the tendency is not mechanical, and identifies an alternative policy direction (raising g, not only taxing r). This is an evidence-based challenge with a clear qualified conclusion. <strong>Option C</strong> is one-sided advocacy — it asserts what should happen without any weighing of costs, trade-offs, or conditions. The descriptive claim that wealth inequality is high is not evaluation. <strong>Option E</strong> is vague normative assertion — it names the problem and calls for action but provides no analytical direction, no mechanism, and no weighing of instruments. <strong>Option F</strong> overclaims certainty: the equity-efficiency trade-off is real in some contexts but the evidence is mixed — some redistribution (e.g. early childcare investment) may raise long-run efficiency by improving human capital formation.'
-      },
-
-      /* 9 — Chain: technology and inequality */
-      { type: 'chain',
-        stem: 'Arrange the following steps in the correct order showing how <strong>automation and technological change</strong> contribute to rising income inequality.',
+      {
+        id:   'q_ineq_6',
+        type: 'categorise',
+        q:    'Categorise each policy as a method of reducing income inequality or wealth inequality.',
+        categories: ['Reduces income inequality','Reduces wealth inequality'],
         items: [
-          { label: 'The wage gap between high-skill cognitive workers and low/middle-skill workers widens', note: '' },
-          { label: 'Firms invest in automation technologies that substitute for routine, middle-skill tasks', note: '' },
-          { label: 'Income distribution becomes more unequal: professionals gain; routine workers stagnate or lose', note: '' },
-          { label: 'Rapid advancement in computing power and AI makes automation of routine tasks economically viable', note: '' },
-          { label: 'Demand for high-skill cognitive workers (managers, programmers, engineers) rises as demand for routine workers falls', note: '' },
-          { label: 'Middle-skill routine jobs (production line, data entry, basic accounting) are replaced or deskilled', note: '' }
-        ],
-        correctOrder: [3, 1, 5, 4, 0, 2],
-        exp: '<strong>The correct sequence:</strong><br>1. Computing advances make automation of routine tasks economically viable.<br>2. Firms invest in automation to replace routine tasks.<br>3. Routine middle-skill jobs are replaced or deskilled (the "hollowing out" of the distribution).<br>4. Demand rises for cognitive/creative workers; falls for routine workers.<br>5. Wage premium for high-skill workers rises; wages for routine workers stagnate.<br>6. Income distribution becomes more unequal: high-skill workers gain, middle-skill lose.<br><br>This is <strong>skill-biased technological change (SBTC)</strong> &#8212; the dominant explanation for rising income inequality in advanced economies since the 1980s. It helps explain why inequality rose even in countries with relatively equal institutions (Sweden, Germany), suggesting a structural rather than purely policy-driven cause. Policy response: invest in skills that complement rather than compete with automation (creativity, complex problem-solving, interpersonal skills).'
+          { item: 'Progressive income tax',          category: 'Reduces income inequality' },
+          { item: 'Inheritance tax',                 category: 'Reduces wealth inequality' },
+          { item: 'Higher minimum wage',             category: 'Reduces income inequality' },
+          { item: 'Mansion tax / annual wealth levy',category: 'Reduces wealth inequality' },
+          { item: 'State pension and benefits',      category: 'Reduces income inequality' },
+          { item: 'Capital gains tax on assets',     category: 'Reduces wealth inequality' }
+        ]
       },
-
-      /* 10 — MCQ: equity-efficiency trade-off (Diamond-Saez) */
-      { type: 'mcq',
-        stem: 'Diamond and Saez (2011) estimate the revenue-maximising top marginal income tax rate is approximately 70%. The UK\'s current top rate is 45%. Which is the most analytically complete interpretation of this evidence for a policy essay?',
-        opts: [
-          'The estimates suggest the UK could raise the top rate substantially above 45% before the disincentive effects (reduced labour supply, tax avoidance, brain drain) outweigh the revenue gain &#8212; but this depends on empirical elasticities and international mobility of high earners, which may have changed since Diamond-Saez',
-          'Because the optimal rate is 70%, the UK government should immediately raise the top rate to 70% with no consideration of other factors',
-          'The Laffer curve proves that any increase in tax rates above 45% would reduce government revenue, confirming the current rate is already beyond the optimal point',
-          'The Diamond-Saez estimate is meaningless because all economists agree that any progressive taxation reduces economic efficiency and growth without exception'
+      {
+        id:   'q_ineq_7',
+        type: 'cause_effect',
+        q:    'Match each cause to its effect on inequality.',
+        pairs: [
+          { cause: 'Technological change displaces low-skill jobs', effect: 'Income gap between high- and low-skill workers widens' },
+          { cause: 'Progressive income tax rates raised',           effect: 'Post-tax income inequality falls' },
+          { cause: 'Asset prices (housing, shares) rise sharply',  effect: 'Wealth inequality increases' },
+          { cause: 'Universal basic education improves',           effect: 'Human capital spread more equally; wage gap narrows' },
+          { cause: 'Inheritance passes wealth between generations', effect: 'Wealth concentrates at top; inequality persists' },
+          { cause: 'Globalisation increases returns to capital',   effect: 'Share of income going to profits rises vs wages' }
+        ]
+      },
+      {
+        id:   'q_ineq_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['Lorenz curve','Gini coefficient','Decile ratio','Consumer Price Index'],
+        ans:  3,
+        exp:  'The Lorenz curve, Gini coefficient, and decile ratio (ratio of top 10% income to bottom 10%) are all measures of income or wealth inequality. The Consumer Price Index measures inflation.'
+      },
+      {
+        id:   'q_ineq_9',
+        type: 'data_table',
+        q:    'Use the table to identify which country has the highest income inequality.',
+        tableHeaders: ['Country','Gini Coefficient'],
+        tableData: [
+          ['Denmark','0.29'],
+          ['United Kingdom','0.36'],
+          ['United States','0.41'],
+          ['South Africa','0.63']
         ],
-        ans: 0,
-        exp: 'The <strong>Diamond-Saez estimate</strong> is based on their empirical analysis of the elasticity of taxable income (ETI) for high earners in the USA. At an ETI of 0.25 (their estimate), the revenue-maximising top rate is ~70%. The UK rate of 45% suggests room for increases before the Laffer curve peak. However, the correct analytical response (option A) is <em>conditional</em>: this depends on whether the ETI estimate holds in the UK and in the current global environment. High earners in the UK are more internationally mobile than in 1960s America &#8212; the threat of emigration to lower-tax jurisdictions (Ireland, UAE) may give a higher ETI, reducing the revenue-maximising rate. Option B applies the estimate mechanically without acknowledging uncertainty. Option C misrepresents the Laffer curve &#8212; the revenue-maximising rate is not known to be 45%; Diamond-Saez argue it is higher. Option D is an extreme position unsupported by mainstream economics. The key exam skill: applying empirical estimates conditionally and acknowledging their limitations.'
+        opts: ['Denmark','United Kingdom','United States','South Africa'],
+        ans:  3,
+        exp:  'A higher Gini coefficient means greater inequality. South Africa\'s Gini of 0.63 is the highest in the table — it has the most unequal income distribution shown.'
+      },
+      {
+        id:   'q_ineq_10',
+        type: 'match_pairs',
+        q:    'Match each concept to its correct description.',
+        pairs: [
+          { a: 'Lorenz curve',         b: 'Graph plotting cumulative income share against cumulative population share' },
+          { a: 'Gini coefficient',     b: 'Ratio of area between Lorenz curve and diagonal to total area under diagonal' },
+          { a: 'Income',               b: 'Flow of earnings from work, benefits, and investments over time' },
+          { a: 'Wealth',               b: 'Stock of assets minus liabilities at a point in time' },
+          { a: 'Regressive tax',       b: 'Takes a larger share of income from lower earners' },
+          { a: 'Progressive tax',      b: 'Takes a larger share of income from higher earners' }
+        ]
       }
-
     ]
   };
 

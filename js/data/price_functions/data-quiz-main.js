@@ -5,173 +5,177 @@
     topicId:  'price_functions_main',
     title:    'Functions of the Price Mechanism',
     subtitle: 'Theme 1 &middot; Topic 2.7 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the signalling, incentive, and rationing functions of prices, Hayek\'s dispersed knowledge argument, the entrepreneur\'s role, transmission of price signals through supply chains, and how market failures break down each price function. Mixed formats targeted at analysis and evaluation marks.',
-    shortNames: {
-      'price_functions_1': 'Prices as signals',
-      'price_functions_2': 'Prices as incentives',
-      'price_functions_3': 'Prices as rationing',
-      'price_functions_4': 'Signal transmission',
-      'price_functions_5': 'Entrepreneurship',
-      'price_functions_6': 'When prices fail',
-      'price_functions_7': 'Price vs government'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'price_functions_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers signalling, incentive, rationing functions, Hayek\'s knowledge problem, entrepreneurship, and when prices fail',
+    shortNames: [
+      'Hayek MCQ', 'Three functions sort', 'Signal transmission', 'Para fill',
+      'Cause & effect', 'Incentive function', 'Match pairs', 'Odd one out',
+      'Data table', 'Evaluation multi-select'
+    ],
 
     questions: [
 
-      /* 1 — MCQ: Hayek and dispersed knowledge */
+      /* 1 — MCQ: Hayek */
       { type: 'mcq',
+        id: 'q_pf_1',
         stem: 'Friedrich Hayek argued that the price system is superior to central planning primarily because:',
         opts: [
-          'Prices aggregate dispersed knowledge held by millions of individuals &#8212; knowledge that no central planner could collect or process efficiently',
+          'Prices aggregate dispersed knowledge held by millions of individuals — knowledge that no central planner could collect or process efficiently',
           'Prices are always set at the socially optimal level, ensuring allocative efficiency is achieved automatically in all markets',
           'Central planners deliberately suppress prices to benefit powerful interest groups, making markets politically superior',
-          'Price signals respond only to short-run changes in supply and demand, whereas planners can take a long-run view'
+          'Price signals respond only to short-run changes, whereas planners can take a long-run view'
         ],
         ans: 0,
-        exp: 'Hayek\'s central insight is <strong>epistemological</strong>: relevant economic knowledge is dispersed across millions of people &#8212; local conditions, personal preferences, firm-specific costs, upcoming harvests. No central authority can access or process this information as efficiently as the price system, which aggregates it into a single number. When a commodity becomes scarce anywhere in the world, its price rises globally, signalling scarcity to all producers and consumers simultaneously &#8212; without any of them needing to understand why. This is Hayek\'s <em>knowledge problem</em>. It explains why Soviet-style central planning produced chronic shortages: planners lacked the dispersed information that prices automatically aggregate.'
+        exp: 'Hayek\'s core insight in "The Use of Knowledge in Society" (1945): knowledge relevant to resource allocation — about local preferences, costs, opportunities — is dispersed across millions of individuals. No single planner can collect, process, or act on this knowledge in time. <strong>Prices solve this problem automatically</strong>: a single price rise in tin (to use his famous example) coordinates global responses without anyone needing to understand why — miners mine more, manufacturers economise, consumers substitute. The price system aggregates and communicates dispersed knowledge costlessly.'
       },
 
-      /* 2 — elastic_sort: which function of price? */
+      /* 2 — Elastic sort: three functions */
       { type: 'elastic_sort',
-        stem: 'Classify each example according to which <strong>function of the price mechanism</strong> it primarily illustrates.',
+        id: 'q_pf_2',
+        stem: 'Classify each example under the correct function of the price mechanism.',
         categories: ['signal', 'incentive', 'rationing'],
         categoryLabels: ['Signalling function', 'Incentive function', 'Rationing function'],
         goods: [
-          { icon: '&#128185;', label: 'A sharp rise in house prices communicates that housing is increasingly scarce relative to demand', note: '', ans: 'signal' },
-          { icon: '&#127973;', label: 'New property developers enter the market attracted by high profit margins', note: '', ans: 'incentive' },
-          { icon: '&#127968;', label: 'Only households who can afford the market price are able to purchase a home', note: '', ans: 'rationing' },
-          { icon: '&#128201;', label: 'A rise in oil prices prompts investment in alternative energy R&amp;D', note: '', ans: 'incentive' },
-          { icon: '&#127807;', label: 'After a drought, wheat becomes scarce &#8212; the price rise tells farmers and buyers that supply has tightened', note: '', ans: 'signal' },
-          { icon: '&#128652;', label: 'Limited concert tickets go to those willing to pay the highest price', note: '', ans: 'rationing' }
+          { icon: '🌾', label: 'Rising wheat prices communicate to farmers that more wheat is needed', note: '', ans: 'signal' },
+          { icon: '💰', label: 'High profits in tech attract new software firms to the market', note: '', ans: 'incentive' },
+          { icon: '🎫', label: 'High concert ticket prices limit attendance to those willing to pay', note: '', ans: 'rationing' },
+          { icon: '🏠', label: 'Rising house prices signal to developers that more homes should be built', note: '', ans: 'signal' },
+          { icon: '🚗', label: 'Rising petrol prices encourage drivers to buy more fuel-efficient cars', note: '', ans: 'incentive' },
+          { icon: '💊', label: 'High prices for organ transplants would allocate them to the highest bidder', note: '', ans: 'rationing' }
         ],
-        exp: '<strong>Signalling:</strong> price changes communicate information about relative scarcity &#8212; price rises signal scarcer resources; price falls signal oversupply. <strong>Incentive:</strong> price changes motivate responses &#8212; high profits attract new entrants; high oil prices incentivise clean energy investment. <strong>Rationing:</strong> prices allocate scarce goods among competing buyers &#8212; only those willing and able to pay access the good. All three functions must work simultaneously for efficient resource allocation. When one fails (e.g. externalities distort signalling; monopoly distorts incentives), the market produces an inefficient outcome.'
+        exp: '<strong>Signalling</strong>: price changes communicate information about relative scarcity and value — rising prices signal resources are needed there; falling prices signal surplus. <strong>Incentive</strong>: price changes motivate behaviour — profit attracts entry and investment; losses drive exit; energy prices shape consumption choices. <strong>Rationing</strong>: prices allocate scarce goods to those with highest willingness to pay — the "invisible hand" allocating without central direction. All three functions work together.'
       },
 
-      /* 3 — diagram_interp: price signal transmission */
-      { type: 'diagram_interp',
-        stem: 'A drought in Argentina severely reduces the global wheat harvest.',
-        svg: '<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="55" y1="20" x2="55" y2="280" stroke="#0B1426" stroke-width="2"/><line x1="55" y1="280" x2="400" y2="280" stroke="#0B1426" stroke-width="2"/><text x="42" y="22" fill="#0B1426" font-size="12" text-anchor="end" font-weight="700">P</text><text x="398" y="295" fill="#0B1426" font-size="12" font-weight="700">Q</text><line x1="350" y1="40" x2="100" y2="270" stroke="#1FB574" stroke-width="2.5"/><text x="355" y="40" fill="#1FB574" font-size="12" font-weight="700">S1</text><line x1="280" y1="40" x2="55" y2="255" stroke="#1FB574" stroke-width="2.5" stroke-dasharray="6,4"/><text x="285" y="40" fill="#1FB574" font-size="12" font-weight="700">S2</text><line x1="80" y1="50" x2="390" y2="265" stroke="#2563EB" stroke-width="2.5"/><text x="393" y="265" fill="#2563EB" font-size="12" font-weight="700">D</text><circle cx="215" cy="165" r="5" fill="#F5B800"/><circle cx="168" cy="130" r="5" fill="#EC2D68"/><text x="220" y="160" fill="#F5B800" font-size="11" font-weight="700">E1</text><text x="173" y="125" fill="#EC2D68" font-size="11" font-weight="700">E2</text></svg>',
-        caption: 'Wheat market: S1 is original supply; S2 is supply after the drought. E1 is original equilibrium; E2 is new equilibrium.',
-        question: 'In a well-functioning price mechanism, what sequence of responses does the price rise at E2 set in motion?',
-        opts: [
-          'The price rise signals scarcity, incentivises farmers in other regions to expand planting, and rations existing wheat among the highest-value uses &#8212; all three price functions operating simultaneously',
-          'The price rise leads the government to immediately impose a price ceiling to prevent consumer hardship, replacing the price mechanism with administrative rationing',
-          'The price rise has no effect because consumers of wheat have perfectly inelastic demand and cannot reduce consumption or switch to substitutes',
-          'The price rise only rations existing supply &#8212; it cannot signal or incentivise anything because producers already know there is a shortage'
+      /* 3 — Sequence: price signal transmission through supply chain */
+      { type: 'sequence',
+        id: 'q_pf_3',
+        stem: 'A drought in Australia raises global wheat prices. Place the following events in the correct order to show how the <strong>price signal transmits through the supply chain</strong>.',
+        instr: 'Tap the steps in the correct order, from first to last.',
+        items: [
+          { label: 'Global wheat supply falls; wheat price rises on commodity markets', note: '' },
+          { label: 'Millers pay more for wheat and raise the price of flour to bread manufacturers', note: '' },
+          { label: 'Bread manufacturers face higher input costs and raise the price of bread to supermarkets', note: '' },
+          { label: 'Supermarkets pass on higher costs — bread retail prices rise for consumers', note: '' },
+          { label: 'Consumers reduce bread consumption and switch to rice, pasta, and other substitutes', note: '' },
+          { label: 'High wheat prices incentivise farmers in other countries to plant more wheat next season', note: '' }
         ],
-        ans: 0,
-        exp: 'The price rise at E2 activates all three price functions simultaneously. <strong>Signal</strong>: higher wheat price communicates scarcity to all market participants worldwide &#8212; bakers, food manufacturers, competing grain markets, all respond. <strong>Incentive</strong>: higher price raises profit for wheat farmers globally &#8212; farmers in the US, Australia, and EU switch more land to wheat next season. Long-run: supply shifts back right as more is planted. <strong>Rationing</strong>: the higher price excludes lower-value uses of wheat, directing scarce supply to highest-value applications. Each function is essential &#8212; remove one (e.g. a price ceiling prevents rationing) and the system jams. Option B describes government intervention &#8212; but at the cost of suppressing the signal and incentive functions, leading to persistent shortage.'
+        correctOrder: [0, 1, 2, 3, 4, 5],
+        exp: 'The price signal transmits through the entire supply chain — from commodity market to consumer shelf — without any central coordination. Each link in the chain simply responds to the price signal it faces. Consumers receive the signal at the retail level and adjust behaviour. Producers receive the profit opportunity and adjust supply for the next season. This is the price mechanism working as Hayek described: coordinating the actions of millions of disparate agents through a single number.'
       },
 
-      /* 4 — multi_select: when price mechanism fails */
-      { type: 'multi_select',
-        stem: 'Which of the following represent situations where the <strong>price mechanism fails</strong> to allocate resources efficiently, and why?',
-        opts: [
-          'Carbon emissions: the private cost of burning fossil fuels excludes the external cost to third parties (climate), so price signals understate true social cost',
-          'National defence: non-excludability means no private firm can charge consumers, so no profit signal exists and market supply is zero',
-          'Competitive supermarkets selling branded breakfast cereals: prices rise and fall freely, allocating goods efficiently',
-          'Used car sales where sellers know the quality of their car but buyers do not: information asymmetry causes market prices to fail to reflect true quality',
-          'A monopoly supplier of water setting price above marginal cost: market power distorts the price signal, reducing consumption below the efficient level',
-          'A government-run railway charging below-cost fares: this is market failure because prices are not covering the full social cost of rail provision'
-        ],
-        correct: [0, 1, 3, 4],
-        exp: 'Market failure occurs when prices fail to signal, incentivise, or ration correctly. (A) <strong>Externality</strong>: price excludes social cost &#8212; the signalling function is distorted. (B) <strong>Public good</strong>: non-excludability destroys the profit signal &#8212; the incentive function cannot operate. (D) <strong>Information asymmetry</strong>: prices cannot distinguish quality &#8212; Akerlof\'s lemons problem. (E) <strong>Monopoly power</strong>: P &gt; MC distorts the price signal &#8212; price overstates scarcity; consumers buy less than optimal. Option C describes a <em>functioning</em> market (competitive, private good, no externalities). Option F describes a <em>government policy choice</em> (subsidised public transport), not market failure per se &#8212; the government has chosen to underprice for social reasons.'
-      },
-
-      /* 5 — para_fill: entrepreneurship and price mechanism */
+      /* 4 — Para fill: three functions */
       { type: 'para_fill',
-        stem: 'Complete the paragraph about entrepreneurship and the price mechanism.',
-        anchor: 'The price mechanism requires entrepreneurs to convert price signals into real output.',
-        para: 'When demand rises and prices increase, the resulting [1] profit acts as a signal attracting [2] into the market. The entrepreneur [3] risk by combining factors of production to supply new output. Schumpeter described this as [4] destruction &#8212; the process by which entrepreneurs create new products while displacing existing ones. Without the entrepreneur, price signals remain unacted upon &#8212; the [5] function of the price mechanism fails. This is why countries with high [6] to entry (corruption, excessive regulation, poor property rights) fail to respond efficiently to price signals, even when those signals are correct.',
+        id: 'q_pf_4',
+        stem: 'Complete the paragraph explaining the three functions of prices.',
+        anchor: 'The price mechanism allocates resources through three interconnected functions.',
+        para: 'First, prices act as [1] — communicating information about scarcity and surplus to producers and consumers without requiring any central direction. Second, prices provide [2] — rising prices attract resources into profitable markets; falling prices drive resources out. Third, prices perform a [3] function — allocating scarce goods to those with the highest [4] to pay. Together, these functions mean that the [5] can coordinate a complex economy through decentralised decisions. However, when markets [6] — as with externalities or public goods — price signals may no longer accurately reflect [7] costs and benefits.',
         blanks: [
-          { id: 1, opts: ['abnormal', 'normal', 'subnormal', 'consumer'], ans: 0 },
-          { id: 2, opts: ['new entrants', 'governments', 'regulators', 'workers'], ans: 0 },
-          { id: 3, opts: ['bears', 'avoids', 'transfers', 'reduces'], ans: 0 },
-          { id: 4, opts: ['creative', 'financial', 'industrial', 'price'], ans: 0 },
-          { id: 5, opts: ['incentive', 'signalling', 'rationing', 'rationing'], ans: 0 },
-          { id: 6, opts: ['barriers', 'subsidies', 'incentives', 'signals'], ans: 0 }
+          { id: 1, opts: ['signals', 'barriers', 'costs', 'subsidies'], ans: 0 },
+          { id: 2, opts: ['incentives', 'regulations', 'planning', 'taxes'], ans: 0 },
+          { id: 3, opts: ['rationing', 'production', 'distribution', 'pricing'], ans: 0 },
+          { id: 4, opts: ['willingness', 'ability', 'desire', 'need'], ans: 0 },
+          { id: 5, opts: ['price mechanism', 'government', 'central bank', 'regulator'], ans: 0 },
+          { id: 6, opts: ['fail', 'succeed', 'clear', 'grow'], ans: 0 },
+          { id: 7, opts: ['social', 'private', 'marginal', 'sunk'], ans: 0 }
         ],
-        exp: '(1) <strong>Abnormal</strong> profit: profit above the normal return &#8212; the specific signal that alerts entrepreneurs to under-supplied markets. (2) <strong>New entrants</strong>: the incentive function relies on entry to expand supply toward the equilibrium. (3) <strong>Bears</strong>: risk-bearing is the defining characteristic of the entrepreneur &#8212; they commit resources before knowing the outcome. (4) <strong>Creative</strong> destruction (Schumpeter): new products and firms destroy old ones &#8212; the dynamic efficiency driver of market economies. (5) <strong>Incentive</strong> function: without entrepreneurs acting on profit signals, the incentive to expand supply cannot materialise. (6) <strong>Barriers</strong> to entry: regulatory barriers, corruption, and poor property rights prevent entrepreneurs from responding to price signals &#8212; explaining why some economies fail to grow despite price signals being present.'
+        exp: '(1) <strong>Signals</strong> — price changes communicate information without direction. (2) <strong>Incentives</strong> — profit motive drives resource allocation. (3) <strong>Rationing</strong> — prices allocate scarce goods. (4) Highest <strong>willingness</strong> to pay. (5) The <strong>price mechanism</strong> coordinates without a planner. (6) When markets <strong>fail</strong> (externalities, public goods, information asymmetry). (7) Price signals no longer reflect <strong>social</strong> costs and benefits — this is the economic justification for government intervention.'
       },
 
-      /* 6 — odd_one_out: rationing vs other functions */
-      { type: 'odd_one_out',
-        stem: 'Three of these examples illustrate the <strong>rationing function</strong> of the price mechanism. Which is the ODD ONE OUT?',
-        items: [
-          { icon: '&#127968;', label: 'Scarce London flats allocated to the highest bidder at auction', note: '' },
-          { icon: '&#127944;', label: 'Oversubscribed concert tickets sold at face value with a queue that forms overnight', note: '' },
-          { icon: '&#128137;', label: 'Organ transplants allocated by medical urgency score, not price', note: '' },
-          { icon: '&#127813;', label: 'Restaurant tables allocated to those paying the most for prime Saturday night slots', note: '' }
+      /* 5 — Cause & effect: price signals and resource allocation */
+      { type: 'cause_effect',
+        id: 'q_pf_5',
+        stem: 'Match each price change to the resource allocation response it triggers.',
+        pairs: [
+          { cause: 'Avocado prices surge 300% in UK supermarkets', effect: 'Farmers in Mexico and South Africa expand avocado orchards' },
+          { cause: 'Oil company profits collapse as renewable energy undercuts fossil fuels', effect: 'Investment shifts away from fossil fuel exploration toward renewables' },
+          { cause: 'Skilled data scientist salaries rise to £120,000+ in UK tech firms', effect: 'More students choose computer science degrees and bootcamps' },
+          { cause: 'Cheap fast fashion collapses second-hand clothing prices', effect: 'Charity shops struggle to sell donated clothing; some close' },
+          { cause: 'Carbon taxes raise the price of coal-fired electricity', effect: 'Energy firms invest in wind and solar to remain cost-competitive' },
+          { cause: 'House prices double in a city over 10 years', effect: 'Construction firms redirect resources to build in that city' }
         ],
-        ans: 1,
-        exp: 'The odd one out is the <strong>overnight queue for concert tickets</strong>. When tickets are sold at face value below the market-clearing price, the price mechanism is NOT rationing &#8212; instead, time (queuing) rations the good. This is precisely what happens when a price ceiling is set below equilibrium: excess demand results in queuing rather than price rationing. The flat auction, restaurant pricing, and organ donation (by urgency, not price) all illustrate <em>alternative</em> rationing mechanisms. Note: organ donation illustrates the equity argument <em>against</em> price rationing &#8212; healthcare and life-saving goods are commonly rationed by need rather than willingness to pay. Concert ticket queuing is a common real-world example of non-price rationing.'
+        exp: 'The price mechanism coordinates resource allocation through the incentive function: rising prices attract resources; falling prices repel them. Each example shows a price change triggering a real-world supply or investment response — without any central direction. This is the Hayekian argument for market allocation: the price signal aggregates dispersed information (scarcity of avocados, skill shortage in data science, housing need) and generates a coordinated response.'
       },
 
-      /* 7 — mcq: price ceiling consequences */
+      /* 6 — MCQ: incentive function and entrepreneurship */
       { type: 'mcq',
-        stem: 'A government imposes a <strong>price ceiling</strong> on rented accommodation below the market-clearing price. Which consequence is the direct result of disrupting the price mechanism\'s rationing function?',
+        id: 'q_pf_6',
+        stem: 'An entrepreneur observes that electric scooters are selling for high prices with long waiting lists in UK cities. According to the <strong>incentive function</strong> of prices, what action will she likely take?',
         opts: [
-          'Excess demand for rental properties &#8212; more households want to rent than there are properties available at the controlled price, leading to waiting lists and non-price rationing',
-          'The supply of rental accommodation increases rapidly as landlords compete to attract tenants at the lower controlled price',
-          'House prices for owner-occupied properties fall proportionally, as the markets are substitutes',
-          'The signal function is enhanced &#8212; more accurate information about housing scarcity is transmitted to potential landlords and developers'
+          'Enter the electric scooter market — the high price signals high profit potential and attracts new supply',
+          'Avoid the market — long waiting lists indicate regulatory barriers that make entry unprofitable',
+          'Wait for government guidance on whether to invest — entrepreneurs require policy certainty before acting',
+          'Lobby for price controls to benefit consumers — the high price signals market failure requiring intervention'
         ],
         ans: 0,
-        exp: 'A price ceiling below equilibrium prevents the price from rising to clear the market. The <strong>rationing function fails</strong>: price can no longer exclude excess demand. The result is persistent <em>excess demand</em> (shortage) &#8212; more households want to rent at the controlled price than there are properties available. Non-price rationing replaces price rationing: queuing, waiting lists, landlord preferences, and black markets emerge. The signalling and incentive functions are also damaged: the suppressed price signals that housing is <em>less</em> scarce than it truly is (wrong signal), and removes the profit incentive for developers to build or landlords to maintain properties (weakened incentive). This is why economists are generally sceptical of rent controls as a long-run housing affordability policy.'
+        exp: 'The <strong>incentive function</strong>: high prices signal profit opportunities → attract entrepreneurial entry → expand supply. A high price with a waiting list is precisely the signal that draws entrepreneurs: it shows consumers value the good more than current suppliers are providing it. Entry increases supply → price eventually falls → the shortage resolves. This is the market self-correcting mechanism. The entrepreneur acts without knowing why prices are high — only needing the price signal to identify the opportunity. This demonstrates Hayek\'s point about dispersed knowledge.'
       },
 
-      /* 8 — data_table: market self-correction */
-      { type: 'data_table',
-        stem: 'The table shows data for the UK lithium market as demand for EV batteries surged.',
-        headers: ['Year', 'Lithium price (&#163;/tonne)', 'Global production (000 tonnes)', 'New mine projects approved'],
-        rows: [
-          ['2019', '9,000', '77', '3'],
-          ['2020', '6,000', '82', '1'],
-          ['2021', '17,000', '100', '8'],
-          ['2022', '65,000', '130', '24'],
-          ['2023', '28,000', '180', '18']
+      /* 7 — Match pairs: when prices fail */
+      { type: 'match_pairs',
+        id: 'q_pf_7',
+        stem: 'Match each market failure type to why it causes the price signal to break down.',
+        pairs: [
+          { a: 'Negative externality', b: 'Price too low — social cost exceeds private cost; overproduction' },
+          { a: 'Positive externality', b: 'Price too high — private benefit understates social benefit; underproduction' },
+          { a: 'Public good', b: 'Market price cannot be charged — non-excludability prevents revenue collection' },
+          { a: 'Information asymmetry', b: 'Price reflects only one party\'s information; other party cannot assess true value' },
+          { a: 'Monopoly power', b: 'Price set above competitive level (P > MC) — rationing function distorted upward' },
+          { a: 'Merit good undervaluation', b: 'Consumers underestimate long-run benefit — willingness to pay understates social value' }
         ],
-        question: 'Which interpretation of the data best illustrates how the price mechanism functions?',
-        opts: [
-          'The 2021&#8211;22 price spike signalled severe scarcity; this activated the incentive function, attracting new mine investment; rising supply then caused prices to fall back &#8212; a textbook price mechanism at work',
-          'The data show that lithium prices are entirely driven by speculation and bear no relationship to underlying supply and demand fundamentals',
-          'Government intervention was responsible for the price rises &#8212; without regulation, prices would have remained stable',
-          'The price fall in 2023 indicates market failure &#8212; prices should not fall once they have risen because this discourages investment'
-        ],
-        ans: 0,
-        exp: 'The data illustrate the price mechanism functioning across all three roles. <strong>Signal</strong>: the 7-fold price rise (&#163;9,000 to &#163;65,000) communicated extreme scarcity driven by EV demand. <strong>Incentive</strong>: mine project approvals surged from 3 to 24 &#8212; entrepreneurs responded to the profit signal by committing capital. <strong>Rationing</strong>: the high price rationed limited lithium supply to highest-value uses (EV manufacturers who could absorb the cost). <strong>Self-correction</strong>: rising supply (77 → 180 thousand tonnes) caused prices to fall back to &#163;28,000 by 2023 &#8212; not a failure, but the incentive function working: as supply expanded, abnormal profit fell, reducing the price. This is exactly how Adam Smith\'s \'invisible hand\' operates over time.'
+        exp: 'The price mechanism only works well when prices accurately reflect all costs and benefits. Each market failure represents a case where this breaks down: externalities mean private and social values diverge; public goods cannot be priced at all; information gaps mean one party misprices; monopoly power distorts above competitive price; merit good undervaluation means consumers\' WTP understates true social value. In each case, the price signal gives inaccurate information — justifying potential government correction.'
       },
 
-      /* 9 — multi_select: evaluation of the price mechanism */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay assessing whether the price mechanism is the most efficient way to allocate resources. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'The price mechanism uses the signalling, incentive, and rationing functions to allocate resources efficiently through supply and demand.',
-          'The price mechanism is the most efficient allocator for private goods with no externalities &#8212; where prices fully reflect social costs and benefits &#8212; but this condition fails in a substantial proportion of a modern economy (carbon, healthcare, national defence), so the scope of its efficiency claim is narrower than free-market advocates often suggest.',
-          'Hayek\'s dispersed knowledge argument strengthens the case for price allocation over central planning: the price system aggregates local information no planner could collect, but this advantage is eroded precisely when prices send systematically wrong signals &#8212; as with negative externalities &#8212; meaning the knowledge advantage and the signal-distortion problem must be weighed together rather than treated as a universal case for markets.',
-          'The price mechanism fails in the case of public goods because non-excludability means no firm can charge consumers, so the market provides zero output.',
-          'Price rationing allocates goods to those with the highest willingness to pay, which is efficient in the economic sense but does not maximise social welfare if willingness to pay is determined by income rather than genuine benefit &#8212; making the equity-efficiency trade-off a limitation that cannot be dismissed as irrelevant to the overall assessment.',
-          'The price mechanism is always better than government intervention because governments make mistakes and have less information than markets.'
-        ],
-        correct: [1, 2, 4],
-        exp: '<strong>Option A</strong> is description: it names the three functions and states the mechanism but makes no evaluative claim about when this holds, when it fails, or how to weigh competing considerations. <strong>Option B</strong> is strong evaluation: it begins with a conditional statement of efficiency (price mechanism is best when prices reflect social costs), then immediately qualifies the scope with evidence of how often that condition fails, reaching the conclusion that the efficiency claim is narrower than often claimed. This is a directional, qualified evaluation. <strong>Option C</strong> is evaluation: it takes Hayek\'s argument seriously (acknowledges the knowledge advantage), then identifies the condition under which it weakens (when prices are distorted by externalities), and derives the conclusion that both sides must be weighed simultaneously. This converts the Hayek argument from a one-sided case into a conditional one. <strong>Option D</strong> is description of a market failure mechanism &#8212; no evaluative move about when government provision is superior or inferior to alternative corrections. <strong>Option E</strong> is evaluation: it distinguishes economic efficiency from social welfare using the equity argument (willingness to pay &#x2260; benefit when income is unequal), and states explicitly that this limitation cannot be dismissed &#8212; a normative evaluative judgement about the completeness of the efficiency criterion. <strong>Option F</strong> is one-sided overclaiming: it asserts market superiority categorically while ignoring the well-documented cases of market failure. "Governments make mistakes" is true but symmetric &#8212; markets also fail &#8212; so this statement is unbalanced advocacy, not evaluation.'
-      },
-
-      /* 10 — chain: market self-correction sequence */
-      { type: 'chain',
-        stem: 'A new technology suddenly makes electric vehicle batteries much cheaper, dramatically increasing EV demand. Place the market responses in the correct logical order.',
+      /* 8 — Odd one out: rationing function */
+      { type: 'odd_one_out',
+        id: 'q_pf_8',
+        stem: 'Three of these are examples of the <strong>rationing function</strong> of prices. Which is the <strong>odd one out</strong>?',
         items: [
-          { label: 'Car manufacturers expand EV production lines; new EV firms enter the market attracted by abnormal profits', note: '' },
-          { label: 'Consumer demand for petrol-powered vehicles falls as EVs become relatively cheaper', note: '' },
-          { label: 'EV prices fall back toward normal profit level as competition increases supply', note: '' },
-          { label: 'Battery technology reduces EV costs sharply &#8212; EV prices fall; EV demand rises strongly', note: '' },
-          { label: 'EV prices rise and abnormal profits emerge &#8212; signalling the under-supply of EVs', note: '' },
-          { label: 'Petrol car manufacturers face losses; some exit or pivot to EV production &#8212; resources reallocated', note: '' }
+          { icon: '🎫', label: 'Dynamic pricing for train tickets means peak-hour travellers pay more, reducing demand at busy times', note: '' },
+          { icon: '🏠', label: 'High house prices in London allocate homes to those with highest purchasing power', note: '' },
+          { icon: '⛽', label: 'A petrol price spike during a supply shock causes drivers to reduce consumption', note: '' },
+          { icon: '📈', label: 'Rising tech company salaries attract graduates to computer science degrees rather than arts subjects', note: '' }
         ],
-        correctOrder: [3, 4, 0, 2, 1, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Battery cost falls → EV prices fall → demand rises (initial shock).<br>2. Initial demand surge creates excess demand; EV prices rise → abnormal profit (signal function).<br>3. Abnormal profit attracts new entrants → production expands (incentive function).<br>4. Rising supply restores equilibrium; prices fall back (rationing function resolves).<br>5. EV penetration cuts petrol car demand (cross-market transmission).<br>6. Petrol firms face losses; capital and labour reallocated to EV sector (long-run adjustment).<br><br>This sequence illustrates all three price functions operating in cascade. The <em>signal</em> (price) motivates the <em>incentive</em> (entry), which restores the <em>rationing</em> balance, while cross-market signals reallocate capital from the declining petrol sector. This is the price mechanism functioning as Adam Smith described &#8212; decentralised, self-correcting, efficient.'
+        ans: 3,
+        exp: 'The odd one out is <strong>rising salaries attracting graduates to computer science</strong>. This is an example of the <strong>incentive function</strong> of prices (high wages motivating people to acquire skills and enter a market), not the rationing function. The other three all show prices <em>rationing</em> access to scarce goods: peak train pricing reduces overcrowding; high London house prices restrict access; petrol price spike reduces consumption during shortage.'
+      },
+
+      /* 9 — Data table: carbon price and signalling */
+      { type: 'data_table',
+        id: 'q_pf_9',
+        stem: 'The table shows UK carbon price (ETS) and energy mix data 2015–2022.',
+        headers: ['Year', 'Carbon price (£/tonne CO₂)', 'Coal share of electricity (%)', 'Renewables share (%)'],
+        rows: [
+          ['2015', '5', '22%', '25%'],
+          ['2018', '14', '5%', '33%'],
+          ['2021', '50', '2%', '42%'],
+          ['2022', '65', '1%', '47%']
+        ],
+        question: 'Which conclusion is <strong>best supported</strong> by the data in terms of the price mechanism?',
+        opts: [
+          'Rising carbon prices sent a price signal to energy firms — coal became uncompetitive, renewables became relatively more attractive; the data show the signalling and incentive functions working as theory predicts',
+          'The fall in coal use proves that carbon pricing alone was responsible for the energy transition — no other factors were relevant',
+          'The data show that carbon pricing has failed because coal still accounts for 1% of electricity generation in 2022',
+          'Rising carbon prices show the rationing function of prices: only the richest can afford to use coal'
+        ],
+        ans: 0,
+        exp: 'The data show a strong correlation between rising carbon prices (£5 → £65/tonne) and a collapse in coal\'s share (22% → 1%) alongside a rise in renewables (25% → 47%). This is consistent with the <strong>signalling and incentive functions</strong> working as Pigouvian tax theory predicts: the carbon price makes coal more expensive, signalling its social cost, and incentivising investment in cheaper renewables. Option B is too strong (technology costs, subsidies, and regulation also played roles). Option C misreads the data as failure when 1% is a near-elimination. Option D misapplies the rationing concept.'
+      },
+
+      /* 10 — Multi-select: evaluation of the price mechanism */
+      { type: 'multi_select',
+        id: 'q_pf_10',
+        stem: 'A student is writing a 25-mark essay evaluating the price mechanism as an allocator of resources. Which statements demonstrate <strong>genuine evaluation</strong>?',
+        opts: [
+          'The price mechanism allocates resources through signalling, incentive, and rationing functions without requiring central direction',
+          'While the price mechanism efficiently allocates resources in competitive markets with good information, its rationing function may produce socially unacceptable distributions — in healthcare or housing, allocation by willingness to pay excludes those with low income from goods society may consider essential, justifying a mixed economy approach',
+          'The price mechanism is always better than government allocation because governments are prone to political distortion and information failure',
+          'Hayek\'s knowledge argument is strongest for goods with rapid, localised information (commodity prices, fashion demand) but weaker for goods requiring long-term coordination or where market signals are distorted by externalities — suggesting the case for market allocation is context-dependent rather than universal',
+          'The price mechanism signals scarcity through rising prices',
+          'Carbon pricing shows that properly designed price signals can internalise externalities, restoring the signalling function — but this requires government to set the price correctly, reintroducing exactly the information problem Hayek identified with planning'
+        ],
+        correct: [1, 3, 5],
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: weighs the efficiency argument against distributional concerns and reaches a qualified conclusion (mixed economy needed). D: limits the Hayek argument to specific contexts rather than accepting it universally — context-dependent evaluation. F: identifies a paradox in Pigouvian taxation — it restores price signals but requires the government to know the correct price, reintroducing the very knowledge problem it solves. Option A is description of the mechanism. Option C is a one-sided assertion without qualification. Option E is description without application or qualification.'
       }
 
     ]

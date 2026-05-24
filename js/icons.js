@@ -13934,50 +13934,52 @@ window.ECONOS_ICONS = {
   `,
 
   landTypesSvg: `
-    <svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <rect width="640" height="130" fill="#F0FDF4" rx="12"/>
+    <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="640" height="290" fill="#F8FAFC"/>
+
+      <!-- Section label header -->
+      <text x="20" y="22" font-size="11" font-weight="800" fill="#065F46" letter-spacing="1">🌿  EXAMPLES OF LAND</text>
+      <line x1="0" y1="32" x2="640" y2="32" stroke="#D1FAE5" stroke-width="1.5"/>
+
+      <!-- ROW 1 -->
 
       <!-- Tile 1: Agricultural Land (green) -->
-      <rect x="12" y="10" width="96" height="110" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5" rx="8"/>
-      <text x="60" y="54" text-anchor="middle" font-size="28">🌾</text>
-      <text x="60" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Agricultural</text>
-      <text x="60" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Land</text>
-      <text x="60" y="110" text-anchor="middle" font-size="7.5" fill="#059669">Farmland · Crops</text>
+      <rect x="12" y="40" width="198" height="116" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5" rx="8"/>
+      <text x="111" y="88" text-anchor="middle" font-size="34">🌾</text>
+      <text x="111" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#065F46">Agricultural Land</text>
+      <text x="111" y="130" text-anchor="middle" font-size="10" fill="#059669">Farmland · Crops · Pasture</text>
 
       <!-- Tile 2: Oil & Gas (slate) -->
-      <rect x="116" y="10" width="96" height="110" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5" rx="8"/>
-      <text x="164" y="54" text-anchor="middle" font-size="28">🛢️</text>
-      <text x="164" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#334155">Oil &amp;</text>
-      <text x="164" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#334155">Natural Gas</text>
-      <text x="164" y="110" text-anchor="middle" font-size="7.5" fill="#475569">Fossil fuels</text>
+      <rect x="222" y="40" width="198" height="116" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5" rx="8"/>
+      <text x="321" y="88" text-anchor="middle" font-size="34">🛢️</text>
+      <text x="321" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">Oil &amp; Natural Gas</text>
+      <text x="321" y="130" text-anchor="middle" font-size="10" fill="#475569">Fossil fuels · Energy</text>
 
       <!-- Tile 3: Minerals (amber) -->
-      <rect x="220" y="10" width="96" height="110" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5" rx="8"/>
-      <text x="268" y="54" text-anchor="middle" font-size="28">⛏️</text>
-      <text x="268" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Minerals</text>
-      <text x="268" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">&amp; Metals</text>
-      <text x="268" y="110" text-anchor="middle" font-size="7.5" fill="#B45309">Iron · Lithium · Gold</text>
+      <rect x="432" y="40" width="198" height="116" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5" rx="8"/>
+      <text x="531" y="88" text-anchor="middle" font-size="34">⛏️</text>
+      <text x="531" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#92400E">Minerals &amp; Metals</text>
+      <text x="531" y="130" text-anchor="middle" font-size="10" fill="#B45309">Iron · Lithium · Copper</text>
+
+      <!-- ROW 2 -->
 
       <!-- Tile 4: Water (blue) -->
-      <rect x="324" y="10" width="96" height="110" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5" rx="8"/>
-      <text x="372" y="54" text-anchor="middle" font-size="28">💧</text>
-      <text x="372" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Water &amp;</text>
-      <text x="372" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Fisheries</text>
-      <text x="372" y="110" text-anchor="middle" font-size="7.5" fill="#2563EB">Rivers · Seas · Lakes</text>
+      <rect x="12" y="166" width="198" height="116" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5" rx="8"/>
+      <text x="111" y="214" text-anchor="middle" font-size="34">💧</text>
+      <text x="111" y="239" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">Water &amp; Fisheries</text>
+      <text x="111" y="256" text-anchor="middle" font-size="10" fill="#2563EB">Rivers · Seas · Aquifers</text>
 
       <!-- Tile 5: Forests (deep green) -->
-      <rect x="428" y="10" width="96" height="110" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5" rx="8"/>
-      <text x="476" y="54" text-anchor="middle" font-size="28">🌲</text>
-      <text x="476" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">Forests</text>
-      <text x="476" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">&amp; Timber</text>
-      <text x="476" y="110" text-anchor="middle" font-size="7.5" fill="#16A34A">Wood · Carbon sinks</text>
+      <rect x="222" y="166" width="198" height="116" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5" rx="8"/>
+      <text x="321" y="214" text-anchor="middle" font-size="34">🌲</text>
+      <text x="321" y="239" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">Forests &amp; Timber</text>
+      <text x="321" y="256" text-anchor="middle" font-size="10" fill="#16A34A">Wood · Carbon sinks</text>
 
       <!-- Tile 6: Radio Spectrum (purple) -->
-      <rect x="532" y="10" width="96" height="110" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5" rx="8"/>
-      <text x="580" y="54" text-anchor="middle" font-size="28">📡</text>
-      <text x="580" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Radio</text>
-      <text x="580" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Spectrum</text>
-      <text x="580" y="110" text-anchor="middle" font-size="7.5" fill="#7C3AED">Mobile · Satellite</text>
+      <rect x="432" y="166" width="198" height="116" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5" rx="8"/>
+      <text x="531" y="214" text-anchor="middle" font-size="34">📡</text>
+      <text x="531" y="239" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">Radio Spectrum</text>
+      <text x="531" y="256" text-anchor="middle" font-size="10" fill="#7C3AED">Mobile · Satellite · Wi-Fi</text>
     </svg>
   `,
 

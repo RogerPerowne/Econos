@@ -269,12 +269,13 @@
           + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
           + '<line x1="45" y1="8"  x2="113" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
         + '</g>'
-        + '<circle cx="64" cy="41" r="5" fill="white"/>'
-        + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
-        + '<circle cx="79" cy="30" r="5" fill="white"/>'
-        + '<circle cx="79" cy="30" r="3" fill="#059669" opacity="0.7"/>'
-        + '<text x="52" y="52" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="87" y="26" font-size="9" font-weight="600" fill="#059669">E₂</text>'
+        /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (73,34) — algebraically exact */
+        + '<circle cx="63" cy="44" r="5" fill="white"/>'
+        + '<circle cx="63" cy="44" r="3" fill="#2563eb"/>'
+        + '<circle cx="73" cy="34" r="5" fill="white"/>'
+        + '<circle cx="73" cy="34" r="3" fill="#059669" opacity="0.7"/>'
+        + '<text x="51" y="55" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="78" y="30" font-size="9" font-weight="600" fill="#059669">E₂</text>'
         /* At y=60: AD₁ at x≈81, AD₂ at x≈100. Arrow from 85→96, 4px buffer, points right */
         + '<line x1="85" y1="60" x2="96" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
         + '</svg>';
@@ -290,12 +291,13 @@
           + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
           + '<line x1="22" y1="8"  x2="100" y2="70" stroke="#059669" stroke-width="2"/>'
         + '</g>'
-        + '<circle cx="55" cy="42" r="5" fill="white"/>'
-        + '<circle cx="55" cy="42" r="3" fill="#2563eb" opacity="0.6"/>'
-        + '<circle cx="75" cy="36" r="5" fill="white"/>'
-        + '<circle cx="75" cy="36" r="3" fill="#059669"/>'
-        + '<text x="42" y="54" font-size="9" font-weight="600" fill="#2563eb" opacity="0.7">E₁</text>'
-        + '<text x="82" y="33" font-size="9" font-weight="600" fill="#059669">E₂</text>'
+        /* E₁ = AD at old LRAS (x=55) ≈ (55,34); E₂ = AD at new LRAS (x=75) ≈ (75,50) */
+        + '<circle cx="55" cy="34" r="5" fill="white"/>'
+        + '<circle cx="55" cy="34" r="3" fill="#2563eb" opacity="0.6"/>'
+        + '<circle cx="75" cy="50" r="5" fill="white"/>'
+        + '<circle cx="75" cy="50" r="3" fill="#059669"/>'
+        + '<text x="40" y="46" font-size="9" font-weight="600" fill="#2563eb" opacity="0.7">E₁</text>'
+        + '<text x="80" y="62" font-size="9" font-weight="600" fill="#059669">E₂</text>'
         + '<line x1="60" y1="20" x2="70" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#arr-tc)"/>'
         + '</svg>';
     }
@@ -311,12 +313,13 @@
           + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
           + '<line x1="5"  y1="8"  x2="75" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
         + '</g>'
-        + '<circle cx="64" cy="41" r="5" fill="white"/>'
-        + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
-        + '<circle cx="49" cy="53" r="5" fill="white"/>'
-        + '<circle cx="49" cy="53" r="3" fill="#059669" opacity="0.7"/>'
-        + '<text x="72" y="36" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="36" y="64" font-size="9" font-weight="600" fill="#059669">E₂</text>'
+        /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (54,53) — algebraically exact */
+        + '<circle cx="63" cy="44" r="5" fill="white"/>'
+        + '<circle cx="63" cy="44" r="3" fill="#2563eb"/>'
+        + '<circle cx="54" cy="53" r="5" fill="white"/>'
+        + '<circle cx="54" cy="53" r="3" fill="#059669" opacity="0.7"/>'
+        + '<text x="68" y="40" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="41" y="64" font-size="9" font-weight="600" fill="#059669">E₂</text>'
         /* At y=60: AD₁ at x≈81, AD₂ at x≈62. Arrow from 77→66, 4px buffer, points left */
         + '<line x1="77" y1="60" x2="66" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
         + '</svg>';

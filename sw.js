@@ -1,4 +1,4 @@
-const CACHE_NAME = 'econos-v2';
+const CACHE_NAME = 'econos-v3';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -55,6 +55,27 @@ self.addEventListener('fetch', (event) => {
   }
 
   // All other requests: cache-first, fallback to network
+  // …EXCEPT topic data files (/js/data/...) which must be network-first
+  // so that newly-deployed content (rebuilt quizzes, edited link data,
+  // updated topic JSON) reaches users without waiting for the cache to
+  // expire. Cache-first here meant a single stale data file could keep
+  // serving forever across multiple hard refreshes.
+  const url = new URL(request.url);
+  const isData = url.pathname.includes('/js/data/');
+
+  if (isData) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(request).then(
       (cached) =>

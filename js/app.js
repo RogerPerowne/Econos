@@ -4227,6 +4227,8 @@
       <h1 class="card__title">${c.title}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
 
+      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
+
       ${c.tip ? (() => {
         const tipText = typeof c.tip === 'object' && !Array.isArray(c.tip) ? c.tip.text : (typeof c.tip === 'string' ? c.tip : '');
         const tipIcon = (typeof c.tip === 'object' && !Array.isArray(c.tip) && c.tip.icon) || '💡';

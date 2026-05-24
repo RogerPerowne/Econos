@@ -3,8 +3,8 @@
   window.ECONOS_QUIZ = {
     id:       'price_controls_main',
     topicId:  'price_controls_main',
-    title:    'Price Controls',
-    subtitle: 'Development Economics',
+    title:    'Government Intervention in Markets',
+    subtitle: 'Introduction to Markets and Market Failure',
     backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'price_controls' }),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers maximum and minimum prices, their effects, and unintended consequences',

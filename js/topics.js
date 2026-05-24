@@ -176,7 +176,7 @@ window.ECONOS_TOPICS = [
     name: 'Government Intervention in Markets',
     sub: 'Price ceilings, price floors, effects and evaluation',
     color: '#b91c1c',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'unstable_markets',

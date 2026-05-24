@@ -14032,7 +14032,7 @@ window.ECONOS_ICONS = {
   `,
 
   enterpriseCombinationSvg: `
-    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <linearGradient id="ec-green" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#ECFDF5"/>
@@ -14054,108 +14054,202 @@ window.ECONOS_ICONS = {
           <stop offset="0%" stop-color="#EFF6FF"/>
           <stop offset="100%" stop-color="#DBEAFE"/>
         </linearGradient>
+        <radialGradient id="ec-ic-green" cx="0.35" cy="0.3" r="0.85">
+          <stop offset="0%" stop-color="#A7F3D0"/>
+          <stop offset="100%" stop-color="#34D399"/>
+        </radialGradient>
+        <radialGradient id="ec-ic-purple" cx="0.35" cy="0.3" r="0.85">
+          <stop offset="0%" stop-color="#DDD6FE"/>
+          <stop offset="100%" stop-color="#A78BFA"/>
+        </radialGradient>
+        <radialGradient id="ec-ic-amber" cx="0.35" cy="0.3" r="0.85">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="100%" stop-color="#FBBF24"/>
+        </radialGradient>
+        <radialGradient id="ec-ic-rose" cx="0.35" cy="0.3" r="0.85">
+          <stop offset="0%" stop-color="#FECACA"/>
+          <stop offset="100%" stop-color="#F87171"/>
+        </radialGradient>
+        <radialGradient id="ec-ic-blue" cx="0.35" cy="0.3" r="0.85">
+          <stop offset="0%" stop-color="#BFDBFE"/>
+          <stop offset="100%" stop-color="#60A5FA"/>
+        </radialGradient>
         <filter id="ec-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-          <feOffset dx="0" dy="2" result="off"/>
-          <feComponentTransfer><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2.4"/>
+          <feOffset dx="0" dy="3" result="off"/>
+          <feComponentTransfer><feFuncA type="linear" slope="0.16"/></feComponentTransfer>
+          <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="ec-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="1.4"/>
+          <feOffset dx="0" dy="1.5" result="off"/>
+          <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
           <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
         <marker id="ec-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
         </marker>
         <marker id="ec-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/>
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
         </marker>
+
+        <symbol id="i-mountain" viewBox="0 0 24 24">
+          <path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="i-users" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <path d="M16 3.128a4 4 0 0 1 0 7.744"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+            <circle cx="9" cy="7" r="4"/>
+          </g>
+        </symbol>
+        <symbol id="i-factory" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 16h.01"/>
+            <path d="M16 16h.01"/>
+            <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/>
+            <path d="M8 16h.01"/>
+          </g>
+        </symbol>
+        <symbol id="i-rocket" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/>
+            <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/>
+          </g>
+        </symbol>
+        <symbol id="i-bag" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+            <path d="M3.103 6.034h17.794"/>
+            <path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/>
+          </g>
+        </symbol>
+        <symbol id="i-landmark" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 18v-7"/>
+            <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/>
+            <path d="M14 18v-7"/>
+            <path d="M18 18v-7"/>
+            <path d="M3 22h18"/>
+            <path d="M6 18v-7"/>
+          </g>
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="i-gavel" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381"/>
+            <path d="m16 16 6-6"/>
+            <path d="m21.5 10.5-8-8"/>
+            <path d="m8 8 6-6"/>
+            <path d="m8.5 7.5 8 8"/>
+          </g>
+        </symbol>
       </defs>
 
-      <!-- Column headers -->
-      <text x="60" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#475569">FACTOR INPUTS</text>
-      <text x="304" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#B91C1C">+ COORDINATOR</text>
-      <text x="548" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#1E40AF">= OUTPUT</text>
-      <line x1="0" y1="26" x2="640" y2="26" stroke="#E2E8F0" stroke-width="1"/>
+      <!-- ===== Column headers with dotted connectors ===== -->
+      <text x="75" y="22" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="1.4" fill="#065F46">FACTOR INPUTS</text>
+      <text x="320" y="22" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="1.4" fill="#B91C1C">+ COORDINATOR</text>
+      <text x="555" y="22" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="1.4" fill="#1E40AF">= OUTPUT</text>
+      <circle cx="135" cy="18" r="2" fill="#CBD5E1"/>
+      <line x1="142" y1="18" x2="255" y2="18" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="2,4"/>
+      <circle cx="262" cy="18" r="2" fill="#CBD5E1"/>
+      <circle cx="380" cy="18" r="2" fill="#CBD5E1"/>
+      <line x1="387" y1="18" x2="510" y2="18" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="2,4"/>
+      <circle cx="517" cy="18" r="2" fill="#CBD5E1"/>
 
-      <!-- Arrows (drawn before cards so cards sit on top) -->
-      <line x1="110" y1="74" x2="200" y2="74" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
-      <line x1="110" y1="158" x2="200" y2="158" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
-      <line x1="110" y1="242" x2="200" y2="242" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
-      <line x1="404" y1="158" x2="482" y2="158" stroke="#3B82F6" stroke-width="2.8" marker-end="url(#ec-arr-blue)"/>
+      <!-- ===== Arrows ===== -->
+      <line x1="148" y1="88" x2="205" y2="88" stroke="#94A3B8" stroke-width="2.4" marker-end="url(#ec-arr)"/>
+      <line x1="148" y1="190" x2="205" y2="190" stroke="#94A3B8" stroke-width="2.4" marker-end="url(#ec-arr)"/>
+      <line x1="148" y1="292" x2="205" y2="292" stroke="#94A3B8" stroke-width="2.4" marker-end="url(#ec-arr)"/>
+      <line x1="428" y1="190" x2="474" y2="190" stroke="#2563EB" stroke-width="3" marker-end="url(#ec-arr-blue)"/>
 
-      <!-- ===== LAND card (x=10, y=36, w=100, h=76, rx=12) ===== -->
-      <rect x="10" y="36" width="100" height="76" rx="12" fill="url(#ec-green)" stroke="#34D399" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <circle cx="52" cy="51" r="3.2" fill="#FBBF24"/>
-      <polygon points="39,65 46,53 53,65" fill="#34D399" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
-      <polygon points="47,65 55,53 63,65" fill="#6EE7B7" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
-      <text x="60" y="80" text-anchor="middle" font-size="11" font-weight="800" fill="#065F46" letter-spacing="0.5">LAND</text>
-      <rect x="36" y="86" width="48" height="14" rx="7" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
-      <text x="60" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Rent</text>
+      <!-- ===== LAND card (x=10, y=42, w=138, h=92, rx=16) ===== -->
+      <rect x="10" y="42" width="138" height="92" rx="16" fill="url(#ec-green)" stroke="#6EE7B7" stroke-width="1.8" filter="url(#ec-shadow)"/>
+      <circle cx="42" cy="88" r="24" fill="url(#ec-ic-green)" filter="url(#ec-shadow-soft)"/>
+      <use href="#i-mountain" x="22" y="68" width="40" height="40" color="#FFFFFF"/>
+      <text x="100" y="84" text-anchor="middle" font-size="14" font-weight="900" fill="#065F46" letter-spacing="0.6">LAND</text>
+      <rect x="74" y="94" width="52" height="18" rx="9" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+      <text x="100" y="107" text-anchor="middle" font-size="10" font-weight="700" fill="#065F46">Rent</text>
 
-      <!-- ===== LABOUR card (x=10, y=120, w=100, h=76, rx=12) ===== -->
-      <rect x="10" y="120" width="100" height="76" rx="12" fill="url(#ec-purple)" stroke="#A78BFA" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <circle cx="60" cy="133" r="4" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 53 140 Q 60 133 67 140 Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <circle cx="46" cy="135" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 40 141 Q 46 135 52 141 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <circle cx="74" cy="135" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 68 141 Q 74 135 80 141 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <text x="60" y="164" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6" letter-spacing="0.5">LABOUR</text>
-      <rect x="32" y="170" width="56" height="14" rx="7" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
-      <text x="60" y="180" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Wages</text>
+      <!-- ===== LABOUR card (x=10, y=144, w=138, h=92, rx=16) ===== -->
+      <rect x="10" y="144" width="138" height="92" rx="16" fill="url(#ec-purple)" stroke="#C4B5FD" stroke-width="1.8" filter="url(#ec-shadow)"/>
+      <circle cx="42" cy="190" r="24" fill="url(#ec-ic-purple)" filter="url(#ec-shadow-soft)"/>
+      <use href="#i-users" x="22" y="170" width="40" height="40" color="#FFFFFF"/>
+      <text x="100" y="186" text-anchor="middle" font-size="14" font-weight="900" fill="#5B21B6" letter-spacing="0.6">LABOUR</text>
+      <rect x="70" y="196" width="60" height="18" rx="9" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
+      <text x="100" y="209" text-anchor="middle" font-size="10" font-weight="700" fill="#5B21B6">Wages</text>
 
-      <!-- ===== CAPITAL card (x=10, y=204, w=100, h=76, rx=12) ===== -->
-      <rect x="10" y="204" width="100" height="76" rx="12" fill="url(#ec-amber)" stroke="#FCD34D" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <rect x="51" y="213" width="4" height="9" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-      <rect x="58" y="211" width="4" height="11" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-      <rect x="65" y="215" width="4" height="7" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-      <rect x="48" y="222" width="24" height="12" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/>
-      <rect x="51" y="224" width="3" height="5" fill="#FEF3C7"/>
-      <rect x="58" y="224" width="3" height="5" fill="#FEF3C7"/>
-      <rect x="65" y="224" width="3" height="5" fill="#FEF3C7"/>
-      <text x="60" y="248" text-anchor="middle" font-size="11" font-weight="800" fill="#92400E" letter-spacing="0.5">CAPITAL</text>
-      <rect x="28" y="254" width="64" height="14" rx="7" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
-      <text x="60" y="264" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Interest</text>
+      <!-- ===== CAPITAL card (x=10, y=246, w=138, h=92, rx=16) ===== -->
+      <rect x="10" y="246" width="138" height="92" rx="16" fill="url(#ec-amber)" stroke="#FCD34D" stroke-width="1.8" filter="url(#ec-shadow)"/>
+      <circle cx="42" cy="292" r="24" fill="url(#ec-ic-amber)" filter="url(#ec-shadow-soft)"/>
+      <use href="#i-factory" x="22" y="272" width="40" height="40" color="#FFFFFF"/>
+      <text x="100" y="288" text-anchor="middle" font-size="14" font-weight="900" fill="#92400E" letter-spacing="0.6">CAPITAL</text>
+      <rect x="68" y="298" width="64" height="18" rx="9" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
+      <text x="100" y="311" text-anchor="middle" font-size="10" font-weight="700" fill="#92400E">Interest</text>
 
-      <!-- ===== ENTERPRISE & INSTITUTIONS card (x=204, y=32, w=200, h=248, rx=16) ===== -->
-      <rect x="204" y="32" width="200" height="248" rx="16" fill="url(#ec-rose)" stroke="#F87171" stroke-width="2" filter="url(#ec-shadow)"/>
-      <g transform="translate(304,62)">
-        <path d="M 0 -18 Q 8 -8 8 10 L 0 14 L -8 10 Q -8 -8 0 -18 Z" fill="#FCA5A5" stroke="#991B1B" stroke-width="1.8" stroke-linejoin="round"/>
-        <circle cx="0" cy="-4" r="3.2" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.2"/>
-        <path d="M -8 5 L -15 13 L -6 11 Z" fill="#FB7185" stroke="#991B1B" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M 8 5 L 15 13 L 6 11 Z" fill="#FB7185" stroke="#991B1B" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M -4 14 Q 0 23 4 14 Q 2 18 0 16 Q -2 18 -4 14 Z" fill="#F59E0B"/>
-      </g>
-      <text x="304" y="102" text-anchor="middle" font-size="15" font-weight="900" fill="#991B1B">Enterprise</text>
-      <text x="304" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#BE123C">&amp; Institutions</text>
-      <text x="304" y="134" text-anchor="middle" font-size="8.5" font-weight="600" fill="#DC2626" letter-spacing="0.6">COORDINATES · INNOVATES · BEARS RISK</text>
-      <rect x="275" y="141" width="58" height="16" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.2"/>
-      <text x="304" y="152" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991B1B">Profit</text>
-      <line x1="220" y1="166" x2="388" y2="166" stroke="#FECACA" stroke-width="1"/>
-      <rect x="220" y="173" width="168" height="98" rx="8" fill="#FFF1F2" stroke="#FECACA" stroke-width="1" stroke-dasharray="5,3"/>
-      <text x="304" y="188" text-anchor="middle" font-size="8.5" font-weight="800" fill="#991B1B" letter-spacing="0.8">THE INSTITUTIONAL DIMENSION</text>
-      <text x="304" y="205" text-anchor="middle" font-size="9" fill="#7F1D1D">Property rights · Rule of law</text>
-      <text x="304" y="221" text-anchor="middle" font-size="9" fill="#7F1D1D">Government · Legal frameworks</text>
-      <text x="304" y="237" text-anchor="middle" font-size="9" fill="#7F1D1D">Social norms · Incentive systems</text>
-      <text x="304" y="259" text-anchor="middle" font-size="8" font-style="italic" fill="#BE123C">Without these, markets fail</text>
+      <!-- ===== ENTERPRISE & INSTITUTIONS card (x=210, y=38, w=218, h=304, rx=20) ===== -->
+      <rect x="210" y="38" width="218" height="316" rx="20" fill="url(#ec-rose)" stroke="#FCA5A5" stroke-width="2" filter="url(#ec-shadow)"/>
 
-      <!-- ===== GOODS &amp; SERVICES card (x=482, y=100, w=132, h=120, rx=14) ===== -->
-      <rect x="482" y="100" width="132" height="120" rx="14" fill="url(#ec-blue)" stroke="#60A5FA" stroke-width="2" filter="url(#ec-shadow)"/>
-      <g transform="translate(548,136)">
-        <path d="M -14 -6 L 14 -6 L 16 14 L -16 14 Z" fill="#DBEAFE" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M -8 -6 Q -8 -14 0 -14 Q 8 -14 8 -6" fill="none" stroke="#1E40AF" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="-5" cy="2" r="1.6" fill="#1E40AF"/>
-        <circle cx="5" cy="2" r="1.6" fill="#1E40AF"/>
-      </g>
-      <text x="548" y="170" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Goods &amp;</text>
-      <text x="548" y="187" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Services</text>
+      <!-- Sparkles around rocket -->
+      <path d="M 254 64 L 256 58 L 258 64 L 264 66 L 258 68 L 256 74 L 254 68 L 248 66 Z" fill="#F59E0B" opacity="0.85"/>
+      <path d="M 388 60 L 390 56 L 392 60 L 396 62 L 392 64 L 390 68 L 388 64 L 384 62 Z" fill="#FBBF24" opacity="0.85"/>
+      <path d="M 386 116 L 388 112 L 390 116 L 394 118 L 390 120 L 388 124 L 386 120 L 382 118 Z" fill="#F59E0B" opacity="0.8"/>
+      <circle cx="252" cy="108" r="2" fill="#FBBF24" opacity="0.7"/>
+      <circle cx="396" cy="92" r="1.6" fill="#F59E0B" opacity="0.7"/>
+
+      <!-- Rocket icon (large, with soft circular halo) -->
+      <circle cx="319" cy="88" r="34" fill="url(#ec-ic-rose)" filter="url(#ec-shadow-soft)"/>
+      <use href="#i-rocket" x="289" y="58" width="60" height="60" color="#FFFFFF"/>
+
+      <!-- Title block -->
+      <text x="319" y="142" text-anchor="middle" font-size="18" font-weight="900" fill="#991B1B">Enterprise</text>
+      <text x="319" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#BE123C">&amp; Institutions</text>
+      <text x="319" y="180" text-anchor="middle" font-size="9.5" font-weight="600" fill="#DC2626" letter-spacing="0.8">COORDINATES · INNOVATES · BEARS RISK</text>
+
+      <!-- Profit pill -->
+      <rect x="286" y="188" width="66" height="20" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.4"/>
+      <text x="319" y="202" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">Profit</text>
+
+      <!-- Dotted divider -->
+      <line x1="232" y1="222" x2="406" y2="222" stroke="#FECACA" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+      <!-- Institutional dimension header (landmark icon + label) -->
+      <circle cx="319" cy="242" r="14" fill="url(#ec-ic-rose)" filter="url(#ec-shadow-soft)"/>
+      <use href="#i-landmark" x="307" y="230" width="24" height="24" color="#FFFFFF"/>
+      <text x="319" y="272" text-anchor="middle" font-size="9.5" font-weight="800" fill="#991B1B" letter-spacing="1">THE INSTITUTIONAL DIMENSION</text>
+
+      <!-- Institutional bullet rows -->
+      <use href="#i-shield" x="234" y="280" width="15" height="15" color="#9F1239"/>
+      <text x="254" y="292" font-size="9.5" fill="#7F1D1D">Property rights · Rule of law</text>
+      <use href="#i-gavel" x="234" y="300" width="15" height="15" color="#9F1239"/>
+      <text x="254" y="312" font-size="9.5" fill="#7F1D1D">Government · Legal frameworks</text>
+      <use href="#i-users" x="234" y="320" width="15" height="15" color="#9F1239"/>
+      <text x="254" y="332" font-size="9.5" fill="#7F1D1D">Social norms · Incentive systems</text>
+
+      <!-- Italic note -->
+      <text x="319" y="348" text-anchor="middle" font-size="9" font-style="italic" fill="#BE123C">Without these, markets fail</text>
+
+      <!-- ===== GOODS &amp; SERVICES card (x=476, y=120, w=154, h=140, rx=18) ===== -->
+      <rect x="476" y="120" width="154" height="140" rx="18" fill="url(#ec-blue)" stroke="#93C5FD" stroke-width="2" filter="url(#ec-shadow)"/>
+      <circle cx="553" cy="170" r="30" fill="url(#ec-ic-blue)" filter="url(#ec-shadow-soft)"/>
+      <use href="#i-bag" x="527" y="144" width="52" height="52" color="#FFFFFF"/>
+      <text x="553" y="222" text-anchor="middle" font-size="14" font-weight="900" fill="#1E3A8A">Goods &amp;</text>
+      <text x="553" y="240" text-anchor="middle" font-size="14" font-weight="900" fill="#1E3A8A">Services</text>
 
       <!-- ===== Arrow labels (over arrows) ===== -->
-      <rect x="123" y="66" width="64" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="155" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
-      <rect x="135" y="150" width="40" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="155" y="161" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
-      <rect x="125" y="234" width="60" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="155" y="245" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
-      <rect x="412" y="150" width="62" height="16" rx="8" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
-      <text x="443" y="161" text-anchor="middle" font-size="9" font-weight="700" fill="#1E40AF">Output</text>
+      <rect x="151" y="80" width="55" height="17" rx="8.5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="178.5" y="91.5" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
+      <rect x="161" y="182" width="35" height="17" rx="8.5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="178.5" y="193.5" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
+      <rect x="151" y="284" width="55" height="17" rx="8.5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="178.5" y="295.5" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
+      <rect x="426" y="182" width="50" height="17" rx="8.5" fill="#2563EB" stroke="#1D4ED8" stroke-width="1"/>
+      <text x="451" y="193.5" text-anchor="middle" font-size="9" font-weight="800" fill="#FFFFFF" letter-spacing="0.4">Output</text>
     </svg>
   `,
 

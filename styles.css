@@ -7625,6 +7625,13 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   background: var(--econ-white);
   color: var(--econ-ink);
   font-weight: var(--fw-semi);
+  white-space: normal;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  padding: 4px 6px;
+  height: auto;
+  min-height: 26px;
 }
 .diag-zone.is-correct { border-color: var(--econ-green); background: var(--econ-green-50); color: var(--econ-green-700); }
 .diag-zone.is-wrong   { border-color: var(--econ-rose);  background: #FEF2F2; color: var(--econ-rose); }

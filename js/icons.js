@@ -14032,7 +14032,7 @@ window.ECONOS_ICONS = {
   `,
 
   enterpriseCombinationSvg: `
-    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <linearGradient id="ec-green" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#ECFDF5"/>
@@ -14070,92 +14070,92 @@ window.ECONOS_ICONS = {
 
       <!-- Column headers -->
       <text x="60" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#475569">FACTOR INPUTS</text>
-      <text x="304" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#B91C1C">+ COORDINATOR</text>
+      <text x="316" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#B91C1C">+ COORDINATOR</text>
       <text x="574" y="18" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#1E40AF">= OUTPUT</text>
       <line x1="0" y1="26" x2="640" y2="26" stroke="#E2E8F0" stroke-width="1"/>
 
       <!-- Arrows (drawn before cards so cards sit on top) -->
-      <line x1="110" y1="74" x2="200" y2="74" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
-      <line x1="110" y1="158" x2="200" y2="158" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
-      <line x1="110" y1="242" x2="200" y2="242" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
-      <line x1="404" y1="158" x2="518" y2="158" stroke="#3B82F6" stroke-width="2.8" marker-end="url(#ec-arr-blue)"/>
+      <line x1="110" y1="78" x2="200" y2="78" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
+      <line x1="110" y1="178" x2="200" y2="178" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
+      <line x1="110" y1="278" x2="200" y2="278" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
+      <line x1="428" y1="178" x2="518" y2="178" stroke="#3B82F6" stroke-width="2.8" marker-end="url(#ec-arr-blue)"/>
 
-      <!-- ===== LAND card (x=10, y=36, w=100, h=76, rx=12) ===== -->
-      <rect x="10" y="36" width="100" height="76" rx="12" fill="url(#ec-green)" stroke="#34D399" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <circle cx="52" cy="51" r="3.2" fill="#FBBF24"/>
-      <polygon points="39,65 46,53 53,65" fill="#34D399" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
-      <polygon points="47,65 55,53 63,65" fill="#6EE7B7" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
-      <text x="60" y="80" text-anchor="middle" font-size="11" font-weight="800" fill="#065F46" letter-spacing="0.5">LAND</text>
-      <rect x="36" y="86" width="48" height="14" rx="7" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
-      <text x="60" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Rent</text>
+      <!-- ===== LAND card (x=10, y=40, w=100, h=76, rx=12) ===== -->
+      <rect x="10" y="40" width="100" height="76" rx="12" fill="url(#ec-green)" stroke="#34D399" stroke-width="1.8" filter="url(#ec-shadow)"/>
+      <circle cx="52" cy="55" r="3.2" fill="#FBBF24"/>
+      <polygon points="39,69 46,57 53,69" fill="#34D399" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="47,69 55,57 63,69" fill="#6EE7B7" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
+      <text x="60" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#065F46" letter-spacing="0.5">LAND</text>
+      <rect x="36" y="90" width="48" height="14" rx="7" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+      <text x="60" y="100" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Rent</text>
 
-      <!-- ===== LABOUR card (x=10, y=120, w=100, h=76, rx=12) ===== -->
-      <rect x="10" y="120" width="100" height="76" rx="12" fill="url(#ec-purple)" stroke="#A78BFA" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <circle cx="60" cy="133" r="4" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 53 140 Q 60 133 67 140 Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <circle cx="46" cy="135" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 40 141 Q 46 135 52 141 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <circle cx="74" cy="135" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 68 141 Q 74 135 80 141 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <text x="60" y="164" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6" letter-spacing="0.5">LABOUR</text>
-      <rect x="32" y="170" width="56" height="14" rx="7" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
-      <text x="60" y="180" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Wages</text>
+      <!-- ===== LABOUR card (x=10, y=140, w=100, h=76, rx=12) ===== -->
+      <rect x="10" y="140" width="100" height="76" rx="12" fill="url(#ec-purple)" stroke="#A78BFA" stroke-width="1.8" filter="url(#ec-shadow)"/>
+      <circle cx="60" cy="153" r="4" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2"/>
+      <path d="M 53 160 Q 60 153 67 160 Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="46" cy="155" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
+      <path d="M 40 161 Q 46 155 52 161 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="74" cy="155" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
+      <path d="M 68 161 Q 74 155 80 161 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="60" y="184" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6" letter-spacing="0.5">LABOUR</text>
+      <rect x="32" y="190" width="56" height="14" rx="7" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
+      <text x="60" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Wages</text>
 
-      <!-- ===== CAPITAL card (x=10, y=204, w=100, h=76, rx=12) ===== -->
-      <rect x="10" y="204" width="100" height="76" rx="12" fill="url(#ec-amber)" stroke="#FCD34D" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <rect x="51" y="213" width="4" height="9" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-      <rect x="58" y="211" width="4" height="11" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-      <rect x="65" y="215" width="4" height="7" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
-      <rect x="48" y="222" width="24" height="12" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/>
-      <rect x="51" y="224" width="3" height="5" fill="#FEF3C7"/>
-      <rect x="58" y="224" width="3" height="5" fill="#FEF3C7"/>
-      <rect x="65" y="224" width="3" height="5" fill="#FEF3C7"/>
-      <text x="60" y="248" text-anchor="middle" font-size="11" font-weight="800" fill="#92400E" letter-spacing="0.5">CAPITAL</text>
-      <rect x="28" y="254" width="64" height="14" rx="7" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
-      <text x="60" y="264" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Interest</text>
+      <!-- ===== CAPITAL card (x=10, y=240, w=100, h=76, rx=12) ===== -->
+      <rect x="10" y="240" width="100" height="76" rx="12" fill="url(#ec-amber)" stroke="#FCD34D" stroke-width="1.8" filter="url(#ec-shadow)"/>
+      <rect x="51" y="249" width="4" height="9" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+      <rect x="58" y="247" width="4" height="11" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+      <rect x="65" y="251" width="4" height="7" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+      <rect x="48" y="258" width="24" height="12" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/>
+      <rect x="51" y="260" width="3" height="5" fill="#FEF3C7"/>
+      <rect x="58" y="260" width="3" height="5" fill="#FEF3C7"/>
+      <rect x="65" y="260" width="3" height="5" fill="#FEF3C7"/>
+      <text x="60" y="284" text-anchor="middle" font-size="11" font-weight="800" fill="#92400E" letter-spacing="0.5">CAPITAL</text>
+      <rect x="28" y="290" width="64" height="14" rx="7" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
+      <text x="60" y="300" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Interest</text>
 
-      <!-- ===== ENTERPRISE & INSTITUTIONS card (x=204, y=32, w=200, h=248, rx=16) ===== -->
-      <rect x="204" y="32" width="200" height="248" rx="16" fill="url(#ec-rose)" stroke="#F87171" stroke-width="2" filter="url(#ec-shadow)"/>
-      <g transform="translate(304,62)">
+      <!-- ===== ENTERPRISE & INSTITUTIONS card (x=204, y=36, w=224, h=284, rx=16) ===== -->
+      <rect x="204" y="36" width="224" height="284" rx="16" fill="url(#ec-rose)" stroke="#F87171" stroke-width="2" filter="url(#ec-shadow)"/>
+      <g transform="translate(316,68)">
         <path d="M 0 -18 Q 8 -8 8 10 L 0 14 L -8 10 Q -8 -8 0 -18 Z" fill="#FCA5A5" stroke="#991B1B" stroke-width="1.8" stroke-linejoin="round"/>
         <circle cx="0" cy="-4" r="3.2" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.2"/>
         <path d="M -8 5 L -15 13 L -6 11 Z" fill="#FB7185" stroke="#991B1B" stroke-width="1.4" stroke-linejoin="round"/>
         <path d="M 8 5 L 15 13 L 6 11 Z" fill="#FB7185" stroke="#991B1B" stroke-width="1.4" stroke-linejoin="round"/>
         <path d="M -4 14 Q 0 23 4 14 Q 2 18 0 16 Q -2 18 -4 14 Z" fill="#F59E0B"/>
       </g>
-      <text x="304" y="102" text-anchor="middle" font-size="15" font-weight="900" fill="#991B1B">Enterprise</text>
-      <text x="304" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#BE123C">&amp; Institutions</text>
-      <text x="304" y="134" text-anchor="middle" font-size="8.5" font-weight="600" fill="#DC2626" letter-spacing="0.6">COORDINATES · INNOVATES · BEARS RISK</text>
-      <rect x="275" y="141" width="58" height="16" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.2"/>
-      <text x="304" y="152" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991B1B">Profit</text>
-      <line x1="220" y1="166" x2="388" y2="166" stroke="#FECACA" stroke-width="1"/>
-      <rect x="220" y="173" width="168" height="98" rx="8" fill="#FFF1F2" stroke="#FECACA" stroke-width="1" stroke-dasharray="5,3"/>
-      <text x="304" y="188" text-anchor="middle" font-size="8.5" font-weight="800" fill="#991B1B" letter-spacing="0.8">THE INSTITUTIONAL DIMENSION</text>
-      <text x="304" y="205" text-anchor="middle" font-size="9" fill="#7F1D1D">Property rights · Rule of law</text>
-      <text x="304" y="221" text-anchor="middle" font-size="9" fill="#7F1D1D">Government · Legal frameworks</text>
-      <text x="304" y="237" text-anchor="middle" font-size="9" fill="#7F1D1D">Social norms · Incentive systems</text>
-      <text x="304" y="259" text-anchor="middle" font-size="8" font-style="italic" fill="#BE123C">Without these, markets fail</text>
+      <text x="316" y="112" text-anchor="middle" font-size="15" font-weight="900" fill="#991B1B">Enterprise</text>
+      <text x="316" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#BE123C">&amp; Institutions</text>
+      <text x="316" y="146" text-anchor="middle" font-size="8.5" font-weight="600" fill="#DC2626" letter-spacing="0.6">COORDINATES · INNOVATES · BEARS RISK</text>
+      <rect x="287" y="154" width="58" height="16" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.2"/>
+      <text x="316" y="165" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991B1B">Profit</text>
+      <line x1="224" y1="182" x2="408" y2="182" stroke="#FECACA" stroke-width="1"/>
+      <rect x="224" y="190" width="184" height="112" rx="8" fill="#FFF1F2" stroke="#FECACA" stroke-width="1" stroke-dasharray="5,3"/>
+      <text x="316" y="207" text-anchor="middle" font-size="8.5" font-weight="800" fill="#991B1B" letter-spacing="0.8">THE INSTITUTIONAL DIMENSION</text>
+      <text x="316" y="226" text-anchor="middle" font-size="9" fill="#7F1D1D">Property rights · Rule of law</text>
+      <text x="316" y="244" text-anchor="middle" font-size="9" fill="#7F1D1D">Government · Legal frameworks</text>
+      <text x="316" y="262" text-anchor="middle" font-size="9" fill="#7F1D1D">Social norms · Incentive systems</text>
+      <text x="316" y="288" text-anchor="middle" font-size="8" font-style="italic" fill="#BE123C">Without these, markets fail</text>
 
-      <!-- ===== GOODS &amp; SERVICES card (x=518, y=100, w=112, h=120, rx=14) ===== -->
-      <rect x="518" y="100" width="112" height="120" rx="14" fill="url(#ec-blue)" stroke="#60A5FA" stroke-width="2" filter="url(#ec-shadow)"/>
-      <g transform="translate(574,136)">
+      <!-- ===== GOODS &amp; SERVICES card (x=518, y=118, w=112, h=120, rx=14) ===== -->
+      <rect x="518" y="118" width="112" height="120" rx="14" fill="url(#ec-blue)" stroke="#60A5FA" stroke-width="2" filter="url(#ec-shadow)"/>
+      <g transform="translate(574,154)">
         <path d="M -14 -6 L 14 -6 L 16 14 L -16 14 Z" fill="#DBEAFE" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
         <path d="M -8 -6 Q -8 -14 0 -14 Q 8 -14 8 -6" fill="none" stroke="#1E40AF" stroke-width="1.8" stroke-linecap="round"/>
         <circle cx="-5" cy="2" r="1.6" fill="#1E40AF"/>
         <circle cx="5" cy="2" r="1.6" fill="#1E40AF"/>
       </g>
-      <text x="574" y="170" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Goods &amp;</text>
-      <text x="574" y="187" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Services</text>
+      <text x="574" y="188" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Goods &amp;</text>
+      <text x="574" y="205" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Services</text>
 
       <!-- ===== Arrow labels (over arrows) ===== -->
-      <rect x="123" y="66" width="64" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="155" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
-      <rect x="135" y="150" width="40" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="155" y="161" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
-      <rect x="125" y="234" width="60" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="155" y="245" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
-      <rect x="430" y="150" width="62" height="16" rx="8" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
-      <text x="461" y="161" text-anchor="middle" font-size="9" font-weight="700" fill="#1E40AF">Output</text>
+      <rect x="123" y="70" width="64" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="155" y="81" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
+      <rect x="135" y="170" width="40" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="155" y="181" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
+      <rect x="125" y="270" width="60" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="155" y="281" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
+      <rect x="442" y="170" width="62" height="16" rx="8" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
+      <text x="473" y="181" text-anchor="middle" font-size="9" font-weight="700" fill="#1E40AF">Output</text>
     </svg>
   `,
 

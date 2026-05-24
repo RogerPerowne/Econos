@@ -197,6 +197,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Capital',
       lede: '<strong>Capital</strong> refers to man-made resources used to produce other goods and services — tools, equipment, machinery, buildings and infrastructure. It is built up through investment and can depreciate over time.',
+      visualKey: 'capitalTypesSvg',
       tip: { icon: '⚠️', tone: 'amber', text: 'A common exam trap: capital in economics means physical productive resources, <strong>NOT money</strong>. Money used to <em>buy</em> capital is "financial capital" — a different concept.' },
       pairFirst: true,
       pairLabel: 'Capital is not money',

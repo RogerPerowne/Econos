@@ -8,7 +8,7 @@ window.ECONOS_LINK_COMPLETE = {
   stations: [
     { id: 'context', label: 'Use the context',    max: 5, color: '#059669' },
     { id: 'chain',   label: 'Build the chain',    max: 3, color: '#f59e0b' },
-    { id: 'diagram', label: 'Diagram connector',  max: 9, color: '#7c3aed' },
+    { id: 'extract', label: 'Read the Extract',   max: 3, color: '#8B5CF6' },
     { id: 'depends', label: 'It depends on',      max: 3, color: '#2563eb' },
     { id: 'judge',   label: 'Make the judgement', max: 8, color: '#0891b2' }
   ],
@@ -38,10 +38,10 @@ window.ECONOS_LINK_COMPLETE = {
       { min: 50,  text: 'Clear causality — check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
-    diagram: [
-      { min: 80, text: 'Strong diagram reading' },
-      { min: 55, text: 'Good — check the outcome for P and Q' },
-      { min: 0,  text: 'Diagram work needs more attention' }
+    extract: [
+      { min: 80, text: 'Strong extract reading' },
+      { min: 55, text: 'Good — check your evidence application' },
+      { min: 0,  text: 'Extract analysis needs more attention' }
     ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
@@ -60,7 +60,7 @@ window.ECONOS_LINK_COMPLETE = {
   focusInLandIt: {
     context: 'Use specific evidence — the £5.2bn EA programme and the £8/£1 cost-benefit ratio — to anchor your application to the real-world flood defence case, not just generic public goods theory.',
     chain:   'State the chain explicitly: non-excludable → free rider → D_private ≈ 0 → no private revenue → zero market provision → general taxation solves free rider → Q* achieved.',
-    diagram: 'Draw both demand curves (D_social and D_private) and the supply curve S, label both equilibria (Q* and Q_private ≈ 0), and explain the welfare gap between what society truly values (D_social) and what the market reveals (D_private).',
+    extract: 'Use the Trinity House lighthouse example to show the historical debate about public goods provision. When applying the extract, identify whether each good meets both conditions (non-rival AND non-excludable) — partial excludability changes the policy prescription entirely.',
     depends: 'Lead with degree of non-excludability as your top condition — if the good is quasi-public (partially excludable), market mechanisms partially apply and taxation is not the only available solution.',
     judge:   'State a clear position, use the mechanism (non-excludable → free rider → D_private collapses → taxation solves), add the condition (pure vs quasi-public, CBA accuracy), and acknowledge the limitation honestly — government failure in setting Q* is the principal risk of state provision.'
   },

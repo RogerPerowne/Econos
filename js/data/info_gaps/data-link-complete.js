@@ -8,7 +8,7 @@ window.ECONOS_LINK_COMPLETE = {
   stations: [
     { id: 'context', label: 'Use the context',    max: 5, color: '#059669' },
     { id: 'chain',   label: 'Build the chain',    max: 3, color: '#f59e0b' },
-    { id: 'diagram', label: 'Diagram connector',  max: 9, color: '#7c3aed' },
+    { id: 'extract', label: 'Read the Extract',   max: 3, color: '#8B5CF6' },
     { id: 'depends', label: 'It depends on',      max: 3, color: '#2563eb' },
     { id: 'judge',   label: 'Make the judgement', max: 8, color: '#0891b2' }
   ],
@@ -38,10 +38,10 @@ window.ECONOS_LINK_COMPLETE = {
       { min: 50,  text: 'Clear causality — check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
-    diagram: [
-      { min: 80, text: 'Strong diagram reading' },
-      { min: 55, text: 'Good — check the outcome for P and Q' },
-      { min: 0,  text: 'Diagram work needs more attention' }
+    extract: [
+      { min: 80, text: 'Strong extract reading' },
+      { min: 55, text: 'Good — check your evidence application' },
+      { min: 0,  text: 'Extract analysis needs more attention' }
     ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
@@ -60,7 +60,7 @@ window.ECONOS_LINK_COMPLETE = {
   focusInLandIt: {
     context: 'Use specific evidence — the 25% missed repayment rate and the Which? checkout audit — to anchor your application to the real-world BNPL case, not just generic information gap theory.',
     chain:   'State the chain explicitly: hidden APR → consumers underestimate cost → D inflated from D_rational to D_biased → overconsumption at Q_biased → debt harm (missed repayments, debt collection).',
-    diagram: 'Draw both demand curves (D_biased and D_rational) and the supply curve S, label both equilibria (Q_biased and Q_rational), and shade the welfare loss area between D_biased and D_rational from Q_rational to Q_biased.',
+    extract: 'Apply the Akerlof lemons logic to BNPL: hidden information (APR) creates an adverse selection dynamic where high-risk borrowers are most likely to use BNPL, and lenders cannot price-discriminate effectively without disclosure. Use the extract to show how regulation corrects the information failure.',
     depends: 'Lead with salience as your top condition — if APR is buried in T&Cs rather than displayed prominently at checkout, the disclosure requirement cannot shift demand back to D_rational regardless of how well-designed the regulation is.',
     judge:   'State a clear position, use the mechanism (hidden APR → D_biased → disclosure → D shifts left), add the condition (salience, financial literacy, present bias), and acknowledge the limitation honestly — present bias may prevent disclosure from fully restoring rational demand.'
   },

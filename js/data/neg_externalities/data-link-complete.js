@@ -10,7 +10,6 @@ window.ECONOS_LINK_COMPLETE = {
     { id: 'chain',   label: 'Build the chain',    max: 3, color: '#f59e0b' },
     { id: 'extract', label: 'Read the Extract',   max: 3, color: '#8B5CF6' },
     { id: 'diagram', label: 'Diagram connector',  max: 9, color: '#7c3aed' },
-    { id: 'depends', label: 'It depends on',      max: 3, color: '#2563eb' },
     { id: 'judge',   label: 'Make the judgement', max: 8, color: '#0891b2' }
   ],
 

@@ -6,11 +6,12 @@
 window.ECONOS_LINK_CHAIN = {
   topic:   'Specialisation & Money',
   backUrl: TopicLoader.buildUrl('link_intro.html'),
-  nextUrl: TopicLoader.buildUrl('link_depends.html'),
+  nextUrl: TopicLoader.buildUrl('link_predict.html'),
 
   stations: [
     { id: 'context', label: 'Use the context',    href: TopicLoader.buildUrl('link_context.html') },
     { id: 'chain',   label: 'Build the chain',    href: TopicLoader.buildUrl('link_chain.html')   },
+    { id: 'predict', label: 'Predict the Outcome', href: TopicLoader.buildUrl('link_predict.html') },
     { id: 'depends', label: 'It depends on',      href: TopicLoader.buildUrl('link_depends.html') },
     { id: 'judge',   label: 'Make the judgement', href: TopicLoader.buildUrl('link_judge.html')   }
   ],

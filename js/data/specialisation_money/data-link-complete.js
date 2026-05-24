@@ -8,6 +8,7 @@ window.ECONOS_LINK_COMPLETE = {
   stations: [
     { id: 'context', label: 'Use the context',    max: 5, color: '#059669' },
     { id: 'chain',   label: 'Build the chain',    max: 3, color: '#f59e0b' },
+    { id: 'predict', label: 'Predict the Outcome', max: 4, color: '#7c3aed' },
     { id: 'depends', label: 'It depends on',      max: 3, color: '#2563eb' },
     { id: 'judge',   label: 'Make the judgement', max: 8, color: '#0891b2' }
   ],
@@ -37,6 +38,11 @@ window.ECONOS_LINK_COMPLETE = {
       { min: 50,  text: 'Clear causality — check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
+    predict: [
+      { min: 80, text: 'Strong outcome prediction' },
+      { min: 55, text: 'Good — check the direction of one variable' },
+      { min: 0,  text: 'Prediction skills need more practice' }
+    ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
       { min: 50, text: 'Good — one key condition missed' },
@@ -54,6 +60,7 @@ window.ECONOS_LINK_COMPLETE = {
   focusInLandIt: {
     context: 'Use specific examples — the pin factory, the 30,000-component car, Toyota\'s shutdown — to anchor your application to real-world evidence rather than abstract theory.',
     chain:   'State the chain explicitly: specialisation → surplus output → need for exchange → double coincidence of wants problem → money as solution → large-scale supply chains possible.',
+    predict: 'Apply the specialisation → surplus → money chain to novel scenarios. When a trade deal breaks down or barter fails, trace the mechanism through to the impact on output, exchange and living standards.',
     depends: 'Lead with task divisibility as your condition — if the production process cannot be subdivided, the division of labour offers no gains regardless of how skilled or motivated workers are.',
     judge:   'State a clear position, use the mechanism (division of labour → surplus → money → exchange), add the condition (task divisibility / human capital / exchange systems), and acknowledge the limitation (systemic vulnerability from interdependence).'
   },

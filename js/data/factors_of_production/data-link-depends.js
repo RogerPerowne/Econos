@@ -79,6 +79,8 @@ window.ECONOS_LINK_DEPENDS = {
       ],
       hint: 'Look for the factors that most decide whether mobility gains translate into output gains, not just the ones that affect the cost of the policy.',
       pickN: 3,
+      modelRanking: ['skills-match', 'capital-investment', 'geographic'],
+      judgement: '"Whether a large UK adult retraining scheme substantially raises GDP depends primarily on three conditions: the extent to which training matches genuine employer demand for skills; whether complementary capital investment accompanies the upskilled labour; and whether geographic mobility constraints — driven by housing costs in productive regions — prevent retrained workers from reaching the jobs. If skills match demand, LRAS shifts right and real output rises. If capital is absent or workers cannot move, the mobility gain is incomplete and GDP growth is modest."',
       examBridge: '"The scheme\'s output effect depends most on how well the training matches genuine employer demand, whether complementary capital investment accompanies it, and whether geographic mobility constraints (housing, transport) let retrained workers reach the jobs. Without all three, the policy produces qualified workers but limited GDP gains."'
     }
   ]

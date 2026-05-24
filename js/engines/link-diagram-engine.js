@@ -312,6 +312,29 @@
         + '</svg>';
     }
 
+    function thumbLRASLeft() {
+      /* LRAS₁ (dark solid) at x=75, LRAS₂ (grey dashed) shifted left to x=55; AD (green); SRAS (blue) */
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
+        + thumbDefs('clip-te', 'arr-te', '#374151')
+        + thumbAxes()
+        + '<g clip-path="url(#clip-te)">'
+          + '<line x1="75" y1="6"  x2="75" y2="84" stroke="#374151" stroke-width="1.5" opacity="0.55"/>'
+          + '<line x1="55" y1="6"  x2="55" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,2"/>'
+          + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
+          + '<line x1="22" y1="8"  x2="100" y2="70" stroke="#059669" stroke-width="2"/>'
+        + '</g>'
+        /* E₁ = AD at LRAS₁ (x=75) ≈ (75,50); E₂ = AD at LRAS₂ (x=55) ≈ (55,34) */
+        + '<circle cx="75" cy="50" r="5" fill="white"/>'
+        + '<circle cx="75" cy="50" r="3" fill="#2563eb" opacity="0.55"/>'
+        + '<circle cx="55" cy="34" r="5" fill="white"/>'
+        + '<circle cx="55" cy="34" r="3" fill="#374151"/>'
+        + '<text x="80" y="62" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="38" y="28" font-size="9" font-weight="600" fill="#374151" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
+        /* Arrow at y=20 pointing left: from x=70 to x=60 */
+        + '<line x1="70" y1="20" x2="60" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#arr-te)"/>'
+        + '</svg>';
+    }
+
     function thumbADLeft() {
       /* AD₂ dashed starts at x=5 — would cross y-axis; clipPath handles it */
       return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
@@ -427,6 +450,7 @@
       'sras-left':  thumbSRASLeft,
       'ad-right':   thumbADRight,
       'lras-right': thumbLRASRight,
+      'lras-left':  thumbLRASLeft,
       'ad-left':    thumbADLeft,
       's-right':    thumbSRight,
       's-left':     thumbSLeft,

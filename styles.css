@@ -8509,8 +8509,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
 .judge-cloze {
   font-family: var(--font-display);
   font-variation-settings: "opsz" 48, "SOFT" 50, "WONK" 1;
-  font-size: 18px;
-  line-height: 2;
+  font-size: 15px;
+  line-height: 1.75;
   color: var(--econ-ink);
   padding: var(--sp-5) var(--sp-5);
   background: var(--econ-white);

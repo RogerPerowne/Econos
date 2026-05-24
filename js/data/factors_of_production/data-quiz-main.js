@@ -7,149 +7,180 @@
     subtitle: 'Theme 1 &middot; Topic 1.1.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'factors_of_production' }),
     backLabel: 'Back to Learn It',
-    lede: '10 questions · ~8 minutes · covers the four factors, their rewards, quantity vs quality, factor mobility, and supply-side policy',
+    lede: '10 questions · ~10 minutes · covers the four factors, rewards, quantity vs quality, mobility, and applying the framework to UK labour shortages',
     shortNames: [
-      'Land definition', 'Labour examples', 'Capital MCQ', 'Enterprise reward',
-      'Match rewards', 'Quantity vs quality', 'Mobility types', 'Policy lever',
-      'Odd one out', 'UK shortages context'
+      'Categorise factors', 'Capital MCQ', 'Match rewards', 'Sequence retraining',
+      'Cause & effect: policy', 'Odd one out', 'UK labour data', 'Evaluation multi-select',
+      'Mobility para-fill', 'Participation rate'
     ],
 
     questions: [
 
-      /* 1 — MCQ: Land definition */
-      { type: 'mcq',
+      /* 1 — Categorise: sort items into the four factors */
+      { type: 'categorise',
         id: 'q_fop_1',
-        stem: '<strong>Land</strong>, as a factor of production, is best defined as:',
-        opts: [
-          'All natural resources used in production — including soil, minerals, water, forests and fisheries',
-          'Only the physical surface area on which production takes place — buildings and farmland',
-          'Real estate that can be bought, sold or rented in property markets',
-          'The capital invested in agricultural production'
+        stem: 'Sort each example into the correct <strong>factor of production</strong>.',
+        categories: ['Land', 'Labour', 'Capital', 'Enterprise'],
+        items: [
+          { text: 'North Sea oil and gas reserves',                                 category: 'Land' },
+          { text: 'A nurse working a 12-hour shift in an NHS hospital',             category: 'Labour' },
+          { text: 'A robotic assembly line in a Nissan car plant',                  category: 'Capital' },
+          { text: 'A founder taking personal financial risk to launch a tech startup', category: 'Enterprise' },
+          { text: 'A patent owned by a pharmaceutical firm',                        category: 'Capital' },
+          { text: 'The fish stocks of the North Atlantic',                          category: 'Land' },
+          { text: 'A software developer writing code',                              category: 'Labour' },
+          { text: 'A managing director coordinating land, labour and capital to grow output', category: 'Enterprise' }
         ],
-        ans: 0,
-        exp: '<strong>Land</strong>: all <em>natural resources</em> used in production — the gifts of nature that exist without human effort. This includes the physical surface, but also minerals (oil, gas, metals), water, forests, fisheries and air. The reward for land is <strong>rent</strong>. Land is in fixed supply (perfectly inelastic), which is what allows owners to charge for its use. The textbook error is to confuse "land" with property real estate — in economics, the term is much broader. Importantly, land is <em>not</em> the same as capital: capital is man-made, land is naturally occurring.'
+        exp: '<strong>Land</strong> = naturally occurring resources (oil, gas, fish stocks, soil, minerals, water, forests). <strong>Labour</strong> = human effort, physical and mental (nurses, developers, drivers). <strong>Capital</strong> = man-made productive resources, including intangibles like patents (machinery, infrastructure, IP). <strong>Enterprise</strong> = risk-taking and the organising function that combines the other three to produce goods and services. Classic mistakes: confusing patents (intangible capital) with enterprise, or treating a CEO managing a firm (enterprise) as ordinary labour. The risk-bearing element is what distinguishes enterprise from labour.'
       },
 
-      /* 2 — MCQ: Labour examples */
+      /* 2 — MCQ: capital common error */
       { type: 'mcq',
         id: 'q_fop_2',
-        stem: 'Which of the following is the clearest example of the <strong>labour</strong> factor of production?',
-        opts: [
-          'A nurse working a 12-hour shift treating patients in an NHS hospital',
-          'A delivery van used by a courier company',
-          'A patent owned by a pharmaceutical firm',
-          'An office building leased by an accountancy firm'
-        ],
-        ans: 0,
-        exp: '<strong>Labour</strong> is the <em>human effort</em> — physical and mental — applied to production. A nurse working a shift is delivering labour: their time, skill and effort contribute directly to producing healthcare. The other options are <em>capital</em> (delivery van, office building) or intangible capital (patent). The reward for labour is <strong>wages</strong>. The quality of labour (skills, education, health) and the quantity (population × participation rate × hours) both matter — modern A-level questions test the quantity vs quality distinction frequently.'
-      },
-
-      /* 3 — MCQ: Capital common error */
-      { type: 'mcq',
-        id: 'q_fop_3',
         stem: 'Which statement about <strong>capital</strong> as a factor of production is correct?',
         opts: [
-          'Capital is any man-made resource used to produce other goods and services — including machinery, tools, buildings and infrastructure',
-          'Capital is the money a firm has in its bank account to fund production',
+          'Capital is any man-made resource used to produce other goods and services — including machinery, tools, buildings, infrastructure, and patents',
+          'Capital is the money a firm has in its bank account that it can use to fund production',
           'Capital is the financial investment of shareholders in a company',
-          'Capital refers only to large fixed assets like factories, not smaller tools or equipment'
+          'Capital refers only to large fixed assets like factories — not smaller tools, IT equipment or intangibles'
         ],
         ans: 0,
-        exp: '<strong>Capital</strong> is <em>man-made productive resources</em> — machinery, tools, buildings, vehicles, technology, infrastructure. It does <strong>not</strong> mean money. Money is a medium of exchange that can be used to <em>buy</em> capital, but money itself doesn\'t produce anything. The reward for capital is <strong>interest</strong> — payment for the use of capital and for the opportunity cost of investing it rather than using funds elsewhere. The classic A-level error is "capital = money" — examiners deduct marks every time. Capital also includes "human capital" (skills) in some definitions, though most syllabuses keep that conceptually with labour.'
+        exp: '<strong>Capital</strong> is man-made productive resources — machinery, tools, buildings, vehicles, infrastructure, technology, and intangibles like patents and software. It does <strong>not</strong> mean money. Money is a medium of exchange that can be used to buy capital, but money itself doesn\'t produce anything. The reward for capital is <strong>interest</strong> — payment for use and for the opportunity cost of investing capital rather than using funds elsewhere. The classic A-level error is "capital = money" — examiners deduct marks every time. The UK\'s low business investment per worker (about 25% below the G7 average) is a capital-quantity and quality problem holding back productivity.'
       },
 
-      /* 4 — MCQ: Enterprise reward */
-      { type: 'mcq',
-        id: 'q_fop_4',
-        stem: 'The reward for the <strong>enterprise</strong> factor of production is:',
-        opts: [
-          'Profit — the residual after all other costs (rent, wages, interest) have been paid',
-          'Wages — a fixed payment for the entrepreneur\'s time',
-          'Interest — payment for the capital the entrepreneur owns',
-          'Rent — payment for the land the entrepreneur owns'
-        ],
-        ans: 0,
-        exp: '<strong>Enterprise</strong> is the risk-taking and organising function that combines the other three factors. The reward is <strong>profit</strong> — the <em>residual</em> return after paying rent (to land), wages (to labour), and interest (to capital). Profit is special because it is <em>not guaranteed</em>: entrepreneurs may earn a loss instead. This is the compensation for bearing risk and for the entrepreneurial judgement involved. Calling profit "wages for the boss" is wrong — wages are a contractual payment regardless of outcome, profit is the residual that depends on the firm\'s success. The four-way pairing — Land→Rent, Labour→Wages, Capital→Interest, Enterprise→Profit — is the most-tested fact in this topic.'
-      },
-
-      /* 5 — Match pairs: factor → reward */
+      /* 3 — Match pairs: factor → reward */
       { type: 'match_pairs',
+        id: 'q_fop_3',
+        stem: 'Match each <strong>factor of production</strong> to the reward it earns.',
+        pairs: [
+          { a: 'Land',       b: 'Rent — paid because supply is fixed and owners can charge for use' },
+          { a: 'Labour',     b: 'Wages — payment for time, effort and skill applied to production' },
+          { a: 'Capital',    b: 'Interest — reward for use and the opportunity cost of waiting' },
+          { a: 'Enterprise', b: 'Profit — the residual return after rent, wages and interest are paid' }
+        ],
+        exp: 'The four-way mapping is the most-tested fact in this topic: <strong>Land → Rent</strong>, <strong>Labour → Wages</strong>, <strong>Capital → Interest</strong>, <strong>Enterprise → Profit</strong>. Profit is special because it is the <em>residual</em> after all contractual payments are made — it is not guaranteed and can be negative (a loss). Wages and rent are typically contracted; profit is the entrepreneur\'s reward for bearing the risk that revenue may not cover costs. Common errors: "labour earns profit" (no — profit is the entrepreneur\'s residual) and "capital earns wages" (no — wages are paid to people, interest to capital).'
+      },
+
+      /* 4 — Sequence: how a successful retraining scheme raises GDP */
+      { type: 'sequence',
+        id: 'q_fop_4',
+        stem: 'A large adult retraining scheme upgrades displaced workers\' skills for shortage occupations. Place the steps showing how the policy raises real GDP in the correct order.',
+        instr: 'Tap the steps in the correct order, from first to last.',
+        items: [
+          { label: 'Workers gain new skills — quality of labour rises and occupational mobility improves', note: '' },
+          { label: 'Retrained workers fill vacancies in care, HGV driving and construction', note: '' },
+          { label: 'Persistent shortage-sector vacancies fall; structural unemployment drops', note: '' },
+          { label: 'Each worker is now in a higher-productivity use — output per worker rises', note: '' },
+          { label: 'LRAS shifts right as the economy\'s productive capacity expands', note: '' },
+          { label: 'Real GDP rises and inflationary pressure from supply bottlenecks eases', note: '' }
+        ],
+        correctOrder: [0, 1, 2, 3, 4, 5],
+        exp: 'The chain is the canonical supply-side outcome: skills upgrade (labour quality) → occupational mobility improves → workers move into shortage sectors → vacancies fall and each worker is more productive → LRAS shifts right → real output rises with downward pressure on prices. The mechanism is improved <strong>factor reallocation</strong> — the same labour force produces more output because each worker is now in a higher-productivity use. This is why supply-side policies are scored on whether they raise <em>quality</em> and <em>mobility</em>, not just <em>quantity</em>.'
+      },
+
+      /* 5 — Cause & effect: policy levers and their effects */
+      { type: 'cause_effect',
         id: 'q_fop_5',
-        stem: 'Match each <strong>factor of production</strong> to its reward.',
-        leftItems:  ['Land', 'Labour', 'Capital', 'Enterprise'],
-        rightItems: ['Rent', 'Wages', 'Interest', 'Profit'],
-        correct:    [0, 1, 2, 3],
-        exp: '<strong>Land → Rent</strong> (natural resources earn rent because supply is fixed). <strong>Labour → Wages</strong> (human effort earns wages — payment for time and skill). <strong>Capital → Interest</strong> (productive assets earn interest — reward for use and the opportunity cost of waiting). <strong>Enterprise → Profit</strong> (risk-taking earns profit — the residual, not guaranteed). This is the four-way mapping you must lock in. Common errors: "labour earns profit" (no — profit is the entrepreneur\'s residual), "capital earns wages" (no — wages are paid to people, interest to capital). The classic exam tip: always link the factor explicitly to its reward in your written answers.'
+        stem: 'Match each UK supply-side policy to its primary effect on the labour factor of production.',
+        pairs: [
+          { cause: 'Expanding free childcare for under-5s',           effect: 'Raises the quantity of labour by lifting participation among parents (mostly mothers)' },
+          { cause: 'A national adult retraining programme',           effect: 'Raises the quality of labour and improves occupational mobility into shortage sectors' },
+          { cause: 'Planning reform to allow more housebuilding in productive regions', effect: 'Raises geographic mobility by lowering housing costs in high-productivity areas' },
+          { cause: 'Improved careers information and advice in schools', effect: 'Raises occupational mobility by helping new entrants choose training and roles employers actually need' },
+          { cause: 'Higher state pension age',                        effect: 'Raises the quantity of labour by keeping older workers in the workforce for longer' },
+          { cause: 'Investment in inter-city rail and bus networks',   effect: 'Raises geographic mobility by widening the area workers can commute within' }
+        ],
+        exp: 'Each policy targets a specific dimension of the labour factor: <strong>quantity</strong> (childcare, pension age) brings more workers in; <strong>quality</strong> (retraining) makes each worker more productive; <strong>occupational mobility</strong> (retraining, careers info) helps workers switch jobs/sectors; <strong>geographic mobility</strong> (housing, transport) helps workers reach the jobs. A strong exam answer identifies <em>which</em> dimension a policy targets and explains why that matters for the outcome (e.g. retraining without complementary capital investment produces qualified workers in obsolete jobs).'
       },
 
-      /* 6 — MCQ: quantity vs quality */
-      { type: 'mcq',
+      /* 6 — Odd one out: capital identification */
+      { type: 'odd_one_out',
         id: 'q_fop_6',
-        stem: 'Which of the following is a change in the <strong>quality</strong> of labour rather than the <strong>quantity</strong>?',
-        opts: [
-          'A nationwide adult retraining programme that upgrades workers\' skills in shortage sectors',
-          'A rise in net inward migration that adds 200,000 workers to the labour force',
-          'A reduction in the school leaving age that brings 16-year-olds into the labour force a year earlier',
-          'A higher state pension age that delays workers\' retirement by two years'
+        stem: 'Three of these are examples of the <strong>capital</strong> factor of production. Which is the <strong>odd one out</strong>?',
+        items: [
+          { icon: '🛣️', label: 'The M25 motorway and surrounding infrastructure', note: '' },
+          { icon: '🛢️', label: 'North Sea oil and gas reserves',                  note: '' },
+          { icon: '🤖', label: 'A robotic welding arm on a car production line',   note: '' },
+          { icon: '💻', label: 'Enterprise software licensed by a logistics firm', note: '' }
         ],
-        ans: 0,
-        exp: '<strong>Quality</strong> of labour means the productivity of each worker — their skills, education, training, health, motivation. A retraining programme upgrades skills, raising output per worker. <strong>Quantity</strong> of labour means the number of workers and hours available (population × participation rate × hours per worker). Migration, lower school leaving age, and higher state pension age all change the <em>quantity</em> (more workers, or workers for longer). The same distinction applies to capital (quantity = stock of machines; quality = how modern/productive they are) and to enterprise (quantity = number of entrepreneurs; quality = managerial skill). A-level evaluation answers often hinge on whether a policy raises quality or quantity — they have different effects on LRAS and on long-run productivity.'
+        ans: 1,
+        exp: 'The odd one out is <strong>North Sea oil and gas reserves</strong> — a natural resource, so it is <strong>land</strong>, not capital. The other three are all capital: the M25 is physical infrastructure (built by humans); the robotic welder is physical capital; the software licence is intangible capital. Capital is <em>man-made</em>; land is <em>naturally occurring</em>. This distinction matters for the rewards too: oil reserves earn <em>rent</em> (because supply is fixed), while infrastructure, machinery and software earn <em>interest</em> (because they were created using saved resources that had alternative uses).'
       },
 
-      /* 7 — MCQ: occupational vs geographic mobility */
-      { type: 'mcq',
+      /* 7 — Data table: UK labour market 2023 */
+      { type: 'data_table',
         id: 'q_fop_7',
-        stem: 'The UK has persistent vacancies in social care while many former retail workers are unemployed. This is the clearest example of:',
+        stem: 'The table shows approximate UK labour-market indicators for 2023, with the pre-pandemic 2019 figures for comparison.',
+        headers: ['Indicator', '2019', '2023', 'Change'],
+        rows: [
+          ['Labour force (millions, 16+)',           '34.0',       '33.7',     '−0.3m'],
+          ['Inactive, long-term sick (millions)',    '2.1',        '2.8',      '+0.7m'],
+          ['Job vacancies (millions)',               '0.8',        '1.0',      '+0.2m'],
+          ['Apprenticeship starts (000s, annual)',   '393',        '337',      '−14%'],
+          ['Business investment per worker (UK vs G7 average)', '−22%', '−25%', 'wider gap']
+        ],
+        question: 'Which conclusion is <strong>best supported</strong> by the data?',
         opts: [
-          'Occupational immobility of labour — workers cannot easily move between different types of job',
-          'Geographic immobility of labour — workers cannot easily move between different regions',
-          'A shortage in the supply of land',
-          'A fall in the demand for labour overall'
+          'The UK faces both a fall in the quantity of labour and a persistent skills-mismatch problem; together with a widening capital-investment gap, a combined supply-side response (quantity + quality + capital) is appropriate',
+          'The data show a pure aggregate demand problem; supply-side policy is not the right response',
+          'Vacancies have risen, so the labour market is in surplus — no policy intervention is required',
+          'The only problem is the apprenticeship fall — fixing that alone would close the entire labour shortage'
         ],
         ans: 0,
-        exp: '<strong>Occupational immobility</strong>: workers cannot easily switch <em>between jobs of different kinds</em>. Skills are job-specific and don\'t always transfer — a retail worker cannot immediately do social care without training, qualifications and (often) a DBS check. This produces structural unemployment alongside unfilled vacancies. <strong>Geographic immobility</strong>, by contrast, is the inability to move <em>between places</em> — typically caused by high housing costs, family ties, or transport gaps. Policy levers differ: occupational immobility is targeted by apprentices, retraining and careers information; geographic immobility by housing reform and transport investment. Strong A-level answers identify which type of immobility is at work and match the policy to the cause.'
+        exp: 'The data tell a multi-dimensional supply-side story: (1) labour <strong>quantity</strong> has fallen (labour force −0.3m, long-term sick +0.7m); (2) <strong>quality and mobility</strong> are weakening (apprenticeship starts down 14%); (3) <strong>capital</strong> is also lagging (investment-per-worker gap has widened from −22% to −25%). Persistent vacancies alongside fewer workers is the textbook signal of occupational immobility — skills don\'t match the jobs available. A serious response needs all three levers acting together. Option B ignores the structural story; C confuses vacancies with surplus (high vacancies = unfilled jobs); D oversimplifies a multi-causal problem.'
       },
 
-      /* 8 — MCQ: policy lever */
-      { type: 'mcq',
+      /* 8 — Multi-select: genuine evaluation */
+      { type: 'multi_select',
         id: 'q_fop_8',
-        stem: 'Which UK policy most directly raises the <strong>quantity</strong> of labour rather than its quality or mobility?',
+        stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the claim that "improving factor mobility would substantially raise UK output"?',
         opts: [
-          'Expanding free childcare provision for working parents of under-5s',
-          'Funding a national adult retraining programme in shortage occupations',
-          'Improving careers information and advice in secondary schools',
-          'Reforming planning rules to allow more housebuilding in productive regions'
+          'Improving factor mobility involves both occupational and geographic dimensions',
+          'Retraining only raises output when training matches genuine employer demand — the OBR\'s modest 60,000-person estimate for childcare expansion shows that any single mobility lever is incremental rather than transformative',
+          'Mobility policy is irrelevant because the only thing that matters is aggregate demand',
+          'Even fully-mobile workers cannot lift productivity without complementary capital — the UK\'s 25% capital-investment gap means mobility policies alone will produce qualified workers on outdated equipment, blunting the output effect',
+          'A national retraining programme would always raise output because skills are always valuable',
+          'The geographic-mobility argument depends heavily on housing reform: with house-price-to-earnings ratios of 10–14× in productive regions, retrained workers cannot reach the jobs without parallel planning reform — so mobility policy is contingent on housing policy'
         ],
-        ans: 0,
-        exp: '<strong>Free childcare</strong> reduces a barrier to participation, allowing parents (mostly mothers) to enter or re-enter the workforce. This raises the <em>quantity</em> of labour — adding workers who would otherwise be economically inactive. The OBR estimates the 2024 UK childcare expansion will add about 60,000 workers over five years. <strong>Retraining</strong> raises quality and occupational mobility; <strong>careers information</strong> raises occupational mobility; <strong>housing reform</strong> raises geographic mobility. All four are valid supply-side policies, but each targets a different dimension of the factor-of-production framework. A strong exam answer identifies which dimension a policy is targeting and explains why that matters for the predicted outcome.'
+        correct: [1, 3, 5],
+        exp: '<strong>B, D and F demonstrate evaluation.</strong> B qualifies the claim by introducing a condition (skills-employer match) and a scale check (OBR\'s 60k estimate). D introduces a complementary-factors qualification — labour and capital are complements, not substitutes. F links the labour-mobility argument to a parallel housing constraint, reaching a context-dependent conclusion. A is a description, not evaluation. C is an unsupported assertion that ignores the supply-side mechanism. E overstates ("always raises output") — strong evaluation avoids universal claims and identifies the conditions under which the claim holds.'
       },
 
-      /* 9 — Odd one out */
-      { type: 'mcq',
+      /* 9 — Para fill: factor mobility */
+      { type: 'para_fill',
         id: 'q_fop_9',
-        stem: 'Which of these is <strong>NOT</strong> a man-made factor of production?',
-        opts: [
-          'North Sea oil reserves',
-          'A robotic assembly line in a Nissan plant',
-          'The London Underground rail network',
-          'Patented pharmaceutical formulations owned by GSK'
+        stem: 'Complete the paragraph summarising factor mobility and supply-side policy.',
+        anchor: 'Factor mobility shapes how quickly an economy can adjust to change.',
+        para: 'Factor mobility describes how easily factors of production can move between different [1] (occupational mobility) and between different [2] (geographic mobility). Where workers are unable to switch jobs because their skills don\'t match available vacancies, the economy experiences [3] unemployment alongside unfilled posts. A retraining programme primarily raises [4] mobility by upgrading the skills of the workforce, which is also an improvement in labour [5]. Housing reform and transport investment, by contrast, target [6] mobility by reducing the cost of moving to where the jobs are. Free childcare provision raises the [7] of labour by enabling parents to enter or re-enter the workforce. When mobility-raising policies succeed, the economy\'s productive capacity expands and the [8] curve shifts to the right, lifting real output and easing inflationary pressure from supply bottlenecks.',
+        blanks: [
+          { id: 1, opts: ['uses',         'incomes',       'industries only', 'currencies'],  ans: 0 },
+          { id: 2, opts: ['locations',    'time periods',  'price levels',    'firms'],       ans: 0 },
+          { id: 3, opts: ['structural',   'frictional',    'cyclical',        'seasonal'],    ans: 0 },
+          { id: 4, opts: ['occupational', 'geographic',    'financial',       'political'],   ans: 0 },
+          { id: 5, opts: ['quality',      'quantity',      'cost',            'price'],       ans: 0 },
+          { id: 6, opts: ['geographic',   'occupational',  'industrial',      'legal'],       ans: 0 },
+          { id: 7, opts: ['quantity',     'quality',       'cost',            'price'],       ans: 0 },
+          { id: 8, opts: ['LRAS',         'AD',            'demand',          'Phillips'],    ans: 0 }
         ],
-        ans: 0,
-        exp: 'North Sea oil reserves are a natural resource — <strong>land</strong>, in factor-of-production terms. The other three options are all <strong>capital</strong>: man-made productive resources (a robotic line is physical capital; rail infrastructure is physical capital; patents are intangible capital). The fixed-supply nature of oil reserves is what makes them earn <em>rent</em> rather than <em>interest</em>. This question tests whether you can apply the land/capital distinction to specific real-world examples — examiners use this discrimination point to separate strong answers from weak ones.'
+        exp: '(1) Different <strong>uses</strong> = occupational mobility. (2) Different <strong>locations</strong> = geographic mobility. (3) <strong>Structural</strong> unemployment is the textbook signal of occupational immobility — jobs exist but the unemployed lack matching skills. (4) Retraining → <strong>occupational</strong> mobility. (5) Skills upgrade is also a labour <strong>quality</strong> improvement. (6) Housing and transport → <strong>geographic</strong> mobility. (7) Childcare → labour <strong>quantity</strong> (more workers participate). (8) The macro effect is a rightward shift of <strong>LRAS</strong> — higher productive capacity at every price level.'
       },
 
-      /* 10 — Data table: factor mobility and shortages */
-      { type: 'mcq',
+      /* 10 — Numeric input: labour-force participation rate */
+      { type: 'numeric_input',
         id: 'q_fop_10',
-        stem: 'In 2024, the UK has roughly <strong>700,000 fewer workers in the labour force than its pre-pandemic trend</strong> would predict, and persistent vacancies in social care, hospitality and HGV driving. Which conclusion is best supported by these facts?',
-        opts: [
-          'The UK faces both a fall in the quantity of labour and an occupational immobility problem, so a combined supply-side response (childcare + retraining) is appropriate',
-          'The UK simply needs more migration — no other policy lever is necessary',
-          'The UK has a pure aggregate demand problem and supply-side policy is irrelevant',
-          'The fall in labour force size means inflation will automatically rise regardless of policy'
+        stem: 'Calculate the UK <strong>labour-force participation rate</strong> as a percentage of the working-age population.',
+        context: 'In a given year, the UK working-age population (16–64) is <strong>42.0 million</strong>. Of these, <strong>32.0 million are employed</strong>, <strong>1.4 million are unemployed and actively seeking work</strong>, and the remainder are <strong>economically inactive</strong> (long-term sick, students, carers, early retirees).',
+        answer: 79.5,
+        tolerance: 0.5,
+        unit: '%',
+        hint: 'Labour force = employed + unemployed. Participation rate = labour force ÷ working-age population × 100.',
+        workingSteps: [
+          'Labour force = 32.0m (employed) + 1.4m (unemployed) = 33.4 million',
+          'Participation rate = 33.4m ÷ 42.0m × 100',
+          'Participation rate = 0.7952... × 100 ≈ 79.5%',
+          'Economically inactive = 42.0 − 33.4 = 8.6 million (about 20.5% of working-age population)'
         ],
-        ans: 0,
-        exp: 'A 700,000 worker gap reflects a <strong>quantity</strong> problem (the labour force has shrunk); persistent vacancies in care/hospitality/HGV alongside available workers reflect an <strong>occupational immobility</strong> problem (skills don\'t match jobs). The two problems call for different policy levers: <em>quantity</em> policies (childcare, immigration, raising the state pension age) and <em>mobility/quality</em> policies (retraining, apprenticeships, careers information). Strong analytical answers diagnose both dimensions and propose a combined response. The other options oversimplify: migration alone (b) ignores skills mismatch; pure AD analysis (c) ignores the structural supply story; automatic inflation (d) ignores monetary policy and AD weakness.'
+        exp: 'Labour force = employed + unemployed = 32.0m + 1.4m = <strong>33.4 million</strong>. Participation rate = 33.4 ÷ 42.0 × 100 = <strong>≈ 79.5%</strong>. The remaining <strong>8.6 million</strong> are economically inactive — they are not in the labour force at all. Mobility policies (childcare, occupational health, retraining) aim to convert some of this inactive group into active labour-force participants. Even a small percentage-point gain in the participation rate represents hundreds of thousands of additional workers — illustrating why the OBR\'s estimated 60,000-person gain from the 2024 childcare expansion is meaningful but modest set against the scale of the inactive population.'
       }
     ]
   };

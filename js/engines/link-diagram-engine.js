@@ -236,25 +236,26 @@
     }
 
     function thumbSRASLeft() {
-      /* SRAS₁ (blue, right), SRAS₂ (purple, left shifted), AD (green), LRAS (grey vertical) */
-      /* SRAS₂ starts at x=8 — would cross y-axis; clipPath handles it */
+      /* SRAS₁ (blue solid), SRAS₂ (blue dashed — same curve shifted left), AD (green), LRAS (grey) */
+      /* SRAS₂ starts at x=8 — clips cleanly behind y-axis */
+      /* E₁ = SRAS₁∩AD ≈ (62,39); E₂ = SRAS₂∩AD ≈ (49,29) — algebraically exact */
       return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
-        + thumbDefs('clip-ta', 'arr-ta', '#7c3aed')
+        + thumbDefs('clip-ta', 'arr-ta', '#2563eb')
         + thumbAxes()
         + '<g clip-path="url(#clip-ta)">'
           + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
           + '<line x1="25" y1="84" x2="90" y2="6"  stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="8"  y1="80" x2="68" y2="6"  stroke="#7c3aed" stroke-width="2"/>'
+          + '<line x1="8"  y1="80" x2="68" y2="6"  stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
           + '<line x1="22" y1="8"  x2="108" y2="75" stroke="#059669" stroke-width="2"/>'
         + '</g>'
-        + '<circle cx="64" cy="41" r="5" fill="white"/>'
-        + '<circle cx="64" cy="41" r="3" fill="#2563eb"/>'
-        + '<circle cx="49" cy="30" r="5" fill="white"/>'
-        + '<circle cx="49" cy="30" r="3" fill="#7c3aed"/>'
-        + '<text x="72" y="52" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="36" y="26" font-size="9" font-weight="600" fill="#7c3aed">E₂</text>'
-        /* At y=18: SRAS₁ at x≈80, SRAS₂ at x≈58. Arrow from 76→62, 4px buffer */
-        + '<line x1="76" y1="18" x2="62" y2="18" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
+        + '<circle cx="62" cy="39" r="5" fill="white"/>'
+        + '<circle cx="62" cy="39" r="3" fill="#2563eb"/>'
+        + '<circle cx="49" cy="29" r="5" fill="white"/>'
+        + '<circle cx="49" cy="29" r="3" fill="#2563eb" opacity="0.6"/>'
+        + '<text x="67" y="50" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
+        + '<text x="36" y="26" font-size="9" font-weight="600" fill="#2563eb" opacity="0.8">E₂</text>'
+        /* At y=18: SRAS₁ at x=80, SRAS₂ at x=58 — arrow from 76→62, 4px buffer each side */
+        + '<line x1="76" y1="18" x2="62" y2="18" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
     }
 

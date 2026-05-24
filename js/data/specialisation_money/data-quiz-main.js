@@ -5,169 +5,178 @@
     topicId:  'specialisation_money_main',
     title:    'Specialisation &amp; Money',
     subtitle: 'Theme 1 &middot; Topic 1.5 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the division of labour, gains from specialisation, Smith\'s pin factory, the double coincidence of wants problem, the four functions of money, and the characteristics of good money. Mixed formats &#8212; classification, paragraph completion, evaluation multi-select, data table &#8212; designed for the analysis marks Edexcel rewards.',
-    shortNames: {
-      'specialisation_money_1': 'Division of labour',
-      'specialisation_money_2': 'Benefits of specialisation',
-      'specialisation_money_3': 'Benefits vs limitations',
-      'specialisation_money_4': 'Problem with barter',
-      'specialisation_money_5': 'Four functions of money',
-      'specialisation_money_6': 'Characteristics of money',
-      'specialisation_money_7': 'Development link'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'specialisation_money_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers division of labour, barter problem, four functions of money, characteristics of good money, and globalisation links',
+    shortNames: [
+      'Division of labour', 'Benefits sort', 'Barter problem MCQ', 'Functions of money sort',
+      'Characteristics match', 'Para fill', 'Cause & effect', 'Odd one out',
+      'Data table', 'Evaluation multi-select'
+    ],
 
     questions: [
 
-      /* 1 &#8212; MCQ: division of labour */
+      /* 1 — MCQ: division of labour */
       { type: 'mcq',
-        stem: 'Adam Smith\'s pin factory example (Wealth of Nations, 1776) demonstrated that 10 workers applying the <strong>division of labour</strong> could produce approximately 48,000 pins per day. The same workers without specialisation might produce around 200 pins. This primarily illustrates which economic principle?',
+        id: 'q_spec_1',
+        stem: 'Adam Smith\'s famous pin factory example illustrates the benefits of the <strong>division of labour</strong>. What is the primary economic argument?',
         opts: [
-          'Specialisation and division of labour can raise productivity by a very large multiple &#8212; in this case approximately 240 times &#8212; through dexterity, time-saving, and task-specific machinery',
-          'Capital equipment is always more important than labour in raising output; the machinery alone accounts for the productivity gain',
-          'Large firms are always more efficient than small ones; scale is the primary driver of the output increase',
-          'Trade allows countries to consume beyond their PPF; Smith\'s example shows comparative advantage between workers'
+          'By breaking production into specialised tasks, each worker develops skill through repetition, tools can be designed for specific tasks, and time is saved switching between activities — dramatically raising output per worker',
+          'Dividing labour means firms can pay workers less per hour — the cost savings are the main benefit',
+          'Specialisation ensures that every worker is equally productive regardless of their natural abilities',
+          'The division of labour is only possible in manufacturing — service industries cannot benefit from specialisation'
         ],
         ans: 0,
-        exp: 'Smith identified <strong>three sources</strong> of the productivity gain from division of labour: (1) dexterity &#8212; workers become expert through repetition; (2) time-saving &#8212; no time lost switching between tasks; (3) task-specific machinery &#8212; specialised tools optimised for each step. The productivity multiple of approximately 240 is a direct result of these three gains combined. The example applies at the firm level (division of labour) and at the national level (comparative advantage). It does not make a general claim about firm size or capital vs labour.'
+        exp: 'Smith\'s pin factory (Wealth of Nations, 1776): one worker making pins alone might produce 20 per day. With 18 workers each specialising in one of the 18 steps (drawing wire, cutting, pointing, etc.), the factory produces 48,000 pins per day — 2,400 per worker. The gains come from: <strong>skill development</strong> through repetition; <strong>specialised capital</strong> (tools designed for specific tasks); <strong>no time lost</strong> switching between activities. These gains apply to services too (an accountant vs a doctor vs a lawyer all specialise rather than each person doing all professional tasks).'
       },
 
-      /* 2 &#8212; Elastic sort: benefits vs limitations of specialisation */
+      /* 2 — Elastic sort: benefits vs limitations of specialisation */
       { type: 'elastic_sort',
-        stem: 'Classify each statement as a <strong>benefit</strong> or a <strong>limitation</strong> of specialisation.',
-        categories: ['benefit', 'limit'],
-        categoryLabels: ['Benefit of specialisation', 'Limitation of specialisation'],
+        id: 'q_spec_2',
+        stem: 'Classify each statement as a <strong>benefit</strong> or <strong>limitation</strong> of specialisation and the division of labour.',
+        categories: ['benefit', 'limitation'],
+        categoryLabels: ['Benefit of specialisation', 'Limitation / drawback'],
         goods: [
-          { icon: '&#128200;', label: 'Repetition and focus develop expert skills, raising output per worker', note: '', ans: 'benefit' },
-          { icon: '&#128683;', label: 'Repetitive tasks cause worker boredom, alienation, and higher absenteeism', note: '', ans: 'limit' },
-          { icon: '&#127758;', label: 'Countries exploit comparative advantage, raising global output above autarky levels', note: '', ans: 'benefit' },
-          { icon: '&#9940;', label: 'A single supply-chain bottleneck (e.g. semiconductor shortage) can disrupt entire industries', note: '', ans: 'limit' },
-          { icon: '&#128202;', label: 'Lower unit costs through economies of scale and specialised machinery', note: '', ans: 'benefit' },
-          { icon: '&#128119;', label: 'Structural unemployment if a specialised skill becomes obsolete (e.g. coal mining)', note: '', ans: 'limit' }
+          { icon: '📈', label: 'Labour productivity rises as workers develop deep skill in a narrow task', note: '', ans: 'benefit' },
+          { icon: '😴', label: 'Repetitive tasks cause worker alienation, boredom, and high staff turnover', note: '', ans: 'limitation' },
+          { icon: '⚙️', label: 'Capital equipment can be designed specifically for each specialised task', note: '', ans: 'benefit' },
+          { icon: '⚠️', label: 'Production is vulnerable — if one worker is absent, the whole chain may stop', note: '', ans: 'limitation' },
+          { icon: '🌍', label: 'International specialisation allows countries to export what they produce best', note: '', ans: 'benefit' },
+          { icon: '🔧', label: 'Structural unemployment rises if a specialised industry declines', note: '', ans: 'limitation' }
         ],
-        exp: '<strong>Benefits</strong>: dexterity/skill from repetition; exploitation of comparative advantage; economies of scale. <strong>Limitations</strong>: worker alienation (Marx\'s critique); supply-chain vulnerability (2021 semiconductor crisis, COVID-19 showed this graphically); structural unemployment when specialisms become redundant. The evaluative point is that the gains from specialisation require exchange (and therefore money) to be realised &#8212; and create interdependency that raises vulnerability to disruption.'
+        exp: '<strong>Benefits</strong>: higher productivity through skill and repetition; specialised capital; international trade and comparative advantage. <strong>Limitations</strong>: worker alienation and boredom (Marx\'s critique of industrial capitalism); production interdependence creates fragility (one absent worker halts the line); <strong>structural unemployment</strong> — when a specialised industry declines (e.g. UK coal mining), workers with narrow skills find it hard to transfer to other sectors. Trade-off: specialisation raises aggregate output but creates distributional and resilience risks.'
       },
 
-      /* 3 &#8212; MCQ: double coincidence of wants */
+      /* 3 — MCQ: barter and double coincidence */
       { type: 'mcq',
-        stem: 'A <strong>double coincidence of wants</strong> is best defined as:',
+        id: 'q_spec_3',
+        stem: 'The <strong>double coincidence of wants</strong> problem makes barter extremely inefficient. What does this problem involve?',
         opts: [
-          'The condition in barter where each party must simultaneously want exactly what the other has to offer, at the same time and place',
-          'A situation where two countries simultaneously gain from trade due to comparative advantage',
-          'The requirement that money must simultaneously serve as a medium of exchange and a store of value',
-          'A condition where demand and supply are equal in both the goods market and the labour market at the same time'
+          'For a trade to occur, both parties must simultaneously want exactly what the other is offering — a near-impossible requirement in a complex economy',
+          'Barter requires both traders to agree on the same price in money terms before the exchange can occur',
+          'The problem arises because people in barter economies always want to consume more than they produce',
+          'Both parties in a barter transaction must be in the same geographic location at the same time'
         ],
         ans: 0,
-        exp: 'The <strong>double coincidence of wants</strong> is the fundamental problem of barter: for exchange to occur, A must want what B has AND B must want what A has &#8212; simultaneously, in the same place. As economies grow and diversify, this condition becomes increasingly difficult to satisfy. With N goods, there are N(N&#8722;1)/2 possible exchange ratios &#8212; with 1,000 goods, that is 499,500 different prices. Money solves this by reducing the number of prices to N (one per good in money terms) and decoupling the timing and location of transactions.'
+        exp: 'In a barter economy, for A to trade with B: A must want what B has, AND B must want what A has — simultaneously. This double coincidence is rarely satisfied. A baker who wants shoes must find a shoemaker who wants bread — at exactly the moment and in exactly the quantities both desire. As an economy becomes more complex with thousands of goods, the probability of matching coincidences falls toward zero. <strong>Money solves this</strong> by splitting the exchange into two transactions: sell for money, then buy with money — the coincidence of wants problem disappears.'
       },
 
-      /* 4 &#8212; Multi-select: functions of money */
-      { type: 'multi_select',
-        stem: 'Select ALL four <strong>functions of money</strong>.',
-        opts: [
-          'Medium of exchange &#8212; universally accepted in payment for goods and services',
-          'Store of value &#8212; money can be saved and used in the future',
-          'Unit of account &#8212; provides a common measure of value for all goods and services',
-          'Standard of deferred payment &#8212; enables credit and contracts involving future payment',
-          'Instrument of taxation &#8212; governments use money to collect taxes and redistribute income',
-          'Source of wealth &#8212; money accumulation is the primary source of household wealth'
+      /* 4 — Elastic sort: four functions of money */
+      { type: 'elastic_sort',
+        id: 'q_spec_4',
+        stem: 'Classify each example under the correct <strong>function of money</strong>.',
+        categories: ['medium_exchange', 'store_value', 'unit_account', 'standard_deferred'],
+        categoryLabels: ['Medium of exchange', 'Store of value', 'Unit of account', 'Standard of deferred payment'],
+        goods: [
+          { icon: '🛒', label: 'You pay £3.50 for a coffee at a café', note: '', ans: 'medium_exchange' },
+          { icon: '🏦', label: 'You save £500 in a bank account to use for holiday spending next year', note: '', ans: 'store_value' },
+          { icon: '🏷️', label: 'A supermarket prices 10,000 products so consumers can compare value', note: '', ans: 'unit_account' },
+          { icon: '📋', label: 'A mortgage allows you to borrow £300,000 today and repay it over 25 years', note: '', ans: 'standard_deferred' },
+          { icon: '💰', label: 'A business prices its products in pounds so customers can assess relative value', note: '', ans: 'unit_account' },
+          { icon: '🤝', label: 'A firm pays wages so workers can buy goods from many different employers', note: '', ans: 'medium_exchange' }
         ],
-        correct: [0, 1, 2, 3],
-        exp: 'The four functions of money are: (1) <strong>Medium of exchange</strong> &#8212; eliminates the double coincidence of wants problem; the primary function. (2) <strong>Store of value</strong> &#8212; holds purchasing power over time (inflation erodes this). (3) <strong>Unit of account</strong> &#8212; common measure allowing price comparison (&#163;, $, &#8364;). (4) <strong>Standard of deferred payment</strong> &#8212; enables mortgages, credit, and commercial contracts. "Instrument of taxation" and "source of wealth" are not standard economic functions of money &#8212; they describe uses of money rather than its defining properties as a monetary instrument.'
+        exp: '<strong>Medium of exchange</strong>: money enables transactions without barter — solves the double coincidence of wants. <strong>Store of value</strong>: money can be saved and used in the future (unlike perishable goods). <strong>Unit of account</strong>: money provides a common measure of value — makes price comparison possible across millions of goods. <strong>Standard of deferred payment</strong>: money enables credit — borrow now, repay later in the same unit. All four functions require money to hold its value over time; hyperinflation destroys the store of value and standard of deferred payment functions first.'
       },
 
-      /* 5 &#8212; Para fill: characteristics of good money */
+      /* 5 — Match pairs: characteristics of good money */
+      { type: 'match_pairs',
+        id: 'q_spec_5',
+        stem: 'Match each characteristic of good money to an example of what happens when it is absent.',
+        pairs: [
+          { a: 'Durable', b: 'Milk cannot serve as money — it spoils; money must last' },
+          { a: 'Portable', b: 'Large stones (Rai of Yap) are impractical for daily transactions' },
+          { a: 'Divisible', b: 'A live cow is difficult to make change with — money must divide into small units' },
+          { a: 'Acceptable', b: 'A currency not trusted by others loses its medium of exchange function' },
+          { a: 'Limited supply / Scarce', b: 'Zimbabwean dollar lost value when government printed excessively; scarcity is essential' },
+          { a: 'Uniform / Homogeneous', b: 'If every note differs in value, pricing becomes impossible — each unit must be identical' }
+        ],
+        exp: 'Good money must be: <strong>Durable</strong> (not deteriorate in storage — gold, paper notes); <strong>Portable</strong> (easy to carry — note evolution from gold coins to paper to digital); <strong>Divisible</strong> (can be split for small transactions — 1p coins to £50 notes); <strong>Acceptable</strong> (widely trusted and accepted — a currency\'s value depends on confidence); <strong>Scarce</strong> (limited supply maintains value — printing too much causes inflation); <strong>Uniform</strong> (each unit identical — essential for pricing). Bitcoin satisfies most but is volatile (poor store of value) and has limited divisibility for small transactions.'
+      },
+
+      /* 6 — Para fill: money and specialisation link */
       { type: 'para_fill',
-        stem: 'Complete the paragraph about the characteristics of good money using the correct term.',
-        anchor: 'For money to perform its functions effectively, it must possess specific properties.',
-        para: 'Good money must be [1] &#8212; it must last over time without deteriorating; coins and notes satisfy this, while perishable goods like fish do not. It must be [2] &#8212; widely accepted in exchange, which typically requires government backing as legal tender. It must be [3] &#8212; easy to carry and transfer; electronic transfers have the highest portability. It must be [4] &#8212; limited in supply to maintain purchasing power; if money can be created freely, [5] destroys its value. Finally, it must be [6] &#8212; capable of being broken into small units for everyday transactions.',
+        id: 'q_spec_6',
+        stem: 'Complete the paragraph linking specialisation to the need for money.',
+        anchor: 'Specialisation and money co-evolved — one made the other necessary.',
+        para: 'As economies specialise, individuals produce [1] types of goods but need [2] types to survive. Without money, they face the [3] coincidence of wants problem — trades require both parties to want exactly what the other offers. Money solves this by acting as a [4] of exchange, allowing people to [5] their output for money and then [6] whatever they need from others. The more [7] an economy becomes, the more important the [8] system is, because the probability of matching [9] in barter falls toward zero.',
         blanks: [
-          { id: 1, opts: ['durable', 'portable', 'scarce', 'divisible'], ans: 0 },
-          { id: 2, opts: ['acceptable', 'durable', 'divisible', 'portable'], ans: 0 },
-          { id: 3, opts: ['portable', 'durable', 'scarce', 'acceptable'], ans: 0 },
-          { id: 4, opts: ['scarce', 'durable', 'portable', 'divisible'], ans: 0 },
-          { id: 5, opts: ['inflation', 'deflation', 'recession', 'taxation'], ans: 0 },
-          { id: 6, opts: ['divisible', 'scarce', 'durable', 'acceptable'], ans: 0 }
+          { id: 1, opts: ['fewer', 'more', 'different', 'identical'], ans: 0 },
+          { id: 2, opts: ['many', 'fewer', 'identical', 'substitutable'], ans: 0 },
+          { id: 3, opts: ['double', 'single', 'triple', 'zero'], ans: 0 },
+          { id: 4, opts: ['medium', 'store', 'unit', 'standard'], ans: 0 },
+          { id: 5, opts: ['sell', 'barter', 'import', 'save'], ans: 0 },
+          { id: 6, opts: ['buy', 'produce', 'export', 'save'], ans: 0 },
+          { id: 7, opts: ['specialised', 'self-sufficient', 'equal', 'planned'], ans: 0 },
+          { id: 8, opts: ['monetary', 'barter', 'trade', 'planning'], ans: 0 },
+          { id: 9, opts: ['coincidences', 'prices', 'currencies', 'trades'], ans: 0 }
         ],
-        exp: 'The characteristics of good money are summarised as <strong>DAPS+D</strong>: <strong>D</strong>urable (lasts over time), <strong>A</strong>cceptable (widely accepted, usually via legal tender status), <strong>P</strong>ortable (easy to carry/transfer), <strong>S</strong>carce (limited supply prevents inflation), <strong>D</strong>ivisible (can make small transactions). The blank about consequences of unlimited money creation is <strong>inflation</strong> &#8212; as more money chases the same goods, prices rise and purchasing power falls. Hyperinflation (Zimbabwe 2008, Weimar Germany 1923) destroyed money\'s store-of-value function and drove economies toward barter.'
+        exp: '(1) <strong>Fewer</strong> types — specialisation means producing less variety. (2) <strong>Many</strong> types — but needing food, clothing, housing, etc. (3) <strong>Double</strong> coincidence of wants. (4) <strong>Medium</strong> of exchange. (5) <strong>Sell</strong> output for money. (6) <strong>Buy</strong> whatever they need. (7) The more <strong>specialised</strong> the economy. (8) <strong>Monetary</strong> system. (9) Probability of matching <strong>coincidences</strong> in barter falls to near zero. The logical chain: scarcity → specialisation → exchange → need for money → monetary economy. This is why all complex economies use money rather than barter.'
       },
 
-      /* 6 &#8212; Data table: money functions under stress */
-      { type: 'data_table',
-        stem: 'The table shows data for Zimbabwe during its 2007&#8211;2009 hyperinflation episode.',
-        headers: ['Indicator', '2007', 'Nov 2008 (peak)'],
-        rows: [
-          ['Annual inflation rate', '66,000%', '89.7 sextillion %'],
-          ['Largest banknote denomination', 'Z$250,000', 'Z$100 trillion'],
-          ['Real GDP (index, 2000=100)', '82', '39'],
-          ['Reported barter activity', 'Low', 'Widespread']
+      /* 7 — Cause & effect: money and economic development */
+      { type: 'cause_effect',
+        id: 'q_spec_7',
+        stem: 'Match each failure of money to its economic consequence.',
+        pairs: [
+          { cause: 'Hyperinflation destroys money\'s store of value (Zimbabwe 2008)', effect: 'Barter and dollarisation emerge as people switch to more stable currencies' },
+          { cause: 'Money supply grows faster than productive capacity', effect: 'Inflation — each unit of money buys less' },
+          { cause: 'A bank run collapses confidence in money\'s acceptability', effect: 'Financial crisis — the medium of exchange function breaks down' },
+          { cause: 'Cryptocurrency high volatility undermines predictability', effect: 'Businesses refuse to price or hold contracts in that currency' },
+          { cause: 'Central bank achieves stable, low inflation', effect: 'Long-term contracts (mortgages, bonds) become feasible — standard of deferred payment works' },
+          { cause: 'Counterfeiting reduces uniformity of banknotes', effect: 'Traders reject notes — acceptability and unit of account functions break down' }
         ],
-        question: 'Which conclusion is most consistent with the <strong>functions of money</strong> framework?',
-        opts: [
-          'Hyperinflation destroyed money\'s store-of-value function and eroded its medium-of-exchange function, causing a reversion to barter as money failed to perform its core roles',
-          'Hyperinflation improved the unit-of-account function because larger nominal numbers made price differences easier to express',
-          'The collapse in real GDP was caused entirely by the government printing money, with no other contributing factors',
-          'Barter was able to fully substitute for money once hyperinflation set in, restoring economic activity to normal levels'
-        ],
-        ans: 0,
-        exp: 'Zimbabwe\'s hyperinflation is the definitive modern illustration of money\'s functions under stress. The <strong>store of value</strong> function collapsed first: money held overnight lost enormous purchasing power. The <strong>unit of account</strong> function broke down as prices changed hourly. The <strong>medium of exchange</strong> function eroded as sellers refused to accept Zimbabwean dollars. The result was widespread barter &#8212; confirming that money and specialisation are co-dependent: when money fails its functions, complex exchange collapses. Real GDP halving reflects the collapse of the market economy, not just the monetary system. Barter is an extremely inefficient substitute &#8212; it cannot restore complex economic activity.'
+        exp: 'Money\'s four functions are interdependent — when one breaks down, others follow. <strong>Store of value failure</strong> (hyperinflation): people stop holding money, resort to barter or foreign currency. <strong>Acceptability failure</strong> (bank run, counterfeiting): medium of exchange collapses. <strong>Unit of account failure</strong> (instability): pricing becomes impossible. <strong>Deferred payment failure</strong> (unpredictable inflation): long-term contracts become too risky. This is why central banks prioritise inflation control — without monetary stability, the foundations of a specialised, exchanged-based economy crumble.'
       },
 
-      /* 7 &#8212; multi_select: evaluation of Bitcoin as money */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>the extent to which Bitcoin fulfils the functions of money</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'Bitcoin\'s price volatility means its store-of-value function is severely compromised &#8212; falling ~65% in 2022 alone &#8212; but this does not disqualify it from functioning as a medium of exchange in low-value or time-sensitive transactions where parties accept the short-run price risk',
-          'Bitcoin is accepted as payment in some places, so it functions as a medium of exchange',
-          'Bitcoin\'s fixed supply cap of 21 million units satisfies the scarcity characteristic, making it durable and resistant to inflation &#8212; but scarcity alone is insufficient for monetary function without the price stability that allows it to serve as a unit of account or standard of deferred payment',
-          'Bitcoin is not controlled by any government, which is different from traditional currencies',
-          'The relevant comparison for Bitcoin\'s monetary fitness is not ideal money but the alternative &#8212; in countries experiencing hyperinflation (e.g. Venezuela, Zimbabwe), Bitcoin\'s volatility may still make it a superior store of value compared to a rapidly depreciating national currency',
-          'Bitcoin fulfils all four functions of money because it is decentralised and widely discussed'
-        ],
-        correct: [0, 2, 4],
-        exp: '<strong>Option A</strong> is strong evaluation: it acknowledges Bitcoin\'s volatility weakness on the store-of-value function but then qualifies the conclusion &#8212; arguing the medium-of-exchange function can still partially work in specific transactional contexts. This is a genuine weighing of competing factors with a directional but nuanced conclusion. <strong>Option C</strong> is strong evaluation: it grants that scarcity is satisfied (conceding a point) and then identifies the precise additional condition &#8212; price stability &#8212; that scarcity alone cannot provide, making the evaluation conditional and specific. <strong>Option E</strong> is strong evaluation: it reframes the comparison set rather than evaluating against an absolute standard &#8212; a sophisticated move that shows the student is aware the verdict depends on the counterfactual, and reaches a directional conclusion for a specific context. <strong>Option B</strong> is a distractor: it states a fact (some merchants accept Bitcoin) without evaluating the significance, scale, or limitations of that acceptance. <strong>Option D</strong> is a distractor: it describes a feature of Bitcoin (decentralisation) without connecting it to any of the four monetary functions or reaching a directional evaluative conclusion. <strong>Option F</strong> is a distractor: it is an overclaim with no evidence or mechanism &#8212; Bitcoin does not function as a unit of account in everyday commerce, so the assertion is factually wrong as well as unevaluated.'
-      },
-
-      /* 8 &#8212; Odd one out: functions of money */
+      /* 8 — Odd one out: functions of money */
       { type: 'odd_one_out',
-        stem: 'Three of these illustrate a function of money. Which is the <strong>odd one out</strong>?',
+        id: 'q_spec_8',
+        stem: 'Three of these describe <strong>functions of money</strong>. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '&#128176;', label: 'A worker deposits their monthly salary in a bank account to spend later', note: '' },
-          { icon: '&#128203;', label: 'A business takes out a five-year loan to be repaid in monthly &#163; instalments', note: '' },
-          { icon: '&#127968;', label: 'A homeowner uses their house as collateral to secure a mortgage', note: '' },
-          { icon: '&#128250;', label: 'A market trader quotes the price of all their goods in &#163; to compare their relative values', note: '' }
+          { icon: '📊', label: 'Unit of account — money provides a standard measure of value for comparing prices', note: '' },
+          { icon: '🔄', label: 'Medium of exchange — money facilitates transactions without barter', note: '' },
+          { icon: '📈', label: 'Profit motive — money incentivises entrepreneurship by enabling profit measurement', note: '' },
+          { icon: '💾', label: 'Store of value — money can be saved and spent in the future', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is <strong>using a house as collateral</strong>. This involves property as an asset &#8212; not money performing one of its functions. The other three each illustrate a function: depositing salary to spend later = <strong>store of value</strong>; a loan with future &#163; repayments = <strong>standard of deferred payment</strong>; quoting all prices in &#163; to compare values = <strong>unit of account</strong>. The medium of exchange function (paying for goods with money) is not illustrated here, but the other three functions are.'
+        exp: 'The odd one out is the <strong>profit motive</strong>. This is not a function of money — it describes the motivation of entrepreneurs in a market economy. The four functions of money are: medium of exchange, store of value, unit of account, and standard of deferred payment. Note: the profit motive does depend on money (you can only measure profit if you have a unit of account), but being a prerequisite is not the same as being a function.'
       },
 
-      /* 9 &#8212; MCQ: specialisation and development link */
-      { type: 'mcq',
-        stem: 'Which of the following correctly describes the relationship between <strong>specialisation, money, and economic development</strong>?',
+      /* 9 — Data table: specialisation and productivity */
+      { type: 'data_table',
+        id: 'q_spec_9',
+        stem: 'The table compares productivity in a small economy before and after specialisation.',
+        headers: ['Worker', 'Before specialisation (output/day each)', 'After specialisation (output/day total)'],
+        rows: [
+          ['Baker', '5 loaves + 2 pots', '20 loaves (specialised)'],
+          ['Potter', '3 loaves + 4 pots', '18 pots (specialised)'],
+          ['Total output', '8 loaves + 6 pots', '20 loaves + 18 pots']
+        ],
+        question: 'Which conclusion is <strong>best supported</strong> by the data?',
         opts: [
-          'Specialisation raises productivity but requires exchange; money facilitates exchange by eliminating the double coincidence of wants &#8212; together they form the foundation of complex market economies',
-          'Money is unnecessary for specialisation; countries can specialise without any medium of exchange as long as central planning coordinates production',
-          'Specialisation always reduces overall welfare because workers become dependent on exchange rather than self-sufficient production',
-          'Money causes specialisation &#8212; once a society introduces money, workers naturally begin to specialise without any other incentive'
+          'Specialisation increases total output (20 loaves vs 8; 18 pots vs 6) — demonstrating absolute and comparative advantage gains from the division of labour',
+          'Specialisation reduces choice — workers are forced to produce only one good',
+          'The data show that the baker is absolutely worse at pottery, so specialisation is unfair to potters',
+          'Both workers should continue producing both goods to maintain self-sufficiency and reduce dependence'
         ],
         ans: 0,
-        exp: 'The relationship is a virtuous circle: specialisation raises productivity but makes self-sufficiency impossible, so exchange becomes essential. Barter cannot support complex specialised exchange at scale. Money solves this by eliminating the double coincidence of wants, reducing transaction costs, and enabling credit (standard of deferred payment). This allows deeper specialisation, which raises productivity further. Countries with unstable currencies (hyperinflation, weak banking systems) cannot sustain this dynamic &#8212; development economists identify monetary stability as a precondition for growth. Central planning can coordinate specialisation but at high information cost (Hayek\'s knowledge problem).'
+        exp: 'The data show dramatic output gains from specialisation: loaves rise from 8 to 20 per day (+150%), pots rise from 6 to 18 per day (+200%). Both workers produce more of their specialised good than they could produce of any single good without specialisation. This is the core argument for the division of labour: specialisation raises aggregate output, enabling higher living standards through exchange. The gains arise from skill development, specialised tools, and no time lost switching tasks. Option D (self-sufficiency) sacrifices these gains for resilience — a genuine trade-off but one with large welfare costs.'
       },
 
-      /* 10 &#8212; Chain: barter to money sequence */
-      { type: 'chain',
-        stem: 'Place the following events in the correct logical order, tracing the argument from the limits of barter to the emergence of money.',
-        items: [
-          { label: 'Money is adopted as a universal medium of exchange, eliminating the double coincidence of wants', note: '' },
-          { label: 'As specialisation deepens, direct barter becomes impractically complex', note: '' },
-          { label: 'Transaction costs fall dramatically &#8212; complex specialised exchange becomes feasible at scale', note: '' },
-          { label: 'Economic agents specialise in producing what they are relatively best at', note: '' },
-          { label: 'Agents find it increasingly difficult to locate partners who want exactly what they have to offer', note: '' },
-          { label: 'Productivity rises sharply and living standards improve as division of labour deepens further', note: '' }
+      /* 10 — Multi-select: evaluation of money and specialisation */
+      { type: 'multi_select',
+        id: 'q_spec_10',
+        stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the role of money in enabling a specialised economy?',
+        opts: [
+          'Money acts as a medium of exchange, store of value, unit of account, and standard of deferred payment',
+          'While money enables specialisation and exchange, its effectiveness as a store of value depends critically on price stability — meaning the benefits of a specialised monetary economy are conditional on competent central bank management, rather than automatic',
+          'Money is always better than barter for allocating resources',
+          'Digital currencies like Bitcoin replicate money\'s medium of exchange and unit of account functions but fail the store of value test due to volatility, suggesting the technological form of money matters less than its stability properties',
+          'The double coincidence of wants problem shows that barter is inefficient',
+          'Specialisation requires exchange, which requires money, which requires monetary stability — so the productivity gains from the division of labour are ultimately contingent on institutional capacity (central banking, rule of law, contract enforcement) that many developing economies lack'
         ],
-        correctOrder: [3, 1, 4, 0, 2, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Specialisation emerges &#8212; agents focus on what they do best.<br>2. Deepening specialisation makes barter increasingly complex.<br>3. The double coincidence of wants problem becomes acute.<br>4. Money is adopted to solve this &#8212; medium of exchange function.<br>5. Transaction costs fall &#8212; exchange becomes easy.<br>6. Deeper specialisation and higher productivity follow.<br><br>This sequence illustrates why money and specialisation are co-dependent: each enables the other. The collapse of either (hyperinflation, supply chain breakdown) disrupts the entire chain &#8212; which is why monetary stability is treated as a macroeconomic priority.'
+        correct: [1, 3, 5],
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: qualifies the benefits of monetary economy by identifying the condition (price stability) on which they depend — reaching the conclusion that benefits are conditional, not automatic. D: applies the framework to Bitcoin, distinguishing which functions it performs well from those it fails at, and reaches a conclusion about what matters (stability properties, not technological form). F: extends the logic chain from specialisation through exchange to monetary stability to institutional capacity, reaching the conclusion that productivity gains are ultimately contingent on institutions — a multi-step evaluative move. A and E are descriptions; C is an overclaim without qualification.'
       }
 
     ]

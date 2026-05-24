@@ -4,185 +4,175 @@
     id:       'govt_intervention_tax_main',
     topicId:  'govt_intervention_tax_main',
     title:    'Government Intervention: Taxes',
-    subtitle: 'Theme 1.17 \xb7 Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering indirect tax mechanics, the tax diagram, Pigouvian taxes, tax incidence, real-world UK examples, and evaluation of taxation as a market failure correction tool. Mixed formats testing both diagram analysis and evaluative writing skills.',
-    shortNames: {
-      'govt_intervention_tax_1': 'How taxes work',
-      'govt_intervention_tax_2': 'Tax diagram',
-      'govt_intervention_tax_3': 'Pigouvian taxes',
-      'govt_intervention_tax_4': 'Real-world examples',
-      'govt_intervention_tax_5': 'Tax incidence',
-      'govt_intervention_tax_6': 'Evaluation',
-      'govt_intervention_tax_7': 'Tax vs other tools'
-    },
+    subtitle: 'Theme 1.17 &middot; Edexcel A-Level',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'govt_intervention_tax_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers corrective taxes, direct vs indirect taxes, tax incidence, regressive vs progressive effects, and policy evaluation',
+    shortNames: [
+      'Direct vs indirect MCQ', 'Tax incidence elasticity', 'Pigouvian tax MCQ', 'Regressive effects',
+      'Para fill', 'Cause & effect', 'Match pairs', 'Odd one out',
+      'Data table', 'Evaluation multi-select'
+    ],
 
     questions: [
 
-      /* 1 — mcq: specific vs ad valorem */
+      /* 1 — MCQ: direct vs indirect taxes */
       { type: 'mcq',
-        stem: 'The UK government levies a <strong>specific tax</strong> of 53p per litre of petrol and a <strong>20% ad valorem tax</strong> (VAT) on most consumer goods. Which statement correctly distinguishes the effect of each tax on a supply-and-demand diagram?',
+        id: 'q_git_1',
+        stem: 'Which statement correctly distinguishes <strong>direct taxes</strong> from <strong>indirect taxes</strong>?',
         opts: [
-          'A specific tax causes a parallel leftward shift of the supply curve; an ad valorem tax causes the supply curve to pivot (rotating leftward, with a larger shift at higher prices)',
-          'Both taxes cause an identical parallel leftward shift; the only difference is the name given to each tax',
-          'A specific tax shifts the demand curve left; an ad valorem tax shifts the supply curve right',
-          'An ad valorem tax has no effect on the supply curve because it is a percentage; only specific taxes change supply'
+          'Direct taxes are levied on income or wealth (e.g. income tax, corporation tax, inheritance tax); indirect taxes are levied on spending or transactions (e.g. VAT, fuel duty, tobacco duty)',
+          'Direct taxes are paid directly to HMRC by consumers; indirect taxes are paid by a third party on the consumer\'s behalf',
+          'Direct taxes always raise more revenue than indirect taxes; indirect taxes are a minor supplement to the fiscal system',
+          'Direct taxes are progressive; indirect taxes are proportional — neither can be regressive'
         ],
         ans: 0,
-        exp: 'A <strong>specific (unit) tax</strong> adds a fixed money amount to every unit, regardless of price &mdash; this produces a <em>parallel</em> leftward shift: the new supply curve is exactly the same shape, displaced upward by the tax amount. An <strong>ad valorem tax</strong> is a percentage of the price: the absolute tax is larger at higher prices and smaller at lower prices. This causes the supply curve to <em>pivot</em> (rotate outward) rather than shift uniformly. For exam diagrams, specific taxes are usually simpler to draw and examine. VAT at 20% means a good costing &#163;100 bears &#163;20 tax; one costing &#163;10 bears only &#163;2.'
+        exp: '<strong>Direct taxes</strong>: levied directly on income, profit, or wealth — income tax (20/40/45% rates in UK), NICs, corporation tax (25%), capital gains tax, inheritance tax. They cannot easily be shifted to others. <strong>Indirect taxes</strong>: levied on spending — VAT (20% standard), fuel duty (52.95p/litre), tobacco duty, alcohol duty, stamp duty. Producers can partially shift these to consumers (depending on elasticity). Direct taxes tend to be more progressive; indirect taxes tend to be regressive (same absolute spending on taxed goods represents a higher percentage of low income). UK tax system uses both: direct for progressivity, indirect for revenue and Pigouvian correction.'
       },
 
-      /* 2 — diagram_interp: tax diagram areas */
-      { type: 'diagram_interp',
-        stem: 'A specific tax of &#163;t is imposed on cigarettes. Before the tax: equilibrium at P1, Q1. After the tax: new equilibrium at P2, Q2. Producers receive P3 = P2 &minus; t.',
-        svg: '<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="55" y1="20" x2="55" y2="280" stroke="#0B1426" stroke-width="2"/><line x1="55" y1="280" x2="400" y2="280" stroke="#0B1426" stroke-width="2"/><text x="42" y="22" fill="#0B1426" font-size="12" text-anchor="end" font-weight="700">P</text><text x="398" y="298" fill="#0B1426" font-size="12" font-weight="700">Q</text><line x1="80" y1="240" x2="360" y2="80" stroke="#2563EB" stroke-width="2.5"/><text x="363" y="80" fill="#2563EB" font-size="12" font-weight="700">D</text><line x1="80" y1="80" x2="370" y2="240" stroke="#1FB574" stroke-width="2.5"/><text x="373" y="240" fill="#1FB574" font-size="12" font-weight="700">S</text><line x1="80" y1="55" x2="360" y2="215" stroke="#EC2D68" stroke-width="2.5" stroke-dasharray="5,3"/><text x="363" y="215" fill="#EC2D68" font-size="12" font-weight="700">S+t</text><circle cx="220" cy="160" r="5" fill="#0B1426"/><text x="225" y="158" fill="#0B1426" font-size="10">Q1,P1</text><circle cx="195" cy="140" r="5" fill="#F5B800"/><text x="200" y="138" fill="#F5B800" font-size="10">Q2,P2</text><line x1="55" y1="140" x2="195" y2="140" stroke="#0B1426" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/><line x1="55" y1="165" x2="195" y2="165" stroke="#0B1426" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/><line x1="195" y1="140" x2="195" y2="280" stroke="#0B1426" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/><text x="38" y="144" fill="#F5B800" font-size="10" text-anchor="end" font-weight="700">P2</text><text x="38" y="162" fill="#0B1426" font-size="10" text-anchor="end" font-weight="700">P1</text><text x="38" y="170" fill="#EC2D68" font-size="10" text-anchor="end" font-weight="700">P3</text></svg>',
-        caption: 'P2 = price paid by consumers after tax. P3 = price received by producers after tax. P1 = original equilibrium price. Q2 = post-tax quantity.',
-        question: 'Which area on the diagram represents the <strong>deadweight welfare loss</strong> caused by the tax?',
+      /* 2 — MCQ: tax incidence and elasticity */
+      { type: 'mcq',
+        id: 'q_git_2',
+        stem: 'A tax is imposed on a good where demand is <strong>price elastic</strong>. Compared to an identical tax on a good with inelastic demand, the elastic-demand tax will generate:',
         opts: [
-          'The triangle between Q2 and Q1, bounded above by the demand curve and below by the original supply curve &mdash; surplus that neither consumers, producers, nor the government receive',
-          'The rectangle between P2 and P3 up to quantity Q2 &mdash; this is the government\'s tax revenue',
-          'The entire area between the two supply curves from zero to Q2 &mdash; this represents consumer losses from higher prices',
-          'The triangle above P2 under the demand curve &mdash; this is the remaining consumer surplus after the tax'
+          'Less revenue and a larger deadweight welfare loss — quantity falls significantly; less tax is collected on fewer units; the larger reduction in mutually beneficial trades creates more welfare loss',
+          'More revenue and a smaller deadweight loss — elastic consumers pay more due to their sensitivity to price',
+          'The same revenue — tax revenue only depends on the tax rate, not elasticity',
+          'Less revenue and no deadweight loss — elastic consumers simply stop buying, eliminating all welfare concerns'
         ],
         ans: 0,
-        exp: 'The <strong>deadweight welfare loss (DWL)</strong> is the value of transactions that no longer occur because the tax has raised the price. It is the triangle between Q2 and Q1, bounded by the demand curve (consumer willingness to pay) above and the original supply curve (producer marginal cost) below. These are trades that would have been mutually beneficial but are prevented by the tax. The rectangle between P2 and P3 up to Q2 is <strong>tax revenue</strong> &mdash; transferred to the government, not lost. The DWL is the only area that disappears entirely from the economy.'
+        exp: 'With elastic demand: the tax raises price → large fall in quantity demanded → less tax collected on fewer units → <strong>lower revenue</strong> than inelastic. Also: many trades suppressed (WTP > MC before tax, but not enough to cover tax-inclusive price) → <strong>larger DWL</strong>. With inelastic demand: large price rise, small quantity fall → high revenue, small DWL. This is the Ramsey Rule: minimise DWL for a given revenue target by taxing goods with inelastic demand proportionally more. Explains heavy taxation of tobacco, alcohol, and fuel (all have relatively inelastic demand).'
       },
 
-      /* 3 — elastic_sort: tax incidence */
-      { type: 'elastic_sort',
-        stem: 'For each market scenario, classify who bears the <strong>greater share</strong> of a tax &mdash; consumers or producers.',
-        categories: ['consumers', 'producers'],
-        categoryLabels: ['Consumers bear more', 'Producers bear more'],
-        goods: [
-          { icon: '🚬', label: 'Cigarettes: inelastic demand (PED = -0.3), elastic supply', note: '', ans: 'consumers' },
-          { icon: '💎', label: 'Luxury watches: elastic demand (PED = -2.1), inelastic supply', note: '', ans: 'producers' },
-          { icon: '⛽', label: 'Petrol: very inelastic demand (PED = -0.1), global supply (very elastic)', note: '', ans: 'consumers' },
-          { icon: '🌹', label: 'Cut flowers: elastic demand (PED = -1.8), elastic supply', note: '', ans: 'consumers' },
-          { icon: '🏠', label: 'Rental property: inelastic demand, inelastic supply (PES = 0.2)', note: '', ans: 'consumers' },
-          { icon: '✈️', label: 'Business-class flights: highly elastic demand (PED = -3.0), capacity-constrained supply', note: '', ans: 'producers' }
-        ],
-        exp: 'The <strong>general incidence rule</strong>: the less price-elastic side of the market bears a greater share of the tax burden. <strong>Consumers bear more</strong> when demand is inelastic (they cannot easily substitute) and supply is elastic (producers can exit freely). <strong>Producers bear more</strong> when demand is elastic (consumers switch at higher prices) and supply is inelastic (producers cannot easily exit). Cut flowers: even though both curves are elastic, with equal elasticities the split is roughly 50:50 &mdash; consumers still bear slightly more if supply is marginally more elastic. Business-class: airlines cannot easily fill seats; elastic demand forces them to absorb much of the tax.'
-      },
-
-      /* 4 — calculation: sugar levy revenue */
-      { type: 'calculation',
-        context: 'The UK Soft Drinks Industry Levy charges <strong>18p per litre</strong> for drinks with 5&ndash;8g sugar/100ml and <strong>24p per litre</strong> for drinks above 8g/100ml. In 2022, UK consumers bought <strong>1.2 billion litres</strong> at the higher tier and <strong>0.8 billion litres</strong> at the lower tier.',
-        working: [
-          'Step 1: revenue from the higher tier (>8g/100ml)',
-          '1,200,000,000 \xd7 &#163;0.24 = &#163;288,000,000',
-          'Step 2: revenue from the lower tier (5-8g/100ml)',
-          '800,000,000 \xd7 &#163;0.18 = &#163;144,000,000',
-          'Step 3: total levy revenue',
-          '&#163;288m + &#163;144m = &#163;432,000,000',
-          'Note: many producers reformulated below the 5g threshold to pay zero levy'
-        ],
-        stem: 'Based on the data, what is the approximate total annual revenue raised by the Soft Drinks Industry Levy?',
+      /* 3 — MCQ: corrective vs revenue-raising tax */
+      { type: 'mcq',
+        id: 'q_git_3',
+        stem: 'A <strong>Pigouvian tax</strong> differs from a pure <strong>revenue-raising tax</strong> in that:',
         opts: [
-          { ped: '&#163;432 million', typ: 'Higher tier: 1.2bn \xd7 &#163;0.24 = &#163;288m. Lower tier: 0.8bn \xd7 &#163;0.18 = &#163;144m. Total = &#163;432m.', rev: 'Multiply volumes by the respective levy rates' },
-          { ped: '&#163;288 million', typ: 'Only counted the higher tier revenue; omitted the lower tier', rev: 'Add both tier revenues together' },
-          { ped: '&#163;336 million', typ: 'Applied an average rate of 21p/litre to total 1.6bn litres &mdash; incorrect averaging', rev: 'Apply each rate to its own volume, then sum' },
-          { ped: '&#163;504 million', typ: 'Applied the 24p rate to all 2bn litres &mdash; did not use the lower tier rate', rev: 'Use the correct rate for each tier separately' }
+          'A Pigouvian tax is designed to correct a market failure by making the producer face the full social cost — its primary purpose is to reduce output to the social optimum, not to maximise revenue',
+          'A Pigouvian tax always raises more revenue than an equivalent revenue-raising tax because it targets high-income consumers',
+          'A Pigouvian tax is paid by consumers; a revenue-raising tax is paid by producers',
+          'A Pigouvian tax creates a deadweight welfare loss; a revenue-raising tax is always welfare-neutral'
         ],
         ans: 0,
-        exp: 'Higher tier (above 8g/100ml): 1.2 billion litres &times; &#163;0.24 = <strong>&#163;288 million</strong>. Lower tier (5&ndash;8g/100ml): 0.8 billion litres &times; &#163;0.18 = <strong>&#163;144 million</strong>. Total levy revenue: <strong>&#163;432 million</strong>. In practice, the levy raised less than projected because many manufacturers reformulated drinks below the 5g/100ml threshold (zero levy) &mdash; this reformulation was the intended behavioural effect. The sugar levy is an unusual tax where the revenue-maximising outcome (no reformulation) conflicts with the policy-maximising outcome (full reformulation). Success is measured partly by how much revenue it does <em>not</em> raise.'
+        exp: 'The key distinction is purpose and design: <strong>Pigouvian tax</strong> (named after economist A.C. Pigou): corrective — designed to align MPC with MSC by adding the marginal external cost to the producer\'s private cost. Success means output falls to Q* (the social optimum) — it may generate less revenue if it successfully reduces the taxed activity. <strong>Revenue-raising tax</strong>: fiscal purpose — designed to fund public spending. Revenue maximisation suggests taxing inelastic goods heavily. A carbon tax that successfully eliminates carbon-intensive production raises little revenue — but achieves its environmental goal. A tobacco duty that fails to reduce smoking raises lots of revenue — but fails its health goal. The two purposes can be in tension.'
       },
 
-      /* 5 — multi_select: Pigouvian tax conditions */
-      { type: 'multi_select',
-        stem: 'Which of the following conditions must hold for an indirect tax to function as an <strong>optimal Pigouvian tax</strong> that fully corrects a negative externality?',
+      /* 4 — MCQ: regressive taxation */
+      { type: 'mcq',
+        id: 'q_git_4',
+        stem: 'UK fuel duty is often described as <strong>regressive</strong>. This means:',
         opts: [
-          'The tax rate must equal the marginal external cost (MEC) at the socially optimal level of output Q*',
-          'The tax must be levied on the exact activity generating the externality, not on a proxy good',
-          'The government must be able to accurately measure the MEC &mdash; which may vary by location and firm',
-          'The demand for the good must be perfectly elastic so the tax reduces quantity significantly',
-          'The tax should be set as high as possible to maximise government revenue',
-          'Revenue from the tax must be spent on correcting the externality to make the tax "optimal"'
+          'Low-income households spend a higher proportion of their income on fuel duty — the tax takes a larger percentage of income from the poor than the rich, even if the absolute amount may be similar',
+          'Fuel duty is paid only by high-income households who drive expensive cars',
+          'Fuel duty is a progressive tax — higher earners who drive more pay more in absolute terms',
+          'Fuel duty is regressive only in theory — in practice, the tax affects all income groups equally'
         ],
-        correct: [0, 1, 2],
-        exp: 'Options A, B, and C are necessary conditions. <strong>Tax rate = MEC at Q*</strong>: this precisely offsets the externality, shifting MPC up to MSC and achieving the social optimum. <strong>Taxing the externality-generating activity</strong>: a tax on output when only some output is polluting over-taxes clean production and under-taxes dirty production. <strong>Accurate MEC measurement</strong>: if MEC is mis-measured, the tax corrects too little (under-tax) or over-corrects (over-tax) &mdash; both create welfare loss. Option D is wrong: inelastic demand limits quantity reduction but the tax can still be Pigouvian if set at MEC. Options E and F are wrong: revenue maximisation and hypothecation are separate considerations unrelated to theoretical optimality.'
+        ans: 0,
+        exp: 'A <strong>regressive tax</strong> takes a higher proportion of income from lower-income households. Fuel duty: even if a low-income household spends £800/year on fuel duty and a high-income household spends £1,200/year — if low-income household earns £20,000 (4% of income) and high-income earns £80,000 (1.5% of income), the tax is regressive. Most indirect taxes (VAT, tobacco, alcohol, fuel) are regressive because lower-income households spend a higher share of income on basic goods. This creates a tension: Pigouvian fuel taxes are efficient (corrects negative externality of driving) but regressive (distributional cost on low earners). Revenue recycling (fuel duty rebates, income tax cuts) can partially address this.'
       },
 
-      /* 6 — odd_one_out */
+      /* 5 — Para fill: tax policy analysis */
+      { type: 'para_fill',
+        id: 'q_git_5',
+        stem: 'Complete the paragraph analysing the role of taxation in correcting market failure.',
+        anchor: 'Taxation is one of the most powerful tools available to governments to correct externalities.',
+        para: 'When a firm produces a good with a negative [1], its marginal private cost is [2] than its marginal social cost. The free market produces [3] of the good than is socially optimal. A Pigouvian [4] equal to the marginal [5] cost per unit shifts the firm\'s private cost curve upward to equal the [6] cost. The firm now produces at the [7] optimum where MSC equals MSB. The government collects [8] revenue that can be used to [9] those harmed by the externality. However, setting the correct [10] rate requires accurate measurement of the external cost — a significant practical challenge.',
+        blanks: [
+          { id: 1, opts: ['externality', 'benefit', 'subsidy', 'regulation'], ans: 0 },
+          { id: 2, opts: ['lower', 'higher', 'equal to', 'unrelated to'], ans: 0 },
+          { id: 3, opts: ['more', 'less', 'the same amount', 'zero'], ans: 0 },
+          { id: 4, opts: ['tax', 'subsidy', 'regulation', 'price ceiling'], ans: 0 },
+          { id: 5, opts: ['external', 'private', 'average', 'total'], ans: 0 },
+          { id: 6, opts: ['social', 'private', 'average', 'variable'], ans: 0 },
+          { id: 7, opts: ['social', 'private', 'market', 'profit'], ans: 0 },
+          { id: 8, opts: ['tax', 'no', 'increasing', 'decreasing'], ans: 0 },
+          { id: 9, opts: ['compensate', 'subsidise', 'regulate', 'ignore'], ans: 0 },
+          { id: 10, opts: ['tax', 'subsidy', 'price', 'interest'], ans: 0 }
+        ],
+        exp: '(1) Negative <strong>externality</strong>. (2) MPC is <strong>lower</strong> than MSC. (3) Produces <strong>more</strong> — overproduction. (4) Pigouvian <strong>tax</strong>. (5) Marginal <strong>external</strong> cost. (6) <strong>Social</strong> cost. (7) <strong>Social</strong> optimum. (8) Collects <strong>tax</strong> revenue. (9) Used to <strong>compensate</strong> those harmed (or fund public goods — "double dividend"). (10) Setting the <strong>tax</strong> rate requires measuring external cost. This is the standard analytical paragraph for any negative externality question asking for a corrective tax analysis.'
+      },
+
+      /* 6 — Cause & effect: tax chain */
+      { type: 'cause_effect',
+        id: 'q_git_6',
+        stem: 'Match each tax policy action to its economic effect.',
+        pairs: [
+          { cause: 'UK government raises income tax rate for higher earners', effect: 'Direct tax becomes more progressive — higher earners pay a larger percentage of income' },
+          { cause: 'VAT rate raised from 17.5% to 20% on all goods and services', effect: 'Indirect tax becomes more regressive — low-income households pay a higher proportion of income' },
+          { cause: 'Carbon tax set equal to the social cost of carbon (£50/tonne)', effect: 'Firms internalise external cost; output falls to social optimum; DWL eliminated' },
+          { cause: 'Tax on cigarettes set well above the Pigouvian rate', effect: 'Over-correction — output falls below social optimum; DWL re-emerges on other side' },
+          { cause: 'Sugar levy on soft drinks (UK 2018)', effect: 'Firms reformulate products to reduce sugar content — innovation incentive from the tax' },
+          { cause: 'Tax cut financed by borrowing before an election', effect: 'Short-term boost to consumer spending; long-run higher debt burden — political myopia' }
+        ],
+        exp: 'Tax effects vary by type and setting: <strong>income tax</strong> can be progressive (higher rates on higher incomes); <strong>VAT</strong> is regressive; <strong>Pigouvian tax</strong> correctly set eliminates DWL; Pigouvian tax <em>over-set</em> creates new DWL; <strong>design-based taxes</strong> (sugar levy) create innovation incentives — firms reformulate rather than just paying the tax (the UK sugar levy successfully reduced average sugar content in soft drinks by 35% before it even took effect, as firms pre-emptively reformulated); <strong>pre-election tax cuts</strong> demonstrate political myopia.'
+      },
+
+      /* 7 — Match pairs: tax concepts */
+      { type: 'match_pairs',
+        id: 'q_git_7',
+        stem: 'Match each tax concept to its definition.',
+        pairs: [
+          { a: 'Progressive tax', b: 'Tax rate rises as income rises — takes a higher percentage from higher earners' },
+          { a: 'Regressive tax', b: 'Tax takes a higher percentage of income from lower earners in practice' },
+          { a: 'Proportional tax', b: 'Same percentage of income taken at all income levels' },
+          { a: 'Pigouvian tax', b: 'Tax equal to MEC — corrects negative externality overproduction' },
+          { a: 'Hypothecated tax', b: 'Tax revenue dedicated to a specific spending purpose (e.g. NHS levy)' },
+          { a: 'Laffer curve', b: 'At very high tax rates, revenue falls because incentives to work/invest collapse' }
+        ],
+        exp: 'Tax classification: <strong>progressive</strong> (UK income tax: 20/40/45% rates — higher income, higher rate); <strong>regressive</strong> (indirect taxes in practice — VAT, fuel, tobacco); <strong>proportional</strong> (flat tax — sometimes proposed as simpler and more efficient). <strong>Hypothecation</strong> (earmarking) can improve political acceptability of taxes (people more willing to pay if they see where it goes) but reduces fiscal flexibility. <strong>Laffer curve</strong>: theoretical peak revenue rate — debated where exactly it is; used by supply-siders to argue for rate cuts, though evidence that current UK/US top rates are above the Laffer peak is weak.'
+      },
+
+      /* 8 — Odd one out: corrective taxes */
       { type: 'odd_one_out',
-        stem: 'Three of these are valid <strong>criticisms of using indirect taxes</strong> to correct negative externalities. Which is the ODD ONE OUT?',
+        id: 'q_git_8',
+        stem: 'Three of these are examples of <strong>corrective (Pigouvian) taxes</strong>. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '📉', label: 'Regressive: energy and fuel taxes take a higher share of income from low-income households', note: '' },
-          { icon: '🎯', label: 'Difficulty setting the optimal rate: MEC is uncertain and varies by context and firm', note: '' },
-          { icon: '🔄', label: 'Dynamic efficiency: firms continually seek to innovate to reduce their tax liability', note: '' },
-          { icon: '🚫', label: 'Risk of evasion and black markets, particularly for high-tax goods such as tobacco', note: '' }
+          { icon: '⛽', label: 'UK fuel duty — designed to reflect the external costs of carbon emissions and road congestion', note: '' },
+          { icon: '🚬', label: 'Tobacco duty — designed to reflect healthcare costs and secondhand smoke externalities', note: '' },
+          { icon: '💼', label: 'Income tax — charged on earnings to raise revenue for public services', note: '' },
+          { icon: '🍬', label: 'UK Soft Drinks Industry Levy (sugar tax) — designed to reduce overconsumption of sugar', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is option C &mdash; <strong>dynamic efficiency is an advantage, not a criticism</strong> of indirect taxes. Because firms face a continuing cost per unit, they have an ongoing incentive to invest in cleaner technology that reduces their tax liability. This makes taxes more efficient than equivalent regulations in the long run. Options A, B, and D are all genuine criticisms: <strong>regressivity</strong> (equity problem), <strong>information requirement</strong> (setting the optimal rate), and <strong>evasion risk</strong> (especially for goods with high per-unit tax like cigarettes).'
+        exp: 'The odd one out is <strong>income tax</strong>. Income tax is a fiscal (revenue-raising) tax — its primary purpose is to fund government spending, not to correct a market failure. It has no direct corrective element (earned income is not a negative externality). The other three are corrective (Pigouvian) taxes: fuel duty reflects carbon and congestion externalities; tobacco duty reflects secondhand smoke and healthcare cost externalities; the sugar levy reflects health externalities from sugar overconsumption and information failure (consumers underestimate health risks). Note: in practice, fuel duty and tobacco duty also serve revenue purposes — the Pigouvian and fiscal motivations overlap.'
       },
 
-      /* 7 — para_fill: tax incidence paragraph */
-      { type: 'para_fill',
-        stem: 'Complete the analytical paragraph about tax incidence by selecting the correct word or phrase.',
-        anchor: 'The economic incidence of a tax differs from its legal incidence — what matters is who ultimately bears the cost.',
-        para: 'When a specific tax is imposed on a good, the [1] curve shifts leftward by the amount of the tax. The new equilibrium price is [2] than the pre-tax price, but by [3] than the full tax. The difference between what consumers now pay and what producers now receive is the [4] amount per unit. The proportion of the tax borne by consumers depends on the relative [5] of demand and supply. If demand is very [6], consumers bear most of the tax because they [7] find a substitute when prices rise.',
-        blanks: [
-          { id: 1, opts: ['supply', 'demand', 'marginal cost', 'marginal revenue'], ans: 0 },
-          { id: 2, opts: ['higher', 'lower', 'unchanged', 'negative'], ans: 0 },
-          { id: 3, opts: ['less', 'more', 'exactly the same', 'twice'], ans: 0 },
-          { id: 4, opts: ['tax', 'subsidy', 'profit', 'cost'], ans: 0 },
-          { id: 5, opts: ['elasticities', 'incomes', 'preferences', 'costs'], ans: 0 },
-          { id: 6, opts: ['inelastic', 'elastic', 'unit elastic', 'perfectly elastic'], ans: 0 },
-          { id: 7, opts: ['cannot', 'can easily', 'always', 'never want to'], ans: 0 }
-        ],
-        exp: '(1) <strong>Supply</strong>: the tax raises the cost of production, shifting supply left. (2) <strong>Higher</strong>: the consumer price rises. (3) <strong>Less</strong>: price rises by less than the full tax &mdash; producers absorb some of it. (4) <strong>Tax</strong>: the gap between consumer price and producer price equals the per-unit tax. (5) <strong>Elasticities</strong>: incidence depends on relative price responsiveness. (6) <strong>Inelastic</strong>: if consumers cannot substitute, they absorb the tax as a price rise. (7) <strong>Cannot</strong>: lack of alternatives means consumers must continue buying despite higher prices.'
-      },
-
-      /* 8 — multi_select: evaluation of indirect taxes for externality correction */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>whether indirect taxation is the most effective policy for correcting negative externalities</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
-        opts: [
-          'Taxation is more effective than regulation when the MEC varies across firms, because a uniform tax allows low-cost abaters to cut emissions most and high-cost abaters to pay the tax instead — achieving the same emissions target at lower total cost than a standard requiring equal cuts from all.',
-          'When a negative externality involves a tipping point — such as irreversible ecosystem collapse — quantity certainty (achievable via cap-and-trade or regulation) is superior to price certainty from a tax, even if the tax is set at the correct MEC, because the cost of exceeding the threshold is catastrophic.',
-          'Taxation is bad for negative externalities because it does not actually stop the harmful activity — it just makes it more expensive.',
-          'The UK\'s Soft Drinks Industry Levy succeeded partly because manufacturers reformulated below the tax threshold rather than paying it — suggesting the tax\'s effectiveness came from changing incentives at the production stage, not primarily from raising consumer prices.',
-          'Taxes are always more efficient than regulation because they give firms flexibility to choose how much to reduce the externality-generating activity.',
-          'Whether a tax or regulation is more effective depends on the situation, and both have advantages and disadvantages in different contexts.'
-        ],
-        correct: [0, 1, 3],
-        exp: '<strong>Option A</strong> is strong evaluation: it identifies the specific condition under which taxation outperforms uniform regulation — heterogeneous abatement costs — and explains the mechanism (cost-efficiency of flexible compliance). This is a precise, evidence-grounded direction that goes beyond listing pros and cons. <strong>Option B</strong> is strong evaluation: it identifies the specific condition under which regulation outperforms taxation — tipping points and catastrophic irreversibility — using Weitzman\'s analytical logic. It reaches a qualified directional conclusion that contradicts the "taxation is always best" view. <strong>Option D</strong> is strong evaluation: it uses specific evidence (the Soft Drinks Industry Levy reformulation effect) to reach a qualified conclusion about how and why the tax worked, distinguishing the price mechanism from the behavioural incentive at the producer level. <strong>Option C</strong> is a common student error — it correctly notes taxation does not prohibit the activity but draws the wrong conclusion: allowing the activity to continue at socially optimal levels is precisely the goal of Pigouvian taxation, not a failure. <strong>Option E</strong> overclaims ("always more efficient") — Weitzman (1974) shows this is false when MEC rises steeply. <strong>Option F</strong> is a vague "it depends" with no analytical direction, conditions, or evidence — the hallmark of hedging that mimics evaluation without providing it.'
-      },
-
-      /* 9 — data_table */
+      /* 9 — Data table: UK carbon tax and energy */
       { type: 'data_table',
-        stem: 'The table shows data on UK tobacco duty and smoking prevalence.',
-        headers: ['Year', 'Tobacco duty (per 20 cigarettes)', 'Average retail price', 'Adult smoking rate (%)'],
+        id: 'q_git_9',
+        stem: 'The table shows UK carbon pricing and energy outcomes 2015–2022.',
+        headers: ['Year', 'UK ETS/CPS carbon price (£/tonne)', 'Coal power share (%)', 'Renewables share (%)'],
         rows: [
-          ['2000', '&#163;2.49', '&#163;4.10', '27%'],
-          ['2005', '&#163;3.28', '&#163;5.20', '24%'],
-          ['2010', '&#163;4.51', '&#163;6.70', '20%'],
-          ['2015', '&#163;5.89', '&#163;8.80', '18%'],
-          ['2022', '&#163;7.90', '&#163;13.50', '13%']
+          ['2015', '6', '22%', '25%'],
+          ['2018', '18', '5%', '33%'],
+          ['2021', '50', '2%', '42%'],
+          ['2022', '65', '1%', '47%']
         ],
-        question: 'Which evaluation of the tobacco tax is most consistent with all the data in the table?',
+        question: 'Which conclusion is <strong>best supported</strong> by the data about the corrective tax mechanism?',
         opts: [
-          'Rising tobacco duty has contributed to a decline in smoking prevalence, but the increasingly large gap between duty and retail price in later years may reflect diminishing returns as remaining smokers have highly inelastic demand',
-          'The tobacco tax has completely failed because smoking is still legal and 13% of adults still smoke in 2022',
-          'Tobacco duty is regressive but this is irrelevant to its effectiveness as a corrective tax because health externalities are large',
-          'The data proves that tobacco duty alone can eliminate smoking if the tax is raised high enough'
+          'Rising carbon prices sent a strong price signal — coal became unprofitable and was rapidly displaced by renewables, consistent with a Pigouvian tax correcting a negative externality (carbon emissions)',
+          'The data show that carbon prices are too high — eliminating almost all coal generation shows over-correction below the social optimum',
+          'The correlation proves that carbon taxes alone caused the energy transition — no other factors matter',
+          'The near-elimination of coal shows the tax failed — a successful Pigouvian tax should reduce but not eliminate the taxed activity'
         ],
         ans: 0,
-        exp: 'The data support option A. Smoking fell from 27% (2000) to 13% (2022) as prices rose sharply &mdash; consistent with some price elasticity. However, the gap between duty and retail price grew substantially (duty was ~61% of retail price in 2000; ~58% in 2022, with retail price more than trebling). This suggests that as the smoking rate falls, remaining smokers are increasingly addicted and price-inelastic &mdash; diminishing marginal effectiveness of further tax rises. Option B sets an unrealistic benchmark. Option C ignores the regressivity issue which is a valid policy concern even if the externality justification remains. Option D overstates the evidence; a small highly-addicted minority may remain.'
+        exp: 'The data show a strong correlation: carbon prices rising from £6 to £65/tonne (×11) while coal\'s generation share collapsed from 22% to 1%. This is consistent with a Pigouvian tax correcting carbon externalities — making coal expensive relative to its private cost, signalling its social cost, and incentivising the shift to renewables. Option B: near-zero coal may actually be the social optimum if coal\'s MSC (including climate damage) greatly exceeds its MSB at any positive quantity. Option C is too strong — technology cost falls, gas price changes, and renewable subsidies also contributed. Option D misunderstands Pigouvian taxes — their goal is to reach Q*, which for coal may indeed be near zero.'
       },
 
-      /* 10 — chain: Pigouvian tax transmission */
-      { type: 'chain',
-        stem: 'The government introduces a Pigouvian tax on a good that generates a negative externality. Place these events in the correct logical order.',
-        items: [
-          { label: 'Market equilibrium shifts from Q1 to Q* (socially optimal output); deadweight welfare loss eliminated', note: '' },
-          { label: 'Tax raises production cost; supply curve shifts leftward by the tax amount', note: '' },
-          { label: 'Government identifies negative externality: MPC &lt; MSC (market over-produces relative to social optimum)', note: '' },
-          { label: 'Some firms invest in cleaner technology to reduce their per-unit tax liability', note: '' },
-          { label: 'Tax set equal to MEC at Q*; producers now face full social cost', note: '' },
-          { label: 'Government collects tax revenue; uses proceeds to fund affected households or clean technology', note: '' }
+      /* 10 — Multi-select: evaluation of taxation policy */
+      { type: 'multi_select',
+        id: 'q_git_10',
+        stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of taxation as a policy instrument?',
+        opts: [
+          'Taxes reduce the incentive to consume demerit goods and can raise revenue simultaneously',
+          'While Pigouvian taxes are theoretically optimal, their effectiveness in practice is conditional on price elasticity: for highly inelastic goods (heroin, cigarettes among addicts), even very high taxes may fail to reduce consumption to the social optimum — suggesting that taxation alone may be insufficient and must be combined with treatment programmes and regulations for goods with severe addiction externalities',
+          'Progressive income taxes reduce inequality by redistributing from high to low earners',
+          'Carbon taxes face a fundamental political economy challenge: the costs (higher energy prices, reduced competitiveness) are immediate and concentrated on specific industries and consumers, while the benefits (reduced climate risk) are long-run and diffuse — creating systematic political pressure to under-set the rate, which means the market failure persists even with a nominal carbon tax in place',
+          'VAT is regressive because lower-income households spend a higher proportion of income on consumption',
+          'The Laffer curve argument that lower tax rates increase revenue is used to justify tax cuts for high earners, but empirical evidence for the UK and US suggests current top rates are well below the revenue-maximising point — suggesting Laffer curve arguments, while theoretically valid, are being applied outside their valid empirical range in current policy debates'
         ],
-        correctOrder: [2, 4, 1, 0, 3, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Government identifies the market failure: MPC &lt; MSC &mdash; market over-produces.<br>2. Tax set equal to MEC at the social optimum Q*.<br>3. Supply shifts left by the tax amount &mdash; producers face higher cost per unit.<br>4. New equilibrium at Q* &mdash; socially optimal; DWL eliminated.<br>5. Firms invest in clean technology to reduce tax liability (dynamic efficiency).<br>6. Revenue recycled for welfare purposes.<br><br>Steps 5 and 6 can occur concurrently after step 4. The sequence demonstrates that Pigouvian taxation achieves both <em>static efficiency</em> (correct output level) and <em>dynamic efficiency</em> (innovation incentive) &mdash; two reasons it is theoretically superior to command-and-control regulation.'
+        correct: [1, 3, 5],
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: limits the Pigouvian tax argument by identifying elasticity and addiction as binding constraints — reaches the conclusion that a combination of instruments is needed. D: identifies the political economy dynamic that systematically biases carbon tax rates downward — a structural feature of democratic decision-making that qualifies the standard theoretical prescription. F: evaluates the Laffer curve argument empirically, distinguishing the theoretical validity from the empirical application — concluding that current policy use is outside the valid range. A, C, and E are accurate descriptions without evaluative moves.'
       }
 
     ]

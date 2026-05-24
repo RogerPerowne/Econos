@@ -5,183 +5,170 @@
     topicId:  'behavioural_econ_main',
     title:    'Behavioural Economics',
     subtitle: 'Theme 1 &middot; Topic 2.10 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering bounded rationality, the four key biases (anchoring, loss aversion, availability, social norms), bounded self-control and commitment devices, UK nudges (pension auto-enrolment, organ donation, HMRC letters, NHS reminders), and evaluation across the policy spectrum.',
-    shortNames: {
-      'behavioural_econ_1': 'Why people aren\'t rational',
-      'behavioural_econ_2': 'The four biases',
-      'behavioural_econ_3': 'Bounded self-control',
-      'behavioural_econ_4': 'UK nudges',
-      'behavioural_econ_5': 'Evaluation'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'behavioural_econ_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers bounded rationality, loss aversion, status quo bias, nudge theory, default options, and policy applications',
+    shortNames: [
+      'Bounded rationality MCQ', 'Biases categorise', 'Nudge theory MCQ', 'Default options',
+      'Loss aversion', 'Cause & effect', 'Match pairs', 'Odd one out',
+      'Data table', 'Evaluation multi-select'
+    ],
 
     questions: [
 
-      /* 1 — mcq: bounded rationality */
+      /* 1 — MCQ: bounded rationality */
       { type: 'mcq',
-        stem: 'Herbert Simon\'s concept of <strong>bounded rationality</strong> challenges the neoclassical assumption of homo economicus. Which statement most accurately describes bounded rationality?',
+        id: 'q_be_1',
+        stem: 'Herbert Simon\'s concept of <strong>bounded rationality</strong> suggests that humans:',
         opts: [
-          'People are rational within cognitive limits &mdash; they use heuristics (mental shortcuts) because full optimisation is cognitively costly and often impossible, producing predictable, systematic biases',
-          'People are completely irrational and make random, unpredictable decisions that cannot be modelled or influenced by policy',
-          'Bounded rationality only applies to uninformed consumers &mdash; economists and experts make fully rational decisions',
-          'Heuristics always lead to worse decisions than full optimisation; behavioural economics shows all shortcuts are harmful'
+          'Make decisions within the limits of their cognitive capacity and available information — using heuristics (mental shortcuts) to simplify choices, often reaching satisfactory rather than optimal decisions ("satisficing")',
+          'Are completely irrational and make random decisions with no consistent pattern or preference',
+          'Are perfectly rational in all contexts but choose to ignore information when it is too costly to process',
+          'Make rational decisions in familiar situations but become irrational when faced with complex choices'
         ],
         ans: 0,
-        exp: 'Bounded rationality (Simon, 1955) holds that people are rational <em>within limits</em>: cognitive capacity, time, and information are finite, so people use heuristics &mdash; rules of thumb that work well most of the time but cause systematic errors in specific contexts. The key word is <em>systematic</em>: biases are predictable and consistent, not random. This is what makes behavioural economics policy-relevant &mdash; if biases were random, nudges could not work. Option B overstates irrationality. Option C is elitist and unsupported. Option D is wrong: heuristics are evolutionarily adaptive and produce good decisions in familiar environments; they fail in novel or complex financial/health contexts.'
+        exp: 'Simon (1955): human rationality is "bounded" by limited information, limited cognitive capacity, and limited time. Rather than optimising (finding the best solution), people <strong>satisfice</strong> — find a solution that is "good enough" given their constraints. This produces systematic, predictable deviations from standard rational choice theory, which behavioural economics documents through experimental evidence. The deviations include heuristics (availability, representativeness, anchoring), biases (loss aversion, status quo, optimism), and framing effects. These are not random errors but systematic patterns — allowing policy designers to "nudge" behaviour predictably.'
       },
 
-      /* 2 — elastic_sort: classify biases */
-      { type: 'elastic_sort',
-        stem: 'Classify each consumer behaviour as an example of <strong>loss aversion</strong>, <strong>present bias</strong>, or <strong>anchoring</strong>.',
-        categories: ['loss', 'present', 'anchor'],
-        categoryLabels: ['Loss aversion', 'Present bias', 'Anchoring'],
-        goods: [
-          { icon: '📉', label: 'An investor holds a losing share for years because selling "locks in" a loss that feels worse than the paper loss', note: '', ans: 'loss' },
-          { icon: '🎂', label: 'A shopper sees a jacket "was &#163;200, now &#163;80" and buys it immediately, feeling it is a bargain even without comparing other prices', note: '', ans: 'anchor' },
-          { icon: '🚬', label: 'A smoker repeatedly says "I\'ll quit next week" but each week chooses to smoke rather than endure immediate discomfort', note: '', ans: 'present' },
-          { icon: '🏦', label: 'A saver transfers money to a current account paying 5% AER rather than a fixed ISA paying 6% AER because withdrawing feels like losing money', note: '', ans: 'loss' },
-          { icon: '🏃', label: 'A person joins a gym in January but stops going by March, preferring leisure time over the future health benefits', note: '', ans: 'present' },
-          { icon: '🏠', label: 'A homebuyer\'s willingness to pay is strongly influenced by the first asking price they see for a neighbourhood', note: '', ans: 'anchor' }
+      /* 2 — Categorise: behavioural biases */
+      { type: 'categorise',
+        id: 'q_be_2',
+        stem: 'Sort each example into the correct behavioural bias category.',
+        categories: ['Loss aversion', 'Present bias', 'Social norms', 'Anchoring'],
+        items: [
+          { text: 'People are more upset about losing £100 than they are happy about gaining £100', category: 'Loss aversion' },
+          { text: 'A person chooses to eat unhealthily today despite intending to start dieting next month', category: 'Present bias' },
+          { text: 'A hotel advertises a "normal" price of £200 then shows a "discount" of £150 — buyers feel they are getting a deal', category: 'Anchoring' },
+          { text: 'A person pays into a pension more when they see that 90% of their colleagues also contribute', category: 'Social norms' },
+          { text: 'A homeowner refuses to sell their house below what they paid for it even if the market has permanently fallen', category: 'Loss aversion' },
+          { text: 'People opt for a restaurant dish described as "90% fat-free" over one described as "10% fat" despite identical content', category: 'Anchoring' }
         ],
-        exp: '<strong>Loss aversion</strong>: decisions are distorted by the asymmetric weight given to losses vs gains. Holding losing shares (avoiding realising the loss) and preferring the account with lower return to avoid the "loss" of withdrawing both reflect the &#8776;2:1 loss-gain asymmetry. <strong>Present bias</strong>: systematic over-weighting of immediate rewards vs future ones. Delayed quitting and gym abandonment both reflect hyperbolic discounting. <strong>Anchoring</strong>: the first numerical reference point disproportionately influences judgements. The "was &#163;200" price and the first asking price both function as anchors that distort willingness to pay.'
+        exp: '<strong>Loss aversion</strong>: losses loom larger than equivalent gains — Kahneman and Tversky (1979) estimated losses feel approximately 2× as painful as equivalent gains feel good. <strong>Present bias</strong>: overweighting immediate costs and benefits vs future ones — "hyperbolic discounting"; justifies mandatory saving (pensions), sin taxes on addictive goods. <strong>Social norms</strong>: behaviour influenced by what others do — powerful nudge mechanism; HMRC tax compliance letters using "most people in your area pay on time." <strong>Anchoring</strong>: first number encountered anchors subsequent judgements — salary negotiations, retail pricing, property valuations.'
       },
 
-      /* 3 — multi_select: nudge examples */
-      { type: 'multi_select',
-        stem: 'Which of the following are examples of <strong>nudges</strong> (changes to choice architecture that alter behaviour without restricting options or changing financial incentives)?',
+      /* 3 — MCQ: nudge theory */
+      { type: 'mcq',
+        id: 'q_be_3',
+        stem: 'Thaler and Sunstein\'s <strong>nudge theory</strong> proposes that governments should:',
         opts: [
-          'Making pension auto-enrolment the default, with workers able to opt out at any time',
-          'Displaying calorie counts on restaurant menus so consumers can easily see nutritional information',
-          'Banning the sale of sugary drinks larger than 16oz (as tried in New York)',
-          'Sending HMRC letters stating "86% of people in your area have already paid their tax"',
-          'Increasing tax on tobacco to &#163;7.90 per 20 cigarettes to deter smoking',
-          'Placing fruit and vegetables at eye level in supermarket displays rather than near the checkout'
+          'Design "choice architectures" that make beneficial choices easier or more salient, without removing freedom of choice — preserving individual liberty (libertarian paternalism)',
+          'Replace all individual choices with government mandates to ensure optimal outcomes for all citizens',
+          'Use financial incentives (taxes and subsidies) as the primary tool for changing behaviour — nudges are too weak to influence behaviour significantly',
+          'Rely entirely on information provision — giving people all the relevant facts will lead them to rational choices'
         ],
-        correct: [0, 1, 3, 5],
-        exp: 'Options A, B, D, and F are nudges. <strong>Auto-enrolment</strong> (A): changes the default without removing choice &mdash; workers can still opt out. <strong>Calorie display</strong> (B): makes information more salient; does not restrict choice. <strong>HMRC social norm</strong> (D): alters the information context to activate social comparison; no financial change. <strong>Supermarket placement</strong> (F): changes the choice architecture (what you see first) without any restriction. Option C (size ban) is a <em>regulation</em> &mdash; it removes the option of large drinks entirely. Option E (tobacco tax) is a <em>price incentive</em>, not a nudge &mdash; it changes the financial cost of the choice.'
+        ans: 0,
+        exp: 'Thaler (2017 Nobel Prize) and Sunstein\'s nudge theory: since humans are predictably irrational, governments can improve outcomes by designing choice environments more carefully, without mandating behaviour. The term "libertarian paternalism" captures the apparent paradox: paternalism (improving welfare) + libertarian (preserving choice). Examples: <strong>default options</strong> (opt-out rather than opt-in for pensions — auto-enrolment); <strong>simplification</strong> (fewer options to avoid choice overload); <strong>social norms</strong> information (HMRC compliance letters); <strong>framing</strong> (healthier food at eye level). Nudges are low-cost compared to taxes/regulations and preserve individual autonomy.'
       },
 
-      /* 4 — odd_one_out */
+      /* 4 — MCQ: default options and auto-enrolment */
+      { type: 'mcq',
+        id: 'q_be_4',
+        stem: 'UK pension auto-enrolment changed the <strong>default option</strong> from "opt in" to "opt out." This works because:',
+        opts: [
+          'Status quo bias and inertia mean most people accept whatever the default is — by making pension contribution the default, most workers remain enrolled without having to make an active decision',
+          'Auto-enrolment forces all workers to contribute whether they want to or not — it removes individual choice entirely',
+          'Workers rationally calculate that pension contribution is always optimal and choose to enrol when prompted',
+          'The opt-out requirement makes it illegal for workers to leave the pension scheme without government approval'
+        ],
+        ans: 0,
+        exp: 'Default options are one of the most powerful nudges. <strong>Status quo bias</strong>: people tend to stick with whatever the default option is — changing it requires an active decision. Before auto-enrolment (opt-in), workers had to actively sign up → 35-40% participation. After auto-enrolment (opt-out), workers remain enrolled unless they actively opt out → 85%+ participation. Workers\' preferences haven\'t changed — only the default has. This harnesses status quo bias to increase retirement savings. Workers retain freedom to opt out — libertarian paternalism. The UK auto-enrolment scheme has enrolled 10 million+ previously non-saving workers since 2012.'
+      },
+
+      /* 5 — MCQ: loss aversion in policy */
+      { type: 'mcq',
+        id: 'q_be_5',
+        stem: 'Behavioural economics suggests that framing a policy as avoiding a <strong>loss</strong> rather than achieving a <strong>gain</strong> will make it more persuasive. Which example best applies this?',
+        opts: [
+          '"You will lose £1,200 per year by not having adequate home insulation" is more motivating than "You will save £1,200 per year by insulating your home" — even though both convey identical information',
+          '"Gain £1,000 in tax rebates" is more motivating than "Avoid £1,000 in tax penalties" because gains feel better than avoiding losses',
+          'Framing effects are only relevant in marketing, not in government policy design',
+          'Loss aversion only applies to financial decisions — environmental and health messages are not subject to framing effects'
+        ],
+        ans: 0,
+        exp: 'Loss aversion (Kahneman and Tversky): losses are psychologically more powerful than equivalent gains — typically by a factor of approximately 2. So framing the same information as a "loss avoided" rather than a "gain obtained" makes it more motivating, even though the objective outcomes are identical. This is a framing effect — a classic behavioural economics result. Applications: energy efficiency campaigns framing in terms of bills saved vs current losses; tax authority framing around penalties owed vs rebates earned; health messaging framing (lives lost rather than lives saved). Rational agents should be unaffected by framing — but humans systematically are.'
+      },
+
+      /* 6 — Cause & effect: behavioural biases and outcomes */
+      { type: 'cause_effect',
+        id: 'q_be_6',
+        stem: 'Match each behavioural bias to its real-world market or policy implication.',
+        pairs: [
+          { cause: 'Present bias — people heavily discount future health risks from smoking', effect: 'Underinvestment in health prevention; sin taxes and health warnings partially corrective' },
+          { cause: 'Status quo bias — people do not switch energy suppliers even if they would save money', effect: 'Energy market lacks effective competition; automatic switching or collective switching schemes' },
+          { cause: 'Anchoring — estate agents show an overpriced house first to make the next house seem cheaper', effect: 'Housing market decisions influenced by irrelevant reference points; buyers overpay' },
+          { cause: 'Overconfidence — entrepreneurs overestimate success probability of new businesses', effect: 'Excess business start-ups; creative destruction benefits economy but individuals suffer losses' },
+          { cause: 'Social norms — people recycle more when told most of their neighbours do', effect: 'Norm-based nudges can increase pro-social behaviour without taxes or regulation' },
+          { cause: 'Loss aversion — homeowners refuse to sell below purchase price', effect: 'Housing market liquidity falls in downturns; transaction volume collapses; price stickiness' }
+        ],
+        exp: 'Behavioural biases have systematic market consequences: <strong>present bias</strong> → underprovision of insurance, healthcare, pension saving; <strong>status quo bias</strong> → market failures in switching costs; <strong>anchoring</strong> → price distortions; <strong>overconfidence</strong> → excess risk-taking (entrepreneurship, financial markets); <strong>social norms</strong> → powerful lever for pro-social behaviour change; <strong>loss aversion</strong> → market illiquidity and price stickiness in downturns. Each suggests a specific policy response — nudges for inertia-related failures, information provision for anchoring, norm communication for social behaviour.'
+      },
+
+      /* 7 — Match pairs: behavioural economics concepts */
+      { type: 'match_pairs',
+        id: 'q_be_7',
+        stem: 'Match each concept to its definition.',
+        pairs: [
+          { a: 'Heuristic', b: 'Mental shortcut used to make quick decisions — often useful but systematically biased' },
+          { a: 'Nudge', b: 'Change to choice architecture that steers behaviour without mandating it' },
+          { a: 'Choice architecture', b: 'The design of the context in which choices are made — defaults, ordering, framing' },
+          { a: 'Satisficing', b: 'Choosing the first option that meets a minimum threshold — "good enough" rather than optimal' },
+          { a: 'Hyperbolic discounting', b: 'Over-weighting immediate outcomes vs future ones — time inconsistency in preferences' },
+          { a: 'Libertarian paternalism', b: 'Improving welfare through nudges while preserving freedom of choice' }
+        ],
+        exp: 'Behavioural economics vocabulary: <strong>heuristic</strong> — availability (judge probability by ease of recall), representativeness (judge by similarity to stereotype), anchoring (first number biases estimates). <strong>Nudge</strong> — Thaler and Sunstein\'s policy tool. <strong>Choice architecture</strong> — the broader framework within which nudges operate (designed by BIT — UK Behavioural Insights Team). <strong>Satisficing</strong> — Simon\'s key concept: accept "good enough" rather than find the optimum. <strong>Hyperbolic discounting</strong> — the behavioural basis of present bias: the discount rate between now and next week is much higher than between next year and the year after.'
+      },
+
+      /* 8 — Odd one out: behavioural biases */
       { type: 'odd_one_out',
-        stem: 'Three of these are features of <strong>prospect theory</strong> (Kahneman and Tversky). Which is the ODD ONE OUT?',
+        id: 'q_be_8',
+        stem: 'Three of these are well-established <strong>behavioural biases</strong> documented in experimental economics. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '📍', label: 'Outcomes are evaluated relative to a reference point (current position), not absolute wealth levels', note: '' },
-          { icon: '⚖️', label: 'People make decisions by maximising expected utility based on objective probabilities and linear preferences', note: '' },
-          { icon: '📉', label: 'Losses from the reference point are weighted approximately twice as heavily as equivalent gains (loss aversion)', note: '' },
-          { icon: '🎲', label: 'People overweight small probabilities and underweight large probabilities (probability distortion)', note: '' }
+          { icon: '😰', label: 'Loss aversion — people feel losses more strongly than equivalent gains', note: '' },
+          { icon: '⏱️', label: 'Present bias — people prefer immediate rewards over larger future rewards at an irrational rate', note: '' },
+          { icon: '📊', label: 'Perfect rationality — people always process all available information and optimise decisions', note: '' },
+          { icon: '🔢', label: 'Anchoring — initial reference numbers disproportionately influence subsequent judgements', note: '' }
         ],
-        ans: 1,
-        exp: 'The odd one out is option B &mdash; this describes <strong>expected utility theory</strong>, the neoclassical model that prospect theory was designed to challenge. Prospect theory (1979) departed from expected utility theory in three key ways: (A) <strong>reference dependence</strong>: outcomes evaluated relative to a reference point, not absolute; (C) <strong>loss aversion</strong>: the loss function is steeper than the gain function; (D) <strong>probability weighting</strong>: people distort probabilities (overweighting small chances, underweighting large ones). Kahneman and Tversky won the Nobel Prize (2002) precisely because prospect theory provides a better empirical description of actual decision-making than expected utility theory.'
+        ans: 2,
+        exp: 'The odd one out is <strong>perfect rationality</strong>. This is the assumption of standard (neoclassical) economics — that agents process all information and optimise. Behavioural economics challenges this assumption with experimental evidence showing that humans systematically deviate from perfect rationality through biases, heuristics, and framing effects. Loss aversion (Kahneman & Tversky), present bias (Thaler), and anchoring (Tversky & Kahneman) are all well-documented behavioural phenomena that contradict perfect rationality. The recognition of these biases is what distinguishes behavioural economics from neoclassical theory.'
       },
 
-      /* 5 — para_fill: auto-enrolment */
-      { type: 'para_fill',
-        stem: 'Complete the analytical paragraph about UK pension auto-enrolment as a nudge.',
-        anchor: 'Pension auto-enrolment exploits status quo bias to dramatically increase retirement saving.',
-        para: 'Under the old opt-[1] pension system, workers had to actively choose to join a workplace pension. Because of [2] bias and present bias, many workers never got round to enrolling &mdash; the [3] (inertia) was to have no pension. Auto-enrolment changed the default to opt-[4]: workers are automatically enrolled at a combined employer and employee contribution rate of [5]% unless they actively choose to leave. Participation in workplace pensions rose from approximately [6]% to [7]% of private sector workers. The critical insight: the same individual, facing the same pension options, makes a radically different decision depending on the [8].',
-        blanks: [
-          { id: 1, opts: ['in', 'out', 'up', 'down'], ans: 0 },
-          { id: 2, opts: ['status quo', 'loss aversion', 'herding', 'anchoring'], ans: 0 },
-          { id: 3, opts: ['default', 'outcome', 'target', 'barrier'], ans: 0 },
-          { id: 4, opts: ['out', 'in', 'up', 'down'], ans: 0 },
-          { id: 5, opts: ['8', '3', '15', '5'], ans: 0 },
-          { id: 6, opts: ['55', '30', '80', '45'], ans: 0 },
-          { id: 7, opts: ['87', '70', '60', '95'], ans: 0 },
-          { id: 8, opts: ['default', 'price', 'income', 'risk'], ans: 0 }
-        ],
-        exp: '(1) <strong>In</strong>: the old system required active opt-in. (2) <strong>Status quo</strong>: status quo bias means people stick with the default. (3) <strong>Default</strong>: the default determined outcomes for the majority who never actively decided. (4) <strong>Out</strong>: auto-enrolment makes membership the default &mdash; workers must opt out to leave. (5) <strong>8%</strong>: total minimum contribution (5% employee + 3% employer). (6) <strong>55%</strong>: approximately 55% before 2012 reforms. (7) <strong>87%</strong>: approximately 87% by 2022 &mdash; a 32 percentage point increase at near-zero policy cost. (8) <strong>Default</strong>: the power of defaults is the central behavioural insight; the same person makes different decisions under different defaults.'
-      },
-
-      /* 6 — calculation: nudge vs tax cost comparison */
-      { type: 'calculation',
-        context: 'The government wants to increase the pension saving rate. <strong>Option A (nudge):</strong> auto-enrolment default, implementation cost &#163;50 million. This raises pension participation by 30 percentage points, benefiting 8 million workers.<br><strong>Option B (tax incentive):</strong> increase pension tax relief, cost &#163;2 billion per year. This raises pension participation by 12 percentage points, benefiting 3 million workers.',
-        working: [
-          'Step 1: cost per worker helped under Option A (nudge)',
-          '&#163;50,000,000 \xf7 8,000,000 = &#163;6.25 per worker',
-          'Step 2: cost per worker helped under Option B (tax relief)',
-          '&#163;2,000,000,000 \xf7 3,000,000 = &#163;666.67 per worker',
-          'Step 3: cost-effectiveness comparison',
-          'Nudge is &#163;666.67 \xf7 &#163;6.25 = 106.7x cheaper per worker helped',
-          'Step 4: additional consideration',
-          'Tax relief disproportionately benefits higher-rate taxpayers; nudge is neutral across income groups'
-        ],
-        stem: 'Compare the cost-effectiveness of the two approaches in &#163; per worker helped.',
-        opts: [
-          { ped: 'Nudge: &#163;6.25/worker; tax relief: &#163;666.67/worker &mdash; the nudge is over 100 times more cost-effective', typ: 'Nudge: &#163;50m &#247; 8m workers = &#163;6.25. Tax relief: &#163;2,000m &#247; 3m workers = &#163;666.67.', rev: 'Divide total cost by number of workers benefited for each option' },
-          { ped: 'Nudge: &#163;50/worker; tax relief: &#163;667/worker', typ: 'Divided &#163;50m by 1m instead of 8m; otherwise correct method', rev: 'Use 8 million workers benefited by the nudge, not 1 million' },
-          { ped: 'Nudge: &#163;6.25/worker; tax relief: &#163;200/worker', typ: 'Divided &#163;2bn by 10m workers instead of 3m', rev: 'Use 3 million workers actually helped by the tax relief, not total workforce' },
-          { ped: 'Both options are equally cost-effective because they both increase pension saving', typ: 'Did not calculate cost per worker; compared outcomes qualitatively only', rev: 'Calculate cost &#247; workers helped for each option separately' }
-        ],
-        ans: 0,
-        exp: 'Nudge cost per worker: &#163;50m &#247; 8m = <strong>&#163;6.25/worker</strong>. Tax relief cost per worker: &#163;2,000m &#247; 3m = <strong>&#163;666.67/worker</strong>. The nudge is approximately <strong>107 times more cost-effective</strong> per worker helped. This is the key policy case for nudge theory: achieving equivalent or better outcomes at a fraction of the fiscal cost. Additional equity argument: pension tax relief disproportionately benefits higher-rate taxpayers (who get 40% relief vs 20% for basic rate), making it regressive as well as expensive. Auto-enrolment benefits all workers equally as a proportion of salary.'
-      },
-
-      /* 7 — data_table */
+      /* 9 — Data table: UK auto-enrolment pensions */
       { type: 'data_table',
-        stem: 'The HMRC Behavioural Insights Team tested different letter formats to improve tax compliance. The table shows response rates for unpaid tax.',
-        headers: ['Letter type', 'Payment rate (%)', 'Incremental payments vs control (&#163;m)', 'Key psychological technique'],
+        id: 'q_be_9',
+        stem: 'The table shows UK workplace pension participation data before and after auto-enrolment (introduced 2012).',
+        headers: ['Year', 'Private sector pension participation (%)', 'Opt-out rate (of auto-enrolled)'],
         rows: [
-          ['Control (standard reminder)', '33%', 'Baseline', 'None'],
-          ['Social norm: "Most people in your area have paid"', '38%', '&#163;210m', 'Social proof / herd behaviour'],
-          ['Loss frame: "You are one of the few who have not paid"', '40%', '&#163;280m', 'Loss aversion'],
-          ['Personalised: "Dear [name], your tax of [amount] is due"', '42%', '&#163;330m', 'Salience / personal relevance'],
-          ['Combined: social norm + personalised', '45%', '&#163;420m', 'Multiple nudges combined']
+          ['2010 (opt-in default)', '38%', 'n/a'],
+          ['2013 (auto-enrolment begins)', '45%', '9%'],
+          ['2016', '62%', '8%'],
+          ['2019', '77%', '8%'],
+          ['2022', '80%', '8%']
         ],
-        question: 'Which conclusion is best supported by the data?',
+        question: 'What do the data most strongly suggest about behavioural economics and policy design?',
         opts: [
-          'Multiple nudge techniques work better together; personalisation and loss framing are the most potent individual nudges; all nudges significantly outperform the standard reminder at near-zero marginal cost',
-          'The social norm letter alone (38%) is more effective than the loss frame letter (40%), so social proof is the strongest nudge',
-          'The data shows that nudges alone are sufficient to achieve 100% tax compliance and that fines and penalties are no longer needed',
-          'The combined letter\'s 45% payment rate proves that all tax compliance problems can be solved by behavioural interventions without any enforcement mechanisms'
+          'Changing the default from opt-in to opt-out doubled pension participation from 38% to 80% — with a consistent 8% opt-out rate, showing that most workers accept the default; this is strong evidence of the power of default options and status quo bias in policy design',
+          'The data show that workers prefer mandatory pension saving — they are willingly choosing to participate',
+          'Auto-enrolment failed because 8% of workers opted out, proving the policy is unpopular',
+          'The 80% participation rate proves workers are now making perfectly rational pension decisions'
         ],
         ans: 0,
-        exp: 'Option A is best supported. The combined letter achieves the highest payment rate (45% vs 33% control), and the incremental revenue (&#163;420m) significantly exceeds the near-zero cost of changing letter text. The loss frame (40%) outperforms the social norm (38%), consistent with Kahneman and Tversky\'s finding that loss framing is more motivating than gain framing. Personalisation (42%) achieves even more &mdash; consistent with salience increasing attention to the message. Combining techniques achieves 45% (not 33% + 12pp for each technique &mdash; there are diminishing marginal returns to stacking nudges). Options B, C, and D all misread the data or over-claim for nudge effectiveness.'
+        exp: 'The data powerfully demonstrate default effects: participation more than doubled (38% to 80%) with the same financial structure — only the default changed. The consistent 8% opt-out rate (those who actively choose not to participate) suggests that those who genuinely prefer not to save are exercising that freedom, while those who were previously inertially non-saving are now enrolled. This is precisely the "libertarian paternalism" Thaler and Sunstein advocated: improved outcomes (more retirement savings) without eliminating individual choice (workers can still opt out). The 10+ million newly enrolled workers represent a massive behavioural economics policy success.'
       },
 
-      /* 8 — multi_select: evaluation of behavioural economics */
+      /* 10 — Multi-select: evaluation of behavioural economics in policy */
       { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>behavioural economics and nudge theory</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &mdash; as opposed to description or one-sided analysis?',
+        id: 'q_be_10',
+        stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of behavioural economics as a policy framework?',
         opts: [
-          'UK pension auto-enrolment raised participation from ~55% to ~87% at near-zero policy cost, but this success is specific to a context where status quo bias is strong &#8212; nudges will be far less effective where the target behaviour requires sustained active effort (such as regular exercise) rather than a one-off default change',
-          'Nudge theory is based on the idea that people are not fully rational and use heuristics that lead to systematic biases',
-          'The same techniques that make nudges effective for policymakers &#8212; exploiting status quo bias, loss framing, and social norms &#8212; are used by firms to trap consumers in unwanted subscriptions and manipulate purchasing decisions, which means that validating nudge policy also legitimises commercial manipulation and may weaken consumer protection norms',
-          'Loss aversion means people feel losses approximately twice as strongly as equivalent gains, so loss-framed messages tend to be more persuasive than gain-framed ones',
-          'Nudges are best evaluated against a specific counterfactual: not \'do they change behaviour?\' but \'are they more cost-effective than the alternative (taxation, regulation, information campaigns)?\' &#8212; the HMRC personalised letter raised &#163;330m at near-zero cost versus the multi-billion-pound cost of equivalent tax relief, making it the dominant policy instrument for this specific compliance problem',
-          'The government\'s Behavioural Insights Team has applied nudge theory across a range of policy areas including tax compliance, organ donation, and pension saving'
+          'Behavioural economics identifies systematic deviations from rational behaviour through experimental evidence',
+          'Nudge-based policies are less coercive than taxes and regulations, but their effectiveness is context-specific and often modest — the auto-enrolment pension success is exceptional rather than typical; many nudges produce small, temporary effects that fade as novelty wears off, suggesting they complement rather than replace traditional policy instruments',
+          'Default options harness status quo bias to improve decisions without restricting choice',
+          'The libertarian paternalism framework of nudge theory has a fundamental internal tension: if people\'s "true" preferences are unknown (that\'s why they need nudging), then the government is effectively imposing its view of what is best under the guise of preserving choice — which raises paternalism concerns that the "libertarian" label may obscure rather than resolve',
+          'Loss aversion means people are more motivated by avoiding losses than achieving equivalent gains',
+          'Behavioural interventions are most powerful at population scale but face an ethical problem: systematically exploiting cognitive biases to change behaviour, even for beneficial ends, treats citizens as objects to be manipulated rather than autonomous agents — and the same techniques used by government nudge units are also used by private firms to exploit consumers, suggesting that uncritical enthusiasm for behavioural policy overlooks the dark side of choice architecture'
         ],
-        correct: [0, 2, 4],
-        exp: 'Option A is strong evaluation: it uses specific evidence (55% to 87%) to establish the success of auto-enrolment, then qualifies it with a mechanistic limitation (defaults only work where behaviour is passive, not active), reaching a direction &#8212; nudges have differential effectiveness by context. Option C is strong evaluation: it identifies a genuine symmetry between policy nudges and commercial manipulation, draws out the implication (validating nudge policy may weaken consumer protection norms), and reaches a conditional conclusion &#8212; this is genuine two-sided reasoning with a specific concern. Option E is strong evaluation: it reframes the evaluation criterion from a binary (does it work?) to a comparative (is it more cost-effective than alternatives?), applies specific quantified evidence (&#163;330m revenue vs multi-billion-pound tax relief cost), and reaches a directional conclusion &#8212; the hallmark of top-band essay evaluation. Option B describes bounded rationality and heuristics &#8212; knowledge content, not evaluation. Option D describes loss aversion accurately but does not weigh it, qualify it, or use it to reach any conditional conclusion. Option F is pure description of where nudge theory has been applied &#8212; a knowledge statement without analytical direction.'
-      },
-
-      /* 9 — chain: nudge policy sequence */
-      { type: 'chain',
-        stem: 'England switched from opt-in to opt-out organ donation in 2020. Place the following events in the correct logical order.',
-        items: [
-          { label: 'Organ donor register size increases; transplant waiting list shortens over time', note: '' },
-          { label: 'Policy analysis identifies status quo bias: most people support donation but forget to register', note: '' },
-          { label: 'England switches to soft opt-out default: adults are deemed to consent unless they register an objection', note: '' },
-          { label: 'Evidence from Wales (2015 opt-out) shows consent rates rose significantly under the new default', note: '' },
-          { label: 'Government identifies shortage of donor organs; transplant patients dying on waiting lists', note: '' },
-          { label: 'Evaluation: donation rates higher under opt-out; some concerns about informed consent and family override remain', note: '' }
-        ],
-        correctOrder: [4, 1, 3, 2, 0, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Government identifies the problem: organ shortage, preventable deaths on waiting lists.<br>2. Behavioural analysis: status quo bias prevents registration despite supportive attitudes.<br>3. Evidence from Wales (2015 opt-out) provides a real-world test case.<br>4. England adopts soft opt-out default (2020).<br>5. Donor register grows; transplant capacity improves.<br>6. Policy evaluation: higher donation rates but ongoing debate about autonomy and informed consent.<br><br>This sequence illustrates the nudge policy process: identify behavioural barrier &rarr; find evidence &rarr; change default &rarr; measure outcome &rarr; evaluate. The Wales natural experiment was crucial: it provided causal evidence before national rollout.'
-      },
-
-      /* 10 — multi_select: internalities */
-      { type: 'multi_select',
-        stem: 'Which of the following are examples of <strong>internalities</strong> (costs imposed by present-biased decisions on one\'s own future self)?',
-        opts: [
-          'A 20-year-old starts smoking despite knowing the long-run health risks, trading future health for present enjoyment',
-          'A carbon-emitting factory imposes costs on nearby residents through air pollution',
-          'A person makes only minimum credit card repayments each month despite high interest rates, accumulating long-run debt',
-          'A firm overfishes a common fishery, depleting stocks that others also depend on',
-          'A worker contributes the minimum to their pension despite later preferences to have retired earlier and more comfortably',
-          'A property developer builds in a flood risk area, increasing insurance premiums for all policyholders'
-        ],
-        correct: [0, 2, 4],
-        exp: 'Options A, C, and E are internalities: costs that present-biased decisions impose on one\'s own future self. <strong>Smoking</strong> (A): immediate pleasure vs long-run cancer risk. <strong>Debt accumulation</strong> (C): immediate consumption vs long-run interest burden. <strong>Under-saving</strong> (E): present consumption vs future retirement comfort. Options B, D, and F are <em>externalities</em>: costs imposed on <em>other people</em>. Factory pollution harms neighbours. Overfishing depletes commons shared by others. Flood risk building raises costs for other policyholders. The distinction matters for policy: internalities justify paternalistic intervention to protect individuals from their own future selves; externalities justify corrective taxes and regulation to protect third parties.'
+        correct: [1, 3, 5],
+        exp: '<strong>Options B, D, and F are genuine evaluation.</strong> B: qualifies the nudge effectiveness argument by noting that the pension default success is exceptional — most nudges produce smaller effects — reaching the conclusion that nudges complement rather than replace traditional instruments. D: identifies the internal philosophical tension in "libertarian paternalism" — the liberty claim may be thinner than it appears if the government is the one deciding what counts as the "better" default. F: identifies the ethical dimension of choice architecture exploitation and notes the symmetry with private sector manipulation — a broader critical evaluation of the framework. A, C, and E are descriptions.'
       }
 
     ]

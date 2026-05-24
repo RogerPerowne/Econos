@@ -1,184 +1,137 @@
-/* ============================================================
-   ECONOS — Quiz content for: Inflation: Measurement & Costs
-   10 questions covering CPI construction, RPI/CPIH differences,
-   index limitations, winners/losers, and the 2% target.
-   ============================================================ */
-
 (function () {
 
   window.ECONOS_QUIZ = {
     id:       'inflation_meas_main',
     topicId:  'inflation_meas_main',
-    title:    'Inflation: Measurement &amp; Costs',
-    subtitle: 'Theme 2.2.1 &#183; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the definition of inflation, CPI construction, RPI versus CPIH, the limitations of price indices, the costs of inflation, the deflationary spiral, and the rationale for the 2% target. Mixed question formats target the analytical reasoning that distinguishes A* from B grade answers.',
-    shortNames: {
-      'inflation-framing':  'What is inflation?',
-      'cpi':                'How CPI is built',
-      'rpi-cpi-cpih':       'RPI vs CPI vs CPIH',
-      'price-index-limits': 'Index limitations',
-      'inflation-costs':    'Costs of inflation',
-      'deflation-costs':    'The deflationary spiral',
-      'inflation-target':   'Why 2%?'
-    },
-
+    title:    'Inflation: Measurement & Costs',
+    subtitle: 'Macroeconomics',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'inflation_meas' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers CPI construction, RPI/CPIH, winners and losers, and the 2% target',
+    shortNames: [
+      'CPI construction','Basket of goods','CPI vs RPI','Winners/losers','Costs of inflation',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 &#8212; MCQ: disinflation vs deflation */
-      { type: 'mcq',
-        stem: 'The UK CPI inflation rate falls from 6.0% to 3.5% over six months. Which of the following correctly describes this situation?',
+      {
+        id:   'q_infm_1',
+        type: 'mcq',
+        q:    'The Consumer Price Index (CPI) measures inflation by:',
         opts: [
-          'Disinflation: the rate of inflation has fallen, but prices are still rising &#8212; just more slowly',
-          'Deflation: prices across the economy are now falling at a rate of 3.5%',
-          'Deflation: because inflation has fallen, the price level must be declining',
-          'Disinflation is only possible if the Bank of England raised interest rates during this period'
+          'Tracking the price of all goods and services produced domestically',
+          'Tracking changes in the cost of a representative basket of goods and services over time',
+          'Measuring the growth rate of the money supply',
+          'Recording average house prices and rent levels'
         ],
-        ans: 0,
-        exp: '<strong>Disinflation</strong> is a fall in the <em>rate</em> of inflation &#8212; prices are still rising, just at a slower pace. Deflation requires the inflation rate to turn negative (below zero). If CPI is 3.5%, prices are still 3.5% higher than a year ago &#8212; they are not falling. Confusing disinflation and deflation is one of the most-penalised errors in inflation questions. Option D is incorrect: disinflation can result from many factors, including falling commodity prices or improved supply, without any change in monetary policy.'
+        ans:  1,
+        exp:  'The CPI tracks the changing cost of a representative "basket" of goods and services consumed by a typical UK household. The basket is updated annually and the weights reflect spending patterns.'
       },
-
-      /* 2 &#8212; Elastic sort: CPI basket categories */
-      { type: 'elastic_sort',
-        stem: 'Classify each item by whether it <strong>is included</strong> or <strong>is excluded</strong> from the UK CPI basket.',
-        categories: ['in', 'out'],
-        categoryLabels: ['Included in CPI', 'Excluded from CPI'],
-        goods: [
-          { icon: '&#127968;', label: 'Private rental costs paid by tenants', note: '', ans: 'in' },
-          { icon: '&#127968;', label: 'Mortgage interest payments by homeowners', note: '', ans: 'out' },
-          { icon: '&#127829;', label: 'Supermarket food and drink prices', note: '', ans: 'in' },
-          { icon: '&#127868;', label: 'Council tax payments', note: '', ans: 'out' },
-          { icon: '&#128664;', label: 'Petrol and diesel at the pump', note: '', ans: 'in' },
-          { icon: '&#127968;', label: 'Owner-occupier housing costs (OOH) based on rental equivalence', note: '', ans: 'out' }
-        ],
-        exp: '<strong>CPI includes</strong>: private rents, food, petrol, clothing, entertainment, and most consumer goods. <strong>CPI excludes</strong>: mortgage interest payments, council tax, and owner-occupier housing costs (OOH). CPIH is the ONS preferred measure precisely because it adds OOH using rental equivalence and council tax. This is why CPI understated the cost-of-living squeeze for homeowners in 2022-23 when mortgage rates surged. The A* point: citing which groups are most disadvantaged by CPI\'s exclusions (mortgage holders) is a mark-scoring analytical move.'
-      },
-
-      /* 3 &#8212; Multi-select: RPI vs CPI */
-      { type: 'multi_select',
-        stem: 'Which of the following statements about <strong>RPI compared to CPI</strong> are correct?',
+      {
+        id:   'q_infm_2',
+        type: 'mcq',
+        q:    'The main difference between CPI and RPI (Retail Price Index) is:',
         opts: [
-          'RPI includes mortgage interest payments; CPI does not',
-          'RPI uses an arithmetic mean for price averaging; CPI uses a geometric mean, which tends to give a lower result',
-          'The Bank of England targets RPI at 2%, not CPI',
-          'RPI is typically higher than CPI by approximately 1 percentage point',
-          'Rail fares in the UK are traditionally uprated using the RPI formula',
-          'RPI is the ONS\'s preferred headline measure since 2017'
+          'RPI includes housing costs (mortgage interest payments); CPI does not',
+          'CPI includes housing costs; RPI does not',
+          'RPI only covers goods, not services',
+          'CPI is used for setting interest rates; RPI for measuring output'
         ],
-        correct: [0, 1, 3, 4],
-        exp: 'Correct statements: (A) RPI includes mortgage interest payments &#8212; a key structural difference. (B) The formula effect: CPI\'s geometric mean within categories produces systematically lower results than RPI\'s arithmetic mean. (D) RPI runs ~1pp above CPI on average due to these structural differences. (E) Rail fares use RPI+X &#8212; governments prefer CPI for benefits uprating (lower) and operators prefer RPI for fares (higher). Incorrect: (C) The BoE targets <em>CPI</em> at 2%. (F) CPIH is the ONS preferred measure since 2017, not RPI.'
+        ans:  0,
+        exp:  'RPI includes mortgage interest payments and some housing costs that CPI excludes. RPI therefore tends to be higher than CPI when interest rates are rising. CPIH is a variant of CPI that includes owner-occupier housing costs.'
       },
-
-      /* 4 &#8212; MCQ: substitution bias */
-      { type: 'mcq',
-        stem: 'In 2020, UK CPI fell to very low levels despite many households feeling financially squeezed. This was partly because holiday and clothing prices fell (sectors consumers could not use during lockdown). Which <strong>price index limitation</strong> does this best illustrate?',
+      {
+        id:   'q_infm_3',
+        type: 'mcq',
+        q:    'The Bank of England\'s inflation target (set by the government) is:',
+        opts: ['1% CPI','2% CPI','3% RPI','0% — price stability means zero inflation'],
+        ans:  1,
+        exp:  'The UK government set the Bank of England a symmetric inflation target of 2% CPI. If inflation deviates by more than 1 percentage point (above 3% or below 1%), the Governor must write an open letter of explanation to the Chancellor.'
+      },
+      {
+        id:   'q_infm_4',
+        type: 'mcq',
+        q:    'Which group benefits from unexpectedly high inflation?',
         opts: [
-          'The basket weights became unrepresentative of actual spending patterns during lockdown, so CPI gave a misleading picture of the inflation actually experienced',
-          'CPI always falls during recessions because firms reduce prices to stimulate demand when household incomes fall',
-          'Substitution bias: because consumers substituted holidays for food, the index correctly reflected their choices',
-          'The quality adjustment problem: lower-quality goods were purchased during lockdown, reducing the price index mechanically'
+          'Savers with fixed-rate savings accounts',
+          'Pensioners on fixed nominal incomes',
+          'Borrowers with fixed-rate mortgages',
+          'Creditors owed a fixed nominal sum'
         ],
-        ans: 0,
-        exp: 'The 2020 CPI anomaly illustrates the <strong>basket composition problem</strong>. CPI weights each category by its share of normal household spending. In lockdown, consumers could not buy holidays or eat out &#8212; but these categories still carried large weights in the basket. Their falling prices pulled CPI down, even as food and energy (what locked-down households <em>actually</em> spent on) rose sharply. The basket weights lagged the radical shift in spending patterns. Option C is a definition error &#8212; substitution bias is about consumers switching to cheaper alternatives within a category, not the basket weight problem described here.'
+        ans:  2,
+        exp:  'Borrowers gain from unexpected inflation because the real value of their debt falls. A £100,000 mortgage becomes cheaper in real terms when prices rise — they repay less in purchasing power terms.'
       },
-
-      /* 5 &#8212; Para fill: deflationary spiral */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph explaining the deflationary spiral by selecting the correct word or phrase for each blank.',
-        anchor: 'Deflation is feared by central banks because it can create a self-reinforcing trap.',
-        para: 'If prices are [1] , rational consumers may delay purchases because goods will be [2] tomorrow than today. This causes [3] to fall, reducing firms\' revenues. Firms respond by cutting output and employment, causing [4] to fall further. Meanwhile, the real value of [5] rises because nominal debts are fixed while prices fall &#8212; the Fisher debt-deflation spiral. Monetary policy is limited because the central bank cannot push [6] rates below zero. The historical precedent is [7] , where prices fell ~25% and recovery required massive fiscal intervention.'
-        ,
-        blanks: [
-          { id: 1, opts: ['falling', 'rising', 'stable', 'volatile'], ans: 0 },
-          { id: 2, opts: ['cheaper', 'more expensive', 'unavailable', 'better quality'], ans: 0 },
-          { id: 3, opts: ['consumption', 'investment', 'exports', 'savings'], ans: 0 },
-          { id: 4, opts: ['incomes', 'prices', 'interest rates', 'taxes'], ans: 0 },
-          { id: 5, opts: ['debt', 'assets', 'income', 'savings'], ans: 0 },
-          { id: 6, opts: ['nominal interest', 'real interest', 'inflation', 'exchange'], ans: 0 },
-          { id: 7, opts: ['the Great Depression (1930-33)', 'the 2008 financial crisis', 'the 1970s oil shock', 'Japanese deflation 2010-15'], ans: 0 }
-        ],
-        exp: '(1) <strong>Falling</strong>: deflation means prices are going down. (2) <strong>Cheaper</strong>: delay purchases because tomorrow the same item costs less. (3) <strong>Consumption</strong>: delayed spending reduces aggregate demand. (4) <strong>Incomes</strong>: lower firm revenues mean lower wages and employment &#8212; incomes fall further. (5) <strong>Debt</strong>: the Fisher debt-deflation mechanism &#8212; real debt rises as prices fall. (6) <strong>Nominal interest</strong>: the zero lower bound means nominal rates cannot go negative (though some central banks briefly tried mildly negative rates). (7) <strong>The Great Depression</strong>: the textbook deflationary episode &#8212; US prices fell ~25%, recovery required WWII fiscal stimulus.'
+      {
+        id:   'q_infm_5',
+        type: 'numeric_input',
+        q:    'The CPI basket costs £850 in the base year and £893 in the current year. Calculate the CPI index value for the current year (base year = 100).',
+        answer: 105.1,
+        tolerance: 0.2,
+        unit: '',
+        hint: 'CPI = (current basket cost ÷ base year cost) × 100.',
+        workingSteps: ['CPI = (£893 ÷ £850) × 100 = 105.06 ≈ 105.1']
       },
-
-      /* 6 &#8212; Calculation: real interest rate */
-      { type: 'calculation',
-        context: 'A UK saver holds &#163;10,000 in a savings account paying a <strong>nominal interest rate of 3%</strong>. The current CPI inflation rate is <strong>6%</strong>.',
-        working: [
-          'Real interest rate = nominal rate &#8722; inflation rate',
-          'Real rate = 3% &#8722; 6% = &#8722;3%',
-          'Real return in &#163;: &#163;10,000 &#215; (&#8722;3%) = &#8722;&#163;300 per year',
-          'Nominal balance after 1 year = &#163;10,300',
-          'But: purchasing power = &#163;10,300 &#247; 1.06 &#8776; &#163;9,717 in today\'s terms',
-          'Real loss = &#163;283 in purchasing power'
-        ],
-        stem: 'What is the <strong>real interest rate</strong> earned by the saver, and what does this mean for their purchasing power?',
-        opts: [
-          { ped: 'Real rate = &#8722;3%: purchasing power falls by roughly &#163;283 despite nominally earning &#163;300', typ: 'Applies Fisher equation: real = nominal &#8722; inflation = 3% &#8722; 6% = &#8722;3%', rev: 'Inflation exceeds the nominal rate, eroding the real value of savings' },
-          { ped: 'Real rate = +9%: purchasing power rises because savings plus interest exceeds inflation', typ: 'Added nominal rate and inflation instead of subtracting', rev: 'Real rate = nominal rate MINUS inflation, not plus' },
-          { ped: 'Real rate = 3%: the saver earns &#163;300 so purchasing power rises by &#163;300', typ: 'Ignored inflation entirely &#8212; confused nominal and real returns', rev: 'Nominal return of 3% is eroded by 6% inflation &#8212; real return is negative' },
-          { ped: 'Real rate = 0%: because nominal interest exactly compensates for half the inflation', typ: 'Incorrect arithmetic &#8212; 3 is not half of 6 in the right direction', rev: 'Subtract: 3% &#8722; 6% = &#8722;3%, not 0%' }
-        ],
-        ans: 0,
-        exp: 'Real interest rate = nominal rate &#8722; inflation = 3% &#8722; 6% = <strong>&#8722;3%</strong>. Despite nominally receiving &#163;300 in interest, the saver\'s &#163;10,300 balance after one year buys only &#163;10,300 &#247; 1.06 &#8776; &#163;9,717 in today\'s prices &#8212; a real loss of ~&#163;283. This is the mechanism by which high inflation transfers wealth from savers to borrowers. The 2022-23 UK episode (Bank Rate 0.5-4%, CPI 6-11%) left real interest rates deeply negative for much of the period, imposing significant losses on cautious savers.'
-      },
-
-      /* 7 &#8212; Multi-select: evaluation of inflation costs and redistribution */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on the <strong>costs and redistribution effects of inflation</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'While borrowers gain as the real value of debt falls, this benefit is conditional on nominal wages rising in line with inflation &#8212; if wages lag (as for many workers in 2022-23), even mortgaged homeowners saw real income fall despite debt erosion.',
-          'Inflation hurts savers because the real value of their savings falls.',
-          'The distributional impact of inflation depends heavily on whether monetary policy responds: the BoE\'s rate rises to 5.25% by 2023 largely restored positive real returns on savings, qualifying the simple \'savers always lose\' conclusion.',
-          'Shoe-leather costs and menu costs are costs of high inflation.',
-          'The ONS distributional data showing the poorest decile faced ~15% inflation versus ~8% for the richest in 2022-23 suggests that aggregate CPI understates the true welfare cost &#8212; a measure that ignores distributional impact may mislead policy-makers targeting the 2% headline figure.',
-          'Inflation is always bad for the economy and should be kept as low as possible.'
-        ],
-        correct: [0, 2, 4],
-        exp: '<strong>Option A</strong> is genuine evaluation: it weighs the borrower-gains argument against the necessary condition (wage growth must keep pace), using UK 2022-23 experience to show the caveat is empirically binding &#8212; a qualified, evidence-grounded conclusion. <strong>Option C</strong> is evaluation: it challenges the one-sided \'savers always lose\' claim by tracing the full policy response, reaching a direction (the simple conclusion needs qualifying). <strong>Option E</strong> is evaluation: it uses specific ONS data to reach a qualified conclusion about the adequacy of aggregate CPI as a welfare measure, directly addressing the essay topic. <strong>Option B</strong> is pure description &#8212; it states a conclusion without mechanism, qualification, or direction. <strong>Option D</strong> is description &#8212; naming costs with no comparative weight, no qualification, no direction. <strong>Option F</strong> overclaims certainty and ignores the positive case for a 2% buffer (deflation risk, wage flexibility), making it a one-sided analytical claim, not evaluation.'
-      },
-
-      /* 8 &#8212; Odd one out: costs of high inflation */
-      { type: 'odd_one_out',
-        stem: 'Three of these are <strong>costs of high inflation</strong>. Which is the ODD ONE OUT?',
+      {
+        id:   'q_infm_6',
+        type: 'categorise',
+        q:    'Categorise each group as a winner or loser from unexpected inflation.',
+        categories: ['Winner from inflation','Loser from inflation'],
         items: [
-          { icon: '&#128176;', label: 'Shoe-leather costs: households make more frequent bank visits to minimise cash holdings', note: '' },
-          { icon: '&#127968;', label: 'Debtors gain: the real value of fixed nominal debts falls as inflation rises', note: '' },
-          { icon: '&#128200;', label: 'Menu costs: firms must frequently update price lists, menus, and catalogues', note: '' },
-          { icon: '&#127758;', label: 'Fiscal drag: inflation pushes nominal incomes into higher tax brackets without real income gains', note: '' }
-        ],
-        ans: 1,
-        exp: 'The odd one out is option B: <strong>debtors gaining is a redistribution effect</strong> of inflation, not a cost. It represents a transfer of purchasing power from creditors (who lose) to debtors (who gain as the real burden of their debt falls) &#8212; a welfare redistribution, not a net economic cost. The other three (shoe-leather costs, menu costs, and fiscal drag) all represent genuine resource costs &#8212; time, administrative burden, and increased real tax burden. A* answers distinguish between redistribution effects of inflation (winners and losers) and genuine efficiency costs.'
+          { item: 'Mortgage borrower with fixed rate',          category: 'Winner from inflation' },
+          { item: 'Pensioner on fixed nominal pension',         category: 'Loser from inflation' },
+          { item: 'Government with large nominal debt',         category: 'Winner from inflation' },
+          { item: 'Saver with cash in a low-interest account',  category: 'Loser from inflation' },
+          { item: 'Exporter if domestic inflation below rivals',category: 'Winner from inflation' },
+          { item: 'Creditor owed a fixed sum',                  category: 'Loser from inflation' }
+        ]
       },
-
-      /* 9 &#8212; Diagram interp: why not 0% target */
-      { type: 'mcq',
-        stem: 'The Bank of England targets <strong>CPI inflation at 2%</strong> rather than 0%. Which of the following gives the <em>strongest</em> economic justification for this positive target?',
-        opts: [
-          'A 2% buffer reduces the risk of deflation; some positive inflation allows real wage adjustments without nominal wage cuts; and measurement bias means 2% may be closer to true price stability than it appears',
-          'A 2% target is less ambitious than 0% and therefore easier for the Bank of England to achieve, reducing the political cost of missing the target',
-          'Higher inflation always raises real economic growth; targeting 2% therefore guarantees faster expansion of GDP than a zero target',
-          '2% was chosen arbitrarily by the UK Treasury in 1992 and has no strong theoretical justification beyond international convention'
-        ],
-        ans: 0,
-        exp: 'Three complementary arguments justify a positive inflation target. (1) <strong>Deflation buffer</strong>: maintaining 2% provides insurance against negative shocks that could push inflation below zero &#8212; deflationary spirals are much harder to escape than inflation. (2) <strong>Wage flexibility</strong>: with 2% inflation, firms can cut <em>real</em> wages by freezing nominal wages &#8212; easing labour market adjustment without the resistance provoked by nominal wage cuts. (3) <strong>Measurement bias</strong>: CPI likely overstates true inflation by 0.5-1pp due to substitution bias and quality adjustment, so 2% may effectively be ~1% true inflation. (4) <strong>Monetary policy headroom</strong>: positive inflation keeps nominal rates positive, giving the BoE room to cut in recessions.'
+      {
+        id:   'q_infm_7',
+        type: 'cause_effect',
+        q:    'Match each cost or consequence of inflation to its effect.',
+        pairs: [
+          { cause: 'High and variable inflation',              effect: 'Business uncertainty rises; investment may fall' },
+          { cause: 'Inflation above trading partners\' rate',  effect: 'Exports become less competitive; current account worsens' },
+          { cause: 'Workers negotiate higher nominal wages',   effect: 'Risk of wage-price spiral developing' },
+          { cause: 'Shoe-leather costs arise',                 effect: 'People spend more time managing cash holdings' },
+          { cause: 'Menu costs arise',                         effect: 'Firms must frequently update prices; administrative burden' },
+          { cause: 'Deflation takes hold',                     effect: 'Consumers delay purchases expecting lower prices; demand collapses' }
+        ]
       },
-
-      /* 10 &#8212; Chain: CPI construction */
-      { type: 'chain',
-        stem: 'Place the steps in the correct order to describe how the <strong>ONS constructs the monthly CPI figure</strong>.',
-        items: [
-          { label: 'The resulting CPI figure is published; a change from the previous month\'s index gives the inflation rate', note: '' },
-          { label: 'Prices are collected at ~140 locations and online, yielding ~180,000 individual price quotes per month', note: '' },
-          { label: 'A representative basket of ~700 goods and services categories is selected based on household spending patterns', note: '' },
-          { label: 'Price changes in each category are weighted by that category\'s share of total household expenditure', note: '' },
-          { label: 'The basket is updated annually to reflect changing spending patterns, and a base year is set at 100', note: '' },
-          { label: 'The weighted price changes are aggregated to produce the overall CPI index number', note: '' }
+      {
+        id:   'q_infm_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['CPI','RPI','CPIH','Gini coefficient'],
+        ans:  3,
+        exp:  'CPI, RPI, and CPIH are all measures of price inflation. The Gini coefficient measures income or wealth inequality — it is not an inflation measure.'
+      },
+      {
+        id:   'q_infm_9',
+        type: 'data_table',
+        q:    'Use the table to calculate the inflation rate between Year 2 and Year 3.',
+        tableHeaders: ['Year','CPI Index'],
+        tableData: [
+          ['Year 1 (base)','100.0'],
+          ['Year 2','106.0'],
+          ['Year 3','113.4']
         ],
-        correctOrder: [2, 4, 1, 3, 5, 0],
-        exp: '<strong>CPI construction sequence:</strong><br>1. Select the basket (~700 categories).<br>2. Update and weight the basket annually.<br>3. Collect prices (~180,000 quotes monthly).<br>4. Apply weights to price changes in each category.<br>5. Aggregate to produce the index number.<br>6. Compare to last month to calculate the inflation rate.<br><br>Understanding this process exposes the key limitations: basket weights become outdated (step 2), prices can be hard to collect consistently (step 3), and weighting choices embed value judgments (step 4). A* answers cite these process limitations to explain why different households experience different effective inflation rates.'
+        opts: ['6.0%','7.4%','6.98%','7.0%'],
+        ans:  3,
+        exp:  'Inflation Year 2→3 = ((113.4 − 106.0) ÷ 106.0) × 100 = (7.4 ÷ 106) × 100 ≈ 6.98% ≈ 7.0%.'
+      },
+      {
+        id:   'q_infm_10',
+        type: 'match_pairs',
+        q:    'Match each inflation measurement concept to its description.',
+        pairs: [
+          { a: 'CPI',              b: 'Headline UK inflation measure using consumer basket; excludes housing' },
+          { a: 'RPI',              b: 'Older measure including mortgage costs; typically higher than CPI' },
+          { a: 'CPIH',             b: 'CPI variant including owner-occupier housing costs' },
+          { a: 'Base year',        b: 'Reference year with index set to 100' },
+          { a: 'Shoe-leather cost',b: 'Extra cost of managing cash holdings to avoid inflation erosion' },
+          { a: 'Menu cost',        b: 'Cost of updating prices frequently due to inflation' }
+        ]
       }
-
     ]
   };
 

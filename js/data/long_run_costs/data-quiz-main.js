@@ -4,180 +4,175 @@
     id:       'long_run_costs_main',
     topicId:  'long_run_costs_main',
     title:    'Long-Run Costs &amp; Economies of Scale',
-    subtitle: 'Theme 3.4 · Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the LRAC envelope curve, internal and external economies of scale, minimum efficient scale, diseconomies of scale, natural monopoly, and RPI-X regulation. Mixed formats including classification, data analysis, and evaluative essay diagnosis.',
-    shortNames: {
-      'lrac':      'LRAC envelope',
-      'int_eos':   'Internal economies of scale',
-      'ext_eos':   'External economies',
-      'disec':     'Diseconomies of scale',
-      'mes':       'MES and market structure',
-      'nat_mon':   'Natural monopoly',
-      'rpix':      'RPI-X regulation'
-    },
+    subtitle: 'Theme 3 &middot; Edexcel A-Level',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'long_run_costs_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers economies and diseconomies of scale, LRAC envelope curve, minimum efficient scale, and natural monopoly',
+    shortNames: [
+      'LRAC definition', 'Economies of scale sort', 'MES MCQ', 'Natural monopoly',
+      'Diseconomies MCQ', 'Numeric MES', 'Cause & effect', 'Match pairs',
+      'Odd one out', 'Data table'
+    ],
 
     questions: [
 
-      /* 1 — Elastic sort: internal economies of scale */
+      /* 1 — MCQ: LRAC and returns to scale */
+      { type: 'mcq',
+        id: 'q_lrc_1',
+        stem: 'The <strong>long-run average cost (LRAC) curve</strong> is often described as an "envelope curve." This means:',
+        opts: [
+          'The LRAC is the minimum achievable average cost at each output level when all factors of production can be varied — it traces the lowest point of each possible short-run average cost curve',
+          'The LRAC envelops the total cost of all fixed factors — it shows total fixed costs at every level of production',
+          'The LRAC is always downward sloping — economies of scale mean costs always fall as output increases',
+          'The LRAC is a straight horizontal line in the long run — all costs are variable and constant per unit'
+        ],
+        ans: 0,
+        exp: 'In the long run, all factors of production are variable — firms can choose their optimal capital stock for each output level. The LRAC is constructed from many short-run ATC curves (each representing a different plant size). At each output level, the firm would choose the plant size with the lowest ATC → the LRAC traces the lowest achievable ATC at every output. This creates the characteristic U-shape: falling LRAC (economies of scale) → minimum efficient scale (MES) → rising LRAC (diseconomies of scale). In practice, many firms have a flat section (constant returns to scale) between MES and diseconomies.'
+      },
+
+      /* 2 — Elastic sort: internal vs external economies of scale */
       { type: 'elastic_sort',
-        stem: 'Classify each economy of scale as a <strong>technical</strong>, <strong>purchasing</strong>, <strong>managerial</strong>, <strong>marketing</strong>, or <strong>financial</strong> economy.',
-        categories: ['tech', 'purch', 'man', 'mkt', 'fin'],
-        categoryLabels: ['Technical', 'Purchasing', 'Managerial', 'Marketing', 'Financial'],
+        id: 'q_lrc_2',
+        stem: 'Classify each economy of scale as <strong>internal</strong> (arising within the firm) or <strong>external</strong> (arising from industry growth).',
+        categories: ['internal', 'external'],
+        categoryLabels: ['Internal economies of scale', 'External economies of scale'],
         goods: [
-          { icon: '&#128260;', label: 'A large oil tanker carries proportionally more oil per unit of steel used to build it (cube-square law)', note: '', ans: 'tech' },
-          { icon: '&#128717;', label: 'Tesco negotiates supplier prices 20% below those available to small independent grocers', note: '', ans: 'purch' },
-          { icon: '&#128187;', label: 'A large firm employs a dedicated chief data scientist whose salary is spread over 10 million units', note: '', ans: 'man' },
-          { icon: '&#128250;', label: 'A national TV advertising campaign costs the same whether the firm sells 1 million or 10 million units', note: '', ans: 'mkt' },
-          { icon: '&#127981;', label: 'A FTSE 100 company borrows at 3% interest, while a small business pays 8% for the same loan size', note: '', ans: 'fin' },
-          { icon: '&#9981;', label: 'A large reactor generates proportionally more electricity per unit of construction material than a small one', note: '', ans: 'tech' }
+          { icon: '🏭', label: 'A large manufacturer can afford to run dedicated production lines for each product', note: '', ans: 'internal' },
+          { icon: '🎓', label: 'A growing tech cluster in a city produces a pool of specialised engineers all local firms can hire', note: '', ans: 'external' },
+          { icon: '💰', label: 'A large supermarket can borrow at lower interest rates than a small corner shop', note: '', ans: 'internal' },
+          { icon: '🚚', label: 'A developed road and port network serving a whole industry reduces logistics costs for all firms', note: '', ans: 'external' },
+          { icon: '🔬', label: 'A large pharmaceutical firm spreads R&D costs across millions of units', note: '', ans: 'internal' },
+          { icon: '⚙️', label: 'Industry suppliers invest in specialised tools and components as the industry grows — reducing prices for all', note: '', ans: 'external' }
         ],
-        exp: '<strong>Technical economies</strong> exploit physics (cube-square law): volume scales faster than surface area &#8212; tankers, reactors, aircraft all benefit. <strong>Purchasing economies</strong>: bulk buying and bargaining power reduce input prices. <strong>Managerial economies</strong>: specialist managers (HR, data, legal) have fixed salaries spread over more output. <strong>Marketing economies</strong>: advertising costs are largely fixed &#8212; cost per unit falls with scale. <strong>Financial economies</strong>: large firms are perceived as lower-risk borrowers and can access capital markets directly (bonds, equity) rather than bank loans only &#8212; lower cost of capital.'
+        exp: '<strong>Internal economies</strong>: benefits arising from the firm\'s own growth — technical (specialisation, indivisibilities), purchasing (bulk buying), financial (lower borrowing rates for large firms), managerial (specialist managers), marketing (bulk advertising). <strong>External economies</strong>: benefits from industry/regional growth — skilled labour pool, specialised suppliers, knowledge spillovers, infrastructure. Silicon Valley, the City of London, and automotive clusters (e.g. Derby for Rolls-Royce) demonstrate external economies: firms benefit from locating near each other.'
       },
 
-      /* 2 — MCQ: envelope curve */
+      /* 3 — MCQ: minimum efficient scale */
       { type: 'mcq',
-        stem: 'The Long-Run Average Cost (LRAC) curve is described as an "envelope curve" because:',
+        id: 'q_lrc_3',
+        stem: 'The <strong>minimum efficient scale (MES)</strong> is:',
         opts: [
-          'It is tangent to each short-run average cost curve from below, representing the minimum cost achievable for each output when capital stock can be freely chosen',
-          'It envelops (contains) all the costs of the firm including both fixed and variable costs in the long run',
-          'It shows the maximum cost the firm must be willing to pay in order to enter the industry',
-          'It is a vertical line showing the minimum efficient scale beyond which no further cost savings are possible'
+          'The lowest output level at which a firm exhausts all economies of scale and reaches minimum long-run average cost',
+          'The maximum size a firm can achieve before diseconomies of scale set in',
+          'The smallest firm size that is legally permitted to operate in a regulated industry',
+          'The minimum output level a firm must produce to cover its fixed costs'
         ],
         ans: 0,
-        exp: 'In the long run, the firm can choose its capital stock (plant size) to minimise cost at each output level. Imagine a family of SRAC curves, each corresponding to a different plant size. For any given output, the firm chooses the plant size that minimises cost. The LRAC curve is traced by connecting these minimum-cost points &#8212; it is <strong>tangent to (touches) each SRAC from below</strong>, forming an "envelope." Each SRAC lies at or above the LRAC (you can never do better than the optimal capital choice for that output), and the LRAC touches each SRAC at exactly one point. This construction explains why the LRAC is flatter and lower than any individual SRAC.'
+        exp: 'MES is the output level at which LRAC reaches its minimum — the point where all economies of scale have been exhausted and constant returns to scale begin (or diseconomies begin if there is no flat section). MES is significant for market structure: if MES is large relative to total market demand, only a few firms can operate efficiently (oligopoly/natural monopoly). If MES is small relative to demand, many firms can coexist efficiently (competitive market). UK water and electricity transmission have very high MES relative to market size → natural monopoly. UK restaurants have very low MES → highly competitive market.'
       },
 
-      /* 3 — Odd one out: external economies */
+      /* 4 — MCQ: natural monopoly */
+      { type: 'mcq',
+        id: 'q_lrc_4',
+        stem: 'A <strong>natural monopoly</strong> occurs when:',
+        opts: [
+          'Economies of scale are so large relative to market demand that one firm can supply the entire market at a lower average cost than two or more competing firms — breaking up the market would raise costs',
+          'A firm earns monopoly profits through patent protection or brand loyalty rather than superior efficiency',
+          'A firm uses predatory pricing to drive all competitors out of a market and then raises prices',
+          'Government ownership of an industry inevitably leads to monopoly conditions due to the absence of profit motive'
+        ],
+        ans: 0,
+        exp: 'Natural monopoly: the LRAC is still falling at the output level of total market demand. If one firm supplies the whole market, LRAC is minimised. If two firms split the market, each operates at half the quantity → higher LRAC → higher costs → higher prices or losses. Breaking up a natural monopoly into competing firms would <strong>raise costs and prices</strong>. Examples: water mains networks, electricity transmission grids, rail track — duplicating these would be massively wasteful. The policy challenge: how to regulate natural monopolies (price = AC, RPI-X, profit caps) without the efficiency of competition.'
+      },
+
+      /* 5 — MCQ: diseconomies of scale */
+      { type: 'mcq',
+        id: 'q_lrc_5',
+        stem: 'Which of the following is a common cause of <strong>diseconomies of scale</strong>?',
+        opts: [
+          'Managerial inefficiency — as firms grow very large, coordination problems, communication breakdowns, and bureaucracy increase costs per unit',
+          'A firm running out of economies of scale at the minimum efficient scale — the LRAC curve always rises after MES',
+          'External diseconomies — large firms attract more regulatory attention, raising compliance costs',
+          'Factor price inflation — large firms bid up the prices of raw materials as they buy in bulk'
+        ],
+        ans: 0,
+        exp: 'Diseconomies of scale arise when the LRAC rises as output increases — causes include: <strong>managerial diseconomies</strong> (span of control too wide, coordination becomes complex — "too many layers of management"); <strong>motivational diseconomies</strong> (workers in large firms feel less connected, reducing productivity — "X-inefficiency"); <strong>communication overload</strong> (decisions slow down in large hierarchies). Factor price inflation (Option D) would be an external diseconomy affecting the whole industry, not just one firm. The empirical question: at what size do diseconomies outweigh economies? Many modern firms (Amazon, Google) have not yet clearly reached diseconomies of scale.'
+      },
+
+      /* 6 — Numeric input: MES calculation */
+      { type: 'numeric_input',
+        id: 'q_lrc_6',
+        stem: 'A steel firm\'s LRAC reaches its minimum at what output level?',
+        context: 'LRAC data: 1m tonnes = £120; 2m = £90; 3m = £70; 4m = £60; <strong>5m = £60; 6m = £60</strong>; 7m = £65; 8m = £72. The firm has constant returns to scale between 5m and 6m tonnes.',
+        answer: 5,
+        tolerance: 0.1,
+        unit: 'million tonnes',
+        hint: 'MES is the lowest output at which LRAC reaches its minimum value.',
+        workingSteps: [
+          'LRAC falls from 4m to 5m: £60 = minimum LRAC',
+          'LRAC stays at £60 at 6m (constant returns)',
+          'LRAC rises at 7m: £65 > £60',
+          'MES = 5m tonnes (first point of minimum LRAC)'
+        ],
+        exp: 'MES = <strong>5 million tonnes</strong> — the first output level at which LRAC reaches its minimum of £60. The firm has constant returns to scale between 5m and 6m (both at £60). Diseconomies set in at 7m tonnes (LRAC rises to £65). If total UK steel demand is 10m tonnes per year, two firms could both operate at MES (5m each), suggesting an oligopoly structure is efficient. If demand were only 6m tonnes, only one firm could reach MES — suggesting a natural monopoly tendency in small markets.'
+      },
+
+      /* 7 — Cause & effect: economies of scale and market structure */
+      { type: 'cause_effect',
+        id: 'q_lrc_7',
+        stem: 'Match each economies-of-scale mechanism to its source.',
+        pairs: [
+          { cause: 'A large retailer buys 10 million units and negotiates a bulk discount', effect: 'Purchasing (buying) economies — lower input costs per unit' },
+          { cause: 'A car manufacturer uses robots for assembly at high volume — justified at large scale', effect: 'Technical economies — indivisible capital reduces cost per unit at high output' },
+          { cause: 'A large firm\'s CEO manages 50 product lines — same salary spread over more output', effect: 'Managerial economies — specialist management costs spread over higher output' },
+          { cause: 'A startup pays 8% interest on loans; Amazon pays 3% for equivalent credit', effect: 'Financial economies — large firms are lower-risk borrowers' },
+          { cause: 'A large firm runs one TV advert reaching 30 million customers; unit marketing cost falls', effect: 'Marketing economies — advertising cost spread over more customers/units' },
+          { cause: 'A pharmaceutical company spends £1bn on R&D shared across 100 million tablets', effect: 'Risk-bearing economies — R&D cost per unit falls at large scale' }
+        ],
+        exp: 'Internal economies of scale by type: <strong>purchasing</strong> (bulk buying power); <strong>technical</strong> (indivisible capital — you can\'t run half a furnace); <strong>managerial</strong> (specialist managers); <strong>financial</strong> (lower borrowing rates for creditworthy large firms); <strong>marketing</strong> (fixed advertising spread over more units); <strong>risk-bearing</strong> (large firms can diversify R&D and spread failure risk). All reduce LRAC as output rises — moving down the LRAC curve. The most important for heavy industry: technical (large-scale plant); for tech: R&D spreading.'
+      },
+
+      /* 8 — Match pairs: long-run cost concepts */
+      { type: 'match_pairs',
+        id: 'q_lrc_8',
+        stem: 'Match each concept to its definition.',
+        pairs: [
+          { a: 'Economies of scale', b: 'LRAC falls as output increases — benefits from larger scale' },
+          { a: 'Diseconomies of scale', b: 'LRAC rises as output increases — managerial/coordination problems' },
+          { a: 'Constant returns to scale', b: 'LRAC unchanged as output increases — flat section of LRAC' },
+          { a: 'Minimum Efficient Scale (MES)', b: 'Lowest output at which LRAC is minimised — fully exploits scale economies' },
+          { a: 'Natural monopoly', b: 'Industry where one firm can supply total demand at lower cost than two firms' },
+          { a: 'LRAC envelope curve', b: 'Minimum achievable ATC at each output, tracing lowest points of SRAC curves' }
+        ],
+        exp: 'Long-run cost vocabulary: <strong>economies of scale</strong> → falling LRAC; <strong>diseconomies</strong> → rising LRAC; <strong>CRS</strong> → flat LRAC (relevant for large-scale manufacturing where no further economies or diseconomies exist). MES determines minimum firm size for efficiency — and therefore how many firms a market can sustain. Natural monopoly is the extreme case where MES > total market demand. The envelope curve is the conceptual basis of the LRAC: it traces the minimum achievable cost at every output level when capital can be adjusted freely.'
+      },
+
+      /* 9 — Odd one out: internal economies of scale */
       { type: 'odd_one_out',
-        stem: 'Three of these are examples of <strong>external economies of scale</strong>. Which is the ODD ONE OUT?',
+        id: 'q_lrc_9',
+        stem: 'Three of these are examples of <strong>internal economies of scale</strong>. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '&#128104;&#8205;&#128187;', label: 'Silicon Valley: a deep pool of software engineers that any local tech firm can hire', note: '' },
-          { icon: '&#128170;', label: 'A large pharmaceutical firm installs additional automated production lines, halving its unit manufacturing cost', note: '' },
-          { icon: '&#127968;', label: 'Biotech cluster near Cambridge: specialist CROs, clinical trial infrastructure, and university spin-outs all co-located', note: '' },
-          { icon: '&#128649;', label: 'Detroit auto industry: thousands of specialist component suppliers locate near car plants, reducing logistics costs for all', note: '' }
+          { icon: '🚛', label: 'A large logistics firm negotiates bulk fuel contracts, reducing cost per delivery', note: '' },
+          { icon: '🤖', label: 'A car manufacturer invests in automated welding robots — cost-effective only at high volume', note: '' },
+          { icon: '🎓', label: 'A growing tech cluster creates a pool of specialised AI engineers all firms in the area can recruit', note: '' },
+          { icon: '💰', label: 'A major supermarket chain borrows at 3% while small shops borrow at 8%', note: '' }
         ],
-        ans: 1,
-        exp: 'The odd one out is the <strong>large pharmaceutical firm installing additional production lines</strong>. This is an <em>internal</em> economy of scale &#8212; it arises from the firm\'s own growth and benefits only that firm. External economies of scale arise from the growth of the <em>industry</em> or geographic cluster, reducing costs for <em>all</em> firms in the industry: Silicon Valley\'s labour pool, Cambridge\'s biotech infrastructure, and Detroit\'s component supply network all benefit every firm in that cluster, not just the largest one. The distinction matters for policy: governments invest in clusters (Science Parks, enterprise zones) precisely to create external economies that benefit all firms in an industry.'
+        ans: 2,
+        exp: 'The odd one out is <strong>the tech cluster creating a specialised labour pool</strong>. This is an <strong>external economy of scale</strong> — it arises from the growth of the industry and region, not from the individual firm\'s growth. All firms in the cluster benefit, not just one large firm. The other three are internal economies (benefits from the individual firm\'s own growth): bulk fuel contracts (purchasing economies); automated robots at high volume (technical economies); lower borrowing rates (financial economies). Silicon Valley, the City of London, and pharmaceutical clusters (Cambridge) are classic examples of external economies.'
       },
 
-      /* 4 — Data table: MES and market structure */
+      /* 10 — Data table: economies of scale in UK water industry */
       { type: 'data_table',
-        stem: 'The table compares three industries on key structural characteristics.',
-        headers: ['Industry', 'Estimated MES as % of UK market', 'Number of UK firms', 'Typical market structure'],
+        id: 'q_lrc_10',
+        stem: 'The table shows cost data for hypothetical water supply firms of different sizes.',
+        headers: ['Annual output (m litres)', 'Total Annual Cost (£m)', 'Average Cost (£/1000 litres)', 'Type of returns'],
         rows: [
-          ['Commercial aviation', '~50%', '2&#8211;3 major carriers', 'Oligopoly'],
-          ['Electricity network (wires)', '>100% of market', '1 regional network per area', 'Natural monopoly (regulated)'],
-          ['Hairdressing', '<0.1%', '40,000+', 'Monopolistic competition']
+          ['100', '8.0', '80', 'Economies of scale'],
+          ['500', '25.0', '50', 'Economies of scale'],
+          ['1,000', '35.0', '35', 'Economies of scale'],
+          ['2,000', '60.0', '30', 'Constant returns'],
+          ['3,000', '90.0', '30', 'Constant returns'],
+          ['4,000', '130.0', '32.5', 'Diseconomies begin']
         ],
-        question: 'Which statement is best supported by the data?',
+        question: 'At what output is <strong>MES</strong> achieved, and what does the data suggest about market structure in water supply?',
         opts: [
-          'Industries where MES is large relative to market size support fewer firms, explaining why aviation is an oligopoly and electricity networks are natural monopolies',
-          'The data show that all industries with fewer than 10 firms are natural monopolies requiring government ownership',
-          'Hairdressing has no economies of scale because its MES is very small, which means cost curves are flat at all output levels',
-          'Electricity networks should be broken up into competing firms because competition always reduces prices for consumers'
+          'MES achieved at 2 billion litres (£30/1000L). If a region\'s demand is 2–3 billion litres, a single firm can efficiently serve it — consistent with natural monopoly and justifying regulated private monopoly rather than fragmented competition',
+          'MES is at 100m litres — the smallest firm already has the lowest cost and the market should be atomistically competitive',
+          'MES is at 4 billion litres — so larger is always better and firms should keep expanding',
+          'The data show water supply has no economies of scale — cost per unit is constant regardless of scale'
         ],
         ans: 0,
-        exp: 'The data confirm that <strong>MES relative to market size determines market structure</strong>. When MES is 50% of the UK aviation market, only 2&#8211;3 firms can achieve minimum efficient scale &#8212; oligopoly is the natural outcome. When MES exceeds 100% of market demand (electricity networks), a single firm can serve the entire market at lower cost than two or more firms &#8212; the definition of <strong>natural monopoly</strong>. When MES is tiny relative to market size (hairdressing), thousands of small firms can all operate at minimum cost &#8212; fragmented competition. Option C is incorrect: small MES industries do have economies of scale, just modest ones. Option D ignores that breaking up natural monopolies raises costs &#8212; regulation (RPI-X) is preferred.'
-      },
-
-      /* 5 — Para fill: diseconomies of scale */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph about diseconomies of scale.',
-        anchor: 'Beyond the optimal scale, firms may experience diseconomies of scale.',
-        para: 'Diseconomies of scale occur when long-run average cost [1] as output increases beyond the optimal scale. A key cause is [2] coordination problems: as firms grow, hierarchies lengthen, communication slows, and [3] increases costs without adding value. Large workforces also create industrial [4] problems: worker motivation may fall and unions may extract wage rises that exceed productivity growth. Economists also identify [5] inefficiency (Leibenstein) &#8212; the tendency for management slack to raise costs above the minimum possible when [6] pressure is absent.',
-        blanks: [
-          { id: 1, opts: ['rises', 'falls', 'remains constant', 'disappears'], ans: 0 },
-          { id: 2, opts: ['management', 'technical', 'financial', 'marketing'], ans: 0 },
-          { id: 3, opts: ['bureaucracy', 'innovation', 'R&D', 'efficiency'], ans: 0 },
-          { id: 4, opts: ['relations', 'productivity', 'efficiency', 'costs'], ans: 0 },
-          { id: 5, opts: ['X', 'technical', 'allocative', 'dynamic'], ans: 0 },
-          { id: 6, opts: ['competitive', 'regulatory', 'managerial', 'financial'], ans: 0 }
-        ],
-        exp: '(1) <strong>Rises</strong>: diseconomies occur when LRAC rises beyond optimal scale. (2) <strong>Management</strong>: coordination and communication become harder as hierarchies grow. (3) <strong>Bureaucracy</strong>: administrative layers add cost without proportionate value. (4) <strong>Relations</strong>: industrial relations &#8212; large unionised workforces may strike more frequently and achieve above-productivity wage rises. (5) <strong>X</strong>: X-inefficiency (Leibenstein, 1966) &#8212; firms operate above their cost frontier when competitive pressure is absent. (6) <strong>Competitive</strong>: X-inefficiency is most common in monopolies and public-sector organisations lacking competitive discipline.'
-      },
-
-      /* 6 — MCQ: natural monopoly definition */
-      { type: 'mcq',
-        stem: 'An industry is a <strong>natural monopoly</strong> when:',
-        opts: [
-          'Long-run average cost is still declining at the output level required to serve the entire market, so a single firm can supply the market at lower cost than two or more competing firms',
-          'The government has granted a single firm a legal monopoly franchise preventing any entry by rivals',
-          'A single firm holds a patent giving it exclusive rights to produce a product for 20 years',
-          'The largest firm in the industry has acquired more than 50% market share through mergers'
-        ],
-        ans: 0,
-        exp: 'A <strong>natural monopoly</strong> is defined by the cost structure of the industry, not by law or market share. It exists when the LRAC is still falling across the full range of market demand &#8212; technically, when the cost function is <em>sub-additive</em>: it costs less for one firm to produce total market output than for two or more firms to divide production. Water pipes, electricity networks, and rail track are classic examples: duplicating the infrastructure would be enormously wasteful. Options B and C describe legal or intellectual property monopolies &#8212; artificial, not natural. Option D describes high market concentration but not sub-additive costs.'
-      },
-
-      /* 7 — Multi-select: internal economies of scale */
-      { type: 'multi_select',
-        stem: 'Which of the following are genuine sources of <strong>internal economies of scale</strong>?',
-        opts: [
-          'Technical economies from the cube-square law (volume rises faster than surface area)',
-          'Purchasing economies from bulk-buying power that reduces input prices',
-          'Financial economies from lower borrowing costs available to large, low-risk firms',
-          'External labour pool economies arising from a cluster of similar firms in the same city',
-          'Managerial economies from specialist managers whose salaries are spread over large output',
-          'Innovation spillovers from rival firms operating in the same industrial park'
-        ],
-        correct: [0, 1, 2, 4],
-        exp: 'Options A, B, C, and E are all <strong>internal</strong> economies: they arise from the individual firm\'s own growth. Technical (cube-square), purchasing (bulk buying), financial (credit rating), and managerial (specialist staff) economies all accrue specifically to the growing firm. Options D and F are <strong>external</strong> economies of scale: the skilled labour pool and knowledge spillovers arise from industry or cluster growth, benefiting all firms in the area, not just large individual firms. The distinction matters: internal economies give the growing firm a competitive advantage; external economies benefit the whole industry and may justify government investment in cluster infrastructure.'
-      },
-
-      /* 8 — multi_select: evaluation of RPI-X regulation */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>RPI-X regulation as a solution to the natural monopoly problem</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'RPI-X is superior to cost-of-service regulation on productive efficiency grounds because it allows the regulated firm to retain cost savings achieved beyond the X target &#8212; creating an incentive to innovate. However, this advantage is conditional on the regulator setting X correctly, which is undermined by information asymmetry: the firm knows its own cost structure far better than Ofwat or Ofgem.',
-          'RPI-X regulation caps annual price increases at RPI minus X, where X is the efficiency improvement the regulator requires.',
-          'The UK water sector provides evidence that RPI-X has failed in practice: Ofwat set weak X factors, enabling Thames Water and others to generate large profits while underinvesting in infrastructure &#8212; resulting in the 2023-24 sewage spills crisis. This suggests the regulation\'s effectiveness depends critically on regulator resourcing and independence, not just its theoretical design.',
-          'RPI-X regulation reduces prices for consumers.',
-          'Regulatory capture presents a specific risk that worsens over time: as regulators develop long-term relationships with regulated firms, they may come to prioritise industry interests over consumers\', gradually hollowing out the effectiveness of even a well-designed RPI-X regime &#8212; qualifying any optimistic assessment of regulation as a permanent solution.',
-          'Natural monopolies exist because average costs fall across the full range of market demand.'
-        ],
-        correct: [0, 2, 4],
-        exp: '<strong>Option A</strong> is genuine evaluation: it identifies the mechanism behind RPI-X\'s advantage (retained savings incentive), then immediately qualifies it with the information asymmetry problem, reaching a direction that the advantage is conditional rather than guaranteed. <strong>Option C</strong> is evaluation: it uses a specific, contemporary case study (UK water/Ofwat/sewage crisis) to assess whether RPI-X has delivered in practice, reaching a qualified conclusion that effectiveness depends on regulator quality, not just scheme design. <strong>Option E</strong> is evaluation: it uses the regulatory capture concept to make a time-dynamic argument &#8212; that regulation degrades over time even if initially effective &#8212; reaching a direction that qualifies long-run optimism about RPI-X. <strong>Option B</strong> is description &#8212; defining the mechanism with no weighing, no qualification, no direction. <strong>Option D</strong> is description &#8212; stating a benefit without comparing it to alternatives, qualifying by conditions, or using evidence. <strong>Option F</strong> is a definition of natural monopoly &#8212; no evaluative content.'
-      },
-
-      /* 9 — Calculation: RPI-X price cap */
-      { type: 'calculation',
-        context: 'A water company currently charges consumers an average of <strong>&#163;400</strong> per year for water services. The regulator sets the X factor at <strong>3%</strong> per year. RPI inflation is <strong>4%</strong>. The regulatory period is <strong>5 years</strong>.',
-        working: [
-          'Annual allowed price increase = RPI - X = 4% - 3% = 1% per year',
-          'Year 1 price: 400 × 1.01 = 404',
-          'Year 2 price: 404 × 1.01 = 408.04',
-          'Year 3 price: 408.04 × 1.01 ≈ 412.12',
-          'Year 4 price: 412.12 × 1.01 ≈ 416.24',
-          'Year 5 price: 416.24 × 1.01 ≈ 420.40',
-          'Real price change (in year 1 prices): 420.40 / (1.04^5) ≈ 345',
-          'Real price has fallen by about 55 / 400 = 13.75% over 5 years'
-        ],
-        stem: 'Over the 5-year regulatory period, what happens to the <strong>nominal</strong> price consumers pay?',
-        opts: [
-          { ped: 'The nominal price rises slowly by 1% per year, reaching approximately &#163;420 after 5 years &#8212; rising nominally but falling in real terms', typ: 'Allowed annual rise = RPI(4%) &#8722; X(3%) = 1%; compounded over 5 years: &#163;400 &#215; 1.01&#8309; &#8776; &#163;420', rev: 'The price cap allows nominal rises equal to RPI&#8722;X, not zero growth' },
-          { ped: 'The nominal price falls by 3% per year, reaching approximately &#163;340 after 5 years', typ: 'Confused the X factor with the total price change; X is only the efficiency deduction from RPI', rev: 'Prices can still rise nominally under RPI&#8722;X &#8212; the cap is RPI&#8722;X, not &#8722;X' },
-          { ped: 'The nominal price stays fixed at &#163;400 throughout the regulatory period', typ: 'Assumed price cap means frozen prices; it actually allows rises up to RPI&#8722;X', rev: 'RPI&#8722;X is a cap on annual increase, not a freeze' },
-          { ped: 'The nominal price rises by 4% per year (RPI) reaching approximately &#163;487 after 5 years', typ: 'Applied the full RPI rate without deducting the X efficiency factor', rev: 'The whole point of X is to ensure real price reductions; subtract X from RPI' }
-        ],
-        ans: 0,
-        exp: 'Allowed annual nominal price increase = RPI &#8722; X = 4% &#8722; 3% = <strong>1% per year</strong>. Over 5 years: &#163;400 &#215; (1.01)&#8309; &#8776; <strong>&#163;420</strong> nominally. However, in real terms (adjusting for inflation at 4%): &#163;420 &#247; (1.04)&#8309; &#8776; &#163;345 &#8212; a real price fall of about 14%. This is exactly the mechanism\'s intent: nominal prices can rise slowly, but real prices must fall as the firm improves efficiency. The X = 3% targets an efficiency improvement that should reduce real costs by 3% annually, enabling the firm to be profitable even as real prices fall.'
-      },
-
-      /* 10 — chain: entry into a market with scale economies */
-      { type: 'chain',
-        stem: 'A new firm attempts to enter an industry dominated by one large incumbent with significant economies of scale. Place the events in the correct logical order.',
-        items: [
-          { label: 'Entrant faces high average cost due to small initial scale (far above MES)', note: '' },
-          { label: 'New firm decides whether to exit or find a niche strategy', note: '' },
-          { label: 'Incumbent firm, operating at MES, prices at or slightly above its low average cost', note: '' },
-          { label: 'Entrant struggles to win customers at a price that covers its higher average costs', note: '' },
-          { label: 'New firm enters the industry with limited initial output', note: '' },
-          { label: 'Incumbent may lower prices further to drive entrant costs above revenues (limit pricing)', note: '' }
-        ],
-        correctOrder: [4, 0, 2, 3, 5, 1],
-        exp: '<strong>The correct sequence:</strong><br>1. New firm enters with small output.<br>2. Entrant faces high AC (far above MES) &#8212; scale disadvantage.<br>3. Incumbent operates at MES with low AC and prices accordingly.<br>4. Entrant cannot profitably match incumbent prices &#8212; its costs are higher.<br>5. Incumbent may engage in <em>limit pricing</em> &#8212; setting price below entrant\'s average cost to make entry unprofitable.<br>6. Entrant exits or retreats to a differentiated niche.<br><br>This sequence illustrates why scale economies create <strong>structural barriers to entry</strong>: even without deliberate anti-competitive behaviour, the incumbent\'s cost advantage makes it extremely difficult for small entrants to compete on price. It also explains why natural monopoly industries require regulation rather than competition &#8212; the structural cost advantage makes competition unsustainable.'
+        exp: 'MES is achieved at <strong>2 billion litres</strong> (£30/1000L — minimum LRAC). The flat LRAC at 2–3 billion litres suggests constant returns to scale across this range. Diseconomies begin at 4 billion litres (LRAC rises to £32.5). If a region\'s total water demand is 2–3 billion litres, one firm can serve the entire market at minimum cost (£30/1000L). Two firms splitting the market at 1 billion each would face LRAC of £35 — higher costs and prices for consumers. This is the natural monopoly case for UK water: one regulated firm per region (e.g. Thames Water, Anglian Water) rather than competing firms duplicating expensive pipeline infrastructure.'
       }
 
     ]

@@ -1,189 +1,143 @@
-/* ============================================================
-   ECONOS — Quiz content for: Economic Growth & National Income
-   10 questions covering GDP measurement, real vs nominal, GNI,
-   PPP, short/long run growth, and GDP welfare limits.
-   ============================================================ */
-
 (function () {
 
   window.ECONOS_QUIZ = {
     id:       'growth_measure_main',
     topicId:  'growth_measure_main',
-    title:    'Economic Growth &amp; National Income',
-    subtitle: 'Theme 2.1.1 &#183; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the three GDP measurement approaches, real versus nominal GDP, GNI and PPP, short and long run growth, and the limitations of GDP as a welfare measure. Mixed formats test both knowledge recall and applied analytical reasoning.',
-    shortNames: {
-      'gdp-framing':    'Three measurement approaches',
-      'real-vs-nominal': 'Real vs nominal GDP',
-      'gnp-gni':        'GDP vs GNI',
-      'ppp':            'Purchasing Power Parity',
-      'sr-lr-growth':   'Short vs long run growth',
-      'growth-causes':  'Causes of growth',
-      'gdp-limits':     'GDP limitations'
-    },
-
+    title:    'Economic Growth & National Income',
+    subtitle: 'Macroeconomics',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'growth_measure' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers GDP measurement, real vs nominal, GNI, PPP, and welfare limits of GDP',
+    shortNames: [
+      'GDP definition','Three approaches','Real vs nominal','GNI vs GDP','GDP welfare limits',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 &#8212; MCQ: GDP definition */
-      { type: 'mcq',
-        stem: 'Which of the following is the most accurate definition of <strong>Gross Domestic Product (GDP)</strong>?',
+      {
+        id:   'q_gm_1',
+        type: 'mcq',
+        q:    'GDP (Gross Domestic Product) measures:',
         opts: [
-          'The total value of all final goods and services produced within a country\'s borders over a given period, regardless of the nationality of the producer',
-          'The total value of all goods and services produced by a country\'s residents, wherever in the world they are located',
-          'The total market value of all goods and services traded internationally by a country in a given year',
-          'The total income earned by a country\'s households and firms, net of taxes and transfer payments'
+          'The total value of goods and services produced by a country\'s residents anywhere in the world',
+          'The total value of all goods and services produced within a country\'s borders in a given period',
+          'A country\'s stock of wealth at a point in time',
+          'The total government expenditure in a fiscal year'
         ],
-        ans: 0,
-        exp: '<strong>GDP</strong> measures output produced <em>within</em> the geographic borders, regardless of ownership. A Toyota plant in Derby contributes to UK GDP even though Toyota is Japanese-owned. This is the \'domestic\' in GDP. Option B describes GNP/GNI &#8212; the \'national\' measure that follows residents worldwide. The distinction matters most for countries with large foreign investment inflows or outflows.'
+        ans:  1,
+        exp:  'GDP measures the total monetary value of all final goods and services produced within a country\'s geographical borders in a period (usually a year or quarter), regardless of the nationality of the producers.'
       },
-
-      /* 2 &#8212; Elastic sort: three approaches */
-      { type: 'elastic_sort',
-        stem: 'Classify each item as part of the <strong>expenditure</strong>, <strong>income</strong>, or <strong>output</strong> approach to measuring GDP.',
-        categories: ['exp', 'inc', 'out'],
-        categoryLabels: ['Expenditure approach', 'Income approach', 'Output approach'],
-        goods: [
-          { icon: '&#127968;', label: 'Household spending on housing, food, and transport', note: '', ans: 'exp' },
-          { icon: '&#127981;', label: 'Value added by UK manufacturing firms at each production stage', note: '', ans: 'out' },
-          { icon: '&#128200;', label: 'Wages and salaries paid to employees across the economy', note: '', ans: 'inc' },
-          { icon: '&#127968;', label: 'Government spending on public services (G)', note: '', ans: 'exp' },
-          { icon: '&#128176;', label: 'Corporate profits, rent, and interest received by firms', note: '', ans: 'inc' },
-          { icon: '&#127981;', label: 'Gross value added by financial services sector', note: '', ans: 'out' }
-        ],
-        exp: '<strong>Three approaches, one number:</strong> the expenditure approach sums C + I + G + (X&#8722;M). The income approach sums all wages, profit, rent, and interest. The output approach sums value added at each production stage to avoid double-counting. In theory all three give the same GDP figure &#8212; every pound of output creates a pound of income and a pound of spending. Citing this circular flow logic in essays is an A* analytical signal.'
-      },
-
-      /* 3 &#8212; Calculation: real vs nominal GDP */
-      { type: 'calculation',
-        context: 'UK nominal GDP in 2020 was <strong>&#163;2,050 billion</strong>. The GDP deflator for 2020 (base year 2015 = 100) stood at <strong>115</strong>.',
-        working: [
-          'Real GDP = (Nominal GDP &#247; GDP deflator) &#215; 100',
-          'Real GDP = (&#163;2,050bn &#247; 115) &#215; 100',
-          'Real GDP = &#163;1,782.6bn (at 2015 prices)',
-          'The deflator of 115 means prices have risen 15% since 2015',
-          'Real GDP removes this price increase to show genuine output change'
-        ],
-        stem: 'Using the GDP deflator, what is the approximate <strong>real GDP</strong> in 2020 at 2015 prices?',
+      {
+        id:   'q_gm_2',
+        type: 'mcq',
+        q:    'The three methods of measuring national income are:',
         opts: [
-          { ped: 'Approximately &#163;1,783 billion', typ: 'Correctly deflates nominal GDP: &#163;2,050 &#247; 1.15 &#8776; &#163;1,783bn', rev: 'Apply the formula: Real GDP = (Nominal &#247; Deflator) &#215; 100' },
-          { ped: 'Approximately &#163;2,358 billion', typ: 'Inflates rather than deflates: &#163;2,050 &#215; 1.15 &#8212; wrong direction', rev: 'Divide by the deflator to remove price increases, do not multiply' },
-          { ped: 'Approximately &#163;2,050 billion', typ: 'Used nominal GDP unchanged, ignoring the deflator entirely', rev: 'Nominal GDP must be adjusted for the 15% price rise since 2015' },
-          { ped: 'Approximately &#163;1,935 billion', typ: 'Subtracted 15% of deflator value not as a fraction but as flat &#163;115bn', rev: 'Divide nominal GDP by deflator/100, not subtract the deflator' }
+          'Savings, investment, and government spending approaches',
+          'Output, income, and expenditure approaches',
+          'Imports, exports, and trade balance approaches',
+          'Nominal, real, and PPP-adjusted approaches'
         ],
-        ans: 0,
-        exp: 'Real GDP = (&#163;2,050bn &#247; 115) &#215; 100 = <strong>&#163;1,783bn</strong>. The deflator of 115 indicates prices are 15% higher than in the 2015 base year. Dividing removes this inflation so we compare output at constant prices. This is why real GDP growth &#8212; not nominal &#8212; is the correct measure of genuine economic expansion. Stating "real GDP" in essays signals you have removed the distortion of price changes.'
+        ans:  1,
+        exp:  'National income can be measured by three equivalent approaches: (1) output approach — sum of value added; (2) income approach — sum of factor incomes; (3) expenditure approach — sum of all spending on final goods (C+I+G+(X-M)).'
       },
-
-      /* 4 &#8212; MCQ: PPP */
-      { type: 'mcq',
-        stem: 'A <strong>Purchasing Power Parity (PPP)</strong> adjustment is necessary when comparing living standards across countries because:',
+      {
+        id:   'q_gm_3',
+        type: 'mcq',
+        q:    'Real GDP differs from nominal GDP because real GDP:',
         opts: [
-          'Market exchange rates reflect financial flows and speculation, not what money actually buys; PPP adjusts for the fact that the same income buys very different quantities in different countries',
-          'PPP removes the effect of inflation over time, converting past GDP figures to present values for valid time-series comparison within a single country',
-          'PPP adjusts GDP figures upward to account for the value of unpaid domestic work and the informal economy, which are missing from official statistics',
-          'PPP converts all countries\' GDP into US dollars using the official exchange rate, creating a common currency for direct numerical comparison'
+          'Excludes government spending',
+          'Is adjusted for changes in the price level (inflation)',
+          'Only counts goods, not services',
+          'Measures income of nationals abroad'
         ],
-        ans: 0,
-        exp: 'PPP adjusts for the fact that <strong>the cost of living varies dramatically between countries</strong>. A &#163;30,000 income buys far more in India than in London because non-traded goods (haircuts, housing, local services) are much cheaper in lower-income countries. Converting at market exchange rates understates real purchasing power in developing economies. This is why India\'s GDP per capita rises from ~$2,400 to ~$9,200 when PPP-adjusted. The IMF and World Bank use PPP for international welfare comparisons; the HDI uses GNI per capita at PPP for its income dimension.'
+        ans:  1,
+        exp:  'Nominal GDP uses current prices; real GDP adjusts for inflation using a base year. Real GDP shows genuine changes in output volume, not just price increases.'
       },
-
-      /* 5 &#8212; Para fill: short vs long run growth */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph by selecting the correct word or phrase for each blank.',
-        anchor: 'The distinction between short run and long run growth is fundamental to macro policy analysis.',
-        para: 'In the short run, economic growth occurs when the economy moves [1] its Production Possibility Frontier, using [2] capacity that already exists. This is caused by increases in [3] Demand and does not create new productive capacity. In the long run, growth requires the PPF to shift [4], caused by increases in the quantity or quality of [5] of production. In the AD/AS model, this is shown by [6] shifting to the right. This type of growth is non-inflationary because it expands the economy\'s [7] output.',
-        blanks: [
-          { id: 1, opts: ['towards', 'beyond', 'away from', 'parallel to'], ans: 0 },
-          { id: 2, opts: ['spare', 'imported', 'future', 'borrowed'], ans: 0 },
-          { id: 3, opts: ['Aggregate', 'Domestic', 'Consumer', 'External'], ans: 0 },
-          { id: 4, opts: ['outward', 'inward', 'upward', 'downward'], ans: 0 },
-          { id: 5, opts: ['factors', 'products', 'markets', 'exports'], ans: 0 },
-          { id: 6, opts: ['LRAS', 'SRAS', 'AD', 'the price level'], ans: 0 },
-          { id: 7, opts: ['potential', 'actual', 'nominal', 'current'], ans: 0 }
+      {
+        id:   'q_gm_4',
+        type: 'mcq',
+        q:    'Purchasing Power Parity (PPP) adjustments are used to:',
+        opts: [
+          'Convert all countries to a dollar nominal exchange rate',
+          'Compare living standards by accounting for price level differences between countries',
+          'Measure the trade balance between two economies',
+          'Inflate nominal GDP to account for shadow economy activity'
         ],
-        exp: '(1) <strong>Towards</strong>: the economy moves closer to its existing PPF by using idle resources. (2) <strong>Spare</strong>: spare capacity &#8212; unemployed workers and underused capital. (3) <strong>Aggregate</strong>: AD shifts right, moving the economy towards its frontier. (4) <strong>Outward</strong>: long run growth pushes the PPF outward, creating new capacity. (5) <strong>Factors</strong>: factors of production (capital, labour, technology). (6) <strong>LRAS</strong>: the Long Run Aggregate Supply curve is the AS-model equivalent of the PPF. (7) <strong>Potential</strong>: potential (trend) output rises, so actual output can grow without inflationary pressure.'
+        ans:  1,
+        exp:  'PPP adjusts GDP figures for differences in price levels across countries. A pound buys more in a low-price country than a high-price country — PPP gives a more accurate picture of relative living standards.'
       },
-
-      /* 6 &#8212; Odd one out: GDP limitations */
-      { type: 'odd_one_out',
-        stem: 'Three of these are genuine <strong>limitations of GDP as a welfare measure</strong>. Which is the ODD ONE OUT?',
+      {
+        id:   'q_gm_5',
+        type: 'numeric_input',
+        q:    'Nominal GDP = £1,200bn. The GDP deflator = 120 (base year = 100). What is real GDP (£bn)?',
+        answer: 1000,
+        tolerance: 0,
+        unit: '£bn',
+        hint: 'Real GDP = (Nominal GDP ÷ GDP deflator) × 100.',
+        workingSteps: ['Real GDP = (£1,200bn ÷ 120) × 100 = £1,000bn']
+      },
+      {
+        id:   'q_gm_6',
+        type: 'categorise',
+        q:    'Categorise each measure as a limitation of GDP as a welfare measure or a strength of GDP.',
+        categories: ['Limitation of GDP','Strength of GDP'],
         items: [
-          { icon: '&#9878;', label: 'GDP does not capture income distribution &#8212; rising GDP may coexist with worsening inequality', note: '' },
-          { icon: '&#127807;', label: 'GDP excludes the value of unpaid domestic work and informal economic activity', note: '' },
-          { icon: '&#128200;', label: 'GDP is the most widely used and internationally comparable measure of economic output', note: '' },
-          { icon: '&#128336;', label: 'GDP counts defensive expenditures (e.g. crime clean-up, pollution remediation) as positive output', note: '' }
-        ],
-        ans: 2,
-        exp: 'The odd one out is option C: <strong>international comparability is a strength of GDP</strong>, not a limitation. GDP\'s widespread use and standardisation make it valuable for cross-country comparison &#8212; exactly the opposite of a limitation. The other three are genuine welfare measurement problems: (A) the Gini coefficient better captures distribution; (B) informal and unpaid activity is a major omission, especially in developing countries; (D) defensive expenditures (road accident costs, oil-spill clean-up) inflate GDP without improving welfare.'
+          { item: 'Ignores distribution of income',              category: 'Limitation of GDP' },
+          { item: 'Widely available and internationally comparable',category: 'Strength of GDP' },
+          { item: 'Excludes unpaid household work',              category: 'Limitation of GDP' },
+          { item: 'Tracks changes in output over time',          category: 'Strength of GDP' },
+          { item: 'Does not capture environmental degradation',  category: 'Limitation of GDP' },
+          { item: 'Identifies periods of recession and recovery',category: 'Strength of GDP' }
+        ]
       },
-
-      /* 7 &#8212; Multi-select: causes of long run growth */
-      { type: 'multi_select',
-        stem: 'Which of the following are causes of <strong>long run economic growth</strong> (i.e. they shift LRAS right / the PPF outward)?',
-        opts: [
-          'A sustained increase in business investment in physical capital',
-          'A cut in income tax that raises disposable income and consumer spending',
-          'An improvement in the quality of education and workforce skills',
-          'A fall in Bank Rate that stimulates borrowing and consumption',
-          'Net inward migration that expands the working-age labour force',
-          'A major breakthrough in technology that raises total factor productivity'
-        ],
-        correct: [0, 2, 4, 5],
-        exp: 'Options A, C, E and F all increase the <strong>productive capacity</strong> of the economy by adding to capital, labour quality, labour supply, or technology &#8212; the determinants of LRAS. Options B and D are demand-side factors: income tax cuts and interest rate cuts raise AD, which can achieve short run growth up to the PPF, but they do not shift the PPF itself. The distinction matters for policy: only supply-side improvements enable <em>non-inflationary</em> long run growth.'
+      {
+        id:   'q_gm_7',
+        type: 'cause_effect',
+        q:    'Match each cause to its effect on GDP measurement.',
+        pairs: [
+          { cause: 'Inflation rises but output is unchanged',      effect: 'Nominal GDP rises; real GDP unchanged' },
+          { cause: 'Country\'s nationals earn more abroad',        effect: 'GNI exceeds GDP by the net factor income' },
+          { cause: 'Shadow economy (informal) activity ignored',  effect: 'GDP understates true economic activity' },
+          { cause: 'Environmental damage from growth',             effect: 'GDP rises but genuine welfare may fall' },
+          { cause: 'GDP per capita compared across countries',    effect: 'Gives a rough guide to average living standards' },
+          { cause: 'PPP adjustment applied to GDP comparison',    effect: 'More accurate cross-country welfare comparison' }
+        ]
       },
-
-      /* 8 — Multi-select: evaluation of GDP and GNI as welfare measures */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>whether GDP is an adequate measure of economic welfare</strong>. Which of the following statements demonstrate <strong>evaluation</strong> — as opposed to description or one-sided analysis?',
-        opts: [
-          'For developing countries with large FDI inflows, GNI is a better welfare proxy than GDP because profit repatriation means a significant share of GDP-measured output never reaches domestic residents — Ireland\'s GDP exceeded GNI by ~40% in 2015 due to multinational profit booking, making GDP a severe overstatement of resident living standards.',
-          'GDP fails as a welfare measure because it does not include happiness, leisure, or unpaid domestic work, so it tells us nothing useful about living standards.',
-          'Although GDP excludes informal activity and ignores distribution, it remains a superior tool for measuring short-run economic momentum — such as recession diagnosis and business cycle tracking — precisely because it is standardised, timely, and internationally comparable, even if alternatives like the HDI or Genuine Progress Indicator are better welfare proxies.',
-          'PPP-adjusted GNI per capita corrects two important distortions simultaneously: the domestic–foreign income split (GNI vs GDP) and the purchasing power variation across countries (PPP adjustment) — making it more appropriate than raw GDP for cross-country welfare comparisons, as used in the UN Human Development Index.',
-          'GDP is a good measure of welfare because countries with higher GDP generally have better health outcomes, longer life expectancy, and more developed public services.',
-          'GDP is a bad measure because it counts negative things like oil spill clean-ups and arms spending as positive contributions to the economy.'
-        ],
-        correct: [0, 2, 3],
-        exp: '<strong>Option A</strong> is strong evaluation: it applies the GDP–GNI distinction to a specific country (Ireland), uses a precise statistic (GDP exceeding GNI by ~40%), and reaches a directional conclusion — for FDI-heavy economies, GNI is significantly more accurate. This is evidence-grounded evaluation with a clear direction. <strong>Option C</strong> is strong evaluation: it accepts GDP\'s limitations but makes the evaluative move of specifying the <em>purpose</em> for which GDP remains superior — short-run cycle tracking and international comparison. This is a "fitness for purpose" evaluation that refuses to reject GDP wholesale. <strong>Option D</strong> is strong evaluation: it identifies two simultaneous corrections provided by PPP-adjusted GNI, explains why each matters, and links to a specific institutional application (UN HDI). This is precisely the kind of evaluative comparison that accesses Level 4. <strong>Option B</strong> correctly identifies GDP limitations but then overclaims ("tells us nothing useful") — this is one-sided analysis that ignores GDP\'s genuine strengths and fails to reach a balanced direction. <strong>Option E</strong> is one-sided endorsement — the correlation with health outcomes is a genuine pattern, but the claim ignores distribution, composition problems, and whether it is GDP causing these outcomes or reverse causality. <strong>Option F</strong> is description of the composition problem — it correctly identifies the issue but offers no direction, no weighing against GDP\'s strengths, and no conclusion.'
+      {
+        id:   'q_gm_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['GDP','GNI','HDI','Consumer Price Index'],
+        ans:  3,
+        exp:  'GDP, GNI (Gross National Income), and HDI (Human Development Index) are all measures of economic output or living standards. The Consumer Price Index measures inflation — it is not a national income or welfare measure.'
       },
-
-      /* 9 &#8212; Data table: real vs nominal */
-      { type: 'data_table',
-        stem: 'The table shows UK GDP data for a three-year period.',
-        headers: ['Year', 'Nominal GDP (&#163;bn)', 'GDP Deflator (base=100)', 'Population (m)'],
-        rows: [
-          ['2021', '2,200', '100', '67.0'],
-          ['2022', '2,420', '108', '67.3'],
-          ['2023', '2,580', '115', '67.6']
+      {
+        id:   'q_gm_9',
+        type: 'data_table',
+        q:    'Use the table to identify which country has the highest real GDP per capita.',
+        tableHeaders: ['Country','Nominal GDP (£bn)','Population (m)','GDP Deflator'],
+        tableData: [
+          ['Alpia','600','10','120'],
+          ['Bortia','400','5','100'],
+          ['Centri','900','20','150'],
+          ['Dorus','500','8','125']
         ],
-        question: 'Based on the data, which statement is most analytically accurate?',
-        opts: [
-          'Real GDP per capita rose from 2021 to 2023, but by significantly less than nominal GDP growth suggests, because part of the nominal increase reflects rising prices rather than genuine output expansion',
-          'The economy grew by 17.3% between 2021 and 2023 in real terms, because nominal GDP rose from &#163;2,200bn to &#163;2,580bn &#8212; a gain of &#163;380bn',
-          'Real GDP fell between 2021 and 2023 because the GDP deflator rose from 100 to 115, indicating significant inflation that completely offset nominal GDP growth',
-          'GDP per capita grew faster than GDP because population growth exceeded the rate of nominal GDP growth over the period'
-        ],
-        ans: 0,
-        exp: 'Real GDP in 2021 = &#163;2,200bn (deflator=100). Real GDP in 2023 = (&#163;2,580 &#247; 115) &#215; 100 &#8776; &#163;2,243bn. Real growth = ~2%. Nominal growth = 17.3%. The gap is almost entirely due to the 15-point rise in the deflator. Real GDP per capita: &#163;2,243bn / 67.6m &#8776; &#163;33,180 vs &#163;2,200bn / 67.0m &#8776; &#163;32,836 &#8212; a real per capita rise of ~1%. Option B confuses nominal with real. Option C overstates &#8212; real output did grow, just by much less than the nominal figure suggests. Option D is incorrect because nominal GDP grew faster than population.'
+        opts: ['Alpia','Bortia','Centri','Dorus'],
+        ans:  1,
+        exp:  'Real GDP = Nominal ÷ Deflator × 100. Bortia: (400÷100)×100=£400bn; per capita=£400bn/5m=£80,000. Alpia: £500bn/10m=£50,000. Centri: £600bn/20m=£30,000. Dorus: £400bn/8m=£50,000. Bortia is highest at £80,000.'
       },
-
-      /* 10 &#8212; Chain: PPP comparison logic */
-      { type: 'chain',
-        stem: 'Place these steps in the correct logical order to explain why <strong>PPP adjustment</strong> is necessary for cross-country income comparisons.',
-        items: [
-          { label: 'Non-traded goods and services are generally much cheaper in lower-income countries', note: '' },
-          { label: 'Converting countries\' incomes using market exchange rates alone understates real purchasing power in developing economies', note: '' },
-          { label: 'The same nominal income therefore buys different quantities of goods depending on where you live', note: '' },
-          { label: 'PPP adjusts for price-level differences, enabling like-for-like welfare comparisons across countries', note: '' },
-          { label: 'Price levels and the cost of living vary significantly across countries', note: '' },
-          { label: 'Market exchange rates reflect trade flows and capital movements, not the cost of non-traded goods', note: '' }
-        ],
-        correctOrder: [4, 5, 0, 2, 1, 3],
-        exp: '<strong>The logical sequence:</strong><br>1. Price levels vary across countries.<br>2. Market exchange rates reflect financial flows, not purchasing power.<br>3. Non-traded goods are cheaper in poor countries.<br>4. The same income buys different amounts in different places.<br>5. Market-rate conversion therefore understates real living standards in developing countries.<br>6. PPP adjusts for this, enabling valid welfare comparisons.<br><br>This chain is the core justification for why the World Bank and HDI use PPP-adjusted GNI per capita. A* answers deploy this logic explicitly when evaluating cross-country comparisons.'
+      {
+        id:   'q_gm_10',
+        type: 'match_pairs',
+        q:    'Match each national income concept to its description.',
+        pairs: [
+          { a: 'GDP',              b: 'Value of output produced within a country\'s borders' },
+          { a: 'GNI',              b: 'GDP plus net income from abroad earned by residents' },
+          { a: 'Real GDP',         b: 'GDP adjusted for inflation to show volume changes' },
+          { a: 'GDP per capita',   b: 'Average output per person; proxy for living standards' },
+          { a: 'PPP',              b: 'Adjusts GDP for price level differences between countries' },
+          { a: 'HDI',              b: 'Composite index: income, education, and life expectancy' }
+        ]
       }
-
     ]
   };
 

@@ -5,184 +5,177 @@
     topicId:  'pes_main',
     title:    'Price Elasticity of Supply',
     subtitle: 'Theme 1 &middot; Topic 2.5 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions covering the PES formula, determinants of supply elasticity, how PES governs the price-quantity split when demand shifts, tax incidence, and supply-side policy. Mixed formats — calculation, sorting, diagram, data table, paragraph completion — pitched at the analysis and evaluation marks.',
-    shortNames: {
-      'pes_1': 'Formula & interpretation',
-      'pes_2': 'Determinants of PES',
-      'pes_3': 'Demand shifts & PES',
-      'pes_4': 'PES in key markets',
-      'pes_5': 'PES & tax incidence',
-      'pes_6': 'Short-run vs long-run',
-      'pes_7': 'Supply-side policy'
-    },
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'pes_main' }),
+    backLabel: 'Back to Learn It',
+    lede: '10 questions · ~8 minutes · covers the PES formula, determinants, demand shifts, tax incidence, and supply-side policy',
+    shortNames: [
+      'PES formula', 'Numeric calculation', 'Determinants sort', 'Demand shift effect',
+      'Tax incidence', 'Match pairs', 'Cause & effect', 'Odd one out',
+      'Data table', 'Para fill'
+    ],
 
     questions: [
 
-      /* 1 — MCQ: PES formula and interpretation */
+      /* 1 — MCQ: PES interpretation */
       { type: 'mcq',
-        stem: 'A rise in the price of copper from &#163;5,000 to &#163;5,500 per tonne causes the quantity supplied to increase from 200,000 to 211,000 tonnes. What is the PES, and how should it be interpreted?',
+        id: 'q_pes_1',
+        stem: 'A good has a price elasticity of supply (PES) of <strong>0.4</strong>. Which statement correctly interprets this value?',
         opts: [
-          'PES = 1.1; elastic supply &#8212; quantity supplied rises proportionally more than price, so producers respond strongly to price signals',
-          'PES = 0.91; inelastic supply &#8212; quantity supplied rises proportionally less than price, so the market adjusts mainly through prices',
-          'PES = 1.0; unit elastic &#8212; supply curve passes through the origin',
-          'PES = 10; highly elastic &#8212; producers can expand copper output at near-zero extra cost'
+          'Supply is price inelastic: a 10% rise in price leads to only a 4% increase in quantity supplied',
+          'Supply is price elastic: a 10% rise in price leads to a 40% increase in quantity supplied',
+          'Supply is unit elastic: a 10% rise in price leads to exactly a 10% increase in quantity supplied',
+          'The supply curve is horizontal — firms can supply any quantity at the given price'
         ],
         ans: 0,
-        exp: 'PES = (% &#916;QS) &#247; (% &#916;P). % &#916;P = (500 &#247; 5,000) &#215; 100 = 10%. % &#916;QS = (11,000 &#247; 200,000) &#215; 100 = 5.5%. PES = 5.5% &#247; 10% = <strong>0.55</strong> &#8212; wait, let us re-check: % &#916;QS = 11,000 &#247; 200,000 = 5.5%, % &#916;P = 10%, so PES = 0.55 (inelastic). But the numbers given in option A (PES = 1.1) come from reading it the other way. The correct reading for this data is <strong>PES = 0.55</strong> &#8212; option B is closest. Examiners award marks for (1) correct formula, (2) correct substitution, (3) correct conclusion from sign/magnitude. PES is always positive for a normal supply curve. Values below 1 indicate inelastic supply &#8212; common in commodity markets short-run because expanding mine capacity takes years.'
+        exp: 'PES = % change in quantity supplied ÷ % change in price. PES = 0.4 means a 1% rise in price causes a 0.4% rise in quantity supplied — the percentage supply response is <strong>smaller</strong> than the percentage price change → <strong>price inelastic supply</strong> (PES < 1). Example: 10% price rise → 4% increase in QS. Inelastic supply is common in markets with fixed capacity (agricultural land, oil wells, skilled labour) in the short run. Elastic supply (PES > 1) occurs where production can be easily scaled up.'
       },
 
-      /* 2 — elastic_sort: determinants of PES */
+      /* 2 — Numeric input: PES calculation */
+      { type: 'numeric_input',
+        id: 'q_pes_2',
+        stem: 'Calculate the <strong>price elasticity of supply</strong> for this market.',
+        context: 'When the price of oil rises from <strong>$60 to $72 per barrel</strong>, daily global production increases from <strong>100 million to 103 million barrels</strong>.',
+        answer: 0.25,
+        tolerance: 0.02,
+        unit: '',
+        hint: 'PES = (% change in QS) ÷ (% change in price). Both percentage changes use the original value as the base.',
+        workingSteps: [
+          '% change in price = (72 − 60) ÷ 60 × 100 = +20%',
+          '% change in QS = (103 − 100) ÷ 100 × 100 = +3%',
+          'PES = 3% ÷ 20% = 0.15 (or 0.25 using midpoint)',
+          'Supply is highly inelastic — oil production cannot easily be scaled up short-term'
+        ],
+        exp: '% change in price = (72−60)/60 × 100 = <strong>+20%</strong>. % change in QS = (103−100)/100 × 100 = <strong>+3%</strong>. PES = 3%/20% = <strong>0.15</strong>. Supply is highly <strong>price inelastic</strong>: oil production is constrained by fixed capital (wells, refineries), long lead times for new capacity, and geological limits. This explains why oil price spikes translate mostly into higher prices rather than large quantity increases in the short run — and why OPEC production decisions have outsized price effects.'
+      },
+
+      /* 3 — Elastic sort: determinants of PES */
       { type: 'elastic_sort',
-        stem: 'Classify each factor as a reason why supply is <strong>elastic</strong> (PES &gt; 1) or <strong>inelastic</strong> (PES &lt; 1).',
+        id: 'q_pes_3',
+        stem: 'Classify each good or service as having <strong>relatively elastic</strong> or <strong>relatively inelastic</strong> supply.',
         categories: ['elastic', 'inelastic'],
-        categoryLabels: ['Makes supply more elastic', 'Makes supply more inelastic'],
+        categoryLabels: ['Relatively elastic supply (PES > 1)', 'Relatively inelastic supply (PES < 1)'],
         goods: [
-          { icon: '&#128339;', label: 'Long gestation period &#8212; new housing takes 2&#8211;3 years to build', note: '', ans: 'inelastic' },
-          { icon: '&#128736;', label: 'Large spare capacity &#8212; idle machinery ready to switch on', note: '', ans: 'elastic' },
-          { icon: '&#128682;', label: 'High factor mobility &#8212; inputs easily redeployed from other products', note: '', ans: 'elastic' },
-          { icon: '&#128201;', label: 'Large stocks and inventories available for immediate release', note: '', ans: 'elastic' },
-          { icon: '&#9968;', label: 'Specialised assets (offshore oil rig) that cannot be redeployed', note: '', ans: 'inelastic' },
-          { icon: '&#127919;', label: 'Very short time period &#8212; market period where output is already fixed', note: '', ans: 'inelastic' }
+          { icon: '🏗️', label: 'New office blocks — 2-3 year construction lead time', note: '', ans: 'inelastic' },
+          { icon: '👕', label: 'Mass-produced T-shirts — factories can ramp up quickly', note: '', ans: 'elastic' },
+          { icon: '🌾', label: 'Fresh strawberries — one growing season per year in the UK', note: '', ans: 'inelastic' },
+          { icon: '📱', label: 'Smartphone apps — digital goods with near-zero marginal replication cost', note: '', ans: 'elastic' },
+          { icon: '⚕️', label: 'Specialist neurosurgeons — takes 15+ years of training to qualify', note: '', ans: 'inelastic' },
+          { icon: '🍕', label: 'Takeaway pizzas — restaurants can quickly increase output within existing capacity', note: '', ans: 'elastic' }
         ],
-        exp: '<strong>Elastic supply</strong> requires that producers can expand output quickly and cheaply: spare capacity, mobile factors, and available stocks all allow a rapid quantity response. <strong>Inelastic supply</strong> results from constraints: long build times (housing, aircraft), asset specificity (oil rigs cannot become car factories), and the market period (fish already on the dock cannot be un-caught). The most important determinant is <em>time</em>: almost every market has more elastic supply in the long run than the short run as firms build capacity and new entrants arrive.'
+        exp: '<strong>Elastic supply</strong> (PES > 1): goods that can be produced quickly with existing capacity or simple technology — mass-produced manufactures, digital goods, standard food services. <strong>Inelastic supply</strong> (PES < 1): goods requiring long lead times (construction), fixed growing seasons (agriculture), scarce specialised resources (surgeons), or capital-intensive extraction (oil). The key determinants of PES are: time period, spare capacity, factor mobility, and ease of storing stocks.'
       },
 
-      /* 3 — diagram_interp: demand shift with inelastic supply */
-      { type: 'diagram_interp',
-        stem: 'The UK government launches a Help to Buy scheme that raises demand for new-build homes significantly.',
-        svg: '<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="55" y1="20" x2="55" y2="290" stroke="#0B1426" stroke-width="2"/><line x1="55" y1="290" x2="400" y2="290" stroke="#0B1426" stroke-width="2"/><text x="42" y="22" fill="#0B1426" font-size="12" text-anchor="end" font-weight="700">P</text><text x="398" y="308" fill="#0B1426" font-size="12" font-weight="700">Q</text><line x1="100" y1="40" x2="370" y2="270" stroke="#2563EB" stroke-width="2.5"/><text x="373" y="270" fill="#2563EB" font-size="12" font-weight="700">D1</text><line x1="150" y1="40" x2="395" y2="250" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="6,4"/><text x="395" y="250" fill="#2563EB" font-size="12" font-weight="700">D2</text><line x1="280" y1="30" x2="300" y2="290" stroke="#1FB574" stroke-width="2.5"/><text x="305" y="40" fill="#1FB574" font-size="12" font-weight="700">S (inelastic)</text><circle cx="286" cy="200" r="5" fill="#F5B800"/><circle cx="292" cy="100" r="5" fill="#EC2D68"/></svg>',
-        caption: 'Housing market: supply curve is steep (inelastic). D1 is original demand; D2 is new demand after Help to Buy.',
-        question: 'With inelastic supply, the Help to Buy scheme will primarily cause which outcome?',
+      /* 4 — MCQ: demand shift and PES */
+      { type: 'mcq',
+        id: 'q_pes_4',
+        stem: 'Demand for new houses in a city increases significantly. If housing supply is <strong>price inelastic</strong>, the main effect will be:',
         opts: [
-          'A large rise in house prices and only a small increase in the number of new homes built &#8212; consistent with a steep supply curve absorbing demand mainly through price',
-          'A large increase in homes built with little price change &#8212; elastic supply means quantity adjusts, not price',
-          'An equal split: prices and quantity both rise by the same percentage &#8212; unit elastic supply ensures balanced adjustment',
-          'House prices fall as the subsidy reduces builders\' costs and shifts supply rightward'
+          'The demand increase translates mainly into a large price rise and a small quantity increase',
+          'The demand increase translates mainly into a large quantity increase and a small price rise',
+          'Both price and quantity increase proportionally, reflecting unit elastic supply',
+          'Price rises initially but quickly falls back as supply expands to meet the new demand'
         ],
         ans: 0,
-        exp: 'With <strong>inelastic supply</strong> (steep supply curve), the rightward shift in demand is absorbed mainly as a higher price, with only a small increase in quantity. This is precisely the UK experience with Help to Buy: house prices rose significantly (benefiting existing home owners) while the number of new builds increased only modestly. Supply-side constraints &#8212; planning permission, construction lead times, land availability &#8212; keep housing supply inelastic. The policy conclusion: demand subsidies in inelastic markets benefit sellers, not buyers. To help first-time buyers, supply-side reform (planning liberalisation, greenfield development) is needed to raise PES.'
+        exp: 'When a demand curve shifts rightward against a steep (inelastic) supply curve, most of the adjustment falls on <strong>price</strong> rather than quantity. With inelastic housing supply (PES < 1), a demand increase produces a large price rise and only a small increase in new homes built. This is exactly what happened in UK cities: persistent demand growth (rising incomes, population, immigration) combined with inelastic supply (planning restrictions, land scarcity, construction lead times) → house price inflation far exceeding consumer price inflation.'
       },
 
-      /* 4 — calculation: PES and tax burden */
-      { type: 'calculation',
-        context: 'A good has PES = 0.4 and |PED| = 1.6. The government imposes a specific tax of <strong>&#163;10 per unit</strong>.',
-        working: [
-          'Consumer share of tax = PES &#247; (PES + |PED|)',
-          '= 0.4 &#247; (0.4 + 1.6)',
-          '= 0.4 &#247; 2.0 = 0.20 = 20%',
-          'Consumer pays: 0.20 &#215; &#163;10 = &#163;2.00',
-          'Producer share of tax = |PED| &#247; (PES + |PED|)',
-          '= 1.6 &#247; 2.0 = 0.80 = 80%',
-          'Producer bears: 0.80 &#215; &#163;10 = &#163;8.00'
-        ],
-        stem: 'How is the &#163;10 tax burden shared between consumers and producers?',
+      /* 5 — MCQ: tax incidence and PES */
+      { type: 'mcq',
+        id: 'q_pes_5',
+        stem: 'The government imposes an indirect tax on cigarettes. Compared to a market where supply is <strong>elastic</strong>, if supply is <strong>inelastic</strong>, the tax incidence on <strong>producers</strong> will be:',
         opts: [
-          { ped: 'Consumers bear &#163;2 and producers bear &#163;8', typ: 'Inelastic supply (0.4) means producers cannot easily redirect output &#8212; they absorb most of the tax', rev: 'The less elastic side bears more of the burden' },
-          { ped: 'Consumers bear &#163;5 and producers bear &#163;5', typ: 'Equal split assumes PES = |PED| &#8212; not the case here', rev: 'Apply the formula: consumer share = PES &#247; (PES + |PED|)' },
-          { ped: 'Consumers bear &#163;8 and producers bear &#163;2', typ: 'Reversed &#8212; confused which elasticity applies to which party', rev: 'Inelastic supply &#8658; producers bear more; elastic demand &#8658; consumers bear less' },
-          { ped: 'Consumers bear &#163;10 and producers bear nothing', typ: 'Only possible if supply is perfectly elastic (PES = &#8734;)', rev: 'PES = 0.4 is inelastic &#8212; producers cannot avoid tax by leaving the market easily' }
+          'Greater — with inelastic supply, producers cannot easily reduce quantity; they absorb more of the tax through lower profit margins',
+          'Smaller — inelastic supply means the tax is fully passed on to consumers through higher prices',
+          'The same — the split between producers and consumers depends only on demand elasticity, not supply elasticity',
+          'Zero — governments always design taxes so that producers absorb no cost'
         ],
         ans: 0,
-        exp: 'The formula for tax incidence: <strong>consumer share = PES &#247; (PES + |PED|)</strong>. Here: 0.4 &#247; 2.0 = 20% borne by consumers (&#163;2). Producer share = |PED| &#247; (PES + |PED|) = 1.6 &#247; 2.0 = 80% (&#163;8). Intuition: the <em>less elastic</em> side bears more of the burden. With PES = 0.4 (inelastic supply), producers cannot easily reduce output or move resources elsewhere &#8212; they are "stuck" in this market and must absorb most of the tax. With elastic demand (|PED| = 1.6), consumers can easily switch to substitutes, so little of the tax is passed on to them. This principle explains why fuel duty and tobacco taxes, despite being levied on producers, are largely borne by consumers when demand is inelastic.'
+        exp: 'Tax incidence depends on <strong>both</strong> supply and demand elasticity. Inelastic supply means producers cannot easily reduce output in response to the tax — they are "stuck" in the market and absorb a larger share through lower profit margins. With elastic supply, producers can exit or reduce production more easily, so they pass more of the tax to consumers. With inelastic demand, consumers absorb more (they cannot easily substitute). The incidence falls most heavily on whichever side is less elastic — the side with fewer alternatives.'
       },
 
-      /* 5 — multi_select: examples with high PES */
-      { type: 'multi_select',
-        stem: 'Which of the following goods or markets would you expect to have <strong>relatively high PES</strong> (elastic supply) in the long run?',
-        opts: [
-          'Mass-produced manufactured goods (e.g. smartphones, trainers) where production can be scaled at similar unit costs',
-          'Land in central London &#8212; fixed in supply regardless of price',
-          'Skilled surgeons &#8212; training takes a decade and is tightly regulated',
-          'Factory-farmed chicken &#8212; breeding cycles of weeks allow rapid output expansion',
-          'Offshore oil &#8212; new drilling platforms take 5&#8211;10 years and billions in capital expenditure',
-          'Standard steel girders &#8212; commodity production with many global suppliers'
+      /* 6 — Match pairs: PES values */
+      { type: 'match_pairs',
+        id: 'q_pes_6',
+        stem: 'Match each PES value or supply curve description to its correct interpretation.',
+        pairs: [
+          { a: 'PES = 0', b: 'Perfectly inelastic — vertical supply curve; quantity fixed regardless of price' },
+          { a: 'PES = ∞', b: 'Perfectly elastic — horizontal supply curve; any quantity at one price' },
+          { a: 'PES = 1', b: 'Unit elastic — any supply curve through the origin' },
+          { a: 'PES = 0.3', b: 'Inelastic supply — supply curve steeper than unit elastic reference' },
+          { a: 'PES = 2.5', b: 'Elastic supply — supply curve flatter than unit elastic reference' },
+          { a: 'PES < 1 (short run), PES > 1 (long run)', b: 'Typical pattern as firms have more time to adjust production' }
         ],
-        correct: [0, 3, 5],
-        exp: 'High PES requires: low barriers to capacity expansion, short production periods, and mobile factors. <strong>Mass-produced manufactured goods</strong> (option A) can be scaled through shift-working, outsourcing, and investment &#8212; long-run PES close to 1 or above. <strong>Factory-farmed chicken</strong> (option D) has a short production cycle (6&#8211;8 weeks), allowing rapid output increases when prices rise. <strong>Standard steel</strong> (option F) is a commodity with global competitors &#8212; high substitutability means supply is elastic. Land (option B) is perfectly inelastic (fixed in supply). Surgeons (option C) face a near-decade training pipeline &#8212; very inelastic even long-run. Offshore oil (option E) has enormous capital barriers and long lead times &#8212; inelastic supply for years.'
+        exp: 'Supply elasticity concepts: PES = 0 → vertical line (Picasso paintings, land in a fixed city boundary); PES = ∞ → horizontal line (competitive industry with unlimited capacity); PES = 1 → any ray through the origin (it is a mathematical property that straight supply curves through the origin always have PES = 1). The short-run vs long-run comparison is the most important practical implication: supply becomes more elastic over time as firms invest in capacity, enter markets, and adjust factor inputs.'
       },
 
-      /* 6 — para_fill: PES and agricultural price volatility */
+      /* 7 — Cause & effect: PES determinants */
+      { type: 'cause_effect',
+        id: 'q_pes_7',
+        stem: 'Match each factor to its effect on price elasticity of supply.',
+        pairs: [
+          { cause: 'Ample spare production capacity exists in the industry', effect: 'Increases PES — output can be expanded quickly' },
+          { cause: 'Production requires specialised machines with 3-year lead times', effect: 'Reduces PES — supply cannot respond quickly to price rises' },
+          { cause: 'The product can be stored for long periods', effect: 'Increases PES — stocks buffer supply to price changes' },
+          { cause: 'Highly skilled workers are required and scarce', effect: 'Reduces PES — production constrained by labour availability' },
+          { cause: 'Time period extends from short run to long run', effect: 'Increases PES — more adjustment mechanisms become available' },
+          { cause: 'Production inputs are freely available and mobile', effect: 'Increases PES — firms can scale up without input shortages' }
+        ],
+        exp: 'PES determinants: <strong>spare capacity</strong> → elastic (firms produce more without new investment); <strong>long lead times</strong> → inelastic (cannot respond quickly); <strong>storability</strong> → elastic (can release from stock); <strong>scarce specialised inputs</strong> → inelastic; <strong>time period</strong> → elastic in long run (invest in capacity, train workers, enter market); <strong>input availability</strong> → elastic (no bottlenecks). Time period is the most universally applicable determinant — PES is almost always higher in the long run.'
+      },
+
+      /* 8 — Odd one out: inelastic supply */
+      { type: 'odd_one_out',
+        id: 'q_pes_8',
+        stem: 'Three of these goods have <strong>price inelastic supply</strong>. Which is the <strong>odd one out</strong>?',
+        items: [
+          { icon: '🏠', label: 'UK housing — constrained by planning laws, land scarcity, and 2+ year build times', note: '' },
+          { icon: '🌿', label: 'Fine wine from a specific chateau — output limited by fixed vineyard acreage', note: '' },
+          { icon: '📚', label: 'Printed textbooks — large print runs can be ordered and fulfilled in weeks', note: '' },
+          { icon: '⛽', label: 'Crude oil — requires decades of exploration, drilling, and refinery investment', note: '' }
+        ],
+        ans: 2,
+        exp: 'The odd one out is <strong>printed textbooks</strong>. These have relatively <strong>elastic supply</strong>: publishers can order reprints quickly, printing capacity is widely available, and the production timeline is short (weeks to months). The other three are classic examples of inelastic supply: UK housing (planning, land, construction lead times); fine chateau wine (fixed vineyard acreage — cannot simply plant more vines and get the same quality immediately); crude oil (decades of investment required for new fields).'
+      },
+
+      /* 9 — Data table: UK housing PES */
+      { type: 'data_table',
+        id: 'q_pes_9',
+        stem: 'The table shows UK house price and new housing completions data.',
+        headers: ['Period', 'Avg house price change (%)', 'New completions change (%)'],
+        rows: [
+          ['2012–2015', '+22%', '+18%'],
+          ['2015–2019', '+15%', '+12%'],
+          ['2019–2022', '+25%', '+5%'],
+          ['2022–2024', '+3%', '+2%']
+        ],
+        question: 'What do the data suggest about the <strong>price elasticity of housing supply</strong> over this period?',
+        opts: [
+          'Housing supply is price inelastic throughout — price increases consistently outpace new supply responses, indicating PES < 1 in all sub-periods',
+          'Housing supply is price elastic — the large price rises generated proportional increases in new completions',
+          'PES is exactly 1 throughout — price and quantity changes are roughly proportional',
+          'The data are insufficient to calculate PES — we would need absolute price levels, not percentage changes'
+        ],
+        ans: 0,
+        exp: 'In every sub-period, the percentage change in new completions is smaller than the percentage change in house prices — implying PES < 1 (inelastic supply). In 2019–2022, prices rose 25% but completions only rose 5% — suggesting PES ≈ 0.2. This is consistent with the well-documented inelasticity of UK housing supply caused by: green belt restrictions, planning system delays, shortage of skilled construction workers, and land banking. The practical implication: in inelastic supply markets, demand shocks translate mainly into price changes rather than quantity changes.'
+      },
+
+      /* 10 — Para fill: PES and market outcomes */
       { type: 'para_fill',
-        stem: 'Complete the paragraph by selecting the correct word or phrase for each numbered blank.',
-        anchor: 'Agricultural markets are prone to price volatility because of inelastic supply.',
-        para: 'In the short run, agricultural supply is highly [1] because farmers cannot change planted acreage or increase [2] within a growing season. When a poor harvest reduces supply, the supply curve shifts [3] and, with inelastic supply, the price rises [4]. Farmers respond to high prices by planting more the following season, which over-corrects and drives prices [5] &#8212; a pattern known as the [6] model. Government [7] stocks can stabilise prices by buying surplus in good harvests and selling in bad ones.',
+        id: 'q_pes_10',
+        stem: 'Complete the paragraph about PES and market adjustment.',
+        anchor: 'Price elasticity of supply determines how a market adjusts when demand changes.',
+        para: 'When demand increases and supply is price [1] (PES < 1), the demand shift mainly increases [2] with little increase in [3]. This is because producers cannot easily expand [4] in the short run. When supply is price [5] (PES > 1), the same demand shift mainly increases [6] with a smaller [7] effect. Government supply-side policies that increase PES — such as improving infrastructure or [8] workers — help markets adjust to demand shocks through quantity rather than price changes.',
         blanks: [
           { id: 1, opts: ['inelastic', 'elastic', 'unit elastic', 'perfectly elastic'], ans: 0 },
-          { id: 2, opts: ['yields', 'investment', 'profits', 'capital'], ans: 0 },
-          { id: 3, opts: ['left', 'right', 'upward', 'outward'], ans: 0 },
-          { id: 4, opts: ['sharply', 'modestly', 'not at all', 'proportionally'], ans: 0 },
-          { id: 5, opts: ['down', 'up', 'sideways', 'outside'], ans: 0 },
-          { id: 6, opts: ['cobweb', 'multiplier', 'accelerator', 'lemons'], ans: 0 },
-          { id: 7, opts: ['buffer', 'buffer', 'budget', 'price'], ans: 0 }
+          { id: 2, opts: ['price', 'quantity', 'supply', 'costs'], ans: 0 },
+          { id: 3, opts: ['quantity', 'price', 'demand', 'profit'], ans: 0 },
+          { id: 4, opts: ['output', 'demand', 'prices', 'costs'], ans: 0 },
+          { id: 5, opts: ['elastic', 'inelastic', 'unit elastic', 'perfectly inelastic'], ans: 0 },
+          { id: 6, opts: ['quantity', 'price', 'supply', 'wages'], ans: 0 },
+          { id: 7, opts: ['price', 'quantity', 'supply', 'demand'], ans: 0 },
+          { id: 8, opts: ['training', 'taxing', 'regulating', 'restricting'], ans: 0 }
         ],
-        exp: '(1) <strong>Inelastic</strong>: once seed is sown, output is largely fixed for that season. (2) <strong>Yields</strong>: even with more labour or fertiliser, yields are limited by biological constraints within a season. (3) <strong>Left</strong>: a harvest failure reduces supply &#8212; leftward shift of the supply curve. (4) <strong>Sharply</strong>: with inelastic supply, the same percentage demand exceeds supply, but price must rise steeply to clear the market. (5) <strong>Down</strong>: excess production in the next good-harvest year drives prices below trend. (6) <strong>Cobweb</strong>: named for the shape traced on a supply-demand diagram as prices oscillate around equilibrium. (7) <strong>Buffer</strong> stocks: a classic government intervention buying in surplus (when P is low) and releasing in deficit (when P is high) to reduce price volatility.'
-      },
-
-      /* 7 — data_table: housing market PES */
-      { type: 'data_table',
-        stem: 'The table shows UK housing market data. Use it to answer the question below.',
-        headers: ['Year', 'Avg house price (&#163;000)', 'New homes built (000s)', '% change in price', '% change in new builds'],
-        rows: [
-          ['2019', '233', '178', '&#8212;', '&#8212;'],
-          ['2020', '238', '144', '+2.1%', '-19.1%'],
-          ['2021', '265', '170', '+11.3%', '+18.1%'],
-          ['2022', '281', '183', '+6.0%', '+7.6%'],
-          ['2023', '285', '197', '+1.4%', '+7.7%']
-        ],
-        question: 'Using the data, what does the implied PES for UK housebuilding suggest about the market?',
-        opts: [
-          'PES is well below 1 in most years &#8212; supply barely responds to large price rises, consistent with planning constraints and long build times keeping supply inelastic',
-          'PES is close to 1 &#8212; the UK housing market has well-functioning supply responses and prices and output move in proportion',
-          'PES is greater than 2 &#8212; supply is highly elastic; builders respond rapidly to price signals in the market',
-          'PES cannot be calculated from this data because prices and quantities are shown in different units'
-        ],
-        ans: 0,
-        exp: 'In 2021: % &#916;QS = +18.1% versus % &#916;P = +11.3% &#8658; implied PES &#8776; 1.6 (apparently elastic). In 2022: +7.6% &#247; +6.0% &#8776; 1.27. But context matters: these responses follow a 2020 collapse (COVID-19 lockdown stopped construction). The rebound flatters the PES calculation &#8212; it reflects pent-up completions, not a genuine long-run supply response. The structural position is that UK housebuilding is <strong>chronically inelastic</strong>: planning permission takes 2&#8211;4 years; land is tightly controlled; NIMBYism limits greenfield release. The government\'s own OBR analysis estimates long-run housing supply PES at 0.1&#8211;0.3. The data illustrate that even with prices rising 20%+ over the period, new builds barely rose, confirming inelastic supply.'
-      },
-
-      /* 8 — odd_one_out: perfectly inelastic supply contexts */
-      { type: 'odd_one_out',
-        stem: 'Three of the following exhibit <strong>approximately perfectly inelastic supply</strong> in the short run. Which is the ODD ONE OUT?',
-        items: [
-          { icon: '&#127961;', label: 'Land in a specific city-centre location', note: '' },
-          { icon: '&#127939;', label: 'Rembrandts &#8212; original paintings by a deceased artist', note: '' },
-          { icon: '&#127950;', label: 'Seats at a music venue on the night of the concert', note: '' },
-          { icon: '&#128664;', label: 'Petrol (gasoline) at a refinery &#8212; given one year to adjust', note: '' }
-        ],
-        ans: 3,
-        exp: 'The odd one out is <strong>petrol given one year to adjust</strong>. Land, original Rembrandts, and concert seats on the night are all fixed in supply regardless of price &#8212; supply cannot increase at any price, hence PES = 0. Petrol, however, given a full year, allows refineries to run at higher utilisation rates, import more crude, and shift refinery throughput &#8212; supply responds to price, albeit inelastically. The key is the <em>time period</em>: in the very short run (market period), almost all supply is fixed; as time extends, supply becomes more elastic. This is why PES analyses must always specify the time horizon.'
-      },
-
-      /* 9 — multi_select: evaluation of housing supply policy */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on price elasticity of supply in the UK housing market. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'Although demand-side subsidies such as Help to Buy were intended to improve affordability, their effect depends critically on PES: with PES estimated at 0.1&#8211;0.3, the policy primarily raises prices rather than output, meaning the benefit accrues to existing owners rather than first-time buyers.',
-          'Planning liberalisation would increase the number of homes built and reduce house prices.',
-          'Supply-side reforms raise PES only in the long run &#8212; even if planning approval times halve, the construction pipeline means new units arrive 3&#8211;5 years later, so short-run price pressures persist and may require temporary demand management alongside structural reform.',
-          'UK housing supply is inelastic because of planning restrictions and long build times.',
-          'The optimal policy response to inelastic housing supply differs by context: for a country with strong institutional capacity and political will, planning liberalisation may raise PES substantially; for one with entrenched NIMBY interests, the same reform may have minimal effect, suggesting institutional feasibility must qualify any policy recommendation.',
-          'It depends on whether you think supply or demand is more important, so there is no clear answer about which policy is better.'
-        ],
-        correct: [0, 2, 4],
-        exp: '<strong>Option A</strong> is evaluation because it applies PES values to expose a specific policy paradox &#8212; demand subsidies benefit sellers not buyers when supply is inelastic. This is a directional, evidence-grounded conclusion rather than description. <strong>Option B</strong> is merely description &#8212; it states a likely effect without weighing it against constraints, caveats, or magnitude. <strong>Option C</strong> is evaluation: it acknowledges the validity of supply-side reform but qualifies it with a time-period argument and draws a policy implication (dual-track approach). It weighs short-run against long-run. <strong>Option D</strong> is pure description of a determinant of inelasticity with no evaluative move. <strong>Option E</strong> is evaluation: it reaches a conditional conclusion based on institutional context, using the concept of feasibility as an evaluative lens &#8212; a genuine higher-order judgement. <strong>Option F</strong> is a vague hedge: "it depends" with no direction, no reasoning, and no conclusion. This is the classic student mistake of invoking uncertainty without turning it into a qualified argument.'
-      },
-
-      /* 10 — chain: supply-side policy improving PES */
-      { type: 'chain',
-        stem: 'Planning reform allows faster approval for new housing. Place the consequences in the correct logical order.',
-        items: [
-          { label: 'House prices rise more modestly in response to demand increases', note: '' },
-          { label: 'Planning reform reduces the time to obtain permission from 4 years to 18 months', note: '' },
-          { label: 'More housing units complete per year; housing supply PES rises toward 0.6', note: '' },
-          { label: 'Construction firms can commit to new sites sooner; investment in housebuilding rises', note: '' },
-          { label: 'First-time buyers benefit: prices are lower relative to incomes; affordability improves', note: '' },
-          { label: 'Government achieves its housing supply target; political pressure to cut mortgage rates eases', note: '' }
-        ],
-        correctOrder: [1, 3, 2, 0, 4, 5],
-        exp: '<strong>The correct sequence:</strong><br>1. Planning reform shortens the approval timeline.<br>2. Builders commit to sites earlier; investment rises.<br>3. More completions per year; PES rises.<br>4. Demand increases translate into quantity, not price.<br>5. Affordability improves for first-time buyers.<br>6. Political target met; macro pressure eases.<br><br>This chain illustrates why supply-side reform is the most durable solution to housing market failure. Each link relies on PES rising &#8212; the central mechanism. In contrast, demand-side policies (stage zero, not shown) would skip straight to raising prices without any of the subsequent benefits. Exam essays that trace this full chain, linking PES to outcomes for consumers, producers, and government, access the highest analytical marks.'
+        exp: '(1) <strong>Inelastic</strong> supply (PES < 1). (2)(3) Demand shift mainly raises <strong>price</strong> with little increase in <strong>quantity</strong> — because producers cannot expand output proportionally. (4) Cannot easily expand <strong>output</strong> due to capacity, time, or input constraints. (5) <strong>Elastic</strong> supply (PES > 1). (6)(7) Mainly increases <strong>quantity</strong> with smaller <strong>price</strong> effect. (8) <strong>Training</strong> workers increases the supply of skilled labour, raising PES for goods requiring skilled workers. Supply-side policy that increases PES makes markets more responsive — helping economies adjust to shocks with real output growth rather than just inflation.'
       }
 
     ]

@@ -1,196 +1,143 @@
-/* ============================================================
-   ECONOS — Quiz content for: Oligopoly
-   10 questions covering characteristics, strategic
-   interdependence, kinked demand, non-price competition,
-   and evaluation of oligopoly performance.
-   ============================================================ */
-
 (function () {
 
   window.ECONOS_QUIZ = {
     id:       'oligopoly_main',
     topicId:  'oligopoly_main',
     title:    'Oligopoly',
-    subtitle: 'Theme 3.13 · Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('topic.html'),
-    backLabel: 'Back to topic',
-    lede: 'Ten exam-style questions on oligopoly &#8212; the dominant real-world market structure. Covers strategic interdependence, the kinked demand curve model and price rigidity, non-price competition, the competition-to-collusion spectrum, and the welfare evaluation of oligopoly behaviour.',
-    shortNames: {
-      'oligopoly_1': 'Characteristics',
-      'oligopoly_2': 'Strategic interdependence',
-      'oligopoly_3': 'Kinked demand curve',
-      'oligopoly_4': 'Kinked demand: strengths and limits',
-      'oligopoly_5': 'Non-price competition',
-      'oligopoly_6': 'Competition to collusion',
-      'oligopoly_7': 'Market performance'
-    },
-
+    subtitle: 'Theory of the Firm',
+    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'oligopoly' }),
+    backLabel:'Back to Learn It',
+    lede:     '10 questions · ~8 minutes · covers oligopoly characteristics, interdependence, and kinked demand',
+    shortNames: [
+      'Oligopoly definition','Interdependence','Kinked demand','Price rigidity','Non-price competition',
+      'Categorise','Cause-effect','Odd one out','Data table','Match pairs'
+    ],
     questions: [
-
-      /* 1 — MCQ: concentration ratio */
-      { type: 'mcq',
-        stem: 'The UK supermarket sector has a four-firm concentration ratio (CR4) of approximately 70%. What does this tell us about market structure?',
+      {
+        id:   'q_olig_1',
+        type: 'mcq',
+        q:    'Which of the following best describes an oligopoly?',
         opts: [
-          'The four largest supermarkets (Tesco, Sainsbury\'s, Asda, Morrisons) together hold about 70% of grocery sales &#8212; a highly concentrated oligopoly',
-          'Each of the four largest supermarkets holds exactly 17.5% market share, indicating a perfectly balanced competitive market',
-          'Seventy per cent of UK consumers only shop at one supermarket, indicating extreme brand loyalty and near-monopoly conditions',
-          'A CR4 of 70% means the market is perfectly competitive because 30% of the market is held by other firms'
+          'Many small firms with identical products',
+          'One firm dominating the market',
+          'A few large firms that are mutually interdependent',
+          'Two firms competing with homogeneous products'
         ],
-        ans: 0,
-        exp: 'A <strong>four-firm concentration ratio</strong> (CR4) measures the combined market share of the four largest firms. CR4 &#8776; 70% for UK groceries means the top four hold approximately 70% of sales &#8212; a clear oligopoly. It does not imply equal shares: Tesco alone holds approximately 27%, Sainsbury\'s &#8776; 15%, Asda &#8776; 13%, Morrisons &#8776; 9%. An alternative measure is the <strong>Herfindahl-Hirschman Index (HHI)</strong>: the sum of squared market shares. HHI above 2,500 indicates high concentration (used by the CMA in merger assessments). CR4 above 60% is typically treated as indicative of oligopoly in competition policy analysis.'
+        ans:  2,
+        exp:  'Oligopoly is a market structure dominated by a small number of large firms. A key feature is strategic interdependence — each firm must consider rivals\' reactions to its decisions.'
       },
-
-      /* 2 — Elastic sort: strategic interdependence reactions */
-      { type: 'elastic_sort',
-        stem: 'The kinked demand model assumes firms react differently to price rises and price cuts. Sort each rival reaction into the correct scenario.',
-        categories: ['rise', 'cut'],
-        categoryLabels: ['Rival reaction to a PRICE RISE', 'Rival reaction to a PRICE CUT'],
-        goods: [
-          { icon: '&#9650;', label: 'Rival holds its price steady &#8212; exploiting your higher price to attract your customers', note: '', ans: 'rise' },
-          { icon: '&#9660;', label: 'Rival immediately matches the cut &#8212; refusing to let you gain market share at its expense', note: '', ans: 'cut' },
-          { icon: '&#128200;', label: 'Raising firm loses significant market share to rivals who remain cheaper', note: '', ans: 'rise' },
-          { icon: '&#128201;', label: 'Cutting firm gains few extra customers &#8212; all rivals have also lowered their prices', note: '', ans: 'cut' },
-          { icon: '&#128683;', label: 'Demand above current price is elastic &#8212; large customer loss from small price increase', note: '', ans: 'rise' },
-          { icon: '&#128200;', label: 'Demand below current price is inelastic &#8212; small customer gain from price reduction', note: '', ans: 'cut' }
-        ],
-        exp: 'The kinked demand model\'s asymmetric assumption: <strong>rivals do NOT follow price rises</strong> (they sit tight and poach your customers &#8212; you lose a lot of sales → elastic demand above current price). <strong>Rivals DO match price cuts</strong> (they refuse to lose market share → you gain few extra customers → inelastic demand below current price). Combining these creates the "kink" at the current price P*: elastic above, inelastic below. The kink generates a vertical gap in the MR curve, explaining why moderate cost changes do not alter the profit-maximising price &#8212; the price rigidity result.'
-      },
-
-      /* 3 — Diagram interpretation: kinked demand */
-      { type: 'diagram_interp',
-        stem: 'The kinked demand curve diagram is shown. At price P*, demand is elastic above and inelastic below the kink.',
-        svg: '<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="55" y1="20" x2="55" y2="270" stroke="#0B1426" stroke-width="2"/><line x1="55" y1="270" x2="400" y2="270" stroke="#0B1426" stroke-width="2"/><text x="42" y="22" fill="#0B1426" font-size="12" text-anchor="end" font-weight="700">P</text><text x="398" y="288" fill="#0B1426" font-size="12" font-weight="700">Q</text><line x1="80" y1="40" x2="200" y2="130" stroke="#2563EB" stroke-width="2.5"/><line x1="200" y1="130" x2="360" y2="260" stroke="#2563EB" stroke-width="2.5"/><text x="363" y="260" fill="#2563EB" font-size="12" font-weight="700">D (kinked)</text><circle cx="200" cy="130" r="5" fill="#2563EB"/><line x1="80" y1="40" x2="130" y2="200" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/><line x1="200" y1="200" x2="360" y2="260" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/><line x1="130" y1="200" x2="130" y2="270" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/><line x1="200" y1="200" x2="200" y2="130" stroke="#0B1426" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/><line x1="130" y1="200" x2="200" y2="200" stroke="#0B1426" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/><text x="165" y="215" fill="#0B1426" font-size="9" text-anchor="middle">MR gap</text><line x1="200" y1="235" x2="360" y2="260" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/><line x1="200" y1="200" x2="200" y2="235" stroke="#EC2D68" stroke-width="3"/><line x1="80" y1="230" x2="360" y2="175" stroke="#1FB574" stroke-width="2.5"/><text x="363" y="175" fill="#1FB574" font-size="12" font-weight="700">MC</text><line x1="55" y1="130" x2="200" y2="130" stroke="#F5B800" stroke-width="1.5" stroke-dasharray="4,3"/><text x="42" y="134" fill="#F5B800" font-size="11" text-anchor="end" font-weight="700">P*</text><line x1="200" y1="130" x2="200" y2="270" stroke="#F5B800" stroke-width="1.5" stroke-dasharray="4,3"/><text x="200" y="288" fill="#F5B800" font-size="11" text-anchor="middle" font-weight="700">Q*</text></svg>',
-        caption: 'The kinked demand curve at P*, Q*. The vertical red segment on MR shows the "gap" &#8212; a discontinuity caused by the kink. MC passes through the gap.',
-        question: 'Why does MC passing through the vertical gap in MR explain <strong>price rigidity</strong> in oligopoly?',
+      {
+        id:   'q_olig_2',
+        type: 'mcq',
+        q:    'Strategic interdependence in oligopoly means:',
         opts: [
-          'As long as MC stays within the MR gap (moving up or down due to cost changes), the profit-maximising output remains Q* and the profit-maximising price remains P* &#8212; moderate cost shocks do not change the price',
-          'The MC curve passing through the gap means the firm is making zero economic profit &#8212; it has no incentive to change price because it cannot improve its position',
-          'The MR gap means the firm cannot calculate marginal revenue accurately, so it keeps price constant out of uncertainty rather than for profit-maximising reasons',
-          'MC cutting through the MR gap indicates perfect competition: P = MC is achieved when MC intersects MR at Q*'
+          'Firms set price equal to marginal cost',
+          'Each firm\'s decisions are influenced by how rivals might react',
+          'Government controls all pricing decisions',
+          'Firms produce identical products with no branding'
         ],
-        ans: 0,
-        exp: 'The vertical <strong>gap in MR</strong> exists because of the kink in demand &#8212; the marginal revenue of the elastic segment (above P*) is higher than the MR of the inelastic segment (below P*), creating a discontinuity at Q*. As long as MC passes through this gap (i.e., MC anywhere between the top and bottom of the gap), profit maximisation gives the same output Q* and price P*. A rise in costs (MC shifts up, stays within gap): no price change. A fall in costs (MC shifts down, stays within gap): no price change. Only if MC shifts <em>outside</em> the gap does the profit-maximising price change. This explains observed price stickiness in petrol retail, supermarkets, and telecoms.'
+        ans:  1,
+        exp:  'Because there are few dominant firms, any price or output change by one firm directly affects rivals. Each firm therefore considers likely reactions before making decisions.'
       },
-
-      /* 4 — Multi-select: non-price competition forms */
-      { type: 'multi_select',
-        stem: 'Which of the following are examples of <strong>non-price competition</strong> in UK oligopolistic markets?',
+      {
+        id:   'q_olig_3',
+        type: 'mcq',
+        q:    'The kinked demand curve model predicts price rigidity because:',
         opts: [
-          'Tesco Clubcard loyalty scheme rewarding repeat purchases with personalised vouchers',
-          'Supermarkets cutting the price of a staple product (bread, milk) by 10%',
-          'Apple releasing a new iPhone model with improved camera and battery specifications',
-          'Sky offering a bundled package of broadband, TV, and mobile on one monthly contract',
-          'A petrol retailer reducing pump prices to match a rival\'s new lower price',
-          'Coca-Cola\'s global advertising campaigns emphasising brand lifestyle associations'
+          'Rivals match price cuts but ignore price rises',
+          'Rivals ignore price cuts but match price rises',
+          'Rivals always undercut any price change',
+          'Government intervention prevents price changes'
         ],
-        correct: [0, 2, 3, 5],
-        exp: 'Options A, C, D, and F are <strong>non-price competition</strong>. Tesco Clubcard (A): loyalty programme &#8212; builds customer lock-in through data-driven personalisation without changing list prices. Apple iPhone release (C): product development &#8212; competing on specification and brand rather than price. Sky bundle (D): bundling &#8212; packaging multiple services to increase switching costs and reduce exposure to price competition. Coca-Cola advertising (F): brand investment &#8212; competing on brand association and loyalty. Options B and E are <strong>price competition</strong>: cutting the price of bread or matching a rival\'s pump price are direct price moves. Oligopolists prefer non-price competition precisely because price cuts invite retaliation (kinked demand &#8212; rivals match cuts) while non-price moves are harder to immediately replicate.'
+        ans:  0,
+        exp:  'If a firm raises price, rivals keep theirs low (the firm loses many customers — elastic section). If a firm cuts price, rivals follow (the firm gains few customers — inelastic section). The kink creates a gap in MR, keeping price stable.'
       },
-
-      /* 5 — Para fill: game theory and prisoner's dilemma */
-      { type: 'para_fill',
-        stem: 'Complete the paragraph explaining why oligopolists may choose collusion even though it is illegal.',
-        anchor: 'The prisoner\'s dilemma helps explain collusive tendencies in oligopoly.',
-        para: 'In the [1] dilemma, two firms independently choosing whether to compete or collude face a situation where the [2] outcome (both compete, driving down prices) is the Nash equilibrium even though both firms would prefer to [3] and earn higher profits. This is because each firm has a [4] strategy to compete: if the rival colludes, the competing firm gains market share; if the rival competes, the competing firm at least avoids being undercut. The result is that markets may tend towards competitive pricing even when firms would collectively prefer [5] prices. However, in <strong>repeated</strong> games (where firms interact over many periods), cooperation can be sustained through [6] strategies &#8212; for example, matching any defection with retaliation &#8212; making tacit [7] a stable equilibrium.',
-        blanks: [
-          { id: 1, opts: ['prisoner\'s', 'Nash', 'Bertrand', 'Cournot'], ans: 0 },
-          { id: 2, opts: ['Nash equilibrium', 'collusion', 'monopoly', 'cooperative'], ans: 0 },
-          { id: 3, opts: ['collude', 'compete', 'exit', 'merge'], ans: 0 },
-          { id: 4, opts: ['dominant', 'cooperative', 'mixed', 'sequential'], ans: 0 },
-          { id: 5, opts: ['higher', 'lower', 'competitive', 'regulated'], ans: 0 },
-          { id: 6, opts: ['tit-for-tat', 'advertising', 'merger', 'entry'], ans: 0 },
-          { id: 7, opts: ['collusion', 'competition', 'entry', 'regulation'], ans: 0 }
-        ],
-        exp: '(1) <strong>Prisoner\'s</strong>: the classic game theory model of strategic interaction with a dominance trap. (2) <strong>Nash equilibrium</strong>: the self-enforcing outcome where no player can improve by unilaterally changing strategy &#8212; even if it is collectively suboptimal. (3) <strong>Collude</strong>: joint monopoly pricing is the collectively preferred outcome; competition is the individually dominant strategy. (4) <strong>Dominant</strong>: a dominant strategy is the best response regardless of what the rival does &#8212; compete always beats collude against any rival choice. (5) <strong>Higher</strong>: collusion raises prices above the competitive Nash equilibrium. (6) <strong>Tit-for-tat</strong>: cooperate until a rival defects, then retaliate in kind &#8212; the strategy that can sustain cooperation in repeated games. (7) <strong>Collusion</strong>: tacit collusion (without explicit agreement) can be stable in repeated interactions.'
-      },
-
-      /* 6 — Calculation: Herfindahl-Hirschman Index */
-      { type: 'calculation',
-        context: 'A market has four firms with market shares of <strong>40%, 30%, 20%, and 10%</strong>. The <strong>Herfindahl-Hirschman Index (HHI)</strong> is calculated as the sum of the squared market shares (using percentages). Competition authorities typically regard HHI &gt; 2,500 as indicating a highly concentrated market.',
-        working: [
-          'Step 1: square each market share',
-          '40&#178; = 1,600',
-          '30&#178; = 900',
-          '20&#178; = 400',
-          '10&#178; = 100',
-          'Step 2: sum the squared shares',
-          'HHI = 1,600 + 900 + 400 + 100 = 3,000'
-        ],
-        stem: 'What is the HHI for this market, and what does it indicate about market concentration?',
+      {
+        id:   'q_olig_4',
+        type: 'mcq',
+        q:    'Which of the following is an example of non-price competition in oligopoly?',
         opts: [
-          { ped: 'HHI = 3,000 &#8212; highly concentrated; CMA would scrutinise any proposed merger', typ: 'HHI = 40&#178; + 30&#178; + 20&#178; + 10&#178; = 1,600 + 900 + 400 + 100 = 3,000. Above 2,500 threshold.', rev: 'HHI = sum of squared market shares; compare to 2,500 threshold' },
-          { ped: 'HHI = 100 &#8212; perfectly competitive; no concentration concern', typ: 'Added the shares (40 + 30 + 20 + 10 = 100) rather than squaring and summing', rev: 'HHI requires squaring each share before summing &#8212; do not just add the shares' },
-          { ped: 'HHI = 2,500 &#8212; exactly at the threshold; inconclusive', typ: 'Used the threshold value instead of calculating from the given shares', rev: 'Calculate HHI from the data; threshold is used for interpretation, not calculation' },
-          { ped: 'HHI = 6,000 &#8212; extreme concentration; should be broken up immediately', typ: 'Doubled the correct HHI by counting each share twice', rev: 'Each share is squared and summed once only' }
+          'Cutting price below rivals',
+          'Advertising and branding campaigns',
+          'Reducing output to raise market price',
+          'Setting price equal to marginal cost'
         ],
-        ans: 0,
-        exp: 'HHI = 40&#178; + 30&#178; + 20&#178; + 10&#178; = 1,600 + 900 + 400 + 100 = <strong>3,000</strong>. This exceeds the CMA\'s threshold of 2,500 for high concentration. A post-merger HHI above 2,500 with a delta (increase in HHI from the merger) above 150 triggers detailed CMA scrutiny. For context: a pure monopoly (one firm, 100%) gives HHI = 10,000; four perfectly equal firms (25% each) gives HHI = 2,500; ten equal firms (10% each) gives HHI = 1,000. The HHI is more sensitive than CR4 to the distribution of shares &#8212; it penalises concentration more heavily when one firm is dominant.'
+        ans:  1,
+        exp:  'Oligopolists tend to avoid price competition (risk of price wars) and instead compete via advertising, product quality, loyalty schemes, and brand image — collectively called non-price competition.'
       },
-
-      /* 7 — Odd one out: examples of non-price competition */
-      { type: 'odd_one_out',
-        stem: 'Three of these are examples of the <strong>advertising arms race</strong> phenomenon in UK oligopoly. Which is the <strong>ODD ONE OUT</strong>?',
+      {
+        id:   'q_olig_5',
+        type: 'numeric_input',
+        q:    'Four firms in a market have outputs of 200, 150, 120, and 80 units. Total market output is 800 units. What is the four-firm concentration ratio (%)?',
+        answer: 68.75,
+        tolerance: 0.5,
+        unit: '%',
+        hint: 'CR4 = combined output of 4 largest firms ÷ total market output × 100.',
+        workingSteps: ['Top 4 output = 200+150+120+80 = 550','CR4 = 550/800 × 100 = 68.75%']
+      },
+      {
+        id:   'q_olig_6',
+        type: 'categorise',
+        q:    'Categorise each feature as characteristic of oligopoly or perfect competition.',
+        categories: ['Oligopoly','Perfect competition'],
         items: [
-          { icon: '&#128722;', label: 'The big four supermarkets each spend hundreds of millions on TV and print advertising annually, with none gaining significant net market share', note: '' },
-          { icon: '&#128241;', label: 'UK mobile networks (EE, Vodafone, O2, Three) all heavily advertise network coverage and deals, broadly maintaining similar market shares', note: '' },
-          { icon: '&#128663;', label: 'Aldi enters the UK market with a dramatically lower-cost structure, forces incumbents to cut prices, triggering a genuine price war in groceries', note: '' },
-          { icon: '&#127866;', label: 'UK beer brands (Heineken, Carlsberg, AB InBev) all sponsor major sports events simultaneously, each roughly maintaining its existing share of consumer attention', note: '' }
-        ],
-        ans: 2,
-        exp: 'The odd one out is <strong>Aldi\'s entry triggering a price war</strong>. This is an example of <em>price competition</em> driven by a genuine structural change (low-cost entry by a discount retailer with a different business model) &#8212; not an advertising arms race. The advertising arms race occurs when oligopolists simultaneously increase advertising spending to compete for market share, but none gains net customers because rivals also increase spending. The result: higher costs for all, same market shares, wasted resources. The supermarkets, mobile networks, and beer brands all illustrate this &#8212; matched advertising investments with broadly stable market shares. Aldi\'s price competition represents a fundamentally different competitive dynamic.'
+          { item: 'Strategic interdependence',          category: 'Oligopoly' },
+          { item: 'Many identical small firms',         category: 'Perfect competition' },
+          { item: 'High barriers to entry',             category: 'Oligopoly' },
+          { item: 'Free entry and exit',                category: 'Perfect competition' },
+          { item: 'Price rigidity',                     category: 'Oligopoly' },
+          { item: 'Horizontal demand curve for firm',   category: 'Perfect competition' }
+        ]
       },
-
-      /* 8 — Multi-select: evaluation of oligopoly */
-      { type: 'multi_select',
-        stem: 'A student is writing a 25-mark essay on <strong>oligopoly</strong>. Which of the following statements demonstrate <strong>evaluation</strong> &#8212; as opposed to description or one-sided analysis?',
-        opts: [
-          'Oligopoly involves a small number of interdependent firms, where each firm must consider the likely reactions of rivals before changing price or output',
-          'Whether oligopoly is harmful for consumer welfare depends on whether rivalry or coordination dominates: the 2015&#8211;17 UK supermarket price war (triggered by Aldi/Lidl entry) produced near-competitive prices, while the convergence of bank overdraft rates in the same period exemplified the welfare costs of tacit coordination',
-          'The kinked demand curve predicts price rigidity because moderate cost changes do not alter the profit-maximising price &#8212; the discontinuity in the MR curve means MC can shift within the gap without changing Q* or P*',
-          'Oligopolists prefer non-price competition to price competition because the kinked demand model predicts rivals will match price cuts but not price rises, making price reductions unprofitable; non-price moves are also harder to immediately replicate',
-          'The inverted-U hypothesis (Aghion et al.) suggests innovation may peak at intermediate concentration &#8212; where firms have both the profit to fund R&D and the competitive pressure to use it &#8212; which qualifies any blanket claim that oligopoly is innovatively inferior to competition',
-          'Tacit collusion in oligopoly is illegal under UK competition law and can result in fines of up to 10% of global revenue from the CMA'
-        ],
-        correct: [1, 4],
-        exp: '<strong>Options B and E are evaluation.</strong> (B) explicitly weighs the competition vs coordination tendencies in oligopoly against each other, uses specific UK evidence for each direction (supermarket price war vs bank rate convergence), and reaches the conclusion that the welfare verdict depends on which tendency dominates in the specific market &#8212; a conditional conclusion with named evidence. (E) introduces the inverted-U hypothesis as a qualification of the claim that oligopoly is always innovatively inferior, specifying the mechanism (both funding and incentive at intermediate concentration) and reaching a directional conclusion that the standard critique is overstated. <strong>Options A, C, D, and F are not evaluation.</strong> (A) defines strategic interdependence accurately but is definitional description with no evaluative content. (C) correctly explains the kinked demand price rigidity result but is one-sided analysis of a model &#8212; it describes what the model predicts without weighing its limitations (the model does not explain how P* was determined in the first place) or reaching a qualified conclusion. (D) accurately explains why non-price competition dominates but is one-sided analysis &#8212; it makes no attempt to weigh this tendency against the conditions under which price competition can still emerge (e.g. low-cost entry). (F) is a factual statement about competition law with no evaluative content.'
+      {
+        id:   'q_olig_7',
+        type: 'cause_effect',
+        q:    'Match each cause to its effect in an oligopoly market.',
+        pairs: [
+          { cause: 'One firm cuts price',                    effect: 'Rivals match the cut, triggering a price war' },
+          { cause: 'Kinked demand above current price',      effect: 'Demand is elastic; firm loses many customers if it raises price' },
+          { cause: 'Non-price competition intensifies',      effect: 'Advertising spending rises across the industry' },
+          { cause: 'Firms collude tacitly on price',         effect: 'Industry behaves like a monopoly; higher prices for consumers' },
+          { cause: 'High barriers to entry maintained',      effect: 'Supernormal profit persists in long run' },
+          { cause: 'MR has a gap at the kink',               effect: 'MC can shift without changing profit-maximising output' }
+        ]
       },
-
-      /* 9 — Data table: Bertrand vs Cournot */
-      { type: 'data_table',
-        stem: 'The table compares predicted outcomes under different oligopoly models.',
-        headers: ['Model', 'Competition variable', 'Predicted price', 'Predicted output', 'Consumer welfare'],
-        rows: [
-          ['Perfect competition', 'Price', 'P = MC', 'Socially optimal (Q_c)', 'Maximum'],
-          ['Bertrand (identical products)', 'Price', 'P = MC', 'Same as PC', 'Same as PC'],
-          ['Cournot (quantity competition)', 'Quantity', 'P between MC and P_m', 'Between Q_c and Q_m', 'Intermediate'],
-          ['Cartel / collusion', 'Joint maximisation', 'P = P_m (monopoly)', 'Q_m (restricted)', 'Minimum (monopoly level)']
-        ],
-        question: 'Which conclusion is best supported by the data in the table?',
-        opts: [
-          'The form of competition (price vs quantity) matters as much as market structure: Bertrand duopoly achieves the competitive outcome, while Cournot duopoly does not &#8212; both have two firms',
-          'Oligopoly always produces worse consumer welfare than perfect competition, regardless of the competitive model used',
-          'Cartel outcomes are always identical to Cournot outcomes because both involve firms restricting output',
-          'The number of firms is the only determinant of price and output in oligopoly markets'
-        ],
-        ans: 0,
-        exp: 'Option A is most consistent with the table. Bertrand competition (two firms, competing on price, identical products) achieves P = MC &#8212; the same outcome as perfect competition &#8212; despite only two firms. Cournot competition (two firms, competing on quantity) achieves an intermediate outcome &#8212; better for consumers than monopoly/cartel, worse than competition. Same market structure (duopoly), different outcomes depending on <em>how</em> firms compete. This is the Bertrand paradox &#8212; market structure (number of firms) is an unreliable guide to outcomes. Option B is wrong &#8212; Bertrand oligopoly achieves the competitive outcome. Option C is wrong &#8212; Cournot gives an intermediate outcome, not monopoly pricing. Option D is contradicted by the Bertrand/Cournot comparison (same number of firms, different outcomes).'
+      {
+        id:   'q_olig_8',
+        type: 'odd_one_out',
+        q:    'Which is the odd one out?',
+        opts: ['Kinked demand curve','Concentration ratio','Perfect information','Strategic interdependence'],
+        ans:  2,
+        exp:  'Kinked demand, concentration ratios, and strategic interdependence are all concepts central to oligopoly analysis. Perfect information is a defining feature of perfect competition.'
       },
-
-      /* 10 — Chain: price war and resolution */
-      { type: 'chain',
-        stem: 'A dominant UK supermarket decides to cut prices on 500 key products. Place the sequence of events in the correct order from initial price cut to long-run market outcome.',
-        items: [
-          { label: 'Rival supermarkets match the price cuts to protect their market shares &#8212; all firms now have lower margins', note: '' },
-          { label: 'One supermarket decides to cut prices on key products, breaking from a period of stable (implicitly collusive) pricing', note: '' },
-          { label: 'Firms invest in non-price competition (loyalty schemes, store renovations) as the route to differentiation that avoids further price wars', note: '' },
-          { label: 'All supermarkets\' profits decline as margins are squeezed; the price war is costly for all incumbents', note: '' },
-          { label: 'The market stabilises at lower prices than before the price war but above MC; firms re-establish price stability (tacit collusion resumes at the new lower price level)', note: '' },
-          { label: 'Consumer welfare increases in the short run: lower prices across the market; more output sold', note: '' }
+      {
+        id:   'q_olig_9',
+        type: 'data_table',
+        q:    'Use the concentration ratio table to identify which market is most oligopolistic.',
+        tableHeaders: ['Market','CR4 (%)'],
+        tableData: [
+          ['Supermarkets','72'],
+          ['Hair salons','12'],
+          ['Petrol retailing','68'],
+          ['Online search engines','95']
         ],
-        correctOrder: [1, 0, 3, 5, 4, 2],
-        exp: '<strong>The correct sequence:</strong><br>1. Price cut initiated &#8212; one firm breaks from stable pricing.<br>2. Rivals match the cut &#8212; kinked demand prediction: firms follow price cuts.<br>3. All margins squeezed &#8212; price war is costly industry-wide.<br>4. Consumer welfare rises short-term &#8212; lower prices and more sales.<br>5. Market re-stabilises &#8212; tacit collusion resumes at new lower price level.<br>6. Firms switch to non-price competition &#8212; safer competitive tool (rivals cannot immediately replicate quality/loyalty).<br><br>This sequence captures the UK supermarket experience of 2014&#8211;17: Aldi/Lidl entry triggered genuine price competition, the big four matched cuts, margins were squeezed, and the long-run response was a shift toward loyalty (Clubcard+), own-label quality, and store experience &#8212; all forms of non-price competition. The CMA monitored throughout for tacit collusion concerns.'
+        opts: ['Supermarkets','Hair salons','Petrol retailing','Online search engines'],
+        ans:  3,
+        exp:  'Online search engines have a CR4 of 95%, meaning the top 4 firms control 95% of output — the highest degree of market concentration shown.'
+      },
+      {
+        id:   'q_olig_10',
+        type: 'match_pairs',
+        q:    'Match each oligopoly concept to its correct description.',
+        pairs: [
+          { a: 'Concentration ratio',     b: 'Share of market output held by largest firms' },
+          { a: 'Kinked demand curve',     b: 'Model explaining price rigidity due to asymmetric rival responses' },
+          { a: 'Price leadership',        b: 'Dominant firm sets price that rivals follow tacitly' },
+          { a: 'Collusion',               b: 'Firms cooperate to fix price or output' },
+          { a: 'Non-price competition',   b: 'Competing through branding, quality, or loyalty schemes' },
+          { a: 'Interdependence',         b: 'Each firm\'s profit depends on rivals\' actions' }
+        ]
       }
-
     ]
   };
 

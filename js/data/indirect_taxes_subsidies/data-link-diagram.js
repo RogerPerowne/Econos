@@ -71,9 +71,9 @@ window.ECONOS_LINK_DIAGRAM = {
     icon:  '🍭',
     text:  'The government imposes a specific tax on producers of high-sugar soft drinks.',
     dataPoints: [
-      '💸 Tax = £0.24 per litre on high-sugar drinks',
-      '📉 Supply shifts left by the tax amount at every quantity',
-      '⚖️ Incidence split by PED and PES'
+      { icon: '💸', text: 'Tax = £0.24 per litre on high-sugar drinks' },
+      { icon: '📉', text: 'Supply shifts left by the tax amount at every quantity' },
+      { icon: '⚖️', text: 'Incidence split by PED and PES' }
     ]
   },
 

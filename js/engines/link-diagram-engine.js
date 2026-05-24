@@ -249,7 +249,7 @@
       /* SRAS₁ (blue solid), SRAS₂ (blue dashed — same curve shifted left), AD (green), LRAS (grey) */
       /* SRAS₂ starts at x=8 — clips cleanly behind y-axis */
       /* E₁ = SRAS₁∩AD ≈ (62,39); E₂ = SRAS₂∩AD ≈ (49,29) — algebraically exact */
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-ta', 'arr-ta', '#2563eb')
         + thumbAxes()
         + '<g clip-path="url(#clip-ta)">'
@@ -270,7 +270,7 @@
     }
 
     function thumbADRight() {
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-tb', 'arr-tb', '#059669')
         + thumbAxes()
         + '<g clip-path="url(#clip-tb)">'
@@ -292,7 +292,7 @@
     }
 
     function thumbLRASRight() {
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-tc', 'arr-tc', '#374151')
         + thumbAxes()
         + '<g clip-path="url(#clip-tc)">'
@@ -314,7 +314,7 @@
 
     function thumbADLeft() {
       /* AD₂ dashed starts at x=5 — would cross y-axis; clipPath handles it */
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-td', 'arr-td', '#059669')
         + thumbAxes()
         + '<g clip-path="url(#clip-td)">'
@@ -341,7 +341,7 @@
        E₁ intersection ≈ (68,46).  Shifted curve is dashed at 0.6 opacity. */
     function thumbSRight() {
       /* Supply shifts right: P↓, Q↑ — E₂≈(80,56) */
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-sr', 'arr-sr', '#2563eb')
         + thumbAxes()
         + '<g clip-path="url(#clip-sr)">'
@@ -362,7 +362,7 @@
 
     function thumbSLeft() {
       /* Supply shifts left: P↑, Q↓ — E₂≈(57,38) */
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-sl', 'arr-sl', '#2563eb')
         + thumbAxes()
         + '<g clip-path="url(#clip-sl)">'
@@ -383,7 +383,7 @@
 
     function thumbDRight() {
       /* Demand shifts right: P↑, Q↑ — E₂≈(76,37) */
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-dr', 'arr-dr', '#059669')
         + thumbAxes()
         + '<g clip-path="url(#clip-dr)">'
@@ -404,7 +404,7 @@
 
     function thumbDLeft() {
       /* Demand shifts left: P↓, Q↓ — E₂≈(61,55) */
-      return '<svg viewBox="0 0 120 90" class="diag-thumb" aria-hidden="true">'
+      return '<svg viewBox="0 0 120 90" width="120" height="90" class="diag-thumb" aria-hidden="true">'
         + thumbDefs('clip-dl', 'arr-dl', '#059669')
         + thumbAxes()
         + '<g clip-path="url(#clip-dl)">'

@@ -69,9 +69,9 @@ window.ECONOS_LINK_DIAGRAM = {
     icon:  '⛽',
     text:  'The government raises fuel duty by 5p per litre on petrol and diesel.',
     dataPoints: [
-      '📉 PED ≈ −0.15 in the short run',
-      '💸 Fuel duty = ~57p per litre currently',
-      '🌱 Long-run PED rises to −0.6 as EVs become available'
+      { icon: '📉', text: 'PED ≈ −0.15 in the short run' },
+      { icon: '💸', text: 'Fuel duty = ~57p per litre currently' },
+      { icon: '🌱', text: 'Long-run PED rises to −0.6 as EVs become available' }
     ]
   },
 

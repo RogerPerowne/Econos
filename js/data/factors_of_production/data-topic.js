@@ -396,11 +396,12 @@ window.ECONOS_TOPIC = {
       causes2Label: 'Policy levers to raise mobility',
       causes2Emoji: '🛠️',
       causes2: [
-        { tone: 'blue',   icon: '🎓', head: 'Apprenticeships',     body: 'Build skills while earning — combining work and training.' },
+        { tone: 'blue',   icon: '🎓', head: 'Apprentices',         body: 'Build skills while earning — combining work and training.' },
         { tone: 'green',  icon: '🔄', head: 'Retraining schemes',  body: 'Help mid-career workers switch sectors and update skills.' },
         { tone: 'amber',  icon: 'ℹ️', head: 'Careers information', body: 'Improve guidance and awareness of opportunities and pathways.' },
         { tone: 'rose',   icon: '🏠', head: 'Housing reform',      body: 'More affordable homes and rental options support relocation.' },
-        { tone: 'purple', icon: '🚆', head: 'Transport links',     body: 'Better connections open up more jobs within commuting distance.' }
+        { tone: 'purple', icon: '🚆', head: 'Transport links',     body: 'Better connections open up more jobs within commuting distance.' },
+        { tone: 'slate',  icon: '👶', head: 'Childcare provision', body: 'Affordable childcare frees parents to enter or re-enter the workforce.' }
       ],
       examEdge: {
         title: 'Why this matters in exam answers',

@@ -12259,10 +12259,13 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
 .quiz-mp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 80px;
   gap: 8px;
   margin-bottom: var(--sp-3);
 }
-@media (max-width: 520px) { .quiz-mp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .quiz-mp-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 72px; }
+}
 .quiz-mp-tile {
   display: flex;
   align-items: flex-start;
@@ -12273,10 +12276,10 @@ a.stage, button:not(:disabled), .btn { cursor: pointer; }
   background: #fff;
   cursor: pointer;
   font-size: 0.78rem;
-  line-height: 1.35;
+  line-height: 1.3;
   text-align: left;
   color: var(--econ-ink);
-  min-height: 72px;
+  overflow: hidden;
   transition: border-color .15s, background .15s, box-shadow .15s;
 }
 .quiz-mp-tile:hover:not(:disabled):not(.mp-linked):not(.mp-correct):not(.mp-wrong) {

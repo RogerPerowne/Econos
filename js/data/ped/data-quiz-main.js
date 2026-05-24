@@ -114,11 +114,12 @@
         id: 'ped-q7',
         stem: 'Match each PED value to the correct effect on <strong>total revenue</strong> following a <strong>price increase</strong>.',
         pairs: [
-          { a: 'PED = 0 (perfectly inelastic)', b: 'TR rises in direct proportion to the price increase — quantity does not fall at all' },
-          { a: 'PED = −0.4 (inelastic)', b: 'TR rises — the percentage fall in QD is smaller than the percentage price rise' },
-          { a: 'PED = −1 (unit elastic)', b: 'TR is unchanged — percentage fall in QD exactly equals percentage price rise' },
-          { a: 'PED = −2.5 (elastic)', b: 'TR falls — the percentage fall in QD exceeds the percentage price rise' },
-          { a: 'PED = −∞ (perfectly elastic)', b: 'TR falls to zero — any price rise above the market price drives QD to zero' }
+          { a: 'PED = 0 (perfectly inelastic)', b: 'TR rises in proportion with price' },
+          { a: '|PED| < 1 (inelastic)',          b: 'TR rises when price increases' },
+          { a: '|PED| = 1 (unit elastic)',        b: 'TR is unchanged' },
+          { a: '|PED| > 1 (elastic)',             b: 'TR falls when price increases' },
+          { a: '|PED| = ∞ (perfectly elastic)',   b: 'TR falls to zero above market price' },
+          { a: 'Mid-point of demand curve',       b: 'PED = −1 and TR is maximised' }
         ],
         exp: 'The <strong>inverse-elasticity rule</strong> applied across the full spectrum: <strong>perfectly inelastic</strong> → TR rises in lockstep with price (the seller captures all of any price increase); <strong>inelastic</strong> → TR rises (P effect dominates Q effect); <strong>unit elastic</strong> → TR unchanged (P and Q effects exactly cancel — a single point on a typical demand curve); <strong>elastic</strong> → TR falls (Q effect dominates); <strong>perfectly elastic</strong> → TR collapses to zero (firm in perfect competition cannot charge above market price). Reverse the direction for a price cut: elastic + price cut → TR rises, inelastic + price cut → TR falls.'
       },

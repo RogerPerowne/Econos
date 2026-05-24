@@ -185,11 +185,11 @@
         /* Y-axis */
         + '<line x1="100" y1="20" x2="100" y2="400" stroke="#1f2937" stroke-width="2"/>'
         + '<polygon points="100,13 95,26 105,26" fill="#1f2937"/>'
-        + '<text x="28" y="215" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90,28,215)">' + yLabel + '</text>'
+        + '<text x="28" y="60" font-size="11" font-weight="600" fill="#6b7280" text-anchor="middle" transform="rotate(-90,28,60)">' + yLabel + '</text>'
         /* X-axis */
         + '<line x1="100" y1="400" x2="545" y2="400" stroke="#1f2937" stroke-width="2"/>'
         + '<polygon points="552,400 539,395 539,405" fill="#1f2937"/>'
-        + '<text x="330" y="428" font-size="12" fill="#6b7280" text-anchor="middle">' + xLabel + '</text>'
+        + '<text x="540" y="418" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">' + xLabel + '</text>'
         /* Clipped content: lines, guides, shift arrow */
         + '<g clip-path="url(#chart-clip)">'
         +   linesHtml

@@ -148,19 +148,23 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Labour',
       lede: 'Labour is the <strong>human effort</strong> — both physical and mental — used in the production of goods and services. Its supply depends on both economic incentives and wider social factors.',
-      tip: { icon: '💡', tone: 'blue', text: 'Tap the buttons to compare the quantity of labour (how many people are available) with the quality of labour (how productive each worker is). Both matter — and quality often matters more in modern economies.' },
-      steps: [
-        {
-          key: 'quantity',
-          label: 'Quantity of labour',
-          text: '<strong>How many people are available and willing to work.</strong> Determined by: <em>population size</em> (births, deaths, immigration); <em>participation rate</em> (the share of working-age people in or seeking work); <em>hours worked</em> (part-time vs full-time, overtime); <em>retirement age</em> (when people leave the workforce).'
-        },
-        {
-          key: 'quality',
-          label: 'Quality of labour',
-          text: '<strong>How productive each worker is.</strong> Determined by: <em>skills</em> (knowledge and ability); <em>education</em> (formal learning); <em>training</em> (on-the-job and courses); <em>experience</em> (learning by doing); <em>health</em> (healthier workers are more productive). This is what economists call <strong>human capital</strong>.'
-        }
-      ],
+      pairFirst: true,
+      pairLabel: 'Two dimensions of labour',
+      pairEmoji: '👥',
+      left: {
+        tone: 'blue',
+        icon: '🧮',
+        iconStyle: 'circle',
+        label: 'Quantity of labour',
+        text: '<strong>How many people are available and willing to work.</strong><br><br>Determined by: <em>population size</em> (births, deaths, immigration); <em>participation rate</em> (the share of working-age people in or seeking work); <em>hours worked</em> (part-time vs full-time, overtime); <em>retirement age</em> (when people leave the workforce).'
+      },
+      right: {
+        tone: 'purple',
+        icon: '🎓',
+        iconStyle: 'circle',
+        label: 'Quality of labour',
+        text: '<strong>How productive each worker is.</strong><br><br>Determined by: <em>skills</em> (knowledge and ability); <em>education</em> (formal learning); <em>training</em> (on-the-job and courses); <em>experience</em> (learning by doing); <em>health</em> (healthier workers are more productive). This is what economists call <strong>human capital</strong>.'
+      },
       causesLabel: 'What affects labour supply?',
       causesEmoji: '📈',
       causes: [
@@ -199,18 +203,23 @@ window.ECONOS_TOPIC = {
       title: 'Capital',
       lede: '<strong>Capital</strong> refers to man-made resources used to produce other goods and services — tools, equipment, machinery, buildings and infrastructure. It is built up through investment and can depreciate over time.',
       tip: { icon: '⚠️', tone: 'amber', text: 'A common exam trap: capital in economics means physical productive resources, <strong>NOT money</strong>. Money used to <em>buy</em> capital is "financial capital" — a different concept.' },
-      steps: [
-        {
-          key: 'real',
-          label: 'Real (physical) capital',
-          text: '<strong>Physical, man-made resources used in production.</strong> Examples: a factory, a machine, a road, broadband infrastructure, a computer. This is what economists mean by "capital" in the four-factor framework. It contributes directly to productive capacity.'
-        },
-        {
-          key: 'financial',
-          label: 'Financial capital',
-          text: '<strong>Money and financial assets used to buy real capital.</strong> Examples: savings, loans, shares, bonds. Financial capital is a <em>claim</em> on resources, not a productive resource itself. It funds investment in real capital.'
-        }
-      ],
+      pairFirst: true,
+      pairLabel: 'Capital is not money',
+      pairEmoji: '💡',
+      left: {
+        tone: 'green',
+        icon: '🏭',
+        iconStyle: 'circle',
+        label: 'Real (physical) capital',
+        text: '<strong>Physical, man-made resources used in production.</strong><br><br>Examples: a factory, a machine, a road, broadband infrastructure, a computer.<br><br>This is what economists mean by "capital" in the four-factor framework. It contributes directly to productive capacity.'
+      },
+      right: {
+        tone: 'blue',
+        icon: '💷',
+        iconStyle: 'circle',
+        label: 'Financial capital',
+        text: '<strong>Money and financial assets used to buy real capital.</strong><br><br>Examples: savings, loans, shares, bonds.<br><br>Financial capital is a <em>claim</em> on resources, not a productive resource itself. It funds investment in real capital.'
+      },
       flowTitle: 'How capital is built',
       flowEmoji: '🏗️',
       flow: [
@@ -376,19 +385,23 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Factor Mobility',
       lede: 'Mobility is the <strong>ability of a factor — especially labour — to move</strong> between places and jobs. Low mobility is a major cause of structural unemployment and regional inequality.',
-      tip: { icon: '🚉', tone: 'blue', text: 'Mobility has two dimensions — moving between locations (geographic) and moving between industries (occupational). Both are often low in practice, which is why governments invest heavily in policies to improve them.' },
-      steps: [
-        {
-          key: 'geographic',
-          label: 'Geographic mobility',
-          text: '<strong>Moving between locations.</strong> Workers move from one area to another to take up jobs. Higher geographic mobility helps match labour to where jobs exist, reducing regional unemployment mismatches. In practice, housing costs, family ties and information gaps keep geographic mobility lower than economists would like.'
-        },
-        {
-          key: 'occupational',
-          label: 'Occupational mobility',
-          text: '<strong>Moving between jobs or industries.</strong> Workers change occupation or sector to find better opportunities. Supports structural change as the economy evolves (manufacturing → services → digital). Higher occupational mobility means a more adaptable labour force — but requires retraining and transferable skills.'
-        }
-      ],
+      pairFirst: true,
+      pairLabel: 'Two dimensions of mobility',
+      pairEmoji: '🚉',
+      left: {
+        tone: 'green',
+        icon: '📍',
+        iconStyle: 'circle',
+        label: 'Geographic mobility',
+        text: '<strong>Moving between locations.</strong><br><br>Workers move from one area to another to take up jobs. Helps match labour to where jobs exist, reducing regional unemployment mismatches.<br><br>In practice, housing costs, family ties and information gaps keep geographic mobility lower than economists would like.'
+      },
+      right: {
+        tone: 'purple',
+        icon: '💼',
+        iconStyle: 'circle',
+        label: 'Occupational mobility',
+        text: '<strong>Moving between jobs or industries.</strong><br><br>Workers change occupation or sector to find better opportunities. Supports structural change as the economy evolves (manufacturing → services → digital).<br><br>Higher occupational mobility means a more adaptable labour force — but requires retraining and transferable skills.'
+      },
       causesLabel: 'Why mobility is often low',
       causesEmoji: '🚧',
       causes: [

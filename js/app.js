@@ -4179,6 +4179,34 @@
   function renderCardAdInteractive(c) {
     const hasSteps = Array.isArray(c.steps) && c.steps.length > 0;
     const diagram = c.diagramKey && I[c.diagramKey] ? I[c.diagramKey] : I.adInteractive;
+
+    // Build the left/right HTML up front so we can place it either at the
+    // top (c.pairFirst === true) or at the default bottom position. Useful
+    // for cards where the binary pair IS the main content (e.g. Quantity
+    // vs Quality on the Labour card) rather than a supporting note.
+    const pairHtml = (c.left && c.right) ? (() => {
+      const renderSide = (side, fallbackTone) => {
+        const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
+        const inner = side.text
+          ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
+          : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
+        const iconHtml = side.icon
+          ? (side.iconStyle === 'circle'
+              ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
+              : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
+          : '';
+        return `
+          <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              ${iconHtml}
+              <div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>
+            </div>
+            ${inner}
+          </div>`;
+      };
+      const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
+      return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
+    })() : '';
     const tabs = hasSteps ? c.steps.map((s, i) => `
       <button class="ad-tab ${i === 0 ? 'is-active' : ''}" type="button"
               data-action="ad-step" data-ad-state="${s.key}">
@@ -4206,6 +4234,8 @@
         const t = PATTERN_TONES[tipTone] || PATTERN_TONES.blue;
         return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${tipText}</div></div>` : '';
       })() : ''}
+
+      ${c.pairFirst ? pairHtml : ''}
 
       ${hasSteps ? `
       <div class="ad-interactive">
@@ -4315,29 +4345,7 @@
         return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 28px;">${tiles2}</div>`;
       })() : ''}
 
-      ${c.left && c.right ? (() => {
-        const renderSide = (side, fallbackTone) => {
-          const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
-          const inner = side.text
-            ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
-            : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
-          const iconHtml = side.icon
-            ? (side.iconStyle === 'circle'
-                ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
-                : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
-            : '';
-          return `
-            <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
-              <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-                ${iconHtml}
-                <div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>
-              </div>
-              ${inner}
-            </div>`;
-        };
-        const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
-        return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
-      })() : ''}
+      ${!c.pairFirst ? pairHtml : ''}
 
       ${(c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';

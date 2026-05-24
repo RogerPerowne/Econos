@@ -13933,6 +13933,109 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  landTypesSvg: `
+    <svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <rect width="640" height="130" fill="#F0FDF4" rx="12"/>
+
+      <!-- Tile 1: Agricultural Land (green) -->
+      <rect x="12" y="10" width="96" height="110" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5" rx="8"/>
+      <text x="60" y="54" text-anchor="middle" font-size="28">🌾</text>
+      <text x="60" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Agricultural</text>
+      <text x="60" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Land</text>
+      <text x="60" y="110" text-anchor="middle" font-size="7.5" fill="#059669">Farmland · Crops</text>
+
+      <!-- Tile 2: Oil & Gas (slate) -->
+      <rect x="116" y="10" width="96" height="110" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5" rx="8"/>
+      <text x="164" y="54" text-anchor="middle" font-size="28">🛢️</text>
+      <text x="164" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#334155">Oil &amp;</text>
+      <text x="164" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#334155">Natural Gas</text>
+      <text x="164" y="110" text-anchor="middle" font-size="7.5" fill="#475569">Fossil fuels</text>
+
+      <!-- Tile 3: Minerals (amber) -->
+      <rect x="220" y="10" width="96" height="110" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5" rx="8"/>
+      <text x="268" y="54" text-anchor="middle" font-size="28">⛏️</text>
+      <text x="268" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Minerals</text>
+      <text x="268" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">&amp; Metals</text>
+      <text x="268" y="110" text-anchor="middle" font-size="7.5" fill="#B45309">Iron · Lithium · Gold</text>
+
+      <!-- Tile 4: Water (blue) -->
+      <rect x="324" y="10" width="96" height="110" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5" rx="8"/>
+      <text x="372" y="54" text-anchor="middle" font-size="28">💧</text>
+      <text x="372" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Water &amp;</text>
+      <text x="372" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Fisheries</text>
+      <text x="372" y="110" text-anchor="middle" font-size="7.5" fill="#2563EB">Rivers · Seas · Lakes</text>
+
+      <!-- Tile 5: Forests (deep green) -->
+      <rect x="428" y="10" width="96" height="110" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5" rx="8"/>
+      <text x="476" y="54" text-anchor="middle" font-size="28">🌲</text>
+      <text x="476" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">Forests</text>
+      <text x="476" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">&amp; Timber</text>
+      <text x="476" y="110" text-anchor="middle" font-size="7.5" fill="#16A34A">Wood · Carbon sinks</text>
+
+      <!-- Tile 6: Radio Spectrum (purple) -->
+      <rect x="532" y="10" width="96" height="110" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5" rx="8"/>
+      <text x="580" y="54" text-anchor="middle" font-size="28">📡</text>
+      <text x="580" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Radio</text>
+      <text x="580" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Spectrum</text>
+      <text x="580" y="110" text-anchor="middle" font-size="7.5" fill="#7C3AED">Mobile · Satellite</text>
+    </svg>
+  `,
+
+  enterpriseCombinationSvg: `
+    <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="ec-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+        </marker>
+        <marker id="ec-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/>
+        </marker>
+      </defs>
+      <rect width="640" height="215" fill="#FFF7F7" rx="12"/>
+
+      <!-- Arrows (drawn before circles so circles sit on top) -->
+      <!-- Land (76,44) → Enterprise (330,107): -->
+      <line x1="104" y1="51" x2="269" y2="92" stroke="#94A3B8" stroke-width="2" marker-end="url(#ec-arr)"/>
+      <!-- Labour (76,107) → Enterprise (330,107): horizontal -->
+      <line x1="104" y1="107" x2="268" y2="107" stroke="#94A3B8" stroke-width="2" marker-end="url(#ec-arr)"/>
+      <!-- Capital (76,170) → Enterprise (330,107): -->
+      <line x1="104" y1="163" x2="269" y2="122" stroke="#94A3B8" stroke-width="2" marker-end="url(#ec-arr)"/>
+      <!-- Enterprise (330,107) → Goods (570,107): horizontal -->
+      <line x1="393" y1="107" x2="530" y2="107" stroke="#3B82F6" stroke-width="2.5" marker-end="url(#ec-arr-blue)"/>
+
+      <!-- LAND circle (green, r=28, cx=76, cy=44) -->
+      <circle cx="76" cy="44" r="28" fill="#ECFDF5" stroke="#34D399" stroke-width="2"/>
+      <text x="76" y="38" text-anchor="middle" font-size="18" dominant-baseline="middle">🏞️</text>
+      <text x="76" y="55" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Land</text>
+      <text x="76" y="82" text-anchor="middle" font-size="8" fill="#6B7280">Rent</text>
+
+      <!-- LABOUR circle (purple, r=28, cx=76, cy=107) -->
+      <circle cx="76" cy="107" r="28" fill="#EDE9FE" stroke="#A78BFA" stroke-width="2"/>
+      <text x="76" y="101" text-anchor="middle" font-size="18" dominant-baseline="middle">👥</text>
+      <text x="76" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Labour</text>
+      <text x="76" y="145" text-anchor="middle" font-size="8" fill="#6B7280">Wages</text>
+
+      <!-- CAPITAL circle (amber, r=28, cx=76, cy=170) -->
+      <circle cx="76" cy="170" r="28" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+      <text x="76" y="164" text-anchor="middle" font-size="18" dominant-baseline="middle">🏭</text>
+      <text x="76" y="181" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Capital</text>
+      <text x="76" y="208" text-anchor="middle" font-size="8" fill="#6B7280">Interest</text>
+
+      <!-- ENTERPRISE & INSTITUTIONS circle (rose, r=63, cx=330, cy=107) -->
+      <circle cx="330" cy="107" r="63" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2.5"/>
+      <text x="330" y="90" text-anchor="middle" font-size="24">🚀</text>
+      <text x="330" y="111" text-anchor="middle" font-size="11" font-weight="800" fill="#B91C1C">Enterprise &amp;</text>
+      <text x="330" y="126" text-anchor="middle" font-size="11" font-weight="800" fill="#B91C1C">Institutions</text>
+      <text x="330" y="143" text-anchor="middle" font-size="8.5" fill="#DC2626">Coordinates · Innovates · Bears risk</text>
+
+      <!-- GOODS & SERVICES circle (blue, r=40, cx=570, cy=107) -->
+      <circle cx="570" cy="107" r="40" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+      <text x="570" y="100" text-anchor="middle" font-size="22">🛒</text>
+      <text x="570" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Goods &amp;</text>
+      <text x="570" y="130" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Services</text>
+    </svg>
+  `,
+
   regulatoryCaptureSvg: `
     <svg viewBox="0 0 640 196" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

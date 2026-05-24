@@ -97,6 +97,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Land',
       lede: 'Land is <strong>everything provided by nature</strong> and used in the production of goods and services. It is not just fields — it includes all natural resources.',
+      visualKey: 'landTypesSvg',
       causesLabel: 'Land at a glance',
       causesEmoji: '🌿',
       causes: [
@@ -257,21 +258,9 @@ window.ECONOS_TOPIC = {
       id: 'enterprise',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
-      title: 'Enterprise',
-      lede: 'Enterprise is the <strong>risk-taking and decision-making function</strong> that organises the other three factors of production — land, labour and capital — to produce goods and services.',
-      equation: {
-        label: 'How enterprise combines the other factors',
-        emoji: '🧮',
-        terms: [
-          { tone: 'green',  icon: '🏞️', title: 'Land',       sub: 'Natural resources' },
-          { tone: 'purple', icon: '👥', title: 'Labour',     sub: 'Human effort' },
-          { tone: 'amber',  icon: '🏭', title: 'Capital',    sub: 'Man-made resources' },
-          { tone: 'rose',   icon: '🚀', title: 'Enterprise', sub: 'Combines + decides + bears risk' }
-        ],
-        operator: '+',
-        resultOperator: '=',
-        result: { tone: 'blue', icon: '🛒', title: 'Goods & services', sub: 'The output' }
-      },
+      title: 'Enterprise & Institutions',
+      lede: 'Enterprise is the <strong>risk-taking and decision-making function</strong> that organises the other three factors. More broadly, <strong>institutions</strong> — government, legal frameworks, property rights — shape whether enterprise can flourish at all.',
+      visualKey: 'enterpriseCombinationSvg',
       causesLabel: 'The four functions of enterprise',
       causesEmoji: '🎯',
       causes: [

@@ -15,7 +15,7 @@ window.ECONOS_LINK_INTRO = {
     outcomes: [
       'Explain how information asymmetry causes demand to deviate from the rational level',
       'Build the causal chain from hidden credit costs to overconsumption',
-      'Read a demand-left diagram showing how disclosure corrects the information gap',
+      'Apply economic theory to real-world BNPL extracts including the Akerlof lemons model',
       'Evaluate whether mandatory disclosure or alternative policies are most effective'
     ],
     tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
@@ -23,9 +23,9 @@ window.ECONOS_LINK_INTRO = {
     stations: [
       { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for mandatory disclosure.',         href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
       { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps that explain why hidden BNPL costs inflate demand above the rational level.',   href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
-      { num: 3, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label and explain the demand diagram showing how disclosure corrects the information gap.', href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
+      { num: 3, name: 'Read the Extract',   skill: 'Analysis',    sub: 'Apply the Akerlof lemons model and information asymmetry theory to real BNPL market extracts.', href: TopicLoader.buildUrl('link_extract.html'), state: 'available' },
       { num: 4, name: 'It depends on',      skill: 'Evaluation',  sub: 'Rank the factors that most change whether mandatory disclosure corrects the information gap.',    href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, diagram and conditions into an exam-quality judgement.',              href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, extract and conditions into an exam-quality judgement.',              href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
     ],
 
     stages: [

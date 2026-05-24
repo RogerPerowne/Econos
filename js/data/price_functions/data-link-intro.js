@@ -15,7 +15,7 @@ window.ECONOS_LINK_INTRO = {
     outcomes: [
       'Explain and apply the three price mechanism functions in a real context',
       'Build the causal chain from supply disruption to market adjustment',
-      'Read a demand-shift diagram and identify the price signal at work',
+      'Predict market outcomes of price shocks including London housing and gas price surges',
       'Evaluate when the price mechanism succeeds and fails as a resource allocator'
     ],
     tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
@@ -23,9 +23,9 @@ window.ECONOS_LINK_INTRO = {
     stations: [
       { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for the price mechanism as a food allocator.',      href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
       { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps from the Ukraine war supply shock through rationing, signalling and incentivising.',             href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
-      { num: 3, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label and explain the supply and demand diagram for a food supply shock.',                                href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
-      { num: 4, name: 'It depends on',      skill: 'Evaluation',  sub: 'Rank the factors that most change whether the price mechanism efficiently allocates food during disruption.',    href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, diagram and conditions into an exam-quality judgement.',                             href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
+      { num: 3, name: 'Predict the Outcome', skill: 'Analysis',    sub: 'Apply rationing, signalling and incentivising to London house prices and the 2022 gas price surge.',          href: TopicLoader.buildUrl('link_predict.html'), state: 'available' },
+      { num: 4, name: 'It depends on',       skill: 'Evaluation',  sub: 'Rank the factors that most change whether the price mechanism efficiently allocates food during disruption.',   href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
+      { num: 5, name: 'Make the judgement',  skill: 'Evaluation',  sub: 'Synthesise context, chain, predict and conditions into an exam-quality judgement.',                             href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
     ],
 
     stages: [

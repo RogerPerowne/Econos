@@ -15,10 +15,9 @@ window.ECONOS_LINK_JUDGE = {
     { id: 'chain',   label: 'Build the chain',    href: TopicLoader.buildUrl('link_chain.html')   },
     { id: 'extract', label: 'Read the Extract',   href: TopicLoader.buildUrl('link_extract.html') },
     { id: 'diagram', label: 'Diagram connector',  href: TopicLoader.buildUrl('link_diagram.html') },
-    { id: 'depends', label: 'It depends on',      href: TopicLoader.buildUrl('link_depends.html') },
     { id: 'judge',   label: 'Make the judgement', href: TopicLoader.buildUrl('link_judge.html')   }
   ],
-  currentStationIdx: 5,
+  currentStationIdx: 4,
 
   wgll: [
     { icon: '🎯', text: 'Take a clear position'  },

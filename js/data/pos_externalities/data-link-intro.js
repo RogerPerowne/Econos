@@ -23,9 +23,9 @@ window.ECONOS_LINK_INTRO = {
     stations: [
       { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for public vaccination provision.',        href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
       { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps that explain why the market underproduces below the social optimum.',                  href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
-      { num: 3, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label and explain the supply and demand diagram for a positive consumption externality.',        href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
-      { num: 4, name: 'It depends on',      skill: 'Evaluation',  sub: 'Rank the factors that most change whether direct NHS provision corrects the externality.',             href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, diagram and conditions into an exam-quality judgement.',                   href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
+      { num: 3, name: 'Read the Extract',   skill: 'Application', sub: 'Analyse a real extract (university education) and identify the externality and policy mechanism.',    href: TopicLoader.buildUrl('link_extract.html'), state: 'available' },
+      { num: 4, name: 'Diagram connector',  skill: 'Analysis',    sub: 'Pick, label and explain the supply and demand diagram for a positive consumption externality.',       href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain, extract and diagram into an exam-quality judgement.',                      href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
     ],
 
     stages: [

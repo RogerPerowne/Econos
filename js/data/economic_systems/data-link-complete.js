@@ -8,6 +8,7 @@ window.ECONOS_LINK_COMPLETE = {
   stations: [
     { id: 'context', label: 'Use the context',    max: 5, color: '#059669' },
     { id: 'chain',   label: 'Build the chain',    max: 3, color: '#f59e0b' },
+    { id: 'extract', label: 'Read the Extract',   max: 3, color: '#8B5CF6' },
     { id: 'depends', label: 'It depends on',      max: 3, color: '#2563eb' },
     { id: 'judge',   label: 'Make the judgement', max: 8, color: '#0891b2' }
   ],
@@ -37,6 +38,11 @@ window.ECONOS_LINK_COMPLETE = {
       { min: 50,  text: 'Clear causality — check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
+    extract: [
+      { min: 80, text: 'Strong extract reading' },
+      { min: 55, text: 'Good — check your evidence application' },
+      { min: 0,  text: 'Extract analysis needs more attention' }
+    ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
       { min: 50, text: 'Good — one key condition missed' },
@@ -54,6 +60,7 @@ window.ECONOS_LINK_COMPLETE = {
   focusInLandIt: {
     context: 'Use specific comparative data — North Korea\'s $1,800 GDP per capita versus South Korea, Cuba\'s healthcare outcomes, the NHS efficiency evidence — to anchor your application in real-world evidence rather than abstract theory.',
     chain:   'State the chain explicitly: price signals → profit incentive → productive efficiency; consumer sovereignty → allocative efficiency; Hayek\'s knowledge problem → why central planning fails to replicate this.',
+    extract: 'Use the North Korea/South Korea divergence and Cuba/UK comparison from the extract to apply the free market vs command economy framework. When citing comparative evidence, always explain the mechanism — not just the statistic.',
     depends: 'Lead with market failure extent as your condition — where public goods, externalities or information asymmetry are significant, the price mechanism systematically fails and the efficiency case for free markets collapses in that sector.',
     judge:   'State a clear position, use the mechanism (price mechanism → efficiency), add the condition (market failures / property rights / income distribution), and acknowledge the normative dimension — the optimal mix between markets and state depends on social values, not just technical efficiency.'
   },

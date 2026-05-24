@@ -86,7 +86,7 @@ window.ECONOS_LINK_DIAGRAM = {
         label: 'S', labelX: 494, labelY: 28, labelFill: '#2563eb' },
       /* D_biased — inflated demand before disclosure — red downward-sloping */
       { x1: 110, y1: 50,  x2: 514, y2: 381, stroke: '#dc2626', strokeWidth: 2.5,
-        label: 'D_biased', labelX: 516, labelY: 381, labelFill: '#dc2626' },
+        label: 'D_biased', labelX: 470, labelY: 381, labelFill: '#dc2626' },
       /* D_rational — rational demand after disclosure — green downward-sloping */
       { x1: 110, y1: 100, x2: 449, y2: 381, stroke: '#059669', strokeWidth: 2.5,
         label: 'D_rational', labelX: 453, labelY: 381, labelFill: '#059669' }

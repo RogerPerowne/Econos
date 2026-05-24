@@ -84,7 +84,7 @@ window.ECONOS_LINK_DIAGRAM = {
     lines: [
       /* D (inelastic) — green steep downward-sloping */
       { x1: 200, y1: 30,  x2: 420, y2: 390, stroke: '#059669', strokeWidth: 2.5,
-        label: 'D (inelastic)', labelX: 424, labelY: 390, labelFill: '#059669' },
+        label: 'D (inelastic)', labelX: 424, labelY: 368, labelFill: '#059669' },
       /* S₁ (pre-tax) — blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'S₁', labelX: 492, labelY: 28, labelFill: '#2563eb' },

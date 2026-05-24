@@ -91,7 +91,7 @@ window.ECONOS_LINK_DIAGRAM = {
         label: 'S₁ (MPC)', labelX: 492, labelY: 28, labelFill: '#2563eb' },
       /* S₂ (MPC−subsidy — supply after production subsidy) — purple upward-sloping, 80px right of S₁ */
       { x1: 210, y1: 390, x2: 543, y2: 57,  stroke: '#7c3aed', strokeWidth: 2.5,
-        label: 'S₂ (subsidy)', labelX: 514, labelY: 53, labelFill: '#7c3aed' }
+        label: 'S₂ (subsidy)', labelX: 448, labelY: 53, labelFill: '#7c3aed' }
     ],
 
     /* Guide lines + tick labels — shown at stage 2 */

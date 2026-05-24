@@ -88,30 +88,61 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 2 — What is GDP? ----- */
     {
       id: 'gdp-three-approaches',
-      template: 'framing',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'What is GDP?',
-      lede: 'GDP — Gross Domestic Product — is the <strong>total market value</strong> of all <strong>final</strong> goods and services produced <strong>within</strong> an economy in a given period. Three approaches, one answer.',
-      branches: [
+      lede: 'GDP (Gross Domestic Product) is the headline measure of an economy\'s size.',
+      tip: { icon: '📊', tone: 'blue', head: 'DEFINITION', text: 'GDP is the <strong>total market value</strong> of all <strong>final</strong> goods and services produced <strong>within</strong> an economy in a given period.' },
+      causesLabel: 'Three approaches, one answer',
+      causesEmoji: '🔢',
+      causesStyle: 'plain-white',
+      causesCols: 3,
+      causes: [
         {
           tone: 'green',
-          label: '① Output approach',
-          sub: 'Sum the <strong>value added</strong> at each stage of production. <code>GDP = Σ (Value added)</code>. Agriculture + manufacturing + services value added = GDP. Avoids double-counting intermediate goods.'
+          icon: '①',
+          head: 'Output approach',
+          body: 'Add the value added at each stage of production.<br><br><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:10px 14px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#047857;font-size:14.5px;">GDP = Σ (Value added)</div><br><div style="font-size:12.5px;line-height:1.65;color:#475569;"><strong style="color:#0B1426;">Example:</strong><br>Agriculture value added<br>+ Manufacturing value added<br>+ Services value added<br>= <strong>GDP</strong></div>'
         },
         {
           tone: 'blue',
-          label: '② Expenditure approach',
-          sub: 'Sum <strong>total spending</strong> on final output. <code>GDP = C + I + G + (X − M)</code>. C = Consumption · I = Investment · G = Government spending · (X−M) = Net exports. The exam favourite.'
+          icon: '②',
+          head: 'Expenditure approach',
+          body: 'Add up total spending on final goods and services.<br><br><div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 14px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#1D4ED8;font-size:14.5px;">GDP = C + I + G + (X − M)</div><br><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#1D4ED8;">C</strong> Consumption (households)<br><strong style="color:#1D4ED8;">I</strong> Investment (business)<br><strong style="color:#1D4ED8;">G</strong> Government spending<br><strong style="color:#1D4ED8;">X</strong> Exports (sold abroad)<br><strong style="color:#1D4ED8;">M</strong> Imports (bought abroad)<br><span style="color:#1D4ED8;font-weight:700;">Net exports = Exports − Imports</span></div>'
         },
         {
           tone: 'amber',
-          label: '③ Income approach',
-          sub: 'Sum all <strong>incomes earned</strong> in production. <code>GDP = W + R + I + P</code>. Wages + Rent + Interest + Profits (before taxes and subsidies on products). Should equal the other two.'
+          icon: '③',
+          head: 'Income approach',
+          body: 'Add the incomes earned in producing goods and services.<br><br><div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:10px 14px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#B45309;font-size:14.5px;">GDP = W + R + I + P</div><br><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">W</strong> Wages and salaries<br><strong style="color:#B45309;">R</strong> Rent<br><strong style="color:#B45309;">I</strong> Interest<br><strong style="color:#B45309;">P</strong> Profits<br><em style="color:#64748B;">(before taxes and subsidies on products)</em></div>'
+        }
+      ],
+      causes2Label: 'Final goods only — why this matters',
+      causes2Emoji: '🎯',
+      causes2Style: 'plain-white',
+      causes2Cols: 3,
+      causes2: [
+        {
+          tone: 'purple',
+          icon: '🔁',
+          head: 'Why should the three match?',
+          body: 'Every final good or service is produced <strong>somewhere</strong> (output), paid for by <strong>somehow</strong> (expenditure), and creates income for <strong>someone</strong> (income). Three views of the same circular flow.'
+        },
+        {
+          tone: 'rose',
+          icon: '⚠️',
+          head: 'Exam trap: intermediate goods',
+          body: 'GDP counts only <strong>final</strong> goods and services. Including intermediate goods leads to <strong>double-counting</strong>.<br><br><em>Example:</em> flour (£1) used to make bread (£3). Count bread (£3) in GDP, not both — the bread price already includes the flour value.'
+        },
+        {
+          tone: 'blue',
+          icon: '🧮',
+          head: 'Worked example: final goods only',
+          body: 'An economy in a year produces:<br>• Flour (used to make bread) — £1,000<br>• Bread (sold to consumers) — £3,000<br>• Haircuts — £800<br><br><strong style="color:#1D4ED8;">GDP = £3,000 + £800 = £3,800</strong><br><em style="color:#64748B;font-size:12px;">(Do not add flour — it is intermediate.)</em>'
         }
       ],
       examEdge: {
-        title: 'Exam trap: intermediate goods and double-counting',
-        text: 'GDP counts only <strong>final</strong> goods and services. Example — flour (\xa31) is used to make bread (\xa33). Count the bread (\xa33) in GDP, not both. The bread price already includes the flour value. Including both would overstate GDP by \xa31. <em>Why the three approaches agree:</em> every pound of output is produced somewhere, paid for by someone, and creates income for someone else — three views of the same circular flow.'
+        title: 'Key idea',
+        text: 'GDP measures the value of <strong>final output within</strong> an economy over a given period. All three approaches give the same answer because every transaction is simultaneously an output, an expenditure and an income.'
       }
     },
 

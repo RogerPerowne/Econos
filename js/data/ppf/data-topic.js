@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Any point ON the PPF = productively efficient. Inside = inefficient (resources wasted). Outside = currently impossible. A shift OUT = economic growth.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
+      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },

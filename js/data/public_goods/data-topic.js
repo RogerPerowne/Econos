@@ -211,6 +211,7 @@ window.ECONOS_TOPIC = {
       illustratedGridLabel: 'Vertical demand summation',
       illustratedGridEmoji: '📈',
       illustratedGridCols: 2,
+      illustratedGridSceneHeight: 210,
       illustratedGrid: [
         { scene: 'privateDemandMini', tone: 'purple', title: 'Private good demand',
           body: '<em>For private goods: add quantities <strong>horizontally</strong> at a given price.</em>' },
@@ -228,7 +229,7 @@ window.ECONOS_TOPIC = {
       comparison: {
         title: 'Bottom line — private market view vs social view',
         emoji: '⚖️',
-        position: 'after-diagram',
+        position: 'after-causes',
         vs: 'VS',
         left:  { tone: 'purple', icon: '🧍', label: 'Private market view',
           caption: 'No firm can capture enough revenue to cover the cost, so it will not supply.' },

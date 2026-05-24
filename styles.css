@@ -1985,6 +1985,8 @@ img, svg { display: block; max-width: 100%; }
 .mech-tile--green { background: var(--econ-green-50);  border-color: var(--econ-green-100); }
 .mech-tile--amber { background: var(--econ-amber-50);  border-color: var(--econ-amber-100); }
 .mech-tile--rose  { background: var(--econ-rose-50);   border-color: var(--econ-rose-100); }
+.mech-tile--purple{ background: var(--econ-purple-50); border-color: var(--econ-purple-100); }
+.mech-tile--slate { background: var(--econ-slate-50);  border-color: var(--econ-slate-100); }
 
 .mech-tile__head {
   display: flex;
@@ -2007,6 +2009,9 @@ img, svg { display: block; max-width: 100%; }
 .mech-tile--green .mech-tile__num { background: var(--econ-green); }
 .mech-tile--amber .mech-tile__num { background: var(--econ-amber); }
 .mech-tile--rose  .mech-tile__num { background: var(--econ-rose); }
+.mech-tile--purple.mech-tile__num,
+.mech-tile--purple .mech-tile__num { background: var(--econ-purple); }
+.mech-tile--slate .mech-tile__num { background: var(--econ-slate); }
 
 .mech-tile__title {
   font-size: var(--fs-md);
@@ -2017,6 +2022,9 @@ img, svg { display: block; max-width: 100%; }
 .mech-tile--green .mech-tile__title { color: var(--econ-green-700); }
 .mech-tile--amber .mech-tile__title { color: var(--econ-amber-700); }
 .mech-tile--rose  .mech-tile__title { color: var(--econ-rose-600); }
+.mech-tile--purple.mech-tile__title,
+.mech-tile--purple .mech-tile__title { color: var(--econ-purple-700); }
+.mech-tile--slate .mech-tile__title { color: var(--econ-slate); }
 
 .mech-tile__text {
   font-size: var(--fs-sm);

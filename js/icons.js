@@ -14032,57 +14032,134 @@ window.ECONOS_ICONS = {
   `,
 
   enterpriseCombinationSvg: `
-    <svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 640 312" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="ec-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <linearGradient id="ec-green" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ECFDF5"/>
+          <stop offset="100%" stop-color="#D1FAE5"/>
+        </linearGradient>
+        <linearGradient id="ec-purple" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F5F3FF"/>
+          <stop offset="100%" stop-color="#EDE9FE"/>
+        </linearGradient>
+        <linearGradient id="ec-amber" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFBEB"/>
+          <stop offset="100%" stop-color="#FEF3C7"/>
+        </linearGradient>
+        <linearGradient id="ec-rose" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFF1F2"/>
+          <stop offset="100%" stop-color="#FEE2E2"/>
+        </linearGradient>
+        <linearGradient id="ec-blue" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#EFF6FF"/>
+          <stop offset="100%" stop-color="#DBEAFE"/>
+        </linearGradient>
+        <filter id="ec-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+          <feOffset dx="0" dy="2" result="off"/>
+          <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+          <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <marker id="ec-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
         </marker>
-        <marker id="ec-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <marker id="ec-arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/>
         </marker>
       </defs>
-      <rect width="640" height="215" fill="#FFF7F7" rx="12"/>
 
-      <!-- Arrows (drawn before circles so circles sit on top) -->
-      <!-- Land (76,44) → Enterprise (330,107): -->
-      <line x1="104" y1="51" x2="269" y2="92" stroke="#94A3B8" stroke-width="2" marker-end="url(#ec-arr)"/>
-      <!-- Labour (76,107) → Enterprise (330,107): horizontal -->
-      <line x1="104" y1="107" x2="268" y2="107" stroke="#94A3B8" stroke-width="2" marker-end="url(#ec-arr)"/>
-      <!-- Capital (76,170) → Enterprise (330,107): -->
-      <line x1="104" y1="163" x2="269" y2="122" stroke="#94A3B8" stroke-width="2" marker-end="url(#ec-arr)"/>
-      <!-- Enterprise (330,107) → Goods (570,107): horizontal -->
-      <line x1="393" y1="107" x2="530" y2="107" stroke="#3B82F6" stroke-width="2.5" marker-end="url(#ec-arr-blue)"/>
+      <!-- ===== Column headers ===== -->
+      <text x="90" y="20" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#475569">FACTOR INPUTS</text>
+      <text x="300" y="20" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#B91C1C">+ COORDINATOR</text>
+      <text x="550" y="20" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.4" fill="#1E40AF">= OUTPUT</text>
+      <line x1="0" y1="30" x2="640" y2="30" stroke="#E2E8F0" stroke-width="1"/>
 
-      <!-- LAND circle (green, r=28, cx=76, cy=44) -->
-      <circle cx="76" cy="44" r="28" fill="#ECFDF5" stroke="#34D399" stroke-width="2"/>
-      <text x="76" y="38" text-anchor="middle" font-size="18" dominant-baseline="middle">🏞️</text>
-      <text x="76" y="55" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Land</text>
-      <text x="76" y="82" text-anchor="middle" font-size="8" fill="#6B7280">Rent</text>
+      <!-- ===== Arrows (under circles) ===== -->
+      <line x1="118" y1="82" x2="236" y2="133" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
+      <line x1="120" y1="160" x2="230" y2="160" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
+      <line x1="118" y1="238" x2="236" y2="187" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ec-arr)"/>
+      <line x1="370" y1="160" x2="508" y2="160" stroke="#3B82F6" stroke-width="2.8" marker-end="url(#ec-arr-blue)"/>
 
-      <!-- LABOUR circle (purple, r=28, cx=76, cy=107) -->
-      <circle cx="76" cy="107" r="28" fill="#EDE9FE" stroke="#A78BFA" stroke-width="2"/>
-      <text x="76" y="101" text-anchor="middle" font-size="18" dominant-baseline="middle">👥</text>
-      <text x="76" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Labour</text>
-      <text x="76" y="145" text-anchor="middle" font-size="8" fill="#6B7280">Wages</text>
+      <!-- ===== LAND (cx=90, cy=70, r=30) ===== -->
+      <circle cx="90" cy="70" r="30" fill="url(#ec-green)" stroke="#34D399" stroke-width="2" filter="url(#ec-shadow)"/>
+      <g transform="translate(90,66)">
+        <circle cx="-10" cy="-8" r="4" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <polygon points="-10,9 -2,-3 6,9" fill="#34D399" stroke="#065F46" stroke-width="1.5" stroke-linejoin="round"/>
+        <polygon points="2,9 11,-5 18,9" fill="#6EE7B7" stroke="#065F46" stroke-width="1.5" stroke-linejoin="round"/>
+      </g>
+      <text x="90" y="93" text-anchor="middle" font-size="10" font-weight="800" fill="#065F46" letter-spacing="0.6">LAND</text>
+      <rect x="68" y="106" width="44" height="14" rx="7" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+      <text x="90" y="116" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Rent</text>
 
-      <!-- CAPITAL circle (amber, r=28, cx=76, cy=170) -->
-      <circle cx="76" cy="170" r="28" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
-      <text x="76" y="164" text-anchor="middle" font-size="18" dominant-baseline="middle">🏭</text>
-      <text x="76" y="181" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Capital</text>
-      <text x="76" y="208" text-anchor="middle" font-size="8" fill="#6B7280">Interest</text>
+      <!-- ===== LABOUR (cx=90, cy=160, r=30) ===== -->
+      <circle cx="90" cy="160" r="30" fill="url(#ec-purple)" stroke="#A78BFA" stroke-width="2" filter="url(#ec-shadow)"/>
+      <g transform="translate(90,156)">
+        <circle cx="-12" cy="-6" r="3.5" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
+        <path d="M -18 8 Q -12 -1 -6 8 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+        <circle cx="0" cy="-8" r="4" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2"/>
+        <path d="M -7 8 Q 0 -2 7 8 Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+        <circle cx="12" cy="-6" r="3.5" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
+        <path d="M 6 8 Q 12 -1 18 8 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+      <text x="90" y="183" text-anchor="middle" font-size="10" font-weight="800" fill="#5B21B6" letter-spacing="0.6">LABOUR</text>
+      <rect x="66" y="196" width="48" height="14" rx="7" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
+      <text x="90" y="206" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Wages</text>
 
-      <!-- ENTERPRISE & INSTITUTIONS circle (rose, r=63, cx=330, cy=107) -->
-      <circle cx="330" cy="107" r="63" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2.5"/>
-      <text x="330" y="90" text-anchor="middle" font-size="24">🚀</text>
-      <text x="330" y="111" text-anchor="middle" font-size="11" font-weight="800" fill="#B91C1C">Enterprise &amp;</text>
-      <text x="330" y="126" text-anchor="middle" font-size="11" font-weight="800" fill="#B91C1C">Institutions</text>
-      <text x="330" y="143" text-anchor="middle" font-size="8.5" fill="#DC2626">Coordinates · Innovates · Bears risk</text>
+      <!-- ===== CAPITAL (cx=90, cy=250, r=30) ===== -->
+      <circle cx="90" cy="250" r="30" fill="url(#ec-amber)" stroke="#FCD34D" stroke-width="2" filter="url(#ec-shadow)"/>
+      <g transform="translate(90,246)">
+        <rect x="-9" y="-11" width="4" height="10" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <rect x="-2" y="-13" width="4" height="12" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <rect x="5" y="-7" width="4" height="6" fill="#FBBF24" stroke="#92400E" stroke-width="1.2"/>
+        <rect x="-12" y="-2" width="24" height="11" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/>
+        <rect x="-9" y="3" width="3" height="5" fill="#FEF3C7"/>
+        <rect x="-2" y="3" width="3" height="5" fill="#FEF3C7"/>
+        <rect x="5" y="3" width="3" height="5" fill="#FEF3C7"/>
+      </g>
+      <text x="90" y="273" text-anchor="middle" font-size="10" font-weight="800" fill="#92400E" letter-spacing="0.6">CAPITAL</text>
+      <rect x="64" y="286" width="52" height="14" rx="7" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
+      <text x="90" y="296" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Interest</text>
 
-      <!-- GOODS & SERVICES circle (blue, r=40, cx=570, cy=107) -->
-      <circle cx="570" cy="107" r="40" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
-      <text x="570" y="100" text-anchor="middle" font-size="22">🛒</text>
-      <text x="570" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Goods &amp;</text>
-      <text x="570" y="130" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Services</text>
+      <!-- ===== ENTERPRISE & INSTITUTIONS (cx=300, cy=160, r=70) ===== -->
+      <circle cx="300" cy="160" r="70" fill="url(#ec-rose)" stroke="#F87171" stroke-width="2.5" filter="url(#ec-shadow)"/>
+      <g transform="translate(300,128)">
+        <path d="M 0 -16 Q 7 -6 7 8 L 0 12 L -7 8 Q -7 -6 0 -16 Z" fill="#FCA5A5" stroke="#991B1B" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="0" cy="-4" r="3" fill="#FEF2F2" stroke="#991B1B" stroke-width="1.2"/>
+        <path d="M -7 5 L -13 12 L -5 10 Z" fill="#FB7185" stroke="#991B1B" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M 7 5 L 13 12 L 5 10 Z" fill="#FB7185" stroke="#991B1B" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M -4 12 Q 0 21 4 12 Q 2 15 0 13 Q -2 15 -4 12 Z" fill="#F59E0B"/>
+      </g>
+      <text x="300" y="166" text-anchor="middle" font-size="13" font-weight="800" fill="#991B1B">Enterprise &amp;</text>
+      <text x="300" y="184" text-anchor="middle" font-size="13" font-weight="800" fill="#991B1B">Institutions</text>
+      <text x="300" y="206" text-anchor="middle" font-size="8.5" font-weight="600" fill="#DC2626" letter-spacing="0.6">COORDINATES · INNOVATES · BEARS RISK</text>
+      <rect x="284" y="216" width="32" height="12" rx="6" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
+      <text x="300" y="225" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991B1B">Profit</text>
+
+      <!-- Institutions sub-badge -->
+      <rect x="172" y="246" width="256" height="38" rx="6" fill="#FFF1F2" stroke="#FECACA" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="300" y="261" text-anchor="middle" font-size="9.5" font-weight="800" fill="#991B1B" letter-spacing="0.6">+ THE INSTITUTIONAL DIMENSION</text>
+      <text x="300" y="277" text-anchor="middle" font-size="9.5" fill="#7F1D1D">Government · Property rights · Legal frameworks</text>
+
+      <!-- ===== GOODS &amp; SERVICES (cx=550, cy=160, r=42) ===== -->
+      <circle cx="550" cy="160" r="42" fill="url(#ec-blue)" stroke="#60A5FA" stroke-width="2" filter="url(#ec-shadow)"/>
+      <g transform="translate(550,148)">
+        <path d="M -14 -6 L 14 -6 L 16 14 L -16 14 Z" fill="#DBEAFE" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M -8 -6 Q -8 -14 0 -14 Q 8 -14 8 -6" fill="none" stroke="#1E40AF" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="-5" cy="2" r="1.6" fill="#1E40AF"/>
+        <circle cx="5" cy="2" r="1.6" fill="#1E40AF"/>
+      </g>
+      <text x="550" y="180" text-anchor="middle" font-size="11" font-weight="800" fill="#1E40AF">Goods &amp;</text>
+      <text x="550" y="194" text-anchor="middle" font-size="11" font-weight="800" fill="#1E40AF">Services</text>
+
+      <!-- ===== Arrow labels (over arrows) ===== -->
+      <rect x="149" y="99" width="56" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="177" y="110" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
+      <rect x="154" y="152" width="42" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="175" y="163" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
+      <rect x="148" y="205" width="58" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="177" y="216" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
+      <rect x="411" y="152" width="58" height="16" rx="8" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
+      <text x="440" y="163" text-anchor="middle" font-size="9" font-weight="700" fill="#1E40AF">Output</text>
     </svg>
   `,
 

@@ -98,15 +98,9 @@ window.ECONOS_TOPIC = {
       title: 'Land',
       lede: 'Land is <strong>everything provided by nature</strong> and used in the production of goods and services. It is not just fields — it includes all natural resources.',
       visualKey: 'landTypesSvg',
-      causesLabel: 'Land at a glance',
-      causesEmoji: '🌿',
+      causesLabel: 'Key characteristics &amp; reward',
+      causesEmoji: '⭐',
       causes: [
-        {
-          tone: 'green',
-          icon: '🌱',
-          head: 'Examples of land',
-          body: '<strong>Agricultural land</strong><br><strong>Oil and gas</strong><br><strong>Minerals</strong> (iron, copper, lithium)<br><strong>Water</strong> · <strong>Forests</strong> · <strong>Fisheries</strong><br><strong>The radio spectrum</strong><br><br><em>Anything provided by nature.</em>'
-        },
         {
           tone: 'amber',
           icon: '⭐',
@@ -116,7 +110,7 @@ window.ECONOS_TOPIC = {
         {
           tone: 'purple',
           icon: '🤝',
-          head: 'Factor reward',
+          head: 'Factor reward: Rent',
           body: 'Land earns <strong>Rent</strong>.<br><br>Rent is the income earned from allowing others to use natural resources or locations.<br><br>Because land\'s supply is fixed, rent is driven almost entirely by <em>demand</em>.'
         }
       ],

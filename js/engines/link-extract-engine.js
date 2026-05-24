@@ -181,10 +181,10 @@
           + '</' + tag + '>';
       }).join('');
 
-      var wgll = [
-        { icon: '📄', text: 'Read the extract before answering'             },
-        { icon: '🔍', text: 'Link evidence from the passage to theory'       },
-        { icon: '📝', text: 'Application: Use the context, not just recall.' }
+      var wgll = DATA.wgll || [
+        { icon: '📄', text: 'Read the full extract before answering'                  },
+        { icon: '🔍', text: 'Link specific evidence from the passage to theory'        },
+        { icon: '📝', text: 'Application: Use the extract, not just general recall.'   }
       ];
 
       return ''

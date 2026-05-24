@@ -71,11 +71,14 @@
     }
 
     function renderEyebrow() {
+      var maxScore = DATA.scenarios.reduce(function (sum, sc) {
+        return sum + sc.variables.length * 3;
+      }, 0);
       return ''
         + '<div class="link-card__eyebrow">'
         +   '<span class="link-card__eyebrow-dot"></span>'
         +   '<span>' + DATA.eyebrow + '</span>'
-        +   '<span class="chain-score-badge">SCORE ' + state.totalScore + '</span>'
+        +   '<span class="chain-score-badge">SCORE ' + state.totalScore + ' / ' + maxScore + '</span>'
         + '</div>';
     }
 
@@ -218,10 +221,10 @@
           + '</' + tag + '>';
       }).join('');
 
-      var wgll = [
-        { icon: '🔮', text: 'Apply supply and demand logic step by step'        },
-        { icon: '🔗', text: 'Trace knock-on effects to related markets'          },
-        { icon: '🎯', text: 'Analysis: Shifts change P, Q, and TR simultaneously.' }
+      var wgll = DATA.wgll || [
+        { icon: '🔮', text: 'Trace each shock step by step through the mechanism' },
+        { icon: '🔗', text: 'Follow knock-on effects to related variables'         },
+        { icon: '🎯', text: 'Analysis: State the mechanism, not just the direction.' }
       ];
 
       return ''

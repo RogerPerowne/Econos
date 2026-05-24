@@ -142,7 +142,7 @@
         return ''
           + '<div class="depends-slot depends-slot--empty">'
           +   '<div class="depends-slot__num">' + (i + 1) + '</div>'
-          +   '<span class="depends-slot__placeholder">Tap a factor on the left ←</span>'
+          +   '<span class="depends-slot__placeholder">Choose a factor from the list</span>'
           + '</div>';
       }
 

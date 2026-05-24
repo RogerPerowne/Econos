@@ -254,16 +254,16 @@
         + thumbAxes()
         + '<g clip-path="url(#clip-ta)">'
           + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
-          + '<line x1="25" y1="84" x2="90" y2="6"  stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="8"  y1="80" x2="68" y2="6"  stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="25" y1="84" x2="90" y2="6"  stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="8"  y1="80" x2="68" y2="6"  stroke="#2563eb" stroke-width="2"/>'
           + '<line x1="22" y1="8"  x2="108" y2="75" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         + '<circle cx="62" cy="39" r="5" fill="white"/>'
-        + '<circle cx="62" cy="39" r="3" fill="#2563eb"/>'
+        + '<circle cx="62" cy="39" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="49" cy="29" r="5" fill="white"/>'
-        + '<circle cx="49" cy="29" r="3" fill="#2563eb" opacity="0.6"/>'
-        + '<text x="67" y="50" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="36" y="26" font-size="9" font-weight="600" fill="#2563eb" opacity="0.8">E₂</text>'
+        + '<circle cx="49" cy="29" r="3" fill="#2563eb"/>'
+        + '<text x="67" y="50" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="36" y="26" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* At y=18: SRAS₁ at x=80, SRAS₂ at x=58 — arrow from 76→62, 4px buffer each side */
         + '<line x1="76" y1="18" x2="62" y2="18" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-ta)"/>'
         + '</svg>';
@@ -276,16 +276,16 @@
         + '<g clip-path="url(#clip-tb)">'
           + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
           + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
-          + '<line x1="45" y1="8"  x2="113" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="45" y1="8"  x2="113" y2="72" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (73,34) — algebraically exact */
         + '<circle cx="63" cy="44" r="5" fill="white"/>'
-        + '<circle cx="63" cy="44" r="3" fill="#2563eb"/>'
+        + '<circle cx="63" cy="44" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="73" cy="34" r="5" fill="white"/>'
-        + '<circle cx="73" cy="34" r="3" fill="#059669" opacity="0.7"/>'
-        + '<text x="51" y="55" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="78" y="30" font-size="9" font-weight="600" fill="#059669">E₂</text>'
+        + '<circle cx="73" cy="34" r="3" fill="#059669"/>'
+        + '<text x="51" y="55" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="78" y="30" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* At y=60: AD₁ at x≈81, AD₂ at x≈100. Arrow from 85→96, 4px buffer, points right */
         + '<line x1="85" y1="60" x2="96" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-tb)"/>'
         + '</svg>';
@@ -296,18 +296,18 @@
         + thumbDefs('clip-tc', 'arr-tc', '#374151')
         + thumbAxes()
         + '<g clip-path="url(#clip-tc)">'
-          + '<line x1="55" y1="6"  x2="55" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>'
+          + '<line x1="55" y1="6"  x2="55" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,2" opacity="0.55"/>'
           + '<line x1="75" y1="6"  x2="75" y2="84" stroke="#374151" stroke-width="1.5"/>'
           + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
           + '<line x1="22" y1="8"  x2="100" y2="70" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         /* E₁ = AD at old LRAS (x=55) ≈ (55,34); E₂ = AD at new LRAS (x=75) ≈ (75,50) */
         + '<circle cx="55" cy="34" r="5" fill="white"/>'
-        + '<circle cx="55" cy="34" r="3" fill="#2563eb" opacity="0.6"/>'
+        + '<circle cx="55" cy="34" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="75" cy="50" r="5" fill="white"/>'
         + '<circle cx="75" cy="50" r="3" fill="#059669"/>'
-        + '<text x="40" y="46" font-size="9" font-weight="600" fill="#2563eb" opacity="0.7">E₁</text>'
-        + '<text x="80" y="62" font-size="9" font-weight="600" fill="#059669">E₂</text>'
+        + '<text x="40" y="46" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="80" y="62" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         + '<line x1="60" y1="20" x2="70" y2="20" stroke="#374151" stroke-width="1.5" marker-end="url(#arr-tc)"/>'
         + '</svg>';
     }
@@ -320,16 +320,16 @@
         + '<g clip-path="url(#clip-td)">'
           + '<line x1="64" y1="6"  x2="64" y2="84" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,2"/>'
           + '<line x1="25" y1="84" x2="95" y2="10" stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2"/>'
-          + '<line x1="5"  y1="8"  x2="75" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="22" y1="8"  x2="95" y2="72" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="5"  y1="8"  x2="75" y2="72" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         /* E₁ = SRAS∩AD₁ ≈ (63,44); E₂ = SRAS∩AD₂ ≈ (54,53) — algebraically exact */
         + '<circle cx="63" cy="44" r="5" fill="white"/>'
-        + '<circle cx="63" cy="44" r="3" fill="#2563eb"/>'
+        + '<circle cx="63" cy="44" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="54" cy="53" r="5" fill="white"/>'
-        + '<circle cx="54" cy="53" r="3" fill="#059669" opacity="0.7"/>'
-        + '<text x="68" y="40" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="41" y="64" font-size="9" font-weight="600" fill="#059669">E₂</text>'
+        + '<circle cx="54" cy="53" r="3" fill="#059669"/>'
+        + '<text x="68" y="40" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="41" y="64" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* At y=60: AD₁ at x≈81, AD₂ at x≈62. Arrow from 77→66, 4px buffer, points left */
         + '<line x1="77" y1="60" x2="66" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-td)"/>'
         + '</svg>';
@@ -345,16 +345,16 @@
         + thumbDefs('clip-sr', 'arr-sr', '#2563eb')
         + thumbAxes()
         + '<g clip-path="url(#clip-sr)">'
-          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="55" y1="84" x2="120" y2="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="55" y1="84" x2="120" y2="10" stroke="#2563eb" stroke-width="2"/>'
           + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         + '<circle cx="68" cy="46" r="5" fill="white"/>'
-        + '<circle cx="68" cy="46" r="3" fill="#2563eb"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="80" cy="56" r="5" fill="white"/>'
-        + '<circle cx="80" cy="56" r="3" fill="#2563eb" opacity="0.6"/>'
-        + '<text x="55" y="42" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="83" y="65" font-size="9" font-weight="600" fill="#2563eb" opacity="0.8">E₂</text>'
+        + '<circle cx="80" cy="56" r="3" fill="#2563eb"/>'
+        + '<text x="55" y="42" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="83" y="65" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* Arrow at y=30 from S₁ (x≈78) to S₂ (x≈98), 4px buffer */
         + '<line x1="82" y1="30" x2="93" y2="30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-sr)"/>'
         + '</svg>';
@@ -366,16 +366,16 @@
         + thumbDefs('clip-sl', 'arr-sl', '#2563eb')
         + thumbAxes()
         + '<g clip-path="url(#clip-sl)">'
-          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="17" y1="84" x2="82"  y2="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="17" y1="84" x2="82"  y2="10" stroke="#2563eb" stroke-width="2"/>'
           + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         + '<circle cx="68" cy="46" r="5" fill="white"/>'
-        + '<circle cx="68" cy="46" r="3" fill="#2563eb"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#2563eb" opacity="0.55"/>'
         + '<circle cx="57" cy="38" r="5" fill="white"/>'
-        + '<circle cx="57" cy="38" r="3" fill="#2563eb" opacity="0.6"/>'
-        + '<text x="71" y="54" font-size="9" font-weight="600" fill="#2563eb">E₁</text>'
-        + '<text x="44" y="35" font-size="9" font-weight="600" fill="#2563eb" opacity="0.8">E₂</text>'
+        + '<circle cx="57" cy="38" r="3" fill="#2563eb"/>'
+        + '<text x="71" y="54" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="44" y="35" font-size="9" font-weight="600" fill="#2563eb" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* Arrow at y=30 from S₁ (x≈78) to S₂ (x≈60), 4px buffer, points left */
         + '<line x1="74" y1="30" x2="64" y2="30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-sl)"/>'
         + '</svg>';
@@ -388,15 +388,15 @@
         + thumbAxes()
         + '<g clip-path="url(#clip-dr)">'
           + '<line x1="35"  y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="22"  y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
-          + '<line x1="42"  y1="10" x2="128" y2="78" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="22"  y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="42"  y1="10" x2="128" y2="78" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         + '<circle cx="68" cy="46" r="5" fill="white"/>'
-        + '<circle cx="68" cy="46" r="3" fill="#059669"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#059669" opacity="0.55"/>'
         + '<circle cx="76" cy="37" r="5" fill="white"/>'
-        + '<circle cx="76" cy="37" r="3" fill="#059669" opacity="0.6"/>'
-        + '<text x="55" y="56" font-size="9" font-weight="600" fill="#059669">E₁</text>'
-        + '<text x="79" y="34" font-size="9" font-weight="600" fill="#059669" opacity="0.8">E₂</text>'
+        + '<circle cx="76" cy="37" r="3" fill="#059669"/>'
+        + '<text x="55" y="56" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="79" y="34" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* Arrow at y=26 from D₁ (x≈47) to D₂ (x≈67), 4px buffer, points right */
         + '<line x1="51" y1="26" x2="62" y2="26" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-dr)"/>'
         + '</svg>';
@@ -409,15 +409,15 @@
         + thumbAxes()
         + '<g clip-path="url(#clip-dl)">'
           + '<line x1="35" y1="84" x2="100" y2="10" stroke="#2563eb" stroke-width="2"/>'
-          + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2"/>'
-          + '<line x1="4"  y1="10" x2="90"  y2="78" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>'
+          + '<line x1="22" y1="10" x2="108" y2="78" stroke="#059669" stroke-width="2" stroke-dasharray="4,2" opacity="0.55"/>'
+          + '<line x1="4"  y1="10" x2="90"  y2="78" stroke="#059669" stroke-width="2"/>'
         + '</g>'
         + '<circle cx="68" cy="46" r="5" fill="white"/>'
-        + '<circle cx="68" cy="46" r="3" fill="#059669"/>'
+        + '<circle cx="68" cy="46" r="3" fill="#059669" opacity="0.55"/>'
         + '<circle cx="61" cy="55" r="5" fill="white"/>'
-        + '<circle cx="61" cy="55" r="3" fill="#059669" opacity="0.6"/>'
-        + '<text x="71" y="43" font-size="9" font-weight="600" fill="#059669">E₁</text>'
-        + '<text x="46" y="68" font-size="9" font-weight="600" fill="#059669" opacity="0.8">E₂</text>'
+        + '<circle cx="61" cy="55" r="3" fill="#059669"/>'
+        + '<text x="71" y="43" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke" opacity="0.7">E₁</text>'
+        + '<text x="46" y="68" font-size="9" font-weight="600" fill="#059669" stroke="white" stroke-width="2.5" paint-order="stroke">E₂</text>'
         /* Arrow at y=26 from D₁ (x≈47) to D₂ (x≈29), 4px buffer, points left */
         + '<line x1="43" y1="26" x2="33" y2="26" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-dl)"/>'
         + '</svg>';

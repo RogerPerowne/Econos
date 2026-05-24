@@ -71,9 +71,9 @@ window.ECONOS_LINK_DIAGRAM = {
     icon:  '🏠',
     text:  'Population growth and rising incomes increase the demand for housing in a UK city. Supply is constrained by planning restrictions.',
     dataPoints: [
-      '📊 London rents +11.2% in 2023',
-      '🏗️ PES of housing supply ≈ 0.4 (inelastic)',
-      '📉 Housing completions 44% below needed'
+      { icon: '📊', text: 'London rents +11.2% in 2023' },
+      { icon: '🏗️', text: 'PES of housing supply ≈ 0.4 (inelastic)' },
+      { icon: '📉', text: 'Housing completions 44% below needed' }
     ]
   },
 

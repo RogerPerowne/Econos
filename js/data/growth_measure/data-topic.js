@@ -306,47 +306,32 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 6 — Causes of economic growth ----- */
     {
       id: 'growth-causes',
-      template: 'paired',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Causes of economic growth',
-      lede: 'Not all increases in output are the same. Short-run demand boosts can raise GDP briefly, but <strong>sustainable growth</strong> comes from expanding the economy\'s productive capacity.',
-      bannerLabel: 'Demand-side  vs  Supply-side',
-      bannerTone: 'amber',
-      pairs: [
+      lede: 'Not all increases in output are the same — only supply-side expansion is sustainable.',
+      tip: { icon: '💡', tone: 'blue', text: 'Not all increases in output are the same. <strong>Short-run demand boosts</strong> can raise GDP briefly, but <strong>sustainable growth</strong> comes from expanding the economy\'s capacity.' },
+      causesLabel: 'Two routes to higher output',
+      causesEmoji: '🛣️',
+      causesStyle: 'plain-white',
+      causesPosition: 'top',
+      causesCols: 2,
+      causes: [
         {
           tone: 'blue',
-          label: 'Short-run causes — demand boosts',
-          drivers: [
-            '<strong>Consumption (C):</strong> higher confidence, lower taxes, easier credit',
-            '<strong>Investment (I):</strong> firms invest in machinery, buildings, technology',
-            '<strong>Government spending (G):</strong> stimulus, public services, capital projects',
-            '<strong>Net exports (X−M):</strong> exports rise or imports fall',
-            'All shift AD right → real GDP rises in the short run',
-            'Hits an inflationary ceiling at potential output'
-          ],
-          example: '<strong>UK post-2020 recovery:</strong> fiscal stimulus (furlough, bounce-back loans) and ultra-low interest rates lifted AD. GDP recovered to pre-pandemic levels by 2022 — but no new productive capacity was added.'
+          icon: '1️⃣',
+          head: 'Short-run growth — demand boosts',
+          body: '<div style="font-size:13px;color:#1D4ED8;line-height:1.55;margin-bottom:10px;">An increase in <strong>aggregate demand (AD)</strong> raises real GDP in the short run, but does <em>not</em> increase the economy\'s potential.</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;"><div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:9px 10px;"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span>🛒</span><strong style="color:#1D4ED8;font-size:12.5px;">Consumption (C)</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;">Households spend more on goods and services (higher confidence, lower taxes).</div></div><div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:9px 10px;"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span>📈</span><strong style="color:#1D4ED8;font-size:12.5px;">Investment (I)</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;">Businesses invest in machinery, buildings, stock and technology.</div></div><div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:9px 10px;"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span>🏛️</span><strong style="color:#1D4ED8;font-size:12.5px;">Government (G)</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;">The government spends more on goods, services and public sector wages.</div></div><div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:9px 10px;"><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span>🌍</span><strong style="color:#1D4ED8;font-size:12.5px;">Net exports (X−M)</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;">Exports rise and/or imports fall, improving the trade balance.</div></div></div><div style="background:#DBEAFE;border:1.5px solid #93C5FD;border-radius:10px;padding:12px 14px;text-align:center;color:#1D4ED8;font-weight:800;font-size:13.5px;">↑ Aggregate Demand (AD)<div style="font-weight:600;font-size:12px;margin-top:4px;">→ Real GDP rises in the short run</div></div>'
         },
         {
           tone: 'green',
-          label: 'Long-run causes — expanding capacity',
-          drivers: [
-            '<strong>Quantity of factors:</strong> more labour (population, participation), more capital',
-            '<strong>Quality of factors:</strong> better-educated, healthier, more skilled workers',
-            '<strong>Technological progress:</strong> R&D, innovation, new processes, AI',
-            '<strong>Infrastructure:</strong> transport, energy, digital networks, ports',
-            '<strong>Higher productivity:</strong> more output from the same inputs — the ultimate driver',
-            'All shift LRAS right → PPF moves outward'
-          ],
-          example: '<strong>UK productivity puzzle:</strong> post-2008, GDP recovered but output per hour stagnated. Despite near-full employment, long-run growth potential weakened — a supply-side failure, not a demand-side one. Real wages stagnated for over a decade.'
+          icon: '2️⃣',
+          head: 'Long-run growth — expanding capacity',
+          body: '<div style="font-size:13px;color:#047857;line-height:1.55;margin-bottom:10px;">Sustainable growth comes from increasing the economy\'s <strong>supply-side potential</strong> — producing more with resources that are bigger, better or used more productively.</div><div style="display:flex;flex-direction:column;gap:7px;"><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:9px 11px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">👥</span><strong style="color:#047857;font-size:13px;">Quantity of factors</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;margin-top:2px;">More labour (population, participation, skills) and more capital.</div></div><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:9px 11px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">⭐</span><strong style="color:#047857;font-size:13px;">Quality of factors</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;margin-top:2px;">Better-educated, healthier workers; higher-quality capital and management.</div></div><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:9px 11px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">💡</span><strong style="color:#047857;font-size:13px;">Technological progress</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;margin-top:2px;">New ideas, innovation and processes that raise efficiency.</div></div><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:9px 11px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">🛣️</span><strong style="color:#047857;font-size:13px;">Improved infrastructure</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;margin-top:2px;">Transport, energy, digital networks reduce costs and remove bottlenecks.</div></div><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:9px 11px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">🎓</span><strong style="color:#047857;font-size:13px;">Education &amp; human capital</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;margin-top:2px;">Skills, training and knowledge raise productivity and adaptability.</div></div><div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:9px 11px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;">📊</span><strong style="color:#047857;font-size:13px;">Higher productivity</strong></div><div style="font-size:11.5px;color:#475569;line-height:1.5;margin-top:2px;">More output from the same inputs — the ultimate driver.</div></div></div>'
         }
       ],
       examEdge: {
         title: 'Why supply-side reforms matter most',
-        text: 'Demand-side policies boost short-run GDP but hit an inflationary ceiling at the PPF. <strong>Only supply-side policies shift the PPF</strong> and enable non-inflationary long-run growth. Short-run demand boosts can overheat the economy, raise inflation and increase debt. State this trade-off explicitly — it\'s worth 2–3 marks in growth essays.'
-      },
-      policy: {
-        title: 'What examiners want to see',
-        text: 'A complete growth essay covers both sides: <em>"In the short run, lower interest rates stimulate AD and raise actual output towards potential… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward…"</em> The two-sided structure itself signals economic literacy and earns evaluation marks.'
+        text: 'Short-run demand boosts can <strong>overheat the economy</strong>, raise inflation and increase debt. Supply-side reforms <strong>expand capacity</strong>, lift potential output and support higher living standards <em>without inflationary pressure</em> — the key to <strong>sustainable long-run growth</strong>. A complete essay covers both: <em>"In the short run, lower interest rates stimulate AD… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward."</em>'
       }
     },
 

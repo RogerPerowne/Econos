@@ -1081,7 +1081,8 @@
       const hasIcons = c.causes.some(item => item.icon);
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      const colsTop = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
+      content += `<div style="display:grid;grid-template-columns:${colsTop};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
@@ -1996,7 +1997,8 @@
       const hasIcons = c.causes.some(item => item.icon);
       const flat = c.causesStyle === 'tinted-flat';
       if (c.causesLabel !== null) content += genSecLabel(c.causesEmoji || '🔗', c.causesLabel || 'Key mechanisms');
-      content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.causes.length, hasIcons ? 155 : 220)};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
+      const colsMain = c.causesCols ? `repeat(${c.causesCols}, minmax(0, 1fr))` : gridColumnsFor(c.causes.length, hasIcons ? 155 : 220);
+      content += `<div style="display:grid;grid-template-columns:${colsMain};gap:${hasIcons ? '12px' : '16px'};margin-bottom:26px;">`;
       content += c.causes.map((item, i) => {
         const t = TONES[i % TONES.length];
         const pt = item.tone ? PATTERN_TONES[item.tone] : null;
@@ -2429,7 +2431,8 @@
 
     // Quiz CTA — celebration-style signpost
 
-    return `<h1 class="card__title">${c.title}</h1>${content}`;
+    const ledeHtml = c.lede ? `<p class="card__lede">${c.lede}</p>` : '';
+    return `<h1 class="card__title">${c.title}</h1>${ledeHtml}${content}`;
   }
 
   function renderKeyTakeaway(k) {

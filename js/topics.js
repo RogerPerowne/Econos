@@ -14,28 +14,28 @@ window.ECONOS_TOPICS = [
     name: 'Introduction to Economics',
     sub: 'Economics as a social science, positive/normative statements, scarcity, choice, opportunity cost',
     color: '#f97316',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'ppf',
     name: 'Production Possibility Frontiers',
     sub: 'Trade-offs, opportunity cost and economic growth',
     color: '#ef4444',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'specialisation_money',
     name: 'Specialisation & Money',
     sub: 'Division of labour, functions of money, barter',
     color: '#f59e0b',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'economic_systems',
     name: 'Economic Systems',
     sub: 'Free market, command, mixed economies',
     color: '#84cc16',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
 
   /* ---- Theme 1, Section 2: How Markets Work (2.1–2.10) ---- */
@@ -44,70 +44,70 @@ window.ECONOS_TOPICS = [
     name: 'Demand',
     sub: 'Law of demand, shifts, consumer surplus',
     color: '#10b981',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'ped',
     name: 'Price Elasticity of Demand',
     sub: 'PED formula, determinants, revenue implications',
     color: '#8b5cf6',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'yed_xed',
     name: 'Income & Cross-Price Elasticity',
     sub: 'Income and cross-price elasticity, normal vs inferior',
     color: '#ec4899',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'supply',
     name: 'Supply',
     sub: 'Law of supply, shifts, producer surplus',
     color: '#06b6d4',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'pes',
     name: 'Price Elasticity of Supply',
     sub: 'PES formula, determinants, time and stocks',
     color: '#a855f7',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'market_equilibrium',
     name: 'Price Determination',
     sub: 'Equilibrium, excess demand/supply, market clearing',
     color: '#0ea5e9',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'price_functions',
     name: 'The Price Mechanism',
     sub: 'Rationing, signalling, incentives and resource allocation',
     color: '#14b8a6',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'consumer_producer_surplus',
     name: 'Consumer & Producer Surplus',
     sub: 'Welfare triangles, efficiency and the gains from trade',
     color: '#f59e0b',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'indirect_taxes_subsidies',
     name: 'Indirect Taxes & Subsidies',
     sub: 'Tax and subsidy diagrams, incidence, welfare effects and evaluation',
     color: '#b45309',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'behavioural_econ',
     name: 'Behavioural Economics',
     sub: 'Nudge theory, heuristics, biases and bounded rationality',
     color: '#1d4ed8',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
 
   /* ---- Theme 1, Section 3: Market Failure (3.1–3.4) ---- */
@@ -116,35 +116,35 @@ window.ECONOS_TOPICS = [
     name: 'Market Failure',
     sub: 'Types of market failure and why markets fail to achieve allocative efficiency',
     color: '#b91c1c',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'neg_externalities',
     name: 'Negative Externalities',
     sub: 'Social vs private costs, market failure, pollution',
     color: '#dc2626',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'pos_externalities',
     name: 'Positive Externalities',
     sub: 'Social vs private benefits, under-provision, education',
     color: '#16a34a',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'public_goods',
     name: 'Public Goods',
     sub: 'Non-rival, non-excludable, free rider problem',
     color: '#2563eb',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'info_gaps',
     name: 'Information Gaps',
     sub: 'Asymmetric information, moral hazard, adverse selection',
     color: '#7c3aed',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
 
   /* ---- Theme 1, Section 4: Government Intervention (4.1–4.2) ---- */
@@ -153,14 +153,14 @@ window.ECONOS_TOPICS = [
     name: 'Taxes & Subsidies as Policy Tools',
     sub: 'When taxes and subsidies are justified, UK case studies and evaluation framework',
     color: '#0f766e',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
   {
     id: 'govt_failure',
     name: 'Government Failure',
     sub: 'Unintended consequences, information failures, regulatory capture',
     color: '#9f1239',
-    available: { learn: true, link: false, land: false }
+    available: { learn: true, link: true, land: false }
   },
 
   /* ---- Parked — to be assigned to later themes ---- */

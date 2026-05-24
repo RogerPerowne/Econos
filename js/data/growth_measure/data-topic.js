@@ -198,45 +198,59 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 4 — GNP, GNI and comparing economies ----- */
     {
       id: 'gnp-gni-ppp',
-      template: 'paired',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'GNP, GNI and comparing economies',
-      lede: 'GDP measures output <em>within</em> a country\'s borders. GNP/GNI measures income <em>of</em> a country\'s residents — wherever in the world they earn it. PPP adjusts for price differences so cross-country comparisons are fair.',
-      bannerLabel: 'Location of production  vs  Ownership of income',
-      bannerTone: 'purple',
-      pairs: [
+      lede: 'GDP, GNI and PPP each adjust for different things — pick the right tool for the question.',
+      tip: { icon: '💡', tone: 'blue', text: '<strong>GDP</strong> measures output <em>within</em> a country\'s borders. <strong>GNP / GNI</strong> adjust for income flows with the rest of the world. <strong>PPP</strong> adjustments make cross-country comparisons fairer.' },
+      causesLabel: 'GDP vs GNP / GNI',
+      causesEmoji: '🌍',
+      causesStyle: 'plain-white',
+      causesPosition: 'top',
+      causesCols: 2,
+      causes: [
         {
           tone: 'blue',
-          label: 'GDP — Gross Domestic Product',
-          drivers: [
-            'Measures output produced within the geographic borders',
-            'Includes production by foreign-owned firms operating in the UK',
-            'Excludes income earned by UK residents abroad',
-            'Standard headline measure — focus: <em>location of production</em>',
-            'Used for AD analysis and domestic output comparisons'
-          ],
-          example: '<strong>Toyota UK plant:</strong> its output counts in UK GDP. Profits repatriated to Japan are then <em>subtracted</em> when calculating UK GNI — that money leaves the UK economy.'
+          icon: '🏛️',
+          head: 'GDP — Gross Domestic Product',
+          body: 'Measures output produced <strong>within the country\'s borders</strong>.<br><br>• Includes everyone who works inside the country, regardless of nationality<br>• Excludes income earned by residents abroad<br><br><span style="color:#1D4ED8;font-weight:700;">Focus:</span> <em>location of production.</em>'
+        },
+        {
+          tone: 'green',
+          icon: '🌎',
+          head: 'GNP / GNI — Gross National Income',
+          body: 'Measures income earned by a country\'s <strong>residents from anywhere in the world</strong>.<br><br>• Adds net property income from abroad (profits, interest, dividends, rents)<br>• Subtracts foreign-owned income earned within the country<br><br><span style="color:#047857;font-weight:700;">Focus:</span> <em>ownership of income.</em>'
+        }
+      ],
+      flowTitle: 'How income flows affect GNP / GNI',
+      flowEmoji: '🔁',
+      flow: [
+        { tone: 'blue',   icon: '🌍', title: 'Rest of the world', sub: 'Foreign firms earn income in our country' },
+        { tone: 'amber',  icon: '↘️', title: 'Income in',         sub: '(e.g. foreign profits, interest)' },
+        { tone: 'green',  icon: '🏠', title: 'Our country',       sub: 'GDP: output inside our borders' },
+        { tone: 'rose',   icon: '↗️', title: 'Income out',         sub: '(e.g. profits sent abroad)' },
+        { tone: 'blue',   icon: '🌍', title: 'Rest of the world', sub: 'Our firms earn income abroad' }
+      ],
+      causes2Label: 'Formula and case study',
+      causes2Emoji: '🧮',
+      causes2Style: 'plain-white',
+      causes2Cols: 2,
+      causes2: [
+        {
+          tone: 'green',
+          icon: '🧮',
+          head: 'The GNI formula',
+          body: '<div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:14px 16px;font-family:Menlo,monospace;font-weight:800;color:#047857;font-size:13px;line-height:1.6;text-align:center;">GNP (at factor cost) =<br>GDP + Net property<br>income from abroad</div><br><div style="font-size:12.5px;color:#475569;line-height:1.65;"><strong style="color:#0B1426;">GNI ≈ GNP</strong> in practice — small adjustments for taxes and subsidies on income.</div>'
         },
         {
           tone: 'purple',
-          label: 'GNP / GNI — Gross National Income',
-          drivers: [
-            'GNI = GDP + net property income from abroad',
-            'Adds income earned by UK residents abroad (dividends, interest, wages)',
-            'Subtracts income earned by foreign residents in the UK',
-            'Better measure of a country\'s actual income — focus: <em>ownership</em>',
-            'Often used for international welfare comparisons'
-          ],
-          example: '<strong>Ireland:</strong> GNI per capita is ~25% lower than GDP per capita because large multinational profits flow abroad. For the UK, GNI ≈ GDP — flows roughly balance.'
+          icon: '🇮🇪',
+          head: 'Case study: Ireland and developing economies',
+          body: 'Ireland\'s <strong>GNP per capita is much lower</strong> than its GDP per capita because of large profits earned by multinational firms abroad.<br><br>In many <strong>developing countries</strong>, GNP per capita is also lower than GDP per capita as profits flow out to foreign owners.'
         }
       ],
       examEdge: {
-        title: 'Add PPP for fair international comparisons',
-        text: '$1 buys very different things in London vs Lagos. <strong>Purchasing Power Parity (PPP)</strong> adjusts for different price levels so we compare real living standards, not just market exchange rates. India\'s GDP per capita: <strong>~$2,400 at market rates</strong> vs <strong>~$9,200 at PPP</strong> — because goods and services are far cheaper there. The World Bank\'s $2.15/day extreme poverty line is in PPP dollars.'
-      },
-      policy: {
-        title: 'When to use which measure',
-        text: 'Use <strong>GDP</strong> for domestic output and AD analysis. Use <strong>GNI</strong> for international welfare comparisons, especially where FDI inflows are large. Use <strong>GNI per capita (PPP)</strong> for fair cross-country living standards comparisons — it\'s also the income dimension of the UN\'s <em>Human Development Index (HDI)</em>.'
+        title: 'Exam tip: PPP for fair international comparisons',
+        text: '$1 buys very different things in <strong>London vs Lagos</strong>. <strong>Purchasing Power Parity (PPP)</strong> adjusts for different price levels so we compare real living standards, not just market exchange rates. Example — <strong>$100 buys ~4 items in London but ~14 items in Lagos.</strong> India\'s GDP per capita: ~$2,400 at market rates vs ~$9,200 at PPP. Use <strong>GNI per capita (PPP)</strong> for fair cross-country comparisons of living standards.'
       }
     },
 

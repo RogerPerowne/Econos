@@ -24,23 +24,23 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'The UK has roughly [[missing|700,000 fewer workers in the labour force than its pre-pandemic trend would predict]] (ONS 2024), with much of the gap driven by long-term sickness and earlier retirement.',
-      'Around [[inactive|2.8 million people are economically inactive due to long-term sickness, up from 2.1 million in 2019]] — a rise that has reduced the effective supply of labour even where vacancies remain unfilled.',
-      'Job vacancies in [[care|care, hospitality and HGV driving have remained well above pre-pandemic norms]] for over two years, suggesting persistent occupational immobility between sectors where workers are available and sectors where they are needed.',
+      'The UK has roughly [[missing|700,000 fewer workers than its pre-pandemic trend]] (ONS 2024), with much of the gap driven by long-term sickness and earlier retirement.',
+      'Around [[inactive|2.8 million people are economically inactive due to long-term sickness]], up from 2.1 million in 2019 — a rise that has reduced the effective supply of labour even where vacancies remain unfilled.',
+      'Job vacancies in [[care|care, hospitality and HGV driving remain above pre-pandemic norms]] for over two years, suggesting persistent occupational immobility between sectors where workers are available and sectors where they are needed.',
       'UK [[apprentice|apprenticeship starts have fallen by roughly 30% since 2017]], reducing the pipeline of medium-skill workers and limiting employers\' ability to grow the quality of labour input.',
-      'UK [[invest|business investment per worker has been about 25% below the G7 average for over a decade]] — a capital-quality gap that means even fully-employed workers produce less output per hour than peers abroad.',
-      '[[housing|House-price-to-earnings ratios in high-productivity regions (London, the South East) reached 10–14×]] in 2023, limiting geographic mobility from low- to high-productivity areas of the country.',
-      'The Office for Budget Responsibility forecasts that [[childcare|the 2024 expansion of free childcare will lift labour force participation by about 60,000 over five years]] — a meaningful but modest mobility effect.'
+      'UK [[invest|business investment is about 25% below the G7 average]] — a capital-quality gap that means even fully-employed workers produce less output per hour than peers abroad.',
+      '[[housing|House prices reach 10–14× earnings in London and the South East]], limiting geographic mobility from low- to high-productivity areas of the country.',
+      'The OBR forecasts that [[childcare|free childcare expansion will lift participation by ~60,000 over five years]] — a meaningful but modest mobility effect.'
     ],
 
     evidence: {
-      'missing':   { text: '700,000 fewer workers in the labour force than its pre-pandemic trend would predict' },
-      'inactive':  { text: '2.8 million people are economically inactive due to long-term sickness, up from 2.1 million in 2019' },
-      'care':      { text: 'care, hospitality and HGV driving have remained well above pre-pandemic norms' },
-      'apprentice':{ text: 'apprenticeship starts have fallen by roughly 30% since 2017' },
-      'invest':    { text: 'business investment per worker has been about 25% below the G7 average for over a decade' },
-      'housing':   { text: 'House-price-to-earnings ratios in high-productivity regions (London, the South East) reached 10–14×' },
-      'childcare': { text: 'the 2024 expansion of free childcare will lift labour force participation by about 60,000 over five years' }
+      'missing':   { text: '700,000 fewer workers than its pre-pandemic trend' },
+      'inactive':  { text: '2.8 million people economically inactive due to long-term sickness' },
+      'care':      { text: 'care, hospitality and HGV driving remain above pre-pandemic norms' },
+      'apprentice':{ text: 'apprenticeship starts down roughly 30% since 2017' },
+      'invest':    { text: 'business investment ~25% below the G7 average' },
+      'housing':   { text: 'house prices 10–14× earnings in London and the South East' },
+      'childcare': { text: 'free childcare expansion: +60,000 workers over five years' }
     },
 
     buckets: [

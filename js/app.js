@@ -4291,7 +4291,7 @@
         });
         parts.push(renderOp(resultArrow === '=' ? '=' : '→', true));
         parts.push(renderTerm(eq.result, true));
-        return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:24px 14px 18px;margin-bottom:26px;background:#FAFBFF;border:1px solid #E7E7EA;border-radius:14px;">${parts.join('')}</div>`;
+        return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:18px 14px 12px;margin-bottom:26px;">${parts.join('')}</div>`;
       })() : ''}
 
       ${c.flow && c.flow.length ? (() => {

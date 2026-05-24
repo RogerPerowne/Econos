@@ -417,43 +417,67 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 8 — Exam summary: reading growth data ----- */
     {
       id: 'exam-summary-growth',
-      template: 'mechanisms',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Exam summary: reading growth data',
-      lede: 'In essays and data-response questions, success comes from a clear framework, UK context and precise interpretation. Use this as your last-stop checklist.',
-      mechanisms: [
+      lede: 'In essays and data-response questions, success comes from a clear framework, UK context and precise interpretation. Use this page as your last-stop checklist.',
+      causesLabel: 'The essay framework',
+      causesEmoji: '🗺️',
+      causesStyle: 'plain-white',
+      causesPosition: 'top',
+      causesCols: 4,
+      causes: [
         {
-          num: '1',
           tone: 'blue',
-          title: 'State the data',
-          text: 'Identify what is measured, the time period, units and source. Always state whether it is <strong>real or nominal</strong> and whether it is <strong>per capita or total</strong>. Vague data references lose marks.'
+          icon: '⚖️',
+          head: '1. State the data',
+          body: 'Identify what is measured, period, units and source. Always state whether it is <strong style="color:#1D4ED8;">REAL or NOMINAL</strong> and whether it is <strong style="color:#1D4ED8;">PER CAPITA.</strong>'
         },
         {
-          num: '2',
           tone: 'green',
-          title: 'Describe the trend',
-          text: 'Note the <strong>overall movement</strong> (rise / fall / fluctuation). Comment on the <strong>rate</strong> and any <strong>turning points</strong>. Be precise: "GDP grew by X% between Y and Z, before falling sharply in…"'
+          icon: '📈',
+          head: '2. Describe the trend',
+          body: 'Note the overall movement (rise / fall / fluctuations). Comment on the <strong>RATE</strong> and any turning points.'
         },
         {
-          num: '3',
           tone: 'amber',
-          title: 'Trend vs cyclical',
-          text: 'Separate the underlying <strong>trend</strong> (long-run growth in potential output) from <strong>cyclical fluctuations</strong> (short-run ups and downs around that trend). Examiners reward students who make this explicit.'
+          icon: '〰️',
+          head: '3. Distinguish trend vs cyclical',
+          body: 'Explain the underlying <strong style="color:#B45309;">TREND</strong> (long-run growth) and any <strong style="color:#B45309;">CYCLICAL</strong> fluctuations (short-run ups and downs).'
         },
         {
-          num: '4',
-          tone: 'rose',
-          title: 'Interpret & evaluate',
-          text: 'Explain likely <strong>causes</strong> and <strong>consequences</strong> for the economy and policy. Use chains of reasoning and end with a clear <strong>judgement</strong>. Never just list facts — show your thinking.'
+          tone: 'purple',
+          icon: '🔍',
+          head: '4. Interpret &amp; evaluate',
+          body: 'Explain likely causes and consequences for the economy and policy. Use chains of reasoning and judgement.'
+        }
+      ],
+      note: {
+        icon: '🇬🇧',
+        tone: 'blue',
+        head: 'UK context snapshot',
+        text: '<strong>Post-2008 productivity puzzle:</strong> real GDP grew, but productivity (GDP per hour) stagnated — weaker living standards. · <strong>2020 Covid contraction:</strong> real GDP fell by −9.9%, the largest annual fall in the modern record. · <strong>Post-pandemic recovery:</strong> strong rebound in 2021, then slower growth as inflation, rate rises and global shocks weighed on activity.'
+      },
+      causes2Label: 'Phrases &amp; checklist',
+      causes2Emoji: '✅',
+      causes2Style: 'plain-white',
+      causes2Cols: 2,
+      causes2: [
+        {
+          tone: 'green',
+          icon: '💬',
+          head: 'Examiner-friendly phrases (top-band language)',
+          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:12.5px;color:#0B1426;line-height:1.55;"><div>✓ "This suggests that…"</div><div>✓ "In the short run… however, in the long run…"</div><div>✓ "This indicates / implies that…"</div><div>✓ "The data is consistent with…"</div><div>✓ "One possible reason is…"</div><div>✓ "On balance, this is more likely to…"</div><div>✓ "A likely consequence is…"</div><div>✓ "A limitation of the data is…"</div><div>✓ "This could lead to…"</div></div><div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;font-size:12px;color:#92400E;margin-top:10px;"><strong>💡 Tip:</strong> Write in full sentences, link ideas, and use specific evidence from the data.</div>'
+        },
+        {
+          tone: 'blue',
+          icon: '✅',
+          head: 'How to read growth data: checklist',
+          body: '<div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#0B1426;line-height:1.5;"><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">1</span><div>Identify the variable (e.g. real GDP, GDP per capita).</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">2</span><div>State the time period, units and source.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">3</span><div>State: real or nominal? Per capita or total?</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">4</span><div>Describe the overall trend and key turning points.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">5</span><div>Separate trend from cyclical movements.</div></div><div style="display:flex;gap:8px;"><span style="background:#2563EB;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">6</span><div>Explain causes and consequences. Conclude with a clear overall judgement.</div></div></div>'
         }
       ],
       examEdge: {
-        title: 'Top-band examiner phrases',
-        text: '"This suggests that…" \xb7 "This indicates / implies that…" \xb7 "One possible reason is…" \xb7 "A likely consequence is…" \xb7 "In the short run… however, in the long run…" \xb7 "The data is consistent with…" \xb7 "On balance, this is more likely to…" \xb7 "A limitation of the data is…"'
-      },
-      connection: {
-        title: 'UK context to deploy in answers',
-        text: '<strong>Post-2008 productivity puzzle:</strong> real GDP grew but output per hour stagnated — weaker living standards than headline figures suggest. <strong>2020 Covid contraction:</strong> real GDP fell −9.9%, the largest annual fall in the modern record. <strong>Post-pandemic recovery:</strong> strong rebound in 2021, then slower growth as inflation, rate rises and global shocks weighed on activity.'
+        title: 'Exam edge',
+        text: 'Marks are won by <strong>clarity</strong>, <strong>accuracy</strong> and <strong>evaluation</strong>. Always define the data, use the framework, and connect to the UK economy. Show judgement — don\'t just list facts.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }

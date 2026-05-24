@@ -257,58 +257,49 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 5 — Actual vs potential output ----- */
     {
       id: 'actual-vs-potential',
-      template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Actual vs potential output',
-      lede: 'Actual output is what the economy produces today. Potential output is the maximum sustainable output when resources are fully employed and used efficiently. The gap between them shapes everything.',
-      diagramKey: 'ppfMovesInteractive',
-      tip: { icon: '🎯', tone: 'blue', text: 'Tap the four buttons below to see how an economy can change its position relative to its productive capacity. The PPF is the visual twin of LRAS in the AD/AS model — both show potential output.' },
-      steps: [
+      lede: 'Actual output is what the economy produces today. Potential output is the maximum sustainable output when resources are fully employed and the economy is operating efficiently.',
+      causesLabel: 'Actual vs potential growth',
+      causesEmoji: '📈',
+      causesStyle: 'plain-white',
+      causesPosition: 'top',
+      causesCols: 2,
+      causes: [
         {
-          key: 'recovery',
-          label: 'Closing a negative gap',
-          text: 'Point <strong>X</strong> sits inside the PPF — actual output is <em>below</em> potential. There is a <strong>negative output gap</strong>: spare capacity, unemployed workers, idle factories. As AD recovers, firms rehire and reactivate capacity. Output rises toward PPF₁. The frontier does not move — this is <strong>actual / short-run growth</strong>, driven by demand.'
+          tone: 'blue',
+          icon: '↗️',
+          head: 'Actual (short-run) growth',
+          body: '<div style="font-size:12px;color:#1D4ED8;font-weight:700;text-align:center;letter-spacing:0.04em;margin-bottom:6px;">MOVEMENT ALONG OR WITHIN THE FRONTIER</div><svg viewBox="0 0 280 200" style="width:100%;height:auto;max-height:200px;display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aa" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#2563EB"/></marker></defs><line x1="40" y1="170" x2="265" y2="170" stroke="#475569" stroke-width="1.2"/><line x1="40" y1="170" x2="40" y2="20" stroke="#475569" stroke-width="1.2"/><polygon points="38,24 42,24 40,16" fill="#475569"/><polygon points="261,168 261,172 269,170" fill="#475569"/><text x="14" y="32" font-size="9" font-weight="700" fill="#0B1426">Capital</text><text x="14" y="42" font-size="9" font-weight="700" fill="#0B1426">goods</text><text x="262" y="184" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">Consumer</text><text x="262" y="194" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">goods</text><text x="32" y="186" font-size="9" fill="#475569">0</text><path d="M 50 130 Q 100 135 220 165" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/><path d="M 45 35 Q 60 145 245 165" fill="none" stroke="#2563EB" stroke-width="2.5"/><circle cx="105" cy="135" r="4.5" fill="#2563EB"/><text x="50" y="125" font-size="10" font-weight="700" fill="#2563EB">A (underutilisation)</text><circle cx="165" cy="90" r="4.5" fill="#2563EB"/><text x="175" y="86" font-size="10" font-weight="700" fill="#2563EB">B (efficient use)</text><line x1="111" y1="129" x2="160" y2="95" stroke="#2563EB" stroke-width="1.5" marker-end="url(#aa)"/></svg><div style="background:#EFF6FF;border-radius:8px;padding:8px 12px;font-size:12.5px;line-height:1.5;color:#1D4ED8;text-align:center;margin-top:8px;">Resources unused or misallocated. <strong>More output possible without increasing capacity.</strong></div>'
         },
         {
-          key: 'outward',
-          label: 'Potential rises',
-          text: 'PPF₁ shifts outward to <strong>PPF₂</strong>: productive capacity has permanently increased. Better technology, more capital investment, larger labour force, improved skills or infrastructure. This is <strong>potential / long-run growth</strong> — the only kind that delivers <em>non-inflationary</em> rises in living standards. In AD/AS, LRAS shifts right.'
-        },
-        {
-          key: 'along',
-          label: 'Reallocation along PPF',
-          text: 'Movement <strong>along</strong> PPF₁ from D to E — the economy chooses to produce more capital goods and fewer consumer goods (or vice versa). Total potential output is unchanged. There is always an <strong>opportunity cost</strong> equal to the slope of the curve. This is about the <em>composition</em> of output, not growth.'
-        },
-        {
-          key: 'inward',
-          label: 'Capacity destroyed',
-          text: 'PPF₁ shifts inward to <strong>PPF₃</strong>: a negative supply shock has cut productive capacity. War, natural disaster, pandemic, capital depreciation, "brain drain" — all push potential output down. <strong>The 2020 Covid contraction</strong> is the modern example: real UK GDP fell −9.9%, the largest annual fall on record.'
+          tone: 'green',
+          icon: '🚀',
+          head: 'Potential (long-run) growth',
+          body: '<div style="font-size:12px;color:#047857;font-weight:700;text-align:center;letter-spacing:0.04em;margin-bottom:6px;">OUTWARD SHIFT OF THE FRONTIER</div><svg viewBox="0 0 280 200" style="width:100%;height:auto;max-height:200px;display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="bb" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#059669"/></marker></defs><line x1="40" y1="170" x2="265" y2="170" stroke="#475569" stroke-width="1.2"/><line x1="40" y1="170" x2="40" y2="20" stroke="#475569" stroke-width="1.2"/><polygon points="38,24 42,24 40,16" fill="#475569"/><polygon points="261,168 261,172 269,170" fill="#475569"/><text x="14" y="32" font-size="9" font-weight="700" fill="#0B1426">Capital</text><text x="14" y="42" font-size="9" font-weight="700" fill="#0B1426">goods</text><text x="262" y="184" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">Consumer</text><text x="262" y="194" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">goods</text><text x="32" y="186" font-size="9" fill="#475569">0</text><path d="M 45 55 Q 60 150 215 165" fill="none" stroke="#2563EB" stroke-width="2.2"/><path d="M 45 30 Q 75 110 255 165" fill="none" stroke="#059669" stroke-width="2.5"/><text x="135" y="125" font-size="10" font-weight="700" fill="#2563EB">PPF₁ (t₀)</text><text x="155" y="80" font-size="10" font-weight="700" fill="#059669">PPF₂ (t₁)</text><line x1="125" y1="118" x2="155" y2="90" stroke="#059669" stroke-width="1.5" marker-end="url(#bb)"/></svg><div style="background:#ECFDF5;border-radius:8px;padding:8px 12px;font-size:12.5px;line-height:1.5;color:#047857;text-align:center;margin-top:8px;"><strong>More resources, better technology, higher skills.</strong> Increases the economy\'s productive capacity.</div>'
         }
       ],
-      causesLabel: 'Output gaps in the trade cycle',
-      causesEmoji: '📊',
-      causes: [
+      causes2Label: 'The output gap',
+      causes2Emoji: '📊',
+      causes2Style: 'plain-white',
+      causes2Cols: 2,
+      causes2: [
         {
           tone: 'rose',
           icon: '🔥',
           head: 'Positive output gap',
-          body: '<strong>Actual > Potential.</strong> The economy is overheating — operating beyond sustainable capacity. Consequences: <em>inflationary pressure, demand overheating, unsustainable growth</em>. Policy response: tighten monetary or fiscal policy to cool demand.'
+          body: '<svg viewBox="0 0 200 110" style="width:100%;height:auto;max-height:110px;display:block;" xmlns="http://www.w3.org/2000/svg"><path d="M 30 95 A 70 70 0 0 1 170 95" fill="none" stroke="#FEE2E2" stroke-width="16"/><path d="M 30 95 A 70 70 0 0 1 100 25" fill="none" stroke="#DC2626" stroke-width="16"/><line x1="100" y1="95" x2="148" y2="48" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="95" r="6" fill="#0B1426"/><text x="100" y="108" font-size="14" font-weight="900" fill="#DC2626" text-anchor="middle">+</text></svg><div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#B91C1C;">Actual output &gt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Inflationary pressure<br>• Demand overheating<br>• May not be sustainable</div>'
         },
         {
-          tone: 'amber',
+          tone: 'blue',
           icon: '❄️',
           head: 'Negative output gap',
-          body: '<strong>Actual < Potential.</strong> Spare capacity exists. Consequences: <em>unemployment, disinflation or deflation pressure, wasted resources</em>. Policy response: stimulate demand — lower interest rates or fiscal expansion to close the gap.'
+          body: '<svg viewBox="0 0 200 110" style="width:100%;height:auto;max-height:110px;display:block;" xmlns="http://www.w3.org/2000/svg"><path d="M 30 95 A 70 70 0 0 1 170 95" fill="none" stroke="#DBEAFE" stroke-width="16"/><path d="M 30 95 A 70 70 0 0 1 60 38" fill="none" stroke="#2563EB" stroke-width="16"/><line x1="100" y1="95" x2="55" y2="58" stroke="#0B1426" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="95" r="6" fill="#0B1426"/><text x="100" y="108" font-size="14" font-weight="900" fill="#2563EB" text-anchor="middle">−</text></svg><div style="font-size:13px;color:#0B1426;line-height:1.6;margin-top:6px;"><strong style="color:#1D4ED8;">Actual output &lt; Potential output</strong><br><br><strong>Consequences:</strong><br>• Unemployment<br>• Disinflation or deflation pressure<br>• Spare capacity exists</div>'
         }
       ],
-      pairLabel: 'Short-run vs long-run growth',
-      pairEmoji: '⚖️',
-      left:  { tone: 'blue', icon: '⚡', iconStyle: 'circle', label: 'Short-run growth', text: 'Driven by AD. Uses existing spare capacity. Hits an inflationary ceiling at the PPF. Volatile — rises in booms, falls in recessions. Closes negative output gaps but cannot raise potential.' },
-      right: { tone: 'green', icon: '🚀', iconStyle: 'circle', label: 'Long-run growth',  text: 'Driven by AS — quantity and quality of factors of production. Shifts the PPF outward. Steady — depends on investment, education, technology, infrastructure. Raises potential output permanently.' },
-      conclusion: { title: 'Why the distinction matters', text: 'Demand-side policies boost short-run output but hit an inflationary ceiling at the PPF. <strong>Only supply-side policies shift the PPF outward</strong> and enable non-inflationary long-run growth. Examiners reward students who link the PPF, AD/AS and the trade cycle together.' },
       examEdge: {
-        title: 'Use precise terminology',
-        text: 'Use <strong>"trend growth"</strong> or <strong>"potential growth"</strong> for long-run capacity. Use <strong>"spare capacity"</strong> or <strong>"output gap"</strong> for short-run differences. Vague use of "growth" that conflates the two loses marks. Classic exam trap: <em>"Country A recovers from recession"</em> → a point inside PPF moves <em>onto</em> it. Do NOT draw an outward shift — that\'s long-run growth.'
+        title: 'Link to AD/AS · Use precise terminology',
+        text: 'The PPF is the visual twin of <strong>LRAS</strong> in the AD/AS model — both show potential output. <strong>Short-run growth</strong> = changes in AD move output along the SRAS (real GDP and price level both shift). <strong>Long-run growth</strong> = LRAS shifts right when potential rises. Use <strong>"trend growth"</strong> or <strong>"potential growth"</strong> for long-run capacity; <strong>"spare capacity"</strong> or <strong>"output gap"</strong> for short-run differences. Vague use of "growth" loses marks. Closing the gap is a key macroeconomic objective.'
       }
     },
 

@@ -14148,14 +14148,14 @@ window.ECONOS_ICONS = {
       <text x="574" y="205" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E40AF">Services</text>
 
       <!-- ===== Arrow labels (over arrows) ===== -->
-      <rect x="111" y="70" width="64" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="143" y="81" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
-      <rect x="123" y="170" width="40" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="143" y="181" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
-      <rect x="113" y="270" width="60" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="143" y="281" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
-      <rect x="443" y="172" width="38" height="13" rx="6.5" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
-      <text x="462" y="181" text-anchor="middle" font-size="8" font-weight="700" fill="#1E40AF">Output</text>
+      <rect x="115" y="70" width="64" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="147" y="81" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Resources</text>
+      <rect x="127" y="170" width="40" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="147" y="181" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Skills</text>
+      <rect x="117" y="270" width="60" height="16" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="147" y="281" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">Equipment</text>
+      <rect x="447" y="172" width="38" height="13" rx="6.5" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1"/>
+      <text x="466" y="181" text-anchor="middle" font-size="8" font-weight="700" fill="#1E40AF">Output</text>
     </svg>
   `,
 

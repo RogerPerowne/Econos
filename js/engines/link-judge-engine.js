@@ -345,10 +345,12 @@
 
     function nextUnfilledBlank(currentId) {
       var sc = currentScenario();
-      for (var i = 0; i < sc.blanks.length; i++) {
-        var idx = (currentId + i) % sc.blanks.length;
-        var b = sc.blanks[idx];
-        if (b.id !== currentId && !state.blankAnswers[b.id]) return b.id;
+      var n  = sc.blanks.length;
+      var curPos = 0;
+      for (var k = 0; k < n; k++) { if (sc.blanks[k].id === currentId) { curPos = k; break; } }
+      for (var i = 1; i <= n; i++) {
+        var b = sc.blanks[(curPos + i) % n];
+        if (!state.blankAnswers[b.id]) return b.id;
       }
       return null;
     }

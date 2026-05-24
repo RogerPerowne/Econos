@@ -238,7 +238,7 @@
       var col  = ok ? 'var(--econ-green,#10B981)' : 'var(--econ-amber,#F59E0B)';
       var msg  = ok ? q.feedback.correct : q.feedback.wrong;
       return ''
-        + '<div style="background:' + bg + ';border:1px solid ' + brd + ';border-radius:10px;'
+        + '<div id="calc-feedback" style="background:' + bg + ';border:1px solid ' + brd + ';border-radius:10px;'
         + 'padding:var(--sp-3) var(--sp-4);margin-top:var(--sp-3);">'
         + '<div style="font-weight:700;font-size:0.95rem;color:' + col + ';margin-bottom:var(--sp-2);">'
         + icon + ' ' + pts + '</div>'
@@ -291,7 +291,7 @@
           + '</' + tag + '>';
       }).join('');
 
-      var wgll = [
+      var wgll = DATA.wgll || [
         { icon: '🔢', text: 'Show your working step by step'      },
         { icon: '🎯', text: 'Always state units in your answer'    },
         { icon: '📐', text: 'Analysis: Quantitative reasoning scores marks in data-response questions.' }
@@ -358,7 +358,7 @@
         state.submitted = true;
         state.totalScore += isCorrect(currentQ()) ? 3 : 1;
         render();
-        var fb = document.querySelector('#app-root .link-card > div[style*="border-radius:10px"]');
+        var fb = document.getElementById('calc-feedback');
         if (fb) fb.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
 

@@ -17,12 +17,6 @@
     var DATA = window.ECONOS_LINK_DATA;
 
     /* Shuffle MCQ options at boot, preserving correct answer */
-    (function shuffle(arr) {
-      for (var i = arr.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
-      }
-    });
     DATA.dataset.questions.forEach(function (q) {
       var correctText = q.options[q.correct];
       var arr = q.options;
@@ -136,7 +130,7 @@
       }).join('');
 
       var explain = revealed
-        ? '<div style="background:var(--econ-gray-50,#F9FAFB);border-radius:6px;padding:'
+        ? '<div id="data-explain-' + q.id + '" style="background:var(--econ-gray-50,#F9FAFB);border-radius:6px;padding:'
           + 'var(--sp-2) var(--sp-3);margin-top:var(--sp-2);font-size:0.85rem;line-height:1.55;'
           + 'color:var(--econ-ink);">' + q.explanation + '</div>'
         : '';
@@ -195,7 +189,7 @@
           + '</' + tag + '>';
       }).join('');
 
-      var wgll = [
+      var wgll = DATA.wgll || [
         { icon: '📊', text: 'Read column headings and units carefully' },
         { icon: '🔍', text: 'Identify trends and anomalies in the data' },
         { icon: '🎯', text: 'Application: Use data to support or qualify a theoretical claim.' }
@@ -242,8 +236,8 @@
           state.revealed[qid] = true;
           state.score += (state.answers[qid] === q.correct) ? 3 : 1;
           render();
-          var anchor = document.querySelector('[data-qid="' + qid + '"].data-option');
-          if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          var explain = document.getElementById('data-explain-' + qid);
+          if (explain) explain.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
       });
 

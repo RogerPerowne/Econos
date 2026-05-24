@@ -11,6 +11,18 @@
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_JUDGE;
 
+    /* Shuffle cloze options and overall-position options once at boot */
+    function shuffle(arr) {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+    }
+    DATA.scenarios.forEach(function (sc) {
+      sc.blanks.forEach(function (b) { shuffle(b.options); });
+      if (sc.overallPosition && sc.overallPosition.options) shuffle(sc.overallPosition.options);
+    });
+
     var state = {
       scenarioIdx:    0,
       activeBlank:    1,       // currently focused blank id (1..8); starts on first blank

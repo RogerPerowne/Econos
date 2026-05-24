@@ -12,6 +12,15 @@
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_CHAIN;
 
+    /* Shuffle tile tray once at boot so the correct sequence isn't visible */
+    function shuffle(arr) {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+    }
+    DATA.chains.forEach(function (c) { shuffle(c.tiles); });
+
     var state = {
       chainIdx:   0,
       placements: [],   // array of tile IDs placed in slots (length 0–3)

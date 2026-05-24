@@ -980,7 +980,7 @@
 </svg>`,
 
     privateDemandMini: `
-<svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;" font-family="Inter,sans-serif">
+<svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;" font-family="Inter,sans-serif">
   <rect width="260" height="180" fill="#F3E8FF" rx="8"/>
   <!-- Axes -->
   <line x1="40" y1="150" x2="240" y2="150" stroke="#1F2937" stroke-width="1.5"/>
@@ -1004,7 +1004,7 @@
 </svg>`,
 
     publicDemandMini: `
-<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;" font-family="Inter,sans-serif">
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;" font-family="Inter,sans-serif">
   <rect width="320" height="180" fill="#DCFCE7" rx="8"/>
   <!-- Axes -->
   <line x1="40" y1="150" x2="280" y2="150" stroke="#1F2937" stroke-width="1.5"/>
@@ -1176,7 +1176,7 @@
         </div>
       `;
     };
-    if (c.comparison && c.comparison.position !== 'after-diagram') {
+    if (c.comparison && c.comparison.position !== 'after-diagram' && c.comparison.position !== 'after-causes') {
       renderComparison();
     }
 
@@ -1960,12 +1960,13 @@
       if (c.illustratedGridLabel !== null)
         content += genSecLabel(c.illustratedGridEmoji || '📋', c.illustratedGridLabel || 'Examples');
       const igCols = c.illustratedGridCols || 2;
+      const igSceneH = c.illustratedGridSceneHeight || 120;
       const igCells = c.illustratedGrid.map((item, i) => {
         const t = PATTERN_TONES[item.tone] || PATTERN_TONES.green;
         const sceneHtml = item.heroImage
-          ? `<div style="height:120px;overflow:hidden;flex-shrink:0;"><img src="${item.heroImage}" alt="" style="display:block;width:100%;height:120px;object-fit:cover;" /></div>`
+          ? `<div style="height:${igSceneH}px;overflow:hidden;flex-shrink:0;"><img src="${item.heroImage}" alt="" style="display:block;width:100%;height:${igSceneH}px;object-fit:cover;" /></div>`
           : (item.scene && SCENES[item.scene]
-            ? `<div style="height:120px;overflow:hidden;flex-shrink:0;">${SCENES[item.scene]}</div>`
+            ? `<div style="height:${igSceneH}px;overflow:hidden;flex-shrink:0;">${SCENES[item.scene]}</div>`
             : '');
         const thirdPartyHtml = item.thirdParty
           ? `<div style="display:flex;align-items:center;gap:8px;background:${t.soft};border-radius:8px;padding:8px 10px;margin-top:auto;">
@@ -2051,6 +2052,11 @@
         </div>`;
       }).join('');
       content += `</div>`;
+    }
+
+    // After-causes comparison — rendered here when c.comparison.position === 'after-causes'.
+    if (c.comparison && c.comparison.position === 'after-causes') {
+      renderComparison();
     }
 
     // Causes 2 — a second causes-style grid for a separate themed section.

@@ -12,6 +12,16 @@
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_DIAGRAM;
 
+    /* Shuffle select options and label chips once at boot */
+    function shuffle(arr) {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+    }
+    if (DATA.select && DATA.select.options) shuffle(DATA.select.options);
+    if (DATA.label  && DATA.label.chips)   shuffle(DATA.label.chips);
+
     var state = {
       stage:    0,          // 0=select, 1=label, 2=read-write
 

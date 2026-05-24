@@ -21,7 +21,12 @@
     para_fill:       { label: 'Complete the analysis', tone: 'blue' },
     data_table:      { label: 'Data interpretation', tone: 'amber'  },
     diagram_interp:  { label: 'Read the diagram',    tone: 'blue'   },
-    chain:           { label: 'Sequence the chain',  tone: 'blue'   }
+    chain:           { label: 'Sequence the chain',  tone: 'blue'   },
+    cause_effect:      { label: 'Match causes & effects', tone: 'rose'   },
+    numeric_input:     { label: 'Calculate',              tone: 'purple' },
+    match_pairs:       { label: 'Match the pairs',        tone: 'green'  },
+    sequence:          { label: 'Order the steps',        tone: 'blue'   },
+    categorise:        { label: 'Sort into groups',       tone: 'amber'  }
   };
 
   var TONE_COLOURS = {
@@ -43,7 +48,9 @@
     mcq: true, confidence_mcq: true, calculation: true,
     data_table: true, diagram_interp: true, multi_select: true,
     odd_one_out: true, diagnostic_pair: true, elastic_sort: true,
-    para_fill: true, rank: false, chain: false
+    para_fill: true, rank: false, chain: false,
+    cause_effect: false, numeric_input: false, match_pairs: false,
+    sequence: false, categorise: false
   };
 
   function shuffleArr(arr) {
@@ -175,6 +182,11 @@
     else if (q.type === 'data_table')      renderDataTable(q);
     else if (q.type === 'diagram_interp')  renderDiagramInterp(q);
     else if (q.type === 'chain')           renderChain(q);
+    else if (q.type === 'cause_effect')  renderCauseEffect(q);
+    else if (q.type === 'numeric_input') renderNumericInput(q);
+    else if (q.type === 'match_pairs')   renderMatchPairs(q);
+    else if (q.type === 'sequence')      renderChain(q);
+    else if (q.type === 'categorise')    renderCategorise(q);
   }
 
   /* ── Elastic sort ── */
@@ -534,6 +546,314 @@
       badge.textContent = (i + 1);
     });
     document.getElementById('rank-sub').disabled = true;
+    document.getElementById('fb').outerHTML = feedbackHTML(allOk, q.exp);
+    document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
+  };
+
+  /* ── Cause & Effect matching ── */
+  function renderCauseEffect(q) {
+    var n = q.pairs.length;
+    var causeOrder = [], effectOrder = [];
+    for (var i = 0; i < n; i++) { causeOrder.push(i); effectOrder.push(i); }
+    for (var j = causeOrder.length - 1; j > 0; j--) {
+      var kc = Math.floor(Math.random() * (j + 1));
+      var tc = causeOrder[j]; causeOrder[j] = causeOrder[kc]; causeOrder[kc] = tc;
+    }
+    for (var jj = effectOrder.length - 1; jj > 0; jj--) {
+      var ke = Math.floor(Math.random() * (jj + 1));
+      var te = effectOrder[jj]; effectOrder[jj] = effectOrder[ke]; effectOrder[ke] = te;
+    }
+    S.ceCauseOrder = causeOrder;
+    S.ceEffectOrder = effectOrder;
+    S.ceSelected = null;
+    S.ceMatched = {};
+    var causeItems = causeOrder.map(function (origIdx, dispIdx) {
+      return '<button class="quiz-ce-item quiz-ce-cause" id="cec' + dispIdx + '" onclick="pickCE(\'c\',' + dispIdx + ')">' + q.pairs[origIdx].cause + '</button>';
+    }).join('');
+    var effectItems = effectOrder.map(function (origIdx, dispIdx) {
+      return '<button class="quiz-ce-item quiz-ce-effect" id="cee' + dispIdx + '" onclick="pickCE(\'e\',' + dispIdx + ')">' + q.pairs[origIdx].effect + '</button>';
+    }).join('');
+    r(cardWrap(
+      qHeader(q) +
+      '<div class="quiz-stem">' + q.stem + '</div>' +
+      '<p class="quiz-instr">Tap a cause, then tap its matching effect.</p>' +
+      '<div class="quiz-ce-grid">' +
+        '<div class="quiz-ce-col"><div class="quiz-ce-col__head">Cause</div>' + causeItems + '</div>' +
+        '<div class="quiz-ce-col"><div class="quiz-ce-col__head">Effect</div>' + effectItems + '</div>' +
+      '</div>' +
+      '<div class="quiz-ce-tally" id="ce-tally">0 / ' + n + ' matched</div>' +
+      '<div id="fb"></div><div id="nr" class="quiz-next-row"></div>'
+    ));
+  }
+  window.pickCE = function (col, dispIdx) {
+    if (S.answered) return;
+    var q = Qs[S.qi];
+    var origIdx = col === 'c' ? S.ceCauseOrder[dispIdx] : S.ceEffectOrder[dispIdx];
+    if (S.ceMatched[origIdx]) return;
+    var elId = col === 'c' ? 'cec' + dispIdx : 'cee' + dispIdx;
+    if (!S.ceSelected) {
+      S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
+      document.getElementById(elId).classList.add('ce-selected');
+      return;
+    }
+    if (S.ceSelected.col === col) {
+      var oldId = S.ceSelected.col === 'c' ? 'cec' + S.ceSelected.dispIdx : 'cee' + S.ceSelected.dispIdx;
+      document.getElementById(oldId).classList.remove('ce-selected');
+      S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
+      document.getElementById(elId).classList.add('ce-selected');
+      return;
+    }
+    var causeOrigIdx = S.ceSelected.col === 'c' ? S.ceSelected.origIdx : origIdx;
+    var effectOrigIdx = S.ceSelected.col === 'e' ? S.ceSelected.origIdx : origIdx;
+    var causeDispIdx  = S.ceSelected.col === 'c' ? S.ceSelected.dispIdx : dispIdx;
+    var effectDispIdx = S.ceSelected.col === 'e' ? S.ceSelected.dispIdx : dispIdx;
+    var causeEl  = document.getElementById('cec' + causeDispIdx);
+    var effectEl = document.getElementById('cee' + effectDispIdx);
+    causeEl.classList.remove('ce-selected');
+    effectEl.classList.remove('ce-selected');
+    S.ceSelected = null;
+    if (causeOrigIdx === effectOrigIdx) {
+      S.ceMatched[causeOrigIdx] = true;
+      causeEl.classList.add('ce-matched');
+      effectEl.classList.add('ce-matched');
+      var matchCount = Object.keys(S.ceMatched).length;
+      document.getElementById('ce-tally').textContent = matchCount + ' / ' + q.pairs.length + ' matched';
+      if (matchCount === q.pairs.length) {
+        S.answered = true;
+        recordResult(true, 'All ' + q.pairs.length + ' pairs matched');
+        document.getElementById('fb').outerHTML = feedbackHTML(true, q.exp);
+        document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
+      }
+    } else {
+      causeEl.classList.add('ce-mismatch');
+      effectEl.classList.add('ce-mismatch');
+      setTimeout(function () {
+        causeEl.classList.remove('ce-mismatch');
+        effectEl.classList.remove('ce-mismatch');
+      }, 600);
+    }
+  };
+
+  /* ── Numeric input ── */
+  function renderNumericInput(q) {
+    var stepsHtml = (q.workingSteps || []).map(function (step) {
+      return '<div class="quiz-calc-step">' + step + '</div>';
+    }).join('');
+    r(cardWrap(
+      qHeader(q) +
+      (q.context ? '<div class="quiz-calc-context"><div class="quiz-calc-context__label">Scenario</div><div class="quiz-calc-context__text">' + q.context + '</div></div>' : '') +
+      '<div class="quiz-stem">' + q.stem + '</div>' +
+      (q.hint ? '<div id="ni-hint-wrap"><button class="quiz-calc-toggle" onclick="toggleNIHint()">Show hint</button><div class="quiz-calc-working" id="ni-hint">' + q.hint + '</div></div>' : '') +
+      '<div class="quiz-ni-row">' +
+        '<input type="number" class="quiz-ni-input" id="ni-input" placeholder="Your answer" step="any" oninput="niChanged()" onkeydown="niKey(event)" />' +
+        (q.unit ? '<span class="quiz-ni-unit">' + q.unit + '</span>' : '') +
+        '<button class="quiz-btn quiz-btn--submit quiz-ni-check" id="ni-sub" onclick="submitNI()" disabled>Check</button>' +
+      '</div>' +
+      '<div style="margin-top:var(--sp-3)"><button class="quiz-calc-toggle" id="ni-work-btn" style="display:none" onclick="toggleNIWorking()">Show working</button>' +
+      '<div class="quiz-calc-working" id="ni-work">' + stepsHtml + '</div></div>' +
+      '<div id="fb"></div><div id="nr" class="quiz-next-row"></div>'
+    ));
+  }
+  window.toggleNIHint = function () {
+    var el = document.getElementById('ni-hint');
+    var btn = document.querySelector('#ni-hint-wrap .quiz-calc-toggle');
+    el.classList.toggle('show');
+    btn.textContent = el.classList.contains('show') ? 'Hide hint' : 'Show hint';
+  };
+  window.toggleNIWorking = function () {
+    var el = document.getElementById('ni-work');
+    var btn = document.getElementById('ni-work-btn');
+    el.classList.toggle('show');
+    btn.textContent = el.classList.contains('show') ? 'Hide working' : 'Show working';
+  };
+  window.niChanged = function () {
+    var inp = document.getElementById('ni-input');
+    var sub = document.getElementById('ni-sub');
+    if (sub) sub.disabled = (!inp || inp.value.trim() === '');
+  };
+  window.niKey = function (e) { if (e.key === 'Enter') window.submitNI(); };
+  window.submitNI = function () {
+    if (S.answered) return;
+    var inp = document.getElementById('ni-input');
+    if (!inp || inp.value.trim() === '') return;
+    S.answered = true;
+    var q = Qs[S.qi];
+    var val = parseFloat(inp.value);
+    var ok = !isNaN(val) && Math.abs(val - q.answer) <= (q.tolerance !== undefined ? q.tolerance : 0.05);
+    recordResult(ok, 'Entered: ' + inp.value);
+    inp.disabled = true;
+    document.getElementById('ni-sub').disabled = true;
+    var wb = document.getElementById('ni-work-btn');
+    if (wb) { wb.style.display = 'inline-block'; }
+    var we = document.getElementById('ni-work');
+    if (we) we.classList.add('show');
+    document.getElementById('fb').outerHTML = feedbackHTML(ok, q.exp);
+    document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
+  };
+
+  /* ── Match pairs ── */
+  function renderMatchPairs(q) {
+    var tiles = [];
+    q.pairs.forEach(function (pair, i) {
+      tiles.push({ text: pair.a, pairId: i, side: 'a' });
+      tiles.push({ text: pair.b, pairId: i, side: 'b' });
+    });
+    for (var j = tiles.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var tmp = tiles[j]; tiles[j] = tiles[k]; tiles[k] = tmp;
+    }
+    S.mpTiles    = tiles;
+    S.mpSelected = null;
+    S.mpMatched  = {};
+    var tileHtml = tiles.map(function (tile, i) {
+      return '<button class="quiz-mp-tile" id="mpt' + i + '" onclick="pickMP(' + i + ')">' + tile.text + '</button>';
+    }).join('');
+    r(cardWrap(
+      qHeader(q) +
+      '<div class="quiz-stem">' + q.stem + '</div>' +
+      '<p class="quiz-instr">Tap two tiles that belong together. Matched pairs will lock green.</p>' +
+      '<div class="quiz-mp-tally" id="mp-tally">0 / ' + q.pairs.length + ' pairs found</div>' +
+      '<div class="quiz-mp-grid">' + tileHtml + '</div>' +
+      '<div class="quiz-submit-row"><button class="quiz-btn quiz-btn--ghost" id="mp-reveal" onclick="revealMP()">Reveal answers</button></div>' +
+      '<div id="fb"></div><div id="nr" class="quiz-next-row"></div>'
+    ));
+  }
+  window.pickMP = function (i) {
+    if (S.answered) return;
+    if (S.mpMatched[i]) return;
+    var el = document.getElementById('mpt' + i);
+    if (S.mpSelected === null) {
+      S.mpSelected = i;
+      el.classList.add('mp-selected');
+      return;
+    }
+    if (S.mpSelected === i) {
+      el.classList.remove('mp-selected');
+      S.mpSelected = null;
+      return;
+    }
+    var prevIdx  = S.mpSelected;
+    var prevEl   = document.getElementById('mpt' + prevIdx);
+    var prevTile = S.mpTiles[prevIdx];
+    var curTile  = S.mpTiles[i];
+    prevEl.classList.remove('mp-selected');
+    el.classList.remove('mp-selected');
+    S.mpSelected = null;
+    if (prevTile.pairId === curTile.pairId && prevTile.side !== curTile.side) {
+      S.mpMatched[prevIdx] = true;
+      S.mpMatched[i]       = true;
+      prevEl.classList.add('mp-matched');
+      el.classList.add('mp-matched');
+      var matchCount = Object.keys(S.mpMatched).length / 2;
+      var q = Qs[S.qi];
+      document.getElementById('mp-tally').textContent = matchCount + ' / ' + q.pairs.length + ' pairs found';
+      if (matchCount === q.pairs.length) {
+        S.answered = true;
+        recordResult(true, 'All ' + q.pairs.length + ' pairs matched');
+        var revBtn = document.getElementById('mp-reveal');
+        if (revBtn) revBtn.style.display = 'none';
+        document.getElementById('fb').outerHTML = feedbackHTML(true, q.exp);
+        document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
+      }
+    } else {
+      prevEl.classList.add('mp-wrong');
+      el.classList.add('mp-wrong');
+      setTimeout(function () {
+        prevEl.classList.remove('mp-wrong');
+        el.classList.remove('mp-wrong');
+      }, 600);
+    }
+  };
+  window.revealMP = function () {
+    if (S.answered) return; S.answered = true;
+    var q = Qs[S.qi];
+    recordResult(false, 'Revealed without completing');
+    S.mpTiles.forEach(function (tile, i) {
+      var el = document.getElementById('mpt' + i);
+      if (!S.mpMatched[i]) el.classList.add('mp-reveal');
+    });
+    document.getElementById('fb').outerHTML = feedbackHTML(false, q.exp);
+    document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
+  };
+
+  /* ── Categorise ── */
+  function renderCategorise(q) {
+    var n = q.items.length;
+    var itemOrder = [];
+    for (var i = 0; i < n; i++) itemOrder.push(i);
+    for (var j = itemOrder.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var ti = itemOrder[j]; itemOrder[j] = itemOrder[k]; itemOrder[k] = ti;
+    }
+    S.catItemOrder  = itemOrder;
+    S.catPlacements = {};
+    S.catSelected   = null;
+    var bucketsHtml = q.categories.map(function (cat, ci) {
+      return '<div class="quiz-cat-bucket" id="catb' + ci + '" onclick="pickCatBucket(' + ci + ')">' +
+        '<div class="quiz-cat-bucket__label">' + cat + '</div>' +
+        '<div class="quiz-cat-bucket__items" id="catbi' + ci + '"></div>' +
+      '</div>';
+    }).join('');
+    var itemsHtml = itemOrder.map(function (origIdx) {
+      var it = q.items[origIdx];
+      return '<button class="quiz-cat-item" id="cati' + origIdx + '" onclick="pickCatItem(' + origIdx + ')">' + it.text + '</button>';
+    }).join('');
+    r(cardWrap(
+      qHeader(q) +
+      '<div class="quiz-stem">' + q.stem + '</div>' +
+      '<p class="quiz-instr">Tap an item, then tap a category to place it. You can move items between categories.</p>' +
+      '<div class="quiz-cat-buckets">' + bucketsHtml + '</div>' +
+      '<div class="quiz-cat-items" id="cat-items">' + itemsHtml + '</div>' +
+      '<div class="quiz-submit-row"><button class="quiz-btn quiz-btn--submit" id="cat-sub" onclick="submitCat()" disabled>Check my grouping</button></div>' +
+      '<div id="fb"></div><div id="nr" class="quiz-next-row"></div>'
+    ));
+  }
+  window.pickCatItem = function (origIdx) {
+    if (S.answered) return;
+    if (S.catSelected === origIdx) {
+      document.getElementById('cati' + origIdx).classList.remove('cat-selected');
+      S.catSelected = null;
+      return;
+    }
+    if (S.catSelected !== null) {
+      var prev = document.getElementById('cati' + S.catSelected);
+      if (prev) prev.classList.remove('cat-selected');
+    }
+    S.catSelected = origIdx;
+    document.getElementById('cati' + origIdx).classList.add('cat-selected');
+  };
+  window.pickCatBucket = function (catIdx) {
+    if (S.answered || S.catSelected === null) return;
+    var origIdx = S.catSelected;
+    var q = Qs[S.qi];
+    var oldCat = S.catPlacements[origIdx];
+    if (oldCat !== undefined) {
+      var oldBucket = document.getElementById('catbi' + oldCat);
+      var itemEl = document.getElementById('cati' + origIdx);
+      if (itemEl && oldBucket && oldBucket.contains(itemEl)) oldBucket.removeChild(itemEl);
+    }
+    S.catPlacements[origIdx] = catIdx;
+    var el = document.getElementById('cati' + origIdx);
+    el.classList.remove('cat-selected');
+    document.getElementById('catbi' + catIdx).appendChild(el);
+    S.catSelected = null;
+    var placed = Object.keys(S.catPlacements).length;
+    document.getElementById('cat-sub').disabled = (placed < q.items.length);
+  };
+  window.submitCat = function () {
+    if (S.answered) return; S.answered = true;
+    var q = Qs[S.qi];
+    var nCorrect = 0;
+    q.items.forEach(function (it, origIdx) {
+      var placed = S.catPlacements[origIdx];
+      var correct = (placed !== undefined && q.categories[placed] === it.category);
+      if (correct) nCorrect++;
+      var el = document.getElementById('cati' + origIdx);
+      if (el) el.classList.add(correct ? 'cat-correct' : 'cat-wrong');
+    });
+    var allOk = (nCorrect === q.items.length);
+    recordResult(allOk, nCorrect + ' / ' + q.items.length + ' placed correctly');
+    document.getElementById('cat-sub').disabled = true;
     document.getElementById('fb').outerHTML = feedbackHTML(allOk, q.exp);
     document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
   };

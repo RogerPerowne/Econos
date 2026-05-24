@@ -1031,14 +1031,14 @@
     if (S.answered || S.catSelected === null) return;
     var origIdx = S.catSelected;
     var q = Qs[S.qi];
+    var el = document.getElementById('cati' + origIdx);
+    if (!el) return;
     var oldCat = S.catPlacements[origIdx];
     if (oldCat !== undefined) {
       var oldBucket = document.getElementById('catbi' + oldCat);
-      var itemEl = document.getElementById('cati' + origIdx);
-      if (itemEl && oldBucket && oldBucket.contains(itemEl)) oldBucket.removeChild(itemEl);
+      if (oldBucket && oldBucket.contains(el)) oldBucket.removeChild(el);
     }
     S.catPlacements[origIdx] = catIdx;
-    var el = document.getElementById('cati' + origIdx);
     el.classList.remove('cat-selected');
     document.getElementById('catbi' + catIdx).appendChild(el);
     S.catSelected = null;

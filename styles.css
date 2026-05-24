@@ -5334,8 +5334,8 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: var(--sp-4);
   font-family: var(--font-display);
   font-variation-settings: "opsz" 16, "SOFT" 30, "WONK" 0;
-  font-size: var(--fs-lg);
-  line-height: 2;
+  font-size: var(--fs-md);
+  line-height: 1.75;
   color: var(--econ-ink);
 }
 .quiz-para-anchor {

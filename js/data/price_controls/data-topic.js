@@ -475,10 +475,10 @@ window.ECONOS_TOPIC = {
        ============================================================ */
     {
       id: 'price_controls_10',
+      template: 'welfare-gf-explorer',
       stepLabel: 'Learn: Step 10 of 10',
       title: 'Choosing the right tool + evaluation',
       tip: { icon: '🎯', tone: 'amber', text: '<strong>Match the tool to the failure.</strong> Externalities → price-based tools or permits. Public goods → state provision. Information gaps → labels and rules. Market power → regulation or price caps. Every tool risks government failure — the question is whether the gain outweighs the new distortion.' },
-      diagramPanel: { diagramKey: 'govtFailureDiagram', title: 'Government failure in the welfare diagram', titleAbove: true, titleEmoji: '⚠️', layout: 'stacked', bare: true },
       colA: 'Best-fit tool(s)',
       colB: 'Why it fits',
       rows: [

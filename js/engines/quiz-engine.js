@@ -37,6 +37,8 @@
     rose:   { fg: 'var(--econ-rose-700)',   bd: 'var(--econ-rose-100)',   bg: 'var(--econ-rose-50)' }
   };
 
+  var CE_PAIR_COLORS = ['#6366f1','#f59e0b','#10b981','#f43f5e','#8b5cf6','#06b6d4'];
+
   var Qs = [];
   var TOPIC = { title: 'Quiz', subtitle: '', backUrl: 'index.html', backLabel: 'Back to topic' };
   var S = { qi: 0, score: 0, results: [], answered: false,
@@ -554,84 +556,218 @@
   function renderCauseEffect(q) {
     var n = q.pairs.length;
     var causeOrder = [], effectOrder = [];
-    for (var i = 0; i < n; i++) { causeOrder.push(i); effectOrder.push(i); }
-    for (var j = causeOrder.length - 1; j > 0; j--) {
-      var kc = Math.floor(Math.random() * (j + 1));
-      var tc = causeOrder[j]; causeOrder[j] = causeOrder[kc]; causeOrder[kc] = tc;
+    var i, j, k, t;
+    for (i = 0; i < n; i++) { causeOrder.push(i); effectOrder.push(i); }
+    for (j = n - 1; j > 0; j--) {
+      k = Math.floor(Math.random() * (j + 1));
+      t = causeOrder[j]; causeOrder[j] = causeOrder[k]; causeOrder[k] = t;
     }
-    for (var jj = effectOrder.length - 1; jj > 0; jj--) {
-      var ke = Math.floor(Math.random() * (jj + 1));
-      var te = effectOrder[jj]; effectOrder[jj] = effectOrder[ke]; effectOrder[ke] = te;
+    for (j = n - 1; j > 0; j--) {
+      k = Math.floor(Math.random() * (j + 1));
+      t = effectOrder[j]; effectOrder[j] = effectOrder[k]; effectOrder[k] = t;
     }
-    S.ceCauseOrder = causeOrder;
+    S.ceCauseOrder  = causeOrder;
     S.ceEffectOrder = effectOrder;
-    S.ceSelected = null;
-    S.ceMatched = {};
+    S.ceSelected    = null;
+    S.ceLinks       = {};   // causeOrigIdx → { effectOrigIdx, pairNum, color }
+    S.ceEffectLinks = {};   // effectOrigIdx → causeOrigIdx (reverse)
+    S.cePairSeq     = 0;
+
     var causeItems = causeOrder.map(function (origIdx, dispIdx) {
-      return '<button class="quiz-ce-item quiz-ce-cause" id="cec' + dispIdx + '" onclick="pickCE(\'c\',' + dispIdx + ')">' + q.pairs[origIdx].cause + '</button>';
+      return '<button class="quiz-ce-tile quiz-ce-tile--cause" id="cec' + dispIdx + '" onclick="pickCE(\'c\',' + dispIdx + ')">' +
+        '<span class="quiz-ce-badge" id="cec-badge' + dispIdx + '"></span>' +
+        '<span class="quiz-ce-text">' + q.pairs[origIdx].cause + '</span>' +
+      '</button>';
     }).join('');
     var effectItems = effectOrder.map(function (origIdx, dispIdx) {
-      return '<button class="quiz-ce-item quiz-ce-effect" id="cee' + dispIdx + '" onclick="pickCE(\'e\',' + dispIdx + ')">' + q.pairs[origIdx].effect + '</button>';
+      return '<button class="quiz-ce-tile quiz-ce-tile--effect" id="cee' + dispIdx + '" onclick="pickCE(\'e\',' + dispIdx + ')">' +
+        '<span class="quiz-ce-badge" id="cee-badge' + dispIdx + '"></span>' +
+        '<span class="quiz-ce-text">' + q.pairs[origIdx].effect + '</span>' +
+      '</button>';
     }).join('');
+
     r(cardWrap(
       qHeader(q) +
-      '<div class="quiz-stem">' + q.stem + '</div>' +
-      '<p class="quiz-instr">Tap a cause, then tap its matching effect.</p>' +
+      '<div class="quiz-stem">' + (q.stem || '') + '</div>' +
+      '<p class="quiz-instr">Tap a cause, then tap its effect. Match all ' + n + ' pairs — then check your score.</p>' +
       '<div class="quiz-ce-grid">' +
-        '<div class="quiz-ce-col"><div class="quiz-ce-col__head">Cause</div>' + causeItems + '</div>' +
-        '<div class="quiz-ce-col"><div class="quiz-ce-col__head">Effect</div>' + effectItems + '</div>' +
+        '<div class="quiz-ce-col">' +
+          '<div class="quiz-ce-col__head quiz-ce-col__head--cause">Cause</div>' +
+          causeItems +
+        '</div>' +
+        '<div class="quiz-ce-col">' +
+          '<div class="quiz-ce-col__head quiz-ce-col__head--effect">Effect</div>' +
+          effectItems +
+        '</div>' +
       '</div>' +
-      '<div class="quiz-ce-tally" id="ce-tally">0 / ' + n + ' matched</div>' +
+      '<div class="quiz-ce-tally" id="ce-tally">0 / ' + n + ' paired</div>' +
+      '<button class="quiz-btn quiz-btn--primary quiz-ce-check-btn" id="ce-check" onclick="checkCE()" disabled>Check my answers →</button>' +
       '<div id="fb"></div><div id="nr" class="quiz-next-row"></div>'
     ));
   }
-  window.pickCE = function (col, dispIdx) {
-    if (S.answered) return;
-    var q = Qs[S.qi];
-    var origIdx = col === 'c' ? S.ceCauseOrder[dispIdx] : S.ceEffectOrder[dispIdx];
-    if (S.ceMatched[origIdx]) return;
-    var elId = col === 'c' ? 'cec' + dispIdx : 'cee' + dispIdx;
-    if (!S.ceSelected) {
-      S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
-      document.getElementById(elId).classList.add('ce-selected');
-      return;
-    }
-    if (S.ceSelected.col === col) {
-      var oldId = S.ceSelected.col === 'c' ? 'cec' + S.ceSelected.dispIdx : 'cee' + S.ceSelected.dispIdx;
-      document.getElementById(oldId).classList.remove('ce-selected');
-      S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
-      document.getElementById(elId).classList.add('ce-selected');
-      return;
-    }
-    var causeOrigIdx = S.ceSelected.col === 'c' ? S.ceSelected.origIdx : origIdx;
-    var effectOrigIdx = S.ceSelected.col === 'e' ? S.ceSelected.origIdx : origIdx;
-    var causeDispIdx  = S.ceSelected.col === 'c' ? S.ceSelected.dispIdx : dispIdx;
-    var effectDispIdx = S.ceSelected.col === 'e' ? S.ceSelected.dispIdx : dispIdx;
+
+  function ceUpdateTally(n) {
+    var linked = Object.keys(S.ceLinks).length;
+    var el = document.getElementById('ce-tally');
+    if (el) el.textContent = linked + ' / ' + n + ' paired';
+    var btn = document.getElementById('ce-check');
+    if (btn) btn.disabled = (linked < n);
+  }
+
+  function ceApplyLink(causeEl, effectEl, pairNum, color, cBadgeId, eBadgeId) {
+    causeEl.classList.add('ce-linked');
+    causeEl.style.setProperty('--ce-pair-color', color);
+    effectEl.classList.add('ce-linked');
+    effectEl.style.setProperty('--ce-pair-color', color);
+    var cb = document.getElementById(cBadgeId);
+    var eb = document.getElementById(eBadgeId);
+    if (cb) { cb.textContent = pairNum; cb.style.background = color; }
+    if (eb) { eb.textContent = pairNum; eb.style.background = color; }
+  }
+
+  function ceRemoveLink(causeDispIdx, effectDispIdx) {
     var causeEl  = document.getElementById('cec' + causeDispIdx);
     var effectEl = document.getElementById('cee' + effectDispIdx);
-    causeEl.classList.remove('ce-selected');
-    effectEl.classList.remove('ce-selected');
-    S.ceSelected = null;
-    if (causeOrigIdx === effectOrigIdx) {
-      S.ceMatched[causeOrigIdx] = true;
-      causeEl.classList.add('ce-matched');
-      effectEl.classList.add('ce-matched');
-      var matchCount = Object.keys(S.ceMatched).length;
-      document.getElementById('ce-tally').textContent = matchCount + ' / ' + q.pairs.length + ' matched';
-      if (matchCount === q.pairs.length) {
-        S.answered = true;
-        recordResult(true, 'All ' + q.pairs.length + ' pairs matched');
-        document.getElementById('fb').outerHTML = feedbackHTML(true, q.exp);
-        document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
-      }
-    } else {
-      causeEl.classList.add('ce-mismatch');
-      effectEl.classList.add('ce-mismatch');
-      setTimeout(function () {
-        causeEl.classList.remove('ce-mismatch');
-        effectEl.classList.remove('ce-mismatch');
-      }, 600);
+    if (causeEl) {
+      causeEl.classList.remove('ce-linked', 'ce-sel');
+      causeEl.style.removeProperty('--ce-pair-color');
+      var cb = document.getElementById('cec-badge' + causeDispIdx);
+      if (cb) { cb.textContent = ''; cb.style.background = ''; }
     }
+    if (effectEl) {
+      effectEl.classList.remove('ce-linked', 'ce-sel');
+      effectEl.style.removeProperty('--ce-pair-color');
+      var eb = document.getElementById('cee-badge' + effectDispIdx);
+      if (eb) { eb.textContent = ''; eb.style.background = ''; }
+    }
+  }
+
+  window.pickCE = function (col, dispIdx) {
+    if (S.answered) return;
+    var q  = Qs[S.qi];
+    var n  = q.pairs.length;
+    var origIdx = col === 'c' ? S.ceCauseOrder[dispIdx] : S.ceEffectOrder[dispIdx];
+    var elId    = col === 'c' ? 'cec' + dispIdx : 'cee' + dispIdx;
+    var el      = document.getElementById(elId);
+
+    // Clicking an already-linked tile unlinks it
+    if (col === 'c' && S.ceLinks[origIdx]) {
+      var lnk = S.ceLinks[origIdx];
+      var eDisp = S.ceEffectOrder.indexOf(lnk.effectOrigIdx);
+      ceRemoveLink(dispIdx, eDisp);
+      delete S.ceEffectLinks[lnk.effectOrigIdx];
+      delete S.ceLinks[origIdx];
+      S.ceSelected = null;
+      ceUpdateTally(n);
+      return;
+    }
+    if (col === 'e' && S.ceEffectLinks[origIdx] !== undefined) {
+      var cOrig = S.ceEffectLinks[origIdx];
+      var cDisp = S.ceCauseOrder.indexOf(cOrig);
+      ceRemoveLink(cDisp, dispIdx);
+      delete S.ceLinks[cOrig];
+      delete S.ceEffectLinks[origIdx];
+      S.ceSelected = null;
+      ceUpdateTally(n);
+      return;
+    }
+
+    // No prior selection — start one
+    if (!S.ceSelected) {
+      S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
+      el.classList.add('ce-sel');
+      return;
+    }
+
+    // Same item tapped again — deselect
+    if (S.ceSelected.col === col && S.ceSelected.dispIdx === dispIdx) {
+      el.classList.remove('ce-sel');
+      S.ceSelected = null;
+      return;
+    }
+
+    // Same column — switch selection
+    if (S.ceSelected.col === col) {
+      var prevId = col === 'c' ? 'cec' + S.ceSelected.dispIdx : 'cee' + S.ceSelected.dispIdx;
+      document.getElementById(prevId).classList.remove('ce-sel');
+      S.ceSelected = { col: col, dispIdx: dispIdx, origIdx: origIdx };
+      el.classList.add('ce-sel');
+      return;
+    }
+
+    // Different columns — create a link
+    var cDispIdx = S.ceSelected.col === 'c' ? S.ceSelected.dispIdx : dispIdx;
+    var cOrigIdx = S.ceSelected.col === 'c' ? S.ceSelected.origIdx : origIdx;
+    var eDispIdx = S.ceSelected.col === 'e' ? S.ceSelected.dispIdx : dispIdx;
+    var eOrigIdx = S.ceSelected.col === 'e' ? S.ceSelected.origIdx : origIdx;
+
+    // Remove any existing links on either slot
+    if (S.ceLinks[cOrigIdx]) {
+      var ex = S.ceLinks[cOrigIdx];
+      ceRemoveLink(cDispIdx, S.ceEffectOrder.indexOf(ex.effectOrigIdx));
+      delete S.ceEffectLinks[ex.effectOrigIdx];
+      delete S.ceLinks[cOrigIdx];
+    }
+    if (S.ceEffectLinks[eOrigIdx] !== undefined) {
+      var exC = S.ceEffectLinks[eOrigIdx];
+      ceRemoveLink(S.ceCauseOrder.indexOf(exC), eDispIdx);
+      delete S.ceLinks[exC];
+      delete S.ceEffectLinks[eOrigIdx];
+    }
+
+    // Register and display the new link
+    S.cePairSeq++;
+    var pairNum = S.cePairSeq;
+    var color   = CE_PAIR_COLORS[(pairNum - 1) % CE_PAIR_COLORS.length];
+    S.ceLinks[cOrigIdx]      = { effectOrigIdx: eOrigIdx, pairNum: pairNum, color: color };
+    S.ceEffectLinks[eOrigIdx] = cOrigIdx;
+
+    var causeEl  = document.getElementById('cec' + cDispIdx);
+    var effectEl = document.getElementById('cee' + eDispIdx);
+    causeEl.classList.remove('ce-sel');
+    effectEl.classList.remove('ce-sel');
+    ceApplyLink(causeEl, effectEl, pairNum, color, 'cec-badge' + cDispIdx, 'cee-badge' + eDispIdx);
+    S.ceSelected = null;
+    ceUpdateTally(n);
+  };
+
+  window.checkCE = function () {
+    if (S.answered) return;
+    S.answered = true;
+    var q = Qs[S.qi];
+    var n = q.pairs.length;
+    var correctCount = 0;
+
+    for (var cOrig in S.ceLinks) {
+      var lnk      = S.ceLinks[cOrig];
+      var cDispIdx = S.ceCauseOrder.indexOf(parseInt(cOrig, 10));
+      var eDispIdx = S.ceEffectOrder.indexOf(lnk.effectOrigIdx);
+      var correct  = parseInt(cOrig, 10) === lnk.effectOrigIdx;
+      var causeEl  = document.getElementById('cec' + cDispIdx);
+      var effectEl = document.getElementById('cee' + eDispIdx);
+      var cb       = document.getElementById('cec-badge' + cDispIdx);
+      var eb       = document.getElementById('cee-badge' + eDispIdx);
+      if (correct) {
+        correctCount++;
+        if (causeEl)  causeEl.classList.add('ce-correct');
+        if (effectEl) effectEl.classList.add('ce-correct');
+        if (cb) { cb.textContent = '✓'; cb.style.background = '#10B981'; }
+        if (eb) { eb.textContent = '✓'; eb.style.background = '#10B981'; }
+      } else {
+        if (causeEl)  causeEl.classList.add('ce-wrong');
+        if (effectEl) effectEl.classList.add('ce-wrong');
+        if (cb) { cb.textContent = '✗'; cb.style.background = '#F43F5E'; }
+        if (eb) { eb.textContent = '✗'; eb.style.background = '#F43F5E'; }
+      }
+    }
+
+    var allCorrect = correctCount === n;
+    var summary    = correctCount + ' / ' + n + ' pairs correct';
+    recordResult(allCorrect, summary);
+    var checkBtn = document.getElementById('ce-check');
+    if (checkBtn) checkBtn.style.display = 'none';
+    document.getElementById('fb').outerHTML = feedbackHTML(allCorrect, q.exp);
+    document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
   };
 
   /* ── Numeric input ── */

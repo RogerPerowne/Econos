@@ -149,45 +149,49 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 3 — Real vs nominal GDP ----- */
     {
       id: 'real-vs-nominal',
-      template: 'paired',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Real vs nominal GDP',
-      lede: "Nominal GDP rises when output rises AND when prices rise. Real GDP strips out inflation — and it's the only number that tells you if people are actually better off.",
-      bannerLabel: 'At current prices  vs  At constant prices',
-      bannerTone: 'blue',
-      pairs: [
+      lede: 'Real GDP is the only number that tells you whether people are actually better off.',
+      tip: { icon: '💡', tone: 'blue', text: '<strong>Nominal GDP</strong> values output at <strong>current prices</strong> (includes inflation). <strong>Real GDP</strong> values output at <strong>constant prices</strong> (strips out inflation).' },
+      causesLabel: 'Current prices vs constant prices',
+      causesEmoji: '⚖️',
+      causesStyle: 'plain-white',
+      causesCols: 2,
+      causes: [
         {
-          tone: 'amber',
-          label: 'Nominal GDP — at current prices',
-          drivers: [
-            'Includes the effect of price changes (inflation or deflation)',
-            'Tells us the size of the economy in <em>money terms today</em>',
-            'Useful for budgets, tax receipts and government debt measured in current \xa3',
-            'Rising 5% may just mean inflation — no actual growth',
-            'Reported as the headline GDP figure in news bulletins'
-          ],
-          example: '<strong>UK 2022:</strong> nominal GDP rose ~10% — but most of that was high inflation. Real GDP rose only ~4%. Quoting nominal GDP in a growth essay would lose marks.'
+          tone: 'blue',
+          icon: '💷',
+          head: 'Nominal GDP — at current prices',
+          body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">🏷️</span><div>Includes the effect of price changes (inflation or deflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📈</span><div>Tells us the size of the economy <strong>in money terms today</strong></div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📅</span><div>Useful for budgets, tax receipts and debt measured in £ today</div></div></div>'
         },
         {
           tone: 'green',
-          label: 'Real GDP — at constant prices',
-          drivers: [
-            'Measured at a fixed base-year price level (e.g. 2019 prices)',
-            'Strips out inflation — shows changes in the <em>volume</em> of output',
-            'Best for judging living standards, productivity and growth over time',
-            '<code>Real GDP = (Nominal GDP \xf7 GDP deflator) \xd7 100</code>',
-            'Example: Nominal \xa32,200bn \xf7 deflator 125 \xd7 100 = Real \xa31,760bn'
-          ],
-          example: '<strong>GDP per capita:</strong> Real GDP \xf7 Population. \xa31,760bn \xf7 66m = \xa326,667 per person. A growing GDP with a faster-growing population still means falling GDP per capita — the trap most students miss.'
+          icon: '📊',
+          head: 'Real GDP — at constant prices',
+          body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">✂️</span><div><strong>Strips out</strong> the effect of price changes (inflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">📊</span><div>Shows changes in the <strong>volume</strong> of output</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">🎯</span><div>Best for judging <strong>living standards</strong>, growth and productivity</div></div></div>'
+        }
+      ],
+      causes2Label: 'Converting and comparing',
+      causes2Emoji: '🧮',
+      causes2Style: 'plain-white',
+      causes2Cols: 2,
+      causes2: [
+        {
+          tone: 'amber',
+          icon: '🧮',
+          head: 'Converting nominal GDP to real GDP',
+          body: 'Using a price index (the <strong>GDP deflator</strong>):<br><br><div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:14px 16px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#B45309;font-size:14px;line-height:1.5;">Real GDP = <br>Nominal GDP ÷ GDP deflator × 100<br><span style="font-size:11px;color:#92400E;">(base year deflator = 100)</span></div><br><div style="background:#FAFAFA;border-radius:8px;padding:10px 12px;font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">Worked example</strong><br>Nominal GDP (2024) = £2,200bn<br>GDP deflator (2024) = 125<br>Real GDP = 2,200 ÷ 125 × 100<br><strong style="color:#0B1426;">= £1,760bn (in base-year prices)</strong></div>'
+        },
+        {
+          tone: 'purple',
+          icon: '👥',
+          head: 'GDP per capita — output per person',
+          body: 'Adjusts output for population size so we can compare <strong>living standards</strong> across time and between countries.<br><br><div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:8px;padding:14px 16px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#6D28D9;font-size:14px;line-height:1.5;">GDP per capita = <br>Real GDP ÷ Population</div><br><div style="background:#FAFAFA;border-radius:8px;padding:10px 12px;font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#6D28D9;">Worked example</strong><br>Real GDP (2024) = £1,760bn<br>Population (2024) = 66 million<br>GDP per capita = 1,760 ÷ 66<br><strong style="color:#6D28D9;">= £26,667 per person</strong></div>'
         }
       ],
       examEdge: {
-        title: 'Always write “real”',
-        text: 'When asked about economic growth or living standards, <strong>always specify real GDP</strong>. Writing “GDP rose” without “real” signals you haven\'t adjusted for inflation. If prices rise 5% and nominal GDP rises 5%, real GDP is unchanged — no actual growth has occurred. Essays want “real GDP” or “real GDP per capita” — one word is worth marks.'
-      },
-      policy: {
-        title: 'The GDP deflator vs CPI',
-        text: 'The GDP deflator covers <em>all</em> goods and services produced in the economy — including investment goods, government services and exports. CPI covers only the typical consumer\'s shopping basket. The deflator is the right price index for converting nominal to real GDP. CPI is the right one for measuring household inflation.'
+        title: 'Examiner tip',
+        text: 'Essays usually want <strong>real GDP</strong> rather than nominal GDP. Writing just "GDP rose" signals you haven\'t adjusted for inflation — instant lost marks. Use <strong>real GDP</strong> (or <strong>real GDP per capita</strong>) when judging economic performance and living standards. A growing GDP with a faster-growing population still means falling GDP per capita — the trap most students miss.'
       }
     },
 

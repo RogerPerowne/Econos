@@ -77,7 +77,7 @@
       });
 
       var cardsList = T.cards.map(function (c, i) {
-        var name = SHORT_NAMES[c.id] || c.id;
+        var name = c.title || SHORT_NAMES[c.id] || c.id;
         return ''
           + '<a href="' + topicHref + '" class="cards-list__item is-done" data-card-idx="' + i + '">'
           +   '<div class="cards-list__num">' + I.check + '</div>'

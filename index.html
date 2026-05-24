@@ -694,9 +694,10 @@
       }
 
       /* ────────── URL helpers ────────── */
+      /* Always route to Learn It from the home menu — the more
+         sophisticated stage-picker will return once the menu UX
+         is reworked. Stage pips below still reflect availability. */
       function bestHref(topic) {
-        if (topic.available.land)  return 'land.html?topic='  + topic.id;
-        if (topic.available.link)  return 'link.html?topic='  + topic.id;
         if (topic.available.learn) return 'learn.html?topic=' + topic.id;
         return '#';
       }

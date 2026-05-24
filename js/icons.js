@@ -14082,21 +14082,21 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAND card (x=10, y=40, w=100, h=76, rx=12) ===== -->
       <rect x="10" y="40" width="100" height="76" rx="12" fill="url(#ec-green)" stroke="#34D399" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <circle cx="52" cy="55" r="3.2" fill="#FBBF24"/>
-      <polygon points="39,69 46,57 53,69" fill="#34D399" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
-      <polygon points="47,69 55,57 63,69" fill="#6EE7B7" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
+      <circle cx="61" cy="55" r="3.2" fill="#FBBF24"/>
+      <polygon points="48,69 55,57 62,69" fill="#34D399" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="56,69 64,57 72,69" fill="#6EE7B7" stroke="#065F46" stroke-width="1.4" stroke-linejoin="round"/>
       <text x="60" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#065F46" letter-spacing="0.5">LAND</text>
       <rect x="36" y="90" width="48" height="14" rx="7" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
       <text x="60" y="100" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Rent</text>
 
       <!-- ===== LABOUR card (x=10, y=140, w=100, h=76, rx=12) ===== -->
       <rect x="10" y="140" width="100" height="76" rx="12" fill="url(#ec-purple)" stroke="#A78BFA" stroke-width="1.8" filter="url(#ec-shadow)"/>
-      <circle cx="60" cy="153" r="4" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 53 160 Q 60 153 67 160 Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <circle cx="46" cy="155" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 40 161 Q 46 155 52 161 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
-      <circle cx="74" cy="155" r="3.2" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
-      <path d="M 68 161 Q 74 155 80 161 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="60" cy="150" r="4.5" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2"/>
+      <path d="M 51 164 Q 60 150 69 164 Z" fill="#A78BFA" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="46" cy="152" r="3.8" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
+      <path d="M 39 165 Q 46 152 53 165 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="74" cy="152" r="3.8" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2"/>
+      <path d="M 67 165 Q 74 152 81 165 Z" fill="#C4B5FD" stroke="#5B21B6" stroke-width="1.2" stroke-linejoin="round"/>
       <text x="60" y="184" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6" letter-spacing="0.5">LABOUR</text>
       <rect x="32" y="190" width="56" height="14" rx="7" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
       <text x="60" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Wages</text>

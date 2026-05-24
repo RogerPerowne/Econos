@@ -840,75 +840,144 @@
     }
     S.mpTiles    = tiles;
     S.mpSelected = null;
-    S.mpMatched  = {};
+    S.mpLinks    = {};   // tileIdx → pairedWithIdx (both directions)
+    S.mpPairSeq  = 0;
+
     var tileHtml = tiles.map(function (tile, i) {
-      return '<button class="quiz-mp-tile" id="mpt' + i + '" onclick="pickMP(' + i + ')">' + tile.text + '</button>';
+      return '<button class="quiz-mp-tile" id="mpt' + i + '" onclick="pickMP(' + i + ')">' +
+        '<span class="quiz-mp-badge" id="mpb' + i + '"></span>' +
+        '<span class="quiz-mp-text">' + tile.text + '</span>' +
+      '</button>';
     }).join('');
+
     r(cardWrap(
       qHeader(q) +
       '<div class="quiz-stem">' + q.stem + '</div>' +
-      '<p class="quiz-instr">Tap two tiles that belong together. Matched pairs will lock green.</p>' +
-      '<div class="quiz-mp-tally" id="mp-tally">0 / ' + q.pairs.length + ' pairs found</div>' +
+      '<p class="quiz-instr">Tap two tiles that belong together. Pair all ' + q.pairs.length + ' — then check your score.</p>' +
       '<div class="quiz-mp-grid">' + tileHtml + '</div>' +
-      '<div class="quiz-submit-row"><button class="quiz-btn quiz-btn--ghost" id="mp-reveal" onclick="revealMP()">Reveal answers</button></div>' +
+      '<div class="quiz-mp-tally" id="mp-tally">0 / ' + q.pairs.length + ' paired</div>' +
+      '<button class="quiz-btn quiz-btn--primary quiz-mp-check-btn" id="mp-check" onclick="checkMP()" disabled>Check my answers →</button>' +
       '<div id="fb"></div><div id="nr" class="quiz-next-row"></div>'
     ));
   }
+
+  function mpUpdateTally(n) {
+    var paired = Object.keys(S.mpLinks).length / 2;
+    var el = document.getElementById('mp-tally');
+    if (el) el.textContent = paired + ' / ' + n + ' paired';
+    var btn = document.getElementById('mp-check');
+    if (btn) btn.disabled = (paired < n);
+  }
+
+  function mpApplyLink(idxA, idxB, pairNum, color) {
+    var elA = document.getElementById('mpt' + idxA);
+    var elB = document.getElementById('mpt' + idxB);
+    var bA  = document.getElementById('mpb' + idxA);
+    var bB  = document.getElementById('mpb' + idxB);
+    [elA, elB].forEach(function (el) {
+      if (!el) return;
+      el.classList.add('mp-linked');
+      el.style.setProperty('--mp-pair-color', color);
+    });
+    if (bA) { bA.textContent = pairNum; bA.style.background = color; }
+    if (bB) { bB.textContent = pairNum; bB.style.background = color; }
+  }
+
+  function mpRemoveLink(idxA, idxB) {
+    [idxA, idxB].forEach(function (idx) {
+      var el = document.getElementById('mpt' + idx);
+      var b  = document.getElementById('mpb' + idx);
+      if (el) { el.classList.remove('mp-linked', 'mp-sel'); el.style.removeProperty('--mp-pair-color'); }
+      if (b)  { b.textContent = ''; b.style.background = ''; }
+    });
+    delete S.mpLinks[idxA];
+    delete S.mpLinks[idxB];
+  }
+
   window.pickMP = function (i) {
     if (S.answered) return;
-    if (S.mpMatched[i]) return;
+    var q = Qs[S.qi];
+    var n = q.pairs.length;
     var el = document.getElementById('mpt' + i);
-    if (S.mpSelected === null) {
-      S.mpSelected = i;
-      el.classList.add('mp-selected');
+
+    // Clicking a linked tile → unlink
+    if (S.mpLinks[i] !== undefined) {
+      mpRemoveLink(i, S.mpLinks[i]);
+      S.mpSelected = null;
+      mpUpdateTally(n);
       return;
     }
+
+    // No selection yet
+    if (S.mpSelected === null) {
+      S.mpSelected = i;
+      el.classList.add('mp-sel');
+      return;
+    }
+
+    // Same tile → deselect
     if (S.mpSelected === i) {
-      el.classList.remove('mp-selected');
+      el.classList.remove('mp-sel');
       S.mpSelected = null;
       return;
     }
-    var prevIdx  = S.mpSelected;
-    var prevEl   = document.getElementById('mpt' + prevIdx);
-    var prevTile = S.mpTiles[prevIdx];
-    var curTile  = S.mpTiles[i];
-    prevEl.classList.remove('mp-selected');
-    el.classList.remove('mp-selected');
+
+    // Different tile → link them
+    var prevIdx = S.mpSelected;
+    var prevEl  = document.getElementById('mpt' + prevIdx);
+    prevEl.classList.remove('mp-sel');
+    el.classList.remove('mp-sel');
     S.mpSelected = null;
-    if (prevTile.pairId === curTile.pairId && prevTile.side !== curTile.side) {
-      S.mpMatched[prevIdx] = true;
-      S.mpMatched[i]       = true;
-      prevEl.classList.add('mp-matched');
-      el.classList.add('mp-matched');
-      var matchCount = Object.keys(S.mpMatched).length / 2;
-      var q = Qs[S.qi];
-      document.getElementById('mp-tally').textContent = matchCount + ' / ' + q.pairs.length + ' pairs found';
-      if (matchCount === q.pairs.length) {
-        S.answered = true;
-        recordResult(true, 'All ' + q.pairs.length + ' pairs matched');
-        var revBtn = document.getElementById('mp-reveal');
-        if (revBtn) revBtn.style.display = 'none';
-        document.getElementById('fb').outerHTML = feedbackHTML(true, q.exp);
-        document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
-      }
-    } else {
-      prevEl.classList.add('mp-wrong');
-      el.classList.add('mp-wrong');
-      setTimeout(function () {
-        prevEl.classList.remove('mp-wrong');
-        el.classList.remove('mp-wrong');
-      }, 600);
-    }
+
+    // Remove any existing links on either slot
+    if (S.mpLinks[prevIdx] !== undefined) mpRemoveLink(prevIdx, S.mpLinks[prevIdx]);
+    if (S.mpLinks[i]       !== undefined) mpRemoveLink(i, S.mpLinks[i]);
+
+    S.mpPairSeq++;
+    var pairNum = S.mpPairSeq;
+    var color   = CE_PAIR_COLORS[(pairNum - 1) % CE_PAIR_COLORS.length];
+    S.mpLinks[prevIdx] = i;
+    S.mpLinks[i]       = prevIdx;
+    mpApplyLink(prevIdx, i, pairNum, color);
+    mpUpdateTally(n);
   };
-  window.revealMP = function () {
-    if (S.answered) return; S.answered = true;
+
+  window.checkMP = function () {
+    if (S.answered) return;
+    S.answered = true;
     var q = Qs[S.qi];
-    recordResult(false, 'Revealed without completing');
-    S.mpTiles.forEach(function (tile, i) {
-      var el = document.getElementById('mpt' + i);
-      if (!S.mpMatched[i]) el.classList.add('mp-reveal');
+    var n = q.pairs.length;
+    var seen = {};
+    var correctCount = 0;
+
+    S.mpTiles.forEach(function (tile, idx) {
+      if (seen[idx]) return;
+      var partnerIdx = S.mpLinks[idx];
+      if (partnerIdx === undefined) return;
+      seen[idx] = seen[partnerIdx] = true;
+      var partner = S.mpTiles[partnerIdx];
+      var correct  = tile.pairId === partner.pairId && tile.side !== partner.side;
+      var el  = document.getElementById('mpt' + idx);
+      var elP = document.getElementById('mpt' + partnerIdx);
+      var b   = document.getElementById('mpb' + idx);
+      var bP  = document.getElementById('mpb' + partnerIdx);
+      if (correct) {
+        correctCount++;
+        [el, elP].forEach(function (e) { if (e) e.classList.add('mp-correct'); });
+        if (b)  { b.textContent  = '✓'; b.style.background  = '#10B981'; }
+        if (bP) { bP.textContent = '✓'; bP.style.background = '#10B981'; }
+      } else {
+        [el, elP].forEach(function (e) { if (e) e.classList.add('mp-wrong'); });
+        if (b)  { b.textContent  = '✗'; b.style.background  = '#F43F5E'; }
+        if (bP) { bP.textContent = '✗'; bP.style.background = '#F43F5E'; }
+      }
     });
-    document.getElementById('fb').outerHTML = feedbackHTML(false, q.exp);
+
+    var allCorrect = correctCount === n;
+    recordResult(allCorrect, correctCount + ' / ' + n + ' pairs correct');
+    var checkBtn = document.getElementById('mp-check');
+    if (checkBtn) checkBtn.style.display = 'none';
+    document.getElementById('fb').outerHTML = feedbackHTML(allCorrect, q.exp);
     document.getElementById('nr').outerHTML = nextBtnHTML(S.qi);
   };
 

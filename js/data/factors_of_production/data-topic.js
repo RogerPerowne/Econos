@@ -1,8 +1,9 @@
 /* ============================================================
    ECONOS — content data for factors_of_production
    8 cards · Edexcel Theme 1.1.3
-   Uses Theme 1 rich templates: framing, paired, ad-interactive,
-   mechanisms — for maximum visual richness.
+   Uses Theme 1 rich templates (framing, paired, ad-interactive,
+   mechanisms) — with ad-interactive used in no-step mode for the
+   2×2 factor grids on cards 1, 5, 6.
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -33,75 +34,120 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — The Four Factors of Production ----- */
+    /* ----- CARD 1 — The Four Factors of Production -----
+       2×2 factor grid (via ad-interactive causes) + factor flow */
     {
       id: 'four-factors',
-      template: 'framing',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The Four Factors of Production',
-      lede: 'Every economy combines four key inputs to produce goods and services. Each has a role and earns a reward.',
-      branches: [
+      lede: 'Every economy combines four key inputs to produce goods and services. Each has a distinct role — and each earns a distinct reward.',
+      causesLabel: 'The four factors at a glance',
+      causesEmoji: '🧩',
+      causes: [
         {
           tone: 'green',
-          label: '🏞️ Land',
-          sub: '<strong>Natural resources</strong> used in production: agricultural land, minerals, oil, water, forests, the radio spectrum. Reward: <strong>Rent</strong>.'
+          icon: '🏞️',
+          head: 'Land',
+          body: 'Natural resources used in production.<br><br><strong>Examples:</strong> land, minerals, water, forests<br><br><span style="display:inline-block;margin-top:4px;padding:5px 12px;border-radius:999px;background:#D1FAE5;color:#065F46;font-size:12px;font-weight:700;">💰 Reward: Rent</span>'
         },
         {
           tone: 'purple',
-          label: '👥 Labour',
-          sub: '<strong>Human effort</strong> — physical and mental — used in production: teachers, nurses, builders, software developers. Reward: <strong>Wages</strong>.'
+          icon: '👥',
+          head: 'Labour',
+          body: 'Human effort, physical and mental.<br><br><strong>Examples:</strong> teachers, nurses, builders, software developers<br><br><span style="display:inline-block;margin-top:4px;padding:5px 12px;border-radius:999px;background:#EDE9FE;color:#5B21B6;font-size:12px;font-weight:700;">💰 Reward: Wages</span>'
         },
         {
           tone: 'amber',
-          label: '🏭 Capital',
-          sub: '<strong>Man-made resources</strong> used to produce other goods and services (not money): machinery, tools, buildings, technology. Reward: <strong>Interest</strong>.'
+          icon: '🏭',
+          head: 'Capital',
+          body: 'Man-made resources used to produce other goods and services — <strong>not money</strong>.<br><br><strong>Examples:</strong> machinery, tools, buildings, technology<br><br><span style="display:inline-block;margin-top:4px;padding:5px 12px;border-radius:999px;background:#FEF3C7;color:#92400E;font-size:12px;font-weight:700;">💰 Reward: Interest</span>'
         },
         {
           tone: 'rose',
-          label: '🚀 Enterprise',
-          sub: 'The <strong>risk-taking and organising function</strong> that combines the other factors: entrepreneurs, managers, business leaders. Reward: <strong>Profit</strong> (or loss).'
+          icon: '🚀',
+          head: 'Enterprise',
+          body: 'The risk-taking and organising function that combines the other factors.<br><br><strong>Examples:</strong> entrepreneurs, managers, business leaders<br><br><span style="display:inline-block;margin-top:4px;padding:5px 12px;border-radius:999px;background:#FEE2E2;color:#B91C1C;font-size:12px;font-weight:700;">💰 Reward: Profit</span>'
         }
       ],
+      flowTitle: 'How the four factors combine',
+      flowEmoji: '⚙️',
+      flow: [
+        { tone: 'green',  icon: '🏞️', title: 'Land',         sub: 'Natural resources' },
+        { tone: 'purple', icon: '👥', title: 'Labour',       sub: 'Human effort' },
+        { tone: 'amber',  icon: '🏭', title: 'Capital',      sub: 'Man-made resources' },
+        { tone: 'rose',   icon: '🚀', title: 'Enterprise',   sub: 'Risk + coordination' },
+        { tone: 'blue',   icon: '🛒', title: 'Goods & services', sub: 'The output that supports living standards' }
+      ],
+      economistQuote: {
+        portraitKey: 'economistAdamSmith',
+        tone: 'blue',
+        label: 'Economist insight · Adam Smith, the founding view',
+        quote: 'The annual labour of every nation is the fund which originally supplies it with all the necessaries and conveniencies of life… which is regulated by the skill, dexterity, and judgment with which its labour is generally applied.',
+        attribution: 'Adam Smith, Wealth of Nations (1776)'
+      },
       examEdge: {
         title: 'Why this matters',
         text: 'The factors of production have different characteristics and earn different rewards. Later cards explore the <strong>quantity vs quality</strong> distinction, <strong>factor mobility</strong>, and how to evaluate the relative importance of each. Master this framework and you can answer most resource-allocation questions.'
       }
     },
 
-    /* ----- CARD 2 — Land ----- */
+    /* ----- CARD 2 — Land -----
+       3-column tile row + remember footer */
     {
       id: 'land',
-      template: 'mechanisms',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Land',
       lede: 'Land is <strong>everything provided by nature</strong> and used in the production of goods and services. It is not just fields — it includes all natural resources.',
-      mechanisms: [
+      causesLabel: 'Land at a glance',
+      causesEmoji: '🌿',
+      causes: [
         {
-          num: '1',
           tone: 'green',
-          title: 'Examples of land',
-          text: 'Agricultural land · oil and gas · minerals (iron, copper, lithium) · water · forests · fisheries · the radio spectrum. Anything provided by nature that can be used in production.'
+          icon: '🌱',
+          head: 'Examples of land',
+          body: '<strong>Agricultural land</strong><br><strong>Oil and gas</strong><br><strong>Minerals</strong> (iron, copper, lithium)<br><strong>Water</strong> · <strong>Forests</strong> · <strong>Fisheries</strong><br><strong>The radio spectrum</strong><br><br><em>Anything provided by nature.</em>'
         },
         {
-          num: '2',
           tone: 'amber',
-          title: 'Key characteristics',
-          text: '<strong>Fixed in total supply</strong> globally (you can\'t make more land). <strong>Usable supply can change</strong> with technology and discovery (fracking, satellite imaging). <strong>Non-homogeneous</strong> — location matters hugely.'
+          icon: '⭐',
+          head: 'Key characteristics',
+          body: '<strong>Fixed in total supply</strong> globally — you can\'t make more land.<br><br><strong>Usable supply can change</strong> with technology and discovery (fracking, satellites).<br><br><strong>Non-homogeneous</strong> — location matters hugely.'
         },
         {
-          num: '3',
           tone: 'purple',
-          title: 'Factor reward: Rent',
-          text: 'Land earns <strong>rent</strong> — the income earned from allowing others to use natural resources or locations. The fixed supply of land means rent is determined almost entirely by demand.'
+          icon: '🤝',
+          head: 'Factor reward',
+          body: 'Land earns <strong>Rent</strong>.<br><br>Rent is the income earned from allowing others to use natural resources or locations.<br><br>Because land\'s supply is fixed, rent is driven almost entirely by <em>demand</em>.'
         }
       ],
-      examEdge: {
-        title: 'Why this matters',
-        text: 'Scarce natural resources lie behind many environmental economics debates — from climate change and deforestation to water rights, fisheries and land use. The fixed-supply nature of land also drives much of the conversation about housing affordability and urban planning.'
+      causes2Label: 'Why this matters',
+      causes2Emoji: '🌍',
+      causes2: [
+        {
+          tone: 'blue',
+          icon: '🏞️',
+          head: 'Land is not just fields',
+          body: 'It includes <strong>all natural resources</strong> — including non-physical ones. The radio spectrum used by mobile networks is land. So is the geostationary orbit used by satellites.'
+        },
+        {
+          tone: 'green',
+          icon: '♻️',
+          head: 'Environmental economics',
+          body: 'Scarce natural resources lie behind many policy debates — climate change, deforestation, water rights, fisheries, urban planning. Fixed supply also drives housing affordability.'
+        }
+      ],
+      economistQuote: {
+        portraitKey: 'economistRicardo',
+        tone: 'green',
+        label: 'Economist insight · David Ricardo on rent',
+        quote: 'Rent is that portion of the produce of the earth, which is paid to the landlord for the use of the original and indestructible powers of the soil.',
+        attribution: 'David Ricardo, Principles of Political Economy (1817)'
       },
-      connection: {
-        title: 'Remember',
-        text: 'Land is not just fields — it includes <strong>all natural resources</strong>. The radio spectrum (used by mobile networks) is land. So is the geostationary orbit used by satellites.'
+      examEdge: {
+        title: 'Exam edge',
+        text: 'When asked about land, <strong>specify whether you mean physical land or the broader concept of natural resources</strong>. The fixed-supply property of land is the most-tested feature — it makes rent demand-driven and explains why land values rise so sharply with population growth.'
       }
     },
 
@@ -144,11 +190,18 @@ window.ECONOS_TOPIC = {
       flowTitle: 'How labour supply is built',
       flowEmoji: '🧱',
       flow: [
-        { tone: 'green',  icon: '🎓', title: 'Skills & education',     sub: 'Build human capital — the quality side of labour.' },
+        { tone: 'green',  icon: '🎓', title: 'Skills & education',     sub: 'Build human capital — the quality side.' },
         { tone: 'blue',   icon: '👥', title: 'Available labour force', sub: 'The pool of people who could work.' },
         { tone: 'purple', icon: '🎯', title: 'Participation & incentives', sub: 'Decisions about whether and how much to work.' }
       ],
       conclusion: { title: 'Why labour supply matters', text: 'Labour supply is shaped by <strong>both economic incentives and wider social policy</strong>. Understanding these influences helps explain changes in employment, participation rates and wage levels — and why two countries with similar populations can have very different labour markets.' },
+      economistQuote: {
+        portraitKey: 'economistGoldin',
+        tone: 'purple',
+        label: 'Economist insight · Claudia Goldin on women in the labour force',
+        quote: 'The history of women\'s involvement in the labor force is the history of human capital — of women\'s growing access to education, careers, and the right to combine family and work.',
+        attribution: 'Claudia Goldin, Nobel Prize in Economics (2023)'
+      },
       examEdge: {
         title: 'Quantity vs quality is the key distinction',
         text: 'Top-band answers always distinguish the <em>quantity</em> of labour from its <em>quality</em>. Two economies can have the same workforce size but very different output if their <strong>human capital</strong> — skills, education, health — differs. This is why education and training feature so heavily in supply-side policy.'
@@ -200,83 +253,136 @@ window.ECONOS_TOPIC = {
         }
       ],
       conclusion: { title: 'Why capital accumulation matters', text: 'Capital accumulation can raise long-run productivity and living standards — but only if <strong>investment is sustained</strong> and capital is <strong>efficiently used</strong>. China invests ~42% of GDP; the UK and US invest ~18%. Decades of high investment can transform an economy.' },
+      economistQuote: {
+        portraitKey: 'economistKeynes',
+        tone: 'amber',
+        label: 'Economist insight · Keynes on investment',
+        quote: 'A large proportion of our positive activities depend on spontaneous optimism rather than mathematical expectations… If animal spirits are dimmed, enterprise will fade and die.',
+        attribution: 'John Maynard Keynes, General Theory (1936)'
+      },
       examEdge: {
         title: 'Capital ≠ money',
         text: 'The single most common exam mistake on this topic. <strong>Capital is physical productive resources</strong>: machines, factories, roads, tools. Money used to buy them is <em>financial</em> capital — a different concept. Always specify which one you mean.'
       }
     },
 
-    /* ----- CARD 5 — Enterprise ----- */
+    /* ----- CARD 5 — Enterprise -----
+       4-function grid + factor-combination flow + worked example */
     {
       id: 'enterprise',
-      template: 'mechanisms',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Enterprise',
       lede: 'Enterprise is the <strong>risk-taking and decision-making function</strong> that organises the other three factors of production — land, labour and capital — to produce goods and services.',
-      mechanisms: [
+      flowTitle: 'How enterprise combines the other factors',
+      flowEmoji: '⚙️',
+      flow: [
+        { tone: 'green',  icon: '🏞️', title: 'Land',         sub: 'Natural resources' },
+        { tone: 'purple', icon: '👥', title: 'Labour',       sub: 'Human effort' },
+        { tone: 'amber',  icon: '🏭', title: 'Capital',      sub: 'Man-made resources' },
+        { tone: 'rose',   icon: '🚀', title: 'Enterprise',   sub: 'Combines + decides + bears risk' },
+        { tone: 'blue',   icon: '🛒', title: 'Goods & services', sub: 'The output' }
+      ],
+      causesLabel: 'The four functions of enterprise',
+      causesEmoji: '🎯',
+      causes: [
         {
-          num: '1',
           tone: 'blue',
-          title: 'Identifies gaps in markets',
-          text: 'Entrepreneurs spot <strong>unmet needs</strong> and opportunities others overlook. Without this function, profitable trades and useful products simply don\'t happen.'
+          icon: '🔍',
+          head: 'Identifies gaps in markets',
+          body: 'Spots <strong>unmet needs</strong> and opportunities others overlook. Without this function, profitable trades and useful products simply don\'t happen.'
         },
         {
-          num: '2',
           tone: 'purple',
-          title: 'Bears uncertainty and risk',
-          text: 'Entrepreneurs invest time and money <strong>with no guarantee of success</strong>. They bear the loss if the venture fails. This is what distinguishes enterprise from labour.'
+          icon: '🛡️',
+          head: 'Bears uncertainty and risk',
+          body: 'Invests time and money <strong>with no guarantee of success</strong>. Bears the loss if the venture fails. This is what distinguishes enterprise from labour.'
         },
         {
-          num: '3',
           tone: 'amber',
-          title: 'Innovates',
-          text: 'Enterprise creates <strong>new ideas, products or better ways of doing things</strong>. Schumpeter\'s "creative destruction" — old firms displaced by innovative new ones — is the engine of long-run growth.'
+          icon: '💡',
+          head: 'Innovates',
+          body: 'Creates <strong>new ideas, products or better ways of doing things</strong>. Schumpeter\'s "creative destruction" is the engine of long-run growth.'
         },
         {
-          num: '4',
           tone: 'green',
-          title: 'Coordinates resources and decisions',
-          text: 'Enterprise <strong>brings land, labour and capital together</strong> and makes the key decisions: what to produce, how to produce, how to price, who to hire. Without this organising function, the other factors sit idle.'
+          icon: '🧩',
+          head: 'Coordinates resources',
+          body: 'Brings <strong>land, labour and capital together</strong> and makes the key decisions: what to produce, how, at what price, who to hire.'
         }
       ],
+      pairLabel: 'Reward and a worked example',
+      pairEmoji: '💼',
+      left: {
+        tone: 'rose',
+        icon: '💰',
+        iconStyle: 'circle',
+        label: 'Factor reward: Profit (or loss)',
+        text: 'Enterprise earns <strong>profit</strong> — the <em>residual</em> return after rent, wages and interest have been paid. Profit is <strong>not guaranteed</strong>: a failed venture earns a loss, which the entrepreneur absorbs.'
+      },
+      right: {
+        tone: 'blue',
+        icon: '🍳',
+        iconStyle: 'circle',
+        label: 'Real-world example',
+        text: 'A founder spots demand for a meal-kit service. They <strong>hire cooks</strong> (labour), <strong>rent a kitchen</strong> (land), <strong>buy ovens</strong> (capital) and launch the business — hoping customers buy and the business makes a profit. <em>That is enterprise.</em>'
+      },
+      economistQuote: {
+        portraitKey: 'economistSchumpeter',
+        tone: 'rose',
+        label: 'Economist insight · Schumpeter on the entrepreneur',
+        quote: 'The function of entrepreneurs is to reform or revolutionize the pattern of production… This process of Creative Destruction is the essential fact about capitalism.',
+        attribution: 'Joseph Schumpeter, Capitalism, Socialism and Democracy (1942)'
+      },
       examEdge: {
         title: 'Evaluating enterprise',
         text: 'Enterprise can be <strong>encouraged or suppressed</strong> by the tax and regulatory environment. Lower business taxes, fewer bureaucratic barriers and strong property rights promote enterprise. High taxes, red tape and policy uncertainty discourage it. <em>"Without enterprise, resources stay idle"</em> is a powerful evaluation line.'
-      },
-      connection: {
-        title: 'Real-world example',
-        text: 'A founder spots demand for a meal-kit service. They <strong>hire cooks (labour)</strong>, <strong>rent a kitchen (land)</strong>, <strong>buy ovens (capital)</strong>, and launch the business — hoping customers buy and the business makes a profit. <em>That</em> is enterprise: the function that brings the other three factors together and bears the risk.'
       }
     },
 
-    /* ----- CARD 6 — Factor Rewards Summary ----- */
+    /* ----- CARD 6 — Factor Rewards Summary -----
+       2×2 grid: each tile shows Factor → Reward + Why */
     {
       id: 'factor-rewards',
-      template: 'framing',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Factor Rewards Summary',
       lede: 'Each factor of production earns a different reward because each contributes something different to the production process. Lock these four pairings in.',
-      branches: [
+      causesLabel: 'Match each factor to its reward',
+      causesEmoji: '🎁',
+      causes: [
         {
           tone: 'green',
-          label: '🏞️ Land → Rent',
-          sub: 'Payment for the use of <strong>natural resources</strong>. Land is a fixed supply. Whoever owns it can charge others to use it for production, earning rent.'
+          icon: '🏞️',
+          head: 'Land → Rent',
+          body: '<strong>Definition:</strong> payment for the use of natural resources.<br><br><strong>Why this reward?</strong> Land is in fixed supply. Whoever owns it can charge others to use it for production, earning rent.'
         },
         {
           tone: 'purple',
-          label: '👥 Labour → Wages',
-          sub: 'Payment for the <strong>physical and mental effort</strong> of people. Workers give up their time and energy. Wages compensate them for this contribution to production.'
+          icon: '👥',
+          head: 'Labour → Wages',
+          body: '<strong>Definition:</strong> payment for the physical and mental effort of people.<br><br><strong>Why this reward?</strong> Workers give up their time and energy. Wages compensate them for this contribution to production.'
         },
         {
           tone: 'amber',
-          label: '🏭 Capital → Interest',
-          sub: 'Payment for the use of <strong>man-made productive resources</strong>. Capital goods wear out or could be used elsewhere. Interest rewards owners for their use and for giving up other options.'
+          icon: '🏭',
+          head: 'Capital → Interest',
+          body: '<strong>Definition:</strong> payment for the use of man-made productive resources.<br><br><strong>Why this reward?</strong> Capital wears out or could be used elsewhere. Interest rewards owners for use and the opportunity cost.'
         },
         {
           tone: 'rose',
-          label: '🚀 Enterprise → Profit',
-          sub: 'The <strong>residual return</strong> after all other costs have been paid. Entrepreneurs take risks and make decisions. Profit is what is <em>left over</em> after rent, wages and interest — it is not guaranteed.'
+          icon: '🚀',
+          head: 'Enterprise → Profit',
+          body: '<strong>Definition:</strong> the residual return after all other costs have been paid.<br><br><strong>Why this reward?</strong> Entrepreneurs take risks and make decisions. Profit is what is <em>left over</em> — it is not guaranteed.'
         }
+      ],
+      causes2Label: 'Memory strip',
+      causes2Emoji: '🧠',
+      causes2: [
+        { tone: 'green',  icon: '🏞️', head: 'Land → Rent',         body: 'Natural resources earn rent because supply is fixed.' },
+        { tone: 'purple', icon: '👥', head: 'Labour → Wages',      body: 'Human effort earns wages — payment for time and skill.' },
+        { tone: 'amber',  icon: '🏭', head: 'Capital → Interest',  body: 'Productive assets earn interest — reward for use and waiting.' },
+        { tone: 'rose',   icon: '🚀', head: 'Enterprise → Profit', body: 'Risk-taking earns profit — the residual, not guaranteed.' }
       ],
       examEdge: {
         title: 'Exam tip: never mix these up',
@@ -307,26 +413,26 @@ window.ECONOS_TOPIC = {
       causesLabel: 'Why mobility is often low',
       causesEmoji: '🚧',
       causes: [
-        { tone: 'amber',  icon: '💰', head: 'Retraining costs',  body: 'Learning new skills takes time and money. Mid-career workers may struggle to switch sectors without financial support.' },
-        { tone: 'rose',   icon: '🏠', head: 'Housing costs',     body: 'Expensive or inflexible housing markets restrict moves. UK regional house-price gaps make moving to London prohibitive for many.' },
-        { tone: 'purple', icon: '👨‍👩‍👧', head: 'Family ties',       body: 'Partners\' jobs, children\'s schools and elderly care duties anchor people to a location. Two-earner households are especially constrained.' },
+        { tone: 'amber',  icon: '💰', head: 'Retraining costs',    body: 'Learning new skills takes time and money. Mid-career workers may struggle to switch sectors without financial support.' },
+        { tone: 'rose',   icon: '🏠', head: 'Housing costs',       body: 'Expensive or inflexible housing markets restrict moves. UK regional house-price gaps make moving to London prohibitive for many.' },
+        { tone: 'purple', icon: '👨‍👩‍👧', head: 'Family ties',         body: 'Partners\' jobs, children\'s schools and elderly care duties anchor people to a location. Two-earner households are especially constrained.' },
         { tone: 'blue',   icon: 'ℹ️', head: 'Lack of information', body: 'Workers may not know about opportunities elsewhere. Job vacancies, training schemes and relocation support are often poorly advertised.' }
       ],
       flowTitle: 'Why low mobility matters',
       flowEmoji: '⚠️',
       flow: [
-        { tone: 'purple', icon: '🚷', title: 'Low mobility',          sub: 'Workers can\'t easily move or retrain.' },
+        { tone: 'purple', icon: '🚷', title: 'Low mobility',              sub: 'Workers can\'t easily move or retrain.' },
         { tone: 'amber',  icon: '🏚️', title: 'Labour market immobility', sub: 'Skills and jobs don\'t match up.' },
-        { tone: 'rose',   icon: '📉', title: 'Structural unemployment', sub: 'Persistent joblessness in some areas and industries.' }
+        { tone: 'rose',   icon: '📉', title: 'Structural unemployment',  sub: 'Persistent joblessness in some areas and industries.' }
       ],
       causes2Label: 'Policy levers to raise mobility',
       causes2Emoji: '🛠️',
       causes2: [
-        { tone: 'blue',  icon: '🎓', head: 'Apprenticeships',   body: 'Build skills while earning — combining work and training.' },
-        { tone: 'green', icon: '🔄', head: 'Retraining schemes', body: 'Help mid-career workers switch sectors and update skills.' },
-        { tone: 'amber', icon: 'ℹ️', head: 'Careers information', body: 'Improve guidance and awareness of opportunities and pathways.' },
-        { tone: 'rose',  icon: '🏠', head: 'Housing reform',     body: 'More affordable homes and rental options support relocation.' },
-        { tone: 'purple',icon: '🚆', head: 'Transport links',    body: 'Better connections open up more jobs within commuting distance.' }
+        { tone: 'blue',   icon: '🎓', head: 'Apprenticeships',     body: 'Build skills while earning — combining work and training.' },
+        { tone: 'green',  icon: '🔄', head: 'Retraining schemes',  body: 'Help mid-career workers switch sectors and update skills.' },
+        { tone: 'amber',  icon: 'ℹ️', head: 'Careers information', body: 'Improve guidance and awareness of opportunities and pathways.' },
+        { tone: 'rose',   icon: '🏠', head: 'Housing reform',      body: 'More affordable homes and rental options support relocation.' },
+        { tone: 'purple', icon: '🚆', head: 'Transport links',     body: 'Better connections open up more jobs within commuting distance.' }
       ],
       examEdge: {
         title: 'Why this matters in exam answers',
@@ -334,46 +440,54 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 8 — Evaluating Factors of Production ----- */
+    /* ----- CARD 8 — Evaluating Factors of Production -----
+       4 evaluation tiles + EVALUATE framework flow */
     {
       id: 'evaluating-factors',
-      template: 'mechanisms',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Evaluating Factors of Production',
       lede: 'The best evaluation goes <strong>beyond definitions</strong>. It compares how important, high quality and flexible each factor is in helping an economy produce more and improve living standards.',
-      mechanisms: [
+      causesLabel: 'Four ways to evaluate factor importance',
+      causesEmoji: '⚖️',
+      causes: [
         {
-          num: '1',
           tone: 'green',
-          title: 'Quantity vs quality',
-          text: '<strong>More is not always better.</strong> Human capital (skills, health, education) and technology (efficient, modern capital) often matter more than sheer quantity. Quality raises productivity — that\'s what distinguishes rich from poor economies.'
+          icon: '🎯',
+          head: 'Quantity vs quality',
+          body: '<strong>More is not always better.</strong> Human capital (skills, health, education) and technology (efficient, modern capital) often matter more than sheer quantity. Quality raises productivity — that\'s what distinguishes rich from poor economies.'
         },
         {
-          num: '2',
           tone: 'purple',
-          title: 'Incentive effects',
-          text: '<strong>Rewards shape supply.</strong> High wages attract labour. High profits attract enterprise. High interest rates encourage saving. The right incentive structure encourages effort, innovation and investment — the wrong one suppresses all three.'
+          icon: '🏆',
+          head: 'Incentive effects',
+          body: '<strong>Rewards shape supply.</strong> High wages attract labour. High profits attract enterprise. High interest rates encourage saving. The right incentive structure encourages effort, innovation and investment — the wrong one suppresses all three.'
         },
         {
-          num: '3',
           tone: 'amber',
-          title: 'Policy influence',
-          text: '<strong>Government can raise factor supply and mobility.</strong> Education, training, infrastructure, competition policy, clear regulation, immigration rules — all shape how much each factor contributes. Supply-side policy is largely about factors.'
+          icon: '🏛️',
+          head: 'Policy influence',
+          body: '<strong>Government can raise factor supply and mobility.</strong> Education, training, infrastructure, competition policy, clear regulation, immigration rules — all shape how much each factor contributes. Supply-side policy is largely about factors.'
         },
         {
-          num: '4',
           tone: 'blue',
-          title: 'Long run vs short run',
-          text: '<strong>Time changes everything.</strong> In the long run, fixed and variable factors become less distinct. Capital can be expanded or upgraded, skills developed, resources discovered or substituted. Short-run constraints often ease over time.'
+          icon: '⏳',
+          head: 'Long run vs short run',
+          body: '<strong>Time changes everything.</strong> In the long run, fixed and variable factors become less distinct. Capital can be expanded or upgraded, skills developed, resources discovered or substituted. Short-run constraints often ease over time.'
         }
       ],
+      flowTitle: 'Exam technique: EVALUATE',
+      flowEmoji: '📝',
+      flow: [
+        { tone: 'blue',   icon: '📖', title: 'Define',   sub: 'State the concept clearly.' },
+        { tone: 'green',  icon: '🌍', title: 'Apply',    sub: 'Use the idea in a relevant context.' },
+        { tone: 'amber',  icon: '⚖️', title: 'Evaluate', sub: 'Weigh up different factors and views.' },
+        { tone: 'purple', icon: '⚖️', title: 'Judge',    sub: 'Reach a supported overall conclusion.' }
+      ],
+      conclusion: { title: 'Big takeaway', text: 'Rich economies are usually distinguished by <strong>better-quality labour, stronger enterprise and more productive capital</strong> — not just by having more resources. This is why supply-side policy focuses on raising human capital, encouraging investment, and improving institutional incentives, rather than simply trying to grow the workforce.' },
       examEdge: {
-        title: 'Big takeaway',
-        text: 'Rich economies are usually distinguished by <strong>better-quality labour, stronger enterprise and more productive capital</strong> — not just by having more resources. This is why supply-side policy focuses on raising human capital, encouraging investment, and improving institutional incentives, rather than simply trying to grow the workforce.'
-      },
-      connection: {
-        title: 'Exam technique: EVALUATE',
-        text: '<strong>Define</strong> — state the concept clearly. <strong>Apply</strong> — use the idea in a relevant context. <strong>Evaluate</strong> — weigh up different factors and views. <strong>Judge</strong> — reach a supported overall conclusion. This four-step pattern works for any "evaluate" question on factors, growth, or policy.'
+        title: 'A balanced evaluation always wins',
+        text: 'When you evaluate factors, don\'t just rank them — explain that the <em>right mix</em>, the <em>quality</em>, and the <em>institutional environment</em> matter together. Avoid blanket statements like "labour is most important." Instead: "in <em>this</em> economy, weak human capital is the binding constraint, so further investment in education matters more than adding workers."'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }

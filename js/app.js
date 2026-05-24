@@ -2795,15 +2795,30 @@
       ${c.diagramKey && I[c.diagramKey] ? `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>` : ''}
       <div class="mech-grid">${tiles}</div>
 
+      ${(c.economistQuote && c.economistQuote.quote) ? (() => {
+        const eq = c.economistQuote;
+        const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
+        const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+        return `
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
+            <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
+              <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
+            </div>
+          </div>`;
+      })() : ''}
+
       ${renderExamEdge(c.examEdge)}
 
-      <div class="connection-box">
+      ${c.connection ? `<div class="connection-box">
         <div class="connection-box__icon">🎯</div>
         <div>
           <div class="connection-box__title">${c.connection.title}</div>
           <div class="connection-box__text">${c.connection.text}</div>
         </div>
-      </div>
+      </div>` : ''}
     `;
   }
 
@@ -4162,21 +4177,22 @@
   }
 
   function renderCardAdInteractive(c) {
+    const hasSteps = Array.isArray(c.steps) && c.steps.length > 0;
     const diagram = c.diagramKey && I[c.diagramKey] ? I[c.diagramKey] : I.adInteractive;
-    const tabs = c.steps.map((s, i) => `
+    const tabs = hasSteps ? c.steps.map((s, i) => `
       <button class="ad-tab ${i === 0 ? 'is-active' : ''}" type="button"
               data-action="ad-step" data-ad-state="${s.key}">
         <span class="ad-tab__num">${i + 1}</span>
         <span class="ad-tab__label">${s.label}</span>
       </button>
-    `).join('');
+    `).join('') : '';
 
-    const panels = c.steps.map((s, i) => `
+    const panels = hasSteps ? c.steps.map((s, i) => `
       <div class="ad-panel ${i === 0 ? 'is-active' : ''}" data-panel-key="${s.key}">
         <div class="ad-panel__title">${s.label}</div>
         <div class="ad-panel__body">${s.text}</div>
       </div>
-    `).join('');
+    `).join('') : '';
 
     return `
       <div class="card__step-label">${c.stepLabel}</div>
@@ -4191,6 +4207,7 @@
         return tipText ? `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${tipIcon}</div><div style="font-size:14px;color:#0B1426;line-height:1.6;">${tipText}</div></div>` : '';
       })() : ''}
 
+      ${hasSteps ? `
       <div class="ad-interactive">
         <div class="ad-interactive__diagram show-${c.steps[0].key}" data-ad-state="${c.steps[0].key}">
           ${diagram}
@@ -4201,7 +4218,7 @@
         <div class="ad-interactive__panels">
           ${panels}
         </div>
-      </div>
+      </div>` : ''}
 
       ${c.diagramCallouts && c.diagramCallouts.length ? (() => {
         const tiles = c.diagramCallouts.map(item => {
@@ -4304,6 +4321,21 @@
             <div style="flex:1;">
               <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
               <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+            </div>
+          </div>`;
+      })() : ''}
+
+      ${(c.economistQuote && c.economistQuote.quote) ? (() => {
+        const eq = c.economistQuote;
+        const portrait = eq.portraitKey && I[eq.portraitKey] ? I[eq.portraitKey] : '';
+        const t = PATTERN_TONES[eq.tone || 'amber'] || PATTERN_TONES.amber;
+        return `
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:${t.bg};border:1px solid ${t.border};border-left:4px solid ${t.accent};border-radius:14px;padding:18px 22px;margin-bottom:22px;">
+            <div style="width:130px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;">${portrait}</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
+              <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
+              <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
             </div>
           </div>`;
       })() : ''}

@@ -27,18 +27,18 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'New analysis from the Office for Environmental Protection estimates that UK steel and cement production generates [[health-costs|around £20 billion in annual health and environmental damage]], including respiratory illness, reduced life expectancy and climate impacts on communities near industrial sites.',
-      'Proponents of extending the UK Emissions Trading Scheme argue that the existing scheme [[revenue|raised £4.4 billion in 2023, much of which was channelled into clean energy subsidies and green investment]] — evidence that a well-designed carbon price can both correct externalities and fund the green transition.',
+      'Proponents of extending the UK Emissions Trading Scheme argue that the existing scheme [[revenue|raised £4.4bn in 2023, much funding clean energy and green investment]] — evidence that a well-designed carbon price can both correct externalities and fund the green transition.',
       'However, industry groups warn that tightening the ETS would [[competitiveness|raise steel production costs by 18–22%]], threatening the viability of blast furnace operations in South Wales and Yorkshire.',
-      'Economists raise the concern of [[leakage|carbon leakage: if UK steel production falls but global demand is met by producers in countries with weaker environmental controls]], total global emissions may not fall — and the domestic economic cost would be borne for no net environmental benefit.',
-      'New elasticity estimates suggest that the [[inelastic|short-run price elasticity of demand for industrial steel is approximately −0.15]], meaning a large price rise from an extended ETS would result in only a modest reduction in output.'
+      'Economists raise the concern of [[leakage|carbon leakage: UK output falls but global demand shifts elsewhere]], total global emissions may not fall — and the domestic economic cost would be borne for no net environmental benefit.',
+      'New elasticity estimates suggest the [[inelastic|short-run PED for industrial steel ≈ −0.15]], meaning a large price rise from an extended ETS would result in only a modest reduction in output.'
     ],
 
     evidence: {
       'health-costs':    { text: 'around £20 billion in annual health and environmental damage' },
-      'revenue':         { text: 'raised £4.4 billion in 2023, much of which was channelled into clean energy subsidies and green investment' },
+      'revenue':         { text: 'raised £4.4bn in 2023, much funding clean energy and green investment' },
       'competitiveness': { text: 'raise steel production costs by 18–22%' },
-      'leakage':         { text: 'carbon leakage: if UK steel production falls but global demand is met by producers in countries with weaker environmental controls' },
-      'inelastic':       { text: 'short-run price elasticity of demand for industrial steel is approximately −0.15' }
+      'leakage':         { text: 'carbon leakage: UK output falls but global demand shifts elsewhere' },
+      'inelastic':       { text: 'short-run PED for industrial steel ≈ −0.15' }
     },
 
     buckets: [

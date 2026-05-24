@@ -27,18 +27,18 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'Government analysis confirms that road transport accounts for [[carbon|27% of total UK greenhouse gas emissions]], the largest single sector, and that emissions have fallen only 3% in the past decade despite improvements in vehicle efficiency.',
-      'Economists at the Institute for Fiscal Studies estimate that [[inelastic|the short-run price elasticity of demand for petrol is approximately −0.15, rising to −0.6 in the long run as households switch to electric vehicles or change commuting patterns]].',
+      'Economists at the Institute for Fiscal Studies estimate that [[inelastic|short-run PED for petrol ≈ −0.15, rising to −0.6 in the long run]] as households switch to electric vehicles or change commuting patterns.',
       '[[revenue|UK fuel duty raises approximately £25 billion per year]], making it one of the largest sources of government revenue — proponents argue that a higher rate would both reduce emissions and generate funds for green infrastructure investment.',
-      'However, the Resolution Foundation reports that [[regressive|households in the lowest income quintile spend 3.8% of their disposable income on fuel duty, compared with 1.2% for the highest quintile]], raising serious concerns about the distributional impact of any further increase.',
-      'Meanwhile, [[ev-growth|electric vehicle sales grew by 40% in 2023 and now represent 16% of new car registrations]], suggesting that over the longer term the demand for petrol may become more elastic as affordable substitutes become widely available.'
+      'However, the Resolution Foundation reports that [[regressive|the lowest quintile spend 3.8% of income on fuel duty vs 1.2% for top]], raising serious concerns about the distributional impact of any further increase.',
+      'Meanwhile, [[ev-growth|EV sales grew 40% in 2023 and now form 16% of new car registrations]], suggesting that over the longer term the demand for petrol may become more elastic as affordable substitutes become widely available.'
     ],
 
     evidence: {
       'carbon':    { text: '27% of total UK greenhouse gas emissions' },
-      'inelastic': { text: 'the short-run price elasticity of demand for petrol is approximately −0.15, rising to −0.6 in the long run as households switch to electric vehicles or change commuting patterns' },
+      'inelastic': { text: 'short-run PED for petrol ≈ −0.15, rising to −0.6 in the long run' },
       'revenue':   { text: 'UK fuel duty raises approximately £25 billion per year' },
-      'regressive':{ text: 'households in the lowest income quintile spend 3.8% of their disposable income on fuel duty, compared with 1.2% for the highest quintile' },
-      'ev-growth': { text: 'electric vehicle sales grew by 40% in 2023 and now represent 16% of new car registrations' }
+      'regressive':{ text: 'the lowest quintile spend 3.8% of income on fuel duty vs 1.2% for top' },
+      'ev-growth': { text: 'EV sales grew 40% in 2023 and now form 16% of new car registrations' }
     },
 
     buckets: [

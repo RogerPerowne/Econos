@@ -25,7 +25,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🌬️',
         prompt: 'Policy claim',
-        text:   'Government subsidies to renewable energy producers are the most effective way to correct the underproduction of clean energy.'
+        text:   'Subsidies to renewables best correct clean energy underproduction.'
       },
       factors: [
         {

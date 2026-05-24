@@ -24,18 +24,18 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'The UK\'s Contracts for Difference scheme guarantees offshore wind producers a fixed "strike price" — currently £44 per MWh — regardless of the market price, with the difference paid by a levy on household energy bills. The scheme has [[capacity|helped deliver 14 GW of offshore wind capacity, making the UK the world\'s largest offshore wind market]] by installed capacity.',
+      'The UK\'s Contracts for Difference scheme guarantees offshore wind producers a fixed "strike price" — currently £44 per MWh — regardless of the market price, with the difference paid by a levy on household energy bills. The scheme has [[capacity|delivered 14 GW of offshore wind — the world\'s largest such market]] by installed capacity.',
       'Independent economists calculate that each megawatt-hour of wind energy generates [[meb|approximately £28 in marginal external benefits]] — through avoided carbon damage, reduced air pollution and energy security gains — which the private market would otherwise not reward producers for providing.',
       'However, consumer groups warn that the CfD levy adds [[regressive-cost|an estimated £65 per year to average household energy bills]], with the burden falling disproportionately on fuel-poor households who spend the highest share of income on energy.',
-      'The Energy Transitions Commission notes that [[cost-reduction|the levelised cost of offshore wind has fallen from £120 per MWh in 2012 to £44 per MWh in 2024 — a 63% cost reduction]] — suggesting that the subsidy is successfully pulling technology down the learning curve and may become less necessary as the sector matures.',
+      'The Energy Transitions Commission notes that [[cost-reduction|offshore wind LCOE fell from £120/MWh (2012) to £44/MWh (2024) — −63%]] — suggesting that the subsidy is successfully pulling technology down the learning curve and may become less necessary as the sector matures.',
       'Energy security analysts point out that [[fossil-dependency|the UK imported 39% of its gas needs in 2022]], exposing consumers to volatile international markets; domestic renewable expansion directly reduces this dependency, an external benefit not captured in market prices.'
     ],
 
     evidence: {
-      'capacity':         { text: 'helped deliver 14 GW of offshore wind capacity, making the UK the world\'s largest offshore wind market' },
+      'capacity':         { text: 'delivered 14 GW of offshore wind — the world\'s largest such market' },
       'meb':              { text: 'approximately £28 in marginal external benefits' },
       'regressive-cost':  { text: 'an estimated £65 per year to average household energy bills' },
-      'cost-reduction':   { text: 'the levelised cost of offshore wind has fallen from £120 per MWh in 2012 to £44 per MWh in 2024 — a 63% cost reduction' },
+      'cost-reduction':   { text: 'offshore wind LCOE fell from £120/MWh (2012) to £44/MWh (2024) — −63%' },
       'fossil-dependency': { text: 'the UK imported 39% of its gas needs in 2022' }
     },
 

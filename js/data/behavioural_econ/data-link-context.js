@@ -25,19 +25,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'UK SDIL statistics show that [[reformulation|50% of soft drinks were reformulated to avoid the levy before it even took effect]] in April 2018, and that average sugar content of soft drinks [[sugar-fall|fell 29% between 2015 and 2019]] (Public Health England).',
+      'UK SDIL statistics show that [[reformulation|50% of soft drinks were reformulated to avoid the levy]] before it even took effect in April 2018, and that average sugar content of soft drinks [[sugar-fall|fell 29% between 2015 and 2019]] (Public Health England).',
       'Traffic light nutritional labelling research by the Behavioural Insights Team found that [[red-label|red labels reduce purchase likelihood by 15% for impulsive buyers]], suggesting that salient information at point of decision can correct present bias without coercion.',
       'UK childhood obesity rates [[obesity|stopped rising in 2019–20 for the first time in decades]], coinciding with SDIL implementation — though multiple policy changes and COVID-related activity changes occurred in the same period.',
-      'Denmark\'s fat tax on high-fat foods — a direct Pigouvian consumption tax — was [[denmark|repealed after only 15 months in 2012 due to cross-border shopping and political unpopularity]], with consumers simply buying taxed items in Germany and Sweden.',
+      'Denmark\'s fat tax on high-fat foods — a direct Pigouvian consumption tax — was [[denmark|repealed after 15 months due to cross-border shopping]] and political unpopularity, with consumers simply buying taxed items in Germany and Sweden.',
       'HMRC data shows the SDIL [[revenue|generated £340 million in revenue in 2022–23]], with most of this raised from producers who chose not to reformulate their products rather than from a broad-based consumer tax.'
     ],
 
     evidence: {
-      'reformulation': { text: '50% of soft drinks were reformulated to avoid the levy before it even took effect' },
+      'reformulation': { text: '50% of soft drinks were reformulated to avoid the levy' },
       'sugar-fall':    { text: 'fell 29% between 2015 and 2019' },
       'red-label':     { text: 'red labels reduce purchase likelihood by 15% for impulsive buyers' },
       'obesity':       { text: 'stopped rising in 2019–20 for the first time in decades' },
-      'denmark':       { text: 'repealed after only 15 months in 2012 due to cross-border shopping and political unpopularity' },
+      'denmark':       { text: 'repealed after 15 months due to cross-border shopping' },
       'revenue':       { text: 'generated £340 million in revenue in 2022–23' }
     },
 

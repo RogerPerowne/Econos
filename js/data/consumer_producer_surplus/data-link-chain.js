@@ -28,24 +28,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'The UK government introduces a per-unit operating subsidy to bus operators. Bus operators receive a fixed payment for each journey provided, reducing their effective marginal cost.'
       },
-      anchor: 'Government provides a per-unit operating subsidy to bus operators, reducing their effective costs and enabling them to supply more journeys at lower fares.',
+      anchor: 'Per-unit subsidy to operators cuts MC → more journeys at lower fares.',
       tiles: [
         {
           id:  'step-supply',
           icon: '📊',
-          text: 'Supply shifts right (S₁ → S₂): the per-unit subsidy reduces operators\' marginal cost by the subsidy amount → at every fare level, operators can profitably run more services → supply curve shifts right',
+          text: 'Subsidy cuts MC → supply shifts right (S₁ → S₂)',
           pos:  0
         },
         {
           id:  'step-eq',
           icon: '📉',
-          text: 'New equilibrium at lower fare P₂ and higher quantity Q₂: consumer fare falls from P₁ to P₂ → consumer surplus expands as more passengers can afford to travel at the lower fare',
+          text: 'New equilibrium: fare P₁ → P₂, quantity Q₁ → Q₂ → CS expands',
           pos:  1
         },
         {
           id:  'step-welfare',
           icon: '⚖️',
-          text: 'Welfare assessment: consumer surplus rises (the area above P₂ and below the demand curve expands); total government cost = subsidy × Q₂; net welfare effect depends on whether the positive externalities of bus use (congestion relief, carbon reduction) justify the cost',
+          text: 'CS rises; cost = subsidy × Q₂; net gain hinges on externality value',
           pos:  2
         },
         {

@@ -25,7 +25,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🚌',
         prompt: 'Policy claim',
-        text:   'Per-unit operating subsidies on public bus services increase consumer surplus and improve allocative efficiency by bringing fares closer to the social optimum.'
+        text:   'Per-unit bus subsidies raise consumer surplus and allocative efficiency.'
       },
       factors: [
         {

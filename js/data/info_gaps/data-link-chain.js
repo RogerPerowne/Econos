@@ -29,30 +29,30 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Klarna, Clearpay and Laybuy offer \'pay later\' options at checkout without displaying APR or total cost of credit. Consumers cannot see the true price of the credit at the point of purchase.'
       },
-      anchor: "BNPL providers offer 'pay later' options at checkout without displaying APR or total credit cost — the true price of the credit is hidden from consumers at the point of purchase.",
+      anchor: "BNPL checkouts hide APR — true credit cost is invisible at purchase.",
       tiles: [
         {
           id:  'step-gap',
           icon: '❓',
-          text: "Information gap: consumers underestimate the true cost of BNPL (effective price appears lower than actual) → willingness to borrow exceeds rational level → effective demand is artificially inflated above D_rational",
+          text: "Info gap: hidden APR → effective demand inflated above D_rational",
           pos:  0
         },
         {
           id:  'step-over',
           icon: '📊',
-          text: "Overconsumption: market equilibrium at Q_biased > Q_rational → consumers take on more credit than they would if fully informed → marginal cost of last unit (missed payment fees, debt collection) exceeds true consumer benefit → welfare loss",
+          text: "Overconsumption Q_biased > Q_rational → marginal harm > benefit",
           pos:  1
         },
         {
           id:  'step-correct',
           icon: '✅',
-          text: "Correction: FCA mandatory APR disclosure (from 2024) → effective demand shifts left from D_biased to D_rational → equilibrium Q falls to rational level → consumers take on less credit but make better-informed decisions → debt harm reduced",
+          text: "Mandatory APR (FCA 2024) → demand shifts back to D_rational → less harm",
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '📈',
-          text: 'Rising consumer confidence increases demand for BNPL credit independently of information gaps',
+          text: 'Rising consumer confidence increases BNPL demand independently of info gaps',
           pos:  null
         },
         {

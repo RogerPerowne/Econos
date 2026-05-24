@@ -28,42 +28,42 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'A country transitions from a command economy (where the state sets prices and allocates goods) to a free market system. Consider what happens to information, incentives and resource allocation.'
       },
-      anchor: 'The price mechanism transmits information about relative scarcity to millions of decision-makers simultaneously',
+      anchor: 'Prices transmit scarcity to millions of decision-makers at once.',
       tiles: [
         {
           id:  'step-profit',
           icon: '💰',
-          text: 'Profit incentive drives firms to minimise costs and innovate, increasing productive efficiency',
+          text: 'Profit incentive drives cost-cutting and innovation → productive efficiency',
           pos:  0
         },
         {
           id:  'step-sovereignty',
           icon: '🛒',
-          text: 'Consumer sovereignty means resources flow to goods consumers actually value, improving allocative efficiency',
+          text: 'Consumer sovereignty steers resources to valued goods → allocative gain',
           pos:  1
         },
         {
           id:  'step-hayek',
           icon: '📚',
-          text: 'Command economies require central planners to process vast information — Hayek\'s knowledge problem makes this impossible without price signals',
+          text: 'Hayek\'s knowledge problem: planners cannot replace price signals',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🏛️',
-          text: 'Central planners use queuing and rationing to achieve the same allocation as prices at lower cost',
+          text: 'Planners use queuing and rationing to match prices at lower cost',
           pos:  null
         },
         {
           id:  'dist-2',
           icon: '📉',
-          text: 'Rising prices reduce consumer welfare, so markets allocate resources away from valued goods',
+          text: 'Rising prices reduce welfare, so markets allocate away from valued goods',
           pos:  null
         },
         {
           id:  'dist-3',
           icon: '🤝',
-          text: 'Consumer sovereignty is undermined in free markets because firms can always create demand through advertising',
+          text: 'Free-market sovereignty is undermined by firm advertising creating demand',
           pos:  null
         }
       ],

@@ -25,19 +25,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'Natural gas wholesale prices in the UK [[gasprices|rose from approximately 50p per therm in January 2021 to 450p per therm by October 2021 — a rise of around 400%]], driven by post-COVID demand recovery and tightening Russian pipeline supplies into European markets.',
-      'British Steel announced in November 2021 that it was [[steelfurnace|temporarily suspending one of its blast furnaces at Scunthorpe, citing surging energy costs]] that made continuous operation economically unviable at the prevailing output prices.',
+      'Natural gas wholesale prices in the UK [[gasprices|rose from ~50p to ~450p per therm (Jan–Oct 2021) — about +400%]], driven by post-COVID demand recovery and tightening Russian pipeline supplies into European markets.',
+      'British Steel announced in November 2021 that it was [[steelfurnace|suspending a Scunthorpe blast furnace, citing surging energy costs]] that made continuous operation economically unviable at the prevailing output prices.',
       'ONS data show that [[foodinflation|UK food producer price inflation hit 14.8% in 2022]], as energy-intensive processing and transport costs surged through supply chains from farm gate to shelf, pushing input cost increases into consumer prices.',
-      'Industry analysts noted that [[hedging|firms holding long-term fixed-price energy supply contracts were largely shielded from the spot-market spike]] in 2021–22, facing no immediate cost increase and therefore no supply contraction.',
-      'In October 2022 the UK government introduced the [[ebrs|Energy Bill Relief Scheme (EBRS), capping industrial gas prices at £0.211/kWh for eligible businesses]], partially reversing the cost shock and preventing some of the supply contraction that would otherwise have occurred.'
+      'Industry analysts noted that [[hedging|firms on fixed-price energy contracts were shielded from the spike]] in 2021–22, facing no immediate cost increase and therefore no supply contraction.',
+      'In October 2022 the UK government introduced the [[ebrs|Energy Bill Relief Scheme (EBRS), capping industrial gas at £0.211/kWh]] for eligible businesses, partially reversing the cost shock and preventing some of the supply contraction that would otherwise have occurred.'
     ],
 
     evidence: {
-      'gasprices':  { text: 'rose from approximately 50p per therm in January 2021 to 450p per therm by October 2021 — a rise of around 400%' },
-      'steelfurnace': { text: 'temporarily suspending one of its blast furnaces at Scunthorpe, citing surging energy costs' },
+      'gasprices':  { text: 'rose from ~50p to ~450p per therm (Jan–Oct 2021) — about +400%' },
+      'steelfurnace': { text: 'suspending a Scunthorpe blast furnace, citing surging energy costs' },
       'foodinflation': { text: 'UK food producer price inflation hit 14.8% in 2022' },
-      'hedging':    { text: 'firms holding long-term fixed-price energy supply contracts were largely shielded from the spot-market spike' },
-      'ebrs':       { text: 'Energy Bill Relief Scheme (EBRS), capping industrial gas prices at £0.211/kWh for eligible businesses' }
+      'hedging':    { text: 'firms on fixed-price energy contracts were shielded from the spike' },
+      'ebrs':       { text: 'Energy Bill Relief Scheme (EBRS), capping industrial gas at £0.211/kWh' }
     },
 
     buckets: [

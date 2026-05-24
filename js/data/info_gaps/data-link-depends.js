@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '💳',
         prompt: 'Policy claim',
-        text:   'Mandatory cost disclosure is the most effective policy for correcting information gaps in the UK Buy Now Pay Later market.'
+        text:   'Mandatory cost disclosure best corrects info gaps in UK BNPL.'
       },
       factors: [
         {

@@ -26,17 +26,17 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'Data from GfK show that the UK consumer confidence index reached [[confidence|+7 in July 2021 — its highest level since 2016]], reflecting a sharp recovery in households\' willingness to make major purchases and spend on leisure activities.',
-      'ONS figures reveal that [[savings|the UK household savings ratio peaked at 29.1% in Q2 2020 before falling sharply in 2021]], as approximately £190 billion in accumulated savings were released into the economy and households increased spending on restaurants, hotels and events.',
-      'OpenTable and CGA data show that [[bookings|restaurant and pub bookings in July 2021 were 60% above equivalent 2019 levels]], suggesting that pent-up demand surged well beyond pre-pandemic norms once restrictions were lifted.',
-      'Travel industry data indicate that [[travel|UK international holiday bookings remained severely suppressed throughout 2021]] due to ongoing travel restrictions and health concerns, suggesting that some of the domestic leisure surge reflected diversion from overseas travel rather than purely income-driven spending.',
+      'ONS figures reveal that [[savings|the UK household savings ratio peaked at 29.1% in Q2 2020]] before falling sharply in 2021, as approximately £190 billion in accumulated savings were released into the economy and households increased spending on restaurants, hotels and events.',
+      'OpenTable and CGA data show that [[bookings|restaurant and pub bookings in July 2021 were 60% above 2019 levels]], suggesting that pent-up demand surged well beyond pre-pandemic norms once restrictions were lifted.',
+      'Travel industry data indicate that [[travel|UK international holiday bookings remained suppressed throughout 2021]] due to ongoing travel restrictions and health concerns, suggesting that some of the domestic leisure surge reflected diversion from overseas travel rather than purely income-driven spending.',
       'Trussell Trust figures show that [[foodbanks|UK food bank usage rose 33% in 2021]], despite aggregate household income rising — indicating that the recovery was deeply unequal and lower-income groups did not experience the leisure demand recovery seen in wealthier households.'
     ],
 
     evidence: {
       'confidence': { text: '+7 in July 2021 — its highest level since 2016' },
-      'savings':    { text: 'the UK household savings ratio peaked at 29.1% in Q2 2020 before falling sharply in 2021' },
-      'bookings':   { text: 'restaurant and pub bookings in July 2021 were 60% above equivalent 2019 levels' },
-      'travel':     { text: 'UK international holiday bookings remained severely suppressed throughout 2021' },
+      'savings':    { text: 'the UK household savings ratio peaked at 29.1% in Q2 2020' },
+      'bookings':   { text: 'restaurant and pub bookings in July 2021 were 60% above 2019 levels' },
+      'travel':     { text: 'UK international holiday bookings remained suppressed throughout 2021' },
       'foodbanks':  { text: 'UK food bank usage rose 33% in 2021' }
     },
 

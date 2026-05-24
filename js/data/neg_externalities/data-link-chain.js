@@ -30,18 +30,18 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'A cement plant produces 1,000 tonnes of output per day, emitting particulate pollution that causes respiratory illness in nearby residents. There is no government intervention.'
       },
-      anchor: 'The cement plant\'s MPC does not include the harm its pollution causes to third parties',
+      anchor: 'The plant\'s MPC ignores the MEC its pollution imposes on others.',
       tiles: [
         {
           id:  'step-mec',
           icon: '👥',
-          text: 'The firm produces at Q_market where MPC = MSB — ignoring the MEC it imposes on others',
+          text: 'Firm produces at Q_market where MPC = MSB — ignores MEC',
           pos:  0
         },
         {
           id:  'step-over',
           icon: '📊',
-          text: 'Output exceeds Q*, the social optimum where MSC = MSB — the market overproduces',
+          text: 'Output Q_market > Q* (where MSC = MSB) → market overproduces',
           pos:  1
         },
         {
@@ -53,7 +53,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:  'dist-1',
           icon: '🤝',
-          text: 'Third parties negotiate directly with the plant and the market clears automatically',
+          text: 'Third parties negotiate directly with the plant; market self-clears',
           pos:  null
         },
         {

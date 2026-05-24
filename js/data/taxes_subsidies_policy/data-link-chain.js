@@ -28,42 +28,42 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Offshore wind energy generates positive externalities: it reduces carbon emissions, lowers air pollution and improves energy security. Without intervention, the market underproduces relative to the socially optimal level.'
       },
-      anchor: 'Offshore wind producers receive only the market price (MPB) — they cannot charge for the external benefits (MEB) their energy generation provides to society',
+      anchor: 'Wind producers earn only MPB — cannot capture the MEB they create.',
       tiles: [
         {
           id:  'step-supply',
           icon: '💡',
-          text: 'Producers supply at Q_market where MPB = MPC — ignoring the MEB they create for society',
+          text: 'Produce at Q_market where MPB = MPC — ignoring MEB',
           pos:  0
         },
         {
           id:  'step-under',
           icon: '📊',
-          text: 'Output falls short of Q*, the social optimum where MSB = MPC — the market underproduces',
+          text: 'Q_market < Q* (where MSB = MPC) → market underproduces',
           pos:  1
         },
         {
           id:  'step-subsidy',
           icon: '💸',
-          text: 'A production subsidy equal to the MEB shifts effective supply right to Q*, eliminating the deadweight welfare loss from underproduction',
+          text: 'Subsidy = MEB → supply shifts right to Q* → DWL removed',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🤝',
-          text: 'Consumers immediately pay more to cover the external benefit, correcting the market failure automatically',
+          text: 'Consumers pay more to cover the external benefit, fixing it automatically',
           pos:  null
         },
         {
           id:  'dist-2',
           icon: '📈',
-          text: 'The market overproduces renewable energy because consumers value clean energy highly',
+          text: 'The market overproduces renewables because consumers value clean energy',
           pos:  null
         },
         {
           id:  'dist-3',
           icon: '🏛️',
-          text: 'Government regulation fixes the problem by setting a maximum output level for fossil fuels',
+          text: 'Regulation fixes it by setting a maximum fossil-fuel output level',
           pos:  null
         }
       ],

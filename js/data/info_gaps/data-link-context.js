@@ -26,18 +26,18 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'The FCA Financial Lives Survey 2022 found that [[scale|27% of UK adults used Buy Now Pay Later in the 12 months to January 2023]], with the market growing rapidly in the cost-of-living crisis — evidence of the scale of potential information gap harm.',
-      'FCA analysis revealed that [[debt-harm|25% of BNPL users had missed at least one repayment in 2022, with 11% sent to debt collection]] — consistent with demand inflated above the rational level by hidden credit costs.',
-      'Before FCA regulation in 2023–24, [[no-apr|BNPL products were not regulated by the FCA; APR was rarely disclosed at the point of sale]], confirming that the information gap existed during the period of the market\'s most rapid growth.',
-      'When [[which-test|Which? tested BNPL checkout flows in 2022, none of the major providers displayed APR or total cost of credit on the checkout page]] — the information gap was structural by design, raising questions about whether voluntary disclosure would ever work without a regulatory mandate.',
-      'Behavioural economics research shows that [[present-bias|displaying APR in small print at checkout does not change decisions for many consumers]] — particularly those with present bias who focus on paying nothing today rather than future repayment costs.'
+      'FCA analysis revealed that [[debt-harm|25% of BNPL users missed a 2022 repayment; 11% sent to collection]] — consistent with demand inflated above the rational level by hidden credit costs.',
+      'Before FCA regulation in 2023–24, [[no-apr|BNPL was not FCA-regulated; APR was rarely disclosed at the point of sale]], confirming that the information gap existed during the period of the market\'s most rapid growth.',
+      'When [[which-test|Which? tested BNPL checkouts (2022): no major provider showed APR]] — the information gap was structural by design, raising questions about whether voluntary disclosure would ever work without a regulatory mandate.',
+      'Behavioural economics research shows that [[present-bias|small-print APR at checkout does not change decisions for many consumers]] — particularly those with present bias who focus on paying nothing today rather than future repayment costs.'
     ],
 
     evidence: {
       'scale':        { text: '27% of UK adults used Buy Now Pay Later in the 12 months to January 2023' },
-      'debt-harm':    { text: '25% of BNPL users had missed at least one repayment in 2022, with 11% sent to debt collection' },
-      'no-apr':       { text: 'BNPL products were not regulated by the FCA; APR was rarely disclosed at the point of sale' },
-      'which-test':   { text: 'Which? tested BNPL checkout flows in 2022, none of the major providers displayed APR or total cost of credit on the checkout page' },
-      'present-bias': { text: 'displaying APR in small print at checkout does not change decisions for many consumers' }
+      'debt-harm':    { text: '25% of BNPL users missed a 2022 repayment; 11% sent to collection' },
+      'no-apr':       { text: 'BNPL was not FCA-regulated; APR was rarely disclosed at the point of sale' },
+      'which-test':   { text: 'Which? tested BNPL checkouts (2022): no major provider showed APR' },
+      'present-bias': { text: 'small-print APR at checkout does not change decisions for many consumers' }
     },
 
     buckets: [

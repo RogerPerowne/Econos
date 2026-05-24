@@ -25,18 +25,18 @@ window.ECONOS_LINK_STATION = {
 
     extract: [
       'The UK government and local authorities spend approximately [[spend|£2.5bn per year on bus subsidies and concessionary fares]] (DfT 2023), reflecting a long-standing policy commitment to keeping public transport affordable for consumers.',
-      'Average bus fares rose [[fares-london|75% in real terms between 2005 and 2022 in England outside London, while London (with higher TfL subsidy) saw fares held stable]] — consistent with the view that a larger subsidy produces a larger consumer surplus gain.',
+      'Average bus fares rose [[fares-london|75% in real terms outside London (2005–22), while London fares held stable]] under higher TfL subsidy — consistent with the view that a larger subsidy produces a larger consumer surplus gain.',
       'UK bus passenger journeys outside London [[journeys|fell 46% between 2005 and 2022, compared with a 10% fall in London]] — a difference attributable, in part, to the higher subsidy level maintained in the capital.',
       'The UK Department for Transport estimates that [[dft-ratio|each £1 of bus subsidy generates approximately £2.40 in economic benefits]], suggesting that the consumer surplus gain plus positive externality benefits exceed the taxpayer cost at the margin.',
-      'The 2023 English bus reform found that [[routing|operators in deregulated areas often reduced services on unprofitable routes regardless of subsidy levels]] — raising the question of whether a per-unit subsidy can sustain service on routes where demand is insufficient.'
+      'The 2023 English bus reform found that [[routing|deregulated operators cut unprofitable routes regardless of subsidy]] — raising the question of whether a per-unit subsidy can sustain service on routes where demand is insufficient.'
     ],
 
     evidence: {
       'spend':      { text: '£2.5bn per year on bus subsidies and concessionary fares' },
-      'fares-london': { text: '75% in real terms between 2005 and 2022 in England outside London, while London (with higher TfL subsidy) saw fares held stable' },
+      'fares-london': { text: '75% in real terms outside London (2005–22), while London fares held stable' },
       'journeys':   { text: 'fell 46% between 2005 and 2022, compared with a 10% fall in London' },
       'dft-ratio':  { text: 'each £1 of bus subsidy generates approximately £2.40 in economic benefits' },
-      'routing':    { text: 'operators in deregulated areas often reduced services on unprofitable routes regardless of subsidy levels' }
+      'routing':    { text: 'deregulated operators cut unprofitable routes regardless of subsidy' }
     },
 
     buckets: [

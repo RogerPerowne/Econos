@@ -28,42 +28,42 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'Adam Smith\'s workers divide pin production into 18 separate tasks. Each worker repeats one task all day. Consider what follows from this arrangement for productivity, output, exchange and the need for money.'
       },
-      anchor: 'Specialisation increases labour productivity through practice, repetition and task-specific tools',
+      anchor: 'Specialisation raises labour productivity via practice and tools.',
       tiles: [
         {
           id:  'step-surplus',
           icon: '📦',
-          text: 'Higher productivity leads to output surpluses beyond a worker\'s own consumption needs',
+          text: 'Productivity gains create output surpluses beyond own consumption',
           pos:  0
         },
         {
           id:  'step-barter',
           icon: '🔄',
-          text: 'Surplus output must be exchanged — but barter is blocked by the double coincidence of wants problem',
+          text: 'Surplus must be exchanged — barter blocked by double coincidence',
           pos:  1
         },
         {
           id:  'step-money',
           icon: '💷',
-          text: 'Money resolves this by acting as medium of exchange, store of value and unit of account — enabling complex supply chains',
+          text: 'Money fixes this — medium of exchange, store of value, unit of account',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🤝',
-          text: 'Workers trade directly with each other without any medium of exchange required',
+          text: 'Workers trade directly without any medium of exchange required',
           pos:  null
         },
         {
           id:  'dist-2',
           icon: '📉',
-          text: 'Specialisation reduces output as workers lose general skills and flexibility',
+          text: 'Specialisation cuts output as workers lose general skills',
           pos:  null
         },
         {
           id:  'dist-3',
           icon: '🏛️',
-          text: 'Government must step in to organise distribution whenever specialisation occurs',
+          text: 'Government must organise distribution whenever specialisation occurs',
           pos:  null
         }
       ],

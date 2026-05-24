@@ -25,17 +25,17 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'The Environment Agency\'s [[ea-programme|£5.2bn flood and coastal erosion investment programme (2021–27) is entirely government-funded]] — the private market does not provide coastal flood protection at all, confirming the public goods problem in practice.',
-      'Cost-benefit analysis shows that [[cbr|every £1 of flood defence investment generates £8 of avoided flood damage on average (Environment Agency 2023)]] — the social benefit vastly exceeds cost, consistent with D_social far exceeding D_private.',
-      'The [[cumbria|2007 Cumbria floods caused £3.5bn of damage; subsequent government investment in flood defences prevented an estimated £850m of damage by 2020]] — direct evidence that state provision delivers welfare gains the private market would not realise.',
+      'The Environment Agency\'s [[ea-programme|£5.2bn flood/coastal erosion programme (2021–27) is entirely state-funded]] — the private market does not provide coastal flood protection at all, confirming the public goods problem in practice.',
+      'Cost-benefit analysis shows that [[cbr|every £1 of flood defence generates £8 of avoided damage on average]] (Environment Agency 2023) — the social benefit vastly exceeds cost, consistent with D_social far exceeding D_private.',
+      'The [[cumbria|2007 Cumbria floods cost £3.5bn; later defences prevented ~£850m by 2020]] — direct evidence that state provision delivers welfare gains the private market would not realise.',
       'Community-funded local flood groups have raised funds for [[community-funds|smaller-scale defences in some areas]] — demonstrating that quasi-private provision exists at small scale in high-risk communities where excludability is more feasible, e.g. private flood barriers for specific properties.',
       'Insurance markets provide [[flood-insurance|flood insurance but require premiums that reflect true flood risk]] — an imperfect market-based solution that compensates for flood damage rather than preventing it, and excludes highest-risk households through unaffordable premiums.'
     ],
 
     evidence: {
-      'ea-programme':    { text: '£5.2bn flood and coastal erosion investment programme (2021–27) is entirely government-funded' },
-      'cbr':             { text: 'every £1 of flood defence investment generates £8 of avoided flood damage on average (Environment Agency 2023)' },
-      'cumbria':         { text: '2007 Cumbria floods caused £3.5bn of damage; subsequent government investment in flood defences prevented an estimated £850m of damage by 2020' },
+      'ea-programme':    { text: '£5.2bn flood/coastal erosion programme (2021–27) is entirely state-funded' },
+      'cbr':             { text: 'every £1 of flood defence generates £8 of avoided damage on average' },
+      'cumbria':         { text: '2007 Cumbria floods cost £3.5bn; later defences prevented ~£850m by 2020' },
       'community-funds': { text: 'smaller-scale defences in some areas' },
       'flood-insurance': { text: 'flood insurance but require premiums that reflect true flood risk' }
     },

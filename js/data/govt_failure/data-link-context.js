@@ -27,17 +27,17 @@ window.ECONOS_LINK_STATION = {
     extract: [
       'The Ministry of Housing, Communities and Local Government reported that Help to Buy equity loans [[supported|supported 310,000 home purchases in England between 2013 and 2023]], providing first-time buyers with equity loans covering up to 20% of a new-build\'s purchase price (40% in London).',
       'The Office for Budget Responsibility found that [[price-rise|Help to Buy added an average of £8,000 to new-build house prices]], concluding that the scheme had "limited impact on housing supply" because it did not address planning constraints, labour shortages or land costs.',
-      'RICS research showed that [[premium|average new-build premiums over comparable second-hand properties rose from 9% before Help to Buy to 22% after it]], indicating that developers — not buyers — captured much of the subsidy as higher margins.',
-      'Barratt Developments reported [[margins|record operating margins of 21% in 2021–22, partly attributed to Help to Buy demand support]], suggesting that the policy created substantial windfall profits for housebuilders.',
-      'Housing supply is highly price inelastic — the [[pes|price elasticity of supply for new housing is estimated at approximately 0.4]] due to planning constraints, construction labour shortages, and land banking by developers, meaning demand stimulus raises prices far more than it raises output.'
+      'RICS research showed that [[premium|new-build premiums over second-hand homes rose from 9% to 22%]] before and after Help to Buy, indicating that developers — not buyers — captured much of the subsidy as higher margins.',
+      'Barratt Developments reported [[margins|record operating margins of 21% in 2021–22]], partly attributed to Help to Buy demand support, suggesting that the policy created substantial windfall profits for housebuilders.',
+      'Housing supply is highly price inelastic — the [[pes|PES for new housing ≈ 0.4]] due to planning constraints, construction labour shortages, and land banking by developers, meaning demand stimulus raises prices far more than it raises output.'
     ],
 
     evidence: {
       'supported': { text: 'supported 310,000 home purchases in England between 2013 and 2023' },
       'price-rise': { text: 'Help to Buy added an average of £8,000 to new-build house prices' },
-      'premium':    { text: 'average new-build premiums over comparable second-hand properties rose from 9% before Help to Buy to 22% after it' },
-      'margins':    { text: 'record operating margins of 21% in 2021–22, partly attributed to Help to Buy demand support' },
-      'pes':        { text: 'price elasticity of supply for new housing is estimated at approximately 0.4' }
+      'premium':    { text: 'new-build premiums over second-hand homes rose from 9% to 22%' },
+      'margins':    { text: 'record operating margins of 21% in 2021–22' },
+      'pes':        { text: 'PES for new housing ≈ 0.4' }
     },
 
     buckets: [

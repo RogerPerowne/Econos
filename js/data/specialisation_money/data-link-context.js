@@ -25,19 +25,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'Adam Smith\'s pin factory demonstrated that [[pin-factory|dividing pin production into 18 distinct operations allowed ten workers to produce 48,000 pins per day — compared with perhaps 20 if each worked alone]]. The division of labour raised output per worker dramatically through practice, specialisation of tools, and the elimination of time lost switching tasks.',
-      'Modern UK manufacturing extends this logic across global supply chains. [[car-components|A single UK-built car requires over 30,000 components, most of them imported]], with suppliers themselves specialising in single sub-assemblies such as semiconductors, brake systems or wiring looms.',
+      'Adam Smith\'s pin factory demonstrated that [[pin-factory|18 pin operations let 10 workers produce 48,000 pins per day]] — compared with perhaps 20 if each worked alone. The division of labour raised output per worker dramatically through practice, specialisation of tools, and the elimination of time lost switching tasks.',
+      'Modern UK manufacturing extends this logic across global supply chains. [[car-components|A UK-built car needs over 30,000 components, most imported]], with suppliers themselves specialising in single sub-assemblies such as semiconductors, brake systems or wiring looms.',
       'However, this interdependence carries risk. [[toyota-shutdown|Toyota\'s UK plants halted production during the 2021 semiconductor shortage]], demonstrating that deep specialisation creates vulnerability when any link in the chain is disrupted.',
       'Exchange at this scale is only possible because money performs its three core functions. [[uk-trade|The UK trades over £800 billion of goods and services per year]] — a volume of exchange that would be impossible under barter, which requires a double coincidence of wants between every pair of trading partners.',
-      'Without money, [[barter-constraint|a car-seat manufacturer wanting steel would need to find a steel producer who simultaneously wanted car seats]] — a condition so restrictive that complex supply chains could not exist.'
+      'Without money, [[barter-constraint|a car-seat maker wanting steel needs a steel producer who wants car seats]] — a condition so restrictive that complex supply chains could not exist.'
     ],
 
     evidence: {
-      'pin-factory':       { text: 'dividing pin production into 18 distinct operations allowed ten workers to produce 48,000 pins per day — compared with perhaps 20 if each worked alone' },
-      'car-components':    { text: 'A single UK-built car requires over 30,000 components, most of them imported' },
+      'pin-factory':       { text: '18 pin operations let 10 workers produce 48,000 pins per day' },
+      'car-components':    { text: 'A UK-built car needs over 30,000 components, most imported' },
       'toyota-shutdown':   { text: 'Toyota\'s UK plants halted production during the 2021 semiconductor shortage' },
       'uk-trade':          { text: 'The UK trades over £800 billion of goods and services per year' },
-      'barter-constraint': { text: 'a car-seat manufacturer wanting steel would need to find a steel producer who simultaneously wanted car seats' }
+      'barter-constraint': { text: 'a car-seat maker wanting steel needs a steel producer who wants car seats' }
     },
 
     buckets: [

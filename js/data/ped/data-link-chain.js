@@ -35,25 +35,25 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:  'step-supply',
           icon: '🏭',
-          text: 'Supply shifts left — the tax is levied on producers, raising the effective supply price at every quantity',
+          text: 'Supply shifts left — tax on producers raises supply price at every Q',
           pos:  0
         },
         {
           id:  'step-incidence',
           icon: '📉',
-          text: 'The consumer price rises by more than the producer price falls — with inelastic demand, buyers absorb most of the tax',
+          text: 'P_c rises more than P_p falls — inelastic demand → buyers absorb most',
           pos:  1
         },
         {
           id:  'step-outcome',
           icon: '🌱',
-          text: 'Quantity demanded falls only a little (PED −0.15) — the tax raises revenue but barely cuts emissions in the short run',
+          text: 'Q falls only slightly (PED ≈ −0.15) → revenue rises, emissions barely cut',
           pos:  2
         },
         {
           id:  'dist-1',
           icon: '🚗',
-          text: 'Consumers immediately switch to electric vehicles, eliminating demand for petrol',
+          text: 'Consumers immediately switch to EVs, eliminating petrol demand',
           pos:  null
         },
         {

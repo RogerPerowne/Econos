@@ -25,7 +25,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🏠',
         prompt: 'Policy claim',
-        text:   'A binding rent cap on private-sector flats is the most effective way to protect low-income tenants in a tight urban housing market.'
+        text:   'A binding rent cap best protects low-income tenants in tight cities.'
       },
       factors: [
         {

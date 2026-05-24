@@ -29,24 +29,24 @@ window.ECONOS_LINK_CHAIN = {
         label: 'Scenario',
         text:  'UK energy-intensive manufacturing, 2021–22. Natural gas wholesale prices rise 400%; energy costs represent 20–40% of total production costs in steel, ceramics and food processing.'
       },
-      anchor: 'Natural gas wholesale prices rise 400% — energy costs represent 20–40% of total production costs in steel, ceramics and food processing.',
+      anchor: 'Gas +400%; energy is 20–40% of costs in steel, ceramics, food processing.',
       tiles: [
         {
           id:   'step-shift',
           icon: '⚡',
-          text: 'Rising energy costs increase marginal private cost → supply curve shifts left from S₁ to S₂ → at every price, firms can afford to produce less',
+          text: 'Higher energy MC → supply shifts left (S₁ → S₂)',
           pos:  0
         },
         {
           id:   'step-excess',
           icon: '📊',
-          text: 'At the original equilibrium price, quantity supplied now falls short of quantity demanded → excess demand emerges and upward pressure on output prices develops',
+          text: 'At P₁, Q_s < Q_d → excess demand → upward pressure on prices',
           pos:  1
         },
         {
           id:   'step-eq',
           icon: '📉',
-          text: 'Market moves to new equilibrium: higher price P₂ (partly passed to buyers) and lower output Q₂ — industrial output contracts and some firms suspend production',
+          text: 'New equilibrium: higher P₂, lower Q₂ → output contracts, some firms suspend',
           pos:  2
         },
         {
@@ -58,7 +58,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:   'dist-2',
           icon: '🛒',
-          text: 'Consumer demand for manufactured goods falls as disposable income is squeezed',
+          text: 'Demand for manufactured goods falls as disposable income is squeezed',
           pos:  null
         },
         {

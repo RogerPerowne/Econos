@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '💰',
         prompt: 'Claim',
-        text:   'Falling real household income reduces demand for luxury goods more than for necessities, consistent with their higher income elasticity of demand.'
+        text:   'Falling real income hits luxury demand more than necessities (higher YED).'
       },
       factors: [
         {

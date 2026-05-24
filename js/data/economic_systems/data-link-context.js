@@ -25,20 +25,20 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'Cuba operates a near-comprehensive command economy in which the state directs resource allocation centrally. Despite achieving [[cuba-literacy|near-universal literacy and free healthcare at the point of use]], Cuba\'s GDP per capita stood at approximately $9,000 (PPP) in 2024, and the country faces persistent [[cuba-shortages|severe consumer goods shortages, with queuing as the primary allocation mechanism for basic necessities]].',
+      'Cuba operates a near-comprehensive command economy in which the state directs resource allocation centrally. Despite achieving [[cuba-literacy|near-universal literacy and free healthcare at the point of use]], Cuba\'s GDP per capita stood at approximately $9,000 (PPP) in 2024, and the country faces persistent [[cuba-shortages|severe consumer goods shortages, with queuing as the main allocation method]] for basic necessities.',
       'North Korea represents the most extreme surviving command economy. With [[north-korea-gdp|an estimated GDP per capita of approximately $1,800 (PPP)]], it ranks among the poorest economies in the world — a stark contrast to South Korea\'s market-oriented economy and GDP per capita exceeding $50,000.',
-      'The United Kingdom operates a mixed economy: the price mechanism allocates resources in the private sector (over 80% of GDP), while the state provides the NHS and a welfare safety net. [[uk-nhs|NHS spending per capita produces health outcomes comparable to or better than many higher-spending, more market-oriented systems]], suggesting that state provision can outperform markets in healthcare.',
-      'In a hypothetical pure free market, [[price-mechanism|the price mechanism transmits information about scarcity to millions of decision-makers simultaneously, driving resources toward highest-valued uses without central coordination]].',
-      'China\'s "socialist market economy" uses [[china-hybrid|market pricing for consumer goods alongside state ownership of key strategic industries]], producing rapid growth while maintaining political control — demonstrating that hybrid systems can generate significant efficiency gains.'
+      'The United Kingdom operates a mixed economy: the price mechanism allocates resources in the private sector (over 80% of GDP), while the state provides the NHS and a welfare safety net. [[uk-nhs|NHS health outcomes match many higher-spending market systems]], suggesting that state provision can outperform markets in healthcare.',
+      'In a hypothetical pure free market, [[price-mechanism|prices transmit scarcity to millions of decision-makers at once]], driving resources toward highest-valued uses without central coordination.',
+      'China\'s "socialist market economy" uses [[china-hybrid|market pricing for consumer goods plus state ownership of key industries]], producing rapid growth while maintaining political control — demonstrating that hybrid systems can generate significant efficiency gains.'
     ],
 
     evidence: {
       'cuba-literacy':     { text: 'near-universal literacy and free healthcare at the point of use' },
-      'cuba-shortages':    { text: 'severe consumer goods shortages, with queuing as the primary allocation mechanism for basic necessities' },
+      'cuba-shortages':    { text: 'severe consumer goods shortages, with queuing as the main allocation method' },
       'north-korea-gdp':   { text: 'an estimated GDP per capita of approximately $1,800 (PPP)' },
-      'uk-nhs':            { text: 'NHS spending per capita produces health outcomes comparable to or better than many higher-spending, more market-oriented systems' },
-      'price-mechanism':   { text: 'the price mechanism transmits information about scarcity to millions of decision-makers simultaneously, driving resources toward highest-valued uses without central coordination' },
-      'china-hybrid':      { text: 'market pricing for consumer goods alongside state ownership of key strategic industries' }
+      'uk-nhs':            { text: 'NHS health outcomes match many higher-spending market systems' },
+      'price-mechanism':   { text: 'prices transmit scarcity to millions of decision-makers at once' },
+      'china-hybrid':      { text: 'market pricing for consumer goods plus state ownership of key industries' }
     },
 
     buckets: [

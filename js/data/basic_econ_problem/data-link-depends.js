@@ -24,7 +24,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '⚕️',
         prompt: 'Claim',
-        text:   'Scarcity makes the economic problem unavoidable — all societies must prioritise among competing wants, and every choice involves an opportunity cost.'
+        text:   'Scarcity makes the economic problem unavoidable in every society.'
       },
       factors: [
         {

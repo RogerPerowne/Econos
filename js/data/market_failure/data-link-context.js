@@ -25,19 +25,19 @@ window.ECONOS_LINK_STATION = {
     instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
 
     extract: [
-      'Citizens Advice research (2023) found that [[defects|1 in 3 UK used car buyers experienced a significant defect undisclosed at sale]] — demonstrating that sellers systematically withhold quality information and buyers cannot verify vehicle condition before purchase.',
-      'The [[cra-2015|Consumer Rights Act 2015 requires used cars to be of satisfactory quality and as described]], giving buyers legal remedies when sellers misrepresent vehicle condition — a government attempt to correct information failure through mandatory disclosure.',
+      'Citizens Advice research (2023) found that [[defects|1 in 3 UK used car buyers found a significant undisclosed defect]] — demonstrating that sellers systematically withhold quality information and buyers cannot verify vehicle condition before purchase.',
+      'The [[cra-2015|Consumer Rights Act 2015: used cars must be satisfactory and as described]], giving buyers legal remedies when sellers misrepresent vehicle condition — a government attempt to correct information failure through mandatory disclosure.',
       'AutoTrader valuation data and HPI vehicle history checks are [[private-info|now widely available to UK buyers at low cost]], providing private-sector information intermediaries that partially reduce the information gap without government mandate.',
-      'FCA research found that [[broader-failure|34% of consumers who bought financial products did not fully understand the charges]] — suggesting that information asymmetry is a pervasive market failure extending well beyond the used car market, rather than a sector-specific problem.',
-      'Trading Standards data indicate that [[enforcement|fewer than 2% of used car disputes in England reach formal legal proceedings each year]], suggesting that the deterrent effect of the Consumer Rights Act is limited by weak enforcement and high transaction costs for buyers.'
+      'FCA research found that [[broader-failure|34% of financial product buyers did not fully understand the charges]] — suggesting that information asymmetry is a pervasive market failure extending well beyond the used car market, rather than a sector-specific problem.',
+      'Trading Standards data indicate that [[enforcement|under 2% of used car disputes in England reach formal proceedings yearly]], suggesting that the deterrent effect of the Consumer Rights Act is limited by weak enforcement and high transaction costs for buyers.'
     ],
 
     evidence: {
-      'defects':        { text: '1 in 3 UK used car buyers experienced a significant defect undisclosed at sale' },
-      'cra-2015':       { text: 'Consumer Rights Act 2015 requires used cars to be of satisfactory quality and as described' },
+      'defects':        { text: '1 in 3 UK used car buyers found a significant undisclosed defect' },
+      'cra-2015':       { text: 'Consumer Rights Act 2015: used cars must be satisfactory and as described' },
       'private-info':   { text: 'now widely available to UK buyers at low cost' },
-      'broader-failure': { text: '34% of consumers who bought financial products did not fully understand the charges' },
-      'enforcement':    { text: 'fewer than 2% of used car disputes in England reach formal legal proceedings each year' }
+      'broader-failure': { text: '34% of financial product buyers did not fully understand the charges' },
+      'enforcement':    { text: 'under 2% of used car disputes in England reach formal proceedings yearly' }
     },
 
     buckets: [

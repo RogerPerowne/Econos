@@ -26,7 +26,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🚗',
         prompt: 'Policy claim',
-        text:   'Information asymmetry is the primary cause of market failure in the UK used car market, justifying mandatory disclosure and consumer protection legislation.'
+        text:   'Information asymmetry is the prime cause of used-car market failure.'
       },
       factors: [
         {

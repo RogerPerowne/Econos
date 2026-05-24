@@ -99,12 +99,12 @@
         stem: 'Sort each good into the category that best describes the typical price elasticity of its demand.',
         categories: ['Elastic (|PED| > 1)', 'Inelastic (|PED| < 1)', 'Approximately unit elastic', 'Perfectly inelastic (PED = 0)'],
         items: [
-          { label: 'A weekend break to Paris with many alternative city destinations', ans: 0 },
-          { label: 'A branded takeaway coffee with multiple cafés on the same street', ans: 0 },
-          { label: 'Household gas and electricity over the short run', ans: 1 },
-          { label: 'Insulin for a Type 1 diabetic patient with no realistic substitute', ans: 3 },
-          { label: 'Salt — a tiny share of household spending, used in small amounts', ans: 1 },
-          { label: 'A composite consumer basket where firms have priced to keep revenue stable', ans: 2 }
+          { text: 'A weekend break to Paris with many alternative city destinations', category: 'Elastic (|PED| > 1)' },
+          { text: 'A branded takeaway coffee with multiple cafés on the same street', category: 'Elastic (|PED| > 1)' },
+          { text: 'Household gas and electricity over the short run', category: 'Inelastic (|PED| < 1)' },
+          { text: 'Insulin for a Type 1 diabetic patient with no realistic substitute', category: 'Perfectly inelastic (PED = 0)' },
+          { text: 'Salt — a tiny share of household spending, used in small amounts', category: 'Inelastic (|PED| < 1)' },
+          { text: 'A composite consumer basket where firms have priced to keep revenue stable', category: 'Approximately unit elastic' }
         ],
         exp: '<strong>Elastic</strong>: Paris weekend (luxury + many substitutes) and branded coffee (many nearby substitutes). <strong>Inelastic</strong>: household energy (necessity, no short-run substitute) and salt (tiny share of income, no substitute). <strong>Approximately unit elastic</strong>: baskets/products priced so revenue is stable — a benchmark case. <strong>Perfectly inelastic</strong>: insulin — the patient must buy a fixed quantity regardless of price. Perfectly inelastic demand is rare and ethically charged: it creates extreme pricing power, which is why life-sustaining medicines are usually price-regulated or publicly funded.'
       },

@@ -20,8 +20,6 @@
 
 import { chromium } from 'playwright-core';
 
-const PW_CHROMIUM = '/opt/pw-browsers/chromium-1223/chrome-linux64/chrome';
-
 const url = process.argv[2];
 const out = process.argv[3] || '/tmp/econos.png';
 const cardIndex = process.argv[4] !== undefined ? parseInt(process.argv[4], 10) : -1;
@@ -32,7 +30,6 @@ if (!url) {
 }
 
 const browser = await chromium.launch({
-  executablePath: PW_CHROMIUM,
   args: ['--no-sandbox', '--disable-gpu'],
 });
 const context = await browser.newContext({

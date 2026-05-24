@@ -9,10 +9,10 @@ window.ECONOS_LINK_STATION = {
   nextUrl: TopicLoader.buildUrl('link_chain.html'),
 
   stations: [
-    { id: 'context', label: 'Use the context',    href: TopicLoader.buildUrl('link_context.html') },
-    { id: 'chain',   label: 'Build the chain',    href: TopicLoader.buildUrl('link_chain.html')   },
-    { id: 'depends', label: 'It depends on',      href: TopicLoader.buildUrl('link_depends.html') },
-    { id: 'judge',   label: 'Make the judgement', href: TopicLoader.buildUrl('link_judge.html')   }
+    { id: 'context', label: 'Use the context', href: TopicLoader.buildUrl('link_context.html') },
+    { id: 'chain', label: 'Build the chain', href: TopicLoader.buildUrl('link_chain.html') },
+    { id: 'depends', label: 'It depends on', href: TopicLoader.buildUrl('link_depends.html') },
+    { id: 'judge', label: 'Make the judgement', href: TopicLoader.buildUrl('link_judge.html') }
   ],
   currentStationIdx: 0,
 

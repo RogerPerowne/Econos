@@ -21,11 +21,11 @@ window.ECONOS_LINK_INTRO = {
     tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
-      { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for the price mechanism as a food allocator.',      href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
-      { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps from the Ukraine war supply shock through rationing, signalling and incentivising.',             href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
-      { num: 3, name: 'Predict the Outcome', skill: 'Analysis',    sub: 'Apply rationing, signalling and incentivising to London house prices and the 2022 gas price surge.',          href: TopicLoader.buildUrl('link_predict.html'), state: 'available' },
-      { num: 4, name: 'It depends on',       skill: 'Evaluation',  sub: 'Rank the factors that most change whether the price mechanism efficiently allocates food during disruption.',   href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement',  skill: 'Evaluation',  sub: 'Synthesise context, chain, predict and conditions into an exam-quality judgement.',                             href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
+      { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
+      { num: 2, name: 'Build the chain', skill: 'Analysis', sub: 'Order or fill the steps in a reasoning chain.', href: TopicLoader.buildUrl('link_chain.html'), state: 'available' },
+      { num: 3, name: 'Predict outcome', skill: 'Analysis', sub: 'Predict how the market or economy will respond.', href: TopicLoader.buildUrl('link_predict.html'), state: 'available' },
+      { num: 4, name: 'It depends on', skill: 'Evaluation', sub: 'Rank the factors that most change the answer.', href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation', sub: 'Synthesise everything into an exam-quality judgement.', href: TopicLoader.buildUrl('link_judge.html'), state: 'available' }
     ],
 
     stages: [

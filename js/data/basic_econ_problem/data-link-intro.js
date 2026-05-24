@@ -21,10 +21,10 @@ window.ECONOS_LINK_INTRO = {
     tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
-      { num: 1, name: 'Use the context',    skill: 'Application', sub: 'Read an extract and classify which evidence changes the case for how severe the economic problem is.',    href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
-      { num: 2, name: 'Build the chain',    skill: 'Analysis',    sub: 'Order the steps that explain how scarcity forces the three central economic questions.',                  href: TopicLoader.buildUrl('link_chain.html'),   state: 'available' },
-      { num: 3, name: 'It depends on',      skill: 'Evaluation',  sub: 'Rank the factors that most change whether the economic problem is more or less acute.',                   href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 4, name: 'Make the judgement', skill: 'Evaluation',  sub: 'Synthesise context, chain and conditions into an exam-quality judgement on the unavoidability of the economic problem.', href: TopicLoader.buildUrl('link_judge.html'),   state: 'available' }
+      { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
+      { num: 2, name: 'Build the chain', skill: 'Analysis', sub: 'Order or fill the steps in a reasoning chain.', href: TopicLoader.buildUrl('link_chain.html'), state: 'available' },
+      { num: 3, name: 'It depends on', skill: 'Evaluation', sub: 'Rank the factors that most change the answer.', href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
+      { num: 4, name: 'Make the judgement', skill: 'Evaluation', sub: 'Synthesise everything into an exam-quality judgement.', href: TopicLoader.buildUrl('link_judge.html'), state: 'available' }
     ],
 
     stages: [

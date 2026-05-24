@@ -4235,6 +4235,33 @@
         return `<div style="display:grid;grid-template-columns:repeat(${c.diagramCallouts.length},1fr);gap:12px;margin:18px 0 26px;">${tiles}</div>`;
       })() : ''}
 
+      ${c.equation && Array.isArray(c.equation.terms) && c.equation.terms.length && c.equation.result ? (() => {
+        const eq = c.equation;
+        const operator = eq.operator || '+';
+        const resultArrow = eq.resultOperator || '=';
+        const title = eq.label ? genSecLabel(eq.emoji || '🧮', eq.label) : '';
+        const renderTerm = (item, isResult) => {
+          const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
+          const ring = isResult ? 3 : 2.5;
+          const shadow = isResult ? `box-shadow:0 4px 14px ${t.accent}55;` : `box-shadow:0 2px 8px ${t.accent}30;`;
+          return `
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;min-width:96px;flex:0 1 auto;">
+              <div style="width:62px;height:62px;border-radius:50%;background:${t.bg};border:${ring}px solid ${t.accent};display:inline-flex;align-items:center;justify-content:center;font-size:28px;line-height:1;margin-bottom:10px;${shadow}">${item.icon || ''}</div>
+              <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:4px;">${item.title}</div>
+              ${item.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.45;max-width:120px;">${item.sub}</div>` : ''}
+            </div>`;
+        };
+        const renderOp = (sym, big) => `<div style="font-size:${big ? 30 : 26}px;font-weight:800;color:#94A3B8;line-height:1;padding:0 2px;align-self:flex-start;margin-top:18px;flex:0 0 auto;">${sym}</div>`;
+        const parts = [];
+        eq.terms.forEach((term, i) => {
+          parts.push(renderTerm(term, false));
+          if (i < eq.terms.length - 1) parts.push(renderOp(operator, false));
+        });
+        parts.push(renderOp(resultArrow === '=' ? '=' : '→', true));
+        parts.push(renderTerm(eq.result, true));
+        return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:24px 14px 18px;margin-bottom:26px;background:#FAFBFF;border:1px solid #E7E7EA;border-radius:14px;">${parts.join('')}</div>`;
+      })() : ''}
+
       ${c.flow && c.flow.length ? (() => {
         const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
         const n = c.flow.length;

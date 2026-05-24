@@ -70,21 +70,18 @@ window.ECONOS_TOPIC = {
           body: 'The risk-taking and organising function that combines the other factors.<br><br><strong>Examples:</strong> entrepreneurs, managers, business leaders<br><br><span style="display:inline-block;margin-top:4px;padding:5px 12px;border-radius:999px;background:#FEE2E2;color:#B91C1C;font-size:12px;font-weight:700;">💰 Reward: Profit</span>'
         }
       ],
-      flowTitle: 'How the four factors combine',
-      flowEmoji: '⚙️',
-      flow: [
-        { tone: 'green',  icon: '🏞️', title: 'Land',         sub: 'Natural resources' },
-        { tone: 'purple', icon: '👥', title: 'Labour',       sub: 'Human effort' },
-        { tone: 'amber',  icon: '🏭', title: 'Capital',      sub: 'Man-made resources' },
-        { tone: 'rose',   icon: '🚀', title: 'Enterprise',   sub: 'Risk + coordination' },
-        { tone: 'blue',   icon: '🛒', title: 'Goods & services', sub: 'The output that supports living standards' }
-      ],
-      economistQuote: {
-        portraitKey: 'economistAdamSmith',
-        tone: 'blue',
-        label: 'Economist insight · Adam Smith, the founding view',
-        quote: 'The annual labour of every nation is the fund which originally supplies it with all the necessaries and conveniencies of life… which is regulated by the skill, dexterity, and judgment with which its labour is generally applied.',
-        attribution: 'Adam Smith, Wealth of Nations (1776)'
+      equation: {
+        label: 'The factors of production equation',
+        emoji: '🧮',
+        terms: [
+          { tone: 'green',  icon: '🏞️', title: 'Land',       sub: 'Natural resources' },
+          { tone: 'purple', icon: '👥', title: 'Labour',     sub: 'Human effort' },
+          { tone: 'amber',  icon: '🏭', title: 'Capital',    sub: 'Man-made resources' },
+          { tone: 'rose',   icon: '🚀', title: 'Enterprise', sub: 'Risk + coordination' }
+        ],
+        operator: '+',
+        resultOperator: '=',
+        result: { tone: 'blue', icon: '🛒', title: 'Goods & services', sub: 'The output that supports living standards' }
       },
       examEdge: {
         title: 'Why this matters',
@@ -138,13 +135,6 @@ window.ECONOS_TOPIC = {
           body: 'Scarce natural resources lie behind many policy debates — climate change, deforestation, water rights, fisheries, urban planning. Fixed supply also drives housing affordability.'
         }
       ],
-      economistQuote: {
-        portraitKey: 'economistRicardo',
-        tone: 'green',
-        label: 'Economist insight · David Ricardo on rent',
-        quote: 'Rent is that portion of the produce of the earth, which is paid to the landlord for the use of the original and indestructible powers of the soil.',
-        attribution: 'David Ricardo, Principles of Political Economy (1817)'
-      },
       examEdge: {
         title: 'Exam edge',
         text: 'When asked about land, <strong>specify whether you mean physical land or the broader concept of natural resources</strong>. The fixed-supply property of land is the most-tested feature — it makes rent demand-driven and explains why land values rise so sharply with population growth.'
@@ -195,13 +185,6 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🎯', title: 'Participation & incentives', sub: 'Decisions about whether and how much to work.' }
       ],
       conclusion: { title: 'Why labour supply matters', text: 'Labour supply is shaped by <strong>both economic incentives and wider social policy</strong>. Understanding these influences helps explain changes in employment, participation rates and wage levels — and why two countries with similar populations can have very different labour markets.' },
-      economistQuote: {
-        portraitKey: 'economistGoldin',
-        tone: 'purple',
-        label: 'Economist insight · Claudia Goldin on women in the labour force',
-        quote: 'The history of women\'s involvement in the labor force is the history of human capital — of women\'s growing access to education, careers, and the right to combine family and work.',
-        attribution: 'Claudia Goldin, Nobel Prize in Economics (2023)'
-      },
       examEdge: {
         title: 'Quantity vs quality is the key distinction',
         text: 'Top-band answers always distinguish the <em>quantity</em> of labour from its <em>quality</em>. Two economies can have the same workforce size but very different output if their <strong>human capital</strong> — skills, education, health — differs. This is why education and training feature so heavily in supply-side policy.'
@@ -253,13 +236,6 @@ window.ECONOS_TOPIC = {
         }
       ],
       conclusion: { title: 'Why capital accumulation matters', text: 'Capital accumulation can raise long-run productivity and living standards — but only if <strong>investment is sustained</strong> and capital is <strong>efficiently used</strong>. China invests ~42% of GDP; the UK and US invest ~18%. Decades of high investment can transform an economy.' },
-      economistQuote: {
-        portraitKey: 'economistKeynes',
-        tone: 'amber',
-        label: 'Economist insight · Keynes on investment',
-        quote: 'A large proportion of our positive activities depend on spontaneous optimism rather than mathematical expectations… If animal spirits are dimmed, enterprise will fade and die.',
-        attribution: 'John Maynard Keynes, General Theory (1936)'
-      },
       examEdge: {
         title: 'Capital ≠ money',
         text: 'The single most common exam mistake on this topic. <strong>Capital is physical productive resources</strong>: machines, factories, roads, tools. Money used to buy them is <em>financial</em> capital — a different concept. Always specify which one you mean.'
@@ -274,15 +250,19 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Enterprise',
       lede: 'Enterprise is the <strong>risk-taking and decision-making function</strong> that organises the other three factors of production — land, labour and capital — to produce goods and services.',
-      flowTitle: 'How enterprise combines the other factors',
-      flowEmoji: '⚙️',
-      flow: [
-        { tone: 'green',  icon: '🏞️', title: 'Land',         sub: 'Natural resources' },
-        { tone: 'purple', icon: '👥', title: 'Labour',       sub: 'Human effort' },
-        { tone: 'amber',  icon: '🏭', title: 'Capital',      sub: 'Man-made resources' },
-        { tone: 'rose',   icon: '🚀', title: 'Enterprise',   sub: 'Combines + decides + bears risk' },
-        { tone: 'blue',   icon: '🛒', title: 'Goods & services', sub: 'The output' }
-      ],
+      equation: {
+        label: 'How enterprise combines the other factors',
+        emoji: '🧮',
+        terms: [
+          { tone: 'green',  icon: '🏞️', title: 'Land',       sub: 'Natural resources' },
+          { tone: 'purple', icon: '👥', title: 'Labour',     sub: 'Human effort' },
+          { tone: 'amber',  icon: '🏭', title: 'Capital',    sub: 'Man-made resources' },
+          { tone: 'rose',   icon: '🚀', title: 'Enterprise', sub: 'Combines + decides + bears risk' }
+        ],
+        operator: '+',
+        resultOperator: '=',
+        result: { tone: 'blue', icon: '🛒', title: 'Goods & services', sub: 'The output' }
+      },
       causesLabel: 'The four functions of enterprise',
       causesEmoji: '🎯',
       causes: [
@@ -329,7 +309,6 @@ window.ECONOS_TOPIC = {
       },
       economistQuote: {
         portraitKey: 'economistSchumpeter',
-        tone: 'rose',
         label: 'Economist insight · Schumpeter on the entrepreneur',
         quote: 'The function of entrepreneurs is to reform or revolutionize the pattern of production… This process of Creative Destruction is the essential fact about capitalism.',
         attribution: 'Joseph Schumpeter, Capitalism, Socialism and Democracy (1942)'

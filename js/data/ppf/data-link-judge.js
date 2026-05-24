@@ -13,10 +13,11 @@ window.ECONOS_LINK_JUDGE = {
   stations: [
     { id: 'context', label: 'Use the context',    href: TopicLoader.buildUrl('link_context.html') },
     { id: 'chain',   label: 'Build the chain',    href: TopicLoader.buildUrl('link_chain.html')   },
+    { id: 'calc',    label: 'Calculate It',        href: TopicLoader.buildUrl('link_calc.html')    },
     { id: 'depends', label: 'It depends on',      href: TopicLoader.buildUrl('link_depends.html') },
     { id: 'judge',   label: 'Make the judgement', href: TopicLoader.buildUrl('link_judge.html')   }
   ],
-  currentStationIdx: 3,
+  currentStationIdx: 4,
 
   wgll: [
     { icon: '🎯', text: 'Take a clear position'  },

@@ -11,14 +11,14 @@ window.ECONOS_TOPICS = [
   /* ---- Theme 1, Section 1: The Economic Problem (1.1–1.6) ---- */
   {
     id: 'basic_econ_problem',
-    name: '1.1–1.2 Introduction to Economics',
+    name: 'Introduction to Economics',
     sub: 'Economics as a social science, positive/normative statements, scarcity, choice, opportunity cost',
     color: '#f97316',
     available: { learn: true, link: true, land: false }
   },
   {
     id: 'factors_of_production',
-    name: '1.3 Factors of Production',
+    name: 'Factors of Production',
     sub: 'Land, labour, capital, enterprise; factor rewards and factor mobility',
     color: '#fb923c',
     available: { learn: false, link: false, land: false }

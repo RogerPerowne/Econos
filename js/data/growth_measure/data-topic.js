@@ -338,55 +338,79 @@ window.ECONOS_TOPIC = {
     /* ----- CARD 7 — What GDP misses ----- */
     {
       id: 'gdp-limits',
-      template: 'mechanisms',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'What GDP misses',
-      lede: "GDP measures the market value of final output — but it has six important blind spots that affect wellbeing and don't show up in the headline figure.",
-      mechanisms: [
+      lede: 'GDP measures the market value of final goods and services, but it has important blind spots. These are key things that affect our wellbeing but don\'t show up in GDP.',
+      causesLabel: 'Six blind spots in GDP',
+      causesEmoji: '🚫',
+      causesStyle: 'plain-white',
+      causesPosition: 'top',
+      causesCols: 3,
+      causes: [
         {
-          num: '1',
           tone: 'rose',
-          title: 'Income inequality',
-          text: 'GDP is an <strong>average</strong>. A rising GDP can hide rising inequality — the poorest may see no improvement. The <em>Gini coefficient</em> and <em>median income</em> are better welfare indicators.'
+          icon: '👥',
+          head: '1. Income inequality',
+          body: 'GDP is an <strong>average</strong>. It doesn\'t show how income is distributed. A rising GDP can hide rising inequality.'
         },
         {
-          num: '2',
           tone: 'amber',
-          title: 'Informal / shadow economy',
-          text: 'Unpaid, untaxed and unrecorded activities — cash jobs, small trades, domestic work — are missing from GDP. In developing countries, the informal sector can be <strong>30–50% of activity</strong>.'
+          icon: '🕵️',
+          head: '2. Informal or shadow economy',
+          body: 'Unpaid, untaxed and unrecorded activities (e.g., cash jobs, small trades) are often <strong>missing from GDP</strong>.'
         },
         {
-          num: '3',
           tone: 'green',
-          title: 'Environmental degradation',
-          text: 'Pollution, resource depletion and biodiversity loss reduce future wellbeing — but GDP may still rise. GDP even counts <em>pollution clean-up as positive output</em>. Green GDP adjusts for this.'
+          icon: '🌿',
+          head: '3. Environmental degradation',
+          body: 'Pollution, resource depletion and loss of biodiversity reduce future wellbeing — <strong>but GDP may rise</strong>.'
         },
         {
-          num: '4',
           tone: 'purple',
-          title: 'Unpaid household work',
-          text: 'Cooking, cleaning, childcare and caring for elders create real value but are not priced in markets. If a parent pays for childcare, GDP rises. If they provide the same care unpaid, it doesn\'t.'
+          icon: '🏠',
+          head: '4. Unpaid household work',
+          body: 'Cooking, cleaning, childcare and caring for elders create real value but <strong>aren\'t priced in markets</strong>.'
         },
         {
-          num: '5',
           tone: 'blue',
-          title: 'Leisure time',
-          text: 'More output can mean longer working hours and less time for rest, family and community. An economy with 80-hour weeks may have higher GDP but lower welfare than one with 35-hour weeks.'
+          icon: '⏰',
+          head: '5. Leisure time',
+          body: 'More output can mean longer hours and less time for rest, family and community — <strong>not captured by GDP</strong>.'
         },
         {
-          num: '6',
           tone: 'slate',
-          title: 'Composition of output',
-          text: 'GDP counts all output equally regardless of welfare value. Military spending and hospital spending add <em>equally</em>. Defensive expenditures (crime, accidents) add to GDP without improving wellbeing.'
+          icon: '⚖️',
+          head: '6. Composition of output',
+          body: 'GDP counts goods and services <strong>regardless of what they are</strong>. Guns and hospitals both add to GDP equally.'
+        }
+      ],
+      causes2Label: 'Alternatives to GDP: broader ways to measure wellbeing',
+      causes2Emoji: '💡',
+      causes2Style: 'plain-white',
+      causes2Cols: 3,
+      causes2: [
+        {
+          tone: 'blue',
+          icon: '🌐',
+          head: 'Human Development Index (HDI)',
+          body: '<div style="font-size:13px;color:#1D4ED8;font-weight:600;margin-bottom:8px;">Looks at people, not just output.</div><div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#0B1426;line-height:1.5;"><div style="display:flex;gap:8px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">💰</span><div><strong>Income</strong><br><em style="color:#64748B;">(standard of living, GNI per capita PPP)</em></div></div><div style="display:flex;gap:8px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">❤️</span><div><strong>Health</strong><br><em style="color:#64748B;">(life expectancy at birth)</em></div></div><div style="display:flex;gap:8px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">🎓</span><div><strong>Education</strong><br><em style="color:#64748B;">(expected years of schooling)</em></div></div></div>'
+        },
+        {
+          tone: 'green',
+          icon: '🌱',
+          head: 'Genuine Progress Indicator (GPI)',
+          body: '<div style="font-size:13px;color:#047857;line-height:1.6;">Adjusts for <strong>inequality</strong>, <strong>environmental costs</strong> and <strong>unpaid work</strong> to estimate real progress.<br><br><em style="color:#64748B;">The US GPI peaked in the 1970s while GDP kept rising.</em></div>'
+        },
+        {
+          tone: 'purple',
+          icon: '😊',
+          head: 'Wellbeing indices',
+          body: '<div style="font-size:13px;color:#6D28D9;line-height:1.6;">Surveys how people feel about their lives (e.g., <strong>OECD Better Life Index</strong>, <strong>World Happiness Report</strong>).<br><br><em style="color:#64748B;">Costa Rica often beats the USA despite lower GDP per capita.</em></div>'
         }
       ],
       examEdge: {
-        title: 'Cite both GDP and a superior measure',
-        text: 'GDP is a powerful summary of economic activity — but it\'s not the whole story. A* welfare answers state what GDP <em>includes</em>, what it <em>excludes</em>, and whether it reflects wellbeing: <em>"While GDP per capita has risen, the HDI shows divergent trends in health and education, suggesting welfare improvements are unevenly distributed."</em>'
-      },
-      connection: {
-        title: 'Alternatives to GDP: broader ways to measure wellbeing',
-        text: '<strong>HDI</strong> combines income (GNI per capita, PPP), health (life expectancy) and education (expected years of schooling) — UN, annual. <strong>GPI</strong> adjusts for inequality, environmental costs and unpaid work — the US GPI peaked in the 1970s while GDP kept rising. <strong>Wellbeing indices</strong> (OECD Better Life, World Happiness Report) survey how people actually feel — Costa Rica often beats the USA despite lower GDP per capita.'
+        title: 'Exam tip',
+        text: 'GDP is a powerful summary of economic activity — but it\'s <strong>not the whole story</strong>. Always consider what it <em>includes</em>, what it <em>excludes</em>, and whether it reflects wellbeing. A* phrasing: <em>"While GDP per capita has risen, the HDI shows divergent trends in health and education, suggesting welfare improvements are unevenly distributed."</em>'
       }
     },
 

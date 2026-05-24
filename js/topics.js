@@ -21,7 +21,7 @@ window.ECONOS_TOPICS = [
     name: 'Factors of Production',
     sub: 'Land, labour, capital, enterprise; factor rewards and factor mobility',
     color: '#fb923c',
-    available: { learn: false, link: false, land: false }
+    available: { learn: true, link: false, land: false }
   },
   {
     id: 'ppf',

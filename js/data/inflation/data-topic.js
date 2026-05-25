@@ -1,345 +1,607 @@
 /* ============================================================
-   ECONOS — content data for inflation_causes
-   7 cards · revision-tight · exam-edge gems flagged
+   ECONOS — content data for inflation (Causes of Inflation & Deflation)
+   8 cards · rebuilt from mockups · Edexcel Theme 2.2.2
    ============================================================ */
 
 window.ECONOS_TOPIC = {
-  id: 'inflation_causes',
-  topicNum: '1.2.2',
+  id: 'inflation',
+  topicNum: '2.2.2',
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Causes of Inflation & Deflation',
-  estTime: '8-10 minutes',
-  goal: 'Lock in the gems that lift your answers',
+  estTime: '12-15 minutes',
+  goal: 'Diagnose inflation by cause — demand-pull, cost-push or monetary — and match the right policy to each.',
 
   intro: {
-    summary: "A tight summary of everything you need to know on inflation - with the exam gems flagged so you can spot them at a glance.",
-    doInThis: 'Recap the three causes, the diagnostic skill, and the asymmetry that explains policy.',
+    heroKey: 'heroAggSupply',
+    summary: "Inflation does not have a single cause. Demand-pull comes from too much spending. Cost-push comes from squeezed supply. Monetary and expectations-driven inflation comes from loose money and lost credibility. The same headline figure can require opposite policy responses depending on its origin — diagnosis is everything.",
+    doInThis: 'Eight cards: the three causes, demand-pull and cost-push in detail, how to spot the difference, money and expectations, winners and losers, the dangers of deflation, and the policy toolkit.',
     outcomes: [
-      'Recap the three causes',
-      'Build diagnostic skill',
-      'Lock in 7 exam-edge gems'
+      'Distinguish demand-pull, cost-push and monetary inflation by their AD/AS signatures',
+      'Use output direction as the diagnostic tell',
+      'Explain why QE did not always cause inflation — velocity, slack and expectations',
+      'Evaluate the winners and losers of inflation, and the dangers of deflation',
+      'Match the policy response to the underlying cause'
     ],
-    tip: "These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.",
+    tip: 'Diagnose first, then treat. The same CPI figure can hide very different macroeconomic stories.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards',       state: 'current'                                  },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context',    state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 1, name: 'Learn it', sub: '8 concept cards',                 state: 'current' },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context',   state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: TopicLoader.buildUrl('land_intro.html') }
     ]
   },
 
   cards: [
 
-    /* ----- CARD 1 — Framing ----- */
+    /* ====================================================================
+       CARD 1 — What causes inflation?
+       Framing: three causes, the diagnose-then-treat principle.
+       ==================================================================== */
     {
-      id: 'framing',
-      template: 'framing',
+      id: 'what-causes-inflation',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
-      title: 'Inflation has many causes',
-      lede: 'Three roots, one outcome. The cause matters because the cure depends on it.',
-      branches: [
-        { tone: 'green', label: 'Demand-pull', sub: 'AD outpaces AS. Prices rise <em>with</em> output.' },
-        { tone: 'amber', label: 'Cost-push',   sub: 'SRAS shifts left. Prices rise <em>as</em> output falls. Stagflation.' },
-        { tone: 'blue',  label: 'Monetary',    sub: 'Money grows faster than output. The long-run constraint.' }
+      title: 'What causes inflation?',
+      lede: 'Inflation does not have a single cause. It can arise from demand pressures, supply shocks or from money and expectations spiralling together. Diagnosing the source is essential because each cause calls for a different policy.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '✅',
+        tone: 'green',
+        text: '<strong>The same inflation figure can require opposite policy responses depending on its origin.</strong>'
+      },
+
+      causesFirst: true,
+      causesLabel: null,
+      causes: [
+        {
+          tone: 'blue',
+          head: 'Demand-pull inflation',
+          icon: '🛒',
+          body: 'Too much spending chasing too little output.',
+          example: { icon: '📈', label: 'Cue', text: 'AD rising faster than AS.' }
+        },
+        {
+          tone: 'amber',
+          head: 'Cost-push inflation',
+          icon: '🏭',
+          body: 'Firms face higher costs and pass them on.',
+          example: { icon: '↩️', label: 'Cue', text: 'AS shifts left.' }
+        },
+        {
+          tone: 'purple',
+          head: 'Monetary and expectations-driven inflation',
+          icon: '💭',
+          body: 'Money growth and inflation psychology keep price rises going.',
+          example: { icon: '∞', label: 'Cue', text: 'Inflation becomes embedded.' }
+        }
       ],
-      examEdge: {
-        title: 'Real episodes mix causes',
-        text: 'The 2022-23 UK spike was both cost-push (energy) AND demand-pull (post-COVID spending). Top answers identify <em>which dominates</em> rather than picking one.'
+
+      flowTitle: 'The big idea',
+      flowEmoji: '💡',
+      flow: [
+        { tone: 'blue',   icon: '📊', title: 'Headline inflation',  sub: 'A single CPI figure.' },
+        { tone: 'green',  icon: '🔎', title: 'Ask what caused it',   sub: 'Demand, costs or money?' },
+        { tone: 'purple', icon: '🎯', title: 'Choose the right policy', sub: 'Diagnosis drives the cure.' }
+      ],
+
+      causes2Label: 'Treatment depends on the diagnosis',
+      causes2Emoji: '🩺',
+      causes2: [
+        { tone: 'blue',   icon: '❄️', head: 'Demand problem',     body: 'Cool demand with tighter monetary or fiscal policy.' },
+        { tone: 'amber',  icon: '🏭', head: 'Supply shock',       body: 'Ease costs or boost supply — supply-side measures.' },
+        { tone: 'purple', icon: '🛡️', head: 'Expectations problem', body: 'Restore credibility through forward guidance and anchoring.' }
+      ],
+
+      conclusion: {
+        title: '"Rising prices" is not a cause of inflation',
+        text: 'Rising prices are the <strong>symptom</strong>. The <strong>cause</strong> is the underlying driver — demand, costs, money or expectations — that puts upward pressure on prices.'
       },
-      keyTakeaway: {
-        title: 'Why this matters',
-        text: "Different causes need different policies. Cost-push can't be cured by demand-suppression alone — that's where most students lose marks."
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'High-level essays diagnose the source first and only then judge the policy. The same CPI figure may hide very different macroeconomic stories.'
       }
     },
 
-    /* ----- CARD 2 — Demand-pull ----- */
+    /* ====================================================================
+       CARD 2 — Demand-pull inflation
+       ==================================================================== */
     {
-      id: 'demand-pull',
-      template: 'cause',
+      id: 'demand-pull-inflation',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
-      title: 'Demand-pull: when demand outruns supply',
-      lede: 'AD shifts right faster than AS can keep up. Equilibrium price level rises - and so does output.',
-      diagram: 'demand-pull',
-      diagramCaption: 'AD₁ → AD₂. New equilibrium at higher P, higher Y.',
-      causes: {
-        title: 'Causes',
-        items: [
-          'Consumer confidence + spending boom',
-          'Fiscal stimulus',
-          'Cheap credit / falling savings ratio',
-          'Surge in export demand'
-        ]
+      title: 'Demand-pull inflation',
+      lede: 'Demand-pull inflation happens when aggregate demand rises faster than aggregate supply can respond. Firms raise prices while output also increases, because the economy is producing more to meet stronger demand.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '✅',
+        tone: 'green',
+        text: '<strong>Output rises alongside prices — that is the key clue.</strong>'
       },
-      hallmarks: {
-        title: "Characteristics",
-        items: [
-          'Prices rising <strong>with</strong> output rising',
-          'Falling unemployment',
-          'Tight labour markets, wage pressure',
-          'Strong business confidence'
-        ]
+
+      visualLabel: 'AD/AS diagram',
+      visualEmoji: '📈',
+      visualKey: 'demandPullDiagram',
+      visualCaption: 'AD shifts right from AD₁ to AD₂. Price level rises from P₁ to P₂ and real output rises from Y₁ to Y₂.',
+
+      causesFirst: true,
+      causesLabel: 'Common causes',
+      causesEmoji: '🔍',
+      causesStyle: 'numbered-rows',
+      causes: [
+        { tone: 'blue',   icon: '🛍️', head: 'Consumer boom',       body: 'Households spend more on goods and services.' },
+        { tone: 'amber',  icon: '🏛️', head: 'Government spending', body: 'Higher public spending increases demand in the economy.' },
+        { tone: 'green',  icon: '£',  head: 'Cheap credit',         body: 'Lower interest rates or easy lending boost borrowing and spending.' },
+        { tone: 'rose',   icon: '📉', head: 'Weak exchange rate',   body: 'Imports become dearer, raising domestic demand for local goods.' },
+        { tone: 'purple', icon: '📈', head: 'Positive expectations', body: 'Firms and consumers expect higher prices and bring demand forward.' }
+      ],
+
+      pairLabel: 'Policy response',
+      pairEmoji: '🛡️',
+      left: {
+        tone: 'blue',
+        icon: '🏦',
+        iconStyle: 'circle',
+        label: 'Tighter monetary policy',
+        text: 'Raise interest rates or reduce money supply to cool demand. <strong>Effect:</strong> AD shifts left — lower inflation, lower output.'
       },
-      ukExamples: {
-        title: 'UK examples',
-        text: '<strong>Lawson boom 1986-89</strong> - tax cuts + monetary loosening. <strong>2021-22</strong> - post-COVID demand surge as households spent built-up savings.'
+      right: {
+        tone: 'amber',
+        icon: '🏛️',
+        iconStyle: 'circle',
+        label: 'Tighter fiscal policy',
+        text: 'Reduce government spending or increase taxes to cool demand. <strong>Effect:</strong> AD shifts left — lower inflation, lower output.'
       },
+
+      conclusion: {
+        title: 'If output and prices are both rising, demand-pull is the leading candidate.',
+        text: 'Use output direction as your first diagnostic. Rising output alongside rising prices points to demand-pull.'
+      },
+
       examEdge: {
-        title: 'Diagnose by output direction',
-        text: 'Rising prices <strong>with</strong> rising output → demand-pull. The output direction is the cleanest diagnostic.'
-      },
-      policy: {
-        title: 'Standard policy response',
-        text: 'Tighten monetary policy (raise rates) and/or tighter fiscal policy (cut spending, raise tax). Both objectives - lower inflation, lower output - point the same way.'
+        title: 'Exam edge',
+        text: 'The best answers explicitly link the diagram to the outcome: AD shifts right → higher price level (inflation) and higher real output.'
       }
     },
 
-    /* ----- CARD 3 — Cost-push ----- */
+    /* ====================================================================
+       CARD 3 — Cost-push inflation
+       ==================================================================== */
     {
-      id: 'cost-push',
-      template: 'cause',
+      id: 'cost-push-inflation',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
-      title: 'Cost-push: when production gets more expensive',
-      lede: 'SRAS shifts left as input costs rise. Prices climb - but output falls. The dangerous case.',
-      diagram: 'cost-push',
-      diagramCaption: 'SRAS₁ → SRAS₂. New equilibrium at higher P, <strong>lower</strong> Y.',
-      causes: {
-        title: 'Causes',
-        items: [
-          'Raw material spikes (oil, food, metals)',
-          'Wage rises above productivity',
-          'Currency depreciation → import costs ↑',
-          'Supply chain disruption',
-          'Regulatory cost shocks'
-        ]
-      },
-      hallmarks: {
-        title: "Characteristics",
-        items: [
-          'Prices rising <strong>while</strong> output falls',
-          'Rising unemployment',
-          'Slack labour markets',
-          'External supply shocks visible'
-        ]
-      },
-      ukExamples: {
-        title: 'UK examples',
-        text: '<strong>1973-74 oil crisis</strong> (oil prices quadrupled). <strong>1979-80</strong> second oil shock. <strong>2022 Russia-Ukraine</strong> energy shock.'
-      },
-      examEdge: {
-        title: 'The word is "stagflation"',
-        text: 'Rising prices <strong>+</strong> falling output <strong>+</strong> rising unemployment = stagflation. Use the term explicitly in essays - it signals you\'ve identified the type correctly.'
-      },
-      dilemma: {
-        title: 'The policy dilemma',
-        lines: [
-          'Tighten policy → inflation falls but output collapse worsens.',
-          'Loosen policy → output recovers but inflation entrenches.',
-          '<strong>There\'s no costless cure.</strong> This is the core evaluation point.'
-        ]
-      }
-    },
+      title: 'Cost-push inflation',
+      lede: 'Cost-push inflation happens when firms face higher production costs — such as rising input prices, wages or taxes — and pass them on to customers. Prices rise while output falls, because it becomes more expensive to produce.',
+      ledeStyle: 'plain',
 
-    /* ----- CARD 4 — Spotting the difference ----- */
-    {
-      id: 'diagnose',
-      template: 'diagnose',
-      stepLabel: 'Learn: Step 4 of 8',
-      title: 'Spotting the difference',
-      lede: 'The diagnostic skill examiners reward. Get this right and the rest of your answer flows.',
-      table: {
-        headers: ['', 'Demand-pull', 'Cost-push'],
-        rows: [
-          ['Output',        'Rising',  'Falling'],
-          ['Unemployment',  'Falling', 'Rising'],
-          ['Labour market', 'Tight',   'Slack'],
-          ['Confidence',    'Strong',  'Weak'],
-          ['Trigger',       'Internal demand', 'Often external shock']
-        ]
+      tip: {
+        icon: '⚠️',
+        tone: 'amber',
+        text: '<strong>Rising prices with falling output = stagflation risk.</strong>'
       },
-      scenarios: {
-        title: 'Diagnose these',
-        items: [
+
+      visualLabel: 'The core diagram',
+      visualEmoji: '📉',
+      visualKey: 'costPushDiagram',
+      visualCaption: 'SRAS shifts left from SRAS₁ to SRAS₂. Price level rises from P₁ to P₂; real output falls from Y₁ to Y₂. AD is unchanged.',
+
+      causesFirst: true,
+      causesLabel: 'What causes it?',
+      causesEmoji: '🔍',
+      causesStyle: 'numbered',
+      causesTone: 'amber',
+      causes: [
+        { icon: '🔥', head: 'Higher energy prices',         body: 'More expensive fuel and electricity raise production costs.' },
+        { icon: '👥', head: 'Wage rises',                   body: 'Higher pay increases labour costs, especially if productivity does not keep up.' },
+        { icon: '£',  head: 'Import costs from a weaker FX', body: 'Imports become more expensive, lifting input prices.' },
+        { icon: '📄', head: 'Indirect taxes',               body: 'VAT or excise duty rises increase firms\' costs, which they pass on.' },
+        { icon: '⛈️', head: 'Supply shocks',                body: 'Events like bad weather, pandemics or war disrupt supply and lift costs.' }
+      ],
+
+      verdict: {
+        title: 'The policy dilemma',
+        emoji: '⚖️',
+        layout: 'vs',
+        columns: [
           {
-            label: 'A',
-            text: 'Inflation 8%, unemployment 3%, GDP growing strongly, vacancies at record highs.',
-            answer: 'Demand-pull',
-            tone: 'green'
+            tone: 'blue',
+            icon: '🛡️',
+            label: 'Tighten policy to reduce inflation',
+            items: [
+              { text: 'Higher interest rates curb demand.' },
+              { text: 'Helps bring inflation down.' },
+              { ok: false, text: 'But output falls further and unemployment may rise.' }
+            ]
           },
           {
-            label: 'B',
-            text: 'Inflation 11%, unemployment rising, GDP flat, oil prices doubled.',
-            answer: 'Cost-push',
-            tone: 'amber'
-          },
-          {
-            label: 'C',
-            text: 'Inflation 9%, post-pandemic demand surge AND energy shock simultaneous.',
-            answer: 'Mixed (lean cost-push if energy dominates)',
-            tone: 'purple'
+            tone: 'rose',
+            icon: '📈',
+            label: 'Loosen policy to support the economy',
+            items: [
+              { text: 'Lower rates or fiscal support boost demand.' },
+              { text: 'Helps output and jobs in the short run.' },
+              { ok: false, text: 'But risks keeping inflation high and becoming harder to bring down later.' }
+            ]
           }
         ]
       },
-      examEdge: {
-        title: 'Always diagnose first',
-        text: 'Top answers open with: <em>"This is primarily [cost-push/demand-pull/mixed] inflation because…"</em> Naming the type <strong>before</strong> discussing policy adds a clear analytical step examiners reward.'
-      }
-    },
 
-    /* ----- CARD 5 — Monetary theory & QE (merged) ----- */
-    {
-      id: 'monetary',
-      template: 'monetary',
-      stepLabel: 'Learn: Step 5 of 8',
-      title: "Money supply & QE",
-      lede: "Classical theory says more money = more inflation. QE broke that rule — and understanding why is worth exam marks.",
-      classical: {
-        title: 'The classical view',
-        formula: 'MV = PY',
-        formulaSub: 'money × velocity = prices × output',
-        quote: '"Inflation is always and everywhere a monetary phenomenon." — Friedman',
-        examples: 'Hyperinflations confirm it: <strong>Zimbabwe 2008</strong>, <strong>Weimar 1923</strong>, <strong>Hungary 1946</strong> — all monetary.'
-      },
-      puzzle: {
-        bullets: [
-          '<strong>2008-2022:</strong> BoE, Fed and ECB expanded the monetary base by 5-10× through QE.',
-          '<strong>Critics warned</strong> of imminent hyperinflation.',
-          '<strong>It didn\'t happen.</strong> Four reasons explain why.'
-        ]
-      },
-      mechanisms: [
+      summaryRow: [
         {
-          num: '1',
           tone: 'blue',
-          title: 'Velocity collapsed',
-          text: 'M rose 10× but V fell 10×. Banks held QE-created reserves rather than lending. <strong>MV = PY</strong> held — V just did the adjusting.'
+          icon: '🌍',
+          title: 'UK 2021–23',
+          text: 'Surging energy prices and higher import costs pushed inflation up while growth slowed.'
         },
         {
-          num: '2',
-          tone: 'green',
-          title: 'Output gap',
-          text: 'Economies were below potential. New money raised output rather than prices — the AS curve was effectively flat.'
-        },
-        {
-          num: '3',
           tone: 'amber',
-          title: 'Anchored expectations',
-          text: "Decades of credible 2% targeting kept expectations stable. People didn't expect inflation, so they didn't act in ways that caused it."
-        },
-        {
-          num: '4',
-          tone: 'rose',
-          title: 'Counter-examples confirm it',
-          text: 'Venezuela, Argentina, Turkey <em>did</em> get inflation — because their central banks lacked credibility and money financed fiscal deficits.'
+          icon: '🛢️',
+          title: '1970s oil shock',
+          text: 'Higher oil prices raised costs across the economy, leading to high inflation and high unemployment.'
         }
       ],
+
       examEdge: {
-        title: 'The takeaway gem',
-        text: '"More money = more inflation" needs context. QE <strong>in a recession with anchored expectations</strong> doesn\'t cause inflation. The 2022-23 spike came from energy shocks — not QE. Timing matters.'
+        title: 'Exam edge',
+        text: 'Cost-push inflation is harder to cure because inflation and recession appear together — policymakers face an unpleasant trade-off.'
       }
     },
 
-    /* ----- CARD 6 — Impacts of inflation ----- */
+    /* ====================================================================
+       CARD 4 — Spotting the difference
+       ==================================================================== */
     {
-      id: 'impacts',
-      template: 'impacts',
+      id: 'spotting-the-difference',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 8',
+      title: 'Spotting the difference',
+      lede: 'The key diagnostic is output direction. Demand-pull inflation raises output because demand outpaces supply. Cost-push inflation lowers output because higher costs squeeze supply.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '✅',
+        tone: 'green',
+        text: '<strong>Output is the tell.</strong>'
+      },
+
+      comparisonTable: {
+        title: 'Comparison table',
+        emoji: '📊',
+        columns: ['🛒 Demand-pull inflation', '🏭 Cost-push inflation'],
+        columnTones: ['blue', 'amber'],
+        rows: [
+          { label: '🎯 Main cause',          values: ['Demand rises faster than the economy can supply.', 'Input costs rise, pushing firms\' costs and prices up.'], highlights: [true, true] },
+          { label: '↔️ AD/AS movement',      values: ['AD shifts right. AS unchanged.',                    'AS shifts left. AD unchanged.'] },
+          { label: '📈 Output effect',       values: ['Output increases (above potential).',               'Output decreases (below potential).'] },
+          { label: '£ Inflation clue',       values: ['Prices rise alongside stronger output.',            'Prices rise while output falls.'] },
+          { label: '🛡️ Typical policy',      values: ['Tighten demand — raise rates or cut spending.',     'Relieve supply pressures — reduce costs or boost supply.'] }
+        ]
+      },
+
+      causes2Label: 'Classify the case',
+      causes2Emoji: '✏️',
+      causes2: [
+        { tone: 'amber', icon: '⚡', head: '2021 energy shock',     body: 'Global gas prices surged, lifting energy bills and production costs. Output fell as firms cut back. <strong style="display:block;margin-top:8px;color:#D97706;letter-spacing:0.08em;">→ COST-PUSH</strong>' },
+        { tone: 'blue',  icon: '📈', head: '2020 lockdown release boom', body: 'Households spent savings as lockdowns ended. Demand jumped and output rose above potential. <strong style="display:block;margin-top:8px;color:#2563EB;letter-spacing:0.08em;">→ DEMAND-PULL</strong>' },
+        { tone: 'amber', icon: '🏭', head: '1970s stagflation',     body: 'Oil shocks pushed prices up while output stalled. Unemployment rose at the same time. <strong style="display:block;margin-top:8px;color:#D97706;letter-spacing:0.08em;">→ COST-PUSH</strong>' }
+      ],
+
+      conclusion: {
+        title: 'Fast test',
+        text: 'Prices up + output up = <strong>demand-pull</strong>. Prices up + output down = <strong>cost-push</strong>.'
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'The highest-mark answers diagnose <em>before</em> recommending policy. Identify the cause using output direction first.'
+      }
+    },
+
+    /* ====================================================================
+       CARD 5 — Money, expectations and the 2021 puzzle
+       ==================================================================== */
+    {
+      id: 'money-expectations',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 5 of 8',
+      title: 'Money, expectations and the 2021 puzzle',
+      lede: 'Money and expectations can amplify inflation. But money supply growth alone does not mechanically create runaway inflation. Understanding the 2021 puzzle means looking beyond money to velocity, spare capacity and expectations.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '✅',
+        tone: 'green',
+        text: '<strong>Quantity theory is a starting point — not the whole story.</strong>'
+      },
+
+      letterFormula: {
+        label: 'The framework',
+        emoji: '🧠',
+        left:  [
+          { letter: 'M', name: 'Money supply',         tone: 'green' },
+          { letter: 'V', name: 'Velocity of circulation', tone: 'blue' }
+        ],
+        right: [
+          { letter: 'P', name: 'Average price level',  tone: 'amber' },
+          { letter: 'T', name: 'Transactions or real output', tone: 'purple' }
+        ],
+        caption: 'For a given level of real output (T), higher money (M) raises prices (P) only if velocity (V) is stable. If V falls or spare capacity exists, extra money may not feed through to higher inflation.'
+      },
+
+      flowTitle: 'Why QE did not trigger runaway inflation',
+      flowEmoji: '📊',
+      flow: [
+        { tone: 'blue',   icon: '📉', title: 'Velocity fell',           sub: 'Pandemic uncertainty and precautionary saving depressed spending velocity.' },
+        { tone: 'amber',  icon: '👥', title: 'Output gap absorbed demand', sub: 'Large spare capacity meant demand could rise without pushing prices up.' },
+        { tone: 'purple', icon: '⚓', title: 'Expectations stayed anchored', sub: 'Credible central banks kept inflation expectations low and well anchored.' }
+      ],
+
+      causesLabel: 'Why 2021–23 was different',
+      causesEmoji: '💡',
+      causes: [
+        { tone: 'green',  icon: '⚙️', head: 'Supply shock',         body: 'Energy, food and global supply disruptions pushed costs up.' },
+        { tone: 'amber',  icon: '🛒', head: 'Post-COVID demand surge', body: 'Households spent savings and consumption rebounded strongly.' },
+        { tone: 'purple', icon: '💰', head: 'Pre-loaded money supply', body: 'Large money creation met supply constraints, not spare capacity.' }
+      ],
+
+      conclusion: {
+        title: 'Expectations: the self-fulfilling channel',
+        text: 'If people <strong>expect</strong> higher inflation, they act — firms raise prices, workers ask for higher wages, households spend sooner. Those actions can make the higher inflation happen. Central bank credibility anchors expectations by convincing the public that the bank will bring inflation back to target.'
+      },
+
+      tip2: null,
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Strong essays use the quantity theory <em>carefully</em>. State the identity, then qualify it: velocity, slack and anchored expectations explain why money does not automatically cause inflation.'
+      }
+    },
+
+    /* ====================================================================
+       CARD 6 — Winners and losers
+       ==================================================================== */
+    {
+      id: 'winners-and-losers',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 8',
-      title: 'Impacts of inflation',
-      lede: 'Inflation affects different groups in very different ways. The distributional story is where evaluation marks live.',
-      groups: [
+      title: 'Winners and losers',
+      lede: 'Inflation redistributes purchasing power. It does not simply make everyone worse off. Who gains and who loses depends especially on whether inflation is <strong>anticipated</strong> or <strong>unanticipated</strong>.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '✅',
+        tone: 'green',
+        text: '<strong>Inflation is not neutral — it redistributes.</strong>'
+      },
+
+      versusRows: {
+        title: 'Who benefits? Who loses?',
+        emoji: '👥',
+        leftTone: 'green',
+        rightTone: 'rose',
+        rows: [
+          {
+            left:  { icon: '🐖', head: 'Savers and lenders',     sub: 'Real value of savings falls.' },
+            right: { icon: '£',  head: 'Borrowers and debtors',  sub: 'Repay with cheaper money.' }
+          },
+          {
+            left:  { icon: '👤', head: 'Fixed-wage workers',     sub: 'Real wages fall behind prices.' },
+            right: { icon: '📈', head: 'Flexible-pay workers',    sub: 'Wages can rise with prices.' }
+          },
+          {
+            left:  { icon: '🚢', head: 'Exporters',              sub: 'Home goods become cheaper abroad.' },
+            right: { icon: '🛒', head: 'Importers',              sub: 'Imported inputs and goods become more expensive.' }
+          },
+          {
+            left:  { icon: '🧓', head: 'Pensioners on fixed incomes', sub: 'Purchasing power is eroded.' },
+            right: { icon: '🛡️', head: 'Those with index-linked incomes', sub: 'Payments rise with inflation.' }
+          },
+          {
+            left:  { icon: '🏠', head: 'Holders of real assets', sub: 'Property and other assets rise in value.' },
+            right: { icon: '💵', head: 'Holders of cash',         sub: 'Cash loses purchasing power.' }
+          }
+        ]
+      },
+
+      pairLabel: 'The big evaluation',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'blue',
+        icon: '🔮',
+        iconStyle: 'circle',
+        label: 'Anticipated inflation',
+        text: 'People can plan ahead, set wages and prices, and use index-linking. <strong style="color:#2563EB;">Distributional effects are smaller.</strong>'
+      },
+      right: {
+        tone: 'amber',
+        icon: '🔎',
+        iconStyle: 'circle',
+        label: 'Unanticipated inflation',
+        text: 'Price rises outpace expectations. Some gain and others lose. <strong style="color:#D97706;">Distributional effects are larger.</strong>'
+      },
+
+      conclusion: {
+        title: 'Governments and mortgage-holders',
+        text: 'Governments and mortgage-holders can <strong>benefit</strong> when the real value of debt erodes, lowering the real cost of servicing and repaying debt.'
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'The strongest evaluation of winners and losers depends on <strong>expectations</strong> — and on how quickly incomes and contracts adjust to higher prices.'
+      }
+    },
+
+    /* ====================================================================
+       CARD 7 — Deflation: the harder problem
+       ==================================================================== */
+    {
+      id: 'deflation-harder-problem',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 7 of 8',
+      title: 'Deflation — the harder problem',
+      lede: 'Falling prices may sound attractive. But when they reflect collapsing demand, they can trigger a harmful cycle that is hard to escape. That is deflation.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '❗',
+        tone: 'rose',
+        text: '<strong>Deflation can trap an economy in weakness.</strong>'
+      },
+
+      flowTitle: 'Why it is dangerous',
+      flowEmoji: '⚠️',
+      flow: [
+        { tone: 'blue',   icon: '🏷️', title: 'Prices fall',              sub: 'Lower prices today signal lower demand tomorrow.' },
+        { tone: 'green',  icon: '🛒', title: 'Consumers delay spending', sub: 'Households wait for better prices, so demand falls further.' },
+        { tone: 'amber',  icon: '🏭', title: 'Firms cut output and jobs', sub: 'Sales fall, so firms cut production, investment and employment.' },
+        { tone: 'rose',   icon: '📉', title: 'Prices weaken again',      sub: 'Lower income and weaker demand push prices down further.' }
+      ],
+
+      causesLabel: null,
+      causes: [
+        { tone: 'purple', icon: '⚖️', head: 'Real debt burdens rise',  body: 'When prices fall, the real value of debt increases. Borrowers struggle, defaults rise, and banks tighten credit.' },
+        { tone: 'amber',  icon: '🔒', head: 'Zero-lower-bound trap',   body: 'Interest rates cannot fall much below zero. Monetary policy loses traction, so the economy stalls.' },
+        { tone: 'blue',   icon: '👥', head: 'Downward wage rigidity',  body: 'Wages rarely fall easily. So firms cut jobs instead of pay, raising unemployment and weakening demand.' }
+      ],
+
+      comparisonTable: {
+        title: 'Benign vs malign',
+        emoji: '⚖️',
+        columns: ['✅ Benign deflation', '✖ Malign deflation'],
+        columnTones: ['green', 'rose'],
+        rows: [
+          { label: 'Source',         values: ['From productivity growth and rightward AS shift', 'From demand collapse and leftward AD shift'], highlights: [true, true] },
+          { label: 'Cause',          values: ['Productivity improves → AS shifts right',          'Demand falls → AD shifts left'] },
+          { label: 'Prices',         values: ['Fall, but output can rise',                        'Fall'] },
+          { label: 'Output',         values: ['Rises',                                           'Falls'] },
+          { label: 'Mainly harmful?', values: ['No — can raise real incomes',                     'Yes — traps the economy in weakness'] }
+        ]
+      },
+
+      summaryRow: [
+        {
+          tone: 'blue',
+          icon: '🗾',
+          title: 'Case study: Japan in the 1990s–2010s',
+          text: 'After the asset bubble burst in the early 1990s, Japan faced persistent deflation, weak demand and near-zero interest rates for decades — the classic example.'
+        }
+      ],
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Not all falling prices are equally bad — the <em>cause</em> matters. Deflation due to weak demand is dangerous; deflation due to higher productivity can be beneficial.'
+      }
+    },
+
+    /* ====================================================================
+       CARD 8 — Policy responses
+       ==================================================================== */
+    {
+      id: 'policy-responses',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Policy responses',
+      lede: 'There is no single cure for inflation. Different causes need different treatments. Policy only works well when the diagnosis is correct. Using the wrong tool — or the right tool on the wrong problem — can make inflation worse or damage the economy.',
+      ledeStyle: 'plain',
+
+      tip: {
+        icon: '✅',
+        tone: 'green',
+        text: '<strong>Diagnose first, then treat.</strong>'
+      },
+
+      measureCards: [
+        {
+          tone: 'blue',
+          icon: '🏦',
+          acronym: 'Bank of England interest rates',
+          fullName: 'Monetary policy — demand-pull and overheating',
+          points: [
+            'Raises borrowing costs, reduces demand and eases inflation.',
+            'Higher rates → higher borrowing costs → lower spending → lower inflation.'
+          ]
+        },
+        {
+          tone: 'amber',
+          icon: '💼',
+          acronym: 'Fiscal tightening',
+          fullName: 'Lower spending or higher taxes',
+          points: [
+            'Reduce government spending or raise taxes to lower aggregate demand.',
+            'Lower deficit → lower demand → lower inflationary pressure.'
+          ]
+        },
+        {
+          tone: 'green',
+          icon: '🌱',
+          acronym: 'Supply-side measures',
+          fullName: 'Cost-push and capacity constraints',
+          points: [
+            'Improve capacity, cut bottlenecks, boost productivity and skills.',
+            'Lower costs / higher supply → lower prices → lower inflation.'
+          ]
+        },
         {
           tone: 'purple',
-          icon: '👥',
-          label: 'Consumers',
-          bullets: [
-            'Real incomes fall when wages lag inflation',
-            'Purchasing power erodes — the same money buys less',
-            'Fixed-income groups (pensioners, benefit recipients) hit hardest'
-          ]
-        },
-        {
-          tone: 'amber',
-          icon: '🏢',
-          label: 'Firms',
-          bullets: [
-            'Rising input costs squeeze profit margins',
-            'Uncertainty reduces investment',
-            'Some firms pass costs on — others absorb and shrink'
-          ]
-        },
-        {
-          tone: 'blue',
-          icon: '🌐',
-          label: 'Economy',
-          bullets: [
-            'Loss of international competitiveness',
-            'Exports fall, imports rise — worsens current account',
-            'Slower growth if BoE raises rates to control it'
+          icon: '💬',
+          acronym: 'Forward guidance',
+          fullName: 'Expectations anchoring',
+          points: [
+            'Clear communication to anchor expectations and prevent wage–price spirals.',
+            'Credible guidance → stable expectations → lower future inflation.'
           ]
         }
       ],
-      winnersLosers: {
-        winners: {
-          label: 'Winners',
-          items: ['<strong>Borrowers</strong> — repay debt in lower real terms (incl. the government)']
-        },
-        losers: {
-          label: 'Losers',
-          items: [
-            '<strong>Savers</strong> — real value of savings eroded',
-            '<strong>Fixed-income earners</strong> — wages or pensions don\'t keep up',
-            '<strong>Creditors</strong> — loans repaid in devalued money'
-          ]
-        }
-      },
-      example: 'The 2022-23 UK spike: energy costs doubled, real wages fell for 18 months. Low-income households — who spend a higher share of income on energy and food — were disproportionately affected.',
-      examEdge: {
-        title: 'Evaluation: who loses most?',
-        text: 'The strongest evaluation identifies <em>which group</em> is worst affected and <em>why the burden is unequal</em>. Low-income households face a higher inflation rate on their basket — they can\'t easily switch away from essentials.'
-      }
-    },
+      measureCardsLabel: 'The toolkit',
+      measureCardsEmoji: '🛠️',
 
-    /* ----- CARD 7 — Deflation ----- */
-    {
-      id: 'deflation',
-      template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 8',
-      title: 'The opposite problem: deflation',
-      lede: "Falling prices. Sounds harmless. It isn't - and the asymmetry tells you why central banks target 2%, not 0%.",
-      mechanismsTitle: 'Why deflation is dangerous',
-      mechanisms: [
-        {
-          icon: '⏳',
-          title: 'Demand postponement',
-          text: 'If prices will be lower next month, consumers wait. Falling demand → worse deflation. Self-reinforcing.'
-        },
-        {
-          icon: '💰',
-          title: 'Real debt rises',
-          text: 'Nominal debt is fixed; nominal income falls. £100k mortgage gets heavier. Defaults rise. Banks weaken.'
-        },
-        {
-          icon: '🚫',
-          title: 'Zero lower bound',
-          text: "Nominal rates can't go far below zero. Real rates rise even when central banks cut. Monetary policy loses its main lever."
-        },
-        {
-          icon: '🔒',
-          title: 'Wage rigidity',
-          text: "Workers resist nominal wage cuts. Real wages need to fall but can't - so firms cut jobs instead."
-        }
-      ],
-      examples: {
-        title: 'Examples to know',
-        items: [
-          { period: '1930s Great Depression',  text: 'prices fell ~25%, unemployment hit 25%+.' },
-          { period: 'Japan 1995-2015',         text: '"lost decades", multiple QE rounds, slow escape.' },
-          { period: 'UK',                       text: 'brief episodes 2009, 2015, 2020; aggressive BoE response prevented entrenchment.' }
+      matchTable: {
+        title: 'Match the policy to the problem',
+        emoji: '🔗',
+        columns: ['Cause of inflation', 'Goal', 'Policy response'],
+        rows: [
+          {
+            cause:    { tone: 'blue',   icon: '📈', head: 'Demand-pull inflation', sub: 'Too much spending chasing too little output.' },
+            goal:     { tone: 'blue',   icon: '❄️', head: 'Tighten demand',         sub: 'Cool the economy.' },
+            response: { tone: 'blue',   icon: '🏦', head: 'Use monetary and/or fiscal tightening.' }
+          },
+          {
+            cause:    { tone: 'amber',  icon: '🏭', head: 'Cost-push inflation',   sub: 'Firms face higher costs and pass them on.' },
+            goal:     { tone: 'amber',  icon: '🌱', head: 'Ease costs / support supply', sub: 'Relieve cost pressures and boost capacity.' },
+            response: { tone: 'amber',  icon: '🛠️', head: 'Use supply-side measures and remove bottlenecks.' }
+          },
+          {
+            cause:    { tone: 'purple', icon: '💭', head: 'Expectations-driven inflation', sub: 'People expect prices to keep rising.' },
+            goal:     { tone: 'purple', icon: '⚓', head: 'Restore credibility',    sub: 'Anchor expectations.' },
+            response: { tone: 'purple', icon: '💬', head: 'Use forward guidance and credible policy frameworks.' }
+          }
         ]
       },
-      examEdge: {
-        title: 'The asymmetry argument',
-        text: "Central banks target <strong>2%, not 0%</strong> because the costs are asymmetric. Modest inflation overshoots (3-4%) are manageable. Modest <em>undershoots</em> toward zero are dangerous. This is the strongest argument for the 2% target - use it in monetary policy questions."
+
+      whyItMatters: {
+        title: 'How to evaluate',
+        emoji: '⚖️',
+        items: [
+          { tone: 'blue',   icon: '⏱️', label: 'Speed',               text: 'How quickly will it reduce inflation?' },
+          { tone: 'amber',  icon: '👥', label: 'Distributional effect', text: 'Who gains and who loses?' },
+          { tone: 'green',  icon: '🏛️', label: 'Political feasibility', text: 'Can it realistically be implemented?' },
+          { tone: 'purple', icon: '🔎', label: 'Correct diagnosis',    text: 'Does the policy match the true cause?' }
+        ]
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'causes'}), label: 'Test yourself →' }
+
+      conclusion: {
+        title: 'Link back to Card 1',
+        text: 'Inflation has many causes — treating all inflation as the same is the biggest policy mistake.'
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'The best essays judge policies by the cause of inflation, not just by whether they reduce CPI. Analyse the diagnosis, the trade-offs and the likely effectiveness.'
+      },
+
+      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'causes' }), label: 'Test yourself →' }
     }
 
   ]

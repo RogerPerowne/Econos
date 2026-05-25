@@ -3072,37 +3072,92 @@
      the answer for that step. Reusable for PED/PES/YED/XED calculations.
      ------------------------------------------------------------------------- */
   function renderCardWorkedExample(c) {
-    const steps = (c.steps || []).map((s, i) => `
-      <div class="we-step">
-        <div class="we-step__header">
-          <span class="we-step__num">${i + 1}</span>
-          <div class="we-step__right">
-            <div class="we-step__prompt">${s.prompt}</div>
-            ${s.hint ? `<div class="we-step__hint">💡 ${s.hint}</div>` : ''}
+    const rawSteps = c.steps || [];
+    const total = rawSteps.length;
+    const tonePalette = [
+      { c: '#10B981', bg: '#ECFDF5', soft: '#D1FAE5' }, // green
+      { c: '#3B82F6', bg: '#EFF6FF', soft: '#DBEAFE' }, // blue
+      { c: '#8B5CF6', bg: '#F5F3FF', soft: '#EDE9FE' }, // purple
+      { c: '#F59E0B', bg: '#FFFBEB', soft: '#FEF3C7' }, // amber
+      { c: '#F43F5E', bg: '#FFF1F2', soft: '#FFE4E6' }, // rose
+      { c: '#64748B', bg: '#F8FAFC', soft: '#F1F5F9' }  // slate
+    ];
+    const toneFor = i => tonePalette[i % tonePalette.length];
+
+    // Normalise step shape — accept both `prompt` and `label`; convert
+    // \n to <br> in answers when no HTML tags are present.
+    const linebreak = txt => (typeof txt === 'string' && !/<\w+/.test(txt))
+      ? txt.replace(/\n/g, '<br>') : txt;
+
+    const stepNodes = rawSteps.map((s, i) => {
+      const tone = toneFor(i);
+      const n = i + 1;
+      const heading = s.prompt || s.label || `Step ${n}`;
+      const hint = s.hint ? `<div style="font-size:12.5px;color:#64748B;font-style:italic;margin-top:4px;line-height:1.5;">💡 ${s.hint}</div>` : '';
+      const answer = linebreak(s.answer || '');
+      return `
+        <div class="we-step" data-we-step="${n}" style="position:relative;border-radius:14px;background:#fff;border:1px solid ${tone.c}25;border-left:5px solid ${tone.c};box-shadow:0 2px 10px rgba(0,0,0,0.05);padding:16px 18px;transition:box-shadow 0.25s ease;">
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
+            <div data-we-num="${n}" style="width:32px;height:32px;border-radius:50%;background:${tone.c};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;box-shadow:0 2px 6px ${tone.c}55;">${n}</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:14.5px;font-weight:700;color:#0B1426;line-height:1.45;">${heading}</div>
+              ${hint}
+            </div>
+            <div data-we-done style="display:none;background:${tone.c};color:#fff;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:800;flex-shrink:0;align-self:flex-start;">✓ Done</div>
+          </div>
+          <button class="we-step__btn" data-action="we-reveal" type="button" style="background:#fff;border:1.5px dashed ${tone.c};color:${tone.c};font-size:12.5px;font-weight:800;padding:8px 14px;border-radius:8px;cursor:pointer;width:100%;letter-spacing:0.02em;">Show working ↓</button>
+          <div class="we-step__answer is-hidden" style="margin-top:12px;padding:12px 14px;background:${tone.soft};border-radius:8px;border-left:4px solid ${tone.c};font-size:13.5px;color:#0B1426;line-height:1.65;">${answer}</div>
+        </div>
+      `;
+    }).join('<div style="display:flex;justify-content:center;align-items:center;height:18px;"><div style="width:2px;height:100%;background:#CBD5E1;border-radius:2px;"></div></div>');
+
+    // Roadmap header — N dots + counter
+    const roadmap = total > 1 ? `
+      <div style="margin:0 0 16px;padding:14px 16px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;display:flex;align-items:center;justify-content:space-between;gap:14px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#475569;">Your ${total}-step journey</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="display:flex;gap:5px;">
+            ${rawSteps.map((_, i) => `<div data-we-dot="${i+1}" style="width:9px;height:9px;border-radius:50%;background:#E2E8F0;transition:background 0.3s ease;"></div>`).join('')}
+          </div>
+          <div data-we-progress style="font-size:12px;font-weight:800;color:#94A3B8;min-width:70px;text-align:right;transition:color 0.3s ease;">0 / ${total} done</div>
+        </div>
+      </div>
+    ` : '';
+
+    // Locked conclusion (PED-style dark gradient, unlocks when all steps done)
+    const conclusion = c.conclusion ? `
+      <div data-we-payoff style="margin-top:18px;position:relative;border-radius:14px;opacity:0.35;filter:blur(1px);transition:opacity 0.5s ease,filter 0.5s ease,box-shadow 0.5s ease;">
+        <div style="border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0B1426,#1E293B);box-shadow:0 4px 18px rgba(11,20,38,0.18);">
+          <div style="padding:16px 20px;display:flex;align-items:flex-start;gap:14px;">
+            <div style="font-size:30px;line-height:1;flex-shrink:0;">🏆</div>
+            <div>
+              <div style="color:#FCD34D;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">The full picture</div>
+              <div style="color:#fff;font-size:16px;font-weight:800;margin-bottom:6px;">Conclusion</div>
+              <div style="color:rgba(255,255,255,0.85);font-size:13.5px;line-height:1.65;">${c.conclusion}</div>
+            </div>
           </div>
         </div>
-        <button class="we-step__btn" data-action="we-reveal" type="button">Show working →</button>
-        <div class="we-step__answer is-hidden">
-          <div class="we-step__answer-inner">${s.answer}</div>
+        <div data-we-lock style="position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,0.55);backdrop-filter:blur(2px);">
+          <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:800;color:#475569;box-shadow:0 2px 8px rgba(0,0,0,0.08);">🔒 Solve all ${total} steps to unlock</div>
         </div>
       </div>
-    `).join('');
+    ` : '';
 
-    const conclusion = c.conclusion ? `
-      <div class="we-conclusion">
-        <div class="we-conclusion__label">Conclusion</div>
-        <div class="we-conclusion__text">${c.conclusion}</div>
-      </div>
+    const scenario = c.scenario ? `
+      ${genSecLabel('📋', 'Scenario')}
+      <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.65;color:#0B1426;margin-bottom:18px;">${linebreak(c.scenario)}</div>
     ` : '';
 
     return `
       <div class="card__step-label">${c.stepLabel || ''}</div>
       <h1 class="card__title">${c.title || ''}</h1>
       ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
-      ${c.scenario ? `<div class="we-scenario">${c.scenario}</div>` : ''}
-      <div class="we-steps">${steps}</div>
+      ${scenario}
+      ${roadmap}
+      ${genSecLabel('🧮', 'Work through it')}
+      <div class="we-steps" style="display:flex;flex-direction:column;gap:0;margin-bottom:8px;">${stepNodes}</div>
       ${conclusion}
-      ${renderExamEdge(c.examEdge)}
+      ${c.examEdge ? `<div style="margin-top:18px;">${renderExamEdge(c.examEdge)}</div>` : ''}
     `;
   }
 
@@ -5469,14 +5524,43 @@
         panel.classList.toggle('is-active', panel.dataset.panelKey === newState);
       });
     } else if (action === 'we-reveal') {
-      // Worked-example: reveal this step's answer and update button
+      // Worked-example: reveal answer, mark step done, update roadmap, unlock conclusion
       const step = target.closest('.we-step');
       if (!step) return;
       const answer = step.querySelector('.we-step__answer');
       if (answer) answer.classList.remove('is-hidden');
-      target.textContent = '✓ Working shown';
-      target.disabled = true;
-      target.style.opacity = '0.5';
+      target.style.display = 'none';
+      step.classList.add('is-solved');
+
+      const n = parseInt(step.dataset.weStep, 10);
+      if (!isNaN(n)) {
+        // Show the Done pill
+        const donePill = step.querySelector('[data-we-done]');
+        if (donePill) donePill.style.display = 'inline-block';
+        // Light up the matching roadmap dot
+        const dot = root.querySelector(`[data-we-dot="${n}"]`);
+        if (dot) dot.style.background = '#059669';
+        // Update the N/M counter
+        const solved = root.querySelectorAll('.we-step.is-solved').length;
+        const totalSteps = root.querySelectorAll('.we-step').length;
+        const counter = root.querySelector('[data-we-progress]');
+        if (counter) {
+          counter.textContent = `${solved} / ${totalSteps} done`;
+          counter.style.color = solved === totalSteps ? '#059669' : '#475569';
+        }
+        // Unlock conclusion when all steps solved
+        if (solved === totalSteps) {
+          const payoff = root.querySelector('[data-we-payoff]');
+          const lock   = root.querySelector('[data-we-lock]');
+          if (lock) lock.style.display = 'none';
+          if (payoff) {
+            payoff.style.opacity = '1';
+            payoff.style.filter  = 'none';
+            payoff.style.boxShadow = '0 0 0 3px #FCD34D, 0 8px 30px rgba(11,20,38,0.25)';
+            payoff.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      }
     } else if (action === 'ped-solve') {
       // PED-calculation step chain
       const step = target.closest('.ped-calc-step');

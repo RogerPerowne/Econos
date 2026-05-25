@@ -4623,6 +4623,34 @@
 
       ${!c.pairFirst ? pairHtml : ''}
 
+      ${c.verdict && c.verdict.columns && c.verdict.columns.length >= 2 ? (() => {
+        const v = c.verdict;
+        const sep = (v.layout === 'arrow') ? '→' : 'VS';
+        const title = v.title ? genSecLabel(v.emoji || '⚖️', v.title) : '';
+        const cols = v.columns.map((col, i) => {
+          const t = PATTERN_TONES[col.tone || 'slate'] || PATTERN_TONES.slate;
+          const isLast = i === v.columns.length - 1;
+          const items = (col.items || []).map(it => {
+            const ok = it.ok !== false;
+            const mark = ok
+              ? `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✓</span>`
+              : `<span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;">✕</span>`;
+            return `<li style="display:flex;align-items:flex-start;gap:9px;margin-bottom:8px;">${mark}<span>${it.text}</span></li>`;
+          }).join('');
+          const colHtml = `
+            <div style="flex:1 1 0;min-width:160px;border-radius:14px;background:#fff;border:1.5px solid ${t.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden;">
+              <div style="padding:12px 14px;background:${t.bg};border-bottom:1px solid ${t.border};display:flex;align-items:center;gap:10px;">
+                ${col.icon ? `<div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;flex-shrink:0;">${col.icon}</div>` : ''}
+                <div style="font-size:15px;font-weight:800;color:${t.label};letter-spacing:0.01em;">${col.label}</div>
+              </div>
+              <ul style="list-style:none;margin:0;padding:14px 16px;font-size:13.5px;color:#0B1426;line-height:1.6;">${items}</ul>
+            </div>`;
+          const separator = !isLast ? `<div style="display:flex;align-items:center;flex-shrink:0;"><div style="width:38px;height:38px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:800;font-size:${sep === '→' ? '16px' : '12px'};letter-spacing:0.08em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);">${sep}</div></div>` : '';
+          return colHtml + separator;
+        }).join('');
+        return `${title}<div style="display:flex;align-items:stretch;gap:12px;margin-bottom:22px;flex-wrap:wrap;">${cols}</div>`;
+      })() : ''}
+
       ${c.measureCards && c.measureCards.length ? (() => {
         const label = c.measureCardsLabel !== undefined
           ? (c.measureCardsLabel === null ? '' : genSecLabel(c.measureCardsEmoji || '🔍', c.measureCardsLabel))

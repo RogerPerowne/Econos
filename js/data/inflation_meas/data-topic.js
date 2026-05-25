@@ -475,21 +475,33 @@ window.ECONOS_TOPIC = {
         { tone: 'rose', icon: '🌀', head: 'Deflationary spiral risk',  body: 'Weaker demand feeds further falls in prices and output. Hard to break without aggressive policy.' }
       ],
 
-      pairLabel: 'Inflation vs deflation',
-      pairEmoji: '⚖️',
-      left: {
-        tone: 'amber',
-        icon: '📈',
-        iconStyle: 'circle',
-        label: 'Inflation',
-        text: 'Erodes purchasing power, but mild inflation is manageable and signals a growing economy.'
-      },
-      right: {
-        tone: 'rose',
-        icon: '📉',
-        iconStyle: 'circle',
-        label: 'Deflation',
-        text: 'Weakens demand and raises real debt burdens. Central banks treat it as the bigger risk — Japan\'s lost decades are the canonical warning.'
+      verdict: {
+        title: 'Inflation vs deflation',
+        emoji: '⚖️',
+        columns: [
+          {
+            tone: 'amber',
+            icon: '📈',
+            label: 'Inflation',
+            items: [
+              { ok: true,  text: 'Mild, anticipated inflation is manageable and signals a growing economy.' },
+              { ok: false, text: 'Erodes the purchasing power of cash and fixed nominal incomes.' },
+              { ok: false, text: 'High or volatile inflation creates uncertainty and weakens investment.' },
+              { ok: true,  text: 'Central banks have well-tested tools — raise rates to cool demand.' }
+            ]
+          },
+          {
+            tone: 'rose',
+            icon: '📉',
+            label: 'Deflation',
+            items: [
+              { ok: false, text: 'Weakens aggregate demand as households delay spending.' },
+              { ok: false, text: 'Raises the real burden of nominal debt — debtors cut back further.' },
+              { ok: false, text: 'Risks a self-feeding spiral — Japan\'s lost decades are the canonical warning.' },
+              { ok: false, text: 'Hard to escape: monetary policy hits the zero lower bound.' }
+            ]
+          }
+        ]
       },
 
       conclusion: {

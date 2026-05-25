@@ -4430,13 +4430,7 @@
             <span><strong style="color:${swatch};">${it.term}</strong> — ${it.text}</span>
           </li>`;
         }).join('');
-        return `<div style="display:flex;gap:16px;align-items:flex-start;background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:14px;padding:16px 20px;margin-bottom:20px;">
-          <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#1E3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;">${icon}</div>
-          <div style="flex:1;">
-            <div style="font-size:15px;font-weight:800;color:#1E3A8A;margin-bottom:8px;">${title}</div>
-            <ul style="margin:0;padding:0;list-style:none;">${itemsHtml}</ul>
-          </div>
-        </div>`;
+        return `${genSecLabel(icon, title)}<ul style="margin:0 0 20px;padding:0;list-style:none;">${itemsHtml}</ul>`;
       })() : ''}
 
       ${c.causesFirst && c.causes2 && c.causes2.length ? (() => {
@@ -4487,16 +4481,11 @@
             <span style="font-size:10.5px;font-weight:700;color:#1E3A8A;text-align:center;line-height:1.3;">${it.label}</span>
           </div>`).join('');
         const cols = Math.min((bg.items || []).length, 6);
-        return `<div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:16px;padding:16px 16px 14px;margin-bottom:18px;">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-            <div style="width:48px;height:48px;border-radius:50%;background:#1E3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${headerIcon}</div>
-            <div>
-              <div style="font-size:15px;font-weight:800;color:#1E3A8A;line-height:1.25;">${headerTitle}</div>
-              ${headerSub ? `<div style="font-size:13px;color:#3B82F6;line-height:1.4;margin-top:2px;">${headerSub}</div>` : ''}
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:8px;">${itemTiles}</div>
-        </div>`;
+        return `${genSecLabel(headerIcon, headerTitle)}
+          ${headerSub ? `<div style="font-size:13.5px;color:#475569;line-height:1.55;margin:-8px 0 12px;">${headerSub}</div>` : ''}
+          <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:16px;padding:14px;margin-bottom:18px;">
+            <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:8px;">${itemTiles}</div>
+          </div>`;
       })() : ''}
 
       ${c.spendingWeights ? (() => {
@@ -4559,6 +4548,7 @@
       ${c.whyItMatters && c.whyItMatters.items && c.whyItMatters.items.length ? (() => {
         const w = c.whyItMatters;
         const title = w.title || 'Why it matters';
+        const emoji = w.emoji || '💡';
         const cells = w.items.map((item, i) => {
           const tone = PATTERN_TONES[item.tone] || PATTERN_TONES[['green','purple','amber','blue','rose','slate'][i % 6]];
           return `
@@ -4569,10 +4559,7 @@
             </div>`;
         }).join('');
         const n = w.items.length;
-        return `<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:18px 16px 14px;margin-bottom:20px;">
-          <div style="text-align:center;font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:#0B1426;margin-bottom:14px;">${title}</div>
-          <div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:10px;">${cells}</div>
-        </div>`;
+        return `${genSecLabel(emoji, title)}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:10px;margin-bottom:20px;">${cells}</div>`;
       })() : ''}
 
       ${c.summaryRow && c.summaryRow.length ? (() => {

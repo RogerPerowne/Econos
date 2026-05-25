@@ -89,10 +89,6 @@ window.ECONOS_TOPIC = {
         ]
       },
 
-      lockIn: {
-        items: ['Definition of inflation', 'Inflation vs deflation vs disinflation', 'General price level idea', 'Why it matters']
-      },
-
       examEdge: {
         title: 'Exam edge',
         text: 'Examiners love the precise distinction between disinflation and deflation — use the terms accurately. State that inflation is measured as the <strong>rate of change of a price index</strong>, not the price level itself.'
@@ -166,10 +162,6 @@ window.ECONOS_TOPIC = {
         icon: '⚠️',
         tone: 'rose',
         text: '<strong>Common trap:</strong> CPI is an average — <em>one</em> price rise does not prove inflation. The general price level across the basket must rise.'
-      },
-
-      lockIn: {
-        items: ['Basket', 'Weights', 'Price collection', 'Annual percentage change']
       },
 
       examEdge: {
@@ -280,10 +272,6 @@ window.ECONOS_TOPIC = {
         text: 'When housing costs surge — as in 2022-23 — <strong>CPIH may report a higher rate than CPI</strong>. Choosing which measure to quote has real-world winners and losers: benefits uprating switched from RPI to CPI in 2010, saving the government billions because CPI was lower.'
       },
 
-      lockIn: {
-        items: ['CPI', 'RPI', 'CPIH', 'Why choice matters']
-      },
-
       examEdge: {
         title: 'Exam edge',
         text: 'Do not just list the measures — <strong>explain what is included</strong>, especially housing costs, and why that affects interpretation. Strong answers note the <strong>political dimension</strong>: governments choose which measure to quote depending on the policy context.'
@@ -340,10 +328,6 @@ window.ECONOS_TOPIC = {
         icon: '⚠️',
         tone: 'rose',
         text: '<strong>Common trap:</strong> not all inflation is equally damaging — the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
-      },
-
-      lockIn: {
-        items: ['Menu costs', 'Redistribution', 'Uncertainty', 'Competitiveness']
       },
 
       examEdge: {
@@ -417,10 +401,6 @@ window.ECONOS_TOPIC = {
         text: '<strong>Common trap:</strong> a rise in <em>nominal</em> wages does not mean living standards have improved. Always compare with inflation to get the real change.'
       },
 
-      lockIn: {
-        items: ['Nominal values', 'Real values', 'Fiscal drag', 'Real pay']
-      },
-
       examEdge: {
         title: 'Exam edge',
         text: 'Always compare wages, interest or tax thresholds with inflation. Examiners reward the phrase <em>real value after adjusting for inflation</em> — and the explicit identification of fiscal drag as a stealth tax rise when thresholds are frozen.'
@@ -475,10 +455,6 @@ window.ECONOS_TOPIC = {
       conclusion: {
         title: 'Why policymakers worry',
         text: 'Deflation increases <strong>unemployment risk</strong>, raises <strong>recession risk</strong>, and makes <strong>monetary policy harder</strong> when interest rates are already low (the zero lower bound). The Bank of England targets 2% partly to keep a safe buffer above zero.'
-      },
-
-      lockIn: {
-        items: ['Delayed spending', 'Real debt', 'Spiral', 'Difference from disinflation']
       },
 
       examEdge: {

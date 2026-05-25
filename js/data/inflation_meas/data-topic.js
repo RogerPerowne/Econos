@@ -40,64 +40,54 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 6',
       title: 'What is inflation?',
-      lede: 'Inflation means the <strong>general price level is rising</strong> — what matters is the average movement in prices across the economy, not one product getting dearer.',
+      lede: 'Inflation is a sustained rise in the general price level. Over time, money buys fewer goods and services — affecting wages, savings, living standards, and policy decisions.',
+      ledeStyle: 'plain',
+
+      keyDistinction: {
+        icon: '🔎',
+        title: 'The key distinction',
+        items: [
+          { term: 'Inflation',    color: '#059669', text: 'prices are rising and the general price level is going up.' },
+          { term: 'Disinflation', color: '#7C3AED', text: 'inflation is still positive, but the rate of inflation is falling.' },
+          { term: 'Deflation',    color: '#E11D48', text: 'the general price level is falling (negative inflation).' }
+        ]
+      },
 
       causesFirst: true,
-      causesLabel: 'Three terms — never confuse them',
+      causesLabel: null,
       causes: [
         {
           tone: 'green',
-          icon: '📈',
           head: 'Inflation',
-          body: 'A <strong>sustained increase</strong> in the general price level. Measured as the annual % change in a price index. The Bank of England targets CPI inflation at 2%.'
+          svgKey: 'trendCurveUp',
+          body: 'Prices are rising and the price level is going up.',
+          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £105</strong>' }
         },
         {
-          tone: 'rose',
-          icon: '📉',
-          head: 'Deflation',
-          body: 'A <strong>sustained fall</strong> in the general price level — the inflation rate goes negative. Sounds harmless, but it traps the economy in a spiral (see card 6).'
-        },
-        {
-          tone: 'amber',
-          icon: '↘️',
+          tone: 'purple',
           head: 'Disinflation',
-          body: 'A <strong>fall in the rate of inflation</strong> — prices are still rising, just more slowly. Going from 8% to 3% is disinflation, not deflation.'
-        }
-      ],
-
-      flowTitle: 'Why it matters',
-      flow: [
-        { tone: 'green',  icon: '💷', title: 'Purchasing power',      sub: 'Affects what wages and savings can actually buy.' },
-        { tone: 'blue',   icon: '💼', title: 'Wages & incomes',        sub: 'Influences pay claims, pensions and real earnings.' },
-        { tone: 'amber',  icon: '🏭', title: 'Business planning',       sub: 'Shapes investment and cost decisions for firms.' },
-        { tone: 'purple', icon: '🏦', title: 'Interest rate policy',    sub: 'Central banks raise or cut rates in response.' }
-      ],
-
-      summaryRow: [
-        {
-          tone: 'green',
-          icon: '✅',
-          title: 'Why it matters',
-          items: [
-            'Determines the real purchasing power of wages and savings',
-            'Drives Bank of England interest rate decisions',
-            'Shapes pay claims, business costs and investment',
-            'Foundation for real vs nominal distinctions (card 5)'
-          ]
+          svgKey: 'trendCurveWavy',
+          body: 'Prices are still rising, but more slowly.',
+          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £102</strong>' }
         },
         {
           tone: 'rose',
-          icon: '⚠️',
-          title: 'Common trap',
-          text: 'Falling <em>inflation</em> is not the same as falling <em>prices</em>. Disinflation = prices still rising, just more slowly. Deflation = prices actually falling.'
-        },
-        {
-          tone: 'blue',
-          icon: '📝',
-          title: 'Quick example',
-          text: 'CPI falls from <strong>8% → 3%</strong>: still disinflation (prices still rising). For deflation the rate must go <strong>negative</strong> — e.g. −1%.'
+          head: 'Deflation',
+          svgKey: 'trendCurveDown',
+          body: 'The general price level is falling.',
+          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £98</strong>' }
         }
       ],
+
+      whyItMatters: {
+        title: 'Why it matters',
+        items: [
+          { tone: 'green',  icon: '👥', label: 'Households',  text: 'Affects purchasing power, wages, and the value of savings.' },
+          { tone: 'purple', icon: '🏭', label: 'Firms',       text: 'Affects costs, pricing decisions, investment, and profits.' },
+          { tone: 'amber',  icon: '🏛️', label: 'Government',  text: 'Affects tax revenues, welfare costs, debt and living standards.' },
+          { tone: 'blue',   icon: '🏦', label: 'Central bank', text: 'Monitors inflation to achieve price stability and support growth.' }
+        ]
+      },
 
       lockIn: {
         items: ['Definition of inflation', 'Inflation vs deflation vs disinflation', 'General price level idea', 'Why it matters']

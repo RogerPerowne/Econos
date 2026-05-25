@@ -61,6 +61,34 @@ npm run test:e2e
 
 Runs the Playwright tests in `tests/e2e/`. Note: as of the last verified run, one a11y test fails on the home page (`hp-audience-card__link--amber` has insufficient colour contrast, `#f39e0b on #ffffff = 2.16:1`) — this is a pre-existing prod issue, not caused by recent changes. Skip with `ECONOS_SKIP_E2E=1` on git pushes if you didn't touch the home page styling.
 
+## Inspect — scan for visual issues a screenshot hides
+
+Full-page screenshots **lie at thumbnail size**. A bold 26px heading that wraps to 4 lines inside a narrow tile reads as "looks fine" in a 600px-tall preview but as "broken layout" to the user. After editing a topic, always run the bundled inspector before declaring the work done:
+
+```bash
+node .claude/skills/run-econos/inspect.mjs <topic-id> [cardCount]
+
+# example
+node .claude/skills/run-econos/inspect.mjs inflation 8
+```
+
+The inspector clicks through every card at the same 1024×1400 viewport the driver uses and checks each card for:
+
+| Check | What it catches |
+|-------|-----------------|
+| `text-overflow` | A leaf element whose `scrollWidth > clientWidth` — text is being clipped or cut off. |
+| `heading-too-large-for-tile` | Bold ≥22px text wrapping to ≥3 lines inside a tile. Canonical case: a long phrase in a "short label" slot (e.g. measureCards `acronym: 'Bank of England interest rates'`). |
+| `overflows-card-right` | A block visually exits the card's right edge — common with wide tables or matchTable grids. |
+| `uneven-tile-heights` | Tiles in a row whose max/min height differs by >45% — a tile is starved of content or one is too dense. |
+
+Exit code is 0 if clean, 1 if anything is flagged. Run it after every batch of card edits — it costs ~15s and routinely surfaces issues the agent's eye misses.
+
+When an issue is reported, fix it in data or in the renderer, not by ignoring the warning. The most common remedies:
+
+- **`heading-too-large-for-tile`** — split the long string into `acronym` (short, e.g. "BoE rates") and `fullName` (long descriptor below), or reduce the heading font size for the block.
+- **`overflows-card-right`** — narrow the block's intrinsic width, or wrap it in a `overflow-x:auto` container if it's a table.
+- **`uneven-tile-heights`** — match content density, or set `align-items: stretch` on the grid so tiles share a height.
+
 ## Gotchas
 
 - **Auth gate.** `js/auth-check.js` redirects to `login.html` unless `localStorage.econosAuth === '1'`. The driver handles this by visiting `/` first to seed localStorage on the right origin. Skip that step → you screenshot the login page.

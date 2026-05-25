@@ -423,13 +423,13 @@ window.ECONOS_TOPIC = {
       causes2Label: 'Phrases &amp; checklist',
       causes2Emoji: '✅',
       causes2Style: 'plain-white',
-      causes2Cols: 2,
+      causes2Cols: 1,
       causes2: [
         {
           tone: 'green',
           icon: '💬',
           head: 'Examiner-friendly phrases (top-band language)',
-          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:12.5px;color:#0B1426;line-height:1.55;"><div>✓ "This suggests that…"</div><div>✓ "In the short run… however, in the long run…"</div><div>✓ "This indicates / implies that…"</div><div>✓ "The data is consistent with…"</div><div>✓ "One possible reason is…"</div><div>✓ "On balance, this is more likely to…"</div><div>✓ "A likely consequence is…"</div><div>✓ "A limitation of the data is…"</div><div>✓ "This could lead to…"</div></div><div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;font-size:12px;color:#92400E;margin-top:10px;"><strong>💡 Tip:</strong> Write in full sentences, link ideas, and use specific evidence from the data.</div>'
+          body: '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:12.5px;color:#0B1426;line-height:1.55;"><div>✓ "This suggests that…"</div><div>✓ "In the short run… however, in the long run…"</div><div>✓ "This indicates / implies that…"</div><div>✓ "One possible reason is…"</div><div>✓ "On balance, this is more likely to…"</div><div>✓ "A likely consequence is…"</div><div>✓ "A limitation of the data is…"</div></div><div style="background:#FFFBEB;border-radius:6px;padding:8px 10px;font-size:12px;color:#92400E;margin-top:10px;"><strong>💡 Tip:</strong> Write in full sentences, link ideas, and use specific evidence from the data.</div>'
         },
         {
           tone: 'blue',

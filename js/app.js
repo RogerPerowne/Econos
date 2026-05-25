@@ -4475,6 +4475,51 @@
         return `${title}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:18px;padding:10px 6px 4px;">${tiles}</div>`;
       })() : ''}
 
+      ${c.basketOfGoods ? (() => {
+        const bg = c.basketOfGoods;
+        const header = bg.header || {};
+        const headerIcon = header.icon || '🧺';
+        const headerTitle = header.title || 'The basket of goods';
+        const headerSub = header.subtitle || '';
+        const itemTiles = (bg.items || []).map(it => `
+          <div style="background:#fff;border-radius:12px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid #DBEAFE;">
+            <span style="font-size:22px;line-height:1;">${it.icon}</span>
+            <span style="font-size:10.5px;font-weight:700;color:#1E3A8A;text-align:center;line-height:1.3;">${it.label}</span>
+          </div>`).join('');
+        const cols = Math.min((bg.items || []).length, 6);
+        return `<div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:16px;padding:16px 16px 14px;margin-bottom:18px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1E3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;">${headerIcon}</div>
+            <div>
+              <div style="font-size:15px;font-weight:800;color:#1E3A8A;line-height:1.25;">${headerTitle}</div>
+              ${headerSub ? `<div style="font-size:13px;color:#3B82F6;line-height:1.4;margin-top:2px;">${headerSub}</div>` : ''}
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:8px;">${itemTiles}</div>
+        </div>`;
+      })() : ''}
+
+      ${c.spendingWeights ? (() => {
+        const sw = c.spendingWeights;
+        const swTitle = sw.title || 'Example spending weights';
+        const note = sw.note || '';
+        const swTiles = (sw.items || []).map((item, i) => {
+          const tone = PATTERN_TONES[item.tone] || PATTERN_TONES[['green','blue','amber','purple','rose','slate'][i % 6]];
+          return `
+            <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+              <div style="font-size:26px;line-height:1;margin-bottom:8px;">${item.icon || ''}</div>
+              <div style="font-size:12.5px;font-weight:700;color:${tone.label};line-height:1.3;margin-bottom:10px;">${item.label}</div>
+              <div style="font-size:38px;font-weight:900;color:${tone.accent};line-height:1;">${item.pct}</div>
+            </div>`;
+        }).join('');
+        const swCols = Math.min((sw.items || []).length, 4);
+        return `<div style="margin-bottom:20px;">
+          ${genSecLabel('⚖️', swTitle)}
+          <div style="display:grid;grid-template-columns:repeat(${swCols},1fr);gap:12px;margin-bottom:12px;">${swTiles}</div>
+          ${note ? `<div style="font-size:12.5px;color:#475569;text-align:center;font-style:italic;line-height:1.5;">${note}</div>` : ''}
+        </div>`;
+      })() : ''}
+
       ${!c.causesFirst && c.causes && c.causes.length ? (() => {
         const items = c.causes;
         const tiles = items.map((item, i) => {

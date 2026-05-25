@@ -236,12 +236,15 @@ window.ECONOS_TOPIC = {
         }
       ],
 
-      causes2Label: 'Why the measure chosen matters',
-      causes2: [
-        { tone: 'green', icon: '1️⃣', head: 'Pensions & rail fares',       body: 'Pension uprating, student loan interest and rail fares may differ depending on which index is cited.' },
-        { tone: 'blue',  icon: '2️⃣', head: 'Wage negotiations',            body: 'Pay claims depend on which inflation measure unions and employers reference.' },
-        { tone: 'amber', icon: '3️⃣', head: 'Policy conclusions',           body: 'If housing inflation is important, CPIH may show a very different picture from headline CPI.' }
-      ],
+      whyItMatters: {
+        title: 'Why the measure chosen matters',
+        items: [
+          { tone: 'green',  icon: '👵', label: 'Pensions & rail fares', text: 'Pension uprating, student loan interest and rail fares differ depending on which index is cited.' },
+          { tone: 'blue',   icon: '💼', label: 'Wage negotiations',     text: 'Pay claims depend on which inflation measure unions and employers reference.' },
+          { tone: 'amber',  icon: '🏛️', label: 'Policy conclusions',    text: 'If housing inflation is high, CPIH may show a different picture than headline CPI.' },
+          { tone: 'purple', icon: '🗣️', label: 'Public debate',         text: 'Perceived inflation often differs from the official measure used by policymakers.' }
+        ]
+      },
 
       equation: {
         label: 'Example annual rates (illustrative)',
@@ -373,6 +376,16 @@ window.ECONOS_TOPIC = {
         { tone: 'rose',   icon: '⬆️', title: 'More income above thresholds', sub: 'A larger share of pay falls into higher tax bands.' },
         { tone: 'rose',   icon: '🪙', title: 'Stealth tax rise',         sub: 'Workers pay more tax without any real pay increase.' }
       ],
+
+      whyItMatters: {
+        title: 'Why it matters',
+        items: [
+          { tone: 'green',  icon: '👥', label: 'Households',          text: 'Real income can fall even when your payslip shows a nominal rise.' },
+          { tone: 'purple', icon: '🏛️', label: 'Government revenue', text: 'Frozen brackets mean more income is taxed at higher rates — fiscal drag.' },
+          { tone: 'amber',  icon: '💼', label: 'Wage bargaining',     text: 'Negotiations target nominal rises, often chasing inflation rather than gaining real ground.' },
+          { tone: 'blue',   icon: '🗣️', label: 'Policy debate',       text: 'Pressure grows to uprate thresholds and reduce the stealth tax rise.' }
+        ]
+      },
 
       keyTerms: [
         { term: 'Nominal value',  def: 'A money amount stated in today\'s prices, ignoring inflation.' },

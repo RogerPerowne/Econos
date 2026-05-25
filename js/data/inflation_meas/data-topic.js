@@ -42,6 +42,7 @@ window.ECONOS_TOPIC = {
       title: 'What is inflation?',
       lede: 'Inflation means the <strong>general price level is rising</strong> — what matters is the average movement in prices across the economy, not one product getting dearer.',
 
+      causesFirst: true,
       causesLabel: 'Three terms — never confuse them',
       causes: [
         {
@@ -81,6 +82,10 @@ window.ECONOS_TOPIC = {
       conclusion: {
         title: 'Quick example',
         text: 'If inflation falls from <strong>8% in year 1 to 3% in year 2</strong>, prices are still rising — just more slowly. That is disinflation, not deflation. Prices would have to fall (negative inflation) for it to be deflation.'
+      },
+
+      lockIn: {
+        items: ['Definition of inflation', 'Inflation vs deflation vs disinflation', 'General price level idea', 'Why it matters']
       },
 
       examEdge: {
@@ -141,6 +146,10 @@ window.ECONOS_TOPIC = {
         text: '<strong>Common trap:</strong> CPI is an average — <em>one</em> price rise does not prove inflation. The general price level across the basket must rise.'
       },
 
+      lockIn: {
+        items: ['Basket', 'Weights', 'Price collection', 'Annual percentage change']
+      },
+
       examEdge: {
         title: 'Exam edge',
         text: 'Strong answers explain that CPI is <strong>weighted</strong>, so categories with bigger shares of household spending influence the overall rate more. Note too that CPI <strong>excludes mortgage interest and council tax</strong> — a critical limitation for homeowners with large mortgages.'
@@ -158,6 +167,7 @@ window.ECONOS_TOPIC = {
       title: 'RPI and CPIH',
       lede: 'Different inflation measures include different housing costs — that is why the reported rate, and what it is used for, can differ.',
 
+      causesFirst: true,
       causesLabel: 'Three measures at a glance',
       causes: [
         {
@@ -204,6 +214,10 @@ window.ECONOS_TOPIC = {
         text: 'When housing costs surge — as in 2022-23 — <strong>CPIH may report a higher rate than CPI</strong>. Choosing which measure to quote has real-world winners and losers: benefits uprating switched from RPI to CPI in 2010, saving the government billions because CPI was lower.'
       },
 
+      lockIn: {
+        items: ['CPI', 'RPI', 'CPIH', 'Why choice matters']
+      },
+
       examEdge: {
         title: 'Exam edge',
         text: 'Do not just list the measures — <strong>explain what is included</strong>, especially housing costs, and why that affects interpretation. Strong answers note the <strong>political dimension</strong>: governments choose which measure to quote depending on the policy context.'
@@ -221,6 +235,7 @@ window.ECONOS_TOPIC = {
       title: 'Costs of inflation',
       lede: 'The harm depends on how high and how unpredictable inflation is — mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
 
+      causesFirst: true,
       causesLabel: 'The main costs',
       causes: [
         { tone: 'green',  icon: '🏷️', head: 'Menu costs',         body: 'Firms must keep changing prices, menus, catalogues and systems.' },
@@ -261,6 +276,10 @@ window.ECONOS_TOPIC = {
         text: '<strong>Common trap:</strong> not all inflation is equally damaging — the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
       },
 
+      lockIn: {
+        items: ['Menu costs', 'Redistribution', 'Uncertainty', 'Competitiveness']
+      },
+
       examEdge: {
         title: 'Exam edge',
         text: 'Evaluation should distinguish between <strong>anticipated low inflation</strong> (largely benign) and <strong>high, unpredictable inflation</strong> (the latter causes the bigger welfare losses through uncertainty, lost investment and misallocation).'
@@ -278,6 +297,7 @@ window.ECONOS_TOPIC = {
       title: 'Fiscal drag and real vs nominal',
       lede: 'Inflation changes money values on paper — what matters for living standards is the <strong>real value after inflation</strong>.',
 
+      causesFirst: true,
       causesLabel: 'Nominal vs real — three worked examples',
       causes: [
         {
@@ -319,6 +339,10 @@ window.ECONOS_TOPIC = {
         icon: '⚠️',
         tone: 'rose',
         text: '<strong>Common trap:</strong> a rise in <em>nominal</em> wages does not mean living standards have improved. Always compare with inflation to get the real change.'
+      },
+
+      lockIn: {
+        items: ['Nominal values', 'Real values', 'Fiscal drag', 'Real pay']
       },
 
       examEdge: {
@@ -375,6 +399,10 @@ window.ECONOS_TOPIC = {
       conclusion: {
         title: 'Why policymakers worry',
         text: 'Deflation increases <strong>unemployment risk</strong>, raises <strong>recession risk</strong>, and makes <strong>monetary policy harder</strong> when interest rates are already low (the zero lower bound). The Bank of England targets 2% partly to keep a safe buffer above zero.'
+      },
+
+      lockIn: {
+        items: ['Delayed spending', 'Real debt', 'Spiral', 'Difference from disinflation']
       },
 
       examEdge: {

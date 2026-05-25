@@ -72,9 +72,13 @@
 
   /* === TYPOGRAPHY === */
   /* Display: Fraunces (variable serif with opsz, SOFT, WONK axes).
-     "Earned warmth" — serif voice for headings, sans for body. */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+     "Earned warmth" — serif voice for headings, sans for body.
+     'Twemoji Country Flags' is appended so Windows (which has no flag
+     glyphs in Segoe UI Emoji) still renders 🇮🇪/🇬🇧/etc. correctly.
+     unicode-range on the @font-face below means the font is only fetched
+     when a flag-range character is actually used. */
+  --font-display: 'Fraunces', 'Twemoji Country Flags', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', 'Twemoji Country Flags', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 
   /* Fraunces variation presets per type scale */
   --fraunces-display: "opsz" 144, "SOFT" 50, "WONK" 1;  /* H1 hero */

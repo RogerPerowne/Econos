@@ -10967,6 +10967,8 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   border-top: 1px solid #E2E8F0;
   padding-top: 12px;
 }
+.we-step__answer.is-hidden { display: none; }
+.we-step__answer:not(.is-hidden) { animation: econ-slide-reveal 0.36s ease both; }
 .we-step__answer-inner {
   font-size: 13px;
   line-height: 1.65;

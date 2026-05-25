@@ -69,7 +69,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'purple',
-          head: 'Monetary and expectations-driven inflation',
+          head: 'Money & expectations',
           icon: '💭',
           body: 'Money growth and inflation psychology keep price rises going.',
           example: { icon: '∞', label: 'Cue', text: 'Inflation becomes embedded.' }
@@ -563,8 +563,8 @@ window.ECONOS_TOPIC = {
         {
           tone: 'blue',
           icon: '🏦',
-          acronym: 'Bank of England interest rates',
-          fullName: 'Monetary policy — demand-pull and overheating',
+          acronym: 'BoE rate rises',
+          fullName: 'Monetary policy — cools demand-pull inflation',
           points: [
             'Raises borrowing costs, reduces demand and eases inflation.',
             'Higher rates → higher borrowing costs → lower spending → lower inflation.'
@@ -583,8 +583,8 @@ window.ECONOS_TOPIC = {
         {
           tone: 'green',
           icon: '🌱',
-          acronym: 'Supply-side measures',
-          fullName: 'Cost-push and capacity constraints',
+          acronym: 'Supply-side',
+          fullName: 'Eases cost-push & lifts long-run capacity',
           points: [
             'Improve capacity, cut bottlenecks, boost productivity and skills.',
             'Lower costs / higher supply → lower prices → lower inflation.'
@@ -603,6 +603,7 @@ window.ECONOS_TOPIC = {
       ],
       measureCardsLabel: 'The toolkit',
       measureCardsEmoji: '🛠️',
+      measureCardsCols: 2,
 
       matchTable: {
         title: 'Match the policy to the problem',
@@ -612,17 +613,17 @@ window.ECONOS_TOPIC = {
           {
             cause:    { tone: 'blue',   icon: '📈', head: 'Demand-pull inflation', sub: 'Too much spending chasing too little output.' },
             goal:     { tone: 'blue',   icon: '❄️', head: 'Tighten demand',         sub: 'Cool the economy.' },
-            response: { tone: 'blue',   icon: '🏦', head: 'Use monetary and/or fiscal tightening.' }
+            response: { tone: 'blue',   icon: '🏦', head: 'Monetary or fiscal tightening' }
           },
           {
             cause:    { tone: 'amber',  icon: '🏭', head: 'Cost-push inflation',   sub: 'Firms face higher costs and pass them on.' },
-            goal:     { tone: 'amber',  icon: '🌱', head: 'Ease costs / support supply', sub: 'Relieve cost pressures and boost capacity.' },
-            response: { tone: 'amber',  icon: '🛠️', head: 'Use supply-side measures and remove bottlenecks.' }
+            goal:     { tone: 'amber',  icon: '🌱', head: 'Ease costs & support supply', sub: 'Relieve cost pressures, boost capacity.' },
+            response: { tone: 'amber',  icon: '🛠️', head: 'Supply-side policy & removing bottlenecks' }
           },
           {
-            cause:    { tone: 'purple', icon: '💭', head: 'Expectations-driven inflation', sub: 'People expect prices to keep rising.' },
-            goal:     { tone: 'purple', icon: '⚓', head: 'Restore credibility',    sub: 'Anchor expectations.' },
-            response: { tone: 'purple', icon: '💬', head: 'Use forward guidance and credible policy frameworks.' }
+            cause:    { tone: 'purple', icon: '💭', head: 'Expectations-driven', sub: 'People expect prices to keep rising.' },
+            goal:     { tone: 'purple', icon: '⚓', head: 'Restore credibility', sub: 'Anchor inflation expectations.' },
+            response: { tone: 'purple', icon: '💬', head: 'Forward guidance & credible frameworks' }
           }
         ]
       },

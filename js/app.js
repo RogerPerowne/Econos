@@ -4737,7 +4737,8 @@
               <ul style="text-align:left;width:100%;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">${pts}</ul>
             </div>`;
         }).join('');
-        return `${label}<div style="display:grid;grid-template-columns:repeat(${Math.min(c.measureCards.length,4)},1fr);gap:14px;margin-bottom:20px;">${cards}</div>`;
+        const colCount = c.measureCardsCols || Math.min(c.measureCards.length, 4);
+        return `${label}<div style="display:grid;grid-template-columns:repeat(${colCount},1fr);gap:14px;margin-bottom:20px;">${cards}</div>`;
       })() : ''}
 
       ${c.comparisonTable ? (() => {
@@ -4746,7 +4747,7 @@
         const colLabel = genSecLabel(ct.emoji || '↔️', ct.title || 'How they compare');
         const headerCells = ct.columns.map((col, i) => {
           const t = colTones[i] || PATTERN_TONES.blue;
-          return `<div style="padding:10px 10px;font-size:13px;font-weight:800;color:${t.label};text-align:center;border-left:1px solid #E7E7EA;">${col}</div>`;
+          return `<div style="padding:11px 10px;font-size:13px;font-weight:800;color:${t.label};text-align:center;background:${t.bg};border-left:2px solid ${t.border};">${col}</div>`;
         }).join('');
         const ctGrid = `140px repeat(${ct.columns.length}, 1fr)`;
         const bodyRows = (ct.rows || []).map((row, ri) => {
@@ -4762,7 +4763,7 @@
           </div>`;
         }).join('');
         return `${colLabel}<div style="border-radius:12px;border:1px solid #E7E7EA;overflow:hidden;margin-bottom:20px;">
-          <div style="display:grid;grid-template-columns:${ctGrid};background:#0B1426;border-radius:12px 12px 0 0;">
+          <div style="display:grid;grid-template-columns:${ctGrid};background:#F8FAFC;border-bottom:2px solid #E7E7EA;border-radius:12px 12px 0 0;">
             <div style="padding:10px 12px;"></div>
             ${headerCells}
           </div>
@@ -4779,7 +4780,7 @@
           const renderCell = cell => {
             const t = PATTERN_TONES[cell.tone || 'blue'];
             return `
-              <div style="display:flex;align-items:flex-start;gap:10px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:11px 13px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:11px 13px;min-width:0;">
                 ${cell.icon ? `<div style="font-size:18px;line-height:1;color:${t.label};flex-shrink:0;margin-top:1px;">${cell.icon}</div>` : ''}
                 <div style="flex:1;min-width:0;">
                   <div style="font-size:13px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:2px;">${cell.head}</div>
@@ -4787,8 +4788,8 @@
                 </div>
               </div>`;
           };
-          const arrow = `<div style="display:flex;align-items:center;justify-content:center;color:#94A3B8;font-size:18px;font-weight:700;">→</div>`;
-          return `<div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;gap:10px;align-items:center;">
+          const arrow = `<div style="display:flex;align-items:center;justify-content:center;color:#94A3B8;font-size:18px;font-weight:700;flex-shrink:0;width:28px;">→</div>`;
+          return `<div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;gap:8px;align-items:start;overflow:hidden;">
             ${renderCell(row.cause)}
             ${arrow}
             ${renderCell(row.goal)}
@@ -4796,7 +4797,7 @@
             ${renderCell(row.response)}
           </div>`;
         }).join('');
-        return `${title}${headerRow}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">${rows}</div>`;
+        return `${title}${headerRow}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;overflow:hidden;">${rows}</div>`;
       })() : ''}
 
       ${c.whyItMatters && c.whyItMatters.items && c.whyItMatters.items.length ? (() => {

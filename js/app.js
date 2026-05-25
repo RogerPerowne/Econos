@@ -4854,6 +4854,7 @@
       c.economistQuote !== undefined ||
       c.continuum !== undefined ||
       c.note !== undefined ||
+      c.visualKey !== undefined ||
       (c.causes2 && Array.isArray(c.causes2) && c.causes2.length > 0 &&
        typeof c.causes2[0] === 'object' && 'head' in c.causes2[0]) ||
       (c.left !== undefined && c.right !== undefined) ||

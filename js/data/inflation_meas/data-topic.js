@@ -222,28 +222,71 @@ window.ECONOS_TOPIC = {
       title: 'RPI and CPIH',
       lede: 'Different inflation measures include different housing costs — that is why the reported rate, and what it is used for, can differ.',
 
-      causesFirst: true,
-      causesLabel: 'Three measures at a glance',
-      causes: [
+      measureCards: [
         {
           tone: 'green',
-          icon: '🏠',
-          head: 'CPI',
-          body: 'Official headline consumer inflation measure. Excludes most owner-occupier housing costs. <strong>Widely used by the Bank of England for the inflation target.</strong>'
+          icon: '🧺',
+          acronym: 'CPI',
+          fullName: 'Consumer Prices Index',
+          points: [
+            'Standard UK headline measure.',
+            'Based on a basket of goods and services bought by households.',
+            'Excludes owner-occupier housing costs (e.g. mortgage payments, imputed rent).',
+            '<strong>Widely used by the Bank of England for the inflation target.</strong>'
+          ]
+        },
+        {
+          tone: 'purple',
+          icon: '🏦',
+          acronym: 'RPI',
+          fullName: 'Retail Prices Index',
+          points: [
+            'Older measure.',
+            'Includes some housing-related costs such as mortgage interest in broader practice.',
+            'Often used historically for wages, rents or index-linking.',
+            'Has statistical weaknesses (e.g. substitution bias).'
+          ]
         },
         {
           tone: 'amber',
           icon: '🏠',
-          head: 'RPI',
-          body: 'Older measure. Includes some housing-related costs such as <strong>mortgage interest</strong>. Still used in some index-linking settings (rail fares, index-linked gilts, some pensions).'
-        },
-        {
-          tone: 'blue',
-          icon: '🏠',
-          head: 'CPIH',
-          body: 'CPI plus <strong>owner-occupier housing costs</strong>. Aims to give a broader housing-adjusted picture. The ONS preferred measure since 2017.'
+          acronym: 'CPIH',
+          fullName: 'Consumer Prices Index including owner-occupiers\' Housing costs',
+          points: [
+            'CPI plus owner-occupier housing costs (imputed rent).',
+            'Intended to be a broader measure of household living costs.',
+            '<strong>The ONS preferred measure since 2017.</strong>'
+          ]
         }
       ],
+
+      comparisonTable: {
+        title: 'Why do they differ?',
+        emoji: '↔️',
+        columns: ['CPI', 'RPI', 'CPIH'],
+        columnTones: ['green', 'purple', 'amber'],
+        rows: [
+          {
+            label: '🏠 Housing costs',
+            values: ['Excluded', 'Included (mortgage interest, etc.)', 'Included (imputed rent for owner-occupiers)'],
+            highlights: [true, false, false]
+          },
+          {
+            label: '📐 Formula / methodology',
+            values: ['Geometric mean (fixed weights)', 'Arithmetic mean (chain-linked)', 'Geometric mean (fixed weights)']
+          },
+          {
+            label: '👥 Typical uses',
+            values: ['Official inflation target, analysis, policy', 'Historic index-linking (wages, rents, contracts)', 'Broader cost of living analysis, policy'],
+            highlights: [true, false, true]
+          },
+          {
+            label: '📈 Resulting inflation rate',
+            values: ['Usually lowest', 'Usually highest', 'Usually between CPI and RPI'],
+            highlights: [false, true, false]
+          }
+        ]
+      },
 
       whyItMatters: {
         title: 'Why the measure chosen matters',
@@ -253,18 +296,6 @@ window.ECONOS_TOPIC = {
           { tone: 'amber',  icon: '🏛️', label: 'Policy conclusions',    text: 'If housing inflation is high, CPIH may show a different picture than headline CPI.' },
           { tone: 'purple', icon: '🗣️', label: 'Public debate',         text: 'Perceived inflation often differs from the official measure used by policymakers.' }
         ]
-      },
-
-      equation: {
-        label: 'Example annual rates (illustrative)',
-        emoji: '📊',
-        terms: [
-          { tone: 'green', icon: '🏠', title: 'CPI',  sub: '3.2%' },
-          { tone: 'amber', icon: '🏠', title: 'RPI',  sub: '4.1%' }
-        ],
-        operator: '·',
-        resultOperator: '·',
-        result: { tone: 'blue', icon: '🏠', title: 'CPIH', sub: '3.6%' }
       },
 
       conclusion: {

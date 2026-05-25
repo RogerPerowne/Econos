@@ -38,7 +38,9 @@ Read the **`econos-card-template`** skill now for the full field reference befor
 
 ## Stage 2 - Generate mockup images with GPT Image 2
 
-Write a `config.json` describing one prompt per card, then run the bundled `generate_mockups.py`. The script prepends a shared art-direction preamble (portrait single-card layout, no app chrome, warm cream `#FAF8F4` background, Fraunces serif headings ~44px, Inter body, the six SATURATED tone fills with their teaching meanings — green `#D1FAE5`, blue `#DBEAFE`, purple `#EDE9FE`, amber `#FEF3C7`, rose `#FFE4E6`, slate `#E2E8F0` — line-icon chips, clean SVG diagrams, high content density) — so each per-card `prompt` should focus on *content*, not styling. A good per-card prompt names: the card's pedagogical purpose, the card title and a one-line lede, the must-have visual (diagram / flow / 2x2 grid / comparison / worked example / examples), the supporting blocks (definition, example, key distinction, common trap), and the exam edge. Describe any diagram in plain terms (a supply-demand chart with the ceiling below equilibrium, an AD/LRAS diagram with a rightward shift, a PPF, etc.) and let the preamble handle the palette.
+Write a `config.json` describing one prompt per card, then run the bundled `generate_mockups.py`. The script prepends a minimal art-direction preamble (portrait single-card layout, no app chrome, warm cream `#FAF8F4` background, Fraunces serif headings, Inter body, and the six saturated econos tone fills — green `#D1FAE5`, blue `#DBEAFE`, purple `#EDE9FE`, amber `#FEF3C7`, rose `#FFE4E6`, slate `#E2E8F0` — as a teaching system). Beyond that the model has FULL creative freedom over layout, blocks, diagrams and decoration.
+
+**Each per-card `prompt` should be SHORT and CONCEPT-LED, not a layout brief.** Say what the card teaches in 1-2 sentences and let GPT Image 2 invent the visual. Do not list blocks, do not specify a diagram, do not enumerate tiles or chips — over-specifying kills the creative variety that makes the mockups worth using. If a specific diagram is non-negotiable for the concept, name it in plain English and stop there.
 
 Match each card's dominant tone to its teaching role, since the preamble encodes the meaning: green for core/correct/benefit, blue for explanation/technique, purple for evaluation/judgement/exam-edge, amber for trade-offs/incentives/"it depends", rose for market failure/welfare loss/risk, slate for neutral. Keep cards uncluttered - one concept each.
 
@@ -355,20 +357,17 @@ IMAGE_MODEL = "gpt-image-2-2026-04-21"
 
 STYLE_PREAMBLE = (
     "A portrait mockup of ONE concept card from econos, a premium A-Level Economics learning web app. "
-    "Render ONLY the content card itself — NO sidebar, NO right rail, NO top chrome, NO navigation. "
-    "The card fills almost the entire frame so every block inside is large, bold and richly detailed. "
-    "White card, rounded 24px corners, 1px #E5E7EB border, soft shadow, warm cream page #FAF8F4 background. "
-    "Aesthetic: Apple / Notion / Linear / Brilliant — premium, calm, exam-focused. "
-    "Card structure: small eyebrow (STEP N OF M), serif display heading (~44px Fraunces), short subline, "
-    "lede tip card, large hero block (diagram / comparison / 2x2 grid / flow), supporting block(s), "
-    "purple EXAM EDGE callout at the bottom. "
-    "TONE PALETTE — bold saturated fills (NOT pale near-white tints): "
-    "green #D1FAE5 / text #065F46, blue #DBEAFE / text #1E3A8A, purple #EDE9FE / text #5B21B6, "
-    "amber #FEF3C7 / text #92400E, rose #FFE4E6 / text #9F1239, slate #E2E8F0 / text #1E293B. "
-    "Every coloured block has a matching 1px border ~10% darker than the fill and a circular icon "
-    "chip in a slightly darker shade. Display headings in serif (Fraunces); body in sans-serif (Inter). "
-    "Diagrams clean SVG-style with bold arrow tips, clear labels, demand blue, supply green, LRAS navy, "
-    "AD red. Content density must be high — every prompt block present and substantial, never sparse."
+    "Render ONLY the content card itself on a warm cream page background #FAF8F4 — no sidebar, no nav, "
+    "no app chrome. White card, rounded corners, soft shadow, generous padding. "
+    "Aesthetic: Apple / Notion / Linear / Brilliant — premium, calm, intelligent, exam-focused. "
+    "Display headings in an elegant serif (Fraunces or similar); body and labels in clean sans-serif (Inter). "
+    "Colour is a teaching system. Use bold saturated fills from this palette, never pale near-white tints: "
+    "green #D1FAE5 (core / benefit / correct), blue #DBEAFE (explanation / technique), "
+    "purple #EDE9FE (evaluation / exam edge / judgement), amber #FEF3C7 (trade-off / 'it depends'), "
+    "rose #FFE4E6 (market failure / risk / loss), slate #E2E8F0 (neutral / structural). "
+    "Coloured blocks carry dark same-family text and a slightly darker matching border. "
+    "Beyond that, you have full creative freedom over layout, composition, blocks, diagrams and "
+    "decoration — design the strongest possible card for the concept the per-card prompt describes."
 )
 
 

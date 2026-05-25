@@ -38,7 +38,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'what-is-inflation',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 1 of 6',
+      stepLabel: 'Learn: Step 1 of 7',
       title: 'What is inflation?',
       lede: 'Inflation is a sustained rise in the general price level. Over time, money buys fewer goods and services — affecting wages, savings, living standards, and policy decisions.',
       ledeStyle: 'plain',
@@ -106,7 +106,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'measuring-cpi',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 2 of 6',
+      stepLabel: 'Learn: Step 2 of 7',
       title: 'Measuring inflation: CPI',
       lede: 'CPI tracks the average change in the prices households pay — but not every price moves equally, so <strong>weights matter</strong>.',
 
@@ -118,15 +118,32 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '📈', title: 'Index & annual rate',         sub: 'The basket cost is compared to a base period to give the inflation rate.' }
       ],
 
-      causesLabel: 'Weighted categories (example CPI weights)',
-      causes2Cols: 5,
-      causes: [
-        { tone: 'green',  icon: '🏠', head: 'Housing & household services', body: '<strong>32%</strong>' },
-        { tone: 'blue',   icon: '🚗', head: 'Transport',                     body: '<strong>16%</strong>' },
-        { tone: 'amber',  icon: '🍞', head: 'Food & drink',                   body: '<strong>15%</strong>' },
-        { tone: 'purple', icon: '🎬', head: 'Recreation',                     body: '<strong>9%</strong>' },
-        { tone: 'rose',   icon: '👕', head: 'Clothing',                       body: '<strong>5%</strong>' }
-      ],
+      basketOfGoods: {
+        header: {
+          icon: '🧺',
+          title: 'The basket of goods',
+          subtitle: 'Around 700 everyday items tracked monthly by the ONS across shops and online.'
+        },
+        items: [
+          { icon: '🍞', label: 'Food & drink' },
+          { icon: '🚗', label: 'Transport' },
+          { icon: '⚡', label: 'Energy' },
+          { icon: '👕', label: 'Clothing' },
+          { icon: '🎬', label: 'Leisure' },
+          { icon: '🏠', label: 'Housing services' }
+        ]
+      },
+
+      spendingWeights: {
+        title: 'Example spending weights (approx.)',
+        items: [
+          { tone: 'blue',   icon: '🏠', label: 'Housing & household services', pct: '32%' },
+          { tone: 'green',  icon: '🚗', label: 'Transport',                     pct: '14%' },
+          { tone: 'purple', icon: '🎬', label: 'Recreation & culture',          pct: '13%' },
+          { tone: 'amber',  icon: '🍞', label: 'Food & drink',                  pct: '11%' }
+        ],
+        note: 'Goods and services with larger weights have more influence on the final inflation rate.'
+      },
 
       equation: {
         label: 'Mini worked example',

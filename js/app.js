@@ -2432,7 +2432,8 @@
     // Quiz CTA — celebration-style signpost
 
     const ledeHtml = c.lede ? `<p class="card__lede">${c.lede}</p>` : '';
-    return `<h1 class="card__title">${c.title}</h1>${ledeHtml}${content}`;
+    const visualKeyHtml = c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
+    return `<h1 class="card__title">${c.title}</h1>${ledeHtml}${visualKeyHtml}${content}`;
   }
 
   function renderKeyTakeaway(k) {

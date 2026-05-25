@@ -14321,137 +14321,134 @@ window.ECONOS_ICONS = {
   `,
 
   causesOfGrowthSvg: `
-    <svg viewBox="0 0 640 544" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 640 632" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="cg-blu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/>
         </marker>
         <marker id="cg-gry" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
         </marker>
       </defs>
 
       <!-- ══ SHORT-RUN DEMAND SECTION ══ -->
-      <rect x="0" y="0" width="640" height="34" rx="8" fill="#1D4ED8"/>
-      <text x="320" y="22" text-anchor="middle" font-size="13.5" font-weight="700" fill="white">Short-run economic growth — demand side</text>
+      <rect x="0" y="0" width="640" height="38" rx="8" fill="#1D4ED8"/>
+      <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="white">Short-run economic growth — demand side</text>
 
-      <!-- 4 demand component boxes (y=42, h=78, w=149, gap=8) -->
+      <!-- 4 demand component boxes (y=46, h=86, w=149, gap=8) -->
       <!-- C — Consumption: x=10 -->
-      <rect x="10" y="42" width="149" height="78" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-      <text x="84" y="58" text-anchor="middle" font-size="18">🛒</text>
-      <text x="84" y="81" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">C</text>
-      <text x="84" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Consumption</text>
-      <text x="84" y="112" text-anchor="middle" font-size="10" fill="#475569">household spending</text>
+      <rect x="10" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <text x="84" y="64" text-anchor="middle" font-size="18">🛒</text>
+      <text x="84" y="89" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">C</text>
+      <text x="84" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Consumption</text>
+      <text x="84" y="122" text-anchor="middle" font-size="10" fill="#475569">household spending</text>
 
       <!-- I — Investment: x=167 -->
-      <rect x="167" y="42" width="149" height="78" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-      <text x="241" y="58" text-anchor="middle" font-size="18">🏗️</text>
-      <text x="241" y="81" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">I</text>
-      <text x="241" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Investment</text>
-      <text x="241" y="112" text-anchor="middle" font-size="10" fill="#475569">business spending</text>
+      <rect x="167" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <text x="241" y="64" text-anchor="middle" font-size="18">🏗️</text>
+      <text x="241" y="89" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">I</text>
+      <text x="241" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Investment</text>
+      <text x="241" y="122" text-anchor="middle" font-size="10" fill="#475569">business spending</text>
 
       <!-- G — Government: x=324 -->
-      <rect x="324" y="42" width="149" height="78" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-      <text x="398" y="58" text-anchor="middle" font-size="18">🏛️</text>
-      <text x="398" y="81" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">G</text>
-      <text x="398" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Government</text>
-      <text x="398" y="112" text-anchor="middle" font-size="10" fill="#475569">public spending</text>
+      <rect x="324" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <text x="398" y="64" text-anchor="middle" font-size="18">🏛️</text>
+      <text x="398" y="89" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">G</text>
+      <text x="398" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Government</text>
+      <text x="398" y="122" text-anchor="middle" font-size="10" fill="#475569">public spending</text>
 
       <!-- X−M — Net exports: x=481 -->
-      <rect x="481" y="42" width="149" height="78" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-      <text x="555" y="58" text-anchor="middle" font-size="18">🌍</text>
-      <text x="555" y="81" text-anchor="middle" font-size="19" font-weight="900" fill="#1D4ED8">X−M</text>
-      <text x="555" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Net exports</text>
-      <text x="555" y="112" text-anchor="middle" font-size="10" fill="#475569">trade balance</text>
+      <rect x="481" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <text x="555" y="64" text-anchor="middle" font-size="18">🌍</text>
+      <text x="555" y="89" text-anchor="middle" font-size="19" font-weight="900" fill="#1D4ED8">X−M</text>
+      <text x="555" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Net exports</text>
+      <text x="555" y="122" text-anchor="middle" font-size="10" fill="#475569">trade balance</text>
 
       <!-- Arrows from each box down to AD bar -->
-      <line x1="84"  y1="120" x2="84"  y2="132" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
-      <line x1="241" y1="120" x2="241" y2="132" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
-      <line x1="398" y1="120" x2="398" y2="132" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
-      <line x1="555" y1="120" x2="555" y2="132" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
+      <line x1="84"  y1="132" x2="84"  y2="148" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
+      <line x1="241" y1="132" x2="241" y2="148" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
+      <line x1="398" y1="132" x2="398" y2="148" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
+      <line x1="555" y1="132" x2="555" y2="148" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
 
       <!-- Aggregate Demand bar -->
-      <rect x="10" y="135" width="620" height="36" rx="8" fill="#1D4ED8"/>
-      <text x="320" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="white">↑ Aggregate Demand (AD)</text>
-      <text x="320" y="164" text-anchor="middle" font-size="10.5" fill="#BFDBFE">C + I + G + (X − M)</text>
+      <rect x="10" y="152" width="620" height="40" rx="8" fill="#1D4ED8"/>
+      <text x="320" y="169" text-anchor="middle" font-size="12.5" font-weight="700" fill="white">↑ Aggregate Demand (AD)</text>
+      <text x="320" y="184" text-anchor="middle" font-size="11" fill="#BFDBFE">C + I + G + (X − M)</text>
 
       <!-- Arrow from AD down to result bar -->
-      <line x1="320" y1="171" x2="320" y2="182" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
+      <line x1="320" y1="192" x2="320" y2="208" stroke="#93C5FD" stroke-width="2" marker-end="url(#cg-blu)"/>
 
       <!-- Result bar -->
-      <rect x="10" y="184" width="620" height="28" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-      <text x="320" y="202" text-anchor="middle" font-size="12" font-weight="700" fill="#1E3A8A">Real GDP rises in the short run</text>
+      <rect x="10" y="212" width="620" height="34" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="320" y="234" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E3A8A">Real GDP rises in the short run</text>
 
-      <!-- ══ SEPARATOR ══ -->
-      <rect x="0" y="220" width="640" height="70" fill="#F8FAFC"/>
-      <line x1="0" y1="220" x2="640" y2="220" stroke="#E2E8F0" stroke-width="1.5"/>
-      <line x1="0" y1="290" x2="640" y2="290" stroke="#E2E8F0" stroke-width="1.5"/>
-      <!-- Central grey down-arrow -->
-      <line x1="320" y1="228" x2="320" y2="278" stroke="#94A3B8" stroke-width="3" marker-end="url(#cg-gry)"/>
-      <!-- Left annotation -->
-      <text x="296" y="248" text-anchor="end" font-size="10.5" font-style="italic" fill="#64748B">Demand boosts are temporary</text>
-      <text x="296" y="263" text-anchor="end" font-size="10.5" font-style="italic" fill="#64748B">and can cause inflation</text>
-      <!-- Right annotation -->
-      <text x="344" y="248" font-size="10.5" font-style="italic" fill="#64748B">Sustainable growth requires</text>
-      <text x="344" y="263" font-size="10.5" font-style="italic" fill="#64748B">expanding productive capacity</text>
+      <!-- ══ "NOT THE SAME THING" SEPARATOR ══ -->
+      <rect x="0" y="258" width="640" height="102" fill="#F8FAFC"/>
+      <line x1="0" y1="258" x2="640" y2="258" stroke="#E2E8F0" stroke-width="1.5"/>
+      <line x1="0" y1="360" x2="640" y2="360" stroke="#E2E8F0" stroke-width="1.5"/>
+      <!-- Circle with down arrow inside -->
+      <circle cx="320" cy="295" r="22" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+      <line x1="320" y1="285" x2="320" y2="303" stroke="#475569" stroke-width="2.5" marker-end="url(#cg-gry)"/>
+      <!-- "Not the same thing" bold caption -->
+      <text x="320" y="340" text-anchor="middle" font-size="14" font-weight="800" fill="#0B1426">Not the same thing</text>
 
       <!-- ══ LONG-RUN SUPPLY SECTION ══ -->
-      <rect x="0" y="292" width="640" height="34" rx="8" fill="#047857"/>
-      <text x="320" y="314" text-anchor="middle" font-size="13.5" font-weight="700" fill="white">Long-run economic growth — supply side</text>
+      <rect x="0" y="364" width="640" height="38" rx="8" fill="#047857"/>
+      <text x="320" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="white">Long-run economic growth — supply side</text>
 
-      <!-- Row 1 supply tiles (y=334, h=82, w=200, gap=10) -->
+      <!-- Row 1 supply tiles (y=410, h=92, w=200, gap=10) -->
       <!-- Quantity of factors: x=10 -->
-      <rect x="10" y="334" width="200" height="82" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="22" y="362" font-size="20">👥</text>
-      <text x="50" y="360" font-size="12" font-weight="700" fill="#047857">Quantity of factors</text>
-      <text x="22" y="378" font-size="10.5" fill="#475569">More labour and capital</text>
-      <text x="22" y="392" font-size="10.5" fill="#475569">in the economy</text>
-      <text x="22" y="408" font-size="10" font-style="italic" fill="#059669">↑ workforce, ↑ capital stock</text>
+      <rect x="10" y="410" width="200" height="92" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="22" y="440" font-size="20">👥</text>
+      <text x="50" y="438" font-size="12.5" font-weight="700" fill="#047857">Quantity of factors</text>
+      <text x="22" y="458" font-size="10.5" fill="#475569">More labour and capital</text>
+      <text x="22" y="473" font-size="10.5" fill="#475569">in the economy</text>
+      <text x="22" y="491" font-size="10" font-style="italic" fill="#059669">↑ workforce, ↑ capital stock</text>
 
       <!-- Quality of factors: x=220 -->
-      <rect x="220" y="334" width="200" height="82" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="232" y="362" font-size="20">⭐</text>
-      <text x="260" y="360" font-size="12" font-weight="700" fill="#047857">Quality of factors</text>
-      <text x="232" y="378" font-size="10.5" fill="#475569">Better-skilled workers;</text>
-      <text x="232" y="392" font-size="10.5" fill="#475569">higher-quality capital</text>
-      <text x="232" y="408" font-size="10" font-style="italic" fill="#059669">training, health, upskilling</text>
+      <rect x="220" y="410" width="200" height="92" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="232" y="440" font-size="20">⭐</text>
+      <text x="260" y="438" font-size="12.5" font-weight="700" fill="#047857">Quality of factors</text>
+      <text x="232" y="458" font-size="10.5" fill="#475569">Better-skilled workers;</text>
+      <text x="232" y="473" font-size="10.5" fill="#475569">higher-quality capital</text>
+      <text x="232" y="491" font-size="10" font-style="italic" fill="#059669">training, health, upskilling</text>
 
       <!-- Technological progress: x=430 -->
-      <rect x="430" y="334" width="200" height="82" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="442" y="362" font-size="20">💡</text>
-      <text x="470" y="360" font-size="12" font-weight="700" fill="#047857">Technological progress</text>
-      <text x="442" y="378" font-size="10.5" fill="#475569">Innovation raises output</text>
-      <text x="442" y="392" font-size="10.5" fill="#475569">per unit of input</text>
-      <text x="442" y="408" font-size="10" font-style="italic" fill="#059669">R&amp;D, automation, patents</text>
+      <rect x="430" y="410" width="200" height="92" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="442" y="440" font-size="20">💡</text>
+      <text x="470" y="438" font-size="12.5" font-weight="700" fill="#047857">Technological progress</text>
+      <text x="442" y="458" font-size="10.5" fill="#475569">Innovation raises output</text>
+      <text x="442" y="473" font-size="10.5" fill="#475569">per unit of input</text>
+      <text x="442" y="491" font-size="10" font-style="italic" fill="#059669">R&amp;D, automation, patents</text>
 
-      <!-- Row 2 supply tiles (y=426, h=82) -->
+      <!-- Row 2 supply tiles (y=510, h=92) -->
       <!-- Improved infrastructure: x=10 -->
-      <rect x="10" y="426" width="200" height="82" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="22" y="454" font-size="20">🛣️</text>
-      <text x="50" y="452" font-size="12" font-weight="700" fill="#047857">Infrastructure</text>
-      <text x="22" y="470" font-size="10.5" fill="#475569">Roads, energy and digital</text>
-      <text x="22" y="484" font-size="10.5" fill="#475569">networks cut costs</text>
-      <text x="22" y="500" font-size="10" font-style="italic" fill="#059669">transport, broadband, power</text>
+      <rect x="10" y="510" width="200" height="92" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="22" y="540" font-size="20">🛣️</text>
+      <text x="50" y="538" font-size="12.5" font-weight="700" fill="#047857">Infrastructure</text>
+      <text x="22" y="558" font-size="10.5" fill="#475569">Roads, energy and digital</text>
+      <text x="22" y="573" font-size="10.5" fill="#475569">networks cut costs</text>
+      <text x="22" y="591" font-size="10" font-style="italic" fill="#059669">transport, broadband, power</text>
 
       <!-- Education & human capital: x=220 -->
-      <rect x="220" y="426" width="200" height="82" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="232" y="454" font-size="20">🎓</text>
-      <text x="260" y="452" font-size="12" font-weight="700" fill="#047857">Education &amp; skills</text>
-      <text x="232" y="470" font-size="10.5" fill="#475569">Skills, training and</text>
-      <text x="232" y="484" font-size="10.5" fill="#475569">knowledge boost output</text>
-      <text x="232" y="500" font-size="10" font-style="italic" fill="#059669">human capital formation</text>
+      <rect x="220" y="510" width="200" height="92" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="232" y="540" font-size="20">🎓</text>
+      <text x="260" y="538" font-size="12.5" font-weight="700" fill="#047857">Education &amp; skills</text>
+      <text x="232" y="558" font-size="10.5" fill="#475569">Skills, training and</text>
+      <text x="232" y="573" font-size="10.5" fill="#475569">knowledge boost output</text>
+      <text x="232" y="591" font-size="10" font-style="italic" fill="#059669">human capital formation</text>
 
       <!-- Higher productivity: x=430 -->
-      <rect x="430" y="426" width="200" height="82" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="442" y="454" font-size="20">📊</text>
-      <text x="470" y="452" font-size="12" font-weight="700" fill="#047857">Higher productivity</text>
-      <text x="442" y="470" font-size="10.5" fill="#475569">More output from the</text>
-      <text x="442" y="484" font-size="10.5" fill="#475569">same inputs — key driver</text>
-      <text x="442" y="500" font-size="10" font-style="italic" fill="#059669">TFP growth, efficiency gains</text>
+      <rect x="430" y="510" width="200" height="92" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="442" y="540" font-size="20">📊</text>
+      <text x="470" y="538" font-size="12.5" font-weight="700" fill="#047857">Higher productivity</text>
+      <text x="442" y="558" font-size="10.5" fill="#475569">More output from the</text>
+      <text x="442" y="573" font-size="10.5" fill="#475569">same inputs — key driver</text>
+      <text x="442" y="591" font-size="10" font-style="italic" fill="#059669">TFP growth, efficiency gains</text>
 
       <!-- Footer -->
-      <rect x="10" y="518" width="620" height="18" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" stroke-dasharray="5,3"/>
-      <text x="320" y="531" text-anchor="middle" font-size="10.5" font-weight="700" fill="#047857">Each factor shifts LRAS rightward — expanding the economy's productive frontier</text>
+      <rect x="10" y="610" width="620" height="20" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="320" y="624" text-anchor="middle" font-size="10.5" font-weight="700" fill="#047857">Each factor shifts LRAS rightward — expanding the economy's productive frontier</text>
     </svg>
   `,
 

@@ -49,6 +49,79 @@ window.ECONOS_ICONS = {
   peopleArrow: `<svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="14" r="5" fill="currentColor"/><path d="M2 34c0-5 4-9 9-9s9 4 9 9v2H2z" fill="currentColor"/><circle cx="37" cy="14" r="5" fill="currentColor"/><path d="M28 34c0-5 4-9 9-9s9 4 9 9v2H28z" fill="currentColor"/><path d="M19 21h8M19 27h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M27 19l3 2-3 2M19 25l-3 2 3 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
   cloudQuestion: `<svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg"><path d="M13 36c-4.4 0-8-3.6-8-8s3.6-8 8-8c0.4 0 0.8 0 1.2 0.1C15.6 14.3 20.3 10 26 10c6.6 0 12 5.4 12 12 0 0.4 0 0.8-0.1 1.1C41 24 43 26.8 43 30c0 3.9-3.1 7-7 7H13z" fill="currentColor"/><path d="M21 24a4 4 0 018 0c0 2.5-3 3-3 5v0.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="26" cy="33" r="1.4" fill="#fff"/></svg>`,
   globeNet: `<svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="19" fill="currentColor"/><path d="M5 24h38" stroke="#fff" stroke-width="2.2" fill="none"/><ellipse cx="24" cy="24" rx="10" ry="19" stroke="#fff" stroke-width="2.2" fill="none"/><path d="M9 13c4.5 3 9.5 4.5 15 4.5s10.5-1.5 15-4.5M9 35c4.5-3 9.5-4.5 15-4.5s10.5 1.5 15 4.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="24" cy="24" r="2.4" fill="#fff"/></svg>`,
+
+  fiscalDragChart: `<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;font-family:Inter,system-ui,sans-serif;">
+    <!-- Tax band background fills (chart area: x=90 to x=540, y=20 to y=220) -->
+    <rect x="90" y="20"    width="450" height="46"  fill="#FFE4E6"/>
+    <rect x="90" y="66"    width="450" height="67"  fill="#FEF3C7"/>
+    <rect x="90" y="133"   width="450" height="67"  fill="#FFFBEB"/>
+    <rect x="90" y="200"   width="450" height="20"  fill="#ECFDF5"/>
+
+    <!-- Threshold lines (green, solid) -->
+    <line x1="90" y1="220"   x2="540" y2="220"   stroke="#059669" stroke-width="2"/>
+    <line x1="90" y1="200"   x2="540" y2="200"   stroke="#059669" stroke-width="2"/>
+    <line x1="90" y1="133"   x2="540" y2="133"   stroke="#059669" stroke-width="2"/>
+    <line x1="90" y1="66"    x2="540" y2="66"    stroke="#059669" stroke-width="2"/>
+
+    <!-- Y-axis title -->
+    <text x="78" y="14" text-anchor="end" font-size="11" font-weight="700" fill="#334155">Income (£)</text>
+
+    <!-- Y-axis tick labels -->
+    <text x="82" y="24"  text-anchor="end" font-size="11" fill="#475569">£75,000</text>
+    <text x="82" y="70"  text-anchor="end" font-size="11" fill="#475569">£50,000</text>
+    <text x="82" y="137" text-anchor="end" font-size="11" fill="#475569">£37,700</text>
+    <text x="82" y="204" text-anchor="end" font-size="11" fill="#475569">£12,570</text>
+    <text x="82" y="224" text-anchor="end" font-size="11" fill="#475569">£0</text>
+
+    <!-- X-axis baseline -->
+    <line x1="90" y1="220" x2="540" y2="220" stroke="#0B1426" stroke-width="1.5"/>
+
+    <!-- Year 1 / Year 2 vertical gridlines (dashed grey) -->
+    <line x1="200" y1="20" x2="200" y2="220" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 4"/>
+    <line x1="430" y1="20" x2="430" y2="220" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 4"/>
+
+    <!-- X-axis labels -->
+    <text x="200" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#0B1426">Year 1</text>
+    <text x="430" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#0B1426">Year 2</text>
+
+    <!-- Nominal-wage trajectory: Year 1 £49k (y=89), Year 2 £52k (y=81) -->
+    <line x1="200" y1="89" x2="430" y2="81" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/>
+
+    <!-- Wage points -->
+    <circle cx="200" cy="89" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+    <circle cx="430" cy="81" r="6" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+
+    <!-- Wage labels (boxed pills above each point) -->
+    <g>
+      <rect x="170" y="59" width="60" height="20" rx="4" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
+      <text x="200" y="73" text-anchor="middle" font-size="11" font-weight="800" fill="#1E3A8A">£49,000</text>
+    </g>
+    <g>
+      <rect x="400" y="51" width="60" height="20" rx="4" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
+      <text x="430" y="65" text-anchor="middle" font-size="11" font-weight="800" fill="#1E3A8A">£52,000</text>
+    </g>
+
+    <!-- Right-side band labels -->
+    <g>
+      <rect x="552" y="22"  width="200" height="40" rx="6" fill="#FFE4E6" stroke="#FECDD3" stroke-width="1"/>
+      <text x="568" y="40" font-size="12" font-weight="800" fill="#9F1239">Additional rate</text>
+      <text x="568" y="55" font-size="11" font-weight="600" fill="#9F1239">(45%)</text>
+    </g>
+    <g>
+      <rect x="552" y="71"  width="200" height="56" rx="6" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+      <text x="568" y="93" font-size="12" font-weight="800" fill="#92400E">Higher rate</text>
+      <text x="568" y="110" font-size="11" font-weight="600" fill="#92400E">(40%)</text>
+    </g>
+    <g>
+      <rect x="552" y="138" width="200" height="56" rx="6" fill="#FFFBEB" stroke="#FEF3C7" stroke-width="1"/>
+      <text x="568" y="160" font-size="12" font-weight="800" fill="#D97706">Basic rate</text>
+      <text x="568" y="177" font-size="11" font-weight="600" fill="#D97706">(20%)</text>
+    </g>
+    <g>
+      <rect x="552" y="200" width="200" height="20" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+      <text x="568" y="214" font-size="11" font-weight="700" fill="#065F46">Personal allowance (0%)</text>
+    </g>
+  </svg>`,
   cog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
   cart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 3h2l2.5 12h12L22 7H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>`,
   pound: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M16 7a3 3 0 00-6 0v3H7"/><path d="M7 14h10M7 18h12"/><path d="M10 10v8"/></svg>`,

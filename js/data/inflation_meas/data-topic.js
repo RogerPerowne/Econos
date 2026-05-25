@@ -380,6 +380,11 @@ window.ECONOS_TOPIC = {
       title: 'Fiscal drag and real vs nominal',
       lede: 'Inflation changes money values on paper — what matters for living standards is the <strong>real value after inflation</strong>.',
 
+      visualLabel: 'How fiscal drag works',
+      visualEmoji: '📊',
+      visualKey: 'fiscalDragChart',
+      visualCaption: 'When tax thresholds do not rise with inflation, the same real wage gets pulled into higher tax bands.',
+
       causesFirst: true,
       causesLabel: 'Nominal vs real — three worked examples',
       causes: [

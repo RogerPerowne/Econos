@@ -4369,7 +4369,7 @@
           <div style="font-size:15px;color:#0B1426;line-height:1.55;font-style:italic;">${c.lede}</div>
         </div>`) : ''}
 
-      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
+      ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
 
       ${c.tip ? (() => {
         const tipText = typeof c.tip === 'object' && !Array.isArray(c.tip) ? c.tip.text : (typeof c.tip === 'string' ? c.tip : '');

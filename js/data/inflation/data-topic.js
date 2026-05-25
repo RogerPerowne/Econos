@@ -191,13 +191,12 @@ window.ECONOS_TOPIC = {
       causesLabel: 'What causes it?',
       causesEmoji: '🔍',
       causesStyle: 'numbered',
-      causesTone: 'amber',
       causes: [
-        { icon: '🔥', head: 'Higher energy prices',         body: 'More expensive fuel and electricity raise production costs.' },
-        { icon: '👥', head: 'Wage rises',                   body: 'Higher pay increases labour costs, especially if productivity does not keep up.' },
-        { icon: '£',  head: 'Import costs from a weaker FX', body: 'Imports become more expensive, lifting input prices.' },
-        { icon: '📄', head: 'Indirect taxes',               body: 'VAT or excise duty rises increase firms\' costs, which they pass on.' },
-        { icon: '⛈️', head: 'Supply shocks',                body: 'Events like bad weather, pandemics or war disrupt supply and lift costs.' }
+        { tone: 'amber',  icon: '🔥', head: 'Higher energy prices',         body: 'More expensive fuel and electricity raise production costs.' },
+        { tone: 'blue',   icon: '👥', head: 'Wage rises',                   body: 'Higher pay increases labour costs, especially if productivity does not keep up.' },
+        { tone: 'green',  icon: '£',  head: 'Import costs from a weaker FX', body: 'Imports become more expensive, lifting input prices.' },
+        { tone: 'purple', icon: '📄', head: 'Indirect taxes',               body: 'VAT or excise duty rises increase firms\' costs, which they pass on.' },
+        { tone: 'amber',  icon: '⛈️', head: 'Supply shocks',                body: 'Events like bad weather, pandemics or war disrupt supply and lift costs.' }
       ],
 
       verdict: {

@@ -73,16 +73,31 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🏦', title: 'Interest rate policy',    sub: 'Central banks raise or cut rates in response.' }
       ],
 
-      tip: {
-        icon: '⚠️',
-        tone: 'rose',
-        text: '<strong>Common trap:</strong> falling <em>inflation</em> is not the same as falling <em>prices</em>. Disinflation = prices still rising, but more slowly. Deflation = prices actually falling.'
-      },
-
-      conclusion: {
-        title: 'Quick example',
-        text: 'If inflation falls from <strong>8% in year 1 to 3% in year 2</strong>, prices are still rising — just more slowly. That is disinflation, not deflation. Prices would have to fall (negative inflation) for it to be deflation.'
-      },
+      summaryRow: [
+        {
+          tone: 'green',
+          icon: '✅',
+          title: 'Why it matters',
+          items: [
+            'Determines the real purchasing power of wages and savings',
+            'Drives Bank of England interest rate decisions',
+            'Shapes pay claims, business costs and investment',
+            'Foundation for real vs nominal distinctions (card 5)'
+          ]
+        },
+        {
+          tone: 'rose',
+          icon: '⚠️',
+          title: 'Common trap',
+          text: 'Falling <em>inflation</em> is not the same as falling <em>prices</em>. Disinflation = prices still rising, just more slowly. Deflation = prices actually falling.'
+        },
+        {
+          tone: 'blue',
+          icon: '📝',
+          title: 'Quick example',
+          text: 'CPI falls from <strong>8% → 3%</strong>: still disinflation (prices still rising). For deflation the rate must go <strong>negative</strong> — e.g. −1%.'
+        }
+      ],
 
       lockIn: {
         items: ['Definition of inflation', 'Inflation vs deflation vs disinflation', 'General price level idea', 'Why it matters']

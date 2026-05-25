@@ -2344,6 +2344,35 @@
       });
     }
 
+    // Summary row — up to 3 mini-cards side-by-side for contrast/context blocks
+    //   (e.g. "Why it matters" + "Common trap" + "Quick example").
+    //   Pattern: summaryRow: [{ tone, icon, title, text?, items?: [string] }]
+    if (c.summaryRow && c.summaryRow.length) {
+      const cols = Math.min(c.summaryRow.length, 3);
+      content += `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;margin-bottom:20px;">`;
+      content += c.summaryRow.map(cell => {
+        const t = PATTERN_TONES[cell.tone || 'blue'] || PATTERN_TONES.blue;
+        const icon = cell.icon || '';
+        const itemsHtml = Array.isArray(cell.items) && cell.items.length
+          ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
+              cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
+            }</ul>`
+          : '';
+        const bodyHtml = cell.text
+          ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${cell.text}</div>${itemsHtml}`
+          : itemsHtml;
+        return `
+          <div style="border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
+              ${icon ? `<span style="font-size:15px;line-height:1;">${icon}</span>` : ''}
+              <span style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.07em;line-height:1.2;">${cell.title || ''}</span>
+            </div>
+            ${bodyHtml}
+          </div>`;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Conclusion — green decisive verdict band. The "given the above, here's the answer".
     //   Pattern: conclusion: 'string' OR { title?, text }
     //   (Distinct from c.conclusion used by elasticity-calc / worked-example renderers — only
@@ -4439,6 +4468,31 @@
       })() : ''}
 
       ${!c.pairFirst ? pairHtml : ''}
+
+      ${c.summaryRow && c.summaryRow.length ? (() => {
+        const cols = Math.min(c.summaryRow.length, 3);
+        const cells = c.summaryRow.map(cell => {
+          const t = PATTERN_TONES[cell.tone || 'blue'] || PATTERN_TONES.blue;
+          const icon = cell.icon || '';
+          const itemsHtml = Array.isArray(cell.items) && cell.items.length
+            ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
+                cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
+              }</ul>`
+            : '';
+          const bodyHtml = cell.text
+            ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${cell.text}</div>${itemsHtml}`
+            : itemsHtml;
+          return `
+            <div style="border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
+                ${icon ? `<span style="font-size:15px;line-height:1;">${icon}</span>` : ''}
+                <span style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.07em;line-height:1.2;">${cell.title || ''}</span>
+              </div>
+              ${bodyHtml}
+            </div>`;
+        }).join('');
+        return `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;margin-bottom:20px;">${cells}</div>`;
+      })() : ''}
 
       ${(c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';

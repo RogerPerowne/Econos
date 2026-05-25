@@ -26,26 +26,47 @@ js/data/<topic-id>/
   data-quiz-<set>.js     # Optional: quiz sets
 ```
 
-Topic IDs are kebab_case (underscores, not hyphens — match existing folders). Examples: `factors_of_production`, `price_controls`, `monopolistic_competition`.
+Topic IDs are `snake_case` (underscores, not hyphens — match existing folders). Examples: `factors_of_production`, `price_controls`, `inflation_meas`. Card IDs are `hyphen-case` and semantic (`four-factors`, not `<topic_id>_1`).
 
 ## Step 1 — Create `data-topic.js`
 
+The engine (`js/app.js`) reads `window.ECONOS_TOPIC` (singular, assigned directly). A file that uses the keyed-dictionary form `ECONOS_TOPIC_DATA['<id>']` will load without errors but render a blank page — confirm the global is right.
+
 ```js
-window.ECONOS_TOPIC_DATA = window.ECONOS_TOPIC_DATA || {};
-window.ECONOS_TOPIC_DATA['<topic-id>'] = {
-  id: '<topic-id>',
+/* ECONOS — content data for <topic_id> */
+window.ECONOS_TOPIC = {
+  id: '<topic_id>',
+  topicNum: '2.1',                  // Edexcel spec reference
+  theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Topic Title',
-  summary: 'One-paragraph summary that previews on the home page.',
+  estTime: '8–10 minutes',
+  goal: 'One sentence describing what the learner locks in.',
+
+  intro: {
+    heroKey: 'heroKeyName',         // optional; named SVG in js/icons.js
+    summary: 'Paragraph shown on the topic landing.',
+    doInThis: 'What the student does in this topic.',
+    outcomes: [
+      'Learning outcome 1',
+      'Learning outcome 2'
+    ],
+    tip: 'Short cue or quick-reference line.',
+    stages: [
+      { num: 1, name: 'Learn it', sub: 'N concept cards',               state: 'current' },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
+    ]
+  },
+
   cards: [
     {
-      id: 'intro',
+      id: 'semantic-card-id',       // hyphenated and semantic
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of N',
       title: 'Card title',
-      lede: 'Opening paragraph.',
-      // ...optional fields per the econos-card-template skill...
-    },
-    // more cards...
+      lede: 'Opening paragraph. Use <strong> for emphasis.',
+      // ...optional blocks per the econos-card-template skill...
+    }
   ]
 };
 ```
@@ -85,11 +106,11 @@ Inside engine code, never call `window.location.href` or `.replace` directly —
 
 After adding a topic:
 
-1. `node --check js/data/<topic-id>/data-topic.js`
+1. `node --check js/data/<topic_id>/data-topic.js`
 2. `node --check js/topics.js`
-3. `npm run lint` — must pass
-4. Open `learn.html?topic=<id>` locally; verify the first card renders, navigate forward through all cards
-5. If you added Link/Land/Quiz data, hit those URLs too
+3. `scripts/lint.sh` — must pass (blocks legacy filenames and direct navigation)
+4. Use the `run-econos` skill to screenshot the topic at card index 0, then step through every card and confirm each renders
+5. Confirm the global with `grep -q "window.ECONOS_TOPIC\s*=" js/data/<topic_id>/data-topic.js` — if it returns empty, the file uses the wrong global and will render blank
 
 ## Reference topics
 

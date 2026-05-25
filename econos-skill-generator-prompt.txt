@@ -1,0 +1,353 @@
+You are a skill-generator for Claude Code. Your task is to produce a complete, self-contained skill file called `econos-build-from-mockup` that automates the creation of a new econos topic from a set of mockup images.
+
+Read every section. The schema and API details are based on the real repo — do not substitute assumptions from training data.
+
+---
+
+## CONTEXT: What econos is
+
+econos is a static educational web app for A-Level Economics. It has exactly six HTML shells at the repo root:
+
+```
+index.html  learn.html  link.html  land.html  quiz.html  login.html
+```
+
+Topics live in `js/data/<topic-id>/data-topic.js`. No new HTML files are ever added. The shells discover topics through `TopicLoader.loadData(...)` at runtime.
+
+A topic is registered in `js/topics.js` with fields including `id`, `title`, `theme`, `unit`, `order`, and a short tag list — match the style of surrounding entries exactly.
+
+Topic IDs use **underscores**, not hyphens. Examples: `factors_of_production`, `price_controls`, `growth_measure`.
+
+---
+
+## CONTEXT: Real data-topic.js schema
+
+Each `data-topic.js` uses this exact global assignment — not a `const` export:
+
+```js
+window.ECONOS_TOPIC_DATA = window.ECONOS_TOPIC_DATA || {};
+window.ECONOS_TOPIC_DATA['<topic-id>'] = {
+  id: '<topic-id>',
+  title: 'Topic Title',
+  summary: 'One-paragraph summary shown on the home page.',
+  intro: {
+    heroKey: 'heroKeyName',          // named SVG key in js/icons.js
+    summary: 'Intro paragraph.',
+    doInThis: 'What the student does in this topic.',
+    outcomes: [
+      'Learning outcome 1',
+      'Learning outcome 2'
+    ],
+    tip: 'Quick-reference formula or definition.',
+    stages: [
+      { num: 1, name: 'Learn it', sub: 'N concept cards', state: 'done',      href: TopicLoader.buildUrl('topic.html') },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with context',            state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',           state: 'locked' }
+    ]
+  },
+  cards: [ /* see card schema below */ ]
+};
+```
+
+There is no `heroIcon`, `color`, `subtitle`, or `const topicData` anywhere. Those field names are wrong.
+
+---
+
+## CONTEXT: Real card schema — ad-interactive template
+
+Use `template: 'ad-interactive'` for 90% of cards. This is the Swiss-army template.
+
+```js
+{
+  id: 'topic_id_1',              // underscore_case, unique within topic
+  template: 'ad-interactive',    // default for almost all cards
+  stepLabel: 'Learn: Step 1 of N',
+  title: 'Card title',
+  lede: 'Opening paragraph. Use <strong> for emphasis.',
+
+  // Every field below is optional — include only what the card needs:
+
+  visualKey: 'namedSvgKey',      // Hero diagram — key into ECONOS_ICONS in js/icons.js. See econos-visual-diagram skill.
+
+  tip: {                         // Coloured callout box
+    icon: '⚠️',
+    tone: 'amber',               // green | amber | blue | purple | rose | slate
+    text: 'Callout text.'
+  },
+
+  pairLabel: 'Comparison heading',
+  pairEmoji: '⚖️',
+  left: {                        // Left half of comparison
+    tone: 'blue',
+    icon: '📉',
+    iconStyle: '',               // optional inline style on the icon
+    label: 'Left heading',
+    text: 'Left body text.'
+  },
+  right: {                       // Right half of comparison
+    tone: 'green',
+    icon: '📈',
+    label: 'Right heading',
+    text: 'Right body text.'
+  },
+
+  flowTitle: 'Steps heading',
+  flow: [                        // Ordered step tiles
+    { tone: 'green', icon: '1️⃣', title: 'Step title', sub: 'Step explanation.' }
+  ],
+
+  causesLabel: 'Section heading',
+  causesEmoji: '🔍',
+  causes: [                      // Tone-coded body blocks
+    {
+      tone: 'blue',              // optional — omit for neutral styling
+      icon: '🔄',
+      head: 'Item heading',
+      body: 'Item body. May contain <strong>inline HTML</strong>.'
+    }
+  ],
+
+  productExamples: [             // Product cards with verdict (elasticity-style)
+    {
+      name: 'Product name',
+      icon: '🛒',
+      verdict: { tone: 'amber', label: 'Verdict label' },
+      reasoning: 'Reasoning text.'
+    }
+  ],
+
+  keyTerms: [                    // Glossary grid
+    { term: 'Term', def: 'Definition.' }
+  ],
+
+  equation: {                    // Reusable equation visual
+    lhs: 'PED',
+    op: '=',
+    rhs: '% change in QD ÷ % change in P',
+    result: 'Always negative'
+  },
+
+  economistQuote: {
+    quote: 'Quote text.',
+    attribution: 'Name, Source'
+  },
+
+  keyTakeaway: {                 // Highlighted takeaway box
+    title: 'Takeaway heading',
+    text: 'Takeaway body.'
+  },
+
+  conclusion: {
+    title: 'Conclusion heading',
+    text: 'Conclusion text.'
+  },
+
+  exam: {                        // Yellow exam-edge callout
+    title: 'Exam edge heading',
+    text: 'Exam tip text.'
+  },
+
+  examEdge: 'Shorthand string form of exam tip — use this OR exam: {}, not both.'
+}
+```
+
+### Important: SVG diagrams
+
+SVGs are **never inlined into card body fields**. They live as named keys in `js/icons.js` (as `ECONOS_ICONS.keyName = \`<svg...>\``) and are referenced by cards via `visualKey: 'keyName'` or `diagramKey: 'keyName'`. The `econos-visual-diagram` skill governs SVG authoring. When GPT-4o extraction describes a diagram in a body field, the skill must convert it to a named SVG in `js/icons.js` and replace the body text with `visualKey: 'keyName'`. SVG viewBox is always `viewBox="0 0 640 H"` where H is the actual pixel height — width is fixed at 640, height varies by content.
+
+### Tone values
+
+The six valid tones: `green`, `amber`, `blue`, `purple`, `rose`, `slate`. These map to fixed background colours in the renderer. Do not invent other values.
+
+### Steps (card-level, not flow tiles)
+
+Some cards use a top-level `steps` array for ordered narrative steps:
+
+```js
+steps: [
+  { label: 'Step heading', text: 'Step explanation.' }
+]
+```
+
+This is distinct from the `flow` array of tiles.
+
+---
+
+## CONTEXT: Existing skills to call (not to duplicate)
+
+The repo has these skills in `.claude/skills/`. The new skill must call them rather than reinvent their logic:
+
+- **`econos-card-template`** — full field reference for `ad-interactive` and specialised templates. Call at Stage 1 for field guidance.
+- **`econos-visual-diagram`** — SVG authoring language, viewBox conventions, icon key registration in `js/icons.js`. Call whenever a card needs a diagram.
+- **`econos-new-topic`** — covers `data-topic.js` structure, URL contract, and `js/topics.js` registration. Call at Stage 5.
+- **`run-econos`** — launches a static server and Playwright driver for screenshots. Card navigation uses a card-index argument, not URL params. Call at Stage 5 for verification.
+- **`econos-ship-changes`** — governs the mandatory push → PR → squash-merge → dev-branch reset flow, including the backup-main-first step. **Always call this skill for Stage 5 shipping. Never duplicate its git logic.**
+
+---
+
+## CONTEXT: GPT Image 2 API
+
+The skill uses GPT Image 2 to generate mockup images for each card. Use this exact API shape — no deviations:
+
+```python
+import openai, base64, os, sys
+
+api_key = os.environ.get("OPENAI_API_KEY")
+if not api_key:
+    sys.exit("ERROR: OPENAI_API_KEY is not set in the environment. Add it to .claude/settings.local.json under the 'env' block.")
+
+client = openai.OpenAI(api_key=api_key)
+
+response = client.images.generate(
+    model="gpt-image-2-2026-04-21",   # pinned snapshot — never use rolling alias "gpt-image-2"
+    prompt="...",
+    n=1,
+    size="1024x1024",                  # valid: 1024x1024 | 1024x1792 | 1792x1024
+    quality="high",                    # valid: standard | high
+    output_format="b64_json"           # always request base64
+)
+
+image_bytes = base64.b64decode(response.data[0].b64_json)
+with open("card_01_mockup.png", "wb") as f:
+    f.write(image_bytes)
+```
+
+**There is no `style` parameter** — omit it entirely or the call will be rejected.
+
+The `OPENAI_API_KEY` lives in `.claude/settings.local.json` under the `env` block and is surfaced to Claude Code automatically. It is never committed to the repo. The script must check for its presence and exit with a clear message if absent.
+
+Pin the snapshot ID `gpt-image-2-2026-04-21` rather than the rolling alias `gpt-image-2` so a future model bump does not silently change image style mid-batch.
+
+---
+
+## CONTEXT: GPT-4o is retired — use a current vision model
+
+`gpt-4o` was retired from the OpenAI API on 13 February 2026. Do not hardcode it. The extraction script must expose the vision model as a configurable variable with a sensible current default. At time of writing, current vision-capable models include the GPT-5 series (GPT-5.4 latest) and GPT-4.1 series. Use `gpt-4.1` as the default (capable and cheaper than GPT-5); document `gpt-5.4` as the high-quality alternative.
+
+---
+
+## CONTEXT: Python dependencies
+
+Use only:
+- `openai` (API calls)
+- stdlib only (`base64`, `os`, `sys`, `json`, `pathlib`, `argparse`)
+
+Do **not** add `Pillow`, `opencv-python`, or any other image-processing library — nothing in this workflow requires local image manipulation. Leaner dependencies mean faster installs and fewer breakage points.
+
+---
+
+## CONTEXT: Full build-from-mockup workflow
+
+The workflow has five stages:
+
+**Stage 1 — Topic brief**
+Receive from the user: topic ID (underscore_case), title, approximate card count, and the economic concept. Load the `econos-card-template` skill for field reference.
+
+**Stage 2 — Generate mockup images with GPT Image 2**
+For each card, call the GPT Image 2 API (see API shape above). The image prompt must describe:
+- The card's pedagogical purpose (e.g. "an infographic card explaining the determinants of PED for A-Level Economics students")
+- Visual style: clean infographic, white background, econos colour palette (muted pastels: green #D1FAE5, blue #DBEAFE, amber #FEF3C7, purple #EDE9FE, rose #FFE4E6, slate #F1F5F9), clear typography, no decorative clutter
+- Any diagrams (e.g. supply-demand curves, PPF, AD/AS — described in plain terms)
+- Key headings, labels, and icons that should appear
+
+Save each image as `mockup_card_NN.png` in `.claude/skills/econos-build-from-mockup/tmp/<topic_id>/`.
+
+**Stage 3 — Extract structured content from images**
+Send each mockup PNG to the vision model as a base64-encoded image with this extraction prompt:
+
+```
+You are extracting structured content from an econos card mockup image for an A-Level Economics web app.
+Return ONLY valid JSON. Use this exact shape:
+
+{
+  "id": "topic_id_N",
+  "template": "ad-interactive",
+  "stepLabel": "Learn: Step N of M",
+  "title": "Card title",
+  "lede": "Opening paragraph.",
+  "tip": null,
+  "left": null,
+  "right": null,
+  "flow": [],
+  "causes": [],
+  "keyTerms": [],
+  "conclusion": null,
+  "exam": null,
+  "diagramDescription": "Plain-text description of any diagram shown, or null if none."
+}
+
+Rules:
+- Only include array/object fields that have content. Omit empty arrays and null fields from output.
+- causes items: { "tone": "blue|green|amber|purple|rose|slate", "icon": "emoji", "head": "heading", "body": "body text" }
+- flow items: { "tone": "...", "icon": "emoji", "title": "step title", "sub": "explanation" }
+- If a diagram is shown, describe it in diagramDescription — Claude will convert this to SVG later. Do not attempt to produce SVG here.
+- tone must be one of: green, amber, blue, purple, rose, slate
+- All icon fields must be a single emoji character
+- Be economically accurate — this is A-Level Economics content
+```
+
+Parse the returned JSON. Flag any card where parsing fails for manual review. Assemble all cards into a draft `data-topic.js` using the schema above.
+
+**Stage 4 — Claude review, SVG conversion, and validation**
+Read the draft and:
+- Correct any extraction errors: wrong tones, garbled text, misread icons, economically inaccurate statements
+- For each card with a `diagramDescription`: load the `econos-visual-diagram` skill, convert the description to a named SVG in `js/icons.js`, replace `diagramDescription` with `visualKey: 'keyName'`
+- Ensure the file uses `window.ECONOS_TOPIC_DATA['<id>'] = {...}` — not `const topicData` or any other shape
+- Validate: `node --check js/data/<topic-id>/data-topic.js` — must pass with no errors
+- Validate: `node --check js/icons.js` — must pass after any SVG additions
+
+**Stage 5 — Register, verify, and ship**
+1. Add the topic to `js/topics.js` — load the `econos-new-topic` skill for the exact registration shape.
+2. Run `scripts/lint.sh` — must pass.
+3. Load the `run-econos` skill — take a screenshot of the topic at card index 0, then navigate through all cards to confirm they render without errors.
+4. **Stop here.** Hand off to the `econos-ship-changes` skill for the push → PR → squash-merge → dev-branch reset sequence. Do not duplicate that logic in this skill.
+
+---
+
+## YOUR TASK
+
+Generate a complete Claude Code skill consisting of exactly two files:
+
+### File 1: `.claude/skills/econos-build-from-mockup/SKILL.md`
+
+This is the entry point. It must contain:
+
+1. YAML frontmatter block with `name` and `description` fields (match the style of existing econos skills).
+2. A 2–3 sentence description of what the skill does.
+3. The five-stage workflow as step-by-step instructions Claude must follow, using the correct schema and API details from this brief.
+4. The exact Python script for Stage 2 (GPT Image 2 generation) — inline in a fenced code block, fully working.
+5. The exact Python script for Stage 3 (vision extraction) — inline in a fenced code block, fully working, with the vision model as a configurable variable defaulting to `gpt-4.1`.
+6. The `data-topic.js` file template with all correct fields (using `window.ECONOS_TOPIC_DATA` assignment).
+7. Instructions for Stage 4 review: what to check, how to convert diagram descriptions to SVGs via the `econos-visual-diagram` skill, how to run `node --check`.
+8. Instructions for Stage 5: registration via `econos-new-topic`, `scripts/lint.sh`, `run-econos` screenshot, then handoff to `econos-ship-changes`.
+9. A security note: the skill never commits the API key; it reads `OPENAI_API_KEY` from the environment and exits with a clear message if absent.
+
+### File 2: `.claude/skills/econos-build-from-mockup/generate_mockups.py`
+
+The standalone Python script for Stage 2. It must:
+- Read configuration from a JSON file (`config.json`) in the same tmp directory, with fields: `topic_id`, `cards` (array of `{card_num, prompt}`).
+- Accept `--config <path>` as a CLI argument pointing to that JSON file.
+- Call GPT Image 2 for each card using the pinned snapshot `gpt-image-2-2026-04-21`.
+- Save images to `.claude/skills/econos-build-from-mockup/tmp/<topic_id>/mockup_card_NN.png`.
+- Print progress and the absolute path of each saved file.
+- Check for `OPENAI_API_KEY` before making any API call and exit with a clear error if absent.
+- Use only stdlib + `openai`. No Pillow, no OpenCV.
+
+---
+
+## CONSTRAINTS
+
+- The skill must produce `data-topic.js` files that actually load in the econos runtime. The only correct global assignment form is `window.ECONOS_TOPIC_DATA['<id>'] = {...}`.
+- Card template is `ad-interactive` by default. Do not invent fields not listed in the schema above.
+- SVGs live in `js/icons.js` as named keys. Never inline SVG into a card body field.
+- Topic IDs use underscores, not hyphens.
+- Tone values must be exactly one of: `green`, `amber`, `blue`, `purple`, `rose`, `slate`.
+- Icon fields must be single emoji characters.
+- The vision model must be a configurable variable — never hardcode a retired model string. Default to `gpt-4.1`.
+- The image model must be pinned to the snapshot ID `gpt-image-2-2026-04-21`.
+- No `style` parameter in any GPT Image 2 call.
+- Python dependencies: `openai` + stdlib only.
+- `node --check` must pass on both `data-topic.js` and `js/icons.js` before Stage 5.
+- `scripts/lint.sh` must pass before shipping.
+- Stage 5 git operations are handled exclusively by the `econos-ship-changes` skill — do not duplicate the push/merge/reset/force-push logic here.
+- The SKILL.md frontmatter must use the same YAML format as existing econos skills (name + description fields).

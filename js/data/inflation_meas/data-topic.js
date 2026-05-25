@@ -1,106 +1,174 @@
 /* ============================================================
    ECONOS — content data for inflation_meas
-   7 cards · revision-tight · exam-edge gems flagged
-   Edexcel Theme 2.2.1
+   6 cards · rebuilt from mockups · Edexcel Theme 2.2.1
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'inflation_meas',
-  topicNum: '1.2.1',
+  topicNum: '2.2.1',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Inflation: Measurement & Costs',
-  estTime: '11-13 minutes',
-  goal: 'Lock in CPI, RPI, CPIH and who wins and loses from inflation',
+  estTime: '10-12 minutes',
+  goal: 'Lock in what inflation is, how CPI / RPI / CPIH measure it, the costs of high inflation and deflation, and why real values matter.',
 
   intro: {
     heroKey: 'heroBars',
-    summary: "The 2% target. The basket of goods. The difference between CPI, RPI, and CPIH. And the six groups who win or lose depending on whether inflation rises or falls. All the gems are here.",
-    doInThis: 'Work through 8 cards: inflation definition, CPI construction, a CPI calculation worked example, RPI vs CPI, price index limitations, costs of inflation, deflation, and the 2% target rationale.',
+    summary: "Inflation, disinflation and deflation are not the same. CPI, RPI and CPIH measure prices differently. High inflation hurts savers, exporters and the uncertain — deflation traps the economy. And the gap between nominal and real values is where exam marks are won or lost.",
+    doInThis: 'Seven cards: what inflation is, how CPI is built, a worked CPI calculation, the three UK measures (CPI / RPI / CPIH), the costs of inflation, fiscal drag and real vs nominal, and the costs of deflation.',
     outcomes: [
-      'Distinguish CPI, RPI, and CPIH',
-      'Identify winners and losers from inflation',
-      'Evaluate the costs of deflation vs inflation'
+      'Distinguish inflation, disinflation and deflation precisely',
+      'Explain how CPI is constructed and why weighting matters',
+      'Compare CPI, RPI and CPIH and identify when each is used',
+      'Evaluate the costs of inflation, deflation and the real-vs-nominal distinction'
     ],
-    tip: 'These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.',
+    tip: 'Inflation is measured as the % change in a price index. CPI = 2% is the BoE target; RPI tends to run higher; CPIH adds owner-occupier housing costs.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '9 concept cards',    state: 'current' },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
+      { num: 1, name: 'Learn it', sub: '7 concept cards',                 state: 'current' },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context',   state: 'locked' },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',      state: 'locked' }
     ]
   },
 
   cards: [
 
-    /* ----- CARD 1 — Framing: What is inflation? ----- */
+    /* ====================================================================
+       CARD 1 — What is inflation?
+       Inflation vs deflation vs disinflation. Why it matters. Common trap.
+       ==================================================================== */
     {
-      id: 'inflation-framing',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 9',
-      title: 'Inflation: a sustained general rise in the price level',
-      lede: 'One definition. Three things to note. Knowing the three qualifiers separates exam answers from everyday conversations about prices.',
-      branches: [
-        { tone: 'green',  label: 'Sustained',   sub: 'One-off price rises (e.g. a bad harvest) are NOT inflation. Inflation requires prices to keep rising over time. A single spike that reverses is a <em>price level shock</em>, not inflation.' },
-        { tone: 'amber',  label: 'General',      sub: 'One sector rising is NOT inflation. The general price level across the economy must rise. A* answers distinguish sector-specific price changes from economy-wide inflation.' },
-        { tone: 'blue',   label: 'Price level',  sub: 'Inflation is measured as the <em>rate of change</em> of a price index. Even at low inflation, prices are still rising. Falling inflation (‘disinflation’) is NOT the same as falling prices (‘deflation’).' }
-      ],
-      examEdge: {
-        title: 'Disinflation ≠ deflation',
-        text: '<strong>Disinflation:</strong> inflation rate falls (e.g. from 5% to 2%) — prices still rising, just more slowly. <strong>Deflation:</strong> negative inflation — prices actually falling. Confusing these two is a classic exam error that costs marks.'
-      },
-      keyTakeaway: {
-        title: 'The 2% target',
-        text: "The Bank of England targets <strong>CPI inflation at 2%</strong>. Why not 0%? Because some inflation is a sign of a healthy, growing economy; and because near-zero risks slipping into deflation, which is much harder to escape."
-      }
-    },
+      id: 'what-is-inflation',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 1 of 6',
+      title: 'What is inflation?',
+      lede: 'Inflation is a sustained rise in the general price level. Over time, money buys fewer goods and services — affecting wages, savings, living standards, and policy decisions.',
+      ledeStyle: 'plain',
 
-    /* ----- CARD 2 — Measuring inflation: CPI ----- */
-    {
-      id: 'cpi',
-      template: 'mechanisms',
-      stepLabel: 'Learn: Step 2 of 9',
-      title: 'How CPI is constructed',
-      lede: 'The Consumer Price Index is the UK\'s official inflation measure and the Bank of England\'s target. Knowing how it\'s built exposes its limitations.',
-      mechanisms: [
+      keyDistinction: {
+        icon: '🔎',
+        title: 'The key distinction',
+        items: [
+          { term: 'Inflation',    color: '#059669', text: 'prices are rising and the general price level is going up.' },
+          { term: 'Disinflation', color: '#7C3AED', text: 'inflation is still positive, but the rate of inflation is falling.' },
+          { term: 'Deflation',    color: '#E11D48', text: 'the general price level is falling (negative inflation).' }
+        ]
+      },
+
+      causesFirst: true,
+      causesLabel: null,
+      causes: [
         {
-          num: '1',
           tone: 'green',
-          title: 'The basket of goods',
-          text: 'A representative sample of ~700 categories of goods and services bought by UK households. Updated every year to reflect changing spending patterns. Categories include food, transport, clothing, entertainment, housing costs (rents, not mortgages).'
+          head: 'Inflation',
+          svgKey: 'trendCurveUp',
+          body: 'Prices are rising and the price level is going up.',
+          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £105</strong>' }
         },
         {
-          num: '2',
-          tone: 'blue',
-          title: 'Weighting',
-          text: 'Each category is weighted by its share of total household spending. Food and housing are heavily weighted. A 10% rise in a 5%-weight category has half the impact of a 10% rise in a 10%-weight category.'
+          tone: 'purple',
+          head: 'Disinflation',
+          svgKey: 'trendCurveWavy',
+          body: 'Prices are still rising, but more slowly.',
+          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £102</strong>' }
         },
         {
-          num: '3',
-          tone: 'amber',
-          title: 'Price collection',
-          text: 'ONS price-collectors visit ~140 locations monthly and collect ~180,000 individual price quotes. Online prices are increasingly included. The index is recalculated monthly with a base year = 100.'
-        },
-        {
-          num: '4',
           tone: 'rose',
-          title: 'International standard',
-          text: 'CPI uses the HICP (Harmonised Index of Consumer Prices) methodology — comparable across EU countries. This is why the UK uses CPI (not RPI) for the official 2% target and for international comparisons.'
+          head: 'Deflation',
+          svgKey: 'trendCurveDown',
+          body: 'The general price level is falling.',
+          example: { icon: '🧺', label: 'Example', text: 'Basket from <strong>£100 → £98</strong>' }
         }
       ],
-      examEdge: {
-        title: 'CPI excludes housing costs',
-        text: 'A critical A* point: <strong>CPI excludes mortgage interest payments and council tax</strong>. For homeowners with large mortgages, CPI understates their experienced cost of living — especially when interest rates rise sharply, as in 2022-23.'
+
+      whyItMatters: {
+        title: 'Why it matters',
+        items: [
+          { tone: 'green',  icon: '👥', label: 'Households',  text: 'Affects purchasing power, wages, and the value of savings.' },
+          { tone: 'purple', icon: '🏭', label: 'Firms',       text: 'Affects costs, pricing decisions, investment, and profits.' },
+          { tone: 'amber',  icon: '🏛️', label: 'Government',  text: 'Affects tax revenues, welfare costs, debt and living standards.' },
+          { tone: 'blue',   icon: '🏦', label: 'Central bank', text: 'Monitors inflation to achieve price stability and support growth.' }
+        ]
       },
-      connection: {
-        title: 'The base year problem',
-        text: 'The base year is set to 100. If CPI = 115, prices are 15% higher than in the base year. If the base year is outdated, spending pattern weights become inaccurate — which is why the ONS updates the basket annually.'
+
+      lockIn: {
+        items: ['Definition of inflation', 'Inflation vs deflation vs disinflation', 'General price level idea', 'Why it matters']
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Examiners love the precise distinction between disinflation and deflation — use the terms accurately. State that inflation is measured as the <strong>rate of change of a price index</strong>, not the price level itself.'
       }
     },
 
-    /* ----- CARD 3 — CPI Worked Example ----- */
+    /* ====================================================================
+       CARD 2 — Measuring inflation: CPI
+       How the Consumer Prices Index is built. Weighted basket. Worked example.
+       ==================================================================== */
+    {
+      id: 'measuring-cpi',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 6',
+      title: 'Measuring inflation: CPI',
+      lede: 'CPI tracks the average change in the prices households pay — but not every price moves equally, so <strong>weights matter</strong>.',
+
+      flowTitle: 'How CPI is built',
+      flow: [
+        { tone: 'green',  icon: '🧺', title: 'Basket of goods & services', sub: 'A representative basket of ~700 everyday items the ONS tracks.' },
+        { tone: 'blue',   icon: '⚖️', title: 'Weights',                    sub: 'Categories with bigger shares of household spending count more.' },
+        { tone: 'amber',  icon: '🛒', title: 'Price collection',           sub: 'Prices gathered monthly from shops and online retailers across the UK.' },
+        { tone: 'purple', icon: '📈', title: 'Index & annual rate',         sub: 'The basket cost is compared to a base period to give the inflation rate.' }
+      ],
+
+      causesLabel: 'Weighted categories (example CPI weights)',
+      causes2Cols: 5,
+      causes: [
+        { tone: 'green',  icon: '🏠', head: 'Housing & household services', body: '<strong>32%</strong>' },
+        { tone: 'blue',   icon: '🚗', head: 'Transport',                     body: '<strong>16%</strong>' },
+        { tone: 'amber',  icon: '🍞', head: 'Food & drink',                   body: '<strong>15%</strong>' },
+        { tone: 'purple', icon: '🎬', head: 'Recreation',                     body: '<strong>9%</strong>' },
+        { tone: 'rose',   icon: '👕', head: 'Clothing',                       body: '<strong>5%</strong>' }
+      ],
+
+      equation: {
+        label: 'Mini worked example',
+        emoji: '🧮',
+        terms: [
+          { tone: 'slate', icon: '🧺', title: 'Basket cost last year', sub: '£200' },
+          { tone: 'blue',  icon: '🧺', title: 'Basket cost this year',  sub: '£210' }
+        ],
+        operator: '→',
+        resultOperator: '=',
+        result: { tone: 'green', icon: '📈', title: 'Annual inflation', sub: '5%' }
+      },
+
+      conclusion: {
+        title: 'Why weighting matters',
+        text: 'If <strong>petrol has a high weight</strong>, fuel price rises matter more. If <strong>cinema tickets rise</strong>, the impact is smaller. CPI reflects average household spending patterns — not every household experiences the headline rate.'
+      },
+
+      tip: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap:</strong> CPI is an average — <em>one</em> price rise does not prove inflation. The general price level across the basket must rise.'
+      },
+
+      lockIn: {
+        items: ['Basket', 'Weights', 'Price collection', 'Annual percentage change']
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Strong answers explain that CPI is <strong>weighted</strong>, so categories with bigger shares of household spending influence the overall rate more. Note too that CPI <strong>excludes mortgage interest and council tax</strong> — a critical limitation for homeowners with large mortgages.'
+      }
+    },
+
+    /* ====================================================================
+       CARD 3 — Worked example: calculating CPI and the inflation rate
+       Step-by-step weighted-average calculation. Salvaged from pre-rebuild.
+       ==================================================================== */
     {
       id: 'cpi-worked',
       template: 'worked-example',
-      stepLabel: 'Learn: Step 3 of 9',
+      stepLabel: 'Learn: Step 3 of 7',
       title: 'Worked Example: Calculating CPI and the Inflation Rate',
       scenario: 'The ONS constructs a simplified price index for a hypothetical economy using three categories. The <strong>base year is 2023</strong> (index = 100).<br><br><table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;"><thead><tr style="background:#0B1426;color:#fff;"><th style="padding:8px 10px;text-align:left;">Category</th><th style="padding:8px 10px;text-align:center;">Weight</th><th style="padding:8px 10px;text-align:center;">2023 price</th><th style="padding:8px 10px;text-align:center;">2024 price</th></tr></thead><tbody><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Food &amp; drink</td><td style="padding:8px 10px;text-align:center;">0.40</td><td style="padding:8px 10px;text-align:center;">100p</td><td style="padding:8px 10px;text-align:center;">120p</td></tr><tr style="background:#fff;"><td style="padding:8px 10px;">Transport</td><td style="padding:8px 10px;text-align:center;">0.35</td><td style="padding:8px 10px;text-align:center;">200p</td><td style="padding:8px 10px;text-align:center;">210p</td></tr><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Recreation</td><td style="padding:8px 10px;text-align:center;">0.25</td><td style="padding:8px 10px;text-align:center;">50p</td><td style="padding:8px 10px;text-align:center;">50p</td></tr></tbody></table>',
       steps: [
@@ -134,247 +202,273 @@ window.ECONOS_TOPIC = {
       examEdge: 'A common exam error is treating the CPI calculation as a simple average of price rises: (20% + 5% + 0%) ÷ 3 = 8.3%. This ignores weights. The correct method weights each category by its share of household spending. Also: CPI excludes mortgage payments and council tax — relevant for evaluating whether CPI accurately reflects the cost of living for different households.'
     },
 
-    /* ----- CARD 3 — RPI vs CPI vs CPIH ----- */
+    /* ====================================================================
+       CARD 4 — RPI and CPIH
+       Three measures, three uses. Why the measure chosen matters.
+       ==================================================================== */
     {
-      id: 'rpi-cpi-cpih',
-      template: 'paired',
-      stepLabel: 'Learn: Step 4 of 9',
-      title: 'RPI vs CPI vs CPIH: the three measures',
-      lede: 'Three price indices, three different numbers, three different policy uses. Knowing which is which — and when each is quoted — is an immediate A* signal.',
-      pairs: [
-        {
-          tone: 'blue',
-          label: 'RPI (Retail Price Index)',
-          drivers: [
-            'Includes mortgage interest payments and council tax',
-            'Older, less internationally comparable methodology',
-            'Usually HIGHER than CPI (by ~1 percentage point)',
-            'Used for: uprating of index-linked gilts, some pension contracts, rail fares'
-          ],
-          example: '<strong>Why RPI matters:</strong> student loan interest rates are linked to RPI in many cohorts. Rail fares use RPI+X formula. Government prefers CPI for benefits uprating — because it\'s lower.'
-        },
+      id: 'rpi-and-cpih',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 4 of 7',
+      title: 'RPI and CPIH',
+      lede: 'Different inflation measures include different housing costs — that is why the reported rate, and what it is used for, can differ.',
+
+      causesFirst: true,
+      causesLabel: 'Three measures at a glance',
+      causes: [
         {
           tone: 'green',
-          label: 'CPIH (CPI + housing)',
-          drivers: [
-            'CPI + owner-occupier housing costs (OOH) + council tax',
-            'OOH measured by rental equivalence (what it would cost to rent your home)',
-            'The ONS\'s preferred headline measure since 2017',
-            'Sits between CPI and RPI in most months'
-          ],
-          example: '<strong>Why CPIH matters:</strong> in 2022-23, housing costs surged as rents rose. CPIH captured this where CPI did not. The gap between CPI and CPIH widened — making CPIH a more accurate read for homeowners and renters.'
-        }
-      ],
-      examEdge: {
-        title: 'The political dimension',
-        text: 'Governments <strong>strategically choose which measure to quote</strong>. Benefits uprating switched from RPI to CPI under the coalition in 2010 — saving billions as CPI was lower. Rail operators prefer RPI because it justifies higher fare increases. Showing you know this is a sophisticated analytical point.'
-      },
-      policy: {
-        title: 'The Bank of England\'s target measure',
-        text: 'The MPC targets <strong>CPI at 2%</strong>, not RPI or CPIH. When inflation is reported as above or below target, it\'s CPI that matters for monetary policy decisions. Always specify which index you mean in policy answers.'
-      }
-    },
-
-    /* ----- CARD 4 — Limitations of price indices ----- */
-    {
-      id: 'price-index-limits',
-      template: 'diagnose',
-      stepLabel: 'Learn: Step 5 of 9',
-      title: 'Limitations of measuring inflation',
-      lede: 'Every price index is an average — and averages hide variation. Knowing the limitations prevents over-reliance on a single number.',
-      table: {
-        headers: ['Limitation', 'The problem', 'Who it affects most'],
-        rows: [
-          ['Substitution bias', 'People switch to cheaper alternatives when prices rise — basket becomes unrepresentative', 'Laspeyres index users (CPI)'],
-          ['Quality change', 'A laptop today is better than 2010 — price rise partly reflects quality, not pure inflation', 'Technology goods'],
-          ['New products', 'Products not yet in basket (e.g. streaming services) distort the index', 'Young households'],
-          ['Regional variation', 'Inflation varies by UK region — one number conceals this', 'Low-income households'],
-          ['Income group variation', 'Low-income households spend more on food & energy — face higher effective inflation', 'Poorest quintile'],
-          ['Weights become outdated', 'Pandemic shifted spending patterns rapidly — basket lagged', '2020-21 households']
-        ]
-      },
-      scenarios: {
-        title: 'Apply the limitation',
-        items: [
-          {
-            label: 'A',
-            text: 'During 2022-23, energy prices surged 80%. Low-income households, who spend ~10% of income on energy (vs ~3% for high-income), experienced much higher effective inflation. What does this reveal?',
-            answer: 'CPI masks distributional variation. The effective inflation rate for the poorest households was significantly above headline CPI. A poverty-targeted measure would have shown much higher inflation for the poorest.',
-            tone: 'amber'
-          },
-          {
-            label: 'B',
-            text: 'In 2020, CPI fell despite consumers feeling financially squeezed. Clothing and holiday prices dropped, but food and energy — what the locked-down population actually spent on — rose. What\'s the issue?',
-            answer: 'Substitution bias and basket composition. CPI fell due to falling weights in categories people couldn\'t buy (holidays, clothing). The basket weights did not reflect pandemic spending patterns.',
-            tone: 'blue'
-          }
-        ]
-      },
-      examEdge: {
-        title: 'The household inflation rate',
-        text: 'ONS publishes household-specific inflation rates across income deciles. <strong>In 2022-23, the poorest decile faced ~15% inflation; the richest ~8%</strong> — a near-doubling of effective inequality through the price mechanism. Using this evidence lifts a welfare essay significantly.'
-      }
-    },
-
-    /* ----- CARD 5 — Costs of inflation ----- */
-    {
-      id: 'inflation-costs',
-      template: 'impacts',
-      stepLabel: 'Learn: Step 6 of 9',
-      title: 'Costs of inflation',
-      lede: 'High and volatile inflation imposes real economic costs — not just higher prices. Seven distinct mechanisms, each worth a point in an exam answer.',
-      groups: [
-        {
-          tone: 'rose',
-          icon: '💸',
-          label: 'Shoe-leather costs',
-          bullets: [
-            'People make more frequent trips to the bank to minimise cash holdings',
-            'Time and transaction costs of managing money increase',
-            'Named for the shoe leather worn making extra bank trips',
-            'More relevant when inflation is high — less relevant at 2%'
-          ]
+          icon: '🏠',
+          head: 'CPI',
+          body: 'Official headline consumer inflation measure. Excludes most owner-occupier housing costs. <strong>Widely used by the Bank of England for the inflation target.</strong>'
         },
         {
           tone: 'amber',
-          icon: '🏷️',
-          label: 'Menu costs',
-          bullets: [
-            'Firms must frequently update prices — menus, catalogues, price labels',
-            'Administrative burden increases with inflation rate',
-            'Reduced by digital pricing but not eliminated',
-            'More serious for small firms with manual pricing'
-          ]
+          icon: '🏠',
+          head: 'RPI',
+          body: 'Older measure. Includes some housing-related costs such as <strong>mortgage interest</strong>. Still used in some index-linking settings (rail fares, index-linked gilts, some pensions).'
         },
         {
           tone: 'blue',
-          icon: '📊',
-          label: 'Fiscal drag',
-          bullets: [
-            'Inflation pushes nominal incomes into higher tax brackets',
-            'Real tax burden rises even with no change in tax rates',
-            'Sometimes called &apos;bracket creep&apos;',
-            'Governments gain — workers lose purchasing power without a pay rise'
-          ]
-        },
-        {
-          tone: 'green',
-          icon: '🌐',
-          label: 'International competitiveness',
-          bullets: [
-            'Higher domestic inflation → UK goods relatively more expensive abroad',
-            'Exports fall, imports rise → (X−M) deteriorates → AD falls',
-            'Particularly damaging in competitive export markets',
-            'Reversed if exchange rate depreciates to compensate'
-          ]
+          icon: '🏠',
+          head: 'CPIH',
+          body: 'CPI plus <strong>owner-occupier housing costs</strong>. Aims to give a broader housing-adjusted picture. The ONS preferred measure since 2017.'
         }
       ],
-      winnersLosers: {
-        winners: {
-          label: 'Winners from inflation',
-          items: [
-            'Borrowers (debt erodes in real terms)',
-            'Owners of real assets (land, property)',
-            'Governments (debt burden falls)',
-            'Firms with pricing power'
-          ]
-        },
-        losers: {
-          label: 'Losers from inflation',
-          items: [
-            'Savers on fixed nominal rates',
-            'Holders of cash',
-            'Workers on fixed wages',
-            'Creditors / lenders',
-            'Those on fixed incomes (pensions)'
-          ]
-        }
-      },
-      example: '<strong>UK 2022-23:</strong> CPI peaked at 11.1% (Oct 2022). Real wages fell ~4%. Mortgage holders on variable rates faced surging repayments. But owner-occupiers saw house prices hold up — a classic winners-and-losers split from inflation.',
-      examEdge: {
-        title: 'Uncertainty cost is the biggest',
-        text: 'The most economically damaging cost of <strong>high, volatile inflation</strong> is uncertainty. Firms cannot plan investment. Workers demand higher nominal wages. Interest rates rise. Contracts become costly to write. A* answers identify this as the primary long-run cost — beyond shoe-leather and menu costs.'
-      }
-    },
 
-    /* ----- CARD 6 — Costs of deflation ----- */
-    {
-      id: 'deflation-costs',
-      template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 9',
-      title: 'Costs of deflation: the deflationary spiral',
-      lede: "Deflation sounds good — prices falling, money worth more. But it creates a self-reinforcing trap that is far harder to escape than inflation. This is why central banks fear it.",
-      mechanismsTitle: 'The deflationary spiral: four interlocking mechanisms',
-      mechanisms: [
-        {
-          icon: '⏸️',
-          title: 'Consumers delay spending',
-          text: 'If prices are falling, rational consumers wait — tomorrow\'s goods are cheaper than today\'s. Consumption falls → AD falls → firms cut output and staff → wages fall → consumption falls further.'
-        },
-        {
-          icon: '📉',
-          title: 'Real debt burden rises',
-          text: 'Nominal debts are fixed; falling prices mean wages and revenues fall. The real value of debt <strong>rises</strong>. Firms and households cut spending to service debt → further demand collapse → Fisher debt deflation spiral.'
-        },
-        {
-          icon: '⛔',
-          title: 'Wages are sticky downward',
-          text: 'Firms cannot cut nominal wages easily (unions, contracts, morale). Instead they cut jobs. Unemployment rises → incomes fall → spending falls → more deflation. The Keynesian trap the 1930s demonstrated at catastrophic scale.'
-        },
-        {
-          icon: '🏦',
-          title: 'Zero lower bound on interest rates',
-          text: 'Normally central banks cut rates to stimulate. But if rates are already at 0%, there\'s no room. Real interest rates (nominal − inflation) rise as prices fall — making borrowing more expensive in real terms despite nominal zero rates.'
-        }
-      ],
-      examples: {
-        title: 'Historical episodes',
+      whyItMatters: {
+        title: 'Why the measure chosen matters',
         items: [
-          { period: 'Japan 1990s-2010s', text: '\'Lost decade\' of near-zero growth and intermittent deflation. Despite near-zero interest rates, the Bank of Japan struggled to reignite inflation. Still a cautionary tale for central banks.' },
-          { period: 'Great Depression 1930-33', text: 'US prices fell ~25%. Real debt burdens soared. Consumption and investment collapsed. The textbook deflationary spiral — took WWII fiscal stimulus to escape.' },
-          { period: 'UK 2009 fears', text: 'CPI briefly went negative in 2009. The BoE cut to 0.5% and launched QE to prevent a deflationary spiral. The intervention worked — but the risk was real.' }
+          { tone: 'green',  icon: '👵', label: 'Pensions & rail fares', text: 'Pension uprating, student loan interest and rail fares differ depending on which index is cited.' },
+          { tone: 'blue',   icon: '💼', label: 'Wage negotiations',     text: 'Pay claims depend on which inflation measure unions and employers reference.' },
+          { tone: 'amber',  icon: '🏛️', label: 'Policy conclusions',    text: 'If housing inflation is high, CPIH may show a different picture than headline CPI.' },
+          { tone: 'purple', icon: '🗣️', label: 'Public debate',         text: 'Perceived inflation often differs from the official measure used by policymakers.' }
         ]
       },
+
+      equation: {
+        label: 'Example annual rates (illustrative)',
+        emoji: '📊',
+        terms: [
+          { tone: 'green', icon: '🏠', title: 'CPI',  sub: '3.2%' },
+          { tone: 'amber', icon: '🏠', title: 'RPI',  sub: '4.1%' }
+        ],
+        operator: '·',
+        resultOperator: '·',
+        result: { tone: 'blue', icon: '🏠', title: 'CPIH', sub: '3.6%' }
+      },
+
+      conclusion: {
+        title: 'When housing costs rise quickly',
+        text: 'When housing costs surge — as in 2022-23 — <strong>CPIH may report a higher rate than CPI</strong>. Choosing which measure to quote has real-world winners and losers: benefits uprating switched from RPI to CPI in 2010, saving the government billions because CPI was lower.'
+      },
+
+      lockIn: {
+        items: ['CPI', 'RPI', 'CPIH', 'Why choice matters']
+      },
+
       examEdge: {
-        title: 'Benign vs malign deflation',
-        text: 'Not all deflation is harmful. <strong>Benign deflation</strong> from productivity improvements (technology making goods cheaper) is fine. <strong>Malign deflation</strong> from falling demand is the dangerous kind. A* answers distinguish the two — most exam scenarios describe the malign variety.'
+        title: 'Exam edge',
+        text: 'Do not just list the measures — <strong>explain what is included</strong>, especially housing costs, and why that affects interpretation. Strong answers note the <strong>political dimension</strong>: governments choose which measure to quote depending on the policy context.'
       }
     },
 
-    /* ----- CARD 7 — The 2% target: why not zero? ----- */
+    /* ====================================================================
+       CARD 4 — Costs of inflation
+       Five main costs. Winners and losers. The chain of impact.
+       ==================================================================== */
     {
-      id: 'inflation-target',
-      template: 'puzzle',
-      stepLabel: 'Learn: Step 8 of 9',
-      title: 'The 2% target: why not zero?',
-      lede: "If inflation is a cost, why doesn't the Bank of England target zero? The answer reveals deep insights about how monetary policy works — and is a classic A* question.",
-      classical: {
-        title: 'The rationale for the 2% target',
-        formula: 'Target: CPI = 2% (symmetric)',
-        formulaSub: 'Set by the Chancellor. The MPC is operationally independent to achieve it.',
-        quote: '"A little inflation is the oil that keeps the economic machine running smoothly."',
-        examples: 'The 2% target is <strong>symmetric</strong> — the Bank worries equally about overshooting (high inflation) and undershooting (deflation risk). The MPC must write an open letter to the Chancellor if CPI deviates more than 1pp from target in either direction.'
+      id: 'costs-of-inflation',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 5 of 7',
+      title: 'Costs of inflation',
+      lede: 'The harm depends on how high and how unpredictable inflation is — mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
+
+      causesFirst: true,
+      causesLabel: 'The main costs',
+      causes: [
+        { tone: 'green',  icon: '🏷️', head: 'Menu costs',         body: 'Firms must keep changing prices, menus, catalogues and systems.' },
+        { tone: 'blue',   icon: '👟', head: 'Shoe-leather costs',  body: 'People spend time and effort managing cash balances and seeking the best rates.' },
+        { tone: 'amber',  icon: '⚖️', head: 'Redistribution',      body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
+        { tone: 'rose',   icon: '☁️', head: 'Uncertainty',         body: 'Harder planning reduces investment, confidence and long-term spending.' },
+        { tone: 'purple', icon: '🌐', head: 'Lost competitiveness', body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
+      ],
+
+      pairLabel: 'Winners and losers',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green',
+        icon: '✅',
+        iconStyle: 'circle',
+        label: 'May gain',
+        text: 'Debtors (real value of debt erodes). Owners of real assets (land, property). Governments with large nominal debt. Firms with pricing power that adjust prices quickly.'
       },
-      puzzle: {
-        title: 'Why not 0%?',
-        chartCaption: 'UK CPI inflation, 2010 – Jan 2026. The 2% target is the reference; the 2022 spike to 11.1% and the 2015-16 dip to near zero both illustrate why a buffer matters.',
-        bullets: [
-          '<strong>Deflation buffer:</strong> 2% provides room for the economy to absorb shocks without slipping into deflation (which is much harder to escape).',
-          '<strong>Wage stickiness:</strong> with 2% inflation, firms can cut real wages by simply not raising nominal wages — lubricating labour market adjustment without the resistance that nominal cuts provoke.',
-          '<strong>Measurement bias:</strong> price indices may overstate true inflation by ~0.5-1pp (substitution bias, quality adjustment). Targeting 2% may effectively be targeting ~1% true inflation.',
-          '<strong>Monetary policy headroom:</strong> positive inflation allows positive nominal interest rates, giving the BoE room to cut when recession hits.'
-        ],
-        cliffhanger: 'Why not 4% or 5%?',
-        reveal: {
-          title: 'The upper constraint',
-          text: "Higher inflation targets risk unanchoring expectations — if people expect 5% inflation, they demand 5% wage rises, firms raise prices, and inflation becomes self-fulfilling. The 2% target is a <strong>credibility anchor</strong>. Once lost, it's very costly to regain (as the 1970s showed).",
-          hints: ['credibility', 'expectations', 'sacrifice ratio', '1970s stagflation']
-        }
+      right: {
+        tone: 'rose',
+        icon: '❌',
+        iconStyle: 'circle',
+        label: 'May lose',
+        text: 'Savers and creditors on fixed nominal rates. Workers on fixed wages. Pensioners on fixed incomes. Holders of cash. Exporters in competitive markets.'
       },
+
+      flowTitle: 'The chain of impact',
+      flow: [
+        { tone: 'amber',  icon: '📈', title: 'Higher inflation',  sub: 'Especially if high and volatile.' },
+        { tone: 'amber',  icon: '❓', title: 'Uncertainty',        sub: 'Firms and households cannot plan.' },
+        { tone: 'rose',   icon: '📉', title: 'Weaker investment',  sub: 'Long-term decisions get delayed.' },
+        { tone: 'rose',   icon: '🐌', title: 'Slower growth',       sub: 'Reduced productive potential.' }
+      ],
+
+      tip: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap:</strong> not all inflation is equally damaging — the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
+      },
+
+      lockIn: {
+        items: ['Menu costs', 'Redistribution', 'Uncertainty', 'Competitiveness']
+      },
+
       examEdge: {
-        title: 'The sacrifice ratio',
-        text: 'Reducing inflation once it\'s above target is costly. Each percentage point reduction in inflation requires roughly <strong>1-3% of GDP to be sacrificed</strong> in lost output (the sacrifice ratio). This is why central banks work hard to keep inflation anchored — regaining credibility after a shock is far more expensive than never losing it.'
+        title: 'Exam edge',
+        text: 'Evaluation should distinguish between <strong>anticipated low inflation</strong> (largely benign) and <strong>high, unpredictable inflation</strong> (the latter causes the bigger welfare losses through uncertainty, lost investment and misallocation).'
+      }
+    },
+
+    /* ====================================================================
+       CARD 5 — Fiscal drag and real vs nominal
+       The gap between nominal and real. Frozen thresholds = stealth tax rise.
+       ==================================================================== */
+    {
+      id: 'fiscal-drag-real-vs-nominal',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 6 of 7',
+      title: 'Fiscal drag and real vs nominal',
+      lede: 'Inflation changes money values on paper — what matters for living standards is the <strong>real value after inflation</strong>.',
+
+      causesFirst: true,
+      causesLabel: 'Nominal vs real — three worked examples',
+      causes: [
+        {
+          tone: 'green',
+          icon: '💷',
+          head: 'Real wage growth',
+          body: 'Nominal pay rises <strong>6%</strong> − inflation <strong>4%</strong> = <strong>real pay rises ~2%</strong>. Real growth shows the change in purchasing power.'
+        },
+        {
+          tone: 'blue',
+          icon: '🏦',
+          head: 'Real interest rate',
+          body: 'Nominal interest <strong>5%</strong> − inflation <strong>3%</strong> = <strong>real interest ~2%</strong>. The real rate shows the true return after inflation.'
+        },
+        {
+          tone: 'amber',
+          icon: '🏠',
+          head: 'Real cost of debt',
+          body: 'Mortgage rate <strong>5%</strong> − inflation <strong>4%</strong> = <strong>real cost ~1%</strong>. Inflation erodes the real burden of nominal debt.'
+        }
+      ],
+
+      flowTitle: 'How fiscal drag works',
+      flow: [
+        { tone: 'slate',  icon: '❄️', title: 'Tax thresholds frozen',  sub: 'Personal allowance and bands held fixed in nominal terms.' },
+        { tone: 'amber',  icon: '💷', title: 'Nominal wages rise',      sub: 'Pay rises with inflation, but thresholds do not.' },
+        { tone: 'rose',   icon: '⬆️', title: 'More income above thresholds', sub: 'A larger share of pay falls into higher tax bands.' },
+        { tone: 'rose',   icon: '🪙', title: 'Stealth tax rise',         sub: 'Workers pay more tax without any real pay increase.' }
+      ],
+
+      whyItMatters: {
+        title: 'Why it matters',
+        items: [
+          { tone: 'green',  icon: '👥', label: 'Households',          text: 'Real income can fall even when your payslip shows a nominal rise.' },
+          { tone: 'purple', icon: '🏛️', label: 'Government revenue', text: 'Frozen brackets mean more income is taxed at higher rates — fiscal drag.' },
+          { tone: 'amber',  icon: '💼', label: 'Wage bargaining',     text: 'Negotiations target nominal rises, often chasing inflation rather than gaining real ground.' },
+          { tone: 'blue',   icon: '🗣️', label: 'Policy debate',       text: 'Pressure grows to uprate thresholds and reduce the stealth tax rise.' }
+        ]
       },
+
+      keyTerms: [
+        { term: 'Nominal value',  def: 'A money amount stated in today\'s prices, ignoring inflation.' },
+        { term: 'Real value',      def: 'A money amount adjusted for inflation — the change in actual purchasing power.' },
+        { term: 'Fiscal drag',     def: 'Frozen tax thresholds plus rising nominal wages → more income taxed at higher rates → a stealth tax rise.' },
+        { term: 'Real interest rate', def: 'Nominal interest rate minus the inflation rate.' }
+      ],
+
+      tip: {
+        icon: '⚠️',
+        tone: 'rose',
+        text: '<strong>Common trap:</strong> a rise in <em>nominal</em> wages does not mean living standards have improved. Always compare with inflation to get the real change.'
+      },
+
+      lockIn: {
+        items: ['Nominal values', 'Real values', 'Fiscal drag', 'Real pay']
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Always compare wages, interest or tax thresholds with inflation. Examiners reward the phrase <em>real value after adjusting for inflation</em> — and the explicit identification of fiscal drag as a stealth tax rise when thresholds are frozen.'
+      }
+    },
+
+    /* ====================================================================
+       CARD 6 — Costs of deflation
+       The deflationary spiral. Why central banks fear it.
+       ==================================================================== */
+    {
+      id: 'costs-of-deflation',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 7 of 7',
+      title: 'Costs of deflation',
+      lede: 'Lower prices sound attractive, but persistent deflation can <strong>weaken spending, output and jobs</strong> — and is far harder to escape than inflation.',
+
+      flowTitle: 'Why deflation is dangerous',
+      flow: [
+        { tone: 'rose', icon: '📉', title: 'Falling prices',           sub: 'Across the basket, not just one sector.' },
+        { tone: 'rose', icon: '⏸️', title: 'Consumers delay spending', sub: 'Why buy today if it will be cheaper next month?' },
+        { tone: 'rose', icon: '🏭', title: 'Firms sell less',           sub: 'Demand falls; revenues shrink.' },
+        { tone: 'rose', icon: '👥', title: 'Output & jobs fall',         sub: 'Firms cut production and lay off staff.' },
+        { tone: 'rose', icon: '💰', title: 'Incomes fall',                sub: 'Wages stagnate or fall; spending power weakens further.' },
+        { tone: 'rose', icon: '📉', title: 'Further downward pressure',  sub: 'The spiral feeds itself and gets harder to break.' }
+      ],
+
+      causesLabel: 'The key costs',
+      causes: [
+        { tone: 'rose', icon: '⏸️', head: 'Delayed spending',         body: 'Households wait for lower prices. Aggregate demand falls.' },
+        { tone: 'rose', icon: '🧾', head: 'Real debt burden rises',    body: 'Debts are fixed in money terms — as prices fall, the real burden grows and debtors cut spending to repay.' },
+        { tone: 'rose', icon: '🌀', head: 'Deflationary spiral risk',  body: 'Weaker demand feeds further falls in prices and output. Hard to break without aggressive policy.' }
+      ],
+
+      pairLabel: 'Inflation vs deflation',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'amber',
+        icon: '📈',
+        iconStyle: 'circle',
+        label: 'Inflation',
+        text: 'Erodes purchasing power, but mild inflation is manageable and signals a growing economy.'
+      },
+      right: {
+        tone: 'rose',
+        icon: '📉',
+        iconStyle: 'circle',
+        label: 'Deflation',
+        text: 'Weakens demand and raises real debt burdens. Central banks treat it as the bigger risk — Japan\'s lost decades are the canonical warning.'
+      },
+
+      conclusion: {
+        title: 'Why policymakers worry',
+        text: 'Deflation increases <strong>unemployment risk</strong>, raises <strong>recession risk</strong>, and makes <strong>monetary policy harder</strong> when interest rates are already low (the zero lower bound). The Bank of England targets 2% partly to keep a safe buffer above zero.'
+      },
+
+      lockIn: {
+        items: ['Delayed spending', 'Real debt', 'Spiral', 'Difference from disinflation']
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: '<strong>Deflation is more dangerous than disinflation.</strong> Disinflation means prices are still rising — just more slowly. Deflation means the price level is <em>actually falling</em>. Distinguish too between <strong>benign deflation</strong> (productivity-driven, falling prices alongside rising output) and <strong>malign deflation</strong> (demand-driven, falling prices alongside falling output) — most exam scenarios are the malign variety.'
+      },
+
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

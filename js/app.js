@@ -2344,6 +2344,35 @@
       });
     }
 
+    // Summary row — up to 3 mini-cards side-by-side for contrast/context blocks
+    //   (e.g. "Why it matters" + "Common trap" + "Quick example").
+    //   Pattern: summaryRow: [{ tone, icon, title, text?, items?: [string] }]
+    if (c.summaryRow && c.summaryRow.length) {
+      const cols = Math.min(c.summaryRow.length, 3);
+      content += `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;margin-bottom:20px;">`;
+      content += c.summaryRow.map(cell => {
+        const t = PATTERN_TONES[cell.tone || 'blue'] || PATTERN_TONES.blue;
+        const icon = cell.icon || '';
+        const itemsHtml = Array.isArray(cell.items) && cell.items.length
+          ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
+              cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
+            }</ul>`
+          : '';
+        const bodyHtml = cell.text
+          ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${cell.text}</div>${itemsHtml}`
+          : itemsHtml;
+        return `
+          <div style="border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
+              ${icon ? `<span style="font-size:15px;line-height:1;">${icon}</span>` : ''}
+              <span style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.07em;line-height:1.2;">${cell.title || ''}</span>
+            </div>
+            ${bodyHtml}
+          </div>`;
+      }).join('');
+      content += `</div>`;
+    }
+
     // Conclusion — green decisive verdict band. The "given the above, here's the answer".
     //   Pattern: conclusion: 'string' OR { title?, text }
     //   (Distinct from c.conclusion used by elasticity-calc / worked-example renderers — only
@@ -4258,7 +4287,7 @@
           </div>`;
       };
       const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
-      return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
+      return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
     })() : '';
     const tabs = hasSteps ? c.steps.map((s, i) => `
       <button class="ad-tab ${i === 0 ? 'is-active' : ''}" type="button"
@@ -4278,9 +4307,14 @@
     return `
       <div class="card__step-label">${c.stepLabel}</div>
       <h1 class="card__title">${c.title}</h1>
-      ${c.lede ? `<p class="card__lede">${c.lede}</p>` : ''}
+      ${c.lede ? (c.ledeStyle === 'plain'
+        ? `<p style="font-size:15px;color:#1E293B;line-height:1.65;margin:0 0 18px;">${c.lede}</p>`
+        : `<div style="display:flex;align-items:center;gap:14px;background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:12px;padding:14px 18px;margin-bottom:18px;">
+          <div style="width:34px;height:34px;border-radius:50%;background:#DBEAFE;color:#1E3A8A;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">💡</div>
+          <div style="font-size:15px;color:#0B1426;line-height:1.55;font-style:italic;">${c.lede}</div>
+        </div>`) : ''}
 
-      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
+      ${c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : ''}
 
       ${c.tip ? (() => {
         const tipText = typeof c.tip === 'object' && !Array.isArray(c.tip) ? c.tip.text : (typeof c.tip === 'string' ? c.tip : '');
@@ -4344,32 +4378,34 @@
         });
         parts.push(renderOp(resultArrow === '=' ? '=' : '→', true));
         parts.push(renderTerm(eq.result, true));
-        return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:18px 14px 12px;margin-bottom:26px;">${parts.join('')}</div>`;
+        return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:14px 14px 8px;margin-bottom:20px;">${parts.join('')}</div>`;
       })() : ''}
 
-      ${c.flow && c.flow.length ? (() => {
-        const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
-        const n = c.flow.length;
-        const title = c.flowTitle ? genSecLabel(c.flowEmoji || '➡️', c.flowTitle) : '';
-        const tiles = c.flow.map((step, i) => {
-          const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
-          const isLast = i === n - 1;
-          return `
-            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;">
-              <div style="position:relative;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid ${t.accent};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;box-shadow:0 2px 8px ${t.accent}40;margin-bottom:12px;z-index:1;">${i + 1}</div>
-              <div style="position:relative;width:54px;height:54px;border-radius:50%;background:${t.bg};border:1px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;margin-bottom:12px;">${step.icon || ''}</div>
-              <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:6px;">${step.title}</div>
-              ${step.sub ? `<div style="font-size:12.5px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
-              ${!isLast ? `<div style="position:absolute;top:23px;left:calc(50% + 28px);right:calc(-50% + 28px);height:0;border-top:2px dashed #CBD5E1;z-index:0;"></div>` : ''}
-            </div>`;
-        }).join('');
-        return `${title}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:26px;padding:18px 6px 6px;">${tiles}</div>`;
-      })() : ''}
-
-      ${c.causes && c.causes.length ? (() => {
+      ${c.causesFirst && c.causes && c.causes.length ? (() => {
         const items = c.causes;
+        const richMode = items.some(it => it.svgKey || it.example);
         const tiles = items.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          if (richMode) {
+            const svgHtml = item.svgKey && I[item.svgKey]
+              ? `<div style="margin:6px 0 10px;line-height:0;">${I[item.svgKey]}</div>`
+              : (item.icon ? `<div style="font-size:38px;line-height:1;text-align:center;margin:6px 0 10px;">${item.icon}</div>` : '');
+            const exampleHtml = item.example ? `
+              <div style="margin-top:auto;padding-top:12px;border-top:1px dashed ${tone.border};">
+                <div style="font-size:12px;font-weight:800;color:${tone.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">${item.example.label || 'Example'}</div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0B1426;line-height:1.4;">
+                  ${item.example.icon ? `<span style="font-size:22px;line-height:1;flex-shrink:0;">${item.example.icon}</span>` : ''}
+                  <span>${item.example.text}</span>
+                </div>
+              </div>` : '';
+            return `
+            <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:16px 18px 14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);display:flex;flex-direction:column;">
+              <div style="font-weight:800;font-size:18px;color:${tone.label};line-height:1.2;text-align:center;letter-spacing:-0.01em;">${item.head}</div>
+              ${svgHtml}
+              <div style="font-size:13.5px;color:#0B1426;line-height:1.55;text-align:center;">${item.body}</div>
+              ${exampleHtml}
+            </div>`;
+          }
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
@@ -4379,11 +4415,31 @@
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
         }).join('');
-        const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
-        return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 28px;">${tiles}</div>`;
+        const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
+        return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
       })() : ''}
 
-      ${c.causes2 && c.causes2.length ? (() => {
+      ${c.keyDistinction && c.keyDistinction.items && c.keyDistinction.items.length ? (() => {
+        const kd = c.keyDistinction;
+        const icon = kd.icon || '🔎';
+        const title = kd.title || 'The key distinction';
+        const itemsHtml = kd.items.map(it => {
+          const swatch = it.color || '#0B1426';
+          return `<li style="display:flex;gap:8px;align-items:baseline;font-size:14px;line-height:1.55;color:#0B1426;margin-bottom:4px;">
+            <span style="flex-shrink:0;color:${swatch};font-weight:900;font-size:16px;line-height:1;margin-top:2px;">•</span>
+            <span><strong style="color:${swatch};">${it.term}</strong> — ${it.text}</span>
+          </li>`;
+        }).join('');
+        return `<div style="display:flex;gap:16px;align-items:flex-start;background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:14px;padding:16px 20px;margin-bottom:20px;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#1E3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;">${icon}</div>
+          <div style="flex:1;">
+            <div style="font-size:15px;font-weight:800;color:#1E3A8A;margin-bottom:8px;">${title}</div>
+            <ul style="margin:0;padding:0;list-style:none;">${itemsHtml}</ul>
+          </div>
+        </div>`;
+      })() : ''}
+
+      ${c.causesFirst && c.causes2 && c.causes2.length ? (() => {
         const items2 = c.causes2;
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
@@ -4397,16 +4453,113 @@
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
-        return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 28px;">${tiles2}</div>`;
+        return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
+      })() : ''}
+
+      ${c.flow && c.flow.length ? (() => {
+        const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+        const n = c.flow.length;
+        const title = c.flowTitle ? genSecLabel(c.flowEmoji || '➡️', c.flowTitle) : '';
+        const tiles = c.flow.map((step, i) => {
+          const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+          const isLast = i === n - 1;
+          return `
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
+              <div style="position:relative;width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin-bottom:10px;z-index:1;">${i + 1}</div>
+              <div style="font-size:22px;line-height:1;margin-bottom:8px;">${step.icon || ''}</div>
+              <div style="font-size:13.5px;font-weight:800;color:${t.label};line-height:1.3;margin-bottom:4px;">${step.title}</div>
+              ${step.sub ? `<div style="font-size:12px;color:#475569;line-height:1.5;">${step.sub}</div>` : ''}
+              ${!isLast ? `<div style="position:absolute;top:17px;left:calc(50% + 22px);right:calc(-50% + 22px);height:0;border-top:1.5px dashed #CBD5E1;z-index:0;"></div>` : ''}
+            </div>`;
+        }).join('');
+        return `${title}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:18px;padding:10px 6px 4px;">${tiles}</div>`;
+      })() : ''}
+
+      ${!c.causesFirst && c.causes && c.causes.length ? (() => {
+        const items = c.causes;
+        const tiles = items.map((item, i) => {
+          const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }).join('');
+        const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
+        return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:12px;margin:0 0 20px;">${tiles}</div>`;
+      })() : ''}
+
+      ${!c.causesFirst && c.causes2 && c.causes2.length ? (() => {
+        const items2 = c.causes2;
+        const tiles2 = items2.map((item, i) => {
+          const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          return `
+          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
+            </div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+          </div>`;
+        }).join('');
+        const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
+        return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
       })() : ''}
 
       ${!c.pairFirst ? pairHtml : ''}
+
+      ${c.whyItMatters && c.whyItMatters.items && c.whyItMatters.items.length ? (() => {
+        const w = c.whyItMatters;
+        const title = w.title || 'Why it matters';
+        const cells = w.items.map((item, i) => {
+          const tone = PATTERN_TONES[item.tone] || PATTERN_TONES[['green','purple','amber','blue','rose','slate'][i % 6]];
+          return `
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 4px;">
+              <div style="width:46px;height:46px;border-radius:50%;background:${tone.bg};border:1px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;margin-bottom:10px;">${item.icon || ''}</div>
+              <div style="font-size:14px;font-weight:800;color:${tone.label};line-height:1.25;margin-bottom:5px;">${item.label}</div>
+              <div style="font-size:12.5px;color:#475569;line-height:1.5;">${item.text}</div>
+            </div>`;
+        }).join('');
+        const n = w.items.length;
+        return `<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:18px 16px 14px;margin-bottom:20px;">
+          <div style="text-align:center;font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:#0B1426;margin-bottom:14px;">${title}</div>
+          <div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:10px;">${cells}</div>
+        </div>`;
+      })() : ''}
+
+      ${c.summaryRow && c.summaryRow.length ? (() => {
+        const cols = Math.min(c.summaryRow.length, 3);
+        const cells = c.summaryRow.map(cell => {
+          const t = PATTERN_TONES[cell.tone || 'blue'] || PATTERN_TONES.blue;
+          const icon = cell.icon || '';
+          const itemsHtml = Array.isArray(cell.items) && cell.items.length
+            ? `<ul style="margin:6px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;">${
+                cell.items.map(it => `<li style="display:flex;gap:7px;align-items:flex-start;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;color:${t.label};font-weight:900;margin-top:1px;">•</span><span>${it}</span></li>`).join('')
+              }</ul>`
+            : '';
+          const bodyHtml = cell.text
+            ? `<div style="font-size:13px;color:#0B1426;line-height:1.55;">${cell.text}</div>${itemsHtml}`
+            : itemsHtml;
+          return `
+            <div style="border-radius:12px;background:${t.bg};border:1px solid ${t.border};padding:14px 14px 12px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
+                ${icon ? `<span style="font-size:15px;line-height:1;">${icon}</span>` : ''}
+                <span style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.07em;line-height:1.2;">${cell.title || ''}</span>
+              </div>
+              ${bodyHtml}
+            </div>`;
+        }).join('');
+        return `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px;margin-bottom:20px;">${cells}</div>`;
+      })() : ''}
 
       ${(c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
         const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
         return `
-          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:14px 18px;margin-bottom:22px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:12px 16px;margin-bottom:16px;">
             <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
             <div style="flex:1;">
               <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
@@ -4427,6 +4580,26 @@
               <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
               <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
             </div>
+          </div>`;
+      })() : ''}
+
+      ${c.lockIn ? (() => {
+        const liData = Array.isArray(c.lockIn) ? { items: c.lockIn } : c.lockIn;
+        if (!liData.items || !liData.items.length) return '';
+        const liTitle = liData.title || 'What you need to lock in';
+        const liIcon  = liData.icon  || '🎯';
+        const liItemsHtml = liData.items.map(it => `
+          <div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:140px;">
+            <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#D1FAE5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">✓</span>
+            <span style="font-size:13px;color:#0B1426;font-weight:600;line-height:1.4;">${it}</span>
+          </div>`).join('');
+        return `
+          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:12px 16px 10px;margin-bottom:16px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+              <span style="font-size:15px;line-height:1;">${liIcon}</span>
+              <span style="font-size:12px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
           </div>`;
       })() : ''}
 

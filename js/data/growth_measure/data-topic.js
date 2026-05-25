@@ -40,45 +40,7 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The macro dashboard',
       lede: 'Economists judge how well an economy is doing using four headline measures. Each tells us something different — and together they give the big picture.',
-      causesLabel: 'The macro dashboard',
-      causesEmoji: '📊',
-      causesStyle: 'plain-white',
-      causesPosition: 'top',
-      causesCols: 4,
-      causes: [
-        {
-          tone: 'green',
-          icon: '📈',
-          head: 'Economic growth (GDP)',
-          body: 'The % change in real GDP over a period.<br><br><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#059669;display:inline-block;"></span><strong style="color:#047857;">Why it matters</strong></span><br><span style="font-size:12.5px;color:#475569;line-height:1.55;">Higher growth means more goods and services, rising incomes and improved living standards.</span>'
-        },
-        {
-          tone: 'amber',
-          icon: '💷',
-          head: 'Inflation (CPI / RPI)',
-          body: 'The % change in the general price level.<br><br><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;display:inline-block;"></span><strong style="color:#B45309;">Why it matters</strong></span><br><span style="font-size:12.5px;color:#475569;line-height:1.55;">High inflation erodes purchasing power and creates uncertainty.</span>'
-        },
-        {
-          tone: 'blue',
-          icon: '👥',
-          head: 'Unemployment (ILO / claimant count)',
-          body: 'The % of the labour force that is unemployed.<br><br><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span><strong style="color:#1D4ED8;">Why it matters</strong></span><br><span style="font-size:12.5px;color:#475569;line-height:1.55;">High unemployment means wasted resources and personal hardship.</span>'
-        },
-        {
-          tone: 'purple',
-          icon: '🌍',
-          head: 'Balance of payments (current account)',
-          body: 'Net trade in goods, services, income and transfers.<br><br><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#7C3AED;display:inline-block;"></span><strong style="color:#6D28D9;">Why it matters</strong></span><br><span style="font-size:12.5px;color:#475569;line-height:1.55;">A persistent deficit means reliance on foreign capital and currency pressure.</span>'
-        }
-      ],
-      flowTitle: 'The trade-offs: indicators can conflict',
-      flowEmoji: '⚖️',
-      flow: [
-        { tone: 'green',  icon: '📈', title: 'Faster growth',       sub: 'can increase demand…' },
-        { tone: 'amber',  icon: '📈', title: '…which can',           sub: 'push up inflation.' },
-        { tone: 'blue',   icon: '👥', title: 'Lower unemployment',  sub: 'can raise imports and worsen the current account.' },
-        { tone: 'purple', icon: '🏛️', title: 'Anti-inflation policy', sub: 'can slow growth and raise unemployment.' }
-      ],
+      visualKey: 'macroDashboardSvg',
       examEdge: {
         title: 'Show how the four measures interact',
         text: '<strong>Policy is about balance — there are no free lunches.</strong> Top marks come from explaining the <strong>trade-offs</strong>, not just describing each indicator in isolation. Faster growth can push up inflation. Lower unemployment can worsen the current account. Anti-inflation policy can slow growth.'

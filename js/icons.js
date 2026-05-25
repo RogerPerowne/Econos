@@ -14210,4 +14210,122 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  macroDashboardSvg: `
+    <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="md-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+        </marker>
+      </defs>
+
+      <!-- ===== SECTION 1: THE MACRO DASHBOARD ===== -->
+
+      <!-- Header -->
+      <text x="320" y="14" text-anchor="middle" font-size="10" font-weight="800" letter-spacing="1.8" fill="#334155">THE MACRO DASHBOARD</text>
+
+      <!-- Horizontal tree bar -->
+      <line x1="82" y1="24" x2="559" y2="24" stroke="#CBD5E1" stroke-width="2"/>
+
+      <!-- Vertical drops to each tile -->
+      <line x1="82"  y1="24" x2="82"  y2="52" stroke="#CBD5E1" stroke-width="2"/>
+      <line x1="241" y1="24" x2="241" y2="52" stroke="#CBD5E1" stroke-width="2"/>
+      <line x1="400" y1="24" x2="400" y2="52" stroke="#CBD5E1" stroke-width="2"/>
+      <line x1="559" y1="24" x2="559" y2="52" stroke="#CBD5E1" stroke-width="2"/>
+
+      <!-- ===== TILE 1: Economic Growth (green) ===== -->
+      <rect x="8" y="52" width="147" height="170" rx="10" fill="#ECFDF5" stroke="#34D399" stroke-width="1.5"/>
+      <circle cx="82" cy="84" r="22" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+      <text x="82" y="92" text-anchor="middle" font-size="22">📈</text>
+      <text x="82" y="118" text-anchor="middle" font-size="11.5" font-weight="800" fill="#065F46">Economic growth</text>
+      <text x="82" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#059669">(GDP)</text>
+      <text x="82" y="149" text-anchor="middle" font-size="9.5" fill="#475569">% change in real GDP</text>
+      <text x="82" y="162" text-anchor="middle" font-size="9.5" fill="#475569">over a period</text>
+      <circle cx="26" cy="179" r="3.5" fill="#059669"/>
+      <text x="34" y="183" font-size="9.5" font-weight="700" fill="#065F46">Why it matters</text>
+      <text x="82" y="199" text-anchor="middle" font-size="9" fill="#475569">Higher growth = rising incomes</text>
+      <text x="82" y="211" text-anchor="middle" font-size="9" fill="#475569">and living standards</text>
+
+      <!-- ===== TILE 2: Inflation (amber) ===== -->
+      <rect x="167" y="52" width="147" height="170" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+      <circle cx="241" cy="84" r="22" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="241" y="92" text-anchor="middle" font-size="22">💷</text>
+      <text x="241" y="118" text-anchor="middle" font-size="11.5" font-weight="800" fill="#92400E">Inflation</text>
+      <text x="241" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#B45309">(CPI / RPI)</text>
+      <text x="241" y="149" text-anchor="middle" font-size="9.5" fill="#475569">% change in the general</text>
+      <text x="241" y="162" text-anchor="middle" font-size="9.5" fill="#475569">price level</text>
+      <circle cx="185" cy="179" r="3.5" fill="#F59E0B"/>
+      <text x="193" y="183" font-size="9.5" font-weight="700" fill="#92400E">Why it matters</text>
+      <text x="241" y="199" text-anchor="middle" font-size="9" fill="#475569">High inflation erodes</text>
+      <text x="241" y="211" text-anchor="middle" font-size="9" fill="#475569">purchasing power</text>
+
+      <!-- ===== TILE 3: Unemployment (blue) ===== -->
+      <rect x="326" y="52" width="147" height="170" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+      <circle cx="400" cy="84" r="22" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="400" y="92" text-anchor="middle" font-size="22">👥</text>
+      <text x="400" y="118" text-anchor="middle" font-size="11.5" font-weight="800" fill="#1E3A8A">Unemployment</text>
+      <text x="400" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#2563EB">(ILO measure)</text>
+      <text x="400" y="149" text-anchor="middle" font-size="9.5" fill="#475569">% of labour force</text>
+      <text x="400" y="162" text-anchor="middle" font-size="9.5" fill="#475569">seeking work</text>
+      <circle cx="344" cy="179" r="3.5" fill="#3B82F6"/>
+      <text x="352" y="183" font-size="9.5" font-weight="700" fill="#1E3A8A">Why it matters</text>
+      <text x="400" y="199" text-anchor="middle" font-size="9" fill="#475569">High unemployment = wasted</text>
+      <text x="400" y="211" text-anchor="middle" font-size="9" fill="#475569">resources and hardship</text>
+
+      <!-- ===== TILE 4: Balance of Payments (purple) ===== -->
+      <rect x="485" y="52" width="147" height="170" rx="10" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+      <circle cx="559" cy="84" r="22" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+      <text x="559" y="92" text-anchor="middle" font-size="22">🌍</text>
+      <text x="559" y="118" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6">Balance of payments</text>
+      <text x="559" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#7C3AED">(current account)</text>
+      <text x="559" y="149" text-anchor="middle" font-size="9.5" fill="#475569">Net trade in goods,</text>
+      <text x="559" y="162" text-anchor="middle" font-size="9.5" fill="#475569">services and transfers</text>
+      <circle cx="503" cy="179" r="3.5" fill="#7C3AED"/>
+      <text x="511" y="183" font-size="9.5" font-weight="700" fill="#5B21B6">Why it matters</text>
+      <text x="559" y="199" text-anchor="middle" font-size="9" fill="#475569">Persistent deficit = reliance</text>
+      <text x="559" y="211" text-anchor="middle" font-size="9" fill="#475569">on foreign capital</text>
+
+      <!-- ===== SECTION 2: THE TRADE-OFFS ===== -->
+
+      <line x1="8" y1="234" x2="632" y2="234" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="8" y="249" font-size="9.5" font-weight="800" letter-spacing="1.2" fill="#334155">⚖️  THE TRADE-OFFS: INDICATORS CAN CONFLICT</text>
+
+      <!-- Arrows between trade-off icons -->
+      <line x1="74"  y1="285" x2="117" y2="285" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
+      <line x1="189" y1="285" x2="232" y2="285" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
+      <line x1="304" y1="285" x2="347" y2="285" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
+
+      <!-- Icon 1: Growth (green) -->
+      <circle cx="52" cy="285" r="22" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+      <text x="52" y="292" text-anchor="middle" font-size="18">📈</text>
+      <text x="52" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Growth</text>
+      <text x="52" y="328" text-anchor="middle" font-size="8" fill="#475569">boosts demand</text>
+
+      <!-- Icon 2: Inflation (amber) -->
+      <circle cx="167" cy="285" r="22" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="167" y="292" text-anchor="middle" font-size="18">💷</text>
+      <text x="167" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Inflation</text>
+      <text x="167" y="328" text-anchor="middle" font-size="8" fill="#475569">can rise</text>
+
+      <!-- Icon 3: Employment (blue) -->
+      <circle cx="282" cy="285" r="22" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="282" y="292" text-anchor="middle" font-size="18">👥</text>
+      <text x="282" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Employment</text>
+      <text x="282" y="328" text-anchor="middle" font-size="8" fill="#475569">rises too</text>
+
+      <!-- Icon 4: BOP worsens (purple) -->
+      <circle cx="370" cy="285" r="22" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+      <text x="370" y="292" text-anchor="middle" font-size="18">🌍</text>
+      <text x="370" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">BOP</text>
+      <text x="370" y="328" text-anchor="middle" font-size="8" fill="#475569">worsens</text>
+
+      <!-- Policy callout box -->
+      <rect x="410" y="255" width="222" height="76" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <text x="421" y="274" font-size="9.5" font-weight="800" fill="#334155">Policy is about balance</text>
+      <text x="421" y="291" font-size="8.5" fill="#475569">Improving one target can worsen</text>
+      <text x="421" y="305" font-size="8.5" fill="#475569">another. There are no free lunches.</text>
+      <text x="421" y="321" font-size="8" font-style="italic" fill="#64748B">A* answers explain trade-offs,</text>
+      <text x="421" y="332" font-size="8" font-style="italic" fill="#64748B">not just describe each indicator.</text>
+    </svg>
+  `,
+
 };

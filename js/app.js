@@ -4381,26 +4381,6 @@
         return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:14px 14px 8px;margin-bottom:20px;">${parts.join('')}</div>`;
       })() : ''}
 
-      ${c.keyDistinction && c.keyDistinction.items && c.keyDistinction.items.length ? (() => {
-        const kd = c.keyDistinction;
-        const icon = kd.icon || '🔎';
-        const title = kd.title || 'The key distinction';
-        const itemsHtml = kd.items.map(it => {
-          const swatch = it.color || '#0B1426';
-          return `<li style="display:flex;gap:8px;align-items:baseline;font-size:14px;line-height:1.55;color:#0B1426;margin-bottom:4px;">
-            <span style="flex-shrink:0;color:${swatch};font-weight:900;font-size:16px;line-height:1;margin-top:2px;">•</span>
-            <span><strong style="color:${swatch};">${it.term}</strong> — ${it.text}</span>
-          </li>`;
-        }).join('');
-        return `<div style="display:flex;gap:16px;align-items:flex-start;background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:14px;padding:16px 20px;margin-bottom:20px;">
-          <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#1E3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;">${icon}</div>
-          <div style="flex:1;">
-            <div style="font-size:15px;font-weight:800;color:#1E3A8A;margin-bottom:8px;">${title}</div>
-            <ul style="margin:0;padding:0;list-style:none;">${itemsHtml}</ul>
-          </div>
-        </div>`;
-      })() : ''}
-
       ${c.causesFirst && c.causes && c.causes.length ? (() => {
         const items = c.causes;
         const richMode = items.some(it => it.svgKey || it.example);
@@ -4437,6 +4417,26 @@
         }).join('');
         const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
         return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
+      })() : ''}
+
+      ${c.keyDistinction && c.keyDistinction.items && c.keyDistinction.items.length ? (() => {
+        const kd = c.keyDistinction;
+        const icon = kd.icon || '🔎';
+        const title = kd.title || 'The key distinction';
+        const itemsHtml = kd.items.map(it => {
+          const swatch = it.color || '#0B1426';
+          return `<li style="display:flex;gap:8px;align-items:baseline;font-size:14px;line-height:1.55;color:#0B1426;margin-bottom:4px;">
+            <span style="flex-shrink:0;color:${swatch};font-weight:900;font-size:16px;line-height:1;margin-top:2px;">•</span>
+            <span><strong style="color:${swatch};">${it.term}</strong> — ${it.text}</span>
+          </li>`;
+        }).join('');
+        return `<div style="display:flex;gap:16px;align-items:flex-start;background:#EFF6FF;border:1px solid #BFDBFE;border-left:4px solid #2563EB;border-radius:14px;padding:16px 20px;margin-bottom:20px;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#1E3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;">${icon}</div>
+          <div style="flex:1;">
+            <div style="font-size:15px;font-weight:800;color:#1E3A8A;margin-bottom:8px;">${title}</div>
+            <ul style="margin:0;padding:0;list-style:none;">${itemsHtml}</ul>
+          </div>
+        </div>`;
       })() : ''}
 
       ${c.causesFirst && c.causes2 && c.causes2.length ? (() => {

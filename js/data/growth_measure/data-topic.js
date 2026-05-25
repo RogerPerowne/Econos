@@ -41,6 +41,7 @@ window.ECONOS_TOPIC = {
       title: 'The macro dashboard',
       lede: 'Economists judge how well an economy is doing using four headline measures. Each tells us something different — and together they give the big picture.',
       visualKey: 'macroDashboardSvg',
+      notePosition: 'top',
       note: 'Every government judges economic success against <strong>all four indicators simultaneously</strong>. The difficulty is that they can pull in opposite directions: policies that boost growth can stoke inflation; cutting unemployment can widen the current-account deficit; squeezing inflation can slow growth and raise joblessness. Understanding these tensions is what separates descriptive answers from analytical ones.',
       examEdge: {
         title: 'Show how the four measures interact',

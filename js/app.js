@@ -1045,10 +1045,7 @@
   function renderCardGeneric(c) {
     let content = '';
 
-    // Step label chip
-    if (c.stepLabel) {
-      content += `<div class="card__step-label">${c.stepLabel}</div>`;
-    }
+    const stepLabelHtml = c.stepLabel ? `<div class="card__step-label">${c.stepLabel}</div>` : '';
 
     // Tip strip — single-sentence essence in a coloured top band.
     // Cleaner and punchier than `intro`; sits right under the title.
@@ -2479,7 +2476,7 @@
         noteTopHtml += `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:14px 18px;margin-bottom:18px;"><div style="width:38px;height:38px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">${noteIcon}</div>${bodyHtml}</div>`;
       });
     }
-    return `<h1 class="card__title">${c.title}</h1>${ledeHtml}${noteTopHtml}${visualKeyHtml}${content}`;
+    return `${stepLabelHtml}<h1 class="card__title">${c.title}</h1>${ledeHtml}${noteTopHtml}${visualKeyHtml}${content}`;
   }
 
   function renderKeyTakeaway(k) {

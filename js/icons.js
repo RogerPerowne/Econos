@@ -4326,12 +4326,6 @@ window.ECONOS_ICONS = {
       <!-- ascending arrow above bars -->
       <path d="M 70 200 Q 140 130 210 80" stroke="#15803D" stroke-width="3" stroke-linecap="round" fill="none" marker-end="url(#hg-arr)"/>
 
-      <!-- small leaf/sprout on top of biggest bar (growth) -->
-      <g filter="url(#hg-soft)">
-        <ellipse cx="195" cy="100" rx="8" ry="5" fill="#22C55E" transform="rotate(-30 195 100)"/>
-        <ellipse cx="207" cy="100" rx="8" ry="5" fill="#22C55E" transform="rotate(30 207 100)"/>
-      </g>
-
       <!-- floor shadow -->
       <ellipse cx="140" cy="298" rx="105" ry="4" fill="#0F172A" opacity="0.07"/>
     </svg>

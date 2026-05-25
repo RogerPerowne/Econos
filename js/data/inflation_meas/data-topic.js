@@ -322,12 +322,14 @@ window.ECONOS_TOPIC = {
 
       causesFirst: true,
       causesLabel: 'The main costs',
+      causesStyle: 'numbered',
+      causesTone: 'green',
       causes: [
-        { tone: 'green',  icon: '🏷️', head: 'Menu costs',         body: 'Firms must keep changing prices, menus, catalogues and systems.' },
-        { tone: 'blue',   icon: '👟', head: 'Shoe-leather costs',  body: 'People spend time and effort managing cash balances and seeking the best rates.' },
-        { tone: 'amber',  icon: '⚖️', head: 'Redistribution',      body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
-        { tone: 'rose',   icon: '☁️', head: 'Uncertainty',         body: 'Harder planning reduces investment, confidence and long-term spending.' },
-        { tone: 'purple', icon: '🌐', head: 'Lost competitiveness', body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
+        { svgKey: 'receiptPound',  head: 'Menu costs',                  body: 'Firms must keep changing prices, menus, catalogues and systems.' },
+        { svgKey: 'shoeRun',       head: 'Shoe-leather costs',          body: 'People spend time and effort managing cash balances and seeking the best rates.' },
+        { svgKey: 'peopleArrow',   head: 'Redistribution',              body: 'Creditors lose and debtors gain; fixed incomes fall behind variable incomes.' },
+        { svgKey: 'cloudQuestion', head: 'Uncertainty',                 body: 'Harder planning reduces investment, confidence and long-term spending.' },
+        { svgKey: 'globeNet',      head: 'Lost competitiveness',        body: 'If UK inflation is higher than rivals, exports become less competitive and (X−M) deteriorates.' }
       ],
 
       pairLabel: 'Winners and losers',

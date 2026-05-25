@@ -4542,6 +4542,11 @@
         return `${title}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:18px;padding:10px 6px 4px;">${tiles}</div>`;
       })() : ''}
 
+      ${c.flowChart && c.flowChart.svgKey && I[c.flowChart.svgKey] ? (() => {
+        const fc = c.flowChart;
+        return `${fc.label ? genSecLabel(fc.emoji || '📊', fc.label) : ''}<div style="margin:0 0 12px;border-radius:12px;overflow:hidden;line-height:0;">${I[fc.svgKey]}</div>${fc.caption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:0 0 22px;text-align:center;font-style:italic;">${fc.caption}</div>` : ''}`;
+      })() : ''}
+
       ${c.basketOfGoods ? (() => {
         const bg = c.basketOfGoods;
         const header = bg.header || {};

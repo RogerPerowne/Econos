@@ -380,10 +380,12 @@ window.ECONOS_TOPIC = {
       title: 'Fiscal drag and real vs nominal',
       lede: 'Inflation changes money values on paper — what matters for living standards is the <strong>real value after inflation</strong>.',
 
-      visualLabel: 'How fiscal drag works',
-      visualEmoji: '📊',
-      visualKey: 'fiscalDragChart',
-      visualCaption: 'When tax thresholds do not rise with inflation, the same real wage gets pulled into higher tax bands.',
+      flowChart: {
+        label: 'A 5-year example',
+        emoji: '📊',
+        svgKey: 'fiscalDragChart',
+        caption: 'Year 1 wage of £49,000 sits in the basic-rate band. Five years of inflation-matching pay rises lift it to £58,000 — but because tax thresholds are frozen, the same real wage is now pulled into the higher-rate band.'
+      },
 
       causesFirst: true,
       causesLabel: 'Nominal vs real — three worked examples',

@@ -264,7 +264,7 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--green);
+      color: #047857;
       margin-bottom: 8px;
     }
     .hp-progress-card__title {
@@ -404,7 +404,7 @@
     }
     .hp-features__sub {
       font-size: 15px;
-      color: var(--muted);
+      color: #4B5563;
       line-height: 1.6;
       margin-bottom: 24px;
     }
@@ -557,8 +557,8 @@
       transition: gap 0.15s;
     }
     .hp-audience-card__link:hover { gap: 8px; }
-    .hp-audience-card__link--green { color: var(--green); }
-    .hp-audience-card__link--amber { color: var(--yellow); }
+    .hp-audience-card__link--green { color: #065F46; }
+    .hp-audience-card__link--amber { color: #92400E; }
     .hp-audience-card__link--blue  { color: var(--blue);  }
 
     /* ══════════════════════════════════════════

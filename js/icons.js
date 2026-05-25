@@ -14206,7 +14206,7 @@ window.ECONOS_ICONS = {
   `,
 
   macroDashboardSvg: `
-    <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="md-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
@@ -14281,45 +14281,42 @@ window.ECONOS_ICONS = {
 
       <!-- ===== SECTION 2: THE TRADE-OFFS ===== -->
 
-      <line x1="8" y1="234" x2="632" y2="234" stroke="#E2E8F0" stroke-width="1.5"/>
-      <text x="8" y="249" font-size="9.5" font-weight="800" letter-spacing="1.2" fill="#334155">⚖️  THE TRADE-OFFS: INDICATORS CAN CONFLICT</text>
+      <line x1="8" y1="244" x2="632" y2="244" stroke="#E2E8F0" stroke-width="1.5"/>
+      <text x="8" y="261" font-size="9.5" font-weight="800" letter-spacing="1.2" fill="#334155">⚖️  THE TRADE-OFFS: INDICATORS CAN CONFLICT</text>
 
-      <!-- Arrows between trade-off icons -->
-      <line x1="74"  y1="285" x2="117" y2="285" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
-      <line x1="189" y1="285" x2="232" y2="285" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
-      <line x1="304" y1="285" x2="347" y2="285" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
+      <!-- Arrows between icons (evenly spaced across full width) -->
+      <line x1="108" y1="298" x2="198" y2="298" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
+      <line x1="264" y1="298" x2="354" y2="298" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
+      <line x1="420" y1="298" x2="510" y2="298" stroke="#CBD5E1" stroke-width="1.8" marker-end="url(#md-arr)"/>
 
-      <!-- Icon 1: Growth (green) -->
-      <circle cx="52" cy="285" r="22" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
-      <text x="52" y="292" text-anchor="middle" font-size="18">📈</text>
-      <text x="52" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Growth</text>
-      <text x="52" y="328" text-anchor="middle" font-size="8" fill="#475569">boosts demand</text>
+      <!-- Icon 1: Growth (green) cx=86 -->
+      <circle cx="86" cy="298" r="22" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+      <text x="86" y="305" text-anchor="middle" font-size="18">📈</text>
+      <text x="86" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#065F46">Growth</text>
+      <text x="86" y="342" text-anchor="middle" font-size="8" fill="#475569">boosts demand</text>
 
-      <!-- Icon 2: Inflation (amber) -->
-      <circle cx="167" cy="285" r="22" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
-      <text x="167" y="292" text-anchor="middle" font-size="18">💷</text>
-      <text x="167" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Inflation</text>
-      <text x="167" y="328" text-anchor="middle" font-size="8" fill="#475569">can rise</text>
+      <!-- Icon 2: Inflation (amber) cx=242 -->
+      <circle cx="242" cy="298" r="22" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="242" y="305" text-anchor="middle" font-size="18">💷</text>
+      <text x="242" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Inflation</text>
+      <text x="242" y="342" text-anchor="middle" font-size="8" fill="#475569">can rise</text>
 
-      <!-- Icon 3: Employment (blue) -->
-      <circle cx="282" cy="285" r="22" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
-      <text x="282" y="292" text-anchor="middle" font-size="18">👥</text>
-      <text x="282" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Employment</text>
-      <text x="282" y="328" text-anchor="middle" font-size="8" fill="#475569">rises too</text>
+      <!-- Icon 3: Employment (blue) cx=398 -->
+      <circle cx="398" cy="298" r="22" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="398" y="305" text-anchor="middle" font-size="18">👥</text>
+      <text x="398" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#1E3A8A">Employment</text>
+      <text x="398" y="342" text-anchor="middle" font-size="8" fill="#475569">rises too</text>
 
-      <!-- Icon 4: BOP worsens (purple) -->
-      <circle cx="370" cy="285" r="22" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
-      <text x="370" y="292" text-anchor="middle" font-size="18">🌍</text>
-      <text x="370" y="316" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">BOP</text>
-      <text x="370" y="328" text-anchor="middle" font-size="8" fill="#475569">worsens</text>
+      <!-- Icon 4: BOP worsens (purple) cx=554 -->
+      <circle cx="554" cy="298" r="22" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+      <text x="554" y="305" text-anchor="middle" font-size="18">🌍</text>
+      <text x="554" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">BOP</text>
+      <text x="554" y="342" text-anchor="middle" font-size="8" fill="#475569">worsens</text>
 
-      <!-- Policy callout box -->
-      <rect x="410" y="255" width="222" height="76" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,3"/>
-      <text x="421" y="274" font-size="9.5" font-weight="800" fill="#334155">Policy is about balance</text>
-      <text x="421" y="291" font-size="8.5" fill="#475569">Improving one target can worsen</text>
-      <text x="421" y="305" font-size="8.5" fill="#475569">another. There are no free lunches.</text>
-      <text x="421" y="321" font-size="8" font-style="italic" fill="#64748B">A* answers explain trade-offs,</text>
-      <text x="421" y="332" font-size="8" font-style="italic" fill="#64748B">not just describe each indicator.</text>
+      <!-- Policy callout — full-width panel below the icons -->
+      <rect x="8" y="358" width="624" height="42" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <text x="320" y="375" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">Policy is about balance — improving one target can worsen another. There are no free lunches.</text>
+      <text x="320" y="391" text-anchor="middle" font-size="9" font-style="italic" fill="#64748B">A* answers explain the trade-offs between all four indicators, not just describe each one in isolation.</text>
     </svg>
   `,
 

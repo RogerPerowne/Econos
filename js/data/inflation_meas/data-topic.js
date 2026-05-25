@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroBars',
     summary: "Inflation, disinflation and deflation are not the same. CPI, RPI and CPIH measure prices differently. High inflation hurts savers, exporters and the uncertain — deflation traps the economy. And the gap between nominal and real values is where exam marks are won or lost.",
-    doInThis: 'Six cards: what inflation is, how CPI is built, the three UK measures (CPI / RPI / CPIH), the costs of inflation, fiscal drag and real vs nominal, and the costs of deflation.',
+    doInThis: 'Seven cards: what inflation is, how CPI is built, a worked CPI calculation, the three UK measures (CPI / RPI / CPIH), the costs of inflation, fiscal drag and real vs nominal, and the costs of deflation.',
     outcomes: [
       'Distinguish inflation, disinflation and deflation precisely',
       'Explain how CPI is constructed and why weighting matters',
@@ -23,7 +23,7 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Inflation is measured as the % change in a price index. CPI = 2% is the BoE target; RPI tends to run higher; CPIH adds owner-occupier housing costs.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '6 concept cards',                 state: 'current' },
+      { num: 1, name: 'Learn it', sub: '7 concept cards',                 state: 'current' },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context',   state: 'locked' },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',      state: 'locked' }
     ]
@@ -172,13 +172,54 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 3 — RPI and CPIH
+       CARD 3 — Worked example: calculating CPI and the inflation rate
+       Step-by-step weighted-average calculation. Salvaged from pre-rebuild.
+       ==================================================================== */
+    {
+      id: 'cpi-worked',
+      template: 'worked-example',
+      stepLabel: 'Learn: Step 3 of 7',
+      title: 'Worked Example: Calculating CPI and the Inflation Rate',
+      scenario: 'The ONS constructs a simplified price index for a hypothetical economy using three categories. The <strong>base year is 2023</strong> (index = 100).<br><br><table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;"><thead><tr style="background:#0B1426;color:#fff;"><th style="padding:8px 10px;text-align:left;">Category</th><th style="padding:8px 10px;text-align:center;">Weight</th><th style="padding:8px 10px;text-align:center;">2023 price</th><th style="padding:8px 10px;text-align:center;">2024 price</th></tr></thead><tbody><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Food &amp; drink</td><td style="padding:8px 10px;text-align:center;">0.40</td><td style="padding:8px 10px;text-align:center;">100p</td><td style="padding:8px 10px;text-align:center;">120p</td></tr><tr style="background:#fff;"><td style="padding:8px 10px;">Transport</td><td style="padding:8px 10px;text-align:center;">0.35</td><td style="padding:8px 10px;text-align:center;">200p</td><td style="padding:8px 10px;text-align:center;">210p</td></tr><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Recreation</td><td style="padding:8px 10px;text-align:center;">0.25</td><td style="padding:8px 10px;text-align:center;">50p</td><td style="padding:8px 10px;text-align:center;">50p</td></tr></tbody></table>',
+      steps: [
+        {
+          prompt: 'Step 1 — Calculate the price relative for each category',
+          hint: 'Price relative = (current year price ÷ base year price). This tells you how prices have changed, ignoring units.',
+          answer: 'Food: 120 ÷ 100 = <strong>1.20</strong> (prices rose 20%)<br>Transport: 210 ÷ 200 = <strong>1.05</strong> (prices rose 5%)<br>Recreation: 50 ÷ 50 = <strong>1.00</strong> (no change)'
+        },
+        {
+          prompt: 'Step 2 — Multiply each price relative by its weight',
+          hint: 'Weighted contribution = price relative × weight. This captures how much each category matters in typical household spending.',
+          answer: 'Food: 1.20 × 0.40 = <strong>0.480</strong><br>Transport: 1.05 × 0.35 = <strong>0.368</strong><br>Recreation: 1.00 × 0.25 = <strong>0.250</strong>'
+        },
+        {
+          prompt: 'Step 3 — Sum the weighted contributions to get CPI',
+          hint: 'CPI = Σ (price relative × weight). This is a weighted average of price changes. Multiply by 100 if expressing as an index.',
+          answer: '0.480 + 0.368 + 0.250 = <strong>1.098</strong><br>CPI (2024) = <strong>109.8</strong> (base year = 100)'
+        },
+        {
+          prompt: 'Step 4 — Calculate the inflation rate',
+          hint: 'Inflation rate = ((CPI current − CPI base) ÷ CPI base) × 100',
+          answer: 'Inflation = ((109.8 − 100) ÷ 100) × 100 = <strong>9.8%</strong>'
+        },
+        {
+          prompt: 'Step 5 — Interpret: why is inflation 9.8% when food prices rose 20%?',
+          hint: 'Think about the role of weights. What happens if Recreation had a 0.60 weight instead of 0.25?',
+          answer: 'Food rose 20% but has only a 0.40 weight — its contribution is capped. Transport rose 5% and Recreation rose 0%. The weighted average (9.8%) is pulled below food\'s 20% rise because other categories rose less. <strong>Key exam point:</strong> if Recreation had a 0.60 weight with food at 0.15, CPI would be far lower — weights are crucial. This is why the ONS updates the basket annually as spending patterns change.'
+        }
+      ],
+      conclusion: 'CPI (2024) = 109.8 → Inflation rate = <strong>9.8%</strong>. The weighting system means overall inflation reflects the full range of household spending, not just the categories with the largest price rises. Food\'s 20% rise is diluted because transport (35% weight) rose only 5% and recreation (25% weight) didn\'t rise at all.',
+      examEdge: 'A common exam error is treating the CPI calculation as a simple average of price rises: (20% + 5% + 0%) ÷ 3 = 8.3%. This ignores weights. The correct method weights each category by its share of household spending. Also: CPI excludes mortgage payments and council tax — relevant for evaluating whether CPI accurately reflects the cost of living for different households.'
+    },
+
+    /* ====================================================================
+       CARD 4 — RPI and CPIH
        Three measures, three uses. Why the measure chosen matters.
        ==================================================================== */
     {
       id: 'rpi-and-cpih',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 6',
+      stepLabel: 'Learn: Step 4 of 7',
       title: 'RPI and CPIH',
       lede: 'Different inflation measures include different housing costs — that is why the reported rate, and what it is used for, can differ.',
 
@@ -246,7 +287,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'costs-of-inflation',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 4 of 6',
+      stepLabel: 'Learn: Step 5 of 7',
       title: 'Costs of inflation',
       lede: 'The harm depends on how high and how unpredictable inflation is — mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
 
@@ -308,7 +349,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'fiscal-drag-real-vs-nominal',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 5 of 6',
+      stepLabel: 'Learn: Step 6 of 7',
       title: 'Fiscal drag and real vs nominal',
       lede: 'Inflation changes money values on paper — what matters for living standards is the <strong>real value after inflation</strong>.',
 
@@ -373,7 +414,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'costs-of-deflation',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 6 of 6',
+      stepLabel: 'Learn: Step 7 of 7',
       title: 'Costs of deflation',
       lede: 'Lower prices sound attractive, but persistent deflation can <strong>weaken spending, output and jobs</strong> — and is far harder to escape than inflation.',
 

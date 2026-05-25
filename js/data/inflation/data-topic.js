@@ -120,10 +120,34 @@ window.ECONOS_TOPIC = {
         text: '<strong>Output rises alongside prices — that is the key clue.</strong>'
       },
 
-      visualLabel: 'AD/AS diagram',
-      visualEmoji: '📈',
-      visualKey: 'demandPullDiagram',
-      visualCaption: 'AD shifts right from AD₁ to AD₂. Price level rises from P₁ to P₂ and real output rises from Y₁ to Y₂.',
+      interactiveDiagram: {
+        svgKey: 'adDemandPullInteractive',
+        label: 'The AD/AS diagram',
+        emoji: '📊',
+        layers: ['dpl-1', 'dpl-2'],
+        views: [
+          {
+            label: 'Base equilibrium',
+            tone: 'blue',
+            head: 'Starting point: P₁ and Y₁',
+            body: 'The economy is at equilibrium E₁ where AD₁ meets SRAS. The price level is P₁ and real output is Y₁. AD is unchanged in this view.'
+          },
+          {
+            label: 'AD shifts right',
+            tone: 'green',
+            head: 'Demand shock — AD₁ → AD₂',
+            body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. Firms face excess demand and raise prices.',
+            analysis: 'The rightward shift is the signature of demand-pull. SRAS is unchanged — the pressure comes entirely from the demand side.'
+          },
+          {
+            label: 'New equilibrium',
+            tone: 'green',
+            head: 'Result: P ↑ and Y ↑',
+            body: 'The new equilibrium E₂ is at higher price level P₂ and higher output Y₂. Inflation has occurred and the economy is producing more.',
+            analysis: 'Both P and Y rise — that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+          }
+        ]
+      },
 
       causesFirst: true,
       causesLabel: 'Common causes',
@@ -182,10 +206,34 @@ window.ECONOS_TOPIC = {
         text: '<strong>Rising prices with falling output = stagflation risk.</strong>'
       },
 
-      visualLabel: 'The core diagram',
-      visualEmoji: '📉',
-      visualKey: 'costPushDiagram',
-      visualCaption: 'SRAS shifts left from SRAS₁ to SRAS₂. Price level rises from P₁ to P₂; real output falls from Y₁ to Y₂. AD is unchanged.',
+      interactiveDiagram: {
+        svgKey: 'adCostPushInteractive',
+        label: 'The AD/AS diagram',
+        emoji: '📊',
+        layers: ['cpl-1', 'cpl-2'],
+        views: [
+          {
+            label: 'Base equilibrium',
+            tone: 'blue',
+            head: 'Starting point: P₁ and Y₁',
+            body: 'The economy is at E₁ where AD meets SRAS₁. The price level is P₁ and real output is Y₁. AD remains unchanged throughout this sequence.'
+          },
+          {
+            label: 'SRAS shifts left',
+            tone: 'amber',
+            head: 'Supply shock — SRAS₁ → SRAS₂',
+            body: 'Higher input costs (energy, wages, import prices) mean it now costs more to produce at every output level. SRAS shifts left to SRAS₂.',
+            analysis: 'The leftward SRAS shift is the signature of cost-push. AD is unchanged — the pressure comes from the supply side alone.'
+          },
+          {
+            label: 'Stagflation result',
+            tone: 'amber',
+            head: 'Result: P ↑ and Y ↓',
+            body: 'The new equilibrium E₂ has higher price level P₂ but lower output Y₂. Inflation and falling output occur simultaneously — stagflation.',
+            analysis: 'Both outcomes worsen at once. Raising rates fights inflation but deepens the output fall. Loosening policy helps output but risks embedding inflation.'
+          }
+        ]
+      },
 
       causesFirst: true,
       causesLabel: 'What causes it?',

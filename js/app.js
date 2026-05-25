@@ -1042,6 +1042,113 @@
     return `repeat(auto-fill, minmax(${minPx}px, 1fr))`;
   }
 
+  // Shared helper: renders an interactiveDiagram block (SVG left + desc right +
+  // step buttons + analysis panel). Used by both renderCardGeneric and
+  // renderCardAdInteractive so either template can host interactive diagrams.
+  function buildInteractiveDiagramHtml(c) {
+    const idList = Array.isArray(c.interactiveDiagram)
+      ? c.interactiveDiagram
+      : (c.interactiveDiagram ? [c.interactiveDiagram] : []);
+    if (!idList.length) return '';
+    let html = '';
+    idList.forEach((id, idIdx) => {
+      if (!I[id.svgKey]) return;
+      const baseUid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
+      const uid = idList.length > 1 ? `${baseUid}_${idIdx}` : baseUid;
+      const layers = id.layers || [];
+      const views = id.views || [];
+      const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
+      if (id.label) html += genSecLabel(id.emoji || '📊', id.label);
+
+      const stepStrip = views.map((v, i) => {
+        const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+        const isActive = i === 0;
+        const showAttr = Array.isArray(v.show) ? ` data-id-show='${JSON.stringify(v.show)}'` : '';
+        return `<button
+          type="button"
+          data-action="id-advance"
+          data-id-uid="${uid}"
+          data-id-vi="${i}"
+          data-id-tone="${toneName}"${showAttr}
+          style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${isActive ? t.bg : '#fff'};border:1px solid ${isActive ? t.border : '#E7E7EA'};border-radius:10px;box-shadow:${isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)'};cursor:pointer;font-family:inherit;text-align:left;transition:background 0.18s,border-color 0.18s,box-shadow 0.18s;">
+          <span data-id-circle style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">${i + 1}</span>
+          <span data-id-label style="flex:1;min-width:0;font-size:13px;font-weight:700;color:${isActive ? t.label : '#0B1426'};line-height:1.3;">${v.label}</span>
+        </button>`;
+      }).join('');
+
+      const stripCols = `repeat(${views.length}, minmax(0, 1fr))`;
+
+      if (id.wide) {
+        const combinedPanels = views.map((v, i) => {
+          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+          const bodyHtml = !v.body ? '' : Array.isArray(v.body)
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:#475569;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13.5px;color:#475569;line-height:1.65;">${v.body}</div>`;
+          const analysisHtml = v.analysis ? `
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid ${t.border}60;">
+              <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
+              <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${v.analysis}</div>
+            </div>` : '';
+          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:16px 20px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
+            ${v.head ? `<div style="font-weight:800;font-size:15px;color:${t.label};line-height:1.35;margin-bottom:${v.body ? '8px' : '0'};">${v.head}</div>` : ''}
+            ${bodyHtml}
+            ${analysisHtml}
+          </div>`;
+        }).join('');
+        html += `
+          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
+            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
+              <div style="max-width:640px;margin:0 auto;">${I[id.svgKey]}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
+            ${combinedPanels}
+          </div>`;
+      } else {
+        const descItems = views.map((v, i) => {
+          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+          const bodyHtml = Array.isArray(v.body)
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#475569;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:3px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:13px;color:#475569;line-height:1.65;">${v.body || ''}</div>`;
+          const marker = v.icon
+            ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
+            : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
+          return `<div data-id-desc="${i}" style="display:${i === 0 ? 'flex' : 'none'};align-items:flex-start;gap:12px;">
+            ${marker}
+            <div style="flex:1;min-width:0;">
+              <div style="font-weight:800;font-size:14.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${v.head}</div>
+              ${bodyHtml}
+            </div>
+          </div>`;
+        }).join('');
+        const hasAnalysis = views.some(v => v.analysis);
+        const analysisItems = hasAnalysis ? views.map((v, i) => {
+          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
+          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
+          if (!v.analysis) return `<div data-id-analysis="${i}" style="display:none;"></div>`;
+          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
+            <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${v.analysis}</div>
+          </div>`;
+        }).join('') : '';
+        html += `
+          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
+            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
+              <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
+                <div style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
+                <div style="display:flex;flex-direction:column;padding:0 4px;">${descItems}</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
+            ${analysisItems}
+          </div>`;
+      }
+    });
+    return html;
+  }
+
   function renderCardGeneric(c) {
     let content = '';
 
@@ -1403,116 +1510,7 @@
       content += `</div>`;
     }
 
-    // Interactive diagram — three-region pattern matching other interactive
-    // charts in the project (e.g. PPF):
-    //   Top:    SVG on the left, per-step chart description on the right
-    //   Middle: horizontal tab strip (single-active, .ad-tab styling)
-    //   Bottom: per-step analysis panel (.ad-panel styling, 4px tone border)
-    // Clicking a tab reveals SVG layers cumulatively (i < vi) and swaps the
-    // right-column description and bottom analysis panel in unison.
-    //   Pattern: interactiveDiagram: { svgKey, layers:[string], label?, emoji?,
-    //                                  views:[{label, tone?, icon?, head, body, analysis?}] }
-    const idList = Array.isArray(c.interactiveDiagram)
-      ? c.interactiveDiagram
-      : (c.interactiveDiagram ? [c.interactiveDiagram] : []);
-    idList.forEach((id, idIdx) => {
-      if (!I[id.svgKey]) return;
-      const baseUid = c.id ? c.id.replace(/[^a-z0-9]/gi, '_') : 'idc';
-      const uid = idList.length > 1 ? `${baseUid}_${idIdx}` : baseUid;
-      const layers = id.layers || [];
-      const views = id.views || [];
-      const defaultToneNames = ['blue', 'amber', 'green', 'rose', 'purple', 'slate'];
-      if (id.label) content += genSecLabel(id.emoji || '📊', id.label);
-
-      const stepStrip = views.map((v, i) => {
-        const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-        const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-        const isActive = i === 0;
-        const showAttr = Array.isArray(v.show) ? ` data-id-show='${JSON.stringify(v.show)}'` : '';
-        return `<button
-          type="button"
-          data-action="id-advance"
-          data-id-uid="${uid}"
-          data-id-vi="${i}"
-          data-id-tone="${toneName}"${showAttr}
-          style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${isActive ? t.bg : '#fff'};border:1px solid ${isActive ? t.border : '#E7E7EA'};border-radius:10px;box-shadow:${isActive ? '0 2px 10px ' + t.accent + '2A' : '0 1px 2px rgba(11,20,38,0.04)'};cursor:pointer;font-family:inherit;text-align:left;transition:background 0.18s,border-color 0.18s,box-shadow 0.18s;">
-          <span data-id-circle style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:${isActive ? t.accent : '#E2E8F0'};color:${isActive ? '#fff' : '#475569'};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;">${i + 1}</span>
-          <span data-id-label style="flex:1;min-width:0;font-size:13px;font-weight:700;color:${isActive ? t.label : '#0B1426'};line-height:1.3;">${v.label}</span>
-        </button>`;
-      }).join('');
-
-      const stripCols = `repeat(${views.length}, minmax(0, 1fr))`;
-
-      if (id.wide) {
-        // Wide layout: SVG full-width centred, head+body+analysis merged below tabs.
-        // Opt in per-diagram with wide:true in the interactiveDiagram data object.
-        const combinedPanels = views.map((v, i) => {
-          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-          const bodyHtml = !v.body ? '' : Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13.5px;color:#475569;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:4px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13.5px;color:#475569;line-height:1.65;">${v.body}</div>`;
-          const analysisHtml = v.analysis ? `
-            <div style="margin-top:14px;padding-top:14px;border-top:1px solid ${t.border}60;">
-              <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-              <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${v.analysis}</div>
-            </div>` : '';
-          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:16px 20px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
-            ${v.head ? `<div style="font-weight:800;font-size:15px;color:${t.label};line-height:1.35;margin-bottom:${v.body ? '8px' : '0'};">${v.head}</div>` : ''}
-            ${bodyHtml}
-            ${analysisHtml}
-          </div>`;
-        }).join('');
-        content += `
-          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
-            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
-              <div style="max-width:640px;margin:0 auto;">${I[id.svgKey]}</div>
-            </div>
-            <div style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
-            ${combinedPanels}
-          </div>`;
-      } else {
-        // Default layout: SVG left (1.55fr) + description right (1fr), analysis panel below.
-        const descItems = views.map((v, i) => {
-          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-          const bodyHtml = Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#475569;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:3px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13px;color:#475569;line-height:1.65;">${v.body}</div>`;
-          const marker = v.icon
-            ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
-            : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
-          return `<div data-id-desc="${i}" style="display:${i === 0 ? 'flex' : 'none'};align-items:flex-start;gap:12px;">
-            ${marker}
-            <div style="flex:1;min-width:0;">
-              <div style="font-weight:800;font-size:14.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${v.head}</div>
-              ${bodyHtml}
-            </div>
-          </div>`;
-        }).join('');
-        const hasAnalysis = views.some(v => v.analysis);
-        const analysisItems = hasAnalysis ? views.map((v, i) => {
-          const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
-          const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
-          if (!v.analysis) return `<div data-id-analysis="${i}" style="display:none;"></div>`;
-          return `<div data-id-analysis="${i}" style="display:${i === 0 ? 'block' : 'none'};background:#fff;border:1px solid #E7E7EA;border-left:4px solid ${t.accent};border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(11,20,38,0.04);">
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:${t.label};margin-bottom:8px;">Analysis</div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.7;">${v.analysis}</div>
-          </div>`;
-        }).join('') : '';
-        content += `
-          <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
-            <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:12px;">
-              <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:center;">
-                <div style="min-width:0;overflow-x:auto;">${I[id.svgKey]}</div>
-                <div style="display:flex;flex-direction:column;padding:0 4px;">${descItems}</div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:${stripCols};gap:10px;${hasAnalysis ? 'margin-bottom:12px;' : ''}">${stepStrip}</div>
-            ${analysisItems}
-          </div>`;
-      }
-    });
+    content += buildInteractiveDiagramHtml(c);
 
     // Paired left/right HTML is built once via a closure so it can be emitted
     // either before the flow (c.pairFirst === true) or in its default slot
@@ -4378,6 +4376,8 @@
       })() : ''}
 
       ${c.visualKey && I[c.visualKey] ? `${c.visualLabel ? genSecLabel(c.visualEmoji || '📊', c.visualLabel) : ''}<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>${c.visualCaption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:-8px 0 18px;text-align:center;font-style:italic;">${c.visualCaption}</div>` : ''}` : ''}
+
+      ${buildInteractiveDiagramHtml(c)}
 
       ${c.pairFirst ? pairHtml : ''}
 

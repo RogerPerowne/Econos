@@ -135,22 +135,28 @@ window.ECONOS_TOPIC = {
           body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">✂️</span><div><strong>Strips out</strong> the effect of price changes (inflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">📊</span><div>Shows changes in the <strong>volume</strong> of output</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">🎯</span><div>Best for judging <strong>living standards</strong>, growth and productivity</div></div></div>'
         }
       ],
-      causes2Label: 'Converting and comparing',
+      causes2Label: 'Adjusting for inflation: nominal → real',
       causes2Emoji: '🧮',
       causes2Style: 'plain-white',
-      causes2Cols: 2,
+      causes2Cols: 1,
       causes2: [
         {
           tone: 'amber',
           icon: '🧮',
           head: 'Converting nominal GDP to real GDP',
-          body: 'Using a price index (the <strong>GDP deflator</strong>):<br><br><div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:14px 16px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#B45309;font-size:14px;line-height:1.5;">Real GDP = <br>Nominal GDP ÷ GDP deflator × 100<br><span style="font-size:11px;color:#92400E;">(base year deflator = 100)</span></div><br><div style="background:#FAFAFA;border-radius:8px;padding:10px 12px;font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">Worked example</strong><br>Nominal GDP (2024) = £2,200bn<br>GDP deflator (2024) = 125<br>Real GDP = 2,200 ÷ 125 × 100<br><strong style="color:#0B1426;">= £1,760bn (in base-year prices)</strong></div>'
-        },
+          body: 'Use a price index (the <strong>GDP deflator</strong>) to strip out the effect of inflation.<br><br><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;"><div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:16px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;"><div style="font-size:13px;color:#92400E;font-weight:600;">Real GDP =</div><div style="font-size:18px;font-weight:800;color:#B45309;margin-top:6px;letter-spacing:0.3px;">Nominal GDP ÷ Deflator × 100</div><div style="font-size:11px;color:#92400E;margin-top:8px;">(base year deflator = 100)</div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">Worked example</strong><br>Nominal GDP (2024) = £2,200bn<br>GDP deflator (2024) = 125<br>Real GDP = 2,200 ÷ 125 × 100<br><strong style="color:#0B1426;">= £1,760bn (in base-year prices)</strong></div></div>'
+        }
+      ],
+      causes3Label: 'Adjusting for population: GDP per capita',
+      causes3Emoji: '👥',
+      causes3Style: 'plain-white',
+      causes3Cols: 1,
+      causes3: [
         {
           tone: 'purple',
           icon: '👥',
           head: 'GDP per capita — output per person',
-          body: 'Adjusts output for population size so we can compare <strong>living standards</strong> across time and between countries.<br><br><div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:8px;padding:14px 16px;text-align:center;font-family:Menlo,monospace;font-weight:800;color:#6D28D9;font-size:14px;line-height:1.5;">GDP per capita = <br>Real GDP ÷ Population</div><br><div style="background:#FAFAFA;border-radius:8px;padding:10px 12px;font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#6D28D9;">Worked example</strong><br>Real GDP (2024) = £1,760bn<br>Population (2024) = 66 million<br>GDP per capita = 1,760 ÷ 66<br><strong style="color:#6D28D9;">= £26,667 per person</strong></div>'
+          body: 'Adjusts output for population size so we can compare <strong>living standards</strong> across time and between countries.<br><br><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;"><div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:8px;padding:16px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;"><div style="font-size:13px;color:#6D28D9;font-weight:600;">GDP per capita =</div><div style="font-size:18px;font-weight:800;color:#6D28D9;margin-top:6px;letter-spacing:0.3px;">Real GDP ÷ Population</div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#6D28D9;">Worked example</strong><br>Real GDP (2024) = £1,760bn<br>Population (2024) = 66 million<br>GDP per capita = 1,760 ÷ 66<br><strong style="color:#6D28D9;">= £26,667 per person</strong></div></div>'
         }
       ],
       examEdge: {

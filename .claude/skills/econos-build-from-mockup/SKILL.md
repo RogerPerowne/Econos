@@ -38,7 +38,7 @@ Read the **`econos-card-template`** skill now for the full field reference befor
 
 ## Stage 2 - Generate mockup images with GPT Image 2
 
-Write a `config.json` describing one prompt per card, then run the bundled `generate_mockups.py`. The script prepends a shared art-direction preamble (the corrected econos look: warm cream `#FAF8F4` background, Fraunces serif headings, Inter body, the six tones with their teaching meanings, line-icon chips, clean SVG-style diagrams) - so each per-card `prompt` should focus on *content*, not styling. A good per-card prompt names: the card's pedagogical purpose, the card title and a one-line lede, the must-have visual (diagram / flow / 2x2 grid / comparison / worked example / examples), the supporting blocks (definition, example, key distinction, common trap), and the exam edge. Describe any diagram in plain terms (a supply-demand chart with the ceiling below equilibrium, an AD/LRAS diagram with a rightward shift, a PPF, etc.) and let the preamble handle the palette.
+Write a `config.json` describing one prompt per card, then run the bundled `generate_mockups.py`. The script prepends a shared art-direction preamble (portrait single-card layout, no app chrome, warm cream `#FAF8F4` background, Fraunces serif headings ~44px, Inter body, the six SATURATED tone fills with their teaching meanings — green `#D1FAE5`, blue `#DBEAFE`, purple `#EDE9FE`, amber `#FEF3C7`, rose `#FFE4E6`, slate `#E2E8F0` — line-icon chips, clean SVG diagrams, high content density) — so each per-card `prompt` should focus on *content*, not styling. A good per-card prompt names: the card's pedagogical purpose, the card title and a one-line lede, the must-have visual (diagram / flow / 2x2 grid / comparison / worked example / examples), the supporting blocks (definition, example, key distinction, common trap), and the exam edge. Describe any diagram in plain terms (a supply-demand chart with the ceiling below equilibrium, an AD/LRAS diagram with a rightward shift, a PPF, etc.) and let the preamble handle the palette.
 
 Match each card's dominant tone to its teaching role, since the preamble encodes the meaning: green for core/correct/benefit, blue for explanation/technique, purple for evaluation/judgement/exam-edge, amber for trade-offs/incentives/"it depends", rose for market failure/welfare loss/risk, slate for neutral. Keep cards uncluttered - one concept each.
 
@@ -354,26 +354,21 @@ from pathlib import Path
 IMAGE_MODEL = "gpt-image-2-2026-04-21"
 
 STYLE_PREAMBLE = (
-    "A single concept card from econos, a premium A-Level Economics learning web app - "
-    "calm, spacious, intelligent, exam-focused. The aesthetic is closer to Apple, Notion and "
-    "Linear than to PowerPoint, Canva, a textbook PDF or a cluttered dashboard. "
-    "Render ONE white content card (rounded 24px corners, 1px #E5E7EB border, soft shadow) on a "
-    "warm cream page background #FAF8F4 - not the whole app, no sidebar, no top bar, no nav. "
-    "Display heading in an elegant serif (Fraunces or similar refined serif), everything else in "
-    "a clean sans-serif (Inter). Generous whitespace, short headings, concise body, no dense paragraphs. "
-    "Colour is a teaching system, not decoration - use econos's six tones with these exact soft fills: "
-    "green #ECFDF5 (core ideas, correct routes, benefits, lock-in), "
-    "blue #EFF6FF (explanations, exam technique, primary actions), "
-    "purple #F5F3FF (evaluation, judgement, exam edge, deeper insight), "
-    "amber #FFFBEB (scarcity, trade-offs, incentives, 'it depends' conditions), "
-    "rose #FFF1F2 (market failure, welfare loss, risk, incorrect routes), "
-    "slate #F1F5F9 (neutral or structural items). "
-    "Coloured callout cards use a matching 1px border one shade darker and dark same-family text. "
-    "Section labels are small, uppercase, letter-spaced. Icons are simple line symbols in soft "
-    "circular chips - no emoji overload, no stock photography, no glassmorphism. "
-    "Any economics diagram is clean buildable SVG-style: simple axes, clear non-overlapping labels, "
-    "dashed guide lines, demand in blue, supply in green, equilibrium in navy, "
-    "welfare/shortage areas in soft amber or rose. "
+    "A portrait mockup of ONE concept card from econos, a premium A-Level Economics learning web app. "
+    "Render ONLY the content card itself — NO sidebar, NO right rail, NO top chrome, NO navigation. "
+    "The card fills almost the entire frame so every block inside is large, bold and richly detailed. "
+    "White card, rounded 24px corners, 1px #E5E7EB border, soft shadow, warm cream page #FAF8F4 background. "
+    "Aesthetic: Apple / Notion / Linear / Brilliant — premium, calm, exam-focused. "
+    "Card structure: small eyebrow (STEP N OF M), serif display heading (~44px Fraunces), short subline, "
+    "lede tip card, large hero block (diagram / comparison / 2x2 grid / flow), supporting block(s), "
+    "purple EXAM EDGE callout at the bottom. "
+    "TONE PALETTE — bold saturated fills (NOT pale near-white tints): "
+    "green #D1FAE5 / text #065F46, blue #DBEAFE / text #1E3A8A, purple #EDE9FE / text #5B21B6, "
+    "amber #FEF3C7 / text #92400E, rose #FFE4E6 / text #9F1239, slate #E2E8F0 / text #1E293B. "
+    "Every coloured block has a matching 1px border ~10% darker than the fill and a circular icon "
+    "chip in a slightly darker shade. Display headings in serif (Fraunces); body in sans-serif (Inter). "
+    "Diagrams clean SVG-style with bold arrow tips, clear labels, demand blue, supply green, LRAS navy, "
+    "AD red. Content density must be high — every prompt block present and substantial, never sparse."
 )
 
 
@@ -421,9 +416,9 @@ def generate(config_path: Path) -> None:
             model=IMAGE_MODEL,
             prompt=STYLE_PREAMBLE + prompt,
             n=1,
-            size="1024x1024",          # valid: 1024x1024 | 1024x1792 | 1792x1024
+            size="1024x1792",          # portrait — single card, max content density
             quality="high",            # valid: standard | high
-            output_format="b64_json",
+            output_format="png",       # png | webp | jpeg — response is always b64_json
         )
         image_bytes = base64.b64decode(response.data[0].b64_json)
         out_path = out_dir / f"mockup_card_{card_num:02d}.png"

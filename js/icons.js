@@ -14550,4 +14550,55 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  japanMap: `<svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <path d="M48 8 Q52 14 50 22 Q56 26 58 34 Q62 42 56 50 Q48 54 42 50 Q38 44 40 38 Q34 36 32 30 Q26 32 22 28 Q18 22 22 16 Q26 12 32 14 Q36 8 42 8 Z" fill="#94A3B8" opacity="0.55"/>
+    <circle cx="14" cy="42" r="2.5" fill="#94A3B8" opacity="0.55"/>
+    <circle cx="62" cy="14" r="2" fill="#94A3B8" opacity="0.55"/>
+  </svg>`,
+
+  priceTagDown: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <path d="M26 6 L42 6 L42 22 L24 40 L8 24 Z" fill="currentColor" opacity="0.18"/>
+    <path d="M26 6 L42 6 L42 22 L24 40 L8 24 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="35" cy="13" r="2.4" fill="currentColor"/>
+    <path d="M22 18 L22 28 M18 24 L22 28 L26 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+
+  cartClock: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <path d="M6 10 L12 10 L16 30 L36 30 L40 16 L14 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="18" cy="38" r="3" fill="currentColor"/>
+    <circle cx="32" cy="38" r="3" fill="currentColor"/>
+    <circle cx="34" cy="12" r="7" fill="#fff" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M34 8 L34 12 L37 14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  </svg>`,
+
+  factoryCut: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <path d="M6 42 L6 22 L18 28 L18 18 L30 24 L30 14 L42 14 L42 42 Z" fill="currentColor" opacity="0.18"/>
+    <path d="M6 42 L6 22 L18 28 L18 18 L30 24 L30 14 L42 14 L42 42 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+    <rect x="36" y="6" width="3.5" height="10" fill="currentColor"/>
+    <circle cx="34" cy="30" r="6" fill="#fff" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="34" cy="30" r="2.2" fill="currentColor"/>
+  </svg>`,
+
+  scaleBalanceDebt: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <path d="M24 6 L24 42 M14 42 L34 42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M8 14 L24 12 L40 14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M3 22 L13 22 L8 12 Z" fill="currentColor" opacity="0.25" stroke="currentColor" stroke-width="2"/>
+    <path d="M35 26 L45 26 L40 14 Z" fill="currentColor" opacity="0.5" stroke="currentColor" stroke-width="2"/>
+    <text x="40" y="23" text-anchor="middle" font-size="8" font-weight="900" fill="#fff">£</text>
+  </svg>`,
+
+  anchorLock: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <rect x="14" y="10" width="20" height="14" rx="4" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M19 16 L19 12 a5 5 0 0 1 10 0 L29 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="24" cy="32" r="3" fill="currentColor"/>
+    <path d="M24 32 L24 42 M14 38 Q14 42 18 42 L24 42 M34 38 Q34 42 30 42 L24 42" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>`,
+
+  speechAnchor: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto;">
+    <path d="M8 10 L40 10 Q44 10 44 14 L44 30 Q44 34 40 34 L22 34 L14 42 L14 34 L8 34 Q4 34 4 30 L4 14 Q4 10 8 10 Z" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+    <circle cx="16" cy="22" r="2" fill="currentColor"/>
+    <circle cx="24" cy="22" r="2" fill="currentColor"/>
+    <circle cx="32" cy="22" r="2" fill="currentColor"/>
+  </svg>`,
+
 };

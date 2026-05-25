@@ -4436,6 +4436,26 @@
         return `${title}<div style="display:flex;align-items:flex-start;justify-content:center;gap:6px;flex-wrap:wrap;padding:14px 14px 8px;margin-bottom:20px;">${parts.join('')}</div>`;
       })() : ''}
 
+      ${c.letterFormula ? (() => {
+        const lf = c.letterFormula;
+        const title = lf.label ? genSecLabel(lf.emoji || '🧠', lf.label) : '';
+        const renderSide = arr => arr.map(item => {
+          const t = PATTERN_TONES[item.tone] || PATTERN_TONES.blue;
+          return `
+            <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid ${t.border};border-radius:12px;padding:9px 12px;">
+              <div style="width:30px;height:30px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;">${item.letter}</div>
+              <div style="font-size:12.5px;font-weight:700;color:${t.label};line-height:1.25;">${item.name}</div>
+            </div>`;
+        }).join('');
+        const big = (lf.left || []).map(i => i.letter).join(' ') + ' = ' + (lf.right || []).map(i => i.letter).join(' ');
+        return `${title}
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:18px 20px;margin-bottom:18px;">
+            <div style="text-align:center;font-size:42px;font-weight:900;letter-spacing:0.12em;color:#0B1426;margin-bottom:18px;font-family:'Fraunces',serif;">${big}</div>
+            <div style="display:grid;grid-template-columns:repeat(${(lf.left || []).length + (lf.right || []).length},1fr);gap:10px;">${renderSide(lf.left || [])}${renderSide(lf.right || [])}</div>
+            ${lf.caption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin-top:14px;text-align:center;font-style:italic;">${lf.caption}</div>` : ''}
+          </div>`;
+      })() : ''}
+
       ${c.causesFirst && c.causes && c.causes.length ? (() => {
         const items = c.causes;
         const richMode = items.some(it => it.svgKey || it.example);
@@ -4642,6 +4662,29 @@
         return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
       })() : ''}
 
+      ${c.versusRows && c.versusRows.rows && c.versusRows.rows.length && c.versusRowsFirst !== false ? (() => {
+        const vr = c.versusRows;
+        const lt = PATTERN_TONES[vr.leftTone || 'green'];
+        const rt = PATTERN_TONES[vr.rightTone || 'rose'];
+        const title = vr.title ? genSecLabel(vr.emoji || '⚖️', vr.title) : '';
+        const rows = vr.rows.map(row => {
+          const renderSide = (s, t, align) => `
+            <div style="display:flex;align-items:center;gap:12px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:12px 14px;flex-direction:${align === 'right' ? 'row-reverse' : 'row'};text-align:${align};">
+              <div style="width:38px;height:38px;border-radius:50%;background:#fff;border:1.5px solid ${t.border};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;flex-shrink:0;">${s.icon || ''}</div>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:14px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:2px;">${s.head}</div>
+                <div style="font-size:12.5px;color:#0B1426;line-height:1.45;">${s.sub}</div>
+              </div>
+            </div>`;
+          return `<div style="display:grid;grid-template-columns:1fr 38px 1fr;gap:10px;align-items:center;">
+            ${renderSide(row.left, lt, 'left')}
+            <div style="display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#64748B;letter-spacing:0.12em;">vs</div>
+            ${renderSide(row.right, rt, 'right')}
+          </div>`;
+        }).join('');
+        return `${title}<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">${rows}</div>`;
+      })() : ''}
+
       ${!c.pairFirst ? pairHtml : ''}
 
       ${c.verdict && c.verdict.columns && c.verdict.columns.length >= 2 ? (() => {
@@ -4692,7 +4735,7 @@
               <ul style="text-align:left;width:100%;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">${pts}</ul>
             </div>`;
         }).join('');
-        return `${label}<div style="display:grid;grid-template-columns:repeat(${Math.min(c.measureCards.length,3)},1fr);gap:14px;margin-bottom:20px;">${cards}</div>`;
+        return `${label}<div style="display:grid;grid-template-columns:repeat(${Math.min(c.measureCards.length,4)},1fr);gap:14px;margin-bottom:20px;">${cards}</div>`;
       })() : ''}
 
       ${c.comparisonTable ? (() => {
@@ -4723,6 +4766,35 @@
           </div>
           ${bodyRows}
         </div>`;
+      })() : ''}
+
+      ${c.matchTable && c.matchTable.rows && c.matchTable.rows.length ? (() => {
+        const mt = c.matchTable;
+        const title = mt.title ? genSecLabel(mt.emoji || '🔗', mt.title) : '';
+        const heads = (mt.columns || []).map(col => `<div style="font-size:11px;font-weight:800;color:#475569;text-transform:uppercase;letter-spacing:0.09em;text-align:center;padding:0 4px;">${col}</div>`).join('<div></div>');
+        const headerRow = heads ? `<div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;gap:10px;align-items:center;margin-bottom:8px;">${heads}</div>` : '';
+        const rows = mt.rows.map(row => {
+          const renderCell = cell => {
+            const t = PATTERN_TONES[cell.tone || 'blue'];
+            return `
+              <div style="display:flex;align-items:flex-start;gap:10px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:11px 13px;">
+                ${cell.icon ? `<div style="font-size:18px;line-height:1;color:${t.label};flex-shrink:0;margin-top:1px;">${cell.icon}</div>` : ''}
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:13px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:2px;">${cell.head}</div>
+                  ${cell.sub ? `<div style="font-size:12px;color:#475569;line-height:1.45;">${cell.sub}</div>` : ''}
+                </div>
+              </div>`;
+          };
+          const arrow = `<div style="display:flex;align-items:center;justify-content:center;color:#94A3B8;font-size:18px;font-weight:700;">→</div>`;
+          return `<div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;gap:10px;align-items:center;">
+            ${renderCell(row.cause)}
+            ${arrow}
+            ${renderCell(row.goal)}
+            ${arrow}
+            ${renderCell(row.response)}
+          </div>`;
+        }).join('');
+        return `${title}${headerRow}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">${rows}</div>`;
       })() : ''}
 
       ${c.whyItMatters && c.whyItMatters.items && c.whyItMatters.items.length ? (() => {

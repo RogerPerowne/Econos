@@ -65,7 +65,7 @@ window.ECONOS_TOPIC = {
           tone: 'green',
           icon: '①',
           head: 'Output approach',
-          body: 'Add the value added at each stage of production.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:22px;font-weight:800;color:#047857;margin-top:4px;letter-spacing:0.5px;">Σ(Value added)</div></div><div style="font-size:12.5px;line-height:1.65;color:#475569;"><strong style="color:#0B1426;">Example:</strong><br>Agriculture value added<br>+ Manufacturing value added<br>+ Services value added<br>= <strong>GDP</strong></div>'
+          body: 'Add the value added at each stage of production.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:17px;font-weight:800;color:#047857;margin-top:6px;letter-spacing:0.3px;">Σ(Value added)</div></div><div style="font-size:12.5px;line-height:1.65;color:#475569;"><strong style="color:#0B1426;">Example:</strong><br>Agriculture value added<br>+ Manufacturing value added<br>+ Services value added<br>= <strong>GDP</strong></div>'
         },
         {
           tone: 'blue',

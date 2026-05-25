@@ -4600,6 +4600,59 @@
 
       ${!c.pairFirst ? pairHtml : ''}
 
+      ${c.measureCards && c.measureCards.length ? (() => {
+        const label = c.measureCardsLabel !== undefined
+          ? (c.measureCardsLabel === null ? '' : genSecLabel(c.measureCardsEmoji || '🔍', c.measureCardsLabel))
+          : genSecLabel('🔍', 'Three measures at a glance');
+        const cards = c.measureCards.map((m, i) => {
+          const tone = PATTERN_TONES[m.tone] || PATTERN_TONES[['green','purple','amber','blue','rose','slate'][i % 6]];
+          const pts = (m.points || []).map(p => `
+            <li style="display:flex;gap:8px;font-size:13px;color:#0B1426;line-height:1.5;">
+              <span style="color:${tone.label};flex-shrink:0;font-weight:900;margin-top:1px;">•</span>
+              <span>${p}</span>
+            </li>`).join('');
+          return `
+            <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:20px 18px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+              <div style="width:54px;height:54px;border-radius:50%;background:#fff;border:2px solid ${tone.border};display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">${m.icon || ''}</div>
+              <div style="font-size:26px;font-weight:900;color:${tone.label};letter-spacing:-0.02em;line-height:1;margin-bottom:6px;">${m.acronym}</div>
+              <div style="font-size:12px;font-weight:600;color:${tone.label};opacity:0.85;line-height:1.4;margin-bottom:14px;min-height:2.8em;display:flex;align-items:center;justify-content:center;">${m.fullName || ''}</div>
+              <div style="width:100%;height:1px;background:${tone.border};margin-bottom:14px;"></div>
+              <ul style="text-align:left;width:100%;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">${pts}</ul>
+            </div>`;
+        }).join('');
+        return `${label}<div style="display:grid;grid-template-columns:repeat(${Math.min(c.measureCards.length,3)},1fr);gap:14px;margin-bottom:20px;">${cards}</div>`;
+      })() : ''}
+
+      ${c.comparisonTable ? (() => {
+        const ct = c.comparisonTable;
+        const colTones = (ct.columnTones || []).map(t => PATTERN_TONES[t] || PATTERN_TONES.blue);
+        const colLabel = genSecLabel(ct.emoji || '↔️', ct.title || 'How they compare');
+        const headerCells = ct.columns.map((col, i) => {
+          const t = colTones[i] || PATTERN_TONES.blue;
+          return `<div style="padding:10px 10px;font-size:13px;font-weight:800;color:${t.label};text-align:center;border-left:1px solid #E7E7EA;">${col}</div>`;
+        }).join('');
+        const ctGrid = `140px repeat(${ct.columns.length}, 1fr)`;
+        const bodyRows = (ct.rows || []).map((row, ri) => {
+          const bg = ri % 2 === 0 ? '#fff' : '#F8FAFC';
+          const cells = (row.values || []).map((val, ci) => {
+            const t = colTones[ci] || PATTERN_TONES.blue;
+            const hl = row.highlights && row.highlights[ci];
+            return `<div style="padding:10px 10px;font-size:12.5px;color:${hl ? t.label : '#334155'};font-weight:${hl ? 700 : 400};text-align:center;border-left:1px solid #E7E7EA;line-height:1.5;">${val}</div>`;
+          }).join('');
+          return `<div style="display:grid;grid-template-columns:${ctGrid};background:${bg};border-bottom:1px solid #E7E7EA;">
+            <div style="padding:10px 12px;font-size:12.5px;font-weight:700;color:#0B1426;display:flex;align-items:center;gap:6px;line-height:1.4;">${row.label}</div>
+            ${cells}
+          </div>`;
+        }).join('');
+        return `${colLabel}<div style="border-radius:12px;border:1px solid #E7E7EA;overflow:hidden;margin-bottom:20px;">
+          <div style="display:grid;grid-template-columns:${ctGrid};background:#0B1426;border-radius:12px 12px 0 0;">
+            <div style="padding:10px 12px;"></div>
+            ${headerCells}
+          </div>
+          ${bodyRows}
+        </div>`;
+      })() : ''}
+
       ${c.whyItMatters && c.whyItMatters.items && c.whyItMatters.items.length ? (() => {
         const w = c.whyItMatters;
         const title = w.title || 'Why it matters';

@@ -1,0 +1,217 @@
+You are a skill-generator for Claude Code. Your task is to produce a complete, self-contained skill file called `econos-build-from-mockup` that automates the creation of a new econos topic from a set of mockup images.
+
+---
+
+## CONTEXT: What econos is
+
+econos is a static educational web app for A-Level Economics. It has exactly six HTML shells at the repo root:
+
+```
+index.html  learn.html  link.html  land.html  quiz.html  login.html
+```
+
+Topics live in `js/data/<topic-id>/data-topic.js`. No new HTML files are ever added. The shells discover topics through `TopicLoader.loadData(...)` at runtime.
+
+A topic is registered in `js/topics.js` with a short `id`, `title`, and `path`.
+
+---
+
+## CONTEXT: data-topic.js schema
+
+Each `data-topic.js` exports a single `const topicData = { ... }` object. The key fields the skill must populate:
+
+```js
+const topicData = {
+  id: "topic_id",
+  title: "Topic Title",
+  subtitle: "Short subtitle",
+  heroIcon: "📊",          // single emoji
+  color: "blue",           // one of: green | blue | amber | purple | rose | slate
+  cards: [
+    {
+      id: "card_1",
+      type: "generic",
+      title: "Card title",
+      subtitle: "Card subtitle",
+      icon: "📈",
+      tone: "blue",        // same palette as color
+      causes: [            // primary grid items
+        {
+          tone: "blue",
+          icon: "🔵",
+          head: "Short heading",
+          body: "Explanation text. May contain inline SVG."
+        }
+      ],
+      causes2: [...],      // secondary grid (optional)
+      causes3: [...],      // tertiary grid (optional)
+      causes2Cols: 2,      // column count for causes2 grid (default 2)
+      causes3Cols: 2,
+      steps: [             // ordered steps (optional)
+        { tone: "green", icon: "1️⃣", head: "Step heading", body: "Step body" }
+      ],
+      keyTerms: [          // glossary items (optional)
+        { term: "Term", def: "Definition" }
+      ],
+      productExamples: [   // product cards with verdict (optional)
+        {
+          name: "Product name",
+          icon: "🛒",
+          verdict: { tone: "amber", label: "Verdict label" },
+          reasoning: "Reasoning text"
+        }
+      ],
+      examTips: [          // exam tips list (optional)
+        { icon: "✏️", tip: "Tip text" }
+      ]
+    }
+  ]
+};
+```
+
+Tones control background colours: `green=#D1FAE5`, `blue=#DBEAFE`, `amber=#FEF3C7`, `purple=#EDE9FE`, `rose=#FFE4E6`, `slate=#F1F5F9`.
+
+SVG diagrams are inlined directly in the `body` field of a cause item. All diagrams use `viewBox="0 0 280 200"` and are fully self-contained with no external references.
+
+---
+
+## CONTEXT: GPT Image 2 API
+
+The skill uses GPT Image 2 to generate mockup images for each card. Use this exact API shape:
+
+```python
+import openai, base64, os
+
+client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+response = client.images.generate(
+    model="gpt-image-2",          # <-- exact model ID, released May 2026
+    prompt="...",
+    n=1,
+    size="1024x1024",             # options: 1024x1024 | 1024x1792 | 1792x1024
+    quality="high",               # standard | high
+    output_format="b64_json"      # always request base64
+)
+
+image_bytes = base64.b64decode(response.data[0].b64_json)
+with open("card_01_mockup.png", "wb") as f:
+    f.write(image_bytes)
+```
+
+The `OPENAI_API_KEY` must be set in the environment. In the econos repo it lives in `.claude/settings.local.json` under an `env` block and is never committed. The skill should read it via `os.environ["OPENAI_API_KEY"]` and fail fast with a clear message if absent.
+
+There is no `style` parameter for GPT Image 2 — omit it entirely or the API will reject the call.
+
+---
+
+## CONTEXT: Existing econos skills and patterns
+
+The repo has these Claude Code skills in `.claude/skills/`:
+
+- `run-econos/driver.mjs` — launches a local static server at `http://127.0.0.1:8765` and opens Playwright for screenshot/inspection.
+- Other skills follow the same pattern: a `skill.md` entry-point that Claude Code reads, plus supporting scripts.
+
+The new skill must fit the same pattern: a `skill.md` that Claude Code can invoke, plus a Python helper script that does the heavy lifting.
+
+---
+
+## CONTEXT: Full build-from-mockup workflow
+
+The workflow the skill automates has five stages:
+
+**Stage 1 — Topic brief**
+Claude receives a short brief: topic ID, title, approximate number of cards, and the economic concept being taught.
+
+**Stage 2 — Generate mockup images with GPT Image 2**
+For each card, Claude writes and runs a Python script that calls the GPT Image 2 API. The prompt to GPT Image 2 must describe:
+- The card's purpose (e.g. "a card showing the determinants of PED")
+- The visual style: clean infographic, white background, econos colour palette (muted pastels: green #D1FAE5, blue #DBEAFE, amber #FEF3C7, purple #EDE9FE, rose #FFE4E6, slate #F1F5F9)
+- Any diagrams needed (e.g. supply-demand curves, PPF, AD/AS)
+- Icons, labels, headings
+
+Save each image as `mockup_card_NN.png` in a temp directory.
+
+**Stage 3 — Extract structured content from images**
+Run a Python script that:
+1. Loads each mockup PNG using `PIL` (`pip install Pillow`)
+2. Sends each image to GPT-4o vision (`model="gpt-4o"`) with a structured extraction prompt asking for JSON matching the card schema above
+3. Parses the returned JSON
+4. Assembles all cards into the full `topicData` structure
+5. Writes a draft `data-topic.js`
+
+The GPT-4o extraction prompt should be:
+
+```
+You are extracting structured content from an econos card mockup image.
+Return ONLY valid JSON with this exact shape:
+{
+  "title": "...",
+  "subtitle": "...",
+  "icon": "single emoji",
+  "tone": "one of: green|blue|amber|purple|rose|slate",
+  "causes": [{"tone":"...","icon":"...","head":"...","body":"..."}],
+  "causes2": [],
+  "causes3": [],
+  "steps": [],
+  "keyTerms": [],
+  "productExamples": [],
+  "examTips": []
+}
+Only include arrays that have content. Do not include empty arrays.
+If a diagram is shown, describe it in the body field using plain text; Claude will convert it to SVG.
+```
+
+**Stage 4 — Claude review and SVG conversion**
+Claude reads the draft `data-topic.js` and:
+- Corrects any extraction errors (wrong tones, broken text, misread icons)
+- Converts any diagram descriptions in body fields into inline SVG using `viewBox="0 0 280 200"`
+- Ensures all text is economically accurate
+- Adds `keyTerms`, `examTips`, and `productExamples` if the mockup showed them
+- Validates the file parses correctly with `node --check js/data/<topic-id>/data-topic.js`
+
+**Stage 5 — Register and verify**
+- Add the topic entry to `js/topics.js`
+- Run `npm run lint`
+- Launch `run-econos` skill to take a screenshot of `learn.html?topic=<id>` and confirm it renders
+
+---
+
+## YOUR TASK
+
+Generate a complete Claude Code skill consisting of exactly two files:
+
+### File 1: `.claude/skills/econos-build-from-mockup/skill.md`
+
+This is the entry point Claude Code reads when the skill is invoked. It must contain:
+
+1. A short description of what the skill does (2–3 sentences).
+2. Step-by-step instructions Claude must follow, referencing the five stages above.
+3. The exact Python script for Stage 2 (GPT Image 2 generation) — fully working, reading `OPENAI_API_KEY` from environment, saving PNGs.
+4. The exact Python script for Stage 3 (GPT-4o extraction) — fully working, reading each PNG, calling GPT-4o vision, assembling `data-topic.js`.
+5. The template for `data-topic.js` with all fields.
+6. Instructions for Stage 4 review: what Claude must check, how to write SVGs, accuracy rules.
+7. Instructions for Stage 5 registration and lint.
+8. A note that the skill never commits API keys and always checks `OPENAI_API_KEY` is set before running.
+
+### File 2: `.claude/skills/econos-build-from-mockup/generate_mockups.py`
+
+The standalone Python script for Stage 2. It must:
+- Accept `topic_id`, `card_count`, and a list of card prompts as command-line arguments or from a JSON config file.
+- Call GPT Image 2 for each card using the exact API shape shown above.
+- Save images to `.claude/skills/econos-build-from-mockup/tmp/<topic_id>/mockup_card_NN.png`.
+- Print progress and the path of each saved file.
+- Fail with a clear error if `OPENAI_API_KEY` is not set.
+
+---
+
+## CONSTRAINTS
+
+- The skill must work with the econos repo as described — no new HTML files, no engine changes.
+- All Python scripts must use only stdlib + `openai` + `Pillow` + `opencv-python`. No other dependencies.
+- SVG diagrams must use `viewBox="0 0 280 200"`, no external fonts or images.
+- The skill entry point (`skill.md`) must be written so Claude Code can follow it without any additional context — it is fully self-contained.
+- Tone values must always be one of: `green`, `blue`, `amber`, `purple`, `rose`, `slate`.
+- The `heroIcon` and all `icon` fields must be single emoji characters.
+- The skill must instruct Claude to run `node --check` on the output file before proceeding to registration.
+- The skill must instruct Claude to run `npm run lint` before the final push.
+- Git workflow: after the topic is verified, push to the session's designated branch, open a PR via the GitHub MCP tools (head=branch, base=main), squash-merge, then reset the branch to match main and force-push.

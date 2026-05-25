@@ -23,3 +23,6 @@ yarn-error.log*
 .env.local
 test-results/
 playwright-report/
+
+# econos-build-from-mockup skill working dir (mockups, drafts, generated configs)
+.claude/skills/econos-build-from-mockup/tmp/

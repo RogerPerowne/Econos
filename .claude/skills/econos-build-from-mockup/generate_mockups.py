@@ -131,7 +131,7 @@ def generate(config_path: Path) -> None:
             n=1,
             size="1024x1024",          # valid: 1024x1024 | 1024x1792 | 1792x1024
             quality="high",            # valid: standard | high
-            output_format="b64_json",  # always request base64
+            output_format="png",       # png | webp | jpeg — response is always b64_json
         )
 
         image_bytes = base64.b64decode(response.data[0].b64_json)

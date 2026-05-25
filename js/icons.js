@@ -4295,6 +4295,9 @@ window.ECONOS_ICONS = {
       <defs>
         <filter id="hg-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/></filter>
         <filter id="hg-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.07"/></filter>
+        <marker id="hg-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#15803D"/>
+        </marker>
       </defs>
 
       <!-- pastel pad -->
@@ -4321,9 +4324,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <!-- ascending arrow above bars -->
-      <g stroke="#15803D" stroke-width="3" stroke-linecap="round" fill="none">
-        <path d="M 70 200 Q 140 130 210 80 M 210 80 L 198 86 M 210 80 L 204 94"/>
-      </g>
+      <path d="M 70 200 Q 140 130 210 80" stroke="#15803D" stroke-width="3" stroke-linecap="round" fill="none" marker-end="url(#hg-arr)"/>
 
       <!-- small leaf/sprout on top of biggest bar (growth) -->
       <g filter="url(#hg-soft)">

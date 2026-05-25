@@ -4440,6 +4440,27 @@
         const items = c.causes;
         const richMode = items.some(it => it.svgKey || it.example);
         const numberedMode = c.causesStyle === 'numbered';
+        const numberedRowsMode = c.causesStyle === 'numbered-rows';
+        if (numberedRowsMode) {
+          const cycle = ['green','blue','purple','amber','rose','slate'];
+          const rows = items.map((item, i) => {
+            const tone = PATTERN_TONES[item.tone || cycle[i % cycle.length]];
+            const iconHtml = item.svgKey && I[item.svgKey]
+              ? `<div style="color:${tone.label};line-height:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${I[item.svgKey]}</div>`
+              : `<div style="font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;">${item.icon || ''}</div>`;
+            return `
+              <div style="display:flex;align-items:center;gap:14px;background:${tone.bg};border:1px solid ${tone.border};border-left:4px solid ${tone.label};border-radius:14px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                <div style="width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+                ${iconHtml}
+                <div style="flex:1;min-width:0;">
+                  <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:3px;letter-spacing:-0.01em;">${item.head}</div>
+                  <div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${item.body}</div>
+                </div>
+              </div>`;
+          }).join('');
+          const labelHtml = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'The main costs');
+          return `${labelHtml}<div style="display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 22px;">${rows}</div>`;
+        }
         if (numberedMode) {
           const tone = PATTERN_TONES[c.causesTone || 'green'];
           const numberedTiles = items.map((item, i) => {

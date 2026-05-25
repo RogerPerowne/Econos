@@ -322,8 +322,7 @@ window.ECONOS_TOPIC = {
 
       causesFirst: true,
       causesLabel: 'The main costs',
-      causesStyle: 'numbered',
-      causesTone: 'green',
+      causesStyle: 'numbered-rows',
       causes: [
         { svgKey: 'receiptPound',  head: 'Menu costs',                  body: 'Firms must keep changing prices, menus, catalogues and systems.' },
         { svgKey: 'shoeRun',       head: 'Shoe-leather costs',          body: 'People spend time and effort managing cash balances and seeking the best rates.' },

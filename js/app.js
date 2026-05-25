@@ -4444,13 +4444,13 @@
           const tone = PATTERN_TONES[c.causesTone || 'green'];
           const numberedTiles = items.map((item, i) => {
             const iconHtml = item.svgKey && I[item.svgKey]
-              ? `<div style="color:${tone.accent};line-height:0;margin-bottom:10px;">${I[item.svgKey]}</div>`
-              : `<div style="font-size:36px;line-height:1;margin-bottom:10px;">${item.icon || ''}</div>`;
+              ? `<div style="color:${tone.label};line-height:0;margin:4px 0 14px;display:flex;align-items:center;justify-content:center;height:48px;">${I[item.svgKey]}</div>`
+              : `<div style="font-size:40px;line-height:1;margin:4px 0 14px;height:48px;display:flex;align-items:center;justify-content:center;">${item.icon || ''}</div>`;
             return `
-              <div style="position:relative;border-radius:16px;background:#fff;border:1px solid #E7E7EA;padding:34px 16px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid ${tone.accent};color:${tone.accent};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">${i + 1}</div>
+              <div style="position:relative;border-radius:16px;background:#fff;border:1px solid #E7E7EA;padding:38px 14px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid ${tone.label};color:${tone.label};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">${i + 1}</div>
                 ${iconHtml}
-                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.25;margin-bottom:10px;">${item.head}</div>
+                <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;margin-bottom:10px;letter-spacing:-0.01em;">${item.head}</div>
                 <div style="font-size:13px;color:#334155;line-height:1.55;">${item.body}</div>
               </div>`;
           }).join('');

@@ -43,7 +43,7 @@ STYLE_PREAMBLE = (
     "A portrait mockup of ONE concept card from econos, a premium A-Level Economics learning web app. "
     "Render ONLY the content card itself on a warm cream page background #FAF8F4 — no sidebar, no nav, "
     "no app chrome. White card, rounded corners, soft shadow, generous padding. "
-    "Aesthetic: Apple / Notion / Linear / Brilliant — premium, calm, intelligent, exam-focused. "
+    "Aesthetic: Apple / Notion / Linear / Brilliant — premium, intelligent, exam-focused. "
     "Display headings in an elegant serif (Fraunces or similar); body and labels in clean sans-serif (Inter). "
     "Colour is a teaching system. Use bold saturated fills from this palette, never pale near-white tints: "
     "green #D1FAE5 (core / benefit / correct), blue #DBEAFE (explanation / technique), "

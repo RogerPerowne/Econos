@@ -328,24 +328,27 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'blue', icon: '🧮', iconStyle: 'circle',
         label: 'The multiplier formula',
-        text: '<div style="font-size:30px;text-align:center;font-weight:800;color:#1E40AF;margin:14px 0 8px;">k = 1 ÷ (1 − MPC)</div><p style="margin:0;font-size:12.5px;color:#475569;text-align:center;line-height:1.6;">k = multiplier<br>MPC = marginal propensity to consume</p>'
+        text: '<div style="display:flex;align-items:center;justify-content:center;gap:14px;font-size:30px;font-weight:800;color:#1E40AF;margin:14px 0 8px;line-height:1;">' +
+          '<span>k =</span>' +
+          '<span style="display:inline-flex;flex-direction:column;align-items:center;line-height:1;">' +
+            '<span style="padding:0 14px 6px;">1</span>' +
+            '<span style="padding:6px 14px 0;border-top:3px solid #1E40AF;">(1 − MPC)</span>' +
+          '</span>' +
+        '</div>' +
+        '<p style="margin:8px 0 0;font-size:12.5px;color:#475569;text-align:center;line-height:1.6;">k = multiplier<br>MPC = marginal propensity to consume</p>'
       },
       right: {
         tone: 'blue', icon: '📋', iconStyle: 'circle',
         label: 'Worked example',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.85;color:#0B1426;"><li>MPC = 0.6</li><li>k = 1 ÷ (1 − 0.6) = <strong>2.5</strong></li><li>£10bn injection</li></ul><div style="border-top:1px dashed #93C5FD;margin:10px 0;"></div><p style="margin:0;font-size:13px;color:#0B1426;"><strong>Total AD increase = £10bn × 2.5 = £25bn</strong></p>'
+        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.85;color:#0B1426;"><li>MPC = 0.6</li><li>k = 1 / (1 − 0.6) = <strong>2.5</strong></li><li>£10bn injection</li></ul><div style="border-top:1px dashed #93C5FD;margin:10px 0;"></div><p style="margin:0;font-size:13px;color:#0B1426;"><strong>Total AD increase = £10bn × 2.5 = £25bn</strong></p>'
       },
 
-      flowTitle: 'THE RIPPLE',
-      flowEmoji: '💧',
-      flowSep: '→',
-      flow: [
-        { icon: '💧', title: 'Round 1', sub: '£10bn',   tone: 'blue'   },
-        { icon: '💧', title: 'Round 2', sub: '£6bn',    tone: 'amber'  },
-        { icon: '💧', title: 'Round 3', sub: '£3.6bn',  tone: 'purple' },
-        { icon: '💧', title: 'Round 4', sub: '£2.16bn', tone: 'green'  },
-        { icon: '…',  title: '…',       sub: 'each round 60% of the last', tone: 'slate' }
-      ],
+      flowChart: {
+        svgKey: 'multiplierRipple',
+        label: 'THE RIPPLE',
+        emoji: '💧',
+        caption: 'Each round is 60% of the last (MPC = 0.6). Summed over all rounds: £25bn.'
+      },
 
       summaryRow: [
         { tone: 'blue', icon: '📊', title: 'Total increase in AD = £25bn', text: 'The sum of all rounds — initial £10bn × the multiplier of 2.5.' }
@@ -389,12 +392,19 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'blue', icon: '🧮', iconStyle: 'circle',
         label: 'Open-economy formula',
-        text: '<div style="font-size:24px;text-align:center;font-weight:800;color:#1E40AF;margin:14px 0 4px;">k = 1 ÷ (MPS + MRT + MRM)</div><p style="margin:6px 0 0;font-size:12px;color:#475569;text-align:center;line-height:1.7;">MPS = marginal propensity to save<br>MRT = marginal rate of tax<br>MRM = marginal propensity to import</p>'
+        text: '<div style="display:flex;align-items:center;justify-content:center;gap:10px;font-size:18px;font-weight:800;color:#1E40AF;margin:14px 0 4px;line-height:1;white-space:nowrap;">' +
+          '<span>k =</span>' +
+          '<span style="display:inline-flex;flex-direction:column;align-items:center;line-height:1;">' +
+            '<span style="padding:0 10px 6px;">1</span>' +
+            '<span style="padding:6px 10px 0;border-top:3px solid #1E40AF;">MPS + MRT + MRM</span>' +
+          '</span>' +
+        '</div>' +
+        '<p style="margin:10px 0 0;font-size:12px;color:#475569;text-align:center;line-height:1.7;">MPS = marginal propensity to save<br>MRT = marginal rate of tax<br>MRM = marginal propensity to import</p>'
       },
       right: {
         tone: 'blue', icon: '📋', iconStyle: 'circle',
         label: 'Worked example',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.85;color:#0B1426;"><li>MPS = 0.1</li><li>MRT = 0.2</li><li>MRM = 0.3</li></ul><div style="border-top:1px dashed #93C5FD;margin:10px 0;"></div><p style="margin:0;font-size:13px;color:#0B1426;"><strong>k = 1 ÷ 0.6 = 1.67</strong> — much smaller than the textbook 2.5.</p>'
+        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.85;color:#0B1426;"><li>MPS = 0.1</li><li>MRT = 0.2</li><li>MRM = 0.3</li></ul><div style="border-top:1px dashed #93C5FD;margin:10px 0;"></div><p style="margin:0;font-size:13px;color:#0B1426;"><strong>k = 1 / 0.6 = 1.67</strong> — much smaller than the textbook 2.5.</p>'
       },
 
       flowTitle: 'THE LEAKAGES',

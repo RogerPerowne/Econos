@@ -901,6 +901,78 @@ window.ECONOS_ICONS = {
   `,
 
   /* === AD movement vs shift — Aggregate Demand Card 3 === */
+  /* Multiplier ripple — five-round cascade (AD Card 5) */
+  multiplierRipple: `
+    <svg viewBox="0 0 900 230" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="mr-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+        </marker>
+      </defs>
+
+      <!-- ROUND 1 — blue · £10bn -->
+      <g>
+        <rect x="22" y="28" width="138" height="130" rx="16" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"/>
+        <text x="91" y="62" font-size="30" text-anchor="middle">💧</text>
+        <text x="91" y="98" font-size="15" font-weight="800" fill="#1E40AF" text-anchor="middle">Round 1</text>
+        <text x="91" y="132" font-size="20" font-weight="800" fill="#0B1426" text-anchor="middle">£10bn</text>
+        <path d="M 40 178 Q 70 170 91 178 T 142 178"  stroke="#2563EB" stroke-width="1.6" fill="none" opacity="0.45"/>
+        <path d="M 55 193 Q 75 187 91 193 T 127 193"  stroke="#2563EB" stroke-width="1.3" fill="none" opacity="0.30"/>
+        <path d="M 68 207 Q 80 203 91 207 T 114 207"  stroke="#2563EB" stroke-width="1.1" fill="none" opacity="0.20"/>
+      </g>
+      <line x1="166" y1="92" x2="194" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
+
+      <!-- ROUND 2 — amber · £6bn -->
+      <g>
+        <rect x="200" y="28" width="138" height="130" rx="16" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2"/>
+        <text x="269" y="62" font-size="30" text-anchor="middle">💧</text>
+        <text x="269" y="98" font-size="15" font-weight="800" fill="#B45309" text-anchor="middle">Round 2</text>
+        <text x="269" y="132" font-size="20" font-weight="800" fill="#0B1426" text-anchor="middle">£6bn</text>
+        <path d="M 218 178 Q 248 170 269 178 T 320 178" stroke="#D97706" stroke-width="1.6" fill="none" opacity="0.45"/>
+        <path d="M 233 193 Q 253 187 269 193 T 305 193" stroke="#D97706" stroke-width="1.3" fill="none" opacity="0.30"/>
+        <path d="M 246 207 Q 258 203 269 207 T 292 207" stroke="#D97706" stroke-width="1.1" fill="none" opacity="0.20"/>
+      </g>
+      <line x1="344" y1="92" x2="372" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
+
+      <!-- ROUND 3 — purple · £3.6bn -->
+      <g>
+        <rect x="378" y="28" width="138" height="130" rx="16" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="2"/>
+        <text x="447" y="62" font-size="30" text-anchor="middle">💧</text>
+        <text x="447" y="98" font-size="15" font-weight="800" fill="#6D28D9" text-anchor="middle">Round 3</text>
+        <text x="447" y="132" font-size="20" font-weight="800" fill="#0B1426" text-anchor="middle">£3.6bn</text>
+        <path d="M 396 178 Q 426 170 447 178 T 498 178" stroke="#7C3AED" stroke-width="1.6" fill="none" opacity="0.45"/>
+        <path d="M 411 193 Q 431 187 447 193 T 483 193" stroke="#7C3AED" stroke-width="1.3" fill="none" opacity="0.30"/>
+        <path d="M 424 207 Q 436 203 447 207 T 470 207" stroke="#7C3AED" stroke-width="1.1" fill="none" opacity="0.20"/>
+      </g>
+      <line x1="522" y1="92" x2="550" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
+
+      <!-- ROUND 4 — green · £2.16bn -->
+      <g>
+        <rect x="556" y="28" width="138" height="130" rx="16" fill="#DCFCE7" stroke="#BBF7D0" stroke-width="2"/>
+        <text x="625" y="62" font-size="30" text-anchor="middle">💧</text>
+        <text x="625" y="98" font-size="15" font-weight="800" fill="#047857" text-anchor="middle">Round 4</text>
+        <text x="625" y="132" font-size="20" font-weight="800" fill="#0B1426" text-anchor="middle">£2.16bn</text>
+        <path d="M 574 178 Q 604 170 625 178 T 676 178" stroke="#10B981" stroke-width="1.6" fill="none" opacity="0.45"/>
+        <path d="M 589 193 Q 609 187 625 193 T 661 193" stroke="#10B981" stroke-width="1.3" fill="none" opacity="0.30"/>
+        <path d="M 602 207 Q 614 203 625 207 T 648 207" stroke="#10B981" stroke-width="1.1" fill="none" opacity="0.20"/>
+      </g>
+      <line x1="700" y1="92" x2="728" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
+
+      <!-- DOTS · "each round 60% of the last" -->
+      <g>
+        <rect x="734" y="28" width="138" height="130" rx="16" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="803" y="68" font-size="30" font-weight="800" fill="#64748B" text-anchor="middle">⋯</text>
+        <text x="803" y="100" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">each round</text>
+        <text x="803" y="117" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">is 60% of</text>
+        <text x="803" y="134" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">the last</text>
+      </g>
+
+      <!-- Loop-back hint -->
+      <path d="M 803 168 Q 803 215 91 215 L 91 168" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#mr-arr)"/>
+      <text x="447" y="227" font-size="11" font-weight="700" fill="#64748B" text-anchor="middle" letter-spacing="1">the ripple continues</text>
+    </svg>
+  `,
+
   /* AD slope — three effects (static, used on AD Card 2) */
   adSlopeDiagram: `
     <svg viewBox="0 0 480 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

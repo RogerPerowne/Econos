@@ -540,10 +540,10 @@ window.ECONOS_TOPIC = {
       lede: 'Knowing the AD model is necessary. Knowing its limits is what lifts analysis to A*.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'AD analysis works best when you also judge multiplier size, lags, spare capacity and expectations.' },
+      tip: { icon: '🔒', tone: 'green', text: 'AD analysis works best when you also judge multiplier size, composition, lags, spare capacity, crowding out and expectations.' },
 
       causesFirst: true,
-      causesLabel: 'THE FIVE EVALUATION MOVES',
+      causesLabel: 'THE SIX EVALUATION MOVES',
       causesEmoji: '⚙️',
       causesStyle: 'numbered',
       causesCols: 3,
@@ -553,15 +553,19 @@ window.ECONOS_TOPIC = {
           body: 'The effect depends on MPC, leakages and confidence. Quote a realistic UK figure (~1.5) rather than the textbook 2.5.'
         },
         {
+          tone: 'amber', icon: '🧩', head: 'Composition of the shift',
+          body: 'Different shocks have different multipliers. Capital G &gt; current G &gt; transfers &gt; tax cuts. Investment shocks get amplified by the accelerator. The <em>type</em> of AD change matters as much as the size.'
+        },
+        {
           tone: 'purple', icon: '⏳', head: 'Time lags',
           body: 'Policy effects take time — recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.'
         },
         {
-          tone: 'amber', icon: '🏗️', head: 'AS constraints',
+          tone: 'green', icon: '🏗️', head: 'AS constraints',
           body: 'Supply limits, cost pressures and bottlenecks can restrict how much real output can rise. Near full employment, AD shifts cause inflation, not growth.'
         },
         {
-          tone: 'green', icon: '£', head: 'Crowding out',
+          tone: 'blue', icon: '£', head: 'Crowding out',
           body: 'Higher G can push up interest rates and reduce private investment — partially offsetting the stimulus.'
         },
         {

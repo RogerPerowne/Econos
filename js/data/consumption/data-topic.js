@@ -108,8 +108,7 @@ window.ECONOS_TOPIC = {
       flowChart: {
         svgKey: 'consumptionFunction',
         label: 'THE FUNCTION',
-        emoji: '📈',
-        caption: '<div style="background:#D1FAE5;border:1px solid #6EE7B7;border-radius:10px;padding:13px 18px;margin:8px 0 8px;text-align:center;font-style:normal;"><span style="font-size:17px;font-weight:800;color:#047857;letter-spacing:0.5px;">C = a + bY</span><p style="margin:6px 0 0;font-size:12.5px;color:#065F46;"><em>a</em> = intercept (autonomous consumption). &nbsp;<em>b</em> = marginal propensity to consume.</p></div>'
+        emoji: '📈'
       },
 
       pairLabel: 'TWO PARTS OF CONSUMPTION',
@@ -125,6 +124,11 @@ window.ECONOS_TOPIC = {
         text: '<p style="margin:0;font-size:13px;color:#0B1426;">Extra consumption that rises as income rises.</p>'
       },
 
+      summaryRow: [
+        { tone: 'green', icon: '🧮', title: 'C = a + bY', text: '<em>a</em> = intercept (autonomous consumption). <em>b</em> = marginal propensity to consume.' }
+      ],
+
+      causesLast: true,
       causesLabel: 'HOW TO READ IT',
       causesEmoji: '📖',
       causesStyle: 'numbered',

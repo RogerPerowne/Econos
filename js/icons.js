@@ -218,6 +218,148 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* === AD component topic hero icons === */
+
+  heroConsumption: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="hc-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+      <g filter="url(#hc-shadow)"><circle cx="105" cy="68" r="16" fill="#FCD34D" stroke="#92400E" stroke-width="1.8"/><text x="105" y="74" font-size="16" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
+      <g filter="url(#hc-shadow)"><circle cx="170" cy="82" r="14" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/><text x="170" y="87" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
+      <g filter="url(#hc-shadow)"><circle cx="138" cy="42" r="11" fill="#FCD34D" stroke="#92400E" stroke-width="1.3"/><text x="138" y="47" font-size="12" font-weight="800" fill="#92400E" text-anchor="middle">£</text></g>
+      <g filter="url(#hc-shadow)">
+        <ellipse cx="100" cy="142" rx="18" ry="6" fill="#FED7AA" stroke="#C2410C" stroke-width="1.5" transform="rotate(-25 100 142)"/>
+        <path d="M 145 112 L 175 112 L 175 158 L 145 158 Z" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.8"/>
+        <path d="M 145 112 L 160 98 L 175 112 Z" fill="#DBEAFE" stroke="#1E40AF" stroke-width="1.8"/>
+      </g>
+      <g filter="url(#hc-shadow)">
+        <path d="M 100 170 Q 105 135 130 135" stroke="#15803D" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 180 170 Q 175 135 150 135" stroke="#15803D" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 70 172 L 210 172 L 200 320 L 80 320 Z" fill="#86EFAC" stroke="#15803D" stroke-width="2.5" stroke-linejoin="round"/>
+        <line x1="85" y1="200" x2="80" y2="320" stroke="#15803D" stroke-width="1.2" opacity="0.5"/>
+        <line x1="195" y1="200" x2="200" y2="320" stroke="#15803D" stroke-width="1.2" opacity="0.5"/>
+        <line x1="70" y1="172" x2="210" y2="172" stroke="#15803D" stroke-width="2.5"/>
+      </g>
+      <ellipse cx="140" cy="328" rx="68" ry="5" fill="#0F172A" opacity="0.10"/>
+    </svg>
+  `,
+
+  heroInvestment: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="hi-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+      <g opacity="0.32">
+        <line x1="50" y1="80" x2="50" y2="225" stroke="#94A3B8" stroke-width="2"/>
+        <line x1="50" y1="225" x2="230" y2="225" stroke="#94A3B8" stroke-width="2"/>
+        <path d="M 62 205 L 98 178 L 130 158 L 168 122 L 208 78" stroke="#D97706" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon points="208,78 195,76 198,92 213,88" fill="#D97706"/>
+      </g>
+      <g filter="url(#hi-shadow)">
+        <rect x="180" y="135" width="22" height="55" fill="#9A3412" stroke="#7C2D12" stroke-width="2"/>
+        <circle cx="195" cy="128" r="9" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.2" opacity="0.85"/>
+        <circle cx="208" cy="108" r="11" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.2" opacity="0.8"/>
+        <circle cx="222" cy="86" r="13" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.2" opacity="0.7"/>
+        <path d="M 65 205 L 220 205 L 220 308 L 65 308 Z" fill="#FED7AA" stroke="#9A3412" stroke-width="2.5"/>
+        <path d="M 65 205 L 90 180 L 90 205 L 115 180 L 115 205 L 140 180 L 140 205 L 165 180 L 165 205 L 190 180 L 190 205 L 215 180" stroke="#9A3412" stroke-width="2.5" fill="#FB923C" stroke-linejoin="round"/>
+        <rect x="78" y="225" width="22" height="20" fill="#FFFFFF" stroke="#9A3412" stroke-width="1.5"/>
+        <rect x="108" y="225" width="22" height="20" fill="#FFFFFF" stroke="#9A3412" stroke-width="1.5"/>
+        <rect x="168" y="225" width="22" height="20" fill="#FFFFFF" stroke="#9A3412" stroke-width="1.5"/>
+        <rect x="198" y="225" width="22" height="20" fill="#FFFFFF" stroke="#9A3412" stroke-width="1.5"/>
+        <rect x="125" y="262" width="30" height="46" fill="#9A3412" stroke="#7C2D12" stroke-width="1.5"/>
+        <circle cx="148" cy="285" r="1.5" fill="#FCD34D"/>
+      </g>
+      <ellipse cx="142" cy="318" rx="84" ry="5" fill="#0F172A" opacity="0.10"/>
+    </svg>
+  `,
+
+  heroGovSpending: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="hg-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+      <g opacity="0.5" stroke="#FCD34D" stroke-width="3.5" stroke-linecap="round">
+        <line x1="140" y1="40" x2="140" y2="22"/>
+        <line x1="180" y1="52" x2="194" y2="38"/>
+        <line x1="100" y1="52" x2="86" y2="38"/>
+        <line x1="194" y1="85" x2="212" y2="85"/>
+        <line x1="86" y1="85" x2="68" y2="85"/>
+      </g>
+      <g filter="url(#hg-shadow)">
+        <circle cx="140" cy="85" r="34" fill="#FCD34D" stroke="#92400E" stroke-width="2.5"/>
+        <text x="140" y="99" font-size="36" font-weight="900" fill="#92400E" text-anchor="middle">£</text>
+      </g>
+      <g filter="url(#hg-shadow)">
+        <rect x="50" y="305" width="180" height="11" fill="#94A3B8" stroke="#475569" stroke-width="1.5"/>
+        <rect x="60" y="294" width="160" height="11" fill="#94A3B8" stroke="#475569" stroke-width="1.5"/>
+        <rect x="68" y="278" width="144" height="16" fill="#2563EB" stroke="#1E3A8A" stroke-width="2"/>
+        <rect x="80" y="195" width="16" height="83" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.8"/>
+        <rect x="108" y="195" width="16" height="83" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.8"/>
+        <rect x="156" y="195" width="16" height="83" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.8"/>
+        <rect x="184" y="195" width="16" height="83" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.8"/>
+        <rect x="74" y="186" width="28" height="11" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.5"/>
+        <rect x="102" y="186" width="28" height="11" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.5"/>
+        <rect x="150" y="186" width="28" height="11" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.5"/>
+        <rect x="178" y="186" width="28" height="11" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.5"/>
+        <rect x="62" y="176" width="156" height="13" fill="#2563EB" stroke="#1E3A8A" stroke-width="2"/>
+        <path d="M 62 176 L 140 132 L 218 176 Z" fill="#1E40AF" stroke="#1E3A8A" stroke-width="2.5" stroke-linejoin="round"/>
+      </g>
+      <ellipse cx="140" cy="324" rx="100" ry="5" fill="#0F172A" opacity="0.10"/>
+    </svg>
+  `,
+
+  heroNetTrade: `
+    <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <filter id="hn-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+      <g opacity="0.18">
+        <circle cx="140" cy="195" r="105" fill="#A78BFA" stroke="#5B21B6" stroke-width="2"/>
+        <line x1="35" y1="195" x2="245" y2="195" stroke="#5B21B6" stroke-width="1.5"/>
+        <ellipse cx="140" cy="195" rx="50" ry="105" fill="none" stroke="#5B21B6" stroke-width="1.5"/>
+      </g>
+      <g filter="url(#hn-shadow)">
+        <text x="68" y="120" font-size="22" font-weight="900" fill="#15803D">X</text>
+        <path d="M 92 110 L 200 110" stroke="#15803D" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="210,110 188,100 188,120 210,110" fill="#15803D" stroke="#15803D" stroke-width="2.5" stroke-linejoin="round"/>
+        <text x="115" y="103" font-size="11" font-weight="700" fill="#15803D" letter-spacing="0.5">exports out</text>
+      </g>
+      <g filter="url(#hn-shadow)">
+        <text x="210" y="180" font-size="22" font-weight="900" fill="#9F1239">M</text>
+        <path d="M 188 170 L 80 170" stroke="#9F1239" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="70,170 92,160 92,180 70,170" fill="#9F1239" stroke="#9F1239" stroke-width="2.5" stroke-linejoin="round"/>
+        <text x="108" y="163" font-size="11" font-weight="700" fill="#9F1239" letter-spacing="0.5">imports in</text>
+      </g>
+      <g filter="url(#hn-shadow)">
+        <rect x="92" y="232" width="20" height="20" fill="#EF4444" stroke="#991B1B" stroke-width="1.5"/>
+        <rect x="115" y="232" width="20" height="20" fill="#FCD34D" stroke="#92400E" stroke-width="1.5"/>
+        <rect x="138" y="232" width="20" height="20" fill="#10B981" stroke="#047857" stroke-width="1.5"/>
+        <rect x="161" y="232" width="20" height="20" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.5"/>
+        <rect x="115" y="212" width="32" height="20" fill="#FFFFFF" stroke="#5B21B6" stroke-width="1.5"/>
+        <rect x="123" y="217" width="6" height="9" fill="#5B21B6"/>
+        <rect x="134" y="217" width="6" height="9" fill="#5B21B6"/>
+        <path d="M 75 252 L 205 252 L 195 280 L 85 280 Z" fill="#7C3AED" stroke="#5B21B6" stroke-width="2.5" stroke-linejoin="round"/>
+        <rect x="80" y="258" width="3" height="6" fill="#FFFFFF" opacity="0.7"/>
+        <rect x="120" y="258" width="3" height="6" fill="#FFFFFF" opacity="0.7"/>
+        <rect x="160" y="258" width="3" height="6" fill="#FFFFFF" opacity="0.7"/>
+        <rect x="195" y="258" width="3" height="6" fill="#FFFFFF" opacity="0.7"/>
+      </g>
+      <g opacity="0.45" stroke="#7C3AED" stroke-width="1.5" fill="none" stroke-linecap="round">
+        <path d="M 55 300 Q 75 294 95 300 T 135 300 T 175 300 T 215 300 T 235 300"/>
+        <path d="M 65 314 Q 85 308 105 314 T 145 314 T 185 314 T 225 314"/>
+      </g>
+    </svg>
+  `,
+
   /* Shopping basket illustration (legacy) */
   basket: `
     <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">

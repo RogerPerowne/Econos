@@ -27,6 +27,52 @@ window.EconosPdf = (function () {
   function toneColor(tone) { return C[tone] || C.blue; }
   function s(v)            { return v || ''; }
 
+  /* ---- SVG diagram helpers ---- */
+
+  function getIcon(key) {
+    return (window.ECONOS_ICONS && window.ECONOS_ICONS[key]) || '';
+  }
+
+  /* Make every hidden layer group visible (final-state render for interactive diagrams) */
+  function makeLayersVisible(svgStr) {
+    return svgStr.replace(/style="display:none"/g, 'style=""');
+  }
+
+  /* Wrap an SVG key as an inline printable image */
+  function embedStaticDiagram(key, caption) {
+    var svg = getIcon(key);
+    if (!svg) return '';
+    svg = svg.replace(/<svg /, '<svg style="width:100%;max-width:540px;height:auto;display:block;margin:0 auto;" ');
+    return '<div style="text-align:center;margin:12px 0 18px;">' + svg +
+      (caption ? '<div style="font-size:11px;color:' + C.slate + ';text-align:center;margin-top:6px;font-style:italic;">' + s(caption) + '</div>' : '') +
+      '</div>';
+  }
+
+  /* Embed an interactiveDiagram block with all layers shown (final state) */
+  function embedInteractiveDiagram(id) {
+    if (!id) return '';
+    var svg = getIcon(id.svgKey);
+    if (!svg) return renderFallback();
+    svg = makeLayersVisible(svg);
+    svg = svg.replace(/<svg /, '<svg style="width:100%;max-width:540px;height:auto;display:block;margin:0 auto;" ');
+
+    var views = id.views || [];
+    var lastView = views[views.length - 1] || {};
+    var col = toneColor(lastView.tone || 'blue');
+
+    var viewHtml = '';
+    if (lastView.head || lastView.body || lastView.analysis) {
+      viewHtml = '<div style="margin-top:10px;border-left:4px solid ' + col + ';padding:8px 0 8px 14px;">' +
+        (lastView.head ? '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:4px;">' + s(lastView.head) + '</div>' : '') +
+        (lastView.body ? '<div style="font-size:12px;line-height:1.6;color:' + C.ink + ';margin-bottom:4px;">' + s(lastView.body) + '</div>' : '') +
+        (lastView.analysis ? '<div style="font-size:12px;line-height:1.55;color:' + C.slate + ';font-style:italic;">' + s(lastView.analysis) + '</div>' : '') +
+        '</div>';
+    }
+
+    var label = (id.label || id.emoji) ? secHead(id.emoji || '📊', id.label || 'Diagram') : '';
+    return label + '<div style="text-align:center;margin:8px 0;">' + svg + '</div>' + viewHtml;
+  }
+
   /* Dominant accent colour for each card */
   function cardAccent(c) {
     if (c.tone) return toneColor(c.tone);
@@ -558,9 +604,11 @@ window.EconosPdf = (function () {
 
   function renderGeneric(c) {
     var intro = c.intro ? '<div style="font-size:13px;line-height:1.65;color:' + C.slate + ';font-style:italic;border-left:4px solid ' + C.blue + ';padding:6px 0 6px 14px;margin-bottom:18px;">💡 ' + s(c.intro) + '</div>' : '';
-    var diagramNote = c.diagramKey ? '<div style="font-size:12px;color:' + C.slate + ';border:1.5px dashed ' + C.rule + ';border-radius:8px;padding:10px 14px;margin-bottom:18px;font-style:italic;">📊 Interactive diagram available in the app.</div>' : '';
+    var diagramHtml = c.interactiveDiagram ? embedInteractiveDiagram(c.interactiveDiagram)
+      : (c.visualKey ? embedStaticDiagram(c.visualKey, c.visualCaption)
+      : (c.diagramKey ? embedStaticDiagram(c.diagramKey, c.diagramCaption) : ''));
     return intro +
-      diagramNote +
+      diagramHtml +
       renderBranchesBlock(c.branches) +
       renderBodyBlock(c.body) +
       renderCausesGrid(c.causes && Array.isArray(c.causes) && c.causes.length && c.causes[0] && c.causes[0].head ? c.causes : null) +
@@ -568,6 +616,93 @@ window.EconosPdf = (function () {
       renderRowsTable(c) +
       renderLeftRight(c) +
       renderKeyTerms(c.keyTerms) +
+      examEdgeBlock(c.examEdge);
+  }
+
+  function renderAdInteractivePdf(c) {
+    /* Tip block */
+    var tip = '';
+    if (c.tip) {
+      var tipObj = typeof c.tip === 'object' ? c.tip : { text: c.tip };
+      var tipCol = toneColor(tipObj.tone || 'amber');
+      tip = '<div style="border-left:4px solid ' + tipCol + ';padding:8px 14px;border-radius:4px;margin-bottom:16px;font-size:12px;color:' + C.ink + ';background:' + tipCol + '18;">' +
+        (tipObj.icon ? tipObj.icon + ' ' : '') + s(tipObj.text) + '</div>';
+    }
+
+    /* Causes — rendered before or after the diagram depending on causesFirst */
+    var causesHtml = c.causes && Array.isArray(c.causes) && c.causes.length && c.causes[0] && c.causes[0].head
+      ? (c.causesLabel ? secHead(c.causesEmoji || '🔍', c.causesLabel) : secHead('🔗', 'Key mechanisms')) +
+        '<div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;">' +
+        c.causes.map(function (item, i) {
+          var col = item.tone ? toneColor(item.tone) : TONES[i % TONES.length];
+          return '<div style="flex:1;min-width:200px;border-top:4px solid ' + col + ';padding:10px 0 0;">' +
+            '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' +
+            (item.icon ? item.icon + ' ' : '') + s(item.head) + '</div>' +
+            '<div style="font-size:12px;line-height:1.65;color:' + C.ink + ';">' + s(item.body) + '</div>' +
+            '</div>';
+        }).join('') + '</div>'
+      : '';
+
+    /* Flow (3-step) */
+    var flowHtml = '';
+    if (c.flow && c.flow.length) {
+      flowHtml = secHead(c.flowEmoji || '💡', c.flowTitle || 'The big idea') +
+        '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;">' +
+        c.flow.map(function (f) {
+          var col = toneColor(f.tone || 'blue');
+          return '<div style="flex:1;min-width:150px;border-left:4px solid ' + col + ';padding:6px 0 6px 12px;">' +
+            '<div style="font-size:18px;margin-bottom:4px;">' + s(f.icon) + '</div>' +
+            '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:3px;">' + s(f.title) + '</div>' +
+            '<div style="font-size:12px;color:' + C.slate + ';line-height:1.55;">' + s(f.sub) + '</div>' +
+            '</div>';
+        }).join('') + '</div>';
+    }
+
+    /* Second causes block (causes2) */
+    var causes2Html = '';
+    if (c.causes2 && c.causes2.length) {
+      causes2Html = secHead(c.causes2Emoji || '🩺', c.causes2Label || 'Treatment') +
+        '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;">' +
+        c.causes2.map(function (item, i) {
+          var col = item.tone ? toneColor(item.tone) : TONES[i % TONES.length];
+          return '<div style="flex:1;min-width:160px;border-left:4px solid ' + col + ';padding:6px 0 6px 12px;">' +
+            '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:4px;">' +
+            (item.icon ? item.icon + ' ' : '') + s(item.head) + '</div>' +
+            '<div style="font-size:12px;line-height:1.6;color:' + C.ink + ';">' + s(item.body) + '</div>' +
+            '</div>';
+        }).join('') + '</div>';
+    }
+
+    /* Pair (left + right) */
+    var pairHtml = '';
+    if (c.left && c.right) {
+      pairHtml = secHead(c.pairEmoji || '🛡️', c.pairLabel || 'Policy response') +
+        renderLeftRight(c);
+    }
+
+    /* Conclusion */
+    var conclusionHtml = '';
+    if (c.conclusion) {
+      var conc = c.conclusion;
+      conclusionHtml = calloutBlock({
+        color: C.navy,
+        label: conc.title || 'Conclusion',
+        html: s(conc.text)
+      });
+    }
+
+    var diagramHtml = embedInteractiveDiagram(c.interactiveDiagram);
+    var firstCauses = c.causesFirst ? causesHtml : '';
+    var laterCauses  = c.causesFirst ? '' : causesHtml;
+
+    return tip +
+      firstCauses +
+      diagramHtml +
+      laterCauses +
+      flowHtml +
+      causes2Html +
+      pairHtml +
+      conclusionHtml +
       examEdgeBlock(c.examEdge);
   }
 
@@ -594,7 +729,7 @@ window.EconosPdf = (function () {
       case 'deflation':          return renderDeflation(c);
       case 'mechanisms':         return renderMechanisms(c);
       case 'paired':             return renderPaired(c);
-      case 'ad-interactive':     return renderFallback();
+      case 'ad-interactive':     return renderAdInteractivePdf(c);
       case 'transmission-chain': return renderFallback();
       case 'elasticity-explorer':return renderElasticityFallback(c);
       case 'worked-example':     return renderWorkedExample(c);

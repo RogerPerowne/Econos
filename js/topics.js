@@ -216,13 +216,6 @@ window.ECONOS_TOPICS = [
     color: '#10b981',
     available: { learn: true, link: false, land: false }
   },
-  {
-    id: 'bop_t2',
-    name: 'Balance of Payments',
-    sub: 'Current account, deficit causes and correction',
-    color: '#6366f1',
-    available: { learn: true, link: false, land: false }
-  },
   /* Section 2: Aggregate Demand */
   {
     id: 'ad',

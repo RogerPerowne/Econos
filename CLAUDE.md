@@ -67,6 +67,21 @@ The aliasing layer in `js/topic-loader.js` (`PAGE_MAP`) is kept because **per-to
 - `npm run test:e2e` must pass (18 Playwright tests across desktop + mobile + a11y).
 - `pre-commit` runs the lint; `pre-push` runs the e2e suite. Override with `--no-verify` or `ECONOS_SKIP_E2E=1` only when you genuinely know better.
 
+## Service worker cache — BUMP IT when you change cache-first assets
+
+`sw.js` caches `js/app.js`, `js/icons.js`, `styles.css` and other static assets
+**cache-first**. Topic data files under `js/data/...` are network-first and refresh
+themselves, but app.js / icons.js / styles.css do not — users on the old cache
+keep seeing stale renderers and SVGs even after a hard refresh, because the SW
+intercepts requests before the browser cache.
+
+**Whenever you change `js/app.js`, `js/icons.js`, or `styles.css`, bump
+`CACHE_NAME` in `sw.js`** (e.g. `econos-v10` → `econos-v11`). The activate
+handler deletes any cache that isn't the current one, forcing a full refresh.
+
+You do **not** need to bump for changes to topic data files (`js/data/<topic>/...`)
+— those are network-first.
+
 ## Adding a new topic
 
 1. Create `js/data/<topic-id>/` with at minimum `data-topic.js`.

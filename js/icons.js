@@ -1015,32 +1015,31 @@ window.ECONOS_ICONS = {
 
   /* Consumption function — C = a + bY line graph (Consumption Card 2) */
   consumptionFunction: `
-    <svg viewBox="0 0 480 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 560 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- axes -->
-      <line x1="80" y1="40"  x2="80"  y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="80" y1="280" x2="440" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-      <text x="80"  y="30"  font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">C</text>
-      <text x="450" y="286" font-size="16" font-weight="800" fill="#0F172A">Y</text>
-      <text x="72"  y="296" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
+      <line x1="160" y1="40"  x2="160" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="160" y1="280" x2="520" y2="280" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <text x="160" y="30"  font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">C</text>
+      <text x="530" y="286" font-size="16" font-weight="800" fill="#0F172A">Y</text>
+      <text x="152" y="296" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
 
-      <!-- C = a + bY line: intercept at (80, 200), slope rising to (420, 80) -->
-      <line x1="80" y1="200" x2="420" y2="80" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- C = a + bY line: intercept at (160, 200), slope rising to (500, 80) -->
+      <line x1="160" y1="200" x2="500" y2="80" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
 
       <!-- intercept dot -->
-      <circle cx="80" cy="200" r="5.5" fill="#2563EB"/>
+      <circle cx="160" cy="200" r="5.5" fill="#2563EB"/>
 
       <!-- slope triangle near top right showing b = MPC -->
-      <line x1="300" y1="138" x2="360" y2="138" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <line x1="360" y1="138" x2="360" y2="117" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
-      <text x="378" y="132" font-size="14" font-style="italic" font-weight="700" fill="#0F172A">b</text>
-      <text x="392" y="132" font-size="13" font-weight="700" fill="#0F172A">= MPC</text>
+      <line x1="380" y1="138" x2="440" y2="138" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <line x1="440" y1="138" x2="440" y2="117" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <text x="452" y="132" font-size="14" font-style="italic" font-weight="700" fill="#0F172A">b</text>
+      <text x="466" y="132" font-size="13" font-weight="700" fill="#0F172A">= MPC</text>
 
       <!-- autonomous consumption brace and label on y-axis -->
-      <path d="M 56 200 Q 50 200 50 215 L 50 268 Q 50 280 56 280" fill="none" stroke="#475569" stroke-width="1.5"/>
-      <path d="M 50 240 Q 44 240 44 240" fill="none" stroke="#475569" stroke-width="1.5"/>
-      <text x="36" y="232" font-size="12" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="end">a</text>
-      <text x="36" y="248" font-size="11" font-weight="600" fill="#475569" text-anchor="end">autonomous</text>
-      <text x="36" y="262" font-size="11" font-weight="600" fill="#475569" text-anchor="end">consumption</text>
+      <path d="M 136 200 Q 130 200 130 215 L 130 268 Q 130 280 136 280" fill="none" stroke="#475569" stroke-width="1.5"/>
+      <text x="120" y="232" font-size="12" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="end">a —</text>
+      <text x="120" y="248" font-size="11" font-weight="600" fill="#475569" text-anchor="end">autonomous</text>
+      <text x="120" y="262" font-size="11" font-weight="600" fill="#475569" text-anchor="end">consumption</text>
     </svg>
   `,
 

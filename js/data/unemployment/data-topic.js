@@ -1,6 +1,6 @@
 /* ============================================================
    ECONOS — content data for unemployment
-   7 cards · revision-tight · exam-edge gems flagged
+   8 cards · revision-tight · exam-edge gems flagged
    Edexcel Theme 2.1.3
    ============================================================ */
 
@@ -31,67 +31,113 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — Framing: Three labour-market states ----- */
+    /* ----- CARD 1 — Three labour-market states ----- */
     {
       id: 'classification',
-      template: 'framing',
-      diagramKey: 'labourClassification',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Three labour-market states',
-      lede: "The working-age population splits into three buckets. Mixing them up is the most-marked-down error in labour-market questions.",
-      branches: [
-        { tone: 'green',  label: 'Employed',                sub: '<strong>Done at least 1 hour of paid work</strong> in the last week, OR temporarily away from a job. Includes part-time, zero-hours, and self-employed.' },
-        { tone: 'amber',  label: 'Unemployed',              sub: '<strong>Not in work BUT actively seeking</strong> and able to start within 2 weeks. Discouraged workers are NOT here — they\'re inactive.' },
-        { tone: 'blue',   label: 'Economically Inactive',   sub: '<strong>Not working AND not seeking work.</strong> Includes students, retirees, the long-term sick, carers, discouraged workers, and housewives/husbands.' }
-      ],
-      examEdge: {
-        title: "The 'inactive' trap",
-        text: 'A* answers correctly classify <strong>discouraged workers</strong>, <strong>long-term sick</strong>, and <strong>students</strong> as inactive — not unemployed. The ILO definition is strict: actively seeking AND able to start in two weeks.'
-      },
-      keyTakeaway: {
-        title: 'Why this matters',
-        text: "If the unemployment rate falls but inactivity rises, that's not progress — it's people giving up. Top answers watch BOTH numbers, not just the headline rate."
-      }
-    },
+      lede: 'The labour market is not just about jobs. People are either employed, unemployed, or economically inactive. Getting this distinction right is essential for diagnosis and policy.',
+      ledeStyle: 'plain',
 
-    /* ----- CARD 2 — Measuring unemployment: ILO vs Claimant Count ----- */
-    {
-      id: 'measurement',
-      template: 'paired',
-      stepLabel: 'Learn: Step 2 of 8',
-      title: 'Measuring unemployment',
-      lede: "Two measures, different stories. The gap between them is the gem most students miss.",
-      pairs: [
+      tip: { icon: '✅', tone: 'green', text: 'Do not confuse unemployment with inactivity – this is an easy exam distinction.' },
+
+      causesFirst: true,
+      causesLabel: 'THE THREE STATES',
+      causesEmoji: '👥',
+      causes: [
         {
-          tone: 'blue',
-          label: 'ILO / Labour Force Survey',
-          drivers: [
-            'Monthly survey of ~40,000 UK households',
-            'International standard — comparable across countries',
-            'Captures all jobseekers, including those not claiming',
-            'Usually HIGHER than the claimant count'
-          ],
-          example: '<strong>UK LFS rate:</strong> typically ~4-5% in recent years. Survey-based, so subject to sampling error (~0.3pp margin).'
+          tone: 'green',
+          icon: '💼',
+          head: 'Employed',
+          body: 'People aged 16+ who did paid work in the reference week, or were temporarily away from a job.',
+          example: { label: 'Examples', text: 'Full-time worker · part-time worker · self-employed' }
+        },
+        {
+          tone: 'amber',
+          icon: '🔍',
+          head: 'Unemployed',
+          body: 'Not in work but actively seeking and available to start within 2 weeks.',
+          example: { label: 'Examples', text: 'Graduate job seeker · recently redundant worker' }
         },
         {
           tone: 'purple',
-          label: 'Claimant Count',
-          drivers: [
-            'Counts those claiming Jobseekers Allowance / Universal Credit',
-            'Administrative data — no sampling error',
-            'Excludes those over 18 in education, partner-earning households, voluntary unemployed',
-            'Usually LOWER than the ILO measure'
-          ],
-          example: "<strong>2020 COVID shock:</strong> claimant count <em>doubled</em> to 2.5m as eligibility expanded. The gap between ILO and claimant count narrowed dramatically."
+          icon: '👤',
+          head: 'Economically<br>inactive',
+          body: 'Not in work and not actively seeking or available for work.',
+          example: { label: 'Examples', text: 'Full-time student not looking · retiree · long-term carer' }
         }
       ],
-      examEdge: {
-        title: 'Cite the gap',
-        text: "A* answers reference the gap between ILO and claimant count. The claimant count is <strong>politically convenient</strong> (lower number) but the ILO is the international standard. Showing you know which is which signals genuine literacy."
+
+      flowTitle: 'WHY THE DISTINCTION MATTERS',
+      flowEmoji: '📊',
+      flow: [
+        { icon: '👥', title: 'Labour force',       sub: '= employed + unemployed' },
+        { icon: '📊', title: 'Participation rate',  sub: '= labour force ÷ working-age population' },
+        { icon: '📈', title: 'Unemployment rate',   sub: '= unemployed ÷ labour force' }
+      ],
+
+      conclusion: {
+        title: 'The inactive trap',
+        text: 'If many people leave the labour force, the unemployment rate can fall even when the jobs picture has not improved. A healthy labour market needs people in work — watch participation <em>and</em> unemployment, not just the headline rate.'
       },
-      policy: {
-        title: 'Why governments care',
-        text: 'Different measures support different narratives. Governments often quote whichever number flatters their record. Top answers acknowledge the limitations of both — claimant count underestimates; ILO has sampling error.'
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Always distinguish <strong>unemployed</strong> from <strong>economically inactive</strong>. Use participation-rate evidence when relevant — it gives a fuller picture of the labour market.'
+      }
+    },
+
+    /* ----- CARD 2 — Measuring unemployment ----- */
+    {
+      id: 'measurement',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 2 of 8',
+      title: 'Measuring unemployment',
+      lede: 'Two official measures tell slightly different stories.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '✅', tone: 'green', text: 'The gap between measures is evidence of measurement difficulty.' },
+
+      pairFirst: true,
+      pairLabel: 'THE TWO MEASURES',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'blue',
+        icon: '📄',
+        iconStyle: 'circle',
+        label: 'Claimant Count',
+        text: '<p style="font-size:13.5px;color:#0B1426;margin:0 0 10px;">People claiming unemployment-related benefits.</p><ul style="margin:0;padding:0 0 0 1.2em;font-size:13px;color:#0B1426;line-height:1.7;"><li><strong>Scope:</strong> narrow</li><li><strong>Frequency:</strong> monthly</li><li><strong>Influenced by:</strong> eligibility rules and sanctions</li><li><strong>Limitation:</strong> easy to game</li></ul>'
+      },
+      right: {
+        tone: 'amber',
+        icon: '👥',
+        iconStyle: 'circle',
+        label: 'ILO / Labour Force Survey',
+        text: '<p style="font-size:13.5px;color:#0B1426;margin:0 0 10px;">Surveyed households. Unemployed if without a job, available and actively seeking.</p><ul style="margin:0;padding:0 0 0 1.2em;font-size:13px;color:#0B1426;line-height:1.7;"><li><strong>Scope:</strong> broader</li><li><strong>Frequency:</strong> quarterly</li><li><strong>Strength:</strong> internationally comparable</li><li><strong>Role:</strong> headline rate</li></ul>'
+      },
+
+      comparisonTable: {
+        title: 'MEASURES COMPARED',
+        emoji: '📋',
+        columns: ['Claimant Count', 'ILO / Labour Force Survey'],
+        columnTones: ['blue', 'amber'],
+        rows: [
+          { label: 'Scope',      values: ['Benefit claimants only',             'All people in the labour force'] },
+          { label: 'Strengths',  values: ['Timely; monthly data',               'Comprehensive; internationally comparable'] },
+          { label: 'Weaknesses', values: ['Affected by rules and behaviour',    'Smaller sample; subject to sampling error'] },
+          { label: 'Best use',   values: ['Short-term benefit claimant trends', 'Headline unemployment rate and comparisons'] }
+        ]
+      },
+
+      conclusion: {
+        title: 'They do not always match',
+        text: 'Different definitions and coverage mean the two measures often diverge. Policy changes can move the Claimant Count without changing real unemployment. Use both measures to build a fuller picture.'
+      },
+
+      examEdge: {
+        title: 'Exam move',
+        text: 'A rise in the Claimant Count may overstate or understate <em>labour-market weakness</em> depending on benefit eligibility rules. A* answers cite the gap between the two measures as evidence of measurement difficulty.'
       }
     },
 
@@ -101,209 +147,376 @@ window.ECONOS_TOPIC = {
       template: 'mechanisms',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'The five types of unemployment',
-      lede: "Each type has a different cause — and therefore a different cure. Pairing them up is the analytical move examiners reward.",
+      lede: "Not all unemployment is the same. Four of the five types are mainly supply-side — they stem from frictions or rigidities in the labour market. Only cyclical unemployment is demand-side, caused by weak aggregate demand.",
       mechanisms: [
         {
           num: '1',
           tone: 'blue',
-          title: 'Frictional (supply-side)',
-          text: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and time-lag in job search. Always present — even at "full employment".'
+          title: 'Frictional',
+          text: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and job-search time. Always present — even at "full employment".<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> graduate searching after university.</span>'
         },
         {
           num: '2',
-          tone: 'green',
-          title: 'Structural (supply-side)',
-          text: '<strong>Skills mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term — workers need retraining or relocation.'
+          tone: 'amber',
+          title: 'Structural',
+          text: '<strong>Skills or location mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term — workers need retraining or relocation.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> ex-miners in South Wales.</span>'
         },
         {
           num: '3',
-          tone: 'amber',
-          title: 'Seasonal (supply-side)',
-          text: 'Predictable variation in demand for labour. Fruit pickers, tourism workers, Christmas retail. Short-term and cyclical within the year.'
+          tone: 'purple',
+          title: 'Seasonal',
+          text: 'Predictable variation in labour demand at different times of year. Short-term and recurring within the year.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> ski instructors in summer.</span>'
         },
         {
           num: '4',
-          tone: 'rose',
+          tone: 'green',
           title: 'Real-wage (classical)',
-          text: 'Wages set <strong>above</strong> the market-clearing level — by unions, minimum wage, or labour rigidities. Excess supply of labour at that wage.'
+          text: 'Wages held <strong>above equilibrium</strong> by unions, minimum wage, or contracts — creating excess labour supply at that wage.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> low-skilled workers priced out of jobs.</span>'
+        },
+        {
+          num: '5',
+          tone: 'rose',
+          title: 'Cyclical (demand-deficient)',
+          text: 'Caused by <strong>falling aggregate demand</strong> — firms need fewer workers when output falls. The only demand-side type.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> recession layoffs across most sectors.</span>'
         }
       ],
       examEdge: {
-        title: 'Add cyclical as the fifth',
-        text: 'A 5th type — <strong>cyclical unemployment</strong> — comes from <em>demand-side</em> shocks (the big one, covered on Card 5). The first four are supply-side; cyclical is demand-side. That distinction is the foundation of policy choice.'
+        title: 'Classify before you cure',
+        text: 'Four types are <strong>supply-side</strong> — frictional, structural, seasonal, real-wage. Only <strong>cyclical</strong> is demand-side. Using fiscal/monetary stimulus on a supply-side problem is a classic essay error. Name the type first, then pick the toolkit.'
       },
       connection: {
-        title: 'Why this matters',
-        text: 'Each type has different DURATION and different CURE. Frictional is short and self-correcting; structural is long and needs retraining; cyclical is medium-term and needs demand stimulus. Mixing them up is a classic essay error.'
+        title: 'Supply-side vs demand-side',
+        text: '<strong>Supply-side (4 types):</strong> Frictional · Structural · Seasonal · Real-wage — require supply-side policy (retraining, job-matching, labour market reform).<br><strong>Demand-side (1 type):</strong> Cyclical — requires demand stimulus (fiscal/monetary). Seasonal and frictional exist even in a healthy economy.'
       }
     },
 
     /* ----- CARD 4 — Diagnose the type ----- */
     {
       id: 'diagnose',
-      template: 'diagnose',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Diagnose the type',
-      lede: 'Identify the type from the symptoms. Get this right and your policy answer writes itself.',
-      table: {
-        headers: ['Type', 'Duration', 'Market signal', 'Policy response'],
-        rows: [
-          ['Frictional', 'Short',    'Job search delay',      'Improve information'],
-          ['Structural', 'Long',     'Skills mismatch',       'Retraining / mobility'],
-          ['Seasonal',   'Short',    'Predictable demand cycle', 'Diversification'],
-          ['Real-wage',  'Persistent', 'Wage rigidity',       'Improve labour flexibility'],
-          ['Cyclical',   'Medium',   'AD shock',              'Fiscal / monetary stimulus']
-        ]
+      lede: 'Examiners reward correct diagnosis before policy. Identifying the right type of unemployment shows you understand the underlying mechanism — and that determines the right solution.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '🔒', tone: 'green', text: 'The clue is in the mechanism, not just the symptom of joblessness.' },
+
+      causesFirst: true,
+      causesLabel: 'CLASSIFY THE CASE',
+      causesEmoji: '🗂️',
+      causes: [
+        {
+          tone: 'blue',
+          icon: '🎓',
+          head: 'Frictional',
+          body: 'Graduates between jobs after finishing university.',
+          example: { label: 'Type', text: 'Between jobs — job-search lag, not a structural mismatch.' }
+        },
+        {
+          tone: 'amber',
+          icon: '⛏️',
+          head: 'Structural',
+          body: 'Ex-miners in Wales whose skills no longer match local jobs.',
+          example: { label: 'Type', text: 'Skills mismatch — deindustrialisation created a permanent gap.' }
+        },
+        {
+          tone: 'purple',
+          icon: '⛷️',
+          head: 'Seasonal',
+          body: 'Ski instructors with little work in the summer.',
+          example: { label: 'Type', text: 'Time of year — demand for labour falls predictably off-season.' }
+        },
+        {
+          tone: 'rose',
+          icon: '📉',
+          head: 'Cyclical',
+          body: 'A recession cuts spending and car plants lay off workers.',
+          example: { label: 'Type', text: 'Weak AD — firms need fewer workers when output falls.' }
+        },
+        {
+          tone: 'green',
+          icon: '⚖️',
+          head: 'Real-wage',
+          body: 'A wage floor above equilibrium leaves some low-skilled workers unemployed.',
+          example: { label: 'Type', text: 'Wage rigidity — price of labour held above market-clearing level.' }
+        },
+        {
+          tone: 'purple',
+          icon: '🏨',
+          head: 'Seasonal',
+          body: 'Coastal hotels cut staff every winter when tourism falls.',
+          example: { label: 'Type', text: 'Time of year — predictable seasonal demand cycle.' }
+        }
+      ],
+
+      flowTitle: 'FAST TEST',
+      flowEmoji: '⚡',
+      flow: [
+        { icon: '🚶', title: 'Between jobs?',  sub: '→ Frictional' },
+        { icon: '🧩', title: 'Mismatch?',      sub: '→ Structural' },
+        { icon: '📅', title: 'Time of year?',  sub: '→ Seasonal' },
+        { icon: '📉', title: 'Weak demand?',   sub: '→ Cyclical' }
+      ],
+
+      conclusion: {
+        title: 'Watch out',
+        text: 'Structural unemployment can persist even when demand recovers — the skills gap doesn\'t close just because firms are hiring. Demand stimulus helps cyclical, not structural.'
       },
-      scenarios: {
-        title: 'Diagnose these',
-        items: [
-          {
-            label: 'A',
-            text: 'Steelworkers laid off in 2010s as the UK industry shrinks; many lack tech skills demanded by growing sectors.',
-            answer: 'Structural — skills mismatch needs retraining, not stimulus',
-            tone: 'green'
-          },
-          {
-            label: 'B',
-            text: 'UK unemployment rises from 5% to 8% in 2009 as GDP falls 4%; mass layoffs across most sectors.',
-            answer: 'Cyclical — AD-driven, fiscal/monetary stimulus appropriate',
-            tone: 'amber'
-          },
-          {
-            label: 'C',
-            text: 'Fruit pickers in Lincolnshire out of work November through February every year.',
-            answer: 'Seasonal — diversification, off-season retraining',
-            tone: 'purple'
-          }
-        ]
-      },
+
       examEdge: {
-        title: 'Name the type first',
-        text: 'Open every unemployment essay with: <em>"This is primarily [type] unemployment because…"</em> Naming the type before discussing policy is the analytical step that lifts answers from B to A*.'
+        title: 'Exam edge',
+        text: "Open every unemployment essay with: <em>\"This is primarily [type] unemployment because…\"</em> Naming the type before discussing policy is the analytical step that lifts answers from B to A*."
       }
     },
 
-    /* ----- CARD 5 — Cyclical unemployment & labour as derived demand ----- */
+    /* ----- CARD 5 — Cyclical unemployment & derived demand ----- */
     {
       id: 'cyclical',
       template: 'ad-interactive',
       diagramKey: 'adAsRecession',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Cyclical unemployment & derived demand',
-      lede: "The big one. Labour demand is DERIVED from output demand. When AD falls, labour demand falls — and wages don't fix it automatically.",
+      lede: 'Labour is a derived demand — firms hire workers because they expect to sell output. When AD falls, firms need fewer workers.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '🔒', tone: 'green', text: 'When aggregate demand falls, firms need fewer workers.' },
+
       steps: [
         {
           key: 'base',
-          label: 'Full employment',
-          text: 'AD meets AS at full employment output <strong>Y<sub>FE</sub></strong>. Labour markets clear — unemployment is at the natural rate (only frictional + structural + seasonal). The price level is P₁.'
+          label: 'Base equilibrium',
+          text: 'AD meets AS at full-employment output <strong>Y<sub>FE</sub></strong>. Labour markets clear — unemployment is at the natural rate (frictional + structural + seasonal only). Price level is P₁.'
         },
         {
           key: 'extension',
-          label: 'AD falls (recession)',
-          text: 'AD shifts LEFT — fall in C, I, G or (X−M). Demand for goods falls → demand for LABOUR falls (it\'s derived). Output drops to Y₁, below Y<sub>FE</sub>. <strong>The gap (Y<sub>FE</sub> − Y₁) is the cyclical unemployment.</strong>'
+          label: 'AD shifts left',
+          text: 'AD shifts <strong>LEFT</strong> — fall in C, I, G or (X−M). Demand for goods falls, so demand for labour falls too: <em>labour is a derived demand</em>. Output drops to Y₁, below Y<sub>FE</sub>. The gap (Y<sub>FE</sub>−Y₁) is the cyclical unemployment.'
         },
         {
           key: 'shift',
-          label: "Why wages don't fix it (Keynes)",
-          text: 'Classical theory says wages should fall, re-clearing the market. <strong>Keynes disagreed:</strong> nominal wages are STICKY downward. Unions resist cuts; contracts are fixed; workers refuse pay cuts. So the unemployment <em>persists</em> — and fiscal/monetary stimulus is needed to shift AD back.'
+          label: 'Labour demand falls',
+          text: '<strong>Wages are sticky downward</strong> (Keynes) — unions resist cuts, contracts are fixed, workers refuse pay reductions. So the labour market doesn\'t self-correct. Cyclical unemployment <em>persists</em> until AD recovers. Fiscal or monetary stimulus is needed.'
         }
       ],
-      examEdge: {
-        title: 'Labour is a DERIVED demand',
-        text: "A* answers state this explicitly: <em>'Because labour is a derived demand, a fall in AD reduces demand for labour and causes cyclical unemployment.'</em> Combined with <strong>wage stickiness</strong>, this is the textbook Keynesian explanation."
-      }
-    },
 
-    /* ----- CARD 6 — Policy responses: not all unemployment is equal ----- */
-    {
-      id: 'policy',
-      template: 'paired',
-      stepLabel: 'Learn: Step 6 of 8',
-      title: 'Different causes, different cures',
-      lede: "The matrix that organises every unemployment policy essay. Match the toolkit to the type — using the wrong one is an A* trap.",
-      pairs: [
-        {
-          tone: 'green',
-          label: 'Supply-side toolkit',
-          drivers: [
-            'Education & retraining — for STRUCTURAL',
-            'Job search support, info — for FRICTIONAL',
-            'Mobility grants, housing — for STRUCTURAL',
-            'NMW reform, union legislation — for REAL-WAGE',
-            'Diversification incentives — for SEASONAL'
-          ],
-          example: '<strong>Restart Scheme (2021):</strong> long-term unemployed get intensive support — targets structural and frictional. <strong>Apprenticeship Levy (2017):</strong> tackles structural skills gaps.'
-        },
-        {
-          tone: 'blue',
-          label: 'Demand-side toolkit',
-          drivers: [
-            'Fiscal stimulus: ↑G or ↓T to lift AD',
-            'Monetary loosening: ↓ interest rates → ↑C, ↑I',
-            'Both shift AD right — output recovers, jobs return',
-            'Targets CYCLICAL unemployment only'
-          ],
-          example: '<strong>2009 stimulus:</strong> BoE cut rates to 0.5%, QE began. Combined with fiscal stimulus, helped recovery. <strong>2020 furlough scheme:</strong> direct wage subsidies prevented mass unemployment.'
-        }
+      flowTitle: 'THE EMPLOYMENT CHAIN',
+      flowEmoji: '🔗',
+      flow: [
+        { icon: '📉', title: 'AD falls',                sub: 'C, I, G or X−M drops' },
+        { icon: '🏭', title: 'Output falls',            sub: 'firms produce less' },
+        { icon: '✂️', title: 'Firms cut production',    sub: 'less labour needed' },
+        { icon: '👥', title: 'Labour demand falls',     sub: 'derived demand effect' },
+        { icon: '📊', title: 'Unemployment rises',      sub: 'cyclical unemployment' }
       ],
-      examEdge: {
-        title: 'Wrong toolkit, wrong answer',
-        text: 'Using <strong>fiscal stimulus to fix structural unemployment</strong> is a classic error. Stimulus raises AD but the unemployed lack the SKILLS for the new jobs — so inflation rises without unemployment falling. A* answers match cure to cause.'
-      },
-      policy: {
-        title: 'The political reality',
-        text: 'Politicians prefer demand-side policies (visible, fast) over supply-side (slow, expensive). But for structural unemployment, only supply-side works in the long run. Recognising this trade-off is itself an analytical move.'
-      }
-    },
 
-    /* ----- CARD 7 — Consequences & hysteresis ----- */
-    {
-      id: 'consequences',
-      template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 8',
-      title: 'Consequences: not just lost output',
-      lede: "Unemployment isn't just an economic loss. The costs are economic, social, personal — and they compound through hysteresis.",
-      mechanismsTitle: 'Four ways unemployment damages the economy',
-      mechanisms: [
-        {
-          icon: '💷',
-          title: 'Economic costs',
-          text: 'Lost output (below the PPF), lower tax revenue, higher welfare spending. The fiscal hit can be ~£10-15bn per percentage point of UK unemployment annually.'
-        },
-        {
-          icon: '🧠',
-          title: 'Social & personal costs',
-          text: 'Mental health deterioration, family strain, loss of identity and status. Long-term unemployed face significantly worse health and life outcomes.'
-        },
-        {
-          icon: '⏳',
-          title: 'Hysteresis',
-          text: 'Long-term unemployment damages future employability — skills atrophy, networks shrink, employers discriminate. A short shock can leave <em>permanent</em> scarring on labour-market participation.'
-        },
-        {
-          icon: '📉',
-          title: 'Wider macro effects',
-          text: 'Lost consumption (C falls) → AD falls → further unemployment. The multiplier works in reverse. Plus fiscal pressure: higher welfare + lower tax = bigger deficit, constraining future policy.'
-        }
-      ],
-      examples: {
-        title: 'Episodes to know',
-        items: [
-          { period: '1980s UK',         text: 'mass structural unemployment from deindustrialisation; 3m+ unemployed; long-term scars in north of England.' },
-          { period: '2008-09 recession', text: 'UK unemployment rose from 5% to 8%; recovery took ~5 years. Cyclical, but hysteresis effects lingered.' },
-          { period: '2020 COVID shock', text: 'furlough scheme prevented mass cyclical unemployment; claimant count doubled briefly but recovered quickly.' }
+      pairLabel: 'POLICY RESPONSE',
+      pairEmoji: '🛡️',
+      left: {
+        tone: 'blue',
+        icon: '🏛️',
+        iconStyle: 'circle',
+        label: 'Monetary policy',
+        points: [
+          'Lower interest rates → ↑ borrowing → ↑ C and ↑ I',
+          'Increases money supply (QE)',
+          'Boosts AD → output recovers → firms re-hire'
         ]
       },
+      right: {
+        tone: 'amber',
+        icon: '🏛️',
+        iconStyle: 'circle',
+        label: 'Fiscal policy',
+        points: [
+          'Increase government spending (↑ G)',
+          'Cut taxes → ↑ household disposable income',
+          'Multiplier effect amplifies the AD boost'
+        ]
+      },
+
+      conclusion: {
+        title: 'Big idea',
+        text: 'Cyclical unemployment is demand-deficient — the cure is to restore AD, not to retrain workers. That\'s why the wrong policy diagnosis (supply-side for a cyclical problem) wastes money and fails.'
+      },
+
       examEdge: {
-        title: 'Mention hysteresis',
-        text: "A* answers cite <strong>hysteresis</strong> explicitly. It's the term for the long-term scarring effect — short-term unemployment becoming permanent through skill atrophy and stigma. Using the word signals economic literacy."
+        title: 'Exam edge',
+        text: "Always use the phrase <em>\"labour is a derived demand\"</em> when explaining why falling output raises unemployment. Combined with <strong>wage stickiness</strong>, this is the textbook Keynesian explanation."
+      }
+    },
+
+    /* ----- CARD 6 — Different causes, different cures ----- */
+    {
+      id: 'policy',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 6 of 8',
+      title: 'Different causes, different cures',
+      lede: 'Unemployment has multiple causes, and each needs a different policy response. Policy only works well when the diagnosis is correct.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '🔒', tone: 'green', text: 'The wrong toolkit wastes money and may not solve the problem.' },
+
+      comparisonTable: {
+        title: 'MATCH THE TYPE TO THE POLICY',
+        emoji: '🧩',
+        columns: ['❓ What is going wrong?', '✅ Best policy response'],
+        columnTones: ['amber', 'green'],
+        rows: [
+          { label: '📉 Cyclical',    values: ['Weak AD',                                      'Fiscal or monetary expansion.'] },
+          { label: '🧩 Structural',  values: ['Skills or location mismatch',                  'Retraining, apprenticeships, mobility grants, regional support.'] },
+          { label: '🔍 Frictional',  values: ['Poor information and search time',             'JobCentres, job-matching platforms, better vacancy information.'] },
+          { label: '£ Real-wage',    values: ['Labour too expensive relative to equilibrium', 'Labour market reform, flexibility, lower non-wage costs.'] },
+          { label: '☀️ Seasonal',    values: ['Predictable swings in demand',                 'Diversification, retraining, temporary support or off-season mobility.'] }
+        ]
       },
-      bridge: {
-        title: "Where to next",
-        text: "You've got the conceptual map. Now apply it: try the <strong>policy diagnostic simulator</strong> in <em>Land it</em> — given a scenario, pick the right toolkit and explain why."
+
+      whyItMatters: {
+        title: "DON'T MIX UP THE CURES",
+        emoji: '🔧',
+        items: [
+          { tone: 'rose',   icon: '📉', label: 'Demand-side',          text: 'Best for weak aggregate demand.' },
+          { tone: 'amber',  icon: '👤', label: 'Supply-side',           text: 'Best for mismatches in skills or location.' },
+          { tone: 'blue',   icon: 'ℹ️', label: 'Information',           text: 'Best for search friction and information gaps.' },
+          { tone: 'green',  icon: '⚖️', label: 'Labour market reform',  text: 'Best for wage rigidity and market rigidities.' }
+        ]
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+
+      summaryRow: [
+        { tone: 'amber', icon: '⚠️', title: '', text: 'Retraining will not fix cyclical unemployment if firms still face weak demand.' }
+      ],
+
+      conclusion: {
+        title: 'Big idea',
+        text: 'Policy should target the mechanism — demand weakness, mismatch, search frictions, wage rigidity, or seasonality.'
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'A strong judgement says why one policy is appropriate for one type of unemployment but weak for another.'
+      }
+    },
+
+    /* ----- CARD 7 — Consequences: not just lost output ----- */
+    {
+      id: 'consequences',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 7 of 8',
+      title: 'Consequences — not just lost output',
+      lede: 'Unemployment matters because its costs spread across the whole economy and society. It affects growth, public finances, communities and individuals — today and in the future.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '⚠️', tone: 'rose', text: '<strong>Unemployment damages both current output and future potential.</strong>' },
+
+      causesFirst: true,
+      causesLabel: 'FOUR COST CHANNELS',
+      causesEmoji: '📦',
+      causes: [
+        {
+          tone: 'blue',
+          icon: '📊',
+          head: '1. Economic costs',
+          body: 'Lost GDP lowers living standards and future income.<div style="border-top:1px dashed #93C5FD;margin:10px 0 8px;"></div>Lower tax revenue and higher welfare spending strain public finances.'
+        },
+        {
+          tone: 'amber',
+          icon: '👥',
+          head: '2. Social and personal costs',
+          body: 'Unemployment brings mental-health strain, family stress and higher crime risk.<div style="border-top:1px dashed #FCD34D;margin:10px 0 8px;"></div>It can damage self-esteem and reduce confidence and aspirations.'
+        },
+        {
+          tone: 'green',
+          icon: '🔗',
+          head: '3. Hysteresis',
+          body: 'Long unemployment weakens skills and attachment to the labour market.<div style="border-top:1px dashed #6EE7B7;margin:10px 0 8px;"></div>So temporary unemployment can become structural.'
+        },
+        {
+          tone: 'purple',
+          icon: '🌍',
+          head: '4. Wider macro effects',
+          body: 'Weakens the balance of payments and slows long-run growth.<div style="border-top:1px dashed #C4B5FD;margin:10px 0 8px;"></div>Can cause regional decline and put pressure on public finances.'
+        }
+      ],
+
+      flowTitle: 'THE HYSTERESIS CHAIN',
+      flowEmoji: '🔗',
+      flow: [
+        { icon: '🔄', title: 'Cyclical unemployment', sub: 'recession job losses' },
+        { icon: '🧠', title: 'Skills atrophy',         sub: 'human capital decays' },
+        { icon: '📉', title: 'Employability falls',    sub: 'employers prefer others' },
+        { icon: '⚠️', title: 'Structural risk',        sub: 'permanent scarring' }
+      ],
+
+      summaryRow: [
+        { tone: 'amber', icon: 'ℹ️', title: '', text: 'Youth unemployment can have especially long-lasting scarring effects.' }
+      ],
+
+      conclusion: {
+        title: 'Big idea',
+        text: 'The full cost of unemployment is larger than the lost output in the current year.'
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'Use <strong>"hysteresis"</strong> to explain why prolonged cyclical unemployment can worsen the supply side of the economy.'
+      }
+    },
+
+    /* ----- CARD 8 — Where to next ----- */
+    {
+      id: 'where-next',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Where to next',
+      lede: 'Unemployment links directly to the rest of macroeconomics.',
+      ledeStyle: 'plain',
+
+      tip: { icon: '✅', tone: 'green', text: 'Unemployment is not a silo — it connects to inflation, macro policy and long-run supply.' },
+
+      causesFirst: true,
+      causesStyle: 'numbered',
+      causesLabel: 'THE PATHWAYS AHEAD',
+      causesEmoji: '🔭',
+      causes: [
+        {
+          tone: 'blue',
+          icon: '📉',
+          head: 'Inflation / Phillips curve',
+          body: 'Short-run trade-off between lower unemployment and higher inflation.<div style="margin-top:12px;text-align:center;"><span style="border:1px solid #93C5FD;border-radius:16px;padding:3px 12px;font-size:11.5px;color:#2563EB;font-weight:700;">Overheating vs spare capacity</span></div>'
+        },
+        {
+          tone: 'amber',
+          icon: '🏛️',
+          head: 'Fiscal and monetary policy',
+          body: 'Demand-side cures for cyclical unemployment — stabilise demand, close the output gap.<div style="margin-top:12px;text-align:center;"><span style="border:1px solid #FCD34D;border-radius:16px;padding:3px 12px;font-size:11.5px;color:#D97706;font-weight:700;">Counter-cyclical tools</span></div>'
+        },
+        {
+          tone: 'green',
+          icon: '📈',
+          head: 'Supply-side policy',
+          body: 'Structural cures via training, mobility and incentives to raise productivity and jobs.<div style="margin-top:12px;text-align:center;"><span style="border:1px solid #6EE7B7;border-radius:16px;padding:3px 12px;font-size:11.5px;color:#059669;font-weight:700;">Lift capacity, lower NAIRU</span></div>'
+        }
+      ],
+
+      conclusion: {
+        title: 'Core takeaway',
+        text: 'Diagnose the cause, measure carefully, match the policy, and evaluate the trade-offs.'
+      },
+
+      lockIn: {
+        title: 'REVISION CHECKLIST',
+        icon: '✅',
+        items: [
+          'Define key unemployment states.',
+          'Compare headline measures accurately.',
+          'Classify types of unemployment.',
+          'Match the right policy to the cause.'
+        ]
+      },
+
+      examEdge: {
+        title: 'Exam edge',
+        text: 'The best essays move from diagnosis to policy, then evaluate whether the cure fits the cause.'
+      }
     }
 
   ]

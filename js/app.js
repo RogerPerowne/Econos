@@ -4498,7 +4498,8 @@
               </div>`;
           }).join('');
           const labelHtml = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'The main costs');
-          return `${labelHtml}<div style="display:grid;grid-template-columns:repeat(${items.length},1fr);gap:12px;margin:0 0 22px;">${numberedTiles}</div>`;
+          const numberedCols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : `repeat(${items.length},1fr)`;
+          return `${labelHtml}<div style="display:grid;grid-template-columns:${numberedCols};gap:12px;margin:0 0 22px;">${numberedTiles}</div>`;
         }
         const tiles = items.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
@@ -4532,7 +4533,8 @@
           </div>`;
         }).join('');
         const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
-        return `${label}<div style="display:grid;grid-template-columns:${gridColumnsFor(items.length, 155)};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
+        const causesCols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : gridColumnsFor(items.length, 155);
+        return `${label}<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
       })() : ''}
 
       ${c.keyDistinction && c.keyDistinction.items && c.keyDistinction.items.length ? (() => {

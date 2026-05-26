@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'net_trade',
-  topicNum: '2.2.5',
+  topicNum: '2.5',
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Net Trade (X − M)',
   estTime: 'Coming soon',

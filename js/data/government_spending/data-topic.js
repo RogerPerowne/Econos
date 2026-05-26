@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'government_spending',
-  topicNum: '2.2.4',
+  topicNum: '2.4',
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Government Spending',
   estTime: 'Coming soon',

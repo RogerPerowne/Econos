@@ -4133,6 +4133,152 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* === Balance of Payments — J-Curve interactive diagram === */
+  bopJCurveInteractive: `
+    <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
+      <defs>
+        <marker id="jc-arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+        </marker>
+      </defs>
+
+      <!-- ===== TOP TITLE STRIP ===== -->
+      <g class="layer-legend-base">
+        <circle cx="60" cy="32" r="7" fill="#2563EB"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Before depreciation · stable current account deficit</text>
+      </g>
+      <g class="layer-legend-extension">
+        <circle cx="60" cy="32" r="7" fill="#E11D48"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Short run: import costs rise, volumes unchanged → deficit widens</text>
+      </g>
+      <g class="layer-legend-shift">
+        <circle cx="60" cy="32" r="7" fill="#10B981"/>
+        <text x="76" y="38" font-size="16" font-weight="600" fill="#334155">Long run: export volumes rise → balance recovers (Marshall–Lerner met)</text>
+      </g>
+
+      <!-- ===== AXES (always visible) ===== -->
+      <g class="layer-axes">
+        <line x1="80" y1="60"  x2="80"  y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="80" y1="400" x2="590" y2="400" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <text x="78"  y="50"  font-size="14" font-weight="800" fill="#0F172A" text-anchor="middle">CA</text>
+        <text x="78"  y="65"  font-size="10" font-weight="600" fill="#475569" text-anchor="middle">balance</text>
+        <text x="598" y="406" font-size="16" font-weight="800" fill="#0F172A">Time</text>
+
+        <!-- Zero balance dashed guide -->
+        <line x1="80" y1="222" x2="590" y2="222" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="68"  y="226" font-size="12" font-weight="700" fill="#64748B" text-anchor="end">0</text>
+
+        <!-- Surplus / Deficit labels on y-axis -->
+        <text x="68" y="120" font-size="11" font-weight="600" fill="#64748B" text-anchor="end">Surplus</text>
+        <text x="68" y="345" font-size="11" font-weight="600" fill="#64748B" text-anchor="end">Deficit</text>
+
+        <!-- Depreciation event marker -->
+        <line x1="200" y1="72" x2="200" y2="400" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+        <text x="200" y="65" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">↓ Depreciation</text>
+      </g>
+
+      <!-- ===== PRE-DEPRECIATION FLAT PATH (path not line → safe from shift dashing) ===== -->
+      <g class="layer-curve-solid">
+        <path d="M 95,250 L 200,250" stroke="#2563EB" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- ===== E1 dot at start of depreciation ===== -->
+      <g class="layer-e1">
+        <circle cx="200" cy="250" r="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+      </g>
+
+      <!-- ===== EXTENSION — short-run dip ===== -->
+      <g class="layer-extension">
+        <path d="M 200,250 C 235,255 300,345 355,350" stroke="#E11D48" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="355" cy="350" r="6" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
+        <line x1="355" y1="350" x2="355" y2="222" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="368" y="347" font-size="11" font-weight="700" fill="#9F1239">Trough</text>
+        <text x="258" y="296" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="1">DEFICIT</text>
+        <text x="258" y="311" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="1">WIDENS</text>
+      </g>
+
+      <!-- ===== SHIFT — full J-curve ===== -->
+      <g class="layer-shift">
+        <path d="M 200,250 C 235,255 300,345 355,350 C 415,355 490,200 560,145" stroke="#10B981" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+        <!-- Trough -->
+        <circle cx="355" cy="350" r="6" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
+        <line x1="355" y1="350" x2="355" y2="222" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="368" y="347" font-size="11" font-weight="700" fill="#9F1239">Trough</text>
+
+        <!-- Recovery endpoint -->
+        <circle cx="560" cy="145" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+        <line x1="560" y1="145" x2="560" y2="222" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
+
+        <!-- Recovery label -->
+        <text x="490" y="178" font-size="11" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">BALANCE</text>
+        <text x="490" y="193" font-size="11" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">IMPROVES</text>
+
+        <!-- J-curve name tag -->
+        <text x="500" y="138" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">J-Curve ↗</text>
+
+        <!-- Marshall–Lerner info box -->
+        <rect x="355" y="200" width="170" height="40" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.5"/>
+        <text x="440" y="217" font-size="11" font-weight="700" fill="#15803D" text-anchor="middle">Marshall–Lerner condition</text>
+        <text x="440" y="232" font-size="11" font-weight="600" fill="#166534" text-anchor="middle">PED&#x2093; + PED&#x2098; &gt; 1  ✓</text>
+
+        <!-- Time axis period labels -->
+        <text x="278" y="418" font-size="11" font-weight="700" fill="#9F1239" text-anchor="middle">Short run</text>
+        <text x="458" y="418" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">Long run</text>
+      </g>
+
+      <!-- ===== RIGHT-SIDE EXPLAINER PANEL ===== -->
+      <line x1="615" y1="70" x2="615" y2="400" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+      <g class="layer-legend-base">
+        <g transform="translate(640, 90)">
+          <text x="0" y="0"   font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">BEFORE DEPRECIATION</text>
+          <text x="0" y="28"  font-size="14" font-weight="600" fill="#334155">Currency is at its</text>
+          <text x="0" y="48"  font-size="14" font-weight="600" fill="#334155">existing level. CA</text>
+          <text x="0" y="68"  font-size="14" font-weight="600" fill="#334155">shows a modest deficit.</text>
+          <text x="0" y="103" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">IMPORT / EXPORT PRICES</text>
+          <text x="0" y="128" font-size="14" font-weight="600" fill="#334155">Export prices and</text>
+          <text x="0" y="148" font-size="14" font-weight="600" fill="#334155">import volumes are</text>
+          <text x="0" y="168" font-size="14" font-weight="600" fill="#334155">at their old levels.</text>
+        </g>
+      </g>
+
+      <g class="layer-legend-extension">
+        <g transform="translate(640, 90)">
+          <text x="0" y="0"   font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">SHORT RUN — WORSENING</text>
+          <text x="0" y="28"  font-size="14" font-weight="600" fill="#334155">Depreciation raises</text>
+          <text x="0" y="48"  font-size="14" font-weight="600" fill="#334155">import costs at once,</text>
+          <text x="0" y="68"  font-size="14" font-weight="600" fill="#334155">but volumes are sticky.</text>
+          <text x="0" y="103" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">WHY VOLUMES ARE STICKY</text>
+          <text x="0" y="128" font-size="14" font-weight="600" fill="#334155">Contracts are fixed.</text>
+          <text x="0" y="148" font-size="14" font-weight="600" fill="#334155">Households keep buying</text>
+          <text x="0" y="168" font-size="14" font-weight="600" fill="#334155">inelastic imports.</text>
+          <text x="0" y="203" font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">NET RESULT</text>
+          <text x="0" y="228" font-size="14" font-weight="600" fill="#334155">Higher import bill</text>
+          <text x="0" y="248" font-size="14" font-weight="600" fill="#334155">→ CA deficit widens</text>
+          <text x="0" y="268" font-size="14" font-weight="600" fill="#334155">→ trough of the J.</text>
+        </g>
+      </g>
+
+      <g class="layer-legend-shift">
+        <g transform="translate(640, 90)">
+          <text x="0" y="0"   font-size="11" font-weight="800" fill="#047857" letter-spacing="2">LONG RUN — RECOVERY</text>
+          <text x="0" y="28"  font-size="14" font-weight="600" fill="#334155">Exporters gain share;</text>
+          <text x="0" y="48"  font-size="14" font-weight="600" fill="#334155">importers substitute.</text>
+          <text x="0" y="68"  font-size="14" font-weight="600" fill="#334155">Volumes respond fully.</text>
+          <text x="0" y="103" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">MARSHALL–LERNER</text>
+          <text x="0" y="128" font-size="14" font-weight="600" fill="#334155">If PED<tspan font-size="11" baseline-shift="sub">X</tspan> + PED<tspan font-size="11" baseline-shift="sub">M</tspan> &gt; 1,</text>
+          <text x="0" y="148" font-size="14" font-weight="600" fill="#334155">volume gains outweigh</text>
+          <text x="0" y="168" font-size="14" font-weight="600" fill="#334155">the price cost rise.</text>
+          <text x="0" y="203" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">NET RESULT</text>
+          <text x="0" y="228" font-size="14" font-weight="600" fill="#334155">CA improves past</text>
+          <text x="0" y="248" font-size="14" font-weight="600" fill="#334155">the starting point —</text>
+          <text x="0" y="268" font-size="14" font-weight="600" fill="#334155">the classic J-curve.</text>
+        </g>
+      </g>
+    </svg>
+  `,
+
   /* === Monetary Policy topic === */
   heroMonetary: `
     <svg viewBox="0 0 280 360" width="280" height="360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

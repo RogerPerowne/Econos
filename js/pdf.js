@@ -35,7 +35,9 @@ window.EconosPdf = (function () {
 
   /* Make every hidden layer group visible (final-state render for interactive diagrams) */
   function makeLayersVisible(svgStr) {
-    return svgStr.replace(/style="display:none"/g, 'style=""');
+    return svgStr
+      .replace(/style="display:\s*none;?\s*"/gi, 'style=""')
+      .replace(/display="none"/gi, '');
   }
 
   /* Wrap an SVG key as an inline printable image */

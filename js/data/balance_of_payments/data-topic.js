@@ -148,12 +148,13 @@ window.ECONOS_TOPIC = {
 
       flowTitle: 'HOW THEY ADD UP',
       flowEmoji: '➕',
+      flowSep: ['+', '+', '+', '='],
       flow: [
-        { icon: '📦', title: 'Goods',            sub: '−£130bn' },
-        { icon: '✈️', title: 'Services',          sub: '+£110bn' },
-        { icon: '💰', title: 'Primary income',    sub: '−£35bn' },
-        { icon: '🤝', title: 'Secondary income',  sub: '−£15bn' },
-        { icon: '⚖️', title: 'Total current acct', sub: '−£70bn (deficit)' }
+        { icon: '📦', title: 'Goods',             sub: '−£130bn', tone: 'blue'   },
+        { icon: '✈️', title: 'Services',           sub: '+£110bn', tone: 'amber'  },
+        { icon: '💰', title: 'Primary income',     sub: '−£35bn',  tone: 'green'  },
+        { icon: '🤝', title: 'Secondary income',   sub: '−£15bn',  tone: 'purple' },
+        { icon: '⚖️', title: 'Total current acct', sub: '−£70bn',  tone: 'blue'   }
       ],
 
       comparisonTable: {

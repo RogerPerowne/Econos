@@ -4570,6 +4570,16 @@
         const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
         const n = c.flow.length;
         const title = c.flowTitle ? genSecLabel(c.flowEmoji || '➡️', c.flowTitle) : '';
+        if (c.flowSep) {
+          const seps = Array.isArray(c.flowSep) ? c.flowSep : Array(n - 1).fill(c.flowSep);
+          const pieces = c.flow.map((step, i) => {
+            const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+            const tile = `<div style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:13px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:14px;font-weight:800;color:#0B1426;line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+            const sep = i < n - 1 ? `<div style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '+'}</div>` : '';
+            return tile + sep;
+          }).join('');
+          return `${title}<div style="display:flex;align-items:stretch;flex-wrap:wrap;gap:4px;margin-bottom:18px;">${pieces}</div>`;
+        }
         const tiles = c.flow.map((step, i) => {
           const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
           const isLast = i === n - 1;

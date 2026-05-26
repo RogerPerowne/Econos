@@ -693,6 +693,169 @@ window.EconosPdf = (function () {
       });
     }
 
+    /* measureCards — toolkit tiles with bullet points */
+    var measureCardsHtml = '';
+    if (c.measureCards && c.measureCards.length) {
+      var cols = c.measureCardsCols || Math.min(c.measureCards.length, 4);
+      measureCardsHtml = secHead(c.measureCardsEmoji || '🛠️', c.measureCardsLabel || 'The toolkit') +
+        '<div style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:14px;margin-bottom:20px;">' +
+        c.measureCards.map(function (m) {
+          var col = toneColor(m.tone || 'blue');
+          var points = (m.points || []).map(function (p) { return '<li style="margin-bottom:4px;">' + s(p) + '</li>'; }).join('');
+          return '<div style="border-top:4px solid ' + col + ';padding:10px 0 0;page-break-inside:avoid;">' +
+            '<div style="font-size:18px;margin-bottom:4px;">' + s(m.icon) + '</div>' +
+            '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:3px;">' + s(m.acronym) + '</div>' +
+            (m.fullName ? '<div style="font-size:11px;color:' + C.slate + ';font-style:italic;margin-bottom:6px;line-height:1.4;">' + s(m.fullName) + '</div>' : '') +
+            (points ? '<ul style="margin:0;padding-left:16px;font-size:11.5px;line-height:1.6;color:' + C.ink + ';">' + points + '</ul>' : '') +
+            '</div>';
+        }).join('') + '</div>';
+    }
+
+    /* matchTable — cause → goal → response grid */
+    var matchTableHtml = '';
+    if (c.matchTable && c.matchTable.rows && c.matchTable.rows.length) {
+      var mt = c.matchTable;
+      var matchHeader = '<div style="display:grid;grid-template-columns:1fr 20px 1fr 20px 1fr;gap:8px;margin-bottom:8px;">' +
+        (mt.columns || []).map(function (col, i) {
+          return '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:' + C.slate + ';text-align:center;">' + s(col) + '</div>' +
+            (i < (mt.columns.length - 1) ? '<div></div>' : '');
+        }).join('') + '</div>';
+      var matchRows = mt.rows.map(function (row) {
+        function cell(o) {
+          if (!o) return '<div></div>';
+          var col = toneColor(o.tone || 'blue');
+          return '<div style="border-left:4px solid ' + col + ';padding:7px 0 7px 10px;page-break-inside:avoid;">' +
+            '<div style="font-weight:800;font-size:12px;color:' + col + ';margin-bottom:2px;">' + (o.icon ? o.icon + ' ' : '') + s(o.head) + '</div>' +
+            (o.sub ? '<div style="font-size:11px;color:' + C.ink + ';line-height:1.5;">' + s(o.sub) + '</div>' : '') +
+            '</div>';
+        }
+        var arrow = '<div style="display:flex;align-items:center;justify-content:center;color:' + C.muted + ';font-size:14px;font-weight:700;">→</div>';
+        return '<div style="display:grid;grid-template-columns:1fr 20px 1fr 20px 1fr;gap:8px;margin-bottom:10px;">' +
+          cell(row.cause) + arrow + cell(row.goal) + arrow + cell(row.response) +
+          '</div>';
+      }).join('');
+      matchTableHtml = secHead(mt.emoji || '🔗', mt.title || 'Match the policy to the problem') +
+        matchHeader + matchRows + '<div style="margin-bottom:18px;"></div>';
+    }
+
+    /* whyItMatters / evaluation criteria */
+    var whyHtml = '';
+    if (c.whyItMatters && c.whyItMatters.items && c.whyItMatters.items.length) {
+      var w = c.whyItMatters;
+      whyHtml = secHead(w.emoji || '⚖️', w.title || 'How to evaluate') +
+        '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;">' +
+        w.items.map(function (item) {
+          var col = toneColor(item.tone || 'blue');
+          return '<div style="flex:1;min-width:170px;border-left:4px solid ' + col + ';padding:6px 0 6px 12px;">' +
+            '<div style="font-weight:800;font-size:12px;color:' + col + ';margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em;">' +
+            (item.icon ? item.icon + ' ' : '') + s(item.label) + '</div>' +
+            '<div style="font-size:12px;color:' + C.ink + ';line-height:1.55;">' + s(item.text) + '</div>' +
+            '</div>';
+        }).join('') + '</div>';
+    }
+
+    /* comparisonTable — labelled rows with N tinted columns */
+    var comparisonHtml = '';
+    if (c.comparisonTable && c.comparisonTable.rows && c.comparisonTable.rows.length) {
+      var ct = c.comparisonTable;
+      var ctTones = (ct.columnTones || []).map(toneColor);
+      var ctCols = (ct.columns || []).length;
+      var ctHeader = '<tr><th style="padding:9px 11px;"></th>' +
+        (ct.columns || []).map(function (col, i) {
+          var ccol = ctTones[i] || C.blue;
+          return '<th style="padding:9px 11px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:' + ccol + ';border-bottom:3px solid ' + ccol + ';text-align:left;">' + s(col) + '</th>';
+        }).join('') + '</tr>';
+      var ctRows = ct.rows.map(function (r) {
+        var labelCell = '<td style="padding:9px 11px;font-size:12px;font-weight:700;color:' + C.ink + ';border-bottom:1px solid ' + C.rule + ';">' + s(r.label) + '</td>';
+        var valCells = (r.values || []).map(function (v, i) {
+          var ccol = ctTones[i] || C.ink;
+          var hi = r.highlights && r.highlights[i];
+          return '<td style="padding:9px 11px;font-size:12px;color:' + (hi ? ccol : C.ink) + ';font-weight:' + (hi ? 700 : 500) + ';border-bottom:1px solid ' + C.rule + ';">' + s(v) + '</td>';
+        }).join('');
+        return '<tr>' + labelCell + valCells + '</tr>';
+      }).join('');
+      comparisonHtml = secHead(ct.emoji || '📊', ct.title || 'Compare') +
+        '<table style="width:100%;border-collapse:collapse;margin-bottom:18px;table-layout:fixed;"><thead>' + ctHeader + '</thead><tbody>' + ctRows + '</tbody></table>';
+      ctCols = ctCols; // noop ref
+    }
+
+    /* verdict — two-column "vs" panel */
+    var verdictHtml = '';
+    if (c.verdict && c.verdict.columns && c.verdict.columns.length) {
+      var v = c.verdict;
+      verdictHtml = secHead(v.emoji || '⚖️', v.title || 'Verdict') +
+        '<div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;">' +
+        v.columns.map(function (vc) {
+          var col = toneColor(vc.tone || 'blue');
+          var items = (vc.items || []).map(function (it) {
+            var marker = (it.ok === false) ? '✗ ' : '✓ ';
+            return '<li style="margin-bottom:4px;">' + marker + s(it.text) + '</li>';
+          }).join('');
+          return '<div style="flex:1;min-width:240px;border-top:4px solid ' + col + ';padding:10px 0 0;">' +
+            '<div style="font-weight:800;font-size:13px;color:' + col + ';margin-bottom:8px;">' + (vc.icon ? vc.icon + ' ' : '') + s(vc.label) + '</div>' +
+            '<ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.7;color:' + C.ink + ';">' + items + '</ul>' +
+            '</div>';
+        }).join('') + '</div>';
+    }
+
+    /* summaryRow — small horizontal example cards */
+    var summaryRowHtml = '';
+    if (c.summaryRow && c.summaryRow.length) {
+      summaryRowHtml = '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;">' +
+        c.summaryRow.map(function (sr) {
+          var col = toneColor(sr.tone || 'blue');
+          return '<div style="flex:1;min-width:200px;border-left:4px solid ' + col + ';padding:6px 0 6px 12px;">' +
+            '<div style="font-weight:800;font-size:12px;color:' + col + ';margin-bottom:3px;">' + (sr.icon ? sr.icon + ' ' : '') + s(sr.title) + '</div>' +
+            '<div style="font-size:12px;color:' + C.ink + ';line-height:1.55;">' + s(sr.text) + '</div>' +
+            '</div>';
+        }).join('') + '</div>';
+    }
+
+    /* letterFormula — M·V = P·T style framework */
+    var formulaHtml = '';
+    if (c.letterFormula && (c.letterFormula.left || c.letterFormula.right)) {
+      var lf = c.letterFormula;
+      function lfSide(arr) {
+        return (arr || []).map(function (it) {
+          var col = toneColor(it.tone || 'blue');
+          return '<div style="display:inline-block;text-align:center;padding:6px 10px;margin:0 4px;">' +
+            '<div style="font-size:22px;font-weight:900;color:' + col + ';font-family:Georgia,serif;">' + s(it.letter) + '</div>' +
+            '<div style="font-size:10px;color:' + C.slate + ';">' + s(it.name) + '</div>' +
+            '</div>';
+        }).join('<span style="font-size:18px;color:' + C.slate + ';">·</span>');
+      }
+      formulaHtml = (lf.label ? secHead(lf.emoji || '🧠', lf.label) : '') +
+        '<div style="border:2px solid ' + C.navy + ';border-radius:8px;padding:14px 18px;margin-bottom:14px;text-align:center;">' +
+        '<div style="display:flex;align-items:center;justify-content:center;gap:14px;">' +
+        lfSide(lf.left) +
+        '<span style="font-size:22px;font-weight:900;color:' + C.navy + ';">=</span>' +
+        lfSide(lf.right) +
+        '</div>' +
+        (lf.caption ? '<div style="font-size:11.5px;color:' + C.slate + ';margin-top:10px;line-height:1.6;font-style:italic;border-top:1px solid ' + C.rule + ';padding-top:10px;">' + s(lf.caption) + '</div>' : '') +
+        '</div>';
+    }
+
+    /* versusRows — winner vs loser side-by-side rows */
+    var versusHtml = '';
+    if (c.versusRows && c.versusRows.rows && c.versusRows.rows.length) {
+      var vr = c.versusRows;
+      var leftCol  = toneColor(vr.leftTone || 'green');
+      var rightCol = toneColor(vr.rightTone || 'rose');
+      function vrCell(o, col) {
+        if (!o) return '<div></div>';
+        return '<div style="border-left:4px solid ' + col + ';padding:6px 0 6px 12px;">' +
+          '<div style="font-weight:800;font-size:12px;color:' + col + ';margin-bottom:2px;">' + (o.icon ? o.icon + ' ' : '') + s(o.head) + '</div>' +
+          (o.sub ? '<div style="font-size:11.5px;color:' + C.ink + ';line-height:1.5;">' + s(o.sub) + '</div>' : '') +
+          '</div>';
+      }
+      var vrRows = vr.rows.map(function (row) {
+        return '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;page-break-inside:avoid;">' +
+          vrCell(row.left, leftCol) + vrCell(row.right, rightCol) +
+          '</div>';
+      }).join('');
+      versusHtml = secHead(vr.emoji || '👥', vr.title || 'Who benefits? Who loses?') + vrRows + '<div style="margin-bottom:8px;"></div>';
+    }
+
     var diagramHtml = embedInteractiveDiagram(c.interactiveDiagram);
     var firstCauses = c.causesFirst ? causesHtml : '';
     var laterCauses  = c.causesFirst ? '' : causesHtml;
@@ -701,8 +864,16 @@ window.EconosPdf = (function () {
       firstCauses +
       diagramHtml +
       laterCauses +
+      formulaHtml +
       flowHtml +
+      comparisonHtml +
       causes2Html +
+      versusHtml +
+      verdictHtml +
+      summaryRowHtml +
+      measureCardsHtml +
+      matchTableHtml +
+      whyHtml +
       pairHtml +
       conclusionHtml +
       examEdgeBlock(c.examEdge);

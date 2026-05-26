@@ -416,13 +416,12 @@ window.ECONOS_ICONS = {
      Geometry matches adAsDemandPull (viewBox 0 0 480 280, E₁=195,149, E₂=227,128).
      ============================================================ */
   adDemandPullInteractive: `
-    <svg viewBox="0 0 480 340" width="480" height="340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="idpl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
         </marker>
       </defs>
-      <g transform="translate(0,30)">
 
       <!-- BASE — always visible: axes, SRAS, AD₁, E₁ -->
       <line x1="55" y1="35" x2="55" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
@@ -470,7 +469,6 @@ window.ECONOS_ICONS = {
           <text x="37.5" y="54" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Y ↑</text>
         </g>
       </g>
-      </g>
     </svg>
   `,
 
@@ -482,13 +480,12 @@ window.ECONOS_ICONS = {
      Geometry matches adAsCostPush (viewBox 0 0 480 280, E₁=195,149, E₂=159,122).
      ============================================================ */
   adCostPushInteractive: `
-    <svg viewBox="0 0 480 340" width="480" height="340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="icpl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
         </marker>
       </defs>
-      <g transform="translate(0,30)">
 
       <!-- BASE — always visible: axes, AD, SRAS₁, E₁ -->
       <line x1="55" y1="35" x2="55" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
@@ -535,7 +532,6 @@ window.ECONOS_ICONS = {
           <text x="37.5" y="40" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">P ↑</text>
           <text x="37.5" y="54" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">Y ↓</text>
         </g>
-      </g>
       </g>
     </svg>
   `,

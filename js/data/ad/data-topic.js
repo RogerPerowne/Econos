@@ -8,7 +8,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'aggregate_demand',
-  topicNum: '2.2.1',
+  topicNum: '2.1',
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Aggregate Demand',
   estTime: '5-7 minutes',

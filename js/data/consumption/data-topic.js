@@ -6,7 +6,7 @@
 
 window.ECONOS_TOPIC = {
   id: 'consumption',
-  topicNum: '2.2.2',
+  topicNum: '2.2',
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Consumption',
   estTime: 'Coming soon',

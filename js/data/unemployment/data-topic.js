@@ -14,8 +14,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroUnemployment',
-    summary: "Three labour-market states. Five types. One diagnostic move. Lock these in and every unemployment essay falls into place.",
-    doInThis: 'Recap the classification, the five types, the diagnostic, why cyclical unemployment persists — plus a 25-mark essay scaffold on reducing unemployment.',
+    summary: "Three labour-market states. Six types — four supply-side, two demand-side. One diagnostic move. Lock these in and every unemployment essay falls into place.",
+    doInThis: 'Recap the classification, the six types, the diagnostic, why cyclical unemployment persists — plus a 25-mark essay scaffold on reducing unemployment.',
     outcomes: [
       'Classify employed/unemployed/inactive',
       'Match each type to its cure',
@@ -141,52 +141,88 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 3 — The five types of unemployment ----- */
+    /* ----- CARD 3 — The six types of unemployment ----- */
     {
       id: 'types',
-      template: 'mechanisms',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
-      title: 'The five types of unemployment',
-      lede: "Not all unemployment is the same. Four of the five types are mainly supply-side — they stem from frictions or rigidities in the labour market. Only cyclical unemployment is demand-side, caused by weak aggregate demand.",
-      mechanisms: [
+      title: 'The six types of unemployment',
+      lede: 'Six causes — but only two flavours. Four are supply-side (frictions and rigidities in the labour market). Two are demand-side (cyclical and demand-deficient).',
+      ledeStyle: 'plain',
+
+      tip: { icon: '✅', tone: 'green', text: 'Four supply-side types · two demand-side types. Different causes need different cures.' },
+
+      pairFirst: true,
+      pairLabel: 'THE BIG SPLIT',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'green',
+        icon: '🔧',
+        iconStyle: 'circle',
+        label: 'Supply-side · 4 types',
+        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by frictions and rigidities in the labour market. Workers stuck even when AD is strong.</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Frictional</strong> — between jobs</li><li><strong>Structural</strong> — skills / location mismatch</li><li><strong>Seasonal</strong> — predictable seasonal demand</li><li><strong>Real-wage</strong> — wage above market-clearing</li></ul><p style="margin:10px 0 0;font-size:12px;color:#047857;font-weight:700;">Cure: supply-side policy (retraining, mobility, market reform).</p>'
+      },
+      right: {
+        tone: 'rose',
+        icon: '📉',
+        iconStyle: 'circle',
+        label: 'Demand-side · 2 types',
+        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by weak aggregate demand. Output falls → labour demand falls (labour is a <em>derived demand</em>).</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cyclical</strong> — short-run, follows the business cycle</li><li><strong>Demand-deficient</strong> — persistent, even outside recession</li></ul><p style="margin:10px 0 0;font-size:12px;color:#9F1239;font-weight:700;">Cure: demand stimulus (fiscal / monetary).</p>'
+      },
+
+      flowTitle: 'THE DEMAND-SIDE CHAIN',
+      flowEmoji: '⛓️',
+      flow: [
+        { icon: '📉', title: 'AD falls',           sub: 'C, I, G or (X−M) drops', tone: 'rose'   },
+        { icon: '🏭', title: 'Output falls',       sub: 'firms produce less',     tone: 'amber'  },
+        { icon: '👥', title: 'Labour demand falls', sub: 'derived demand effect', tone: 'purple' },
+        { icon: '📊', title: 'Unemployment ↑',     sub: 'cyclical OR demand-deficient', tone: 'rose' }
+      ],
+
+      causesLabel: 'THE SIX TYPES',
+      causesEmoji: '🧩',
+      causesStyle: 'numbered',
+      causes: [
         {
-          num: '1',
-          tone: 'blue',
-          title: 'Frictional',
-          text: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and job-search time. Always present — even at "full employment".<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> graduate searching after university.</span>'
+          tone: 'blue', icon: '🚶', head: 'Frictional',
+          body: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and search time. Always present — even at "full employment".',
+          example: '🎓 Graduate searching after university.'
         },
         {
-          num: '2',
-          tone: 'amber',
-          title: 'Structural',
-          text: '<strong>Skills or location mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term — workers need retraining or relocation.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> ex-miners in South Wales.</span>'
+          tone: 'amber', icon: '⛏️', head: 'Structural',
+          body: '<strong>Skills or location mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term — workers need retraining or relocation.',
+          example: '⛏️ Ex-miners in South Wales.'
         },
         {
-          num: '3',
-          tone: 'purple',
-          title: 'Seasonal',
-          text: 'Predictable variation in labour demand at different times of year. Short-term and recurring within the year.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> ski instructors in summer.</span>'
+          tone: 'purple', icon: '⛷️', head: 'Seasonal',
+          body: 'Predictable variation in labour demand at different times of year. Short-term and recurring.',
+          example: '⛷️ Ski instructors in summer.'
         },
         {
-          num: '4',
-          tone: 'green',
-          title: 'Real-wage (classical)',
-          text: 'Wages held <strong>above equilibrium</strong> by unions, minimum wage, or contracts — creating excess labour supply at that wage.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> low-skilled workers priced out of jobs.</span>'
+          tone: 'green', icon: '⚖️', head: 'Real-wage (classical)',
+          body: 'Wages held <strong>above equilibrium</strong> by unions, minimum wage, or contracts — excess labour supply at that wage.',
+          example: '£ Low-skilled workers priced out of jobs.'
         },
         {
-          num: '5',
-          tone: 'rose',
-          title: 'Cyclical (demand-deficient)',
-          text: 'Caused by <strong>falling aggregate demand</strong> — firms need fewer workers when output falls. The only demand-side type.<br><br><span style="font-size:12px;color:#475569;"><strong>Example:</strong> recession layoffs across most sectors.</span>'
+          tone: 'rose', icon: '📉', head: 'Cyclical',
+          body: 'Caused by <strong>falling AD in a recession</strong>. Firms need fewer workers when output falls. <em>Self-correcting as the economy recovers.</em>',
+          example: '📉 Recession layoffs across sectors.'
+        },
+        {
+          tone: 'rose', icon: '🌀', head: 'Demand-deficient',
+          body: '<strong>Persistent weak AD</strong> — even outside recession (Keynes\'s "underemployment equilibrium"). Hysteresis can make cyclical unemployment become structural.',
+          example: '🌀 Japan\'s lost decades; eurozone post-2008.'
         }
       ],
+
+      conclusion: {
+        title: 'Big idea',
+        text: '<strong>Four supply-side, two demand-side.</strong> Demand stimulus on a supply-side problem is wasteful — and supply-side reform on a demand-side problem misses the point.'
+      },
+
       examEdge: {
         title: 'Classify before you cure',
-        text: 'Four types are <strong>supply-side</strong> — frictional, structural, seasonal, real-wage. Only <strong>cyclical</strong> is demand-side. Using fiscal/monetary stimulus on a supply-side problem is a classic essay error. Name the type first, then pick the toolkit.'
-      },
-      connection: {
-        title: 'Supply-side vs demand-side',
-        text: '<strong>Supply-side (4 types):</strong> Frictional · Structural · Seasonal · Real-wage — require supply-side policy (retraining, job-matching, labour market reform).<br><strong>Demand-side (1 type):</strong> Cyclical — requires demand stimulus (fiscal/monetary). Seasonal and frictional exist even in a healthy economy.'
+        text: 'Open every unemployment essay with the type: <em>"This is primarily [type] unemployment because…"</em>. The 4-vs-2 split is the analytical move that lifts answers from B to A*. Note that "demand-deficient" is the Keynesian / persistent variant of cyclical — flag the relationship if your textbook treats them as one.'
       }
     },
 
@@ -241,21 +277,22 @@ window.ECONOS_TOPIC = {
           example: { label: 'Type', text: 'Wage rigidity — price of labour held above market-clearing level.' }
         },
         {
-          tone: 'purple',
-          icon: '🏨',
-          head: 'Seasonal',
-          body: 'Coastal hotels cut staff every winter when tourism falls.',
-          example: { label: 'Type', text: 'Time of year — predictable seasonal demand cycle.' }
+          tone: 'rose',
+          icon: '🌀',
+          head: 'Demand-deficient',
+          body: 'A region\'s unemployment stays high for years after a recession ends — even as the national economy grows.',
+          example: { label: 'Type', text: 'Persistent weak AD — hysteresis turns cyclical unemployment into long-run joblessness.' }
         }
       ],
 
       flowTitle: 'FAST TEST',
       flowEmoji: '⚡',
       flow: [
-        { icon: '🚶', title: 'Between jobs?',  sub: '→ Frictional' },
-        { icon: '🧩', title: 'Mismatch?',      sub: '→ Structural' },
-        { icon: '📅', title: 'Time of year?',  sub: '→ Seasonal' },
-        { icon: '📉', title: 'Weak demand?',   sub: '→ Cyclical' }
+        { icon: '🚶', title: 'Between jobs?',     sub: '→ Frictional' },
+        { icon: '🧩', title: 'Mismatch?',         sub: '→ Structural' },
+        { icon: '📅', title: 'Time of year?',     sub: '→ Seasonal' },
+        { icon: '📉', title: 'Recession?',        sub: '→ Cyclical' },
+        { icon: '🌀', title: 'Persistent weak AD?', sub: '→ Demand-deficient' }
       ],
 
       conclusion: {
@@ -362,11 +399,12 @@ window.ECONOS_TOPIC = {
         columns: ['❓ What is going wrong?', '✅ Best policy response'],
         columnTones: ['amber', 'green'],
         rows: [
-          { label: '📉 Cyclical',    values: ['Weak AD',                                      'Fiscal or monetary expansion.'] },
-          { label: '🧩 Structural',  values: ['Skills or location mismatch',                  'Retraining, apprenticeships, mobility grants, regional support.'] },
-          { label: '🔍 Frictional',  values: ['Poor information and search time',             'JobCentres, job-matching platforms, better vacancy information.'] },
-          { label: '£ Real-wage',    values: ['Labour too expensive relative to equilibrium', 'Labour market reform, flexibility, lower non-wage costs.'] },
-          { label: '☀️ Seasonal',    values: ['Predictable swings in demand',                 'Diversification, retraining, temporary support or off-season mobility.'] }
+          { label: '📉 Cyclical',          values: ['Recession — weak AD short-run',                'Fiscal or monetary expansion.'] },
+          { label: '🌀 Demand-deficient',  values: ['Persistent weak AD (Keynesian)',               'Sustained stimulus + supply-side support to prevent hysteresis.'] },
+          { label: '🧩 Structural',        values: ['Skills or location mismatch',                  'Retraining, apprenticeships, mobility grants, regional support.'] },
+          { label: '🔍 Frictional',        values: ['Poor information and search time',             'JobCentres, job-matching platforms, better vacancy information.'] },
+          { label: '£ Real-wage',          values: ['Labour too expensive relative to equilibrium', 'Labour market reform, flexibility, lower non-wage costs.'] },
+          { label: '☀️ Seasonal',           values: ['Predictable swings in demand',                 'Diversification, retraining, temporary support or off-season mobility.'] }
         ]
       },
 

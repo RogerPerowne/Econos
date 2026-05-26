@@ -903,7 +903,7 @@ window.ECONOS_ICONS = {
   /* === AD movement vs shift — Aggregate Demand Card 3 === */
   /* Multiplier ripple — five-round cascade (AD Card 5) */
   multiplierRipple: `
-    <svg viewBox="0 0 900 230" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 900 185" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="mr-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
@@ -967,9 +967,6 @@ window.ECONOS_ICONS = {
         <text x="803" y="134" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">the last</text>
       </g>
 
-      <!-- Loop-back hint -->
-      <path d="M 803 168 Q 803 215 91 215 L 91 168" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#mr-arr)"/>
-      <text x="447" y="227" font-size="11" font-weight="700" fill="#64748B" text-anchor="middle" letter-spacing="1">the ripple continues</text>
     </svg>
   `,
 

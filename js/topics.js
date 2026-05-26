@@ -227,8 +227,36 @@ window.ECONOS_TOPICS = [
   {
     id: 'ad',
     name: 'Aggregate Demand',
-    sub: 'Components, slope and shifts',
+    sub: 'AD as a system — formula, slope, shifts, multiplier',
     color: '#f59e0b',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'consumption',
+    name: 'Consumption',
+    sub: 'Determinants, MPC, savings ratio — the biggest AD component (~60%)',
+    color: '#22c55e',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'investment',
+    name: 'Investment',
+    sub: 'Determinants, accelerator, animal spirits — the volatile engine (~17%)',
+    color: '#f97316',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'government_spending',
+    name: 'Government Spending',
+    sub: 'Composition, automatic stabilisers, fiscal rules — the only direct lever (~20%)',
+    color: '#3b82f6',
+    available: { learn: true, link: false, land: false }
+  },
+  {
+    id: 'net_trade',
+    name: 'Net Trade (X − M)',
+    sub: 'Exports, imports, Marshall-Lerner, J-curve — the open-economy link (~3%)',
+    color: '#a855f7',
     available: { learn: true, link: false, land: false }
   },
   /* Section 3: Aggregate Supply */

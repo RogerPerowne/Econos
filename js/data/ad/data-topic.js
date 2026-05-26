@@ -1,29 +1,32 @@
 /* ============================================================
    ECONOS — content data for aggregate_demand
-   7 cards · revision-tight · exam-edge gems flagged
-   Edexcel Theme 2.2
+   4 cards on AD as a system. The components (C, I, G, X−M)
+   each live in their own topic — see js/data/consumption,
+   investment, government_spending, net_trade.
+   Edexcel Theme 2.2.1
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'aggregate_demand',
-  topicNum: '2.1-2.5',
+  topicNum: '2.2.1',
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Aggregate Demand',
-  estTime: '8-10 minutes',
-  goal: 'Lock in the four engines that drive AD',
+  estTime: '5-7 minutes',
+  goal: 'Lock in the AD formula, slope, shifts, and the multiplier',
 
   intro: {
     heroKey: 'heroAd',
-    summary: "Four components, one curve. Knowing relative sizes and volatility is what separates A* answers from textbook recital.",
-    doInThis: 'Lock in the composition, the slope, and the multiplier — the gems that lift AD answers from B to A*.',
+    summary: "Four components, one curve. This topic locks in AD as a system — how it slopes, how it shifts, and how the multiplier amplifies changes. Each component (C, I, G, X−M) has its own deep-dive topic.",
+    doInThis: 'Lock in the composition, slope, movement vs shift, and the multiplier — the gems that lift AD answers from B to A*.',
     outcomes: [
-      'Know the 4 components',
-      'Spot movement vs shift',
-      'Lock in 7 exam-edge gems'
+      'Know the 4 components and their weights',
+      'Explain why AD slopes downward',
+      'Distinguish movement along from shift of AD',
+      'Apply the multiplier to fiscal stimulus'
     ],
-    tip: "These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers.",
+    tip: "Each component (C, I, G, X−M) has its own dedicated topic for the deep dive on determinants and policy.",
     stages: [
-      { num: 1, name: 'Learn',  sub: '8 concept cards',     state: 'current' },
+      { num: 1, name: 'Learn',  sub: '4 concept cards',     state: 'current' },
       { num: 2, name: 'Master', sub: 'Apply in exam-style questions',  state: 'locked' },
       { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
     ]
@@ -36,7 +39,7 @@ window.ECONOS_TOPIC = {
       id: 'composition',
       template: 'framing',
       diagramKey: 'adComposition',
-      stepLabel: 'Learn: Step 1 of 8',
+      stepLabel: 'Learn: Step 1 of 4',
       title: 'AD = C + I + G + (X−M)',
       lede: 'Four engines, one outcome. The relative sizes — and which ones are volatile — is what separates textbook answers from real economic reasoning.',
       branches: [
@@ -59,7 +62,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'slope',
       template: 'mechanisms',
-      stepLabel: 'Learn: Step 2 of 8',
+      stepLabel: 'Learn: Step 2 of 4',
       title: 'Why does AD slope downward?',
       lede: "Three macroeconomic effects — and they're NOT the same as a market demand curve. Naming them by name is an A* signal.",
       mechanisms: [
@@ -102,7 +105,7 @@ window.ECONOS_TOPIC = {
     {
       id: 'movement-vs-shift',
       template: 'ad-interactive',
-      stepLabel: 'Learn: Step 3 of 8',
+      stepLabel: 'Learn: Step 3 of 4',
       title: 'Movement along vs shifts of AD',
       lede: 'The single most-marked-down confusion in AD essays. Press each step below to see what the AD curve actually does.',
       steps: [
@@ -128,146 +131,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 4 — Consumption: the biggest engine ----- */
-    {
-      id: 'consumption',
-      template: 'cause',
-      tone: 'green',
-      bannerLabel: 'Component 1 · Consumption (~60%)',
-      diagramKey: 'consumptionDrivers',
-      stepLabel: 'Learn: Step 4 of 8',
-      title: 'Consumption — the biggest engine',
-      lede: '~60% of UK AD. Mostly stable, but can collapse in confidence shocks. The savings ratio is your real-time signal.',
-      diagramCaption: 'UK household consumption ≈ 60% of GDP. The bedrock of AD.',
-      causes: {
-        title: 'What drives C',
-        items: [
-          'Disposable income (Y−T): the main driver',
-          'Interest rates: high rates → save more, borrow less',
-          'Wealth: house prices, share prices (the wealth effect)',
-          'Expectations: confidence about jobs and income',
-          'Household debt: high debt → fragile consumption',
-          'MPC = ΔC/ΔY (typical UK 0.6-0.8 — sets the multiplier)'
-        ]
-      },
-      hallmarks: {
-        title: "Characteristics",
-        items: [
-          'Savings ratio falling → C rising',
-          'Consumer confidence index strengthening',
-          'Retail sales growing',
-          'Mortgage approvals rising'
-        ]
-      },
-      ukExamples: {
-        title: 'UK examples',
-        text: '<strong>2020 lockdown:</strong> C collapsed ~20%, then bounced back as savings deployed. <strong>2022 cost-of-living crisis:</strong> real wages fell, C squeezed despite nominal wage growth. <strong>Savings ratio</strong> spiked to 25% during COVID, normalised to ~5% by 2023.'
-      },
-      examEdge: {
-        title: 'Quote the savings ratio',
-        text: 'The savings ratio (% of disposable income saved) moves opposite to C in confidence shocks. A* answers reference it as a real-time signal — currently around 5-10% in the UK depending on quarter.'
-      },
-      policy: {
-        title: 'Why C matters for policy',
-        text: 'Because C is ~60% of AD, anything that affects household income, debt, or confidence has a huge AD effect. Income tax cuts, interest rate changes, and wealth shocks (housing, equities) all transmit through C first.'
-      }
-    },
-
-    /* ----- CARD 5 — Investment: the volatile engine ----- */
-    {
-      id: 'investment',
-      template: 'cause',
-      tone: 'amber',
-      bannerLabel: 'Component 2 · Investment (~17%)',
-      diagramKey: 'investmentVolatility',
-      stepLabel: 'Learn: Step 5 of 8',
-      title: 'Investment — the volatile engine',
-      lede: "Only ~17% of AD but drives most of the business cycle. When firms lose confidence, I falls FIRST and FURTHEST. That's the gem.",
-      diagramCaption: 'UK business investment, 2007-2024. Note the 2009, 2016-19, and 2020 troughs.',
-      causes: {
-        title: 'What drives I',
-        items: [
-          'Interest rates: cost of borrowing for capex',
-          'Business confidence: animal spirits',
-          'Accelerator: ΔY drives ΔI (small ΔY → big ΔI)',
-          'Corporate tax rate: after-tax returns',
-          'Credit availability: bank lending standards',
-          'Technology and innovation: new opportunities',
-          'Government policy: investment allowances, subsidies'
-        ]
-      },
-      hallmarks: {
-        title: "Characteristics",
-        items: [
-          'PMI (Purchasing Managers Index) above/below 50',
-          'Business confidence surveys',
-          'Capex announcements / cancellations',
-          'Corporate bond yields and spreads'
-        ]
-      },
-      ukExamples: {
-        title: 'UK examples',
-        text: '<strong>2008-09:</strong> business investment fell ~25%. <strong>2016-19 Brexit uncertainty:</strong> UK I flatlined while peers grew — costing ~2-3% of GDP cumulatively. <strong>2020 lockdown:</strong> I fell ~15%, then mini-bust on confidence in 2022-23.'
-      },
-      examEdge: {
-        title: 'I is the cycle\'s engine',
-        text: "Despite being only ~17% of AD, investment volatility drives most cyclical fluctuation. Stating this — <em>'I is small but volatile, so it amplifies AD changes'</em> — is an A* analytical move."
-      },
-      policy: {
-        title: 'Why I matters for policy',
-        text: 'Central banks target I directly via interest rates. Fiscal policy targets I via corporate tax and investment allowances. Confidence shocks (Brexit, COVID, war) hit I first — which is why "uncertainty" matters so much for growth.'
-      }
-    },
-
-    /* ----- CARD 6 — Government & Net Trade ----- */
-    {
-      id: 'gov-nettrade',
-      template: 'paired',
-      stepLabel: 'Learn: Step 6 of 8',
-      title: 'Government & Net Trade',
-      lede: 'G is the policy lever (~20%). Net trade is the open-economy link (~3% but volatile). Different mechanics, paired here for efficiency.',
-      bannerLabel: 'Components 3 & 4 · Policy + Open Economy',
-      bannerTone: 'blue',
-      pairs: [
-        {
-          tone: 'blue',
-          label: 'Government (G) ~20%',
-          drivers: [
-            'Fiscal policy: spending and taxation decisions',
-            'Automatic stabilisers (welfare, tax revenue)',
-            'Political cycle and election commitments',
-            'Debt-to-GDP and fiscal rules constraints'
-          ],
-          example: '<strong>2020 furlough scheme:</strong> G surged as the state replaced private incomes. <strong>2022-24:</strong> fiscal rules tightened to contain debt, constraining G.'
-        },
-        {
-          tone: 'purple',
-          label: 'Net Trade (X−M) ~3%',
-          drivers: [
-            'Exchange rate: weaker £ → exports cheaper, imports dearer',
-            'Real income at home (affects M) and abroad (affects X)',
-            'Trade barriers, tariffs, non-tariff barriers',
-            'Productivity and non-price competitiveness'
-          ],
-          example: '<strong>2022 sterling fall</strong> + energy import surge → trade deficit widened sharply. <strong>Brexit 2021</strong> introduced non-tariff barriers raising costs on EU trade.'
-        }
-      ],
-      examEdge: {
-        title: 'G is the only direct lever',
-        text: "G is the only AD component government can directly control. C and I are influenced via policy (rates, tax); (X−M) is influenced via currency. But G is set by spending decisions. That's why fiscal policy is so powerful."
-      },
-      policy: {
-        title: 'Policy connection',
-        text: 'Expansionary fiscal policy = G ↑ or T ↓. Both shift AD right. Tightening = G ↓ or T ↑. Net trade is harder for policymakers to steer directly — depends on currency and competitiveness.'
-      }
-    },
-
+    /* Component cards (consumption, investment, gov-nettrade) split into separate topics — see js/data/consumption|investment|government_spending|net_trade */
     /* ----- CARD 7 — The multiplier ----- */
     {
       id: 'multiplier',
       template: 'puzzle',
       chartKey: 'multiplierChart',
-      stepLabel: 'Learn: Step 7 of 8',
+      stepLabel: 'Learn: Step 4 of 4',
       title: 'The multiplier',
       lede: "A £10bn injection doesn't stay £10bn. Spending in one round becomes someone else's income in the next. Forgetting this is a classic A* trap.",
       classical: {

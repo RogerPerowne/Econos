@@ -1214,10 +1214,11 @@
         }
         if (hasIcons) {
           const headText = item.head.replace(/^\d+\.\s*/, '');
-          const exampleHtml = item.example ? `
+          const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
+          const exampleHtml = ex ? `
             <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
-              ${item.example.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${item.example.icon}</div>` : ''}
-              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${item.example.text}</div>
+              ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${ex.icon}</div>` : ''}
+              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
@@ -2021,10 +2022,11 @@
         }
         if (hasIcons) {
           const headText = item.head.replace(/^\d+\.\s*/, '');
-          const exampleHtml = item.example ? `
+          const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
+          const exampleHtml = ex ? `
             <div style="margin:0 14px 14px;padding:10px 12px;background:${t.bg};border-radius:10px;border:1px solid ${t.border}30;display:flex;align-items:flex-start;gap:8px;">
-              ${item.example.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${item.example.icon}</div>` : ''}
-              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${item.example.text}</div>
+              ${ex.icon ? `<div style="font-size:16px;line-height:1.2;flex-shrink:0;">${ex.icon}</div>` : ''}
+              <div style="font-size:12.5px;color:#0B1426;line-height:1.55;"><span style="font-weight:800;color:${t.label};">Example:</span> ${ex.text}</div>
             </div>` : '';
           return `
           <div style="border-radius:16px;overflow:hidden;background:#fff;border:1px solid ${t.border}20;box-shadow:0 3px 14px rgba(0,0,0,0.08);display:flex;flex-direction:column;">
@@ -4507,12 +4509,13 @@
             const svgHtml = item.svgKey && I[item.svgKey]
               ? `<div style="margin:6px 0 10px;line-height:0;">${I[item.svgKey]}</div>`
               : (item.icon ? `<div style="font-size:38px;line-height:1;text-align:center;margin:6px 0 10px;">${item.icon}</div>` : '');
-            const exampleHtml = item.example ? `
+            const ex = typeof item.example === 'string' ? { text: item.example } : item.example;
+            const exampleHtml = ex ? `
               <div style="margin-top:auto;padding-top:12px;border-top:1px dashed ${tone.border};">
-                <div style="font-size:12px;font-weight:800;color:${tone.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">${item.example.label || 'Example'}</div>
+                <div style="font-size:12px;font-weight:800;color:${tone.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">${ex.label || 'Example'}</div>
                 <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0B1426;line-height:1.4;">
-                  ${item.example.icon ? `<span style="font-size:22px;line-height:1;flex-shrink:0;">${item.example.icon}</span>` : ''}
-                  <span>${item.example.text}</span>
+                  ${ex.icon ? `<span style="font-size:22px;line-height:1;flex-shrink:0;">${ex.icon}</span>` : ''}
+                  <span>${ex.text}</span>
                 </div>
               </div>` : '';
             return `

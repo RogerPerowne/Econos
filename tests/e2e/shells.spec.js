@@ -62,8 +62,9 @@ test.describe('Learn It shell', () => {
     await expect(stages.nth(1)).toHaveAttribute('data-stage-pos', '2');
     await expect(stages.nth(2)).toHaveAttribute('data-stage-pos', '3');
 
-    const current = page.locator('.stages .stage.is-current');
-    await expect(current).toHaveAttribute('aria-current', 'step');
+    /* On the intro/cover card, Learn It shows as 'available' (not yet
+       started, not current) — the user hasn't clicked Start Session. */
+    await expect(stages.nth(0)).toHaveClass(/is-available/);
   });
 });
 

@@ -374,6 +374,17 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'Exam tip',
         text: 'GDP is a powerful summary of economic activity — but it\'s <strong>not the whole story</strong>. Always consider what it <em>includes</em>, what it <em>excludes</em>, and whether it reflects wellbeing. A* phrasing: <em>"While GDP per capita has risen, the HDI shows divergent trends in health and education, suggesting welfare improvements are unevenly distributed."</em>'
+      },
+      economistQuote: {
+        portraitKey: 'economistCoyle',
+        tone: 'green',
+        label: 'Economist insight: Diane Coyle on GDP',
+        quote: 'The way we measure the economy shapes the way we think about what economic policy should accomplish. GDP became the dominant metric not because it is the best measure of welfare, but because it was the measure that existed.',
+        attribution: 'Diane Coyle, <em>GDP: A Brief but Affectionate History</em> (2014)'
+      },
+      tipLate: {
+        icon: '💡', tone: 'green', head: 'Why this matters',
+        text: 'Coyle\'s argument is that GDP was designed in the 1930s–40s to measure wartime industrial output — it was never meant to be a proxy for human wellbeing. Yet it became the default scorecard for governments worldwide. Her critique: GDP counts pollution clean-up as positive output, ignores unpaid household work entirely, and treats inequality as invisible. The A* move in any welfare question is to acknowledge GDP\'s usefulness as a <strong>production measure</strong> while citing specific blind spots — inequality (Gini), sustainability (genuine savings), or human capability (HDI) — and explaining why they matter for the specific question asked.'
       }
     },
 

@@ -54,7 +54,7 @@ Write the config to the skill's tmp area:
 
 ```json
 {
-  "topic_id": "price_controls",
+  "topic_id": "government-intervention-in-markets",
   "cards": [
     { "card_num": 1, "prompt": "an infographic card introducing price controls: what a price ceiling and a price floor are, with a simple supply-demand diagram and labelled headings" },
     { "card_num": 2, "prompt": "an infographic card on the effects of a binding price ceiling: shortage, excess demand, with a supply-demand diagram showing the ceiling below equilibrium" }

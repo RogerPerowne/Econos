@@ -5,8 +5,8 @@
    elements for an example topic (inflation). Catches regressions
    in routing, Shell.renderStages, mobile-nav injection, etc.
 
-   All URLs are the path-based canonical form: /learn/inflation,
-   /link/inflation/chain, etc. The Vite preview server's
+   All URLs are the path-based canonical form: /learn/<slug>,
+   /link/<slug>/<station>, etc. The Vite preview server's
    topic-routes middleware rewrites these to the right base shell
    transparently.
    ============================================================ */
@@ -47,7 +47,7 @@ test.describe('Home page', () => {
 test.describe('Learn It shell', () => {
   test('inflation renders chrome + stage widget', async ({ page }) => {
     await login(page);
-    await page.goto('/learn/inflation');
+    await page.goto('/learn/causes-of-inflation-and-deflation');
 
     await expect(page).toHaveTitle(/Learn It · Econos/i);
 
@@ -69,18 +69,18 @@ test.describe('Learn It shell', () => {
 test.describe('Link It shell', () => {
   test('intro deep-links + chain station shows amber theme', async ({ page }) => {
     await login(page);
-    await page.goto('/link/inflation/intro');
+    await page.goto('/link/causes-of-inflation-and-deflation/intro');
     await expect(page).toHaveTitle(/Link it · Intro/i);
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
 
-    await page.goto('/link/inflation/chain');
+    await page.goto('/link/causes-of-inflation-and-deflation/chain');
     await expect(page).toHaveTitle(/Link it · Chain/i);
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
   });
 
   test('unknown station shows friendly not-found', async ({ page }) => {
     await login(page);
-    await page.goto('/link/inflation/nope');
+    await page.goto('/link/causes-of-inflation-and-deflation/nope');
     await expect(page.locator('text=Station not found')).toBeVisible();
   });
 });
@@ -88,7 +88,7 @@ test.describe('Link It shell', () => {
 test.describe('Land It shell', () => {
   test('intro station renders + rose theme', async ({ page }) => {
     await login(page);
-    await page.goto('/land/inflation/intro');
+    await page.goto('/land/causes-of-inflation-and-deflation/intro');
     await expect(page).toHaveTitle(/Land it · Intro/i);
     await expect(page.locator('.app.theme--land')).toHaveCount(1);
 
@@ -97,20 +97,10 @@ test.describe('Land It shell', () => {
   });
 });
 
-test.describe('Legacy query-string URLs', () => {
-  test('inbound ?topic=… is rewritten to the canonical path', async ({ page }) => {
-    await login(page);
-    await page.goto('/learn?topic=inflation');
-    /* TopicLoader's boot-time redirect rewrites the URL. Wait for it. */
-    await page.waitForFunction(() => location.pathname === '/learn/inflation', null, { timeout: 5000 });
-    expect(new URL(page.url()).pathname).toBe('/learn/inflation');
-  });
-});
-
 test.describe('Accessibility — keyboard navigation', () => {
   test('Tab reveals skip-link first on the learn shell', async ({ page }) => {
     await login(page);
-    await page.goto('/learn/inflation');
+    await page.goto('/learn/causes-of-inflation-and-deflation');
     await page.keyboard.press('Tab');
     const focused = await page.evaluate(() => document.activeElement &&
       (document.activeElement.className || '') + '|' +

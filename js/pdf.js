@@ -82,7 +82,7 @@ window.EconosPdf = (function () {
       case 'framing':   return C.navy;
       case 'cause':     return c.diagram === 'demand-pull' ? C.green : C.amber;
       case 'diagnose':  return C.purple;
-      case 'monetary':  return C.blue;
+      case 'demand-side-policies-monetary':  return C.blue;
       case 'impacts':   return C.rose;
       case 'deflation': return '#334155';
       default:          return C.navy;
@@ -897,7 +897,7 @@ window.EconosPdf = (function () {
       case 'framing':            return renderFraming(c);
       case 'cause':              return renderCause(c);
       case 'diagnose':           return renderDiagnose(c);
-      case 'monetary':           return renderMonetary(c);
+      case 'demand-side-policies-monetary':           return renderMonetary(c);
       case 'impacts':            return renderImpacts(c);
       case 'deflation':          return renderDeflation(c);
       case 'mechanisms':         return renderMechanisms(c);

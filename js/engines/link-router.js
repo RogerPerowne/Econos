@@ -18,21 +18,21 @@
 
   /* station name → { data file, boot function, engine script, title } */
   var STATIONS = {
-    intro:       { data: 'data-link-intro.js',    boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js',          title: 'Intro' },
-    context:     { data: 'data-link-context.js',  boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',         title: 'Context' },
-    chain:       { data: 'data-link-chain.js',    boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',   title: 'Chain' },
-    chain_open:  { data: 'data-link-chain.js',    boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
-    calc:        { data: 'data-link-calc.js',     boot: 'bootLinkCalc',      engine: 'js/engines/link-calc-engine.js',        title: 'Calculate It'      },
-    data:        { data: 'data-link-data.js',     boot: 'bootLinkData',      engine: 'js/engines/link-data-engine.js',        title: 'Read the Data'     },
-    extract:     { data: 'data-link-extract.js',  boot: 'bootLinkExtract',   engine: 'js/engines/link-extract-engine.js',     title: 'Read the Extract'  },
-    predict:     { data: 'data-link-predict.js',  boot: 'bootLinkPredict',   engine: 'js/engines/link-predict-engine.js',     title: 'Predict Outcome'   },
-    diagram:     { data: 'data-link-diagram.js',  boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js', title: 'Diagram' },
-    depends:     { data: 'data-link-depends.js',  boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js', title: 'It depends' },
-    judge:       { data: 'data-link-judge.js',    boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',   title: 'Judge' },
-    complete:    { data: 'data-link-complete.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js',title: 'Complete' },
-    /* Quiz station — lazy-loads quiz-engine + a data-link-quiz-<set>.js
+    intro:        { data: 'link-intro.js',    boot: 'bootLinkIntro',     engine: 'js/engines/link-intro.js',             title: 'Intro' },
+    context:      { data: 'link-context.js',  boot: 'bootLinkContext',   engine: 'js/engines/link-engine.js',            title: 'Context' },
+    chain:        { data: 'link-chain.js',    boot: 'bootLinkChain',     engine: 'js/engines/link-chain-engine.js',      title: 'Chain' },
+    'chain-open': { data: 'link-chain.js',    boot: 'bootLinkChainOpen', engine: 'js/engines/link-chain-open-engine.js', title: 'Open chain' },
+    calc:         { data: 'link-calc.js',     boot: 'bootLinkCalc',      engine: 'js/engines/link-calc-engine.js',       title: 'Calculate It'      },
+    data:         { data: 'link-data.js',     boot: 'bootLinkData',      engine: 'js/engines/link-data-engine.js',       title: 'Read the Data'     },
+    extract:      { data: 'link-extract.js',  boot: 'bootLinkExtract',   engine: 'js/engines/link-extract-engine.js',    title: 'Read the Extract'  },
+    predict:      { data: 'link-predict.js',  boot: 'bootLinkPredict',   engine: 'js/engines/link-predict-engine.js',    title: 'Predict Outcome'   },
+    diagram:      { data: 'link-diagram.js',  boot: 'bootLinkDiagram',   engine: 'js/engines/link-diagram-engine.js',    title: 'Diagram' },
+    depends:      { data: 'link-depends.js',  boot: 'bootLinkDepends',   engine: 'js/engines/link-depends-engine.js',    title: 'It depends' },
+    judge:        { data: 'link-judge.js',    boot: 'bootLinkJudge',     engine: 'js/engines/link-judge-engine.js',      title: 'Judge' },
+    complete:     { data: 'link-complete.js', boot: 'bootLinkComplete',  engine: 'js/engines/link-complete-engine.js',   title: 'Complete' },
+    /* Quiz station — lazy-loads quiz-engine + a link-quiz-<set>.js
        file. The data file is resolved at call time. */
-    quiz:        { title: 'Quiz' }
+    quiz:         { title: 'Quiz' }
   };
 
   var dataLoaded = {};
@@ -71,18 +71,18 @@
   /* Heuristic: which stations are most likely to be visited next from
      the given current station? Tuned for the standard Link It funnel. */
   var NEXT_HINTS = {
-    intro:      ['context', 'chain', 'diagram'],
-    context:    ['chain'],
-    chain:      ['calc', 'extract', 'predict', 'diagram'],
-    chain_open: ['calc', 'extract', 'predict', 'diagram'],
-    calc:       ['diagram', 'depends'],
-    data:       ['depends', 'judge'],
-    extract:    ['diagram', 'depends'],
-    predict:    ['judge', 'depends'],
-    diagram:    ['depends'],
-    depends:    ['judge', 'predict'],
-    judge:      ['complete'],
-    complete:   []
+    intro:        ['context', 'chain', 'diagram'],
+    context:      ['chain'],
+    chain:        ['calc', 'extract', 'predict', 'diagram'],
+    'chain-open': ['calc', 'extract', 'predict', 'diagram'],
+    calc:         ['diagram', 'depends'],
+    data:         ['depends', 'judge'],
+    extract:      ['diagram', 'depends'],
+    predict:      ['judge', 'depends'],
+    diagram:      ['depends'],
+    depends:      ['judge', 'predict'],
+    judge:        ['complete'],
+    complete:     []
   };
   function prefetchAdjacent(current) {
     var next = NEXT_HINTS[current] || [];
@@ -164,7 +164,7 @@
        set is carried in the path's quizSet slot when present, else 'main'. */
     if (station === 'quiz') {
       var quizSet = TopicLoader.getQuizSet() || 'main';
-      var dataFile = 'data-link-quiz-' + quizSet + '.js';
+      var dataFile = 'link-quiz-' + quizSet + '.js';
       loadScript('/js/engines/quiz-engine.js', function () {
         TopicLoader.loadData(dataFile, function () {
           if (typeof window.bootQuizStation === 'function') {

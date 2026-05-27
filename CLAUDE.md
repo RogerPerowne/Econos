@@ -40,11 +40,11 @@ nor a query string for the topic / station / quiz set:
 
 ```
 /                                 home (topic picker)
-/learn/<topic>                    Learn It                e.g. /learn/inflation
-/link/<topic>/<station>           Link It                 e.g. /link/inflation/chain
-                                                          /link/inflation/chain-open
-/land/<topic>/<section>           Land It                 e.g. /land/inflation/a
-/quiz/<topic>/<set>               Standalone quiz         e.g. /quiz/inflation/main
+/learn/<topic>                    Learn It                e.g. /learn/causes-of-inflation-and-deflation
+/link/<topic>/<station>           Link It                 e.g. /link/causes-of-inflation-and-deflation/chain
+                                                          /link/causes-of-inflation-and-deflation/chain-open
+/land/<topic>/<section>           Land It                 e.g. /land/causes-of-inflation-and-deflation/a
+/quiz/<topic>/<set>               Standalone quiz         e.g. /quiz/causes-of-inflation-and-deflation/main
 /login /privacy-policy /terms     standalone shells
 /offline /404
 ```

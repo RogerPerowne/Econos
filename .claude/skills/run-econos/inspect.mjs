@@ -17,7 +17,7 @@
  */
 import { chromium } from 'playwright-core';
 
-const [, , topicId = 'inflation', cardCountArg = '8'] = process.argv;
+const [, , topicId = 'causes-of-inflation-and-deflation', cardCountArg = '8'] = process.argv;
 const cardCount = parseInt(cardCountArg, 10);
 const baseUrl = 'http://127.0.0.1:8765';
 
@@ -39,7 +39,7 @@ await page.evaluate(async () => {
   localStorage.econosAuth = '1';
 });
 
-await page.goto(`${baseUrl}/learn.html?topic=${topicId}`, { waitUntil: 'networkidle' });
+await page.goto(`${baseUrl}/learn/${topicId}/`, { waitUntil: 'networkidle' });
 await page.waitForTimeout(700);
 await page.click('[data-action="start-session"]');
 await page.waitForTimeout(500);

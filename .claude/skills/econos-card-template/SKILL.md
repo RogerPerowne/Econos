@@ -89,8 +89,8 @@ If you find yourself wanting a specialised template that doesn't exist yet, exte
 
 Pick a topic with a similar content shape and read its `data-topic.js` before writing a new card from scratch. Strong reference topics:
 
-- `js/data/factors_of_production/data-topic.js` — uses `ad-interactive` heavily with `visualKey`, `flow`, `causes`, `keyTerms`, `economistQuote`, paired blocks
-- `js/data/ped/data-topic.js` — elasticity calculation + five-frames
+- `js/data/factors-of-production/data-topic.js` — uses `ad-interactive` heavily with `visualKey`, `flow`, `causes`, `keyTerms`, `economistQuote`, paired blocks
+- `js/data/price-elasticity-of-demand/data-topic.js` — elasticity calculation + five-frames
 - `js/data/govt_intervention_subsidies/data-topic.js` — welfare-gf-explorer in context
 
 ## See also

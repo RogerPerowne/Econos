@@ -9,11 +9,11 @@
   'use strict';
 
   var STATIONS = {
-    intro:    { data: 'data-land-intro.js',     boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js',    title: 'Intro' },
-    a:        { data: 'data-land-section-a.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js',title: 'Section A' },
-    b:        { data: 'data-land-section-b.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js',title: 'Section B' },
-    c:        { data: 'data-land-section-c.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js',title: 'Section C' },
-    complete: { data: 'data-land-complete.js',  boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js', title: 'Complete' },
+    intro:    { data: 'land-intro.js',     boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js',    title: 'Intro' },
+    a:        { data: 'land-section-a.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js',title: 'Section A' },
+    b:        { data: 'land-section-b.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js',title: 'Section B' },
+    c:        { data: 'land-section-c.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js',title: 'Section C' },
+    complete: { data: 'land-complete.js',  boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js', title: 'Complete' },
     quiz:     { title: 'Quiz' }
   };
 
@@ -122,7 +122,7 @@
     var cancelSkeleton = showLoadingSkeleton();
     if (station === 'quiz') {
       var quizSet = TopicLoader.getQuizSet() || 'main';
-      var dataFile = 'data-land-quiz-' + quizSet + '.js';
+      var dataFile = 'land-quiz-' + quizSet + '.js';
       loadScript('/js/engines/quiz-engine.js', function () {
         TopicLoader.loadData(dataFile, function () {
           if (typeof window.bootQuizStation === 'function') {

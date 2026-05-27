@@ -14,10 +14,14 @@
                                   quiz)
        /quiz/<topic>/<set>        Standalone quiz
 
-   <topic> in the URL is the topic ID with underscores replaced
-   by hyphens (toSlug); the parser maps it back (fromSlug) when
-   loading data files, which live at /js/data/<topic-id>/. Same
-   rule for the only multi-word station, chain-open ↔ chain_open.
+   `<topic>` is the topic's slug — derived from its display title
+   (e.g. "Negative Externalities" → `negative-externalities`). The
+   slug IS the directory name under `/js/data/`, the registry `id`
+   field in `js/topics.js`, and the URL segment. No conversion
+   layer — the same string everywhere.
+
+   Stations are short tokens, all lowercase, dashes for multi-word
+   (only `chain-open` is multi-word today). Same identity rule.
 
    Path parsing happens once in `parsePath()` and is exposed via
    `getTopic`, `getStation`, `getQuizSet`, `getShell`. URL building
@@ -32,37 +36,30 @@
 (function () {
   'use strict';
 
-  var DEFAULT_TOPIC = 'inflation';
-
-  /* Single mapping point between internal IDs (underscore) and
-     URL slugs (hyphen). The mapping is bijective because no
-     existing topic ID or station name contains a hyphen. */
-  function toSlug(id)     { return String(id || '').replace(/_/g, '-'); }
-  function fromSlug(slug) { return String(slug || '').replace(/-/g, '_'); }
+  var DEFAULT_TOPIC = 'causes-of-inflation-and-deflation';
 
   /* Recognised path segments. Used by the parser to distinguish
      a shell+topic+station path from random URLs that just happen
      to start with /link etc. */
   var SHELLS = { learn: true, link: true, land: true, quiz: true };
 
-  /* parsePath('/link/inflation/chain-open')
-       → { shell: 'link', topic: 'inflation', station: 'chain_open' }
+  /* parsePath('/link/causes-of-inflation-and-deflation/chain-open')
+       → { shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain-open' }
      parsePath('/')              → { shell: 'home' }
      parsePath('/learn')         → { shell: 'learn', topic: null }
      parsePath('/quiz/X/main')   → { shell: 'quiz', topic: 'X', quizSet: 'main' }
      Returns null for paths the loader doesn't recognise. */
   function parsePath(pathname) {
     var p = String(pathname || window.location.pathname || '/');
-    /* Strip trailing slash (except for the root). */
     if (p.length > 1 && p.charAt(p.length - 1) === '/') {
       p = p.substring(0, p.length - 1);
     }
     if (p === '' || p === '/') { return { shell: 'home' }; }
-    var parts = p.split('/').filter(Boolean); // remove empty leading from "/"
+    var parts = p.split('/').filter(Boolean);
     var shell = parts[0];
     if (!SHELLS[shell]) { return null; }
-    var topic = parts[1] ? fromSlug(parts[1]) : null;
-    var third = parts[2] ? fromSlug(parts[2]) : null;
+    var topic = parts[1] || null;
+    var third = parts[2] || null;
     if (shell === 'quiz') { return { shell: shell, topic: topic, quizSet: third }; }
     return { shell: shell, topic: topic, station: third };
   }
@@ -94,21 +91,21 @@
      callers don't need to pass it. */
   var routes = {
     home:  function ()             { return '/'; },
-    learn: function (topic)        { return '/learn/' + toSlug(topic || getTopic()); },
+    learn: function (topic)        { return '/learn/' + (topic || getTopic()); },
     link:  function (station, topic) {
-      return '/link/' + toSlug(topic || getTopic()) + '/' + toSlug(station || 'intro');
+      return '/link/' + (topic || getTopic()) + '/' + (station || 'intro');
     },
     land:  function (section, topic) {
-      return '/land/' + toSlug(topic || getTopic()) + '/' + toSlug(section || 'intro');
+      return '/land/' + (topic || getTopic()) + '/' + (section || 'intro');
     },
     quiz:  function (set, topic) {
-      return '/quiz/' + toSlug(topic || getTopic()) + '/' + toSlug(set || 'main');
+      return '/quiz/' + (topic || getTopic()) + '/' + (set || 'main');
     }
   };
 
   /* Programmatic navigation. If the URL is a station inside the
      currently-loaded SPA shell, hand off to that router for a
-     pushState SPA transition. Otherwise do a real page nav. */
+     pushState SPA transition. Otherwise a real page nav. */
   function go(url) {
     if (!url) { return; }
     try {
@@ -171,32 +168,6 @@
     }, sectionLabel);
   }
 
-  /* One-shot redirect from the previous query-string URL form
-     (`?topic=foo&station=bar`) to the canonical path form. Runs
-     synchronously before any other script reads the URL, so the
-     rest of the codebase only ever sees the canonical form. */
-  (function redirectLegacyQueryUrls() {
-    try {
-      var search = window.location.search;
-      if (!search || search.indexOf('topic=') < 0) { return; }
-      var params = new URLSearchParams(search);
-      var topic  = params.get('topic');
-      if (!topic) { return; }
-      var shell  = getShell();
-      var target = null;
-      if (shell === 'learn' || shell === null) {
-        target = routes.learn(topic);
-      } else if (shell === 'link') {
-        target = routes.link(params.get('station') || 'intro', topic);
-      } else if (shell === 'land') {
-        target = routes.land(params.get('station') || 'intro', topic);
-      } else if (shell === 'quiz') {
-        target = routes.quiz(params.get('quiz') || 'main', topic);
-      }
-      if (target) { window.history.replaceState(null, '', target); }
-    } catch (e) { /* don't block boot on a redirect failure */ }
-  })();
-
   window.TopicLoader = {
     /* URL parsing */
     parsePath:           parsePath,
@@ -204,9 +175,6 @@
     getStation:          getStation,
     getQuizSet:          getQuizSet,
     getShell:            getShell,
-    /* Slug helpers */
-    toSlug:              toSlug,
-    fromSlug:            fromSlug,
     /* URL building — the canonical entry points */
     routes:              routes,
     /* Navigation */

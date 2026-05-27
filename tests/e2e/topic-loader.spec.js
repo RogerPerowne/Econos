@@ -19,65 +19,65 @@ async function boot(page, url) {
 }
 
 test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
-  await boot(page, '/learn/inflation');
+  await boot(page, '/learn/causes-of-inflation-and-deflation');
 
   const cases = await page.evaluate(() => {
     const T = window.TopicLoader;
     return {
       home:      T.routes.home(),
       learn:     T.routes.learn(),
-      learnArg:  T.routes.learn('pos_externalities'),
+      learnArg:  T.routes.learn('positive-externalities'),
       linkDef:   T.routes.link('intro'),
       linkOpen:  T.routes.link('chain-open'),
       land:      T.routes.land('a'),
       quiz:      T.routes.quiz('main'),
-      quizSet:   T.routes.quiz('causes', 'inflation')
+      quizSet:   T.routes.quiz('causes', 'causes-of-inflation-and-deflation')
     };
   });
 
   expect(cases.home).toBe('/');
-  expect(cases.learn).toBe('/learn/inflation');
-  expect(cases.learnArg).toBe('/learn/pos-externalities');
-  expect(cases.linkDef).toBe('/link/inflation/intro');
-  expect(cases.linkOpen).toBe('/link/inflation/chain-open');
-  expect(cases.land).toBe('/land/inflation/a');
-  expect(cases.quiz).toBe('/quiz/inflation/main');
-  expect(cases.quizSet).toBe('/quiz/inflation/causes');
+  expect(cases.learn).toBe('/learn/causes-of-inflation-and-deflation');
+  expect(cases.learnArg).toBe('/learn/positive-externalities');
+  expect(cases.linkDef).toBe('/link/causes-of-inflation-and-deflation/intro');
+  expect(cases.linkOpen).toBe('/link/causes-of-inflation-and-deflation/chain-open');
+  expect(cases.land).toBe('/land/causes-of-inflation-and-deflation/a');
+  expect(cases.quiz).toBe('/quiz/causes-of-inflation-and-deflation/main');
+  expect(cases.quizSet).toBe('/quiz/causes-of-inflation-and-deflation/causes');
 });
 
 test('parsePath round-trips canonical URLs', async ({ page }) => {
-  await boot(page, '/learn/inflation');
+  await boot(page, '/learn/causes-of-inflation-and-deflation');
 
   const cases = await page.evaluate(() => {
     const p = window.TopicLoader.parsePath;
     return {
       home:   p('/'),
-      learn:  p('/learn/inflation'),
-      link:   p('/link/inflation/chain'),
-      open:   p('/link/inflation/chain-open'),
-      land:   p('/land/inflation/a'),
-      quiz:   p('/quiz/inflation/main'),
-      slug:   p('/learn/pos-externalities'),
+      learn:  p('/learn/causes-of-inflation-and-deflation'),
+      link:   p('/link/causes-of-inflation-and-deflation/chain'),
+      open:   p('/link/causes-of-inflation-and-deflation/chain-open'),
+      land:   p('/land/causes-of-inflation-and-deflation/a'),
+      quiz:   p('/quiz/causes-of-inflation-and-deflation/main'),
+      slug:   p('/learn/positive-externalities'),
       bogus:  p('/some/random/path')
     };
   });
 
   expect(cases.home).toEqual({ shell: 'home' });
-  expect(cases.learn).toMatchObject({ shell: 'learn', topic: 'inflation' });
-  expect(cases.link).toMatchObject({ shell: 'link', topic: 'inflation', station: 'chain' });
-  expect(cases.open).toMatchObject({ shell: 'link', topic: 'inflation', station: 'chain_open' });
-  expect(cases.land).toMatchObject({ shell: 'land', topic: 'inflation', station: 'a' });
-  expect(cases.quiz).toMatchObject({ shell: 'quiz', topic: 'inflation', quizSet: 'main' });
-  expect(cases.slug).toMatchObject({ shell: 'learn', topic: 'pos_externalities' });
+  expect(cases.learn).toMatchObject({ shell: 'learn', topic: 'causes-of-inflation-and-deflation' });
+  expect(cases.link).toMatchObject({ shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain' });
+  expect(cases.open).toMatchObject({ shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain-open' });
+  expect(cases.land).toMatchObject({ shell: 'land', topic: 'causes-of-inflation-and-deflation', station: 'a' });
+  expect(cases.quiz).toMatchObject({ shell: 'quiz', topic: 'causes-of-inflation-and-deflation', quizSet: 'main' });
+  expect(cases.slug).toMatchObject({ shell: 'learn', topic: 'positive-externalities' });
   expect(cases.bogus).toBeNull();
 });
 
 test('getTopic / getStation read the current pathname', async ({ page }) => {
-  await boot(page, '/link/inflation/chain-open');
+  await boot(page, '/link/causes-of-inflation-and-deflation/chain-open');
   const state = await page.evaluate(() => ({
     topic:   window.TopicLoader.getTopic(),
     station: window.TopicLoader.getStation(),
     shell:   window.TopicLoader.getShell()
   }));
-  expect(state).toEqual({ topic: 'inflation', station: 'chain_open', shell: 'link' });
+  expect(state).toEqual({ topic: 'causes-of-inflation-and-deflation', station: 'chain-open', shell: 'link' });
 });

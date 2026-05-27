@@ -21,16 +21,21 @@ npx playwright install chromium
 
 ## Run (agent path) — screenshot a topic card
 
-Two steps: start a static file server in the background, then call the driver.
+Three steps: build the dist/, start a static file server pointing at it,
+then call the driver. URLs are path-based (`/learn/<slug>/`) so the dist
+build is required — the source tree only has `learn.html` at the root.
 
 ```bash
-# 1. Start the static server (once per session). Verified working: HTTP 200 on /learn.html
-python3 -m http.server 8765 --bind 127.0.0.1 >/dev/null 2>&1 &
+# 1. Build the dist (once, or after editing topic data).
+npm run build >/dev/null
 
-# 2. Screenshot a card. Args: <url> [output.png] [card-index]
+# 2. Start the static server (once per session) inside dist/.
+( cd dist && python3 -m http.server 8765 --bind 127.0.0.1 >/dev/null 2>&1 & )
+
+# 3. Screenshot a card. Args: <url> [output.png] [card-index]
 node .claude/skills/run-econos/driver.mjs \
-  'http://127.0.0.1:8765/learn.html?topic=factors_of_production' \
-  /tmp/econos-land.png \
+  'http://127.0.0.1:8765/learn/factors-of-production/' \
+  /tmp/econos-card.png \
   1
 ```
 
@@ -102,7 +107,7 @@ When an issue is reported, fix it in data or in the renderer, not by ignoring th
 | Symptom | Fix |
 |---------|-----|
 | Screenshot shows login page | Auth bypass failed. Verify origin matches: driver visits `${origin}/` before setting localStorage. |
-| Driver hangs at `goto` | Static server didn't start. `curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/learn.html` should return 200. |
+| Driver hangs at `goto` | Static server didn't start, or dist/ not built. `curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/learn/factors-of-production/` should return 200. |
 | `Error: browserType.launch: Executable doesn't exist` | Chromium not installed for Playwright on this host — run `npx playwright install chromium`. |
 | Blank page on screenshot | Card index too high — exceeded `cards.length - 1`. Check the topic's `data-topic.js`. |
 | Screenshot taken but card content missing | Increase `waitForTimeout` to 1500ms after `start-session` click; some cards have heavy DOM. |

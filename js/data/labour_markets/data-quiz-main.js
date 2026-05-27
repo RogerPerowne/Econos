@@ -50,7 +50,7 @@
           'An increase in the cost of capital substitutes'
         ],
         ans:  2,
-        exp:  'Higher worker productivity increases MRP — each worker now generates more revenue. The demand curve for labour (MRP curve) shifts right, meaning more workers are demanded at any given wage.'
+        exp:  'Higher worker productivity increases MRP – each worker now generates more revenue. The demand curve for labour (MRP curve) shifts right, meaning more workers are demanded at any given wage.'
       },
       {
         id:   'q_lm_4',
@@ -63,7 +63,7 @@
           'A trade union that represents all workers'
         ],
         ans:  1,
-        exp:  'A monopsony is a market with a single buyer — in labour markets, a single dominant employer. The monopsonist must raise wages to attract more workers, making the marginal cost of labour exceed the average wage.'
+        exp:  'A monopsony is a market with a single buyer – in labour markets, a single dominant employer. The monopsonist must raise wages to attract more workers, making the marginal cost of labour exceed the average wage.'
       },
       {
         id:   'q_lm_5',

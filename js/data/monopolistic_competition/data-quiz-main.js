@@ -37,7 +37,7 @@
           'It sells a homogeneous product in a large market'
         ],
         ans:  1,
-        exp:  'Product differentiation gives each firm a degree of brand loyalty. Consumers have preferences, so the firm can raise price without losing all customers — hence a downward-sloping (not horizontal) demand curve.'
+        exp:  'Product differentiation gives each firm a degree of brand loyalty. Consumers have preferences, so the firm can raise price without losing all customers – hence a downward-sloping (not horizontal) demand curve.'
       },
       {
         id:   'q_mc_3',
@@ -63,7 +63,7 @@
           'Firms produce where P = MC'
         ],
         ans:  1,
-        exp:  'In long-run equilibrium, P = AC but this occurs on the downward-sloping part of the AC curve, above the minimum. Output is below the productively efficient level — hence excess capacity.'
+        exp:  'In long-run equilibrium, P = AC but this occurs on the downward-sloping part of the AC curve, above the minimum. Output is below the productively efficient level – hence excess capacity.'
       },
       {
         id:   'q_mc_5',

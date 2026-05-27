@@ -63,7 +63,7 @@
           'The total value of assets held by households'
         ],
         ans:  1,
-        exp:  'Subjective wellbeing surveys ask people directly about their life satisfaction, happiness, and sense of purpose. They capture dimensions of human experience that GDP misses — such as mental health, community, and relationships.'
+        exp:  'Subjective wellbeing surveys ask people directly about their life satisfaction, happiness, and sense of purpose. They capture dimensions of human experience that GDP misses – such as mental health, community, and relationships.'
       },
       {
         id:   'q_sol_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['HDI','Happy Planet Index','ONS Wellbeing Framework','CPI'],
         ans:  3,
-        exp:  'HDI, Happy Planet Index, and the ONS Wellbeing Framework are all composite or multi-dimensional measures of living standards and wellbeing. The CPI measures inflation — not standard of living directly.'
+        exp:  'HDI, Happy Planet Index, and the ONS Wellbeing Framework are all composite or multi-dimensional measures of living standards and wellbeing. The CPI measures inflation – not standard of living directly.'
       },
       {
         id:   'q_sol_9',

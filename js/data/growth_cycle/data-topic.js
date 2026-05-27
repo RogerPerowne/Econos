@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for growth_cycle
+   ECONOS – content data for growth_cycle
    7 cards · revision-tight · exam-edge gems flagged
    Edexcel Theme 2.5 / 2.6
    ============================================================ */
@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroTradeCycle',
-    summary: "The economy doesn't grow in a straight line — it cycles through boom, downturn, recession, and recovery. Understanding the cycle's phases, what drives shocks, and the costs and benefits of growth is the foundation of macro policy analysis.",
+    summary: "The economy doesn't grow in a straight line – it cycles through boom, downturn, recession, and recovery. Understanding the cycle's phases, what drives shocks, and the costs and benefits of growth is the foundation of macro policy analysis.",
     doInThis: 'Recap the four phases of the trade cycle, demand and supply-side shocks, output gaps, causes and consequences of economic growth.',
     outcomes: [
       'Identify the four phases of the trade cycle and their characteristics',
@@ -31,13 +31,13 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — The four phases of the trade cycle ----- */
+    /* ----- CARD 1 – The four phases of the trade cycle ----- */
     {
       id: 'trade-cycle-phases',
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The trade cycle: four phases',
-      lede: 'Real GDP oscillates around its trend growth rate. The four phases of the trade cycle describe this oscillation — and each phase has distinct characteristics, risks, and policy implications.',
+      lede: 'Real GDP oscillates around its trend growth rate. The four phases of the trade cycle describe this oscillation – and each phase has distinct characteristics, risks, and policy implications.',
       branches: [
         { tone: 'green',  label: 'Boom (Peak)',       sub: '<strong>Actual output > potential.</strong> Positive output gap. Inflation risk, low unemployment below NAIRU, BoP deficit widens as imports surge. Investment high, confidence high. Policy: tighten monetary/fiscal to prevent overheating.' },
         { tone: 'rose',   label: 'Downturn',          sub: '<strong>Growth slowing.</strong> Investment falls first (accelerator). Consumer confidence weakens. Unemployment begins rising. Inflationary pressure eases. Policy: begins easing, but may face inflation trade-off.' },
@@ -46,7 +46,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: {
         title: 'Investment leads, consumption follows',
-        text: 'In the trade cycle, <strong>investment is the most volatile component</strong> — it falls first and fastest in downturns (accelerator), then leads the recovery. Consumer spending follows with a lag (wealth effect, employment confidence). A* answers note this timing asymmetry — it explains why business surveys (PMI) are better leading indicators than unemployment data.'
+        text: 'In the trade cycle, <strong>investment is the most volatile component</strong> – it falls first and fastest in downturns (accelerator), then leads the recovery. Consumer spending follows with a lag (wealth effect, employment confidence). A* answers note this timing asymmetry – it explains why business surveys (PMI) are better leading indicators than unemployment data.'
       },
       keyTakeaway: {
         title: 'Policy is asymmetric',
@@ -54,20 +54,20 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 2 — Demand-side shocks ----- */
+    /* ----- CARD 2 – Demand-side shocks ----- */
     {
       id: 'demand-shocks',
       template: 'mechanisms',
       diagramKey: 'demandPullDiagram',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Demand-side shocks',
-      lede: "Demand-side shocks shift AD — changing both output and the price level in the same direction. They come from inside the economy or from global events.",
+      lede: "Demand-side shocks shift AD – changing both output and the price level in the same direction. They come from inside the economy or from global events.",
       mechanisms: [
         {
           num: '1',
           tone: 'rose',
           title: 'Negative demand shock (AD falls)',
-          text: '<strong>AD shifts left → output falls → unemployment rises → price level falls.</strong> Examples: financial crisis (2008-09), confidence collapse (COVID-19 2020), global trade contraction. Policy response: fiscal/monetary stimulus. The Keynesian case for intervention — without it, recovery is slow due to wage stickiness and multiplier-in-reverse.'
+          text: '<strong>AD shifts left → output falls → unemployment rises → price level falls.</strong> Examples: financial crisis (2008-09), confidence collapse (COVID-19 2020), global trade contraction. Policy response: fiscal/monetary stimulus. The Keynesian case for intervention – without it, recovery is slow due to wage stickiness and multiplier-in-reverse.'
         },
         {
           num: '2',
@@ -85,7 +85,7 @@ window.ECONOS_TOPIC = {
           num: '4',
           tone: 'amber',
           title: 'External demand shocks (global)',
-          text: 'Recessions in major trading partners reduce export demand → (X−M) falls → AD falls. Conversely, global boom raises export demand → AD rises. The UK is heavily integrated globally — 30% of GDP is trade. External demand shocks can dominate domestic policy in an open economy.'
+          text: 'Recessions in major trading partners reduce export demand → (X−M) falls → AD falls. Conversely, global boom raises export demand → AD rises. The UK is heavily integrated globally – 30% of GDP is trade. External demand shocks can dominate domestic policy in an open economy.'
         }
       ],
       examEdge: {
@@ -94,17 +94,17 @@ window.ECONOS_TOPIC = {
       },
       connection: {
         title: 'Automatic stabiliser response',
-        text: 'A negative demand shock triggers automatic fiscal stabilisers instantly — tax falls, welfare rises. This cushions but doesn\'t eliminate the shock. If severe enough, discretionary stimulus is added. The policy sequencing: automatic stabilisers first, discretionary second.'
+        text: 'A negative demand shock triggers automatic fiscal stabilisers instantly – tax falls, welfare rises. This cushions but doesn\'t eliminate the shock. If severe enough, discretionary stimulus is added. The policy sequencing: automatic stabilisers first, discretionary second.'
       }
     },
 
-    /* ----- CARD 3 — Supply-side shocks ----- */
+    /* ----- CARD 3 – Supply-side shocks ----- */
     {
       id: 'supply-shocks',
       template: 'paired',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Supply-side shocks',
-      lede: 'Supply shocks hit SRAS — and unlike demand shocks, they move output and inflation in opposite directions, creating the policy dilemma.',
+      lede: 'Supply shocks hit SRAS – and unlike demand shocks, they move output and inflation in opposite directions, creating the policy dilemma.',
       pairs: [
         {
           tone: 'rose',
@@ -114,7 +114,7 @@ window.ECONOS_TOPIC = {
             'Supply chain disruption: pandemic, conflict, natural disaster',
             'Wage push: militant labour market, minimum wage surge',
             'Exchange rate depreciation: raises import input costs',
-            'Result: stagflation — higher inflation AND lower output simultaneously'
+            'Result: stagflation – higher inflation AND lower output simultaneously'
           ],
           example: '<strong>2022 UK:</strong> energy prices surged (Ukraine war + LNG market), supply chains still disrupted (COVID legacy), wage growth elevated (tight labour market). SRAS shifted left sharply → CPI 11.1%, GDP growth near-zero. Classic negative supply shock.'
         },
@@ -126,28 +126,28 @@ window.ECONOS_TOPIC = {
             'Fall in commodity prices: oil price fall (2014-16)',
             'Productivity surge: efficiency improvements',
             'Exchange rate appreciation: cheaper import inputs',
-            'Result: more output AND lower inflation simultaneously — benign'
+            'Result: more output AND lower inflation simultaneously – benign'
           ],
-          example: '<strong>1990s tech boom:</strong> US productivity surge (internet, computers) shifted SRAS right — growth with low inflation. The \'Goldilocks economy\'. <strong>2014-16 oil price fall:</strong> from $115 to $35/barrel → UK disinflation and positive output effect.'
+          example: '<strong>1990s tech boom:</strong> US productivity surge (internet, computers) shifted SRAS right – growth with low inflation. The \'Goldilocks economy\'. <strong>2014-16 oil price fall:</strong> from $115 to $35/barrel → UK disinflation and positive output effect.'
         }
       ],
       examEdge: {
         title: 'Supply shock: the policy dilemma',
-        text: 'Negative supply shock creates the hardest macro policy problem: <strong>tighten to fight inflation → worsen recession; ease to protect output → worsen inflation</strong>. There is no costless demand-side response. A* answers name this explicitly as \'the monetary policy dilemma in a supply shock\' — and note that only supply-side intervention can address both objectives simultaneously.'
+        text: 'Negative supply shock creates the hardest macro policy problem: <strong>tighten to fight inflation → worsen recession; ease to protect output → worsen inflation</strong>. There is no costless demand-side response. A* answers name this explicitly as \'the monetary policy dilemma in a supply shock\' – and note that only supply-side intervention can address both objectives simultaneously.'
       },
       policy: {
         title: 'The Thatcher response (1979-83)',
-        text: 'Thatcher\'s government faced the second oil shock (1979-80) — a negative supply shock. They chose to fight the inflation, accepting deep recession and 3m+ unemployment. The sacrifice ratio was very high. Alternative: accommodate the supply shock and accept temporarily higher inflation. The choice between these responses is a classic evaluation question.'
+        text: 'Thatcher\'s government faced the second oil shock (1979-80) – a negative supply shock. They chose to fight the inflation, accepting deep recession and 3m+ unemployment. The sacrifice ratio was very high. Alternative: accommodate the supply shock and accept temporarily higher inflation. The choice between these responses is a classic evaluation question.'
       }
     },
 
-    /* ----- CARD 4 — The impact of economic growth ----- */
+    /* ----- CARD 4 – The impact of economic growth ----- */
     {
       id: 'growth-impact',
       template: 'mechanisms',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Costs and benefits of economic growth',
-      lede: "Growth is generally beneficial — but it can also be costly. A balanced evaluation of growth asks: growth for whom, at what speed, and at what environmental cost?",
+      lede: "Growth is generally beneficial – but it can also be costly. A balanced evaluation of growth asks: growth for whom, at what speed, and at what environmental cost?",
       mechanisms: [
         {
           num: '1',
@@ -159,38 +159,38 @@ window.ECONOS_TOPIC = {
           num: '2',
           tone: 'blue',
           title: 'Benefits: employment and fiscal space',
-          text: 'Growth creates employment — especially in the long run as investment and entrepreneurship expand. Lower unemployment → social benefits (mental health, crime, family stability). Rising tax base without tax rate increases → fiscal dividends for public investment.'
+          text: 'Growth creates employment – especially in the long run as investment and entrepreneurship expand. Lower unemployment → social benefits (mental health, crime, family stability). Rising tax base without tax rate increases → fiscal dividends for public investment.'
         },
         {
           num: '3',
           tone: 'amber',
-          title: 'Costs: inequality — the Kuznets curve',
-          text: 'Early-stage growth typically worsens income distribution (workers move from low-wage agriculture to higher-wage industry, but wages diverge). Kuznets hypothesised inequality eventually falls — but this is contested. UK experience: growth in 1980s and 2010s both accompanied by rising inequality.'
+          title: 'Costs: inequality – the Kuznets curve',
+          text: 'Early-stage growth typically worsens income distribution (workers move from low-wage agriculture to higher-wage industry, but wages diverge). Kuznets hypothesised inequality eventually falls – but this is contested. UK experience: growth in 1980s and 2010s both accompanied by rising inequality.'
         },
         {
           num: '4',
           tone: 'rose',
           title: 'Costs: environmental impact',
-          text: '<strong>The trade-off modern economics cannot ignore.</strong> GDP growth historically correlates with CO₂ emissions, resource depletion, biodiversity loss. The Environmental Kuznets Curve suggests rich countries eventually reduce pollution — but this applies to local pollutants, not greenhouse gases. Climate economists argue growth must be \'decoupled\' from carbon emissions — difficult at scale.'
+          text: '<strong>The trade-off modern economics cannot ignore.</strong> GDP growth historically correlates with CO₂ emissions, resource depletion, biodiversity loss. The Environmental Kuznets Curve suggests rich countries eventually reduce pollution – but this applies to local pollutants, not greenhouse gases. Climate economists argue growth must be \'decoupled\' from carbon emissions – difficult at scale.'
         }
       ],
       examEdge: {
         title: 'Evaluate the type of growth',
-        text: "A* growth evaluation distinguishes the TYPE of growth: <em>'Consumption-led growth may increase living standards short-term but is not environmentally sustainable. Investment-led growth raises productive capacity without current consumption — more likely to be sustainable.'</em> Also distinguish growth distribution — \'rising real GDP does not ensure rising living standards for all — the Gini coefficient or median income is a better welfare measure.\'"
+        text: "A* growth evaluation distinguishes the TYPE of growth: <em>'Consumption-led growth may increase living standards short-term but is not environmentally sustainable. Investment-led growth raises productive capacity without current consumption – more likely to be sustainable.'</em> Also distinguish growth distribution – \'rising real GDP does not ensure rising living standards for all – the Gini coefficient or median income is a better welfare measure.\'"
       },
       connection: {
         title: 'The Environmental Kuznets Curve',
-        text: 'The Environmental Kuznets Curve predicts that pollution first rises then falls as income grows. Evidence: strong for local air quality (PM2.5, SO₂). Weak for CO₂ — high-income countries still the largest per-capita emitters. The curve does not resolve the climate change challenge without deliberate carbon pricing or regulation.'
+        text: 'The Environmental Kuznets Curve predicts that pollution first rises then falls as income grows. Evidence: strong for local air quality (PM2.5, SO₂). Weak for CO₂ – high-income countries still the largest per-capita emitters. The curve does not resolve the climate change challenge without deliberate carbon pricing or regulation.'
       }
     },
 
-    /* ----- CARD 5 — Leading indicators and forecasting ----- */
+    /* ----- CARD 5 – Leading indicators and forecasting ----- */
     {
       id: 'indicators',
       template: 'diagnose',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Reading the trade cycle: leading indicators',
-      lede: 'Economic data is backward-looking. Forecasters use leading indicators — data that changes before GDP — to anticipate turning points in the cycle.',
+      lede: 'Economic data is backward-looking. Forecasters use leading indicators – data that changes before GDP – to anticipate turning points in the cycle.',
       table: {
         headers: ['Indicator', 'What it measures', 'Lead time'],
         rows: [
@@ -208,24 +208,24 @@ window.ECONOS_TOPIC = {
           {
             label: 'A',
             text: 'UK PMI falls below 50 for three consecutive months. Consumer confidence drops sharply. House price growth turns negative. Unemployment starts rising. What phase of the trade cycle is this?',
-            answer: 'Downturn heading into recession. Leading indicators all pointing down. Policy response: begin easing — cut Bank Rate, consider fiscal stimulus. But time lag means the trough may be passed before policy takes full effect.',
+            answer: 'Downturn heading into recession. Leading indicators all pointing down. Policy response: begin easing – cut Bank Rate, consider fiscal stimulus. But time lag means the trough may be passed before policy takes full effect.',
             tone: 'rose'
           },
           {
             label: 'B',
-            text: 'GDP is growing at 3.5% — above trend. Unemployment is 3.5%. CPI is 4.5%. Business investment is rising strongly. Wages are accelerating. What is the macro risk?',
-            answer: 'Overheating — positive output gap. Inflationary boom. Policy: tighten monetary policy (raise Bank Rate) to cool AD before price level rises further. Risk of a hard landing if tightening is too aggressive.',
+            text: 'GDP is growing at 3.5% – above trend. Unemployment is 3.5%. CPI is 4.5%. Business investment is rising strongly. Wages are accelerating. What is the macro risk?',
+            answer: 'Overheating – positive output gap. Inflationary boom. Policy: tighten monetary policy (raise Bank Rate) to cool AD before price level rises further. Risk of a hard landing if tightening is too aggressive.',
             tone: 'amber'
           }
         ]
       },
       examEdge: {
         title: 'Leading vs lagging indicators',
-        text: 'Unemployment is a <strong>lagging indicator</strong> — it peaks after GDP has already recovered because firms wait to hire until recovery is confirmed. GDP itself is also slightly lagging (data comes with delay). PMI and business confidence are <strong>leading indicators</strong> — they change before GDP moves. A* answers use leading indicators when predicting future cycle position, not unemployment data.'
+        text: 'Unemployment is a <strong>lagging indicator</strong> – it peaks after GDP has already recovered because firms wait to hire until recovery is confirmed. GDP itself is also slightly lagging (data comes with delay). PMI and business confidence are <strong>leading indicators</strong> – they change before GDP moves. A* answers use leading indicators when predicting future cycle position, not unemployment data.'
       }
     },
 
-    /* ----- CARD 6 — Causes of economic growth revisited ----- */
+    /* ----- CARD 6 – Causes of economic growth revisited ----- */
     {
       id: 'growth-causes-revisited',
       template: 'paired',
@@ -242,9 +242,9 @@ window.ECONOS_TOPIC = {
             'Fiscal stimulus: ↑G or ↓T',
             'Export boom: ↑X from trading partner growth',
             'Multiplier amplifies initial injection',
-            'Bounded by the PPF (LRAS) — can cause inflation if PPF is hit'
+            'Bounded by the PPF (LRAS) – can cause inflation if PPF is hit'
           ],
-          example: '<strong>UK 2010-15:</strong> loose monetary policy (0.5% Bank Rate, QE) drove consumption and house price recovery. GDP returned to pre-crisis levels by 2013-14. But real wages stagnated — growth without widespread welfare improvement. A consumption-led, not investment-led, recovery.'
+          example: '<strong>UK 2010-15:</strong> loose monetary policy (0.5% Bank Rate, QE) drove consumption and house price recovery. GDP returned to pre-crisis levels by 2013-14. But real wages stagnated – growth without widespread welfare improvement. A consumption-led, not investment-led, recovery.'
         },
         {
           tone: 'blue',
@@ -255,28 +255,28 @@ window.ECONOS_TOPIC = {
             '↑ Capital stock (investment in physical capital)',
             '↑ Technology (R&D, innovation)',
             '↑ Total Factor Productivity (efficiency of all inputs)',
-            'Shifts PPF outward — non-inflationary capacity expansion'
+            'Shifts PPF outward – non-inflationary capacity expansion'
           ],
-          example: '<strong>East Asian miracle (1960-1990):</strong> South Korea, Taiwan, Singapore combined investment rates of 30-40% of GDP with mass education expansion. LRAS shifted dramatically right. GDP per capita grew 7-9% per year for three decades — supply-side led.'
+          example: '<strong>East Asian miracle (1960-1990):</strong> South Korea, Taiwan, Singapore combined investment rates of 30-40% of GDP with mass education expansion. LRAS shifted dramatically right. GDP per capita grew 7-9% per year for three decades – supply-side led.'
         }
       ],
       examEdge: {
         title: 'Sustainable growth requires supply-side foundations',
-        text: "A* growth essays structure around this distinction: <em>'In the short run, AD stimulus can drive growth up to the PPF. But sustainable long-run growth requires supply-side investment that shifts the PPF outward — raising potential output without inflationary pressure. The UK's post-2008 productivity puzzle reflects a failure to achieve this supply-side shift.'</em>"
+        text: "A* growth essays structure around this distinction: <em>'In the short run, AD stimulus can drive growth up to the PPF. But sustainable long-run growth requires supply-side investment that shifts the PPF outward – raising potential output without inflationary pressure. The UK's post-2008 productivity puzzle reflects a failure to achieve this supply-side shift.'</em>"
       },
       policy: {
         title: 'The productivity puzzle as the central challenge',
-        text: 'The UK productivity puzzle — stagnant output per worker since 2008 — suggests that demand-led growth has not been matched by supply-side improvement. Closing the productivity gap (UK ~15% below the G7 average) is the defining supply-side challenge for UK economic policy.'
+        text: 'The UK productivity puzzle – stagnant output per worker since 2008 – suggests that demand-led growth has not been matched by supply-side improvement. Closing the productivity gap (UK ~15% below the G7 average) is the defining supply-side challenge for UK economic policy.'
       }
     },
 
-    /* ----- CARD 7 — Economic growth and macro objectives ----- */
+    /* ----- CARD 7 – Economic growth and macro objectives ----- */
     {
       id: 'growth-objectives',
       template: 'deflation',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Economic growth and the other macro objectives',
-      lede: "Growth is the primary macro objective — but it interacts with all the others. Understanding these interactions is essential for multi-objective policy questions.",
+      lede: "Growth is the primary macro objective – but it interacts with all the others. Understanding these interactions is essential for multi-objective policy questions.",
       mechanismsTitle: 'Growth interactions with the four other objectives',
       mechanisms: [
         {
@@ -287,7 +287,7 @@ window.ECONOS_TOPIC = {
         {
           icon: '👷',
           title: 'Growth and employment',
-          text: 'Growth creates employment — Okun\'s Law: ~2% GDP growth above trend reduces unemployment by ~1%. But jobless growth (capital-intensive, technology-replacing) can occur — GDP rises without proportionate job creation. Structural unemployment can persist alongside GDP growth if skills mismatch is severe.'
+          text: 'Growth creates employment – Okun\'s Law: ~2% GDP growth above trend reduces unemployment by ~1%. But jobless growth (capital-intensive, technology-replacing) can occur – GDP rises without proportionate job creation. Structural unemployment can persist alongside GDP growth if skills mismatch is severe.'
         },
         {
           icon: '🌍',
@@ -297,13 +297,13 @@ window.ECONOS_TOPIC = {
         {
           icon: '🌿',
           title: 'Growth and environment',
-          text: 'Traditional GDP growth depletes natural capital. The \'green growth\' debate: can economies grow while reducing carbon emissions? Evidence is mixed — decarbonisation of electricity generation works; transport and industry are harder. Net Zero targets and growth targets may conflict without radical technology change.'
+          text: 'Traditional GDP growth depletes natural capital. The \'green growth\' debate: can economies grow while reducing carbon emissions? Evidence is mixed – decarbonisation of electricity generation works; transport and industry are harder. Net Zero targets and growth targets may conflict without radical technology change.'
         }
       ],
       examples: {
         title: 'UK growth performance context',
         items: [
-          { period: 'Post-war to 1973', text: 'UK trend growth ~3%/year. \'Golden age\' of expansion — helped by post-war reconstruction demand, full employment, and Keynesian demand management.' },
+          { period: 'Post-war to 1973', text: 'UK trend growth ~3%/year. \'Golden age\' of expansion – helped by post-war reconstruction demand, full employment, and Keynesian demand management.' },
           { period: '1980s-2007', text: 'Growth ~2.5%/year with volatility. Thatcher reforms raised supply-side efficiency; financial liberalisation drove consumption-led growth in 1990s-2000s. But productivity lag vs EU partners widened.' },
           { period: '2008-present', text: 'Average growth ~1.2-1.5%/year. Productivity stagnation. Brexit. COVID. Cost of living crisis. UK has underperformed G7 peers significantly. The productivity puzzle remains unsolved.' }
         ]

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    PPF: synthesise into an exam-quality judgement on green investment
    ============================================================ */
 
@@ -32,14 +32,14 @@ window.ECONOS_LINK_JUDGE = {
       claim: {
         icon:   '🌱',
         prompt: 'Claim',
-        text:   'Investment in green infrastructure represents a rational choice on the PPF — accepting a short-run sacrifice of consumption to achieve long-run outward PPF shift through sustainable economic growth.'
+        text:   'Investment in green infrastructure represents a rational choice on the PPF – accepting a short-run sacrifice of consumption to achieve long-run outward PPF shift through sustainable economic growth.'
       },
       evidenceCards: [
         { id: 'context', tone: 'green', icon: '🔍', title: 'Context',       text: 'UK pledged £28bn green investment (scaled to £7.3bn); productivity growth 0.5%/yr since 2008; renewables 30% of generation; £1 public → £3–4 private crowding-in.' },
         { id: 'chain',   tone: 'amber', icon: '🔗', title: 'Chain',         text: 'Resources shift from consumption to investment → move along PPF (opportunity cost of public services) → long-run PPF shift outward if investment raises productive capacity.' },
         { id: 'depends', tone: 'blue',  icon: '⚖️', title: 'It depends on', text: 'Productivity of the shift; political sustainability; crowding-in of private capital; distribution of sacrifice and gains.' }
       ],
-      cloze: 'A PPF illustrates the [1] between producing investment goods and consumption goods with given resources. A movement [2] the PPF (from current consumption toward green investment) reduces current output of public services — this is the [3]. The long-run justification is an [4] shift of the PPF if the investment raises productive capacity — allowing more of both goods in future. The trade-off is most rational when the [5] of the investment is high (PPF shifts far outward for a given sacrifice) and [6] is sustainable across multiple governments. The risk is that if investment yields are lower than expected (cost overruns, technological failure), the PPF shifts [7] than anticipated, and the opportunity cost of forgone consumption goods [8] the benefit.',
+      cloze: 'A PPF illustrates the [1] between producing investment goods and consumption goods with given resources. A movement [2] the PPF (from current consumption toward green investment) reduces current output of public services – this is the [3]. The long-run justification is an [4] shift of the PPF if the investment raises productive capacity – allowing more of both goods in future. The trade-off is most rational when the [5] of the investment is high (PPF shifts far outward for a given sacrifice) and [6] is sustainable across multiple governments. The risk is that if investment yields are lower than expected (cost overruns, technological failure), the PPF shifts [7] than anticipated, and the opportunity cost of forgone consumption goods [8] the benefit.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-tradeoff',  text: 'trade-off',          correct: true  },
@@ -99,7 +99,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-irrelevant', text: 'The PPF is irrelevant to real-world policy decisions',                                                                                                 correct: false }
         ]
       },
-      examBridge: '"Green investment moves the UK along its PPF from consumption toward investment goods — the opportunity cost is foregone NHS and welfare spending. The long-run case is an outward PPF shift: cheaper clean energy raises productive capacity across all sectors. Whether this is the best trade-off depends on the productivity return of the investment (vs alternatives like health or housing) and political sustainability (the £28bn to £7.3bn revision illustrates the risk of commitment failure)."'
+      examBridge: '"Green investment moves the UK along its PPF from consumption toward investment goods – the opportunity cost is foregone NHS and welfare spending. The long-run case is an outward PPF shift: cheaper clean energy raises productive capacity across all sectors. Whether this is the best trade-off depends on the productivity return of the investment (vs alternatives like health or housing) and political sustainability (the £28bn to £7.3bn revision illustrates the risk of commitment failure)."'
     }
   ]
 };

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for unemployment
+   ECONOS – content data for unemployment
    8 cards · revision-tight · exam-edge gems flagged
    Edexcel Theme 2.1.3
    ============================================================ */
@@ -14,8 +14,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroUnemployment',
-    summary: "Three labour-market states. Six types — four supply-side, two demand-side. One diagnostic move. Lock these in and every unemployment essay falls into place.",
-    doInThis: 'Recap the classification, the six types, the diagnostic, why cyclical unemployment persists — plus a 25-mark essay scaffold on reducing unemployment.',
+    summary: "Three labour-market states. Six types – four supply-side, two demand-side. One diagnostic move. Lock these in and every unemployment essay falls into place.",
+    doInThis: 'Recap the classification, the six types, the diagnostic, why cyclical unemployment persists – plus a 25-mark essay scaffold on reducing unemployment.',
     outcomes: [
       'Classify employed/unemployed/inactive',
       'Match each type to its cure',
@@ -31,7 +31,7 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — Three labour-market states ----- */
+    /* ----- CARD 1 – Three labour-market states ----- */
     {
       id: 'classification',
       template: 'ad-interactive',
@@ -79,16 +79,16 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'The inactive trap',
-        text: 'If many people leave the labour force, the unemployment rate can fall even when the jobs picture has not improved. A healthy labour market needs people in work — watch participation <em>and</em> unemployment, not just the headline rate.'
+        text: 'If many people leave the labour force, the unemployment rate can fall even when the jobs picture has not improved. A healthy labour market needs people in work – watch participation <em>and</em> unemployment, not just the headline rate.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Always distinguish <strong>unemployed</strong> from <strong>economically inactive</strong>. Use participation-rate evidence when relevant — it gives a fuller picture of the labour market.'
+        text: 'Always distinguish <strong>unemployed</strong> from <strong>economically inactive</strong>. Use participation-rate evidence when relevant – it gives a fuller picture of the labour market.'
       }
     },
 
-    /* ----- CARD 2 — Measuring unemployment ----- */
+    /* ----- CARD 2 – Measuring unemployment ----- */
     {
       id: 'measurement',
       template: 'ad-interactive',
@@ -141,13 +141,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 3 — The six types of unemployment ----- */
+    /* ----- CARD 3 – The six types of unemployment ----- */
     {
       id: 'types',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'The six types of unemployment',
-      lede: 'Six causes — but only two flavours. Four are supply-side (frictions and rigidities in the labour market). Two are demand-side (cyclical and demand-deficient).',
+      lede: 'Six causes – but only two flavours. Four are supply-side (frictions and rigidities in the labour market). Two are demand-side (cyclical and demand-deficient).',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'Four supply-side types · two demand-side types. Different causes need different cures.' },
@@ -160,14 +160,14 @@ window.ECONOS_TOPIC = {
         icon: '🔧',
         iconStyle: 'circle',
         label: 'Supply-side · 4 types',
-        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by frictions and rigidities in the labour market. Workers stuck even when AD is strong.</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Frictional</strong> — between jobs</li><li><strong>Structural</strong> — skills / location mismatch</li><li><strong>Seasonal</strong> — predictable seasonal demand</li><li><strong>Real-wage</strong> — wage above market-clearing</li></ul><p style="margin:10px 0 0;font-size:12px;color:#047857;font-weight:700;">Cure: supply-side policy (retraining, mobility, market reform).</p>'
+        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by frictions and rigidities in the labour market. Workers stuck even when AD is strong.</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Frictional</strong> – between jobs</li><li><strong>Structural</strong> – skills / location mismatch</li><li><strong>Seasonal</strong> – predictable seasonal demand</li><li><strong>Real-wage</strong> – wage above market-clearing</li></ul><p style="margin:10px 0 0;font-size:12px;color:#047857;font-weight:700;">Cure: supply-side policy (retraining, mobility, market reform).</p>'
       },
       right: {
         tone: 'rose',
         icon: '📉',
         iconStyle: 'circle',
         label: 'Demand-side · 2 types',
-        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by weak aggregate demand. Output falls → labour demand falls (labour is a <em>derived demand</em>).</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cyclical</strong> — short-run, follows the business cycle</li><li><strong>Demand-deficient</strong> — persistent, even outside recession</li></ul><p style="margin:10px 0 0;font-size:12px;color:#9F1239;font-weight:700;">Cure: demand stimulus (fiscal / monetary).</p>'
+        text: '<p style="font-size:13px;color:#0B1426;margin:0 0 10px;line-height:1.55;">Caused by weak aggregate demand. Output falls → labour demand falls (labour is a <em>derived demand</em>).</p><ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Cyclical</strong> – short-run, follows the business cycle</li><li><strong>Demand-deficient</strong> – persistent, even outside recession</li></ul><p style="margin:10px 0 0;font-size:12px;color:#9F1239;font-weight:700;">Cure: demand stimulus (fiscal / monetary).</p>'
       },
 
       flowTitle: 'THE DEMAND-SIDE CHAIN',
@@ -185,12 +185,12 @@ window.ECONOS_TOPIC = {
       causes: [
         {
           tone: 'blue', icon: '🚶', head: 'Frictional',
-          body: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and search time. Always present — even at "full employment".',
+          body: 'Short-term unemployment <strong>between jobs</strong>. Caused by imperfect information and search time. Always present – even at "full employment".',
           example: '🎓 Graduate searching after university.'
         },
         {
           tone: 'amber', icon: '⛏️', head: 'Structural',
-          body: '<strong>Skills or location mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term — workers need retraining or relocation.',
+          body: '<strong>Skills or location mismatch</strong> with available jobs. Caused by deindustrialisation, technology, globalisation. Long-term – workers need retraining or relocation.',
           example: '⛏️ Ex-miners in South Wales.'
         },
         {
@@ -200,7 +200,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'green', icon: '⚖️', head: 'Real-wage (classical)',
-          body: 'Wages held <strong>above equilibrium</strong> by unions, minimum wage, or contracts — excess labour supply at that wage.',
+          body: 'Wages held <strong>above equilibrium</strong> by unions, minimum wage, or contracts – excess labour supply at that wage.',
           example: '£ Low-skilled workers priced out of jobs.'
         },
         {
@@ -210,29 +210,29 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'rose', icon: '🌀', head: 'Demand-deficient',
-          body: '<strong>Persistent weak AD</strong> — even outside recession (Keynes\'s "underemployment equilibrium"). Hysteresis can make cyclical unemployment become structural.',
+          body: '<strong>Persistent weak AD</strong> – even outside recession (Keynes\'s "underemployment equilibrium"). Hysteresis can make cyclical unemployment become structural.',
           example: '🌀 Japan\'s lost decades; eurozone post-2008.'
         }
       ],
 
       conclusion: {
         title: 'Big idea',
-        text: '<strong>Four supply-side, two demand-side.</strong> Demand stimulus on a supply-side problem is wasteful — and supply-side reform on a demand-side problem misses the point.'
+        text: '<strong>Four supply-side, two demand-side.</strong> Demand stimulus on a supply-side problem is wasteful – and supply-side reform on a demand-side problem misses the point.'
       },
 
       examEdge: {
         title: 'Classify before you cure',
-        text: 'Open every unemployment essay with the type: <em>"This is primarily [type] unemployment because…"</em>. The 4-vs-2 split is the analytical move that lifts answers from B to A*. Note that "demand-deficient" is the Keynesian / persistent variant of cyclical — flag the relationship if your textbook treats them as one.'
+        text: 'Open every unemployment essay with the type: <em>"This is primarily [type] unemployment because…"</em>. The 4-vs-2 split is the analytical move that lifts answers from B to A*. Note that "demand-deficient" is the Keynesian / persistent variant of cyclical – flag the relationship if your textbook treats them as one.'
       }
     },
 
-    /* ----- CARD 4 — Diagnose the type ----- */
+    /* ----- CARD 4 – Diagnose the type ----- */
     {
       id: 'diagnose',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Diagnose the type',
-      lede: 'Examiners reward correct diagnosis before policy. Identifying the right type of unemployment shows you understand the underlying mechanism — and that determines the right solution.',
+      lede: 'Examiners reward correct diagnosis before policy. Identifying the right type of unemployment shows you understand the underlying mechanism – and that determines the right solution.',
       ledeStyle: 'plain',
 
       tip: { icon: '🔒', tone: 'green', text: 'The clue is in the mechanism, not just the symptom of joblessness.' },
@@ -246,42 +246,42 @@ window.ECONOS_TOPIC = {
           icon: '🎓',
           head: 'Frictional',
           body: 'Graduates between jobs after finishing university.',
-          example: { label: 'Type', text: 'Between jobs — job-search lag, not a structural mismatch.' }
+          example: { label: 'Type', text: 'Between jobs – job-search lag, not a structural mismatch.' }
         },
         {
           tone: 'amber',
           icon: '⛏️',
           head: 'Structural',
           body: 'Ex-miners in Wales whose skills no longer match local jobs.',
-          example: { label: 'Type', text: 'Skills mismatch — deindustrialisation created a permanent gap.' }
+          example: { label: 'Type', text: 'Skills mismatch – deindustrialisation created a permanent gap.' }
         },
         {
           tone: 'purple',
           icon: '⛷️',
           head: 'Seasonal',
           body: 'Ski instructors with little work in the summer.',
-          example: { label: 'Type', text: 'Time of year — demand for labour falls predictably off-season.' }
+          example: { label: 'Type', text: 'Time of year – demand for labour falls predictably off-season.' }
         },
         {
           tone: 'rose',
           icon: '📉',
           head: 'Cyclical',
           body: 'A recession cuts spending and car plants lay off workers.',
-          example: { label: 'Type', text: 'Weak AD — firms need fewer workers when output falls.' }
+          example: { label: 'Type', text: 'Weak AD – firms need fewer workers when output falls.' }
         },
         {
           tone: 'green',
           icon: '⚖️',
           head: 'Real-wage',
           body: 'A wage floor above equilibrium leaves some low-skilled workers unemployed.',
-          example: { label: 'Type', text: 'Wage rigidity — price of labour held above market-clearing level.' }
+          example: { label: 'Type', text: 'Wage rigidity – price of labour held above market-clearing level.' }
         },
         {
           tone: 'rose',
           icon: '🌀',
           head: 'Demand-deficient',
-          body: 'A region\'s unemployment stays high for years after a recession ends — even as the national economy grows.',
-          example: { label: 'Type', text: 'Persistent weak AD — hysteresis turns cyclical unemployment into long-run joblessness.' }
+          body: 'A region\'s unemployment stays high for years after a recession ends – even as the national economy grows.',
+          example: { label: 'Type', text: 'Persistent weak AD – hysteresis turns cyclical unemployment into long-run joblessness.' }
         }
       ],
 
@@ -297,7 +297,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Watch out',
-        text: 'Structural unemployment can persist even when demand recovers — the skills gap doesn\'t close just because firms are hiring. Demand stimulus helps cyclical, not structural.'
+        text: 'Structural unemployment can persist even when demand recovers – the skills gap doesn\'t close just because firms are hiring. Demand stimulus helps cyclical, not structural.'
       },
 
       examEdge: {
@@ -306,14 +306,14 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 5 — Cyclical unemployment & derived demand ----- */
+    /* ----- CARD 5 – Cyclical unemployment & derived demand ----- */
     {
       id: 'cyclical',
       template: 'ad-interactive',
       diagramKey: 'adAsRecession',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Cyclical unemployment & derived demand',
-      lede: 'Labour is a derived demand — firms hire workers because they expect to sell output. When AD falls, firms need fewer workers.',
+      lede: 'Labour is a derived demand – firms hire workers because they expect to sell output. When AD falls, firms need fewer workers.',
       ledeStyle: 'plain',
 
       tip: { icon: '🔒', tone: 'green', text: 'When aggregate demand falls, firms need fewer workers.' },
@@ -322,17 +322,17 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'Base equilibrium',
-          text: 'AD meets AS at full-employment output <strong>Y<sub>FE</sub></strong>. Labour markets clear — unemployment is at the natural rate (frictional + structural + seasonal only). Price level is P₁.'
+          text: 'AD meets AS at full-employment output <strong>Y<sub>FE</sub></strong>. Labour markets clear – unemployment is at the natural rate (frictional + structural + seasonal only). Price level is P₁.'
         },
         {
           key: 'extension',
           label: 'AD shifts left',
-          text: 'AD shifts <strong>LEFT</strong> — fall in C, I, G or (X−M). Demand for goods falls, so demand for labour falls too: <em>labour is a derived demand</em>. Output drops to Y₁, below Y<sub>FE</sub>. The gap (Y<sub>FE</sub>−Y₁) is the cyclical unemployment.'
+          text: 'AD shifts <strong>LEFT</strong> – fall in C, I, G or (X−M). Demand for goods falls, so demand for labour falls too: <em>labour is a derived demand</em>. Output drops to Y₁, below Y<sub>FE</sub>. The gap (Y<sub>FE</sub>−Y₁) is the cyclical unemployment.'
         },
         {
           key: 'shift',
           label: 'Labour demand falls',
-          text: '<strong>Wages are sticky downward</strong> (Keynes) — unions resist cuts, contracts are fixed, workers refuse pay reductions. So the labour market doesn\'t self-correct. Cyclical unemployment <em>persists</em> until AD recovers. Fiscal or monetary stimulus is needed.'
+          text: '<strong>Wages are sticky downward</strong> (Keynes) – unions resist cuts, contracts are fixed, workers refuse pay reductions. So the labour market doesn\'t self-correct. Cyclical unemployment <em>persists</em> until AD recovers. Fiscal or monetary stimulus is needed.'
         }
       ],
 
@@ -373,7 +373,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Cyclical unemployment is demand-deficient — the cure is to restore AD, not to retrain workers. That\'s why the wrong policy diagnosis (supply-side for a cyclical problem) wastes money and fails.'
+        text: 'Cyclical unemployment is demand-deficient – the cure is to restore AD, not to retrain workers. That\'s why the wrong policy diagnosis (supply-side for a cyclical problem) wastes money and fails.'
       },
 
       examEdge: {
@@ -382,7 +382,7 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 6 — Different causes, different cures ----- */
+    /* ----- CARD 6 – Different causes, different cures ----- */
     {
       id: 'policy',
       template: 'ad-interactive',
@@ -399,7 +399,7 @@ window.ECONOS_TOPIC = {
         columns: ['❓ What is going wrong?', '✅ Best policy response'],
         columnTones: ['amber', 'green'],
         rows: [
-          { label: '📉 Cyclical',          values: ['Recession — weak AD short-run',                'Fiscal or monetary expansion.'] },
+          { label: '📉 Cyclical',          values: ['Recession – weak AD short-run',                'Fiscal or monetary expansion.'] },
           { label: '🌀 Demand-deficient',  values: ['Persistent weak AD (Keynesian)',               'Sustained stimulus + supply-side support to prevent hysteresis.'] },
           { label: '🧩 Structural',        values: ['Skills or location mismatch',                  'Retraining, apprenticeships, mobility grants, regional support.'] },
           { label: '🔍 Frictional',        values: ['Poor information and search time',             'JobCentres, job-matching platforms, better vacancy information.'] },
@@ -425,7 +425,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Policy should target the mechanism — demand weakness, mismatch, search frictions, wage rigidity, or seasonality.'
+        text: 'Policy should target the mechanism – demand weakness, mismatch, search frictions, wage rigidity, or seasonality.'
       },
 
       examEdge: {
@@ -434,13 +434,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 7 — Consequences: not just lost output ----- */
+    /* ----- CARD 7 – Consequences: not just lost output ----- */
     {
       id: 'consequences',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 7 of 8',
-      title: 'Consequences — not just lost output',
-      lede: 'Unemployment matters because its costs spread across the whole economy and society. It affects growth, public finances, communities and individuals — today and in the future.',
+      title: 'Consequences – not just lost output',
+      lede: 'Unemployment matters because its costs spread across the whole economy and society. It affects growth, public finances, communities and individuals – today and in the future.',
       ledeStyle: 'plain',
 
       tip: { icon: '⚠️', tone: 'rose', text: '<strong>Unemployment damages both current output and future potential.</strong>' },
@@ -499,7 +499,7 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 8 — Where to next ----- */
+    /* ----- CARD 8 – Where to next ----- */
     {
       id: 'where-next',
       template: 'ad-interactive',
@@ -508,7 +508,7 @@ window.ECONOS_TOPIC = {
       lede: 'Unemployment links directly to the rest of macroeconomics.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Unemployment is not a silo — it connects to inflation, macro policy and long-run supply.' },
+      tip: { icon: '✅', tone: 'green', text: 'Unemployment is not a silo – it connects to inflation, macro policy and long-run supply.' },
 
       causesFirst: true,
       causesStyle: 'numbered',
@@ -525,7 +525,7 @@ window.ECONOS_TOPIC = {
           tone: 'amber',
           icon: '🏛️',
           head: 'Fiscal and monetary policy',
-          body: 'Demand-side cures for cyclical unemployment — stabilise demand, close the output gap.<div style="margin-top:12px;text-align:center;"><span style="border:1px solid #FCD34D;border-radius:16px;padding:3px 12px;font-size:11.5px;color:#D97706;font-weight:700;">Counter-cyclical tools</span></div>'
+          body: 'Demand-side cures for cyclical unemployment – stabilise demand, close the output gap.<div style="margin-top:12px;text-align:center;"><span style="border:1px solid #FCD34D;border-radius:16px;padding:3px 12px;font-size:11.5px;color:#D97706;font-weight:700;">Counter-cyclical tools</span></div>'
         },
         {
           tone: 'green',

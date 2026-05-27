@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for info_gaps
+   ECONOS – Link It intro/landing data for info_gaps
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your information gaps knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "Use the UK Buy Now Pay Later market to apply the information gap framework — how asymmetric information about true credit costs inflates demand above the rational level, causing overconsumption and consumer harm, and whether mandatory disclosure can correct this.",
+    summary: "Use the UK Buy Now Pay Later market to apply the information gap framework – how asymmetric information about true credit costs inflates demand above the rational level, causing overconsumption and consumer harm, and whether mandatory disclosure can correct this.",
     heroKey: 'heroBehavioural',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Apply economic theory to real-world BNPL extracts including the Akerlof lemons model',
       'Evaluate whether mandatory disclosure or alternative policies are most effective'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

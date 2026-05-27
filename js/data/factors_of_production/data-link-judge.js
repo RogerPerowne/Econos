@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Factors of Production: judge the retraining-and-output claim
    ============================================================ */
 
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-only',   text: 'Geographic mobility is the only thing that matters',                                                           correct: false }
         ]
       },
-      examBridge: '"A large UK adult retraining scheme raises labour quality and occupational mobility, shifting LRAS right and lifting real output. The 700,000 missing-worker gap and persistent shortages in care, HGV driving and construction show there is room for the policy to bite. However, the GDP gain depends on whether training matches employer demand, whether complementary capital investment accompanies it, and whether geographic mobility (constrained by housing costs in productive regions) lets retrained workers reach the jobs. The OBR\'s modest 60,000-person estimate for childcare expansion suggests individual mobility levers are incremental — a substantial GDP gain requires several supply-side policies acting together."'
+      examBridge: '"A large UK adult retraining scheme raises labour quality and occupational mobility, shifting LRAS right and lifting real output. The 700,000 missing-worker gap and persistent shortages in care, HGV driving and construction show there is room for the policy to bite. However, the GDP gain depends on whether training matches employer demand, whether complementary capital investment accompanies it, and whether geographic mobility (constrained by housing costs in productive regions) lets retrained workers reach the jobs. The OBR\'s modest 60,000-person estimate for childcare expansion suggests individual mobility levers are incremental – a substantial GDP gain requires several supply-side policies acting together."'
     }
   ]
 };

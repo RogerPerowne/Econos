@@ -1,14 +1,14 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for indirect_taxes_subsidies
+   ECONOS – Link It intro/landing data for indirect_taxes_subsidies
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
   topic:   'Indirect Taxes &amp; Subsidies',
   estTime: '15–20 minutes',
-  goal:    'Apply the tax incidence framework — who really pays a specific tax, and what changes how the burden is split.',
+  goal:    'Apply the tax incidence framework – who really pays a specific tax, and what changes how the burden is split.',
 
   intro: {
-    summary: "You've mastered how specific and ad valorem taxes shift supply, how the burden splits between consumers and producers, and how elasticity determines who really pays. Now train the skills examiners reward — applying the incidence framework to real context, building a watertight supply-shift → price-split causal chain, and reaching a supported judgement on when a sugar levy is most effective.",
+    summary: "You've mastered how specific and ad valorem taxes shift supply, how the burden splits between consumers and producers, and how elasticity determines who really pays. Now train the skills examiners reward – applying the incidence framework to real context, building a watertight supply-shift → price-split causal chain, and reaching a supported judgement on when a sugar levy is most effective.",
     heroKey: 'heroIntervention',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick, label and explain the supply and demand diagram for a specific indirect tax.',
       'Evaluate the key conditions that change whether the tax corrects the externality'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

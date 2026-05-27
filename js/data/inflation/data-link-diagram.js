@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Inflation: cost-push (SRAS shifts left)
    ============================================================ */
 
@@ -19,7 +19,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'Which diagram best shows the effect of this shock on the economy?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the economic impact. Think about which curve is directly affected.',
     hint:        'Skill focus: identify the right model before drawing it.',
@@ -29,7 +29,7 @@ window.ECONOS_LINK_DIAGRAM = {
         id:       'sras-left',
         correct:  true,
         title:    'SRAS shifts left',
-        sub:      'Higher costs reduce supply at every price level — stagflationary pressure',
+        sub:      'Higher costs reduce supply at every price level – stagflationary pressure',
         why:      'Higher energy costs directly raise firms\' costs of production. This is a supply-side shock: SRAS shifts left, raising the price level and reducing real output simultaneously. This is the defining signature of cost-push inflation.',
         diagramType: 'cost-push'
       },
@@ -45,14 +45,14 @@ window.ECONOS_LINK_DIAGRAM = {
         correct:  false,
         title:    'LRAS shifts right',
         sub:      'Long-run productive capacity expands due to improved technology or capital',
-        why:      'LRAS shifts right when the economy\'s long-run potential output grows — through investment, technology or labour force expansion. An energy price spike reduces productive capacity; it does not expand it.'
+        why:      'LRAS shifts right when the economy\'s long-run potential output grows – through investment, technology or labour force expansion. An energy price spike reduces productive capacity; it does not expand it.'
       },
       {
         id:       'ad-left',
         correct:  false,
         title:    'AD shifts left',
         sub:      'Consumer spending falls, reducing demand and the price level',
-        why:      'AD shifting left represents a demand-side contraction (e.g. a recession, tax rise or credit crunch). While weak consumer confidence is mentioned in the data, the primary direct effect of an energy price rise hits firms\' costs — the SRAS curve.'
+        why:      'AD shifting left represents a demand-side contraction (e.g. a recession, tax rise or credit crunch). While weak consumer confidence is mentioned in the data, the primary direct effect of an energy price rise hits firms\' costs – the SRAS curve.'
       }
     ]
   },
@@ -71,21 +71,21 @@ window.ECONOS_LINK_DIAGRAM = {
   /* ── Diagram specification (read by link-diagram-engine renderDiagramSVG) ── */
   /* viewBox 0 0 560 430; axes origin at (100,400); clip rect x=101 y=21 w=442 h=378 */
   diagram: {
-    ariaLabel: 'AD/AS diagram — cost-push inflation (SRAS shifts left)',
+    ariaLabel: 'AD/AS diagram – cost-push inflation (SRAS shifts left)',
     xLabel: 'Real output',
     yLabel: 'Price level',
 
     lines: [
-      /* LRAS — vertical grey dashed */
+      /* LRAS – vertical grey dashed */
       { x1: 308, y1: 21,  x2: 308, y2: 399, stroke: '#374151', strokeWidth: 1.5,
         label: 'LRAS', labelX: 312, labelY: 18,  labelFill: '#374151' },
-      /* AD₁ — green downward-sloping */
+      /* AD₁ – green downward-sloping */
       { x1: 110, y1: 40,  x2: 510, y2: 360, stroke: '#059669', strokeWidth: 2.5,
         label: 'AD₁',  labelX: 514, labelY: 360, labelFill: '#059669' },
-      /* SRAS₁ — blue upward-sloping (original) */
+      /* SRAS₁ – blue upward-sloping (original) */
       { x1: 130, y1: 399, x2: 460, y2: 25,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'SRAS₁',labelX: 463, labelY: 23,  labelFill: '#2563eb' },
-      /* SRAS₂ — purple upward-sloping (shifted left; starts left of y-axis, clipPath trims it) */
+      /* SRAS₂ – purple upward-sloping (shifted left; starts left of y-axis, clipPath trims it) */
       { x1: 50,  y1: 399, x2: 380, y2: 25,  stroke: '#7c3aed', strokeWidth: 2.5,
         label: 'SRAS₂',labelX: 383, labelY: 23,  labelFill: '#7c3aed' }
     ],
@@ -105,7 +105,7 @@ window.ECONOS_LINK_DIAGRAM = {
     /* Shift arrow shown at stage 2; points from SRAS₁ toward SRAS₂ */
     shiftArrow: { x1: 432, y1: 45, x2: 372, y2: 45, stroke: '#7c3aed' },
 
-    /* Equilibrium dots — initial (E₁) and new (E₂) */
+    /* Equilibrium dots – initial (E₁) and new (E₂) */
     eqDots: [
       {
         cx: 308, cy: 198, fill: '#2563eb',
@@ -120,7 +120,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of higher energy costs on the UK economy.',
     instruction: 'Connect the visual shift to the economic outcomes by placing the correct labels on the diagram.',
     hint:        'Skill focus: connect the visual shift to economic outcomes.',
@@ -147,10 +147,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram (merged Interpret + Explain) ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read & Write the Diagram',
+    eyebrow:     'Diagram Connector – Read & Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — Bridge the diagram into clear written analysis.',
+    hint:        'Skill focus: Analysis – Bridge the diagram into clear written analysis.',
 
     vocab: ['SRAS', 'cost-push', 'price level', 'real output', 'negative supply shock', 'stagflation', 'purchasing power', 'profit margins'],
 
@@ -160,14 +160,14 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'Use the shift',
         prompt:      'Which curve shifts, why does it shift, and what type of inflation is this?',
         maxChars:    240,
-        modelAnswer: 'SRAS shifts left because higher energy prices raise firms\' costs of production at every level of output. This is cost-push inflation — supply-side in origin, not driven by any change in aggregate demand.'
+        modelAnswer: 'SRAS shifts left because higher energy prices raise firms\' costs of production at every level of output. This is cost-push inflation – supply-side in origin, not driven by any change in aggregate demand.'
       },
       {
         num:         2,
         title:       'Explain the outcome',
         prompt:      'What happens to the price level and real output as the curve shifts?',
         maxChars:    240,
-        modelAnswer: 'The equilibrium moves up the AD curve: the price level rises from P₁ to P₂ while real output falls from Y₁ to Y₂. The economy faces higher prices and lower output simultaneously — stagflationary pressure.'
+        modelAnswer: 'The equilibrium moves up the AD curve: the price level rises from P₁ to P₂ while real output falls from Y₁ to Y₂. The economy faces higher prices and lower output simultaneously – stagflationary pressure.'
       },
       {
         num:         3,
@@ -190,6 +190,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Use the context'
     ],
 
-    examAnswer: '"Higher energy prices shift SRAS to the left, raising the price level from P₁ to P₂ while reducing real output from Y₁ to Y₂. This represents cost-push inflation driven by a supply-side shock — distinct from demand-pull because aggregate demand has not changed. The resulting fall in real output alongside rising prices creates stagflation: a particularly challenging macroeconomic outcome for policymakers."'
+    examAnswer: '"Higher energy prices shift SRAS to the left, raising the price level from P₁ to P₂ while reducing real output from Y₁ to Y₂. This represents cost-push inflation driven by a supply-side shock – distinct from demand-pull because aggregate demand has not changed. The resulting fall in real output alongside rising prices creates stagflation: a particularly challenging macroeconomic outcome for policymakers."'
   }
 };

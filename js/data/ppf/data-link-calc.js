@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Calculate It station data
+   ECONOS – Link It · Calculate It station data
    PPF: opportunity cost calculations
    ============================================================ */
 
@@ -18,12 +18,12 @@ window.ECONOS_LINK_CALC = {
   currentStationIdx: 2,
 
   eyebrow:     'Calculate It',
-  instruction: 'Opportunity cost is the core calculation skill for PPF questions. Work through each question — use "Reveal step-by-step method" if you get stuck.',
+  instruction: 'Opportunity cost is the core calculation skill for PPF questions. Work through each question – use "Reveal step-by-step method" if you get stuck.',
 
   questions: [
     {
       id: 'ppf-q1',
-      title: 'Opportunity cost — reading coordinates from the PPF',
+      title: 'Opportunity cost – reading coordinates from the PPF',
       scenario: 'An economy produces two goods: machines (capital) and food (consumption). The table shows two points on its Production Possibility Frontier. The economy is currently at Point A and the government decides to invest more in capital goods.',
       table: {
         caption: 'Points on the PPF',
@@ -53,8 +53,8 @@ window.ECONOS_LINK_CALC = {
     },
     {
       id: 'ppf-q2',
-      title: 'Opportunity cost — a different pair of points',
-      scenario: 'The same linear PPF. Now compare Points C and D. The government is considering a different allocation — starting from the maximum machines scenario (Point C) and moving toward more food production.',
+      title: 'Opportunity cost – a different pair of points',
+      scenario: 'The same linear PPF. Now compare Points C and D. The government is considering a different allocation – starting from the maximum machines scenario (Point C) and moving toward more food production.',
       table: {
         caption: 'Points on the PPF',
         headers: ['Point', 'Machines', 'Food (tonnes)'],
@@ -64,7 +64,7 @@ window.ECONOS_LINK_CALC = {
         ]
       },
       question: 'Moving from Point C to Point D, calculate the opportunity cost of producing <strong>one extra tonne of food</strong>.',
-      hint: 'Same method as Question 1 — divide sacrifice by gain.',
+      hint: 'Same method as Question 1 – divide sacrifice by gain.',
       method: [
         { step: 'Change in machines (given up)', working: '100 − 70 = 30 machines' },
         { step: 'Change in food (gained)',        working: '15 − 0 = 15 tonnes of food' },
@@ -76,20 +76,20 @@ window.ECONOS_LINK_CALC = {
       unit: 'machines per tonne of food',
       tolerance: 0,
       feedback: {
-        correct: 'Correct! On a straight-line (linear) PPF, opportunity cost is constant at every point along the frontier — always 2 machines per tonne of food here. This is a key feature of the linear PPF model.',
+        correct: 'Correct! On a straight-line (linear) PPF, opportunity cost is constant at every point along the frontier – always 2 machines per tonne of food here. This is a key feature of the linear PPF model.',
         wrong: 'Check your calculation: 30 machines given up ÷ 15 tonnes gained = 2 machines per tonne. On a linear PPF, the opportunity cost is the same at every point.'
       },
-      examTip: 'On a linear PPF, opportunity cost is constant — the frontier\'s gradient is fixed. On a concave (bowed-out) PPF, opportunity cost increases as you produce more of one good, because resources are not equally suited to all uses. Examiners often ask you to identify which shape implies what.'
+      examTip: 'On a linear PPF, opportunity cost is constant – the frontier\'s gradient is fixed. On a concave (bowed-out) PPF, opportunity cost increases as you produce more of one good, because resources are not equally suited to all uses. Examiners often ask you to identify which shape implies what.'
     },
     {
       id: 'ppf-q3',
-      title: 'Interpreting PPF positions — efficiency and growth',
+      title: 'Interpreting PPF positions – efficiency and growth',
       scenario: 'A country operates below its PPF. Unemployment is at 8%. The government introduces a new training programme. Five years later the economy is producing at a point that was previously outside the old PPF.',
       question: 'Which combination of outcomes correctly describes the economy at each stage?',
       hint: 'Think: what does operating inside the PPF represent? What causes an outward shift?',
       method: [
         { step: 'Operating below the PPF', working: 'Inside the PPF → productive inefficiency. Resources (labour) are unemployed or misallocated.' },
-        { step: 'Training programme effect (short run)', working: 'Moves the economy toward its PPF — improving allocative and productive efficiency as unemployed workers gain skills and enter work.' },
+        { step: 'Training programme effect (short run)', working: 'Moves the economy toward its PPF – improving allocative and productive efficiency as unemployed workers gain skills and enter work.' },
         { step: 'Producing beyond the old PPF', working: 'The PPF itself has shifted outward. Training increased productive capacity (human capital), so more of both goods can now be produced.' },
         { step: 'Conclusion', working: 'Stage 1: Productive inefficiency (inside PPF). Stage 2: PPF shifts outward via human capital investment → economic growth.' }
       ],
@@ -102,10 +102,10 @@ window.ECONOS_LINK_CALC = {
       ],
       answer: 'Initially inefficient (inside PPF); later operating on an outward-shifted PPF due to increased productive capacity',
       feedback: {
-        correct: 'Correct! Operating at 8% unemployment means the economy is inside the PPF — resources are wasted. The training programme raises human capital, shifting the PPF outward over time. This is economic growth: the ability to produce more of all goods simultaneously.',
-        wrong: 'Operating below the PPF = inside the frontier (inefficiency/unemployment, not a different type of efficiency). Producing at a previously impossible point means the PPF shifted outward — not that the economy became more allocatively efficient on the same frontier.'
+        correct: 'Correct! Operating at 8% unemployment means the economy is inside the PPF – resources are wasted. The training programme raises human capital, shifting the PPF outward over time. This is economic growth: the ability to produce more of all goods simultaneously.',
+        wrong: 'Operating below the PPF = inside the frontier (inefficiency/unemployment, not a different type of efficiency). Producing at a previously impossible point means the PPF shifted outward – not that the economy became more allocatively efficient on the same frontier.'
       },
-      examTip: 'Three key PPF scenarios examiners test: (1) Moving along the PPF — trade-off with fixed resources. (2) Inside the PPF — unemployed/misallocated resources. (3) PPF shifts outward — economic growth via technology, capital, human capital, or resources. Always identify which of these three is occurring.'
+      examTip: 'Three key PPF scenarios examiners test: (1) Moving along the PPF – trade-off with fixed resources. (2) Inside the PPF – unemployed/misallocated resources. (3) PPF shifts outward – economic growth via technology, capital, human capital, or resources. Always identify which of these three is occurring.'
     }
   ]
 };

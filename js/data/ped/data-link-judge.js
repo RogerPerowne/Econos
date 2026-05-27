@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    PED: synthesise into an exam-quality judgement on fuel duty effectiveness
    ============================================================ */
 
@@ -37,10 +37,10 @@ window.ECONOS_LINK_JUDGE = {
       evidenceCards: [
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: '27% of UK GHG from road transport; PED −0.15 short run / −0.6 long run; £25bn revenue; lowest quintile spends 3.8% of income on fuel duty.' },
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Tax → supply shifts left → consumer price rises sharply → quantity falls only a little (inelastic) → revenue rises but emissions barely fall.' },
-        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Supply shifts left; steep D curve shows large P rise (P₁→P₂) with small Q fall (Q₁→Q₂) — visually captures inelastic tax incidence.' },
+        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Supply shifts left; steep D curve shows large P rise (P₁→P₂) with small Q fall (Q₁→Q₂) – visually captures inelastic tax incidence.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on short-run PED, distributional impact, availability of alternatives, and whether revenue is recycled.' }
       ],
-      cloze: 'Overall, raising fuel duty reduces emissions most effectively when demand is [1], because a price rise leads to a large [2] in quantity demanded, cutting both consumption and externalities. However, with short-run PED ≈ −0.15, the tax mainly raises [3] rather than cutting [4] — the bulk of the burden falls on [5] who have few alternatives. Therefore, the strongest judgement is that fuel duty is [6] as an environmental policy in the short run, but becomes more effective over time as [7] become widely available and PED [8].',
+      cloze: 'Overall, raising fuel duty reduces emissions most effectively when demand is [1], because a price rise leads to a large [2] in quantity demanded, cutting both consumption and externalities. However, with short-run PED ≈ −0.15, the tax mainly raises [3] rather than cutting [4] – the bulk of the burden falls on [5] who have few alternatives. Therefore, the strongest judgement is that fuel duty is [6] as an environmental policy in the short run, but becomes more effective over time as [7] become widely available and PED [8].',
       blanks: [
         { id: 1, options: [
             { id: 'b1-elastic',   text: 'price elastic',         correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-market',   text: 'Carbon emissions require no government intervention',                             correct: false }
         ]
       },
-      examBridge: '"Raising fuel duty is theoretically sound as a Pigouvian instrument: it raises the consumer price, shifting supply left and reducing quantity demanded. However, with short-run PED ≈ −0.15, the quantity response is minimal — the policy is primarily a revenue tool, not an effective emissions-reduction instrument, in the near term. The strongest judgement is that fuel duty becomes progressively more effective as substitutes emerge and long-run PED rises, but in the short run its environmental case is much weaker than its fiscal rationale."'
+      examBridge: '"Raising fuel duty is theoretically sound as a Pigouvian instrument: it raises the consumer price, shifting supply left and reducing quantity demanded. However, with short-run PED ≈ −0.15, the quantity response is minimal – the policy is primarily a revenue tool, not an effective emissions-reduction instrument, in the near term. The strongest judgement is that fuel duty becomes progressively more effective as substitutes emerge and long-run PED rises, but in the short run its environmental case is much weaker than its fiscal rationale."'
     }
   ]
 };

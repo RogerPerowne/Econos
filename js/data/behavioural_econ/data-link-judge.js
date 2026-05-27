@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Behavioural Economics: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts left from D_biased to D_rational; equilibrium moves from (Q_biased, P_biased) to (Q_rational, P_rational).' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Verdict depends on strength of present bias, salience of nudge design, and equity concerns about regressive tax burden.' }
       ],
-      cloze: 'Present bias causes consumers to [1] future health costs relative to immediate taste enjoyment, inflating demand for high-sugar products above D_rational. Nudge interventions — such as traffic light labelling and SDIL reformulation incentives — correct this by making [2] at the point of purchase, shifting demand [3] from D_biased toward D_rational. This reduces overconsumption without [4], unlike a Pigouvian consumption tax which would raise prices and impose a [5] burden on lower-income households. However, nudges are only effective when consumers [6] the salient information — where [7] is very strong, consumers may ignore even prominent health warnings. The SDIL\'s producer-side design is particularly effective because it achieves reformulation through the [8] without requiring consumers to change habits at all.',
+      cloze: 'Present bias causes consumers to [1] future health costs relative to immediate taste enjoyment, inflating demand for high-sugar products above D_rational. Nudge interventions – such as traffic light labelling and SDIL reformulation incentives – correct this by making [2] at the point of purchase, shifting demand [3] from D_biased toward D_rational. This reduces overconsumption without [4], unlike a Pigouvian consumption tax which would raise prices and impose a [5] burden on lower-income households. However, nudges are only effective when consumers [6] the salient information – where [7] is very strong, consumers may ignore even prominent health warnings. The SDIL\'s producer-side design is particularly effective because it achieves reformulation through the [8] without requiring consumers to change habits at all.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-underweight',  text: 'underweight',                                  correct: true  },
@@ -95,12 +95,12 @@ window.ECONOS_LINK_JUDGE = {
         prompt: 'Overall position',
         options: [
           { id: 'op-always',   text: 'Nudges are always more effective than taxes regardless of the strength of behavioural bias',                                          correct: false },
-          { id: 'op-nuanced',  text: 'Nudges outperform taxes when present bias is mild, equity matters, and substitutes exist — but taxes may be needed where bias is severe', correct: true  },
+          { id: 'op-nuanced',  text: 'Nudges outperform taxes when present bias is mild, equity matters, and substitutes exist – but taxes may be needed where bias is severe', correct: true  },
           { id: 'op-tax',      text: 'Pigouvian taxes are always the most efficient correction for behavioural market failures',                                            correct: false },
           { id: 'op-rational', text: 'Behavioural economics interventions are irrelevant because consumers are always rational',                                            correct: false }
         ]
       },
-      examBridge: '"Present bias inflated demand for high-sugar soft drinks above D_rational. The SDIL\'s producer reformulation incentive and traffic light labelling both shifted demand left toward D_rational — without the regressive burden of a consumption tax. The 29% sugar content reduction and 50% pre-levy reformulation show the supply-side nudge (SDIL) was highly effective. However, nudges are insufficient where present bias is severe: some consumers ignored labelling despite awareness of health risks — suggesting a complementary role for more coercive instruments in the hardest-to-reach groups."'
+      examBridge: '"Present bias inflated demand for high-sugar soft drinks above D_rational. The SDIL\'s producer reformulation incentive and traffic light labelling both shifted demand left toward D_rational – without the regressive burden of a consumption tax. The 29% sugar content reduction and 50% pre-levy reformulation show the supply-side nudge (SDIL) was highly effective. However, nudges are insufficient where present bias is severe: some consumers ignored labelling despite awareness of health risks – suggesting a complementary role for more coercive instruments in the hardest-to-reach groups."'
     }
   ]
 };

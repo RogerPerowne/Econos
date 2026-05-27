@@ -1,14 +1,14 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for taxes_subsidies_policy
+   ECONOS – Link It intro/landing data for taxes_subsidies_policy
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
   topic:   'Taxes &amp; Subsidies as Policy',
   estTime: '15–20 minutes',
-  goal:    'Apply the taxes and subsidies framework — when subsidies correct underproduction, and what conditions make them more or less effective than regulation.',
+  goal:    'Apply the taxes and subsidies framework – when subsidies correct underproduction, and what conditions make them more or less effective than regulation.',
 
   intro: {
-    summary: "You've locked in the justification logic, the UK case studies and the three-axis evaluation framework. Now train the skills examiners reward — applying the subsidy framework to real context, building a watertight MPB → underproduction chain, and reaching a supported judgement on whether the CfD scheme is justified.",
+    summary: "You've locked in the justification logic, the UK case studies and the three-axis evaluation framework. Now train the skills examiners reward – applying the subsidy framework to real context, building a watertight MPB → underproduction chain, and reaching a supported judgement on whether the CfD scheme is justified.",
     heroKey: 'heroIntervention',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick, label and explain the supply and demand diagram showing a production subsidy correcting underproduction.',
       'Evaluate the key conditions that change the policy verdict'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

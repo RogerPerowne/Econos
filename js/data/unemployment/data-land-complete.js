@@ -11,6 +11,6 @@ window.ECONOS_LAND_COMPLETE = {
   nextCard: {
     icon:  '&#x1F680;',
     title: 'What to do next',
-    text:  'Compare your written answers with the model responses. Check whether you correctly identified the type of unemployment before prescribing policy &#8212; this is the most common error in this topic. Note where your chain of analysis could be extended and whether your evaluation reached a clear supported judgement.'
+    text:  'Compare your written answers with the model responses. Check whether you correctly identified the type of unemployment before prescribing policy &#8211; this is the most common error in this topic. Note where your chain of analysis could be extended and whether your evaluation reached a clear supported judgement.'
   }
 };

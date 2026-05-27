@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Consumer & Producer Surplus: per-unit bus subsidy shifts supply right
    ============================================================ */
 
@@ -10,7 +10,7 @@
    S₁:      (130,390)→(490,30)  slope = −1.0   ⟹  y = 520 − x
    S₂:      (210,390)→(543,57)  80px right shift ⟹  y = 600 − x
    E₁ (D ∩ S₁): x ≈ 307, y ≈ 213  (original higher fare)
-   E₂ (D ∩ S₂): x ≈ 351, y ≈ 249  (new lower fare — higher SVG y = lower price) */
+   E₂ (D ∩ S₂): x ≈ 351, y ≈ 249  (new lower fare – higher SVG y = lower price) */
 
 window.ECONOS_LINK_DIAGRAM = {
   topic:   'Consumer & Producer Surplus',
@@ -28,7 +28,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'The government introduces a per-unit operating subsidy for bus operators. Which diagram correctly shows the effect on the bus travel market?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the impact of the subsidy. Think about which curve is directly affected and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -38,29 +38,29 @@ window.ECONOS_LINK_DIAGRAM = {
         id:      's-right',
         correct:  true,
         title:   'Supply shifts right',
-        sub:     'Supply shifts right — subsidy reduces effective costs, lowering fares and increasing bus journeys',
-        why:     'A per-unit subsidy is paid to bus operators, reducing their effective marginal cost. At every fare level, operators can now profitably supply more journeys — supply shifts right from S₁ to S₂. Fares fall from P₁ to P₂ and journeys rise from Q₁ to Q₂, expanding consumer surplus.'
+        sub:     'Supply shifts right – subsidy reduces effective costs, lowering fares and increasing bus journeys',
+        why:     'A per-unit subsidy is paid to bus operators, reducing their effective marginal cost. At every fare level, operators can now profitably supply more journeys – supply shifts right from S₁ to S₂. Fares fall from P₁ to P₂ and journeys rise from Q₁ to Q₂, expanding consumer surplus.'
       },
       {
         id:      's-left',
         correct:  false,
         title:   'Supply shifts left',
-        sub:     'Supply falls — wrong direction for a subsidy',
-        why:     'Supply shifting left means producers face higher costs and supply less. A per-unit subsidy reduces costs — the opposite of a tax. A leftward supply shift would represent a cost increase (e.g. fuel price rise or a Pigouvian tax), not a government subsidy to operators.'
+        sub:     'Supply falls – wrong direction for a subsidy',
+        why:     'Supply shifting left means producers face higher costs and supply less. A per-unit subsidy reduces costs – the opposite of a tax. A leftward supply shift would represent a cost increase (e.g. fuel price rise or a Pigouvian tax), not a government subsidy to operators.'
       },
       {
         id:      'd-right',
         correct:  false,
         title:   'Demand shifts right',
-        sub:     'Demand rises — but the subsidy goes to the producer, not the consumer',
-        why:     'The bus subsidy is paid to operators, not passengers. Consumer willingness to pay is unchanged — demand does not shift. A rightward demand shift would represent rising consumer income or a change in preferences (e.g. higher petrol prices attracting more bus users), not a production subsidy.'
+        sub:     'Demand rises – but the subsidy goes to the producer, not the consumer',
+        why:     'The bus subsidy is paid to operators, not passengers. Consumer willingness to pay is unchanged – demand does not shift. A rightward demand shift would represent rising consumer income or a change in preferences (e.g. higher petrol prices attracting more bus users), not a production subsidy.'
       },
       {
         id:      'd-left',
         correct:  false,
         title:   'Demand shifts left',
-        sub:     'Demand falls — wrong: no mechanism causes demand to fall',
-        why:     'Nothing in the subsidy mechanism reduces consumer demand for bus travel. A leftward demand shift would require a fall in consumer income, a fall in petrol prices (reducing the incentive to use buses), or a negative preference shift — none of which is caused by a government operating subsidy.'
+        sub:     'Demand falls – wrong: no mechanism causes demand to fall',
+        why:     'Nothing in the subsidy mechanism reduces consumer demand for bus travel. A leftward demand shift would require a fall in consumer income, a fall in petrol prices (reducing the incentive to use buses), or a negative preference shift – none of which is caused by a government operating subsidy.'
       }
     ]
   },
@@ -78,18 +78,18 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — per-unit bus subsidy shifts supply right, lowering fares and raising quantity',
+    ariaLabel: 'Supply and demand diagram – per-unit bus subsidy shifts supply right, lowering fares and raising quantity',
     xLabel:    'Quantity of bus journeys',
     yLabel:    'Fare / Cost (£)',
 
     lines: [
-      /* D (MSB) — green downward-sloping */
+      /* D (MSB) – green downward-sloping */
       { x1: 110, y1: 50,  x2: 510, y2: 380, stroke: '#059669', strokeWidth: 2.5,
         label: 'D (MSB)', labelX: 514, labelY: 380, labelFill: '#059669' },
-      /* S₁ (before subsidy) — blue upward-sloping */
+      /* S₁ (before subsidy) – blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'S₁', labelX: 494, labelY: 28, labelFill: '#2563eb' },
-      /* S₂ (after subsidy, 80px right shift) — purple upward-sloping */
+      /* S₂ (after subsidy, 80px right shift) – purple upward-sloping */
       { x1: 210, y1: 390, x2: 543, y2: 57,  stroke: '#7c3aed', strokeWidth: 2.5,
         label: 'S₂', labelX: 545, labelY: 55, labelFill: '#7c3aed' }
     ],
@@ -129,7 +129,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of a per-unit bus operating subsidy.',
     instruction: 'Place the correct labels on the diagram to identify the shift, the two equilibria and the outcome for fare and quantity.',
     hint:        'Skill focus: connect the visual shift to the economic outcomes.',
@@ -156,10 +156,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['consumer surplus', 'producer surplus', 'per-unit subsidy', 'supply shift', 'welfare triangle', 'deadweight welfare loss', 'allocative efficiency', 'positive externality', 'marginal social benefit'],
 
@@ -199,6 +199,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Assess net welfare effect including externalities'
     ],
 
-    examAnswer: '"A per-unit bus operating subsidy shifts supply right from S₁ to S₂, lowering fares from P₁ to P₂ and raising journeys from Q₁ to Q₂. Consumer surplus expands by the area between P₁ and P₂ up to the demand curve — additional passengers gain access to bus travel. The subsidy costs taxpayers (subsidy × Q₂), but if positive externalities (congestion relief, carbon reduction) push MSB above the demand curve, the welfare gain to society exceeds the transfer cost. The DfT estimate of £2.40 benefit per £1 subsidy is consistent with a net welfare improvement."'
+    examAnswer: '"A per-unit bus operating subsidy shifts supply right from S₁ to S₂, lowering fares from P₁ to P₂ and raising journeys from Q₁ to Q₂. Consumer surplus expands by the area between P₁ and P₂ up to the demand curve – additional passengers gain access to bus travel. The subsidy costs taxpayers (subsidy × Q₂), but if positive externalities (congestion relief, carbon reduction) push MSB above the demand curve, the welfare gain to society exceeds the transfer cost. The DfT estimate of £2.40 benefit per £1 subsidy is consistent with a net welfare improvement."'
   }
 };

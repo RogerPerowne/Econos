@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page data
+   ECONOS – Land It intro page data
    Topic: Aggregate Supply (2.8)
    ============================================================ */
 
@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
 
   trains: [
     'Distinguishing between SRAS and LRAS and identifying what shifts each curve',
-    'Applying supply-side shocks &#8212; particularly energy price changes &#8212; to the AD&#47;AS model',
+    'Applying supply-side shocks &#8211; particularly energy price changes &#8211; to the AD&#47;AS model',
     'Evaluating productivity data and its relationship to aggregate supply',
     'Constructing a balanced essay on the relative effectiveness of supply-side versus demand-side policies'
   ],

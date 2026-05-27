@@ -37,7 +37,7 @@
           'The minimum wage is set above the market-clearing wage'
         ],
         ans:  1,
-        exp:  'Frictional unemployment is the temporary unemployment that occurs when workers transition between jobs. It is often considered inevitable and even healthy — it allows better job matching.'
+        exp:  'Frictional unemployment is the temporary unemployment that occurs when workers transition between jobs. It is often considered inevitable and even healthy – it allows better job matching.'
       },
       {
         id:   'q_unemp_3',
@@ -50,7 +50,7 @@
           'Seasonal variation in demand for labour'
         ],
         ans:  2,
-        exp:  'Structural unemployment arises when industries decline (e.g., manufacturing, mining) or technology replaces roles. Workers\' skills no longer match available vacancies — a supply-side mismatch that requires retraining.'
+        exp:  'Structural unemployment arises when industries decline (e.g., manufacturing, mining) or technology replaces roles. Workers\' skills no longer match available vacancies – a supply-side mismatch that requires retraining.'
       },
       {
         id:   'q_unemp_4',
@@ -63,7 +63,7 @@
           'The government can eliminate unemployment with enough spending'
         ],
         ans:  1,
-        exp:  'Hysteresis means past events have persistent effects. Prolonged cyclical unemployment can become structural — workers lose skills and motivation, employers "scar" them by preferring recent graduates, raising the long-run natural rate permanently.'
+        exp:  'Hysteresis means past events have persistent effects. Prolonged cyclical unemployment can become structural – workers lose skills and motivation, employers "scar" them by preferring recent graduates, raising the long-run natural rate permanently.'
       },
       {
         id:   'q_unemp_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Frictional unemployment','Structural unemployment','Cyclical unemployment','Deflation'],
         ans:  3,
-        exp:  'Frictional, structural, and cyclical are all types of unemployment. Deflation is a macroeconomic price-level concept — it can cause unemployment but is not itself a type of unemployment.'
+        exp:  'Frictional, structural, and cyclical are all types of unemployment. Deflation is a macroeconomic price-level concept – it can cause unemployment but is not itself a type of unemployment.'
       },
       {
         id:   'q_unemp_9',

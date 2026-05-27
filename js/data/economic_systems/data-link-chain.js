@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Chain station data
+   ECONOS – Link It · Chain station data
    Economic Systems: build the price mechanism → efficiency chain
    ============================================================ */
 
@@ -70,18 +70,18 @@ window.ECONOS_LINK_CHAIN = {
       explain: [
         {
           pos:  0,
-          text: 'When prices reflect scarcity, firms that produce what consumers value at lower cost earn higher profits. This profit signal attracts resources into high-value activities and drives firms to cut costs and innovate — increasing productive efficiency. Command economies lack this mechanism: state-owned firms face no profit incentive and inefficiency goes unrewarded.'
+          text: 'When prices reflect scarcity, firms that produce what consumers value at lower cost earn higher profits. This profit signal attracts resources into high-value activities and drives firms to cut costs and innovate – increasing productive efficiency. Command economies lack this mechanism: state-owned firms face no profit incentive and inefficiency goes unrewarded.'
         },
         {
           pos:  1,
-          text: 'In a free market, consumer spending acts as a vote for resources. If consumers value smartphones more than typewriters, higher prices for smartphones attract resources into that sector. Allocative efficiency is achieved when production reflects consumer preferences — which the price mechanism delivers automatically through the signalling function of prices.'
+          text: 'In a free market, consumer spending acts as a vote for resources. If consumers value smartphones more than typewriters, higher prices for smartphones attract resources into that sector. Allocative efficiency is achieved when production reflects consumer preferences – which the price mechanism delivers automatically through the signalling function of prices.'
         },
         {
           pos:  2,
-          text: 'Hayek\'s knowledge problem is the fundamental case against central planning. The information needed to allocate resources efficiently — preferences, costs, local conditions — is dispersed across millions of individuals and changes constantly. No central planner can collect and process this information as effectively as the price mechanism, which aggregates it spontaneously. This is why command economies produce systematic shortages and surpluses.'
+          text: 'Hayek\'s knowledge problem is the fundamental case against central planning. The information needed to allocate resources efficiently – preferences, costs, local conditions – is dispersed across millions of individuals and changes constantly. No central planner can collect and process this information as effectively as the price mechanism, which aggregates it spontaneously. This is why command economies produce systematic shortages and surpluses.'
         }
       ],
-      examBridge: '"In a free market, the price mechanism transmits scarcity information automatically, creating a profit incentive for productive efficiency and allowing consumer sovereignty to guide allocative decisions. Central planning fails because — as Hayek argued — the dispersed, constantly changing information needed for efficient allocation cannot be processed by any central authority: price signals perform this function without deliberate coordination."',
+      examBridge: '"In a free market, the price mechanism transmits scarcity information automatically, creating a profit incentive for productive efficiency and allowing consumer sovereignty to guide allocative decisions. Central planning fails because – as Hayek argued – the dispersed, constantly changing information needed for efficient allocation cannot be processed by any central authority: price signals perform this function without deliberate coordination."',
 
       prompts: [
         'How does the price mechanism transmit information that central planners cannot replicate?',
@@ -89,9 +89,9 @@ window.ECONOS_LINK_CHAIN = {
         'What is Hayek\'s knowledge problem and why does it explain command economy failure?'
       ],
       modelAnswers: [
-        'Prices aggregate information from millions of individual decisions about supply and demand. A rise in the price of a good signals that it is becoming scarcer — attracting producers and encouraging consumers to economise — without any central instruction. Central planners would need to collect, process and act on this information manually for every good and service, which is practically impossible.',
-        'In a free market, firms that reduce costs or improve quality earn higher profits and attract investment. Firms that are inefficient face losses and exit the market. This competitive pressure continuously drives down costs and encourages innovation. State firms in command economies face no such incentive — losses are covered by the state and there is no reward for efficiency improvements.',
-        'The knowledge problem is Hayek\'s observation that the information needed for efficient resource allocation is dispersed, tacit and constantly changing — it exists in the minds and actions of millions of individuals. No central planner can acquire, process or act on this information as efficiently as the price mechanism, which aggregates it through the uncoordinated decisions of buyers and sellers. Command economies therefore produce chronic misallocation, shortages and queues.'
+        'Prices aggregate information from millions of individual decisions about supply and demand. A rise in the price of a good signals that it is becoming scarcer – attracting producers and encouraging consumers to economise – without any central instruction. Central planners would need to collect, process and act on this information manually for every good and service, which is practically impossible.',
+        'In a free market, firms that reduce costs or improve quality earn higher profits and attract investment. Firms that are inefficient face losses and exit the market. This competitive pressure continuously drives down costs and encourages innovation. State firms in command economies face no such incentive – losses are covered by the state and there is no reward for efficiency improvements.',
+        'The knowledge problem is Hayek\'s observation that the information needed for efficient resource allocation is dispersed, tacit and constantly changing – it exists in the minds and actions of millions of individuals. No central planner can acquire, process or act on this information as efficiently as the price mechanism, which aggregates it through the uncoordinated decisions of buyers and sellers. Command economies therefore produce chronic misallocation, shortages and queues.'
       ],
       vocab: ['price mechanism', 'profit incentive', 'productive efficiency', 'allocative efficiency', 'consumer sovereignty', 'knowledge problem', 'central planning', 'signalling function', 'scarcity', 'market failure']
     }

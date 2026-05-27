@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Market Equilibrium: synthesise into an exam-quality judgement on rent controls
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Steep supply curve (PES ≈ 0.4): demand shifts right → P rises sharply, Q rises modestly → new equilibrium at much higher rent.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on landlord exit risk, housing supply elasticity, and availability of supply-side alternatives.' }
       ],
-      cloze: 'Overall, rent controls may provide short-run relief for existing tenants but are likely to [1] the housing shortage over time, because landlords facing [2] below market levels will [3] properties from the rental market. With PES ≈ 0.4, housing supply is already [4] — so any further reduction in supply incentives will push rents up in the uncontrolled sector. Therefore, the strongest judgement is that rent controls are a [5] policy tool: they redistribute [6] rather than creating new supply. Supply-side alternatives — planning reform, social housing investment — address the [7] of the housing shortage more directly. The most effective long-run approach is to make housing supply more [8] to price signals.',
+      cloze: 'Overall, rent controls may provide short-run relief for existing tenants but are likely to [1] the housing shortage over time, because landlords facing [2] below market levels will [3] properties from the rental market. With PES ≈ 0.4, housing supply is already [4] – so any further reduction in supply incentives will push rents up in the uncontrolled sector. Therefore, the strongest judgement is that rent controls are a [5] policy tool: they redistribute [6] rather than creating new supply. Supply-side alternatives – planning reform, social housing investment – address the [7] of the housing shortage more directly. The most effective long-run approach is to make housing supply more [8] to price signals.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-worsen',      text: 'worsen',      correct: true  },
@@ -96,11 +96,11 @@ window.ECONOS_LINK_JUDGE = {
         options: [
           { id: 'op-blunt',    text: 'Rent controls are a blunt tool that treats symptoms; supply-side reform addresses the root cause', correct: true  },
           { id: 'op-always',   text: 'Rent controls always make housing more affordable for all renters',                                correct: false },
-          { id: 'op-no',       text: 'Rent controls should never be used — only market forces can solve housing affordability',           correct: false },
+          { id: 'op-no',       text: 'Rent controls should never be used – only market forces can solve housing affordability',           correct: false },
           { id: 'op-demand',   text: 'The housing shortage is caused by excess demand, so demand management is the best solution',       correct: false }
         ]
       },
-      examBridge: '"Rent controls reduce rents for existing tenants in the short run, but the risk of landlords withdrawing supply — as demonstrated by a 15% supply reduction in Stockholm — means the policy is likely to worsen the housing shortage over time. With housing supply already inelastic (PES ≈ 0.4), a rent ceiling further reduces the incentive to build, invest or maintain rental properties. The strongest judgement is that rent controls are a distributional instrument, not an allocative one: they redistribute existing housing more cheaply among current tenants rather than creating the new supply needed to shift the long-run equilibrium to a lower rent."'
+      examBridge: '"Rent controls reduce rents for existing tenants in the short run, but the risk of landlords withdrawing supply – as demonstrated by a 15% supply reduction in Stockholm – means the policy is likely to worsen the housing shortage over time. With housing supply already inelastic (PES ≈ 0.4), a rent ceiling further reduces the incentive to build, invest or maintain rental properties. The strongest judgement is that rent controls are a distributional instrument, not an allocative one: they redistribute existing housing more cheaply among current tenants rather than creating the new supply needed to shift the long-run equilibrium to a lower rent."'
     }
   ]
 };

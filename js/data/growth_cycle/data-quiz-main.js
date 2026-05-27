@@ -50,7 +50,7 @@
           'LRAS to shift right, increasing potential output'
         ],
         ans:  2,
-        exp:  'A negative demand shock (e.g., financial crisis, collapse in consumer confidence) shifts AD leftward — output and the price level both fall. Unemployment rises.'
+        exp:  'A negative demand shock (e.g., financial crisis, collapse in consumer confidence) shifts AD leftward – output and the price level both fall. Unemployment rises.'
       },
       {
         id:   'q_gc_4',
@@ -63,7 +63,7 @@
           'Cause stagflation by raising both unemployment and inflation'
         ],
         ans:  1,
-        exp:  'Lower input costs shift SRAS right. The economy moves to a higher output and lower price level simultaneously — a rare "free lunch" in macroeconomics that improves inflation and growth together.'
+        exp:  'Lower input costs shift SRAS right. The economy moves to a higher output and lower price level simultaneously – a rare "free lunch" in macroeconomics that improves inflation and growth together.'
       },
       {
         id:   'q_gc_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Boom','Trough','Recession','Consumer Price Index'],
         ans:  3,
-        exp:  'Boom, trough, and recession are all phases of the trade cycle. The Consumer Price Index measures inflation — it is not a trade cycle phase.'
+        exp:  'Boom, trough, and recession are all phases of the trade cycle. The Consumer Price Index measures inflation – it is not a trade cycle phase.'
       },
       {
         id:   'q_gc_9',

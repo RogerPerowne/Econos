@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Market Failure: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts left from D₁ to D₂ → equilibrium moves from Q₁ to Q₂ at lower price → deadweight welfare loss from deals that never happen.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness of disclosure depends on severity of asymmetry, enforcement quality, and availability of private information platforms (AutoTrader, HPI).' }
       ],
-      cloze: 'Information asymmetry causes market failure when sellers know more about [1] than buyers can verify. In the used car market, buyers cannot distinguish high from low quality cars before purchase — so they base WTP on [2], depressing effective demand from D₁ to D₂. This [3] shift creates a deadweight welfare loss: gains from trade between quality sellers and buyers willing to pay for quality are never realised. The adverse selection spiral occurs because [4] cars exit the market when buyers will not pay above average-quality prices. Mandatory disclosure (Consumer Rights Act 2015) attempts to restore D toward D₁ by [5]. However, enforcement of disclosure is costly — and the policy works best when [6] of defects is reliably detected and sanctioned. Private information intermediaries (AutoTrader valuations) partially [7] the market failure without government mandate. Therefore, information asymmetry is most damaging in markets with [8] products where quality cannot be assessed before or during purchase.',
+      cloze: 'Information asymmetry causes market failure when sellers know more about [1] than buyers can verify. In the used car market, buyers cannot distinguish high from low quality cars before purchase – so they base WTP on [2], depressing effective demand from D₁ to D₂. This [3] shift creates a deadweight welfare loss: gains from trade between quality sellers and buyers willing to pay for quality are never realised. The adverse selection spiral occurs because [4] cars exit the market when buyers will not pay above average-quality prices. Mandatory disclosure (Consumer Rights Act 2015) attempts to restore D toward D₁ by [5]. However, enforcement of disclosure is costly – and the policy works best when [6] of defects is reliably detected and sanctioned. Private information intermediaries (AutoTrader valuations) partially [7] the market failure without government mandate. Therefore, information asymmetry is most damaging in markets with [8] products where quality cannot be assessed before or during purchase.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-quality',     text: 'product quality',           correct: true  },
@@ -94,13 +94,13 @@ window.ECONOS_LINK_JUDGE = {
       overallPosition: {
         prompt: 'Overall position',
         options: [
-          { id: 'op-only',    text: 'Information asymmetry is the only cause of market failure — externalities and public goods are secondary',                                              correct: false },
+          { id: 'op-only',    text: 'Information asymmetry is the only cause of market failure – externalities and public goods are secondary',                                              correct: false },
           { id: 'op-sig',     text: 'Information asymmetry is a significant market failure, correctable by mandatory disclosure and private intermediaries, but enforcement quality determines effectiveness', correct: true  },
           { id: 'op-self',    text: 'Market failures from information gaps always resolve themselves through private sector signalling',                                                    correct: false },
           { id: 'op-ban',     text: 'Banning used car sales is the only way to eliminate the market failure',                                                                             correct: false }
         ]
       },
-      examBridge: '"Information asymmetry in the used car market depresses buyer WTP from D₁ to D₂, producing an adverse selection spiral that leaves Q₂ < Q₁ and a deadweight welfare loss. The Consumer Rights Act 2015 addresses this through mandatory disclosure, moving D back toward D₁ — but effectiveness depends on enforcement. AutoTrader valuations and HPI checks are private-sector corrections that partially substitute for government mandate. The strongest evaluation recognises that enforcement quality and digital platform coverage jointly determine how close D₂ gets to D₁."'
+      examBridge: '"Information asymmetry in the used car market depresses buyer WTP from D₁ to D₂, producing an adverse selection spiral that leaves Q₂ < Q₁ and a deadweight welfare loss. The Consumer Rights Act 2015 addresses this through mandatory disclosure, moving D back toward D₁ – but effectiveness depends on enforcement. AutoTrader valuations and HPI checks are private-sector corrections that partially substitute for government mandate. The strongest evaluation recognises that enforcement quality and digital platform coverage jointly determine how close D₂ gets to D₁."'
     }
   ]
 };

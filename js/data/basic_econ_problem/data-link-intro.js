@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for basic_econ_problem
+   ECONOS – Link It intro/landing data for basic_econ_problem
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your knowledge of scarcity and opportunity cost into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in scarcity, opportunity cost, and the three fundamental economic questions. Now train the skills examiners reward — applying the framework to a real context, building a watertight causal chain from unlimited wants to allocation decisions, and reaching a supported judgement about whether the economic problem is more or less severe in different systems.",
+    summary: "You've locked in scarcity, opportunity cost, and the three fundamental economic questions. Now train the skills examiners reward – applying the framework to a real context, building a watertight causal chain from unlimited wants to allocation decisions, and reaching a supported judgement about whether the economic problem is more or less severe in different systems.",
     heroKey: 'heroScarcity',
 
     doInThis: 'Four short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Evaluate the conditions under which opportunity cost is most and least visible',
       'Construct a judgement about whether the economic problem is more or less severe in mixed economies'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

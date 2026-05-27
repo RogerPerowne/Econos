@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for macro_objectives
+   ECONOS – content data for macro_objectives
    7 cards · revision-tight · exam-edge gems flagged
    Edexcel Theme 2.5
    ============================================================ */
@@ -14,7 +14,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMacroObjectives',
-    summary: "Five objectives. Never all achievable simultaneously. The trade-offs between them — especially growth vs inflation, and the short-run Phillips curve — organise half of all macro essay arguments.",
+    summary: "Five objectives. Never all achievable simultaneously. The trade-offs between them – especially growth vs inflation, and the short-run Phillips curve – organise half of all macro essay arguments.",
     doInThis: 'Recap the five macro objectives, the conflicts between them, the Phillips curve, stagflation, and the NAIRU.',
     outcomes: [
       'State and explain the five macro objectives with current UK data',
@@ -31,13 +31,13 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — Framing: the five objectives ----- */
+    /* ----- CARD 1 – Framing: the five objectives ----- */
     {
       id: 'five-objectives',
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The five macroeconomic objectives',
-      lede: 'Every government pursues five goals. They cannot all be maximised simultaneously — and the conflicts between them drive most macro policy debates.',
+      lede: 'Every government pursues five goals. They cannot all be maximised simultaneously – and the conflicts between them drive most macro policy debates.',
       branches: [
         { tone: 'green',  label: 'Economic growth',         sub: '<strong>Target: 2-2.5% real GDP p.a.</strong> UK. Needed for rising living standards and fiscal space. Conflict: high growth can cause inflation.' },
         { tone: 'rose',   label: 'Low inflation',           sub: '<strong>Target: CPI 2%</strong> (BoE symmetric target). Needed for price stability and confidence. Conflict: tightening to hit target can cause recession.' },
@@ -54,7 +54,7 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 2 — Conflicts between objectives ----- */
+    /* ----- CARD 2 – Conflicts between objectives ----- */
     {
       id: 'objective-conflicts',
       template: 'diagnose',
@@ -78,7 +78,7 @@ window.ECONOS_TOPIC = {
           {
             label: 'A',
             text: 'The MPC raises Bank Rate from 0.1% to 5.25% between 2021 and 2023 to bring inflation from 11.1% back to target. What trade-off is this?',
-            answer: 'Inflation vs growth/employment. Higher rates reduced consumer spending and investment — GDP growth slowed to near-zero and mortgage holders faced sharply higher payments. The BoE accepted lower growth to restore price stability.',
+            answer: 'Inflation vs growth/employment. Higher rates reduced consumer spending and investment – GDP growth slowed to near-zero and mortgage holders faced sharply higher payments. The BoE accepted lower growth to restore price stability.',
             tone: 'rose'
           },
           {
@@ -89,7 +89,7 @@ window.ECONOS_TOPIC = {
           },
           {
             label: 'C',
-            text: 'UK unemployment falls to 3.7% in 2022 — below most estimates of the natural rate. What macro risk does this create?',
+            text: 'UK unemployment falls to 3.7% in 2022 – below most estimates of the natural rate. What macro risk does this create?',
             answer: 'Employment vs inflation. Below the NAIRU, wage growth accelerates as workers have bargaining power. Firms pass higher labour costs into prices → wage-price spiral risk. The BoE sees this as inflationary pressure requiring tightening.',
             tone: 'amber'
           }
@@ -101,13 +101,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 3 — The Phillips curve ----- */
+    /* ----- CARD 3 – The Phillips curve ----- */
     {
       id: 'phillips-curve',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'The Phillips curve: inflation-unemployment trade-off',
-      lede: "Bill Phillips discovered in 1958 that lower unemployment correlated with higher wage inflation. This became the theoretical foundation for demand management — and the controversy that followed is equally important.",
+      lede: "Bill Phillips discovered in 1958 that lower unemployment correlated with higher wage inflation. This became the theoretical foundation for demand management – and the controversy that followed is equally important.",
       diagramKey: 'phillipsInteractive',
       steps: [
         {
@@ -118,12 +118,12 @@ window.ECONOS_TOPIC = {
         {
           key: 'extension',
           label: 'Friedman and Phelps (1968): the long-run Phillips curve',
-          text: 'Friedman and Phelps independently argued the trade-off only exists <strong>in the short run</strong>. If government persistently pushes unemployment below the natural rate, workers demand higher nominal wages to compensate for inflation — the SRPC shifts up. In the long run, the Phillips curve is <strong>vertical at the NAIRU</strong> — there is no lasting trade-off. Attempts to exploit the short-run trade-off only produce permanently higher inflation.'
+          text: 'Friedman and Phelps independently argued the trade-off only exists <strong>in the short run</strong>. If government persistently pushes unemployment below the natural rate, workers demand higher nominal wages to compensate for inflation – the SRPC shifts up. In the long run, the Phillips curve is <strong>vertical at the NAIRU</strong> – there is no lasting trade-off. Attempts to exploit the short-run trade-off only produce permanently higher inflation.'
         },
         {
           key: 'shift',
           label: '1970s stagflation: the curve breaks down',
-          text: 'In the 1970s, the UK experienced <strong>rising unemployment AND rising inflation simultaneously</strong> — a combination the original Phillips curve said was impossible. The OPEC oil shocks shifted SRAS left, causing stagflation. The SRPC shifted upward — both unemployment and inflation rose together. This empirical failure ended the Keynesian consensus and launched monetarism as the new policy framework.'
+          text: 'In the 1970s, the UK experienced <strong>rising unemployment AND rising inflation simultaneously</strong> – a combination the original Phillips curve said was impossible. The OPEC oil shocks shifted SRAS left, causing stagflation. The SRPC shifted upward – both unemployment and inflation rose together. This empirical failure ended the Keynesian consensus and launched monetarism as the new policy framework.'
         }
       ],
       examEdge: {
@@ -132,13 +132,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 4 — The NAIRU ----- */
+    /* ----- CARD 4 – The NAIRU ----- */
     {
       id: 'nairu',
       template: 'mechanisms',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'NAIRU: the natural rate of unemployment',
-      lede: "The NAIRU — Non-Accelerating Inflation Rate of Unemployment — is the unemployment rate consistent with stable inflation. Push below it and inflation accelerates. It's unobservable but crucial.",
+      lede: "The NAIRU – Non-Accelerating Inflation Rate of Unemployment – is the unemployment rate consistent with stable inflation. Push below it and inflation accelerates. It's unobservable but crucial.",
       mechanisms: [
         {
           num: '1',
@@ -162,20 +162,20 @@ window.ECONOS_TOPIC = {
           num: '4',
           tone: 'rose',
           title: 'Hysteresis: the NAIRU can shift up',
-          text: 'After deep recessions, long-term unemployment causes skill atrophy and labour market detachment. The structural component rises — pushing the NAIRU higher. The 1980s UK recession left a legacy NAIRU of ~8%. This is hysteresis working through the NAIRU, not just the unemployment rate.'
+          text: 'After deep recessions, long-term unemployment causes skill atrophy and labour market detachment. The structural component rises – pushing the NAIRU higher. The 1980s UK recession left a legacy NAIRU of ~8%. This is hysteresis working through the NAIRU, not just the unemployment rate.'
         }
       ],
       examEdge: {
-        title: 'NAIRU is unobservable — and that\'s important',
-        text: "The NAIRU cannot be directly observed — it must be estimated. Policy errors arise when the true NAIRU is higher than assumed (stimulus → inflation) or lower (excessive tightening → unnecessary unemployment). The OBR's NAIRU estimate matters enormously for fiscal projections. Acknowledging this uncertainty is an A* evaluation point."
+        title: 'NAIRU is unobservable – and that\'s important',
+        text: "The NAIRU cannot be directly observed – it must be estimated. Policy errors arise when the true NAIRU is higher than assumed (stimulus → inflation) or lower (excessive tightening → unnecessary unemployment). The OBR's NAIRU estimate matters enormously for fiscal projections. Acknowledging this uncertainty is an A* evaluation point."
       },
       connection: {
         title: 'NAIRU and supply-side policy',
-        text: 'The key implication: if you want permanently lower unemployment WITHOUT higher inflation, you must reduce the NAIRU — which requires supply-side reform, not demand management. This is the theoretical justification for every supply-side economics programme.'
+        text: 'The key implication: if you want permanently lower unemployment WITHOUT higher inflation, you must reduce the NAIRU – which requires supply-side reform, not demand management. This is the theoretical justification for every supply-side economics programme.'
       }
     },
 
-    /* ----- CARD 5 — Stagflation ----- */
+    /* ----- CARD 5 – Stagflation ----- */
     {
       id: 'stagflation',
       template: 'cause',
@@ -184,7 +184,7 @@ window.ECONOS_TOPIC = {
       bannerLabel: 'The worst macro outcome',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Stagflation: stagnation + inflation',
-      lede: 'Stagflation — rising inflation alongside rising unemployment — is the nightmare macro scenario. It breaks the standard policy toolkit because every response worsens one problem.',
+      lede: 'Stagflation – rising inflation alongside rising unemployment – is the nightmare macro scenario. It breaks the standard policy toolkit because every response worsens one problem.',
       diagramCaption: 'SRAS shifts left: output falls (↑ unemployment), price level rises (↑ inflation). Both simultaneously.',
       causes: {
         title: 'Causes of stagflation',
@@ -200,12 +200,12 @@ window.ECONOS_TOPIC = {
         items: [
           '1973-74: OPEC quadrupled oil prices → UK inflation peaked at 25%, unemployment rose to 1m+',
           '1979-80: second oil shock compounded stagflation; Thatcher\'s tight monetary policy broke it but at cost of 3m+ unemployment',
-          '2022-23: energy price surge post-Ukraine → UK inflation 11.1%, growth near-zero — mild modern parallel'
+          '2022-23: energy price surge post-Ukraine → UK inflation 11.1%, growth near-zero – mild modern parallel'
         ]
       },
       ukExamples: {
         title: 'The policy dilemma',
-        text: '<strong>Demand-side response options:</strong> (1) Tighten to fight inflation → recession worsens, unemployment rises further. (2) Ease to protect output → inflation worsens. There is no \'good\' demand-side response. <strong>Supply-side response:</strong> shift SRAS right (energy subsidies, productivity improvements) — addresses both problems but takes time and may be unaffordable in a fiscal crisis.'
+        text: '<strong>Demand-side response options:</strong> (1) Tighten to fight inflation → recession worsens, unemployment rises further. (2) Ease to protect output → inflation worsens. There is no \'good\' demand-side response. <strong>Supply-side response:</strong> shift SRAS right (energy subsidies, productivity improvements) – addresses both problems but takes time and may be unaffordable in a fiscal crisis.'
       },
       examEdge: {
         title: 'Stagflation is the \'evaluation trap\'',
@@ -213,17 +213,17 @@ window.ECONOS_TOPIC = {
       },
       policy: {
         title: 'Thatcher\'s solution (1979-82)',
-        text: 'Thatcher chose to break stagflation via tight monetary policy — accepting deep recession (unemployment rose to 3m+) to crush inflationary expectations. The sacrifice ratio was high. The benefit: credibility was restored and inflation fell from 22% to 3% by 1983. A* answers evaluate whether the sacrifice was \'worth it\' — acknowledging the lasting structural unemployment legacy.'
+        text: 'Thatcher chose to break stagflation via tight monetary policy – accepting deep recession (unemployment rose to 3m+) to crush inflationary expectations. The sacrifice ratio was high. The benefit: credibility was restored and inflation fell from 22% to 3% by 1983. A* answers evaluate whether the sacrifice was \'worth it\' – acknowledging the lasting structural unemployment legacy.'
       }
     },
 
-    /* ----- CARD 6 — Can supply-side policy resolve trade-offs? ----- */
+    /* ----- CARD 6 – Can supply-side policy resolve trade-offs? ----- */
     {
       id: 'resolve-tradeoffs',
       template: 'paired',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Resolving trade-offs: the supply-side argument',
-      lede: 'Demand-side policies force governments to choose between objectives. Supply-side policies can, in theory, reduce multiple trade-offs simultaneously — but with important caveats.',
+      lede: 'Demand-side policies force governments to choose between objectives. Supply-side policies can, in theory, reduce multiple trade-offs simultaneously – but with important caveats.',
       pairs: [
         {
           tone: 'green',
@@ -235,7 +235,7 @@ window.ECONOS_TOPIC = {
             'Reduce structural unemployment → growth without distributional deterioration',
             'Improve BoP (competitiveness) without damaging domestic growth'
           ],
-          example: '<strong>East Asian growth miracle:</strong> South Korea and Taiwan combined rapid growth with low inflation and falling inequality — achieved through investment in education, technology, and export competitiveness. The supply-side can resolve trade-offs if the structural foundations are right.'
+          example: '<strong>East Asian growth miracle:</strong> South Korea and Taiwan combined rapid growth with low inflation and falling inequality – achieved through investment in education, technology, and export competitiveness. The supply-side can resolve trade-offs if the structural foundations are right.'
         },
         {
           tone: 'amber',
@@ -252,15 +252,15 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: {
         title: 'The supply-side conclusion',
-        text: 'The A* conclusion structure: <em>\'Supply-side policy is the theoretically optimal solution to macro trade-offs — shifting LRAS right reduces the NAIRU and enables non-inflationary growth. However, the long time lags and upfront costs mean demand management remains necessary in the short run, even if supply-side reform is the long-run answer.\'</em>'
+        text: 'The A* conclusion structure: <em>\'Supply-side policy is the theoretically optimal solution to macro trade-offs – shifting LRAS right reduces the NAIRU and enables non-inflationary growth. However, the long time lags and upfront costs mean demand management remains necessary in the short run, even if supply-side reform is the long-run answer.\'</em>'
       },
       policy: {
         title: 'The policy mix',
-        text: 'The most sophisticated macro policy discussions argue for a <strong>policy mix</strong>: demand-side management to stabilise the short-run cycle, supply-side reform to improve the long-run capacity of the economy. Using both in combination — and knowing when to switch emphasis — is the mark of a complete macroeconomic analysis.'
+        text: 'The most sophisticated macro policy discussions argue for a <strong>policy mix</strong>: demand-side management to stabilise the short-run cycle, supply-side reform to improve the long-run capacity of the economy. Using both in combination – and knowing when to switch emphasis – is the mark of a complete macroeconomic analysis.'
       }
     },
 
-    /* ----- CARD 7 — UK macro performance: real data ----- */
+    /* ----- CARD 7 – UK macro performance: real data ----- */
     {
       id: 'uk-macro-data',
       template: 'deflation',
@@ -272,22 +272,22 @@ window.ECONOS_TOPIC = {
         {
           icon: '📈',
           title: 'Growth vs inflation (2021-23)',
-          text: 'Post-COVID demand bounce met supply constraints. UK growth recovered to 7.5% in 2021 — then energy shock and global bottlenecks pushed CPI to 11.1% (Oct 2022). Classic growth-inflation tension, with a supply-side origin.'
+          text: 'Post-COVID demand bounce met supply constraints. UK growth recovered to 7.5% in 2021 – then energy shock and global bottlenecks pushed CPI to 11.1% (Oct 2022). Classic growth-inflation tension, with a supply-side origin.'
         },
         {
           icon: '⚖️',
           title: 'Unemployment vs inflation (2022-23)',
-          text: 'UK unemployment fell to 3.7% — below most NAIRU estimates. Wage growth accelerated to 7-8%. The BoE raised Bank Rate to 5.25% — accepting lower growth to prevent wage-price spiral. Phillips curve operating in real time.'
+          text: 'UK unemployment fell to 3.7% – below most NAIRU estimates. Wage growth accelerated to 7-8%. The BoE raised Bank Rate to 5.25% – accepting lower growth to prevent wage-price spiral. Phillips curve operating in real time.'
         },
         {
           icon: '🌍',
           title: 'Growth vs BoP (2010-2019)',
-          text: 'UK current account deficit averaged 4-5% of GDP — among the largest in the G7. Domestic consumption growth sucked in imports. Brexit compounded structural trade barriers from 2021. The growth-BoP conflict is a persistent feature of the UK economy.'
+          text: 'UK current account deficit averaged 4-5% of GDP – among the largest in the G7. Domestic consumption growth sucked in imports. Brexit compounded structural trade barriers from 2021. The growth-BoP conflict is a persistent feature of the UK economy.'
         },
         {
           icon: '🔄',
           title: 'Supply-side vs short-run (2010-12 austerity)',
-          text: 'Coalition government prioritised fiscal consolidation (deficit reduction) — supply-side in motivation. Short-run cost: growth halved, unemployment peaked at 8.3%. Trade-off between long-run fiscal sustainability and short-run welfare. IMF later said multipliers were underestimated.'
+          text: 'Coalition government prioritised fiscal consolidation (deficit reduction) – supply-side in motivation. Short-run cost: growth halved, unemployment peaked at 8.3%. Trade-off between long-run fiscal sustainability and short-run welfare. IMF later said multipliers were underestimated.'
         }
       ],
       examples: {
@@ -295,12 +295,12 @@ window.ECONOS_TOPIC = {
         items: [
           { period: 'Growth target', text: 'UK trend growth ~2-2.5%. Post-2008 average ~1.5%. 2023-24 near-zero stagnation. OBR forecast ~1.5% medium term.' },
           { period: 'Inflation target', text: 'BoE target: 2% CPI. Peak: 11.1% Oct 2022. Returning to ~2% by mid-2024. Raised Bank Rate from 0.1% to 5.25% (Aug 2023).' },
-          { period: 'Unemployment', text: 'UK NAIRU estimate ~4-4.5%. Actual: 3.7% (2022 low), rising to ~4.2% by 2024. Youth unemployment ~11-13% — structurally higher.' }
+          { period: 'Unemployment', text: 'UK NAIRU estimate ~4-4.5%. Actual: 3.7% (2022 low), rising to ~4.2% by 2024. Youth unemployment ~11-13% – structurally higher.' }
         ]
       },
       examEdge: {
         title: 'Use real data in every answer',
-        text: "A* answers consistently anchor analysis in real UK data: '...consistent with the UK\'s experience in 2022-23, when unemployment fell to 3.7% — below the NAIRU — and wage inflation accelerated to 7.8%, validating the short-run Phillips curve relationship.' Data-anchored answers always score higher than purely theoretical ones."
+        text: "A* answers consistently anchor analysis in real UK data: '...consistent with the UK\'s experience in 2022-23, when unemployment fell to 3.7% – below the NAIRU – and wage inflation accelerated to 7.8%, validating the short-run Phillips curve relationship.' Data-anchored answers always score higher than purely theoretical ones."
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }

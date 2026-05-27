@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
     'Evaluating whether oligopoly is beneficial or harmful to consumers using real UK evidence'
   ],
 
-  tip: 'Strategic interdependence is the central concept in oligopoly: every decision a firm makes must account for how rivals will react. When applying the kinked demand curve, remember that the vertical gap in the MR curve is the key analytical point &#8212; as long as MC passes through the gap, price remains rigid at P* even if costs change.',
+  tip: 'Strategic interdependence is the central concept in oligopoly: every decision a firm makes must account for how rivals will react. When applying the kinked demand curve, remember that the vertical gap in the MR curve is the key analytical point &#8211; as long as MC passes through the gap, price remains rigid at P* even if costs change.',
 
   stages: [
     { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },

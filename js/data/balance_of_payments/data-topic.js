@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 · A Global Perspective',
   title: 'Balance of Payments',
   estTime: '10-12 minutes',
-  goal: 'Understand the structure of the balance of payments, the causes and consequences of current account deficits, and the policies available to correct imbalances — including the J-curve effect.',
+  goal: 'Understand the structure of the balance of payments, the causes and consequences of current account deficits, and the policies available to correct imbalances – including the J-curve effect.',
 
   intro: {
     heroKey: 'heroTrade',
@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
       'Explain the J-curve and state the Marshall–Lerner condition',
       'Explain the two-way link between the current account and the exchange rate'
     ],
-    tip: 'The BoP always sums to zero: a current account deficit must be matched by a capital + financial account surplus. The real exam question is always whether a deficit is sustainable — that depends on how it is financed and what it reflects.',
+    tip: 'The BoP always sums to zero: a current account deficit must be matched by a capital + financial account surplus. The real exam question is always whether a deficit is sustainable – that depends on how it is financed and what it reflects.',
     stages: [
       { num: 1, name: 'Learn it', sub: '8 cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -91,7 +91,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Flow, not a stock',
-        text: 'The BoP is a flow balance, not a stock. It shows flows in and out of the UK with the rest of the world over a time period — not a cumulative balance sheet.'
+        text: 'The BoP is a flow balance, not a stock. It shows flows in and out of the UK with the rest of the world over a time period – not a cumulative balance sheet.'
       },
 
       examEdge: {
@@ -177,13 +177,13 @@ window.ECONOS_TOPIC = {
         items: [
           { tone: 'green',  icon: '✈️', label: 'Services: UK strength',  text: 'Financial and professional services generate a large persistent surplus.' },
           { tone: 'rose',   icon: '📦', label: 'Goods: UK weakness',     text: 'Manufacturing decline means a large and persistent goods deficit.' },
-          { tone: 'blue',   icon: '🔍', label: 'Use all four components', text: 'Looking at all four gives the real picture — trade in goods alone is not the current account.' }
+          { tone: 'blue',   icon: '🔍', label: 'Use all four components', text: 'Looking at all four gives the real picture – trade in goods alone is not the current account.' }
         ]
       },
 
       examEdge: {
         title: 'Exam move',
-        text: 'Do not confuse <strong>trade in goods</strong> with the whole current account. Always break it into all four components — and note that the UK\'s services surplus substantially offsets its goods deficit.'
+        text: 'Do not confuse <strong>trade in goods</strong> with the whole current account. Always break it into all four components – and note that the UK\'s services surplus substantially offsets its goods deficit.'
       }
     },
 
@@ -230,7 +230,7 @@ window.ECONOS_TOPIC = {
         items: [
           { tone: 'blue',   icon: '📆', label: 'Persistent goods deficit', text: 'The goods deficit has persisted for years, across booms and recessions.' },
           { tone: 'amber',  icon: '⚖️', label: 'Services only partly offsets', text: 'The services surplus is large but not large enough to close the gap.' },
-          { tone: 'green',  icon: '🔄', label: 'Outside booms too',        text: 'Deficit remains even when growth is weak — cyclical demand is not the driver.' }
+          { tone: 'green',  icon: '🔄', label: 'Outside booms too',        text: 'Deficit remains even when growth is weak – cyclical demand is not the driver.' }
         ]
       },
 
@@ -305,12 +305,12 @@ window.ECONOS_TOPIC = {
           tone: 'blue',
           icon: '🛒',
           head: 'Living standards today',
-          body: 'Imports can support present consumption — but not indefinitely.'
+          body: 'Imports can support present consumption – but not indefinitely.'
         }
       ],
 
       summaryRow: [
-        { tone: 'purple', icon: '💬', title: 'Lawson Doctrine', text: '"A private-sector deficit may be self-correcting." — Nigel Lawson, 1988. Useful evaluation point, but only persuasive if markets remain confident and borrowing funds productive activity.' }
+        { tone: 'purple', icon: '💬', title: 'Lawson Doctrine', text: '"A private-sector deficit may be self-correcting." – Nigel Lawson, 1988. Useful evaluation point, but only persuasive if markets remain confident and borrowing funds productive activity.' }
       ],
 
       conclusion: {
@@ -330,10 +330,10 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Correcting the deficit',
-      lede: 'There are three main policy routes — switch spending, reduce spending, or improve competitiveness.',
+      lede: 'There are three main policy routes – switch spending, reduce spending, or improve competitiveness.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'Expenditure-switching is the examiner favourite — it links directly to depreciation and the J-curve.' },
+      tip: { icon: '🔒', tone: 'green', text: 'Expenditure-switching is the examiner favourite – it links directly to depreciation and the J-curve.' },
 
       causesFirst: true,
       causesLabel: 'THE THREE ROUTES',
@@ -385,7 +385,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Different causes need different cures — a structural deficit needs long-run repair, not just a short-run demand squeeze.'
+        text: 'Different causes need different cures – a structural deficit needs long-run repair, not just a short-run demand squeeze.'
       },
 
       examEdge: {
@@ -415,7 +415,7 @@ window.ECONOS_TOPIC = {
             label: 'Depreciation hits',
             tone: 'blue',
             head: 'Prices react, volumes have not yet',
-            body: 'The pound falls. The current account sits at its pre-depreciation level. Prices are about to react — but contracts are fixed and volumes cannot adjust immediately.',
+            body: 'The pound falls. The current account sits at its pre-depreciation level. Prices are about to react – but contracts are fixed and volumes cannot adjust immediately.',
             analysis: 'The CA may actually worsen before it improves. The J-curve traces exactly why.'
           },
           {
@@ -424,8 +424,8 @@ window.ECONOS_TOPIC = {
             show: ['idl-1'],
             head: 'CA deteriorates to the trough',
             body: [
-              'Import prices rise immediately — buyers keep purchasing at the new higher £ price.',
-              'Export volumes do not jump yet — foreign buyers have existing contracts.',
+              'Import prices rise immediately – buyers keep purchasing at the new higher £ price.',
+              'Export volumes do not jump yet – foreign buyers have existing contracts.',
               'Import bill rises while export revenue is flat → CA worsens to the trough (~6 months).'
             ],
             analysis: 'This is the most counter-intuitive part of depreciation. The CA gets worse even though the mechanism is working.'
@@ -434,17 +434,17 @@ window.ECONOS_TOPIC = {
             label: 'Recovery',
             tone: 'green',
             show: ['idl-1', 'idl-2'],
-            head: 'Volumes respond — CA improves',
-            body: 'Export volumes rise and import volumes fall as contracts expire and firms adjust. The CA recovers past the pre-depreciation baseline into surplus — the classic J-shape.',
-            analysis: 'Typical duration: 12–18 months in developed economies. The mechanism works — it just needs time.'
+            head: 'Volumes respond – CA improves',
+            body: 'Export volumes rise and import volumes fall as contracts expire and firms adjust. The CA recovers past the pre-depreciation baseline into surplus – the classic J-shape.',
+            analysis: 'Typical duration: 12–18 months in developed economies. The mechanism works – it just needs time.'
           },
           {
             label: 'Marshall-Lerner',
             tone: 'purple',
             show: ['idl-1', 'idl-2', 'idl-3'],
             head: 'The J only completes if M-L holds',
-            body: 'The recovery requires <strong>|PED_X| + |PED_M| &gt; 1</strong>. If exports and imports are too inelastic, volume response is too weak and the CA stays permanently worse (dashed purple path) — the J never completes.',
-            analysis: 'Services-heavy economies (like the UK) have lower elasticities than commodity exporters — limits the J in practice.'
+            body: 'The recovery requires <strong>|PED_X| + |PED_M| &gt; 1</strong>. If exports and imports are too inelastic, volume response is too weak and the CA stays permanently worse (dashed purple path) – the J never completes.',
+            analysis: 'Services-heavy economies (like the UK) have lower elasticities than commodity exporters – limits the J in practice.'
           }
         ]
       },
@@ -463,7 +463,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'The J-curve is a timing story — the mechanism may work, but only after a lag. Short-run and long-run effects must always be distinguished.'
+        text: 'The J-curve is a timing story – the mechanism may work, but only after a lag. Short-run and long-run effects must always be distinguished.'
       },
 
       examEdge: {
@@ -553,7 +553,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Evaluating correction policies',
-      lede: 'Every correction method works only with trade-offs — and only if the diagnosis is right.',
+      lede: 'Every correction method works only with trade-offs – and only if the diagnosis is right.',
       ledeStyle: 'plain',
 
       tip: { icon: '🔒', tone: 'green', text: 'No single cure is painless – recession risk, inflation risk and time lags all matter.' },

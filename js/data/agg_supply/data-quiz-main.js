@@ -24,7 +24,7 @@
           'Higher prices reduce the cost of imports'
         ],
         ans:  1,
-        exp:  'In the short run, some costs (especially wages) are sticky. When the price level rises, firms receive higher revenue but face unchanged costs — so they expand output. This gives an upward-sloping SRAS.'
+        exp:  'In the short run, some costs (especially wages) are sticky. When the price level rises, firms receive higher revenue but face unchanged costs – so they expand output. This gives an upward-sloping SRAS.'
       },
       {
         id:   'q_as_2',
@@ -37,7 +37,7 @@
           'Perfectly horizontal at a fixed price level'
         ],
         ans:  2,
-        exp:  'Classical economists argue that in the long run, all prices and wages are fully flexible, so the economy always returns to full employment (potential output, Yf). LRAS is vertical — output is fixed by supply-side capacity.'
+        exp:  'Classical economists argue that in the long run, all prices and wages are fully flexible, so the economy always returns to full employment (potential output, Yf). LRAS is vertical – output is fixed by supply-side capacity.'
       },
       {
         id:   'q_as_3',
@@ -63,7 +63,7 @@
           'A fall in corporation tax'
         ],
         ans:  2,
-        exp:  'A rise in raw material costs (a negative supply shock) increases the cost of production at every level of output. Firms produce less at any given price — SRAS shifts left, pushing prices up and output down (stagflation risk).'
+        exp:  'A rise in raw material costs (a negative supply shock) increases the cost of production at every level of output. Firms produce less at any given price – SRAS shifts left, pushing prices up and output down (stagflation risk).'
       },
       {
         id:   'q_as_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out in the context of SRAS shifters?',
         opts: ['Change in input costs','Change in commodity prices','Change in potential output','Change in nominal wages'],
         ans:  2,
-        exp:  'Changes in input costs, commodity prices, and nominal wages all shift SRAS by changing the cost of production in the short run. A change in potential output shifts LRAS — it is a long-run supply-side concept.'
+        exp:  'Changes in input costs, commodity prices, and nominal wages all shift SRAS by changing the cost of production in the short run. A change in potential output shifts LRAS – it is a long-run supply-side concept.'
       },
       {
         id:   'q_as_9',
@@ -123,7 +123,7 @@
         ],
         opts: ['Scenario A','Scenario B','Scenario C','Scenario D'],
         ans:  2,
-        exp:  'Stagflation is the combination of rising prices AND falling output — the worst of both worlds. Scenario C shows rising prices with falling output caused by a leftward SRAS shift (negative supply shock).'
+        exp:  'Stagflation is the combination of rising prices AND falling output – the worst of both worlds. Scenario C shows rising prices with falling output caused by a leftward SRAS shift (negative supply shock).'
       },
       {
         id:   'q_as_10',

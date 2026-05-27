@@ -50,7 +50,7 @@
           'An expansion of the money supply beyond output growth'
         ],
         ans:  1,
-        exp:  'Cost-push (supply-side) inflation arises from rising production costs — e.g., higher oil prices, wage increases, or supply-chain disruptions. SRAS shifts left, leading to higher prices and lower output (stagflation risk).'
+        exp:  'Cost-push (supply-side) inflation arises from rising production costs – e.g., higher oil prices, wage increases, or supply-chain disruptions. SRAS shifts left, leading to higher prices and lower output (stagflation risk).'
       },
       {
         id:   'q_inf_4',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Demand-pull inflation','Cost-push inflation','Hyperinflation','Deflation'],
         ans:  3,
-        exp:  'Demand-pull, cost-push, and hyperinflation are all forms of rising prices. Deflation is the opposite — a sustained fall in the general price level. It is the odd one out among inflationary concepts.'
+        exp:  'Demand-pull, cost-push, and hyperinflation are all forms of rising prices. Deflation is the opposite – a sustained fall in the general price level. It is the odd one out among inflationary concepts.'
       },
       {
         id:   'q_inf_9',
@@ -116,7 +116,7 @@
         q:    'Use the CPI data to calculate the inflation rate between Year 1 and Year 2.',
         tableHeaders: ['Year','CPI','Inflation Rate (%)'],
         tableData: [
-          ['Base year','100','—'],
+          ['Base year','100','–'],
           ['Year 1','105','5.0'],
           ['Year 2','112.35','?'],
           ['Year 3','118','?']

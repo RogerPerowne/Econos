@@ -37,7 +37,7 @@
           'A tariff is illegal under WTO rules; a quota is permitted'
         ],
         ans:  1,
-        exp:  'A tariff works through the price mechanism — it raises import costs, reducing quantity demanded. A quota sets a hard limit on import volumes regardless of price. Quotas give no revenue to the government (the windfall goes to the quota holder).'
+        exp:  'A tariff works through the price mechanism – it raises import costs, reducing quantity demanded. A quota sets a hard limit on import volumes regardless of price. Quotas give no revenue to the government (the windfall goes to the quota holder).'
       },
       {
         id:   'q_prot_3',
@@ -63,7 +63,7 @@
           'Prevents firms from achieving economies of scale'
         ],
         ans:  1,
-        exp:  'Protectionism harms consumers (higher prices, less choice), reduces efficiency (protected firms face less pressure), and can trigger retaliatory tariffs — a trade war that harms all parties.'
+        exp:  'Protectionism harms consumers (higher prices, less choice), reduces efficiency (protected firms face less pressure), and can trigger retaliatory tariffs – a trade war that harms all parties.'
       },
       {
         id:   'q_prot_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Tariff','Import quota','Export subsidy','Comparative advantage'],
         ans:  3,
-        exp:  'Tariff, import quota, and export subsidy are all protectionist measures that restrict free trade. Comparative advantage is the principle underpinning the case for free trade — it argues against protectionism.'
+        exp:  'Tariff, import quota, and export subsidy are all protectionist measures that restrict free trade. Comparative advantage is the principle underpinning the case for free trade – it argues against protectionism.'
       },
       {
         id:   'q_prot_9',

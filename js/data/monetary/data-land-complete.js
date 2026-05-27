@@ -11,6 +11,6 @@ window.ECONOS_LAND_COMPLETE = {
   nextCard: {
     icon:  '&#x1F680;',
     title: 'What to do next',
-    text:  'Compare your answers with the model responses. Check whether you traced the full transmission mechanism &#8212; Bank Rate through to AD through to the price level &#8212; rather than stating the conclusion without the mechanism. Note whether your essay distinguished demand-pull (monetary policy effective) from cost-push (monetary policy limited), and whether your judgement was conditional rather than absolute.'
+    text:  'Compare your answers with the model responses. Check whether you traced the full transmission mechanism &#8211; Bank Rate through to AD through to the price level &#8211; rather than stating the conclusion without the mechanism. Note whether your essay distinguished demand-pull (monetary policy effective) from cost-push (monetary policy limited), and whether your judgement was conditional rather than absolute.'
   }
 };

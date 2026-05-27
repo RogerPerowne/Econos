@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in equilibrium, disequilibrium, the price mechanism in action, and how to analyse supply and demand shifts simultaneously.',
   intro: {
     heroKey: 'heroSupplyDemand',
-    summary: 'Equilibrium is where supply meets demand — the price at which the market clears. Any disturbance creates excess supply or demand, which the price mechanism corrects. Mastering simultaneous shifts is essential for multi-mark exam questions.',
+    summary: 'Equilibrium is where supply meets demand – the price at which the market clears. Any disturbance creates excess supply or demand, which the price mechanism corrects. Mastering simultaneous shifts is essential for multi-mark exam questions.',
     doInThis: 'Work through 7 cards covering equilibrium price, excess demand and supply, how markets clear, simultaneous supply and demand shifts, market efficiency, and real-world applications.',
     outcomes: [
       'Define market equilibrium and identify it on a diagram',
@@ -48,11 +48,11 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '🔻', title: 'Price too low',  sub: 'Shortage appears. Sellers raise price.' },
         { tone: 'green', icon: '🎯', title: 'Price adjusts towards equilibrium', sub: 'Market moves back to balance at E.' }
       ],
-      conclusion: { title: 'Key takeaway', text: 'Equilibrium is the meeting point of demand and supply — not the point that is automatically best for everyone.' },
+      conclusion: { title: 'Key takeaway', text: 'Equilibrium is the meeting point of demand and supply – not the point that is automatically best for everyone.' },
       keyTerms: [
-        { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied — the market clears.' },
-        { term: 'Market clearing', def: 'All goods produced are sold and all buyers willing to pay the market price can purchase — no shortage, no surplus.' },
-        { term: 'Disequilibrium', def: 'Any price where quantity demanded ≠ quantity supplied — creates pressure for price adjustment.' }
+        { term: 'Equilibrium', def: 'The price at which quantity demanded equals quantity supplied – the market clears.' },
+        { term: 'Market clearing', def: 'All goods produced are sold and all buyers willing to pay the market price can purchase – no shortage, no surplus.' },
+        { term: 'Disequilibrium', def: 'Any price where quantity demanded ≠ quantity supplied – creates pressure for price adjustment.' }
       ],
       examEdge: 'Always define equilibrium precisely and refer to both price and quantity. When drawing, label the intersection clearly, then drop dashed lines to both axes labelled P* and Q*. Diagram technique earns marks reliably.'
     },
@@ -67,7 +67,7 @@ window.ECONOS_TOPIC = {
         {
           key: 'base',
           label: 'Market in equilibrium',
-          text: 'At point <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to rise or fall — the market clears at equilibrium price <strong>P<sub>e</sub></strong> and quantity <strong>Q<sub>e</sub></strong>. Now disturb the price above or below P<sub>e</sub> and watch the market self-correct.'
+          text: 'At point <strong>E</strong>, quantity demanded equals quantity supplied. There is no pressure for price to rise or fall – the market clears at equilibrium price <strong>P<sub>e</sub></strong> and quantity <strong>Q<sub>e</sub></strong>. Now disturb the price above or below P<sub>e</sub> and watch the market self-correct.'
         },
         {
           key: 'shortage',
@@ -90,9 +90,9 @@ window.ECONOS_TOPIC = {
       pairLabel: 'Real-world examples',
       pairEmoji: '🌍',
       left:  { tone: 'blue',  icon: '🎫', iconStyle: 'circle', label: 'Shortage example', text: 'Concert tickets sell out within minutes. Fans compete on resale platforms and prices rise well above face value until supply and willingness-to-pay align.' },
-      right: { tone: 'amber', icon: '🛒', iconStyle: 'circle', label: 'Surplus example',  text: 'Supermarkets discount fresh stock near closing time. Cutting price clears the shelves before goods perish — the surplus disappears as Q<sub>d</sub> rises.' },
-      conclusion: { title: 'Key takeaway', text: 'Market prices self-correct when there is competition and flexibility — shortages bid prices up, surpluses force prices down, both routes lead back to E.' },
-      examEdge: 'Always relate shortage or surplus to both quantity and price pressure. Markets that adjust slowly — housing, labour, agriculture — are prime candidates for policy intervention because the free-market correction can take years.'
+      right: { tone: 'amber', icon: '🛒', iconStyle: 'circle', label: 'Surplus example',  text: 'Supermarkets discount fresh stock near closing time. Cutting price clears the shelves before goods perish – the surplus disappears as Q<sub>d</sub> rises.' },
+      conclusion: { title: 'Key takeaway', text: 'Market prices self-correct when there is competition and flexibility – shortages bid prices up, surpluses force prices down, both routes lead back to E.' },
+      examEdge: 'Always relate shortage or surplus to both quantity and price pressure. Markets that adjust slowly – housing, labour, agriculture – are prime candidates for policy intervention because the free-market correction can take years.'
     },
     {
       id: 'market_equilibrium_3',
@@ -105,22 +105,22 @@ window.ECONOS_TOPIC = {
         {
           key: 'demand-right',
           label: 'Demand increases',
-          text: '<strong>D shifts right (D₁ → D₂)</strong> — a non-price demand factor improves (higher income, changed tastes, substitute\'s price rises). At old P₁, excess demand appears → price rises → Qs extends up S → new equilibrium E₂. Result: <strong>P rises, Q rises</strong>. Both move in the same direction — an unambiguous outcome.'
+          text: '<strong>D shifts right (D₁ → D₂)</strong> – a non-price demand factor improves (higher income, changed tastes, substitute\'s price rises). At old P₁, excess demand appears → price rises → Qs extends up S → new equilibrium E₂. Result: <strong>P rises, Q rises</strong>. Both move in the same direction – an unambiguous outcome.'
         },
         {
           key: 'demand-left',
           label: 'Demand decreases',
-          text: '<strong>D shifts left (D₁ → D₂)</strong> — a non-price demand factor worsens (lower income, changed tastes, substitute\'s price falls). At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q falls</strong>. Both fall — the mirror image of a demand increase.'
+          text: '<strong>D shifts left (D₁ → D₂)</strong> – a non-price demand factor worsens (lower income, changed tastes, substitute\'s price falls). At old P₁, excess supply appears → price falls → new equilibrium E₂. Result: <strong>P falls, Q falls</strong>. Both fall – the mirror image of a demand increase.'
         },
         {
           key: 'supply-right',
           label: 'Supply increases',
-          text: '<strong>S shifts right (S₁ → S₂)</strong> — costs fall, technology improves, more producers enter, or a subsidy is granted. At old P₁, excess supply appears → price falls → Qd extends down D → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a demand shift — a key exam distinction.'
+          text: '<strong>S shifts right (S₁ → S₂)</strong> – costs fall, technology improves, more producers enter, or a subsidy is granted. At old P₁, excess supply appears → price falls → Qd extends down D → new equilibrium E₂. Result: <strong>P falls, Q rises</strong>. Opposite price direction to a demand shift – a key exam distinction.'
         },
         {
           key: 'supply-left',
           label: 'Supply decreases',
-          text: '<strong>S shifts left (S₁ → S₂)</strong> — costs rise, a tax is imposed, a supply shock hits, or producers leave. At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q falls</strong>. Classic stagflationary supply shock: higher price, lower output.'
+          text: '<strong>S shifts left (S₁ → S₂)</strong> – costs rise, a tax is imposed, a supply shock hits, or producers leave. At old P₁, excess demand appears → price rises → new equilibrium E₂. Result: <strong>P rises, Q falls</strong>. Classic stagflationary supply shock: higher price, lower output.'
         }
       ],
       flowTitle: 'A 3-step method',
@@ -133,7 +133,7 @@ window.ECONOS_TOPIC = {
       causesEmoji: '↔️',
       causesLabel: 'Movement along vs shift',
       causes: [
-        { tone: 'blue',   icon: '🏷️', head: 'Movement along the curve', body: 'A change in the good\'s own price causes a movement along the existing curve — not a shift. Quantity demanded or supplied changes; the curve itself stays put.' },
+        { tone: 'blue',   icon: '🏷️', head: 'Movement along the curve', body: 'A change in the good\'s own price causes a movement along the existing curve – not a shift. Quantity demanded or supplied changes; the curve itself stays put.' },
         { tone: 'purple', icon: '🔄', head: 'Shift of the curve',        body: 'A change in any non-price determinant shifts the entire curve. At every price, quantity demanded or supplied is now different.' }
       ],
       causes2Emoji: '💡',
@@ -143,7 +143,7 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '⚙️', head: 'Better technology → Supply right',              body: 'Improved production methods lower unit costs. S shifts right → P falls, Q rises.' },
         { tone: 'purple',icon: '⚡', head: 'Higher energy costs → Supply left',             body: 'Energy is a major input cost. A price rise shifts S left → P rises, Q falls.' }
       ],
-      conclusion: { title: 'Key takeaway', text: 'Shifts change the equilibrium position — affecting both price and quantity — not just the quantity traded.' },
+      conclusion: { title: 'Key takeaway', text: 'Shifts change the equilibrium position – affecting both price and quantity – not just the quantity traded.' },
       examEdge: 'Always separate the cause of the shift (non-price determinant) from the effect on equilibrium (price and quantity). Draw the new curve clearly labelled D₂ or S₂, drop dashed lines to both axes at E₂, and state both changes in P and Q for full marks.'
     },
     {
@@ -157,28 +157,28 @@ window.ECONOS_TOPIC = {
         {
           key: 'both-up',
           label: 'D↑ & S↑',
-          text: '<strong>Both rise — demand right, supply right.</strong> The market clears more units at the new equilibrium. <strong>Quantity definitely rises.</strong> Price could rise, fall, or stay the same — it depends on whether the demand shift or supply shift is larger.'
+          text: '<strong>Both rise – demand right, supply right.</strong> The market clears more units at the new equilibrium. <strong>Quantity definitely rises.</strong> Price could rise, fall, or stay the same – it depends on whether the demand shift or supply shift is larger.'
         },
         {
           key: 'd-up-s-down',
           label: 'D↑ & S↓',
-          text: '<strong>Demand rises, supply falls.</strong> Both shifts push price up — buyers are bidding more for fewer goods. <strong>Price definitely rises.</strong> Quantity is ambiguous: demand wants to raise Q, supply pulls it down — net effect depends on which shift dominates.'
+          text: '<strong>Demand rises, supply falls.</strong> Both shifts push price up – buyers are bidding more for fewer goods. <strong>Price definitely rises.</strong> Quantity is ambiguous: demand wants to raise Q, supply pulls it down – net effect depends on which shift dominates.'
         },
         {
           key: 'd-down-s-up',
           label: 'D↓ & S↑',
-          text: '<strong>Demand falls, supply rises.</strong> Both shifts push price down — fewer buyers facing more sellers. <strong>Price definitely falls.</strong> Quantity is ambiguous: lower demand reduces Q, higher supply raises Q — net effect depends on which shift dominates.'
+          text: '<strong>Demand falls, supply rises.</strong> Both shifts push price down – fewer buyers facing more sellers. <strong>Price definitely falls.</strong> Quantity is ambiguous: lower demand reduces Q, higher supply raises Q – net effect depends on which shift dominates.'
         },
         {
           key: 'both-down',
           label: 'D↓ & S↓',
-          text: '<strong>Both fall — demand left, supply left.</strong> The market clears fewer units at the new equilibrium. <strong>Quantity definitely falls.</strong> Price could rise, fall, or stay the same depending on whether demand or supply shrinks more.'
+          text: '<strong>Both fall – demand left, supply left.</strong> The market clears fewer units at the new equilibrium. <strong>Quantity definitely falls.</strong> Price could rise, fall, or stay the same depending on whether demand or supply shrinks more.'
         }
       ],
       flowTitle: 'How to answer',
       flowEmoji: '📋',
       flow: [
-        { tone: 'blue',  icon: '🔍', title: 'Identify both shifts',        sub: 'State clearly how demand and supply have shifted — direction and reason.' },
+        { tone: 'blue',  icon: '🔍', title: 'Identify both shifts',        sub: 'State clearly how demand and supply have shifted – direction and reason.' },
         { tone: 'amber', icon: '⚖️', title: "Decide what's predictable",   sub: 'Same direction for one variable → that variable is determinate. Opposite directions → ambiguous.' },
         { tone: 'green', icon: '🎯', title: 'Explain the final outcome',   sub: 'State the certain change, then say the other variable depends on the relative magnitude of the shifts.' }
       ],
@@ -188,10 +188,10 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '🎬', head: 'D↑ S↑ · Streaming (2020–22)',     body: 'Lockdowns and a boom in original content drove demand up. Netflix, Disney+ and Apple TV+ all expanded supply. <strong style="color:#059669;">Q rose sharply</strong>; subscription prices held or rose modestly.' },
         { tone: 'amber',  icon: '🛢️', head: 'D↑ S↓ · Oil during OPEC+ cuts',    body: 'Post-pandemic global demand recovered while OPEC+ trimmed production. <strong style="color:#059669;">Price rose clearly</strong>; total quantity depended on how deep the cuts were.' },
         { tone: 'blue',   icon: '📱', head: 'D↓ S↑ · Older smartphone models', body: 'Newer flagships pull demand away from old models while manufacturers flood the market with mid-range variants. <strong style="color:#DC2626;">Price falls clearly</strong>; quantity depends on the strength of each effect.' },
-        { tone: 'rose',   icon: '📰', head: 'D↓ S↓ · Local UK newspapers',     body: 'Digital substitutes crush demand; many titles close, cutting supply. <strong style="color:#DC2626;">Quantity falls clearly</strong>; price varies — some titles raise covers, others discount to survive.' }
+        { tone: 'rose',   icon: '📰', head: 'D↓ S↓ · Local UK newspapers',     body: 'Digital substitutes crush demand; many titles close, cutting supply. <strong style="color:#DC2626;">Quantity falls clearly</strong>; price varies – some titles raise covers, others discount to survive.' }
       ],
-      conclusion: { title: 'Key takeaway', text: 'Simultaneous shifts require balanced judgement — not a one-line answer.' },
-      examEdge: 'Use phrases like "the effect on price is ambiguous" or "depends on the relative size of the shifts". Stating ambiguity explicitly — and explaining why — earns more marks than guessing a direction without justification.'
+      conclusion: { title: 'Key takeaway', text: 'Simultaneous shifts require balanced judgement – not a one-line answer.' },
+      examEdge: 'Use phrases like "the effect on price is ambiguous" or "depends on the relative size of the shifts". Stating ambiguity explicitly – and explaining why – earns more marks than guessing a direction without justification.'
     },
     {
       id: 'market_equilibrium_5',
@@ -219,26 +219,26 @@ window.ECONOS_TOPIC = {
       note: { icon: 'ℹ️', tone: 'blue', text: 'Allocative efficiency assumes a competitive market with many buyers and sellers and no externalities. When these assumptions do not hold, equilibrium may not be allocatively efficient.' },
       conclusion: { title: 'Key takeaway', text: 'Market equilibrium can be allocatively efficient because, at E, marginal benefit equals marginal cost (MB = MC).' },
       keyTerms: [
-        { term: 'Allocative efficiency', def: 'P = MC for every good — resources allocated to highest-value uses; no reallocation can increase total welfare.' },
-        { term: 'Total surplus', def: 'Consumer surplus + producer surplus — the measure of total welfare from market exchange.' },
+        { term: 'Allocative efficiency', def: 'P = MC for every good – resources allocated to highest-value uses; no reallocation can increase total welfare.' },
+        { term: 'Total surplus', def: 'Consumer surplus + producer surplus – the measure of total welfare from market exchange.' },
         { term: 'Deadweight loss', def: 'The reduction in total surplus from producing a quantity different from the efficient level.' }
       ],
-      examEdge: 'Do not confuse allocative efficiency with equity or fairness — these are separate concepts. P = MC is also why monopoly (which charges P &gt; MC) is allocatively inefficient.'
+      examEdge: 'Do not confuse allocative efficiency with equity or fairness – these are separate concepts. P = MC is also why monopoly (which charges P &gt; MC) is allocatively inefficient.'
     },
     {
       id: 'market_equilibrium_6',
       template: 'cause',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'When Markets Fail to Reach Equilibrium',
-      tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly — controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
+      tip: { icon: '💡', tone: 'blue', text: 'Real markets do not always clear smoothly – controls, market power, information gaps and sudden shocks can stop price from moving to equilibrium.' },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
       causesLabel: 'Obstacles to market clearing',
       causes: [
         { icon: '🚧', head: 'Price controls', body: 'Price ceilings (maximum prices) below equilibrium → chronic excess demand (shortage). Rent controls cause housing shortages. Price floors above equilibrium → chronic excess supply (surplus). Minimum wage above equilibrium → unemployment.' },
-        { icon: '🔒', head: 'Sticky prices', body: 'In some markets, prices do not adjust freely. Labour markets: wages are "sticky downward" (workers resist cuts) → unemployment can persist. This is a Keynesian insight — markets don\'t always self-correct.' },
-        { icon: '❓', head: 'Information failures', body: 'Buyers or sellers lack information about prices in other markets — cannot respond to price signals. Markets in remote areas, illiquid asset markets, and monopoly-information markets may not clear.' },
-        { icon: '🏛️', head: 'Government intervention', body: 'Minimum prices, maximum prices, subsidies, and taxes all prevent the market from reaching the free-market equilibrium — intentionally or as side effects.' }
+        { icon: '🔒', head: 'Sticky prices', body: 'In some markets, prices do not adjust freely. Labour markets: wages are "sticky downward" (workers resist cuts) → unemployment can persist. This is a Keynesian insight – markets don\'t always self-correct.' },
+        { icon: '❓', head: 'Information failures', body: 'Buyers or sellers lack information about prices in other markets – cannot respond to price signals. Markets in remote areas, illiquid asset markets, and monopoly-information markets may not clear.' },
+        { icon: '🏛️', head: 'Government intervention', body: 'Minimum prices, maximum prices, subsidies, and taxes all prevent the market from reaching the free-market equilibrium – intentionally or as side effects.' }
       ],
       examEdge: 'Price controls cause predictable distortions. Rent control (price ceiling): housing shortage; black markets; quality deterioration; no new supply. Minimum wage (price floor above equilibrium): unemployment; firms substitute capital for labour; some workers better off, others lose jobs. Both are standard exam contexts.'
     },
@@ -308,7 +308,7 @@ window.ECONOS_TOPIC = {
       ],
       note: { icon: '💡', tone: 'amber', head: 'One core idea', text: 'Equilibrium is still where demand equals supply. However, the real-world outcome may be affected by time lags, policy and market structure.' },
       conclusion: { title: 'Key takeaway', text: 'Equilibrium is a flexible framework for analysing many markets. The logic is the same, but the context shapes how it plays out.' },
-      examEdge: 'Context application is rewarded in Edexcel Paper 1. Use market-specific examples and language — for housing, mention planning restrictions, Help to Buy, interest rates; for labour, monopsony and minimum wage; for FX, expectations and capital flows. Don\'t write a generic supply/demand essay — tailor it to the extract.',
+      examEdge: 'Context application is rewarded in Edexcel Paper 1. Use market-specific examples and language – for housing, mention planning restrictions, Help to Buy, interest rates; for labour, monopsony and minimum wage; for FX, expectations and capital flows. Don\'t write a generic supply/demand essay – tailor it to the extract.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

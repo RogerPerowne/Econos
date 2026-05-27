@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    YED/XED: evaluate whether falling real income reduces luxury demand more than necessities
    ============================================================ */
 
@@ -32,19 +32,19 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'yed-magnitude',
           icon:  '📊',
           label: 'Magnitude of YED for the specific good',
-          why:   'Luxury goods have YED > 1, but the exact coefficient varies widely. A good with YED = 1.5 sees demand fall 3.75% for a 2.5% income fall; one with YED = 3.0 sees a 7.5% fall. The sector-specific YED coefficient determines how much of the income shock is transmitted to demand — a detail that matters for specific market predictions.'
+          why:   'Luxury goods have YED > 1, but the exact coefficient varies widely. A good with YED = 1.5 sees demand fall 3.75% for a 2.5% income fall; one with YED = 3.0 sees a 7.5% fall. The sector-specific YED coefficient determines how much of the income shock is transmitted to demand – a detail that matters for specific market predictions.'
         },
         {
           id:    'income-distribution',
           icon:  '👥',
           label: 'Distribution of the income fall across households',
-          why:   'Aggregate income fell 2.5% but the distribution was highly uneven. Lower-income households saw sharper real falls. Higher-income households — the main buyers of luxury goods — were partly insulated by savings buffers. Aggregate YED can mislead if the income change is concentrated among groups not purchasing the good.'
+          why:   'Aggregate income fell 2.5% but the distribution was highly uneven. Lower-income households saw sharper real falls. Higher-income households – the main buyers of luxury goods – were partly insulated by savings buffers. Aggregate YED can mislead if the income change is concentrated among groups not purchasing the good.'
         },
         {
           id:    'real-vs-nominal',
           icon:  '📉',
           label: 'Whether income changes are real or nominal',
-          why:   'The key variable is real disposable income (after inflation and tax). Nominal wages rose in 2022 but CPI peaked at 11.1% — producing the largest real income fall in modern ONS records. YED is calculated against real income changes; using nominal income would understate the demand shift.'
+          why:   'The key variable is real disposable income (after inflation and tax). Nominal wages rose in 2022 but CPI peaked at 11.1% – producing the largest real income fall in modern ONS records. YED is calculated against real income changes; using nominal income would understate the demand shift.'
         },
         {
           id:    'xed-substitutes',
@@ -68,13 +68,13 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'credit-access',
           icon:  '💳',
           label: 'Access to credit and savings buffers',
-          why:   'Consumers with significant savings or credit access can maintain luxury spending despite income falls. UK household savings peaked at 29% in 2020 — some higher-income consumers drew on these to sustain spending through 2022, dampening the demand shift. Credit-constrained households had no such buffer.'
+          why:   'Consumers with significant savings or credit access can maintain luxury spending despite income falls. UK household savings peaked at 29% in 2020 – some higher-income consumers drew on these to sustain spending through 2022, dampening the demand shift. Credit-constrained households had no such buffer.'
         },
         {
           id:    'peer-effects',
           icon:  '📱',
           label: 'Social influences and conspicuous consumption',
-          why:   'Luxury goods are partly defined by their social signal value. During a visible cost-of-living crisis, social norms may shift against conspicuous consumption — reducing demand independently of income effects. Social media amplification of frugality trends may accelerate the demand shift beyond what YED alone predicts.'
+          why:   'Luxury goods are partly defined by their social signal value. During a visible cost-of-living crisis, social norms may shift against conspicuous consumption – reducing demand independently of income effects. Social media amplification of frugality trends may accelerate the demand shift beyond what YED alone predicts.'
         }
       ],
       modelRanking: ['yed-magnitude', 'income-distribution', 'real-vs-nominal'],

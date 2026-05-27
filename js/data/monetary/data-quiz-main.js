@@ -24,7 +24,7 @@
           'Income tax thresholds'
         ],
         ans:  1,
-        exp:  'The Bank of England\'s Monetary Policy Committee (MPC) sets the Bank Rate — the base interest rate. Changes in Bank Rate ripple through the economy via multiple transmission channels to influence inflation and output.'
+        exp:  'The Bank of England\'s Monetary Policy Committee (MPC) sets the Bank Rate – the base interest rate. Changes in Bank Rate ripple through the economy via multiple transmission channels to influence inflation and output.'
       },
       {
         id:   'q_mp_2',
@@ -63,7 +63,7 @@
           'The Bank of England cannot change rates without Treasury approval'
         ],
         ans:  1,
-        exp:  'The zero lower bound problem: once rates reach near 0%, cutting further has diminishing returns. Banks may be unwilling to lend, and consumers unwilling to borrow regardless of rates — a "liquidity trap" in Keynesian terms.'
+        exp:  'The zero lower bound problem: once rates reach near 0%, cutting further has diminishing returns. Banks may be unwilling to lend, and consumers unwilling to borrow regardless of rates – a "liquidity trap" in Keynesian terms.'
       },
       {
         id:   'q_mp_5',
@@ -128,7 +128,7 @@
           '2023: high Bank Rate still failed to bring inflation to target quickly'
         ],
         ans:  3,
-        exp:  'In 2023, Bank Rate was 5.25% but inflation was still 6.7% — well above the 2% target. This illustrates a lag and limitation of monetary policy: rate rises take 12–18 months to fully feed through to prices.'
+        exp:  'In 2023, Bank Rate was 5.25% but inflation was still 6.7% – well above the 2% target. This illustrates a lag and limitation of monetary policy: rate rises take 12–18 months to fully feed through to prices.'
       },
       {
         id:   'q_mp_10',

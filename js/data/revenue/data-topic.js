@@ -29,18 +29,18 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 1 of 3',
       title: 'Revenue: the building blocks',
-      lede: 'Three revenue concepts — TR, AR, MR — underpin every market structure diagram you\'ll draw. Getting the relationships right is non-negotiable.',
+      lede: 'Three revenue concepts – TR, AR, MR – underpin every market structure diagram you\'ll draw. Getting the relationships right is non-negotiable.',
       branches: [
         { tone: 'blue',   label: 'TR, AR and MR',            sub: 'Total, Average, Marginal. AR = TR/Q = Price. MR = ΔTR/ΔQ. The three concepts feed directly into profit analysis.' },
         { tone: 'green',  label: 'Price-taker (PC)',          sub: 'Horizontal demand → constant P → MR = AR = P. Each unit sold adds exactly P to total revenue.' },
         { tone: 'amber',  label: 'Price-maker (monopoly)',    sub: 'Downward-sloping demand → MR < AR. To sell one more unit, price must fall on ALL units → MR < price.' },
         { tone: 'purple', label: 'The MR geometry',          sub: 'For a linear demand curve: MR has the same y-intercept as AR but twice the slope. Intersects x-axis at half the output where AR = 0.' }
       ],
-      body: '<strong>Total Revenue (TR)</strong> = Price \xd7 Quantity. Always rises initially as Q rises, then may fall depending on demand elasticity.<br><br><strong>Average Revenue (AR)</strong> = TR/Q = Price (P). The AR curve IS the demand curve — shows price at each quantity.<br><br><strong>Marginal Revenue (MR)</strong> = change in TR from selling one more unit.<br><br>For a <strong>price-taking firm</strong> (perfect competition): demand is perfectly elastic → P is constant → MR = AR = P (horizontal).<br><br>For a <strong>price-setter</strong> (monopoly): must lower price to sell more → MR &lt; AR (MR curve lies below demand curve and falls twice as steeply for a linear demand curve).',
+      body: '<strong>Total Revenue (TR)</strong> = Price \xd7 Quantity. Always rises initially as Q rises, then may fall depending on demand elasticity.<br><br><strong>Average Revenue (AR)</strong> = TR/Q = Price (P). The AR curve IS the demand curve – shows price at each quantity.<br><br><strong>Marginal Revenue (MR)</strong> = change in TR from selling one more unit.<br><br>For a <strong>price-taking firm</strong> (perfect competition): demand is perfectly elastic → P is constant → MR = AR = P (horizontal).<br><br>For a <strong>price-setter</strong> (monopoly): must lower price to sell more → MR &lt; AR (MR curve lies below demand curve and falls twice as steeply for a linear demand curve).',
       keyTerms: [
         { term: 'Average Revenue (AR)', def: 'Revenue per unit = TR/Q = price. The AR curve is identical to the demand curve.' },
         { term: 'Marginal Revenue (MR)', def: 'Extra revenue from selling one more unit. Under monopoly, MR < AR because price must fall to sell more.' },
-        { term: 'MR relationship to AR', def: 'For a linear demand curve, MR has the same intercept as AR but twice the slope — falls twice as fast.' }
+        { term: 'MR relationship to AR', def: 'For a linear demand curve, MR has the same intercept as AR but twice the slope – falls twice as fast.' }
       ],
       examEdge: 'For a linear demand curve P = a − bQ, MR = a − 2bQ. The MR curve has the same y-intercept as the demand curve but twice the slope. This means when MR = 0, Q = a/2b (half the quantity at which demand hits the x-axis). This geometric property is essential for all monopoly and profit maximisation diagrams.'
     },
@@ -49,13 +49,13 @@ window.ECONOS_TOPIC = {
       template: 'framing',
       stepLabel: 'Learn: Step 2 of 3',
       title: 'TR and the elasticity connection',
-      body: 'The relationship between TR and PED is direct and examinable:<br><br>• <strong>Elastic demand (PED > 1):</strong> a price cut raises TR (% rise in Q > % fall in P). MR is positive.<br>• <strong>Unit elastic demand (PED = 1):</strong> a price cut leaves TR unchanged. MR = 0.<br>• <strong>Inelastic demand (PED < 1):</strong> a price cut reduces TR (% rise in Q < % fall in P). MR is negative.<br><br>The TR curve reaches its maximum when MR = 0 (unit elastic point). This is also the revenue-maximising output — covered in card 3.',
+      body: 'The relationship between TR and PED is direct and examinable:<br><br>• <strong>Elastic demand (PED > 1):</strong> a price cut raises TR (% rise in Q > % fall in P). MR is positive.<br>• <strong>Unit elastic demand (PED = 1):</strong> a price cut leaves TR unchanged. MR = 0.<br>• <strong>Inelastic demand (PED < 1):</strong> a price cut reduces TR (% rise in Q < % fall in P). MR is negative.<br><br>The TR curve reaches its maximum when MR = 0 (unit elastic point). This is also the revenue-maximising output – covered in card 3.',
       keyTerms: [
-        { term: 'TR maximised at MR = 0', def: 'TR is at its peak when the last unit sold adds nothing to total revenue — i.e., when MR = 0 (unit elastic point on demand).' },
+        { term: 'TR maximised at MR = 0', def: 'TR is at its peak when the last unit sold adds nothing to total revenue – i.e., when MR = 0 (unit elastic point on demand).' },
         { term: 'Elastic region', def: 'Upper part of demand curve where PED > 1. Price cuts raise TR; price rises reduce TR.' },
         { term: 'Inelastic region', def: 'Lower part of demand curve where PED < 1. Price rises raise TR; price cuts reduce TR.' }
       ],
-      examEdge: 'A monopolist will never produce in the inelastic region of demand (where MR < 0). Why? If MR < 0, reducing output raises TR and also reduces TC — both effects raise profit. The monopolist can always increase profit by cutting output until MR = 0 at minimum. In practice, profit max (MR = MC) is always in the elastic portion of demand where MC > 0.'
+      examEdge: 'A monopolist will never produce in the inelastic region of demand (where MR < 0). Why? If MR < 0, reducing output raises TR and also reduces TC – both effects raise profit. The monopolist can always increase profit by cutting output until MR = 0 at minimum. In practice, profit max (MR = MC) is always in the elastic portion of demand where MC > 0.'
     },
     {
       id: 'revenue_3',
@@ -68,7 +68,7 @@ window.ECONOS_TOPIC = {
         { term: 'Revenue-max output', def: 'MR = 0. Higher output and lower price than profit max. Maximum TR.' },
         { term: 'Sales-max output', def: 'TR ≥ TC. Maximum output consistent with at least normal profit. Even lower price.' }
       ],
-      examEdge: 'On a single diagram showing demand (AR), MR, and MC curves: profit-max Q1 (MR=MC intersection); revenue-max Q2 (MR=0); sales-max Q3 (AR=AC, if minimum profit constraint). Q1 < Q2 < Q3; P1 > P2 > P3. Drawing these three points on the same diagram — with labels — is a high-marks response showing all objectives simultaneously.',
+      examEdge: 'On a single diagram showing demand (AR), MR, and MC curves: profit-max Q1 (MR=MC intersection); revenue-max Q2 (MR=0); sales-max Q3 (AR=AC, if minimum profit constraint). Q1 < Q2 < Q3; P1 > P2 > P3. Drawing these three points on the same diagram – with labels – is a high-marks response showing all objectives simultaneously.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

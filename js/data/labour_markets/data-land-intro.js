@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
     'Assessing the National Minimum Wage as a policy response to low wages and monopsony'
   ],
 
-  tip: 'Always distinguish between the demand side (MRP as the derived demand for labour) and the supply side (wage rates, participation rates, union bargaining). In monopsony analysis, remember the employer faces an upward-sloping labour supply curve &#8212; the marginal cost of labour exceeds the wage, so employment is set below and wages below the competitive equilibrium.',
+  tip: 'Always distinguish between the demand side (MRP as the derived demand for labour) and the supply side (wage rates, participation rates, union bargaining). In monopsony analysis, remember the employer faces an upward-sloping labour supply curve &#8211; the marginal cost of labour exceeds the wage, so employment is set below and wages below the competitive equilibrium.',
 
   stages: [
     { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },

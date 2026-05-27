@@ -1,10 +1,10 @@
 /* ============================================================
-   ECONOS — Land It · Section C data for inflation
+   ECONOS – Land It · Section C data for inflation
    ============================================================ */
 
 window.ECONOS_LAND_SECTION_C = {
   topic:        'Causes of Inflation & Deflation',
-  sectionLabel: 'Section C — Essay',
+  sectionLabel: 'Section C – Essay',
   backUrl:      TopicLoader.buildUrl('land_intro.html'),
 
   /* In the exam there are two options; here we present one. */

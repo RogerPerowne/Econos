@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Market Failure: information asymmetry shifts demand left (D₁ → D₂)
    ============================================================ */
 
@@ -30,7 +30,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'Buyers in the used car market cannot verify quality before purchase. Which diagram correctly shows the effect of information asymmetry on the market for used cars?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the impact of information asymmetry. Think about which curve is directly affected and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -40,7 +40,7 @@ window.ECONOS_LINK_DIAGRAM = {
         id:      'd-left',
         correct:  true,
         title:   'Demand shifts left',
-        sub:     'Effective demand falls — buyers reduce WTP because they cannot distinguish quality, depressing demand for quality cars',
+        sub:     'Effective demand falls – buyers reduce WTP because they cannot distinguish quality, depressing demand for quality cars',
         why:     'Information asymmetry depresses buyer WTP: unable to verify quality, buyers offer only average-quality prices. D₁ (full-information demand) shifts left to D₂ (information-gap demand). The equilibrium moves from Q₁ to Q₂: fewer quality cars are traded, at a lower price, and a deadweight welfare loss appears from the deals that never happen.'
       },
       {
@@ -48,21 +48,21 @@ window.ECONOS_LINK_DIAGRAM = {
         correct:  false,
         title:   'Demand shifts right',
         sub:     'Rising consumer demand pushes up the price level',
-        why:     'A rightward demand shift would mean buyers are willing to pay more — the opposite of what information asymmetry does. Information asymmetry depresses WTP because buyers cannot verify quality and assume average quality. Demand falls left, not right.'
+        why:     'A rightward demand shift would mean buyers are willing to pay more – the opposite of what information asymmetry does. Information asymmetry depresses WTP because buyers cannot verify quality and assume average quality. Demand falls left, not right.'
       },
       {
         id:      's-left',
         correct:  false,
         title:   'Supply shifts left',
         sub:     'Output falls and prices rise as supply contracts',
-        why:     'While adverse selection does eventually reduce the supply of quality cars (sellers exit), this is a secondary consequence of the primary demand-side effect. The direct mechanism of information asymmetry is that buyer WTP is depressed — a leftward demand shift — not that supply contracts first. In exam diagrams, the information asymmetry market failure is modelled as a demand-side failure.'
+        why:     'While adverse selection does eventually reduce the supply of quality cars (sellers exit), this is a secondary consequence of the primary demand-side effect. The direct mechanism of information asymmetry is that buyer WTP is depressed – a leftward demand shift – not that supply contracts first. In exam diagrams, the information asymmetry market failure is modelled as a demand-side failure.'
       },
       {
         id:      's-right',
         correct:  false,
         title:   'Supply shifts right',
         sub:     'Output rises and prices fall as supply expands',
-        why:     'Supply shifting right would represent falling costs or improved technology — neither of which is caused by information asymmetry. Information asymmetry is primarily a demand-side failure: it depresses buyer WTP and shifts demand left, reducing the quantity of quality cars traded.'
+        why:     'Supply shifting right would represent falling costs or improved technology – neither of which is caused by information asymmetry. Information asymmetry is primarily a demand-side failure: it depresses buyer WTP and shifts demand left, reducing the quantity of quality cars traded.'
       }
     ]
   },
@@ -80,23 +80,23 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — information asymmetry causing demand to fall left in the used car market',
+    ariaLabel: 'Supply and demand diagram – information asymmetry causing demand to fall left in the used car market',
     xLabel:    'Quantity of used cars (quality)',
     yLabel:    'Price (£)',
 
     lines: [
-      /* S (supply of used cars, unchanged) — blue upward-sloping */
+      /* S (supply of used cars, unchanged) – blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'S', labelX: 494, labelY: 28, labelFill: '#2563eb' },
-      /* D₁ (full-information demand) — amber downward-sloping */
+      /* D₁ (full-information demand) – amber downward-sloping */
       { x1: 110, y1: 50,  x2: 514, y2: 381, stroke: '#d97706', strokeWidth: 2.5,
         label: 'D₁ (full info)', labelX: 462, labelY: 381, labelFill: '#d97706' },
-      /* D₂ (information-gap demand) — green downward-sloping, shifted left */
+      /* D₂ (information-gap demand) – green downward-sloping, shifted left */
       { x1: 110, y1: 100, x2: 449, y2: 381, stroke: '#059669', strokeWidth: 2.5,
         label: 'D₂ (info gap)', labelX: 453, labelY: 381, labelFill: '#059669' }
     ],
 
-    /* Guide lines + tick labels — shown at stage 2 */
+    /* Guide lines + tick labels – shown at stage 2 */
     guides: [
       /* Horizontal from y-axis to E₁ (full-info equilibrium price P₁) */
       { x1: 100, y1: 212, x2: 308, y2: 212, tickLeft: 'P₁',  tickLeftY: 215 },
@@ -131,7 +131,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of information asymmetry on the used car market.',
     instruction: 'Place the correct labels on the diagram to identify the shift, the two equilibria and the outcome for price and quantity.',
     hint:        'Skill focus: connect the visual shift to the economic outcomes.',
@@ -158,10 +158,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['information asymmetry', 'adverse selection', 'market for lemons', 'D₁', 'D₂', 'WTP', 'deadweight welfare loss', 'Q₁', 'Q₂', 'mandatory disclosure', 'signalling', 'Consumer Rights Act'],
 
@@ -178,14 +178,14 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'What is the welfare loss from the information gap?',
         prompt:      'What deadweight welfare loss does the shift from D₁ to D₂ create?',
         maxChars:    240,
-        modelAnswer: 'At Q₂ < Q₁, there are unexploited gains from trade: a good-quality seller would gladly sell at P₁, and an informed buyer would gladly pay P₁. But the information gap prevents this deal — creating a deadweight welfare loss (the triangle between D₁, D₂ and the vertical at Q₂). Quality car sellers exit; buyers get worse cars than they would under full information.'
+        modelAnswer: 'At Q₂ < Q₁, there are unexploited gains from trade: a good-quality seller would gladly sell at P₁, and an informed buyer would gladly pay P₁. But the information gap prevents this deal – creating a deadweight welfare loss (the triangle between D₁, D₂ and the vertical at Q₂). Quality car sellers exit; buyers get worse cars than they would under full information.'
       },
       {
         num:         3,
         title:       'How does the Consumer Rights Act and private intermediaries correct this?',
         prompt:      'How do mandatory disclosure and private platforms shift D₂ back toward D₁?',
         maxChars:    240,
-        modelAnswer: 'Mandatory disclosure (Consumer Rights Act 2015) requires sellers to reveal vehicle history — MOT records, finance checks, mileage — reducing buyer uncertainty and moving D₂ back toward D₁. Private information intermediaries (AutoTrader valuations, HPI checks) further close the gap by giving buyers better quality signals. However, enforcement costs are high and private solutions may be incomplete, leaving residual adverse selection and a persistent gap between D₂ and D₁.'
+        modelAnswer: 'Mandatory disclosure (Consumer Rights Act 2015) requires sellers to reveal vehicle history – MOT records, finance checks, mileage – reducing buyer uncertainty and moving D₂ back toward D₁. Private information intermediaries (AutoTrader valuations, HPI checks) further close the gap by giving buyers better quality signals. However, enforcement costs are high and private solutions may be incomplete, leaving residual adverse selection and a persistent gap between D₂ and D₁.'
       }
     ],
 
@@ -201,6 +201,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Evaluate corrective policy effectiveness and limitations'
     ],
 
-    examAnswer: '"Information asymmetry in the used car market depresses effective demand from the full-information level D₁ to D₂: buyers cannot distinguish quality and reduce WTP to reflect average expected quality, driving quality sellers from the market (adverse selection). The equilibrium shifts from Q₁ to Q₂, with a deadweight welfare loss representing deals that never happen. The Consumer Rights Act 2015 corrects this partly through mandatory disclosure — shifting D₂ back toward D₁ — but residual asymmetry persists where enforcement is difficult."'
+    examAnswer: '"Information asymmetry in the used car market depresses effective demand from the full-information level D₁ to D₂: buyers cannot distinguish quality and reduce WTP to reflect average expected quality, driving quality sellers from the market (adverse selection). The equilibrium shifts from Q₁ to Q₂, with a deadweight welfare loss representing deals that never happen. The Consumer Rights Act 2015 corrects this partly through mandatory disclosure – shifting D₂ back toward D₁ – but residual asymmetry persists where enforcement is difficult."'
   }
 };

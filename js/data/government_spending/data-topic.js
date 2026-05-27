@@ -1,6 +1,6 @@
 /* ============================================================
-   ECONOS — content data for government_spending
-   8 cards on G — the only AD component policymakers control directly.
+   ECONOS – content data for government_spending
+   8 cards on G – the only AD component policymakers control directly.
    Edexcel Theme 2.2.4
    ============================================================ */
 
@@ -10,7 +10,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Government Spending',
   estTime: '10-12 minutes',
-  goal: 'Lock in G — the only AD component policymakers control directly — and the conditions that decide whether it works.',
+  goal: 'Lock in G – the only AD component policymakers control directly – and the conditions that decide whether it works.',
 
   intro: {
     heroKey: 'heroGovSpending',
@@ -26,7 +26,7 @@ window.ECONOS_TOPIC = {
       'Distinguish automatic stabilisers from discretionary policy',
       'Evaluate the effectiveness of government spending'
     ],
-    tip: 'G is the only direct AD lever — but its impact depends on timing, capacity, financing and the cycle.',
+    tip: 'G is the only direct AD lever – but its impact depends on timing, capacity, financing and the cycle.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 concept cards',                  state: 'current' },
       { num: 2, name: 'Master', sub: 'Apply in exam-style questions',    state: 'locked' },
@@ -42,7 +42,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Why Governments Spend',
-      lede: 'Governments spend for efficiency, equity and stability reasons — not just to keep services running.',
+      lede: 'Governments spend for efficiency, equity and stability reasons – not just to keep services running.',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'Government spending usually responds to market failure, inequality, or macro instability.' },
@@ -54,13 +54,13 @@ window.ECONOS_TOPIC = {
       causesCols: 2,
       causes: [
         { tone: 'green', icon: '💡', head: 'Public goods',
-          body: 'Non-rival and non-excludable — markets underprovide them.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #6EE7B7;font-size:12px;color:#047857;font-weight:700;">Example — street lighting, defence, flood defences.</div>' },
+          body: 'Non-rival and non-excludable – markets underprovide them.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #6EE7B7;font-size:12px;color:#047857;font-weight:700;">Example – street lighting, defence, flood defences.</div>' },
         { tone: 'blue', icon: '🎓', head: 'Merit goods',
-          body: 'Benefits are undervalued by individuals, so the market under-consumes them.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #93C5FD;font-size:12px;color:#1E40AF;font-weight:700;">Example — education, healthcare, vaccination.</div>' },
+          body: 'Benefits are undervalued by individuals, so the market under-consumes them.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #93C5FD;font-size:12px;color:#1E40AF;font-weight:700;">Example – education, healthcare, vaccination.</div>' },
         { tone: 'amber', icon: '⚖️', head: 'Redistribution',
-          body: 'Taxes and spending can reduce inequality and support lower-income households.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #FCD34D;font-size:12px;color:#B45309;font-weight:700;">Example — pensions, benefits, tax credits.</div>' },
+          body: 'Taxes and spending can reduce inequality and support lower-income households.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #FCD34D;font-size:12px;color:#B45309;font-weight:700;">Example – pensions, benefits, tax credits.</div>' },
         { tone: 'purple', icon: '📈', head: 'Macroeconomic stabilisation',
-          body: 'Spending can support demand in recessions and cool overheating indirectly via fiscal stance.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #C4B5FD;font-size:12px;color:#6D28D9;font-weight:700;">Example — recession stimulus, furlough-style support.</div>' }
+          body: 'Spending can support demand in recessions and cool overheating indirectly via fiscal stance.<div style="margin-top:8px;padding-top:8px;border-top:1px dashed #C4B5FD;font-size:12px;color:#6D28D9;font-weight:700;">Example – recession stimulus, furlough-style support.</div>' }
       ],
 
       flowTitle: 'WHY THIS MATTERS',
@@ -84,7 +84,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Strong answers classify the motive first — public goods, merit goods, redistribution, or stabilisation — then evaluate the trade-offs.'
+        text: 'Strong answers classify the motive first – public goods, merit goods, redistribution, or stabilisation – then evaluate the trade-offs.'
       }
     },
 
@@ -94,10 +94,10 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Types of Government Spending',
-      lede: 'Not all spending does the same job — some buys output directly, some builds capacity, and some simply redistributes income.',
+      lede: 'Not all spending does the same job – some buys output directly, some builds capacity, and some simply redistributes income.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Current and capital spending count in GDP — transfer payments do not.' },
+      tip: { icon: '✅', tone: 'green', text: 'Current and capital spending count in GDP – transfer payments do not.' },
 
       causesFirst: true,
       causesLabel: 'THE THREE TYPES',
@@ -105,7 +105,7 @@ window.ECONOS_TOPIC = {
       causesCols: 3,
       causes: [
         { tone: 'blue', icon: '💼', head: 'Current spending',
-          body: 'Day-to-day spending on goods and services — recurring and consumable.' +
+          body: 'Day-to-day spending on goods and services – recurring and consumable.' +
                 '<ul style="margin:8px 0 10px;padding-left:18px;font-size:12.5px;color:#1E3A8A;"><li>Teacher salaries</li><li>NHS running costs</li><li>Police services</li></ul>' +
                 '<div style="background:#fff;border:1px solid #BFDBFE;border-radius:8px;padding:6px 10px;font-size:12px;text-align:center;color:#1E40AF;font-weight:700;">Counts in GDP? <span style="color:#047857;">Yes</span></div>' },
         { tone: 'green', icon: '🏗️', head: 'Capital spending',
@@ -134,12 +134,12 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'The economic effect depends on the type — spending can support today\'s output, tomorrow\'s capacity, or household incomes.'
+        text: 'The economic effect depends on the type – spending can support today\'s output, tomorrow\'s capacity, or household incomes.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Do not say all government spending directly raises GDP — transfer payments only work indirectly through consumption.'
+        text: 'Do not say all government spending directly raises GDP – transfer payments only work indirectly through consumption.'
       }
     },
 
@@ -149,10 +149,10 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Fiscal Policy',
-      lede: 'Changing government spending or taxation shifts aggregate demand — but the direction depends on the problem.',
+      lede: 'Changing government spending or taxation shifts aggregate demand – but the direction depends on the problem.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'G is one of the four components of AD — so fiscal policy directly affects total spending.' },
+      tip: { icon: '✅', tone: 'green', text: 'G is one of the four components of AD – so fiscal policy directly affects total spending.' },
 
       causesFirst: true,
       causesLabel: 'TWO DIRECTIONS',
@@ -179,7 +179,7 @@ window.ECONOS_TOPIC = {
                   '<div style="font-size:12px;font-weight:700;color:#065F46;line-height:1.3;">Output rises,<br>unemployment falls</div>' +
                 '</div>' +
                 '</div>' +
-                '<span style="display:inline-block;background:#fff;border:1.5px solid #A7F3D0;border-radius:18px;padding:5px 16px;font-size:12.5px;font-weight:700;color:#047857;">Used when — recession or weak demand</span>'
+                '<span style="display:inline-block;background:#fff;border:1.5px solid #A7F3D0;border-radius:18px;padding:5px 16px;font-size:12.5px;font-weight:700;color:#047857;">Used when – recession or weak demand</span>'
         },
         { tone: 'rose', icon: '📉', head: 'Contractionary fiscal policy',
           body: '<div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center;margin:8px 0 14px;">' +
@@ -200,7 +200,7 @@ window.ECONOS_TOPIC = {
                   '<div style="font-size:12px;font-weight:700;color:#BE123C;line-height:1.3;">Inflation<br>pressure falls</div>' +
                 '</div>' +
                 '</div>' +
-                '<span style="display:inline-block;background:#fff;border:1.5px solid #FDA4AF;border-radius:18px;padding:5px 16px;font-size:12.5px;font-weight:700;color:#BE123C;">Used when — overheating or excess inflation</span>'
+                '<span style="display:inline-block;background:#fff;border:1.5px solid #FDA4AF;border-radius:18px;padding:5px 16px;font-size:12.5px;font-weight:700;color:#BE123C;">Used when – overheating or excess inflation</span>'
         }
       ],
 
@@ -224,7 +224,7 @@ window.ECONOS_TOPIC = {
       summaryRow: [
         { tone: 'slate', icon: '🧮', title: 'G sits inside AD',
           text: '<div style="font-size:18px;font-weight:900;color:#0F172A;text-align:center;">AD = C + I + <span style="background:#D1FAE5;border:1.5px solid #6EE7B7;border-radius:8px;padding:2px 10px;color:#047857;">G</span> + (X − M)</div>' },
-        { tone: 'blue', icon: 'ℹ️', title: 'Note', text: 'Spending changes are <strong>discretionary fiscal policy</strong> — automatic stabilisers act without a new decision.' }
+        { tone: 'blue', icon: 'ℹ️', title: 'Note', text: 'Spending changes are <strong>discretionary fiscal policy</strong> – automatic stabilisers act without a new decision.' }
       ],
 
       conclusion: {
@@ -234,7 +234,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Always name the direction first — expansionary or contractionary — then explain the AD shift and the macro objective.'
+        text: 'Always name the direction first – expansionary or contractionary – then explain the AD shift and the macro objective.'
       }
     },
 
@@ -244,10 +244,10 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'The Budget Position',
-      lede: 'The budget can be in deficit, surplus, or balance — but the deeper question is why.',
+      lede: 'The budget can be in deficit, surplus, or balance – but the deeper question is why.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'A deficit is not automatically bad — it may be cyclical rather than structural.' },
+      tip: { icon: '✅', tone: 'green', text: 'A deficit is not automatically bad – it may be cyclical rather than structural.' },
 
       causesFirst: true,
       causesLabel: 'THREE BUDGET STATES',
@@ -306,7 +306,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'A recession can create a deficit even without any new spending decision — use automatic stabilisers to explain why.'
+        text: 'A recession can create a deficit even without any new spending decision – use automatic stabilisers to explain why.'
       }
     },
 
@@ -316,7 +316,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Government Spending and the Multiplier',
-      lede: 'A rise in government spending becomes someone else\'s income — and then gets spent again.',
+      lede: 'A rise in government spending becomes someone else\'s income – and then gets spent again.',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'The total rise in GDP can exceed the original injection because each round creates another round of spending.' },
@@ -325,7 +325,7 @@ window.ECONOS_TOPIC = {
         svgKey: 'govMultiplierChain',
         label: 'THE INJECTION CHAIN',
         emoji: '🔗',
-        caption: '£1bn of new school building triggers wages, local spending, and further rounds — each pass re-spent, each round adding to GDP.'
+        caption: '£1bn of new school building triggers wages, local spending, and further rounds – each pass re-spent, each round adding to GDP.'
       },
 
       summaryRow: [
@@ -359,7 +359,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Government spending does not stop with the first purchase — it ripples through the economy.'
+        text: 'Government spending does not stop with the first purchase – it ripples through the economy.'
       },
 
       examEdge: {
@@ -374,7 +374,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Crowding Out',
-      lede: 'Government spending can support demand — but if borrowing pushes up interest rates, private investment may be squeezed.',
+      lede: 'Government spending can support demand – but if borrowing pushes up interest rates, private investment may be squeezed.',
       ledeStyle: 'plain',
 
       tip: { icon: '⚠️', tone: 'rose', text: 'The closer the economy is to full employment, the stronger crowding out tends to be.' },
@@ -389,7 +389,7 @@ window.ECONOS_TOPIC = {
             label: 'Free-market equilibrium',
             tone: 'blue',
             head: 'Before extra government borrowing',
-            body: 'Demand for loanable funds (D₁) meets supply (S) at interest rate R₁ and quantity Q₁. Private firms borrow freely at R₁ — nothing is being crowded out.',
+            body: 'Demand for loanable funds (D₁) meets supply (S) at interest rate R₁ and quantity Q₁. Private firms borrow freely at R₁ – nothing is being crowded out.',
             analysis: 'This is the benchmark. Every crowding-out effect is measured as a departure from R₁ and Q₁.'
           },
           {
@@ -398,14 +398,14 @@ window.ECONOS_TOPIC = {
             show: ['idl-1'],
             head: 'Higher G shifts demand for funds right',
             body: 'A bigger deficit means the state competes for the same pool of savings. Demand shifts D₁ → D₂. The new equilibrium sits higher up the supply curve: interest rates rise R₁ → R₂ and total funds borrowed rises Q₁ → Q₂.',
-            analysis: 'The rate rise is the channel. Borrowing is now more expensive for <em>everyone</em> in the economy — households, firms and the government itself.'
+            analysis: 'The rate rise is the channel. Borrowing is now more expensive for <em>everyone</em> in the economy – households, firms and the government itself.'
           },
           {
             label: 'Private investment crowded out',
             tone: 'purple',
             show: ['idl-1', 'idl-2'],
             head: 'Some private projects no longer clear the hurdle',
-            body: 'Reading off D₁ at the new rate R₂ shows what the private sector alone wants to borrow — Q_p. The gap <strong>Q₁ − Q_p</strong> is the private investment crowded out. The boost from higher G is partly cancelled by lower private I.',
+            body: 'Reading off D₁ at the new rate R₂ shows what the private sector alone wants to borrow – Q_p. The gap <strong>Q₁ − Q_p</strong> is the private investment crowded out. The boost from higher G is partly cancelled by lower private I.',
             analysis: 'The strength of this effect depends on how interest-sensitive private investment is. Steep D₁ → little crowding out. Flat D₁ → severe crowding out.'
           }
         ]
@@ -416,12 +416,12 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'blue', icon: '👥', iconStyle: 'circle',
         label: 'Full crowding out',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>Classical view</strong> — every £1 of government spending displaces £1 of private spending if the economy is already using its resources fully.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>Classical view</strong> – every £1 of government spending displaces £1 of private spending if the economy is already using its resources fully.</p>'
       },
       right: {
         tone: 'green', icon: '👥', iconStyle: 'circle',
         label: 'Partial crowding out',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>Keynesian view</strong> — some private spending is displaced, but total AD still rises if there is spare capacity.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>Keynesian view</strong> – some private spending is displaced, but total AD still rises if there is spare capacity.</p>'
       },
 
       whyItMatters: {
@@ -436,7 +436,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Crowding out is not automatic — it depends on capacity, finance conditions, and the state of the cycle.'
+        text: 'Crowding out is not automatic – it depends on capacity, finance conditions, and the state of the cycle.'
       },
 
       examEdge: {
@@ -451,7 +451,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 7 of 8',
       title: 'Automatic Stabilisers',
-      lede: 'Some fiscal effects happen automatically — without ministers announcing a new policy.',
+      lede: 'Some fiscal effects happen automatically – without ministers announcing a new policy.',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'Automatic stabilisers soften recessions and cool booms by changing taxes and welfare spending automatically.' },
@@ -460,7 +460,7 @@ window.ECONOS_TOPIC = {
         svgKey: 'autoStabilisersFlow',
         label: 'HOW THEY WORK',
         emoji: '⚙️',
-        caption: 'In a recession, falling tax receipts and rising benefit payments both cushion the drop in AD. In a boom, the same channels operate in reverse — automatically.'
+        caption: 'In a recession, falling tax receipts and rising benefit payments both cushion the drop in AD. In a boom, the same channels operate in reverse – automatically.'
       },
 
       pairLabel: 'KEY TERMS',
@@ -487,7 +487,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Do not confuse automatic stabilisers with discretionary policy — one happens automatically, the other requires a decision.'
+        text: 'Do not confuse automatic stabilisers with discretionary policy – one happens automatically, the other requires a decision.'
       }
     },
 
@@ -497,7 +497,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Evaluating Government Spending',
-      lede: 'Government spending can lift demand and improve welfare — but its effectiveness depends on timing, capacity, and how it is financed.',
+      lede: 'Government spending can lift demand and improve welfare – but its effectiveness depends on timing, capacity, and how it is financed.',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'The same spending increase can be highly effective in one context and weak or risky in another.' },
@@ -510,22 +510,22 @@ window.ECONOS_TOPIC = {
       causes: [
         { tone: 'blue', icon: '⏱️', head: 'Time lags',
           body: 'Recognition, implementation and impact delays can make fiscal policy slow.' +
-                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #93C5FD;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> — recession is prolonged</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> — shock is short-lived</div></div>' },
+                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #93C5FD;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> – recession is prolonged</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> – shock is short-lived</div></div>' },
         { tone: 'purple', icon: '🗳️', head: 'Political bias',
           body: 'Spending promises can win votes, creating deficit bias.' +
-                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #C4B5FD;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> — elections loom</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> — strong fiscal rules</div></div>' },
+                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #C4B5FD;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> – elections loom</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> – strong fiscal rules</div></div>' },
         { tone: 'rose', icon: '👥', head: 'Crowding out risk',
           body: 'Near full employment, extra G may squeeze private spending.' +
-                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #FDA4AF;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> — capacity is tight</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> — spare capacity exists</div></div>' },
+                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #FDA4AF;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> – capacity is tight</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> – spare capacity exists</div></div>' },
         { tone: 'green', icon: '📈', head: 'Multiplier size',
           body: 'Spending works better when MPC is high and leakages are low.' +
-                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #6EE7B7;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> — households spend locally</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> — savings, taxes or imports leak away</div></div>' },
+                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #6EE7B7;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> – households spend locally</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> – savings, taxes or imports leak away</div></div>' },
         { tone: 'amber', icon: '£', head: 'Debt sustainability',
           body: 'Persistent deficits raise debt and the future interest burden.' +
-                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #FCD34D;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> — borrowing costs rise</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> — growth outpaces debt interest</div></div>' },
+                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #FCD34D;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> – borrowing costs rise</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> – growth outpaces debt interest</div></div>' },
         { tone: 'slate', icon: '🏭', head: 'Supply-side limits',
           body: 'Higher G boosts AD, but may not raise AS unless spending is productive.' +
-                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #CBD5E1;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> — spending is current only</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> — spending builds infrastructure or skills</div></div>' }
+                '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #CBD5E1;font-size:12px;color:#0F172A;"><div><strong style="color:#047857;">Strengthens if</strong> – spending is current only</div><div style="margin-top:3px;"><strong style="color:#BE123C;">Weakens if</strong> – spending builds infrastructure or skills</div></div>' }
       ],
 
       summaryRow: [
@@ -535,12 +535,12 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'G is the only AD component policymakers control directly — but its effectiveness depends on timing, capacity, multiplier, and financing.'
+        text: 'G is the only AD component policymakers control directly – but its effectiveness depends on timing, capacity, multiplier, and financing.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Best judgements weigh the state of the economy, the type of spending, the multiplier, and the debt trade-off — not just whether G rises.'
+        text: 'Best judgements weigh the state of the economy, the type of spending, the multiplier, and the debt trade-off – not just whether G rises.'
       },
 
       quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }

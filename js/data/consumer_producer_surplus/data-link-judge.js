@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Consumer & Producer Surplus: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Supply shifts right → fare falls from P₁ to P₂, quantity rises Q₁ to Q₂, CS area expands.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on positive externality size, PED for bus travel, and operator pass-through rate.' }
       ],
-      cloze: 'A per-unit bus operating subsidy reduces operators\' effective costs, shifting the supply curve to the [1] from S₁ to S₂. This lowers fares from P₁ to [2] and increases bus journeys from Q₁ to Q₂. Consumer surplus [3] by the area between P₁ and P₂ up to the demand curve — more passengers can afford to travel. The subsidy cost per unit is equal to the [4] between S₁ and S₂ at Q₂. Net welfare gain depends on whether the [5] of bus travel (congestion relief, carbon reduction) justify the taxpayer cost. The policy is most welfare-improving when demand is [6], because fare reductions attract many new passengers and maximise the CS expansion. However, the subsidy may be less effective if operators do not [7] the full cost saving to passengers as lower fares. The strongest judgement is that bus subsidies improve allocative efficiency only when [8] exceeds the social marginal cost of provision.',
+      cloze: 'A per-unit bus operating subsidy reduces operators\' effective costs, shifting the supply curve to the [1] from S₁ to S₂. This lowers fares from P₁ to [2] and increases bus journeys from Q₁ to Q₂. Consumer surplus [3] by the area between P₁ and P₂ up to the demand curve – more passengers can afford to travel. The subsidy cost per unit is equal to the [4] between S₁ and S₂ at Q₂. Net welfare gain depends on whether the [5] of bus travel (congestion relief, carbon reduction) justify the taxpayer cost. The policy is most welfare-improving when demand is [6], because fare reductions attract many new passengers and maximise the CS expansion. However, the subsidy may be less effective if operators do not [7] the full cost saving to passengers as lower fares. The strongest judgement is that bus subsidies improve allocative efficiency only when [8] exceeds the social marginal cost of provision.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-right',   text: 'right',   correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-left',    text: 'Consumer surplus only rises when supply shifts left',                                                     correct: false }
         ]
       },
-      examBridge: '"A per-unit bus subsidy shifts supply right from S₁ to S₂, lowering fares and raising journeys. CS rises by the area between the original and new price below the demand curve. The welfare case rests on whether MSB (including congestion and carbon externalities) exceeds the taxpayer cost — the DfT\'s £2.40/£1 return estimate suggests it does in aggregate, but pass-through rate and PED determine how evenly the benefit is distributed across current and new passengers."'
+      examBridge: '"A per-unit bus subsidy shifts supply right from S₁ to S₂, lowering fares and raising journeys. CS rises by the area between the original and new price below the demand curve. The welfare case rests on whether MSB (including congestion and carbon externalities) exceeds the taxpayer cost – the DfT\'s £2.40/£1 return estimate suggests it does in aggregate, but pass-through rate and PED determine how evenly the benefit is distributed across current and new passengers."'
     }
   ]
 };

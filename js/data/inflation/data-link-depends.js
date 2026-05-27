@@ -1,6 +1,6 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
-   Inflation: evaluative judgement — pick & rank key factors
+   ECONOS – Link It · It Depends On station data
+   Inflation: evaluative judgement – pick & rank key factors
    ============================================================ */
 
 window.ECONOS_LINK_DEPENDS = {
@@ -33,7 +33,7 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'cause-of-inflation',
           icon:  '🔍',
           label: 'Cause of inflation',
-          why:   'Interest rate rises work by suppressing demand, so they are most effective against demand-pull inflation. If inflation is cost-push — driven by supply shocks — raising rates may deepen the recession without reducing the price level.'
+          why:   'Interest rate rises work by suppressing demand, so they are most effective against demand-pull inflation. If inflation is cost-push – driven by supply shocks – raising rates may deepen the recession without reducing the price level.'
         },
         {
           id:    'transmission-strength',
@@ -51,7 +51,7 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'inflation-expectations',
           icon:  '🔮',
           label: 'Inflation expectations',
-          why:   'If expectations are de-anchored — workers and firms already pricing in persistent inflation — monetary policy must work much harder to restore credibility, often requiring deeper rate rises that risk a sharper recession.'
+          why:   'If expectations are de-anchored – workers and firms already pricing in persistent inflation – monetary policy must work much harder to restore credibility, often requiring deeper rate rises that risk a sharper recession.'
         },
         {
           id:    'time-lag',
@@ -75,11 +75,11 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'alternative-policies',
           icon:  '🔄',
           label: 'Availability of alternative policies',
-          why:   'If fiscal policy or supply-side reforms could address inflation more directly — e.g. targeted energy subsidies for cost-push, or boosting productive capacity — then interest rates may not be the "best" tool regardless of their effectiveness.'
+          why:   'If fiscal policy or supply-side reforms could address inflation more directly – e.g. targeted energy subsidies for cost-push, or boosting productive capacity – then interest rates may not be the "best" tool regardless of their effectiveness.'
         }
       ],
       modelRanking: ['cause-of-inflation', 'transmission-strength', 'inflation-expectations'],
-      judgement: '"Whether higher interest rates are the \'best\' tool depends primarily on the cause of inflation: if inflation is demand-pull and inflation expectations remain anchored, rate rises can reduce AD effectively — but where inflation is cost-push or supply-driven, monetary tightening imposes output costs without addressing the underlying pressure."'
+      judgement: '"Whether higher interest rates are the \'best\' tool depends primarily on the cause of inflation: if inflation is demand-pull and inflation expectations remain anchored, rate rises can reduce AD effectively – but where inflation is cost-push or supply-driven, monetary tightening imposes output costs without addressing the underlying pressure."'
     }
   ]
 };

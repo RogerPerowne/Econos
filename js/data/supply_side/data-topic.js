@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for supply_side
+   ECONOS – content data for supply_side
    7 cards · revision-tight · exam-edge gems flagged
    Edexcel Theme 2.7
    ============================================================ */
@@ -14,8 +14,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroAggSupply',
-    summary: "Supply-side policies aim to shift LRAS right — raising potential output without inflation. But the toolkit divides sharply between market-based (Thatcherite) and interventionist (Keynesian/social-democratic) approaches. Both have merits and limitations.",
-    doInThis: 'Recap market-based supply-side policies, interventionist alternatives, UK examples, productivity debate, and evaluation framework — plus a 25-mark essay scaffold on supply-side policy effectiveness.',
+    summary: "Supply-side policies aim to shift LRAS right – raising potential output without inflation. But the toolkit divides sharply between market-based (Thatcherite) and interventionist (Keynesian/social-democratic) approaches. Both have merits and limitations.",
+    doInThis: 'Recap market-based supply-side policies, interventionist alternatives, UK examples, productivity debate, and evaluation framework – plus a 25-mark essay scaffold on supply-side policy effectiveness.',
     outcomes: [
       'Categorise supply-side policies as market-based or interventionist',
       'Evaluate effectiveness using UK productivity data',
@@ -31,30 +31,30 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — Framing: what supply-side policies do ----- */
+    /* ----- CARD 1 – Framing: what supply-side policies do ----- */
     {
       id: 'ss-framing',
       template: 'framing',
       diagramKey: 'supplyPolicyDiagram',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'Supply-side policies: shifting LRAS right',
-      lede: 'Supply-side policies increase the productive capacity of the economy — shifting LRAS right, reducing the NAIRU, and enabling non-inflationary growth.',
+      lede: 'Supply-side policies increase the productive capacity of the economy – shifting LRAS right, reducing the NAIRU, and enabling non-inflationary growth.',
       branches: [
         { tone: 'green',  label: 'Market-based approach',      sub: 'Remove barriers to market efficiency. Deregulation, privatisation, union reform, lower taxes, freer trade. Let markets allocate resources. The Thatcherite tradition.' },
         { tone: 'blue',   label: 'Interventionist approach',   sub: 'Government investment in market failures. Education, R&D, infrastructure, industrial policy, active labour market programmes. Justified where markets underprovide.' },
-        { tone: 'amber',  label: 'The shared goal',            sub: 'Both approaches aim to shift LRAS right — but differ on HOW. Market-based: reduce state and improve incentives. Interventionist: build capacity and correct market failures.' }
+        { tone: 'amber',  label: 'The shared goal',            sub: 'Both approaches aim to shift LRAS right – but differ on HOW. Market-based: reduce state and improve incentives. Interventionist: build capacity and correct market failures.' }
       ],
       examEdge: {
         title: 'Supply-side ≠ just deregulation',
-        text: 'A* answers note that both market-based AND interventionist policies are supply-side policies — they both aim to raise potential output. The debate is ideological, not definitional. Presenting a one-sided account (all supply-side = cuts and deregulation) signals incomplete understanding.'
+        text: 'A* answers note that both market-based AND interventionist policies are supply-side policies – they both aim to raise potential output. The debate is ideological, not definitional. Presenting a one-sided account (all supply-side = cuts and deregulation) signals incomplete understanding.'
       },
       keyTakeaway: {
         title: 'The LRAS vs SRAS distinction',
-        text: 'Supply-side policies operate on <strong>LRAS</strong> — they take years to materialise. A tax cut that reduces business costs might shift SRAS right in the short run, but supply-side reform (education, infrastructure) shifts LRAS right over decades. The long time lag is the key evaluation point.'
+        text: 'Supply-side policies operate on <strong>LRAS</strong> – they take years to materialise. A tax cut that reduces business costs might shift SRAS right in the short run, but supply-side reform (education, infrastructure) shifts LRAS right over decades. The long time lag is the key evaluation point.'
       }
     },
 
-    /* ----- CARD 2 — Market-based supply-side policies ----- */
+    /* ----- CARD 2 – Market-based supply-side policies ----- */
     {
       id: 'market-based',
       template: 'cause',
@@ -85,19 +85,19 @@ window.ECONOS_TOPIC = {
       },
       ukExamples: {
         title: 'Did UK market-based reforms work?',
-        text: '<strong>1980s productivity surge:</strong> UK productivity growth accelerated relative to Europe after 1979 reforms — suggesting market-based policies raised efficiency. <strong>But:</strong> UK productivity has lagged since 2008 despite further deregulation. The market-based toolkit alone has not solved the UK productivity puzzle — suggesting limits to the approach.'
+        text: '<strong>1980s productivity surge:</strong> UK productivity growth accelerated relative to Europe after 1979 reforms – suggesting market-based policies raised efficiency. <strong>But:</strong> UK productivity has lagged since 2008 despite further deregulation. The market-based toolkit alone has not solved the UK productivity puzzle – suggesting limits to the approach.'
       },
       examEdge: {
         title: 'Laffer curve: the case for tax cuts',
-        text: 'The Laffer curve argues that above a certain tax rate, reducing taxes can <strong>increase</strong> tax revenue — by stimulating work, investment, and reducing avoidance. Top rate cuts (83%→40%, 50%→45%) partly justified by Laffer logic. But empirical evidence for Laffer effects at UK tax levels is weak. A* answers cite the curve but question whether the UK is on the downward slope.'
+        text: 'The Laffer curve argues that above a certain tax rate, reducing taxes can <strong>increase</strong> tax revenue – by stimulating work, investment, and reducing avoidance. Top rate cuts (83%→40%, 50%→45%) partly justified by Laffer logic. But empirical evidence for Laffer effects at UK tax levels is weak. A* answers cite the curve but question whether the UK is on the downward slope.'
       },
       policy: {
         title: 'Evaluation',
-        text: 'Market-based policies improve efficiency where markets function well. But where markets fail — education, R&D, infrastructure, health — market-based approaches may not raise potential output. The market vs government debate is ultimately about where market failure is most severe.'
+        text: 'Market-based policies improve efficiency where markets function well. But where markets fail – education, R&D, infrastructure, health – market-based approaches may not raise potential output. The market vs government debate is ultimately about where market failure is most severe.'
       }
     },
 
-    /* ----- CARD 3 — Interventionist supply-side policies ----- */
+    /* ----- CARD 3 – Interventionist supply-side policies ----- */
     {
       id: 'interventionist',
       template: 'mechanisms',
@@ -115,7 +115,7 @@ window.ECONOS_TOPIC = {
           num: '2',
           tone: 'green',
           title: 'Infrastructure investment',
-          text: 'Roads, rail, broadband, energy grid. Reduces transport and transaction costs for all firms. High social returns — estimates of 1.5-2× multiplier effect on long-run growth. HS2, Crossrail, 5G rollout are UK examples. Often below optimal provision due to private sector underinvestment.'
+          text: 'Roads, rail, broadband, energy grid. Reduces transport and transaction costs for all firms. High social returns – estimates of 1.5-2× multiplier effect on long-run growth. HS2, Crossrail, 5G rollout are UK examples. Often below optimal provision due to private sector underinvestment.'
         },
         {
           num: '3',
@@ -127,12 +127,12 @@ window.ECONOS_TOPIC = {
           num: '4',
           tone: 'rose',
           title: 'Active labour market policies',
-          text: 'Job matching schemes (Universal Jobmatch), retraining programmes (Skills Bootcamps, Restart Scheme), apprenticeships (Apprenticeship Levy). Reduce frictional and structural unemployment — shifting the NAIRU lower. Direct government intervention to improve labour market matching.'
+          text: 'Job matching schemes (Universal Jobmatch), retraining programmes (Skills Bootcamps, Restart Scheme), apprenticeships (Apprenticeship Levy). Reduce frictional and structural unemployment – shifting the NAIRU lower. Direct government intervention to improve labour market matching.'
         }
       ],
       examEdge: {
         title: 'Interventionist ≠ Keynesian demand management',
-        text: "Common confusion: interventionist supply-side policies (education, infrastructure) are supply-side — they shift LRAS, not AD. They are <em>not</em> the same as fiscal stimulus. A school-building programme is a supply-side policy (builds human capital), not just a demand-side injection. It raises <strong>both</strong> AD now AND LRAS over time."
+        text: "Common confusion: interventionist supply-side policies (education, infrastructure) are supply-side – they shift LRAS, not AD. They are <em>not</em> the same as fiscal stimulus. A school-building programme is a supply-side policy (builds human capital), not just a demand-side injection. It raises <strong>both</strong> AD now AND LRAS over time."
       },
       connection: {
         title: 'The German model',
@@ -140,43 +140,43 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 4 — UK productivity puzzle ----- */
+    /* ----- CARD 4 – UK productivity puzzle ----- */
     {
       id: 'productivity-puzzle',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'The UK productivity puzzle',
-      lede: "Since 2008, UK productivity growth has dramatically slowed. This is the most important supply-side failure in recent UK economic history — and the organising framework for all supply-side policy debates.",
+      lede: "Since 2008, UK productivity growth has dramatically slowed. This is the most important supply-side failure in recent UK economic history – and the organising framework for all supply-side policy debates.",
       steps: [
         {
           key: 'base',
           label: 'What is the productivity puzzle?',
-          text: 'Before 2008, UK labour productivity grew ~2% per year. Since 2008, growth has averaged ~0.3% per year — the worst sustained productivity performance since the Industrial Revolution. This is the <strong>\'productivity puzzle\'</strong>. The puzzle: despite near-full employment and ongoing supply-side reforms, output per worker has stagnated for 15+ years. The LRAS has barely shifted right despite apparent policy effort.'
+          text: 'Before 2008, UK labour productivity grew ~2% per year. Since 2008, growth has averaged ~0.3% per year – the worst sustained productivity performance since the Industrial Revolution. This is the <strong>\'productivity puzzle\'</strong>. The puzzle: despite near-full employment and ongoing supply-side reforms, output per worker has stagnated for 15+ years. The LRAS has barely shifted right despite apparent policy effort.'
         },
         {
           key: 'extension',
           label: 'Possible causes',
-          text: 'Economists debate the causes: (1) <strong>Zombie firms:</strong> low interest rates kept unproductive firms alive — misallocation of capital. (2) <strong>Skills mismatch:</strong> workers in wrong jobs post-crisis — structural mismatch unremedied. (3) <strong>Weak investment:</strong> UK business investment lowest in G7 — capital shallowness limits productivity. (4) <strong>Brexit:</strong> post-2016 uncertainty reduced investment; post-2021 trade barriers reduced market size and specialisation gains. (5) <strong>Measurement:</strong> digital economy productivity may be understated in official statistics.'
+          text: 'Economists debate the causes: (1) <strong>Zombie firms:</strong> low interest rates kept unproductive firms alive – misallocation of capital. (2) <strong>Skills mismatch:</strong> workers in wrong jobs post-crisis – structural mismatch unremedied. (3) <strong>Weak investment:</strong> UK business investment lowest in G7 – capital shallowness limits productivity. (4) <strong>Brexit:</strong> post-2016 uncertainty reduced investment; post-2021 trade barriers reduced market size and specialisation gains. (5) <strong>Measurement:</strong> digital economy productivity may be understated in official statistics.'
         },
         {
           key: 'shift',
           label: 'Policy responses and their limits',
-          text: 'The UK\'s response includes: corporation tax cuts to incentivise investment; apprenticeship levy; R&D tax credits; full expensing (100% capital allowance). Limited success so far. The interventionist critique: the UK underinvests in education (skills gaps), infrastructure (poor rail, regional inequality), and R&D (below OECD average). <strong>AI and automation</strong> may be the next productivity wave — but its benefits depend on complementary investment in skills and infrastructure.'
+          text: 'The UK\'s response includes: corporation tax cuts to incentivise investment; apprenticeship levy; R&D tax credits; full expensing (100% capital allowance). Limited success so far. The interventionist critique: the UK underinvests in education (skills gaps), infrastructure (poor rail, regional inequality), and R&D (below OECD average). <strong>AI and automation</strong> may be the next productivity wave – but its benefits depend on complementary investment in skills and infrastructure.'
         }
       ],
       examEdge: {
         title: 'The productivity puzzle is exam gold',
-        text: "The UK productivity puzzle is a ready-made evaluation tool for any supply-side question: <em>'Despite supply-side reforms since the 1980s, UK productivity growth has stagnated at ~0.3%/year since 2008. This suggests the market-based toolkit alone is insufficient — and may indicate underinvestment in education, infrastructure, and R&D as the deeper supply-side failure.'</em>"
+        text: "The UK productivity puzzle is a ready-made evaluation tool for any supply-side question: <em>'Despite supply-side reforms since the 1980s, UK productivity growth has stagnated at ~0.3%/year since 2008. This suggests the market-based toolkit alone is insufficient – and may indicate underinvestment in education, infrastructure, and R&D as the deeper supply-side failure.'</em>"
       }
     },
 
-    /* ----- CARD 5 — Comparing market-based vs interventionist ----- */
+    /* ----- CARD 5 – Comparing market-based vs interventionist ----- */
     {
       id: 'ss-comparison',
       template: 'paired',
       stepLabel: 'Learn: Step 5 of 8',
       title: 'Market-based vs interventionist: the evaluation',
-      lede: 'The policy debate in one table. Each approach has theoretical and empirical strengths — the A* answer deploys both sides conditionally.',
+      lede: 'The policy debate in one table. Each approach has theoretical and empirical strengths – the A* answer deploys both sides conditionally.',
       pairs: [
         {
           tone: 'green',
@@ -184,7 +184,7 @@ window.ECONOS_TOPIC = {
           drivers: [
             'Markets allocate resources more efficiently than governments',
             'Avoids government failure (wrong decisions, bureaucracy, rent-seeking)',
-            'Tax cuts improve incentives directly — work, invest, innovate',
+            'Tax cuts improve incentives directly – work, invest, innovate',
             'Deregulation reduces compliance costs for all firms',
             'Competition drives efficiency gains throughout supply chain'
           ],
@@ -200,26 +200,26 @@ window.ECONOS_TOPIC = {
             'Active labour market policies address structural unemployment markets cannot clear',
             'Evidence: Germany, South Korea outperform UK using coordinated supply-side'
           ],
-          example: '<strong>South Korea\'s development:</strong> state-directed industrial policy (chaebol), massive education investment, and government-business coordination drove productivity from poverty to high income in 30 years — incompatible with pure market-based model.'
+          example: '<strong>South Korea\'s development:</strong> state-directed industrial policy (chaebol), massive education investment, and government-business coordination drove productivity from poverty to high income in 30 years – incompatible with pure market-based model.'
         }
       ],
       examEdge: {
         title: 'The conditional conclusion',
-        text: 'The A* conclusion: <em>\'Market-based supply-side policies are effective where markets function well — privatising competitive industries, reducing regulatory burden. Interventionist policies are necessary where market failure prevails — education, R&D, infrastructure. The optimal policy mix depends on where the binding constraint on productivity lies.\'</em> Conditional, not absolute.'
+        text: 'The A* conclusion: <em>\'Market-based supply-side policies are effective where markets function well – privatising competitive industries, reducing regulatory burden. Interventionist policies are necessary where market failure prevails – education, R&D, infrastructure. The optimal policy mix depends on where the binding constraint on productivity lies.\'</em> Conditional, not absolute.'
       },
       policy: {
         title: 'The 2024 UK context',
-        text: 'The Starmer government\'s National Wealth Fund and Great British Energy represent a shift toward interventionist supply-side — industrial policy, green investment, infrastructure. Whether this resolves the productivity puzzle will be the defining policy test of the decade.'
+        text: 'The Starmer government\'s National Wealth Fund and Great British Energy represent a shift toward interventionist supply-side – industrial policy, green investment, infrastructure. Whether this resolves the productivity puzzle will be the defining policy test of the decade.'
       }
     },
 
-    /* ----- CARD 6 — Supply-side and the NAIRU ----- */
+    /* ----- CARD 6 – Supply-side and the NAIRU ----- */
     {
       id: 'ss-nairu',
       template: 'mechanisms',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Supply-side policy and the NAIRU',
-      lede: "The deepest value of supply-side policy: it can reduce the NAIRU — enabling lower unemployment WITHOUT higher inflation. This is the theoretical resolution of the growth-inflation trade-off.",
+      lede: "The deepest value of supply-side policy: it can reduce the NAIRU – enabling lower unemployment WITHOUT higher inflation. This is the theoretical resolution of the growth-inflation trade-off.",
       mechanisms: [
         {
           num: '1',
@@ -243,12 +243,12 @@ window.ECONOS_TOPIC = {
           num: '4',
           tone: 'rose',
           title: 'Productivity growth → wage rises without inflation',
-          text: 'If productivity rises at the same rate as wages, unit labour costs are unchanged → no cost-push inflation. Supply-side reform that raises productivity allows real wages to rise without triggering inflation — the most benign form of growth. This is why productivity is the central long-run supply-side target.'
+          text: 'If productivity rises at the same rate as wages, unit labour costs are unchanged → no cost-push inflation. Supply-side reform that raises productivity allows real wages to rise without triggering inflation – the most benign form of growth. This is why productivity is the central long-run supply-side target.'
         }
       ],
       examEdge: {
         title: 'The long-run solution to inflation-unemployment trade-off',
-        text: "The NAIRU framing is the A* analytical move for any trade-off question: <em>'In the short run, lower unemployment risks higher inflation via the Phillips curve. But supply-side policies that reduce the NAIRU can shift the LRPC left — enabling permanently lower unemployment at stable inflation. This is the long-run resolution of the trade-off.'</em>"
+        text: "The NAIRU framing is the A* analytical move for any trade-off question: <em>'In the short run, lower unemployment risks higher inflation via the Phillips curve. But supply-side policies that reduce the NAIRU can shift the LRPC left – enabling permanently lower unemployment at stable inflation. This is the long-run resolution of the trade-off.'</em>"
       },
       connection: {
         title: 'The time horizon matters',
@@ -256,7 +256,7 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 7 — Evaluating supply-side policies ----- */
+    /* ----- CARD 7 – Evaluating supply-side policies ----- */
     {
       id: 'ss-evaluation',
       template: 'deflation',
@@ -267,18 +267,18 @@ window.ECONOS_TOPIC = {
       mechanisms: [
         {
           icon: '⏳',
-          title: 'Time lags — the biggest limitation',
+          title: 'Time lags – the biggest limitation',
           text: 'Education: 10-20 years. Infrastructure: 5-15 years. R&D: 10-20 years. Labour market reform: 1-5 years. <strong>Supply-side policies cannot address short-run demand shocks</strong>. They are the answer to long-run structural problems, not immediate stabilisation crises.'
         },
         {
           icon: '💰',
           title: 'Upfront costs',
-          text: 'Interventionist supply-side requires government spending — adding to the deficit in the short run, with benefits deferred to the long run. Market-based reforms (deregulation, union reform) cost less but may have distributional consequences. Fiscal space constrains the scale of interventionist supply-side.'
+          text: 'Interventionist supply-side requires government spending – adding to the deficit in the short run, with benefits deferred to the long run. Market-based reforms (deregulation, union reform) cost less but may have distributional consequences. Fiscal space constrains the scale of interventionist supply-side.'
         },
         {
           icon: '⚖️',
           title: 'Distributional effects',
-          text: 'Market-based reforms (flexible labour markets, lower union power) often worsen income distribution — workers bear more risk. Interventionist supply-side (education, healthcare) is more egalitarian but may be captured by middle-class interests (university expansion vs vocational training).'
+          text: 'Market-based reforms (flexible labour markets, lower union power) often worsen income distribution – workers bear more risk. Interventionist supply-side (education, healthcare) is more egalitarian but may be captured by middle-class interests (university expansion vs vocational training).'
         },
         {
           icon: '📊',

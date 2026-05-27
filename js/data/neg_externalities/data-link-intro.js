@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for neg_externalities
+   ECONOS – Link It intro/landing data for neg_externalities
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your externality knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in the costs trilogy, the negative externality diagram and the key policies. Now train the skills examiners reward — applying the framework to real context, building a watertight MPC → MSC chain, and reaching a supported judgement on whether intervention is justified.",
+    summary: "You've locked in the costs trilogy, the negative externality diagram and the key policies. Now train the skills examiners reward – applying the framework to real context, building a watertight MPC → MSC chain, and reaching a supported judgement on whether intervention is justified.",
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick, label and explain the negative externality supply and demand diagram',
       'Evaluate the key conditions that change the policy verdict'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

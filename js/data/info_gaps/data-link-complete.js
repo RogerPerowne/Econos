@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Complete page data
+   ECONOS – Link It · Complete page data
    Information Gaps
    ============================================================ */
 
@@ -14,9 +14,9 @@ window.ECONOS_LINK_COMPLETE = {
   ],
 
   overallMessages: [
-    { min: 85, text: 'Excellent thinking structure — you\'re ready to write.' },
-    { min: 70, text: 'Strong thinking structure — you\'re nearly ready to write.' },
-    { min: 55, text: 'Good foundations — review your weakest step before Land It.' },
+    { min: 85, text: 'Excellent thinking structure – you\'re ready to write.' },
+    { min: 70, text: 'Strong thinking structure – you\'re nearly ready to write.' },
+    { min: 55, text: 'Good foundations – review your weakest step before Land It.' },
     { min: 0,  text: 'More practice recommended before tackling Land It.' }
   ],
 
@@ -30,22 +30,22 @@ window.ECONOS_LINK_COMPLETE = {
   stationFeedback: {
     context: [
       { min: 80, text: 'Strong evidence classification' },
-      { min: 60, text: 'Good — review the complicating factors' },
+      { min: 60, text: 'Good – review the complicating factors' },
       { min: 0,  text: 'Evidence classification needs work' }
     ],
     chain: [
       { min: 100, text: 'Perfect causal chain' },
-      { min: 50,  text: 'Clear causality — check the missing step' },
+      { min: 50,  text: 'Clear causality – check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
     extract: [
       { min: 80, text: 'Strong extract reading' },
-      { min: 55, text: 'Good — check your evidence application' },
+      { min: 55, text: 'Good – check your evidence application' },
       { min: 0,  text: 'Extract analysis needs more attention' }
     ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
-      { min: 50, text: 'Good — one key condition missed' },
+      { min: 50, text: 'Good – one key condition missed' },
       { min: 0,  text: 'Review the key evaluation conditions' }
     ],
     judge: [
@@ -55,14 +55,14 @@ window.ECONOS_LINK_COMPLETE = {
     ]
   },
 
-  useInLandIt: 'Information gaps cause demand to deviate from the rational level — upward for overconsumption (hidden costs), downward for underproduction (adverse selection). Mandatory disclosure corrects the information but not the behaviour if present bias is strong. Always evaluate both the information correction AND the behavioural response in exam answers.',
+  useInLandIt: 'Information gaps cause demand to deviate from the rational level – upward for overconsumption (hidden costs), downward for underproduction (adverse selection). Mandatory disclosure corrects the information but not the behaviour if present bias is strong. Always evaluate both the information correction AND the behavioural response in exam answers.',
 
   focusInLandIt: {
-    context: 'Use specific evidence — the 25% missed repayment rate and the Which? checkout audit — to anchor your application to the real-world BNPL case, not just generic information gap theory.',
+    context: 'Use specific evidence – the 25% missed repayment rate and the Which? checkout audit – to anchor your application to the real-world BNPL case, not just generic information gap theory.',
     chain:   'State the chain explicitly: hidden APR → consumers underestimate cost → D inflated from D_rational to D_biased → overconsumption at Q_biased → debt harm (missed repayments, debt collection).',
     extract: 'Apply the Akerlof lemons logic to BNPL: hidden information (APR) creates an adverse selection dynamic where high-risk borrowers are most likely to use BNPL, and lenders cannot price-discriminate effectively without disclosure. Use the extract to show how regulation corrects the information failure.',
-    depends: 'Lead with salience as your top condition — if APR is buried in T&Cs rather than displayed prominently at checkout, the disclosure requirement cannot shift demand back to D_rational regardless of how well-designed the regulation is.',
-    judge:   'State a clear position, use the mechanism (hidden APR → D_biased → disclosure → D shifts left), add the condition (salience, financial literacy, present bias), and acknowledge the limitation honestly — present bias may prevent disclosure from fully restoring rational demand.'
+    depends: 'Lead with salience as your top condition – if APR is buried in T&Cs rather than displayed prominently at checkout, the disclosure requirement cannot shift demand back to D_rational regardless of how well-designed the regulation is.',
+    judge:   'State a clear position, use the mechanism (hidden APR → D_biased → disclosure → D shifts left), add the condition (salience, financial literacy, present bias), and acknowledge the limitation honestly – present bias may prevent disclosure from fully restoring rational demand.'
   },
 
   nextUrl: TopicLoader.buildUrl('land_intro.html')

@@ -19,12 +19,12 @@
         q:    'A maximum price (price ceiling) must be set BELOW the equilibrium price to:',
         opts: [
           'Create a surplus of supply over demand',
-          'Have any effect — if set above equilibrium, it is non-binding',
+          'Have any effect – if set above equilibrium, it is non-binding',
           'Raise the market price above the free-market level',
           'Allow producers to earn supernormal profit'
         ],
         ans:  1,
-        exp:  'A price ceiling only has effect if it is below the market equilibrium. Set above equilibrium, it has no effect — the market will price below the ceiling anyway. Only a binding (below-equilibrium) ceiling restricts price.'
+        exp:  'A price ceiling only has effect if it is below the market equilibrium. Set above equilibrium, it has no effect – the market will price below the ceiling anyway. Only a binding (below-equilibrium) ceiling restricts price.'
       },
       {
         id:   'q_pc_ctrl_2',
@@ -37,7 +37,7 @@
           'Lower consumer surplus'
         ],
         ans:  1,
-        exp:  'Below the equilibrium price, Qd > Qs — a shortage develops. Consumers want to buy more at the low price than producers are willing to supply. Examples: rent controls, fuel price caps, wartime rationing.'
+        exp:  'Below the equilibrium price, Qd > Qs – a shortage develops. Consumers want to buy more at the low price than producers are willing to supply. Examples: rent controls, fuel price caps, wartime rationing.'
       },
       {
         id:   'q_pc_ctrl_3',
@@ -50,7 +50,7 @@
           'A black market where goods are sold below the floor'
         ],
         ans:  1,
-        exp:  'Above equilibrium, Qs > Qd — a surplus develops. Producers want to supply more at the higher price than consumers want to buy. Examples: agricultural minimum prices, the National Minimum Wage (if above equilibrium).'
+        exp:  'Above equilibrium, Qs > Qd – a surplus develops. Producers want to supply more at the higher price than consumers want to buy. Examples: agricultural minimum prices, the National Minimum Wage (if above equilibrium).'
       },
       {
         id:   'q_pc_ctrl_4',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Maximum price','Minimum price','Price floor','Automatic stabiliser'],
         ans:  3,
-        exp:  'Maximum price, minimum price, and price floor are all forms of price controls. An automatic stabiliser is a macroeconomic fiscal concept (like unemployment benefits) — not a price control.'
+        exp:  'Maximum price, minimum price, and price floor are all forms of price controls. An automatic stabiliser is a macroeconomic fiscal concept (like unemployment benefits) – not a price control.'
       },
       {
         id:   'q_pc_ctrl_9',
@@ -123,7 +123,7 @@
         ],
         opts: [
           'Equilibrium at £8; £6 control creates a shortage of 40 units',
-          'Equilibrium at £6; no effect — £6 is already the market price',
+          'Equilibrium at £6; no effect – £6 is already the market price',
           'Equilibrium at £8; £6 control creates a surplus of 40 units',
           'Equilibrium at £10; £6 control creates a shortage of 40 units'
         ],

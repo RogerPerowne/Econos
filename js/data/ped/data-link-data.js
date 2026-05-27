@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Read the Data station data
+   ECONOS – Link It · Read the Data station data
    PED: UK fuel prices, traffic volume and revenue implications
    ============================================================ */
 
@@ -18,7 +18,7 @@ window.ECONOS_LINK_DATA = {
   currentStationIdx: -1,
 
   eyebrow:     'Read the Data',
-  instruction: 'Economists use real data to test theoretical predictions. Read the table carefully, then answer each question — pay attention to anomalies (years where the data behaves unexpectedly).',
+  instruction: 'Economists use real data to test theoretical predictions. Read the table carefully, then answer each question – pay attention to anomalies (years where the data behaves unexpectedly).',
 
   dataset: {
     title: 'UK Average Petrol Pump Price and Road Traffic Volume, 2018–2023',
@@ -43,10 +43,10 @@ window.ECONOS_LINK_DATA = {
           'Falling prices always reduce traffic because drivers become complacent',
           'COVID-19 lockdowns suppressed travel demand regardless of fuel prices',
           'The data confirms that demand for petrol is unit elastic (PED = −1)',
-          'Petrol demand in 2020 was perfectly inelastic — prices had no effect'
+          'Petrol demand in 2020 was perfectly inelastic – prices had no effect'
         ],
         correct: 1,
-        explanation: '2020 is dominated by COVID-19 lockdowns, which made travel impossible or illegal for most of the year regardless of petrol prices. This is a demand-side shock driven by non-price factors (government restrictions, fear, remote working) — not a price effect. Data from 2020 should be excluded when estimating PED because it violates the ceteris paribus assumption.'
+        explanation: '2020 is dominated by COVID-19 lockdowns, which made travel impossible or illegal for most of the year regardless of petrol prices. This is a demand-side shock driven by non-price factors (government restrictions, fear, remote working) – not a price effect. Data from 2020 should be excluded when estimating PED because it violates the ceteris paribus assumption.'
       },
       {
         id: 'ped-data-q2',
@@ -58,7 +58,7 @@ window.ECONOS_LINK_DATA = {
           'Demand is perfectly inelastic: traffic volume is unaffected by petrol prices'
         ],
         correct: 1,
-        explanation: 'PED ≈ −5.8 ÷ +27.5 ≈ −0.21. The magnitude is much less than 1, indicating highly inelastic demand. A 27.5% price rise caused only a 5.8% fall in traffic — drivers have few short-run substitutes (poor public transport, need to commute) and petrol is a small share of total car ownership costs. This supports the case for fuel duty as a revenue-raising tax.'
+        explanation: 'PED ≈ −5.8 ÷ +27.5 ≈ −0.21. The magnitude is much less than 1, indicating highly inelastic demand. A 27.5% price rise caused only a 5.8% fall in traffic – drivers have few short-run substitutes (poor public transport, need to commute) and petrol is a small share of total car ownership costs. This supports the case for fuel duty as a revenue-raising tax.'
       },
       {
         id: 'ped-data-q3',
@@ -70,7 +70,7 @@ window.ECONOS_LINK_DATA = {
           'A fuel duty increase would reduce tax revenue because demand is elastic'
         ],
         correct: 1,
-        explanation: 'With highly inelastic demand (estimated PED ≈ −0.21), a price rise generates large revenue increases but only small reductions in quantity. For a fuel duty rise to cut carbon emissions significantly, it would need to be very large — which raises equity concerns (regressive impact on low-income drivers). Complementary measures (improved public transport, EV subsidies) are needed alongside price rises to achieve meaningful emission reductions. This is an exam-quality evaluation of price-based environmental policy.'
+        explanation: 'With highly inelastic demand (estimated PED ≈ −0.21), a price rise generates large revenue increases but only small reductions in quantity. For a fuel duty rise to cut carbon emissions significantly, it would need to be very large – which raises equity concerns (regressive impact on low-income drivers). Complementary measures (improved public transport, EV subsidies) are needed alongside price rises to achieve meaningful emission reductions. This is an exam-quality evaluation of price-based environmental policy.'
       }
     ]
   }

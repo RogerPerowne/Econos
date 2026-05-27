@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for behavioural_econ
+   ECONOS – Link It intro/landing data for behavioural_econ
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your behavioural economics knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: 'Use the UK Soft Drinks Industry Levy and nutritional labelling to apply behavioural economics — how present bias causes overconsumption of unhealthy products, and whether nudge theory or Pigouvian taxes are more effective at correcting behavioural market failure.',
+    summary: 'Use the UK Soft Drinks Industry Levy and nutritional labelling to apply behavioural economics – how present bias causes overconsumption of unhealthy products, and whether nudge theory or Pigouvian taxes are more effective at correcting behavioural market failure.',
     heroKey: 'heroBehavioural',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Read a demand-left diagram showing how nudges correct present bias',
       'Evaluate the conditions under which nudges outperform Pigouvian taxes'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

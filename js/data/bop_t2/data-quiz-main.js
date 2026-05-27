@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Current account','Capital account','Financial account','Lorenz curve'],
         ans:  3,
-        exp:  'Current account, capital account, and financial account are all sub-accounts of the Balance of Payments. The Lorenz curve measures income inequality — it has nothing to do with the BoP.'
+        exp:  'Current account, capital account, and financial account are all sub-accounts of the Balance of Payments. The Lorenz curve measures income inequality – it has nothing to do with the BoP.'
       },
       {
         id:   'q_bop_9',

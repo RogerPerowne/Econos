@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for market_failure
+   ECONOS – Link It intro/landing data for market_failure
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your market failure knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in the three routes to market failure, the welfare-loss triangle and the diagnostic framework. Now train the skills examiners reward — applying the information asymmetry framework to a real market, building a watertight adverse selection chain, and reaching a supported judgement on whether disclosure legislation is justified.",
+    summary: "You've locked in the three routes to market failure, the welfare-loss triangle and the diagnostic framework. Now train the skills examiners reward – applying the information asymmetry framework to a real market, building a watertight adverse selection chain, and reaching a supported judgement on whether disclosure legislation is justified.",
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick, label and explain the demand-fall diagram for information asymmetry',
       'Evaluate the key conditions that change whether disclosure or regulation is most effective'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

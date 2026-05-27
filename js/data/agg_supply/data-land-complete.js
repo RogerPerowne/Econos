@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It complete page data
+   ECONOS – Land It complete page data
    Topic: Aggregate Supply (2.8)
    ============================================================ */
 

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page data
+   ECONOS – Land It intro page data
    Topic: Monopoly (3.8)
    ============================================================ */
 
@@ -26,7 +26,7 @@ window.ECONOS_LAND_INTRO = {
   trains: [
     'Drawing and interpreting monopoly profit-maximisation diagrams (MR = MC, P &gt; MC, deadweight welfare loss)',
     'Explaining sources of monopoly power: barriers to entry, economies of scale, network effects, patents',
-    'Evaluating the costs and benefits of monopoly &#8212; including dynamic efficiency, natural monopoly, and X-inefficiency',
+    'Evaluating the costs and benefits of monopoly &#8211; including dynamic efficiency, natural monopoly, and X-inefficiency',
     'Applying UK competition policy (CMA, RPI-X regulation, market investigations) to real cases'
   ],
 

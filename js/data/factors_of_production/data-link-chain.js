@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Chain station data
+   ECONOS – Link It · Chain station data
    Factors of Production: retraining policy → mobility → output
    ============================================================ */
 
@@ -26,7 +26,7 @@ window.ECONOS_LINK_CHAIN = {
       scenario: {
         icon:  '🎓',
         label: 'Scenario',
-        text:  'The UK government funds a large adult retraining scheme — paying for displaced workers in declining sectors to gain skills in shortage occupations (HGV driving, social care, construction).'
+        text:  'The UK government funds a large adult retraining scheme – paying for displaced workers in declining sectors to gain skills in shortage occupations (HGV driving, social care, construction).'
       },
       anchor: 'Retraining raises occupational mobility → reallocates labour to where it is most productive.',
       tiles: [
@@ -70,7 +70,7 @@ window.ECONOS_LINK_CHAIN = {
       explain: [
         {
           pos:  0,
-          text: 'The retraining scheme directly raises the quality of labour by upgrading workers\' skills. A worker who can drive an HGV, deliver social care, or operate construction machinery is more productive — and more mobile between sectors — than the same worker without those skills. This is improvement in occupational mobility: the ability of labour to move between different uses.'
+          text: 'The retraining scheme directly raises the quality of labour by upgrading workers\' skills. A worker who can drive an HGV, deliver social care, or operate construction machinery is more productive – and more mobile between sectors – than the same worker without those skills. This is improvement in occupational mobility: the ability of labour to move between different uses.'
         },
         {
           pos:  1,
@@ -78,7 +78,7 @@ window.ECONOS_LINK_CHAIN = {
         },
         {
           pos:  2,
-          text: 'Better-skilled, better-allocated labour means the economy can produce more at every price level — long-run aggregate supply (LRAS) shifts right and the PPF moves outward. Real GDP rises, unemployment falls, and inflationary pressure from supply bottlenecks (e.g. wage pressure in shortage sectors) eases. This is the canonical supply-side policy outcome.'
+          text: 'Better-skilled, better-allocated labour means the economy can produce more at every price level – long-run aggregate supply (LRAS) shifts right and the PPF moves outward. Real GDP rises, unemployment falls, and inflationary pressure from supply bottlenecks (e.g. wage pressure in shortage sectors) eases. This is the canonical supply-side policy outcome.'
         }
       ]
     }
@@ -86,7 +86,7 @@ window.ECONOS_LINK_CHAIN = {
 
   notes: [
     'Spot the difference between geographic mobility (moving between places) and occupational mobility (moving between jobs). Retraining mostly raises the latter.',
-    'Quality vs quantity of labour: the workforce hasn\'t grown — the same workers are now more productive. That is a quality improvement.',
-    'Distractors here include monetary policy (interest rates), immigration, and housing — all real factors, but not the mechanism this chain is about.'
+    'Quality vs quantity of labour: the workforce hasn\'t grown – the same workers are now more productive. That is a quality improvement.',
+    'Distractors here include monetary policy (interest rates), immigration, and housing – all real factors, but not the mechanism this chain is about.'
   ]
 };

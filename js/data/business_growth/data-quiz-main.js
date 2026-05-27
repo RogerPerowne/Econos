@@ -24,7 +24,7 @@
           'A conglomerate buying an unrelated business'
         ],
         ans:  2,
-        exp:  'Organic growth occurs when a firm expands its own operations — opening new outlets, investing in capacity, or growing sales — without merging with or acquiring another firm.'
+        exp:  'Organic growth occurs when a firm expands its own operations – opening new outlets, investing in capacity, or growing sales – without merging with or acquiring another firm.'
       },
       {
         id:   'q_bg_2',
@@ -37,7 +37,7 @@
           'A firm splits into two separate businesses'
         ],
         ans:  1,
-        exp:  'Horizontal integration is the merger or acquisition of firms at the same stage of production in the same industry — e.g., two supermarket chains merging. It can increase market power and economies of scale.'
+        exp:  'Horizontal integration is the merger or acquisition of firms at the same stage of production in the same industry – e.g., two supermarket chains merging. It can increase market power and economies of scale.'
       },
       {
         id:   'q_bg_3',
@@ -50,7 +50,7 @@
           'Forward vertical integration'
         ],
         ans:  2,
-        exp:  'Backward vertical integration means a firm acquires a supplier (earlier stage in the supply chain). The car maker acquires the steel supplier — moving backward toward raw materials.'
+        exp:  'Backward vertical integration means a firm acquires a supplier (earlier stage in the supply chain). The car maker acquires the steel supplier – moving backward toward raw materials.'
       },
       {
         id:   'q_bg_4',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Horizontal integration','Vertical integration','Conglomerate merger','Demerger'],
         ans:  3,
-        exp:  'Horizontal, vertical, and conglomerate are all forms of external (inorganic) growth involving mergers or acquisitions. A demerger is the opposite — it involves breaking a firm apart.'
+        exp:  'Horizontal, vertical, and conglomerate are all forms of external (inorganic) growth involving mergers or acquisitions. A demerger is the opposite – it involves breaking a firm apart.'
       },
       {
         id:   'q_bg_9',
@@ -123,7 +123,7 @@
         ],
         opts: ['Alpha','Beta','Gamma','Delta'],
         ans:  1,
-        exp:  'Beta had the highest organic (internally generated) revenue growth of £220m. Gamma had no organic growth — all its revenue increase came from acquisitions.'
+        exp:  'Beta had the highest organic (internally generated) revenue growth of £220m. Gamma had no organic growth – all its revenue increase came from acquisitions.'
       },
       {
         id:   'q_bg_10',

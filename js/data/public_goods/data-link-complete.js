@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Complete page data
+   ECONOS – Link It · Complete page data
    Public Goods
    ============================================================ */
 
@@ -14,9 +14,9 @@ window.ECONOS_LINK_COMPLETE = {
   ],
 
   overallMessages: [
-    { min: 85, text: 'Excellent thinking structure — you\'re ready to write.' },
-    { min: 70, text: 'Strong thinking structure — you\'re nearly ready to write.' },
-    { min: 55, text: 'Good foundations — review your weakest step before Land It.' },
+    { min: 85, text: 'Excellent thinking structure – you\'re ready to write.' },
+    { min: 70, text: 'Strong thinking structure – you\'re nearly ready to write.' },
+    { min: 55, text: 'Good foundations – review your weakest step before Land It.' },
     { min: 0,  text: 'More practice recommended before tackling Land It.' }
   ],
 
@@ -30,22 +30,22 @@ window.ECONOS_LINK_COMPLETE = {
   stationFeedback: {
     context: [
       { min: 80, text: 'Strong evidence classification' },
-      { min: 60, text: 'Good — review the complicating factors' },
+      { min: 60, text: 'Good – review the complicating factors' },
       { min: 0,  text: 'Evidence classification needs work' }
     ],
     chain: [
       { min: 100, text: 'Perfect causal chain' },
-      { min: 50,  text: 'Clear causality — check the missing step' },
+      { min: 50,  text: 'Clear causality – check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
     extract: [
       { min: 80, text: 'Strong extract reading' },
-      { min: 55, text: 'Good — check your evidence application' },
+      { min: 55, text: 'Good – check your evidence application' },
       { min: 0,  text: 'Extract analysis needs more attention' }
     ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
-      { min: 50, text: 'Good — one key condition missed' },
+      { min: 50, text: 'Good – one key condition missed' },
       { min: 0,  text: 'Review the key evaluation conditions' }
     ],
     judge: [
@@ -55,14 +55,14 @@ window.ECONOS_LINK_COMPLETE = {
     ]
   },
 
-  useInLandIt: 'Pure public goods require state provision because non-excludability makes private revenue impossible. Always apply both non-rivalry AND non-excludability explicitly — then explain why the free rider problem makes D_private collapse, and why general taxation is the only mechanism that forces contribution. Evaluate by reference to quasi-public goods, CBA accuracy and government failure.',
+  useInLandIt: 'Pure public goods require state provision because non-excludability makes private revenue impossible. Always apply both non-rivalry AND non-excludability explicitly – then explain why the free rider problem makes D_private collapse, and why general taxation is the only mechanism that forces contribution. Evaluate by reference to quasi-public goods, CBA accuracy and government failure.',
 
   focusInLandIt: {
-    context: 'Use specific evidence — the £5.2bn EA programme and the £8/£1 cost-benefit ratio — to anchor your application to the real-world flood defence case, not just generic public goods theory.',
+    context: 'Use specific evidence – the £5.2bn EA programme and the £8/£1 cost-benefit ratio – to anchor your application to the real-world flood defence case, not just generic public goods theory.',
     chain:   'State the chain explicitly: non-excludable → free rider → D_private ≈ 0 → no private revenue → zero market provision → general taxation solves free rider → Q* achieved.',
-    extract: 'Use the Trinity House lighthouse example to show the historical debate about public goods provision. When applying the extract, identify whether each good meets both conditions (non-rival AND non-excludable) — partial excludability changes the policy prescription entirely.',
-    depends: 'Lead with degree of non-excludability as your top condition — if the good is quasi-public (partially excludable), market mechanisms partially apply and taxation is not the only available solution.',
-    judge:   'State a clear position, use the mechanism (non-excludable → free rider → D_private collapses → taxation solves), add the condition (pure vs quasi-public, CBA accuracy), and acknowledge the limitation honestly — government failure in setting Q* is the principal risk of state provision.'
+    extract: 'Use the Trinity House lighthouse example to show the historical debate about public goods provision. When applying the extract, identify whether each good meets both conditions (non-rival AND non-excludable) – partial excludability changes the policy prescription entirely.',
+    depends: 'Lead with degree of non-excludability as your top condition – if the good is quasi-public (partially excludable), market mechanisms partially apply and taxation is not the only available solution.',
+    judge:   'State a clear position, use the mechanism (non-excludable → free rider → D_private collapses → taxation solves), add the condition (pure vs quasi-public, CBA accuracy), and acknowledge the limitation honestly – government failure in setting Q* is the principal risk of state provision.'
   },
 
   nextUrl: TopicLoader.buildUrl('land_intro.html')

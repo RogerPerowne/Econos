@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for investment
+   ECONOS – content data for investment
    8 cards on investment as the volatile engine of the cycle.
    Edexcel Theme 2.2.3
    ============================================================ */
@@ -10,7 +10,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Investment',
   estTime: '10-12 minutes',
-  goal: 'Lock in investment — small in level, huge in volatility — as the engine of the business cycle.',
+  goal: 'Lock in investment – small in level, huge in volatility – as the engine of the business cycle.',
 
   intro: {
     heroKey: 'heroInvestment',
@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
       'Apply real UK case studies',
       'Evaluate investment as an AD driver'
     ],
-    tip: 'I is small in level (~17% of AD) but huge in volatility — it amplifies AD changes far beyond its share.',
+    tip: 'I is small in level (~17% of AD) but huge in volatility – it amplifies AD changes far beyond its share.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 concept cards',                  state: 'current' },
       { num: 2, name: 'Master', sub: 'Apply in exam-style questions',    state: 'locked' },
@@ -44,7 +44,7 @@ window.ECONOS_TOPIC = {
       lede: 'Investment is firms\' spending on capital goods that help produce future output.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment means spending on capital goods — not buying shares or bonds.' },
+      tip: { icon: '✅', tone: 'green', text: 'Investment means spending on capital goods – not buying shares or bonds.' },
 
       causesFirst: true,
       causesLabel: 'THE BIG IDEA',
@@ -66,7 +66,7 @@ window.ECONOS_TOPIC = {
 
       summaryRow: [
         { tone: 'rose', icon: '🚫', title: 'NOT financial investment',
-          text: 'Shares and bonds are <strong>not</strong> investment in this topic. This is about <strong>real investment</strong> by firms — not financial assets.' }
+          text: 'Shares and bonds are <strong>not</strong> investment in this topic. This is about <strong>real investment</strong> by firms – not financial assets.' }
       ],
 
       flowTitle: 'GROSS VS NET',
@@ -133,13 +133,13 @@ window.ECONOS_TOPIC = {
                 '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
                 Array(20).fill('<div style="aspect-ratio:1;background:#F59E0B;border-radius:2px;"></div>').join('') +
                 '</div>' +
-                '<div style="font-size:12px;color:#92400E;text-align:center;">Replacing worn-out capital — maintains, does not grow.</div>' },
+                '<div style="font-size:12px;color:#92400E;text-align:center;">Replacing worn-out capital – maintains, does not grow.</div>' },
         { tone: 'green', icon: '📈', head: 'Net investment',
           body: '<div style="font-size:30px;font-weight:900;color:#047857;text-align:center;margin:6px 0 10px;">£60bn</div>' +
                 '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
                 Array(30).fill('<div style="aspect-ratio:1;background:#10B981;border-radius:2px;"></div>').join('') +
                 '</div>' +
-                '<div style="font-size:12px;color:#065F46;text-align:center;">Adds to the capital stock — grows productive capacity.</div>' }
+                '<div style="font-size:12px;color:#065F46;text-align:center;">Adds to the capital stock – grows productive capacity.</div>' }
       ],
 
       whyItMatters: {
@@ -153,7 +153,7 @@ window.ECONOS_TOPIC = {
       },
 
       summaryRow: [
-        { tone: 'amber', icon: '⚠️', title: 'Watch the trap', text: 'Depreciation maintains existing capital — it keeps the machine running. Net investment is what adds to it — it makes the machine bigger and better.' }
+        { tone: 'amber', icon: '⚠️', title: 'Watch the trap', text: 'Depreciation maintains existing capital – it keeps the machine running. Net investment is what adds to it – it makes the machine bigger and better.' }
       ],
 
       conclusion: {
@@ -199,7 +199,7 @@ window.ECONOS_TOPIC = {
       comparisonTable: {
         title: 'WORKED EXAMPLE',
         emoji: '🧮',
-        columns: ['Period 1 — High growth', 'Period 2 — Slower growth'],
+        columns: ['Period 1 – High growth', 'Period 2 – Slower growth'],
         columnTones: ['blue', 'purple'],
         rows: [
           { label: 'Expected output growth',           values: ['+5%',         '+2%'] },
@@ -219,7 +219,7 @@ window.ECONOS_TOPIC = {
         items: [
           { tone: 'blue',   icon: '🧭', label: 'Forward-looking', text: 'Firms base decisions on expected changes in demand, not current levels.' },
           { tone: 'amber',  icon: '⚡', label: 'Amplification',   text: 'Small shifts in growth expectations lead to large adjustments in capital spending.' },
-          { tone: 'green',  icon: '🏗️', label: 'Lumpy capital',   text: 'Machines and buildings are expensive and indivisible — firms adjust in big steps.' }
+          { tone: 'green',  icon: '🏗️', label: 'Lumpy capital',   text: 'Machines and buildings are expensive and indivisible – firms adjust in big steps.' }
         ]
       },
 
@@ -280,17 +280,17 @@ window.ECONOS_TOPIC = {
 
       summaryRow: [
         { tone: 'green', icon: '👁️', title: 'Synthesis',
-          text: 'Investment is forward-looking — it responds to expectations today about returns, risks and conditions tomorrow.' }
+          text: 'Investment is forward-looking – it responds to expectations today about returns, risks and conditions tomorrow.' }
       ],
 
       conclusion: {
         title: 'Big idea',
-        text: 'Investment depends on expected returns and the ability to finance — driven by confidence, conditions, costs and policy.'
+        text: 'Investment depends on expected returns and the ability to finance – driven by confidence, conditions, costs and policy.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'When a driver changes, ask how it affects expected returns or the cost of funding — then link the direction of change to investment.'
+        text: 'When a driver changes, ask how it affects expected returns or the cost of funding – then link the direction of change to investment.'
       }
     },
 
@@ -347,7 +347,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Firms invest up to the point where the expected return on the next unit of capital (MEC) equals the interest rate — the cost of borrowing.'
+        text: 'Firms invest up to the point where the expected return on the next unit of capital (MEC) equals the interest rate – the cost of borrowing.'
       },
 
       examEdge: {
@@ -365,13 +365,13 @@ window.ECONOS_TOPIC = {
       lede: 'Higher demand can trigger more investment, which then multiplies demand again.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment and demand can amplify each other — every loop is bigger than the last.' },
+      tip: { icon: '✅', tone: 'green', text: 'Investment and demand can amplify each other – every loop is bigger than the last.' },
 
       flowChart: {
         svgKey: 'investmentFeedbackLoop',
         label: 'THE FEEDBACK LOOP',
         emoji: '🔄',
-        caption: 'Higher demand → more investment → more income → still more demand. The same five steps repeat — and each pass through the loop is larger than the one before.'
+        caption: 'Higher demand → more investment → more income → still more demand. The same five steps repeat – and each pass through the loop is larger than the one before.'
       },
 
       comparisonTable: {
@@ -428,11 +428,11 @@ window.ECONOS_TOPIC = {
       causesStyle: 'numbered',
       causesCols: 3,
       causes: [
-        { tone: 'blue', icon: '📉', head: 'Post-Brexit uncertainty slump — 2016–19',
+        { tone: 'blue', icon: '📉', head: 'Post-Brexit uncertainty slump – 2016–19',
           body: 'Referendum shock and prolonged uncertainty led firms to delay projects and hold back spending.<div style="margin-top:10px;padding:6px 10px;background:#fff;border:1px solid #BFDBFE;border-radius:8px;font-size:12px;font-weight:700;color:#1E40AF;text-align:center;">Outcome: Weak investment</div>' },
-        { tone: 'amber', icon: '🦠', head: 'Covid capex freeze — 2020, snap-back 2021',
+        { tone: 'amber', icon: '🦠', head: 'Covid capex freeze – 2020, snap-back 2021',
           body: 'Lockdowns froze investment in 2020; strong demand, savings and support drove a rebound in 2021.<div style="margin-top:10px;padding:6px 10px;background:#fff;border:1px solid #FCD34D;border-radius:8px;font-size:12px;font-weight:700;color:#B45309;text-align:center;">Outcome: Sharp rebound</div>' },
-        { tone: 'green', icon: '🏦', head: 'The high-rate squeeze — 2023–24',
+        { tone: 'green', icon: '🏦', head: 'The high-rate squeeze – 2023–24',
           body: 'Higher interest rates lifted borrowing costs and curbed investment plans across many sectors.<div style="margin-top:10px;padding:6px 10px;background:#fff;border:1px solid #6EE7B7;border-radius:8px;font-size:12px;font-weight:700;color:#047857;text-align:center;">Outcome: Soft investment</div>' }
       ],
 
@@ -455,7 +455,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Uncertainty, shocks and interest rates shift confidence and the cost of capital — and investment moves.'
+        text: 'Uncertainty, shocks and interest rates shift confidence and the cost of capital – and investment moves.'
       },
 
       examEdge: {
@@ -473,7 +473,7 @@ window.ECONOS_TOPIC = {
       lede: 'Investment is powerful, but also volatile and uncertain.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment can drive both demand now and capacity later — but it is the least predictable AD component.' },
+      tip: { icon: '✅', tone: 'green', text: 'Investment can drive both demand now and capacity later – but it is the least predictable AD component.' },
 
       causesFirst: true,
       causesLabel: 'THE EVALUATION GRID',
@@ -508,12 +508,12 @@ window.ECONOS_TOPIC = {
 
       summaryRow: [
         { tone: 'blue', icon: '💡', title: 'Synthesis',
-          text: 'Evaluate investment by balancing its size, timing, quality and confidence — knowing its impact is uncertain.' }
+          text: 'Evaluate investment by balancing its size, timing, quality and confidence – knowing its impact is uncertain.' }
       ],
 
       conclusion: {
         title: 'Big idea',
-        text: 'Investment is the most powerful driver of future capacity and demand — and the least predictable.'
+        text: 'Investment is the most powerful driver of future capacity and demand – and the least predictable.'
       },
 
       examEdge: {

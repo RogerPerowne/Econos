@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page data
+   ECONOS – Land It intro page data
    Topic: Negative Externalities (1.12)
    ============================================================ */
 
@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
 
   trains: [
     'Drawing and interpreting MSC/MSB diagrams and identifying the deadweight welfare loss triangle',
-    'Explaining how taxes, regulation, and tradeable permits correct negative externalities &#8212; and their limitations',
+    'Explaining how taxes, regulation, and tradeable permits correct negative externalities &#8211; and their limitations',
     'Evaluating market-based vs command-and-control approaches using UK evidence (ETS, congestion charge, fuel duty)',
     'Constructing a balanced essay on government intervention to correct negative externalities'
   ],

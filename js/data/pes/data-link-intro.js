@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for pes
+   ECONOS – Link It intro/landing data for pes
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your PES knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "Use the UK rental housing shortage of 2022–23 to apply PES — how the responsiveness of supply shapes whether a demand shock causes large price rises, large quantity rises, or both.",
+    summary: "Use the UK rental housing shortage of 2022–23 to apply PES – how the responsiveness of supply shapes whether a demand shock causes large price rises, large quantity rises, or both.",
     heroKey: 'heroElasticity',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Read a demand-shift diagram with inelastic supply',
       'Evaluate the conditions under which PES determines market outcomes'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

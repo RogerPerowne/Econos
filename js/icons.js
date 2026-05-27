@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — icon definitions (inline SVG strings)
+   ECONOS – icon definitions (inline SVG strings)
    v2: hero redesigned, AD/AS diagrams mathematically correct,
        pop-up book aesthetic
    ============================================================ */
@@ -144,7 +144,7 @@ window.ECONOS_ICONS = {
 
   /* Brand logo glyph */
   /* ============================================================
-     BRAND MARK — the curve, per Brand Manual v1.0
+     BRAND MARK – the curve, per Brand Manual v1.0
      Always ascending left→right · green→yellow→pink in order.
      ============================================================ */
   brandGlyph: `
@@ -157,7 +157,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     HERO ILLUSTRATION — intro card (v2)
+     HERO ILLUSTRATION – intro card (v2)
      Editorial price-tag montage. Same basket, three rising prices.
      Faint CPI line in the background for context.
      ============================================================ */
@@ -173,7 +173,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- 3 ascending price tags (each: tag body, hole, tied string to basket below) -->
-      <!-- tag 1: £1.20 — lowest, smallest, pale -->
+      <!-- tag 1: £1.20 – lowest, smallest, pale -->
       <g transform="translate(70, 158) rotate(-8)" filter="url(#hb-soft)">
         <path d="M 0 0 L 60 0 L 76 16 L 60 32 L 0 32 Z" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
         <circle cx="62" cy="16" r="3" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
@@ -181,7 +181,7 @@ window.ECONOS_ICONS = {
       </g>
       <path d="M 144 168 Q 150 195 140 232" stroke="#CBD5E1" stroke-width="1" fill="none" stroke-linecap="round"/>
 
-      <!-- tag 2: £1.80 — middle, medium, green -->
+      <!-- tag 2: £1.80 – middle, medium, green -->
       <g transform="translate(110, 102) rotate(3)" filter="url(#hb-soft)">
         <path d="M 0 0 L 76 0 L 94 18 L 76 36 L 0 36 Z" fill="#86EFAC" stroke="#15803D" stroke-width="1.8" stroke-linejoin="round"/>
         <circle cx="79" cy="18" r="3.5" fill="#FFFFFF" stroke="#15803D" stroke-width="1.3"/>
@@ -189,7 +189,7 @@ window.ECONOS_ICONS = {
       </g>
       <path d="M 198 122 Q 200 175 160 230" stroke="#CBD5E1" stroke-width="1" fill="none" stroke-linecap="round"/>
 
-      <!-- tag 3: £2.40 — top, biggest, red -->
+      <!-- tag 3: £2.40 – top, biggest, red -->
       <g transform="translate(70, 38) rotate(-5)" filter="url(#hb-shadow)">
         <path d="M 0 0 L 92 0 L 112 22 L 92 44 L 0 44 Z" fill="#EF4444" stroke="#991B1B" stroke-width="2" stroke-linejoin="round"/>
         <circle cx="95" cy="22" r="4" fill="#FFFFFF" stroke="#991B1B" stroke-width="1.5"/>
@@ -379,7 +379,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === BRANCH DIAGRAM — Card 1 === */
+  /* === BRANCH DIAGRAM – Card 1 === */
   branchDiagram: `
     <svg viewBox="0 0 300 280" width="300" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -426,7 +426,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     AD/AS DIAGRAM — Demand-pull (Card 2) — REBUILT
+     AD/AS DIAGRAM – Demand-pull (Card 2) – REBUILT
      Mathematically correct intersections.
      AD1: y = 0.625x + 12.5  (60,50)→(220,150)
      AD2: y = 0.625x - 6.25  (90,50)→(250,150)  [parallel, +30 right]
@@ -441,21 +441,21 @@ window.ECONOS_ICONS = {
         </marker>
       </defs>
 
-      <!-- chart axes — chart area: x ∈ [55, 380], y ∈ [40, 235] -->
+      <!-- chart axes – chart area: x ∈ [55, 380], y ∈ [40, 235] -->
       <line x1="55" y1="35" x2="55" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
       <line x1="55" y1="235" x2="380" y2="235" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
       <text x="48" y="32" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
       <text x="385" y="243" font-size="12" font-weight="700" fill="#374151">Y</text>
 
-      <!-- SRAS — slope -0.638, top-right at (350, 50) -->
+      <!-- SRAS – slope -0.638, top-right at (350, 50) -->
       <line x1="65" y1="232" x2="350" y2="50" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
       <text x="358" y="50" font-size="12" font-weight="700" fill="#475569">SRAS</text>
 
-      <!-- AD₁ — dashed grey, top-left at (75, 60) -->
+      <!-- AD₁ – dashed grey, top-left at (75, 60) -->
       <line x1="75" y1="60" x2="305" y2="230" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
       <text x="60" y="50" font-size="12" font-weight="600" fill="#94A3B8">AD₁</text>
 
-      <!-- AD₂ — solid green, top at (135, 60), shifted right by 60 -->
+      <!-- AD₂ – solid green, top at (135, 60), shifted right by 60 -->
       <line x1="135" y1="60" x2="365" y2="230" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
       <text x="125" y="50" font-size="13" font-weight="800" fill="#10B981">AD₂</text>
 
@@ -463,21 +463,21 @@ window.ECONOS_ICONS = {
       <path d="M 257 192 L 305 192" stroke="#10B981" stroke-width="2.6" fill="none" marker-end="url(#ad-shift)"/>
       <text x="281" y="208" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle" letter-spacing="1">AD shifts right</text>
 
-      <!-- Equilibrium 1 — at (195, 149) -->
+      <!-- Equilibrium 1 – at (195, 149) -->
       <line x1="55" y1="149" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
       <line x1="195" y1="235" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
       <circle cx="195" cy="149" r="4.5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
       <text x="50" y="153" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="end">P₁</text>
       <text x="195" y="252" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">Y₁</text>
 
-      <!-- Equilibrium 2 — at (227, 128) -->
+      <!-- Equilibrium 2 – at (227, 128) -->
       <line x1="55" y1="128" x2="227" y2="128" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 2"/>
       <line x1="227" y1="235" x2="227" y2="128" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 2"/>
       <circle cx="227" cy="128" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
       <text x="50" y="132" font-size="11" font-weight="800" fill="#10B981" text-anchor="end">P₂</text>
       <text x="227" y="252" font-size="11" font-weight="800" fill="#10B981" text-anchor="middle">Y₂</text>
 
-      <!-- Result chip — tucked in clean right margin -->
+      <!-- Result chip – tucked in clean right margin -->
       <g transform="translate(395, 95)">
         <rect x="0" y="0" width="75" height="58" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
         <text x="37.5" y="18" font-size="9" font-weight="800" fill="#047857" text-anchor="middle" letter-spacing="1">RESULT</text>
@@ -489,7 +489,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     AD/AS DIAGRAM — Cost-push (Card 3) — REBUILT
+     AD/AS DIAGRAM – Cost-push (Card 3) – REBUILT
      AD: y = 0.625x + 12.5
      SRAS1: y = -0.605x + 195.26  (50,165)→(240,50)
      SRAS2: y = -0.605x + 170.26  (50,140)→(240,25)  [shift up 25]
@@ -509,37 +509,37 @@ window.ECONOS_ICONS = {
       <text x="48" y="32" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
       <text x="385" y="243" font-size="12" font-weight="700" fill="#374151">Y</text>
 
-      <!-- AD — unchanged -->
+      <!-- AD – unchanged -->
       <line x1="75" y1="60" x2="305" y2="230" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>
       <text x="312" y="232" font-size="12" font-weight="700" fill="#475569">AD</text>
 
-      <!-- SRAS₁ — dashed grey, top-right at (350, 50) -->
+      <!-- SRAS₁ – dashed grey, top-right at (350, 50) -->
       <line x1="65" y1="232" x2="350" y2="50" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
       <text x="358" y="50" font-size="12" font-weight="600" fill="#94A3B8">SRAS₁</text>
 
-      <!-- SRAS₂ — solid amber, shifted up by 50, endpoints (65, 182) → (303, 30) -->
+      <!-- SRAS₂ – solid amber, shifted up by 50, endpoints (65, 182) → (303, 30) -->
       <line x1="65" y1="182" x2="303" y2="30" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
       <text x="310" y="30" font-size="13" font-weight="800" fill="#F59E0B">SRAS₂</text>
 
-      <!-- shift arrow — vertical, in clean upper-middle space at x=270 -->
+      <!-- shift arrow – vertical, in clean upper-middle space at x=270 -->
       <path d="M 270 95 L 270 60" stroke="#F59E0B" stroke-width="2.6" fill="none" marker-end="url(#sras-shift)"/>
       <text x="282" y="80" font-size="10" font-weight="700" fill="#F59E0B" letter-spacing="1">SRAS shifts left</text>
 
-      <!-- Equilibrium 1 — at (195, 149) -->
+      <!-- Equilibrium 1 – at (195, 149) -->
       <line x1="55" y1="149" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
       <line x1="195" y1="235" x2="195" y2="149" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
       <circle cx="195" cy="149" r="4.5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
       <text x="50" y="153" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="end">P₁</text>
       <text x="195" y="252" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle">Y₁</text>
 
-      <!-- Equilibrium 2 — at (159, 122). Y falls, P rises. -->
+      <!-- Equilibrium 2 – at (159, 122). Y falls, P rises. -->
       <line x1="55" y1="122" x2="159" y2="122" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
       <line x1="159" y1="235" x2="159" y2="122" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
       <circle cx="159" cy="122" r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5"/>
       <text x="50" y="126" font-size="11" font-weight="800" fill="#F59E0B" text-anchor="end">P₂</text>
       <text x="159" y="252" font-size="11" font-weight="800" fill="#F59E0B" text-anchor="middle">Y₂</text>
 
-      <!-- Result chip — clean right margin -->
+      <!-- Result chip – clean right margin -->
       <g transform="translate(395, 95)">
         <rect x="0" y="0" width="75" height="58" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
         <text x="37.5" y="18" font-size="9" font-weight="800" fill="#B45309" text-anchor="middle" letter-spacing="1">RESULT</text>
@@ -551,7 +551,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     DEMAND-PULL INTERACTIVE — 3-step build for interactiveDiagram block.
+     DEMAND-PULL INTERACTIVE – 3-step build for interactiveDiagram block.
      Base (always visible): axes, SRAS, AD₁ (blue), E₁.
      Layer dpl-1: AD₂ (green) + shift arrow.
      Layer dpl-2: E₂ dot + P₂/Y₂/E₂ labels + result chip.
@@ -565,7 +565,7 @@ window.ECONOS_ICONS = {
         </marker>
       </defs>
 
-      <!-- BASE — always visible: axes, SRAS, AD₁, E₁ -->
+      <!-- BASE – always visible: axes, SRAS, AD₁, E₁ -->
       <line x1="55" y1="40" x2="55" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
       <line x1="55" y1="374" x2="380" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
       <text x="48" y="34" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
@@ -615,7 +615,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     COST-PUSH INTERACTIVE — 3-step build for interactiveDiagram block.
+     COST-PUSH INTERACTIVE – 3-step build for interactiveDiagram block.
      Base (always visible): axes, AD (blue), SRAS₁ (slate), E₁.
      Layer cpl-1: SRAS₂ (amber) + shift arrow.
      Layer cpl-2: E₂ dot + P₂/Y₂/E₂ labels + result chip.
@@ -629,13 +629,13 @@ window.ECONOS_ICONS = {
         </marker>
       </defs>
 
-      <!-- BASE — always visible: axes, AD, SRAS₁, E₁ -->
+      <!-- BASE – always visible: axes, AD, SRAS₁, E₁ -->
       <line x1="55" y1="40" x2="55" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
       <line x1="55" y1="374" x2="380" y2="374" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/>
       <text x="48" y="34" font-size="12" font-weight="700" fill="#374151" text-anchor="end">P</text>
       <text x="385" y="382" font-size="12" font-weight="700" fill="#374151">Y</text>
 
-      <!-- AD — unchanged throughout -->
+      <!-- AD – unchanged throughout -->
       <line x1="75" y1="82" x2="305" y2="366" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
       <text x="312" y="369" font-size="12" font-weight="700" fill="#2563EB">AD</text>
 
@@ -742,7 +742,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === AD composition stacked bar — Aggregate Demand Card 1 === */
+  /* === AD composition stacked bar – Aggregate Demand Card 1 === */
   adComposition: `
     <svg viewBox="0 0 360 480" width="360" height="480" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -796,13 +796,13 @@ window.ECONOS_ICONS = {
       <path d="M 80 404 L 140 404 L 140 407 Q 140 410 137 410 L 83 410 Q 80 410 80 407 Z" fill="#10B981"/>
 
       <!-- Percentage labels INSIDE each band -->
-      <!-- C: 60% — big, centred in its band -->
+      <!-- C: 60% – big, centred in its band -->
       <text x="110" y="315" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">60%</text>
-      <!-- G: 20% — centred in band (138 to 206, mid 172) -->
+      <!-- G: 20% – centred in band (138 to 206, mid 172) -->
       <text x="110" y="178" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">20%</text>
-      <!-- I: 17% — centred in band (80 to 138, mid 109) -->
+      <!-- I: 17% – centred in band (80 to 138, mid 109) -->
       <text x="110" y="115" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">17%</text>
-      <!-- (X-M): 3% — too tiny for inline text. Leader line + label to the right. -->
+      <!-- (X-M): 3% – too tiny for inline text. Leader line + label to the right. -->
 
       <!-- ===== Component labels to the RIGHT of each band ===== -->
       <!-- X-M (3%) with leader line -->
@@ -830,7 +830,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === Multiplier ripple chart — Aggregate Demand Card 7 === */
+  /* === Multiplier ripple chart – Aggregate Demand Card 7 === */
   multiplierChart: `
     <svg viewBox="0 0 480 220" width="480" height="220" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -900,8 +900,8 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === AD movement vs shift — Aggregate Demand Card 3 === */
-  /* Multiplier ripple — five-round cascade (AD Card 5) */
+  /* === AD movement vs shift – Aggregate Demand Card 3 === */
+  /* Multiplier ripple – five-round cascade (AD Card 5) */
   multiplierRipple: `
     <svg viewBox="0 0 900 185" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -910,7 +910,7 @@ window.ECONOS_ICONS = {
         </marker>
       </defs>
 
-      <!-- ROUND 1 — blue · £10bn -->
+      <!-- ROUND 1 – blue · £10bn -->
       <g>
         <rect x="22" y="28" width="138" height="130" rx="16" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"/>
         <text x="91" y="62" font-size="30" text-anchor="middle">💧</text>
@@ -922,7 +922,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="166" y1="92" x2="194" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
 
-      <!-- ROUND 2 — amber · £6bn -->
+      <!-- ROUND 2 – amber · £6bn -->
       <g>
         <rect x="200" y="28" width="138" height="130" rx="16" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2"/>
         <text x="269" y="62" font-size="30" text-anchor="middle">💧</text>
@@ -934,7 +934,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="344" y1="92" x2="372" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
 
-      <!-- ROUND 3 — purple · £3.6bn -->
+      <!-- ROUND 3 – purple · £3.6bn -->
       <g>
         <rect x="378" y="28" width="138" height="130" rx="16" fill="#F3E8FF" stroke="#DDD6FE" stroke-width="2"/>
         <text x="447" y="62" font-size="30" text-anchor="middle">💧</text>
@@ -946,7 +946,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="522" y1="92" x2="550" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#mr-arr)"/>
 
-      <!-- ROUND 4 — green · £2.16bn -->
+      <!-- ROUND 4 – green · £2.16bn -->
       <g>
         <rect x="556" y="28" width="138" height="130" rx="16" fill="#DCFCE7" stroke="#BBF7D0" stroke-width="2"/>
         <text x="625" y="62" font-size="30" text-anchor="middle">💧</text>
@@ -970,7 +970,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* AD slope — three effects (static, used on AD Card 2) */
+  /* AD slope – three effects (static, used on AD Card 2) */
   adSlopeDiagram: `
     <svg viewBox="0 0 480 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -1013,7 +1013,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* Consumption function — C = a + bY line graph (Consumption Card 2) */
+  /* Consumption function – C = a + bY line graph (Consumption Card 2) */
   consumptionFunction: `
     <svg viewBox="0 0 560 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- axes -->
@@ -1037,7 +1037,7 @@ window.ECONOS_ICONS = {
 
       <!-- autonomous consumption brace and label on y-axis -->
       <path d="M 136 200 Q 130 200 130 215 L 130 268 Q 130 280 136 280" fill="none" stroke="#475569" stroke-width="1.5"/>
-      <text x="120" y="232" font-size="12" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="end">a —</text>
+      <text x="120" y="232" font-size="12" font-style="italic" font-weight="700" fill="#0F172A" text-anchor="end">a –</text>
       <text x="120" y="248" font-size="11" font-weight="600" fill="#475569" text-anchor="end">autonomous</text>
       <text x="120" y="262" font-size="11" font-weight="600" fill="#475569" text-anchor="end">consumption</text>
     </svg>
@@ -1056,7 +1056,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- 5 step tiles, each 140 wide x 130 tall, 25px gap -->
-      <!-- TILE 1 — blue -->
+      <!-- TILE 1 – blue -->
       <g>
         <rect x="50" y="20" width="140" height="130" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
         <circle cx="78" cy="42" r="13" fill="#2563EB"/>
@@ -1068,7 +1068,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="194" y1="85" x2="211" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
 
-      <!-- TILE 2 — amber -->
+      <!-- TILE 2 – amber -->
       <g>
         <rect x="215" y="20" width="140" height="130" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
         <circle cx="243" cy="42" r="13" fill="#F59E0B"/>
@@ -1080,7 +1080,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="359" y1="85" x2="376" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
 
-      <!-- TILE 3 — purple -->
+      <!-- TILE 3 – purple -->
       <g>
         <rect x="380" y="20" width="140" height="130" rx="14" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
         <circle cx="408" cy="42" r="13" fill="#8B5CF6"/>
@@ -1092,7 +1092,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="524" y1="85" x2="541" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
 
-      <!-- TILE 4 — green -->
+      <!-- TILE 4 – green -->
       <g>
         <rect x="545" y="20" width="140" height="130" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
         <circle cx="573" cy="42" r="13" fill="#10B981"/>
@@ -1104,7 +1104,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="689" y1="85" x2="706" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
 
-      <!-- TILE 5 — rose -->
+      <!-- TILE 5 – rose -->
       <g>
         <rect x="710" y="20" width="140" height="130" rx="14" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1.5"/>
         <circle cx="738" cy="42" r="13" fill="#F43F5E"/>
@@ -1146,7 +1146,7 @@ window.ECONOS_ICONS = {
       <path d="M 140 60 C 200 130, 260 220, 500 300" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
       <text x="508" y="304" font-size="14" font-weight="800" fill="#2563EB">MEC</text>
 
-      <!-- Equilibrium dashed lines and dot at (300, 210) — sits exactly on the MEC curve -->
+      <!-- Equilibrium dashed lines and dot at (300, 210) – sits exactly on the MEC curve -->
       <line x1="120" y1="210" x2="300" y2="210" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
       <line x1="300" y1="210" x2="300" y2="320" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
       <circle cx="300" cy="210" r="7" fill="#2563EB" stroke="#fff" stroke-width="2"/>
@@ -1167,7 +1167,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* Government Spending Multiplier — 5-tile injection chain + formula box (Gov Spending Card 5) */
+  /* Government Spending Multiplier – 5-tile injection chain + formula box (Gov Spending Card 5) */
   govMultiplierChain: `
     <svg viewBox="0 0 900 236" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -1177,7 +1177,7 @@ window.ECONOS_ICONS = {
       </defs>
 
       <!-- 5 tiles, 158w x 212h, x positions: 14,192,370,548,728 (gap 20) -->
-      <!-- TILE 1 — blue -->
+      <!-- TILE 1 – blue -->
       <g>
         <rect x="14" y="12" width="158" height="212" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
         <circle cx="40" cy="38" r="15" fill="#2563EB"/>
@@ -1192,7 +1192,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="176" y1="118" x2="188" y2="118" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
-      <!-- TILE 2 — green -->
+      <!-- TILE 2 – green -->
       <g>
         <rect x="192" y="12" width="158" height="212" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
         <circle cx="218" cy="38" r="15" fill="#10B981"/>
@@ -1207,7 +1207,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="354" y1="118" x2="366" y2="118" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
-      <!-- TILE 3 — amber -->
+      <!-- TILE 3 – amber -->
       <g>
         <rect x="370" y="12" width="158" height="212" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
         <circle cx="396" cy="38" r="15" fill="#F59E0B"/>
@@ -1222,7 +1222,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="532" y1="118" x2="544" y2="118" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
-      <!-- TILE 4 — purple -->
+      <!-- TILE 4 – purple -->
       <g>
         <rect x="548" y="12" width="158" height="212" rx="14" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
         <circle cx="574" cy="38" r="15" fill="#8B5CF6"/>
@@ -1237,7 +1237,7 @@ window.ECONOS_ICONS = {
       </g>
       <line x1="710" y1="118" x2="722" y2="118" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
-      <!-- TILE 5 — rose -->
+      <!-- TILE 5 – rose -->
       <g>
         <rect x="726" y="12" width="160" height="212" rx="14" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1.5"/>
         <circle cx="752" cy="38" r="15" fill="#F43F5E"/>
@@ -1253,7 +1253,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* Crowding Out — loanable funds market with D2 shift (Gov Spending Card 6) */
+  /* Crowding Out – loanable funds market with D2 shift (Gov Spending Card 6) */
   crowdingOutLoanableFunds: `
     <svg viewBox="0 0 520 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
@@ -1285,11 +1285,11 @@ window.ECONOS_ICONS = {
       <line x1="120" y1="320" x2="460" y2="100" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
       <text x="450" y="92" font-size="13" font-weight="800" fill="#2563EB" text-anchor="end">Supply of loanable funds</text>
 
-      <!-- D1 (original demand) — downward, passes through (260, 230) where it crosses S -->
+      <!-- D1 (original demand) – downward, passes through (260, 230) where it crosses S -->
       <line x1="110" y1="120" x2="430" y2="340" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
       <text x="430" y="336" font-size="13" font-weight="800" fill="#0F766E">D₁</text>
 
-      <!-- D2 (shifted right, with higher gov borrowing) — parallel to D1, shifted by ~70 -->
+      <!-- D2 (shifted right, with higher gov borrowing) – parallel to D1, shifted by ~70 -->
       <line x1="180" y1="120" x2="500" y2="340" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 4"/>
       <text x="490" y="328" font-size="13" font-weight="800" fill="#F97316">D₂</text>
       <text x="316" y="174" font-size="11" font-weight="700" fill="#F97316">with higher</text>
@@ -1317,12 +1317,12 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* Automatic Stabilisers — two side-by-side branching flow panels (Gov Spending Card 7) */
+  /* Automatic Stabilisers – two side-by-side branching flow panels (Gov Spending Card 7) */
   autoStabilisersFlow: `
     <svg viewBox="0 0 740 560" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs></defs>
 
-      <!-- ROSE PANEL (left) — In a recession. Outer 10→370 (360w). Inner content at 32 → 22px buffer to outer border -->
+      <!-- ROSE PANEL (left) – In a recession. Outer 10→370 (360w). Inner content at 32 → 22px buffer to outer border -->
       <rect x="10" y="10" width="360" height="540" rx="20" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
       <circle cx="48" cy="50" r="20" fill="#F43F5E"/>
       <text x="48" y="58" font-size="20" text-anchor="middle">📉</text>
@@ -1364,7 +1364,7 @@ window.ECONOS_ICONS = {
       <text x="190" y="510" font-size="14" font-weight="700" fill="#BE123C" text-anchor="middle">Recession is softened</text>
       <text x="190" y="526" font-size="14" font-weight="700" fill="#BE123C" text-anchor="middle">automatically</text>
 
-      <!-- GREEN PANEL (right) — In a boom -->
+      <!-- GREEN PANEL (right) – In a boom -->
       <rect x="380" y="10" width="350" height="540" rx="20" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
       <circle cx="418" cy="50" r="20" fill="#10B981"/>
       <text x="418" y="58" font-size="20" text-anchor="middle">📈</text>
@@ -1459,7 +1459,7 @@ window.ECONOS_ICONS = {
 
       <!-- idl-1: D2 + E2 (gov. borrowing shifts demand right by 50px) -->
       <!-- D2=(130,50)→(405,237); E2=(260,138); rate-rise arrow on y-axis -->
-      <!-- D-shift arrow: (302,200)→(347,200) — both points verified on their curves -->
+      <!-- D-shift arrow: (302,200)→(347,200) – both points verified on their curves -->
       <g class="idl-1" style="display:none">
         <line x1="130" y1="50" x2="405" y2="237" stroke="#F97316" stroke-width="2.2" stroke-dasharray="8 4" stroke-linecap="round"/>
         <text x="407" y="240" font-size="11" font-weight="800" fill="#F97316">D₂</text>
@@ -1611,14 +1611,14 @@ window.ECONOS_ICONS = {
         <line x1="65" y1="90" x2="265" y2="210" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         <text x="270" y="214" font-size="12" font-weight="800" fill="#2563EB">AD</text>
 
-        <!-- Point 1 (top of curve, higher P, lower Y) — at (115, 120) -->
+        <!-- Point 1 (top of curve, higher P, lower Y) – at (115, 120) -->
         <line x1="50" y1="120" x2="115" y2="120" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
         <line x1="115" y1="220" x2="115" y2="120" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
         <circle cx="115" cy="120" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
         <text x="44" y="124" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="end">P₁</text>
         <text x="115" y="237" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="middle">Y₁</text>
 
-        <!-- Point 2 (lower P, higher Y) — at (215, 180) -->
+        <!-- Point 2 (lower P, higher Y) – at (215, 180) -->
         <line x1="50" y1="180" x2="215" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
         <line x1="215" y1="220" x2="215" y2="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 2"/>
         <circle cx="215" cy="180" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"/>
@@ -1657,11 +1657,11 @@ window.ECONOS_ICONS = {
         <text x="42" y="68" font-size="11" font-weight="700" fill="#374151" text-anchor="end">P</text>
         <text x="295" y="228" font-size="11" font-weight="700" fill="#374151">Y</text>
 
-        <!-- AD₁ — dashed grey -->
+        <!-- AD₁ – dashed grey -->
         <line x1="60" y1="90" x2="220" y2="210" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
         <text x="48" y="86" font-size="11" font-weight="700" fill="#94A3B8">AD₁</text>
 
-        <!-- AD₂ — solid green, shifted right by 50px -->
+        <!-- AD₂ – solid green, shifted right by 50px -->
         <line x1="110" y1="90" x2="270" y2="210" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
         <text x="275" y="214" font-size="12" font-weight="800" fill="#10B981">AD₂</text>
 
@@ -1679,7 +1679,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === AD interactive — base/extension/shift via CSS layers === */
+  /* === AD interactive – base/extension/shift via CSS layers === */
   adInteractive: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
       <defs>
@@ -1720,7 +1720,7 @@ window.ECONOS_ICONS = {
         <text x="568" y="406" font-size="18" font-weight="800" fill="#0F172A">Y</text>
       </g>
 
-      <!-- ===== AD₁ — slope 1, from (120, 110) to (470, 380). E₁ at midpoint (295, 245) ===== -->
+      <!-- ===== AD₁ – slope 1, from (120, 110) to (470, 380). E₁ at midpoint (295, 245) ===== -->
       <g class="layer-curve-solid">
         <line x1="120" y1="110" x2="470" y2="380" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
         <text x="480" y="384" font-size="15" font-weight="700" fill="#334155">AD</text>
@@ -1741,7 +1741,7 @@ window.ECONOS_ICONS = {
         <text x="304" y="238" font-size="13" font-weight="700" fill="#1E40AF">E₁</text>
       </g>
 
-      <!-- ===== EXTENSION LAYER — TWO new equilibria on the curve =====
+      <!-- ===== EXTENSION LAYER – TWO new equilibria on the curve =====
            Slope is 1, so points on the curve: (120+t, 110+t) for t in [0, 350]
            E₂ upper: t=110 → (230, 220). On axis: P₂ at y=220, Y₂ at x=230
            E₃ lower: t=190 → (310 wait that's beyond midpoint). Let me redo.
@@ -1772,7 +1772,7 @@ window.ECONOS_ICONS = {
               marker-start="url(#adv2-mv-start)" marker-end="url(#adv2-mv-end)"/>
       </g>
 
-      <!-- ===== SHIFT LAYER — AD₀ and AD₂ ===== -->
+      <!-- ===== SHIFT LAYER – AD₀ and AD₂ ===== -->
       <g class="layer-shift">
         <!-- AD₀ shifted left by 80: from (40, 110) to (390, 380), parallel slope 1 -->
         <line x1="40" y1="110" x2="390" y2="380" stroke="#10B981" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round" opacity="0.75"/>
@@ -1834,8 +1834,8 @@ window.ECONOS_ICONS = {
         <g transform="translate(620, 100)">
           <text x="0" y="0" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">SLIDE ALONG AD</text>
           <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">If the <tspan font-weight="700">price level</tspan></text>
-          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">changes — and only</text>
-          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">that — we slide UP</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">changes – and only</text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">that – we slide UP</text>
           <text x="0" y="90" font-size="14" font-weight="600" fill="#334155">or DOWN the curve.</text>
           <text x="0" y="125" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">RESULT</text>
           <text x="0" y="150" font-size="14" font-weight="600" fill="#334155">P ↑ → Y ↓ (E₂)</text>
@@ -1854,7 +1854,7 @@ window.ECONOS_ICONS = {
           <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">changes, the whole</text>
           <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">curve moves at every</text>
           <text x="0" y="90" font-size="14" font-weight="600" fill="#334155">price level.</text>
-          <text x="0" y="125" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">TRIGGERS — EITHER WAY</text>
+          <text x="0" y="125" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">TRIGGERS – EITHER WAY</text>
           <text x="0" y="150" font-size="13" font-weight="600" fill="#475569">Rate cuts → shift right</text>
           <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">Tax rises → shift left</text>
           <text x="0" y="190" font-size="13" font-weight="600" fill="#475569">Sterling falls → shift right</text>
@@ -1978,7 +1978,7 @@ window.ECONOS_ICONS = {
     <text x="235" y="292" font-size="10" fill="#475569" text-anchor="middle">Good B</text>
     <path d="M 55,75 C 240,75 385,255 385,268" fill="none" stroke="#2563EB" stroke-width="2.5"/>
     <text x="358" y="70" font-size="12" font-weight="700" fill="#2563EB">PPF</text>
-    <!-- idl-1: Pa — Low OC triangle -->
+    <!-- idl-1: Pa – Low OC triangle -->
     <g class="idl-1" style="display:none">
       <circle cx="135" cy="86" r="4.5" fill="#2563EB"/>
       <line x1="135" y1="86" x2="165" y2="86" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfboi-gn)"/>
@@ -1987,7 +1987,7 @@ window.ECONOS_ICONS = {
       <rect x="90" y="62" width="62" height="16" rx="4" fill="#DBEAFE"/>
       <text x="121" y="74" font-size="9" font-weight="600" fill="#1E40AF" text-anchor="middle">Low OC</text>
     </g>
-    <!-- idl-2: Pb — Rising OC triangle -->
+    <!-- idl-2: Pb – Rising OC triangle -->
     <g class="idl-2" style="display:none">
       <circle cx="271" cy="153" r="4.5" fill="#2563EB"/>
       <line x1="271" y1="153" x2="301" y2="153" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfboi-gn)"/>
@@ -1996,7 +1996,7 @@ window.ECONOS_ICONS = {
       <rect x="192" y="130" width="78" height="16" rx="4" fill="#FEF3C7"/>
       <text x="231" y="142" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">Rising OC</text>
     </g>
-    <!-- idl-3: Pc — High OC triangle (full picture) -->
+    <!-- idl-3: Pc – High OC triangle (full picture) -->
     <g class="idl-3" style="display:none">
       <circle cx="359" cy="232" r="4.5" fill="#2563EB"/>
       <line x1="359" y1="232" x2="379" y2="232" stroke="#059669" stroke-width="1.5" marker-end="url(#ppfboi-gn)"/>
@@ -2073,7 +2073,7 @@ window.ECONOS_ICONS = {
       <text x="620" y="226" font-size="13" font-weight="600" fill="#334155">reallocated between uses.</text>
       <text x="620" y="262" font-size="10" font-weight="800" fill="#7C3AED" letter-spacing="2">OPPORTUNITY COST</text>
       <text x="620" y="284" font-size="12" fill="#475569">Every step along the curve</text>
-      <text x="620" y="302" font-size="12" fill="#475569">has an opportunity cost —</text>
+      <text x="620" y="302" font-size="12" fill="#475569">has an opportunity cost –</text>
       <text x="620" y="320" font-size="12" fill="#475569">the slope of the PPF at that point.</text>
     </g>
 
@@ -2081,7 +2081,7 @@ window.ECONOS_ICONS = {
     <g class="layer-recovery">
       <circle cx="190" cy="318" r="8" fill="#D97706"/>
       <text x="202" y="314" font-size="13" font-weight="700" fill="#D97706">X</text>
-      <text x="218" y="314" font-size="12" fill="#475569">— Underemployment</text>
+      <text x="218" y="314" font-size="12" fill="#475569">– Underemployment</text>
       <line x1="205" y1="310" x2="278" y2="262" stroke="#D97706" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#ppfmv-rec-end)"/>
       <text x="120" y="372" font-size="11" fill="#D97706" font-style="italic">Inefficient zone</text>
     </g>
@@ -2217,11 +2217,11 @@ window.ECONOS_ICONS = {
     <text x="410" y="118" font-size="11" fill="#94A3B8" font-style="italic" text-anchor="end">Unattainable</text>
     <text x="410" y="132" font-size="11" fill="#94A3B8" font-style="italic" text-anchor="end">zone</text>
 
-    <!-- ===== idl-1: H — productively inefficient (view 1+) ===== -->
+    <!-- ===== idl-1: H – productively inefficient (view 1+) ===== -->
     <g class="idl-1" style="display:none">
       <circle cx="155" cy="305" r="8" fill="#DC2626"/>
       <text x="168" y="300" font-size="13" font-weight="700" fill="#DC2626">H</text>
-      <text x="186" y="300" font-size="12" fill="#475569">— inside PPF</text>
+      <text x="186" y="300" font-size="12" fill="#475569">– inside PPF</text>
       <text x="162" y="346" font-size="10.5" fill="#DC2626" font-style="italic" text-anchor="middle">resources idle</text>
     </g>
 
@@ -2235,7 +2235,7 @@ window.ECONOS_ICONS = {
       <text x="163" y="189" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle">Any point ON PPF₁</text>
     </g>
 
-    <!-- ===== idl-3: G★ — allocative efficiency (view 3) ===== -->
+    <!-- ===== idl-3: G★ – allocative efficiency (view 3) ===== -->
     <g class="idl-3" style="display:none">
       <circle cx="234" cy="150" r="9" fill="#D97706"/>
       <text x="234" y="155" font-size="11" font-weight="900" fill="#fff" text-anchor="middle">★</text>
@@ -2280,7 +2280,7 @@ window.ECONOS_ICONS = {
     <rect x="130" y="30" width="210" height="52" rx="6" fill="white" stroke="#E2E8F0"/>
     <text x="140" y="48" font-size="9.5" font-weight="700" fill="#2563EB">With specialisation + trade:</text>
     <text x="140" y="62" font-size="9.5" fill="#334155">Country produces at P (lowest OC)</text>
-    <text x="140" y="75" font-size="9.5" fill="#059669">↗ Consumes at C — beyond own PPF</text>
+    <text x="140" y="75" font-size="9.5" fill="#059669">↗ Consumes at C – beyond own PPF</text>
     <!-- Label: unattainable without trade -->
     <text x="320" y="145" font-size="8.5" fill="#64748B" text-anchor="middle">previously</text>
     <text x="320" y="155" font-size="8.5" fill="#64748B" text-anchor="middle">unattainable</text>
@@ -2309,7 +2309,7 @@ window.ECONOS_ICONS = {
       <text x="296" y="163" font-size="11" font-weight="700" fill="#2563EB">P</text>
       <text x="296" y="176" font-size="9" fill="#475569">production</text>
     </g>
-    <!-- idl-2: Consumption at C — beyond the PPF -->
+    <!-- idl-2: Consumption at C – beyond the PPF -->
     <g class="idl-2" style="display:none">
       <line x1="295" y1="161" x2="335" y2="124" stroke="#059669" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#ppftri-gr)"/>
       <circle cx="340" cy="118" r="6" fill="#059669"/>
@@ -2319,7 +2319,7 @@ window.ECONOS_ICONS = {
       <rect x="62" y="30" width="218" height="52" rx="6" fill="white" stroke="#E2E8F0"/>
       <text x="72" y="48" font-size="9.5" font-weight="700" fill="#2563EB">With specialisation + trade:</text>
       <text x="72" y="62" font-size="9.5" fill="#334155">Produces at P (comparative advantage)</text>
-      <text x="72" y="75" font-size="9.5" fill="#059669">↗ Consumes at C — beyond own PPF</text>
+      <text x="72" y="75" font-size="9.5" fill="#059669">↗ Consumes at C – beyond own PPF</text>
     </g>
   </svg>`,
 
@@ -2367,7 +2367,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="11" fill="#94A3B8" text-anchor="middle">O</text>
       </g>
 
-      <!-- ===== LAYER: PPF base curve — pushed further out ===== -->
+      <!-- ===== LAYER: PPF base curve – pushed further out ===== -->
       <g class="layer-ppf-base">
         <path d="M 60,175 C 240,175 385,320 385,395" fill="none" stroke="#2563EB" stroke-width="3"/>
         <text x="390" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₁</text>
@@ -2381,15 +2381,15 @@ window.ECONOS_ICONS = {
         <!-- Point A: on the curve (efficient) -->
         <circle cx="290" cy="257" r="7" fill="#2563EB"/>
         <text x="300" y="253" font-size="13" font-weight="700" fill="#2563EB">A</text>
-        <text x="314" y="253" font-size="12" fill="#475569">— Efficient (on PPF)</text>
+        <text x="314" y="253" font-size="12" fill="#475569">– Efficient (on PPF)</text>
         <!-- Point B: inside PPF (inefficient) -->
         <circle cx="180" cy="310" r="7" fill="#D97706"/>
         <text x="190" y="306" font-size="13" font-weight="700" fill="#D97706">B</text>
-        <text x="204" y="306" font-size="12" fill="#475569">— Inefficient (inside)</text>
+        <text x="204" y="306" font-size="12" fill="#475569">– Inefficient (inside)</text>
         <!-- Point C: outside PPF (unattainable) -->
         <circle cx="395" cy="200" r="7" fill="#DC2626"/>
         <text x="405" y="196" font-size="13" font-weight="700" fill="#DC2626">C</text>
-        <text x="419" y="196" font-size="12" fill="#475569">— Unattainable</text>
+        <text x="419" y="196" font-size="12" fill="#475569">– Unattainable</text>
         <!-- Zone labels -->
         <text x="100" y="370" font-size="11" fill="#D97706" font-style="italic">Inefficient zone</text>
         <text x="430" y="155" font-size="11" fill="#DC2626" font-style="italic">Unattainable zone</text>
@@ -2414,7 +2414,7 @@ window.ECONOS_ICONS = {
         <!-- Why slopes down -->
         <text x="620" y="198" font-size="10" font-weight="800" fill="#2563EB" letter-spacing="2">WHY IT SLOPES DOWN</text>
         <text x="620" y="220" font-size="13" font-weight="600" fill="#334155">More of one good always means</text>
-        <text x="620" y="238" font-size="13" font-weight="600" fill="#334155">less of the other — scarcity.</text>
+        <text x="620" y="238" font-size="13" font-weight="600" fill="#334155">less of the other – scarcity.</text>
       </g>
 
       <!-- ===== LAYER: opportunity cost (show-extension only) ===== -->
@@ -2462,12 +2462,12 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: shift curves (show-shift only) ===== -->
       <g class="layer-shift-curves">
-        <!-- PPF₁ repeated as dashed blue — marks the original position -->
+        <!-- PPF₁ repeated as dashed blue – marks the original position -->
         <path d="M 60,175 C 240,175 385,320 385,395" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
-        <!-- PPF₂ outward — modest shift -->
+        <!-- PPF₂ outward – modest shift -->
         <path d="M 60,115 C 280,115 460,310 460,395" fill="none" stroke="#2563EB" stroke-width="3"/>
         <text x="465" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₂</text>
-        <!-- PPF₃ inward — modest shift -->
+        <!-- PPF₃ inward – modest shift -->
         <path d="M 60,240 C 175,240 300,350 300,395" fill="none" stroke="#2563EB" stroke-width="3"/>
         <text x="305" y="390" font-size="13" font-weight="700" fill="#2563EB">PPF₃</text>
         <!-- Short double-headed green arrow: PPF₁ → PPF₂ (outward) -->
@@ -2489,17 +2489,17 @@ window.ECONOS_ICONS = {
         <text x="620" y="75" font-size="10" font-weight="800" fill="#059669" letter-spacing="2">PPF SHIFTS</text>
         <!-- PPF₂ outward -->
         <line x1="620" y1="97" x2="640" y2="97" stroke="#2563EB" stroke-width="2.5"/>
-        <text x="648" y="101" font-size="13" font-weight="700" fill="#2563EB">PPF₂ — outward</text>
+        <text x="648" y="101" font-size="13" font-weight="700" fill="#2563EB">PPF₂ – outward</text>
         <text x="648" y="119" font-size="12" fill="#475569">Better technology / More resources</text>
         <text x="648" y="135" font-size="12" fill="#475569">/ Higher productivity</text>
         <!-- PPF₃ inward -->
         <line x1="620" y1="160" x2="640" y2="160" stroke="#2563EB" stroke-width="2.5"/>
-        <text x="648" y="164" font-size="13" font-weight="700" fill="#2563EB">PPF₃ — inward</text>
+        <text x="648" y="164" font-size="13" font-weight="700" fill="#2563EB">PPF₃ – inward</text>
         <text x="648" y="182" font-size="12" fill="#475569">War / natural disaster</text>
         <text x="648" y="198" font-size="12" fill="#475569">/ Capital depreciation</text>
         <!-- Movement along note -->
         <text x="620" y="232" font-size="10" font-weight="800" fill="#334155" letter-spacing="2">MOVEMENT ALONG PPF₁</text>
-        <text x="620" y="253" font-size="12" fill="#475569">Just reallocation — no change</text>
+        <text x="620" y="253" font-size="12" fill="#475569">Just reallocation – no change</text>
         <text x="620" y="269" font-size="12" fill="#475569">in capacity.</text>
       </g>
 
@@ -2510,15 +2510,15 @@ window.ECONOS_ICONS = {
         <line x1="290" y1="400" x2="290" y2="257" stroke="#7D23CB" stroke-width="1" stroke-dasharray="4 3"/>
         <circle cx="290" cy="257" r="7" fill="#7D23CB"/>
         <text x="300" y="253" font-size="13" font-weight="700" fill="#7D23CB">F</text>
-        <text x="314" y="253" font-size="12" fill="#475569">— Productive efficiency</text>
+        <text x="314" y="253" font-size="12" fill="#475569">– Productive efficiency</text>
         <!-- Point G: allocative efficiency t≈0.35 on new PPF₁ → (231, 219) -->
         <circle cx="231" cy="219" r="7" fill="#0891B2"/>
         <text x="241" y="215" font-size="13" font-weight="700" fill="#0891B2">G</text>
-        <text x="255" y="215" font-size="12" fill="#475569">— Allocative efficiency (P=MC)</text>
+        <text x="255" y="215" font-size="12" fill="#475569">– Allocative efficiency (P=MC)</text>
         <!-- Point H: inside PPF (inefficient) -->
         <circle cx="175" cy="308" r="7" fill="#94A3B8"/>
         <text x="185" y="304" font-size="13" font-weight="700" fill="#64748B">H</text>
-        <text x="199" y="304" font-size="12" fill="#475569">— Inefficient (inside PPF)</text>
+        <text x="199" y="304" font-size="12" fill="#475569">– Inefficient (inside PPF)</text>
       </g>
 
       <!-- ===== LAYER: legend efficiency (right panel) ===== -->
@@ -2530,22 +2530,22 @@ window.ECONOS_ICONS = {
         <text x="620" y="68" font-size="10" font-weight="800" fill="#7D23CB" letter-spacing="2">EFFICIENCY</text>
         <!-- F row -->
         <circle cx="627" cy="92" r="7" fill="#7D23CB"/>
-        <text x="642" y="97" font-size="13" font-weight="600" fill="#334155">F — Productive efficiency</text>
-        <text x="642" y="113" font-size="12" fill="#475569">ANY point on the PPF — no waste</text>
+        <text x="642" y="97" font-size="13" font-weight="600" fill="#334155">F – Productive efficiency</text>
+        <text x="642" y="113" font-size="12" fill="#475569">ANY point on the PPF – no waste</text>
         <!-- G row -->
         <circle cx="627" cy="138" r="7" fill="#0891B2"/>
-        <text x="642" y="143" font-size="13" font-weight="600" fill="#334155">G — Allocative efficiency</text>
+        <text x="642" y="143" font-size="13" font-weight="600" fill="#334155">G – Allocative efficiency</text>
         <text x="642" y="159" font-size="12" fill="#475569">The ONE point society wants most</text>
         <text x="642" y="175" font-size="12" fill="#475569">(price = marginal cost)</text>
         <!-- H row -->
         <circle cx="627" cy="200" r="7" fill="#94A3B8"/>
-        <text x="642" y="205" font-size="13" font-weight="600" fill="#334155">H — Inefficient</text>
-        <text x="642" y="221" font-size="12" fill="#475569">Inside PPF — resources idle</text>
+        <text x="642" y="205" font-size="13" font-weight="600" fill="#334155">H – Inefficient</text>
+        <text x="642" y="221" font-size="12" fill="#475569">Inside PPF – resources idle</text>
         <!-- Key insight block -->
         <text x="620" y="252" font-size="10" font-weight="800" fill="#0891B2" letter-spacing="2">KEY INSIGHT</text>
         <text x="620" y="273" font-size="12" fill="#334155">Many points are productively</text>
         <text x="620" y="289" font-size="12" fill="#334155">efficient. Only ONE is also</text>
-        <text x="620" y="305" font-size="12" font-weight="700" fill="#0891B2">allocatively efficient — G.</text>
+        <text x="620" y="305" font-size="12" font-weight="700" fill="#0891B2">allocatively efficient – G.</text>
       </g>
 
     </svg>
@@ -2649,7 +2649,7 @@ window.ECONOS_ICONS = {
         <line x1="220" y1="175" x2="378" y2="289" stroke="#D97706" stroke-width="2.5" marker-start="url(#dm-amber-start)" marker-end="url(#dm-amber-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">MOVEMENT ALONG CURVE</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Only a price change causes this —</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Only a price change causes this –</text>
         <text x="620" y="120" font-size="13" fill="#334155">the curve itself stays fixed.</text>
         <text x="620" y="175" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">CONTRACTION (E₂)</text>
         <text x="620" y="198" font-size="13" fill="#334155">P rises → Q falls</text>
@@ -2667,17 +2667,17 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole demand curve</text>
-        <!-- D₁ original — dashed blue, marks previous position -->
+        <!-- D₁ original – dashed blue, marks previous position -->
         <g clip-path="url(#dm-chart-clip)">
           <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
         <text x="494" y="372" font-size="13" font-weight="600" fill="#2563EB" opacity="0.7">D₁</text>
-        <!-- D₀ left shift — blue solid (new position, same colour) -->
+        <!-- D₀ left shift – blue solid (new position, same colour) -->
         <g clip-path="url(#dm-chart-clip)">
           <line x1="30" y1="90" x2="420" y2="370" stroke="#2563EB" stroke-width="2.5"/>
         </g>
         <text x="426" y="368" font-size="14" font-weight="700" fill="#2563EB">D₀</text>
-        <!-- D₂ right shift — blue solid (new position, same colour) -->
+        <!-- D₂ right shift – blue solid (new position, same colour) -->
         <g clip-path="url(#dm-chart-clip)">
           <line x1="170" y1="90" x2="560" y2="370" stroke="#2563EB" stroke-width="2.5"/>
         </g>
@@ -2697,18 +2697,18 @@ window.ECONOS_ICONS = {
         <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#dm-red-start)" marker-end="url(#dm-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF DEMAND</text>
-        <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
+        <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes –</text>
         <text x="620" y="120" font-size="13" fill="#334155">the whole curve moves.</text>
         <line x1="620" y1="160" x2="660" y2="160" stroke="#2563EB" stroke-width="2.5"/>
-        <text x="668" y="164" font-size="12" font-weight="600" fill="#2563EB">D₂ — right (increase):</text>
+        <text x="668" y="164" font-size="12" font-weight="600" fill="#2563EB">D₂ – right (increase):</text>
         <text x="620" y="182" font-size="12" fill="#334155">↑ income, ↑ tastes,</text>
         <text x="620" y="198" font-size="12" fill="#334155">↑ substitute price</text>
         <line x1="620" y1="222" x2="660" y2="222" stroke="#2563EB" stroke-width="2.5"/>
-        <text x="668" y="226" font-size="12" font-weight="600" fill="#2563EB">D₀ — left (decrease):</text>
+        <text x="668" y="226" font-size="12" font-weight="600" fill="#2563EB">D₀ – left (decrease):</text>
         <text x="620" y="244" font-size="12" fill="#334155">↓ income, ↓ tastes,</text>
         <text x="620" y="260" font-size="12" fill="#334155">↑ complement price</text>
         <text x="620" y="295" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">REMEMBER</text>
-        <text x="620" y="318" font-size="13" fill="#334155">Q changes at EVERY price —</text>
+        <text x="620" y="318" font-size="13" fill="#334155">Q changes at EVERY price –</text>
         <text x="620" y="338" font-size="13" fill="#334155">not just P₁.</text>
       </g>
     </svg>
@@ -2795,14 +2795,14 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#D97706"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price changes → slide ALONG the supply curve</text>
-        <!-- E2 extension point (378, 170) — price up, more supplied -->
+        <!-- E2 extension point (378, 170) – price up, more supplied -->
         <line x1="60" y1="170" x2="378" y2="170" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="378" y1="170" x2="378" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="378" cy="170" r="6" fill="white" stroke="#059669" stroke-width="2.5"/>
         <text x="46" y="174" font-size="12" font-weight="600" fill="#059669" text-anchor="end">P₂</text>
         <text x="378" y="418" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Q₂</text>
         <text x="386" y="158" font-size="11" font-weight="600" fill="#059669">extension</text>
-        <!-- E3 contraction point (204, 295) — price down, less supplied -->
+        <!-- E3 contraction point (204, 295) – price down, less supplied -->
         <line x1="60" y1="295" x2="204" y2="295" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <line x1="204" y1="295" x2="204" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <circle cx="204" cy="295" r="6" fill="white" stroke="#DC2626" stroke-width="2.5"/>
@@ -2830,17 +2830,17 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Non-price factors → SHIFT the whole supply curve</text>
-        <!-- S₁ original — dashed red, marks previous position -->
+        <!-- S₁ original – dashed red, marks previous position -->
         <g clip-path="url(#sp-chart-clip)">
           <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
         <text x="494" y="88" font-size="13" font-weight="600" fill="#DC2626" opacity="0.7">S₁</text>
-        <!-- S₀ left shift — red solid (new position, same colour) -->
+        <!-- S₀ left shift – red solid (new position, same colour) -->
         <g clip-path="url(#sp-chart-clip)">
           <line x1="30" y1="370" x2="420" y2="90" stroke="#DC2626" stroke-width="2.5"/>
         </g>
         <text x="424" y="88" font-size="14" font-weight="700" fill="#DC2626">S₀</text>
-        <!-- S₂ right shift — red solid (new position, same colour) -->
+        <!-- S₂ right shift – red solid (new position, same colour) -->
         <g clip-path="url(#sp-chart-clip)">
           <line x1="170" y1="370" x2="560" y2="90" stroke="#DC2626" stroke-width="2.5"/>
         </g>
@@ -2860,14 +2860,14 @@ window.ECONOS_ICONS = {
         <line x1="238" y1="230" x2="352" y2="230" stroke="#059669" stroke-width="3.5" marker-start="url(#sp-red-start)" marker-end="url(#sp-green-end)"/>
         <!-- Legend panel -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">SHIFT OF SUPPLY</text>
-        <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes —</text>
+        <text x="620" y="100" font-size="13" fill="#334155">A non-price determinant changes –</text>
         <text x="620" y="120" font-size="13" fill="#334155">the whole curve moves.</text>
         <line x1="620" y1="155" x2="660" y2="155" stroke="#DC2626" stroke-width="2.5"/>
-        <text x="668" y="159" font-size="12" font-weight="600" fill="#DC2626">S₂ — right (increase in supply):</text>
+        <text x="668" y="159" font-size="12" font-weight="600" fill="#DC2626">S₂ – right (increase in supply):</text>
         <text x="620" y="177" font-size="12" fill="#334155">Lower costs / Better technology</text>
         <text x="620" y="193" font-size="12" fill="#334155">/ More producers / Subsidies</text>
         <line x1="620" y1="217" x2="660" y2="217" stroke="#DC2626" stroke-width="2.5"/>
-        <text x="668" y="221" font-size="12" font-weight="600" fill="#DC2626">S₀ — left (decrease in supply):</text>
+        <text x="668" y="221" font-size="12" font-weight="600" fill="#DC2626">S₀ – left (decrease in supply):</text>
         <text x="620" y="243" font-size="12" fill="#334155">Higher wages / Input price rise</text>
         <text x="620" y="259" font-size="12" fill="#334155">/ New tax / Supply shock</text>
         <text x="620" y="295" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">REMEMBER</text>
@@ -2895,11 +2895,11 @@ window.ECONOS_ICONS = {
       <!-- Producer surplus: bounded by MC curve (bottom), Pe line (top), y-axis (left) -->
       <polygon points="60,210 230,210 60,350" fill="#F59E0B" fill-opacity="0.18" stroke="none"/>
 
-      <!-- MB (demand, downward) — starts at y-axis -->
+      <!-- MB (demand, downward) – starts at y-axis -->
       <line x1="60" y1="70" x2="400" y2="350" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
       <text x="408" y="354" font-size="14" font-weight="800" fill="#2563EB">MB</text>
 
-      <!-- MC (supply, upward) — starts at y-axis -->
+      <!-- MC (supply, upward) – starts at y-axis -->
       <line x1="60" y1="350" x2="400" y2="70" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
       <text x="408" y="74" font-size="14" font-weight="800" fill="#D97706">MC</text>
 
@@ -3481,7 +3481,7 @@ window.ECONOS_ICONS = {
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Market equilibrium · supply meets demand at P* and Q*</text>
         <!-- Panel content -->
         <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">MARKET EQUILIBRIUM</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Where D meets S — the price that</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Where D meets S – the price that</text>
         <text x="620" y="118" font-size="13" fill="#334155">clears the market.</text>
         <text x="620" y="143" font-size="13" font-weight="700" fill="#1E293B">At P*: Qd = Qs.</text>
         <text x="620" y="161" font-size="13" fill="#334155">No shortage, no surplus.</text>
@@ -3500,11 +3500,11 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Demand shifts right → higher P and higher Q</text>
-        <!-- D₁ original — dashed blue, marks previous position -->
+        <!-- D₁ original – dashed blue, marks previous position -->
         <g clip-path="url(#mk-chart-clip)">
           <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
-        <!-- D₂ right shift — blue solid (new position, same colour) -->
+        <!-- D₂ right shift – blue solid (new position, same colour) -->
         <g clip-path="url(#mk-chart-clip)">
           <line x1="170" y1="90" x2="560" y2="370" stroke="#2563EB" stroke-width="2.5"/>
         </g>
@@ -3534,7 +3534,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="252" font-size="13" fill="#334155">↑ income / ↑ tastes</text>
         <text x="620" y="270" font-size="13" fill="#334155">↑ substitute price / ↑ population</text>
         <text x="620" y="305" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXAM NOTE</text>
-        <text x="620" y="328" font-size="13" fill="#334155">Both P and Q rise — unambiguous</text>
+        <text x="620" y="328" font-size="13" fill="#334155">Both P and Q rise – unambiguous</text>
         <text x="620" y="346" font-size="13" fill="#334155">outcome when only D shifts.</text>
       </g>
 
@@ -3543,11 +3543,11 @@ window.ECONOS_ICONS = {
         <!-- Title strip -->
         <circle cx="74" cy="32" r="7" fill="#059669"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Supply shifts right → higher Q but lower P</text>
-        <!-- S₁ original — dashed red, marks previous position -->
+        <!-- S₁ original – dashed red, marks previous position -->
         <g clip-path="url(#mk-chart-clip)">
           <line x1="100" y1="370" x2="490" y2="90" stroke="#DC2626" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
         </g>
-        <!-- S₂ right shift — red solid (new position, same colour) -->
+        <!-- S₂ right shift – red solid (new position, same colour) -->
         <g clip-path="url(#mk-chart-clip)">
           <line x1="170" y1="370" x2="560" y2="90" stroke="#DC2626" stroke-width="2.5"/>
         </g>
@@ -3577,7 +3577,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="252" font-size="13" fill="#334155">↓ input costs / better technology</text>
         <text x="620" y="270" font-size="13" fill="#334155">↑ producers / subsidy</text>
         <text x="620" y="305" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">EXAM NOTE</text>
-        <text x="620" y="328" font-size="13" fill="#334155">Q rises but P falls — opposite</text>
+        <text x="620" y="328" font-size="13" fill="#334155">Q rises but P falls – opposite</text>
         <text x="620" y="346" font-size="13" fill="#334155">direction to demand shift outcome.</text>
       </g>
     </svg>
@@ -3627,7 +3627,7 @@ window.ECONOS_ICONS = {
         <text x="496" y="386" font-size="13" font-weight="700" fill="#2563EB">SRPC₁</text>
       </g>
 
-      <!-- ===== LAYER: SRPC1 dashed (extension/shift states — marks original position) ===== -->
+      <!-- ===== LAYER: SRPC1 dashed (extension/shift states – marks original position) ===== -->
       <g class="layer-srpc1-dashed">
         <g clip-path="url(#ph-chart-clip)">
           <line x1="90" y1="103" x2="490" y2="383" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" opacity="0.55"/>
@@ -3699,7 +3699,7 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend extension ===== -->
       <g class="layer-legend-extension">
         <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Friedman & Phelps (1968): no long-run trade-off — LRPC is vertical</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Friedman & Phelps (1968): no long-run trade-off – LRPC is vertical</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THREE STAGES</text>
         <text x="620" y="100" font-size="13" font-weight="700" fill="#1E293B">A → B (short run):</text>
         <text x="620" y="118" font-size="13" fill="#334155">stimulus pushes U below U_N,</text>
@@ -3718,7 +3718,7 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: stagflation (1970s shift) ===== -->
       <g class="layer-stagflation">
-        <!-- SRPC₃ — supply-shock shifted curve, blue solid (new position, same colour) -->
+        <!-- SRPC₃ – supply-shock shifted curve, blue solid (new position, same colour) -->
         <g clip-path="url(#ph-chart-clip)">
           <line x1="90" y1="55" x2="490" y2="265" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
@@ -3743,7 +3743,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="118" font-size="13" fill="#334155">shifted SRAS left.</text>
         <text x="620" y="148" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">RESULT: STAGFLATION</text>
         <text x="620" y="171" font-size="13" fill="#334155">Inflation AND unemployment</text>
-        <text x="620" y="189" font-size="13" fill="#334155">rose together — impossible</text>
+        <text x="620" y="189" font-size="13" fill="#334155">rose together – impossible</text>
         <text x="620" y="207" font-size="13" fill="#334155">on the original Phillips curve.</text>
         <text x="620" y="237" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">SRPC SHIFTS UP</text>
         <text x="620" y="260" font-size="13" fill="#334155">Cost-push inflation raised the</text>
@@ -3817,7 +3817,7 @@ window.ECONOS_ICONS = {
         <text x="312" y="248" font-size="13" font-weight="700" fill="#2563EB">UK Lorenz</text>
       </g>
 
-      <!-- ===== LAYER: UK Lorenz dashed (shift state — original reference) ===== -->
+      <!-- ===== LAYER: UK Lorenz dashed (shift state – original reference) ===== -->
       <g class="layer-lorenz-uk-dashed">
         <path d="M 60,400 Q 150,395 198,334 T 405,55" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="9 5" stroke-linecap="round" opacity="0.55"/>
         <text x="312" y="248" font-size="12" font-weight="600" fill="#2563EB" opacity="0.7">UK</text>
@@ -3869,7 +3869,7 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend extension (Gini formula) ===== -->
       <g class="layer-legend-extension">
         <circle cx="455" cy="32" r="7" fill="#D97706"/>
-        <text x="471" y="37" font-size="12" font-weight="600" fill="#334155">Gini = A ÷ (A + B) — measure of inequality</text>
+        <text x="471" y="37" font-size="12" font-weight="600" fill="#334155">Gini = A ÷ (A + B) – measure of inequality</text>
         <text x="455" y="78" font-size="10" font-weight="700" fill="#D97706" letter-spacing="2">THE GINI COEFFICIENT</text>
         <!-- Formula box -->
         <rect x="455" y="92" width="380" height="62" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
@@ -3891,12 +3891,12 @@ window.ECONOS_ICONS = {
         <text x="455" y="380" font-size="11" font-style="italic" fill="#64748B">distributed than income.</text>
       </g>
 
-      <!-- ===== LAYER: comparison curves (shift state — international) ===== -->
+      <!-- ===== LAYER: comparison curves (shift state – international) ===== -->
       <g class="layer-compare">
-        <!-- Sweden — more equal (Gini ≈ 0.27) -->
+        <!-- Sweden – more equal (Gini ≈ 0.27) -->
         <path d="M 60,400 Q 150,388 198,320 T 405,55" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
         <text x="290" y="220" font-size="13" font-weight="700" fill="#059669">Sweden</text>
-        <!-- South Africa — much more unequal (Gini ≈ 0.63) -->
+        <!-- South Africa – much more unequal (Gini ≈ 0.63) -->
         <path d="M 60,400 Q 180,398 267,341 T 405,55" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
         <text x="200" y="362" font-size="13" font-weight="700" fill="#DC2626">South Africa</text>
         <!-- Annotation arrow showing "more unequal" direction -->
@@ -3959,7 +3959,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== LAYER: base curves (Demand=MSB and MPC=Supply) — always visible ===== -->
+      <!-- ===== LAYER: base curves (Demand=MSB and MPC=Supply) – always visible ===== -->
       <g class="layer-base-curves">
         <!-- Demand = MSB (amber downward) -->
         <g clip-path="url(#ne-chart-clip)">
@@ -3994,18 +3994,18 @@ window.ECONOS_ICONS = {
         <text x="620" y="176" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">WHAT EACH CURVE MEANS</text>
         <line x1="620" y1="200" x2="650" y2="200" stroke="#D97706" stroke-width="3"/>
         <text x="658" y="204" font-size="14" font-weight="700" fill="#D97706">D = MSB</text>
-        <text x="620" y="224" font-size="13" fill="#334155">Marginal social benefit — value</text>
+        <text x="620" y="224" font-size="13" fill="#334155">Marginal social benefit – value</text>
         <text x="620" y="242" font-size="13" fill="#334155">to society of one more unit.</text>
         <line x1="620" y1="266" x2="650" y2="266" stroke="#059669" stroke-width="3"/>
         <text x="658" y="270" font-size="14" font-weight="700" fill="#059669">MPC</text>
-        <text x="620" y="290" font-size="13" fill="#334155">Marginal private cost — what</text>
+        <text x="620" y="290" font-size="13" fill="#334155">Marginal private cost – what</text>
         <text x="620" y="308" font-size="13" fill="#334155">the firm itself pays.</text>
         <text x="620" y="340" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">BUT THIS IGNORES…</text>
         <text x="620" y="364" font-size="14" fill="#334155">External costs on third parties</text>
         <text x="620" y="384" font-size="14" fill="#334155">(pollution, congestion).</text>
       </g>
 
-      <!-- ===== LAYER: MSC curve (extension + shift + efficiency states) — blue to match Card 1 ===== -->
+      <!-- ===== LAYER: MSC curve (extension + shift + efficiency states) – blue to match Card 1 ===== -->
       <g class="layer-msc">
         <g clip-path="url(#ne-chart-clip)">
           <line x1="100" y1="290" x2="490" y2="10" stroke="#2563EB" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round"/>
@@ -4129,7 +4129,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== LAYER: base curves (D and S — always visible) ===== -->
+      <!-- ===== LAYER: base curves (D and S – always visible) ===== -->
       <g class="layer-base-curves">
         <g clip-path="url(#pc-chart-clip)">
           <line x1="100" y1="90" x2="490" y2="370" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
@@ -4154,7 +4154,7 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: legend base ===== -->
       <g class="layer-legend-base">
         <circle cx="74" cy="32" r="7" fill="#64748B"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Free market clears at (Q*, P*) — no shortage, no surplus</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Free market clears at (Q*, P*) – no shortage, no surplus</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">FREE MARKET BENCHMARK</text>
         <text x="620" y="100" font-size="13" fill="#334155">Where supply meets demand,</text>
         <text x="620" y="118" font-size="13" fill="#334155">the market clears: every buyer</text>
@@ -4273,7 +4273,7 @@ window.ECONOS_ICONS = {
         <text x="58" y="178" font-size="10" font-weight="700" fill="#6D28D9" text-anchor="middle">falls</text>
       </g>
 
-      <!-- idl-1: Sterling depreciates — first wave of price effects -->
+      <!-- idl-1: Sterling depreciates – first wave of price effects -->
       <g class="idl-1" style="display:none">
         <line x1="98" y1="135" x2="135" y2="100" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
         <line x1="98" y1="165" x2="135" y2="200" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
@@ -4361,7 +4361,7 @@ window.ECONOS_ICONS = {
         <!-- AD2 (blue, shifted right ~50) -->
         <line x1="120" y1="80" x2="330" y2="240" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
         <text x="115" y="78" font-size="10" font-weight="800" fill="#2563EB">AD₂</text>
-        <!-- SRAS — flat through recession region then upward -->
+        <!-- SRAS – flat through recession region then upward -->
         <path d="M 60,210 L 200,200 C 240,196 280,160 320,90" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
         <text x="324" y="86" font-size="10" font-weight="800" fill="#0F172A">SRAS</text>
 
@@ -4408,7 +4408,7 @@ window.ECONOS_ICONS = {
         <!-- AD2 (orange, shifted right) -->
         <line x1="475" y1="80" x2="685" y2="240" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
         <text x="470" y="78" font-size="10" font-weight="800" fill="#F97316">AD₂</text>
-        <!-- SRAS — flat then steep (steep region near right side) -->
+        <!-- SRAS – flat then steep (steep region near right side) -->
         <path d="M 420,225 L 510,220 C 550,210 575,150 590,80" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
         <text x="594" y="84" font-size="10" font-weight="800" fill="#0F172A">SRAS</text>
 
@@ -4419,7 +4419,7 @@ window.ECONOS_ICONS = {
         <text x="404" y="192" font-size="9" font-weight="800" fill="#0F172A" text-anchor="end">P₁</text>
         <text x="553" y="258" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">Y₁</text>
 
-        <!-- E2 at (580, 145) (steep AS — big P move, small Y move) -->
+        <!-- E2 at (580, 145) (steep AS – big P move, small Y move) -->
         <line x1="408" y1="145" x2="580" y2="145" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
         <line x1="580" y1="145" x2="580" y2="245" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
         <circle cx="580" cy="145" r="3.5" fill="#fff" stroke="#0F172A" stroke-width="1.5"/>
@@ -4513,7 +4513,7 @@ window.ECONOS_ICONS = {
         <text x="248" y="185" font-size="11" font-weight="700" fill="#DC2626" font-style="italic">J-curve</text>
       </g>
 
-      <!-- idl-3: Marshall-Lerner fails — dashed purple path + formula box -->
+      <!-- idl-3: Marshall-Lerner fails – dashed purple path + formula box -->
       <g class="idl-3" style="display:none">
         <path d="M 110,155 C 135,175 178,252 202,252 C 228,252 300,258 410,256"
               fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-dasharray="9 5" stroke-linecap="round"/>
@@ -4562,22 +4562,22 @@ window.ECONOS_ICONS = {
         <text x="125" y="180" font-size="12" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90 125 180)">Stay silent</text>
         <text x="125" y="300" font-size="12" font-weight="700" fill="#334155" text-anchor="middle" transform="rotate(-90 125 300)">Confess</text>
 
-        <!-- Cell (Silent, Silent) — Pareto optimum -->
+        <!-- Cell (Silent, Silent) – Pareto optimum -->
         <rect x="170" y="120" width="170" height="120" fill="#ECFDF5" stroke="#059669" stroke-width="2" rx="6"/>
         <text x="195" y="155" font-size="13" font-weight="700" fill="#059669">A: 1 year</text>
         <text x="315" y="225" font-size="13" font-weight="700" fill="#059669" text-anchor="end">B: 1 year</text>
 
-        <!-- Cell (Silent, Confess) — A betrayed -->
+        <!-- Cell (Silent, Confess) – A betrayed -->
         <rect x="340" y="120" width="170" height="120" fill="#FFFBEB" stroke="#D97706" stroke-width="2" rx="6"/>
         <text x="365" y="155" font-size="13" font-weight="700" fill="#DC2626">A: 10 years</text>
         <text x="485" y="225" font-size="13" font-weight="700" fill="#059669" text-anchor="end">B: 0</text>
 
-        <!-- Cell (Confess, Silent) — B betrayed -->
+        <!-- Cell (Confess, Silent) – B betrayed -->
         <rect x="170" y="240" width="170" height="120" fill="#FFFBEB" stroke="#D97706" stroke-width="2" rx="6"/>
         <text x="195" y="275" font-size="13" font-weight="700" fill="#059669">A: 0</text>
         <text x="315" y="345" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">B: 10 years</text>
 
-        <!-- Cell (Confess, Confess) — Nash equilibrium -->
+        <!-- Cell (Confess, Confess) – Nash equilibrium -->
         <rect x="340" y="240" width="170" height="120" fill="#FEE2E2" stroke="#DC2626" stroke-width="2" rx="6"/>
         <text x="365" y="275" font-size="13" font-weight="700" fill="#DC2626">A: 5 years</text>
         <text x="485" y="345" font-size="13" font-weight="700" fill="#DC2626" text-anchor="end">B: 5 years</text>
@@ -4592,7 +4592,7 @@ window.ECONOS_ICONS = {
         <text x="626" y="37" font-size="12" font-weight="600" fill="#334155">Two suspects · each chooses silent or confess</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE SCENARIO</text>
         <text x="620" y="100" font-size="13" fill="#334155">Two suspects arrested. Each</text>
-        <text x="620" y="118" font-size="13" fill="#334155">decides separately — no</text>
+        <text x="620" y="118" font-size="13" fill="#334155">decides separately – no</text>
         <text x="620" y="136" font-size="13" fill="#334155">communication possible.</text>
         <text x="620" y="170" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE PAYOFFS</text>
         <text x="620" y="192" font-size="13" fill="#334155">Both silent → <tspan font-weight="700">1 year each</tspan></text>
@@ -4601,7 +4601,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="262" font-size="10" font-weight="700" fill="#334155" letter-spacing="2">THE PUZZLE</text>
         <text x="620" y="284" font-size="13" fill="#334155">Each rational player picks the</text>
         <text x="620" y="302" font-size="13" fill="#334155">strategy that's best for them.</text>
-        <text x="620" y="320" font-size="13" fill="#334155">What outcome emerges — and</text>
+        <text x="620" y="320" font-size="13" fill="#334155">What outcome emerges – and</text>
         <text x="620" y="338" font-size="13" fill="#334155">is it the best they could do?</text>
       </g>
 
@@ -4634,7 +4634,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="266" font-size="13" fill="#334155">CONFESS is best for A</text>
         <text x="620" y="284" font-size="13" fill="#334155"><tspan font-weight="700">regardless</tspan> of what B does.</text>
         <text x="620" y="320" font-size="11" font-style="italic" fill="#64748B">By symmetry, B's reasoning</text>
-        <text x="620" y="336" font-size="11" font-style="italic" fill="#64748B">is identical — both confess.</text>
+        <text x="620" y="336" font-size="11" font-style="italic" fill="#64748B">is identical – both confess.</text>
       </g>
 
       <!-- ===== LAYER: Nash equilibrium (shift) ===== -->
@@ -4702,7 +4702,7 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* === Kuznets curve — static diagram for sol_wellbeing/kuznets card === */
+  /* === Kuznets curve – static diagram for sol_wellbeing/kuznets card === */
   kuznetsCurve: `
     <svg viewBox="0 0 480 280" width="480" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <!-- Background -->
@@ -4723,7 +4723,7 @@ window.ECONOS_ICONS = {
       <!-- Vertical dashed reference line at peak -->
       <line x1="250" y1="60" x2="250" y2="240" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3"/>
 
-      <!-- Kuznets curve — inverted U -->
+      <!-- Kuznets curve – inverted U -->
       <path d="M 60,200 Q 250,-70 440,180" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
 
       <!-- Stage 1: agricultural (ascending segment) -->
@@ -4762,14 +4762,14 @@ window.ECONOS_ICONS = {
       <ellipse cx="140" cy="320" rx="115" ry="11" fill="#FEF3C7" opacity="0.7"/>
 
       <!-- 4 spender sources floating around -->
-      <!-- C — consumer (green coin pouch top-left) -->
+      <!-- C – consumer (green coin pouch top-left) -->
       <g filter="url(#had-soft)">
         <circle cx="65" cy="80" r="28" fill="#DCFCE7"/>
         <path d="M 53 80 Q 50 75 55 73 L 75 73 Q 80 75 77 80 L 79 96 Q 79 100 75 100 L 55 100 Q 51 100 51 96 Z" fill="#22C55E" stroke="#15803D" stroke-width="1.5" stroke-linejoin="round"/>
         <text x="65" y="92" font-size="14" font-weight="800" fill="#FFFFFF" text-anchor="middle">£</text>
       </g>
 
-      <!-- I — investment (amber factory top-right) -->
+      <!-- I – investment (amber factory top-right) -->
       <g filter="url(#had-soft)">
         <circle cx="215" cy="80" r="28" fill="#FEF3C7"/>
         <rect x="200" y="80" width="30" height="20" fill="#F59E0B" stroke="#B45309" stroke-width="1.5"/>
@@ -4777,7 +4777,7 @@ window.ECONOS_ICONS = {
         <rect x="222" y="68" width="5" height="8" fill="#B45309"/>
       </g>
 
-      <!-- G — government (blue building mid-left) -->
+      <!-- G – government (blue building mid-left) -->
       <g filter="url(#had-soft)">
         <circle cx="45" cy="200" r="28" fill="#DBEAFE"/>
         <polygon points="30,202 60,202 45,190" fill="#3B82F6" stroke="#1E40AF" stroke-width="1.5" stroke-linejoin="round"/>
@@ -4788,7 +4788,7 @@ window.ECONOS_ICONS = {
         <line x1="56" y1="208" x2="56" y2="222" stroke="#1E40AF" stroke-width="1.2"/>
       </g>
 
-      <!-- X-M — net trade (purple crate mid-right) -->
+      <!-- X-M – net trade (purple crate mid-right) -->
       <g filter="url(#had-soft)">
         <circle cx="235" cy="200" r="28" fill="#F3E8FF"/>
         <rect x="220" y="188" width="30" height="24" rx="2" fill="#7D23CB" stroke="#5B21B6" stroke-width="1.5"/>
@@ -4950,11 +4950,11 @@ window.ECONOS_ICONS = {
         <text x="560" y="100" font-size="16" font-weight="700" fill="#E11D48">AS</text>
       </g>
 
-      <!-- ===== AD₁ — slope 0.5, passes through Y_FE on AS =====
+      <!-- ===== AD₁ – slope 0.5, passes through Y_FE on AS =====
            AS at x=430: y = 380 - 0.609*(430-90) = 380 - 207 = 173.
            So E₁ at (430, 173). AD₁ with slope 0.5, passing through (430,173):
            y = 173 + 0.5(x-430) = 0.5x - 42.
-           At x=100, y=8 (too high — off chart). Use slope 0.4:
+           At x=100, y=8 (too high – off chart). Use slope 0.4:
            y = 173 + 0.4(x-430) = 0.4x + 1. At x=100, y=41 (still high).
            Use slope 0.5 but start from x=140: at x=140, y=28 (off-top).
            Better: keep slope 0.5 but render only from (180, 48) to (580, 248).
@@ -4973,7 +4973,7 @@ window.ECONOS_ICONS = {
         <text x="440" y="166" font-size="13" font-weight="700" fill="#1E40AF">E<tspan font-size="11" baseline-shift="sub">1</tspan></text>
       </g>
 
-      <!-- ===== EXTENSION LAYER — AD₂ shifted left, new equilibrium E₂ below Y_FE =====
+      <!-- ===== EXTENSION LAYER – AD₂ shifted left, new equilibrium E₂ below Y_FE =====
            AD₂ shifted left by 130: from (50, 48) to (450, 248), slope 0.5.
            AS: y = 380 - 0.609(x-90) = -0.609x + 434.81
            AD₂: y = 0.5(x-50) + 48 = 0.5x + 23
@@ -5004,7 +5004,7 @@ window.ECONOS_ICONS = {
         <text x="400" y="368" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="0.5">OUTPUT GAP</text>
       </g>
 
-      <!-- ===== SHIFT LAYER — Sticky wages, unemployment persists ===== -->
+      <!-- ===== SHIFT LAYER – Sticky wages, unemployment persists ===== -->
       <g class="layer-shift">
         <!-- AD₂ still left-shifted -->
         <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
@@ -5034,7 +5034,7 @@ window.ECONOS_ICONS = {
         <g transform="translate(640, 100)">
           <text x="0" y="0" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">FULL EMPLOYMENT</text>
           <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">AD meets short-run AS</text>
-          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">at Y<tspan font-size="11" baseline-shift="sub">FE</tspan> — economy is at</text>
+          <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">at Y<tspan font-size="11" baseline-shift="sub">FE</tspan> – economy is at</text>
           <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">its potential output.</text>
           <text x="0" y="105" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">UNEMPLOYMENT HERE</text>
           <text x="0" y="130" font-size="13" font-weight="600" fill="#475569">Only the natural rate:</text>
@@ -5042,7 +5042,7 @@ window.ECONOS_ICONS = {
           <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">+ seasonal. No cyclical.</text>
           <text x="0" y="205" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">KEY LINK</text>
           <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Labour is a</text>
-          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">derived demand</tspan> —</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">derived demand</tspan> –</text>
           <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">from output demand.</text>
         </g>
       </g>
@@ -5077,14 +5077,14 @@ window.ECONOS_ICONS = {
           <text x="0" y="190" font-size="14" font-weight="600" fill="#334155">contracts are fixed.</text>
           <text x="0" y="225" font-size="11" font-weight="800" fill="#B45309" letter-spacing="2">CONSEQUENCE</text>
           <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">Unemployment</text>
-          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">persists</tspan> — stimulus</text>
+          <text x="0" y="270" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">persists</tspan> – stimulus</text>
           <text x="0" y="290" font-size="14" font-weight="600" fill="#334155">is needed to shift AD.</text>
         </g>
       </g>
     </svg>
   `,
 
-  /* === Balance of Payments — J-Curve interactive diagram === */
+  /* === Balance of Payments – J-Curve interactive diagram === */
   bopJCurveInteractive: `
     <svg viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" class="ad-svg">
       <defs>
@@ -5138,7 +5138,7 @@ window.ECONOS_ICONS = {
         <circle cx="200" cy="250" r="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
       </g>
 
-      <!-- ===== EXTENSION — short-run dip ===== -->
+      <!-- ===== EXTENSION – short-run dip ===== -->
       <g class="layer-extension">
         <path d="M 200,250 C 235,255 300,345 355,350" stroke="#E11D48" stroke-width="4" fill="none" stroke-linecap="round"/>
         <circle cx="355" cy="350" r="6" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
@@ -5148,7 +5148,7 @@ window.ECONOS_ICONS = {
         <text x="258" y="311" font-size="11" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="1">WIDENS</text>
       </g>
 
-      <!-- ===== SHIFT — full J-curve ===== -->
+      <!-- ===== SHIFT – full J-curve ===== -->
       <g class="layer-shift">
         <path d="M 200,250 C 235,255 300,345 355,350 C 415,355 490,200 560,145" stroke="#10B981" stroke-width="4" fill="none" stroke-linecap="round"/>
 
@@ -5196,7 +5196,7 @@ window.ECONOS_ICONS = {
 
       <g class="layer-legend-extension">
         <g transform="translate(640, 90)">
-          <text x="0" y="0"   font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">SHORT RUN — WORSENING</text>
+          <text x="0" y="0"   font-size="11" font-weight="800" fill="#9F1239" letter-spacing="2">SHORT RUN – WORSENING</text>
           <text x="0" y="28"  font-size="14" font-weight="600" fill="#334155">Depreciation raises</text>
           <text x="0" y="48"  font-size="14" font-weight="600" fill="#334155">import costs at once,</text>
           <text x="0" y="68"  font-size="14" font-weight="600" fill="#334155">but volumes are sticky.</text>
@@ -5213,7 +5213,7 @@ window.ECONOS_ICONS = {
 
       <g class="layer-legend-shift">
         <g transform="translate(640, 90)">
-          <text x="0" y="0"   font-size="11" font-weight="800" fill="#047857" letter-spacing="2">LONG RUN — RECOVERY</text>
+          <text x="0" y="0"   font-size="11" font-weight="800" fill="#047857" letter-spacing="2">LONG RUN – RECOVERY</text>
           <text x="0" y="28"  font-size="14" font-weight="600" fill="#334155">Exporters gain share;</text>
           <text x="0" y="48"  font-size="14" font-weight="600" fill="#334155">importers substitute.</text>
           <text x="0" y="68"  font-size="14" font-weight="600" fill="#334155">Volumes respond fully.</text>
@@ -5223,7 +5223,7 @@ window.ECONOS_ICONS = {
           <text x="0" y="168" font-size="14" font-weight="600" fill="#334155">the price cost rise.</text>
           <text x="0" y="203" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">NET RESULT</text>
           <text x="0" y="228" font-size="14" font-weight="600" fill="#334155">CA improves past</text>
-          <text x="0" y="248" font-size="14" font-weight="600" fill="#334155">the starting point —</text>
+          <text x="0" y="248" font-size="14" font-weight="600" fill="#334155">the starting point –</text>
           <text x="0" y="268" font-size="14" font-weight="600" fill="#334155">the classic J-curve.</text>
         </g>
       </g>
@@ -5379,13 +5379,13 @@ window.ECONOS_ICONS = {
         <text x="430" y="423" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Y<tspan font-size="11" baseline-shift="sub">FE</tspan></text>
       </g>
 
-      <!-- SRAS — red, from (90, 380) to (550, 100) -->
+      <!-- SRAS – red, from (90, 380) to (550, 100) -->
       <g class="layer-curve-solid">
         <line x1="90" y1="380" x2="550" y2="100" stroke="#E11D48" stroke-width="4" stroke-linecap="round"/>
         <text x="560" y="100" font-size="16" font-weight="700" fill="#E11D48">SRAS</text>
       </g>
 
-      <!-- AD₁ — slope 0.5, from (180, 48) to (580, 248), passes through (430, 173) -->
+      <!-- AD₁ – slope 0.5, from (180, 48) to (580, 248), passes through (430, 173) -->
       <g class="layer-curve-solid">
         <line x1="180" y1="48" x2="580" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
         <text x="588" y="252" font-size="15" font-weight="700" fill="#334155">AD<tspan font-size="12" baseline-shift="sub">1</tspan></text>
@@ -5399,7 +5399,7 @@ window.ECONOS_ICONS = {
         <text x="440" y="166" font-size="13" font-weight="700" fill="#1E40AF">E<tspan font-size="11" baseline-shift="sub">1</tspan></text>
       </g>
 
-      <!-- EXTENSION (rate hike) — AD shifts LEFT -->
+      <!-- EXTENSION (rate hike) – AD shifts LEFT -->
       <g class="layer-extension">
         <!-- AD₂ shifted left by 130: from (50, 48) to (450, 248) -->
         <line x1="50" y1="48" x2="450" y2="248" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4"/>
@@ -5409,7 +5409,7 @@ window.ECONOS_ICONS = {
         <path d="M 350 155 L 280 155" stroke="#E11D48" stroke-width="3" stroke-linecap="round" marker-end="url(#mpv2-shift-down)"/>
         <text x="315" y="142" font-size="12" font-weight="800" fill="#9F1239" text-anchor="middle" letter-spacing="1">RATE HIKE</text>
 
-        <!-- E₂ at intersection of AD₂ with SRAS: ≈ (371, 209) — same math as recession -->
+        <!-- E₂ at intersection of AD₂ with SRAS: ≈ (371, 209) – same math as recession -->
         <line x1="60" y1="209" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
         <line x1="371" y1="400" x2="371" y2="209" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 3"/>
         <circle cx="371" cy="209" r="7" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5"/>
@@ -5418,7 +5418,7 @@ window.ECONOS_ICONS = {
         <text x="381" y="202" font-size="13" font-weight="700" fill="#9F1239">E<tspan font-size="11" baseline-shift="sub">2</tspan></text>
       </g>
 
-      <!-- SHIFT (QE at ZLB) — AD shifts RIGHT
+      <!-- SHIFT (QE at ZLB) – AD shifts RIGHT
            AD₃ shifted right by 130: from (310, 48) to (710, 248).
            But 710 > 580 (chart right edge). Truncate at right edge: end at x=580.
            At x=580: y = 48 + 0.5(580-310) = 48 + 135 = 183. So endpoint (580, 183).
@@ -5459,8 +5459,8 @@ window.ECONOS_ICONS = {
           <text x="0" y="150" font-size="13" font-weight="600" fill="#475569">push the economy off</text>
           <text x="0" y="170" font-size="13" font-weight="600" fill="#475569">this equilibrium.</text>
           <text x="0" y="205" font-size="11" font-weight="800" fill="#1E40AF" letter-spacing="2">TWO TOOLS</text>
-          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Bank Rate — the lever</text>
-          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">QE — when rates can't</text>
+          <text x="0" y="230" font-size="14" font-weight="600" fill="#334155">Bank Rate – the lever</text>
+          <text x="0" y="250" font-size="14" font-weight="600" fill="#334155">QE – when rates can't</text>
           <text x="0" y="270" font-size="14" font-weight="600" fill="#334155">fall further (ZLB).</text>
         </g>
       </g>
@@ -5487,7 +5487,7 @@ window.ECONOS_ICONS = {
           <text x="0" y="0" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">QE AT THE ZLB</text>
           <text x="0" y="30" font-size="14" font-weight="600" fill="#334155">Inflation too low.</text>
           <text x="0" y="50" font-size="14" font-weight="600" fill="#334155">Rates already at zero</text>
-          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">— the <tspan font-weight="800">zero lower</tspan></text>
+          <text x="0" y="70" font-size="14" font-weight="600" fill="#334155">– the <tspan font-weight="800">zero lower</tspan></text>
           <text x="0" y="90" font-size="14" font-weight="600" fill="#334155"><tspan font-weight="800">bound</tspan>. Can't cut more.</text>
           <text x="0" y="125" font-size="11" font-weight="800" fill="#047857" letter-spacing="2">THE WORKAROUND</text>
           <text x="0" y="150" font-size="14" font-weight="600" fill="#334155">BoE buys bonds →</text>
@@ -5882,7 +5882,7 @@ window.ECONOS_ICONS = {
       <!-- pastel ground pad -->
       <ellipse cx="140" cy="290" rx="100" ry="8" fill="#CCFBF1" opacity="0.7"/>
 
-      <!-- 3 plants growing — stages of development -->
+      <!-- 3 plants growing – stages of development -->
       <!-- stage 1: tiny sprout (left) -->
       <g filter="url(#hdev-soft)">
         <!-- pot -->
@@ -5948,7 +5948,7 @@ window.ECONOS_ICONS = {
         <circle cx="140" cy="200" r="6"  fill="#FFFFFF"/>
       </g>
 
-      <!-- 4 objective bubbles at compass points (no text — pure icons) -->
+      <!-- 4 objective bubbles at compass points (no text – pure icons) -->
       <!-- top: growth (upward arrow) -->
       <g filter="url(#hmo-soft)">
         <circle cx="140" cy="98" r="22" fill="#FFFFFF" stroke="#22C55E" stroke-width="2"/>
@@ -5957,7 +5957,7 @@ window.ECONOS_ICONS = {
         </g>
       </g>
 
-      <!-- right: balance (trade) — two arrows opposing -->
+      <!-- right: balance (trade) – two arrows opposing -->
       <g filter="url(#hmo-soft)">
         <circle cx="242" cy="200" r="22" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
         <g stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" fill="none">
@@ -6099,7 +6099,7 @@ window.ECONOS_ICONS = {
       <!-- pastel ground -->
       <ellipse cx="140" cy="295" rx="115" ry="10" fill="#DBEAFE" opacity="0.7"/>
 
-      <!-- factory 1 — small (left) -->
+      <!-- factory 1 – small (left) -->
       <g filter="url(#hlrc-soft)">
         <rect x="50"  y="220" width="44" height="60" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
         <path d="M 50 220 L 60 210 L 70 220 L 80 210 L 94 220 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5" stroke-linejoin="round"/>
@@ -6110,7 +6110,7 @@ window.ECONOS_ICONS = {
         <rect x="64" y="196" width="6" height="14" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.2"/>
       </g>
 
-      <!-- factory 2 — medium (centre) -->
+      <!-- factory 2 – medium (centre) -->
       <g filter="url(#hlrc-soft)">
         <rect x="108" y="190" width="64" height="90" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
         <path d="M 108 190 L 120 176 L 132 190 L 144 176 L 156 190 L 168 176 L 172 190 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.5" stroke-linejoin="round"/>
@@ -6122,7 +6122,7 @@ window.ECONOS_ICONS = {
         <rect x="124" y="160" width="8" height="20" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5"/>
       </g>
 
-      <!-- factory 3 — large (right) -->
+      <!-- factory 3 – large (right) -->
       <g filter="url(#hlrc-shadow)">
         <rect x="186" y="160" width="80" height="120" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2"/>
         <path d="M 186 160 L 198 144 L 210 160 L 222 144 L 234 160 L 246 144 L 258 160 L 266 160 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
@@ -6445,7 +6445,7 @@ window.ECONOS_ICONS = {
       <!-- pastel pad behind whole scale -->
       <ellipse cx="140" cy="320" rx="90" ry="6" fill="#0F172A" opacity="0.07"/>
 
-      <!-- left dish — small green basket (demand) -->
+      <!-- left dish – small green basket (demand) -->
       <g filter="url(#hsd-soft)">
         <ellipse cx="80" cy="195" rx="38" ry="6" fill="#15803D"/>
         <path d="M 50 195 L 110 195 L 102 218 L 58 218 Z" fill="#22C55E" stroke="#15803D" stroke-width="1.8" stroke-linejoin="round"/>
@@ -6455,7 +6455,7 @@ window.ECONOS_ICONS = {
         <rect x="92" y="200" width="4" height="14" fill="#15803D" opacity="0.5"/>
       </g>
 
-      <!-- right dish — small blue factory box (supply) -->
+      <!-- right dish – small blue factory box (supply) -->
       <g filter="url(#hsd-soft)">
         <ellipse cx="200" cy="195" rx="38" ry="6" fill="#1E3A8A"/>
         <path d="M 170 195 L 230 195 L 222 218 L 178 218 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1.8" stroke-linejoin="round"/>
@@ -6465,11 +6465,11 @@ window.ECONOS_ICONS = {
         <rect x="212" y="200" width="4" height="14" fill="#1E3A8A" opacity="0.5"/>
       </g>
 
-      <!-- contents on left dish — small product items (demand) -->
+      <!-- contents on left dish – small product items (demand) -->
       <circle cx="80" cy="180" r="9" fill="#86EFAC"/>
       <circle cx="92" cy="186" r="7" fill="#4ADE80"/>
 
-      <!-- contents on right dish — small product items (supply) -->
+      <!-- contents on right dish – small product items (supply) -->
       <rect x="190" y="175" width="14" height="20" rx="2" fill="#FBBF24"/>
       <rect x="208" y="180" width="12" height="15" rx="2" fill="#F59E0B"/>
 
@@ -6520,7 +6520,7 @@ window.ECONOS_ICONS = {
         <polygon points="60,65 60,225 318,225" fill="#D1FAE5" opacity="0.85" clip-path="url(#dcs-clip)"/>
       </g>
 
-      <!-- LAYER: expanded CS triangle (pfall state) — drawn first so curves sit on top -->
+      <!-- LAYER: expanded CS triangle (pfall state) – drawn first so curves sit on top -->
       <g class="layer-pfall-cs">
         <polygon points="60,65 60,290 423,290" fill="#D1FAE5" opacity="0.85" clip-path="url(#dcs-clip)"/>
       </g>
@@ -6571,7 +6571,7 @@ window.ECONOS_ICONS = {
         <text x="628" y="379" font-size="13" fill="#334155">equilibrium. Any distortion shrinks it.</text>
       </g>
 
-      <!-- LAYER: pfall — expanded triangle + P₂/Q₂ markers + gain annotation -->
+      <!-- LAYER: pfall – expanded triangle + P₂/Q₂ markers + gain annotation -->
       <g class="layer-pfall">
         <!-- Faded original P* reference -->
         <line x1="60" y1="225" x2="423" y2="225" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
@@ -6592,16 +6592,16 @@ window.ECONOS_ICONS = {
         <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">consumer surplus gets bigger.</text>
         <text x="628" y="160" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">TWO GAINS</text>
         <text x="628" y="183" font-size="13" fill="#334155">① Existing buyers save (P*−P₂) on</text>
-        <text x="628" y="201" font-size="13" fill="#334155">   every unit — the rectangle widens</text>
+        <text x="628" y="201" font-size="13" fill="#334155">   every unit – the rectangle widens</text>
         <text x="628" y="222" font-size="13" fill="#334155">② New buyers enter who weren't</text>
-        <text x="628" y="240" font-size="13" fill="#334155">   willing to pay P* — the triangle</text>
+        <text x="628" y="240" font-size="13" fill="#334155">   willing to pay P* – the triangle</text>
         <text x="628" y="258" font-size="13" fill="#334155">   extends to Q₂</text>
         <text x="628" y="294" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REVERSE: PRICE RISES</text>
-        <text x="628" y="317" font-size="13" fill="#334155">CS shrinks — buyers either pay</text>
+        <text x="628" y="317" font-size="13" fill="#334155">CS shrinks – buyers either pay</text>
         <text x="628" y="335" font-size="13" fill="#334155">more or leave the market entirely.</text>
         <text x="628" y="371" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM POINT</text>
         <text x="628" y="394" font-size="13" fill="#334155">A tax raises consumer price → CS</text>
-        <text x="628" y="412" font-size="13" fill="#334155">falls — part lost, part to govt revenue.</text>
+        <text x="628" y="412" font-size="13" fill="#334155">falls – part lost, part to govt revenue.</text>
       </g>
 
       <!-- LAYER: legend base (base state panel) -->
@@ -6615,7 +6615,7 @@ window.ECONOS_ICONS = {
         <text x="628" y="219" font-size="13" fill="#334155">Diminishing marginal utility.</text>
         <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THE MARKET PRICE</text>
         <text x="628" y="278" font-size="13" fill="#334155">Everyone pays the same market</text>
-        <text x="628" y="296" font-size="13" fill="#334155">price P* — but those with higher</text>
+        <text x="628" y="296" font-size="13" fill="#334155">price P* – but those with higher</text>
         <text x="628" y="314" font-size="13" fill="#334155">WTP get a bonus. Tap to reveal it.</text>
       </g>
     </svg>
@@ -6687,7 +6687,7 @@ window.ECONOS_ICONS = {
         <text x="628" y="397" font-size="13" fill="#334155">increase it.</text>
       </g>
 
-      <!-- LAYER: prise — expanded triangle + P₂/Q₂ markers -->
+      <!-- LAYER: prise – expanded triangle + P₂/Q₂ markers -->
       <g class="layer-prise">
         <!-- Faded original P* reference -->
         <line x1="60" y1="235" x2="393" y2="235" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
@@ -6710,14 +6710,14 @@ window.ECONOS_ICONS = {
         <text x="628" y="183" font-size="13" fill="#334155">① Existing sellers earn (P₂−P*) extra</text>
         <text x="628" y="201" font-size="13" fill="#334155">   on every unit they already supplied</text>
         <text x="628" y="222" font-size="13" fill="#334155">② New sellers enter who weren't</text>
-        <text x="628" y="240" font-size="13" fill="#334155">   profitable at P* — output expands</text>
+        <text x="628" y="240" font-size="13" fill="#334155">   profitable at P* – output expands</text>
         <text x="628" y="258" font-size="13" fill="#334155">   to Q₂</text>
         <text x="628" y="294" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">REVERSE: PRICE FALLS</text>
-        <text x="628" y="317" font-size="13" fill="#334155">PS shrinks — sellers earn less per</text>
+        <text x="628" y="317" font-size="13" fill="#334155">PS shrinks – sellers earn less per</text>
         <text x="628" y="335" font-size="13" fill="#334155">unit and some exit the market.</text>
         <text x="628" y="371" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM POINT</text>
         <text x="628" y="394" font-size="13" fill="#334155">A tax lowers producer price → PS</text>
-        <text x="628" y="412" font-size="13" fill="#334155">falls — part lost, part to govt revenue.</text>
+        <text x="628" y="412" font-size="13" fill="#334155">falls – part lost, part to govt revenue.</text>
       </g>
 
       <!-- LAYER: legend base (base state panel) -->
@@ -6731,7 +6731,7 @@ window.ECONOS_ICONS = {
         <text x="628" y="219" font-size="13" fill="#334155">sellers need a higher price to enter.</text>
         <text x="628" y="255" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">THE MARKET PRICE</text>
         <text x="628" y="278" font-size="13" fill="#334155">Everyone receives the same market</text>
-        <text x="628" y="296" font-size="13" fill="#334155">price P* — but low-cost sellers earn</text>
+        <text x="628" y="296" font-size="13" fill="#334155">price P* – but low-cost sellers earn</text>
         <text x="628" y="314" font-size="13" fill="#334155">a surplus above their minimum. Tap to reveal it.</text>
       </g>
     </svg>
@@ -6785,11 +6785,11 @@ window.ECONOS_ICONS = {
         <text x="628" y="120" font-size="14" font-weight="700" fill="#1E293B">Pc (consumer price) and Pp</text>
         <text x="628" y="140" font-size="14" font-weight="700" fill="#1E293B">(producer price).</text>
         <text x="628" y="175" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">OUTPUT FALLS</text>
-        <text x="628" y="198" font-size="13" fill="#334155">Q falls from Q* to Q2 — fewer</text>
+        <text x="628" y="198" font-size="13" fill="#334155">Q falls from Q* to Q2 – fewer</text>
         <text x="628" y="216" font-size="13" fill="#334155">mutually beneficial trades occur.</text>
         <text x="628" y="248" font-size="10" font-weight="700" fill="#F59E0B" letter-spacing="2">DEADWEIGHT LOSS</text>
         <text x="628" y="271" font-size="13" fill="#334155">The amber triangle is surplus</text>
-        <text x="628" y="289" font-size="13" fill="#334155">destroyed — lost by everyone,</text>
+        <text x="628" y="289" font-size="13" fill="#334155">destroyed – lost by everyone,</text>
         <text x="628" y="307" font-size="13" fill="#334155">captured by no one.</text>
         <text x="628" y="339" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAM POINT</text>
         <text x="628" y="362" font-size="13" fill="#334155">Only a Pigouvian tax (correcting</text>
@@ -7202,7 +7202,7 @@ window.ECONOS_ICONS = {
         <text x="212" y="279" text-anchor="middle" font-size="10" fill="#1d4ed8">Qt</text>
         <!-- Annotation -->
         <rect x="138" y="40" width="166" height="18" rx="5" fill="#DBEAFE" stroke="#1d4ed8" stroke-width="0.6"/>
-        <text x="221" y="53" font-size="10" fill="#1d4ed8" font-weight="700" text-anchor="middle">Parallel shift — constant gap</text>
+        <text x="221" y="53" font-size="10" fill="#1d4ed8" font-weight="700" text-anchor="middle">Parallel shift – constant gap</text>
       </g>
       <g class="idl-2" style="display:none">
         <!-- Ad valorem: pivots from near S at left (small gap) widening to right (large gap) -->
@@ -7222,7 +7222,7 @@ window.ECONOS_ICONS = {
         <circle cx="226" cy="132" r="4.5" fill="#d97706"/>
         <!-- Annotation -->
         <rect x="138" y="64" width="166" height="18" rx="5" fill="#FEF3C7" stroke="#d97706" stroke-width="0.6"/>
-        <text x="221" y="77" font-size="10" fill="#d97706" font-weight="700" text-anchor="middle">Pivot shift — widening gap</text>
+        <text x="221" y="77" font-size="10" fill="#d97706" font-weight="700" text-anchor="middle">Pivot shift – widening gap</text>
       </g>
     </svg>
   `,
@@ -7413,7 +7413,7 @@ window.ECONOS_ICONS = {
       <line x1="220" y1="10" x2="220" y2="290" stroke="#e2e8f0" stroke-width="1"/>
 
       <g transform="translate(10,10)">
-        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Tax — Inelastic demand</text>
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Tax – Inelastic demand</text>
         <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#1d4ed8">Consumers bear more</text>
         <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
         <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
@@ -7435,7 +7435,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g transform="translate(228,10)">
-        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Tax — Elastic demand</text>
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Tax – Elastic demand</text>
         <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#dc2626">Producers bear more</text>
         <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
         <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
@@ -7458,7 +7458,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g transform="translate(10,158)">
-        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#059669">Subsidy — Inelastic demand</text>
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#059669">Subsidy – Inelastic demand</text>
         <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#059669">Producers capture more</text>
         <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
         <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
@@ -7480,7 +7480,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g transform="translate(228,158)">
-        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#059669">Subsidy — Elastic demand</text>
+        <text x="100" y="11" font-size="10" font-weight="700" text-anchor="middle" fill="#059669">Subsidy – Elastic demand</text>
         <text x="100" y="22" font-size="9" text-anchor="middle" font-weight="600" fill="#2563EB">Consumers capture more</text>
         <line x1="35" y1="28" x2="35" y2="118" stroke="#334155" stroke-width="1"/>
         <line x1="35" y1="118" x2="192" y2="118" stroke="#334155" stroke-width="1"/>
@@ -8038,9 +8038,9 @@ window.ECONOS_ICONS = {
         </filter>
       </defs>
 
-      <!-- soft pastel pad behind left option (consumer goods — pink shopping bag) -->
+      <!-- soft pastel pad behind left option (consumer goods – pink shopping bag) -->
       <ellipse cx="80" cy="245" rx="58" ry="14" fill="#FCE7E9" opacity="0.7"/>
-      <!-- soft pastel pad behind right option (capital / saving — gold coin) -->
+      <!-- soft pastel pad behind right option (capital / saving – gold coin) -->
       <ellipse cx="210" cy="115" rx="58" ry="14" fill="#DCFCE7" opacity="0.7"/>
 
       <!-- shopping bag (left option) -->
@@ -8071,10 +8071,10 @@ window.ECONOS_ICONS = {
       </g>
 
       <!-- two diverging paths (the PPF "choice") -->
-      <!-- left path (to bag) — pale, less prioritised -->
+      <!-- left path (to bag) – pale, less prioritised -->
       <path d="M 140 320 Q 130 275 95 255" stroke="#E2E8F0" stroke-width="22" fill="none" stroke-linecap="round"/>
       <path d="M 140 320 Q 130 275 95 255" stroke="#CBD5E1" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.5"/>
-      <!-- right path (to coin) — green, brighter -->
+      <!-- right path (to coin) – green, brighter -->
       <path d="M 140 320 Q 165 240 205 150" stroke="#86EFAC" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.55"/>
       <path d="M 140 320 Q 165 240 205 150" stroke="#22C55E" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="2 6" opacity="0.7"/>
 
@@ -8121,13 +8121,13 @@ window.ECONOS_ICONS = {
               fill="#FFFFFF" stroke="#0F172A" stroke-width="1.8" stroke-linejoin="round" opacity="0.9"/>
       </g>
 
-      <!-- sand in top — depleting (small amount left) -->
+      <!-- sand in top – depleting (small amount left) -->
       <path d="M 100 75 L 180 75 L 152 122 L 128 122 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1.2" stroke-linejoin="round"/>
 
       <!-- sand stream through neck -->
       <line x1="140" y1="170" x2="140" y2="220" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
 
-      <!-- sand pile in bottom — mostly filled -->
+      <!-- sand pile in bottom – mostly filled -->
       <path d="M 96 285 L 184 285 L 168 240 Q 140 222 112 240 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1.2" stroke-linejoin="round"/>
 
       <!-- a tiny £ coin half-buried in the bottom sand (the scarce resource) -->
@@ -8893,7 +8893,7 @@ window.ECONOS_ICONS = {
         <text x="140" y="270" font-size="14" font-weight="800" fill="#92400E" text-anchor="middle">£</text>
       </g>
 
-      <!-- VERY tall stack (right) — towering -->
+      <!-- VERY tall stack (right) – towering -->
       <g filter="url(#hin-shadow)">
         <ellipse cx="205" cy="295" rx="30" ry="9" fill="#D97706"/>
         <ellipse cx="205" cy="285" rx="30" ry="9" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
@@ -9145,7 +9145,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== cost curves (Marco's cubic VC formulas — always visible) ===== -->
+      <!-- ===== cost curves (Marco's cubic VC formulas – always visible) ===== -->
       <g class="layer-cost-curves">
         <g clip-path="url(#fpcm-chart-clip)">
           <polyline points="70,235 85,250 110,271 135,289 160,304 185,315 210,323 235,328 260,330 285,328 310,323 335,315 360,304 385,289 410,271 435,250 460,225 485,197 510,166 535,131 560,94" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
@@ -9204,7 +9204,7 @@ window.ECONOS_ICONS = {
       <!-- ===== panels ===== -->
       <g class="layer-panel-base">
         <circle cx="74" cy="32" r="7" fill="#059669"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">PC firm: price-taker — horizontal AR=MR=P at market price</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">PC firm: price-taker – horizontal AR=MR=P at market price</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">PC FIRM (PRICE-TAKER)</text>
         <text x="620" y="100" font-size="13" fill="#334155">Market sets P; firm faces a</text>
         <text x="620" y="118" font-size="13" fill="#334155">perfectly elastic (horizontal)</text>
@@ -9221,7 +9221,7 @@ window.ECONOS_ICONS = {
 
       <g class="layer-panel-ext">
         <circle cx="74" cy="32" r="7" fill="#2563EB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopoly firm: faces whole D — AR slopes down, MR below AR</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopoly firm: faces whole D – AR slopes down, MR below AR</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">MONOPOLY FIRM</text>
         <text x="620" y="100" font-size="13" fill="#334155">To sell more, must cut price</text>
         <text x="620" y="118" font-size="13" fill="#334155">on every unit → <tspan font-weight="700">MR &lt; AR</tspan>.</text>
@@ -9251,7 +9251,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="276" font-size="13" fill="#334155">higher cost, above MC, with</text>
         <text x="620" y="294" font-size="13" fill="#334155">supernormal profit.</text>
         <text x="620" y="328" font-size="11" font-style="italic" fill="#475569">BUT only if entry stays blocked</text>
-        <text x="620" y="346" font-size="11" font-style="italic" fill="#475569">— see contestability (card 3).</text>
+        <text x="620" y="346" font-size="11" font-style="italic" fill="#475569">– see contestability (card 3).</text>
       </g>
     </svg>
   `,
@@ -9277,7 +9277,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== LAYER: base-curves (market D and industry S/MC — always visible) ===== -->
+      <!-- ===== LAYER: base-curves (market D and industry S/MC – always visible) ===== -->
       <g class="layer-base-curves">
         <g clip-path="url(#mlw-chart-clip)">
           <line x1="60" y1="43" x2="500" y2="336" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
@@ -9291,7 +9291,7 @@ window.ECONOS_ICONS = {
         <text x="515" y="270" font-size="10" fill="#DC2626" opacity="0.75">(ΣMC of firms)</text>
       </g>
 
-      <!-- ===== LAYER: cs-competition (base state only — large CS triangle) ===== -->
+      <!-- ===== LAYER: cs-competition (base state only – large CS triangle) ===== -->
       <g class="layer-cs-competition">
         <!-- CS under perfect competition: triangle from D-intercept (60,43) to PC eq (400,270) to price on y-axis (60,270) -->
         <polygon points="60,43 400,270 60,270" fill="#DBEAFE" fill-opacity="0.55"/>
@@ -9314,7 +9314,7 @@ window.ECONOS_ICONS = {
       <!-- ===== LAYER: mr-curve (extension + shift states) ===== -->
       <g class="layer-mr-curve">
         <g clip-path="url(#mlw-chart-clip)">
-          <!-- MR: same y-intercept as D at (60,43), twice the slope — ends at (328,400) -->
+          <!-- MR: same y-intercept as D at (60,43), twice the slope – ends at (328,400) -->
           <line x1="60" y1="43" x2="328" y2="400" stroke="#2563EB" stroke-width="2" stroke-dasharray="6 3" opacity="0.75"/>
         </g>
         <text x="328" y="418" font-size="13" font-weight="700" fill="#2563EB" opacity="0.75" text-anchor="middle">MR</text>
@@ -9337,11 +9337,11 @@ window.ECONOS_ICONS = {
 
       <!-- ===== LAYER: welfare-decomp (shift state only) ===== -->
       <g class="layer-welfare-decomp">
-        <!-- Monopoly CS — smaller triangle (60,43)-(250,170)-(60,170) -->
+        <!-- Monopoly CS – smaller triangle (60,43)-(250,170)-(60,170) -->
         <polygon points="60,43 250,170 60,170" fill="#DBEAFE" fill-opacity="0.75"/>
-        <!-- Transferred area — rectangle from P_c to P_m at Q=0 to Q_m (60,170)-(250,170)-(250,270)-(60,270) -->
+        <!-- Transferred area – rectangle from P_c to P_m at Q=0 to Q_m (60,170)-(250,170)-(250,270)-(60,270) -->
         <polygon points="60,170 250,170 250,270 60,270" fill="#FEF3C7" fill-opacity="0.85"/>
-        <!-- DWL triangle — (250,170) on D, (400,270) PC eq, (250,296) MC at Q_m -->
+        <!-- DWL triangle – (250,170) on D, (400,270) PC eq, (250,296) MC at Q_m -->
         <polygon points="250,170 400,270 250,296" fill="#FEE2E2" fill-opacity="0.85" stroke="#DC2626" stroke-width="1.5"/>
         <!-- Area labels -->
         <text x="115" y="138" font-size="11" font-weight="700" fill="#2563EB" text-anchor="middle">CS</text>
@@ -9362,12 +9362,12 @@ window.ECONOS_ICONS = {
         <text x="620" y="244" font-size="13" fill="#334155">Deadweight loss = zero.</text>
         <text x="620" y="262" font-size="13" fill="#334155">Allocative efficiency holds</text>
         <text x="620" y="280" font-size="13" fill="#334155">at the industry level.</text>
-        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: monopolist takes over — same costs</text>
+        <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: monopolist takes over – same costs</text>
       </g>
 
       <g class="layer-panel-ext">
         <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopolist takes over — faces D as AR, with MR below</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Monopolist takes over – faces D as AR, with MR below</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">MONOPOLY TAKEOVER</text>
         <text x="620" y="100" font-size="13" fill="#334155">Single firm now faces whole D</text>
         <text x="620" y="118" font-size="13" fill="#334155">as its own AR. MR sits below AR</text>
@@ -9376,21 +9376,21 @@ window.ECONOS_ICONS = {
         <text x="620" y="188" font-size="13" fill="#334155">Read up to D → P_m &gt; P_c.</text>
         <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">VS PC OUTCOME</text>
         <text x="620" y="244" font-size="13" fill="#334155">Output restricted, price raised.</text>
-        <text x="620" y="262" font-size="13" fill="#334155">Industry MC unchanged —</text>
+        <text x="620" y="262" font-size="13" fill="#334155">Industry MC unchanged –</text>
         <text x="620" y="280" font-size="13" fill="#334155">only the demand side changes.</text>
         <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: who wins, who loses, and DWL</text>
       </g>
 
       <g class="layer-panel-shift">
         <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Welfare decomposition — CS shrinks, transfer, DWL</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Welfare decomposition – CS shrinks, transfer, DWL</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">WELFARE DECOMPOSITION</text>
-        <text x="620" y="100" font-size="13" font-weight="700" fill="#2563EB">Blue — remaining CS</text>
+        <text x="620" y="100" font-size="13" font-weight="700" fill="#2563EB">Blue – remaining CS</text>
         <text x="620" y="118" font-size="13" fill="#334155">Shrinks vs PC baseline.</text>
-        <text x="620" y="148" font-size="13" font-weight="700" fill="#D97706">Amber — transfer</text>
+        <text x="620" y="148" font-size="13" font-weight="700" fill="#D97706">Amber – transfer</text>
         <text x="620" y="166" font-size="13" fill="#334155">Former CS now monopolist's PS.</text>
         <text x="620" y="184" font-size="13" fill="#334155">Redistribution, not destruction.</text>
-        <text x="620" y="214" font-size="13" font-weight="700" fill="#DC2626">Red triangle — DWL</text>
+        <text x="620" y="214" font-size="13" font-weight="700" fill="#DC2626">Red triangle – DWL</text>
         <text x="620" y="232" font-size="13" fill="#334155">Value destroyed: units consumers</text>
         <text x="620" y="250" font-size="13" fill="#334155">value above MC go unproduced.</text>
         <text x="620" y="284" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">CAVEAT</text>
@@ -9428,7 +9428,7 @@ window.ECONOS_ICONS = {
         <text x="74" y="358" font-size="10" fill="#64748B" text-anchor="end">many</text>
       </g>
 
-      <!-- Region shading (shift state) — colour only, captions live in right panel -->
+      <!-- Region shading (shift state) – colour only, captions live in right panel -->
       <g class="layer-regions">
         <rect x="80" y="80" width="220" height="280" fill="#059669" fill-opacity="0.12"/>
         <rect x="300" y="80" width="240" height="280" fill="#DC2626" fill-opacity="0.12"/>
@@ -9464,7 +9464,7 @@ window.ECONOS_ICONS = {
         <text x="480" y="121" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">utilities, patents</text>
       </g>
 
-      <!-- Visual emphasis on contestable monopoly (shift) — ring + subtle pulse only -->
+      <!-- Visual emphasis on contestable monopoly (shift) – ring + subtle pulse only -->
       <g class="layer-highlight">
         <circle cx="195" cy="115" r="18" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
       </g>
@@ -9474,8 +9474,8 @@ window.ECONOS_ICONS = {
         <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Markets sit on a spectrum of entry barriers, not firm count</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE SPECTRUM</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Entry barriers — not the count</text>
-        <text x="620" y="118" font-size="13" fill="#334155">of firms — define market type.</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Entry barriers – not the count</text>
+        <text x="620" y="118" font-size="13" fill="#334155">of firms – define market type.</text>
         <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Five canonical structures:</text>
         <text x="620" y="170" font-size="13" fill="#334155">• Perfect competition (PC)</text>
         <text x="620" y="188" font-size="13" fill="#334155">• Monopolistic competition (MC)</text>
@@ -9484,7 +9484,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="242" font-size="13" fill="#334155">• Pure monopoly</text>
         <text x="620" y="276" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">KEY OBSERVATION</text>
         <text x="620" y="298" font-size="13" fill="#334155">"Contestable monopoly" has only</text>
-        <text x="620" y="316" font-size="13" fill="#334155">one firm — but sits LEFT on the</text>
+        <text x="620" y="316" font-size="13" fill="#334155">one firm – but sits LEFT on the</text>
         <text x="620" y="334" font-size="13" fill="#334155">barriers axis. Watch this.</text>
       </g>
 
@@ -9506,7 +9506,7 @@ window.ECONOS_ICONS = {
 
       <g class="layer-panel-shift">
         <circle cx="74" cy="32" r="7" fill="#059669"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Contestability cuts across structure — barriers, not count</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Contestability cuts across structure – barriers, not count</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#059669" letter-spacing="2">THE BIG INSIGHT</text>
         <text x="620" y="100" font-size="13" fill="#334155">Behaviour depends on entry</text>
         <text x="620" y="118" font-size="13" fill="#334155">conditions, not firm count.</text>
@@ -9541,7 +9541,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- Same cost stack as fpcm (Marco's formulas) — and AR curve as monopoly demand -->
+      <!-- Same cost stack as fpcm (Marco's formulas) – and AR curve as monopoly demand -->
       <g class="layer-cost-curves">
         <g clip-path="url(#cfra-chart-clip)">
           <polyline points="70,235 85,250 110,271 135,289 160,304 185,315 210,323 235,328 260,330 285,328 310,323 335,315 360,304 385,289 410,271 435,250 460,225 485,197 510,166 535,131 560,94" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
@@ -9555,7 +9555,7 @@ window.ECONOS_ICONS = {
         <text x="266" y="395" font-size="12" font-weight="700" fill="#2563EB" opacity="0.75">MR</text>
       </g>
 
-      <!-- State: pure monopoly (base) — P_m=12 (y=190), Q_m=40 (x=260), AC=11 (y=208) -->
+      <!-- State: pure monopoly (base) – P_m=12 (y=190), Q_m=40 (x=260), AC=11 (y=208) -->
       <g class="layer-state-monopoly">
         <rect x="60" y="190" width="200" height="18" fill="#FEE2E2" fill-opacity="0.85" stroke="#DC2626" stroke-width="1.5"/>
         <text x="160" y="203" font-size="11" font-weight="700" fill="#991B1B" text-anchor="middle">Large supernormal profit</text>
@@ -9566,7 +9566,7 @@ window.ECONOS_ICONS = {
         <text x="260" y="418" font-size="12" font-weight="700" fill="#DC2626" text-anchor="middle">Q_m</text>
       </g>
 
-      <!-- State: contestable monopoly (extension) — P≈10.5 (y=216), Q≈48 (x=300), AC≈9.91 (y=226) -->
+      <!-- State: contestable monopoly (extension) – P≈10.5 (y=216), Q≈48 (x=300), AC≈9.91 (y=226) -->
       <g class="layer-state-contestable">
         <rect x="60" y="216" width="240" height="11" fill="#FEF3C7" fill-opacity="0.85" stroke="#D97706" stroke-width="1.5"/>
         <text x="180" y="225" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Reduced profit (entry threat)</text>
@@ -9577,7 +9577,7 @@ window.ECONOS_ICONS = {
         <text x="300" y="418" font-size="12" font-weight="700" fill="#D97706" text-anchor="middle">Q</text>
       </g>
 
-      <!-- State: perfectly contestable (shift) — P=AC≈9.5 (y=234), Q≈53 (x=323) -->
+      <!-- State: perfectly contestable (shift) – P=AC≈9.5 (y=234), Q≈53 (x=323) -->
       <g class="layer-state-perfect">
         <line x1="60" y1="234" x2="323" y2="234" stroke="#059669" stroke-width="2.5"/>
         <line x1="323" y1="234" x2="323" y2="400" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
@@ -9590,7 +9590,7 @@ window.ECONOS_ICONS = {
       <!-- Panels -->
       <g class="layer-panel-base">
         <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Pure monopoly: no entry threat — full markup P_m above MC</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Pure monopoly: no entry threat – full markup P_m above MC</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">PURE MONOPOLY</text>
         <text x="620" y="100" font-size="13" fill="#334155">High sunk costs and barriers</text>
         <text x="620" y="118" font-size="13" fill="#334155">block entry. The incumbent</text>
@@ -9614,7 +9614,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Price drops toward AC</text>
         <text x="620" y="188" font-size="13" fill="#334155">Output expands; markup shrinks.</text>
         <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">STRUCTURE = ONE FIRM</text>
-        <text x="620" y="244" font-size="13" fill="#334155">Still a monopoly on paper —</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Still a monopoly on paper –</text>
         <text x="620" y="262" font-size="13" fill="#334155">but behaves competitively.</text>
         <text x="620" y="280" font-size="13" fill="#334155">Profit small (amber).</text>
         <text x="620" y="314" font-size="11" font-style="italic" fill="#64748B">Next: the limit case</text>
@@ -9630,7 +9630,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="170" font-size="13" fill="#334155">Any markup → instant entry.</text>
         <text x="620" y="188" font-size="13" fill="#334155">Zero economic profit.</text>
         <text x="620" y="222" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXAMPLE</text>
-        <text x="620" y="244" font-size="13" fill="#334155">Airline routes — aircraft are</text>
+        <text x="620" y="244" font-size="13" fill="#334155">Airline routes – aircraft are</text>
         <text x="620" y="262" font-size="13" fill="#334155">mobile (low route-specific</text>
         <text x="620" y="280" font-size="13" fill="#334155">sunk costs). One carrier on a</text>
         <text x="620" y="298" font-size="13" fill="#334155">route prices near AC because</text>
@@ -9712,7 +9712,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="75" font-size="10" font-weight="700" fill="#0EA5E9" letter-spacing="2">BUILDING THE U</text>
         <text x="620" y="100" font-size="13" fill="#334155">AC = AFC + AVC.</text>
         <text x="620" y="134" font-size="13" font-weight="700" fill="#94A3B8">AFC (light dashed)</text>
-        <text x="620" y="152" font-size="13" fill="#334155">FC/Q — always falls as Q rises.</text>
+        <text x="620" y="152" font-size="13" fill="#334155">FC/Q – always falls as Q rises.</text>
         <text x="620" y="170" font-size="13" fill="#334155">"Spreading the fixed cost."</text>
         <text x="620" y="200" font-size="13" font-weight="700" fill="#64748B">AVC (gray dashed)</text>
         <text x="620" y="218" font-size="13" fill="#334155">Falls first (specialisation),</text>
@@ -9725,15 +9725,15 @@ window.ECONOS_ICONS = {
 
       <g class="layer-panel-ext">
         <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC = the gradient of TC — Nike-tick shape from returns</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC = the gradient of TC – Nike-tick shape from returns</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">MARGINAL COST</text>
-        <text x="620" y="100" font-size="13" fill="#334155">MC = ΔTC/ΔQ — the cost of</text>
+        <text x="620" y="100" font-size="13" fill="#334155">MC = ΔTC/ΔQ – the cost of</text>
         <text x="620" y="118" font-size="13" fill="#334155">producing one more unit.</text>
         <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">Falls then rises (Nike tick)</text>
         <text x="620" y="170" font-size="13" fill="#334155">Initial fall: specialisation,</text>
         <text x="620" y="188" font-size="13" fill="#334155">increasing returns to labour.</text>
         <text x="620" y="218" font-size="13" fill="#334155">Later rise: diminishing</text>
-        <text x="620" y="236" font-size="13" fill="#334155">returns kick in — each extra</text>
+        <text x="620" y="236" font-size="13" fill="#334155">returns kick in – each extra</text>
         <text x="620" y="254" font-size="13" fill="#334155">worker on fixed capital adds</text>
         <text x="620" y="272" font-size="13" fill="#334155">less to output, so each extra</text>
         <text x="620" y="290" font-size="13" fill="#334155">unit costs more.</text>
@@ -9742,7 +9742,7 @@ window.ECONOS_ICONS = {
 
       <g class="layer-panel-shift">
         <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC pulls the averages — crosses each at its minimum</text>
+        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">MC pulls the averages – crosses each at its minimum</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE CROSSING RULE</text>
         <text x="620" y="100" font-size="13" fill="#334155">When MC &lt; average → average</text>
         <text x="620" y="118" font-size="13" fill="#334155">is being pulled DOWN.</text>
@@ -9751,7 +9751,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="188" font-size="13" fill="#334155">Below: AVC falling.</text>
         <text x="620" y="206" font-size="13" fill="#334155">Above: AVC rising.</text>
         <text x="620" y="240" font-size="13" font-weight="700" fill="#1E293B">MC = AC at min AC</text>
-        <text x="620" y="258" font-size="13" fill="#334155">Same logic — and this is the</text>
+        <text x="620" y="258" font-size="13" fill="#334155">Same logic – and this is the</text>
         <text x="620" y="276" font-size="13" fill="#334155">productive efficiency point.</text>
         <text x="620" y="310" font-size="11" font-style="italic" fill="#475569">Universal: marginal always pulls</text>
         <text x="620" y="326" font-size="11" font-style="italic" fill="#475569">the average toward itself.</text>
@@ -9790,7 +9790,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== LAYER: kink-point (always visible — current price/quantity) ===== -->
+      <!-- ===== LAYER: kink-point (always visible – current price/quantity) ===== -->
       <g class="layer-kink-point">
         <!-- P* dashed horizontal to kink -->
         <line x1="60" y1="200" x2="250" y2="200" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -9802,24 +9802,24 @@ window.ECONOS_ICONS = {
         <text x="250" y="418" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="middle">Q*</text>
       </g>
 
-      <!-- ===== LAYER: elastic-d (upper segment of demand — base + later states) ===== -->
+      <!-- ===== LAYER: elastic-d (upper segment of demand – base + later states) ===== -->
       <g class="layer-elastic-d">
         <g clip-path="url(#kink-chart-clip)">
           <!-- D1 (elastic, above P*): (60,140) → (250,200), gentle slope 0.316 -->
           <line x1="60" y1="140" x2="250" y2="200" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
         <!-- Label for upper elastic segment -->
-        <text x="70" y="128" font-size="11" font-weight="700" fill="#2563EB">D₁ (elastic — rivals hold)</text>
+        <text x="70" y="128" font-size="11" font-weight="700" fill="#2563EB">D₁ (elastic – rivals hold)</text>
       </g>
 
-      <!-- ===== LAYER: inelastic-d (lower segment of demand — extension + later states) ===== -->
+      <!-- ===== LAYER: inelastic-d (lower segment of demand – extension + later states) ===== -->
       <g class="layer-inelastic-d">
         <g clip-path="url(#kink-chart-clip)">
           <!-- D2 (inelastic, below P*): (250,200) → (510,380), steeper slope 0.692 -->
           <line x1="250" y1="200" x2="510" y2="380" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
         </g>
         <!-- Label for lower inelastic segment -->
-        <text x="395" y="312" font-size="11" font-weight="700" fill="#2563EB">D₂ (inelastic — rivals match)</text>
+        <text x="395" y="312" font-size="11" font-weight="700" fill="#2563EB">D₂ (inelastic – rivals match)</text>
       </g>
 
       <!-- ===== LAYER: mr (shift + efficiency states) ===== -->
@@ -9846,14 +9846,14 @@ window.ECONOS_ICONS = {
         <text x="312" y="299" font-size="11" font-weight="700" fill="#D97706" text-anchor="middle">MR gap</text>
       </g>
 
-      <!-- ===== LAYER: mc (efficiency state only — Nike-tick MC curves through gap) ===== -->
+      <!-- ===== LAYER: mc (efficiency state only – Nike-tick MC curves through gap) ===== -->
       <g class="layer-mc">
         <g clip-path="url(#kink-chart-clip)">
-          <!-- Base MC (Nike tick, cubic-VC shape) — passes y=303 at Q*=x=250, inside gap -->
+          <!-- Base MC (Nike tick, cubic-VC shape) – passes y=303 at Q*=x=250, inside gap -->
           <polyline points="60,307 80,314 100,319 120,323 140,325 160,325 180,323 200,319 220,314 240,307 250,303 260,298 280,288 300,276 320,262 340,246 360,228 380,209 400,188 420,165 440,141 460,115 480,87 500,57" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
-          <!-- MC shifted UP (cost rise — higher curve, smaller y) — passes y=275 at x=250 -->
+          <!-- MC shifted UP (cost rise – higher curve, smaller y) – passes y=275 at x=250 -->
           <polyline points="60,279 80,286 100,291 120,295 140,297 160,297 180,295 200,291 220,286 240,279 250,275 260,270 280,260 300,248 320,234 340,218 360,200 380,181 400,160 420,137 440,113 460,87" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
-          <!-- MC shifted DOWN (cost fall — lower curve, larger y) — passes y=325 at x=250 -->
+          <!-- MC shifted DOWN (cost fall – lower curve, larger y) – passes y=325 at x=250 -->
           <polyline points="60,329 80,336 100,341 120,345 140,347 160,347 180,345 200,341 220,336 240,329 250,325 260,320 280,310 300,298 320,284 340,268 360,250 380,231 400,210 420,187 440,163 460,137 480,109 500,79" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
         </g>
         <text x="505" y="60" font-size="13" font-weight="700" fill="#DC2626">MC</text>
@@ -9868,7 +9868,7 @@ window.ECONOS_ICONS = {
         <circle cx="74" cy="32" r="7" fill="#2563EB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price rise scenario: rivals don't follow → elastic above P*</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">IF YOU RAISE PRICE</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Rivals don't follow — they keep</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Rivals don't follow – they keep</text>
         <text x="620" y="118" font-size="13" fill="#334155">their prices to grab your share.</text>
         <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">You lose many customers</text>
         <text x="620" y="170" font-size="13" fill="#334155">Demand is ELASTIC above P*:</text>
@@ -9885,7 +9885,7 @@ window.ECONOS_ICONS = {
         <circle cx="74" cy="32" r="7" fill="#2563EB"/>
         <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Price cut scenario: rivals match → inelastic below P*</text>
         <text x="620" y="75" font-size="10" font-weight="700" fill="#2563EB" letter-spacing="2">IF YOU CUT PRICE</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Rivals match the cut — they</text>
+        <text x="620" y="100" font-size="13" fill="#334155">Rivals match the cut – they</text>
         <text x="620" y="118" font-size="13" fill="#334155">fear losing market share.</text>
         <text x="620" y="152" font-size="13" font-weight="700" fill="#1E293B">You gain few new customers</text>
         <text x="620" y="170" font-size="13" fill="#334155">Demand is INELASTIC below P*:</text>
@@ -9905,13 +9905,13 @@ window.ECONOS_ICONS = {
         <text x="620" y="100" font-size="13" fill="#334155">MR is derived from each D</text>
         <text x="620" y="118" font-size="13" fill="#334155">segment separately:</text>
         <text x="620" y="152" font-size="13" font-weight="700" fill="#0EA5E9">MR₁ (from elastic D₁)</text>
-        <text x="620" y="170" font-size="13" fill="#334155">Gentle slope — ends just below</text>
+        <text x="620" y="170" font-size="13" fill="#334155">Gentle slope – ends just below</text>
         <text x="620" y="188" font-size="13" fill="#334155">D₁ at the kink quantity Q*.</text>
         <text x="620" y="218" font-size="13" font-weight="700" fill="#0EA5E9">MR₂ (from inelastic D₂)</text>
-        <text x="620" y="236" font-size="13" fill="#334155">Steeper — starts well below</text>
+        <text x="620" y="236" font-size="13" fill="#334155">Steeper – starts well below</text>
         <text x="620" y="254" font-size="13" fill="#334155">MR₁ at Q*, falls rapidly.</text>
         <text x="620" y="288" font-size="13" font-weight="700" fill="#D97706">Vertical gap at Q*</text>
-        <text x="620" y="306" font-size="13" fill="#334155">MR is discontinuous — jumps</text>
+        <text x="620" y="306" font-size="13" fill="#334155">MR is discontinuous – jumps</text>
         <text x="620" y="324" font-size="13" fill="#334155">down as Q crosses Q*.</text>
       </g>
 
@@ -9926,7 +9926,7 @@ window.ECONOS_ICONS = {
         <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Cost shocks within the gap</text>
         <text x="620" y="188" font-size="13" fill="#334155">do not change P*.</text>
         <text x="620" y="206" font-size="13" fill="#334155">Dashed MC lines: cost</text>
-        <text x="620" y="224" font-size="13" fill="#334155">shifts up and down — still</text>
+        <text x="620" y="224" font-size="13" fill="#334155">shifts up and down – still</text>
         <text x="620" y="242" font-size="13" fill="#334155">cross MR within the gap.</text>
         <text x="620" y="276" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">EXPLAINS</text>
         <text x="620" y="298" font-size="13" fill="#334155">Sticky oligopoly prices:</text>
@@ -10478,7 +10478,7 @@ window.ECONOS_ICONS = {
         <text x="183" y="101" font-size="10" font-weight="700" fill="#0EA5E9">AC</text>
       </g>
 
-      <!-- ===== PANEL 3: Loss — Continue Producing (BL) ===== -->
+      <!-- ===== PANEL 3: Loss – Continue Producing (BL) ===== -->
       <g transform="translate(35,255)">
         <!-- axes -->
         <line x1="0" y1="170" x2="185" y2="170" stroke="#334155" stroke-width="1.8"/>
@@ -10487,7 +10487,7 @@ window.ECONOS_ICONS = {
         <polygon points="-5,10 5,10 0,2" fill="#334155"/>
         <text x="-5" y="3" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">\xa3</text>
         <text x="196" y="175" font-size="10" font-weight="700" fill="#334155">Q</text>
-        <text x="92" y="-8" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">3 \xb7 Loss — Continue Producing</text>
+        <text x="92" y="-8" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">3 \xb7 Loss – Continue Producing</text>
 
         <!-- P at P=115: y=170-115*0.567=170-65.2=104.8≈105
              AC at Q* ~ between AVC and AC min, Q≈60→63 (where MC≈115): interpolate MC at 60→137 too high, Q55→120, Q50→95 → Q≈57
@@ -10647,8 +10647,8 @@ window.ECONOS_ICONS = {
       <text x="652" y="372" font-size="11" font-weight="700" fill="#2563EB">MRP (Labour Demand)</text>
 
       <!-- Monopsony equilibrium: MC_L = MRP intersection -->
-      <!-- MC_L line: from (90,390) to (430,65) — parametric at t: x=90+340t, y=390-325t -->
-      <!-- MRP line: from (90,80) to (650,370) — parametric: x=90+560s, y=80+290s -->
+      <!-- MC_L line: from (90,390) to (430,65) – parametric at t: x=90+340t, y=390-325t -->
+      <!-- MRP line: from (90,80) to (650,370) – parametric: x=90+560s, y=80+290s -->
       <!-- Solving: 90+340t=90+560s → 340t=560s → t=560s/340=1.647s -->
       <!--          390-325t=80+290s → 390-325(1.647s)=80+290s → 310=825.3s → s=0.376 -->
       <!-- Q_m x = 90+560*0.376 = 90+210.6 = 300.6, y = 80+290*0.376 = 80+109 = 189 -->
@@ -10729,7 +10729,7 @@ window.ECONOS_ICONS = {
 
       <!-- Annotation box -->
       <rect x="75" y="440" width="490" height="30" fill="#FEF3C7" rx="6" opacity="0.9"/>
-      <text x="320" y="453" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">At W₀, income effect = substitution effect — further wage ↑ reduces hours supplied</text>
+      <text x="320" y="453" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">At W₀, income effect = substitution effect – further wage ↑ reduces hours supplied</text>
     </svg>
   `,
 
@@ -10768,7 +10768,7 @@ window.ECONOS_ICONS = {
       <text x="58" y="229" font-size="11" font-weight="700" fill="#334155" text-anchor="end">W_e</text>
       <text x="380" y="408" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Q_e</text>
 
-      <!-- NMW wage floor at W_NMW (above equilibrium) — at y=155 (higher wage) -->
+      <!-- NMW wage floor at W_NMW (above equilibrium) – at y=155 (higher wage) -->
       <line x1="70" y1="155" x2="660" y2="155" stroke="#D97706" stroke-width="2.2" stroke-dasharray="8 4"/>
       <text x="440" y="148" font-size="11" font-weight="700" fill="#D97706">National Minimum Wage (W_NMW)</text>
 
@@ -10817,7 +10817,7 @@ window.ECONOS_ICONS = {
       <line x1="70" y1="50" x2="570" y2="370" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
       <text x="574" y="370" font-size="11" font-weight="700" fill="#2563EB">D = AR</text>
 
-      <!-- MR: same y-intercept (70,50), twice the slope — reaches x-axis at midpoint Q_max/2 -->
+      <!-- MR: same y-intercept (70,50), twice the slope – reaches x-axis at midpoint Q_max/2 -->
       <!-- MR reaches y=380 at x=70+250=320 (half the x-range) -->
       <line x1="70" y1="50" x2="320" y2="380" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
       <text x="324" y="378" font-size="11" font-weight="700" fill="#64748B">MR</text>
@@ -10852,7 +10852,7 @@ window.ECONOS_ICONS = {
 
       <!-- Key text box -->
       <rect x="430" y="60" width="240" height="40" fill="#FEF3C7" rx="8" opacity="0.9"/>
-      <text x="550" y="76" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">No consumer surplus — firm</text>
+      <text x="550" y="76" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">No consumer surplus – firm</text>
       <text x="550" y="90" font-size="10" fill="#92400E" text-anchor="middle">extracts all willingness-to-pay</text>
     </svg>
   `,
@@ -10864,7 +10864,7 @@ window.ECONOS_ICONS = {
       <!-- Vertical divider -->
       <line x1="450" y1="20" x2="450" y2="400" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.7"/>
 
-      <!-- ===== LEFT PANEL: Market A — Elastic ===== -->
+      <!-- ===== LEFT PANEL: Market A – Elastic ===== -->
       <!-- Y axis -->
       <line x1="50" y1="30" x2="50" y2="370" stroke="#334155" stroke-width="2"/>
       <polygon points="45,30 55,30 50,20" fill="#334155"/>
@@ -10876,7 +10876,7 @@ window.ECONOS_ICONS = {
       <text x="438" y="374" font-size="11" font-weight="700" fill="#334155">Q</text>
 
       <!-- Panel title -->
-      <text x="237" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market A — Elastic Demand (e.g. students / exports)</text>
+      <text x="237" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market A – Elastic Demand (e.g. students / exports)</text>
 
       <!-- Demand A: relatively flat (elastic), from (50,60) to (420,300) -->
       <line x1="50" y1="60" x2="420" y2="300" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
@@ -10908,7 +10908,7 @@ window.ECONOS_ICONS = {
       <text x="40" y="141" font-size="10" font-weight="700" fill="#334155" text-anchor="end">P_A</text>
       <text x="168" y="388" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Q_A</text>
 
-      <!-- ===== RIGHT PANEL: Market B — Inelastic ===== -->
+      <!-- ===== RIGHT PANEL: Market B – Inelastic ===== -->
       <!-- Y axis -->
       <line x1="470" y1="30" x2="470" y2="370" stroke="#334155" stroke-width="2"/>
       <polygon points="465,30 475,30 470,20" fill="#334155"/>
@@ -10920,7 +10920,7 @@ window.ECONOS_ICONS = {
       <text x="873" y="374" font-size="11" font-weight="700" fill="#334155">Q</text>
 
       <!-- Panel title -->
-      <text x="665" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market B — Inelastic Demand (e.g. domestic / business)</text>
+      <text x="665" y="16" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Market B – Inelastic Demand (e.g. domestic / business)</text>
 
       <!-- Demand B: steeper (inelastic), from (470,50) to (850,330) -->
       <line x1="470" y1="50" x2="850" y2="330" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
@@ -10953,12 +10953,12 @@ window.ECONOS_ICONS = {
 
       <!-- Shared annotation -->
       <rect x="200" y="393" width="500" height="22" fill="#FEF3C7" rx="6" opacity="0.9"/>
-      <text x="450" y="408" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">P_B &gt; P_A — higher price in the less elastic market (MR_A = MR_B = MC)</text>
+      <text x="450" y="408" font-size="10" fill="#92400E" text-anchor="middle" font-weight="600">P_B &gt; P_A – higher price in the less elastic market (MR_A = MR_B = MC)</text>
     </svg>
   `,
 
   /* ============================================================
-     MES BARRIER DIAGRAM — Scale Economies as Entry Barrier
+     MES BARRIER DIAGRAM – Scale Economies as Entry Barrier
      viewBox 760 x 440
      ============================================================ */
   mesBarrierDiagram: `
@@ -11005,7 +11005,7 @@ window.ECONOS_ICONS = {
       <!-- Entrant dot on LRAC far left of MES (approx x=130, y=215 on curve) -->
       <circle cx="130" cy="215" r="5" fill="#D97706"/>
       <text x="140" y="207" font-size="9" font-weight="700" fill="#D97706">Entrant's starting position</text>
-      <text x="140" y="220" font-size="9" fill="#D97706">"High AC — cost disadvantage"</text>
+      <text x="140" y="220" font-size="9" fill="#D97706">"High AC – cost disadvantage"</text>
 
       <!-- Incumbent dot at MES bottom -->
       <circle cx="310" cy="280" r="5" fill="#DC2626"/>
@@ -11041,17 +11041,17 @@ window.ECONOS_ICONS = {
       <text x="735" y="394" font-size="11" font-weight="700" fill="#334155">Q</text>
       <text x="400" y="415" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Quantity (Q)</text>
 
-      <!-- Market Demand (AR) — downward sloping from (70,60) to (680,360) -->
+      <!-- Market Demand (AR) – downward sloping from (70,60) to (680,360) -->
       <line x1="70" y1="60" x2="680" y2="360" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
       <text x="690" y="364" font-size="10" font-weight="700" fill="#2563EB">D (AR)</text>
       <text x="690" y="376" font-size="9" fill="#2563EB">Market Demand</text>
 
-      <!-- Incumbent MC — roughly horizontal at y=330 -->
+      <!-- Incumbent MC – roughly horizontal at y=330 -->
       <line x1="70" y1="330" x2="680" y2="330" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
       <text x="688" y="334" font-size="10" font-weight="700" fill="#059669">MC</text>
       <text x="688" y="346" font-size="9" fill="#059669">Incumbent MC</text>
 
-      <!-- Entrant's min AC — horizontal dashed at y=220 -->
+      <!-- Entrant's min AC – horizontal dashed at y=220 -->
       <line x1="70" y1="220" x2="680" y2="220" stroke="#D97706" stroke-width="1.8" stroke-dasharray="7 4"/>
       <text x="688" y="224" font-size="10" font-weight="700" fill="#D97706">Entrant's min AC</text>
 
@@ -11084,7 +11084,7 @@ window.ECONOS_ICONS = {
   `,
 
   /* ============================================================
-     NETWORK EFFECT DIAGRAM — Critical Mass &amp; Winner-takes-all
+     NETWORK EFFECT DIAGRAM – Critical Mass &amp; Winner-takes-all
      viewBox 700 x 420
      ============================================================ */
   networkEffectDiagram: `
@@ -11107,13 +11107,13 @@ window.ECONOS_ICONS = {
       <!-- Critical mass vertical dashed line at x=240 -->
       <!-- Sub-critical shading (rose) left of x=240 -->
       <rect x="60" y="30" width="180" height="340" fill="#FEE2E2" opacity="0.5"/>
-      <text x="150" y="320" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">Sub-critical —</text>
+      <text x="150" y="320" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">Sub-critical –</text>
       <text x="150" y="333" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">network too small</text>
       <text x="150" y="346" font-size="9" font-weight="600" fill="#DC2626" text-anchor="middle">to sustain</text>
 
       <!-- Super-critical shading (green) right of x=240 -->
       <rect x="240" y="30" width="420" height="340" fill="#DCFCE7" opacity="0.4"/>
-      <text x="450" y="320" font-size="9" font-weight="600" fill="#059669" text-anchor="middle">Super-critical —</text>
+      <text x="450" y="320" font-size="9" font-weight="600" fill="#059669" text-anchor="middle">Super-critical –</text>
       <text x="450" y="333" font-size="9" font-weight="600" fill="#059669" text-anchor="middle">self-reinforcing growth</text>
 
       <!-- Critical mass dashed vertical -->
@@ -11144,7 +11144,7 @@ window.ECONOS_ICONS = {
       <line x1="148" y1="360" x2="552" y2="360" stroke="#334155" stroke-width="1.5"/>
       <polygon points="148,355 148,365 138,360" fill="#334155"/>
       <polygon points="552,355 552,365 562,360" fill="#334155"/>
-      <text x="350" y="354" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Network gap — almost impossible to close</text>
+      <text x="350" y="354" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Network gap – almost impossible to close</text>
     </svg>
   `,
 
@@ -11232,13 +11232,13 @@ window.ECONOS_ICONS = {
            Demand: (60,80) → (640,380)  slope=(380-80)/(640-60)=300/580≈0.517/px
            MC (upward): (60,320) → (640,180) slope=(180-320)/(640-60)=-140/580≈-0.241/px  [upward in econ sense, lower y = higher price]
            Actually MC upward-sloping means higher Q = higher price = lower y? No: y-axis is price, higher y = lower price.
-           MC upward: higher Q → higher MC. So higher x → higher y on chart inverted? No — standard econ: y=price, up=higher price.
+           MC upward: higher Q → higher MC. So higher x → higher y on chart inverted? No – standard econ: y=price, up=higher price.
            So MC upward means: as x increases, y decreases (price rises). Let MC go from (60,340) to (640,170).
            Competitive eq: D=MC → solve (60,80)+(300/580)*(x-60) = (60,340)+(170-340)/(640-60)*(x-60)
            slope_D=300/580≈0.517/px (but downward so dy/dx=+300/580 since y increases as x increases meaning price falls)
            Wait: D line y goes 80→380 as x goes 60→640: higher x, higher y, which in a chart means lower price. That's wrong for a normal demand curve where higher Q = lower price.
            Standard econ diagram: y-axis up = higher price. Demand is downward sloping meaning as Q (x) increases, price (y) falls, so y decreases as x increases.
-           Let me redo: D from (60,80) to (640,380) — that means at low Q (x=60) price is HIGH (y=80, near top) and at high Q (x=640) price is LOW (y=380, near bottom). That is correct.
+           Let me redo: D from (60,80) to (640,380) – that means at low Q (x=60) price is HIGH (y=80, near top) and at high Q (x=640) price is LOW (y=380, near bottom). That is correct.
            MC upward: at low Q (x=60) MC is LOW (high y near bottom) and at high Q (x=640) MC is HIGH (low y near top).
            So MC: (60,350) → (640,180). slope_MC = (180-350)/(640-60) = -170/580 ≈ -0.293/px
            Demand: (60,80) → (640,380). slope_D = (380-80)/(640-60) = 300/580 ≈ 0.517/px
@@ -11323,10 +11323,10 @@ window.ECONOS_ICONS = {
         Coordinates (illustrative):
           Demand (AR): (60,80) → (640,380)  [downward sloping, navy]
           MR: (60,80) → (350,400)  [below demand, steeper, slate]
-          LRAC: starts high left, falls throughout — never turns up: (60,120) → (640,310)  [blue, but slope shallower than demand]
+          LRAC: starts high left, falls throughout – never turns up: (60,120) → (640,310)  [blue, but slope shallower than demand]
           MC: below LRAC and falling: (60,200) → (640,360)  [red]
 
-          Wait — LRAC falling throughout, MC below LRAC when LRAC falling:
+          Wait – LRAC falling throughout, MC below LRAC when LRAC falling:
           LRAC: from (60,120) to (640,310) [falling = higher Q, lower y, so lower LRAC per unit ✓]
           Actually falling LRAC means lower unit cost as output rises: y decreases as x increases (cost falls).
           In price-axis chart, falling LRAC: higher x → lower y ✓ (like demand but different slope).
@@ -11340,7 +11340,7 @@ window.ECONOS_ICONS = {
           When LRAC is falling, MC < LRAC (MC drags average down).
           So at same x, MC_y < LRAC_y (MC is below, i.e. lower £ value, which is LOWER y on chart).
 
-          Let LRAC: (60,300) → (640,120) [falls as Q rises — y decreases as x increases ✓]
+          Let LRAC: (60,300) → (640,120) [falls as Q rises – y decreases as x increases ✓]
           MC: below LRAC (lower y), also falling: (60,360) → (640,60)
 
           Demand: (60,80) → (640,380) [downward sloping: y increases as x increases... wait]
@@ -11443,7 +11443,7 @@ window.ECONOS_ICONS = {
       <!--
         Coordinates (illustrative, consistent):
         Demand: (60,80) → (640,380) [downward sloping, navy]
-        S1 (pre-tax): (60,380) → (580,80) [upward sloping — higher Q = higher price = lower y]
+        S1 (pre-tax): (60,380) → (580,80) [upward sloping – higher Q = higher price = lower y]
           slope_S1 = (80-380)/(580-60) = -300/520 ≈ -0.577/px
           y_S1 = 380 - 0.577*(x-60)
         Pre-tax equilibrium D=S1:
@@ -11545,13 +11545,13 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Shared title -->
-      <text x="450" y="24" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Same tax, different incidence — elasticity determines the split</text>
+      <text x="450" y="24" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Same tax, different incidence – elasticity determines the split</text>
 
       <!-- Divider -->
       <line x1="450" y1="35" x2="450" y2="425" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4"/>
 
       <!-- ═══ LEFT PANEL: Inelastic Demand ═══ -->
-      <text x="225" y="50" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Inelastic Demand — Consumer bears most of tax</text>
+      <text x="225" y="50" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Inelastic Demand – Consumer bears most of tax</text>
 
       <!-- Left Y axis -->
       <line x1="50" y1="65" x2="50" y2="390" stroke="#334155" stroke-width="2"/>
@@ -11624,7 +11624,7 @@ window.ECONOS_ICONS = {
       <text x="225" y="330" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Inelastic demand: consumer pays most</text>
 
       <!-- ═══ RIGHT PANEL: Elastic Demand ═══ -->
-      <text x="675" y="50" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Elastic Demand — Producer bears most of tax</text>
+      <text x="675" y="50" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">Elastic Demand – Producer bears most of tax</text>
 
       <!-- Right Y axis -->
       <line x1="470" y1="65" x2="470" y2="390" stroke="#334155" stroke-width="2"/>
@@ -11707,7 +11707,7 @@ window.ECONOS_ICONS = {
           y_S2 = y_S1 + 80 = 460 - 0.577*(x-60)
           S2 enters chart (y=400) at: 400=460-0.577*(x-60) → 0.577*(x-60)=60 → x-60=104 → x=164
           S2 exits chart top (y=0) not relevant. Let's draw (164,400) to (640,93) clipped.
-          Actually draw from (60,460) which is below chart — draw from visible start:
+          Actually draw from (60,460) which is below chart – draw from visible start:
           let start at x=164,y=400 and end: y_S2 at x=640 = 460-0.577*(640-60)=460-335=125
           So S2: (164,400) → (640,125) [visible portion]
 
@@ -11717,7 +11717,7 @@ window.ECONOS_ICONS = {
           1.094*(x-60)=380 → x-60=347.3 → x2=407, y2=80+0.517*347=80+179=259
           P2=259 (consumers pay lower price: higher y = lower price ✓ since 259>222... wait 259>222 means price is LOWER since higher y = lower on chart ✓)
           Producers receive: y_S1 at x2=407: 380-0.577*(407-60)=380-200=180.
-          Effective producer price=y=180 (lower y = higher price received ✓ — producers get higher than P2)
+          Effective producer price=y=180 (lower y = higher price received ✓ – producers get higher than P2)
           Subsidy per unit on chart: y_S1(407)-y_S2(407)=200... let me check: y_S2=460-0.577*347=460-200=260.
           Diff S1-S2 at x=407: 180-260=-80... S2 is 80 below S1 in y (further down screen = lower cost) ✓
 
@@ -11811,7 +11811,7 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Title -->
-      <text x="320" y="32" font-size="15" font-weight="700" fill="#334155" text-anchor="middle">Cartel Prisoners' Dilemma — Payoff Matrix</text>
+      <text x="320" y="32" font-size="15" font-weight="700" fill="#334155" text-anchor="middle">Cartel Prisoners' Dilemma – Payoff Matrix</text>
 
       <!-- Layout constants: table starts at x=130, y=60 -->
       <!-- Column widths: header col = 130, two data cols = 190 each -->
@@ -11839,7 +11839,7 @@ window.ECONOS_ICONS = {
       <text x="120" y="318" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Firm A:</text>
       <text x="120" y="335" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Cheat</text>
 
-      <!-- Cell: Both comply (A=12, B=12) — green shading -->
+      <!-- Cell: Both comply (A=12, B=12) – green shading -->
       <rect x="215" y="125" width="190" height="130" fill="#DCFCE7" stroke="#059669" stroke-width="2" rx="4"/>
       <text x="310" y="165" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £12m</text>
       <text x="310" y="183" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £12m</text>
@@ -11855,7 +11855,7 @@ window.ECONOS_ICONS = {
       <text x="310" y="300" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £4m</text>
       <text x="310" y="318" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £18m</text>
 
-      <!-- Cell: Both cheat (A=7, B=7) — red border Nash equilibrium -->
+      <!-- Cell: Both cheat (A=7, B=7) – red border Nash equilibrium -->
       <rect x="410" y="260" width="190" height="130" fill="#FEE2E2" stroke="#DC2626" stroke-width="3" rx="4"/>
       <text x="505" y="300" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">A: £7m</text>
       <text x="505" y="318" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B: £7m</text>
@@ -11874,7 +11874,7 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Title -->
-      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Cartel as Joint Monopolist — Profit Maximisation</text>
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Cartel as Joint Monopolist – Profit Maximisation</text>
 
       <!-- Axes -->
       <!-- Y axis -->
@@ -11941,7 +11941,7 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Title -->
-      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Positive Consumption Externality — Under-consumption</text>
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Positive Consumption Externality – Under-consumption</text>
 
       <!-- Y axis -->
       <line x1="70" y1="45" x2="70" y2="400" stroke="#334155" stroke-width="2"/>
@@ -11960,7 +11960,7 @@ window.ECONOS_ICONS = {
       <line x1="70" y1="100" x2="580" y2="380" stroke="#2563EB" stroke-width="2.5"/>
       <text x="586" y="383" font-size="11" font-weight="700" fill="#2563EB">MPB (Private Demand)</text>
 
-      <!-- MSB: parallel to MPB but shifted up by 70px — from (70,55) to (580,335) -->
+      <!-- MSB: parallel to MPB but shifted up by 70px – from (70,55) to (580,335) -->
       <line x1="70" y1="55" x2="580" y2="335" stroke="#059669" stroke-width="2.5"/>
       <text x="586" y="338" font-size="11" font-weight="700" fill="#059669">MSB = MPB + MEB</text>
 
@@ -12042,9 +12042,9 @@ window.ECONOS_ICONS = {
         <text x="48" y="416" font-size="12" fill="#64748B">O</text>
       </g>
 
-      <!-- ===== LAYER: base curves (MPB=Demand and MPC=MSC=Supply) — always visible =====
-           MPC: from (100, 370) to (490, 90)   — slope ≈ -0.718
-           MPB: from (100, 200) to (490, 380)  — slope ≈ +0.462
+      <!-- ===== LAYER: base curves (MPB=Demand and MPC=MSC=Supply) – always visible =====
+           MPC: from (100, 370) to (490, 90)   – slope ≈ -0.718
+           MPB: from (100, 200) to (490, 380)  – slope ≈ +0.462
            Intersection (Q_market): x ≈ 244, y ≈ 267
       -->
       <g class="layer-base-curves">
@@ -12083,11 +12083,11 @@ window.ECONOS_ICONS = {
         <text x="620" y="176" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">WHAT EACH CURVE MEANS</text>
         <line x1="620" y1="200" x2="650" y2="200" stroke="#D97706" stroke-width="3"/>
         <text x="658" y="204" font-size="14" font-weight="700" fill="#D97706">D = MPB</text>
-        <text x="620" y="224" font-size="13" fill="#334155">Marginal private benefit — value</text>
+        <text x="620" y="224" font-size="13" fill="#334155">Marginal private benefit – value</text>
         <text x="620" y="242" font-size="13" fill="#334155">to the consumer of one more unit.</text>
         <line x1="620" y1="266" x2="650" y2="266" stroke="#059669" stroke-width="3"/>
         <text x="658" y="270" font-size="14" font-weight="700" fill="#059669">MPC = MSC</text>
-        <text x="620" y="290" font-size="13" fill="#334155">Supply cost — same private and</text>
+        <text x="620" y="290" font-size="13" fill="#334155">Supply cost – same private and</text>
         <text x="620" y="308" font-size="13" fill="#334155">social cost (no production externality).</text>
         <text x="620" y="340" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="2">BUT THIS IGNORES…</text>
         <text x="620" y="364" font-size="14" fill="#334155">External benefits to third parties</text>
@@ -12135,7 +12135,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <!-- ===== LAYER: optimal point (shift + efficiency states) =====
-           Q* at x=303, P* at y=224 — to the RIGHT of Q_m
+           Q* at x=303, P* at y=224 – to the RIGHT of Q_m
       -->
       <g class="layer-optimal">
         <line x1="60" y1="224" x2="303" y2="224" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -12200,7 +12200,7 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Title -->
-      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Akerlof's Lemons Market — Adverse Selection &amp; Market Unravelling</text>
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Akerlof's Lemons Market – Adverse Selection &amp; Market Unravelling</text>
 
       <!-- Y axis -->
       <line x1="70" y1="45" x2="70" y2="400" stroke="#334155" stroke-width="2"/>
@@ -12215,15 +12215,15 @@ window.ECONOS_ICONS = {
       <line x1="70" y1="80" x2="600" y2="380" stroke="#2563EB" stroke-width="2.5"/>
       <text x="608" y="383" font-size="11" font-weight="700" fill="#2563EB">Buyer demand (based on expected quality)</text>
 
-      <!-- S1: green, upward, rightmost — from (70,350) to (540,100) -->
+      <!-- S1: green, upward, rightmost – from (70,350) to (540,100) -->
       <line x1="70" y1="350" x2="540" y2="100" stroke="#059669" stroke-width="2.5"/>
       <text x="548" y="98" font-size="11" font-weight="700" fill="#059669">S₁: Full market (good cars + lemons)</text>
 
-      <!-- S2: amber, upward, middle — from (70,350) to (380,100) -->
+      <!-- S2: amber, upward, middle – from (70,350) to (380,100) -->
       <line x1="70" y1="350" x2="380" y2="100" stroke="#D97706" stroke-width="2.5"/>
       <text x="388" y="98" font-size="11" font-weight="700" fill="#D97706">S₂: Good cars withdraw</text>
 
-      <!-- S3: red, upward, leftmost — from (70,350) to (220,100) -->
+      <!-- S3: red, upward, leftmost – from (70,350) to (220,100) -->
       <line x1="70" y1="350" x2="220" y2="100" stroke="#DC2626" stroke-width="2.5"/>
       <text x="228" y="98" font-size="11" font-weight="700" fill="#DC2626">S₃: Only lemons (market collapse)</text>
 
@@ -12272,7 +12272,7 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- Title -->
-      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Public Goods — Free Rider Problem &amp; Market Under-provision</text>
+      <text x="350" y="28" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">Public Goods – Free Rider Problem &amp; Market Under-provision</text>
 
       <!-- Y axis -->
       <line x1="70" y1="45" x2="70" y2="390" stroke="#334155" stroke-width="2"/>
@@ -12532,7 +12532,7 @@ window.ECONOS_ICONS = {
   twoSystemsDiagram: `
     <svg viewBox="0 0 440 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="380" fill="#F8FAFC" rx="10"/>
-      <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two systems thinking — one head</text>
+      <text x="220" y="26" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two systems thinking – one head</text>
 
       <rect x="20" y="40" width="190" height="292" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
       <text x="115" y="66" font-size="14" font-weight="900" text-anchor="middle" fill="#92400E">System 1</text>
@@ -12580,27 +12580,27 @@ window.ECONOS_ICONS = {
       <g class="idl-base"></g>
 
       <g class="idl-1">
-        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Anchoring — the first number sticks</text>
+        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Anchoring – the first number sticks</text>
         <rect x="30" y="46" width="380" height="118" rx="12" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
         <text x="135" y="102" font-size="46" font-weight="900" text-anchor="middle" fill="#94A3B8" text-decoration="line-through">£100</text>
         <text x="135" y="132" font-size="10.5" text-anchor="middle" fill="#94A3B8" font-weight="600">"Original price"</text>
         <text x="220" y="114" font-size="34" text-anchor="middle" fill="#CBD5E1">→</text>
         <text x="310" y="102" font-size="46" font-weight="900" text-anchor="middle" fill="#dc2626">£60</text>
-        <text x="310" y="132" font-size="10.5" text-anchor="middle" fill="#dc2626" font-weight="600">"40% off — today only!"</text>
+        <text x="310" y="132" font-size="10.5" text-anchor="middle" fill="#dc2626" font-weight="600">"40% off – today only!"</text>
         <text x="135" y="152" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">the anchor</text>
         <text x="310" y="152" font-size="9" text-anchor="middle" fill="#dc2626" font-style="italic">feels like a steal</text>
         <text x="220" y="194" font-size="12.5" font-weight="800" text-anchor="middle" fill="#334155">Your brain treats £100 as the reference point.</text>
-        <text x="220" y="214" font-size="11.5" text-anchor="middle" fill="#475569">The £60 feels generous — but was the item ever worth £100?</text>
+        <text x="220" y="214" font-size="11.5" text-anchor="middle" fill="#475569">The £60 feels generous – but was the item ever worth £100?</text>
         <rect x="30" y="234" width="380" height="74" rx="10" fill="#DBEAFE" stroke="#BFDBFE"/>
         <text x="220" y="256" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">Anchoring in the real UK economy</text>
         <text x="220" y="277" font-size="10" text-anchor="middle" fill="#1e3a8a">Estate agents list high to anchor offers downward</text>
-        <text x="220" y="294" font-size="10" text-anchor="middle" fill="#1e3a8a">Charities prompt "£20 / £50 / £100" — the middle one wins</text>
+        <text x="220" y="294" font-size="10" text-anchor="middle" fill="#1e3a8a">Charities prompt "£20 / £50 / £100" – the middle one wins</text>
         <text x="220" y="338" font-size="11.5" font-weight="800" text-anchor="middle" fill="#7c3aed">The first number you see shapes every judgement that follows.</text>
         <text x="220" y="358" font-size="9.5" text-anchor="middle" fill="#64748B">ASA now polices fake "was £X" prices because the trick works.</text>
       </g>
 
       <g class="idl-2" style="display:none">
-        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Availability — vivid examples warp risk</text>
+        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Availability – vivid examples warp risk</text>
         <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Which UK travel risk feels higher? Which actually is?</text>
 
         <rect x="30" y="68" width="180" height="208" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
@@ -12627,13 +12627,13 @@ window.ECONOS_ICONS = {
         <text x="320" y="228" font-size="10" font-weight="700" text-anchor="middle" fill="#d97706">Media coverage: very low</text>
         <text x="320" y="246" font-size="9" text-anchor="middle" fill="#94A3B8" font-style="italic">"feels routine"</text>
 
-        <text x="220" y="316" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">We judge risk by how easily examples come to mind —</text>
+        <text x="220" y="316" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">We judge risk by how easily examples come to mind –</text>
         <text x="220" y="336" font-size="11" text-anchor="middle" fill="#475569">not by how often the event actually happens.</text>
         <text x="220" y="360" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">The vivid plane-crash image is overweighted. The daily road accident is not.</text>
       </g>
 
       <g class="idl-3" style="display:none">
-        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Social norms — HMRC's £200m wording change</text>
+        <text x="220" y="30" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Social norms – HMRC's £200m wording change</text>
         <text x="220" y="50" font-size="10.5" text-anchor="middle" fill="#64748B">Two reminder letters. Identical request. One adds six words.</text>
         <rect x="30" y="66" width="180" height="200" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
         <text x="40" y="86" font-size="10" font-weight="700" fill="#334155">Dear taxpayer,</text>
@@ -12664,11 +12664,11 @@ window.ECONOS_ICONS = {
 
         <text x="220" y="312" font-size="12" font-weight="800" text-anchor="middle" fill="#7c3aed">Six extra words. ~£200m extra revenue. £0 cost.</text>
         <text x="220" y="338" font-size="10.5" text-anchor="middle" fill="#475569">Telling people what others do beats appealing to duty</text>
-        <text x="220" y="354" font-size="10.5" text-anchor="middle" fill="#475569">— so it shows up in towel signs, energy bills, and council letters.</text>
+        <text x="220" y="354" font-size="10.5" text-anchor="middle" fill="#475569">– so it shows up in towel signs, energy bills, and council letters.</text>
       </g>
 
       <g class="idl-4" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Loss aversion — losses hurt twice as much as gains feel good</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Loss aversion – losses hurt twice as much as gains feel good</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Kahneman &amp; Tversky: pain of losing £100 ≈ joy of gaining ~£200.</text>
 
         <!-- Vertical axis labels (rotated) -->
@@ -12695,7 +12695,7 @@ window.ECONOS_ICONS = {
         <text x="180" y="120" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">Gain £100</text>
         <text x="180" y="162" font-size="16" font-weight="900" text-anchor="middle" fill="#059669">+1×</text>
 
-        <!-- Loss bar below axis (−2 units, 100px tall — twice as deep) -->
+        <!-- Loss bar below axis (−2 units, 100px tall – twice as deep) -->
         <rect x="250" y="180" width="100" height="100" fill="#FEE2E2" stroke="#dc2626" stroke-width="1.5" rx="3"/>
         <text x="300" y="298" font-size="11" font-weight="800" text-anchor="middle" fill="#dc2626">Lose £100</text>
         <text x="300" y="237" font-size="16" font-weight="900" text-anchor="middle" fill="#dc2626">−2×</text>
@@ -12706,7 +12706,7 @@ window.ECONOS_ICONS = {
         <text x="34" y="332" font-size="10" font-weight="700" fill="#7c3aed">Behaviour:</text>
         <text x="98" y="332" font-size="9.5" fill="#475569">hold losing shares · endowment effect · stick with worse mortgages</text>
 
-        <text x="220" y="364" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful — opting out is framed as a "loss".</text>
+        <text x="220" y="364" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">This is why default choices (card 4) are so powerful – opting out is framed as a "loss".</text>
       </g>
       </g>
     </svg>
@@ -12716,7 +12716,7 @@ window.ECONOS_ICONS = {
     <svg viewBox="0 0 440 400" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="400" fill="#F8FAFC" rx="10"/>
       <g class="idl-base">
-        <text x="220" y="24" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two pairs of choices — same one-week gap</text>
+        <text x="220" y="24" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Two pairs of choices – same one-week gap</text>
         <text x="220" y="44" font-size="10.5" text-anchor="middle" fill="#64748B">A rational person should answer both pairs the same way. Do they?</text>
         <rect x="20" y="58" width="58" height="232" rx="8" fill="#fff" stroke="#E2E8F0"/>
         <text x="49" y="170" font-size="11" font-weight="800" text-anchor="middle" fill="#CBD5E1" transform="rotate(-90 49 170)">PAIR A</text>
@@ -12756,7 +12756,7 @@ window.ECONOS_ICONS = {
       <g class="idl-3" style="display:none">
         <rect x="20" y="306" width="400" height="80" rx="12" fill="#F3E8FF" stroke="#7c3aed" stroke-width="2"/>
         <text x="220" y="332" font-size="12.5" font-weight="900" text-anchor="middle" fill="#7c3aed">Same one-week gap. Same £10. Different decisions.</text>
-        <text x="220" y="354" font-size="11" text-anchor="middle" fill="#5b21b6">That is <tspan font-weight="800">present bias</tspan> — the "now" feels worth far more than the future.</text>
+        <text x="220" y="354" font-size="11" text-anchor="middle" fill="#5b21b6">That is <tspan font-weight="800">present bias</tspan> – the "now" feels worth far more than the future.</text>
         <text x="220" y="374" font-size="10" text-anchor="middle" fill="#7c3aed" font-style="italic">It is why pension under-saving needed auto-enrolment (card 4).</text>
       </g>
     </svg>
@@ -12768,7 +12768,7 @@ window.ECONOS_ICONS = {
       <g class="idl-base"></g>
 
       <g class="idl-1">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Planner self vs Doer self — the conflict inside us</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Planner self vs Doer self – the conflict inside us</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Same person, two voices. One plans. The other does.</text>
 
         <rect x="20" y="64" width="190" height="188" rx="8" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
@@ -12813,12 +12813,12 @@ window.ECONOS_ICONS = {
 
         <rect x="20" y="304" width="400" height="74" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
         <text x="220" y="326" font-size="11.5" font-weight="800" text-anchor="middle" fill="#92400E">We overweight the present and undervalue the future.</text>
-        <text x="220" y="346" font-size="10.5" text-anchor="middle" fill="#78350F">This is <tspan font-weight="800">bounded self-control</tspan> — the gap between knowing better and doing better.</text>
-        <text x="220" y="364" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Not laziness — a structural feature of how humans weigh time.</text>
+        <text x="220" y="346" font-size="10.5" text-anchor="middle" fill="#78350F">This is <tspan font-weight="800">bounded self-control</tspan> – the gap between knowing better and doing better.</text>
+        <text x="220" y="364" font-size="9.5" text-anchor="middle" fill="#92400E" font-style="italic">Not laziness – a structural feature of how humans weigh time.</text>
       </g>
 
       <g class="idl-2" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The classic experiment — same gap, different choice</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The classic experiment – same gap, different choice</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">A rational person should answer both pairs the same way. Almost no-one does.</text>
 
         <text x="42" y="92" font-size="11" font-weight="800" fill="#1d4ed8">PAIR A</text>
@@ -12853,7 +12853,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-3" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Commitment devices — how to beat your future self</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Commitment devices – how to beat your future self</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">If the present self is unreliable, lock the choice in advance.</text>
 
         <rect x="20" y="68" width="400" height="70" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1"/>
@@ -12861,7 +12861,7 @@ window.ECONOS_ICONS = {
         <circle cx="44" cy="101" r="11" fill="#DCFCE7" stroke="#059669" stroke-width="1"/>
         <text x="44" y="106" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">1</text>
         <text x="64" y="92" font-size="11" font-weight="700" fill="#059669">Auto-defaults</text>
-        <text x="64" y="108" font-size="9.5" fill="#475569">Decision pre-made on your behalf — pension</text>
+        <text x="64" y="108" font-size="9.5" fill="#475569">Decision pre-made on your behalf – pension</text>
         <text x="64" y="122" font-size="9.5" fill="#475569">auto-enrolment, direct-debit savings round-ups.</text>
         <text x="415" y="100" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">lowest friction</text>
 
@@ -12870,7 +12870,7 @@ window.ECONOS_ICONS = {
         <circle cx="44" cy="181" r="11" fill="#FEF3C7" stroke="#d97706" stroke-width="1"/>
         <text x="44" y="186" font-size="11" font-weight="800" text-anchor="middle" fill="#d97706">2</text>
         <text x="64" y="172" font-size="11" font-weight="700" fill="#d97706">Pre-commitment</text>
-        <text x="64" y="188" font-size="9.5" fill="#475569">Make the future choice costly to reverse —</text>
+        <text x="64" y="188" font-size="9.5" fill="#475569">Make the future choice costly to reverse –</text>
         <text x="64" y="202" font-size="9.5" fill="#475569">gym contracts, lock-ins, NHS quit-dates.</text>
         <text x="415" y="180" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">medium friction</text>
 
@@ -12879,16 +12879,16 @@ window.ECONOS_ICONS = {
         <circle cx="44" cy="261" r="11" fill="#F3E8FF" stroke="#7c3aed" stroke-width="1"/>
         <text x="44" y="266" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">3</text>
         <text x="64" y="252" font-size="11" font-weight="700" fill="#7c3aed">Remove temptation</text>
-        <text x="64" y="268" font-size="9.5" fill="#475569">Take the doer's options away — phone-free</text>
+        <text x="64" y="268" font-size="9.5" fill="#475569">Take the doer's options away – phone-free</text>
         <text x="64" y="282" font-size="9.5" fill="#475569">study apps, leaving credit cards at home.</text>
         <text x="415" y="260" font-size="9" fill="#94A3B8" font-style="italic" text-anchor="end">highest friction</text>
 
         <rect x="20" y="312" width="400" height="58" rx="6" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
         <text x="220" y="334" font-size="11.5" font-weight="800" text-anchor="middle" fill="#92400E">All three work because the planner's goal is locked before</text>
-        <text x="220" y="352" font-size="11" text-anchor="middle" fill="#78350F">the doer gets to vote — bypassing the present-bias problem.</text>
+        <text x="220" y="352" font-size="11" text-anchor="middle" fill="#78350F">the doer gets to vote – bypassing the present-bias problem.</text>
 
         <rect x="20" y="382" width="400" height="34" rx="6" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1"/>
-        <text x="220" y="395" font-size="9.5" text-anchor="middle" fill="#1d4ed8">Bounded self-control creates <tspan font-weight="700">internalities</tspan> — costs we impose on our future self.</text>
+        <text x="220" y="395" font-size="9.5" text-anchor="middle" fill="#1d4ed8">Bounded self-control creates <tspan font-weight="700">internalities</tspan> – costs we impose on our future self.</text>
         <text x="220" y="410" font-size="9.5" text-anchor="middle" fill="#1d4ed8">Card 4 shows the policy response.</text>
       </g>
       </g>
@@ -12925,7 +12925,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-2" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Organ donation — defaults across countries</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">Organ donation – defaults across countries</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Same biology. Only the default differs.</text>
         <g font-size="10.5" font-weight="700" fill="#334155">
           <text x="30" y="92">Austria</text>
@@ -12956,7 +12956,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-3" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">HMRC tax letters — BIT's flagship trial</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">HMRC tax letters – BIT's flagship trial</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">Six extra words. ~£200m+ extra revenue. £0 marginal cost.</text>
         <line x1="80" y1="78" x2="80" y2="298" stroke="#334155" stroke-width="1.5"/>
         <line x1="80" y1="298" x2="408" y2="298" stroke="#334155" stroke-width="1.5"/>
@@ -12980,7 +12980,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <g class="idl-4" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">NHS appointment reminders — the ~£300m text message</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">NHS appointment reminders – the ~£300m text message</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK NHS misses ~7m appointments / year. BIT trial: a few words cut "no-shows" sharply.</text>
 
         <rect x="60" y="70" width="180" height="220" rx="18" fill="#1E293B"/>
@@ -13017,11 +13017,11 @@ window.ECONOS_ICONS = {
         <text x="380" y="320" font-size="9" text-anchor="middle" fill="#64748B">SMS</text>
 
         <text x="220" y="350" font-size="11.5" font-weight="800" text-anchor="middle" fill="#7c3aed">~25–35% fewer no-shows. NHS clinician time saved ≈ £300m/year.</text>
-        <text x="220" y="368" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">Same SMS, same patients — just the wording carries social-proof information.</text>
+        <text x="220" y="368" font-size="10" text-anchor="middle" fill="#64748B" font-style="italic">Same SMS, same patients – just the wording carries social-proof information.</text>
       </g>
 
       <g class="idl-5" style="display:none">
-        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework — small tweaks, big effects</text>
+        <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework – small tweaks, big effects</text>
         <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK Behavioural Insights Team (founded 2010). Same mechanism every time.</text>
 
         <rect x="18" y="68" width="120" height="150" rx="10" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1.5"/>
@@ -13030,7 +13030,7 @@ window.ECONOS_ICONS = {
         <text x="78" y="134" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">Choice</text>
         <text x="78" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">architecture</text>
         <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">Redesign the choice</text>
-        <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment — the</text>
+        <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment – the</text>
         <text x="78" y="200" font-size="9.5" text-anchor="middle" fill="#1e3a8a">default, the framing,</text>
         <text x="78" y="214" font-size="9.5" text-anchor="middle" fill="#1e3a8a">the wording.</text>
 
@@ -13043,7 +13043,7 @@ window.ECONOS_ICONS = {
         <text x="242" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#7c3aed">shifts</text>
         <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">People keep their</text>
         <text x="242" y="186" font-size="9.5" text-anchor="middle" fill="#5b21b6">freedom of choice</text>
-        <text x="242" y="200" font-size="9.5" text-anchor="middle" fill="#5b21b6">— but the easy path</text>
+        <text x="242" y="200" font-size="9.5" text-anchor="middle" fill="#5b21b6">– but the easy path</text>
         <text x="242" y="214" font-size="9.5" text-anchor="middle" fill="#5b21b6">leads to a better one.</text>
 
         <text x="324" y="148" font-size="24" font-weight="900" fill="#94A3B8" text-anchor="middle">→</text>
@@ -13055,7 +13055,7 @@ window.ECONOS_ICONS = {
         <text x="383" y="148" font-size="11" font-weight="800" text-anchor="middle" fill="#059669">outcomes</text>
         <text x="383" y="172" font-size="9" text-anchor="middle" fill="#065f46">For people</text>
         <text x="383" y="186" font-size="9" text-anchor="middle" fill="#065f46">&amp; society</text>
-        <text x="383" y="202" font-size="9" text-anchor="middle" fill="#065f46">— measured</text>
+        <text x="383" y="202" font-size="9" text-anchor="middle" fill="#065f46">– measured</text>
         <text x="383" y="214" font-size="9" text-anchor="middle" fill="#065f46">via RCTs.</text>
 
         <rect x="20" y="236" width="400" height="60" rx="10" fill="#FEF3C7" stroke="#FDE68A"/>
@@ -13076,7 +13076,7 @@ window.ECONOS_ICONS = {
         <text x="48" y="102" font-size="14" text-anchor="middle">⏰</text>
         <text x="74" y="92" font-size="12" font-weight="800" fill="#059669">Timely</text>
         <text x="74" y="116" font-size="10" fill="#065f46">Right message at the right</text>
-        <text x="74" y="130" font-size="10" fill="#065f46">moment — when the user</text>
+        <text x="74" y="130" font-size="10" fill="#065f46">moment – when the user</text>
         <text x="74" y="144" font-size="10" fill="#065f46">is actively deciding.</text>
         <text x="74" y="160" font-size="9" font-style="italic" fill="#059669">SMS just before the appt.</text>
 
@@ -13085,7 +13085,7 @@ window.ECONOS_ICONS = {
         <text x="260" y="102" font-size="14" text-anchor="middle">✏️</text>
         <text x="286" y="92" font-size="12" font-weight="800" fill="#d97706">Simple</text>
         <text x="286" y="116" font-size="10" fill="#92400E">Easy to understand and</text>
-        <text x="286" y="130" font-size="10" fill="#92400E">to act on — no forms,</text>
+        <text x="286" y="130" font-size="10" fill="#92400E">to act on – no forms,</text>
         <text x="286" y="144" font-size="10" fill="#92400E">no comprehension cost.</text>
         <text x="286" y="160" font-size="9" font-style="italic" fill="#d97706">"9 of 10 pay on time."</text>
 
@@ -13093,7 +13093,7 @@ window.ECONOS_ICONS = {
         <circle cx="48" cy="208" r="14" fill="#fff" stroke="#BFDBFE"/>
         <text x="48" y="214" font-size="14" text-anchor="middle">£</text>
         <text x="74" y="204" font-size="12" font-weight="800" fill="#1d4ed8">Low cost</text>
-        <text x="74" y="228" font-size="10" fill="#1e3a8a">Pennies per nudge —</text>
+        <text x="74" y="228" font-size="10" fill="#1e3a8a">Pennies per nudge –</text>
         <text x="74" y="242" font-size="10" fill="#1e3a8a">vs millions for an</text>
         <text x="74" y="256" font-size="10" fill="#1e3a8a">enforcement team.</text>
         <text x="74" y="272" font-size="9" font-style="italic" fill="#1d4ed8">£200m+ from one letter.</text>
@@ -13104,7 +13104,7 @@ window.ECONOS_ICONS = {
         <text x="286" y="204" font-size="12" font-weight="800" fill="#7c3aed">Aligned</text>
         <text x="286" y="228" font-size="10" fill="#5b21b6">Works <tspan font-weight="800">with</tspan> how people</text>
         <text x="286" y="242" font-size="10" fill="#5b21b6">decide (defaults, norms)</text>
-        <text x="286" y="256" font-size="10" fill="#5b21b6">— not against them.</text>
+        <text x="286" y="256" font-size="10" fill="#5b21b6">– not against them.</text>
         <text x="286" y="272" font-size="9" font-style="italic" fill="#7c3aed">Opt-out beats opt-in.</text>
 
         <rect x="20" y="298" width="400" height="68" rx="10" fill="#fff" stroke="#E2E8F0" stroke-width="1.5"/>
@@ -13120,7 +13120,7 @@ window.ECONOS_ICONS = {
     <svg viewBox="0 0 440 310" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <rect width="440" height="310" fill="#F8FAFC" rx="10"/>
 
-      <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework — small tweaks, big effects</text>
+      <text x="220" y="28" font-size="14" font-weight="800" text-anchor="middle" fill="#0B1426">The BIT framework – small tweaks, big effects</text>
       <text x="220" y="48" font-size="10.5" text-anchor="middle" fill="#64748B">UK Behavioural Insights Team (founded 2010). Same mechanism every time.</text>
 
       <rect x="18" y="68" width="120" height="150" rx="8" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
@@ -13130,7 +13130,7 @@ window.ECONOS_ICONS = {
       <text x="78" y="122" font-size="11" font-weight="700" text-anchor="middle" fill="#1d4ed8">Choice</text>
       <text x="78" y="136" font-size="11" font-weight="700" text-anchor="middle" fill="#1d4ed8">architecture</text>
       <text x="78" y="158" font-size="9.5" text-anchor="middle" fill="#1e3a8a">Redesign the choice</text>
-      <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment — default,</text>
+      <text x="78" y="172" font-size="9.5" text-anchor="middle" fill="#1e3a8a">environment – default,</text>
       <text x="78" y="186" font-size="9.5" text-anchor="middle" fill="#1e3a8a">framing, wording.</text>
 
       <line x1="138" y1="148" x2="182" y2="148" stroke="#CBD5E1" stroke-width="1.5"/>
@@ -13143,7 +13143,7 @@ window.ECONOS_ICONS = {
       <text x="242" y="122" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">Behaviour</text>
       <text x="242" y="136" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">shifts</text>
       <text x="242" y="158" font-size="9.5" text-anchor="middle" fill="#5b21b6">Freedom preserved</text>
-      <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">— but the easy path</text>
+      <text x="242" y="172" font-size="9.5" text-anchor="middle" fill="#5b21b6">– but the easy path</text>
       <text x="242" y="186" font-size="9.5" text-anchor="middle" fill="#5b21b6">leads to a better one.</text>
 
       <line x1="302" y1="148" x2="346" y2="148" stroke="#CBD5E1" stroke-width="1.5"/>
@@ -13251,7 +13251,7 @@ window.ECONOS_ICONS = {
         S-curve:
         Origin at (200, 240).
         GAINS side (right): concave-down, starts steep then flattens.
-          From (200,240) curves up to ~(620,100) — rises 140px over 420px x
+          From (200,240) curves up to ~(620,100) – rises 140px over 420px x
           Control points for cubic bezier: start steep then level off
           M200,240 C260,120 340,90 620,100
 
@@ -13386,7 +13386,7 @@ window.ECONOS_ICONS = {
 
       <!-- Bottom annotation box -->
       <rect x="60" y="395" width="520" height="22" fill="#FEF3C7" rx="5" stroke="#D97706" stroke-width="1"/>
-      <text x="320" y="410" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">This is a nudge — no regulation, no tax incentive. Just changing the default option raised saving by 32 percentage points.</text>
+      <text x="320" y="410" font-size="9" font-weight="600" fill="#92400E" text-anchor="middle">This is a nudge – no regulation, no tax incentive. Just changing the default option raised saving by 32 percentage points.</text>
     </svg>
   `,
 
@@ -13602,7 +13602,7 @@ window.ECONOS_ICONS = {
       <!-- Vertical divider -->
       <line x1="350" y1="45" x2="350" y2="430" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,3"/>
 
-      <!-- ===== LEFT PANEL: High Barriers — Supernormal Profit ===== -->
+      <!-- ===== LEFT PANEL: High Barriers – Supernormal Profit ===== -->
       <text x="180" y="50" font-size="11" font-weight="600" fill="#DC2626" text-anchor="middle">High Barriers: Supernormal Profit</text>
 
       <!-- Left axes -->
@@ -13635,7 +13635,7 @@ window.ECONOS_ICONS = {
       <text x="151" y="418" font-size="10" fill="#334155" text-anchor="middle">Q&#x209A;&#x2098;</text>
 
       <!-- LEFT: P_pm on AR at x=155: y = 110 + (155-65)/(320-65)*(390-110) = 110 + 90/255*280 ≈ 209 -->
-      <!-- AC at Q_pm ≈ 255 (on falling part of bezier, above AR) — need AC below AR -->
+      <!-- AC at Q_pm ≈ 255 (on falling part of bezier, above AR) – need AC below AR -->
       <!-- Using: P_pm horizontal at y=209, AC_pm at y=255 would give loss. -->
       <!-- Instead use: AR at x=155 y≈209, AC lower at y≈160 (deep in U trough) -->
       <!-- The U trough of AC is at roughly x=185, y=155. At x=155, AC≈172. -->
@@ -13653,7 +13653,7 @@ window.ECONOS_ICONS = {
       <line x1="60" y1="172" x2="155" y2="172" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="3,3"/>
       <text x="30" y="176" font-size="9" fill="#0EA5E9">AC&#x209A;&#x2098;</text>
 
-      <!-- ===== RIGHT PANEL: Contestable Market — Normal Profit ===== -->
+      <!-- ===== RIGHT PANEL: Contestable Market – Normal Profit ===== -->
       <text x="520" y="50" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">Contestable: Normal Profit</text>
 
       <!-- Right axes -->
@@ -13693,7 +13693,7 @@ window.ECONOS_ICONS = {
       <line x1="370" y1="232" x2="490" y2="232" stroke="#059669" stroke-width="1" stroke-dasharray="3,3"/>
       <text x="352" y="236" font-size="9" fill="#059669">P&#x1D9C;</text>
 
-      <!-- RIGHT: Normal profit shading (break-even: P=AC) — just a thin green line indicator -->
+      <!-- RIGHT: Normal profit shading (break-even: P=AC) – just a thin green line indicator -->
       <!-- Annotate with green label "P = AC: Normal profit (break-even)" -->
       <rect x="396" y="195" width="150" height="26" fill="#D1FAE5" rx="4" opacity="0.9"/>
       <rect x="396" y="195" width="150" height="26" fill="none" stroke="#059669" stroke-width="1" rx="4"/>
@@ -13974,8 +13974,8 @@ window.ECONOS_ICONS = {
 
     <!-- Bottom annotation bar -->
     <rect x="20" y="375" width="620" height="36" fill="#F1F5F9" rx="4"/>
-    <text x="330" y="390" text-anchor="middle" font-size="9.5" fill="#475569">UK current account deficit ~3-4% of GDP — financed by financial account surplus (FDI and portfolio inflows).</text>
-    <text x="330" y="405" text-anchor="middle" font-size="9" fill="#64748B">Services surplus only partly offsets goods deficit — structural deficit requires expenditure-switching (depreciation) or expenditure-reducing policies.</text>
+    <text x="330" y="390" text-anchor="middle" font-size="9.5" fill="#475569">UK current account deficit ~3-4% of GDP – financed by financial account surplus (FDI and portfolio inflows).</text>
+    <text x="330" y="405" text-anchor="middle" font-size="9" fill="#64748B">Services surplus only partly offsets goods deficit – structural deficit requires expenditure-switching (depreciation) or expenditure-reducing policies.</text>
   </svg>`,
 
   globalisationDiagram: `<svg viewBox="0 0 660 440" font-family="Inter, sans-serif" xmlns="http://www.w3.org/2000/svg">
@@ -13992,7 +13992,7 @@ window.ECONOS_ICONS = {
     <text x="330" y="232" text-anchor="middle" font-size="9" fill="#64748B">drivers → effects</text>
 
     <!-- ════════════════════════════════════════
-         LEFT SIDE — Drivers (blue #2563EB)
+         LEFT SIDE – Drivers (blue #2563EB)
          ════════════════════════════════════════ -->
 
     <!-- Driver 1: Trade liberalisation -->
@@ -14021,7 +14021,7 @@ window.ECONOS_ICONS = {
     <line x1="200" y1="318" x2="268" y2="233" stroke="#2563EB" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
 
     <!-- ════════════════════════════════════════
-         RIGHT SIDE — Effects
+         RIGHT SIDE – Effects
          Benefits (green #059669) & Costs (red #DC2626)
          ════════════════════════════════════════ -->
 
@@ -14233,10 +14233,10 @@ window.ECONOS_ICONS = {
   </svg>`,
 
   /* ============================================================
-     ELASTIC VS INELASTIC DEMAND — side-by-side annotated diagram
+     ELASTIC VS INELASTIC DEMAND – side-by-side annotated diagram
      viewBox 660 x 290
-     Left: shallow (elastic) demand curve — large ΔQD for same ΔP
-     Right: steep (inelastic) demand curve — small ΔQD for same ΔP
+     Left: shallow (elastic) demand curve – large ΔQD for same ΔP
+     Right: steep (inelastic) demand curve – small ΔQD for same ΔP
      ============================================================ */
   elasticVsInelasticDiagram: `
     <svg viewBox="0 0 660 290" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
@@ -14278,12 +14278,12 @@ window.ECONOS_ICONS = {
       <text x="98" y="259" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">Q₂</text>
       <text x="232" y="259" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">Q₁</text>
 
-      <!-- Price ↑ arrow (red) — same size in both panels -->
+      <!-- Price ↑ arrow (red) – same size in both panels -->
       <line x1="32" y1="97" x2="32" y2="157" stroke="#DC2626" stroke-width="2"/>
       <polygon points="28,102 36,102 32,94" fill="#DC2626"/>
       <text x="26" y="130" font-size="8" font-weight="700" fill="#DC2626" text-anchor="middle">ΔP</text>
 
-      <!-- ΔQD arrow (blue) — LARGE (134px) showing elastic response -->
+      <!-- ΔQD arrow (blue) – LARGE (134px) showing elastic response -->
       <line x1="98" y1="233" x2="232" y2="233" stroke="#2563EB" stroke-width="2.5"/>
       <polygon points="102,229 102,237 94,233" fill="#2563EB"/>
       <polygon points="228,229 228,237 236,233" fill="#2563EB"/>
@@ -14324,19 +14324,19 @@ window.ECONOS_ICONS = {
       <text x="447" y="259" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">Q₂</text>
       <text x="507" y="259" font-size="9" font-weight="600" fill="#334155" text-anchor="middle">Q₁</text>
 
-      <!-- Price ↑ arrow (red) — same size as elastic panel -->
+      <!-- Price ↑ arrow (red) – same size as elastic panel -->
       <line x1="362" y1="97" x2="362" y2="157" stroke="#DC2626" stroke-width="2"/>
       <polygon points="358,102 366,102 362,94" fill="#DC2626"/>
       <text x="356" y="130" font-size="8" font-weight="700" fill="#DC2626" text-anchor="middle">ΔP</text>
 
-      <!-- ΔQD arrow (amber) — SMALL (60px) showing inelastic response -->
+      <!-- ΔQD arrow (amber) – SMALL (60px) showing inelastic response -->
       <line x1="447" y1="233" x2="507" y2="233" stroke="#D97706" stroke-width="2.5"/>
       <polygon points="451,229 451,237 443,233" fill="#D97706"/>
       <polygon points="503,229 503,237 511,233" fill="#D97706"/>
       <text x="477" y="223" font-size="8" font-weight="700" fill="#D97706" text-anchor="middle">Small ΔQD</text>
 
       <!-- Bottom caption -->
-      <text x="330" y="284" font-size="9" fill="#64748B" text-anchor="middle" font-style="italic">Same price change — very different quantity responses</text>
+      <text x="330" y="284" font-size="9" fill="#64748B" text-anchor="middle" font-style="italic">Same price change – very different quantity responses</text>
     </svg>
   `,
 
@@ -14346,7 +14346,7 @@ window.ECONOS_ICONS = {
       <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
 
       <!-- ═══════════════════════════════════════════════════ -->
-      <!-- LEFT PANEL — Elastic Supply (PES > 1)              -->
+      <!-- LEFT PANEL – Elastic Supply (PES > 1)              -->
       <!-- ═══════════════════════════════════════════════════ -->
 
       <!-- Panel title -->
@@ -14415,7 +14415,7 @@ window.ECONOS_ICONS = {
       <line x1="330" y1="22" x2="330" y2="268" stroke="#E2E8F0" stroke-width="1.5"/>
 
       <!-- ═══════════════════════════════════════════════════ -->
-      <!-- RIGHT PANEL — Inelastic Supply (PES < 1)           -->
+      <!-- RIGHT PANEL – Inelastic Supply (PES < 1)           -->
       <!-- ═══════════════════════════════════════════════════ -->
 
       <!-- Panel title -->
@@ -14481,7 +14481,7 @@ window.ECONOS_ICONS = {
       <!-- ═══════════════════════════════════════════════════ -->
       <!-- CAPTION                                            -->
       <!-- ═══════════════════════════════════════════════════ -->
-      <text x="330" y="294" text-anchor="middle" font-size="10" fill="#64748B" font-style="italic">Same demand increase — very different price and quantity effects</text>
+      <text x="330" y="294" text-anchor="middle" font-size="10" fill="#64748B" font-style="italic">Same demand increase – very different price and quantity effects</text>
     </svg>
   `,
 
@@ -14502,7 +14502,7 @@ window.ECONOS_ICONS = {
       <circle cx="62" cy="218" r="14" fill="none" stroke="#10B981" stroke-width="2"/>
       <text x="62" y="224" text-anchor="middle" font-size="14" font-weight="900" fill="#10B981">✓</text>
       <text x="88" y="196" font-size="16" fill="#065F46">It shows consumers' willingness to buy</text>
-      <text x="88" y="218" font-size="16" fill="#065F46">at each price — underpinning pricing,</text>
+      <text x="88" y="218" font-size="16" fill="#065F46">at each price – underpinning pricing,</text>
       <text x="88" y="240" font-size="16" fill="#065F46">policy and economic forecasting.</text>
 
       <!-- ===== RIGHT: chart on shared white background ===== -->
@@ -14564,7 +14564,7 @@ window.ECONOS_ICONS = {
       </g>
 
       <!-- italic caption spanning the panel bottom -->
-      <text x="520" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity increases — shown by a downward-sloping demand curve.</text>
+      <text x="520" y="338" text-anchor="middle" font-size="14" fill="#64748B" font-style="italic">As price falls, quantity increases – shown by a downward-sloping demand curve.</text>
     </svg>
   `,
   demandScheduleCurve: `
@@ -14584,7 +14584,7 @@ window.ECONOS_ICONS = {
         <line x1="0" y1="48" x2="390" y2="48" stroke="#10B981" stroke-width="1.5"/>
         <text x="97"  y="32" font-size="15" font-weight="700" fill="#065F46" text-anchor="middle">Price (£)</text>
         <text x="292" y="32" font-size="15" font-weight="700" fill="#065F46" text-anchor="middle">Quantity</text>
-        <!-- rows: P=14-0.2Q — 5 rows in 282px → ~56px each -->
+        <!-- rows: P=14-0.2Q – 5 rows in 282px → ~56px each -->
         <g font-size="16" fill="#0F172A" text-anchor="middle">
           <text x="97"  y="84">12</text><text x="292" y="84">10</text>
           <line x1="14" y1="104" x2="376" y2="104" stroke="#E2E8F0"/>
@@ -14598,7 +14598,7 @@ window.ECONOS_ICONS = {
         </g>
       </g>
 
-      <!-- ============ CHART (right) — Q axis: x=50+Q*8; P axis: y=42+(12-P)*24 ============ -->
+      <!-- ============ CHART (right) – Q axis: x=50+Q*8; P axis: y=42+(12-P)*24 ============ -->
       <g transform="translate(460,46)">
         <!-- horizontal gridlines at each P -->
         <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3">
@@ -14863,7 +14863,7 @@ window.ECONOS_ICONS = {
         <text x="20" y="68"  font-size="11" fill="#334155">Assembly-line workers,</text>
         <text x="20" y="84"  font-size="11" fill="#334155">engineers, technicians.</text>
         <text x="20" y="112" font-size="11" font-weight="700" fill="#065F46">↑ Hiring, ↑ wages</text>
-        <text x="20" y="132" font-size="10" fill="#64748B" font-style="italic">Recession reverses this — </text>
+        <text x="20" y="132" font-size="10" fill="#64748B" font-style="italic">Recession reverses this – </text>
         <text x="20" y="148" font-size="10" fill="#64748B" font-style="italic">unemployment rises.</text>
 
         <!-- Raw materials -->
@@ -14927,7 +14927,7 @@ window.ECONOS_ICONS = {
         <rect x="0" y="180" width="280" height="160" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
         <text x="20" y="216" font-size="22">🛒</text>
         <text x="58" y="218" font-size="13" font-weight="800" fill="#0F172A">Budget supermarkets</text>
-        <text x="20" y="250" font-size="11" fill="#334155">Inferior goods — demand</text>
+        <text x="20" y="250" font-size="11" fill="#334155">Inferior goods – demand</text>
         <text x="20" y="266" font-size="11" fill="#334155">rises when incomes fall.</text>
         <text x="20" y="296" font-size="11" font-weight="700" fill="#065F46">Negative YED</text>
         <text x="20" y="318" font-size="10" fill="#64748B" font-style="italic">Aldi/Lidl thrive in downturns.</text>
@@ -14936,7 +14936,7 @@ window.ECONOS_ICONS = {
         <rect x="300" y="180" width="280" height="160" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" rx="10"/>
         <text x="320" y="216" font-size="22">📺</text>
         <text x="358" y="218" font-size="13" font-weight="800" fill="#0F172A">Streaming subscriptions</text>
-        <text x="320" y="250" font-size="11" fill="#334155">Netflix, Disney+, Prime —</text>
+        <text x="320" y="250" font-size="11" fill="#334155">Netflix, Disney+, Prime –</text>
         <text x="320" y="266" font-size="11" fill="#334155">close substitutes.</text>
         <text x="320" y="296" font-size="11" font-weight="700" fill="#92400E">Highly elastic demand</text>
         <text x="320" y="318" font-size="10" fill="#64748B" font-style="italic">Easy to switch on price rise.</text>
@@ -15007,10 +15007,10 @@ window.ECONOS_ICONS = {
     <svg viewBox="0 0 590 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <rect width="590" height="460" fill="#F8FAFC" rx="12"/>
 
-      <!-- ── PANEL (a): Indirect tax — S shifts up ─────────────────────────── -->
+      <!-- ── PANEL (a): Indirect tax – S shifts up ─────────────────────────── -->
       <g transform="translate(6,6)">
         <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( a )  Indirect tax — S shifts left/up</text>
+        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( a )  Indirect tax – S shifts left/up</text>
         <!-- Y axis -->
         <line x1="44" y1="26" x2="44" y2="187" stroke="#64748B" stroke-width="1.5"/>
         <polygon points="44,22 40,30 48,30" fill="#64748B"/>
@@ -15059,10 +15059,10 @@ window.ECONOS_ICONS = {
         <text x="86" y="108" font-size="8" fill="#065F46" text-anchor="middle">Revenue</text>
       </g>
 
-      <!-- ── PANEL (b): Tax incidence — burden by elasticity ───────────────── -->
+      <!-- ── PANEL (b): Tax incidence – burden by elasticity ───────────────── -->
       <g transform="translate(299,6)">
         <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( b )  Tax incidence — burden by elasticity</text>
+        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( b )  Tax incidence – burden by elasticity</text>
         <!-- Divider -->
         <line x1="148" y1="26" x2="148" y2="212" stroke="#E2E8F0" stroke-width="1"/>
         <!-- Left sub: Inelastic D → consumers bear more -->
@@ -15137,10 +15137,10 @@ window.ECONOS_ICONS = {
         </g>
       </g>
 
-      <!-- ── PANEL (c): Subsidy — S shifts right/down ──────────────────────── -->
+      <!-- ── PANEL (c): Subsidy – S shifts right/down ──────────────────────── -->
       <g transform="translate(6,234)">
         <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( c )  Subsidy — S shifts right/down</text>
+        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( c )  Subsidy – S shifts right/down</text>
         <!-- Y axis -->
         <line x1="44" y1="26" x2="44" y2="187" stroke="#64748B" stroke-width="1.5"/>
         <polygon points="44,22 40,30 48,30" fill="#64748B"/>
@@ -15189,10 +15189,10 @@ window.ECONOS_ICONS = {
         <text x="112" y="108" font-size="8" fill="#065F46" text-anchor="middle">Gov. cost</text>
       </g>
 
-      <!-- ── PANEL (d): Pigouvian correction — MPC to MSC ─────────────────── -->
+      <!-- ── PANEL (d): Pigouvian correction – MPC to MSC ─────────────────── -->
       <g transform="translate(299,234)">
         <rect width="285" height="220" fill="#fff" rx="8" stroke="#E2E8F0" stroke-width="1"/>
-        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( d )  Pigouvian correction — MPC to MSC</text>
+        <text x="142" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#334155">( d )  Pigouvian correction – MPC to MSC</text>
         <!-- Y axis -->
         <line x1="44" y1="26" x2="44" y2="187" stroke="#64748B" stroke-width="1.5"/>
         <polygon points="44,22 40,30 48,30" fill="#64748B"/>
@@ -15636,9 +15636,9 @@ window.ECONOS_ICONS = {
       <text x="554" y="380" text-anchor="middle" font-size="12" font-weight="700" fill="#5B21B6">BOP</text>
       <text x="554" y="396" text-anchor="middle" font-size="10.5" fill="#475569">worsens</text>
 
-      <!-- Policy callout — full-width panel below the icons -->
+      <!-- Policy callout – full-width panel below the icons -->
       <rect x="8" y="416" width="624" height="50" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,3"/>
-      <text x="320" y="437" text-anchor="middle" font-size="12" font-weight="800" fill="#334155">Policy is about balance — improving one target can worsen another. There are no free lunches.</text>
+      <text x="320" y="437" text-anchor="middle" font-size="12" font-weight="800" fill="#334155">Policy is about balance – improving one target can worsen another. There are no free lunches.</text>
       <text x="320" y="456" text-anchor="middle" font-size="10.5" font-style="italic" fill="#64748B">A* answers explain the trade-offs between all four indicators, not just describe each one in isolation.</text>
     </svg>
   `,
@@ -15656,31 +15656,31 @@ window.ECONOS_ICONS = {
 
       <!-- ══ SHORT-RUN DEMAND SECTION ══ -->
       <rect x="0" y="0" width="640" height="38" rx="8" fill="#1D4ED8"/>
-      <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="white">Short-run economic growth — demand side</text>
+      <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="white">Short-run economic growth – demand side</text>
 
       <!-- 4 demand component boxes (y=46, h=86, w=149, gap=8) -->
-      <!-- C — Consumption: x=10 -->
+      <!-- C – Consumption: x=10 -->
       <rect x="10" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
       <text x="84" y="64" text-anchor="middle" font-size="18">🛒</text>
       <text x="84" y="89" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">C</text>
       <text x="84" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Consumption</text>
       <text x="84" y="122" text-anchor="middle" font-size="10" fill="#475569">household spending</text>
 
-      <!-- I — Investment: x=167 -->
+      <!-- I – Investment: x=167 -->
       <rect x="167" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
       <text x="241" y="64" text-anchor="middle" font-size="18">🏗️</text>
       <text x="241" y="89" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">I</text>
       <text x="241" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Investment</text>
       <text x="241" y="122" text-anchor="middle" font-size="10" fill="#475569">business spending</text>
 
-      <!-- G — Government: x=324 -->
+      <!-- G – Government: x=324 -->
       <rect x="324" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
       <text x="398" y="64" text-anchor="middle" font-size="18">🏛️</text>
       <text x="398" y="89" text-anchor="middle" font-size="22" font-weight="900" fill="#1D4ED8">G</text>
       <text x="398" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8">Government</text>
       <text x="398" y="122" text-anchor="middle" font-size="10" fill="#475569">public spending</text>
 
-      <!-- X−M — Net exports: x=481 -->
+      <!-- X−M – Net exports: x=481 -->
       <rect x="481" y="46" width="149" height="86" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
       <text x="555" y="64" text-anchor="middle" font-size="18">🌍</text>
       <text x="555" y="89" text-anchor="middle" font-size="19" font-weight="900" fill="#1D4ED8">X−M</text>
@@ -15717,7 +15717,7 @@ window.ECONOS_ICONS = {
 
       <!-- ══ LONG-RUN SUPPLY SECTION ══ -->
       <rect x="0" y="364" width="640" height="38" rx="8" fill="#047857"/>
-      <text x="320" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="white">Long-run economic growth — supply side</text>
+      <text x="320" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="white">Long-run economic growth – supply side</text>
 
       <!-- Row 1 supply tiles (y=410, h=92, w=200, gap=10) -->
       <!-- Quantity of factors: x=10 -->
@@ -15766,12 +15766,12 @@ window.ECONOS_ICONS = {
       <text x="442" y="540" font-size="20">📊</text>
       <text x="470" y="538" font-size="12.5" font-weight="700" fill="#047857">Higher productivity</text>
       <text x="442" y="558" font-size="10.5" fill="#475569">More output from the</text>
-      <text x="442" y="573" font-size="10.5" fill="#475569">same inputs — key driver</text>
+      <text x="442" y="573" font-size="10.5" fill="#475569">same inputs – key driver</text>
       <text x="442" y="591" font-size="10" font-style="italic" fill="#059669">TFP growth, efficiency gains</text>
 
       <!-- Footer -->
       <rect x="10" y="610" width="620" height="20" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" stroke-dasharray="5,3"/>
-      <text x="320" y="624" text-anchor="middle" font-size="10.5" font-weight="700" fill="#047857">Each factor shifts LRAS rightward — expanding the economy's productive frontier</text>
+      <text x="320" y="624" text-anchor="middle" font-size="10.5" font-weight="700" fill="#047857">Each factor shifts LRAS rightward – expanding the economy's productive frontier</text>
     </svg>
   `,
 
@@ -15920,7 +15920,7 @@ window.ECONOS_ICONS = {
       <text x="245" y="287" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
       <text x="245" y="296" font-size="9" fill="#94A3B8" text-anchor="middle">(full-capacity output)</text>
     </g>
-    <!-- Layer 2: Keynesian LRAS — classic hockey-stick.
+    <!-- Layer 2: Keynesian LRAS – classic hockey-stick.
          Flat at a modest price level over the spare-capacity range,
          rises steeply as the economy nears Yf, then vertical at Yf=245
          (same x as Classical LRAS so the two views align). -->
@@ -15952,7 +15952,7 @@ window.ECONOS_ICONS = {
     <!-- Base: AD line (blue) -->
     <line x1="90" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
     <text x="385" y="258" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- Base: SRAS1 line — solid when no shift, dashed when shifted -->
+    <!-- Base: SRAS1 line – solid when no shift, dashed when shifted -->
     <g class="idl-old-solid">
       <line x1="90" y1="255" x2="390" y2="45" stroke="#334155" stroke-width="2"/>
       <text x="385" y="42" text-anchor="end" font-size="11" fill="#334155" font-weight="700">SRAS₁</text>
@@ -15988,7 +15988,7 @@ window.ECONOS_ICONS = {
       <!-- Y2 dashed -->
       <line x1="208" y1="128" x2="208" y2="272" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
       <text x="208" y="287" font-size="11" fill="#DC2626" text-anchor="middle">Y₂</text>
-      <!-- Stagflation label — placed top-left, away from curves -->
+      <!-- Stagflation label – placed top-left, away from curves -->
       <rect x="62" y="60" width="86" height="18" rx="9" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
       <text x="105" y="73" text-anchor="middle" font-size="10" fill="#B91C1C" font-weight="800">Stagflation</text>
     </g>
@@ -16014,7 +16014,7 @@ window.ECONOS_ICONS = {
     <!-- AD -->
     <line x1="80" y1="45" x2="395" y2="252" stroke="#3B82F6" stroke-width="2"/>
     <text x="390" y="255" text-anchor="end" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- LRAS1 — solid when alone, dashed when shifted -->
+    <!-- LRAS1 – solid when alone, dashed when shifted -->
     <g class="idl-old-solid">
       <line x1="220" y1="15" x2="220" y2="272" stroke="#059669" stroke-width="2.5"/>
       <text x="220" y="11" text-anchor="middle" font-size="11" fill="#059669" font-weight="700">LRAS₁</text>
@@ -16063,7 +16063,7 @@ window.ECONOS_ICONS = {
     <!-- SRAS -->
     <line x1="80" y1="255" x2="390" y2="45" stroke="#475569" stroke-width="2"/>
     <text x="385" y="42" text-anchor="end" font-size="11" fill="#475569" font-weight="700">SRAS</text>
-    <!-- AD1 — solid when alone, dashed when shifted -->
+    <!-- AD1 – solid when alone, dashed when shifted -->
     <g class="idl-old-solid">
       <line x1="80" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
       <text x="385" y="258" text-anchor="end" font-size="11" fill="#3B82F6" font-weight="700">AD₁</text>
@@ -16114,7 +16114,7 @@ window.ECONOS_ICONS = {
     <!-- AD -->
     <line x1="80" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
     <text x="385" y="258" text-anchor="end" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- SRAS1 — solid when alone, dashed when shifted -->
+    <!-- SRAS1 – solid when alone, dashed when shifted -->
     <g class="idl-old-solid">
       <line x1="80" y1="255" x2="390" y2="45" stroke="#475569" stroke-width="2"/>
       <text x="385" y="42" text-anchor="end" font-size="11" fill="#475569" font-weight="700">SRAS₁</text>

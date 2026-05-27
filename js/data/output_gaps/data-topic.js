@@ -9,7 +9,7 @@ window.ECONOS_TOPIC = {
   intro: {
     heroKey: 'heroGrowth',
     summary: 'An output gap measures the difference between actual GDP and potential GDP. A negative output gap (recession) means spare capacity and unemployment; a positive output gap (boom) means inflationary pressure. Output gaps are central to understanding when demand-side policy is appropriate.',
-    doInThis: 'Content coming soon — this topic will cover the definition and measurement of output gaps, the distinction between actual and potential output, the policy response to each type of gap, and real-world UK examples.',
+    doInThis: 'Content coming soon – this topic will cover the definition and measurement of output gaps, the distinction between actual and potential output, the policy response to each type of gap, and real-world UK examples.',
     outcomes: [
       'Define a positive and negative output gap and show both on an AD/AS diagram',
       'Explain the relationship between output gaps and the trade cycle',
@@ -33,8 +33,8 @@ window.ECONOS_TOPIC = {
       branches: [
         { tone: 'green',  label: 'Negative output gap', sub: 'Actual GDP < potential GDP. Spare capacity, unemployment above NAIRU, deflationary pressure. Policy response: expansionary.' },
         { tone: 'rose',   label: 'Positive output gap', sub: 'Actual GDP > potential GDP. Capacity constraints, unemployment below NAIRU, inflationary pressure. Policy response: contractionary.' },
-        { tone: 'blue',   label: 'Potential GDP',       sub: 'The output level achievable at full employment with no inflation acceleration — grows over time with supply-side improvements.' },
-        { tone: 'amber',  label: 'Measurement',         sub: 'Output gaps are unobservable and must be estimated. OBR estimates matter for fiscal policy decisions — errors lead to policy mistakes.' }
+        { tone: 'blue',   label: 'Potential GDP',       sub: 'The output level achievable at full employment with no inflation acceleration – grows over time with supply-side improvements.' },
+        { tone: 'amber',  label: 'Measurement',         sub: 'Output gaps are unobservable and must be estimated. OBR estimates matter for fiscal policy decisions – errors lead to policy mistakes.' }
       ],
       body: 'Full content for this topic is being developed. The key concepts to cover are: the definition of potential GDP, how output gaps are estimated (HP filter, production function approach), the policy implications of each type of gap, and the relationship between output gaps, inflation, and the NAIRU.',
       examEdge: 'Output gaps connect AD/AS analysis to the Phillips curve. A negative output gap → unemployment above NAIRU → deflationary pressure on the SRPC. A positive output gap → unemployment below NAIRU → inflationary pressure. This linkage is tested across multiple exam questions.',

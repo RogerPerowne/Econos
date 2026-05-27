@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Calculate It station data
+   ECONOS – Link It · Calculate It station data
    PES: price elasticity of supply formula and interpretation
    ============================================================ */
 
@@ -18,12 +18,12 @@ window.ECONOS_LINK_CALC = {
   currentStationIdx: 2,
 
   eyebrow:     'Calculate It',
-  instruction: 'PES measures how responsive quantity supplied is to a price change. Practise the formula — then use your answer to make a policy judgement.',
+  instruction: 'PES measures how responsive quantity supplied is to a price change. Practise the formula – then use your answer to make a policy judgement.',
 
   questions: [
     {
       id: 'pes-q1',
-      title: 'Calculate PES — wheat supply',
+      title: 'Calculate PES – wheat supply',
       scenario: 'The UK wholesale price of wheat rises from £150 per tonne to £180 per tonne following a poor harvest in major exporting countries. UK farmers respond by increasing output from 14.0 million tonnes to 14.7 million tonnes over the following harvest.',
       question: 'Calculate the PES for UK wheat. Give your answer to 2 decimal places.',
       hint: 'PES = (% change in Qs) ÷ (% change in P)',
@@ -31,7 +31,7 @@ window.ECONOS_LINK_CALC = {
         { step: '% change in price',              working: '(£180 − £150) ÷ £150 × 100 = +20%' },
         { step: '% change in quantity supplied',  working: '(14.7m − 14.0m) ÷ 14.0m × 100 = +5%' },
         { step: 'PES',                             working: '5 ÷ 20 = 0.25' },
-        { step: 'Interpret',                       working: 'PES = 0.25 < 1 → price inelastic supply. A 20% price rise generates only a 5% increase in supply — farmers cannot rapidly expand production due to growing seasons and fixed land.' }
+        { step: 'Interpret',                       working: 'PES = 0.25 < 1 → price inelastic supply. A 20% price rise generates only a 5% increase in supply – farmers cannot rapidly expand production due to growing seasons and fixed land.' }
       ],
       inputType: 'number',
       answer: 0.25,
@@ -45,7 +45,7 @@ window.ECONOS_LINK_CALC = {
     },
     {
       id: 'pes-q2',
-      title: 'PES and tax burden — connecting PES to policy',
+      title: 'PES and tax burden – connecting PES to policy',
       scenario: 'Two markets face the same specific tax of £5 per unit. In Market A, PES = 3.0 (elastic supply). In Market B, PES = 0.2 (inelastic supply). Assume demand elasticity is similar in both markets.',
       question: 'In which market do producers bear a <strong>greater proportion</strong> of the tax burden, and why?',
       hint: 'More elastic supply → producers can more easily reduce supply and shift the tax onto consumers.',
@@ -56,15 +56,15 @@ window.ECONOS_LINK_CALC = {
       ],
       inputType: 'mcq',
       options: [
-        'Market A (elastic supply, PES = 3.0) — producers bear more because they can quickly reduce output',
-        'Market B (inelastic supply, PES = 0.2) — producers bear more because they cannot reduce output',
-        'Both markets equally — PES does not affect tax incidence',
-        'Market A (elastic supply, PES = 3.0) — producers bear more because consumers have no substitutes'
+        'Market A (elastic supply, PES = 3.0) – producers bear more because they can quickly reduce output',
+        'Market B (inelastic supply, PES = 0.2) – producers bear more because they cannot reduce output',
+        'Both markets equally – PES does not affect tax incidence',
+        'Market A (elastic supply, PES = 3.0) – producers bear more because consumers have no substitutes'
       ],
-      answer: 'Market A (elastic supply, PES = 3.0) — producers bear more because they can quickly reduce output',
+      answer: 'Market A (elastic supply, PES = 3.0) – producers bear more because they can quickly reduce output',
       feedback: {
         correct: 'Correct! With elastic supply (PES = 3.0), producers can rapidly reduce output if the post-tax net price falls below their costs. This willingness to exit the market forces them to absorb more of the tax to stay competitive. Inelastic suppliers (Market B) have no choice but to keep supplying, so they can pass more of the tax burden to consumers.',
-        wrong: 'Elastic supply means producers are willing to reduce output significantly if the price they receive falls. This makes them more sensitive to the tax and forces them to absorb more of it. Inelastic suppliers (PES = 0.2) cannot easily reduce output, so they accept the lower net price — meaning they can pass more of the tax onto consumers who have fewer choices.'
+        wrong: 'Elastic supply means producers are willing to reduce output significantly if the price they receive falls. This makes them more sensitive to the tax and forces them to absorb more of it. Inelastic suppliers (PES = 0.2) cannot easily reduce output, so they accept the lower net price – meaning they can pass more of the tax onto consumers who have fewer choices.'
       },
       examTip: 'Tax incidence depends on BOTH demand elasticity AND supply elasticity. More elastic supply → more of the tax falls on producers. More elastic demand → more of the tax falls on producers (consumers can switch). Perfectly inelastic supply → 100% of tax falls on producers. This is a Level 4 analysis point in longer mark questions.'
     }

@@ -1,8 +1,8 @@
 /* ============================================================
-   ECONOS — content data for growth_measure
+   ECONOS – content data for growth_measure
    8 cards · Edexcel Theme 2.1
    Uses Theme 1 rich templates: framing, paired, ad-interactive,
-   mechanisms — for maximum visual richness.
+   mechanisms – for maximum visual richness.
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -15,7 +15,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroGrowth',
-    summary: 'GDP is the headline number every policymaker watches. But knowing its limits — and when to switch to GNI, real values, PPP or wellbeing measures — is what separates A* answers.',
+    summary: 'GDP is the headline number every policymaker watches. But knowing its limits – and when to switch to GNI, real values, PPP or wellbeing measures – is what separates A* answers.',
     doInThis: 'Explore the four headline indicators, the three GDP measurement approaches, real vs nominal, GNI and PPP, the actual-vs-potential output framework, causes of growth, the limits of GDP, and how to read growth data in exams.',
     outcomes: [
       'Explain GDP and its three measurement approaches with worked examples',
@@ -34,22 +34,22 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — The macro dashboard ----- */
+    /* ----- CARD 1 – The macro dashboard ----- */
     {
       id: 'macro-dashboard',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The macro dashboard',
-      lede: 'Economists judge how well an economy is doing using four headline measures. Each tells us something different — and together they give the big picture.',
+      lede: 'Economists judge how well an economy is doing using four headline measures. Each tells us something different – and together they give the big picture.',
       visualKey: 'macroDashboardSvg',
       notePosition: 'top',
       note: 'Every government judges economic success against <strong>all four indicators simultaneously</strong>. The difficulty is that they can pull in opposite directions: policies that boost growth can stoke inflation; cutting unemployment can widen the current-account deficit; squeezing inflation can slow growth and raise joblessness. Understanding these tensions is what separates descriptive answers from analytical ones.',
       examEdge: {
         title: 'Show how the four measures interact',
-        text: '<strong>Policy is about balance — there are no free lunches.</strong> Top marks come from explaining the <strong>trade-offs</strong>, not just describing each indicator in isolation. Faster growth can push up inflation. Lower unemployment can worsen the current account. Anti-inflation policy can slow growth.'
+        text: '<strong>Policy is about balance – there are no free lunches.</strong> Top marks come from explaining the <strong>trade-offs</strong>, not just describing each indicator in isolation. Faster growth can push up inflation. Lower unemployment can worsen the current account. Anti-inflation policy can slow growth.'
       }
     },
 
-    /* ----- CARD 2 — What is GDP? ----- */
+    /* ----- CARD 2 – What is GDP? ----- */
     {
       id: 'gdp-three-approaches',
       stepLabel: 'Learn: Step 2 of 8',
@@ -80,7 +80,7 @@ window.ECONOS_TOPIC = {
           body: 'Add the incomes earned in producing goods and services.<br><br><div style="text-align:center;font-family:Menlo,monospace;padding:4px 0 10px;"><div style="font-size:13px;color:#64748B;font-weight:600;">GDP =</div><div style="font-size:22px;font-weight:800;color:#B45309;margin-top:4px;letter-spacing:0.5px;">W+R+I+P</div></div><div style="font-size:12.5px;line-height:1.75;color:#475569;"><strong style="color:#B45309;">W</strong> Wages and salaries<br><strong style="color:#B45309;">R</strong> Rent<br><strong style="color:#B45309;">I</strong> Interest<br><strong style="color:#B45309;">P</strong> Profits<br><em style="color:#64748B;">(before taxes and subsidies on products)</em></div>'
         }
       ],
-      causes2Label: 'Final goods only — why this matters',
+      causes2Label: 'Final goods only – why this matters',
       causes2Emoji: '🎯',
       causes2Style: 'plain-white',
       causes2Cols: 3,
@@ -95,13 +95,13 @@ window.ECONOS_TOPIC = {
           tone: 'rose',
           icon: '⚠️',
           head: 'Exam trap: intermediate goods',
-          body: 'GDP counts only <strong>final</strong> goods and services. Including intermediate goods leads to <strong>double-counting</strong>.<br><br><em>Example:</em> flour (£1) used to make bread (£3). Count bread (£3) in GDP, not both — the bread price already includes the flour value.'
+          body: 'GDP counts only <strong>final</strong> goods and services. Including intermediate goods leads to <strong>double-counting</strong>.<br><br><em>Example:</em> flour (£1) used to make bread (£3). Count bread (£3) in GDP, not both – the bread price already includes the flour value.'
         },
         {
           tone: 'blue',
           icon: '🧮',
           head: 'Worked example: final goods only',
-          body: 'An economy in a year produces:<br>• Flour (used to make bread) — £1,000<br>• Bread (sold to consumers) — £3,000<br>• Haircuts — £800<br><br><strong style="color:#1D4ED8;">GDP = £3,000 + £800 = £3,800</strong><br><em style="color:#64748B;font-size:12px;">(Do not add flour — it is intermediate.)</em>'
+          body: 'An economy in a year produces:<br>• Flour (used to make bread) – £1,000<br>• Bread (sold to consumers) – £3,000<br>• Haircuts – £800<br><br><strong style="color:#1D4ED8;">GDP = £3,000 + £800 = £3,800</strong><br><em style="color:#64748B;font-size:12px;">(Do not add flour – it is intermediate.)</em>'
         }
       ],
       examEdge: {
@@ -110,7 +110,7 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 3 — Real vs nominal GDP ----- */
+    /* ----- CARD 3 – Real vs nominal GDP ----- */
     {
       id: 'real-vs-nominal',
       stepLabel: 'Learn: Step 3 of 8',
@@ -125,13 +125,13 @@ window.ECONOS_TOPIC = {
         {
           tone: 'blue',
           icon: '💷',
-          head: 'Nominal GDP — at current prices',
+          head: 'Nominal GDP – at current prices',
           body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">🏷️</span><div>Includes the effect of price changes (inflation or deflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📈</span><div>Tells us the size of the economy <strong>in money terms today</strong></div></div><div style="display:flex;gap:10px;"><span style="color:#2563EB;font-size:16px;flex-shrink:0;">📅</span><div>Useful for budgets, tax receipts and debt measured in £ today</div></div></div>'
         },
         {
           tone: 'green',
           icon: '📊',
-          head: 'Real GDP — at constant prices',
+          head: 'Real GDP – at constant prices',
           body: '<div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6;color:#0B1426;"><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">✂️</span><div><strong>Strips out</strong> the effect of price changes (inflation)</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">📊</span><div>Shows changes in the <strong>volume</strong> of output</div></div><div style="display:flex;gap:10px;"><span style="color:#059669;font-size:16px;flex-shrink:0;">🎯</span><div>Best for judging <strong>living standards</strong>, growth and productivity</div></div></div>'
         }
       ],
@@ -155,22 +155,22 @@ window.ECONOS_TOPIC = {
         {
           tone: 'purple',
           icon: '👥',
-          head: 'GDP per capita — output per person',
+          head: 'GDP per capita – output per person',
           body: 'Adjusts output for population size so we can compare <strong>living standards</strong> across time and between countries.<br><br><div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;align-items:stretch;"><div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:8px;padding:18px 18px;text-align:center;font-family:Menlo,monospace;display:flex;flex-direction:column;justify-content:center;align-items:center;"><div style="display:inline-flex;align-items:center;gap:10px;color:#6D28D9;font-weight:800;"><span style="font-size:15px;">GDP per capita =</span><div style="display:inline-flex;flex-direction:column;text-align:center;line-height:1.3;"><span style="font-size:15px;padding:0 10px 4px;border-bottom:2px solid #6D28D9;">Real GDP</span><span style="font-size:15px;padding:4px 10px 0;">Population</span></div></div></div><div style="background:#FAFAFA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.75;color:#475569;"><strong style="color:#6D28D9;">Worked example</strong><br>Real GDP (2024) = £1,760bn<br>Population (2024) = 66 million<br>GDP per capita = 1,760 ÷ 66<br><strong style="color:#6D28D9;">= £26,667 per person</strong></div></div>'
         }
       ],
       examEdge: {
         title: 'Examiner tip',
-        text: 'Essays usually want <strong>real GDP</strong> rather than nominal GDP. Writing just "GDP rose" signals you haven\'t adjusted for inflation — instant lost marks. Use <strong>real GDP</strong> (or <strong>real GDP per capita</strong>) when judging economic performance and living standards. A growing GDP with a faster-growing population still means falling GDP per capita — the trap most students miss.'
+        text: 'Essays usually want <strong>real GDP</strong> rather than nominal GDP. Writing just "GDP rose" signals you haven\'t adjusted for inflation – instant lost marks. Use <strong>real GDP</strong> (or <strong>real GDP per capita</strong>) when judging economic performance and living standards. A growing GDP with a faster-growing population still means falling GDP per capita – the trap most students miss.'
       }
     },
 
-    /* ----- CARD 4 — GNP, GNI and comparing economies ----- */
+    /* ----- CARD 4 – GNP, GNI and comparing economies ----- */
     {
       id: 'gnp-gni-ppp',
       stepLabel: 'Learn: Step 4 of 8',
       title: 'GNP, GNI and comparing economies',
-      lede: 'GDP, GNI and PPP each adjust for different things — pick the right tool for the question.',
+      lede: 'GDP, GNI and PPP each adjust for different things – pick the right tool for the question.',
       tip: { icon: '💡', tone: 'blue', text: '<strong>GDP</strong> measures output <em>within</em> a country\'s borders. <strong>GNP / GNI</strong> adjust for income flows with the rest of the world. <strong>PPP</strong> adjustments make cross-country comparisons fairer.' },
       causesLabel: 'GDP vs GNP / GNI',
       causesEmoji: '🌍',
@@ -181,13 +181,13 @@ window.ECONOS_TOPIC = {
         {
           tone: 'blue',
           icon: '🏛️',
-          head: 'GDP — Gross Domestic Product',
+          head: 'GDP – Gross Domestic Product',
           body: 'Measures output produced <strong>within the country\'s borders</strong>.<br><br>• Includes everyone who works inside the country, regardless of nationality<br>• Excludes income earned by residents abroad<br><br><span style="color:#1D4ED8;font-weight:700;">Focus:</span> <em>location of production.</em>'
         },
         {
           tone: 'green',
           icon: '🌎',
-          head: 'GNP / GNI — Gross National Income',
+          head: 'GNP / GNI – Gross National Income',
           body: 'Measures income earned by a country\'s <strong>residents from anywhere in the world</strong>.<br><br>• Adds net property income from abroad (profits, interest, dividends, rents)<br>• Subtracts foreign-owned income earned within the country<br><br><span style="color:#047857;font-weight:700;">Focus:</span> <em>ownership of income.</em>'
         }
       ],
@@ -209,7 +209,7 @@ window.ECONOS_TOPIC = {
           tone: 'green',
           icon: '🧮',
           head: 'The GNI formula',
-          body: '<div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:14px 16px;font-family:Menlo,monospace;font-weight:800;color:#047857;font-size:13px;line-height:1.6;text-align:center;">GNP (at factor cost) =<br>GDP + Net property<br>income from abroad</div><br><div style="font-size:12.5px;color:#475569;line-height:1.65;"><strong style="color:#0B1426;">GNI ≈ GNP</strong> in practice — small adjustments for taxes and subsidies on income.</div>'
+          body: '<div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:14px 16px;font-family:Menlo,monospace;font-weight:800;color:#047857;font-size:13px;line-height:1.6;text-align:center;">GNP (at factor cost) =<br>GDP + Net property<br>income from abroad</div><br><div style="font-size:12.5px;color:#475569;line-height:1.65;"><strong style="color:#0B1426;">GNI ≈ GNP</strong> in practice – small adjustments for taxes and subsidies on income.</div>'
         },
         {
           tone: 'purple',
@@ -220,11 +220,11 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: {
         title: 'Exam tip: PPP for fair international comparisons',
-        text: '$1 buys very different things in <strong>London vs Lagos</strong>. <strong>Purchasing Power Parity (PPP)</strong> adjusts for different price levels so we compare real living standards, not just market exchange rates. Example — <strong>$100 buys ~4 items in London but ~14 items in Lagos.</strong> India\'s GDP per capita: ~$2,400 at market rates vs ~$9,200 at PPP. Use <strong>GNI per capita (PPP)</strong> for fair cross-country comparisons of living standards.'
+        text: '$1 buys very different things in <strong>London vs Lagos</strong>. <strong>Purchasing Power Parity (PPP)</strong> adjusts for different price levels so we compare real living standards, not just market exchange rates. Example – <strong>$100 buys ~4 items in London but ~14 items in Lagos.</strong> India\'s GDP per capita: ~$2,400 at market rates vs ~$9,200 at PPP. Use <strong>GNI per capita (PPP)</strong> for fair cross-country comparisons of living standards.'
       }
     },
 
-    /* ----- CARD 5 — Actual vs potential output ----- */
+    /* ----- CARD 5 – Actual vs potential output ----- */
     {
       id: 'actual-vs-potential',
       stepLabel: 'Learn: Step 5 of 8',
@@ -273,32 +273,32 @@ window.ECONOS_TOPIC = {
       causes3Cols: 1,
       examEdge: {
         title: 'Exam vocabulary: be precise with time horizons',
-        text: 'Always distinguish between actual and potential output. <strong>Short-run fluctuations</strong> move output relative to the frontier — use <em>"spare capacity"</em> or <em>"output gap."</em> <strong>Long-run growth</strong> means the frontier shifts outward — say <em>"LRAS shifts right"</em> or <em>"productive potential increases."</em> A* phrasing: <em>"A positive output gap arises when actual output exceeds potential, generating inflationary pressure. Eliminating it sustainably requires supply-side policies that expand productive capacity, not demand management alone."</em>'
+        text: 'Always distinguish between actual and potential output. <strong>Short-run fluctuations</strong> move output relative to the frontier – use <em>"spare capacity"</em> or <em>"output gap."</em> <strong>Long-run growth</strong> means the frontier shifts outward – say <em>"LRAS shifts right"</em> or <em>"productive potential increases."</em> A* phrasing: <em>"A positive output gap arises when actual output exceeds potential, generating inflationary pressure. Eliminating it sustainably requires supply-side policies that expand productive capacity, not demand management alone."</em>'
       },
       causes3: [
         {
           tone: 'purple',
           icon: '🔗',
           head: 'How the PPF maps onto the AD/AS model',
-          body: '<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:14px;">ℹ️</span><span style="font-size:12.5px;color:#475569;"><strong style="color:#0B1426;">Closing the gap</strong> is a key macroeconomic objective.</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;"><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">SHORT-RUN (AD/AS)</div><svg viewBox="0 0 200 150" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="srGapArr" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><polygon points="0,0 5,2.5 0,5" fill="#DC2626"/></marker></defs><line x1="25" y1="125" x2="188" y2="125" stroke="#475569" stroke-width="1.2"/><line x1="25" y1="125" x2="25" y2="12" stroke="#475569" stroke-width="1.2"/><polygon points="23,16 27,16 25,8" fill="#475569"/><polygon points="184,123 184,127 192,125" fill="#475569"/><text x="14" y="18" font-size="9" font-weight="700" fill="#0B1426">P</text><text x="188" y="140" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">Y</text><line x1="130" y1="18" x2="130" y2="125" stroke="#2563EB" stroke-width="2"/><text x="133" y="24" font-size="8" font-weight="700" fill="#2563EB">LRAS</text><line x1="35" y1="115" x2="175" y2="30" stroke="#059669" stroke-width="2"/><text x="177" y="30" font-size="8" font-weight="700" fill="#059669" text-anchor="start">SRAS</text><line x1="25" y1="25" x2="155" y2="125" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/><text x="26" y="22" font-size="8" font-weight="700" fill="#DC2626">AD₁</text><line x1="42" y1="15" x2="175" y2="118" stroke="#DC2626" stroke-width="2"/><text x="44" y="13" font-size="8" font-weight="700" fill="#DC2626">AD₂</text><circle cx="95" cy="79" r="2.5" fill="#94A3B8"/><circle cx="111" cy="69" r="3.5" fill="#0B1426"/><line x1="111" y1="69" x2="111" y2="125" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><line x1="25" y1="69" x2="111" y2="69" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><text x="93" y="135" font-size="7.5" fill="#94A3B8" text-anchor="middle">Y₁</text><text x="111" y="135" font-size="7.5" fill="#475569" text-anchor="middle">Y₂</text><text x="130" y="135" font-size="7.5" fill="#2563EB" text-anchor="middle">Yp</text><text x="22" y="82" font-size="7.5" fill="#94A3B8" text-anchor="end">P₁</text><text x="22" y="72" font-size="7.5" fill="#475569" text-anchor="end">P₂</text><line x1="113" y1="141" x2="130" y2="141" stroke="#DC2626" stroke-width="1" marker-end="url(#srGapArr)"/><text x="121" y="149" font-size="6.5" fill="#DC2626" text-anchor="middle">Rec. gap</text></svg><div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Changes in <strong>AD</strong> move output along the <strong>SRAS</strong> — both real GDP and the price level shift.</div></div><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">LONG-RUN (LRAS)</div><svg viewBox="0 0 200 150" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="lrShift" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#7C3AED"/></marker></defs><line x1="25" y1="125" x2="188" y2="125" stroke="#475569" stroke-width="1.2"/><line x1="25" y1="125" x2="25" y2="12" stroke="#475569" stroke-width="1.2"/><polygon points="23,16 27,16 25,8" fill="#475569"/><polygon points="184,123 184,127 192,125" fill="#475569"/><text x="14" y="18" font-size="9" font-weight="700" fill="#0B1426">P</text><text x="188" y="140" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">Y</text><line x1="90" y1="18" x2="90" y2="125" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/><text x="88" y="14" font-size="7.5" fill="#94A3B8" text-anchor="middle">LRAS₁</text><line x1="140" y1="18" x2="140" y2="125" stroke="#2563EB" stroke-width="2"/><text x="142" y="24" font-size="8" font-weight="700" fill="#2563EB">LRAS₂</text><line x1="35" y1="115" x2="175" y2="30" stroke="#059669" stroke-width="2"/><text x="177" y="30" font-size="8" font-weight="700" fill="#059669" text-anchor="start">SRAS</text><line x1="93" y1="15" x2="175" y2="78" stroke="#DC2626" stroke-width="2"/><text x="177" y="78" font-size="8" font-weight="700" fill="#DC2626" text-anchor="start">AD</text><circle cx="140" cy="51" r="3.5" fill="#0B1426"/><line x1="140" y1="51" x2="140" y2="125" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><line x1="25" y1="51" x2="140" y2="51" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><line x1="93" y1="70" x2="137" y2="70" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#lrShift)"/><text x="88" y="135" font-size="7.5" fill="#94A3B8" text-anchor="middle">Y₁*</text><text x="140" y="135" font-size="7.5" fill="#2563EB" text-anchor="middle">Y₂*</text><text x="22" y="54" font-size="7.5" fill="#475569" text-anchor="end">P₁</text></svg><div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Growth occurs when <strong>LRAS shifts right</strong> — raises potential output (capacity).</div></div></div>'
+          body: '<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:14px;">ℹ️</span><span style="font-size:12.5px;color:#475569;"><strong style="color:#0B1426;">Closing the gap</strong> is a key macroeconomic objective.</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;"><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">SHORT-RUN (AD/AS)</div><svg viewBox="0 0 200 150" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="srGapArr" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><polygon points="0,0 5,2.5 0,5" fill="#DC2626"/></marker></defs><line x1="25" y1="125" x2="188" y2="125" stroke="#475569" stroke-width="1.2"/><line x1="25" y1="125" x2="25" y2="12" stroke="#475569" stroke-width="1.2"/><polygon points="23,16 27,16 25,8" fill="#475569"/><polygon points="184,123 184,127 192,125" fill="#475569"/><text x="14" y="18" font-size="9" font-weight="700" fill="#0B1426">P</text><text x="188" y="140" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">Y</text><line x1="130" y1="18" x2="130" y2="125" stroke="#2563EB" stroke-width="2"/><text x="133" y="24" font-size="8" font-weight="700" fill="#2563EB">LRAS</text><line x1="35" y1="115" x2="175" y2="30" stroke="#059669" stroke-width="2"/><text x="177" y="30" font-size="8" font-weight="700" fill="#059669" text-anchor="start">SRAS</text><line x1="25" y1="25" x2="155" y2="125" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3"/><text x="26" y="22" font-size="8" font-weight="700" fill="#DC2626">AD₁</text><line x1="42" y1="15" x2="175" y2="118" stroke="#DC2626" stroke-width="2"/><text x="44" y="13" font-size="8" font-weight="700" fill="#DC2626">AD₂</text><circle cx="95" cy="79" r="2.5" fill="#94A3B8"/><circle cx="111" cy="69" r="3.5" fill="#0B1426"/><line x1="111" y1="69" x2="111" y2="125" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><line x1="25" y1="69" x2="111" y2="69" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><text x="93" y="135" font-size="7.5" fill="#94A3B8" text-anchor="middle">Y₁</text><text x="111" y="135" font-size="7.5" fill="#475569" text-anchor="middle">Y₂</text><text x="130" y="135" font-size="7.5" fill="#2563EB" text-anchor="middle">Yp</text><text x="22" y="82" font-size="7.5" fill="#94A3B8" text-anchor="end">P₁</text><text x="22" y="72" font-size="7.5" fill="#475569" text-anchor="end">P₂</text><line x1="113" y1="141" x2="130" y2="141" stroke="#DC2626" stroke-width="1" marker-end="url(#srGapArr)"/><text x="121" y="149" font-size="6.5" fill="#DC2626" text-anchor="middle">Rec. gap</text></svg><div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Changes in <strong>AD</strong> move output along the <strong>SRAS</strong> – both real GDP and the price level shift.</div></div><div style="background:#FAFAFA;border:1px solid #E7E7EA;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:800;color:#6D28D9;letter-spacing:0.08em;margin-bottom:8px;">LONG-RUN (LRAS)</div><svg viewBox="0 0 200 150" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="lrShift" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#7C3AED"/></marker></defs><line x1="25" y1="125" x2="188" y2="125" stroke="#475569" stroke-width="1.2"/><line x1="25" y1="125" x2="25" y2="12" stroke="#475569" stroke-width="1.2"/><polygon points="23,16 27,16 25,8" fill="#475569"/><polygon points="184,123 184,127 192,125" fill="#475569"/><text x="14" y="18" font-size="9" font-weight="700" fill="#0B1426">P</text><text x="188" y="140" font-size="9" font-weight="700" fill="#0B1426" text-anchor="end">Y</text><line x1="90" y1="18" x2="90" y2="125" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/><text x="88" y="14" font-size="7.5" fill="#94A3B8" text-anchor="middle">LRAS₁</text><line x1="140" y1="18" x2="140" y2="125" stroke="#2563EB" stroke-width="2"/><text x="142" y="24" font-size="8" font-weight="700" fill="#2563EB">LRAS₂</text><line x1="35" y1="115" x2="175" y2="30" stroke="#059669" stroke-width="2"/><text x="177" y="30" font-size="8" font-weight="700" fill="#059669" text-anchor="start">SRAS</text><line x1="93" y1="15" x2="175" y2="78" stroke="#DC2626" stroke-width="2"/><text x="177" y="78" font-size="8" font-weight="700" fill="#DC2626" text-anchor="start">AD</text><circle cx="140" cy="51" r="3.5" fill="#0B1426"/><line x1="140" y1="51" x2="140" y2="125" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><line x1="25" y1="51" x2="140" y2="51" stroke="#475569" stroke-width="0.8" stroke-dasharray="2.5,2"/><line x1="93" y1="70" x2="137" y2="70" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#lrShift)"/><text x="88" y="135" font-size="7.5" fill="#94A3B8" text-anchor="middle">Y₁*</text><text x="140" y="135" font-size="7.5" fill="#2563EB" text-anchor="middle">Y₂*</text><text x="22" y="54" font-size="7.5" fill="#475569" text-anchor="end">P₁</text></svg><div style="font-size:11.5px;color:#475569;line-height:1.55;margin-top:8px;">Growth occurs when <strong>LRAS shifts right</strong> – raises potential output (capacity).</div></div></div>'
         }
       ]
     },
 
-    /* ----- CARD 6 — Causes of economic growth ----- */
+    /* ----- CARD 6 – Causes of economic growth ----- */
     {
       id: 'growth-causes',
       stepLabel: 'Learn: Step 6 of 8',
       title: 'Causes of economic growth',
-      lede: 'Not all increases in output are the same — only supply-side expansion is truly sustainable.',
+      lede: 'Not all increases in output are the same – only supply-side expansion is truly sustainable.',
       visualKey: 'causesOfGrowthSvg',
       examEdge: {
         title: 'Why supply-side reforms matter most',
-        text: 'Short-run demand boosts can <strong>overheat the economy</strong>, raise inflation and increase debt. Supply-side reforms <strong>expand capacity</strong>, lift potential output and support higher living standards <em>without inflationary pressure</em> — the key to <strong>sustainable long-run growth</strong>. A complete essay covers both: <em>"In the short run, lower interest rates stimulate AD… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward."</em>'
+        text: 'Short-run demand boosts can <strong>overheat the economy</strong>, raise inflation and increase debt. Supply-side reforms <strong>expand capacity</strong>, lift potential output and support higher living standards <em>without inflationary pressure</em> – the key to <strong>sustainable long-run growth</strong>. A complete essay covers both: <em>"In the short run, lower interest rates stimulate AD… However, sustained non-inflationary growth requires supply-side improvements that shift LRAS outward."</em>'
       }
     },
 
-    /* ----- CARD 7 — What GDP misses ----- */
+    /* ----- CARD 7 – What GDP misses ----- */
     {
       id: 'gdp-limits',
       stepLabel: 'Learn: Step 7 of 8',
@@ -326,7 +326,7 @@ window.ECONOS_TOPIC = {
           tone: 'green',
           icon: '🌿',
           head: '3. Environmental degradation',
-          body: 'Pollution, resource depletion and loss of biodiversity reduce future wellbeing — <strong>but GDP may rise</strong>.'
+          body: 'Pollution, resource depletion and loss of biodiversity reduce future wellbeing – <strong>but GDP may rise</strong>.'
         },
         {
           tone: 'purple',
@@ -338,7 +338,7 @@ window.ECONOS_TOPIC = {
           tone: 'blue',
           icon: '⏰',
           head: '5. Leisure time',
-          body: 'More output can mean longer hours and less time for rest, family and community — <strong>not captured by GDP</strong>.'
+          body: 'More output can mean longer hours and less time for rest, family and community – <strong>not captured by GDP</strong>.'
         },
         {
           tone: 'slate',
@@ -373,7 +373,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: {
         title: 'Exam tip',
-        text: 'GDP is a powerful summary of economic activity — but it\'s <strong>not the whole story</strong>. Always consider what it <em>includes</em>, what it <em>excludes</em>, and whether it reflects wellbeing. A* phrasing: <em>"While GDP per capita has risen, the HDI shows divergent trends in health and education, suggesting welfare improvements are unevenly distributed."</em>'
+        text: 'GDP is a powerful summary of economic activity – but it\'s <strong>not the whole story</strong>. Always consider what it <em>includes</em>, what it <em>excludes</em>, and whether it reflects wellbeing. A* phrasing: <em>"While GDP per capita has risen, the HDI shows divergent trends in health and education, suggesting welfare improvements are unevenly distributed."</em>'
       },
       economistQuote: {
         portraitKey: 'economistCoyle',
@@ -384,11 +384,11 @@ window.ECONOS_TOPIC = {
       },
       tipLate: {
         icon: '💡', tone: 'green', head: 'Why this matters',
-        text: 'Coyle\'s argument is that GDP was designed in the 1930s–40s to measure wartime industrial output — it was never meant to be a proxy for human wellbeing. Yet it became the default scorecard for governments worldwide. Her critique: GDP counts pollution clean-up as positive output, ignores unpaid household work entirely, and treats inequality as invisible. The A* move in any welfare question is to acknowledge GDP\'s usefulness as a <strong>production measure</strong> while citing specific blind spots — inequality (Gini), sustainability (genuine savings), or human capability (HDI) — and explaining why they matter for the specific question asked.'
+        text: 'Coyle\'s argument is that GDP was designed in the 1930s–40s to measure wartime industrial output – it was never meant to be a proxy for human wellbeing. Yet it became the default scorecard for governments worldwide. Her critique: GDP counts pollution clean-up as positive output, ignores unpaid household work entirely, and treats inequality as invisible. The A* move in any welfare question is to acknowledge GDP\'s usefulness as a <strong>production measure</strong> while citing specific blind spots – inequality (Gini), sustainability (genuine savings), or human capability (HDI) – and explaining why they matter for the specific question asked.'
       }
     },
 
-    /* ----- CARD 8 — Exam summary: reading growth data ----- */
+    /* ----- CARD 8 – Exam summary: reading growth data ----- */
     {
       id: 'exam-summary-growth',
       stepLabel: 'Learn: Step 8 of 8',
@@ -429,7 +429,7 @@ window.ECONOS_TOPIC = {
         icon: '🇬🇧',
         tone: 'blue',
         head: 'UK context snapshot',
-        text: '<strong>Post-2008 productivity puzzle:</strong> real GDP grew, but productivity (GDP per hour) stagnated — weaker living standards. · <strong>2020 Covid contraction:</strong> real GDP fell by −9.9%, the largest annual fall in the modern record. · <strong>Post-pandemic recovery:</strong> strong rebound in 2021, then slower growth as inflation, rate rises and global shocks weighed on activity.'
+        text: '<strong>Post-2008 productivity puzzle:</strong> real GDP grew, but productivity (GDP per hour) stagnated – weaker living standards. · <strong>2020 Covid contraction:</strong> real GDP fell by −9.9%, the largest annual fall in the modern record. · <strong>Post-pandemic recovery:</strong> strong rebound in 2021, then slower growth as inflation, rate rises and global shocks weighed on activity.'
       },
       causes2Label: 'Phrases &amp; checklist',
       causes2Emoji: '✅',
@@ -451,7 +451,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: {
         title: 'Exam edge',
-        text: 'Marks are won by <strong>clarity</strong>, <strong>accuracy</strong> and <strong>evaluation</strong>. Always define the data, use the framework, and connect to the UK economy. Show judgement — don\'t just list facts.'
+        text: 'Marks are won by <strong>clarity</strong>, <strong>accuracy</strong> and <strong>evaluation</strong>. Always define the data, use the framework, and connect to the UK economy. Show judgement – don\'t just list facts.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }

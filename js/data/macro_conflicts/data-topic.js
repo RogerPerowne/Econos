@@ -8,7 +8,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroMacroObjectives',
-    summary: "The five macro objectives cannot all be maximised simultaneously. The Phillips curve captures the most famous trade-off — between inflation and unemployment — but the conflicts run deeper: growth vs BoP, growth vs inflation, unemployment vs sustainability. Understanding these trade-offs is the analytical backbone of every macro policy essay.",
+    summary: "The five macro objectives cannot all be maximised simultaneously. The Phillips curve captures the most famous trade-off – between inflation and unemployment – but the conflicts run deeper: growth vs BoP, growth vs inflation, unemployment vs sustainability. Understanding these trade-offs is the analytical backbone of every macro policy essay.",
     doInThis: 'Work through 4 cards: conflicts between objectives (with real UK scenarios), the Phillips curve and NAIRU, stagflation (the worst-case outcome), and whether supply-side policy can resolve the trade-offs.',
     outcomes: [
       'Apply the Phillips curve to inflation-unemployment trade-offs with SRPC and LRPC',
@@ -16,7 +16,7 @@ window.ECONOS_TOPIC = {
       'Analyse stagflation and why demand-side policy cannot resolve it without a cost',
       'Evaluate the supply-side argument for resolving macro trade-offs'
     ],
-    tip: 'The key insight: demand-side policies force a choice between objectives (growth OR inflation). Supply-side policies shift LRAS right and lower the NAIRU — potentially achieving both simultaneously. But time lags and up-front costs limit this in practice.',
+    tip: 'The key insight: demand-side policies force a choice between objectives (growth OR inflation). Supply-side policies shift LRAS right and lower the NAIRU – potentially achieving both simultaneously. But time lags and up-front costs limit this in practice.',
     stages: [
       { num: 1, name: 'Learn it', sub: '4 concept cards', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },
@@ -26,7 +26,7 @@ window.ECONOS_TOPIC = {
 
   cards: [
 
-    /* ----- CARD 1 — Conflicts between objectives ----- */
+    /* ----- CARD 1 – Conflicts between objectives ----- */
     {
       id: 'objective-conflicts',
       template: 'diagnose',
@@ -50,7 +50,7 @@ window.ECONOS_TOPIC = {
           {
             label: 'A',
             text: 'The MPC raises Bank Rate from 0.1% to 5.25% between 2021 and 2023 to bring inflation from 11.1% back to target. What trade-off is this?',
-            answer: 'Inflation vs growth/employment. Higher rates reduced consumer spending and investment — GDP growth slowed to near-zero and mortgage holders faced sharply higher payments. The BoE accepted lower growth to restore price stability.',
+            answer: 'Inflation vs growth/employment. Higher rates reduced consumer spending and investment – GDP growth slowed to near-zero and mortgage holders faced sharply higher payments. The BoE accepted lower growth to restore price stability.',
             tone: 'rose'
           },
           {
@@ -61,7 +61,7 @@ window.ECONOS_TOPIC = {
           },
           {
             label: 'C',
-            text: 'UK unemployment falls to 3.7% in 2022 — below most estimates of the natural rate. What macro risk does this create?',
+            text: 'UK unemployment falls to 3.7% in 2022 – below most estimates of the natural rate. What macro risk does this create?',
             answer: 'Employment vs inflation. Below the NAIRU, wage growth accelerates as workers have bargaining power. Firms pass higher labour costs into prices → wage-price spiral risk. The BoE sees this as inflationary pressure requiring tightening.',
             tone: 'amber'
           }
@@ -73,13 +73,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 2 — The Phillips curve ----- */
+    /* ----- CARD 2 – The Phillips curve ----- */
     {
       id: 'phillips-curve',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 4',
       title: 'The Phillips curve: inflation-unemployment trade-off',
-      lede: "Bill Phillips discovered in 1958 that lower unemployment correlated with higher wage inflation. This became the theoretical foundation for demand management — and the controversy that followed is equally important.",
+      lede: "Bill Phillips discovered in 1958 that lower unemployment correlated with higher wage inflation. This became the theoretical foundation for demand management – and the controversy that followed is equally important.",
       diagramKey: 'phillipsInteractive',
       steps: [
         {
@@ -90,12 +90,12 @@ window.ECONOS_TOPIC = {
         {
           key: 'extension',
           label: 'Friedman and Phelps (1968): the long-run Phillips curve',
-          text: 'Friedman and Phelps independently argued the trade-off only exists <strong>in the short run</strong>. If government persistently pushes unemployment below the natural rate, workers demand higher nominal wages to compensate for inflation — the SRPC shifts up. In the long run, the Phillips curve is <strong>vertical at the NAIRU</strong> — there is no lasting trade-off. Attempts to exploit the short-run trade-off only produce permanently higher inflation.'
+          text: 'Friedman and Phelps independently argued the trade-off only exists <strong>in the short run</strong>. If government persistently pushes unemployment below the natural rate, workers demand higher nominal wages to compensate for inflation – the SRPC shifts up. In the long run, the Phillips curve is <strong>vertical at the NAIRU</strong> – there is no lasting trade-off. Attempts to exploit the short-run trade-off only produce permanently higher inflation.'
         },
         {
           key: 'shift',
           label: '1970s stagflation: the curve breaks down',
-          text: 'In the 1970s, the UK experienced <strong>rising unemployment AND rising inflation simultaneously</strong> — a combination the original Phillips curve said was impossible. The OPEC oil shocks shifted SRAS left, causing stagflation. The SRPC shifted upward — both unemployment and inflation rose together. This empirical failure ended the Keynesian consensus and launched monetarism as the new policy framework.'
+          text: 'In the 1970s, the UK experienced <strong>rising unemployment AND rising inflation simultaneously</strong> – a combination the original Phillips curve said was impossible. The OPEC oil shocks shifted SRAS left, causing stagflation. The SRPC shifted upward – both unemployment and inflation rose together. This empirical failure ended the Keynesian consensus and launched monetarism as the new policy framework.'
         }
       ],
       examEdge: {
@@ -104,13 +104,13 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ----- CARD 3 — The NAIRU ----- */
+    /* ----- CARD 3 – The NAIRU ----- */
     {
       id: 'nairu',
       template: 'mechanisms',
       stepLabel: 'Learn: Step 3 of 4',
       title: 'NAIRU: the natural rate of unemployment',
-      lede: "The NAIRU — Non-Accelerating Inflation Rate of Unemployment — is the unemployment rate consistent with stable inflation. Push below it and inflation accelerates. It's unobservable but crucial.",
+      lede: "The NAIRU – Non-Accelerating Inflation Rate of Unemployment – is the unemployment rate consistent with stable inflation. Push below it and inflation accelerates. It's unobservable but crucial.",
       mechanisms: [
         {
           num: '1',
@@ -134,22 +134,22 @@ window.ECONOS_TOPIC = {
           num: '4',
           tone: 'rose',
           title: 'Hysteresis: the NAIRU can shift up',
-          text: 'After deep recessions, long-term unemployment causes skill atrophy and labour market detachment. The structural component rises — pushing the NAIRU higher. The 1980s UK recession left a legacy NAIRU of ~8%. This is hysteresis working through the NAIRU, not just the unemployment rate.'
+          text: 'After deep recessions, long-term unemployment causes skill atrophy and labour market detachment. The structural component rises – pushing the NAIRU higher. The 1980s UK recession left a legacy NAIRU of ~8%. This is hysteresis working through the NAIRU, not just the unemployment rate.'
         }
       ],
       examEdge: {
-        title: 'NAIRU is unobservable — and that\'s important',
-        text: "The NAIRU cannot be directly observed — it must be estimated. Policy errors arise when the true NAIRU is higher than assumed (stimulus → inflation) or lower (excessive tightening → unnecessary unemployment). The OBR's NAIRU estimate matters enormously for fiscal projections. Acknowledging this uncertainty is an A* evaluation point."
+        title: 'NAIRU is unobservable – and that\'s important',
+        text: "The NAIRU cannot be directly observed – it must be estimated. Policy errors arise when the true NAIRU is higher than assumed (stimulus → inflation) or lower (excessive tightening → unnecessary unemployment). The OBR's NAIRU estimate matters enormously for fiscal projections. Acknowledging this uncertainty is an A* evaluation point."
       }
     },
 
-    /* ----- CARD 4 — Can supply-side policy resolve trade-offs? ----- */
+    /* ----- CARD 4 – Can supply-side policy resolve trade-offs? ----- */
     {
       id: 'resolve-tradeoffs',
       template: 'paired',
       stepLabel: 'Learn: Step 4 of 4',
       title: 'Resolving trade-offs: the supply-side argument',
-      lede: 'Demand-side policies force governments to choose between objectives. Supply-side policies can, in theory, reduce multiple trade-offs simultaneously — but with important caveats.',
+      lede: 'Demand-side policies force governments to choose between objectives. Supply-side policies can, in theory, reduce multiple trade-offs simultaneously – but with important caveats.',
       pairs: [
         {
           tone: 'green',
@@ -161,7 +161,7 @@ window.ECONOS_TOPIC = {
             'Reduce structural unemployment → growth without distributional deterioration',
             'Improve BoP (competitiveness) without damaging domestic growth'
           ],
-          example: '<strong>East Asian growth miracle:</strong> South Korea and Taiwan combined rapid growth with low inflation and falling inequality — achieved through investment in education, technology, and export competitiveness. The supply-side can resolve trade-offs if the structural foundations are right.'
+          example: '<strong>East Asian growth miracle:</strong> South Korea and Taiwan combined rapid growth with low inflation and falling inequality – achieved through investment in education, technology, and export competitiveness. The supply-side can resolve trade-offs if the structural foundations are right.'
         },
         {
           tone: 'amber',
@@ -178,9 +178,9 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: {
         title: 'The supply-side conclusion',
-        text: 'The A* conclusion structure: <em>\'Supply-side policy is the theoretically optimal solution to macro trade-offs — shifting LRAS right reduces the NAIRU and enables non-inflationary growth. However, the long time lags and upfront costs mean demand management remains necessary in the short run, even if supply-side reform is the long-run answer.\'</em>'
+        text: 'The A* conclusion structure: <em>\'Supply-side policy is the theoretically optimal solution to macro trade-offs – shifting LRAS right reduces the NAIRU and enables non-inflationary growth. However, the long time lags and upfront costs mean demand management remains necessary in the short run, even if supply-side reform is the long-run answer.\'</em>'
       },
-      keyTakeaway: { title: 'The big picture', text: 'Macro trade-offs are real and unavoidable with demand-side tools alone. The Phillips curve shows the inflation-unemployment trade-off; stagflation shows what happens when supply shocks break that relationship. Supply-side policy offers a theoretical escape route — but the time lags and costs mean the trade-offs never fully disappear. The best macro policy combines short-run demand management with long-run supply-side reform.' },
+      keyTakeaway: { title: 'The big picture', text: 'Macro trade-offs are real and unavoidable with demand-side tools alone. The Phillips curve shows the inflation-unemployment trade-off; stagflation shows what happens when supply shocks break that relationship. Supply-side policy offers a theoretical escape route – but the time lags and costs mean the trade-offs never fully disappear. The best macro policy combines short-run demand management with long-run supply-side reform.' },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

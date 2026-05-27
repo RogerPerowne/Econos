@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    Public Goods: evaluate the state provision claim
    ============================================================ */
 
@@ -32,19 +32,19 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'degree-non-excludable',
           icon:  '🚧',
           label: 'Degree of non-excludability',
-          why:   'Pure public goods (defence, lighthouse) are completely non-excludable — no private revenue stream is possible. But some quasi-public goods (roads, parks) are partially excludable through technology (toll booths, entrance fees). For quasi-public goods, a mix of user charges and state subsidy may be more efficient than full taxation-funded provision — market mechanisms partially apply.'
+          why:   'Pure public goods (defence, lighthouse) are completely non-excludable – no private revenue stream is possible. But some quasi-public goods (roads, parks) are partially excludable through technology (toll booths, entrance fees). For quasi-public goods, a mix of user charges and state subsidy may be more efficient than full taxation-funded provision – market mechanisms partially apply.'
         },
         {
           id:    'local-vs-national',
           icon:  '📍',
           label: 'Whether the public good is local or national',
-          why:   'National public goods (defence, coastguard) cannot be provided at community level — they require national taxation. Local public goods (street lighting, local flood defence, park maintenance) can sometimes be funded by local levies or community contributions, especially in small, homogeneous communities with shared interests. Provision level and funding source must match the scale of the public good.'
+          why:   'National public goods (defence, coastguard) cannot be provided at community level – they require national taxation. Local public goods (street lighting, local flood defence, park maintenance) can sometimes be funded by local levies or community contributions, especially in small, homogeneous communities with shared interests. Provision level and funding source must match the scale of the public good.'
         },
         {
           id:    'cost-benefit',
           icon:  '💰',
           label: 'Accuracy of cost-benefit analysis for provision level',
-          why:   'Government must decide Q* — the socially optimal provision level — without market price signals. This requires cost-benefit analysis (CBA), which involves valuing non-market benefits (flood damage avoided, lives saved). If CBA is inaccurate (either over- or understating benefits), the government provides the wrong Q — an example of government information failure compounding the market failure.'
+          why:   'Government must decide Q* – the socially optimal provision level – without market price signals. This requires cost-benefit analysis (CBA), which involves valuing non-market benefits (flood damage avoided, lives saved). If CBA is inaccurate (either over- or understating benefits), the government provides the wrong Q – an example of government information failure compounding the market failure.'
         },
         {
           id:    'government-failure',
@@ -62,19 +62,19 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'technology',
           icon:  '💻',
           label: 'Technology enabling partial excludability',
-          why:   'New technology can convert non-excludable goods into quasi-public goods. GPS-enabled road pricing makes roads excludable. Smart metering makes park access recordable. Where technology enables excludability, market provision becomes more feasible — reducing the case for full state taxation funding. The public goods boundary is partly a technological question.'
+          why:   'New technology can convert non-excludable goods into quasi-public goods. GPS-enabled road pricing makes roads excludable. Smart metering makes park access recordable. Where technology enables excludability, market provision becomes more feasible – reducing the case for full state taxation funding. The public goods boundary is partly a technological question.'
         },
         {
           id:    'international',
           icon:  '🌍',
           label: 'Cross-border public goods requiring international coordination',
-          why:   'Some public goods have spillover effects across national boundaries (clean air, global climate, international security). No single national government can compel contribution from foreign free riders. International public goods require treaty-based coordination (Paris Agreement, NATO) — pure state provision at national level solves the domestic free rider problem but not the international one.'
+          why:   'Some public goods have spillover effects across national boundaries (clean air, global climate, international security). No single national government can compel contribution from foreign free riders. International public goods require treaty-based coordination (Paris Agreement, NATO) – pure state provision at national level solves the domestic free rider problem but not the international one.'
         },
         {
           id:    'merit',
           icon:  '🎓',
           label: 'Distinction between public goods and merit goods',
-          why:   'Pure public goods (flood defences) require taxation because of non-excludability. Merit goods (healthcare, education) may be provided publicly for different reasons (equity, positive externalities) but are technically excludable. Conflating the two leads to incorrect policy analysis — the public goods case for state provision is stronger and more absolute than the merit goods case.'
+          why:   'Pure public goods (flood defences) require taxation because of non-excludability. Merit goods (healthcare, education) may be provided publicly for different reasons (equity, positive externalities) but are technically excludable. Conflating the two leads to incorrect policy analysis – the public goods case for state provision is stronger and more absolute than the merit goods case.'
         }
       ],
       modelRanking: ['degree-non-excludable', 'cost-benefit', 'government-failure'],

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Public Goods: free rider collapses D_private far below D_social
    ============================================================ */
 
@@ -26,7 +26,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'Why does the private market fail to provide coastal flood defences? Which diagram correctly shows the effect of the free rider problem on market demand?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the free rider problem. Think about which curve is directly affected and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -36,29 +36,29 @@ window.ECONOS_LINK_DIAGRAM = {
         id:      'd-left',
         correct:  true,
         title:   'Demand shifts left',
-        sub:     'Effective market demand falls far below true social demand — free riding means individuals do not reveal their true WTP, collapsing private market demand',
-        why:     'Because non-payers cannot be excluded from flood protection, each household free rides — waiting for others to pay. No one reveals their true WTP → effective market demand (D_private) collapses to near zero, far below D_social (true aggregate WTP). The demand shift leftward represents the gap created by the free rider problem: what the market reveals versus what society truly values.'
+        sub:     'Effective market demand falls far below true social demand – free riding means individuals do not reveal their true WTP, collapsing private market demand',
+        why:     'Because non-payers cannot be excluded from flood protection, each household free rides – waiting for others to pay. No one reveals their true WTP → effective market demand (D_private) collapses to near zero, far below D_social (true aggregate WTP). The demand shift leftward represents the gap created by the free rider problem: what the market reveals versus what society truly values.'
       },
       {
         id:      's-left',
         correct:  false,
         title:   'Supply shifts left',
         sub:     'Flood defence provision becomes more costly, reducing supply',
-        why:     'Supply shifting left would represent rising costs of flood defence construction — not the public goods mechanism. The reason private firms do not provide flood defences is not that supply is costly, but that they cannot generate revenue from non-excludable non-payers. The failure is on the demand (revenue) side, not the supply (cost) side.'
+        why:     'Supply shifting left would represent rising costs of flood defence construction – not the public goods mechanism. The reason private firms do not provide flood defences is not that supply is costly, but that they cannot generate revenue from non-excludable non-payers. The failure is on the demand (revenue) side, not the supply (cost) side.'
       },
       {
         id:      'd-right',
         correct:  false,
         title:   'Demand shifts right',
         sub:     'Households demand more flood protection as flood risk increases',
-        why:     'Demand shifting right would represent rising WTP for flood protection — perhaps as sea levels rise. But the public goods problem is that true WTP (D_social) already exceeds zero, yet effective market demand (D_private) collapses due to free riding. The issue is that true demand is not revealed, not that it is absent or rising.'
+        why:     'Demand shifting right would represent rising WTP for flood protection – perhaps as sea levels rise. But the public goods problem is that true WTP (D_social) already exceeds zero, yet effective market demand (D_private) collapses due to free riding. The issue is that true demand is not revealed, not that it is absent or rising.'
       },
       {
         id:      's-right',
         correct:  false,
         title:   'Supply shifts right',
         sub:     'New technology reduces the cost of building flood defences',
-        why:     'Supply shifting right would mean flood defences become cheaper to build — a technological improvement. This does not address the public goods market failure: even if defences were free to build, private firms still could not generate revenue from non-excludable beneficiaries. The demand collapse from free riding remains the core problem.'
+        why:     'Supply shifting right would mean flood defences become cheaper to build – a technological improvement. This does not address the public goods market failure: even if defences were free to build, private firms still could not generate revenue from non-excludable beneficiaries. The demand collapse from free riding remains the core problem.'
       }
     ]
   },
@@ -76,18 +76,18 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — free rider problem collapsing private market demand for coastal flood defences',
+    ariaLabel: 'Supply and demand diagram – free rider problem collapsing private market demand for coastal flood defences',
     xLabel:    'Quantity of flood protection',
     yLabel:    'Price / Cost (£)',
 
     lines: [
-      /* S — cost of providing flood defences — blue upward-sloping */
+      /* S – cost of providing flood defences – blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'S (cost)', labelX: 494, labelY: 28, labelFill: '#2563eb' },
-      /* D_social — true WTP if free riding prevented — amber downward-sloping */
+      /* D_social – true WTP if free riding prevented – amber downward-sloping */
       { x1: 110, y1: 50,  x2: 514, y2: 381, stroke: '#d97706', strokeWidth: 2.5,
         label: 'D_social', labelX: 455, labelY: 372, labelFill: '#d97706' },
-      /* D_private — collapsed demand due to free riding — red downward-sloping, near x-axis */
+      /* D_private – collapsed demand due to free riding – red downward-sloping, near x-axis */
       { x1: 110, y1: 300, x2: 340, y2: 381, stroke: '#dc2626', strokeWidth: 2.5,
         label: 'D_private (free riding)', labelX: 344, labelY: 381, labelFill: '#dc2626' }
     ],
@@ -100,7 +100,7 @@ window.ECONOS_LINK_DIAGRAM = {
       { x1: 100, y1: 329, x2: 191, y2: 329, tickLeft: 'P_private',  tickLeftY: 332 }
     ],
 
-    /* Shift arrow: D_social → D_private, pointing left — showing free rider collapse */
+    /* Shift arrow: D_social → D_private, pointing left – showing free rider collapse */
     shiftArrow: { x1: 400, y1: 200, x2: 340, y2: 200, stroke: '#dc2626' },
 
     eqDots: [
@@ -123,7 +123,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of the free rider problem on coastal flood defence provision.',
     instruction: 'Place the correct labels on the diagram to identify the free rider collapse, the two equilibria and the welfare gap.',
     hint:        'Skill focus: connect the visual demand collapse to the economic outcomes.',
@@ -149,10 +149,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['public good', 'non-rival', 'non-excludable', 'free rider', 'market failure', 'under-provision', 'general taxation', 'revealed preference', 'social demand', 'private demand', 'Q*', 'D_social', 'D_private'],
 
@@ -176,7 +176,7 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'Explain how state provision solves the free rider problem',
         prompt:      'How does state provision via taxation solve the free rider problem?',
         maxChars:    240,
-        modelAnswer: 'General taxation is compulsory — it solves the free rider problem by removing the option not to contribute. The government uses tax revenue to provide Q* of flood defences, converting D_social into effective collective demand. No private firm can do this because they have no mechanism to compel payment from non-payers — only the state\'s taxing power can overcome the free rider problem at national scale.'
+        modelAnswer: 'General taxation is compulsory – it solves the free rider problem by removing the option not to contribute. The government uses tax revenue to provide Q* of flood defences, converting D_social into effective collective demand. No private firm can do this because they have no mechanism to compel payment from non-payers – only the state\'s taxing power can overcome the free rider problem at national scale.'
       }
     ],
 
@@ -192,6 +192,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Explain how taxation solves free rider problem to achieve Q*'
     ],
 
-    examAnswer: '"Coastal flood defences are non-rival and non-excludable — the free rider problem collapses effective market demand from D_social (true WTP = Q*) to D_private (≈0): no household reveals WTP because they cannot be excluded from protection once provided. Private firms cannot profitably supply the good — there is no revenue stream. The Environment Agency\'s £5.2bn programme demonstrates that compulsory general taxation is the only mechanism that can solve the free rider problem, achieving Q* and realising the £8/£1 welfare return."'
+    examAnswer: '"Coastal flood defences are non-rival and non-excludable – the free rider problem collapses effective market demand from D_social (true WTP = Q*) to D_private (≈0): no household reveals WTP because they cannot be excluded from protection once provided. Private firms cannot profitably supply the good – there is no revenue stream. The Environment Agency\'s £5.2bn programme demonstrates that compulsory general taxation is the only mechanism that can solve the free rider problem, achieving Q* and realising the £8/£1 welfare return."'
   }
 };

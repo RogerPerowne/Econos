@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — app rendering & navigation
+   ECONOS – app rendering & navigation
    7-card sequence with template-based rendering
    ============================================================ */
 
@@ -855,7 +855,7 @@
 </svg>`,
 
     /* ============================================================
-       Public goods scenes — used by Public Goods topic illustrated grid
+       Public goods scenes – used by Public Goods topic illustrated grid
        ============================================================ */
     defenceScene: `
 <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:120px;display:block;">
@@ -1154,7 +1154,7 @@
 
     const stepLabelHtml = c.stepLabel ? `<div class="card__step-label">${c.stepLabel}</div>` : '';
 
-    // Tip strip — single-sentence essence in a coloured top band.
+    // Tip strip – single-sentence essence in a coloured top band.
     // Cleaner and punchier than `intro`; sits right under the title.
     if (c.tip) {
       const tips = Array.isArray(c.tip) ? c.tip : [c.tip];
@@ -1178,7 +1178,7 @@
       content += `<div style="height:8px;"></div>`;
     }
 
-    // Early causes — when c.causesPosition === 'top', render the causes block here,
+    // Early causes – when c.causesPosition === 'top', render the causes block here,
     // right after the tip, before comparison/verdict/diagramPanel. The main causes
     // block lower in this function will skip itself in that case.
     if (c.causes && Array.isArray(c.causes) && c.causes.length && typeof c.causes[0].head !== 'undefined' && c.causesPosition === 'top') {
@@ -1245,7 +1245,7 @@
       content += `</div>`;
     }
 
-    // Intro/lede — styled as a thought-prompt callout
+    // Intro/lede – styled as a thought-prompt callout
     if (c.intro) {
       content += `
         <div style="background:var(--econ-blue-50);border-left:4px solid var(--econ-blue);border-radius:10px;padding:14px 18px;margin-bottom:22px;font-size:15px;color:#0B1426;line-height:1.65;font-style:italic;">
@@ -1253,7 +1253,7 @@
         </div>`;
     }
 
-    // Comparison block — two visual cards either side of a "VS" badge.
+    // Comparison block – two visual cards either side of a "VS" badge.
     // Pattern: { title?, left: {icon,label,value?,caption?,tone?}, right: {...}, vs?: 'VS', position?: 'after-diagram' }
     // When position === 'after-diagram', rendering is deferred until after the diagramPanel block below.
     const renderComparison = () => {
@@ -1286,7 +1286,7 @@
       renderComparison();
     }
 
-    // Verdict comparison — N columns with ✓/✗ item lists, separated by VS or arrow badges.
+    // Verdict comparison – N columns with ✓/✗ item lists, separated by VS or arrow badges.
     // Pattern: { title?, emoji?, layout?: 'vs' | 'arrow', columns: [{tone, label, icon?, items:[{ok:bool,text}]}] }
     if (c.verdict && c.verdict.columns && c.verdict.columns.length >= 2) {
       const v = c.verdict;
@@ -1320,7 +1320,7 @@
       content += `</div>`;
     }
 
-    // Continuum — three-tile spectrum with a gradient connector bar and
+    // Continuum – three-tile spectrum with a gradient connector bar and
     // positional dots, plus verdict-strip cards underneath. Visually
     // emphasises a "markets ↔ government" continuum and is intentionally
     // distinct from the plain-white tile patterns used elsewhere.
@@ -1369,7 +1369,7 @@
         </div>`;
     }
 
-    // Diagram (if card provides a diagramKey) — renders BEFORE flow so the
+    // Diagram (if card provides a diagramKey) – renders BEFORE flow so the
     // headline visual sits above any 1-2-3 explanatory chain. Optional
     // diagramLabel/diagramEmoji prepend a genSecLabel section title.
     if (c.diagramKey && I[c.diagramKey]) {
@@ -1379,7 +1379,7 @@
       content += `<div style="overflow-x:auto;margin-bottom:22px;border-radius:12px;border:1px solid #E7E7EA;">${I[c.diagramKey]}</div>`;
     }
 
-    // Diagram grid — 3-up row of policy comparison mini-diagrams, each with a
+    // Diagram grid – 3-up row of policy comparison mini-diagrams, each with a
     // header, an SVG, and colour-coded dot-bullets.
     //   Pattern: diagramGrid: [{svgKey, tone, icon, head, bullets:[{tone,text}]}]
     //            diagramGridLabel?, diagramGridEmoji?
@@ -1410,7 +1410,7 @@
       content += `</div>`;
     }
 
-    // Diagram panel — SVG on the left, annotated notes on the right (default),
+    // Diagram panel – SVG on the left, annotated notes on the right (default),
     // or SVG full-width on top with notes below when layout:'stacked'.
     //   Pattern: diagramPanel: { diagramKey, title?, intro?, bullets?:[string], steps?:[{head,body}], tone?, layout?:'side'|'stacked' }
     if (c.diagramPanel && I[c.diagramPanel.diagramKey]) {
@@ -1477,14 +1477,14 @@
       }
     }
 
-    // Late comparison — rendered here when c.comparison.position === 'after-diagram'.
+    // Late comparison – rendered here when c.comparison.position === 'after-diagram'.
     if (c.comparison && c.comparison.position === 'after-diagram') {
       renderComparison();
     }
 
-    // Horizontal step flow — numbered circles connected by dashed arrows.
+    // Horizontal step flow – numbered circles connected by dashed arrows.
     // Each step: { icon, title, sub, tone?, status? }. Optional status 'pass'|'fail'|'warn'
-    // overlays a small badge on the icon — for narrative chains where each step has a verdict.
+    // overlays a small badge on the icon – for narrative chains where each step has a verdict.
     if (c.flow && c.flow.length) {
       if (c.flowTitle) {
         content += genSecLabel(c.flowEmoji || '➡️', c.flowTitle);
@@ -1538,7 +1538,7 @@
             ? `<ul style="list-style:none;margin:0;padding:0;">${side.checks.map(ch => `
                 <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:13.5px;color:#0B1426;line-height:1.6;">
                   <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">✓</span>
-                  <span><strong style="color:${tone.label};">${ch.term}</strong> — ${ch.body}</span>
+                  <span><strong style="color:${tone.label};">${ch.term}</strong> – ${ch.body}</span>
                 </li>`).join('')}</ul>`
             : side.text
               ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
@@ -1590,7 +1590,7 @@
       content += buildPairHtml();
     }
 
-    // Key points — flat 3-column takeaway tiles with a coloured bottom border.
+    // Key points – flat 3-column takeaway tiles with a coloured bottom border.
     // Each point: { icon?, title, headline?, body?, tone? }. Used as a punchy
     // "what to know" summary that complements (or replaces) the chunky `flow`.
     if (c.keyPoints && c.keyPoints.length) {
@@ -1622,7 +1622,7 @@
       }
       content += `</div>`;
 
-      // Formula pill row — renders immediately after the keyPoints grid.
+      // Formula pill row – renders immediately after the keyPoints grid.
       // Pills sit in a grid that mirrors keyPointsCols so each pill lines up
       // with the column above. Operators are absolutely positioned in the gap
       // between pills.
@@ -1650,7 +1650,7 @@
       }
     }
 
-    // Examples — 2-col responsive grid of numbered tiles, each with a large illustration
+    // Examples – 2-col responsive grid of numbered tiles, each with a large illustration
     // icon on the left and a body paragraph on the right. Used for "real markets" style cards.
     //   Pattern: examples: [{ tone, icon, title, body, startNumber? }]
     if (c.examples && c.examples.length) {
@@ -1673,7 +1673,7 @@
       content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:18px;">${tiles}</div>`;
     }
 
-    // Market grid — 2x2 of market-context tiles with mini D/S charts whose
+    // Market grid – 2x2 of market-context tiles with mini D/S charts whose
     // gradients reflect each market's elasticity profile.
     //   marketGrid: [{ tone, title, icon, body, supplyElast, demandElast,
     //                  priceLabel, quantityLabel, supplyLabel, demandLabel }]
@@ -1740,7 +1740,7 @@
       content += `<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:22px;">${tilesHtml}</div>`;
     }
 
-    // Framework — a bordered container holding a uppercase label, 3 numbered
+    // Framework – a bordered container holding a uppercase label, 3 numbered
     // tinted tiles, and an embedded flow SVG (via diagramKey). Used for
     // "core functions" overviews like the Price Mechanism big-picture card.
     //   framework: { label, tiles: [{tone,icon,title,body}], diagramKey }
@@ -1765,7 +1765,7 @@
         </div>`;
     }
 
-    // Economist quote — a portrait + italic quote callout for surfacing
+    // Economist quote – a portrait + italic quote callout for surfacing
     // famous economist insights tied to the card's concept.
     //   economistQuote: { portraitKey, tone, label, quote, attribution }
     if (c.economistQuote && c.economistQuote.quote) {
@@ -1778,12 +1778,12 @@
           <div>
             <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
             <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
-            <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
+            <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
           </div>
         </div>`;
     }
 
-    // Body text — styled as a rich explainer
+    // Body text – styled as a rich explainer
     if (c.body) {
       content += `
         <div style="font-size:15px;line-height:1.8;color:#0B1426;margin-bottom:22px;padding:18px 20px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;">
@@ -1791,7 +1791,7 @@
         </div>`;
     }
 
-    // Paired: left / right — defines the two things being contrasted, so
+    // Paired: left / right – defines the two things being contrasted, so
     // renders before causes / table / branches which build on top of them.
     //   - Default: each side has `points: [string]` → bullet list.
     //   - Richer: each side has `rows: [{icon, title, text}]` → numbered icon rows.
@@ -1800,7 +1800,7 @@
       content += buildPairHtml();
     }
 
-    // Concept boxes — tinted panels side-by-side (2-col responsive grid), each with icon flows + bullets.
+    // Concept boxes – tinted panels side-by-side (2-col responsive grid), each with icon flows + bullets.
     // Data: [{ tone, head, sub?, flows: [{inputs:[{icon,label}], outputs:[{icon,label}], connector}], bullets:[] }]
     if (c.conceptBoxes && c.conceptBoxes.length) {
       const boxesHtml = c.conceptBoxes.map(box => {
@@ -1840,7 +1840,7 @@
       content += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;">${boxesHtml}</div>`;
     }
 
-    // Shift diagrams — two mini SVGs (increase / decrease) side by side.
+    // Shift diagrams – two mini SVGs (increase / decrease) side by side.
     // `shiftDiagrams: true` → upward-sloping supply curves.
     // `shiftDiagrams: 'demand'` → downward-sloping demand curves.
     if (c.shiftDiagrams) {
@@ -1851,7 +1851,7 @@
         <text x="10" y="14" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">P</text>
         <text x="163" y="134" font-size="11" fill="#94A3B8" font-family="system-ui,sans-serif">Q</text>`;
       // Supply curves slope up (bottom-left → top-right); demand curves slope down (top-left → bottom-right).
-      // At t=0.5 both beziers pass through y≈64, x≈58 (curve 1) and x≈98 (curve 2) — arrow sits between.
+      // At t=0.5 both beziers pass through y≈64, x≈58 (curve 1) and x≈98 (curve 2) – arrow sits between.
       const c1 = isDemand ? 'M 28,16 Q 55,65 95,110'  : 'M 28,110 Q 55,65 95,16';
       const c2 = isDemand ? 'M 68,16 Q 95,65 135,110' : 'M 68,110 Q 95,65 135,16';
       // Label positions: supply → top of curve; demand → bottom of curve
@@ -1890,7 +1890,7 @@
         </div>`;
     }
 
-    // Worked example — illustrated scenario header + N tone-coded cards
+    // Worked example – illustrated scenario header + N tone-coded cards
     // separated by circular operators, with an optional summary equation bar.
     //   Pattern: workedExample: {
     //     label?, emoji?, scene?: 'steelPlant' | ...,
@@ -1949,7 +1949,7 @@
       }
     }
 
-    // Illustrated grid — 2-col (or custom) grid of example cards with a full-width
+    // Illustrated grid – 2-col (or custom) grid of example cards with a full-width
     // scene header (SVG), a numbered title, body text and an optional third-party badge.
     //   Pattern: illustratedGrid: [{ scene?, tone, title, body, thirdParty? }]
     //            illustratedGridLabel?, illustratedGridEmoji?, illustratedGridCols?
@@ -1984,7 +1984,7 @@
       content += `<div style="display:grid;grid-template-columns:repeat(${igCols},1fr);gap:14px;margin-bottom:26px;">${igCells}</div>`;
     }
 
-    // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] — coloured tiles.
+    // Causes: [{head, body, icon?, example?: {icon, text}, tone?}] – coloured tiles.
     //   - Icon mode (any item has `icon`) activates richer card layout with photo-style header.
     //   - `causesStyle: 'tinted-flat'` swaps to flat tinted tiles (icon left, title right, body below).
     //   - Per-item `example: {icon, text}` adds a small inline sub-callout at the bottom of icon tiles.
@@ -2053,12 +2053,12 @@
       content += `</div>`;
     }
 
-    // After-causes comparison — rendered here when c.comparison.position === 'after-causes'.
+    // After-causes comparison – rendered here when c.comparison.position === 'after-causes'.
     if (c.comparison && c.comparison.position === 'after-causes') {
       renderComparison();
     }
 
-    // Causes 2 — a second causes-style grid for a separate themed section.
+    // Causes 2 – a second causes-style grid for a separate themed section.
     //   Pattern: causes2: [{tone,icon,head,body}], causes2Label?, causes2Emoji?, causes2Style? ('plain-white' | default)
     if (c.causes2 && Array.isArray(c.causes2) && c.causes2.length && typeof c.causes2[0].head !== 'undefined') {
       if (c.causes2Label !== null) content += genSecLabel(c.causes2Emoji || '🔗', c.causes2Label || 'More to know');
@@ -2088,7 +2088,7 @@
       content += `<div style="display:grid;grid-template-columns:${cols2};gap:12px;margin-bottom:26px;">${tiles2}</div>`;
     }
 
-    // Causes 3 — a third causes-style grid for an additional themed section. Mirrors causes2 exactly.
+    // Causes 3 – a third causes-style grid for an additional themed section. Mirrors causes2 exactly.
     //   Pattern: causes3: [{tone,icon,head,body}], causes3Label?, causes3Emoji?, causes3Style? ('plain-white' | default), causes3Cols?
     if (c.causes3 && Array.isArray(c.causes3) && c.causes3.length && typeof c.causes3[0].head !== 'undefined') {
       if (c.causes3Label !== null) content += genSecLabel(c.causes3Emoji || '🔗', c.causes3Label || 'More to know');
@@ -2118,7 +2118,7 @@
       content += `<div style="display:grid;grid-template-columns:${cols3};gap:12px;margin-bottom:26px;">${tiles3}</div>`;
     }
 
-    // How to think about it — two tinted panels side by side (centered icon + heading + body).
+    // How to think about it – two tinted panels side by side (centered icon + heading + body).
     // Data: { left: {icon, tone, head, body}, right: {icon, tone, head, body} }
     if (c.howToThink) {
       const renderHTTPanel = (side) => {
@@ -2134,7 +2134,7 @@
       content += `<div style="display:flex;gap:14px;margin-bottom:28px;">${renderHTTPanel(c.howToThink.left)}${renderHTTPanel(c.howToThink.right)}</div>`;
     }
 
-    // Clean table — light borders, optional icon column, two text columns.
+    // Clean table – light borders, optional icon column, two text columns.
     // Rendered AFTER causes so agents are introduced before their objectives.
     if (c.table && c.table.rows && c.table.rows.length) {
       const tbl = c.table;
@@ -2167,10 +2167,10 @@
       content += `</div>`;
     }
 
-    // Branches — tone-coded tappable callouts. Rendered after main content
+    // Branches – tone-coded tappable callouts. Rendered after main content
     // (body / causes / table) so they read as a "now zoom out" framing block.
     if (c.branches && c.branches.length) {
-      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture — tap each to recall');
+      content += genSecLabel(c.branchesEmoji || '🧭', c.branchesLabel || 'The big picture – tap each to recall');
       content += `<div class="branch-callouts" style="margin-bottom:24px;">
         ${c.branches.map((b, i) => `
           <div class="branch-cal branch-cal--${b.tone || 'blue'}" data-flap-id="gen-branch-${i}">
@@ -2185,7 +2185,7 @@
       </div>`;
     }
 
-    // Flow (late position) — renders AFTER causes/table/branches for cards where
+    // Flow (late position) – renders AFTER causes/table/branches for cards where
     // the explanatory chain should follow the main content tiles.
     if (c.flowBottom && c.flowBottom.length) {
       if (c.flowBottomTitle) {
@@ -2213,7 +2213,7 @@
       content += `</div>`;
     }
 
-    // Product examples — "Think like an examiner" card grid
+    // Product examples – "Think like an examiner" card grid
     if (c.productExamples && c.productExamples.length) {
       const VC = {
         rose:   { color: '#DC2626', badge: '#FEE2E2' },
@@ -2251,7 +2251,7 @@
       </div>`;
     }
 
-    // Steps: [{label, text}] — numbered with cycling tones
+    // Steps: [{label, text}] – numbered with cycling tones
     if (c.steps && c.steps.length) {
       content += genSecLabel(c.stepsEmoji || '📋', c.stepsLabel || 'How it works');
       content += c.steps.map((s, i) => {
@@ -2270,12 +2270,12 @@
       content += `<div style="height:8px;"></div>`;
     }
 
-    // Rows (comparison table) — card-style grid with zebra rows.
+    // Rows (comparison table) – card-style grid with zebra rows.
     // Rows whose label is answer-like hide their cells behind reveal buttons.
     if (c.rows && c.rows.length) {
       const REVEAL_RE = /interpretation|verdict|diagnosis|conclusion|takeaway|what it means|what it tells|policy implication|^\s*answer|^\s*outcome|^\s*result/i;
       const anyReveal = c.rows.some(r => REVEAL_RE.test(r.label));
-      const rowsTitle = c.rowsLabel !== undefined ? c.rowsLabel : (anyReveal ? 'Compare — think before you reveal' : 'Compare');
+      const rowsTitle = c.rowsLabel !== undefined ? c.rowsLabel : (anyReveal ? 'Compare – think before you reveal' : 'Compare');
       if (rowsTitle !== null && rowsTitle !== '') content += genSecLabel(c.rowsEmoji || '📊', rowsTitle);
       const colA = c.colA || '';
       const colB = c.colB || '';
@@ -2325,7 +2325,7 @@
       }
     }
 
-    // Note — tip-style callout. Default position is here in the flow; set
+    // Note – tip-style callout. Default position is here in the flow; set
     //   c.notePosition === 'top' to render it above the visualKey instead.
     //   Pattern: note: {icon?, tone?, head?, text} OR string OR array.
     //   Default icon: ℹ️, default tone: blue.
@@ -2344,7 +2344,7 @@
       });
     }
 
-    // Summary row — up to 3 mini-cards side-by-side for contrast/context blocks
+    // Summary row – up to 3 mini-cards side-by-side for contrast/context blocks
     //   (e.g. "Why it matters" + "Common trap" + "Quick example").
     //   Pattern: summaryRow: [{ tone, icon, title, text?, items?: [string] }]
     if (c.summaryRow && c.summaryRow.length) {
@@ -2373,9 +2373,9 @@
       content += `</div>`;
     }
 
-    // Conclusion — green decisive verdict band. The "given the above, here's the answer".
+    // Conclusion – green decisive verdict band. The "given the above, here's the answer".
     //   Pattern: conclusion: 'string' OR { title?, text }
-    //   (Distinct from c.conclusion used by elasticity-calc / worked-example renderers — only
+    //   (Distinct from c.conclusion used by elasticity-calc / worked-example renderers – only
     //    fires when this card routes through renderCardGeneric.)
     if (c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) {
       const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
@@ -2392,7 +2392,7 @@
       }
     }
 
-    // Balanced note — amber caveat band for risks or limitations of the main argument.
+    // Balanced note – amber caveat band for risks or limitations of the main argument.
     //   Pattern: balancedNote: 'string' OR { title?, text }
     if (c.balancedNote) {
       const noteTitle = typeof c.balancedNote === 'object' ? (c.balancedNote.title || 'A balanced note') : 'A balanced note';
@@ -2409,7 +2409,7 @@
       }
     }
 
-    // Tip late — a second tip block rendered after causes/keyPoints but
+    // Tip late – a second tip block rendered after causes/keyPoints but
     // before keyTerms. Used for "Key idea" callouts that need to follow
     // the worked example, not lead the card.
     if (c.tipLate) {
@@ -2431,7 +2431,7 @@
       });
     }
 
-    // Key terms — coloured tiles, definitions always visible, one row
+    // Key terms – coloured tiles, definitions always visible, one row
     if (c.keyTerms && c.keyTerms.length) {
       content += genSecLabel(c.keyTermsEmoji || '🔑', c.keyTermsLabel || 'Key terms');
       content += `<div style="display:grid;grid-template-columns:${gridColumnsFor(c.keyTerms.length, 180)};gap:12px;margin-bottom:28px;">
@@ -2446,7 +2446,7 @@
       </div>`;
     }
 
-    // Lock-in strip — green-tinted footer with a row of checkmark items.
+    // Lock-in strip – green-tinted footer with a row of checkmark items.
     //   Pattern: lockIn: { title?, items: [string] }  OR  lockIn: [string]
     if (c.lockIn) {
       const liData = Array.isArray(c.lockIn) ? { items: c.lockIn } : c.lockIn;
@@ -2469,7 +2469,7 @@
       }
     }
 
-    // Exam edge — always visible
+    // Exam edge – always visible
     if (c.examEdge) {
       const edgeTitle = typeof c.examEdge === 'object' ? (c.examEdge.title || 'Exam edge') : 'Exam edge';
       const edgeText  = typeof c.examEdge === 'object' ? c.examEdge.text : c.examEdge;
@@ -2486,7 +2486,7 @@
       }
     }
 
-    // Quiz CTA — celebration-style signpost
+    // Quiz CTA – celebration-style signpost
 
     const ledeHtml = c.lede ? `<p class="card__lede">${c.lede}</p>` : '';
     const visualKeyHtml = c.visualKey && I[c.visualKey] ? `<div style="margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;">${I[c.visualKey]}</div>` : '';
@@ -2544,7 +2544,7 @@
      ============================================================ */
 
   function renderIntro() {
-    /* Use Shell.renderStages — single source of truth for the
+    /* Use Shell.renderStages – single source of truth for the
        Learn / Link / Land 3-stage progress widget. Pass T.intro.stages
        directly so per-topic copy overrides (e.g. "Recap the three causes")
        carry through. */
@@ -2765,7 +2765,7 @@
     `).join('');
 
     // If the card provides a diagramKey, show the diagram instead of the table.
-    // (Diagram-first beats table-first for visual learners — table optional.)
+    // (Diagram-first beats table-first for visual learners – table optional.)
     const topSection = c.diagramKey && I[c.diagramKey]
       ? `
         <div class="mech-diagram mech-diagram--wide">
@@ -2809,7 +2809,7 @@
 
     // Default reveal content if data.js doesn't provide one
     const reveal = c.puzzle.reveal || {
-      title: 'Spoiler — four reasons',
+      title: 'Spoiler – four reasons',
       text: "Money creation didn't translate into rising prices because of <strong>velocity, output gaps, anchored expectations,</strong> and <strong>credibility</strong>. The next card unpacks each one.",
       hints: ['Velocity', 'Output gap', 'Expectations', 'Credibility']
     };
@@ -2887,7 +2887,7 @@
             <div>
               <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
               <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
-              <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
+              <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
             </div>
           </div>`;
       })() : ''}
@@ -3012,7 +3012,7 @@
 
     const examples = c.examples.items.map(e => `
       <div class="def-examples__item">
-        <span class="def-examples__period">${e.period}</span> — ${e.text}
+        <span class="def-examples__period">${e.period}</span> – ${e.text}
       </div>
     `).join('');
 
@@ -3084,7 +3084,7 @@
     ];
     const toneFor = i => tonePalette[i % tonePalette.length];
 
-    // Normalise step shape — accept both `prompt` and `label`; convert
+    // Normalise step shape – accept both `prompt` and `label`; convert
     // \n to <br> in answers when no HTML tags are present.
     const linebreak = txt => (typeof txt === 'string' && !/<\w+/.test(txt))
       ? txt.replace(/\n/g, '<br>') : txt;
@@ -3111,7 +3111,7 @@
       `;
     }).join('<div style="display:flex;justify-content:center;align-items:center;height:18px;"><div style="width:2px;height:100%;background:#CBD5E1;border-radius:2px;"></div></div>');
 
-    // Roadmap header — N dots + counter
+    // Roadmap header – N dots + counter
     const roadmap = total > 1 ? `
       <div style="margin:0 0 16px;padding:14px 16px;background:#FAFBFF;border-radius:12px;border:1px solid #E7E7EA;display:flex;align-items:center;justify-content:space-between;gap:14px;">
         <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#475569;">Your ${total}-step journey</div>
@@ -3255,7 +3255,7 @@
     ` : '';
 
     const [s1, s2, s3, s4, s5] = steps;
-    /* roadmapStops destructure was here; the values were unused —
+    /* roadmapStops destructure was here; the values were unused –
        only roadmap (the string) is consumed below. */
 
     return `
@@ -3277,7 +3277,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     PED Calculation — connected step chain.
+     PED Calculation – connected step chain.
      Five tone-coded nodes wired together; each "Solve" reveals working,
      populates the formula scaffold and lights up the next connector.
      ------------------------------------------------------------------------- */
@@ -3414,18 +3414,18 @@
           prompt: 'When price rose, quantity demanded dropped. By what percentage?',
           formula: `% ΔQ&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">(New − Old)</span> ÷ Old × 100`,
           reveal: `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;">% ΔQ = (${q2} − ${q1}) ÷ ${q1} × 100<br><span style="font-size:18px;font-weight:800;color:${T1.c};">% ΔQ = ${fmtPct(pctQ)}</span></div>
-            <div style="margin-top:10px;font-size:13.5px;">Negative — that is correct. Law of demand: price up, quantity down.</div>`
+            <div style="margin-top:10px;font-size:13.5px;">Negative – that is correct. Law of demand: price up, quantity down.</div>`
         },
         {
           tone: T2, icon: '💷', title: 'Find the % change in price',
           prompt: 'Now repeat the same formula on the price side.',
           formula: `% ΔP&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">(New − Old)</span> ÷ Old × 100`,
           reveal: `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;">% ΔP = (${p2} − ${p1}) ÷ ${p1} × 100<br><span style="font-size:18px;font-weight:800;color:${T2.c};">% ΔP = ${fmtPct(pctP)}</span></div>
-            <div style="margin-top:10px;font-size:13.5px;">Positive — the promoter raised the price.</div>`
+            <div style="margin-top:10px;font-size:13.5px;">Positive – the promoter raised the price.</div>`
         },
         {
           tone: T3, icon: '➗', title: 'Apply the PED formula',
-          prompt: 'Plug the two answers into the PED equation — the result is your coefficient.',
+          prompt: 'Plug the two answers into the PED equation – the result is your coefficient.',
           formula: `PED&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">% ΔQ</span>&nbsp;&nbsp;÷&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">% ΔP</span>`,
           reveal: `<div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;font-weight:800;">
             <span style="color:#0B1426;">PED =</span>
@@ -3435,7 +3435,7 @@
             <span style="color:#0B1426;">=</span>
             <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:18px;box-shadow:0 2px 8px ${T3.c}55;">${ped.toFixed(2)}</span>
           </div>
-          <div style="margin-top:12px;font-size:13.5px;text-align:center;">The minus sign is expected — but we classify using the <strong>magnitude</strong> |${ped.toFixed(2)}| = ${absPed.toFixed(2)}.</div>`
+          <div style="margin-top:12px;font-size:13.5px;text-align:center;">The minus sign is expected – but we classify using the <strong>magnitude</strong> |${ped.toFixed(2)}| = ${absPed.toFixed(2)}.</div>`
         },
         {
           tone: T4, icon: '🎯', title: 'Classify the elasticity',
@@ -3465,13 +3465,13 @@
             <div>
               <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
               <div style="font-size:16px;font-weight:800;color:#0B1426;margin-top:2px;">Demand is <span style="color:${T4.c};">price ${verdict.toLowerCase()}</span></div>
-              <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity — a bigger proportional response.</div>
+              <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise caused a ${fmtPct(pctQ)} fall in quantity – a bigger proportional response.</div>
             </div>
           </div>`
         },
         {
           tone: T5, icon: '💰', title: 'What happens to total revenue?',
-          prompt: 'When demand is elastic and you raise the price, the volume loss outweighs the price gain — and revenue falls.',
+          prompt: 'When demand is elastic and you raise the price, the volume loss outweighs the price gain – and revenue falls.',
           formula: `TR&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T5.c};font-weight:800;">Price</span>&nbsp;&nbsp;×&nbsp;&nbsp;<span style="color:${T5.c};font-weight:800;">Quantity</span>`,
           reveal: `${barChart}
           <div style="background:#fff;border-radius:10px;padding:12px 14px;border:2px solid ${T5.c};display:flex;align-items:center;gap:12px;">
@@ -3497,7 +3497,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     PES Calculation — connected step chain for Price Elasticity of Supply.
+     PES Calculation – connected step chain for Price Elasticity of Supply.
      Scenario: oil $50→$60, 80m→84m barrels/day. PES = +0.25 (inelastic).
      ------------------------------------------------------------------------- */
   function renderCardPesCalculation(c) {
@@ -3523,7 +3523,7 @@
     else if (pes < Infinity) { verdict = 'Elastic';             verdictIdx = 3; }
     else                     { verdict = 'Perfectly elastic';   verdictIdx = 4; }
 
-    // Mini supply chart — upward sloping: Before (lower P, lower Q) at bottom-left, After at top-right
+    // Mini supply chart – upward sloping: Before (lower P, lower Q) at bottom-left, After at top-right
     const chartW = 220, chartH = 150;
     const padL = 32, padB = 28, padT = 14, padR = 14;
     const qMax = Math.max(q1, q2) * 1.25;
@@ -3590,7 +3590,7 @@
 
     const impactBars = `
       <div style="margin-bottom:14px;">
-        <div style="font-size:12px;font-weight:800;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">When demand surges — where does the adjustment fall?</div>
+        <div style="font-size:12px;font-weight:800;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">When demand surges – where does the adjustment fall?</div>
         <div style="display:flex;flex-direction:column;gap:8px;">
           <div>
             <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:4px;">
@@ -3635,14 +3635,14 @@
             prompt: 'The oil price spiked. By what percentage did it rise?',
             formula: `% ΔP&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T1.c};font-weight:800;">(New − Old)</span> ÷ Old × 100`,
             reveal: `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;">% ΔP = (${p2} − ${p1}) ÷ ${p1} × 100<br><span style="font-size:18px;font-weight:800;color:${T1.c};">% ΔP = ${fmtPct(pctP)}</span></div>
-              <div style="margin-top:10px;font-size:13.5px;">Positive — price moved up. PES is always positive, so this direction matters.</div>`
+              <div style="margin-top:10px;font-size:13.5px;">Positive – price moved up. PES is always positive, so this direction matters.</div>`
           },
           {
             tone: T2, icon: '📦', title: 'Find the % change in quantity supplied',
             prompt: 'Producers increased output. By what percentage did supply rise?',
             formula: `% ΔQS&nbsp;&nbsp;=&nbsp;&nbsp;<span style="color:${T2.c};font-weight:800;">(New − Old)</span> ÷ Old × 100`,
             reveal: `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;">% ΔQS = (${q2} − ${q1}) ÷ ${q1} × 100<br><span style="font-size:18px;font-weight:800;color:${T2.c};">% ΔQS = ${fmtPct(pctQS)}</span></div>
-              <div style="margin-top:10px;font-size:13.5px;">Positive — supply rose. Both % changes are positive, so PES will be positive.</div>`
+              <div style="margin-top:10px;font-size:13.5px;">Positive – supply rose. Both % changes are positive, so PES will be positive.</div>`
           },
           {
             tone: T3, icon: '➗', title: 'Apply the PES formula',
@@ -3656,7 +3656,7 @@
               <span style="color:#0B1426;">=</span>
               <span style="background:${T3.c};color:#fff;padding:6px 16px;border-radius:8px;font-size:18px;box-shadow:0 2px 8px ${T3.c}55;">${pes.toFixed(2)}</span>
             </div>
-            <div style="margin-top:12px;font-size:13.5px;text-align:center;">Supply responded much less proportionally than price — a classic sign of inelastic supply.</div>`
+            <div style="margin-top:12px;font-size:13.5px;text-align:center;">Supply responded much less proportionally than price – a classic sign of inelastic supply.</div>`
           },
           {
             tone: T4, icon: '🎯', title: 'Classify the PES',
@@ -3686,7 +3686,7 @@
               <div>
                 <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:${T4.c};">Verdict</div>
                 <div style="font-size:16px;font-weight:800;color:#0B1426;margin-top:2px;">Oil supply is <span style="color:${T4.c};">${verdict.toLowerCase()}</span></div>
-                <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply — a much smaller proportional response.</div>
+                <div style="font-size:13px;color:#475569;margin-top:3px;line-height:1.5;">A ${fmtPct(pctP)} price rise only unlocked ${fmtPct(pctQS)} more supply – a much smaller proportional response.</div>
               </div>
             </div>`
           },
@@ -3709,7 +3709,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     YED Calculation — connected step chain for Income Elasticity of Demand.
+     YED Calculation – connected step chain for Income Elasticity of Demand.
      Scenario: bus travel, income +5%, QD −10%. YED = −2 (inferior good).
      ------------------------------------------------------------------------- */
   function renderCardYedCalculation(c) {
@@ -3745,7 +3745,7 @@
     ];
     const spectrum = `
       <div style="margin-top:10px;">
-        <div style="font-size:12px;font-weight:700;color:#475569;margin-bottom:8px;">YED — good type spectrum</div>
+        <div style="font-size:12px;font-weight:700;color:#475569;margin-bottom:8px;">YED – good type spectrum</div>
         <div style="display:flex;border-radius:8px;overflow:hidden;border:1px solid #E2E8F0;">
           ${yedZones.map((z, i) => `
             <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 3 ? '1px solid #E2E8F0' : 'none'};">
@@ -3756,7 +3756,7 @@
         </div>
       </div>`;
 
-    // Mini Engel curve chart (income on x, QD on y — negative slope = inferior)
+    // Mini Engel curve chart (income on x, QD on y – negative slope = inferior)
     const chartW = 220, chartH = 150, padL = 32, padB = 28, padT = 14, padR = 14;
     const iMax = Math.max(income1, income2) * 1.25;
     const qMax = Math.max(q1, q2) * 1.25;
@@ -3821,14 +3821,14 @@
         title: 'Calculate % change in income',
         prompt: `Average household incomes rose from <strong>${fmtIncome(income1)}</strong> to <strong>${fmtIncome(income2)}</strong>. Apply: (New − Old) ÷ Old × 100`,
         formula: `% Δ Income = (${fmtIncome(income2)} − ${fmtIncome(income1)}) ÷ ${fmtIncome(income1)} × 100`,
-        reveal: `% Δ Income = (${fmtIncome(income2)} − ${fmtIncome(income1)}) ÷ ${fmtIncome(income1)} × 100 = <strong>${fmtPct(pctI)}</strong>. This goes in the denominator of the YED formula. Keep the positive sign — incomes rose.`
+        reveal: `% Δ Income = (${fmtIncome(income2)} − ${fmtIncome(income1)}) ÷ ${fmtIncome(income1)} × 100 = <strong>${fmtPct(pctI)}</strong>. This goes in the denominator of the YED formula. Keep the positive sign – incomes rose.`
       },
       {
         tone: T2, icon: '📊',
         title: 'Calculate % change in quantity demanded',
-        prompt: `Demand for bus travel fell — from ${q1.toLocaleString()} to ${q2.toLocaleString()} trips/day. Calculate % ΔQD, making sure to keep the negative sign.`,
+        prompt: `Demand for bus travel fell – from ${q1.toLocaleString()} to ${q2.toLocaleString()} trips/day. Calculate % ΔQD, making sure to keep the negative sign.`,
         formula: `% ΔQD = (${q2} − ${q1}) ÷ ${q1} × 100`,
-        reveal: `% ΔQD = (${q2} − ${q1}) ÷ ${q1} × 100 = <strong>${fmtPct(pctQ)}</strong>. The negative sign is essential — it confirms demand <em>fell</em> when incomes rose, which is the defining characteristic of an inferior good.`
+        reveal: `% ΔQD = (${q2} − ${q1}) ÷ ${q1} × 100 = <strong>${fmtPct(pctQ)}</strong>. The negative sign is essential – it confirms demand <em>fell</em> when incomes rose, which is the defining characteristic of an inferior good.`
       },
       {
         tone: T3, icon: '➗',
@@ -3839,17 +3839,17 @@
       },
       {
         tone: T4, icon: '🏷️',
-        title: 'Interpret the sign — good type',
+        title: 'Interpret the sign – good type',
         prompt: `YED = ${yed.toFixed(1)}. Is the sign positive or negative? What type of good does this make bus travel?`,
         formula: null,
-        reveal: `YED = ${yed.toFixed(1)} <strong>&lt; 0</strong> → bus travel is an <strong>inferior good</strong>. As incomes rise, consumers trade up — switching to cars or taxis. The negative sign is the single most important result: it classifies the good type. Never confuse sign with magnitude — a large negative YED means strongly inferior, not "very inelastic".`
+        reveal: `YED = ${yed.toFixed(1)} <strong>&lt; 0</strong> → bus travel is an <strong>inferior good</strong>. As incomes rise, consumers trade up – switching to cars or taxis. The negative sign is the single most important result: it classifies the good type. Never confuse sign with magnitude – a large negative YED means strongly inferior, not "very inelastic".`
       },
       {
         tone: T5, icon: '📈',
-        title: 'Interpret the magnitude — boom and recession impacts',
+        title: 'Interpret the magnitude – boom and recession impacts',
         prompt: `|YED| = ${Math.abs(yed).toFixed(1)}. Is this weakly or strongly income-sensitive? What happens to bus demand in a boom vs a recession?`,
         formula: null,
-        reveal: `|YED| = ${Math.abs(yed).toFixed(1)} <strong>&gt; 1</strong> → demand is <em>strongly</em> income-sensitive. A ${fmtPct(pctI)} income rise causes a ${fmtPct(Math.abs(pctQ))} fall in bus demand. <strong>In a boom:</strong> incomes rise → bus demand falls sharply → operators lose revenue, may need government subsidies to maintain services. <strong>In a recession:</strong> incomes fall → bus demand recovers → counter-cyclical benefit for operators. Bus companies and transport planners must model demand against the economic cycle — YED = ${yed.toFixed(1)} makes this a high-sensitivity relationship.`
+        reveal: `|YED| = ${Math.abs(yed).toFixed(1)} <strong>&gt; 1</strong> → demand is <em>strongly</em> income-sensitive. A ${fmtPct(pctI)} income rise causes a ${fmtPct(Math.abs(pctQ))} fall in bus demand. <strong>In a boom:</strong> incomes rise → bus demand falls sharply → operators lose revenue, may need government subsidies to maintain services. <strong>In a recession:</strong> incomes fall → bus demand recovers → counter-cyclical benefit for operators. Bus companies and transport planners must model demand against the economic cycle – YED = ${yed.toFixed(1)} makes this a high-sensitivity relationship.`
       }
     ];
 
@@ -3862,7 +3862,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     XED Calculation — connected step chain for Cross-Price Elasticity.
+     XED Calculation – connected step chain for Cross-Price Elasticity.
      Scenario: tea (A) & coffee (B). Coffee +15%, tea QD +9%. XED = +0.6.
      ------------------------------------------------------------------------- */
   function renderCardXedCalculation(c) {
@@ -3900,7 +3900,7 @@
     ];
     const spectrum = `
       <div style="margin-top:10px;">
-        <div style="font-size:12px;font-weight:700;color:#475569;margin-bottom:8px;">XED — relationship spectrum</div>
+        <div style="font-size:12px;font-weight:700;color:#475569;margin-bottom:8px;">XED – relationship spectrum</div>
         <div style="display:flex;border-radius:8px;overflow:hidden;border:1px solid #E2E8F0;">
           ${xedZones.map((z, i) => `
             <div style="flex:1;padding:8px 4px;background:${i === verdictIdx ? z.color : '#F8FAFC'};text-align:center;border-right:${i < 4 ? '1px solid #E2E8F0' : 'none'};">
@@ -3976,14 +3976,14 @@
         title: `Calculate % change in price of ${goodB}`,
         prompt: `${goodB} price rose from <strong>${cur}${pB1}</strong> to <strong>${cur}${pB2}</strong> per cup. Apply: (New − Old) ÷ Old × 100`,
         formula: `% ΔP(${goodB}) = (${pB2} − ${pB1}) ÷ ${pB1} × 100`,
-        reveal: `% ΔP(${goodB}) = (${pB2} − ${pB1}) ÷ ${pB1} × 100 = <strong>${fmtPct(pctPB)}</strong>. This is the price trigger — ${goodB} got more expensive, which may cause consumers to switch to ${goodA}.`
+        reveal: `% ΔP(${goodB}) = (${pB2} − ${pB1}) ÷ ${pB1} × 100 = <strong>${fmtPct(pctPB)}</strong>. This is the price trigger – ${goodB} got more expensive, which may cause consumers to switch to ${goodA}.`
       },
       {
         tone: T2, icon: '🍵',
         title: `Calculate % change in QD of ${goodA}`,
         prompt: `${goodA} demand rose from <strong>${qA1}</strong> to <strong>${qA2}</strong> cups/day. Apply: (New − Old) ÷ Old × 100`,
         formula: `% ΔQD(${goodA}) = (${qA2} − ${qA1}) ÷ ${qA1} × 100`,
-        reveal: `% ΔQD(${goodA}) = (${qA2} − ${qA1}) ÷ ${qA1} × 100 = <strong>${fmtPct(pctQA)}</strong>. ${goodA} demand rose when ${goodB} got more expensive — a positive response suggesting substitutability.`
+        reveal: `% ΔQD(${goodA}) = (${qA2} − ${qA1}) ÷ ${qA1} × 100 = <strong>${fmtPct(pctQA)}</strong>. ${goodA} demand rose when ${goodB} got more expensive – a positive response suggesting substitutability.`
       },
       {
         tone: T3, icon: '➗',
@@ -3997,14 +3997,14 @@
         title: 'Identify the relationship',
         prompt: `XED = +${xed.toFixed(2)}. Is the sign positive or negative? What does that tell you about the relationship between ${goodA} and ${goodB}?`,
         formula: null,
-        reveal: `XED = +${xed.toFixed(2)} <strong>&gt; 0</strong> → ${goodA} and ${goodB} are <strong>substitutes</strong>. The positive sign confirms the relationship: when ${goodB} became more expensive, some consumers switched to ${goodA} instead. Always name both goods — "XED > 0 so substitutes" alone is incomplete without stating which goods.`
+        reveal: `XED = +${xed.toFixed(2)} <strong>&gt; 0</strong> → ${goodA} and ${goodB} are <strong>substitutes</strong>. The positive sign confirms the relationship: when ${goodB} became more expensive, some consumers switched to ${goodA} instead. Always name both goods – "XED > 0 so substitutes" alone is incomplete without stating which goods.`
       },
       {
         tone: T5, icon: '📏',
-        title: 'Interpret the magnitude — market and legal implications',
+        title: 'Interpret the magnitude – market and legal implications',
         prompt: `XED = +${xed.toFixed(2)}. How close are ${goodA} and ${goodB} as substitutes? Would the CMA consider them to be in the same market?`,
         formula: null,
-        reveal: `XED = +${xed.toFixed(2)} indicates <em>moderate</em> substitutability — significant, but not close substitutes. Close substitutes have XED closer to 2–3; weak substitutes closer to 0.1–0.2. <strong>CMA competition law context:</strong> the Competition and Markets Authority uses XED &gt; ~0.5 as evidence that two products compete in the same market when reviewing mergers. XED = +${xed.toFixed(2)} would be borderline evidence of market overlap — enough to trigger scrutiny but not conclusive. A ${goodA} producer could use this: when ${goodB} prices rise due to commodity shocks, expect a modest boost to ${goodA} demand — plan production accordingly.`
+        reveal: `XED = +${xed.toFixed(2)} indicates <em>moderate</em> substitutability – significant, but not close substitutes. Close substitutes have XED closer to 2–3; weak substitutes closer to 0.1–0.2. <strong>CMA competition law context:</strong> the Competition and Markets Authority uses XED &gt; ~0.5 as evidence that two products compete in the same market when reviewing mergers. XED = +${xed.toFixed(2)} would be borderline evidence of market overlap – enough to trigger scrutiny but not conclusive. A ${goodA} producer could use this: when ${goodB} prices rise due to commodity shocks, expect a modest boost to ${goodA} demand – plan production accordingly.`
       }
     ];
 
@@ -4017,7 +4017,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     Market Structures Comparison — 4-column reveal table.
+     Market Structures Comparison – 4-column reveal table.
      ------------------------------------------------------------------------- */
   function renderCardMarketStructuresComparison(c) {
     const COLS = [
@@ -4056,7 +4056,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     Essay Scaffold — paragraph-by-paragraph exam essay builder with reveals.
+     Essay Scaffold – paragraph-by-paragraph exam essay builder with reveals.
      ------------------------------------------------------------------------- */
   function renderCardEssayScaffold(c) {
     const TYPE_STYLE = {
@@ -4072,7 +4072,7 @@
         <div style="border-radius:10px;border:1.5px solid ${s.color}40;background:${s.bg};margin-bottom:14px;overflow:hidden;">
           <div style="background:${s.color};padding:10px 16px;display:flex;align-items:center;gap:10px;">
             <span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;">${s.label}</span>
-            ${p.label ? `<span style="font-size:12px;color:rgba(255,255,255,0.75);">— ${p.label}</span>` : ''}
+            ${p.label ? `<span style="font-size:12px;color:rgba(255,255,255,0.75);">– ${p.label}</span>` : ''}
           </div>
           <div style="padding:14px 16px;">
             <div style="font-size:13px;color:#334155;line-height:1.65;margin-bottom:12px;">${p.prompt}</div>
@@ -4098,7 +4098,7 @@
   }
 
   /* -------------------------------------------------------------------------
-     YED Explorer & XED Explorer — Engel-curve and cross-price widgets.
+     YED Explorer & XED Explorer – Engel-curve and cross-price widgets.
      Both registered as globals by js/yed-xed-explorer.js.
      ------------------------------------------------------------------------- */
   function renderCardYedExplorer(c) {
@@ -4565,7 +4565,7 @@
           const swatch = it.color || '#0B1426';
           return `<li style="display:flex;gap:8px;align-items:baseline;font-size:14px;line-height:1.55;color:#0B1426;margin-bottom:4px;">
             <span style="flex-shrink:0;color:${swatch};font-weight:900;font-size:16px;line-height:1;margin-top:2px;">•</span>
-            <span><strong style="color:${swatch};">${it.term}</strong> — ${it.text}</span>
+            <span><strong style="color:${swatch};">${it.term}</strong> – ${it.text}</span>
           </li>`;
         }).join('');
         return `${genSecLabel(icon, title)}<ul style="margin:0 0 20px;padding:0;list-style:none;">${itemsHtml}</ul>`;
@@ -4938,7 +4938,7 @@
             <div>
               <div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${eq.label || 'Economist insight'}</div>
               <div style="font-size:15.5px;line-height:1.65;color:#0B1426;font-style:italic;margin-bottom:10px;">&ldquo;${eq.quote}&rdquo;</div>
-              <div style="font-size:13px;color:${t.label};font-weight:700;">— ${eq.attribution}</div>
+              <div style="font-size:13px;color:${t.label};font-weight:700;">– ${eq.attribution}</div>
             </div>
           </div>`;
       })() : ''}
@@ -5070,16 +5070,16 @@
     const stages = [
       { key: 'stage1', label: 'Free market',
         title: 'Free market overproduces',
-        text: 'The free market settles where MPC (supply) = MSB (demand) — at output Qm and price Pm. Producers ignore the marginal external cost (MEC) their output imposes on third parties, such as pollution. Because the full social cost is higher than the private cost, the market produces too much.' },
+        text: 'The free market settles where MPC (supply) = MSB (demand) – at output Qm and price Pm. Producers ignore the marginal external cost (MEC) their output imposes on third parties, such as pollution. Because the full social cost is higher than the private cost, the market produces too much.' },
       { key: 'stage2', label: 'Market failure',
-        title: 'The social optimum — and the deadweight loss',
-        text: 'Adding the MEC gives the full social cost: MSC = MPC + MEC. The socially optimal output is Q*, where MSB = MSC. The rose-shaded triangle is the deadweight welfare loss from market failure — the net value destroyed by over-producing between Q* and Qm. The government\'s goal: reduce output from Qm to Q* without creating a new distortion.' },
+        title: 'The social optimum – and the deadweight loss',
+        text: 'Adding the MEC gives the full social cost: MSC = MPC + MEC. The socially optimal output is Q*, where MSB = MSC. The rose-shaded triangle is the deadweight welfare loss from market failure – the net value destroyed by over-producing between Q* and Qm. The government\'s goal: reduce output from Qm to Q* without creating a new distortion.' },
       { key: 'stage3', label: 'Policy attempt',
-        title: 'The Pigouvian tax — in theory',
-        text: 'A correctly-calibrated Pigouvian tax equals the MEC at Q*. It shifts the firm\'s effective supply curve up from MPC to MSC, so each unit now faces its full social cost. Output falls to Q* and the deadweight loss disappears. In practice, however, the government must estimate MEC accurately — a significant information challenge.' },
+        title: 'The Pigouvian tax – in theory',
+        text: 'A correctly-calibrated Pigouvian tax equals the MEC at Q*. It shifts the firm\'s effective supply curve up from MPC to MSC, so each unit now faces its full social cost. Output falls to Q* and the deadweight loss disappears. In practice, however, the government must estimate MEC accurately – a significant information challenge.' },
       { key: 'stage4', label: 'Govt failure',
-        title: 'Government failure — the overestimate',
-        text: 'If the government overestimates MEC, the tax is set too high. The effective supply curve rises above MSC and output falls to Q\'\' — below the social optimum Q*. A new deadweight loss (purple triangle) is created. The corrective tool has become a new source of welfare loss: government failure. Any evaluation must weigh both the original market failure and the overcorrection risk.' }
+        title: 'Government failure – the overestimate',
+        text: 'If the government overestimates MEC, the tax is set too high. The effective supply curve rises above MSC and output falls to Q\'\' – below the social optimum Q*. A new deadweight loss (purple triangle) is created. The corrective tool has become a new source of welfare loss: government failure. Any evaluation must weigh both the original market failure and the overcorrection risk.' }
     ];
 
     const svgDiagram = `<svg viewBox="0 0 620 410" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
@@ -5112,7 +5112,7 @@
         <text x="57" y="219" font-family="system-ui,sans-serif" font-size="10" fill="#334155" text-anchor="end">Pm</text>
         <!-- Annotation -->
         <rect x="338" y="200" width="168" height="22" fill="#F0FDF4" rx="4" stroke="#059669" stroke-width="1"/>
-        <text x="422" y="214" font-family="system-ui,sans-serif" font-size="9.5" fill="#065f46" text-anchor="middle" font-weight="600">E₁ — free market equilibrium</text>
+        <text x="422" y="214" font-family="system-ui,sans-serif" font-size="9.5" fill="#065f46" text-anchor="middle" font-weight="600">E₁ – free market equilibrium</text>
       </g>
 
       <!-- ── STAGE 2: MSC + Q* + market failure DWL ──────────────────── -->
@@ -5136,7 +5136,7 @@
         <text x="333" y="161" font-family="system-ui,sans-serif" font-size="9" fill="#B91C1C" text-anchor="middle" font-weight="600">Market failure DWL</text>
         <!-- Annotation for Q* -->
         <rect x="264" y="230" width="150" height="20" fill="#F0FDF4" rx="4" stroke="#059669" stroke-width="1"/>
-        <text x="339" y="243" font-family="system-ui,sans-serif" font-size="9" fill="#065f46" text-anchor="middle" font-weight="600">E* — social optimum</text>
+        <text x="339" y="243" font-family="system-ui,sans-serif" font-size="9" fill="#065f46" text-anchor="middle" font-weight="600">E* – social optimum</text>
       </g>
 
       <!-- ── STAGE 3: ideal tax annotation ───────────────────────────── -->
@@ -5248,10 +5248,10 @@
 
   function renderCardRegulatoryCaptureExplorer(c) {
     const steps = [
-      { key: 'stage1', label: 'Design intent',  text: 'Parliament creates an independent regulator to act as a buffer between industry and consumers. The regulator has statutory powers: it can set prices, investigate anti-competitive conduct, and impose fines. In this design, the regulator\'s loyalty runs exclusively to the public — not to the firms it oversees.' },
-      { key: 'stage2', label: 'Info asymmetry', text: 'The regulator knows little about the industry\'s real costs, technology, and margins. Industry is the primary — often only — source of this data. By supplying selective, strategically framed information, firms shift the regulatory agenda in their favour. The regulator becomes intellectually dependent on the entity it is supposed to police.' },
+      { key: 'stage1', label: 'Design intent',  text: 'Parliament creates an independent regulator to act as a buffer between industry and consumers. The regulator has statutory powers: it can set prices, investigate anti-competitive conduct, and impose fines. In this design, the regulator\'s loyalty runs exclusively to the public – not to the firms it oversees.' },
+      { key: 'stage2', label: 'Info asymmetry', text: 'The regulator knows little about the industry\'s real costs, technology, and margins. Industry is the primary – often only – source of this data. By supplying selective, strategically framed information, firms shift the regulatory agenda in their favour. The regulator becomes intellectually dependent on the entity it is supposed to police.' },
       { key: 'stage3', label: 'Revolving door', text: 'Regulators recruit from industry (they need technical expertise), and staff leave to take senior roles in the firms they regulated (industry pays far more). This creates a structural conflict: incoming staff arrive with industry\'s perspective; departing staff are incentivised to maintain good relations with future employers. Regulatory zeal is suppressed at both ends.' },
-      { key: 'stage4', label: 'Capture',        text: 'Over time, the regulator adopts industry\'s worldview. Price caps are set above competitive levels; new entrants face bureaucratic barriers; enforcement actions are slow and light. The public — the regulator\'s original principal — receives no effective protection. Government failure is complete: the correction mechanism has been captured by the problem it was meant to fix.' }
+      { key: 'stage4', label: 'Capture',        text: 'Over time, the regulator adopts industry\'s worldview. Price caps are set above competitive levels; new entrants face bureaucratic barriers; enforcement actions are slow and light. The public – the regulator\'s original principal – receives no effective protection. Government failure is complete: the correction mechanism has been captured by the problem it was meant to fix.' }
     ];
 
     const svgDiagram = `
@@ -5402,7 +5402,7 @@
     // These two templates always need their own dedicated renderer regardless of fields present
     if (c.template === 'ad-interactive' || c.template === 'transmission-chain' || c.template === 'elasticity-explorer' || c.template === 'ped-five-frames' || c.template === 'pes-five-frames' || c.template === 'worked-example' || c.template === 'ped-calculation' || c.template === 'pes-calculation' || c.template === 'yed-calculation' || c.template === 'xed-calculation' || c.template === 'pes-explorer' || c.template === 'yed-explorer' || c.template === 'xed-explorer' || c.template === 'market-structures-comparison' || c.template === 'essay-scaffold' || c.template === 'regulatory-capture-explorer' || c.template === 'welfare-gf-explorer') return false;
     // All other cards: route by field presence. Inflation-style cards have branches/title/etc
-    // but no body/steps/rows — they fall through to the switch and get dedicated renderers.
+    // but no body/steps/rows – they fall through to the switch and get dedicated renderers.
     return !!(
       c.body !== undefined ||
       c.steps !== undefined ||
@@ -5416,7 +5416,7 @@
          the generic 2-column renderer. Tables with array-of-arrays
          rows (N columns + headers, used by diagnose cards in
          inflation, sol_wellbeing, macro_conflicts, etc.) stay on the
-         dedicated renderCardDiagnose — generic would render every
+         dedicated renderCardDiagnose – generic would render every
          cell as "undefined" because it reads r.label / r.value. */
       (c.table !== undefined && c.table.rows && c.table.rows.length > 0 &&
        !Array.isArray(c.table.rows[0])) ||
@@ -5543,7 +5543,7 @@
   }
 
   /* ============================================================
-     RIGHT RAIL — session progress, cards list, download deck
+     RIGHT RAIL – session progress, cards list, download deck
      ============================================================ */
 
   function renderCardsRail(currentIdx) {
@@ -5634,7 +5634,7 @@
     bindEvents();
     /* Yield to the browser so paint happens before we initialise the
        interactive widgets (each explorer can scan tens of DOM nodes
-       and bind handlers — postponing avoids jank on the first frame). */
+       and bind handlers – postponing avoids jank on the first frame). */
     const initWidgets = () => {
       // Initialise interactive diagram layers to match view 0 on first render.
       root.querySelectorAll('[data-id-root]').forEach(idRoot => {
@@ -5676,7 +5676,7 @@
   }
 
   function handleClick(e) {
-    // Branch-cal flap toggle (card 1) — match anywhere inside the branch
+    // Branch-cal flap toggle (card 1) – match anywhere inside the branch
     const branchEl = e.target.closest('.branch-cal[data-flap-id]');
     if (branchEl) {
       e.preventDefault();

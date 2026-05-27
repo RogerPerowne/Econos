@@ -50,7 +50,7 @@
           'Lower rates of urbanisation and migration'
         ],
         ans:  1,
-        exp:  'Globalisation can bring FDI (creating jobs and tax revenue), technology transfer, access to global markets, and integration into global value chains — all of which can accelerate development.'
+        exp:  'Globalisation can bring FDI (creating jobs and tax revenue), technology transfer, access to global markets, and integration into global value chains – all of which can accelerate development.'
       },
       {
         id:   'q_glob_4',
@@ -63,7 +63,7 @@
           'Is regulated by an international body'
         ],
         ans:  1,
-        exp:  'An MNC (or transnational corporation, TNC) maintains significant business activities — production, sales, R&D — in more than one country. Examples include Toyota, Apple, and Shell.'
+        exp:  'An MNC (or transnational corporation, TNC) maintains significant business activities – production, sales, R&D – in more than one country. Examples include Toyota, Apple, and Shell.'
       },
       {
         id:   'q_glob_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['FDI','MNC','Trade liberalisation','Protectionism'],
         ans:  3,
-        exp:  'FDI, MNCs, and trade liberalisation are all drivers or features of globalisation. Protectionism (tariffs, quotas, subsidies) is the opposite of globalisation — it restricts international economic integration.'
+        exp:  'FDI, MNCs, and trade liberalisation are all drivers or features of globalisation. Protectionism (tariffs, quotas, subsidies) is the opposite of globalisation – it restricts international economic integration.'
       },
       {
         id:   'q_glob_9',
@@ -123,7 +123,7 @@
         ],
         opts: ['USA','UK','Singapore','Brazil'],
         ans:  2,
-        exp:  'Trade openness = (X + M) / GDP × 100. Singapore\'s ratio of 320% reflects its role as a major trade and re-export hub — it is the most globally integrated economy in the table.'
+        exp:  'Trade openness = (X + M) / GDP × 100. Singapore\'s ratio of 320% reflects its role as a major trade and re-export hub – it is the most globally integrated economy in the table.'
       },
       {
         id:   'q_glob_10',

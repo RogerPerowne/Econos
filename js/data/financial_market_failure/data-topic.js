@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   title: 'Market Failure in the Financial Sector',
   estTime: '9-11 minutes',
-  goal: 'Identify and evaluate the main types of market failure in finance — asymmetric information, moral hazard, externalities, market rigging, and speculation.',
+  goal: 'Identify and evaluate the main types of market failure in finance – asymmetric information, moral hazard, externalities, market rigging, and speculation.',
 
   intro: {
     heroKey: 'heroFinancialMarkets',
-    summary: 'Financial markets fail more spectacularly than most other markets — and the 2007-08 Global Financial Crisis showed why. Asymmetric information, moral hazard from too-big-to-fail, negative externalities from bank collapses, speculation, and market manipulation all undermine financial efficiency. These failures justify the heavy regulation seen post-2008.',
-    doInThis: 'Content coming soon — this topic will cover asymmetric information (adverse selection, moral hazard), externalities of bank failure, speculation and asset bubbles, market rigging (LIBOR, FX), and the regulatory response (Basel III, ring-fencing, FPC).',
+    summary: 'Financial markets fail more spectacularly than most other markets – and the 2007-08 Global Financial Crisis showed why. Asymmetric information, moral hazard from too-big-to-fail, negative externalities from bank collapses, speculation, and market manipulation all undermine financial efficiency. These failures justify the heavy regulation seen post-2008.',
+    doInThis: 'Content coming soon – this topic will cover asymmetric information (adverse selection, moral hazard), externalities of bank failure, speculation and asset bubbles, market rigging (LIBOR, FX), and the regulatory response (Basel III, ring-fencing, FPC).',
     outcomes: [
       'Explain asymmetric information and the adverse selection problem in finance',
       'Analyse moral hazard arising from deposit insurance and too-big-to-fail',

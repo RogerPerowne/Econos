@@ -4,19 +4,19 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   title: 'Role of Central Banks',
   estTime: '7-9 minutes',
-  goal: 'Understand the core functions of central banks — monetary policy, financial stability, lender of last resort, and bank regulation.',
+  goal: 'Understand the core functions of central banks – monetary policy, financial stability, lender of last resort, and bank regulation.',
 
   intro: {
     heroKey: 'heroMonetary',
     summary: 'Central banks are the institutional backbone of the modern monetary system. The Bank of England has four main roles: setting interest rates to hit the inflation target, acting as lender of last resort in financial crises, regulating banks for financial stability, and managing the payments system. Each function involves trade-offs and political tensions.',
-    doInThis: 'Content coming soon — this topic will cover the four roles of central banks, BoE independence and the inflation target, the Monetary Policy Committee, the Financial Policy Committee, and unconventional tools (QE, forward guidance). Cross-references monetary policy content in Theme 2 (6.2.2).',
+    doInThis: 'Content coming soon – this topic will cover the four roles of central banks, BoE independence and the inflation target, the Monetary Policy Committee, the Financial Policy Committee, and unconventional tools (QE, forward guidance). Cross-references monetary policy content in Theme 2 (6.2.2).',
     outcomes: [
       'Identify the four main functions of central banks',
       'Explain how BoE independence supports credible monetary policy',
       'Analyse the role of central banks as lender of last resort',
       'Evaluate the unconventional monetary tools used since 2008 (QE, forward guidance)'
     ],
-    tip: 'BoE four roles: (1) Monetary policy — MPC sets Bank Rate to hit 2% CPI target. (2) Financial stability — FPC monitors systemic risk, sets macroprudential tools. (3) Lender of last resort — provides emergency liquidity to solvent banks. (4) Bank regulation — PRA supervises individual banks for safety.',
+    tip: 'BoE four roles: (1) Monetary policy – MPC sets Bank Rate to hit 2% CPI target. (2) Financial stability – FPC monitors systemic risk, sets macroprudential tools. (3) Lender of last resort – provides emergency liquidity to solvent banks. (4) Bank regulation – PRA supervises individual banks for safety.',
     stages: [
       { num: 1, name: 'Learn it', sub: 'Content coming soon', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },

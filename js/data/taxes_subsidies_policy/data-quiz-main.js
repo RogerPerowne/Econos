@@ -45,12 +45,12 @@
         q:    'Tax incidence refers to:',
         opts: [
           'The legal liability to pay the tax',
-          'The effective burden of a tax — who actually bears the cost in reduced purchasing power',
+          'The effective burden of a tax – who actually bears the cost in reduced purchasing power',
           'The rate at which tax revenue grows',
           'The compliance cost of filing tax returns'
         ],
         ans:  1,
-        exp:  'Tax incidence is the economic burden of a tax — who really pays it in terms of reduced welfare. If demand is inelastic, consumers bear most of the incidence of an indirect tax; if supply is inelastic, producers bear more.'
+        exp:  'Tax incidence is the economic burden of a tax – who really pays it in terms of reduced welfare. If demand is inelastic, consumers bear most of the incidence of an indirect tax; if supply is inelastic, producers bear more.'
       },
       {
         id:   'q_tsp_4',
@@ -63,7 +63,7 @@
           'Reduce consumer surplus by cutting output'
         ],
         ans:  1,
-        exp:  'A production subsidy lowers producers\' costs, shifting the supply curve to the right. This increases output and reduces the market price — part of the subsidy is passed to consumers.'
+        exp:  'A production subsidy lowers producers\' costs, shifting the supply curve to the right. This increases output and reduces the market price – part of the subsidy is passed to consumers.'
       },
       {
         id:   'q_tsp_5',
@@ -122,13 +122,13 @@
           ['100,000','30,000','30','?']
         ],
         opts: [
-          'Progressive — tax rate rises with income',
-          'Regressive — tax rate falls with income',
-          'Proportional — tax rate is the same for all',
+          'Progressive – tax rate rises with income',
+          'Regressive – tax rate falls with income',
+          'Proportional – tax rate is the same for all',
           'Cannot be determined without more data'
         ],
         ans:  0,
-        exp:  'Tax rates rise from 10% at £20k to 30% at £100k — a rising share of income as income increases. This is a progressive tax system.'
+        exp:  'Tax rates rise from 10% at £20k to 30% at £100k – a rising share of income as income increases. This is a progressive tax system.'
       },
       {
         id:   'q_tsp_10',

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page data
+   ECONOS – Land It intro page data
    Topic: Fiscal Policy (2.12)
    ============================================================ */
 

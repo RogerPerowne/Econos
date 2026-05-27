@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Specialisation & Money: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -39,7 +39,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'The causal chain',  text: 'Specialisation → surplus output → need for exchange → money as solution to double coincidence of wants → enables further specialisation.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on…',   text: 'Productivity gains depend on task divisibility, human capital quality, and the existence of functioning exchange infrastructure.' }
       ],
-      cloze: 'Overall, specialisation and money are [1] of modern economic prosperity because the division of labour raises [2] dramatically — as Smith\'s pin factory demonstrated — generating [3] beyond individual consumption needs. Money resolves the [4] problem that would otherwise prevent this surplus from being exchanged, allowing complex [5] to form across national and global markets. However, the gains from specialisation depend critically on whether tasks are [6] and whether adequate [7] exists. Furthermore, deep specialisation creates systemic [8] — as Toyota\'s UK shutdown in 2021 showed — meaning prosperity built on specialisation is conditional on supply chains remaining intact.',
+      cloze: 'Overall, specialisation and money are [1] of modern economic prosperity because the division of labour raises [2] dramatically – as Smith\'s pin factory demonstrated – generating [3] beyond individual consumption needs. Money resolves the [4] problem that would otherwise prevent this surplus from being exchanged, allowing complex [5] to form across national and global markets. However, the gains from specialisation depend critically on whether tasks are [6] and whether adequate [7] exists. Furthermore, deep specialisation creates systemic [8] – as Toyota\'s UK shutdown in 2021 showed – meaning prosperity built on specialisation is conditional on supply chains remaining intact.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-foundation',  text: 'the foundation',          correct: true  },
@@ -93,13 +93,13 @@ window.ECONOS_LINK_JUDGE = {
       overallPosition: {
         prompt: 'Overall position',
         options: [
-          { id: 'op-agree',    text: 'Largely agree — specialisation and money are mutually reinforcing and together explain the scale of modern production',                                           correct: true  },
-          { id: 'op-partial',  text: 'Partially agree — specialisation raises productivity but money\'s role is overstated; trade credit and digital payment alternatives exist',                    correct: false },
-          { id: 'op-disagree', text: 'Largely disagree — the claim ignores problems like structural unemployment from over-specialisation and vulnerability of global supply chains',                correct: false },
-          { id: 'op-none',     text: 'Neither agree nor disagree — the evidence is too mixed to reach a clear verdict',                                                                              correct: false }
+          { id: 'op-agree',    text: 'Largely agree – specialisation and money are mutually reinforcing and together explain the scale of modern production',                                           correct: true  },
+          { id: 'op-partial',  text: 'Partially agree – specialisation raises productivity but money\'s role is overstated; trade credit and digital payment alternatives exist',                    correct: false },
+          { id: 'op-disagree', text: 'Largely disagree – the claim ignores problems like structural unemployment from over-specialisation and vulnerability of global supply chains',                correct: false },
+          { id: 'op-none',     text: 'Neither agree nor disagree – the evidence is too mixed to reach a clear verdict',                                                                              correct: false }
         ]
       },
-      examBridge: '"Specialisation and money are mutually reinforcing foundations of modern prosperity: the division of labour raises labour productivity dramatically, generating surpluses that can only be realised through exchange — and money makes large-scale exchange possible by eliminating the double coincidence of wants. However, the gains are conditional on task divisibility, human capital quality, and functioning exchange infrastructure; and deep specialisation creates systemic vulnerability, as demonstrated by the Toyota shutdown during the 2021 semiconductor shortage."'
+      examBridge: '"Specialisation and money are mutually reinforcing foundations of modern prosperity: the division of labour raises labour productivity dramatically, generating surpluses that can only be realised through exchange – and money makes large-scale exchange possible by eliminating the double coincidence of wants. However, the gains are conditional on task divisibility, human capital quality, and functioning exchange infrastructure; and deep specialisation creates systemic vulnerability, as demonstrated by the Toyota shutdown during the 2021 semiconductor shortage."'
     }
   ]
 };

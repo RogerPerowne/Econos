@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Taxes & Subsidies as Policy: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -96,7 +96,7 @@ window.ECONOS_LINK_JUDGE = {
         options: [
           { id: 'op-best',       text: 'Subsidies correct positive externalities but are most effective when paired with carbon pricing to address the negative externality side', correct: true  },
           { id: 'op-always',     text: 'Subsidies always achieve the social optimum for positive externalities',                                                                  correct: false },
-          { id: 'op-no',         text: 'Subsidies should not be used — only regulation corrects renewable underproduction',                                                       correct: false },
+          { id: 'op-no',         text: 'Subsidies should not be used – only regulation corrects renewable underproduction',                                                       correct: false },
           { id: 'op-market',     text: 'Renewable energy underproduction does not require government intervention',                                                               correct: false }
         ]
       },

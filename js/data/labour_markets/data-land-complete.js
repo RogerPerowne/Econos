@@ -11,6 +11,6 @@ window.ECONOS_LAND_COMPLETE = {
   nextCard: {
     icon:  '&#x1F4BC;',
     title: 'What to do next',
-    text:  'Review your answers against the model responses. Check whether you explained the counterintuitive monopsony result &#8212; that a minimum wage can raise both wages and employment simultaneously &#8212; rather than applying only the competitive market analysis. Verify that your gender pay gap analysis used MRP theory to distinguish legitimate productivity differentials from unexplained discrimination. For the essay, assess whether your conclusion distinguished what the NMW can and cannot address, rather than treating it as a universal labour market solution.'
+    text:  'Review your answers against the model responses. Check whether you explained the counterintuitive monopsony result &#8211; that a minimum wage can raise both wages and employment simultaneously &#8211; rather than applying only the competitive market analysis. Verify that your gender pay gap analysis used MRP theory to distinguish legitimate productivity differentials from unexplained discrimination. For the essay, assess whether your conclusion distinguished what the NMW can and cannot address, rather than treating it as a universal labour market solution.'
   }
 };

@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
     'Practising extended writing under exam-style time pressure'
   ],
 
-  tip: 'The core skill is identifying WHICH objectives conflict and WHY. Growth vs inflation, unemployment vs inflation (Phillips curve), current account vs growth &#8212; always explain the mechanism of conflict, not just state that it exists.',
+  tip: 'The core skill is identifying WHICH objectives conflict and WHY. Growth vs inflation, unemployment vs inflation (Phillips curve), current account vs growth &#8211; always explain the mechanism of conflict, not just state that it exists.',
 
   stages: [
     { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },

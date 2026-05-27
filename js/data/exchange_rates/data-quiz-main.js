@@ -24,7 +24,7 @@
           'The trade balance between two countries'
         ],
         ans:  1,
-        exp:  'The exchange rate is the price of one currency in terms of another — e.g., £1 = $1.25. It is determined by supply and demand for currencies in the foreign exchange (FOREX) market.'
+        exp:  'The exchange rate is the price of one currency in terms of another – e.g., £1 = $1.25. It is determined by supply and demand for currencies in the foreign exchange (FOREX) market.'
       },
       {
         id:   'q_er_2',
@@ -37,7 +37,7 @@
           'UK inflation is likely to fall'
         ],
         ans:  2,
-        exp:  'Depreciation means the pound buys fewer euros. UK goods cost fewer euros for European buyers — exports become more competitive. However, UK importers pay more pounds for eurozone goods — import costs rise.'
+        exp:  'Depreciation means the pound buys fewer euros. UK goods cost fewer euros for European buyers – exports become more competitive. However, UK importers pay more pounds for eurozone goods – import costs rise.'
       },
       {
         id:   'q_er_3',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Depreciation','Appreciation','Devaluation','Hyperinflation'],
         ans:  3,
-        exp:  'Depreciation (market-driven fall), appreciation (market-driven rise), and devaluation (government-decreed fall in a fixed system) are all exchange rate movements. Hyperinflation is a domestic price phenomenon — not an exchange rate concept.'
+        exp:  'Depreciation (market-driven fall), appreciation (market-driven rise), and devaluation (government-decreed fall in a fixed system) are all exchange rate movements. Hyperinflation is a domestic price phenomenon – not an exchange rate concept.'
       },
       {
         id:   'q_er_9',
@@ -118,13 +118,13 @@
         tableData: [
           ['January','£1 = $1.40','?'],
           ['June','£1 = $1.25','?'],
-          ['Change','—','?']
+          ['Change','–','?']
         ],
         opts: [
           'January: £142,857; June: £160,000; increase of £17,143',
           'January: £140,000; June: £125,000; fall of £15,000',
           'January: £280,000; June: £250,000; fall of £30,000',
-          'No change — exchange rate changes don\'t affect import costs'
+          'No change – exchange rate changes don\'t affect import costs'
         ],
         ans:  0,
         exp:  'January: $200,000 ÷ 1.40 = £142,857. June: $200,000 ÷ 1.25 = £160,000. Pound has weakened (depreciated); import costs rise by ~£17,143.'

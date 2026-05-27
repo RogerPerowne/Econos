@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for public_goods
+   ECONOS – Link It intro/landing data for public_goods
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your public goods knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "Use UK coastal flood defence provision to apply the public goods framework — non-rivalry, non-excludability and the free rider problem — and evaluate why state provision financed by taxation is typically the only effective solution.",
+    summary: "Use UK coastal flood defence provision to apply the public goods framework – non-rivalry, non-excludability and the free rider problem – and evaluate why state provision financed by taxation is typically the only effective solution.",
     heroKey: 'heroPublicGoods',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Apply the public goods framework to real-world cases including lighthouses and defence',
       'Evaluate whether state provision or market-based alternatives can solve the under-provision problem'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

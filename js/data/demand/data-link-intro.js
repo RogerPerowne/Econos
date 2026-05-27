@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for demand
+   ECONOS – Link It intro/landing data for demand
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your demand knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in the law of demand, curve shifts and consumer surplus. Now train the skills examiners reward — applying the framework to real context, building a watertight income → demand → equilibrium chain, and reaching a supported judgement on when income is the dominant shifter.",
+    summary: "You've locked in the law of demand, curve shifts and consumer surplus. Now train the skills examiners reward – applying the framework to real context, building a watertight income → demand → equilibrium chain, and reaching a supported judgement on when income is the dominant shifter.",
     heroKey: 'heroDemand',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Read and label a demand-shift diagram correctly',
       'Evaluate when income is vs is not the dominant driver of demand'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

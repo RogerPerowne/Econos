@@ -50,7 +50,7 @@
           'Silence is always punished more severely'
         ],
         ans:  1,
-        exp:  'Confessing is individually rational regardless of the other\'s choice. If the other stays silent, confessing gives a lighter sentence; if the other confesses, staying silent gives a harsher sentence. So each confesses — reaching a NE that is worse for both than mutual silence.'
+        exp:  'Confessing is individually rational regardless of the other\'s choice. If the other stays silent, confessing gives a lighter sentence; if the other confesses, staying silent gives a harsher sentence. So each confesses – reaching a NE that is worse for both than mutual silence.'
       },
       {
         id:   'q_gt_4',

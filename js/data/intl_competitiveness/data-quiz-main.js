@@ -37,7 +37,7 @@
           'Average wage × labour productivity'
         ],
         ans:  0,
-        exp:  'ULC = wage cost per worker ÷ output per worker (labour productivity). If wages rise faster than productivity, ULC rises — reducing price competitiveness. If productivity rises faster than wages, ULC falls.'
+        exp:  'ULC = wage cost per worker ÷ output per worker (labour productivity). If wages rise faster than productivity, ULC rises – reducing price competitiveness. If productivity rises faster than wages, ULC falls.'
       },
       {
         id:   'q_ic_3',
@@ -63,7 +63,7 @@
           'UK workers being the least educated in the developed world'
         ],
         ans:  1,
-        exp:  'After the 2008 financial crisis, UK productivity growth (output per worker) stagnated far below the pre-crisis trend. This is unusual because unemployment stayed low — suggesting zombified firms, weak investment, or misallocation of labour.'
+        exp:  'After the 2008 financial crisis, UK productivity growth (output per worker) stagnated far below the pre-crisis trend. This is unusual because unemployment stayed low – suggesting zombified firms, weak investment, or misallocation of labour.'
       },
       {
         id:   'q_ic_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out in a list of factors improving international competitiveness?',
         opts: ['Rising labour productivity','Lower unit labour costs','Higher domestic inflation','Currency depreciation'],
         ans:  2,
-        exp:  'Rising productivity, lower ULC, and currency depreciation all improve price competitiveness. Higher domestic inflation raises the relative price of exports — it reduces competitiveness, not improves it.'
+        exp:  'Rising productivity, lower ULC, and currency depreciation all improve price competitiveness. Higher domestic inflation raises the relative price of exports – it reduces competitiveness, not improves it.'
       },
       {
         id:   'q_ic_9',

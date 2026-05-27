@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Supply: rising energy costs shift supply left (S₁ → S₂)
    ============================================================ */
 
@@ -8,7 +8,7 @@
    Clip rect: x=101 y=21 w=442 h=378
    D (demand, unchanged): (110,50)→(514,381)  slope ≈ 0.825  ⟹  y = -40.75 + 0.825x
    S₁ (original supply): (130,390)→(490,30)  slope = -1.0  ⟹  y = 520 - x
-   S₂ (new supply, shifted left — 60px vertical gap above S₁): (130,330)→(430,30)  ⟹  y = 460 - x
+   S₂ (new supply, shifted left – 60px vertical gap above S₁): (130,330)→(430,30)  ⟹  y = 460 - x
    E₁ (S₁ ∩ D): 520-x = -40.75+0.825x → 560.75 = 1.825x → x ≈ 307, y ≈ 213
    E₂ (S₂ ∩ D): 460-x = -40.75+0.825x → 500.75 = 1.825x → x ≈ 274, y ≈ 186   */
 
@@ -28,7 +28,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'UK energy prices surge 400%. Which diagram correctly shows the effect on the market for energy-intensive manufactured goods?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the impact of the energy cost shock. Think about which curve is directly affected and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -38,29 +38,29 @@ window.ECONOS_LINK_DIAGRAM = {
         id:      's-left',
         correct:  true,
         title:   'Supply shifts left',
-        sub:     'Supply shifts left — higher input costs mean firms can supply less at every price',
-        why:     'Rising energy costs raise marginal production costs at every output level, so firms can profitably supply less at every price. The supply curve shifts left from S₁ to S₂. At the original price, a shortage emerges, pushing price up to P₂ while output falls to Q₂. Demand is unchanged — the shock is entirely on the supply side.'
+        sub:     'Supply shifts left – higher input costs mean firms can supply less at every price',
+        why:     'Rising energy costs raise marginal production costs at every output level, so firms can profitably supply less at every price. The supply curve shifts left from S₁ to S₂. At the original price, a shortage emerges, pushing price up to P₂ while output falls to Q₂. Demand is unchanged – the shock is entirely on the supply side.'
       },
       {
         id:      's-right',
         correct:  false,
         title:   'Supply shifts right',
-        sub:     'Supply expands — more output at every price level',
-        why:     'Supply shifts right when input costs fall, technology improves, or more firms enter the market. A 400% rise in energy costs does the opposite — it raises production costs and shifts supply left, not right. A rightward shift would represent the solution to the cost crisis, not the crisis itself.'
+        sub:     'Supply expands – more output at every price level',
+        why:     'Supply shifts right when input costs fall, technology improves, or more firms enter the market. A 400% rise in energy costs does the opposite – it raises production costs and shifts supply left, not right. A rightward shift would represent the solution to the cost crisis, not the crisis itself.'
       },
       {
         id:      'd-left',
         correct:  false,
         title:   'Demand shifts left',
-        sub:     'Demand falls — buyers demand less at every price',
-        why:     'A leftward demand shift would represent falling consumer income, worsening confidence, or a rise in substitute prices. The energy price shock affects the cost of production — a supply-side shock — not consumers\' willingness to buy. Demand for manufactured goods is unchanged in the first instance.'
+        sub:     'Demand falls – buyers demand less at every price',
+        why:     'A leftward demand shift would represent falling consumer income, worsening confidence, or a rise in substitute prices. The energy price shock affects the cost of production – a supply-side shock – not consumers\' willingness to buy. Demand for manufactured goods is unchanged in the first instance.'
       },
       {
         id:      'd-right',
         correct:  false,
         title:   'Demand shifts right',
-        sub:     'Demand rises — buyers demand more at every price',
-        why:     'Demand shifts right when consumer income rises or confidence improves. This is a supply-side story — rising energy costs hit manufacturers\' cost curves. Demand for the output is unchanged. Choosing this diagram confuses the supply shock with a demand expansion.'
+        sub:     'Demand rises – buyers demand more at every price',
+        why:     'Demand shifts right when consumer income rises or confidence improves. This is a supply-side story – rising energy costs hit manufacturers\' cost curves. Demand for the output is unchanged. Choosing this diagram confuses the supply shock with a demand expansion.'
       }
     ]
   },
@@ -78,23 +78,23 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — supply shifts left as energy input costs surge, creating a new equilibrium at higher price and lower output',
+    ariaLabel: 'Supply and demand diagram – supply shifts left as energy input costs surge, creating a new equilibrium at higher price and lower output',
     xLabel:    'Quantity of manufactured goods',
     yLabel:    'Price / Cost (£)',
 
     lines: [
-      /* D (Demand, unchanged) — green downward-sloping */
+      /* D (Demand, unchanged) – green downward-sloping */
       { x1: 110, y1: 50,  x2: 514, y2: 381, stroke: '#059669', strokeWidth: 2.5,
         label: 'D', labelX: 516, labelY: 381, labelFill: '#059669' },
-      /* S₁ (original supply) — blue upward-sloping */
+      /* S₁ (original supply) – blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'S₁', labelX: 488, labelY: 28, labelFill: '#2563eb' },
-      /* S₂ (new supply after cost shock — shifted left, 60px vertical gap above S₁) — red upward-sloping */
+      /* S₂ (new supply after cost shock – shifted left, 60px vertical gap above S₁) – red upward-sloping */
       { x1: 130, y1: 330, x2: 430, y2: 30,  stroke: '#dc2626', strokeWidth: 2.5,
         label: 'S₂', labelX: 424, labelY: 28, labelFill: '#dc2626' }
     ],
 
-    /* Guide lines + tick labels — shown at stage 2 */
+    /* Guide lines + tick labels – shown at stage 2 */
     guides: [
       /* Horizontal from y-axis to E₂ (new equilibrium, higher price) */
       { x1: 100, y1: 186, x2: 274, y2: 186, tickLeft: 'P₂', tickLeftY: 189 },
@@ -129,7 +129,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of rising energy costs on the market for energy-intensive manufactured goods.',
     instruction: 'Place the correct labels on the diagram to identify the shift, the two equilibria and the outcome for price and output.',
     hint:        'Skill focus: connect the visual shift to the economic outcomes.',
@@ -156,10 +156,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['supply curve', 'shift in supply', 'input costs', 'marginal cost', 'excess demand', 'equilibrium price', 'cost-push inflation', 'producer surplus', 'incidence'],
 
@@ -169,7 +169,7 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'Why does the supply curve shift left?',
         prompt:      'Why does the supply curve shift left, not just contract along it?',
         maxChars:    300,
-        modelAnswer: 'Energy cost rises increase the marginal cost of production at every output level — they are a non-price supply shifter. This means firms can supply less at every price than before, shifting the entire supply curve to the left from S₁ to S₂. A price change would cause a movement along the supply curve; a cost change shifts it.'
+        modelAnswer: 'Energy cost rises increase the marginal cost of production at every output level – they are a non-price supply shifter. This means firms can supply less at every price than before, shifting the entire supply curve to the left from S₁ to S₂. A price change would cause a movement along the supply curve; a cost change shifts it.'
       },
       {
         num:         2,

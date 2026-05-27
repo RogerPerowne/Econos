@@ -24,7 +24,7 @@
           'Being unable to afford luxury goods'
         ],
         ans:  1,
-        exp:  'Absolute poverty means lacking the minimum resources necessary for basic survival — food, clean water, shelter. It is measured against a fixed standard (e.g., the World Bank\'s $2.15/day line).'
+        exp:  'Absolute poverty means lacking the minimum resources necessary for basic survival – food, clean water, shelter. It is measured against a fixed standard (e.g., the World Bank\'s $2.15/day line).'
       },
       {
         id:   'q_pov_2',
@@ -37,7 +37,7 @@
           'Living below the UN absolute poverty line'
         ],
         ans:  1,
-        exp:  'Relative poverty is a social concept: it measures deprivation relative to prevailing living standards. The UK defines it as household income below 60% of median income — it moves as average incomes change.'
+        exp:  'Relative poverty is a social concept: it measures deprivation relative to prevailing living standards. The UK defines it as household income below 60% of median income – it moves as average incomes change.'
       },
       {
         id:   'q_pov_3',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Absolute poverty','Relative poverty','Poverty trap','Gini coefficient'],
         ans:  3,
-        exp:  'Absolute poverty, relative poverty, and the poverty trap are all directly related to the concept of poverty. The Gini coefficient is a measure of income inequality — a related but distinct concept.'
+        exp:  'Absolute poverty, relative poverty, and the poverty trap are all directly related to the concept of poverty. The Gini coefficient is a measure of income inequality – a related but distinct concept.'
       },
       {
         id:   'q_pov_9',

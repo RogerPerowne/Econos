@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    The Economic Problem: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -31,14 +31,14 @@ window.ECONOS_LINK_JUDGE = {
       claim: {
         icon:   '⚕️',
         prompt: 'Claim',
-        text:   'Scarcity makes the economic problem unavoidable — all societies must prioritise among competing wants, and every choice involves an opportunity cost.'
+        text:   'Scarcity makes the economic problem unavoidable – all societies must prioritise among competing wants, and every choice involves an opportunity cost.'
       },
       evidenceCards: [
         { id: 'context', tone: 'green', icon: '🔍', title: 'Context',       text: 'NHS budget £167bn; waiting lists 7.7m (record); NICE QALY threshold £20k–£30k; workforce shortfall 264k by 2036.' },
         { id: 'chain',   tone: 'amber', icon: '🔗', title: 'Chain',         text: 'Unlimited wants + finite resources → WHAT, HOW, FOR WHOM decisions → opportunity cost of every choice (QALY threshold makes this explicit).' },
         { id: 'depends', tone: 'blue',  icon: '⚖️', title: 'It depends on', text: 'Severity depends on gap between capacity and wants; technology both widens and narrows it; economic system determines how trade-offs are made.' }
       ],
-      cloze: 'Scarcity arises because [1] are unlimited while the resources available to satisfy them are [2]. This makes the economic problem [3]: every society — whether market, command or mixed — must answer the three central questions of what, how and [4]. Every allocation decision involves an opportunity cost — the value of the [5] alternative foregone. The NHS QALY threshold makes opportunity cost explicit: every drug approved means [6] not funded. The severity of the economic problem depends partly on [7]: new medical technologies expand both productive capacity and human wants simultaneously. In a mixed economy like the UK, scarcity is addressed through a combination of [8] and government allocation — but neither eliminates the fundamental trade-off.',
+      cloze: 'Scarcity arises because [1] are unlimited while the resources available to satisfy them are [2]. This makes the economic problem [3]: every society – whether market, command or mixed – must answer the three central questions of what, how and [4]. Every allocation decision involves an opportunity cost – the value of the [5] alternative foregone. The NHS QALY threshold makes opportunity cost explicit: every drug approved means [6] not funded. The severity of the economic problem depends partly on [7]: new medical technologies expand both productive capacity and human wants simultaneously. In a mixed economy like the UK, scarcity is addressed through a combination of [8] and government allocation – but neither eliminates the fundamental trade-off.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-wants',     text: 'human wants',       correct: true  },
@@ -93,12 +93,12 @@ window.ECONOS_LINK_JUDGE = {
         prompt: 'Overall position',
         options: [
           { id: 'op-growth',   text: 'Economic growth permanently solves the economic problem by eliminating scarcity',                                              correct: false },
-          { id: 'op-universal', text: 'The economic problem is universal — scarcity and opportunity cost exist in all economies regardless of system or affluence', correct: true  },
-          { id: 'op-command',  text: 'Only command economies face the economic problem — markets solve scarcity automatically',                                      correct: false },
-          { id: 'op-poor',     text: 'The economic problem only applies to poor countries — wealthy nations have no meaningful scarcity',                            correct: false }
+          { id: 'op-universal', text: 'The economic problem is universal – scarcity and opportunity cost exist in all economies regardless of system or affluence', correct: true  },
+          { id: 'op-command',  text: 'Only command economies face the economic problem – markets solve scarcity automatically',                                      correct: false },
+          { id: 'op-poor',     text: 'The economic problem only applies to poor countries – wealthy nations have no meaningful scarcity',                            correct: false }
         ]
       },
-      examBridge: '"NHS resource allocation demonstrates that scarcity is universal and unavoidable: a £167bn budget cannot meet 7.7 million waiting patients simultaneously. NICE\'s QALY threshold makes opportunity cost explicit — every approved treatment forecloses alternatives. Technology complicates the picture: it raises productive capacity but expands wants (new treatments, precision medicine) simultaneously. The economic problem cannot be permanently solved — it can only be managed through allocation mechanisms that minimise waste and distribute trade-offs fairly."'
+      examBridge: '"NHS resource allocation demonstrates that scarcity is universal and unavoidable: a £167bn budget cannot meet 7.7 million waiting patients simultaneously. NICE\'s QALY threshold makes opportunity cost explicit – every approved treatment forecloses alternatives. Technology complicates the picture: it raises productive capacity but expands wants (new treatments, precision medicine) simultaneously. The economic problem cannot be permanently solved – it can only be managed through allocation mechanisms that minimise waste and distribute trade-offs fairly."'
     }
   ]
 };

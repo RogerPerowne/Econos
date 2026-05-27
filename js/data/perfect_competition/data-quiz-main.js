@@ -98,7 +98,7 @@
         q:    'Which is the odd one out?',
         opts: ['Price taker','Homogeneous products','Barriers to entry','Perfect information'],
         ans:  2,
-        exp:  'Perfect competition requires free entry and exit — the absence of barriers. Barriers to entry are a feature of monopoly or oligopoly, not perfect competition.'
+        exp:  'Perfect competition requires free entry and exit – the absence of barriers. Barriers to entry are a feature of monopoly or oligopoly, not perfect competition.'
       },
       {
         id:   'q_pc_9',

@@ -1,6 +1,6 @@
 /* ============================================================
-   ECONOS — content data for net_trade
-   Edexcel Theme 2.2.5 — Net Trade (X − M)
+   ECONOS – content data for net_trade
+   Edexcel Theme 2.2.5 – Net Trade (X − M)
    ============================================================ */
 
 window.ECONOS_TOPIC = {
@@ -9,11 +9,11 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Net Trade (X − M)',
   estTime: '20 min',
-  goal: 'Understand the open-economy link — small in level, volatile in effect.',
+  goal: 'Understand the open-economy link – small in level, volatile in effect.',
 
   intro: {
     heroKey: 'heroNetTrade',
-    summary: 'Net trade (X − M) is only ~−3% of UK AD on average — but it can swing sharply with the exchange rate, world income and competitiveness. This topic covers the determinants of X and M, the exchange-rate channel, the Marshall-Lerner condition, the J-curve, and how net trade lands in the AD/AS model.',
+    summary: 'Net trade (X − M) is only ~−3% of UK AD on average – but it can swing sharply with the exchange rate, world income and competitiveness. This topic covers the determinants of X and M, the exchange-rate channel, the Marshall-Lerner condition, the J-curve, and how net trade lands in the AD/AS model.',
     doInThis: 'Walk through what net trade is, how exports and imports differ, the five drivers of each, the exchange-rate mechanism, the Marshall-Lerner condition and J-curve, the AD/AS outcomes, and the six tests for evaluating net trade as a policy lever.',
     outcomes: [
       'Define net trade and its share of UK AD',
@@ -41,10 +41,10 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'What is Net Trade?',
-      lede: 'Net trade is the external sector of aggregate demand — exports add demand, imports leak it away.',
+      lede: 'Net trade is the external sector of aggregate demand – exports add demand, imports leak it away.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Net trade = X − M. The UK usually runs a small net trade deficit — around −3% of GDP.' },
+      tip: { icon: '✅', tone: 'green', text: 'Net trade = X − M. The UK usually runs a small net trade deficit – around −3% of GDP.' },
 
       causesFirst: true,
       causesLabel: 'THE FOUR ENGINES OF AD',
@@ -63,12 +63,12 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'green', icon: '↗️', iconStyle: 'circle',
         label: 'Exports (X)',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>Foreigners spend on UK output</strong> — adds to AD (injection).</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>Foreigners spend on UK output</strong> – adds to AD (injection).</p>'
       },
       right: {
         tone: 'rose', icon: '↘️', iconStyle: 'circle',
         label: 'Imports (M)',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>UK spends on foreign output</strong> — leaks from AD.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;"><strong>UK spends on foreign output</strong> – leaks from AD.</p>'
       },
 
       whyItMatters: {
@@ -98,7 +98,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
       title: 'Exports vs Imports',
-      lede: 'Exports inject demand — imports leak demand.',
+      lede: 'Exports inject demand – imports leak demand.',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: '<strong>Key insight:</strong> exports are spending on UK output by foreigners, while imports are UK spending on foreign output.' },
@@ -143,12 +143,12 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Net trade depends on both flows — exports and imports. Focusing on exports alone gives an incomplete picture.'
+        text: 'Net trade depends on both flows – exports and imports. Focusing on exports alone gives an incomplete picture.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Do not treat trade in goods as the whole story of external demand — services, income and transfers also matter.'
+        text: 'Do not treat trade in goods as the whole story of external demand – services, income and transfers also matter.'
       }
     },
 
@@ -207,7 +207,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Exports are driven by both price and non-price factors — firms need to be competitive in more ways than one.'
+        text: 'Exports are driven by both price and non-price factors – firms need to be competitive in more ways than one.'
       },
 
       examEdge: {
@@ -266,7 +266,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Imports are a leakage from AD — not a sign of failure on their own.'
+        text: 'Imports are a leakage from AD – not a sign of failure on their own.'
       }
     },
 
@@ -291,7 +291,7 @@ window.ECONOS_TOPIC = {
             label: 'Starting point',
             tone: 'blue',
             head: 'Sterling falls',
-            body: 'The exchange rate moves — sterling depreciates against other currencies. Nothing else has changed yet; firms and households are about to face new relative prices.',
+            body: 'The exchange rate moves – sterling depreciates against other currencies. Nothing else has changed yet; firms and households are about to face new relative prices.',
             analysis: 'Price signals lead the response. Quantity adjustments come next.'
           },
           {
@@ -300,18 +300,18 @@ window.ECONOS_TOPIC = {
             show: ['idl-1'],
             head: 'Two price effects open up',
             body: [
-              '<strong>Exports cheaper abroad</strong> — UK goods cost less in foreign currencies.',
-              '<strong>Imports dearer at home</strong> — foreign goods cost more in pounds.'
+              '<strong>Exports cheaper abroad</strong> – UK goods cost less in foreign currencies.',
+              '<strong>Imports dearer at home</strong> – foreign goods cost more in pounds.'
             ],
-            analysis: 'These are price effects only. Volumes have not moved yet — that needs elasticities and time.'
+            analysis: 'These are price effects only. Volumes have not moved yet – that needs elasticities and time.'
           },
           {
             label: 'Effect on X − M',
             tone: 'green',
             show: ['idl-1', 'idl-2', 'idl-3'],
             head: 'Volumes respond and net trade improves',
-            body: 'Foreign buyers demand more UK exports; UK buyers switch away from costly imports. With both sides moving favourably, X rises and M falls — so X − M improves.',
-            analysis: 'The response may take time and depends on how sensitive exports and imports are to price changes (the Marshall-Lerner condition — covered next).'
+            body: 'Foreign buyers demand more UK exports; UK buyers switch away from costly imports. With both sides moving favourably, X rises and M falls – so X − M improves.',
+            analysis: 'The response may take time and depends on how sensitive exports and imports are to price changes (the Marshall-Lerner condition – covered next).'
           }
         ]
       },
@@ -335,7 +335,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Always state both sides of the mechanism — exports become cheaper abroad <em>and</em> imports become dearer at home.'
+        text: 'Always state both sides of the mechanism – exports become cheaper abroad <em>and</em> imports become dearer at home.'
       }
     },
 
@@ -360,7 +360,7 @@ window.ECONOS_TOPIC = {
             label: 'Depreciation',
             tone: 'blue',
             head: 'Prices react, volumes have not',
-            body: 'The pound falls. The trade balance sits at its pre-depreciation level. Prices are about to react — but contracts are fixed and volumes cannot move yet.',
+            body: 'The pound falls. The trade balance sits at its pre-depreciation level. Prices are about to react – but contracts are fixed and volumes cannot move yet.',
             analysis: 'The mechanism is about to start. Whether it works depends on elasticities.'
           },
           {
@@ -371,7 +371,7 @@ window.ECONOS_TOPIC = {
             body: [
               'Existing export/import contracts are set in advance.',
               'Import prices rise immediately in pound terms.',
-              'Quantities — exports up and imports down — adjust slowly.'
+              'Quantities – exports up and imports down – adjust slowly.'
             ],
             analysis: 'In the short run the trade balance gets worse even though the mechanism is working as expected.'
           },
@@ -381,8 +381,8 @@ window.ECONOS_TOPIC = {
             show: ['idl-1', 'idl-2'],
             head: 'Volumes respond and balance improves',
             body: [
-              'Exports become cheaper — foreign demand increases.',
-              'Imports become dearer — domestic demand for imports falls.'
+              'Exports become cheaper – foreign demand increases.',
+              'Imports become dearer – domestic demand for imports falls.'
             ],
             analysis: 'The recovery only completes if <strong>|PED of exports| + |PED of imports| &gt; 1</strong> (Marshall-Lerner). For services-heavy economies like the UK, lower elasticities can limit the J in practice.'
           }
@@ -404,7 +404,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'Time and elasticity both matter — first there can be pain, then gain.'
+        text: 'Time and elasticity both matter – first there can be pain, then gain.'
       },
 
       examEdge: {
@@ -450,7 +450,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Always evaluate using spare capacity and inflationary pressure — not just the direction of AD.'
+        text: 'Always evaluate using spare capacity and inflationary pressure – not just the direction of AD.'
       }
     },
 
@@ -460,7 +460,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Evaluating net trade as a policy lever',
-      lede: 'Net trade matters — but it is not something the UK can control directly.',
+      lede: 'Net trade matters – but it is not something the UK can control directly.',
       ledeStyle: 'plain',
 
       tip: { icon: '✅', tone: 'green', text: 'Attempts to improve X − M depend on exchange rates, elasticities and competitiveness.' },
@@ -476,10 +476,10 @@ window.ECONOS_TOPIC = {
                 '<div style="margin-top:8px;background:#ECFDF5;border:1px solid #6EE7B7;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#047857;">✓ Favourable</div>' },
         { tone: 'amber', icon: '2', head: 'Marshall-Lerner condition',
           body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Depreciation works only if demand is elastic enough.</div>' +
-                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">— Conditional</div>' },
+                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">– Conditional</div>' },
         { tone: 'purple', icon: '3', head: 'Trading partners\' growth',
           body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Exports depend on foreign income.</div>' +
-                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">— Conditional</div>' },
+                '<div style="margin-top:8px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#92400E;">– Conditional</div>' },
         { tone: 'rose', icon: '4', head: 'Retaliation risk',
           body: '<div style="font-size:13px;color:#475569;line-height:1.5;">Protectionism can provoke responses.</div>' +
                 '<div style="margin-top:8px;background:#FFF1F2;border:1px solid #FDA4AF;border-radius:6px;padding:4px 10px;display:inline-block;font-size:11px;font-weight:700;color:#BE123C;">↓ Unfavourable</div>' },

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Context station data
+   ECONOS – Link It · Context station data
    Consumer & Producer Surplus: classify evidence on the UK bus subsidy
    ============================================================ */
 
@@ -21,14 +21,14 @@ window.ECONOS_LINK_STATION = {
     type:        'context',
     eyebrow:     'Use the context',
     question:    'Which details in this extract most change whether per-unit operating subsidies on public bus services increase consumer surplus and improve allocative efficiency?',
-    instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
+    instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion – not just what sounds economic.',
 
     extract: [
       'The UK government and local authorities spend approximately [[spend|£2.5bn per year on bus subsidies and concessionary fares]] (DfT 2023), reflecting a long-standing policy commitment to keeping public transport affordable for consumers.',
-      'Average bus fares rose [[fares-london|75% in real terms outside London (2005–22), while London fares held stable]] under higher TfL subsidy — consistent with the view that a larger subsidy produces a larger consumer surplus gain.',
-      'UK bus passenger journeys outside London [[journeys|fell 46% between 2005 and 2022, compared with a 10% fall in London]] — a difference attributable, in part, to the higher subsidy level maintained in the capital.',
+      'Average bus fares rose [[fares-london|75% in real terms outside London (2005–22), while London fares held stable]] under higher TfL subsidy – consistent with the view that a larger subsidy produces a larger consumer surplus gain.',
+      'UK bus passenger journeys outside London [[journeys|fell 46% between 2005 and 2022, compared with a 10% fall in London]] – a difference attributable, in part, to the higher subsidy level maintained in the capital.',
       'The UK Department for Transport estimates that [[dft-ratio|each £1 of bus subsidy generates approximately £2.40 in economic benefits]], suggesting that the consumer surplus gain plus positive externality benefits exceed the taxpayer cost at the margin.',
-      'The 2023 English bus reform found that [[routing|deregulated operators cut unprofitable routes regardless of subsidy]] — raising the question of whether a per-unit subsidy can sustain service on routes where demand is insufficient.'
+      'The 2023 English bus reform found that [[routing|deregulated operators cut unprofitable routes regardless of subsidy]] – raising the question of whether a per-unit subsidy can sustain service on routes where demand is insufficient.'
     ],
 
     evidence: {
@@ -55,13 +55,13 @@ window.ECONOS_LINK_STATION = {
 
     explain: {
       'spend':        'The scale of the subsidy (£2.5bn/yr) confirms it is a significant policy instrument, consistent with government intent to expand consumer access to bus travel and increase CS.',
-      'fares-london': 'Higher subsidy in London kept fares stable — directly supporting the claim that larger subsidies prevent fare rises and protect consumer surplus for existing passengers.',
+      'fares-london': 'Higher subsidy in London kept fares stable – directly supporting the claim that larger subsidies prevent fare rises and protect consumer surplus for existing passengers.',
       'journeys':     'The contrast between London (−10%) and non-London (−46%) passenger journeys implies that subsidy-supported lower fares preserve both the quantity of travel and the associated consumer surplus.',
       'dft-ratio':    'A £2.40 return per £1 of subsidy implies the CS gain plus positive externality benefits exceed the taxpayer cost, supporting the allocative efficiency claim.',
-      'routing':      'If operators withdraw from unprofitable routes even when subsidised, the supply shift is incomplete — some passengers lose access entirely, limiting the CS gain and complicating the allocative efficiency argument.'
+      'routing':      'If operators withdraw from unprofitable routes even when subsidised, the supply shift is incomplete – some passengers lose access entirely, limiting the CS gain and complicating the allocative efficiency argument.'
     },
 
-    bucketCue: 'Strong application changes the conclusion — it does not just describe what is in the extract.',
+    bucketCue: 'Strong application changes the conclusion – it does not just describe what is in the extract.',
 
     examBridge: '"The £2.40/£1 return estimate strongly supports the allocative efficiency claim for bus subsidies, and the London–non-London comparison shows that higher subsidies do translate into better CS outcomes. However, the routing problem complicates the analysis: if operators withdraw from unprofitable routes despite subsidy, the supply shift is smaller than the diagram implies and the CS gain is reduced."',
 

@@ -2547,8 +2547,16 @@
     /* Use Shell.renderStages – single source of truth for the
        Learn / Link / Land 3-stage progress widget. Pass T.intro.stages
        directly so per-topic copy overrides (e.g. "Recap the three causes")
-       carry through. */
-    const stagesWidget = Shell.renderStages(T.intro.stages);
+       carry through. On the intro/cover card Learn It should show as
+       'available' — the user hasn't started yet, so neither 'done' nor
+       'current' is accurate. */
+    const introStages = T.intro.stages
+      ? T.intro.stages.map((s, i) =>
+          i === 0 && (s.state === 'done' || s.state === 'current')
+            ? Object.assign({}, s, { state: 'available' })
+            : s)
+      : null;
+    const stagesWidget = Shell.renderStages(introStages);
 
     return `
       <div class="page">

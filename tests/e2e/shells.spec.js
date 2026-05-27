@@ -54,8 +54,6 @@ test.describe('Learn It shell', () => {
     const skip = page.locator('a.skip-link');
     await expect(skip).toHaveCount(1);
 
-    await expect(page.locator('.mobile-nav')).toHaveCount(1);
-
     const stages = page.locator('.stages .stage');
     await expect(stages).toHaveCount(3);
     await expect(stages.nth(0)).toHaveAttribute('data-stage-pos', '1');

@@ -8899,73 +8899,9 @@ a.cards-list__item.is-linked:active { transform: scale(0.99); }
   z-index: 90;
 }
 
-/* ── Mobile nav (shown on ≤ 900px where sidebar is hidden) ── */
-.mobile-nav {
-  display: none;
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: var(--econ-white);
-  border-bottom: 1px solid var(--econ-border);
-  height: 56px;
-  min-height: 56px;
-  max-height: 56px;
-  padding: 0 var(--sp-4);
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  box-shadow: 0 1px 8px rgba(11,20,38,0.07);
-}
-.mobile-nav__logo {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  flex-shrink: 1;
-  min-width: 0;
-}
-.mobile-nav__logo img {
-  height: 32px;
-  max-height: 32px;
-  width: 32px;
-  max-width: 32px;
-  object-fit: contain;
-  display: block;
-}
-.mobile-nav__right {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-}
-.mobile-nav__streak {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-semi);
-  color: var(--econ-ink);
-  background: var(--econ-green-50);
-  border: 1px solid var(--econ-green-100);
-  padding: 5px 12px;
-  border-radius: var(--r-full);
-}
-.mobile-nav__avatar {
-  width: 34px; height: 34px;
-  border-radius: var(--r-full);
-  background: var(--econ-blue-100);
-  color: var(--econ-blue-700);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  flex-shrink: 0;
-  box-shadow: 0 1px 4px rgba(37,99,235,0.18);
-}
-
-@media (max-width: 900px) {
-  .mobile-nav { display: flex; }
-  .topbar { position: sticky; top: 56px; z-index: 89; }
-}
+/* The legacy .mobile-nav block was removed — the session topbar
+   provides the same surface on mobile (back link + crumbs + avatar)
+   without the duplicate top-bar feel. */
 
 /* ── Updated sidebar brand — show logo-full, hide old text ── */
 .sidebar__logo-link {

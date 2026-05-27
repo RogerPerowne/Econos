@@ -4346,8 +4346,8 @@
       const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
       const hasVs = c.pairLabel && /\bvs\b/i.test(c.pairLabel);
       if (hasVs) {
-        const vsBadge = `<div style="display:flex;align-items:center;justify-content:center;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
-        return `${label}<div style="display:grid;grid-template-columns:1fr 36px 1fr;gap:12px;align-items:start;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
+        const vsBadge = `<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
+        return `${label}<div style="display:grid;grid-template-columns:1fr 36px 1fr;gap:12px;align-items:stretch;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
       }
       return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
     })() : '';

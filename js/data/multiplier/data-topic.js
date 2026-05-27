@@ -129,6 +129,17 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'Always apply the multiplier to fiscal policy answers',
         text: 'When asked about the effect of fiscal stimulus, the answer is <strong>never</strong> just \'AD shifts right by £X\'. It\'s \'AD shifts right by £X \xd7 k\'. Stating the multiplier value (even approximately) and the factors that determine it is a 3-mark gem in Paper 2.'
+      },
+      economistQuote: {
+        portraitKey: 'economistKeynes',
+        tone: 'blue',
+        label: 'Economist insight: Keynes and the multiplier',
+        quote: 'If the Treasury were to fill old bottles with banknotes, bury them at suitable depths in disused coalmines...and leave it to private enterprise to dig the notes up again, there need be no more unemployment and...the real income of the community...would probably become a good deal greater than it actually is.',
+        attribution: 'John Maynard Keynes, <em>The General Theory of Employment, Interest and Money</em> (1936)'
+      },
+      tipLate: {
+        icon: '💡', tone: 'blue', head: 'Why this matters',
+        text: 'Keynes used this deliberately provocative example to make a serious point: <strong>in a recession with spare capacity, almost any injection of spending will cascade through the economy via the multiplier</strong> — income becomes spending, which becomes someone else\'s income. The argument for targeting the multiplier is that more productive injections (infrastructure, transfers to high-MPC households) do even more. The A* move is to note that this logic holds when the economy is below full capacity — near full employment, the multiplier shrinks as inflation rather than output absorbs the stimulus.'
       }
     },
 

@@ -132,7 +132,7 @@ window.ECONOS_TOPIC = {
       },
       economistQuote: {
         portraitKey: 'economistKeynes',
-        tone: 'blue',
+        tone: 'amber',
         label: 'Economist insight: Keynes and the multiplier',
         quote: 'If the Treasury were to fill old bottles with banknotes, bury them at suitable depths in disused coalmines...and leave it to private enterprise to dig the notes up again, there need be no more unemployment and...the real income of the community...would probably become a good deal greater than it actually is.',
         attribution: 'John Maynard Keynes, <em>The General Theory of Employment, Interest and Money</em> (1936)'

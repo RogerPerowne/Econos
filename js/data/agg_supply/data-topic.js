@@ -52,20 +52,10 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🏛️', head: 'LRAS',              body: 'Long run aggregate supply. Vertical at productive capacity (Yf). Prices do not change LRAS.' }
       ],
 
-      interactiveDiagram: {
+      flowChart: {
         svgKey: 'srasLrasIntro',
         label: 'THE BASIC DIAGRAM',
-        emoji: '📊',
-        views: [
-          {
-            label: 'The basic diagram',
-            show: [],
-            icon: 'ℹ️',
-            head: 'SRAS shows short-run responsiveness.',
-            body: ['LRAS shows the economy\'s maximum sustainable output.'],
-            tone: 'blue'
-          }
-        ]
+        emoji: '📊'
       },
 
       pairLabel: 'SRAS VS LRAS',
@@ -81,13 +71,15 @@ window.ECONOS_TOPIC = {
         text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Determined by labour, capital, technology, productivity and efficiency.</p>'
       },
 
-      flowTitle: 'WHY IT MATTERS',
-      flowEmoji: '🎯',
-      flow: [
-        { tone: 'blue',   icon: '📈', title: 'SRAS explains inflation shocks.' },
-        { tone: 'amber',  icon: '📊', title: 'LRAS explains growth potential.' },
-        { tone: 'green',  icon: '🔍', title: 'Together they help diagnose whether rising prices come from demand or supply.' }
-      ],
+      whyItMatters: {
+        title: 'WHY IT MATTERS',
+        emoji: '🎯',
+        items: [
+          { tone: 'blue',   icon: '📈', label: 'Inflation shocks', text: 'SRAS explains short-run cost-push inflation.' },
+          { tone: 'amber',  icon: '📊', label: 'Growth potential', text: 'LRAS explains the economy\'s long-run capacity ceiling.' },
+          { tone: 'green',  icon: '🔍', label: 'Diagnosis tool',   text: 'Together they help identify whether rising prices come from demand or supply.' }
+        ]
+      },
 
       conclusion: { title: 'Big idea', text: 'Short-run changes affect costs and inflation. Long-run changes affect the economy\'s productive capacity.' },
       examEdge: 'Strong essays distinguish movements along SRAS from shifts in SRAS — and they separate short-run supply conditions from long-run capacity.'
@@ -111,20 +103,10 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '📊', title: 'Profit margins improve and firms produce more.' }
       ],
 
-      interactiveDiagram: {
+      flowChart: {
         svgKey: 'srasCurveStatic',
         label: 'THE SRAS DIAGRAM',
-        emoji: '📊',
-        views: [
-          {
-            label: 'The SRAS diagram',
-            show: [],
-            icon: 'ℹ️',
-            head: 'A movement up SRAS means a higher price level and higher output in the short run.',
-            body: ['Point A shows initial equilibrium; point B shows the same curve at higher P and Y.'],
-            tone: 'blue'
-          }
-        ]
+        emoji: '📊'
       },
 
       causesLabel: 'WHAT SHIFTS SRAS?',
@@ -211,6 +193,7 @@ window.ECONOS_TOPIC = {
         ]
       },
 
+      causesLast: true,
       causesLabel: 'WHY Yf MATTERS',
       causesEmoji: '🎯',
       causesStyle: 'tinted-flat',
@@ -325,6 +308,7 @@ window.ECONOS_TOPIC = {
         ]
       },
 
+      causesFirst: true,
       causesLabel: 'WHAT SHIFTS LRAS?',
       causesEmoji: '🎯',
       causesStyle: 'tinted-flat',
@@ -452,13 +436,19 @@ window.ECONOS_TOPIC = {
         emoji: '🔀'
       },
 
-      summaryRow: [
-        { tone: 'blue',   icon: '📊', title: 'Output',            text: 'Both approaches raise output. Supply-side may also raise potential output permanently.' },
-        { tone: 'rose',   icon: '💹', title: 'Price level',       text: 'AD stimulus raises prices. Supply-side keeps prices stable or falling.' },
-        { tone: 'green',  icon: '📅', title: 'Sustainability',     text: 'AD stimulus is a short-term boost. Supply-side is a longer-term improvement.' },
-        { tone: 'amber',  icon: '⚠️', title: 'Inflation risk',    text: 'High with AD near full employment. Low with supply-side improvement.' },
-        { tone: 'purple', icon: '🎯', title: 'Best use',          text: 'AD stimulus during recessions and weak demand. Supply-side when capacity is constrained.' }
-      ],
+      comparisonTable: {
+        title: 'COMPARE THE OUTCOMES',
+        emoji: '↔️',
+        columns: ['Demand-side stimulus', 'Supply-side improvement'],
+        columnTones: ['blue', 'green'],
+        rows: [
+          { label: '📊 Output',         values: ['Rises (AD shift)',               'Rises (capacity expands)'],             highlights: [false, true] },
+          { label: '💹 Price level',    values: ['Rises (inflationary)',           'Stable or falling'],                    highlights: [false, true] },
+          { label: '📅 Sustainability', values: ['Short-term boost',              'Long-term improvement'],                highlights: [false, true] },
+          { label: '⚠️ Inflation risk', values: ['High near full employment',     'Low — capacity expands with output'],   highlights: [false, true] },
+          { label: '🎯 Best use',       values: ['Recession / weak demand',       'Capacity constrained / high inflation'], highlights: [false, false] }
+        ]
+      },
 
       pairLabel: 'WHEN TO USE WHICH',
       pairEmoji: '🎯',

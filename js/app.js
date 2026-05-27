@@ -4530,7 +4530,7 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
-              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
@@ -4667,7 +4667,7 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
-              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
@@ -4879,7 +4879,7 @@
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
-              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
             <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
           </div>`;
@@ -5610,6 +5610,20 @@
        interactive widgets (each explorer can scan tens of DOM nodes
        and bind handlers — postponing avoids jank on the first frame). */
     const initWidgets = () => {
+      // Initialise interactive diagram layers to match view 0 on first render.
+      root.querySelectorAll('[data-id-root]').forEach(idRoot => {
+        const layers = JSON.parse(idRoot.dataset.idLayers || '[]');
+        if (!layers.length) return;
+        const firstBtn = idRoot.querySelector('[data-id-vi="0"]');
+        if (!firstBtn) return;
+        const explicitShow = firstBtn.dataset.idShow ? JSON.parse(firstBtn.dataset.idShow) : null;
+        layers.forEach((cls, i) => {
+          const visible = explicitShow ? explicitShow.includes(cls) : 0 > i;
+          idRoot.querySelectorAll('.' + cls).forEach(el => {
+            el.style.display = visible ? 'block' : 'none';
+          });
+        });
+      });
       if (window.EconosElasticity) {
         root.querySelectorAll('.ee-root[data-ee-mount]').forEach(el => window.EconosElasticity.init(el));
       }
@@ -5888,7 +5902,7 @@
       layers.forEach((cls, i) => {
         const visible = explicitShow ? explicitShow.includes(cls) : i < vi;
         idRoot.querySelectorAll('.' + cls).forEach(el => {
-          el.style.display = visible ? '' : 'none';
+          el.style.display = visible ? 'block' : 'none';
         });
       });
 

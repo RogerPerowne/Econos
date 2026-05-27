@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: UK tax structure (~37% of GDP, similar to OECD average); income tax thresholds and rates; National Insurance; VAT (20% standard, reduced rates); corporation tax (25% main rate); council tax (regressive); fiscal drag; Laffer curve and revenue maximisation; canons of taxation (Adam Smith: equity, certainty, convenience, efficiency); behavioural taxes (sugar tax, carbon tax). For tax incidence and welfare effects of indirect taxes, see Theme 1 topic 2.9.',
       examEdge: 'The Laffer curve is intuitive but empirically slippery. There IS a revenue-maximising rate, but estimates range widely (40-70% for top marginal rates). The Laffer argument was central to Reagan/Thatcher tax cuts (1980s) and the 2022 Truss mini-budget disaster (when bond markets rejected unfunded tax cuts). Use the Laffer curve carefully – explain the mechanism, then acknowledge empirical uncertainty.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

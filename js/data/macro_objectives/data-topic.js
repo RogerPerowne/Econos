@@ -302,7 +302,7 @@ window.ECONOS_TOPIC = {
         title: 'Use real data in every answer',
         text: "A* answers consistently anchor analysis in real UK data: '...consistent with the UK\'s experience in 2022-23, when unemployment fell to 3.7% – below the NAIRU – and wage inflation accelerated to 7.8%, validating the short-run Phillips curve relationship.' Data-anchored answers always score higher than purely theoretical ones."
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

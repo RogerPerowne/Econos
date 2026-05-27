@@ -306,7 +306,7 @@ window.ECONOS_TOPIC = {
         title: 'The two-sided evaluation template',
         text: "A* fiscal policy evaluation structure: <em>'While fiscal expansion is effective when [conditions: spare capacity, ZLB, high-MPC targeting], its effectiveness is limited when [conditions: full capacity, crowding out, debt unsustainability]. The net assessment depends on [multiplier size, debt position, monetary coordination].'</em> Conditional conclusions always outperform absolute ones."
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

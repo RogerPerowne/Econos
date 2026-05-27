@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position (fuel duty is effective in the long run but limited in the short run), use the mechanism (supply shift, inelastic demand, revenue vs emissions trade-off), add the condition (PED rising as EVs become substitutes), and explain the limitation honestly.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

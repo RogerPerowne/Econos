@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: BoE independence (1997); MPC structure (9 members, monthly meetings); inflation targeting framework; QE (£895bn UK stock at peak); forward guidance; FPC and macroprudential policy; ring-fencing rules; international coordination through BIS and FSB. For the mechanics of monetary policy (transmission mechanism, conventional vs unconventional tools), see Theme 2 topic 6.2.2.',
       examEdge: 'Central bank independence is the institutional innovation that made low and stable inflation possible after the 1970s-80s. Argument: governments face short-run political incentives to inflate (boost growth before elections) → time-inconsistency problem. Independent central banks with clear inflation targets credibly commit to price stability. Evidence: inflation in advanced economies fell from 8%+ (1970s-80s) to ~2% (1990s-2010s) post-independence.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

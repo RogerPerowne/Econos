@@ -5,7 +5,7 @@
     topicId:  'pes_main',
     title:    'Price Elasticity of Supply',
     subtitle: 'Theme 1 &middot; Topic 2.5 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'pes_main' }),
+    backUrl:  TopicLoader.routes.learn('pes_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers the PES formula, determinants, demand shifts, tax incidence, and supply-side policy',
     shortNames: [

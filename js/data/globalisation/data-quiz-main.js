@@ -5,7 +5,7 @@
     topicId:  'globalisation_main',
     title:    'Globalisation',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'globalisation' }),
+    backUrl:  TopicLoader.routes.learn('globalisation'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers causes, benefits, costs, multinational corporations, and de-globalisation',
     shortNames: [

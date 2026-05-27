@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Opportunity cost is not money spent – it is the next best alternative forgone. Always ask: what had to be given up to make this choice?',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -257,7 +257,7 @@ window.ECONOS_TOPIC = {
       ],
       examEdge: 'The micro-macro distinction matters for policy evaluation. Supply-side policies (micro-level reforms to labour and product markets) work through micro mechanisms but have macro effects. Always specify the transmission mechanism linking micro behaviour to macro outcomes in essays.',
       keyTakeaway: 'Micro explains the parts; macro explains the whole – and good economists link both.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

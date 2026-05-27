@@ -5,7 +5,7 @@
     topicId:  'govt_intervention_subsidies_main',
     title:    'Government Intervention: Subsidies',
     subtitle: 'Theme 1.18 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'govt_intervention_subsidies_main' }),
+    backUrl:  TopicLoader.routes.learn('govt_intervention_subsidies_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers subsidy mechanics, welfare effects, corrective and non-corrective subsidies, agriculture, and evaluation',
     shortNames: [

@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Positive externality → MSB > MPB → market under-produces. Welfare gain forgone = triangle between market output and socially optimal output. Government corrects via Pigouvian subsidy to shift MPB up to MSB.',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -88,7 +88,7 @@ window.ECONOS_TOPIC = {
         { term: 'Marginal External Benefit (MEB)', def: 'The additional benefit enjoyed by third parties from the consumption (or production) of one more unit.' },
         { term: 'Marginal Social Benefit (MSB)',   def: 'The total additional benefit to society from one more unit – equal to MPB + MEB. The true benefit the market should respond to but does not.' }
       ],
-      examEdge: 'Remember the trilogy – <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="/learn?topic=neg_externalities" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.'
+      examEdge: 'Remember the trilogy – <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="/learn/neg-externalities" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.'
     },
     {
       id: 'pos_externalities_2',
@@ -292,7 +292,7 @@ window.ECONOS_TOPIC = {
         { icon: '⚖️', head: 'Equity / access',               body: 'Does it improve fairness and access, not just total welfare?',                tone: 'amber'  }
       ],
       examEdge: 'Strong answers <strong>compare market failure with government failure</strong> and finish with a conditional judgement: the policy is likely to work best when the external benefit is large, targeting is accurate, costs are manageable, and the design is fair and accessible.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

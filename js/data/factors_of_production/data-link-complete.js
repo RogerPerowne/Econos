@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'Take a clear position, use the LRAS mechanism, add the condition (complementary capital + geographic mobility), and explain the limitation (any single policy lever is incremental – the OBR\'s 60,000 childcare estimate makes this concrete).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

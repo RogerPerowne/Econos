@@ -58,5 +58,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position (the economic problem is universal), use the mechanism (scarcity → choice → opportunity cost), add the condition (technology and economic system shape how severe and how visible the problem is), and acknowledge the honest limitation (the severity of scarcity is partly a political choice, not purely fixed by nature).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

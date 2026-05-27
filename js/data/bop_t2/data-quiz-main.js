@@ -5,7 +5,7 @@
     topicId:  'bop_t2_main',
     title:    'Balance of Payments',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'bop_t2' }),
+    backUrl:  TopicLoader.routes.learn('bop_t2'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers BoP accounts, current account deficit causes, J-curve, and correction policies',
     shortNames: [

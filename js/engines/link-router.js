@@ -2,11 +2,15 @@
    ECONOS — Link It router (SPA shell for link.html)
    ─────────────────────────────────────────────────────────────
    link.html loads ALL Link engines + this router. The router
-   intercepts in-stage navigation (clicks on <a href="/link?
-   station=X"> + programmatic LinkRouter.navigate() calls),
-   swaps the station in-place via history.pushState, and only
-   does real page navigation for cross-stage URLs (/learn,
-   /land, /, …).
+   intercepts in-stage navigation (clicks on <a href="/link/<topic>/
+   <station>"> + programmatic LinkRouter.navigate() calls), swaps
+   the station in-place via history.pushState, and only does a
+   real page navigation for cross-stage URLs (/learn/<topic>,
+   /land/<topic>/<section>, /, …).
+
+   URL form is path-based — station extraction goes through
+   TopicLoader.parsePath(), so the router has no URL-parsing
+   logic of its own.
    ============================================================ */
 
 (function () {
@@ -53,7 +57,7 @@
     var cfg = STATIONS[station];
     if (!cfg) return;
     prefetched[station] = true;
-    [cfg.engine, cfg.data && ('js/data/' + TopicLoader.getTopic() + '/' + cfg.data)]
+    [cfg.engine, cfg.data && ('/js/data/' + TopicLoader.getTopic() + '/' + cfg.data)]
       .filter(Boolean)
       .forEach(function (href) {
         var l = document.createElement('link');
@@ -82,29 +86,22 @@
   };
   function prefetchAdjacent(current) {
     var next = NEXT_HINTS[current] || [];
-    /* Use requestIdleCallback if available so we never compete with
-       the current station's render. */
     var go = function () { next.forEach(prefetchStation); };
     if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 2000 });
     else setTimeout(go, 800);
   }
 
+  /* Both URL-checks go through TopicLoader.parsePath so the router
+     has zero URL-parsing logic of its own. */
   function urlToStation(url) {
-    if (!url) return null;
-    var qStart = String(url).indexOf('?');
-    if (qStart < 0) return null;
-    try {
-      var params = new URLSearchParams(url.substring(qStart));
-      var s = params.get('station');
-      return s && STATIONS[s] ? s : null;
-    } catch (e) { return null; }
+    var route = TopicLoader.parsePath(String(url || '').split('?')[0].split('#')[0]);
+    if (!route || route.shell !== 'link') return null;
+    return route.station && STATIONS[route.station] ? route.station : null;
   }
-
   function isLinkUrl(url) {
     if (!url) return false;
-    var path = String(url).split('?')[0].split('#')[0];
-    var file = path.substring(path.lastIndexOf('/') + 1);
-    return (file === 'link' || file === 'link.html') && !!urlToStation(url);
+    var route = TopicLoader.parsePath(String(url).split('?')[0].split('#')[0]);
+    return !!(route && route.shell === 'link' && route.station && STATIONS[route.station]);
   }
 
   function setTitle(station) {
@@ -114,8 +111,6 @@
   }
 
   function renderUnknownStation(station) {
-    var topic = TopicLoader.getTopic();
-    var qs = topic ? '?topic=' + encodeURIComponent(topic) : '';
     var root = document.getElementById('app-root');
     if (!root) return;
     root.innerHTML = ''
@@ -124,7 +119,7 @@
       +   '<p style="color:var(--econ-muted,#6B7280);margin-bottom:24px;">'
       +     'The Link It station <code>' + (station || '?') + '</code> doesn\'t exist for this topic.'
       +   '</p>'
-      +   '<a href="/link' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
+      +   '<a href="' + TopicLoader.routes.link('intro') + '" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
       +     '← Back to Link It intro'
       +   '</a>'
       + '</div>';
@@ -165,11 +160,12 @@
     }
     setTitle(station);
     var cancelSkeleton = showLoadingSkeleton();
-    /* Special: quiz station — lazy-load engine + chosen question set */
+    /* Special: quiz station — lazy-load engine + chosen question set. The
+       set is carried in the path's quizSet slot when present, else 'main'. */
     if (station === 'quiz') {
-      var quizSet = new URLSearchParams(window.location.search).get('quiz') || 'main';
+      var quizSet = TopicLoader.getQuizSet() || 'main';
       var dataFile = 'data-link-quiz-' + quizSet + '.js';
-      loadScript('js/engines/quiz-engine.js', function () {
+      loadScript('/js/engines/quiz-engine.js', function () {
         TopicLoader.loadData(dataFile, function () {
           if (typeof window.bootQuizStation === 'function') {
             cancelSkeleton();
@@ -204,15 +200,14 @@
       }
     };
     if (cfg.engine) {
-      loadScript(cfg.engine, loadDataThenBoot);
+      loadScript('/' + cfg.engine, loadDataThenBoot);
     } else {
       loadDataThenBoot();
     }
-    /* Background-prefetch likely next stations after this one renders. */
     prefetchAdjacent(station);
   }
 
-  /* In-app navigation if URL is a link_*.html page; else real nav. */
+  /* In-app navigation if URL is a /link/<topic>/<station> page; else real nav. */
   function navigate(url) {
     if (!url) return;
     if (!isLinkUrl(url)) {
@@ -224,18 +219,19 @@
     loadStation(station);
   }
 
-  /* Boot entry point: called once from each link_*.html. */
-  function start(station) {
+  /* Boot entry point: called once from link.html. Reads the current
+     station from the URL itself — caller doesn't pass it. */
+  function start() {
+    var station = TopicLoader.getStation() || 'intro';
     if (!STATIONS[station]) {
       renderUnknownStation(station);
       return;
     }
 
-    /* Anchor the current history entry to this station so popstate works. */
     history.replaceState({ station: station }, '', window.location.href);
 
-    /* Delegate clicks on <a href="link_*.html"> into the SPA. Use capture so
-       we run before any engine handlers attached during render(). */
+    /* Delegate clicks on Link station hrefs into the SPA. Capture phase
+       so we run before any engine handlers attached during render(). */
     document.addEventListener('click', function (e) {
       if (e.defaultPrevented) return;
       if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
@@ -250,13 +246,11 @@
       navigate(href);
     }, true);
 
-    /* Browser back/forward */
     window.addEventListener('popstate', function (e) {
       var s = (e.state && e.state.station) || urlToStation(window.location.href);
       if (s && STATIONS[s]) loadStation(s);
     });
 
-    /* Boot the initial station. */
     loadStation(station);
   }
 

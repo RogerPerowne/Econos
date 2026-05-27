@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: UK public sector net debt trajectory; OBR forecasts; fiscal rules (golden rule, sustainable investment rule, Charter for Budget Responsibility); debt sustainability and the (r − g) dynamic; sovereign debt crises (Greece 2010-12, UK 2022 mini-budget); crowding out vs crowding in; intergenerational equity. For fiscal policy as a macro stabilisation tool, see Theme 2 topic 6.2.1.',
       examEdge: 'The 2022 UK mini-budget was a real-time lesson in fiscal sustainability. Truss/Kwarteng announced £45bn unfunded tax cuts; gilt yields spiked; pension funds faced collateral calls; BoE had to intervene. The political consequence was a new PM within weeks. The economic lesson: fiscal credibility matters enormously when debt is high – markets discipline fiscal policy through bond yields when fiscal rules are abandoned.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

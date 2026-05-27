@@ -33,8 +33,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'Start with a Section A question to build your diagram confidence. Add Section B when you are ready to apply analysis to a real context, and Section C to practise full essay technique under timed conditions.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                               }
   ]
 };

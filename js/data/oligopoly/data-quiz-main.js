@@ -5,7 +5,7 @@
     topicId:  'oligopoly_main',
     title:    'Oligopoly',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'oligopoly' }),
+    backUrl:  TopicLoader.routes.learn('oligopoly'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers oligopoly characteristics, interdependence, and kinked demand',
     shortNames: [

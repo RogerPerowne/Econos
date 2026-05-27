@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (demand shifts right → price signal → slow supply response), add the key condition (PES and landlord exit risk), and explain the limitation honestly. Conclude that supply-side reform – planning liberalisation, social housing – addresses the root cause more effectively than a price ceiling.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

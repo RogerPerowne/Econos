@@ -5,7 +5,7 @@
     topicId:  'ped_main',
     title:    'Price Elasticity of Demand',
     subtitle: 'Introduction to Markets and Market Failure',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'ped' }),
+    backUrl:  TopicLoader.routes.learn('ped'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers the PED formula, determinants, total revenue, tax incidence, special cases, and short- vs long-run elasticity',
     shortNames: [

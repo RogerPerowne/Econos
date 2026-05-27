@@ -5,7 +5,7 @@
     topicId:  'exchange_rates_main',
     title:    'Exchange Rates',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'exchange_rates' }),
+    backUrl:  TopicLoader.routes.learn('exchange_rates'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers FOREX markets, depreciation effects, Marshall-Lerner, and fixed vs floating systems',
     shortNames: [

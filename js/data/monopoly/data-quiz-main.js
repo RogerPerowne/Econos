@@ -5,7 +5,7 @@
     topicId:  'monopoly_main',
     title:    'Monopoly',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'monopoly' }),
+    backUrl:  TopicLoader.routes.learn('monopoly'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers monopoly power, pricing, profit, and welfare effects',
     shortNames: [

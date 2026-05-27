@@ -17,8 +17,8 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Excess demand → price rises → quantity demanded falls + quantity supplied rises → market clears. Excess supply → price falls → quantity demanded rises + quantity supplied falls → market clears.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards',              state: 'done',      href: TopicLoader.buildUrl('topic.html')        },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html')   },
+      { num: 1, name: 'Learn it', sub: '7 concept cards',              state: 'done',      href: TopicLoader.routes.learn()        },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro')   },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked'                                                     }
     ]
   },
@@ -309,7 +309,7 @@ window.ECONOS_TOPIC = {
       note: { icon: '💡', tone: 'amber', head: 'One core idea', text: 'Equilibrium is still where demand equals supply. However, the real-world outcome may be affected by time lags, policy and market structure.' },
       conclusion: { title: 'Key takeaway', text: 'Equilibrium is a flexible framework for analysing many markets. The logic is the same, but the context shapes how it plays out.' },
       examEdge: 'Context application is rewarded in Edexcel Paper 1. Use market-specific examples and language – for housing, mention planning restrictions, Help to Buy, interest rates; for labour, monopsony and minimum wage; for FX, expectations and capital flows. Don\'t write a generic supply/demand essay – tailor it to the extract.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

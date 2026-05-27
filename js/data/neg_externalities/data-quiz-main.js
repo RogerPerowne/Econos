@@ -5,7 +5,7 @@
     topicId:  'neg_externalities_main',
     title:    'Negative Externalities',
     subtitle: 'Theme 1 &middot; Topic 3.2 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'neg_externalities_main' }),
+    backUrl:  TopicLoader.routes.learn('neg_externalities_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers negative externalities of production and consumption, Pigouvian taxes, MSC/MPC divergence, and policy evaluation',
     shortNames: [

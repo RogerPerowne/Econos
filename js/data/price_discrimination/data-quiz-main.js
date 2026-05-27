@@ -5,7 +5,7 @@
     topicId:  'price_discrimination_main',
     title:    'Price Discrimination',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'price_discrimination' }),
+    backUrl:  TopicLoader.routes.learn('price_discrimination'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers conditions, three degrees, and welfare effects of price discrimination',
     shortNames: [

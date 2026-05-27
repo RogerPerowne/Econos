@@ -5,7 +5,7 @@
     topicId:  'barriers_entry_main',
     title:    'Barriers to Entry',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'barriers_entry' }),
+    backUrl:  TopicLoader.routes.learn('barriers_entry'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers types of barriers, their effects on competition, and policy responses',
     shortNames: [

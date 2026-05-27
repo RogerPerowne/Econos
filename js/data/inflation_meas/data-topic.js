@@ -513,7 +513,7 @@ window.ECONOS_TOPIC = {
         text: '<strong>Deflation is more dangerous than disinflation.</strong> Disinflation means prices are still rising – just more slowly. Deflation means the price level is <em>actually falling</em>. Distinguish too between <strong>benign deflation</strong> (productivity-driven, falling prices alongside rising output) and <strong>malign deflation</strong> (demand-driven, falling prices alongside falling output) – most exam scenarios are the malign variety.'
       },
 
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

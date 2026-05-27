@@ -124,7 +124,7 @@ window.ECONOS_TOPIC = {
       },
       examEdge: 'The complete welfare sentence: \'While real GDP per capita has [risen/fallen], this overstates/understates actual welfare because [distribution/PPP/sustainability]. A better measure – [HDI/Gini/median income] – reveals [alternative picture].\' This structure always works and always scores.',
       keyTakeaway: { title: 'The big picture', text: 'National income is not the same as national welfare. GDP measures the value of output, not the quality of life. Real, per-capita, distribution-adjusted, and PPP-corrected measures are all better proxies for welfare than headline nominal GDP. Use the caveats to construct analytically precise answers in any welfare question.' },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

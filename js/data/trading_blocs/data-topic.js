@@ -132,7 +132,7 @@ window.ECONOS_TOPIC = {
         { term: 'Multilateral vs bilateral', def: 'Multilateral maximises trade creation but is slow; bilateral is faster but risks diversion.' }
       ],
       examEdge: 'A top-band answer on UK trade policy notes: bilateral FTAs gain market access but cannot fully replicate the frictionless single-market access the UK had as an EU member, because services (UK\'s strength) are harder to liberalise in FTAs than goods.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

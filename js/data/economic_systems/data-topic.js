@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'In a free market: prices = signals + incentives + rationing device. High prices signal scarcity, incentivise producers, and ration goods to those who value them most highly.',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -263,7 +263,7 @@ window.ECONOS_TOPIC = {
         { term: '🏭 State capitalism', def: 'Significant state ownership of key industries alongside market competition – China\'s current model.' }
       ],
       examEdge: 'Evaluating transition economies: institutional quality matters as much as speed. Russia lacked property rights enforcement and contract law when it liberalised – markets without institutions produce disorder. This nuance earns evaluation marks.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

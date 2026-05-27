@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: the monopsony diagram (supply, MCL, MRP curves), why MCL lies above the supply curve, the monopsony wage gap (W < MRP), employment gap (L < competitive), and the bilateral monopoly case (monopsony employer + trade union).',
       examEdge: 'Monopsony is the key theoretical justification for the National Minimum Wage. Standard theory predicts a wage floor causes unemployment. Under monopsony, a minimum wage up to the competitive wage level can INCREASE both wages AND employment – correcting the monopsony distortion. This explains why empirical studies find small disemployment effects from NMW increases in low-wage sectors.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

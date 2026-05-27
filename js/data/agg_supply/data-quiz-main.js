@@ -5,7 +5,7 @@
     topicId:  'agg_supply_main',
     title:    'Aggregate Supply',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'agg_supply' }),
+    backUrl:  TopicLoader.routes.learn('agg_supply'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers SRAS vs LRAS, Classical vs Keynesian AS, and output gaps',
     shortNames: [

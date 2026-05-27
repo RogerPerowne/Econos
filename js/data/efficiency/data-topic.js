@@ -131,7 +131,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'Pharmaceutical industry: perfect static efficiency (P = MC) would mean generic drugs immediately, no patent. But this destroys dynamic efficiency (no incentive to spend £2bn developing a new drug). Patent system trades 20 years of monopoly pricing for long-run pharmaceutical innovation. This is the deliberate statutory trade-off between static and dynamic efficiency – and a superb exam example.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

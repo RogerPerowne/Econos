@@ -5,7 +5,7 @@
     topicId:  'monetary_main',
     title:    'Monetary Policy',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'monetary' }),
+    backUrl:  TopicLoader.routes.learn('monetary'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers interest rate transmission, QE, the MPC, and limits of monetary policy',
     shortNames: [

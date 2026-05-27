@@ -5,7 +5,7 @@
     topicId:  'business_objectives_main',
     title:    'Business Objectives',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'business_objectives' }),
+    backUrl:  TopicLoader.routes.learn('business_objectives'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers profit maximisation, satisficing, sales and revenue goals, and CSR',
     shortNames: [

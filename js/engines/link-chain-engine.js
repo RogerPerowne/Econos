@@ -7,7 +7,7 @@
   'use strict';
 
   window.bootLinkChain = function () {
-    if (Progress.getLinkUnlocked() < 0) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; }
+    if (Progress.getLinkUnlocked() < 0) { TopicLoader.go(TopicLoader.routes.link('context')); return; }
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_CHAIN;
@@ -374,7 +374,7 @@
           var u = Progress.getLinkUnlocked();
           Progress.setLinkUnlocked(Math.max(u, 1));
         } catch (e) {}
-        TopicLoader.go(DATA.nextUrl || TopicLoader.buildUrl('link_intro.html'));
+        TopicLoader.go(DATA.nextUrl || TopicLoader.routes.link('intro'));
       });
     }
 

@@ -9,7 +9,7 @@
 
   window.bootLinkPredict = function () {
     if (Progress.getLinkUnlocked() < 0) {
-      TopicLoader.go(TopicLoader.buildUrl('link_context.html'));
+      TopicLoader.go(TopicLoader.routes.link('context'));
       return;
     }
 
@@ -288,7 +288,7 @@
           var u = Progress.getLinkUnlocked();
           Progress.setLinkUnlocked(Math.max(u, DATA.currentStationIdx));
         } catch (e) {}
-        TopicLoader.go(DATA.nextUrl || TopicLoader.buildUrl('link_intro.html'));
+        TopicLoader.go(DATA.nextUrl || TopicLoader.routes.link('intro'));
       });
     }
 

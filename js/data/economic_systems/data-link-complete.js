@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (price mechanism → efficiency), add the condition (market failures / property rights / income distribution), and acknowledge the normative dimension – the optimal mix between markets and state depends on social values, not just technical efficiency.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

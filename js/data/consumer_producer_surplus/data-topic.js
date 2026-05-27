@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Consumer surplus = area of triangle above price below demand curve. Producer surplus = area of triangle below price above supply curve. Both are maximised at the free-market equilibrium – any intervention that moves price away from equilibrium reduces total welfare unless it corrects a market failure.',
     stages: [
       { num: 1, name: 'Learn it', sub: '6 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -318,7 +318,7 @@ window.ECONOS_TOPIC = {
       ],
       keyTakeaway: { title: 'The big picture', text: 'Consumer and producer surplus measure the gains from trade. Any policy intervention redistributes surplus between consumers, producers, and the government – and typically destroys some as deadweight welfare loss. The key evaluative question is always: does the policy correct a pre-existing market failure large enough to justify the welfare loss it creates?' },
       examEdge: '<strong>Three-step method for any welfare question:</strong> (1) Draw the before/after diagram and label all areas. (2) Identify who gains and who loses – some CS may transfer to government revenue, some to DWL. (3) State the net effect on total surplus and say whether a market failure justifies the intervention.<br><br><strong>Evaluation trick:</strong> a policy that destroys less surplus than the market failure it corrects <em>improves</em> total welfare; one that operates in an already-efficient market reduces it. Examiners reward candidates who make this distinction explicit.<br><br><strong>Watch the language:</strong> "redistribution" ≠ "welfare loss". Tax revenue is a transfer – it does not destroy welfare. Only the DWL triangle (the area no one gets) is a true welfare loss.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

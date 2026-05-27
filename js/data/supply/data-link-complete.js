@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (S shifts left → shortage → new equilibrium at higher P and lower Q), add the condition (energy intensity, PED, international competition), and acknowledge the limitation (government intervention and hedging moderated the shock for some producers).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

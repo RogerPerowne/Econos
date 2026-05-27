@@ -1,60 +1,83 @@
 /* ============================================================
-   TopicLoader.buildUrl PAGE_MAP unit-ish tests
+   TopicLoader.routes + path parsing tests
    ─────────────────────────────────────────────────────────────
-   Validates every legacy filename rewrites to the expected shell
-   + station. Runs the loader inside a thin HTML page rather than
-   stubbing it in Node, so it exercises the real script as deployed.
+   Validates the canonical URL builders emit the path-based form
+   and that parsePath round-trips them back to the right
+   { shell, topic, station } shape. Runs the loader inside a
+   thin HTML page rather than stubbing it in Node, so it
+   exercises the real script as deployed.
    ============================================================ */
 
 import { test, expect } from '@playwright/test';
 
-test('PAGE_MAP rewrites legacy filenames to shell URLs', async ({ page }) => {
+async function boot(page, url) {
   await page.addInitScript(() => {
     try { localStorage.setItem('econosAuth', '1'); } catch (e) {}
   });
-  await page.goto('/learn?topic=inflation');
-  /* Wait for TopicLoader to be on window. */
+  await page.goto(url);
   await page.waitForFunction(() => typeof window.TopicLoader === 'object', null, { timeout: 5000 });
+}
 
-  const cases = {
-    'topic.html':           '/learn?topic=inflation',
-    'link_intro.html':      '/link?topic=inflation&station=intro',
-    'link_context.html':    '/link?topic=inflation&station=context',
-    'link_chain.html':      '/link?topic=inflation&station=chain',
-    'link_chain_open.html': '/link?topic=inflation&station=chain_open',
-    'link_diagram.html':    '/link?topic=inflation&station=diagram',
-    'link_depends.html':    '/link?topic=inflation&station=depends',
-    'link_judge.html':      '/link?topic=inflation&station=judge',
-    'link_complete.html':   '/link?topic=inflation&station=complete',
-    'land_intro.html':      '/land?topic=inflation&station=intro',
-    'land_section_a.html':  '/land?topic=inflation&station=a',
-    'land_section_b.html':  '/land?topic=inflation&station=b',
-    'land_section_c.html':  '/land?topic=inflation&station=c',
-    'land_complete.html':   '/land?topic=inflation&station=complete'
-  };
+test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
+  await boot(page, '/learn/inflation');
 
-  for (const [legacy, expected] of Object.entries(cases)) {
-    const got = await page.evaluate((l) => TopicLoader.buildUrl(l), legacy);
-    expect(got, `buildUrl('${legacy}')`).toBe(expected);
-  }
+  const cases = await page.evaluate(() => {
+    const T = window.TopicLoader;
+    return {
+      home:      T.routes.home(),
+      learn:     T.routes.learn(),
+      learnArg:  T.routes.learn('pos_externalities'),
+      linkDef:   T.routes.link('intro'),
+      linkOpen:  T.routes.link('chain-open'),
+      land:      T.routes.land('a'),
+      quiz:      T.routes.quiz('main'),
+      quizSet:   T.routes.quiz('causes', 'inflation')
+    };
+  });
+
+  expect(cases.home).toBe('/');
+  expect(cases.learn).toBe('/learn/inflation');
+  expect(cases.learnArg).toBe('/learn/pos-externalities');
+  expect(cases.linkDef).toBe('/link/inflation/intro');
+  expect(cases.linkOpen).toBe('/link/inflation/chain-open');
+  expect(cases.land).toBe('/land/inflation/a');
+  expect(cases.quiz).toBe('/quiz/inflation/main');
+  expect(cases.quizSet).toBe('/quiz/inflation/causes');
 });
 
-test('passthrough for known shells', async ({ page }) => {
-  await page.addInitScript(() => {
-    try { localStorage.setItem('econosAuth', '1'); } catch (e) {}
-  });
-  await page.goto('/learn?topic=demand');
-  await page.waitForFunction(() => typeof window.TopicLoader === 'object', null, { timeout: 5000 });
+test('parsePath round-trips canonical URLs', async ({ page }) => {
+  await boot(page, '/learn/inflation');
 
-  const cases = {
-    'learn.html': '/learn?topic=demand',
-    'link.html':  '/link?topic=demand',
-    'land.html':  '/land?topic=demand',
-    'quiz.html':  '/quiz?topic=demand',
-    'index.html': '/?topic=demand'
-  };
-  for (const [src, expected] of Object.entries(cases)) {
-    const got = await page.evaluate((s) => TopicLoader.buildUrl(s), src);
-    expect(got, `buildUrl('${src}')`).toBe(expected);
-  }
+  const cases = await page.evaluate(() => {
+    const p = window.TopicLoader.parsePath;
+    return {
+      home:   p('/'),
+      learn:  p('/learn/inflation'),
+      link:   p('/link/inflation/chain'),
+      open:   p('/link/inflation/chain-open'),
+      land:   p('/land/inflation/a'),
+      quiz:   p('/quiz/inflation/main'),
+      slug:   p('/learn/pos-externalities'),
+      bogus:  p('/some/random/path')
+    };
+  });
+
+  expect(cases.home).toEqual({ shell: 'home' });
+  expect(cases.learn).toMatchObject({ shell: 'learn', topic: 'inflation' });
+  expect(cases.link).toMatchObject({ shell: 'link', topic: 'inflation', station: 'chain' });
+  expect(cases.open).toMatchObject({ shell: 'link', topic: 'inflation', station: 'chain_open' });
+  expect(cases.land).toMatchObject({ shell: 'land', topic: 'inflation', station: 'a' });
+  expect(cases.quiz).toMatchObject({ shell: 'quiz', topic: 'inflation', quizSet: 'main' });
+  expect(cases.slug).toMatchObject({ shell: 'learn', topic: 'pos_externalities' });
+  expect(cases.bogus).toBeNull();
+});
+
+test('getTopic / getStation read the current pathname', async ({ page }) => {
+  await boot(page, '/link/inflation/chain-open');
+  const state = await page.evaluate(() => ({
+    topic:   window.TopicLoader.getTopic(),
+    station: window.TopicLoader.getStation(),
+    shell:   window.TopicLoader.getShell()
+  }));
+  expect(state).toEqual({ topic: 'inflation', station: 'chain_open', shell: 'link' });
 });

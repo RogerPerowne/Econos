@@ -5,7 +5,7 @@
     topicId:  'labour_markets_main',
     title:    'Labour Markets',
     subtitle: 'Labour Markets & Distribution',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'labour_markets' }),
+    backUrl:  TopicLoader.routes.learn('labour_markets'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers derived demand, MRP, wage differentials, and monopsony',
     shortNames: [

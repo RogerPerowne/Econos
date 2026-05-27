@@ -5510,7 +5510,7 @@
     let cardFoot;
     if (isLast) {
       const quizBtn  = quizHref   ? `<a href="${quizHref}"                    class="btn btn--primary"    style="text-decoration:none;">${quizLabel}</a>` : '';
-      const nextBtn  = nextTopicId ? `<a href="/learn?topic=${nextTopicId}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
+      const nextBtn  = nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
       const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
     } else {

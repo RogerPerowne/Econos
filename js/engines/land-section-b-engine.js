@@ -314,9 +314,9 @@
       if (idx === -1 || idx === session.sections.length - 1) { return null; }
       var next = session.sections[idx + 1];
       var map = {
-        'A': { label: 'Section A', href: TopicLoader.buildUrl('land_section_a.html') },
-        'B': { label: 'Section B', href: TopicLoader.buildUrl('land_section_b.html') },
-        'C': { label: 'Section C', href: TopicLoader.buildUrl('land_section_c.html') }
+        'A': { label: 'Section A', href: TopicLoader.routes.land('a') },
+        'B': { label: 'Section B', href: TopicLoader.routes.land('b') },
+        'C': { label: 'Section C', href: TopicLoader.routes.land('c') }
       };
       return map[next] || null;
     }
@@ -325,7 +325,7 @@
       var next = getNextSection(currentSection);
       var revealBtnCls  = 'btn btn--ghost btn--lg' + (state.revealed ? ' is-disabled' : '');
       var revealLabel   = state.revealed ? revealLabelPost : revealLabelPre;
-      var continueHref  = next ? next.href : TopicLoader.buildUrl('land_complete.html');
+      var continueHref  = next ? next.href : TopicLoader.routes.land('complete');
       var continueLabel = next ? ('Continue to ' + next.label) : 'Finish &amp; see results';
       var continueBtn   = '<button id="js-continue-btn" data-href="' + continueHref + '" class="btn btn--primary btn--lg">' + continueLabel + ' ' + I.arrowRight + '</button>';
       return '<div class="land-bottom-bar">'

@@ -15,10 +15,6 @@
    /dist/js/. The HTML <script src="js/foo.js"> tags resolve to
    the same path in dev and prod.
 
-   A future tranche migrates engines to ES modules so Vite can
-   tree-shake and per-topic-split them; the current setup is a
-   no-regression starting point.
-
    Commands:
      npm run dev       → http://localhost:5173 (Vite dev server)
      npm run build     → emits /dist (deploy this)
@@ -27,8 +23,8 @@
 
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import { readdirSync, statSync, readFileSync, writeFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { readdirSync, statSync, readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { resolve, dirname, join } from 'node:path';
 import { execSync } from 'node:child_process';
 
 const ROOT = process.cwd();
@@ -40,9 +36,7 @@ const BUILD_HASH = (() => {
   catch { return Date.now().toString(36); }
 })();
 
-/* Every .html in the repo root is an entry point. Includes the
-   four shells + index/login/quiz + the 14 legacy redirect stubs
-   so external bookmarks keep working after deploy. */
+/* Every .html in the repo root is an entry point. */
 function htmlEntries() {
   const entries = {};
   for (const name of readdirSync(ROOT)) {
@@ -54,10 +48,189 @@ function htmlEntries() {
   return entries;
 }
 
+/* ============================================================
+   Topic-route plugin
+   ─────────────────────────────────────────────────────────────
+   Wires the site's path-based URL contract:
+
+       /learn/<topic>             → learn.html
+       /link/<topic>/<station>    → link.html
+       /land/<topic>/<section>    → land.html
+       /quiz/<topic>/<set>        → quiz.html
+
+   In dev and preview the plugin is a Connect middleware that
+   rewrites the request URL to the matching shell — the browser
+   keeps the pretty URL, the shell HTML is served, and the
+   client-side TopicLoader reads window.location.pathname to find
+   the topic + station.
+
+   At build time the same logic generates real per-route files
+   under dist/<shell>/<topic>/<station>/index.html for every
+   (topic, station) the registry says is available. Each generated
+   file is a copy of the shell HTML with a topic-specific <title>,
+   <meta description>, <meta og:title/description>, and
+   <link rel=canonical> baked in. Real 200s, per-page SEO.
+   ============================================================ */
+
+const STATIONS = {
+  link: ['intro','context','chain','chain_open','calc','data','extract','predict','diagram','depends','judge','complete','quiz'],
+  land: ['intro','a','b','c','complete','quiz'],
+  quiz: ['main','causes']
+};
+const SHELL_HTML = { learn: 'learn.html', link: 'link.html', land: 'land.html', quiz: 'quiz.html' };
+const STANDALONE = new Set(['login','privacy-policy','terms','offline','404']);
+const toSlug = (id) => String(id).replace(/_/g, '-');
+
+/* Load js/topics.js as plain text and extract the registry. The
+   file is an IIFE that assigns window.ECONOS_TOPICS — we eval it
+   inside a stub `window` to get the array. Done once at build /
+   server-start, not per request. */
+function loadTopicRegistry() {
+  const src = readFileSync(resolve(ROOT, 'js/topics.js'), 'utf8');
+  const sandbox = { window: {} };
+  // eslint-disable-next-line no-new-func
+  (new Function('window', src))(sandbox.window);
+  return sandbox.window.ECONOS_TOPICS || [];
+}
+
+function topicRoutes() {
+  let registry = [];
+  function ensureRegistry() {
+    if (registry.length === 0) registry = loadTopicRegistry();
+    return registry;
+  }
+  function topicById(id) {
+    return ensureRegistry().find((t) => t.id === id);
+  }
+
+  /* Inject topic-specific SEO meta into a shell's HTML source.
+     Idempotent: replaces the canonical / og:url / og:title /
+     <title> if they exist, otherwise leaves the file untouched.
+     `path` is the final URL path the file will live at. */
+  function injectMeta(html, { topic, shell, station, path }) {
+    if (!topic) return html;
+    const t = topicById(topic);
+    const topicName  = t ? t.name : topic;
+    const stageName  = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : shell === 'land' ? 'Land It' : 'Quiz';
+    const stationStr = station ? ' · ' + station.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : '';
+    const title = `${topicName}${stationStr} · ${stageName} · Econos`;
+    const desc  = t && t.sub
+      ? `${stageName} — ${t.sub}. A-Level economics revision on Econos.`
+      : `${stageName} for ${topicName}. A-Level economics revision on Econos.`;
+    const canonical = 'https://econos.co.uk' + path;
+    return html
+      .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+      .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${desc}">`)
+      .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${title}">`)
+      .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${desc}">`)
+      .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`)
+      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`);
+  }
+
+  /* parseUrl('/link/inflation/chain-open') → { shell:'link', topic:'inflation', station:'chain_open', file:'link.html' } */
+  function parseUrl(rawPath) {
+    if (!rawPath || rawPath === '/' || rawPath.includes('.')) return null;
+    const parts = rawPath.split('/').filter(Boolean);
+    const shell = parts[0];
+    if (STANDALONE.has(shell)) {
+      if (parts.length === 1) return { shell, file: shell + '.html' };
+      return null;
+    }
+    if (!SHELL_HTML[shell]) return null;
+    const topic = parts[1] ? parts[1].replace(/-/g, '_') : null;
+    const third = parts[2] ? parts[2].replace(/-/g, '_') : null;
+    return { shell, topic, station: third, file: SHELL_HTML[shell] };
+  }
+
+  function devRewrite(req, _res, next) {
+    try {
+      const url = req.url || '/';
+      const qIdx = url.indexOf('?');
+      const path = qIdx >= 0 ? url.slice(0, qIdx) : url;
+      const query = qIdx >= 0 ? url.slice(qIdx) : '';
+      const route = parseUrl(path);
+      if (route) {
+        req.url = '/' + route.file + query;
+      }
+    } catch (e) { /* fall through to default handling */ }
+    next();
+  }
+
+  function generateBuildOutputs() {
+    const distDir = resolve(ROOT, 'dist');
+    if (!existsSync(distDir)) return;
+    const written = [];
+
+    function writeRoute(shell, topic, station) {
+      const sourcePath = resolve(distDir, SHELL_HTML[shell]);
+      if (!existsSync(sourcePath)) return;
+      const html = readFileSync(sourcePath, 'utf8');
+      const urlPath = station
+        ? `/${shell}/${toSlug(topic)}/${toSlug(station)}`
+        : `/${shell}/${toSlug(topic)}`;
+      const out = injectMeta(html, { topic, shell, station, path: urlPath });
+      const dest = join(distDir, urlPath, 'index.html');
+      mkdirSync(dirname(dest), { recursive: true });
+      writeFileSync(dest, out);
+      written.push(urlPath);
+    }
+
+    for (const topic of ensureRegistry()) {
+      const avail = topic.available || {};
+      if (avail.learn) writeRoute('learn', topic.id);
+      if (avail.link)  STATIONS.link.forEach((s) => writeRoute('link', topic.id, s));
+      if (avail.land)  STATIONS.land.forEach((s) => writeRoute('land', topic.id, s));
+      if (avail.quiz !== false) STATIONS.quiz.forEach((s) => writeRoute('quiz', topic.id, s));
+    }
+    // eslint-disable-next-line no-console
+    console.log(`[topic-routes] generated ${written.length} per-topic index.html files`);
+
+    /* Write the sitemap at build time from the same registry, so it can
+       never drift from the routes that actually exist. Standalone routes
+       + every /learn/<topic> for an available topic. We keep stations
+       and quiz sets out of the sitemap — they're internal session URLs
+       and including 400+ entries would dilute the index. */
+    const today = new Date().toISOString().slice(0, 10);
+    const urls = [
+      { loc: '/',                priority: '1.0', freq: 'weekly'  },
+      { loc: '/privacy-policy',  priority: '0.3', freq: 'yearly'  },
+      { loc: '/terms',           priority: '0.3', freq: 'yearly'  },
+      { loc: '/articles/',       priority: '0.7', freq: 'weekly'  },
+      { loc: '/articles/monopoly-a-level-economics/', priority: '0.6', freq: 'monthly' }
+    ];
+    for (const topic of ensureRegistry()) {
+      if (!(topic.available && topic.available.learn)) continue;
+      urls.push({ loc: `/learn/${toSlug(topic.id)}`, priority: '0.8', freq: 'weekly' });
+    }
+    const xml = [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+      ...urls.map((u) =>
+        `  <url>\n    <loc>https://econos.co.uk${u.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${u.freq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`),
+      '</urlset>',
+      ''
+    ].join('\n');
+    writeFileSync(join(distDir, 'sitemap.xml'), xml);
+    // eslint-disable-next-line no-console
+    console.log(`[topic-routes] wrote sitemap.xml (${urls.length} URLs)`);
+  }
+
+  return {
+    name: 'topic-routes',
+    configureServer:        (server) => { server.middlewares.use(devRewrite); },
+    configurePreviewServer: (server) => { server.middlewares.use(devRewrite); },
+    closeBundle: generateBuildOutputs
+  };
+}
+
 export default defineConfig({
   root: ROOT,
   publicDir: false,
-  base: './',
+  /* Absolute base — every emitted asset reference starts with /. Required
+     because the topic-routes plugin copies shells into nested subdirectories
+     (dist/learn/<topic>/index.html etc.); relative './assets/…' paths would
+     resolve under the wrong directory there. */
+  base: '/',
   appType: 'mpa',
 
   plugins: [
@@ -70,32 +243,8 @@ export default defineConfig({
       }
     },
 
-    /* Clean-URL middleware. Production (GitHub Pages) serves /learn from
-       learn.html automatically; this rewrites /learn → /learn.html for the
-       Vite dev and preview servers so internal links resolve the same way
-       locally. Pure path-only rewrite — query strings pass through. */
-    (function cleanUrls() {
-      var SHELLS = new Set(['learn','link','land','quiz','login','privacy-policy','terms','offline','404']);
-      function rewrite(req, _res, next) {
-        try {
-          var qIdx = (req.url || '/').indexOf('?');
-          var pathname = qIdx >= 0 ? req.url.slice(0, qIdx) : req.url;
-          var query    = qIdx >= 0 ? req.url.slice(qIdx)    : '';
-          if (pathname && pathname !== '/' && !pathname.includes('.') && !pathname.endsWith('/')) {
-            var name = pathname.slice(1);
-            if (SHELLS.has(name)) {
-              req.url = '/' + name + '.html' + query;
-            }
-          }
-        } catch (e) { /* fall through */ }
-        next();
-      }
-      return {
-        name: 'clean-urls',
-        configureServer:        function (server) { server.middlewares.use(rewrite); },
-        configurePreviewServer: function (server) { server.middlewares.use(rewrite); }
-      };
-    })(),
+    /* Wires the path-based URL contract for dev, preview, and build. */
+    topicRoutes(),
 
     /* Patch CACHE_NAME in dist/sw.js so the service worker invalidates its
        cache-first store on every deploy. */
@@ -123,7 +272,8 @@ export default defineConfig({
         { src: 'site.webmanifest',           dest: '.' },
         { src: 'CNAME',                      dest: '.' },
         { src: 'robots.txt',                 dest: '.' },
-        { src: 'sitemap.xml',                dest: '.' },
+        /* sitemap.xml is generated at build time by topic-routes — no
+           static source file to copy here. */
         { src: 'sw.js',                      dest: '.' },
         { src: '.well-known/**/*',           dest: '.well-known' }
       ]

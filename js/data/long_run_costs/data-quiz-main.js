@@ -5,7 +5,7 @@
     topicId:  'long_run_costs_main',
     title:    'Long-Run Costs &amp; Economies of Scale',
     subtitle: 'Theme 3 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'long_run_costs_main' }),
+    backUrl:  TopicLoader.routes.learn('long_run_costs_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers economies and diseconomies of scale, LRAC envelope curve, minimum efficient scale, and natural monopoly',
     shortNames: [

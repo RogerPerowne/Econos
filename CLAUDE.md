@@ -33,59 +33,89 @@ git push -u origin <dev-branch> --force
 
 ## URL & routing rules
 
-The site has **exactly six HTML files at the repo root**:
+### The contract (path-based)
+
+User-facing URLs are path-based, hyphenated, and contain neither `.html`
+nor a query string for the topic / station / quiz set:
 
 ```
-index.html  learn.html  link.html  land.html  quiz.html  login.html
+/                                 home (topic picker)
+/learn/<topic>                    Learn It                e.g. /learn/inflation
+/link/<topic>/<station>           Link It                 e.g. /link/inflation/chain
+                                                          /link/inflation/chain-open
+/land/<topic>/<section>           Land It                 e.g. /land/inflation/a
+/quiz/<topic>/<set>               Standalone quiz         e.g. /quiz/inflation/main
+/login /privacy-policy /terms     standalone shells
+/offline /404
 ```
 
-**Do not add new HTML files at the repo root.** A new topic or station
-never needs new HTML — it needs new data + (occasionally) a router
-station entry.
+`<topic>` and `<station>` slugs use hyphens. Internal IDs (in `js/topics.js`,
+in data-file paths under `js/data/<id>/...`, in router config) use underscores.
+The two are bridged at exactly one point — `TopicLoader.toSlug` / `.fromSlug`
+in `js/topic-loader.js`. Don't introduce a second mapping.
 
-### Clean URLs (no `.html` extension)
+### How GitHub Pages serves these
 
-User-facing URLs **never include `.html`**. GitHub Pages serves `learn.html`
-when the browser asks for `/learn`; the Vite `clean-urls` plugin in
-`vite.config.js` mirrors the same rewrite for dev/preview. Every internal
-href, every JS string used as a URL, every canonical / og:url meta tag, and
-every sitemap entry uses the extensionless form.
+Every path-based URL has a **real generated file** in `dist/`. The
+`topic-routes` plugin in `vite.config.js` walks `js/topics.js` at build
+time and writes, for each available topic + station:
 
-- `/` — home (do **not** link to `/index.html`; sw.js no longer precaches it as a separate entry either)
-- `/learn?topic=<id>` — Learn It cards.
-- `/link?topic=<id>&station=<intro|context|chain|chain_open|diagram|depends|judge|complete|quiz>` — Link It stations, routed by `LinkRouter` (`js/engines/link-router.js`).
-- `/land?topic=<id>&station=<intro|a|b|c|complete|quiz>` — Land It sections, routed by `LandRouter`.
-- `/quiz?topic=<id>&quiz=<set>` — Topic quizzes.
-- `/login`, `/privacy-policy`, `/terms`, `/offline`, `/404` — standalone shells.
+```
+dist/learn/<topic-slug>/index.html
+dist/link/<topic-slug>/<station>/index.html
+dist/land/<topic-slug>/<section>/index.html
+dist/quiz/<topic-slug>/<set>/index.html
+```
 
-`TopicLoader.buildUrl(...)` is the canonical URL builder — it now emits
-clean form (`/learn?topic=…&station=…`). Engines and data files should keep
-calling `TopicLoader.buildUrl('link_intro.html')` etc.; the loader rewrites
-through `PAGE_MAP` *and* strips `.html` in one step.
+Each generated file is a copy of the matching base shell (`learn.html`,
+`link.html`, ...) with the `<title>`, `<meta name=description>`, `og:*`,
+and `<link rel=canonical>` rewritten to be topic-specific. The browser
+hits the URL, GitHub Pages returns a 200, the shell HTML loads, and the
+client-side `TopicLoader` reads `window.location.pathname` to figure out
+what to render. No client-side redirects, no `?topic=` query string, no
+404s for canonical URLs.
 
-### Legacy filenames are gone
+The same plugin runs as a Connect middleware in `npm run dev` and
+`npm run preview`, rewriting `/learn/<topic>` → `/learn.html` on the
+request so the dev server serves the right base shell.
 
-Old per-section URLs (`topic.html`, `link_chain.html`, `land_section_a.html`, etc.) **do not exist as files or HTTP routes**. `scripts/lint.sh` blocks them from being re-introduced.
+### The URL API (the only way to build a URL in code)
 
-The aliasing layer in `js/topic-loader.js` (`PAGE_MAP`) is kept because **per-topic data files still write the legacy names** for backwards compatibility — e.g. `backUrl: TopicLoader.buildUrl('link_intro.html')`. The loader rewrites that to `/link?topic=…&station=intro` before the URL ever hits the network. **New code may write the canonical form:** `TopicLoader.buildUrl('link.html', { station: 'intro' })`.
+```js
+TopicLoader.routes.home()              // → '/'
+TopicLoader.routes.learn(topic?)       // → '/learn/<topic>'
+TopicLoader.routes.link(station, topic?)
+TopicLoader.routes.land(section, topic?)
+TopicLoader.routes.quiz(set, topic?)
+```
 
-### Sitemap — keep it current
+Topic defaults to the current topic from the URL. **There is no legacy
+`buildUrl(legacyFilename)` API** — every call site (engines, data files,
+shells) uses `routes`. The base shell HTML files (`learn.html` etc.) stay
+at the repo root because the build copies them into the per-topic
+subdirectories — don't add additional HTML files at the root.
 
-`sitemap.xml` ships with the deployed site and is consumed by search engines.
-**Update it as part of any change that touches what URLs exist or what their
-content is.** Concretely:
+### Inbound legacy URLs
 
-- Add a `<url>` entry when a new shell route or topic becomes reachable.
-- Remove (or stop emitting) entries when a route goes away.
-- Bump `<lastmod>` to today on the entries that meaningfully changed.
+`TopicLoader` includes a one-shot redirect at boot that rewrites any
+inbound `?topic=…&station=…` query-string URL to the canonical path form
+via `history.replaceState`. Anyone landing on a stale link from before
+the migration sees the address bar fix itself once. No reload, no flash.
 
-When in doubt, refresh `<lastmod>` for the affected entries — under-updating
-the sitemap is the failure mode, not over-updating.
+### Sitemap
+
+`sitemap.xml` is **generated** by the `topic-routes` plugin from the same
+topic registry that drives the per-topic shells, so it can't drift. Don't
+hand-edit it. If you change the topic registry, the next `npm run build`
+emits the right sitemap.
 
 ### Navigation contract (enforced by lint)
 
-- **Engines must never call `window.location.href` / `.replace` directly.** Use `TopicLoader.go(url)` so SPA routers can intercept. `scripts/lint.sh` fails the build on a violation.
-- The two router files (`link-router.js`, `land-router.js`) are allowed to call `window.location.href` as the cross-shell escape hatch.
+- **Engines must never call `window.location.href` / `.replace` directly.**
+  Use `TopicLoader.go(url)` so SPA routers can intercept. `scripts/lint.sh`
+  fails the build on a violation.
+- The two router files (`link-router.js`, `land-router.js`) are allowed to
+  call `window.location.href` as the cross-shell escape hatch.
 
 ## Conventions enforced by CI
 

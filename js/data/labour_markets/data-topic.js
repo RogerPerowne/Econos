@@ -53,7 +53,7 @@ window.ECONOS_TOPIC = {
         { term: 'Labour demand curve', def: 'The firm\'s MRP curve – at each wage, the firm hires where W = MRP. Higher wages → fewer workers hired.' }
       ],
       examEdge: 'The MRP = W condition is directly analogous to MR = MC in product markets. Just as a firm produces where the marginal revenue from the last unit equals its marginal cost, it hires where the marginal revenue product of the last worker equals the marginal cost of labour (the wage). This symmetry is important: labour market equilibrium is just profit maximisation applied to factor markets. A worker worth £30/hour will not be employed at a wage of £35/hour.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -5,7 +5,7 @@
     topicId:  'growth_measure_main',
     title:    'Economic Growth & National Income',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'growth_measure' }),
+    backUrl:  TopicLoader.routes.learn('growth_measure'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers GDP measurement, real vs nominal, GNI, PPP, and welfare limits of GDP',
     shortNames: [

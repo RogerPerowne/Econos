@@ -5,7 +5,7 @@
     topicId:  'market_failure_main',
     title:    'Market Failure',
     subtitle: 'Theme 1 &middot; Topic 3.1 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'market_failure_main' }),
+    backUrl:  TopicLoader.routes.learn('market_failure_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers types of market failure, externalities, public goods, information gaps, and deadweight loss',
     shortNames: [

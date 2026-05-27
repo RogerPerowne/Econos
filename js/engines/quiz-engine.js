@@ -1272,7 +1272,7 @@
 
       '<div class="quiz-results__actions">' +
         '<button class="quiz-btn quiz-btn--secondary" onclick="restartQuiz()">Redo quiz</button>' +
-        '<a class="quiz-btn quiz-btn--primary" href="' + TopicLoader.buildUrl('link_intro.html') + '">On to Link it →</a>' +
+        '<a class="quiz-btn quiz-btn--primary" href="' + TopicLoader.routes.link('intro') + '">On to Link it →</a>' +
       '</div>' +
 
       '</div>');

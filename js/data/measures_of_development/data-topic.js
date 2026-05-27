@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: GDP per capita PPP vs nominal; HDI methodology and rankings; MPI; comparison of high-HDI vs low-HDI economies; the Easterlin paradox (income vs happiness); sustainability indicators.',
       examEdge: 'The A* development indicator answer: identify the limitation of any single measure (GDP misses health and education; HDI misses inequality and environment), then either use multiple indicators or use a composite (HDI) acknowledging its weaknesses. Strong essays use specific data: Norway HDI 0.96 vs Niger 0.39 (2024).',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

@@ -1,17 +1,32 @@
 /* ============================================================
-   ECONOS — Topic loader & URL builder
+   ECONOS — Topic loader & URL routes
    ─────────────────────────────────────────────────────────────
-   Reads ?topic=<id> from the URL, dynamically loads the right
-   per-topic data file(s), and provides URL builders that bridge
-   the old per-section page names (link_chain.html etc.) to the
-   new consolidated SPA shells (learn.html / link.html / land.html).
+   Single source of truth for the site's URL contract. The
+   public form is path-based and human-readable:
 
-   The page-map keeps engine code untouched: an engine asks for
-   `TopicLoader.buildUrl('link_chain.html')` and gets back
-   `link.html?topic=<id>&station=chain`. If the page IS one of the
-   SPA shells AND the matching router is already loaded,
-   `TopicLoader.go(url)` performs an in-place SPA navigation
-   instead of a full reload.
+       /                          home (topic index)
+       /learn/<topic>             Learn It
+       /link/<topic>/<station>    Link It (intro|context|chain|
+                                  chain-open|calc|data|extract|
+                                  predict|diagram|depends|judge|
+                                  complete|quiz)
+       /land/<topic>/<section>    Land It (intro|a|b|c|complete|
+                                  quiz)
+       /quiz/<topic>/<set>        Standalone quiz
+
+   <topic> in the URL is the topic ID with underscores replaced
+   by hyphens (toSlug); the parser maps it back (fromSlug) when
+   loading data files, which live at /js/data/<topic-id>/. Same
+   rule for the only multi-word station, chain-open ↔ chain_open.
+
+   Path parsing happens once in `parsePath()` and is exposed via
+   `getTopic`, `getStation`, `getQuizSet`, `getShell`. URL building
+   goes through `routes.<shell>(...)` — these are the canonical
+   builders used by every engine, every shell, every data file.
+
+   `go(url)` performs an in-place SPA navigation if the target is
+   a station inside the currently-loaded Link or Land shell,
+   otherwise a full page nav.
    ============================================================ */
 
 (function () {
@@ -19,43 +34,47 @@
 
   var DEFAULT_TOPIC = 'inflation';
 
-  /* Legacy per-section page → new shell + station mapping.
-     Anything not listed here passes through buildUrl unchanged
-     (index.html, login.html, quiz.html, learn.html itself, …). */
-  var PAGE_MAP = {
-    /* Learn It — collapsed to a single page */
-    'topic.html':           { page: 'learn.html' },
+  /* Single mapping point between internal IDs (underscore) and
+     URL slugs (hyphen). The mapping is bijective because no
+     existing topic ID or station name contains a hyphen. */
+  function toSlug(id)     { return String(id || '').replace(/_/g, '-'); }
+  function fromSlug(slug) { return String(slug || '').replace(/-/g, '_'); }
 
-    /* Link It stations */
-    'link_intro.html':      { page: 'link.html', station: 'intro'      },
-    'link_context.html':    { page: 'link.html', station: 'context'    },
-    'link_chain.html':      { page: 'link.html', station: 'chain'      },
-    'link_chain_open.html': { page: 'link.html', station: 'chain_open' },
-    'link_calc.html':       { page: 'link.html', station: 'calc'       },
-    'link_data.html':       { page: 'link.html', station: 'data'       },
-    'link_extract.html':    { page: 'link.html', station: 'extract'    },
-    'link_predict.html':    { page: 'link.html', station: 'predict'    },
-    'link_diagram.html':    { page: 'link.html', station: 'diagram'    },
-    'link_depends.html':    { page: 'link.html', station: 'depends'    },
-    'link_judge.html':      { page: 'link.html', station: 'judge'      },
-    'link_complete.html':   { page: 'link.html', station: 'complete'   },
+  /* Recognised path segments. Used by the parser to distinguish
+     a shell+topic+station path from random URLs that just happen
+     to start with /link etc. */
+  var SHELLS = { learn: true, link: true, land: true, quiz: true };
 
-    /* Land It sections */
-    'land_intro.html':       { page: 'land.html', station: 'intro'    },
-    'land_section_a.html':   { page: 'land.html', station: 'a'        },
-    'land_section_b.html':   { page: 'land.html', station: 'b'        },
-    'land_section_c.html':   { page: 'land.html', station: 'c'        },
-    'land_complete.html':    { page: 'land.html', station: 'complete' }
-  };
-
-  function getTopic() {
-    try {
-      var params = new URLSearchParams(window.location.search);
-      var t = params.get('topic');
-      if (t) { return t; }
-    } catch (e) { /* older browsers */ }
-    return DEFAULT_TOPIC;
+  /* parsePath('/link/inflation/chain-open')
+       → { shell: 'link', topic: 'inflation', station: 'chain_open' }
+     parsePath('/')              → { shell: 'home' }
+     parsePath('/learn')         → { shell: 'learn', topic: null }
+     parsePath('/quiz/X/main')   → { shell: 'quiz', topic: 'X', quizSet: 'main' }
+     Returns null for paths the loader doesn't recognise. */
+  function parsePath(pathname) {
+    var p = String(pathname || window.location.pathname || '/');
+    /* Strip trailing slash (except for the root). */
+    if (p.length > 1 && p.charAt(p.length - 1) === '/') {
+      p = p.substring(0, p.length - 1);
+    }
+    if (p === '' || p === '/') { return { shell: 'home' }; }
+    var parts = p.split('/').filter(Boolean); // remove empty leading from "/"
+    var shell = parts[0];
+    if (!SHELLS[shell]) { return null; }
+    var topic = parts[1] ? fromSlug(parts[1]) : null;
+    var third = parts[2] ? fromSlug(parts[2]) : null;
+    if (shell === 'quiz') { return { shell: shell, topic: topic, quizSet: third }; }
+    return { shell: shell, topic: topic, station: third };
   }
+
+  function getRoute() {
+    return parsePath(window.location.pathname) || { shell: null };
+  }
+
+  function getTopic()    { return getRoute().topic    || DEFAULT_TOPIC; }
+  function getStation()  { return getRoute().station  || null; }
+  function getQuizSet()  { return getRoute().quizSet  || null; }
+  function getShell()    { return getRoute().shell    || null; }
 
   /* Canonical session labels — single source of truth so data files
      don't all need to repeat 'Session N of 3: …'. Engines should pass
@@ -67,57 +86,37 @@
     land:  'Session 3 of 3: Land',
     quiz:  'Quiz'
   };
-  function sessionLabel(stage) {
-    return SESSION_LABELS[stage] || '';
-  }
+  function sessionLabel(stage) { return SESSION_LABELS[stage] || ''; }
 
-  /* Build `page?topic=...&...extras`. If `page` is a legacy
-     per-section file, transparently rewrite to the consolidated
-     shell + ?station=... — caller code stays identical. */
-  function buildUrl(page, extra) {
-    var topic = getTopic();
-    var target = page;
-    var station = null;
-    if (PAGE_MAP.hasOwnProperty(page)) {
-      var mapped = PAGE_MAP[page];
-      target = mapped.page;
-      station = mapped.station || null;
+  /* URL builders. Every internal href, every JS string used as a
+     URL, every router pushState — they all flow through these.
+     Topic defaults to the current topic from the URL so most
+     callers don't need to pass it. */
+  var routes = {
+    home:  function ()             { return '/'; },
+    learn: function (topic)        { return '/learn/' + toSlug(topic || getTopic()); },
+    link:  function (station, topic) {
+      return '/link/' + toSlug(topic || getTopic()) + '/' + toSlug(station || 'intro');
+    },
+    land:  function (section, topic) {
+      return '/land/' + toSlug(topic || getTopic()) + '/' + toSlug(section || 'intro');
+    },
+    quiz:  function (set, topic) {
+      return '/quiz/' + toSlug(topic || getTopic()) + '/' + toSlug(set || 'main');
     }
-    /* Clean-URL canonicalisation: emit /learn, /link, /land, /quiz (and /
-       for index). GitHub Pages serves the matching .html file; the Vite
-       dev/preview server has a middleware doing the same rewrite. */
-    if (target === 'index.html') {
-      target = '/';
-    } else {
-      target = '/' + target.replace(/\.html$/, '');
-    }
-    var qs = '?topic=' + encodeURIComponent(topic);
-    if (station) {
-      qs += '&station=' + encodeURIComponent(station);
-    }
-    if (extra) {
-      for (var k in extra) {
-        if (extra.hasOwnProperty(k)) {
-          qs += '&' + encodeURIComponent(k) + '=' + encodeURIComponent(extra[k]);
-        }
-      }
-    }
-    return target + qs;
-  }
+  };
 
   /* Programmatic navigation. If the URL is a station inside the
      currently-loaded SPA shell, hand off to that router for a
-     pushState SPA transition. Otherwise do a normal full nav so
-     the right HTML shell takes over. */
+     pushState SPA transition. Otherwise do a real page nav. */
   function go(url) {
     if (!url) { return; }
     try {
-      if (window.LinkRouter && /(^|\/)link(?:\.html)?(\?|$)/.test(url) &&
-          /[?&]station=/.test(url)) {
+      var route = parsePath(String(url).split('?')[0].split('#')[0]);
+      if (route && route.shell === 'link' && route.station && window.LinkRouter) {
         window.LinkRouter.navigate(url); return;
       }
-      if (window.LandRouter && /(^|\/)land(?:\.html)?(\?|$)/.test(url) &&
-          /[?&]station=/.test(url)) {
+      if (route && route.shell === 'land' && route.station && window.LandRouter) {
         window.LandRouter.navigate(url); return;
       }
     } catch (e) { /* fall through to full nav */ }
@@ -144,7 +143,7 @@
     function next() {
       if (idx >= files.length) { callback(); return; }
       var script = document.createElement('script');
-      script.src = 'js/data/' + topic + '/' + files[idx];
+      script.src = '/js/data/' + topic + '/' + files[idx];
       script.onload = function () { idx++; next(); };
       script.onerror = function () {
         showMissingTopicMessage(topic, sectionLabel || 'this section');
@@ -172,11 +171,49 @@
     }, sectionLabel);
   }
 
+  /* One-shot redirect from the previous query-string URL form
+     (`?topic=foo&station=bar`) to the canonical path form. Runs
+     synchronously before any other script reads the URL, so the
+     rest of the codebase only ever sees the canonical form. */
+  (function redirectLegacyQueryUrls() {
+    try {
+      var search = window.location.search;
+      if (!search || search.indexOf('topic=') < 0) { return; }
+      var params = new URLSearchParams(search);
+      var topic  = params.get('topic');
+      if (!topic) { return; }
+      var shell  = getShell();
+      var target = null;
+      if (shell === 'learn' || shell === null) {
+        target = routes.learn(topic);
+      } else if (shell === 'link') {
+        target = routes.link(params.get('station') || 'intro', topic);
+      } else if (shell === 'land') {
+        target = routes.land(params.get('station') || 'intro', topic);
+      } else if (shell === 'quiz') {
+        target = routes.quiz(params.get('quiz') || 'main', topic);
+      }
+      if (target) { window.history.replaceState(null, '', target); }
+    } catch (e) { /* don't block boot on a redirect failure */ }
+  })();
+
   window.TopicLoader = {
+    /* URL parsing */
+    parsePath:           parsePath,
     getTopic:            getTopic,
-    buildUrl:            buildUrl,
+    getStation:          getStation,
+    getQuizSet:          getQuizSet,
+    getShell:            getShell,
+    /* Slug helpers */
+    toSlug:              toSlug,
+    fromSlug:            fromSlug,
+    /* URL building — the canonical entry points */
+    routes:              routes,
+    /* Navigation */
     go:                  go,
+    /* Misc */
     sessionLabel:        sessionLabel,
+    /* Data loading */
     loadData:            loadData,
     loadDataAndBoot:     loadDataAndBoot,
     loadDataThenScript:  loadDataThenScript

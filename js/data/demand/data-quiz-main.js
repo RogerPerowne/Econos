@@ -5,7 +5,7 @@
     topicId:  'demand_main',
     title:    'Demand',
     subtitle: 'Theme 1 &middot; Topic 2.1 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'demand_main' }),
+    backUrl:  TopicLoader.routes.learn('demand_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers the law of demand, shifts vs movements, determinants, consumer surplus, derived demand, and evaluation',
     shortNames: [

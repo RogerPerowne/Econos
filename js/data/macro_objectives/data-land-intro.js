@@ -28,8 +28,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'The core skill is identifying WHICH objectives conflict and WHY. Growth vs inflation, unemployment vs inflation (Phillips curve), current account vs growth &#8211; always explain the mechanism of conflict, not just state that it exists.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                     }
   ]
 };

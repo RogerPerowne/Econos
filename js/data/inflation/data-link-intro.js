@@ -20,20 +20,20 @@ window.ECONOS_LINK_INTRO = {
     tip: "These steps are not tests – they're cognitive drills. Treat them like circuits in the gym: same movement patterns, different topic content.",
 
     stations: [
-      { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
-      { num: 2, name: 'Build the chain', skill: 'Analysis', sub: 'Order or fill the steps in a reasoning chain.', href: TopicLoader.buildUrl('link_chain.html'), state: 'available' },
-      { num: 3, name: 'Diagram connector', skill: 'Analysis', sub: 'Pick, label, interpret and explain the right diagram.', href: TopicLoader.buildUrl('link_diagram.html'), state: 'available' },
-      { num: 4, name: 'It depends on', skill: 'Evaluation', sub: 'Rank the factors that most change the answer.', href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation', sub: 'Synthesise everything into an exam-quality judgement.', href: TopicLoader.buildUrl('link_judge.html'), state: 'available' }
+      { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.routes.link('context'), state: 'available' },
+      { num: 2, name: 'Build the chain', skill: 'Analysis', sub: 'Order or fill the steps in a reasoning chain.', href: TopicLoader.routes.link('chain'), state: 'available' },
+      { num: 3, name: 'Diagram connector', skill: 'Analysis', sub: 'Pick, label, interpret and explain the right diagram.', href: TopicLoader.routes.link('diagram'), state: 'available' },
+      { num: 4, name: 'It depends on', skill: 'Evaluation', sub: 'Rank the factors that most change the answer.', href: TopicLoader.routes.link('depends'), state: 'available' },
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation', sub: 'Synthesise everything into an exam-quality judgement.', href: TopicLoader.routes.link('judge'), state: 'available' }
     ],
 
     stages: [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',       state: 'done',     href: TopicLoader.buildUrl('topic.html')      },
+      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',       state: 'done',     href: TopicLoader.routes.learn()      },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context',    state: 'current'                                       },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: TopicLoader.buildUrl('land_intro.html') }
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: TopicLoader.routes.land('intro') }
     ],
 
-    startUrl:   TopicLoader.buildUrl('link_context.html'),
+    startUrl:   TopicLoader.routes.link('context'),
     startLabel: 'Start Link it'
   }
 };

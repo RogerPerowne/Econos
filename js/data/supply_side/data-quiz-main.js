@@ -5,7 +5,7 @@
     topicId:  'supply_side_main',
     title:    'Supply-Side Policies',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'supply_side' }),
+    backUrl:  TopicLoader.routes.learn('supply_side'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers market-based vs interventionist tools, NAIRU, and the productivity puzzle',
     shortNames: [

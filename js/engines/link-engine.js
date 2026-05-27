@@ -341,7 +341,7 @@
           var u = Progress.getLinkUnlocked();
           Progress.setLinkUnlocked(Math.max(u, 0));
         } catch (e) {}
-        TopicLoader.go(TopicLoader.buildUrl('link_chain.html'));
+        TopicLoader.go(TopicLoader.routes.link('chain'));
       });
     }
 

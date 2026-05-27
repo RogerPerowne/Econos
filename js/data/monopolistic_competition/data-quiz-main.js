@@ -5,7 +5,7 @@
     topicId:  'monopolistic_competition_main',
     title:    'Monopolistic Competition',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'monopolistic_competition' }),
+    backUrl:  TopicLoader.routes.learn('monopolistic_competition'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers product differentiation, SR/LR equilibrium, and excess capacity',
     shortNames: [

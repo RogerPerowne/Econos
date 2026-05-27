@@ -5,7 +5,7 @@
     topicId:  'poverty_main',
     title:    'Poverty',
     subtitle: 'Labour Markets & Distribution',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'poverty' }),
+    backUrl:  TopicLoader.routes.learn('poverty'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers absolute vs relative poverty, measurement, causes, and anti-poverty policies',
     shortNames: [

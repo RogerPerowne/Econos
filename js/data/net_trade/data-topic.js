@@ -506,7 +506,7 @@ window.ECONOS_TOPIC = {
         text: 'The best answers combine exchange-rate analysis, Marshall-Lerner and supply-side evaluation.'
       },
 
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

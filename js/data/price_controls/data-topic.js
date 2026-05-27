@@ -499,7 +499,7 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🔍', head: 'Information problems',      body: 'Regulators rarely know the true MEC or MEB. Set the tax/cap/subsidy wrong and you create distortion without the welfare correction.' }
       ],
       examEdge: '<strong>The synthesis answer:</strong> no tool is perfect. The best policy is usually a <em>policy mix</em> – e.g. carbon pricing (permits) + R&D subsidies (technology push) + regulation (banning new gas boilers from 2035) + information (EPC ratings). <strong>A* upgrade:</strong> identify the underlying market failure first, then propose the best-fit tool, then add an evaluation of which government-failure risk is most likely to bite. Real-world policy is always a balance between the original market failure and the new distortions intervention creates.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -5,7 +5,7 @@
     topicId:  'consumer_producer_surplus_main',
     title:    'Consumer &amp; Producer Surplus',
     subtitle: 'Theme 1 &middot; Topic 2.8 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'consumer_producer_surplus_main' }),
+    backUrl:  TopicLoader.routes.learn('consumer_producer_surplus_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers CS and PS definitions, calculation, total welfare, deadweight loss, and policy effects on surplus',
     shortNames: [

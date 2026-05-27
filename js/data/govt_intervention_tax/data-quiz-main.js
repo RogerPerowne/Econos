@@ -5,7 +5,7 @@
     topicId:  'govt_intervention_tax_main',
     title:    'Government Intervention: Taxes',
     subtitle: 'Theme 1.17 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'govt_intervention_tax_main' }),
+    backUrl:  TopicLoader.routes.learn('govt_intervention_tax_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers corrective taxes, direct vs indirect taxes, tax incidence, regressive vs progressive effects, and policy evaluation',
     shortNames: [

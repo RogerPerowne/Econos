@@ -5,7 +5,7 @@
     topicId:  'ad_main',
     title:    'Aggregate Demand',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'ad' }),
+    backUrl:  TopicLoader.routes.learn('ad'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers AD components, shifts, the multiplier, and macroeconomic equilibrium',
     shortNames: [

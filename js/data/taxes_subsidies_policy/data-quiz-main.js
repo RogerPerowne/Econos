@@ -5,7 +5,7 @@
     topicId:  'taxes_subsidies_policy_main',
     title:    'Taxes & Subsidies as Policy Tools',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'taxes_subsidies_policy' }),
+    backUrl:  TopicLoader.routes.learn('taxes_subsidies_policy'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers taxation principles, Laffer curve, subsidies, incidence, and policy evaluation',
     shortNames: [

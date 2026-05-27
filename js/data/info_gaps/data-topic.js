@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Asymmetric information: one party knows more than the other. Before the deal → adverse selection risk. After the deal → moral hazard risk. Both lead to market failure.',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'done' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -356,7 +356,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems – use this evaluative balance in essays.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (non-excludable → free rider → D_private collapses → taxation solves), add the condition (pure vs quasi-public, CBA accuracy), and acknowledge the limitation honestly – government failure in setting Q* is the principal risk of state provision.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

@@ -5,7 +5,7 @@
     topicId:  'yed_xed_main',
     title:    'YED &amp; XED',
     subtitle: 'Theme 1 &middot; Topic 2.3 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'yed_xed_main' }),
+    backUrl:  TopicLoader.routes.learn('yed_xed_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers YED and XED formulas, normal/inferior/luxury classification, business strategy, and macro implications',
     shortNames: [

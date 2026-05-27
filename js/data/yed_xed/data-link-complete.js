@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (YED > 1 → D shifts left → lower P and Q), add the condition (distribution of income fall, real vs nominal), and acknowledge the temporary/permanent distinction as an honest limitation.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

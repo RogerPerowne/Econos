@@ -8,7 +8,7 @@
   'use strict';
 
   window.bootLinkComplete = function () {
-    if (Progress.getLinkUnlocked() < 4) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; }
+    if (Progress.getLinkUnlocked() < 4) { TopicLoader.go(TopicLoader.routes.link('context')); return; }
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_COMPLETE;
@@ -159,7 +159,7 @@
 
     function renderFooter() {
       var weakHref = weakestId
-        ? TopicLoader.buildUrl('link_' + weakestId + '.html')
+        ? TopicLoader.routes.link(String(weakestId).replace(/_/g, '-'))
         : '#';
 
       return ''
@@ -224,7 +224,7 @@
         + '<div class="app theme--link">'
         +   Shell.renderSidebar({ activeNav: 'My topics' })
         +   '<div id="main-content" class="main" tabindex="-1" role="main">'
-        +     Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('link_intro.html'), backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: DATA.topic })
+        +     Shell.renderTopbar({ backUrl: TopicLoader.routes.link('intro'), backLabel: 'Back to dashboard', sessionLabel: DATA.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: DATA.topic })
         +     '<div class="page">'
         +       '<div class="link-station">'
         +         '<div class="link-card">'

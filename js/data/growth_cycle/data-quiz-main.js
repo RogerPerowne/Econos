@@ -5,7 +5,7 @@
     topicId:  'growth_cycle_main',
     title:    'Trade Cycle, Shocks & Economic Growth',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'growth_cycle' }),
+    backUrl:  TopicLoader.routes.learn('growth_cycle'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers the four trade cycle phases, demand/supply shocks, and costs and benefits of growth',
     shortNames: [

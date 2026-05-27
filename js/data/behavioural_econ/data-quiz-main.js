@@ -5,7 +5,7 @@
     topicId:  'behavioural_econ_main',
     title:    'Behavioural Economics',
     subtitle: 'Theme 1 &middot; Topic 2.10 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'behavioural_econ_main' }),
+    backUrl:  TopicLoader.routes.learn('behavioural_econ_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers bounded rationality, loss aversion, status quo bias, nudge theory, default options, and policy applications',
     shortNames: [

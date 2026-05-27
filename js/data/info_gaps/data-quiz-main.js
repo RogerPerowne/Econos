@@ -5,7 +5,7 @@
     topicId:  'info_gaps_main',
     title:    'Information Gaps',
     subtitle: 'Theme 1 &middot; Topic 3.4 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'info_gaps_main' }),
+    backUrl:  TopicLoader.routes.learn('info_gaps_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers information asymmetry, adverse selection, moral hazard, signalling, and market responses to information gaps',
     shortNames: [

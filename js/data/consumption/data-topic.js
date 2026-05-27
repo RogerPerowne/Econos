@@ -526,7 +526,7 @@ window.ECONOS_TOPIC = {
         text: 'The best essays move from "C rises" to "therefore AD rises", then evaluate leakages, inflation pressure and whether the effect lasts.'
       },
 
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: Harrod-Domar model (savings + capital-output ratio); Lewis dual-sector model; human capital and Solow growth model; institutional economics (North, Acemoglu); resource curse and Dutch disease; debt sustainability; the role of FDI; trade openness vs import substitution.',
       examEdge: 'East Asian growth miracle (South Korea, Taiwan, Singapore): combined high savings (~30%+ of GDP), investment in human capital (universal education), export orientation, and developmental state institutions. NOT laissez-faire – strategic state intervention. Contrasts with import substitution failures in Latin America and weak institutions in Sub-Saharan Africa.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

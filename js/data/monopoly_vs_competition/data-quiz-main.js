@@ -5,7 +5,7 @@
     topicId:  'monopoly_vs_competition_main',
     title:    'Monopoly vs Competition',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'monopoly_vs_competition' }),
+    backUrl:  TopicLoader.routes.learn('monopoly_vs_competition'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers welfare comparison, efficiency, and competition policy',
     shortNames: [

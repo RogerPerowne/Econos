@@ -5,7 +5,7 @@
     topicId:  'fiscal_policy_main',
     title:    'Fiscal Policy',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'fiscal_policy' }),
+    backUrl:  TopicLoader.routes.learn('fiscal_policy'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers government spending, taxation, deficit/debt, automatic stabilisers, and crowding out',
     shortNames: [

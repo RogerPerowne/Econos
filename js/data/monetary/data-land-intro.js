@@ -28,8 +28,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'Always trace the full transmission mechanism: Bank Rate → commercial interest rates → consumption and investment → aggregate demand → price level and output. Do not just say &#8220;raising rates reduces inflation&#8221; &#8211; show the mechanism step by step.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                     }
   ]
 };

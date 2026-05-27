@@ -5,7 +5,7 @@
     topicId:  'income_inequality_main',
     title:    'Income & Wealth Inequality',
     subtitle: 'Labour Markets & Distribution',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'income_inequality' }),
+    backUrl:  TopicLoader.routes.learn('income_inequality'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers Lorenz curve, Gini coefficient, causes, and redistribution policies',
     shortNames: [

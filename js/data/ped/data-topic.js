@@ -17,8 +17,8 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'PED = % change in QD \xf7 % change in P. Always negative. |PED| > 1 = elastic; |PED| < 1 = inelastic; |PED| = 1 = unit elastic.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards',            state: 'done',      href: TopicLoader.buildUrl('topic.html')      },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with context',  state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 1, name: 'Learn it', sub: '7 concept cards',            state: 'done',      href: TopicLoader.routes.learn()      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with context',  state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions', state: 'locked'                                                   }
     ]
   },
@@ -349,7 +349,7 @@ PED is <strong>always negative</strong> – price and quantity demanded move in 
         { label: 'Apply to the product and context', text: 'Explain why this good has this PED using at least one determinant tied to the specific product.' },
         { label: 'Link to revenue or policy consequences', text: 'State what happens to TR, who bears a tax, or how a firm should price. This is where evaluation marks sit.' }
       ],
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (division of labour → surplus → money → exchange), add the condition (task divisibility / human capital / exchange systems), and acknowledge the limitation (systemic vulnerability from interdependence).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

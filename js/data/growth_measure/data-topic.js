@@ -453,7 +453,7 @@ window.ECONOS_TOPIC = {
         title: 'Exam edge',
         text: 'Marks are won by <strong>clarity</strong>, <strong>accuracy</strong> and <strong>evaluation</strong>. Always define the data, use the framework, and connect to the UK economy. Show judgement – don\'t just list facts.'
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

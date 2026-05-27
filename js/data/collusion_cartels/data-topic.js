@@ -133,7 +133,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'The EU block exemption framework acknowledges that not all inter-firm coordination is harmful. R&D agreements between competitors can be exempted from cartel prohibition if they generate innovation benefits that consumers share. Joint purchasing agreements, standardisation agreements, and crisis cartels have been permitted under specific conditions. The principle: prohibition applies to agreements that restrict competition without generating offsetting consumer benefits.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

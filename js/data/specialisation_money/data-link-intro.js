@@ -22,20 +22,20 @@ window.ECONOS_LINK_INTRO = {
     tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
-      { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },
-      { num: 2, name: 'Build the chain', skill: 'Analysis', sub: 'Order or fill the steps in a reasoning chain.', href: TopicLoader.buildUrl('link_chain.html'), state: 'available' },
-      { num: 3, name: 'Predict outcome', skill: 'Analysis', sub: 'Predict how the market or economy will respond.', href: TopicLoader.buildUrl('link_predict.html'), state: 'available' },
-      { num: 4, name: 'It depends on', skill: 'Evaluation', sub: 'Rank the factors that most change the answer.', href: TopicLoader.buildUrl('link_depends.html'), state: 'available' },
-      { num: 5, name: 'Make the judgement', skill: 'Evaluation', sub: 'Synthesise everything into an exam-quality judgement.', href: TopicLoader.buildUrl('link_judge.html'), state: 'available' }
+      { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.routes.link('context'), state: 'available' },
+      { num: 2, name: 'Build the chain', skill: 'Analysis', sub: 'Order or fill the steps in a reasoning chain.', href: TopicLoader.routes.link('chain'), state: 'available' },
+      { num: 3, name: 'Predict outcome', skill: 'Analysis', sub: 'Predict how the market or economy will respond.', href: TopicLoader.routes.link('predict'), state: 'available' },
+      { num: 4, name: 'It depends on', skill: 'Evaluation', sub: 'Rank the factors that most change the answer.', href: TopicLoader.routes.link('depends'), state: 'available' },
+      { num: 5, name: 'Make the judgement', skill: 'Evaluation', sub: 'Synthesise everything into an exam-quality judgement.', href: TopicLoader.routes.link('judge'), state: 'available' }
     ],
 
     stages: [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',    state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
+      { num: 1, name: 'Learn it', sub: 'Recap and lock in the gems',    state: 'done',    href: TopicLoader.routes.learn()      },
       { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'current'                                                },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked'                                                 }
     ],
 
-    startUrl:   TopicLoader.buildUrl('link_context.html'),
+    startUrl:   TopicLoader.routes.link('context'),
     startLabel: 'Start Link it'
   }
 };

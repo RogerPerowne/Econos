@@ -5,7 +5,7 @@
     topicId:  'indirect_taxes_subsidies_main',
     title:    'Indirect Taxes &amp; Subsidies',
     subtitle: 'Theme 1 &middot; Topic 2.9 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'indirect_taxes_subsidies_main' }),
+    backUrl:  TopicLoader.routes.learn('indirect_taxes_subsidies_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers specific vs ad valorem taxes, subsidy mechanics, tax incidence, consumer/producer surplus effects, and deadweight loss',
     shortNames: [

@@ -28,8 +28,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'Always distinguish the TYPE of unemployment before prescribing policy. Cyclical unemployment requires demand-side stimulus. Structural unemployment requires supply-side retraining. The wrong policy for the type is a classic evaluation trap.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                     }
   ]
 };

@@ -25,8 +25,8 @@ window.ECONOS_TOPIC = {
     tip: 'Diagnose first, then treat. The same CPI figure can hide very different macroeconomic stories.',
     stages: [
       { num: 1, name: 'Learn it', sub: '8 concept cards',                 state: 'current' },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context',   state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: TopicLoader.buildUrl('land_intro.html') }
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context',   state: 'available', href: TopicLoader.routes.link('intro') },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',       state: 'available', href: TopicLoader.routes.land('intro') }
     ]
   },
 
@@ -660,7 +660,7 @@ window.ECONOS_TOPIC = {
         text: 'The best essays judge policies by the cause of inflation, not just by whether they reduce CPI. Analyse the diagnosis, the trade-offs and the likely effectiveness.'
       },
 
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'causes' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('causes'), label: 'Test yourself →' }
     }
 
   ]

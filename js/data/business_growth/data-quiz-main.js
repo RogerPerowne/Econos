@@ -5,7 +5,7 @@
     topicId:  'business_growth_main',
     title:    'Business Growth',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'business_growth' }),
+    backUrl:  TopicLoader.routes.learn('business_growth'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers internal growth, mergers, integration types, and demergers',
     shortNames: [

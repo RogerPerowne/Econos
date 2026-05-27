@@ -5,7 +5,7 @@
     topicId:  'specialisation_money_main',
     title:    'Specialisation &amp; Money',
     subtitle: 'Theme 1 &middot; Topic 1.5 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'specialisation_money_main' }),
+    backUrl:  TopicLoader.routes.learn('specialisation_money_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers division of labour, barter problem, four functions of money, characteristics of good money, and globalisation links',
     shortNames: [

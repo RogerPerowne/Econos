@@ -5,7 +5,7 @@
     topicId:  'profits_shutdown_main',
     title:    'Revenue, Profit & Shutdown',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'profits_shutdown' }),
+    backUrl:  TopicLoader.routes.learn('profits_shutdown'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers TR, AR, MR, profit, and shutdown decisions',
     shortNames: [

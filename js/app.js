@@ -4600,6 +4600,20 @@
         return `${title}<div style="display:grid;grid-template-columns:repeat(${n},1fr);gap:0;align-items:start;margin-bottom:18px;padding:10px 6px 4px;">${tiles}</div>`;
       })() : ''}
 
+      ${c.flow2 && c.flow2.length ? (() => {
+        const flowTones = ['green', 'amber', 'blue', 'purple', 'rose'];
+        const n = c.flow2.length;
+        const title = c.flow2Title ? genSecLabel(c.flow2Emoji || '➡️', c.flow2Title) : '';
+        const seps = Array.isArray(c.flow2Sep) ? c.flow2Sep : Array(n - 1).fill(c.flow2Sep || '→');
+        const pieces = c.flow2.map((step, i) => {
+          const t = PATTERN_TONES[step.tone || flowTones[i % flowTones.length]];
+          const tile = `<div style="flex:1 1 0;min-width:60px;background:${t.bg};border:1.5px solid ${t.border};border-radius:12px;padding:10px 10px 12px;text-align:center;">${step.icon ? `<div style="font-size:20px;line-height:1;margin-bottom:6px;">${step.icon}</div>` : ''}<div style="font-size:11px;font-weight:800;color:${t.label};line-height:1.25;margin-bottom:3px;">${step.title}</div>${step.sub ? `<div style="font-size:12px;font-weight:800;color:#0B1426;line-height:1.3;">${step.sub}</div>` : ''}</div>`;
+          const sep = i < n - 1 ? `<div style="display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#64748B;flex-shrink:0;padding:0 2px;">${seps[i] || '→'}</div>` : '';
+          return tile + sep;
+        }).join('');
+        return `${title}<div style="display:flex;align-items:stretch;flex-wrap:wrap;gap:4px;margin-bottom:18px;">${pieces}</div>`;
+      })() : ''}
+
       ${c.flowChart && c.flowChart.svgKey && I[c.flowChart.svgKey] ? (() => {
         const fc = c.flowChart;
         return `${fc.label ? genSecLabel(fc.emoji || '📊', fc.label) : ''}<div style="margin:0 0 12px;border-radius:12px;overflow:hidden;line-height:0;">${I[fc.svgKey]}</div>${fc.caption ? `<div style="font-size:13px;color:#475569;line-height:1.55;margin:0 0 22px;text-align:center;font-style:italic;">${fc.caption}</div>` : ''}`;

@@ -377,7 +377,7 @@ window.ECONOS_TOPIC = {
       },
       economistQuote: {
         portraitKey: 'economistCoyle',
-        tone: 'green',
+        tone: 'amber',
         label: 'Economist insight: Diane Coyle on GDP',
         quote: 'The way we measure the economy shapes the way we think about what economic policy should accomplish. GDP became the dominant metric not because it is the best measure of welfare, but because it was the measure that existed.',
         attribution: 'Diane Coyle, <em>GDP: A Brief but Affectionate History</em> (2014)'

@@ -62,7 +62,7 @@
       + '<aside class="sidebar" aria-label="Account and global navigation">'
       +   '<div class="sidebar__brand">'
       +     '<a href="/" class="sidebar__logo-link">'
-      +       '<img src="assets/logo-wordmark-tagline.png" alt="econos" class="sidebar__logo-full">'
+      +       '<img src="assets/logo-wordmark-mark.png" alt="econos" class="sidebar__logo-full">'
       +     '</a>'
       +   '</div>'
       +   '<nav class="sidebar__nav" aria-label="Main">'

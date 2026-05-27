@@ -15920,15 +15920,18 @@ window.ECONOS_ICONS = {
       <text x="245" y="287" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
       <text x="245" y="296" font-size="9" fill="#94A3B8" text-anchor="middle">(full-capacity output)</text>
     </g>
-    <!-- Layer 2: Keynesian LRAS (hockey-stick: flat then near-vertical near Yf) -->
+    <!-- Layer 2: Keynesian LRAS — classic hockey-stick.
+         Flat at a modest price level over the spare-capacity range,
+         rises steeply as the economy nears Yf, then vertical at Yf=245
+         (same x as Classical LRAS so the two views align). -->
     <g class="idl-2">
-      <path d="M 70,252 C 175,252 220,248 248,220 C 263,200 270,120 274,22" fill="none" stroke="#D97706" stroke-width="2.5"/>
-      <text x="278" y="17" font-size="12" fill="#D97706" font-weight="700">LRAS</text>
-      <line x1="274" y1="22" x2="274" y2="268" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="274" y="285" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
-      <text x="145" y="260" font-size="10" fill="#059669" font-weight="700">Flat range</text>
-      <text x="238" y="218" font-size="10" fill="#D97706" font-weight="700">Rising range</text>
-      <text x="258" y="78" font-size="10" fill="#DC2626" font-weight="700">Capacity limit</text>
+      <path d="M 70,215 C 140,215 185,213 215,200 C 235,188 245,110 245,22" fill="none" stroke="#D97706" stroke-width="2.5"/>
+      <text x="245" y="14" text-anchor="middle" font-size="12" fill="#D97706" font-weight="700">LRAS</text>
+      <line x1="245" y1="22" x2="245" y2="268" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="245" y="285" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
+      <text x="130" y="232" font-size="10" fill="#059669" font-weight="700">Flat range</text>
+      <text x="200" y="180" font-size="10" fill="#D97706" font-weight="700">Rising range</text>
+      <text x="255" y="60" font-size="10" fill="#DC2626" font-weight="700">Capacity limit</text>
     </g>
   </svg>`,
 

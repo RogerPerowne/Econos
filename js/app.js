@@ -41,7 +41,7 @@
       <aside class="sidebar">
         <div class="sidebar__brand">
           <a href="index.html" class="sidebar__logo-link">
-            <img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full">
+            <img src="assets/logo-wordmark-tagline.png" alt="econos" class="sidebar__logo-full">
           </a>
         </div>
 

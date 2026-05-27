@@ -62,7 +62,7 @@
       + '<aside class="sidebar" aria-label="Account and global navigation">'
       +   '<div class="sidebar__brand">'
       +     '<a href="index.html" class="sidebar__logo-link">'
-      +       '<img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full">'
+      +       '<img src="assets/logo-wordmark-tagline.png" alt="econos" class="sidebar__logo-full">'
       +     '</a>'
       +   '</div>'
       +   '<nav class="sidebar__nav" aria-label="Main">'
@@ -300,7 +300,7 @@
     var U = getUser();
     return ''
       + '<nav class="mobile-nav" aria-label="Mobile">'
-      +   '<a href="index.html" class="mobile-nav__logo" aria-label="Home"><img src="assets/econos-icon.png" alt="econos"></a>'
+      +   '<a href="/" class="mobile-nav__logo" aria-label="Home"><img src="assets/logo-mark.png" alt="econos"></a>'
       +   '<div class="mobile-nav__right">'
       +     '<span class="mobile-nav__streak" aria-label="' + U.streak + ' day streak">'
       +       '<span aria-hidden="true">🔥</span><span>' + U.streak + '</span>'

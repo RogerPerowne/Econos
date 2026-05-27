@@ -1,4 +1,4 @@
-const CACHE_NAME = 'econos-v43';
+const CACHE_NAME = 'econos-v44';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -7,7 +7,7 @@ const PRECACHE_ASSETS = [
   '/fonts.css',
   '/fonts/inter-variable.woff2',
   '/favicon.svg',
-  '/assets/econos-logo-full.png',
+  '/assets/logo-full.png',
   '/site.webmanifest',
 ];
 

@@ -1110,15 +1110,15 @@
           const toneName = v.tone || defaultToneNames[i % defaultToneNames.length];
           const t = PATTERN_TONES[toneName] || PATTERN_TONES.blue;
           const bodyHtml = Array.isArray(v.body)
-            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:13px;color:#475569;line-height:1.6;">${v.body.map(b => `<li style="margin-bottom:3px;">${b}</li>`).join('')}</ul>`
-            : `<div style="font-size:13px;color:#475569;line-height:1.65;">${v.body || ''}</div>`;
+            ? `<ul style="margin:0;padding:0 0 0 18px;font-size:11.5px;color:#475569;line-height:1.55;">${v.body.map(b => `<li style="margin-bottom:3px;">${b}</li>`).join('')}</ul>`
+            : `<div style="font-size:11.5px;color:#475569;line-height:1.6;">${v.body || ''}</div>`;
           const marker = v.icon
             ? `<span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;">${v.icon}</span>`
             : `<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;">${i + 1}</span>`;
           return `<div data-id-desc="${i}" style="display:${i === 0 ? 'flex' : 'none'};align-items:flex-start;gap:12px;">
             ${marker}
             <div style="flex:1;min-width:0;">
-              <div style="font-weight:800;font-size:14.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${v.head}</div>
+              <div style="font-weight:800;font-size:12.5px;color:${t.label};margin-bottom:6px;letter-spacing:0.01em;">${v.head}</div>
               ${bodyHtml}
             </div>
           </div>`;

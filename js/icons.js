@@ -1320,14 +1320,7 @@ window.ECONOS_ICONS = {
   /* Automatic Stabilisers — two side-by-side branching flow panels (Gov Spending Card 7) */
   autoStabilisersFlow: `
     <svg viewBox="0 0 740 560" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
-      <defs>
-        <marker id="as-down-rose" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 0 L 5 10 z" fill="#F43F5E"/>
-        </marker>
-        <marker id="as-down-green" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 10 0 L 5 10 z" fill="#10B981"/>
-        </marker>
-      </defs>
+      <defs></defs>
 
       <!-- ROSE PANEL (left) — In a recession. Outer 10→370 (360w). Inner content at 32 → 22px buffer to outer border -->
       <rect x="10" y="10" width="360" height="540" rx="20" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
@@ -1338,7 +1331,8 @@ window.ECONOS_ICONS = {
       <!-- Top tile: Output &amp; incomes fall -->
       <rect x="32" y="96" width="316" height="60" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
       <text x="190" y="133" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">Output &amp; incomes fall</text>
-      <line x1="190" y1="162" x2="190" y2="200" stroke="#F43F5E" stroke-width="3" marker-end="url(#as-down-rose)"/>
+      <line x1="190" y1="162" x2="190" y2="194" stroke="#F43F5E" stroke-width="3"/>
+      <polygon points="184,194 196,194 190,204" fill="#F43F5E"/>
 
       <!-- Pair: Tax receipts fall + Benefit spending rises (each 144w, 28-wide gap for +) -->
       <rect x="32" y="216" width="144" height="120" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
@@ -1358,7 +1352,8 @@ window.ECONOS_ICONS = {
       <text x="280" y="286" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">rises</text>
       <text x="276" y="318" font-size="13" fill="#64748B" text-anchor="middle">More claimants</text>
 
-      <line x1="190" y1="346" x2="190" y2="384" stroke="#F43F5E" stroke-width="3" marker-end="url(#as-down-rose)"/>
+      <line x1="190" y1="346" x2="190" y2="378" stroke="#F43F5E" stroke-width="3"/>
+      <polygon points="184,378 196,378 190,388" fill="#F43F5E"/>
 
       <!-- Bottom tile: AD falls by less -->
       <rect x="32" y="400" width="316" height="138" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
@@ -1378,7 +1373,8 @@ window.ECONOS_ICONS = {
       <!-- Top tile: Output &amp; incomes rise -->
       <rect x="402" y="96" width="306" height="60" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
       <text x="555" y="133" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">Output &amp; incomes rise</text>
-      <line x1="555" y1="162" x2="555" y2="200" stroke="#10B981" stroke-width="3" marker-end="url(#as-down-green)"/>
+      <line x1="555" y1="162" x2="555" y2="194" stroke="#10B981" stroke-width="3"/>
+      <polygon points="549,194 561,194 555,204" fill="#10B981"/>
 
       <!-- Pair: Tax receipts rise + Benefit spending falls -->
       <rect x="402" y="216" width="139" height="120" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
@@ -1398,7 +1394,8 @@ window.ECONOS_ICONS = {
       <text x="643" y="286" font-size="20" font-weight="800" fill="#BE123C" text-anchor="middle">falls</text>
       <text x="639" y="318" font-size="13" fill="#64748B" text-anchor="middle">Fewer claimants</text>
 
-      <line x1="555" y1="346" x2="555" y2="384" stroke="#10B981" stroke-width="3" marker-end="url(#as-down-green)"/>
+      <line x1="555" y1="346" x2="555" y2="378" stroke="#10B981" stroke-width="3"/>
+      <polygon points="549,378 561,378 555,388" fill="#10B981"/>
 
       <!-- Bottom tile: AD rises by less -->
       <rect x="402" y="400" width="306" height="138" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>

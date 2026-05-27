@@ -122,12 +122,24 @@ window.ECONOS_TOPIC = {
       causesLabel: 'WORKED EXAMPLE',
       causesEmoji: '🧮',
       causes: [
-        { tone: 'blue',  icon: '🛒', head: 'Gross investment £100bn',
-          body: '<div style="font-size:30px;font-weight:900;color:#1E40AF;text-align:center;margin:8px 0 4px;">£100bn</div>Total new capital goods purchased in the period.' },
-        { tone: 'amber', icon: '⚙️', head: 'Depreciation £40bn',
-          body: '<div style="font-size:30px;font-weight:900;color:#B45309;text-align:center;margin:8px 0 4px;">£40bn</div>Replacing worn-out capital — maintains, does not grow.' },
-        { tone: 'green', icon: '📈', head: 'Net investment £60bn',
-          body: '<div style="font-size:30px;font-weight:900;color:#047857;text-align:center;margin:8px 0 4px;">£60bn</div>Adds to the capital stock — grows productive capacity.' }
+        { tone: 'blue',  icon: '🛒', head: 'Gross investment',
+          body: '<div style="font-size:30px;font-weight:900;color:#1E40AF;text-align:center;margin:6px 0 10px;">£100bn</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
+                Array(50).fill('<div style="aspect-ratio:1;background:#2563EB;border-radius:2px;"></div>').join('') +
+                '</div>' +
+                '<div style="font-size:12px;color:#1E3A8A;text-align:center;">All new capital goods purchased in the period.</div>' },
+        { tone: 'amber', icon: '⚙️', head: 'Depreciation',
+          body: '<div style="font-size:30px;font-weight:900;color:#B45309;text-align:center;margin:6px 0 10px;">£40bn</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
+                Array(20).fill('<div style="aspect-ratio:1;background:#F59E0B;border-radius:2px;"></div>').join('') +
+                '</div>' +
+                '<div style="font-size:12px;color:#92400E;text-align:center;">Replacing worn-out capital — maintains, does not grow.</div>' },
+        { tone: 'green', icon: '📈', head: 'Net investment',
+          body: '<div style="font-size:30px;font-weight:900;color:#047857;text-align:center;margin:6px 0 10px;">£60bn</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin:0 0 10px;">' +
+                Array(30).fill('<div style="aspect-ratio:1;background:#10B981;border-radius:2px;"></div>').join('') +
+                '</div>' +
+                '<div style="font-size:12px;color:#065F46;text-align:center;">Adds to the capital stock — grows productive capacity.</div>' }
       ],
 
       whyItMatters: {
@@ -314,12 +326,18 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'amber', icon: '📈', iconStyle: 'circle',
         label: 'Interest rates rise',
-        text: '<p style="margin:0 0 6px;font-size:13px;color:#0B1426;">The interest rate line moves up.</p><p style="margin:0 0 6px;font-size:13px;color:#B45309;font-weight:700;">↓ MEC crosses at a lower Q → investment falls.</p><p style="margin:0;font-size:12px;color:#475569;">Higher borrowing cost → fewer projects are worthwhile.</p>'
+        text: '<p style="margin:0 0 8px;font-size:13px;color:#0B1426;">The interest rate line moves up.</p>' +
+              '<div style="border-top:1px dashed #FCD34D;margin:8px 0;"></div>' +
+              '<p style="margin:0 0 10px;font-size:13.5px;color:#B45309;font-weight:800;">↓ MEC crosses at a lower Q → investment falls.</p>' +
+              '<div style="background:#FFFBEB;border:1px dashed #FCD34D;border-radius:8px;padding:8px 12px;font-size:12px;color:#92400E;text-align:center;">Higher borrowing cost → fewer projects are worthwhile.</div>'
       },
       right: {
         tone: 'green', icon: '💡', iconStyle: 'circle',
         label: 'Animal spirits / tech improve',
-        text: '<p style="margin:0 0 6px;font-size:13px;color:#0B1426;">The MEC curve shifts right.</p><p style="margin:0 0 6px;font-size:13px;color:#047857;font-weight:700;">↑ MEC crosses at a higher Q → investment rises.</p><p style="margin:0;font-size:12px;color:#475569;">Higher expected returns → more projects are worthwhile.</p>'
+        text: '<p style="margin:0 0 8px;font-size:13px;color:#0B1426;">The MEC curve shifts right.</p>' +
+              '<div style="border-top:1px dashed #6EE7B7;margin:8px 0;"></div>' +
+              '<p style="margin:0 0 10px;font-size:13.5px;color:#047857;font-weight:800;">↑ MEC crosses at a higher Q → investment rises.</p>' +
+              '<div style="background:#ECFDF5;border:1px dashed #6EE7B7;border-radius:8px;padding:8px 12px;font-size:12px;color:#065F46;text-align:center;">Higher expected returns → more projects are worthwhile.</div>'
       },
 
       summaryRow: [
@@ -347,18 +365,14 @@ window.ECONOS_TOPIC = {
       lede: 'Higher demand can trigger more investment, which then multiplies demand again.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Investment and demand can amplify each other in a feedback loop.' },
+      tip: { icon: '✅', tone: 'green', text: 'Investment and demand can amplify each other — every loop is bigger than the last.' },
 
-      flowTitle: 'THE FEEDBACK LOOP',
-      flowEmoji: '🔄',
-      flowSep: '→',
-      flow: [
-        { tone: 'blue',   icon: '📈', title: '1. Higher demand',          sub: 'Consumers spend more, raising sales.' },
-        { tone: 'amber',  icon: '⚡', title: '2. Accelerator raises I',   sub: 'Firms see stronger sales and invest to expand.' },
-        { tone: 'purple', icon: '📊', title: '3. AD rises via multiplier', sub: 'Investment spending multiplies through the economy.' },
-        { tone: 'green',  icon: '👥', title: '4. Income / output rise',    sub: 'Higher income and employment increase further spending.' },
-        { tone: 'blue',   icon: '🏭', title: '5. More investment again',   sub: 'Stronger demand encourages firms to invest more.' }
-      ],
+      flowChart: {
+        svgKey: 'investmentFeedbackLoop',
+        label: 'THE FEEDBACK LOOP',
+        emoji: '🔄',
+        caption: 'Higher demand → more investment → more income → still more demand. The same five steps repeat — and each pass through the loop is larger than the one before.'
+      },
 
       comparisonTable: {
         title: 'THE RIPPLE',

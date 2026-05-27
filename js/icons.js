@@ -1043,6 +1043,89 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* Investment & Multiplier feedback loop (Investment Card 6) */
+  investmentFeedbackLoop: `
+    <svg viewBox="0 0 900 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="ifl-step" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/>
+        </marker>
+        <marker id="ifl-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#047857"/>
+        </marker>
+      </defs>
+
+      <!-- 5 step tiles, each 140 wide x 130 tall, 25px gap -->
+      <!-- TILE 1 — blue -->
+      <g>
+        <rect x="50" y="20" width="140" height="130" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+        <circle cx="78" cy="42" r="13" fill="#2563EB"/>
+        <text x="78" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">1</text>
+        <text x="120" y="80" font-size="22" text-anchor="middle">📈</text>
+        <text x="120" y="106" font-size="11.5" font-weight="800" fill="#1E40AF" text-anchor="middle">Higher demand</text>
+        <text x="120" y="124" font-size="10.5" fill="#1E3A8A" text-anchor="middle">Consumers spend</text>
+        <text x="120" y="138" font-size="10.5" fill="#1E3A8A" text-anchor="middle">more.</text>
+      </g>
+      <line x1="194" y1="85" x2="211" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
+
+      <!-- TILE 2 — amber -->
+      <g>
+        <rect x="215" y="20" width="140" height="130" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+        <circle cx="243" cy="42" r="13" fill="#F59E0B"/>
+        <text x="243" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+        <text x="285" y="80" font-size="22" text-anchor="middle">⚡</text>
+        <text x="285" y="106" font-size="11.5" font-weight="800" fill="#B45309" text-anchor="middle">Accelerator</text>
+        <text x="285" y="120" font-size="11.5" font-weight="800" fill="#B45309" text-anchor="middle">raises I</text>
+        <text x="285" y="138" font-size="10.5" fill="#92400E" text-anchor="middle">Firms invest to expand.</text>
+      </g>
+      <line x1="359" y1="85" x2="376" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
+
+      <!-- TILE 3 — purple -->
+      <g>
+        <rect x="380" y="20" width="140" height="130" rx="14" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+        <circle cx="408" cy="42" r="13" fill="#8B5CF6"/>
+        <text x="408" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">3</text>
+        <text x="450" y="80" font-size="22" text-anchor="middle">📊</text>
+        <text x="450" y="106" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="middle">AD rises via</text>
+        <text x="450" y="120" font-size="11.5" font-weight="800" fill="#6D28D9" text-anchor="middle">multiplier</text>
+        <text x="450" y="138" font-size="10.5" fill="#5B21B6" text-anchor="middle">Spending ripples out.</text>
+      </g>
+      <line x1="524" y1="85" x2="541" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
+
+      <!-- TILE 4 — green -->
+      <g>
+        <rect x="545" y="20" width="140" height="130" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+        <circle cx="573" cy="42" r="13" fill="#10B981"/>
+        <text x="573" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">4</text>
+        <text x="615" y="80" font-size="22" text-anchor="middle">👥</text>
+        <text x="615" y="106" font-size="11.5" font-weight="800" fill="#047857" text-anchor="middle">Income /</text>
+        <text x="615" y="120" font-size="11.5" font-weight="800" fill="#047857" text-anchor="middle">output rise</text>
+        <text x="615" y="138" font-size="10.5" fill="#065F46" text-anchor="middle">Households spend more.</text>
+      </g>
+      <line x1="689" y1="85" x2="706" y2="85" stroke="#64748B" stroke-width="2" marker-end="url(#ifl-step)"/>
+
+      <!-- TILE 5 — rose -->
+      <g>
+        <rect x="710" y="20" width="140" height="130" rx="14" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1.5"/>
+        <circle cx="738" cy="42" r="13" fill="#F43F5E"/>
+        <text x="738" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">5</text>
+        <text x="780" y="80" font-size="22" text-anchor="middle">🏭</text>
+        <text x="780" y="106" font-size="11.5" font-weight="800" fill="#BE123C" text-anchor="middle">More investment</text>
+        <text x="780" y="120" font-size="11.5" font-weight="800" fill="#BE123C" text-anchor="middle">again</text>
+        <text x="780" y="138" font-size="10.5" fill="#9F1239" text-anchor="middle">Stronger demand pulls.</text>
+      </g>
+
+      <!-- Loop-back arc: from bottom of tile 5 to bottom of tile 1 -->
+      <path d="M 780 152 Q 780 230 450 230 Q 120 230 120 152"
+            fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round"
+            stroke-dasharray="6 4" marker-end="url(#ifl-loop)"/>
+
+      <!-- Loop label -->
+      <rect x="346" y="212" width="210" height="36" rx="18" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="451" y="234" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">🚀 each loop is bigger than the last</text>
+    </svg>
+  `,
+
   /* MEC and Investment Decisions diagram (Investment Card 5) */
   mecDiagram: `
     <svg viewBox="0 0 560 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">

@@ -79,7 +79,6 @@ const STATIONS = {
 };
 const SHELL_HTML = { learn: 'learn.html', link: 'link.html', land: 'land.html', quiz: 'quiz.html' };
 const STANDALONE = new Set(['login','privacy-policy','terms','offline','404']);
-const toSlug = (id) => String(id).replace(/_/g, '-');
 
 /* Load js/topics.js as plain text and extract the registry. The
    file is an IIFE that assigns window.ECONOS_TOPICS — we eval it
@@ -112,7 +111,7 @@ function topicRoutes() {
     const t = topicById(topic);
     const topicName  = t ? t.name : topic;
     const stageName  = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : shell === 'land' ? 'Land It' : 'Quiz';
-    const stationStr = station ? ' · ' + station.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : '';
+    const stationStr = station ? ' · ' + station.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : '';
     const title = `${topicName}${stationStr} · ${stageName} · Econos`;
     const desc  = t && t.sub
       ? `${stageName} — ${t.sub}. A-Level economics revision on Econos.`
@@ -137,9 +136,7 @@ function topicRoutes() {
       return null;
     }
     if (!SHELL_HTML[shell]) return null;
-    const topic = parts[1] ? parts[1].replace(/-/g, '_') : null;
-    const third = parts[2] ? parts[2].replace(/-/g, '_') : null;
-    return { shell, topic, station: third, file: SHELL_HTML[shell] };
+    return { shell, topic: parts[1] || null, station: parts[2] || null, file: SHELL_HTML[shell] };
   }
 
   function devRewrite(req, _res, next) {
@@ -166,8 +163,8 @@ function topicRoutes() {
       if (!existsSync(sourcePath)) return;
       const html = readFileSync(sourcePath, 'utf8');
       const urlPath = station
-        ? `/${shell}/${toSlug(topic)}/${toSlug(station)}`
-        : `/${shell}/${toSlug(topic)}`;
+        ? `/${shell}/${topic}/${station}`
+        : `/${shell}/${topic}`;
       const out = injectMeta(html, { topic, shell, station, path: urlPath });
       const dest = join(distDir, urlPath, 'index.html');
       mkdirSync(dirname(dest), { recursive: true });
@@ -200,7 +197,7 @@ function topicRoutes() {
     ];
     for (const topic of ensureRegistry()) {
       if (!(topic.available && topic.available.learn)) continue;
-      urls.push({ loc: `/learn/${toSlug(topic.id)}`, priority: '0.8', freq: 'weekly' });
+      urls.push({ loc: `/learn/${topic.id}`, priority: '0.8', freq: 'weekly' });
     }
     const xml = [
       '<?xml version="1.0" encoding="UTF-8"?>',

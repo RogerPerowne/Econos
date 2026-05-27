@@ -37,7 +37,7 @@ test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
 
   expect(cases.home).toBe('/');
   expect(cases.learn).toBe('/learn/causes-of-inflation-and-deflation');
-  expect(cases.learnArg).toBe('/learn/pos-externalities');
+  expect(cases.learnArg).toBe('/learn/positive-externalities');
   expect(cases.linkDef).toBe('/link/causes-of-inflation-and-deflation/intro');
   expect(cases.linkOpen).toBe('/link/causes-of-inflation-and-deflation/chain-open');
   expect(cases.land).toBe('/land/causes-of-inflation-and-deflation/a');
@@ -57,7 +57,7 @@ test('parsePath round-trips canonical URLs', async ({ page }) => {
       open:   p('/link/causes-of-inflation-and-deflation/chain-open'),
       land:   p('/land/causes-of-inflation-and-deflation/a'),
       quiz:   p('/quiz/causes-of-inflation-and-deflation/main'),
-      slug:   p('/learn/pos-externalities'),
+      slug:   p('/learn/positive-externalities'),
       bogus:  p('/some/random/path')
     };
   });

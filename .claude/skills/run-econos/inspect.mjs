@@ -39,7 +39,7 @@ await page.evaluate(async () => {
   localStorage.econosAuth = '1';
 });
 
-await page.goto(`${baseUrl}/learn.html?topic=${topicId}`, { waitUntil: 'networkidle' });
+await page.goto(`${baseUrl}/learn/${topicId}/`, { waitUntil: 'networkidle' });
 await page.waitForTimeout(700);
 await page.click('[data-action="start-session"]');
 await page.waitForTimeout(500);

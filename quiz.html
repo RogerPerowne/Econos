@@ -2,8 +2,8 @@
 <!--
   Generic quiz shell.
 
-  Accepts `?topic=<id>&quiz=<set>` and loads
-  `js/data/<id>/data-quiz-<set>.js` via the quiz engine. Today every
+  Path-based URL: `/quiz/<topic>/<set>`. Loads
+  `js/data/<topic>/quiz-<set>.js` via the quiz engine. Today every
   link passes `quiz=main` (the topic-level "Test yourself" CTA), but
   the URL shape is intentionally generic so future quiz types
   (past-paper practice, adaptive weakness-targeted, daily mixed-topic
@@ -11,9 +11,10 @@
   adding a new data file – no new HTML, no engine changes.
 
   This is the canonical quiz route. Link It and Land It also host
-  *stage-specific* quizzes inline as `?station=quiz` (because those
-  are tightly coupled to the work just done in those sections) –
-  see js/engines/link-router.js + land-router.js. quiz.html stays
+  *stage-specific* quizzes inline at `/link/<topic>/quiz` and
+  `/land/<topic>/quiz` (tightly coupled to the work just done in
+  those sections) — see js/engines/link-router.js + land-router.js.
+  quiz.html stays
   separate for the cross-section / standalone use cases.
 -->
 <html lang="en">
@@ -58,8 +59,8 @@
   <script>
   (function () {
     var quizId = TopicLoader.getQuizSet() || 'main';
-    var dataFile = 'data-quiz-' + quizId + '.js';
-    TopicLoader.loadData(['data-topic.js', dataFile], function () { run(); }, 'this quiz');
+    var dataFile = 'quiz-' + quizId + '.js';
+    TopicLoader.loadData(['topic.js', dataFile], function () { run(); }, 'this quiz');
 
     function run() {
       var I = window.ECONOS_ICONS;

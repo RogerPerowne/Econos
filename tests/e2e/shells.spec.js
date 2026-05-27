@@ -5,8 +5,8 @@
    elements for an example topic (inflation). Catches regressions
    in routing, Shell.renderStages, mobile-nav injection, etc.
 
-   All URLs are the path-based canonical form: /learn/inflation,
-   /link/causes-of-inflation-and-deflation/chain, etc. The Vite preview server's
+   All URLs are the path-based canonical form: /learn/<slug>,
+   /link/<slug>/<station>, etc. The Vite preview server's
    topic-routes middleware rewrites these to the right base shell
    transparently.
    ============================================================ */
@@ -96,16 +96,6 @@ test.describe('Land It shell', () => {
 
     const current = page.locator('.stages .stage.is-current');
     await expect(current).toHaveAttribute('data-stage-pos', '3');
-  });
-});
-
-test.describe('Legacy query-string URLs', () => {
-  test('inbound ?topic=… is rewritten to the canonical path', async ({ page }) => {
-    await login(page);
-    await page.goto('/learn?topic=inflation');
-    /* TopicLoader's boot-time redirect rewrites the URL. Wait for it. */
-    await page.waitForFunction(() => location.pathname === '/learn/causes-of-inflation-and-deflation', null, { timeout: 5000 });
-    expect(new URL(page.url()).pathname).toBe('/learn/causes-of-inflation-and-deflation');
   });
 });
 

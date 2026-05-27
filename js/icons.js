@@ -15826,4 +15826,285 @@ window.ECONOS_ICONS = {
     <circle cx="32" cy="22" r="2" fill="currentColor"/>
   </svg>`,
 
+  srasLrasIntro: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <!-- Axes -->
+    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
+    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
+    <!-- Axis labels -->
+    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
+    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
+    <!-- SRAS line (blue, upward sloping) -->
+    <line x1="80" y1="255" x2="390" y2="45" stroke="#3B82F6" stroke-width="2.5"/>
+    <text x="392" y="42" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
+    <!-- LRAS line (purple, vertical) -->
+    <line x1="245" y1="20" x2="245" y2="272" stroke="#7C3AED" stroke-width="2.5"/>
+    <text x="250" y="17" font-size="12" fill="#7C3AED" font-weight="700">LRAS</text>
+    <!-- P1 dashed horizontal -->
+    <line x1="55" y1="143" x2="245" y2="143" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="40" y="148" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
+    <!-- E1 equilibrium point -->
+    <circle cx="245" cy="143" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
+    <!-- Yf label -->
+    <text x="245" y="287" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
+    <text x="245" y="296" font-size="9" fill="#94A3B8" text-anchor="middle">(full-capacity output)</text>
+  </svg>`,
+
+  srasCurveStatic: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <!-- Axes -->
+    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
+    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
+    <!-- Axis labels -->
+    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
+    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
+    <!-- SRAS bezier curve (blue) -->
+    <path d="M 70,255 C 170,248 280,170 385,50" fill="none" stroke="#3B82F6" stroke-width="2.5"/>
+    <text x="388" y="46" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
+    <!-- Dashed lines for point A -->
+    <line x1="55" y1="214" x2="194" y2="214" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="194" y1="214" x2="194" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="40" y="218" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
+    <text x="194" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₁</text>
+    <!-- Dashed lines for point B -->
+    <line x1="55" y1="146" x2="290" y2="146" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="290" y1="146" x2="290" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="40" y="150" font-size="11" fill="#94A3B8" text-anchor="middle">P₂</text>
+    <text x="290" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₂</text>
+    <!-- Point A -->
+    <circle cx="194" cy="214" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
+    <text x="178" y="212" font-size="12" fill="#3B82F6" font-weight="700">A</text>
+    <!-- Point B -->
+    <circle cx="290" cy="146" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
+    <text x="296" y="140" font-size="12" fill="#3B82F6" font-weight="700">B</text>
+    <!-- Movement arrow A to B along curve -->
+    <path d="M 215,196 C 235,178 255,168 272,155" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrowBlue)"/>
+    <defs>
+      <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 Z" fill="#3B82F6"/>
+      </marker>
+    </defs>
+  </svg>`,
+
+  lrasViewsInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <defs><style>
+      .idl-1{display:none}.idl-2{display:none}
+      .sv-show-1 .idl-1{display:block}
+      .sv-show-2 .idl-2{display:block}
+    </style></defs>
+    <!-- Base: Axes -->
+    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
+    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
+    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
+    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
+    <!-- Layer 1: Classical LRAS -->
+    <g class="idl-1">
+      <line x1="245" y1="20" x2="245" y2="272" stroke="#3B82F6" stroke-width="2.5"/>
+      <text x="250" y="17" font-size="12" fill="#3B82F6" font-weight="700">LRAS</text>
+      <line x1="55" y1="150" x2="245" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₀</text>
+      <circle cx="245" cy="150" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
+      <text x="245" y="287" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
+      <text x="245" y="296" font-size="9" fill="#94A3B8" text-anchor="middle">(full-capacity output)</text>
+    </g>
+    <!-- Layer 2: Keynesian LRAS -->
+    <g class="idl-2">
+      <path d="M 70,265 C 155,263 210,240 240,198 C 265,152 278,82 282,22" fill="none" stroke="#D97706" stroke-width="2.5"/>
+      <text x="288" y="17" font-size="12" fill="#D97706" font-weight="700">LRAS</text>
+      <line x1="282" y1="22" x2="282" y2="268" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="282" y="285" font-size="11" fill="#64748B" text-anchor="middle">Yf</text>
+      <text x="130" y="260" font-size="10" fill="#059669" font-weight="700">Flat range</text>
+      <text x="218" y="215" font-size="10" fill="#D97706" font-weight="700">Rising range</text>
+      <text x="265" y="85" font-size="10" fill="#DC2626" font-weight="700">Capacity limit</text>
+    </g>
+  </svg>`,
+
+  srasShiftInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <defs><style>
+      .idl-1{display:none}.idl-2{display:none}
+      .sv-show-1 .idl-1{display:block}
+      .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
+    </style></defs>
+    <!-- Base: Axes -->
+    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
+    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
+    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
+    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
+    <!-- Base: AD line (blue) -->
+    <line x1="90" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
+    <text x="394" y="258" font-size="12" fill="#3B82F6" font-weight="700">AD</text>
+    <!-- Base: SRAS1 line (dark slate) -->
+    <line x1="90" y1="255" x2="390" y2="45" stroke="#334155" stroke-width="2"/>
+    <text x="393" y="42" font-size="11" fill="#334155" font-weight="700">SRAS₁</text>
+    <!-- Base: E1 equilibrium -->
+    <circle cx="240" cy="150" r="5.5" fill="white" stroke="#334155" stroke-width="1.5"/>
+    <text x="246" y="145" font-size="10" fill="#334155">E₁</text>
+    <!-- Base: P1 dashed -->
+    <line x1="55" y1="150" x2="240" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
+    <!-- Base: Y1 dashed -->
+    <line x1="240" y1="150" x2="240" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="240" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₁</text>
+    <!-- Layer 1: SRAS2 (red, shifted left/up) -->
+    <g class="idl-1">
+      <line x1="90" y1="210" x2="390" y2="0" stroke="#DC2626" stroke-width="2"/>
+      <text x="318" y="7" font-size="11" fill="#DC2626" font-weight="700">SRAS₂ (new)</text>
+      <!-- Left-shift arrow -->
+      <line x1="265" y1="125" x2="232" y2="125" stroke="#DC2626" stroke-width="1.5"/>
+      <polygon points="232,121 232,129 225,125" fill="#DC2626"/>
+    </g>
+    <!-- Layer 2: E2 and stagflation labels -->
+    <g class="idl-2">
+      <circle cx="208" cy="128" r="5.5" fill="white" stroke="#DC2626" stroke-width="2"/>
+      <text x="214" y="123" font-size="10" fill="#DC2626">E₂</text>
+      <!-- P2 dashed -->
+      <line x1="55" y1="128" x2="208" y2="128" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="40" y="133" font-size="11" fill="#DC2626" text-anchor="middle">P₂</text>
+      <!-- Y2 dashed -->
+      <line x1="208" y1="128" x2="208" y2="272" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="208" y="287" font-size="11" fill="#DC2626" text-anchor="middle">Y₂</text>
+      <!-- P rises label -->
+      <text x="22" y="144" font-size="9" fill="#DC2626" text-anchor="middle">P rises</text>
+      <polygon points="22,131 19,140 25,140" fill="#DC2626"/>
+      <!-- Y falls label -->
+      <text x="224" y="280" font-size="9" fill="#DC2626" text-anchor="middle">Y falls</text>
+      <polygon points="220,276 228,276 224,282" fill="#DC2626"/>
+      <!-- Stagflation label -->
+      <text x="50" y="80" font-size="10" fill="#DC2626" font-weight="700">Stagflation</text>
+    </g>
+  </svg>`,
+
+  lrasShiftDiagram: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <!-- Axes -->
+    <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="415,268 415,276 422,272" fill="#94A3B8"/>
+    <line x1="55" y1="272" x2="55" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+    <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
+    <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
+    <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
+    <!-- SRAS (grey-blue) -->
+    <line x1="80" y1="229" x2="400" y2="19" stroke="#475569" stroke-width="2"/>
+    <text x="404" y="16" font-size="11" fill="#475569" font-weight="700">SRAS</text>
+    <!-- AD (blue) -->
+    <line x1="80" y1="45" x2="400" y2="255" stroke="#3B82F6" stroke-width="2"/>
+    <text x="404" y="258" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
+    <!-- LRAS1 (green solid) -->
+    <line x1="220" y1="15" x2="220" y2="272" stroke="#059669" stroke-width="2.5"/>
+    <text x="223" y="13" font-size="12" fill="#059669" font-weight="700">LRAS₁</text>
+    <!-- LRAS2 (green dashed) -->
+    <line x1="310" y1="15" x2="310" y2="272" stroke="#059669" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="313" y="13" font-size="12" fill="#059669" font-weight="700">LRAS₂</text>
+    <!-- Horizontal shift arrow -->
+    <line x1="228" y1="35" x2="300" y2="35" stroke="#059669" stroke-width="1.8"/>
+    <polygon points="300,31 300,39 307,35" fill="#059669"/>
+    <!-- E1 at (220,137) -->
+    <circle cx="220" cy="137" r="5.5" fill="white" stroke="#059669" stroke-width="2"/>
+    <text x="226" y="132" font-size="10" fill="#059669">E₁</text>
+    <!-- E2 at (310,196) -->
+    <circle cx="310" cy="196" r="5.5" fill="white" stroke="#059669" stroke-width="2"/>
+    <text x="316" y="191" font-size="10" fill="#059669">E₂</text>
+    <!-- P dashed horizontal -->
+    <line x1="55" y1="137" x2="220" y2="137" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="40" y="142" font-size="11" fill="#94A3B8" text-anchor="middle">P</text>
+    <text x="28" y="158" font-size="8.5" fill="#475569">P stable or</text>
+    <text x="28" y="168" font-size="8.5" fill="#475569">slightly lower</text>
+    <!-- Y1 label -->
+    <text x="220" y="287" font-size="11" fill="#64748B" text-anchor="middle">Y₁</text>
+    <!-- Y2 label -->
+    <text x="310" y="287" font-size="11" fill="#64748B" text-anchor="middle">Y₂</text>
+    <!-- Y1 to Y2 arrow along x-axis -->
+    <line x1="228" y1="280" x2="300" y2="280" stroke="#059669" stroke-width="1.5"/>
+    <polygon points="300,276 300,284 307,280" fill="#059669"/>
+  </svg>`,
+
+  adVsSupplySideDiagram: `<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+    <!-- Left panel: Demand-side stimulus -->
+    <rect x="4" y="4" width="348" height="312" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" rx="12"/>
+    <text x="50" y="26" font-size="13" fill="#1D4ED8" font-weight="800">Demand-side stimulus</text>
+    <text x="50" y="40" font-size="10.5" fill="#475569">AD shifts right. Output rises, but so does the price level.</text>
+    <!-- Left panel mini diagram axes -->
+    <line x1="48" y1="255" x2="315" y2="255" stroke="#94A3B8" stroke-width="1.2"/>
+    <polygon points="315,251 315,259 321,255" fill="#94A3B8"/>
+    <line x1="48" y1="255" x2="48" y2="58" stroke="#94A3B8" stroke-width="1.2"/>
+    <polygon points="44,58 52,58 48,52" fill="#94A3B8"/>
+    <text transform="rotate(-90 22 155)" text-anchor="middle" x="22" y="155" font-size="9" fill="#64748B">Price level (P)</text>
+    <text x="321" y="268" font-size="9" fill="#64748B">Real GDP (Y)</text>
+    <!-- SRAS (black) -->
+    <line x1="55" y1="248" x2="302" y2="62" stroke="#334155" stroke-width="1.8"/>
+    <!-- AD1 (blue) -->
+    <line x1="55" y1="62" x2="280" y2="248" stroke="#3B82F6" stroke-width="1.8"/>
+    <text x="283" y="251" font-size="10" fill="#3B82F6">AD₁</text>
+    <!-- AD2 (brighter blue) -->
+    <line x1="100" y1="62" x2="320" y2="248" stroke="#1D4ED8" stroke-width="1.8"/>
+    <text x="323" y="243" font-size="10" fill="#1D4ED8">AD₂</text>
+    <!-- Blue shift arrow -->
+    <line x1="165" y1="68" x2="205" y2="68" stroke="#1D4ED8" stroke-width="1.5"/>
+    <polygon points="205,64 205,72 211,68" fill="#1D4ED8"/>
+    <!-- E1 at AD1 ∩ SRAS approx (168,155) -->
+    <circle cx="168" cy="155" r="4.5" fill="white" stroke="#3B82F6" stroke-width="1.8"/>
+    <text x="174" y="150" font-size="9" fill="#334155">E₁</text>
+    <!-- E2 at AD2 ∩ SRAS approx (195,130) -->
+    <circle cx="195" cy="130" r="4.5" fill="white" stroke="#1D4ED8" stroke-width="1.8"/>
+    <text x="201" y="124" font-size="9" fill="#1D4ED8">E₂</text>
+    <!-- P1 dashed -->
+    <line x1="48" y1="155" x2="168" y2="155" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="38" y="160" font-size="9" fill="#94A3B8">P₁</text>
+    <!-- P2 dashed -->
+    <line x1="48" y1="130" x2="195" y2="130" stroke="#1D4ED8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="38" y="135" font-size="9" fill="#1D4ED8" font-weight="700">P₂</text>
+    <!-- Y1 dashed -->
+    <line x1="168" y1="155" x2="168" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="168" y="268" font-size="9" fill="#94A3B8" text-anchor="middle">Y₁</text>
+    <!-- Y2 dashed -->
+    <line x1="195" y1="130" x2="195" y2="255" stroke="#1D4ED8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="195" y="268" font-size="9" fill="#1D4ED8" text-anchor="middle">Y₂</text>
+    <!-- Right panel: Supply-side improvement -->
+    <rect x="368" y="4" width="348" height="312" fill="#F0FDF4" stroke="#A7F3D0" stroke-width="1.5" rx="12"/>
+    <text x="414" y="26" font-size="13" fill="#059669" font-weight="800">Supply-side improvement</text>
+    <text x="414" y="40" font-size="10" fill="#475569">SRAS shifts right. Output rises while price level stays stable or falls.</text>
+    <!-- Right panel mini diagram axes -->
+    <line x1="412" y1="255" x2="675" y2="255" stroke="#94A3B8" stroke-width="1.2"/>
+    <polygon points="675,251 675,259 681,255" fill="#94A3B8"/>
+    <line x1="412" y1="255" x2="412" y2="58" stroke="#94A3B8" stroke-width="1.2"/>
+    <polygon points="408,58 416,58 412,52" fill="#94A3B8"/>
+    <text transform="rotate(-90 386 155)" text-anchor="middle" x="386" y="155" font-size="9" fill="#64748B">Price level (P)</text>
+    <text x="682" y="268" font-size="9" fill="#64748B">Real GDP (Y)</text>
+    <!-- SRAS1 (black) -->
+    <line x1="419" y1="248" x2="655" y2="62" stroke="#334155" stroke-width="1.8"/>
+    <text x="658" y="60" font-size="10" fill="#334155">SRAS₁</text>
+    <!-- SRAS2 (green, right-shifted) -->
+    <line x1="469" y1="248" x2="680" y2="62" stroke="#059669" stroke-width="1.8"/>
+    <text x="683" y="60" font-size="10" fill="#059669">SRAS₂</text>
+    <!-- AD (blue) -->
+    <line x1="419" y1="62" x2="655" y2="248" stroke="#3B82F6" stroke-width="1.8"/>
+    <text x="658" y="251" font-size="10" fill="#3B82F6">AD</text>
+    <!-- E1 at SRAS1 ∩ AD approx (537,155) -->
+    <circle cx="537" cy="155" r="4.5" fill="white" stroke="#94A3B8" stroke-width="1.8"/>
+    <text x="543" y="150" font-size="9" fill="#334155">E₁</text>
+    <!-- E2 at SRAS2 ∩ AD approx (562,178) -->
+    <circle cx="562" cy="178" r="4.5" fill="white" stroke="#059669" stroke-width="1.8"/>
+    <text x="568" y="172" font-size="9" fill="#059669">E₂</text>
+    <!-- P1 dashed -->
+    <line x1="412" y1="155" x2="537" y2="155" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="402" y="160" font-size="9" fill="#94A3B8">P₁</text>
+    <!-- Y1 dashed -->
+    <line x1="537" y1="155" x2="537" y2="255" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="537" y="268" font-size="9" fill="#94A3B8" text-anchor="middle">Y₁</text>
+    <!-- Y2 dashed -->
+    <line x1="562" y1="178" x2="562" y2="255" stroke="#059669" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="562" y="268" font-size="9" fill="#059669" text-anchor="middle">Y₂</text>
+    <!-- P stable or lower annotation -->
+    <text x="410" y="170" font-size="9" fill="#059669">P stable</text>
+    <text x="410" y="181" font-size="9" fill="#059669">or lower ↓</text>
+    <!-- Green shift arrow -->
+    <line x1="540" y1="68" x2="578" y2="68" stroke="#059669" stroke-width="1.5"/>
+    <polygon points="578,64 578,72 584,68" fill="#059669"/>
+  </svg>`,
+
 };

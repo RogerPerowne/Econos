@@ -83,6 +83,14 @@
       target = mapped.page;
       station = mapped.station || null;
     }
+    /* Clean-URL canonicalisation: emit /learn, /link, /land, /quiz (and /
+       for index). GitHub Pages serves the matching .html file; the Vite
+       dev/preview server has a middleware doing the same rewrite. */
+    if (target === 'index.html') {
+      target = '/';
+    } else {
+      target = '/' + target.replace(/\.html$/, '');
+    }
     var qs = '?topic=' + encodeURIComponent(topic);
     if (station) {
       qs += '&station=' + encodeURIComponent(station);
@@ -104,11 +112,11 @@
   function go(url) {
     if (!url) { return; }
     try {
-      if (window.LinkRouter && /(^|\/)link\.html(\?|$)/.test(url) &&
+      if (window.LinkRouter && /(^|\/)link(?:\.html)?(\?|$)/.test(url) &&
           /[?&]station=/.test(url)) {
         window.LinkRouter.navigate(url); return;
       }
-      if (window.LandRouter && /(^|\/)land\.html(\?|$)/.test(url) &&
+      if (window.LandRouter && /(^|\/)land(?:\.html)?(\?|$)/.test(url) &&
           /[?&]station=/.test(url)) {
         window.LandRouter.navigate(url); return;
       }
@@ -124,7 +132,7 @@
       + '<div style="padding:48px 24px;font-family:Inter,sans-serif;text-align:center;max-width:520px;margin:0 auto;">'
       +   '<h1 style="font-family:Fraunces,serif;font-size:28px;margin-bottom:12px;color:#0B1426;">Content not ready yet</h1>'
       +   '<p style="color:#6B7280;margin-bottom:24px;">The <strong>' + section + '</strong> content for <strong>' + topic + '</strong> hasn\'t been added yet. Check back soon.</p>'
-      +   '<a href="index.html" style="display:inline-block;padding:10px 18px;background:#0B1426;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">← Back to topics</a>'
+      +   '<a href="/" style="display:inline-block;padding:10px 18px;background:#0B1426;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">← Back to topics</a>'
       + '</div>';
   }
 

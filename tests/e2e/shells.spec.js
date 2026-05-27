@@ -25,20 +25,22 @@ async function login(page) {
 test.describe('Home page', () => {
   test('index renders topic grid + new shell links', async ({ page }) => {
     await login(page);
-    await page.goto('/index.html');
+    await page.goto('/');
 
     /* Skip-link is mounted by shell.js — but index doesn't load
        shell.js. So we don't expect it on the home page. */
     await expect(page).toHaveTitle(/econos/i);
 
-    /* Topic cards should link to learn / link / land shells, not
-       the legacy per-section pages. */
-    const hrefs = await page.$$eval('a[href*=".html"]', as =>
+    /* Topic cards should link to clean /learn /link /land shells, not
+       the legacy per-section pages or any .html extensions. */
+    const hrefs = await page.$$eval('a[href]', as =>
       as.map(a => a.getAttribute('href') || ''));
-    const onlyShells = hrefs.filter(h => /\.html/.test(h));
-    expect(onlyShells.length).toBeGreaterThan(0);
-    /* No legacy filenames in the link generators. */
-    expect(onlyShells.some(h => /topic\.html|link_\w+\.html|land_\w+\.html/.test(h)))
+    const shellHrefs = hrefs.filter(h => /^\/(learn|link|land|quiz)(\?|$)/.test(h));
+    expect(shellHrefs.length).toBeGreaterThan(0);
+    /* No legacy filenames or .html extensions in the link generators. */
+    expect(hrefs.some(h => /topic\.html|link_\w+\.html|land_\w+\.html/.test(h)))
+      .toBe(false);
+    expect(hrefs.some(h => /^\/?(learn|link|land|quiz)\.html/.test(h)))
       .toBe(false);
   });
 });
@@ -46,7 +48,7 @@ test.describe('Home page', () => {
 test.describe('Learn It shell', () => {
   test('inflation renders chrome + stage widget', async ({ page }) => {
     await login(page);
-    await page.goto('/learn.html?topic=inflation');
+    await page.goto('/learn?topic=inflation');
 
     /* Page title set by HTML (router only updates on station-aware shells). */
     await expect(page).toHaveTitle(/Learn It · econos/i);
@@ -76,20 +78,20 @@ test.describe('Learn It shell', () => {
 test.describe('Link It shell', () => {
   test('intro station deep-links + chain station shows amber theme', async ({ page }) => {
     await login(page);
-    await page.goto('/link.html?topic=inflation');
+    await page.goto('/link?topic=inflation');
     await expect(page).toHaveTitle(/Link it · Intro/i);
     /* Theme class on .app */
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
 
     /* Deep-link to chain station. */
-    await page.goto('/link.html?topic=inflation&station=chain');
+    await page.goto('/link?topic=inflation&station=chain');
     await expect(page).toHaveTitle(/Link it · Chain/i);
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
   });
 
   test('unknown station shows friendly not-found', async ({ page }) => {
     await login(page);
-    await page.goto('/link.html?topic=inflation&station=nope');
+    await page.goto('/link?topic=inflation&station=nope');
     await expect(page.locator('text=Station not found')).toBeVisible();
   });
 });
@@ -97,7 +99,7 @@ test.describe('Link It shell', () => {
 test.describe('Land It shell', () => {
   test('intro station renders + rose theme', async ({ page }) => {
     await login(page);
-    await page.goto('/land.html?topic=inflation&station=intro');
+    await page.goto('/land?topic=inflation&station=intro');
     await expect(page).toHaveTitle(/Land it · Intro/i);
     await expect(page.locator('.app.theme--land')).toHaveCount(1);
 
@@ -115,7 +117,7 @@ test.describe('Land It shell', () => {
 test.describe('Accessibility — keyboard navigation', () => {
   test('Tab reveals skip-link first on the learn shell', async ({ page }) => {
     await login(page);
-    await page.goto('/learn.html?topic=inflation');
+    await page.goto('/learn?topic=inflation');
     await page.keyboard.press('Tab');
     const focused = await page.evaluate(() => document.activeElement &&
       (document.activeElement.className || '') + '|' +

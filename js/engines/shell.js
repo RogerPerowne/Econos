@@ -50,7 +50,7 @@
     var I = getIcons();
     var U = getUser();
     var nav = [
-      { name: 'Home',         icon: I.home,     href: 'index.html' },
+      { name: 'Home',         icon: I.home,     href: '/' },
       { name: 'My topics',    icon: I.topics,   href: '#' },
       { name: 'Progress',     icon: I.progress, href: '#' },
       { name: 'Exam practice',icon: I.practice, href: '#' },
@@ -61,7 +61,7 @@
     return ''
       + '<aside class="sidebar" aria-label="Account and global navigation">'
       +   '<div class="sidebar__brand">'
-      +     '<a href="index.html" class="sidebar__logo-link">'
+      +     '<a href="/" class="sidebar__logo-link">'
       +       '<img src="assets/logo-wordmark-tagline.png" alt="econos" class="sidebar__logo-full">'
       +     '</a>'
       +   '</div>'
@@ -114,7 +114,7 @@
        the sidebar). Sidebar wins — it's the prominent gamification card. */
     return ''
       + '<div class="topbar" role="region" aria-label="Session header">'
-      +   '<a href="' + (opts.backUrl || 'index.html') + '" class="topbar__back" aria-label="Back to ' + (labelText || 'topics') + '">'
+      +   '<a href="' + (opts.backUrl || '/') + '" class="topbar__back" aria-label="Back to ' + (labelText || 'topics') + '">'
       +     (I.arrowLeft || '') + backLabel
       +   '</a>'
       +   '<div class="topbar__crumbs">'
@@ -168,14 +168,14 @@
     var path = location.pathname.toLowerCase();
     var file = path.substring(path.lastIndexOf('/') + 1);
     // learn.html or topic.html → currently on Learn
-    if (file === 'learn.html' || file === 'topic.html' || file === '' || file === 'index.html') {
+    if (file === 'learn' || file === 'learn.html' || file === 'topic.html' || file === '' || file === 'index.html') {
       return ['current', 'open', 'open'];
     }
-    if (file === 'link.html') return ['done', 'current', 'open'];
-    if (file === 'land.html') return ['done', 'done', 'current'];
+    if (file === 'link' || file === 'link.html') return ['done', 'current', 'open'];
+    if (file === 'land' || file === 'land.html') return ['done', 'done', 'current'];
     // Quiz inherits the URL's `stage` param if present, else assumes
     // it sits at the end of the Learn loop (most common entry point).
-    if (file === 'quiz.html') {
+    if (file === 'quiz' || file === 'quiz.html') {
       try {
         var qs = new URLSearchParams(location.search);
         var stage = (qs.get('stage') || '').toLowerCase();
@@ -218,9 +218,9 @@
     var topicQs = topic ? '?topic=' + encodeURIComponent(topic) : '';
     var I = getIcons();
     var DEFAULTS = [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', href: 'learn.html' + topicQs },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', href: 'link.html'  + topicQs },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    href: 'land.html'  + topicQs }
+      { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', href: '/learn' + topicQs },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', href: '/link'  + topicQs },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    href: '/land'  + topicQs }
     ];
 
     /* Resolve spec → array of merged stage objects with state. */

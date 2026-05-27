@@ -40,7 +40,7 @@
   var CE_PAIR_COLORS = ['#6366f1','#f59e0b','#10b981','#f43f5e','#8b5cf6','#06b6d4'];
 
   var Qs = [];
-  var TOPIC = { title: 'Quiz', subtitle: '', backUrl: 'index.html', backLabel: 'Back to topic' };
+  var TOPIC = { title: 'Quiz', subtitle: '', backUrl: '/', backLabel: 'Back to topic' };
   var S = { qi: 0, score: 0, results: [], answered: false,
             rankOrder: [], pfSel: {}, msChecked: [], esChosen: {},
             confChosen: -1, confPhase: 'pick' };

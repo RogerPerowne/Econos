@@ -5,7 +5,7 @@
 
 window.ECONOS_LAND_COMPLETE = {
   topic:   'Aggregate Supply',
-  nextUrl: 'index.html',
+  nextUrl: '/',
 
   sections: {
     A: { label: 'Section A', sublabel: 'Short questions',    color: '#ec2d68' },

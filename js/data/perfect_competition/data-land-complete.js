@@ -1,6 +1,6 @@
 window.ECONOS_LAND_COMPLETE = {
   topic:   'Perfect Competition',
-  nextUrl: 'index.html',
+  nextUrl: '/',
 
   sections: {
     A: { label: 'Section A', sublabel: 'Short questions',   color: '#ec2d68' },

@@ -76,7 +76,7 @@
     if (!url) return false;
     var path = String(url).split('?')[0].split('#')[0];
     var file = path.substring(path.lastIndexOf('/') + 1);
-    return file === 'land.html' && !!urlToStation(url);
+    return (file === 'land' || file === 'land.html') && !!urlToStation(url);
   }
 
   function setTitle(station) {
@@ -96,7 +96,7 @@
       +   '<p style="color:var(--econ-muted,#6B7280);margin-bottom:24px;">'
       +     'The Land It station <code>' + (station || '?') + '</code> doesn\'t exist for this topic.'
       +   '</p>'
-      +   '<a href="land.html' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
+      +   '<a href="/land' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
       +     '← Back to Land It intro'
       +   '</a>'
       + '</div>';

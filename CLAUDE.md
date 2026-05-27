@@ -43,18 +43,44 @@ index.html  learn.html  link.html  land.html  quiz.html  login.html
 never needs new HTML — it needs new data + (occasionally) a router
 station entry.
 
-### Shell URLs
+### Clean URLs (no `.html` extension)
 
-- `learn.html?topic=<id>` — Learn It cards.
-- `link.html?topic=<id>&station=<intro|context|chain|chain_open|diagram|depends|judge|complete|quiz>` — Link It stations, routed by `LinkRouter` (`js/engines/link-router.js`).
-- `land.html?topic=<id>&station=<intro|a|b|c|complete|quiz>` — Land It sections, routed by `LandRouter`.
-- `quiz.html?topic=<id>&quiz=<set>` — Topic quizzes (separate engine; will be folded into the Learn shell in a future tranche).
+User-facing URLs **never include `.html`**. GitHub Pages serves `learn.html`
+when the browser asks for `/learn`; the Vite `clean-urls` plugin in
+`vite.config.js` mirrors the same rewrite for dev/preview. Every internal
+href, every JS string used as a URL, every canonical / og:url meta tag, and
+every sitemap entry uses the extensionless form.
+
+- `/` — home (do **not** link to `/index.html`; sw.js no longer precaches it as a separate entry either)
+- `/learn?topic=<id>` — Learn It cards.
+- `/link?topic=<id>&station=<intro|context|chain|chain_open|diagram|depends|judge|complete|quiz>` — Link It stations, routed by `LinkRouter` (`js/engines/link-router.js`).
+- `/land?topic=<id>&station=<intro|a|b|c|complete|quiz>` — Land It sections, routed by `LandRouter`.
+- `/quiz?topic=<id>&quiz=<set>` — Topic quizzes.
+- `/login`, `/privacy-policy`, `/terms`, `/offline`, `/404` — standalone shells.
+
+`TopicLoader.buildUrl(...)` is the canonical URL builder — it now emits
+clean form (`/learn?topic=…&station=…`). Engines and data files should keep
+calling `TopicLoader.buildUrl('link_intro.html')` etc.; the loader rewrites
+through `PAGE_MAP` *and* strips `.html` in one step.
 
 ### Legacy filenames are gone
 
 Old per-section URLs (`topic.html`, `link_chain.html`, `land_section_a.html`, etc.) **do not exist as files or HTTP routes**. `scripts/lint.sh` blocks them from being re-introduced.
 
-The aliasing layer in `js/topic-loader.js` (`PAGE_MAP`) is kept because **per-topic data files still write the legacy names** for backwards compatibility — e.g. `backUrl: TopicLoader.buildUrl('link_intro.html')`. The loader rewrites that to `link.html?topic=…&station=intro` before the URL ever hits the network. **New code may write the canonical form:** `TopicLoader.buildUrl('link.html', { station: 'intro' })`.
+The aliasing layer in `js/topic-loader.js` (`PAGE_MAP`) is kept because **per-topic data files still write the legacy names** for backwards compatibility — e.g. `backUrl: TopicLoader.buildUrl('link_intro.html')`. The loader rewrites that to `/link?topic=…&station=intro` before the URL ever hits the network. **New code may write the canonical form:** `TopicLoader.buildUrl('link.html', { station: 'intro' })`.
+
+### Sitemap — keep it current
+
+`sitemap.xml` ships with the deployed site and is consumed by search engines.
+**Update it as part of any change that touches what URLs exist or what their
+content is.** Concretely:
+
+- Add a `<url>` entry when a new shell route or topic becomes reachable.
+- Remove (or stop emitting) entries when a route goes away.
+- Bump `<lastmod>` to today on the entries that meaningfully changed.
+
+When in doubt, refresh `<lastmod>` for the affected entries — under-updating
+the sitemap is the failure mode, not over-updating.
 
 ### Navigation contract (enforced by lint)
 

@@ -379,35 +379,38 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '⚠️', tone: 'rose', text: 'The closer the economy is to full employment, the stronger crowding out tends to be.' },
 
-      causesFirst: true,
-      causesLabel: 'CROWDING OUT &amp; INTEREST RATE PRESSURE',
-      causesEmoji: '📈',
-      causesStyle: 'tinted-flat',
-      causesCols: 1,
-      causes: [
-        { tone: 'rose', icon: '📊', head: 'Higher government borrowing shifts demand for loanable funds',
-          body:
-            '<div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center;margin:6px 0 14px;">' +
-              '<div style="background:#fff;border-radius:10px;padding:8px;border:1px solid #FECDD3;">' +
-                ECONOS_ICONS.crowdingOutLoanableFunds +
-              '</div>' +
-              '<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;">' +
-                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#F43F5E;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">1</span><span><strong style="color:#BE123C;">Demand for loanable funds rises</strong> — the demand curve shifts right from D₁ to D₂.</span></li>' +
-                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#F97316;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">2</span><span><strong style="color:#B45309;">Interest rate climbs R₁ → R₂</strong> — the new equilibrium sits higher up the supply curve. Borrowing becomes more expensive for everyone.</span></li>' +
-                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#8B5CF6;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">3</span><span><strong style="color:#6D28D9;">Private investment is crowded out</strong> — projects that were profitable at R₁ no longer clear the new hurdle rate.</span></li>' +
-                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#475569;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">4</span><span><strong style="color:#334155;">Net AD effect is weaker than expected</strong> — the boost from higher G is partly cancelled by lower private I.</span></li>' +
-              '</ul>' +
-            '</div>' +
-            '<div style="border-top:1px dashed #FDA4AF;padding-top:12px;margin-top:4px;">' +
-              '<div style="font-size:11px;font-weight:800;color:#047857;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:8px;">🛌 BUT — IN A RECESSION</div>' +
-              '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">' +
-                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:10px 12px;"><div style="font-size:12.5px;font-weight:800;color:#047857;margin-bottom:4px;">Spare capacity</div><div style="font-size:12px;color:#475569;line-height:1.5;">reduces crowding out — idle resources mean both G and private I can grow.</div></div>' +
-                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:10px 12px;"><div style="font-size:12.5px;font-weight:800;color:#047857;margin-bottom:4px;">Central bank may offset</div><div style="font-size:12px;color:#475569;line-height:1.5;">QE or rate-holding can absorb the extra borrowing without pushing rates up.</div></div>' +
-                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:10px 12px;"><div style="font-size:12.5px;font-weight:800;color:#047857;margin-bottom:4px;">Confidence effects</div><div style="font-size:12px;color:#475569;line-height:1.5;">ambiguous — strong fiscal action can <em>boost</em> private investor confidence too.</div></div>' +
-              '</div>' +
-            '</div>'
-        }
-      ],
+      interactiveDiagram: {
+        svgKey: 'crowdingOutInteractive',
+        layers: ['idl-1', 'idl-2'],
+        wide: true,
+        label: 'CROWDING OUT &amp; INTEREST RATE PRESSURE',
+        emoji: '📈',
+        views: [
+          {
+            label: 'Free-market equilibrium',
+            tone: 'blue',
+            head: 'Before extra government borrowing',
+            body: 'Demand for loanable funds (D₁) meets supply (S) at interest rate R₁ and quantity Q₁. Private firms borrow freely at R₁ — nothing is being crowded out.',
+            analysis: 'This is the benchmark. Every crowding-out effect is measured as a departure from R₁ and Q₁.'
+          },
+          {
+            label: 'Government borrows more',
+            tone: 'amber',
+            show: ['idl-1'],
+            head: 'Higher G shifts demand for funds right',
+            body: 'A bigger deficit means the state competes for the same pool of savings. Demand shifts D₁ → D₂. The new equilibrium sits higher up the supply curve: interest rates rise R₁ → R₂ and total funds borrowed rises Q₁ → Q₂.',
+            analysis: 'The rate rise is the channel. Borrowing is now more expensive for <em>everyone</em> in the economy — households, firms and the government itself.'
+          },
+          {
+            label: 'Private investment crowded out',
+            tone: 'purple',
+            show: ['idl-1', 'idl-2'],
+            head: 'Some private projects no longer clear the hurdle',
+            body: 'Reading off D₁ at the new rate R₂ shows what the private sector alone wants to borrow — Q_p. The gap <strong>Q₁ − Q_p</strong> is the private investment crowded out. The boost from higher G is partly cancelled by lower private I.',
+            analysis: 'The strength of this effect depends on how interest-sensitive private investment is. Steep D₁ → little crowding out. Flat D₁ → severe crowding out.'
+          }
+        ]
+      },
 
       pairLabel: 'TWO VIEWS',
       pairEmoji: '⚖️',
@@ -454,30 +457,11 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Automatic stabilisers soften recessions and cool booms by changing taxes and welfare spending automatically.' },
 
-      interactiveDiagram: {
-        svgKey: 'autoStabilisersInteractive',
-        layers: ['idl-1', 'idl-2'],
-        wide: true,
+      flowChart: {
+        svgKey: 'autoStabilisersFlow',
         label: 'HOW THEY WORK',
         emoji: '⚙️',
-        views: [
-          {
-            label: 'In a recession',
-            tone: 'rose',
-            show: ['idl-1'],
-            head: 'Recession: automatic fiscal loosening',
-            body: 'When output falls, tax receipts fall automatically (less income to tax) and benefit payments rise (more claimants). Both effects support AD — without any new policy decision.',
-            analysis: 'The combined effect: AD falls by less than it otherwise would. The amplitude of the recession is dampened automatically — no ministerial announcement required.'
-          },
-          {
-            label: 'In a boom',
-            tone: 'green',
-            show: ['idl-2'],
-            head: 'Boom: automatic fiscal tightening',
-            body: 'When output rises, tax receipts rise automatically (more income to tax) and benefit payments fall (fewer claimants). Both effects withdraw demand — again, without a new decision.',
-            analysis: 'The combined effect: AD rises by less than it otherwise would. The risk of overheating and inflation is reduced automatically by the same tax-benefit system.'
-          }
-        ]
+        caption: 'In a recession, falling tax receipts and rising benefit payments both cushion the drop in AD. In a boom, the same channels operate in reverse — automatically.'
       },
 
       pairLabel: 'KEY TERMS',

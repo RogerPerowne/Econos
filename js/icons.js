@@ -1253,90 +1253,156 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
-  /* Automatic Stabilisers — two stacked branching flow panels (Gov Spending Card 7) */
-  autoStabilisersFlow: `
-    <svg viewBox="0 0 600 1100" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  /* Crowding Out — loanable funds market with D2 shift (Gov Spending Card 6) */
+  crowdingOutLoanableFunds: `
+    <svg viewBox="0 0 520 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="as-down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="8" markerHeight="8" orient="auto">
+        <marker id="cofg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0F172A"/>
+        </marker>
+        <marker id="cofg-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F97316"/>
+        </marker>
+      </defs>
+
+      <!-- Title -->
+      <text x="260" y="32" font-size="16" font-weight="900" fill="#0F172A" text-anchor="middle">Loanable funds market</text>
+
+      <!-- Axes -->
+      <line x1="80" y1="60"  x2="80"  y2="360" stroke="#0F172A" stroke-width="2" marker-start="url(#cofg-arrow)"/>
+      <line x1="80" y1="360" x2="490" y2="360" stroke="#0F172A" stroke-width="2" marker-end="url(#cofg-arrow)"/>
+      <text x="72" y="376" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
+
+      <!-- Y-axis title -->
+      <text x="78" y="56"  font-size="12" font-weight="800" fill="#0F172A" text-anchor="end">Real interest</text>
+      <text x="78" y="70"  font-size="12" font-weight="800" fill="#0F172A" text-anchor="end">rate</text>
+
+      <!-- X-axis title -->
+      <text x="498" y="378" font-size="12" font-weight="800" fill="#0F172A">Quantity of</text>
+      <text x="498" y="392" font-size="12" font-weight="800" fill="#0F172A">loanable funds</text>
+
+      <!-- Supply curve (upward) -->
+      <line x1="120" y1="320" x2="460" y2="100" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+      <text x="450" y="92" font-size="13" font-weight="800" fill="#2563EB" text-anchor="end">Supply of loanable funds</text>
+
+      <!-- D1 (original demand) — downward, passes through (260, 230) where it crosses S -->
+      <line x1="110" y1="120" x2="430" y2="340" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
+      <text x="430" y="336" font-size="13" font-weight="800" fill="#0F766E">D₁</text>
+
+      <!-- D2 (shifted right, with higher gov borrowing) — parallel to D1, shifted by ~70 -->
+      <line x1="180" y1="120" x2="500" y2="340" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 4"/>
+      <text x="490" y="328" font-size="13" font-weight="800" fill="#F97316">D₂</text>
+      <text x="316" y="174" font-size="11" font-weight="700" fill="#F97316">with higher</text>
+      <text x="316" y="188" font-size="11" font-weight="700" fill="#F97316">gov. borrowing</text>
+
+      <!-- D shift arrow -->
+      <path d="M 175 200 Q 215 188 245 200" fill="none" stroke="#F97316" stroke-width="2" marker-end="url(#cofg-shift)"/>
+
+      <!-- Equilibrium 1: D1 ∩ S at ~(260, 230) -->
+      <line x1="80" y1="230" x2="260" y2="230" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 4"/>
+      <line x1="260" y1="230" x2="260" y2="360" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 4"/>
+      <circle cx="260" cy="230" r="6" fill="#0F766E" stroke="#fff" stroke-width="2"/>
+      <text x="72" y="234" font-size="13" font-weight="800" fill="#0F766E" text-anchor="end">R₁</text>
+      <text x="260" y="378" font-size="13" font-weight="800" fill="#0F766E" text-anchor="middle">Q₁</text>
+
+      <!-- Equilibrium 2: D2 ∩ S at ~(316, 184) -->
+      <line x1="80" y1="184" x2="316" y2="184" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="316" y1="184" x2="316" y2="360" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <circle cx="316" cy="184" r="6" fill="#F97316" stroke="#fff" stroke-width="2"/>
+      <text x="72" y="188" font-size="13" font-weight="800" fill="#F97316" text-anchor="end">R₂</text>
+      <text x="316" y="378" font-size="13" font-weight="800" fill="#F97316" text-anchor="middle">Q₂</text>
+
+      <!-- Up arrow showing rate rise from R1 to R2 -->
+      <path d="M 92 224 L 92 192" stroke="#F97316" stroke-width="2" marker-end="url(#cofg-shift)"/>
+    </svg>
+  `,
+
+  /* Automatic Stabilisers — two side-by-side branching flow panels (Gov Spending Card 7) */
+  autoStabilisersFlow: `
+    <svg viewBox="0 0 740 560" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="as-down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="9" markerHeight="9" orient="auto">
           <path d="M 0 0 L 10 0 L 5 10 z" fill="#94A3B8"/>
         </marker>
       </defs>
 
-      <!-- ROSE PANEL (top) — In a recession. Outer 20→580 (560w), inner content at 56 → 32px buffer to outer border -->
-      <rect x="20" y="20" width="560" height="520" rx="20" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
-      <circle cx="70" cy="66" r="22" fill="#F43F5E"/>
-      <text x="70" y="74" font-size="22" text-anchor="middle">📉</text>
-      <text x="106" y="75" font-size="26" font-weight="900" fill="#BE123C">In a recession</text>
+      <!-- ROSE PANEL (left) — In a recession. Outer 10→370 (360w). Inner content at 32 → 22px buffer to outer border -->
+      <rect x="10" y="10" width="360" height="540" rx="20" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+      <circle cx="48" cy="50" r="20" fill="#F43F5E"/>
+      <text x="48" y="58" font-size="20" text-anchor="middle">📉</text>
+      <text x="78" y="59" font-size="24" font-weight="900" fill="#BE123C">In a recession</text>
 
-      <!-- Top tile: Output and incomes fall -->
-      <rect x="56" y="116" width="488" height="68" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
-      <text x="300" y="158" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">Output and incomes fall</text>
-      <line x1="300" y1="190" x2="300" y2="224" stroke="#94A3B8" stroke-width="2.8" marker-end="url(#as-down)"/>
+      <!-- Top tile: Output &amp; incomes fall -->
+      <rect x="32" y="96" width="316" height="60" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
+      <text x="190" y="133" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">Output &amp; incomes fall</text>
+      <line x1="190" y1="162" x2="190" y2="200" stroke="#94A3B8" stroke-width="3" marker-end="url(#as-down)"/>
 
-      <!-- Pair: Tax receipts fall + Benefit spending rises -->
-      <rect x="56" y="240" width="228" height="128" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
-      <circle cx="92" cy="276" r="20" fill="#FFE4E6"/>
-      <text x="92" y="283" font-size="20" text-anchor="middle">💷</text>
-      <text x="194" y="282" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Tax receipts</text>
-      <text x="194" y="304" font-size="19" font-weight="800" fill="#BE123C" text-anchor="middle">fall</text>
-      <text x="170" y="344" font-size="14.5" fill="#64748B" text-anchor="middle">Less income to tax</text>
+      <!-- Pair: Tax receipts fall + Benefit spending rises (each 144w, 28-wide gap for +) -->
+      <rect x="32" y="216" width="144" height="120" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
+      <text x="58" y="252" font-size="22" text-anchor="middle">💷</text>
+      <text x="106" y="248" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Tax receipts</text>
+      <text x="106" y="270" font-size="20" font-weight="800" fill="#BE123C" text-anchor="middle">fall</text>
+      <text x="104" y="310" font-size="13" fill="#64748B" text-anchor="middle">Less income</text>
+      <text x="104" y="326" font-size="13" fill="#64748B" text-anchor="middle">to tax</text>
 
-      <text x="300" y="312" font-size="30" font-weight="900" fill="#9F1239" text-anchor="middle">+</text>
+      <text x="190" y="286" font-size="32" font-weight="900" fill="#9F1239" text-anchor="middle">+</text>
 
-      <rect x="316" y="240" width="228" height="128" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
-      <circle cx="352" cy="276" r="20" fill="#FFE4E6"/>
-      <text x="352" y="283" font-size="20" text-anchor="middle">👥</text>
-      <text x="454" y="282" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Benefit spending</text>
-      <text x="454" y="304" font-size="19" font-weight="800" fill="#047857" text-anchor="middle">rises</text>
-      <text x="430" y="344" font-size="14.5" fill="#64748B" text-anchor="middle">More claimants</text>
+      <rect x="204" y="216" width="144" height="120" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
+      <text x="230" y="252" font-size="22" text-anchor="middle">👥</text>
+      <text x="280" y="244" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Benefit</text>
+      <text x="280" y="262" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">spending</text>
+      <text x="280" y="286" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">rises</text>
+      <text x="276" y="318" font-size="13" fill="#64748B" text-anchor="middle">More claimants</text>
 
-      <line x1="300" y1="378" x2="300" y2="412" stroke="#94A3B8" stroke-width="2.8" marker-end="url(#as-down)"/>
+      <line x1="190" y1="346" x2="190" y2="384" stroke="#94A3B8" stroke-width="3" marker-end="url(#as-down)"/>
 
       <!-- Bottom tile: AD falls by less -->
-      <rect x="56" y="428" width="488" height="104" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
-      <circle cx="116" cy="480" r="26" fill="#FFE4E6"/>
-      <text x="116" y="489" font-size="26" text-anchor="middle">📊</text>
-      <text x="328" y="462" font-size="20" font-weight="800" fill="#0F172A" text-anchor="middle">AD falls by less</text>
-      <text x="328" y="486" font-size="16" fill="#475569" text-anchor="middle">than it otherwise would</text>
-      <text x="328" y="512" font-size="15" font-weight="700" fill="#BE123C" text-anchor="middle">Recession is softened automatically</text>
+      <rect x="32" y="400" width="316" height="138" rx="14" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
+      <circle cx="76" cy="470" r="24" fill="#FFE4E6"/>
+      <text x="76" y="479" font-size="24" text-anchor="middle">📊</text>
+      <text x="220" y="440" font-size="20" font-weight="800" fill="#0F172A" text-anchor="middle">AD falls by less</text>
+      <text x="220" y="464" font-size="14" fill="#475569" text-anchor="middle">than it otherwise would</text>
+      <text x="190" y="510" font-size="14" font-weight="700" fill="#BE123C" text-anchor="middle">Recession is softened</text>
+      <text x="190" y="526" font-size="14" font-weight="700" fill="#BE123C" text-anchor="middle">automatically</text>
 
-      <!-- GREEN PANEL (bottom) — In a boom -->
-      <rect x="20" y="560" width="560" height="520" rx="20" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
-      <circle cx="70" cy="606" r="22" fill="#10B981"/>
-      <text x="70" y="614" font-size="22" text-anchor="middle">📈</text>
-      <text x="106" y="615" font-size="26" font-weight="900" fill="#047857">In a boom</text>
+      <!-- GREEN PANEL (right) — In a boom -->
+      <rect x="380" y="10" width="350" height="540" rx="20" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+      <circle cx="418" cy="50" r="20" fill="#10B981"/>
+      <text x="418" y="58" font-size="20" text-anchor="middle">📈</text>
+      <text x="448" y="59" font-size="24" font-weight="900" fill="#047857">In a boom</text>
 
-      <!-- Top tile: Output and incomes rise -->
-      <rect x="56" y="656" width="488" height="68" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
-      <text x="300" y="698" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">Output and incomes rise</text>
-      <line x1="300" y1="730" x2="300" y2="764" stroke="#94A3B8" stroke-width="2.8" marker-end="url(#as-down)"/>
+      <!-- Top tile: Output &amp; incomes rise -->
+      <rect x="402" y="96" width="306" height="60" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="555" y="133" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">Output &amp; incomes rise</text>
+      <line x1="555" y1="162" x2="555" y2="200" stroke="#94A3B8" stroke-width="3" marker-end="url(#as-down)"/>
 
       <!-- Pair: Tax receipts rise + Benefit spending falls -->
-      <rect x="56" y="780" width="228" height="128" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
-      <circle cx="92" cy="816" r="20" fill="#D1FAE5"/>
-      <text x="92" y="823" font-size="20" text-anchor="middle">💷</text>
-      <text x="194" y="822" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Tax receipts</text>
-      <text x="194" y="844" font-size="19" font-weight="800" fill="#047857" text-anchor="middle">rise</text>
-      <text x="170" y="884" font-size="14.5" fill="#64748B" text-anchor="middle">More income to tax</text>
+      <rect x="402" y="216" width="139" height="120" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="428" y="252" font-size="22" text-anchor="middle">💷</text>
+      <text x="476" y="248" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Tax receipts</text>
+      <text x="476" y="270" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">rise</text>
+      <text x="472" y="310" font-size="13" fill="#64748B" text-anchor="middle">More income</text>
+      <text x="472" y="326" font-size="13" fill="#64748B" text-anchor="middle">to tax</text>
 
-      <text x="300" y="852" font-size="30" font-weight="900" fill="#065F46" text-anchor="middle">+</text>
+      <text x="555" y="286" font-size="32" font-weight="900" fill="#065F46" text-anchor="middle">+</text>
 
-      <rect x="316" y="780" width="228" height="128" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
-      <circle cx="352" cy="816" r="20" fill="#D1FAE5"/>
-      <text x="352" y="823" font-size="20" text-anchor="middle">👥</text>
-      <text x="454" y="822" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Benefit spending</text>
-      <text x="454" y="844" font-size="19" font-weight="800" fill="#BE123C" text-anchor="middle">falls</text>
-      <text x="430" y="884" font-size="14.5" fill="#64748B" text-anchor="middle">Fewer claimants</text>
+      <rect x="569" y="216" width="139" height="120" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+      <text x="595" y="252" font-size="22" text-anchor="middle">👥</text>
+      <text x="643" y="244" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Benefit</text>
+      <text x="643" y="262" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">spending</text>
+      <text x="643" y="286" font-size="20" font-weight="800" fill="#BE123C" text-anchor="middle">falls</text>
+      <text x="639" y="318" font-size="13" fill="#64748B" text-anchor="middle">Fewer claimants</text>
 
-      <line x1="300" y1="918" x2="300" y2="952" stroke="#94A3B8" stroke-width="2.8" marker-end="url(#as-down)"/>
+      <line x1="555" y1="346" x2="555" y2="384" stroke="#94A3B8" stroke-width="3" marker-end="url(#as-down)"/>
 
       <!-- Bottom tile: AD rises by less -->
-      <rect x="56" y="968" width="488" height="104" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
-      <circle cx="116" cy="1020" r="26" fill="#D1FAE5"/>
-      <text x="116" y="1029" font-size="26" text-anchor="middle">📊</text>
-      <text x="328" y="1002" font-size="20" font-weight="800" fill="#0F172A" text-anchor="middle">AD rises by less</text>
-      <text x="328" y="1026" font-size="16" fill="#475569" text-anchor="middle">than it otherwise would</text>
-      <text x="328" y="1052" font-size="15" font-weight="700" fill="#047857" text-anchor="middle">Overheating is cooled automatically</text>
+      <rect x="402" y="400" width="306" height="138" rx="14" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+      <circle cx="446" cy="470" r="24" fill="#D1FAE5"/>
+      <text x="446" y="479" font-size="24" text-anchor="middle">📊</text>
+      <text x="588" y="440" font-size="20" font-weight="800" fill="#0F172A" text-anchor="middle">AD rises by less</text>
+      <text x="588" y="464" font-size="14" fill="#475569" text-anchor="middle">than it otherwise would</text>
+      <text x="555" y="510" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">Overheating is cooled</text>
+      <text x="555" y="526" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">automatically</text>
     </svg>
   `,
 

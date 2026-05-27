@@ -379,15 +379,34 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '⚠️', tone: 'rose', text: 'The closer the economy is to full employment, the stronger crowding out tends to be.' },
 
-      flowTitle: 'THE FLOW CHAIN',
-      flowEmoji: '🔗',
-      flowSep: '→',
-      flow: [
-        { tone: 'rose', icon: '📈', title: '1. Higher G',               sub: 'Government spending rises.' },
-        { tone: 'rose', icon: '🏛️', title: '2. Government borrows more', sub: 'Bond supply rises.' },
-        { tone: 'rose', icon: '%',  title: '3. Interest rates rise',     sub: 'Borrowing becomes costlier.' },
-        { tone: 'rose', icon: '📉', title: '4. Private investment falls', sub: 'Some projects no longer profitable.' },
-        { tone: 'rose', icon: '📊', title: 'Net AD effect',              sub: 'is weaker than expected.' }
+      causesFirst: true,
+      causesLabel: 'CROWDING OUT &amp; INTEREST RATE PRESSURE',
+      causesEmoji: '📈',
+      causesStyle: 'tinted-flat',
+      causesCols: 1,
+      causes: [
+        { tone: 'rose', icon: '📊', head: 'Higher government borrowing shifts demand for loanable funds',
+          body:
+            '<div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center;margin:6px 0 14px;">' +
+              '<div style="background:#fff;border-radius:10px;padding:8px;border:1px solid #FECDD3;">' +
+                ECONOS_ICONS.crowdingOutLoanableFunds +
+              '</div>' +
+              '<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;">' +
+                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#F43F5E;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">1</span><span><strong style="color:#BE123C;">Demand for loanable funds rises</strong> — the demand curve shifts right from D₁ to D₂.</span></li>' +
+                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#F97316;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">2</span><span><strong style="color:#B45309;">Interest rate climbs R₁ → R₂</strong> — the new equilibrium sits higher up the supply curve. Borrowing becomes more expensive for everyone.</span></li>' +
+                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#8B5CF6;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">3</span><span><strong style="color:#6D28D9;">Private investment is crowded out</strong> — projects that were profitable at R₁ no longer clear the new hurdle rate.</span></li>' +
+                '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#0B1426;line-height:1.55;"><span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#475569;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-top:1px;">4</span><span><strong style="color:#334155;">Net AD effect is weaker than expected</strong> — the boost from higher G is partly cancelled by lower private I.</span></li>' +
+              '</ul>' +
+            '</div>' +
+            '<div style="border-top:1px dashed #FDA4AF;padding-top:12px;margin-top:4px;">' +
+              '<div style="font-size:11px;font-weight:800;color:#047857;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:8px;">🛌 BUT — IN A RECESSION</div>' +
+              '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">' +
+                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:10px 12px;"><div style="font-size:12.5px;font-weight:800;color:#047857;margin-bottom:4px;">Spare capacity</div><div style="font-size:12px;color:#475569;line-height:1.5;">reduces crowding out — idle resources mean both G and private I can grow.</div></div>' +
+                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:10px 12px;"><div style="font-size:12.5px;font-weight:800;color:#047857;margin-bottom:4px;">Central bank may offset</div><div style="font-size:12px;color:#475569;line-height:1.5;">QE or rate-holding can absorb the extra borrowing without pushing rates up.</div></div>' +
+                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:10px 12px;"><div style="font-size:12.5px;font-weight:800;color:#047857;margin-bottom:4px;">Confidence effects</div><div style="font-size:12px;color:#475569;line-height:1.5;">ambiguous — strong fiscal action can <em>boost</em> private investor confidence too.</div></div>' +
+              '</div>' +
+            '</div>'
+        }
       ],
 
       pairLabel: 'TWO VIEWS',

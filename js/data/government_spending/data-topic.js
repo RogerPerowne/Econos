@@ -382,7 +382,6 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: {
         svgKey: 'crowdingOutInteractive',
         layers: ['idl-1', 'idl-2'],
-        wide: true,
         label: 'CROWDING OUT &amp; INTEREST RATE PRESSURE',
         emoji: '📈',
         views: [

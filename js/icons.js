@@ -1043,6 +1043,47 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  /* MEC and Investment Decisions diagram (Investment Card 5) */
+  mecDiagram: `
+    <svg viewBox="0 0 560 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <!-- axes -->
+      <line x1="120" y1="40"  x2="120" y2="320" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="120" y1="320" x2="520" y2="320" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <text x="112" y="336" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
+
+      <!-- Y-axis title -->
+      <text x="90" y="56" font-size="12" font-weight="700" fill="#475569" text-anchor="end">Real return</text>
+      <text x="90" y="72" font-size="11" font-weight="600" fill="#64748B" text-anchor="end">(% per year)</text>
+
+      <!-- X-axis title (right end) -->
+      <text x="445" y="346" font-size="12" font-weight="700" fill="#475569">Capital stock</text>
+      <text x="478" y="360" font-size="11" font-weight="600" fill="#64748B">(Q)</text>
+
+      <!-- MEC curve: downward, convex; from (140,60) to (500,300) -->
+      <path d="M 140 60 C 200 130, 260 220, 500 300" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+      <text x="508" y="304" font-size="14" font-weight="800" fill="#2563EB">MEC</text>
+
+      <!-- Equilibrium dashed lines and dot at (300, 200) -->
+      <line x1="120" y1="200" x2="300" y2="200" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <line x1="300" y1="200" x2="300" y2="320" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <circle cx="300" cy="200" r="7" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+
+      <!-- Y-axis label: Interest rate (r) -->
+      <text x="112" y="198" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="end">Interest</text>
+      <text x="112" y="212" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="end">rate</text>
+      <text x="112" y="226" font-size="11" font-style="italic" font-weight="700" fill="#1E40AF" text-anchor="end">(r)</text>
+
+      <!-- X-axis label: Q* -->
+      <text x="300" y="340" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">Q*</text>
+
+      <!-- Callout: Equilibrium investment -->
+      <rect x="310" y="120" width="148" height="48" rx="8" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="384" y="140" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">Equilibrium</text>
+      <text x="384" y="156" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">investment</text>
+      <line x1="384" y1="168" x2="304" y2="196" stroke="#CBD5E1" stroke-width="1.3"/>
+    </svg>
+  `,
+
   adMovementShift: `
     <svg viewBox="0 0 640 280" width="640" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>

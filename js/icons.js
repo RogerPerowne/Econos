@@ -1409,82 +1409,83 @@ window.ECONOS_ICONS = {
   `,
 
   crowdingOutInteractive: `
-    <svg viewBox="0 0 520 420" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <defs>
-        <marker id="coi-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0F172A"/>
+        <marker id="coi-ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
         </marker>
-        <marker id="coi-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <marker id="coi-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#F97316"/>
         </marker>
-        <marker id="coi-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <marker id="coi-pu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B5CF6"/>
         </marker>
       </defs>
 
-      <!-- Base: axes, S, D1, E1 -->
+      <!-- BASE: axes + S + D1 + E1 -->
+      <!-- Geometry: S=(80,260)→(390,50) slope=-0.677; D1=(80,50)→(390,260) slope=+0.677; E1=(235,155) -->
       <g class="idl-base">
-        <text x="260" y="32" font-size="16" font-weight="900" fill="#0F172A" text-anchor="middle">Loanable funds market</text>
+        <rect width="440" height="300" fill="#F8FAFC" rx="8"/>
+        <text x="220" y="16" font-size="12" font-weight="900" fill="#0F172A" text-anchor="middle">Loanable funds market</text>
 
-        <line x1="80" y1="60"  x2="80"  y2="360" stroke="#0F172A" stroke-width="2" marker-start="url(#coi-arrow)"/>
-        <line x1="80" y1="360" x2="490" y2="360" stroke="#0F172A" stroke-width="2" marker-end="url(#coi-arrow)"/>
-        <text x="72" y="376" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">0</text>
+        <!-- Y-axis -->
+        <line x1="55" y1="272" x2="55" y2="26" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="55,23 51,31 59,31" fill="#334155"/>
+        <!-- X-axis -->
+        <line x1="55" y1="272" x2="413" y2="272" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="416,272 408,268 408,276" fill="#334155"/>
+        <!-- Origin -->
+        <text x="49" y="276" font-size="9" font-weight="700" fill="#475569" text-anchor="end">0</text>
+        <!-- Y-axis label (rotated) -->
+        <text transform="rotate(-90 14 155)" x="14" y="155" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Real interest rate</text>
+        <!-- X-axis label -->
+        <text x="418" y="276" font-size="9" font-weight="700" fill="#475569">Q</text>
 
-        <text x="78" y="56"  font-size="12" font-weight="800" fill="#0F172A" text-anchor="end">Real interest</text>
-        <text x="78" y="70"  font-size="12" font-weight="800" fill="#0F172A" text-anchor="end">rate</text>
-        <text x="498" y="378" font-size="12" font-weight="800" fill="#0F172A">Quantity of</text>
-        <text x="498" y="392" font-size="12" font-weight="800" fill="#0F172A">loanable funds</text>
+        <!-- Supply S (blue, upward) -->
+        <line x1="80" y1="260" x2="390" y2="50" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="393" y="49" font-size="11" font-weight="800" fill="#2563EB">S</text>
 
-        <line x1="120" y1="320" x2="460" y2="100" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
-        <text x="450" y="92" font-size="13" font-weight="800" fill="#2563EB" text-anchor="end">Supply of loanable funds</text>
+        <!-- D1 (teal, downward) -->
+        <line x1="80" y1="50" x2="390" y2="260" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="393" y="263" font-size="11" font-weight="800" fill="#0F766E">D₁</text>
 
-        <line x1="110" y1="120" x2="430" y2="340" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
-        <text x="430" y="336" font-size="13" font-weight="800" fill="#0F766E">D₁</text>
-
-        <line x1="80" y1="230" x2="260" y2="230" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 4"/>
-        <line x1="260" y1="230" x2="260" y2="360" stroke="#94A3B8" stroke-width="1.3" stroke-dasharray="4 4"/>
-        <circle cx="260" cy="230" r="6" fill="#0F766E" stroke="#fff" stroke-width="2"/>
-        <text x="72" y="234" font-size="13" font-weight="800" fill="#0F766E" text-anchor="end">R₁</text>
-        <text x="260" y="378" font-size="13" font-weight="800" fill="#0F766E" text-anchor="middle">Q₁</text>
+        <!-- E1 at (235, 155) -->
+        <line x1="55" y1="155" x2="235" y2="155" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <line x1="235" y1="155" x2="235" y2="272" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <circle cx="235" cy="155" r="4.5" fill="#0F766E" stroke="#fff" stroke-width="1.5"/>
+        <text x="49" y="159" font-size="10" font-weight="800" fill="#0F766E" text-anchor="end">R₁</text>
+        <text x="235" y="284" font-size="10" font-weight="800" fill="#0F766E" text-anchor="middle">Q₁</text>
       </g>
 
-      <!-- idl-1: D shifts right with gov borrowing -->
+      <!-- idl-1: D2 + E2 (gov. borrowing shifts demand right by 50px) -->
+      <!-- D2=(130,50)→(405,237); E2=(260,138); rate-rise arrow on y-axis -->
+      <!-- D-shift arrow: (302,200)→(347,200) — both points verified on their curves -->
       <g class="idl-1" style="display:none">
-        <line x1="180" y1="120" x2="500" y2="340" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 4"/>
-        <text x="490" y="328" font-size="13" font-weight="800" fill="#F97316">D₂</text>
-        <text x="316" y="174" font-size="11" font-weight="700" fill="#F97316">with higher</text>
-        <text x="316" y="188" font-size="11" font-weight="700" fill="#F97316">gov. borrowing</text>
+        <line x1="130" y1="50" x2="405" y2="237" stroke="#F97316" stroke-width="2.2" stroke-dasharray="8 4" stroke-linecap="round"/>
+        <text x="407" y="240" font-size="11" font-weight="800" fill="#F97316">D₂</text>
 
-        <path d="M 175 200 Q 215 188 245 200" fill="none" stroke="#F97316" stroke-width="2" marker-end="url(#coi-shift)"/>
+        <!-- Horizontal D-shift arrow from D1 to D2 at y=200 -->
+        <line x1="302" y1="200" x2="347" y2="200" stroke="#F97316" stroke-width="1.8" marker-end="url(#coi-or)"/>
 
-        <line x1="80" y1="184" x2="316" y2="184" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4"/>
-        <line x1="316" y1="184" x2="316" y2="360" stroke="#F97316" stroke-width="1.4" stroke-dasharray="5 4"/>
-        <circle cx="316" cy="184" r="6" fill="#F97316" stroke="#fff" stroke-width="2"/>
-        <text x="72" y="188" font-size="13" font-weight="800" fill="#F97316" text-anchor="end">R₂</text>
-        <text x="316" y="378" font-size="13" font-weight="800" fill="#F97316" text-anchor="middle">Q₂</text>
+        <!-- E2 dashed guides + dot -->
+        <line x1="55" y1="138" x2="260" y2="138" stroke="#F97316" stroke-width="1.3" stroke-dasharray="5 3"/>
+        <line x1="260" y1="138" x2="260" y2="272" stroke="#F97316" stroke-width="1.3" stroke-dasharray="5 3"/>
+        <circle cx="260" cy="138" r="4.5" fill="#F97316" stroke="#fff" stroke-width="1.5"/>
+        <text x="49" y="142" font-size="10" font-weight="800" fill="#F97316" text-anchor="end">R₂</text>
+        <text x="260" y="284" font-size="10" font-weight="800" fill="#F97316" text-anchor="middle">Q₂</text>
 
-        <path d="M 92 224 L 92 192" stroke="#F97316" stroke-width="2" marker-end="url(#coi-shift)"/>
+        <!-- Rate-rise arrow on y-axis -->
+        <line x1="63" y1="152" x2="63" y2="142" stroke="#F97316" stroke-width="2" marker-end="url(#coi-or)"/>
       </g>
 
-      <!-- idl-2: private investment crowded out — point on D1 at R2, plus shaded band Qp→Q1 -->
+      <!-- idl-2: Qp on D1 at R2 + crowded-out band -->
+      <!-- Qp: D1 at y=138 → x=210 (verified: 50+0.677*(210-80)=138) -->
       <g class="idl-2" style="display:none">
-        <!-- Shaded band along the x-axis from Qp (~203) to Q1 (260) -->
-        <rect x="203" y="354" width="57" height="14" fill="#8B5CF6" opacity="0.22"/>
-        <line x1="203" y1="354" x2="203" y2="368" stroke="#8B5CF6" stroke-width="1.5"/>
-        <line x1="260" y1="354" x2="260" y2="368" stroke="#8B5CF6" stroke-width="1.5"/>
-
-        <!-- Dashed line from R2 left along the y=184 line to D1 at (203, 184) -->
-        <line x1="203" y1="184" x2="203" y2="360" stroke="#8B5CF6" stroke-width="1.4" stroke-dasharray="5 4"/>
-        <circle cx="203" cy="184" r="5.5" fill="#8B5CF6" stroke="#fff" stroke-width="2"/>
-        <text x="203" y="378" font-size="13" font-weight="800" fill="#8B5CF6" text-anchor="middle">Q_p</text>
-
-        <!-- Callout label -->
-        <rect x="150" y="240" width="160" height="44" rx="8" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1"/>
-        <text x="230" y="258" font-size="11" font-weight="800" fill="#6D28D9" text-anchor="middle">Private investment</text>
-        <text x="230" y="274" font-size="11" font-weight="700" fill="#6D28D9" text-anchor="middle">crowded out: Q₁ − Q_p</text>
-
-        <!-- Arrow from callout to the band -->
-        <path d="M 230 286 Q 232 314 232 350" fill="none" stroke="#8B5CF6" stroke-width="1.6" marker-end="url(#coi-purple)"/>
+        <line x1="210" y1="138" x2="210" y2="272" stroke="#8B5CF6" stroke-width="1.3" stroke-dasharray="5 3"/>
+        <circle cx="210" cy="138" r="4.5" fill="#8B5CF6" stroke="#fff" stroke-width="1.5"/>
+        <text x="210" y="284" font-size="10" font-weight="800" fill="#8B5CF6" text-anchor="middle">Qₚ</text>
+        <!-- Crowded-out band Qp→Q1 just above x-axis -->
+        <rect x="210" y="263" width="25" height="9" fill="#8B5CF6" opacity="0.3" rx="1"/>
       </g>
     </svg>
   `,

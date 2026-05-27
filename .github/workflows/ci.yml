@@ -65,3 +65,49 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
+
+  # ────────────────────────────────────────────────────────────────
+  # Deploy the built `dist/` to GitHub Pages on every push to main.
+  #
+  # ONE-TIME SETUP REQUIRED: in repo Settings → Pages → "Build and
+  # deployment" → Source, choose **GitHub Actions**. Without that
+  # this job runs but Pages keeps serving from the branch root —
+  # path-based URLs (/learn/<topic> etc.) 404 because the per-topic
+  # index.html files only exist after a build.
+  # ────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint-and-build, e2e]
+    runs-on: ubuntu-latest
+    permissions:
+      pages:    write
+      id-token: write
+    environment:
+      name: github-pages
+      url:  ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

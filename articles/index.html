@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles · A-level Economics explained | Econos</title>
+  <meta name="description" content="Plain-English A-level economics articles written by a current teacher. Search the library, find the topic you're stuck on, and master it in 10 minutes.">
+  <meta name="theme-color" content="#FAF8F4">
+
+  <link rel="canonical" href="https://econos.co.uk/articles/">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Econos">
+  <meta property="og:url" content="https://econos.co.uk/articles/">
+  <meta property="og:title" content="A-level Economics articles · Econos">
+  <meta property="og:description" content="Plain-English A-level economics articles written by a current teacher.">
+
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+
+  <nav class="art-nav" role="navigation" aria-label="Main">
+    <a href="/" class="art-nav__logo">Econos</a>
+    <ul class="art-nav__links" role="list">
+      <li><a href="/learn.html">Learn</a></li>
+      <li><a href="/index.html#topics">Topics</a></li>
+      <li><a href="/articles/" class="is-active">Articles</a></li>
+    </ul>
+    <div class="art-nav__actions">
+      <a href="/login.html" class="art-btn art-btn--outline">Log in</a>
+      <a href="/learn.html" class="art-btn art-btn--solid">Sign up free</a>
+    </div>
+  </nav>
+
+  <main class="hub" id="main-content">
+
+    <header class="hub__header">
+      <h1>A-level Economics, explained.</h1>
+      <p>Plain-English articles written by a current A-level teacher. Search for what you're stuck on - or browse the full library below.</p>
+
+      <div class="hub__search">
+        <span class="hub__search-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        </span>
+        <input
+          id="hub-search"
+          type="search"
+          placeholder="Search articles - try 'monopoly', 'inflation', 'PED'..."
+          aria-label="Search articles"
+          autocomplete="off"
+        >
+      </div>
+      <div class="hub__count" id="hub-count" aria-live="polite"></div>
+    </header>
+
+    <div class="hub__grid" id="hub-grid" role="list" aria-label="Article library"></div>
+
+    <div class="hub__coming-soon">
+      <strong>Library status:</strong> 1 of 70 articles live. The full SEO queue (macro definitions, micro definitions, diagrams, exam technique, UK case studies, misconception pages) is in <code>articles/SEO_PRIORITY.md</code>.
+    </div>
+
+  </main>
+
+  <script>
+    // ──────────────────────────────────────────────────────────
+    // Client-side search over articles/search-index.json
+    //
+    // Static-site search. Loads the JSON index once, filters on
+    // every keystroke. Zero dependencies. Works fine up to ~500
+    // articles; if the library grows beyond that, swap this for
+    // a build-step index (Pagefind: `npx pagefind --site articles`).
+    // ──────────────────────────────────────────────────────────
+    (async function () {
+      const input = document.getElementById('hub-search');
+      const grid  = document.getElementById('hub-grid');
+      const count = document.getElementById('hub-count');
+
+      let articles = [];
+      try {
+        const res = await fetch('/articles/search-index.json');
+        articles = await res.json();
+      } catch (e) {
+        grid.innerHTML = '<p class="hub__empty">Could not load article index.</p>';
+        return;
+      }
+
+      function render(list) {
+        if (list.length === 0) {
+          grid.innerHTML = '<p class="hub__empty">No articles match that search yet. Try a broader term.</p>';
+          count.textContent = '';
+          return;
+        }
+        count.textContent = list.length + ' of ' + articles.length + ' article' + (articles.length === 1 ? '' : 's');
+        grid.innerHTML = list.map(a => `
+          <a class="hub-card" href="${a.url}" role="listitem">
+            <span class="hub-card__theme">${a.theme}</span>
+            <span class="hub-card__title">${a.title}</span>
+            <span class="hub-card__desc">${a.description}</span>
+            <span class="hub-card__meta">
+              <span>${a.read_minutes} min read</span>
+              <span>${a.spec}</span>
+            </span>
+          </a>
+        `).join('');
+      }
+
+      function filter(q) {
+        if (!q || !q.trim()) return articles;
+        const needle = q.toLowerCase().trim();
+        return articles.filter(a => {
+          const haystack = [
+            a.title, a.description, a.theme, a.spec,
+            (a.keywords || []).join(' ')
+          ].join(' ').toLowerCase();
+          return haystack.includes(needle);
+        });
+      }
+
+      render(articles);
+      input.addEventListener('input', e => render(filter(e.target.value)));
+    })();
+  </script>
+</body>
+</html>

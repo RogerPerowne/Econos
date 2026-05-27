@@ -4326,7 +4326,9 @@
         const tone = PATTERN_TONES[side.tone] || PATTERN_TONES[fallbackTone];
         const inner = side.text
           ? `<div style="font-size:14px;color:#0B1426;line-height:1.65;">${side.text}</div>`
-          : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
+          : side.checks && side.checks.length
+            ? `<div style="display:flex;flex-direction:column;gap:8px;">${side.checks.map(ch => `<div style="font-size:13px;color:#0B1426;line-height:1.5;"><span style="font-weight:700;color:${tone.label};">${ch.term}:</span> ${ch.body}</div>`).join('')}</div>`
+            : `<ul style="font-size:13px;color:#0B1426;line-height:1.65;padding:0 0 0 1.2em;margin:0;list-style-type:disc;">${(side.points || []).map(p => `<li style="margin-bottom:8px;padding-left:4px;color:${tone.label};"><span style="color:#0B1426;">${p}</span></li>`).join('')}</ul>`;
         const iconHtml = side.icon
           ? (side.iconStyle === 'circle'
               ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
@@ -4342,6 +4344,11 @@
           </div>`;
       };
       const label = c.pairLabel === null ? '' : genSecLabel(c.pairEmoji || '⚖️', c.pairLabel || 'Head to head');
+      const hasVs = c.pairLabel && /\bvs\b/i.test(c.pairLabel);
+      if (hasVs) {
+        const vsBadge = `<div style="display:flex;align-items:center;justify-content:center;"><div style="width:36px;height:36px;border-radius:50%;background:#94A3B8;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(100,116,139,0.25);flex-shrink:0;">VS</div></div>`;
+        return `${label}<div style="display:grid;grid-template-columns:1fr 36px 1fr;gap:12px;align-items:start;margin-bottom:16px;">${renderSide(c.left, 'green')}${vsBadge}${renderSide(c.right, 'amber')}</div>`;
+      }
       return `${label}<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">${renderSide(c.left, 'green')}${renderSide(c.right, 'amber')}</div>`;
     })() : '';
     const tabs = hasSteps ? c.steps.map((s, i) => `
@@ -4526,18 +4533,28 @@
               ${exampleHtml}
             </div>`;
           }
+          const iconTopMode = c.causesStyle === 'icon-top';
+          const iconHtml = iconTopMode
+            ? `<div style="font-size:30px;line-height:1;margin-bottom:10px;">${item.icon}</div>
+               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;margin-bottom:8px;overflow-wrap:break-word;">${item.head}</div>`
+            : `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+                 <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+                 <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
+               </div>`;
           return `
           <div style="border-radius:16px;background:${tone.bg};border:1px solid ${tone.border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
-              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
-            </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            ${iconHtml}
+            ${item.shiftArrows && item.shiftArrows.length
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
         const label = c.causesLabel === null ? '' : genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
         const causesCols = c.causesCols ? `repeat(${c.causesCols},minmax(0,1fr))` : gridColumnsFor(items.length, 155);
-        return `${label}<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
+        const headerRow = c.causesHeader && c.causesHeader.length
+          ? `<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 8px;">${c.causesHeader.map(h => { const ht = PATTERN_TONES[h.tone] || PATTERN_TONES.blue; return `<div style="background:${ht.accent};border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;line-height:1;">${h.icon || ''}</span><span style="font-size:12px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.08em;">${h.label}</span></div>`; }).join('')}</div>`
+          : '';
+        return `${label}${headerRow}<div style="display:grid;grid-template-columns:${causesCols};gap:14px;margin:0 0 20px;align-items:stretch;">${tiles}</div>`;
       })() : ''}
 
       ${c.keyDistinction && c.keyDistinction.items && c.keyDistinction.items.length ? (() => {
@@ -4556,19 +4573,24 @@
 
       ${c.causesFirst && c.causes2 && c.causes2.length ? (() => {
         const items2 = c.causes2;
+        const tintedFlat2 = c.causesStyle === 'tinted-flat';
+        const cols2 = c.causes2Cols ? `repeat(${c.causes2Cols},minmax(0,1fr))` : gridColumnsFor(items2.length, 155);
         const tiles2 = items2.map((item, i) => {
           const tone = item.tone ? PATTERN_TONES[item.tone] : PATTERN_TONES[['green','blue','purple','amber','rose','slate'][i % 6]];
+          const bg = tintedFlat2 ? tone.bg : '#fff';
+          const border = tintedFlat2 ? tone.border : '#E7E7EA';
+          const iconBg = tintedFlat2 ? '#fff' : tone.bg;
           return `
-          <div style="border-radius:14px;background:#fff;border:1px solid #E7E7EA;padding:20px 20px 18px;display:flex;flex-direction:column;">
+          <div style="border-radius:16px;background:${bg};border:1px solid ${border};padding:18px 18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:42px;height:42px;border-radius:50%;background:${tone.bg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;flex-shrink:0;">${item.icon}</div>
-              <div style="font-weight:800;font-size:16px;color:${tone.label};line-height:1.3;">${item.head}</div>
+              <div style="width:42px;height:42px;border-radius:50%;background:${iconBg};display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
+              <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>
           </div>`;
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
-        return `${label2}<div style="display:grid;grid-template-columns:${gridColumnsFor(items2.length, 155)};gap:12px;margin:0 0 20px;">${tiles2}</div>`;
+        return `${label2}<div style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`;
       })() : ''}
 
       ${c.flow && c.flow.length ? (() => {
@@ -4669,7 +4691,9 @@
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            ${item.shiftArrows && item.shiftArrows.length
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'Movement vs shift at a glance');
@@ -4881,7 +4905,9 @@
               <div style="width:42px;height:42px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.08);flex-shrink:0;">${item.icon}</div>
               <div style="font-weight:800;font-size:15px;color:${tone.label};line-height:1.3;min-width:0;overflow-wrap:break-word;">${item.head}</div>
             </div>
-            <div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body}</div>
+            ${item.shiftArrows && item.shiftArrows.length
+              ? `<div style="display:flex;flex-direction:column;gap:6px;">${item.shiftArrows.map(a => `<div style="display:flex;align-items:flex-start;gap:7px;font-size:13px;color:#0B1426;line-height:1.45;"><span style="flex-shrink:0;font-weight:900;font-size:15px;color:${a.dir === 'left' ? '#DC2626' : '#059669'};line-height:1.1;">${a.dir === 'left' ? '←' : '→'}</span><span>${a.text}</span></div>`).join('')}</div>`
+              : `<div style="font-size:13.5px;color:#0B1426;line-height:1.65;">${item.body || ''}</div>`}
           </div>`;
         }).join('');
         const label = genSecLabel(c.causesEmoji || '📋', c.causesLabel || 'In detail');

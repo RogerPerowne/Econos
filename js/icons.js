@@ -1169,110 +1169,87 @@ window.ECONOS_ICONS = {
 
   /* Government Spending Multiplier — 5-tile injection chain + formula box (Gov Spending Card 5) */
   govMultiplierChain: `
-    <svg viewBox="0 0 900 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 900 220" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
         <marker id="gmc-step" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/>
         </marker>
-        <marker id="gmc-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
-        </marker>
       </defs>
 
-      <!-- 5 tiles, 150w x 160h, gap 16 -->
+      <!-- 5 tiles, 158w x 196h, x positions: 14,192,370,548,728 (gap 20) -->
       <!-- TILE 1 — blue -->
       <g>
-        <rect x="20" y="20" width="150" height="160" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
-        <circle cx="46" cy="42" r="13" fill="#2563EB"/>
-        <text x="46" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">1</text>
-        <text x="95" y="82" font-size="24" text-anchor="middle">🏛️</text>
-        <text x="95" y="108" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">Government</text>
-        <text x="95" y="122" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">builds schools</text>
-        <text x="95" y="138" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">+£1.00bn</text>
-        <rect x="32" y="146" width="126" height="24" rx="6" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
-        <text x="95" y="163" font-size="11" font-weight="700" fill="#1E40AF" text-anchor="middle">Cumulative £1.00bn</text>
+        <rect x="14" y="12" width="158" height="196" rx="14" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.5"/>
+        <circle cx="40" cy="36" r="14" fill="#2563EB"/>
+        <text x="40" y="41" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">1</text>
+        <text x="93" y="84" font-size="26" text-anchor="middle">🏛️</text>
+        <text x="93" y="114" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">Government</text>
+        <text x="93" y="130" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">builds schools</text>
+        <text x="93" y="150" font-size="12.5" font-weight="700" fill="#1E3A8A" text-anchor="middle">+£1.00bn</text>
+        <rect x="24" y="162" width="138" height="28" rx="7" fill="#fff" stroke="#BFDBFE" stroke-width="1.2"/>
+        <text x="93" y="172" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Cumulative</text>
+        <text x="93" y="184" font-size="12" font-weight="800" fill="#1E40AF" text-anchor="middle">£1.00bn</text>
       </g>
-      <line x1="174" y1="100" x2="190" y2="100" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
+      <line x1="176" y1="110" x2="188" y2="110" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
       <!-- TILE 2 — green -->
       <g>
-        <rect x="194" y="20" width="150" height="160" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
-        <circle cx="220" cy="42" r="13" fill="#10B981"/>
-        <text x="220" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">2</text>
-        <text x="269" y="82" font-size="24" text-anchor="middle">👷</text>
-        <text x="269" y="108" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">Construction</text>
-        <text x="269" y="122" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">wages paid</text>
-        <text x="269" y="138" font-size="11" font-weight="700" fill="#065F46" text-anchor="middle">+£1.00bn income</text>
-        <rect x="206" y="146" width="126" height="24" rx="6" fill="#fff" stroke="#A7F3D0" stroke-width="1"/>
-        <text x="269" y="163" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">Cumulative £1.00bn</text>
+        <rect x="192" y="12" width="158" height="196" rx="14" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.5"/>
+        <circle cx="218" cy="36" r="14" fill="#10B981"/>
+        <text x="218" y="41" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+        <text x="271" y="84" font-size="26" text-anchor="middle">👷</text>
+        <text x="271" y="114" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">Construction</text>
+        <text x="271" y="130" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">wages &amp; income</text>
+        <text x="271" y="150" font-size="12.5" font-weight="700" fill="#065F46" text-anchor="middle">+£1.00bn income</text>
+        <rect x="202" y="162" width="138" height="28" rx="7" fill="#fff" stroke="#A7F3D0" stroke-width="1.2"/>
+        <text x="271" y="172" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Cumulative</text>
+        <text x="271" y="184" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">£1.00bn</text>
       </g>
-      <line x1="348" y1="100" x2="364" y2="100" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
+      <line x1="354" y1="110" x2="366" y2="110" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
       <!-- TILE 3 — amber -->
       <g>
-        <rect x="368" y="20" width="150" height="160" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
-        <circle cx="394" cy="42" r="13" fill="#F59E0B"/>
-        <text x="394" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">3</text>
-        <text x="443" y="82" font-size="24" text-anchor="middle">🏪</text>
-        <text x="443" y="108" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">Local shops</text>
-        <text x="443" y="122" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">&amp; services</text>
-        <text x="443" y="138" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">+£0.60bn spend</text>
-        <rect x="380" y="146" width="126" height="24" rx="6" fill="#fff" stroke="#FDE68A" stroke-width="1"/>
-        <text x="443" y="163" font-size="11" font-weight="700" fill="#B45309" text-anchor="middle">Cumulative £1.60bn</text>
+        <rect x="370" y="12" width="158" height="196" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+        <circle cx="396" cy="36" r="14" fill="#F59E0B"/>
+        <text x="396" y="41" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">3</text>
+        <text x="449" y="84" font-size="26" text-anchor="middle">🏪</text>
+        <text x="449" y="114" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">Local spending</text>
+        <text x="449" y="130" font-size="13" font-weight="800" fill="#B45309" text-anchor="middle">in shops</text>
+        <text x="449" y="150" font-size="12.5" font-weight="700" fill="#92400E" text-anchor="middle">+£0.60bn spend</text>
+        <rect x="380" y="162" width="138" height="28" rx="7" fill="#fff" stroke="#FDE68A" stroke-width="1.2"/>
+        <text x="449" y="172" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Cumulative</text>
+        <text x="449" y="184" font-size="12" font-weight="800" fill="#B45309" text-anchor="middle">£1.60bn</text>
       </g>
-      <line x1="522" y1="100" x2="538" y2="100" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
+      <line x1="532" y1="110" x2="544" y2="110" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
       <!-- TILE 4 — purple -->
       <g>
-        <rect x="542" y="20" width="150" height="160" rx="14" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
-        <circle cx="568" cy="42" r="13" fill="#8B5CF6"/>
-        <text x="568" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">4</text>
-        <text x="617" y="82" font-size="24" text-anchor="middle">👥</text>
-        <text x="617" y="108" font-size="11" font-weight="800" fill="#6D28D9" text-anchor="middle">Shop workers</text>
-        <text x="617" y="122" font-size="11" font-weight="800" fill="#6D28D9" text-anchor="middle">spend again</text>
-        <text x="617" y="138" font-size="11" font-weight="700" fill="#5B21B6" text-anchor="middle">+£0.36bn spend</text>
-        <rect x="554" y="146" width="126" height="24" rx="6" fill="#fff" stroke="#DDD6FE" stroke-width="1"/>
-        <text x="617" y="163" font-size="11" font-weight="700" fill="#6D28D9" text-anchor="middle">Cumulative £1.96bn</text>
+        <rect x="548" y="12" width="158" height="196" rx="14" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+        <circle cx="574" cy="36" r="14" fill="#8B5CF6"/>
+        <text x="574" y="41" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">4</text>
+        <text x="627" y="84" font-size="26" text-anchor="middle">👥</text>
+        <text x="627" y="114" font-size="13" font-weight="800" fill="#6D28D9" text-anchor="middle">Shop workers</text>
+        <text x="627" y="130" font-size="13" font-weight="800" fill="#6D28D9" text-anchor="middle">spend again</text>
+        <text x="627" y="150" font-size="12.5" font-weight="700" fill="#5B21B6" text-anchor="middle">+£0.36bn spend</text>
+        <rect x="558" y="162" width="138" height="28" rx="7" fill="#fff" stroke="#DDD6FE" stroke-width="1.2"/>
+        <text x="627" y="172" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Cumulative</text>
+        <text x="627" y="184" font-size="12" font-weight="800" fill="#6D28D9" text-anchor="middle">£1.96bn</text>
       </g>
-      <line x1="696" y1="100" x2="712" y2="100" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
+      <line x1="710" y1="110" x2="722" y2="110" stroke="#64748B" stroke-width="2" marker-end="url(#gmc-step)"/>
 
       <!-- TILE 5 — rose -->
       <g>
-        <rect x="716" y="20" width="160" height="160" rx="14" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1.5"/>
-        <circle cx="742" cy="42" r="13" fill="#F43F5E"/>
-        <text x="742" y="47" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">5</text>
-        <text x="796" y="82" font-size="24" text-anchor="middle">🔄</text>
-        <text x="796" y="108" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">Further rounds</text>
-        <text x="796" y="122" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">continue …</text>
-        <text x="796" y="138" font-size="11" font-weight="700" fill="#9F1239" text-anchor="middle">tends toward</text>
-        <rect x="728" y="146" width="136" height="24" rx="6" fill="#fff" stroke="#FECDD3" stroke-width="1"/>
-        <text x="796" y="163" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">Total £2.50bn</text>
+        <rect x="726" y="12" width="160" height="196" rx="14" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1.5"/>
+        <circle cx="752" cy="36" r="14" fill="#F43F5E"/>
+        <text x="752" y="41" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">5</text>
+        <text x="806" y="84" font-size="26" text-anchor="middle">🔄</text>
+        <text x="806" y="114" font-size="13" font-weight="800" fill="#BE123C" text-anchor="middle">Further rounds</text>
+        <text x="806" y="130" font-size="13" font-weight="800" fill="#BE123C" text-anchor="middle">continue…</text>
+        <text x="806" y="150" font-size="12.5" font-weight="700" fill="#9F1239" text-anchor="middle">total tends toward</text>
+        <rect x="736" y="162" width="140" height="28" rx="7" fill="#fff" stroke="#FECDD3" stroke-width="1.2"/>
+        <text x="806" y="172" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Total tends toward</text>
+        <text x="806" y="184" font-size="12" font-weight="800" fill="#BE123C" text-anchor="middle">£2.50bn</text>
       </g>
-
-      <!-- Formula box -->
-      <rect x="20" y="210" width="860" height="150" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
-
-      <!-- Calculator icon badge -->
-      <rect x="40" y="244" width="56" height="56" rx="12" fill="#DBEAFE" stroke="#93C5FD"/>
-      <text x="68" y="282" font-size="28" text-anchor="middle">🧮</text>
-
-      <!-- Formula tile -->
-      <rect x="120" y="232" width="280" height="80" rx="10" fill="#fff" stroke="#CBD5E1" stroke-width="1.3"/>
-      <text x="260" y="265" font-size="22" font-weight="900" fill="#0F172A" text-anchor="middle">ΔY = ΔG × k</text>
-      <text x="260" y="295" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">k = 1 ÷ (1 − MPC)</text>
-
-      <!-- Vertical divider -->
-      <line x1="420" y1="232" x2="420" y2="312" stroke="#CBD5E1" stroke-width="1.3" stroke-dasharray="4 4"/>
-
-      <!-- Worked numeric -->
-      <text x="445" y="262" font-size="14" font-weight="700" fill="#0F172A">If MPC = 0.6, k = 2.5.</text>
-      <text x="445" y="288" font-size="13" fill="#334155">So £1bn extra G can raise GDP by</text>
-      <text x="445" y="306" font-size="14" font-weight="800" fill="#047857">£2.5bn.</text>
-
-      <!-- Curved feedback arrow under formula -->
-      <path d="M 200 340 Q 450 380 700 340" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" marker-end="url(#gmc-loop)"/>
-      <rect x="370" y="340" width="160" height="22" rx="11" fill="#fff" stroke="#BFDBFE" stroke-width="1"/>
-      <text x="450" y="356" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">income → spending → income</text>
     </svg>
   `,
 

@@ -154,22 +154,54 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'G is one of the four components of AD — so fiscal policy directly affects total spending.' },
 
-      flowTitle: 'EXPANSIONARY FISCAL POLICY',
-      flowEmoji: '📈',
-      flowSep: '→',
-      flow: [
-        { tone: 'green', icon: '🏛️', title: 'Increase G or cut T', sub: 'Higher injections, lower withdrawals.' },
-        { tone: 'green', icon: '➡️', title: 'AD shifts right',      sub: 'Total spending rises.' },
-        { tone: 'green', icon: '📊', title: 'Output rises',          sub: 'Unemployment falls.' }
-      ],
-
-      flow2Title: 'CONTRACTIONARY FISCAL POLICY',
-      flow2Emoji: '📉',
-      flow2Sep: '→',
-      flow2: [
-        { tone: 'rose', icon: '🏛️', title: 'Cut G or raise T', sub: 'Lower injections, higher withdrawals.' },
-        { tone: 'rose', icon: '⬅️', title: 'AD shifts left',    sub: 'Total spending falls.' },
-        { tone: 'rose', icon: '📉', title: 'Inflation eases',   sub: 'Price pressure falls.' }
+      causesFirst: true,
+      causesLabel: 'TWO DIRECTIONS',
+      causesEmoji: '🔀',
+      causesStyle: 'tinted-flat',
+      causesCols: 1,
+      causes: [
+        { tone: 'green', icon: '📈', head: 'Expansionary fiscal policy',
+          body: '<div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center;margin:8px 0 14px;">' +
+                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:12px 8px;text-align:center;">' +
+                  '<div style="font-size:22px;margin-bottom:5px;">🏛️</div>' +
+                  '<div style="font-size:12px;font-weight:700;color:#065F46;line-height:1.3;">Increase G<br>or cut T</div>' +
+                  '<div style="font-size:11px;color:#6B7280;margin-top:3px;">Higher injections, lower withdrawals.</div>' +
+                '</div>' +
+                '<div style="text-align:center;font-weight:900;color:#059669;font-size:20px;">→</div>' +
+                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:12px 8px;text-align:center;">' +
+                  '<div style="font-size:22px;margin-bottom:5px;">➡️</div>' +
+                  '<div style="font-size:12px;font-weight:700;color:#065F46;line-height:1.3;">AD shifts<br>right</div>' +
+                  '<div style="font-size:11px;color:#6B7280;margin-top:3px;">Total spending rises.</div>' +
+                '</div>' +
+                '<div style="text-align:center;font-weight:900;color:#059669;font-size:20px;">→</div>' +
+                '<div style="background:#fff;border:1px solid #A7F3D0;border-radius:10px;padding:12px 8px;text-align:center;">' +
+                  '<div style="font-size:22px;margin-bottom:5px;">📊</div>' +
+                  '<div style="font-size:12px;font-weight:700;color:#065F46;line-height:1.3;">Output rises,<br>unemployment falls</div>' +
+                '</div>' +
+                '</div>' +
+                '<span style="display:inline-block;background:#fff;border:1.5px solid #A7F3D0;border-radius:18px;padding:5px 16px;font-size:12.5px;font-weight:700;color:#047857;">Used when — recession or weak demand</span>'
+        },
+        { tone: 'rose', icon: '📉', head: 'Contractionary fiscal policy',
+          body: '<div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;gap:8px;align-items:center;margin:8px 0 14px;">' +
+                '<div style="background:#fff;border:1px solid #FDA4AF;border-radius:10px;padding:12px 8px;text-align:center;">' +
+                  '<div style="font-size:22px;margin-bottom:5px;">🏛️</div>' +
+                  '<div style="font-size:12px;font-weight:700;color:#BE123C;line-height:1.3;">Cut G<br>or raise T</div>' +
+                  '<div style="font-size:11px;color:#6B7280;margin-top:3px;">Lower injections, higher withdrawals.</div>' +
+                '</div>' +
+                '<div style="text-align:center;font-weight:900;color:#F43F5E;font-size:20px;">→</div>' +
+                '<div style="background:#fff;border:1px solid #FDA4AF;border-radius:10px;padding:12px 8px;text-align:center;">' +
+                  '<div style="font-size:22px;margin-bottom:5px;">⬅️</div>' +
+                  '<div style="font-size:12px;font-weight:700;color:#BE123C;line-height:1.3;">AD shifts<br>left</div>' +
+                  '<div style="font-size:11px;color:#6B7280;margin-top:3px;">Total spending falls.</div>' +
+                '</div>' +
+                '<div style="text-align:center;font-weight:900;color:#F43F5E;font-size:20px;">→</div>' +
+                '<div style="background:#fff;border:1px solid #FDA4AF;border-radius:10px;padding:12px 8px;text-align:center;">' +
+                  '<div style="font-size:22px;margin-bottom:5px;">📉</div>' +
+                  '<div style="font-size:12px;font-weight:700;color:#BE123C;line-height:1.3;">Inflation<br>pressure falls</div>' +
+                '</div>' +
+                '</div>' +
+                '<span style="display:inline-block;background:#fff;border:1.5px solid #FDA4AF;border-radius:18px;padding:5px 16px;font-size:12.5px;font-weight:700;color:#BE123C;">Used when — overheating or excess inflation</span>'
+        }
       ],
 
       pairLabel: 'WHEN IT IS USED',
@@ -247,9 +279,24 @@ window.ECONOS_TOPIC = {
       },
 
       summaryRow: [
-        { tone: 'purple', icon: '⚖️', title: 'Cyclical vs structural',
-          text: '<div style="display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;"><div style="font-size:13px;color:#1E40AF;font-weight:700;text-align:right;">Cyclical — temporary and self-correcting</div><div style="background:#fff;border:1.5px solid #C4B5FD;border-radius:18px;padding:4px 12px;font-size:11px;font-weight:900;color:#6D28D9;">VS</div><div style="font-size:13px;color:#B45309;font-weight:700;text-align:left;">Structural — persistent and policy-driven</div></div>' },
-        { tone: 'rose', icon: '⚠️', title: 'Watch the trap', text: 'Students often define a deficit correctly but miss whether it is cyclical or structural.' }
+        { tone: 'slate', icon: null, title: null,
+          text:
+            '<div style="display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #E2E8F0;">' +
+              '<div style="display:flex;align-items:center;gap:10px;">' +
+                '<div style="width:36px;height:36px;border-radius:50%;background:#EFF6FF;border:2px solid #BFDBFE;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🕐</div>' +
+                '<div style="font-size:13px;font-weight:700;color:#1E40AF;line-height:1.4;">Cyclical – temporary and self-correcting</div>' +
+              '</div>' +
+              '<div style="width:34px;height:34px;border-radius:50%;background:#fff;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:900;color:#475569;flex-shrink:0;">VS</div>' +
+              '<div style="display:flex;align-items:center;gap:10px;justify-content:flex-end;">' +
+                '<div style="font-size:13px;font-weight:700;color:#D97706;line-height:1.4;text-align:right;">Structural – persistent and policy-driven</div>' +
+                '<div style="width:36px;height:36px;border-radius:50%;background:#FFFBEB;border:2px solid #FCD34D;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🛡️</div>' +
+              '</div>' +
+            '</div>' +
+            '<div style="display:flex;gap:10px;align-items:center;background:#FFF1F2;border:1px solid #FECDD3;border-radius:10px;padding:10px 14px;">' +
+              '<div style="width:26px;height:26px;border-radius:50%;background:#F43F5E;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">⚠️</div>' +
+              '<div style="font-size:13px;color:#0F172A;line-height:1.55;">Students often define a deficit correctly but miss whether it is cyclical or structural.</div>' +
+            '</div>'
+        }
       ],
 
       conclusion: {
@@ -278,22 +325,36 @@ window.ECONOS_TOPIC = {
         svgKey: 'govMultiplierChain',
         label: 'THE INJECTION CHAIN',
         emoji: '🔗',
-        caption: '£1bn of new school building circulates through wages, local shops and further rounds. With MPC = 0.6, the multiplier is 2.5 — so total GDP rises by £2.5bn.'
-      },
-
-      whyItMatters: {
-        title: 'WHAT MAKES IT BIGGER OR SMALLER?',
-        emoji: '🎚️',
-        items: [
-          { tone: 'green',  icon: '📈', label: 'Higher MPC',         text: '→ bigger multiplier. More of each round is re-spent.' },
-          { tone: 'amber',  icon: '💸', label: 'More leakages',      text: '→ smaller multiplier. Savings, taxes and imports drain the loop.' },
-          { tone: 'purple', icon: '🎛️', label: 'More spare capacity', text: '→ stronger real output effect. AD growth becomes real growth, not inflation.' }
-        ]
+        caption: '£1bn of new school building triggers wages, local spending, and further rounds — each pass re-spent, each round adding to GDP.'
       },
 
       summaryRow: [
-        { tone: 'blue', icon: '🌊', title: 'Synthesis',
-          text: 'Government spending does not stop with the first purchase — one person\'s spending becomes another\'s income, which fuels further spending.' }
+        { tone: 'slate', icon: '🧮', title: 'The formula',
+          text: '<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:4px;">' +
+                '<div style="background:#fff;border-radius:12px;border:1.5px solid #CBD5E1;padding:12px 22px;text-align:center;flex-shrink:0;">' +
+                  '<div style="font-size:22px;font-weight:900;color:#0F172A;letter-spacing:-0.01em;">ΔY = ΔG × k</div>' +
+                  '<div style="font-size:14px;font-weight:700;color:#334155;margin-top:4px;">k = 1 ÷ (1 − MPC)</div>' +
+                '</div>' +
+                '<div style="flex:1;min-width:150px;">' +
+                  '<div style="font-size:13.5px;font-weight:700;color:#0F172A;">If MPC = 0.6, k = 2.5.</div>' +
+                  '<div style="font-size:13px;color:#334155;margin-top:4px;">So £1bn extra G can raise GDP by <strong style="color:#047857;">£2.5bn.</strong></div>' +
+                  '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #BFDBFE;font-size:12.5px;font-weight:800;color:#2563EB;text-align:center;">income → spending → income</div>' +
+                '</div>' +
+                '</div>'
+        }
+      ],
+
+      causesLast: true,
+      causesLabel: 'WHAT MAKES IT BIGGER OR SMALLER?',
+      causesEmoji: '🎚️',
+      causesCols: 3,
+      causes: [
+        { tone: 'green',  icon: '📈', head: 'Higher MPC',
+          body: '→ bigger multiplier. More of each round is re-spent rather than saved, taxed or imported.' },
+        { tone: 'amber',  icon: '💸', head: 'More leakages',
+          body: '→ smaller multiplier. Savings, taxes and imports all drain spending out of the loop.' },
+        { tone: 'purple', icon: '🎛️', head: 'More spare capacity',
+          body: '→ stronger real output effect. AD growth turns into real growth rather than just inflation.' }
       ],
 
       conclusion: {
@@ -322,14 +383,11 @@ window.ECONOS_TOPIC = {
       flowEmoji: '🔗',
       flowSep: '→',
       flow: [
-        { tone: 'rose', icon: '📈', title: '1. Higher G',              sub: 'Government spending rises.' },
+        { tone: 'rose', icon: '📈', title: '1. Higher G',               sub: 'Government spending rises.' },
         { tone: 'rose', icon: '🏛️', title: '2. Government borrows more', sub: 'Bond supply rises.' },
-        { tone: 'rose', icon: '%',  title: '3. Interest rates rise',    sub: 'Borrowing becomes costlier.' },
-        { tone: 'rose', icon: '📉', title: '4. Private investment falls', sub: 'Some projects no longer profitable.' }
-      ],
-
-      summaryRow: [
-        { tone: 'rose', icon: '📉', title: 'Net effect', text: 'Net AD effect is weaker than expected.' }
+        { tone: 'rose', icon: '%',  title: '3. Interest rates rise',     sub: 'Borrowing becomes costlier.' },
+        { tone: 'rose', icon: '📉', title: '4. Private investment falls', sub: 'Some projects no longer profitable.' },
+        { tone: 'rose', icon: '📊', title: 'Net AD effect',              sub: 'is weaker than expected.' }
       ],
 
       pairLabel: 'TWO VIEWS',

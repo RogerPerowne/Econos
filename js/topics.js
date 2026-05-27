@@ -10,35 +10,35 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 1, Section 1: The Economic Problem (1.1–1.6) ---- */
   {
-    id: 'basic_econ_problem',
+    id: 'introduction-to-economics',
     name: 'Introduction to Economics',
     sub: 'Economics as a social science, positive/normative statements, scarcity, choice, opportunity cost',
     color: '#f97316',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'factors_of_production',
+    id: 'factors-of-production',
     name: 'Factors of Production',
     sub: 'Land, labour, capital, enterprise; factor rewards and factor mobility',
     color: '#fb923c',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'ppf',
+    id: 'production-possibility-frontiers',
     name: 'Production Possibility Frontiers',
     sub: 'Trade-offs, opportunity cost and economic growth',
     color: '#ef4444',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'specialisation_money',
+    id: 'specialisation-and-money',
     name: 'Specialisation & Money',
     sub: 'Division of labour, functions of money, barter',
     color: '#f59e0b',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'economic_systems',
+    id: 'economic-systems',
     name: 'Economic Systems',
     sub: 'Free market, command, mixed economies',
     color: '#84cc16',
@@ -54,14 +54,14 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'ped',
+    id: 'price-elasticity-of-demand',
     name: 'Price Elasticity of Demand',
     sub: 'PED formula, determinants, revenue implications',
     color: '#8b5cf6',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'yed_xed',
+    id: 'income-and-cross-price-elasticity',
     name: 'Income & Cross-Price Elasticity',
     sub: 'Income and cross-price elasticity, normal vs inferior',
     color: '#ec4899',
@@ -75,42 +75,42 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'pes',
+    id: 'price-elasticity-of-supply',
     name: 'Price Elasticity of Supply',
     sub: 'PES formula, determinants, time and stocks',
     color: '#a855f7',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'market_equilibrium',
+    id: 'price-determination',
     name: 'Price Determination',
     sub: 'Equilibrium, excess demand/supply, market clearing',
     color: '#0ea5e9',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'price_functions',
+    id: 'the-price-mechanism',
     name: 'The Price Mechanism',
     sub: 'Rationing, signalling, incentives and resource allocation',
     color: '#14b8a6',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'consumer_producer_surplus',
+    id: 'consumer-and-producer-surplus',
     name: 'Consumer & Producer Surplus',
     sub: 'Welfare triangles, efficiency and the gains from trade',
     color: '#f59e0b',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'indirect_taxes_subsidies',
+    id: 'indirect-taxes-and-subsidies',
     name: 'Indirect Taxes & Subsidies',
     sub: 'Tax and subsidy diagrams, incidence, welfare effects and evaluation',
     color: '#b45309',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'behavioural_econ',
+    id: 'behavioural-economics',
     name: 'Behavioural Economics',
     sub: 'Nudge theory, heuristics, biases and bounded rationality',
     color: '#1d4ed8',
@@ -119,35 +119,35 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 1, Section 3: Market Failure (3.1–3.4) ---- */
   {
-    id: 'market_failure',
+    id: 'market-failure',
     name: 'Market Failure',
     sub: 'Types of market failure and why markets fail to achieve allocative efficiency',
     color: '#b91c1c',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'neg_externalities',
+    id: 'negative-externalities',
     name: 'Negative Externalities',
     sub: 'Social vs private costs, market failure, pollution',
     color: '#dc2626',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'pos_externalities',
+    id: 'positive-externalities',
     name: 'Positive Externalities',
     sub: 'Social vs private benefits, under-provision, education',
     color: '#16a34a',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'public_goods',
+    id: 'public-goods',
     name: 'Public Goods',
     sub: 'Non-rival, non-excludable, free rider problem',
     color: '#2563eb',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'info_gaps',
+    id: 'information-gaps',
     name: 'Information Gaps',
     sub: 'Asymmetric information, moral hazard, adverse selection',
     color: '#7c3aed',
@@ -156,14 +156,14 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 1, Section 4: Government Intervention (4.1–4.2) ---- */
   {
-    id: 'taxes_subsidies_policy',
+    id: 'taxes-and-subsidies-as-policy-tools',
     name: 'Taxes & Subsidies as Policy Tools',
     sub: 'When taxes and subsidies are justified, UK case studies and evaluation framework',
     color: '#0f766e',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'govt_failure',
+    id: 'government-failure',
     name: 'Government Failure',
     sub: 'Unintended consequences, information failures, regulatory capture',
     color: '#9f1239',
@@ -172,21 +172,21 @@ window.ECONOS_TOPICS = [
 
   /* ---- Parked — to be assigned to later themes ---- */
   {
-    id: 'environmental_econ',
+    id: 'environmental-economics',
     name: 'Environmental Economics',
     sub: 'Carbon markets, Pigouvian taxes, sustainability',
     color: '#15803d',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'price_controls',
+    id: 'government-intervention-in-markets',
     name: 'Government Intervention in Markets',
     sub: 'Price ceilings, price floors, effects and evaluation',
     color: '#b91c1c',
     available: { learn: true, link: true, land: false }
   },
   {
-    id: 'unstable_markets',
+    id: 'unstable-commodity-markets',
     name: 'Unstable Commodity Markets',
     sub: 'Buffer stocks, price volatility and stabilisation schemes',
     color: '#92400e',
@@ -196,21 +196,21 @@ window.ECONOS_TOPICS = [
   /* ---- Theme 2: The National and Global Economy ---- */
   /* Section 1: Measures of Economic Performance */
   {
-    id: 'inflation_meas',
+    id: 'inflation-measurement-and-costs',
     name: 'Inflation: Measurement & Costs',
     sub: 'CPI, RPI, CPIH and the costs of inflation',
     color: '#f97316',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'inflation',
+    id: 'causes-of-inflation-and-deflation',
     name: 'Causes of Inflation & Deflation',
     sub: 'Demand-pull, cost-push and monetary',
     color: '#ec2d68',
     available: { learn: true, link: true, land: true }
   },
   {
-    id: 'unemployment',
+    id: 'employment-and-unemployment',
     name: 'Employment & Unemployment',
     sub: 'Types, causes and policies',
     color: '#10b981',
@@ -218,7 +218,7 @@ window.ECONOS_TOPICS = [
   },
   /* Section 2: Aggregate Demand */
   {
-    id: 'ad',
+    id: 'aggregate-demand',
     name: 'Aggregate Demand',
     sub: 'AD as a system — formula, slope, shifts, multiplier',
     color: '#f59e0b',
@@ -239,14 +239,14 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'government_spending',
+    id: 'government-spending',
     name: 'Government Spending',
     sub: 'Composition, automatic stabilisers, fiscal rules — the only direct lever (~20%)',
     color: '#3b82f6',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'net_trade',
+    id: 'net-trade',
     name: 'Net Trade (X − M)',
     sub: 'Exports, imports, Marshall-Lerner, J-curve — the open-economy link (~3%)',
     color: '#a855f7',
@@ -254,7 +254,7 @@ window.ECONOS_TOPICS = [
   },
   /* Section 3: Aggregate Supply */
   {
-    id: 'agg_supply',
+    id: 'aggregate-supply',
     name: 'Aggregate Supply',
     sub: 'SRAS, LRAS and the Classical vs Keynesian debate',
     color: '#06b6d4',
@@ -262,14 +262,14 @@ window.ECONOS_TOPICS = [
   },
   /* Section 4: National Income */
   {
-    id: 'national_income',
+    id: 'national-income',
     name: 'National Income',
     sub: 'Circular flow, equilibrium income and national income caveats',
     color: '#84cc16',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'multiplier',
+    id: 'national-income-and-the-multiplier',
     name: 'National Income & The Multiplier',
     sub: 'Multiplier formula, worked examples, accelerator and fiscal policy',
     color: '#16a34a',
@@ -277,28 +277,28 @@ window.ECONOS_TOPICS = [
   },
   /* Section 5: Economic Growth */
   {
-    id: 'growth_measure',
+    id: 'measures-of-economic-performance',
     name: 'Measures of Economic Performance',
     sub: 'The macro dashboard, GDP, real vs nominal, GNI, PPP and the limits of GDP',
     color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'output_gaps',
+    id: 'output-gaps',
     name: 'Output Gaps',
     sub: 'Actual vs potential GDP, negative and positive gaps, policy implications',
     color: '#0284c7',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'growth_cycle',
+    id: 'trade-cycle-shocks-and-economic-growth',
     name: 'Trade Cycle, Shocks & Economic Growth',
     sub: 'Booms, recessions, shocks and the trade cycle',
     color: '#eab308',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'growth_impact',
+    id: 'the-impact-of-economic-growth',
     name: 'The Impact of Economic Growth',
     sub: 'Benefits, costs, inequality, environment and sustainability',
     color: '#15803d',
@@ -306,35 +306,35 @@ window.ECONOS_TOPICS = [
   },
   /* Section 6: Macroeconomic Objectives & Policies */
   {
-    id: 'macro_objectives',
+    id: 'macroeconomic-objectives-and-trade-offs',
     name: 'Macroeconomic Objectives & Trade-offs',
     sub: 'The five objectives, conflicts and UK macro data',
     color: '#ef4444',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'fiscal_policy',
+    id: 'demand-side-policies-fiscal',
     name: 'Demand-side Policies: Fiscal',
     sub: 'Tax, spending, deficits, crowding out and fiscal multipliers',
     color: '#3b82f6',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'monetary',
+    id: 'demand-side-policies-monetary',
     name: 'Demand-side Policies: Monetary',
     sub: 'Interest rates, Bank of England, QE and transmission mechanisms',
     color: '#2563eb',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'supply_side',
+    id: 'supply-side-policies',
     name: 'Supply-Side Policies',
     sub: 'Market-based vs interventionist approaches',
     color: '#22c55e',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'macro_conflicts',
+    id: 'macro-conflicts-and-trade-offs',
     name: 'Macro Conflicts & Trade-offs',
     sub: 'Phillips curve, NAIRU, stagflation and resolving trade-offs',
     color: '#dc2626',
@@ -343,7 +343,7 @@ window.ECONOS_TOPICS = [
 
   /* ---- Parked — to be assigned to later themes ---- */
   {
-    id: 'sol_wellbeing',
+    id: 'standard-of-living-and-wellbeing',
     name: 'Standard of Living & Wellbeing',
     sub: 'HDI, wellbeing, and beyond GDP',
     color: '#8b5cf6',
@@ -352,14 +352,14 @@ window.ECONOS_TOPICS = [
 
   /* ---- Theme 3: Business Behaviour and the Labour Market ---- */
   {
-    id: 'business_growth',
+    id: 'business-growth',
     name: 'Business Growth',
     sub: 'Internal vs external growth, mergers, integration types',
     color: '#ef4444',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'business_objectives',
+    id: 'business-objectives',
     name: 'Business Objectives',
     sub: 'Profit, revenue, growth, satisficing and divorce of ownership',
     color: '#f97316',
@@ -373,42 +373,42 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'short_run_costs',
+    id: 'costs',
     name: 'Costs',
     sub: 'Fixed, variable, total, average and marginal costs',
     color: '#84cc16',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'long_run_costs',
+    id: 'economies-and-diseconomies-of-scale',
     name: 'Economies & Diseconomies of Scale',
     sub: 'LRAC, MES, economies and diseconomies of scale',
     color: '#10b981',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'profits_shutdown',
+    id: 'profits-and-losses',
     name: 'Profits & Losses',
     sub: 'Normal/supernormal profit, shutdown rule, cost and demand changes',
     color: '#06b6d4',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'efficiency',
+    id: 'types-of-efficiency',
     name: 'Types of Efficiency',
     sub: 'Productive, allocative, dynamic and X-efficiency',
     color: '#0ea5e9',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'perfect_competition',
+    id: 'perfect-competition',
     name: 'Perfect Competition',
     sub: 'Assumptions, SR/LR equilibrium, efficiency',
     color: '#0284c7',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'monopolistic_competition',
+    id: 'monopolistic-competition',
     name: 'Monopolistic Competition',
     sub: 'SR/LR equilibrium, differentiation, excess capacity',
     color: '#7c3aed',
@@ -422,14 +422,14 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'collusion_cartels',
+    id: 'collusion-and-cartels',
     name: 'Collusion and Cartels',
     sub: 'Tacit vs explicit collusion, OPEC, instability',
     color: '#a855f7',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'game_theory',
+    id: 'game-theory',
     name: 'Game Theory',
     sub: "Prisoner's dilemma, Nash equilibrium, dominant strategies",
     color: '#ec4899',
@@ -450,35 +450,35 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'contestability',
+    id: 'contestable-markets',
     name: 'Contestable Markets',
     sub: 'Sunk costs, hit-and-run entry, contestable markets, competition policy',
     color: '#b45309',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'labour_markets',
+    id: 'demand-for-labour',
     name: 'Demand for Labour',
     sub: 'Derived demand, MRP theory, labour demand curve',
     color: '#0f766e',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'labour_supply_nmw',
+    id: 'supply-of-labour',
     name: 'Supply of Labour',
     sub: 'Work-leisure choice, backward-bending curve, trade unions, NMW',
     color: '#15803d',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'wage_determination',
+    id: 'wage-determination',
     name: 'Wage Determination',
     sub: 'Labour market equilibrium, wage differentials, monopsony',
     color: '#16a34a',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'govt_intervention_t3',
+    id: 'government-intervention',
     name: 'Government Intervention',
     sub: 'Competition policy, regulation, nationalisation vs privatisation',
     color: '#14b8a6',
@@ -494,105 +494,105 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'trade_spec',
+    id: 'specialisation-and-trade',
     name: 'Specialisation & Trade',
     sub: 'Comparative advantage, gains from trade',
     color: '#7c3aed',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'trading_blocs',
+    id: 'trading-blocs-and-wto',
     name: 'Trading Blocs & WTO',
     sub: 'FTAs, customs unions, trade creation and diversion',
     color: '#0d9488',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'protectionism',
+    id: 'restrictions-on-free-trade',
     name: 'Restrictions on Free Trade',
     sub: 'Tariffs, quotas and arguments for and against',
     color: '#dc2626',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'balance_of_payments',
+    id: 'balance-of-payments',
     name: 'Balance of Payments',
     sub: 'Current account, deficits, expenditure-switching vs reducing',
     color: '#ef4444',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'exchange_rates',
+    id: 'exchange-rates',
     name: 'Exchange Rates',
     sub: 'FOREX, floating vs fixed, terms of trade',
     color: '#2563eb',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'intl_competitiveness',
+    id: 'international-competitiveness',
     name: 'International Competitiveness',
     sub: 'Unit labour costs and strategies to improve',
     color: '#0f766e',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'poverty',
+    id: 'absolute-and-relative-poverty',
     name: 'Absolute & Relative Poverty',
     sub: 'Absolute vs relative poverty and anti-poverty policies',
     color: '#9333ea',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'income_inequality',
+    id: 'inequality',
     name: 'Inequality',
     sub: 'Gini coefficient, Lorenz curve and redistribution policies',
     color: '#be185d',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'measures_of_development',
+    id: 'measures-of-development',
     name: 'Measures of Development',
     sub: 'GDP per capita, HDI, MPI and other indicators',
     color: '#16a34a',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'factors_growth_development',
+    id: 'factors-influencing-growth-and-development',
     name: 'Factors Influencing Growth & Development',
     sub: 'Economic, institutional and external drivers',
     color: '#15803d',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'strategies_growth_development',
+    id: 'strategies-influencing-growth-and-development',
     name: 'Strategies Influencing Growth & Development',
     sub: 'Market-based, interventionist, aid, debt relief',
     color: '#84cc16',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'financial_markets',
+    id: 'role-of-financial-markets',
     name: 'Role of Financial Markets',
     sub: 'Functions: savings, investment, payments, risk management',
     color: '#f59e0b',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'financial_market_failure',
+    id: 'market-failure-in-the-financial-sector',
     name: 'Market Failure in the Financial Sector',
     sub: 'Asymmetric information, moral hazard, externalities, speculation',
     color: '#d97706',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'central_banks',
+    id: 'role-of-central-banks',
     name: 'Role of Central Banks',
     sub: 'Monetary policy, lender of last resort, financial stability',
     color: '#b45309',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'public_expenditure',
+    id: 'public-expenditure',
     name: 'Public Expenditure',
     sub: 'Capital vs current, transfer vs real, composition and trends',
     color: '#0ea5e9',
@@ -606,14 +606,14 @@ window.ECONOS_TOPICS = [
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'public_finances',
+    id: 'public-sector-finances',
     name: 'Public Sector Finances',
     sub: 'Deficits, debt sustainability, fiscal rules',
     color: '#0369a1',
     available: { learn: true, link: false, land: false }
   },
   {
-    id: 'macro_policies_global',
+    id: 'macroeconomic-policies-in-a-global-context',
     name: 'Macroeconomic Policies in a Global Context',
     sub: 'Mundell-Fleming trilemma, spillovers, international coordination',
     color: '#1d4ed8',

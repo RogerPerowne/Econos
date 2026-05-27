@@ -17,7 +17,7 @@
  */
 import { chromium } from 'playwright-core';
 
-const [, , topicId = 'inflation', cardCountArg = '8'] = process.argv;
+const [, , topicId = 'causes-of-inflation-and-deflation', cardCountArg = '8'] = process.argv;
 const cardCount = parseInt(cardCountArg, 10);
 const baseUrl = 'http://127.0.0.1:8765';
 

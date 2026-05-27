@@ -45,7 +45,7 @@
       try {
         localStorage.setItem('econosLandSession', JSON.stringify({
           sections: sections,
-          topic:    'inflation',
+          topic:    'causes-of-inflation-and-deflation',
           aCount:   aCount,
           bMarks:   bMarks
         }));

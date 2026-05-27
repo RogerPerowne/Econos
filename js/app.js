@@ -5464,7 +5464,7 @@
         case 'diagnose':           body = renderCardDiagnose(c);         break;
         case 'puzzle':             body = renderCardPuzzle(c);           break;
         case 'mechanisms':         body = renderCardMechanisms(c);       break;
-        case 'monetary':           body = renderCardMonetary(c);         break;
+        case 'demand-side-policies-monetary':           body = renderCardMonetary(c);         break;
         case 'impacts':            body = renderCardImpacts(c);          break;
         case 'deflation':          body = renderCardDeflation(c);        break;
         case 'paired':             body = renderCardPaired(c);           break;
@@ -5623,7 +5623,7 @@
       'demand-pull': 'Demand-pull',
       'cost-push':   'Cost-push',
       'diagnose':    'Spotting the difference',
-      'monetary':    'Money supply & QE',
+      'demand-side-policies-monetary':    'Money supply & QE',
       'impacts':     'Impacts of inflation',
       'deflation':   'Deflation'
     };

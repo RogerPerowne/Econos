@@ -73,7 +73,7 @@ function htmlEntries() {
    ============================================================ */
 
 const STATIONS = {
-  link: ['intro','context','chain','chain_open','calc','data','extract','predict','diagram','depends','judge','complete','quiz'],
+  link: ['intro','context','chain','chain-open','calc','data','extract','predict','diagram','depends','judge','complete','quiz'],
   land: ['intro','a','b','c','complete','quiz'],
   quiz: ['main','causes']
 };
@@ -127,7 +127,7 @@ function topicRoutes() {
       .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`);
   }
 
-  /* parseUrl('/link/inflation/chain-open') → { shell:'link', topic:'inflation', station:'chain_open', file:'link.html' } */
+  /* parseUrl('/link/causes-of-inflation-and-deflation/chain-open') → { shell:'link', topic:'causes-of-inflation-and-deflation', station:'chain-open', file:'link.html' } */
   function parseUrl(rawPath) {
     if (!rawPath || rawPath === '/' || rawPath.includes('.')) return null;
     const parts = rawPath.split('/').filter(Boolean);

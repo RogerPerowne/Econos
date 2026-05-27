@@ -57,27 +57,27 @@ test('home page is accessible', async ({ page }) => {
 
 test('Learn It shell is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/learn/inflation');
+  await page.goto('/learn/causes-of-inflation-and-deflation');
   /* Wait for the engine to paint #main-content, then for the
      interactive-widget init RAF to settle. */
   await page.waitForSelector('#main-content', { state: 'attached' });
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(500);
-  await assertAxeClean(page, '/learn/inflation');
+  await assertAxeClean(page, '/learn/causes-of-inflation-and-deflation');
 });
 
 test('Link It intro is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/link/inflation/intro');
+  await page.goto('/link/causes-of-inflation-and-deflation/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
-  await assertAxeClean(page, '/link/inflation/intro');
+  await assertAxeClean(page, '/link/causes-of-inflation-and-deflation/intro');
 });
 
 test('Land It intro is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/land/inflation/intro');
+  await page.goto('/land/causes-of-inflation-and-deflation/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
-  await assertAxeClean(page, '/land/inflation/intro');
+  await assertAxeClean(page, '/land/causes-of-inflation-and-deflation/intro');
 });

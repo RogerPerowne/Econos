@@ -32,7 +32,7 @@
 (function () {
   'use strict';
 
-  var DEFAULT_TOPIC = 'inflation';
+  var DEFAULT_TOPIC = 'causes-of-inflation-and-deflation';
 
   /* Single mapping point between internal IDs (underscore) and
      URL slugs (hyphen). The mapping is bijective because no
@@ -45,8 +45,8 @@
      to start with /link etc. */
   var SHELLS = { learn: true, link: true, land: true, quiz: true };
 
-  /* parsePath('/link/inflation/chain-open')
-       → { shell: 'link', topic: 'inflation', station: 'chain_open' }
+  /* parsePath('/link/causes-of-inflation-and-deflation/chain-open')
+       → { shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain-open' }
      parsePath('/')              → { shell: 'home' }
      parsePath('/learn')         → { shell: 'learn', topic: null }
      parsePath('/quiz/X/main')   → { shell: 'quiz', topic: 'X', quizSet: 'main' }

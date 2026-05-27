@@ -1321,10 +1321,10 @@ window.ECONOS_ICONS = {
   autoStabilisersFlow: `
     <svg viewBox="0 0 740 560" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
       <defs>
-        <marker id="as-down-rose" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="10" markerHeight="10" orient="auto">
+        <marker id="as-down-rose" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
           <path d="M 0 0 L 10 0 L 5 10 z" fill="#F43F5E"/>
         </marker>
-        <marker id="as-down-green" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="10" markerHeight="10" orient="auto">
+        <marker id="as-down-green" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
           <path d="M 0 0 L 10 0 L 5 10 z" fill="#10B981"/>
         </marker>
       </defs>
@@ -1408,6 +1408,95 @@ window.ECONOS_ICONS = {
       <text x="588" y="464" font-size="14" fill="#475569" text-anchor="middle">than it otherwise would</text>
       <text x="555" y="510" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">Overheating is cooled</text>
       <text x="555" y="526" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">automatically</text>
+    </svg>
+  `,
+
+  autoStabilisersInteractive: `
+    <svg viewBox="0 0 420 380" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+      <defs>
+        <marker id="asi-down-rose" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M 0 0 L 10 0 L 5 10 z" fill="#F43F5E"/>
+        </marker>
+        <marker id="asi-down-green" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M 0 0 L 10 0 L 5 10 z" fill="#10B981"/>
+        </marker>
+      </defs>
+
+      <!-- idl-1: In a recession (rose) -->
+      <g class="idl-1" style="display:none">
+        <circle cx="28" cy="30" r="18" fill="#F43F5E"/>
+        <text x="28" y="38" font-size="18" text-anchor="middle">📉</text>
+        <text x="56" y="37" font-size="17" font-weight="900" fill="#BE123C">In a recession</text>
+
+        <rect x="12" y="54" width="396" height="52" rx="12" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+        <text x="210" y="86" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">Output &amp; incomes fall</text>
+
+        <line x1="210" y1="112" x2="210" y2="136" stroke="#F43F5E" stroke-width="3" marker-end="url(#asi-down-rose)"/>
+
+        <rect x="12" y="142" width="185" height="108" rx="12" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
+        <text x="40" y="183" font-size="20" text-anchor="middle">💷</text>
+        <text x="118" y="172" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Tax</text>
+        <text x="118" y="188" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">receipts</text>
+        <text x="118" y="210" font-size="18" font-weight="800" fill="#BE123C" text-anchor="middle">fall</text>
+        <text x="118" y="232" font-size="12" fill="#64748B" text-anchor="middle">Less income</text>
+        <text x="118" y="246" font-size="12" fill="#64748B" text-anchor="middle">to tax</text>
+
+        <text x="208" y="206" font-size="28" font-weight="900" fill="#9F1239" text-anchor="middle">+</text>
+
+        <rect x="211" y="142" width="197" height="108" rx="12" fill="#fff" stroke="#FECDD3" stroke-width="1.5"/>
+        <text x="239" y="183" font-size="20" text-anchor="middle">👥</text>
+        <text x="320" y="174" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Benefit</text>
+        <text x="320" y="192" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">spending</text>
+        <text x="320" y="214" font-size="18" font-weight="800" fill="#047857" text-anchor="middle">rises</text>
+        <text x="316" y="236" font-size="12" fill="#64748B" text-anchor="middle">More claimants</text>
+
+        <line x1="210" y1="256" x2="210" y2="280" stroke="#F43F5E" stroke-width="3" marker-end="url(#asi-down-rose)"/>
+
+        <rect x="12" y="284" width="396" height="90" rx="12" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="1.5"/>
+        <circle cx="52" cy="329" r="20" fill="#FFE4E6"/>
+        <text x="52" y="337" font-size="20" text-anchor="middle">📊</text>
+        <text x="238" y="314" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">AD falls by less</text>
+        <text x="238" y="334" font-size="13" fill="#475569" text-anchor="middle">than it otherwise would</text>
+        <text x="210" y="358" font-size="13" font-weight="700" fill="#BE123C" text-anchor="middle">Recession is softened automatically</text>
+      </g>
+
+      <!-- idl-2: In a boom (green) -->
+      <g class="idl-2" style="display:none">
+        <circle cx="28" cy="30" r="18" fill="#10B981"/>
+        <text x="28" y="38" font-size="18" text-anchor="middle">📈</text>
+        <text x="56" y="37" font-size="17" font-weight="900" fill="#047857">In a boom</text>
+
+        <rect x="12" y="54" width="396" height="52" rx="12" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+        <text x="210" y="86" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">Output &amp; incomes rise</text>
+
+        <line x1="210" y1="112" x2="210" y2="136" stroke="#10B981" stroke-width="3" marker-end="url(#asi-down-green)"/>
+
+        <rect x="12" y="142" width="185" height="108" rx="12" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+        <text x="40" y="183" font-size="20" text-anchor="middle">💷</text>
+        <text x="118" y="172" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Tax</text>
+        <text x="118" y="188" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">receipts</text>
+        <text x="118" y="210" font-size="18" font-weight="800" fill="#047857" text-anchor="middle">rise</text>
+        <text x="118" y="232" font-size="12" fill="#64748B" text-anchor="middle">More income</text>
+        <text x="118" y="246" font-size="12" fill="#64748B" text-anchor="middle">to tax</text>
+
+        <text x="208" y="206" font-size="28" font-weight="900" fill="#065F46" text-anchor="middle">+</text>
+
+        <rect x="211" y="142" width="197" height="108" rx="12" fill="#fff" stroke="#A7F3D0" stroke-width="1.5"/>
+        <text x="239" y="183" font-size="20" text-anchor="middle">👥</text>
+        <text x="320" y="174" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">Benefit</text>
+        <text x="320" y="192" font-size="14" font-weight="700" fill="#0F172A" text-anchor="middle">spending</text>
+        <text x="320" y="214" font-size="18" font-weight="800" fill="#BE123C" text-anchor="middle">falls</text>
+        <text x="316" y="236" font-size="12" fill="#64748B" text-anchor="middle">Fewer claimants</text>
+
+        <line x1="210" y1="256" x2="210" y2="280" stroke="#10B981" stroke-width="3" marker-end="url(#asi-down-green)"/>
+
+        <rect x="12" y="284" width="396" height="90" rx="12" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+        <circle cx="52" cy="329" r="20" fill="#D1FAE5"/>
+        <text x="52" y="337" font-size="20" text-anchor="middle">📊</text>
+        <text x="238" y="314" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">AD rises by less</text>
+        <text x="238" y="334" font-size="13" fill="#475569" text-anchor="middle">than it otherwise would</text>
+        <text x="210" y="358" font-size="13" font-weight="700" fill="#047857" text-anchor="middle">Overheating is cooled automatically</text>
+      </g>
     </svg>
   `,
 

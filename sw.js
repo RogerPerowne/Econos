@@ -19,17 +19,25 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate: remove old caches and claim clients
+// Activate: remove old caches, claim clients, and if we just upgraded
+// from an older cache, force a one-time reload of every open window so
+// HTML, JS and CSS all come from the same build. Without this, a tab
+// that loaded mid-deploy ends up running OLD JS against the NEW CSS
+// (or vice-versa) — the classic SW mismatch that puts unstyled chrome
+// at the top of the page until the user manually hard-refreshes.
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      )
-    ).then(() => self.clients.claim())
-  );
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    const hadOldCache = keys.some((k) => k !== CACHE_NAME);
+    await Promise.all(
+      keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
+    );
+    await self.clients.claim();
+    if (hadOldCache) {
+      const clients = await self.clients.matchAll({ type: 'window' });
+      await Promise.all(clients.map((c) => c.navigate(c.url).catch(() => {})));
+    }
+  })());
 });
 
 // Fetch strategy

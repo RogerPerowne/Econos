@@ -454,11 +454,30 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'Automatic stabilisers soften recessions and cool booms by changing taxes and welfare spending automatically.' },
 
-      flowChart: {
-        svgKey: 'autoStabilisersFlow',
+      interactiveDiagram: {
+        svgKey: 'autoStabilisersInteractive',
+        layers: ['idl-1', 'idl-2'],
+        wide: true,
         label: 'HOW THEY WORK',
         emoji: '⚙️',
-        caption: 'In a recession, falling tax receipts and rising benefit payments both cushion the drop in AD. In a boom, the same channels operate in reverse — automatically.'
+        views: [
+          {
+            label: 'In a recession',
+            tone: 'rose',
+            show: ['idl-1'],
+            head: 'Recession: automatic fiscal loosening',
+            body: 'When output falls, tax receipts fall automatically (less income to tax) and benefit payments rise (more claimants). Both effects support AD — without any new policy decision.',
+            analysis: 'The combined effect: AD falls by less than it otherwise would. The amplitude of the recession is dampened automatically — no ministerial announcement required.'
+          },
+          {
+            label: 'In a boom',
+            tone: 'green',
+            show: ['idl-2'],
+            head: 'Boom: automatic fiscal tightening',
+            body: 'When output rises, tax receipts rise automatically (more income to tax) and benefit payments fall (fewer claimants). Both effects withdraw demand — again, without a new decision.',
+            analysis: 'The combined effect: AD rises by less than it otherwise would. The risk of overheating and inflation is reduced automatically by the same tax-benefit system.'
+          }
+        ]
       },
 
       pairLabel: 'KEY TERMS',

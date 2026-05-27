@@ -2,11 +2,11 @@
    ECONOS — Link It router (SPA shell for link.html)
    ─────────────────────────────────────────────────────────────
    link.html loads ALL Link engines + this router. The router
-   intercepts in-stage navigation (clicks on <a href="link.html?
+   intercepts in-stage navigation (clicks on <a href="/link?
    station=X"> + programmatic LinkRouter.navigate() calls),
    swaps the station in-place via history.pushState, and only
-   does real page navigation for cross-stage URLs (learn.html,
-   land.html, index.html, …).
+   does real page navigation for cross-stage URLs (/learn,
+   /land, /, …).
    ============================================================ */
 
 (function () {
@@ -104,7 +104,7 @@
     if (!url) return false;
     var path = String(url).split('?')[0].split('#')[0];
     var file = path.substring(path.lastIndexOf('/') + 1);
-    return file === 'link.html' && !!urlToStation(url);
+    return (file === 'link' || file === 'link.html') && !!urlToStation(url);
   }
 
   function setTitle(station) {
@@ -124,7 +124,7 @@
       +   '<p style="color:var(--econ-muted,#6B7280);margin-bottom:24px;">'
       +     'The Link It station <code>' + (station || '?') + '</code> doesn\'t exist for this topic.'
       +   '</p>'
-      +   '<a href="link.html' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
+      +   '<a href="/link' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
       +     '← Back to Link It intro'
       +   '</a>'
       + '</div>';

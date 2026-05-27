@@ -70,6 +70,33 @@ export default defineConfig({
       }
     },
 
+    /* Clean-URL middleware. Production (GitHub Pages) serves /learn from
+       learn.html automatically; this rewrites /learn → /learn.html for the
+       Vite dev and preview servers so internal links resolve the same way
+       locally. Pure path-only rewrite — query strings pass through. */
+    (function cleanUrls() {
+      var SHELLS = new Set(['learn','link','land','quiz','login','privacy-policy','terms','offline','404']);
+      function rewrite(req, _res, next) {
+        try {
+          var qIdx = (req.url || '/').indexOf('?');
+          var pathname = qIdx >= 0 ? req.url.slice(0, qIdx) : req.url;
+          var query    = qIdx >= 0 ? req.url.slice(qIdx)    : '';
+          if (pathname && pathname !== '/' && !pathname.includes('.') && !pathname.endsWith('/')) {
+            var name = pathname.slice(1);
+            if (SHELLS.has(name)) {
+              req.url = '/' + name + '.html' + query;
+            }
+          }
+        } catch (e) { /* fall through */ }
+        next();
+      }
+      return {
+        name: 'clean-urls',
+        configureServer:        function (server) { server.middlewares.use(rewrite); },
+        configurePreviewServer: function (server) { server.middlewares.use(rewrite); }
+      };
+    })(),
+
     /* Patch CACHE_NAME in dist/sw.js so the service worker invalidates its
        cache-first store on every deploy. */
     {

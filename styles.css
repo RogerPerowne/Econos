@@ -162,10 +162,12 @@ body {
   background: var(--econ-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overflow-x removed — it forced overflow-y to auto, which made
-     body its own scroll container and BROKE position:sticky on
-     sidebar/topbar/right-rail. html { overflow-x: clip } handles
-     horizontal overflow without that side-effect. */
+  /* `clip` (not `hidden`) belts-and-braces the no-horizontal-scroll contract
+     without making body its own scroll container, so position:sticky on the
+     sidebar / topbar / right-rail keeps working. `overscroll-behavior-x: none`
+     kills the touch rubber-band swipe-left/right that felt cheap. */
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 button { font-family: inherit; cursor: pointer; border: none; background: none; }

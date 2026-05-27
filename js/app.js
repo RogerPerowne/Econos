@@ -40,8 +40,8 @@
     return `
       <aside class="sidebar">
         <div class="sidebar__brand">
-          <a href="index.html" class="sidebar__logo-link">
-            <img src="assets/econos-logo-full.png" alt="econos" class="sidebar__logo-full">
+          <a href="/" class="sidebar__logo-link">
+            <img src="assets/logo-wordmark-tagline.png" alt="econos" class="sidebar__logo-full">
           </a>
         </div>
 
@@ -79,7 +79,7 @@
     if (currentView === 'intro') {
       return `
         <div class="topbar" role="region" aria-label="Session header">
-          <a href="index.html" class="topbar__back">
+          <a href="/" class="topbar__back">
             ${I.arrowLeft}
             <span>Back to dashboard</span>
           </a>
@@ -5510,7 +5510,7 @@
     let cardFoot;
     if (isLast) {
       const quizBtn  = quizHref   ? `<a href="${quizHref}"                    class="btn btn--primary"    style="text-decoration:none;">${quizLabel}</a>` : '';
-      const nextBtn  = nextTopicId ? `<a href="learn.html?topic=${nextTopicId}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
+      const nextBtn  = nextTopicId ? `<a href="/learn?topic=${nextTopicId}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
       const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
     } else {

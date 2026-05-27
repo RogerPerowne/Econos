@@ -14,12 +14,12 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="login.css">
-  <link rel="canonical" href="https://econos.co.uk/login.html">
+  <link rel="canonical" href="https://econos.co.uk/login">
   <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
 </head>
 <body>
   <div class="card">
-    <img src="assets/econos-logo-full.png" alt="Econos" class="logo">
+    <img src="assets/logo-full.png" alt="Econos" class="logo">
     <h1>Welcome back</h1>
     <p class="subtitle">Sign in to access the demo</p>
     <form id="login-form" autocomplete="off">
@@ -39,7 +39,7 @@
       var p = document.getElementById('password').value;
       if (u === 'econos' && p === 'demo2024') {
         localStorage.setItem('econosAuth', '1');
-        window.location.href = 'index.html';
+        window.location.href = '/';
       } else {
         document.getElementById('error-msg').textContent = 'Incorrect username or password.';
       }

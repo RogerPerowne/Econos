@@ -1,306 +1,530 @@
 /* ============================================================
    ECONOS — content data for agg_supply
-   7 cards · revision-tight · exam-edge gems flagged
-   Edexcel Theme 2.3
+   8 cards · ad-interactive template · Edexcel Theme 2.3
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'agg_supply',
-  topicNum: '3.1-3.3',
+  topicNum: '2.3',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Aggregate Supply',
-  estTime: '9-11 minutes',
+  estTime: '20 min',
   goal: 'Master SRAS, LRAS and the Classical vs Keynesian debate',
 
   intro: {
     heroKey: 'heroAggSupply',
-    summary: "SRAS and LRAS do very different things. The Classical vs Keynesian debate about LRAS shape determines everything — what equilibrium means, whether fiscal policy works, and how inflation and output interact.",
-    doInThis: 'Recap SRAS shifters, Classical and Keynesian LRAS, equilibrium, supply-side shifts, and output gap closure. Finish with a 25-mark essay scaffold.',
+    summary: 'Aggregate supply determines how much the economy can produce. SRAS responds to short-run cost conditions while LRAS reflects the economy\'s long-run productive capacity. The Classical vs Keynesian debate about LRAS shape drives everything from fiscal policy to growth strategy.',
+    doInThis: 'Work through SRAS and LRAS curves, their shifts and policy implications. Compare demand-side and supply-side approaches. Finish with evaluation tools for exam essays.',
     outcomes: [
-      'Distinguish SRAS from LRAS shifters',
-      'Explain Classical and Keynesian LRAS shapes',
-      'Apply AS shifts to macro equilibrium correctly'
+      'Explain why SRAS slopes upward and what shifts it',
+      'Distinguish Classical and Keynesian views of LRAS',
+      'Apply SRAS and LRAS shifts to macro equilibrium',
+      'Evaluate supply-side policies against demand-side stimulus'
     ],
-    tip: 'These cards are revision, not first-time learning. They cue what you already know and flag the gems that lift answers from B to A*.',
+    tip: 'Draw the diagram as you go — seeing SRAS, LRAS, and AD interact makes the logic stick.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '8 concept cards',    state: 'current' },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'locked' },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked' }
+      { num: 1, name: 'Learn',  sub: '8 cards \xb7 20 min', state: 'current' },
+      { num: 2, name: 'Master', sub: 'Apply in exam-style questions', state: 'locked' },
+      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
     ]
   },
 
   cards: [
 
-    /* ----- CARD 1 — Framing: SRAS vs LRAS ----- */
+    /* ----- CARD 1 — What is Aggregate Supply? ----- */
     {
-      id: 'sras-lras-framing',
-      template: 'framing',
-      stepLabel: 'Learn: Step 1 of 8',
-      title: 'SRAS vs LRAS: two very different curves',
-      lede: 'Aggregate Supply has two versions with completely different shapes, shifters, and policy implications. Confusing them is the most-marked-down error in macro essays.',
-      branches: [
-        { tone: 'green',  label: 'SRAS (Short Run)',   sub: '<strong>Upward sloping.</strong> In the short run, wages and input costs are sticky — so firms can respond to higher prices by producing more. Price level rises → output rises. Shifts with costs and productivity.' },
-        { tone: 'blue',   label: 'LRAS Classical',     sub: '<strong>Vertical</strong> at full employment output. In the long run, wages and prices are fully flexible, so the economy always returns to its natural rate of output. Fiscal stimulus has no lasting effect.' },
-        { tone: 'amber',  label: 'LRAS Keynesian',     sub: '<strong>L-shaped.</strong> Horizontal at low output (spare capacity) then steep as full employment approaches. At low output, extra AD raises output without inflation. The case for fiscal stimulus.' }
+      id: 'what-is-as',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 1 of 8',
+      title: 'What is Aggregate Supply?',
+      lede: 'Aggregate supply (AS) is the total output firms in the economy are willing and able to produce at each price level.\nAS has two time horizons — SRAS in the short run and LRAS in the long run.',
+
+      tip: { icon: '✅', tone: 'green', text: 'AS is about economy-wide output, not the supply of one product.' },
+
+      causesFirst: true,
+      causesLabel: 'THE CORE IDEA',
+      causesEmoji: '💡',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'blue',   icon: '📊', head: 'Aggregate supply',  body: 'The total planned output at each price level across the whole economy.' },
+        { tone: 'amber',  icon: '📈', head: 'SRAS',              body: 'Short run aggregate supply. Upward sloping — as prices rise, firms supply more. Costs can be sticky.' },
+        { tone: 'purple', icon: '🏛️', head: 'LRAS',              body: 'Long run aggregate supply. Vertical at productive capacity (Yf). Prices do not change LRAS.' }
       ],
-      examEdge: {
-        title: 'State the assumption first',
-        text: 'Before analysing macro equilibrium, <strong>state which AS model you\'re using</strong>. If Classical: \'In the long run, LRAS is vertical — fiscal stimulus only raises the price level.\' If Keynesian: \'With spare capacity, the horizontal portion of LRAS means AD increases raise output without inflation.\' Naming the model is the first analytical mark.'
+
+      interactiveDiagram: {
+        svgKey: 'srasLrasIntro',
+        label: 'THE BASIC DIAGRAM',
+        emoji: '📊',
+        views: [
+          {
+            label: 'The basic diagram',
+            show: [],
+            icon: 'ℹ️',
+            head: 'SRAS shows short-run responsiveness.',
+            body: ['LRAS shows the economy\'s maximum sustainable output.'],
+            tone: 'blue'
+          }
+        ]
       },
-      keyTakeaway: {
-        title: 'Why both matter for exams',
-        text: 'Edexcel expects you to use both models. Classical for long-run analysis and supply-side policy. Keynesian for short-run recessions and the case for fiscal stimulus. Switching between them fluently — and explicitly — is the A* move.'
-      }
+
+      pairLabel: 'SRAS VS LRAS',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'blue', icon: '📈', iconStyle: 'circle',
+        label: 'SRAS',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Affected by wages, energy prices, taxes, import costs, productivity.</p>'
+      },
+      right: {
+        tone: 'purple', icon: '🏛️', iconStyle: 'circle',
+        label: 'LRAS',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Determined by labour, capital, technology, productivity and efficiency.</p>'
+      },
+
+      flowTitle: 'WHY IT MATTERS',
+      flowEmoji: '🎯',
+      flow: [
+        { tone: 'blue',   icon: '📈', title: 'SRAS explains inflation shocks.' },
+        { tone: 'amber',  icon: '📊', title: 'LRAS explains growth potential.' },
+        { tone: 'green',  icon: '🔍', title: 'Together they help diagnose whether rising prices come from demand or supply.' }
+      ],
+
+      conclusion: { title: 'Big idea', text: 'Short-run changes affect costs and inflation. Long-run changes affect the economy\'s productive capacity.' },
+      examEdge: 'Strong essays distinguish movements along SRAS from shifts in SRAS — and they separate short-run supply conditions from long-run capacity.'
     },
 
-    /* ----- CARD 2 — SRAS: slope and shifters ----- */
+    /* ----- CARD 2 — The SRAS curve ----- */
     {
-      id: 'sras',
-      template: 'cause',
-      diagramKey: 'adAsCostPush',
-      tone: 'green',
-      bannerLabel: 'Short Run Aggregate Supply',
+      id: 'sras-curve',
+      template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
-      title: 'SRAS: why it slopes upward and what shifts it',
-      lede: 'SRAS slopes upward because input costs (especially wages) are sticky in the short run. When the price level rises, firms receive higher revenues but pay the same costs — so they produce more.',
-      diagramCaption: 'SRAS: upward sloping in P-Y space. Shifts left on cost increases, right on productivity gains.',
-      causes: {
-        title: 'What shifts SRAS',
-        items: [
-          'Wage costs: the biggest driver — wage rises shift SRAS left (cost-push inflation)',
-          'Raw material and energy costs: oil price spike → SRAS shifts left',
-          'Import prices: exchange rate depreciation → import costs rise → SRAS left',
-          'Productivity: productivity improvement → SRAS right (more output per unit of input)',
-          'Indirect taxes: VAT rise → SRAS left; subsidy → SRAS right',
-          'Exchange rate: affects import costs of inputs and finished goods'
-        ]
-      },
-      hallmarks: {
-        title: 'Real-world SRAS shocks',
-        items: [
-          '1973 OPEC oil shock: oil price \xd74 → SRAS shifted sharply left → stagflation',
-          '2021-22 supply chain disruptions: input costs soared → SRAS left',
-          '2022 energy price surge: gas prices rose 10\xd7 → SRAS left across Europe',
-          'Post-pandemic wage rises (2022-23): tight labour market → wage growth → SRAS left'
-        ]
-      },
-      ukExamples: {
-        title: 'UK exam application',
-        text: '<strong>2022-23 UK inflation:</strong> primarily a cost-push story — energy prices, supply chain bottlenecks, and post-COVID wage pressures all shifted SRAS left simultaneously. CPI hit 11.1%. The BoE faced a policy dilemma: raising rates to reduce AD risks recession when the problem is supply-side.'
-      },
-      examEdge: {
-        title: 'SRAS shift = cost-push dilemma',
-        text: 'When SRAS shifts left, output falls AND prices rise — <strong>stagflation</strong>. This is the policy dilemma: tighten to fight inflation (worsen recession) or ease to protect output (worsen inflation). A* answers identify this trade-off explicitly, naming it as the \'monetary policy dilemma in a supply shock\'.'
-      },
-      policy: {
-        title: 'Policy tools for SRAS shocks',
-        text: 'Demand-side policies cannot fix supply-side problems cleanly. The BoE can raise rates to bring down AD (reduces inflation but worsens output gap). Supply-side policies — reducing business costs, improving productivity — shift SRAS right without the dilemma. This is why supply-side reform matters.'
-      }
-    },
+      title: 'The SRAS curve',
+      lede: 'Short-run aggregate supply (SRAS) slopes upward because many costs are sticky in the short run. When the general price level rises faster than firms\' costs, profit margins improve and firms increase output.',
 
-    /* ----- CARD 3 — LRAS Classical: the vertical curve ----- */
-    {
-      id: 'lras-classical',
-      template: 'mechanisms',
-      stepLabel: 'Learn: Step 3 of 8',
-      title: 'LRAS Classical: the self-correcting economy',
-      lede: 'The Classical school says: in the long run, wages and prices are fully flexible. The economy always returns to full employment output. Government intervention is unnecessary — and counterproductive.',
-      mechanisms: [
-        {
-          num: '1',
-          tone: 'green',
-          title: 'Vertical LRAS at Y*',
-          text: '<strong>LRAS is vertical at potential output Y*</strong> (full employment). This reflects the PPF — the economy\'s productive capacity. In the long run, only supply-side improvements shift LRAS. AD is neutral for output.'
-        },
-        {
-          num: '2',
-          tone: 'blue',
-          title: 'The self-correcting mechanism',
-          text: 'If AD falls → recession → wages fall (flexible) → SRAS shifts right → economy returns to Y* at a lower price level. No need for fiscal stimulus. The market corrects automatically. The key assumption: <strong>wage and price flexibility</strong>.'
-        },
-        {
-          num: '3',
-          tone: 'amber',
-          title: 'Fiscal stimulus is neutral',
-          text: 'If the government spends more (↑G → AD right) but LRAS is vertical, output stays at Y* — all the stimulus does is raise the price level. This is the <strong>Classical critique of Keynesian fiscal policy</strong>: crowding out + inflation with no lasting output gain.'
-        },
-        {
-          num: '4',
-          tone: 'rose',
-          title: 'Crowding out',
-          text: 'Government borrowing to finance G competes with private sector for loanable funds → interest rates rise → private investment falls → private AD falls by the same amount as G rises. Net effect: zero. The full crowding out argument.'
-        }
+      tip: { icon: '✅', tone: 'green', text: 'Higher prices can raise output in the short run because some costs adjust slowly.' },
+
+      flowTitle: 'WHY SRAS SLOPES UPWARD',
+      flowEmoji: '📈',
+      flow: [
+        { tone: 'blue',   icon: '£',  title: 'The general price level rises.' },
+        { tone: 'amber',  icon: '🔒', title: 'Wages and some costs are sticky in the short run.' },
+        { tone: 'green',  icon: '📊', title: 'Profit margins improve and firms produce more.' }
       ],
-      examEdge: {
-        title: 'Full vs partial crowding out',
-        text: 'Classical economists argue for <strong>complete crowding out</strong>. Keynesians argue for partial crowding out — especially in recession when private saving is high and interest rate sensitivity of investment is low. A* answers present both sides with the conditioning assumption (is there spare capacity?).'
+
+      interactiveDiagram: {
+        svgKey: 'srasCurveStatic',
+        label: 'THE SRAS DIAGRAM',
+        emoji: '📊',
+        views: [
+          {
+            label: 'The SRAS diagram',
+            show: [],
+            icon: 'ℹ️',
+            head: 'A movement up SRAS means a higher price level and higher output in the short run.',
+            body: ['Point A shows initial equilibrium; point B shows the same curve at higher P and Y.'],
+            tone: 'blue'
+          }
+        ]
       },
-      connection: {
-        title: 'The supply-side implication',
-        text: 'If LRAS is vertical, the ONLY way to raise long-run output is to shift LRAS right — via education, technology, capital investment, labour market reforms. This is the Classical/neoclassical case for supply-side economics. The policy implication is direct.'
-      }
+
+      causesLabel: 'WHAT SHIFTS SRAS?',
+      causesEmoji: '⚙️',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'purple', icon: '👥', head: 'Wages',                    body: 'Rise in wages shifts SRAS left – fall shifts SRAS right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
+        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            body: 'Rise in energy prices shifts SRAS left – fall shifts right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
+        { tone: 'purple', icon: '📦', head: 'Raw material costs',       body: 'Rise in raw material costs shifts SRAS left – fall shifts right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
+        { tone: 'green',  icon: '📈', head: 'Productivity',             body: 'Rise in productivity shifts SRAS right – fall shifts left. <span style="color:#059669;font-weight:800;">→</span> <span style="color:#DC2626;font-weight:800;">←</span>' },
+        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', body: 'Currency depreciation raises import costs — shifts SRAS left. Appreciation shifts right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
+        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', body: 'Rise in indirect taxes shifts SRAS left – subsidies shift SRAS right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' }
+      ],
+
+      pairLabel: 'LEFT OR RIGHT?',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'rose', icon: '←', iconStyle: 'circle',
+        label: 'Left shift',
+        points: ['Costs rise at every price level.', 'Output falls.', 'Inflation rises.']
+      },
+      right: {
+        tone: 'green', icon: '→', iconStyle: 'circle',
+        label: 'Right shift',
+        points: ['Costs fall or productivity rises.', 'Output rises.', 'Inflation eases.']
+      },
+
+      conclusion: { title: 'Big idea', text: 'SRAS responds to cost conditions. When costs rise, firms supply less at each price level.' },
+      examEdge: 'In macro diagrams, a rise in energy prices shifts SRAS left — it is not a movement along the curve.'
     },
 
-    /* ----- CARD 4 — LRAS Keynesian: the L-shaped curve ----- */
+    /* ----- CARD 3 — The LRAS curve ----- */
     {
-      id: 'lras-keynesian',
+      id: 'lras-curve',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Card 3 of 8',
+      title: 'The LRAS curve',
+      lede: 'The long-run aggregate supply (LRAS) curve is vertical at Yf. In the long run, factor prices adjust, so output is determined by real productive capacity rather than the price level.',
+
+      tip: { icon: '✅', tone: 'green', text: 'Long-run output depends on capacity, not on the price level.' },
+
+      interactiveDiagram: {
+        svgKey: 'lrasViewsInteractive',
+        label: 'TWO VIEWS OF LRAS',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'Classical',
+            show: ['idl-1'],
+            tone: 'blue',
+            head: 'The classical view holds that LRAS is vertical at Yf.',
+            body: ['With full flexibility of wages and prices, markets self-adjust.', 'Therefore, in the long run there is no trade-off between inflation and output.']
+          },
+          {
+            label: 'Keynesian',
+            show: ['idl-2'],
+            tone: 'amber',
+            head: 'Keynesians argue LRAS is not vertical in the short run.',
+            body: ['When there is spare capacity (range 1), output can rise without much increase in the price level.', 'As the economy nears Yf, inflation pressure rises sharply.']
+          }
+        ]
+      },
+
+      pairLabel: 'CLASSICAL VS KEYNESIAN',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'blue', icon: '🏛️', iconStyle: 'circle',
+        label: 'Classical',
+        checks: [
+          { term: 'Vertical LRAS', body: 'LRAS is vertical at Yf.' },
+          { term: 'Markets self-adjust', body: 'Flexible wages and prices restore equilibrium.' },
+          { term: 'Long-run focus', body: 'Emphasis on capacity and money neutrality.' }
+        ]
+      },
+      right: {
+        tone: 'amber', icon: '📈', iconStyle: 'circle',
+        label: 'Keynesian',
+        checks: [
+          { term: 'Kinked LRAS', body: 'LRAS has a Keynesian range in the short run.' },
+          { term: 'Spare capacity', body: 'Output can expand before inflation bites.' },
+          { term: 'Demand conditions', body: 'Short-run demand conditions and unused resources matter.' }
+        ]
+      },
+
+      causesLabel: 'WHY Yf MATTERS',
+      causesEmoji: '🎯',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'blue',   icon: '🏭', head: 'Productive capacity', body: 'Yf represents the economy\'s maximum sustainable output with resources fully employed.' },
+        { tone: 'green',  icon: '📈', head: 'Sustainable growth',  body: 'In the long run, output cannot exceed Yf without higher inflation.' },
+        { tone: 'rose',   icon: '⏱️', head: 'Inflation pressure',  body: 'Pushing beyond Yf leads to rising costs, bottlenecks and accelerating inflation.' }
+      ],
+
+      conclusion: { title: 'Big idea', text: 'LRAS shows how much the economy can produce sustainably when resources are fully employed.' },
+      examEdge: 'Use the Keynesian range when evaluating whether higher AD will raise real output or mostly create inflation.'
+    },
+
+    /* ----- CARD 4 — Shifts in SRAS ----- */
+    {
+      id: 'sras-shifts',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 8',
-      title: 'LRAS Keynesian: when fiscal policy works',
-      lede: "The Keynesian LRAS has three zones. Where the economy sits determines whether fiscal stimulus raises output or just prices. This is the key to every recession policy debate.",
-      steps: [
-        {
-          key: 'base',
-          label: 'Horizontal zone: recession with spare capacity',
-          text: 'In the <strong>horizontal portion</strong> of LRAS, there is significant spare capacity — idle workers, unused factories. AD can rise without pushing up the price level because there are unemployed resources to absorb the extra demand. This is the Keynesian case for fiscal stimulus: output rises, price level unchanged.'
-        },
-        {
-          key: 'extension',
-          label: 'Intermediate zone: output rises, prices begin to rise',
-          text: 'As the economy approaches potential, <strong>bottlenecks emerge</strong> — some sectors reach capacity before others. AD increases now raise both output and the price level simultaneously. Fiscal stimulus still works, but with inflationary side-effects. The multiplier effect is partially offset by rising prices.'
-        },
-        {
-          key: 'shift',
-          label: 'Vertical zone: at full capacity, all AD becomes inflation',
-          text: 'Once at full employment output, the LRAS becomes vertical — the same as the Classical view. <strong>Any further AD increase is purely inflationary</strong>. Adding fiscal stimulus here raises prices, not output. The policy case for fiscal stimulus disappears entirely at this point.'
-        }
-      ],
-      examEdge: {
-        title: 'Always identify which zone',
-        text: 'In any Keynesian AS question, <strong>state where the economy sits on the LRAS curve</strong>. \'With a large negative output gap, the economy is on the horizontal portion — AD stimulus raises output without inflation.\' This single analytical step locks in the mark for explaining the mechanism.'
-      }
-    },
+      title: 'Shifts in SRAS',
+      lede: 'A shift in short-run aggregate supply happens when firms\' costs or productivity change at every price level.',
 
-    /* ----- CARD 5 — Macro equilibrium ----- */
-    {
-      id: 'macro-equilibrium',
-      template: 'mechanisms',
-      stepLabel: 'Learn: Step 5 of 8',
-      title: 'Macro equilibrium: where AD meets AS',
-      lede: 'Equilibrium in the macro model is where AD intersects AS. But which AS? And what happens when they shift? This card runs through the core scenarios.',
-      mechanisms: [
-        {
-          num: '1',
-          tone: 'green',
-          title: 'AD shifts right (demand-side boom)',
-          text: 'AD right → output rises and price level rises (with SRAS). With Keynesian LRAS horizontal, output rises without price rise if spare capacity exists. <strong>Effect depends on which portion of LRAS the economy is on.</strong>'
-        },
-        {
-          num: '2',
-          tone: 'rose',
-          title: 'SRAS shifts left (cost-push shock)',
-          text: 'SRAS left → output falls AND price level rises → <strong>stagflation</strong>. The worst macro scenario: unemployment rises and inflation rises simultaneously. Policy dilemma: tighten (fight inflation, worsen recession) vs ease (protect output, worsen inflation).'
-        },
-        {
-          num: '3',
-          tone: 'blue',
-          title: 'LRAS shifts right (long-run supply-side improvement)',
-          text: 'LRAS right → potential output rises → economy can sustain higher actual output without inflation. This is <strong>non-inflationary growth</strong>. Caused by: better technology, more capital, higher labour productivity, increased participation rates.'
-        },
-        {
-          num: '4',
-          tone: 'amber',
-          title: 'AD and SRAS both shift left (recession + cost shock)',
-          text: 'Both curves shift left — the worst of both worlds. Output falls sharply. Price level change depends on relative magnitudes of the shifts. The 2008-09 crisis had elements of this: demand collapse AND banking system stress raising credit costs.'
-        }
-      ],
-      examEdge: {
-        title: 'State the direction of BOTH price and output',
-        text: 'Macro equilibrium questions must identify what happens to <strong>both the price level and real output</strong>. Students who describe only one dimension lose marks. The analytical structure: \'AD shifts right → output rises from Y₁ to Y₂ AND price level rises from P₁ to P₂ along the upward-sloping SRAS.\''
-      },
-      connection: {
-        title: 'Linking to macro objectives',
-        text: 'Macro equilibrium directly determines the five macro objectives: growth (real output), inflation (price level), unemployment (output gap), BoP (affected by AD and price competitiveness), and living standards. A* answers link the shift to the objective affected.'
-      }
-    },
+      tip: { icon: '✅', tone: 'green', text: 'SRAS shifts left when costs rise – and right when costs fall or productivity improves.' },
 
-    /* ----- CARD 6 — SRAS vs LRAS shifters compared ----- */
-    {
-      id: 'shifter-comparison',
-      template: 'paired',
-      stepLabel: 'Learn: Step 6 of 8',
-      title: 'SRAS vs LRAS shifters: the key distinction',
-      lede: 'The most common exam error: applying an LRAS shifter to SRAS, or vice versa. This card locks in the distinction.',
-      pairs: [
-        {
-          tone: 'green',
-          label: 'SRAS shifters (short run costs)',
-          drivers: [
-            'Wage and salary costs (biggest driver)',
-            'Commodity and energy prices',
-            'Import prices (exchange rate)',
-            'Indirect tax rates (VAT, fuel duty)',
-            'Productivity short-run improvements',
-            'Supply chain disruption costs'
-          ],
-          example: '<strong>2022 energy shock:</strong> gas prices surged → firms\' energy costs rose → SRAS shifted left → stagflation. Purely a SRAS shift — did nothing to LRAS (long-run capacity was unchanged).'
-        },
-        {
-          tone: 'blue',
-          label: 'LRAS shifters (long run capacity)',
-          drivers: [
-            'Technology and innovation (TFP growth)',
-            'Capital stock: investment in infrastructure and machinery',
-            'Labour force size: net migration, participation rates',
-            'Labour quality: education, training, health',
-            'Institutional quality: rule of law, property rights',
-            'Natural resource discovery or depletion'
-          ],
-          example: '<strong>Industrial revolution:</strong> steam power shifted LRAS dramatically right over decades. <strong>Modern parallel:</strong> AI-driven productivity improvements may shift LRAS right — but the timescale is long run, not policy-cycle.'
-        }
-      ],
-      examEdge: {
-        title: 'Don\'t confuse supply-side policies with SRAS shifts',
-        text: 'Supply-side policies (education, R&D, infrastructure) operate on <strong>LRAS</strong>, not SRAS. They take years or decades to materialise. A tax cut might affect SRAS (via business costs) AND LRAS (via incentives to invest). A* answers distinguish the time horizon of each effect.'
-      },
-      policy: {
-        title: 'The policy asymmetry',
-        text: 'Monetary policy primarily operates through AD. But if the problem is a SRAS shock (cost-push), monetary tightening combats the inflation at the cost of worsening the output fall. Only supply-side policy that shifts SRAS right (e.g. energy price subsidies, productivity improvements) can address both problems simultaneously.'
-      }
-    },
-
-    /* ----- CARD 7 — Output gaps revisited ----- */
-    {
-      id: 'output-gaps',
-      template: 'deflation',
-      stepLabel: 'Learn: Step 7 of 8',
-      title: 'Output gaps and the adjustment process',
-      lede: "Output gaps measure the distance between actual and potential output. Understanding how they open, persist, and close is the backbone of every macro policy discussion.",
-      mechanismsTitle: 'The two output gaps and their dynamics',
-      mechanisms: [
-        {
-          icon: '📉',
-          title: 'Negative output gap (recession)',
-          text: 'Actual output < potential. Spare capacity: idle workers, underutilised capital. <strong>Deflationary pressure</strong> — price level tends to fall or stay low. Self-correcting mechanism: wages fall → SRAS shifts right → gap closes (Classical). OR: fiscal/monetary stimulus needed if wages are sticky (Keynesian).'
-        },
-        {
-          icon: '📈',
-          title: 'Positive output gap (boom)',
-          text: 'Actual output > potential. Economy above PPF — inflationary pressure builds. Wages rise, bottlenecks appear, prices rise. Self-correcting: wages rise → SRAS shifts left → output falls back to Y*. <strong>No free lunch:</strong> a boom above potential is temporary and ends in inflation.'
-        },
-        {
-          icon: '⏰',
-          title: 'Persistence: why gaps don\'t self-correct quickly',
-          text: 'Classical self-correction is slow because: (1) wages are sticky downward, (2) expectations of further price falls delay adjustment, (3) hysteresis — long unemployment damages future labour supply. Keynesian: gaps can be <em>permanent</em> without intervention, requiring active fiscal/monetary policy.'
-        },
-        {
-          icon: '📊',
-          title: 'Measuring the output gap',
-          text: 'The OBR estimates the UK output gap. Problem: potential output is unobservable — it\'s estimated, not measured. The OBR\'s estimate determines how much fiscal stimulus is \'safe\' without triggering inflation. Errors in estimating potential output have had major policy consequences.'
-        }
-      ],
-      examples: {
-        title: 'Output gap episodes',
-        items: [
-          { period: '2009 UK', text: 'OBR estimated a negative output gap of ~5% of GDP. This justified BoE QE and Bank Rate cuts to 0.5%. The gap took until ~2014 to close — slower than the Classical model would predict.' },
-          { period: '2021-22', text: 'Post-COVID bounce created a positive output gap — excess demand met constrained supply. Inflation surged. BoE began tightening in late 2021 as the gap flipped positive.' },
-          { period: '2024 UK', text: 'OBR estimated a roughly closed output gap — economy near potential. Inflation falling but above target. Monetary policy debate: how quickly to cut rates without re-opening the positive gap.' }
+      interactiveDiagram: {
+        svgKey: 'srasShiftInteractive',
+        label: 'THE INTERACTIVE IDEA',
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'Base equilibrium',
+            show: [],
+            tone: 'slate',
+            head: 'The economy at equilibrium.',
+            body: ['AD and SRAS₁ intersect at E₁.', 'Price level is P₁, output is Y₁.']
+          },
+          {
+            label: 'Cost shock',
+            show: ['idl-1'],
+            tone: 'rose',
+            head: 'A cost shock shifts SRAS left.',
+            body: ['Rising costs — wages, energy, raw materials — make every level of output more expensive.', 'SRAS₂ lies above and to the left of SRAS₁.']
+          },
+          {
+            label: 'New equilibrium',
+            show: ['idl-1', 'idl-2'],
+            tone: 'rose',
+            head: 'Result — stagflation.',
+            body: ['P rises from P₁ to P₂ (higher price level).', 'Y falls from Y₁ to Y₂ (lower output).', 'This is the defining feature of a supply shock.']
+          }
         ]
       },
-      examEdge: {
-        title: 'Estimate size, not just direction',
-        text: 'A* macro answers <strong>estimate the size of the output gap</strong>, not just its direction. \'A negative output gap of approximately 2-3% of GDP suggests significant spare capacity — sufficient for AD stimulus without triggering inflation.\' Quantification is the mark-up.'
+
+      causesLabel: 'SIX SHIFT DRIVERS',
+      causesEmoji: '⚙️',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'purple', icon: '👥', head: 'Wages',                    body: 'Rise in wages shifts SRAS left – fall shifts SRAS right.' },
+        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            body: 'Rise in energy prices shifts SRAS left – fall shifts right.' },
+        { tone: 'purple', icon: '📦', head: 'Raw material costs',       body: 'Rise in raw material costs shifts SRAS left – fall shifts right.' },
+        { tone: 'green',  icon: '📈', head: 'Productivity',             body: 'Rise in productivity shifts SRAS right – fall shifts left.' },
+        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', body: 'Currency depreciation raises import costs — shifts SRAS left. Appreciation shifts right.' },
+        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', body: 'Rise in indirect taxes shifts SRAS left – subsidies shift SRAS right.' }
+      ],
+
+      pairLabel: 'LEFT OR RIGHT?',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'rose', icon: '←', iconStyle: 'circle',
+        label: 'Left shift',
+        points: ['Costs rise at every price level.', 'Output falls.', 'Inflation rises.']
       },
+      right: {
+        tone: 'green', icon: '→', iconStyle: 'circle',
+        label: 'Right shift',
+        points: ['Costs fall or productivity rises.', 'Output rises.', 'Inflation eases.']
+      },
+
+      summaryRow: [
+        { tone: 'blue', icon: '📝', title: 'Essay link', text: 'SRAS shifts are central to cost-push inflation and cycle analysis. Always explain the cause, the shift, and the effect on output and the price level.' }
+      ],
+
+      conclusion: { title: 'Big idea', text: 'A supply shock changes the economy\'s short-run cost conditions at every price level.' },
+      examEdge: 'When output falls and prices rise together, the strongest diagnosis is an adverse SRAS shift rather than demand-pull inflation.'
+    },
+
+    /* ----- CARD 5 — Shifts in LRAS ----- */
+    {
+      id: 'lras-shifts',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 5 of 8',
+      title: 'Shifts in LRAS',
+      lede: 'LRAS shifts when the economy\'s productive capacity changes. A rightward shift means higher sustainable output without needing inflation.',
+
+      tip: { icon: '✅', tone: 'green', text: 'LRAS moves when the economy\'s capacity changes – not when the price level changes.' },
+
+      interactiveDiagram: {
+        svgKey: 'lrasShiftDiagram',
+        label: 'THE GROWTH DIAGRAM',
+        emoji: '📊',
+        views: [
+          {
+            label: 'LRAS shifts right',
+            show: [],
+            icon: 'ℹ️',
+            head: 'Sustainable non-inflationary growth.',
+            body: ['More goods and services can be produced without putting upward pressure on prices.', 'Real output rises from Y₁ to Y₂. The price level is stable or slightly lower.'],
+            tone: 'green'
+          }
+        ]
+      },
+
+      causesLabel: 'WHAT SHIFTS LRAS?',
+      causesEmoji: '🎯',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'green', icon: '👥', head: 'Labour supply',       body: 'More people available and willing to work.' },
+        { tone: 'green', icon: '🏭', head: 'Capital stock',       body: 'More machinery, tools and infrastructure.' },
+        { tone: 'green', icon: '💡', head: 'Technology',          body: 'Innovations improve how resources are used.' },
+        { tone: 'green', icon: '📈', head: 'Productivity',        body: 'More output produced per unit of input.' },
+        { tone: 'green', icon: '🎓', head: 'Education and skills', body: 'A more skilled workforce raises productive capacity.' },
+        { tone: 'green', icon: '⚙️', head: 'Deregulation / efficiency', body: 'Lower barriers and red tape improve resource use.' }
+      ],
+
+      flowTitle: 'WHY IT MATTERS',
+      flowEmoji: '🎯',
+      flow: [
+        { tone: 'green',  icon: '📈', title: 'More capacity', sub: 'LRAS shifts right.' },
+        { tone: 'blue',   icon: '🏭', title: 'Higher potential output', sub: 'The economy can produce more at any given price level.' },
+        { tone: 'purple', icon: '🔍', title: 'Stronger long-run growth and lower inflation pressure', sub: 'Sustainable improvements in living standards.' }
+      ],
+
+      pairLabel: 'SHORT RUN VS LONG RUN',
+      pairEmoji: '⚖️',
+      left: {
+        tone: 'blue', icon: '⏱️', iconStyle: 'circle',
+        label: 'Short run',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">SRAS right shift can lower costs now. Useful to reduce short-term inflation.</p>'
+      },
+      right: {
+        tone: 'amber', icon: '🌄', iconStyle: 'circle',
+        label: 'Long run',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">LRAS right shift expands the economy\'s frontier. Sustains growth without creating inflation.</p>'
+      },
+
+      conclusion: { title: 'Big idea', text: 'LRAS growth is the supply-side route to rising output without overheating the economy.' },
+      examEdge: 'In essays, distinguish sustainable growth from a temporary AD-led boom — LRAS shifts raise capacity, not just spending.'
+    },
+
+    /* ----- CARD 6 — Supply-side policies ----- */
+    {
+      id: 'supply-side-policies',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 6 of 8',
+      title: 'Supply-side policies',
+      lede: 'Supply-side policies aim to raise productive capacity or improve incentives and efficiency. Present both market-based and interventionist approaches.',
+
+      tip: { icon: '✅', tone: 'green', text: 'Supply-side policy targets the economy\'s capacity, costs and efficiency.' },
+
+      causesFirst: true,
+      causesLabel: 'TWO FAMILIES',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
+      causesCols: 2,
+      causes: [
+        {
+          tone: 'blue', icon: '💹', head: 'Tax cuts',
+          body: 'Lower taxes to raise work incentives and investment. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast \xb7 Low cost \xb7 Mixed evidence</span>'
+        },
+        {
+          tone: 'amber', icon: '🎓', head: 'Education and training',
+          body: 'Improve skills to lift productivity and earning potential. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow \xb7 High cost \xb7 Strong evidence</span>'
+        },
+        {
+          tone: 'blue', icon: '📋', head: 'Deregulation',
+          body: 'Remove barriers to entry and reduce red tape. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast \xb7 Low cost \xb7 Mixed evidence</span>'
+        },
+        {
+          tone: 'amber', icon: '🛣️', head: 'Infrastructure',
+          body: 'Invest in transport, energy and digital networks. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow \xb7 High cost \xb7 Strong evidence</span>'
+        },
+        {
+          tone: 'blue', icon: '🏛️', head: 'Privatisation',
+          body: 'Transfer state ownership to the private sector. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Medium speed \xb7 Medium cost \xb7 Mixed evidence</span>'
+        },
+        {
+          tone: 'amber', icon: '🔬', head: 'R&D subsidies',
+          body: 'Support research and innovation through grants or tax relief. <span style="color:#D97706;font-size:11px;font-weight:700;">Medium speed \xb7 Medium cost \xb7 Mixed evidence</span>'
+        },
+        {
+          tone: 'blue', icon: '👥', head: 'Flexible labour markets',
+          body: 'Easier hiring and firing to improve labour allocation. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast \xb7 Low cost \xb7 Mixed evidence</span>'
+        },
+        {
+          tone: 'amber', icon: '🏭', head: 'Industrial strategy',
+          body: 'Target support for strategic sectors and clusters. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow \xb7 High cost \xb7 Mixed evidence</span>'
+        }
+      ],
+
+      pairLabel: 'WHEN EACH WORKS BEST',
+      pairEmoji: '🎯',
+      left: {
+        tone: 'blue', icon: '👥', iconStyle: 'circle',
+        label: 'Market-based',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Improves incentives and flexibility.</p>'
+      },
+      right: {
+        tone: 'amber', icon: '👥', iconStyle: 'circle',
+        label: 'Interventionist',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Builds human and physical capital.</p>'
+      },
+
+      summaryRow: [
+        { tone: 'blue',   icon: '⏱️', title: 'Speed',              text: 'Market-based is faster. Interventionist takes time.' },
+        { tone: 'amber',  icon: '£',        title: 'Fiscal cost',        text: 'Market-based is cheaper. Interventionist is costlier.' },
+        { tone: 'purple', icon: '👥', title: 'Distributional impact', text: 'Market-based can widen gaps. Interventionist can reduce them.' }
+      ],
+
+      conclusion: { title: 'Big idea', text: 'The best supply-side strategy depends on the problem – incentives, skills, infrastructure or innovation.' },
+      examEdge: 'Strong evaluation avoids saying \'supply-side\' as if it is one policy – split the answer into market-based and interventionist measures.'
+    },
+
+    /* ----- CARD 7 — AS in the AD/AS model ----- */
+    {
+      id: 'as-in-adas',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 7 of 8',
+      title: 'AS in the AD/AS model',
+      lede: 'Compare supply-side improvements with demand-side stimulus. Both may raise output, but the inflation consequences differ.',
+
+      tip: { icon: '✅', tone: 'green', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
+
+      flowChart: {
+        svgKey: 'adVsSupplySideDiagram',
+        label: 'TWO PATHS TO HIGHER OUTPUT',
+        emoji: '🔀'
+      },
+
+      summaryRow: [
+        { tone: 'blue',   icon: '📊', title: 'Output',            text: 'Both approaches raise output. Supply-side may also raise potential output permanently.' },
+        { tone: 'rose',   icon: '💹', title: 'Price level',       text: 'AD stimulus raises prices. Supply-side keeps prices stable or falling.' },
+        { tone: 'green',  icon: '📅', title: 'Sustainability',     text: 'AD stimulus is a short-term boost. Supply-side is a longer-term improvement.' },
+        { tone: 'amber',  icon: '⚠️', title: 'Inflation risk',    text: 'High with AD near full employment. Low with supply-side improvement.' },
+        { tone: 'purple', icon: '🎯', title: 'Best use',          text: 'AD stimulus during recessions and weak demand. Supply-side when capacity is constrained.' }
+      ],
+
+      pairLabel: 'WHEN TO USE WHICH',
+      pairEmoji: '🎯',
+      left: {
+        tone: 'blue', icon: '📉', iconStyle: 'circle',
+        label: 'Weak AD and recession',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Demand management can help. Use fiscal or monetary policy to stimulate demand.</p>'
+      },
+      right: {
+        tone: 'green', icon: '⚙️', iconStyle: 'circle',
+        label: 'Capacity constraints and inflation pressure',
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;line-height:1.6;">Supply-side reform is better. Expand productive capacity and remove supply-side bottlenecks.</p>'
+      },
+
+      tipLate: { tone: 'blue', icon: 'ℹ️', text: 'Combining both can work best: use demand policy when demand is weak now, but invest in supply-side improvements to raise potential output over time.' },
+
+      conclusion: { title: 'Big idea', text: 'Demand policy changes spending. Supply policy changes capacity. The diagnosis determines the better cure.' },
+      examEdge: 'Top essays compare the inflation impact — AD stimulus is more inflationary than supply-side expansion when the economy is close to full employment.'
+    },
+
+    /* ----- CARD 8 — Evaluating supply-side policy ----- */
+    {
+      id: 'evaluating-supply-side',
+      template: 'ad-interactive',
+      stepLabel: 'Learn: Step 8 of 8',
+      title: 'Evaluating supply-side policy',
+      lede: 'Supply-side policy can raise long-run growth, but its success depends on time, cost, politics and context. This is the evaluative card.',
+
+      tip: { icon: '✅', tone: 'green', text: 'Supply-side policy can be powerful – but usually slowly, unevenly and at a cost.' },
+
+      causesFirst: true,
+      causesLabel: 'SIX EVALUATION TESTS',
+      causesEmoji: '⚖️',
+      causesStyle: 'tinted-flat',
+      causesCols: 3,
+      causes: [
+        { tone: 'blue',   icon: '⏱️', head: '1. Time lags',           body: 'Effects are often very slow. Strengthens evaluation if reforms have long payback periods.' },
+        { tone: 'amber',  icon: '£',        head: '2. Funding cost',        body: 'Infrastructure and education are expensive. Weakens if fiscal space is limited.' },
+        { tone: 'purple', icon: '👥',  head: '3. Political feasibility', body: 'Reforms create losers as well as winners. Weakens if opposition is strong.' },
+        { tone: 'green',  icon: '⚖️',  head: '4. Distributional effects', body: 'Some reforms can be regressive. Weakens if inequality worsens.' },
+        { tone: 'blue',   icon: '🔗',  head: '5. Complementarity with demand management', body: 'Best when combined with demand policy. Strengthens when macro conditions are favourable.' },
+        { tone: 'amber',  icon: '🌍',  head: '6. International competitiveness context', body: 'Global conditions matter. Weakens if trading partners also improve supply-side.' }
+      ],
+
+      summaryRow: [
+        {
+          tone: 'blue',
+          icon: '⭐',
+          title: 'Overall judgement',
+          text: 'Supply-side policy is most effective when it targets binding constraints – such as skills shortages, poor infrastructure or regulatory barriers – and when it is financed sustainably and given time to work.'
+        }
+      ],
+
+      flow2Title: 'HOW TO JUDGE',
+      flow2Emoji: '✅',
+      flow2Sep: '→',
+      flow2: [
+        { tone: 'blue',   icon: '⚡', title: 'Speed',    sub: 'Will it work fast enough?' },
+        { tone: 'amber',  icon: '📏', title: 'Scale',    sub: 'Will it be large enough?' },
+        { tone: 'green',  icon: '⚖️', title: 'Fairness', sub: 'Who gains and who loses?' },
+        { tone: 'purple', icon: '📊', title: 'Evidence', sub: 'What does experience show?' }
+      ],
+
+      conclusion: { title: 'Big idea', text: 'The right supply-side policy depends on the bottleneck – skills, incentives, infrastructure, innovation or regulation.' },
+      examEdge: 'The strongest judgement balances long-run benefits against short-run limits – especially time lags, cost and distributional trade-offs.',
+
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

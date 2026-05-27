@@ -15842,12 +15842,12 @@ window.ECONOS_ICONS = {
     <!-- Layer 1: SRAS -->
     <g class="idl-1">
       <line x1="80" y1="255" x2="390" y2="45" stroke="#3B82F6" stroke-width="2.5"/>
-      <text x="392" y="42" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
+      <text x="385" y="42" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
     </g>
     <!-- Layer 2: LRAS + equilibrium point -->
     <g class="idl-2">
       <line x1="245" y1="20" x2="245" y2="272" stroke="#7C3AED" stroke-width="2.5"/>
-      <text x="250" y="17" font-size="12" fill="#7C3AED" font-weight="700">LRAS</text>
+      <text x="245" y="14" text-anchor="middle" font-size="12" fill="#7C3AED" font-weight="700">LRAS</text>
       <line x1="55" y1="143" x2="245" y2="143" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
       <text x="40" y="148" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
       <circle cx="245" cy="143" r="5.5" fill="white" stroke="#7C3AED" stroke-width="2"/>
@@ -15875,7 +15875,7 @@ window.ECONOS_ICONS = {
     <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
     <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
     <line x1="70" y1="255" x2="390" y2="45" stroke="#3B82F6" stroke-width="2.5"/>
-    <text x="392" y="42" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
+    <text x="385" y="42" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">SRAS</text>
     <!-- Layer 1: Point A -->
     <g class="idl-1">
       <line x1="55" y1="186" x2="175" y2="186" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
@@ -15932,11 +15932,12 @@ window.ECONOS_ICONS = {
     </g>
   </svg>`,
 
-  srasShiftInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  srasShiftInteractive: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>
-      .idl-1{display:none}.idl-2{display:none}
+      .idl-1{display:none}.idl-2{display:none}.idl-old-solid{display:block}
       .sv-show-1 .idl-1{display:block}
       .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
+      .sv-show-1 .idl-old-solid,.sv-show-2 .idl-old-solid{display:none}
     </style></defs>
     <!-- Base: Axes -->
     <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
@@ -15947,47 +15948,55 @@ window.ECONOS_ICONS = {
     <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
     <!-- Base: AD line (blue) -->
     <line x1="90" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
-    <text x="394" y="258" font-size="12" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- Base: SRAS1 line (dark slate) -->
-    <line x1="90" y1="255" x2="390" y2="45" stroke="#334155" stroke-width="2"/>
-    <text x="393" y="42" font-size="11" fill="#334155" font-weight="700">SRAS₁</text>
+    <text x="385" y="258" text-anchor="end" font-size="12" fill="#3B82F6" font-weight="700">AD</text>
+    <!-- Base: SRAS1 line — solid when no shift, dashed when shifted -->
+    <g class="idl-old-solid">
+      <line x1="90" y1="255" x2="390" y2="45" stroke="#334155" stroke-width="2"/>
+      <text x="385" y="42" text-anchor="end" font-size="11" fill="#334155" font-weight="700">SRAS₁</text>
+    </g>
     <!-- Base: E1 equilibrium -->
     <circle cx="240" cy="150" r="5.5" fill="white" stroke="#334155" stroke-width="1.5"/>
-    <text x="246" y="145" font-size="10" fill="#334155">E₁</text>
+    <text x="248" y="146" font-size="10" fill="#334155" font-weight="700">E₁</text>
     <!-- Base: P1 dashed -->
     <line x1="55" y1="150" x2="240" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
     <!-- Base: Y1 dashed -->
     <line x1="240" y1="150" x2="240" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="240" y="287" font-size="11" fill="#94A3B8" text-anchor="middle">Y₁</text>
-    <!-- Layer 1: SRAS2 (red, shifted left/up) -->
+    <!-- Layer 1: SRAS2 (red solid = new) + SRAS1 redrawn dashed -->
     <g class="idl-1">
-      <line x1="90" y1="210" x2="390" y2="0" stroke="#DC2626" stroke-width="2"/>
-      <text x="318" y="7" font-size="11" fill="#DC2626" font-weight="700">SRAS₂ (new)</text>
+      <!-- old SRAS1 dashed -->
+      <line x1="90" y1="255" x2="390" y2="45" stroke="#64748B" stroke-width="1.6" stroke-dasharray="6,4"/>
+      <text x="385" y="42" text-anchor="end" font-size="11" fill="#64748B" font-weight="700">SRAS₁</text>
+      <!-- new SRAS2 solid -->
+      <line x1="90" y1="210" x2="370" y2="14" stroke="#DC2626" stroke-width="2.2"/>
+      <text x="365" y="11" text-anchor="end" font-size="11" fill="#DC2626" font-weight="700">SRAS₂</text>
       <!-- Left-shift arrow -->
       <line x1="265" y1="125" x2="232" y2="125" stroke="#DC2626" stroke-width="1.5"/>
       <polygon points="232,121 232,129 225,125" fill="#DC2626"/>
     </g>
-    <!-- Layer 2: E2 and stagflation labels -->
+    <!-- Layer 2: E2, P2, Y2, stagflation label -->
     <g class="idl-2">
       <circle cx="208" cy="128" r="5.5" fill="white" stroke="#DC2626" stroke-width="2"/>
-      <text x="214" y="123" font-size="10" fill="#DC2626">E₂</text>
+      <text x="194" y="124" text-anchor="end" font-size="10" fill="#DC2626" font-weight="700">E₂</text>
       <!-- P2 dashed -->
       <line x1="55" y1="128" x2="208" y2="128" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
       <text x="40" y="124" font-size="11" fill="#DC2626" text-anchor="middle">P₂</text>
       <!-- Y2 dashed -->
       <line x1="208" y1="128" x2="208" y2="272" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="208" y="290" font-size="11" fill="#DC2626" text-anchor="middle">Y₂</text>
-      <!-- Stagflation label -->
-      <text x="68" y="78" font-size="10" fill="#DC2626" font-weight="700">Stagflation</text>
+      <text x="208" y="287" font-size="11" fill="#DC2626" text-anchor="middle">Y₂</text>
+      <!-- Stagflation label — placed top-left, away from curves -->
+      <rect x="62" y="60" width="86" height="18" rx="9" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+      <text x="105" y="73" text-anchor="middle" font-size="10" fill="#B91C1C" font-weight="800">Stagflation</text>
     </g>
   </svg>`,
 
-  lrasShiftDiagram: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  lrasShiftDiagram: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>
-      .idl-1{display:none}.idl-2{display:none}
+      .idl-1{display:none}.idl-2{display:none}.idl-old-solid{display:block}
       .sv-show-1 .idl-1{display:block}
       .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
+      .sv-show-1 .idl-old-solid,.sv-show-2 .idl-old-solid{display:none}
     </style></defs>
     <!-- Axes -->
     <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
@@ -15996,45 +16005,50 @@ window.ECONOS_ICONS = {
     <polygon points="51,18 59,18 55,11" fill="#94A3B8"/>
     <text transform="rotate(-90 18 148)" text-anchor="middle" x="18" y="148" font-size="10.5" fill="#64748B">Price level (P)</text>
     <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
-    <!-- SRAS (grey-blue) -->
-    <line x1="80" y1="229" x2="400" y2="19" stroke="#475569" stroke-width="2"/>
-    <text x="404" y="16" font-size="11" fill="#475569" font-weight="700">SRAS</text>
-    <!-- AD (blue) -->
-    <line x1="80" y1="45" x2="400" y2="255" stroke="#3B82F6" stroke-width="2"/>
-    <text x="404" y="258" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- LRAS1 (green solid) -->
-    <line x1="220" y1="15" x2="220" y2="272" stroke="#059669" stroke-width="2.5"/>
-    <text x="223" y="13" font-size="12" fill="#059669" font-weight="700">LRAS₁</text>
+    <!-- SRAS -->
+    <line x1="80" y1="229" x2="395" y2="22" stroke="#475569" stroke-width="2"/>
+    <text x="390" y="18" text-anchor="end" font-size="11" fill="#475569" font-weight="700">SRAS</text>
+    <!-- AD -->
+    <line x1="80" y1="45" x2="395" y2="252" stroke="#3B82F6" stroke-width="2"/>
+    <text x="390" y="255" text-anchor="end" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
+    <!-- LRAS1 — solid when alone, dashed when shifted -->
+    <g class="idl-old-solid">
+      <line x1="220" y1="15" x2="220" y2="272" stroke="#059669" stroke-width="2.5"/>
+      <text x="220" y="11" text-anchor="middle" font-size="11" fill="#059669" font-weight="700">LRAS₁</text>
+    </g>
     <!-- E1 at (220,137) -->
     <circle cx="220" cy="137" r="5.5" fill="white" stroke="#059669" stroke-width="2"/>
-    <text x="226" y="132" font-size="10" fill="#059669">E₁</text>
+    <text x="207" y="133" text-anchor="end" font-size="10" fill="#059669" font-weight="700">E₁</text>
     <!-- P1 dashed -->
     <line x1="55" y1="137" x2="220" y2="137" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="40" y="142" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
     <!-- Y1 label -->
     <text x="220" y="287" font-size="11" fill="#64748B" text-anchor="middle">Y₁</text>
-    <!-- Layer 1: LRAS2 dashed + shift arrow -->
+    <!-- Layer 1: LRAS2 (solid new) + LRAS1 redrawn dashed + shift arrow -->
     <g class="idl-1">
-      <line x1="310" y1="15" x2="310" y2="272" stroke="#059669" stroke-width="2" stroke-dasharray="6,4"/>
-      <text x="313" y="13" font-size="12" fill="#059669" font-weight="700">LRAS₂</text>
+      <line x1="220" y1="15" x2="220" y2="272" stroke="#A7F3D0" stroke-width="1.8" stroke-dasharray="6,4"/>
+      <text x="220" y="11" text-anchor="middle" font-size="11" fill="#6EE7B7" font-weight="700">LRAS₁</text>
+      <line x1="310" y1="15" x2="310" y2="272" stroke="#059669" stroke-width="2.5"/>
+      <text x="310" y="11" text-anchor="middle" font-size="11" fill="#059669" font-weight="700">LRAS₂</text>
       <line x1="228" y1="35" x2="300" y2="35" stroke="#059669" stroke-width="1.8"/>
       <polygon points="300,31 300,39 307,35" fill="#059669"/>
     </g>
     <!-- Layer 2: E2 + Y2 + growth arrow -->
     <g class="idl-2">
       <circle cx="310" cy="196" r="5.5" fill="white" stroke="#059669" stroke-width="2"/>
-      <text x="316" y="191" font-size="10" fill="#059669">E₂</text>
+      <text x="316" y="192" font-size="10" fill="#059669" font-weight="700">E₂</text>
       <text x="310" y="287" font-size="11" fill="#64748B" text-anchor="middle">Y₂</text>
-      <line x1="228" y1="280" x2="300" y2="280" stroke="#059669" stroke-width="1.5"/>
-      <polygon points="300,276 300,284 307,280" fill="#059669"/>
+      <line x1="228" y1="282" x2="300" y2="282" stroke="#059669" stroke-width="1.5"/>
+      <polygon points="300,278 300,286 307,282" fill="#059669"/>
     </g>
   </svg>`,
 
-  adShiftInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  adShiftInteractive: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>
-      .idl-1{display:none}.idl-2{display:none}
+      .idl-1{display:none}.idl-2{display:none}.idl-old-solid{display:block}
       .sv-show-1 .idl-1{display:block}
       .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
+      .sv-show-1 .idl-old-solid,.sv-show-2 .idl-old-solid{display:none}
     </style></defs>
     <!-- Axes -->
     <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
@@ -16045,42 +16059,47 @@ window.ECONOS_ICONS = {
     <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
     <!-- SRAS -->
     <line x1="80" y1="255" x2="390" y2="45" stroke="#475569" stroke-width="2"/>
-    <text x="393" y="42" font-size="11" fill="#475569" font-weight="700">SRAS</text>
-    <!-- AD1 -->
-    <line x1="80" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
-    <text x="393" y="258" font-size="11" fill="#3B82F6" font-weight="700">AD₁</text>
+    <text x="385" y="42" text-anchor="end" font-size="11" fill="#475569" font-weight="700">SRAS</text>
+    <!-- AD1 — solid when alone, dashed when shifted -->
+    <g class="idl-old-solid">
+      <line x1="80" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
+      <text x="385" y="258" text-anchor="end" font-size="11" fill="#3B82F6" font-weight="700">AD₁</text>
+    </g>
     <!-- E1 at (235,150) -->
     <circle cx="235" cy="150" r="5.5" fill="white" stroke="#334155" stroke-width="1.5"/>
-    <text x="241" y="146" font-size="10" fill="#334155">E₁</text>
+    <text x="222" y="146" text-anchor="end" font-size="10" fill="#334155" font-weight="700">E₁</text>
     <!-- P1 dashed -->
     <line x1="55" y1="150" x2="235" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
     <!-- Y1 dashed -->
     <line x1="235" y1="150" x2="235" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="235" y="287" font-size="11" fill="#64748B" text-anchor="middle">Y₁</text>
-    <!-- Layer 1: AD2 (shifted right) + arrow -->
+    <!-- Layer 1: AD2 (solid new) + AD1 redrawn dashed + arrow -->
     <g class="idl-1">
-      <line x1="130" y1="45" x2="400" y2="228" stroke="#3B82F6" stroke-width="2" stroke-dasharray="6,4"/>
-      <text x="404" y="232" font-size="11" fill="#3B82F6" font-weight="700">AD₂</text>
-      <line x1="242" y1="78" x2="273" y2="78" stroke="#3B82F6" stroke-width="1.8"/>
-      <polygon points="273,74 273,82 280,78" fill="#3B82F6"/>
+      <line x1="80" y1="45" x2="390" y2="255" stroke="#93C5FD" stroke-width="1.6" stroke-dasharray="6,4"/>
+      <text x="385" y="258" text-anchor="end" font-size="11" fill="#93C5FD" font-weight="700">AD₁</text>
+      <line x1="130" y1="45" x2="410" y2="235" stroke="#1D4ED8" stroke-width="2.2"/>
+      <text x="405" y="240" text-anchor="end" font-size="11" fill="#1D4ED8" font-weight="700">AD₂</text>
+      <line x1="242" y1="78" x2="273" y2="78" stroke="#1D4ED8" stroke-width="1.8"/>
+      <polygon points="273,74 273,82 280,78" fill="#1D4ED8"/>
     </g>
     <!-- Layer 2: E2 + P2 + Y2 -->
     <g class="idl-2">
-      <circle cx="260" cy="133" r="5.5" fill="white" stroke="#3B82F6" stroke-width="2"/>
-      <text x="265" y="129" font-size="10" fill="#3B82F6">E₂</text>
-      <line x1="55" y1="133" x2="260" y2="133" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="40" y="129" font-size="11" fill="#3B82F6" text-anchor="middle">P₂</text>
-      <line x1="260" y1="133" x2="260" y2="272" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3"/>
-      <text x="260" y="287" font-size="11" fill="#3B82F6" text-anchor="middle">Y₂</text>
+      <circle cx="260" cy="133" r="5.5" fill="white" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="266" y="129" font-size="10" fill="#1D4ED8" font-weight="700">E₂</text>
+      <line x1="55" y1="133" x2="260" y2="133" stroke="#1D4ED8" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="40" y="129" font-size="11" fill="#1D4ED8" text-anchor="middle">P₂</text>
+      <line x1="260" y1="133" x2="260" y2="272" stroke="#1D4ED8" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="260" y="287" font-size="11" fill="#1D4ED8" text-anchor="middle">Y₂</text>
     </g>
   </svg>`,
 
-  srasRightShiftInteractive: `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  srasRightShiftInteractive: `<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
     <defs><style>
-      .idl-1{display:none}.idl-2{display:none}
+      .idl-1{display:none}.idl-2{display:none}.idl-old-solid{display:block}
       .sv-show-1 .idl-1{display:block}
       .sv-show-2 .idl-1,.sv-show-2 .idl-2{display:block}
+      .sv-show-1 .idl-old-solid,.sv-show-2 .idl-old-solid{display:none}
     </style></defs>
     <!-- Axes -->
     <line x1="55" y1="272" x2="415" y2="272" stroke="#94A3B8" stroke-width="1.5"/>
@@ -16091,35 +16110,38 @@ window.ECONOS_ICONS = {
     <text x="415" y="287" text-anchor="end" font-size="10.5" fill="#64748B">Real output (Y)</text>
     <!-- AD -->
     <line x1="80" y1="45" x2="390" y2="255" stroke="#3B82F6" stroke-width="2"/>
-    <text x="393" y="258" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
-    <!-- SRAS1 -->
-    <line x1="80" y1="255" x2="390" y2="45" stroke="#475569" stroke-width="2"/>
-    <text x="393" y="42" font-size="11" fill="#475569" font-weight="700">SRAS₁</text>
+    <text x="385" y="258" text-anchor="end" font-size="11" fill="#3B82F6" font-weight="700">AD</text>
+    <!-- SRAS1 — solid when alone, dashed when shifted -->
+    <g class="idl-old-solid">
+      <line x1="80" y1="255" x2="390" y2="45" stroke="#475569" stroke-width="2"/>
+      <text x="385" y="42" text-anchor="end" font-size="11" fill="#475569" font-weight="700">SRAS₁</text>
+    </g>
     <!-- E1 at (235,150) -->
     <circle cx="235" cy="150" r="5.5" fill="white" stroke="#334155" stroke-width="1.5"/>
-    <text x="241" y="146" font-size="10" fill="#334155">E₁</text>
+    <text x="222" y="146" text-anchor="end" font-size="10" fill="#334155" font-weight="700">E₁</text>
     <!-- P1 dashed -->
     <line x1="55" y1="150" x2="235" y2="150" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="40" y="155" font-size="11" fill="#94A3B8" text-anchor="middle">P₁</text>
     <!-- Y1 dashed -->
     <line x1="235" y1="150" x2="235" y2="272" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
     <text x="235" y="287" font-size="11" fill="#64748B" text-anchor="middle">Y₁</text>
-    <!-- Layer 1: SRAS2 (shifted right) + arrow -->
+    <!-- Layer 1: SRAS2 (solid new) + SRAS1 redrawn dashed + arrow -->
     <g class="idl-1">
-      <line x1="140" y1="255" x2="400" y2="79" stroke="#059669" stroke-width="2" stroke-dasharray="6,4"/>
-      <text x="404" y="76" font-size="11" fill="#059669" font-weight="700">SRAS₂</text>
+      <line x1="80" y1="255" x2="390" y2="45" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="6,4"/>
+      <text x="385" y="42" text-anchor="end" font-size="11" fill="#94A3B8" font-weight="700">SRAS₁</text>
+      <line x1="140" y1="255" x2="390" y2="85" stroke="#059669" stroke-width="2.2"/>
+      <text x="385" y="78" text-anchor="end" font-size="11" fill="#059669" font-weight="700">SRAS₂</text>
       <line x1="242" y1="88" x2="273" y2="88" stroke="#059669" stroke-width="1.8"/>
       <polygon points="273,84 273,92 280,88" fill="#059669"/>
     </g>
     <!-- Layer 2: E2 + P2 + Y2 -->
     <g class="idl-2">
       <circle cx="265" cy="170" r="5.5" fill="white" stroke="#059669" stroke-width="2"/>
-      <text x="270" y="166" font-size="10" fill="#059669">E₂</text>
+      <text x="271" y="166" font-size="10" fill="#059669" font-weight="700">E₂</text>
       <line x1="55" y1="170" x2="265" y2="170" stroke="#059669" stroke-width="1" stroke-dasharray="4,3"/>
       <text x="40" y="175" font-size="11" fill="#059669" text-anchor="middle">P₂</text>
       <line x1="265" y1="170" x2="265" y2="272" stroke="#059669" stroke-width="1" stroke-dasharray="4,3"/>
       <text x="265" y="287" font-size="11" fill="#059669" text-anchor="middle">Y₂</text>
-      <text x="68" y="188" font-size="9" fill="#059669">P stable or lower ↓</text>
     </g>
   </svg>`,
 

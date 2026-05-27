@@ -175,12 +175,13 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '📊', title: 'Investment rises',         sub: 'More spending on plant and equipment.' }
       ],
 
-      causesLabel: 'WHEN OUTPUT GROWTH SLOWS DOWN',
-      causesEmoji: '⚠️',
-      causes: [
-        { tone: 'rose', icon: '📉', head: 'Output expectations fall', body: 'Firms expect to sell less in the future.' },
-        { tone: 'rose', icon: '🏭', head: 'Firms want less capital',  body: 'They postpone or cancel expansion.' },
-        { tone: 'rose', icon: '📊', head: 'Investment falls',         body: 'Less spending on plant and equipment.' }
+      flow2Title: 'WHEN OUTPUT GROWTH SLOWS DOWN',
+      flow2Emoji: '⚠️',
+      flow2Sep: '→',
+      flow2: [
+        { tone: 'rose', icon: '📉', title: 'Output expectations fall', sub: 'Firms expect to sell less in the future.' },
+        { tone: 'rose', icon: '🏭', title: 'Firms want less capital',  sub: 'They postpone or cancel expansion.' },
+        { tone: 'rose', icon: '📊', title: 'Investment falls',         sub: 'Less spending on plant and equipment.' }
       ],
 
       comparisonTable: {

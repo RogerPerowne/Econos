@@ -1,4 +1,4 @@
-const CACHE_NAME = 'econos-v19';
+const CACHE_NAME = 'econos-v20';
 
 const PRECACHE_ASSETS = [
   '/',

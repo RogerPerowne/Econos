@@ -4,12 +4,12 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 4 \xb7 A Global Perspective',
   title: 'Role of Financial Markets',
   estTime: '7-9 minutes',
-  goal: 'Understand the core functions of financial markets in a modern economy — facilitating saving and borrowing, enabling investment, managing risk, and providing the money supply.',
+  goal: 'Understand the core functions of financial markets in a modern economy – facilitating saving and borrowing, enabling investment, managing risk, and providing the money supply.',
 
   intro: {
     heroKey: 'heroFinancialMarkets',
-    summary: 'Financial markets connect savers to borrowers, enable firms to fund investment, allow households to manage risk, and underpin the payments system. A well-functioning financial sector is essential for growth — but financial markets fail more often than other markets, with consequences that can devastate the wider economy.',
-    doInThis: 'Content coming soon — this topic will cover the six functions of financial markets, the distinction between money and capital markets, the role of commercial banks vs investment banks, and the importance of liquidity and credit creation.',
+    summary: 'Financial markets connect savers to borrowers, enable firms to fund investment, allow households to manage risk, and underpin the payments system. A well-functioning financial sector is essential for growth – but financial markets fail more often than other markets, with consequences that can devastate the wider economy.',
+    doInThis: 'Content coming soon – this topic will cover the six functions of financial markets, the distinction between money and capital markets, the role of commercial banks vs investment banks, and the importance of liquidity and credit creation.',
     outcomes: [
       'Identify the main functions of financial markets',
       'Distinguish between money markets and capital markets',
@@ -34,11 +34,11 @@ window.ECONOS_TOPIC = {
       branches: [
         { tone: 'blue',   label: 'Save & borrow',     sub: 'Channel funds from savers (households) to borrowers (firms, government). Without this, investment would be limited to retained earnings.' },
         { tone: 'green',  label: 'Investment',        sub: 'Enable firms to raise capital through equity and bond issuance. Stock markets price firms and discipline management.' },
-        { tone: 'amber',  label: 'Payments & exchange', sub: 'Underpin the payments system (banks, card networks). Provide forward markets for currencies and commodities — exporters can hedge FX risk.' },
+        { tone: 'amber',  label: 'Payments & exchange', sub: 'Underpin the payments system (banks, card networks). Provide forward markets for currencies and commodities – exporters can hedge FX risk.' },
         { tone: 'purple', label: 'Risk management',   sub: 'Insurance markets pool risk. Derivatives transfer risk to those willing to bear it. Pension funds smooth income across life.' }
       ],
       body: 'Full content for this topic is being developed. Key concepts: money markets (short-term, < 1 year) vs capital markets (long-term); commercial banking and credit creation (fractional reserve); investment banking (IPOs, M&A advisory); securities markets (equities, bonds); derivatives markets; the role of London as a global financial centre.',
-      examEdge: 'Credit creation by commercial banks is a key analytical concept. Banks do not just intermediate existing savings — they CREATE deposits when they lend. £1 of new lending creates £1 of new deposits. The "money multiplier" framework taught in textbooks is misleading; the BoE\'s 2014 quarterly bulletin clarified that banks create money through lending, not through multiplying reserves.',
+      examEdge: 'Credit creation by commercial banks is a key analytical concept. Banks do not just intermediate existing savings – they CREATE deposits when they lend. £1 of new lending creates £1 of new deposits. The "money multiplier" framework taught in textbooks is misleading; the BoE\'s 2014 quarterly bulletin clarified that banks create money through lending, not through multiplying reserves.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Supply: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -37,10 +37,10 @@ window.ECONOS_LINK_JUDGE = {
       evidenceCards: [
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: 'Gas prices +400% (Jan–Oct 2021); British Steel furnace suspended; food producer price inflation +14.8%; but hedged firms unaffected and EBRS partially offset the shock.' },
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Rising energy costs → supply curve shifts left from S₁ to S₂ → shortage at P₁ → new equilibrium at higher P₂ and lower Q₂.' },
-        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'S shifts left → new equilibrium at higher P₂ and lower Q₂ — cost-push inflation and output contraction.' },
+        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'S shifts left → new equilibrium at higher P₂ and lower Q₂ – cost-push inflation and output contraction.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Severity depends on energy intensity of sector, PED for the final good, and exposure to international competition from lower-cost overseas producers.' }
       ],
-      cloze: 'A supply-side cost shock shifts the supply curve to the [1], because rising input costs increase [2] at every level of output. The new equilibrium settles at a [3] price and [4] quantity. The proportion of the cost rise passed to consumers as higher prices depends on the [5] of demand — where demand is price inelastic, firms can pass most of the cost through. However, the policy is less effective at restoring output where firms face [6] from lower-cost overseas producers. The strongest judgement is that energy cost shocks are most damaging in [7] sectors with [8], where the supply shift is large and producers cannot pass costs to buyers without losing market share to imports.',
+      cloze: 'A supply-side cost shock shifts the supply curve to the [1], because rising input costs increase [2] at every level of output. The new equilibrium settles at a [3] price and [4] quantity. The proportion of the cost rise passed to consumers as higher prices depends on the [5] of demand – where demand is price inelastic, firms can pass most of the cost through. However, the policy is less effective at restoring output where firms face [6] from lower-cost overseas producers. The strongest judgement is that energy cost shocks are most damaging in [7] sectors with [8], where the supply shift is large and producers cannot pass costs to buyers without losing market share to imports.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-left',      text: 'left',          correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-govt',      text: 'Government intervention can fully offset any supply-side shock',                                                    correct: false }
         ]
       },
-      examBridge: '"A 400% rise in gas prices shifted the supply curve for UK energy-intensive manufacturing sharply to the left, raising prices and reducing output. The severity of the output loss depended on PED for the final good — sectors with inelastic demand (steel, specialist glass) passed more cost to buyers, while those facing import competition bore larger output losses. Government energy price caps partially offset the shock, but permanent supply curve adjustments continued as some producers exited and others invested in efficiency."'
+      examBridge: '"A 400% rise in gas prices shifted the supply curve for UK energy-intensive manufacturing sharply to the left, raising prices and reducing output. The severity of the output loss depended on PED for the final good – sectors with inelastic demand (steel, specialist glass) passed more cost to buyers, while those facing import competition bore larger output losses. Government energy price caps partially offset the shock, but permanent supply curve adjustments continued as some producers exited and others invested in efficiency."'
     }
   ]
 };

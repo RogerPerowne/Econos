@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    Behavioural Economics: evaluate nudges vs Pigouvian taxes claim
    ============================================================ */
 
@@ -32,31 +32,31 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'present-bias-strength',
           icon:  '⏱️',
           label: 'Strength of present bias in the target population',
-          why:   'Nudges are most effective when present bias is mild to moderate — consumers need only be reminded of future costs to adjust. Where present bias is severe (addiction to high-sugar products, habitual consumption), making costs salient has minimal effect. In these cases, more coercive instruments (Pigouvian taxes, quantity restrictions) are needed to overcome the behavioural barrier.'
+          why:   'Nudges are most effective when present bias is mild to moderate – consumers need only be reminded of future costs to adjust. Where present bias is severe (addiction to high-sugar products, habitual consumption), making costs salient has minimal effect. In these cases, more coercive instruments (Pigouvian taxes, quantity restrictions) are needed to overcome the behavioural barrier.'
         },
         {
           id:    'salience-design',
           icon:  '👁️',
           label: 'Salience and design quality of the nudge',
-          why:   'Traffic light labelling only works if consumers notice, process and respond to the red label at the point of decision. Eye-tracking research shows 40% of shoppers do not look at nutritional labels when making purchase decisions. Nudge effectiveness depends heavily on choice architecture quality — where the information is displayed, how large it is, and whether it is in intuitive format (% traffic light vs calorie counts).'
+          why:   'Traffic light labelling only works if consumers notice, process and respond to the red label at the point of decision. Eye-tracking research shows 40% of shoppers do not look at nutritional labels when making purchase decisions. Nudge effectiveness depends heavily on choice architecture quality – where the information is displayed, how large it is, and whether it is in intuitive format (% traffic light vs calorie counts).'
         },
         {
           id:    'regressivity',
           icon:  '💰',
           label: 'Regressive distributional impact of Pigouvian taxes vs nudges',
-          why:   'A Pigouvian sugar tax raises prices for all consumers — imposing a proportionally larger burden on lower-income households (who spend a larger share of income on these goods). Nudges do not raise prices and are therefore non-regressive. Where equity concerns are paramount, nudges are preferred even if they achieve smaller demand corrections — because the welfare cost is distributed more fairly.'
+          why:   'A Pigouvian sugar tax raises prices for all consumers – imposing a proportionally larger burden on lower-income households (who spend a larger share of income on these goods). Nudges do not raise prices and are therefore non-regressive. Where equity concerns are paramount, nudges are preferred even if they achieve smaller demand corrections – because the welfare cost is distributed more fairly.'
         },
         {
           id:    'substitution',
           icon:  '🔄',
           label: 'Availability of healthier substitutes',
-          why:   'Nudges shift demand from high-sugar to lower-sugar products only if acceptable substitutes exist. Reformulation (SDIL effect) creates those substitutes within the same product range — Coca-Cola Zero is a near-perfect substitute for regular Coca-Cola. Where substitutes are unavailable or less acceptable, nudges cause consumers to sacrifice welfare without achieving the health outcome.'
+          why:   'Nudges shift demand from high-sugar to lower-sugar products only if acceptable substitutes exist. Reformulation (SDIL effect) creates those substitutes within the same product range – Coca-Cola Zero is a near-perfect substitute for regular Coca-Cola. Where substitutes are unavailable or less acceptable, nudges cause consumers to sacrifice welfare without achieving the health outcome.'
         },
         {
           id:    'habit',
           icon:  '🔁',
           label: 'Role of habit and status quo bias',
-          why:   'Many soft drink consumption patterns are habitual — consumers do not actively choose at each purchase but repeat the same decision. Status quo bias means habitual choices persist even when nudges are present. Breaking habits requires stronger interventions than information nudges — default changes (making water the default drink in school vending machines) exploit status quo bias in the opposite direction.'
+          why:   'Many soft drink consumption patterns are habitual – consumers do not actively choose at each purchase but repeat the same decision. Status quo bias means habitual choices persist even when nudges are present. Breaking habits requires stronger interventions than information nudges – default changes (making water the default drink in school vending machines) exploit status quo bias in the opposite direction.'
         },
         {
           id:    'political-feasibility',
@@ -74,11 +74,11 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'long-run',
           icon:  '📅',
           label: 'Long-run vs short-run effectiveness of each instrument',
-          why:   'Nudges may produce lasting changes in consumer habits if they shift norms (e.g., water becomes the expected default drink at school meals). Pigouvian taxes produce lasting effects while maintained but demand rebounds if taxes are removed. Reformulation under SDIL is potentially permanent — once recipes are changed, they tend to remain lower in sugar. Long-run effectiveness favours structural interventions (reformulation) over price signals that can be reversed.'
+          why:   'Nudges may produce lasting changes in consumer habits if they shift norms (e.g., water becomes the expected default drink at school meals). Pigouvian taxes produce lasting effects while maintained but demand rebounds if taxes are removed. Reformulation under SDIL is potentially permanent – once recipes are changed, they tend to remain lower in sugar. Long-run effectiveness favours structural interventions (reformulation) over price signals that can be reversed.'
         }
       ],
       modelRanking: ['present-bias-strength', 'salience-design', 'regressivity'],
-      judgement: '"Nudges outperform Pigouvian taxes when present bias is mild enough to be corrected by salient information (so labelling works), when equity concerns make price increases undesirable, and when political feasibility favours non-coercive instruments. The SDIL is a hybrid: a producer-side levy that funds reformulation (structural nudge) rather than a consumption tax — combining price incentives for producers with non-regressive consumer outcomes. It works best where reformulation creates acceptable substitutes, as with carbonated drinks."'
+      judgement: '"Nudges outperform Pigouvian taxes when present bias is mild enough to be corrected by salient information (so labelling works), when equity concerns make price increases undesirable, and when political feasibility favours non-coercive instruments. The SDIL is a hybrid: a producer-side levy that funds reformulation (structural nudge) rather than a consumption tax – combining price incentives for producers with non-regressive consumer outcomes. It works best where reformulation creates acceptable substitutes, as with carbonated drinks."'
     }
   ]
 };

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Chain station data
+   ECONOS – Link It · Chain station data
    Inflation: build a causal chain of economic reasoning
    ============================================================ */
 
@@ -46,7 +46,7 @@ window.ECONOS_LINK_CHAIN = {
         {
           id:   'cp-step3',
           icon: '📊',
-          text: 'CPI rises — cost-push inflation',
+          text: 'CPI rises – cost-push inflation',
           pos:  2
         },
         {
@@ -71,18 +71,18 @@ window.ECONOS_LINK_CHAIN = {
       explain: [
         {
           pos:  0,
-          text: 'Higher energy costs raise firms\' average costs of production. On the AD/AS diagram, SRAS shifts leftward — the economy produces less at every price level, creating stagflationary pressure.'
+          text: 'Higher energy costs raise firms\' average costs of production. On the AD/AS diagram, SRAS shifts leftward – the economy produces less at every price level, creating stagflationary pressure.'
         },
         {
           pos:  1,
-          text: 'To protect profit margins, firms raise their output prices. This is the transmission mechanism from higher input costs to consumer prices — sometimes called a cost mark-up.'
+          text: 'To protect profit margins, firms raise their output prices. This is the transmission mechanism from higher input costs to consumer prices – sometimes called a cost mark-up.'
         },
         {
           pos:  2,
-          text: 'The general price level rises across the economy: the headline CPI ticks up. Because the cause is supply-side (input costs), this is classified as cost-push inflation — accompanied by falling output rather than rising demand.'
+          text: 'The general price level rises across the economy: the headline CPI ticks up. Because the cause is supply-side (input costs), this is classified as cost-push inflation – accompanied by falling output rather than rising demand.'
         }
       ],
-      examBridge: '"An oil-price shock shifts SRAS leftward; firms facing squeezed margins raise output prices, transmitting higher input costs into CPI — a classic cost-push inflation where rising prices are accompanied by falling real output."',
+      examBridge: '"An oil-price shock shifts SRAS leftward; firms facing squeezed margins raise output prices, transmitting higher input costs into CPI – a classic cost-push inflation where rising prices are accompanied by falling real output."',
 
       prompts: [
         'What happens to firms\' output or prices as costs rise?',
@@ -90,7 +90,7 @@ window.ECONOS_LINK_CHAIN = {
         'What is the wider effect on households and real incomes?'
       ],
       modelAnswers: [
-        'Firms face squeezed profit margins and respond by cutting output and/or raising prices — on the AD/AS diagram, SRAS shifts leftward.',
+        'Firms face squeezed profit margins and respond by cutting output and/or raising prices – on the AD/AS diagram, SRAS shifts leftward.',
         'The leftward SRAS shift raises the equilibrium price level. CPI increases, producing cost-push inflation even without any change in aggregate demand.',
         'Higher prices erode households\' real wages and purchasing power. Real incomes fall, reducing consumer spending and potentially deepening the slowdown.'
       ],

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page data
+   ECONOS – Land It intro page data
    ============================================================ */
 
 window.ECONOS_LAND_INTRO = {

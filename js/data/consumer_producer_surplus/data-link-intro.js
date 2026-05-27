@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for consumer_producer_surplus
+   ECONOS – Link It intro/landing data for consumer_producer_surplus
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your surplus knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "Use the UK bus subsidy to analyse how consumer surplus and producer surplus change when supply shifts right — and whether the combined welfare gain justifies the public cost.",
+    summary: "Use the UK bus subsidy to analyse how consumer surplus and producer surplus change when supply shifts right – and whether the combined welfare gain justifies the public cost.",
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Evaluate whether a subsidy creates net welfare gain or net loss',
       'Identify conditions under which the welfare gain is maximised'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

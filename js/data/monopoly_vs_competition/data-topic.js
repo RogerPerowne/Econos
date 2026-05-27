@@ -4,17 +4,17 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Market Power & Contestability',
   estTime: '12-14 minutes',
-  goal: 'Understand that competitive outcomes depend on the threat of entry — not just the number of firms. Place real markets on the contestability spectrum.',
+  goal: 'Understand that competitive outcomes depend on the threat of entry – not just the number of firms. Place real markets on the contestability spectrum.',
   intro: {
     heroKey: 'heroMarketPower',
-    summary: 'The textbook compares perfect competition with monopoly as if structure (how many firms) were the central question. The modern framework treats CONTESTABILITY — the threat of entry — as the central question. PC and monopoly become the two theoretical limit cases on the contestability spectrum, with most real markets in between.',
+    summary: 'The textbook compares perfect competition with monopoly as if structure (how many firms) were the central question. The modern framework treats CONTESTABILITY – the threat of entry – as the central question. PC and monopoly become the two theoretical limit cases on the contestability spectrum, with most real markets in between.',
     doInThis: 'Work through 8 cards: the contestability spectrum, the two textbook limit cases, contestability theory (Baumol), the corrected welfare diagram, when market power is benign, where real markets sit, modern competition policy, and a full market structures comparison table. Finish with a 25-mark essay scaffold.',
     outcomes: [
       'Place market structures on the contestability spectrum from PC to pure monopoly',
       'Draw firm-level diagrams correctly: horizontal AR=MR=P under PC versus downward AR with MR below under monopoly',
       'Apply contestability theory to explain why a monopolist may behave competitively',
       'Identify when market power is benign (natural monopoly, dynamic efficiency, contestability)',
-      'Evaluate UK competition policy as contestability-based — targeting entry barriers and conduct, not structure alone'
+      'Evaluate UK competition policy as contestability-based – targeting entry barriers and conduct, not structure alone'
     ],
     tip: 'Structure (how many firms) matters less than CONDUCT (how they behave), and conduct is disciplined by CONTESTABILITY (the threat of entry). A single firm in an easy-entry market may price like PC; an oligopoly with high entry barriers may behave like a monopoly. Always assess entry barriers, not just count of firms.',
     stages: [
@@ -29,7 +29,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 8',
       title: 'The Contestability Spectrum',
-      lede: 'Forget "how many firms?" — the real question is "how easy is entry?". Market structures sit on a contestability spectrum from low barriers (PC) to high barriers (pure monopoly).',
+      lede: 'Forget "how many firms?" – the real question is "how easy is entry?". Market structures sit on a contestability spectrum from low barriers (PC) to high barriers (pure monopoly).',
       diagramKey: 'contestabilitySpectrum',
       steps: [
         {
@@ -54,14 +54,14 @@ window.ECONOS_TOPIC = {
       id: 'mvc_2',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 8',
-      title: 'The Two Limit Cases — Done Correctly',
+      title: 'The Two Limit Cases – Done Correctly',
       lede: 'A firm-level diagram for each extreme. PC firm: horizontal AR=MR=P (price-taker). Monopoly: faces the whole downward demand, MR below AR.',
       diagramKey: 'firmLevelPcVsMonopoly',
       steps: [
         {
           key: 'base',
           label: 'PC firm (price-taker)',
-          text: 'Under perfect competition the individual firm is a <strong>price-taker</strong>. The market sets P; the firm faces a perfectly elastic <strong>horizontal demand: AR = MR = P</strong>. The firm chooses output where <strong>MC = MR (= P)</strong>. In the long run, free entry drives profit to zero: <strong>P = MC = min AC</strong> — both allocatively and productively efficient.'
+          text: 'Under perfect competition the individual firm is a <strong>price-taker</strong>. The market sets P; the firm faces a perfectly elastic <strong>horizontal demand: AR = MR = P</strong>. The firm chooses output where <strong>MC = MR (= P)</strong>. In the long run, free entry drives profit to zero: <strong>P = MC = min AC</strong> – both allocatively and productively efficient.'
         },
         {
           key: 'extension',
@@ -71,17 +71,17 @@ window.ECONOS_TOPIC = {
         {
           key: 'shift',
           label: 'Compare side-by-side',
-          text: 'Same cost curves, different demand. PC firm produces at <strong>min AC</strong> (productive efficiency) and <strong>P = MC</strong> (allocative efficiency). Monopoly firm produces less, at higher AC per unit, charges above MC, and earns supernormal profit. <strong>BUT</strong>: these are limit cases. Whether the monopoly outcome persists depends on contestability — covered next.'
+          text: 'Same cost curves, different demand. PC firm produces at <strong>min AC</strong> (productive efficiency) and <strong>P = MC</strong> (allocative efficiency). Monopoly firm produces less, at higher AC per unit, charges above MC, and earns supernormal profit. <strong>BUT</strong>: these are limit cases. Whether the monopoly outcome persists depends on contestability – covered next.'
         }
       ],
-      examEdge: 'For a PC firm the demand curve is HORIZONTAL at market price — NEVER draw a downward slope for the individual PC firm. The downward slope is the INDUSTRY demand curve. Mixing firm-level and industry-level diagrams is one of the most common A-level errors. In essays, use a two-panel diagram: left = PC firm, right = monopoly firm, with the same cost stack so the difference is purely about demand.'
+      examEdge: 'For a PC firm the demand curve is HORIZONTAL at market price – NEVER draw a downward slope for the individual PC firm. The downward slope is the INDUSTRY demand curve. Mixing firm-level and industry-level diagrams is one of the most common A-level errors. In essays, use a two-panel diagram: left = PC firm, right = monopoly firm, with the same cost stack so the difference is purely about demand.'
     },
     {
       id: 'mvc_3',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Contestability Theory (Baumol 1982)',
-      lede: 'A market is contestable if entry and exit are costless. Then even a single firm must price near competitive level — the threat of entry disciplines it.',
+      lede: 'A market is contestable if entry and exit are costless. Then even a single firm must price near competitive level – the threat of entry disciplines it.',
       diagramKey: 'contestabilityFrames',
       steps: [
         {
@@ -92,12 +92,12 @@ window.ECONOS_TOPIC = {
         {
           key: 'extension',
           label: 'Contestable monopoly (entry threat)',
-          text: 'If <strong>sunk costs are low</strong> and entry is easy, a profit-making monopoly attracts <strong>hit-and-run entrants</strong> — enter, undercut, profit, exit before retaliation. To deter this, the incumbent <strong>prices near AC</strong>, sacrificing supernormal profit. <strong>One firm, near-competitive outcome.</strong>'
+          text: 'If <strong>sunk costs are low</strong> and entry is easy, a profit-making monopoly attracts <strong>hit-and-run entrants</strong> – enter, undercut, profit, exit before retaliation. To deter this, the incumbent <strong>prices near AC</strong>, sacrificing supernormal profit. <strong>One firm, near-competitive outcome.</strong>'
         },
         {
           key: 'shift',
           label: 'Perfectly contestable',
-          text: 'In the limit of <strong>zero sunk costs and free entry/exit</strong>, the monopolist must price at AC — any markup invites instant entry. Allocative efficiency is approximated. Airline routes (mobile aircraft, low route-specific sunk costs) are the canonical example. <strong>Structure: one firm. Outcome: competitive.</strong>'
+          text: 'In the limit of <strong>zero sunk costs and free entry/exit</strong>, the monopolist must price at AC – any markup invites instant entry. Allocative efficiency is approximated. Airline routes (mobile aircraft, low route-specific sunk costs) are the canonical example. <strong>Structure: one firm. Outcome: competitive.</strong>'
         }
       ],
       examEdge: 'The key contestability condition is <strong>sunk costs near zero</strong>, NOT zero capital costs. Capital can be high if recoverable on exit (aircraft, leased buildings). Capital is unrecoverable for railway track, pipelines, specialised plant. For evaluation: "Although X is a monopolist, the market is contestable because aircraft can be redeployed to other routes, so prices are disciplined by the threat of entry rather than by the number of competitors."'
@@ -123,34 +123,34 @@ window.ECONOS_TOPIC = {
         {
           key: 'shift',
           label: 'Welfare decomposition',
-          text: 'Three areas vs the competitive baseline. <strong>Blue</strong>: remaining consumer surplus (smaller). <strong>Amber</strong>: transfer from consumers to monopolist (former CS now PS). <strong>Red triangle</strong>: deadweight loss — value destroyed because units consumers value above MC go unproduced. <strong>This is the static welfare cost when contestability fails.</strong>'
+          text: 'Three areas vs the competitive baseline. <strong>Blue</strong>: remaining consumer surplus (smaller). <strong>Amber</strong>: transfer from consumers to monopolist (former CS now PS). <strong>Red triangle</strong>: deadweight loss – value destroyed because units consumers value above MC go unproduced. <strong>This is the static welfare cost when contestability fails.</strong>'
         }
       ],
-      examEdge: 'DWL size depends on demand elasticity at the monopoly point. Inelastic demand → small Q reduction → small DWL triangle. Elastic demand → large Q reduction → large DWL. Competition policy intervention is most justified where DWL is large relative to the market size. Note: this diagram assumes contestability has failed — a contestable monopoly would price near competitive levels and the DWL would shrink towards zero.'
+      examEdge: 'DWL size depends on demand elasticity at the monopoly point. Inelastic demand → small Q reduction → small DWL triangle. Elastic demand → large Q reduction → large DWL. Competition policy intervention is most justified where DWL is large relative to the market size. Note: this diagram assumes contestability has failed – a contestable monopoly would price near competitive levels and the DWL would shrink towards zero.'
     },
     {
       id: 'mvc_5',
       template: 'framing',
       title: 'When Market Power Isn\'t All Bad',
-      body: 'The DWL diagram assumes monopoly is unambiguously worse. Three counter-arguments push back:<br><br><strong>1. Natural monopoly cost advantage.</strong> If LRAC is still falling at the scale of market demand, a single firm produces at lower AC than several smaller competitors would. Breaking it up raises costs. Examples: water distribution, electricity grid, gas pipelines, rail track. Policy response: regulate (RPI-X price cap, access regulation), don\'t break up.<br><br><strong>2. Schumpeterian dynamic efficiency.</strong> Supernormal monopoly profit funds R&D. Competitive firms earn only normal profit and cannot afford ambitious research. Patents — a temporary legal monopoly — are the standard incentive for innovation. Aghion et al. find an <em>inverted-U</em>: innovation peaks at intermediate concentration, not at the extremes.<br><br><strong>3. Contestability.</strong> A single firm in a contestable market behaves competitively. Number of firms is the wrong metric; entry conditions are the right metric.',
+      body: 'The DWL diagram assumes monopoly is unambiguously worse. Three counter-arguments push back:<br><br><strong>1. Natural monopoly cost advantage.</strong> If LRAC is still falling at the scale of market demand, a single firm produces at lower AC than several smaller competitors would. Breaking it up raises costs. Examples: water distribution, electricity grid, gas pipelines, rail track. Policy response: regulate (RPI-X price cap, access regulation), don\'t break up.<br><br><strong>2. Schumpeterian dynamic efficiency.</strong> Supernormal monopoly profit funds R&D. Competitive firms earn only normal profit and cannot afford ambitious research. Patents – a temporary legal monopoly – are the standard incentive for innovation. Aghion et al. find an <em>inverted-U</em>: innovation peaks at intermediate concentration, not at the extremes.<br><br><strong>3. Contestability.</strong> A single firm in a contestable market behaves competitively. Number of firms is the wrong metric; entry conditions are the right metric.',
       keyTerms: [
-        { term: 'Natural monopoly', def: 'A market where one firm can serve demand at lower AC than multiple firms — LRAC still falling at minimum efficient scale relative to demand size.' },
+        { term: 'Natural monopoly', def: 'A market where one firm can serve demand at lower AC than multiple firms – LRAC still falling at minimum efficient scale relative to demand size.' },
         { term: 'Schumpeterian hypothesis', def: 'Market power and supernormal profit are prerequisites for significant innovation; pure competition under-invests in R&D.' },
-        { term: 'Inverted-U hypothesis (Aghion)', def: 'Innovation peaks at intermediate market concentration — neither pure competition nor pure monopoly is optimal for dynamic efficiency.' }
+        { term: 'Inverted-U hypothesis (Aghion)', def: 'Innovation peaks at intermediate market concentration – neither pure competition nor pure monopoly is optimal for dynamic efficiency.' }
       ],
-      examEdge: 'In evaluation, push back against the static welfare diagram with these three arguments. Natural monopoly is the strongest rebuttal — for water and rail track, breaking up genuinely raises costs. Schumpeter is weaker as a general principle (mixed evidence) but strong for specific industries (pharma, where patents are essential). Contestability is the modern framework: regulate barriers, not concentration.'
+      examEdge: 'In evaluation, push back against the static welfare diagram with these three arguments. Natural monopoly is the strongest rebuttal – for water and rail track, breaking up genuinely raises costs. Schumpeter is weaker as a general principle (mixed evidence) but strong for specific industries (pharma, where patents are essential). Contestability is the modern framework: regulate barriers, not concentration.'
     },
     {
       id: 'mvc_6',
       template: 'cause',
       title: 'Where Real Markets Sit',
       causes: [
-        { head: 'Big Tech — high barriers, market power', body: 'Google search (92% share), Meta (Facebook + Instagram + WhatsApp), Apple (App Store control), Amazon (marketplace + own products). <strong>High barriers</strong>: network effects (more users → better service → more users), data accumulation, switching costs. Entry by new search engines or social networks consistently fails. CMA Digital Markets Unit (2021) targets these specifically with conduct codes.' },
-        { head: 'Airlines — contestable on routes', body: 'Aircraft are <strong>mobile capital</strong> — low route-specific sunk costs. Even a monopoly route is contestable: rivals can redeploy aircraft when profits attract them. Ryanair and easyJet entering legacy carrier routes systematically eroded margins. Outcome: prices closer to AC than route-level concentration suggests.' },
-        { head: 'Utilities — natural monopoly + regulation', body: 'Water, gas pipes, electricity grid, rail track (Network Rail). Distribution is a <strong>natural monopoly</strong> — duplicate networks waste resources. UK approach: separate the network (regulated monopoly, e.g. Network Rail, National Grid) from competitive layers (train operators, energy retailers). Access regulation prevents the network owner from abusing dominance.' },
-        { head: 'Supermarkets — oligopoly, contestable in segments', body: 'Tesco, Sainsbury\'s, Asda, Morrisons control most volume but face entry pressure from Aldi and Lidl, which roughly doubled share between 2013 and 2024. Online grocery is contestable; physical big-box stores less so (planning constraints). CMA studies on fuel pricing and loyalty schemes target specific conduct issues rather than overall structure.' }
+        { head: 'Big Tech – high barriers, market power', body: 'Google search (92% share), Meta (Facebook + Instagram + WhatsApp), Apple (App Store control), Amazon (marketplace + own products). <strong>High barriers</strong>: network effects (more users → better service → more users), data accumulation, switching costs. Entry by new search engines or social networks consistently fails. CMA Digital Markets Unit (2021) targets these specifically with conduct codes.' },
+        { head: 'Airlines – contestable on routes', body: 'Aircraft are <strong>mobile capital</strong> – low route-specific sunk costs. Even a monopoly route is contestable: rivals can redeploy aircraft when profits attract them. Ryanair and easyJet entering legacy carrier routes systematically eroded margins. Outcome: prices closer to AC than route-level concentration suggests.' },
+        { head: 'Utilities – natural monopoly + regulation', body: 'Water, gas pipes, electricity grid, rail track (Network Rail). Distribution is a <strong>natural monopoly</strong> – duplicate networks waste resources. UK approach: separate the network (regulated monopoly, e.g. Network Rail, National Grid) from competitive layers (train operators, energy retailers). Access regulation prevents the network owner from abusing dominance.' },
+        { head: 'Supermarkets – oligopoly, contestable in segments', body: 'Tesco, Sainsbury\'s, Asda, Morrisons control most volume but face entry pressure from Aldi and Lidl, which roughly doubled share between 2013 and 2024. Online grocery is contestable; physical big-box stores less so (planning constraints). CMA studies on fuel pricing and loyalty schemes target specific conduct issues rather than overall structure.' }
       ],
-      examEdge: 'Use specific real-world examples in essays — they earn application marks. "Tech platforms" and "utilities" are over-cited; pick something specific like "the UK retail energy market post-Ofgem reforms" or "the Microsoft/Activision merger CMA decision". Always mention CONTESTABILITY status alongside concentration: e.g. "UK groceries: top-4 concentration ratio ~65%, but contestable due to Aldi/Lidl expansion and low consumer switching costs."'
+      examEdge: 'Use specific real-world examples in essays – they earn application marks. "Tech platforms" and "utilities" are over-cited; pick something specific like "the UK retail energy market post-Ofgem reforms" or "the Microsoft/Activision merger CMA decision". Always mention CONTESTABILITY status alongside concentration: e.g. "UK groceries: top-4 concentration ratio ~65%, but contestable due to Aldi/Lidl expansion and low consumer switching costs."'
     },
     {
       id: 'mvc_7',
@@ -159,7 +159,7 @@ window.ECONOS_TOPIC = {
       left: {
         label: 'The contestability-based approach works',
         points: [
-          'CMA Digital Markets Unit: ex-ante codes of conduct for SMS-designated firms (Google, Apple, Meta) — targets behaviour, not break-up',
+          'CMA Digital Markets Unit: ex-ante codes of conduct for SMS-designated firms (Google, Apple, Meta) – targets behaviour, not break-up',
           'Merger control prevents concentration-INCREASING deals that raise entry barriers (Microsoft/Activision CMA scrutiny)',
           'Market investigations target SPECIFIC barriers: loyalty schemes, data portability, switching costs, fuel margin opacity',
           'Access regulation in utilities preserves natural monopoly cost advantages while preventing exploitation',
@@ -169,34 +169,34 @@ window.ECONOS_TOPIC = {
       right: {
         label: 'Limitations and tensions',
         points: [
-          'Defining "contestable" is contentious — incumbents always claim more contestability than entrants experience',
+          'Defining "contestable" is contentious – incumbents always claim more contestability than entrants experience',
           'Information asymmetry: firms know their cost structures and strategies; regulators rely on submitted evidence',
           'Speed: digital markets evolve in months; investigations take years (Google Shopping appeal: 5 years)',
           'Cross-border platforms evade single-jurisdiction regulators; international coordination is slow',
           'Risk of regulatory capture as agencies repeatedly engage the same firms'
         ]
       },
-      examEdge: 'The modern framework is genuinely different from textbook PC vs Monopoly. Don\'t evaluate competition policy as if its goal is to force PC — its goal is to ensure CONTESTABILITY. Strong evaluation: "While breaking up Big Tech may seem appealing under the static welfare model, the contestability framework prefers conduct codes that preserve scale benefits while preventing entry-barrier abuse — the approach embedded in the UK Digital Markets, Competition and Consumers Act 2024."'
+      examEdge: 'The modern framework is genuinely different from textbook PC vs Monopoly. Don\'t evaluate competition policy as if its goal is to force PC – its goal is to ensure CONTESTABILITY. Strong evaluation: "While breaking up Big Tech may seem appealing under the static welfare model, the contestability framework prefers conduct codes that preserve scale benefits while preventing entry-barrier abuse – the approach embedded in the UK Digital Markets, Competition and Consumers Act 2024."'
     },
     {
       id: 'mvc_8',
       template: 'market-structures-comparison',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Market Structures at a Glance',
-      lede: 'All four structures side by side. Use the \'Reveal\' rows to self-test the efficiency verdicts before checking — this is exactly the kind of comparison an examiner expects you to make fluently.',
+      lede: 'All four structures side by side. Use the \'Reveal\' rows to self-test the efficiency verdicts before checking – this is exactly the kind of comparison an examiner expects you to make fluently.',
       rows: [
         { label: 'No. of firms',    pc: 'Many (infinite in theory)', mc: 'Many',        ol: 'Few (typically 3–10)',                mo: 'One' },
-        { label: 'Product type',    pc: 'Homogeneous (identical)',    mc: 'Differentiated', ol: 'Homogeneous or differentiated',      mo: 'Unique — no close substitutes' },
-        { label: 'Entry barriers',  pc: 'None — free entry & exit',  mc: 'Low',         ol: 'High (scale, capital, brands)',         mo: 'Very high (legal, natural, strategic)' },
-        { label: 'Price control',   pc: 'None — price-taker',        mc: 'Slight',      ol: 'Significant',                          mo: 'Full — price-maker' },
+        { label: 'Product type',    pc: 'Homogeneous (identical)',    mc: 'Differentiated', ol: 'Homogeneous or differentiated',      mo: 'Unique – no close substitutes' },
+        { label: 'Entry barriers',  pc: 'None – free entry & exit',  mc: 'Low',         ol: 'High (scale, capital, brands)',         mo: 'Very high (legal, natural, strategic)' },
+        { label: 'Price control',   pc: 'None – price-taker',        mc: 'Slight',      ol: 'Significant',                          mo: 'Full – price-maker' },
         { label: 'SR profit',       pc: 'Supernormal possible',       mc: 'Supernormal possible', ol: 'Supernormal likely',          mo: 'Supernormal likely' },
         { label: 'LR profit',       pc: 'Normal only (entry erodes)', mc: 'Normal only (entry erodes)', ol: 'Supernormal likely (barriers protect)', mo: 'Supernormal likely (barriers protect)' },
-        { reveal: true, label: 'Productive efficiency', pc: '✓ P = min AC in LR', mc: '✗ Excess capacity — P > min AC', ol: '✗ Usually not', mo: '✗ P > min AC' },
+        { reveal: true, label: 'Productive efficiency', pc: '✓ P = min AC in LR', mc: '✗ Excess capacity – P > min AC', ol: '✗ Usually not', mo: '✗ P > min AC' },
         { reveal: true, label: 'Allocative efficiency', pc: '✓ P = MC',            mc: '✗ P > MC',                       ol: '✗ P > MC',     mo: '✗ P > MC (deadweight loss)' },
-        { reveal: true, label: 'Dynamic efficiency',    pc: '✗ Normal profit = no R&D budget', mc: '✓ Limited', ol: '✓ Often strong — supernormal funds R&D', mo: '✓ Possible if profits reinvested (Schumpeter)' },
+        { reveal: true, label: 'Dynamic efficiency',    pc: '✗ Normal profit = no R&D budget', mc: '✓ Limited', ol: '✓ Often strong – supernormal funds R&D', mo: '✓ Possible if profits reinvested (Schumpeter)' },
         { label: 'UK examples',     pc: 'Foreign exchange, commodity markets', mc: 'Coffee shops, hairdressers, restaurants', ol: 'Supermarkets (Big 4), banks, airlines', mo: 'Water utilities, Royal Mail (letters)' }
       ],
-      examEdge: 'Don\'t just list structures — compare them on efficiency and link to policy. Strong analysis: "Unlike PC, monopoly is neither productively nor allocatively efficient in the static model — but may achieve greater dynamic efficiency if Schumpeterian supernormal profit funds R&D. Whether the static losses outweigh dynamic gains is an empirical question, not a theoretical one." Always qualify with contestability.',
+      examEdge: 'Don\'t just list structures – compare them on efficiency and link to policy. Strong analysis: "Unlike PC, monopoly is neither productively nor allocatively efficient in the static model – but may achieve greater dynamic efficiency if Schumpeterian supernormal profit funds R&D. Whether the static losses outweigh dynamic gains is an empirical question, not a theoretical one." Always qualify with contestability.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

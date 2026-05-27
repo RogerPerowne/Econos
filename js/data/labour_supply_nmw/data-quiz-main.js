@@ -24,7 +24,7 @@
           'Government sets a maximum working week'
         ],
         ans:  1,
-        exp:  'At low wages, the substitution effect dominates: higher wages make leisure more expensive, so workers supply more hours. At high wages, the income effect dominates: workers are rich enough to "buy" more leisure — so supply falls.'
+        exp:  'At low wages, the substitution effect dominates: higher wages make leisure more expensive, so workers supply more hours. At high wages, the income effect dominates: workers are rich enough to "buy" more leisure – so supply falls.'
       },
       {
         id:   'q_lsnmw_2',
@@ -37,7 +37,7 @@
           'Workers leave the market because wages are too high'
         ],
         ans:  1,
-        exp:  'When wages rise, the opportunity cost of leisure increases. Workers substitute work for leisure — they supply more hours. This is the substitution effect and it always acts to increase labour supply.'
+        exp:  'When wages rise, the opportunity cost of leisure increases. Workers substitute work for leisure – they supply more hours. This is the substitution effect and it always acts to increase labour supply.'
       },
       {
         id:   'q_lsnmw_3',
@@ -63,7 +63,7 @@
           'Always reduce employment'
         ],
         ans:  1,
-        exp:  'A monopsonist restricts employment to keep wages low. A minimum wage set between the monopsony wage and competitive wage forces the monopsonist to pay more — and because MLC now equals the minimum wage, it may actually hire more workers.'
+        exp:  'A monopsonist restricts employment to keep wages low. A minimum wage set between the monopsony wage and competitive wage forces the monopsonist to pay more – and because MLC now equals the minimum wage, it may actually hire more workers.'
       },
       {
         id:   'q_lsnmw_5',
@@ -125,7 +125,7 @@
         ],
         opts: ['£8/hr','£10/hr','£12/hr','£14/hr'],
         ans:  2,
-        exp:  'Hours supplied peak at £12/hr (38 hours). After £12, hours fall (to 36 at £14, then 32 at £16) — the income effect dominates the substitution effect. The backward bend begins at £12/hr.'
+        exp:  'Hours supplied peak at £12/hr (38 hours). After £12, hours fall (to 36 at £14, then 32 at £16) – the income effect dominates the substitution effect. The backward bend begins at £12/hr.'
       },
       {
         id:   'q_lsnmw_10',

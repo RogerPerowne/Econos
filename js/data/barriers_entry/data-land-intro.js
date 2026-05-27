@@ -20,12 +20,12 @@ window.ECONOS_LAND_INTRO = {
 
   trains: [
     'Distinguishing structural barriers (sunk costs, economies of scale, patents) from strategic barriers (limit pricing, predatory pricing)',
-    'Explaining why sunk costs &#8212; not just fixed costs &#8212; deter entry',
+    'Explaining why sunk costs &#8211; not just fixed costs &#8211; deter entry',
     'Analysing network effects and data advantages as digital-era barriers to entry',
     'Evaluating whether barriers to entry are always harmful or can promote innovation and efficiency'
   ],
 
-  tip: 'The key distinction is structural versus strategic barriers. Structural barriers arise naturally from the industry&#39;s cost or technology conditions &#8212; sunk costs, economies of scale, patents. Strategic barriers are actions incumbents deliberately take to deter entry &#8212; limit pricing, predatory pricing, brand proliferation. Always ask: does the barrier reflect a genuine cost advantage, or is it an artificial restriction on competition?',
+  tip: 'The key distinction is structural versus strategic barriers. Structural barriers arise naturally from the industry&#39;s cost or technology conditions &#8211; sunk costs, economies of scale, patents. Strategic barriers are actions incumbents deliberately take to deter entry &#8211; limit pricing, predatory pricing, brand proliferation. Always ask: does the barrier reflect a genuine cost advantage, or is it an artificial restriction on competition?',
 
   stages: [
     { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for economic_systems
+   ECONOS – Link It intro/landing data for economic_systems
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your knowledge of market, command and mixed economies into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in how different economic systems allocate resources — through the price mechanism, central planning, or a combination of both. Now train the skills examiners reward — applying the framework to real comparisons between the UK, Cuba and North Korea, building the watertight price mechanism → efficiency chain, and reaching a supported judgement on whether a mixed economy is the optimal system.",
+    summary: "You've locked in how different economic systems allocate resources – through the price mechanism, central planning, or a combination of both. Now train the skills examiners reward – applying the framework to real comparisons between the UK, Cuba and North Korea, building the watertight price mechanism → efficiency chain, and reaching a supported judgement on whether a mixed economy is the optimal system.",
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -19,7 +19,7 @@ window.ECONOS_LINK_INTRO = {
       'Evaluate the key conditions that determine whether free markets outperform command economies',
       'Reach a supported judgement on whether a mixed economy best balances efficiency and equity'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

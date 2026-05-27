@@ -1,7 +1,7 @@
 /* ============================================================
-   ECONOS — content data for aggregate_demand
+   ECONOS – content data for aggregate_demand
    8 cards on AD as a system. Each component (C, I, G, X−M)
-   has its own deep-dive topic — see js/data/consumption,
+   has its own deep-dive topic – see js/data/consumption,
    investment, government_spending, net_trade.
    Edexcel Theme 2.2.1
    ============================================================ */
@@ -12,7 +12,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Aggregate Demand',
   estTime: '10-12 minutes',
-  goal: 'Lock in AD as a system — formula, slope, shifts, multiplier, real-world application',
+  goal: 'Lock in AD as a system – formula, slope, shifts, multiplier, real-world application',
 
   intro: {
     heroKey: 'heroAd',
@@ -20,7 +20,7 @@ window.ECONOS_TOPIC = {
     doInThis: 'Walk through the AD formula, the three slope effects, movement vs shifts, what shifts AD, the multiplier (basic and open-economy), real-world UK case studies, and the A* evaluation framework.',
     outcomes: [
       'Define AD and its four components with UK weights',
-      'Explain why AD slopes downward — three effects',
+      'Explain why AD slopes downward – three effects',
       'Distinguish movement along from shift of AD',
       'List the factors that shift each engine',
       'Apply the multiplier to fiscal stimulus',
@@ -46,7 +46,7 @@ window.ECONOS_TOPIC = {
       lede: 'Aggregate Demand is the total spending on UK goods and services at each price level. It is driven by four spending engines across the whole economy.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'AD is whole-economy spending — not demand for one single product.' },
+      tip: { icon: '✅', tone: 'green', text: 'AD is whole-economy spending – not demand for one single product.' },
 
       causesFirst: true,
       causesLabel: 'THE FOUR ENGINES',
@@ -59,7 +59,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'amber', icon: '🏭', head: 'Investment (I)',
-          body: '<div style="font-size:28px;font-weight:800;color:#B45309;text-align:center;margin:6px 0;">≈ 17%</div>Firms spending on capital — buildings, machinery, R&amp;D.'
+          body: '<div style="font-size:28px;font-weight:800;color:#B45309;text-align:center;margin:6px 0;">≈ 17%</div>Firms spending on capital – buildings, machinery, R&amp;D.'
         },
         {
           tone: 'purple', icon: '🏛️', head: 'Government (G)',
@@ -67,7 +67,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'green', icon: '🚢', head: 'Net exports (X − M)',
-          body: '<div style="font-size:28px;font-weight:800;color:#047857;text-align:center;margin:6px 0;">≈ 3%</div>Exports minus imports — often slightly negative for the UK.'
+          body: '<div style="font-size:28px;font-weight:800;color:#047857;text-align:center;margin:6px 0;">≈ 3%</div>Exports minus imports – often slightly negative for the UK.'
         }
       ],
 
@@ -92,7 +92,7 @@ window.ECONOS_TOPIC = {
       right: {
         tone: 'amber', icon: '🛒', iconStyle: 'circle',
         label: 'Market demand',
-        text: '<p style="margin:0;font-size:13px;color:#0B1426;">Demand for <strong>one good or service</strong>. A micro concept — buyers responding to that product\'s price.</p>'
+        text: '<p style="margin:0;font-size:13px;color:#0B1426;">Demand for <strong>one good or service</strong>. A micro concept – buyers responding to that product\'s price.</p>'
       },
 
       whyItMatters: {
@@ -113,7 +113,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'A strong answer defines AD first, then identifies which component — C, I, G or (X − M) — is changing.'
+        text: 'A strong answer defines AD first, then identifies which component – C, I, G or (X − M) – is changing.'
       }
     },
 
@@ -126,17 +126,17 @@ window.ECONOS_TOPIC = {
       lede: 'Three effects explain why a lower price level means more total spending.',
       ledeStyle: 'plain',
 
-      tip: { icon: '🔒', tone: 'green', text: 'AD slopes down for macro reasons — not for the same reason as the demand curve for one product.' },
+      tip: { icon: '🔒', tone: 'green', text: 'AD slopes down for macro reasons – not for the same reason as the demand curve for one product.' },
 
       flowChart: {
         svgKey: 'adSlopeDiagram',
         label: 'THE THREE EFFECTS',
         emoji: '📈',
-        caption: 'P falls from P₁ to P₂ — total spending (Y) rises from Y₁ to Y₂.'
+        caption: 'P falls from P₁ to P₂ – total spending (Y) rises from Y₁ to Y₂.'
       },
 
       causesFirst: false,
-      causesLabel: 'THE EFFECTS — ONE BY ONE',
+      causesLabel: 'THE EFFECTS – ONE BY ONE',
       causesEmoji: '⚙️',
       causesStyle: 'numbered',
       causes: [
@@ -159,12 +159,12 @@ window.ECONOS_TOPIC = {
       left: {
         tone: 'blue', icon: '🌐', iconStyle: 'circle',
         label: 'AD slopes down because…',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Wealth effect</strong> — lower P raises real balances.</li><li><strong>Interest rate effect</strong> — lower P reduces rates and boosts spending.</li><li><strong>International substitution</strong> — lower P makes UK goods cheaper.</li></ul>'
+        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Wealth effect</strong> – lower P raises real balances.</li><li><strong>Interest rate effect</strong> – lower P reduces rates and boosts spending.</li><li><strong>International substitution</strong> – lower P makes UK goods cheaper.</li></ul>'
       },
       right: {
         tone: 'amber', icon: '🛒', iconStyle: 'circle',
         label: 'Market demand slopes down because…',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Income effect</strong> — lower P raises real income, so quantity demanded rises.</li><li><strong>Substitution effect</strong> — lower P makes the good relatively cheaper, buyers switch to it.</li></ul>'
+        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.7;color:#0B1426;"><li><strong>Income effect</strong> – lower P raises real income, so quantity demanded rises.</li><li><strong>Substitution effect</strong> – lower P makes the good relatively cheaper, buyers switch to it.</li></ul>'
       },
 
       summaryRow: [
@@ -225,8 +225,8 @@ window.ECONOS_TOPIC = {
       },
 
       summaryRow: [
-        { tone: 'blue',   icon: '🛢️', title: 'Example — movement', text: 'Oil-price-driven inflation changes the price level → <strong>movement along AD</strong>.' },
-        { tone: 'purple', icon: '👥', title: 'Example — shift',    text: 'Consumer confidence rises → C rises at every price level → <strong>AD shifts right</strong>.' }
+        { tone: 'blue',   icon: '🛢️', title: 'Example – movement', text: 'Oil-price-driven inflation changes the price level → <strong>movement along AD</strong>.' },
+        { tone: 'purple', icon: '👥', title: 'Example – shift',    text: 'Consumer confidence rises → C rises at every price level → <strong>AD shifts right</strong>.' }
       ],
 
       conclusion: {
@@ -236,7 +236,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Write the diagnosis first — for example, "This is a rightward shift of AD because consumer confidence raises C at every price level."'
+        text: 'Write the diagnosis first – for example, "This is a rightward shift of AD because consumer confidence raises C at every price level."'
       }
     },
 
@@ -249,7 +249,7 @@ window.ECONOS_TOPIC = {
       lede: 'A shift happens when something changes one of the four engines at every price level.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Think in four engines — C, I, G and (X − M). If one changes, the whole AD curve shifts.' },
+      tip: { icon: '✅', tone: 'green', text: 'Think in four engines – C, I, G and (X − M). If one changes, the whole AD curve shifts.' },
 
       causesFirst: true,
       causesLabel: 'THE FOUR ENGINES',
@@ -302,7 +302,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'A change in any one engine can shift AD — but in reality several often move together.'
+        text: 'A change in any one engine can shift AD – but in reality several often move together.'
       },
 
       examEdge: {
@@ -311,16 +311,16 @@ window.ECONOS_TOPIC = {
       }
     },
 
-    /* ── CARD 5 ── The multiplier — the ripple ───────────────────── */
+    /* ── CARD 5 ── The multiplier – the ripple ───────────────────── */
     {
       id: 'multiplier-basic',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 8',
-      title: 'The multiplier — the ripple',
+      title: 'The multiplier – the ripple',
       lede: 'A £10bn injection does not stay £10bn. One round of spending becomes income in the next.',
       ledeStyle: 'plain',
 
-      tip: { icon: '✅', tone: 'green', text: 'Initial spending sets off further rounds of spending — that is the multiplier.' },
+      tip: { icon: '✅', tone: 'green', text: 'Initial spending sets off further rounds of spending – that is the multiplier.' },
 
       pairFirst: true,
       pairLabel: 'THE SIMPLE MULTIPLIER',
@@ -351,7 +351,7 @@ window.ECONOS_TOPIC = {
       },
 
       summaryRow: [
-        { tone: 'blue', icon: '📊', title: 'Total increase in AD = £25bn', text: 'The sum of all rounds — initial £10bn × the multiplier of 2.5.' }
+        { tone: 'blue', icon: '📊', title: 'Total increase in AD = £25bn', text: 'The sum of all rounds – initial £10bn × the multiplier of 2.5.' }
       ],
 
       whyItMatters: {
@@ -371,16 +371,16 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Always state the mechanism — spending becomes income, then becomes more spending.'
+        text: 'Always state the mechanism – spending becomes income, then becomes more spending.'
       }
     },
 
-    /* ── CARD 6 ── Leakages — the open-economy multiplier ─────────── */
+    /* ── CARD 6 ── Leakages – the open-economy multiplier ─────────── */
     {
       id: 'multiplier-leakages',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 8',
-      title: 'Leakages — the open-economy multiplier',
+      title: 'Leakages – the open-economy multiplier',
       lede: 'Real multipliers are smaller because part of each spending round leaks away.',
       ledeStyle: 'plain',
 
@@ -404,7 +404,7 @@ window.ECONOS_TOPIC = {
       right: {
         tone: 'blue', icon: '📋', iconStyle: 'circle',
         label: 'Worked example',
-        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.85;color:#0B1426;"><li>MPS = 0.1</li><li>MRT = 0.2</li><li>MRM = 0.3</li></ul><div style="border-top:1px dashed #93C5FD;margin:10px 0;"></div><p style="margin:0;font-size:13px;color:#0B1426;"><strong>k = 1 / 0.6 = 1.67</strong> — much smaller than the textbook 2.5.</p>'
+        text: '<ul style="margin:0;padding:0 0 0 16px;font-size:13px;line-height:1.85;color:#0B1426;"><li>MPS = 0.1</li><li>MRT = 0.2</li><li>MRM = 0.3</li></ul><div style="border-top:1px dashed #93C5FD;margin:10px 0;"></div><p style="margin:0;font-size:13px;color:#0B1426;"><strong>k = 1 / 0.6 = 1.67</strong> – much smaller than the textbook 2.5.</p>'
       },
 
       flowTitle: 'THE LEAKAGES',
@@ -419,7 +419,7 @@ window.ECONOS_TOPIC = {
       ],
 
       summaryRow: [
-        { tone: 'blue', icon: 'ℹ️', title: 'UK has high import leakage', text: 'UK multipliers are often small because the UK has a high propensity to import — stimulus partly boosts foreign output rather than domestic AD.' }
+        { tone: 'blue', icon: 'ℹ️', title: 'UK has high import leakage', text: 'UK multipliers are often small because the UK has a high propensity to import – stimulus partly boosts foreign output rather than domestic AD.' }
       ],
 
       versusRows: {
@@ -429,8 +429,8 @@ window.ECONOS_TOPIC = {
         rightTone: 'amber',
         rows: [
           {
-            left:  { icon: '📖', head: 'Textbook multiplier',     sub: 'Assumes only MPC matters — gives an optimistic figure (~2.5).' },
-            right: { icon: '🌐', head: 'Open-economy multiplier', sub: 'Adds savings, tax and imports — gives the realistic figure (~1.5).' }
+            left:  { icon: '📖', head: 'Textbook multiplier',     sub: 'Assumes only MPC matters – gives an optimistic figure (~2.5).' },
+            right: { icon: '🌐', head: 'Open-economy multiplier', sub: 'Adds savings, tax and imports – gives the realistic figure (~1.5).' }
           }
         ]
       },
@@ -440,8 +440,8 @@ window.ECONOS_TOPIC = {
         emoji: '💡',
         items: [
           { tone: 'blue',   icon: '🧮', label: 'Three leakages',        text: 'MPS (savings), MRT (tax), MRM (imports). Name all three for full marks.' },
-          { tone: 'amber',  icon: '🌐', label: 'Open vs closed',         text: 'High-import economies have smaller multipliers — stimulus leaks abroad.' },
-          { tone: 'purple', icon: '⚠️', label: 'Policy implication',     text: 'Headline stimulus figures overstate the real AD effect — adjust your essay accordingly.' }
+          { tone: 'amber',  icon: '🌐', label: 'Open vs closed',         text: 'High-import economies have smaller multipliers – stimulus leaks abroad.' },
+          { tone: 'purple', icon: '⚠️', label: 'Policy implication',     text: 'Headline stimulus figures overstate the real AD effect – adjust your essay accordingly.' }
         ]
       },
 
@@ -452,7 +452,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Name the three leakages explicitly — MPS, MRT and MRM. Quote a realistic UK multiplier (~1.5) rather than the textbook 2.5.'
+        text: 'Name the three leakages explicitly – MPS, MRT and MRM. Quote a realistic UK multiplier (~1.5) rather than the textbook 2.5.'
       }
     },
 
@@ -488,7 +488,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'purple', icon: '🦠', head: '2020 COVID lockdown',
-          body: 'All four engines hit at once — unprecedented AD shock.' +
+          body: 'All four engines hit at once – unprecedented AD shock.' +
             '<div style="border-top:1px dashed #DDD6FE;margin:10px 0 8px;"></div>' +
             '<div style="font-size:11.5px;font-weight:800;color:#6D28D9;margin-bottom:4px;">Engines hit</div>' +
             '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' +
@@ -497,12 +497,12 @@ window.ECONOS_TOPIC = {
               '<span style="background:#6D28D9;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;">G</span>' +
               '<span style="background:#6D28D9;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;">X−M</span>' +
             '</div>' +
-            '<div style="font-size:11.5px;font-weight:800;color:#6D28D9;margin-bottom:2px;">Outcome</div><div style="font-size:12.5px;margin-bottom:6px;">Sharp AD collapse — record GDP fall.</div>' +
+            '<div style="font-size:11.5px;font-weight:800;color:#6D28D9;margin-bottom:2px;">Outcome</div><div style="font-size:12.5px;margin-bottom:6px;">Sharp AD collapse – record GDP fall.</div>' +
             '<div style="font-size:11.5px;font-weight:800;color:#6D28D9;margin-bottom:2px;">Policy response</div><div style="font-size:12.5px;">Furlough kept C and G afloat.</div>'
         },
         {
           tone: 'amber', icon: '🛒', head: '2022 cost-of-living squeeze',
-          body: 'Real wages fell, C compressed — AD growth stalled despite nominal expansion.' +
+          body: 'Real wages fell, C compressed – AD growth stalled despite nominal expansion.' +
             '<div style="border-top:1px dashed #FDE68A;margin:10px 0 8px;"></div>' +
             '<div style="font-size:11.5px;font-weight:800;color:#B45309;margin-bottom:4px;">Engines hit</div>' +
             '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' +
@@ -520,14 +520,14 @@ window.ECONOS_TOPIC = {
         title: 'WHAT THE TIMELINE TEACHES',
         emoji: '💡',
         items: [
-          { tone: 'blue',   icon: '⤵️', label: 'Many channels',                text: 'AD can fall through different channels — different shocks hit different engines with different intensities.' },
+          { tone: 'blue',   icon: '⤵️', label: 'Many channels',                text: 'AD can fall through different channels – different shocks hit different engines with different intensities.' },
           { tone: 'purple', icon: '📋', label: 'Policy depends on diagnosis',  text: 'Responses should target the engines that are hit the hardest.' },
-          { tone: 'amber',  icon: '👥', label: 'Engines move together',         text: 'Real-world shocks rarely hit just one engine — interactions matter.' }
+          { tone: 'amber',  icon: '👥', label: 'Engines move together',         text: 'Real-world shocks rarely hit just one engine – interactions matter.' }
         ]
       },
 
       summaryRow: [
-        { tone: 'purple', icon: 'ℹ️', title: 'Essay tip', text: 'Use these cases as essay application examples — they upgrade abstract theory into named, dateable events.' }
+        { tone: 'purple', icon: 'ℹ️', title: 'Essay tip', text: 'Use these cases as essay application examples – they upgrade abstract theory into named, dateable events.' }
       ],
 
       conclusion: {
@@ -537,7 +537,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'The best application names which engine was hit — not just that "demand fell".'
+        text: 'The best application names which engine was hit – not just that "demand fell".'
       }
     },
 
@@ -568,7 +568,7 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'purple', icon: '⏳', head: 'Time lags',
-          body: 'Policy effects take time — recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.'
+          body: 'Policy effects take time – recognition lag, decision lag, then impact lag. Fiscal months, monetary 12–18 months.'
         },
         {
           tone: 'green', icon: '🏗️', head: 'AS constraints',
@@ -576,11 +576,11 @@ window.ECONOS_TOPIC = {
         },
         {
           tone: 'blue', icon: '£', head: 'Crowding out',
-          body: 'Higher G can push up interest rates and reduce private investment — partially offsetting the stimulus.'
+          body: 'Higher G can push up interest rates and reduce private investment – partially offsetting the stimulus.'
         },
         {
           tone: 'rose', icon: '👥', head: 'Confidence and expectations',
-          body: '"Animal spirits" drive spending and can swamp the textbook mechanism — confidence shocks dominate in practice.'
+          body: '"Animal spirits" drive spending and can swamp the textbook mechanism – confidence shocks dominate in practice.'
         }
       ],
 
@@ -599,7 +599,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Big idea',
-        text: 'AD shifts can raise output powerfully — but only when there is spare capacity and the multiplier is strong enough.'
+        text: 'AD shifts can raise output powerfully – but only when there is spare capacity and the multiplier is strong enough.'
       },
 
       examEdge: {

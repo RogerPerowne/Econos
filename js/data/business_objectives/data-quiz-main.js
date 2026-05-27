@@ -58,7 +58,7 @@
           'Sets prices to satisfy the regulator'
         ],
         ans:  1,
-        exp:  'Herbert Simon argued that firms operate with bounded rationality. Instead of maximising, managers aim for satisfactory levels of profit — enough to satisfy shareholders, workers, and managers — and no more.'
+        exp:  'Herbert Simon argued that firms operate with bounded rationality. Instead of maximising, managers aim for satisfactory levels of profit – enough to satisfy shareholders, workers, and managers – and no more.'
       },
       {
         id:   'q_bo_5',
@@ -111,7 +111,7 @@
         q:    'Use the table to identify the profit-maximising and revenue-maximising outputs.',
         tableHeaders: ['Output','Price (£)','TR (£)','MR (£)','TC (£)','MC (£)','Profit (£)'],
         tableData: [
-          ['10','50','500','—','300','—','200'],
+          ['10','50','500','–','300','–','200'],
           ['20','46','920','42','420','12','500'],
           ['30','42','1,260','34','600','18','660'],
           ['40','38','1,520','26','840','24','680'],

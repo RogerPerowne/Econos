@@ -24,7 +24,7 @@
           'Farmers always produce at maximum capacity regardless of price'
         ],
         ans:  1,
-        exp:  'Agricultural supply can shift dramatically (droughts, floods, disease) and both supply and demand are inelastic. Even small supply or demand shocks therefore cause large price changes — classic conditions for price volatility.'
+        exp:  'Agricultural supply can shift dramatically (droughts, floods, disease) and both supply and demand are inelastic. Even small supply or demand shocks therefore cause large price changes – classic conditions for price volatility.'
       },
       {
         id:   'q_um_2',
@@ -37,7 +37,7 @@
           'Governments always stabilise prices through buffer stocks'
         ],
         ans:  1,
-        exp:  'In the cobweb model, if prices are high this period, farmers plan to produce more next period. This extra supply pushes prices down, leading to underproduction and high prices again — creating an oscillating cycle.'
+        exp:  'In the cobweb model, if prices are high this period, farmers plan to produce more next period. This extra supply pushes prices down, leading to underproduction and high prices again – creating an oscillating cycle.'
       },
       {
         id:   'q_um_3',
@@ -50,7 +50,7 @@
           'Limiting the quantity of a commodity that can be traded internationally'
         ],
         ans:  1,
-        exp:  'Buffer stocks: an authority (often government or international body) buys the commodity when price falls toward a floor (building stocks) and sells from stocks when price rises toward a ceiling — stabilising price within a band.'
+        exp:  'Buffer stocks: an authority (often government or international body) buys the commodity when price falls toward a floor (building stocks) and sells from stocks when price rises toward a ceiling – stabilising price within a band.'
       },
       {
         id:   'q_um_4',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Buffer stock scheme','Cobweb model','Commodity price volatility','Quantitative Easing'],
         ans:  3,
-        exp:  'Buffer stocks, the cobweb model, and commodity price volatility are all related to the economics of unstable markets. Quantitative Easing is a monetary policy tool — it is not relevant to commodity market instability.'
+        exp:  'Buffer stocks, the cobweb model, and commodity price volatility are all related to the economics of unstable markets. Quantitative Easing is a monetary policy tool – it is not relevant to commodity market instability.'
       },
       {
         id:   'q_um_9',
@@ -123,7 +123,7 @@
         ],
         opts: ['Year 1','Year 2','Year 3','Year 4'],
         ans:  1,
-        exp:  'The buffer stock scheme sells from its stocks when price exceeds the ceiling (above target). In Year 2, market price = £58 > £50 target, so the scheme must sell stocks to bring price down. In Year 1 and 3, price is below target — the scheme buys.'
+        exp:  'The buffer stock scheme sells from its stocks when price exceeds the ceiling (above target). In Year 2, market price = £58 > £50 target, so the scheme must sell stocks to bring price down. In Year 1 and 3, price is below target – the scheme buys.'
       },
       {
         id:   'q_um_10',

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Positive Externalities: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'NHS provision shifts effective supply right from S₁ to S₂ → Q rises from Q_m to Q*, P* below P_m, DWL eliminated.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on size of MEB, whether unvaccinated group is price-sensitive, and whether alternatives (subsidy, mandate, information) are more cost-effective.' }
       ],
-      cloze: 'In a positive consumption externality, the [1] (herd immunity for vaccination) means MSB sits [2] MPB at every quantity. The free market produces Q_market where [3] equals MPC — below Q* where MSB equals MPC. This underproduction generates a [4] that represents welfare forgone. NHS free provision shifts effective supply [5] from S₁ to S₂, closing the gap between Q_market and [6]. The policy works best when the MEB is [7]: if the external benefit is large and measurable, full public provision is justified and achieves Q* reliably. However, if non-vaccinators are motivated by [8] rather than price, free provision cannot achieve Q* — and information campaigns or mandates become more effective complementary tools.',
+      cloze: 'In a positive consumption externality, the [1] (herd immunity for vaccination) means MSB sits [2] MPB at every quantity. The free market produces Q_market where [3] equals MPC – below Q* where MSB equals MPC. This underproduction generates a [4] that represents welfare forgone. NHS free provision shifts effective supply [5] from S₁ to S₂, closing the gap between Q_market and [6]. The policy works best when the MEB is [7]: if the external benefit is large and measurable, full public provision is justified and achieves Q* reliably. However, if non-vaccinators are motivated by [8] rather than price, free provision cannot achieve Q* – and information campaigns or mandates become more effective complementary tools.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-meb',     text: 'MEB (marginal external benefit)', correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-unlimited', text: 'Positive externalities justify unlimited government spending without welfare analysis',  correct: false }
         ]
       },
-      examBridge: '"The NHS vaccination programme demonstrates that direct provision corrects positive consumption externalities where MEB is large (24,000 measles cases prevented per 1% coverage point) and the unvaccinated population is primarily price-sensitive. The shift in effective supply from S₁ to S₂ raises coverage from Q_market (~50%) to Q* (95.1%), meeting the herd immunity threshold and fully internalising the externality. However, the 2019 measles outbreak following a 3.8pp coverage fall illustrates the fragility of the outcome — sustained provision and complementary behavioural interventions are required to maintain Q*."'
+      examBridge: '"The NHS vaccination programme demonstrates that direct provision corrects positive consumption externalities where MEB is large (24,000 measles cases prevented per 1% coverage point) and the unvaccinated population is primarily price-sensitive. The shift in effective supply from S₁ to S₂ raises coverage from Q_market (~50%) to Q* (95.1%), meeting the herd immunity threshold and fully internalising the externality. However, the 2019 measles outbreak following a 3.8pp coverage fall illustrates the fragility of the outcome – sustained provision and complementary behavioural interventions are required to maintain Q*."'
     }
   ]
 };

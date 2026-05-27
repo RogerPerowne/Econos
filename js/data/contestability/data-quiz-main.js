@@ -37,7 +37,7 @@
           'They are paid by the government on behalf of entrants'
         ],
         ans:  1,
-        exp:  'Sunk costs are irretrievable costs that cannot be recovered upon exit (e.g., advertising, bespoke equipment). High sunk costs make entry risky — they are the key barrier that reduces market contestability.'
+        exp:  'Sunk costs are irretrievable costs that cannot be recovered upon exit (e.g., advertising, bespoke equipment). High sunk costs make entry risky – they are the key barrier that reduces market contestability.'
       },
       {
         id:   'q_cont_3',
@@ -63,7 +63,7 @@
           'Firms in a cartel set a price ceiling'
         ],
         ans:  1,
-        exp:  'To deter entry, an incumbent may set price at or just above the potential entrant\'s average cost — making entry unprofitable. This sacrifice of short-run profit protects the incumbent\'s market position.'
+        exp:  'To deter entry, an incumbent may set price at or just above the potential entrant\'s average cost – making entry unprofitable. This sacrifice of short-run profit protects the incumbent\'s market position.'
       },
       {
         id:   'q_cont_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Sunk costs','Freedom of entry','Hit-and-run entry','Economies of scale'],
         ans:  3,
-        exp:  'Sunk costs (low), freedom of entry, and hit-and-run entry are all core elements of contestability theory. Economies of scale are a barrier to entry that reduce contestability — they belong to monopoly theory.'
+        exp:  'Sunk costs (low), freedom of entry, and hit-and-run entry are all core elements of contestability theory. Economies of scale are a barrier to entry that reduce contestability – they belong to monopoly theory.'
       },
       {
         id:   'q_cont_9',
@@ -123,7 +123,7 @@
         ],
         opts: ['Street food stall','Airline route','App development','Nuclear power station'],
         ans:  0,
-        exp:  'Street food has the lowest sunk costs (£2k), low regulatory barriers, and low brand loyalty — all factors that maximise contestability and make hit-and-run entry feasible.'
+        exp:  'Street food has the lowest sunk costs (£2k), low regulatory barriers, and low brand loyalty – all factors that maximise contestability and make hit-and-run entry feasible.'
       },
       {
         id:   'q_cont_10',

@@ -1,15 +1,15 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for price_controls
+   ECONOS – Link It intro/landing data for price_controls
    Scenario: rent control (binding maximum price on housing)
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
   topic:   'Government Intervention in Markets',
   estTime: '15–20 minutes',
-  goal:    'Apply the price ceiling framework to a binding rent control — show why a maximum price below equilibrium creates a shortage, redistributes surplus and risks destroying welfare.',
+  goal:    'Apply the price ceiling framework to a binding rent control – show why a maximum price below equilibrium creates a shortage, redistributes surplus and risks destroying welfare.',
 
   intro: {
-    summary: "You've mastered how maximum prices, minimum prices, taxes, subsidies, permits, state and information provision and regulation each address a particular market failure. Now train the skills examiners reward — applying the price ceiling framework to a rent control case, building the binding cap → shortage → non-price rationing chain, and reaching a supported judgement on whether rent controls protect tenants.",
+    summary: "You've mastered how maximum prices, minimum prices, taxes, subsidies, permits, state and information provision and regulation each address a particular market failure. Now train the skills examiners reward – applying the price ceiling framework to a rent control case, building the binding cap → shortage → non-price rationing chain, and reaching a supported judgement on whether rent controls protect tenants.",
     heroKey: 'heroIntervention',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -19,7 +19,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick, label and explain the supply and demand diagram for a binding maximum price',
       'Evaluate the key conditions that change whether rent controls raise or lower welfare'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

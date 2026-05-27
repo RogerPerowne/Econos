@@ -24,7 +24,7 @@
           'Government granting an exclusive licence'
         ],
         ans:  1,
-        exp:  'Natural (or innocent) barriers arise from the inherent structure of the market — e.g., very high minimum efficient scale, or large sunk costs, not deliberate incumbent strategy.'
+        exp:  'Natural (or innocent) barriers arise from the inherent structure of the market – e.g., very high minimum efficient scale, or large sunk costs, not deliberate incumbent strategy.'
       },
       {
         id:   'q_be2_2',
@@ -37,7 +37,7 @@
           'Ownership of a scarce natural resource'
         ],
         ans:  2,
-        exp:  'Strategic barriers are deliberately created by incumbents. Predatory pricing — temporarily cutting prices below cost to deter or eliminate rivals — is a classic example. It is illegal under competition law in many countries.'
+        exp:  'Strategic barriers are deliberately created by incumbents. Predatory pricing – temporarily cutting prices below cost to deter or eliminate rivals – is a classic example. It is illegal under competition law in many countries.'
       },
       {
         id:   'q_be2_3',
@@ -63,7 +63,7 @@
           'They only apply to existing firms, not new entrants'
         ],
         ans:  1,
-        exp:  'Sunk costs cannot be recovered if a firm exits. For a potential entrant, the prospect of losing unrecoverable spending makes entry risky and deters investment — creating a barrier.'
+        exp:  'Sunk costs cannot be recovered if a firm exits. For a potential entrant, the prospect of losing unrecoverable spending makes entry risky and deters investment – creating a barrier.'
       },
       {
         id:   'q_be2_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Patent','Government licence','Free entry and exit','Economies of scale'],
         ans:  2,
-        exp:  'Patents, government licences, and economies of scale are all barriers to entry. Free entry and exit is the absence of barriers — it is a condition for perfect competition and contestability.'
+        exp:  'Patents, government licences, and economies of scale are all barriers to entry. Free entry and exit is the absence of barriers – it is a condition for perfect competition and contestability.'
       },
       {
         id:   'q_be2_9',

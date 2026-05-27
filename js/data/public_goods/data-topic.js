@@ -4,10 +4,10 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Public Goods',
   estTime: '12-15 minutes',
-  goal: 'Master non-rivalry and non-excludability, the free rider problem, the distinction between pure and quasi-public goods, and the case for state provision — and learn to weigh that case against government failure.',
+  goal: 'Master non-rivalry and non-excludability, the free rider problem, the distinction between pure and quasi-public goods, and the case for state provision – and learn to weigh that case against government failure.',
   intro: {
     heroKey: 'heroPublicGoods',
-    summary: 'Public goods are the clearest case of market failure: because they are non-excludable and non-rival, no private firm can profitably provide them. The free rider problem ensures that — without state provision — they are drastically under-supplied.',
+    summary: 'Public goods are the clearest case of market failure: because they are non-excludable and non-rival, no private firm can profitably provide them. The free rider problem ensures that – without state provision – they are drastically under-supplied.',
     doInThis: 'Work through 7 cards: the big picture, the free rider problem, four classic examples, the public/private/quasi distinction, why markets fail (vertical demand summation), how government steps in, and the policy debate.',
     outcomes: [
       'Define public good using the two criteria: non-rival and non-excludable',
@@ -26,13 +26,13 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ============================================================
-       CARD 1 — Public Goods: the big picture
+       CARD 1 – Public Goods: the big picture
        ============================================================ */
     {
       id: 'public_goods_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Public Goods: the big picture',
-      tip: { icon: '🏛️', tone: 'blue', text: '<strong>Public goods</strong> are unusual because one person can use them without reducing anyone else\'s use, and it is hard or impossible to stop non-payers enjoying them too. That combination creates the <em>free rider</em> problem — and explains why government usually has to step in.' },
+      tip: { icon: '🏛️', tone: 'blue', text: '<strong>Public goods</strong> are unusual because one person can use them without reducing anyone else\'s use, and it is hard or impossible to stop non-payers enjoying them too. That combination creates the <em>free rider</em> problem – and explains why government usually has to step in.' },
       flowTitle: 'The logic of the topic',
       flowEmoji: '🧭',
       flow: [
@@ -48,9 +48,9 @@ window.ECONOS_TOPIC = {
         vs: '+',
         position: 'after-diagram',
         left:  { tone: 'green', icon: '👥', label: 'The two defining properties',
-          caption: '<strong style="color:#059669">Non-rivalry</strong> — extra users can benefit at near-zero marginal cost.<br><em>e.g. defence, street lighting.</em><br><br><strong style="color:#7C3AED">Non-excludability</strong> — once provided, it is difficult to stop non-payers consuming the good.<br><em>e.g. flood defences, police patrols.</em>' },
+          caption: '<strong style="color:#059669">Non-rivalry</strong> – extra users can benefit at near-zero marginal cost.<br><em>e.g. defence, street lighting.</em><br><br><strong style="color:#7C3AED">Non-excludability</strong> – once provided, it is difficult to stop non-payers consuming the good.<br><em>e.g. flood defences, police patrols.</em>' },
         right: { tone: 'blue', icon: '🧩', label: 'Important distinction',
-          caption: '<strong style="color:#059669">Pure public goods</strong> — fully non-rival and non-excludable.<br><em>e.g. national defence, clean air.</em><br><br><strong style="color:#2563EB">Quasi-public goods</strong> — partly public, but excludable or rival at some point.<br><em>e.g. motorways, parks, public broadcasting.</em>' }
+          caption: '<strong style="color:#059669">Pure public goods</strong> – fully non-rival and non-excludable.<br><em>e.g. national defence, clean air.</em><br><br><strong style="color:#2563EB">Quasi-public goods</strong> – partly public, but excludable or rival at some point.<br><em>e.g. motorways, parks, public broadcasting.</em>' }
       },
       lockIn: {
         title: 'What you need to lock in',
@@ -65,7 +65,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 2 — The Free Rider Problem
+       CARD 2 – The Free Rider Problem
        ============================================================ */
     {
       id: 'public_goods_2',
@@ -109,13 +109,13 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 3 — Examples of Public Goods
+       CARD 3 – Examples of Public Goods
        ============================================================ */
     {
       id: 'public_goods_3',
       stepLabel: 'Learn: Step 3 of 7',
       title: 'Examples of Public Goods',
-      tip: { icon: '🏛️', tone: 'blue', text: '<strong>Public goods</strong> are easiest to understand through concrete examples. The test is always the same — is the good <strong>non-rival</strong> and <strong>non-excludable</strong> in practice?' },
+      tip: { icon: '🏛️', tone: 'blue', text: '<strong>Public goods</strong> are easiest to understand through concrete examples. The test is always the same – is the good <strong>non-rival</strong> and <strong>non-excludable</strong> in practice?' },
       illustratedGridLabel: 'Four classic examples',
       illustratedGridEmoji: '🖼️',
       illustratedGridCols: 2,
@@ -151,7 +151,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 4 — Public, Private and Quasi-Public Goods
+       CARD 4 – Public, Private and Quasi-Public Goods
        ============================================================ */
     {
       id: 'public_goods_4',
@@ -165,8 +165,8 @@ window.ECONOS_TOPIC = {
       colB: '👥 Pure public goods',
       colC: '🧩 Quasi-public goods',
       rows: [
-        { label: '👥 Rivalry',       colA: '<strong style="color:#7C3AED">Yes</strong> — use by one person depletes it for others.', colB: '<strong style="color:#059669">No</strong> — one person\'s use does not reduce others\' use.', colC: '<strong style="color:#2563EB">Partly non-rival</strong> — up to a point, then may become rival.' },
-        { label: '🔒 Excludability', colA: '<strong style="color:#7C3AED">Yes</strong> — people can be effectively excluded.',       colB: '<strong style="color:#059669">No</strong> — no one can be effectively excluded.',         colC: '<strong style="color:#2563EB">Partly non-excludable</strong> — some users can be excluded, others not.' },
+        { label: '👥 Rivalry',       colA: '<strong style="color:#7C3AED">Yes</strong> – use by one person depletes it for others.', colB: '<strong style="color:#059669">No</strong> – one person\'s use does not reduce others\' use.', colC: '<strong style="color:#2563EB">Partly non-rival</strong> – up to a point, then may become rival.' },
+        { label: '🔒 Excludability', colA: '<strong style="color:#7C3AED">Yes</strong> – people can be effectively excluded.',       colB: '<strong style="color:#059669">No</strong> – no one can be effectively excluded.',         colC: '<strong style="color:#2563EB">Partly non-excludable</strong> – some users can be excluded, others not.' },
         { label: '🛍️ Examples',     colA: 'Cinema ticket · Sandwich · Pair of trainers',                                            colB: 'National defence · Flood defences · Street lighting',                                        colC: 'Motorways · Parks · Public broadcasting · Streaming services' },
         { label: '💡 Key insight',  colA: 'Markets can charge users directly.',                                                      colB: 'Private markets fail because of free riding.',                                              colC: 'Often publicly provided for efficiency or equity reasons.' }
       ],
@@ -189,11 +189,11 @@ window.ECONOS_TOPIC = {
           'Explain why quasi-public does not mean fully public'
         ]
       },
-      examEdge: 'A quasi-public good is <em>not</em> a pure public good — it may be excludable or rival at some point, but governments may still provide it for equity or efficiency reasons.'
+      examEdge: 'A quasi-public good is <em>not</em> a pure public good – it may be excludable or rival at some point, but governments may still provide it for equity or efficiency reasons.'
     },
 
     /* ============================================================
-       CARD 5 — Why Markets Cannot Provide Public Goods
+       CARD 5 – Why Markets Cannot Provide Public Goods
        ============================================================ */
     {
       id: 'public_goods_5',
@@ -216,7 +216,7 @@ window.ECONOS_TOPIC = {
         { scene: 'privateDemandMini', tone: 'purple', title: 'Private good demand',
           body: '<em>For private goods: add quantities <strong>horizontally</strong> at a given price.</em>' },
         { scene: 'publicDemandMini',  tone: 'green',  title: 'Public good demand',
-          body: '<em>For public goods: add willingness to pay <strong>vertically</strong> — because the same unit is consumed by everyone.</em>' }
+          body: '<em>For public goods: add willingness to pay <strong>vertically</strong> – because the same unit is consumed by everyone.</em>' }
       ],
       causesStyle: 'tinted-flat',
       causesEmoji: '✅',
@@ -227,7 +227,7 @@ window.ECONOS_TOPIC = {
         { tone: 'green', icon: '🌍', head: 'Social benefit exceeds any single person\'s WTP',   body: 'Society\'s total benefit is larger than any individual\'s.' }
       ],
       comparison: {
-        title: 'Bottom line — private market view vs social view',
+        title: 'Bottom line – private market view vs social view',
         emoji: '⚖️',
         position: 'after-causes',
         vs: 'VS',
@@ -249,13 +249,13 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 6 — Government Solutions
+       CARD 6 – Government Solutions
        ============================================================ */
     {
       id: 'public_goods_6',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Government Solutions',
-      tip: { icon: '🏛️', tone: 'blue', text: 'Because markets fail, governments usually fund and provide public goods through <strong>compulsory taxation</strong>. That solves the <em>free rider</em> problem, but creates a new challenge — deciding how much to provide.' },
+      tip: { icon: '🏛️', tone: 'blue', text: 'Because markets fail, governments usually fund and provide public goods through <strong>compulsory taxation</strong>. That solves the <em>free rider</em> problem, but creates a new challenge – deciding how much to provide.' },
       flowTitle: 'How government steps in',
       flowEmoji: '🧭',
       flow: [
@@ -296,7 +296,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 7 — Policy Debate
+       CARD 7 – Policy Debate
        ============================================================ */
     {
       id: 'public_goods_7',

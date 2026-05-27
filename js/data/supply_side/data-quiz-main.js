@@ -24,7 +24,7 @@
           'Stabilise the exchange rate to improve the trade balance'
         ],
         ans:  1,
-        exp:  'Supply-side policies focus on improving the economy\'s productive capacity — shifting the LRAS curve to the right. This raises potential output without necessarily causing inflation.'
+        exp:  'Supply-side policies focus on improving the economy\'s productive capacity – shifting the LRAS curve to the right. This raises potential output without necessarily causing inflation.'
       },
       {
         id:   'q_ss_2',
@@ -37,7 +37,7 @@
           'Subsidising failing firms to prevent unemployment'
         ],
         ans:  2,
-        exp:  'Market-based supply-side policies use price signals and incentives to improve efficiency — e.g., cutting income or corporation tax, deregulation, privatisation, or reducing unemployment benefits to increase labour supply incentives.'
+        exp:  'Market-based supply-side policies use price signals and incentives to improve efficiency – e.g., cutting income or corporation tax, deregulation, privatisation, or reducing unemployment benefits to increase labour supply incentives.'
       },
       {
         id:   'q_ss_3',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Privatisation','Deregulation','Government investment in education','Quantitative Easing'],
         ans:  3,
-        exp:  'Privatisation, deregulation, and investment in education are all supply-side policies targeting productive capacity. Quantitative Easing is a monetary policy tool — it affects demand, not the supply-side capacity of the economy.'
+        exp:  'Privatisation, deregulation, and investment in education are all supply-side policies targeting productive capacity. Quantitative Easing is a monetary policy tool – it affects demand, not the supply-side capacity of the economy.'
       },
       {
         id:   'q_ss_9',

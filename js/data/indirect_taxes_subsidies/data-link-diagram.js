@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Indirect Taxes & Subsidies: specific tax shifts supply left (S₁ → S₂)
    ============================================================ */
 
@@ -29,7 +29,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'The government imposes a specific tax on producers of high-sugar soft drinks. Which diagram correctly shows the effect on the market?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the impact of the specific tax. Think about which curve is directly affected and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -40,28 +40,28 @@ window.ECONOS_LINK_DIAGRAM = {
         correct:  true,
         title:   'Supply shifts left',
         sub:     'Higher production costs from the tax reduce supply at every price level',
-        why:     'A specific tax levied on producers raises their marginal cost of production at every quantity — they must now remit £0.24 per litre to government on top of their existing costs. This shifts the supply curve left (upward) by the amount of the tax. The equilibrium consumer price rises to P_c, the producer net price falls to P_p, and output falls from Q₀ to Q_t.'
+        why:     'A specific tax levied on producers raises their marginal cost of production at every quantity – they must now remit £0.24 per litre to government on top of their existing costs. This shifts the supply curve left (upward) by the amount of the tax. The equilibrium consumer price rises to P_c, the producer net price falls to P_p, and output falls from Q₀ to Q_t.'
       },
       {
         id:      'd-left',
         correct:  false,
         title:   'Demand shifts left',
         sub:     'Consumer spending falls, reducing the quantity demanded at every price',
-        why:     'The specific tax is levied on producers, not consumers. Consumers\' willingness to pay is unchanged — they face higher prices only because the supply shift raises the equilibrium price. Demand (D) does not shift. A leftward demand shift would represent a fall in consumer income or preferences, which is not what happens when a producer tax is imposed.'
+        why:     'The specific tax is levied on producers, not consumers. Consumers\' willingness to pay is unchanged – they face higher prices only because the supply shift raises the equilibrium price. Demand (D) does not shift. A leftward demand shift would represent a fall in consumer income or preferences, which is not what happens when a producer tax is imposed.'
       },
       {
         id:      's-right',
         correct:  false,
         title:   'Supply shifts right',
         sub:     'Output rises and prices fall as supply expands',
-        why:     'Supply shifting right means firms can produce more at every price — this represents falling costs, a technology improvement or a subsidy. A specific tax raises producers\' costs; it does not reduce them. This diagram shows the opposite direction from what a specific tax creates.'
+        why:     'Supply shifting right means firms can produce more at every price – this represents falling costs, a technology improvement or a subsidy. A specific tax raises producers\' costs; it does not reduce them. This diagram shows the opposite direction from what a specific tax creates.'
       },
       {
         id:      'd-right',
         correct:  false,
         title:   'Demand shifts right',
         sub:     'Rising consumer demand pushes up the price level',
-        why:     'Demand shifting right represents rising consumer spending, income or preferences. The specific tax affects the supply side (producers\' costs), not the demand side. Consumers\' willingness to pay per unit is unchanged — the higher price they face is a result of the supply shift, not a cause of a demand shift.'
+        why:     'Demand shifting right represents rising consumer spending, income or preferences. The specific tax affects the supply side (producers\' costs), not the demand side. Consumers\' willingness to pay per unit is unchanged – the higher price they face is a result of the supply shift, not a cause of a demand shift.'
       }
     ]
   },
@@ -79,23 +79,23 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — specific indirect tax on high-sugar soft drinks',
+    ariaLabel: 'Supply and demand diagram – specific indirect tax on high-sugar soft drinks',
     xLabel:    'Quantity of output',
     yLabel:    'Price / Cost (£)',
 
     lines: [
-      /* D (demand) — green downward-sloping */
+      /* D (demand) – green downward-sloping */
       { x1: 110, y1: 60,  x2: 510, y2: 360, stroke: '#059669', strokeWidth: 2.5,
         label: 'D', labelX: 514, labelY: 360, labelFill: '#059669' },
-      /* S₁ (pre-tax supply) — blue upward-sloping */
+      /* S₁ (pre-tax supply) – blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'S₁ (pre-tax)', labelX: 492, labelY: 28, labelFill: '#2563eb' },
-      /* S₂ (post-tax supply, 80px above S₁) — purple upward-sloping */
+      /* S₂ (post-tax supply, 80px above S₁) – purple upward-sloping */
       { x1: 130, y1: 310, x2: 400, y2: 30,  stroke: '#7c3aed', strokeWidth: 2.5,
         label: 'S₂ (+ tax)', labelX: 403, labelY: 28, labelFill: '#7c3aed' }
     ],
 
-    /* Guide lines + tick labels — shown at stage 2 */
+    /* Guide lines + tick labels – shown at stage 2 */
     guides: [
       /* Horizontal from y-axis to E₂ (consumer price P_c) */
       { x1: 100, y1: 176, x2: 264, y2: 176, tickLeft: 'P_c', tickLeftY: 179 },
@@ -130,7 +130,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of a specific tax on high-sugar soft drinks.',
     instruction: 'Place the correct labels on the diagram to identify the shift, the two equilibria, and the outcome for consumer price, producer price and quantity.',
     hint:        'Skill focus: connect the visual shift to the economic outcomes.',
@@ -157,10 +157,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['specific tax', 'incidence', 'P_c', 'P_p', 'PED', 'PES', 'consumer surplus', 'deadweight welfare loss', 'pass-through'],
 
@@ -170,21 +170,21 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'Explain the supply shift',
         prompt:      'Explain what a specific tax does to the supply curve and why.',
         maxChars:    240,
-        modelAnswer: 'A specific tax of £0.24 per litre raises producers\' marginal cost at every quantity — they must remit the tax to government on every unit produced. The supply curve shifts left (upward) by exactly the tax amount at every quantity level, since producers require a higher market price to supply the same quantity as before. S₁ shifts up to S₂, with a constant vertical gap equal to the per-unit tax.'
+        modelAnswer: 'A specific tax of £0.24 per litre raises producers\' marginal cost at every quantity – they must remit the tax to government on every unit produced. The supply curve shifts left (upward) by exactly the tax amount at every quantity level, since producers require a higher market price to supply the same quantity as before. S₁ shifts up to S₂, with a constant vertical gap equal to the per-unit tax.'
       },
       {
         num:         2,
         title:       'Explain the new equilibrium',
         prompt:      'What happens to P_c, P_p and Q after the tax is imposed?',
         maxChars:    240,
-        modelAnswer: 'At the new equilibrium (E₂), the consumer price rises to P_c (read off the demand curve at Q_t) and output falls from Q₀ to Q_t. Producers do not receive the full P_c — after remitting the tax, their net price is P_p, read off the original supply curve S₁ at Q_t. The vertical wedge between P_c and P_p equals the per-unit tax. Neither side bears the full tax; the burden is shared between consumers (who pay more) and producers (who receive less).'
+        modelAnswer: 'At the new equilibrium (E₂), the consumer price rises to P_c (read off the demand curve at Q_t) and output falls from Q₀ to Q_t. Producers do not receive the full P_c – after remitting the tax, their net price is P_p, read off the original supply curve S₁ at Q_t. The vertical wedge between P_c and P_p equals the per-unit tax. Neither side bears the full tax; the burden is shared between consumers (who pay more) and producers (who receive less).'
       },
       {
         num:         3,
         title:       'Explain the incidence split',
         prompt:      'Who bears more of the tax burden here, and what determines the split?',
         maxChars:    240,
-        modelAnswer: 'The incidence of the tax is determined by the relative price elasticities of demand (PED) and supply (PES). When demand is relatively inelastic — as with high-sugar drinks where consumers have few close substitutes — consumers cannot easily reduce quantity and so bear a larger share of the tax as a higher price. When supply is relatively inelastic, producers cannot redirect output and bear more. The less elastic side always carries the larger burden: the steeper the demand curve relative to the supply curve, the more consumers pay.'
+        modelAnswer: 'The incidence of the tax is determined by the relative price elasticities of demand (PED) and supply (PES). When demand is relatively inelastic – as with high-sugar drinks where consumers have few close substitutes – consumers cannot easily reduce quantity and so bear a larger share of the tax as a higher price. When supply is relatively inelastic, producers cannot redirect output and bear more. The less elastic side always carries the larger burden: the steeper the demand curve relative to the supply curve, the more consumers pay.'
       }
     ],
 
@@ -200,6 +200,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Link the incidence split to PED and PES'
     ],
 
-    examAnswer: '"A specific tax of £0.24 per litre raises producers\' marginal costs, shifting the supply curve left from S₁ to S₂ by the full tax amount at every quantity. The new equilibrium has a higher consumer price P_c and a lower producer net price P_p = P_c − tax, with output falling from Q₀ to Q_t. The tax wedge between P_c and P_p equals the per-unit tax, and the burden is split between consumers and producers in proportion to their relative inelasticity — when demand is inelastic, consumers bear the larger share of the burden."'
+    examAnswer: '"A specific tax of £0.24 per litre raises producers\' marginal costs, shifting the supply curve left from S₁ to S₂ by the full tax amount at every quantity. The new equilibrium has a higher consumer price P_c and a lower producer net price P_p = P_c − tax, with output falling from Q₀ to Q_t. The tax wedge between P_c and P_p equals the per-unit tax, and the burden is split between consumers and producers in proportion to their relative inelasticity – when demand is inelastic, consumers bear the larger share of the burden."'
   }
 };

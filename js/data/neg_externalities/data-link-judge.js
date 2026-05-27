@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Negative Externalities: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Tax shifts supply left from MPC to MSC → Q falls to Q*, P rises to P*, DWL eliminated.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on MEC accuracy, price elasticity of demand, and risk of carbon leakage.' }
       ],
-      cloze: 'Overall, a Pigouvian tax is [1] when the [2] can be accurately measured, because it forces firms to face the true [3] of their output, shifting effective supply left from MPC to [4]. This eliminates the [5] and restores [6]. However, the policy is less effective when demand is [7], since the tax raises [8] substantially while reducing output only a little. Therefore, the strongest judgement is that a Pigouvian tax is theoretically efficient but practically limited — and command-and-control regulation may produce a more certain outcome when irreversibility of harm is the primary concern.',
+      cloze: 'Overall, a Pigouvian tax is [1] when the [2] can be accurately measured, because it forces firms to face the true [3] of their output, shifting effective supply left from MPC to [4]. This eliminates the [5] and restores [6]. However, the policy is less effective when demand is [7], since the tax raises [8] substantially while reducing output only a little. Therefore, the strongest judgement is that a Pigouvian tax is theoretically efficient but practically limited – and command-and-control regulation may produce a more certain outcome when irreversibility of harm is the primary concern.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-effective',   text: 'most effective',       correct: true  },
@@ -96,7 +96,7 @@ window.ECONOS_LINK_JUDGE = {
         options: [
           { id: 'op-always',   text: 'Pigouvian taxes always achieve the social optimum',                      correct: false },
           { id: 'op-useful',   text: 'Pigouvian taxes are theoretically efficient but practically conditional', correct: true  },
-          { id: 'op-no',       text: 'Pigouvian taxes should not be used — only regulation works',             correct: false },
+          { id: 'op-no',       text: 'Pigouvian taxes should not be used – only regulation works',             correct: false },
           { id: 'op-market',   text: 'Market failure does not require government intervention',                 correct: false }
         ]
       },

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    Specialisation & Money: evaluate the claim that specialisation
    raises productivity
    ============================================================ */
@@ -39,7 +39,7 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'human-capital',
           icon:  '🎓',
           label: 'Human capital',
-          why:   'Workers need skills to specialise effectively. UK apprenticeship completion rates fell after 2017 reforms, reducing the skilled workforce available for specialised manufacturing roles. Without adequate training and education, workers may lack the foundation to perform a specialised task to the standard required — limiting productivity gains.'
+          why:   'Workers need skills to specialise effectively. UK apprenticeship completion rates fell after 2017 reforms, reducing the skilled workforce available for specialised manufacturing roles. Without adequate training and education, workers may lack the foundation to perform a specialised task to the standard required – limiting productivity gains.'
         },
         {
           id:    'exchange-systems',
@@ -51,23 +51,23 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'market-size',
           icon:  '🌍',
           label: 'Size of the market',
-          why:   'The division of labour is limited by the extent of the market (Smith). A small local market cannot absorb the output of a highly specialised producer. As markets expand through trade — nationally and internationally — greater specialisation becomes viable, amplifying productivity gains. Trade barriers that shrink accessible markets also shrink the scope for specialisation.'
+          why:   'The division of labour is limited by the extent of the market (Smith). A small local market cannot absorb the output of a highly specialised producer. As markets expand through trade – nationally and internationally – greater specialisation becomes viable, amplifying productivity gains. Trade barriers that shrink accessible markets also shrink the scope for specialisation.'
         },
         {
           id:    'repetitive-strain',
           icon:  '⚠️',
           label: 'Alienation and worker motivation',
-          why:   'Highly repetitive specialised tasks can lead to worker alienation, reduced motivation and higher absenteeism — especially in low-wage manufacturing. Marx identified this as a fundamental tension of the division of labour. Where morale effects are significant, the predicted productivity gains may be partially offset by lower effort and higher turnover.'
+          why:   'Highly repetitive specialised tasks can lead to worker alienation, reduced motivation and higher absenteeism – especially in low-wage manufacturing. Marx identified this as a fundamental tension of the division of labour. Where morale effects are significant, the predicted productivity gains may be partially offset by lower effort and higher turnover.'
         },
         {
           id:    'technology',
           icon:  '🤖',
           label: 'Availability of technology',
-          why:   'Specialisation and technology are complementary. Automated assembly lines allow specialised operations to run far faster and more accurately than human workers alone. Where firms cannot access modern capital equipment — due to cost or supply constraints — the productivity gains from specialisation are limited by the human pace of production.'
+          why:   'Specialisation and technology are complementary. Automated assembly lines allow specialised operations to run far faster and more accurately than human workers alone. Where firms cannot access modern capital equipment – due to cost or supply constraints – the productivity gains from specialisation are limited by the human pace of production.'
         }
       ],
       modelRanking: ['task-divisibility', 'human-capital', 'exchange-systems'],
-      judgement: '"Whether specialisation raises productivity depends primarily on whether the production process is sufficiently divisible into distinct tasks — if it cannot be subdivided, there are no gains to capture. Where task divisibility exists, the extent of the gain depends on the quality of human capital available to perform specialised roles. Finally, even strong productivity gains remain unrealised if functioning exchange systems — money and trade networks — do not exist to allow surplus output to be traded for other goods."'
+      judgement: '"Whether specialisation raises productivity depends primarily on whether the production process is sufficiently divisible into distinct tasks – if it cannot be subdivided, there are no gains to capture. Where task divisibility exists, the extent of the gain depends on the quality of human capital available to perform specialised roles. Finally, even strong productivity gains remain unrealised if functioning exchange systems – money and trade networks – do not exist to allow surplus output to be traded for other goods."'
     }
   ]
 };

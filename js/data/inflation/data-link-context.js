@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Context station data
+   ECONOS – Link It · Context station data
    Inflation: read a news extract, classify the evidence
    ============================================================ */
 
@@ -55,11 +55,11 @@ window.ECONOS_LINK_STATION = {
     },
 
     explain: {
-      'cpi-level':  'CPI at 6.8% is well above the 2% target, confirming inflation is high — this is the clearest direct justification for a rate rise to anchor expectations and cool demand.',
-      'energy':     'A cost-push energy shock is the origin of this inflation. Rate rises work on demand, not supply costs, so their effectiveness here is limited — the shock complicates the case for tightening.',
+      'cpi-level':  'CPI at 6.8% is well above the 2% target, confirming inflation is high – this is the clearest direct justification for a rate rise to anchor expectations and cool demand.',
+      'energy':     'A cost-push energy shock is the origin of this inflation. Rate rises work on demand, not supply costs, so their effectiveness here is limited – the shock complicates the case for tightening.',
       'wages':      'Real wages falling means workers are already suffering a squeeze on purchasing power. This suggests demand is not the primary driver of inflation, complicating the justification for further rate rises.',
-      'confidence': 'With consumer confidence already weak, a further rate rise would tighten conditions on households already under strain — arguing against raising rates when demand may already be cooling.',
-      'recession':  'If output growth is near zero, a further rate rise could tip the economy into recession — this is a significant argument against raising rates given the fragile growth outlook.'
+      'confidence': 'With consumer confidence already weak, a further rate rise would tighten conditions on households already under strain – arguing against raising rates when demand may already be cooling.',
+      'recession':  'If output growth is near zero, a further rate rise could tip the economy into recession – this is a significant argument against raising rates given the fragile growth outlook.'
     },
 
     bucketCue: 'Good application uses context to change the conclusion.',

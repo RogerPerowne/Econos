@@ -45,7 +45,7 @@
         q:    'The value of the Keynesian multiplier depends on:',
         opts: [
           'The size of the initial injection only',
-          'The Marginal Propensity to Consume (MPC) — higher MPC gives a larger multiplier',
+          'The Marginal Propensity to Consume (MPC) – higher MPC gives a larger multiplier',
           'The level of government debt',
           'The current rate of inflation'
         ],

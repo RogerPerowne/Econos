@@ -8,14 +8,14 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroGrowth',
-    summary: 'Economic growth raises living standards — but not automatically and not for everyone. Growth can widen inequality, damage the environment, and be unsustainable. A sophisticated evaluation of growth considers who benefits, at what cost, and for how long.',
-    doInThis: 'Content coming soon — this topic will cover the benefits of growth (rising incomes, employment, fiscal space), the costs and risks (inequality, environmental damage, inflation, unsustainability), and how to structure a balanced evaluation of growth policy.',
+    summary: 'Economic growth raises living standards – but not automatically and not for everyone. Growth can widen inequality, damage the environment, and be unsustainable. A sophisticated evaluation of growth considers who benefits, at what cost, and for how long.',
+    doInThis: 'Content coming soon – this topic will cover the benefits of growth (rising incomes, employment, fiscal space), the costs and risks (inequality, environmental damage, inflation, unsustainability), and how to structure a balanced evaluation of growth policy.',
     outcomes: [
       'Distinguish between short-run and long-run economic growth',
       'Evaluate the distributional effects of economic growth using the Kuznets curve',
       'Analyse the environmental trade-offs of growth and the case for sustainable development'
     ],
-    tip: 'Growth is neither good nor bad in isolation — evaluate who benefits (median vs mean income), at what cost (environment, inequality), and over what timeframe (short-run cyclical vs long-run structural). The Kuznets curve and Environmental Kuznets Curve are key diagrams.',
+    tip: 'Growth is neither good nor bad in isolation – evaluate who benefits (median vs mean income), at what cost (environment, inequality), and over what timeframe (short-run cyclical vs long-run structural). The Kuznets curve and Environmental Kuznets Curve are key diagrams.',
     stages: [
       { num: 1, name: 'Learn it', sub: 'Content coming soon', state: 'current' },
       { num: 2, name: 'Link it', sub: 'Topic quiz', state: 'locked' },

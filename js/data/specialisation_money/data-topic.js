@@ -7,7 +7,7 @@ window.ECONOS_TOPIC = {
   goal: 'Lock in division of labour, the gains from specialisation, the limitations of barter, and the four functions of money.',
   intro: {
     heroKey: 'heroSpecialisationMoney',
-    summary: 'Specialisation dramatically raises productivity but creates a need for exchange. Barter is too inefficient to support complex trade — money solves this by acting as a medium of exchange, store of value, unit of account, and standard of deferred payment.',
+    summary: 'Specialisation dramatically raises productivity but creates a need for exchange. Barter is too inefficient to support complex trade – money solves this by acting as a medium of exchange, store of value, unit of account, and standard of deferred payment.',
     doInThis: 'Work through 7 cards covering specialisation by individuals and countries, Adam Smith\'s pin factory, the division of labour, barter\'s problems, money\'s four functions, and the characteristics of good money.',
     outcomes: [
       'Explain how specialisation raises output using the division of labour example',
@@ -25,7 +25,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ================================================================
-       CARD 1 — The big picture: 5-step chain + "Why this matters"
+       CARD 1 – The big picture: 5-step chain + "Why this matters"
        ================================================================ */
     {
       id: 'specialisation_money_1',
@@ -49,11 +49,11 @@ window.ECONOS_TOPIC = {
       ],
       keyTermsLabel: 'Why this matters',
       keyTermsEmoji: '⭐',
-      examEdge: 'Specialisation only works well when exchange is possible — and money makes exchange far easier than barter. Make this link explicit in any answer that touches on productivity, trade or development.'
+      examEdge: 'Specialisation only works well when exchange is possible – and money makes exchange far easier than barter. Make this link explicit in any answer that touches on productivity, trade or development.'
     },
 
     /* ================================================================
-       CARD 2 — Benefits of Specialisation: 4 icon tiles with worker/firm/country examples inline
+       CARD 2 – Benefits of Specialisation: 4 icon tiles with worker/firm/country examples inline
        ================================================================ */
     {
       id: 'specialisation_money_2',
@@ -78,7 +78,7 @@ window.ECONOS_TOPIC = {
         {
           head: 'Gains from division of labour',
           icon: '🔧',
-          body: 'Breaking tasks into steps and repeating them builds skill and speed — Smith\'s pin factory turned 200 pins/day into 48,000.',
+          body: 'Breaking tasks into steps and repeating them builds skill and speed – Smith\'s pin factory turned 200 pins/day into 48,000.',
           example: { icon: '🪡', text: 'Adam Smith\'s pin factory: 10 specialised workers produced ~240× more pins than working alone.' }
         },
         {
@@ -91,16 +91,16 @@ window.ECONOS_TOPIC = {
           head: 'More trade and consumer choice',
           icon: '🌍',
           body: 'Specialisation enables trade, bringing more goods of better quality at a wider range of prices.',
-          example: { icon: '🚢', text: 'A country specialising at its comparative advantage trades for the rest — raising living standards.' }
+          example: { icon: '🚢', text: 'A country specialising at its comparative advantage trades for the rest – raising living standards.' }
         }
       ],
       causesLabel: 'The key benefits',
       causesEmoji: '⭐',
-      examEdge: 'Smith identified three core gains: dexterity, time-saving, and invention/machinery. Know the list verbatim. Evaluation: these gains require exchange — without trade, specialisation cannot deliver.'
+      examEdge: 'Smith identified three core gains: dexterity, time-saving, and invention/machinery. Know the list verbatim. Evaluation: these gains require exchange – without trade, specialisation cannot deliver.'
     },
 
     /* ================================================================
-       CARD 3 — Benefits vs Limitations: paired with icon rows + green conclusion
+       CARD 3 – Benefits vs Limitations: paired with icon rows + green conclusion
        ================================================================ */
     {
       id: 'specialisation_money_3',
@@ -124,10 +124,10 @@ window.ECONOS_TOPIC = {
         icon: '⚠️',
         tone: 'amber',
         rows: [
-          { icon: '😐', title: 'Monotony',                  text: 'Repetitive tasks can become boring and less satisfying — Marx\'s "alienation of labour".' },
-          { icon: '🔗', title: 'Dependence on others',     text: 'You rely on others — and global supply chains — for the goods and services you need.' },
+          { icon: '😐', title: 'Monotony',                  text: 'Repetitive tasks can become boring and less satisfying – Marx\'s "alienation of labour".' },
+          { icon: '🔗', title: 'Dependence on others',     text: 'You rely on others – and global supply chains – for the goods and services you need.' },
           { icon: '⛈️', title: 'Vulnerability to shocks',  text: 'Disruptions to suppliers or markets can cause large knock-on problems (e.g. semiconductors 2021).' },
-          { icon: '🎯', title: 'Over-specialisation risk', text: 'Focusing too narrowly can limit adaptability — coal regions hit by structural unemployment.' }
+          { icon: '🎯', title: 'Over-specialisation risk', text: 'Focusing too narrowly can limit adaptability – coal regions hit by structural unemployment.' }
         ]
       },
       conclusion: {
@@ -138,7 +138,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 4 — The Problem with Barter: failure-flow + verdict + 4 limitations
+       CARD 4 – The Problem with Barter: failure-flow + verdict + 4 limitations
        ================================================================ */
     {
       id: 'specialisation_money_4',
@@ -149,7 +149,7 @@ window.ECONOS_TOPIC = {
       flow: [
         { icon: '🍎', title: 'Tom has apples',      sub: 'He wants bread. The baker has bread, but doesn\'t want apples.', tone: 'rose', status: 'fail' },
         { icon: '🥖', title: 'The baker has bread', sub: 'She wants milk. The farmer has milk, but doesn\'t want bread.', tone: 'rose', status: 'fail' },
-        { icon: '🥛', title: 'The farmer has milk', sub: 'He wants apples — and Tom has them — but only by chance.',     tone: 'rose', status: 'fail' }
+        { icon: '🥛', title: 'The farmer has milk', sub: 'He wants apples – and Tom has them – but only by chance.',     tone: 'rose', status: 'fail' }
       ],
       flowTitle: 'Why barter is difficult: the double coincidence of wants',
       flowEmoji: '🔄',
@@ -183,9 +183,9 @@ window.ECONOS_TOPIC = {
       },
       causes: [
         { head: 'No common measure of value', icon: '⚖️', body: 'It\'s hard to compare the value of different goods and services without a shared unit.' },
-        { head: 'Indivisibility',             icon: '🧩', body: 'Many goods can\'t be easily split to make exact equal trades — half a cow for a loaf of bread won\'t do.' },
-        { head: 'Lack of store of value',     icon: '🔐', body: 'Goods can spoil, wear out, or lose value over time — savings are difficult.' },
-        { head: 'Double coincidence of wants', icon: '👥', body: 'Trade only happens when both people want what the other has — a punishingly rare match at scale.' }
+        { head: 'Indivisibility',             icon: '🧩', body: 'Many goods can\'t be easily split to make exact equal trades – half a cow for a loaf of bread won\'t do.' },
+        { head: 'Lack of store of value',     icon: '🔐', body: 'Goods can spoil, wear out, or lose value over time – savings are difficult.' },
+        { head: 'Double coincidence of wants', icon: '👥', body: 'Trade only happens when both people want what the other has – a punishingly rare match at scale.' }
       ],
       causesLabel: 'Key limitations of barter',
       causesEmoji: '🚫',
@@ -193,7 +193,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 5 — Four Functions of Money: per-tile examples + lean flow
+       CARD 5 – Four Functions of Money: per-tile examples + lean flow
        ================================================================ */
     {
       id: 'specialisation_money_5',
@@ -205,7 +205,7 @@ window.ECONOS_TOPIC = {
         {
           head: 'Medium of exchange',
           icon: '🤝',
-          body: 'Money is accepted to buy and sell goods and services — eliminating the double coincidence of wants problem.',
+          body: 'Money is accepted to buy and sell goods and services – eliminating the double coincidence of wants problem.',
           example: { icon: '🛒', text: 'You use money to buy groceries.' }
         },
         {
@@ -223,7 +223,7 @@ window.ECONOS_TOPIC = {
         {
           head: 'Deferred payment',
           icon: '📅',
-          body: 'Money allows payments to be made in the future for goods and services received today — credit, mortgages, contracts.',
+          body: 'Money allows payments to be made in the future for goods and services received today – credit, mortgages, contracts.',
           example: { icon: '💳', text: 'You buy a laptop now and pay later.' }
         }
       ],
@@ -239,11 +239,11 @@ window.ECONOS_TOPIC = {
       ],
       flowBottomTitle: 'How these functions make exchange easier',
       flowBottomEmoji: '➡️',
-      examEdge: 'Inflation attacks two functions: store of value (money buys less) and deferred payment (debts repaid in devalued currency). Hyperinflation (Zimbabwe, Weimar Germany) causes economies to revert to barter — a powerful real-world illustration.'
+      examEdge: 'Inflation attacks two functions: store of value (money buys less) and deferred payment (debts repaid in devalued currency). Hyperinflation (Zimbabwe, Weimar Germany) causes economies to revert to barter – a powerful real-world illustration.'
     },
 
     /* ================================================================
-       CARD 6 — Characteristics of Good Money: 6 tiles + 3-col verdict
+       CARD 6 – Characteristics of Good Money: 6 tiles + 3-col verdict
        ================================================================ */
     {
       id: 'specialisation_money_6',
@@ -305,7 +305,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ================================================================
-       CARD 7 — Specialisation, Exchange & Development: 6-step chain + tinted 3-channel + balanced note
+       CARD 7 – Specialisation, Exchange & Development: 6-step chain + tinted 3-channel + balanced note
        ================================================================ */
     {
       id: 'specialisation_money_7',
@@ -337,7 +337,7 @@ window.ECONOS_TOPIC = {
       },
       keyTakeaway: {
         title: 'The big takeaway',
-        text: 'Specialisation and money help economies grow because they make exchange easier and more productive — connecting people, firms and countries to create more value and better lives.'
+        text: 'Specialisation and money help economies grow because they make exchange easier and more productive – connecting people, firms and countries to create more value and better lives.'
       },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }

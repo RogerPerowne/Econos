@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Complete page data
+   ECONOS – Link It · Complete page data
    Specialisation & Money
    ============================================================ */
 
@@ -14,9 +14,9 @@ window.ECONOS_LINK_COMPLETE = {
   ],
 
   overallMessages: [
-    { min: 85, text: 'Excellent thinking structure — you\'re ready to write.' },
-    { min: 70, text: 'Strong thinking structure — you\'re nearly ready to write.' },
-    { min: 55, text: 'Good foundations — review your weakest step before Land It.' },
+    { min: 85, text: 'Excellent thinking structure – you\'re ready to write.' },
+    { min: 70, text: 'Strong thinking structure – you\'re nearly ready to write.' },
+    { min: 55, text: 'Good foundations – review your weakest step before Land It.' },
     { min: 0,  text: 'More practice recommended before tackling Land It.' }
   ],
 
@@ -30,22 +30,22 @@ window.ECONOS_LINK_COMPLETE = {
   stationFeedback: {
     context: [
       { min: 80, text: 'Strong evidence classification' },
-      { min: 60, text: 'Good — review the challenging evidence' },
+      { min: 60, text: 'Good – review the challenging evidence' },
       { min: 0,  text: 'Evidence classification needs work' }
     ],
     chain: [
       { min: 100, text: 'Perfect causal chain' },
-      { min: 50,  text: 'Clear causality — check the missing step' },
+      { min: 50,  text: 'Clear causality – check the missing step' },
       { min: 0,   text: 'The causal chain needs work' }
     ],
     predict: [
       { min: 80, text: 'Strong outcome prediction' },
-      { min: 55, text: 'Good — check the direction of one variable' },
+      { min: 55, text: 'Good – check the direction of one variable' },
       { min: 0,  text: 'Prediction skills need more practice' }
     ],
     depends: [
       { min: 80, text: 'Strong evaluation conditions identified' },
-      { min: 50, text: 'Good — one key condition missed' },
+      { min: 50, text: 'Good – one key condition missed' },
       { min: 0,  text: 'Review the key evaluation conditions' }
     ],
     judge: [
@@ -55,13 +55,13 @@ window.ECONOS_LINK_COMPLETE = {
     ]
   },
 
-  useInLandIt: 'Specialisation raises labour productivity through the division of labour, generating output surpluses that require exchange. Money solves the double coincidence of wants problem, enabling large-scale supply chains. The gains from specialisation depend on task divisibility, human capital and functioning exchange systems — and deep specialisation creates systemic vulnerability when any link in the chain fails.',
+  useInLandIt: 'Specialisation raises labour productivity through the division of labour, generating output surpluses that require exchange. Money solves the double coincidence of wants problem, enabling large-scale supply chains. The gains from specialisation depend on task divisibility, human capital and functioning exchange systems – and deep specialisation creates systemic vulnerability when any link in the chain fails.',
 
   focusInLandIt: {
-    context: 'Use specific examples — the pin factory, the 30,000-component car, Toyota\'s shutdown — to anchor your application to real-world evidence rather than abstract theory.',
+    context: 'Use specific examples – the pin factory, the 30,000-component car, Toyota\'s shutdown – to anchor your application to real-world evidence rather than abstract theory.',
     chain:   'State the chain explicitly: specialisation → surplus output → need for exchange → double coincidence of wants problem → money as solution → large-scale supply chains possible.',
     predict: 'Apply the specialisation → surplus → money chain to novel scenarios. When a trade deal breaks down or barter fails, trace the mechanism through to the impact on output, exchange and living standards.',
-    depends: 'Lead with task divisibility as your condition — if the production process cannot be subdivided, the division of labour offers no gains regardless of how skilled or motivated workers are.',
+    depends: 'Lead with task divisibility as your condition – if the production process cannot be subdivided, the division of labour offers no gains regardless of how skilled or motivated workers are.',
     judge:   'State a clear position, use the mechanism (division of labour → surplus → money → exchange), add the condition (task divisibility / human capital / exchange systems), and acknowledge the limitation (systemic vulnerability from interdependence).'
   },
 

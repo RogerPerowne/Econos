@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Economic Systems: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -36,10 +36,10 @@ window.ECONOS_LINK_JUDGE = {
       },
       evidenceCards: [
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context analysis',  text: 'You found that free markets generally outperform command economies on efficiency metrics, but that pure market outcomes can fail on equity and in sectors with large externalities.' },
-        { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'The causal chain',  text: 'Price signals → profit incentive → productive and allocative efficiency — but this chain breaks down when market failures are present or when income inequality distorts consumer sovereignty.' },
+        { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'The causal chain',  text: 'Price signals → profit incentive → productive and allocative efficiency – but this chain breaks down when market failures are present or when income inequality distorts consumer sovereignty.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on…',   text: 'Free market efficiency depends on the extent of market failures, the security of property rights, and whether the income distribution is sufficient to translate consumer sovereignty into socially optimal outcomes.' }
       ],
-      cloze: 'Overall, a mixed economy [1] the efficiency of free markets with equity considerations because the [2] is powerful at allocating most goods efficiently, but [3] — including public goods, externalities and information asymmetry — prevent it from working well in every sector. The UK\'s mixed economy demonstrates this: the private sector (over [4] of GDP) benefits from competitive markets and the profit incentive, while the NHS uses state provision in a sector where [5] would systematically underprovide. However, the claim that a mixed economy is "best" is contested — the optimal balance depends on a society\'s values regarding [6] versus efficiency, and critics argue the UK may be too [7] in housing and too state-oriented in other sectors. The strongest judgement is therefore that mixed economies are pragmatically superior to either extreme, but that the correct balance is [8] rather than theoretically determined.',
+      cloze: 'Overall, a mixed economy [1] the efficiency of free markets with equity considerations because the [2] is powerful at allocating most goods efficiently, but [3] – including public goods, externalities and information asymmetry – prevent it from working well in every sector. The UK\'s mixed economy demonstrates this: the private sector (over [4] of GDP) benefits from competitive markets and the profit incentive, while the NHS uses state provision in a sector where [5] would systematically underprovide. However, the claim that a mixed economy is "best" is contested – the optimal balance depends on a society\'s values regarding [6] versus efficiency, and critics argue the UK may be too [7] in housing and too state-oriented in other sectors. The strongest judgement is therefore that mixed economies are pragmatically superior to either extreme, but that the correct balance is [8] rather than theoretically determined.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-balances',    text: 'best balances',                correct: true  },
@@ -93,13 +93,13 @@ window.ECONOS_LINK_JUDGE = {
       overallPosition: {
         prompt: 'Overall position',
         options: [
-          { id: 'op-agree',    text: 'Largely agree — the UK\'s mixed economy shows that combining market efficiency with targeted state intervention outperforms either extreme',                                                                correct: true  },
-          { id: 'op-partial',  text: 'Partially agree — mixed economies are pragmatic but the optimal balance is contested; the UK may be too market-oriented in some sectors (housing) and too state-oriented in others',                      correct: false },
-          { id: 'op-disagree', text: 'Largely disagree — the concept of a \'best balance\' is ideological; the right system depends entirely on a society\'s values regarding equity vs efficiency',                                           correct: false },
-          { id: 'op-none',     text: 'Neither agree nor disagree — the evidence is too mixed to reach a clear verdict',                                                                                                                          correct: false }
+          { id: 'op-agree',    text: 'Largely agree – the UK\'s mixed economy shows that combining market efficiency with targeted state intervention outperforms either extreme',                                                                correct: true  },
+          { id: 'op-partial',  text: 'Partially agree – mixed economies are pragmatic but the optimal balance is contested; the UK may be too market-oriented in some sectors (housing) and too state-oriented in others',                      correct: false },
+          { id: 'op-disagree', text: 'Largely disagree – the concept of a \'best balance\' is ideological; the right system depends entirely on a society\'s values regarding equity vs efficiency',                                           correct: false },
+          { id: 'op-none',     text: 'Neither agree nor disagree – the evidence is too mixed to reach a clear verdict',                                                                                                                          correct: false }
         ]
       },
-      examBridge: '"A mixed economy best balances market efficiency and equity because the price mechanism effectively allocates most goods — generating productive and allocative efficiency through the profit incentive and consumer sovereignty — while targeted state intervention corrects market failures in sectors such as healthcare and public goods provision. However, the claim rests on a normative judgement: the optimal balance between efficiency and equity cannot be determined by economic analysis alone, and the evidence from the UK (housing, social care) suggests the balance may be imperfect even in a mixed economy."'
+      examBridge: '"A mixed economy best balances market efficiency and equity because the price mechanism effectively allocates most goods – generating productive and allocative efficiency through the profit incentive and consumer sovereignty – while targeted state intervention corrects market failures in sectors such as healthcare and public goods provision. However, the claim rests on a normative judgement: the optimal balance between efficiency and equity cannot be determined by economic analysis alone, and the evidence from the UK (housing, social care) suggests the balance may be imperfect even in a mixed economy."'
     }
   ]
 };

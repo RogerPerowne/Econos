@@ -24,7 +24,7 @@
           'More output at a higher price'
         ],
         ans:  1,
-        exp:  'A profit-maximising monopolist restricts output to where MR = MC and charges the price consumers are willing to pay for that quantity — which is above the competitive price and below the competitive output.'
+        exp:  'A profit-maximising monopolist restricts output to where MR = MC and charges the price consumers are willing to pay for that quantity – which is above the competitive price and below the competitive output.'
       },
       {
         id:   'q_mvc_2',

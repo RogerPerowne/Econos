@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for inflation (Causes of Inflation & Deflation)
+   ECONOS – content data for inflation (Causes of Inflation & Deflation)
    8 cards · rebuilt from mockups · Edexcel Theme 2.2.2
    ============================================================ */
 
@@ -9,16 +9,16 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 2 · The National and Global Economy',
   title: 'Causes of Inflation & Deflation',
   estTime: '12-15 minutes',
-  goal: 'Diagnose inflation by cause — demand-pull, cost-push or monetary — and match the right policy to each.',
+  goal: 'Diagnose inflation by cause – demand-pull, cost-push or monetary – and match the right policy to each.',
 
   intro: {
     heroKey: 'heroAggSupply',
-    summary: "Inflation does not have a single cause. Demand-pull comes from too much spending. Cost-push comes from squeezed supply. Monetary and expectations-driven inflation comes from loose money and lost credibility. The same headline figure can require opposite policy responses depending on its origin — diagnosis is everything.",
+    summary: "Inflation does not have a single cause. Demand-pull comes from too much spending. Cost-push comes from squeezed supply. Monetary and expectations-driven inflation comes from loose money and lost credibility. The same headline figure can require opposite policy responses depending on its origin – diagnosis is everything.",
     doInThis: 'Eight cards: the three causes, demand-pull and cost-push in detail, how to spot the difference, money and expectations, winners and losers, the dangers of deflation, and the policy toolkit.',
     outcomes: [
       'Distinguish demand-pull, cost-push and monetary inflation by their AD/AS signatures',
       'Use output direction as the diagnostic tell',
-      'Explain why QE did not always cause inflation — velocity, slack and expectations',
+      'Explain why QE did not always cause inflation – velocity, slack and expectations',
       'Evaluate the winners and losers of inflation, and the dangers of deflation',
       'Match the policy response to the underlying cause'
     ],
@@ -33,7 +33,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ====================================================================
-       CARD 1 — What causes inflation?
+       CARD 1 – What causes inflation?
        Framing: three causes, the diagnose-then-treat principle.
        ==================================================================== */
     {
@@ -88,13 +88,13 @@ window.ECONOS_TOPIC = {
       causes2Emoji: '🩺',
       causes2: [
         { tone: 'blue',   icon: '❄️', head: 'Demand problem',     body: 'Cool demand with tighter monetary or fiscal policy.' },
-        { tone: 'amber',  icon: '🏭', head: 'Supply shock',       body: 'Ease costs or boost supply — supply-side measures.' },
+        { tone: 'amber',  icon: '🏭', head: 'Supply shock',       body: 'Ease costs or boost supply – supply-side measures.' },
         { tone: 'purple', icon: '🛡️', head: 'Expectations problem', body: 'Restore credibility through forward guidance and anchoring.' }
       ],
 
       conclusion: {
         title: '"Rising prices" is not a cause of inflation',
-        text: 'Rising prices are the <strong>symptom</strong>. The <strong>cause</strong> is the underlying driver — demand, costs, money or expectations — that puts upward pressure on prices.'
+        text: 'Rising prices are the <strong>symptom</strong>. The <strong>cause</strong> is the underlying driver – demand, costs, money or expectations – that puts upward pressure on prices.'
       },
 
       examEdge: {
@@ -104,7 +104,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 2 — Demand-pull inflation
+       CARD 2 – Demand-pull inflation
        ==================================================================== */
     {
       id: 'demand-pull-inflation',
@@ -117,7 +117,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '✅',
         tone: 'green',
-        text: '<strong>Output rises alongside prices — that is the key clue.</strong>'
+        text: '<strong>Output rises alongside prices – that is the key clue.</strong>'
       },
 
       interactiveDiagram: {
@@ -135,16 +135,16 @@ window.ECONOS_TOPIC = {
           {
             label: 'AD shifts right',
             tone: 'green',
-            head: 'Demand shock — AD₁ → AD₂',
+            head: 'Demand shock – AD₁ → AD₂',
             body: 'A demand shock (consumer boom, cheap credit, government spending) shifts AD right to AD₂. Firms face excess demand and raise prices.',
-            analysis: 'The rightward shift is the signature of demand-pull. SRAS is unchanged — the pressure comes entirely from the demand side.'
+            analysis: 'The rightward shift is the signature of demand-pull. SRAS is unchanged – the pressure comes entirely from the demand side.'
           },
           {
             label: 'New equilibrium',
             tone: 'green',
             head: 'Result: P ↑ and Y ↑',
             body: 'The new equilibrium E₂ is at higher price level P₂ and higher output Y₂. Inflation has occurred and the economy is producing more.',
-            analysis: 'Both P and Y rise — that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
+            analysis: 'Both P and Y rise – that is the diagnostic tell for demand-pull. If output were falling instead, look to cost-push as the cause.'
           }
         ]
       },
@@ -168,14 +168,14 @@ window.ECONOS_TOPIC = {
         icon: '🏦',
         iconStyle: 'circle',
         label: 'Tighter monetary policy',
-        text: 'Raise interest rates or reduce money supply to cool demand. <strong>Effect:</strong> AD shifts left — lower inflation, lower output.'
+        text: 'Raise interest rates or reduce money supply to cool demand. <strong>Effect:</strong> AD shifts left – lower inflation, lower output.'
       },
       right: {
         tone: 'amber',
         icon: '🏛️',
         iconStyle: 'circle',
         label: 'Tighter fiscal policy',
-        text: 'Reduce government spending or increase taxes to cool demand. <strong>Effect:</strong> AD shifts left — lower inflation, lower output.'
+        text: 'Reduce government spending or increase taxes to cool demand. <strong>Effect:</strong> AD shifts left – lower inflation, lower output.'
       },
 
       conclusion: {
@@ -190,14 +190,14 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 3 — Cost-push inflation
+       CARD 3 – Cost-push inflation
        ==================================================================== */
     {
       id: 'cost-push-inflation',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 3 of 8',
       title: 'Cost-push inflation',
-      lede: 'Cost-push inflation happens when firms face higher production costs — such as rising input prices, wages or taxes — and pass them on to customers. Prices rise while output falls, because it becomes more expensive to produce.',
+      lede: 'Cost-push inflation happens when firms face higher production costs – such as rising input prices, wages or taxes – and pass them on to customers. Prices rise while output falls, because it becomes more expensive to produce.',
       ledeStyle: 'plain',
 
       tip: {
@@ -221,15 +221,15 @@ window.ECONOS_TOPIC = {
           {
             label: 'SRAS shifts left',
             tone: 'amber',
-            head: 'Supply shock — SRAS₁ → SRAS₂',
+            head: 'Supply shock – SRAS₁ → SRAS₂',
             body: 'Higher input costs (energy, wages, import prices) mean it now costs more to produce at every output level. SRAS shifts left to SRAS₂.',
-            analysis: 'The leftward SRAS shift is the signature of cost-push. AD is unchanged — the pressure comes from the supply side alone.'
+            analysis: 'The leftward SRAS shift is the signature of cost-push. AD is unchanged – the pressure comes from the supply side alone.'
           },
           {
             label: 'Stagflation result',
             tone: 'amber',
             head: 'Result: P ↑ and Y ↓',
-            body: 'The new equilibrium E₂ has higher price level P₂ but lower output Y₂. Inflation and falling output occur simultaneously — stagflation.',
+            body: 'The new equilibrium E₂ has higher price level P₂ but lower output Y₂. Inflation and falling output occur simultaneously – stagflation.',
             analysis: 'Both outcomes worsen at once. Raising rates fights inflation but deepens the output fall. Loosening policy helps output but risks embedding inflation.'
           }
         ]
@@ -292,12 +292,12 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Cost-push inflation is harder to cure because inflation and recession appear together — policymakers face an unpleasant trade-off.'
+        text: 'Cost-push inflation is harder to cure because inflation and recession appear together – policymakers face an unpleasant trade-off.'
       }
     },
 
     /* ====================================================================
-       CARD 4 — Spotting the difference
+       CARD 4 – Spotting the difference
        ==================================================================== */
     {
       id: 'spotting-the-difference',
@@ -323,7 +323,7 @@ window.ECONOS_TOPIC = {
           { label: '↔️ AD/AS movement',      values: ['AD shifts right. AS unchanged.',                    'AS shifts left. AD unchanged.'] },
           { label: '📈 Output effect',       values: ['Output increases (above potential).',               'Output decreases (below potential).'] },
           { label: '£ Inflation clue',       values: ['Prices rise alongside stronger output.',            'Prices rise while output falls.'] },
-          { label: '🛡️ Typical policy',      values: ['Tighten demand — raise rates or cut spending.',     'Relieve supply pressures — reduce costs or boost supply.'] }
+          { label: '🛡️ Typical policy',      values: ['Tighten demand – raise rates or cut spending.',     'Relieve supply pressures – reduce costs or boost supply.'] }
         ]
       },
 
@@ -347,7 +347,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 — Money, expectations and the 2021 puzzle
+       CARD 5 – Money, expectations and the 2021 puzzle
        ==================================================================== */
     {
       id: 'money-expectations',
@@ -360,7 +360,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '✅',
         tone: 'green',
-        text: '<strong>Quantity theory is a starting point — not the whole story.</strong>'
+        text: '<strong>Quantity theory is a starting point – not the whole story.</strong>'
       },
 
       letterFormula: {
@@ -395,7 +395,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Expectations: the self-fulfilling channel',
-        text: 'If people <strong>expect</strong> higher inflation, they act — firms raise prices, workers ask for higher wages, households spend sooner. Those actions can make the higher inflation happen. Central bank credibility anchors expectations by convincing the public that the bank will bring inflation back to target.'
+        text: 'If people <strong>expect</strong> higher inflation, they act – firms raise prices, workers ask for higher wages, households spend sooner. Those actions can make the higher inflation happen. Central bank credibility anchors expectations by convincing the public that the bank will bring inflation back to target.'
       },
 
       tip2: null,
@@ -413,12 +413,12 @@ window.ECONOS_TOPIC = {
       },
       tipLate: {
         icon: '💡', tone: 'amber', head: 'Why this matters',
-        text: 'Friedman\'s monetarism reframed the inflation debate: the long-run cause is excessive money supply growth relative to output, regardless of whether the proximate trigger looks like demand-pull or cost-push. The A* move is to use Friedman as a <strong>long-run anchor</strong> for the analysis — central bank credibility and money-supply discipline keep inflation in check — while still acknowledging that in the short run, velocity changes, output gaps, and anchored expectations all complicate the simple M → P link (as 2021 showed).'
+        text: 'Friedman\'s monetarism reframed the inflation debate: the long-run cause is excessive money supply growth relative to output, regardless of whether the proximate trigger looks like demand-pull or cost-push. The A* move is to use Friedman as a <strong>long-run anchor</strong> for the analysis – central bank credibility and money-supply discipline keep inflation in check – while still acknowledging that in the short run, velocity changes, output gaps, and anchored expectations all complicate the simple M → P link (as 2021 showed).'
       }
     },
 
     /* ====================================================================
-       CARD 6 — Winners and losers
+       CARD 6 – Winners and losers
        ==================================================================== */
     {
       id: 'winners-and-losers',
@@ -431,7 +431,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '✅',
         tone: 'green',
-        text: '<strong>Inflation is not neutral — it redistributes.</strong>'
+        text: '<strong>Inflation is not neutral – it redistributes.</strong>'
       },
 
       versusRows: {
@@ -487,18 +487,18 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'The strongest evaluation of winners and losers depends on <strong>expectations</strong> — and on how quickly incomes and contracts adjust to higher prices.'
+        text: 'The strongest evaluation of winners and losers depends on <strong>expectations</strong> – and on how quickly incomes and contracts adjust to higher prices.'
       }
     },
 
     /* ====================================================================
-       CARD 7 — Deflation: the harder problem
+       CARD 7 – Deflation: the harder problem
        ==================================================================== */
     {
       id: 'deflation-harder-problem',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 7 of 8',
-      title: 'Deflation — the harder problem',
+      title: 'Deflation – the harder problem',
       lede: 'Falling prices may sound attractive. But when they reflect collapsing demand, they can trigger a harmful cycle that is hard to escape. That is deflation.',
       ledeStyle: 'plain',
 
@@ -534,7 +534,7 @@ window.ECONOS_TOPIC = {
           { label: 'Cause',          values: ['Productivity improves → AS shifts right',          'Demand falls → AD shifts left'] },
           { label: 'Prices',         values: ['Fall, but output can rise',                        'Fall'] },
           { label: 'Output',         values: ['Rises',                                           'Falls'] },
-          { label: 'Mainly harmful?', values: ['No — can raise real incomes',                     'Yes — traps the economy in weakness'] }
+          { label: 'Mainly harmful?', values: ['No – can raise real incomes',                     'Yes – traps the economy in weakness'] }
         ]
       },
 
@@ -543,25 +543,25 @@ window.ECONOS_TOPIC = {
           tone: 'blue',
           icon: '🗾',
           title: 'Case study: Japan in the 1990s–2010s',
-          text: 'After the asset bubble burst in the early 1990s, Japan faced persistent deflation, weak demand and near-zero interest rates for decades — the classic example.'
+          text: 'After the asset bubble burst in the early 1990s, Japan faced persistent deflation, weak demand and near-zero interest rates for decades – the classic example.'
         }
       ],
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Not all falling prices are equally bad — the <em>cause</em> matters. Deflation due to weak demand is dangerous; deflation due to higher productivity can be beneficial.'
+        text: 'Not all falling prices are equally bad – the <em>cause</em> matters. Deflation due to weak demand is dangerous; deflation due to higher productivity can be beneficial.'
       }
     },
 
     /* ====================================================================
-       CARD 8 — Policy responses
+       CARD 8 – Policy responses
        ==================================================================== */
     {
       id: 'policy-responses',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 8 of 8',
       title: 'Policy responses',
-      lede: 'There is no single cure for inflation. Different causes need different treatments. Policy only works well when the diagnosis is correct. Using the wrong tool — or the right tool on the wrong problem — can make inflation worse or damage the economy.',
+      lede: 'There is no single cure for inflation. Different causes need different treatments. Policy only works well when the diagnosis is correct. Using the wrong tool – or the right tool on the wrong problem – can make inflation worse or damage the economy.',
       ledeStyle: 'plain',
 
       tip: {
@@ -575,7 +575,7 @@ window.ECONOS_TOPIC = {
           tone: 'blue',
           icon: '🏦',
           acronym: 'BoE rate rises',
-          fullName: 'Monetary policy — cools demand-pull inflation',
+          fullName: 'Monetary policy – cools demand-pull inflation',
           points: [
             'Raises borrowing costs, reduces demand and eases inflation.',
             'Higher rates → higher borrowing costs → lower spending → lower inflation.'
@@ -652,7 +652,7 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Link back to Card 1',
-        text: 'Inflation has many causes — treating all inflation as the same is the biggest policy mistake.'
+        text: 'Inflation has many causes – treating all inflation as the same is the biggest policy mistake.'
       },
 
       examEdge: {

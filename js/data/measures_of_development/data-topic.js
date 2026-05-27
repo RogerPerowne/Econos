@@ -8,8 +8,8 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroDevelopment',
-    summary: 'Economic development is broader than growth: it captures living standards, health, education, and freedom. GDP per capita misses much of what makes a country developed. The HDI and successor measures attempt to capture these dimensions — but each indicator has limitations.',
-    doInThis: 'Content coming soon — this topic will cover GDP per capita (PPP), HDI (life expectancy, education, income), Multidimensional Poverty Index, Gender Inequality Index, and limitations of each.',
+    summary: 'Economic development is broader than growth: it captures living standards, health, education, and freedom. GDP per capita misses much of what makes a country developed. The HDI and successor measures attempt to capture these dimensions – but each indicator has limitations.',
+    doInThis: 'Content coming soon – this topic will cover GDP per capita (PPP), HDI (life expectancy, education, income), Multidimensional Poverty Index, Gender Inequality Index, and limitations of each.',
     outcomes: [
       'Distinguish economic growth from economic development',
       'Construct and interpret the HDI from its three components',

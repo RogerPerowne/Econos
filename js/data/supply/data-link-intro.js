@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for supply
+   ECONOS – Link It intro/landing data for supply
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your supply knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in the law of supply, curve shifts and producer surplus. Now train the skills examiners reward — applying the framework to a real cost shock, building a watertight cost → supply shift → new equilibrium chain, and reaching a supported judgement on when cost increases are most damaging.",
+    summary: "You've locked in the law of supply, curve shifts and producer surplus. Now train the skills examiners reward – applying the framework to a real cost shock, building a watertight cost → supply shift → new equilibrium chain, and reaching a supported judgement on when cost increases are most damaging.",
     heroKey: 'heroSupply',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Read and label a supply-shift diagram correctly',
       'Evaluate when cost increases are more vs less damaging to firms and consumers'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

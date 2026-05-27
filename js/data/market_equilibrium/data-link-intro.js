@@ -1,14 +1,14 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for market_equilibrium
+   ECONOS – Link It intro/landing data for market_equilibrium
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
   topic:   'Market Equilibrium',
   estTime: '15–20 minutes',
-  goal:    'Apply the equilibrium framework — how demand and supply shifts create new equilibria, and what limits or delays the market\'s adjustment.',
+  goal:    'Apply the equilibrium framework – how demand and supply shifts create new equilibria, and what limits or delays the market\'s adjustment.',
 
   intro: {
-    summary: "You've mapped equilibrium, disequilibrium, simultaneous shifts and allocative efficiency. Now train the skills examiners reward — applying the framework to real housing-market context, building a watertight demand-shift → new equilibrium chain, and reaching a supported judgement on whether rent controls are an effective policy.",
+    summary: "You've mapped equilibrium, disequilibrium, simultaneous shifts and allocative efficiency. Now train the skills examiners reward – applying the framework to real housing-market context, building a watertight demand-shift → new equilibrium chain, and reaching a supported judgement on whether rent controls are an effective policy.",
     heroKey: 'heroSupplyDemand',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick, label and explain the supply and demand diagram for a demand-driven market shift.',
       'Evaluate the key conditions that change the policy verdict on rent controls'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

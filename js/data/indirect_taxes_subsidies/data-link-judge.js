@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Indirect Taxes & Subsidies: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'S₁ shifts left to S₂ → consumer price rises to P_c, producer net price falls to P_p, output falls from Q₀ to Q_t. Tax wedge = P_c − P_p = per-unit tax.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on PED (how much consumption falls), producer reformulation response, and the regressive distributional impact on low-income households.' }
       ],
-      cloze: 'Overall, an indirect tax on sugary goods raises [1] and reduces consumption most effectively when demand is [2]. However, when demand is [3] — as with confectionery (PED ≈ −0.3) — the tax mainly raises [4] rather than reducing the externality. The split of the tax burden between consumers and producers depends on [5]: inelastic demand means [6] bear the larger share. Therefore, the strongest judgement is that a sugar levy is [7] as a corrective tool, but its power to change behaviour depends more on whether producers [8] than on the price signal alone.',
+      cloze: 'Overall, an indirect tax on sugary goods raises [1] and reduces consumption most effectively when demand is [2]. However, when demand is [3] – as with confectionery (PED ≈ −0.3) – the tax mainly raises [4] rather than reducing the externality. The split of the tax burden between consumers and producers depends on [5]: inelastic demand means [6] bear the larger share. Therefore, the strongest judgement is that a sugar levy is [7] as a corrective tool, but its power to change behaviour depends more on whether producers [8] than on the price signal alone.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-revenue',     text: 'government revenue',    correct: true  },
@@ -96,11 +96,11 @@ window.ECONOS_LINK_JUDGE = {
         options: [
           { id: 'op-always',   text: 'Sugar levies always reduce obesity because higher prices always change behaviour',        correct: false },
           { id: 'op-useful',   text: 'Sugar levies are useful but their effectiveness depends on producer reformulation response', correct: true  },
-          { id: 'op-no',       text: 'Sugar levies should not be used — only regulation works on food markets',                 correct: false },
+          { id: 'op-no',       text: 'Sugar levies should not be used – only regulation works on food markets',                 correct: false },
           { id: 'op-market',   text: 'Obesity is not a market failure and requires no government intervention',                  correct: false }
         ]
       },
-      examBridge: '"A sugar levy is a useful but conditional corrective tool: it shifts the supply curve left, raising consumer prices and reducing output, but its power to reduce the obesity externality depends on whether producers reformulate products — as occurred with the soft drinks levy, where sugar content fell by 28.8% on average. Where demand is inelastic (PED ≈ −0.3 for confectionery), the tax mainly raises revenue and consumer prices rather than reducing consumption, and its regressive incidence on low-income households adds a distributional cost that must be weighed against any externality correction."'
+      examBridge: '"A sugar levy is a useful but conditional corrective tool: it shifts the supply curve left, raising consumer prices and reducing output, but its power to reduce the obesity externality depends on whether producers reformulate products – as occurred with the soft drinks levy, where sugar content fell by 28.8% on average. Where demand is inelastic (PED ≈ −0.3 for confectionery), the tax mainly raises revenue and consumer prices rather than reducing consumption, and its regressive incidence on low-income households adds a distributional cost that must be weighed against any externality correction."'
     }
   ]
 };

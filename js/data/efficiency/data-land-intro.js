@@ -25,7 +25,7 @@ window.ECONOS_LAND_INTRO = {
     'Evaluating whether perfect competition is always more efficient than monopoly across all four types'
   ],
 
-  tip: 'Never confuse the four types of efficiency. Productive: minimum average cost (lowest point of AC curve). Allocative: P = MC (resources match consumer preferences). Dynamic: investment in innovation over time. X-efficiency: no internal slack or waste given existing technology. A monopoly may fail productive and allocative efficiency yet outperform on dynamic efficiency &#8212; the overall verdict depends on which type matters most in context.',
+  tip: 'Never confuse the four types of efficiency. Productive: minimum average cost (lowest point of AC curve). Allocative: P = MC (resources match consumer preferences). Dynamic: investment in innovation over time. X-efficiency: no internal slack or waste given existing technology. A monopoly may fail productive and allocative efficiency yet outperform on dynamic efficiency &#8211; the overall verdict depends on which type matters most in context.',
 
   stages: [
     { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    PES: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -38,9 +38,9 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: '745,000 net migrants; rents up 9.4% (ONS); new listings up only 1.3% (Rightmove); landlords exiting sector.' },
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Demand surge → excess demand at existing rents → price signal → slow supply response (PES ≈ 0.2) → rents stay elevated.' },
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts right → near-vertical S → E₂ almost directly above E₁ → large rent rise, tiny quantity rise.' },
-        { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Construction lead times, landlord exit, planning rigidity — all modify how much PES alone explains.' }
+        { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Construction lead times, landlord exit, planning rigidity – all modify how much PES alone explains.' }
       ],
-      cloze: 'When demand for rental housing increases, the effect on rent vs quantity supplied depends on [1]. A near-vertical supply curve (PES ≈ 0.2) means most of the demand shock is absorbed by [2] rises rather than [3] increases. In the UK rental market, supply could not respond quickly because new housing takes [4] months to build — reflecting both planning constraints and construction lead times. However, the rent spike was worsened by [5], which reduced the existing stock of rental properties simultaneously. The effectiveness of the price signal as a rationing mechanism depends on whether [6] can respond over the medium term. Therefore, the strongest judgement is that low short-run PES is the primary cause, but [7] worsened the short-run position, and [8] reform is the most effective long-run policy response.',
+      cloze: 'When demand for rental housing increases, the effect on rent vs quantity supplied depends on [1]. A near-vertical supply curve (PES ≈ 0.2) means most of the demand shock is absorbed by [2] rises rather than [3] increases. In the UK rental market, supply could not respond quickly because new housing takes [4] months to build – reflecting both planning constraints and construction lead times. However, the rent spike was worsened by [5], which reduced the existing stock of rental properties simultaneously. The effectiveness of the price signal as a rationing mechanism depends on whether [6] can respond over the medium term. Therefore, the strongest judgement is that low short-run PES is the primary cause, but [7] worsened the short-run position, and [8] reform is the most effective long-run policy response.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-pes',    text: 'price elasticity of supply (PES)', correct: true  },
@@ -94,13 +94,13 @@ window.ECONOS_LINK_JUDGE = {
       overallPosition: {
         prompt: 'Overall position',
         options: [
-          { id: 'op-all',     text: 'Low PES is entirely responsible for the rent crisis — no other factors matter',                                   correct: false },
+          { id: 'op-all',     text: 'Low PES is entirely responsible for the rent crisis – no other factors matter',                                   correct: false },
           { id: 'op-primary', text: 'Low PES is the primary structural cause, but landlord exit and planning rigidity compound the effect',            correct: true  },
           { id: 'op-demand',  text: 'High demand growth is more important than supply constraints for explaining rent rises',                          correct: false },
           { id: 'op-rent',    text: 'Rent controls are the most effective policy response to a PES problem',                                           correct: false }
         ]
       },
-      examBridge: '"The near-zero short-run PES of UK rental housing explains why a demand surge (745,000 net migrants) translated almost entirely into higher rents rather than more housing. The steep supply curve means E₂ is almost directly above E₁ — quantity barely rises while price rises sharply. The primary policy implication is supply-side reform: faster planning, build-to-rent incentives and reduced landlord regulation to raise PES over the medium run."'
+      examBridge: '"The near-zero short-run PES of UK rental housing explains why a demand surge (745,000 net migrants) translated almost entirely into higher rents rather than more housing. The steep supply curve means E₂ is almost directly above E₁ – quantity barely rises while price rises sharply. The primary policy implication is supply-side reform: faster planning, build-to-rent incentives and reduced landlord regulation to raise PES over the medium run."'
     }
   ]
 };

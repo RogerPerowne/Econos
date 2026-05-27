@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for ppf
+   ECONOS – Link It intro/landing data for ppf
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your PPF knowledge into exam-quality application, analysis and evaluation of real-world trade-offs.',
 
   intro: {
-    summary: "You've locked in PPF construction, opportunity cost, shifts, and efficiency. Now train the skills examiners reward — applying PPF analysis to a real government investment decision, building a watertight causal chain from trade-off to long-run shift, and reaching a supported judgement about whether the short-run sacrifice of current consumption is justified.",
+    summary: "You've locked in PPF construction, opportunity cost, shifts, and efficiency. Now train the skills examiners reward – applying PPF analysis to a real government investment decision, building a watertight causal chain from trade-off to long-run shift, and reaching a supported judgement about whether the short-run sacrifice of current consumption is justified.",
     heroKey: 'heroPPF',
 
     doInThis: 'Four short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Evaluate the conditions under which outward PPF shifts are more or less likely',
       'Judge whether the sacrifice of current consumption for investment is economically justified'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

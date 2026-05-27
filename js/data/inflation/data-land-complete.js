@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It complete page data
+   ECONOS – Land It complete page data
    ============================================================ */
 
 window.ECONOS_LAND_COMPLETE = {
@@ -15,6 +15,6 @@ window.ECONOS_LAND_COMPLETE = {
   nextCard: {
     icon:  '🚀',
     title: 'What to do next',
-    text:  'Compare your written answers with the model responses. Note where your chains of analysis could be extended and where your evaluation goes further than the model — or falls short. Aim to repeat the weakest section before moving to a new topic.'
+    text:  'Compare your written answers with the model responses. Note where your chains of analysis could be extended and where your evaluation goes further than the model – or falls short. Aim to repeat the weakest section before moving to a new topic.'
   }
 };

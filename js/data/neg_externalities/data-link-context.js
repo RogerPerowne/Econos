@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Context station data
+   ECONOS – Link It · Context station data
    Negative Externalities: classify evidence on extending the UK ETS
    ============================================================ */
 
@@ -21,13 +21,13 @@ window.ECONOS_LINK_STATION = {
     type:        'context',
     eyebrow:     'Use the context',
     question:    'Which details in this extract most change whether the government should extend and tighten the UK Emissions Trading Scheme to cover all major industrial polluters?',
-    instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion — not just what sounds economic.',
+    instruction: 'Tap a highlighted phrase in the extract, then tap the bucket where it belongs. Think about what actually changes the conclusion – not just what sounds economic.',
 
     extract: [
       'New analysis from the Office for Environmental Protection estimates that UK steel and cement production generates [[health-costs|around £20 billion in annual health and environmental damage]], including respiratory illness, reduced life expectancy and climate impacts on communities near industrial sites.',
-      'Proponents of extending the UK Emissions Trading Scheme argue that the existing scheme [[revenue|raised £4.4bn in 2023, much funding clean energy and green investment]] — evidence that a well-designed carbon price can both correct externalities and fund the green transition.',
+      'Proponents of extending the UK Emissions Trading Scheme argue that the existing scheme [[revenue|raised £4.4bn in 2023, much funding clean energy and green investment]] – evidence that a well-designed carbon price can both correct externalities and fund the green transition.',
       'However, industry groups warn that tightening the ETS would [[competitiveness|raise steel production costs by 18–22%]], threatening the viability of blast furnace operations in South Wales and Yorkshire.',
-      'Economists raise the concern of [[leakage|carbon leakage: UK output falls but global demand shifts elsewhere]], total global emissions may not fall — and the domestic economic cost would be borne for no net environmental benefit.',
+      'Economists raise the concern of [[leakage|carbon leakage: UK output falls but global demand shifts elsewhere]], total global emissions may not fall – and the domestic economic cost would be borne for no net environmental benefit.',
       'New elasticity estimates suggest the [[inelastic|short-run PED for industrial steel ≈ −0.15]], meaning a large price rise from an extended ETS would result in only a modest reduction in output.'
     ],
 
@@ -54,16 +54,16 @@ window.ECONOS_LINK_STATION = {
     },
 
     explain: {
-      'health-costs':    'Quantifying £20bn of annual harm confirms a large MEC — the measured external cost directly justifies intervention to correct the overproduction from unregulated markets.',
+      'health-costs':    'Quantifying £20bn of annual harm confirms a large MEC – the measured external cost directly justifies intervention to correct the overproduction from unregulated markets.',
       'revenue':         'Tax revenue recycled into clean energy subsidies creates a "double dividend": the ETS both corrects the externality and generates funds for further green transition. This strengthens the case for extending it.',
       'competitiveness': 'An 18–22% rise in production costs may make UK steel unviable, triggering plant closures and regional unemployment. This is a concrete argument against tightening the ETS without border adjustment protection.',
-      'leakage':         'If UK output falls but global demand is satisfied by less regulated producers, total emissions may not fall. This complicates rather than settles the argument — border adjustment mechanisms (like a CBAM) could resolve it, or they might not.',
-      'inelastic':       'With PED ≈ −0.15, a large price increase from the ETS cuts output and pollution only a little in the short run. The tax achieves less correction of overproduction than the theory predicts — complicating the case without clearly settling it.'
+      'leakage':         'If UK output falls but global demand is satisfied by less regulated producers, total emissions may not fall. This complicates rather than settles the argument – border adjustment mechanisms (like a CBAM) could resolve it, or they might not.',
+      'inelastic':       'With PED ≈ −0.15, a large price increase from the ETS cuts output and pollution only a little in the short run. The tax achieves less correction of overproduction than the theory predicts – complicating the case without clearly settling it.'
     },
 
-    bucketCue: 'Strong application changes the conclusion — it does not just describe what is in the extract.',
+    bucketCue: 'Strong application changes the conclusion – it does not just describe what is in the extract.',
 
-    examBridge: '"Quantified evidence of a £20bn MEC strongly supports intervention, but the case for extending the ETS is complicated by inelastic short-run demand — the tax will raise prices significantly while reducing output only modestly — and by the risk of carbon leakage if unilateral UK action shifts production to less regulated economies."',
+    examBridge: '"Quantified evidence of a £20bn MEC strongly supports intervention, but the case for extending the ETS is complicated by inelastic short-run demand – the tax will raise prices significantly while reducing output only modestly – and by the risk of carbon leakage if unilateral UK action shifts production to less regulated economies."',
 
     whatGoodLooksLike: [
       { icon: '🔍', text: 'Use specific figures from the extract'           },

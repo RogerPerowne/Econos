@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Predict the Outcome station data
+   ECONOS – Link It · Predict the Outcome station data
    Supply: cost shocks and technology on market supply
    ============================================================ */
 
@@ -31,13 +31,13 @@ window.ECONOS_LINK_PREDICT = {
           id: 'supply_steel',
           label: 'Supply of steel (energy-intensive industry)',
           correct: 'decrease',
-          reason: 'Energy is a major production cost for steel — blast furnaces require enormous electricity. A 40% rise in energy costs shifts the supply curve for steel left: firms are only willing to supply the same quantity at a higher price (or less at the same price). The supply curve shifts left.'
+          reason: 'Energy is a major production cost for steel – blast furnaces require enormous electricity. A 40% rise in energy costs shifts the supply curve for steel left: firms are only willing to supply the same quantity at a higher price (or less at the same price). The supply curve shifts left.'
         },
         {
           id: 'price_steel',
           label: 'Equilibrium price of steel',
           correct: 'increase',
-          reason: 'With supply shifting left and demand unchanged, there is a shortage at the original price. The price of steel rises until the market clears. The magnitude of the price rise depends on the PES and PED for steel — inelastic supply and demand amplify the price increase.'
+          reason: 'With supply shifting left and demand unchanged, there is a shortage at the original price. The price of steel rises until the market clears. The magnitude of the price rise depends on the PES and PED for steel – inelastic supply and demand amplify the price increase.'
         },
         {
           id: 'quantity_steel',
@@ -49,10 +49,10 @@ window.ECONOS_LINK_PREDICT = {
           id: 'profit_margins',
           label: 'Profit margins of steel producers',
           correct: 'ambiguous',
-          reason: 'This is genuinely uncertain: profit margins depend on how much of the cost rise producers can pass on to buyers. If PED for steel is inelastic, producers can pass most of the cost rise through higher prices — margins may be partially protected. If steel buyers can switch to imports or alternative materials, producers cannot pass costs on fully — margins fall. The outcome is ambiguous and depends on market structure and substitutability.'
+          reason: 'This is genuinely uncertain: profit margins depend on how much of the cost rise producers can pass on to buyers. If PED for steel is inelastic, producers can pass most of the cost rise through higher prices – margins may be partially protected. If steel buyers can switch to imports or alternative materials, producers cannot pass costs on fully – margins fall. The outcome is ambiguous and depends on market structure and substitutability.'
         }
       ],
-      examBridge: '"An energy cost surge shifts supply curves left for energy-intensive industries — steel, cement, glass. Equilibrium prices rise and quantities fall. The degree of price pass-through depends on PED: more inelastic demand allows producers to maintain margins; more elastic demand means cost rises squeeze profits rather than consumer prices."'
+      examBridge: '"An energy cost surge shifts supply curves left for energy-intensive industries – steel, cement, glass. Equilibrium prices rise and quantities fall. The degree of price pass-through depends on PED: more inelastic demand allows producers to maintain margins; more elastic demand means cost rises squeeze profits rather than consumer prices."'
     },
     {
       id: 'sup-automation-technology',
@@ -64,7 +64,7 @@ window.ECONOS_LINK_PREDICT = {
           id: 'supply_cars',
           label: 'Supply of UK-manufactured cars',
           correct: 'increase',
-          reason: 'Lower production costs from automation shift the supply curve right: firms can profitably supply more cars at every price. This is a classic positive supply-side shock — the same output can now be produced at lower cost, or more output at the same cost. Supply increases.'
+          reason: 'Lower production costs from automation shift the supply curve right: firms can profitably supply more cars at every price. This is a classic positive supply-side shock – the same output can now be produced at lower cost, or more output at the same cost. Supply increases.'
         },
         {
           id: 'price_cars',
@@ -76,16 +76,16 @@ window.ECONOS_LINK_PREDICT = {
           id: 'quantity_cars',
           label: 'Equilibrium quantity of cars sold',
           correct: 'increase',
-          reason: 'The lower equilibrium price stimulates demand — consumers move down their demand curve and buy more cars. Q* rises. The supply shift → price fall → demand response creates the new higher equilibrium quantity.'
+          reason: 'The lower equilibrium price stimulates demand – consumers move down their demand curve and buy more cars. Q* rises. The supply shift → price fall → demand response creates the new higher equilibrium quantity.'
         },
         {
           id: 'employment_assembly',
           label: 'Employment of assembly-line workers',
           correct: 'decrease',
-          reason: 'Automation substitutes capital for labour — robots replace assembly-line workers. Even though output rises, fewer workers are needed per unit of output. Assembly-line employment falls as firms substitute toward the now-cheaper robotic technology. This is the standard displacement effect of labour-saving technology.'
+          reason: 'Automation substitutes capital for labour – robots replace assembly-line workers. Even though output rises, fewer workers are needed per unit of output. Assembly-line employment falls as firms substitute toward the now-cheaper robotic technology. This is the standard displacement effect of labour-saving technology.'
         }
       ],
-      examBridge: '"Automation shifts the supply curve right: lower costs → lower prices → higher Q*. Consumers gain from lower prices. But the technology substitutes capital for labour — assembly-line employment falls even as output rises. This is the central tension of productivity-enhancing automation: aggregate efficiency gains coexist with specific labour market disruption."'
+      examBridge: '"Automation shifts the supply curve right: lower costs → lower prices → higher Q*. Consumers gain from lower prices. But the technology substitutes capital for labour – assembly-line employment falls even as output rises. This is the central tension of productivity-enhancing automation: aggregate efficiency gains coexist with specific labour market disruption."'
     }
   ]
 };

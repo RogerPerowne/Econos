@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    PES: demand shifts right, near-vertical inelastic supply, steep price rise
    ============================================================ */
 
@@ -14,7 +14,7 @@
      verify: x=170 → y=-27+119=92≈90; x=543 → y=-27+380=353≈351
    E₁ (S ∩ D₁): 1190-4x = 13+0.7x → 1177=4.7x → x≈250.4, y=1190-1002=188  → E₁=(250,188)
    E₂ (S ∩ D₂): 1190-4x = -27+0.7x → 1217=4.7x → x≈259.0, y=1190-1036=154  → E₂=(259,154)
-   Key visual: x changes 9px (tiny Q rise), y changes 34px (large P rise) — inelastic supply confirmed */
+   Key visual: x changes 9px (tiny Q rise), y changes 34px (large P rise) – inelastic supply confirmed */
 
 window.ECONOS_LINK_DIAGRAM = {
   topic:   'Price Elasticity of Supply',
@@ -32,7 +32,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'Net migration surges, driving up rental demand. Housing supply is highly price inelastic in the short run. Which diagram correctly shows the market outcome?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the effect of the demand surge. Think about which curve shifts and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -42,29 +42,29 @@ window.ECONOS_LINK_DIAGRAM = {
         id:      'd-right',
         correct:  true,
         title:   'Demand shifts right',
-        sub:     'Demand shifts right — rents rise steeply because inelastic supply cannot respond',
-        why:     'Net migration and post-COVID urban return are non-price demand factors — they shift the demand curve right. At the original rent, quantity demanded exceeds quantity supplied. Rents rise until the market clears at the new equilibrium. Because PES ≈ 0.2 (near-vertical supply), almost all adjustment is through higher rents rather than more housing.'
+        sub:     'Demand shifts right – rents rise steeply because inelastic supply cannot respond',
+        why:     'Net migration and post-COVID urban return are non-price demand factors – they shift the demand curve right. At the original rent, quantity demanded exceeds quantity supplied. Rents rise until the market clears at the new equilibrium. Because PES ≈ 0.2 (near-vertical supply), almost all adjustment is through higher rents rather than more housing.'
       },
       {
         id:      's-right',
         correct:  false,
         title:   'Supply shifts right',
-        sub:     'Supply expands — more housing at every price level',
-        why:     'Supply shifting right would represent an increase in rental supply — for example, from a successful house-building programme. The scenario describes the problem: supply is constrained by long construction lead times and cannot respond quickly. Supply has not expanded; it is the demand that has surged.'
+        sub:     'Supply expands – more housing at every price level',
+        why:     'Supply shifting right would represent an increase in rental supply – for example, from a successful house-building programme. The scenario describes the problem: supply is constrained by long construction lead times and cannot respond quickly. Supply has not expanded; it is the demand that has surged.'
       },
       {
         id:      'd-left',
         correct:  false,
         title:   'Demand shifts left',
         sub:     'Falling demand reduces rents and quantity',
-        why:     'Demand shifting left represents a fall in the number of households seeking rental accommodation — perhaps due to falling incomes or population decline. This is the opposite of the scenario: record net migration and urban return increased rental demand sharply.'
+        why:     'Demand shifting left represents a fall in the number of households seeking rental accommodation – perhaps due to falling incomes or population decline. This is the opposite of the scenario: record net migration and urban return increased rental demand sharply.'
       },
       {
         id:      's-left',
         correct:  false,
         title:   'Supply shifts left',
-        sub:     'Supply contracts — rents rise and quantity falls',
-        why:     'Supply shifting left would be the landlord exit effect — a real complicating factor in 2022–23. But the primary diagram for a demand surge with inelastic supply is a rightward demand shift, not a leftward supply shift. The steep (near-vertical) supply curve already captures the inelastic response; it does not need to shift left to model low PES.'
+        sub:     'Supply contracts – rents rise and quantity falls',
+        why:     'Supply shifting left would be the landlord exit effect – a real complicating factor in 2022–23. But the primary diagram for a demand surge with inelastic supply is a rightward demand shift, not a leftward supply shift. The steep (near-vertical) supply curve already captures the inelastic response; it does not need to shift left to model low PES.'
       }
     ]
   },
@@ -76,29 +76,29 @@ window.ECONOS_LINK_DIAGRAM = {
     dataPoints: [
       { icon: '📈', text: 'PES for rental housing ≈ 0.2 in short run (24–36 month build cycle)' },
       { icon: '🔴', text: 'Excess demand: more renters than available properties' },
-      { icon: '💸', text: 'Rents rose 9.4% (ONS 2023) — fastest on record' }
+      { icon: '💸', text: 'Rents rose 9.4% (ONS 2023) – fastest on record' }
     ]
   },
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — demand shifts right with near-vertical inelastic housing supply, producing a steep rent rise and tiny quantity increase',
+    ariaLabel: 'Supply and demand diagram – demand shifts right with near-vertical inelastic housing supply, producing a steep rent rise and tiny quantity increase',
     xLabel:    'Quantity of rental properties',
     yLabel:    'Rent (£)',
 
     lines: [
-      /* S — near-vertical (PES ≈ 0.2, highly inelastic supply) */
+      /* S – near-vertical (PES ≈ 0.2, highly inelastic supply) */
       { x1: 200, y1: 390, x2: 290, y2: 30,  stroke: '#7c3aed', strokeWidth: 2.5,
         label: 'S (PES ≈ 0.2)', labelX: 294, labelY: 28, labelFill: '#7c3aed' },
-      /* D₁ — original demand, downward-sloping */
+      /* D₁ – original demand, downward-sloping */
       { x1: 110, y1: 90,  x2: 500, y2: 363, stroke: '#059669', strokeWidth: 2.5,
         label: 'D₁', labelX: 504, labelY: 363, labelFill: '#059669' },
-      /* D₂ — new demand, shifted right ~60px */
+      /* D₂ – new demand, shifted right ~60px */
       { x1: 170, y1: 90,  x2: 543, y2: 351, stroke: '#d97706', strokeWidth: 2.5,
         label: 'D₂', labelX: 545, labelY: 349, labelFill: '#d97706' }
     ],
 
-    /* Guide lines + tick labels — shown at stage 2 */
+    /* Guide lines + tick labels – shown at stage 2 */
     guides: [
       /* Horizontal from y-axis to E₂ (new equilibrium, higher rent) */
       { x1: 100, y1: 154, x2: 259, y2: 154, tickLeft: 'P₂', tickLeftY: 157 },
@@ -127,13 +127,13 @@ window.ECONOS_LINK_DIAGRAM = {
     legend: [
       { color: '#059669', text: 'D₁ = Original demand for rental housing' },
       { color: '#d97706', text: 'D₂ = New demand (after migration surge)' },
-      { color: '#7c3aed', text: 'S = Supply of rental housing (PES ≈ 0.2 in SR — highly inelastic)' }
+      { color: '#7c3aed', text: 'S = Supply of rental housing (PES ≈ 0.2 in SR – highly inelastic)' }
     ]
   },
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of a demand surge on the rental housing market with inelastic supply.',
     instruction: 'Place the correct labels on the diagram to identify the shift, the two equilibria and the outcome for rent and quantity.',
     hint:        'Skill focus: connect the visual shift to the economic outcomes.',
@@ -160,10 +160,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['price elasticity of supply', 'PES', 'supply response', 'price signal', 'inelastic', 'demand shift', 'equilibrium', 'consumer surplus', 'producer surplus', 'planning permission'],
 
@@ -173,21 +173,21 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'What does the steep supply curve represent?',
         prompt:      'What does the steep supply curve represent?',
         maxChars:    240,
-        modelAnswer: 'PES is approximately 0.2 in the SR. The near-vertical supply line means that for any price increase, quantity supplied barely rises — because new builds take 24–36 months from planning to completion. Even a large rent rise sends a weak price signal that cannot unlock more housing quickly.'
+        modelAnswer: 'PES is approximately 0.2 in the SR. The near-vertical supply line means that for any price increase, quantity supplied barely rises – because new builds take 24–36 months from planning to completion. Even a large rent rise sends a weak price signal that cannot unlock more housing quickly.'
       },
       {
         num:         2,
         title:       'What happens to rent and quantity when demand shifts right?',
         prompt:      'What happens to rent and quantity when demand shifts right?',
         maxChars:    240,
-        modelAnswer: 'E₂ is almost directly above E₁: rent rises sharply from P₁ to P₂ while quantity increases only marginally from Q₁ to Q₂. Almost all of the demand shock is absorbed by higher rents, not by more housing — consistent with PES ≈ 0.2 in the short run.'
+        modelAnswer: 'E₂ is almost directly above E₁: rent rises sharply from P₁ to P₂ while quantity increases only marginally from Q₁ to Q₂. Almost all of the demand shock is absorbed by higher rents, not by more housing – consistent with PES ≈ 0.2 in the short run.'
       },
       {
         num:         3,
         title:       'What are the welfare effects and what policy could help?',
         prompt:      'What are the welfare effects and what policy could help?',
         maxChars:    240,
-        modelAnswer: 'Consumer surplus for tenants falls substantially — they pay higher rents for essentially the same housing. Landlords and developers gain. To restore equilibrium at lower rents, policy must increase supply elasticity: faster planning approvals, build-to-rent incentives, or social house-building to shift S right over the longer run.'
+        modelAnswer: 'Consumer surplus for tenants falls substantially – they pay higher rents for essentially the same housing. Landlords and developers gain. To restore equilibrium at lower rents, policy must increase supply elasticity: faster planning approvals, build-to-rent incentives, or social house-building to shift S right over the longer run.'
       }
     ],
 
@@ -203,6 +203,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Identify welfare or policy implication'
     ],
 
-    examAnswer: '"The demand shift from record migration shifted the rental housing demand curve to the right. Because PES ≈ 0.2 in the short run — reflecting 24–36 month construction lead times — the supply curve is near-vertical. The new equilibrium E₂ is almost directly above E₁: rents rose 9.4% while the quantity of available rentals barely changed. Consumer surplus for tenants fell sharply, while the price signal (higher rents) will only translate into increased supply years later."'
+    examAnswer: '"The demand shift from record migration shifted the rental housing demand curve to the right. Because PES ≈ 0.2 in the short run – reflecting 24–36 month construction lead times – the supply curve is near-vertical. The new equilibrium E₂ is almost directly above E₁: rents rose 9.4% while the quantity of available rentals barely changed. Consumer surplus for tenants fell sharply, while the price signal (higher rents) will only translate into increased supply years later."'
   }
 };

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    The Economic Problem: evaluate a scarcity and opportunity cost claim
    ============================================================ */
 
@@ -31,37 +31,37 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'severity-scarcity',
           icon:  '📊',
           label: 'Severity of scarcity relative to wants',
-          why:   'The economic problem is more acute when the gap between available resources and desired outputs is larger. UK NHS waiting lists (7.7m) vs a system with higher funding (Germany) illustrate that political choices affect the severity of scarcity — not just technology or population. Scarcity is always present but its intensity varies across systems.'
+          why:   'The economic problem is more acute when the gap between available resources and desired outputs is larger. UK NHS waiting lists (7.7m) vs a system with higher funding (Germany) illustrate that political choices affect the severity of scarcity – not just technology or population. Scarcity is always present but its intensity varies across systems.'
         },
         {
           id:    'technology',
           icon:  '🔬',
           label: 'State of technology and productive capacity',
-          why:   'Advanced technology shifts the PPF outward — more can be produced from given resources. But technology also expands wants (new treatments, new devices) — so it may increase rather than reduce the economic problem. The net effect on scarcity depends on whether technology raises productive capacity faster than it expands human desires.'
+          why:   'Advanced technology shifts the PPF outward – more can be produced from given resources. But technology also expands wants (new treatments, new devices) – so it may increase rather than reduce the economic problem. The net effect on scarcity depends on whether technology raises productive capacity faster than it expands human desires.'
         },
         {
           id:    'mixed-vs-command',
           icon:  '🏛️',
           label: 'How the economic system allocates scarce resources',
-          why:   'Free markets use price signals to ration scarce goods — those willing and able to pay receive them. Command economies use central planning. Mixed economies (UK) use a combination. The mechanism for addressing scarcity differs, but no system eliminates it. The choice of mechanism determines who receives the scarce goods (for whom) and how efficiently they are produced.'
+          why:   'Free markets use price signals to ration scarce goods – those willing and able to pay receive them. Command economies use central planning. Mixed economies (UK) use a combination. The mechanism for addressing scarcity differs, but no system eliminates it. The choice of mechanism determines who receives the scarce goods (for whom) and how efficiently they are produced.'
         },
         {
           id:    'public-vs-private',
           icon:  '⚕️',
           label: 'Whether goods are public, private or merit goods',
-          why:   'Private goods are allocated through markets — price rations demand. Public goods cannot be withheld from non-payers. Merit goods (healthcare, education) are often provided publicly because market price would exclude those who need them most. The type of good determines which institution addresses scarcity and which trade-offs become explicit.'
+          why:   'Private goods are allocated through markets – price rations demand. Public goods cannot be withheld from non-payers. Merit goods (healthcare, education) are often provided publicly because market price would exclude those who need them most. The type of good determines which institution addresses scarcity and which trade-offs become explicit.'
         },
         {
           id:    'time-horizon',
           icon:  '⏳',
           label: 'Short-run vs long-run scarcity',
-          why:   'Some scarcities are temporary — a shortage of PPE during COVID was resolved through supply chain expansion. Others are structural — the scarcity of NHS clinical staff reflects decades of undertraining. Long-run solutions (training more doctors) take years; short-run trade-offs (postponing non-urgent care) are immediate. The distinction affects what opportunity costs are most relevant.'
+          why:   'Some scarcities are temporary – a shortage of PPE during COVID was resolved through supply chain expansion. Others are structural – the scarcity of NHS clinical staff reflects decades of undertraining. Long-run solutions (training more doctors) take years; short-run trade-offs (postponing non-urgent care) are immediate. The distinction affects what opportunity costs are most relevant.'
         },
         {
           id:    'preference-intensity',
           icon:  '❤️',
           label: 'Strength and distribution of individual preferences',
-          why:   'The economic problem is more acute when preferences are strongly held and heterogeneous — each person prioritises differently, making collective allocation contentious. The NHS must weigh cancer treatment against mental health against preventive care — all strongly preferred by different groups. Where preferences are more homogeneous, allocation trade-offs are less contested.'
+          why:   'The economic problem is more acute when preferences are strongly held and heterogeneous – each person prioritises differently, making collective allocation contentious. The NHS must weigh cancer treatment against mental health against preventive care – all strongly preferred by different groups. Where preferences are more homogeneous, allocation trade-offs are less contested.'
         },
         {
           id:    'political-economy',
@@ -77,7 +77,7 @@ window.ECONOS_LINK_DEPENDS = {
         }
       ],
       modelRanking: ['severity-scarcity', 'technology', 'mixed-vs-command'],
-      judgement: '"Whether scarcity is most severe depends on the gap between productive capacity and wants — which technology shapes on both sides simultaneously. How scarcity is addressed depends on the economic system: markets use price (efficient but inequitable), command economies use planning (equitable intent but information-poor), and mixed economies combine both. The economic problem is most analytically visible when opportunity costs are made explicit — as NICE\'s QALY threshold does for NHS decisions."'
+      judgement: '"Whether scarcity is most severe depends on the gap between productive capacity and wants – which technology shapes on both sides simultaneously. How scarcity is addressed depends on the economic system: markets use price (efficient but inequitable), command economies use planning (equitable intent but information-poor), and mixed economies combine both. The economic problem is most analytically visible when opportunity costs are made explicit – as NICE\'s QALY threshold does for NHS decisions."'
     }
   ]
 };

@@ -24,7 +24,7 @@
           'A government body that regulates prices'
         ],
         ans:  1,
-        exp:  'A cartel is an explicit (overt) agreement between competing firms to coordinate pricing, output, or market sharing — effectively behaving as a collective monopoly. Cartels are illegal in most jurisdictions.'
+        exp:  'A cartel is an explicit (overt) agreement between competing firms to coordinate pricing, output, or market sharing – effectively behaving as a collective monopoly. Cartels are illegal in most jurisdictions.'
       },
       {
         id:   'q_cc_2',
@@ -126,7 +126,7 @@
           'Both cut price (£300, £300)'
         ],
         ans:  3,
-        exp:  'Nash Equilibrium is where neither player wants to deviate. If both keep: A gets £500 but could get £800 by cutting, so A deviates. Both cutting (£300, £300) is the NE — each firm cuts regardless of what the other does.'
+        exp:  'Nash Equilibrium is where neither player wants to deviate. If both keep: A gets £500 but could get £800 by cutting, so A deviates. Both cutting (£300, £300) is the NE – each firm cuts regardless of what the other does.'
       },
       {
         id:   'q_cc_10',

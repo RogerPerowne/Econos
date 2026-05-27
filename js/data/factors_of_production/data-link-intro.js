@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for factors_of_production
+   ECONOS – Link It intro/landing data for factors_of_production
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your factor-of-production knowledge into exam-quality application, analysis and evaluation using the UK\'s labour-shortage story.',
 
   intro: {
-    summary: 'Use the UK\'s post-pandemic labour shortages and "missing workforce" to analyse how the quantity, quality and mobility of factors of production shape an economy\'s capacity — and whether supply-side policies can close the output gap.',
+    summary: 'Use the UK\'s post-pandemic labour shortages and "missing workforce" to analyse how the quantity, quality and mobility of factors of production shape an economy\'s capacity – and whether supply-side policies can close the output gap.',
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Pick and label the right macro diagram for a factor-quality improvement',
       'Evaluate which conditions decide whether a retraining scheme actually raises GDP'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

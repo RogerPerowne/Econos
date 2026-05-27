@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Public Goods: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Free rider collapse: D_social → D_private ≈ 0. Social optimum at Q* only achievable via compulsory general taxation.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on degree of non-excludability, accuracy of cost-benefit analysis (Q* estimation), and risk of government failure.' }
       ],
-      cloze: 'Pure public goods are [1] and [2] — so private firms cannot exclude non-payers and therefore cannot generate revenue to cover provision costs. The [3] problem means each household waits for others to fund the good → effective market demand (D_private) collapses to near zero, far below D_social (true WTP). Government solves this by [4] to fund provision — making payment compulsory so free riding is eliminated. However, state provision achieves Q* only if [5] accurately estimates the social value of the good. The policy is least effective when the public good is [6] — because technology enabling exclusion opens the door to market-based provision and user charges. State provision may also lead to [7] if political pressures cause over- or under-provision. Therefore, taxation-funded state provision is the [8] solution for pure public goods, but should be complemented by robust cost-benefit analysis and governance to minimise government failure.',
+      cloze: 'Pure public goods are [1] and [2] – so private firms cannot exclude non-payers and therefore cannot generate revenue to cover provision costs. The [3] problem means each household waits for others to fund the good → effective market demand (D_private) collapses to near zero, far below D_social (true WTP). Government solves this by [4] to fund provision – making payment compulsory so free riding is eliminated. However, state provision achieves Q* only if [5] accurately estimates the social value of the good. The policy is least effective when the public good is [6] – because technology enabling exclusion opens the door to market-based provision and user charges. State provision may also lead to [7] if political pressures cause over- or under-provision. Therefore, taxation-funded state provision is the [8] solution for pure public goods, but should be complemented by robust cost-benefit analysis and governance to minimise government failure.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-nr',      text: 'non-rival',    correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-all',     text: 'All goods should be provided by the state to eliminate market failure',                                                                  correct: false }
         ]
       },
-      examBridge: '"Coastal flood defences are non-rival and non-excludable — the free rider problem collapses effective market demand to near zero (D_private << D_social). No private firm can profitably provide protection it cannot withhold from non-payers. The Environment Agency\'s £5.2bn programme demonstrates that compulsory general taxation is the only mechanism that solves the free rider problem at scale — achieving Q* and realising the £8/£1 welfare return that markets cannot capture. The strongest evaluation acknowledges that government failure (CBA inaccuracy, political distortion) is the principal limitation of state provision, not the theoretical framework."'
+      examBridge: '"Coastal flood defences are non-rival and non-excludable – the free rider problem collapses effective market demand to near zero (D_private << D_social). No private firm can profitably provide protection it cannot withhold from non-payers. The Environment Agency\'s £5.2bn programme demonstrates that compulsory general taxation is the only mechanism that solves the free rider problem at scale – achieving Q* and realising the £8/£1 welfare return that markets cannot capture. The strongest evaluation acknowledges that government failure (CBA inaccuracy, political distortion) is the principal limitation of state provision, not the theoretical framework."'
     }
   ]
 };

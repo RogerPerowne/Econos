@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Inflation: synthesise evidence into an exam-quality judgement
    ============================================================ */
 
@@ -38,7 +38,7 @@ window.ECONOS_LINK_JUDGE = {
       evidenceCards: [
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: 'Energy prices +18%: cost-push inflation, real wages falling.' },
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Energy costs ↑ → SRAS shifts left → price level ↑, output ↓.' },
-        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'SRAS shifts left — stagflation: higher P, lower Y simultaneously.' },
+        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'SRAS shifts left – stagflation: higher P, lower Y simultaneously.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on cause, credibility and transmission.' }
       ],
       cloze: 'Overall, higher interest rates are [1] when inflation is mainly [2], because higher borrowing costs reduce [3] and shift [4] left. However, their effectiveness is weaker when inflation is driven by [5], since interest rates do not directly reduce firms\' [6]. Therefore, the strongest judgement is that higher interest rates are [7], but only if the transmission mechanism is strong and the fall in [8] is not excessive.',

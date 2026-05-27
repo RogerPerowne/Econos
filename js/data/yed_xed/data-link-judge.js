@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    YED/XED: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D₁ shifts left to D₂ → new equilibrium (P₂, Q₂) below and to left of original → luxury revenues fall; budget substitutes gain.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'YED magnitude, income distribution, real vs nominal income, and whether income fall is expected to be temporary.' }
       ],
-      cloze: 'When real household income falls, the effect on demand depends on [1]. For luxury goods where YED [2] 1, demand falls [3] proportionally than the income change, because consumers cut non-essential spending first. This shifts the demand curve to the [4] from D₁ to D₂, reducing equilibrium price to [5] and equilibrium quantity to Q₂. However, the size of the demand shift depends on [6] — if the income fall is concentrated among lower-income households who rarely buy luxury goods, aggregate demand for luxury goods falls less than YED predicts. In contrast, for [7] goods (YED < 0), falling income causes demand to [8] as consumers seek cheaper alternatives.',
+      cloze: 'When real household income falls, the effect on demand depends on [1]. For luxury goods where YED [2] 1, demand falls [3] proportionally than the income change, because consumers cut non-essential spending first. This shifts the demand curve to the [4] from D₁ to D₂, reducing equilibrium price to [5] and equilibrium quantity to Q₂. However, the size of the demand shift depends on [6] – if the income fall is concentrated among lower-income households who rarely buy luxury goods, aggregate demand for luxury goods falls less than YED predicts. In contrast, for [7] goods (YED < 0), falling income causes demand to [8] as consumers seek cheaper alternatives.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-yed',  text: 'income elasticity of demand (YED)', correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-nec',   text: 'Income changes never affect demand for necessities',                                                            correct: false }
         ]
       },
-      examBridge: '"Falling real income shifts demand for luxury goods left by more than the income change percentage because YED > 1 — confirmed by the 18% fall in luxury car registrations from a 2.5% income fall. The new equilibrium (P₂, Q₂) lies below and to the left of the original, squeezing luxury sector revenues. However, the distributional incidence of the income fall and whether it is expected to be temporary both modify the strength of the YED effect — a sophisticated judgement acknowledges these conditions."'
+      examBridge: '"Falling real income shifts demand for luxury goods left by more than the income change percentage because YED > 1 – confirmed by the 18% fall in luxury car registrations from a 2.5% income fall. The new equilibrium (P₂, Q₂) lies below and to the left of the original, squeezing luxury sector revenues. However, the distributional incidence of the income fall and whether it is expected to be temporary both modify the strength of the YED effect – a sophisticated judgement acknowledges these conditions."'
     }
   ]
 };

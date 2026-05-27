@@ -24,20 +24,20 @@
           'Only if it has access to natural resources'
         ],
         ans:  1,
-        exp:  'Comparative advantage (Ricardo) is based on opportunity cost, not absolute cost. A country has a comparative advantage in a good if its opportunity cost of producing it is lower than for other countries — even if it is less efficient in absolute terms.'
+        exp:  'Comparative advantage (Ricardo) is based on opportunity cost, not absolute cost. A country has a comparative advantage in a good if its opportunity cost of producing it is lower than for other countries – even if it is less efficient in absolute terms.'
       },
       {
         id:   'q_ts_2',
         type: 'mcq',
         q:    'Country A can produce either 100 cars or 200 tonnes of wheat. Country B can produce either 80 cars or 200 tonnes of wheat. Which country has the comparative advantage in cars?',
         opts: [
-          'Country A — it produces more cars than B',
-          'Country B — the opportunity cost of a car is lower in B (2.5 wheat vs 2 wheat in A)',
-          'Country A — the opportunity cost of a car is lower (2 wheat) than in B (2.5 wheat)',
-          'Neither — both have the same output of wheat'
+          'Country A – it produces more cars than B',
+          'Country B – the opportunity cost of a car is lower in B (2.5 wheat vs 2 wheat in A)',
+          'Country A – the opportunity cost of a car is lower (2 wheat) than in B (2.5 wheat)',
+          'Neither – both have the same output of wheat'
         ],
         ans:  2,
-        exp:  'Country A: 1 car costs 200/100 = 2 tonnes of wheat. Country B: 1 car costs 200/80 = 2.5 tonnes of wheat. Country A has the lower opportunity cost in cars — it has the comparative advantage in car production.'
+        exp:  'Country A: 1 car costs 200/100 = 2 tonnes of wheat. Country B: 1 car costs 200/80 = 2.5 tonnes of wheat. Country A has the lower opportunity cost in cars – it has the comparative advantage in car production.'
       },
       {
         id:   'q_ts_3',
@@ -50,7 +50,7 @@
           'The exchange rate between two trading partners'
         ],
         ans:  1,
-        exp:  'ToT = (Index of export prices / Index of import prices) × 100. An improvement in ToT means export prices have risen relative to import prices — each unit of exports can buy more imports.'
+        exp:  'ToT = (Index of export prices / Index of import prices) × 100. An improvement in ToT means export prices have risen relative to import prices – each unit of exports can buy more imports.'
       },
       {
         id:   'q_ts_4',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Comparative advantage','Absolute advantage','Terms of trade','Multiplier effect'],
         ans:  3,
-        exp:  'Comparative advantage, absolute advantage, and terms of trade are all international trade concepts. The multiplier effect is a macroeconomic concept about how changes in spending amplify national income — not a trade theory concept.'
+        exp:  'Comparative advantage, absolute advantage, and terms of trade are all international trade concepts. The multiplier effect is a macroeconomic concept about how changes in spending amplify national income – not a trade theory concept.'
       },
       {
         id:   'q_ts_9',

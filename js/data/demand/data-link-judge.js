@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Demand: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -37,7 +37,7 @@ window.ECONOS_LINK_JUDGE = {
       evidenceCards: [
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: 'Consumer confidence +7 (GfK, July 2021); £190bn savings released; bookings 60% above 2019; but food bank usage +33% and international travel suppressed.' },
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Income/confidence rise → demand curve shifts right from D₁ to D₂ → excess demand at P₁ → price rises to P₂, quantity rises to Q₂.' },
-        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts right → new equilibrium at higher P₂ and higher Q₂ — profit signal attracts capacity expansion.' },
+        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts right → new equilibrium at higher P₂ and higher Q₂ – profit signal attracts capacity expansion.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Strength depends on YED (> 1 amplifies effect), consumer confidence, and availability of substitute activities (especially international holidays).' }
       ],
       cloze: 'Overall, rising consumer income and confidence [1] demand for UK leisure services, because higher income [2] consumers\' willingness and ability to pay at every price level, shifting the demand curve [3] from D₁ to D₂. This raises both price and [4], moving the market to a new equilibrium. However, the strength of the demand shift depends on the [5] of the relevant goods: where YED exceeds 1, the income effect is [6]. The impact is further conditioned by consumer [7]: if households expect future income uncertainty, they may save rather than spend even as current income rises. Therefore, income is a powerful driver of leisure demand, but it operates most strongly when goods are [8], confidence is high, and substitutes are unavailable.',
@@ -96,11 +96,11 @@ window.ECONOS_LINK_JUDGE = {
         options: [
           { id: 'op-always',      text: 'Income is always the strongest driver of demand for any good',                                    correct: false },
           { id: 'op-conditional', text: 'Income is a powerful driver for income-elastic goods, but confidence and substitutes also matter', correct: true  },
-          { id: 'op-price-only',  text: 'Demand is determined by price alone — income shifts have no lasting effect',                      correct: false },
+          { id: 'op-price-only',  text: 'Demand is determined by price alone – income shifts have no lasting effect',                      correct: false },
           { id: 'op-confidence',  text: 'Consumer confidence is more important than income in all cases',                                   correct: false }
         ]
       },
-      examBridge: '"Rising income and confidence boosted leisure demand because YED for hospitality exceeds 1 — so income gains shift the demand curve right by proportionally more. The new equilibrium delivers higher prices and higher output, but the effect is conditional: concentrated savings distribution and the availability of international substitutes mean the domestic surge was stronger in some segments than others. A strong judgement recognises income as a primary, but not exclusive, driver."'
+      examBridge: '"Rising income and confidence boosted leisure demand because YED for hospitality exceeds 1 – so income gains shift the demand curve right by proportionally more. The new equilibrium delivers higher prices and higher output, but the effect is conditional: concentrated savings distribution and the availability of international substitutes mean the domestic surge was stronger in some segments than others. A strong judgement recognises income as a primary, but not exclusive, driver."'
     }
   ]
 };

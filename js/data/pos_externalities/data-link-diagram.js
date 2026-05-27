@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Diagram Connector data
+   ECONOS – Link It · Diagram Connector data
    Positive Externalities: NHS free provision shifts supply right (MPC → MPC−subsidy)
    ============================================================ */
 
@@ -29,7 +29,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 0: Select the right diagram ── */
   select: {
-    eyebrow:     'Diagram Connector — Select the Diagram',
+    eyebrow:     'Diagram Connector – Select the Diagram',
     title:       'The NHS provides free flu vaccinations to correct the underproduction caused by positive externalities. Which diagram correctly shows the effect on the vaccination market?',
     instruction: 'Read the scenario, then choose the diagram that correctly models the impact of free NHS provision. Think about which curve is directly affected and in which direction.',
     hint:        'Skill focus: identify the mechanism before choosing the model.',
@@ -40,28 +40,28 @@ window.ECONOS_LINK_DIAGRAM = {
         correct:  true,
         title:   'Supply shifts right',
         sub:     'Free provision reduces effective price to consumers, raising quantity toward the social optimum',
-        why:     'NHS free provision eliminates the price barrier for consumers — the effective consumer cost falls to zero, below the market MPC. This is equivalent to a supply-side subsidy: the effective supply curve shifts right from MPC to MPC − subsidy (S₂). Output rises from Q_m to Q*, and coverage crosses the herd immunity threshold, fully realising the MEB.'
+        why:     'NHS free provision eliminates the price barrier for consumers – the effective consumer cost falls to zero, below the market MPC. This is equivalent to a supply-side subsidy: the effective supply curve shifts right from MPC to MPC − subsidy (S₂). Output rises from Q_m to Q*, and coverage crosses the herd immunity threshold, fully realising the MEB.'
       },
       {
         id:      's-left',
         correct:  false,
         title:   'Supply shifts left',
         sub:     'Output falls and prices rise as supply contracts',
-        why:     'Supply shifting left means costs rise or supply falls — the effect of a tax or a cost increase. NHS free provision reduces the effective cost to consumers and raises the quantity supplied at any given price. A leftward shift shows the opposite of what public provision achieves.'
+        why:     'Supply shifting left means costs rise or supply falls – the effect of a tax or a cost increase. NHS free provision reduces the effective cost to consumers and raises the quantity supplied at any given price. A leftward shift shows the opposite of what public provision achieves.'
       },
       {
         id:      'd-left',
         correct:  false,
         title:   'Demand shifts left',
         sub:     'Consumer spending falls, reducing the quantity demanded at every price',
-        why:     'Demand (MPB) shifting left would mean consumers value vaccination less — the opposite of what happens. NHS provision works on the supply and cost side: it removes the price barrier, not by changing MPB, but by making the effective price zero. D does not shift in this model.'
+        why:     'Demand (MPB) shifting left would mean consumers value vaccination less – the opposite of what happens. NHS provision works on the supply and cost side: it removes the price barrier, not by changing MPB, but by making the effective price zero. D does not shift in this model.'
       },
       {
         id:      'd-right',
         correct:  false,
         title:   'Demand shifts right',
         sub:     'Rising consumer demand pushes up the price level',
-        why:     'A rightward demand shift would represent rising consumer willingness to pay — a change in MPB. NHS public provision does not increase consumer valuation; it reduces the effective price to zero. The primary mechanism is a supply-side shift, not a demand shift. Demand rising would push price up, which is not what free provision does.'
+        why:     'A rightward demand shift would represent rising consumer willingness to pay – a change in MPB. NHS public provision does not increase consumer valuation; it reduces the effective price to zero. The primary mechanism is a supply-side shift, not a demand shift. Demand rising would push price up, which is not what free provision does.'
       }
     ]
   },
@@ -79,27 +79,27 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Diagram specification ── */
   diagram: {
-    ariaLabel: 'Supply and demand diagram — NHS free provision correcting a positive consumption externality (underproduction)',
+    ariaLabel: 'Supply and demand diagram – NHS free provision correcting a positive consumption externality (underproduction)',
     xLabel:    'Quantity of vaccinations',
     yLabel:    'Price / Cost (£)',
 
     lines: [
-      /* MPB (private demand = consumer benefit) — green downward-sloping */
+      /* MPB (private demand = consumer benefit) – green downward-sloping */
       { x1: 110, y1: 150, x2: 510, y2: 380, stroke: '#059669', strokeWidth: 2.5,
         label: 'MPB (D)', labelX: 514, labelY: 380, labelFill: '#059669' },
-      /* MSB (social demand = MPB + MEB) — darker green, dashed, 80px above MPB */
+      /* MSB (social demand = MPB + MEB) – darker green, dashed, 80px above MPB */
       { x1: 110, y1: 70,  x2: 510, y2: 300, stroke: '#16a34a', strokeWidth: 2,
         strokeDasharray: '6,3',
         label: 'MSB', labelX: 514, labelY: 300, labelFill: '#16a34a' },
-      /* MPC (S₁ — supply before NHS provision) — blue upward-sloping */
+      /* MPC (S₁ – supply before NHS provision) – blue upward-sloping */
       { x1: 130, y1: 390, x2: 490, y2: 30,  stroke: '#2563eb', strokeWidth: 2.5,
         label: 'MPC (S₁)', labelX: 494, labelY: 28, labelFill: '#2563eb' },
-      /* S₂ (after NHS free provision, 80px right of MPC) — purple upward-sloping */
+      /* S₂ (after NHS free provision, 80px right of MPC) – purple upward-sloping */
       { x1: 210, y1: 390, x2: 543, y2: 57,  stroke: '#7c3aed', strokeWidth: 2.5,
         label: 'S₂ (after NHS)', labelX: 450, labelY: 30, labelFill: '#7c3aed' }
     ],
 
-    /* Guide lines + tick labels — shown at stage 2 */
+    /* Guide lines + tick labels – shown at stage 2 */
     guides: [
       /* Horizontal from y-axis to E_social (social optimum) */
       { x1: 100, y1: 194, x2: 326, y2: 194, tickLeft: 'P*',  tickLeftY: 197 },
@@ -135,7 +135,7 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 1: Label the diagram ── */
   label: {
-    eyebrow:     'Diagram Connector — Label the Diagram',
+    eyebrow:     'Diagram Connector – Label the Diagram',
     title:       'Use the diagram to show the effect of NHS free vaccination provision.',
     instruction: 'Place the correct labels on the diagram to identify the shift, the two equilibria and the outcome for price and quantity.',
     hint:        'Skill focus: connect the visual shift to the economic outcomes.',
@@ -162,10 +162,10 @@ window.ECONOS_LINK_DIAGRAM = {
 
   /* ── Stage 2: Read & write the diagram ── */
   explain: {
-    eyebrow:     'Diagram Connector — Read &amp; Write the Diagram',
+    eyebrow:     'Diagram Connector – Read &amp; Write the Diagram',
     title:       'Turn the diagram into an exam-quality explanation.',
     instruction: 'For each prompt, write a short answer using the diagram, then check against the model. Combine the three at the end into an exam-quality paragraph.',
-    hint:        'Skill focus: Analysis — bridge the diagram shift into clear written analysis.',
+    hint:        'Skill focus: Analysis – bridge the diagram shift into clear written analysis.',
 
     vocab: ['MPB', 'MEB', 'MSB', 'MPC', 'Q*', 'Q_market', 'positive externality', 'herd immunity', 'underproduction', 'deadweight welfare loss', 'social optimum', 'direct provision', 'subsidy'],
 
@@ -175,7 +175,7 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'Explain why MSB sits above MPB',
         prompt:      'Why does MSB sit above MPB, and what does the vertical gap between them represent?',
         maxChars:    240,
-        modelAnswer: 'MSB = MPB + MEB. The MEB is the herd immunity benefit: when you vaccinate, you protect not just yourself but also unvaccinated and vulnerable people who cannot be immunised. The vertical gap between MSB and MPB at every quantity represents this external benefit — which the market ignores because individuals only consider MPB when deciding whether to vaccinate.'
+        modelAnswer: 'MSB = MPB + MEB. The MEB is the herd immunity benefit: when you vaccinate, you protect not just yourself but also unvaccinated and vulnerable people who cannot be immunised. The vertical gap between MSB and MPB at every quantity represents this external benefit – which the market ignores because individuals only consider MPB when deciding whether to vaccinate.'
       },
       {
         num:         2,
@@ -189,7 +189,7 @@ window.ECONOS_LINK_DIAGRAM = {
         title:       'Evaluate: direct provision vs subsidy',
         prompt:      'Is direct provision always better than a partial subsidy for correcting this externality?',
         maxChars:    240,
-        modelAnswer: 'Direct provision (free at point of use) fully removes the price barrier, achieving Q* reliably. A partial subsidy that reduces price but does not eliminate it may still leave Q below Q* if the remaining price deters price-sensitive individuals. However, direct provision has a higher fiscal cost — a targeted subsidy might achieve near-Q* at lower cost where uptake is driven by convenience rather than price sensitivity. If non-vaccinators refuse on ideological grounds, neither approach achieves Q*.'
+        modelAnswer: 'Direct provision (free at point of use) fully removes the price barrier, achieving Q* reliably. A partial subsidy that reduces price but does not eliminate it may still leave Q below Q* if the remaining price deters price-sensitive individuals. However, direct provision has a higher fiscal cost – a targeted subsidy might achieve near-Q* at lower cost where uptake is driven by convenience rather than price sensitivity. If non-vaccinators refuse on ideological grounds, neither approach achieves Q*.'
       }
     ],
 
@@ -205,6 +205,6 @@ window.ECONOS_LINK_DIAGRAM = {
       'Evaluate direct provision vs subsidy'
     ],
 
-    examAnswer: '"The positive consumption externality from vaccination (herd immunity = MEB) means MSB > MPB — the free market produces Q_m < Q*, leaving a deadweight welfare loss. NHS free provision shifts effective supply right from S₁ to S₂, removing the price barrier and raising coverage to Q*. MMR coverage of 95.1% meets the herd immunity threshold — the MEB is fully internalised. Direct provision outperforms a partial subsidy here because it reaches price-sensitive and convenience-sensitive groups simultaneously."'
+    examAnswer: '"The positive consumption externality from vaccination (herd immunity = MEB) means MSB > MPB – the free market produces Q_m < Q*, leaving a deadweight welfare loss. NHS free provision shifts effective supply right from S₁ to S₂, removing the price barrier and raising coverage to Q*. MMR coverage of 95.1% meets the herd immunity threshold – the MEB is fully internalised. Direct provision outperforms a partial subsidy here because it reaches price-sensitive and convenience-sensitive groups simultaneously."'
   }
 };

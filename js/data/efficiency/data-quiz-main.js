@@ -37,7 +37,7 @@
           'Where marginal revenue equals marginal cost'
         ],
         ans:  2,
-        exp:  'Productive efficiency is achieved when output is produced at minimum average cost — the firm is on the lowest point of its long-run average cost curve, using resources without waste.'
+        exp:  'Productive efficiency is achieved when output is produced at minimum average cost – the firm is on the lowest point of its long-run average cost curve, using resources without waste.'
       },
       {
         id:   'q_eff_3',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Allocative efficiency','Productive efficiency','X-inefficiency','Dynamic efficiency'],
         ans:  2,
-        exp:  'Allocative, productive, and dynamic efficiency are all desirable economic states. X-inefficiency is an undesirable outcome — unnecessary cost inflation from lack of competitive pressure.'
+        exp:  'Allocative, productive, and dynamic efficiency are all desirable economic states. X-inefficiency is an undesirable outcome – unnecessary cost inflation from lack of competitive pressure.'
       },
       {
         id:   'q_eff_9',

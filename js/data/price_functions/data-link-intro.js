@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for price_functions
+   ECONOS – Link It intro/landing data for price_functions
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your price mechanism knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "Use the 2021–23 UK food price surge to apply the three functions of the price mechanism — rationing, signalling and incentivising — and evaluate how well prices coordinate market adjustment when supply is disrupted.",
+    summary: "Use the 2021–23 UK food price surge to apply the three functions of the price mechanism – rationing, signalling and incentivising – and evaluate how well prices coordinate market adjustment when supply is disrupted.",
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Predict market outcomes of price shocks including London housing and gas price surges',
       'Evaluate when the price mechanism succeeds and fails as a resource allocator'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

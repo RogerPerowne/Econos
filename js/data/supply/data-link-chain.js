@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Chain station data
+   ECONOS – Link It · Chain station data
    Supply: build the cost shock → supply shift → new equilibrium chain
    ============================================================ */
 
@@ -70,18 +70,18 @@ window.ECONOS_LINK_CHAIN = {
       explain: [
         {
           pos:  0,
-          text: 'Energy is a key input into steel, ceramics and food processing — accounting for 20–40% of total costs. A 400% rise in gas prices raises the marginal cost of production at every level of output. This means firms can profitably supply less at every price than before — the supply curve shifts left from S₁ to S₂. This is a non-price determinant of supply (input costs), so it shifts the whole curve, not just a movement along it.'
+          text: 'Energy is a key input into steel, ceramics and food processing – accounting for 20–40% of total costs. A 400% rise in gas prices raises the marginal cost of production at every level of output. This means firms can profitably supply less at every price than before – the supply curve shifts left from S₁ to S₂. This is a non-price determinant of supply (input costs), so it shifts the whole curve, not just a movement along it.'
         },
         {
           pos:  1,
-          text: 'At the original market price P₁, the leftward supply shift means that quantity supplied by manufacturers now falls short of what buyers demand. This excess demand (shortage) gives sellers the ability to raise prices — buyers are competing for a reduced quantity of steel, ceramics and food products. Upward price pressure develops as the market seeks a new clearing price.'
+          text: 'At the original market price P₁, the leftward supply shift means that quantity supplied by manufacturers now falls short of what buyers demand. This excess demand (shortage) gives sellers the ability to raise prices – buyers are competing for a reduced quantity of steel, ceramics and food products. Upward price pressure develops as the market seeks a new clearing price.'
         },
         {
           pos:  2,
-          text: 'Price rises from P₁ to P₂ as the energy cost shock passes partly through to output prices. At the same time, output falls from Q₁ to Q₂ as firms reduce production or suspend some capacity (as British Steel did with its Scunthorpe furnace). The new equilibrium E₂ reflects both a higher price and lower quantity — cost-push inflation emerges and industrial output contracts.'
+          text: 'Price rises from P₁ to P₂ as the energy cost shock passes partly through to output prices. At the same time, output falls from Q₁ to Q₂ as firms reduce production or suspend some capacity (as British Steel did with its Scunthorpe furnace). The new equilibrium E₂ reflects both a higher price and lower quantity – cost-push inflation emerges and industrial output contracts.'
         }
       ],
-      examBridge: '"Surging energy input costs shifted the supply curve for energy-intensive manufactured goods to the left from S₁ to S₂. At the original market price, excess demand emerged as output contracted. The new equilibrium E₂ settled at a higher price P₂ and lower quantity Q₂ — with consumers bearing part of the cost increase and firms absorbing the rest in squeezed margins."',
+      examBridge: '"Surging energy input costs shifted the supply curve for energy-intensive manufactured goods to the left from S₁ to S₂. At the original market price, excess demand emerged as output contracted. The new equilibrium E₂ settled at a higher price P₂ and lower quantity Q₂ – with consumers bearing part of the cost increase and firms absorbing the rest in squeezed margins."',
 
       prompts: [
         'Why does the supply curve shift left when energy prices rise?',
@@ -89,9 +89,9 @@ window.ECONOS_LINK_CHAIN = {
         'What is the new equilibrium and what does it imply for the market?'
       ],
       modelAnswers: [
-        'Energy is a key production input — rising energy costs raise marginal private cost at every output level. Firms can now supply less at every price than before, so the entire supply curve shifts left from S₁ to S₂. This is a non-price supply shifter (input costs), not a movement along the supply curve.',
-        'At the original price P₁, quantity supplied is now lower than quantity demanded — excess demand (a shortage) emerges. Sellers can raise prices without losing all buyers, so upward price pressure develops as the market attempts to reach a new equilibrium.',
-        'The new equilibrium E₂ is at a higher price P₂ and lower output Q₂. Consumers pay more and receive less output — cost-push inflation. Firms with the highest energy intensity or least pricing power are squeezed most severely; some (like British Steel) temporarily suspend production rather than absorbing full losses.'
+        'Energy is a key production input – rising energy costs raise marginal private cost at every output level. Firms can now supply less at every price than before, so the entire supply curve shifts left from S₁ to S₂. This is a non-price supply shifter (input costs), not a movement along the supply curve.',
+        'At the original price P₁, quantity supplied is now lower than quantity demanded – excess demand (a shortage) emerges. Sellers can raise prices without losing all buyers, so upward price pressure develops as the market attempts to reach a new equilibrium.',
+        'The new equilibrium E₂ is at a higher price P₂ and lower output Q₂. Consumers pay more and receive less output – cost-push inflation. Firms with the highest energy intensity or least pricing power are squeezed most severely; some (like British Steel) temporarily suspend production rather than absorbing full losses.'
       ],
       vocab: ['supply curve', 'shift in supply', 'input costs', 'marginal cost', 'excess demand', 'equilibrium price', 'cost-push inflation', 'producer surplus', 'incidence']
     }

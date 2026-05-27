@@ -16,77 +16,77 @@
 
     questions: [
 
-      /* 1 — MCQ: MR = MC profit maximisation */
+      /* 1 – MCQ: MR = MC profit maximisation */
       { type: 'mcq',
         id: 'q_pcc_1',
         stem: 'A profit-maximising firm should produce the output where:',
         opts: [
-          'Marginal revenue equals marginal cost (MR = MC) — at lower outputs MR > MC so more can be made by expanding; at higher outputs MR < MC so less is made by contracting',
-          'Average revenue equals average total cost — to ensure the firm earns normal profit at all times',
-          'Total revenue is maximised — where MR = 0 and the firm sells as much as possible',
-          'Average total cost is minimised — to achieve productive efficiency at all times'
+          'Marginal revenue equals marginal cost (MR = MC) – at lower outputs MR > MC so more can be made by expanding; at higher outputs MR < MC so less is made by contracting',
+          'Average revenue equals average total cost – to ensure the firm earns normal profit at all times',
+          'Total revenue is maximised – where MR = 0 and the firm sells as much as possible',
+          'Average total cost is minimised – to achieve productive efficiency at all times'
         ],
         ans: 0,
-        exp: 'Profit = TR − TC. To maximise profit, the firm expands output as long as MR > MC (each unit adds more revenue than cost). It stops when MR = MC. Beyond this, MR < MC (each extra unit costs more to produce than it adds to revenue) — profit would fall. MR = MC is the universal profit-maximisation rule, applicable to all market structures (perfect competition, monopoly, oligopoly). Total revenue maximisation (MR = 0) gives higher output but lower profit. ATC minimisation (productive efficiency) is a cost objective, not a profit objective.'
+        exp: 'Profit = TR − TC. To maximise profit, the firm expands output as long as MR > MC (each unit adds more revenue than cost). It stops when MR = MC. Beyond this, MR < MC (each extra unit costs more to produce than it adds to revenue) – profit would fall. MR = MC is the universal profit-maximisation rule, applicable to all market structures (perfect competition, monopoly, oligopoly). Total revenue maximisation (MR = 0) gives higher output but lower profit. ATC minimisation (productive efficiency) is a cost objective, not a profit objective.'
       },
 
-      /* 2 — MCQ: cost increase effect on profit-maximising output */
+      /* 2 – MCQ: cost increase effect on profit-maximising output */
       { type: 'mcq',
         id: 'q_pcc_2',
         stem: 'A firm faces a <strong>rise in variable costs</strong> (e.g. higher wages). What happens to its profit-maximising output and price?',
         opts: [
-          'MC shifts upward — the profit-maximising output falls (MR now equals the higher MC at a lower quantity) and the price rises',
-          'MC is unchanged — variable costs are included in average costs, not marginal costs',
+          'MC shifts upward – the profit-maximising output falls (MR now equals the higher MC at a lower quantity) and the price rises',
+          'MC is unchanged – variable costs are included in average costs, not marginal costs',
           'The firm increases output to maintain total profits by selling more volume at the original price',
           'Price falls as the firm passes cost savings to consumers to maintain market share'
         ],
         ans: 0,
-        exp: 'Higher variable costs raise MC (MC = ΔTC/ΔQ — adding variable cost increases the incremental cost of each unit). The MC curve shifts upward. At the original output, MR < new MC → the firm reduces output until MR = new MC at a lower quantity. The reduced supply with unchanged demand means price rises. Profit falls unless the price rise fully compensates. This is the mechanism by which input cost inflation (wages, raw materials, energy) transmits to consumer prices — the supply-side inflation transmission mechanism.'
+        exp: 'Higher variable costs raise MC (MC = ΔTC/ΔQ – adding variable cost increases the incremental cost of each unit). The MC curve shifts upward. At the original output, MR < new MC → the firm reduces output until MR = new MC at a lower quantity. The reduced supply with unchanged demand means price rises. Profit falls unless the price rise fully compensates. This is the mechanism by which input cost inflation (wages, raw materials, energy) transmits to consumer prices – the supply-side inflation transmission mechanism.'
       },
 
-      /* 3 — MCQ: demand shift and profit maximisation */
+      /* 3 – MCQ: demand shift and profit maximisation */
       { type: 'mcq',
         id: 'q_pcc_3',
         stem: 'Demand for a firm\'s product <strong>increases</strong> (demand curve shifts rightward). At the original profit-maximising output, MR is now:',
         opts: [
-          'Higher — the rightward shift in demand lifts the AR (demand) curve and MR curve; MR now exceeds MC at original output; the firm should expand',
-          'Lower — increased demand reduces the marginal value of each unit to consumers',
-          'Unchanged — MR only changes if costs change, not if demand changes',
-          'Zero — the new demand curve intersects MR at a quantity that makes MR exactly zero'
+          'Higher – the rightward shift in demand lifts the AR (demand) curve and MR curve; MR now exceeds MC at original output; the firm should expand',
+          'Lower – increased demand reduces the marginal value of each unit to consumers',
+          'Unchanged – MR only changes if costs change, not if demand changes',
+          'Zero – the new demand curve intersects MR at a quantity that makes MR exactly zero'
         ],
         ans: 0,
-        exp: 'A rightward demand shift moves both the AR (demand) curve and MR curve upward. At the original profit-maximising output (where old MR = MC), the new MR now exceeds MC → the firm should expand production. The new profit-maximising output is higher (new MR = MC at a higher quantity), and the new price is higher (reading off the new demand curve at the expanded quantity). Both output and price rise with a demand increase — consistent with positive demand shift diagrams in any market structure.'
+        exp: 'A rightward demand shift moves both the AR (demand) curve and MR curve upward. At the original profit-maximising output (where old MR = MC), the new MR now exceeds MC → the firm should expand production. The new profit-maximising output is higher (new MR = MC at a higher quantity), and the new price is higher (reading off the new demand curve at the expanded quantity). Both output and price rise with a demand increase – consistent with positive demand shift diagrams in any market structure.'
       },
 
-      /* 4 — MCQ: indirect tax on firm */
+      /* 4 – MCQ: indirect tax on firm */
       { type: 'mcq',
         id: 'q_pcc_4',
         stem: 'The government imposes a specific tax of <strong>£5 per unit</strong> on a monopolist\'s output. The immediate effect on the profit-maximising outcome is:',
         opts: [
-          'MC shifts upward by £5 — the new profit-maximising output is lower and the price rises by less than £5 (the tax is split between producer and consumer)',
-          'Price rises by exactly £5 — the monopolist passes the full tax to consumers and quantity is unchanged',
-          'Output is unchanged — a monopolist\'s pricing power allows it to absorb the tax in profits without changing price',
+          'MC shifts upward by £5 – the new profit-maximising output is lower and the price rises by less than £5 (the tax is split between producer and consumer)',
+          'Price rises by exactly £5 – the monopolist passes the full tax to consumers and quantity is unchanged',
+          'Output is unchanged – a monopolist\'s pricing power allows it to absorb the tax in profits without changing price',
           'The monopolist exits the market if the tax exceeds its profit margin'
         ],
         ans: 0,
-        exp: 'A specific tax adds £5 to the marginal cost of every unit — MC shifts up by £5. The new MR = MC intersection occurs at a lower output. Reading off the demand curve, the new price rises — but by less than £5 (unless demand is perfectly inelastic). The tax incidence is shared: consumers pay some (higher price) and producers bear some (lower net revenue). The split depends on elasticity of demand — the less elastic demand, the more consumers pay. Even a monopolist cannot pass the full tax to consumers unless demand is perfectly inelastic, because the price rise reduces quantity demanded and therefore total profit.'
+        exp: 'A specific tax adds £5 to the marginal cost of every unit – MC shifts up by £5. The new MR = MC intersection occurs at a lower output. Reading off the demand curve, the new price rises – but by less than £5 (unless demand is perfectly inelastic). The tax incidence is shared: consumers pay some (higher price) and producers bear some (lower net revenue). The split depends on elasticity of demand – the less elastic demand, the more consumers pay. Even a monopolist cannot pass the full tax to consumers unless demand is perfectly inelastic, because the price rise reduces quantity demanded and therefore total profit.'
       },
 
-      /* 5 — MCQ: cost innovation and competitive advantage */
+      /* 5 – MCQ: cost innovation and competitive advantage */
       { type: 'mcq',
         id: 'q_pcc_5',
         stem: 'A firm introduces a new technology that reduces its marginal cost. In a competitive market, the long-run consequence for this firm is:',
         opts: [
-          'Initially higher profits, but entry of new firms attracted by the abnormal profit restores normal profit in the long run — unless the technology creates a barrier to entry (e.g. patent)',
-          'Permanent supernormal profits — technology advantages cannot be competed away in the long run',
-          'No change in profit — competitors immediately adopt the same technology, equalising costs instantaneously',
+          'Initially higher profits, but entry of new firms attracted by the abnormal profit restores normal profit in the long run – unless the technology creates a barrier to entry (e.g. patent)',
+          'Permanent supernormal profits – technology advantages cannot be competed away in the long run',
+          'No change in profit – competitors immediately adopt the same technology, equalising costs instantaneously',
           'The firm exits because lower costs signal that the product is no longer valuable to consumers'
         ],
         ans: 0,
         exp: 'In perfect competition: cost innovation → lower MC → new MR = MC at lower price → supernormal profit (price > ATC at new output). This attracts entry → supply increases → market price falls → supernormal profit eroded → long-run normal profit. BUT if the technology is patented or requires scarce expertise, entry is blocked → supernormal profits persist. This is Schumpeter\'s "creative destruction": innovation creates temporary monopoly profits that attract competition; competition erodes profits but spurs the next round of innovation. The dynamic case for monopoly rents: they incentivise the R&D that leads to cost-reducing technologies.'
       },
 
-      /* 6 — Para fill: MR = MC analysis */
+      /* 6 – Para fill: MR = MC analysis */
       { type: 'para_fill',
         id: 'q_pcc_6',
         stem: 'Complete the paragraph about profit maximisation.',
@@ -104,40 +104,40 @@
           { id: 9, opts: ['productive', 'allocative', 'dynamic', 'X-'], ans: 0 },
           { id: 10, opts: ['higher', 'lower', 'equal to', 'identical to'], ans: 0 }
         ],
-        exp: '(1)(2) Expands as long as <strong>MR</strong> exceeds <strong>MC</strong>. (3)(4)(5) If <strong>MC</strong> rises → output <strong>falls</strong> → price <strong>rises</strong>. (6)(7)(8) Demand shift lifts <strong>MR</strong> → output <strong>rises</strong> → price <strong>rises</strong>. (9) Perfect competition long-run = <strong>productive</strong> efficiency (P = min ATC). (10) Monopolist produces at <strong>higher</strong> ATC (not at minimum ATC — productively inefficient). This paragraph links profit maximisation to market structure outcomes.'
+        exp: '(1)(2) Expands as long as <strong>MR</strong> exceeds <strong>MC</strong>. (3)(4)(5) If <strong>MC</strong> rises → output <strong>falls</strong> → price <strong>rises</strong>. (6)(7)(8) Demand shift lifts <strong>MR</strong> → output <strong>rises</strong> → price <strong>rises</strong>. (9) Perfect competition long-run = <strong>productive</strong> efficiency (P = min ATC). (10) Monopolist produces at <strong>higher</strong> ATC (not at minimum ATC – productively inefficient). This paragraph links profit maximisation to market structure outcomes.'
       },
 
-      /* 7 — Cause & effect: cost and revenue changes */
+      /* 7 – Cause & effect: cost and revenue changes */
       { type: 'cause_effect',
         id: 'q_pcc_7',
         stem: 'Match each change to its effect on the profit-maximising output and price.',
         pairs: [
-          { cause: 'Fixed costs increase (e.g. higher rent)', effect: 'Profit-maximising output and price unchanged — MC and MR unaffected; only profits fall' },
+          { cause: 'Fixed costs increase (e.g. higher rent)', effect: 'Profit-maximising output and price unchanged – MC and MR unaffected; only profits fall' },
           { cause: 'Variable costs fall (e.g. cheaper raw materials)', effect: 'MC shifts down; profit-maximising output rises; price falls' },
           { cause: 'Demand shifts rightward (rising consumer incomes)', effect: 'MR shifts up; profit-maximising output rises; price rises' },
           { cause: 'Demand becomes more elastic (new substitutes enter the market)', effect: 'MR curve becomes flatter; firm faces greater pricing constraint; may reduce price to maintain share' },
           { cause: 'Specific tax imposed per unit of output', effect: 'MC rises by the tax; profit-maximising output falls; price rises by less than the tax' },
           { cause: 'Subsidy per unit of output', effect: 'MC falls by the subsidy; profit-maximising output rises; price falls' }
         ],
-        exp: 'Key insight: <strong>fixed costs do not affect MR = MC profit-maximising output or price</strong> — a common exam error is to say rent increases cause price rises. Only changes to MC or MR alter the profit-maximising decision. Variable costs → MC shifts; demand changes → MR (and AR) shift; specific taxes → MC up; subsidies → MC down; elasticity changes → slope of MR curve changes. This framework applies across all market structures.'
+        exp: 'Key insight: <strong>fixed costs do not affect MR = MC profit-maximising output or price</strong> – a common exam error is to say rent increases cause price rises. Only changes to MC or MR alter the profit-maximising decision. Variable costs → MC shifts; demand changes → MR (and AR) shift; specific taxes → MC up; subsidies → MC down; elasticity changes → slope of MR curve changes. This framework applies across all market structures.'
       },
 
-      /* 8 — Match pairs: revenue and profit concepts */
+      /* 8 – Match pairs: revenue and profit concepts */
       { type: 'match_pairs',
         id: 'q_pcc_8',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Marginal Revenue (MR)', b: 'Extra revenue from selling one more unit' },
           { a: 'Average Revenue (AR)', b: 'Total revenue ÷ quantity = price (= demand curve)' },
-          { a: 'Supernormal profit', b: 'Revenue > total costs including opportunity cost — AR > ATC' },
-          { a: 'Normal profit', b: 'Revenue covers all costs including opportunity cost — AR = ATC' },
-          { a: 'Shut-down point', b: 'Price falls below average variable cost — losses exceed fixed costs even at optimal output' },
-          { a: 'Break-even point', b: 'AR = ATC — total revenue exactly covers total cost' }
+          { a: 'Supernormal profit', b: 'Revenue > total costs including opportunity cost – AR > ATC' },
+          { a: 'Normal profit', b: 'Revenue covers all costs including opportunity cost – AR = ATC' },
+          { a: 'Shut-down point', b: 'Price falls below average variable cost – losses exceed fixed costs even at optimal output' },
+          { a: 'Break-even point', b: 'AR = ATC – total revenue exactly covers total cost' }
         ],
-        exp: 'Revenue and profit vocabulary: <strong>AR = demand curve</strong> (downward sloping for monopolist, horizontal for perfect competitor); <strong>MR always lies below AR</strong> for a downward-sloping demand curve (to sell more, price must fall for all units — MR < price). <strong>Supernormal profit</strong>: attracts entry in competitive markets. <strong>Normal profit</strong>: long-run equilibrium in perfect competition and monopolistic competition. <strong>Shut-down</strong>: if P < AVC, better to shut down (loss = fixed costs) than produce (loss > fixed costs). <strong>Break-even</strong>: P = ATC — normal profit, zero economic profit.'
+        exp: 'Revenue and profit vocabulary: <strong>AR = demand curve</strong> (downward sloping for monopolist, horizontal for perfect competitor); <strong>MR always lies below AR</strong> for a downward-sloping demand curve (to sell more, price must fall for all units – MR < price). <strong>Supernormal profit</strong>: attracts entry in competitive markets. <strong>Normal profit</strong>: long-run equilibrium in perfect competition and monopolistic competition. <strong>Shut-down</strong>: if P < AVC, better to shut down (loss = fixed costs) than produce (loss > fixed costs). <strong>Break-even</strong>: P = ATC – normal profit, zero economic profit.'
       },
 
-      /* 9 — Odd one out: profit-maximising rules */
+      /* 9 – Odd one out: profit-maximising rules */
       { type: 'odd_one_out',
         id: 'q_pcc_9',
         stem: 'Three of these statements about profit maximisation are <strong>correct</strong>. Which is the <strong>odd one out</strong>?',
@@ -148,10 +148,10 @@
           { icon: '📉', label: 'A rise in variable costs causes the profit-maximising output to fall', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is <strong>profit is maximised where AR = ATC</strong>. This is wrong — AR = ATC is the <em>break-even</em> condition (normal profit), not the profit-maximisation condition. Profit is maximised where <strong>MR = MC</strong>. When MR = MC and AR > ATC, the firm earns supernormal profit (the maximum). When AR = ATC, the firm earns normal profit (zero economic profit). Confusing the break-even rule with the profit-maximisation rule is a classic exam error. The other three are correct: fixed costs don\'t affect MR=MC; demand shifts change both output and price; variable cost rises reduce profit-maximising output.'
+        exp: 'The odd one out is <strong>profit is maximised where AR = ATC</strong>. This is wrong – AR = ATC is the <em>break-even</em> condition (normal profit), not the profit-maximisation condition. Profit is maximised where <strong>MR = MC</strong>. When MR = MC and AR > ATC, the firm earns supernormal profit (the maximum). When AR = ATC, the firm earns normal profit (zero economic profit). Confusing the break-even rule with the profit-maximisation rule is a classic exam error. The other three are correct: fixed costs don\'t affect MR=MC; demand shifts change both output and price; variable cost rises reduce profit-maximising output.'
       },
 
-      /* 10 — Data table: profit maximisation with data */
+      /* 10 – Data table: profit maximisation with data */
       { type: 'data_table',
         id: 'q_pcc_10',
         stem: 'The table shows revenue and cost data for a firm.',
@@ -166,13 +166,13 @@
         ],
         question: 'At what output does the firm <strong>maximise profit</strong>, and what is the maximum profit?',
         opts: [
-          'Output = 3 units (MR = £60 > MC = £40, still profitable to expand; but at output 4, MR = £40 < MC = £45 — profit falls). Maximum profit = £135',
-          'Output = 4 units where profit is still rising — maximum profit = £130',
-          'Output = 6 units to maximise total revenue (MR = 0) — maximum profit = £40',
-          'Output = 2 units where MC is lowest — maximum profit = £115'
+          'Output = 3 units (MR = £60 > MC = £40, still profitable to expand; but at output 4, MR = £40 < MC = £45 – profit falls). Maximum profit = £135',
+          'Output = 4 units where profit is still rising – maximum profit = £130',
+          'Output = 6 units to maximise total revenue (MR = 0) – maximum profit = £40',
+          'Output = 2 units where MC is lowest – maximum profit = £115'
         ],
         ans: 0,
-        exp: 'Profit maximisation: produce while MR > MC, stop when MR < MC. At output 3: MR (£60) > MC (£40) → expand. At output 4: MR (£40) < MC (£45) → don\'t expand. Maximum profit at output <strong>3 units = £135</strong>. Note: profit still positive at output 4 (£130) but lower — profit is maximised, not just positive, at output 3. Output 6 maximises revenue (MR=0) but profit = only £40. This confirms: profit max ≠ revenue max ≠ ATC min. The MR=MC rule directs the firm to the globally maximum profit point.'
+        exp: 'Profit maximisation: produce while MR > MC, stop when MR < MC. At output 3: MR (£60) > MC (£40) → expand. At output 4: MR (£40) < MC (£45) → don\'t expand. Maximum profit at output <strong>3 units = £135</strong>. Note: profit still positive at output 4 (£130) but lower – profit is maximised, not just positive, at output 3. Output 6 maximises revenue (MR=0) but profit = only £40. This confirms: profit max ≠ revenue max ≠ ATC min. The MR=MC rule directs the firm to the globally maximum profit point.'
       }
 
     ]

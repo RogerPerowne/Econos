@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    PPF: evaluate the green investment as rational PPF trade-off claim
    ============================================================ */
 
@@ -25,7 +25,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🌱',
         prompt: 'Claim',
-        text:   'Green investment is a rational PPF trade — SR sacrifice for LR shift.'
+        text:   'Green investment is a rational PPF trade – SR sacrifice for LR shift.'
       },
       factors: [
         {
@@ -38,25 +38,25 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'productivity-multiplier',
           icon:  '🔧',
           label: 'Productivity of the investment (size of PPF shift)',
-          why:   'The long-run justification only holds if green investment actually shifts the PPF outward by more than the opportunity cost. If offshore wind energy is cheap and reliable, the productivity gain across the economy may justify the current sacrifice. If cost overruns occur or technology underperforms, the PPF shift is smaller than expected — making the trade-off retrospectively poor.'
+          why:   'The long-run justification only holds if green investment actually shifts the PPF outward by more than the opportunity cost. If offshore wind energy is cheap and reliable, the productivity gain across the economy may justify the current sacrifice. If cost overruns occur or technology underperforms, the PPF shift is smaller than expected – making the trade-off retrospectively poor.'
         },
         {
           id:    'crowding-out',
           icon:  '💷',
           label: 'Whether public investment crowds out or crowds in private investment',
-          why:   'Government green investment may crowd out private green investment (competing for the same engineers, land and finance). Or it may crowd in private investment (de-risking early-stage projects, building supply chains, creating markets). IPPR estimates £3–4 of private investment per £1 public — if accurate, the opportunity cost of each £1 public investment is less than it appears because private activity amplifies the shift.'
+          why:   'Government green investment may crowd out private green investment (competing for the same engineers, land and finance). Or it may crowd in private investment (de-risking early-stage projects, building supply chains, creating markets). IPPR estimates £3–4 of private investment per £1 public – if accurate, the opportunity cost of each £1 public investment is less than it appears because private activity amplifies the shift.'
         },
         {
           id:    'political-commitment',
           icon:  '🗳️',
           label: 'Political sustainability of the investment plan',
-          why:   'Long-run PPF shifts require sustained investment over many years. If a green investment programme is abandoned mid-way (as the UK\'s £28bn pledge was scaled back before implementation), sunk costs are realised without the PPF shift completing. Political discontinuity reduces the expected value of investment — increasing effective opportunity cost.'
+          why:   'Long-run PPF shifts require sustained investment over many years. If a green investment programme is abandoned mid-way (as the UK\'s £28bn pledge was scaled back before implementation), sunk costs are realised without the PPF shift completing. Political discontinuity reduces the expected value of investment – increasing effective opportunity cost.'
         },
         {
           id:    'international-competitiveness',
           icon:  '🌍',
           label: 'Whether competitors are making similar PPF investments',
-          why:   'If all major economies invest in green infrastructure simultaneously (IRA in USA, EU Green Deal), the relative competitiveness effect is muted. If only the UK invests heavily, it may build a first-mover advantage in green industries — a larger PPF shift from the same opportunity cost. The global investment landscape shapes the return on UK PPF allocation.'
+          why:   'If all major economies invest in green infrastructure simultaneously (IRA in USA, EU Green Deal), the relative competitiveness effect is muted. If only the UK invests heavily, it may build a first-mover advantage in green industries – a larger PPF shift from the same opportunity cost. The global investment landscape shapes the return on UK PPF allocation.'
         },
         {
           id:    'resource-availability',
@@ -74,11 +74,11 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'alternative-investment',
           icon:  '🏗️',
           label: 'Opportunity cost vs alternatives (health, education, housing)',
-          why:   'Green infrastructure is not the only way to shift the PPF outward. Investment in healthcare capacity, education quality, or housing infrastructure also raises productive potential. The PPF argument for green investment is strongest when its productivity return exceeds that of alternatives — which requires careful cost-benefit comparison across competing investment categories.'
+          why:   'Green infrastructure is not the only way to shift the PPF outward. Investment in healthcare capacity, education quality, or housing infrastructure also raises productive potential. The PPF argument for green investment is strongest when its productivity return exceeds that of alternatives – which requires careful cost-benefit comparison across competing investment categories.'
         }
       ],
       modelRanking: ['productivity-multiplier', 'political-commitment', 'crowding-out'],
-      judgement: '"Whether green investment is the best PPF trade-off depends primarily on the size of the outward shift it produces: if cheap, reliable clean energy raises productivity across all sectors by more than the opportunity cost of foregone public services, the trade-off is rational. Political sustainability is the second key condition — the long-run shift requires consistent investment across multiple governments. And crowding-in of private capital determines the true opportunity cost of each £1 of public investment."'
+      judgement: '"Whether green investment is the best PPF trade-off depends primarily on the size of the outward shift it produces: if cheap, reliable clean energy raises productivity across all sectors by more than the opportunity cost of foregone public services, the trade-off is rational. Political sustainability is the second key condition – the long-run shift requires consistent investment across multiple governments. And crowding-in of private capital determines the true opportunity cost of each £1 of public investment."'
     }
   ]
 };

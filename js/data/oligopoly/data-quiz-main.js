@@ -24,7 +24,7 @@
           'Two firms competing with homogeneous products'
         ],
         ans:  2,
-        exp:  'Oligopoly is a market structure dominated by a small number of large firms. A key feature is strategic interdependence — each firm must consider rivals\' reactions to its decisions.'
+        exp:  'Oligopoly is a market structure dominated by a small number of large firms. A key feature is strategic interdependence – each firm must consider rivals\' reactions to its decisions.'
       },
       {
         id:   'q_olig_2',
@@ -50,7 +50,7 @@
           'Government intervention prevents price changes'
         ],
         ans:  0,
-        exp:  'If a firm raises price, rivals keep theirs low (the firm loses many customers — elastic section). If a firm cuts price, rivals follow (the firm gains few customers — inelastic section). The kink creates a gap in MR, keeping price stable.'
+        exp:  'If a firm raises price, rivals keep theirs low (the firm loses many customers – elastic section). If a firm cuts price, rivals follow (the firm gains few customers – inelastic section). The kink creates a gap in MR, keeping price stable.'
       },
       {
         id:   'q_olig_4',
@@ -63,7 +63,7 @@
           'Setting price equal to marginal cost'
         ],
         ans:  1,
-        exp:  'Oligopolists tend to avoid price competition (risk of price wars) and instead compete via advertising, product quality, loyalty schemes, and brand image — collectively called non-price competition.'
+        exp:  'Oligopolists tend to avoid price competition (risk of price wars) and instead compete via advertising, product quality, loyalty schemes, and brand image – collectively called non-price competition.'
       },
       {
         id:   'q_olig_5',
@@ -123,7 +123,7 @@
         ],
         opts: ['Supermarkets','Hair salons','Petrol retailing','Online search engines'],
         ans:  3,
-        exp:  'Online search engines have a CR4 of 95%, meaning the top 4 firms control 95% of output — the highest degree of market concentration shown.'
+        exp:  'Online search engines have a CR4 of 95%, meaning the top 4 firms control 95% of output – the highest degree of market concentration shown.'
       },
       {
         id:   'q_olig_10',

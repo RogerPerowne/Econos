@@ -11,6 +11,6 @@ window.ECONOS_LAND_COMPLETE = {
   nextCard: {
     icon:  '&#x1F3C6;',
     title: 'What to do next',
-    text:  'Compare your answers with the model responses. Check whether you applied strategic interdependence &#8212; not just listed characteristics &#8212; and whether you drew the kinked demand curve with the vertical MR gap where relevant. For essay questions, assess whether your answer distinguished competitive from collusive oligopoly, used specific UK evidence (supermarket market shares, petrol CMA findings, banking profit data), and reached a conditional conclusion rather than an absolute judgement about whether oligopoly is harmful.'
+    text:  'Compare your answers with the model responses. Check whether you applied strategic interdependence &#8211; not just listed characteristics &#8211; and whether you drew the kinked demand curve with the vertical MR gap where relevant. For essay questions, assess whether your answer distinguished competitive from collusive oligopoly, used specific UK evidence (supermarket market shares, petrol CMA findings, banking profit data), and reached a conditional conclusion rather than an absolute judgement about whether oligopoly is harmful.'
   }
 };

@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for govt_failure
+   ECONOS – Link It intro/landing data for govt_failure
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your government failure knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: 'Use the UK Help to Buy scheme (2013–23) to apply the government failure framework — how a well-intentioned demand subsidy can worsen the problem it was designed to solve when supply constraints are ignored in policy design.',
+    summary: 'Use the UK Help to Buy scheme (2013–23) to apply the government failure framework – how a well-intentioned demand subsidy can worsen the problem it was designed to solve when supply constraints are ignored in policy design.',
     heroKey: 'heroIntervention',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Analyse real-world extract cases of government failure including planning and biofuel policy',
       'Evaluate the conditions under which government intervention worsens rather than corrects market failure'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

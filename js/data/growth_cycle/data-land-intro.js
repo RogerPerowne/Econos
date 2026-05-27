@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Land It intro page data
+   ECONOS – Land It intro page data
    Topic: Economic Growth and the Business Cycle (2.10)
    ============================================================ */
 

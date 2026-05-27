@@ -8,11 +8,11 @@
   the URL shape is intentionally generic so future quiz types
   (past-paper practice, adaptive weakness-targeted, daily mixed-topic
   warm-ups, predicted-paper mocks) can ship under the same route by
-  adding a new data file — no new HTML, no engine changes.
+  adding a new data file – no new HTML, no engine changes.
 
   This is the canonical quiz route. Link It and Land It also host
   *stage-specific* quizzes inline as `?station=quiz` (because those
-  are tightly coupled to the work just done in those sections) —
+  are tightly coupled to the work just done in those sections) –
   see js/engines/link-router.js + land-router.js. quiz.html stays
   separate for the cross-section / standalone use cases.
 -->
@@ -127,7 +127,7 @@
         +   '<div class="quiz-hero">'
         +     '<div class="quiz-hero__eyebrow">Test yourself</div>'
         +     '<div class="quiz-hero__title">' + Q.title + '</div>'
-        +     '<p class="quiz-hero__lede">' + (Q.lede || 'Exam-style questions across mixed formats — designed for the analysis and evaluation marks examiners reward.') + '</p>'
+        +     '<p class="quiz-hero__lede">' + (Q.lede || 'Exam-style questions across mixed formats – designed for the analysis and evaluation marks examiners reward.') + '</p>'
         +     '<div class="quiz-hero__meta">'
         +       '<div class="quiz-hero__meta-item"><span class="quiz-hero__meta-label">Questions</span><span class="quiz-hero__meta-value">' + Q.questions.length + '</span></div>'
         +       '<div class="quiz-hero__meta-item"><span class="quiz-hero__meta-label">Approx. time</span><span class="quiz-hero__meta-value">15–20 min</span></div>'

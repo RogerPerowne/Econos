@@ -1,16 +1,16 @@
 /* ============================================================
-   ECONOS — Land It · Section A data for Aggregate Supply
+   ECONOS – Land It · Section A data for Aggregate Supply
    Topic: Aggregate Supply (2.8)
    ============================================================ */
 
 window.ECONOS_LAND_SECTION_A = {
   topic:        'Aggregate Supply',
-  sectionLabel: 'Section A &#8212; Short questions',
+  sectionLabel: 'Section A &#8211; Short questions',
   backUrl:      TopicLoader.buildUrl('land_intro.html'),
 
   questions: [
 
-    /* ── Q1 — SRAS vs LRAS ───────────────────────────────────── */
+    /* ── Q1 – SRAS vs LRAS ───────────────────────────────────── */
     {
       id:       'q1',
       title:    'Question 1',
@@ -41,8 +41,8 @@ window.ECONOS_LAND_SECTION_A = {
             { id: 'opt-d', text: 'Both SRAS and LRAS are vertical, but at different price levels'                                                     }
           ],
           correct:         'opt-c',
-          feedbackCorrect: 'Correct. In the short run, wages and other input costs are sticky, so a rise in the price level increases firms&#39; profit margins and incentivises them to expand output &#8212; hence SRAS slopes upward. In the long run, wages and costs fully adjust, so output returns to potential regardless of the price level &#8212; hence LRAS is vertical.',
-          feedbackWrong:   'The correct answer is C. In the short run, nominal wages are fixed by contracts, so a rise in the price level raises firms&#39; revenue without raising costs, incentivising more production &#8212; the SRAS curve is upward-sloping. In the long run, wages and all input costs adjust fully, so the economy returns to its potential output level regardless of the price level, making LRAS vertical.'
+          feedbackCorrect: 'Correct. In the short run, wages and other input costs are sticky, so a rise in the price level increases firms&#39; profit margins and incentivises them to expand output &#8211; hence SRAS slopes upward. In the long run, wages and costs fully adjust, so output returns to potential regardless of the price level &#8211; hence LRAS is vertical.',
+          feedbackWrong:   'The correct answer is C. In the short run, nominal wages are fixed by contracts, so a rise in the price level raises firms&#39; revenue without raising costs, incentivising more production &#8211; the SRAS curve is upward-sloping. In the long run, wages and all input costs adjust fully, so the economy returns to its potential output level regardless of the price level, making LRAS vertical.'
         },
         {
           id:          'q1b',
@@ -50,13 +50,13 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the data, explain two factors that determine the position of the LRAS curve in the UK economy.',
-          hint:        '4-mark response &#8212; identify two supply-side factors and explain the mechanism by which each determines the economy&#39;s potential output.',
-          modelAnswer: 'First, the quantity and quality of labour determines the LRAS. A larger, better-educated, and more skilled workforce increases the economy&#39;s productive potential. If UK participation rates rise &#8212; for example, through policies that bring more workers into employment, such as improved childcare provision &#8212; the effective labour supply increases, shifting the LRAS to the right and raising potential output. The current unemployment rate of 3.7% suggests the labour market is already fairly tight, meaning there is limited spare labour capacity to expand supply further without wage inflation. Second, the level of capital stock and technology determines productive capacity. Investment in new machinery, infrastructure, and digital technology enhances labour productivity, enabling the same workforce to produce more output. The UK&#39;s persistent output gap of approximately &#8722;0.5% of GDP suggests the economy was operating slightly below potential in 2022, but longer-run growth in potential output depends on sustained investment in physical and human capital. Improvements in technology &#8212; such as automation and AI &#8212; can also shift the LRAS to the right by raising total factor productivity.'
+          hint:        '4-mark response &#8211; identify two supply-side factors and explain the mechanism by which each determines the economy&#39;s potential output.',
+          modelAnswer: 'First, the quantity and quality of labour determines the LRAS. A larger, better-educated, and more skilled workforce increases the economy&#39;s productive potential. If UK participation rates rise &#8211; for example, through policies that bring more workers into employment, such as improved childcare provision &#8211; the effective labour supply increases, shifting the LRAS to the right and raising potential output. The current unemployment rate of 3.7% suggests the labour market is already fairly tight, meaning there is limited spare labour capacity to expand supply further without wage inflation. Second, the level of capital stock and technology determines productive capacity. Investment in new machinery, infrastructure, and digital technology enhances labour productivity, enabling the same workforce to produce more output. The UK&#39;s persistent output gap of approximately &#8722;0.5% of GDP suggests the economy was operating slightly below potential in 2022, but longer-run growth in potential output depends on sustained investment in physical and human capital. Improvements in technology &#8211; such as automation and AI &#8211; can also shift the LRAS to the right by raising total factor productivity.'
         }
       ]
     },
 
-    /* ── Q2 — Supply-side shock: energy prices ───────────────── */
+    /* ── Q2 – Supply-side shock: energy prices ───────────────── */
     {
       id:       'q2',
       title:    'Question 2',
@@ -66,7 +66,7 @@ window.ECONOS_LAND_SECTION_A = {
       context: {
         type:   'text-extract',
         source: 'Adapted from the ONS, UK Economic Accounts, 2022',
-        text:   'UK wholesale natural gas prices rose by over 400% between January 2021 and their peak in August 2022, following the disruption of European energy markets caused by Russia&#39;s invasion of Ukraine. Electricity prices followed a similar trajectory. For UK firms, energy represents a significant input cost &#8212; particularly in manufacturing, chemicals, and food processing &#8212; and the surge in costs directly eroded profit margins. Many energy-intensive businesses reduced output or temporarily closed production lines. The ONS noted that UK manufacturing output fell by 2.1% in the year to December 2022, while producer price inflation (PPI) reached 19.9% by July 2022, reflecting the pass-through of higher input costs to factory-gate prices.'
+        text:   'UK wholesale natural gas prices rose by over 400% between January 2021 and their peak in August 2022, following the disruption of European energy markets caused by Russia&#39;s invasion of Ukraine. Electricity prices followed a similar trajectory. For UK firms, energy represents a significant input cost &#8211; particularly in manufacturing, chemicals, and food processing &#8211; and the surge in costs directly eroded profit margins. Many energy-intensive businesses reduced output or temporarily closed production lines. The ONS noted that UK manufacturing output fell by 2.1% in the year to December 2022, while producer price inflation (PPI) reached 19.9% by July 2022, reflecting the pass-through of higher input costs to factory-gate prices.'
       },
 
       parts: [
@@ -76,8 +76,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the extract, explain how a sharp rise in energy prices affects short-run aggregate supply in the UK economy.',
-          hint:        '4-mark response &#8212; explain the mechanism by which higher energy costs shift the SRAS curve, and use AD&#47;AS analysis to show the effect on output and the price level.',
-          modelAnswer: 'A sharp rise in energy prices is a classic negative supply-side shock. Energy is a key input cost for firms across the economy &#8212; particularly in manufacturing, transport, and food processing, as the extract emphasises. When energy costs surge by over 400%, as UK gas prices did between 2021 and 2022, production becomes more expensive at every level of output. Firms face higher costs without any corresponding increase in revenue or productivity, so their profit margins are squeezed. In the AD&#47;AS model, this is shown as an upward (leftward) shift in the short-run aggregate supply curve (SRAS): at any given price level, firms are willing and able to supply less output because costs have risen. The consequence is stagflation &#8212; a simultaneous fall in real output and rise in the price level. The extract confirms both effects: UK manufacturing output fell 2.1%, while producer price inflation hit 19.9% by July 2022, eventually feeding through into consumer prices at 11.1%. Firms respond by cutting production &#8212; as the extract notes, some energy-intensive businesses temporarily closed &#8212; which reduces real GDP and may lead to job losses, worsening the growth outlook while inflation simultaneously rises. This creates a difficult dilemma for policymakers: demand-management policies that reduce inflation (higher interest rates) risk deepening the output contraction, while policies to support output risk embedding inflation further.'
+          hint:        '4-mark response &#8211; explain the mechanism by which higher energy costs shift the SRAS curve, and use AD&#47;AS analysis to show the effect on output and the price level.',
+          modelAnswer: 'A sharp rise in energy prices is a classic negative supply-side shock. Energy is a key input cost for firms across the economy &#8211; particularly in manufacturing, transport, and food processing, as the extract emphasises. When energy costs surge by over 400%, as UK gas prices did between 2021 and 2022, production becomes more expensive at every level of output. Firms face higher costs without any corresponding increase in revenue or productivity, so their profit margins are squeezed. In the AD&#47;AS model, this is shown as an upward (leftward) shift in the short-run aggregate supply curve (SRAS): at any given price level, firms are willing and able to supply less output because costs have risen. The consequence is stagflation &#8211; a simultaneous fall in real output and rise in the price level. The extract confirms both effects: UK manufacturing output fell 2.1%, while producer price inflation hit 19.9% by July 2022, eventually feeding through into consumer prices at 11.1%. Firms respond by cutting production &#8211; as the extract notes, some energy-intensive businesses temporarily closed &#8211; which reduces real GDP and may lead to job losses, worsening the growth outlook while inflation simultaneously rises. This creates a difficult dilemma for policymakers: demand-management policies that reduce inflation (higher interest rates) risk deepening the output contraction, while policies to support output risk embedding inflation further.'
         },
         {
           id:     'q2b',
@@ -92,13 +92,13 @@ window.ECONOS_LAND_SECTION_A = {
             { id: 'opt-d', text: 'Higher real output and a lower price level'                          }
           ],
           correct:         'opt-c',
-          feedbackCorrect: 'Correct. A negative supply shock shifts SRAS to the left. In the AD&#47;AS model, the new equilibrium occurs at a higher price level and lower real output &#8212; the combination known as stagflation. This is precisely what the UK experienced in 2022.',
-          feedbackWrong:   'The correct answer is C. When SRAS shifts left &#8212; because input costs have risen &#8212; the new equilibrium with an unchanged AD curve is at a higher price level (cost-push inflation) and lower real GDP. This is stagflation &#8212; the characteristic outcome of a negative supply shock.'
+          feedbackCorrect: 'Correct. A negative supply shock shifts SRAS to the left. In the AD&#47;AS model, the new equilibrium occurs at a higher price level and lower real output &#8211; the combination known as stagflation. This is precisely what the UK experienced in 2022.',
+          feedbackWrong:   'The correct answer is C. When SRAS shifts left &#8211; because input costs have risen &#8211; the new equilibrium with an unchanged AD curve is at a higher price level (cost-push inflation) and lower real GDP. This is stagflation &#8211; the characteristic outcome of a negative supply shock.'
         }
       ]
     },
 
-    /* ── Q3 — Productivity ───────────────────────────────────── */
+    /* ── Q3 – Productivity ───────────────────────────────────── */
     {
       id:       'q3',
       title:    'Question 3',
@@ -122,8 +122,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the data, explain how a sustained improvement in labour productivity would affect aggregate supply in the UK economy.',
-          hint:        '4-mark response &#8212; explain the mechanism by which higher productivity shifts both SRAS and LRAS, using the data to illustrate the significance of the productivity puzzle.',
-          modelAnswer: 'Labour productivity measures output per worker (or per hour worked). A sustained improvement in productivity means the same workforce produces more goods and services in a given period. In the AD&#47;AS model, this shifts both the SRAS curve to the right (as lower unit costs allow firms to supply more at each price level) and the LRAS curve to the right (as the economy&#39;s potential output &#8212; what it can produce at full employment &#8212; increases). The data highlights the critical importance of this: UK productivity growth has averaged just 0.4% per year since 2008, compared with 2.2% per year in the pre-crisis decade and a G7 average of 0.9% per year since 2010. This &#8220;productivity puzzle&#8221; means UK aggregate supply has grown much more slowly than it otherwise would have, constraining real GDP growth and real wage increases. If productivity growth could be restored to its pre-2008 trend &#8212; through higher business investment, better skills, improved management practices, and greater diffusion of technology &#8212; this would shift the LRAS to the right, raising potential output and enabling non-inflationary growth. The output per hour index of 101.2 (vs 2019 = 100) in 2023 confirms that progress since the pandemic has been minimal.'
+          hint:        '4-mark response &#8211; explain the mechanism by which higher productivity shifts both SRAS and LRAS, using the data to illustrate the significance of the productivity puzzle.',
+          modelAnswer: 'Labour productivity measures output per worker (or per hour worked). A sustained improvement in productivity means the same workforce produces more goods and services in a given period. In the AD&#47;AS model, this shifts both the SRAS curve to the right (as lower unit costs allow firms to supply more at each price level) and the LRAS curve to the right (as the economy&#39;s potential output &#8211; what it can produce at full employment &#8211; increases). The data highlights the critical importance of this: UK productivity growth has averaged just 0.4% per year since 2008, compared with 2.2% per year in the pre-crisis decade and a G7 average of 0.9% per year since 2010. This &#8220;productivity puzzle&#8221; means UK aggregate supply has grown much more slowly than it otherwise would have, constraining real GDP growth and real wage increases. If productivity growth could be restored to its pre-2008 trend &#8211; through higher business investment, better skills, improved management practices, and greater diffusion of technology &#8211; this would shift the LRAS to the right, raising potential output and enabling non-inflationary growth. The output per hour index of 101.2 (vs 2019 = 100) in 2023 confirms that progress since the pandemic has been minimal.'
         },
         {
           id:     'q3b',
@@ -139,12 +139,12 @@ window.ECONOS_LAND_SECTION_A = {
           ],
           correct:         'opt-c',
           feedbackCorrect: 'Correct. Higher labour productivity increases the output the economy can produce with its existing resources, shifting the LRAS to the right. This raises potential GDP and, over time, supports real wage growth as workers become more valuable to employers.',
-          feedbackWrong:   'The correct answer is C. Rising labour productivity means the same inputs produce more output, increasing the economy&#39;s supply capacity. In the AD&#47;AS model, this shifts the LRAS to the right &#8212; the economy can produce more at full employment &#8212; and lowers unit costs, also shifting SRAS to the right. Real wages can rise without causing inflation because productivity growth justifies the higher pay.'
+          feedbackWrong:   'The correct answer is C. Rising labour productivity means the same inputs produce more output, increasing the economy&#39;s supply capacity. In the AD&#47;AS model, this shifts the LRAS to the right &#8211; the economy can produce more at full employment &#8211; and lowers unit costs, also shifting SRAS to the right. Real wages can rise without causing inflation because productivity growth justifies the higher pay.'
         }
       ]
     },
 
-    /* ── Q4 — Labour market flexibility ─────────────────────── */
+    /* ── Q4 – Labour market flexibility ─────────────────────── */
     {
       id:       'q4',
       title:    'Question 4',
@@ -154,7 +154,7 @@ window.ECONOS_LAND_SECTION_A = {
       context: {
         type:   'text-extract',
         source: 'Adapted from the OECD Employment Outlook, 2022',
-        text:   'The OECD notes that labour market flexibility &#8212; the ease with which employers can adjust workforce size, working hours, and pay &#8212; is a key determinant of how quickly an economy can respond to shocks. The UK has traditionally had relatively flexible labour markets compared with continental European economies, with fewer restrictions on hiring and firing and a large part-time and zero-hours workforce. Proponents argue this flexibility reduces structural unemployment and allows the economy to reallocate labour quickly from declining to growing sectors. Critics contend that insecurity and low pay associated with flexible contracts reduce worker investment in skills and dampen productivity. Following the COVID-19 pandemic, the UK experienced significant labour market tightening, with vacancies reaching record highs of over 1.3 million in 2022, suggesting structural mismatches between the skills demanded by employers and those available in the workforce.'
+        text:   'The OECD notes that labour market flexibility &#8211; the ease with which employers can adjust workforce size, working hours, and pay &#8211; is a key determinant of how quickly an economy can respond to shocks. The UK has traditionally had relatively flexible labour markets compared with continental European economies, with fewer restrictions on hiring and firing and a large part-time and zero-hours workforce. Proponents argue this flexibility reduces structural unemployment and allows the economy to reallocate labour quickly from declining to growing sectors. Critics contend that insecurity and low pay associated with flexible contracts reduce worker investment in skills and dampen productivity. Following the COVID-19 pandemic, the UK experienced significant labour market tightening, with vacancies reaching record highs of over 1.3 million in 2022, suggesting structural mismatches between the skills demanded by employers and those available in the workforce.'
       },
 
       parts: [
@@ -164,8 +164,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the extract, explain two ways in which greater labour market flexibility could affect the level of aggregate supply.',
-          hint:        '4-mark response &#8212; identify two distinct channels through which labour market flexibility affects SRAS or LRAS, using evidence from the extract.',
-          modelAnswer: 'First, greater labour market flexibility reduces structural unemployment by enabling faster reallocation of workers between sectors. When declining industries shed workers, flexible hiring rules and low barriers to entry mean growing sectors can absorb this labour more quickly. As the extract notes, the UK&#39;s relatively flexible labour market &#8212; with fewer restrictions on hiring and firing compared with continental Europe &#8212; is associated with lower structural unemployment. Lower unemployment means the economy can operate closer to its productive potential, effectively shifting the LRAS to the right as more of the workforce is productively employed. This is particularly relevant in the post-COVID context: the record 1.3 million vacancies in 2022 suggest structural mismatches that prevented rapid reallocation, indicating that flexibility alone is insufficient without complementary skills investment. Second, however, the extract identifies that excessive flexibility may reduce investment in human capital, potentially constraining LRAS growth over the long run. If workers on zero-hours contracts or short-term arrangements lack incentive or financial stability to invest in further training and skills, the quality of the workforce stagnates. Similarly, firms with a flexible &#8220;hire-and-fire&#8221; mentality may underinvest in on-the-job training. Lower human capital accumulation shifts the LRAS to the left relative to what it could have been, reducing the economy&#39;s productive potential. This suggests a trade-off: short-run flexibility may aid SRAS adjustment, but only labour market structures that also encourage productivity-enhancing investment will shift the LRAS to the right sustainably.'
+          hint:        '4-mark response &#8211; identify two distinct channels through which labour market flexibility affects SRAS or LRAS, using evidence from the extract.',
+          modelAnswer: 'First, greater labour market flexibility reduces structural unemployment by enabling faster reallocation of workers between sectors. When declining industries shed workers, flexible hiring rules and low barriers to entry mean growing sectors can absorb this labour more quickly. As the extract notes, the UK&#39;s relatively flexible labour market &#8211; with fewer restrictions on hiring and firing compared with continental Europe &#8211; is associated with lower structural unemployment. Lower unemployment means the economy can operate closer to its productive potential, effectively shifting the LRAS to the right as more of the workforce is productively employed. This is particularly relevant in the post-COVID context: the record 1.3 million vacancies in 2022 suggest structural mismatches that prevented rapid reallocation, indicating that flexibility alone is insufficient without complementary skills investment. Second, however, the extract identifies that excessive flexibility may reduce investment in human capital, potentially constraining LRAS growth over the long run. If workers on zero-hours contracts or short-term arrangements lack incentive or financial stability to invest in further training and skills, the quality of the workforce stagnates. Similarly, firms with a flexible &#8220;hire-and-fire&#8221; mentality may underinvest in on-the-job training. Lower human capital accumulation shifts the LRAS to the left relative to what it could have been, reducing the economy&#39;s productive potential. This suggests a trade-off: short-run flexibility may aid SRAS adjustment, but only labour market structures that also encourage productivity-enhancing investment will shift the LRAS to the right sustainably.'
         },
         {
           id:     'q4b',
@@ -180,13 +180,13 @@ window.ECONOS_LAND_SECTION_A = {
             { id: 'opt-d', text: 'Unemployment that results from seasonal fluctuations in labour demand'                            }
           ],
           correct:         'opt-b',
-          feedbackCorrect: 'Correct. Structural unemployment arises when there is a mismatch between the skills workers possess and those demanded by employers &#8212; often because technological change or deindustrialisation has made certain skills obsolete. It is a supply-side problem that cannot be solved by demand-side stimulus alone.',
+          feedbackCorrect: 'Correct. Structural unemployment arises when there is a mismatch between the skills workers possess and those demanded by employers &#8211; often because technological change or deindustrialisation has made certain skills obsolete. It is a supply-side problem that cannot be solved by demand-side stimulus alone.',
           feedbackWrong:   'The correct answer is B. Structural unemployment is caused by a long-run mismatch between worker skills and employer requirements. The record 1.3 million vacancies in the UK in 2022 alongside significant unemployment suggest structural mismatch. Option A describes cyclical unemployment; option C describes frictional unemployment; option D describes seasonal unemployment.'
         }
       ]
     },
 
-    /* ── Q5 — LRAS shifts and long-run growth ───────────────── */
+    /* ── Q5 – LRAS shifts and long-run growth ───────────────── */
     {
       id:       'q5',
       title:    'Question 5',
@@ -210,8 +210,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the data, explain two supply-side policies the government could use to shift the LRAS curve to the right.',
-          hint:        '4-mark response &#8212; identify two distinct supply-side policy tools and explain the mechanism by which each raises potential output, using the data where relevant.',
-          modelAnswer: 'First, the government could increase investment in research and development (R&amp;D) through tax credits or direct funding. The data shows UK R&amp;D spending at just 1.7% of GDP in 2021, significantly below the G7 average of 2.7%. Sustained underinvestment in R&amp;D means new technologies and production methods diffuse more slowly into the UK economy, constraining productivity and potential output. By incentivising private R&amp;D through generous tax allowances &#8212; as the UK has done through the Patent Box and R&amp;D tax credit scheme &#8212; the government can shift the LRAS to the right as innovation raises total factor productivity. Over time, higher productivity means the same workforce and capital stock produce more output, permanently raising potential GDP. Second, large-scale infrastructure investment can shift the LRAS to the right by improving productive capacity. The government&#39;s &#163;100 billion infrastructure target aims to reduce transport bottlenecks, upgrade digital connectivity, and expand energy capacity. Better infrastructure reduces firms&#39; costs &#8212; faster freight, more reliable power &#8212; improving productive efficiency. It also raises the effective mobility of labour by making commuting more feasible, expanding the functional size of labour markets. Since UK business investment as a proportion of GDP (9.8% in 2022) lags behind competitor economies, public infrastructure can complement and crowd in private investment by improving the environment in which firms operate.'
+          hint:        '4-mark response &#8211; identify two distinct supply-side policy tools and explain the mechanism by which each raises potential output, using the data where relevant.',
+          modelAnswer: 'First, the government could increase investment in research and development (R&amp;D) through tax credits or direct funding. The data shows UK R&amp;D spending at just 1.7% of GDP in 2021, significantly below the G7 average of 2.7%. Sustained underinvestment in R&amp;D means new technologies and production methods diffuse more slowly into the UK economy, constraining productivity and potential output. By incentivising private R&amp;D through generous tax allowances &#8211; as the UK has done through the Patent Box and R&amp;D tax credit scheme &#8211; the government can shift the LRAS to the right as innovation raises total factor productivity. Over time, higher productivity means the same workforce and capital stock produce more output, permanently raising potential GDP. Second, large-scale infrastructure investment can shift the LRAS to the right by improving productive capacity. The government&#39;s &#163;100 billion infrastructure target aims to reduce transport bottlenecks, upgrade digital connectivity, and expand energy capacity. Better infrastructure reduces firms&#39; costs &#8211; faster freight, more reliable power &#8211; improving productive efficiency. It also raises the effective mobility of labour by making commuting more feasible, expanding the functional size of labour markets. Since UK business investment as a proportion of GDP (9.8% in 2022) lags behind competitor economies, public infrastructure can complement and crowd in private investment by improving the environment in which firms operate.'
         },
         {
           id:     'q5b',
@@ -226,8 +226,8 @@ window.ECONOS_LAND_SECTION_A = {
             { id: 'opt-d', text: 'A rise in government current spending on public services'                       }
           ],
           correct:         'opt-c',
-          feedbackCorrect: 'Correct. The LRAS is determined by the economy&#39;s productive potential &#8212; its stock of labour, capital, technology, and institutional quality. Investment in education and training raises the quality of the human capital stock, permanently increasing the output the economy can produce at full employment and shifting the LRAS to the right.',
-          feedbackWrong:   'The correct answer is C. The LRAS shifts right only when the economy&#39;s underlying productive potential increases &#8212; through more or better quality factors of production, or improved technology. Education and training raise human capital, shifting LRAS right. Options A and D affect aggregate demand or SRAS in the short run. Option B affects SRAS and investment temporarily, but does not of itself shift the LRAS.'
+          feedbackCorrect: 'Correct. The LRAS is determined by the economy&#39;s productive potential &#8211; its stock of labour, capital, technology, and institutional quality. Investment in education and training raises the quality of the human capital stock, permanently increasing the output the economy can produce at full employment and shifting the LRAS to the right.',
+          feedbackWrong:   'The correct answer is C. The LRAS shifts right only when the economy&#39;s underlying productive potential increases &#8211; through more or better quality factors of production, or improved technology. Education and training raise human capital, shifting LRAS right. Options A and D affect aggregate demand or SRAS in the short run. Option B affects SRAS and investment temporarily, but does not of itself shift the LRAS.'
         }
       ]
     }

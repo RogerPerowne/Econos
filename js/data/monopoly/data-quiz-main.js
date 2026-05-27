@@ -73,7 +73,7 @@
           'Barriers to entry are created by brand loyalty'
         ],
         ans:  1,
-        exp:  'A natural monopoly arises when the scale economies are so large that one firm can supply the whole market at lower average cost than two or more firms could — the market can only support one efficient supplier.'
+        exp:  'A natural monopoly arises when the scale economies are so large that one firm can supply the whole market at lower average cost than two or more firms could – the market can only support one efficient supplier.'
       },
       {
         id:   'q_mon_6',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Patent','Brand loyalty','Perfect information','High sunk costs'],
         ans:  2,
-        exp:  'Patents, brand loyalty, and high sunk costs are all barriers to entry that protect monopoly power. Perfect information is a condition of perfect competition — its presence undermines monopoly power.'
+        exp:  'Patents, brand loyalty, and high sunk costs are all barriers to entry that protect monopoly power. Perfect information is a condition of perfect competition – its presence undermines monopoly power.'
       },
       {
         id:   'q_mon_9',
@@ -116,7 +116,7 @@
         q:    'Use the table to identify at which output the monopolist maximises profit (MR = MC).',
         tableHeaders: ['Output','Price (£)','TR (£)','MR (£)','TC (£)','MC (£)'],
         tableData: [
-          ['1','50','50','—','30','—'],
+          ['1','50','50','–','30','–'],
           ['2','45','90','40','52','22'],
           ['3','40','120','30','69','17'],
           ['4','35','140','20','92','23'],

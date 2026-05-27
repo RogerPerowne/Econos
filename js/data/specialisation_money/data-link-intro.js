@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for specialisation_money
+   ECONOS – Link It intro/landing data for specialisation_money
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your knowledge of specialisation and money into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "You've locked in how the division of labour raises productivity and why money is needed to make exchange work. Now train the skills examiners reward — applying the framework to a real-world supply chain, building the watertight specialisation → surplus → exchange → money chain, and reaching a supported judgement on whether specialisation and money are the foundation of modern prosperity.",
+    summary: "You've locked in how the division of labour raises productivity and why money is needed to make exchange work. Now train the skills examiners reward – applying the framework to a real-world supply chain, building the watertight specialisation → surplus → exchange → money chain, and reaching a supported judgement on whether specialisation and money are the foundation of modern prosperity.",
     heroKey: 'heroBars',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -19,7 +19,7 @@ window.ECONOS_LINK_INTRO = {
       'Evaluate the key conditions that determine whether specialisation raises productivity',
       'Reach a supported judgement on the claim that specialisation and money underpin modern prosperity'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

@@ -41,7 +41,7 @@
   <!-- ═══ STICKY NAV ═══ -->
   <nav class="topnav" role="navigation" aria-label="Main navigation">
     <a href="/" class="topnav__logo" aria-label="econos home">
-      <img src="assets/logo-wordmark-mark.png" alt="econos — Learn it. Link it. Land it." height="36">
+      <img src="assets/logo-wordmark-mark.png" alt="econos – Learn it. Link it. Land it." height="36">
     </a>
     <ul class="topnav__links" role="list">
       <li><a href="#how-it-works">How it works</a></li>
@@ -704,7 +704,7 @@
       }
 
       /* ────────── URL helpers ────────── */
-      /* Always route to Learn It from the home menu — the more
+      /* Always route to Learn It from the home menu – the more
          sophisticated stage-picker will return once the menu UX
          is reworked. Stage pips below still reflect availability. */
       function bestHref(topic) {
@@ -717,7 +717,7 @@
         function pip(num, kind, on) {
           var name = kind === 'learn' ? 'Learn' : kind === 'link' ? 'Link' : 'Land';
           return '<span class="pip pip--' + kind + (on ? ' is-on' : '') +
-                 '" title="' + name + ' it — ' + (on ? 'ready' : 'coming soon') + '" aria-label="' +
+                 '" title="' + name + ' it – ' + (on ? 'ready' : 'coming soon') + '" aria-label="' +
                  name + ' it ' + (on ? 'ready' : 'coming soon') + '">' + num + '</span>';
         }
         return '<div class="topic__stages">'

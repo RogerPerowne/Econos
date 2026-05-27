@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — content data for inflation_meas
+   ECONOS – content data for inflation_meas
    6 cards · rebuilt from mockups · Edexcel Theme 2.2.1
    ============================================================ */
 
@@ -13,7 +13,7 @@ window.ECONOS_TOPIC = {
 
   intro: {
     heroKey: 'heroBars',
-    summary: "Inflation, disinflation and deflation are not the same. CPI, RPI and CPIH measure prices differently. High inflation hurts savers, exporters and the uncertain — deflation traps the economy. And the gap between nominal and real values is where exam marks are won or lost.",
+    summary: "Inflation, disinflation and deflation are not the same. CPI, RPI and CPIH measure prices differently. High inflation hurts savers, exporters and the uncertain – deflation traps the economy. And the gap between nominal and real values is where exam marks are won or lost.",
     doInThis: 'Seven cards: what inflation is, how CPI is built, a worked CPI calculation, the three UK measures (CPI / RPI / CPIH), the costs of inflation, fiscal drag and real vs nominal, and the costs of deflation.',
     outcomes: [
       'Distinguish inflation, disinflation and deflation precisely',
@@ -32,7 +32,7 @@ window.ECONOS_TOPIC = {
   cards: [
 
     /* ====================================================================
-       CARD 1 — What is inflation?
+       CARD 1 – What is inflation?
        Inflation vs deflation vs disinflation. Why it matters. Common trap.
        ==================================================================== */
     {
@@ -40,7 +40,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'What is inflation?',
-      lede: 'Inflation is a sustained rise in the general price level. Over time, money buys fewer goods and services — affecting wages, savings, living standards, and policy decisions.',
+      lede: 'Inflation is a sustained rise in the general price level. Over time, money buys fewer goods and services – affecting wages, savings, living standards, and policy decisions.',
       ledeStyle: 'plain',
 
       keyDistinction: {
@@ -91,12 +91,12 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Examiners love the precise distinction between disinflation and deflation — use the terms accurately. State that inflation is measured as the <strong>rate of change of a price index</strong>, not the price level itself.'
+        text: 'Examiners love the precise distinction between disinflation and deflation – use the terms accurately. State that inflation is measured as the <strong>rate of change of a price index</strong>, not the price level itself.'
       }
     },
 
     /* ====================================================================
-       CARD 2 — Measuring inflation: CPI
+       CARD 2 – Measuring inflation: CPI
        How the Consumer Prices Index is built. Weighted basket. Worked example.
        ==================================================================== */
     {
@@ -104,7 +104,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Measuring inflation: CPI',
-      lede: 'CPI tracks the average change in the prices households pay — but not every price moves equally, so <strong>weights matter</strong>.',
+      lede: 'CPI tracks the average change in the prices households pay – but not every price moves equally, so <strong>weights matter</strong>.',
 
       flowTitle: 'How CPI is built',
       flow: [
@@ -155,23 +155,23 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'Why weighting matters',
-        text: 'If <strong>petrol has a high weight</strong>, fuel price rises matter more. If <strong>cinema tickets rise</strong>, the impact is smaller. CPI reflects average household spending patterns — not every household experiences the headline rate.'
+        text: 'If <strong>petrol has a high weight</strong>, fuel price rises matter more. If <strong>cinema tickets rise</strong>, the impact is smaller. CPI reflects average household spending patterns – not every household experiences the headline rate.'
       },
 
       tip: {
         icon: '⚠️',
         tone: 'rose',
-        text: '<strong>Common trap:</strong> CPI is an average — <em>one</em> price rise does not prove inflation. The general price level across the basket must rise.'
+        text: '<strong>Common trap:</strong> CPI is an average – <em>one</em> price rise does not prove inflation. The general price level across the basket must rise.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Strong answers explain that CPI is <strong>weighted</strong>, so categories with bigger shares of household spending influence the overall rate more. Note too that CPI <strong>excludes mortgage interest and council tax</strong> — a critical limitation for homeowners with large mortgages.'
+        text: 'Strong answers explain that CPI is <strong>weighted</strong>, so categories with bigger shares of household spending influence the overall rate more. Note too that CPI <strong>excludes mortgage interest and council tax</strong> – a critical limitation for homeowners with large mortgages.'
       }
     },
 
     /* ====================================================================
-       CARD 3 — Worked example: calculating CPI and the inflation rate
+       CARD 3 – Worked example: calculating CPI and the inflation rate
        Step-by-step weighted-average calculation. Salvaged from pre-rebuild.
        ==================================================================== */
     {
@@ -182,37 +182,37 @@ window.ECONOS_TOPIC = {
       scenario: 'The ONS constructs a simplified price index for a hypothetical economy using three categories. The <strong>base year is 2023</strong> (index = 100).<br><br><table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;"><thead><tr style="background:#0B1426;color:#fff;"><th style="padding:8px 10px;text-align:left;">Category</th><th style="padding:8px 10px;text-align:center;">Weight</th><th style="padding:8px 10px;text-align:center;">2023 price</th><th style="padding:8px 10px;text-align:center;">2024 price</th></tr></thead><tbody><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Food &amp; drink</td><td style="padding:8px 10px;text-align:center;">0.40</td><td style="padding:8px 10px;text-align:center;">100p</td><td style="padding:8px 10px;text-align:center;">120p</td></tr><tr style="background:#fff;"><td style="padding:8px 10px;">Transport</td><td style="padding:8px 10px;text-align:center;">0.35</td><td style="padding:8px 10px;text-align:center;">200p</td><td style="padding:8px 10px;text-align:center;">210p</td></tr><tr style="background:#F8FAFC;"><td style="padding:8px 10px;">Recreation</td><td style="padding:8px 10px;text-align:center;">0.25</td><td style="padding:8px 10px;text-align:center;">50p</td><td style="padding:8px 10px;text-align:center;">50p</td></tr></tbody></table>',
       steps: [
         {
-          prompt: 'Step 1 — Calculate the price relative for each category',
+          prompt: 'Step 1 – Calculate the price relative for each category',
           hint: 'Price relative = (current year price ÷ base year price). This tells you how prices have changed, ignoring units.',
           answer: 'Food: 120 ÷ 100 = <strong>1.20</strong> (prices rose 20%)<br>Transport: 210 ÷ 200 = <strong>1.05</strong> (prices rose 5%)<br>Recreation: 50 ÷ 50 = <strong>1.00</strong> (no change)'
         },
         {
-          prompt: 'Step 2 — Multiply each price relative by its weight',
+          prompt: 'Step 2 – Multiply each price relative by its weight',
           hint: 'Weighted contribution = price relative × weight. This captures how much each category matters in typical household spending.',
           answer: 'Food: 1.20 × 0.40 = <strong>0.480</strong><br>Transport: 1.05 × 0.35 = <strong>0.368</strong><br>Recreation: 1.00 × 0.25 = <strong>0.250</strong>'
         },
         {
-          prompt: 'Step 3 — Sum the weighted contributions to get CPI',
+          prompt: 'Step 3 – Sum the weighted contributions to get CPI',
           hint: 'CPI = Σ (price relative × weight). This is a weighted average of price changes. Multiply by 100 if expressing as an index.',
           answer: '0.480 + 0.368 + 0.250 = <strong>1.098</strong><br>CPI (2024) = <strong>109.8</strong> (base year = 100)'
         },
         {
-          prompt: 'Step 4 — Calculate the inflation rate',
+          prompt: 'Step 4 – Calculate the inflation rate',
           hint: 'Inflation rate = ((CPI current − CPI base) ÷ CPI base) × 100',
           answer: 'Inflation = ((109.8 − 100) ÷ 100) × 100 = <strong>9.8%</strong>'
         },
         {
-          prompt: 'Step 5 — Interpret: why is inflation 9.8% when food prices rose 20%?',
+          prompt: 'Step 5 – Interpret: why is inflation 9.8% when food prices rose 20%?',
           hint: 'Think about the role of weights. What happens if Recreation had a 0.60 weight instead of 0.25?',
-          answer: 'Food rose 20% but has only a 0.40 weight — its contribution is capped. Transport rose 5% and Recreation rose 0%. The weighted average (9.8%) is pulled below food\'s 20% rise because other categories rose less. <strong>Key exam point:</strong> if Recreation had a 0.60 weight with food at 0.15, CPI would be far lower — weights are crucial. This is why the ONS updates the basket annually as spending patterns change.'
+          answer: 'Food rose 20% but has only a 0.40 weight – its contribution is capped. Transport rose 5% and Recreation rose 0%. The weighted average (9.8%) is pulled below food\'s 20% rise because other categories rose less. <strong>Key exam point:</strong> if Recreation had a 0.60 weight with food at 0.15, CPI would be far lower – weights are crucial. This is why the ONS updates the basket annually as spending patterns change.'
         }
       ],
       conclusion: 'CPI (2024) = 109.8 → Inflation rate = <strong>9.8%</strong>. The weighting system means overall inflation reflects the full range of household spending, not just the categories with the largest price rises. Food\'s 20% rise is diluted because transport (35% weight) rose only 5% and recreation (25% weight) didn\'t rise at all.',
-      examEdge: 'A common exam error is treating the CPI calculation as a simple average of price rises: (20% + 5% + 0%) ÷ 3 = 8.3%. This ignores weights. The correct method weights each category by its share of household spending. Also: CPI excludes mortgage payments and council tax — relevant for evaluating whether CPI accurately reflects the cost of living for different households.'
+      examEdge: 'A common exam error is treating the CPI calculation as a simple average of price rises: (20% + 5% + 0%) ÷ 3 = 8.3%. This ignores weights. The correct method weights each category by its share of household spending. Also: CPI excludes mortgage payments and council tax – relevant for evaluating whether CPI accurately reflects the cost of living for different households.'
     },
 
     /* ====================================================================
-       CARD 4 — RPI and CPIH
+       CARD 4 – RPI and CPIH
        Three measures, three uses. Why the measure chosen matters.
        ==================================================================== */
     {
@@ -220,7 +220,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 7',
       title: 'RPI and CPIH',
-      lede: 'Different inflation measures include different housing costs — that is why the reported rate, and what it is used for, can differ.',
+      lede: 'Different inflation measures include different housing costs – that is why the reported rate, and what it is used for, can differ.',
 
       measureCards: [
         {
@@ -300,17 +300,17 @@ window.ECONOS_TOPIC = {
 
       conclusion: {
         title: 'When housing costs rise quickly',
-        text: 'When housing costs surge — as in 2022-23 — <strong>CPIH may report a higher rate than CPI</strong>. Choosing which measure to quote has real-world winners and losers: benefits uprating switched from RPI to CPI in 2010, saving the government billions because CPI was lower.'
+        text: 'When housing costs surge – as in 2022-23 – <strong>CPIH may report a higher rate than CPI</strong>. Choosing which measure to quote has real-world winners and losers: benefits uprating switched from RPI to CPI in 2010, saving the government billions because CPI was lower.'
       },
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Do not just list the measures — <strong>explain what is included</strong>, especially housing costs, and why that affects interpretation. Strong answers note the <strong>political dimension</strong>: governments choose which measure to quote depending on the policy context.'
+        text: 'Do not just list the measures – <strong>explain what is included</strong>, especially housing costs, and why that affects interpretation. Strong answers note the <strong>political dimension</strong>: governments choose which measure to quote depending on the policy context.'
       }
     },
 
     /* ====================================================================
-       CARD 4 — Costs of inflation
+       CARD 4 – Costs of inflation
        Five main costs. Winners and losers. The chain of impact.
        ==================================================================== */
     {
@@ -318,7 +318,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Costs of inflation',
-      lede: 'The harm depends on how high and how unpredictable inflation is — mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
+      lede: 'The harm depends on how high and how unpredictable inflation is – mild, anticipated inflation is manageable, but unstable inflation creates wider economic costs.',
 
       causesFirst: true,
       causesLabel: 'The main costs',
@@ -359,7 +359,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '⚠️',
         tone: 'rose',
-        text: '<strong>Common trap:</strong> not all inflation is equally damaging — the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
+        text: '<strong>Common trap:</strong> not all inflation is equally damaging – the biggest problems come when inflation is <em>high, volatile or unexpected</em>. Mild, anticipated inflation is manageable.'
       },
 
       examEdge: {
@@ -369,7 +369,7 @@ window.ECONOS_TOPIC = {
     },
 
     /* ====================================================================
-       CARD 5 — Fiscal drag and real vs nominal
+       CARD 5 – Fiscal drag and real vs nominal
        The gap between nominal and real. Frozen thresholds = stealth tax rise.
        ==================================================================== */
     {
@@ -377,17 +377,17 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 6 of 7',
       title: 'Fiscal drag and real vs nominal',
-      lede: 'Inflation changes money values on paper — what matters for living standards is the <strong>real value after inflation</strong>.',
+      lede: 'Inflation changes money values on paper – what matters for living standards is the <strong>real value after inflation</strong>.',
 
       flowChart: {
         label: 'A 5-year example',
         emoji: '📊',
         svgKey: 'fiscalDragChart',
-        caption: 'Year 1 wage of £49,000 sits in the basic-rate band. Five years of inflation-matching pay rises lift it to £58,000 — but because tax thresholds are frozen, the same real wage is now pulled into the higher-rate band.'
+        caption: 'Year 1 wage of £49,000 sits in the basic-rate band. Five years of inflation-matching pay rises lift it to £58,000 – but because tax thresholds are frozen, the same real wage is now pulled into the higher-rate band.'
       },
 
       causesFirst: true,
-      causesLabel: 'Nominal vs real — three worked examples',
+      causesLabel: 'Nominal vs real – three worked examples',
       causes: [
         {
           tone: 'green',
@@ -421,7 +421,7 @@ window.ECONOS_TOPIC = {
         title: 'Why it matters',
         items: [
           { tone: 'green',  icon: '👥', label: 'Households',          text: 'Real income can fall even when your payslip shows a nominal rise.' },
-          { tone: 'purple', icon: '🏛️', label: 'Government revenue', text: 'Frozen brackets mean more income is taxed at higher rates — fiscal drag.' },
+          { tone: 'purple', icon: '🏛️', label: 'Government revenue', text: 'Frozen brackets mean more income is taxed at higher rates – fiscal drag.' },
           { tone: 'amber',  icon: '💼', label: 'Wage bargaining',     text: 'Negotiations target nominal rises, often chasing inflation rather than gaining real ground.' },
           { tone: 'blue',   icon: '🗣️', label: 'Policy debate',       text: 'Pressure grows to uprate thresholds and reduce the stealth tax rise.' }
         ]
@@ -429,7 +429,7 @@ window.ECONOS_TOPIC = {
 
       keyTerms: [
         { term: 'Nominal value',  def: 'A money amount stated in today\'s prices, ignoring inflation.' },
-        { term: 'Real value',      def: 'A money amount adjusted for inflation — the change in actual purchasing power.' },
+        { term: 'Real value',      def: 'A money amount adjusted for inflation – the change in actual purchasing power.' },
         { term: 'Fiscal drag',     def: 'Frozen tax thresholds plus rising nominal wages → more income taxed at higher rates → a stealth tax rise.' },
         { term: 'Real interest rate', def: 'Nominal interest rate minus the inflation rate.' }
       ],
@@ -442,12 +442,12 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: 'Always compare wages, interest or tax thresholds with inflation. Examiners reward the phrase <em>real value after adjusting for inflation</em> — and the explicit identification of fiscal drag as a stealth tax rise when thresholds are frozen.'
+        text: 'Always compare wages, interest or tax thresholds with inflation. Examiners reward the phrase <em>real value after adjusting for inflation</em> – and the explicit identification of fiscal drag as a stealth tax rise when thresholds are frozen.'
       }
     },
 
     /* ====================================================================
-       CARD 6 — Costs of deflation
+       CARD 6 – Costs of deflation
        The deflationary spiral. Why central banks fear it.
        ==================================================================== */
     {
@@ -455,7 +455,7 @@ window.ECONOS_TOPIC = {
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Costs of deflation',
-      lede: 'Lower prices sound attractive, but persistent deflation can <strong>weaken spending, output and jobs</strong> — and is far harder to escape than inflation.',
+      lede: 'Lower prices sound attractive, but persistent deflation can <strong>weaken spending, output and jobs</strong> – and is far harder to escape than inflation.',
 
       flowTitle: 'Why deflation is dangerous',
       flow: [
@@ -470,7 +470,7 @@ window.ECONOS_TOPIC = {
       causesLabel: 'The key costs',
       causes: [
         { tone: 'rose', icon: '⏸️', head: 'Delayed spending',         body: 'Households wait for lower prices. Aggregate demand falls.' },
-        { tone: 'rose', icon: '🧾', head: 'Real debt burden rises',    body: 'Debts are fixed in money terms — as prices fall, the real burden grows and debtors cut spending to repay.' },
+        { tone: 'rose', icon: '🧾', head: 'Real debt burden rises',    body: 'Debts are fixed in money terms – as prices fall, the real burden grows and debtors cut spending to repay.' },
         { tone: 'rose', icon: '🌀', head: 'Deflationary spiral risk',  body: 'Weaker demand feeds further falls in prices and output. Hard to break without aggressive policy.' }
       ],
 
@@ -486,7 +486,7 @@ window.ECONOS_TOPIC = {
               { ok: true,  text: 'Mild, anticipated inflation is manageable and signals a growing economy.' },
               { ok: false, text: 'Erodes the purchasing power of cash and fixed nominal incomes.' },
               { ok: false, text: 'High or volatile inflation creates uncertainty and weakens investment.' },
-              { ok: true,  text: 'Central banks have well-tested tools — raise rates to cool demand.' }
+              { ok: true,  text: 'Central banks have well-tested tools – raise rates to cool demand.' }
             ]
           },
           {
@@ -495,8 +495,8 @@ window.ECONOS_TOPIC = {
             label: 'Deflation',
             items: [
               { ok: false, text: 'Weakens aggregate demand as households delay spending.' },
-              { ok: false, text: 'Raises the real burden of nominal debt — debtors cut back further.' },
-              { ok: false, text: 'Risks a self-feeding spiral — Japan\'s lost decades are the canonical warning.' },
+              { ok: false, text: 'Raises the real burden of nominal debt – debtors cut back further.' },
+              { ok: false, text: 'Risks a self-feeding spiral – Japan\'s lost decades are the canonical warning.' },
               { ok: false, text: 'Hard to escape: monetary policy hits the zero lower bound.' }
             ]
           }
@@ -510,7 +510,7 @@ window.ECONOS_TOPIC = {
 
       examEdge: {
         title: 'Exam edge',
-        text: '<strong>Deflation is more dangerous than disinflation.</strong> Disinflation means prices are still rising — just more slowly. Deflation means the price level is <em>actually falling</em>. Distinguish too between <strong>benign deflation</strong> (productivity-driven, falling prices alongside rising output) and <strong>malign deflation</strong> (demand-driven, falling prices alongside falling output) — most exam scenarios are the malign variety.'
+        text: '<strong>Deflation is more dangerous than disinflation.</strong> Disinflation means prices are still rising – just more slowly. Deflation means the price level is <em>actually falling</em>. Distinguish too between <strong>benign deflation</strong> (productivity-driven, falling prices alongside rising output) and <strong>malign deflation</strong> (demand-driven, falling prices alongside falling output) – most exam scenarios are the malign variety.'
       },
 
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }

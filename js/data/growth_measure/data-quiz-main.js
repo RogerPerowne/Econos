@@ -37,7 +37,7 @@
           'Nominal, real, and PPP-adjusted approaches'
         ],
         ans:  1,
-        exp:  'National income can be measured by three equivalent approaches: (1) output approach — sum of value added; (2) income approach — sum of factor incomes; (3) expenditure approach — sum of all spending on final goods (C+I+G+(X-M)).'
+        exp:  'National income can be measured by three equivalent approaches: (1) output approach – sum of value added; (2) income approach – sum of factor incomes; (3) expenditure approach – sum of all spending on final goods (C+I+G+(X-M)).'
       },
       {
         id:   'q_gm_3',
@@ -63,7 +63,7 @@
           'Inflate nominal GDP to account for shadow economy activity'
         ],
         ans:  1,
-        exp:  'PPP adjusts GDP figures for differences in price levels across countries. A pound buys more in a low-price country than a high-price country — PPP gives a more accurate picture of relative living standards.'
+        exp:  'PPP adjusts GDP figures for differences in price levels across countries. A pound buys more in a low-price country than a high-price country – PPP gives a more accurate picture of relative living standards.'
       },
       {
         id:   'q_gm_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['GDP','GNI','HDI','Consumer Price Index'],
         ans:  3,
-        exp:  'GDP, GNI (Gross National Income), and HDI (Human Development Index) are all measures of economic output or living standards. The Consumer Price Index measures inflation — it is not a national income or welfare measure.'
+        exp:  'GDP, GNI (Gross National Income), and HDI (Human Development Index) are all measures of economic output or living standards. The Consumer Price Index measures inflation – it is not a national income or welfare measure.'
       },
       {
         id:   'q_gm_9',

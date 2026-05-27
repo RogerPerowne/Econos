@@ -32,7 +32,7 @@
           'Investment always falls when prices rise'
         ],
         ans:  0,
-        exp:  'Three effects explain the downward slope: (1) the wealth effect — higher prices erode real wealth; (2) the interest rate effect — higher prices raise money demand and interest rates; (3) the international competitiveness effect — exports become dearer, imports cheaper.'
+        exp:  'Three effects explain the downward slope: (1) the wealth effect – higher prices erode real wealth; (2) the interest rate effect – higher prices raise money demand and interest rates; (3) the international competitiveness effect – exports become dearer, imports cheaper.'
       },
       {
         id:   'q_ad_3',
@@ -45,7 +45,7 @@
           'An appreciation of the exchange rate'
         ],
         ans:  1,
-        exp:  'Higher consumer confidence encourages more spending (rising C). This shifts the entire AD curve to the right — more real output is demanded at every price level.'
+        exp:  'Higher consumer confidence encourages more spending (rising C). This shifts the entire AD curve to the right – more real output is demanded at every price level.'
       },
       {
         id:   'q_ad_4',
@@ -103,7 +103,7 @@
         q:    'Which is the odd one out in the AD formula?',
         opts: ['Consumption (C)','Investment (I)','Taxation (T)','Government spending (G)'],
         ans:  2,
-        exp:  'C, I, and G are all direct components in the AD = C + I + G + (X−M) formula. Taxation affects AD indirectly by influencing consumption — but T itself does not appear as a component of AD.'
+        exp:  'C, I, and G are all direct components in the AD = C + I + G + (X−M) formula. Taxation affects AD indirectly by influencing consumption – but T itself does not appear as a component of AD.'
       },
       {
         id:   'q_ad_9',

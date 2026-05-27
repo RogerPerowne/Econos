@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Chain station data
+   ECONOS – Link It · Chain station data
    Positive Externalities: build the MPB → underproduction → DWL chain
    ============================================================ */
 
@@ -26,7 +26,7 @@ window.ECONOS_LINK_CHAIN = {
       scenario: {
         icon:  '💉',
         label: 'Scenario',
-        text:  'Individual MPB of vaccination = own protection from illness. MSB = MPB + MEB (herd immunity: protection conferred on unvaccinated/vulnerable third parties). Free market produces Q_market where S = MPB — systematically below Q* where S = MSB.'
+        text:  'Individual MPB of vaccination = own protection from illness. MSB = MPB + MEB (herd immunity: protection conferred on unvaccinated/vulnerable third parties). Free market produces Q_market where S = MPB – systematically below Q* where S = MSB.'
       },
       anchor: 'MSB = MPB + MEB (herd immunity); free market gives Q_market < Q*.',
       tiles: [
@@ -70,18 +70,18 @@ window.ECONOS_LINK_CHAIN = {
       explain: [
         {
           pos:  0,
-          text: 'Consumers only consider their MPB — own protection from illness. The MEB (herd immunity conferred on others) is a real benefit to society, but it does not enter the individual\'s decision. So the free market equilibrium falls at Q_market where MPB = MPC: below the social optimum Q* where MSB = MPC.'
+          text: 'Consumers only consider their MPB – own protection from illness. The MEB (herd immunity conferred on others) is a real benefit to society, but it does not enter the individual\'s decision. So the free market equilibrium falls at Q_market where MPB = MPC: below the social optimum Q* where MSB = MPC.'
         },
         {
           pos:  1,
-          text: 'NHS free provision eliminates the price barrier: the effective cost to the consumer falls to zero (below MPC). This is economically equivalent to a subsidy that shifts the effective supply curve right from MPC to MPC − subsidy. More people vaccinate — including those who would have been deterred by the market price — raising coverage from Q_market toward Q*.'
+          text: 'NHS free provision eliminates the price barrier: the effective cost to the consumer falls to zero (below MPC). This is economically equivalent to a subsidy that shifts the effective supply curve right from MPC to MPC − subsidy. More people vaccinate – including those who would have been deterred by the market price – raising coverage from Q_market toward Q*.'
         },
         {
           pos:  2,
-          text: 'As vaccination coverage crosses the herd immunity threshold (95% for measles), transmission cannot be sustained in the population. The MEB — protection for unvaccinated and vulnerable individuals — is fully realised. It is non-rival (one person\'s immunity does not reduce others\' protection) and non-excludable (unvaccinated people cannot be prevented from benefiting). The positive externality has been fully internalised by the public provision policy.'
+          text: 'As vaccination coverage crosses the herd immunity threshold (95% for measles), transmission cannot be sustained in the population. The MEB – protection for unvaccinated and vulnerable individuals – is fully realised. It is non-rival (one person\'s immunity does not reduce others\' protection) and non-excludable (unvaccinated people cannot be prevented from benefiting). The positive externality has been fully internalised by the public provision policy.'
         }
       ],
-      examBridge: '"In an unregulated market the vaccination rate settles at Q_market where MPB equals MPC, ignoring the MEB (herd immunity benefit) enjoyed by unvaccinated third parties. Because MSB > MPB throughout, the market underproduces relative to Q* — the social optimum where MSB = MPC. NHS free provision shifts effective supply right, raising coverage from Q_market to Q* (95.1% MMR), where the herd immunity threshold is met and the MEB is fully internalised."',
+      examBridge: '"In an unregulated market the vaccination rate settles at Q_market where MPB equals MPC, ignoring the MEB (herd immunity benefit) enjoyed by unvaccinated third parties. Because MSB > MPB throughout, the market underproduces relative to Q* – the social optimum where MSB = MPC. NHS free provision shifts effective supply right, raising coverage from Q_market to Q* (95.1% MMR), where the herd immunity threshold is met and the MEB is fully internalised."',
 
       prompts: [
         'Why does the free market produce below Q* for vaccinations?',
@@ -89,9 +89,9 @@ window.ECONOS_LINK_CHAIN = {
         'What happens when vaccination coverage crosses the herd immunity threshold?'
       ],
       modelAnswers: [
-        'Consumers base vaccination decisions on MPB — their personal protection. The MEB (herd immunity for third parties) does not enter individual decision-making. So the market equilibrium is at Q_market where MPB = MPC — systematically below Q* where MSB (= MPB + MEB) = MPC. Underproduction is the result.',
-        'NHS provision sets the consumer price to zero — below MPC. This is equivalent to a supply-side subsidy shifting the effective supply right from MPC to MPC − subsidy. At zero price, more individuals vaccinate: those who previously found the market price above their MPB now participate, raising coverage toward Q*.',
-        'Above the 95% herd immunity threshold (for measles), transmission cannot be sustained. Unvaccinated individuals — including those who are medically unable to vaccinate — benefit from reduced infection risk without paying for vaccination. The MEB is non-excludable: the externality is fully internalised, and the social benefit of public provision is maximised.'
+        'Consumers base vaccination decisions on MPB – their personal protection. The MEB (herd immunity for third parties) does not enter individual decision-making. So the market equilibrium is at Q_market where MPB = MPC – systematically below Q* where MSB (= MPB + MEB) = MPC. Underproduction is the result.',
+        'NHS provision sets the consumer price to zero – below MPC. This is equivalent to a supply-side subsidy shifting the effective supply right from MPC to MPC − subsidy. At zero price, more individuals vaccinate: those who previously found the market price above their MPB now participate, raising coverage toward Q*.',
+        'Above the 95% herd immunity threshold (for measles), transmission cannot be sustained. Unvaccinated individuals – including those who are medically unable to vaccinate – benefit from reduced infection risk without paying for vaccination. The MEB is non-excludable: the externality is fully internalised, and the social benefit of public provision is maximised.'
       ],
       vocab: ['MPB', 'MEB', 'MSB', 'MPC', 'Q*', 'Q_market', 'deadweight welfare loss', 'social optimum', 'underproduction', 'herd immunity', 'free rider', 'subsidy', 'direct provision', 'internalise']
     }

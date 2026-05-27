@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    Positive Externalities: evaluate a direct public provision claim
    ============================================================ */
 
@@ -38,19 +38,19 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'price-sensitivity',
           icon:  '💰',
           label: 'Price sensitivity of the target population',
-          why:   'Direct provision (free) maximises uptake relative to a partial subsidy only if the unvaccinated group is price-sensitive. If non-vaccinators refuse on ideological grounds (anti-vaccine beliefs) rather than cost, free provision cannot achieve Q* — and the MEB gap persists regardless of price. Behavioural barriers may be more binding than price.'
+          why:   'Direct provision (free) maximises uptake relative to a partial subsidy only if the unvaccinated group is price-sensitive. If non-vaccinators refuse on ideological grounds (anti-vaccine beliefs) rather than cost, free provision cannot achieve Q* – and the MEB gap persists regardless of price. Behavioural barriers may be more binding than price.'
         },
         {
           id:    'alternative-policies',
           icon:  '📋',
           label: 'Effectiveness of subsidy vs mandate vs information campaigns',
-          why:   'Direct provision is one of three main corrective policies. A targeted subsidy (voucher, tax credit) may achieve similar uptake at lower fiscal cost if only price-sensitive individuals are below Q*. A vaccine mandate forces Q to Q* regardless of preference — but has liberty costs. Information campaigns (countering vaccine hesitancy) address behavioural barriers without price changes. The optimal policy mix depends on why Q_market < Q*.'
+          why:   'Direct provision is one of three main corrective policies. A targeted subsidy (voucher, tax credit) may achieve similar uptake at lower fiscal cost if only price-sensitive individuals are below Q*. A vaccine mandate forces Q to Q* regardless of preference – but has liberty costs. Information campaigns (countering vaccine hesitancy) address behavioural barriers without price changes. The optimal policy mix depends on why Q_market < Q*.'
         },
         {
           id:    'herd-threshold',
           icon:  '🎯',
           label: 'Proximity to the herd immunity threshold',
-          why:   'The MEB is non-linear near the herd immunity threshold. Below 95% MMR coverage, each additional vaccination produces decreasing marginal herd immunity benefit; above 95%, the externality is fully realised. Policy interventions must aim to push coverage above the threshold — a subsidy achieving only 92% coverage captures most of the MEB but leaves measles transmission risk.'
+          why:   'The MEB is non-linear near the herd immunity threshold. Below 95% MMR coverage, each additional vaccination produces decreasing marginal herd immunity benefit; above 95%, the externality is fully realised. Policy interventions must aim to push coverage above the threshold – a subsidy achieving only 92% coverage captures most of the MEB but leaves measles transmission risk.'
         },
         {
           id:    'delivery-capacity',
@@ -68,13 +68,13 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'distributional',
           icon:  '👥',
           label: 'Distributional equity of the positive externality',
-          why:   'The herd immunity benefit is enjoyed by all — including those who free-ride and do not vaccinate. This non-excludable benefit means the state cannot charge free-riders for the externality they enjoy. Public provision ensures the benefit is equitably distributed, whereas a subsidy may still leave lower-income, harder-to-reach groups under-vaccinated.'
+          why:   'The herd immunity benefit is enjoyed by all – including those who free-ride and do not vaccinate. This non-excludable benefit means the state cannot charge free-riders for the externality they enjoy. Public provision ensures the benefit is equitably distributed, whereas a subsidy may still leave lower-income, harder-to-reach groups under-vaccinated.'
         },
         {
           id:    'dynamic',
           icon:  '🔄',
           label: 'Persistence of the externality over time (disease dynamics)',
-          why:   'Some positive externalities (e.g., childhood MMR vaccination) produce lifetime immunity and permanent MEB. Others (flu vaccination) require annual repetition because the virus mutates. Where the externality must be replicated annually, direct provision must be a permanent commitment — rather than a one-off intervention — raising fiscal sustainability concerns.'
+          why:   'Some positive externalities (e.g., childhood MMR vaccination) produce lifetime immunity and permanent MEB. Others (flu vaccination) require annual repetition because the virus mutates. Where the externality must be replicated annually, direct provision must be a permanent commitment – rather than a one-off intervention – raising fiscal sustainability concerns.'
         }
       ],
       modelRanking: ['meb-size', 'price-sensitivity', 'alternative-policies'],

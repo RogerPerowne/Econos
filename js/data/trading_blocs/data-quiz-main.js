@@ -127,7 +127,7 @@
           'Trade creation: country switches from non-member to domestic producer'
         ],
         ans:  1,
-        exp:  'After joining: cheapest source = bloc member at £18 (tariff removed). Before joining: cheapest was non-member at £12. The bloc\'s common external tariff now makes the cheaper non-member uncompetitive. This is trade diversion — a welfare loss.'
+        exp:  'After joining: cheapest source = bloc member at £18 (tariff removed). Before joining: cheapest was non-member at £12. The bloc\'s common external tariff now makes the cheaper non-member uncompetitive. This is trade diversion – a welfare loss.'
       },
       {
         id:   'q_tb_10',

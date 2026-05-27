@@ -33,8 +33,8 @@ window.ECONOS_TOPIC = {
       flowEmoji: '🗺️',
       flow: [
         { icon: '⚖️', tone: 'blue',   title: 'Imperfect vs asymmetric information', sub: 'Imperfect information means both sides lack some facts. Asymmetric information means one side knows more than the other.' },
-        { icon: '🔍', tone: 'amber',  title: 'Adverse selection',                   sub: 'An ex-ante information problem — hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
-        { icon: '🛡️', tone: 'rose',   title: 'Moral hazard',                        sub: 'An ex-post information problem — behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
+        { icon: '🔍', tone: 'amber',  title: 'Adverse selection',                   sub: 'An ex-ante information problem – hidden information before the deal. Akerlof\'s Market for Lemons shows how bad products can drive out good ones.' },
+        { icon: '🛡️', tone: 'rose',   title: 'Moral hazard',                        sub: 'An ex-post information problem – behaviour changes after one side is protected. Harder to monitor actions, so agents may take more risk.' },
         { icon: '📢', tone: 'green',  title: 'Private market solutions',            sub: 'Firms and individuals use signalling and screening to reveal information or sort good from bad.' },
         { icon: '🏛️', tone: 'purple', title: 'Government responses',               sub: 'Governments can improve outcomes through disclosure, regulation, provision of information, and behavioural nudges.' }
       ],
@@ -61,11 +61,11 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 2 of 7',
       title: 'Akerlof\'s Market for Lemons',
       tip: { icon: '💡', tone: 'blue', text: 'In Akerlof\'s used car market, sellers know the true quality of their cars, but buyers do not. Because of this information gap, buyers only pay an average price. This pushes high-quality sellers out of the market, leaving only low-quality ("lemons") cars. The market can unravel and shrink.' },
-      flowTitle: 'How the market unravels — 5 stages',
+      flowTitle: 'How the market unravels – 5 stages',
       flowEmoji: '🚗',
       flow: [
         { icon: '🚗', tone: 'blue',   title: 'Seller knows quality',                  sub: 'Seller knows whether the car is high quality ("peach") or low quality ("lemon").' },
-        { icon: '❓', tone: 'amber',  title: 'Buyer cannot tell good car from lemon', sub: 'Buyer cannot observe quality — both cars look the same.' },
+        { icon: '❓', tone: 'amber',  title: 'Buyer cannot tell good car from lemon', sub: 'Buyer cannot observe quality – both cars look the same.' },
         { icon: '💰', tone: 'green',  title: 'Buyer offers average price',            sub: 'Buyer offers one average price based on expected quality.' },
         { icon: '🚘', tone: 'rose',   title: 'Good sellers exit market',              sub: 'Average price is too low for good cars, so high-quality sellers leave.' },
         { icon: '🚕', tone: 'purple', title: 'Only lemons remain / market shrinks',   sub: 'Only low-quality cars remain. Fewer buyers enter → the market shrinks or collapses.' }
@@ -74,8 +74,8 @@ window.ECONOS_TOPIC = {
       colA: 'Buyer\'s estimate of value',
       colB: 'Outcome at average price (£5,000)',
       rows: [
-        { label: '🚙 Peach', colA: '£8,000 (high quality). Seller\'s minimum acceptable price: £7,000.', colB: '❌ Seller exits — offer is below cost. Loss at £5,000.' },
-        { label: '🚕 Lemon', colA: '£2,000 (low quality). Seller\'s minimum acceptable price: £1,000.', colB: '✅ Seller stays — profit at £5,000. Only lemons remain.' }
+        { label: '🚙 Peach', colA: '£8,000 (high quality). Seller\'s minimum acceptable price: £7,000.', colB: '❌ Seller exits – offer is below cost. Loss at £5,000.' },
+        { label: '🚕 Lemon', colA: '£2,000 (low quality). Seller\'s minimum acceptable price: £1,000.', colB: '✅ Seller stays – profit at £5,000. Only lemons remain.' }
       ],
       footer: 'Average price offered = £5,000. Too low for the peach seller (needs £7,000), so only lemons remain in the market.',
       causes2Label: 'Applications: information gaps in other markets',
@@ -87,10 +87,10 @@ window.ECONOS_TOPIC = {
       ],
       keyTerms: [
         { term: 'Lemons problem',    def: 'Akerlof\'s model: asymmetric information causes quality goods to exit the market as buyers cannot distinguish them from bad goods.' },
-        { term: 'Adverse selection', def: 'When asymmetric information causes systematically worse options to be selected — bad goods crowd out good goods.' },
+        { term: 'Adverse selection', def: 'When asymmetric information causes systematically worse options to be selected – bad goods crowd out good goods.' },
         { term: 'Market unravelling', def: 'Progressive market destruction as adverse selection causes progressively worse average quality and good sellers exit.' }
       ],
-      examEdge: 'Akerlof\'s model applies beyond cars: insurance markets (unhealthy individuals select in; premiums rise; healthy people exit — adverse selection spiral), credit markets (high-risk borrowers seek credit most avidly), and pre-2008 mortgage-backed securities (sellers knew more about quality than buyers). Nobel Prize 2001.'
+      examEdge: 'Akerlof\'s model applies beyond cars: insurance markets (unhealthy individuals select in; premiums rise; healthy people exit – adverse selection spiral), credit markets (high-risk borrowers seek credit most avidly), and pre-2008 mortgage-backed securities (sellers knew more about quality than buyers). Nobel Prize 2001.'
     },
 
     {
@@ -139,7 +139,7 @@ window.ECONOS_TOPIC = {
         { label: '👥 Labour',       colA: 'True ability/productivity',    colB: 'Average wages; best workers leave',       colC: 'Screening; signalling; probation' },
         { label: '🏷️ Used goods',  colA: 'True quality/condition',       colB: 'Lower prices; fewer good sellers',        colC: 'Certification; warranties; inspections' }
       ],
-      examEdge: 'Adverse selection occurs BEFORE the contract/transaction (ex-ante) — it is about who selects into the market. The policy solution is screening or signalling to reveal private information before the deal. This distinguishes it sharply from moral hazard (ex-post — behaviour changes after the contract).'
+      examEdge: 'Adverse selection occurs BEFORE the contract/transaction (ex-ante) – it is about who selects into the market. The policy solution is screening or signalling to reveal private information before the deal. This distinguishes it sharply from moral hazard (ex-post – behaviour changes after the contract).'
     },
 
     {
@@ -204,7 +204,7 @@ window.ECONOS_TOPIC = {
       id: 'info_gaps_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Signalling and Screening Solutions',
-      tip: { icon: '💡', tone: 'blue', text: 'Private markets often face information problems: one side knows more than the other. Firms and individuals respond with signalling and screening — strategies that reduce information gaps and improve outcomes.' },
+      tip: { icon: '💡', tone: 'blue', text: 'Private markets often face information problems: one side knows more than the other. Firms and individuals respond with signalling and screening – strategies that reduce information gaps and improve outcomes.' },
       comparison: {
         title: 'Two private solutions',
         emoji: '⚖️',
@@ -243,10 +243,10 @@ window.ECONOS_TOPIC = {
           'Solutions work when signals are credible and hard to fake',
           'Screening separates types via self-selection',
           'Reputation systems build information over time',
-          'None is perfect — information gaps persist'
+          'None is perfect – information gaps persist'
         ]
       },
-      examEdge: 'Spence\'s education signalling model: if education is mainly a signal of ability rather than a direct investment in human capital, its social value is lower than its private value — explaining why we might over-invest in education relative to its actual productivity impact. This qualifies the positive externality argument for education subsidies.'
+      examEdge: 'Spence\'s education signalling model: if education is mainly a signal of ability rather than a direct investment in human capital, its social value is lower than its private value – explaining why we might over-invest in education relative to its actual productivity impact. This qualifies the positive externality argument for education subsidies.'
     },
 
     {
@@ -302,7 +302,7 @@ window.ECONOS_TOPIC = {
           'Balance the size of market failure vs cost of intervention'
         ]
       },
-      examEdge: 'FCA regulation in UK financial services addresses multiple information failures: product mis-selling (PPI scandal — banks had information advantage over consumers), insider trading (market participants with private information gain unfair advantage), and pension advice complexity. Regulatory intervention is justified precisely because market mechanisms fail when information is asymmetric.'
+      examEdge: 'FCA regulation in UK financial services addresses multiple information failures: product mis-selling (PPI scandal – banks had information advantage over consumers), insider trading (market participants with private information gain unfair advantage), and pension advice complexity. Regulatory intervention is justified precisely because market mechanisms fail when information is asymmetric.'
     },
 
     {
@@ -355,7 +355,7 @@ window.ECONOS_TOPIC = {
           'Balancing efficiency, equity and information is the central challenge'
         ]
       },
-      examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems — use this evaluative balance in essays.',
+      examEdge: 'The NHS vs private healthcare debate is the richest information failure context. NHS: reduces supplier-induced demand (salaried doctors), reduces adverse selection (universal coverage). But moral hazard: free at point of use → some demand for treatment not worth the cost. No system perfectly solves all information problems – use this evaluative balance in essays.',
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
 

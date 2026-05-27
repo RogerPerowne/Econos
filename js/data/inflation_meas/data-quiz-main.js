@@ -43,7 +43,7 @@
         id:   'q_infm_3',
         type: 'mcq',
         q:    'The Bank of England\'s inflation target (set by the government) is:',
-        opts: ['1% CPI','2% CPI','3% RPI','0% — price stability means zero inflation'],
+        opts: ['1% CPI','2% CPI','3% RPI','0% – price stability means zero inflation'],
         ans:  1,
         exp:  'The UK government set the Bank of England a symmetric inflation target of 2% CPI. If inflation deviates by more than 1 percentage point (above 3% or below 1%), the Governor must write an open letter of explanation to the Chancellor.'
       },
@@ -58,7 +58,7 @@
           'Creditors owed a fixed nominal sum'
         ],
         ans:  2,
-        exp:  'Borrowers gain from unexpected inflation because the real value of their debt falls. A £100,000 mortgage becomes cheaper in real terms when prices rise — they repay less in purchasing power terms.'
+        exp:  'Borrowers gain from unexpected inflation because the real value of their debt falls. A £100,000 mortgage becomes cheaper in real terms when prices rise – they repay less in purchasing power terms.'
       },
       {
         id:   'q_infm_5',
@@ -103,7 +103,7 @@
         q:    'Which is the odd one out?',
         opts: ['CPI','RPI','CPIH','Gini coefficient'],
         ans:  3,
-        exp:  'CPI, RPI, and CPIH are all measures of price inflation. The Gini coefficient measures income or wealth inequality — it is not an inflation measure.'
+        exp:  'CPI, RPI, and CPIH are all measures of price inflation. The Gini coefficient measures income or wealth inequality – it is not an inflation measure.'
       },
       {
         id:   'q_infm_9',

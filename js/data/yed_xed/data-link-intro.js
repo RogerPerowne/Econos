@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It intro/landing data for yed_xed
+   ECONOS – Link It intro/landing data for yed_xed
    ============================================================ */
 
 window.ECONOS_LINK_INTRO = {
@@ -8,7 +8,7 @@ window.ECONOS_LINK_INTRO = {
   goal:    'Bridge your YED and XED knowledge into exam-quality application, analysis and evaluation.',
 
   intro: {
-    summary: "Use UK household spending data from the 2022–23 cost of living crisis to apply YED and XED — how falling real incomes reshaped demand across different goods, and how petrol prices triggered demand shifts in related markets.",
+    summary: "Use UK household spending data from the 2022–23 cost of living crisis to apply YED and XED – how falling real incomes reshaped demand across different goods, and how petrol prices triggered demand shifts in related markets.",
     heroKey: 'heroElasticity',
 
     doInThis: 'Five short steps train the application, analysis and evaluation skills A-level rewards.',
@@ -18,7 +18,7 @@ window.ECONOS_LINK_INTRO = {
       'Read a demand-left diagram showing a luxury good market',
       'Evaluate which factors determine whether income changes drive demand significantly'
     ],
-    tip: "These steps are cognitive drills — same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
+    tip: "These steps are cognitive drills – same structure, topic-specific content. A strong Link It score means you're ready to write under exam conditions.",
 
     stations: [
       { num: 1, name: 'Use the context', skill: 'Application', sub: 'Read an extract and judge which evidence changes the answer.', href: TopicLoader.buildUrl('link_context.html'), state: 'available' },

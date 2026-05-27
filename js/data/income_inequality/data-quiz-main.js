@@ -31,9 +31,9 @@
         type: 'mcq',
         q:    'A Gini coefficient of 0 means:',
         opts: [
-          'Complete inequality — one person has all income',
+          'Complete inequality – one person has all income',
           'The Lorenz curve lies along the horizontal axis',
-          'Perfect equality — everyone has the same income',
+          'Perfect equality – everyone has the same income',
           'The economy has zero GDP'
         ],
         ans:  2,
@@ -63,7 +63,7 @@
           'Governments tax wealth more heavily than income'
         ],
         ans:  1,
-        exp:  'Wealth (assets minus liabilities) compounds over time — returns on wealth generate more wealth. Intergenerational transfers (inheritance) further concentrate wealth at the top, widening the distribution beyond income inequality.'
+        exp:  'Wealth (assets minus liabilities) compounds over time – returns on wealth generate more wealth. Intergenerational transfers (inheritance) further concentrate wealth at the top, widening the distribution beyond income inequality.'
       },
       {
         id:   'q_ineq_5',
@@ -123,7 +123,7 @@
         ],
         opts: ['Denmark','United Kingdom','United States','South Africa'],
         ans:  3,
-        exp:  'A higher Gini coefficient means greater inequality. South Africa\'s Gini of 0.63 is the highest in the table — it has the most unequal income distribution shown.'
+        exp:  'A higher Gini coefficient means greater inequality. South Africa\'s Gini of 0.63 is the highest in the table – it has the most unequal income distribution shown.'
       },
       {
         id:   'q_ineq_10',

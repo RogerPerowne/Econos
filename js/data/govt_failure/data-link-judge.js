@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    Government Failure: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -37,10 +37,10 @@ window.ECONOS_LINK_JUDGE = {
       evidenceCards: [
         { id: 'context', tone: 'green',  icon: '🔍', title: 'Context',       text: 'OBR: £8,000 average new-build price rise; RICS: new-build premium doubled to 22%; Barratt: 21% operating margins.' },
         { id: 'chain',   tone: 'amber',  icon: '🔗', title: 'Chain',         text: 'Demand stimulus → PES ≈ 0.4 → price rise >> quantity rise → developers capture windfall → non-HTB buyers worse off.' },
-        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts right from D₁ to D₂; steep S means E₂ almost directly above E₁ — large ΔP, tiny ΔQ.' },
+        { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'D shifts right from D₁ to D₂; steep S means E₂ almost directly above E₁ – large ΔP, tiny ΔQ.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Verdict depends on housing PES, quality of government information at design, and political economy pressures.' }
       ],
-      cloze: 'Government failure occurs when [1] produces an outcome worse than the market failure it was designed to correct. Help to Buy increased effective demand for new-build homes by [2], shifting the demand curve to the [3]. Because housing supply is highly [4] (PES ≈ 0.4), the new equilibrium showed a large [5] rise and barely any increase in housing output. The scheme transferred benefit to [6] as higher margins rather than improving affordability for buyers outside the scheme. This reflects an [7] at policy design stage — the government failed to account for how supply constraints would shape the market response. The lesson is that demand subsidies in [8] markets with low PES always risk creating price inflation rather than output expansion.',
+      cloze: 'Government failure occurs when [1] produces an outcome worse than the market failure it was designed to correct. Help to Buy increased effective demand for new-build homes by [2], shifting the demand curve to the [3]. Because housing supply is highly [4] (PES ≈ 0.4), the new equilibrium showed a large [5] rise and barely any increase in housing output. The scheme transferred benefit to [6] as higher margins rather than improving affordability for buyers outside the scheme. This reflects an [7] at policy design stage – the government failed to account for how supply constraints would shape the market response. The lesson is that demand subsidies in [8] markets with low PES always risk creating price inflation rather than output expansion.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-intervention', text: 'government intervention',         correct: true  },
@@ -95,12 +95,12 @@ window.ECONOS_LINK_JUDGE = {
         prompt: 'Overall position',
         options: [
           { id: 'op-success',    text: 'Help to Buy was an unambiguous success that improved housing affordability for all first-time buyers',                               correct: false },
-          { id: 'op-failure',    text: 'Help to Buy represents government failure because demand stimulus with inelastic supply mainly raises prices — benefiting developers rather than buyers', correct: true  },
+          { id: 'op-failure',    text: 'Help to Buy represents government failure because demand stimulus with inelastic supply mainly raises prices – benefiting developers rather than buyers', correct: true  },
           { id: 'op-always',     text: 'Any government housing policy is an example of government failure',                                                                correct: false },
           { id: 'op-corrupt',    text: 'Government failure only occurs when a policy is designed with corrupt intent',                                                     correct: false }
         ]
       },
-      examBridge: '"Help to Buy shifted housing demand right from D₁ to D₂. With PES ≈ 0.4, the nearly vertical supply curve meant E₂ was almost directly above E₁ — a large price rise with barely more housing. The £8,000 new-build price inflation (OBR) and record developer margins (Barratt: 21%) show the subsidy was captured by suppliers, not consumers. This is classic government failure: incomplete information at policy design, political incentives favouring demand-side action, and no complementary supply-side reform."'
+      examBridge: '"Help to Buy shifted housing demand right from D₁ to D₂. With PES ≈ 0.4, the nearly vertical supply curve meant E₂ was almost directly above E₁ – a large price rise with barely more housing. The £8,000 new-build price inflation (OBR) and record developer margins (Barratt: 21%) show the subsidy was captured by suppliers, not consumers. This is classic government failure: incomplete information at policy design, political incentives favouring demand-side action, and no complementary supply-side reform."'
     }
   ]
 };

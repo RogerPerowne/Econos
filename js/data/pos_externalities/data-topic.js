@@ -4,7 +4,7 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Positive Externalities',
   estTime: '9-11 minutes',
-  goal: 'Lock in the externality framework — MSB vs MPB, welfare gain forgone, and how to draw and evaluate the positive consumption externality diagram.',
+  goal: 'Lock in the externality framework – MSB vs MPB, welfare gain forgone, and how to draw and evaluate the positive consumption externality diagram.',
   intro: {
     heroKey: 'heroPosExternalities',
     summary: 'Positive externalities arise when production or consumption creates benefits for third parties not reflected in market prices. The result: the market under-produces relative to the socially optimal level, leaving welfare gains on the table.',
@@ -27,7 +27,7 @@ window.ECONOS_TOPIC = {
       id: 'pos_externalities_1',
       stepLabel: 'Learn: Step 1 of 7',
       title: 'Positive externalities: the benefits trilogy',
-      tip: { icon: '💡', tone: 'blue', text: '<em>A market can create benefits that spill over to people who were not directly involved. When that happens, private benefit is less than social benefit — and the market tends to produce too little.</em>' },
+      tip: { icon: '💡', tone: 'blue', text: '<em>A market can create benefits that spill over to people who were not directly involved. When that happens, private benefit is less than social benefit – and the market tends to produce too little.</em>' },
       keyPointsLabel: 'The three benefits',
       keyPointsEmoji: '🎁',
       keyPointsCols: 3,
@@ -65,7 +65,7 @@ window.ECONOS_TOPIC = {
           {
             tone: 'blue', icon: '🌍',
             title: 'MSB', subtitle: '(social benefits)',
-            body: 'All private benefits <strong>+</strong> all external benefits combined — the true benefit to society.',
+            body: 'All private benefits <strong>+</strong> all external benefits combined – the true benefit to society.',
             badge: { icon: '🌍', text: 'Total social gain' }
           }
         ],
@@ -81,21 +81,21 @@ window.ECONOS_TOPIC = {
         icon: '✅',
         tone: 'green',
         head: 'Why the market under-provides',
-        text: 'Because consumers usually think about MPB, not the full MSB. If MEB is positive, the market quantity is too low — some of the benefits to society are simply ignored.'
+        text: 'Because consumers usually think about MPB, not the full MSB. If MEB is positive, the market quantity is too low – some of the benefits to society are simply ignored.'
       },
       keyTerms: [
         { term: 'Marginal Private Benefit (MPB)',  def: 'The additional benefit received by the consumer from one more unit of consumption.' },
         { term: 'Marginal External Benefit (MEB)', def: 'The additional benefit enjoyed by third parties from the consumption (or production) of one more unit.' },
-        { term: 'Marginal Social Benefit (MSB)',   def: 'The total additional benefit to society from one more unit — equal to MPB + MEB. The true benefit the market should respond to but does not.' }
+        { term: 'Marginal Social Benefit (MSB)',   def: 'The total additional benefit to society from one more unit – equal to MPB + MEB. The true benefit the market should respond to but does not.' }
       ],
-      examEdge: 'Remember the trilogy — <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="/learn?topic=neg_externalities" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.'
+      examEdge: 'Remember the trilogy – <strong>private</strong> is captured by the consumer; <strong>external</strong> is captured by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the negative mirror, see <a href="/learn?topic=neg_externalities" style="color:#2563EB;font-weight:700;">Negative Externalities</a>.'
     },
     {
       id: 'pos_externalities_2',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 2 of 7',
       title: 'The positive consumption externality diagram',
-      lede: 'The mirror of the negative diagram. Build it in four moves — every label matters.',
+      lede: 'The mirror of the negative diagram. Build it in four moves – every label matters.',
       diagramKey: 'posExternalityInteractive',
       diagramCallouts: [
         { tone: 'green',  icon: '📉', head: 'Free market output is too low', body: 'At Q_market the market produces below the socially optimal Q*.' },
@@ -111,7 +111,7 @@ window.ECONOS_TOPIC = {
         {
           key: 'extension',
           label: 'Add MSB and MEB',
-          text: 'Add <strong>MSB</strong> (marginal social benefit) above MPB. The vertical gap is the <strong>MEB</strong> — marginal external benefit enjoyed by third parties: herd immunity, productivity, lower crime. MSB = MPB + MEB. The market ignores this gap, so it under-consumes.'
+          text: 'Add <strong>MSB</strong> (marginal social benefit) above MPB. The vertical gap is the <strong>MEB</strong> – marginal external benefit enjoyed by third parties: herd immunity, productivity, lower crime. MSB = MPB + MEB. The market ignores this gap, so it under-consumes.'
         },
         {
           key: 'shift',
@@ -126,9 +126,9 @@ window.ECONOS_TOPIC = {
       ],
       tipLate: [
         { icon: '✅', tone: 'green', head: 'What the diagram shows',  text: 'The market produces too little. At Q_market, only private benefits (MPB) are counted, so price is lower (P_market) and quantity is below the efficient level (Q*). The shaded triangle is the welfare gain society forgoes when consumption stays at the market level.' },
-        { icon: 'ℹ️',  tone: 'blue',  head: 'Production-side mirror', text: 'For a positive production externality, think MSC below MPC instead. The logic is identical — the market still produces too little.' }
+        { icon: 'ℹ️',  tone: 'blue',  head: 'Production-side mirror', text: 'For a positive production externality, think MSC below MPC instead. The logic is identical – the market still produces too little.' }
       ],
-      examEdge: 'Diagram technique: label all six elements — MSC = MPC, MPB, MSB, E_market (Q_m, P_m), E* (Q*, P*), and shade the welfare-gain triangle. Missing any of these loses marks. Draw MSB as a parallel shift above MPB for a constant external benefit.'
+      examEdge: 'Diagram technique: label all six elements – MSC = MPC, MPB, MSB, E_market (Q_m, P_m), E* (Q*, P*), and shade the welfare-gain triangle. Missing any of these loses marks. Draw MSB as a parallel shift above MPB for a constant external benefit.'
     },
     {
       id: 'pos_externalities_3',
@@ -167,12 +167,12 @@ window.ECONOS_TOPIC = {
       causesEmoji: '✅',
       causesStyle: 'tinted-flat',
       causes: [
-        { icon: '1️⃣', head: 'Private benefit understates total benefit', body: 'Consumers decide on MPB alone — they don\'t account for the spillover.',                                tone: 'green'  },
+        { icon: '1️⃣', head: 'Private benefit understates total benefit', body: 'Consumers decide on MPB alone – they don\'t account for the spillover.',                                tone: 'green'  },
         { icon: '2️⃣', head: 'Market quantity is too low',                 body: 'Under-consumption: Q_market sits below the socially optimal Q*.',                                       tone: 'blue'   },
         { icon: '3️⃣', head: 'Intervention may raise welfare',             body: 'Subsidies, public provision, or regulation can move output closer to Q* and capture the welfare gain.', tone: 'purple' }
       ],
-      tipLate: { icon: 'ℹ️', tone: 'blue', text: 'These examples can be used in 5-, 8-, 12-, and 25-mark answers — pick one and name the third party who gains.' },
-      examEdge: 'Examiners reward specificity. "Education has positive externalities" → low marks. "Higher educational attainment raises national productivity and lowers crime rates — clear external benefits captured by employers and society" → high marks.'
+      tipLate: { icon: 'ℹ️', tone: 'blue', text: 'These examples can be used in 5-, 8-, 12-, and 25-mark answers – pick one and name the third party who gains.' },
+      examEdge: 'Examiners reward specificity. "Education has positive externalities" → low marks. "Higher educational attainment raises national productivity and lowers crime rates – clear external benefits captured by employers and society" → high marks.'
     },
     {
       id: 'pos_externalities_4',
@@ -214,17 +214,17 @@ window.ECONOS_TOPIC = {
       causesEmoji: '🌍',
       causesStyle: 'tinted-flat',
       causes: [
-        { icon: '🌳', head: 'Payments for tree planting', body: 'Governments pay landowners per hectare planted and maintained. Trees provide carbon storage, cleaner air, and habitat — benefits that extend to the whole community.', tone: 'green' },
+        { icon: '🌳', head: 'Payments for tree planting', body: 'Governments pay landowners per hectare planted and maintained. Trees provide carbon storage, cleaner air, and habitat – benefits that extend to the whole community.', tone: 'green' },
         { icon: '🔋', head: 'EV purchase grants',         body: 'Consumers receive grants or rebates for electric vehicles, reducing the upfront cost and encouraging adoption that lowers emissions for everyone.',              tone: 'blue'  }
       ],
       tipLate: { icon: '✅', tone: 'green', head: 'When this works best', text: 'Best when the main problem is <strong>under-consumption</strong> and the social benefit can be reasonably identified.' },
-      examEdge: '"A Pigouvian subsidy is theoretically efficient but practically difficult to calibrate" — a high-mark phrase. For top marks, compare subsidies to consumers vs producers on incidence, fiscal cost, and equity.'
+      examEdge: '"A Pigouvian subsidy is theoretically efficient but practically difficult to calibrate" – a high-mark phrase. For top marks, compare subsidies to consumers vs producers on incidence, fiscal cost, and equity.'
     },
     {
       id: 'pos_externalities_5',
       stepLabel: 'Learn: Step 5 of 7',
       title: 'Direct provision & regulation',
-      tip: { icon: '💡', tone: 'blue', text: '<em>Some positive externalities are so important that government does not just nudge the market — it directly provides the good or requires its consumption.</em>' },
+      tip: { icon: '💡', tone: 'blue', text: '<em>Some positive externalities are so important that government does not just nudge the market – it directly provides the good or requires its consumption.</em>' },
       keyPointsLabel: 'Two direct tools',
       keyPointsEmoji: '🏛️',
       keyPointsCols: 2,
@@ -232,12 +232,12 @@ window.ECONOS_TOPIC = {
         {
           tone: 'green', icon: '🏛️', title: 'Public provision',
           headline: 'Government funds or supplies the service directly.',
-          body: '<span style="font-weight:800;color:#059669;">Examples:</span><br>• <strong>NHS healthcare</strong> — funded and delivered by the state to ensure everyone can access essential care.<br>• <strong>State schools</strong> — publicly funded education so children can learn, regardless of family income.<br><br><em>Widening access and treating merit goods partly as a right, not just a purchase.</em>'
+          body: '<span style="font-weight:800;color:#059669;">Examples:</span><br>• <strong>NHS healthcare</strong> – funded and delivered by the state to ensure everyone can access essential care.<br>• <strong>State schools</strong> – publicly funded education so children can learn, regardless of family income.<br><br><em>Widening access and treating merit goods partly as a right, not just a purchase.</em>'
         },
         {
           tone: 'blue', icon: '🛡️', title: 'Mandatory consumption / regulation',
           headline: 'Government requires or strongly enforces consumption.',
-          body: '<span style="font-weight:800;color:#2563EB;">Examples:</span><br>• <strong>Compulsory schooling</strong> — children must attend school until a minimum age because education benefits society.<br>• <strong>Vaccination mandates</strong> — required for certain jobs or activities to protect public health and prevent disease spread.<br><br><em>Ensuring everyone takes up the good when the social benefits are large.</em>'
+          body: '<span style="font-weight:800;color:#2563EB;">Examples:</span><br>• <strong>Compulsory schooling</strong> – children must attend school until a minimum age because education benefits society.<br>• <strong>Vaccination mandates</strong> – required for certain jobs or activities to protect public health and prevent disease spread.<br><br><em>Ensuring everyone takes up the good when the social benefits are large.</em>'
         }
       ],
       causesLabel: 'Trade-offs',
@@ -266,14 +266,14 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '🏛️', title: 'Fiscal cost',                 sub: 'Subsidies and direct provision use tax revenue and create opportunity costs elsewhere.' },
         { tone: 'rose',   icon: '👥', title: 'Political capture',           sub: 'Organised interest groups may shape policy in their own favour rather than the social interest.' }
       ],
-      conclusion: { title: 'Bottom line: trade-offs', text: '<div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;"><div>• Intervention can still be justified — it can correct market failure and raise welfare.</div><div>• The question is not perfect or imperfect, but <strong>better or worse</strong>.</div><div>• Evaluation depends on how large the external benefit is and how well policy is targeted.</div></div>' },
-      tipLate: { icon: '➡️', tone: 'blue', text: 'Always <strong>compare market failure with possible government failure</strong> in essays — weigh the benefits of intervention against the risks and costs.' }
+      conclusion: { title: 'Bottom line: trade-offs', text: '<div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;"><div>• Intervention can still be justified – it can correct market failure and raise welfare.</div><div>• The question is not perfect or imperfect, but <strong>better or worse</strong>.</div><div>• Evaluation depends on how large the external benefit is and how well policy is targeted.</div></div>' },
+      tipLate: { icon: '➡️', tone: 'blue', text: 'Always <strong>compare market failure with possible government failure</strong> in essays – weigh the benefits of intervention against the risks and costs.' }
     },
     {
       id: 'pos_externalities_7',
       stepLabel: 'Learn: Step 7 of 7',
       title: 'Exam edge',
-      tip: { icon: null, tone: 'green', head: 'Exam edge — best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;MSB exceeds MPB, so the market under-produces relative to the socially optimal output.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The market under-consumes the good because private decisions ignore the external benefit.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A subsidy can internalise the external benefit by shifting MPB up towards MSB.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare gain forgone depends on the price elasticity of demand and supply.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Intervention may be justified despite government failure if the external benefit is large and well-targeted.&rdquo;</span></div></div>' },
+      tip: { icon: null, tone: 'green', head: 'Exam edge – best phrases to use in high-mark answers', text: '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;"><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;MSB exceeds MPB, so the market under-produces relative to the socially optimal output.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The market under-consumes the good because private decisions ignore the external benefit.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;A subsidy can internalise the external benefit by shifting MPB up towards MSB.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;The size of the welfare gain forgone depends on the price elasticity of demand and supply.&rdquo;</span></div><div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex-shrink:0;line-height:1.55;">✅</span><span>&ldquo;Intervention may be justified despite government failure if the external benefit is large and well-targeted.&rdquo;</span></div></div>' },
       flowTitle: 'A 4-step evaluation flow',
       flowEmoji: '🧭',
       flow: [

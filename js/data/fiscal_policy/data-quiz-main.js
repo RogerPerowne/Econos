@@ -50,7 +50,7 @@
           'The amount the government borrows from the central bank per year'
         ],
         ans:  1,
-        exp:  'The budget deficit is the annual flow (spending minus tax revenue). The national debt is the stock — total outstanding government borrowing accumulated over many years. Running a deficit adds to the debt.'
+        exp:  'The budget deficit is the annual flow (spending minus tax revenue). The national debt is the stock – total outstanding government borrowing accumulated over many years. Running a deficit adds to the debt.'
       },
       {
         id:   'q_fp_4',
@@ -63,7 +63,7 @@
           'Exporters adjusting prices when the exchange rate changes'
         ],
         ans:  1,
-        exp:  'Automatic stabilisers (e.g., unemployment benefits and progressive income tax) work without discretionary policy. In a recession: tax revenue falls, benefits spending rises — both support AD automatically.'
+        exp:  'Automatic stabilisers (e.g., unemployment benefits and progressive income tax) work without discretionary policy. In a recession: tax revenue falls, benefits spending rises – both support AD automatically.'
       },
       {
         id:   'q_fp_5',
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Budget deficit','National debt','Quantitative easing','Automatic stabiliser'],
         ans:  2,
-        exp:  'Budget deficit, national debt, and automatic stabilisers are all fiscal policy concepts. Quantitative easing is a monetary policy tool used by the central bank — not fiscal policy.'
+        exp:  'Budget deficit, national debt, and automatic stabilisers are all fiscal policy concepts. Quantitative easing is a monetary policy tool used by the central bank – not fiscal policy.'
       },
       {
         id:   'q_fp_9',

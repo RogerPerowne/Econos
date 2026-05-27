@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Make the Judgement station data
+   ECONOS – Link It · Make the Judgement station data
    The Price Mechanism: synthesise into an exam-quality judgement
    ============================================================ */
 
@@ -40,7 +40,7 @@ window.ECONOS_LINK_JUDGE = {
         { id: 'diagram', tone: 'purple', icon: '📈', title: 'Diagram',       text: 'Supply shifts left S₁ to S₂ → P rises P₁ to P₂, Q falls Q₁ to Q₂ → price signal activated.' },
         { id: 'depends', tone: 'blue',   icon: '⚖️', title: 'It depends on', text: 'Effectiveness depends on price signal speed, agricultural PES, and distributional equity consequences.' }
       ],
-      cloze: 'The price mechanism performs three functions when food supply is disrupted. First, higher prices [1] existing supply — directing it to those willing and able to pay P₂. Second, the price signal [2] producers: higher prices indicate that expanding output is [3]. Third, the profit incentive at P₂ > long-run average cost [4] investment in new capacity. However, price rationing is most effective when markets are [5]: if supermarkets have pricing power, the signal may not reach farmers in full. The equity cost of price rationing is that [6] households are excluded from access — requiring complementary welfare policy. The supply response depends on [7] — in agriculture, the growing season limits response to 6–24 months even when the signal is clear. The strongest judgement is that the price mechanism is informationally [8] but not always equitably efficient.',
+      cloze: 'The price mechanism performs three functions when food supply is disrupted. First, higher prices [1] existing supply – directing it to those willing and able to pay P₂. Second, the price signal [2] producers: higher prices indicate that expanding output is [3]. Third, the profit incentive at P₂ > long-run average cost [4] investment in new capacity. However, price rationing is most effective when markets are [5]: if supermarkets have pricing power, the signal may not reach farmers in full. The equity cost of price rationing is that [6] households are excluded from access – requiring complementary welfare policy. The supply response depends on [7] – in agriculture, the growing season limits response to 6–24 months even when the signal is clear. The strongest judgement is that the price mechanism is informationally [8] but not always equitably efficient.',
       blanks: [
         { id: 1, options: [
             { id: 'b1-ration',    text: 'ration',      correct: true  },
@@ -100,7 +100,7 @@ window.ECONOS_LINK_JUDGE = {
           { id: 'op-gov',      text: 'Government allocation is always more equitable and efficient than market prices',             correct: false }
         ]
       },
-      examBridge: '"The Ukraine-driven supply shock demonstrates the price mechanism\'s strengths: UK food prices rose 19.2%, rationing existing supply and signalling farmers (+3% wheat planting) and investors (+14% farmland prices). But the short-run agricultural PES ≈ 0.2 meant the incentive function only translated into more supply over a 12–24 month lag. And price rationing excluded the lowest-income households — evidenced by 37% more food bank usage — requiring complementary targeted welfare support."'
+      examBridge: '"The Ukraine-driven supply shock demonstrates the price mechanism\'s strengths: UK food prices rose 19.2%, rationing existing supply and signalling farmers (+3% wheat planting) and investors (+14% farmland prices). But the short-run agricultural PES ≈ 0.2 meant the incentive function only translated into more supply over a 12–24 month lag. And price rationing excluded the lowest-income households – evidenced by 37% more food bank usage – requiring complementary targeted welfare support."'
     }
   ]
 };

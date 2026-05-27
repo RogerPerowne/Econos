@@ -24,7 +24,7 @@
           'The product must be homogeneous and identical in all markets'
         ],
         ans:  3,
-        exp:  'Price discrimination requires market power, separable markets (to prevent resale), and different PEDs. It does not require homogeneous products — the product is the same but sold at different prices to different groups.'
+        exp:  'Price discrimination requires market power, separable markets (to prevent resale), and different PEDs. It does not require homogeneous products – the product is the same but sold at different prices to different groups.'
       },
       {
         id:   'q_pd_2',
@@ -118,7 +118,7 @@
         tableData: [
           ['Adult','30','80','?'],
           ['Student','18','60','?'],
-          ['Total (with PD)','—','140','?'],
+          ['Total (with PD)','–','140','?'],
           ['Single price','24','140','?']
         ],
         opts: ['£3,360','£3,480','£3,600','£3,720'],

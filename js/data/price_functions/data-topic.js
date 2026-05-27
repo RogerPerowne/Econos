@@ -4,10 +4,10 @@ window.ECONOS_TOPIC = {
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'The Price Mechanism',
   estTime: '7-9 minutes',
-  goal: 'Lock in how prices signal, incentivise, ration and transmit information — and why market failure occurs when these functions break down.',
+  goal: 'Lock in how prices signal, incentivise, ration and transmit information – and why market failure occurs when these functions break down.',
   intro: {
     heroKey: 'heroPrice',
-    summary: 'Prices do far more than measure value — they coordinate economic activity across millions of decentralised agents without central direction. Understanding these functions explains both why markets are powerful and why they sometimes fail.',
+    summary: 'Prices do far more than measure value – they coordinate economic activity across millions of decentralised agents without central direction. Understanding these functions explains both why markets are powerful and why they sometimes fail.',
     doInThis: 'Work through 7 cards covering the three functions of price (signalling, incentive, rationing), the flow of price information through markets, entrepreneurship and the profit signal, and what happens when prices fail to function.',
     outcomes: [
       'Explain the three functions of prices: signalling, incentives, and rationing',
@@ -54,10 +54,10 @@ window.ECONOS_TOPIC = {
       ],
       keyTerms: [
         { term: 'Price signal', def: 'A price change that communicates information about relative scarcity or value, guiding resource allocation decisions.' },
-        { term: 'Dispersed knowledge', def: 'Hayek\'s concept: relevant economic knowledge is distributed across millions of individuals — no central authority can aggregate it as efficiently as prices do.' },
+        { term: 'Dispersed knowledge', def: 'Hayek\'s concept: relevant economic knowledge is distributed across millions of individuals – no central authority can aggregate it as efficiently as prices do.' },
         { term: 'Efficient allocation', def: 'A pattern of resource use where goods flow to their most highly-valued uses and producers respond to genuine consumer demand.' }
       ],
-      examEdge: 'Strong answers explain the link between prices and resource allocation. Don\'t just say "prices change behaviour" — show how this leads to efficient allocation.'
+      examEdge: 'Strong answers explain the link between prices and resource allocation. Don\'t just say "prices change behaviour" – show how this leads to efficient allocation.'
     },
     {
       id: 'price_functions_2',
@@ -66,7 +66,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '💡',
         tone: 'blue',
-        text: '<em>Higher prices encourage producers to supply more and consumers to buy less — lower prices do the opposite.</em><br>Prices therefore act like <strong>signals with consequences</strong> — they change behaviour.'
+        text: '<em>Higher prices encourage producers to supply more and consumers to buy less – lower prices do the opposite.</em><br>Prices therefore act like <strong>signals with consequences</strong> – they change behaviour.'
       },
       flowTitle: 'How prices change behaviour',
       flowEmoji: '⚖️',
@@ -112,9 +112,9 @@ window.ECONOS_TOPIC = {
         { tone: 'blue',  icon: '🍓', head: 'Strawberries in winter', body: 'High winter strawberry prices attract imports and greenhouse production.' }
       ],
       keyTerms: [
-        { term: 'Incentive function', def: 'Prices motivate producers and consumers to adjust behaviour in response to scarcity signals — the mechanism by which markets self-correct.' },
+        { term: 'Incentive function', def: 'Prices motivate producers and consumers to adjust behaviour in response to scarcity signals – the mechanism by which markets self-correct.' },
         { term: 'Profit signal',      def: 'Abnormal profit signals under-supply of a good, attracting new entrants. Losses signal over-supply, causing exit.' },
-        { term: 'Entry and exit',     def: 'The mechanism by which the incentive function restores equilibrium — new firms enter profitable markets; unprofitable firms exit.' }
+        { term: 'Entry and exit',     def: 'The mechanism by which the incentive function restores equilibrium – new firms enter profitable markets; unprofitable firms exit.' }
       ],
       examEdge: 'Don\'t stop at "price rises". Explain the incentive: firms chase profit, consumers reconsider value, and resources reallocate.'
     },
@@ -125,7 +125,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '💡',
         tone: 'blue',
-        text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today — it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.'
+        text: '<em>When a product is scarce, price helps ration it. A higher price does not create more tickets or more seats today – it decides who gets them.</em><br>In a market, scarce goods usually go to those <strong>willing and able to pay</strong>.'
       },
       diagramKey: 'priceRationingScarcity',
       diagramLabel: 'How rationing works',
@@ -157,10 +157,10 @@ window.ECONOS_TOPIC = {
       ],
       keyTerms: [
         { term: 'Rationing function',  def: 'Prices allocate scarce goods among competing buyers by excluding those unwilling or unable to pay the market price.' },
-        { term: 'Willingness to pay',  def: 'The maximum price a buyer would offer for a unit — combines both need and income.' },
-        { term: 'Non-market rationing', def: 'Alternatives to price rationing: queuing (NHS), vouchers, lottery, merit assessment — used when price rationing produces inequitable outcomes.' }
+        { term: 'Willingness to pay',  def: 'The maximum price a buyer would offer for a unit – combines both need and income.' },
+        { term: 'Non-market rationing', def: 'Alternatives to price rationing: queuing (NHS), vouchers, lottery, merit assessment – used when price rationing produces inequitable outcomes.' }
       ],
-      examEdge: 'The price mechanism rations <strong>efficiently in one sense</strong> — it matches supply and demand quickly and uses resources well. But it is <strong>not always fair</strong>. In exams, mention both <strong>efficiency</strong> (good use of scarce resources) and <strong>equity</strong> (fairness and access).'
+      examEdge: 'The price mechanism rations <strong>efficiently in one sense</strong> – it matches supply and demand quickly and uses resources well. But it is <strong>not always fair</strong>. In exams, mention both <strong>efficiency</strong> (good use of scarce resources) and <strong>equity</strong> (fairness and access).'
     },
     {
       id: 'price_functions_4',
@@ -255,10 +255,10 @@ window.ECONOS_TOPIC = {
       ],
       keyTerms: [
         { term: 'Entrepreneur',           def: 'An economic agent who organises factors of production to create goods/services, bearing risk in search of profit.' },
-        { term: 'Creative destruction',   def: 'Schumpeter\'s term for entrepreneurial innovation destroying old industries while creating new ones — the engine of dynamic efficiency.' },
-        { term: 'Abnormal profit signal', def: 'Profit above normal return — the price signal that attracts entrepreneurs into a profitable market.' }
+        { term: 'Creative destruction',   def: 'Schumpeter\'s term for entrepreneurial innovation destroying old industries while creating new ones – the engine of dynamic efficiency.' },
+        { term: 'Abnormal profit signal', def: 'Profit above normal return – the price signal that attracts entrepreneurs into a profitable market.' }
       ],
-      examEdge: 'Remember: entrepreneurship is linked to <strong>profit incentives</strong> and <strong>dynamic efficiency</strong>. It\'s not just about starting a business — it\'s about <strong>responding to price signals to create value</strong>.'
+      examEdge: 'Remember: entrepreneurship is linked to <strong>profit incentives</strong> and <strong>dynamic efficiency</strong>. It\'s not just about starting a business – it\'s about <strong>responding to price signals to create value</strong>.'
     },
     {
       id: 'price_functions_6',
@@ -267,7 +267,7 @@ window.ECONOS_TOPIC = {
       tip: {
         icon: '💡',
         tone: 'blue',
-        text: '<em>The price mechanism often coordinates markets well — but not always.</em><br><em>If prices do not reflect all costs and benefits, or if markets are distorted, resources may be allocated inefficiently.</em>'
+        text: '<em>The price mechanism often coordinates markets well – but not always.</em><br><em>If prices do not reflect all costs and benefits, or if markets are distorted, resources may be allocated inefficiently.</em>'
       },
       causesStyle: 'tinted-flat',
       causesEmoji: '⚠️',
@@ -289,7 +289,7 @@ window.ECONOS_TOPIC = {
         { tone: 'amber', icon: '🚆', head: 'Rail commuters / local monopoly', body: 'Limited alternatives allow <strong>higher prices</strong> and <strong>poorer service</strong> than competition would deliver.' }
       ],
       keyTerms: [
-        { term: 'Market failure',       def: 'A situation where the free market fails to allocate resources efficiently — prices fail to signal, incentivise, or ration correctly.' },
+        { term: 'Market failure',       def: 'A situation where the free market fails to allocate resources efficiently – prices fail to signal, incentivise, or ration correctly.' },
         { term: 'Externality',          def: 'A cost or benefit of a transaction that falls on a third party not involved in the exchange.' },
         { term: 'Information asymmetry', def: 'When one side of a transaction has materially better information than the other, distorting decisions and prices.' }
       ],
@@ -344,12 +344,12 @@ window.ECONOS_TOPIC = {
         items: [
           { icon: '🎫', title: 'Concert tickets', verdict: 'Markets work best',     verdictTone: 'green', body: 'Prices respond quickly to demand and supply, ration scarce seats and signal popularity.' },
           { icon: '🏥', title: 'Health care',     verdict: 'Hybrid works best',     verdictTone: 'blue',  body: 'Markets can improve efficiency, but government helps with equity, regulation and information gaps.' },
-          { icon: '💡', title: 'Street lighting', verdict: 'Government works best', verdictTone: 'green', dotColor: '#0F766E', body: 'A public good — hard to charge users individually, so markets would underprovide it.' }
+          { icon: '💡', title: 'Street lighting', verdict: 'Government works best', verdictTone: 'green', dotColor: '#0F766E', body: 'A public good – hard to charge users individually, so markets would underprovide it.' }
         ]
       },
       keyTerms: [
-        { term: 'Government failure', def: 'When government intervention produces a worse allocation than the market would — through bureaucracy, poor information, or distorted incentives.' },
-        { term: 'Hybrid allocation',  def: 'Combining market exchange with government regulation, subsidies, or direct provision — common in healthcare, education, transport.' },
+        { term: 'Government failure', def: 'When government intervention produces a worse allocation than the market would – through bureaucracy, poor information, or distorted incentives.' },
+        { term: 'Hybrid allocation',  def: 'Combining market exchange with government regulation, subsidies, or direct provision – common in healthcare, education, transport.' },
         { term: 'Contextual judgement', def: 'The exam skill of weighing efficiency vs equity, market failure vs government failure, on the facts of the specific market or policy.' }
       ],
       examEdge: 'Strong answers compare <strong>efficiency and equity</strong>. Recognise <strong>market failure</strong> and <strong>government failure</strong>. Use <strong>examples</strong> and reach a balanced, <strong>contextual judgement</strong> rather than a blanket conclusion.',

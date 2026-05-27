@@ -50,7 +50,7 @@
           'Nominal Adjusted Interest Rate and Unemployment'
         ],
         ans:  1,
-        exp:  'NAIRU is the Non-Accelerating Inflation Rate of Unemployment — the level of unemployment at which inflation is stable. Below NAIRU, inflation accelerates; above it, inflation falls. It corresponds to the vertical long-run Phillips curve.'
+        exp:  'NAIRU is the Non-Accelerating Inflation Rate of Unemployment – the level of unemployment at which inflation is stable. Below NAIRU, inflation accelerates; above it, inflation falls. It corresponds to the vertical long-run Phillips curve.'
       },
       {
         id:   'q_mo_4',
@@ -63,7 +63,7 @@
           'Lower interest rates reduce both inflation and unemployment'
         ],
         ans:  2,
-        exp:  'Expanding demand (e.g., lower interest rates) can reduce unemployment but also push up prices — this is the classic inflation-unemployment trade-off. More growth can also worsen the current account as imports rise.'
+        exp:  'Expanding demand (e.g., lower interest rates) can reduce unemployment but also push up prices – this is the classic inflation-unemployment trade-off. More growth can also worsen the current account as imports rise.'
       },
       {
         id:   'q_mo_5',
@@ -94,10 +94,10 @@
         type: 'cause_effect',
         q:    'Match each macroeconomic cause to its effect on objectives.',
         pairs: [
-          { cause: 'Government stimulates AD to cut unemployment',  effect: 'Inflation may rise — trade-off activated' },
+          { cause: 'Government stimulates AD to cut unemployment',  effect: 'Inflation may rise – trade-off activated' },
           { cause: 'Strong growth boosts imports',                  effect: 'Current account deficit may widen' },
           { cause: 'Central bank raises interest rates',            effect: 'Inflation falls but growth and employment may suffer' },
-          { cause: 'Supply-side policies improve productivity',     effect: 'Growth rises without inflation — objectives aligned' },
+          { cause: 'Supply-side policies improve productivity',     effect: 'Growth rises without inflation – objectives aligned' },
           { cause: 'Negative supply shock hits the economy',        effect: 'Stagflation: higher inflation and higher unemployment' },
           { cause: 'Large fiscal deficit persists',                 effect: 'Government debt rises; fiscal sustainability threatened' }
         ]
@@ -108,7 +108,7 @@
         q:    'Which is the odd one out?',
         opts: ['Phillips curve','NAIRU','Laffer curve','Stagflation'],
         ans:  2,
-        exp:  'The Phillips curve, NAIRU, and stagflation are all directly related to the inflation-unemployment relationship. The Laffer curve is a fiscal concept about the relationship between tax rates and tax revenue — not an inflation/unemployment concept.'
+        exp:  'The Phillips curve, NAIRU, and stagflation are all directly related to the inflation-unemployment relationship. The Laffer curve is a fiscal concept about the relationship between tax rates and tax revenue – not an inflation/unemployment concept.'
       },
       {
         id:   'q_mo_9',

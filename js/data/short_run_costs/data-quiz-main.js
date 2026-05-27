@@ -16,21 +16,21 @@
 
     questions: [
 
-      /* 1 — MCQ: fixed vs variable costs */
+      /* 1 – MCQ: fixed vs variable costs */
       { type: 'mcq',
         id: 'q_src_1',
         stem: 'Which of the following is a <strong>fixed cost</strong> for a manufacturing firm in the short run?',
         opts: [
-          'The annual rent paid on a factory — this must be paid regardless of how much is produced',
-          'The cost of raw materials used in production — this increases as output increases',
+          'The annual rent paid on a factory – this must be paid regardless of how much is produced',
+          'The cost of raw materials used in production – this increases as output increases',
           'Overtime wages paid to workers during peak production periods',
-          'The electricity used to power production machinery — this varies with output'
+          'The electricity used to power production machinery – this varies with output'
         ],
         ans: 0,
-        exp: '<strong>Fixed costs</strong>: do not change with output in the short run — paid whether producing zero or maximum capacity. Examples: factory rent, business rates, insurance, loan repayments, depreciation of capital, management salaries. <strong>Variable costs</strong>: change directly with output — raw materials, hourly labour, energy for production. The distinction matters for short-run decisions: in the short run, at least one factor (capital) is fixed. If revenue covers variable costs, a firm will continue producing even if it makes a loss overall (as it covers its variable costs and contributes to fixed costs).'
+        exp: '<strong>Fixed costs</strong>: do not change with output in the short run – paid whether producing zero or maximum capacity. Examples: factory rent, business rates, insurance, loan repayments, depreciation of capital, management salaries. <strong>Variable costs</strong>: change directly with output – raw materials, hourly labour, energy for production. The distinction matters for short-run decisions: in the short run, at least one factor (capital) is fixed. If revenue covers variable costs, a firm will continue producing even if it makes a loss overall (as it covers its variable costs and contributes to fixed costs).'
       },
 
-      /* 2 — MCQ: law of diminishing returns */
+      /* 2 – MCQ: law of diminishing returns */
       { type: 'mcq',
         id: 'q_src_2',
         stem: 'The <strong>law of diminishing returns</strong> states that:',
@@ -41,10 +41,10 @@
           'Diminishing returns occur because workers become less skilled over time as they specialize in narrow tasks'
         ],
         ans: 0,
-        exp: 'The <strong>law of diminishing returns</strong> (or diminishing marginal product) is a short-run concept: with at least one fixed factor, adding more of the variable factor eventually produces smaller and smaller additions to output. Example: a factory with fixed capital — 1st worker adds greatly to output; 2nd worker adds less (machinery is now being shared); 10th worker might barely add anything as the factory is overcrowded. When marginal product falls, marginal cost rises. This links short-run production to cost theory: the rising MC curve reflects diminishing marginal productivity of labour.'
+        exp: 'The <strong>law of diminishing returns</strong> (or diminishing marginal product) is a short-run concept: with at least one fixed factor, adding more of the variable factor eventually produces smaller and smaller additions to output. Example: a factory with fixed capital – 1st worker adds greatly to output; 2nd worker adds less (machinery is now being shared); 10th worker might barely add anything as the factory is overcrowded. When marginal product falls, marginal cost rises. This links short-run production to cost theory: the rising MC curve reflects diminishing marginal productivity of labour.'
       },
 
-      /* 3 — Elastic sort: costs classification */
+      /* 3 – Elastic sort: costs classification */
       { type: 'elastic_sort',
         id: 'q_src_3',
         stem: 'Classify each cost as <strong>fixed</strong> or <strong>variable</strong> for a cafe in the short run.',
@@ -58,10 +58,10 @@
           { icon: '👷', label: 'Wages paid to part-time staff based on hours worked', note: '', ans: 'variable' },
           { icon: '🔧', label: 'Annual depreciation of the espresso machine and furniture', note: '', ans: 'fixed' }
         ],
-        exp: '<strong>Fixed costs</strong>: rent, business rates, depreciation — paid regardless of cups of coffee sold; represent the cost of being in business. <strong>Variable costs</strong>: ingredients, variable labour (hourly/part-time), variable energy — directly linked to production volume. Fixed costs are "sunk" in the short run — cannot be reduced by cutting output. The key managerial insight: if revenue covers variable costs + some fixed costs, continue operating (loss is smaller than if the firm closes and still has to pay fixed costs).'
+        exp: '<strong>Fixed costs</strong>: rent, business rates, depreciation – paid regardless of cups of coffee sold; represent the cost of being in business. <strong>Variable costs</strong>: ingredients, variable labour (hourly/part-time), variable energy – directly linked to production volume. Fixed costs are "sunk" in the short run – cannot be reduced by cutting output. The key managerial insight: if revenue covers variable costs + some fixed costs, continue operating (loss is smaller than if the firm closes and still has to pay fixed costs).'
       },
 
-      /* 4 — Numeric input: marginal cost */
+      /* 4 – Numeric input: marginal cost */
       { type: 'numeric_input',
         id: 'q_src_4',
         stem: 'Calculate the <strong>marginal cost</strong> of the 5th unit.',
@@ -73,24 +73,24 @@
         workingSteps: [
           'MC(5th unit) = TC(5) − TC(4) = £175 − £145 = £30'
         ],
-        exp: 'Marginal cost (MC) = change in total cost ÷ change in quantity. MC(5) = £175 − £145 = <strong>£30</strong>. For the sequence: MC(1)=50, MC(2)=40, MC(3)=30, MC(4)=25, MC(5)=30, MC(6)=35. MC first falls (increasing marginal product of labour as the firm reaches optimal workforce size) then rises (diminishing returns set in). This U-shape of MC is fundamental to cost theory. The minimum point of MC occurs at the output where diminishing returns begin. MC crosses ATC at the minimum of ATC — a key diagram relationship.'
+        exp: 'Marginal cost (MC) = change in total cost ÷ change in quantity. MC(5) = £175 − £145 = <strong>£30</strong>. For the sequence: MC(1)=50, MC(2)=40, MC(3)=30, MC(4)=25, MC(5)=30, MC(6)=35. MC first falls (increasing marginal product of labour as the firm reaches optimal workforce size) then rises (diminishing returns set in). This U-shape of MC is fundamental to cost theory. The minimum point of MC occurs at the output where diminishing returns begin. MC crosses ATC at the minimum of ATC – a key diagram relationship.'
       },
 
-      /* 5 — MCQ: ATC minimum and MC relationship */
+      /* 5 – MCQ: ATC minimum and MC relationship */
       { type: 'mcq',
         id: 'q_src_5',
         stem: 'On a standard cost curve diagram, the <strong>marginal cost (MC) curve passes through the minimum point of the average total cost (ATC) curve</strong>. Why?',
         opts: [
-          'When MC < ATC, ATC is being pulled down; when MC > ATC, ATC is being pulled up. ATC is only at its minimum when MC = ATC — pulling neither up nor down',
+          'When MC < ATC, ATC is being pulled down; when MC > ATC, ATC is being pulled up. ATC is only at its minimum when MC = ATC – pulling neither up nor down',
           'MC and ATC curves always have the same shape, so they must cross at the minimum point',
-          'ATC is minimised when marginal costs are at their lowest — both curves reach their minimum at the same output',
-          'The government requires firms to produce at minimum ATC — so the crossing point is mandated by regulation'
+          'ATC is minimised when marginal costs are at their lowest – both curves reach their minimum at the same output',
+          'The government requires firms to produce at minimum ATC – so the crossing point is mandated by regulation'
         ],
         ans: 0,
-        exp: 'This is a mathematical relationship called the "marginal-average rule": when the marginal value is below the average, it pulls the average down; when the marginal is above the average, it pulls the average up; when marginal equals average, the average is neither rising nor falling — it is at its minimum (or maximum). The same relationship exists for exam scores (if your marginal score is below your average, your average falls), batting averages, and AVC/ATC/MC in cost theory. ATC minimum = MC crossing ATC is the productive efficiency benchmark.'
+        exp: 'This is a mathematical relationship called the "marginal-average rule": when the marginal value is below the average, it pulls the average down; when the marginal is above the average, it pulls the average up; when marginal equals average, the average is neither rising nor falling – it is at its minimum (or maximum). The same relationship exists for exam scores (if your marginal score is below your average, your average falls), batting averages, and AVC/ATC/MC in cost theory. ATC minimum = MC crossing ATC is the productive efficiency benchmark.'
       },
 
-      /* 6 — Para fill: cost curves */
+      /* 6 – Para fill: cost curves */
       { type: 'para_fill',
         id: 'q_src_6',
         stem: 'Complete the paragraph about short-run cost curves.',
@@ -108,57 +108,57 @@
         exp: '(1) MC first <strong>falls</strong>. (2) Then <strong>rises</strong> as diminishing returns dominate. (3) Average <strong>total</strong> cost is U-shaped. (4) <strong>ATC</strong> falls initially (fixed cost spreading effect). (5) Eventually <strong>ATC</strong> rises (rising AVC from diminishing returns outweighs falling AFC). (6) MC crosses AVC and ATC at their <strong>minimum</strong> points. (7) Average <strong>fixed</strong> cost falls continuously (TFC ÷ more units = smaller AFC at every higher output level). These relationships form the foundation of all market structure diagrams.'
       },
 
-      /* 7 — Cause & effect: costs and production decisions */
+      /* 7 – Cause & effect: costs and production decisions */
       { type: 'cause_effect',
         id: 'q_src_7',
         stem: 'Match each change in production conditions to its effect on short-run costs.',
         pairs: [
-          { cause: 'A firm adds a third shift to its factory, running beyond optimal capacity', effect: 'Marginal and average variable costs rise — diminishing returns intensify' },
+          { cause: 'A firm adds a third shift to its factory, running beyond optimal capacity', effect: 'Marginal and average variable costs rise – diminishing returns intensify' },
           { cause: 'A firm\'s landlord raises factory rent by 20%', effect: 'Fixed costs rise; ATC shifts up; AVC and MC unchanged at each output level' },
           { cause: 'Automation of one repetitive task reduces direct labour required per unit', effect: 'AVC falls; MC shifts downward; ATC falls at every output level' },
           { cause: 'Raw material costs (variable input) double due to global supply shock', effect: 'AVC and MC both rise; ATC shifts upward; fixed costs unchanged' },
-          { cause: 'A firm operates below its optimal capacity (inside the PPF)', effect: 'Productive inefficiency — ATC above minimum; idle resources' },
-          { cause: 'A firm reaches the output level where MC = ATC', effect: 'ATC is at its minimum — the productively efficient output level' }
+          { cause: 'A firm operates below its optimal capacity (inside the PPF)', effect: 'Productive inefficiency – ATC above minimum; idle resources' },
+          { cause: 'A firm reaches the output level where MC = ATC', effect: 'ATC is at its minimum – the productively efficient output level' }
         ],
         exp: 'Cost effects by type: <strong>changes in fixed costs</strong> (rent, rates) → shift ATC but not AVC or MC; <strong>changes in variable input costs</strong> (labour, materials) → shift AVC, MC, and ATC; <strong>technology improvements</strong> → shift MC and AVC down; <strong>diminishing returns worsened</strong> (overcapacity) → MC and AVC rise more steeply. Operating below minimum ATC = productive inefficiency. Operating at minimum ATC = productive efficiency. Understanding which cost curves are affected is key to diagrams and policy analysis.'
       },
 
-      /* 8 — Match pairs: cost curve concepts */
+      /* 8 – Match pairs: cost curve concepts */
       { type: 'match_pairs',
         id: 'q_src_8',
         stem: 'Match each cost concept to its definition.',
         pairs: [
           { a: 'Total Fixed Cost (TFC)', b: 'Costs that do not change with output in the short run' },
           { a: 'Total Variable Cost (TVC)', b: 'Costs that vary directly with output' },
-          { a: 'Average Total Cost (ATC)', b: 'Total cost ÷ quantity — U-shaped in the short run' },
+          { a: 'Average Total Cost (ATC)', b: 'Total cost ÷ quantity – U-shaped in the short run' },
           { a: 'Marginal Cost (MC)', b: 'Change in total cost from producing one more unit' },
-          { a: 'Productive efficiency', b: 'Producing at minimum average total cost — no waste' },
+          { a: 'Productive efficiency', b: 'Producing at minimum average total cost – no waste' },
           { a: 'Law of diminishing returns', b: 'Adding more variable factor to fixed capital eventually yields smaller marginal output gains' }
         ],
-        exp: 'Core short-run cost vocabulary: TFC (the floor — paid whether or not anything is produced); TVC (rises with output — variable proportionally); ATC = AFC + AVC (both components, U-shaped overall); MC (the slope of TC — pulls averages toward it); productive efficiency at minimum ATC (relevant to market structure comparisons — perfect competition achieves it in long run; monopoly typically does not). Diminishing returns is the production-side explanation for the rising portion of the MC and AVC curves.'
+        exp: 'Core short-run cost vocabulary: TFC (the floor – paid whether or not anything is produced); TVC (rises with output – variable proportionally); ATC = AFC + AVC (both components, U-shaped overall); MC (the slope of TC – pulls averages toward it); productive efficiency at minimum ATC (relevant to market structure comparisons – perfect competition achieves it in long run; monopoly typically does not). Diminishing returns is the production-side explanation for the rising portion of the MC and AVC curves.'
       },
 
-      /* 9 — Odd one out: variable costs */
+      /* 9 – Odd one out: variable costs */
       { type: 'odd_one_out',
         id: 'q_src_9',
         stem: 'Three of these are <strong>variable costs</strong> for an airline. Which is the <strong>odd one out</strong>?',
         items: [
-          { icon: '⛽', label: 'Jet fuel used on each flight — more flights means more fuel', note: '' },
-          { icon: '👨‍✈️', label: 'Crew wages paid per flight hour — more flights means more crew hours', note: '' },
-          { icon: '🏢', label: 'Annual lease payments on aircraft — fixed regardless of how many flights are operated', note: '' },
-          { icon: '🍽️', label: 'In-flight catering costs — more passengers means more meals served', note: '' }
+          { icon: '⛽', label: 'Jet fuel used on each flight – more flights means more fuel', note: '' },
+          { icon: '👨‍✈️', label: 'Crew wages paid per flight hour – more flights means more crew hours', note: '' },
+          { icon: '🏢', label: 'Annual lease payments on aircraft – fixed regardless of how many flights are operated', note: '' },
+          { icon: '🍽️', label: 'In-flight catering costs – more passengers means more meals served', note: '' }
         ],
         ans: 2,
-        exp: 'The odd one out is <strong>annual aircraft lease payments</strong>. This is a fixed cost — paid whether the aircraft flies 1 or 500 times during the year. The lease agreement commits the airline to a fixed sum regardless of utilisation. Fuel, crew hours, and catering are all variable costs — they rise with the number of flights or passengers. For airlines, the large proportion of fixed costs (aircraft leases, landing slots, maintenance commitments) means they have high operational leverage: a fall in passenger numbers has a magnified effect on profit because fixed costs cannot be reduced.'
+        exp: 'The odd one out is <strong>annual aircraft lease payments</strong>. This is a fixed cost – paid whether the aircraft flies 1 or 500 times during the year. The lease agreement commits the airline to a fixed sum regardless of utilisation. Fuel, crew hours, and catering are all variable costs – they rise with the number of flights or passengers. For airlines, the large proportion of fixed costs (aircraft leases, landing slots, maintenance commitments) means they have high operational leverage: a fall in passenger numbers has a magnified effect on profit because fixed costs cannot be reduced.'
       },
 
-      /* 10 — Data table: cost analysis */
+      /* 10 – Data table: cost analysis */
       { type: 'data_table',
         id: 'q_src_10',
         stem: 'The table shows short-run cost data for a manufacturing firm.',
         headers: ['Output (units)', 'Total Fixed Cost (£)', 'Total Variable Cost (£)', 'Total Cost (£)', 'Marginal Cost (£)'],
         rows: [
-          ['0', '200', '0', '200', '—'],
+          ['0', '200', '0', '200', '–'],
           ['1', '200', '80', '280', '80'],
           ['2', '200', '140', '340', '60'],
           ['3', '200', '180', '380', '40'],
@@ -167,13 +167,13 @@
         ],
         question: 'At which output level do <strong>diminishing returns</strong> begin according to the data?',
         opts: [
-          'Between output 3 and output 4 — MC rises from £40 to £60, indicating the marginal product of the variable factor has started to fall',
-          'Between output 1 and output 2 — MC falls from £80 to £60, showing increasing returns initially',
-          'At output 5 — where MC is highest at £100 and diminishing returns are most severe',
-          'Diminishing returns have not yet set in — the data show only falling MC throughout'
+          'Between output 3 and output 4 – MC rises from £40 to £60, indicating the marginal product of the variable factor has started to fall',
+          'Between output 1 and output 2 – MC falls from £80 to £60, showing increasing returns initially',
+          'At output 5 – where MC is highest at £100 and diminishing returns are most severe',
+          'Diminishing returns have not yet set in – the data show only falling MC throughout'
         ],
         ans: 0,
-        exp: 'Diminishing returns begin when MC starts rising. The sequence: MC(1)=80, MC(2)=60, MC(3)=40, MC(4)=60, MC(5)=100. MC falls from units 1-3 (increasing marginal returns), then rises from units 3-5. Diminishing returns begin <strong>between units 3 and 4</strong> — this is where the marginal product of the variable factor peaks (cheapest additional unit is unit 3 at £40) and then starts declining. At output 3, ATC = £380/3 = £126.67. The MC = ATC minimum would occur at a slightly higher output level (where MC has risen enough to equal the falling ATC).'
+        exp: 'Diminishing returns begin when MC starts rising. The sequence: MC(1)=80, MC(2)=60, MC(3)=40, MC(4)=60, MC(5)=100. MC falls from units 1-3 (increasing marginal returns), then rises from units 3-5. Diminishing returns begin <strong>between units 3 and 4</strong> – this is where the marginal product of the variable factor peaks (cheapest additional unit is unit 3 at £40) and then starts declining. At output 3, ATC = £380/3 = £126.67. The MC = ATC minimum would occur at a slightly higher output level (where MC has risen enough to equal the falling ATC).'
       }
 
     ]

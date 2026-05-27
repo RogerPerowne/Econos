@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · Chain station data
+   ECONOS – Link It · Chain station data
    Government Failure: demand subsidy + inelastic supply → price rise
    ============================================================ */
 
@@ -74,14 +74,14 @@ window.ECONOS_LINK_CHAIN = {
         },
         {
           pos:  1,
-          text: 'With PES ≈ 0.4, the housing supply curve is steep — housebuilders cannot rapidly increase output even when prices rise. When demand shifts right, the market adjustment falls almost entirely on price rather than quantity. Developers facing stronger demand with limited competition can raise prices; the OBR found this effect averaged £8,000 per new-build property.'
+          text: 'With PES ≈ 0.4, the housing supply curve is steep – housebuilders cannot rapidly increase output even when prices rise. When demand shifts right, the market adjustment falls almost entirely on price rather than quantity. Developers facing stronger demand with limited competition can raise prices; the OBR found this effect averaged £8,000 per new-build property.'
         },
         {
           pos:  2,
-          text: 'Government failure occurs when an intervention produces an outcome worse than the market failure it was designed to correct. Help to Buy intended to improve affordability but, because supply inelasticity was not addressed, the main effect was to raise new-build prices — a windfall for developers and a deterioration in affordability for buyers outside the scheme. The information failure at design stage was failing to model how inelastic supply would absorb the demand shock.'
+          text: 'Government failure occurs when an intervention produces an outcome worse than the market failure it was designed to correct. Help to Buy intended to improve affordability but, because supply inelasticity was not addressed, the main effect was to raise new-build prices – a windfall for developers and a deterioration in affordability for buyers outside the scheme. The information failure at design stage was failing to model how inelastic supply would absorb the demand shock.'
         }
       ],
-      examBridge: '"Help to Buy shifted demand for new-build homes right from D₁ to D₂. Because housing supply is highly inelastic (PES ≈ 0.4), the new equilibrium at E₂ showed a large price rise and a small quantity increase — consistent with OBR evidence of £8,000 average new-build price inflation. Developers captured the benefit through higher margins; non-subsidised buyers faced higher prices. This is government failure: the intervention worsened the affordability problem it was designed to solve by stimulating demand without addressing supply constraints."',
+      examBridge: '"Help to Buy shifted demand for new-build homes right from D₁ to D₂. Because housing supply is highly inelastic (PES ≈ 0.4), the new equilibrium at E₂ showed a large price rise and a small quantity increase – consistent with OBR evidence of £8,000 average new-build price inflation. Developers captured the benefit through higher margins; non-subsidised buyers faced higher prices. This is government failure: the intervention worsened the affordability problem it was designed to solve by stimulating demand without addressing supply constraints."',
 
       prompts: [
         'Why did Help to Buy fail to improve affordability despite its large scale?',
@@ -89,9 +89,9 @@ window.ECONOS_LINK_CHAIN = {
         'Who captured the benefit of the Help to Buy subsidy, and why?'
       ],
       modelAnswers: [
-        'Help to Buy was a demand-side intervention only: it increased purchasing power without changing the planning rules, labour availability or land costs that constrain housing supply. With PES ≈ 0.4, the supply curve barely shifts even when prices rise — so additional demand is absorbed as higher prices, not more homes. Affordability worsened for non-HTB buyers.',
-        'With inelastic supply, a rightward demand shift produces a large price increase (P₁ → P₂) and a very small quantity increase (Q₁ → Q₂). On a diagram, the equilibrium moves almost vertically upward rather than horizontally rightward — this is the visual signature of government failure in a supply-constrained market.',
-        'Developers (suppliers) captured most of the benefit. Because supply is inelastic, they could raise prices when demand increased without producing proportionally more homes. The OBR\'s £8,000 average new-build price inflation and Barratt\'s record 21% operating margins both confirm that the subsidy was transferred from buyers to developers — a classic incidence outcome when supply is more inelastic than demand.'
+        'Help to Buy was a demand-side intervention only: it increased purchasing power without changing the planning rules, labour availability or land costs that constrain housing supply. With PES ≈ 0.4, the supply curve barely shifts even when prices rise – so additional demand is absorbed as higher prices, not more homes. Affordability worsened for non-HTB buyers.',
+        'With inelastic supply, a rightward demand shift produces a large price increase (P₁ → P₂) and a very small quantity increase (Q₁ → Q₂). On a diagram, the equilibrium moves almost vertically upward rather than horizontally rightward – this is the visual signature of government failure in a supply-constrained market.',
+        'Developers (suppliers) captured most of the benefit. Because supply is inelastic, they could raise prices when demand increased without producing proportionally more homes. The OBR\'s £8,000 average new-build price inflation and Barratt\'s record 21% operating margins both confirm that the subsidy was transferred from buyers to developers – a classic incidence outcome when supply is more inelastic than demand.'
       ],
       vocab: ['government failure', 'unintended consequences', 'inelastic supply', 'demand subsidy', 'price elasticity of supply', 'planning constraints', 'information failure', 'regulatory capture', 'opportunity cost', 'windfall profit']
     }

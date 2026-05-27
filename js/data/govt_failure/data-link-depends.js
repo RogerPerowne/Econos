@@ -1,5 +1,5 @@
 /* ============================================================
-   ECONOS — Link It · It Depends On station data
+   ECONOS – Link It · It Depends On station data
    Government Failure: evaluate whether Help to Buy is government failure
    ============================================================ */
 
@@ -25,7 +25,7 @@ window.ECONOS_LINK_DEPENDS = {
       claim: {
         icon:   '🏗️',
         prompt: 'Policy claim',
-        text:   'Help to Buy is government failure — demand boost, supply unfixed.'
+        text:   'Help to Buy is government failure – demand boost, supply unfixed.'
       },
       factors: [
         {
@@ -44,13 +44,13 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'political-economy',
           icon:  '🗳️',
           label: 'Political pressures on policy design',
-          why:   'Help to Buy was partly designed for political rather than economic reasons — helping voters onto the housing ladder generates electoral support, regardless of efficiency. Housebuilders lobby for demand subsidies (which raise their revenues) rather than planning reforms (which increase competition). Regulatory capture means policy is distorted toward supplier interests even when this creates government failure.'
+          why:   'Help to Buy was partly designed for political rather than economic reasons – helping voters onto the housing ladder generates electoral support, regardless of efficiency. Housebuilders lobby for demand subsidies (which raise their revenues) rather than planning reforms (which increase competition). Regulatory capture means policy is distorted toward supplier interests even when this creates government failure.'
         },
         {
           id:    'time-lag',
           icon:  '⏱️',
           label: 'Time lag between policy design and impact assessment',
-          why:   'Help to Buy ran for 10 years before the OBR\'s impact assessment was published. Policy feedback loops in housing are slow: price effects take years to fully materialise and are confounded by interest rate changes, demographics, and global housing market trends. Long time lags mean government failure is identified slowly — and political capital has often been committed before evidence of failure emerges.'
+          why:   'Help to Buy ran for 10 years before the OBR\'s impact assessment was published. Policy feedback loops in housing are slow: price effects take years to fully materialise and are confounded by interest rate changes, demographics, and global housing market trends. Long time lags mean government failure is identified slowly – and political capital has often been committed before evidence of failure emerges.'
         },
         {
           id:    'counterfactual',
@@ -62,23 +62,23 @@ window.ECONOS_LINK_DEPENDS = {
           id:    'distributional',
           icon:  '👥',
           label: 'Distributional impact (who benefits and who loses)',
-          why:   'Help to Buy primarily benefited buyers in England — particularly in regions where new-build homes are prevalent (outer London, South East). Lower-income buyers priced out of even subsidised homes gained nothing. Developers with land banks in the right areas gained most. The distributional impact is both inefficient (subsidy captured by developers) and inequitable (benefits concentrated among those who could nearly afford homes anyway).'
+          why:   'Help to Buy primarily benefited buyers in England – particularly in regions where new-build homes are prevalent (outer London, South East). Lower-income buyers priced out of even subsidised homes gained nothing. Developers with land banks in the right areas gained most. The distributional impact is both inefficient (subsidy captured by developers) and inequitable (benefits concentrated among those who could nearly afford homes anyway).'
         },
         {
           id:    'complementary-policy',
           icon:  '🔧',
           label: 'Whether complementary supply-side policy accompanied the scheme',
-          why:   'Government failure would have been reduced if HTB had been accompanied by planning reform, social housebuilding, or land value capture. In isolation, demand stimulus with no supply response always raises prices in inelastic markets. A package of demand and supply-side measures might have achieved better affordability outcomes — though political feasibility of planning reform is constrained by NIMBYism.'
+          why:   'Government failure would have been reduced if HTB had been accompanied by planning reform, social housebuilding, or land value capture. In isolation, demand stimulus with no supply response always raises prices in inelastic markets. A package of demand and supply-side measures might have achieved better affordability outcomes – though political feasibility of planning reform is constrained by NIMBYism.'
         },
         {
           id:    'exit-strategy',
           icon:  '🚪',
           label: 'Impact of HTB termination on market expectations',
-          why:   'Help to Buy\'s termination in March 2023 was anticipated to reduce new-build demand sharply. Developers responded by reducing new starts before the deadline, contracting supply further. Government failure can persist beyond the policy itself if exit from a distortionary scheme generates market adjustment costs — suggesting careful phasing-out is needed.'
+          why:   'Help to Buy\'s termination in March 2023 was anticipated to reduce new-build demand sharply. Developers responded by reducing new starts before the deadline, contracting supply further. Government failure can persist beyond the policy itself if exit from a distortionary scheme generates market adjustment costs – suggesting careful phasing-out is needed.'
         }
       ],
       modelRanking: ['supply-elasticity', 'information', 'political-economy'],
-      judgement: '"Whether Help to Buy constitutes government failure depends on how housing supply elasticity is modelled. With PES ≈ 0.4, the OBR\'s finding of £8,000 price inflation from the scheme is consistent with economic theory — demand stimulus with inelastic supply raises prices. But the political economy argument is also relevant: housebuilder lobbying ensured the scheme was not paired with planning reform, and the information failure at design stage (failure to model supply inelasticity accurately) is compounded by incentive misalignment."'
+      judgement: '"Whether Help to Buy constitutes government failure depends on how housing supply elasticity is modelled. With PES ≈ 0.4, the OBR\'s finding of £8,000 price inflation from the scheme is consistent with economic theory – demand stimulus with inelastic supply raises prices. But the political economy argument is also relevant: housebuilder lobbying ensured the scheme was not paired with planning reform, and the information failure at design stage (failure to model supply inelasticity accurately) is compounded by incentive misalignment."'
     }
   ]
 };

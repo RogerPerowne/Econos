@@ -43,9 +43,10 @@ test('Learn shell collapses chrome on mobile', async ({ page }) => {
 
   /* Sidebar is hidden on mobile (display:none from @media <=900px). */
   await expect(page.locator('.sidebar')).toBeHidden();
-  /* Mobile-nav is the visible navigation surface. */
-  await expect(page.locator('.mobile-nav')).toBeVisible();
-  /* No horizontal scroll. */
+  /* No duplicate top-bar on mobile — the session topbar is the only
+     top chrome. The legacy .mobile-nav block was removed. */
+  await expect(page.locator('.mobile-nav')).toHaveCount(0);
+  await expect(page.locator('.topbar')).toBeVisible();
   await expectNoHorizontalScroll(page);
 });
 

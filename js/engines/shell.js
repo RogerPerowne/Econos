@@ -283,48 +283,18 @@
     document.body.insertBefore(wrap.firstChild, document.body.firstChild);
   }
 
-  /* ------------------------------------------------------------------
-     Mobile nav — auto-injected at the top of <body> on every page so
-     each shell HTML can stop hand-rolling the same 5-line block.
-     ------------------------------------------------------------------ */
-  function renderMobileNav() {
-    var U = getUser();
-    return ''
-      + '<nav class="mobile-nav" aria-label="Mobile">'
-      +   '<a href="/" class="mobile-nav__logo" aria-label="Home"><img src="/assets/logo-mark.png" alt="econos"></a>'
-      +   '<div class="mobile-nav__right">'
-      +     '<span class="mobile-nav__streak" aria-label="' + U.streak + ' day streak">'
-      +       '<span aria-hidden="true">🔥</span><span>' + U.streak + '</span>'
-      +     '</span>'
-      +     '<button type="button" class="mobile-nav__avatar" aria-label="Account menu">' + U.initials + '</button>'
-      +   '</div>'
-      + '</nav>';
-  }
-  function mountMobileNav() {
-    if (document.querySelector('.mobile-nav')) return; // already in HTML; leave alone
-    var wrap = document.createElement('div');
-    wrap.innerHTML = renderMobileNav();
-    document.body.insertBefore(wrap.firstChild, document.body.firstChild);
-  }
-
   window.Shell = {
     renderSidebar:   renderSidebar,
     renderTopbar:    renderTopbar,
     renderApp:       renderApp,
     renderStages:    renderStages,
     renderSkipLink:  renderSkipLink,
-    mountSkipLink:   mountSkipLink,
-    renderMobileNav: renderMobileNav,
-    mountMobileNav:  mountMobileNav
+    mountSkipLink:   mountSkipLink
   };
 
-  /* shell.js auto-injects skip-link + mobile-nav so each shell HTML
-     body doesn't repeat those blocks. Both are idempotent. */
+  /* shell.js auto-injects the skip-link so each shell HTML body
+     doesn't repeat that block. Idempotent. */
   function bootShell() {
-    /* Order matters: each helper inserts at body.firstChild, so the
-       LAST one called ends up at the very top. Skip-link must be the
-       first focusable element on every page → mount it last. */
-    mountMobileNav();
     mountSkipLink();
   }
   if (document.readyState === 'loading') {

@@ -246,6 +246,17 @@ window.ECONOS_TOPIC = {
         { term: 'Development constraint', def: 'Poor countries face inward PPFs due to capital scarcity, low productivity, and weak institutions — development policy shifts the frontier outward through investment, technology transfer, and reform.' }
       ],
       examEdge: 'Illustrating C beyond the PPF in your exam diagram is an A*-level response — it shows trade separating production from consumption decisions. The development application uses the same logic in reverse: poor countries have inward PPFs due to capital scarcity and low productivity; outward shifts require investment, technology transfer, or institutional reform — not just trade liberalisation.',
+      economistQuote: {
+        portraitKey: 'economistRicardo',
+        tone: 'amber',
+        label: 'Economist insight: Ricardo and comparative advantage',
+        quote: 'Under a system of perfectly free commerce, each country naturally devotes its capital and labour to such employments as are most beneficial to each. This pursuit of individual advantage is admirably connected with the universal good of the whole.',
+        attribution: 'David Ricardo, <em>On the Principles of Political Economy and Taxation</em> (1817)'
+      },
+      tipLate: {
+        icon: '💡', tone: 'amber', head: 'Why this matters',
+        text: 'Ricardo\'s breakthrough was showing that mutually beneficial trade does <strong>not</strong> require one country to be better at producing everything — it only requires <em>differences in opportunity cost</em>. His famous example: Portugal could produce both wine and cloth more cheaply than England, yet both countries gained by specialising in their comparative-advantage good and trading. The A* move is to anchor any trade or globalisation answer to Ricardo: gains come from <strong>relative</strong>, not absolute, productivity differences — which is why even low-productivity developing economies can benefit from opening to trade.'
+      },
       quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
     }
   ]

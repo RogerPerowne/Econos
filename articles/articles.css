@@ -39,6 +39,11 @@
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  /* Aliases so the canonical .topnav rules (copied from index.css)
+     resolve against the same tokens. */
+  --line: var(--border);
+  --bg:   var(--cream);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,66 +62,89 @@ body {
 a { color: var(--blue-700); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ─── TOP NAV ─────────────────────────────────────────────── */
-.art-nav {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 32px;
-  border-bottom: 1px solid var(--border);
-  background: var(--cream);
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: blur(8px);
-  background: rgba(250, 248, 244, 0.92);
+/* ─── TOP NAV ─────────────────────────────────────────────────
+   Mirrors the .topnav rules in index.css verbatim so articles
+   sit under the same sticky bar as the homepage. The only
+   addition is .topnav__links a.is-active for marking the
+   "Articles" link on these pages.
+   ──────────────────────────────────────────────────────────── */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 40px;
+  height: 64px;
 }
-.art-nav__logo {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 24px;
-  color: var(--ink);
-  letter-spacing: -0.01em;
+.topnav__logo { display: block; flex-shrink: 0; }
+.topnav__logo img {
+  display: block;
+  height: 44px;
+  width: auto;
 }
-.art-nav__logo:hover { text-decoration: none; }
-.art-nav__links {
-  display: flex; gap: 28px; list-style: none;
+.topnav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
 }
-.art-nav__links a {
-  color: var(--ink-soft);
-  font-weight: 500;
-  font-size: 15px;
-}
-.art-nav__links a.is-active { color: var(--green-700); font-weight: 600; }
-.art-nav__actions { display: flex; gap: 10px; align-items: center; }
-.art-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 9px 16px;
-  border-radius: 8px;
-  font-weight: 600;
+.topnav__links a {
   font-size: 14px;
-  border: 1px solid transparent;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+  transition: color 0.15s;
+}
+.topnav__links a:hover { color: var(--ink); text-decoration: none; }
+.topnav__links a.is-active { color: var(--ink); font-weight: 600; }
+.topnav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+  text-decoration: none;
 }
-.art-btn--outline {
-  border-color: var(--border-strong);
-  color: var(--ink);
-  background: var(--white);
-}
-.art-btn--outline:hover { background: var(--cream); text-decoration: none; }
-.art-btn--solid {
-  background: var(--green);
-  color: var(--white);
-  border-color: var(--green);
-}
-.art-btn--solid:hover { background: var(--green-700); border-color: var(--green-700); text-decoration: none; color: var(--white); }
-.art-search-btn {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--white);
-  display: inline-flex; align-items: center; justify-content: center;
-  cursor: pointer;
+.btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--line);
   color: var(--ink-soft);
 }
-.art-search-btn:hover { color: var(--ink); }
+.btn--outline:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--bg);
+  text-decoration: none;
+}
+.btn--solid {
+  background: var(--blue);
+  border: 1.5px solid var(--blue);
+  color: var(--white);
+}
+.btn--solid:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.28);
+  color: var(--white);
+  text-decoration: none;
+}
 
 /* ─── ARTICLE LAYOUT ──────────────────────────────────────── */
 .article {
@@ -212,7 +240,7 @@ a:hover { text-decoration: underline; }
   border-radius: 14px;
   padding: 26px;
   align-self: start;
-  position: sticky; top: 88px;
+  position: sticky; top: 80px;
 }
 .at-a-glance h2 {
   font-family: var(--font-display);
@@ -630,9 +658,12 @@ a:hover { text-decoration: underline; }
 }
 
 /* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .topnav { padding: 0 20px; }
+  .topnav__links { display: none; }
+}
+
 @media (max-width: 960px) {
-  .art-nav { padding: 14px 20px; }
-  .art-nav__links { display: none; }
   .article { padding: 20px 20px 64px; }
   .article-grid { grid-template-columns: 1fr; gap: 32px; }
   .at-a-glance { position: static; }

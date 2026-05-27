@@ -68,20 +68,21 @@
 </head>
 <body>
 
-  <!-- ═══ TOP NAV ═══ -->
-  <nav class="art-nav" role="navigation" aria-label="Main">
-    <a href="/" class="art-nav__logo">Econos</a>
-    <ul class="art-nav__links" role="list">
-      <li><a href="/learn.html">Learn</a></li>
+  <!-- ═══ STICKY NAV — mirrors index.html ═══ -->
+  <nav class="topnav" role="navigation" aria-label="Main navigation">
+    <a href="/index.html" class="topnav__logo" aria-label="econos home">
+      <img src="/assets/econos-logo-full.png" alt="econos — Learn it. Link it. Land it." height="44">
+    </a>
+    <ul class="topnav__links" role="list">
+      <li><a href="/index.html#how-it-works">How it works</a></li>
+      <li><a href="/index.html#features">Features</a></li>
       <li><a href="/index.html#topics">Topics</a></li>
       <li><a href="/articles/" class="is-active">Articles</a></li>
+      <li><a href="/index.html#audience">About</a></li>
     </ul>
-    <div class="art-nav__actions">
-      <a href="/articles/" class="art-search-btn" aria-label="Search articles">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-      </a>
-      <a href="/login.html" class="art-btn art-btn--outline">Log in</a>
-      <a href="/learn.html" class="art-btn art-btn--solid">Sign up free</a>
+    <div class="topnav__actions">
+      <a href="/login.html" class="btn btn--outline">Log in</a>
+      <a href="/learn.html" class="btn btn--solid">Get started</a>
     </div>
   </nav>
 

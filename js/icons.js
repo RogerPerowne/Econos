@@ -4256,6 +4256,188 @@ window.ECONOS_ICONS = {
     </svg>
   `,
 
+  netTradeMechanism: `
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <defs>
+        <marker id="ntm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+      </defs>
+
+      <!-- BASE: sterling circle (always visible) -->
+      <g class="idl-base">
+        <rect width="440" height="300" fill="#F8FAFC" rx="8"/>
+        <circle cx="58" cy="150" r="36" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+        <text x="58" y="148" font-size="22" font-weight="900" fill="#6D28D9" text-anchor="middle">£</text>
+        <text x="58" y="166" font-size="10" font-weight="700" fill="#6D28D9" text-anchor="middle">Sterling</text>
+        <text x="58" y="178" font-size="10" font-weight="700" fill="#6D28D9" text-anchor="middle">falls</text>
+      </g>
+
+      <!-- idl-1: Sterling depreciates — first wave of price effects -->
+      <g class="idl-1" style="display:none">
+        <line x1="98" y1="135" x2="135" y2="100" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
+        <line x1="98" y1="165" x2="135" y2="200" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
+
+        <!-- Top tile: Exports cheaper abroad -->
+        <rect x="140" y="68" width="148" height="64" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1.3"/>
+        <text x="214" y="86" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">Exports cheaper</text>
+        <text x="214" y="100" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">abroad</text>
+        <text x="214" y="118" font-size="9" fill="#475569" text-anchor="middle">UK goods cost less in</text>
+        <text x="214" y="128" font-size="9" fill="#475569" text-anchor="middle">foreign currencies.</text>
+
+        <!-- Bottom tile: Imports dearer at home -->
+        <rect x="140" y="168" width="148" height="64" rx="8" fill="#FFF1F2" stroke="#F43F5E" stroke-width="1.3"/>
+        <text x="214" y="186" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">Imports dearer</text>
+        <text x="214" y="200" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">at home</text>
+        <text x="214" y="218" font-size="9" fill="#475569" text-anchor="middle">Foreign goods cost</text>
+        <text x="214" y="228" font-size="9" fill="#475569" text-anchor="middle">more in pounds.</text>
+      </g>
+
+      <!-- idl-2: Volume responses -->
+      <g class="idl-2" style="display:none">
+        <line x1="290" y1="100" x2="325" y2="100" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
+        <line x1="290" y1="200" x2="325" y2="200" stroke="#2563EB" stroke-width="1.5" marker-end="url(#ntm-arrow)"/>
+
+        <rect x="328" y="68" width="100" height="64" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="1.3"/>
+        <text x="378" y="86" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">Export volumes</text>
+        <text x="378" y="100" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">rise</text>
+        <text x="378" y="118" font-size="9" fill="#475569" text-anchor="middle">Foreign buyers</text>
+        <text x="378" y="128" font-size="9" fill="#475569" text-anchor="middle">demand more.</text>
+
+        <rect x="328" y="168" width="100" height="64" rx="8" fill="#FFF1F2" stroke="#F43F5E" stroke-width="1.3"/>
+        <text x="378" y="186" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">Import volumes</text>
+        <text x="378" y="200" font-size="11" font-weight="800" fill="#BE123C" text-anchor="middle">fall</text>
+        <text x="378" y="218" font-size="9" fill="#475569" text-anchor="middle">UK buyers switch</text>
+        <text x="378" y="228" font-size="9" fill="#475569" text-anchor="middle">to home goods.</text>
+      </g>
+
+      <!-- idl-3: Net trade improves -->
+      <g class="idl-3" style="display:none">
+        <line x1="378" y1="140" x2="378" y2="155" stroke="#2563EB" stroke-width="1.5"/>
+        <line x1="378" y1="155" x2="378" y2="155" stroke="#2563EB" stroke-width="1.5"/>
+        <path d="M 378 140 L 378 155 M 378 168 L 378 165" stroke="#2563EB" stroke-width="1.5"/>
+
+        <rect x="118" y="248" width="280" height="44" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+        <text x="258" y="266" font-size="12" font-weight="900" fill="#1D4ED8" text-anchor="middle">Net trade (X − M) improves</text>
+        <text x="258" y="282" font-size="10" fill="#1E40AF" text-anchor="middle">X rises and M falls, so X − M increases.</text>
+        <line x1="214" y1="240" x2="252" y2="248" stroke="#2563EB" stroke-width="1.4" marker-end="url(#ntm-arrow)"/>
+        <line x1="378" y1="240" x2="276" y2="248" stroke="#2563EB" stroke-width="1.4" marker-end="url(#ntm-arrow)"/>
+      </g>
+    </svg>
+  `,
+
+  adAsTwoOutcomes: `
+    <svg viewBox="0 0 720 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <defs>
+        <marker id="ats-ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+        </marker>
+        <marker id="ats-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+        </marker>
+        <marker id="ats-shift-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F97316"/>
+        </marker>
+      </defs>
+
+      <!-- LEFT PANEL: Recession / spare capacity -->
+      <g>
+        <rect x="6" y="6" width="348" height="308" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.4"/>
+        <circle cx="32" cy="32" r="13" fill="#2563EB"/>
+        <text x="32" y="38" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">1</text>
+        <text x="52" y="37" font-size="13" font-weight="900" fill="#1D4ED8">Recession / spare capacity</text>
+
+        <!-- Chart area: x 40→335, y 70→240 -->
+        <line x1="48" y1="245" x2="48" y2="60" stroke="#334155" stroke-width="1.4"/>
+        <polygon points="48,57 44,65 52,65" fill="#334155"/>
+        <line x1="48" y1="245" x2="338" y2="245" stroke="#334155" stroke-width="1.4"/>
+        <polygon points="341,245 333,241 333,249" fill="#334155"/>
+        <text x="42" y="62" font-size="10" font-weight="700" fill="#475569" text-anchor="end">P</text>
+        <text x="343" y="248" font-size="10" font-weight="700" fill="#475569">Y</text>
+
+        <!-- AD1 (blue, downward) -->
+        <line x1="70" y1="80" x2="280" y2="240" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        <text x="60" y="78" font-size="10" font-weight="800" fill="#2563EB">AD₁</text>
+        <!-- AD2 (blue, shifted right ~50) -->
+        <line x1="120" y1="80" x2="330" y2="240" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        <text x="115" y="78" font-size="10" font-weight="800" fill="#2563EB">AD₂</text>
+        <!-- SRAS — flat through recession region then upward -->
+        <path d="M 60,210 L 200,200 C 240,196 280,160 320,90" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <text x="324" y="86" font-size="10" font-weight="800" fill="#0F172A">SRAS</text>
+
+        <!-- E1 at (170, 205) on AD1 ∩ SRAS flat -->
+        <line x1="48" y1="205" x2="170" y2="205" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="170" y1="205" x2="170" y2="245" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="170" cy="205" r="3.5" fill="#fff" stroke="#0F172A" stroke-width="1.5"/>
+        <text x="44" y="209" font-size="9" font-weight="800" fill="#0F172A" text-anchor="end">P₁</text>
+        <text x="170" y="258" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">Y₁</text>
+
+        <!-- E2 at (240, 198) on AD2 ∩ SRAS -->
+        <line x1="240" y1="198" x2="240" y2="245" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="240" cy="198" r="3.5" fill="#fff" stroke="#0F172A" stroke-width="1.5"/>
+        <text x="240" y="258" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">Y₂</text>
+
+        <!-- AD shift arrow -->
+        <line x1="155" y1="130" x2="200" y2="130" stroke="#2563EB" stroke-width="1.6" marker-end="url(#ats-shift)"/>
+
+        <!-- Verdict pill -->
+        <rect x="20" y="276" width="320" height="32" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+        <text x="36" y="296" font-size="14" fill="#1D4ED8">📈</text>
+        <text x="60" y="291" font-size="10" font-weight="700" fill="#1D4ED8">Output rises strongly (Y₁→Y₂)</text>
+        <text x="60" y="303" font-size="10" fill="#1E40AF">with limited price pressure (P ~ P₁).</text>
+      </g>
+
+      <!-- RIGHT PANEL: Near full employment -->
+      <g>
+        <rect x="366" y="6" width="348" height="308" rx="14" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.4"/>
+        <circle cx="392" cy="32" r="13" fill="#F97316"/>
+        <text x="392" y="38" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+        <text x="412" y="37" font-size="13" font-weight="900" fill="#C2410C">Near full employment</text>
+
+        <!-- Chart area: x 400→695, y 70→240 -->
+        <line x1="408" y1="245" x2="408" y2="60" stroke="#334155" stroke-width="1.4"/>
+        <polygon points="408,57 404,65 412,65" fill="#334155"/>
+        <line x1="408" y1="245" x2="698" y2="245" stroke="#334155" stroke-width="1.4"/>
+        <polygon points="701,245 693,241 693,249" fill="#334155"/>
+        <text x="402" y="62" font-size="10" font-weight="700" fill="#475569" text-anchor="end">P</text>
+        <text x="703" y="248" font-size="10" font-weight="700" fill="#475569">Y</text>
+
+        <!-- AD1 (blue, downward) -->
+        <line x1="430" y1="80" x2="640" y2="240" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        <text x="420" y="78" font-size="10" font-weight="800" fill="#2563EB">AD₁</text>
+        <!-- AD2 (orange, shifted right) -->
+        <line x1="475" y1="80" x2="685" y2="240" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+        <text x="470" y="78" font-size="10" font-weight="800" fill="#F97316">AD₂</text>
+        <!-- SRAS — flat then steep (steep region near right side) -->
+        <path d="M 420,225 L 510,220 C 550,210 575,150 590,80" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+        <text x="594" y="84" font-size="10" font-weight="800" fill="#0F172A">SRAS</text>
+
+        <!-- E1 at (553, 188) -->
+        <line x1="408" y1="188" x2="553" y2="188" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="553" y1="188" x2="553" y2="245" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="553" cy="188" r="3.5" fill="#fff" stroke="#0F172A" stroke-width="1.5"/>
+        <text x="404" y="192" font-size="9" font-weight="800" fill="#0F172A" text-anchor="end">P₁</text>
+        <text x="553" y="258" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">Y₁</text>
+
+        <!-- E2 at (580, 145) (steep AS — big P move, small Y move) -->
+        <line x1="408" y1="145" x2="580" y2="145" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="580" y1="145" x2="580" y2="245" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <circle cx="580" cy="145" r="3.5" fill="#fff" stroke="#0F172A" stroke-width="1.5"/>
+        <text x="404" y="149" font-size="9" font-weight="800" fill="#0F172A" text-anchor="end">P₂</text>
+        <text x="580" y="258" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">Y₂</text>
+
+        <!-- AD shift arrow -->
+        <line x1="515" y1="130" x2="560" y2="130" stroke="#F97316" stroke-width="1.6" marker-end="url(#ats-shift-or)"/>
+
+        <!-- Verdict pill -->
+        <rect x="380" y="276" width="320" height="32" rx="8" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1"/>
+        <text x="396" y="296" font-size="14" fill="#C2410C">⬆️</text>
+        <text x="420" y="291" font-size="10" font-weight="700" fill="#C2410C">Prices rise more (P₁→P₂)</text>
+        <text x="420" y="303" font-size="10" fill="#9A3412">while output rises only a little (Y₁→Y₂).</text>
+      </g>
+    </svg>
+  `,
+
   jCurveInteractive: `
     <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <defs>

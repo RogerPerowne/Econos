@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'supply_main',
-    topicId:  'supply_main',
     title:    'Supply',
     subtitle: 'Theme 1 &middot; Topic 2.4 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('supply_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: law of supply */
       { type: 'mcq',
-        id: 'q_supply_1',
         stem: 'The <strong>law of supply</strong> states that, ceteris paribus, as price rises quantity supplied rises. The primary reason for the upward slope of the supply curve in the short run is:',
         opts: [
           'As output expands, firms face rising marginal costs (law of diminishing returns) – so higher prices are needed to justify producing additional units',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: shift vs movement along supply */
       { type: 'elastic_sort',
-        id: 'q_supply_2',
         stem: 'Classify each event as causing a <strong>movement along</strong> the supply curve or a <strong>shift</strong> of the supply curve.',
         categories: ['move', 'shift'],
         categoryLabels: ['Movement along the supply curve', 'Shift of the supply curve'],
@@ -49,7 +45,6 @@
 
       /* 3 – MCQ: joint supply */
       { type: 'mcq',
-        id: 'q_supply_3',
         stem: 'A drought significantly reduces global beef production. Considering <strong>joint supply</strong>, what would you expect to happen to the leather market?',
         opts: [
           'Leather supply falls (shifts left), causing leather prices to rise, because leather is a by-product of beef production',
@@ -63,7 +58,6 @@
 
       /* 4 – Numeric input: producer surplus */
       { type: 'numeric_input',
-        id: 'q_supply_4',
         stem: 'Calculate the <strong>total producer surplus</strong> (£) in this market.',
         context: 'Three suppliers of handmade furniture: Supplier A minimum acceptable price £200; Supplier B minimum £300; Supplier C minimum £400. Market equilibrium price is <strong>£450</strong> per unit.',
         answer: 450,
@@ -82,7 +76,6 @@
 
       /* 5 – Multi-select: causes of leftward supply shift */
       { type: 'multi_select',
-        id: 'q_supply_5',
         stem: 'Which of the following would cause the supply curve for <strong>new cars</strong> to shift <strong>leftward</strong> (decrease in supply)?',
         opts: [
           'A sharp rise in the price of steel (a key input to car manufacturing)',
@@ -98,7 +91,6 @@
 
       /* 6 – Para fill: competing supply */
       { type: 'para_fill',
-        id: 'q_supply_6',
         stem: 'Complete the paragraph about competing supply.',
         anchor: 'Competing supply arises when the same resources can produce either of two goods.',
         para: 'Competing supply occurs when a factor of production – typically [1] – can be used to produce either of two alternative goods. A rise in the price of [2] Good A increases its [3] and causes producers to switch [4] resources from Good B to Good A. This reduces the [5] of Good B, shifting its supply curve [6]. The price of Good B consequently [7] as supply falls while demand is unchanged.',
@@ -116,7 +108,6 @@
 
       /* 7 – Cause & effect: supply determinants */
       { type: 'cause_effect',
-        id: 'q_supply_7',
         stem: 'Match each cause to its correct effect on the supply curve.',
         pairs: [
           { cause: 'Fall in the cost of a key raw material input', effect: 'Supply curve shifts rightward' },
@@ -131,7 +122,6 @@
 
       /* 8 – Odd one out: rightward supply shift */
       { type: 'odd_one_out',
-        id: 'q_supply_8',
         stem: 'Three of these cause the supply curve for a manufactured good to shift <strong>rightward</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🤖', label: 'A new automated assembly technology cuts unit production costs by 30%', note: '' },
@@ -145,7 +135,6 @@
 
       /* 9 – Data table: UK energy supply shock 2021-22 */
       { type: 'data_table',
-        id: 'q_supply_9',
         stem: 'The table shows UK energy market data around the 2021–2022 energy crisis.',
         headers: ['Indicator', 'Q4 2020', 'Q4 2021', 'Q4 2022'],
         rows: [
@@ -168,7 +157,6 @@
 
       /* 10 – Chain: technology improvement to new equilibrium */
       { type: 'chain',
-        id: 'q_supply_10',
         stem: 'A technological breakthrough significantly reduces the cost of producing electric vehicles. Place the following events in the correct order.',
         items: [
           { label: 'EV prices fall as firms compete on price to attract expanded demand', note: '' },

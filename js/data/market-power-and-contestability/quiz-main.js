@@ -1,11 +1,9 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'monopoly_vs_competition_main',
-    topicId:  'monopoly_vs_competition_main',
     title:    'Monopoly vs Competition',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.routes.learn('monopoly_vs_competition'),
+    backUrl:  TopicLoader.routes.learn('market-power-and-contestability'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers welfare comparison, efficiency, and competition policy',
     shortNames: [
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_mvc_1',
         type: 'mcq',
         q:    'Compared to a perfectly competitive market, a monopoly typically produces:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'A profit-maximising monopolist restricts output to where MR = MC and charges the price consumers are willing to pay for that quantity – which is above the competitive price and below the competitive output.'
       },
       {
-        id:   'q_mvc_2',
         type: 'mcq',
         q:    'Deadweight welfare loss in monopoly represents:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'The deadweight loss (DWL) is the triangular area of net welfare that is lost because the monopolist produces less than the socially optimal output (where MC = Demand).'
       },
       {
-        id:   'q_mvc_3',
         type: 'mcq',
         q:    'Which efficiency argument favours monopoly over competition?',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'A key argument for monopoly is dynamic efficiency: sustained supernormal profits provide funds and incentives for research, development, and innovation that may benefit consumers in the long run.'
       },
       {
-        id:   'q_mvc_4',
         type: 'mcq',
         q:    'Competition policy aims to:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Competition policy (enforced by bodies like the CMA) aims to prevent mergers that reduce competition, stop price-fixing cartels, and protect consumer welfare.'
       },
       {
-        id:   'q_mvc_5',
         type: 'numeric_input',
         q:    'Under competition, Q = 100 and P = £10. Under monopoly, Q = 60 and P = £16. If MC = £10, approximate the deadweight loss area (½ × base × height).',
         answer: 120,
@@ -76,7 +69,6 @@
         workingSteps: ['Base = Qc − Qm = 100 − 60 = 40','Height = Pm − Pc = £16 − £10 = £6','DWL = ½ × 40 × 6 = £120']
       },
       {
-        id:   'q_mvc_6',
         type: 'categorise',
         q:    'Categorise each statement as an argument for or against monopoly.',
         categories: ['Argument for monopoly','Argument against monopoly'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_mvc_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect when comparing monopoly and competition.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_mvc_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out in the context of arguments against monopoly?',
         opts: ['Allocative inefficiency','Deadweight loss','X-inefficiency','Dynamic efficiency'],
@@ -111,7 +101,6 @@
         exp:  'Allocative inefficiency, deadweight loss, and X-inefficiency are all criticisms of monopoly. Dynamic efficiency is an argument in favour of monopoly (supernormal profit funds innovation).'
       },
       {
-        id:   'q_mvc_9',
         type: 'data_table',
         q:    'Use the table comparing competitive and monopoly outcomes to answer: which scenario has the greatest deadweight loss?',
         tableHeaders: ['Scenario','Competitive Q','Monopoly Q','Competitive P (£)','Monopoly P (£)'],
@@ -126,7 +115,6 @@
         exp:  'DWL ≈ ½ × ΔQ × ΔP. B: ½×80×6=240; A: ½×20×3=30; C: ½×50×6=150; D: ½×10×2=10. Scenario B has the largest DWL.'
       },
       {
-        id:   'q_mvc_10',
         type: 'match_pairs',
         q:    'Match each concept to its correct description.',
         pairs: [

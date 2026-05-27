@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'demand_main',
-    topicId:  'demand_main',
     title:    'Demand',
     subtitle: 'Theme 1 &middot; Topic 2.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('demand_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: law of demand */
       { type: 'mcq',
-        id: 'q_demand_1',
         stem: 'The <strong>law of demand</strong> states that, ceteris paribus, as price rises quantity demanded falls. Which two effects underpin this relationship?',
         opts: [
           'The substitution effect (the good becomes relatively more expensive than alternatives) and the income effect (real purchasing power falls)',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: movement along vs shift */
       { type: 'elastic_sort',
-        id: 'q_demand_2',
         stem: 'Classify each event as causing a <strong>movement along</strong> the demand curve or a <strong>shift</strong> of the demand curve.',
         categories: ['move', 'shift'],
         categoryLabels: ['Movement along the demand curve', 'Shift of the demand curve'],
@@ -49,7 +45,6 @@
 
       /* 3 – MCQ: normal vs inferior good */
       { type: 'mcq',
-        id: 'q_demand_3',
         stem: 'UK household incomes rise significantly. Which pair of demand responses is consistent with one good being <strong>normal</strong> and one being <strong>inferior</strong>?',
         opts: [
           'Demand for restaurant meals rises; demand for supermarket own-brand value food falls',
@@ -63,7 +58,6 @@
 
       /* 4 – Numeric input: consumer surplus */
       { type: 'numeric_input',
-        id: 'q_demand_4',
         stem: 'Calculate the total <strong>consumer surplus</strong> (£) in this market.',
         context: 'A consumer\'s willingness to pay for concert tickets: 1st ticket £80, 2nd ticket £60, 3rd ticket £40, 4th ticket £20. The market price is <strong>£40</strong> per ticket.',
         answer: 60,
@@ -82,7 +76,6 @@
 
       /* 5 – Multi-select: non-price demand shifters */
       { type: 'multi_select',
-        id: 'q_demand_5',
         stem: 'A mobile phone company holds its price constant. Which of the following would shift the <strong>demand curve for the phone rightward</strong>?',
         opts: [
           'A rise in consumer incomes (mobile phones are a normal good)',
@@ -98,7 +91,6 @@
 
       /* 6 – Para fill: derived demand */
       { type: 'para_fill',
-        id: 'q_demand_6',
         stem: 'Complete the paragraph explaining derived demand.',
         anchor: 'Derived demand links product markets to factor markets through the demand chain.',
         para: 'Derived demand occurs when demand for one good exists because of demand for [1]. For example, demand for steel is [2] from demand for cars and construction. In a [3] market, a firm\'s demand for labour depends on demand for its final [4]. If aggregate demand falls in a [5], firms reduce output and [6] workers – this is the transmission mechanism from product market to labour market through [7] demand.',
@@ -116,7 +108,6 @@
 
       /* 7 – Cause & effect: demand determinants */
       { type: 'cause_effect',
-        id: 'q_demand_7',
         stem: 'Match each cause to its correct effect on demand for a good.',
         pairs: [
           { cause: 'Rise in income (normal good)', effect: 'Demand curve shifts rightward' },
@@ -131,7 +122,6 @@
 
       /* 8 – Odd one out: causes of rightward shift */
       { type: 'odd_one_out',
-        id: 'q_demand_8',
         stem: 'Three of these cause the demand curve for <strong>domestic air travel</strong> to shift rightward. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '💰', label: 'A significant rise in disposable incomes across UK households', note: '' },
@@ -145,7 +135,6 @@
 
       /* 9 – Data table: coffee shop demand */
       { type: 'data_table',
-        id: 'q_demand_9',
         stem: 'The table shows changes in factors affecting the UK coffee shop market.',
         headers: ['Factor', 'Change', 'Direction'],
         rows: [
@@ -167,7 +156,6 @@
 
       /* 10 – Chain: interest rate rise to housing demand */
       { type: 'chain',
-        id: 'q_demand_10',
         stem: 'The Bank of England raises interest rates from 0.5% to 5.25%. Place the consequences in the correct logical order for the <strong>housing market</strong>.',
         items: [
           { label: 'Mortgage costs rise sharply, reducing the effective demand for home purchases', note: '' },

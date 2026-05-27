@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'pes_main',
-    topicId:  'pes_main',
     title:    'Price Elasticity of Supply',
     subtitle: 'Theme 1 &middot; Topic 2.5 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('pes_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: PES interpretation */
       { type: 'mcq',
-        id: 'q_pes_1',
         stem: 'A good has a price elasticity of supply (PES) of <strong>0.4</strong>. Which statement correctly interprets this value?',
         opts: [
           'Supply is price inelastic: a 10% rise in price leads to only a 4% increase in quantity supplied',
@@ -32,7 +29,6 @@
 
       /* 2 – Numeric input: PES calculation */
       { type: 'numeric_input',
-        id: 'q_pes_2',
         stem: 'Calculate the <strong>price elasticity of supply</strong> for this market.',
         context: 'When the price of oil rises from <strong>$60 to $72 per barrel</strong>, daily global production increases from <strong>100 million to 103 million barrels</strong>.',
         answer: 0.25,
@@ -50,7 +46,6 @@
 
       /* 3 – Elastic sort: determinants of PES */
       { type: 'elastic_sort',
-        id: 'q_pes_3',
         stem: 'Classify each good or service as having <strong>relatively elastic</strong> or <strong>relatively inelastic</strong> supply.',
         categories: ['elastic', 'inelastic'],
         categoryLabels: ['Relatively elastic supply (PES > 1)', 'Relatively inelastic supply (PES < 1)'],
@@ -67,7 +62,6 @@
 
       /* 4 – MCQ: demand shift and PES */
       { type: 'mcq',
-        id: 'q_pes_4',
         stem: 'Demand for new houses in a city increases significantly. If housing supply is <strong>price inelastic</strong>, the main effect will be:',
         opts: [
           'The demand increase translates mainly into a large price rise and a small quantity increase',
@@ -81,7 +75,6 @@
 
       /* 5 – MCQ: tax incidence and PES */
       { type: 'mcq',
-        id: 'q_pes_5',
         stem: 'The government imposes an indirect tax on cigarettes. Compared to a market where supply is <strong>elastic</strong>, if supply is <strong>inelastic</strong>, the tax incidence on <strong>producers</strong> will be:',
         opts: [
           'Greater – with inelastic supply, producers cannot easily reduce quantity; they absorb more of the tax through lower profit margins',
@@ -95,7 +88,6 @@
 
       /* 6 – Match pairs: PES values */
       { type: 'match_pairs',
-        id: 'q_pes_6',
         stem: 'Match each PES value or supply curve description to its correct interpretation.',
         pairs: [
           { a: 'PES = 0', b: 'Perfectly inelastic – vertical supply curve; quantity fixed regardless of price' },
@@ -110,7 +102,6 @@
 
       /* 7 – Cause & effect: PES determinants */
       { type: 'cause_effect',
-        id: 'q_pes_7',
         stem: 'Match each factor to its effect on price elasticity of supply.',
         pairs: [
           { cause: 'Ample spare production capacity exists in the industry', effect: 'Increases PES – output can be expanded quickly' },
@@ -125,7 +116,6 @@
 
       /* 8 – Odd one out: inelastic supply */
       { type: 'odd_one_out',
-        id: 'q_pes_8',
         stem: 'Three of these goods have <strong>price inelastic supply</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🏠', label: 'UK housing – constrained by planning laws, land scarcity, and 2+ year build times', note: '' },
@@ -139,7 +129,6 @@
 
       /* 9 – Data table: UK housing PES */
       { type: 'data_table',
-        id: 'q_pes_9',
         stem: 'The table shows UK house price and new housing completions data.',
         headers: ['Period', 'Avg house price change (%)', 'New completions change (%)'],
         rows: [
@@ -161,7 +150,6 @@
 
       /* 10 – Para fill: PES and market outcomes */
       { type: 'para_fill',
-        id: 'q_pes_10',
         stem: 'Complete the paragraph about PES and market adjustment.',
         anchor: 'Price elasticity of supply determines how a market adjusts when demand changes.',
         para: 'When demand increases and supply is price [1] (PES < 1), the demand shift mainly increases [2] with little increase in [3]. This is because producers cannot easily expand [4] in the short run. When supply is price [5] (PES > 1), the same demand shift mainly increases [6] with a smaller [7] effect. Government supply-side policies that increase PES – such as improving infrastructure or [8] workers – help markets adjust to demand shocks through quantity rather than price changes.',

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'growth_measure_main',
-    topicId:  'growth_measure_main',
     title:    'Economic Growth & National Income',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('measures-of-economic-performance'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_gm_1',
         type: 'mcq',
         q:    'GDP (Gross Domestic Product) measures:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'GDP measures the total monetary value of all final goods and services produced within a country\'s geographical borders in a period (usually a year or quarter), regardless of the nationality of the producers.'
       },
       {
-        id:   'q_gm_2',
         type: 'mcq',
         q:    'The three methods of measuring national income are:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'National income can be measured by three equivalent approaches: (1) output approach – sum of value added; (2) income approach – sum of factor incomes; (3) expenditure approach – sum of all spending on final goods (C+I+G+(X-M)).'
       },
       {
-        id:   'q_gm_3',
         type: 'mcq',
         q:    'Real GDP differs from nominal GDP because real GDP:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Nominal GDP uses current prices; real GDP adjusts for inflation using a base year. Real GDP shows genuine changes in output volume, not just price increases.'
       },
       {
-        id:   'q_gm_4',
         type: 'mcq',
         q:    'Purchasing Power Parity (PPP) adjustments are used to:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'PPP adjusts GDP figures for differences in price levels across countries. A pound buys more in a low-price country than a high-price country – PPP gives a more accurate picture of relative living standards.'
       },
       {
-        id:   'q_gm_5',
         type: 'numeric_input',
         q:    'Nominal GDP = £1,200bn. The GDP deflator = 120 (base year = 100). What is real GDP (£bn)?',
         answer: 1000,
@@ -76,7 +69,6 @@
         workingSteps: ['Real GDP = (£1,200bn ÷ 120) × 100 = £1,000bn']
       },
       {
-        id:   'q_gm_6',
         type: 'categorise',
         q:    'Categorise each measure as a limitation of GDP as a welfare measure or a strength of GDP.',
         categories: ['Limitation of GDP','Strength of GDP'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_gm_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on GDP measurement.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_gm_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['GDP','GNI','HDI','Consumer Price Index'],
@@ -111,7 +101,6 @@
         exp:  'GDP, GNI (Gross National Income), and HDI (Human Development Index) are all measures of economic output or living standards. The Consumer Price Index measures inflation – it is not a national income or welfare measure.'
       },
       {
-        id:   'q_gm_9',
         type: 'data_table',
         q:    'Use the table to identify which country has the highest real GDP per capita.',
         tableHeaders: ['Country','Nominal GDP (£bn)','Population (m)','GDP Deflator'],
@@ -126,7 +115,6 @@
         exp:  'Real GDP = Nominal ÷ Deflator × 100. Bortia: (400÷100)×100=£400bn; per capita=£400bn/5m=£80,000. Alpia: £500bn/10m=£50,000. Centri: £600bn/20m=£30,000. Dorus: £400bn/8m=£50,000. Bortia is highest at £80,000.'
       },
       {
-        id:   'q_gm_10',
         type: 'match_pairs',
         q:    'Match each national income concept to its description.',
         pairs: [

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'trade_spec_main',
-    topicId:  'trade_spec_main',
     title:    'Trade & Specialisation',
     subtitle: 'International Economics',
     backUrl:  TopicLoader.routes.learn('specialisation-and-trade'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_ts_1',
         type: 'mcq',
         q:    'Comparative advantage means a country should specialise in goods it can produce:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Comparative advantage (Ricardo) is based on opportunity cost, not absolute cost. A country has a comparative advantage in a good if its opportunity cost of producing it is lower than for other countries – even if it is less efficient in absolute terms.'
       },
       {
-        id:   'q_ts_2',
         type: 'mcq',
         q:    'Country A can produce either 100 cars or 200 tonnes of wheat. Country B can produce either 80 cars or 200 tonnes of wheat. Which country has the comparative advantage in cars?',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Country A: 1 car costs 200/100 = 2 tonnes of wheat. Country B: 1 car costs 200/80 = 2.5 tonnes of wheat. Country A has the lower opportunity cost in cars – it has the comparative advantage in car production.'
       },
       {
-        id:   'q_ts_3',
         type: 'mcq',
         q:    'The Terms of Trade (ToT) measures:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'ToT = (Index of export prices / Index of import prices) × 100. An improvement in ToT means export prices have risen relative to import prices – each unit of exports can buy more imports.'
       },
       {
-        id:   'q_ts_4',
         type: 'mcq',
         q:    'Free trade benefits consumers because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Free trade expands the range of available goods and drives down prices through competition and specialisation based on comparative advantage. This raises consumer surplus and overall welfare (though distribution effects can vary).'
       },
       {
-        id:   'q_ts_5',
         type: 'numeric_input',
         q:    'The export price index = 120 and the import price index = 100. What is the Terms of Trade index value?',
         answer: 120,
@@ -76,7 +69,6 @@
         workingSteps: ['ToT = (120/100) × 100 = 120']
       },
       {
-        id:   'q_ts_6',
         type: 'categorise',
         q:    'Categorise each as a potential benefit or limitation of specialisation and free trade.',
         categories: ['Benefit','Limitation'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_ts_7',
         type: 'cause_effect',
         q:    'Match each trade concept to its effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_ts_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Comparative advantage','Absolute advantage','Terms of trade','Multiplier effect'],
@@ -111,7 +101,6 @@
         exp:  'Comparative advantage, absolute advantage, and terms of trade are all international trade concepts. The multiplier effect is a macroeconomic concept about how changes in spending amplify national income – not a trade theory concept.'
       },
       {
-        id:   'q_ts_9',
         type: 'data_table',
         q:    'Use the data to identify which country has the comparative advantage in which good.',
         tableHeaders: ['Country','Output per worker: Cars','Output per worker: Cloth'],
@@ -129,7 +118,6 @@
         exp:  'UK opportunity cost of 1 car = 2 units cloth. India opportunity cost of 1 car = 4 units cloth. UK has lower OC for cars → comparative advantage in cars. India has lower OC for cloth (0.25 cars vs 0.5 cars for UK) → comparative advantage in cloth.'
       },
       {
-        id:   'q_ts_10',
         type: 'match_pairs',
         q:    'Match each trade concept to its description.',
         pairs: [

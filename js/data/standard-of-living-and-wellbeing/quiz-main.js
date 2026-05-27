@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'sol_wellbeing_main',
-    topicId:  'sol_wellbeing_main',
     title:    'Standard of Living & Wellbeing',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('standard-of-living-and-wellbeing'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_sol_1',
         type: 'mcq',
         q:    'GDP per capita is an imperfect measure of living standards because it:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'GDP per capita measures average income but ignores inequality (two countries with same GDP per capita can have vastly different distributions), non-material wellbeing (health, freedom, environment), and unpaid work.'
       },
       {
-        id:   'q_sol_2',
         type: 'mcq',
         q:    'The Human Development Index (HDI) combines which three dimensions?',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'The UN\'s HDI is a composite of: (1) life expectancy at birth (health), (2) mean and expected years of schooling (education), and (3) GNI per capita at PPP (living standards). It ranges from 0 to 1.'
       },
       {
-        id:   'q_sol_3',
         type: 'mcq',
         q:    'The Environmental Kuznets Curve hypothesis suggests:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'The EKC proposes an inverted-U relationship: as countries grow from poor to middle-income, pollution rises; beyond a threshold, demand for environmental quality and capacity to invest in clean tech leads to improvements.'
       },
       {
-        id:   'q_sol_4',
         type: 'mcq',
         q:    'Subjective wellbeing measures (such as the ONS Wellbeing Framework) capture:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Subjective wellbeing surveys ask people directly about their life satisfaction, happiness, and sense of purpose. They capture dimensions of human experience that GDP misses – such as mental health, community, and relationships.'
       },
       {
-        id:   'q_sol_5',
         type: 'numeric_input',
         q:    'A country\'s HDI components score: life expectancy index = 0.80, education index = 0.72, income index = 0.68. What is the HDI? (geometric mean: cube root of the product)',
         answer: 0.733,
@@ -76,7 +69,6 @@
         workingSteps: ['Product = 0.80 × 0.72 × 0.68 = 0.39168','HDI = 0.39168^(1/3) ≈ 0.733']
       },
       {
-        id:   'q_sol_6',
         type: 'categorise',
         q:    'Categorise each measure as an objective or subjective wellbeing indicator.',
         categories: ['Objective indicator','Subjective indicator'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_sol_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on measured living standards.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_sol_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['HDI','Happy Planet Index','ONS Wellbeing Framework','CPI'],
@@ -111,7 +101,6 @@
         exp:  'HDI, Happy Planet Index, and the ONS Wellbeing Framework are all composite or multi-dimensional measures of living standards and wellbeing. The CPI measures inflation – not standard of living directly.'
       },
       {
-        id:   'q_sol_9',
         type: 'data_table',
         q:    'Use the table to identify which country has the highest HDI.',
         tableHeaders: ['Country','Life Expectancy Index','Education Index','Income Index','HDI (approx)'],
@@ -126,7 +115,6 @@
         exp:  'Alpha has the highest scores across all three dimensions (0.90, 0.88, 0.85). Its geometric mean HDI will be the highest. Beta and Delta are lower; Gamma is lowest.'
       },
       {
-        id:   'q_sol_10',
         type: 'match_pairs',
         q:    'Match each wellbeing concept to its description.',
         pairs: [

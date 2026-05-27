@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'perfect_competition_main',
-    topicId:  'perfect_competition_main',
     title:    'Perfect Competition',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('perfect-competition'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_pc_1',
         type: 'mcq',
         q:    'Which of the following is NOT a condition of perfect competition?',
         opts: ['Homogeneous products','Free entry and exit','Perfect information','Product differentiation'],
@@ -22,7 +19,6 @@
         exp:  'In perfect competition all products are identical (homogeneous). Product differentiation is a feature of monopolistic competition, not perfect competition.'
       },
       {
-        id:   'q_pc_2',
         type: 'mcq',
         q:    'Why is the demand curve facing an individual perfectly competitive firm perfectly elastic?',
         opts: [
@@ -35,7 +31,6 @@
         exp:  'With homogeneous products and perfect information, any price above the market price causes all buyers to switch to rivals. So the firm is a price taker with a horizontal (perfectly elastic) demand curve.'
       },
       {
-        id:   'q_pc_3',
         type: 'mcq',
         q:    'In the short run, a perfectly competitive firm can earn:',
         opts: [
@@ -48,7 +43,6 @@
         exp:  'In the short run, entry and exit have not yet occurred, so firms can earn supernormal, normal, or subnormal (loss-making) profit depending on where price sits relative to AC.'
       },
       {
-        id:   'q_pc_4',
         type: 'mcq',
         q:    'In long-run equilibrium in perfect competition, firms earn:',
         opts: ['Supernormal profit','Subnormal profit','Normal profit','Zero revenue'],
@@ -56,7 +50,6 @@
         exp:  'Supernormal profits attract new entrants; losses cause exit. Entry/exit continues until P = AC, leaving only normal profit in the long run.'
       },
       {
-        id:   'q_pc_5',
         type: 'numeric_input',
         q:    'The market price is £12. A firm produces 300 units with TC = £3,200. Calculate profit.',
         answer: 400,
@@ -66,7 +59,6 @@
         workingSteps: ['TR = £12 × 300 = £3,600','Profit = £3,600 − £3,200 = £400']
       },
       {
-        id:   'q_pc_6',
         type: 'categorise',
         q:    'Categorise each feature as belonging to perfect competition or monopolistic competition.',
         categories: ['Perfect competition','Monopolistic competition'],
@@ -80,7 +72,6 @@
         ]
       },
       {
-        id:   'q_pc_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in a perfectly competitive market.',
         pairs: [
@@ -93,7 +84,6 @@
         ]
       },
       {
-        id:   'q_pc_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Price taker','Homogeneous products','Barriers to entry','Perfect information'],
@@ -101,7 +91,6 @@
         exp:  'Perfect competition requires free entry and exit – the absence of barriers. Barriers to entry are a feature of monopoly or oligopoly, not perfect competition.'
       },
       {
-        id:   'q_pc_9',
         type: 'data_table',
         q:    'The table shows market conditions for a perfectly competitive firm. At which price is the firm in long-run equilibrium?',
         tableHeaders: ['Price (£)','Output','TR (£)','TC (£)','Profit (£)'],
@@ -116,7 +105,6 @@
         exp:  'Long-run equilibrium requires normal profit only, i.e. Profit = 0. This occurs at P = £11 where TR = TC = £1,210.'
       },
       {
-        id:   'q_pc_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description.',
         pairs: [

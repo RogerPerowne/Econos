@@ -1,11 +1,9 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'bop_t2_main',
-    topicId:  'bop_t2_main',
     title:    'Balance of Payments',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.routes.learn('bop_t2'),
+    backUrl:  TopicLoader.routes.learn('bop-t2'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers BoP accounts, current account deficit causes, J-curve, and correction policies',
     shortNames: [
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_bop_1',
         type: 'mcq',
         q:    'The Balance of Payments (BoP) records:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The BoP is a comprehensive record of all monetary transactions between a country\'s residents and the rest of the world, including trade in goods, services, income flows, and financial transactions.'
       },
       {
-        id:   'q_bop_2',
         type: 'mcq',
         q:    'The current account of the balance of payments records:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'The current account has four components: trade in goods (visible trade), trade in services (invisible trade), primary income (investment income and wages), and secondary income (transfers like overseas aid and remittances).'
       },
       {
-        id:   'q_bop_3',
         type: 'mcq',
         q:    'A persistent current account deficit suggests:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'A current account deficit means outflows (imports, income payments) exceed inflows (exports, income receipts). It must be financed by a surplus in the financial account (borrowing or selling assets abroad).'
       },
       {
-        id:   'q_bop_4',
         type: 'mcq',
         q:    'The J-curve effect occurs because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'After a currency depreciation, export prices fall and import prices rise in domestic currency. But volumes take time to adjust (contracts, habits). Initially the deficit worsens (top of J), then improves as quantities respond.'
       },
       {
-        id:   'q_bop_5',
         type: 'numeric_input',
         q:    'Goods exports = £400bn, goods imports = £500bn, services exports = £200bn, services imports = £150bn. What is the trade balance (£bn)?',
         answer: -50,
@@ -76,7 +69,6 @@
         workingSteps: ['Total X = £400bn + £200bn = £600bn','Total M = £500bn + £150bn = £650bn','Balance = £600bn − £650bn = −£50bn']
       },
       {
-        id:   'q_bop_6',
         type: 'categorise',
         q:    'Categorise each transaction as a current account credit (+) or debit (−).',
         categories: ['Current account credit (+)','Current account debit (−)'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_bop_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on the balance of payments.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_bop_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Current account','Capital account','Financial account','Lorenz curve'],
@@ -111,7 +101,6 @@
         exp:  'Current account, capital account, and financial account are all sub-accounts of the Balance of Payments. The Lorenz curve measures income inequality – it has nothing to do with the BoP.'
       },
       {
-        id:   'q_bop_9',
         type: 'data_table',
         q:    'Use the BoP data to calculate the overall current account balance.',
         tableHeaders: ['Component','Balance (£bn)'],
@@ -127,7 +116,6 @@
         exp:  'Current account = −120 + 80 + 15 − 25 = −£50bn. The UK runs a current account deficit of £50bn.'
       },
       {
-        id:   'q_bop_10',
         type: 'match_pairs',
         q:    'Match each BoP concept to its description.',
         pairs: [

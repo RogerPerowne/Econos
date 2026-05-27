@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'yed_xed_main',
-    topicId:  'yed_xed_main',
     title:    'YED &amp; XED',
     subtitle: 'Theme 1 &middot; Topic 2.3 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('yed_xed_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: YED interpretation */
       { type: 'mcq',
-        id: 'q_yed_1',
         stem: 'Which combination of YED values correctly classifies the three types of good?',
         opts: [
           'Normal good: YED = +0.8; Luxury good: YED = +2.1; Inferior good: YED = −0.6',
@@ -32,7 +29,6 @@
 
       /* 2 – Numeric input: YED calculation */
       { type: 'numeric_input',
-        id: 'q_yed_2',
         stem: 'Calculate the <strong>income elasticity of demand (YED)</strong>.',
         context: 'When average UK household income rises from <strong>£40,000 to £44,000 per year</strong>, annual demand for foreign holidays increases from <strong>20 million to 23 million</strong> trips.',
         answer: 1.5,
@@ -49,7 +45,6 @@
 
       /* 3 – Elastic sort: normal vs inferior vs luxury */
       { type: 'elastic_sort',
-        id: 'q_yed_3',
         stem: 'UK household incomes rise 10%. Classify each good\'s expected demand response.',
         categories: ['rises_lots', 'rises_little', 'falls'],
         categoryLabels: ['Demand rises strongly (luxury, YED > 1)', 'Demand rises slightly (normal, 0 < YED < 1)', 'Demand falls (inferior, YED < 0)'],
@@ -66,7 +61,6 @@
 
       /* 4 – MCQ: XED interpretation */
       { type: 'mcq',
-        id: 'q_yed_4',
         stem: 'If the cross-price elasticity of demand (XED) between Good A and Good B is <strong>−1.8</strong>, this means:',
         opts: [
           'A and B are strong complements – a 10% rise in the price of B causes an 18% fall in demand for A',
@@ -80,7 +74,6 @@
 
       /* 5 – Numeric input: XED calculation */
       { type: 'numeric_input',
-        id: 'q_yed_5',
         stem: 'Calculate the <strong>cross-price elasticity of demand (XED)</strong> between coffee and tea.',
         context: 'When the price of coffee rises from <strong>£3.00 to £3.60 per cup</strong> (a 20% rise), daily demand for tea increases from <strong>5 million to 5.6 million cups</strong>.',
         answer: 0.6,
@@ -97,7 +90,6 @@
 
       /* 6 – Match pairs: YED and XED applications */
       { type: 'match_pairs',
-        id: 'q_yed_6',
         stem: 'Match each business or policy scenario to the elasticity concept it demonstrates.',
         pairs: [
           { a: 'A luxury car brand plans bigger production cuts in recession than a budget brand', b: 'Luxury goods have YED > 1; demand is more income-sensitive' },
@@ -112,7 +104,6 @@
 
       /* 7 – Cause & effect: income and cross-price effects */
       { type: 'cause_effect',
-        id: 'q_yed_7',
         stem: 'Match each economic change to its expected demand effect.',
         pairs: [
           { cause: 'UK economy enters deep recession; incomes fall 5%', effect: 'Demand for luxury goods falls sharply; demand for own-brand food may rise' },
@@ -127,7 +118,6 @@
 
       /* 8 – Para fill: Engel's Law and macro implications */
       { type: 'para_fill',
-        id: 'q_yed_8',
         stem: 'Complete the paragraph about YED and structural economic change.',
         anchor: 'Engel\'s Law and income elasticity explain the structural transformation of developing economies.',
         para: 'As incomes rise in developing economies, the share of income spent on [1] falls as a proportion of total spending – this is [2]\'s Law. Resources shift toward goods and services with higher [3] elasticity of demand. Industries producing [4] goods (YED > 1) grow faster than the economy; industries producing [5] goods (YED < 0) decline. This helps explain why China\'s rapid income growth since 1990 has produced booming demand for [6] goods and a falling share of [7] in household spending.',
@@ -145,7 +135,6 @@
 
       /* 9 – Data table: XED in transport markets */
       { type: 'data_table',
-        id: 'q_yed_9',
         stem: 'The table shows transport market data following a 25% rise in national rail fares in Year 2.',
         headers: ['Indicator', 'Year 1 (before)', 'Year 2 (after)'],
         rows: [
@@ -167,7 +156,6 @@
 
       /* 10 – Multi-select: evaluation of YED in business strategy */
       { type: 'multi_select',
-        id: 'q_yed_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the role of YED in business planning?',
         opts: [
           'Income elasticity of demand measures the responsiveness of demand to a change in consumer income',

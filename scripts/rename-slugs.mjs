@@ -107,7 +107,17 @@ const SLUG_MAP = {
   public_expenditure:            'public-expenditure',
   taxation:                      'taxation',
   public_finances:               'public-sector-finances',
-  macro_policies_global:         'macroeconomic-policies-in-a-global-context'
+  macro_policies_global:         'macroeconomic-policies-in-a-global-context',
+
+  /* Orphan content directories — present under js/data/ but not in
+     the topics.js registry. Renamed for slug consistency. */
+  barriers_entry:                'barriers-to-entry',
+  bop_t2:                        'bop-t2',                        /* mechanical: avoids collision with the registered balance-of-payments */
+  govt_intervention_subsidies:   'government-intervention-subsidies',
+  govt_intervention_tax:         'government-intervention-taxes',
+  monopoly_vs_competition:       'market-power-and-contestability',
+  price_discrimination:          'price-discrimination',
+  profit_cost_changes:           'changes-in-costs-and-revenues'
 };
 
 /* Sanity check: slugs must be unique. */

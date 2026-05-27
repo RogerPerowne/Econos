@@ -1,5 +1,5 @@
 window.ECONOS_TOPIC = {
-  id: 'barriers_entry',
+  id: 'barriers-to-entry',
   topicNum: '3.9',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Barriers to Entry',

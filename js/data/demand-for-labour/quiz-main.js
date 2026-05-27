@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'labour_markets_main',
-    topicId:  'labour_markets_main',
     title:    'Labour Markets',
     subtitle: 'Labour Markets & Distribution',
     backUrl:  TopicLoader.routes.learn('demand-for-labour'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_lm_1',
         type: 'mcq',
         q:    'In labour markets, demand for labour is said to be "derived" because:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Derived demand means labour is not demanded for its own sake but because of the demand for the output it produces. If demand for a product rises, the demand for workers to produce it also rises.'
       },
       {
-        id:   'q_lm_2',
         type: 'mcq',
         q:    'A firm maximises profit by hiring labour up to the point where:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'MRP (Marginal Revenue Product = MR × MPP) is the revenue earned by the last worker. The firm should hire until MRP = W. Beyond this, the last worker costs more than they generate.'
       },
       {
-        id:   'q_lm_3',
         type: 'mcq',
         q:    'Which of the following would cause the demand for labour to increase?',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Higher worker productivity increases MRP – each worker now generates more revenue. The demand curve for labour (MRP curve) shifts right, meaning more workers are demanded at any given wage.'
       },
       {
-        id:   'q_lm_4',
         type: 'mcq',
         q:    'A monopsony in the labour market is:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'A monopsony is a market with a single buyer – in labour markets, a single dominant employer. The monopsonist must raise wages to attract more workers, making the marginal cost of labour exceed the average wage.'
       },
       {
-        id:   'q_lm_5',
         type: 'numeric_input',
         q:    'A firm employs 10 workers, each producing 5 units per hour. Each unit sells for £4. What is the Marginal Revenue Product (MRP) of the 10th worker per hour?',
         answer: 20,
@@ -76,7 +69,6 @@
         workingSteps: ['MPP = 5 units per hour','MR = £4 per unit (competitive market, so MR = P)','MRP = £4 × 5 = £20']
       },
       {
-        id:   'q_lm_6',
         type: 'categorise',
         q:    'Categorise each factor as affecting labour demand or labour supply.',
         categories: ['Labour demand','Labour supply'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_lm_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in the labour market.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_lm_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['MRP','Derived demand','Wage elasticity of supply','Consumer Price Index'],
@@ -111,7 +101,6 @@
         exp:  'MRP, derived demand, and wage elasticity of supply are all labour market concepts. The Consumer Price Index is a macroeconomic measure of inflation, not a labour market concept.'
       },
       {
-        id:   'q_lm_9',
         type: 'data_table',
         q:    'Use the MRP table to identify the profit-maximising number of workers if the market wage is £40/hour.',
         tableHeaders: ['Workers','MPP (units/hr)','MR (£/unit)','MRP (£/hr)'],
@@ -128,7 +117,6 @@
         exp:  'Hire until MRP = wage rate. At 4 workers, MRP = £40 = W. Hiring a 5th gives MRP = £35 < £40, so only 4 workers are profit-maximising.'
       },
       {
-        id:   'q_lm_10',
         type: 'match_pairs',
         q:    'Match each labour market term to its description.',
         pairs: [

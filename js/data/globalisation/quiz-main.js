@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'globalisation_main',
-    topicId:  'globalisation_main',
     title:    'Globalisation',
     subtitle: 'International Economics',
     backUrl:  TopicLoader.routes.learn('globalisation'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_glob_1',
         type: 'mcq',
         q:    'Globalisation refers to:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Globalisation is the growing interconnection of world economies: goods, services, capital, and people flow more freely across borders. It is driven by technology, trade liberalisation, and reduced transport costs.'
       },
       {
-        id:   'q_glob_2',
         type: 'mcq',
         q:    'Which of the following has been a major driver of globalisation?',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Containerisation cut shipping costs dramatically; digital communications enabled global supply chains and financial markets. Combined with WTO trade liberalisation, these reduced the cost of doing business across borders.'
       },
       {
-        id:   'q_glob_3',
         type: 'mcq',
         q:    'A key benefit of globalisation for developing countries is:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Globalisation can bring FDI (creating jobs and tax revenue), technology transfer, access to global markets, and integration into global value chains – all of which can accelerate development.'
       },
       {
-        id:   'q_glob_4',
         type: 'mcq',
         q:    'A multinational corporation (MNC) is a firm that:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'An MNC (or transnational corporation, TNC) maintains significant business activities – production, sales, R&D – in more than one country. Examples include Toyota, Apple, and Shell.'
       },
       {
-        id:   'q_glob_5',
         type: 'numeric_input',
         q:    'Global FDI inflows were $1,200bn in 2010 and $1,900bn in 2022. Calculate the percentage increase.',
         answer: 58.3,
@@ -76,7 +69,6 @@
         workingSteps: ['Growth = ((1,900 − 1,200) / 1,200) × 100','= (700/1,200) × 100 = 58.3%']
       },
       {
-        id:   'q_glob_6',
         type: 'categorise',
         q:    'Categorise each outcome as a potential benefit or potential cost of globalisation.',
         categories: ['Potential benefit','Potential cost'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_glob_7',
         type: 'cause_effect',
         q:    'Match each aspect of globalisation to its effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_glob_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['FDI','MNC','Trade liberalisation','Protectionism'],
@@ -111,7 +101,6 @@
         exp:  'FDI, MNCs, and trade liberalisation are all drivers or features of globalisation. Protectionism (tariffs, quotas, subsidies) is the opposite of globalisation – it restricts international economic integration.'
       },
       {
-        id:   'q_glob_9',
         type: 'data_table',
         q:    'Use the trade openness data to identify the most globalised economy.',
         tableHeaders: ['Country','Exports + Imports as % GDP (Trade Openness)'],
@@ -126,7 +115,6 @@
         exp:  'Trade openness = (X + M) / GDP × 100. Singapore\'s ratio of 320% reflects its role as a major trade and re-export hub – it is the most globally integrated economy in the table.'
       },
       {
-        id:   'q_glob_10',
         type: 'match_pairs',
         q:    'Match each globalisation concept to its description.',
         pairs: [

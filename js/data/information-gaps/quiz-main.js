@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'info_gaps_main',
-    topicId:  'info_gaps_main',
     title:    'Information Gaps',
     subtitle: 'Theme 1 &middot; Topic 3.4 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('info_gaps_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: information asymmetry */
       { type: 'mcq',
-        id: 'q_ig_1',
         stem: 'Which statement best defines <strong>information asymmetry</strong> as a source of market failure?',
         opts: [
           'One party to a transaction has significantly more or better information than the other – causing the less-informed party to make suboptimal decisions and potentially leading to market collapse or inefficient outcomes',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: adverse selection */
       { type: 'mcq',
-        id: 'q_ig_2',
         stem: 'In the <strong>health insurance market</strong>, adverse selection arises because:',
         opts: [
           'Individuals know their own health status better than insurers – those in poor health disproportionately buy insurance, raising costs and potentially causing the insurance pool to collapse as healthy people opt out',
@@ -46,7 +42,6 @@
 
       /* 3 – MCQ: moral hazard */
       { type: 'mcq',
-        id: 'q_ig_3',
         stem: 'Which example best illustrates <strong>moral hazard</strong>?',
         opts: [
           'A driver insured against all damages drives more recklessly than they would without insurance – their actions are hidden from the insurer who cannot monitor behaviour after the contract is signed',
@@ -60,7 +55,6 @@
 
       /* 4 – Categorise: adverse selection vs moral hazard */
       { type: 'categorise',
-        id: 'q_ig_4',
         stem: 'Classify each example as <strong>adverse selection</strong> (pre-contract) or <strong>moral hazard</strong> (post-contract).',
         categories: ['Adverse selection', 'Moral hazard'],
         items: [
@@ -76,7 +70,6 @@
 
       /* 5 – Match pairs: signalling mechanisms */
       { type: 'match_pairs',
-        id: 'q_ig_5',
         stem: 'Match each signalling mechanism to how it reduces information asymmetry.',
         pairs: [
           { a: 'University degree', b: 'Signals productivity and ability to employers – costly to fake (Spence\'s signalling model)' },
@@ -91,7 +84,6 @@
 
       /* 6 – Cause & effect: information failure consequences */
       { type: 'cause_effect',
-        id: 'q_ig_6',
         stem: 'Match each information asymmetry scenario to its market consequence.',
         pairs: [
           { cause: 'Sellers of used cars know defects; buyers do not', effect: 'Adverse selection – market may only trade lemons; good cars withdrawn' },
@@ -106,7 +98,6 @@
 
       /* 7 – Para fill: Akerlof's lemons model */
       { type: 'para_fill',
-        id: 'q_ig_7',
         stem: 'Complete the paragraph explaining Akerlof\'s Market for Lemons.',
         anchor: 'George Akerlof\'s 1970 paper showed that information asymmetry can cause markets to collapse entirely.',
         para: 'In the used car market, sellers know [1] their car is a good car or a "lemon." Buyers do not have this information, so they offer a price that reflects their [2] of getting a good car. This average price is [3] for sellers of good cars – they withdraw from the market. With [4] good cars in the market, buyers\' average offer falls further. In the worst case, this [5] selection spiral leads to complete market [6]. The solution is to reduce information [7]: through warranties (which [8] quality), or third-party inspection services like HPI that reveal [9] car history.',
@@ -126,7 +117,6 @@
 
       /* 8 – Odd one out: causes of information asymmetry */
       { type: 'odd_one_out',
-        id: 'q_ig_8',
         stem: 'Three of these are genuine causes or examples of <strong>information asymmetry</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🚗', label: 'Used car seller knows the car\'s history; buyer does not', note: '' },
@@ -140,7 +130,6 @@
 
       /* 9 – Data table: PPI mis-selling (UK financial information failure) */
       { type: 'data_table',
-        id: 'q_ig_9',
         stem: 'The table shows UK Payment Protection Insurance (PPI) mis-selling data.',
         headers: ['Year', 'PPI complaints upheld (000s)', 'FCA compensation paid (£bn cumulative)', 'Awareness of mis-selling (%)'],
         rows: [
@@ -162,7 +151,6 @@
 
       /* 10 – Multi-select: evaluation of information gap policies */
       { type: 'multi_select',
-        id: 'q_ig_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of policies to address information gaps?',
         opts: [
           'Information asymmetry causes adverse selection and moral hazard in markets',

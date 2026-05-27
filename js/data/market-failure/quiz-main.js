@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'market_failure_main',
-    topicId:  'market_failure_main',
     title:    'Market Failure',
     subtitle: 'Theme 1 &middot; Topic 3.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('market_failure_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: market failure definition */
       { type: 'mcq',
-        id: 'q_mf_1',
         stem: 'Which statement best defines <strong>market failure</strong>?',
         opts: [
           'A situation where the free market misallocates resources – failing to achieve allocative efficiency (P ≠ MSC) and producing at a socially suboptimal output level',
@@ -32,7 +29,6 @@
 
       /* 2 – Categorise: types of market failure */
       { type: 'categorise',
-        id: 'q_mf_2',
         stem: 'Sort each example into the correct type of market failure.',
         categories: ['Negative externality', 'Positive externality', 'Public good', 'Information gap'],
         items: [
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: negative externality and overproduction */
       { type: 'mcq',
-        id: 'q_mf_3',
         stem: 'In a market with a <strong>negative externality of production</strong>, the free market equilibrium compared to the social optimum shows:',
         opts: [
           'Output is too high and price is too low – the private cost curve lies below the social cost curve; producers do not bear the external cost',
@@ -62,7 +57,6 @@
 
       /* 4 – MCQ: public goods */
       { type: 'mcq',
-        id: 'q_mf_4',
         stem: 'Which combination of properties defines a <strong>pure public good</strong>?',
         opts: [
           'Non-excludable (cannot prevent non-payers from consuming) AND non-rival (one person\'s consumption does not reduce availability to others)',
@@ -76,7 +70,6 @@
 
       /* 5 – MCQ: information asymmetry */
       { type: 'mcq',
-        id: 'q_mf_5',
         stem: 'Akerlof\'s "Market for Lemons" model shows that information asymmetry in used car markets can cause:',
         opts: [
           'Market collapse through adverse selection – buyers cannot distinguish good from bad cars, offer average price; sellers of good cars exit; only "lemons" remain',
@@ -90,7 +83,6 @@
 
       /* 6 – MCQ: deadweight loss */
       { type: 'mcq',
-        id: 'q_mf_6',
         stem: 'The <strong>deadweight welfare loss</strong> from a negative externality represents:',
         opts: [
           'The net welfare cost of overproduction – social costs that exceed social benefits in the units produced beyond the social optimum',
@@ -104,7 +96,6 @@
 
       /* 7 – Match pairs: market failure concepts */
       { type: 'match_pairs',
-        id: 'q_mf_7',
         stem: 'Match each concept to its definition or example.',
         pairs: [
           { a: 'External cost', b: 'Cost imposed on third parties not reflected in market price' },
@@ -119,7 +110,6 @@
 
       /* 8 – Cause & effect: externalities */
       { type: 'cause_effect',
-        id: 'q_mf_8',
         stem: 'Match each scenario to the market failure mechanism it illustrates.',
         pairs: [
           { cause: 'A steel mill dumps waste in a river; fishing communities suffer losses', effect: 'Negative production externality – MPC < MSC; overproduction of steel' },
@@ -134,7 +124,6 @@
 
       /* 9 – Odd one out: public goods */
       { type: 'odd_one_out',
-        id: 'q_mf_9',
         stem: 'Three of these are <strong>pure public goods</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🛡️', label: 'National defence – protects all citizens simultaneously; non-payers cannot be excluded', note: '' },
@@ -148,7 +137,6 @@
 
       /* 10 – Data table: pollution and social optimum */
       { type: 'data_table',
-        id: 'q_mf_10',
         stem: 'The table shows marginal costs and benefits of steel production with a negative externality.',
         headers: ['Output (000 tonnes)', 'Marginal Private Cost (£)', 'Marginal External Cost (£)', 'Marginal Social Benefit (£)'],
         rows: [

@@ -1,5 +1,5 @@
 window.ECONOS_TOPIC = {
-  id: 'govt_intervention_subsidies',
+  id: 'government-intervention-subsidies',
   topicNum: '1.18',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Government Intervention: Subsidies',

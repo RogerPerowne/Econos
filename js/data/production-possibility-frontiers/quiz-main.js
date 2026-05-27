@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'ppf_main',
-    topicId:  'ppf_main',
     title:    'Production Possibility Frontiers',
     subtitle: 'Theme 1 &middot; Topic 1.4 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('ppf_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: productive efficiency */
       { type: 'mcq',
-        id: 'q_ppf_1',
         stem: 'A point <strong>on</strong> the production possibility frontier (PPF) represents:',
         opts: [
           'Productive efficiency – the economy is using all its resources to maximum effect and cannot produce more of one good without producing less of the other',
@@ -32,7 +29,6 @@
 
       /* 2 – Numeric input: opportunity cost */
       { type: 'numeric_input',
-        id: 'q_ppf_2',
         stem: 'Calculate the <strong>opportunity cost</strong> of producing one additional unit of good A.',
         context: 'An economy can produce on its PPF at the following combinations: Point X: 100 units of A and 200 units of B. Point Y: 110 units of A and 170 units of B.',
         answer: 3,
@@ -49,7 +45,6 @@
 
       /* 3 – MCQ: bowed-out shape */
       { type: 'mcq',
-        id: 'q_ppf_3',
         stem: 'Why is the production possibility frontier typically <strong>bowed outward</strong> (concave to the origin) rather than a straight line?',
         opts: [
           'Resources are not perfectly adaptable between different uses – as more of one good is produced, increasingly less suitable resources must be used, raising the opportunity cost',
@@ -63,7 +58,6 @@
 
       /* 4 – Categorise: points on the PPF */
       { type: 'categorise',
-        id: 'q_ppf_4',
         stem: 'Sort each production point into the correct category.',
         categories: ['On the PPF (efficient)', 'Inside the PPF (inefficient)', 'Outside the PPF (unattainable)'],
         items: [
@@ -79,7 +73,6 @@
 
       /* 5 – MCQ: shifts of the PPF */
       { type: 'mcq',
-        id: 'q_ppf_5',
         stem: 'Which of the following would cause the PPF to shift <strong>outward</strong> (economic growth)?',
         opts: [
           'A breakthrough in renewable energy technology that lowers the cost of power across all industries',
@@ -93,7 +86,6 @@
 
       /* 6 – Match pairs: PPF concepts */
       { type: 'match_pairs',
-        id: 'q_ppf_6',
         stem: 'Match each PPF concept to its correct description.',
         pairs: [
           { a: 'Point inside the PPF', b: 'Productive inefficiency – unused or misallocated resources' },
@@ -108,7 +100,6 @@
 
       /* 7 – Cause & effect: what shifts the PPF */
       { type: 'cause_effect',
-        id: 'q_ppf_7',
         stem: 'Match each change to its effect on the PPF.',
         pairs: [
           { cause: 'A country invests heavily in education and workforce skills', effect: 'PPF shifts outward – more human capital increases productive capacity' },
@@ -123,7 +114,6 @@
 
       /* 8 – Odd one out: what shifts the PPF outward */
       { type: 'odd_one_out',
-        id: 'q_ppf_8',
         stem: 'Three of these will shift the PPF <strong>outward</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🎓', label: 'A government doubles spending on university education and vocational training', note: '' },
@@ -137,7 +127,6 @@
 
       /* 9 – Data table: capital vs consumer goods trade-off */
       { type: 'data_table',
-        id: 'q_ppf_9',
         stem: 'Two economies with identical starting PPFs make different allocation choices over 20 years.',
         headers: ['Economy', 'Capital goods share of output (avg)', 'Consumer goods share', 'GDP growth (annual avg)'],
         rows: [
@@ -159,7 +148,6 @@
 
       /* 10 – Para fill: PPF and opportunity cost */
       { type: 'para_fill',
-        id: 'q_ppf_10',
         stem: 'Complete the paragraph about the PPF and resource allocation.',
         anchor: 'The PPF illustrates the fundamental economic concepts of scarcity, choice, and opportunity cost.',
         para: 'The PPF shows the maximum combinations of two goods an economy can produce when all resources are [1] used. Any point [2] the frontier is productively efficient – producing more of one good requires [3] less of the other. The [4] shape of the PPF reflects increasing opportunity cost: as more resources are shifted to one good, [5] suitable resources are used, making each additional unit more [6] to produce. An outward shift of the PPF represents [7], caused by better [8] or increased [9] inputs.',

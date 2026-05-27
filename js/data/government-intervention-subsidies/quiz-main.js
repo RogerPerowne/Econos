@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'govt_intervention_subsidies_main',
-    topicId:  'govt_intervention_subsidies_main',
     title:    'Government Intervention: Subsidies',
     subtitle: 'Theme 1.18 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('govt_intervention_subsidies_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: how a subsidy works */
       { type: 'mcq',
-        id: 'q_gisub_1',
         stem: 'A government introduces a per-unit subsidy paid to producers. What is the <strong>immediate market effect</strong>?',
         opts: [
           'The supply curve shifts rightward – for each unit, producers effectively face a lower cost of production; more is supplied at every price, reducing the market price',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: subsidy price split */
       { type: 'mcq',
-        id: 'q_gisub_2',
         stem: 'A £4 per-unit subsidy is introduced in a market. Before subsidy: P = £10. After subsidy: consumer price = £8, producer net price = £12 (including subsidy). How is the subsidy <strong>shared</strong>?',
         opts: [
           'Consumers receive £2 of the benefit (price falls from £10 to £8); producers receive £2 (effective price rises from £10 to £12)',
@@ -46,7 +42,6 @@
 
       /* 3 – MCQ: net welfare effect */
       { type: 'mcq',
-        id: 'q_gisub_3',
         stem: 'A subsidy on a good with <strong>no externality</strong> creates a <strong>deadweight welfare loss</strong> because:',
         opts: [
           'The subsidy increases output beyond the social optimum – units are produced where MC > MSB (the resource cost exceeds the social benefit); the excess production destroys net welfare',
@@ -60,7 +55,6 @@
 
       /* 4 – MCQ: subsidy for positive externality */
       { type: 'mcq',
-        id: 'q_gisub_4',
         stem: 'A government subsidises electric vehicles to correct a <strong>positive externality of consumption</strong>. The optimal subsidy is set equal to:',
         opts: [
           'The marginal external benefit at the social optimum – the subsidy shifts demand up from MPB to MSB, moving the market from Q<sub>M</sub> to Q*',
@@ -74,7 +68,6 @@
 
       /* 5 – MCQ: agricultural subsidies */
       { type: 'mcq',
-        id: 'q_gisub_5',
         stem: 'The EU\'s Common Agricultural Policy (CAP) has historically provided large subsidies to farmers. A key <strong>unintended consequence</strong> is:',
         opts: [
           'Overproduction of subsidised crops – subsidies shift supply rightward beyond the social optimum, creating "butter mountains" and "wine lakes" at significant taxpayer cost',
@@ -88,7 +81,6 @@
 
       /* 6 – Cause & effect: subsidy chains */
       { type: 'cause_effect',
-        id: 'q_gisub_6',
         stem: 'Match each subsidy scenario to its welfare effect.',
         pairs: [
           { cause: 'Subsidy on vaccines (strong positive externality)', effect: 'Consumption rises to social optimum; DWL eliminated; net welfare gain' },
@@ -103,7 +95,6 @@
 
       /* 7 – Match pairs: subsidy concepts */
       { type: 'match_pairs',
-        id: 'q_gisub_7',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Per-unit subsidy', b: 'Fixed payment per unit produced – shifts supply curve rightward by the subsidy amount' },
@@ -118,7 +109,6 @@
 
       /* 8 – Odd one out: types of subsidies */
       { type: 'odd_one_out',
-        id: 'q_gisub_8',
         stem: 'Three of these subsidies are likely to <strong>improve net social welfare</strong> by correcting a market failure. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '💉', label: 'A subsidy on vaccines to increase uptake toward the herd immunity threshold', note: '' },
@@ -132,7 +122,6 @@
 
       /* 9 – Data table: UK EV subsidy */
       { type: 'data_table',
-        id: 'q_gisub_9',
         stem: 'The table shows UK electric vehicle (EV) market data alongside subsidy policy changes.',
         headers: ['Year', 'EV new sales (000)', 'EV subsidy (£ per car)', 'EV market share (%)', 'Avg EV price (£000)'],
         rows: [
@@ -155,7 +144,6 @@
 
       /* 10 – Multi-select: evaluation of government subsidies */
       { type: 'multi_select',
-        id: 'q_gisub_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of government subsidies?',
         opts: [
           'Subsidies increase supply by reducing the effective cost of production',

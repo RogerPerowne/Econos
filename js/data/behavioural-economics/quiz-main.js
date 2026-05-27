@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'behavioural_econ_main',
-    topicId:  'behavioural_econ_main',
     title:    'Behavioural Economics',
     subtitle: 'Theme 1 &middot; Topic 2.10 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('behavioural_econ_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: bounded rationality */
       { type: 'mcq',
-        id: 'q_be_1',
         stem: 'Herbert Simon\'s concept of <strong>bounded rationality</strong> suggests that humans:',
         opts: [
           'Make decisions within the limits of their cognitive capacity and available information – using heuristics (mental shortcuts) to simplify choices, often reaching satisfactory rather than optimal decisions ("satisficing")',
@@ -32,7 +29,6 @@
 
       /* 2 – Categorise: behavioural biases */
       { type: 'categorise',
-        id: 'q_be_2',
         stem: 'Sort each example into the correct behavioural bias category.',
         categories: ['Loss aversion', 'Present bias', 'Social norms', 'Anchoring'],
         items: [
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: nudge theory */
       { type: 'mcq',
-        id: 'q_be_3',
         stem: 'Thaler and Sunstein\'s <strong>nudge theory</strong> proposes that governments should:',
         opts: [
           'Design "choice architectures" that make beneficial choices easier or more salient, without removing freedom of choice – preserving individual liberty (libertarian paternalism)',
@@ -62,7 +57,6 @@
 
       /* 4 – MCQ: default options and auto-enrolment */
       { type: 'mcq',
-        id: 'q_be_4',
         stem: 'UK pension auto-enrolment changed the <strong>default option</strong> from "opt in" to "opt out." This works because:',
         opts: [
           'Status quo bias and inertia mean most people accept whatever the default is – by making pension contribution the default, most workers remain enrolled without having to make an active decision',
@@ -76,7 +70,6 @@
 
       /* 5 – MCQ: loss aversion in policy */
       { type: 'mcq',
-        id: 'q_be_5',
         stem: 'Behavioural economics suggests that framing a policy as avoiding a <strong>loss</strong> rather than achieving a <strong>gain</strong> will make it more persuasive. Which example best applies this?',
         opts: [
           '"You will lose £1,200 per year by not having adequate home insulation" is more motivating than "You will save £1,200 per year by insulating your home" – even though both convey identical information',
@@ -90,7 +83,6 @@
 
       /* 6 – Cause & effect: behavioural biases and outcomes */
       { type: 'cause_effect',
-        id: 'q_be_6',
         stem: 'Match each behavioural bias to its real-world market or policy implication.',
         pairs: [
           { cause: 'Present bias – people heavily discount future health risks from smoking', effect: 'Underinvestment in health prevention; sin taxes and health warnings partially corrective' },
@@ -105,7 +97,6 @@
 
       /* 7 – Match pairs: behavioural economics concepts */
       { type: 'match_pairs',
-        id: 'q_be_7',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Heuristic', b: 'Mental shortcut used to make quick decisions – often useful but systematically biased' },
@@ -120,7 +111,6 @@
 
       /* 8 – Odd one out: behavioural biases */
       { type: 'odd_one_out',
-        id: 'q_be_8',
         stem: 'Three of these are well-established <strong>behavioural biases</strong> documented in experimental economics. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '😰', label: 'Loss aversion – people feel losses more strongly than equivalent gains', note: '' },
@@ -134,7 +124,6 @@
 
       /* 9 – Data table: UK auto-enrolment pensions */
       { type: 'data_table',
-        id: 'q_be_9',
         stem: 'The table shows UK workplace pension participation data before and after auto-enrolment (introduced 2012).',
         headers: ['Year', 'Private sector pension participation (%)', 'Opt-out rate (of auto-enrolled)'],
         rows: [
@@ -157,7 +146,6 @@
 
       /* 10 – Multi-select: evaluation of behavioural economics in policy */
       { type: 'multi_select',
-        id: 'q_be_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of behavioural economics as a policy framework?',
         opts: [
           'Behavioural economics identifies systematic deviations from rational behaviour through experimental evidence',

@@ -1,5 +1,5 @@
 window.ECONOS_TOPIC = {
-  id: 'govt_intervention_tax',
+  id: 'government-intervention-taxes',
   topicNum: '1.17',
   theme: 'Theme 1 · Introduction to Markets and Market Failure',
   title: 'Government Intervention: Taxes',

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'inflation_meas_main',
-    topicId:  'inflation_meas_main',
     title:    'Inflation: Measurement & Costs',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('inflation-measurement-and-costs'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_infm_1',
         type: 'mcq',
         q:    'The Consumer Price Index (CPI) measures inflation by:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The CPI tracks the changing cost of a representative "basket" of goods and services consumed by a typical UK household. The basket is updated annually and the weights reflect spending patterns.'
       },
       {
-        id:   'q_infm_2',
         type: 'mcq',
         q:    'The main difference between CPI and RPI (Retail Price Index) is:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'RPI includes mortgage interest payments and some housing costs that CPI excludes. RPI therefore tends to be higher than CPI when interest rates are rising. CPIH is a variant of CPI that includes owner-occupier housing costs.'
       },
       {
-        id:   'q_infm_3',
         type: 'mcq',
         q:    'The Bank of England\'s inflation target (set by the government) is:',
         opts: ['1% CPI','2% CPI','3% RPI','0% – price stability means zero inflation'],
@@ -48,7 +43,6 @@
         exp:  'The UK government set the Bank of England a symmetric inflation target of 2% CPI. If inflation deviates by more than 1 percentage point (above 3% or below 1%), the Governor must write an open letter of explanation to the Chancellor.'
       },
       {
-        id:   'q_infm_4',
         type: 'mcq',
         q:    'Which group benefits from unexpectedly high inflation?',
         opts: [
@@ -61,7 +55,6 @@
         exp:  'Borrowers gain from unexpected inflation because the real value of their debt falls. A £100,000 mortgage becomes cheaper in real terms when prices rise – they repay less in purchasing power terms.'
       },
       {
-        id:   'q_infm_5',
         type: 'numeric_input',
         q:    'The CPI basket costs £850 in the base year and £893 in the current year. Calculate the CPI index value for the current year (base year = 100).',
         answer: 105.1,
@@ -71,7 +64,6 @@
         workingSteps: ['CPI = (£893 ÷ £850) × 100 = 105.06 ≈ 105.1']
       },
       {
-        id:   'q_infm_6',
         type: 'categorise',
         q:    'Categorise each group as a winner or loser from unexpected inflation.',
         categories: ['Winner from inflation','Loser from inflation'],
@@ -85,7 +77,6 @@
         ]
       },
       {
-        id:   'q_infm_7',
         type: 'cause_effect',
         q:    'Match each cost or consequence of inflation to its effect.',
         pairs: [
@@ -98,7 +89,6 @@
         ]
       },
       {
-        id:   'q_infm_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['CPI','RPI','CPIH','Gini coefficient'],
@@ -106,7 +96,6 @@
         exp:  'CPI, RPI, and CPIH are all measures of price inflation. The Gini coefficient measures income or wealth inequality – it is not an inflation measure.'
       },
       {
-        id:   'q_infm_9',
         type: 'data_table',
         q:    'Use the table to calculate the inflation rate between Year 2 and Year 3.',
         tableHeaders: ['Year','CPI Index'],
@@ -120,7 +109,6 @@
         exp:  'Inflation Year 2→3 = ((113.4 − 106.0) ÷ 106.0) × 100 = (7.4 ÷ 106) × 100 ≈ 6.98% ≈ 7.0%.'
       },
       {
-        id:   'q_infm_10',
         type: 'match_pairs',
         q:    'Match each inflation measurement concept to its description.',
         pairs: [

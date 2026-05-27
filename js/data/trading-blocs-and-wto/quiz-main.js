@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'trading_blocs_main',
-    topicId:  'trading_blocs_main',
     title:    'Trading Blocs & the WTO',
     subtitle: 'International Economics',
     backUrl:  TopicLoader.routes.learn('trading-blocs-and-wto'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_tb_1',
         type: 'mcq',
         q:    'In a Free Trade Area (FTA), member countries:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'In an FTA (e.g., EFTA, USMCA), barriers between members are removed, but each member maintains its own trade policy toward non-members. This is less integrated than a customs union.'
       },
       {
-        id:   'q_tb_2',
         type: 'mcq',
         q:    'A Customs Union differs from a Free Trade Area because it also has:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'A customs union (e.g., the EU customs union, Mercosur) removes internal barriers AND establishes a Common External Tariff (CET) against non-members. This adds a layer of coordination beyond an FTA.'
       },
       {
-        id:   'q_tb_3',
         type: 'mcq',
         q:    'Trade creation occurs when:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Trade creation is a welfare gain: joining a bloc replaces expensive domestic production with cheaper imports from a more efficient bloc member. This increases specialisation and economic efficiency.'
       },
       {
-        id:   'q_tb_4',
         type: 'mcq',
         q:    'Trade diversion is a welfare loss because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Trade diversion occurs when the common external tariff makes non-member imports more expensive, diverting trade to less efficient bloc producers. The net welfare effect of joining a bloc depends on whether trade creation exceeds trade diversion.'
       },
       {
-        id:   'q_tb_5',
         type: 'numeric_input',
         q:    'Before joining a bloc, a country imports good X at £10/unit (world price + 30% tariff = £13). After joining, it imports from a bloc member at £11 (no tariff). What is the trade creation saving per unit?',
         answer: 2,
@@ -76,7 +69,6 @@
         workingSteps: ['Old cost (domestic/tariff protected): £13','New cost (bloc member, no tariff): £11','Saving = £13 − £11 = £2 per unit']
       },
       {
-        id:   'q_tb_6',
         type: 'categorise',
         q:    'Categorise each level of economic integration in order from least to most integrated.',
         categories: ['Less integrated','More integrated'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_tb_7',
         type: 'cause_effect',
         q:    'Match each trading bloc concept to its effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_tb_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Free Trade Area','Customs Union','Common Market','Laffer Curve'],
@@ -111,7 +101,6 @@
         exp:  'Free Trade Area, Customs Union, and Common Market are all levels of regional economic integration. The Laffer Curve is a fiscal policy concept about the tax rate–revenue relationship, not trade integration.'
       },
       {
-        id:   'q_tb_9',
         type: 'data_table',
         q:    'Use the cost data to identify whether joining a trading bloc creates trade or diverts it.',
         tableHeaders: ['Supplier','Unit cost before bloc (incl. tariff)','Unit cost after bloc (incl. tariff)'],
@@ -130,7 +119,6 @@
         exp:  'After joining: cheapest source = bloc member at £18 (tariff removed). Before joining: cheapest was non-member at £12. The bloc\'s common external tariff now makes the cheaper non-member uncompetitive. This is trade diversion – a welfare loss.'
       },
       {
-        id:   'q_tb_10',
         type: 'match_pairs',
         q:    'Match each trading bloc term to its description.',
         pairs: [

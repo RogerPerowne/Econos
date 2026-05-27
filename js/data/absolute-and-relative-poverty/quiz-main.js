@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'poverty_main',
-    topicId:  'poverty_main',
     title:    'Poverty',
     subtitle: 'Labour Markets & Distribution',
     backUrl:  TopicLoader.routes.learn('absolute-and-relative-poverty'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_pov_1',
         type: 'mcq',
         q:    'Absolute poverty is defined as:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Absolute poverty means lacking the minimum resources necessary for basic survival – food, clean water, shelter. It is measured against a fixed standard (e.g., the World Bank\'s $2.15/day line).'
       },
       {
-        id:   'q_pov_2',
         type: 'mcq',
         q:    'Relative poverty in the UK is most commonly defined as:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Relative poverty is a social concept: it measures deprivation relative to prevailing living standards. The UK defines it as household income below 60% of median income – it moves as average incomes change.'
       },
       {
-        id:   'q_pov_3',
         type: 'mcq',
         q:    'The poverty trap occurs when:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'The poverty trap arises when moving into work results in loss of means-tested benefits and/or increased tax, leaving little net gain in disposable income. It reduces the financial incentive to seek employment.'
       },
       {
-        id:   'q_pov_4',
         type: 'mcq',
         q:    'Which of the following is a supply-side policy to reduce poverty?',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Supply-side policies to reduce poverty address structural causes by improving workers\' employability. Education and training increase human capital, raising earning potential and reducing long-term poverty.'
       },
       {
-        id:   'q_pov_5',
         type: 'numeric_input',
         q:    'The median household income is £36,000 per year. What is the relative poverty threshold at 60% of median income?',
         answer: 21600,
@@ -76,7 +69,6 @@
         workingSteps: ['Threshold = 0.60 × £36,000 = £21,600']
       },
       {
-        id:   'q_pov_6',
         type: 'categorise',
         q:    'Categorise each cause of poverty as structural or cyclical.',
         categories: ['Structural poverty','Cyclical poverty'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_pov_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in the context of poverty.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_pov_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Absolute poverty','Relative poverty','Poverty trap','Gini coefficient'],
@@ -111,7 +101,6 @@
         exp:  'Absolute poverty, relative poverty, and the poverty trap are all directly related to the concept of poverty. The Gini coefficient is a measure of income inequality – a related but distinct concept.'
       },
       {
-        id:   'q_pov_9',
         type: 'data_table',
         q:    'Use the table to identify which household is living in relative poverty (threshold = £21,000).',
         tableHeaders: ['Household','Annual income (£)','Housing costs (£)','Income after housing (£)'],
@@ -126,7 +115,6 @@
         exp:  'Household B has income after housing costs of £19,000, which is below the relative poverty threshold of £21,000. All other households are above the threshold after housing costs.'
       },
       {
-        id:   'q_pov_10',
         type: 'match_pairs',
         q:    'Match each anti-poverty policy to how it works.',
         pairs: [

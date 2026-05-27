@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'long_run_costs_main',
-    topicId:  'long_run_costs_main',
     title:    'Long-Run Costs &amp; Economies of Scale',
     subtitle: 'Theme 3 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('long_run_costs_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: LRAC and returns to scale */
       { type: 'mcq',
-        id: 'q_lrc_1',
         stem: 'The <strong>long-run average cost (LRAC) curve</strong> is often described as an "envelope curve." This means:',
         opts: [
           'The LRAC is the minimum achievable average cost at each output level when all factors of production can be varied – it traces the lowest point of each possible short-run average cost curve',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: internal vs external economies of scale */
       { type: 'elastic_sort',
-        id: 'q_lrc_2',
         stem: 'Classify each economy of scale as <strong>internal</strong> (arising within the firm) or <strong>external</strong> (arising from industry growth).',
         categories: ['internal', 'external'],
         categoryLabels: ['Internal economies of scale', 'External economies of scale'],
@@ -49,7 +45,6 @@
 
       /* 3 – MCQ: minimum efficient scale */
       { type: 'mcq',
-        id: 'q_lrc_3',
         stem: 'The <strong>minimum efficient scale (MES)</strong> is:',
         opts: [
           'The lowest output level at which a firm exhausts all economies of scale and reaches minimum long-run average cost',
@@ -63,7 +58,6 @@
 
       /* 4 – MCQ: natural monopoly */
       { type: 'mcq',
-        id: 'q_lrc_4',
         stem: 'A <strong>natural monopoly</strong> occurs when:',
         opts: [
           'Economies of scale are so large relative to market demand that one firm can supply the entire market at a lower average cost than two or more competing firms – breaking up the market would raise costs',
@@ -77,7 +71,6 @@
 
       /* 5 – MCQ: diseconomies of scale */
       { type: 'mcq',
-        id: 'q_lrc_5',
         stem: 'Which of the following is a common cause of <strong>diseconomies of scale</strong>?',
         opts: [
           'Managerial inefficiency – as firms grow very large, coordination problems, communication breakdowns, and bureaucracy increase costs per unit',
@@ -91,7 +84,6 @@
 
       /* 6 – Numeric input: MES calculation */
       { type: 'numeric_input',
-        id: 'q_lrc_6',
         stem: 'A steel firm\'s LRAC reaches its minimum at what output level?',
         context: 'LRAC data: 1m tonnes = £120; 2m = £90; 3m = £70; 4m = £60; <strong>5m = £60; 6m = £60</strong>; 7m = £65; 8m = £72. The firm has constant returns to scale between 5m and 6m tonnes.',
         answer: 5,
@@ -109,7 +101,6 @@
 
       /* 7 – Cause & effect: economies of scale and market structure */
       { type: 'cause_effect',
-        id: 'q_lrc_7',
         stem: 'Match each economies-of-scale mechanism to its source.',
         pairs: [
           { cause: 'A large retailer buys 10 million units and negotiates a bulk discount', effect: 'Purchasing (buying) economies – lower input costs per unit' },
@@ -124,7 +115,6 @@
 
       /* 8 – Match pairs: long-run cost concepts */
       { type: 'match_pairs',
-        id: 'q_lrc_8',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Economies of scale', b: 'LRAC falls as output increases – benefits from larger scale' },
@@ -139,7 +129,6 @@
 
       /* 9 – Odd one out: internal economies of scale */
       { type: 'odd_one_out',
-        id: 'q_lrc_9',
         stem: 'Three of these are examples of <strong>internal economies of scale</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🚛', label: 'A large logistics firm negotiates bulk fuel contracts, reducing cost per delivery', note: '' },
@@ -153,7 +142,6 @@
 
       /* 10 – Data table: economies of scale in UK water industry */
       { type: 'data_table',
-        id: 'q_lrc_10',
         stem: 'The table shows cost data for hypothetical water supply firms of different sizes.',
         headers: ['Annual output (m litres)', 'Total Annual Cost (£m)', 'Average Cost (£/1000 litres)', 'Type of returns'],
         rows: [

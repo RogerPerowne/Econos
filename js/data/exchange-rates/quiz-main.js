@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'exchange_rates_main',
-    topicId:  'exchange_rates_main',
     title:    'Exchange Rates',
     subtitle: 'International Economics',
     backUrl:  TopicLoader.routes.learn('exchange-rates'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_er_1',
         type: 'mcq',
         q:    'The exchange rate is:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The exchange rate is the price of one currency in terms of another – e.g., £1 = $1.25. It is determined by supply and demand for currencies in the foreign exchange (FOREX) market.'
       },
       {
-        id:   'q_er_2',
         type: 'mcq',
         q:    'If the pound depreciates against the euro, then:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Depreciation means the pound buys fewer euros. UK goods cost fewer euros for European buyers – exports become more competitive. However, UK importers pay more pounds for eurozone goods – import costs rise.'
       },
       {
-        id:   'q_er_3',
         type: 'mcq',
         q:    'The Marshall-Lerner condition states that a depreciation will improve the current account only if:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'The Marshall-Lerner condition: |PEDx| + |PEDm| > 1. If export and import demand are sufficiently elastic in total, the volume effects of depreciation outweigh the price effects and the trade balance improves.'
       },
       {
-        id:   'q_er_4',
         type: 'mcq',
         q:    'Under a fixed exchange rate system, if the currency faces downward pressure:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'In a fixed exchange rate regime, the central bank must intervene to maintain the peg. If the currency is falling, it buys the domestic currency (selling foreign reserves) to boost demand and support the rate.'
       },
       {
-        id:   'q_er_5',
         type: 'numeric_input',
         q:    'The exchange rate is £1 = €1.20. A UK firm exports goods priced at £500. What is the price in euros for a French buyer?',
         answer: 600,
@@ -76,7 +69,6 @@
         workingSteps: ['Euro price = £500 × 1.20 = €600']
       },
       {
-        id:   'q_er_6',
         type: 'categorise',
         q:    'Categorise each factor as causing an appreciation or depreciation of the pound.',
         categories: ['Appreciation (£ rises)','Depreciation (£ falls)'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_er_7',
         type: 'cause_effect',
         q:    'Match each exchange rate change to its macroeconomic effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_er_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Depreciation','Appreciation','Devaluation','Hyperinflation'],
@@ -111,7 +101,6 @@
         exp:  'Depreciation (market-driven fall), appreciation (market-driven rise), and devaluation (government-decreed fall in a fixed system) are all exchange rate movements. Hyperinflation is a domestic price phenomenon – not an exchange rate concept.'
       },
       {
-        id:   'q_er_9',
         type: 'data_table',
         q:    'Use the exchange rate data to calculate how the import cost changed for a UK firm buying £200,000 of US goods.',
         tableHeaders: ['Period','£ / $ exchange rate','Cost of $200,000 goods in £'],
@@ -130,7 +119,6 @@
         exp:  'January: $200,000 ÷ 1.40 = £142,857. June: $200,000 ÷ 1.25 = £160,000. Pound has weakened (depreciated); import costs rise by ~£17,143.'
       },
       {
-        id:   'q_er_10',
         type: 'match_pairs',
         q:    'Match each exchange rate concept to its description.',
         pairs: [

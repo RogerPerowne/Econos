@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'indirect_taxes_subsidies_main',
-    topicId:  'indirect_taxes_subsidies_main',
     title:    'Indirect Taxes &amp; Subsidies',
     subtitle: 'Theme 1 &middot; Topic 2.9 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('indirect_taxes_subsidies_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: specific vs ad valorem */
       { type: 'mcq',
-        id: 'q_its_1',
         stem: 'A <strong>specific tax</strong> differs from an <strong>ad valorem tax</strong> in that:',
         opts: [
           'A specific tax is a fixed monetary amount per unit (e.g. 57p per litre of petrol); an ad valorem tax is a percentage of the price (e.g. 20% VAT)',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: tax incidence and elasticity */
       { type: 'mcq',
-        id: 'q_its_2',
         stem: 'The government imposes a specific tax on cigarettes. Given that demand is <strong>price inelastic</strong>, the incidence of this tax will fall mainly on:',
         opts: [
           'Consumers – inelastic demand means buyers cannot easily reduce quantity; they absorb most of the price rise through higher spending',
@@ -46,7 +42,6 @@
 
       /* 3 – Numeric input: tax incidence calculation */
       { type: 'numeric_input',
-        id: 'q_its_3',
         stem: 'Calculate the <strong>consumer\'s share of the tax</strong> (£ per unit) from the data below.',
         context: 'Before tax: price = £5.00, quantity = 1,000 units/day. A specific tax of £2.00 per unit is imposed. After tax: price paid by consumers = £6.50, price received by producers = £4.50, quantity = 700 units/day.',
         answer: 1.5,
@@ -65,7 +60,6 @@
 
       /* 4 – MCQ: subsidy effect on consumer and producer surplus */
       { type: 'mcq',
-        id: 'q_its_4',
         stem: 'A government introduces a per-unit subsidy on electric vehicles. What is the effect on <strong>consumer and producer surplus</strong>?',
         opts: [
           'Both consumer and producer surplus increase – the subsidy shifts supply rightward, lowering the market price (higher CS) and increasing the amount received by producers including the subsidy (higher PS)',
@@ -79,7 +73,6 @@
 
       /* 5 – MCQ: deadweight loss from tax */
       { type: 'mcq',
-        id: 'q_its_5',
         stem: 'An indirect tax that is NOT correcting an externality creates a <strong>deadweight welfare loss</strong> because:',
         opts: [
           'The tax raises the price above the social optimum – transactions that would have been mutually beneficial (consumer WTP > producer MC) do not occur; the associated welfare is lost',
@@ -93,7 +86,6 @@
 
       /* 6 – Elastic sort: effect of elastic vs inelastic demand on tax outcomes */
       { type: 'elastic_sort',
-        id: 'q_its_6',
         stem: 'Classify each outcome as more likely when demand is <strong>elastic</strong> or <strong>inelastic</strong> following an indirect tax.',
         categories: ['elastic', 'inelastic'],
         categoryLabels: ['Elastic demand (|PED| > 1)', 'Inelastic demand (|PED| < 1)'],
@@ -110,7 +102,6 @@
 
       /* 7 – Cause & effect: tax and subsidy chains */
       { type: 'cause_effect',
-        id: 'q_its_7',
         stem: 'Match each policy action to its market effect.',
         pairs: [
           { cause: 'Specific tax of £2 imposed on a good with inelastic demand', effect: 'Price rises by approximately £2; consumers absorb most; government collects revenue; small DWL' },
@@ -125,7 +116,6 @@
 
       /* 8 – Match pairs: tax and subsidy concepts */
       { type: 'match_pairs',
-        id: 'q_its_8',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Specific (unit) tax', b: 'Fixed monetary amount per unit – shifts supply curve up by constant amount' },
@@ -140,7 +130,6 @@
 
       /* 9 – Odd one out: effects of a corrective tax */
       { type: 'odd_one_out',
-        id: 'q_its_9',
         stem: 'Three of these are effects of a correctly set <strong>Pigouvian tax</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '📉', label: 'Market output falls from Q<sub>M</sub> to Q* – the social optimum', note: '' },
@@ -154,7 +143,6 @@
 
       /* 10 – Data table: UK tobacco duty and consumption */
       { type: 'data_table',
-        id: 'q_its_10',
         stem: 'The table shows UK tobacco duty and smoking prevalence data.',
         headers: ['Year', 'Tobacco duty per 20 cigarettes (£)', 'Adult smoking prevalence (%)', 'Tobacco duty revenue (£bn)'],
         rows: [

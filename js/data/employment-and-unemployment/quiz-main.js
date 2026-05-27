@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'unemployment_main',
-    topicId:  'unemployment_main',
     title:    'Employment & Unemployment',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('employment-and-unemployment'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_unemp_1',
         type: 'mcq',
         q:    'The ILO definition classifies a person as unemployed if they are:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The ILO (International Labour Organisation) standard defines unemployment as: without a job, available to start work within two weeks, and actively sought work in the past four weeks.'
       },
       {
-        id:   'q_unemp_2',
         type: 'mcq',
         q:    'Frictional unemployment arises because:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Frictional unemployment is the temporary unemployment that occurs when workers transition between jobs. It is often considered inevitable and even healthy – it allows better job matching.'
       },
       {
-        id:   'q_unemp_3',
         type: 'mcq',
         q:    'Structural unemployment is caused by:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Structural unemployment arises when industries decline (e.g., manufacturing, mining) or technology replaces roles. Workers\' skills no longer match available vacancies – a supply-side mismatch that requires retraining.'
       },
       {
-        id:   'q_unemp_4',
         type: 'mcq',
         q:    'Hysteresis in unemployment means:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Hysteresis means past events have persistent effects. Prolonged cyclical unemployment can become structural – workers lose skills and motivation, employers "scar" them by preferring recent graduates, raising the long-run natural rate permanently.'
       },
       {
-        id:   'q_unemp_5',
         type: 'numeric_input',
         q:    'The labour force is 32 million. 1.6 million are unemployed. What is the unemployment rate (%)?',
         answer: 5,
@@ -76,7 +69,6 @@
         workingSteps: ['Rate = (1.6m ÷ 32m) × 100 = 5%']
       },
       {
-        id:   'q_unemp_6',
         type: 'categorise',
         q:    'Categorise each type of unemployment as demand-deficient or supply-side.',
         categories: ['Demand-deficient','Supply-side'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_unemp_7',
         type: 'cause_effect',
         q:    'Match each unemployment cause to its policy response.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_unemp_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Frictional unemployment','Structural unemployment','Cyclical unemployment','Deflation'],
@@ -111,7 +101,6 @@
         exp:  'Frictional, structural, and cyclical are all types of unemployment. Deflation is a macroeconomic price-level concept – it can cause unemployment but is not itself a type of unemployment.'
       },
       {
-        id:   'q_unemp_9',
         type: 'data_table',
         q:    'Use the data to calculate the unemployment rate for Country B.',
         tableHeaders: ['Country','Working-age population (m)','Employed (m)','Unemployed (m)','Inactive (m)'],
@@ -126,7 +115,6 @@
         exp:  'Labour force = Employed + Unemployed = 29 + 3 = 32m. Unemployment rate = (3 ÷ 32) × 100 = 9.375% ≈ 9.4%.'
       },
       {
-        id:   'q_unemp_10',
         type: 'match_pairs',
         q:    'Match each unemployment concept to its description.',
         pairs: [

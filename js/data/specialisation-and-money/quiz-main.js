@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'specialisation_money_main',
-    topicId:  'specialisation_money_main',
     title:    'Specialisation &amp; Money',
     subtitle: 'Theme 1 &middot; Topic 1.5 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('specialisation_money_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: division of labour */
       { type: 'mcq',
-        id: 'q_spec_1',
         stem: 'Adam Smith\'s famous pin factory example illustrates the benefits of the <strong>division of labour</strong>. What is the primary economic argument?',
         opts: [
           'By breaking production into specialised tasks, each worker develops skill through repetition, tools can be designed for specific tasks, and time is saved switching between activities – dramatically raising output per worker',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: benefits vs limitations of specialisation */
       { type: 'elastic_sort',
-        id: 'q_spec_2',
         stem: 'Classify each statement as a <strong>benefit</strong> or <strong>limitation</strong> of specialisation and the division of labour.',
         categories: ['benefit', 'limitation'],
         categoryLabels: ['Benefit of specialisation', 'Limitation / drawback'],
@@ -49,7 +45,6 @@
 
       /* 3 – MCQ: barter and double coincidence */
       { type: 'mcq',
-        id: 'q_spec_3',
         stem: 'The <strong>double coincidence of wants</strong> problem makes barter extremely inefficient. What does this problem involve?',
         opts: [
           'For a trade to occur, both parties must simultaneously want exactly what the other is offering – a near-impossible requirement in a complex economy',
@@ -63,7 +58,6 @@
 
       /* 4 – Elastic sort: four functions of money */
       { type: 'elastic_sort',
-        id: 'q_spec_4',
         stem: 'Classify each example under the correct <strong>function of money</strong>.',
         categories: ['medium_exchange', 'store_value', 'unit_account', 'standard_deferred'],
         categoryLabels: ['Medium of exchange', 'Store of value', 'Unit of account', 'Standard of deferred payment'],
@@ -80,7 +74,6 @@
 
       /* 5 – Match pairs: characteristics of good money */
       { type: 'match_pairs',
-        id: 'q_spec_5',
         stem: 'Match each characteristic of good money to an example of what happens when it is absent.',
         pairs: [
           { a: 'Durable', b: 'Milk cannot serve as money – it spoils; money must last' },
@@ -95,7 +88,6 @@
 
       /* 6 – Para fill: money and specialisation link */
       { type: 'para_fill',
-        id: 'q_spec_6',
         stem: 'Complete the paragraph linking specialisation to the need for money.',
         anchor: 'Specialisation and money co-evolved – one made the other necessary.',
         para: 'As economies specialise, individuals produce [1] types of goods but need [2] types to survive. Without money, they face the [3] coincidence of wants problem – trades require both parties to want exactly what the other offers. Money solves this by acting as a [4] of exchange, allowing people to [5] their output for money and then [6] whatever they need from others. The more [7] an economy becomes, the more important the [8] system is, because the probability of matching [9] in barter falls toward zero.',
@@ -115,7 +107,6 @@
 
       /* 7 – Cause & effect: money and economic development */
       { type: 'cause_effect',
-        id: 'q_spec_7',
         stem: 'Match each failure of money to its economic consequence.',
         pairs: [
           { cause: 'Hyperinflation destroys money\'s store of value (Zimbabwe 2008)', effect: 'Barter and dollarisation emerge as people switch to more stable currencies' },
@@ -130,7 +121,6 @@
 
       /* 8 – Odd one out: functions of money */
       { type: 'odd_one_out',
-        id: 'q_spec_8',
         stem: 'Three of these describe <strong>functions of money</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '📊', label: 'Unit of account – money provides a standard measure of value for comparing prices', note: '' },
@@ -144,7 +134,6 @@
 
       /* 9 – Data table: specialisation and productivity */
       { type: 'data_table',
-        id: 'q_spec_9',
         stem: 'The table compares productivity in a small economy before and after specialisation.',
         headers: ['Worker', 'Before specialisation (output/day each)', 'After specialisation (output/day total)'],
         rows: [
@@ -165,7 +154,6 @@
 
       /* 10 – Multi-select: evaluation of money and specialisation */
       { type: 'multi_select',
-        id: 'q_spec_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the role of money in enabling a specialised economy?',
         opts: [
           'Money acts as a medium of exchange, store of value, unit of account, and standard of deferred payment',

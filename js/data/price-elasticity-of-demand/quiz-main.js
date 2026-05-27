@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'ped_main',
-    topicId:  'ped_main',
     title:    'Price Elasticity of Demand',
     subtitle: 'Introduction to Markets and Market Failure',
     backUrl:  TopicLoader.routes.learn('price-elasticity-of-demand'),

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'supply_side_main',
-    topicId:  'supply_side_main',
     title:    'Supply-Side Policies',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('supply-side-policies'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_ss_1',
         type: 'mcq',
         q:    'Supply-side policies aim to:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Supply-side policies focus on improving the economy\'s productive capacity – shifting the LRAS curve to the right. This raises potential output without necessarily causing inflation.'
       },
       {
-        id:   'q_ss_2',
         type: 'mcq',
         q:    'A market-based supply-side policy is:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Market-based supply-side policies use price signals and incentives to improve efficiency – e.g., cutting income or corporation tax, deregulation, privatisation, or reducing unemployment benefits to increase labour supply incentives.'
       },
       {
-        id:   'q_ss_3',
         type: 'mcq',
         q:    'Which of the following is an interventionist supply-side policy?',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Interventionist supply-side policies involve direct government action: investing in education, infrastructure, R&D, or supporting industries. They are associated with Keynesian and industrial strategy approaches.'
       },
       {
-        id:   'q_ss_4',
         type: 'mcq',
         q:    'Supply-side policies that reduce structural unemployment will also:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Reducing structural unemployment (through training, improved job matching, removing barriers) lowers NAIRU. The economy can grow at a lower unemployment rate without accelerating inflation, and LRAS shifts right.'
       },
       {
-        id:   'q_ss_5',
         type: 'numeric_input',
         q:    'Labour productivity is £40,000 output per worker. A supply-side reform raises productivity by 15%. What is the new output per worker (£)?',
         answer: 46000,
@@ -76,7 +69,6 @@
         workingSteps: ['New = £40,000 × 1.15 = £46,000']
       },
       {
-        id:   'q_ss_6',
         type: 'categorise',
         q:    'Categorise each policy as market-based or interventionist supply-side.',
         categories: ['Market-based','Interventionist'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_ss_7',
         type: 'cause_effect',
         q:    'Match each supply-side policy to its expected effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_ss_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Privatisation','Deregulation','Government investment in education','Quantitative Easing'],
@@ -111,7 +101,6 @@
         exp:  'Privatisation, deregulation, and investment in education are all supply-side policies targeting productive capacity. Quantitative Easing is a monetary policy tool – it affects demand, not the supply-side capacity of the economy.'
       },
       {
-        id:   'q_ss_9',
         type: 'data_table',
         q:    'Use the productivity data to identify which country has the highest labour productivity growth.',
         tableHeaders: ['Country','Output per worker 2015 (£000s)','Output per worker 2023 (£000s)','Growth (%)'],
@@ -126,7 +115,6 @@
         exp:  'Growth rates: Alpia: (44-40)/40=10%; Bortia: (42-35)/35=20%; Centri: (56-50)/50=12%; Dorus: (39-30)/30=30%. Dorus has the highest productivity growth at 30%.'
       },
       {
-        id:   'q_ss_10',
         type: 'match_pairs',
         q:    'Match each supply-side concept to its description.',
         pairs: [

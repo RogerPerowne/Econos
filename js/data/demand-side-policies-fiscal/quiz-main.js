@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'fiscal_policy_main',
-    topicId:  'fiscal_policy_main',
     title:    'Fiscal Policy',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('demand-side-policies-fiscal'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_fp_1',
         type: 'mcq',
         q:    'Fiscal policy refers to the use of:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Fiscal policy involves deliberate changes in government spending (G) and/or taxation (T) to influence macroeconomic objectives such as growth, inflation, and unemployment.'
       },
       {
-        id:   'q_fp_2',
         type: 'mcq',
         q:    'An expansionary fiscal policy involves:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Expansionary (loose) fiscal policy stimulates aggregate demand by cutting taxes (boosting disposable income) and/or increasing G. It shifts AD to the right.'
       },
       {
-        id:   'q_fp_3',
         type: 'mcq',
         q:    'The national debt is best described as:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'The budget deficit is the annual flow (spending minus tax revenue). The national debt is the stock – total outstanding government borrowing accumulated over many years. Running a deficit adds to the debt.'
       },
       {
-        id:   'q_fp_4',
         type: 'mcq',
         q:    'Automatic stabilisers work by:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Automatic stabilisers (e.g., unemployment benefits and progressive income tax) work without discretionary policy. In a recession: tax revenue falls, benefits spending rises – both support AD automatically.'
       },
       {
-        id:   'q_fp_5',
         type: 'numeric_input',
         q:    'Government spending = £800bn. Tax revenue = £720bn. Calculate the budget deficit (£bn).',
         answer: 80,
@@ -76,7 +69,6 @@
         workingSteps: ['Deficit = £800bn − £720bn = £80bn']
       },
       {
-        id:   'q_fp_6',
         type: 'categorise',
         q:    'Categorise each as a direct tax or an indirect tax.',
         categories: ['Direct tax','Indirect tax'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_fp_7',
         type: 'cause_effect',
         q:    'Match each fiscal policy action to its macroeconomic effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_fp_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Budget deficit','National debt','Quantitative easing','Automatic stabiliser'],
@@ -111,7 +101,6 @@
         exp:  'Budget deficit, national debt, and automatic stabilisers are all fiscal policy concepts. Quantitative easing is a monetary policy tool used by the central bank – not fiscal policy.'
       },
       {
-        id:   'q_fp_9',
         type: 'data_table',
         q:    'Use the data to calculate the budget deficit/surplus for each year and identify the year with the largest deficit.',
         tableHeaders: ['Year','G (£bn)','T (£bn)','Balance (£bn)'],
@@ -126,7 +115,6 @@
         exp:  '2020: 900−750=−£150bn deficit; 2021: 870−800=−£70bn; 2022: 830−850=+£20bn surplus; 2023: 860−830=−£30bn. 2020 had the largest deficit of £150bn.'
       },
       {
-        id:   'q_fp_10',
         type: 'match_pairs',
         q:    'Match each fiscal concept to its correct description.',
         pairs: [

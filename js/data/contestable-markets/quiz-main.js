@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'contestability_main',
-    topicId:  'contestability_main',
     title:    'Contestable Markets',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('contestable-markets'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_cont_1',
         type: 'mcq',
         q:    'A contestable market is one where:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Contestability theory, developed by Baumol, argues that what matters is not the number of existing firms but the ease of entry and exit. A contestable market has low or zero sunk costs and free entry/exit.'
       },
       {
-        id:   'q_cont_2',
         type: 'mcq',
         q:    'Sunk costs are important in contestability theory because:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Sunk costs are irretrievable costs that cannot be recovered upon exit (e.g., advertising, bespoke equipment). High sunk costs make entry risky – they are the key barrier that reduces market contestability.'
       },
       {
-        id:   'q_cont_3',
         type: 'mcq',
         q:    '"Hit-and-run" entry means:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'In a perfectly contestable market, a firm can enter to capture supernormal profit then exit costlessly once the incumbent reacts. This threat disciplines incumbent pricing even without actual entry.'
       },
       {
-        id:   'q_cont_4',
         type: 'mcq',
         q:    'Limit pricing is a strategy where:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'To deter entry, an incumbent may set price at or just above the potential entrant\'s average cost – making entry unprofitable. This sacrifice of short-run profit protects the incumbent\'s market position.'
       },
       {
-        id:   'q_cont_5',
         type: 'numeric_input',
         q:    'An incumbent sets a limit price of £18. A potential entrant has AC = £20. What is the entrant\'s profit per unit if it enters at £18?',
         answer: -2,
@@ -76,7 +69,6 @@
         workingSteps: ['Profit per unit = £18 − £20 = −£2 (a loss)']
       },
       {
-        id:   'q_cont_6',
         type: 'categorise',
         q:    'Categorise each factor as increasing or decreasing market contestability.',
         categories: ['Increases contestability','Decreases contestability'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_cont_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in contestable market theory.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_cont_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Sunk costs','Freedom of entry','Hit-and-run entry','Economies of scale'],
@@ -111,7 +101,6 @@
         exp:  'Sunk costs (low), freedom of entry, and hit-and-run entry are all core elements of contestability theory. Economies of scale are a barrier to entry that reduce contestability – they belong to monopoly theory.'
       },
       {
-        id:   'q_cont_9',
         type: 'data_table',
         q:    'Use the table to identify which market is most contestable.',
         tableHeaders: ['Market','Sunk cost (£000s)','Regulatory barriers','Brand loyalty'],
@@ -126,7 +115,6 @@
         exp:  'Street food has the lowest sunk costs (£2k), low regulatory barriers, and low brand loyalty – all factors that maximise contestability and make hit-and-run entry feasible.'
       },
       {
-        id:   'q_cont_10',
         type: 'match_pairs',
         q:    'Match each contestability term to its correct description.',
         pairs: [

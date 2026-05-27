@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'short_run_costs_main',
-    topicId:  'short_run_costs_main',
     title:    'Short-Run Costs',
     subtitle: 'Theme 3 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('short_run_costs_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: fixed vs variable costs */
       { type: 'mcq',
-        id: 'q_src_1',
         stem: 'Which of the following is a <strong>fixed cost</strong> for a manufacturing firm in the short run?',
         opts: [
           'The annual rent paid on a factory – this must be paid regardless of how much is produced',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: law of diminishing returns */
       { type: 'mcq',
-        id: 'q_src_2',
         stem: 'The <strong>law of diminishing returns</strong> states that:',
         opts: [
           'As more units of a variable factor (e.g. labour) are added to a fixed factor (e.g. capital), the marginal product of the variable factor eventually falls',
@@ -46,7 +42,6 @@
 
       /* 3 – Elastic sort: costs classification */
       { type: 'elastic_sort',
-        id: 'q_src_3',
         stem: 'Classify each cost as <strong>fixed</strong> or <strong>variable</strong> for a cafe in the short run.',
         categories: ['fixed', 'variable'],
         categoryLabels: ['Fixed cost', 'Variable cost'],
@@ -63,7 +58,6 @@
 
       /* 4 – Numeric input: marginal cost */
       { type: 'numeric_input',
-        id: 'q_src_4',
         stem: 'Calculate the <strong>marginal cost</strong> of the 5th unit.',
         context: 'A firm\'s total costs: 1 unit = £50; 2 units = £90; 3 units = £120; 4 units = £145; <strong>5 units = £175</strong>; 6 units = £210.',
         answer: 30,
@@ -78,7 +72,6 @@
 
       /* 5 – MCQ: ATC minimum and MC relationship */
       { type: 'mcq',
-        id: 'q_src_5',
         stem: 'On a standard cost curve diagram, the <strong>marginal cost (MC) curve passes through the minimum point of the average total cost (ATC) curve</strong>. Why?',
         opts: [
           'When MC < ATC, ATC is being pulled down; when MC > ATC, ATC is being pulled up. ATC is only at its minimum when MC = ATC – pulling neither up nor down',
@@ -92,7 +85,6 @@
 
       /* 6 – Para fill: cost curves */
       { type: 'para_fill',
-        id: 'q_src_6',
         stem: 'Complete the paragraph about short-run cost curves.',
         anchor: 'Short-run cost curves reflect the law of diminishing returns.',
         para: 'In the short run, as output increases, the marginal cost curve first [1] (as the workforce reaches its most efficient size) and then [2] (as diminishing returns set in and each additional worker adds less to output). The average [3] cost curve is U-shaped because fixed costs are spread over more units (so [4] falls) but eventually rising marginal costs dominate (so [5] rises). The MC curve crosses both the AVC and ATC at their [6] points. Average [7] cost falls continuously as output rises, because the fixed cost component is spread over more units.',
@@ -110,7 +102,6 @@
 
       /* 7 – Cause & effect: costs and production decisions */
       { type: 'cause_effect',
-        id: 'q_src_7',
         stem: 'Match each change in production conditions to its effect on short-run costs.',
         pairs: [
           { cause: 'A firm adds a third shift to its factory, running beyond optimal capacity', effect: 'Marginal and average variable costs rise – diminishing returns intensify' },
@@ -125,7 +116,6 @@
 
       /* 8 – Match pairs: cost curve concepts */
       { type: 'match_pairs',
-        id: 'q_src_8',
         stem: 'Match each cost concept to its definition.',
         pairs: [
           { a: 'Total Fixed Cost (TFC)', b: 'Costs that do not change with output in the short run' },
@@ -140,7 +130,6 @@
 
       /* 9 – Odd one out: variable costs */
       { type: 'odd_one_out',
-        id: 'q_src_9',
         stem: 'Three of these are <strong>variable costs</strong> for an airline. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '⛽', label: 'Jet fuel used on each flight – more flights means more fuel', note: '' },
@@ -154,7 +143,6 @@
 
       /* 10 – Data table: cost analysis */
       { type: 'data_table',
-        id: 'q_src_10',
         stem: 'The table shows short-run cost data for a manufacturing firm.',
         headers: ['Output (units)', 'Total Fixed Cost (£)', 'Total Variable Cost (£)', 'Total Cost (£)', 'Marginal Cost (£)'],
         rows: [

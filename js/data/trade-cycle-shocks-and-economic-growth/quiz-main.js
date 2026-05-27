@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'growth_cycle_main',
-    topicId:  'growth_cycle_main',
     title:    'Trade Cycle, Shocks & Economic Growth',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('trade-cycle-shocks-and-economic-growth'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_gc_1',
         type: 'mcq',
         q:    'The four phases of the trade cycle in correct order are:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The trade (business) cycle follows: Boom (peak) → Recession (falling output) → Trough (lowest point) → Recovery (rising output back toward boom). The cycle then repeats.'
       },
       {
-        id:   'q_gc_2',
         type: 'mcq',
         q:    'During a boom phase, which of the following is most likely to occur?',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'A boom is characterised by rapid growth, high consumer spending, low unemployment, and rising inflationary pressure as the economy approaches or exceeds potential output.'
       },
       {
-        id:   'q_gc_3',
         type: 'mcq',
         q:    'A negative demand shock would typically cause:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'A negative demand shock (e.g., financial crisis, collapse in consumer confidence) shifts AD leftward – output and the price level both fall. Unemployment rises.'
       },
       {
-        id:   'q_gc_4',
         type: 'mcq',
         q:    'A positive supply-side shock (e.g., a fall in oil prices) would:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Lower input costs shift SRAS right. The economy moves to a higher output and lower price level simultaneously – a rare "free lunch" in macroeconomics that improves inflation and growth together.'
       },
       {
-        id:   'q_gc_5',
         type: 'numeric_input',
         q:    'An economy grows at 2.5% per year. Starting from a base GDP of £800bn, what is GDP after two years (to the nearest £bn)?',
         answer: 841,
@@ -76,7 +69,6 @@
         workingSteps: ['Year 1: £800bn × 1.025 = £820bn','Year 2: £820bn × 1.025 = £840.5bn ≈ £841bn']
       },
       {
-        id:   'q_gc_6',
         type: 'categorise',
         q:    'Categorise each event as a demand-side shock or a supply-side shock.',
         categories: ['Demand shock','Supply shock'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_gc_7',
         type: 'cause_effect',
         q:    'Match each trade cycle phase or event to its macroeconomic effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_gc_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Boom','Trough','Recession','Consumer Price Index'],
@@ -111,7 +101,6 @@
         exp:  'Boom, trough, and recession are all phases of the trade cycle. The Consumer Price Index measures inflation – it is not a trade cycle phase.'
       },
       {
-        id:   'q_gc_9',
         type: 'data_table',
         q:    'Use the GDP growth table to identify which year the economy entered a recession.',
         tableHeaders: ['Year','GDP Growth (%)'],
@@ -127,7 +116,6 @@
         exp:  'A recession is defined as two consecutive quarters (or here, years) of negative GDP growth. Growth was negative in 2020 (−1.8%) and 2021 (−0.9%), so the recession began in 2020.'
       },
       {
-        id:   'q_gc_10',
         type: 'match_pairs',
         q:    'Match each trade cycle concept to its description.',
         pairs: [

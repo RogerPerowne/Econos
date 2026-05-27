@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'consumer_producer_surplus_main',
-    topicId:  'consumer_producer_surplus_main',
     title:    'Consumer &amp; Producer Surplus',
     subtitle: 'Theme 1 &middot; Topic 2.8 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('consumer_producer_surplus_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: consumer surplus */
       { type: 'mcq',
-        id: 'q_cps_1',
         stem: '<strong>Consumer surplus</strong> is best defined as:',
         opts: [
           'The difference between what consumers are willing to pay (maximum willingness to pay) and what they actually pay (market price) – the welfare gain from market exchange',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: producer surplus */
       { type: 'mcq',
-        id: 'q_cps_2',
         stem: '<strong>Producer surplus</strong> is best defined as:',
         opts: [
           'The difference between the price received by producers (market price) and their minimum acceptable price (marginal cost) – the welfare gain from selling in the market',
@@ -46,7 +42,6 @@
 
       /* 3 – Numeric input: consumer surplus calculation */
       { type: 'numeric_input',
-        id: 'q_cps_3',
         stem: 'Calculate the <strong>consumer surplus</strong> (£) in this market.',
         context: 'In a competitive market for concert tickets: maximum WTP = £100 (top of demand curve); equilibrium market price = £40; equilibrium quantity = 500 tickets sold. Assume a straight-line (linear) demand curve.',
         answer: 15000,
@@ -63,7 +58,6 @@
 
       /* 4 – MCQ: total welfare */
       { type: 'mcq',
-        id: 'q_cps_4',
         stem: 'In a competitive market at equilibrium, <strong>total economic welfare</strong> (total surplus) equals:',
         opts: [
           'Consumer surplus + producer surplus – the sum of all gains from trade to both buyers and sellers',
@@ -77,7 +71,6 @@
 
       /* 5 – MCQ: deadweight loss from tax */
       { type: 'mcq',
-        id: 'q_cps_5',
         stem: 'A non-corrective indirect tax reduces <strong>consumer surplus</strong>, <strong>producer surplus</strong>, and creates a <strong>deadweight welfare loss</strong>. Which of the following correctly accounts for all these effects?',
         opts: [
           'CS falls (higher consumer price); PS falls (lower producer net price); the tax revenue (CS + PS transferred to government) and deadweight loss (triangle of lost trades) together account for the full reduction in (CS + PS)',
@@ -91,7 +84,6 @@
 
       /* 6 – MCQ: price ceiling and welfare */
       { type: 'mcq',
-        id: 'q_cps_6',
         stem: 'A price ceiling set <strong>below</strong> the equilibrium price: what happens to <strong>consumer surplus</strong>?',
         opts: [
           'CS is ambiguous – some consumers gain (those who can still buy pay less); but CS is lost for consumers who can no longer find the good due to the shortage the ceiling creates',
@@ -105,7 +97,6 @@
 
       /* 7 – Match pairs: welfare concepts */
       { type: 'match_pairs',
-        id: 'q_cps_7',
         stem: 'Match each concept to its definition in welfare analysis.',
         pairs: [
           { a: 'Consumer surplus', b: 'Area below demand curve and above market price – welfare gain to buyers' },
@@ -120,7 +111,6 @@
 
       /* 8 – Cause & effect: policies and welfare */
       { type: 'cause_effect',
-        id: 'q_cps_8',
         stem: 'Match each policy to its effect on consumer surplus, producer surplus, and total welfare.',
         pairs: [
           { cause: 'Monopoly restricts output and raises price above MC', effect: 'CS falls; PS may rise (transfer from consumers); DWL created – total welfare falls' },
@@ -135,7 +125,6 @@
 
       /* 9 – Odd one out: effects on consumer surplus */
       { type: 'odd_one_out',
-        id: 'q_cps_9',
         stem: 'Three of these would <strong>increase consumer surplus</strong> in a market. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '📉', label: 'Market price falls due to a rightward shift in supply (technology improvement)', note: '' },
@@ -149,7 +138,6 @@
 
       /* 10 – Data table: monopoly vs competition welfare */
       { type: 'data_table',
-        id: 'q_cps_10',
         stem: 'The table compares market outcomes under perfect competition and monopoly.',
         headers: ['Market structure', 'Price', 'Quantity', 'Consumer Surplus', 'Producer Surplus', 'DWL'],
         rows: [

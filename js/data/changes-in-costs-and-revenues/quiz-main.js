@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'profit_cost_changes_main',
-    topicId:  'profit_cost_changes_main',
     title:    'Changes in Costs and Revenues',
     subtitle: 'Theme 3 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('profit_cost_changes_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: MR = MC profit maximisation */
       { type: 'mcq',
-        id: 'q_pcc_1',
         stem: 'A profit-maximising firm should produce the output where:',
         opts: [
           'Marginal revenue equals marginal cost (MR = MC) – at lower outputs MR > MC so more can be made by expanding; at higher outputs MR < MC so less is made by contracting',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: cost increase effect on profit-maximising output */
       { type: 'mcq',
-        id: 'q_pcc_2',
         stem: 'A firm faces a <strong>rise in variable costs</strong> (e.g. higher wages). What happens to its profit-maximising output and price?',
         opts: [
           'MC shifts upward – the profit-maximising output falls (MR now equals the higher MC at a lower quantity) and the price rises',
@@ -46,7 +42,6 @@
 
       /* 3 – MCQ: demand shift and profit maximisation */
       { type: 'mcq',
-        id: 'q_pcc_3',
         stem: 'Demand for a firm\'s product <strong>increases</strong> (demand curve shifts rightward). At the original profit-maximising output, MR is now:',
         opts: [
           'Higher – the rightward shift in demand lifts the AR (demand) curve and MR curve; MR now exceeds MC at original output; the firm should expand',
@@ -60,7 +55,6 @@
 
       /* 4 – MCQ: indirect tax on firm */
       { type: 'mcq',
-        id: 'q_pcc_4',
         stem: 'The government imposes a specific tax of <strong>£5 per unit</strong> on a monopolist\'s output. The immediate effect on the profit-maximising outcome is:',
         opts: [
           'MC shifts upward by £5 – the new profit-maximising output is lower and the price rises by less than £5 (the tax is split between producer and consumer)',
@@ -74,7 +68,6 @@
 
       /* 5 – MCQ: cost innovation and competitive advantage */
       { type: 'mcq',
-        id: 'q_pcc_5',
         stem: 'A firm introduces a new technology that reduces its marginal cost. In a competitive market, the long-run consequence for this firm is:',
         opts: [
           'Initially higher profits, but entry of new firms attracted by the abnormal profit restores normal profit in the long run – unless the technology creates a barrier to entry (e.g. patent)',
@@ -88,7 +81,6 @@
 
       /* 6 – Para fill: MR = MC analysis */
       { type: 'para_fill',
-        id: 'q_pcc_6',
         stem: 'Complete the paragraph about profit maximisation.',
         anchor: 'The MR = MC rule is the universal profit-maximisation condition across all market structures.',
         para: 'A firm maximises profit by expanding output as long as [1] exceeds [2]. At the profit-maximising output, MR = MC. If [3] rises due to higher input costs, the profit-maximising output [4] and the market price [5]. If demand increases, both the AR and [6] curves shift upward, causing the profit-maximising output to [7] and the price to [8]. In perfect competition, the long-run equilibrium is also the point of [9] efficiency (P = minimum ATC), whereas a monopolist typically produces at [10] than minimum ATC.',
@@ -109,7 +101,6 @@
 
       /* 7 – Cause & effect: cost and revenue changes */
       { type: 'cause_effect',
-        id: 'q_pcc_7',
         stem: 'Match each change to its effect on the profit-maximising output and price.',
         pairs: [
           { cause: 'Fixed costs increase (e.g. higher rent)', effect: 'Profit-maximising output and price unchanged – MC and MR unaffected; only profits fall' },
@@ -124,7 +115,6 @@
 
       /* 8 – Match pairs: revenue and profit concepts */
       { type: 'match_pairs',
-        id: 'q_pcc_8',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Marginal Revenue (MR)', b: 'Extra revenue from selling one more unit' },
@@ -139,7 +129,6 @@
 
       /* 9 – Odd one out: profit-maximising rules */
       { type: 'odd_one_out',
-        id: 'q_pcc_9',
         stem: 'Three of these statements about profit maximisation are <strong>correct</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '⚖️', label: 'A rise in fixed costs does not change the profit-maximising output level', note: '' },
@@ -153,7 +142,6 @@
 
       /* 10 – Data table: profit maximisation with data */
       { type: 'data_table',
-        id: 'q_pcc_10',
         stem: 'The table shows revenue and cost data for a firm.',
         headers: ['Output (units)', 'Price (AR) (£)', 'MR (£)', 'MC (£)', 'Profit (TR − TC)'],
         rows: [

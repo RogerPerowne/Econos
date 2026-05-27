@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'price_controls_main',
-    topicId:  'price_controls_main',
     title:    'Government Intervention in Markets',
     subtitle: 'Introduction to Markets and Market Failure',
     backUrl:  TopicLoader.routes.learn('government-intervention-in-markets'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_pc_ctrl_1',
         type: 'mcq',
         q:    'A maximum price (price ceiling) must be set BELOW the equilibrium price to:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'A price ceiling only has effect if it is below the market equilibrium. Set above equilibrium, it has no effect – the market will price below the ceiling anyway. Only a binding (below-equilibrium) ceiling restricts price.'
       },
       {
-        id:   'q_pc_ctrl_2',
         type: 'mcq',
         q:    'A maximum price typically causes:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Below the equilibrium price, Qd > Qs – a shortage develops. Consumers want to buy more at the low price than producers are willing to supply. Examples: rent controls, fuel price caps, wartime rationing.'
       },
       {
-        id:   'q_pc_ctrl_3',
         type: 'mcq',
         q:    'A minimum price (price floor) must be set ABOVE the equilibrium price to be effective. It typically causes:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Above equilibrium, Qs > Qd – a surplus develops. Producers want to supply more at the higher price than consumers want to buy. Examples: agricultural minimum prices, the National Minimum Wage (if above equilibrium).'
       },
       {
-        id:   'q_pc_ctrl_4',
         type: 'mcq',
         q:    'A black market is most likely to emerge following:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'When a maximum price creates a shortage, frustrated buyers and sellers have an incentive to trade illegally above the official price. Black (shadow) markets develop to clear the excess demand at a higher, unofficial price.'
       },
       {
-        id:   'q_pc_ctrl_5',
         type: 'numeric_input',
         q:    'Equilibrium price = £10. A maximum price of £7 is set. At £7: Qd = 800 and Qs = 500. What is the size of the shortage (units)?',
         answer: 300,
@@ -76,7 +69,6 @@
         workingSteps: ['Shortage = 800 − 500 = 300 units']
       },
       {
-        id:   'q_pc_ctrl_6',
         type: 'categorise',
         q:    'Categorise each as a maximum price or minimum price example.',
         categories: ['Maximum price','Minimum price'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_pc_ctrl_7',
         type: 'cause_effect',
         q:    'Match each price control scenario to its effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_pc_ctrl_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Maximum price','Minimum price','Price floor','Automatic stabiliser'],
@@ -111,7 +101,6 @@
         exp:  'Maximum price, minimum price, and price floor are all forms of price controls. An automatic stabiliser is a macroeconomic fiscal concept (like unemployment benefits) – not a price control.'
       },
       {
-        id:   'q_pc_ctrl_9',
         type: 'data_table',
         q:    'Use the supply and demand data to identify the equilibrium price and determine whether a £6 price control creates a shortage or surplus.',
         tableHeaders: ['Price (£)','Qd','Qs'],
@@ -131,7 +120,6 @@
         exp:  'Equilibrium (Qd=Qs) is at £8 (both = 60). A price of £6 gives Qd=80, Qs=40 → shortage of 40 units. It is a binding maximum price.'
       },
       {
-        id:   'q_pc_ctrl_10',
         type: 'match_pairs',
         q:    'Match each price control concept to its description.',
         pairs: [

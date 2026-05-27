@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'income_inequality_main',
-    topicId:  'income_inequality_main',
     title:    'Income & Wealth Inequality',
     subtitle: 'Labour Markets & Distribution',
     backUrl:  TopicLoader.routes.learn('inequality'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_ineq_1',
         type: 'mcq',
         q:    'The Lorenz curve shows:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The Lorenz curve plots cumulative % of income (y-axis) against cumulative % of population (x-axis), ranked from poorest to richest. The further the curve bows from the diagonal, the greater the inequality.'
       },
       {
-        id:   'q_ineq_2',
         type: 'mcq',
         q:    'A Gini coefficient of 0 means:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Gini = 0 means perfect equality (Lorenz curve = diagonal). Gini = 1 means perfect inequality (one person has all income). Most countries have Gini coefficients between 0.25 and 0.60.'
       },
       {
-        id:   'q_ineq_3',
         type: 'mcq',
         q:    'Which of the following is a cause of income inequality?',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Human capital differences (education, skills, experience) lead to wage differentials. Workers with higher human capital earn more, widening the distribution of income.'
       },
       {
-        id:   'q_ineq_4',
         type: 'mcq',
         q:    'Wealth inequality is generally greater than income inequality because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Wealth (assets minus liabilities) compounds over time – returns on wealth generate more wealth. Intergenerational transfers (inheritance) further concentrate wealth at the top, widening the distribution beyond income inequality.'
       },
       {
-        id:   'q_ineq_5',
         type: 'numeric_input',
         q:    'If the area between the Lorenz curve and the line of equality is 0.18 and the total area below the diagonal is 0.5, what is the Gini coefficient?',
         answer: 0.36,
@@ -76,7 +69,6 @@
         workingSteps: ['Gini = 0.18 ÷ 0.50 = 0.36']
       },
       {
-        id:   'q_ineq_6',
         type: 'categorise',
         q:    'Categorise each policy as a method of reducing income inequality or wealth inequality.',
         categories: ['Reduces income inequality','Reduces wealth inequality'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_ineq_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on inequality.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_ineq_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Lorenz curve','Gini coefficient','Decile ratio','Consumer Price Index'],
@@ -111,7 +101,6 @@
         exp:  'The Lorenz curve, Gini coefficient, and decile ratio (ratio of top 10% income to bottom 10%) are all measures of income or wealth inequality. The Consumer Price Index measures inflation.'
       },
       {
-        id:   'q_ineq_9',
         type: 'data_table',
         q:    'Use the table to identify which country has the highest income inequality.',
         tableHeaders: ['Country','Gini Coefficient'],
@@ -126,7 +115,6 @@
         exp:  'A higher Gini coefficient means greater inequality. South Africa\'s Gini of 0.63 is the highest in the table – it has the most unequal income distribution shown.'
       },
       {
-        id:   'q_ineq_10',
         type: 'match_pairs',
         q:    'Match each concept to its correct description.',
         pairs: [

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'game_theory_main',
-    topicId:  'game_theory_main',
     title:    'Game Theory',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('game-theory'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_gt_1',
         type: 'mcq',
         q:    'A Nash Equilibrium is reached when:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'A Nash Equilibrium is a set of strategies where no individual player has an incentive to deviate unilaterally. It does not necessarily produce the best joint outcome.'
       },
       {
-        id:   'q_gt_2',
         type: 'mcq',
         q:    'A dominant strategy is one that:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'A dominant strategy is the best response for a player regardless of the opponent\'s choice. When both players have dominant strategies, they determine the Nash Equilibrium.'
       },
       {
-        id:   'q_gt_3',
         type: 'mcq',
         q:    'In the classic prisoner\'s dilemma, why do both prisoners confess even though mutual silence is better?',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Confessing is individually rational regardless of the other\'s choice. If the other stays silent, confessing gives a lighter sentence; if the other confesses, staying silent gives a harsher sentence. So each confesses – reaching a NE that is worse for both than mutual silence.'
       },
       {
-        id:   'q_gt_4',
         type: 'mcq',
         q:    'In repeated games, cooperative outcomes are more likely because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'In repeated (ongoing) games, the threat of retaliation in future rounds (tit-for-tat) can sustain cooperation. The shadow of the future makes defection less attractive.'
       },
       {
-        id:   'q_gt_5',
         type: 'numeric_input',
         q:    'In a one-shot game: cooperate = £600 each; defect when rival cooperates = £900; both defect = £300. What is the gain from defecting if the rival cooperates?',
         answer: 300,
@@ -76,7 +69,6 @@
         workingSteps: ['Gain = £900 − £600 = £300']
       },
       {
-        id:   'q_gt_6',
         type: 'categorise',
         q:    'Categorise each situation as a one-shot game or a repeated game.',
         categories: ['One-shot game','Repeated game'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_gt_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in game theory.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_gt_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Nash Equilibrium','Dominant strategy','Tit-for-tat','Perfectly elastic demand'],
@@ -111,7 +101,6 @@
         exp:  'Nash Equilibrium, dominant strategy, and tit-for-tat are all game theory concepts. Perfectly elastic demand is a microeconomic concept from the theory of the competitive firm, not game theory.'
       },
       {
-        id:   'q_gt_9',
         type: 'data_table',
         q:    'Use the payoff matrix to identify each firm\'s dominant strategy and the Nash Equilibrium.',
         tableHeaders: ['','Firm B: Low price','Firm B: High price'],
@@ -129,7 +118,6 @@
         exp:  'For Firm A: if B plays Low, A gets 200 (Low) vs 100 (High) → Low is better. If B plays High, A gets 350 (Low) vs 300 (High) → Low is better. Low is dominant for A, and similarly for B. NE: both Low price (200, 200).'
       },
       {
-        id:   'q_gt_10',
         type: 'match_pairs',
         q:    'Match each game theory term to its correct description.',
         pairs: [

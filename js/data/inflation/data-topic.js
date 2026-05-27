@@ -403,6 +403,17 @@ window.ECONOS_TOPIC = {
       examEdge: {
         title: 'Exam edge',
         text: 'Strong essays use the quantity theory <em>carefully</em>. State the identity, then qualify it: velocity, slack and anchored expectations explain why money does not automatically cause inflation.'
+      },
+      economistQuote: {
+        portraitKey: 'economistFriedman',
+        tone: 'amber',
+        label: 'Economist insight: Friedman and the monetarist view',
+        quote: 'Inflation is always and everywhere a monetary phenomenon in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output.',
+        attribution: 'Milton Friedman, <em>The Counter-Revolution in Monetary Theory</em> (1970)'
+      },
+      tipLate: {
+        icon: '💡', tone: 'amber', head: 'Why this matters',
+        text: 'Friedman\'s monetarism reframed the inflation debate: the long-run cause is excessive money supply growth relative to output, regardless of whether the proximate trigger looks like demand-pull or cost-push. The A* move is to use Friedman as a <strong>long-run anchor</strong> for the analysis — central bank credibility and money-supply discipline keep inflation in check — while still acknowledging that in the short run, velocity changes, output gaps, and anchored expectations all complicate the simple M → P link (as 2021 showed).'
       }
     },
 

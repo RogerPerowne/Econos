@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position (government failure), use the mechanism (D shifts right, inelastic S absorbs shock into prices), add the condition (PES / information failure), and explain the limitation honestly (counterfactual is uncertain; 310,000 purchases did help some buyers).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

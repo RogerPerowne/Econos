@@ -5,7 +5,7 @@
     topicId:  'govt_failure_main',
     title:    'Government Failure',
     subtitle: 'Theme 1 &middot; Topic 4.2 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'govt_failure_main' }),
+    backUrl:  TopicLoader.routes.learn('govt_failure_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers government failure types, unintended consequences, regulatory capture, political incentives, and cost-benefit limitations',
     shortNames: [

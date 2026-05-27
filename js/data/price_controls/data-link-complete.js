@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear conditional position: the cap protects sitting tenants in the short run but creates a long-run shortage that harms new entrants, and better-targeted alternatives (housing benefit, social housing) usually dominate. Always acknowledge the quality decline and the targeting failure as key trade-offs.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

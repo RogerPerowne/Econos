@@ -165,17 +165,12 @@
      to bypass the URL-derived defaults.
      ────────────────────────────────────────────────────────────── */
   function deriveStageState() {
-    var path = location.pathname.toLowerCase();
-    var file = path.substring(path.lastIndexOf('/') + 1);
-    // learn.html or topic.html → currently on Learn
-    if (file === 'learn' || file === 'learn.html' || file === 'topic.html' || file === '' || file === 'index.html') {
-      return ['current', 'open', 'open'];
-    }
-    if (file === 'link' || file === 'link.html') return ['done', 'current', 'open'];
-    if (file === 'land' || file === 'land.html') return ['done', 'done', 'current'];
-    // Quiz inherits the URL's `stage` param if present, else assumes
-    // it sits at the end of the Learn loop (most common entry point).
-    if (file === 'quiz' || file === 'quiz.html') {
+    var shell = (window.TopicLoader && TopicLoader.getShell()) || 'home';
+    if (shell === 'learn' || shell === 'home') return ['current', 'open', 'open'];
+    if (shell === 'link') return ['done', 'current', 'open'];
+    if (shell === 'land') return ['done', 'done', 'current'];
+    if (shell === 'quiz') {
+      // ?stage=link|land if a callsite needs to override; otherwise default to learn.
       try {
         var qs = new URLSearchParams(location.search);
         var stage = (qs.get('stage') || '').toLowerCase();
@@ -211,16 +206,12 @@
      title — optional string rendered as <div class="stages__title">…</div>
              before the stages (matches the land-section-A/B/C chrome). */
   function renderStages(spec, title) {
-    var topic = '';
-    try {
-      topic = new URLSearchParams(location.search).get('topic') || '';
-    } catch (e) {}
-    var topicQs = topic ? '?topic=' + encodeURIComponent(topic) : '';
+    var topic = TopicLoader.getTopic();
     var I = getIcons();
     var DEFAULTS = [
-      { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', href: '/learn' + topicQs },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', href: '/link'  + topicQs },
-      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    href: '/land'  + topicQs }
+      { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', href: TopicLoader.routes.learn(topic) },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', href: TopicLoader.routes.link('intro', topic) },
+      { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    href: TopicLoader.routes.land('intro', topic) }
     ];
 
     /* Resolve spec → array of merged stage objects with state. */

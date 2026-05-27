@@ -5,7 +5,7 @@
     topicId:  'economic_systems_main',
     title:    'Economic Systems',
     subtitle: 'Theme 1 &middot; Topic 1.6 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'economic_systems_main' }),
+    backUrl:  TopicLoader.routes.learn('economic_systems_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers free market, command, mixed economy, the price mechanism as allocator, Hayek, and transition economies',
     shortNames: [

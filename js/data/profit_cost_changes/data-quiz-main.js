@@ -5,7 +5,7 @@
     topicId:  'profit_cost_changes_main',
     title:    'Changes in Costs and Revenues',
     subtitle: 'Theme 3 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'profit_cost_changes_main' }),
+    backUrl:  TopicLoader.routes.learn('profit_cost_changes_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers MR=MC profit maximisation, cost and demand shifts, tax incidence, and cross-market comparisons',
     shortNames: [

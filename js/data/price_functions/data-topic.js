@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Signalling = prices transmit information. Incentives = prices motivate action. Rationing = prices allocate scarce goods to those who value them most. All three must work for efficient allocation.',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -353,7 +353,7 @@ window.ECONOS_TOPIC = {
         { term: 'Contextual judgement', def: 'The exam skill of weighing efficiency vs equity, market failure vs government failure, on the facts of the specific market or policy.' }
       ],
       examEdge: 'Strong answers compare <strong>efficiency and equity</strong>. Recognise <strong>market failure</strong> and <strong>government failure</strong>. Use <strong>examples</strong> and reach a balanced, <strong>contextual judgement</strong> rather than a blanket conclusion.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

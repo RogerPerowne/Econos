@@ -5,7 +5,7 @@
     topicId:  'protectionism_main',
     title:    'Protectionism',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'protectionism' }),
+    backUrl:  TopicLoader.routes.learn('protectionism'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers tariffs, quotas, subsidies, arguments for/against, and contemporary trade conflicts',
     shortNames: [

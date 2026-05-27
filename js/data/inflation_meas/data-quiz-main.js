@@ -5,7 +5,7 @@
     topicId:  'inflation_meas_main',
     title:    'Inflation: Measurement & Costs',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'inflation_meas' }),
+    backUrl:  TopicLoader.routes.learn('inflation_meas'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers CPI construction, RPI/CPIH, winners and losers, and the 2% target',
     shortNames: [

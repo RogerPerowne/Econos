@@ -37,7 +37,7 @@ test('home page renders on mobile with no horizontal scroll', async ({ page }) =
 
 test('Learn shell collapses chrome on mobile', async ({ page }) => {
   await login(page);
-  await page.goto('/learn?topic=inflation');
+  await page.goto('/learn/inflation');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
 
@@ -51,7 +51,7 @@ test('Learn shell collapses chrome on mobile', async ({ page }) => {
 
 test('Link station renders on mobile with stacked rail', async ({ page }) => {
   await login(page);
-  await page.goto('/link?topic=inflation&station=intro');
+  await page.goto('/link/inflation/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
 
@@ -66,7 +66,7 @@ test('Link station renders on mobile with stacked rail', async ({ page }) => {
 
 test('skip-link is the first keyboard stop on mobile', async ({ page }) => {
   await login(page);
-  await page.goto('/learn?topic=inflation');
+  await page.goto('/learn/inflation');
   await page.waitForLoadState('networkidle');
   await page.keyboard.press('Tab');
   const cls = await page.evaluate(() =>

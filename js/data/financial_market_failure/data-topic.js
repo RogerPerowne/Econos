@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: Akerlof\'s lemons problem applied to credit; moral hazard from deposit insurance and TBTF; the GFC narrative; Basel III capital requirements; UK Vickers Commission ring-fencing reforms; Financial Policy Committee (FPC) macroprudential tools; FCA and PRA roles.',
       examEdge: 'The classic A* financial market failure essay structure: (1) identify multiple failures (don\'t just discuss one); (2) explain the mechanism of each; (3) discuss the regulatory response (Basel III, ring-fencing, FPC); (4) evaluate whether regulation has solved the problem (consensus: GFC risk reduced but not eliminated; new risks from shadow banking, crypto, fintech).',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

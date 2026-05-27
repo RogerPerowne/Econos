@@ -28,8 +28,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'Never confuse the four types of efficiency. Productive: minimum average cost (lowest point of AC curve). Allocative: P = MC (resources match consumer preferences). Dynamic: investment in innovation over time. X-efficiency: no internal slack or waste given existing technology. A monopoly may fail productive and allocative efficiency yet outperform on dynamic efficiency &#8211; the overall verdict depends on which type matters most in context.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                               }
   ]
 };

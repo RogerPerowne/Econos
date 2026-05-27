@@ -5,7 +5,7 @@
     topicId:  'market_equilibrium_main',
     title:    'Market Equilibrium',
     subtitle: 'Theme 1 &middot; Topic 2.6 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'market_equilibrium_main' }),
+    backUrl:  TopicLoader.routes.learn('market_equilibrium_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers market clearing, excess demand/supply, the price mechanism, simultaneous shifts, allocative efficiency, and price controls',
     shortNames: [

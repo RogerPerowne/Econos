@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position (informationally efficient but not equitably efficient), use the mechanism (supply left → P rises → three functions), add the condition (PES determines speed of supply response), and explain the limitation (price rationing excludes low-income households, requiring welfare support).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

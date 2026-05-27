@@ -5,7 +5,7 @@
     topicId:  'inflation_causes',
     title:    'Causes of Inflation & Deflation',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'inflation' }),
+    backUrl:  TopicLoader.routes.learn('inflation'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers demand-pull, cost-push, monetary inflation, deflation, and wage-price spiral',
     shortNames: [

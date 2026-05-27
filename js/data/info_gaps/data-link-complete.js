@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (hidden APR → D_biased → disclosure → D shifts left), add the condition (salience, financial literacy, present bias), and acknowledge the limitation honestly – present bias may prevent disclosure from fully restoring rational demand.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

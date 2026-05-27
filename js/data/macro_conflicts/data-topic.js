@@ -181,7 +181,7 @@ window.ECONOS_TOPIC = {
         text: 'The A* conclusion structure: <em>\'Supply-side policy is the theoretically optimal solution to macro trade-offs – shifting LRAS right reduces the NAIRU and enables non-inflationary growth. However, the long time lags and upfront costs mean demand management remains necessary in the short run, even if supply-side reform is the long-run answer.\'</em>'
       },
       keyTakeaway: { title: 'The big picture', text: 'Macro trade-offs are real and unavoidable with demand-side tools alone. The Phillips curve shows the inflation-unemployment trade-off; stagflation shows what happens when supply shocks break that relationship. Supply-side policy offers a theoretical escape route – but the time lags and costs mean the trade-offs never fully disappear. The best macro policy combines short-run demand management with long-run supply-side reform.' },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

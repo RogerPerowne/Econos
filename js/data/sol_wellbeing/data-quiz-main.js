@@ -5,7 +5,7 @@
     topicId:  'sol_wellbeing_main',
     title:    'Standard of Living & Wellbeing',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'sol_wellbeing' }),
+    backUrl:  TopicLoader.routes.learn('sol_wellbeing'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers HDI, composite measures, Kuznets curve, and happiness economics',
     shortNames: [

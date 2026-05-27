@@ -38,7 +38,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. The key concepts to cover are: the definition of potential GDP, how output gaps are estimated (HP filter, production function approach), the policy implications of each type of gap, and the relationship between output gaps, inflation, and the NAIRU.',
       examEdge: 'Output gaps connect AD/AS analysis to the Phillips curve. A negative output gap → unemployment above NAIRU → deflationary pressure on the SRPC. A positive output gap → unemployment below NAIRU → inflationary pressure. This linkage is tested across multiple exam questions.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

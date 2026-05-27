@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: Mundell-Fleming model and the trilemma; global financial cycle (Rey 2013); spillovers of monetary policy; IMF lending facilities and conditionality; G20 process; coordination challenges (free-riding, distributional disputes); climate finance and the COP process; OECD Pillar Two minimum corporate tax (2024); CBDC and the global monetary system. This is the synthesis topic for the whole Theme 4 syllabus.',
       examEdge: 'A* synthesis-style essays draw on the whole syllabus. Example: "Should the UK pursue fiscal consolidation in 2025?" – answer requires fiscal rules (5.3), monetary-fiscal interaction (4.3), global bond market sentiment (4.2), exchange rate effects (1.8), and the political economy of consolidation. This topic is where Theme 4 essays come together – practise integrating across sub-topics.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

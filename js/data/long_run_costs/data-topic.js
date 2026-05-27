@@ -117,7 +117,7 @@ window.ECONOS_TOPIC = {
         { term: 'Regulatory period', def: 'The period (typically 5 years) for which the X factor is set – reviewed and reset by the regulator.' }
       ],
       examEdge: 'RPI-X regulation is the best case study for evaluation of natural monopoly regulation. Strengths: incentivises efficiency (firm benefits from beating the target). Weaknesses: information asymmetry (firm knows its costs better than regulator → sets X too easy or too hard); underinvestment risk (caps create incentive to cut capex to boost short-run profit); regulatory capture risk. UK water companies: delivered efficiency but underinvested in infrastructure (sewage spills).',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

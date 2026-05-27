@@ -130,7 +130,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'The answer depends on the industry and development level. UK policy should focus on non-price competitiveness (skills, R&D, services quality) since competing on price with emerging markets is not a viable long-run strategy for a high-wage economy – say this explicitly in an essay.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

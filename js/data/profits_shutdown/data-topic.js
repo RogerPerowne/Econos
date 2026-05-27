@@ -200,7 +200,7 @@ window.ECONOS_TOPIC = {
         ]
       },
       examEdge: 'The supermarket response to 2022-23 food inflation illustrates both strategies in one industry. Discounters (Aldi, Lidl) with lower cost bases held prices more effectively. Premium supermarkets (Waitrose) absorbed more cost to protect brand positioning. Mid-market (Tesco, Sainsbury\'s) mixed strategies. The strategic response depends on competitive position, brand identity, and demand elasticity – not just market structure.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

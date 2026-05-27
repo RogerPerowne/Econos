@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear conditional position: the levy is effective when producers reformulate (supply-side correction) but less effective when demand is inelastic (price signal is weak). Always acknowledge the regressive incidence as the key trade-off.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

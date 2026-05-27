@@ -38,7 +38,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. The key concepts to cover are: the benefits of growth (living standards, employment, fiscal space), the costs (environment, inequality, inflation), the distinction between cyclical and structural growth, the Kuznets curve, and the concept of sustainable development and green growth.',
       examEdge: 'The A* growth evaluation structure: (1) Does growth raise living standards? Yes, but only if gains are distributed (check median income, not GDP per capita). (2) At what cost? Environmental damage, inequality, inflation risk. (3) Is it sustainable? Only if supply-side capacity expands alongside demand. Apply this three-part structure to any growth question.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

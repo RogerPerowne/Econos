@@ -19,7 +19,7 @@ window.ECONOS_TOPIC = {
     tip: 'Market failure does not mean markets "break down" – it means the price mechanism produces the wrong quantity from society\'s perspective. The output is not zero; it is just above or below the socially optimal level.',
     stages: [
       { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -149,7 +149,7 @@ window.ECONOS_TOPIC = {
         { term: 'Moral hazard', def: 'When asymmetric information after a transaction changes behaviour – e.g., an insured person takes more risks because they no longer bear the full cost.' }
       ],
       examEdge: 'A strong answer does more than name the failure – it explains <strong>why</strong> the market outcome is allocatively inefficient. Use the four-step diagnostic: divergence → direction → quantity gap → welfare loss. That structure works for any market failure question.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

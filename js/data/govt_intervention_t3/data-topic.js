@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: CMA powers and merger control thresholds; RPI-X regulation (Ofwat, Ofgem, Ofcom); UK privatisation programme 1980s-1990s; evaluation of privatisation outcomes; government failure risks including regulatory capture and principal-agent problems in public ownership.',
       examEdge: 'The A* structure for government intervention questions: (1) identify the market failure justifying intervention; (2) explain the specific intervention and how it corrects the failure; (3) evaluate government failure risks – does the cure worse than the disease? Use specific UK examples (CMA, Ofwat, NHS) to ground the analysis.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

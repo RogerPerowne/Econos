@@ -53,13 +53,13 @@
     }
     function buildHref() {
       if (typeof state.sectionA === 'number' && state.sectionA > 0) {
-        return TopicLoader.buildUrl('land_section_a.html');
+        return TopicLoader.routes.land('a');
       }
       if (hasSectionB()) {
-        return TopicLoader.buildUrl('land_section_b.html');
+        return TopicLoader.routes.land('b');
       }
       if (state.sectionC === 'include') {
-        return TopicLoader.buildUrl('land_section_c.html');
+        return TopicLoader.routes.land('c');
       }
       return '#';
     }
@@ -379,7 +379,7 @@
     document.getElementById('app-root').innerHTML = '<div class="app theme--land">'
       + Shell.renderSidebar({ activeNav: 'My topics' })
       + '<div id="main-content" class="main" tabindex="-1" role="main">'
-      +   Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('topic.html'), sessionLabel: T.sessionLabel || TopicLoader.sessionLabel('land'), topicTitle: T.topic })
+      +   Shell.renderTopbar({ backUrl: TopicLoader.routes.learn(), sessionLabel: T.sessionLabel || TopicLoader.sessionLabel('land'), topicTitle: T.topic })
       +   renderPage()
       + '</div>'
       + '</div>';

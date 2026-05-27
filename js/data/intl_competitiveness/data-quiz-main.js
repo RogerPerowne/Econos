@@ -5,7 +5,7 @@
     topicId:  'intl_competitiveness_main',
     title:    'International Competitiveness',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'intl_competitiveness' }),
+    backUrl:  TopicLoader.routes.learn('intl_competitiveness'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers unit labour costs, price and non-price competitiveness, and supply-side improvements',
     shortNames: [

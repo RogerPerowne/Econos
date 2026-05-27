@@ -5,7 +5,7 @@
     topicId:  'trade_spec_main',
     title:    'Trade & Specialisation',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'trade_spec' }),
+    backUrl:  TopicLoader.routes.learn('trade_spec'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers comparative advantage, gains from trade, terms of trade, and free trade arguments',
     shortNames: [

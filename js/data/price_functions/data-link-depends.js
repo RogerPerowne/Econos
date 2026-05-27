@@ -5,17 +5,17 @@
 
 window.ECONOS_LINK_DEPENDS = {
   topic:       'The Price Mechanism',
-  backUrl:     TopicLoader.buildUrl('link_intro.html'),
+  backUrl:     TopicLoader.routes.link('intro'),
   eyebrow:     'It Depends On',
   instruction: 'Pick the three factors that most change the answer to this claim. Think about which conditions determine whether the price mechanism is the most efficient allocator of food during a supply disruption.',
-  nextUrl:     TopicLoader.buildUrl('link_judge.html'),
+  nextUrl:     TopicLoader.routes.link('judge'),
 
   stations: [
-    { id: 'context', label: 'Use the context', href: TopicLoader.buildUrl('link_context.html') },
-    { id: 'chain', label: 'Build the chain', href: TopicLoader.buildUrl('link_chain.html') },
-    { id: 'predict', label: 'Predict outcome', href: TopicLoader.buildUrl('link_predict.html') },
-    { id: 'depends', label: 'It depends on', href: TopicLoader.buildUrl('link_depends.html') },
-    { id: 'judge', label: 'Make the judgement', href: TopicLoader.buildUrl('link_judge.html') }
+    { id: 'context', label: 'Use the context', href: TopicLoader.routes.link('context') },
+    { id: 'chain', label: 'Build the chain', href: TopicLoader.routes.link('chain') },
+    { id: 'predict', label: 'Predict outcome', href: TopicLoader.routes.link('predict') },
+    { id: 'depends', label: 'It depends on', href: TopicLoader.routes.link('depends') },
+    { id: 'judge', label: 'Make the judgement', href: TopicLoader.routes.link('judge') }
   ],
   currentStationIdx: 3,
 

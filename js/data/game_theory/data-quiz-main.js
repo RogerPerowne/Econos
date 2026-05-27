@@ -5,7 +5,7 @@
     topicId:  'game_theory_main',
     title:    'Game Theory',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'game_theory' }),
+    backUrl:  TopicLoader.routes.learn('game_theory'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers payoff matrices, Nash equilibrium, dominant strategies, and the prisoner\'s dilemma',
     shortNames: [

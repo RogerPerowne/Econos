@@ -5,7 +5,7 @@
     topicId:  'multiplier_main',
     title:    'National Income & The Multiplier',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'multiplier' }),
+    backUrl:  TopicLoader.routes.learn('multiplier'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers circular flow, equilibrium income, the multiplier, leakages, and the accelerator',
     shortNames: [

@@ -16,8 +16,8 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'The decisive question for any tax or subsidy: does the welfare gain from correcting the market failure exceed the deadweight loss the policy itself creates? If yes → welfare rises. If no → welfare falls. Always identify the underlying market failure first.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '3 concept cards',               state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 1, name: 'Learn it', sub: '3 concept cards',               state: 'done',    href: TopicLoader.routes.learn()      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'locked'                                                 }
     ]
   },
@@ -152,7 +152,7 @@ window.ECONOS_TOPIC = {
         { icon: '👥', tone: 'amber',  title: 'Analyse who gains and loses', sub: 'Use incidence – cite PED/PES to show burden split. State redistribution effects. Who captures the subsidy?' },
         { icon: '⚖️', tone: 'purple', title: 'Reach a judgement',          sub: 'Use effectiveness–efficiency–equity to conclude. Is the welfare gain larger than the DWL? Is a better tool available? Apply to the specific context.' }
       ],
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -69,7 +69,7 @@ window.ECONOS_TOPIC = {
         { term: 'Sales-max output', def: 'TR ≥ TC. Maximum output consistent with at least normal profit. Even lower price.' }
       ],
       examEdge: 'On a single diagram showing demand (AR), MR, and MC curves: profit-max Q1 (MR=MC intersection); revenue-max Q2 (MR=0); sales-max Q3 (AR=AC, if minimum profit constraint). Q1 < Q2 < Q3; P1 > P2 > P3. Drawing these three points on the same diagram – with labels – is a high-marks response showing all objectives simultaneously.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

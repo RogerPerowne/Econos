@@ -4,43 +4,42 @@
    Verify the four canonical pages render their key chrome
    elements for an example topic (inflation). Catches regressions
    in routing, Shell.renderStages, mobile-nav injection, etc.
+
+   All URLs are the path-based canonical form: /learn/inflation,
+   /link/inflation/chain, etc. The Vite preview server's
+   topic-routes middleware rewrites these to the right base shell
+   transparently.
    ============================================================ */
 
 import { test, expect } from '@playwright/test';
 
-/* Auth gate + progress stubs. Engines guard direct access to
-   inner stations (chain, diagram, etc.) and redirect to context
-   if Progress.getLinkUnlocked() < N. For tests we pretend everything
-   is unlocked so we exercise the actual station code. */
 async function login(page) {
   await page.addInitScript(() => {
     try {
       localStorage.setItem('econosAuth', '1');
-      localStorage.setItem('econos_link_unlocked', '5'); // past every station
+      localStorage.setItem('econos_link_unlocked', '5');
       localStorage.setItem('econos_land_unlocked', '5');
     } catch (e) {}
   });
 }
 
 test.describe('Home page', () => {
-  test('index renders topic grid + new shell links', async ({ page }) => {
+  test('index renders topic grid with path-based shell links', async ({ page }) => {
     await login(page);
     await page.goto('/');
 
-    /* Skip-link is mounted by shell.js — but index doesn't load
-       shell.js. So we don't expect it on the home page. */
     await expect(page).toHaveTitle(/econos/i);
 
-    /* Topic cards should link to clean /learn /link /land shells, not
-       the legacy per-section pages or any .html extensions. */
     const hrefs = await page.$$eval('a[href]', as =>
       as.map(a => a.getAttribute('href') || ''));
-    const shellHrefs = hrefs.filter(h => /^\/(learn|link|land|quiz)(\?|$)/.test(h));
-    expect(shellHrefs.length).toBeGreaterThan(0);
-    /* No legacy filenames or .html extensions in the link generators. */
+    /* Topic cards must use path form: /learn/<topic-slug>. */
+    const learnLinks = hrefs.filter(h => /^\/learn\/[a-z0-9-]+/.test(h));
+    expect(learnLinks.length).toBeGreaterThan(0);
+    /* And not the old query-string form or .html extension. */
+    expect(hrefs.some(h => /\?topic=/.test(h))).toBe(false);
+    expect(hrefs.some(h => /\.html(\?|#|$)/.test(h))).toBe(false);
+    /* And no legacy per-section filenames anywhere. */
     expect(hrefs.some(h => /topic\.html|link_\w+\.html|land_\w+\.html/.test(h)))
-      .toBe(false);
-    expect(hrefs.some(h => /^\/?(learn|link|land|quiz)\.html/.test(h)))
       .toBe(false);
   });
 });
@@ -48,50 +47,41 @@ test.describe('Home page', () => {
 test.describe('Learn It shell', () => {
   test('inflation renders chrome + stage widget', async ({ page }) => {
     await login(page);
-    await page.goto('/learn?topic=inflation');
+    await page.goto('/learn/inflation');
 
-    /* Page title set by HTML (router only updates on station-aware shells). */
-    await expect(page).toHaveTitle(/Learn It · econos/i);
+    await expect(page).toHaveTitle(/Learn It · Econos/i);
 
-    /* Skip-link auto-injected by Shell. */
     const skip = page.locator('a.skip-link');
     await expect(skip).toHaveCount(1);
 
-    /* Mobile-nav auto-injected (hidden on desktop via CSS — assert it's
-       in the DOM, not visible). */
     await expect(page.locator('.mobile-nav')).toHaveCount(1);
 
-    /* Stage widget with three positions. */
     const stages = page.locator('.stages .stage');
     await expect(stages).toHaveCount(3);
-    /* data-stage-pos attributes — required by polish CSS. */
     await expect(stages.nth(0)).toHaveAttribute('data-stage-pos', '1');
     await expect(stages.nth(1)).toHaveAttribute('data-stage-pos', '2');
     await expect(stages.nth(2)).toHaveAttribute('data-stage-pos', '3');
 
-    /* aria-current on the current stage. */
     const current = page.locator('.stages .stage.is-current');
     await expect(current).toHaveAttribute('aria-current', 'step');
   });
 });
 
 test.describe('Link It shell', () => {
-  test('intro station deep-links + chain station shows amber theme', async ({ page }) => {
+  test('intro deep-links + chain station shows amber theme', async ({ page }) => {
     await login(page);
-    await page.goto('/link?topic=inflation');
+    await page.goto('/link/inflation/intro');
     await expect(page).toHaveTitle(/Link it · Intro/i);
-    /* Theme class on .app */
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
 
-    /* Deep-link to chain station. */
-    await page.goto('/link?topic=inflation&station=chain');
+    await page.goto('/link/inflation/chain');
     await expect(page).toHaveTitle(/Link it · Chain/i);
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
   });
 
   test('unknown station shows friendly not-found', async ({ page }) => {
     await login(page);
-    await page.goto('/link?topic=inflation&station=nope');
+    await page.goto('/link/inflation/nope');
     await expect(page.locator('text=Station not found')).toBeVisible();
   });
 });
@@ -99,25 +89,29 @@ test.describe('Link It shell', () => {
 test.describe('Land It shell', () => {
   test('intro station renders + rose theme', async ({ page }) => {
     await login(page);
-    await page.goto('/land?topic=inflation&station=intro');
+    await page.goto('/land/inflation/intro');
     await expect(page).toHaveTitle(/Land it · Intro/i);
     await expect(page.locator('.app.theme--land')).toHaveCount(1);
 
-    /* Stage widget should show Learn=done, Link=done, Land=current. */
     const current = page.locator('.stages .stage.is-current');
     await expect(current).toHaveAttribute('data-stage-pos', '3');
   });
 });
 
-/* Legacy redirect stubs were retired — see commit history. PAGE_MAP
-   still rewrites legacy filenames inside TopicLoader.buildUrl(); the
-   topic-loader.spec.js test covers that rewrite. Hitting the old
-   URLs over HTTP now 404s by design. */
+test.describe('Legacy query-string URLs', () => {
+  test('inbound ?topic=… is rewritten to the canonical path', async ({ page }) => {
+    await login(page);
+    await page.goto('/learn?topic=inflation');
+    /* TopicLoader's boot-time redirect rewrites the URL. Wait for it. */
+    await page.waitForFunction(() => location.pathname === '/learn/inflation', null, { timeout: 5000 });
+    expect(new URL(page.url()).pathname).toBe('/learn/inflation');
+  });
+});
 
 test.describe('Accessibility — keyboard navigation', () => {
   test('Tab reveals skip-link first on the learn shell', async ({ page }) => {
     await login(page);
-    await page.goto('/learn?topic=inflation');
+    await page.goto('/learn/inflation');
     await page.keyboard.press('Tab');
     const focused = await page.evaluate(() => document.activeElement &&
       (document.activeElement.className || '') + '|' +

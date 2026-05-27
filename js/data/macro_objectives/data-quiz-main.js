@@ -5,7 +5,7 @@
     topicId:  'macro_objectives_main',
     title:    'Macroeconomic Objectives & Trade-offs',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'macro_objectives' }),
+    backUrl:  TopicLoader.routes.learn('macro_objectives'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers the five objectives, trade-offs, Phillips curve, and NAIRU',
     shortNames: [

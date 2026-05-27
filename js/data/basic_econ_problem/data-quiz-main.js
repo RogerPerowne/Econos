@@ -5,7 +5,7 @@
     topicId:  'basic_econ_problem_main',
     title:    'The Basic Economic Problem',
     subtitle: 'Theme 1 &middot; Topic 1.1 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'basic_econ_problem_main' }),
+    backUrl:  TopicLoader.routes.learn('basic_econ_problem_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers scarcity, opportunity cost, the three economic questions, positive/normative statements, and rational decision-making',
     shortNames: [

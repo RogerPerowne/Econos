@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (near-vertical S, E₂ above E₁, 9.4% rent rise), add the condition (planning reform needed over medium run), and acknowledge the landlord exit complication honestly.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

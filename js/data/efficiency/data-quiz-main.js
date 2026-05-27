@@ -5,7 +5,7 @@
     topicId:  'efficiency_main',
     title:    'Efficiency',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'efficiency' }),
+    backUrl:  TopicLoader.routes.learn('efficiency'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers allocative, productive, dynamic, and X-inefficiency',
     shortNames: [

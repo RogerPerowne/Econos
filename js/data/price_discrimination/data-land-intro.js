@@ -28,8 +28,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'Always check all three conditions: market power → market segmentation (different PED) → prevention of arbitrage. In welfare analysis, the key question is whether discrimination increases total output &#8211; if new market segments are served that were previously excluded, net welfare may improve even though consumer surplus is transferred to the producer.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                               }
   ]
 };

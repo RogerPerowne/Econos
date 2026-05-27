@@ -105,7 +105,7 @@
       + '<div class="app theme--link">'
       +   Shell.renderSidebar({ activeNav: 'My topics' })
       +   '<div id="main-content" class="main" tabindex="-1" role="main">'
-      +     Shell.renderTopbar({ backUrl: TopicLoader.buildUrl('topic.html'), sessionLabel: T.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: T.topic })
+      +     Shell.renderTopbar({ backUrl: TopicLoader.routes.learn(), sessionLabel: T.sessionLabel || TopicLoader.sessionLabel('link'), topicTitle: T.topic })
       +     renderPage()
       +   '</div>'
       + '</div>';

@@ -5,7 +5,7 @@
     topicId:  'environmental_econ_main',
     title:    'Environmental Economics',
     subtitle: 'Theme 1.16 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'environmental_econ_main' }),
+    backUrl:  TopicLoader.routes.learn('environmental_econ_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers carbon markets, tradeable permits, externalities, Coase theorem, sustainability, and climate policy evaluation',
     shortNames: [

@@ -5,7 +5,7 @@
     topicId:  'supply_main',
     title:    'Supply',
     subtitle: 'Theme 1 &middot; Topic 2.4 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'supply_main' }),
+    backUrl:  TopicLoader.routes.learn('supply_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers the law of supply, shifts vs movements, non-price determinants, producer surplus, joint and competing supply',
     shortNames: [

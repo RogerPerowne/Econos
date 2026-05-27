@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (supply right → fare falls → CS rises), add the condition (positive externalities must justify the cost), and explain the limitation (pass-through rate, PED) honestly.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

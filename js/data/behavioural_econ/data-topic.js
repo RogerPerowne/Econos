@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Two systems: System 1 fast / automatic / biased; System 2 slow / deliberate / rare. Biases happen when System 1 takes over jobs that need System 2. Nudges work by changing the choice architecture so System 1\'s default produces a better outcome.',
     stages: [
       { num: 1, name: 'Learn it', sub: '5 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -295,7 +295,7 @@ window.ECONOS_TOPIC = {
         { term: 'Randomised controlled trial (RCT)', def: 'The gold-standard evaluation method – randomly assign participants to treatment and control, measure the difference. BIT uses RCTs to test nudges before rollout.' }
       ],
       examEdge: 'Top evaluation line: <strong>"Nudges complement but do not substitute for traditional policy."</strong> Pension auto-enrolment works because the bias <em>is</em> the binding constraint (inertia). A carbon tax is still needed where the binding constraint is a market price (externality). The strongest behavioural essays state <em>which</em> bias is being targeted, <em>why</em> a nudge is the right tool for that bias, and where the policy spectrum demands a stronger lever instead.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

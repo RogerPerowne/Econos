@@ -65,5 +65,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position, use the mechanism (supply shifts right, DWL eliminated), add the condition (MEB measurability / technology learning / funding equity), and note that subsidies paired with carbon pricing deliver the strongest correction on both sides of the market failure.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

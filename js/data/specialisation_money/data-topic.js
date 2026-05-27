@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Money functions: Medium of Exchange (lubricates trade), Store of Value (holds purchasing power), Unit of Account (common measure of price), Standard of Deferred Payment (enables credit).',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -339,7 +339,7 @@ window.ECONOS_TOPIC = {
         title: 'The big takeaway',
         text: 'Specialisation and money help economies grow because they make exchange easier and more productive – connecting people, firms and countries to create more value and better lives.'
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

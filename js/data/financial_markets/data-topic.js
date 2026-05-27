@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: money markets (short-term, < 1 year) vs capital markets (long-term); commercial banking and credit creation (fractional reserve); investment banking (IPOs, M&A advisory); securities markets (equities, bonds); derivatives markets; the role of London as a global financial centre.',
       examEdge: 'Credit creation by commercial banks is a key analytical concept. Banks do not just intermediate existing savings – they CREATE deposits when they lend. £1 of new lending creates £1 of new deposits. The "money multiplier" framework taught in textbooks is misleading; the BoE\'s 2014 quarterly bulletin clarified that banks create money through lending, not through multiplying reserves.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: Wagner\'s Law (public spending rises with development); demographic pressures on welfare and health spending; crowding-out debate; capital vs current spending and growth effects; fiscal multipliers (higher for capital and lower-income transfers); international comparisons (US ~36%, France ~58%, Sweden ~50%). For fiscal policy as a macro tool, see Theme 2 topic 6.2.1.',
       examEdge: 'The composition of public spending matters as much as the total. £1 of capital investment in infrastructure has a long-run multiplier of 2-3 (raises productive capacity). £1 of current spending on debt interest has zero multiplier (transfer to bondholders). UK\'s long-standing under-investment in capital (5% lower than OECD average) is widely cited as a productivity drag – see ONS productivity puzzle research.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

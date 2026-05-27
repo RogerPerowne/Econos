@@ -7,7 +7,7 @@
   'use strict';
 
   window.bootLinkDiagram = function () {
-    if (Progress.getLinkUnlocked() < 1) { TopicLoader.go(TopicLoader.buildUrl('link_context.html')); return; }
+    if (Progress.getLinkUnlocked() < 1) { TopicLoader.go(TopicLoader.routes.link('context')); return; }
 
     var I    = window.ECONOS_ICONS;
     var DATA = window.ECONOS_LINK_DIAGRAM;

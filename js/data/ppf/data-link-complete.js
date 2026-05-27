@@ -59,5 +59,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'State a clear position (rational if productivity return is high and politically sustained), use the mechanism (movement along PPF → short-run trade-off → long-run outward shift), add the condition (political sustainability and crowding-in magnitude), and acknowledge the honest risk (the £28bn to £7.3bn revision shows commitment failure is a real constraint).'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

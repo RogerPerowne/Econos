@@ -28,8 +28,8 @@ window.ECONOS_LAND_INTRO = {
   tip: 'Always use two diagrams for perfect competition questions: the industry diagram (D and S determining the market price) and the individual firm diagram (horizontal demand at P*, with AC and MC). Show profit or loss on the firm diagram by comparing P to AC at the profit-maximising output Q* where MR&#160;=&#160;MC.',
 
   stages: [
-    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.buildUrl('topic.html')      },
-    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.buildUrl('link_intro.html') },
+    { num: 1, name: 'Learn it', sub: 'Recap and lock in the content', state: 'done',    href: TopicLoader.routes.learn()      },
+    { num: 2, name: 'Link it',  sub: 'Apply skills with the context', state: 'done',    href: TopicLoader.routes.link('intro') },
     { num: 3, name: 'Land it',  sub: 'Tackle real exam questions',    state: 'current'                                               }
   ]
 };

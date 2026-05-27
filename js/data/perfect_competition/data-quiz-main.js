@@ -5,7 +5,7 @@
     topicId:  'perfect_competition_main',
     title:    'Perfect Competition',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'perfect_competition' }),
+    backUrl:  TopicLoader.routes.learn('perfect_competition'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers the conditions, equilibrium, and efficiency of perfect competition',
     shortNames: [

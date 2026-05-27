@@ -5,7 +5,7 @@
 window.ECONOS_LAND_SECTION_C = {
   topic:        'Causes of Inflation & Deflation',
   sectionLabel: 'Section C – Essay',
-  backUrl:      TopicLoader.buildUrl('land_intro.html'),
+  backUrl:      TopicLoader.routes.land('intro'),
 
   /* In the exam there are two options; here we present one. */
   question: {

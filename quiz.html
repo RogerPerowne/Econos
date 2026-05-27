@@ -24,16 +24,16 @@
   <meta name="description" content="Econos quiz.">
   <title>Quiz · Econos</title>
 
-  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Econos" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css">
-  <script src="js/auth-check.js"></script>
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/auth-check.js"></script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Econos">
   <meta property="og:url" content="https://econos.co.uk/quiz">
@@ -41,23 +41,23 @@
   <meta property="og:description" content="Test your economics knowledge. A-Level revision quizzes — Econos.">
   <meta property="og:image" content="https://econos.co.uk/assets/logo-full.png">
   <link rel="canonical" href="https://econos.co.uk/quiz">
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
 </head>
 <body>
 
   <!-- mobile-nav is auto-injected by js/engines/shell.js -->
   <div id="app-root"></div>
 
-  <script src="js/logger.js"></script>
-  <script src="js/icons.js"></script>
-  <script src="js/topic-loader.js"></script>
-  <script src="js/progress.js"></script>
-  <script src="js/engines/shell.js"></script>
-  <script src="js/engines/quiz-engine.js"></script>
+  <script src="/js/logger.js"></script>
+  <script src="/js/icons.js"></script>
+  <script src="/js/topic-loader.js"></script>
+  <script src="/js/progress.js"></script>
+  <script src="/js/engines/shell.js"></script>
+  <script src="/js/engines/quiz-engine.js"></script>
 
   <script>
   (function () {
-    var quizId = (new URLSearchParams(window.location.search)).get('quiz') || 'causes';
+    var quizId = TopicLoader.getQuizSet() || 'main';
     var dataFile = 'data-quiz-' + quizId + '.js';
     TopicLoader.loadData(['data-topic.js', dataFile], function () { run(); }, 'this quiz');
 
@@ -66,7 +66,7 @@
       var Q = window.ECONOS_QUIZ;
       var T = window.ECONOS_TOPIC;
       var SHORT_NAMES = Q.shortNames || {};
-      var topicHref = TopicLoader.buildUrl('learn.html');
+      var topicHref = TopicLoader.routes.learn();
 
       var sidebar = Shell.renderSidebar({ activeNav: 'My topics' });
       var topbar  = Shell.renderTopbar({

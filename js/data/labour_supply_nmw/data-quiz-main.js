@@ -5,7 +5,7 @@
     topicId:  'labour_supply_nmw_main',
     title:    'Labour Supply, Trade Unions & NMW',
     subtitle: 'Labour Markets & Distribution',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'labour_supply_nmw' }),
+    backUrl:  TopicLoader.routes.learn('labour_supply_nmw'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers labour supply, backward-bending curve, trade unions, and minimum wage effects',
     shortNames: [

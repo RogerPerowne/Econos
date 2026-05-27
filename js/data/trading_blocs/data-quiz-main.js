@@ -5,7 +5,7 @@
     topicId:  'trading_blocs_main',
     title:    'Trading Blocs & the WTO',
     subtitle: 'International Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'trading_blocs' }),
+    backUrl:  TopicLoader.routes.learn('trading_blocs'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers integration hierarchy, trade creation/diversion, WTO, and Brexit evaluation',
     shortNames: [

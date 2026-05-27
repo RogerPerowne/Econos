@@ -5,7 +5,7 @@
     topicId:  'factors_of_production_main',
     title:    'Factors of Production',
     subtitle: 'Theme 1 &middot; Topic 1.1.2 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'factors_of_production' }),
+    backUrl:  TopicLoader.routes.learn('factors_of_production'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~10 minutes · covers the four factors, rewards, quantity vs quality, mobility, and applying the framework to UK labour shortages',
     shortNames: [

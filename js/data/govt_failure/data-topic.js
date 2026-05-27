@@ -18,7 +18,7 @@ window.ECONOS_TOPIC = {
     tip: 'Government failure occurs when the costs of intervention (including unintended consequences) exceed the costs of the market failure it was designed to correct. Intervention is not automatically better than the market.',
     stages: [
       { num: 1, name: 'Learn it', sub: '7 concept cards', state: 'current' },
-      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 2, name: 'Link it', sub: 'Apply skills with the context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it', sub: 'Exam paper', state: 'locked' }
     ]
   },
@@ -241,7 +241,7 @@ window.ECONOS_TOPIC = {
       ],
       tipLate: { icon: '🏆', tone: 'green', text: 'Bank of England independence (1997): the single most successful institutional reform in UK economic policy. By removing interest rate decisions from the Chancellor\'s desk, it eliminated the electoral cycle distortion that caused rates to be cut before elections and raised after. Result: inflation averaged 2.0% in the decade after independence vs 6.5% in the decade before.' },
       examEdge: 'Exam technique for 25-mark essays on intervention: the best responses evaluate both market failure (why intervention is justified in principle) AND government failure (why it may not work in practice), then assess which is more likely to dominate given the specific context. Conclude with institutional design: "the answer is not to avoid intervention but to design it better – independent agencies, CBA, pilots, and transparency all reduce government failure risk." This shows you understand the comparative economics, not just the market failure side.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

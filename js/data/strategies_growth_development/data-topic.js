@@ -39,7 +39,7 @@ window.ECONOS_TOPIC = {
       ],
       body: 'Full content for this topic is being developed. Key concepts: Washington Consensus and structural adjustment programmes; East Asian developmental state model; microfinance (Grameen Bank, M-Pesa); ODA flows and effectiveness; HIPC debt relief; Sustainable Development Goals (2015-2030); climate finance and just transition.',
       examEdge: 'The aid effectiveness debate is exam-rich. Jeffrey Sachs (pro-aid): "big push" to break the poverty trap. William Easterly (sceptical): aid often funds corrupt regimes, distorts markets, undermines local accountability. Empirical evidence is mixed – aid works in well-governed countries (debt relief in Uganda) but fails where institutions are weak.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
   ]
 };

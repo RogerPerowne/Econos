@@ -5,7 +5,7 @@
     topicId:  'collusion_cartels_main',
     title:    'Collusion & Cartels',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'collusion_cartels' }),
+    backUrl:  TopicLoader.routes.learn('collusion_cartels'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers cartel theory, tacit collusion, and competition policy',
     shortNames: [

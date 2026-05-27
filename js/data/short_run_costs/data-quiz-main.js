@@ -5,7 +5,7 @@
     topicId:  'short_run_costs_main',
     title:    'Short-Run Costs',
     subtitle: 'Theme 3 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'short_run_costs_main' }),
+    backUrl:  TopicLoader.routes.learn('short_run_costs_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers fixed/variable costs, marginal and average costs, diminishing returns, and cost curve shapes',
     shortNames: [

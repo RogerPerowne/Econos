@@ -14,8 +14,6 @@
     b:        { data: 'data-land-section-b.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js',title: 'Section B' },
     c:        { data: 'data-land-section-c.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js',title: 'Section C' },
     complete: { data: 'data-land-complete.js',  boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js', title: 'Complete' },
-    /* Quiz station — see LinkRouter for the same pattern. Loads
-       data-land-quiz-<set>.js (default 'main') + quiz-engine. */
     quiz:     { title: 'Quiz' }
   };
 
@@ -37,7 +35,7 @@
     var cfg = STATIONS[station];
     if (!cfg) return;
     prefetched[station] = true;
-    [cfg.engine, cfg.data && ('js/data/' + TopicLoader.getTopic() + '/' + cfg.data)]
+    [cfg.engine, cfg.data && ('/js/data/' + TopicLoader.getTopic() + '/' + cfg.data)]
       .filter(Boolean)
       .forEach(function (href) {
         var l = document.createElement('link');
@@ -62,21 +60,14 @@
   }
 
   function urlToStation(url) {
-    if (!url) return null;
-    var qStart = String(url).indexOf('?');
-    if (qStart < 0) return null;
-    try {
-      var params = new URLSearchParams(url.substring(qStart));
-      var s = params.get('station');
-      return s && STATIONS[s] ? s : null;
-    } catch (e) { return null; }
+    var route = TopicLoader.parsePath(String(url || '').split('?')[0].split('#')[0]);
+    if (!route || route.shell !== 'land') return null;
+    return route.station && STATIONS[route.station] ? route.station : null;
   }
-
   function isLandUrl(url) {
     if (!url) return false;
-    var path = String(url).split('?')[0].split('#')[0];
-    var file = path.substring(path.lastIndexOf('/') + 1);
-    return (file === 'land' || file === 'land.html') && !!urlToStation(url);
+    var route = TopicLoader.parsePath(String(url).split('?')[0].split('#')[0]);
+    return !!(route && route.shell === 'land' && route.station && STATIONS[route.station]);
   }
 
   function setTitle(station) {
@@ -86,8 +77,6 @@
   }
 
   function renderUnknownStation(station) {
-    var topic = TopicLoader.getTopic();
-    var qs = topic ? '?topic=' + encodeURIComponent(topic) : '';
     var root = document.getElementById('app-root');
     if (!root) return;
     root.innerHTML = ''
@@ -96,7 +85,7 @@
       +   '<p style="color:var(--econ-muted,#6B7280);margin-bottom:24px;">'
       +     'The Land It station <code>' + (station || '?') + '</code> doesn\'t exist for this topic.'
       +   '</p>'
-      +   '<a href="/land' + qs + '&station=intro" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
+      +   '<a href="' + TopicLoader.routes.land('intro') + '" style="display:inline-block;padding:10px 18px;background:var(--econ-ink,#0B1426);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">'
       +     '← Back to Land It intro'
       +   '</a>'
       + '</div>';
@@ -104,8 +93,6 @@
 
   function cacheKey(file) { return TopicLoader.getTopic() + '/' + file; }
 
-  /* Skeleton stub identical in spirit to LinkRouter's — see that file
-     for the rationale. Theme class differs (theme--land). */
   function showLoadingSkeleton() {
     var root = document.getElementById('app-root');
     if (!root) return function () {};
@@ -134,9 +121,9 @@
     setTitle(station);
     var cancelSkeleton = showLoadingSkeleton();
     if (station === 'quiz') {
-      var quizSet = new URLSearchParams(window.location.search).get('quiz') || 'main';
+      var quizSet = TopicLoader.getQuizSet() || 'main';
       var dataFile = 'data-land-quiz-' + quizSet + '.js';
-      loadScript('js/engines/quiz-engine.js', function () {
+      loadScript('/js/engines/quiz-engine.js', function () {
         TopicLoader.loadData(dataFile, function () {
           if (typeof window.bootQuizStation === 'function') {
             cancelSkeleton();
@@ -170,7 +157,7 @@
       }
     };
     if (cfg.engine) {
-      loadScript(cfg.engine, loadDataThenBoot);
+      loadScript('/' + cfg.engine, loadDataThenBoot);
     } else {
       loadDataThenBoot();
     }
@@ -188,7 +175,8 @@
     loadStation(station);
   }
 
-  function start(station) {
+  function start() {
+    var station = TopicLoader.getStation() || 'intro';
     if (!STATIONS[station]) {
       renderUnknownStation(station);
       return;

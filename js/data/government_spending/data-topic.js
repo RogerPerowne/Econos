@@ -543,7 +543,7 @@ window.ECONOS_TOPIC = {
         text: 'Best judgements weigh the state of the economy, the type of spending, the multiplier, and the debt trade-off – not just whether G rises.'
       },
 
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

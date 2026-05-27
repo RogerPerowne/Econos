@@ -16,8 +16,8 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Tax → supply shifts UP (higher Pc, lower Pp, lower Q). Subsidy → supply shifts DOWN (lower Pc, higher Pp, higher Q). The wedge between Pc and Pp = the tax or subsidy per unit. The split between consumer and producer depends on elasticity – the less elastic side carries more of the burden (tax) or captures more of the benefit (subsidy).',
     stages: [
-      { num: 1, name: 'Learn it', sub: '4 concept cards',          state: 'done',      href: TopicLoader.buildUrl('topic.html')      },
-      { num: 2, name: 'Link it',  sub: 'Apply skills in context',  state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 1, name: 'Learn it', sub: '4 concept cards',          state: 'done',      href: TopicLoader.routes.learn()      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills in context',  state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it',  sub: 'Exam paper',               state: 'locked'                                                  }
     ]
   },
@@ -197,7 +197,7 @@ window.ECONOS_TOPIC = {
         { term: 'Producer burden',    def: '(P₀ − Pp) × Qt. Larger when supply is inelastic – producers cannot easily redirect output to other markets.' }
       ],
       examEdge: 'One rule governs both taxes and subsidies: <strong>the less elastic side bears more of a tax / captures more of a subsidy.</strong> For a 25-mark essay: state the elasticity assumption first, then use the diagram rectangles to show the split, then link to a real example – UK tobacco duty (PED ≈ −0.4, consumers bear most), EU farm subsidies (inelastic land supply, landlords capture most), or the 1990 US luxury yacht tax (elastic demand for US yachts, domestic producers bore the burden and the industry collapsed).',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

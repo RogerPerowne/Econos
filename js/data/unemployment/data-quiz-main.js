@@ -5,7 +5,7 @@
     topicId:  'unemployment_main',
     title:    'Employment & Unemployment',
     subtitle: 'Macroeconomics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'unemployment' }),
+    backUrl:  TopicLoader.routes.learn('unemployment'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers types of unemployment, measurement, policy responses, and hysteresis',
     shortNames: [

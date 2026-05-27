@@ -8,17 +8,17 @@
   <meta name="description" content="Learn it. Link it. Land it. Bite-sized A-Level economics revision built around the recurring frameworks examiners reward.">
   <meta name="theme-color" content="#FAF8F4">
 
-  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Econos" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <link rel="preload" as="image" href="assets/logo-wordmark-mark.png">
-  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="preload" as="image" href="/assets/logo-wordmark-mark.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/index.css">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -33,15 +33,15 @@
   <meta name="twitter:image" content="https://econos.co.uk/assets/logo-full.png">
   <link rel="canonical" href="https://econos.co.uk/">
 
-  <script src="js/auth-check.js"></script>
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+  <script src="/js/auth-check.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
 </head>
 <body>
 
   <!-- ═══ STICKY NAV ═══ -->
   <nav class="topnav" role="navigation" aria-label="Main navigation">
     <a href="/" class="topnav__logo" aria-label="econos home">
-      <img src="assets/logo-wordmark-mark.png" alt="econos – Learn it. Link it. Land it." height="36">
+      <img src="/assets/logo-wordmark-mark.png" alt="econos – Learn it. Link it. Land it." height="36">
     </a>
     <ul class="topnav__links" role="list">
       <li><a href="#how-it-works">How it works</a></li>
@@ -52,7 +52,7 @@
     </ul>
     <div class="topnav__actions">
       <a href="/login" class="btn btn--outline">Log in</a>
-      <a href="/learn" class="btn btn--solid">Get started</a>
+      <a href="/learn/inflation" class="btn btn--solid">Get started</a>
     </div>
   </nav>
 
@@ -80,7 +80,7 @@
         </p>
 
         <div class="hp-hero__ctas">
-          <a href="/learn" class="btn btn--solid btn--lg">
+          <a href="/learn/inflation" class="btn btn--solid btn--lg">
             Start learning
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -108,7 +108,7 @@
       <div class="hp-hero__right">
 
         <!-- Hero photo: student studying -->
-        <img class="hp-hero__illustration" src="assets/home-hero.png" alt="A student studying economics at a desk" width="520" height="400" />
+        <img class="hp-hero__illustration" src="/assets/home-hero.png" alt="A student studying economics at a desk" width="520" height="400" />
 
         <!-- Floating progress card -->
         <div class="hp-progress-card" aria-label="Progress summary">
@@ -237,7 +237,7 @@
           </div>
           <div class="hp-feat-card__title">Topic learning</div>
           <div class="hp-feat-card__body">Concise lessons that make complex ideas simple.</div>
-          <a href="/learn" class="hp-feat-card__link">
+          <a href="/learn/inflation" class="hp-feat-card__link">
             Learn more
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -300,7 +300,7 @@
           </div>
           <div class="hp-feat-card__title">Progress tracking</div>
           <div class="hp-feat-card__body">See your progress and focus on what matters most.</div>
-          <a href="/learn" class="hp-feat-card__link">
+          <a href="/learn/inflation" class="hp-feat-card__link">
             Learn more
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -390,7 +390,7 @@
           <div class="hp-audience-card__body">
             <div class="hp-audience-card__title">For students</div>
             <p class="hp-audience-card__desc">Learn smarter, stay organised and achieve your goals.</p>
-            <a href="/learn" class="hp-audience-card__link hp-audience-card__link--green">
+            <a href="/learn/inflation" class="hp-audience-card__link hp-audience-card__link--green">
               Get started
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M2.5 7h9M8 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -586,7 +586,8 @@
     </defs>
   </svg>
 
-  <script defer src="js/topics.js"></script>
+  <script defer src="/js/topics.js"></script>
+  <script defer src="/js/topic-loader.js"></script>
   <script defer>
     document.addEventListener('DOMContentLoaded', function () {
       var THEMES = [
@@ -708,7 +709,7 @@
          sophisticated stage-picker will return once the menu UX
          is reworked. Stage pips below still reflect availability. */
       function bestHref(topic) {
-        if (topic.available.learn) return '/learn?topic=' + topic.id;
+        if (topic.available.learn) return TopicLoader.routes.learn(topic.id);
         return '#';
       }
 

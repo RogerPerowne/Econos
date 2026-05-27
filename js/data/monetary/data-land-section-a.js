@@ -1,7 +1,7 @@
 window.ECONOS_LAND_SECTION_A = {
   topic:        'Monetary Policy',
-  sectionLabel: 'Section A &#8211; Short questions',
-  backUrl:      TopicLoader.buildUrl('land_intro.html'),
+  sectionLabel: 'Section A &#8212; Short questions',
+  backUrl:      TopicLoader.routes.land('intro'),
 
   questions: [
 
@@ -29,8 +29,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the data, explain the transmission mechanism through which the Bank of England\'s interest rate rises reduced the rate of inflation between 2022 and 2023.',
-          hint:        '4-mark response &#8211; trace at least two channels linking the Bank Rate rise to lower inflation.',
-          modelAnswer: 'The Bank Rate rose from 0.25% to 5.25%, a 5 percentage point increase. This rise transmitted to commercial lending rates &#8211; mortgage rates, loan rates, and credit card rates all increased, raising the cost of borrowing. Households with variable-rate mortgages faced higher repayments, directly reducing their disposable income and their ability to spend on goods and services. Simultaneously, higher savings rates increased the attractiveness of saving relative to consumption. Both effects reduced consumer spending and shifted aggregate demand to the left. With output growth slowing and firms competing harder for customers, upward price pressure eased. CPI fell from 11.1% to 3.9%, though it remained above the 2% target. Additionally, higher UK interest rates attracted capital inflows from overseas investors seeking better returns on UK assets, increasing demand for sterling and causing it to appreciate. A stronger pound reduced the price of UK imports, directly dampening the cost-push inflationary pressure that had been driving the energy price surge.'
+          hint:        '4-mark response &#8212; trace at least two channels linking the Bank Rate rise to lower inflation.',
+          modelAnswer: 'The Bank Rate rose from 0.25% to 5.25%, a 5 percentage point increase. This rise transmitted to commercial lending rates &#8212; mortgage rates, loan rates, and credit card rates all increased, raising the cost of borrowing. Households with variable-rate mortgages faced higher repayments, directly reducing their disposable income and their ability to spend on goods and services. Simultaneously, higher savings rates increased the attractiveness of saving relative to consumption. Both effects reduced consumer spending and shifted aggregate demand to the left. With output growth slowing and firms competing harder for customers, upward price pressure eased. CPI fell from 11.1% to 3.9%, though it remained above the 2% target. Additionally, higher UK interest rates attracted capital inflows from overseas investors seeking better returns on UK assets, increasing demand for sterling and causing it to appreciate. A stronger pound reduced the price of UK imports, directly dampening the cost-push inflationary pressure that had been driving the energy price surge.'
         },
         {
           id:     'q1b',
@@ -46,7 +46,7 @@ window.ECONOS_LAND_SECTION_A = {
           ],
           correct:         'opt-b',
           feedbackCorrect: 'Correct. The Bank of England has a single primary mandate: to keep CPI inflation at 2%. Subject to achieving that, it must also support the government&#39;s objectives for growth and employment.',
-          feedbackWrong:   'The correct answer is B. The Bank of England&#39;s primary objective is price stability &#8211; specifically keeping CPI at 2%. While it also has a secondary objective to support economic growth and employment, price stability takes precedence.'
+          feedbackWrong:   'The correct answer is B. The Bank of England&#39;s primary objective is price stability &#8212; specifically keeping CPI at 2%. While it also has a secondary objective to support economic growth and employment, price stability takes precedence.'
         }
       ]
     },
@@ -71,8 +71,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the extract, explain how quantitative easing is intended to stimulate aggregate demand.',
-          hint:        '4-mark response &#8211; explain the mechanism from bond purchases through to higher aggregate demand.',
-          modelAnswer: 'Quantitative easing (QE) involves the Bank of England creating new central bank reserves to purchase government and corporate bonds from financial institutions. As the extract explains, large-scale bond purchases push bond prices up and yields (interest rates) down across the economy. Lower long-term interest rates reduce the cost of borrowing for firms (for investment) and households (for mortgages and credit), stimulating consumption and investment &#8211; both components of aggregate demand. Additionally, lower bond yields make other assets such as equities more attractive, raising asset prices and household wealth. Higher wealth encourages greater consumer spending (the wealth effect), further boosting AD. QE is particularly important when the Bank Rate is already near the zero lower bound and cannot be cut further &#8211; as in 2009 and 2020 &#8211; providing an alternative monetary stimulus channel.'
+          hint:        '4-mark response &#8212; explain the mechanism from bond purchases through to higher aggregate demand.',
+          modelAnswer: 'Quantitative easing (QE) involves the Bank of England creating new central bank reserves to purchase government and corporate bonds from financial institutions. As the extract explains, large-scale bond purchases push bond prices up and yields (interest rates) down across the economy. Lower long-term interest rates reduce the cost of borrowing for firms (for investment) and households (for mortgages and credit), stimulating consumption and investment &#8212; both components of aggregate demand. Additionally, lower bond yields make other assets such as equities more attractive, raising asset prices and household wealth. Higher wealth encourages greater consumer spending (the wealth effect), further boosting AD. QE is particularly important when the Bank Rate is already near the zero lower bound and cannot be cut further &#8212; as in 2009 and 2020 &#8212; providing an alternative monetary stimulus channel.'
         },
         {
           id:     'q2b',
@@ -88,7 +88,7 @@ window.ECONOS_LAND_SECTION_A = {
           ],
           correct:         'opt-b',
           feedbackCorrect: 'Correct. The extract explicitly notes this criticism: much QE money boosts asset prices (bonds, equities, property) rather than the real economy. Since wealthier households own more assets, QE disproportionately benefits the already-wealthy, potentially increasing income and wealth inequality.',
-          feedbackWrong:   'The correct answer is B. The extract states that critics argue QE primarily boosted asset prices rather than real economic activity, benefiting asset owners &#8211; typically wealthier households. This is a distributional criticism: QE may worsen wealth inequality without generating proportionate real economic stimulus.'
+          feedbackWrong:   'The correct answer is B. The extract states that critics argue QE primarily boosted asset prices rather than real economic activity, benefiting asset owners &#8212; typically wealthier households. This is a distributional criticism: QE may worsen wealth inequality without generating proportionate real economic stimulus.'
         }
       ]
     },
@@ -103,8 +103,8 @@ window.ECONOS_LAND_SECTION_A = {
       context: {
         type: 'data-grid',
         items: [
-          { color: 'blue',  icon: '%', label: 'Bank Rate (March 2009 &#8211; March 2020)', value: '0.5&#8211;0.25%' },
-          { color: 'blue',  icon: '%', label: 'Bank Rate (March 2020 &#8211; Dec 2021)',   value: '0.10%'           },
+          { color: 'blue',  icon: '%', label: 'Bank Rate (March 2009 &#8212; March 2020)', value: '0.5&#8211;0.25%' },
+          { color: 'blue',  icon: '%', label: 'Bank Rate (March 2020 &#8212; Dec 2021)',   value: '0.10%'           },
           { color: 'rose',  icon: '%', label: 'Eurozone ECB deposit rate (2014&#8211;22)', value: 'Negative rates'  },
           { color: 'green', icon: '&#163;', label: 'Total BoE QE purchases (2009&#8211;21)', value: '&#163;895bn'   }
         ]
@@ -117,8 +117,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Explain why the zero lower bound creates a constraint on conventional monetary policy and how central banks have responded.',
-          hint:        '4-mark response &#8211; define the zero lower bound, explain the constraint it creates, and explain QE and/or forward guidance as responses.',
-          modelAnswer: 'The zero lower bound (ZLB) is the constraint that nominal interest rates cannot typically be reduced below zero (or cannot be reduced significantly below zero), because at negative rates depositors would prefer to hold physical cash. The data shows the UK Bank Rate stuck at 0.10% from March 2020 &#8211; at the effective lower bound. With rates unable to fall further, the Bank cannot use its primary instrument to stimulate aggregate demand during a deep recession. Central banks have responded with unconventional tools. First, quantitative easing (QE): purchasing bonds to directly reduce long-term yields and expand the money supply &#8211; the UK spent &#163;895bn. Second, forward guidance: committing to keep rates low for an extended period to anchor expectations and support borrowing decisions now. The Eurozone ECB went further, implementing negative interest rates (charging banks to deposit reserves) &#8211; though the UK Bank of England explicitly rejected this approach, expressing doubts about its effectiveness through the banking transmission channel.'
+          hint:        '4-mark response &#8212; define the zero lower bound, explain the constraint it creates, and explain QE and/or forward guidance as responses.',
+          modelAnswer: 'The zero lower bound (ZLB) is the constraint that nominal interest rates cannot typically be reduced below zero (or cannot be reduced significantly below zero), because at negative rates depositors would prefer to hold physical cash. The data shows the UK Bank Rate stuck at 0.10% from March 2020 &#8212; at the effective lower bound. With rates unable to fall further, the Bank cannot use its primary instrument to stimulate aggregate demand during a deep recession. Central banks have responded with unconventional tools. First, quantitative easing (QE): purchasing bonds to directly reduce long-term yields and expand the money supply &#8212; the UK spent &#163;895bn. Second, forward guidance: committing to keep rates low for an extended period to anchor expectations and support borrowing decisions now. The Eurozone ECB went further, implementing negative interest rates (charging banks to deposit reserves) &#8212; though the UK Bank of England explicitly rejected this approach, expressing doubts about its effectiveness through the banking transmission channel.'
         },
         {
           id:     'q3b',
@@ -134,7 +134,7 @@ window.ECONOS_LAND_SECTION_A = {
           ],
           correct:         'opt-b',
           feedbackCorrect: 'Correct. Forward guidance works by credibly communicating the central bank\'s intended future policy path, anchoring interest rate expectations and thereby influencing current borrowing, saving and investment decisions.',
-          feedbackWrong:   'The correct answer is B. Forward guidance reduces current borrowing costs and stimulates spending by credibly signalling that rates will remain low, anchoring market expectations. Unlike QE, it does not involve asset purchases or money creation &#8211; it works through the expectations channel.'
+          feedbackWrong:   'The correct answer is B. Forward guidance reduces current borrowing costs and stimulates spending by credibly signalling that rates will remain low, anchoring market expectations. Unlike QE, it does not involve asset purchases or money creation &#8212; it works through the expectations channel.'
         }
       ]
     },
@@ -163,8 +163,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the data, explain how a rise in the Bank Rate affects the sterling exchange rate and inflation through the exchange rate channel.',
-          hint:        '4-mark response &#8211; explain the hot money flow mechanism, its effect on sterling, and how this feeds through to import prices and inflation.',
-          modelAnswer: 'A rise in the Bank Rate increases the interest rate paid on UK financial assets relative to assets in other countries. This attracts &#8220;hot money&#8221; capital inflows from overseas investors seeking higher returns &#8211; they must buy sterling to invest in UK assets. Increased demand for sterling causes the exchange rate to appreciate, as shown in the data (from $1.22 to $1.28). A stronger sterling makes UK imports cheaper: the same amount of sterling now buys more foreign currency, so import prices fall by 4.9%. Since the UK import intensity of GDP is approximately 30%, lower import prices directly reduce the cost of many goods consumed domestically, applying downward pressure on the CPI. This exchange rate channel operates quickly compared with the demand channel and is particularly important for an open, trade-dependent economy such as the UK.'
+          hint:        '4-mark response &#8212; explain the hot money flow mechanism, its effect on sterling, and how this feeds through to import prices and inflation.',
+          modelAnswer: 'A rise in the Bank Rate increases the interest rate paid on UK financial assets relative to assets in other countries. This attracts &#8220;hot money&#8221; capital inflows from overseas investors seeking higher returns &#8212; they must buy sterling to invest in UK assets. Increased demand for sterling causes the exchange rate to appreciate, as shown in the data (from $1.22 to $1.28). A stronger sterling makes UK imports cheaper: the same amount of sterling now buys more foreign currency, so import prices fall by 4.9%. Since the UK import intensity of GDP is approximately 30%, lower import prices directly reduce the cost of many goods consumed domestically, applying downward pressure on the CPI. This exchange rate channel operates quickly compared with the demand channel and is particularly important for an open, trade-dependent economy such as the UK.'
         },
         {
           id:     'q4b',
@@ -205,8 +205,8 @@ window.ECONOS_LAND_SECTION_A = {
           marks:       4,
           type:        'freetext',
           stem:        'Using the extract, explain two limitations of monetary policy as a tool for managing the macroeconomy.',
-          hint:        '4-mark response &#8211; identify two distinct limitations with explanation, using the extract for at least one.',
-          modelAnswer: 'First, monetary policy operates with long and variable lags. The extract states that Bank Rate changes take 18&#8211;24 months to feed fully through to inflation. This means the Bank must set policy based on forecasts of future economic conditions that may prove incorrect &#8211; as the extract notes, the 2021&#8211;22 period saw rates remain near zero while inflation accelerated, with policy &#8220;behind the curve.&#8221; If the Bank misjudges timing, it can amplify economic instability rather than reduce it. Second, monetary policy is a blunt instrument that cannot be targeted at specific sectors or groups. A rise in the Bank Rate increases borrowing costs across the entire economy, harming mortgage holders, small businesses, and exporters simultaneously regardless of whether the inflation originates from their spending. This indiscriminate impact may cause collateral damage &#8211; for instance, raising unemployment in sectors unrelated to the inflationary pressure &#8211; that fiscal policy could potentially avoid through targeted measures.'
+          hint:        '4-mark response &#8212; identify two distinct limitations with explanation, using the extract for at least one.',
+          modelAnswer: 'First, monetary policy operates with long and variable lags. The extract states that Bank Rate changes take 18&#8211;24 months to feed fully through to inflation. This means the Bank must set policy based on forecasts of future economic conditions that may prove incorrect &#8212; as the extract notes, the 2021&#8211;22 period saw rates remain near zero while inflation accelerated, with policy &#8220;behind the curve.&#8221; If the Bank misjudges timing, it can amplify economic instability rather than reduce it. Second, monetary policy is a blunt instrument that cannot be targeted at specific sectors or groups. A rise in the Bank Rate increases borrowing costs across the entire economy, harming mortgage holders, small businesses, and exporters simultaneously regardless of whether the inflation originates from their spending. This indiscriminate impact may cause collateral damage &#8212; for instance, raising unemployment in sectors unrelated to the inflationary pressure &#8212; that fiscal policy could potentially avoid through targeted measures.'
         },
         {
           id:     'q5b',
@@ -221,8 +221,8 @@ window.ECONOS_LAND_SECTION_A = {
             { id: 'opt-d', text: 'The Bank is free to set any inflation target it chooses'                              }
           ],
           correct:         'opt-b',
-          feedbackCorrect: 'Correct. The Bank of England has &#8220;operational independence&#8221; &#8211; it sets interest rates to meet the 2% inflation target. But the target itself is set by HM Treasury (the government), not the Bank. The Bank decides HOW to achieve the target; the government decides WHAT the target is.',
-          feedbackWrong:   'The correct answer is B. The Bank of England has operational independence &#8211; the freedom to set interest rates as it sees fit to meet the inflation target. But the inflation target (2% CPI) is set by the government (HM Treasury). This distinction between target-setting (government) and instrument-setting (Bank) is important.'
+          feedbackCorrect: 'Correct. The Bank of England has &#8220;operational independence&#8221; &#8212; it sets interest rates to meet the 2% inflation target. But the target itself is set by HM Treasury (the government), not the Bank. The Bank decides HOW to achieve the target; the government decides WHAT the target is.',
+          feedbackWrong:   'The correct answer is B. The Bank of England has operational independence &#8212; the freedom to set interest rates as it sees fit to meet the inflation target. But the inflation target (2% CPI) is set by the government (HM Treasury). This distinction between target-setting (government) and instrument-setting (Bank) is important.'
         }
       ]
     }

@@ -5,7 +5,7 @@
     topicId:  'contestability_main',
     title:    'Contestable Markets',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'contestability' }),
+    backUrl:  TopicLoader.routes.learn('contestability'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers sunk costs, hit-and-run entry, and incumbent behaviour',
     shortNames: [

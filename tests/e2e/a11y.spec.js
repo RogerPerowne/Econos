@@ -57,27 +57,27 @@ test('home page is accessible', async ({ page }) => {
 
 test('Learn It shell is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/learn?topic=inflation');
+  await page.goto('/learn/inflation');
   /* Wait for the engine to paint #main-content, then for the
      interactive-widget init RAF to settle. */
   await page.waitForSelector('#main-content', { state: 'attached' });
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(500);
-  await assertAxeClean(page, '/learn?topic=inflation');
+  await assertAxeClean(page, '/learn/inflation');
 });
 
 test('Link It intro is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/link?topic=inflation&station=intro');
+  await page.goto('/link/inflation/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
-  await assertAxeClean(page, '/link?station=intro');
+  await assertAxeClean(page, '/link/inflation/intro');
 });
 
 test('Land It intro is accessible', async ({ page }) => {
   await login(page);
-  await page.goto('/land?topic=inflation&station=intro');
+  await page.goto('/land/inflation/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
-  await assertAxeClean(page, '/land?station=intro');
+  await assertAxeClean(page, '/land/inflation/intro');
 });

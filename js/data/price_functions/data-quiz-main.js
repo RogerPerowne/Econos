@@ -5,7 +5,7 @@
     topicId:  'price_functions_main',
     title:    'Functions of the Price Mechanism',
     subtitle: 'Theme 1 &middot; Topic 2.7 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'price_functions_main' }),
+    backUrl:  TopicLoader.routes.learn('price_functions_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers signalling, incentive, rationing functions, Hayek\'s knowledge problem, entrepreneurship, and when prices fail',
     shortNames: [

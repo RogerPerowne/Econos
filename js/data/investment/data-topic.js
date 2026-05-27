@@ -521,7 +521,7 @@ window.ECONOS_TOPIC = {
         text: 'Strong evaluation distinguishes short-run AD effects from long-run AS effects.'
       },
 
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', { quiz: 'main' }), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

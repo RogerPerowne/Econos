@@ -5,7 +5,7 @@
     topicId:  'ppf_main',
     title:    'Production Possibility Frontiers',
     subtitle: 'Theme 1 &middot; Topic 1.4 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'ppf_main' }),
+    backUrl:  TopicLoader.routes.learn('ppf_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers PPF construction, productive efficiency, opportunity cost, the bowed-out shape, shifts, and capital vs consumer goods',
     shortNames: [

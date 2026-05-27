@@ -17,8 +17,8 @@ window.ECONOS_TOPIC = {
     ],
     tip: 'Negative externality → MSC > MPC → market overproduces. Deadweight welfare loss = triangle between market output and socially optimal output. Government corrects via Pigouvian tax to shift MPC up to MSC.',
     stages: [
-      { num: 1, name: 'Learn it', sub: '7 concept cards',         state: 'done',      href: TopicLoader.buildUrl('topic.html')      },
-      { num: 2, name: 'Link it',  sub: 'Apply skills in context', state: 'available', href: TopicLoader.buildUrl('link_intro.html') },
+      { num: 1, name: 'Learn it', sub: '7 concept cards',         state: 'done',      href: TopicLoader.routes.learn()      },
+      { num: 2, name: 'Link it',  sub: 'Apply skills in context', state: 'available', href: TopicLoader.routes.link('intro') },
       { num: 3, name: 'Land it',  sub: 'Exam paper',              state: 'locked'                                                  }
     ]
   },
@@ -95,7 +95,7 @@ window.ECONOS_TOPIC = {
         { term: 'Marginal External Cost (MEC)', def: 'The additional cost imposed on third parties by the production (or consumption) of one more unit.' },
         { term: 'Marginal Social Cost (MSC)',   def: 'The total additional cost to society of one more unit – equal to MPC + MEC. The true cost the market should respond to but does not.' }
       ],
-      examEdge: 'Remember the trilogy – <strong>private</strong> is paid by the producer; <strong>external</strong> is paid by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the positive mirror, see <a href="/learn?topic=pos_externalities" style="color:#2563EB;font-weight:700;">Positive Externalities</a>.'
+      examEdge: 'Remember the trilogy – <strong>private</strong> is paid by the producer; <strong>external</strong> is paid by others; <strong>social = private + external</strong>. State this explicitly before you draw the diagram. For the positive mirror, see <a href="/learn/pos-externalities" style="color:#2563EB;font-weight:700;">Positive Externalities</a>.'
     },
     {
       id: 'neg_externalities_2',
@@ -322,7 +322,7 @@ window.ECONOS_TOPIC = {
       },
       conclusion: { title: 'Top-line judgement', text: 'The best policy depends on the <em>external harm</em>, the <em>information available</em> and the <em>trade-off between flexibility and certainty</em>. Market-based tools are generally more efficient; command-and-control may be preferred when certainty and fairness matter most.' },
       examEdge: 'Anchor every judgement to: <strong>size of externality · elasticity · political feasibility · irreversibility</strong>. Top answers reach a judgement, not a list.',
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

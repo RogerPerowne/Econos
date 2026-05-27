@@ -5,7 +5,7 @@
     topicId:  'unstable_markets_main',
     title:    'Unstable Markets & Commodity Prices',
     subtitle: 'Development Economics',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'unstable_markets' }),
+    backUrl:  TopicLoader.routes.learn('unstable_markets'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers commodity price volatility, cobweb model, buffer stocks, and stabilisation policies',
     shortNames: [

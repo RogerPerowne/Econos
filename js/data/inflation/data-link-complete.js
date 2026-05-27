@@ -64,5 +64,5 @@ window.ECONOS_LINK_COMPLETE = {
     judge:   'Combine your chain, diagram and evaluation into one structured judgement: clear position, mechanism, condition, limitation.'
   },
 
-  nextUrl: TopicLoader.buildUrl('land_intro.html')
+  nextUrl: TopicLoader.routes.land('intro')
 };

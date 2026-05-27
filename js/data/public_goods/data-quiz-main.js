@@ -5,7 +5,7 @@
     topicId:  'public_goods_main',
     title:    'Public Goods',
     subtitle: 'Theme 1 &middot; Topic 3.3 &middot; Edexcel A-Level',
-    backUrl:  TopicLoader.buildUrl('learn.html', { topic: 'public_goods_main' }),
+    backUrl:  TopicLoader.routes.learn('public_goods_main'),
     backLabel: 'Back to Learn It',
     lede: '10 questions · ~8 minutes · covers the non-excludability and non-rivalry properties, the free-rider problem, and quasi-public goods',
     shortNames: [

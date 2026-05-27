@@ -458,7 +458,7 @@ window.ECONOS_TOPIC = {
         title: 'A balanced evaluation always wins',
         text: 'When you evaluate factors, don\'t just rank them – explain that the <em>right mix</em>, the <em>quality</em>, and the <em>institutional environment</em> matter together. Avoid blanket statements like "labour is most important." Instead: "in <em>this</em> economy, weak human capital is the binding constraint, so further investment in education matters more than adding workers."'
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

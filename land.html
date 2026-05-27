@@ -8,28 +8,26 @@
   <meta name="theme-color" content="#FAF8F4">
   <title>Land It · Econos</title>
 
-  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Econos" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable.woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css">
-  <script src="js/auth-check.js"></script>
-  <script defer src="js/logger.js"></script>
-  <script defer src="js/icons.js"></script>
-  <script defer src="js/topic-loader.js"></script>
-  <script defer src="js/progress.js"></script>
-  <script defer src="js/engines/shell.js"></script>
-  <script defer src="js/engines/land-router.js"></script>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/auth-check.js"></script>
+  <script defer src="/js/logger.js"></script>
+  <script defer src="/js/icons.js"></script>
+  <script defer src="/js/topic-loader.js"></script>
+  <script defer src="/js/progress.js"></script>
+  <script defer src="/js/engines/shell.js"></script>
+  <script defer src="/js/engines/land-router.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var params  = new URLSearchParams(window.location.search);
-      var station = params.get('station') || 'intro';
-      LandRouter.start(station);
+      LandRouter.start();
     });
   </script>
   <meta property="og:type" content="website">
@@ -39,7 +37,7 @@
   <meta property="og:description" content="Practice exam technique and land your answers. A-Level Economics — Econos.">
   <meta property="og:image" content="https://econos.co.uk/assets/logo-full.png">
   <link rel="canonical" href="https://econos.co.uk/land">
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
 </head>
 <body>
 

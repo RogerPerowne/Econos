@@ -361,7 +361,7 @@ window.ECONOS_TOPIC = {
         title: 'The complete welfare sentence',
         text: 'In any welfare question, the A* structure is: <em>\'While real GDP per capita has [risen/fallen], this overstates/understates actual welfare because [distribution/PPP/sustainability]. A better measure – [HDI/Gini/median income] – reveals [alternative picture].\'</em> This structure always works and always scores.'
       },
-      quizCta: { href: TopicLoader.buildUrl('quiz.html', {quiz: 'main'}), label: 'Test yourself →' }
+      quizCta: { href: TopicLoader.routes.quiz('main'), label: 'Test yourself →' }
     }
 
   ]

@@ -52,10 +52,29 @@ window.ECONOS_TOPIC = {
         { tone: 'purple', icon: '🏛️', head: 'LRAS',              body: 'Long run aggregate supply. Vertical at productive capacity (Yf). Prices do not change LRAS.' }
       ],
 
-      flowChart: {
+      interactiveDiagram: {
         svgKey: 'srasLrasIntro',
         label: 'THE BASIC DIAGRAM',
-        emoji: '📊'
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'SRAS',
+            show: ['idl-1'],
+            tone: 'blue',
+            head: 'SRAS slopes upward.',
+            body: ['Higher prices improve profit margins when wages are sticky.', 'Firms increase output in the short run as the price level rises.'],
+            analysis: 'The upward slope reflects sticky costs — wages and supply contracts adjust slowly, so rising prices temporarily boost profit margins and output.'
+          },
+          {
+            label: 'SRAS + LRAS',
+            show: ['idl-1', 'idl-2'],
+            tone: 'purple',
+            head: 'LRAS is vertical at full-capacity output (Yf).',
+            body: ['In the long run, all costs adjust. Output is determined by productive capacity.', 'The economy returns to Yf regardless of price level changes.'],
+            analysis: 'Where SRAS crosses LRAS marks the long-run equilibrium at P₁ and Yf — the economy\'s maximum sustainable output.'
+          }
+        ]
       },
 
       pairLabel: 'SRAS VS LRAS',
@@ -103,10 +122,29 @@ window.ECONOS_TOPIC = {
         { tone: 'green',  icon: '📊', title: 'Profit margins improve and firms produce more.' }
       ],
 
-      flowChart: {
+      interactiveDiagram: {
         svgKey: 'srasCurveStatic',
         label: 'THE SRAS DIAGRAM',
-        emoji: '📊'
+        emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'Point A',
+            show: ['idl-1'],
+            tone: 'blue',
+            head: 'Initial equilibrium at A.',
+            body: ['At price level P₁, firms supply Y₁.', 'Wages and production costs are sticky — they have not yet risen.'],
+            analysis: 'Point A is the starting position. Costs are fixed in the short run, so price and output sit at the lower-left of the curve.'
+          },
+          {
+            label: 'Movement to B',
+            show: ['idl-1', 'idl-2'],
+            tone: 'blue',
+            head: 'Price rises — output rises too.',
+            body: ['The price level rises to P₂. Revenue increases but costs remain fixed short-term.', 'Higher profit margins encourage firms to produce more — moving up to B at Y₂.'],
+            analysis: 'This is a movement along SRAS, not a shift. The slope reflects sticky costs making short-run supply responsive to price changes.'
+          }
+        ]
       },
 
       causesLabel: 'WHAT SHIFTS SRAS?',
@@ -114,12 +152,12 @@ window.ECONOS_TOPIC = {
       causesStyle: 'tinted-flat',
       causesCols: 3,
       causes: [
-        { tone: 'purple', icon: '👥', head: 'Wages',                    body: 'Rise in wages shifts SRAS left – fall shifts SRAS right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
-        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            body: 'Rise in energy prices shifts SRAS left – fall shifts right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
-        { tone: 'purple', icon: '📦', head: 'Raw material costs',       body: 'Rise in raw material costs shifts SRAS left – fall shifts right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
-        { tone: 'green',  icon: '📈', head: 'Productivity',             body: 'Rise in productivity shifts SRAS right – fall shifts left. <span style="color:#059669;font-weight:800;">→</span> <span style="color:#DC2626;font-weight:800;">←</span>' },
-        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', body: 'Currency depreciation raises import costs — shifts SRAS left. Appreciation shifts right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' },
-        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', body: 'Rise in indirect taxes shifts SRAS left – subsidies shift SRAS right. <span style="color:#DC2626;font-weight:800;">←</span> <span style="color:#059669;font-weight:800;">→</span>' }
+        { tone: 'purple', icon: '👥', head: 'Wages',                    shiftArrows: [{ dir: 'left', text: 'Rise in wages shifts SRAS left' }, { dir: 'right', text: 'Fall in wages shifts SRAS right' }] },
+        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            shiftArrows: [{ dir: 'left', text: 'Rise in energy prices shifts SRAS left' }, { dir: 'right', text: 'Fall in energy prices shifts right' }] },
+        { tone: 'purple', icon: '📦', head: 'Raw material costs',       shiftArrows: [{ dir: 'left', text: 'Rise in raw material costs shifts SRAS left' }, { dir: 'right', text: 'Fall shifts SRAS right' }] },
+        { tone: 'green',  icon: '📈', head: 'Productivity',             shiftArrows: [{ dir: 'right', text: 'Rise in productivity shifts SRAS right' }, { dir: 'left', text: 'Fall in productivity shifts left' }] },
+        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', shiftArrows: [{ dir: 'left', text: 'Currency depreciation raises import costs — shifts SRAS left' }, { dir: 'right', text: 'Appreciation shifts SRAS right' }] },
+        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', shiftArrows: [{ dir: 'left', text: 'Rise in indirect taxes shifts SRAS left' }, { dir: 'right', text: 'Subsidies shift SRAS right' }] }
       ],
 
       pairLabel: 'LEFT OR RIGHT?',
@@ -253,12 +291,12 @@ window.ECONOS_TOPIC = {
       causesStyle: 'tinted-flat',
       causesCols: 3,
       causes: [
-        { tone: 'purple', icon: '👥', head: 'Wages',                    body: 'Rise in wages shifts SRAS left – fall shifts SRAS right.' },
-        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            body: 'Rise in energy prices shifts SRAS left – fall shifts right.' },
-        { tone: 'purple', icon: '📦', head: 'Raw material costs',       body: 'Rise in raw material costs shifts SRAS left – fall shifts right.' },
-        { tone: 'green',  icon: '📈', head: 'Productivity',             body: 'Rise in productivity shifts SRAS right – fall shifts left.' },
-        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', body: 'Currency depreciation raises import costs — shifts SRAS left. Appreciation shifts right.' },
-        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', body: 'Rise in indirect taxes shifts SRAS left – subsidies shift SRAS right.' }
+        { tone: 'purple', icon: '👥', head: 'Wages',                    shiftArrows: [{ dir: 'left', text: 'Rise in wages shifts SRAS left' }, { dir: 'right', text: 'Fall in wages shifts SRAS right' }] },
+        { tone: 'amber',  icon: '⚡', head: 'Energy prices',            shiftArrows: [{ dir: 'left', text: 'Rise in energy prices shifts SRAS left' }, { dir: 'right', text: 'Fall in energy prices shifts right' }] },
+        { tone: 'purple', icon: '📦', head: 'Raw material costs',       shiftArrows: [{ dir: 'left', text: 'Rise in raw material costs shifts SRAS left' }, { dir: 'right', text: 'Fall shifts SRAS right' }] },
+        { tone: 'green',  icon: '📈', head: 'Productivity',             shiftArrows: [{ dir: 'right', text: 'Rise in productivity shifts SRAS right' }, { dir: 'left', text: 'Fall in productivity shifts left' }] },
+        { tone: 'blue',   icon: '🌍', head: 'Import costs via exchange rate', shiftArrows: [{ dir: 'left', text: 'Currency depreciation raises import costs — shifts SRAS left' }, { dir: 'right', text: 'Appreciation shifts SRAS right' }] },
+        { tone: 'amber',  icon: '🏛️', head: 'Indirect taxes / subsidies', shiftArrows: [{ dir: 'left', text: 'Rise in indirect taxes shifts SRAS left' }, { dir: 'right', text: 'Subsidies shift SRAS right' }] }
       ],
 
       pairLabel: 'LEFT OR RIGHT?',
@@ -296,14 +334,29 @@ window.ECONOS_TOPIC = {
         svgKey: 'lrasShiftDiagram',
         label: 'THE GROWTH DIAGRAM',
         emoji: '📊',
+        layers: ['idl-1', 'idl-2'],
         views: [
           {
-            label: 'LRAS shifts right',
+            label: 'Base equilibrium',
             show: [],
-            icon: 'ℹ️',
+            tone: 'slate',
+            head: 'Initial long-run equilibrium.',
+            body: ['AD intersects LRAS₁ at E₁.', 'Price level is P₁. Real output is at full capacity Y₁.']
+          },
+          {
+            label: 'LRAS shifts right',
+            show: ['idl-1'],
+            tone: 'green',
+            head: 'Productive capacity expands.',
+            body: ['LRAS shifts right to LRAS₂.', 'New full-capacity output is Y₂ — higher than before.']
+          },
+          {
+            label: 'New equilibrium',
+            show: ['idl-1', 'idl-2'],
+            tone: 'green',
             head: 'Sustainable non-inflationary growth.',
-            body: ['More goods and services can be produced without putting upward pressure on prices.', 'Real output rises from Y₁ to Y₂. The price level is stable or slightly lower.'],
-            tone: 'green'
+            body: ['AD intersects LRAS₂ at E₂.', 'Real output rises from Y₁ to Y₂. The price level is stable or slightly lower.'],
+            analysis: 'A rightward LRAS shift is the supply-side ideal — more output without inflation. This contrasts with a demand-led AD shift, which raises output and prices together.'
           }
         ]
       },
@@ -358,43 +411,25 @@ window.ECONOS_TOPIC = {
       tip: { icon: '✅', tone: 'green', text: 'Supply-side policy targets the economy\'s capacity, costs and efficiency.' },
 
       causesFirst: true,
-      causesLabel: 'TWO FAMILIES',
-      causesEmoji: '⚖️',
+      causesLabel: 'MARKET-BASED POLICIES',
+      causesEmoji: '🔧',
       causesStyle: 'tinted-flat',
       causesCols: 2,
       causes: [
-        {
-          tone: 'blue', icon: '💹', head: 'Tax cuts',
-          body: 'Lower taxes to raise work incentives and investment. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast \xb7 Low cost \xb7 Mixed evidence</span>'
-        },
-        {
-          tone: 'amber', icon: '🎓', head: 'Education and training',
-          body: 'Improve skills to lift productivity and earning potential. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow \xb7 High cost \xb7 Strong evidence</span>'
-        },
-        {
-          tone: 'blue', icon: '📋', head: 'Deregulation',
-          body: 'Remove barriers to entry and reduce red tape. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast \xb7 Low cost \xb7 Mixed evidence</span>'
-        },
-        {
-          tone: 'amber', icon: '🛣️', head: 'Infrastructure',
-          body: 'Invest in transport, energy and digital networks. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow \xb7 High cost \xb7 Strong evidence</span>'
-        },
-        {
-          tone: 'blue', icon: '🏛️', head: 'Privatisation',
-          body: 'Transfer state ownership to the private sector. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Medium speed \xb7 Medium cost \xb7 Mixed evidence</span>'
-        },
-        {
-          tone: 'amber', icon: '🔬', head: 'R&D subsidies',
-          body: 'Support research and innovation through grants or tax relief. <span style="color:#D97706;font-size:11px;font-weight:700;">Medium speed \xb7 Medium cost \xb7 Mixed evidence</span>'
-        },
-        {
-          tone: 'blue', icon: '👥', head: 'Flexible labour markets',
-          body: 'Easier hiring and firing to improve labour allocation. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast \xb7 Low cost \xb7 Mixed evidence</span>'
-        },
-        {
-          tone: 'amber', icon: '🏭', head: 'Industrial strategy',
-          body: 'Target support for strategic sectors and clusters. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow \xb7 High cost \xb7 Mixed evidence</span>'
-        }
+        { tone: 'blue', icon: '💹', head: 'Tax cuts',               body: 'Lower taxes to raise work incentives and investment. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast · Low cost · Mixed evidence</span>' },
+        { tone: 'blue', icon: '📋', head: 'Deregulation',           body: 'Remove barriers to entry and reduce red tape. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast · Low cost · Mixed evidence</span>' },
+        { tone: 'blue', icon: '🏛️', head: 'Privatisation',          body: 'Transfer state ownership to the private sector. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Medium speed · Medium cost · Mixed evidence</span>' },
+        { tone: 'blue', icon: '👥', head: 'Flexible labour markets', body: 'Easier hiring and firing to improve labour allocation. <span style="color:#3B82F6;font-size:11px;font-weight:700;">Fast · Low cost · Mixed evidence</span>' }
+      ],
+
+      causes2Label: 'INTERVENTIONIST POLICIES',
+      causes2Emoji: '🏗️',
+      causes2Cols: 2,
+      causes2: [
+        { tone: 'amber', icon: '🎓', head: 'Education and training', body: 'Improve skills to lift productivity and earning potential. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow · High cost · Strong evidence</span>' },
+        { tone: 'amber', icon: '🛣️', head: 'Infrastructure',         body: 'Invest in transport, energy and digital networks. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow · High cost · Strong evidence</span>' },
+        { tone: 'amber', icon: '🔬', head: 'R&D subsidies',          body: 'Support research and innovation through grants or tax relief. <span style="color:#D97706;font-size:11px;font-weight:700;">Medium speed · Medium cost · Mixed evidence</span>' },
+        { tone: 'amber', icon: '🏭', head: 'Industrial strategy',    body: 'Target support for strategic sectors and clusters. <span style="color:#D97706;font-size:11px;font-weight:700;">Slow · High cost · Mixed evidence</span>' }
       ],
 
       pairLabel: 'WHEN EACH WORKS BEST',
@@ -430,11 +465,44 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '✅', tone: 'green', text: 'The same output gain can come from stronger demand or stronger supply – but the price effect is different.' },
 
-      flowChart: {
-        svgKey: 'adVsSupplySideDiagram',
-        label: 'TWO PATHS TO HIGHER OUTPUT',
-        emoji: '🔀'
-      },
+      interactiveDiagram: [
+        {
+          svgKey: 'adShiftInteractive',
+          label: 'DEMAND-SIDE STIMULUS',
+          emoji: '📈',
+          layers: ['idl-1', 'idl-2'],
+          views: [
+            { label: 'Base', show: [], tone: 'slate',
+              head: 'Initial equilibrium at E₁.',
+              body: ['AD and SRAS intersect at E₁.', 'Price level P₁, real output Y₁.'] },
+            { label: 'AD shifts right', show: ['idl-1'], tone: 'blue',
+              head: 'A demand stimulus shifts AD right to AD₂.',
+              body: ['Government spending, tax cuts or looser monetary policy raise demand.', 'The whole AD curve shifts rightward.'] },
+            { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'blue',
+              head: 'Output rises — but so does the price level.',
+              body: ['The new equilibrium E₂ is higher on SRAS.', 'Y₂ > Y₁ but P₂ > P₁ — demand-pull inflation.'],
+              analysis: 'Demand stimulus raises output and the price level together. Near full capacity, most of the boost becomes inflationary rather than productive.' }
+          ]
+        },
+        {
+          svgKey: 'srasRightShiftInteractive',
+          label: 'SUPPLY-SIDE IMPROVEMENT',
+          emoji: '⚙️',
+          layers: ['idl-1', 'idl-2'],
+          views: [
+            { label: 'Base', show: [], tone: 'slate',
+              head: 'Initial equilibrium at E₁.',
+              body: ['AD and SRAS₁ intersect at E₁.', 'Price level P₁, real output Y₁.'] },
+            { label: 'SRAS shifts right', show: ['idl-1'], tone: 'green',
+              head: 'A supply-side improvement shifts SRAS right.',
+              body: ['Higher productivity, lower costs or better technology cut firms\' costs at every price level.', 'SRAS₂ lies to the right of SRAS₁.'] },
+            { label: 'New equilibrium', show: ['idl-1', 'idl-2'], tone: 'green',
+              head: 'Output rises — price level stable or lower.',
+              body: ['E₂ is to the right of and below E₁.', 'Y₂ > Y₁ and P₂ ≤ P₁ — non-inflationary growth.'],
+              analysis: 'Supply-side improvement raises output while keeping inflation in check. This is the key advantage over demand stimulus — especially when the economy is near full capacity.' }
+          ]
+        }
+      ],
 
       comparisonTable: {
         title: 'COMPARE THE OUTCOMES',
@@ -482,15 +550,15 @@ window.ECONOS_TOPIC = {
       causesFirst: true,
       causesLabel: 'SIX EVALUATION TESTS',
       causesEmoji: '⚖️',
-      causesStyle: 'tinted-flat',
+      causesStyle: 'icon-top',
       causesCols: 3,
       causes: [
         { tone: 'blue',   icon: '⏱️', head: '1. Time lags',           body: 'Effects are often very slow. Strengthens evaluation if reforms have long payback periods.' },
         { tone: 'amber',  icon: '£',        head: '2. Funding cost',        body: 'Infrastructure and education are expensive. Weakens if fiscal space is limited.' },
         { tone: 'purple', icon: '👥',  head: '3. Political feasibility', body: 'Reforms create losers as well as winners. Weakens if opposition is strong.' },
         { tone: 'green',  icon: '⚖️',  head: '4. Distributional effects', body: 'Some reforms can be regressive. Weakens if inequality worsens.' },
-        { tone: 'blue',   icon: '🔗',  head: '5. Complementarity with demand management', body: 'Best when combined with demand policy. Strengthens when macro conditions are favourable.' },
-        { tone: 'amber',  icon: '🌍',  head: '6. International competitiveness context', body: 'Global conditions matter. Weakens if trading partners also improve supply-side.' }
+        { tone: 'blue',   icon: '🔗',  head: '5. Fits demand policy', body: 'Supply-side works best combined with demand management. Strengthens when macro conditions are favourable.' },
+        { tone: 'amber',  icon: '🌍',  head: '6. Global context',    body: 'Global conditions matter. Weakens if trading partners also improve their supply-side.' }
       ],
 
       summaryRow: [

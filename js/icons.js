@@ -4301,22 +4301,27 @@ window.ECONOS_ICONS = {
         <text x="113" y="135" font-size="10" font-weight="700" fill="#DC2626">occurs</text>
       </g>
 
-      <!-- idl-1: J-curve path + annotations -->
-      <!-- Path: flat → drops to trough (200,246) → recovers through zero (290,155) → surplus peak (405,78) -->
+      <!-- idl-1: dip into deficit only (flat → trough). Reveal PED<1 worsening. -->
       <g class="idl-1" style="display:none">
-        <path d="M 70,155 L 110,155 C 120,162 175,248 200,246 C 220,244 262,196 290,155 C 312,120 365,90 405,78"
+        <path d="M 70,155 L 110,155 C 120,162 175,248 200,246"
               fill="none" stroke="#DC2626" stroke-width="2.8" stroke-linecap="round"/>
 
         <!-- Trough marker -->
         <line x1="200" y1="155" x2="200" y2="282" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 3"/>
         <circle cx="200" cy="246" r="4.5" fill="#DC2626" stroke="#fff" stroke-width="1.5"/>
 
-        <!-- Zero-crossing marker -->
-        <circle cx="290" cy="155" r="4" fill="#DC2626" stroke="#fff" stroke-width="1.5"/>
-
-        <!-- PED<1 region annotation (in the deficit dip) -->
+        <!-- PED<1 region annotation (under the dip) -->
         <text x="175" y="268" font-size="9.5" font-weight="700" fill="#DC2626" text-anchor="middle">PED_X + PED_M &lt; 1</text>
         <text x="175" y="280" font-size="9"   fill="#DC2626" text-anchor="middle">devaluation worsens CA</text>
+      </g>
+
+      <!-- idl-2: recovery extension (trough → zero-crossing → surplus). Reveal PED>1 + J-curve label. -->
+      <g class="idl-2" style="display:none">
+        <path d="M 200,246 C 220,244 262,196 290,155 C 312,120 365,90 405,78"
+              fill="none" stroke="#DC2626" stroke-width="2.8" stroke-linecap="round"/>
+
+        <!-- Zero-crossing marker -->
+        <circle cx="290" cy="155" r="4" fill="#DC2626" stroke="#fff" stroke-width="1.5"/>
 
         <!-- PED>1 region annotation (in the surplus recovery) -->
         <text x="355" y="115" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">PED_X + PED_M &gt; 1</text>
@@ -4326,12 +4331,12 @@ window.ECONOS_ICONS = {
         <text x="248" y="185" font-size="11" font-weight="700" fill="#DC2626" font-style="italic">J-curve</text>
       </g>
 
-      <!-- idl-2: Marshall-Lerner fails — CA stays in deficit (dashed purple) + formula box -->
-      <g class="idl-2" style="display:none">
+      <!-- idl-3: Marshall-Lerner fails — dashed purple path + formula box -->
+      <g class="idl-3" style="display:none">
         <path d="M 110,155 C 135,175 178,252 202,252 C 228,252 300,258 410,256"
               fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-dasharray="9 5" stroke-linecap="round"/>
 
-        <!-- Formula box (top area, clear of both curves) -->
+        <!-- Formula box -->
         <rect x="240" y="22" width="188" height="44" rx="7" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.2"/>
         <text x="334" y="40" font-size="9.5" font-weight="800" fill="#6D28D9" text-anchor="middle">Marshall-Lerner condition</text>
         <text x="334" y="56" font-size="12"  font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>

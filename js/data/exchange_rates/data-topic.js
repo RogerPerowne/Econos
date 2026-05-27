@@ -77,34 +77,37 @@ window.ECONOS_TOPIC = {
       lede: 'Depreciation makes exports cheaper and imports dearer — but the current account does not improve immediately. The J-curve traces the path; Marshall-Lerner says when it actually completes.',
       interactiveDiagram: {
         svgKey: 'jCurveInteractive',
-        layers: ['idl-1', 'idl-2'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         views: [
           {
             label: 'Before devaluation',
             tone: 'blue',
             head: 'The pre-depreciation position',
             body: 'Currency is stable and the current account sits at its pre-depreciation level. Then the pound depreciates — exports become cheaper abroad, imports dearer at home. The intuition says CA should improve, but contracts and prices are locked in the short run.',
-            analysis: 'Key question: will the CA improve? Not immediately — volumes take time to adjust. The J-curve traces the path.'
+            analysis: 'Key question: will the CA improve? Not immediately — volumes take time to adjust.'
           },
           {
-            label: 'J-curve unfolds',
+            label: 'Worse first',
             tone: 'rose',
             show: ['idl-1'],
-            head: 'Four phases of the J-curve',
-            body: [
-              '<strong>A→B:</strong> Import bills rise immediately in £; export volumes locked by existing contracts.',
-              '<strong>B:</strong> Trough at ~6 months — maximum deterioration of the current account.',
-              '<strong>B→C:</strong> New contracts written; export demand picks up as price signals work through.',
-              '<strong>C→D:</strong> CA rises above its pre-depreciation level — long-run improvement complete.'
-            ],
-            analysis: 'Duration is typically 12–18 months in developed economies. The CA worsens before it improves.'
+            head: 'CA dips to the trough',
+            body: 'Import prices rise immediately in £, but contracts are fixed — buyers keep purchasing at the new higher price. Export volumes do not jump because foreign buyers also sit on existing contracts. The import bill rises while export revenue is flat, so the CA worsens to its trough at ~6 months.',
+            analysis: 'This is why depreciation looks like it isn\'t working in the short run. With elasticities low (PED_X + PED_M < 1) the CA is actively worsening.'
           },
           {
-            label: 'Marshall-Lerner condition',
-            tone: 'purple',
+            label: 'Recovery',
+            tone: 'green',
             show: ['idl-1', 'idl-2'],
-            head: 'The J completes only if M-L holds',
-            body: 'If <strong>|PED_X| + |PED_M| &gt; 1</strong>, the volume response is large enough to outweigh the price effect and the CA eventually improves. If the sum is less than 1, exports and imports are too inelastic — depreciation leaves the CA permanently worse (dashed purple path).',
+            head: 'Volumes respond and CA improves',
+            body: 'New contracts get written at the post-depreciation prices. Foreign demand for cheaper exports picks up and domestic buyers switch away from dearer imports. The CA recovers past the baseline into surplus — the classic J-curve shape. Typical duration: 12–18 months.',
+            analysis: 'The trick is patience. The mechanism was always going to work — it just needed time for elasticities to kick in.'
+          },
+          {
+            label: 'Marshall-Lerner',
+            tone: 'purple',
+            show: ['idl-1', 'idl-2', 'idl-3'],
+            head: 'The J only completes if M-L holds',
+            body: 'The recovery requires <strong>|PED_X| + |PED_M| &gt; 1</strong> — the volume response large enough to outweigh the adverse price effect. If exports and imports are too inelastic, depreciation leaves the CA <em>permanently worse</em> (dashed purple path).',
             analysis: 'UK services-heavy exports are relatively inelastic — limits how far the J completes in practice. Always link M-L to the country\'s export composition in an evaluation.'
           }
         ]

@@ -407,7 +407,7 @@ window.ECONOS_TOPIC = {
 
       interactiveDiagram: {
         svgKey: 'jCurveInteractive',
-        layers: ['idl-1', 'idl-2'],
+        layers: ['idl-1', 'idl-2', 'idl-3'],
         label: 'THE J-CURVE DIAGRAM',
         emoji: '📉',
         views: [
@@ -422,7 +422,7 @@ window.ECONOS_TOPIC = {
             label: 'Worse first',
             tone: 'rose',
             show: ['idl-1'],
-            head: 'The current account deteriorates to the trough',
+            head: 'CA deteriorates to the trough',
             body: [
               'Import prices rise immediately — buyers keep purchasing at the new higher £ price.',
               'Export volumes do not jump yet — foreign buyers have existing contracts.',
@@ -434,9 +434,17 @@ window.ECONOS_TOPIC = {
             label: 'Recovery',
             tone: 'green',
             show: ['idl-1', 'idl-2'],
-            head: 'Volumes respond — but only if M-L holds',
-            body: 'Export volumes rise and import volumes fall as contracts expire and firms adjust. If <strong>|PED_X| + |PED_M| &gt; 1</strong> (Marshall–Lerner satisfied), the volume response outweighs the price effect and the CA improves past the starting point.',
-            analysis: 'If M-L fails (dashed path), the CA stays permanently worse — the J never completes. This is the risk for services-heavy economies like the UK.'
+            head: 'Volumes respond — CA improves',
+            body: 'Export volumes rise and import volumes fall as contracts expire and firms adjust. The CA recovers past the pre-depreciation baseline into surplus — the classic J-shape.',
+            analysis: 'Typical duration: 12–18 months in developed economies. The mechanism works — it just needs time.'
+          },
+          {
+            label: 'Marshall-Lerner',
+            tone: 'purple',
+            show: ['idl-1', 'idl-2', 'idl-3'],
+            head: 'The J only completes if M-L holds',
+            body: 'The recovery requires <strong>|PED_X| + |PED_M| &gt; 1</strong>. If exports and imports are too inelastic, volume response is too weak and the CA stays permanently worse (dashed purple path) — the J never completes.',
+            analysis: 'Services-heavy economies (like the UK) have lower elasticities than commodity exporters — limits the J in practice.'
           }
         ]
       },

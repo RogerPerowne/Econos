@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'protectionism_main',
-    topicId:  'protectionism_main',
     title:    'Protectionism',
     subtitle: 'International Economics',
     backUrl:  TopicLoader.routes.learn('restrictions-on-free-trade'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_prot_1',
         type: 'mcq',
         q:    'A tariff is:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'A tariff is a tax on imports. It raises the price of imported goods, making domestic alternatives more competitive. The revenue goes to the government. The consumer pays more, reducing consumer surplus.'
       },
       {
-        id:   'q_prot_2',
         type: 'mcq',
         q:    'An import quota differs from a tariff because:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'A tariff works through the price mechanism – it raises import costs, reducing quantity demanded. A quota sets a hard limit on import volumes regardless of price. Quotas give no revenue to the government (the windfall goes to the quota holder).'
       },
       {
-        id:   'q_prot_3',
         type: 'mcq',
         q:    'The infant industry argument for protectionism states that:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'The infant industry case: a new industry may not yet have achieved the scale to compete with established foreign rivals. Temporary protection allows it to grow, achieve MES, and eventually compete without support.'
       },
       {
-        id:   'q_prot_4',
         type: 'mcq',
         q:    'A key argument against protectionism is that it:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Protectionism harms consumers (higher prices, less choice), reduces efficiency (protected firms face less pressure), and can trigger retaliatory tariffs – a trade war that harms all parties.'
       },
       {
-        id:   'q_prot_5',
         type: 'numeric_input',
         q:    'World price of a good = £20. A tariff of £5 is applied. Domestic demand falls from 500 to 450 units, and domestic supply rises from 100 to 150 units. Calculate the tariff revenue for the government (£).',
         answer: 1500,
@@ -76,7 +69,6 @@
         workingSteps: ['Imports = demand − domestic supply = 450 − 150 = 300 units','Revenue = £5 × 300 = £1,500']
       },
       {
-        id:   'q_prot_6',
         type: 'categorise',
         q:    'Categorise each argument as for or against protectionism.',
         categories: ['Argument for protectionism','Argument against protectionism'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_prot_7',
         type: 'cause_effect',
         q:    'Match each protectionist measure to its primary effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_prot_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Tariff','Import quota','Export subsidy','Comparative advantage'],
@@ -111,7 +101,6 @@
         exp:  'Tariff, import quota, and export subsidy are all protectionist measures that restrict free trade. Comparative advantage is the principle underpinning the case for free trade – it argues against protectionism.'
       },
       {
-        id:   'q_prot_9',
         type: 'data_table',
         q:    'Use the tariff data to calculate the deadweight welfare loss area (approximately). Assume a simple triangular DWL.',
         tableHeaders: ['Measure','Value'],
@@ -126,7 +115,6 @@
         exp:  'Deadweight loss ≈ ½ × tariff × reduction in imports = ½ × £4 × 100 = £200. This represents the efficiency loss from the trade barrier.'
       },
       {
-        id:   'q_prot_10',
         type: 'match_pairs',
         q:    'Match each protectionism concept to its description.',
         pairs: [

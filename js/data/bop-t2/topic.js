@@ -5,7 +5,7 @@
    ============================================================ */
 
 window.ECONOS_TOPIC = {
-  id: 'bop_t2',
+  id: 'bop-t2',
   topicNum: '1.4',
   theme: 'Theme 2 \xb7 The National and Global Economy',
   title: 'Balance of Payments',

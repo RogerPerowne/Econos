@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'unstable_markets_main',
-    topicId:  'unstable_markets_main',
     title:    'Unstable Markets & Commodity Prices',
     subtitle: 'Development Economics',
     backUrl:  TopicLoader.routes.learn('unstable-commodity-markets'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_um_1',
         type: 'mcq',
         q:    'Agricultural commodity prices are typically more volatile than manufactured good prices because:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Agricultural supply can shift dramatically (droughts, floods, disease) and both supply and demand are inelastic. Even small supply or demand shocks therefore cause large price changes – classic conditions for price volatility.'
       },
       {
-        id:   'q_um_2',
         type: 'mcq',
         q:    'The cobweb model explains price instability by showing that:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'In the cobweb model, if prices are high this period, farmers plan to produce more next period. This extra supply pushes prices down, leading to underproduction and high prices again – creating an oscillating cycle.'
       },
       {
-        id:   'q_um_3',
         type: 'mcq',
         q:    'A buffer stock scheme stabilises commodity prices by:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Buffer stocks: an authority (often government or international body) buys the commodity when price falls toward a floor (building stocks) and sells from stocks when price rises toward a ceiling – stabilising price within a band.'
       },
       {
-        id:   'q_um_4',
         type: 'mcq',
         q:    'Commodity-dependent developing countries are particularly vulnerable because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Prebisch-Singer thesis: primary commodity prices tend to fall relative to manufactured goods over time. Countries dependent on one or two commodities face volatile export revenues, making development planning and investment very difficult.'
       },
       {
-        id:   'q_um_5',
         type: 'numeric_input',
         q:    'A country earns 80% of export revenue from one commodity. If its commodity price falls by 25%, by how many percentage points does total export revenue fall (assuming other exports unchanged)?',
         answer: 20,
@@ -76,7 +69,6 @@
         workingSteps: ['Impact on total exports = 0.80 × 25% = 20 percentage points']
       },
       {
-        id:   'q_um_6',
         type: 'categorise',
         q:    'Categorise each factor as a cause of commodity price volatility or a consequence.',
         categories: ['Cause of volatility','Consequence of volatility'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_um_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in commodity markets.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_um_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Buffer stock scheme','Cobweb model','Commodity price volatility','Quantitative Easing'],
@@ -111,7 +101,6 @@
         exp:  'Buffer stocks, the cobweb model, and commodity price volatility are all related to the economics of unstable markets. Quantitative Easing is a monetary policy tool – it is not relevant to commodity market instability.'
       },
       {
-        id:   'q_um_9',
         type: 'data_table',
         q:    'Use the buffer stock data to identify in which year the scheme must sell from its stocks.',
         tableHeaders: ['Year','Production (m tonnes)','Target price (£/tonne)','Market price (£/tonne)'],
@@ -126,7 +115,6 @@
         exp:  'The buffer stock scheme sells from its stocks when price exceeds the ceiling (above target). In Year 2, market price = £58 > £50 target, so the scheme must sell stocks to bring price down. In Year 1 and 3, price is below target – the scheme buys.'
       },
       {
-        id:   'q_um_10',
         type: 'match_pairs',
         q:    'Match each unstable markets concept to its description.',
         pairs: [

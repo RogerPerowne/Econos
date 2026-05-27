@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'public_goods_main',
-    topicId:  'public_goods_main',
     title:    'Public Goods',
     subtitle: 'Theme 1 &middot; Topic 3.3 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('public_goods_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: pure public good definition */
       { type: 'mcq',
-        id: 'q_pg_1',
         stem: 'Which combination of properties defines a <strong>pure public good</strong>?',
         opts: [
           'Non-excludable (impossible to prevent non-payers from consuming) AND non-rival (one person\'s consumption does not reduce availability to others)',
@@ -32,7 +29,6 @@
 
       /* 2 – Categorise: types of goods */
       { type: 'categorise',
-        id: 'q_pg_2',
         stem: 'Sort each good into the correct category based on excludability and rivalry.',
         categories: ['Pure public good', 'Pure private good', 'Club good', 'Common resource'],
         items: [
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: free-rider problem */
       { type: 'mcq',
-        id: 'q_pg_3',
         stem: 'The <strong>free-rider problem</strong> arises because of:',
         opts: [
           'Non-excludability – rational consumers know they can benefit from the good without paying, so they do not reveal their true willingness to pay',
@@ -62,7 +57,6 @@
 
       /* 4 – MCQ: quasi-public goods */
       { type: 'mcq',
-        id: 'q_pg_4',
         stem: 'A busy motorway at peak hours could be described as a <strong>quasi-public good</strong>. Why?',
         opts: [
           'The road is non-excludable (free to use without a toll) but becomes rival at capacity – congestion means additional users reduce the quality of service for existing users',
@@ -76,7 +70,6 @@
 
       /* 5 – Sequence: free-rider problem to government provision */
       { type: 'sequence',
-        id: 'q_pg_5',
         stem: 'Place the steps in the correct order showing how the <strong>free-rider problem leads to market failure</strong> for a pure public good.',
         instr: 'Tap the steps in the correct order, from first to last.',
         items: [
@@ -93,7 +86,6 @@
 
       /* 6 – Match pairs: public good concepts */
       { type: 'match_pairs',
-        id: 'q_pg_6',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Non-excludability', b: 'Cannot prevent non-payers from consuming the good' },
@@ -108,7 +100,6 @@
 
       /* 7 – Cause & effect: non-excludability consequences */
       { type: 'cause_effect',
-        id: 'q_pg_7',
         stem: 'Match each public good characteristic to its economic consequence.',
         pairs: [
           { cause: 'National defence is non-excludable', effect: 'All citizens are protected whether or not they pay taxes – free-riding is inevitable' },
@@ -123,7 +114,6 @@
 
       /* 8 – Odd one out: pure public goods */
       { type: 'odd_one_out',
-        id: 'q_pg_8',
         stem: 'Three of these are <strong>pure public goods</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🛡️', label: 'National defence – protection covers all citizens; non-payers cannot be excluded', note: '' },
@@ -137,7 +127,6 @@
 
       /* 9 – Data table: UK public goods provision */
       { type: 'data_table',
-        id: 'q_pg_9',
         stem: 'The table shows public goods provision data for the UK.',
         headers: ['Public good', 'Annual government spending (£bn)', 'Private sector could provide?', 'Free-rider severity'],
         rows: [
@@ -160,7 +149,6 @@
 
       /* 10 – Multi-select: evaluation of public good theory */
       { type: 'multi_select',
-        id: 'q_pg_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of public good theory and government provision?',
         opts: [
           'Pure public goods are non-excludable and non-rival – the free-rider problem makes private provision impossible',

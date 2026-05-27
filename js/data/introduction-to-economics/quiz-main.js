@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'basic_econ_problem_main',
-    topicId:  'basic_econ_problem_main',
     title:    'The Basic Economic Problem',
     subtitle: 'Theme 1 &middot; Topic 1.1 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('basic_econ_problem_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: scarcity */
       { type: 'mcq',
-        id: 'q_bep_1',
         stem: 'Which statement best defines the concept of <strong>scarcity</strong> in economics?',
         opts: [
           'Resources are finite but human wants are unlimited – creating a fundamental mismatch that forces choices at every level of society',
@@ -32,7 +29,6 @@
 
       /* 2 – Numeric input: opportunity cost */
       { type: 'numeric_input',
-        id: 'q_bep_2',
         stem: 'Calculate the <strong>opportunity cost</strong> of the government\'s decision, measured in hospital operations.',
         context: 'A government has a fixed budget of <strong>£2 billion</strong>. It decides to build a new motorway at a cost of <strong>£2 billion</strong>. A hospital operation costs <strong>£8,000</strong> per patient. How many hospital operations are foregone?',
         answer: 250000,
@@ -49,7 +45,6 @@
 
       /* 3 – Elastic sort: three fundamental economic questions */
       { type: 'elastic_sort',
-        id: 'q_bep_3',
         stem: 'Classify each policy question under the correct fundamental economic problem it addresses.',
         categories: ['what', 'how', 'for_whom'],
         categoryLabels: ['What to produce?', 'How to produce it?', 'For whom to produce?'],
@@ -66,7 +61,6 @@
 
       /* 4 – MCQ: economic agents */
       { type: 'mcq',
-        id: 'q_bep_4',
         stem: 'Which of the following correctly identifies the <strong>four main types of economic agent</strong> and their primary economic role?',
         opts: [
           'Consumers (maximise utility), Firms (maximise profit), Government (maximise social welfare), Banks (allocate financial capital)',
@@ -80,7 +74,6 @@
 
       /* 5 – Elastic sort: positive vs normative statements */
       { type: 'elastic_sort',
-        id: 'q_bep_5',
         stem: 'Classify each statement as <strong>positive</strong> (factual, testable) or <strong>normative</strong> (value judgement, opinion).',
         categories: ['positive', 'normative'],
         categoryLabels: ['Positive statement (factual/testable)', 'Normative statement (value judgement)'],
@@ -97,7 +90,6 @@
 
       /* 6 – MCQ: rational behaviour */
       { type: 'mcq',
-        id: 'q_bep_6',
         stem: 'Traditional economics assumes that economic agents are <strong>rational</strong>. What does this assumption require?',
         opts: [
           'Agents weigh up costs and benefits consistently, choose the option that maximises their self-interest, and update their decisions when information changes',
@@ -111,7 +103,6 @@
 
       /* 7 – Match pairs: economic concepts */
       { type: 'match_pairs',
-        id: 'q_bep_7',
         stem: 'Match each economic concept to its definition.',
         pairs: [
           { a: 'Scarcity', b: 'Unlimited wants but finite resources – forces choices' },
@@ -126,7 +117,6 @@
 
       /* 8 – Cause & effect: scarcity and choice */
       { type: 'cause_effect',
-        id: 'q_bep_8',
         stem: 'Match each scenario to the opportunity cost or trade-off it reveals.',
         pairs: [
           { cause: 'A student spends an evening studying economics instead of working a part-time shift', effect: 'Opportunity cost = the wages foregone from not working' },
@@ -141,7 +131,6 @@
 
       /* 9 – Odd one out: economic resources (factors of production) */
       { type: 'odd_one_out',
-        id: 'q_bep_9',
         stem: 'Three of these are recognised <strong>factors of production</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '👷', label: 'Labour – the mental and physical effort of human workers in production', note: '' },
@@ -155,7 +144,6 @@
 
       /* 10 – Para fill: the basic economic problem */
       { type: 'para_fill',
-        id: 'q_bep_10',
         stem: 'Complete the paragraph summarising the basic economic problem.',
         anchor: 'Economics begins with a fundamental tension between wants and resources.',
         para: 'The basic economic problem arises because human [1] are unlimited while the resources available to satisfy them are [2]. This means that society must make [3] about how to allocate scarce resources. Every choice involves an [4] cost – the value of the next best [5] foregone. The three fundamental economic questions are: what to [6], how to produce it, and [7] to produce it for. Different [8] systems answer these questions in different ways – market economies use the [9] mechanism; command economies rely on central [10].',

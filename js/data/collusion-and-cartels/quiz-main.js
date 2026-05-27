@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'collusion_cartels_main',
-    topicId:  'collusion_cartels_main',
     title:    'Collusion & Cartels',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('collusion-and-cartels'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_cc_1',
         type: 'mcq',
         q:    'A cartel is defined as:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'A cartel is an explicit (overt) agreement between competing firms to coordinate pricing, output, or market sharing – effectively behaving as a collective monopoly. Cartels are illegal in most jurisdictions.'
       },
       {
-        id:   'q_cc_2',
         type: 'mcq',
         q:    'Tacit collusion differs from explicit collusion because:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Tacit collusion arises when firms recognise their interdependence and independently adopt similar pricing strategies (e.g., price matching, price leadership) without communicating directly.'
       },
       {
-        id:   'q_cc_3',
         type: 'mcq',
         q:    'Cartels are inherently unstable because:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Even if a cartel agreement maximises joint profit, each individual firm can earn more by secretly undercutting the agreed price. This prisoner\'s dilemma logic makes cartels prone to collapse.'
       },
       {
-        id:   'q_cc_4',
         type: 'mcq',
         q:    'A competition authority\'s leniency programme offers:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Leniency programmes (also called whistle-blower immunity) destabilise cartels by offering the first firm to self-report immunity from fines, making cheating on the cartel even more attractive.'
       },
       {
-        id:   'q_cc_5',
         type: 'numeric_input',
         q:    'A three-firm cartel agrees to split the market equally and charge £50. If each firm cheats by cutting to £45, it can capture 40% of market demand of 600 units. What does a cheating firm earn? (P × Q)',
         answer: 10800,
@@ -76,7 +69,6 @@
         workingSteps: ['Market demand = 600 units','Cheater\'s share = 40% × 600 = 240 units','Revenue = £45 × 240 = £10,800']
       },
       {
-        id:   'q_cc_6',
         type: 'categorise',
         q:    'Categorise each as a factor that promotes cartel stability or cartel breakdown.',
         categories: ['Promotes stability','Promotes breakdown'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_cc_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in cartel theory.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_cc_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Price fixing','Market sharing','Output restriction','Competitive tendering'],
@@ -111,7 +101,6 @@
         exp:  'Price fixing, market sharing, and output restriction are all forms of cartel behaviour. Competitive tendering is a procurement process designed to promote competition, not restrict it.'
       },
       {
-        id:   'q_cc_9',
         type: 'data_table',
         q:    'Use the payoff matrix to identify the Nash Equilibrium outcome.',
         tableHeaders: ['Firm B: Keep price','Firm B: Cut price'],
@@ -129,7 +118,6 @@
         exp:  'Nash Equilibrium is where neither player wants to deviate. If both keep: A gets £500 but could get £800 by cutting, so A deviates. Both cutting (£300, £300) is the NE – each firm cuts regardless of what the other does.'
       },
       {
-        id:   'q_cc_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description.',
         pairs: [

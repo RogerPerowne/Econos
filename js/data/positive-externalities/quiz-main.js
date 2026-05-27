@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'pos_externalities_main',
-    topicId:  'pos_externalities_main',
     title:    'Positive Externalities',
     subtitle: 'Theme 1 &middot; Topic 3.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('pos_externalities_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: underproduction from positive externality */
       { type: 'mcq',
-        id: 'q_posext_1',
         stem: 'In a market with a <strong>positive externality of consumption</strong>, the free market produces at Q<sub>M</sub> but the social optimum is at Q*. Which correctly describes the relationship?',
         opts: [
           'Q<sub>M</sub> < Q* – the free market underproduces because MPB < MSB; consumers only consider their private benefit, ignoring the benefit to third parties',
@@ -32,7 +29,6 @@
 
       /* 2 – Categorise: production vs consumption positive externalities */
       { type: 'categorise',
-        id: 'q_posext_2',
         stem: 'Classify each example as a <strong>positive externality of production</strong> or <strong>consumption</strong>.',
         categories: ['Positive externality of production', 'Positive externality of consumption'],
         items: [
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: subsidy as correction */
       { type: 'mcq',
-        id: 'q_posext_3',
         stem: 'A government introduces a <strong>subsidy</strong> to correct a positive externality of consumption. The subsidy should be set equal to:',
         opts: [
           'The marginal external benefit at the social optimum – to shift the private demand (MPB) curve up to MSB',
@@ -62,7 +57,6 @@
 
       /* 4 – MCQ: merit goods */
       { type: 'mcq',
-        id: 'q_posext_4',
         stem: 'Education is a <strong>merit good</strong>. Which statement best explains why the free market is likely to underprovide education?',
         opts: [
           'Individuals underestimate the long-run private and social benefits of education – imperfect information leads to demand being below the socially optimal level',
@@ -76,7 +70,6 @@
 
       /* 5 – Para fill: positive externality analysis */
       { type: 'para_fill',
-        id: 'q_posext_5',
         stem: 'Complete the paragraph analysing a positive externality of consumption.',
         anchor: 'Vaccination is one of the most important examples of a positive externality of consumption.',
         para: 'When a person is vaccinated, they generate an [1] benefit for others – they are less likely to transmit disease to those who cannot be vaccinated. Because individuals only consider their own [2] benefit when deciding whether to get vaccinated, the market demand curve lies [3] the marginal social benefit curve. The free market produces [4] vaccinations than is socially optimal. The resulting [5] welfare loss can be corrected by a [6] per vaccination – shifting consumption toward the social [7]. If vaccination rates reach sufficient levels, [8] immunity is achieved, conferring a collective benefit with no additional private cost.',
@@ -95,7 +88,6 @@
 
       /* 6 – Cause & effect: positive externalities and policy */
       { type: 'cause_effect',
-        id: 'q_posext_6',
         stem: 'Match each positive externality scenario to the appropriate policy response and its mechanism.',
         pairs: [
           { cause: 'Vaccination has large positive externalities – herd immunity benefits non-vaccinated', effect: 'Government subsidises vaccines or makes them free – shifts demand to social optimum' },
@@ -110,7 +102,6 @@
 
       /* 7 – Match pairs: positive externality concepts */
       { type: 'match_pairs',
-        id: 'q_posext_7',
         stem: 'Match each term to its definition in the positive externality framework.',
         pairs: [
           { a: 'Marginal External Benefit (MEB)', b: 'Extra benefit received by third parties from one more unit consumed' },
@@ -125,7 +116,6 @@
 
       /* 8 – Odd one out: positive externalities */
       { type: 'odd_one_out',
-        id: 'q_posext_8',
         stem: 'Three of these are goods with significant <strong>positive externalities</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '💉', label: 'Vaccination – reduces disease transmission to the wider community', note: '' },
@@ -139,7 +129,6 @@
 
       /* 9 – Data table: UK education subsidies */
       { type: 'data_table',
-        id: 'q_posext_9',
         stem: 'The table shows UK education data.',
         headers: ['Indicator', '1960', '1990', '2022'],
         rows: [
@@ -162,7 +151,6 @@
 
       /* 10 – Multi-select: evaluation of positive externality policy */
       { type: 'multi_select',
-        id: 'q_posext_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of government intervention to correct positive externalities?',
         opts: [
           'Positive externalities cause market underproduction relative to the social optimum',

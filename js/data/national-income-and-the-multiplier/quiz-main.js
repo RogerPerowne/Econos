@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'multiplier_main',
-    topicId:  'multiplier_main',
     title:    'National Income & The Multiplier',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('national-income-and-the-multiplier'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_mult_1',
         type: 'mcq',
         q:    'In the circular flow of income, injections include:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Injections are flows of spending into the circular flow from outside the household-firm loop: Investment (I), Government spending (G), and Export revenue (X). Leakages/withdrawals are Savings (S), Taxation (T), and Imports (M).'
       },
       {
-        id:   'q_mult_2',
         type: 'mcq',
         q:    'Keynesian equilibrium national income is where:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Keynesian equilibrium occurs when planned injections (I+G+X) equal planned withdrawals (S+T+M). At this point there is no tendency for national income to change.'
       },
       {
-        id:   'q_mult_3',
         type: 'mcq',
         q:    'The value of the Keynesian multiplier depends on:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Multiplier = 1/(1−MPC) = 1/MPS. A higher MPC means more of each round of income is re-spent, so the multiplied effect on national income is larger.'
       },
       {
-        id:   'q_mult_4',
         type: 'mcq',
         q:    'The accelerator theory states that:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'The accelerator principle: investment depends not on the level of income but on the change in income (ΔY). When income is rising, firms invest to expand capacity; when growth slows, investment collapses even before income falls.'
       },
       {
-        id:   'q_mult_5',
         type: 'numeric_input',
         q:    'MPS = 0.2. The government injects £100m into the economy. Calculate the final change in national income (£m).',
         answer: 500,
@@ -76,7 +69,6 @@
         workingSteps: ['Multiplier = 1/0.2 = 5','ΔY = 5 × £100m = £500m']
       },
       {
-        id:   'q_mult_6',
         type: 'categorise',
         q:    'Categorise each as an injection or a leakage (withdrawal) in the circular flow.',
         categories: ['Injection','Leakage'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_mult_7',
         type: 'cause_effect',
         q:    'Match each multiplier-related cause to its effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_mult_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out in the context of multiplier theory?',
         opts: ['MPC','MPS','MRT (Marginal Rate of Tax)','Monopoly profit'],
@@ -111,7 +101,6 @@
         exp:  'MPC, MPS, and MRT are all marginal propensities that determine the size of leakages and hence the multiplier. Monopoly profit is a microeconomic concept unrelated to national income multiplier analysis.'
       },
       {
-        id:   'q_mult_9',
         type: 'data_table',
         q:    'Use the table to identify the multiplier and the change in national income from a £40bn injection.',
         tableHeaders: ['MPC','Multiplier','ΔY from £40bn injection (£bn)'],
@@ -131,7 +120,6 @@
         exp:  'Multiplier = 1/(1−MPC). MPC=0.75 → 1/0.25 = 4 → ΔY = 4×£40bn = £160bn. MPC=0.5→2, 0.6→2.5, 0.8→5.'
       },
       {
-        id:   'q_mult_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description in multiplier theory.',
         pairs: [

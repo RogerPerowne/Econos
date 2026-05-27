@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'govt_failure_main',
-    topicId:  'govt_failure_main',
     title:    'Government Failure',
     subtitle: 'Theme 1 &middot; Topic 4.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('govt_failure_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: definition */
       { type: 'mcq',
-        id: 'q_gf_1',
         stem: 'Which statement best defines <strong>government failure</strong>?',
         opts: [
           'Government intervention that causes resource misallocation – making the situation worse than the market outcome it was designed to correct',
@@ -32,7 +29,6 @@
 
       /* 2 – Categorise: types of government failure */
       { type: 'categorise',
-        id: 'q_gf_2',
         stem: 'Sort each example into the correct type of government failure.',
         categories: ['Information failure', 'Unintended consequences', 'Regulatory capture', 'Political myopia'],
         items: [
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: regulatory capture */
       { type: 'mcq',
-        id: 'q_gf_3',
         stem: '<strong>Regulatory capture</strong> best describes a situation where:',
         opts: [
           'Regulated firms or industries gain sufficient influence over their regulators that regulation serves the industry\'s interests rather than consumers\' or society\'s',
@@ -62,7 +57,6 @@
 
       /* 4 – MCQ: unintended consequences of rent control */
       { type: 'mcq',
-        id: 'q_gf_4',
         stem: 'A government imposes rent controls (a price ceiling below equilibrium) to help low-income tenants. What is the most likely <strong>unintended consequence</strong>?',
         opts: [
           'The supply of rental housing falls as landlords withdraw properties or convert them to other uses – the policy intended to help tenants worsens the long-run housing shortage',
@@ -76,7 +70,6 @@
 
       /* 5 – MCQ: political myopia */
       { type: 'mcq',
-        id: 'q_gf_5',
         stem: 'Which example best illustrates <strong>government failure from political short-termism</strong>?',
         opts: [
           'A government delays increasing the state pension age before an election, imposing higher future costs on taxpayers rather than current voters',
@@ -90,7 +83,6 @@
 
       /* 6 – Cause & effect: government failure mechanisms */
       { type: 'cause_effect',
-        id: 'q_gf_6',
         stem: 'Match each intervention to its government failure consequence.',
         pairs: [
           { cause: 'Agricultural subsidies introduced to support family farms', effect: 'Large agribusiness captures most of the subsidy through scale advantages; inequality worsens' },
@@ -105,7 +97,6 @@
 
       /* 7 – Match pairs: government failure vocabulary */
       { type: 'match_pairs',
-        id: 'q_gf_7',
         stem: 'Match each term to its definition.',
         pairs: [
           { a: 'Government failure', b: 'Intervention that worsens resource allocation compared to the market outcome' },
@@ -120,7 +111,6 @@
 
       /* 8 – Odd one out: government failure examples */
       { type: 'odd_one_out',
-        id: 'q_gf_8',
         stem: 'Three of these are examples of <strong>government failure</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🏠', label: 'Rent controls cause a long-run housing shortage as landlords exit the market', note: '' },
@@ -134,7 +124,6 @@
 
       /* 9 – Data table: UK public project cost overruns */
       { type: 'data_table',
-        id: 'q_gf_9',
         stem: 'The table shows UK public infrastructure project cost overruns – a measure of optimism bias.',
         headers: ['Project', 'Initial budget (£bn)', 'Final cost (£bn)', 'Overrun (%)'],
         rows: [
@@ -157,7 +146,6 @@
 
       /* 10 – Multi-select: evaluation of government failure argument */
       { type: 'multi_select',
-        id: 'q_gf_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the government failure argument?',
         opts: [
           'Government failure occurs when intervention makes resource allocation worse than the market outcome',

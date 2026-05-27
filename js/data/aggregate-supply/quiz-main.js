@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'agg_supply_main',
-    topicId:  'agg_supply_main',
     title:    'Aggregate Supply',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('aggregate-supply'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_as_1',
         type: 'mcq',
         q:    'The Short-Run Aggregate Supply (SRAS) curve slopes upward because:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'In the short run, some costs (especially wages) are sticky. When the price level rises, firms receive higher revenue but face unchanged costs – so they expand output. This gives an upward-sloping SRAS.'
       },
       {
-        id:   'q_as_2',
         type: 'mcq',
         q:    'In the Classical model, the Long-Run Aggregate Supply (LRAS) curve is:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Classical economists argue that in the long run, all prices and wages are fully flexible, so the economy always returns to full employment (potential output, Yf). LRAS is vertical – output is fixed by supply-side capacity.'
       },
       {
-        id:   'q_as_3',
         type: 'mcq',
         q:    'In the Keynesian model, the AS curve is horizontal at low output levels because:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Keynes argued that during a recession (with mass unemployment and idle capital), firms can expand output by hiring unemployed resources without bidding up wages or prices. The AS curve is flat in this range.'
       },
       {
-        id:   'q_as_4',
         type: 'mcq',
         q:    'Which of the following would shift SRAS to the LEFT (upward)?',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'A rise in raw material costs (a negative supply shock) increases the cost of production at every level of output. Firms produce less at any given price – SRAS shifts left, pushing prices up and output down (stagflation risk).'
       },
       {
-        id:   'q_as_5',
         type: 'numeric_input',
         q:    'Potential output is £2,000bn. Actual output is £1,700bn. What is the output gap (£bn) and state the sign (negative for a deflationary gap).',
         answer: -300,
@@ -76,7 +69,6 @@
         workingSteps: ['Output gap = £1,700bn − £2,000bn = −£300bn (negative / deflationary gap)']
       },
       {
-        id:   'q_as_6',
         type: 'categorise',
         q:    'Categorise each factor as shifting SRAS or shifting LRAS.',
         categories: ['Shifts SRAS','Shifts LRAS'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_as_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on aggregate supply.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_as_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out in the context of SRAS shifters?',
         opts: ['Change in input costs','Change in commodity prices','Change in potential output','Change in nominal wages'],
@@ -111,7 +101,6 @@
         exp:  'Changes in input costs, commodity prices, and nominal wages all shift SRAS by changing the cost of production in the short run. A change in potential output shifts LRAS – it is a long-run supply-side concept.'
       },
       {
-        id:   'q_as_9',
         type: 'data_table',
         q:    'Use the data to identify which scenario involves stagflation.',
         tableHeaders: ['Scenario','Change in Price Level','Change in Real Output','Cause'],
@@ -126,7 +115,6 @@
         exp:  'Stagflation is the combination of rising prices AND falling output – the worst of both worlds. Scenario C shows rising prices with falling output caused by a leftward SRAS shift (negative supply shock).'
       },
       {
-        id:   'q_as_10',
         type: 'match_pairs',
         q:    'Match each aggregate supply concept to its description.',
         pairs: [

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'labour_supply_nmw_main',
-    topicId:  'labour_supply_nmw_main',
     title:    'Labour Supply, Trade Unions & NMW',
     subtitle: 'Labour Markets & Distribution',
     backUrl:  TopicLoader.routes.learn('supply-of-labour'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_lsnmw_1',
         type: 'mcq',
         q:    'The backward-bending labour supply curve occurs when:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'At low wages, the substitution effect dominates: higher wages make leisure more expensive, so workers supply more hours. At high wages, the income effect dominates: workers are rich enough to "buy" more leisure – so supply falls.'
       },
       {
-        id:   'q_lsnmw_2',
         type: 'mcq',
         q:    'The substitution effect of a wage rise means:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'When wages rise, the opportunity cost of leisure increases. Workers substitute work for leisure – they supply more hours. This is the substitution effect and it always acts to increase labour supply.'
       },
       {
-        id:   'q_lsnmw_3',
         type: 'mcq',
         q:    'A trade union\'s primary role in wage bargaining is to:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'By collectively organising workers, a trade union acts as a monopoly supplier of labour. It can push for wages above the free-market equilibrium, potentially at the cost of lower employment if demand is elastic.'
       },
       {
-        id:   'q_lsnmw_4',
         type: 'mcq',
         q:    'In a monopsony labour market, a National Minimum Wage set above the monopsony wage can:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'A monopsonist restricts employment to keep wages low. A minimum wage set between the monopsony wage and competitive wage forces the monopsonist to pay more – and because MLC now equals the minimum wage, it may actually hire more workers.'
       },
       {
-        id:   'q_lsnmw_5',
         type: 'numeric_input',
         q:    'Before a minimum wage, workers earn £7/hr and 1,000 workers are employed. After a minimum wage of £9/hr, employment falls to 900. What is the change in the total wage bill (£)?',
         answer: 1100,
@@ -76,7 +69,6 @@
         workingSteps: ['Old wage bill = £7 × 1,000 = £7,000/hr','New wage bill = £9 × 900 = £8,100/hr','Change = £8,100 − £7,000 = +£1,100/hr']
       },
       {
-        id:   'q_lsnmw_6',
         type: 'categorise',
         q:    'Categorise each effect of a National Minimum Wage as a potential benefit or potential cost.',
         categories: ['Potential benefit','Potential cost'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_lsnmw_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in labour supply and minimum wage contexts.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_lsnmw_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Backward-bending supply','Income effect','Substitution effect','Marginal Revenue Product'],
@@ -111,7 +101,6 @@
         exp:  'The backward-bending supply curve, the income effect, and the substitution effect are all related to worker labour supply decisions. MRP is a labour demand concept (the value of an additional worker to the firm).'
       },
       {
-        id:   'q_lsnmw_9',
         type: 'data_table',
         q:    'Use the table to identify at which wage the backward-bending supply curve begins to bend backward.',
         tableHeaders: ['Wage (£/hr)','Hours supplied/week'],
@@ -128,7 +117,6 @@
         exp:  'Hours supplied peak at £12/hr (38 hours). After £12, hours fall (to 36 at £14, then 32 at £16) – the income effect dominates the substitution effect. The backward bend begins at £12/hr.'
       },
       {
-        id:   'q_lsnmw_10',
         type: 'match_pairs',
         q:    'Match each concept to its correct description.',
         pairs: [

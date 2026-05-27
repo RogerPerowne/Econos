@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'efficiency_main',
-    topicId:  'efficiency_main',
     title:    'Efficiency',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('types-of-efficiency'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_eff_1',
         type: 'mcq',
         q:    'Allocative efficiency is achieved when:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Allocative efficiency means resources are allocated to their highest-value use. This occurs when P = MC: price reflects both what consumers value the last unit at and what it costs society to produce it.'
       },
       {
-        id:   'q_eff_2',
         type: 'mcq',
         q:    'Productive efficiency requires that firms produce:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Productive efficiency is achieved when output is produced at minimum average cost – the firm is on the lowest point of its long-run average cost curve, using resources without waste.'
       },
       {
-        id:   'q_eff_3',
         type: 'mcq',
         q:    'Dynamic efficiency refers to:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Dynamic efficiency occurs when firms invest in research and development, producing new products and better production methods over time. It is a benefit sometimes associated with monopoly (funded by supernormal profit).'
       },
       {
-        id:   'q_eff_4',
         type: 'mcq',
         q:    'X-inefficiency is most likely to occur when:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'X-inefficiency (Leibenstein) refers to unnecessary internal cost inflation caused by managerial slack, lack of discipline, or absence of competitive pressure. Monopolies are especially prone to it.'
       },
       {
-        id:   'q_eff_5',
         type: 'numeric_input',
         q:    'A firm produces 500 units at AC = £8. Its technically minimum AC is £6. Calculate the total X-inefficiency cost.',
         answer: 1000,
@@ -76,7 +69,6 @@
         workingSteps: ['Excess cost per unit = £8 − £6 = £2','Total X-inefficiency = £2 × 500 = £1,000']
       },
       {
-        id:   'q_eff_6',
         type: 'categorise',
         q:    'Categorise each condition as evidence of allocative efficiency or productive efficiency.',
         categories: ['Allocative efficiency','Productive efficiency'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_eff_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on economic efficiency.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_eff_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Allocative efficiency','Productive efficiency','X-inefficiency','Dynamic efficiency'],
@@ -111,7 +101,6 @@
         exp:  'Allocative, productive, and dynamic efficiency are all desirable economic states. X-inefficiency is an undesirable outcome – unnecessary cost inflation from lack of competitive pressure.'
       },
       {
-        id:   'q_eff_9',
         type: 'data_table',
         q:    'Use the table to identify which firm is productively efficient.',
         tableHeaders: ['Firm','Output (Q)','TC (£)','AC (£)','Min AC (£)'],
@@ -126,7 +115,6 @@
         exp:  'Productive efficiency requires AC = minimum AC. Only Beta achieves this: AC = £5.00 = min AC. The other firms all operate above their minimum average cost.'
       },
       {
-        id:   'q_eff_10',
         type: 'match_pairs',
         q:    'Match each efficiency concept to its correct description.',
         pairs: [

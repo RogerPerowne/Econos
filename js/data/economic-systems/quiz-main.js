@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'economic_systems_main',
-    topicId:  'economic_systems_main',
     title:    'Economic Systems',
     subtitle: 'Theme 1 &middot; Topic 1.6 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('economic_systems_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – Categorise: economic systems */
       { type: 'categorise',
-        id: 'q_es_1',
         stem: 'Sort each policy or feature into the correct economic system.',
         categories: ['Free market economy', 'Command economy', 'Mixed economy'],
         items: [
@@ -34,7 +31,6 @@
 
       /* 2 – MCQ: free market advantages */
       { type: 'mcq',
-        id: 'q_es_2',
         stem: 'A key advantage of a <strong>free market economy</strong> over central planning is:',
         opts: [
           'The price mechanism aggregates dispersed information efficiently – no central body needs to know everything; prices coordinate millions of individual decisions automatically',
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: command economy problems */
       { type: 'mcq',
-        id: 'q_es_3',
         stem: 'The <strong>Soviet Union\'s planned economy</strong> achieved rapid industrialisation in the 1930s but faced growing inefficiencies by the 1980s. Which economic explanation best accounts for this?',
         opts: [
           'Central planners could not process the billions of pieces of information required to set prices and quantities efficiently for a complex modern economy; shortages and surpluses became endemic',
@@ -62,7 +57,6 @@
 
       /* 4 – Sequence: how the price mechanism allocates resources */
       { type: 'sequence',
-        id: 'q_es_4',
         stem: 'An increase in demand for electric vehicles. Place the steps showing how the <strong>price mechanism allocates resources</strong> in the correct order.',
         instr: 'Tap the steps in the correct order, from first to last.',
         items: [
@@ -79,7 +73,6 @@
 
       /* 5 – MCQ: mixed economy rationale */
       { type: 'mcq',
-        id: 'q_es_5',
         stem: 'The UK is a <strong>mixed economy</strong>. Which statement best explains why governments intervene even in predominantly market-based economies?',
         opts: [
           'Markets fail in the presence of externalities, public goods, information asymmetry, and inequality – government intervention corrects failures that the price mechanism cannot resolve alone',
@@ -93,7 +86,6 @@
 
       /* 6 – Match pairs: economic systems vocabulary */
       { type: 'match_pairs',
-        id: 'q_es_6',
         stem: 'Match each concept to its correct description.',
         pairs: [
           { a: 'Consumer sovereignty', b: 'Consumers\' preferences determine what is produced – "voting with wallets"' },
@@ -108,7 +100,6 @@
 
       /* 7 – Cause & effect: market vs command economy */
       { type: 'cause_effect',
-        id: 'q_es_7',
         stem: 'Match each feature of economic systems to its consequence.',
         pairs: [
           { cause: 'Free market: prices rise when demand exceeds supply', effect: 'Resources automatically flow to profitable areas without central direction' },
@@ -123,7 +114,6 @@
 
       /* 8 – Odd one out: advantages of free markets */
       { type: 'odd_one_out',
-        id: 'q_es_8',
         stem: 'Three of these are genuine <strong>advantages of free market economies</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🚀', label: 'Profit motive incentivises innovation and entrepreneurship', note: '' },
@@ -137,7 +127,6 @@
 
       /* 9 – Data table: market vs command economy performance */
       { type: 'data_table',
-        id: 'q_es_9',
         stem: 'The table compares economic performance indicators for market-oriented and command economies (approximate data).',
         headers: ['Indicator', 'USSR 1980', 'USA 1980', 'China (plan) 1978', 'China (market) 2010'],
         rows: [
@@ -159,7 +148,6 @@
 
       /* 10 – Multi-select: evaluation of economic systems */
       { type: 'multi_select',
-        id: 'q_es_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the relative merits of free market versus command economies?',
         opts: [
           'In a free market economy, resources are allocated through the price mechanism',

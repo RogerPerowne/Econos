@@ -1,5 +1,5 @@
 window.ECONOS_TOPIC = {
-  id: 'price_discrimination',
+  id: 'price-discrimination',
   topicNum: '3.11',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Price Discrimination',

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'monetary_main',
-    topicId:  'monetary_main',
     title:    'Monetary Policy',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('demand-side-policies-monetary'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_mp_1',
         type: 'mcq',
         q:    'The Bank of England\'s primary instrument of monetary policy is:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'The Bank of England\'s Monetary Policy Committee (MPC) sets the Bank Rate – the base interest rate. Changes in Bank Rate ripple through the economy via multiple transmission channels to influence inflation and output.'
       },
       {
-        id:   'q_mp_2',
         type: 'mcq',
         q:    'If the Bank of England raises interest rates, the expected effect on aggregate demand is:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Higher interest rates raise the cost of borrowing (reducing consumption and investment) and reward saving (reducing current spending). Both channels reduce aggregate demand, putting downward pressure on inflation.'
       },
       {
-        id:   'q_mp_3',
         type: 'mcq',
         q:    'Quantitative Easing (QE) involves the Bank of England:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'QE is an unconventional monetary policy: the central bank creates electronic money and uses it to buy assets (mainly government bonds). This pushes down long-term interest rates and increases the money supply, stimulating lending and spending.'
       },
       {
-        id:   'q_mp_4',
         type: 'mcq',
         q:    'A limitation of using interest rate cuts to stimulate the economy is:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'The zero lower bound problem: once rates reach near 0%, cutting further has diminishing returns. Banks may be unwilling to lend, and consumers unwilling to borrow regardless of rates – a "liquidity trap" in Keynesian terms.'
       },
       {
-        id:   'q_mp_5',
         type: 'numeric_input',
         q:    'Bank Rate rises from 1.5% to 4.0%. A household has a variable-rate mortgage of £200,000. Approximately how much more do they pay per year in interest (£)?',
         answer: 5000,
@@ -76,7 +69,6 @@
         workingSteps: ['Rate rise = 4.0% − 1.5% = 2.5%','Extra annual interest = 0.025 × £200,000 = £5,000']
       },
       {
-        id:   'q_mp_6',
         type: 'categorise',
         q:    'Categorise each scenario as expansionary or contractionary monetary policy.',
         categories: ['Expansionary monetary policy','Contractionary monetary policy'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_mp_7',
         type: 'cause_effect',
         q:    'Match each monetary policy action to its transmission effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_mp_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Bank Rate','Quantitative Easing','Forward guidance','Automatic stabilisers'],
@@ -111,7 +101,6 @@
         exp:  'Bank Rate, QE, and forward guidance are all tools of monetary policy used by the central bank. Automatic stabilisers are a feature of fiscal policy (built into the tax/benefit system).'
       },
       {
-        id:   'q_mp_9',
         type: 'data_table',
         q:    'Use the data to assess the effectiveness of monetary policy across different periods.',
         tableHeaders: ['Year','Bank Rate (%)','CPI Inflation (%)','GDP Growth (%)'],
@@ -131,7 +120,6 @@
         exp:  'In 2023, Bank Rate was 5.25% but inflation was still 6.7% – well above the 2% target. This illustrates a lag and limitation of monetary policy: rate rises take 12–18 months to fully feed through to prices.'
       },
       {
-        id:   'q_mp_10',
         type: 'match_pairs',
         q:    'Match each monetary policy concept to its description.',
         pairs: [

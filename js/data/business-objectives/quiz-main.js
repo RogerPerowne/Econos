@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'business_objectives_main',
-    topicId:  'business_objectives_main',
     title:    'Business Objectives',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('business-objectives'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_bo_1',
         type: 'mcq',
         q:    'A profit-maximising firm produces where:',
         opts: ['TR is at its peak','MR = MC','P = AC','MR = 0'],
@@ -22,7 +19,6 @@
         exp:  'Profit is maximised at the output where Marginal Revenue equals Marginal Cost. Producing beyond this means the cost of the extra unit exceeds the revenue it brings.'
       },
       {
-        id:   'q_bo_2',
         type: 'mcq',
         q:    'Sales maximisation (Williamson) involves producing where:',
         opts: [
@@ -35,7 +31,6 @@
         exp:  'A sales-maximising manager produces until MR = 0, the output level where Total Revenue is highest. This is beyond the profit-maximising output, so it yields lower profit but higher output and market share.'
       },
       {
-        id:   'q_bo_3',
         type: 'mcq',
         q:    'Revenue maximisation differs from profit maximisation because:',
         opts: [
@@ -48,7 +43,6 @@
         exp:  'Profit max occurs where MR = MC; revenue max where MR = 0. The revenue-maximising output is greater, with a lower price. Profits are lower but sales volumes and revenue are at their peak.'
       },
       {
-        id:   'q_bo_4',
         type: 'mcq',
         q:    'Satisficing behaviour (Simon) means a firm:',
         opts: [
@@ -61,7 +55,6 @@
         exp:  'Herbert Simon argued that firms operate with bounded rationality. Instead of maximising, managers aim for satisfactory levels of profit – enough to satisfy shareholders, workers, and managers – and no more.'
       },
       {
-        id:   'q_bo_5',
         type: 'numeric_input',
         q:    'A firm can produce at MR=MC giving profit of £400, or maximise revenue (MR=0) with profit of £150. What is the profit sacrifice from choosing revenue maximisation?',
         answer: 250,
@@ -71,7 +64,6 @@
         workingSteps: ['Sacrifice = £400 − £150 = £250']
       },
       {
-        id:   'q_bo_6',
         type: 'categorise',
         q:    'Categorise each business objective as primarily shareholder-oriented or stakeholder-oriented.',
         categories: ['Shareholder-oriented','Stakeholder-oriented'],
@@ -85,7 +77,6 @@
         ]
       },
       {
-        id:   'q_bo_7',
         type: 'cause_effect',
         q:    'Match each objective to its effect on firm behaviour.',
         pairs: [
@@ -98,7 +89,6 @@
         ]
       },
       {
-        id:   'q_bo_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Sales maximisation','Profit maximisation','Revenue maximisation','Satisficing','CSR'],
@@ -106,7 +96,6 @@
         exp:  'Sales maximisation, profit maximisation, revenue maximisation, and satisficing are all firm-level quantity/profit objectives. CSR (Corporate Social Responsibility) is about wider social and ethical goals, not an output or profit target.'
       },
       {
-        id:   'q_bo_9',
         type: 'data_table',
         q:    'Use the table to identify the profit-maximising and revenue-maximising outputs.',
         tableHeaders: ['Output','Price (£)','TR (£)','MR (£)','TC (£)','MC (£)','Profit (£)'],
@@ -130,7 +119,6 @@
         exp:  'Profit is highest (£680) at Q=40. TR is highest (£1,820) at Q=70 where MR ≈ 0. So profit-max Q=40, revenue-max Q=70.'
       },
       {
-        id:   'q_bo_10',
         type: 'match_pairs',
         q:    'Match each business objective concept to its description.',
         pairs: [

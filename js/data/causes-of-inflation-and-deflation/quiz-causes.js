@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'inflation_causes',
-    topicId:  'inflation_causes',
     title:    'Causes of Inflation & Deflation',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('causes-of-inflation-and-deflation'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_inf_1',
         type: 'mcq',
         q:    'Inflation is defined as:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Inflation is a persistent, ongoing rise in the general (average) price level. A one-off price rise or a change in relative prices is not inflation unless it feeds into a broader sustained upward trend.'
       },
       {
-        id:   'q_inf_2',
         type: 'mcq',
         q:    'Demand-pull inflation occurs when:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Demand-pull inflation arises when aggregate demand grows faster than aggregate supply. When the economy is near full capacity, further increases in AD pull prices up rather than expanding output.'
       },
       {
-        id:   'q_inf_3',
         type: 'mcq',
         q:    'Cost-push inflation is caused by:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Cost-push (supply-side) inflation arises from rising production costs – e.g., higher oil prices, wage increases, or supply-chain disruptions. SRAS shifts left, leading to higher prices and lower output (stagflation risk).'
       },
       {
-        id:   'q_inf_4',
         type: 'mcq',
         q:    'The Quantity Theory of Money (MV = PT) implies that inflation results from:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'MV = PT: if V (velocity) and T (transactions/output) are constant, a rise in M (money supply) causes a proportional rise in P (price level). Monetarists argue inflation is always "too much money chasing too few goods".'
       },
       {
-        id:   'q_inf_5',
         type: 'numeric_input',
         q:    'CPI was 112 last year and is 117.6 this year. What is the inflation rate (%) to one decimal place?',
         answer: 5,
@@ -76,7 +69,6 @@
         workingSteps: ['Inflation = ((117.6 − 112) ÷ 112) × 100','= (5.6 ÷ 112) × 100 = 5.0%']
       },
       {
-        id:   'q_inf_6',
         type: 'categorise',
         q:    'Categorise each factor as a cause of demand-pull inflation or cost-push inflation.',
         categories: ['Demand-pull','Cost-push'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_inf_7',
         type: 'cause_effect',
         q:    'Match each cause to its inflationary effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_inf_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Demand-pull inflation','Cost-push inflation','Hyperinflation','Deflation'],
@@ -111,7 +101,6 @@
         exp:  'Demand-pull, cost-push, and hyperinflation are all forms of rising prices. Deflation is the opposite – a sustained fall in the general price level. It is the odd one out among inflationary concepts.'
       },
       {
-        id:   'q_inf_9',
         type: 'data_table',
         q:    'Use the CPI data to calculate the inflation rate between Year 1 and Year 2.',
         tableHeaders: ['Year','CPI','Inflation Rate (%)'],
@@ -126,7 +115,6 @@
         exp:  'Inflation Year 1→2 = ((112.35 − 105) ÷ 105) × 100 = (7.35 ÷ 105) × 100 = 7.0%.'
       },
       {
-        id:   'q_inf_10',
         type: 'match_pairs',
         q:    'Match each inflation concept to its correct description.',
         pairs: [

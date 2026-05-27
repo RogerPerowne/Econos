@@ -1,11 +1,9 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'barriers_entry_main',
-    topicId:  'barriers_entry_main',
     title:    'Barriers to Entry',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.routes.learn('barriers_entry'),
+    backUrl:  TopicLoader.routes.learn('barriers-to-entry'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers types of barriers, their effects on competition, and policy responses',
     shortNames: [
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_be2_1',
         type: 'mcq',
         q:    'A natural barrier to entry arises from:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Natural (or innocent) barriers arise from the inherent structure of the market – e.g., very high minimum efficient scale, or large sunk costs, not deliberate incumbent strategy.'
       },
       {
-        id:   'q_be2_2',
         type: 'mcq',
         q:    'Which of the following is an example of a strategic (artificial) barrier to entry?',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Strategic barriers are deliberately created by incumbents. Predatory pricing – temporarily cutting prices below cost to deter or eliminate rivals – is a classic example. It is illegal under competition law in many countries.'
       },
       {
-        id:   'q_be2_3',
         type: 'mcq',
         q:    'Patents protect a firm\'s market position by:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'A patent grants the inventor exclusive rights (typically 20 years in the UK) to produce and sell the invention. This prevents imitation and acts as a legal barrier to entry.'
       },
       {
-        id:   'q_be2_4',
         type: 'mcq',
         q:    'Sunk costs create a barrier to entry because:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Sunk costs cannot be recovered if a firm exits. For a potential entrant, the prospect of losing unrecoverable spending makes entry risky and deters investment – creating a barrier.'
       },
       {
-        id:   'q_be2_5',
         type: 'numeric_input',
         q:    'An incumbent has average costs of £15 per unit. A new entrant would face AC of £22 per unit. The incumbent sets limit price at £21. Calculate the entrant\'s profit per unit.',
         answer: -1,
@@ -76,7 +69,6 @@
         workingSteps: ['Entrant\'s profit per unit = £21 − £22 = −£1 (loss)']
       },
       {
-        id:   'q_be2_6',
         type: 'categorise',
         q:    'Categorise each barrier as natural (innocent) or strategic (artificial).',
         categories: ['Natural barrier','Strategic barrier'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_be2_7',
         type: 'cause_effect',
         q:    'Match each barrier to its effect on market competition.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_be2_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Patent','Government licence','Free entry and exit','Economies of scale'],
@@ -111,7 +101,6 @@
         exp:  'Patents, government licences, and economies of scale are all barriers to entry. Free entry and exit is the absence of barriers – it is a condition for perfect competition and contestability.'
       },
       {
-        id:   'q_be2_9',
         type: 'data_table',
         q:    'Use the table to identify the industry with the highest barrier to entry.',
         tableHeaders: ['Industry','MES as % of market','Typical sunk costs','Key barrier type'],
@@ -126,7 +115,6 @@
         exp:  'Water supply has the highest barriers: MES equals the entire market (natural monopoly), and infrastructure sunk costs are enormous. No new firm could profitably enter at smaller scale.'
       },
       {
-        id:   'q_be2_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description.',
         pairs: [

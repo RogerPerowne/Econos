@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'intl_competitiveness_main',
-    topicId:  'intl_competitiveness_main',
     title:    'International Competitiveness',
     subtitle: 'International Economics',
     backUrl:  TopicLoader.routes.learn('international-competitiveness'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_ic_1',
         type: 'mcq',
         q:    'A country\'s price competitiveness improves when:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Price competitiveness means exports are relatively cheap for foreign buyers. It improves when domestic inflation is low relative to rivals (keeping export prices low) or when the exchange rate depreciates (exports become cheaper abroad).'
       },
       {
-        id:   'q_ic_2',
         type: 'mcq',
         q:    'Unit Labour Cost (ULC) is calculated as:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'ULC = wage cost per worker ÷ output per worker (labour productivity). If wages rise faster than productivity, ULC rises – reducing price competitiveness. If productivity rises faster than wages, ULC falls.'
       },
       {
-        id:   'q_ic_3',
         type: 'mcq',
         q:    'Non-price competitiveness includes:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Non-price factors drive competitiveness beyond price: product quality, innovation, delivery reliability, brand strength, and customer service. German manufacturing and Swiss luxury goods are examples of strong non-price competitiveness.'
       },
       {
-        id:   'q_ic_4',
         type: 'mcq',
         q:    'The UK productivity puzzle refers to:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'After the 2008 financial crisis, UK productivity growth (output per worker) stagnated far below the pre-crisis trend. This is unusual because unemployment stayed low – suggesting zombified firms, weak investment, or misallocation of labour.'
       },
       {
-        id:   'q_ic_5',
         type: 'numeric_input',
         q:    'A worker earns £30,000/year and produces £150,000 of output. What is the Unit Labour Cost as a proportion of output (to 2 decimal places)?',
         answer: 0.2,
@@ -76,7 +69,6 @@
         workingSteps: ['ULC = £30,000 ÷ £150,000 = 0.20']
       },
       {
-        id:   'q_ic_6',
         type: 'categorise',
         q:    'Categorise each factor as improving price competitiveness or non-price competitiveness.',
         categories: ['Price competitiveness','Non-price competitiveness'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_ic_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on international competitiveness.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_ic_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out in a list of factors improving international competitiveness?',
         opts: ['Rising labour productivity','Lower unit labour costs','Higher domestic inflation','Currency depreciation'],
@@ -111,7 +101,6 @@
         exp:  'Rising productivity, lower ULC, and currency depreciation all improve price competitiveness. Higher domestic inflation raises the relative price of exports – it reduces competitiveness, not improves it.'
       },
       {
-        id:   'q_ic_9',
         type: 'data_table',
         q:    'Use the data to identify which country has the lowest unit labour costs.',
         tableHeaders: ['Country','Average wage (£000s)','Output per worker (£000s)','ULC'],
@@ -126,7 +115,6 @@
         exp:  'ULC = wage/output. Alpha: 35/140=0.25; Beta: 28/140=0.20; Gamma: 40/200=0.20; Delta: 30/100=0.30. Beta and Gamma both have ULC=0.20, the lowest. Beta is listed first among the equal-lowest.'
       },
       {
-        id:   'q_ic_10',
         type: 'match_pairs',
         q:    'Match each competitiveness concept to its description.',
         pairs: [

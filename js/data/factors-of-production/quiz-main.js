@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'factors_of_production_main',
-    topicId:  'factors_of_production_main',
     title:    'Factors of Production',
     subtitle: 'Theme 1 &middot; Topic 1.1.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('factors-of-production'),
@@ -18,7 +16,6 @@
 
       /* 1 – Categorise: sort items into the four factors */
       { type: 'categorise',
-        id: 'q_fop_1',
         stem: 'Sort each example into the correct <strong>factor of production</strong>.',
         categories: ['Land', 'Labour', 'Capital', 'Enterprise'],
         items: [
@@ -36,7 +33,6 @@
 
       /* 2 – MCQ: capital common error */
       { type: 'mcq',
-        id: 'q_fop_2',
         stem: 'Which statement about <strong>capital</strong> as a factor of production is correct?',
         opts: [
           'Capital is any man-made resource used to produce other goods and services – including machinery, tools, buildings, infrastructure, and patents',
@@ -50,7 +46,6 @@
 
       /* 3 – Match pairs: factor → reward */
       { type: 'match_pairs',
-        id: 'q_fop_3',
         stem: 'Match each <strong>factor of production</strong> to the reward it earns.',
         pairs: [
           { a: 'Land',       b: 'Rent – paid because supply is fixed and owners can charge for use' },
@@ -63,7 +58,6 @@
 
       /* 4 – Sequence: how a successful retraining scheme raises GDP */
       { type: 'sequence',
-        id: 'q_fop_4',
         stem: 'A large adult retraining scheme upgrades displaced workers\' skills for shortage occupations. Place the steps showing how the policy raises real GDP in the correct order.',
         instr: 'Tap the steps in the correct order, from first to last.',
         items: [
@@ -80,7 +74,6 @@
 
       /* 5 – Cause & effect: policy levers and their effects */
       { type: 'cause_effect',
-        id: 'q_fop_5',
         stem: 'Match each UK supply-side policy to its primary effect on the labour factor of production.',
         pairs: [
           { cause: 'Expanding free childcare for under-5s',           effect: 'Raises the quantity of labour by lifting participation among parents (mostly mothers)' },
@@ -95,7 +88,6 @@
 
       /* 6 – Odd one out: capital identification */
       { type: 'odd_one_out',
-        id: 'q_fop_6',
         stem: 'Three of these are examples of the <strong>capital</strong> factor of production. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🛣️', label: 'The M25 motorway and surrounding infrastructure', note: '' },
@@ -109,7 +101,6 @@
 
       /* 7 – Data table: UK labour market 2023 */
       { type: 'data_table',
-        id: 'q_fop_7',
         stem: 'The table shows approximate UK labour-market indicators for 2023, with the pre-pandemic 2019 figures for comparison.',
         headers: ['Indicator', '2019', '2023', 'Change'],
         rows: [
@@ -132,7 +123,6 @@
 
       /* 8 – Multi-select: genuine evaluation */
       { type: 'multi_select',
-        id: 'q_fop_8',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of the claim that "improving factor mobility would substantially raise UK output"?',
         opts: [
           'Improving factor mobility involves both occupational and geographic dimensions',
@@ -148,7 +138,6 @@
 
       /* 9 – Para fill: factor mobility */
       { type: 'para_fill',
-        id: 'q_fop_9',
         stem: 'Complete the paragraph summarising factor mobility and supply-side policy.',
         anchor: 'Factor mobility shapes how quickly an economy can adjust to change.',
         para: 'Factor mobility describes how easily factors of production can move between different [1] (occupational mobility) and between different [2] (geographic mobility). Where workers are unable to switch jobs because their skills don\'t match available vacancies, the economy experiences [3] unemployment alongside unfilled posts. A retraining programme primarily raises [4] mobility by upgrading the skills of the workforce, which is also an improvement in labour [5]. Housing reform and transport investment, by contrast, target [6] mobility by reducing the cost of moving to where the jobs are. Free childcare provision raises the [7] of labour by enabling parents to enter or re-enter the workforce. When mobility-raising policies succeed, the economy\'s productive capacity expands and the [8] curve shifts to the right, lifting real output and easing inflationary pressure from supply bottlenecks.',
@@ -167,7 +156,6 @@
 
       /* 10 – Numeric input: labour-force participation rate */
       { type: 'numeric_input',
-        id: 'q_fop_10',
         stem: 'Calculate the UK <strong>labour-force participation rate</strong> as a percentage of the working-age population.',
         context: 'In a given year, the UK working-age population (16–64) is <strong>42.0 million</strong>. Of these, <strong>32.0 million are employed</strong>, <strong>1.4 million are unemployed and actively seeking work</strong>, and the remainder are <strong>economically inactive</strong> (long-term sick, students, carers, early retirees).',
         answer: 79.5,

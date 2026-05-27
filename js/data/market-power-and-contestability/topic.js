@@ -1,5 +1,5 @@
 window.ECONOS_TOPIC = {
-  id: 'monopoly_vs_competition',
+  id: 'market-power-and-contestability',
   topicNum: '3.10',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Market Power & Contestability',

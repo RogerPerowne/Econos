@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'monopolistic_competition_main',
-    topicId:  'monopolistic_competition_main',
     title:    'Monopolistic Competition',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('monopolistic-competition'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_mc_1',
         type: 'mcq',
         q:    'Which of the following best describes monopolistic competition?',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Monopolistic competition involves many firms, product differentiation, and free entry/exit. Each firm has some price-setting power due to its unique product, but competition limits long-run profit.'
       },
       {
-        id:   'q_mc_2',
         type: 'mcq',
         q:    'Why does a monopolistically competitive firm face a downward-sloping demand curve?',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Product differentiation gives each firm a degree of brand loyalty. Consumers have preferences, so the firm can raise price without losing all customers – hence a downward-sloping (not horizontal) demand curve.'
       },
       {
-        id:   'q_mc_3',
         type: 'mcq',
         q:    'In the short run, a monopolistically competitive firm can earn supernormal profit. What happens in the long run?',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Free entry means new firms enter attracted by supernormal profit. Each existing firm loses customers; demand shifts left until P = AC and only normal profit remains.'
       },
       {
-        id:   'q_mc_4',
         type: 'mcq',
         q:    'Excess capacity in monopolistic competition means:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'In long-run equilibrium, P = AC but this occurs on the downward-sloping part of the AC curve, above the minimum. Output is below the productively efficient level – hence excess capacity.'
       },
       {
-        id:   'q_mc_5',
         type: 'numeric_input',
         q:    'A firm sells 80 units at £15. TC = £1,050. Calculate profit.',
         answer: 150,
@@ -76,7 +69,6 @@
         workingSteps: ['TR = £15 × 80 = £1,200','Profit = £1,200 − £1,050 = £150']
       },
       {
-        id:   'q_mc_6',
         type: 'categorise',
         q:    'Categorise each statement as applying to monopolistic competition or perfect competition.',
         categories: ['Monopolistic competition','Perfect competition'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_mc_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in monopolistic competition.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_mc_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out in the context of monopolistic competition?',
         opts: ['Product differentiation','Advertising','Homogeneous products','Free entry and exit'],
@@ -111,7 +101,6 @@
         exp:  'Monopolistic competition is characterised by product differentiation, advertising, and free entry/exit. Homogeneous products are a feature of perfect competition, not monopolistic competition.'
       },
       {
-        id:   'q_mc_9',
         type: 'data_table',
         q:    'A firm in monopolistic competition has the following data. Identify the long-run equilibrium output.',
         tableHeaders: ['Output','Price (£)','AC (£)','Profit (£)'],
@@ -126,7 +115,6 @@
         exp:  'Long-run equilibrium in monopolistic competition requires P = AC (normal profit = 0). This occurs at output = 50 where P = AC = £16 and profit = £0.'
       },
       {
-        id:   'q_mc_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description.',
         pairs: [

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'business_growth_main',
-    topicId:  'business_growth_main',
     title:    'Business Growth',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('business-growth'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_bg_1',
         type: 'mcq',
         q:    'Organic (internal) growth refers to:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Organic growth occurs when a firm expands its own operations – opening new outlets, investing in capacity, or growing sales – without merging with or acquiring another firm.'
       },
       {
-        id:   'q_bg_2',
         type: 'mcq',
         q:    'Horizontal integration occurs when:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Horizontal integration is the merger or acquisition of firms at the same stage of production in the same industry – e.g., two supermarket chains merging. It can increase market power and economies of scale.'
       },
       {
-        id:   'q_bg_3',
         type: 'mcq',
         q:    'A car manufacturer acquiring a steel supplier is an example of:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Backward vertical integration means a firm acquires a supplier (earlier stage in the supply chain). The car maker acquires the steel supplier – moving backward toward raw materials.'
       },
       {
-        id:   'q_bg_4',
         type: 'mcq',
         q:    'A demerger occurs when:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Demergers involve breaking up a large firm into smaller, more focused independent companies. They may be prompted by diseconomies of scale, poor synergies, or pressure from shareholders to "unlock value".'
       },
       {
-        id:   'q_bg_5',
         type: 'numeric_input',
         q:    'Firm A has revenue of £800m. It acquires Firm B (revenue £300m). After the merger, combined revenue is £1,050m due to some customer overlap. What is the revenue synergy gained (£m)?',
         answer: -50,
@@ -76,7 +69,6 @@
         workingSteps: ['Sum of parts = £800m + £300m = £1,100m','Actual combined = £1,050m','Synergy = £1,050m − £1,100m = −£50m (dissynergy from overlap)']
       },
       {
-        id:   'q_bg_6',
         type: 'categorise',
         q:    'Categorise each merger or growth type correctly.',
         categories: ['Horizontal','Vertical','Conglomerate'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_bg_7',
         type: 'cause_effect',
         q:    'Match each growth strategy to its primary effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_bg_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Horizontal integration','Vertical integration','Conglomerate merger','Demerger'],
@@ -111,7 +101,6 @@
         exp:  'Horizontal, vertical, and conglomerate are all forms of external (inorganic) growth involving mergers or acquisitions. A demerger is the opposite – it involves breaking a firm apart.'
       },
       {
-        id:   'q_bg_9',
         type: 'data_table',
         q:    'Use the table to identify which firm grew most through organic means.',
         tableHeaders: ['Firm','Revenue growth (£m)','Revenue from acquisitions (£m)','Organic growth (£m)'],
@@ -126,7 +115,6 @@
         exp:  'Beta had the highest organic (internally generated) revenue growth of £220m. Gamma had no organic growth – all its revenue increase came from acquisitions.'
       },
       {
-        id:   'q_bg_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description.',
         pairs: [

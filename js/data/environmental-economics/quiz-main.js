@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'environmental_econ_main',
-    topicId:  'environmental_econ_main',
     title:    'Environmental Economics',
     subtitle: 'Theme 1.16 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('environmental_econ_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: carbon as negative externality */
       { type: 'mcq',
-        id: 'q_env_1',
         stem: 'Carbon dioxide emissions from burning fossil fuels represent a <strong>negative externality of production and consumption</strong>. This means:',
         opts: [
           'The social cost of carbon-intensive activities exceeds the private cost – energy users and firms do not bear the full climate damage costs imposed on current and future generations globally',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: environmental policy instruments */
       { type: 'elastic_sort',
-        id: 'q_env_2',
         stem: 'Classify each environmental policy instrument as <strong>market-based</strong> or <strong>command-and-control</strong>.',
         categories: ['market_based', 'command_control'],
         categoryLabels: ['Market-based instrument', 'Command-and-control regulation'],
@@ -49,7 +45,6 @@
 
       /* 3 – MCQ: emissions trading scheme */
       { type: 'mcq',
-        id: 'q_env_3',
         stem: 'The EU Emissions Trading Scheme (ETS) works by:',
         opts: [
           'Setting a cap on total CO₂ emissions; distributing tradeable permits equal to the cap; firms that reduce emissions below their allocation can sell surplus permits; firms that need more permits must buy them – the permit price creates a carbon price across the economy',
@@ -63,7 +58,6 @@
 
       /* 4 – MCQ: Coase theorem */
       { type: 'mcq',
-        id: 'q_env_4',
         stem: 'The <strong>Coase theorem</strong> states that:',
         opts: [
           'If property rights are well-defined and bargaining costs are zero, private parties can negotiate to the social optimum without government intervention – regardless of who holds the property right',
@@ -77,7 +71,6 @@
 
       /* 5 – MCQ: sustainability */
       { type: 'mcq',
-        id: 'q_env_5',
         stem: 'The Brundtland Commission defined <strong>sustainable development</strong> as:',
         opts: [
           'Development that meets the needs of the present without compromising the ability of future generations to meet their own needs',
@@ -91,7 +84,6 @@
 
       /* 6 – Cause & effect: environmental policy mechanisms */
       { type: 'cause_effect',
-        id: 'q_env_6',
         stem: 'Match each environmental policy to the mechanism by which it reduces emissions.',
         pairs: [
           { cause: 'Carbon tax of £50/tonne CO₂', effect: 'Raises cost of carbon-intensive production – firms switch to lower-carbon alternatives or reduce output' },
@@ -106,7 +98,6 @@
 
       /* 7 – Match pairs: environmental economics concepts */
       { type: 'match_pairs',
-        id: 'q_env_7',
         stem: 'Match each concept to its definition.',
         pairs: [
           { a: 'Cap-and-trade (ETS)', b: 'Sets total emissions limit; firms trade permits; price emerges from market' },
@@ -121,7 +112,6 @@
 
       /* 8 – Odd one out: market-based environmental instruments */
       { type: 'odd_one_out',
-        id: 'q_env_8',
         stem: 'Three of these are <strong>market-based environmental instruments</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '💱', label: 'EU Emissions Trading Scheme – firms trade carbon allowances to reduce total emissions at lowest cost', note: '' },
@@ -135,7 +125,6 @@
 
       /* 9 – Data table: UK carbon emissions and ETS */
       { type: 'data_table',
-        id: 'q_env_9',
         stem: 'The table shows UK carbon data and key policy milestones.',
         headers: ['Year', 'UK GHG emissions (MtCO₂e)', 'UK ETS/CPS price (£/tonne)', 'Renewables share of electricity (%)'],
         rows: [
@@ -158,7 +147,6 @@
 
       /* 10 – Multi-select: evaluation of carbon pricing */
       { type: 'multi_select',
-        id: 'q_env_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of carbon pricing as an environmental policy instrument?',
         opts: [
           'Carbon pricing internalises the negative externality of CO₂ by raising the private cost toward the social cost',

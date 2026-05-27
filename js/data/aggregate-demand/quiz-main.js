@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'ad_main',
-    topicId:  'ad_main',
     title:    'Aggregate Demand',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('aggregate-demand'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_ad_1',
         type: 'mcq',
         q:    'The correct formula for Aggregate Demand is:',
         opts: ['AD = C + I + G + (X – M)','AD = C + I + G – (X + M)','AD = C – I + G + (X + M)','AD = C + I – G + (X – M)'],
@@ -22,7 +19,6 @@
         exp:  'AD = Consumption + Investment + Government spending + (Exports − Imports). The net export term (X − M) is added because exports inject spending into the economy while imports represent a withdrawal.'
       },
       {
-        id:   'q_ad_2',
         type: 'mcq',
         q:    'The AD curve slopes downward because:',
         opts: [
@@ -35,7 +31,6 @@
         exp:  'Three effects explain the downward slope: (1) the wealth effect – higher prices erode real wealth; (2) the interest rate effect – higher prices raise money demand and interest rates; (3) the international competitiveness effect – exports become dearer, imports cheaper.'
       },
       {
-        id:   'q_ad_3',
         type: 'mcq',
         q:    'Which of the following would shift the AD curve to the RIGHT?',
         opts: [
@@ -48,7 +43,6 @@
         exp:  'Higher consumer confidence encourages more spending (rising C). This shifts the entire AD curve to the right – more real output is demanded at every price level.'
       },
       {
-        id:   'q_ad_4',
         type: 'mcq',
         q:    'The Keynesian multiplier is defined as:',
         opts: [
@@ -61,7 +55,6 @@
         exp:  'The multiplier = 1/(1−MPC) = 1/MPS. An initial injection of spending is re-spent round after round, each time losing a fraction (MPS) as leakages. The final increase in national income is a multiple of the initial injection.'
       },
       {
-        id:   'q_ad_5',
         type: 'numeric_input',
         q:    'The MPC = 0.75. The government increases spending by £200m. What is the total increase in national income (£m)?',
         answer: 800,
@@ -71,7 +64,6 @@
         workingSteps: ['Multiplier = 1/(1−0.75) = 1/0.25 = 4','Total change = 4 × £200m = £800m']
       },
       {
-        id:   'q_ad_6',
         type: 'categorise',
         q:    'Categorise each factor as a determinant of Consumption or Investment.',
         categories: ['Consumption','Investment'],
@@ -85,7 +77,6 @@
         ]
       },
       {
-        id:   'q_ad_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect on Aggregate Demand.',
         pairs: [
@@ -98,7 +89,6 @@
         ]
       },
       {
-        id:   'q_ad_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out in the AD formula?',
         opts: ['Consumption (C)','Investment (I)','Taxation (T)','Government spending (G)'],
@@ -106,7 +96,6 @@
         exp:  'C, I, and G are all direct components in the AD = C + I + G + (X−M) formula. Taxation affects AD indirectly by influencing consumption – but T itself does not appear as a component of AD.'
       },
       {
-        id:   'q_ad_9',
         type: 'data_table',
         q:    'Use the data to calculate the multiplier and the final change in national income from a £50bn investment injection.',
         tableHeaders: ['MPC','MPS','Multiplier','Change in Y (£bn) from £50bn injection'],
@@ -126,7 +115,6 @@
         exp:  'Multiplier = 1/MPS. For MPC=0.8, MPS=0.2, multiplier = 1/0.2 = 5, ΔY = 5 × £50bn = £250bn. Option A is correct.'
       },
       {
-        id:   'q_ad_10',
         type: 'match_pairs',
         q:    'Match each AD concept to its correct description.',
         pairs: [

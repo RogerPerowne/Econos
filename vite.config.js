@@ -236,7 +236,11 @@ export default defineConfig({
     {
       name: 'js-cache-bust',
       transformIndexHtml(html) {
-        return html.replace(/(src=")(js\/[^"]+)(")/g, `$1$2?v=${BUILD_HASH}$3`);
+        /* Match both `src="js/foo.js"` and `src="/js/foo.js"` — the
+           historical regex missed the leading-slash form, so topics.js
+           and every other shell-loaded script kept being served stale
+           from the service worker cache after a deploy. */
+        return html.replace(/(src=")(\/?js\/[^"]+)(")/g, `$1$2?v=${BUILD_HASH}$3`);
       }
     },
 

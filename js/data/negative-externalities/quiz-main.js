@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'neg_externalities_main',
-    topicId:  'neg_externalities_main',
     title:    'Negative Externalities',
     subtitle: 'Theme 1 &middot; Topic 3.2 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('neg_externalities_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: MSC and overproduction */
       { type: 'mcq',
-        id: 'q_negext_1',
         stem: 'In a market with a <strong>negative externality of production</strong>, the free market produces at Q<sub>M</sub> but the social optimum is at Q<sub>S</sub>. Which correctly describes the relationship between these output levels and the curves?',
         opts: [
           'Q<sub>M</sub> > Q<sub>S</sub> – the free market overproduces because MPC < MSC; the gap between MSC and MPC equals the marginal external cost',
@@ -32,7 +29,6 @@
 
       /* 2 – Categorise: neg externalities of production vs consumption */
       { type: 'categorise',
-        id: 'q_negext_2',
         stem: 'Classify each example as a <strong>negative externality of production</strong> or a <strong>negative externality of consumption</strong>.',
         categories: ['Negative externality of production', 'Negative externality of consumption'],
         items: [
@@ -48,7 +44,6 @@
 
       /* 3 – MCQ: Pigouvian tax */
       { type: 'mcq',
-        id: 'q_negext_3',
         stem: 'A <strong>Pigouvian tax</strong> on a firm with a negative externality of production should be set equal to:',
         opts: [
           'The marginal external cost at the social optimum – to shift MPC up to MSC and reduce output to Q*',
@@ -62,7 +57,6 @@
 
       /* 4 – MCQ: negative externality diagram */
       { type: 'mcq',
-        id: 'q_negext_4',
         stem: 'On a diagram showing a negative externality of production, the <strong>deadweight welfare loss</strong> is represented by:',
         opts: [
           'The triangle between the market output (Q<sub>M</sub>) and the social optimum (Q*) bounded by the MSC and MSB (demand) curves',
@@ -76,7 +70,6 @@
 
       /* 5 – Para fill: negative externality analysis */
       { type: 'para_fill',
-        id: 'q_negext_5',
         stem: 'Complete the paragraph analysing a negative externality of production.',
         anchor: 'Factory pollution is the textbook example of a negative externality of production.',
         para: 'When a factory pollutes a river, it imposes [1] costs on local fishing communities and residents. These costs are [2] in the factory\'s private cost curve – the factory owner does not pay them. As a result, the factory\'s marginal [3] cost is lower than its marginal [4] cost. The free market produces [5] of the good than is socially optimal because the factory ignores the [6] cost in its profit maximisation. The resulting [7] is a triangle of welfare loss. A Pigouvian [8] equal to the marginal external cost would shift the MPC curve up to the MSC, correcting the overproduction.',
@@ -95,7 +88,6 @@
 
       /* 6 – Cause & effect: pollution taxes */
       { type: 'cause_effect',
-        id: 'q_negext_6',
         stem: 'Match each mechanism in a Pigouvian tax chain to its correct effect.',
         pairs: [
           { cause: 'Government imposes a tax equal to the marginal external cost on a polluting firm', effect: 'Firm\'s marginal private cost rises to equal marginal social cost' },
@@ -110,7 +102,6 @@
 
       /* 7 – Match pairs: negative externality concepts */
       { type: 'match_pairs',
-        id: 'q_negext_7',
         stem: 'Match each term to its definition in the negative externality framework.',
         pairs: [
           { a: 'Marginal External Cost (MEC)', b: 'Extra cost imposed on third parties from producing one more unit' },
@@ -125,7 +116,6 @@
 
       /* 8 – Odd one out: Pigouvian tax effects */
       { type: 'odd_one_out',
-        id: 'q_negext_8',
         stem: 'Three of these are effects of a correctly set <strong>Pigouvian tax</strong> on a negative externality. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '📉', label: 'Output falls from the free market level to the socially optimal level', note: '' },
@@ -139,7 +129,6 @@
 
       /* 9 – Data table: UK congestion charges */
       { type: 'data_table',
-        id: 'q_negext_9',
         stem: 'The table shows transport data for London before and after the introduction of the Congestion Charge (2003).',
         headers: ['Indicator', 'Before (2002)', 'After (2004)', 'Change'],
         rows: [
@@ -162,7 +151,6 @@
 
       /* 10 – Multi-select: evaluation of Pigouvian taxes */
       { type: 'multi_select',
-        id: 'q_negext_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of Pigouvian taxes as a solution to negative externalities?',
         opts: [
           'Pigouvian taxes correct negative externalities by making firms internalise external costs',

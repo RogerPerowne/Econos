@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'oligopoly_main',
-    topicId:  'oligopoly_main',
     title:    'Oligopoly',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('oligopoly'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_olig_1',
         type: 'mcq',
         q:    'Which of the following best describes an oligopoly?',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Oligopoly is a market structure dominated by a small number of large firms. A key feature is strategic interdependence – each firm must consider rivals\' reactions to its decisions.'
       },
       {
-        id:   'q_olig_2',
         type: 'mcq',
         q:    'Strategic interdependence in oligopoly means:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'Because there are few dominant firms, any price or output change by one firm directly affects rivals. Each firm therefore considers likely reactions before making decisions.'
       },
       {
-        id:   'q_olig_3',
         type: 'mcq',
         q:    'The kinked demand curve model predicts price rigidity because:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'If a firm raises price, rivals keep theirs low (the firm loses many customers – elastic section). If a firm cuts price, rivals follow (the firm gains few customers – inelastic section). The kink creates a gap in MR, keeping price stable.'
       },
       {
-        id:   'q_olig_4',
         type: 'mcq',
         q:    'Which of the following is an example of non-price competition in oligopoly?',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'Oligopolists tend to avoid price competition (risk of price wars) and instead compete via advertising, product quality, loyalty schemes, and brand image – collectively called non-price competition.'
       },
       {
-        id:   'q_olig_5',
         type: 'numeric_input',
         q:    'Four firms in a market have outputs of 200, 150, 120, and 80 units. Total market output is 800 units. What is the four-firm concentration ratio (%)?',
         answer: 68.75,
@@ -76,7 +69,6 @@
         workingSteps: ['Top 4 output = 200+150+120+80 = 550','CR4 = 550/800 × 100 = 68.75%']
       },
       {
-        id:   'q_olig_6',
         type: 'categorise',
         q:    'Categorise each feature as characteristic of oligopoly or perfect competition.',
         categories: ['Oligopoly','Perfect competition'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_olig_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect in an oligopoly market.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_olig_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Kinked demand curve','Concentration ratio','Perfect information','Strategic interdependence'],
@@ -111,7 +101,6 @@
         exp:  'Kinked demand, concentration ratios, and strategic interdependence are all concepts central to oligopoly analysis. Perfect information is a defining feature of perfect competition.'
       },
       {
-        id:   'q_olig_9',
         type: 'data_table',
         q:    'Use the concentration ratio table to identify which market is most oligopolistic.',
         tableHeaders: ['Market','CR4 (%)'],
@@ -126,7 +115,6 @@
         exp:  'Online search engines have a CR4 of 95%, meaning the top 4 firms control 95% of output – the highest degree of market concentration shown.'
       },
       {
-        id:   'q_olig_10',
         type: 'match_pairs',
         q:    'Match each oligopoly concept to its correct description.',
         pairs: [

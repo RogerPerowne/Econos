@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'market_equilibrium_main',
-    topicId:  'market_equilibrium_main',
     title:    'Market Equilibrium',
     subtitle: 'Theme 1 &middot; Topic 2.6 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('market_equilibrium_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: rent control and excess demand */
       { type: 'mcq',
-        id: 'q_mkeq_1',
         stem: 'The market price for a rental flat is set <strong>below</strong> the equilibrium rent by a government rent control policy. What will happen in this market?',
         opts: [
           'Excess demand (shortage) will emerge – more tenants want flats at the controlled rent than landlords are willing to supply; the market cannot clear at that price',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: excess demand vs excess supply */
       { type: 'elastic_sort',
-        id: 'q_mkeq_2',
         stem: 'Classify each scenario as producing <strong>excess demand</strong> or <strong>excess supply</strong> in the market.',
         categories: ['excess_demand', 'excess_supply'],
         categoryLabels: ['Excess demand (shortage)', 'Excess supply (surplus)'],
@@ -49,7 +45,6 @@
 
       /* 3 – Sequence: price mechanism restoring equilibrium */
       { type: 'sequence',
-        id: 'q_mkeq_3',
         stem: 'A harvest failure reduces wheat supply. Place the steps in the correct order showing how the <strong>price mechanism restores equilibrium</strong>.',
         instr: 'Tap the steps in the correct order, from first to last.',
         items: [
@@ -66,7 +61,6 @@
 
       /* 4 – MCQ: simultaneous shifts */
       { type: 'mcq',
-        id: 'q_mkeq_4',
         stem: 'Both demand and supply for electric vehicles (EVs) increase simultaneously. What can we say with certainty about the new equilibrium?',
         opts: [
           'Equilibrium quantity will rise; equilibrium price is indeterminate (depends on relative magnitude of shifts)',
@@ -80,7 +74,6 @@
 
       /* 5 – Categorise: types of equilibrium outcomes */
       { type: 'categorise',
-        id: 'q_mkeq_5',
         stem: 'Sort each scenario into the correct market outcome category.',
         categories: ['Market clears', 'Excess demand', 'Excess supply'],
         items: [
@@ -96,7 +89,6 @@
 
       /* 6 – Match pairs: equilibrium concepts */
       { type: 'match_pairs',
-        id: 'q_mkeq_6',
         stem: 'Match each term to its correct definition or example.',
         pairs: [
           { a: 'Equilibrium price', b: 'Price at which quantity demanded equals quantity supplied' },
@@ -111,7 +103,6 @@
 
       /* 7 – Cause & effect: supply and demand shocks */
       { type: 'cause_effect',
-        id: 'q_mkeq_7',
         stem: 'Match each market shock to its effect on equilibrium price and quantity.',
         pairs: [
           { cause: 'Demand increases, supply unchanged', effect: 'Price rises, quantity rises' },
@@ -126,7 +117,6 @@
 
       /* 8 – Odd one out: allocative efficiency */
       { type: 'odd_one_out',
-        id: 'q_mkeq_8',
         stem: 'Three of these are conditions or implications of <strong>allocative efficiency</strong> in a market. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '⚖️', label: 'Resources are allocated to their highest-valued use as judged by consumers\' willingness to pay', note: '' },
@@ -140,7 +130,6 @@
 
       /* 9 – Data table: UK housing market */
       { type: 'data_table',
-        id: 'q_mkeq_9',
         stem: 'The table shows UK housing market data 2010–2022.',
         headers: ['Year', 'Avg house price (£000)', 'Mortgage rate (%)', 'New homes built (000/yr)', 'Population (m)'],
         rows: [
@@ -162,7 +151,6 @@
 
       /* 10 – Para fill: market equilibrium */
       { type: 'para_fill',
-        id: 'q_mkeq_10',
         stem: 'Complete the paragraph about how markets reach and maintain equilibrium.',
         anchor: 'The price mechanism is the process by which markets resolve imbalances between supply and demand.',
         para: 'At the equilibrium price, quantity [1] equals quantity [2] – the market clears with no unsatisfied buyers or sellers. If demand increases and supply is unchanged, there is initially [3] demand at the old price. This creates upward pressure on [4], which rises until the market [5] again. The price serves as a [6] to producers that resources should be reallocated toward this market, and as a [7] device, restricting consumption to those willing to pay.',

@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'profits_shutdown_main',
-    topicId:  'profits_shutdown_main',
     title:    'Revenue, Profit & Shutdown',
     subtitle: 'Theory of the Firm',
     backUrl:  TopicLoader.routes.learn('profits-and-losses'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_ps_1',
         type: 'mcq',
         q:    'A firm sells 200 units at £8 each. What is its Total Revenue (TR)?',
         opts: ['£160','£1,600','£208','£1,200'],
@@ -22,7 +19,6 @@
         exp:  'TR = Price × Quantity = £8 × 200 = £1,600.'
       },
       {
-        id:   'q_ps_2',
         type: 'mcq',
         q:    'Average Revenue (AR) is defined as:',
         opts: ['Total Revenue ÷ Price','Total Revenue ÷ Quantity','Price × Quantity','Marginal Revenue × Output'],
@@ -30,7 +26,6 @@
         exp:  'AR = TR / Q. For a price-taking firm, AR equals the market price.'
       },
       {
-        id:   'q_ps_3',
         type: 'mcq',
         q:    'A profit-maximising firm produces where:',
         opts: ['TR is maximised','MC = AC','MR = MC','AR = AC'],
@@ -38,7 +33,6 @@
         exp:  'The golden rule: produce up to the point where MR = MC. Beyond this, each extra unit costs more than it earns.'
       },
       {
-        id:   'q_ps_4',
         type: 'numeric_input',
         q:    'A firm has TR = £5,000 and TC = £5,800. Calculate the profit (use a negative number for a loss).',
         answer: -800,
@@ -48,7 +42,6 @@
         workingSteps: ['Profit = TR − TC','= £5,000 − £5,800','= −£800 (a loss of £800)']
       },
       {
-        id:   'q_ps_5',
         type: 'mcq',
         q:    'In the short run, a firm should continue to produce even at a loss as long as:',
         opts: [
@@ -61,7 +54,6 @@
         exp:  'In the short run, fixed costs are sunk. As long as P > AVC, the firm covers its variable costs and contributes something toward fixed costs, so it is better to produce than shut down.'
       },
       {
-        id:   'q_ps_6',
         type: 'elastic_sort',
         q:    'Sort the following revenue and profit concepts into the correct category.',
         categories: ['Revenue concept','Profit concept'],
@@ -76,7 +68,6 @@
         ]
       },
       {
-        id:   'q_ps_7',
         type: 'cause_effect',
         q:    'Match each cause to the correct effect on a firm\'s profit position.',
         pairs: [
@@ -89,7 +80,6 @@
         ]
       },
       {
-        id:   'q_ps_8',
         type: 'odd_one_out',
         q:    'Which of the following is the odd one out?',
         opts: ['Normal profit','Supernormal profit','Subnormal profit','Marginal cost'],
@@ -97,7 +87,6 @@
         exp:  'Normal, supernormal, and subnormal profit are all types of profit outcome. Marginal cost is a cost concept, not a profit category.'
       },
       {
-        id:   'q_ps_9',
         type: 'data_table',
         q:    'Use the table to answer: at which output is profit maximised?',
         tableHeaders: ['Output (Q)','TR (£)','TC (£)','Profit (£)'],
@@ -114,7 +103,6 @@
         exp:  'Profit is highest at Q=4 and Q=5 (both £4). When two outputs share the same maximum profit, the firm conventionally produces at the lower output where MR = MC.'
       },
       {
-        id:   'q_ps_10',
         type: 'sequence',
         q:    'Place these steps in the correct order for a firm deciding whether to shut down in the short run.',
         items: [

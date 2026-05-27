@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'taxes_subsidies_policy_main',
-    topicId:  'taxes_subsidies_policy_main',
     title:    'Taxes & Subsidies as Policy Tools',
     subtitle: 'Macroeconomics',
     backUrl:  TopicLoader.routes.learn('taxes-and-subsidies-as-policy-tools'),
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_tsp_1',
         type: 'mcq',
         q:    'A progressive tax is one where:',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Progressive taxes take a rising proportion of income as income increases (e.g., UK income tax with higher rate bands). They help reduce post-tax income inequality.'
       },
       {
-        id:   'q_tsp_2',
         type: 'mcq',
         q:    'The Laffer curve illustrates that:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'The Laffer curve shows a non-linear relationship between the tax rate and tax revenue. Beyond a certain rate, higher taxes reduce work incentives so much that total revenue falls. The optimal rate maximises revenue.'
       },
       {
-        id:   'q_tsp_3',
         type: 'mcq',
         q:    'Tax incidence refers to:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Tax incidence is the economic burden of a tax – who really pays it in terms of reduced welfare. If demand is inelastic, consumers bear most of the incidence of an indirect tax; if supply is inelastic, producers bear more.'
       },
       {
-        id:   'q_tsp_4',
         type: 'mcq',
         q:    'A government subsidy to a firm will:',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'A production subsidy lowers producers\' costs, shifting the supply curve to the right. This increases output and reduces the market price – part of the subsidy is passed to consumers.'
       },
       {
-        id:   'q_tsp_5',
         type: 'numeric_input',
         q:    'A £3 indirect tax is imposed. PED = −0.5 and PES = 1.0. What is the consumer\'s share of the tax burden (£)?',
         answer: 2,
@@ -76,7 +69,6 @@
         workingSteps: ['Consumer share = 1.0/(1.0 + 0.5) × £3 = (1.0/1.5) × £3 = £2']
       },
       {
-        id:   'q_tsp_6',
         type: 'categorise',
         q:    'Categorise each tax as progressive, proportional, or regressive.',
         categories: ['Progressive','Proportional','Regressive'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_tsp_7',
         type: 'cause_effect',
         q:    'Match each tax or subsidy policy to its effect.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_tsp_8',
         type: 'odd_one_out',
         q:    'Which is the odd one out?',
         opts: ['Progressive tax','Regressive tax','Proportional tax','Multiplier effect'],
@@ -111,7 +101,6 @@
         exp:  'Progressive, regressive, and proportional are all types of tax classified by how their share of income varies. The multiplier effect is a macroeconomic concept about how spending injections amplify national income.'
       },
       {
-        id:   'q_tsp_9',
         type: 'data_table',
         q:    'Use the table to calculate the tax rate paid as a % of income and classify the tax system.',
         tableHeaders: ['Income (£)','Tax paid (£)','Tax rate (%)','Tax type'],
@@ -131,7 +120,6 @@
         exp:  'Tax rates rise from 10% at £20k to 30% at £100k – a rising share of income as income increases. This is a progressive tax system.'
       },
       {
-        id:   'q_tsp_10',
         type: 'match_pairs',
         q:    'Match each tax/subsidy concept to its description.',
         pairs: [

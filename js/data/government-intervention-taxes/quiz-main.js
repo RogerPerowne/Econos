@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'govt_intervention_tax_main',
-    topicId:  'govt_intervention_tax_main',
     title:    'Government Intervention: Taxes',
     subtitle: 'Theme 1.17 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('govt_intervention_tax_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: direct vs indirect taxes */
       { type: 'mcq',
-        id: 'q_git_1',
         stem: 'Which statement correctly distinguishes <strong>direct taxes</strong> from <strong>indirect taxes</strong>?',
         opts: [
           'Direct taxes are levied on income or wealth (e.g. income tax, corporation tax, inheritance tax); indirect taxes are levied on spending or transactions (e.g. VAT, fuel duty, tobacco duty)',
@@ -32,7 +29,6 @@
 
       /* 2 – MCQ: tax incidence and elasticity */
       { type: 'mcq',
-        id: 'q_git_2',
         stem: 'A tax is imposed on a good where demand is <strong>price elastic</strong>. Compared to an identical tax on a good with inelastic demand, the elastic-demand tax will generate:',
         opts: [
           'Less revenue and a larger deadweight welfare loss – quantity falls significantly; less tax is collected on fewer units; the larger reduction in mutually beneficial trades creates more welfare loss',
@@ -46,7 +42,6 @@
 
       /* 3 – MCQ: corrective vs revenue-raising tax */
       { type: 'mcq',
-        id: 'q_git_3',
         stem: 'A <strong>Pigouvian tax</strong> differs from a pure <strong>revenue-raising tax</strong> in that:',
         opts: [
           'A Pigouvian tax is designed to correct a market failure by making the producer face the full social cost – its primary purpose is to reduce output to the social optimum, not to maximise revenue',
@@ -60,7 +55,6 @@
 
       /* 4 – MCQ: regressive taxation */
       { type: 'mcq',
-        id: 'q_git_4',
         stem: 'UK fuel duty is often described as <strong>regressive</strong>. This means:',
         opts: [
           'Low-income households spend a higher proportion of their income on fuel duty – the tax takes a larger percentage of income from the poor than the rich, even if the absolute amount may be similar',
@@ -74,7 +68,6 @@
 
       /* 5 – Para fill: tax policy analysis */
       { type: 'para_fill',
-        id: 'q_git_5',
         stem: 'Complete the paragraph analysing the role of taxation in correcting market failure.',
         anchor: 'Taxation is one of the most powerful tools available to governments to correct externalities.',
         para: 'When a firm produces a good with a negative [1], its marginal private cost is [2] than its marginal social cost. The free market produces [3] of the good than is socially optimal. A Pigouvian [4] equal to the marginal [5] cost per unit shifts the firm\'s private cost curve upward to equal the [6] cost. The firm now produces at the [7] optimum where MSC equals MSB. The government collects [8] revenue that can be used to [9] those harmed by the externality. However, setting the correct [10] rate requires accurate measurement of the external cost – a significant practical challenge.',
@@ -95,7 +88,6 @@
 
       /* 6 – Cause & effect: tax chain */
       { type: 'cause_effect',
-        id: 'q_git_6',
         stem: 'Match each tax policy action to its economic effect.',
         pairs: [
           { cause: 'UK government raises income tax rate for higher earners', effect: 'Direct tax becomes more progressive – higher earners pay a larger percentage of income' },
@@ -110,7 +102,6 @@
 
       /* 7 – Match pairs: tax concepts */
       { type: 'match_pairs',
-        id: 'q_git_7',
         stem: 'Match each tax concept to its definition.',
         pairs: [
           { a: 'Progressive tax', b: 'Tax rate rises as income rises – takes a higher percentage from higher earners' },
@@ -125,7 +116,6 @@
 
       /* 8 – Odd one out: corrective taxes */
       { type: 'odd_one_out',
-        id: 'q_git_8',
         stem: 'Three of these are examples of <strong>corrective (Pigouvian) taxes</strong>. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '⛽', label: 'UK fuel duty – designed to reflect the external costs of carbon emissions and road congestion', note: '' },
@@ -139,7 +129,6 @@
 
       /* 9 – Data table: UK carbon tax and energy */
       { type: 'data_table',
-        id: 'q_git_9',
         stem: 'The table shows UK carbon pricing and energy outcomes 2015–2022.',
         headers: ['Year', 'UK ETS/CPS carbon price (£/tonne)', 'Coal power share (%)', 'Renewables share (%)'],
         rows: [
@@ -161,7 +150,6 @@
 
       /* 10 – Multi-select: evaluation of taxation policy */
       { type: 'multi_select',
-        id: 'q_git_10',
         stem: 'Which statements demonstrate genuine <strong>evaluation</strong> of taxation as a policy instrument?',
         opts: [
           'Taxes reduce the incentive to consume demerit goods and can raise revenue simultaneously',

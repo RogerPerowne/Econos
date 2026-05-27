@@ -91,7 +91,7 @@ Pick a topic with a similar content shape and read its `data-topic.js` before wr
 
 - `js/data/factors-of-production/data-topic.js` — uses `ad-interactive` heavily with `visualKey`, `flow`, `causes`, `keyTerms`, `economistQuote`, paired blocks
 - `js/data/price-elasticity-of-demand/data-topic.js` — elasticity calculation + five-frames
-- `js/data/govt_intervention_subsidies/data-topic.js` — welfare-gf-explorer in context
+- `js/data/government-intervention-subsidies/data-topic.js` — welfare-gf-explorer in context
 
 ## See also
 

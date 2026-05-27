@@ -1,5 +1,5 @@
 window.ECONOS_TOPIC = {
-  id: 'profit_cost_changes',
+  id: 'changes-in-costs-and-revenues',
   topicNum: '3.16',
   theme: 'Theme 3 \xb7 Business Behaviour and the Labour Market',
   title: 'Changes in Costs and Revenues',

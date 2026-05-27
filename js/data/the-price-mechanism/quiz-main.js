@@ -1,8 +1,6 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'price_functions_main',
-    topicId:  'price_functions_main',
     title:    'Functions of the Price Mechanism',
     subtitle: 'Theme 1 &middot; Topic 2.7 &middot; Edexcel A-Level',
     backUrl:  TopicLoader.routes.learn('price_functions_main'),
@@ -18,7 +16,6 @@
 
       /* 1 – MCQ: Hayek */
       { type: 'mcq',
-        id: 'q_pf_1',
         stem: 'Friedrich Hayek argued that the price system is superior to central planning primarily because:',
         opts: [
           'Prices aggregate dispersed knowledge held by millions of individuals – knowledge that no central planner could collect or process efficiently',
@@ -32,7 +29,6 @@
 
       /* 2 – Elastic sort: three functions */
       { type: 'elastic_sort',
-        id: 'q_pf_2',
         stem: 'Classify each example under the correct function of the price mechanism.',
         categories: ['signal', 'incentive', 'rationing'],
         categoryLabels: ['Signalling function', 'Incentive function', 'Rationing function'],
@@ -49,7 +45,6 @@
 
       /* 3 – Sequence: price signal transmission through supply chain */
       { type: 'sequence',
-        id: 'q_pf_3',
         stem: 'A drought in Australia raises global wheat prices. Place the following events in the correct order to show how the <strong>price signal transmits through the supply chain</strong>.',
         instr: 'Tap the steps in the correct order, from first to last.',
         items: [
@@ -66,7 +61,6 @@
 
       /* 4 – Para fill: three functions */
       { type: 'para_fill',
-        id: 'q_pf_4',
         stem: 'Complete the paragraph explaining the three functions of prices.',
         anchor: 'The price mechanism allocates resources through three interconnected functions.',
         para: 'First, prices act as [1] – communicating information about scarcity and surplus to producers and consumers without requiring any central direction. Second, prices provide [2] – rising prices attract resources into profitable markets; falling prices drive resources out. Third, prices perform a [3] function – allocating scarce goods to those with the highest [4] to pay. Together, these functions mean that the [5] can coordinate a complex economy through decentralised decisions. However, when markets [6] – as with externalities or public goods – price signals may no longer accurately reflect [7] costs and benefits.',
@@ -84,7 +78,6 @@
 
       /* 5 – Cause & effect: price signals and resource allocation */
       { type: 'cause_effect',
-        id: 'q_pf_5',
         stem: 'Match each price change to the resource allocation response it triggers.',
         pairs: [
           { cause: 'Avocado prices surge 300% in UK supermarkets', effect: 'Farmers in Mexico and South Africa expand avocado orchards' },
@@ -99,7 +92,6 @@
 
       /* 6 – MCQ: incentive function and entrepreneurship */
       { type: 'mcq',
-        id: 'q_pf_6',
         stem: 'An entrepreneur observes that electric scooters are selling for high prices with long waiting lists in UK cities. According to the <strong>incentive function</strong> of prices, what action will she likely take?',
         opts: [
           'Enter the electric scooter market – the high price signals high profit potential and attracts new supply',
@@ -113,7 +105,6 @@
 
       /* 7 – Match pairs: when prices fail */
       { type: 'match_pairs',
-        id: 'q_pf_7',
         stem: 'Match each market failure type to why it causes the price signal to break down.',
         pairs: [
           { a: 'Negative externality', b: 'Price too low – social cost exceeds private cost; overproduction' },
@@ -128,7 +119,6 @@
 
       /* 8 – Odd one out: rationing function */
       { type: 'odd_one_out',
-        id: 'q_pf_8',
         stem: 'Three of these are examples of the <strong>rationing function</strong> of prices. Which is the <strong>odd one out</strong>?',
         items: [
           { icon: '🎫', label: 'Dynamic pricing for train tickets means peak-hour travellers pay more, reducing demand at busy times', note: '' },
@@ -142,7 +132,6 @@
 
       /* 9 – Data table: carbon price and signalling */
       { type: 'data_table',
-        id: 'q_pf_9',
         stem: 'The table shows UK carbon price (ETS) and energy mix data 2015–2022.',
         headers: ['Year', 'Carbon price (£/tonne CO₂)', 'Coal share of electricity (%)', 'Renewables share (%)'],
         rows: [
@@ -164,7 +153,6 @@
 
       /* 10 – Multi-select: evaluation of the price mechanism */
       { type: 'multi_select',
-        id: 'q_pf_10',
         stem: 'A student is writing a 25-mark essay evaluating the price mechanism as an allocator of resources. Which statements demonstrate <strong>genuine evaluation</strong>?',
         opts: [
           'The price mechanism allocates resources through signalling, incentive, and rationing functions without requiring central direction',

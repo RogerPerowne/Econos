@@ -1,11 +1,9 @@
 (function () {
 
   window.ECONOS_QUIZ = {
-    id:       'price_discrimination_main',
-    topicId:  'price_discrimination_main',
     title:    'Price Discrimination',
     subtitle: 'Theory of the Firm',
-    backUrl:  TopicLoader.routes.learn('price_discrimination'),
+    backUrl:  TopicLoader.routes.learn('price-discrimination'),
     backLabel:'Back to Learn It',
     lede:     '10 questions · ~8 minutes · covers conditions, three degrees, and welfare effects of price discrimination',
     shortNames: [
@@ -14,7 +12,6 @@
     ],
     questions: [
       {
-        id:   'q_pd_1',
         type: 'mcq',
         q:    'Which of the following is NOT a condition required for price discrimination?',
         opts: [
@@ -27,7 +24,6 @@
         exp:  'Price discrimination requires market power, separable markets (to prevent resale), and different PEDs. It does not require homogeneous products – the product is the same but sold at different prices to different groups.'
       },
       {
-        id:   'q_pd_2',
         type: 'mcq',
         q:    'First-degree price discrimination involves:',
         opts: [
@@ -40,7 +36,6 @@
         exp:  'First-degree (perfect) price discrimination charges each individual consumer their maximum reservation price, capturing all consumer surplus. It is largely theoretical but approximated by auction markets.'
       },
       {
-        id:   'q_pd_3',
         type: 'mcq',
         q:    'An example of third-degree price discrimination is:',
         opts: [
@@ -53,7 +48,6 @@
         exp:  'Third-degree price discrimination charges different prices to different identifiable groups (students vs adults, peak vs off-peak). Students have more elastic demand, so lower prices extract more revenue from them.'
       },
       {
-        id:   'q_pd_4',
         type: 'mcq',
         q:    'Why must a price-discriminating firm prevent resale between markets?',
         opts: [
@@ -66,7 +60,6 @@
         exp:  'If consumers could buy cheap and resell, all buyers would access the low price, destroying the firm\'s ability to charge higher prices in the other segment and eliminating its extra profit.'
       },
       {
-        id:   'q_pd_5',
         type: 'numeric_input',
         q:    'A firm charges Group A £20 (sells 100 units) and Group B £12 (sells 150 units). Without discrimination it would charge £15 (sell 200 units). Calculate the revenue gain from discrimination.',
         answer: 800,
@@ -76,7 +69,6 @@
         workingSteps: ['With PD: (100×£20)+(150×£12) = £2,000+£1,800 = £3,800','Without PD: 200×£15 = £3,000','Gain = £3,800−£3,000 = £800']
       },
       {
-        id:   'q_pd_6',
         type: 'categorise',
         q:    'Categorise each example by degree of price discrimination.',
         categories: ['1st degree','2nd degree','3rd degree'],
@@ -90,7 +82,6 @@
         ]
       },
       {
-        id:   'q_pd_7',
         type: 'cause_effect',
         q:    'Match each cause to its effect regarding price discrimination.',
         pairs: [
@@ -103,7 +94,6 @@
         ]
       },
       {
-        id:   'q_pd_8',
         type: 'odd_one_out',
         q:    'Which of the following is the odd one out?',
         opts: ['Student rail discounts','Peak/off-peak cinema tickets','Single price set by competitive firm','Senior citizen discount'],
@@ -111,7 +101,6 @@
         exp:  'Student discounts, peak/off-peak tickets, and senior discounts are all examples of third-degree price discrimination. A single competitive price involves no price discrimination.'
       },
       {
-        id:   'q_pd_9',
         type: 'data_table',
         q:    'A firm sells in two markets. Use the data to calculate total revenue with price discrimination.',
         tableHeaders: ['Market','Price (£)','Quantity','TR (£)'],
@@ -126,7 +115,6 @@
         exp:  'Adult TR = 30×80=£2,400; Student TR = 18×60=£1,080. Total with PD = £2,400+£1,080 = £3,480. Single price: 24×140=£3,360. PD earns £120 more.'
       },
       {
-        id:   'q_pd_10',
         type: 'match_pairs',
         q:    'Match each term to its correct description.',
         pairs: [

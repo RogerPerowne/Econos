@@ -4257,143 +4257,87 @@ window.ECONOS_ICONS = {
   `,
 
   jCurveInteractive: `
-    <svg class="jcurve-svg" viewBox="0 0 900 440" width="900" height="440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <svg viewBox="0 0 440 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
       <defs>
-        <clipPath id="jc-chart-clip">
-          <rect x="60" y="43" width="502" height="357"/>
-        </clipPath>
+        <marker id="jc-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+        </marker>
+        <marker id="jc-pu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/>
+        </marker>
       </defs>
 
-      <!-- Background -->
-      <rect width="900" height="440" fill="#F8FAFC" rx="12"/>
+      <!-- BASE: axes + zero line + pre-devaluation flat + devaluation marker -->
+      <!-- Zero line at y=155; surplus region y<155; deficit region y>155 -->
+      <g class="idl-base">
+        <rect width="440" height="300" fill="#F8FAFC" rx="8"/>
 
-      <!-- Right panel divider -->
-      <line x1="595" y1="16" x2="595" y2="424" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5 4"/>
+        <!-- Y-axis -->
+        <line x1="70" y1="282" x2="70" y2="24" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="70,21 66,29 74,29" fill="#334155"/>
+        <!-- X-axis arrow -->
+        <line x1="70" y1="282" x2="416" y2="282" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="419,282 411,278 411,286" fill="#334155"/>
+        <!-- Axis labels -->
+        <text x="421" y="286" font-size="10" font-weight="700" fill="#475569">Time</text>
+        <text x="64" y="158" font-size="10" font-weight="700" fill="#475569" text-anchor="end">0</text>
 
-      <!-- ===== LAYER: axes ===== -->
-      <g class="layer-axes">
-        <!-- X-axis at y=230 (the zero / baseline) -->
-        <line x1="60" y1="400" x2="560" y2="400" stroke="#334155" stroke-width="2"/>
-        <polygon points="560,395 560,405 572,400" fill="#334155"/>
-        <line x1="60" y1="55" x2="60" y2="400" stroke="#334155" stroke-width="2"/>
-        <polygon points="55,55 65,55 60,43" fill="#334155"/>
-        <text x="55" y="46" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">CA</text>
-        <text x="40" y="62" font-size="10" fill="#64748B" text-anchor="end">balance</text>
-        <text x="572" y="406" font-size="11" font-weight="700" fill="#334155">Time (months)</text>
-        <text x="48" y="416" font-size="11" fill="#64748B">0</text>
-        <!-- Month ticks -->
-        <line x1="160" y1="400" x2="160" y2="404" stroke="#334155" stroke-width="1.5"/>
-        <text x="160" y="416" font-size="10" fill="#64748B" text-anchor="middle">6</text>
-        <line x1="260" y1="400" x2="260" y2="404" stroke="#334155" stroke-width="1.5"/>
-        <text x="260" y="416" font-size="10" fill="#64748B" text-anchor="middle">12</text>
-        <line x1="360" y1="400" x2="360" y2="404" stroke="#334155" stroke-width="1.5"/>
-        <text x="360" y="416" font-size="10" fill="#64748B" text-anchor="middle">18</text>
-        <line x1="460" y1="400" x2="460" y2="404" stroke="#334155" stroke-width="1.5"/>
-        <text x="460" y="416" font-size="10" fill="#64748B" text-anchor="middle">24</text>
+        <!-- Y-axis region labels -->
+        <text x="64" y="85"  font-size="10" font-weight="700" fill="#059669" text-anchor="end">Surplus</text>
+        <text x="64" y="97"  font-size="10" font-weight="700" fill="#059669" text-anchor="end">+</text>
+        <text x="64" y="220" font-size="10" font-weight="700" fill="#DC2626" text-anchor="end">Deficit</text>
+        <text x="64" y="232" font-size="10" font-weight="700" fill="#DC2626" text-anchor="end">−</text>
+
+        <!-- Zero baseline (horizontal dashed) -->
+        <line x1="70" y1="155" x2="415" y2="155" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="5 4"/>
+
+        <!-- Pre-devaluation flat line -->
+        <line x1="70" y1="155" x2="110" y2="155" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Devaluation event marker -->
+        <line x1="110" y1="110" x2="110" y2="152" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <polygon points="106,150 114,150 110,156" fill="#DC2626"/>
+        <text x="113" y="122" font-size="10" font-weight="700" fill="#DC2626">devaluation</text>
+        <text x="113" y="135" font-size="10" font-weight="700" fill="#DC2626">occurs</text>
       </g>
 
-      <!-- ===== LAYER: zero (baseline) line — always visible ===== -->
-      <g class="layer-baseline">
-        <line x1="60" y1="230" x2="560" y2="230" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6 4"/>
-        <text x="564" y="234" font-size="11" font-weight="700" fill="#64748B">Pre-dep. CA balance</text>
-        <!-- Depreciation event marker at x=60 -->
-        <line x1="60" y1="55" x2="60" y2="400" stroke="#7D23CB" stroke-width="2"/>
-        <text x="68" y="68" font-size="11" font-weight="700" fill="#7D23CB">Depreciation hits</text>
-        <text x="68" y="82" font-size="10" fill="#7D23CB" opacity="0.8">t = 0</text>
+      <!-- idl-1: J-curve path + annotations -->
+      <!-- Path: flat → drops to trough (200,246) → recovers through zero (290,155) → surplus peak (405,78) -->
+      <g class="idl-1" style="display:none">
+        <path d="M 70,155 L 110,155 C 120,162 175,248 200,246 C 220,244 262,196 290,155 C 312,120 365,90 405,78"
+              fill="none" stroke="#DC2626" stroke-width="2.8" stroke-linecap="round"/>
+
+        <!-- Trough marker -->
+        <line x1="200" y1="155" x2="200" y2="282" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <circle cx="200" cy="246" r="4.5" fill="#DC2626" stroke="#fff" stroke-width="1.5"/>
+
+        <!-- Zero-crossing marker -->
+        <circle cx="290" cy="155" r="4" fill="#DC2626" stroke="#fff" stroke-width="1.5"/>
+
+        <!-- PED<1 region annotation (in the deficit dip) -->
+        <text x="175" y="268" font-size="9.5" font-weight="700" fill="#DC2626" text-anchor="middle">PED_X + PED_M &lt; 1</text>
+        <text x="175" y="280" font-size="9"   fill="#DC2626" text-anchor="middle">devaluation worsens CA</text>
+
+        <!-- PED>1 region annotation (in the surplus recovery) -->
+        <text x="355" y="115" font-size="9.5" font-weight="700" fill="#059669" text-anchor="middle">PED_X + PED_M &gt; 1</text>
+        <text x="355" y="127" font-size="9"   fill="#059669" text-anchor="middle">devaluation improves CA</text>
+
+        <!-- J-curve label -->
+        <text x="248" y="185" font-size="11" font-weight="700" fill="#DC2626" font-style="italic">J-curve</text>
       </g>
 
-      <!-- ===== LAYER: legend base ===== -->
-      <g class="layer-legend-base">
-        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Before depreciation: stable currency, balanced CA</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">STARTING POINT</text>
-        <text x="620" y="100" font-size="13" fill="#334155">Currency is stable and the</text>
-        <text x="620" y="118" font-size="13" fill="#334155">current account sits at its</text>
-        <text x="620" y="136" font-size="13" fill="#334155">pre-depreciation level.</text>
-        <text x="620" y="170" font-size="13" font-weight="700" fill="#1E293B">Then £ depreciates…</text>
-        <text x="620" y="190" font-size="13" fill="#334155">— exports cheaper abroad</text>
-        <text x="620" y="208" font-size="13" fill="#334155">— imports dearer at home</text>
-        <text x="620" y="240" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">WILL THE CA IMPROVE?</text>
-        <text x="620" y="262" font-size="13" fill="#334155">Not immediately. Contracts and</text>
-        <text x="620" y="280" font-size="13" fill="#334155">prices are locked in short-run.</text>
-        <text x="620" y="298" font-size="13" fill="#334155">Volumes take time to adjust.</text>
-        <text x="620" y="332" font-size="11" font-style="italic" fill="#64748B">The next state traces the</text>
-        <text x="620" y="348" font-size="11" font-style="italic" fill="#64748B">resulting J-shaped path.</text>
-      </g>
+      <!-- idl-2: Marshall-Lerner fails — CA stays in deficit (dashed purple) + formula box -->
+      <g class="idl-2" style="display:none">
+        <path d="M 110,155 C 135,175 178,252 202,252 C 228,252 300,258 410,256"
+              fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-dasharray="9 5" stroke-linecap="round"/>
 
-      <!-- ===== LAYER: J-curve path (extension + shift) ===== -->
-      <g class="layer-jcurve">
-        <g clip-path="url(#jc-chart-clip)">
-          <path d="M 60,230 C 100,270 145,330 160,330 C 175,330 220,300 260,230 C 300,160 400,148 540,140"
-                fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
-        </g>
-        <!-- Phase markers -->
-        <circle cx="60" cy="230" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
-        <circle cx="160" cy="330" r="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
-        <circle cx="260" cy="230" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
-        <circle cx="540" cy="140" r="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.5"/>
-        <!-- Phase labels -->
-        <text x="60" y="218" font-size="11" font-weight="700" fill="#DC2626">A: t=0</text>
-        <text x="160" y="350" font-size="11" font-weight="700" fill="#DC2626" text-anchor="middle">B: trough</text>
-        <text x="270" y="248" font-size="11" font-weight="700" fill="#DC2626">C: back to baseline</text>
-        <text x="540" y="128" font-size="11" font-weight="700" fill="#DC2626" text-anchor="end">D: net improvement</text>
-        <!-- Curve label -->
-        <text x="380" y="210" font-size="13" font-weight="700" fill="#DC2626" font-style="italic">J-curve</text>
-      </g>
+        <!-- Formula box (top area, clear of both curves) -->
+        <rect x="240" y="22" width="188" height="44" rx="7" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.2"/>
+        <text x="334" y="40" font-size="9.5" font-weight="800" fill="#6D28D9" text-anchor="middle">Marshall-Lerner condition</text>
+        <text x="334" y="56" font-size="12"  font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>
 
-      <!-- ===== LAYER: legend extension ===== -->
-      <g class="layer-legend-extension">
-        <circle cx="74" cy="32" r="7" fill="#DC2626"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">J-curve: CA dips first (~6 months), then recovers and improves</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="2">FOUR PHASES</text>
-        <text x="620" y="100" font-size="13" font-weight="700" fill="#1E293B">A → B: short-run worsening</text>
-        <text x="620" y="118" font-size="12" fill="#475569">Import bills rise immediately</text>
-        <text x="620" y="134" font-size="12" fill="#475569">in £; export volumes locked.</text>
-        <text x="620" y="162" font-size="13" font-weight="700" fill="#1E293B">B: the trough (~6 months)</text>
-        <text x="620" y="180" font-size="12" fill="#475569">Maximum deterioration.</text>
-        <text x="620" y="208" font-size="13" font-weight="700" fill="#1E293B">B → C: volumes respond</text>
-        <text x="620" y="226" font-size="12" fill="#475569">New contracts written;</text>
-        <text x="620" y="242" font-size="12" fill="#475569">export demand picks up.</text>
-        <text x="620" y="270" font-size="13" font-weight="700" fill="#1E293B">C → D: long-run improvement</text>
-        <text x="620" y="288" font-size="12" fill="#475569">CA rises above pre-dep. level.</text>
-        <text x="620" y="324" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">DURATION</text>
-        <text x="620" y="346" font-size="13" fill="#334155">Typically 12–18 months in</text>
-        <text x="620" y="364" font-size="13" fill="#334155">developed economies.</text>
-      </g>
-
-      <!-- ===== LAYER: failed M-L curve (shift state) ===== -->
-      <g class="layer-failed">
-        <!-- Alternative path: dips but doesn't recover (M-L fails) -->
-        <g clip-path="url(#jc-chart-clip)">
-          <path d="M 60,230 C 100,270 145,330 160,330 C 175,330 280,350 540,350"
-                fill="none" stroke="#7D23CB" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 5"/>
-        </g>
-        <text x="445" y="343" font-size="12" font-weight="700" fill="#7D23CB" text-anchor="end">M-L fails: no recovery</text>
-        <!-- M-L condition box (shifted right to avoid "Depreciation hits" label) -->
-        <rect x="300" y="62" width="260" height="58" rx="8" fill="#FFFFFF" stroke="#7D23CB" stroke-width="1.5"/>
-        <text x="430" y="83" font-size="11" font-weight="800" fill="#7D23CB" text-anchor="middle" letter-spacing="1">MARSHALL-LERNER CONDITION</text>
-        <text x="430" y="107" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">|PED_X| + |PED_M| &gt; 1</text>
-      </g>
-
-      <!-- ===== LAYER: legend shift ===== -->
-      <g class="layer-legend-shift">
-        <circle cx="74" cy="32" r="7" fill="#7D23CB"/>
-        <text x="90" y="37" font-size="12" font-weight="600" fill="#334155">Marshall-Lerner: J only completes if elasticities are high enough</text>
-        <text x="620" y="75" font-size="10" font-weight="700" fill="#7D23CB" letter-spacing="2">THE CONDITION</text>
-        <text x="620" y="100" font-size="14" font-weight="700" fill="#334155">|PED_X| + |PED_M| &gt; 1</text>
-        <text x="620" y="122" font-size="12" fill="#475569">Sum of price elasticities of</text>
-        <text x="620" y="138" font-size="12" fill="#475569">demand for X and M.</text>
-        <text x="620" y="172" font-size="13" font-weight="700" fill="#DC2626">If condition HOLDS</text>
-        <text x="620" y="190" font-size="12" fill="#475569">Volume response large enough</text>
-        <text x="620" y="206" font-size="12" fill="#475569">to outweigh price effect → CA</text>
-        <text x="620" y="222" font-size="12" fill="#475569">improves (red J-curve).</text>
-        <text x="620" y="250" font-size="13" font-weight="700" fill="#7D23CB">If condition FAILS</text>
-        <text x="620" y="268" font-size="12" fill="#475569">Inelastic X and M → volume</text>
-        <text x="620" y="284" font-size="12" fill="#475569">response too weak; CA stays</text>
-        <text x="620" y="300" font-size="12" fill="#475569">worse (dashed purple path).</text>
-        <text x="620" y="334" font-size="10" font-weight="700" fill="#64748B" letter-spacing="2">UK CONTEXT</text>
-        <text x="620" y="356" font-size="12" fill="#334155">Services-heavy exports are</text>
-        <text x="620" y="372" font-size="12" fill="#334155">relatively inelastic — limits J.</text>
+        <!-- Failed path label -->
+        <text x="340" y="243" font-size="9.5" font-weight="700" fill="#7C3AED" text-anchor="middle">M-L fails: CA stays worse</text>
       </g>
     </svg>
   `,

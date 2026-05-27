@@ -405,26 +405,41 @@ window.ECONOS_TOPIC = {
 
       tip: { icon: '🔒', tone: 'green', text: 'Prices react immediately – quantities respond with a lag.' },
 
-      diagramKey: 'jCurveInteractive',
-      diagramLabel: 'THE J-CURVE DIAGRAM',
-      diagramEmoji: '📉',
-      steps: [
-        {
-          key: 'base',
-          label: 'Depreciation',
-          text: 'The pound falls. The current account sits at its pre-depreciation level. Prices are about to react — but contracts are fixed and volumes have not moved yet.'
-        },
-        {
-          key: 'extension',
-          label: 'Worse first',
-          text: 'Import prices rise immediately. Contracts are fixed, so buyers keep purchasing at the higher price. Export volumes do not jump yet. The import bill rises — the deficit widens to the trough (~6 months).'
-        },
-        {
-          key: 'shift',
-          label: 'Recovery',
-          text: 'Export volumes rise and import volumes fall as consumers and firms adjust. If PED<sub>X</sub> + PED<sub>M</sub> &gt; 1 (Marshall–Lerner satisfied), the balance improves past the starting point — the classic J-curve.'
-        }
-      ],
+      interactiveDiagram: {
+        svgKey: 'jCurveInteractive',
+        layers: ['idl-1', 'idl-2'],
+        label: 'THE J-CURVE DIAGRAM',
+        emoji: '📉',
+        views: [
+          {
+            label: 'Depreciation hits',
+            tone: 'blue',
+            head: 'Prices react, volumes have not yet',
+            body: 'The pound falls. The current account sits at its pre-depreciation level. Prices are about to react — but contracts are fixed and volumes cannot adjust immediately.',
+            analysis: 'The CA may actually worsen before it improves. The J-curve traces exactly why.'
+          },
+          {
+            label: 'Worse first',
+            tone: 'rose',
+            show: ['idl-1'],
+            head: 'The current account deteriorates to the trough',
+            body: [
+              'Import prices rise immediately — buyers keep purchasing at the new higher £ price.',
+              'Export volumes do not jump yet — foreign buyers have existing contracts.',
+              'Import bill rises while export revenue is flat → CA worsens to the trough (~6 months).'
+            ],
+            analysis: 'This is the most counter-intuitive part of depreciation. The CA gets worse even though the mechanism is working.'
+          },
+          {
+            label: 'Recovery',
+            tone: 'green',
+            show: ['idl-1', 'idl-2'],
+            head: 'Volumes respond — but only if M-L holds',
+            body: 'Export volumes rise and import volumes fall as contracts expire and firms adjust. If <strong>|PED_X| + |PED_M| &gt; 1</strong> (Marshall–Lerner satisfied), the volume response outweighs the price effect and the CA improves past the starting point.',
+            analysis: 'If M-L fails (dashed path), the CA stays permanently worse — the J never completes. This is the risk for services-heavy economies like the UK.'
+          }
+        ]
+      },
 
       flowTitle: 'WHY IT HAPPENS',
       flowEmoji: '🔗',

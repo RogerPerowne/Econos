@@ -75,24 +75,40 @@ window.ECONOS_TOPIC = {
       stepLabel: 'Learn: Step 4 of 8',
       title: 'Marshall-Lerner Condition & J-Curve',
       lede: 'Depreciation makes exports cheaper and imports dearer — but the current account does not improve immediately. The J-curve traces the path; Marshall-Lerner says when it actually completes.',
-      diagramKey: 'jCurveInteractive',
-      steps: [
-        {
-          key: 'base',
-          label: 'Starting point',
-          text: 'Before depreciation the currency is stable and the current account sits at its <strong>pre-depreciation level</strong>. Then £ depreciates: exports become cheaper in foreign currency, imports dearer in £. The intuition says CA should improve — but contracts and prices are locked in short-run, so <strong>volumes cannot adjust immediately</strong>.'
-        },
-        {
-          key: 'extension',
-          label: 'The J-curve unfolds',
-          text: 'Four phases: <strong>A → B</strong> short-run worsening (import bills up in £, export volumes unchanged); <strong>B</strong> trough at ~6 months (maximum deterioration); <strong>B → C</strong> volumes respond as new contracts are written and demand for cheaper exports picks up; <strong>C → D</strong> long-run improvement — CA rises above the pre-depreciation level. Typical duration: 12–18 months.'
-        },
-        {
-          key: 'shift',
-          label: 'Marshall-Lerner condition',
-          text: 'The J-curve only completes if <strong>|PED_X| + |PED_M| &gt; 1</strong> — the volume response is large enough to outweigh the price effect. If exports and imports are inelastic (e.g. unique goods, services-heavy trade), depreciation can leave the CA <strong>permanently worse</strong> (dashed purple path). The UK\'s services-heavy exports are relatively inelastic — limits the J in practice.'
-        }
-      ],
+      interactiveDiagram: {
+        svgKey: 'jCurveInteractive',
+        layers: ['idl-1', 'idl-2'],
+        views: [
+          {
+            label: 'Before devaluation',
+            tone: 'blue',
+            head: 'The pre-depreciation position',
+            body: 'Currency is stable and the current account sits at its pre-depreciation level. Then the pound depreciates — exports become cheaper abroad, imports dearer at home. The intuition says CA should improve, but contracts and prices are locked in the short run.',
+            analysis: 'Key question: will the CA improve? Not immediately — volumes take time to adjust. The J-curve traces the path.'
+          },
+          {
+            label: 'J-curve unfolds',
+            tone: 'rose',
+            show: ['idl-1'],
+            head: 'Four phases of the J-curve',
+            body: [
+              '<strong>A→B:</strong> Import bills rise immediately in £; export volumes locked by existing contracts.',
+              '<strong>B:</strong> Trough at ~6 months — maximum deterioration of the current account.',
+              '<strong>B→C:</strong> New contracts written; export demand picks up as price signals work through.',
+              '<strong>C→D:</strong> CA rises above its pre-depreciation level — long-run improvement complete.'
+            ],
+            analysis: 'Duration is typically 12–18 months in developed economies. The CA worsens before it improves.'
+          },
+          {
+            label: 'Marshall-Lerner condition',
+            tone: 'purple',
+            show: ['idl-1', 'idl-2'],
+            head: 'The J completes only if M-L holds',
+            body: 'If <strong>|PED_X| + |PED_M| &gt; 1</strong>, the volume response is large enough to outweigh the price effect and the CA eventually improves. If the sum is less than 1, exports and imports are too inelastic — depreciation leaves the CA permanently worse (dashed purple path).',
+            analysis: 'UK services-heavy exports are relatively inelastic — limits how far the J completes in practice. Always link M-L to the country\'s export composition in an evaluation.'
+          }
+        ]
+      },
       examEdge: 'If a country exports unique goods (aircraft, luxury brands, pharmaceuticals), PED_X is low — depreciation boosts revenues but volume rises little. If exports are commodity-like, PED_X is high and volume response is large. Always state the M-L condition explicitly and link it to the country\'s export composition.'
     },
     {

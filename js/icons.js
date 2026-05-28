@@ -16250,12 +16250,12 @@ window.ECONOS_ICONS = {
       <g filter="url(#nif-shadow)">
         <rect x="22" y="118" width="158" height="172" rx="14" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
       </g>
-      <!-- icon: users (3 figures) -->
-      <g transform="translate(75,142)" fill="#2563EB">
-        <circle cx="13" cy="6" r="6"/>
-        <path d="M0 26 a13 13 0 0 1 26 0 z"/>
-        <circle cx="30" cy="9" r="5"/>
-        <path d="M19 26 a11 11 0 0 1 22 0 z"/>
+      <!-- icon: two-figure users glyph -->
+      <g transform="translate(85,140)" fill="#2563EB">
+        <circle cx="9" cy="8" r="7"/>
+        <path d="M-4 32 a13 13 0 0 1 26 0 z"/>
+        <circle cx="26" cy="11" r="5.5"/>
+        <path d="M15 32 a11 11 0 0 1 22 0 z"/>
       </g>
       <text x="101" y="216" text-anchor="middle" font-size="17" font-weight="800" fill="#1E40AF">Households</text>
       <text x="101" y="244" text-anchor="middle" font-size="11.5" fill="#1E3A8A">Owners of factors</text>

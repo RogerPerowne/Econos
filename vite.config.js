@@ -59,7 +59,6 @@ function htmlEntries() {
        /learn/<topic>             → learn.html
        /link/<topic>/<station>    → link.html
        /land/<topic>/<section>    → land.html
-       /quiz/<topic>/<set>        → quiz.html
 
    In dev and preview the plugin is a Connect middleware that
    rewrites the request URL to the matching shell — the browser
@@ -75,7 +74,7 @@ function htmlEntries() {
    <link rel=canonical> baked in. Real 200s, per-page SEO.
    ============================================================ */
 
-const SHELL_HTML = { learn: 'learn.html', link: 'link.html', land: 'land.html', quiz: 'quiz.html' };
+const SHELL_HTML = { learn: 'learn.html', link: 'link.html', land: 'land.html' };
 const STANDALONE = new Set(['login','privacy-policy','terms','offline','404']);
 
 /* Load js/topics.js as plain text and extract the registry. The
@@ -101,8 +100,7 @@ function loadStations() {
   const s = sandbox.window.ECONOS_STATIONS || {};
   return {
     link: Object.keys(s.link || {}),
-    land: Object.keys(s.land || {}),
-    quiz: Array.isArray(s.quizSets) ? s.quizSets : []
+    land: Object.keys(s.land || {})
   };
 }
 const STATIONS = loadStations();
@@ -134,13 +132,12 @@ function topicRoutes() {
     const resourceType =
       shell === 'learn' ? 'Concept' :
       shell === 'link'  ? 'ApplicationExercise' :
-      shell === 'land'  ? 'AssessmentExercise' :
-      /* quiz */          'Quiz';
+      /* land */          'AssessmentExercise';
     const stationStr = station ? ' · ' + formatStationLabel(shell, station) : '';
-    const stageName = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : shell === 'land' ? 'Land It' : 'Quiz';
+    const stageName = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : 'Land It';
     const ld = {
       '@context': 'https://schema.org',
-      '@type': shell === 'quiz' ? 'Quiz' : 'LearningResource',
+      '@type': 'LearningResource',
       name: `${topicName}${stationStr} · ${stageName}`,
       description: sub
         ? `${stageName} — ${sub}.`
@@ -166,7 +163,7 @@ function topicRoutes() {
     if (!topic) return html;
     const t = topicById(topic);
     const topicName  = t ? t.name : topic;
-    const stageName  = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : shell === 'land' ? 'Land It' : 'Quiz';
+    const stageName  = shell === 'learn' ? 'Learn It' : shell === 'link' ? 'Link It' : 'Land It';
     const stationStr = station ? ' · ' + formatStationLabel(shell, station) : '';
     const title = `${topicName}${stationStr} · ${stageName} · Econos`;
     const desc  = t && t.sub
@@ -178,7 +175,7 @@ function topicRoutes() {
        runtime stages widget can lock unavailable stages instead of
        offering broken click targets. */
     const avail = (t && t.available) || {};
-    const availList = ['learn', 'link', 'land', 'quiz']
+    const availList = ['learn', 'link', 'land']
       .filter((s) => avail[s] !== false)
       .join(',');
     const availMeta = `<meta name="econos-availability" content="${availList}">`;
@@ -267,7 +264,6 @@ function topicRoutes() {
       if (avail.learn) writeRoute('learn', topic.id);
       if (avail.link)  STATIONS.link.forEach((s) => writeRoute('link', topic.id, s));
       if (avail.land)  STATIONS.land.forEach((s) => writeRoute('land', topic.id, s));
-      if (avail.quiz !== false) STATIONS.quiz.forEach((s) => writeRoute('quiz', topic.id, s));
     }
     // eslint-disable-next-line no-console
     console.log(`[topic-routes] generated ${written.length} per-topic index.html files`);

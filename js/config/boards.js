@@ -29,41 +29,41 @@
      ─────────────────────────────────────────────────────────────
      When a board publishes a variant of a topic with different
      cards or framing, drop the data files at
-     `js/data/<board>/<topic>/` and list the topic id here:
+     `js/data/<board>/<topic>/` and register them here per-file:
 
-       window.ECONOS_BOARD_OVERRIDES.aqa['monopoly'] = true;
+       window.ECONOS_BOARD_OVERRIDES.aqa['monopoly'] = { learn: true };
 
-     The TopicLoader checks this set before fetching and prefers
-     the board-specific path when listed. Topics NOT listed fall
-     back to `js/data/<topic>/` — the Edexcel A baseline.
+     The TopicLoader checks each (board, topic, file) tuple before
+     fetching and prefers the board-specific path when listed.
+     Combinations NOT listed fall back to `js/data/<topic>/` — the
+     Edexcel A baseline.
 
-     Override authoring is incremental: a board can override the
-     Learn It `topic.js` for a topic while still falling back to
-     the Edexcel A baseline for Link / Land / Quiz on that same
-     topic, because the loader checks the override pair per-file
-     not per-topic-folder. (Drop more files in for each board as
-     content is authored.) */
+     Per-file granularity matters: a board can ship a custom
+     Learn It topic.js while still inheriting the Edexcel A
+     baseline for Link / Land on the same topic. That's how the
+     current overrides ship — only learn.js is rewritten per
+     board so far. */
   window.ECONOS_BOARD_OVERRIDES = {
     edexcel_b: {
-      'causes-of-inflation-and-deflation': true,
-      'aggregate-demand': true,
-      'aggregate-supply': true,
-      'employment-and-unemployment': true,
-      'national-income-and-the-multiplier': true
+      'causes-of-inflation-and-deflation':   { learn: true },
+      'aggregate-demand':                    { learn: true },
+      'aggregate-supply':                    { learn: true },
+      'employment-and-unemployment':         { learn: true },
+      'national-income-and-the-multiplier':  { learn: true }
     },
     aqa: {
-      'causes-of-inflation-and-deflation': true,
-      'aggregate-demand': true,
-      'aggregate-supply': true,
-      'employment-and-unemployment': true,
-      'national-income-and-the-multiplier': true
+      'causes-of-inflation-and-deflation':   { learn: true },
+      'aggregate-demand':                    { learn: true },
+      'aggregate-supply':                    { learn: true },
+      'employment-and-unemployment':         { learn: true },
+      'national-income-and-the-multiplier':  { learn: true }
     },
     ocr: {
-      'causes-of-inflation-and-deflation': true,
-      'aggregate-demand': true,
-      'aggregate-supply': true,
-      'employment-and-unemployment': true,
-      'national-income-and-the-multiplier': true
+      'causes-of-inflation-and-deflation':   { learn: true },
+      'aggregate-demand':                    { learn: true },
+      'aggregate-supply':                    { learn: true },
+      'employment-and-unemployment':         { learn: true },
+      'national-income-and-the-multiplier':  { learn: true }
     }
   };
 })();

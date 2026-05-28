@@ -257,7 +257,7 @@
           </div>
           <div class="hp-feat-card__title">Practice questions</div>
           <div class="hp-feat-card__body">Exam-style questions with step-by-step worked solutions.</div>
-          <a href="/quiz" class="hp-feat-card__link">
+          <a href="#topics" class="hp-feat-card__link">
             Learn more
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -316,7 +316,8 @@
   <section class="hp-all-topics" id="topics" aria-labelledby="topics-heading">
     <div class="hp-container">
       <h2 class="hp-section-heading" id="topics-heading">Browse all topics</h2>
-      <p class="hp-section-sub">All four Edexcel A themes, fully mapped &mdash; with study content growing every week.</p>
+      <p class="hp-section-sub" id="topics-sub">Pick your exam board &mdash; the themes and topic numbering update to match.</p>
+      <div id="board-picker" class="board-picker" role="radiogroup" aria-label="Choose your exam board"></div>
       <div id="topics-root"></div>
     </div>
   </section>
@@ -817,6 +818,39 @@
       /* Dynamic footer count — board-aware. */
       document.getElementById('footer-count').textContent =
         total + ' topics · ' + THEMES.length + ' themes · ' + currentBoardName + ' spec';
+
+      /* ────────── Board picker ──────────
+         Radio-group above the topic grid. Selecting reloads so
+         every spec chip, theme grouping and footer count picks up
+         the new board cleanly (same pattern as the account-menu
+         picker — push-style updates would need every render-site
+         to subscribe; a reload is one line and ships now). */
+      var pickerRoot = document.getElementById('board-picker');
+      if (pickerRoot && window.ECONOS_BOARDS && window.TopicLoader && TopicLoader.setBoard) {
+        var order = window.ECONOS_BOARDS_ORDER || Object.keys(window.ECONOS_BOARDS);
+        var pickerHtml = '';
+        for (var bi = 0; bi < order.length; bi++) {
+          var bid = order[bi];
+          var b = window.ECONOS_BOARDS[bid];
+          if (!b) continue;
+          var active = bid === currentBoard;
+          pickerHtml += '<button type="button"'
+            + ' class="board-picker__btn' + (active ? ' is-active' : '') + '"'
+            + ' role="radio" aria-checked="' + (active ? 'true' : 'false') + '"'
+            + ' data-board="' + bid + '">'
+            +   '<span class="board-picker__name">' + b.name + '</span>'
+            + '</button>';
+        }
+        pickerRoot.innerHTML = pickerHtml;
+        pickerRoot.addEventListener('click', function (e) {
+          var btn = e.target.closest('.board-picker__btn');
+          if (!btn) return;
+          var nextId = btn.getAttribute('data-board');
+          if (!nextId || nextId === currentBoard) return;
+          TopicLoader.setBoard(nextId);
+          window.location.reload();
+        });
+      }
     });
   </script>
 </body>

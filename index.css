@@ -490,8 +490,48 @@
       font-size: 16px;
       color: var(--muted);
       line-height: 1.55;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
       max-width: 560px;
+    }
+
+    /* ══════════════════════════════════════════
+       BOARD PICKER (top of #topics)
+       Radio-group row above the topic grid. Selecting reloads.
+    ══════════════════════════════════════════ */
+    .board-picker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 32px;
+    }
+    .board-picker__btn {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      background: var(--white);
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 18px;
+      transition: border-color 120ms ease, background 120ms ease,
+                  color 120ms ease, transform 120ms ease;
+    }
+    .board-picker__btn:hover {
+      border-color: var(--ink);
+      transform: translateY(-1px);
+    }
+    .board-picker__btn:focus-visible {
+      outline: 3px solid #4f46e5;
+      outline-offset: 2px;
+    }
+    .board-picker__btn.is-active {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
     }
 
     /* ══════════════════════════════════════════

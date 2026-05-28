@@ -9,10 +9,8 @@
        /link/<topic>/<station>    Link It (intro|context|chain|
                                   chain-open|calc|data|extract|
                                   predict|diagram|depends|judge|
-                                  complete|quiz)
-       /land/<topic>/<section>    Land It (intro|a|b|c|complete|
-                                  quiz)
-       /quiz/<topic>/<set>        Standalone quiz
+                                  complete)
+       /land/<topic>/<section>    Land It (intro|a|b|c|complete)
 
    `<topic>` is the topic's slug — derived from its display title
    (e.g. "Negative Externalities" → `negative-externalities`). The
@@ -24,9 +22,9 @@
    (only `chain-open` is multi-word today). Same identity rule.
 
    Path parsing happens once in `parsePath()` and is exposed via
-   `getTopic`, `getStation`, `getQuizSet`, `getShell`. URL building
-   goes through `routes.<shell>(...)` — these are the canonical
-   builders used by every engine, every shell, every data file.
+   `getTopic`, `getStation`, `getShell`. URL building goes through
+   `routes.<shell>(...)` — these are the canonical builders used
+   by every engine, every shell, every data file.
 
    `go(url)` performs an in-place SPA navigation if the target is
    a station inside the currently-loaded Link or Land shell,
@@ -41,13 +39,12 @@
   /* Recognised path segments. Used by the parser to distinguish
      a shell+topic+station path from random URLs that just happen
      to start with /link etc. */
-  var SHELLS = { learn: true, link: true, land: true, quiz: true };
+  var SHELLS = { learn: true, link: true, land: true };
 
   /* parsePath('/link/causes-of-inflation-and-deflation/chain-open')
        → { shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain-open' }
      parsePath('/')              → { shell: 'home' }
      parsePath('/learn')         → { shell: 'learn', topic: null }
-     parsePath('/quiz/X/main')   → { shell: 'quiz', topic: 'X', quizSet: 'main' }
      Returns null for paths the loader doesn't recognise. */
   function parsePath(pathname) {
     var p = String(pathname || window.location.pathname || '/');
@@ -60,7 +57,6 @@
     if (!SHELLS[shell]) { return null; }
     var topic = parts[1] || null;
     var third = parts[2] || null;
-    if (shell === 'quiz') { return { shell: shell, topic: topic, quizSet: third }; }
     return { shell: shell, topic: topic, station: third };
   }
 
@@ -70,18 +66,16 @@
 
   function getTopic()    { return getRoute().topic    || DEFAULT_TOPIC; }
   function getStation()  { return getRoute().station  || null; }
-  function getQuizSet()  { return getRoute().quizSet  || null; }
   function getShell()    { return getRoute().shell    || null; }
 
   /* Canonical session labels — single source of truth so data files
      don't all need to repeat 'Session N of 3: …'. Engines should pass
      `T.sessionLabel || TopicLoader.sessionLabel('link')` when rendering
-     the topbar. Stage is one of 'learn' | 'link' | 'land' | 'quiz'. */
+     the topbar. Stage is one of 'learn' | 'link' | 'land'. */
   var SESSION_LABELS = {
     learn: 'Session 1 of 3: Learn',
     link:  'Session 2 of 3: Link',
-    land:  'Session 3 of 3: Land',
-    quiz:  'Quiz'
+    land:  'Session 3 of 3: Land'
   };
   function sessionLabel(stage) { return SESSION_LABELS[stage] || ''; }
 
@@ -135,9 +129,13 @@
     land:  function (section, topic) {
       return '/land/' + (topic || getTopic()) + '/' + (section || 'intro');
     },
-    quiz:  function (set, topic) {
-      return '/quiz/' + (topic || getTopic()) + '/' + (set || 'main');
-    }
+    /* Legacy compat shim — the /quiz/ standalone shell was retired in
+       v0.4.0 but existing learn.js files still reference quizCta
+       fields built with this expression. Returns '' so the data file
+       parses; the app.js renderer no longer reads quizCta so the
+       value is never surfaced. Remove this shim once every learn.js
+       file is rewritten to drop quizCta. */
+    quiz:  function ()             { return ''; }
   };
 
   /* Programmatic navigation. If the URL is a station inside the
@@ -184,9 +182,16 @@
     var board = getBoard();
     if (board && board !== 'edexcel_a') {
       var overrides = window.ECONOS_BOARD_OVERRIDES || {};
-      var topicSet = overrides[board];
-      if (topicSet && topicSet[topic]) {
-        return '/js/data/' + board + '/' + topic + '/' + file;
+      var topicOverrides = (overrides[board] || {})[topic];
+      /* Per-file granularity: the override entry is an object like
+         { learn: true, link: false }. We look up the stem of the
+         requested file (e.g. 'learn.js' → 'learn') and only redirect
+         to the board path when explicitly listed. */
+      if (topicOverrides) {
+        var stem = String(file).replace(/\.js$/, '');
+        if (topicOverrides[stem]) {
+          return '/js/data/' + board + '/' + topic + '/' + file;
+        }
       }
     }
     return '/js/data/' + topic + '/' + file;
@@ -233,7 +238,6 @@
     parsePath:           parsePath,
     getTopic:            getTopic,
     getStation:          getStation,
-    getQuizSet:          getQuizSet,
     getShell:            getShell,
     /* URL building — the canonical entry points */
     routes:              routes,

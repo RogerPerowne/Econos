@@ -5331,9 +5331,11 @@
       out += '<div style="background:' + et.bg + ';border:1px solid ' + et.border + ';border-radius:12px;padding:16px 18px;margin-top:10px;"><div style="font-size:12px;font-weight:700;color:' + et.label + ';text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Exam edge</div><div style="font-size:13.5px;color:#0B1426;line-height:1.65;">' + c.examEdge + '</div></div>';
     }
 
-    if (c.quizCta) {
-      out += '<div style="margin-top:22px;"><a href="' + c.quizCta.href + '" class="quiz-cta-btn">' + (c.quizCta.label || 'Test yourself →') + '</a></div>';
-    }
+    /* Note: quizCta button was dropped in v0.4.0 when the standalone
+       /quiz/ shell was retired. The quiz pool now lives alongside the
+       Learn It cards in the same learn.js file under
+       window.ECONOS_QUIZ — ready to be surfaced inline at the end of
+       the Learn It journey when the inline-quiz renderer ships. */
 
     return out;
   }
@@ -5575,15 +5577,14 @@
     const isLast = idx === T.cards.length - 1;
     const isFirst = idx === 0;
 
-    // On the last card, compute quiz and next-topic destinations.
-    let quizHref = null, quizLabel = 'Test yourself';
+    // On the last card, compute the next-topic destination and a
+    // "Take the quiz" inline trigger when window.ECONOS_QUIZ is
+    // present (the quiz pool now lives in learn.js, not at a
+    // standalone /quiz/ URL — see v0.4.0 refactor).
     let nextTopicId = null, nextTopicName = null;
+    const hasQuiz = !!(window.ECONOS_QUIZ && Array.isArray(window.ECONOS_QUIZ.questions)
+      && window.ECONOS_QUIZ.questions.length);
     if (isLast) {
-      const lastCard = T.cards[T.cards.length - 1];
-      if (lastCard && lastCard.quizCta) {
-        quizHref = lastCard.quizCta.href;
-        quizLabel = lastCard.quizCta.label || 'Test yourself';
-      }
       if (window.ECONOS_TOPICS) {
         const tidx = window.ECONOS_TOPICS.findIndex(t => t.id === T.id);
         if (tidx >= 0 && tidx < window.ECONOS_TOPICS.length - 1) {
@@ -5601,7 +5602,7 @@
 
     let cardFoot;
     if (isLast) {
-      const quizBtn  = quizHref   ? `<a href="${quizHref}"                    class="btn btn--primary"    style="text-decoration:none;">${quizLabel}</a>` : '';
+      const quizBtn  = hasQuiz     ? `<button class="btn btn--primary" data-action="take-quiz">Take the quiz ${I.arrowRight}</button>` : '';
       const nextBtn  = nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
       const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
@@ -5801,15 +5802,21 @@
       render();
     } else if (action === 'next') {
       if (currentView === T.cards.length - 1) {
-        const last = T.cards[currentView];
-        if (last.quizCta && last.quizCta.href) {
-          window.location.href = last.quizCta.href;
-        } else {
-          alert('Quick Check coming next session 🎯');
-        }
+        alert('Quick Check coming next session 🎯');
       } else {
         currentView = currentView + 1;
         render();
+      }
+    } else if (action === 'take-quiz') {
+      /* Inline quiz: swap the main card area for a #quiz-root and
+         hand off to quiz-engine.js's bootQuiz(). The engine renders
+         the whole flow (questions → results) into #quiz-root using
+         the data file's window.ECONOS_QUIZ pool. quiz-engine.js is
+         loaded as a defer script in learn.html. */
+      const root = document.getElementById('app-root');
+      if (root && window.ECONOS_QUIZ && typeof window.bootQuiz === 'function') {
+        root.innerHTML = '<div id="quiz-root"></div>';
+        window.bootQuiz(window.ECONOS_QUIZ.questions, window.ECONOS_QUIZ);
       }
     } else if (action === 'prev') {
       if (currentView > 0) {

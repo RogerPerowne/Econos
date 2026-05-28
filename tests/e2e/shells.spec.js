@@ -76,20 +76,13 @@ test.describe('Per-topic SEO metadata', () => {
     expect(ld.name).toMatch(/Section A/);
   });
 
-  test('Quiz ships Quiz JSON-LD', async ({ page }) => {
-    await login(page);
-    await page.goto('/quiz/causes-of-inflation-and-deflation/main');
-    const ld = await page.evaluate(() => {
-      const n = document.querySelector('script[type="application/ld+json"]');
-      return n ? JSON.parse(n.textContent) : null;
-    });
-    expect(ld).toMatchObject({ '@type': 'Quiz' });
-  });
+  /* /quiz/ standalone shell retired in v0.4.0 — quiz pools now live
+     inside learn.js. No Quiz JSON-LD to assert. */
 });
 
 test.describe('Per-topic stage availability', () => {
   test('Learn shell locks stages a topic does not have data for', async ({ page }) => {
-    /* 'factors-of-production' ships learn + link + quiz but no land
+    /* 'factors-of-production' ships learn + link but no land
        (per js/topics.js). The build emits a meta tag listing the
        available stages; the runtime stages widget reads it and
        locks the rest. */
@@ -98,7 +91,7 @@ test.describe('Per-topic stage availability', () => {
 
     const meta = await page.evaluate(() =>
       document.querySelector('meta[name="econos-availability"]')?.getAttribute('content'));
-    expect(meta).toBe('learn,link,quiz');
+    expect(meta).toBe('learn,link');
 
     const stages = page.locator('.stages .stage');
     /* Position 1 = Learn (current), 2 = Link (open/available), 3 = Land (locked). */
@@ -119,7 +112,6 @@ test.describe('Content Security Policy', () => {
     '/learn/causes-of-inflation-and-deflation',
     '/link/causes-of-inflation-and-deflation/intro',
     '/land/causes-of-inflation-and-deflation/intro',
-    '/quiz/causes-of-inflation-and-deflation/main',
     '/login'
   ];
   for (const path of TIGHTENED) {

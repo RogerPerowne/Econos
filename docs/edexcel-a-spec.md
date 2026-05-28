@@ -8,6 +8,19 @@ This is the canonical spec point map used across Econos. Every Edexcel-A topic o
 
 ---
 
+## Subject content overview
+
+Edexcel A organises the A-level into four themes, alternating micro and macro:
+
+- **Theme 1 — Introduction to markets and market failure** *(micro)* — the foundation. Builds the demand–supply model, elasticities, market clearing and price-mechanism functions. Then the four market-failure routes (externalities, public goods, information gaps, monopoly) and the standard government-intervention toolkit (indirect tax, subsidy, regulation, state provision, tradable permits) plus government failure. Closes with behavioural economics — the only board to integrate it as a first-year topic.
+- **Theme 2 — The UK economy: performance and policies** *(macro)* — the dashboard plus the AD/AS engine room. Real GDP, inflation (CPI / RPI / causes), unemployment (claimant count + LFS), balance of payments. Builds AD as `C + I + G + (X − M)` and AS in short-run + long-run forms (Classical + Keynesian). Adds the multiplier `1/(1 − MPC) = 1/MPW` and a six-objective policy framework with demand-side, supply-side and trade-off coverage.
+- **Theme 3 — Business behaviour and the labour market** *(micro)* — firm-level analysis. Costs and revenues, economies of scale, profit-maximisation, the five canonical market structures (perfect, monopolistic competition, oligopoly with collusion / game theory, monopoly with price discrimination, monopsony), plus contestability and labour-market models. Distinctive: explicit treatment of natural monopoly and the third-degree price-discrimination diagram.
+- **Theme 4 — A global perspective** *(macro + global)* — opens with globalisation, comparative advantage, trade policy (tariffs / quotas / non-tariff barriers), trading blocs and exchange-rate systems including the Marshall-Lerner / J-curve content. Closes with the financial sector (markets, market failure, central banks), the role of the state in the macroeconomy (public expenditure, taxation, deficits, debt) and macroeconomic policy in a global context.
+
+The four themes are paired in the papers — Paper 1 = Themes 1 + 3 (the two micro themes); Paper 2 = Themes 2 + 4 (the two macro themes); Paper 3 is fully synoptic across all four. Behavioural economics, the financial sector and the role of the state are the three distinctive content areas that mark Edexcel A out from the other boards.
+
+---
+
 ## Theme 1 — Introduction to markets and market failure
 
 ### 1.1 Nature of economics

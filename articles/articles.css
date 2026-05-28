@@ -165,6 +165,104 @@ a:hover { text-decoration: underline; }
 .breadcrumb a { color: var(--muted); }
 .breadcrumb [aria-current="page"] { color: var(--ink); font-weight: 500; }
 
+/* ════════════════════════════════════════════════════════════
+   Board pills row — top of every article + on each hub card.
+   Pills are filled for boards this article applies to (a
+   spec point exists in the frontmatter), hollow for the rest.
+══════════════════════════════════════════════════════════════ */
+.article-boards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 24px;
+  padding: 0;
+}
+.article-boards__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+.article-boards__pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.article-boards__pill.is-active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.article-boards__name { line-height: 1; }
+.article-boards__spec {
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.75;
+  padding-left: 6px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 2px;
+}
+
+/* Compact variant for the hub-card chip row. */
+.hub-card .article-boards {
+  margin: 0 0 12px;
+}
+.hub-card .article-boards__label {
+  display: none;
+}
+.hub-card .article-boards__pill {
+  padding: 3px 9px;
+  font-size: 11.5px;
+  border-width: 1px;
+}
+.hub-card .article-boards__spec {
+  display: none;
+}
+
+/* Hub board filter row (above the search input). */
+.hub__board-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 0 24px;
+}
+.hub__board-filter button {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 16px;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+.hub__board-filter button:hover {
+  border-color: var(--ink);
+}
+.hub__board-filter button.is-active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
 .article-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;

@@ -8,6 +8,17 @@ This is the canonical AQA spec point map used across Econos. Every AQA topic on 
 
 ---
 
+## Subject content overview
+
+AQA is the only major board with a separate AS qualification (one-year, 7135) alongside the linear A-level (two-year, 7136). The two qualifications share a structural skeleton — micro plus macro — but A-level explicitly extends and deepens AS:
+
+- **Section 1 — Markets and market failure** *(micro at both AS and A-level)* — economic methodology + the economic problem, demand-supply and elasticities, costs / revenues / profits and firms in competitive vs concentrated markets, market mechanism + market failure + government intervention. At A-level (Section 4.1) this extends to a full individual-decision-making block (utility theory, asymmetric information, behavioural economics — bounded rationality, heuristics, nudges, choice architecture). The full market-structure spectrum arrives — perfect competition, monopolistic competition, oligopoly (with formal kinked-demand and game-theoretic content), monopoly with price discrimination, contestability, monopsony and competition policy. Closes with a full labour-market block (MRP theory, monopsony, trade unions, minimum wage, discrimination) and income / wealth distribution + poverty + redistribution.
+- **Section 2 — The national + international economy** *(macro at both AS and A-level)* — measurement (real GDP, CPI / RPI, productivity, BoP, index numbers), the circular flow + AD/AS analysis, economic performance (growth + cycle, unemployment with explicit voluntary / involuntary / real-wage / natural-rate content, inflation including Fisher's MV = PQ explicitly at A-level, output gaps). Macroeconomic policy comes through monetary (Bank Rate, transmission mechanism, QE, forward guidance), fiscal (budget, taxation, automatic stabilisers, OBR) and supply-side (free-market vs interventionist). A-level adds a substantial financial-markets + monetary-policy block — money market vs capital market vs FX, commercial vs investment banks, the central-bank toolkit, and the UK regulatory framework (PRA, FPC, FCA + systemic risk). Closes with international economy — globalisation, comparative advantage, customs unions + the Single European Market + WTO, balance of payments, exchange-rate systems, and growth + development including HDI.
+
+The four AOs are weighted differently between AS and A-level: at AS the balance leans heavily toward AO1 and AO2 (knowledge + application; ~60% combined). At A-level analysis and evaluation pull up to roughly equal weight with knowledge. The distinctive AQA content not directly examined in other boards: **Fisher's equation MV = PQ** (4.2.3.3 (c)), the **L-shaped long-run average cost curve** (4.1.4.5 (e)), **behavioural economics with choice architecture and nudges** (4.1.2.4), and the **PRA / FPC / FCA financial-regulation framework** (4.2.4.4).
+
+---
+
 ## Section 3 — Subject content (AS)
 
 ### 3.1 The operation of markets and market failure

@@ -506,6 +506,7 @@ function articleRoutes() {
     const wantMore = renderWantMore(fm);
     const footer = renderArticleFooter(fm);
     const specMeta = renderSpecMeta(fm);
+    const boardPills = renderBoardPills(fm);
 
     return `<!DOCTYPE html>
 <html lang="en-GB">
@@ -534,6 +535,7 @@ function articleRoutes() {
 ${renderTopnav()}
   <main class="article" id="main-content">
 ${breadcrumb}
+${boardPills}
     <div class="article-grid">
       <header class="article-header">
         <h1>${escapeHtml(fm.title)}</h1>
@@ -683,6 +685,44 @@ ${cta}
     return `<span>A-level (${inline})</span>`;
   }
 
+  /* Which boards this article applies to. Per-board object spec
+     pins it down; legacy string spec is treated as Edexcel A only. */
+  function applicableBoards(fm) {
+    const out = new Set();
+    if (fm.spec && typeof fm.spec === 'object' && !Array.isArray(fm.spec)) {
+      for (const id of BOARD_ORDER) if (fm.spec[id]) out.add(id);
+    } else if (typeof fm.spec === 'string' && fm.spec) {
+      out.add('edexcel_a');
+    }
+    return out;
+  }
+
+  /* Four-pill row at the top of every article showing which exam
+     boards the article applies to — pills are filled for the
+     boards with a matching spec point, hollow for the rest. The
+     per-board spec number (when present) renders inside the
+     filled pill so a student can spot their reference at a glance. */
+  function renderBoardPills(fm) {
+    const applicable = applicableBoards(fm);
+    if (applicable.size === 0) return '';
+    const pills = BOARD_ORDER.map((id) => {
+      const active = applicable.has(id);
+      const spec = (active && fm.spec && typeof fm.spec === 'object') ? fm.spec[id] : null;
+      const specHtml = (active && spec)
+        ? `<span class="article-boards__spec">${escapeHtml(String(spec))}</span>`
+        : '';
+      return `      <span class="article-boards__pill${active ? ' is-active' : ''}"
+        role="listitem"
+        aria-label="${escapeHtml(BOARD_LABELS[id])}${active ? ' — applies' : ' — does not apply'}">
+        <span class="article-boards__name">${escapeHtml(BOARD_LABELS[id])}</span>${specHtml}
+      </span>`;
+    }).join('\n');
+    return `    <div class="article-boards" role="list" aria-label="Applicable exam boards">
+      <span class="article-boards__label">For:</span>
+${pills}
+    </div>`;
+  }
+
   function renderArticleFooter(fm) {
     const updated = fm.modified || fm.dates?.modified || fm.published || fm.dates?.published || '';
     const entries = specEntries(fm);
@@ -737,15 +777,24 @@ ${cta}
       handRolledSlugs.add(name);
     }
 
-    /* Markdown-sourced articles. */
+    /* Markdown-sourced articles.
+       Walks articles/sources/ recursively so authors can drop
+       sources into theme subfolders (microeconomics/, macroeconomics/,
+       finance/, etc.). The folder structure is editorial — every
+       article still publishes to a flat /articles/<slug>/ URL so
+       the URL contract is unaffected by the source layout. */
     const sourcesDir = join(articlesSrc, 'sources');
     const markdownEntries = [];
-    if (existsSync(sourcesDir)) {
-      for (const name of readdirSync(sourcesDir)) {
+    function walkSources(dir) {
+      if (!existsSync(dir)) return;
+      for (const name of readdirSync(dir)) {
+        if (name.startsWith('_') || name.startsWith('.')) continue;
+        const full = join(dir, name);
+        const s = statSync(full);
+        if (s.isDirectory()) { walkSources(full); continue; }
         if (!name.endsWith('.md')) continue;
-        if (name.startsWith('_')) continue; // template files use leading underscore
         const slug = name.replace(/\.md$/, '');
-        const raw = readFileSync(join(sourcesDir, name), 'utf8');
+        const raw = readFileSync(full, 'utf8');
         const { data: fm, content } = matter(raw);
         if (fm.draft === true || fm.status === 'draft') continue;
         const html = renderArticle({ slug, frontmatter: fm, body: content });
@@ -759,12 +808,20 @@ ${cta}
           description: fm.description || '',
           theme: fm.theme || '',
           spec: specEntries(fm).map(e => e.label ? `${e.label} ${e.value}` : e.value).join(' · '),
+          /* Per-board spec map (object shape) ships verbatim so the
+             hub can render pills + filter by board. Empty object
+             when an article has no per-board mapping. */
+          board_specs: (fm.spec && typeof fm.spec === 'object' && !Array.isArray(fm.spec))
+            ? Object.fromEntries(BOARD_ORDER.filter((b) => fm.spec[b]).map((b) => [b, String(fm.spec[b])]))
+            : (typeof fm.spec === 'string' && fm.spec ? { edexcel_a: fm.spec } : {}),
+          boards: Array.from(applicableBoards(fm)),
           keywords: fm.keywords || [],
           read_minutes: fm.read_minutes || 0,
           status: fm.status || 'live'
         });
       }
     }
+    walkSources(sourcesDir);
 
     /* Search index — preserve hand-rolled entries from the source
        index.json, replace markdown entries with freshly-built ones. */

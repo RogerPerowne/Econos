@@ -37,11 +37,33 @@
      the board-specific path when listed. Topics NOT listed fall
      back to `js/data/<topic>/` — the Edexcel A baseline.
 
-     The set is intentionally empty for now: every board sees the
-     Edexcel A content until per-board variants are authored. */
+     Override authoring is incremental: a board can override the
+     Learn It `topic.js` for a topic while still falling back to
+     the Edexcel A baseline for Link / Land / Quiz on that same
+     topic, because the loader checks the override pair per-file
+     not per-topic-folder. (Drop more files in for each board as
+     content is authored.) */
   window.ECONOS_BOARD_OVERRIDES = {
-    edexcel_b: {},
-    aqa:       {},
-    ocr:       {}
+    edexcel_b: {
+      'causes-of-inflation-and-deflation': true,
+      'aggregate-demand': true,
+      'aggregate-supply': true,
+      'employment-and-unemployment': true,
+      'national-income-and-the-multiplier': true
+    },
+    aqa: {
+      'causes-of-inflation-and-deflation': true,
+      'aggregate-demand': true,
+      'aggregate-supply': true,
+      'employment-and-unemployment': true,
+      'national-income-and-the-multiplier': true
+    },
+    ocr: {
+      'causes-of-inflation-and-deflation': true,
+      'aggregate-demand': true,
+      'aggregate-supply': true,
+      'employment-and-unemployment': true,
+      'national-income-and-the-multiplier': true
+    }
   };
 })();

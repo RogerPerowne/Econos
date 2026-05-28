@@ -6,6 +6,23 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.10.1 — 2026-05-28
+
+### Learn It: finish the cards → "Link it", not "Next topic"
+
+The last Learn It card offered a "Next topic" button that jumped
+sideways to a different topic. It now walks the learner on to the next
+**stage of the same topic** — "Link it" (or "Land it" if Link It isn't
+available), linking to that topic's `link-it/intro`. The "Take the quiz"
+button is unchanged and stays the primary action when a quiz pool is
+present; the stage button only falls back to the next topic's Learn It
+when this topic has no further stage. SW cache → `econos-v82`.
+
+Note: the mobile Learn/Link/Land stage bar and the end-of-Learn quiz
+both verified working on current `main` — if they appear missing on the
+live site it is a stale service-worker cache; this cache bump plus a
+redeploy forces every client to refresh.
+
 ## 0.10.0 — 2026-05-28
 
 ### Articles: diagram build-out, 5 new drafts, portrait fix, tables + mobile

@@ -8,14 +8,9 @@
 (function () {
   'use strict';
 
-  var STATIONS = {
-    intro:    { data: 'land-intro.js',     boot: 'bootLandIntro',    engine: 'js/engines/land-intro-engine.js',    title: 'Intro' },
-    a:        { data: 'land-section-a.js', boot: 'bootLandSectionA', engine: 'js/engines/land-section-a-engine.js',title: 'Section A' },
-    b:        { data: 'land-section-b.js', boot: 'bootLandSectionB', engine: 'js/engines/land-section-b-engine.js',title: 'Section B' },
-    c:        { data: 'land-section-c.js', boot: 'bootLandSectionC', engine: 'js/engines/land-section-c-engine.js',title: 'Section C' },
-    complete: { data: 'land-complete.js',  boot: 'bootLandComplete', engine: 'js/engines/land-complete-engine.js', title: 'Complete' },
-    quiz:     { title: 'Quiz' }
-  };
+  /* Source of truth: js/config/stations.js (see link-router for the
+     same pattern + rationale). */
+  var STATIONS = (window.ECONOS_STATIONS && window.ECONOS_STATIONS.land) || {};
 
   var dataLoaded = {};
   var scriptsLoaded = {};

@@ -87,6 +87,30 @@ test.describe('Per-topic SEO metadata', () => {
   });
 });
 
+test.describe('Per-topic stage availability', () => {
+  test('Learn shell locks stages a topic does not have data for', async ({ page }) => {
+    /* 'factors-of-production' ships learn + link + quiz but no land
+       (per js/topics.js). The build emits a meta tag listing the
+       available stages; the runtime stages widget reads it and
+       locks the rest. */
+    await login(page);
+    await page.goto('/learn/factors-of-production');
+
+    const meta = await page.evaluate(() =>
+      document.querySelector('meta[name="econos-availability"]')?.getAttribute('content'));
+    expect(meta).toBe('learn,link,quiz');
+
+    const stages = page.locator('.stages .stage');
+    /* Position 1 = Learn (current), 2 = Link (open/available), 3 = Land (locked). */
+    await expect(stages.nth(2)).toHaveClass(/is-locked/);
+    await expect(stages.nth(2)).toHaveAttribute('title', /Coming soon/);
+    /* The mobile-stages strip mirrors the same state. */
+    const mobile = page.locator('.mobile-stages .mobile-stages__item');
+    await expect(mobile.nth(2)).toHaveClass(/is-locked/);
+    await expect(mobile.nth(2)).toHaveAttribute('title', /Coming soon/);
+  });
+});
+
 test.describe('Content Security Policy', () => {
   /* Lock in the script-src 'unsafe-inline' removal on the protected
      shells. The home page + articles still ship looser CSPs because

@@ -163,9 +163,10 @@
       var glyph = state === 'done'   ? (I.check || '✓')
                 : state === 'locked' ? (I.lock  || '🔒')
                 : String(s.num);
+      var titleAttr = isLocked ? ' title="Coming soon — not yet available for this topic"' : '';
       var open = clickable
         ? '<a href="' + s.href + '" class="' + cls + '"'
-        : '<div class="' + cls + '"' + ariaCurrent;
+        : '<div class="' + cls + '"' + ariaCurrent + titleAttr;
       html += open + ' data-stage-pos="' + (i + 1) + '">'
            +   '<span class="mobile-stages__num" aria-hidden="true">' + glyph + '</span>'
            +   '<span class="mobile-stages__name">' + s.name + '</span>'
@@ -209,22 +210,50 @@
      statesOverride (optional) — explicit ['done'|'current'|'open', x3]
      to bypass the URL-derived defaults.
      ────────────────────────────────────────────────────────────── */
+  /* Per-topic stage availability is emitted by the build-time
+     topic-routes plugin as <meta name="econos-availability"
+     content="learn,link"> (only the stages a topic has data for).
+     We read it once and lock stages that aren't in the set so the
+     stages widget never offers a click-through to content that
+     doesn't exist yet. Falls open (everything available) when the
+     meta is absent — dev mode, base shells, anywhere generated
+     metadata isn't present. */
+  function getAvailability() {
+    try {
+      var m = document.querySelector('meta[name="econos-availability"]');
+      if (!m) return null;
+      var list = String(m.content || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+      return { learn: list.indexOf('learn') >= 0, link: list.indexOf('link') >= 0, land: list.indexOf('land') >= 0 };
+    } catch (e) { return null; }
+  }
+
+  function applyAvailability(states) {
+    var avail = getAvailability();
+    if (!avail) return states;
+    var STAGES = ['learn', 'link', 'land'];
+    return states.map(function (s, i) {
+      return avail[STAGES[i]] === false ? 'locked' : s;
+    });
+  }
+
   function deriveStageState() {
     var shell = (window.TopicLoader && TopicLoader.getShell()) || 'home';
-    if (shell === 'learn' || shell === 'home') return ['current', 'open', 'open'];
-    if (shell === 'link') return ['done', 'current', 'open'];
-    if (shell === 'land') return ['done', 'done', 'current'];
-    if (shell === 'quiz') {
+    var base;
+    if (shell === 'learn' || shell === 'home') base = ['current', 'open', 'open'];
+    else if (shell === 'link') base = ['done', 'current', 'open'];
+    else if (shell === 'land') base = ['done', 'done', 'current'];
+    else if (shell === 'quiz') {
       // ?stage=link|land if a callsite needs to override; otherwise default to learn.
       try {
         var qs = new URLSearchParams(location.search);
         var stage = (qs.get('stage') || '').toLowerCase();
-        if (stage === 'link') return ['done', 'current', 'open'];
-        if (stage === 'land') return ['done', 'done', 'current'];
-      } catch (e) {}
-      return ['current', 'open', 'open'];
+        if (stage === 'link') base = ['done', 'current', 'open'];
+        else if (stage === 'land') base = ['done', 'done', 'current'];
+        else base = ['current', 'open', 'open'];
+      } catch (e) { base = ['current', 'open', 'open']; }
     }
-    return ['open', 'open', 'open'];
+    else base = ['open', 'open', 'open'];
+    return applyAvailability(base);
   }
   /* Normalise state aliases. 'open' is the design-tool name; the
      stylesheet uses '.is-available'. Accept either, emit the latter. */
@@ -236,7 +265,7 @@
     if (state === 'done')      return { text: 'Done',   modifier: 'stage__chip--done' };
     if (state === 'current')   return { text: 'Current', modifier: '' };
     if (state === 'available') return { text: 'Open →', modifier: 'stage__chip--available' };
-    if (state === 'locked')    return { text: 'Locked', modifier: 'stage__chip--locked' };
+    if (state === 'locked')    return { text: 'Coming soon', modifier: 'stage__chip--locked' };
     return { text: state, modifier: '' };
   }
 
@@ -292,9 +321,10 @@
       var isLocked  = state === 'locked';
       var clickable = !isCurrent && !isLocked;
       var ariaCurrent = isCurrent ? ' aria-current="step"' : '';
+      var titleAttr = isLocked ? ' title="Coming soon — not yet available for this topic"' : '';
       var openTag = clickable
         ? '<a href="' + s.href + '" class="' + cls + '"'
-        : '<div class="' + cls + '"' + ariaCurrent;
+        : '<div class="' + cls + '"' + ariaCurrent + titleAttr;
       var numContent = state === 'done'
         ? (I.check || '✓')
         : (state === 'locked' ? (I.lock || '🔒') : String(s.num));

@@ -192,14 +192,71 @@ The current board is visible at a glance in the sidebar user-card
 ("A-Level Economics · Edexcel A") so the user never has to open the
 picker to confirm.
 
-### Per-topic + per-article spec mapping (content workstream)
+### Per-topic spec mapping — `js/topics.js`
 
-Each topic / article will eventually carry a `boards` map declaring
-per-board spec points. The framework reads from that map; the data
-fills in over time. Currently only Edexcel A spec points are
-populated; the other three boards intentionally show no spec until
-the mappings ship. Adding a new spec mapping doesn't require any code
-changes — just data.
+Every topic in the registry carries a `boards` map:
+
+```js
+boards: {
+  edexcel_a: { spec: '2.2.2', included: true },
+  edexcel_b: { spec: '2.5.3', included: true },
+  aqa:       { spec: '3.2.3.3', included: true },
+  ocr:       { spec: '2.4',  included: true }
+}
+```
+
+- `spec` is the bare sub-section number (no board prefix — the chip
+  is already labelled by board name elsewhere). `null` means the
+  topic isn't an explicit sub-section in that spec; the chip then
+  falls back to the entry's Edexcel A baseline `num` rather than
+  showing nothing.
+- `included: false` hides the topic from that board's home-page
+  grid. The default is `true`. No topic excludes any board today;
+  the flag is in the schema for the day boards diverge in scope.
+
+The mapping was built from the canonical spec docs in `docs/` —
+`edexcel-a-spec.md`, `edexcel-b-spec.md`, `aqa-economics-spec.md`,
+`ocr-economics-spec.md`. When refining a mapping, edit `js/topics.js`
+directly; no code changes are needed.
+
+### Per-article spec mapping — frontmatter
+
+The article frontmatter `spec:` field accepts two shapes:
+
+1. **Legacy string** — `spec: "Edexcel A · Theme 2.2.2"`. Treated as
+   a single block, rendered verbatim in the meta line + footer.
+2. **Per-board object** (preferred for new articles):
+   ```yaml
+   spec:
+     edexcel_a: "2.1.2"
+     edexcel_b: "2.5.3"
+     aqa:       "3.2.3.3"
+     ocr:       "2.4"
+   ```
+   The build renders every populated entry — "A-level (Edexcel A
+   2.1.2 · Edexcel B 2.5.3 · AQA 3.2.3.3 · OCR 2.4)". This is
+   intentional: article HTML is static, so we ship every variant
+   for SEO and let any board's reader find a spec point they
+   recognise. Personalised per-board rendering can come later when
+   articles get JS.
+
+### Per-board content overrides — `js/data/<board>/<topic>/`
+
+`TopicLoader.loadData` first looks for opt-in board overrides:
+
+- Default path: `/js/data/<topic>/<file>` (the Edexcel A baseline).
+- Override path: `/js/data/<board>/<topic>/<file>`, but only when
+  `(board, topic)` is listed in `window.ECONOS_BOARD_OVERRIDES`
+  (declared in `js/config/boards.js`).
+
+This keeps the repo lean — every board reads the Edexcel A baseline
+for free, with zero file duplication. When AQA, OCR or Edexcel B
+publishes a topic variant, drop the data files under
+`js/data/<board>/<topic>/` and register the topic in the overrides
+set; the loader picks them up.
+
+The opt-in list (rather than runtime 404-probing) means
+non-Edexcel-A users don't pay a 404 round-trip on every page load.
 
 ## Articles — SEO long-form content
 

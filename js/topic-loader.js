@@ -169,6 +169,29 @@
       + '</div>';
   }
 
+  /* Per-topic data loader.
+     ─────────────────────────────────────────────────────────────
+     Loads files from /js/data/<topic>/<file>. This path is the
+     Edexcel A baseline that every board falls back to today —
+     when a board authors its own variant of a topic, the
+     `window.ECONOS_BOARD_OVERRIDES` set (declared in
+     `js/config/boards.js`) lists the (board, topic) pairs that
+     should be loaded from /js/data/<board>/<topic>/<file>
+     instead. Keeping the override list opt-in avoids spraying
+     404s for every non-Edexcel-A user just to look for
+     overrides that don't yet exist. */
+  function dataPath(topic, file) {
+    var board = getBoard();
+    if (board && board !== 'edexcel_a') {
+      var overrides = window.ECONOS_BOARD_OVERRIDES || {};
+      var topicSet = overrides[board];
+      if (topicSet && topicSet[topic]) {
+        return '/js/data/' + board + '/' + topic + '/' + file;
+      }
+    }
+    return '/js/data/' + topic + '/' + file;
+  }
+
   function loadData(dataFiles, callback, sectionLabel) {
     var topic = getTopic();
     var files = (typeof dataFiles === 'string') ? [dataFiles] : dataFiles;
@@ -177,7 +200,7 @@
     function next() {
       if (idx >= files.length) { callback(); return; }
       var script = document.createElement('script');
-      script.src = '/js/data/' + topic + '/' + files[idx];
+      script.src = dataPath(topic, files[idx]);
       script.onload = function () { idx++; next(); };
       script.onerror = function () {
         showMissingTopicMessage(topic, sectionLabel || 'this section');

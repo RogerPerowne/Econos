@@ -509,6 +509,7 @@ function articleRoutes() {
     const friction = renderFriction(fm);
     const wantMore = renderWantMore(fm);
     const footer = renderArticleFooter(fm);
+    const specMeta = renderSpecMeta(fm);
 
     return `<!DOCTYPE html>
 <html lang="en-GB">
@@ -543,7 +544,7 @@ ${breadcrumb}
         ${fm.lede ? `<p class="article-lede">${escapeHtml(fm.lede)}</p>` : ''}
         <div class="article-meta">
           <span>${fm.read_minutes ? `${fm.read_minutes} min read` : ''}</span>
-          ${fm.spec ? `<span>A-level (${escapeHtml(fm.spec)})</span>` : ''}
+          ${specMeta}
         </div>
 ${friction}
       </header>
@@ -650,10 +651,52 @@ ${cta}
     </section>`;
   }
 
+  /* Board label registry — kept in step with js/config/boards.js.
+     Duplicated here because the build runs in Node and doesn't load
+     the browser registry. Add new boards in both places. */
+  const BOARD_LABELS = {
+    edexcel_a: 'Edexcel A',
+    edexcel_b: 'Edexcel B',
+    aqa:       'AQA',
+    ocr:       'OCR'
+  };
+  const BOARD_ORDER = ['edexcel_a', 'edexcel_b', 'aqa', 'ocr'];
+
+  /* `fm.spec` is either a legacy string ("Edexcel A · 3.4.5") or a
+     per-board object: { edexcel_a: "3.4.5", aqa: null, ... }. The
+     article HTML is static — emit every populated board variant so
+     SEO sees every mapping, and so users on any board find a spec
+     point they recognise. */
+  function specEntries(fm) {
+    if (!fm.spec) return [];
+    if (typeof fm.spec === 'string') return [{ label: '', value: fm.spec }];
+    const entries = [];
+    for (const id of BOARD_ORDER) {
+      const v = fm.spec[id];
+      if (v) entries.push({ label: BOARD_LABELS[id] || id, value: String(v) });
+    }
+    return entries;
+  }
+
+  function renderSpecMeta(fm) {
+    const entries = specEntries(fm);
+    if (!entries.length) return '';
+    const inline = entries
+      .map(e => e.label ? `${escapeHtml(e.label)} ${escapeHtml(e.value)}` : escapeHtml(e.value))
+      .join(' · ');
+    return `<span>A-level (${inline})</span>`;
+  }
+
   function renderArticleFooter(fm) {
     const updated = fm.modified || fm.dates?.modified || fm.published || fm.dates?.published || '';
+    const entries = specEntries(fm);
+    const specLine = entries.length
+      ? `<div class="article-footer__item">${ICONS.cap} Mapped to ${entries
+          .map(e => e.label ? `${escapeHtml(e.label)} ${escapeHtml(e.value)}` : escapeHtml(e.value))
+          .join(' · ')}</div>`
+      : '';
     return `    <footer class="article-footer">
-      ${fm.spec ? `<div class="article-footer__item">${ICONS.cap} Mapped to ${escapeHtml(fm.spec)}</div>` : ''}
+      ${specLine}
       ${updated ? `<div class="article-footer__item">Last updated: ${escapeHtml(formatDate(updated))}</div>` : ''}
     </footer>`;
   }
@@ -719,7 +762,7 @@ ${cta}
           title: fm.title || slug,
           description: fm.description || '',
           theme: fm.theme || '',
-          spec: fm.spec || '',
+          spec: specEntries(fm).map(e => e.label ? `${e.label} ${e.value}` : e.value).join(' · '),
           keywords: fm.keywords || [],
           read_minutes: fm.read_minutes || 0,
           status: fm.status || 'live'

@@ -3,7 +3,11 @@ title: "The multiplier effect explained — with worked numbers"
 description: "The multiplier effect for A-level economics. The formula, why it works, the four leakages (MPS, MPT, MPM), and a worked UK example with real numbers."
 lede: "The formula every student quotes and the application most students fluff. Work through an injection, the leakages it triggers, and the final change in GDP — with numbers."
 theme: "Macroeconomics"
-spec: "Edexcel A · Theme 2.4.3"
+spec:
+  edexcel_a: "2.4.4"
+  edexcel_b: "4.4.1"
+  aqa: "3.2.2.4"
+  ocr: "1.5"
 keywords: [multiplier, multiplier effect, MPC, MPS, MPT, MPM, marginal propensity to consume, fiscal multiplier, government spending, injection]
 read_minutes: 11
 status: live

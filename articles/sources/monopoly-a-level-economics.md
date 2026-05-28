@@ -3,7 +3,11 @@ title: "What is a monopoly? A-level economics explained"
 description: "Monopoly explained for A-level economics. The diagram, why MR sits below AR, the deadweight loss, and how the CMA treats market power in the UK."
 lede: "The diagram, the deadweight loss, and why monopoly sits in the middle of nearly every Edexcel essay on market failure."
 theme: "Microeconomics"
-spec: "Edexcel A · 3.4.5"
+spec:
+  edexcel_a: "3.4.5"
+  edexcel_b: "4.1.1"
+  aqa: "4.1.5.6"
+  ocr: "4.2"
 keywords: [monopoly, monopoly diagram, deadweight loss, MR AR, market power, natural monopoly, Thames Water, CMA]
 read_minutes: 10
 status: live

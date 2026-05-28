@@ -16342,13 +16342,13 @@ window.ECONOS_ICONS = {
         </defs>
 
         <!-- BASE arrows: Factor payments + Consumption (Y shifted +60) -->
-        <path d="M642 188 H380 C363 188 355 198 355 212 V238" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
+        <path d="M721 238 V228 C721 207 714 188 697 188 H380 C363 188 355 198 355 212 V238" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
         <path d="M355 398 V408 C355 429 371 439 393 439 H697 C714 439 721 429 721 410 V398" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
 
         <!-- LAYER 1 arrows: Saving + Investment (Y shifted +60) -->
         <g class="idl-1" style="display:none">
-          <path d="M323 238 V122 C323 112 333 106 346 106 H407" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
-          <path d="M679 106 H719 C733 106 739 116 739 130 V238" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
+          <path d="M323 238 V84 C323 74 333 68 346 68 H407" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
+          <path d="M679 68 H719 C733 68 739 78 739 92 V238" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
         </g>
 
         <!-- LAYER 2 arrows: Tax + G-spend (Y +60; directions FIXED from source) -->
@@ -16393,12 +16393,12 @@ window.ECONOS_ICONS = {
       </section>
 
       <!-- BASE labels: Factor payments (y=117+60=177 → 34.04%) + Consumption (y=358+60=418 → 80.38%) -->
-      <div style="position:absolute;z-index:3;left:50%;top:34.038%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">(wages, rent, interest, profit)</span></div>
-      <div style="position:absolute;z-index:3;left:50%;top:80.385%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Consumption expenditure (C)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">on goods and services</span></div>
+      <div style="position:absolute;z-index:3;left:50%;top:28%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">(wages, rent, interest, profit)</span></div>
+      <div style="position:absolute;z-index:3;left:50%;top:88%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Consumption expenditure (C)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">on goods and services</span></div>
 
       <!-- ====== LAYER 1: Financial Markets (y=7+60=67 → 12.88%; h=73/520=14.04%) ====== -->
       <div class="idl-1" style="display:none">
-        <section style="position:absolute;z-index:2;left:37.776%;top:12.885%;width:24.632%;height:14.038%;border-radius:12px;border:1.5px solid #CBB8FA;background:rgba(245,240,255,0.84);color:#7C3AED;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);">
+        <section style="position:absolute;z-index:2;left:37.776%;top:5%;width:24.632%;height:14.038%;border-radius:12px;border:1.5px solid #CBB8FA;background:rgba(245,240,255,0.84);color:#7C3AED;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);">
           <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(11px,1.45cqw,17px);font-weight:700;letter-spacing:.01em;">
             <svg viewBox="0 0 64 64" style="width:clamp(18px,2.5cqw,28px);height:clamp(18px,2.5cqw,28px);display:block;color:#7C3AED;">
               <path d="M32 9 10 20v5h44v-5L32 9Z" fill="currentColor" opacity=".9"/>
@@ -16409,14 +16409,14 @@ window.ECONOS_ICONS = {
           </div>
         </section>
         <!-- Saving (S) label (y=46+60=106 → 20.38%) -->
-        <div style="position:absolute;z-index:3;left:21.507%;top:20.385%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Saving (S)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leaves)</span></div>
+        <div style="position:absolute;z-index:3;left:21.507%;top:13.077%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Saving (S)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leaves)</span></div>
         <!-- Investment (I) label -->
-        <div style="position:absolute;z-index:3;left:69.577%;top:20.385%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;white-space:nowrap;">Investment (I)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(returns)</span></div>
+        <div style="position:absolute;z-index:3;left:69.577%;top:13.077%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;white-space:nowrap;">Investment (I)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(returns)</span></div>
       </div>
 
       <!-- ====== LAYER 2: Government (y=178+60=238 → 45.77%; h=96/520=18.46%) ====== -->
       <div class="idl-2" style="display:none">
-        <section style="position:absolute;z-index:2;left:2.206%;top:45.769%;width:11.949%;height:18.462%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
+        <section style="position:absolute;z-index:2;left:2.206%;top:45.769%;width:11.949%;height:22.5%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
           <div>
             <svg viewBox="0 0 64 64" style="width:clamp(20px,3cqw,34px);height:clamp(20px,3cqw,34px);margin:0 auto 4px;display:block;">
               <path d="M32 10 8 22v5h48v-5L32 10Z" fill="currentColor" opacity=".92"/>
@@ -16427,14 +16427,14 @@ window.ECONOS_ICONS = {
           </div>
         </section>
         <!-- Taxation (T) label (y=164+60=224 → 43.08%) -->
-        <div style="position:absolute;z-index:3;left:17.371%;top:43.077%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Taxation (T)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leaves)</span></div>
+        <div style="position:absolute;z-index:3;left:16.371%;top:43.077%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Taxation (T)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leaves)</span></div>
         <!-- Government spending (G) label (y=288+60=348 → 66.92%) -->
-        <div style="position:absolute;z-index:3;left:17.096%;top:66.923%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;white-space:nowrap;">Government<br/>spending (G)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(returns)</span></div>
+        <div style="position:absolute;z-index:3;left:16.096%;top:66.923%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;white-space:nowrap;">Government<br/>spending (G)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(returns)</span></div>
       </div>
 
       <!-- ====== LAYER 3: Overseas Sector ====== -->
       <div class="idl-3" style="display:none">
-        <section style="position:absolute;z-index:2;left:85.938%;top:45.769%;width:11.949%;height:18.462%;border-radius:12px;border:1.5px solid #A6E0C4;background:rgba(238,253,245,0.88);color:#16975F;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
+        <section style="position:absolute;z-index:2;left:85.938%;top:45.769%;width:11.949%;height:22.5%;border-radius:12px;border:1.5px solid #A6E0C4;background:rgba(238,253,245,0.88);color:#16975F;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
           <div>
             <svg viewBox="0 0 64 64" style="width:clamp(20px,3cqw,34px);height:clamp(20px,3cqw,34px);margin:0 auto 4px;display:block;">
               <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4" fill="none"/>

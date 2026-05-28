@@ -137,6 +137,42 @@ test.describe('Content Security Policy', () => {
   }
 });
 
+test.describe('Exam-board picker', () => {
+  test('picker is in the account menu and selecting a board persists across reload', async ({ page }) => {
+    await login(page);
+    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.waitForLoadState('networkidle');
+
+    /* Open the menu and confirm the four boards render. */
+    await page.locator('.topbar__avatar').click();
+    const menu = page.locator('#econ-account-menu');
+    await expect(menu).toBeVisible();
+    const boards = menu.locator('.account-menu__board');
+    await expect(boards).toHaveCount(4);
+
+    /* Edexcel A is active by default. */
+    const active = menu.locator('.account-menu__board.is-active');
+    await expect(active).toHaveAttribute('data-board', 'edexcel_a');
+
+    /* Select AQA — the click triggers a reload (so the picker close
+       race doesn't fail the visibility assertion, we wait for the
+       URL to settle then check storage + the sidebar pill). */
+    await Promise.all([
+      page.waitForLoadState('load'),
+      menu.locator('.account-menu__board[data-board="aqa"]').click()
+    ]);
+
+    /* The stored board is now AQA and the sidebar pill confirms it. */
+    const stored = await page.evaluate(() => localStorage.getItem('econos:board'));
+    expect(stored).toBe('aqa');
+    await expect(page.locator('.sidebar__user-board')).toHaveText('AQA');
+
+    /* Reopen the menu — AQA is now the active radio. */
+    await page.locator('.topbar__avatar').click();
+    await expect(menu.locator('.account-menu__board.is-active')).toHaveAttribute('data-board', 'aqa');
+  });
+});
+
 test.describe('Account menu', () => {
   test('topbar avatar opens the menu and Escape closes it', async ({ page }) => {
     await login(page);

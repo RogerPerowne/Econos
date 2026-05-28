@@ -40,6 +40,20 @@
 
   function getIcons() { return window.ECONOS_ICONS || {}; }
 
+  /* Short label for the currently-selected exam board. Used in the
+     sidebar user-card so the user can see at a glance which board
+     they're on without opening the picker. Falls back to the
+     default board name if TopicLoader isn't loaded yet (the
+     sidebar is rendered after topic-loader.js, so this is mostly
+     defensive). */
+  function getBoardLabel() {
+    if (window.TopicLoader && TopicLoader.getBoardName) {
+      return TopicLoader.getBoardName();
+    }
+    var def = (window.ECONOS_BOARDS && window.ECONOS_BOARDS.edexcel_a) || {};
+    return def.name || 'Edexcel A';
+  }
+
   /* ------------------------------------------------------------------
      Sidebar — identical chrome across every page.
      opts.activeNav  — which nav item is highlighted; default 'My topics'
@@ -85,7 +99,7 @@
       +     '<span class="sidebar__user-avatar">' + U.initials + '</span>'
       +     '<span class="sidebar__user-info">'
       +       '<span class="sidebar__user-name">' + U.name + '</span>'
-      +       '<span class="sidebar__user-role">' + U.role + '</span>'
+      +       '<span class="sidebar__user-role">' + U.role + ' · <span class="sidebar__user-board">' + getBoardLabel() + '</span></span>'
       +     '</span>'
       +     '<span class="sidebar__user-chev" aria-hidden="true">' + (I.chevDown || '') + '</span>'
       +   '</button>'
@@ -372,8 +386,24 @@
   var ACCOUNT_MENU_ID = 'econ-account-menu';
 
   function renderAccountMenu() {
+    var currentBoard = (window.TopicLoader && TopicLoader.getBoard) ? TopicLoader.getBoard() : 'edexcel_a';
+    var boards = window.ECONOS_BOARDS || {};
+    var order = window.ECONOS_BOARDS_ORDER || Object.keys(boards);
+    var boardItems = order.map(function (id) {
+      var b = boards[id]; if (!b) return '';
+      var isActive = id === currentBoard;
+      return '<button type="button" class="account-menu__board' + (isActive ? ' is-active' : '') + '" data-action="set-board" data-board="' + id + '" role="menuitemradio" aria-checked="' + isActive + '">'
+           +   '<span class="account-menu__board-indicator" aria-hidden="true">' + (isActive ? '●' : '○') + '</span>'
+           +   '<span class="account-menu__board-name">' + b.name + '</span>'
+           + '</button>';
+    }).join('');
     return ''
       + '<div id="' + ACCOUNT_MENU_ID + '" class="account-menu" role="menu" hidden>'
+      +   '<div class="account-menu__group" role="group" aria-label="Exam board">'
+      +     '<div class="account-menu__label">Exam board</div>'
+      +     boardItems
+      +   '</div>'
+      +   '<div class="account-menu__divider" role="separator"></div>'
       +   '<button type="button" class="account-menu__item" data-action="logout" role="menuitem">Log out</button>'
       + '</div>';
   }
@@ -436,6 +466,18 @@
         } else {
           openAccountMenu(trigger);
         }
+        return;
+      }
+      var boardBtn = e.target && e.target.closest && e.target.closest('.account-menu__board');
+      if (boardBtn) {
+        var newBoard = boardBtn.dataset.board;
+        if (window.TopicLoader && TopicLoader.setBoard && TopicLoader.setBoard(newBoard)) {
+          /* Persist + reload so every display surface picks up the new
+             board. The reload is one line; subscribing every render-
+             site to a runtime board change would be its own framework. */
+          window.location.reload();
+        }
+        closeAccountMenu();
         return;
       }
       var itemBtn = e.target && e.target.closest && e.target.closest('.account-menu__item');

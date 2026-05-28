@@ -85,6 +85,43 @@
   };
   function sessionLabel(stage) { return SESSION_LABELS[stage] || ''; }
 
+  /* ──────────────────────────────────────────────────────────────
+     Exam-board selection (localStorage-backed).
+     ─────────────────────────────────────────────────────────────
+     The user picks one of the boards in window.ECONOS_BOARDS via
+     the account-menu picker. Selection persists in localStorage
+     under `econos:board`. Every surface that displays a spec
+     point or filters by inclusion reads this. Defaults to the
+     board with isDefault:true in the registry (currently
+     edexcel_a) when nothing is set or the value is invalid. */
+  var BOARD_STORAGE_KEY = 'econos:board';
+  function defaultBoard() {
+    var boards = window.ECONOS_BOARDS || {};
+    for (var k in boards) {
+      if (boards.hasOwnProperty(k) && boards[k].isDefault) return k;
+    }
+    return 'edexcel_a';
+  }
+  function getBoard() {
+    var stored;
+    try { stored = window.localStorage.getItem(BOARD_STORAGE_KEY); }
+    catch (e) { stored = null; }
+    if (stored && window.ECONOS_BOARDS && window.ECONOS_BOARDS[stored]) {
+      return stored;
+    }
+    return defaultBoard();
+  }
+  function setBoard(id) {
+    if (!window.ECONOS_BOARDS || !window.ECONOS_BOARDS[id]) return false;
+    try { window.localStorage.setItem(BOARD_STORAGE_KEY, id); return true; }
+    catch (e) { return false; }
+  }
+  function getBoardName() {
+    var id = getBoard();
+    var b = (window.ECONOS_BOARDS || {})[id];
+    return (b && b.name) || id;
+  }
+
   /* URL builders. Every internal href, every JS string used as a
      URL, every router pushState — they all flow through these.
      Topic defaults to the current topic from the URL so most
@@ -179,6 +216,10 @@
     routes:              routes,
     /* Navigation */
     go:                  go,
+    /* Exam-board selection */
+    getBoard:            getBoard,
+    setBoard:            setBoard,
+    getBoardName:        getBoardName,
     /* Misc */
     sessionLabel:        sessionLabel,
     /* Data loading */

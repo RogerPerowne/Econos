@@ -73,3 +73,48 @@ describe('TopicLoader parsePath', () => {
     });
   });
 });
+
+describe('TopicLoader exam-board selection', () => {
+  /* The board registry is loaded into window before topic-loader.js
+     in production via js/config/boards.js. For these tests we
+     stuff it onto window first, then re-eval the loader so its
+     internal defaultBoard / getBoard pick up the registry. */
+  beforeAll(() => {
+    window.ECONOS_BOARDS = {
+      edexcel_a: { id: 'edexcel_a', name: 'Edexcel A', isDefault: true },
+      aqa:       { id: 'aqa',       name: 'AQA' },
+      ocr:       { id: 'ocr',       name: 'OCR' }
+    };
+    window.localStorage.clear();
+    const src = readFileSync(resolve(process.cwd(), 'js/topic-loader.js'), 'utf8');
+    // eslint-disable-next-line no-new-func
+    new Function(src)();
+  });
+
+  it('defaults to the board with isDefault:true', () => {
+    window.localStorage.clear();
+    expect(window.TopicLoader.getBoard()).toBe('edexcel_a');
+    expect(window.TopicLoader.getBoardName()).toBe('Edexcel A');
+  });
+
+  it('setBoard persists to localStorage and getBoard reads it back', () => {
+    window.localStorage.clear();
+    const ok = window.TopicLoader.setBoard('aqa');
+    expect(ok).toBe(true);
+    expect(window.TopicLoader.getBoard()).toBe('aqa');
+    expect(window.TopicLoader.getBoardName()).toBe('AQA');
+    expect(window.localStorage.getItem('econos:board')).toBe('aqa');
+  });
+
+  it('rejects unknown board ids and leaves selection unchanged', () => {
+    window.TopicLoader.setBoard('aqa');
+    const ok = window.TopicLoader.setBoard('not-a-real-board');
+    expect(ok).toBe(false);
+    expect(window.TopicLoader.getBoard()).toBe('aqa');
+  });
+
+  it('falls back to default when a stored value is no longer in the registry', () => {
+    window.localStorage.setItem('econos:board', 'ccea');
+    expect(window.TopicLoader.getBoard()).toBe('edexcel_a');
+  });
+});

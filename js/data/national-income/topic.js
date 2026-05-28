@@ -219,23 +219,66 @@ window.ECONOS_TOPIC = {
     },
 
     /* ============================================================
-       CARD 4 – The full open-economy circular flow
+       CARD 4 – The full open-economy circular flow (interactive)
+       Five-stage build-up: closed economy → financial markets →
+       government → overseas → equilibrium identity.
        ============================================================ */
     {
       id: 'open-economy',
       template: 'ad-interactive',
       stepLabel: 'Learn: Step 4 of 5',
       title: 'The full open-economy circular flow',
-      lede: 'Once we add injections and withdrawals, we can see how national income expands, contracts, or stays in equilibrium.',
+      lede: 'Once we add injections and withdrawals, we can see how national income expands, contracts, or stays in equilibrium. Click through the stages to build the diagram up one sector at a time.',
       ledeStyle: 'plain',
       tip: { icon: '✓', tone: 'green', text: 'If injections exceed withdrawals, national income rises. If withdrawals exceed injections, it falls.' },
 
-      visualKey: 'nationalIncomeOpenEconomy',
-      visualLabel: 'The full model',
-      visualEmoji: '\u{1F501}',
+      interactiveDiagram: {
+        svgKey: 'nationalIncomeOpenEconomy',
+        wide: true,
+        label: 'The full model',
+        emoji: '\u{1F501}',
+        layers: ['idl-1', 'idl-2', 'idl-3'],
+        views: [
+          {
+            label: 'Two-sector economy',
+            tone: 'blue',
+            head: 'The closed two-sector economy',
+            body: 'Households supply <strong>factors of production</strong> (land, labour, capital, enterprise) to firms and receive <strong>factor payments</strong> (wages, rent, interest, profit) in return. They spend that income on goods and services as <strong>consumption expenditure (C)</strong>. The same money loops endlessly between the two sectors.',
+            analysis: 'In this simplest model, income = output = expenditure. There are no withdrawals or injections yet – every pound earned is a pound spent, and national income is whatever level keeps the two flows balanced.'
+          },
+          {
+            label: 'Add the financial markets',
+            tone: 'purple',
+            head: 'Saving (S) and Investment (I)',
+            body: 'Not all income is spent. <strong>Saving (S)</strong> is income households set aside in banks and other financial institutions – it leaves the circular flow. Those institutions channel saving into <strong>Investment (I)</strong> by firms in capital goods (machines, factories, software), which returns to the flow as firm spending.',
+            analysis: 'S is a withdrawal; I is an injection. They don’t have to be equal individually – what matters is whether <em>total</em> injections equal <em>total</em> withdrawals across the whole system.'
+          },
+          {
+            label: 'Add the government',
+            tone: 'amber',
+            head: 'Taxation (T) and Government spending (G)',
+            body: 'The government takes a share of household income as <strong>Taxation (T)</strong> – this leaves the circular flow. It returns to the flow as <strong>Government spending (G)</strong> on public services, infrastructure, and transfers. The gap between G and T is the budget balance – a deficit if G > T, a surplus if T > G.',
+            analysis: 'T is a withdrawal; G is an injection. Fiscal policy works by adjusting one or both. A balanced-budget expansion (raising both G and T by the same amount) still increases income – the balanced-budget multiplier.'
+          },
+          {
+            label: 'Add the overseas sector',
+            tone: 'green',
+            head: 'Imports (M) and Exports (X)',
+            body: 'Domestic households and firms buy <strong>Imports (M)</strong> from abroad – that money leaves the domestic flow as it pays foreign producers. Domestic firms also sell <strong>Exports (X)</strong> to foreign buyers – that money enters the flow from outside. The net trade balance (X − M) is the current account.',
+            analysis: 'M is a withdrawal; X is an injection. A trade deficit (M > X) means more money leaves the domestic flow than enters via trade – but that can still be consistent with equilibrium if other injections (I, G) exceed other withdrawals (S, T) by enough.'
+          },
+          {
+            label: 'Equilibrium: J = W',
+            tone: 'rose',
+            head: 'National income equilibrium',
+            body: 'National income is in equilibrium when total injections equal total withdrawals: <strong>I + G + X = S + T + M</strong>. If J > W, demand exceeds supply and income rises. If W > J, demand is insufficient and income falls. This identity is the foundation of every macro question about AD, the multiplier, and fiscal policy.',
+            analysis: 'The three natural pairings are useful intuitions: <strong>S funds I</strong> via financial markets, <strong>T helps fund G</strong> via the budget, <strong>X helps pay for M</strong> via trade. But only the <em>totals</em> must match – a trade deficit can co-exist with equilibrium if other injections are large enough.'
+          }
+        ]
+      },
 
-      causesFirst: true,
-      causesLabel: 'The equilibrium rule',
+      causesFirst: false,
+      causesLabel: 'The equilibrium rule at a glance',
       causesEmoji: '⚖️',
       causes: [
         {
@@ -251,17 +294,6 @@ window.ECONOS_TOPIC = {
           body: 'Total injections equal total withdrawals – equilibrium national income.'
         }
       ],
-
-      flowTitle: 'The three natural pairings',
-      flowEmoji: '\u{1F517}',
-      flowSep: '→',
-      flow: [
-        { tone: 'purple', icon: '\u{1F3E6}', title: 'S funds I', sub: 'via financial markets' },
-        { tone: 'amber',  icon: '\u{1F3DB}️', title: 'T helps fund G', sub: 'via the budget' },
-        { tone: 'green',  icon: '\u{1F30D}', title: 'X helps pay for M', sub: 'via trade' }
-      ],
-
-      bottomTip: { tone: 'slate', icon: 'ℹ️', text: 'Only the totals must match – the individual pairs are a helpful way to think about the system.' },
 
       conclusionPosition: 'end',
       conclusion: {

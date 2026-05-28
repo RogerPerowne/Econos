@@ -18,4 +18,7 @@ else
   echo "  (no JS staged)"
 fi
 
+echo "» unit tests (vitest)"
+npm run test:unit --silent
+
 echo "» pre-commit OK"

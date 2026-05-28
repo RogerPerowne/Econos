@@ -111,3 +111,37 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # ────────────────────────────────────────────────────────────
+      # Post-deploy smoke test. Hit the live URL and a representative
+      # generated topic page; fail the workflow if either returns
+      # anything other than 200. Without this, a partial Pages
+      # rollout (artifact uploaded but not promoted, CDN cold, the
+      # topic-routes plugin silently skipped, …) shows CI green
+      # while the site is broken for real users.
+      #
+      # Pages can be slow to propagate after a deploy; we wait up to
+      # ~90s in 6×15s tries before declaring a regression.
+      # ────────────────────────────────────────────────────────────
+      - name: Smoke-test the live site
+        run: |
+          set -euo pipefail
+          BASE='https://econos.co.uk'
+          PROBE_PATHS=( '/' '/learn/causes-of-inflation-and-deflation' '/sitemap.xml' )
+          for path in "${PROBE_PATHS[@]}"; do
+            url="${BASE}${path}"
+            code=''
+            for attempt in 1 2 3 4 5 6; do
+              code=$(curl -fsSL -o /dev/null -w '%{http_code}' --retry 0 --max-time 15 "$url" || true)
+              if [ "$code" = '200' ]; then
+                echo "✓ $url (attempt $attempt)"
+                break
+              fi
+              echo "… $url returned $code (attempt $attempt / 6) — waiting 15s for propagation"
+              sleep 15
+            done
+            if [ "$code" != '200' ]; then
+              echo "✗ $url did not return 200 after 90s — failing the deploy."
+              exit 1
+            fi
+          done

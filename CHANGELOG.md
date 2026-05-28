@@ -49,7 +49,7 @@ board's spec point.
   set; the loader picks them up. Opt-in (rather than runtime
   404-probing) means non-Edexcel-A users don't pay a 404 round-trip
   on every page load.
-- **SW cache bumped** `econos-v61` → `econos-v62` so the homepage
+- **SW cache bumped** `econos-v62` → `econos-v63` so the homepage
   + `app.js` + topics registry land freshly on all clients.
 - **Docs.** `CLAUDE.md` "Multi-exam-board" section now documents
   the `boards` map schema on topics, the per-article frontmatter

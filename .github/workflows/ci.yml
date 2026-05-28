@@ -130,7 +130,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://econos.co.uk'
-          PROBE_PATHS=( '/' '/learn/causes-of-inflation-and-deflation' '/sitemap.xml' )
+          PROBE_PATHS=( '/' '/learn/causes-of-inflation-and-deflation' '/sitemap.xml' '/articles/feed.xml' )
           for path in "${PROBE_PATHS[@]}"; do
             url="${BASE}${path}"
             code=''
@@ -148,3 +148,42 @@ jobs:
               exit 1
             fi
           done
+
+      # ────────────────────────────────────────────────────────────
+      # Tell IndexNow about every URL in the sitemap on each deploy.
+      # IndexNow is an open protocol consumed by Bing, Yandex and
+      # Seznam (and possibly Google in future). The key is hard-coded
+      # in vite.config.js and served as /<key>.txt — IndexNow fetches
+      # that file to verify we own the host.
+      #
+      # Google does NOT consume IndexNow today. Google indexing is
+      # driven by the sitemap (which we keep fresh + accurate
+      # <lastmod>) plus internal links — see docs/seo-indexing.md.
+      # ────────────────────────────────────────────────────────────
+      - name: Ping IndexNow (Bing / Yandex / Seznam)
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          KEY='f50a6f1a73f22cc3dd6b52af512f63c0'
+          HOST='econos.co.uk'
+          # Pull every <loc> out of the live sitemap.
+          URLS=$(curl -fsSL "https://${HOST}/sitemap.xml" \
+            | grep -oE '<loc>[^<]+</loc>' \
+            | sed -E 's#</?loc>##g')
+          if [ -z "$URLS" ]; then
+            echo "No sitemap URLs found — skipping IndexNow ping."
+            exit 0
+          fi
+          URL_JSON=$(echo "$URLS" | jq -R . | jq -s .)
+          PAYLOAD=$(jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg keyLoc "https://${HOST}/${KEY}.txt" \
+            --argjson urls "$URL_JSON" \
+            '{host:$host, key:$key, keyLocation:$keyLoc, urlList:$urls}')
+          echo "Submitting $(echo "$URLS" | wc -l) URLs to IndexNow…"
+          curl -fsSL -X POST 'https://api.indexnow.org/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "$PAYLOAD"
+          echo
+          echo "✓ IndexNow ping sent."

@@ -297,6 +297,18 @@ function topicRoutes() {
     writeFileSync(join(distDir, 'sitemap.xml'), xml);
     // eslint-disable-next-line no-console
     console.log(`[topic-routes] wrote sitemap.xml (${urls.length} URLs)`);
+
+    /* IndexNow key file. The IndexNow protocol (used by Bing,
+       Yandex and Seznam — and on Google's "we might support it
+       later" roadmap) verifies ownership by reading a publicly
+       served `<key>.txt` whose body is the key itself. The CI
+       deploy job POSTs the sitemap URLs to api.indexnow.org;
+       this file is what those engines fetch back to confirm.
+
+       The key is intentionally hard-coded — it's public anyway
+       (literally served at /<key>.txt). Rotate only if leaked. */
+    const INDEXNOW_KEY = 'f50a6f1a73f22cc3dd6b52af512f63c0';
+    writeFileSync(join(distDir, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
   }
 
   return {
@@ -872,8 +884,59 @@ ${pills}
       writeFileSync(sitemapPath, next);
     }
 
+    /* RSS feed for the article library.
+       ─────────────────────────────────────────────────────────────
+       Two reasons to ship this:
+         1. Submit /articles/feed.xml to Google Search Console as a
+            second sitemap-type source. Google specifically uses RSS
+            updates as a recrawl signal — historically faster pickup
+            than a sitemap-only setup for new posts.
+         2. Lets a reader subscribe to new articles via any RSS
+            reader without needing email signup. Low-cost moat.
+       Items are sorted newest-first by published date. */
+    const rssItems = finalIdx
+      .slice()
+      .sort((a, b) => {
+        const aP = a.published ? new Date(a.published).getTime() : 0;
+        const bP = b.published ? new Date(b.published).getTime() : 0;
+        return bP - aP;
+      })
+      .map((a) => {
+        const pub = a.published ? new Date(a.published) : new Date();
+        return `    <item>
+      <title>${escapeXml(a.title)}</title>
+      <link>https://econos.co.uk${a.url}</link>
+      <guid isPermaLink="true">https://econos.co.uk${a.url}</guid>
+      <description>${escapeXml(a.description)}</description>
+      <pubDate>${pub.toUTCString()}</pubDate>
+    </item>`;
+      }).join('\n');
+    const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Econos — A-level economics articles</title>
+    <link>https://econos.co.uk/articles/</link>
+    <description>Plain-English A-level economics articles. Inflation, GDP, monopolies, monetary policy — explained for revision, with UK examples.</description>
+    <language>en-GB</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="https://econos.co.uk/articles/feed.xml" rel="self" type="application/rss+xml"/>
+${rssItems}
+  </channel>
+</rss>
+`;
+    writeFileSync(join(articlesDist, 'feed.xml'), rssXml);
+
     // eslint-disable-next-line no-console
-    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries`);
+    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries; wrote feed.xml`);
+  }
+
+  function escapeXml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
   }
 
   /* Dev / preview: serve articles/ directly. Vite's MPA mode doesn't

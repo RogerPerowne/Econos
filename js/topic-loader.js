@@ -169,32 +169,63 @@
 
   /* Per-topic data loader.
      ─────────────────────────────────────────────────────────────
-     Loads files from /js/data/<topic>/<file>. This path is the
-     Edexcel A baseline that every board falls back to today —
-     when a board authors its own variant of a topic, the
-     `window.ECONOS_BOARD_OVERRIDES` set (declared in
-     `js/config/boards.js`) lists the (board, topic) pairs that
-     should be loaded from /js/data/<board>/<topic>/<file>
-     instead. Keeping the override list opt-in avoids spraying
-     404s for every non-Edexcel-A user just to look for
-     overrides that don't yet exist. */
+     Data lives under `/js/data/<board>/<theme>/<topic>/<file>`.
+     `<theme>` is derived from each topic's `boards.<board>.spec`
+     in the topic registry: Edexcel A / B use `theme-1..theme-4`;
+     AQA / OCR use `micro` / `macro`. Topics with no registry
+     entry land in `misc`.
+
+     Falls back to the Edexcel A baseline path when the current
+     board has no listed override for the requested file (see
+     `window.ECONOS_BOARD_OVERRIDES` in `js/config/boards.js` for
+     the per-file flags). Per-file granularity matters: a board
+     can ship a custom learn.js while still inheriting the
+     Edexcel A baseline for link.js / land.js on the same topic. */
+  function topicEntry(topic) {
+    var reg = window.ECONOS_TOPICS;
+    if (!Array.isArray(reg)) return null;
+    for (var i = 0; i < reg.length; i++) {
+      if (reg[i] && reg[i].id === topic) return reg[i];
+    }
+    return null;
+  }
+
+  function themeFor(topic, board) {
+    var t = topicEntry(topic);
+    if (!t || !t.boards) return 'misc';
+    var spec = t.boards[board] && t.boards[board].spec;
+    if (board === 'edexcel_a' || board === 'edexcel_b') {
+      return spec ? 'theme-' + String(spec).charAt(0) : 'misc';
+    }
+    if (board === 'aqa') {
+      if (!spec) return 'misc';
+      var parts = String(spec).split('.');
+      return parts[1] === '1' ? 'micro' : 'macro';
+    }
+    if (board === 'ocr') {
+      var ea = t.boards.edexcel_a && t.boards.edexcel_a.spec;
+      if (!ea) return 'misc';
+      var d = String(ea).charAt(0);
+      if (d === '1' || d === '3') return 'micro';
+      if (d === '2' || d === '4') return 'macro';
+      return 'misc';
+    }
+    return 'misc';
+  }
+
   function dataPath(topic, file) {
     var board = getBoard();
     if (board && board !== 'edexcel_a') {
       var overrides = window.ECONOS_BOARD_OVERRIDES || {};
       var topicOverrides = (overrides[board] || {})[topic];
-      /* Per-file granularity: the override entry is an object like
-         { learn: true, link: false }. We look up the stem of the
-         requested file (e.g. 'learn.js' → 'learn') and only redirect
-         to the board path when explicitly listed. */
       if (topicOverrides) {
         var stem = String(file).replace(/\.js$/, '');
         if (topicOverrides[stem]) {
-          return '/js/data/' + board + '/' + topic + '/' + file;
+          return '/js/data/' + board + '/' + themeFor(topic, board) + '/' + topic + '/' + file;
         }
       }
     }
-    return '/js/data/' + topic + '/' + file;
+    return '/js/data/edexcel_a/' + themeFor(topic, 'edexcel_a') + '/' + topic + '/' + file;
   }
 
   function loadData(dataFiles, callback, sectionLabel) {

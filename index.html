@@ -592,112 +592,103 @@
   <script defer src="/js/topic-loader.js"></script>
   <script defer>
     document.addEventListener('DOMContentLoaded', function () {
-      var THEMES = [
-        {
-          num: 1, name: 'Introduction to Markets and Market Failure',
-          topics: [
-            { id: 'introduction-to-economics',        num: '1.1-1.2' },
-            { id: 'factors-of-production',     num: '1.3' },
-            { id: 'production-possibility-frontiers',                       num: '1.4' },
-            { id: 'specialisation-and-money',      num: '1.5' },
-            { id: 'economic-systems',          num: '1.6' },
-            { id: 'demand',                    num: '2.1' },
-            { id: 'price-elasticity-of-demand',                       num: '2.2' },
-            { id: 'income-and-cross-price-elasticity',                   num: '2.3' },
-            { id: 'supply',                    num: '2.4' },
-            { id: 'price-elasticity-of-supply',                       num: '2.5' },
-            { id: 'price-determination',        num: '2.6' },
-            { id: 'the-price-mechanism',           num: '2.7' },
-            { id: 'consumer-and-producer-surplus', num: '2.8' },
-            { id: 'indirect-taxes-and-subsidies',  num: '2.9' },
-            { id: 'behavioural-economics',          num: '2.10' },
-            { id: 'market-failure',            num: '3.1' },
-            { id: 'negative-externalities',         num: '3.2.1' },
-            { id: 'positive-externalities',         num: '3.2.2' },
-            { id: 'public-goods',              num: '3.3' },
-            { id: 'information-gaps',                 num: '3.4' },
-            { id: 'government-intervention-in-markets',            num: '4.1' },
-            { id: 'taxes-and-subsidies-as-policy-tools',    num: '4.1.1' },
-            { id: 'government-failure',              num: '4.2' }
-          ]
-        },
-        {
-          num: 2, name: 'The National and Global Economy',
-          topics: [
-            { id: 'measures-of-economic-performance',   num: '1.1' },
-            { id: 'inflation-measurement-and-costs',   num: '1.2.1' },
-            { id: 'causes-of-inflation-and-deflation',        num: '1.2.2' },
-            { id: 'employment-and-unemployment',     num: '1.3' },
-            { id: 'balance-of-payments', num: '1.4' },
-            { id: 'aggregate-demand',                  num: '2.1' },
-            { id: 'consumption',         num: '2.2' },
-            { id: 'investment',          num: '2.3' },
-            { id: 'government-spending', num: '2.4' },
-            { id: 'net-trade',           num: '2.5' },
-            { id: 'aggregate-supply',          num: '3.1-3.3' },
-            { id: 'national-income',  num: '4.1-4.3' },
-            { id: 'national-income-and-the-multiplier',       num: '4.4' },
-            { id: 'output-gaps',      num: '5.1' },
-            { id: 'trade-cycle-shocks-and-economic-growth',     num: '5.2' },
-            { id: 'the-impact-of-economic-growth',    num: '5.3' },
-            { id: 'standard-of-living-and-wellbeing',    num: '5.4' },
-            { id: 'macroeconomic-objectives-and-trade-offs', num: '6.1' },
-            { id: 'demand-side-policies-fiscal',    num: '6.2.1' },
-            { id: 'demand-side-policies-monetary',         num: '6.2.2' },
-            { id: 'supply-side-policies',      num: '6.3' },
-            { id: 'macro-conflicts-and-trade-offs',  num: '6.4' }
-          ]
-        },
-        {
-          num: 3, name: 'Business Behaviour and the Labour Market',
-          topics: [
-            { id: 'business-growth',          num: '1.1-1.3' },
-            { id: 'business-objectives',      num: '2.1' },
-            { id: 'revenue',                  num: '3.1' },
-            { id: 'costs',          num: '3.2' },
-            { id: 'economies-and-diseconomies-of-scale',           num: '3.3' },
-            { id: 'profits-and-losses',         num: '3.4' },
-            { id: 'types-of-efficiency',               num: '4.1' },
-            { id: 'perfect-competition',      num: '4.2' },
-            { id: 'monopolistic-competition', num: '4.3' },
-            { id: 'oligopoly',                num: '4.4.1' },
-            { id: 'collusion-and-cartels',        num: '4.4.2' },
-            { id: 'game-theory',              num: '4.4.3' },
-            { id: 'monopoly',                 num: '4.5' },
-            { id: 'monopsony',                num: '4.6' },
-            { id: 'contestable-markets',           num: '4.7' },
-            { id: 'demand-for-labour',           num: '5.1' },
-            { id: 'supply-of-labour',        num: '5.2' },
-            { id: 'wage-determination',       num: '5.3' },
-            { id: 'government-intervention',     num: '6.1' }
-          ]
-        },
-        {
-          num: 4, name: 'A Global Perspective',
-          topics: [
-            { id: 'globalisation',                  num: '1.1' },
-            { id: 'specialisation-and-trade',                     num: '1.2-1.4' },
-            { id: 'trading-blocs-and-wto',                  num: '1.5' },
-            { id: 'restrictions-on-free-trade',                  num: '1.6' },
-            { id: 'balance-of-payments',            num: '1.7' },
-            { id: 'exchange-rates',                 num: '1.8' },
-            { id: 'international-competitiveness',           num: '1.9' },
-            { id: 'absolute-and-relative-poverty',                        num: '2.1' },
-            { id: 'inequality',              num: '2.2' },
-            { id: 'measures-of-development',        num: '3.1' },
-            { id: 'factors-influencing-growth-and-development',     num: '3.2' },
-            { id: 'strategies-influencing-growth-and-development',  num: '3.3' },
-            { id: 'unstable-commodity-markets',               num: '3.4' },
-            { id: 'role-of-financial-markets',              num: '4.1' },
-            { id: 'market-failure-in-the-financial-sector',       num: '4.2' },
-            { id: 'role-of-central-banks',                  num: '4.3' },
-            { id: 'public-expenditure',             num: '5.1' },
-            { id: 'taxation',                       num: '5.2' },
-            { id: 'public-sector-finances',                num: '5.3' },
-            { id: 'macroeconomic-policies-in-a-global-context',          num: '5.4' }
-          ]
+      /* ────────── Per-board theme structure ──────────
+         Each board's grid is built from the registry rather than
+         hard-coded: we walk every topic, read its
+         `boards[currentBoard].spec`, classify it into one of the
+         board's themes via the spec's first digit (Edexcel A/B
+         use theme-1..theme-4; AQA/OCR use micro/macro), and
+         sort topics within each theme by spec point.
+         The board picker reload re-runs this so a switch shows
+         AQA's 2 sections / Edexcel B's 4 themes / etc. */
+      var BOARD_THEME_DEFS = {
+        edexcel_a: [
+          { key: 'theme-1', num: 1, name: 'Introduction to Markets and Market Failure' },
+          { key: 'theme-2', num: 2, name: 'The UK Economy: Performance and Policies' },
+          { key: 'theme-3', num: 3, name: 'Business Behaviour and the Labour Market' },
+          { key: 'theme-4', num: 4, name: 'A Global Perspective' }
+        ],
+        edexcel_b: [
+          { key: 'theme-1', num: 1, name: 'Markets, Consumers and Firms' },
+          { key: 'theme-2', num: 2, name: 'The Wider Economic Environment' },
+          { key: 'theme-3', num: 3, name: 'The Global Economy' },
+          { key: 'theme-4', num: 4, name: 'Making Markets Work' }
+        ],
+        aqa: [
+          { key: 'micro',   num: 1, name: 'Individuals, Firms, Markets and Market Failure' },
+          { key: 'macro',   num: 2, name: 'The National and International Economy' }
+        ],
+        ocr: [
+          { key: 'micro',   num: 1, name: 'Microeconomics' },
+          { key: 'macro',   num: 2, name: 'Macroeconomics' }
+        ]
+      };
+
+      function classifyTopic(topic, board) {
+        var spec = topic.boards && topic.boards[board] && topic.boards[board].spec;
+        if (!spec) return null;
+        if (board === 'edexcel_a' || board === 'edexcel_b') {
+          return 'theme-' + String(spec).charAt(0);
         }
-      ];
+        if (board === 'aqa') {
+          var parts = String(spec).split('.');
+          return parts[1] === '1' ? 'micro' : 'macro';
+        }
+        if (board === 'ocr') {
+          var ea = topic.boards.edexcel_a && topic.boards.edexcel_a.spec;
+          if (!ea) return null;
+          var d = String(ea).charAt(0);
+          if (d === '1' || d === '3') return 'micro';
+          if (d === '2' || d === '4') return 'macro';
+        }
+        return null;
+      }
+
+      /* Sort key: split "2.3.4" into [2,3,4] and compare element-wise
+         so "1.10" sorts after "1.9", not after "1.1". */
+      function specSortKey(spec) {
+        return String(spec || '').split('.').map(function (s) {
+          var n = parseInt(s, 10);
+          return isNaN(n) ? 0 : n;
+        });
+      }
+      function compareSpecs(a, b) {
+        var pa = specSortKey(a), pb = specSortKey(b);
+        for (var i = 0; i < Math.max(pa.length, pb.length); i++) {
+          var av = pa[i] || 0, bv = pb[i] || 0;
+          if (av !== bv) return av - bv;
+        }
+        return 0;
+      }
+
+      function buildThemesForBoard(board, allTopics) {
+        var defs = BOARD_THEME_DEFS[board] || BOARD_THEME_DEFS.edexcel_a;
+        var byKey = {};
+        for (var i = 0; i < defs.length; i++) {
+          byKey[defs[i].key] = { num: defs[i].num, name: defs[i].name, topics: [] };
+        }
+        for (var t = 0; t < allTopics.length; t++) {
+          var topic = allTopics[t];
+          var key = classifyTopic(topic, board);
+          if (!key || !byKey[key]) continue;
+          var entry = topic.boards[board];
+          if (entry && entry.included === false) continue;
+          byKey[key].topics.push({ id: topic.id, num: entry.spec });
+        }
+        for (var k in byKey) {
+          if (byKey.hasOwnProperty(k)) {
+            byKey[k].topics.sort(function (x, y) { return compareSpecs(x.num, y.num); });
+          }
+        }
+        return defs
+          .map(function (d) { return byKey[d.key]; })
+          .filter(function (theme) { return theme.topics.length > 0; });
+      }
+
+      var THEMES = buildThemesForBoard(
+        (window.TopicLoader && TopicLoader.getBoard && TopicLoader.getBoard()) || 'edexcel_a',
+        window.ECONOS_TOPICS || []
+      );
 
       /* ────────── Build a fast id→topic map ────────── */
       var topicMap = {};

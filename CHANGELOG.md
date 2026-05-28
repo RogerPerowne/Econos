@@ -6,6 +6,40 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.4.1 — 2026-05-28
+
+### Per-board themes on the homepage + folder restructure into board/theme
+
+- **`js/data/<topic>/` → `js/data/<board>/<theme>/<topic>/`.** All
+  91 Edexcel A baseline topic folders moved under
+  `js/data/edexcel_a/<theme>/<topic>/`; the 15 AQA / OCR /
+  Edexcel B override folders moved into their own board/theme
+  hierarchies. Theme assignment is derived from each topic's
+  `boards.<board>.spec` in the registry: Edexcel A and Edexcel B
+  use `theme-1` ... `theme-4`; AQA and OCR use `micro` / `macro`.
+  Topics with no registry entry land in `misc`.
+- **TopicLoader path resolution updated** to construct
+  `/js/data/<board>/<theme>/<topic>/<file>`. The fallback
+  (when no override is registered) reads from the Edexcel A
+  baseline at `/js/data/edexcel_a/<edexcel_a_theme>/<topic>/<file>`.
+  Theme is derived at runtime from the registry via
+  `themeFor(topic, board)` — no extra registry fields needed.
+- **`link.html` and `land.html`** now defer-load `js/topics.js`
+  so the loader has the registry available when constructing
+  data paths. Previously only `learn.html` and `index.html`
+  did.
+- **Homepage shows per-board themes.** The hard-coded Edexcel A
+  THEMES array gone. `index.html` now ships
+  `BOARD_THEME_DEFS` for all four boards (Edexcel A and B with
+  4 themes each; AQA and OCR with 2 sections — micro/macro)
+  plus `buildThemesForBoard(board, allTopics)` which classifies
+  every topic into the active board's themes by spec digit,
+  sorts within each theme by spec, and drops any theme with no
+  topics. Switching board via the picker rebuilds the grid for
+  that board's structure.
+- **SW cache** bumped `econos-v65` → `econos-v66`.
+- **Version** 0.4.0 → 0.4.1.
+
 ## 0.4.0 — 2026-05-28
 
 ### Data layout: rename, consolidate, retire Quiz shell

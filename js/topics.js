@@ -517,13 +517,13 @@ window.ECONOS_TOPICS = [
     }
   },
   {
-    id: 'output-gaps',
-    name: 'Output Gaps',
-    sub: 'Actual vs potential GDP, negative and positive gaps, policy implications',
+    id: 'equilibrium-national-income',
+    name: 'Equilibrium National Income',
+    sub: 'J = W, AD/AS, recessionary and inflationary gaps, reading GDP data',
     color: '#0284c7',
     available: { learn: true, link: false, land: false },
     boards: {
-      edexcel_a: { spec: '2.5.2', included: true },
+      edexcel_a: { spec: '2.4.3', included: true },
       edexcel_b: { spec: null, included: true },
       aqa:       { spec: '3.2.3.1', included: true },
       ocr:       { spec: '1.5', included: true }

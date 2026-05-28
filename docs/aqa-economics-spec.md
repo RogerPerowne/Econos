@@ -2,6 +2,7 @@
 
 > Source: *AQA AS and A-level Economics (7135 / 7136)*, Version 1.3, 29 June 2022. For teaching from September 2015 onwards; AS first exams June 2016, A-level first exams June 2017.
 > © AQA. Reproduced here as reference context for content authoring on Econos.
+> **Verified 2026-05-28** against the canonical AQA PDF supplied by the project owner — every Section 3 (AS) and Section 4 (A-level) sub-section, plus the Quantitative-skills appendix, cross-checked sub-bullet by sub-bullet. No omissions found.
 
 This is the canonical AQA spec point map used across Econos. Every AQA topic on the site should be traceable back to one of the sub-sections below. The AQA spec is a combined AS/A-level document — Section 3 covers the AS-only subject content, Section 4 covers the full A-level subject content. Sub-section numbering matches the spec exactly so it can be cited in `topicNum` / spec-mapping fields.
 

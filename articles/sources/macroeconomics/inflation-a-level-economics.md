@@ -31,7 +31,7 @@ glance:
   - { label: "BoE target", value: "Symmetric 2% CPI per year, set by the Monetary Policy Committee since 2003." }
   - { label: "Why it matters", value: "Inflation redistributes wealth from savers to borrowers, hurts pensioners on fixed incomes, and erodes trust in the currency if it persists." }
 glance_cta:
-  href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn
+  href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it
   label: "Want more depth? Explore the full topic →"
 
 # FAQPage JSON-LD entries. Pulled out as structured data because Google
@@ -48,9 +48,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master inflation with Econos."
-  primary_href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn
+  primary_href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it
   primary_label: "Explore the full Inflation topic"
-  secondary_href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn
+  secondary_href: /edexcel_a/theme-2/causes-of-inflation-and-deflation/learn-it
   secondary_label: "Sign up free"
 ---
 

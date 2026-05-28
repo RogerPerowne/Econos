@@ -29,7 +29,7 @@ beforeAll(() => {
   /* Reset jsdom location to a known shell URL so the loader's
      boot-time legacy-redirect doesn't try to replaceState into
      an inert about:blank page. */
-  window.history.replaceState(null, '', '/aqa/macro/inflation/learn');
+  window.history.replaceState(null, '', '/aqa/macro/inflation/learn-it');
   const src = readFileSync(resolve(process.cwd(), 'js/topic-loader.js'), 'utf8');
   // eslint-disable-next-line no-new-func
   new Function(src)();
@@ -52,20 +52,20 @@ describe('TopicLoader parsePath', () => {
     });
   });
 
-  it('parses /<board>/<theme>/<topic>/learn', () => {
-    expect(TopicLoader.parsePath('/edexcel_a/theme-2/inflation/learn')).toMatchObject({
+  it('parses /<board>/<theme>/<topic>/learn-it', () => {
+    expect(TopicLoader.parsePath('/edexcel_a/theme-2/inflation/learn-it')).toMatchObject({
       board: 'edexcel_a', theme: 'theme-2', topic: 'inflation', shell: 'learn'
     });
   });
 
-  it('parses /<board>/<theme>/<topic>/link/<station>', () => {
-    expect(TopicLoader.parsePath('/aqa/macro/inflation/link/chain-open')).toMatchObject({
+  it('parses /<board>/<theme>/<topic>/link-it/<station>', () => {
+    expect(TopicLoader.parsePath('/aqa/macro/inflation/link-it/chain-open')).toMatchObject({
       board: 'aqa', theme: 'macro', topic: 'inflation', shell: 'link', station: 'chain-open'
     });
   });
 
-  it('parses /<board>/<theme>/<topic>/land/<section>', () => {
-    expect(TopicLoader.parsePath('/ocr/macro/inflation/land/a')).toMatchObject({
+  it('parses /<board>/<theme>/<topic>/land-it/<section>', () => {
+    expect(TopicLoader.parsePath('/ocr/macro/inflation/land-it/a')).toMatchObject({
       board: 'ocr', theme: 'macro', topic: 'inflation', shell: 'land', station: 'a'
     });
   });
@@ -74,10 +74,10 @@ describe('TopicLoader parsePath', () => {
     expect(TopicLoader.parsePath('/quiz/inflation/main')).toBeNull();
   });
 
-  it('rejects legacy single-prefix /learn/<topic> paths', () => {
+  it('rejects legacy single-prefix /learn-it/<topic> paths', () => {
     /* v0.5.x URL contract was retired in v0.6.0 — every topic URL
        must now start with a known board id. */
-    expect(TopicLoader.parsePath('/learn/inflation')).toBeNull();
+    expect(TopicLoader.parsePath('/learn-it/inflation')).toBeNull();
   });
 
   it('rejects an unknown board id', () => {
@@ -91,7 +91,7 @@ describe('TopicLoader parsePath', () => {
   });
 
   it('strips trailing slash before parsing', () => {
-    expect(TopicLoader.parsePath('/aqa/macro/inflation/learn/')).toMatchObject({
+    expect(TopicLoader.parsePath('/aqa/macro/inflation/learn-it/')).toMatchObject({
       board: 'aqa', theme: 'macro', topic: 'inflation', shell: 'learn'
     });
   });

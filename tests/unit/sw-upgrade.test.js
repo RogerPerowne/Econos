@@ -54,8 +54,8 @@ describe('activateUpgrade', () => {
     const navigate = vi.fn(async () => {});
     const cachesApi = makeCaches(['econos-v52', 'econos-current']);
     const clientsApi = makeClients([
-      { url: 'https://econos.co.uk/learn/inflation', navigate },
-      { url: 'https://econos.co.uk/link/inflation/chain', navigate }
+      { url: 'https://econos.co.uk/learn-it/inflation', navigate },
+      { url: 'https://econos.co.uk/link-it/inflation/chain', navigate }
     ]);
 
     await activateUpgrade('econos-current', cachesApi, clientsApi);
@@ -64,8 +64,8 @@ describe('activateUpgrade', () => {
     expect(cachesApi.delete).toHaveBeenCalledWith('econos-v52');
     expect(clientsApi.claim).toHaveBeenCalledOnce();
     expect(navigate).toHaveBeenCalledTimes(2);
-    expect(navigate).toHaveBeenNthCalledWith(1, 'https://econos.co.uk/learn/inflation');
-    expect(navigate).toHaveBeenNthCalledWith(2, 'https://econos.co.uk/link/inflation/chain');
+    expect(navigate).toHaveBeenNthCalledWith(1, 'https://econos.co.uk/learn-it/inflation');
+    expect(navigate).toHaveBeenNthCalledWith(2, 'https://econos.co.uk/link-it/inflation/chain');
   });
 
   it('does not reload windows on a first install (no older cache)', async () => {

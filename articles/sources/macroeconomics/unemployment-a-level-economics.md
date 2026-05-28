@@ -29,7 +29,7 @@ glance:
   - { label: "Two measures", value: "Claimant count (administrative) and ILO/Labour Force Survey (sample-based, 16+, internationally comparable)." }
   - { label: "Policy rule", value: "Diagnose the type first. Cyclical → demand-side. Structural → supply-side. Frictional → information / matching. Seasonal → income smoothing." }
 glance_cta:
-  href: /edexcel_a/theme-2/employment-and-unemployment/learn
+  href: /edexcel_a/theme-2/employment-and-unemployment/learn-it
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -45,9 +45,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master unemployment with Econos."
-  primary_href: /edexcel_a/theme-2/employment-and-unemployment/learn
+  primary_href: /edexcel_a/theme-2/employment-and-unemployment/learn-it
   primary_label: "Explore the full topic"
-  secondary_href: /edexcel_a/theme-2/employment-and-unemployment/learn
+  secondary_href: /edexcel_a/theme-2/employment-and-unemployment/learn-it
   secondary_label: "Sign up free"
 ---
 

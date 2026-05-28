@@ -1,22 +1,22 @@
 /* ============================================================
    ECONOS – content data for aggregate_demand
-   8 cards · AQA variant · AQA 3.2.2.2 / 4.2.2.2
+   8 cards · Edexcel B variant · Edexcel B 9EB0 § 4.4.1
    ─────────────────────────────────────────────────────────────
-   AQA frames AD/AS together as one sub-section (3.2.2.2 at AS,
-   4.2.2.2 at A-level): the factors that shift the AD curve and
-   the short-run AS curve, how both demand-side and supply-side
-   shocks affect the macroeconomy, and how global events feed
-   through to the domestic economy. Layout + diagrams identical
-   to the Edexcel A baseline; copy tilts toward AQA's emphasis
-   on the accelerator process (3.2.2.3 (c)) and the
-   distinction between determinants of AD and the AD/AS
-   equilibrium diagram itself (3.2.2.2 (e)).
+   Edexcel B's macro is woven through Themes 2 and 4. AD enters
+   2.5.2 as part of the circular flow (factors influencing AD:
+   components C + I + G + (X − M)) and is then formalised in
+   4.4.1 as the AD/AS model where changes in AD affect inflation
+   and unemployment AND the multiplier effect. Edexcel B always
+   asks "how does this affect firms and individuals" – the
+   evaluation lens. Layout + diagrams identical to the
+   Edexcel A baseline; copy tilts toward firm-level case
+   studies and the stakeholder impact lens.
    ============================================================ */
 
 window.ECONOS_TOPIC = {
   id: 'aggregate_demand',
-  topicNum: '3.2.2.2',
-  theme: 'Section 2 · The national economy in a global context',
+  topicNum: '4.4.1',
+  theme: 'Theme 4 · Making markets work',
   title: 'Aggregate Demand',
   estTime: '10-12 minutes',
   goal: 'Lock in AD as a system – formula, slope, shifts, multiplier, real-world application',
@@ -37,8 +37,8 @@ window.ECONOS_TOPIC = {
     tip: 'Each component (C, I, G, X−M) has its own dedicated topic for the deep dive on determinants and policy.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 concept cards',                  state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions',    state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
+      { num: 2, name: 'Link it', sub: 'Apply in exam-style questions',    state: 'locked' },
+      { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
   },
 
@@ -119,7 +119,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'A strong answer defines AD first, then identifies which component – C, I, G or (X − M) – is changing.'
       }
     },
@@ -184,7 +184,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'Always separate the reasons for the AD curve from the reasons for an individual demand curve.'
       }
     },
@@ -242,7 +242,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'Write the diagnosis first – for example, "This is a rightward shift of AD because consumer confidence raises C at every price level."'
       }
     },
@@ -313,7 +313,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'Organise determinants by C, I, G and (X − M). That instantly gives essays better structure.'
       }
     },
@@ -377,7 +377,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'Always state the mechanism – spending becomes income, then becomes more spending.'
       }
     },
@@ -458,7 +458,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'Name the three leakages explicitly – MPS, MRT and MRM. Quote a realistic UK multiplier (~1.5) rather than the textbook 2.5.'
       }
     },
@@ -543,7 +543,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'The best application names which engine was hit – not just that "demand fell".'
       }
     },
@@ -610,7 +610,7 @@ window.ECONOS_TOPIC = {
       },
 
       examEdge: {
-        title: 'Exam edge (AQA)',
+        title: 'Exam edge (Edexcel B)',
         text: 'Strong essays start with AD, then qualify with lags, spare capacity, crowding out and animal spirits.'
       }
     }

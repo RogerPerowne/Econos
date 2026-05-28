@@ -34,8 +34,8 @@ window.ECONOS_TOPIC = {
     tip: 'Draw the diagram as you go – seeing SRAS, LRAS, and AD interact makes the logic stick.',
     stages: [
       { num: 1, name: 'Learn',  sub: '8 cards \xb7 20 min', state: 'current' },
-      { num: 2, name: 'Master', sub: 'Apply in exam-style questions', state: 'locked' },
-      { num: 3, name: 'Review', sub: 'See your progress and next steps', state: 'locked' }
+      { num: 2, name: 'Link it', sub: 'Apply in exam-style questions', state: 'locked' },
+      { num: 3, name: 'Land it', sub: 'See your progress and next steps', state: 'locked' }
     ]
   },
 

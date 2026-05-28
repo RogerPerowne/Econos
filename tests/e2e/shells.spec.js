@@ -87,6 +87,42 @@ test.describe('Per-topic SEO metadata', () => {
   });
 });
 
+test.describe('Account menu', () => {
+  test('topbar avatar opens the menu and Escape closes it', async ({ page }) => {
+    await login(page);
+    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.waitForLoadState('networkidle');
+
+    const trigger = page.locator('.topbar__avatar');
+    const menu    = page.locator('#econ-account-menu');
+
+    await expect(menu).toBeHidden();
+    await trigger.click();
+    await expect(menu).toBeVisible();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+
+    await page.keyboard.press('Escape');
+    await expect(menu).toBeHidden();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  test('Log out bounces to /login', async ({ page }) => {
+    /* The login() helper uses addInitScript to set econosAuth on every
+       page load — so we can't assert the cleared flag here without the
+       reload immediately re-setting it. The meaningful contract is the
+       redirect to /login; that only fires if the logout handler ran. */
+    await login(page);
+    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.waitForLoadState('networkidle');
+
+    await page.locator('.topbar__avatar').click();
+    await page.locator('.account-menu__item[data-action="logout"]').click();
+
+    await page.waitForURL((url) => url.pathname === '/login' || url.pathname === '/login.html');
+    expect(new URL(page.url()).pathname.replace(/\.html$/, '')).toBe('/login');
+  });
+});
+
 test.describe('Learn It shell', () => {
   test('inflation renders chrome + stage widget', async ({ page }) => {
     await login(page);

@@ -89,10 +89,10 @@
           </a>
           <div style="flex:1"></div>
           <div class="topbar__right">
-            <div class="topbar__avatar">
-              <div class="topbar__avatar-circle">AB</div>
-              <span class="topbar__avatar-chev">${I.chevDown}</span>
-            </div>
+            <button type="button" class="topbar__avatar" aria-label="Account menu" aria-haspopup="menu" aria-expanded="false">
+              <span class="topbar__avatar-circle">AB</span>
+              <span class="topbar__avatar-chev" aria-hidden="true">${I.chevDown}</span>
+            </button>
           </div>
         </div>
         ${Shell.renderMobileStages()}
@@ -108,10 +108,10 @@
           <div class="topbar__topic-title">${T.title}</div>
         </div>
         <div class="topbar__right">
-          <div class="topbar__avatar">
-            <div class="topbar__avatar-circle">AB</div>
-            <span class="topbar__avatar-chev">${I.chevDown}</span>
-          </div>
+          <button type="button" class="topbar__avatar" aria-label="Account menu" aria-haspopup="menu" aria-expanded="false">
+            <span class="topbar__avatar-circle">AB</span>
+            <span class="topbar__avatar-chev" aria-hidden="true">${I.chevDown}</span>
+          </button>
         </div>
       </div>
       ${Shell.renderMobileStages()}

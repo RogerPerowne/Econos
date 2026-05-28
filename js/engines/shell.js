@@ -81,7 +81,7 @@
       +     '<div class="sidebar__streak-label">Day streak</div>'
       +     '<div class="sidebar__streak-sub">Keep it going!</div>'
       +   '</div>'
-      +   '<button type="button" class="sidebar__user" aria-label="Account menu">'
+      +   '<button type="button" class="sidebar__user" aria-label="Account menu" aria-haspopup="menu" aria-expanded="false" aria-controls="' + ACCOUNT_MENU_ID + '">'
       +     '<span class="sidebar__user-avatar">' + U.initials + '</span>'
       +     '<span class="sidebar__user-info">'
       +       '<span class="sidebar__user-name">' + U.name + '</span>'
@@ -122,7 +122,7 @@
       +     (opts.topicTitle ? '<div class="topbar__topic-title">' + opts.topicTitle + '</div>' : '')
       +   '</div>'
       +   '<div class="topbar__right">'
-      +     '<button type="button" class="topbar__avatar" aria-label="Account menu">'
+      +     '<button type="button" class="topbar__avatar" aria-label="Account menu" aria-haspopup="menu" aria-expanded="false" aria-controls="' + ACCOUNT_MENU_ID + '">'
       +       '<span class="topbar__avatar-circle">' + U.initials + '</span>'
       +       '<span class="topbar__avatar-chev" aria-hidden="true">' + (I.chevDown || '') + '</span>'
       +     '</button>'
@@ -328,6 +328,113 @@
     document.body.insertBefore(wrap.firstChild, document.body.firstChild);
   }
 
+  /* ------------------------------------------------------------------
+     Account menu — the dropdown the sidebar user-card and the topbar
+     avatar button both open. Until proper auth lands the only real
+     action is "Log out" (clears the localStorage auth flag + bounces
+     to /login). Anchored to whichever trigger opened it; closes on
+     outside-click, Escape, or selecting an item.
+
+     There was previously a chevron (⌄) on both triggers with no
+     handler — looked interactive, did nothing. This wires the
+     affordance to something real instead of removing it.
+     ------------------------------------------------------------------ */
+  var ACCOUNT_MENU_ID = 'econ-account-menu';
+
+  function renderAccountMenu() {
+    return ''
+      + '<div id="' + ACCOUNT_MENU_ID + '" class="account-menu" role="menu" hidden>'
+      +   '<button type="button" class="account-menu__item" data-action="logout" role="menuitem">Log out</button>'
+      + '</div>';
+  }
+
+  function getAccountMenu() {
+    var el = document.getElementById(ACCOUNT_MENU_ID);
+    if (el) return el;
+    var wrap = document.createElement('div');
+    wrap.innerHTML = renderAccountMenu();
+    document.body.appendChild(wrap.firstChild);
+    return document.getElementById(ACCOUNT_MENU_ID);
+  }
+
+  function closeAccountMenu() {
+    var menu = document.getElementById(ACCOUNT_MENU_ID);
+    if (!menu || menu.hidden) return;
+    menu.hidden = true;
+    var trigger = menu.__trigger;
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.__trigger = null;
+    }
+  }
+
+  function openAccountMenu(trigger) {
+    var menu = getAccountMenu();
+    var rect = trigger.getBoundingClientRect();
+    menu.style.top  = (rect.bottom + window.scrollY + 6) + 'px';
+    /* Right-align under the trigger; clamp so the menu never spills off-screen. */
+    var menuWidth = 180;
+    var left = Math.max(8, Math.min(rect.right - menuWidth, window.innerWidth - menuWidth - 8));
+    menu.style.left = (left + window.scrollX) + 'px';
+    menu.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    menu.__trigger = trigger;
+    var firstItem = menu.querySelector('.account-menu__item');
+    if (firstItem) firstItem.focus();
+  }
+
+  function bindAccountMenu() {
+    /* Capture-phase delegate: handles both the sidebar user-card and
+       the topbar avatar (and any future trigger that adds the
+       data-account-trigger attribute). Idempotent — we attach the
+       global listeners exactly once. */
+    if (document.documentElement.dataset.econAccountMenuBound === '1') return;
+    document.documentElement.dataset.econAccountMenuBound = '1';
+
+    function isTrigger(el) {
+      if (!el || !el.closest) return null;
+      return el.closest('.sidebar__user, .topbar__avatar, [data-account-trigger]');
+    }
+
+    document.addEventListener('click', function (e) {
+      var menu = document.getElementById(ACCOUNT_MENU_ID);
+      var trigger = isTrigger(e.target);
+      if (trigger) {
+        e.preventDefault();
+        if (menu && !menu.hidden && menu.__trigger === trigger) {
+          closeAccountMenu();
+        } else {
+          openAccountMenu(trigger);
+        }
+        return;
+      }
+      var itemBtn = e.target && e.target.closest && e.target.closest('.account-menu__item');
+      if (itemBtn) {
+        if (itemBtn.dataset.action === 'logout') {
+          try { localStorage.removeItem('econosAuth'); } catch (err) { /* private mode */ }
+          window.location.href = '/login';
+        }
+        closeAccountMenu();
+        return;
+      }
+      /* Outside click closes the menu. */
+      if (menu && !menu.hidden && !menu.contains(e.target)) {
+        closeAccountMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var menu = document.getElementById(ACCOUNT_MENU_ID);
+        if (menu && !menu.hidden) {
+          var trigger = menu.__trigger;
+          closeAccountMenu();
+          if (trigger) trigger.focus();
+        }
+      }
+    });
+  }
+
   window.Shell = {
     renderSidebar:   renderSidebar,
     renderTopbar:    renderTopbar,
@@ -338,10 +445,11 @@
     mountSkipLink:   mountSkipLink
   };
 
-  /* shell.js auto-injects the skip-link so each shell HTML body
-     doesn't repeat that block. Idempotent. */
+  /* shell.js auto-injects the skip-link + wires the account menu so
+     each shell HTML body doesn't repeat that block. Idempotent. */
   function bootShell() {
     mountSkipLink();
+    bindAccountMenu();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootShell);

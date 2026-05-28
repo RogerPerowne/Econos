@@ -347,11 +347,23 @@ img, svg { display: block; max-width: 100%; }
 .sidebar__streak-sub { font-size: var(--fs-xs); color: var(--econ-ink); }
 
 .sidebar__user {
+  width: 100%;
   padding: var(--sp-4);
+  border: 0;
   border-top: 1px solid var(--econ-gray-200);
+  background: transparent;
   display: flex;
   align-items: center;
   gap: var(--sp-3);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.12s;
+}
+.sidebar__user:hover,
+.sidebar__user[aria-expanded="true"] { background: var(--econ-gray-50); }
+.sidebar__user:focus-visible {
+  outline: 2px solid var(--econ-blue);
+  outline-offset: -2px;
 }
 .sidebar__user-avatar {
   width: 36px;
@@ -451,6 +463,21 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: var(--sp-2);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--r-full);
+  padding: 2px 6px 2px 2px;
+  cursor: pointer;
+  transition: background-color 0.12s, border-color 0.12s;
+}
+.topbar__avatar:hover,
+.topbar__avatar[aria-expanded="true"] {
+  background: var(--econ-gray-50);
+  border-color: var(--econ-gray-200);
+}
+.topbar__avatar:focus-visible {
+  outline: 2px solid var(--econ-blue);
+  outline-offset: 2px;
 }
 .topbar__avatar-circle {
   width: 36px;
@@ -465,6 +492,42 @@ img, svg { display: block; max-width: 100%; }
   font-size: var(--fs-sm);
 }
 .topbar__avatar-chev { color: var(--econ-ink); }
+
+/* ----- Account menu -----
+   Single floating dropdown opened by the sidebar user-card or the topbar
+   avatar (or any [data-account-trigger]). Auto-mounted into <body> by
+   shell.js bootShell; positioned absolutely below whichever trigger
+   opened it. Only one instance exists at any time. */
+.account-menu {
+  position: absolute;
+  min-width: 180px;
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  box-shadow: 0 6px 24px rgba(11,20,38,0.12);
+  padding: 6px;
+  z-index: 200;
+}
+.account-menu[hidden] { display: none; }
+.account-menu__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: 0;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--econ-ink);
+  text-align: left;
+  cursor: pointer;
+}
+.account-menu__item:hover,
+.account-menu__item:focus-visible {
+  background: var(--econ-gray-50);
+  outline: none;
+}
 
 /* ----- Mobile stages strip -----
    Three compact pills under the topbar, only visible on ≤880px (where

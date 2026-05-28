@@ -6,6 +6,18 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.10.2 — 2026-05-28
+
+### Mobile stage bar: per-stage colours
+
+The mobile Learn/Link/Land bar coloured every active stage the same —
+blue for the current step, green for a completed one — so Link It lit up
+blue/green instead of its own colour. It now uses the positional palette
+from the desktop stages nav: **Learn = green, Link = amber, Land = rose**,
+applied only when a stage is the current step or completed. An
+available-but-not-started or locked stage stays grey. SW cache →
+`econos-v83`.
+
 ## 0.10.1 — 2026-05-28
 
 ### Learn It: finish the cards → "Link it", not "Next topic"

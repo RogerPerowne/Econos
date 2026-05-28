@@ -16353,8 +16353,8 @@ window.ECONOS_ICONS = {
 
         <!-- LAYER 2 arrows: Tax + G-spend (Y +60; directions FIXED from source) -->
         <g class="idl-2" style="display:none">
-          <path d="M282 274 H154" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
-          <path d="M154 329 H285" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
+          <path d="M282 274 H158" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
+          <path d="M158 329 H285" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
         </g>
 
         <!-- LAYER 3 arrows: Imports + Exports (Y shifted +60) -->
@@ -16393,7 +16393,7 @@ window.ECONOS_ICONS = {
       </section>
 
       <!-- BASE labels: Factor payments (y=117+60=177 → 34.04%) + Consumption (y=358+60=418 → 80.38%) -->
-      <div style="position:absolute;z-index:3;left:50%;top:28%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">(wages, rent, interest, profit)</span></div>
+      <div style="position:absolute;z-index:3;left:50%;top:26%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">(wages, rent, interest, profit)</span></div>
       <div style="position:absolute;z-index:3;left:50%;top:88%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Consumption expenditure (C)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">on goods and services</span></div>
 
       <!-- ====== LAYER 1: Financial Markets (y=7+60=67 → 12.88%; h=73/520=14.04%) ====== -->
@@ -16416,7 +16416,7 @@ window.ECONOS_ICONS = {
 
       <!-- ====== LAYER 2: Government (y=178+60=238 → 45.77%; h=96/520=18.46%) ====== -->
       <div class="idl-2" style="display:none">
-        <section style="position:absolute;z-index:2;left:2.206%;top:45.769%;width:11.949%;height:22.5%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
+        <section style="position:absolute;z-index:2;left:1%;top:45.769%;width:13.5%;height:22.5%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
           <div>
             <svg viewBox="0 0 64 64" style="width:clamp(20px,3cqw,34px);height:clamp(20px,3cqw,34px);margin:0 auto 4px;display:block;">
               <path d="M32 10 8 22v5h48v-5L32 10Z" fill="currentColor" opacity=".92"/>

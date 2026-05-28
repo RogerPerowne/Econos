@@ -29,7 +29,7 @@ glance:
   - { label: "Real vs nominal", value: "Nominal GDP is at current prices; real GDP strips inflation out using a deflator. For growth comparisons, always real." }
   - { label: "GDP vs GNI", value: "GDP measures output inside the country; GNI adds net income from abroad. Ireland's GDP looks huge because of multinationals' booked profits; GNI is the sober figure." }
 glance_cta:
-  href: /learn/measures-of-economic-performance
+  href: /edexcel_a/theme-2/measures-of-economic-performance/learn
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -45,9 +45,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master macro measurement with Econos."
-  primary_href: /learn/measures-of-economic-performance
+  primary_href: /edexcel_a/theme-2/measures-of-economic-performance/learn
   primary_label: "Explore the full topic"
-  secondary_href: /learn/measures-of-economic-performance
+  secondary_href: /edexcel_a/theme-2/measures-of-economic-performance/learn
   secondary_label: "Sign up free"
 ---
 

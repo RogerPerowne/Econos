@@ -27,6 +27,12 @@ function loadLoaderAndProgress(initialPath) {
      clean jsdom window so localStorage state from a previous
      test never leaks. */
   window.history.replaceState(null, '', initialPath);
+  /* v0.6.0+ topic-loader requires the board registry on window
+     before parsePath will recognise board-prefixed URLs. */
+  window.ECONOS_BOARDS = {
+    edexcel_a: { id: 'edexcel_a', name: 'Edexcel A', isDefault: true },
+    aqa:       { id: 'aqa',       name: 'AQA' }
+  };
   delete window.TopicLoader;
   delete window.Progress;
   for (const file of ['js/topic-loader.js', 'js/progress.js']) {
@@ -39,7 +45,7 @@ function loadLoaderAndProgress(initialPath) {
 describe('Progress.getLinkUnlocked / setLinkUnlocked', () => {
   beforeEach(() => {
     window.localStorage.clear();
-    loadLoaderAndProgress('/learn/inflation');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn');
   });
 
   it('returns -1 before anything is set (no legacy fallback)', () => {
@@ -59,14 +65,14 @@ describe('Progress.getLinkUnlocked / setLinkUnlocked', () => {
   });
 
   it('isolates state across topics', () => {
-    loadLoaderAndProgress('/learn/inflation');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn');
     window.Progress.setLinkUnlocked(3);
 
-    loadLoaderAndProgress('/learn/demand');
+    loadLoaderAndProgress('/edexcel_a/theme-1/demand/learn');
     expect(window.Progress.getLinkUnlocked()).toBe(-1);
     window.Progress.setLinkUnlocked(5);
 
-    loadLoaderAndProgress('/learn/inflation');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/learn');
     expect(window.Progress.getLinkUnlocked()).toBe(3);
   });
 });
@@ -74,7 +80,7 @@ describe('Progress.getLinkUnlocked / setLinkUnlocked', () => {
 describe('Progress.markStation / hasVisited', () => {
   beforeEach(() => {
     window.localStorage.clear();
-    loadLoaderAndProgress('/link/inflation/chain');
+    loadLoaderAndProgress('/edexcel_a/theme-2/inflation/link/chain');
   });
 
   it('records a visit and reads it back', () => {

@@ -29,7 +29,7 @@ glance:
   - { label: "UK threshold", value: "The CMA treats over 25% market share as indicative monopoly position." }
   - { label: "Why it matters", value: "Price above marginal cost destroys mutually beneficial trades — the deadweight loss." }
 glance_cta:
-  href: /learn/monopoly
+  href: /edexcel_a/theme-3/monopoly/learn
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -43,9 +43,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master monopoly with Econos."
-  primary_href: /learn/monopoly
+  primary_href: /edexcel_a/theme-3/monopoly/learn
   primary_label: "Explore the full Monopoly topic"
-  secondary_href: /learn/monopoly
+  secondary_href: /edexcel_a/theme-3/monopoly/learn
   secondary_label: "Sign up free"
 ---
 
@@ -139,7 +139,7 @@ The monopolist *is* the market — it faces the whole market demand curve. To se
 
 ::::
 
-<a href="/learn/monopoly" class="section__after-link">Walk through both views with worked numbers →</a>
+<a href="/edexcel_a/theme-3/monopoly/learn" class="section__after-link">Walk through both views with worked numbers →</a>
 
 :::::
 

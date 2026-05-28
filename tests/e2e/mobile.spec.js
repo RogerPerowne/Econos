@@ -37,7 +37,7 @@ test('home page renders on mobile with no horizontal scroll', async ({ page }) =
 
 test('Learn shell collapses chrome on mobile', async ({ page }) => {
   await login(page);
-  await page.goto('/learn/causes-of-inflation-and-deflation');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
 
@@ -52,7 +52,7 @@ test('Learn shell collapses chrome on mobile', async ({ page }) => {
 
 test('mobile stages strip gives Learn/Link/Land jump points', async ({ page }) => {
   await login(page);
-  await page.goto('/learn/causes-of-inflation-and-deflation');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
 
@@ -64,12 +64,12 @@ test('mobile stages strip gives Learn/Link/Land jump points', async ({ page }) =
   /* Learn is the current stage; Link and Land should be reachable links. */
   await expect(strip.locator('.mobile-stages__item.is-current')).toHaveAttribute('data-stage-pos', '1');
   const linkPill = strip.locator('a.mobile-stages__item[data-stage-pos="2"]');
-  await expect(linkPill).toHaveAttribute('href', '/link/causes-of-inflation-and-deflation/intro');
+  await expect(linkPill).toHaveAttribute('href', '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
 });
 
 test('Link station renders on mobile with stacked rail', async ({ page }) => {
   await login(page);
-  await page.goto('/link/causes-of-inflation-and-deflation/intro');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(300);
 
@@ -84,7 +84,7 @@ test('Link station renders on mobile with stacked rail', async ({ page }) => {
 
 test('skip-link is the first keyboard stop on mobile', async ({ page }) => {
   await login(page);
-  await page.goto('/learn/causes-of-inflation-and-deflation');
+  await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
   await page.waitForLoadState('networkidle');
   await page.keyboard.press('Tab');
   const cls = await page.evaluate(() =>

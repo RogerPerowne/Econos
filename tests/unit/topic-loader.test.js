@@ -17,10 +17,19 @@ import { resolve } from 'node:path';
 let TopicLoader;
 
 beforeAll(() => {
+  /* The board registry must exist BEFORE parsePath runs — the
+     v0.6.0 path scheme validates the board id against
+     window.ECONOS_BOARDS. Stuff it on first. */
+  window.ECONOS_BOARDS = {
+    edexcel_a: { id: 'edexcel_a', name: 'Edexcel A', isDefault: true },
+    edexcel_b: { id: 'edexcel_b', name: 'Edexcel B' },
+    aqa:       { id: 'aqa',       name: 'AQA' },
+    ocr:       { id: 'ocr',       name: 'OCR' }
+  };
   /* Reset jsdom location to a known shell URL so the loader's
      boot-time legacy-redirect doesn't try to replaceState into
      an inert about:blank page. */
-  window.history.replaceState(null, '', '/learn/inflation');
+  window.history.replaceState(null, '', '/aqa/macro/inflation/learn');
   const src = readFileSync(resolve(process.cwd(), 'js/topic-loader.js'), 'utf8');
   // eslint-disable-next-line no-new-func
   new Function(src)();
@@ -34,43 +43,56 @@ describe('TopicLoader parsePath', () => {
 
   it('falls back to window.location.pathname when called with no path', () => {
     /* Documented contract: empty / falsy input means "use the current URL".
-       beforeAll set the location to /learn/inflation. */
-    expect(TopicLoader.parsePath('')).toMatchObject({ shell: 'learn', topic: 'inflation' });
-    expect(TopicLoader.parsePath()).toMatchObject({ shell: 'learn', topic: 'inflation' });
-  });
-
-  it('parses /learn/<topic>', () => {
-    expect(TopicLoader.parsePath('/learn/inflation')).toMatchObject({
-      shell: 'learn', topic: 'inflation'
+       beforeAll set the location to /aqa/macro/inflation/learn. */
+    expect(TopicLoader.parsePath('')).toMatchObject({
+      board: 'aqa', theme: 'macro', topic: 'inflation', shell: 'learn'
+    });
+    expect(TopicLoader.parsePath()).toMatchObject({
+      board: 'aqa', theme: 'macro', topic: 'inflation', shell: 'learn'
     });
   });
 
-  it('parses /link/<topic>/<station>', () => {
-    expect(TopicLoader.parsePath('/link/inflation/chain-open')).toMatchObject({
-      shell: 'link', topic: 'inflation', station: 'chain-open'
+  it('parses /<board>/<theme>/<topic>/learn', () => {
+    expect(TopicLoader.parsePath('/edexcel_a/theme-2/inflation/learn')).toMatchObject({
+      board: 'edexcel_a', theme: 'theme-2', topic: 'inflation', shell: 'learn'
     });
   });
 
-  it('parses /land/<topic>/<section>', () => {
-    expect(TopicLoader.parsePath('/land/inflation/a')).toMatchObject({
-      shell: 'land', topic: 'inflation', station: 'a'
+  it('parses /<board>/<theme>/<topic>/link/<station>', () => {
+    expect(TopicLoader.parsePath('/aqa/macro/inflation/link/chain-open')).toMatchObject({
+      board: 'aqa', theme: 'macro', topic: 'inflation', shell: 'link', station: 'chain-open'
+    });
+  });
+
+  it('parses /<board>/<theme>/<topic>/land/<section>', () => {
+    expect(TopicLoader.parsePath('/ocr/macro/inflation/land/a')).toMatchObject({
+      board: 'ocr', theme: 'macro', topic: 'inflation', shell: 'land', station: 'a'
     });
   });
 
   it('rejects retired /quiz/ paths — Quiz shell was removed in v0.4.0', () => {
-    /* The standalone /quiz/<topic>/<set> URL contract is gone; quiz
-       pools now live inside learn.js. parsePath returns null so the
-       SPA falls through to the not-found path. */
     expect(TopicLoader.parsePath('/quiz/inflation/main')).toBeNull();
   });
 
-  it('returns null for unknown shells', () => {
-    expect(TopicLoader.parsePath('/something/random/path')).toBeNull();
+  it('rejects legacy single-prefix /learn/<topic> paths', () => {
+    /* v0.5.x URL contract was retired in v0.6.0 — every topic URL
+       must now start with a known board id. */
+    expect(TopicLoader.parsePath('/learn/inflation')).toBeNull();
+  });
+
+  it('rejects an unknown board id', () => {
+    expect(TopicLoader.parsePath('/wjec/macro/inflation/learn')).toBeNull();
+  });
+
+  it('returns null for paths missing required segments', () => {
+    expect(TopicLoader.parsePath('/aqa/macro/inflation')).toBeNull();
+    expect(TopicLoader.parsePath('/aqa/macro')).toBeNull();
+    expect(TopicLoader.parsePath('/aqa')).toBeNull();
   });
 
   it('strips trailing slash before parsing', () => {
-    expect(TopicLoader.parsePath('/learn/inflation/')).toMatchObject({
-      shell: 'learn', topic: 'inflation'
+    expect(TopicLoader.parsePath('/aqa/macro/inflation/learn/')).toMatchObject({
+      board: 'aqa', theme: 'macro', topic: 'inflation', shell: 'learn'
     });
   });
 });

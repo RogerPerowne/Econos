@@ -29,7 +29,7 @@ glance:
   - { label: "Keynesian LRAS", value: "Three-stage curve — horizontal in deep recession, upward-sloping with spare capacity, vertical at full employment." }
   - { label: "Classical LRAS", value: "Vertical at the full-employment level of real output. The price level can change but real GDP can't, in the long run." }
 glance_cta:
-  href: /learn/aggregate-supply
+  href: /edexcel_a/theme-2/aggregate-supply/learn
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -43,9 +43,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master aggregate supply with Econos."
-  primary_href: /learn/aggregate-supply
+  primary_href: /edexcel_a/theme-2/aggregate-supply/learn
   primary_label: "Explore the full Aggregate Supply topic"
-  secondary_href: /learn/aggregate-supply
+  secondary_href: /edexcel_a/theme-2/aggregate-supply/learn
   secondary_label: "Sign up free"
 ---
 

@@ -101,6 +101,9 @@ Drawing the wrong move is the most common Level-2 paper-loss in AD/AS essays.
 
 :::
 
+::: econos-diagram svgKey="adInteractive" interactive="true" label="The aggregate demand curve — why it slopes down, movement along it, and shifts" caption="The distinction examiners reward: why AD slopes down, what makes you move along it (a price-level change), and what shifts the whole curve (a change in C, I, G or net exports)."
+:::
+
 ::: section eyebrow="Real world example" color="blue" icon="globe"
 
 ## The 2020 UK furlough scheme as a textbook AD-shift

@@ -40,7 +40,7 @@ faq:
   - q: "What's the difference between accounting cost and opportunity cost?"
     a: "Accounting cost is the explicit monetary outlay — the £20 you actually paid for the book. Opportunity cost includes the IMPLICIT cost of what you couldn't do with that £20 — the meal forgone. Economists work with opportunity cost because it captures the real cost of a decision; accountants work with accounting cost because it's what shows up in the ledger. The opportunity cost of running your own business includes the salary you could have earned in someone else's employ — accounting cost ignores it."
   - q: "Does opportunity cost apply to public policy?"
-    a: "Yes — arguably most powerfully there. If the government spends £1bn on NHS waiting lists, the opportunity cost is the next-best use of that £1bn — defence procurement, school capital projects, debt repayment, tax cuts. Every Budget decision is implicitly a ranking of opportunity costs. The OBR scores each Budget measure partly by asking what the £1bn could have done elsewhere."
+    a: "Yes — arguably most powerfully there. If the government spends £1bn on NHS waiting lists, the opportunity cost is the next-best use of that £1bn — defence procurement, school capital projects, debt repayment, tax cuts. Every Budget decision is implicitly a ranking of opportunity costs. Sound Treasury appraisal of public spending — for example through the Green Book — asks what the £1bn could have done elsewhere before committing it."
 
 want_more:
   title: "Want more depth?"
@@ -83,6 +83,9 @@ That's why opportunity cost RISES along the PPF — and why the curve bows outwa
 
 A* tip: never describe the PPF without naming WHY it's concave.
 
+:::
+
+::: econos-diagram svgKey="ppfInteractive" interactive="true" label="Production possibility frontier — construction, opportunity cost, shifts and efficiency" caption="The PPF is the cleanest picture of opportunity cost: step through how it's built, why moving along it costs output, what shifts it, and where efficiency sits."
 :::
 
 ::: section eyebrow="The three economic agents" color="purple" icon="scale"

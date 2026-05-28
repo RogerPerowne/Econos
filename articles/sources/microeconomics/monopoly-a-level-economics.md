@@ -156,7 +156,7 @@ The monopolist *is* the market — it faces the whole market demand curve. To se
 
 ::::
 
-<a href="/edexcel_a/theme-3/monopoly/learn" class="section__after-link">Walk through both views with worked numbers →</a>
+<a href="/edexcel_a/theme-3/monopoly/learn-it" class="section__after-link">Walk through both views with worked numbers →</a>
 
 :::::
 

@@ -1,0 +1,781 @@
+/* ============================================================
+   articles/diagram.css — interactive diagram support for the
+   static article pages.
+
+   Article pages load only articles.css (no styles.css), so the
+   SVG layer-visibility state machine that powers the SPA's
+   interactive diagrams was absent — every layer painted at once
+   and the steps overlapped. This file ports that state machine
+   verbatim from styles.css, plus a :root token shim so the SPA
+   design tokens resolve identically here. Paired with
+   diagram.js, which swaps the .show-<state> class on tab clicks.
+
+   GENERATED from styles.css — do not hand-edit the ported block;
+   if the SPA diagram CSS changes, regenerate. The token shim and
+   .article-interactive chrome at the top are article-only.
+   ============================================================ */
+
+:root {
+  --econ-amber-100:   #FEF3C7;
+  --econ-amber-50:    #FFFBEB;
+  --econ-amber-600:   #D97706;
+  --econ-amber-700:   #B45309;
+  --econ-amber:       #F39E0B;
+  --econ-blue-100:    #DBEAFE;
+  --econ-blue-50:     #EFF6FF;
+  --econ-blue-600:    #2563EB;
+  --econ-blue-700:    #1D4ED8;
+  --econ-blue-dark:   #1E40AF;
+  --econ-blue:        #2563EB;
+  --econ-border-strong: #C4C4CA;
+  --econ-border:      #E7E7EA;
+  --econ-cream:       #FAF8F4;
+  --econ-gray-100:    #F0EEE8;
+  --econ-gray-200:    #E7E7EA;
+  --econ-gray-300:    #D1D1D6;
+  --econ-gray-400:    #9CA3AF;
+  --econ-gray-500:    #6B7280;
+  --econ-gray-50:     #F5F3EE;
+  --econ-gray-600:    #4B5563;
+  --econ-gray-700:    #374151;
+  --econ-gray-800:    #1F2937;
+  --econ-gray-900:    #0B1426;
+  --econ-green-100:   #D1FAE5;
+  --econ-green-50:    #ECFDF5;
+  --econ-green-600:   #059669;
+  --econ-green-700:   #047857;
+  --econ-green-800:   #065F46;
+  --econ-green:       #10B981;
+  --econ-ink-soft:    #2A3650;
+  --econ-ink:         #0B1426;
+  --econ-purple-100:  #E5D2F7;
+  --econ-purple-50:   #F4ECFB;
+  --econ-purple-600:  #661AAE;
+  --econ-purple-700:  #501293;
+  --econ-purple-800:  #3B0978;
+  --econ-purple:      #7D23CB;
+  --econ-rose-100:    #FFE4E6;
+  --econ-rose-50:     #FFF1F2;
+  --econ-rose-600:    #BE1640;
+  --econ-rose-700:    #9F1239;
+  --econ-rose:        #E11D48;
+  --econ-slate-100:    #E2E8F0;
+  --econ-slate-50:     #F1F5F9;
+  --econ-slate-600:    #334155;
+  --econ-slate-700:    #1E293B;
+  --econ-slate:        #475569;
+  --econ-white:       #FFFFFF;
+  --fs-2xl:  24px;
+  --fs-3xl:  28px;
+  --fs-4xl:  36px;
+  --fs-5xl:  44px;
+  --fs-base: 15px;
+  --fs-lg:   18px;
+  --fs-md:   16px;
+  --fs-sm:   13px;
+  --fs-xl:   20px;
+  --fs-xs:   12px;
+  --fw-bold:      700;
+  --fw-extrabold: 800;
+  --fw-medium:    500;
+  --fw-normal:    400;
+  --fw-semi:      600;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.6;
+  --lh-snug:    1.3;
+  --lh-tight:   1.1;
+  --r-2xl:  20px;
+  --r-full: 999px;
+  --r-lg:   14px;
+  --r-md:   8px;
+  --r-sm:   4px;
+  --r-xl:   18px;
+  --shadow-card-hover: 0 1px 2px rgba(11, 20, 38, 0.05), 0 14px 32px -10px rgba(11, 20, 38, 0.18);
+  --shadow-card-rest: 0 1px 2px rgba(11, 20, 38, 0.03), 0 1px 8px rgba(11, 20, 38, 0.025);
+  --shadow-lg: 0 4px 12px rgba(11, 20, 38, 0.06), 0 2px 4px rgba(11, 20, 38, 0.04);
+  --shadow-md: 0 1px 3px rgba(11, 20, 38, 0.06), 0 1px 2px rgba(11, 20, 38, 0.04);
+  --shadow-ring: 0 0 0 1px rgba(11, 20, 38, 0.04);
+  --shadow-sm: 0 1px 2px rgba(11, 20, 38, 0.04);
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-7:  28px;
+  --sp-8:  32px;
+}
+
+/* Article-only wrapper: spacing + caption to match .diagram-block. */
+.article-interactive { margin: 0 0 28px; }
+.article-interactive > .ad-interactive__diagram { margin-bottom: 12px; }
+.article-interactive .ad-interactive__tabs { margin-bottom: 12px; }
+.article-interactive__caption {
+  font-size: 13px;
+  color: var(--ink-soft, #2A3650);
+  line-height: 1.55;
+  margin: 12px 0 0;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Ported from styles.css (interactive diagram state machine)
+   ────────────────────────────────────────────────────────── */
+.ad-interactive__diagram {
+  background: #FFFFFF;
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.ad-interactive__diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Layer visibility — CSS state machine ---
+   The container holds one of: .show-base, .show-extension, .show-shift.
+   Layers fade in/out via opacity for smooth transitions. */
+
+/* Visible in BASE state */
+.ad-svg .layer-curve-solid,
+.ad-svg .layer-e1,
+.ad-svg .layer-legend-base {
+  opacity: 1;
+  transition: opacity 0.32s ease;
+}
+
+/* Hidden by default */
+.ad-svg .layer-curve-dashed,
+.ad-svg .layer-extension,
+.ad-svg .layer-shift,
+.ad-svg .layer-curve-label-shift,
+.ad-svg .layer-legend-extension,
+.ad-svg .layer-legend-shift {
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+
+/* EXTENSION state */
+.show-extension .ad-svg .layer-legend-base { opacity: 0; }
+.show-extension .ad-svg .layer-legend-extension { opacity: 1; }
+.show-extension .ad-svg .layer-extension { opacity: 1; }
+
+/* SHIFT state */
+.show-shift .ad-svg .layer-curve-solid > line { stroke: #94A3B8; stroke-dasharray: 6 4; transition: stroke 0.32s ease; }
+.show-shift .ad-svg .layer-curve-solid > text { opacity: 0; }
+.show-shift .ad-svg .layer-curve-label-shift { opacity: 1; }
+.show-shift .ad-svg .layer-e1 { opacity: 0; }
+.show-shift .ad-svg .layer-legend-base { opacity: 0; }
+.show-shift .ad-svg .layer-legend-shift { opacity: 1; }
+.show-shift .ad-svg .layer-shift { opacity: 1; }
+
+/* ===== PPF INTERACTIVE — layer visibility ===== */
+/* Visible by default (base state) */
+.ppf-svg .layer-axes,
+.ppf-svg .layer-ppf-base,
+.ppf-svg .layer-base-points,
+.ppf-svg .layer-legend-base {
+  opacity: 1;
+  transition: opacity 0.32s ease;
+}
+/* Hidden by default */
+.ppf-svg .layer-opp-cost,
+.ppf-svg .layer-legend-extension,
+.ppf-svg .layer-shift-curves,
+.ppf-svg .layer-legend-shift,
+.ppf-svg .layer-efficiency,
+.ppf-svg .layer-legend-efficiency {
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+/* show-extension */
+.show-extension .ppf-svg .layer-base-points { opacity: 0; }
+.show-extension .ppf-svg .layer-legend-base { opacity: 0; }
+.show-extension .ppf-svg .layer-opp-cost { opacity: 1; }
+.show-extension .ppf-svg .layer-legend-extension { opacity: 1; }
+/* show-shift */
+.show-shift .ppf-svg .layer-ppf-base { opacity: 0.3; }
+.show-shift .ppf-svg .layer-base-points { opacity: 0; }
+.show-shift .ppf-svg .layer-legend-base { opacity: 0; }
+.show-shift .ppf-svg .layer-shift-curves { opacity: 1; }
+.show-shift .ppf-svg .layer-legend-shift { opacity: 1; }
+/* show-efficiency */
+.show-efficiency .ppf-svg .layer-base-points { opacity: 0; }
+.show-efficiency .ppf-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .ppf-svg .layer-efficiency { opacity: 1; }
+.show-efficiency .ppf-svg .layer-legend-efficiency { opacity: 1; }
+
+/* ===== PPF MOVES INTERACTIVE ===== */
+.ppf-moves-svg .layer-axes,
+.ppf-moves-svg .layer-ppf1 { opacity: 1; transition: opacity 0.32s ease; }
+.ppf-moves-svg .layer-along,
+.ppf-moves-svg .layer-legend-along,
+.ppf-moves-svg .layer-recovery,
+.ppf-moves-svg .layer-legend-recovery,
+.ppf-moves-svg .layer-ppf2,
+.ppf-moves-svg .layer-outward,
+.ppf-moves-svg .layer-legend-outward,
+.ppf-moves-svg .layer-ppf3,
+.ppf-moves-svg .layer-inward,
+.ppf-moves-svg .layer-legend-inward { opacity: 0; transition: opacity 0.32s ease; }
+/* show-along */
+.show-along .ppf-moves-svg .layer-along { opacity: 1; }
+.show-along .ppf-moves-svg .layer-legend-along { opacity: 1; }
+/* show-recovery */
+.show-recovery .ppf-moves-svg .layer-recovery { opacity: 1; }
+.show-recovery .ppf-moves-svg .layer-legend-recovery { opacity: 1; }
+/* show-outward */
+.show-outward .ppf-moves-svg .layer-ppf1 { opacity: 0.3; }
+.show-outward .ppf-moves-svg .layer-ppf2 { opacity: 1; }
+.show-outward .ppf-moves-svg .layer-outward { opacity: 1; }
+.show-outward .ppf-moves-svg .layer-legend-outward { opacity: 1; }
+/* show-inward */
+.show-inward .ppf-moves-svg .layer-ppf1 { opacity: 0.3; }
+.show-inward .ppf-moves-svg .layer-ppf3 { opacity: 1; }
+.show-inward .ppf-moves-svg .layer-inward { opacity: 1; }
+.show-inward .ppf-moves-svg .layer-legend-inward { opacity: 1; }
+
+/* ===== DEMAND INTERACTIVE ===== */
+.demand-svg .layer-axes,
+.demand-svg .layer-demand-base,
+.demand-svg .layer-e1,
+.demand-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.demand-svg .layer-extension,
+.demand-svg .layer-legend-extension,
+.demand-svg .layer-shift,
+.demand-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .demand-svg .layer-e1 { opacity: 0; }
+.show-extension .demand-svg .layer-legend-base { opacity: 0; }
+.show-extension .demand-svg .layer-extension { opacity: 1; }
+.show-extension .demand-svg .layer-legend-extension { opacity: 1; }
+.show-shift .demand-svg .layer-demand-base { opacity: 0; }
+.show-shift .demand-svg .layer-e1 { opacity: 0; }
+.show-shift .demand-svg .layer-legend-base { opacity: 0; }
+.show-shift .demand-svg .layer-shift { opacity: 1; }
+.show-shift .demand-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== SUPPLY INTERACTIVE ===== */
+.supply-svg .layer-axes,
+.supply-svg .layer-supply-base,
+.supply-svg .layer-e1,
+.supply-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.supply-svg .layer-extension,
+.supply-svg .layer-legend-extension,
+.supply-svg .layer-shift,
+.supply-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .supply-svg .layer-e1 { opacity: 0; }
+.show-extension .supply-svg .layer-legend-base { opacity: 0; }
+.show-extension .supply-svg .layer-extension { opacity: 1; }
+.show-extension .supply-svg .layer-legend-extension { opacity: 1; }
+.show-shift .supply-svg .layer-supply-base { opacity: 0; }
+.show-shift .supply-svg .layer-e1 { opacity: 0; }
+.show-shift .supply-svg .layer-legend-base { opacity: 0; }
+.show-shift .supply-svg .layer-shift { opacity: 1; }
+.show-shift .supply-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== DISEQUILIBRIUM INTERACTIVE ===== */
+.disequilibrium-svg .layer-axes,
+.disequilibrium-svg .layer-demand,
+.disequilibrium-svg .layer-supply,
+.disequilibrium-svg .layer-e1,
+.disequilibrium-svg .layer-base { opacity: 1; transition: opacity 0.32s ease; }
+.disequilibrium-svg .layer-shortage,
+.disequilibrium-svg .layer-surplus { opacity: 0; transition: opacity 0.32s ease; }
+.show-shortage .disequilibrium-svg .layer-base { opacity: 0; }
+.show-shortage .disequilibrium-svg .layer-shortage { opacity: 1; }
+.show-surplus .disequilibrium-svg .layer-base { opacity: 0; }
+.show-surplus .disequilibrium-svg .layer-surplus { opacity: 1; }
+
+/* ===== SHIFTS INTERACTIVE (4 states) ===== */
+.shifts-svg .layer-axes { opacity: 1; transition: opacity 0.32s ease; }
+.shifts-svg .layer-demand-right,
+.shifts-svg .layer-demand-left,
+.shifts-svg .layer-supply-right,
+.shifts-svg .layer-supply-left { opacity: 0; transition: opacity 0.32s ease; }
+.show-demand-right .shifts-svg .layer-demand-right { opacity: 1; }
+.show-demand-left  .shifts-svg .layer-demand-left  { opacity: 1; }
+.show-supply-right .shifts-svg .layer-supply-right { opacity: 1; }
+.show-supply-left  .shifts-svg .layer-supply-left  { opacity: 1; }
+
+/* ===== SIMULTANEOUS SHIFTS INTERACTIVE (4 states) ===== */
+.sim-shifts-svg .layer-axes { opacity: 1; transition: opacity 0.32s ease; }
+.sim-shifts-svg .layer-both-up,
+.sim-shifts-svg .layer-d-up-s-down,
+.sim-shifts-svg .layer-d-down-s-up,
+.sim-shifts-svg .layer-both-down { opacity: 0; transition: opacity 0.32s ease; }
+.show-both-up      .sim-shifts-svg .layer-both-up      { opacity: 1; }
+.show-d-up-s-down  .sim-shifts-svg .layer-d-up-s-down  { opacity: 1; }
+.show-d-down-s-up  .sim-shifts-svg .layer-d-down-s-up  { opacity: 1; }
+.show-both-down    .sim-shifts-svg .layer-both-down    { opacity: 1; }
+
+/* ===== MARKET INTERACTIVE ===== */
+.market-svg .layer-axes,
+.market-svg .layer-demand-base,
+.market-svg .layer-supply-base,
+.market-svg .layer-e1,
+.market-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.market-svg .layer-extension,
+.market-svg .layer-legend-extension,
+.market-svg .layer-shift,
+.market-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .market-svg .layer-demand-base { opacity: 0; }
+.show-extension .market-svg .layer-e1 { opacity: 0; }
+.show-extension .market-svg .layer-legend-base { opacity: 0; }
+.show-extension .market-svg .layer-extension { opacity: 1; }
+.show-extension .market-svg .layer-legend-extension { opacity: 1; }
+.show-shift .market-svg .layer-supply-base { opacity: 0; }
+.show-shift .market-svg .layer-e1 { opacity: 0; }
+.show-shift .market-svg .layer-legend-base { opacity: 0; }
+.show-shift .market-svg .layer-shift { opacity: 1; }
+.show-shift .market-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== DEMAND CS INTERACTIVE ===== */
+.demand-cs-svg .layer-axes,
+.demand-cs-svg .layer-demand { opacity: 1; transition: opacity 0.35s ease; }
+.demand-cs-svg .layer-eq,
+.demand-cs-svg .layer-cs,
+.demand-cs-svg .layer-cs-label,
+.demand-cs-svg .layer-pfall,
+.demand-cs-svg .layer-pfall-cs,
+.demand-cs-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
+
+.show-base .demand-cs-svg .layer-legend-base { opacity: 1; }
+.show-cs .demand-cs-svg .layer-eq { opacity: 1; }
+.show-cs .demand-cs-svg .layer-cs { opacity: 1; }
+.show-cs .demand-cs-svg .layer-cs-label { opacity: 1; }
+.show-pfall .demand-cs-svg .layer-pfall-cs { opacity: 1; }
+.show-pfall .demand-cs-svg .layer-pfall { opacity: 1; }
+
+/* ===== SUPPLY PS INTERACTIVE ===== */
+.supply-ps-svg .layer-axes,
+.supply-ps-svg .layer-supply { opacity: 1; transition: opacity 0.35s ease; }
+.supply-ps-svg .layer-eq,
+.supply-ps-svg .layer-ps,
+.supply-ps-svg .layer-ps-label,
+.supply-ps-svg .layer-prise,
+.supply-ps-svg .layer-prise-ps,
+.supply-ps-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
+
+.show-base .supply-ps-svg .layer-legend-base { opacity: 1; }
+.show-ps .supply-ps-svg .layer-eq { opacity: 1; }
+.show-ps .supply-ps-svg .layer-ps { opacity: 1; }
+.show-ps .supply-ps-svg .layer-ps-label { opacity: 1; }
+.show-prise .supply-ps-svg .layer-prise-ps { opacity: 1; }
+.show-prise .supply-ps-svg .layer-prise { opacity: 1; }
+
+/* ===== CPS (CONSUMER / PRODUCER SURPLUS) INTERACTIVE ===== */
+/* Always visible */
+.cps-svg .layer-axes,
+.cps-svg .layer-curves { opacity: 1; transition: opacity 0.35s ease; }
+/* Hidden by default */
+.cps-svg .layer-cs,
+.cps-svg .layer-ps,
+.cps-svg .layer-eq,
+.cps-svg .layer-cs-label,
+.cps-svg .layer-ps-label,
+.cps-svg .layer-welfare-label,
+.cps-svg .layer-dwl,
+.cps-svg .layer-legend-base { opacity: 0; transition: opacity 0.35s ease; }
+
+/* show-base: diagram only + intro panel */
+.show-base .cps-svg .layer-legend-base { opacity: 1; }
+
+/* show-cs: equilibrium + CS triangle + CS explanation */
+.show-cs .cps-svg .layer-eq { opacity: 1; }
+.show-cs .cps-svg .layer-cs { opacity: 1; }
+.show-cs .cps-svg .layer-cs-label { opacity: 1; }
+
+/* show-ps: CS fades, PS appears + PS explanation */
+.show-ps .cps-svg .layer-eq { opacity: 1; }
+.show-ps .cps-svg .layer-cs { opacity: 0.3; }
+.show-ps .cps-svg .layer-cs-label { opacity: 0.3; }
+.show-ps .cps-svg .layer-ps { opacity: 1; }
+.show-ps .cps-svg .layer-ps-label { opacity: 1; }
+
+/* show-total: both triangles full + welfare explanation */
+.show-total .cps-svg .layer-eq { opacity: 1; }
+.show-total .cps-svg .layer-cs { opacity: 1; }
+.show-total .cps-svg .layer-ps { opacity: 1; }
+.show-total .cps-svg .layer-welfare-label { opacity: 1; }
+
+/* show-dwl: faded CS/PS + tax wedge + DWL explanation */
+.show-dwl .cps-svg .layer-eq { opacity: 1; }
+.show-dwl .cps-svg .layer-cs { opacity: 0.18; }
+.show-dwl .cps-svg .layer-ps { opacity: 0.18; }
+.show-dwl .cps-svg .layer-dwl { opacity: 1; }
+
+/* ===== PHILLIPS INTERACTIVE ===== */
+.phillips-svg .layer-axes,
+.phillips-svg .layer-srpc1,
+.phillips-svg .layer-point-a,
+.phillips-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.phillips-svg .layer-srpc1-dashed { opacity: 0; transition: opacity 0.32s ease; }
+.phillips-svg .layer-lrpc,
+.phillips-svg .layer-srpc2,
+.phillips-svg .layer-friedman-points,
+.phillips-svg .layer-legend-extension,
+.phillips-svg .layer-stagflation,
+.phillips-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .phillips-svg .layer-srpc1 { opacity: 0; }
+.show-extension .phillips-svg .layer-srpc1-dashed { opacity: 1; }
+.show-extension .phillips-svg .layer-point-a { opacity: 0.45; }
+.show-extension .phillips-svg .layer-legend-base { opacity: 0; }
+.show-extension .phillips-svg .layer-lrpc { opacity: 1; }
+.show-extension .phillips-svg .layer-srpc2 { opacity: 1; }
+.show-extension .phillips-svg .layer-friedman-points { opacity: 1; }
+.show-extension .phillips-svg .layer-legend-extension { opacity: 1; }
+.show-shift .phillips-svg .layer-srpc1 { opacity: 0; }
+.show-shift .phillips-svg .layer-srpc1-dashed { opacity: 1; }
+.show-shift .phillips-svg .layer-point-a { opacity: 0.3; }
+.show-shift .phillips-svg .layer-legend-base { opacity: 0; }
+.show-shift .phillips-svg .layer-stagflation { opacity: 1; }
+.show-shift .phillips-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== LORENZ INTERACTIVE ===== */
+.lorenz-svg .layer-axes,
+.lorenz-svg .layer-equality,
+.lorenz-svg .layer-lorenz-uk,
+.lorenz-svg .layer-base-points,
+.lorenz-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.lorenz-svg .layer-lorenz-uk-dashed,
+.lorenz-svg .layer-gini-areas,
+.lorenz-svg .layer-legend-extension,
+.lorenz-svg .layer-compare,
+.lorenz-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .lorenz-svg .layer-base-points { opacity: 0; }
+.show-extension .lorenz-svg .layer-legend-base { opacity: 0; }
+.show-extension .lorenz-svg .layer-gini-areas { opacity: 1; }
+.show-extension .lorenz-svg .layer-legend-extension { opacity: 1; }
+.show-shift .lorenz-svg .layer-lorenz-uk { opacity: 0; }
+.show-shift .lorenz-svg .layer-base-points { opacity: 0; }
+.show-shift .lorenz-svg .layer-legend-base { opacity: 0; }
+.show-shift .lorenz-svg .layer-lorenz-uk-dashed { opacity: 1; }
+.show-shift .lorenz-svg .layer-compare { opacity: 1; }
+.show-shift .lorenz-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== NEGATIVE EXTERNALITY INTERACTIVE ===== */
+.negext-svg .layer-axes,
+.negext-svg .layer-base-curves,
+.negext-svg .layer-market-eq,
+.negext-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.negext-svg .layer-msc,
+.negext-svg .layer-mec,
+.negext-svg .layer-legend-extension,
+.negext-svg .layer-optimal,
+.negext-svg .layer-legend-shift,
+.negext-svg .layer-dwl,
+.negext-svg .layer-legend-efficiency { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .negext-svg .layer-legend-base { opacity: 0; }
+.show-extension .negext-svg .layer-msc { opacity: 1; }
+.show-extension .negext-svg .layer-mec { opacity: 1; }
+.show-extension .negext-svg .layer-legend-extension { opacity: 1; }
+.show-shift .negext-svg .layer-legend-base { opacity: 0; }
+.show-shift .negext-svg .layer-msc { opacity: 1; }
+.show-shift .negext-svg .layer-optimal { opacity: 1; }
+.show-shift .negext-svg .layer-legend-shift { opacity: 1; }
+.show-efficiency .negext-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .negext-svg .layer-msc { opacity: 1; }
+.show-efficiency .negext-svg .layer-optimal { opacity: 1; }
+.show-efficiency .negext-svg .layer-dwl { opacity: 1; }
+.show-efficiency .negext-svg .layer-legend-efficiency { opacity: 1; }
+
+/* ===== POSITIVE EXTERNALITY INTERACTIVE ===== */
+.posext-svg .layer-axes,
+.posext-svg .layer-base-curves,
+.posext-svg .layer-market-eq,
+.posext-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.posext-svg .layer-msb,
+.posext-svg .layer-meb,
+.posext-svg .layer-legend-extension,
+.posext-svg .layer-optimal,
+.posext-svg .layer-legend-shift,
+.posext-svg .layer-wfg,
+.posext-svg .layer-legend-efficiency { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .posext-svg .layer-legend-base { opacity: 0; }
+.show-extension .posext-svg .layer-msb { opacity: 1; }
+.show-extension .posext-svg .layer-meb { opacity: 1; }
+.show-extension .posext-svg .layer-legend-extension { opacity: 1; }
+.show-shift .posext-svg .layer-legend-base { opacity: 0; }
+.show-shift .posext-svg .layer-msb { opacity: 1; }
+.show-shift .posext-svg .layer-optimal { opacity: 1; }
+.show-shift .posext-svg .layer-legend-shift { opacity: 1; }
+.show-efficiency .posext-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .posext-svg .layer-msb { opacity: 1; }
+.show-efficiency .posext-svg .layer-optimal { opacity: 1; }
+.show-efficiency .posext-svg .layer-wfg { opacity: 1; }
+.show-efficiency .posext-svg .layer-legend-efficiency { opacity: 1; }
+
+/* ===== PRICE CONTROLS INTERACTIVE ===== */
+.pc-svg .layer-axes,
+.pc-svg .layer-base-curves,
+.pc-svg .layer-equilibrium,
+.pc-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.pc-svg .layer-ceiling,
+.pc-svg .layer-legend-extension,
+.pc-svg .layer-floor,
+.pc-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .pc-svg .layer-equilibrium { opacity: 0.4; }
+.show-extension .pc-svg .layer-legend-base { opacity: 0; }
+.show-extension .pc-svg .layer-ceiling { opacity: 1; }
+.show-extension .pc-svg .layer-legend-extension { opacity: 1; }
+.show-shift .pc-svg .layer-equilibrium { opacity: 0.4; }
+.show-shift .pc-svg .layer-legend-base { opacity: 0; }
+.show-shift .pc-svg .layer-floor { opacity: 1; }
+.show-shift .pc-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== J-CURVE INTERACTIVE ===== */
+.jcurve-svg .layer-axes,
+.jcurve-svg .layer-baseline,
+.jcurve-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.jcurve-svg .layer-jcurve,
+.jcurve-svg .layer-legend-extension,
+.jcurve-svg .layer-failed,
+.jcurve-svg .layer-legend-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .jcurve-svg .layer-legend-base { opacity: 0; }
+.show-extension .jcurve-svg .layer-jcurve { opacity: 1; }
+.show-extension .jcurve-svg .layer-legend-extension { opacity: 1; }
+.show-shift .jcurve-svg .layer-legend-base { opacity: 0; }
+.show-shift .jcurve-svg .layer-jcurve { opacity: 1; }
+.show-shift .jcurve-svg .layer-failed { opacity: 1; }
+.show-shift .jcurve-svg .layer-legend-shift { opacity: 1; }
+
+/* ===== PRISONER'S DILEMMA INTERACTIVE ===== */
+.pd-svg .layer-matrix-base,
+.pd-svg .layer-legend-base { opacity: 1; transition: opacity 0.32s ease; }
+.pd-svg .layer-br-a,
+.pd-svg .layer-legend-extension,
+.pd-svg .layer-nash,
+.pd-svg .layer-legend-shift,
+.pd-svg .layer-pareto,
+.pd-svg .layer-legend-efficiency { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .pd-svg .layer-legend-base { opacity: 0; }
+.show-extension .pd-svg .layer-br-a { opacity: 1; }
+.show-extension .pd-svg .layer-legend-extension { opacity: 1; }
+.show-shift .pd-svg .layer-legend-base { opacity: 0; }
+.show-shift .pd-svg .layer-nash { opacity: 1; }
+.show-shift .pd-svg .layer-legend-shift { opacity: 1; }
+.show-efficiency .pd-svg .layer-legend-base { opacity: 0; }
+.show-efficiency .pd-svg .layer-nash { opacity: 1; }
+.show-efficiency .pd-svg .layer-pareto { opacity: 1; }
+.show-efficiency .pd-svg .layer-legend-efficiency { opacity: 1; }
+/* === Firm-level PC vs Monopoly === */
+.fpcm-svg .layer-axes,
+.fpcm-svg .layer-cost-curves,
+.fpcm-svg .layer-pc-demand,
+.fpcm-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.fpcm-svg .layer-monopoly-demand,
+.fpcm-svg .layer-comparison,
+.fpcm-svg .layer-panel-ext,
+.fpcm-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .fpcm-svg .layer-pc-demand { opacity: 0; }
+.show-extension .fpcm-svg .layer-panel-base { opacity: 0; }
+.show-extension .fpcm-svg .layer-monopoly-demand { opacity: 1; }
+.show-extension .fpcm-svg .layer-panel-ext { opacity: 1; }
+.show-shift .fpcm-svg .layer-pc-demand { opacity: 0.55; }
+.show-shift .fpcm-svg .layer-panel-base { opacity: 0; }
+.show-shift .fpcm-svg .layer-monopoly-demand { opacity: 1; }
+.show-shift .fpcm-svg .layer-comparison { opacity: 1; }
+.show-shift .fpcm-svg .layer-panel-shift { opacity: 1; }
+/* === Market-level welfare (corrected DWL) === */
+.mlw-svg .layer-axes,
+.mlw-svg .layer-base-curves,
+.mlw-svg .layer-cs-competition,
+.mlw-svg .layer-pc-eq,
+.mlw-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.mlw-svg .layer-mr-curve,
+.mlw-svg .layer-monopoly-eq,
+.mlw-svg .layer-welfare-decomp,
+.mlw-svg .layer-panel-ext,
+.mlw-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .mlw-svg .layer-cs-competition { opacity: 0; }
+.show-extension .mlw-svg .layer-panel-base { opacity: 0; }
+.show-extension .mlw-svg .layer-mr-curve { opacity: 1; }
+.show-extension .mlw-svg .layer-monopoly-eq { opacity: 1; }
+.show-extension .mlw-svg .layer-panel-ext { opacity: 1; }
+.show-shift .mlw-svg .layer-cs-competition { opacity: 0; }
+.show-shift .mlw-svg .layer-panel-base { opacity: 0; }
+.show-shift .mlw-svg .layer-mr-curve { opacity: 1; }
+.show-shift .mlw-svg .layer-monopoly-eq { opacity: 1; }
+.show-shift .mlw-svg .layer-welfare-decomp { opacity: 1; }
+.show-shift .mlw-svg .layer-panel-shift { opacity: 1; }
+/* === Contestability Spectrum (2D plot) === */
+.cspec-svg .layer-axes,
+.cspec-svg .layer-markers,
+.cspec-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.cspec-svg .layer-regions,
+.cspec-svg .layer-examples,
+.cspec-svg .layer-highlight,
+.cspec-svg .layer-panel-ext,
+.cspec-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .cspec-svg .layer-panel-base { opacity: 0; }
+.show-extension .cspec-svg .layer-examples { opacity: 1; }
+.show-extension .cspec-svg .layer-panel-ext { opacity: 1; }
+.show-shift .cspec-svg .layer-panel-base { opacity: 0; }
+.show-shift .cspec-svg .layer-examples { opacity: 1; }
+.show-shift .cspec-svg .layer-regions { opacity: 1; }
+.show-shift .cspec-svg .layer-highlight { opacity: 1; }
+.show-shift .cspec-svg .layer-panel-shift { opacity: 1; }
+/* === Contestability Frames (P falls as barriers fall) === */
+.cfra-svg .layer-axes,
+.cfra-svg .layer-cost-curves,
+.cfra-svg .layer-state-monopoly,
+.cfra-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.cfra-svg .layer-state-contestable,
+.cfra-svg .layer-state-perfect,
+.cfra-svg .layer-panel-ext,
+.cfra-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .cfra-svg .layer-state-monopoly { opacity: 0; }
+.show-extension .cfra-svg .layer-panel-base { opacity: 0; }
+.show-extension .cfra-svg .layer-state-contestable { opacity: 1; }
+.show-extension .cfra-svg .layer-panel-ext { opacity: 1; }
+.show-shift .cfra-svg .layer-state-monopoly { opacity: 0; }
+.show-shift .cfra-svg .layer-panel-base { opacity: 0; }
+.show-shift .cfra-svg .layer-state-perfect { opacity: 1; }
+.show-shift .cfra-svg .layer-panel-shift { opacity: 1; }
+/* === Short-run cost stack === */
+.sr-svg .layer-axes,
+.sr-svg .layer-afc,
+.sr-svg .layer-avc,
+.sr-svg .layer-ac,
+.sr-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.sr-svg .layer-mc,
+.sr-svg .layer-crossings,
+.sr-svg .layer-panel-ext,
+.sr-svg .layer-panel-shift { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .sr-svg .layer-panel-base { opacity: 0; }
+.show-extension .sr-svg .layer-mc { opacity: 1; }
+.show-extension .sr-svg .layer-panel-ext { opacity: 1; }
+.show-shift .sr-svg .layer-panel-base { opacity: 0; }
+.show-shift .sr-svg .layer-mc { opacity: 1; }
+.show-shift .sr-svg .layer-crossings { opacity: 1; }
+.show-shift .sr-svg .layer-panel-shift { opacity: 1; }
+/* === Kinked Demand Curve Interactive === */
+.kink-svg .layer-axes,
+.kink-svg .layer-kink-point,
+.kink-svg .layer-elastic-d,
+.kink-svg .layer-panel-base { opacity: 1; transition: opacity 0.32s ease; }
+.kink-svg .layer-inelastic-d,
+.kink-svg .layer-mr,
+.kink-svg .layer-mc,
+.kink-svg .layer-panel-ext,
+.kink-svg .layer-panel-shift,
+.kink-svg .layer-panel-eff { opacity: 0; transition: opacity 0.32s ease; }
+.show-extension .kink-svg .layer-panel-base { opacity: 0; }
+.show-extension .kink-svg .layer-inelastic-d { opacity: 1; }
+.show-extension .kink-svg .layer-panel-ext { opacity: 1; }
+.show-shift .kink-svg .layer-panel-base { opacity: 0; }
+.show-shift .kink-svg .layer-inelastic-d { opacity: 1; }
+.show-shift .kink-svg .layer-mr { opacity: 1; }
+.show-shift .kink-svg .layer-panel-shift { opacity: 1; }
+.show-efficiency .kink-svg .layer-panel-base { opacity: 0; }
+.show-efficiency .kink-svg .layer-inelastic-d { opacity: 1; }
+.show-efficiency .kink-svg .layer-mr { opacity: 1; }
+.show-efficiency .kink-svg .layer-mc { opacity: 1; }
+.show-efficiency .kink-svg .layer-panel-eff { opacity: 1; }
+
+/* --- 2. Horizontal tab strip --- */
+.ad-interactive__tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* default; overridden by inline style for 4 tabs */
+  gap: var(--sp-2);
+}
+@media (max-width: 760px) {
+  .ad-interactive__tabs { grid-template-columns: 1fr; }
+}
+
+.ad-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease, background 0.18s ease;
+}
+.ad-tab:hover {
+  background: var(--econ-gray-50);
+  transform: translateY(-1px);
+}
+.ad-tab.is-active {
+  border-color: var(--econ-blue);
+  background: var(--econ-blue-50);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.18);
+}
+
+.ad-tab__num {
+  width: 30px; height: 30px;
+  border-radius: var(--r-full);
+  background: var(--econ-gray-200);
+  color: var(--econ-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: var(--fw-extrabold);
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ad-tab.is-active .ad-tab__num {
+  background: var(--econ-blue);
+  color: #FFFFFF;
+}
+
+.ad-tab__label {
+  flex: 1;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--econ-ink);
+  line-height: var(--lh-tight);
+}
+.ad-tab.is-active .ad-tab__label {
+  color: var(--econ-blue-700);
+}
+
+/* --- 3. Content panel below tabs --- */
+.ad-interactive__panels {
+  position: relative;
+}
+
+.ad-panel {
+  background: var(--econ-white);
+  border: 1px solid var(--econ-gray-200);
+  border-left: 4px solid var(--econ-blue);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+  display: none;
+}
+.ad-panel.is-active {
+  display: block;
+  animation: ad-panel-rise 0.32s ease;
+}
+
+@keyframes ad-panel-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ad-panel__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-extrabold);
+  color: var(--econ-blue-700);
+  margin-bottom: var(--sp-3);
+}
+
+.ad-panel__body {
+  font-size: var(--fs-base);
+  color: var(--econ-ink);
+  line-height: var(--lh-relaxed);
+}
+

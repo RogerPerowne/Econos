@@ -109,11 +109,11 @@ Inflation is always and everywhere a monetary phenomenon in the sense that it is
 
 CPI hit 11.1% in October 2022 — the highest since 1981 — and that's why the Bank of England had to raise base rate from 0.1% to 5.25% over the following two years. But the textbook causes overlapped in a way they almost never do.
 
-The **demand-pull** layer was pent-up household savings from lockdowns plus the £350bn furlough cushion meeting a partially-reopened economy in early 2022. Spending caught up with supply before supply chains had healed.
+The **demand-pull** layer was the ~£70bn furlough scheme plus accumulated household savings from lockdowns meeting a partially-reopened economy in early 2022. Spending caught up with supply before supply chains had healed.
 
 The **cost-push** layer was Russia's invasion of Ukraine in February 2022. Wholesale gas prices peaked at over 600p/therm in August 2022 against a pre-pandemic norm of ~50p, and food prices followed because of fertiliser and grain market disruption. Ofgem's price cap rose from £1,277 (October 2021) to £4,279 (January 2023).
 
-The **monetary** layer was a decade of QE. The Bank's balance sheet grew from £93bn (2008) to £895bn (2021). Most of that money sat as bank reserves through the 2010s — but as 2022 demand recovered, the velocity picked up and the latent inflation showed up.
+The **monetary** layer was a decade of QE. The Bank's balance sheet grew from ~£90bn before QE began in 2009 to £895bn by 2021. Most of that money sat as bank reserves through the 2010s — but as 2022 demand recovered, the velocity picked up and the latent inflation showed up.
 
 The MPC's policy response — base rate to 5.25% — only addresses two of the three. Demand-pull responds directly (raise the cost of borrowing, slow spending). Cost-push barely responds (you can't make Putin sell more gas). Monetary responds slowly (it takes 18-24 months for rate hikes to feed through). That's why inflation peaked late and fell slowly.
 

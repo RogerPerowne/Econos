@@ -94,10 +94,6 @@ Draw this matrix in your exam answer. It's worth 2 marks for the framework and p
 
 :::
 
-::: econ-insight tone="amber" label="Economist insight · ARPANET and the internet" attribution="Public goods and long-run value creation"
-State-backed early network investment created huge future value that private firms may not have funded at the start because returns were uncertain and widely shared.
-:::
-
 ::: section eyebrow="The free-rider problem in detail" color="purple" icon="scale"
 
 ## Why voluntary funding can't sustain a public good

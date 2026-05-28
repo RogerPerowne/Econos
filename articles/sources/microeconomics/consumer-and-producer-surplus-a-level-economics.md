@@ -74,6 +74,9 @@ The total of the two is **total surplus** (or social welfare) and it's maximised
 
 :::
 
+::: econos-diagram svgKey="cpsSvg" interactive="true" label="Consumer and producer surplus on the supply-and-demand diagram" caption="Build the welfare picture step by step: the equilibrium, the consumer-surplus triangle, the producer-surplus triangle, total surplus, and the deadweight loss when output is restricted below Q*."
+:::
+
 ::: section eyebrow="Indirect taxes — surplus changes hands" color="purple" icon="target"
 
 ## Where the tax revenue, deadweight loss, and pass-through come from

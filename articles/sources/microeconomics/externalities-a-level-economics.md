@@ -104,7 +104,7 @@ Drawing the diagram correctly — with axes labelled, curves named, equilibria m
 
 :::
 
-::: econos-diagram svgKey="negExternalityInteractive" label="Negative externality of production — MSC vs MPC" caption="The MSC curve sits above the MPC supply curve by the value of the external cost. Market output Q* exceeds the social optimum Q**; the shaded triangle between MSC and MSB is the deadweight welfare loss."
+::: econos-diagram svgKey="negExternalityInteractive" interactive="true" label="Negative externality of production — MSC vs MPC" caption="The MSC curve sits above the MPC supply curve by the value of the external cost. Market output Q* exceeds the social optimum Q**; the shaded triangle between MSC and MSB is the deadweight welfare loss."
 :::
 
 ::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"

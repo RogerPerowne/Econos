@@ -29,7 +29,7 @@ glance:
   - { label: "Main lever", value: "Bank Rate — the rate the BoE pays on commercial bank reserves. Banks tend to price loans relative to it." }
   - { label: "Lag", value: "6 to 18 months between a Bank Rate change and its full effect on inflation. Means policy is forward-looking by necessity." }
 glance_cta:
-  href: /learn/demand-side-policies-monetary
+  href: /edexcel_a/theme-2/demand-side-policies-monetary/learn
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -45,9 +45,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master monetary policy with Econos."
-  primary_href: /learn/demand-side-policies-monetary
+  primary_href: /edexcel_a/theme-2/demand-side-policies-monetary/learn
   primary_label: "Explore the full topic"
-  secondary_href: /learn/demand-side-policies-monetary
+  secondary_href: /edexcel_a/theme-2/demand-side-policies-monetary/learn
   secondary_label: "Sign up free"
 ---
 

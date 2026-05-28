@@ -56,7 +56,7 @@ function htmlEntries() {
    ─────────────────────────────────────────────────────────────
    Wires the site's path-based URL contract:
 
-       /learn/<topic>             → learn.html
+       /<board>/<theme>/<topic>/learn → learn.html
        /link/<topic>/<station>    → link.html
        /land/<topic>/<section>    → land.html
 
@@ -113,6 +113,36 @@ function topicRoutes() {
   }
   function topicById(id) {
     return ensureRegistry().find((t) => t.id === id);
+  }
+
+  /* Mirror of TopicLoader.themeFor(topic, board) — derives the
+     theme-slug a given (topic, board) pair lives under. Used by
+     the URL builders + the per-(board, theme, topic, shell)
+     route generator below. Edexcel A / B use theme-1..theme-4
+     from the spec's first digit; AQA / OCR use micro / macro
+     (AQA's split is the second digit of the spec; OCR's is
+     read off the topic's Edexcel A theme since OCR's bare
+     numbering is ambiguous). */
+  function themeForBoard(topic, board) {
+    if (!topic || !topic.boards) return 'misc';
+    const spec = topic.boards[board] && topic.boards[board].spec;
+    if (board === 'edexcel_a' || board === 'edexcel_b') {
+      return spec ? 'theme-' + String(spec).charAt(0) : 'misc';
+    }
+    if (board === 'aqa') {
+      if (!spec) return 'misc';
+      const parts = String(spec).split('.');
+      return parts[1] === '1' ? 'micro' : 'macro';
+    }
+    if (board === 'ocr') {
+      const ea = topic.boards.edexcel_a && topic.boards.edexcel_a.spec;
+      if (!ea) return 'misc';
+      const d = String(ea).charAt(0);
+      if (d === '1' || d === '3') return 'micro';
+      if (d === '2' || d === '4') return 'macro';
+      return 'misc';
+    }
+    return 'misc';
   }
 
   /* Human-readable station label for titles and JSON-LD. Land sections
@@ -189,17 +219,28 @@ function topicRoutes() {
       .replace(/<\/head>/, `${availMeta}\n${ld}\n</head>`);
   }
 
-  /* parseUrl('/link/causes-of-inflation-and-deflation/chain-open') → { shell:'link', topic:'causes-of-inflation-and-deflation', station:'chain-open', file:'link.html' } */
+  /* Canonical form: /<board>/<theme>/<topic>/<shell>(/<sub>).
+       parseUrl('/aqa/macro/causes-of-inflation-and-deflation/link/chain-open')
+         → { board:'aqa', theme:'macro', topic:'causes-...', shell:'link',
+             station:'chain-open', file:'link.html' }
+     Standalone routes (/login, /privacy-policy, …) still take precedence
+     so /<board>/<theme>/<topic>/<shell> can never shadow them. */
+  const BOARDS_FOR_URLS = ['edexcel_a', 'edexcel_b', 'aqa', 'ocr'];
   function parseUrl(rawPath) {
     if (!rawPath || rawPath === '/' || rawPath.includes('.')) return null;
     const parts = rawPath.split('/').filter(Boolean);
-    const shell = parts[0];
-    if (STANDALONE.has(shell)) {
-      if (parts.length === 1) return { shell, file: shell + '.html' };
+    const first = parts[0];
+    if (STANDALONE.has(first)) {
+      if (parts.length === 1) return { shell: first, file: first + '.html' };
       return null;
     }
+    /* Must start with a known board id. */
+    if (!BOARDS_FOR_URLS.includes(first)) return null;
+    if (parts.length < 4) return null;
+    const [board, theme, topic, shell] = parts;
     if (!SHELL_HTML[shell]) return null;
-    return { shell, topic: parts[1] || null, station: parts[2] || null, file: SHELL_HTML[shell] };
+    const sub = parts[4] || null;
+    return { board, theme, topic, shell, station: sub, file: SHELL_HTML[shell] };
   }
 
   /* Dev rewrite: no per-topic dist/ files exist yet — point path URLs
@@ -219,7 +260,7 @@ function topicRoutes() {
   }
 
   /* Preview rewrite: dist/ has the per-topic generated index.html
-     files. Point /learn/<topic> at /learn/<topic>/index.html (not the
+     files. Point /<board>/.../<shell> at <path>/index.html (not the
      base shell) so the preview server delivers the same per-page
      <title> / <meta> / JSON-LD that production would. */
   function previewRewrite(req, _res, next) {
@@ -245,34 +286,43 @@ function topicRoutes() {
     if (!existsSync(distDir)) return;
     const written = [];
 
-    function writeRoute(shell, topic, station) {
+    function writeRoute(board, theme, topicId, shell, station) {
       const sourcePath = resolve(distDir, SHELL_HTML[shell]);
       if (!existsSync(sourcePath)) return;
       const html = readFileSync(sourcePath, 'utf8');
       const urlPath = station
-        ? `/${shell}/${topic}/${station}`
-        : `/${shell}/${topic}`;
-      const out = injectMeta(html, { topic, shell, station, path: urlPath });
+        ? `/${board}/${theme}/${topicId}/${shell}/${station}`
+        : `/${board}/${theme}/${topicId}/${shell}`;
+      const out = injectMeta(html, { topic: topicId, shell, station, path: urlPath });
       const dest = join(distDir, urlPath, 'index.html');
       mkdirSync(dirname(dest), { recursive: true });
       writeFileSync(dest, out);
       written.push(urlPath);
     }
 
+    /* Every available (board × topic × shell × station) combination
+       gets a real generated page. Topic stays the same across boards
+       — only the URL prefix changes. */
     for (const topic of ensureRegistry()) {
       const avail = topic.available || {};
-      if (avail.learn) writeRoute('learn', topic.id);
-      if (avail.link)  STATIONS.link.forEach((s) => writeRoute('link', topic.id, s));
-      if (avail.land)  STATIONS.land.forEach((s) => writeRoute('land', topic.id, s));
+      for (const board of BOARDS_FOR_URLS) {
+        const boardEntry = topic.boards && topic.boards[board];
+        if (boardEntry && boardEntry.included === false) continue;
+        const theme = themeForBoard(topic, board);
+        if (avail.learn) writeRoute(board, theme, topic.id, 'learn');
+        if (avail.link)  STATIONS.link.forEach((s) => writeRoute(board, theme, topic.id, 'link', s));
+        if (avail.land)  STATIONS.land.forEach((s) => writeRoute(board, theme, topic.id, 'land', s));
+      }
     }
     // eslint-disable-next-line no-console
-    console.log(`[topic-routes] generated ${written.length} per-topic index.html files`);
+    console.log(`[topic-routes] generated ${written.length} per-(board, topic) index.html files`);
 
     /* Write the sitemap at build time from the same registry, so it can
        never drift from the routes that actually exist. Standalone routes
-       + every /learn/<topic> for an available topic. We keep stations
-       and quiz sets out of the sitemap — they're internal session URLs
-       and including 400+ entries would dilute the index. */
+       + every /<board>/<theme>/<topic>/learn for an available (board, topic)
+       pair. We keep stations and sections out of the sitemap — they're
+       internal session URLs and including thousands of entries would
+       dilute the index. */
     const today = new Date().toISOString().slice(0, 10);
     /* Article URLs are appended later by article-routes from the
        authoritative search-index, so we don't duplicate them here. */
@@ -284,7 +334,12 @@ function topicRoutes() {
     ];
     for (const topic of ensureRegistry()) {
       if (!(topic.available && topic.available.learn)) continue;
-      urls.push({ loc: `/learn/${topic.id}`, priority: '0.8', freq: 'weekly' });
+      for (const board of BOARDS_FOR_URLS) {
+        const boardEntry = topic.boards && topic.boards[board];
+        if (boardEntry && boardEntry.included === false) continue;
+        const theme = themeForBoard(topic, board);
+        urls.push({ loc: `/${board}/${theme}/${topic.id}/learn`, priority: '0.8', freq: 'weekly' });
+      }
     }
     const xml = [
       '<?xml version="1.0" encoding="UTF-8"?>',
@@ -583,7 +638,7 @@ ${footer}
     </ul>
     <div class="topnav__actions">
       <a href="/login" class="btn btn--outline">Log in</a>
-      <a href="/learn/causes-of-inflation-and-deflation" class="btn btn--solid">Get started</a>
+      <a href="/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn" class="btn btn--solid">Get started</a>
     </div>
   </nav>`;
   }
@@ -929,100 +984,8 @@ ${rssItems}
 `;
     writeFileSync(join(articlesDist, 'feed.xml'), rssXml);
 
-    /* ───────────────────────────────────────────────────────────
-       Per-filter hub landings — real generated pages at
-         /articles/board/<id>/
-         /articles/theme/<theme-slug>/
-         /articles/board/<id>/theme/<theme-slug>/
-       Each is a copy of the bare /articles/ hub with two
-       <meta> tags inserted (econos-initial-board /
-       econos-initial-theme) plus a board/theme-aware <title>
-       + <meta description> + <link rel=canonical> so Google
-       indexes them as distinct landing pages.
-       Pattern mirrors the topic-routes plugin's per-topic
-       shell generation.
-       ─────────────────────────────────────────────────────────── */
-    const themes = Array.from(new Set(finalIdx.map((a) => a.theme).filter(Boolean))).sort();
-    const slugifyTheme = (s) => String(s || '').toLowerCase()
-      .replace(/&/g, 'and')
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '');
-
-    const hubSrcPath = join(articlesDist, 'index.html');
-    const filterShells = [];
-    if (existsSync(hubSrcPath)) {
-      const hubSrc = readFileSync(hubSrcPath, 'utf8');
-
-      function writeFilterShell(boardId, theme) {
-        const boardName = boardId ? (BOARD_LABELS[boardId] || boardId) : null;
-        const titleBits = [];
-        if (boardName) titleBits.push(boardName);
-        if (theme)     titleBits.push(theme);
-        titleBits.push('A-level Economics articles');
-        const title = `${titleBits.join(' · ')} · Econos`;
-        const descBits = [];
-        if (boardName) descBits.push(boardName);
-        if (theme)     descBits.push(theme);
-        const desc = descBits.length
-          ? `Plain-English A-level economics articles, filtered to ${descBits.join(' + ')}. Written by a current teacher.`
-          : 'Plain-English A-level economics articles written by a current teacher.';
-
-        let path = '/articles/';
-        if (boardId) path += `board/${boardId}/`;
-        if (theme)   path += `theme/${slugifyTheme(theme)}/`;
-        const canonical = `https://econos.co.uk${path}`;
-
-        const metas = [
-          boardId ? `<meta name="econos-initial-board" content="${escapeHtml(boardId)}">` : '',
-          theme   ? `<meta name="econos-initial-theme" content="${escapeHtml(theme)}">`   : ''
-        ].filter(Boolean).join('\n  ');
-
-        let html = hubSrc
-          .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`)
-          .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(desc)}">`)
-          .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
-          .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`)
-          .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHtml(title.replace(' · Econos', ''))}">`)
-          .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(desc)}">`);
-        if (metas) {
-          html = html.replace('</head>', `  ${metas}\n</head>`);
-        }
-
-        const destDir = join(distDir, path.replace(/^\//, '').replace(/\/$/, ''));
-        mkdirSync(destDir, { recursive: true });
-        writeFileSync(join(destDir, 'index.html'), html);
-        filterShells.push(path);
-      }
-
-      // board-only
-      for (const b of BOARD_ORDER) writeFilterShell(b, null);
-      // theme-only
-      for (const t of themes) writeFilterShell(null, t);
-      // combined
-      for (const b of BOARD_ORDER) {
-        for (const t of themes) writeFilterShell(b, t);
-      }
-    }
-
-    /* Append the filter-landing URLs to sitemap.xml so Google
-       indexes them as separate pages. Only board-only and
-       theme-only landings get high priority (those are the
-       likely SEO targets); combos go in at a lower priority. */
-    const sitemapPath2 = join(distDir, 'sitemap.xml');
-    if (existsSync(sitemapPath2) && filterShells.length) {
-      const today = new Date().toISOString().slice(0, 10);
-      const filterUrls = filterShells.map((p) => {
-        const isCombo = p.includes('/board/') && p.includes('/theme/');
-        const priority = isCombo ? '0.4' : '0.6';
-        return `  <url>\n    <loc>https://econos.co.uk${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
-      }).join('\n');
-      const src2 = readFileSync(sitemapPath2, 'utf8');
-      const next2 = src2.replace('</urlset>', `${filterUrls}\n</urlset>`);
-      writeFileSync(sitemapPath2, next2);
-    }
-
     // eslint-disable-next-line no-console
-    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries; wrote feed.xml + ${filterShells.length} filter shells`);
+    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries; wrote feed.xml`);
   }
 
   function escapeXml(s) {
@@ -1045,12 +1008,6 @@ ${rssItems}
   function devMiddleware(req, _res, next) {
     try {
       const url = (req.url || '/').split('?')[0];
-      /* Filter-landing URLs → hub HTML, no slug processing. */
-      if (/^\/articles\/(?:board\/[a-z0-9_]+\/?)?(?:theme\/[a-z0-9-]+\/?)?$/.test(url)
-          && url !== '/articles' && url !== '/articles/') {
-        req.url = '/articles/index.html';
-        return next();
-      }
       const m = url.match(/^\/articles\/?(?:([a-z0-9-]+)\/?)?$/);
       if (!m) return next();
       const slug = m[1];

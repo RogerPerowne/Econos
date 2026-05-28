@@ -36,16 +36,27 @@
 
   var DEFAULT_TOPIC = 'causes-of-inflation-and-deflation';
 
-  /* Recognised path segments. Used by the parser to distinguish
-     a shell+topic+station path from random URLs that just happen
-     to start with /link etc. */
+  /* Recognised shell tokens. Used by the parser to validate the
+     trailing /<shell>(/<sub>) segment of every topic URL. */
   var SHELLS = { learn: true, link: true, land: true };
 
-  /* parsePath('/link/causes-of-inflation-and-deflation/chain-open')
-       → { shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain-open' }
-     parsePath('/')              → { shell: 'home' }
-     parsePath('/learn')         → { shell: 'learn', topic: null }
-     Returns null for paths the loader doesn't recognise. */
+  /* parsePath canonical form (v0.6.0+):
+       /<board>/<theme>/<topic>/learn
+       /<board>/<theme>/<topic>/link/<station>
+       /<board>/<theme>/<topic>/land/<section>
+
+     Example:
+       parsePath('/aqa/macro/causes-of-inflation-and-deflation/link/chain-open')
+         → {
+             board:   'aqa',
+             theme:   'macro',
+             topic:   'causes-of-inflation-and-deflation',
+             shell:   'link',
+             station: 'chain-open'
+           }
+
+     parsePath('/') → { shell: 'home' }
+     Returns null for paths that don't fit the contract. */
   function parsePath(pathname) {
     var p = String(pathname || window.location.pathname || '/');
     if (p.length > 1 && p.charAt(p.length - 1) === '/') {
@@ -53,11 +64,22 @@
     }
     if (p === '' || p === '/') { return { shell: 'home' }; }
     var parts = p.split('/').filter(Boolean);
-    var shell = parts[0];
+    /* Need at least board / theme / topic / shell. */
+    if (parts.length < 4) { return null; }
+    var board = parts[0];
+    var theme = parts[1];
+    var topic = parts[2];
+    var shell = parts[3];
     if (!SHELLS[shell]) { return null; }
-    var topic = parts[1] || null;
-    var third = parts[2] || null;
-    return { shell: shell, topic: topic, station: third };
+    if (!window.ECONOS_BOARDS || !window.ECONOS_BOARDS[board]) { return null; }
+    var sub = parts[4] || null;
+    return {
+      board:   board,
+      theme:   theme,
+      topic:   topic,
+      shell:   shell,
+      station: sub
+    };
   }
 
   function getRoute() {
@@ -118,16 +140,26 @@
 
   /* URL builders. Every internal href, every JS string used as a
      URL, every router pushState — they all flow through these.
-     Topic defaults to the current topic from the URL so most
-     callers don't need to pass it. */
+     Canonical form is /<board>/<theme>/<topic>/<shell>(/<sub>):
+       routes.learn('inflation')               → '/aqa/macro/inflation/learn'
+       routes.link('chain', 'inflation')        → '/aqa/macro/inflation/link/chain'
+       routes.land('a',    'inflation')         → '/aqa/macro/inflation/land/a'
+     Board comes from getBoard(); theme comes from the registry
+     via themeFor(topic, board). Topic defaults to the current
+     topic from the URL so most callers don't need to pass it. */
+  function urlBase(topic) {
+    var t = topic || getTopic();
+    var b = getBoard();
+    return '/' + b + '/' + themeFor(t, b) + '/' + t;
+  }
   var routes = {
     home:  function ()             { return '/'; },
-    learn: function (topic)        { return '/learn/' + (topic || getTopic()); },
+    learn: function (topic)        { return urlBase(topic) + '/learn'; },
     link:  function (station, topic) {
-      return '/link/' + (topic || getTopic()) + '/' + (station || 'intro');
+      return urlBase(topic) + '/link/' + (station || 'intro');
     },
     land:  function (section, topic) {
-      return '/land/' + (topic || getTopic()) + '/' + (section || 'intro');
+      return urlBase(topic) + '/land/' + (section || 'intro');
     },
     /* Legacy compat shim — the /quiz/ standalone shell was retired in
        v0.4.0 but existing learn.js files still reference quizCta

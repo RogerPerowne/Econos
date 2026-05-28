@@ -32,22 +32,25 @@ test.describe('Home page', () => {
 
     const hrefs = await page.$$eval('a[href]', as =>
       as.map(a => a.getAttribute('href') || ''));
-    /* Topic cards must use path form: /learn/<topic-slug>. */
-    const learnLinks = hrefs.filter(h => /^\/learn\/[a-z0-9-]+/.test(h));
+    /* Topic cards must use the v0.6.0 path form:
+       /<board>/<theme>/<topic-slug>/learn */
+    const learnLinks = hrefs.filter(h =>
+      /^\/(edexcel_a|edexcel_b|aqa|ocr)\/[a-z0-9-]+\/[a-z0-9-]+\/learn$/.test(h));
     expect(learnLinks.length).toBeGreaterThan(0);
-    /* And not the old query-string form or .html extension. */
+    /* And no query-string, .html extension, or legacy filenames. */
     expect(hrefs.some(h => /\?topic=/.test(h))).toBe(false);
     expect(hrefs.some(h => /\.html(\?|#|$)/.test(h))).toBe(false);
-    /* And no legacy per-section filenames anywhere. */
     expect(hrefs.some(h => /topic\.html|link_\w+\.html|land_\w+\.html/.test(h)))
       .toBe(false);
+    /* And no v0.5.x single-prefix URLs either. */
+    expect(hrefs.some(h => /^\/(learn|link|land)\//.test(h))).toBe(false);
   });
 });
 
 test.describe('Per-topic SEO metadata', () => {
   test('Learn shell ships LearningResource JSON-LD', async ({ page }) => {
     await login(page);
-    await page.goto('/learn/causes-of-inflation-and-deflation');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
     const ld = await page.evaluate(() => {
       const n = document.querySelector('script[type="application/ld+json"]');
       return n ? JSON.parse(n.textContent) : null;
@@ -57,14 +60,14 @@ test.describe('Per-topic SEO metadata', () => {
       learningResourceType: 'Concept',
       educationalLevel: 'A-level',
       inLanguage: 'en-GB',
-      url: 'https://econos.co.uk/learn/causes-of-inflation-and-deflation'
+      url: 'https://econos.co.uk/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn'
     });
     expect(ld.name).toMatch(/Causes of Inflation/);
   });
 
   test('Land section ships AssessmentExercise JSON-LD with Section label', async ({ page }) => {
     await login(page);
-    await page.goto('/land/causes-of-inflation-and-deflation/a');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/a');
     const ld = await page.evaluate(() => {
       const n = document.querySelector('script[type="application/ld+json"]');
       return n ? JSON.parse(n.textContent) : null;
@@ -87,7 +90,7 @@ test.describe('Per-topic stage availability', () => {
        available stages; the runtime stages widget reads it and
        locks the rest. */
     await login(page);
-    await page.goto('/learn/factors-of-production');
+    await page.goto('/edexcel_a/theme-1/factors-of-production/learn');
 
     const meta = await page.evaluate(() =>
       document.querySelector('meta[name="econos-availability"]')?.getAttribute('content'));
@@ -109,9 +112,9 @@ test.describe('Content Security Policy', () => {
      shells. The home page + articles still ship looser CSPs because
      their inline <script> blocks haven't been externalised yet. */
   const TIGHTENED = [
-    '/learn/causes-of-inflation-and-deflation',
-    '/link/causes-of-inflation-and-deflation/intro',
-    '/land/causes-of-inflation-and-deflation/intro',
+    '/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn',
+    '/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro',
+    '/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/intro',
     '/login'
   ];
   for (const path of TIGHTENED) {
@@ -132,7 +135,7 @@ test.describe('Content Security Policy', () => {
 test.describe('Exam-board picker', () => {
   test('picker is in the account menu and selecting a board persists across reload', async ({ page }) => {
     await login(page);
-    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
     await page.waitForLoadState('networkidle');
 
     /* Open the menu and confirm the four boards render. */
@@ -168,7 +171,7 @@ test.describe('Exam-board picker', () => {
 test.describe('Account menu', () => {
   test('topbar avatar opens the menu and Escape closes it', async ({ page }) => {
     await login(page);
-    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
     await page.waitForLoadState('networkidle');
 
     const trigger = page.locator('.topbar__avatar');
@@ -190,7 +193,7 @@ test.describe('Account menu', () => {
        reload immediately re-setting it. The meaningful contract is the
        redirect to /login; that only fires if the logout handler ran. */
     await login(page);
-    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
     await page.waitForLoadState('networkidle');
 
     await page.locator('.topbar__avatar').click();
@@ -204,7 +207,7 @@ test.describe('Account menu', () => {
 test.describe('Learn It shell', () => {
   test('inflation renders chrome + stage widget', async ({ page }) => {
     await login(page);
-    await page.goto('/learn/causes-of-inflation-and-deflation');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
 
     await expect(page).toHaveTitle(/Learn It · Econos/i);
 
@@ -226,18 +229,18 @@ test.describe('Learn It shell', () => {
 test.describe('Link It shell', () => {
   test('intro deep-links + chain station shows amber theme', async ({ page }) => {
     await login(page);
-    await page.goto('/link/causes-of-inflation-and-deflation/intro');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/intro');
     await expect(page).toHaveTitle(/Link it · Intro/i);
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
 
-    await page.goto('/link/causes-of-inflation-and-deflation/chain');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/chain');
     await expect(page).toHaveTitle(/Link it · Chain/i);
     await expect(page.locator('.app.theme--link')).toHaveCount(1);
   });
 
   test('unknown station shows friendly not-found', async ({ page }) => {
     await login(page);
-    await page.goto('/link/causes-of-inflation-and-deflation/nope');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/link/nope');
     await expect(page.locator('text=Station not found')).toBeVisible();
   });
 });
@@ -245,7 +248,7 @@ test.describe('Link It shell', () => {
 test.describe('Land It shell', () => {
   test('intro station renders + rose theme', async ({ page }) => {
     await login(page);
-    await page.goto('/land/causes-of-inflation-and-deflation/intro');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/land/intro');
     await expect(page).toHaveTitle(/Land it · Intro/i);
     await expect(page.locator('.app.theme--land')).toHaveCount(1);
 
@@ -257,7 +260,7 @@ test.describe('Land It shell', () => {
 test.describe('Accessibility — keyboard navigation', () => {
   test('Tab reveals skip-link first on the learn shell', async ({ page }) => {
     await login(page);
-    await page.goto('/learn/causes-of-inflation-and-deflation');
+    await page.goto('/edexcel_a/theme-2/causes-of-inflation-and-deflation/learn');
     await page.keyboard.press('Tab');
     const focused = await page.evaluate(() => document.activeElement &&
       (document.activeElement.className || '') + '|' +

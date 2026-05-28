@@ -29,7 +29,7 @@ glance:
   - { label: "Leakages", value: "MPS (savings), MPT (tax), MPM (imports). Higher leakages mean a smaller multiplier." }
   - { label: "UK multiplier", value: "Estimates range 0.5–1.5 for tax cuts, 0.8–2.0 for government spending. State-of-the-cycle matters." }
 glance_cta:
-  href: /learn/multiplier
+  href: /edexcel_a/theme-2/national-income-and-the-multiplier/learn
   label: "Want more depth? Explore the full topic →"
 
 faq:
@@ -43,9 +43,9 @@ faq:
 want_more:
   title: "Want more depth?"
   subtitle: "Master the multiplier with Econos."
-  primary_href: /learn/multiplier
+  primary_href: /edexcel_a/theme-2/national-income-and-the-multiplier/learn
   primary_label: "Explore the full Multiplier topic"
-  secondary_href: /learn/multiplier
+  secondary_href: /edexcel_a/theme-2/national-income-and-the-multiplier/learn
   secondary_label: "Sign up free"
 ---
 

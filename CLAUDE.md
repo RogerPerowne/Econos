@@ -39,55 +39,67 @@ User-facing URLs are path-based, hyphenated, and contain neither `.html`
 nor a query string for the topic / station / quiz set:
 
 ```
-/                                 home (topic picker)
-/learn/<topic>                    Learn It                e.g. /learn/causes-of-inflation-and-deflation
-/link/<topic>/<station>           Link It                 e.g. /link/causes-of-inflation-and-deflation/chain
-                                                          /link/causes-of-inflation-and-deflation/chain-open
-/land/<topic>/<section>           Land It                 e.g. /land/causes-of-inflation-and-deflation/a
-/quiz/<topic>/<set>               Standalone quiz         e.g. /quiz/causes-of-inflation-and-deflation/main
-/login /privacy-policy /terms     standalone shells
-/offline /404
+/                                                       home (topic picker)
+/<board>/<theme>/<topic>/learn                          Learn It           e.g. /aqa/macro/causes-of-inflation-and-deflation/learn
+/<board>/<theme>/<topic>/link/<station>                 Link It            e.g. /edexcel_a/theme-2/causes-of-inflation-and-deflation/link/chain
+/<board>/<theme>/<topic>/land/<section>                 Land It            e.g. /ocr/macro/causes-of-inflation-and-deflation/land/a
+/articles/                                              article hub
+/articles/<slug>                                        single article
+/login /privacy-policy /terms /offline /404             standalone shells
 ```
 
-`<topic>` and `<station>` slugs use hyphens. Internal IDs (in `js/topics.js`,
-in data-file paths under `js/data/<id>/...`, in router config) use underscores.
-The two are bridged at exactly one point — `TopicLoader.toSlug` / `.fromSlug`
-in `js/topic-loader.js`. Don't introduce a second mapping.
+URL grammar:
+- `<board>` is one of `edexcel_a` / `edexcel_b` / `aqa` / `ocr`.
+- `<theme>` is `theme-1`..`theme-4` for the Edexcel boards (matching the
+  spec's first digit) or `micro` / `macro` for AQA and OCR. Derived from
+  `boards.<board>.spec` in the topic registry via `themeFor(topic, board)`.
+- `<topic>` is the topic id from `js/topics.js` (and the directory name
+  under `js/data/<board>/<theme>/<topic>/`).
+- `<station>` and `<section>` are the short-token forms used in
+  `js/config/stations.js`.
+
+Topic ids, station tokens and theme slugs all use hyphens. No
+underscore-to-hyphen mapping anywhere — the same string is used in the
+URL, the registry, the data folder name and the routes module.
 
 ### How GitHub Pages serves these
 
 Every path-based URL has a **real generated file** in `dist/`. The
-`topic-routes` plugin in `vite.config.js` walks `js/topics.js` at build
-time and writes, for each available topic + station:
+`topic-routes` plugin walks `js/topics.js` × `BOARDS_FOR_URLS` at build
+time and writes, for each available (board, topic, shell, station)
+combination:
 
 ```
-dist/learn/<topic-slug>/index.html
-dist/link/<topic-slug>/<station>/index.html
-dist/land/<topic-slug>/<section>/index.html
-dist/quiz/<topic-slug>/<set>/index.html
+dist/<board>/<theme>/<topic>/learn/index.html
+dist/<board>/<theme>/<topic>/link/<station>/index.html
+dist/<board>/<theme>/<topic>/land/<section>/index.html
 ```
 
 Each generated file is a copy of the matching base shell (`learn.html`,
-`link.html`, ...) with the `<title>`, `<meta name=description>`, `og:*`,
-and `<link rel=canonical>` rewritten to be topic-specific. The browser
-hits the URL, GitHub Pages returns a 200, the shell HTML loads, and the
-client-side `TopicLoader` reads `window.location.pathname` to figure out
-what to render. No client-side redirects, no `?topic=` query string, no
-404s for canonical URLs.
+`link.html`, `land.html`) with the `<title>`, `<meta name=description>`,
+`og:*`, and `<link rel=canonical>` rewritten to be topic-specific. The
+browser hits the URL, GitHub Pages returns a 200, the shell HTML loads,
+and the client-side `TopicLoader` reads `window.location.pathname` to
+figure out what to render. No client-side redirects, no query strings.
 
-The same plugin runs as a Connect middleware in `npm run dev` and
-`npm run preview`, rewriting `/learn/<topic>` → `/learn.html` on the
-request so the dev server serves the right base shell.
+The same plugin runs as a Connect middleware in `npm run dev`, rewriting
+`/<board>/<theme>/<topic>/<shell>` → `/<shell>.html` on the request so
+the dev server serves the right base shell. `npm run preview` serves the
+already-generated per-route `index.html` files directly.
 
 ### The URL API (the only way to build a URL in code)
 
 ```js
-TopicLoader.routes.home()              // → '/'
-TopicLoader.routes.learn(topic?)       // → '/learn/<topic>'
-TopicLoader.routes.link(station, topic?)
-TopicLoader.routes.land(section, topic?)
-TopicLoader.routes.quiz(set, topic?)
+TopicLoader.routes.home()                  // → '/'
+TopicLoader.routes.learn(topic?)           // → '/<board>/<theme>/<topic>/learn'
+TopicLoader.routes.link(station, topic?)   // → '/<board>/<theme>/<topic>/link/<station>'
+TopicLoader.routes.land(section, topic?)   // → '/<board>/<theme>/<topic>/land/<section>'
 ```
+
+The board comes from `TopicLoader.getBoard()`; the theme is derived from
+the topic registry via the internal `themeFor(topic, board)` helper. So
+the same source-code call `TopicLoader.routes.learn('inflation')`
+produces a different URL on each board.
 
 Topic defaults to the current topic from the URL. **There is no legacy
 `buildUrl(legacyFilename)` API** — every call site (engines, data files,

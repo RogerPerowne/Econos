@@ -378,9 +378,10 @@ img, svg { display: block; max-width: 100%; }
   font-size: var(--fs-sm);
   flex-shrink: 0;
 }
-.sidebar__user-info { flex: 1; min-width: 0; }
+.sidebar__user-info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .sidebar__user-name { font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--econ-ink); }
 .sidebar__user-role { font-size: var(--fs-xs); color: var(--econ-ink); }
+.sidebar__user-board { font-weight: var(--fw-semi); color: var(--econ-blue-700); }
 .sidebar__user-chev { color: var(--econ-ink); }
 
 /* ----- Main area ----- */
@@ -527,6 +528,55 @@ img, svg { display: block; max-width: 100%; }
 .account-menu__item:focus-visible {
   background: var(--econ-gray-50);
   outline: none;
+}
+
+/* Account-menu sub-groups (e.g. the exam-board picker). */
+.account-menu__group {
+  padding: 4px 0;
+}
+.account-menu__label {
+  padding: 6px 12px 4px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--econ-gray-500);
+}
+.account-menu__board {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: 0;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--econ-ink);
+  text-align: left;
+  cursor: pointer;
+}
+.account-menu__board:hover,
+.account-menu__board:focus-visible {
+  background: var(--econ-gray-50);
+  outline: none;
+}
+.account-menu__board.is-active {
+  background: var(--econ-blue-50);
+  color: var(--econ-blue-700);
+}
+.account-menu__board-indicator {
+  width: 12px;
+  display: inline-flex;
+  justify-content: center;
+  color: var(--econ-gray-400);
+}
+.account-menu__board.is-active .account-menu__board-indicator { color: var(--econ-blue); }
+.account-menu__divider {
+  height: 1px;
+  background: var(--econ-gray-200);
+  margin: 4px 0;
 }
 
 /* ----- Mobile stages strip -----

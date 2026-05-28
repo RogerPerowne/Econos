@@ -157,6 +157,50 @@ You do **not** need to bump for changes to topic data files (`js/data/<topic>/..
 No new HTML, no engine changes. The shells discover the data through
 `TopicLoader.loadData(...)` at runtime.
 
+## Multi-exam-board
+
+UK A-level economics has four mainstream boards (Edexcel A, Edexcel B,
+AQA, OCR). Econos lets the user pick one and remembers the choice; every
+spec-point display surface reads it.
+
+### Registry — `js/config/boards.js`
+
+Single source of truth for supported boards. Each entry is
+`{ id, name, short, isDefault? }`. Load order is fixed by
+`window.ECONOS_BOARDS_ORDER` so the picker UI is deterministic. Adding
+a new board (e.g. WJEC / Eduqas) is a one-line change here.
+
+### Persistence + accessors — `TopicLoader`
+
+- `TopicLoader.getBoard()` — returns the selected board id; falls back
+  to the registry's `isDefault: true` entry (currently `edexcel_a`).
+- `TopicLoader.setBoard(id)` — persists to `localStorage` key
+  `econos:board`. Returns `false` for unknown ids.
+- `TopicLoader.getBoardName()` — display label for the current board.
+
+Selection is read by every display surface that needs a board-specific
+spec point or a board pill.
+
+### UI
+
+The board picker lives in the account-menu dropdown (sidebar user-card
+or topbar avatar). It's a radio group above the Log-out divider.
+Selecting a board persists and reloads — push-style runtime updates
+would need every render-site to subscribe; a reload is one line.
+
+The current board is visible at a glance in the sidebar user-card
+("A-Level Economics · Edexcel A") so the user never has to open the
+picker to confirm.
+
+### Per-topic + per-article spec mapping (content workstream)
+
+Each topic / article will eventually carry a `boards` map declaring
+per-board spec points. The framework reads from that map; the data
+fills in over time. Currently only Edexcel A spec points are
+populated; the other three boards intentionally show no spec until
+the mappings ship. Adding a new spec mapping doesn't require any code
+changes — just data.
+
 ## Articles — SEO long-form content
 
 Articles live at `/articles/<slug>/` and exist for one job: rank on Google

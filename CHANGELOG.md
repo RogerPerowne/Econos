@@ -6,6 +6,48 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.9.0 — 2026-05-28
+
+### Articles: interactive diagrams, knowledge-check restyle + content review fixes
+
+**Interactive diagrams in articles.** The SPA's interactive diagrams
+store every step as a stacked `layer-*` group and reveal one at a time
+by swapping a `show-<state>` class; the article pages never loaded that
+CSS state machine, so every layer painted at once and the steps
+overlapped into an unreadable pile. Ported the layer/state-machine CSS
+into a new `articles/diagram.css` (with a `:root` token shim so the SPA
+design tokens resolve), added a tiny `articles/diagram.js` controller,
+and extended the `:::econos-diagram` directive with an `interactive`
+flag that expands into a stepper (stage + tabs + per-step caption) from
+a new `INTERACTIVE_PRESETS` registry. With JS off, the first state is
+baked in so the diagram still renders one clean state — never the
+overlap. Step labels mirror the matching learn-it cards.
+
+Diagrams added or made interactive across the library: negative
+externalities, positive externalities, externalities, market failure,
+supply and demand, price mechanism, opportunity cost (PPF), consumer
+and producer surplus, unemployment (Phillips curve) and aggregate
+demand.
+
+**Knowledge-check restyle.** The difficulty now sits on its own line
+above the question, the coloured-circle emojis are gone, and MCQ
+options are visible up front so the reader can attempt the question —
+the correct-answer highlight, tick and explanation are held back until
+the card is opened.
+
+**Content review fixes.** Corrected the inflation article's furlough
+figure (~£70bn, not the £350bn whole-package number) and the QE start
+date (2009, not 2008); aligned the UK carbon price (~£40/tCO₂) and
+furlough job count (8.9m) across articles; reworded the opportunity-cost
+OBR claim and softened an unsourced admin-cost figure in market failure;
+fixed a broken monopoly Learn-It link (`/learn` → `/learn-it`); removed a
+malformed economist-insight block from the public-goods article; and
+corrected the multiplier article's `spa_topic` and the unemployment
+article's AQA spec code.
+
+Service worker cache bumped to `econos-v78` (article CSS/JS are
+cache-first).
+
 ## 0.8.0 — 2026-05-28
 
 ### Articles: diagrams, economist insights, knowledge-check Qs + new footer + 5 new Theme 1 articles

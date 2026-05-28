@@ -109,7 +109,7 @@ UK automatic stabilisers cushion ~30–40% of a typical demand shock. That's why
 
 ## The cleanest discretionary stimulus of the last decade
 
-When the UK locked down in March 2020, the Coronavirus Job Retention Scheme paid 80% of furloughed workers' wages directly to employers. At its peak, 9 million jobs were supported. Total cost: about £70bn.
+When the UK locked down in March 2020, the Coronavirus Job Retention Scheme paid 80% of furloughed workers' wages directly to employers. At its peak, 8.9 million jobs were supported. Total cost: about £70bn.
 
 What makes it textbook:
 - **Massive, deliberate, time-limited.** Classic discretionary fiscal expansion.
@@ -129,7 +129,7 @@ The AO4 marks in a fiscal-policy essay come from naming the constraints.
 
 - **Crowding out.** Government borrowing pushes up interest rates, dampening private investment. Empirically strongest at full employment, weakest in recessions with spare capacity.
 - **Time lags.** Legislation, implementation, multiplier effects — the full cycle takes 12–36 months. Fiscal policy designed for last quarter's data can land in next year's economy.
-- **Crowding in (the opposite).** Good public-investment programmes can ATTRACT private investment by improving infrastructure, skills, or confidence. Cross-rail. Apprenticeships funding.
+- **Crowding in (the opposite).** Good public-investment programmes can ATTRACT private investment by improving infrastructure, skills, or confidence. Crossrail. Apprenticeships funding.
 - **Ricardian equivalence.** The theoretical worry that households save the tax-cut windfall to pay for the future tax rise that funds the deficit. Empirically partial — saves blunt the multiplier without eliminating it.
 - **Debt sustainability.** If debt rises faster than GDP, interest costs eat the budget. UK debt-service costs hit ~10% of total government spending in 2023.
 

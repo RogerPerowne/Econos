@@ -118,7 +118,7 @@ A mark scheme rewards the four-step chain. A bare "supply falls, price rises" is
 
 :::
 
-::: econos-diagram svgKey="demandInteractive" label="Supply and demand equilibrium" caption="Demand slopes down, supply slopes up. They cross at the market-clearing price and quantity. Any other price creates excess demand or excess supply — and the price moves until the imbalance closes."
+::: econos-diagram svgKey="demandInteractive" interactive="true" label="Supply and demand equilibrium" caption="Demand slopes down, supply slopes up. They cross at the market-clearing price and quantity. Any other price creates excess demand or excess supply — and the price moves until the imbalance closes."
 :::
 
 ::: econ-insight portraitKey="economistMarshall" tone="amber" label="Economist insight: Marshall and the scissors metaphor" attribution="Alfred Marshall, <em>Principles of Economics</em> (1890)"

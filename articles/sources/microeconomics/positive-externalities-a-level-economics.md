@@ -93,7 +93,7 @@ Drawing this correctly — with axes labelled (P, Q), three curves named (MPB, M
 
 :::
 
-::: econos-diagram svgKey="posExternalityInteractive" label="Positive externality diagram — MSB above MPB, under-consumption welfare loss" caption="The market lands at Q* where supply meets private demand. The social optimum Q** lies further right, where MSB meets MSC. The triangle between MSB and MSC across the gap is the welfare gain the unaided market misses."
+::: econos-diagram svgKey="posExternalityInteractive" interactive="true" label="Positive externality diagram — MSB above MPB, under-consumption welfare loss" caption="The market lands at Q* where supply meets private demand. The social optimum Q** lies further right, where MSB meets MSC. The triangle between MSB and MSC across the gap is the welfare gain the unaided market misses."
 :::
 
 ::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight: Pigou on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"

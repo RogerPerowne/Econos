@@ -13,7 +13,7 @@ read_minutes: 11
 status: live
 published: 2026-05-28
 modified: 2026-05-28
-spa_topic: multiplier
+spa_topic: national-income-and-the-multiplier
 questions:
   - difficulty: easy
     type: mcq

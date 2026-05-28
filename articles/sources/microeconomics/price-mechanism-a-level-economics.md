@@ -73,6 +73,9 @@ The exam-ready trick: every market shock makes all three functions visible at on
 
 :::
 
+::: econos-diagram svgKey="disequilibriumInteractive" interactive="true" label="Disequilibrium — shortages and surpluses move the price" caption="The price mechanism in motion: a price below equilibrium creates a shortage that bids the price up; a price above it creates a surplus that pushes the price down — rationing and signalling in one diagram."
+:::
+
 ::: section eyebrow="A worked example — the 2021 chip shortage" color="blue" icon="target"
 
 ## All three functions, one event

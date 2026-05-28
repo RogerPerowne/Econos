@@ -6,7 +6,7 @@ theme: "Macroeconomics"
 spec:
   edexcel_a: "2.1.3"
   edexcel_b: "2.5.4"
-  aqa: "3.2.3.2"
+  aqa: "4.2.3.2"
   ocr: "2.3"
 keywords: [unemployment, claimant count, Labour Force Survey, LFS, structural unemployment, cyclical unemployment, frictional unemployment, seasonal unemployment, real-wage unemployment, natural rate]
 read_minutes: 11
@@ -130,6 +130,9 @@ The **NAIRU** (non-accelerating inflation rate of unemployment) is the related c
 
 AQA examines the natural rate / NAIRU directly (4.2.3.2 (f)); Edexcel A treats it more loosely under the Phillips curve content in Theme 2.6.4.
 
+:::
+
+::: econos-diagram svgKey="phillipsInteractive" interactive="true" label="The Phillips curve — short-run trade-off, long-run vertical, and the 1970s breakdown" caption="The unemployment–inflation trade-off and why it shifts: the original short-run curve, the vertical long-run curve at the natural rate, and the 1970s stagflation that broke the simple relationship."
 :::
 
 ::: section eyebrow="Exam edge" color="green" icon="cap"

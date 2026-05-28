@@ -89,6 +89,9 @@ For positive externalities (vaccination, education) the welfare loss is the oppo
 
 :::
 
+::: econos-diagram svgKey="negExternalityInteractive" interactive="true" label="Negative externality diagram — the wedge between MSC and MPC" caption="Step through the build: the free-market equilibrium, the MSC/MEC wedge, the social optimum, and the deadweight welfare loss the unaided market creates."
+:::
+
 ::: section eyebrow="Public goods and the free-rider problem" color="purple" icon="scale"
 
 ## Why no firm will sell you lighthouses
@@ -133,11 +136,11 @@ The strongest market-failure essays don't just propose intervention — they eva
 
 - **Inadequate information.** Setting the right tax rate to internalise an externality requires knowing the marginal external cost. Policymakers usually don't.
 - **Unintended consequences.** Cigarette taxes work; very high cigarette taxes drive a black market. Minimum wages raise low-end pay; very high minimum wages reduce employment. Every intervention has a tipping point.
-- **Administrative cost.** The benefits system costs ~3% of total spend to administer. A £1bn intervention may genuinely cost £1.03bn.
+- **Administrative cost.** The benefits system costs a small share of total spend to administer (a few percent). A £1bn intervention may genuinely cost more than £1bn once administration is counted.
 - **Regulatory capture.** Regulators come from the industry they regulate, and tend to drift toward industry-friendly positions over time (Stigler 1971).
 - **Political short-termism.** Five-year electoral cycles + multi-decade climate damage = systematic under-intervention on long-horizon problems.
 
-The classic A* move: name the market failure, propose intervention, then evaluate the SPECIFIC government-failure risk in the proposed intervention. "A carbon tax would internalise the externality, but the politically achievable rate (£25/tCO₂) sits below the social cost of carbon (~£200/tCO₂), limiting its corrective power" beats "a carbon tax would internalise the externality".
+The classic A* move: name the market failure, propose intervention, then evaluate the SPECIFIC government-failure risk in the proposed intervention. "A carbon tax would internalise the externality, but the politically achievable rate (~£40/tCO₂) sits below the social cost of carbon (~£200/tCO₂), limiting its corrective power" beats "a carbon tax would internalise the externality".
 
 :::
 

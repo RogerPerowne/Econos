@@ -85,7 +85,7 @@ The mark scheme rewards naming all five links AND naming the lag.
 
 When Bank Rate is already near zero (the zero lower bound), the MPC reaches for less conventional tools.
 
-- **Quantitative easing.** The Bank creates new reserves and uses them to buy financial assets — mainly UK government bonds (gilts). That pushes bond prices up, yields down, and long-term interest rates with them. Used aggressively in 2008–09 and again in 2020. The UK's QE programme peaked at £895bn.
+- **Quantitative easing.** The Bank creates new reserves and uses them to buy financial assets — mainly UK government bonds (gilts). That pushes bond prices up, yields down, and long-term interest rates with them. Used aggressively from 2009 and again in 2020. The UK's QE programme peaked at £895bn.
 - **Forward guidance.** The MPC commits, in advance, to a path for Bank Rate or to specific conditions for changing it. Lowers uncertainty and anchors expectations. Mark Carney's "out of the woods" framing in 2013 is the most-cited example.
 - **Term Funding Scheme / Funding for Lending.** Cheap funding offered to commercial banks on condition they lend it to households and SMEs. A way of fixing the transmission mechanism when banks are deleveraging.
 - **Quantitative tightening (QT).** The reverse of QE — allowing gilts to mature without rolling them over, or active selling. The UK started QT in 2022.

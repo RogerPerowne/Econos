@@ -90,7 +90,7 @@ Drawing this correctly — axes labelled (P, Q), four curves named (D = MSB = MP
 
 :::
 
-::: econos-diagram svgKey="negExternalityInteractive" label="Negative externality diagram — MSC above MPC, deadweight loss triangle" caption="The shaded triangle between MSC and MSB from Q** to Q* is the welfare loss the market creates by ignoring the external cost. A Pigouvian tax of MEC shifts MPC up to coincide with MSC, eliminating the triangle."
+::: econos-diagram svgKey="negExternalityInteractive" interactive="true" label="Negative externality diagram — MSC above MPC, deadweight loss triangle" caption="The shaded triangle between MSC and MSB from Q** to Q* is the welfare loss the market creates by ignoring the external cost. A Pigouvian tax of MEC shifts MPC up to coincide with MSC, eliminating the triangle."
 :::
 
 ::: econ-insight portraitKey="economistPigou" tone="amber" label="Economist insight: Pigou on externalities" attribution="Arthur Pigou, <em>The Economics of Welfare</em> (1920)"

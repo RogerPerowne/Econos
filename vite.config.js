@@ -439,6 +439,69 @@ function topicRoutes() {
    dist/sitemap.xml by replacing the closing </urlset> tag.
    ============================================================ */
 
+/* Interactive diagram presets for articles.
+
+   The SPA's interactive diagrams stack every step as a `layer-*`
+   group in one SVG and reveal them one at a time by swapping a
+   `show-<state>` class on the wrapper (the CSS state machine lives
+   in articles/diagram.css, ported from styles.css; diagram.js does
+   the swapping). This registry maps a diagram svgKey to its ordered
+   steps — the state token (which must match the show-<state> class),
+   a tab label, and the explanatory caption shown for that step.
+
+   `::: econos-diagram svgKey="…" interactive="true"` expands into a
+   stepper using this registry. Step labels/order mirror the matching
+   learn-it cards so the article and the SPA teach the same build-up.
+   A diagram without an entry here falls back to a clean static render
+   of its base state (diagram.css hides the non-base layers anyway). */
+const INTERACTIVE_PRESETS = {
+  negExternalityInteractive: [
+    { state: 'base',       label: 'Market equilibrium',     desc: 'MPC (private supply) meets MSB (demand) at the free-market output — the market ignores any cost imposed on third parties.' },
+    { state: 'extension',  label: 'Add MSC and MEC',        desc: 'MSC sits above MPC; the vertical gap between them is the marginal external cost (MEC) borne by third parties.' },
+    { state: 'shift',      label: 'Socially optimal output', desc: 'Welfare is maximised where MSC = MSB, at the lower output Q* and higher price P*.' },
+    { state: 'efficiency', label: 'Deadweight welfare loss', desc: 'Between Q* and the market output, every extra unit costs society more than it benefits — the shaded triangle is the welfare loss.' }
+  ],
+  posExternalityInteractive: [
+    { state: 'base',       label: 'Market equilibrium',     desc: 'MPB (demand) meets supply at the free-market output — the market ignores the benefit spilling over to third parties.' },
+    { state: 'extension',  label: 'Add MSB and MEB',        desc: 'MSB sits above MPB; the vertical gap is the marginal external benefit (MEB) enjoyed by third parties.' },
+    { state: 'shift',      label: 'Socially optimal output', desc: 'Welfare is maximised where MSB = MSC, at the higher output Q*.' },
+    { state: 'efficiency', label: 'Welfare gain forgone',    desc: 'The unaided market under-consumes; the shaded triangle is the welfare society loses by stopping short of Q*.' }
+  ],
+  demandInteractive: [
+    { state: 'base',      label: 'The demand curve', desc: 'Demand slopes down: as price falls, quantity demanded rises, other things held equal.' },
+    { state: 'extension', label: 'Movement along',   desc: 'A change in the good’s own price moves you along the curve — a change in quantity demanded, not a change in demand.' },
+    { state: 'shift',     label: 'Demand shifts',    desc: 'A change in a non-price determinant (income, tastes, the price of substitutes) shifts the whole curve left or right.' }
+  ],
+  ppfInteractive: [
+    { state: 'base',       label: 'Construction',     desc: 'The frontier shows the maximum combinations of two goods an economy can produce with its resources fully and efficiently employed.' },
+    { state: 'extension',  label: 'Opportunity cost', desc: 'Moving along the frontier means giving up some of one good to gain more of the other — that forgone output is the opportunity cost.' },
+    { state: 'shift',      label: 'Shifts',           desc: 'More or better resources — investment, net immigration, new technology — shift the whole frontier outward; the reverse shifts it in.' },
+    { state: 'efficiency', label: 'Efficiency',       desc: 'Points on the curve are productively efficient; points inside are inefficient; points beyond are unattainable with today’s resources.' }
+  ],
+  phillipsInteractive: [
+    { state: 'base',      label: 'The original Phillips curve', desc: 'The 1958 relationship: lower unemployment came with higher wage and price inflation — an apparent stable trade-off.' },
+    { state: 'extension', label: 'The long-run curve',          desc: 'Friedman and Phelps (1968): once inflation expectations adjust, the long-run Phillips curve is vertical at the natural rate of unemployment.' },
+    { state: 'shift',     label: '1970s stagflation',           desc: 'High inflation and high unemployment together broke the simple trade-off and shifted the short-run curve outward.' }
+  ],
+  disequilibriumInteractive: [
+    { state: 'base',     label: 'Market in equilibrium',     desc: 'At the market-clearing price, quantity demanded equals quantity supplied — no shortage and no surplus.' },
+    { state: 'shortage', label: 'Excess demand (shortage)',  desc: 'A price below equilibrium leaves quantity demanded above quantity supplied; the shortage bids the price up.' },
+    { state: 'surplus',  label: 'Excess supply (surplus)',   desc: 'A price above equilibrium leaves quantity supplied above quantity demanded; the surplus pushes the price down.' }
+  ],
+  adInteractive: [
+    { state: 'base',      label: 'The AD curve',     desc: 'Aggregate demand slopes down for three macro reasons: the real-balance effect, the interest-rate effect, and the trade (net-exports) effect.' },
+    { state: 'extension', label: 'Movement along AD', desc: 'A change in the general price level slides you along AD — a change in the quantity of real output demanded, not a change in AD itself.' },
+    { state: 'shift',     label: 'AD shifts',        desc: 'A change in any component of AD — consumption, investment, government spending or net exports — shifts the whole curve left or right.' }
+  ],
+  cpsSvg: [
+    { state: 'base',  label: 'Equilibrium',      desc: 'Demand and supply cross at the market price P* and quantity Q*.' },
+    { state: 'cs',    label: 'Consumer surplus', desc: 'The area below demand and above the price: what buyers were willing to pay minus what they actually paid.' },
+    { state: 'ps',    label: 'Producer surplus', desc: 'The area above supply and below the price: what sellers received minus their minimum acceptable price.' },
+    { state: 'total', label: 'Total surplus',    desc: 'Consumer plus producer surplus — the total welfare a competitive market generates at equilibrium.' },
+    { state: 'dwl',   label: 'Deadweight loss',  desc: 'Restrict output below Q* and the shaded triangle of mutually beneficial trades that no longer happen is lost.' }
+  ]
+};
+
 function articleRoutes() {
   const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
   /* :::section { eyebrow, color, icon } … ::: — one section per
@@ -533,12 +596,40 @@ function articleRoutes() {
       if (tokens[idx].nesting === 1) {
         const raw = tokens[idx].info.trim().slice('econos-diagram'.length).trim();
         const attrs = parseAttrs(raw);
-        econDiagramStack.push(attrs);
         const svg = (attrs.svgKey && ICONS_LIB[attrs.svgKey]) || '';
         const ariaLabel = attrs.label || attrs.svgKey || 'diagram';
+        const preset = attrs.interactive === 'true' ? INTERACTIVE_PRESETS[attrs.svgKey] : null;
+
+        /* Interactive: emit a self-contained stepper (stage + tabs +
+           panels) here, and have the close token render nothing. */
+        if (preset && svg) {
+          econDiagramStack.push({ interactive: true });
+          const first = preset[0].state;
+          const tabs = preset.map((p, i) =>
+            `<button type="button" class="ad-tab${i === 0 ? ' is-active' : ''}" data-state="${escapeAttr(p.state)}" aria-pressed="${i === 0 ? 'true' : 'false'}">`
+            + `<span class="ad-tab__num">${i + 1}</span>`
+            + `<span class="ad-tab__label">${escapeHtml(p.label)}</span>`
+            + `</button>`).join('');
+          const panels = preset.map((p, i) =>
+            `<div class="ad-panel${i === 0 ? ' is-active' : ''}" data-state="${escapeAttr(p.state)}">`
+            + `<div class="ad-panel__title">${escapeHtml(p.label)}</div>`
+            + `<div class="ad-panel__body">${md.renderInline(p.desc)}</div>`
+            + `</div>`).join('');
+          const captionHtml = attrs.caption ? md.renderInline(attrs.caption) : '';
+          const caption = captionHtml ? `<p class="article-interactive__caption">${captionHtml}</p>` : '';
+          return `<figure class="article-diagram article-interactive" aria-label="${escapeAttr(ariaLabel)}">\n`
+            + `  <div class="ad-interactive__diagram show-${escapeAttr(first)}" data-ad-state="${escapeAttr(first)}">${svg}</div>\n`
+            + `  <div class="ad-interactive__tabs" role="group" aria-label="Diagram steps" style="grid-template-columns:repeat(${preset.length}, minmax(0, 1fr));">${tabs}</div>\n`
+            + `  <div class="ad-interactive__panels">${panels}</div>\n`
+            + `  ${caption}</figure>\n`;
+        }
+
+        econDiagramStack.push({ attrs });
         return `<div class="diagram-block article-diagram" role="img" aria-label="${escapeAttr(ariaLabel)}">\n${svg}\n`;
       }
-      const attrs = econDiagramStack.pop() || {};
+      const top = econDiagramStack.pop() || {};
+      if (top.interactive) return '';
+      const attrs = top.attrs || {};
       const captionHtml = attrs.caption ? md.renderInline(attrs.caption) : '';
       const caption = captionHtml
         ? `<p class="diagram-block__caption">${captionHtml}</p>\n`
@@ -689,6 +780,7 @@ function articleRoutes() {
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
   <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="/articles/articles.css">
+  <link rel="stylesheet" href="/articles/diagram.css">
 </head>
 <body>
 ${renderTopnav()}
@@ -713,6 +805,7 @@ ${wantMore}
 ${footer}
   </main>
 ${renderSiteFooter()}
+  <script defer src="/articles/diagram.js"></script>
 </body>
 </html>
 `;
@@ -854,38 +947,43 @@ ${cta}
      out of the box. Question shape matches the per-topic learn-it.js
      quiz pool format so authors can lift questions wholesale. */
   const QC_DIFFICULTY = {
-    easy:   { label: 'Easy',         classMod: 'easy',   emoji: '🟢' },
-    medium: { label: 'Intermediate', classMod: 'medium', emoji: '🟡' },
-    hard:   { label: 'Hardest',      classMod: 'hard',   emoji: '🔴' }
+    easy:   { label: 'Easy',         classMod: 'easy'   },
+    medium: { label: 'Intermediate', classMod: 'medium' },
+    hard:   { label: 'Hardest',      classMod: 'hard'   }
   };
   function renderKnowledgeCheck(fm) {
     if (!Array.isArray(fm.questions) || fm.questions.length === 0) return '';
     const cards = fm.questions.slice(0, 3).map((q, i) => {
       const diff = QC_DIFFICULTY[q.difficulty] || QC_DIFFICULTY[['easy','medium','hard'][i] || 'medium'];
-      /* MCQ option list. `ans` is the 0-indexed correct answer. */
+      const hasOpts = Array.isArray(q.opts) && q.opts.length;
+      /* MCQ options sit in the always-visible summary so the reader can
+         attempt the question first. The correct-answer styling (tick +
+         green) is held back by CSS until the <details> is opened. `ans`
+         is the 0-indexed correct option. */
       let optsBlock = '';
-      if (Array.isArray(q.opts) && q.opts.length) {
+      if (hasOpts) {
         const items = q.opts.map((opt, oi) => {
           const correct = oi === q.ans;
           const mark = correct ? '<span class="article-qc__mark" aria-hidden="true">✓</span>' : '';
-          return `<li class="article-qc__opt${correct ? ' is-correct' : ''}">${mark}${escapeHtml(String(opt))}</li>`;
+          return `<li class="article-qc__opt${correct ? ' is-correct' : ''}">${mark}<span class="article-qc__opt-text">${escapeHtml(String(opt))}</span></li>`;
         }).join('');
         optsBlock = `<ul class="article-qc__opts">${items}</ul>`;
       }
-      const ansLine = (!q.opts && q.ans !== undefined)
+      const ansLine = (!hasOpts && q.ans !== undefined)
         ? `<p class="article-qc__answer"><strong>Answer:</strong> ${escapeHtml(String(q.ans))}</p>`
         : '';
       const exp = q.exp
         ? `<p class="article-qc__exp">${md.renderInline(String(q.exp))}</p>`
         : '';
+      const revealLabel = hasOpts ? 'Tap to reveal the answer' : 'Tap to reveal the answer';
       return `        <details class="article-qc__card article-qc__card--${diff.classMod}">
           <summary>
-            <span class="article-qc__chip">${diff.emoji} ${diff.label}</span>
+            <span class="article-qc__chip">${diff.label}</span>
             <span class="article-qc__q">${escapeHtml(String(q.q || ''))}</span>
-            <span class="article-qc__reveal" aria-hidden="true">Tap to reveal answer</span>
+            ${optsBlock}
+            <span class="article-qc__reveal" aria-hidden="true">${revealLabel}</span>
           </summary>
           <div class="article-qc__body">
-            ${optsBlock}
             ${ansLine}
             ${exp}
           </div>
@@ -1034,6 +1132,13 @@ ${pills}
     }
     if (existsSync(join(articlesSrc, 'articles.css'))) {
       writeFileSync(join(articlesDist, 'articles.css'), readFileSync(join(articlesSrc, 'articles.css'), 'utf8'));
+    }
+    /* Interactive-diagram support: the ported layer state-machine CSS
+       and the tab controller. Verbatim copies, same as articles.css. */
+    for (const asset of ['diagram.css', 'diagram.js']) {
+      if (existsSync(join(articlesSrc, asset))) {
+        writeFileSync(join(articlesDist, asset), readFileSync(join(articlesSrc, asset), 'utf8'));
+      }
     }
 
     /* Hand-rolled articles — copy every articles/<slug>/index.html

@@ -16315,135 +16315,134 @@ window.ECONOS_ICONS = {
      Government, Households, Firms, Financial Markets, Overseas
      Sector with all six injections (I, G, X) and withdrawals
      (S, T, M) plus the inner factor-payment + consumption loop.
+     Layout matched to the design mockup: clean spacing, no
+     overlap between labels/arrows, no equilibrium banner inside
+     the SVG (that line lives in `bottomTip` instead).
      ============================================================ */
   nationalIncomeOpenEconomy: `
-    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" font-family="Inter,system-ui,sans-serif" style="display:block;width:100%;height:auto;">
+    <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" font-family="Inter,system-ui,sans-serif" style="display:block;width:100%;height:auto;">
       <defs>
-        <marker id="nio-blue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#2563EB"/></marker>
-        <marker id="nio-amber" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#D97706"/></marker>
-        <marker id="nio-green" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#10B981"/></marker>
-        <marker id="nio-purple" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#8B5CF6"/></marker>
+        <marker id="nio-blue"   markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L0,9 L9,4.5 z" fill="#2563EB"/></marker>
+        <marker id="nio-amber"  markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L0,9 L9,4.5 z" fill="#F59E0B"/></marker>
+        <marker id="nio-green"  markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L0,9 L9,4.5 z" fill="#10B981"/></marker>
+        <marker id="nio-purple" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L0,9 L9,4.5 z" fill="#8B5CF6"/></marker>
         <filter id="nio-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/></filter>
       </defs>
 
-      <!-- Financial Markets (top centre, purple) -->
+      <!-- ===== Financial Markets (top centre, purple) ===== -->
       <g filter="url(#nio-shadow)">
-        <rect x="248" y="20" width="224" height="64" rx="12" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+        <rect x="298" y="14" width="232" height="62" rx="11" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.4"/>
       </g>
-      <g transform="translate(284,34)" fill="#7C3AED">
-        <rect x="0" y="14" width="34" height="16" rx="1"/>
-        <polygon points="0,14 17,4 34,14"/>
-        <rect x="4" y="20" width="3" height="8" fill="#fff"/>
-        <rect x="11" y="20" width="3" height="8" fill="#fff"/>
-        <rect x="18" y="20" width="3" height="8" fill="#fff"/>
-        <rect x="25" y="20" width="3" height="8" fill="#fff"/>
+      <g transform="translate(322,24)" fill="#7C3AED">
+        <rect x="0" y="20" width="32" height="5" rx="1"/>
+        <rect x="3" y="11"  width="26" height="3"/>
+        <polygon points="0,11 16,2 32,11"/>
+        <rect x="5"  y="13" width="3" height="8"/>
+        <rect x="12" y="13" width="3" height="8"/>
+        <rect x="19" y="13" width="3" height="8"/>
+        <rect x="26" y="13" width="3" height="8"/>
       </g>
-      <text x="360" y="58" text-anchor="middle" font-size="14" font-weight="800" fill="#5B21B6">Financial Markets</text>
+      <text x="364" y="50" font-size="17" font-weight="800" fill="#5B21B6">Financial Markets</text>
 
-      <!-- Government (left, amber) -->
+      <!-- ===== Government (far left) ===== -->
       <g filter="url(#nio-shadow)">
-        <rect x="22" y="222" width="118" height="100" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+        <rect x="14" y="155" width="118" height="100" rx="11" fill="#FED7AA" stroke="#F59E0B" stroke-width="1.4"/>
       </g>
-      <g transform="translate(56,238)" fill="#D97706">
-        <rect x="0" y="20" width="50" height="14" rx="1"/>
-        <polygon points="0,20 25,8 50,20"/>
-        <rect x="6" y="24" width="3" height="8" fill="#fff"/>
-        <rect x="15" y="24" width="3" height="8" fill="#fff"/>
-        <rect x="24" y="24" width="3" height="8" fill="#fff"/>
-        <rect x="33" y="24" width="3" height="8" fill="#fff"/>
-        <rect x="42" y="24" width="3" height="8" fill="#fff"/>
+      <g transform="translate(47,175)" fill="#D97706">
+        <rect x="0" y="20" width="52" height="6" rx="1"/>
+        <rect x="3" y="11" width="46" height="3"/>
+        <polygon points="0,11 26,1 52,11"/>
+        <rect x="4"  y="13" width="3.5" height="8"/>
+        <rect x="13" y="13" width="3.5" height="8"/>
+        <rect x="22" y="13" width="3.5" height="8"/>
+        <rect x="31" y="13" width="3.5" height="8"/>
+        <rect x="40" y="13" width="3.5" height="8"/>
       </g>
-      <text x="81" y="298" text-anchor="middle" font-size="13" font-weight="800" fill="#92400E">Government</text>
+      <text x="73" y="236" text-anchor="middle" font-size="14" font-weight="800" fill="#92400E">Government</text>
 
-      <!-- Households (centre-left, blue) -->
+      <!-- ===== Households (centre-left, blue) ===== -->
       <g filter="url(#nio-shadow)">
-        <rect x="200" y="200" width="160" height="144" rx="14" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+        <rect x="170" y="128" width="166" height="148" rx="13" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.4"/>
       </g>
-      <g transform="translate(252,222)" fill="#2563EB">
-        <circle cx="13" cy="6" r="6"/>
-        <path d="M0 26 a13 13 0 0 1 26 0 z"/>
-        <circle cx="30" cy="9" r="5"/>
-        <path d="M19 26 a11 11 0 0 1 22 0 z"/>
+      <g transform="translate(227,148)" fill="#2563EB">
+        <circle cx="11" cy="8" r="7"/>
+        <path d="M-2 30 a12 12 0 0 1 24 0 z"/>
+        <circle cx="27" cy="11" r="5.5"/>
+        <path d="M17 30 a10 10 0 0 1 20 0 z"/>
       </g>
-      <text x="280" y="290" text-anchor="middle" font-size="14" font-weight="800" fill="#1E40AF">Households</text>
-      <text x="280" y="310" text-anchor="middle" font-size="11" fill="#1E3A8A">Supply factors</text>
-      <text x="280" y="325" text-anchor="middle" font-size="11" fill="#1E3A8A">of production</text>
+      <text x="253" y="218" text-anchor="middle" font-size="18" font-weight="800" fill="#1E40AF">Households</text>
+      <text x="253" y="237" text-anchor="middle" font-size="12" fill="#1E3A8A">Supply factors</text>
+      <text x="253" y="253" text-anchor="middle" font-size="12" fill="#1E3A8A">of production</text>
 
-      <!-- Firms (centre-right, amber/orange) -->
+      <!-- ===== Firms (centre-right, orange) ===== -->
       <g filter="url(#nio-shadow)">
-        <rect x="400" y="200" width="160" height="144" rx="14" fill="#FED7AA" stroke="#EA580C" stroke-width="1.5"/>
+        <rect x="464" y="128" width="166" height="148" rx="13" fill="#FED7AA" stroke="#EA580C" stroke-width="1.4"/>
       </g>
-      <g transform="translate(456,222)" fill="#EA580C">
-        <rect x="0" y="10" width="48" height="20" rx="1"/>
-        <polygon points="0,10 12,0 24,10"/>
-        <polygon points="24,10 36,0 48,10"/>
-        <rect x="6" y="16" width="7" height="9" fill="#FED7AA"/>
-        <rect x="19" y="16" width="7" height="9" fill="#FED7AA"/>
-        <rect x="32" y="16" width="7" height="9" fill="#FED7AA"/>
+      <g transform="translate(524,148)" fill="#EA580C">
+        <rect x="0" y="14" width="44" height="20" rx="1"/>
+        <polygon points="0,14 11,4 22,14"/>
+        <polygon points="22,14 33,4 44,14"/>
+        <rect x="4"  y="18" width="6" height="10" fill="#FED7AA"/>
+        <rect x="19" y="18" width="6" height="10" fill="#FED7AA"/>
+        <rect x="34" y="18" width="6" height="10" fill="#FED7AA"/>
       </g>
-      <text x="480" y="290" text-anchor="middle" font-size="14" font-weight="800" fill="#9A3412">Firms</text>
-      <text x="480" y="310" text-anchor="middle" font-size="11" fill="#7C2D12">Demand factors</text>
-      <text x="480" y="325" text-anchor="middle" font-size="11" fill="#7C2D12">of production</text>
+      <text x="547" y="218" text-anchor="middle" font-size="18" font-weight="800" fill="#9A3412">Firms</text>
+      <text x="547" y="237" text-anchor="middle" font-size="12" fill="#7C2D12">Demand factors</text>
+      <text x="547" y="253" text-anchor="middle" font-size="12" fill="#7C2D12">of production</text>
 
-      <!-- Overseas Sector (right, green) -->
+      <!-- ===== Overseas Sector (far right) ===== -->
       <g filter="url(#nio-shadow)">
-        <rect x="600" y="222" width="100" height="100" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5"/>
+        <rect x="668" y="155" width="118" height="100" rx="11" fill="#D1FAE5" stroke="#10B981" stroke-width="1.4"/>
       </g>
-      <g transform="translate(625,234)" fill="#059669">
-        <circle cx="25" cy="22" r="22"/>
-        <ellipse cx="25" cy="22" rx="22" ry="9" fill="none" stroke="#fff" stroke-width="1.8"/>
-        <line x1="3" y1="22" x2="47" y2="22" stroke="#fff" stroke-width="1.8"/>
-        <ellipse cx="25" cy="22" rx="10" ry="22" fill="none" stroke="#fff" stroke-width="1.8"/>
+      <g transform="translate(703,168)" fill="#059669">
+        <circle cx="24" cy="24" r="24"/>
+        <ellipse cx="24" cy="24" rx="24" ry="9" fill="none" stroke="#fff" stroke-width="1.8"/>
+        <line x1="0" y1="24" x2="48" y2="24" stroke="#fff" stroke-width="1.8"/>
+        <ellipse cx="24" cy="24" rx="9" ry="24" fill="none" stroke="#fff" stroke-width="1.8"/>
       </g>
-      <text x="650" y="297" text-anchor="middle" font-size="12" font-weight="800" fill="#065F46">Overseas</text>
-      <text x="650" y="313" text-anchor="middle" font-size="12" font-weight="800" fill="#065F46">Sector</text>
+      <text x="727" y="230" text-anchor="middle" font-size="13" font-weight="800" fill="#065F46">Overseas</text>
+      <text x="727" y="246" text-anchor="middle" font-size="13" font-weight="800" fill="#065F46">Sector</text>
 
-      <!-- ── Inner loop: factor payments (top) + consumer spending (bottom) ── -->
-      <!-- Factor payments: Firms → Households (top arrow) -->
-      <path d="M 408 232 C 380 198, 380 198, 352 232" stroke="#2563EB" stroke-width="2" fill="none" marker-end="url(#nio-blue)"/>
-      <text x="380" y="190" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">Factor payments</text>
-      <text x="380" y="204" text-anchor="middle" font-size="9.5" fill="#1E3A8A">(wages, rent, interest, profit)</text>
+      <!-- ===== Saving (S): Households top-left → FM bottom-left (quarter-arc up, then right) ===== -->
+      <path d="M 210 128 C 210 100 254 76 312 76" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#nio-purple)"/>
+      <text x="160" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">Saving (S)</text>
+      <text x="160" y="120" text-anchor="middle" font-size="11" fill="#6D28D9">(leaves)</text>
 
-      <!-- Consumption expenditure: Households → Firms (bottom arrow) -->
-      <path d="M 352 332 C 380 366, 380 366, 408 332" stroke="#EA580C" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
-      <text x="380" y="386" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">Consumption expenditure (C)</text>
-      <text x="380" y="400" text-anchor="middle" font-size="9.5" fill="#7C2D12">on goods and services</text>
+      <!-- ===== Investment (I): FM bottom-right → Firms top-right (quarter-arc right, then down) ===== -->
+      <path d="M 516 76 C 574 76 590 100 590 128" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#nio-purple)"/>
+      <text x="650" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#5B21B6">Investment (I)</text>
+      <text x="650" y="120" text-anchor="middle" font-size="11" fill="#6D28D9">(returns)</text>
 
-      <!-- ── Withdrawals (out, dashed-style ends) and Injections (in) ── -->
-      <!-- Saving (S): Households → Financial Markets (up) -->
-      <path d="M 250 200 C 250 140, 260 100, 296 84" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#nio-purple)"/>
-      <text x="200" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">Saving (S)</text>
-      <text x="200" y="156" text-anchor="middle" font-size="10" fill="#6D28D9">(leaves)</text>
+      <!-- ===== Factor payments: Firms top-left → Households top-right (shallow arc UP, stays clear of FM box) ===== -->
+      <path d="M 504 132 Q 418 92 332 132" stroke="#2563EB" stroke-width="2" fill="none" marker-end="url(#nio-blue)"/>
+      <text x="418" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">Factor payments</text>
+      <text x="418" y="115" text-anchor="middle" font-size="11" fill="#1E3A8A">(wages, rent, interest, profit)</text>
 
-      <!-- Investment (I): Financial Markets → Firms (down) -->
-      <path d="M 432 84 C 470 100, 480 140, 480 200" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#nio-purple)"/>
-      <text x="555" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">Investment (I)</text>
-      <text x="555" y="156" text-anchor="middle" font-size="10" fill="#6D28D9">(returns)</text>
+      <!-- ===== Consumption expenditure (C): HH bottom-right → Firms bottom-left (shallow arc DOWN, sits above G curve) ===== -->
+      <path d="M 332 276 Q 400 312 460 276" stroke="#2563EB" stroke-width="2" fill="none" marker-end="url(#nio-blue)"/>
+      <text x="400" y="346" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">Consumption expenditure (C)</text>
+      <text x="400" y="361" text-anchor="middle" font-size="11" fill="#1E3A8A">on goods and services</text>
 
-      <!-- Taxation (T): Households → Government (left) -->
-      <path d="M 200 252 L 144 252" stroke="#D97706" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
-      <text x="172" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">Taxation (T)</text>
-      <text x="172" y="270" text-anchor="middle" font-size="10" fill="#B45309">(leaves)</text>
+      <!-- ===== Taxation (T): Households left → Government right ===== -->
+      <path d="M 170 180 L 134 180" stroke="#F59E0B" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
+      <text x="151" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">Taxation (T)</text>
+      <text x="151" y="194" text-anchor="middle" font-size="11" fill="#B45309">(leaves)</text>
 
-      <!-- Government spending (G): Government → Firms (right via curve below households) -->
-      <path d="M 140 300 C 200 360, 320 380, 400 326" stroke="#D97706" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
-      <text x="232" y="370" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">Government</text>
-      <text x="232" y="384" text-anchor="middle" font-size="10.5" fill="#92400E">spending (G)</text>
-      <text x="232" y="398" text-anchor="middle" font-size="10" fill="#B45309">(returns)</text>
+      <!-- ===== Government spending (G): Govt bottom → curve under HH → Firms bottom-left ===== -->
+      <path d="M 96 255 C 96 350 280 364 480 280" stroke="#F59E0B" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
+      <text x="208" y="300" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">Government</text>
+      <text x="208" y="315" text-anchor="middle" font-size="12" fill="#92400E">spending (G)</text>
+      <text x="208" y="330" text-anchor="middle" font-size="11" fill="#B45309">(returns)</text>
 
-      <!-- Imports (M): Firms → Overseas (right) -->
-      <path d="M 560 240 L 596 240" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#nio-green)"/>
-      <text x="578" y="231" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">Imports (M)</text>
-      <text x="578" y="258" text-anchor="middle" font-size="10" fill="#047857">(leave)</text>
+      <!-- ===== Imports (M): Firms right → Overseas left ===== -->
+      <text x="649" y="172" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46">Imports (M)</text>
+      <text x="649" y="185" text-anchor="middle" font-size="11" fill="#047857">(leave)</text>
+      <path d="M 630 200 L 666 200" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#nio-green)"/>
 
-      <!-- Exports (X): Overseas → Firms (left, lower) -->
-      <path d="M 596 300 L 560 300" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#nio-green)"/>
-      <text x="578" y="291" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">Exports (X)</text>
-      <text x="578" y="318" text-anchor="middle" font-size="10" fill="#047857">(enter)</text>
-
-      <!-- bottom equilibrium banner -->
-      <rect x="120" y="426" width="480" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
-      <text x="360" y="443" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">At equilibrium: J = W &#160;&#160;·&#160;&#160; I + G + X = S + T + M</text>
+      <!-- ===== Exports (X): Overseas left → Firms right ===== -->
+      <path d="M 668 226 L 632 226" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#nio-green)"/>
+      <text x="649" y="244" text-anchor="middle" font-size="13" font-weight="700" fill="#065F46">Exports (X)</text>
+      <text x="649" y="257" text-anchor="middle" font-size="11" fill="#047857">(enter)</text>
     </svg>
   `,
 

@@ -705,6 +705,28 @@
         topicMap[registry[i].id] = registry[i];
       }
 
+      /* ────────── Active exam board ──────────
+         Read once at render time. The board picker reloads the
+         page on change so a single read is enough — no need to
+         subscribe to localStorage changes here. */
+      var currentBoard =
+        (window.TopicLoader && TopicLoader.getBoard && TopicLoader.getBoard()) ||
+        'edexcel_a';
+      var currentBoardName =
+        (window.TopicLoader && TopicLoader.getBoardName && TopicLoader.getBoardName()) ||
+        ((window.ECONOS_BOARDS && ECONOS_BOARDS[currentBoard] && ECONOS_BOARDS[currentBoard].name) ||
+         'Edexcel A');
+
+      /* Resolve the per-board entry for a topic. Returns the
+         { spec, included } block for the active board, or a
+         permissive default when the topic predates the boards map. */
+      function boardEntry(topic) {
+        if (topic && topic.boards && topic.boards[currentBoard]) {
+          return topic.boards[currentBoard];
+        }
+        return { spec: null, included: true };
+      }
+
       /* ────────── URL helpers ────────── */
       /* Always route to Learn It from the home menu – the more
          sophisticated stage-picker will return once the menu UX
@@ -734,9 +756,14 @@
       function topicCard(entry, topic) {
         var href = bestHref(topic);
         var color = topic.color || '#0B1426';
+        /* Prefer the per-board spec when one exists; fall back to
+           the entry's Edexcel A baseline `num` so non-Edexcel users
+           on a topic that hasn't yet been mapped still see something. */
+        var board = boardEntry(topic);
+        var chipNum = board.spec || entry.num;
         return '<a class="topic" href="' + href + '" style="--topic-color:' + color + '">'
              +   '<div class="topic__head">'
-             +     '<div class="topic__num">' + entry.num + '</div>'
+             +     '<div class="topic__num">' + chipNum + '</div>'
              +     '<svg class="topic__arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>'
              +   '</div>'
              +   '<div class="topic__title">' + topic.name + '</div>'
@@ -746,6 +773,18 @@
       }
 
       function renderTheme(theme) {
+        /* Filter out topics excluded for the active board. The default
+           is `included: true` so a topic with no boards entry still
+           shows; only an explicit `included: false` hides it. */
+        var visibleTopics = [];
+        for (var j = 0; j < theme.topics.length; j++) {
+          var e = theme.topics[j];
+          var t = topicMap[e.id];
+          if (!t) continue;
+          if (boardEntry(t).included === false) continue;
+          visibleTopics.push({ entry: e, topic: t });
+        }
+        if (!visibleTopics.length) return '';
         var html = '<div class="theme-section">'
                  + '<div class="theme-header">'
                  +   '<div>'
@@ -753,14 +792,11 @@
                  +     '<div class="theme-num">' + theme.num + '</div>'
                  +   '</div>'
                  +   '<div class="theme-name">' + theme.name + '</div>'
-                 +   '<div class="theme-count">' + theme.topics.length + ' topics</div>'
+                 +   '<div class="theme-count">' + visibleTopics.length + ' topics</div>'
                  + '</div>'
                  + '<div class="topics">';
-        for (var i = 0; i < theme.topics.length; i++) {
-          var entry = theme.topics[i];
-          var topic = topicMap[entry.id];
-          if (!topic) continue;
-          html += topicCard(entry, topic);
+        for (var i = 0; i < visibleTopics.length; i++) {
+          html += topicCard(visibleTopics[i].entry, visibleTopics[i].topic);
         }
         html += '</div></div>';
         return html;
@@ -771,13 +807,16 @@
       var total = 0;
       for (var t = 0; t < THEMES.length; t++) {
         html += renderTheme(THEMES[t]);
-        total += THEMES[t].topics.length;
+        for (var k = 0; k < THEMES[t].topics.length; k++) {
+          var th = topicMap[THEMES[t].topics[k].id];
+          if (th && boardEntry(th).included !== false) total++;
+        }
       }
       root.innerHTML = html;
 
-      /* Dynamic footer count */
+      /* Dynamic footer count — board-aware. */
       document.getElementById('footer-count').textContent =
-        total + ' topics · ' + THEMES.length + ' themes · Edexcel A spec';
+        total + ' topics · ' + THEMES.length + ' themes · ' + currentBoardName + ' spec';
     });
   </script>
 </body>

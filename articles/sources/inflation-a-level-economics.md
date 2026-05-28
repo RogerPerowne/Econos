@@ -3,7 +3,11 @@ title: "What is inflation? A-level economics explained"
 description: "Inflation explained for A-level economics. The three causes, the CPI vs RPI distinction, the BoE 2% target, and why the 2022-23 UK inflation spike was different."
 lede: "The three causes (demand-pull, cost-push, monetary), how to spot which is which, and why the 2022-23 spike was different from anything the Bank had handled before."
 theme: "Macroeconomics"
-spec: "Edexcel A · Theme 2.2.2"
+spec:
+  edexcel_a: "2.1.2"
+  edexcel_b: "2.5.3"
+  aqa: "3.2.3.3"
+  ocr: "2.4"
 keywords: [inflation, deflation, disinflation, CPI, RPI, demand-pull, cost-push, monetary inflation, Bank of England, 2% target]
 read_minutes: 12
 status: live

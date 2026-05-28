@@ -6,6 +6,55 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.3.0 — 2026-05-28
+
+### Multi-exam-board — content layer + per-(topic, board) spec data
+
+The board picker shipped in 0.1.x set up the framework; this release
+fills it in with real per-board data, wires the home page to filter
+and display it, and migrates the article footers to ship every
+board's spec point.
+
+- **`js/topics.js` — `boards` map on every topic.** Each of the 78
+  topics now carries a `{ edexcel_a, edexcel_b, aqa, ocr }` block
+  with the relevant sub-section number for each board (sourced from
+  the four `docs/<board>-spec.md` reference files added in 0.2.0)
+  and an `included: true` flag. Topics whose syllabus mapping
+  doesn't exist for a given board carry `spec: null` and continue
+  to appear in the grid without a board-specific chip.
+- **Home page — board-aware topic grid (`index.html`).** The
+  topic-card chip now shows the per-board spec point (e.g. AQA
+  users see "3.2.3.3" on the inflation card; OCR sees "2.4"). The
+  footer count updates to "N topics · 4 themes · <board> spec".
+  Topics with `included: false` for the active board are hidden;
+  no topic excludes any board today but the filter is in place.
+- **Article frontmatter — per-board `spec:` object.** The five live
+  articles (inflation, monopoly, aggregate demand, aggregate
+  supply, multiplier) migrated from `spec: "Edexcel A · 3.4.5"` to
+  a map keyed by board id. The `article-routes` plugin renders
+  every populated entry in the meta line + footer ("Mapped to
+  Edexcel A 3.4.5 · Edexcel B 4.1.1 · AQA 4.1.5.6 · OCR 4.2") so
+  search engines see every variant and any board's reader finds a
+  spec point they recognise. Legacy string-shaped `spec:` still
+  works for hand-rolled articles.
+- **Per-board content override path — `js/data/<board>/<topic>/`.**
+  `TopicLoader.loadData` now consults the
+  `window.ECONOS_BOARD_OVERRIDES` opt-in set (declared in
+  `js/config/boards.js`) and prefers the board-specific data path
+  when a `(board, topic)` pair is listed. The set is empty today —
+  every board reads the Edexcel A baseline at `js/data/<topic>/`
+  for free, no file duplication. When AQA / OCR / Edexcel B
+  publishes a variant of a topic, drop the data files into
+  `js/data/<board>/<topic>/` and add the entry to the overrides
+  set; the loader picks them up. Opt-in (rather than runtime
+  404-probing) means non-Edexcel-A users don't pay a 404 round-trip
+  on every page load.
+- **SW cache bumped** `econos-v61` → `econos-v62` so the homepage
+  + `app.js` + topics registry land freshly on all clients.
+- **Docs.** `CLAUDE.md` "Multi-exam-board" section now documents
+  the `boards` map schema on topics, the per-article frontmatter
+  shapes, and the override directory convention.
+
 ## 0.2.0 — 2026-05-28
 
 ### National Income (Theme 2 · 4.1–4.3)

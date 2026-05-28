@@ -16328,10 +16328,12 @@ window.ECONOS_ICONS = {
      built up stage by stage.
      ============================================================ */
   nationalIncomeOpenEconomy: `
-    <div style="position:relative;width:100%;aspect-ratio:1088/403;container-type:inline-size;background:radial-gradient(circle at 50% 45%, rgba(236,242,255,0.68), transparent 56%), linear-gradient(180deg, #fff 0%, #FBFCFE 100%);border-radius:12px;overflow:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:#111827;">
+    <div style="position:relative;width:100%;aspect-ratio:1088/520;container-type:inline-size;background:radial-gradient(circle at 50% 45%, rgba(236,242,255,0.68), transparent 56%), linear-gradient(180deg, #fff 0%, #FBFCFE 100%);border-radius:12px;overflow:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:#111827;">
 
-      <!-- Arrow layer (SVG with viewBox matches the 1088x403 stage) -->
-      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;" viewBox="0 0 1088 403" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <!-- Arrow overlay SVG. Stage is 1088 x 520; original ChatGPT
+           1088 x 403 content is shifted down by +60 to give the top
+           labels breathing room above. -->
+      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;" viewBox="0 0 1088 520" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
           <marker id="nio-arrow-blue"   markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#2F66D0"/></marker>
           <marker id="nio-arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#7C3AED"/></marker>
@@ -16339,68 +16341,66 @@ window.ECONOS_ICONS = {
           <marker id="nio-arrow-amber"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#F59E2E"/></marker>
         </defs>
 
-        <!-- BASE arrows (always visible): Factor payments + Consumption -->
-        <path d="M642 128 H380 C363 128 355 138 355 152 V178" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
-        <path d="M355 338 V348 C355 369 371 379 393 379 H697 C714 379 721 369 721 350 V338" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
+        <!-- BASE arrows: Factor payments + Consumption (Y shifted +60) -->
+        <path d="M642 188 H380 C363 188 355 198 355 212 V238" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
+        <path d="M355 398 V408 C355 429 371 439 393 439 H697 C714 439 721 429 721 410 V398" stroke="#2F66D0" stroke-width="2" marker-end="url(#nio-arrow-blue)" vector-effect="non-scaling-stroke"/>
 
-        <!-- LAYER 1 arrows: Saving (S) + Investment (I) -->
+        <!-- LAYER 1 arrows: Saving + Investment (Y shifted +60) -->
         <g class="idl-1" style="display:none">
-          <path d="M323 178 V62 C323 52 333 46 346 46 H407" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
-          <path d="M679 46 H719 C733 46 739 56 739 70 V178" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
+          <path d="M323 238 V122 C323 112 333 106 346 106 H407" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
+          <path d="M679 106 H719 C733 106 739 116 739 130 V238" stroke="#7C3AED" stroke-width="2" marker-end="url(#nio-arrow-purple)" vector-effect="non-scaling-stroke"/>
         </g>
 
-        <!-- LAYER 2 arrows: Taxation (T) HH→Govt + Government spending (G) Govt→HH -->
-        <!-- Directions FIXED from the source HTML which had them reversed -->
+        <!-- LAYER 2 arrows: Tax + G-spend (Y +60; directions FIXED from source) -->
         <g class="idl-2" style="display:none">
-          <path d="M282 214 H154" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
-          <path d="M154 269 H285" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
+          <path d="M282 274 H154" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
+          <path d="M154 329 H285" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
         </g>
 
-        <!-- LAYER 3 arrows: Imports (M) + Exports (X) -->
+        <!-- LAYER 3 arrows: Imports + Exports (Y shifted +60) -->
         <g class="idl-3" style="display:none">
-          <path d="M791 214 H932" stroke="#16975F" stroke-width="2" marker-end="url(#nio-arrow-green)" vector-effect="non-scaling-stroke"/>
-          <path d="M935 274 H793" stroke="#16975F" stroke-width="2" marker-end="url(#nio-arrow-green)" vector-effect="non-scaling-stroke"/>
+          <path d="M791 274 H932" stroke="#16975F" stroke-width="2" marker-end="url(#nio-arrow-green)" vector-effect="non-scaling-stroke"/>
+          <path d="M935 334 H793" stroke="#16975F" stroke-width="2" marker-end="url(#nio-arrow-green)" vector-effect="non-scaling-stroke"/>
         </g>
       </svg>
 
       <!-- ====== BASE nodes (always visible) ====== -->
 
-      <!-- Households -->
-      <section style="position:absolute;z-index:2;left:26.195%;top:44.169%;width:13.603%;height:39.702%;border-radius:12px;border:1.5px solid #9CBDF5;background:rgba(234,242,255,0.88);color:#2F66D0;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:6px;">
+      <!-- Households (y=178+60=238 → 45.77%; height 160/520=30.77%) -->
+      <section style="position:absolute;z-index:2;left:26.195%;top:45.769%;width:13.603%;height:30.769%;border-radius:12px;border:1.5px solid #9CBDF5;background:rgba(234,242,255,0.88);color:#2F66D0;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
         <div>
-          <svg viewBox="0 0 64 64" style="width:clamp(28px,4cqw,42px);height:clamp(28px,4cqw,42px);margin:0 auto 5px;display:block;">
+          <svg viewBox="0 0 64 64" style="width:clamp(24px,3.4cqw,38px);height:clamp(24px,3.4cqw,38px);margin:0 auto 4px;display:block;">
             <circle cx="22" cy="21" r="8" fill="currentColor" opacity=".45"/>
             <circle cx="42" cy="21" r="8" fill="currentColor" opacity=".82"/>
             <path d="M8 50c1.4-12 9-18 21-18 3.5 0 6.6.6 9.2 1.8C31.6 36.3 28 41.7 28 50H8Z" fill="currentColor" opacity=".45"/>
             <path d="M30 50c1.2-11.7 8-18 18-18s15.7 6.3 17 18H30Z" fill="currentColor" opacity=".82"/>
           </svg>
-          <div style="font-size:clamp(13px,1.65cqw,18px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Households</div>
-          <span style="display:block;color:#374151;font-size:clamp(11px,1.38cqw,15px);font-weight:500;margin-top:6px;line-height:1.33;">Supply factors<br/>of production</span>
+          <div style="font-size:clamp(11px,1.45cqw,17px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Households</div>
+          <span style="display:block;color:#374151;font-size:clamp(9px,1.15cqw,14px);font-weight:500;margin-top:4px;line-height:1.3;">Supply factors<br/>of production</span>
         </div>
       </section>
 
       <!-- Firms -->
-      <section style="position:absolute;z-index:2;left:59.007%;top:44.169%;width:13.603%;height:39.702%;border-radius:12px;border:1.5px solid #9CBDF5;background:rgba(234,242,255,0.88);color:#2F66D0;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:6px;">
+      <section style="position:absolute;z-index:2;left:59.007%;top:45.769%;width:13.603%;height:30.769%;border-radius:12px;border:1.5px solid #9CBDF5;background:rgba(234,242,255,0.88);color:#2F66D0;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
         <div>
-          <svg viewBox="0 0 64 64" style="width:clamp(28px,4cqw,42px);height:clamp(28px,4cqw,42px);margin:0 auto 5px;display:block;">
+          <svg viewBox="0 0 64 64" style="width:clamp(24px,3.4cqw,38px);height:clamp(24px,3.4cqw,38px);margin:0 auto 4px;display:block;">
             <path d="M10 54V26l12 7V22l13 8V18l19 12v24H10Z" fill="currentColor" opacity=".9"/>
             <path d="M18 42h6v12h-6V42Zm13 0h6v12h-6V42Zm13 0h6v12h-6V42Z" fill="#fff" opacity=".42"/>
           </svg>
-          <div style="font-size:clamp(13px,1.65cqw,18px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Firms</div>
-          <span style="display:block;color:#374151;font-size:clamp(11px,1.38cqw,15px);font-weight:500;margin-top:6px;line-height:1.33;">Demand factors<br/>of production</span>
+          <div style="font-size:clamp(11px,1.45cqw,17px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Firms</div>
+          <span style="display:block;color:#374151;font-size:clamp(9px,1.15cqw,14px);font-weight:500;margin-top:4px;line-height:1.3;">Demand factors<br/>of production</span>
         </div>
       </section>
 
-      <!-- BASE labels: Factor payments + Consumption -->
-      <div style="position:absolute;z-index:3;left:41.912%;top:29.032%;font-size:clamp(12px,1.47cqw,16px);line-height:1.35;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(10px,1.19cqw,13px);margin-top:4px;">(wages, rent, interest, profit)</span></div>
-      <div style="position:absolute;z-index:3;left:40.533%;top:88.834%;font-size:clamp(12px,1.47cqw,16px);line-height:1.35;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;">Consumption expenditure (C)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(10px,1.19cqw,13px);margin-top:4px;">on goods and services</span></div>
+      <!-- BASE labels: Factor payments (y=117+60=177 → 34.04%) + Consumption (y=358+60=418 → 80.38%) -->
+      <div style="position:absolute;z-index:3;left:50%;top:34.038%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Factor payments<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">(wages, rent, interest, profit)</span></div>
+      <div style="position:absolute;z-index:3;left:50%;top:80.385%;transform:translateX(-50%);font-size:clamp(10px,1.3cqw,15px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Consumption expenditure (C)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(9px,1.05cqw,12px);margin-top:3px;">on goods and services</span></div>
 
-      <!-- ====== LAYER 1: Financial Markets ====== -->
+      <!-- ====== LAYER 1: Financial Markets (y=7+60=67 → 12.88%; h=73/520=14.04%) ====== -->
       <div class="idl-1" style="display:none">
-        <!-- FM node -->
-        <section style="position:absolute;z-index:2;left:37.776%;top:1.737%;width:24.632%;height:18.114%;border-radius:12px;border:1.5px solid #CBB8FA;background:rgba(245,240,255,0.84);color:#7C3AED;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);">
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(13px,1.65cqw,18px);font-weight:700;letter-spacing:.01em;">
-            <svg viewBox="0 0 64 64" style="width:clamp(22px,3cqw,33px);height:clamp(22px,3cqw,33px);display:block;color:#7C3AED;">
+        <section style="position:absolute;z-index:2;left:37.776%;top:12.885%;width:24.632%;height:14.038%;border-radius:12px;border:1.5px solid #CBB8FA;background:rgba(245,240,255,0.84);color:#7C3AED;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);">
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(11px,1.45cqw,17px);font-weight:700;letter-spacing:.01em;">
+            <svg viewBox="0 0 64 64" style="width:clamp(18px,2.5cqw,28px);height:clamp(18px,2.5cqw,28px);display:block;color:#7C3AED;">
               <path d="M32 9 10 20v5h44v-5L32 9Z" fill="currentColor" opacity=".9"/>
               <path d="M16 29h7v20h-7V29Zm13 0h7v20h-7V29Zm13 0h7v20h-7V29Z" fill="currentColor" opacity=".9"/>
               <path d="M11 52h42v5H11v-5Z" fill="currentColor" opacity=".9"/>
@@ -16408,47 +16408,45 @@ window.ECONOS_ICONS = {
             <div>Financial Markets</div>
           </div>
         </section>
-        <!-- Saving (S) label -->
-        <div style="position:absolute;z-index:3;left:21.507%;top:11.414%;font-size:clamp(11px,1.2cqw,13px);line-height:1.35;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;">Saving (S)<span style="display:block;font-weight:600;color:#374151;">(leaves)</span></div>
+        <!-- Saving (S) label (y=46+60=106 → 20.38%) -->
+        <div style="position:absolute;z-index:3;left:21.507%;top:20.385%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Saving (S)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leaves)</span></div>
         <!-- Investment (I) label -->
-        <div style="position:absolute;z-index:3;left:69.577%;top:11.414%;font-size:clamp(11px,1.2cqw,13px);line-height:1.35;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;">Investment (I)<span style="display:block;font-weight:600;color:#374151;">(returns)</span></div>
+        <div style="position:absolute;z-index:3;left:69.577%;top:20.385%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;white-space:nowrap;">Investment (I)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(returns)</span></div>
       </div>
 
-      <!-- ====== LAYER 2: Government ====== -->
+      <!-- ====== LAYER 2: Government (y=178+60=238 → 45.77%; h=96/520=18.46%) ====== -->
       <div class="idl-2" style="display:none">
-        <!-- Government node -->
-        <section style="position:absolute;z-index:2;left:2.206%;top:44.169%;width:11.949%;height:23.821%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:6px;">
+        <section style="position:absolute;z-index:2;left:2.206%;top:45.769%;width:11.949%;height:18.462%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
           <div>
-            <svg viewBox="0 0 64 64" style="width:clamp(28px,4cqw,42px);height:clamp(28px,4cqw,42px);margin:0 auto 5px;display:block;">
+            <svg viewBox="0 0 64 64" style="width:clamp(20px,3cqw,34px);height:clamp(20px,3cqw,34px);margin:0 auto 4px;display:block;">
               <path d="M32 10 8 22v5h48v-5L32 10Z" fill="currentColor" opacity=".92"/>
               <path d="M14 31h7v19h-7V31Zm14 0h7v19h-7V31Zm14 0h7v19h-7V31Z" fill="currentColor" opacity=".92"/>
               <path d="M9 53h46v5H9v-5Z" fill="currentColor" opacity=".92"/>
             </svg>
-            <div style="font-size:clamp(13px,1.65cqw,18px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Government</div>
+            <div style="font-size:clamp(11px,1.45cqw,17px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Government</div>
           </div>
         </section>
-        <!-- Taxation (T) label -->
-        <div style="position:absolute;z-index:3;left:17.371%;top:40.695%;font-size:clamp(11px,1.2cqw,13px);line-height:1.35;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;">Taxation (T)<span style="display:block;font-weight:600;color:#374151;">(leaves)</span></div>
-        <!-- Government spending (G) label -->
-        <div style="position:absolute;z-index:3;left:17.096%;top:71.464%;font-size:clamp(11px,1.2cqw,13px);line-height:1.35;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;">Government<br/>spending (G)<span style="display:block;font-weight:600;color:#374151;">(returns)</span></div>
+        <!-- Taxation (T) label (y=164+60=224 → 43.08%) -->
+        <div style="position:absolute;z-index:3;left:17.371%;top:43.077%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Taxation (T)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leaves)</span></div>
+        <!-- Government spending (G) label (y=288+60=348 → 66.92%) -->
+        <div style="position:absolute;z-index:3;left:17.096%;top:66.923%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:left;letter-spacing:.005em;white-space:nowrap;">Government<br/>spending (G)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(returns)</span></div>
       </div>
 
       <!-- ====== LAYER 3: Overseas Sector ====== -->
       <div class="idl-3" style="display:none">
-        <!-- Overseas node -->
-        <section style="position:absolute;z-index:2;left:85.938%;top:44.169%;width:11.949%;height:23.821%;border-radius:12px;border:1.5px solid #A6E0C4;background:rgba(238,253,245,0.88);color:#16975F;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:6px;">
+        <section style="position:absolute;z-index:2;left:85.938%;top:45.769%;width:11.949%;height:18.462%;border-radius:12px;border:1.5px solid #A6E0C4;background:rgba(238,253,245,0.88);color:#16975F;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
           <div>
-            <svg viewBox="0 0 64 64" style="width:clamp(28px,4cqw,42px);height:clamp(28px,4cqw,42px);margin:0 auto 5px;display:block;">
+            <svg viewBox="0 0 64 64" style="width:clamp(20px,3cqw,34px);height:clamp(20px,3cqw,34px);margin:0 auto 4px;display:block;">
               <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4" fill="none"/>
               <path d="M11 32h42M32 10c-7 8-10 15-10 22s3 14 10 22M32 10c7 8 10 15 10 22s-3 14-10 22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
             </svg>
-            <div style="font-size:clamp(13px,1.65cqw,18px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Overseas<br/>Sector</div>
+            <div style="font-size:clamp(11px,1.45cqw,17px);font-weight:800;letter-spacing:.01em;line-height:1.22;">Overseas<br/>Sector</div>
           </div>
         </section>
-        <!-- Imports (M) label -->
-        <div style="position:absolute;z-index:3;left:76.103%;top:40.695%;font-size:clamp(11px,1.2cqw,13px);line-height:1.35;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;">Imports (M)<span style="display:block;font-weight:600;color:#374151;">(leave)</span></div>
-        <!-- Exports (X) label -->
-        <div style="position:absolute;z-index:3;left:76.287%;top:71.464%;font-size:clamp(11px,1.2cqw,13px);line-height:1.35;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;">Exports (X)<span style="display:block;font-weight:600;color:#374151;">(enter)</span></div>
+        <!-- Imports (M) label (y=164+60=224 → 43.08%) -->
+        <div style="position:absolute;z-index:3;left:76.103%;top:43.077%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Imports (M)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(leave)</span></div>
+        <!-- Exports (X) label (y=288+60=348 → 66.92%) -->
+        <div style="position:absolute;z-index:3;left:76.287%;top:66.923%;font-size:clamp(9px,1.05cqw,12px);line-height:1.3;font-weight:700;color:#172033;text-align:center;letter-spacing:.005em;white-space:nowrap;">Exports (X)<span style="display:block;font-weight:600;color:#374151;font-size:clamp(8px,0.95cqw,11px);">(enter)</span></div>
       </div>
 
     </div>

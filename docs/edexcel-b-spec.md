@@ -8,6 +8,19 @@ This is the canonical spec point map used across Econos for the Edexcel B board.
 
 ---
 
+## Subject content overview
+
+Edexcel B is the business-first sister to Edexcel A. Same micro-macro coverage, very different angle of entry:
+
+- **Theme 1 — Markets, consumers and firms** *(business-led micro)* — opens with the entrepreneur, business objectives, stakeholders and corporate social responsibility — only board to put the firm before the market. Then demand, supply and price determination, the role of credit in the economy, market failure and government intervention, and revenue / costs / profits framed as break-even and cash-flow analysis. The accounting-ratio appendix (gross / operating / net profit margin) ships only with this spec.
+- **Theme 2 — The wider economic environment** *(macro through the firm's lens)* — business growth and methods (organic, integration, demergers), PED / YED, productivity, capacity utilisation and lean production, then introductory macro (globalisation, BRIC, exchange rates, the economic cycle, inflation and unemployment) framed as implications for firms. Closes with macroeconomic objectives and policy instruments — students see fiscal / monetary / supply-side policy through the business-impact lens before the formal AD/AS model is introduced.
+- **Theme 3 — The global economy** *(international macro + global firms)* — growing economies (China, India, BRIC), trade liberalisation, FDI, trading blocs and trade policy. Then the strategic content unique to Edexcel B: how global firms make expansion decisions, glocalisation, MNCs' impact on local + national economies, ethical considerations. Finishes with global labour markets and inequality / redistribution.
+- **Theme 4 — Making markets work** *(consolidation: market failure + macro policy + finance)* — formal market-structure theory (spectrum of competition, barriers to entry, oligopoly, business objectives + pricing decisions, productive + allocative efficiency). Then market failure across the economy and the policy response, the formal AD/AS model with demand-side + supply-side policies, and risk + the financial sector (GFC, central bank, regulation).
+
+The papers pair the themes differently from Edexcel A: Paper 1 = Themes 1 + 4 (market mechanics + formal theory), Paper 2 = Themes 2 + 3 (the wider environment + the global economy), Paper 3 is a synoptic paper around a pre-released context document. The board is most distinctive for treating economic agents as **business stakeholders** throughout — students are expected to evaluate every change for its impact on firms, workers and consumers in sequence.
+
+---
+
 ## Theme 1 — Markets, consumers and firms
 
 ### 1.1 Scarcity, choice and potential conflicts

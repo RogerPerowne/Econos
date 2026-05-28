@@ -297,6 +297,18 @@ function topicRoutes() {
     writeFileSync(join(distDir, 'sitemap.xml'), xml);
     // eslint-disable-next-line no-console
     console.log(`[topic-routes] wrote sitemap.xml (${urls.length} URLs)`);
+
+    /* IndexNow key file. The IndexNow protocol (used by Bing,
+       Yandex and Seznam — and on Google's "we might support it
+       later" roadmap) verifies ownership by reading a publicly
+       served `<key>.txt` whose body is the key itself. The CI
+       deploy job POSTs the sitemap URLs to api.indexnow.org;
+       this file is what those engines fetch back to confirm.
+
+       The key is intentionally hard-coded — it's public anyway
+       (literally served at /<key>.txt). Rotate only if leaked. */
+    const INDEXNOW_KEY = 'f50a6f1a73f22cc3dd6b52af512f63c0';
+    writeFileSync(join(distDir, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
   }
 
   return {
@@ -506,6 +518,7 @@ function articleRoutes() {
     const wantMore = renderWantMore(fm);
     const footer = renderArticleFooter(fm);
     const specMeta = renderSpecMeta(fm);
+    const boardPills = renderBoardPills(fm);
 
     return `<!DOCTYPE html>
 <html lang="en-GB">
@@ -534,6 +547,7 @@ function articleRoutes() {
 ${renderTopnav()}
   <main class="article" id="main-content">
 ${breadcrumb}
+${boardPills}
     <div class="article-grid">
       <header class="article-header">
         <h1>${escapeHtml(fm.title)}</h1>
@@ -683,6 +697,47 @@ ${cta}
     return `<span>A-level (${inline})</span>`;
   }
 
+  /* Which boards this article applies to. Per-board object spec
+     pins it down; legacy string spec is treated as Edexcel A only. */
+  function applicableBoards(fm) {
+    const out = new Set();
+    if (fm.spec && typeof fm.spec === 'object' && !Array.isArray(fm.spec)) {
+      for (const id of BOARD_ORDER) if (fm.spec[id]) out.add(id);
+    } else if (typeof fm.spec === 'string' && fm.spec) {
+      out.add('edexcel_a');
+    }
+    return out;
+  }
+
+  /* Four-pip row at the top of every article showing which exam
+     boards the article applies to. Mirrors the home-page topic
+     stage-pip visual: pills are filled with that board's palette
+     colour when applicable (green/yellow/pink/purple, the third
+     extending the Learn/Link/Land trio with purple for OCR),
+     hollow grey when not. The per-board spec number (when
+     present) renders inside the filled pip so a student can
+     spot their reference at a glance. */
+  function renderBoardPills(fm) {
+    const applicable = applicableBoards(fm);
+    if (applicable.size === 0) return '';
+    const pills = BOARD_ORDER.map((id) => {
+      const active = applicable.has(id);
+      const spec = (active && fm.spec && typeof fm.spec === 'object') ? fm.spec[id] : null;
+      const specHtml = (active && spec)
+        ? `<span class="article-boards__spec">${escapeHtml(String(spec))}</span>`
+        : '';
+      return `      <span class="article-boards__pill article-boards__pill--${id}${active ? ' is-active' : ''}"
+        role="listitem"
+        aria-label="${escapeHtml(BOARD_LABELS[id])}${active ? ' — applies' : ' — does not apply'}">
+        <span class="article-boards__name">${escapeHtml(BOARD_LABELS[id])}</span>${specHtml}
+      </span>`;
+    }).join('\n');
+    return `    <div class="article-boards" role="list" aria-label="Applicable exam boards">
+      <span class="article-boards__label">For:</span>
+${pills}
+    </div>`;
+  }
+
   function renderArticleFooter(fm) {
     const updated = fm.modified || fm.dates?.modified || fm.published || fm.dates?.published || '';
     const entries = specEntries(fm);
@@ -737,15 +792,24 @@ ${cta}
       handRolledSlugs.add(name);
     }
 
-    /* Markdown-sourced articles. */
+    /* Markdown-sourced articles.
+       Walks articles/sources/ recursively so authors can drop
+       sources into theme subfolders (microeconomics/, macroeconomics/,
+       finance/, etc.). The folder structure is editorial — every
+       article still publishes to a flat /articles/<slug>/ URL so
+       the URL contract is unaffected by the source layout. */
     const sourcesDir = join(articlesSrc, 'sources');
     const markdownEntries = [];
-    if (existsSync(sourcesDir)) {
-      for (const name of readdirSync(sourcesDir)) {
+    function walkSources(dir) {
+      if (!existsSync(dir)) return;
+      for (const name of readdirSync(dir)) {
+        if (name.startsWith('_') || name.startsWith('.')) continue;
+        const full = join(dir, name);
+        const s = statSync(full);
+        if (s.isDirectory()) { walkSources(full); continue; }
         if (!name.endsWith('.md')) continue;
-        if (name.startsWith('_')) continue; // template files use leading underscore
         const slug = name.replace(/\.md$/, '');
-        const raw = readFileSync(join(sourcesDir, name), 'utf8');
+        const raw = readFileSync(full, 'utf8');
         const { data: fm, content } = matter(raw);
         if (fm.draft === true || fm.status === 'draft') continue;
         const html = renderArticle({ slug, frontmatter: fm, body: content });
@@ -759,12 +823,24 @@ ${cta}
           description: fm.description || '',
           theme: fm.theme || '',
           spec: specEntries(fm).map(e => e.label ? `${e.label} ${e.value}` : e.value).join(' · '),
+          /* Per-board spec map (object shape) ships verbatim so the
+             hub can render pills + filter by board. Empty object
+             when an article has no per-board mapping. */
+          board_specs: (fm.spec && typeof fm.spec === 'object' && !Array.isArray(fm.spec))
+            ? Object.fromEntries(BOARD_ORDER.filter((b) => fm.spec[b]).map((b) => [b, String(fm.spec[b])]))
+            : (typeof fm.spec === 'string' && fm.spec ? { edexcel_a: fm.spec } : {}),
+          boards: Array.from(applicableBoards(fm)),
           keywords: fm.keywords || [],
           read_minutes: fm.read_minutes || 0,
-          status: fm.status || 'live'
+          status: fm.status || 'live',
+          /* Surfaced for the sitemap lastmod + future hub
+             "Updated" badges. */
+          published: fm.published || fm.dates?.published || '',
+          modified:  fm.modified  || fm.dates?.modified  || ''
         });
       }
     }
+    walkSources(sourcesDir);
 
     /* Search index — preserve hand-rolled entries from the source
        index.json, replace markdown entries with freshly-built ones. */
@@ -784,13 +860,25 @@ ${cta}
     /* Append article URLs to sitemap.xml — the topic-routes plugin
        already wrote it during this same closeBundle (vite runs the
        plugins in the order they appear in the plugins array, and we
-       sit after topic-routes). Read, insert, write back. */
+       sit after topic-routes). Read, insert, write back.
+
+       lastmod uses each article's frontmatter `modified` date
+       (falling back to `published`, then today) so Google sees
+       accurate per-article freshness signals — important for
+       articles where the underlying SPA content has been updated
+       but the markdown source hasn't, or vice versa. */
     const sitemapPath = join(distDir, 'sitemap.xml');
     if (existsSync(sitemapPath)) {
       const today = new Date().toISOString().slice(0, 10);
-      const articleUrls = finalIdx.map((a) =>
-        `  <url>\n    <loc>https://econos.co.uk${a.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`
-      ).join('\n');
+      const isoDate = (d) => {
+        if (!d) return null;
+        const dt = new Date(d);
+        return isNaN(dt.getTime()) ? null : dt.toISOString().slice(0, 10);
+      };
+      const articleUrls = finalIdx.map((a) => {
+        const lastmod = isoDate(a.modified) || isoDate(a.published) || today;
+        return `  <url>\n    <loc>https://econos.co.uk${a.url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`;
+      }).join('\n');
       const src = readFileSync(sitemapPath, 'utf8');
       /* Drop the stub /articles/* entries the topic-routes plugin
          injects so we don't double-list them. */
@@ -799,8 +887,59 @@ ${cta}
       writeFileSync(sitemapPath, next);
     }
 
+    /* RSS feed for the article library.
+       ─────────────────────────────────────────────────────────────
+       Two reasons to ship this:
+         1. Submit /articles/feed.xml to Google Search Console as a
+            second sitemap-type source. Google specifically uses RSS
+            updates as a recrawl signal — historically faster pickup
+            than a sitemap-only setup for new posts.
+         2. Lets a reader subscribe to new articles via any RSS
+            reader without needing email signup. Low-cost moat.
+       Items are sorted newest-first by published date. */
+    const rssItems = finalIdx
+      .slice()
+      .sort((a, b) => {
+        const aP = a.published ? new Date(a.published).getTime() : 0;
+        const bP = b.published ? new Date(b.published).getTime() : 0;
+        return bP - aP;
+      })
+      .map((a) => {
+        const pub = a.published ? new Date(a.published) : new Date();
+        return `    <item>
+      <title>${escapeXml(a.title)}</title>
+      <link>https://econos.co.uk${a.url}</link>
+      <guid isPermaLink="true">https://econos.co.uk${a.url}</guid>
+      <description>${escapeXml(a.description)}</description>
+      <pubDate>${pub.toUTCString()}</pubDate>
+    </item>`;
+      }).join('\n');
+    const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Econos — A-level economics articles</title>
+    <link>https://econos.co.uk/articles/</link>
+    <description>Plain-English A-level economics articles. Inflation, GDP, monopolies, monetary policy — explained for revision, with UK examples.</description>
+    <language>en-GB</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="https://econos.co.uk/articles/feed.xml" rel="self" type="application/rss+xml"/>
+${rssItems}
+  </channel>
+</rss>
+`;
+    writeFileSync(join(articlesDist, 'feed.xml'), rssXml);
+
     // eslint-disable-next-line no-console
-    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries`);
+    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries; wrote feed.xml`);
+  }
+
+  function escapeXml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
   }
 
   /* Dev / preview: serve articles/ directly. Vite's MPA mode doesn't

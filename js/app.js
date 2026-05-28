@@ -1097,7 +1097,7 @@
         html += `
           <div data-id-root="${uid}" data-id-layers='${JSON.stringify(layers)}' style="margin-bottom:26px;">
             <div style="border:1px solid #E7E7EA;border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(11,20,38,0.04);margin-bottom:10px;overflow-x:auto;">
-              <div style="max-width:640px;margin:0 auto;">${I[id.svgKey]}</div>
+              <div style="max-width:${id.maxWidth || '640px'};margin:0 auto;">${I[id.svgKey]}</div>
             </div>
             <div style="display:grid;grid-template-columns:${stripCols};gap:10px;margin-bottom:10px;">${stepStrip}</div>
             ${combinedPanels}

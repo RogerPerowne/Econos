@@ -235,6 +235,7 @@ window.ECONOS_TOPIC = {
       interactiveDiagram: {
         svgKey: 'nationalIncomeOpenEconomy',
         wide: true,
+        maxWidth: '100%',
         label: 'The full model',
         emoji: '\u{1F501}',
         layers: ['idl-1', 'idl-2', 'idl-3'],

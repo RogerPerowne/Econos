@@ -16353,8 +16353,8 @@ window.ECONOS_ICONS = {
 
         <!-- LAYER 2 arrows: Tax + G-spend (Y +60; directions FIXED from source) -->
         <g class="idl-2" style="display:none">
-          <path d="M282 274 H158" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
-          <path d="M158 329 H285" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
+          <path d="M282 274 H149" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
+          <path d="M149 329 H285" stroke="#F59E2E" stroke-width="2" marker-end="url(#nio-arrow-amber)" vector-effect="non-scaling-stroke"/>
         </g>
 
         <!-- LAYER 3 arrows: Imports + Exports (Y shifted +60) -->
@@ -16416,7 +16416,7 @@ window.ECONOS_ICONS = {
 
       <!-- ====== LAYER 2: Government (y=178+60=238 → 45.77%; h=96/520=18.46%) ====== -->
       <div class="idl-2" style="display:none">
-        <section style="position:absolute;z-index:2;left:1%;top:45.769%;width:13.5%;height:22.5%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
+        <section style="position:absolute;z-index:2;left:1%;top:45.769%;width:12.72%;height:22.5%;border-radius:12px;border:1.5px solid #F7D19A;background:rgba(255,248,234,0.9);color:#F59E2E;display:grid;place-items:center;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,0.035);padding:4px;">
           <div>
             <svg viewBox="0 0 64 64" style="width:clamp(20px,3cqw,34px);height:clamp(20px,3cqw,34px);margin:0 auto 4px;display:block;">
               <path d="M32 10 8 22v5h48v-5L32 10Z" fill="currentColor" opacity=".92"/>

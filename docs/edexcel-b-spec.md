@@ -4,33 +4,7 @@
 > © Pearson Education Limited 2014. Reproduced here as reference context for content authoring on Econos.
 > **Verified 2026-05-28** against the canonical Pearson PDF supplied by the project owner — every Theme-1 through Theme-4 sub-section, the Quantitative-skills appendix (QS1–QS9), and the Accounting-ratios appendix cross-checked sub-bullet by sub-bullet. No omissions found.
 
-This is the canonical spec point map used across Econos for the Edexcel B board. Every Edexcel-B topic on the site should be traceable back to one of the sub-sections below. Theme/section numbering matches the spec exactly so it can be cited in `topicNum` / spec-mapping fields. Edexcel B differs from Edexcel A in its business-first framing — markets and firms come first, and macro is introduced via the wider economic environment in which firms operate.
-
----
-
-## Qualification at a glance
-
-Four themes, three externally examined papers. Edexcel B pairs the themes across papers differently from Edexcel A: Paper 1 pairs Theme 1 with Theme 4 (microeconomics), Paper 2 pairs Theme 2 with Theme 3 (the wider environment and the global economy), and Paper 3 is a synoptic pre-released-context paper across all four themes.
-
-- **Theme 1 — Markets, consumers and firms** (microeconomics, business-led)
-- **Theme 2 — The wider economic environment** (introductory macro + firm-level context)
-- **Theme 3 — The global economy** (international macro, MNCs, labour markets)
-- **Theme 4 — Making markets work** (competition, market failure, macro policy, finance)
-
-| Paper | Coverage | Format | Weight |
-|---|---|---|---|
-| Paper 1 — Markets and how they work (9EB0/01) | Themes 1 & 4 | 2h · 100 marks · Section A data response + Sections B & C extended open-response on data | 35% |
-| Paper 2 — Competing in the global economy (9EB0/02) | Themes 2 & 3 | 2h · 100 marks · Section A data response + Sections B & C extended open-response on data | 35% |
-| Paper 3 — The economic environment and business (9EB0/03) | All four themes (synoptic), built around a pre-released context document | 2h · 100 marks · two data-response sections including extended open-response | 30% |
-
-### Assessment Objectives
-
-| AO | Demand | Weight |
-|---|---|---|
-| AO1 | Knowledge of terms / concepts / theories / models | 20–22% |
-| AO2 | Application of knowledge and understanding to economic contexts | 22–24% |
-| AO3 | Analysis of issues, showing understanding of impact on economic agents | 28–30% |
-| AO4 | Evaluation using qualitative and quantitative evidence to support informed judgements | 26–28% |
+This is the canonical spec point map used across Econos for the Edexcel B board. Every Edexcel-B topic on the site should be traceable back to one of the sub-sections below. Theme/section numbering matches the spec exactly so it can be cited in `topicNum` / spec-mapping fields.
 
 ---
 

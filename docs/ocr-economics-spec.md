@@ -8,33 +8,6 @@ This is the canonical OCR spec point map used across Econos. Every OCR topic on 
 
 ---
 
-## Qualification at a glance
-
-Three mandatory components, all externally examined. No coursework.
-
-- **Component 1 — Microeconomics** (introduction to micro, role of markets, business objectives, market structures, the labour market)
-- **Component 2 — Macroeconomics** (aggregate demand and supply, economic policy objectives, implementing policy, the global context, the financial sector)
-- **Component 3 — Themes in economics** (synoptic; draws on the whole micro + macro content in relation to an unseen theme)
-
-| Paper | Coverage | Format | Weight |
-|---|---|---|---|
-| Component 01 — Microeconomics (H460/01) | Micro content | 2h · 80 marks · data response + extended response | 33.33% |
-| Component 02 — Macroeconomics (H460/02) | Macro content | 2h · 80 marks · data response + extended response | 33.33% |
-| Component 03 — Themes in economics (H460/03) | Synoptic across micro + macro | 2h · 80 marks · 30 MCQs + unseen-theme short answers + extended responses | 33.33% |
-
-### Assessment Objectives
-
-| AO | Demand | Weight |
-|---|---|---|
-| AO1 | Demonstrate knowledge of terms / concepts / theories / models showing understanding of economic agents' behaviour | 25% |
-| AO2 | Apply knowledge and understanding to various economic contexts | 25% |
-| AO3 | Analyse issues within economics, showing understanding of their impact on economic agents | 25% |
-| AO4 | Evaluate economic arguments using qualitative and quantitative evidence to support informed judgements | 25% |
-
-A minimum of 20% of the overall A level marks target quantitative skills (Level 2 mathematical skills minimum), assessed across the three components.
-
----
-
 ## Component 1 — Microeconomics (H460/01)
 
 ### 1. Introduction to Microeconomics

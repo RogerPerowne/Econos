@@ -373,6 +373,58 @@ function articleRoutes() {
     }
   });
 
+  /* :::two-col — side-by-side comparison grid. Usually wraps two
+     :::card blocks. Renders the same .two-col layout the monopoly
+     article uses; CSS in articles/articles.css already styles it. */
+  md.use(mdContainer, 'two-col', {
+    validate: (params) => params.trim().startsWith('two-col'),
+    render: (tokens, idx) => tokens[idx].nesting === 1
+      ? `<div class="two-col">\n`
+      : `</div>\n`
+  });
+
+  /* :::card { variant="mr|ar|…" title="…" } — single comparison card
+     inside :::two-col. Variant maps to a .cause-card--<variant>
+     colour modifier; title becomes an <h3>. Body is Markdown — drop
+     raw <svg class="cause-card__diagram"> inline at the end of the
+     body for the per-card mini-diagram. */
+  md.use(mdContainer, 'card', {
+    validate: (params) => params.trim().startsWith('card'),
+    render: (tokens, idx) => {
+      if (tokens[idx].nesting !== 1) return '</div></article>\n';
+      const raw = tokens[idx].info.trim().slice('card'.length).trim();
+      const attrs = parseAttrs(raw);
+      const variant = attrs.variant ? ` cause-card--${escapeAttr(attrs.variant)}` : '';
+      const heading = attrs.title ? `<h3>${escapeHtml(attrs.title)}</h3>\n` : '';
+      return `<article class="cause-card${variant}"><div>\n${heading}`;
+    }
+  });
+
+  /* :::diagram { caption="…" } — wraps inline raw SVG (or other
+     HTML) in the .diagram-block container the existing CSS expects.
+     Caption attr is rendered after the body inside .diagram-block__
+     caption, and runs through markdown-it's inline renderer so
+     **bold** and *italic* and inline links work. We pop the attrs
+     off a closure-scoped stack so the caption survives until the
+     close token. */
+  const diagramStack = [];
+  md.use(mdContainer, 'diagram', {
+    validate: (params) => params.trim().startsWith('diagram'),
+    render: (tokens, idx) => {
+      if (tokens[idx].nesting === 1) {
+        const raw = tokens[idx].info.trim().slice('diagram'.length).trim();
+        diagramStack.push(parseAttrs(raw));
+        return `<div class="diagram-block">\n`;
+      }
+      const attrs = diagramStack.pop() || {};
+      const captionHtml = attrs.caption ? md.renderInline(attrs.caption) : '';
+      const caption = captionHtml
+        ? `<p class="diagram-block__caption">${captionHtml}</p>\n`
+        : '';
+      return `${caption}</div>\n`;
+    }
+  });
+
   /* Parse "key=value key2=\"quoted value\"" attribute strings off a
      directive opening line. Returns an object. Keeps the surface small
      — no nested quotes, no escaping — because directive params should

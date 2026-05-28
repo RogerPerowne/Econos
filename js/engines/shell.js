@@ -127,7 +127,52 @@
       +       '<span class="topbar__avatar-chev" aria-hidden="true">' + (I.chevDown || '') + '</span>'
       +     '</button>'
       +   '</div>'
-      + '</div>';
+      + '</div>'
+      + renderMobileStages();
+  }
+
+  /* ------------------------------------------------------------------
+     Mobile stage strip — three compact pills (Learn / Link / Land) shown
+     directly below the topbar on viewports ≤880px, where the right-rail
+     (and its desktop stages widget) is hidden. Engines don't call this
+     directly — renderTopbar above always emits it; CSS hides it on
+     desktop. State derivation is shared with renderStages.
+     ------------------------------------------------------------------ */
+  function renderMobileStages() {
+    var topic = TopicLoader.getTopic();
+    var I = getIcons();
+    var auto = deriveStageState();
+    var SHELLS = [
+      { num: 1, name: 'Learn', href: TopicLoader.routes.learn(topic) },
+      { num: 2, name: 'Link',  href: TopicLoader.routes.link('intro', topic) },
+      { num: 3, name: 'Land',  href: TopicLoader.routes.land('intro', topic) }
+    ];
+    var html = '<nav class="mobile-stages" aria-label="Topic progress">';
+    for (var i = 0; i < SHELLS.length; i++) {
+      var s = SHELLS[i];
+      var state = normaliseState(auto[i]);
+      var cls = 'mobile-stages__item'
+             + (state === 'done'      ? ' is-done'      : '')
+             + (state === 'current'   ? ' is-current'   : '')
+             + (state === 'available' ? ' is-available' : '')
+             + (state === 'locked'    ? ' is-locked'    : '');
+      var isCurrent = state === 'current';
+      var isLocked  = state === 'locked';
+      var clickable = !isCurrent && !isLocked;
+      var ariaCurrent = isCurrent ? ' aria-current="step"' : '';
+      var glyph = state === 'done'   ? (I.check || '✓')
+                : state === 'locked' ? (I.lock  || '🔒')
+                : String(s.num);
+      var open = clickable
+        ? '<a href="' + s.href + '" class="' + cls + '"'
+        : '<div class="' + cls + '"' + ariaCurrent;
+      html += open + ' data-stage-pos="' + (i + 1) + '">'
+           +   '<span class="mobile-stages__num" aria-hidden="true">' + glyph + '</span>'
+           +   '<span class="mobile-stages__name">' + s.name + '</span>'
+           + (clickable ? '</a>' : '</div>');
+    }
+    html += '</nav>';
+    return html;
   }
 
   /* ------------------------------------------------------------------
@@ -288,6 +333,7 @@
     renderTopbar:    renderTopbar,
     renderApp:       renderApp,
     renderStages:    renderStages,
+    renderMobileStages: renderMobileStages,
     renderSkipLink:  renderSkipLink,
     mountSkipLink:   mountSkipLink
   };

@@ -466,6 +466,80 @@ img, svg { display: block; max-width: 100%; }
 }
 .topbar__avatar-chev { color: var(--econ-ink); }
 
+/* ----- Mobile stages strip -----
+   Three compact pills under the topbar, only visible on ≤880px (where
+   the right-rail and its desktop stages widget are hidden). Auto-emitted
+   by Shell.renderTopbar(); engines do not call it directly. Sticks to
+   the viewport directly below the topbar so the user always has the
+   Learn → Link → Land jump points within thumb reach. */
+.mobile-stages { display: none; }
+@media (max-width: 880px) {
+  .mobile-stages {
+    display: flex;
+    gap: var(--sp-2);
+    padding: var(--sp-2) var(--sp-4);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--econ-gray-200);
+    position: sticky;
+    top: var(--header-h);
+    z-index: 109; /* one below the topbar */
+  }
+  .mobile-stages__item {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    min-height: 40px;
+    padding: 6px 10px;
+    border-radius: var(--r-full);
+    background: var(--econ-gray-50);
+    color: var(--econ-ink);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semi);
+    text-decoration: none;
+    border: 1px solid var(--econ-gray-200);
+    transition: background-color 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .mobile-stages__item.is-current {
+    background: var(--econ-blue-50);
+    border-color: var(--econ-blue-200);
+    color: var(--econ-blue-700);
+  }
+  .mobile-stages__item.is-done {
+    background: var(--econ-green-50);
+    border-color: var(--econ-green-100);
+    color: var(--econ-green-700);
+  }
+  .mobile-stages__item.is-locked {
+    background: var(--econ-gray-100);
+    color: var(--econ-gray-500);
+    cursor: not-allowed;
+  }
+  .mobile-stages__item:not(.is-current):not(.is-locked):hover {
+    background: var(--econ-white);
+    border-color: var(--econ-gray-300);
+  }
+  .mobile-stages__num {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--r-full);
+    background: var(--econ-white);
+    border: 1px solid currentColor;
+    font-size: var(--fs-xs);
+    line-height: 1;
+  }
+  .mobile-stages__item.is-done   .mobile-stages__num { background: var(--econ-green); color: var(--econ-white); border-color: var(--econ-green); }
+  .mobile-stages__item.is-current .mobile-stages__num { background: var(--econ-blue); color: var(--econ-white); border-color: var(--econ-blue); }
+  /* Inline icons rendered into __num shouldn't carry their own box. */
+  .mobile-stages__num svg { width: 14px; height: 14px; }
+}
+
 /* ----- Page body (3-col within main) ----- */
 .page {
   display: grid;

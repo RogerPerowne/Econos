@@ -34,7 +34,7 @@ These are the 12 queries that dominate Google searches between January and
 June. Year 13s ask them again every year. Each one should be the first thing
 in Google when a panicking sixth former types it the night before Paper 2.
 
-- [ ] **What is inflation? A-level economics explained**
+- [L] **What is inflation? A-level economics explained**
   - Keyword: "what is inflation a level economics"
   - SPA topic: `inflation`, `inflation_meas`
   - Friction angle: students confuse inflation, deflation, disinflation, and falling inflation rates. Lead on this.
@@ -46,19 +46,19 @@ in Google when a panicking sixth former types it the night before Paper 2.
   - Friction angle: GDP vs GNI vs real vs nominal. Limitations as welfare measure.
   - UK example: ONS quarterly GDP release; comparison with HDI / ONS wellbeing dashboard.
 
-- [ ] **Aggregate demand (AD) explained with diagram**
+- [L] **Aggregate demand (AD) explained with diagram**
   - Keyword: "what is aggregate demand a level"
   - SPA topic: `ad`
   - Friction angle: confusion between movement along AD and shifts in AD.
   - Diagram: AD curve, shift vs movement, components C+I+G+(X-M).
 
-- [ ] **SRAS vs LRAS - the aggregate supply diagram, properly**
+- [L] **SRAS vs LRAS - the aggregate supply diagram, properly**
   - Keyword: "what is sras a level economics"
   - SPA topic: `agg_supply`
   - Friction angle: Keynesian LRAS (kinked) vs Classical LRAS (vertical) - students draw the wrong one for the wrong essay.
   - Diagram: both LRAS shapes side by side, with prose on when each is appropriate.
 
-- [ ] **The multiplier effect explained - with worked numbers**
+- [L] **The multiplier effect explained - with worked numbers**
   - Keyword: "multiplier effect a level economics"
   - SPA topic: `multiplier`
   - Friction angle: students quote the formula but cannot apply it to an injection. Worked example with MPC/MPS/MPT/MPM.
@@ -109,7 +109,7 @@ in Google when a panicking sixth former types it the night before Paper 2.
 
 The micro equivalents. Year 12s especially search these in autumn term.
 
-- [ ] **Monopoly explained - diagram, profit max, deadweight loss**
+- [L] **Monopoly explained - diagram, profit max, deadweight loss**
   - Keyword: "monopoly a level economics"
   - SPA topic: `monopoly`
   - Friction angle: students draw MR = MC but forget to read price off AR. The "where does the price come from?" question.

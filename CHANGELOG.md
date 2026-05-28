@@ -6,6 +6,49 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.3.1 — 2026-05-28
+
+### Multi-board content — first board-variant Learn It topics ship
+
+The framework in 0.3.0 wired the override path; this release fills
+in the first batch of per-board variants for the highest-traffic
+flagship topics. Every variant preserves the Edexcel A baseline's
+visual layout, diagrams, flow-step structure and card-render
+templates — what changes is the spec point, the section / theme
+name, and the per-board exam-edge framing.
+
+- **5 flagship Learn It topics × 3 boards = 15 new `topic.js` files:**
+  - `causes-of-inflation-and-deflation` — AQA 3.2.3.3 (Fisher MV = PQ
+    framing per 4.2.3.3 (c) + LR vertical Phillips curve), OCR 2.4
+    (hyperinflation distinction explicit per 2.4 (a) + evaluate-verb
+    mark-scheme retune), Edexcel B 2.5.3 (business-first reframe:
+    impact on firms — uncertainty, loss of international
+    competitiveness — and individuals).
+  - `aggregate-demand` — AQA 3.2.2.2 (AS/A-level depth distinction),
+    OCR 1.2 (evaluate-verb retune), Edexcel B 4.4.1 (Theme 4
+    framing as part of "Making markets work").
+  - `aggregate-supply` — AQA 3.2.2.5 + 3.2.2.6 (SRAS / LRAS
+    determinants split), OCR 1.3 (with cross-reference to OCR 2.8
+    Phillips Curve), Edexcel B 4.4.1.
+  - `employment-and-unemployment` — AQA 3.2.3.2 / 4.2.3.2 (AS
+    vs A-level depth, voluntary / involuntary, natural rate), OCR
+    2.3, Edexcel B 2.5.4 (firm-impact lens).
+  - `national-income-and-the-multiplier` — AQA 3.2.2.4 / 4.2.2.4
+    (explicit k = 1/(1−MPC) only at A-level; no MPW formula),
+    OCR 1.5 (multiplier + accelerator bundled per OCR 1.5 (b)),
+    Edexcel B 4.4.1.
+- **`js/config/boards.js` — overrides registered.** All 15
+  (board, topic) pairs added to `window.ECONOS_BOARD_OVERRIDES` so
+  the loader resolves to the board path; remaining topics fall back
+  to the Edexcel A baseline transparently.
+- **Process.** Authoring follows the user's directive — keep the
+  rough layout (visual key, flow steps, causes grid, comparison
+  tables, examEdge structure), only rework wording where each
+  board's spec emphasis or mark-scheme demands it. Topics whose
+  Edexcel A content is itself a draft / placeholder are left as
+  baseline-only fallbacks; no fake board-specific content is
+  authored for them.
+
 ## 0.3.0 — 2026-05-28
 
 ### Multi-exam-board — content layer + per-(topic, board) spec data

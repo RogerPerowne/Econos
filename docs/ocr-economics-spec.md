@@ -2,6 +2,7 @@
 
 > Source: *OCR Level 3 Advanced GCE in Economics (H460)*, Specification Version 2.6, February 2024. First teaching September 2019; first assessment 2021. Ofqual accreditation QN 601/4799/4.
 > © OCR 2024. Reproduced here as reference context for content authoring on Econos.
+> **Verified 2026-05-28** against the canonical OCR PDF supplied by the project owner — every Component 1 (Microeconomics, sections 1.1 through 5.3), Component 2 (Macroeconomics, sections 1.1 through 5.3), and Component 3 (Themes) sub-section, plus the Quantitative-skills appendix, cross-checked sub-bullet by sub-bullet. No omissions found.
 
 This is the canonical OCR spec point map used across Econos. Every OCR topic on the site should be traceable back to one of the sub-sections below. Component / section numbering matches the spec exactly so it can be cited in `topicNum` / spec-mapping fields.
 

@@ -2,6 +2,7 @@
 
 > Source: *Pearson Edexcel Level 3 Advanced GCE in Economics B (9EB0)*, Specification Issue 1, September 2014. First teaching September 2015, first certification 2017.
 > © Pearson Education Limited 2014. Reproduced here as reference context for content authoring on Econos.
+> **Verified 2026-05-28** against the canonical Pearson PDF supplied by the project owner — every Theme-1 through Theme-4 sub-section, the Quantitative-skills appendix (QS1–QS9), and the Accounting-ratios appendix cross-checked sub-bullet by sub-bullet. No omissions found.
 
 This is the canonical spec point map used across Econos for the Edexcel B board. Every Edexcel-B topic on the site should be traceable back to one of the sub-sections below. Theme/section numbering matches the spec exactly so it can be cited in `topicNum` / spec-mapping fields. Edexcel B differs from Edexcel A in its business-first framing — markets and firms come first, and macro is introduced via the wider economic environment in which firms operate.
 

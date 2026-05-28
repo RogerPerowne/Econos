@@ -5582,10 +5582,20 @@
     // present (the quiz pool now lives in learn.js, not at a
     // standalone /quiz/ URL — see v0.4.0 refactor).
     let nextTopicId = null, nextTopicName = null;
+    let stageHref = null, stageLabel = null;
     const hasQuiz = !!(window.ECONOS_QUIZ && Array.isArray(window.ECONOS_QUIZ.questions)
       && window.ECONOS_QUIZ.questions.length);
     if (isLast) {
-      if (window.ECONOS_TOPICS) {
+      const cur = window.ECONOS_TOPICS ? window.ECONOS_TOPICS.find(t => t.id === T.id) : null;
+      /* Finishing Learn It should walk the learner on to the NEXT STAGE
+         of the same topic — Link It, then Land It — not jump sideways to
+         a different topic. Only fall back to the next topic's Learn It
+         when this topic has no further stage. */
+      if (cur && cur.available && cur.available.link) {
+        stageHref = TopicLoader.routes.link('intro', T.id); stageLabel = 'Link it';
+      } else if (cur && cur.available && cur.available.land) {
+        stageHref = TopicLoader.routes.land('intro', T.id); stageLabel = 'Land it';
+      } else if (window.ECONOS_TOPICS) {
         const tidx = window.ECONOS_TOPICS.findIndex(t => t.id === T.id);
         if (tidx >= 0 && tidx < window.ECONOS_TOPICS.length - 1) {
           const nt = window.ECONOS_TOPICS[tidx + 1];
@@ -5603,7 +5613,14 @@
     let cardFoot;
     if (isLast) {
       const quizBtn  = hasQuiz     ? `<button class="btn btn--primary" data-action="take-quiz">Take the quiz ${I.arrowRight}</button>` : '';
-      const nextBtn  = nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '';
+      /* Next-stage CTA (Link it / Land it). Primary when there's no quiz,
+         ghost when the quiz is the primary action. */
+      const stageCls = hasQuiz
+        ? 'btn btn--ghost" style="text-decoration:none;border:1.5px solid #CBD5E1;'
+        : 'btn btn--primary" style="text-decoration:none;';
+      const nextBtn  = stageHref
+        ? `<a href="${stageHref}" class="${stageCls}">${stageLabel} ${I.arrowRight}</a>`
+        : (nextTopicId ? `<a href="${TopicLoader.routes.learn(nextTopicId)}" class="btn btn--ghost"      style="text-decoration:none;border:1.5px solid #CBD5E1;" title="${nextTopicName}">Next topic ${I.arrowRight}</a>` : '');
       const fallback = (!quizBtn && !nextBtn) ? `<button class="btn btn--primary" data-action="next">Finish topic ${I.arrowRight}</button>` : '';
       cardFoot = `<div class="card-foot">${prevBtn}${counter}<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">${quizBtn}${nextBtn}${fallback}</div></div>`;
     } else {

@@ -6,6 +6,73 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.10.2 — 2026-05-28
+
+### Mobile stage bar: per-stage colours
+
+The mobile Learn/Link/Land bar coloured every active stage the same —
+blue for the current step, green for a completed one — so Link It lit up
+blue/green instead of its own colour. It now uses the positional palette
+from the desktop stages nav: **Learn = green, Link = amber, Land = rose**,
+applied only when a stage is the current step or completed. An
+available-but-not-started or locked stage stays grey. SW cache →
+`econos-v83`.
+
+## 0.10.1 — 2026-05-28
+
+### Learn It: finish the cards → "Link it", not "Next topic"
+
+The last Learn It card offered a "Next topic" button that jumped
+sideways to a different topic. It now walks the learner on to the next
+**stage of the same topic** — "Link it" (or "Land it" if Link It isn't
+available), linking to that topic's `link-it/intro`. The "Take the quiz"
+button is unchanged and stays the primary action when a quiz pool is
+present; the stage button only falls back to the next topic's Learn It
+when this topic has no further stage. SW cache → `econos-v82`.
+
+Note: the mobile Learn/Link/Land stage bar and the end-of-Learn quiz
+both verified working on current `main` — if they appear missing on the
+live site it is a stale service-worker cache; this cache bump plus a
+redeploy forces every client to refresh.
+
+## 0.10.0 — 2026-05-28
+
+### Articles: diagram build-out, 5 new drafts, portrait fix, tables + mobile
+
+**Diagrams on every existing article.** Added a diagram to the 8 that
+lacked one. Two reuse the SPA's `ad-svg` state machine interactively via
+new `INTERACTIVE_PRESETS` entries — balance of payments (the J-curve)
+and monetary policy (Bank Rate / QE moving AD-AS). Five use clean static
+SVGs — inflation (demand-pull), aggregate supply (demand- vs supply-
+side), fiscal policy (crowding out), the multiplier (round-by-round
+ripple) and GDP (circular flow). Public goods gets a bespoke inline
+2×2 rivalry × excludability matrix authored for it (no fitting icon
+existed).
+
+**Portrait bug fixed.** Economist portraits embedded a *relative*
+`src="assets/economists/x.png"`, which 404'd from an article URL at
+`/articles/<slug>/`. The build now absolutises injected `assets/` paths
+(portraits and diagram SVGs), so the portraits load.
+
+**5 new draft articles** (status: draft, skipped by the build until
+reviewed): the Phillips curve, perfect competition, oligopoly & the
+kinked demand curve, income & cross elasticity (YED/XED), and asymmetric
+information / the Akerlof lemons model — each to the house shape with
+diagrams where a real SVG fits and three MCQ knowledge-checks. Queue
+items ticked `[~]`.
+
+**Want-more CTA** trimmed to a single "Explore the full topic" action
+(the "Sign up free" button was removed).
+
+**Tables** in article bodies are now styled (card frame, tinted header,
+zebra rows) and wrapped so they scroll within the column on phones.
+
+**Smartphone polish.** Tightened the sticky topnav so it no longer
+overflows a 360px viewport; inline diagrams and tables scale/scroll in
+frame. Verified no horizontal overflow at 360px across sampled articles.
+
+SW cache → `econos-v81`.
+
 ## 0.9.2 — 2026-05-28
 
 ### Articles: smartphone layout for interactive diagrams

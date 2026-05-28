@@ -616,15 +616,23 @@ img, svg { display: block; max-width: 100%; }
     border: 1px solid var(--econ-gray-200);
     transition: background-color 0.12s, border-color 0.12s, color 0.12s;
   }
+  /* Per-stage palette (positional, mirrors the desktop .stages nav):
+     Learn = green, Link = amber, Land = rose. The stage's own colour is
+     used only when it's the current step OR completed; an available-but-
+     not-started or locked stage stays grey. */
+  .mobile-stages__item[data-stage-pos="1"] { --stage-c: var(--econ-green); --stage-c-50: var(--econ-green-50); --stage-c-100: var(--econ-green-100); --stage-c-700: var(--econ-green-700); }
+  .mobile-stages__item[data-stage-pos="2"] { --stage-c: var(--econ-amber); --stage-c-50: var(--econ-amber-50); --stage-c-100: var(--econ-amber-100); --stage-c-700: var(--econ-amber-700); }
+  .mobile-stages__item[data-stage-pos="3"] { --stage-c: var(--econ-rose);  --stage-c-50: var(--econ-rose-50);  --stage-c-100: var(--econ-rose-100);  --stage-c-700: var(--econ-rose-600); }
+
   .mobile-stages__item.is-current {
-    background: var(--econ-blue-50);
-    border-color: var(--econ-blue-200);
-    color: var(--econ-blue-700);
+    background: var(--stage-c-50);
+    border-color: var(--stage-c);
+    color: var(--stage-c-700);
   }
   .mobile-stages__item.is-done {
-    background: var(--econ-green-50);
-    border-color: var(--econ-green-100);
-    color: var(--econ-green-700);
+    background: var(--stage-c-50);
+    border-color: var(--stage-c-100);
+    color: var(--stage-c-700);
   }
   .mobile-stages__item.is-locked {
     background: var(--econ-gray-100);
@@ -647,8 +655,8 @@ img, svg { display: block; max-width: 100%; }
     font-size: var(--fs-xs);
     line-height: 1;
   }
-  .mobile-stages__item.is-done   .mobile-stages__num { background: var(--econ-green); color: var(--econ-white); border-color: var(--econ-green); }
-  .mobile-stages__item.is-current .mobile-stages__num { background: var(--econ-blue); color: var(--econ-white); border-color: var(--econ-blue); }
+  .mobile-stages__item.is-done   .mobile-stages__num,
+  .mobile-stages__item.is-current .mobile-stages__num { background: var(--stage-c); color: var(--econ-white); border-color: var(--stage-c); }
   /* Inline icons rendered into __num shouldn't carry their own box. */
   .mobile-stages__num svg { width: 14px; height: 14px; }
 }

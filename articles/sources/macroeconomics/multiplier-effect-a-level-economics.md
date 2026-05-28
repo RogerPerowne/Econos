@@ -118,6 +118,9 @@ The exam mark for this section: show the iterations explicitly, then derive the 
 
 :::
 
+::: econos-diagram svgKey="multiplierChart" label="The multiplier ripple across spending rounds" caption="The multiplier ripple — each round re-spends the MPC fraction of the last, and the rounds sum to the multiplier times the initial injection (here MPC = 0.6, so k = 2.5)."
+:::
+
 ::: section eyebrow="The friction · what makes the multiplier smaller in practice" color="pink" icon="scale"
 
 ## Three reasons real-world multipliers undershoot the textbook

@@ -113,6 +113,9 @@ UK 2008–2009: sterling fell ~25% against the dollar after the financial crisis
 
 :::
 
+::: econos-diagram svgKey="bopJCurveInteractive" interactive="true" label="The J-curve: how depreciation affects the current account over time" caption="Step through the J-curve — a depreciation worsens the current account in the short run before improving it once trade volumes respond."
+:::
+
 ::: section eyebrow="Exam edge" color="green" icon="cap"
 
 ## Three moves that lift the mark

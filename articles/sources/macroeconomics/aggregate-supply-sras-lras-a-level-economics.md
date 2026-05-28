@@ -133,6 +133,9 @@ The exam move: when you cite UK productivity, frame it as an *LRAS* shift (or sl
 
 :::::
 
+::: econos-diagram svgKey="adVsSupplySideDiagram" label="Demand-side stimulus versus a supply-side improvement" caption="Demand-side stimulus shifts AD right and raises the price level; a supply-side improvement shifts SRAS right, lifting output with stable or lower prices."
+:::
+
 ::::: section eyebrow="What examiners actually want" color="purple" icon="cap"
 
 ## The structural-vs-cyclical instinct

@@ -1,7 +1,86 @@
 # Changelog
 
-All notable changes to econos are listed here. Newer entries on top.
-Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
+All notable changes to econos. Newest at the top. Loosely follows
+[Keep a Changelog](https://keepachangelog.com/). This is a perpetual-beta
+educational site, so versions track release rhythm rather than a frozen
+public API: bump the minor when a release block of improvements ships;
+bump the patch for bugfix-only sweeps.
+
+## 0.1.0 — 2026-05-28
+
+First numbered release. Block of URL contract, SEO, security, observability
+and chrome work that cuts the site over from polished-demo toward
+ready-for-real-hosting. The "Unreleased" section below covers the
+foundational SPA refactor that brought econos to its first usable state and
+preceded this numbered release.
+
+### URLs & routing
+- Cut over from query-string URLs (`?topic=X&station=Y`) to path-based form
+  (`/learn/<topic>`, `/link/<topic>/<station>`, `/land/<topic>/<section>`,
+  `/quiz/<topic>/<set>`). Every URL has a real generated `index.html` in
+  `dist/`, emitted by the build-time `topic-routes` Vite plugin with per-topic
+  `<title>` / `<meta description>` / `<link rel=canonical>` baked in.
+- Rebuilt topic IDs so the registry ID is the URL slug — no internal
+  hyphen/underscore mapping layer.
+- Inbound legacy `?topic=…&station=…` URLs auto-rewrite to the canonical
+  path on first load (one-shot `history.replaceState`).
+- `sitemap.xml` generated from the registry at build time so it can never
+  drift.
+- Single source of truth for shell stations (`js/config/stations.js`); the
+  build plugin and runtime routers read the same file.
+
+### SEO
+- `LearningResource` / `Quiz` JSON-LD on every shell, varying
+  `learningResourceType` by stage (Concept / ApplicationExercise /
+  AssessmentExercise / Quiz). Same build-plugin pipeline as the meta tags.
+- Per-topic stage availability emitted as a meta tag so the runtime stages
+  widget can lock stages a topic doesn't have data for.
+- Land section labels read "Section A · Land It" instead of bare "A".
+
+### UX chrome
+- Topnav + sidebar render the full lockup (dots + wordmark + tagline) with
+  absolute asset paths so nested URLs resolve correctly.
+- Single top bar on mobile — removed the duplicate `.mobile-nav` block; the
+  session topbar carries back + crumbs + avatar on its own.
+- Mobile stages strip — Learn / Link / Land jump-points pinned under the
+  topbar on viewports ≤ 880 px so mobile users can move between stages
+  mid-session.
+- Account dropdown (sidebar + topbar) is wired up — Log out clears
+  `localStorage.econosAuth` and bounces to `/login`. Replaces the previous
+  chevron-but-no-handler dead affordance.
+- "Coming soon" affordance: stages without data render locked, with a
+  tooltip, on both desktop widget and mobile strip.
+- Initial-load skeleton in every shell — no more blank cream page for
+  ~500 ms on slow networks.
+
+### Reliability & observability
+- Post-deploy smoke test: CI fails if `/`, a representative topic page, or
+  `/sitemap.xml` doesn't return 200 within ~90 s of deploy.
+- Service worker auto-reloads open tabs when a new cache version activates,
+  killing the "old JS against new CSS" half-deployed-UI bug.
+- Vitest unit suite (`tests/unit/**`) covering the SW upgrade contract,
+  `TopicLoader.parsePath` round-trips, and `Progress.*` per-topic isolation.
+  Runs on every commit via pre-commit hook and in CI before build.
+
+### Security
+- CSP `script-src 'unsafe-inline'` removed on `learn` / `link` / `land` /
+  `quiz` / `login`. Every inline `<script>` moved to an external file under
+  `/js/sw-register.js` or `/js/boot/<shell>-boot.js`.
+
+### Deploy pipeline
+- GitHub Pages deploys `dist/` via `actions/deploy-pages` rather than the
+  branch root — required because the new path-based URLs only exist as
+  files after a build.
+
+### Deferred from this sweep (tracked for future work)
+- Code-split / SVG-sprite the 1.1 MB `js/icons.js` — needs its own build
+  step for symbol-id deduplication.
+- Sentry / Plausible — both pending hosting + service signups.
+- CSP `style-src 'unsafe-inline'` removal — needs every inline `style=`
+  attribute on dynamically-rendered DOM to move to CSS classes first.
+- Touch-target audit + login-page a11y test — small but want their own
+  focused PR.
+- Per-topic `og:image` generator pipeline.
 
 ## Unreleased
 

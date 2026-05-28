@@ -120,8 +120,18 @@ emits the right sitemap.
 ## Conventions enforced by CI
 
 - `npm run lint` must pass (repo lint + ESLint with `--max-warnings=0`).
-- `npm run test:e2e` must pass (18 Playwright tests across desktop + mobile + a11y).
-- `pre-commit` runs the lint; `pre-push` runs the e2e suite. Override with `--no-verify` or `ECONOS_SKIP_E2E=1` only when you genuinely know better.
+- `npm run test:unit` must pass (Vitest, pure-function coverage under `tests/unit/`).
+- `npm run test:e2e` must pass (Playwright suite across desktop + mobile + a11y).
+- `pre-commit` runs the lint + unit tests; `pre-push` runs the e2e suite. Override with `--no-verify` or `ECONOS_SKIP_E2E=1` only when you genuinely know better.
+
+## Versioning & CHANGELOG
+
+`package.json` carries a semver: bump the **minor** when a release block of
+improvements ships, bump the **patch** for bugfix-only sweeps. Add an entry
+to `CHANGELOG.md` at the top under the new version heading describing what
+changed and why, grouped by area when there are several. The CHANGELOG is
+the place where "what shipped" lives — commit messages are the supporting
+detail, not a substitute.
 
 ## Service worker cache — BUMP IT when you change cache-first assets
 

@@ -131,16 +131,78 @@
         articles.map(a => (a.theme || '').trim()).filter(Boolean)
       )).sort();
 
-      /* Active filter state. The board default carries from the
-         site-wide econos:board localStorage key so a board switch
-         on the homepage flows into the hub. */
+      /* Active filter state.
+         Precedence (highest first):
+           1. URL path — /articles/board/<id>/, /articles/theme/<slug>/,
+              or /articles/board/<id>/theme/<slug>/. Each is a real
+              generated page (see articleRoutes in vite.config.js)
+              so the URL is shareable, indexable, and back-button
+              friendly. Initial state comes from <meta> tags the
+              build plugin injects into each filter shell.
+           2. localStorage econos:board — the user's saved board
+              from the home-page picker. Auto-carries into the
+              hub when there's no URL filter active.
+           3. 'all' — show everything.
+         Sort is UI state only; not persisted, not in the URL. */
+      function slugifyTheme(s) {
+        return String(s || '').toLowerCase()
+          .replace(/&/g, 'and')
+          .replace(/\s+/g, '-')
+          .replace(/[^a-z0-9-]/g, '');
+      }
+      function parseHubPath(pathname) {
+        const result = { board: 'all', theme: 'all' };
+        const m = String(pathname || '').replace(/\/$/, '')
+          .match(/^\/articles(?:\/board\/([a-z0-9_]+))?(?:\/theme\/([a-z0-9-]+))?$/);
+        if (!m) return result;
+        if (m[1] && BOARD_LABELS[m[1]]) result.board = m[1];
+        if (m[2]) {
+          const t = allThemes.find(x => slugifyTheme(x) === m[2]);
+          if (t) result.theme = t;
+        }
+        return result;
+      }
+
+      const metaBoardEl = document.querySelector('meta[name="econos-initial-board"]');
+      const metaThemeEl = document.querySelector('meta[name="econos-initial-theme"]');
+      const initialFromPath = parseHubPath(window.location.pathname);
+
       let activeBoard = 'all';
-      try {
-        const stored = localStorage.getItem('econos:board');
-        if (stored && BOARD_LABELS[stored]) activeBoard = stored;
-      } catch (e) {}
+      if (metaBoardEl && metaBoardEl.content && BOARD_LABELS[metaBoardEl.content]) {
+        activeBoard = metaBoardEl.content;
+      } else if (initialFromPath.board !== 'all') {
+        activeBoard = initialFromPath.board;
+      } else {
+        try {
+          const stored = localStorage.getItem('econos:board');
+          if (stored && BOARD_LABELS[stored]) activeBoard = stored;
+        } catch (e) {}
+      }
+
       let activeTheme = 'all';
+      if (metaThemeEl && metaThemeEl.content && allThemes.indexOf(metaThemeEl.content) !== -1) {
+        activeTheme = metaThemeEl.content;
+      } else if (initialFromPath.theme !== 'all') {
+        activeTheme = initialFromPath.theme;
+      }
       let activeSort  = 'newest';
+
+      /* Build the canonical path for the current filter set and
+         push it via history.pushState. Each filter URL is a real
+         generated page so a direct hit returns 200; pushState is
+         the soft-navigation that keeps the page in place. */
+      function buildHubPath() {
+        let p = '/articles/';
+        if (activeBoard !== 'all') p += 'board/' + activeBoard + '/';
+        if (activeTheme !== 'all') p += 'theme/' + slugifyTheme(activeTheme) + '/';
+        return p;
+      }
+      function updateUrl() {
+        const next = buildHubPath();
+        if (window.location.pathname !== next) {
+          try { window.history.pushState({}, '', next); } catch (e) {}
+        }
+      }
 
       function renderBoardRow() {
         const opts = [{ id: 'all', name: 'All' }]
@@ -240,6 +302,7 @@
         if (!btn) return;
         activeBoard = btn.dataset.board;
         renderBoardRow();
+        updateUrl();
         applyAllFilters();
       });
       themeFilter.addEventListener('click', e => {
@@ -247,6 +310,7 @@
         if (!btn) return;
         activeTheme = btn.dataset.theme;
         renderThemeRow();
+        updateUrl();
         applyAllFilters();
       });
       sortSelect.addEventListener('change', e => {
@@ -254,6 +318,22 @@
         applyAllFilters();
       });
       input.addEventListener('input', applyAllFilters);
+
+      /* Back/forward: re-derive filter state from the new URL,
+         re-render the chip rows and the grid. No URL write here —
+         the browser already updated location during the popstate. */
+      window.addEventListener('popstate', () => {
+        const next = parseHubPath(window.location.pathname);
+        activeBoard = next.board;
+        activeTheme = next.theme;
+        renderBoardRow();
+        renderThemeRow();
+        applyAllFilters();
+      });
+
+      /* Initial render. URL is already canonical (came from a real
+         generated shell or the bare /articles/ hub). Don't pushState
+         on first paint — that would create a useless back-stack entry. */
       applyAllFilters();
     })();
   </script>

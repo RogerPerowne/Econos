@@ -929,8 +929,100 @@ ${rssItems}
 `;
     writeFileSync(join(articlesDist, 'feed.xml'), rssXml);
 
+    /* ───────────────────────────────────────────────────────────
+       Per-filter hub landings — real generated pages at
+         /articles/board/<id>/
+         /articles/theme/<theme-slug>/
+         /articles/board/<id>/theme/<theme-slug>/
+       Each is a copy of the bare /articles/ hub with two
+       <meta> tags inserted (econos-initial-board /
+       econos-initial-theme) plus a board/theme-aware <title>
+       + <meta description> + <link rel=canonical> so Google
+       indexes them as distinct landing pages.
+       Pattern mirrors the topic-routes plugin's per-topic
+       shell generation.
+       ─────────────────────────────────────────────────────────── */
+    const themes = Array.from(new Set(finalIdx.map((a) => a.theme).filter(Boolean))).sort();
+    const slugifyTheme = (s) => String(s || '').toLowerCase()
+      .replace(/&/g, 'and')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+
+    const hubSrcPath = join(articlesDist, 'index.html');
+    const filterShells = [];
+    if (existsSync(hubSrcPath)) {
+      const hubSrc = readFileSync(hubSrcPath, 'utf8');
+
+      function writeFilterShell(boardId, theme) {
+        const boardName = boardId ? (BOARD_LABELS[boardId] || boardId) : null;
+        const titleBits = [];
+        if (boardName) titleBits.push(boardName);
+        if (theme)     titleBits.push(theme);
+        titleBits.push('A-level Economics articles');
+        const title = `${titleBits.join(' · ')} · Econos`;
+        const descBits = [];
+        if (boardName) descBits.push(boardName);
+        if (theme)     descBits.push(theme);
+        const desc = descBits.length
+          ? `Plain-English A-level economics articles, filtered to ${descBits.join(' + ')}. Written by a current teacher.`
+          : 'Plain-English A-level economics articles written by a current teacher.';
+
+        let path = '/articles/';
+        if (boardId) path += `board/${boardId}/`;
+        if (theme)   path += `theme/${slugifyTheme(theme)}/`;
+        const canonical = `https://econos.co.uk${path}`;
+
+        const metas = [
+          boardId ? `<meta name="econos-initial-board" content="${escapeHtml(boardId)}">` : '',
+          theme   ? `<meta name="econos-initial-theme" content="${escapeHtml(theme)}">`   : ''
+        ].filter(Boolean).join('\n  ');
+
+        let html = hubSrc
+          .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`)
+          .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(desc)}">`)
+          .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
+          .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`)
+          .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHtml(title.replace(' · Econos', ''))}">`)
+          .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(desc)}">`);
+        if (metas) {
+          html = html.replace('</head>', `  ${metas}\n</head>`);
+        }
+
+        const destDir = join(distDir, path.replace(/^\//, '').replace(/\/$/, ''));
+        mkdirSync(destDir, { recursive: true });
+        writeFileSync(join(destDir, 'index.html'), html);
+        filterShells.push(path);
+      }
+
+      // board-only
+      for (const b of BOARD_ORDER) writeFilterShell(b, null);
+      // theme-only
+      for (const t of themes) writeFilterShell(null, t);
+      // combined
+      for (const b of BOARD_ORDER) {
+        for (const t of themes) writeFilterShell(b, t);
+      }
+    }
+
+    /* Append the filter-landing URLs to sitemap.xml so Google
+       indexes them as separate pages. Only board-only and
+       theme-only landings get high priority (those are the
+       likely SEO targets); combos go in at a lower priority. */
+    const sitemapPath2 = join(distDir, 'sitemap.xml');
+    if (existsSync(sitemapPath2) && filterShells.length) {
+      const today = new Date().toISOString().slice(0, 10);
+      const filterUrls = filterShells.map((p) => {
+        const isCombo = p.includes('/board/') && p.includes('/theme/');
+        const priority = isCombo ? '0.4' : '0.6';
+        return `  <url>\n    <loc>https://econos.co.uk${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+      }).join('\n');
+      const src2 = readFileSync(sitemapPath2, 'utf8');
+      const next2 = src2.replace('</urlset>', `${filterUrls}\n</urlset>`);
+      writeFileSync(sitemapPath2, next2);
+    }
+
     // eslint-disable-next-line no-console
-    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries; wrote feed.xml`);
+    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries; wrote feed.xml + ${filterShells.length} filter shells`);
   }
 
   function escapeXml(s) {
@@ -945,17 +1037,42 @@ ${rssItems}
   /* Dev / preview: serve articles/ directly. Vite's MPA mode doesn't
      pick up nested HTML by default, so a small middleware maps
      /articles/<slug>/ → the hand-rolled file or, if a markdown source
-     exists, renders it on the fly. */
+     exists, renders it on the fly. Also maps the filter-landing
+     URLs (/articles/board/<id>/, /articles/theme/<slug>/,
+     /articles/board/<id>/theme/<slug>/) → the same articles
+     hub page; the per-shell <meta> tags are absent in dev so the
+     hub falls back to URL-path parsing for the initial filter. */
   function devMiddleware(req, _res, next) {
     try {
-      const url = req.url || '/';
-      const m = url.match(/^\/articles\/?(?:([a-z0-9-]+)\/?)?(?:\?.*)?$/);
+      const url = (req.url || '/').split('?')[0];
+      /* Filter-landing URLs → hub HTML, no slug processing. */
+      if (/^\/articles\/(?:board\/[a-z0-9_]+\/?)?(?:theme\/[a-z0-9-]+\/?)?$/.test(url)
+          && url !== '/articles' && url !== '/articles/') {
+        req.url = '/articles/index.html';
+        return next();
+      }
+      const m = url.match(/^\/articles\/?(?:([a-z0-9-]+)\/?)?$/);
       if (!m) return next();
       const slug = m[1];
       if (!slug) { req.url = '/articles/index.html'; return next(); }
-      /* Prefer a markdown source if one exists. */
-      const mdPath = resolve(ROOT, 'articles/sources', slug + '.md');
-      if (existsSync(mdPath)) {
+      /* Prefer a markdown source if one exists.
+         Walks articles/sources/ recursively to find <slug>.md. */
+      const findSource = (dir) => {
+        if (!existsSync(dir)) return null;
+        for (const name of readdirSync(dir)) {
+          const full = join(dir, name);
+          let s; try { s = statSync(full); } catch { continue; }
+          if (s.isDirectory()) {
+            const found = findSource(full);
+            if (found) return found;
+          } else if (name === slug + '.md') {
+            return full;
+          }
+        }
+        return null;
+      };
+      const mdPath = findSource(resolve(ROOT, 'articles/sources'));
+      if (mdPath) {
         const raw = readFileSync(mdPath, 'utf8');
         const { data: fm, content } = matter(raw);
         if (!(fm.draft === true || fm.status === 'draft')) {

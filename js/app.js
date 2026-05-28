@@ -75,6 +75,10 @@
     `;
   }
 
+  /* Topbar template. The streak chip that used to live here was a duplicate
+     of the sidebar's day-streak card and has been removed (sidebar wins).
+     The mobile-stages strip is appended via Shell so mobile users always
+     have Learn → Link → Land jump points under the topbar. */
   function renderTopbar() {
     if (currentView === 'intro') {
       return `
@@ -85,40 +89,33 @@
           </a>
           <div style="flex:1"></div>
           <div class="topbar__right">
-            <div class="topbar__streak">
-              <span class="topbar__streak-icon">🔥</span>
-              <span>1 day streak</span>
-            </div>
             <div class="topbar__avatar">
               <div class="topbar__avatar-circle">AB</div>
               <span class="topbar__avatar-chev">${I.chevDown}</span>
             </div>
           </div>
         </div>
-      `;
-    } else {
-      return `
-        <div class="topbar" role="region" aria-label="Session header">
-          <a href="#" class="topbar__back" data-action="back-to-intro">
-            ${I.arrowLeft}
-          </a>
-          <div class="topbar__crumbs">
-            <div class="topbar__session-label">Session 1 of 3: Learn</div>
-            <div class="topbar__topic-title">${T.title}</div>
-          </div>
-          <div class="topbar__right">
-            <div class="topbar__streak">
-              <span class="topbar__streak-icon">🔥</span>
-              <span>1 day streak</span>
-            </div>
-            <div class="topbar__avatar">
-              <div class="topbar__avatar-circle">AB</div>
-              <span class="topbar__avatar-chev">${I.chevDown}</span>
-            </div>
-          </div>
-        </div>
+        ${Shell.renderMobileStages()}
       `;
     }
+    return `
+      <div class="topbar" role="region" aria-label="Session header">
+        <a href="#" class="topbar__back" data-action="back-to-intro">
+          ${I.arrowLeft}
+        </a>
+        <div class="topbar__crumbs">
+          <div class="topbar__session-label">Session 1 of 3: Learn</div>
+          <div class="topbar__topic-title">${T.title}</div>
+        </div>
+        <div class="topbar__right">
+          <div class="topbar__avatar">
+            <div class="topbar__avatar-circle">AB</div>
+            <span class="topbar__avatar-chev">${I.chevDown}</span>
+          </div>
+        </div>
+      </div>
+      ${Shell.renderMobileStages()}
+    `;
   }
 
   /* ============================================================

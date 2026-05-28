@@ -50,6 +50,23 @@ test('Learn shell collapses chrome on mobile', async ({ page }) => {
   await expectNoHorizontalScroll(page);
 });
 
+test('mobile stages strip gives Learn/Link/Land jump points', async ({ page }) => {
+  await login(page);
+  await page.goto('/learn/causes-of-inflation-and-deflation');
+  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(300);
+
+  /* Strip is visible on mobile, sticks directly under the topbar. */
+  const strip = page.locator('.mobile-stages');
+  await expect(strip).toBeVisible();
+  await expect(strip.locator('.mobile-stages__item')).toHaveCount(3);
+
+  /* Learn is the current stage; Link and Land should be reachable links. */
+  await expect(strip.locator('.mobile-stages__item.is-current')).toHaveAttribute('data-stage-pos', '1');
+  const linkPill = strip.locator('a.mobile-stages__item[data-stage-pos="2"]');
+  await expect(linkPill).toHaveAttribute('href', '/link/causes-of-inflation-and-deflation/intro');
+});
+
 test('Link station renders on mobile with stacked rail', async ({ page }) => {
   await login(page);
   await page.goto('/link/causes-of-inflation-and-deflation/intro');

@@ -16232,4 +16232,219 @@ window.ECONOS_ICONS = {
     <polygon points="578,64 578,72 584,68" fill="#059669"/>
   </svg>`,
 
+  /* ============================================================
+     National Income — Card 1: two-sector circular flow
+     Households ↔ Firms with real flows (blue, outer pair) and
+     money flows (amber, inner pair). Used as visualKey on the
+     foundation card so the rest of the section can refer to it.
+     ============================================================ */
+  nationalIncomeFlow: `
+    <svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" font-family="Inter,system-ui,sans-serif" style="display:block;width:100%;height:auto;">
+      <defs>
+        <marker id="nif-blue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#2563EB"/></marker>
+        <marker id="nif-amber" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#D97706"/></marker>
+        <filter id="nif-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+      </defs>
+
+      <!-- Households box (left) -->
+      <g filter="url(#nif-shadow)">
+        <rect x="22" y="118" width="158" height="172" rx="14" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      </g>
+      <!-- icon: users (3 figures) -->
+      <g transform="translate(75,142)" fill="#2563EB">
+        <circle cx="13" cy="6" r="6"/>
+        <path d="M0 26 a13 13 0 0 1 26 0 z"/>
+        <circle cx="30" cy="9" r="5"/>
+        <path d="M19 26 a11 11 0 0 1 22 0 z"/>
+      </g>
+      <text x="101" y="216" text-anchor="middle" font-size="17" font-weight="800" fill="#1E40AF">Households</text>
+      <text x="101" y="244" text-anchor="middle" font-size="11.5" fill="#1E3A8A">Owners of factors</text>
+      <text x="101" y="259" text-anchor="middle" font-size="11.5" fill="#1E3A8A">of production</text>
+
+      <!-- Firms box (right) -->
+      <g filter="url(#nif-shadow)">
+        <rect x="460" y="118" width="158" height="172" rx="14" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+      </g>
+      <!-- icon: factory -->
+      <g transform="translate(515,142)" fill="#D97706">
+        <rect x="0" y="10" width="48" height="20" rx="1"/>
+        <polygon points="0,10 12,0 24,10"/>
+        <polygon points="24,10 36,0 48,10"/>
+        <rect x="6" y="16" width="7" height="9" fill="#FBBF24"/>
+        <rect x="19" y="16" width="7" height="9" fill="#FBBF24"/>
+        <rect x="32" y="16" width="7" height="9" fill="#FBBF24"/>
+      </g>
+      <text x="539" y="216" text-anchor="middle" font-size="17" font-weight="800" fill="#92400E">Firms</text>
+      <text x="539" y="244" text-anchor="middle" font-size="11.5" fill="#78350F">Producers of goods</text>
+      <text x="539" y="259" text-anchor="middle" font-size="11.5" fill="#78350F">and services</text>
+
+      <!-- REAL FLOWS eyebrow (top) -->
+      <line x1="200" y1="20" x2="270" y2="20" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.6"/>
+      <text x="320" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="#2563EB" letter-spacing="2.5">REAL FLOWS</text>
+      <line x1="370" y1="20" x2="440" y2="20" stroke="#2563EB" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.6"/>
+
+      <!-- Arrow 1: Households → Firms "Factors of production" (blue) -->
+      <text x="320" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">Factors of production</text>
+      <text x="320" y="66" text-anchor="middle" font-size="11" fill="#1E3A8A">Land, labour, capital, enterprise</text>
+      <path d="M 184 82 C 260 76, 380 76, 456 82" stroke="#2563EB" stroke-width="2.2" fill="none" marker-end="url(#nif-blue)"/>
+
+      <!-- Arrow 2: Firms → Households "Payments for factors" (amber) -->
+      <text x="320" y="115" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">Payments for factors</text>
+      <text x="320" y="131" text-anchor="middle" font-size="11" fill="#78350F">Wages, rent, interest, profit</text>
+      <path d="M 456 148 C 380 152, 260 152, 184 148" stroke="#D97706" stroke-width="2.2" fill="none" marker-end="url(#nif-amber)"/>
+
+      <!-- MONEY FLOWS eyebrow (middle) -->
+      <line x1="200" y1="186" x2="265" y2="186" stroke="#D97706" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.6"/>
+      <text x="320" y="190" text-anchor="middle" font-size="11" font-weight="800" fill="#D97706" letter-spacing="2.5">MONEY FLOWS</text>
+      <line x1="375" y1="186" x2="440" y2="186" stroke="#D97706" stroke-width="1.3" stroke-dasharray="4,3" opacity="0.6"/>
+
+      <!-- Arrow 3: Households → Firms "Consumer spending" (amber) -->
+      <text x="320" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">Consumer spending</text>
+      <text x="320" y="236" text-anchor="middle" font-size="11" fill="#78350F">Households' spending on goods and services</text>
+      <path d="M 184 252 C 260 246, 380 246, 456 252" stroke="#D97706" stroke-width="2.2" fill="none" marker-end="url(#nif-amber)"/>
+
+      <!-- Arrow 4: Firms → Households "Goods and services" (blue) -->
+      <text x="320" y="315" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">Goods and services</text>
+      <text x="320" y="331" text-anchor="middle" font-size="11" fill="#1E3A8A">Final goods and services</text>
+      <path d="M 456 348 C 380 352, 260 352, 184 348" stroke="#2563EB" stroke-width="2.2" fill="none" marker-end="url(#nif-blue)"/>
+    </svg>
+  `,
+
+  /* ============================================================
+     National Income — Card 4: full open-economy circular flow
+     Government, Households, Firms, Financial Markets, Overseas
+     Sector with all six injections (I, G, X) and withdrawals
+     (S, T, M) plus the inner factor-payment + consumption loop.
+     ============================================================ */
+  nationalIncomeOpenEconomy: `
+    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" font-family="Inter,system-ui,sans-serif" style="display:block;width:100%;height:auto;">
+      <defs>
+        <marker id="nio-blue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#2563EB"/></marker>
+        <marker id="nio-amber" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#D97706"/></marker>
+        <marker id="nio-green" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#10B981"/></marker>
+        <marker id="nio-purple" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L0,11 L11,5.5 z" fill="#8B5CF6"/></marker>
+        <filter id="nio-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/></filter>
+      </defs>
+
+      <!-- Financial Markets (top centre, purple) -->
+      <g filter="url(#nio-shadow)">
+        <rect x="248" y="20" width="224" height="64" rx="12" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(284,34)" fill="#7C3AED">
+        <rect x="0" y="14" width="34" height="16" rx="1"/>
+        <polygon points="0,14 17,4 34,14"/>
+        <rect x="4" y="20" width="3" height="8" fill="#fff"/>
+        <rect x="11" y="20" width="3" height="8" fill="#fff"/>
+        <rect x="18" y="20" width="3" height="8" fill="#fff"/>
+        <rect x="25" y="20" width="3" height="8" fill="#fff"/>
+      </g>
+      <text x="360" y="58" text-anchor="middle" font-size="14" font-weight="800" fill="#5B21B6">Financial Markets</text>
+
+      <!-- Government (left, amber) -->
+      <g filter="url(#nio-shadow)">
+        <rect x="22" y="222" width="118" height="100" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(56,238)" fill="#D97706">
+        <rect x="0" y="20" width="50" height="14" rx="1"/>
+        <polygon points="0,20 25,8 50,20"/>
+        <rect x="6" y="24" width="3" height="8" fill="#fff"/>
+        <rect x="15" y="24" width="3" height="8" fill="#fff"/>
+        <rect x="24" y="24" width="3" height="8" fill="#fff"/>
+        <rect x="33" y="24" width="3" height="8" fill="#fff"/>
+        <rect x="42" y="24" width="3" height="8" fill="#fff"/>
+      </g>
+      <text x="81" y="298" text-anchor="middle" font-size="13" font-weight="800" fill="#92400E">Government</text>
+
+      <!-- Households (centre-left, blue) -->
+      <g filter="url(#nio-shadow)">
+        <rect x="200" y="200" width="160" height="144" rx="14" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(252,222)" fill="#2563EB">
+        <circle cx="13" cy="6" r="6"/>
+        <path d="M0 26 a13 13 0 0 1 26 0 z"/>
+        <circle cx="30" cy="9" r="5"/>
+        <path d="M19 26 a11 11 0 0 1 22 0 z"/>
+      </g>
+      <text x="280" y="290" text-anchor="middle" font-size="14" font-weight="800" fill="#1E40AF">Households</text>
+      <text x="280" y="310" text-anchor="middle" font-size="11" fill="#1E3A8A">Supply factors</text>
+      <text x="280" y="325" text-anchor="middle" font-size="11" fill="#1E3A8A">of production</text>
+
+      <!-- Firms (centre-right, amber/orange) -->
+      <g filter="url(#nio-shadow)">
+        <rect x="400" y="200" width="160" height="144" rx="14" fill="#FED7AA" stroke="#EA580C" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(456,222)" fill="#EA580C">
+        <rect x="0" y="10" width="48" height="20" rx="1"/>
+        <polygon points="0,10 12,0 24,10"/>
+        <polygon points="24,10 36,0 48,10"/>
+        <rect x="6" y="16" width="7" height="9" fill="#FED7AA"/>
+        <rect x="19" y="16" width="7" height="9" fill="#FED7AA"/>
+        <rect x="32" y="16" width="7" height="9" fill="#FED7AA"/>
+      </g>
+      <text x="480" y="290" text-anchor="middle" font-size="14" font-weight="800" fill="#9A3412">Firms</text>
+      <text x="480" y="310" text-anchor="middle" font-size="11" fill="#7C2D12">Demand factors</text>
+      <text x="480" y="325" text-anchor="middle" font-size="11" fill="#7C2D12">of production</text>
+
+      <!-- Overseas Sector (right, green) -->
+      <g filter="url(#nio-shadow)">
+        <rect x="600" y="222" width="100" height="100" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(625,234)" fill="#059669">
+        <circle cx="25" cy="22" r="22"/>
+        <ellipse cx="25" cy="22" rx="22" ry="9" fill="none" stroke="#fff" stroke-width="1.8"/>
+        <line x1="3" y1="22" x2="47" y2="22" stroke="#fff" stroke-width="1.8"/>
+        <ellipse cx="25" cy="22" rx="10" ry="22" fill="none" stroke="#fff" stroke-width="1.8"/>
+      </g>
+      <text x="650" y="297" text-anchor="middle" font-size="12" font-weight="800" fill="#065F46">Overseas</text>
+      <text x="650" y="313" text-anchor="middle" font-size="12" font-weight="800" fill="#065F46">Sector</text>
+
+      <!-- ── Inner loop: factor payments (top) + consumer spending (bottom) ── -->
+      <!-- Factor payments: Firms → Households (top arrow) -->
+      <path d="M 408 232 C 380 198, 380 198, 352 232" stroke="#2563EB" stroke-width="2" fill="none" marker-end="url(#nio-blue)"/>
+      <text x="380" y="190" text-anchor="middle" font-size="11" font-weight="700" fill="#1E40AF">Factor payments</text>
+      <text x="380" y="204" text-anchor="middle" font-size="9.5" fill="#1E3A8A">(wages, rent, interest, profit)</text>
+
+      <!-- Consumption expenditure: Households → Firms (bottom arrow) -->
+      <path d="M 352 332 C 380 366, 380 366, 408 332" stroke="#EA580C" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
+      <text x="380" y="386" text-anchor="middle" font-size="11" font-weight="700" fill="#9A3412">Consumption expenditure (C)</text>
+      <text x="380" y="400" text-anchor="middle" font-size="9.5" fill="#7C2D12">on goods and services</text>
+
+      <!-- ── Withdrawals (out, dashed-style ends) and Injections (in) ── -->
+      <!-- Saving (S): Households → Financial Markets (up) -->
+      <path d="M 250 200 C 250 140, 260 100, 296 84" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#nio-purple)"/>
+      <text x="200" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">Saving (S)</text>
+      <text x="200" y="156" text-anchor="middle" font-size="10" fill="#6D28D9">(leaves)</text>
+
+      <!-- Investment (I): Financial Markets → Firms (down) -->
+      <path d="M 432 84 C 470 100, 480 140, 480 200" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#nio-purple)"/>
+      <text x="555" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#5B21B6">Investment (I)</text>
+      <text x="555" y="156" text-anchor="middle" font-size="10" fill="#6D28D9">(returns)</text>
+
+      <!-- Taxation (T): Households → Government (left) -->
+      <path d="M 200 252 L 144 252" stroke="#D97706" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
+      <text x="172" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">Taxation (T)</text>
+      <text x="172" y="270" text-anchor="middle" font-size="10" fill="#B45309">(leaves)</text>
+
+      <!-- Government spending (G): Government → Firms (right via curve below households) -->
+      <path d="M 140 300 C 200 360, 320 380, 400 326" stroke="#D97706" stroke-width="2" fill="none" marker-end="url(#nio-amber)"/>
+      <text x="232" y="370" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E">Government</text>
+      <text x="232" y="384" text-anchor="middle" font-size="10.5" fill="#92400E">spending (G)</text>
+      <text x="232" y="398" text-anchor="middle" font-size="10" fill="#B45309">(returns)</text>
+
+      <!-- Imports (M): Firms → Overseas (right) -->
+      <path d="M 560 240 L 596 240" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#nio-green)"/>
+      <text x="578" y="231" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">Imports (M)</text>
+      <text x="578" y="258" text-anchor="middle" font-size="10" fill="#047857">(leave)</text>
+
+      <!-- Exports (X): Overseas → Firms (left, lower) -->
+      <path d="M 596 300 L 560 300" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#nio-green)"/>
+      <text x="578" y="291" text-anchor="middle" font-size="11" font-weight="700" fill="#065F46">Exports (X)</text>
+      <text x="578" y="318" text-anchor="middle" font-size="10" fill="#047857">(enter)</text>
+
+      <!-- bottom equilibrium banner -->
+      <rect x="120" y="426" width="480" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="360" y="443" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">At equilibrium: J = W &#160;&#160;·&#160;&#160; I + G + X = S + T + M</text>
+    </svg>
+  `,
+
 };

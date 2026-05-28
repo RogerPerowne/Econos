@@ -6,6 +6,56 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.2.0 — 2026-05-28
+
+### National Income (Theme 2 · 4.1–4.3)
+- Rebuilt the `national-income` topic from 3 cards to 5, covering Edexcel A
+  2.4.1, 2.4.2 and 2.4.3 in sequence: the circular flow of income, the three
+  injections (I, G, X), the three withdrawals (S, T, M), the full
+  open-economy circular flow with the J = W equilibrium identity, and the
+  income-vs-wealth (flow-vs-stock) distinction. Each card is rendered through
+  `ad-interactive` with mockup-matched section ordering — green check tip at
+  the top, BIG IDEA + EXAM EDGE at the bottom.
+- Added two new named SVGs in `js/icons.js`:
+  - `nationalIncomeFlow` — the two-sector circular flow used on Card 1, with
+    blue real-flow arrows (factors of production, goods and services) and
+    amber money-flow arrows (factor payments, consumer spending).
+  - `nationalIncomeOpenEconomy` — the full open-economy circular flow used
+    on Card 4, with Households, Firms, Government, Financial Markets and
+    Overseas Sector boxes plus all six labelled injections and withdrawals.
+
+### Reference docs
+- `docs/edexcel-a-spec.md`, `docs/edexcel-b-spec.md`,
+  `docs/ocr-economics-spec.md` and `docs/aqa-economics-spec.md` now ship the
+  full subject content for all four mainstream UK A-level economics boards.
+  Used as the canonical map when authoring or board-tagging content.
+
+### Card renderer extensions (`ad-interactive`)
+- `nuanceBanner` — single horizontal callout with optional icon, primary
+  text, secondary text, and an "Example" panel. Used for Card 5's wealth
+  effect.
+- `checkList` — stack of green-check rows with a bold heading and a body
+  sentence. Used for Card 5's common confusions.
+- `formulaPills` — chip-style formula pills with `+`/operator separators and
+  an explanatory note alongside. Used for Card 2's I + G + X formula view.
+- `bottomTip` — coloured callout placed late in the card (after `flow`,
+  before `conclusion`), single object or array. Used for the amber warning
+  on Card 2/3 and the slate info note on Card 4.
+- `causesNote` — slim slate caption strip rendered immediately after the
+  `causesFirst` causes grid. Used for Card 1's "National income can be
+  measured from the income, output, or expenditure side" transition line.
+- `conclusionPosition: 'end'` — when set, the `conclusion` (BIG IDEA) block
+  defers to render after `nuanceBanner` / `checkList`, just before
+  `examEdge`. Keeps the BIG IDEA as the final summary on cards that use the
+  new blocks.
+- `left.sub` / `right.sub` — pair tiles now accept a subtitle line under the
+  label (e.g. "measured per unit of time" / "measured at a point in time" on
+  Card 5).
+
+### Plumbing
+- Bumped service-worker cache to `econos-v61` (forces a refresh of
+  `js/app.js`, `js/icons.js` and `styles.css`).
+
 ## 0.1.0 — 2026-05-28
 
 First numbered release. Block of URL contract, SEO, security, observability

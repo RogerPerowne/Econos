@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn It – Econos topic page.">
   <meta name="theme-color" content="#FAF8F4">
@@ -37,14 +37,7 @@
   <script defer src="/js/topic-loader.js"></script>
   <script defer src="/js/progress.js"></script>
   <script defer src="/js/engines/shell.js"></script>
-  <script>
-    /* Once deferred scripts have run (DOMContentLoaded), pull the topic
-       data file then load app.js – app.js is an IIFE that reads
-       window.ECONOS_TOPIC and renders into #app-root. */
-    document.addEventListener('DOMContentLoaded', function () {
-      TopicLoader.loadDataThenScript('topic.js', '/js/app.js', 'Learn It');
-    });
-  </script>
+  <script defer src="/js/boot/learn-boot.js"></script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Econos">
   <meta property="og:url" content="https://econos.co.uk/learn">
@@ -52,7 +45,7 @@
   <meta property="og:description" content="Bite-sized A-Level economics concept cards. Learn it. Link it. Land it.">
   <meta property="og:image" content="https://econos.co.uk/assets/logo-full.png">
   <link rel="canonical" href="https://econos.co.uk/learn">
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
+  <script defer src="/js/sw-register.js"></script>
 </head>
 <body>
 

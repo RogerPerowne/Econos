@@ -619,7 +619,7 @@ function articleRoutes() {
           const caption = captionHtml ? `<p class="article-interactive__caption">${captionHtml}</p>` : '';
           return `<figure class="article-diagram article-interactive" aria-label="${escapeAttr(ariaLabel)}">\n`
             + `  <div class="ad-interactive__diagram show-${escapeAttr(first)}" data-ad-state="${escapeAttr(first)}">${svg}</div>\n`
-            + `  <div class="ad-interactive__tabs" role="group" aria-label="Diagram steps" style="grid-template-columns:repeat(${preset.length}, minmax(0, 1fr));">${tabs}</div>\n`
+            + `  <div class="ad-interactive__tabs" role="group" aria-label="Diagram steps" style="--ad-tab-cols:${preset.length};">${tabs}</div>\n`
             + `  <div class="ad-interactive__panels">${panels}</div>\n`
             + `  ${caption}</figure>\n`;
         }

@@ -112,6 +112,12 @@
 .article-interactive { margin: 0 0 28px; }
 .article-interactive > .ad-interactive__diagram { margin-bottom: 12px; }
 .article-interactive .ad-interactive__tabs { margin-bottom: 12px; }
+/* Tab column count comes from --ad-tab-cols (set inline by the build)
+   so a media query can still override it on small screens — an inline
+   grid-template-columns could not be overridden. */
+.article-interactive .ad-interactive__tabs {
+  grid-template-columns: repeat(var(--ad-tab-cols, 3), minmax(0, 1fr));
+}
 .article-interactive__caption {
   font-size: 13px;
   color: var(--ink-soft, #2A3650);
@@ -119,6 +125,23 @@
   margin: 12px 0 0;
   text-align: center;
   font-style: italic;
+}
+
+/* ── Smartphone layout ─────────────────────────────────────────
+   Stack the step tabs so their labels are never clipped, ease the
+   stage padding, and let a wide diagram scroll horizontally inside
+   its card (at a readable min-width) rather than being crushed or
+   forcing the whole page to scroll. */
+@media (max-width: 560px) {
+  .article-interactive .ad-interactive__tabs { grid-template-columns: 1fr; }
+  .article-interactive .ad-tab { padding: 10px 12px; }
+  .article-interactive .ad-interactive__diagram {
+    padding: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .article-interactive .ad-interactive__diagram svg { min-width: 440px; }
+  .article-interactive .ad-panel { padding: 14px 16px; }
 }
 
 /* ──────────────────────────────────────────────────────────

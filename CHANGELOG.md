@@ -6,6 +6,20 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.9.2 — 2026-05-28
+
+### Articles: smartphone layout for interactive diagrams
+
+The interactive-diagram step tabs were laid out with an inline
+`grid-template-columns`, which overrode the responsive rule — so on a
+phone four tabs were crammed into one row, their labels clipped, and
+the page scrolled sideways. The column count now comes from an
+`--ad-tab-cols` custom property, letting a `max-width: 560px` media
+query stack the tabs vertically (full labels, no clipping) and ease the
+stage padding; a wide diagram scrolls inside its own card at a readable
+min-width instead of being crushed or forcing the page to scroll.
+SW cache → `econos-v80`.
+
 ## 0.9.1 — 2026-05-28
 
 ### Articles: interactive knowledge-check quizzes

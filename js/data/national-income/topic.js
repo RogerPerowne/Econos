@@ -101,7 +101,7 @@ window.ECONOS_TOPIC = {
 
       causesFirst: true,
       causesLabel: 'The three injections',
-      causesEmoji: '\u{1F4E5}',
+      causesEmoji: '\u{1F465}',
       causes: [
         {
           tone: 'blue', icon: '\u{1F3ED}', head: 'Investment (I)',
@@ -166,7 +166,7 @@ window.ECONOS_TOPIC = {
 
       causesFirst: true,
       causesLabel: 'The three withdrawals',
-      causesEmoji: '\u{1F4E4}',
+      causesEmoji: '\u{1F465}',
       causes: [
         {
           tone: 'blue', icon: '\u{1F437}', head: 'Saving (S)',

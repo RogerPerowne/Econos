@@ -23,9 +23,12 @@
 
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import { readdirSync, statSync, readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readdirSync, statSync, readFileSync, writeFileSync, mkdirSync, existsSync, cpSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { execSync } from 'node:child_process';
+import matter from 'gray-matter';
+import MarkdownIt from 'markdown-it';
+import mdContainer from 'markdown-it-container';
 
 const ROOT = process.cwd();
 
@@ -275,12 +278,13 @@ function topicRoutes() {
        and quiz sets out of the sitemap — they're internal session URLs
        and including 400+ entries would dilute the index. */
     const today = new Date().toISOString().slice(0, 10);
+    /* Article URLs are appended later by article-routes from the
+       authoritative search-index, so we don't duplicate them here. */
     const urls = [
       { loc: '/',                priority: '1.0', freq: 'weekly'  },
       { loc: '/privacy-policy',  priority: '0.3', freq: 'yearly'  },
       { loc: '/terms',           priority: '0.3', freq: 'yearly'  },
-      { loc: '/articles/',       priority: '0.7', freq: 'weekly'  },
-      { loc: '/articles/monopoly-a-level-economics/', priority: '0.6', freq: 'monthly' }
+      { loc: '/articles/',       priority: '0.7', freq: 'weekly'  }
     ];
     for (const topic of ensureRegistry()) {
       if (!(topic.available && topic.available.learn)) continue;
@@ -304,6 +308,446 @@ function topicRoutes() {
     configureServer:        (server) => { server.middlewares.use(devRewrite); },
     configurePreviewServer: (server) => { server.middlewares.use(previewRewrite); },
     closeBundle: generateBuildOutputs
+  };
+}
+
+/* ============================================================
+   Article-routes plugin
+   ─────────────────────────────────────────────────────────────
+   Articles are long-form SEO content that lives at /articles/<slug>/.
+   Two source formats coexist:
+
+     1. Hand-rolled HTML:  articles/<slug>/index.html
+        Pinned exemplars with bespoke per-article visuals (the
+        monopoly article uses custom two-col cause-cards, a chain
+        widget, a want-more preview tile, etc.). Copied through
+        verbatim. Their metadata is read from articles/search-index.json.
+
+     2. Markdown sources:  articles/sources/<slug>.md
+        YAML frontmatter (title, description, theme, spec,
+        keywords, read_minutes, dates, friction blurb, at-a-glance
+        facts, want_more config, FAQ entries) plus a Markdown body
+        with `:::section { eyebrow, color, icon }` containers
+        wrapping each prose section. Rendered through markdown-it
+        with HTML pass-through enabled so authors can drop raw SVG
+        for bespoke diagrams where needed.
+
+   On build, both formats land at dist/articles/<slug>/index.html.
+   The hub (dist/articles/index.html) + dist/articles/articles.css +
+   dist/articles/search-index.json all get rebuilt from this
+   plugin so a) the articles surface actually deploys, and b) the
+   index never drifts from what's on disk.
+
+   Sitemap entries for articles get appended to the already-emitted
+   dist/sitemap.xml by replacing the closing </urlset> tag.
+   ============================================================ */
+
+function articleRoutes() {
+  const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
+  /* :::section { eyebrow, color, icon } … ::: — one section per
+     prose block, with the eyebrow chrome the monopoly article uses. */
+  md.use(mdContainer, 'section', {
+    validate: (params) => params.trim().startsWith('section'),
+    render: (tokens, idx) => {
+      if (tokens[idx].nesting !== 1) return '</section>\n';
+      const raw = tokens[idx].info.trim().slice('section'.length).trim();
+      const attrs = parseAttrs(raw);
+      const colorMod = attrs.color ? ` section__eyebrow--${escapeAttr(attrs.color)}` : '';
+      const iconSvg = ICONS[attrs.icon] || ICONS.spark;
+      const eyebrowText = attrs.eyebrow ? escapeHtml(attrs.eyebrow) : '';
+      return `<section class="section">\n`
+           + `  <div class="section__eyebrow${colorMod}">${iconSvg}${eyebrowText}</div>\n`;
+    }
+  });
+
+  /* :::callout { variant } … ::: — neutral container for highlight
+     blocks like the "exam move" note inside a real-world chain. */
+  md.use(mdContainer, 'callout', {
+    validate: (params) => params.trim().startsWith('callout'),
+    render: (tokens, idx) => {
+      if (tokens[idx].nesting !== 1) return '</aside>\n';
+      const raw = tokens[idx].info.trim().slice('callout'.length).trim();
+      const attrs = parseAttrs(raw);
+      const variant = attrs.variant ? ` callout--${escapeAttr(attrs.variant)}` : '';
+      return `<aside class="callout${variant}">\n`;
+    }
+  });
+
+  /* Parse "key=value key2=\"quoted value\"" attribute strings off a
+     directive opening line. Returns an object. Keeps the surface small
+     — no nested quotes, no escaping — because directive params should
+     stay simple. */
+  function parseAttrs(s) {
+    const out = {};
+    const re = /(\w[\w-]*)\s*=\s*(?:"([^"]*)"|(\S+))/g;
+    let m;
+    while ((m = re.exec(s))) {
+      out[m[1]] = m[2] !== undefined ? m[2] : m[3];
+    }
+    return out;
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function escapeAttr(s) { return String(s).replace(/[^a-z0-9_-]/gi, ''); }
+
+  /* Tiny inline-SVG palette used by section eyebrows. Keeps the
+     plugin self-contained — no runtime fetch, no dependency on the
+     site's JS icon registry. Add new keys here as future article
+     directives need them. */
+  const ICONS = {
+    bulb:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M9 18h6M10 22h4M12 2a7 7 0 014 12.5V17H8v-2.5A7 7 0 0112 2z"/></svg>',
+    target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>',
+    globe:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18"/></svg>',
+    scale:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 3v18M3 7h18M3 7l3 8a3 3 0 006 0M21 7l-3 8a3 3 0 01-6 0"/></svg>',
+    cap:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>',
+    spark:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>',
+    check:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 13l4 4L19 7"/></svg>'
+  };
+
+  /* Render the full HTML page for one Markdown-sourced article.
+     The chrome (topnav + breadcrumb + article header + at-a-glance
+     sidebar + want-more CTA + article footer) is templated here so
+     it's identical across every article and lives in one place. */
+  function renderArticle({ slug, frontmatter: fm, body }) {
+    const url = `https://econos.co.uk/articles/${slug}/`;
+    const title = `${fm.title} | Econos`;
+    const desc  = fm.description || '';
+    const renderedBody = md.render(body);
+
+    /* JSON-LD: always Article schema; FAQPage too when frontmatter
+       supplies a faq array. Both are emitted as separate <script>
+       blocks so Google's parser handles each cleanly. */
+    const articleLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: fm.title,
+      description: desc,
+      author: { '@type': 'Person', name: fm.author || 'Roger Perowne', jobTitle: 'A-level Economics teacher' },
+      publisher: { '@type': 'Organization', name: 'Econos', url: 'https://econos.co.uk' },
+      datePublished: fm.published || fm.dates?.published,
+      dateModified: fm.modified || fm.dates?.modified || fm.published || fm.dates?.published,
+      mainEntityOfPage: url,
+      about: fm.about || fm.keywords || [],
+      educationalLevel: 'A-level',
+      learningResourceType: 'Article',
+      inLanguage: 'en-GB'
+    };
+    const ldBlocks = [
+      `<script type="application/ld+json">${JSON.stringify(articleLd)}</script>`
+    ];
+    if (Array.isArray(fm.faq) && fm.faq.length) {
+      const faqLd = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: fm.faq.map((qa) => ({
+          '@type': 'Question',
+          name: qa.q,
+          acceptedAnswer: { '@type': 'Answer', text: qa.a }
+        }))
+      };
+      ldBlocks.push(`<script type="application/ld+json">${JSON.stringify(faqLd)}</script>`);
+    }
+
+    const breadcrumb = renderBreadcrumb(fm);
+    const glance = renderGlance(fm);
+    const friction = renderFriction(fm);
+    const wantMore = renderWantMore(fm);
+    const footer = renderArticleFooter(fm);
+
+    return `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(desc)}">
+  <meta name="theme-color" content="#FAF8F4">
+  <link rel="canonical" href="${url}">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Econos">
+  <meta property="og:url" content="${url}">
+  <meta property="og:title" content="${escapeHtml(fm.title)}">
+  <meta property="og:description" content="${escapeHtml(desc)}">
+  <meta property="og:image" content="https://econos.co.uk/assets/logo-full.png">
+  <meta name="twitter:card" content="summary_large_image">
+  ${ldBlocks.join('\n  ')}
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+${renderTopnav()}
+  <main class="article" id="main-content">
+${breadcrumb}
+    <div class="article-grid">
+      <header class="article-header">
+        <h1>${escapeHtml(fm.title)}</h1>
+        ${fm.lede ? `<p class="article-lede">${escapeHtml(fm.lede)}</p>` : ''}
+        <div class="article-meta">
+          <span>${fm.read_minutes ? `${fm.read_minutes} min read` : ''}</span>
+          ${fm.spec ? `<span>A-level (${escapeHtml(fm.spec)})</span>` : ''}
+        </div>
+${friction}
+      </header>
+${glance}
+    </div>
+${renderedBody}
+${wantMore}
+${footer}
+  </main>
+</body>
+</html>
+`;
+  }
+
+  function renderTopnav() {
+    return `  <nav class="topnav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="topnav__logo" aria-label="econos home">
+      <img src="/assets/logo-wordmark-mark.png" alt="econos — Learn it. Link it. Land it." height="44">
+    </a>
+    <ul class="topnav__links" role="list">
+      <li><a href="/#how-it-works">How it works</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#topics">Topics</a></li>
+      <li><a href="/articles/" class="is-active">Articles</a></li>
+      <li><a href="/#audience">About</a></li>
+    </ul>
+    <div class="topnav__actions">
+      <a href="/login" class="btn btn--outline">Log in</a>
+      <a href="/learn/causes-of-inflation-and-deflation" class="btn btn--solid">Get started</a>
+    </div>
+  </nav>`;
+  }
+
+  function renderBreadcrumb(fm) {
+    const crumbs = Array.isArray(fm.breadcrumb) ? fm.breadcrumb : [
+      { label: 'Articles', href: '/articles/' },
+      { label: fm.title || 'Article' }
+    ];
+    const items = crumbs.map((c, i) => {
+      const isLast = i === crumbs.length - 1;
+      if (isLast || !c.href) return `<li aria-current="page">${escapeHtml(c.label)}</li>`;
+      return `<li><a href="${escapeAttrUrl(c.href)}">${escapeHtml(c.label)}</a></li>`;
+    }).join('\n        ');
+    return `    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        ${items}
+      </ol>
+    </nav>`;
+  }
+
+  function escapeAttrUrl(s) { return String(s).replace(/"/g, '&quot;'); }
+
+  function renderFriction(fm) {
+    if (!fm.friction) return '';
+    const parasRaw = Array.isArray(fm.friction) ? fm.friction : [fm.friction];
+    const paras = parasRaw.map((p) => `<p>${escapeHtml(p)}</p>`).join('\n            ');
+    return `        <aside class="friction" aria-label="The friction">
+          <div class="friction__icon">${ICONS.check}</div>
+          <div>
+            <h2>The friction</h2>
+            ${paras}
+          </div>
+        </aside>`;
+  }
+
+  function renderGlance(fm) {
+    if (!Array.isArray(fm.glance) || !fm.glance.length) return '';
+    const facts = fm.glance.map((f) => `        <div class="fact">
+          <span class="fact__icon">${ICONS.check}</span>
+          <div>
+            <div class="fact__label">${escapeHtml(f.label)}</div>
+            <div class="fact__value">${escapeHtml(f.value)}</div>
+          </div>
+        </div>`).join('\n');
+    const cta = fm.glance_cta && fm.glance_cta.href
+      ? `        <a href="${escapeAttrUrl(fm.glance_cta.href)}" class="at-a-glance__cta">${escapeHtml(fm.glance_cta.label || 'Explore the full topic →')}</a>`
+      : '';
+    const heading = fm.glance_title || (fm.title ? `${fm.title.split(/[?:.]/)[0].trim()} at a glance` : 'At a glance');
+    return `      <aside class="at-a-glance" aria-label="Key facts">
+        <h2>${escapeHtml(heading)}</h2>
+${facts}
+${cta}
+      </aside>`;
+  }
+
+  function renderWantMore(fm) {
+    if (!fm.want_more) return '';
+    const wm = fm.want_more;
+    const primary = wm.primary_href
+      ? `<a href="${escapeAttrUrl(wm.primary_href)}" class="cta-primary">${escapeHtml(wm.primary_label || 'Explore the full topic →')}</a>`
+      : '';
+    const secondary = wm.secondary_href
+      ? `<a href="${escapeAttrUrl(wm.secondary_href)}" class="cta-secondary">${escapeHtml(wm.secondary_label || 'Sign up free')}</a>`
+      : '';
+    return `    <section class="want-more" aria-labelledby="more">
+      <div>
+        <h2 id="more">${escapeHtml(wm.title || 'Want more depth?')}</h2>
+        ${wm.subtitle ? `<p class="want-more__sub">${escapeHtml(wm.subtitle)}</p>` : ''}
+        <div class="want-more__ctas">
+          ${primary}
+          ${secondary}
+        </div>
+      </div>
+    </section>`;
+  }
+
+  function renderArticleFooter(fm) {
+    const updated = fm.modified || fm.dates?.modified || fm.published || fm.dates?.published || '';
+    return `    <footer class="article-footer">
+      <div class="article-footer__item">${ICONS.check} Written by teachers, not AI</div>
+      ${fm.spec ? `<div class="article-footer__item">${ICONS.cap} Mapped to ${escapeHtml(fm.spec)}</div>` : ''}
+      <div class="article-footer__item">${ICONS.check} Built by an A-level teacher at Wycombe Abbey</div>
+      ${updated ? `<div class="article-footer__item">Last updated: ${escapeHtml(formatDate(updated))}</div>` : ''}
+    </footer>`;
+  }
+
+  function formatDate(iso) {
+    try {
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return String(iso);
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch { return String(iso); }
+  }
+
+  /* Build / write everything article-related at closeBundle. */
+  function generate() {
+    const distDir = resolve(ROOT, 'dist');
+    if (!existsSync(distDir)) return;
+    const articlesSrc  = resolve(ROOT, 'articles');
+    const articlesDist = join(distDir, 'articles');
+    mkdirSync(articlesDist, { recursive: true });
+
+    /* Hub + CSS — verbatim copies. */
+    if (existsSync(join(articlesSrc, 'index.html'))) {
+      writeFileSync(join(articlesDist, 'index.html'), readFileSync(join(articlesSrc, 'index.html'), 'utf8'));
+    }
+    if (existsSync(join(articlesSrc, 'articles.css'))) {
+      writeFileSync(join(articlesDist, 'articles.css'), readFileSync(join(articlesSrc, 'articles.css'), 'utf8'));
+    }
+
+    /* Hand-rolled articles — copy every articles/<slug>/index.html
+       through verbatim. Skip the 'sources' directory. */
+    const handRolledSlugs = new Set();
+    for (const name of readdirSync(articlesSrc)) {
+      if (name === 'sources') continue;
+      const dir = join(articlesSrc, name);
+      let s; try { s = statSync(dir); } catch { continue; }
+      if (!s.isDirectory()) continue;
+      const htmlPath = join(dir, 'index.html');
+      if (!existsSync(htmlPath)) continue;
+      const destDir = join(articlesDist, name);
+      mkdirSync(destDir, { recursive: true });
+      cpSync(htmlPath, join(destDir, 'index.html'));
+      handRolledSlugs.add(name);
+    }
+
+    /* Markdown-sourced articles. */
+    const sourcesDir = join(articlesSrc, 'sources');
+    const markdownEntries = [];
+    if (existsSync(sourcesDir)) {
+      for (const name of readdirSync(sourcesDir)) {
+        if (!name.endsWith('.md')) continue;
+        if (name.startsWith('_')) continue; // template files use leading underscore
+        const slug = name.replace(/\.md$/, '');
+        const raw = readFileSync(join(sourcesDir, name), 'utf8');
+        const { data: fm, content } = matter(raw);
+        if (fm.draft === true || fm.status === 'draft') continue;
+        const html = renderArticle({ slug, frontmatter: fm, body: content });
+        const destDir = join(articlesDist, slug);
+        mkdirSync(destDir, { recursive: true });
+        writeFileSync(join(destDir, 'index.html'), html);
+        markdownEntries.push({
+          slug,
+          url: `/articles/${slug}/`,
+          title: fm.title || slug,
+          description: fm.description || '',
+          theme: fm.theme || '',
+          spec: fm.spec || '',
+          keywords: fm.keywords || [],
+          read_minutes: fm.read_minutes || 0,
+          status: fm.status || 'live'
+        });
+      }
+    }
+
+    /* Search index — preserve hand-rolled entries from the source
+       index.json, replace markdown entries with freshly-built ones. */
+    let existingIdx = [];
+    const existingIdxPath = join(articlesSrc, 'search-index.json');
+    if (existsSync(existingIdxPath)) {
+      try { existingIdx = JSON.parse(readFileSync(existingIdxPath, 'utf8')); }
+      catch { /* malformed — start fresh */ }
+    }
+    const markdownSlugs = new Set(markdownEntries.map((e) => e.slug));
+    const preservedHandRolled = existingIdx.filter(
+      (e) => handRolledSlugs.has(e.slug) && !markdownSlugs.has(e.slug)
+    );
+    const finalIdx = [...preservedHandRolled, ...markdownEntries];
+    writeFileSync(join(articlesDist, 'search-index.json'), JSON.stringify(finalIdx, null, 2) + '\n');
+
+    /* Append article URLs to sitemap.xml — the topic-routes plugin
+       already wrote it during this same closeBundle (vite runs the
+       plugins in the order they appear in the plugins array, and we
+       sit after topic-routes). Read, insert, write back. */
+    const sitemapPath = join(distDir, 'sitemap.xml');
+    if (existsSync(sitemapPath)) {
+      const today = new Date().toISOString().slice(0, 10);
+      const articleUrls = finalIdx.map((a) =>
+        `  <url>\n    <loc>https://econos.co.uk${a.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`
+      ).join('\n');
+      const src = readFileSync(sitemapPath, 'utf8');
+      /* Drop the stub /articles/* entries the topic-routes plugin
+         injects so we don't double-list them. */
+      const stripped = src.replace(/\s*<url>\s*<loc>https:\/\/econos\.co\.uk\/articles\/[^<]*<\/loc>[\s\S]*?<\/url>/g, '');
+      const next = stripped.replace('</urlset>', `${articleUrls}\n</urlset>`);
+      writeFileSync(sitemapPath, next);
+    }
+
+    // eslint-disable-next-line no-console
+    console.log(`[article-routes] ${handRolledSlugs.size} hand-rolled, ${markdownEntries.length} from Markdown; search-index has ${finalIdx.length} entries`);
+  }
+
+  /* Dev / preview: serve articles/ directly. Vite's MPA mode doesn't
+     pick up nested HTML by default, so a small middleware maps
+     /articles/<slug>/ → the hand-rolled file or, if a markdown source
+     exists, renders it on the fly. */
+  function devMiddleware(req, _res, next) {
+    try {
+      const url = req.url || '/';
+      const m = url.match(/^\/articles\/?(?:([a-z0-9-]+)\/?)?(?:\?.*)?$/);
+      if (!m) return next();
+      const slug = m[1];
+      if (!slug) { req.url = '/articles/index.html'; return next(); }
+      /* Prefer a markdown source if one exists. */
+      const mdPath = resolve(ROOT, 'articles/sources', slug + '.md');
+      if (existsSync(mdPath)) {
+        const raw = readFileSync(mdPath, 'utf8');
+        const { data: fm, content } = matter(raw);
+        if (!(fm.draft === true || fm.status === 'draft')) {
+          const html = renderArticle({ slug, frontmatter: fm, body: content });
+          _res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          _res.end(html);
+          return;
+        }
+      }
+      const htmlPath = resolve(ROOT, 'articles', slug, 'index.html');
+      if (existsSync(htmlPath)) { req.url = `/articles/${slug}/index.html`; }
+    } catch (e) { /* fall through */ }
+    next();
+  }
+
+  return {
+    name: 'article-routes',
+    configureServer:        (server) => { server.middlewares.use(devMiddleware); },
+    configurePreviewServer: (server) => { server.middlewares.use(devMiddleware); },
+    closeBundle: generate
   };
 }
 
@@ -333,6 +777,7 @@ export default defineConfig({
 
     /* Wires the path-based URL contract for dev, preview, and build. */
     topicRoutes(),
+    articleRoutes(),
 
     /* Patch CACHE_NAME in dist/sw.js so the service worker invalidates its
        cache-first store on every deploy. */

@@ -6,6 +6,75 @@ educational site, so versions track release rhythm rather than a frozen
 public API: bump the minor when a release block of improvements ships;
 bump the patch for bugfix-only sweeps.
 
+## 0.4.0 — 2026-05-28
+
+### Data layout: rename, consolidate, retire Quiz shell
+
+Sweeping data-layout refactor driven by four user directives in
+sequence: board picker at the top of the topics list, rename
+`topic.js` → `learn.js`, consolidate per-station / per-section
+files into one `link.js` / `land.js` per topic, and retire the
+standalone Quiz shell while moving quiz pools into the right Learn
+data file.
+
+- **Board picker on the homepage.** A radio-group row above the
+  topic grid (`#board-picker` in `index.html`, styles in
+  `index.css`). Each board renders as a pill; the active one is
+  filled. Selecting reloads — same pattern as the account-menu
+  picker. Re-reads `TopicLoader.getBoard()` at render time so
+  every spec chip, theme grouping and footer count refreshes.
+- **`topic.js` → `learn.js`** across 91 baseline topics + 15
+  board overrides = 106 file renames via `git mv`. Boot script
+  `js/boot/learn-boot.js` updated to load `learn.js`. The Learn
+  It data file now matches the URL contract verb.
+- **Per-station / per-section consolidation.** All `link-*.js`
+  files for a topic concatenated into a single `link.js` per
+  topic; all `land-*.js` files into a single `land.js` per
+  topic. Each inner IIFE still publishes its own
+  `window.ECONOS_LINK_*` / `window.ECONOS_LAND_*` global, so the
+  engines that read those globals need no changes. The router /
+  stations config points every station at the consolidated file.
+- **`js/config/stations.js` simplified.** Every Link It station
+  and Land It section now points at `link.js` or `land.js`; the
+  Quiz placeholders are gone.
+- **Quiz shell retired.** Standalone `/quiz/<topic>/<set>` URL
+  contract removed; `quiz.html`, `js/boot/quiz-boot.js` deleted.
+  Quiz pools merged into each topic's `learn.js` under the same
+  `window.ECONOS_QUIZ` global. `js/engines/quiz-engine.js` is
+  retained and now defer-loaded by `learn.html`, `link.html`
+  and `land.html` so any shell can render the quiz inline by
+  swapping its `#app-root` for a `#quiz-root` and calling
+  `bootQuiz()`. The end-of-Learn-It card surfaces a "Take the
+  quiz →" button when `window.ECONOS_QUIZ` is present and uses
+  the new `take-quiz` action handler in `js/app.js` to render
+  the quiz inline.
+- **Per-file override granularity.** `window.ECONOS_BOARD_OVERRIDES`
+  in `js/config/boards.js` now lists overrides as
+  `{ <topic>: { learn: true, link: false } }` instead of
+  `{ <topic>: true }`. The TopicLoader's `dataPath()` checks the
+  filename stem against the per-file flag so a board can ship a
+  custom `learn.js` while still inheriting the Edexcel A baseline
+  for `link.js` / `land.js` on the same topic.
+- **Vite topic-routes plugin** drops Quiz: no `/quiz/` shell
+  generation, no Quiz JSON-LD, no Quiz availability flag, no
+  `quizSets` config field. `SHELL_HTML` is now
+  `{ learn, link, land }`.
+- **Tests.** Unit `topic-loader.test.js` test for `/quiz/<topic>/<set>`
+  rewritten to assert `parsePath` returns `null`. E2E
+  `shells.spec.js` Quiz JSON-LD test + CSP test + availability
+  test all updated. `tests/e2e/topic-loader.spec.js` routes test
+  and parsePath test similarly. 28 / 28 e2e pass, 24 / 24 unit
+  pass.
+- **Service worker** bumped `econos-v63` → `econos-v64`. Forces
+  a clean refresh across all clients given the topic.js → learn.js
+  rename and consolidated file paths.
+- **Legacy compat shim.** `TopicLoader.routes.quiz()` retained as
+  a no-op returning `''` so existing learn.js files that
+  reference `quizCta: { href: TopicLoader.routes.quiz('main') }`
+  still parse. The renderer no longer reads `quizCta`, so the
+  field is orphan data. Shim removable once every learn.js is
+  rewritten to drop it.
+
 ## 0.3.1 — 2026-05-28
 
 ### Multi-board content — first board-variant Learn It topics ship

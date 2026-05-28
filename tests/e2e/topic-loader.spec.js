@@ -29,9 +29,7 @@ test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
       learnArg:  T.routes.learn('positive-externalities'),
       linkDef:   T.routes.link('intro'),
       linkOpen:  T.routes.link('chain-open'),
-      land:      T.routes.land('a'),
-      quiz:      T.routes.quiz('main'),
-      quizSet:   T.routes.quiz('causes', 'causes-of-inflation-and-deflation')
+      land:      T.routes.land('a')
     };
   });
 
@@ -41,8 +39,6 @@ test('routes emit path-based URLs with hyphenated slugs', async ({ page }) => {
   expect(cases.linkDef).toBe('/link/causes-of-inflation-and-deflation/intro');
   expect(cases.linkOpen).toBe('/link/causes-of-inflation-and-deflation/chain-open');
   expect(cases.land).toBe('/land/causes-of-inflation-and-deflation/a');
-  expect(cases.quiz).toBe('/quiz/causes-of-inflation-and-deflation/main');
-  expect(cases.quizSet).toBe('/quiz/causes-of-inflation-and-deflation/causes');
 });
 
 test('parsePath round-trips canonical URLs', async ({ page }) => {
@@ -67,7 +63,8 @@ test('parsePath round-trips canonical URLs', async ({ page }) => {
   expect(cases.link).toMatchObject({ shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain' });
   expect(cases.open).toMatchObject({ shell: 'link', topic: 'causes-of-inflation-and-deflation', station: 'chain-open' });
   expect(cases.land).toMatchObject({ shell: 'land', topic: 'causes-of-inflation-and-deflation', station: 'a' });
-  expect(cases.quiz).toMatchObject({ shell: 'quiz', topic: 'causes-of-inflation-and-deflation', quizSet: 'main' });
+  /* /quiz/ contract retired in v0.4.0 — parsePath returns null. */
+  expect(cases.quiz).toBeNull();
   expect(cases.slug).toMatchObject({ shell: 'learn', topic: 'positive-externalities' });
   expect(cases.bogus).toBeNull();
 });

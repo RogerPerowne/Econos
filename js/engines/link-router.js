@@ -148,22 +148,6 @@
     }
     setTitle(station);
     var cancelSkeleton = showLoadingSkeleton();
-    /* Special: quiz station — lazy-load engine + chosen question set. The
-       set is carried in the path's quizSet slot when present, else 'main'. */
-    if (station === 'quiz') {
-      var quizSet = TopicLoader.getQuizSet() || 'main';
-      var dataFile = 'link-quiz-' + quizSet + '.js';
-      loadScript('/js/engines/quiz-engine.js', function () {
-        TopicLoader.loadData(dataFile, function () {
-          if (typeof window.bootQuizStation === 'function') {
-            cancelSkeleton();
-            window.bootQuizStation({ stage: 'link' });
-            window.scrollTo(0, 0);
-          }
-        }, 'Link It quiz');
-      });
-      return;
-    }
     /* Standard stations: lazy-load engine script then its data file. */
     var bootFn = function () {
       var fn = window[cfg.boot];

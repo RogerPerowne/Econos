@@ -115,20 +115,6 @@
     }
     setTitle(station);
     var cancelSkeleton = showLoadingSkeleton();
-    if (station === 'quiz') {
-      var quizSet = TopicLoader.getQuizSet() || 'main';
-      var dataFile = 'land-quiz-' + quizSet + '.js';
-      loadScript('/js/engines/quiz-engine.js', function () {
-        TopicLoader.loadData(dataFile, function () {
-          if (typeof window.bootQuizStation === 'function') {
-            cancelSkeleton();
-            window.bootQuizStation({ stage: 'land' });
-            window.scrollTo(0, 0);
-          }
-        }, 'Land It quiz');
-      });
-      return;
-    }
     var bootFn = function () {
       var fn = window[cfg.boot];
       if (typeof fn === 'function') {

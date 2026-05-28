@@ -57,10 +57,11 @@ describe('TopicLoader parsePath', () => {
     });
   });
 
-  it('parses /quiz/<topic>/<set> into quizSet, not station', () => {
-    const r = TopicLoader.parsePath('/quiz/inflation/main');
-    expect(r).toMatchObject({ shell: 'quiz', topic: 'inflation', quizSet: 'main' });
-    expect(r.station).toBeUndefined();
+  it('rejects retired /quiz/ paths — Quiz shell was removed in v0.4.0', () => {
+    /* The standalone /quiz/<topic>/<set> URL contract is gone; quiz
+       pools now live inside learn.js. parsePath returns null so the
+       SPA falls through to the not-found path. */
+    expect(TopicLoader.parsePath('/quiz/inflation/main')).toBeNull();
   });
 
   it('returns null for unknown shells', () => {

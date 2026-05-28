@@ -4339,11 +4339,14 @@
               ? `<div style="width:40px;height:40px;border-radius:50%;background:${tone.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px;line-height:1;flex-shrink:0;">${side.icon}</div>`
               : `<div style="font-size:20px;line-height:1;">${side.icon}</div>`)
           : '';
+        const labelHtml = side.sub
+          ? `<div style="min-width:0;"><div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;line-height:1.25;">${side.label}</div><div style="color:${tone.label};font-size:12.5px;opacity:0.85;line-height:1.35;margin-top:2px;">${side.sub}</div></div>`
+          : `<div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>`;
         return `
           <div style="border-radius:14px;background:${tone.bg};border:1px solid ${tone.border};box-shadow:0 2px 8px rgba(0,0,0,0.05);padding:16px 18px;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
               ${iconHtml}
-              <div style="color:${tone.label};font-weight:800;font-size:15px;letter-spacing:0.02em;">${side.label}</div>
+              ${labelHtml}
             </div>
             ${inner}
           </div>`;
@@ -4596,6 +4599,13 @@
         }).join('');
         const label2 = genSecLabel(c.causes2Emoji || '💡', c.causes2Label || 'Examples');
         return `${label2}<div style="display:grid;grid-template-columns:${cols2};gap:14px;margin:0 0 20px;">${tiles2}</div>`;
+      })() : ''}
+
+      ${c.causesNote ? (() => {
+        const cn = typeof c.causesNote === 'object' ? c.causesNote : { text: c.causesNote };
+        if (!cn.text) return '';
+        const t = PATTERN_TONES[cn.tone || 'slate'] || PATTERN_TONES.slate;
+        return `<div style="background:${t.bg};border:1px solid ${t.border};border-radius:10px;padding:11px 16px;margin:-4px 0 22px;font-size:13px;color:#0B1426;line-height:1.55;text-align:center;">${cn.icon ? `<span style="margin-right:8px;">${cn.icon}</span>` : ''}${cn.text}</div>`;
       })() : ''}
 
       ${c.flow && c.flow.length ? (() => {
@@ -4920,7 +4930,7 @@
         return `${label}<div style="display:grid;grid-template-columns:${cols};gap:12px;margin:0 0 20px;">${tiles}</div>`;
       })() : ''}
 
-      ${(c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
+      ${c.conclusionPosition === 'end' ? '' : ((c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text)) ? (() => {
         const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Best conclusion') : 'Best conclusion';
         const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
         return `
@@ -4931,7 +4941,7 @@
               <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
             </div>
           </div>`;
-      })() : ''}
+      })() : '')}
 
       ${(c.economistQuote && c.economistQuote.quote) ? (() => {
         const eq = c.economistQuote;
@@ -4965,6 +4975,83 @@
               <span style="font-size:12px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:0.08em;">${liTitle}</span>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:14px 22px;">${liItemsHtml}</div>
+          </div>`;
+      })() : ''}
+
+      ${c.formulaPills && c.formulaPills.terms && c.formulaPills.terms.length ? (() => {
+        const fp = c.formulaPills;
+        const title = fp.label ? genSecLabel(fp.emoji || '🧮', fp.label) : '';
+        const sep = fp.separator || '+';
+        const termHtml = fp.terms.map((term, i) => {
+          const t = PATTERN_TONES[term.tone || 'blue'] || PATTERN_TONES.blue;
+          const isLast = i === fp.terms.length - 1;
+          const pill = `<div style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:${t.bg};border:1.5px solid ${t.border};color:${t.label};font-size:13px;font-weight:800;line-height:1.2;letter-spacing:0.01em;white-space:nowrap;">${term.label}</div>`;
+          const sepHtml = !isLast ? `<div style="display:inline-flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#64748B;padding:0 4px;">${sep}</div>` : '';
+          return pill + sepHtml;
+        }).join('');
+        const noteHtml = fp.note
+          ? `<div style="flex:1;min-width:200px;font-size:13px;color:#0B1426;line-height:1.55;padding-left:8px;">${fp.note}</div>`
+          : '';
+        return `${title}<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;margin-bottom:18px;"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;">${termHtml}</div>${noteHtml}</div>`;
+      })() : ''}
+
+      ${c.bottomTip ? (() => {
+        const tips = Array.isArray(c.bottomTip) ? c.bottomTip : [c.bottomTip];
+        return tips.map(bt => {
+          const btText = typeof bt === 'object' ? bt.text : bt;
+          if (!btText) return '';
+          const btIcon = (typeof bt === 'object' && bt.icon) || '💡';
+          const btTone = (typeof bt === 'object' && bt.tone) || 'amber';
+          const t = PATTERN_TONES[btTone] || PATTERN_TONES.amber;
+          return `<div style="display:flex;align-items:center;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:12px;padding:13px 16px;margin-bottom:16px;"><div style="width:34px;height:34px;border-radius:50%;background:${t.accent};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">${btIcon}</div><div style="font-size:13.5px;color:#0B1426;line-height:1.55;">${btText}</div></div>`;
+        }).join('');
+      })() : ''}
+
+      ${c.nuanceBanner ? (() => {
+        const nb = c.nuanceBanner;
+        const t = PATTERN_TONES[nb.tone || 'amber'] || PATTERN_TONES.amber;
+        const title = nb.label ? genSecLabel(nb.emoji || '💡', nb.label) : '';
+        const iconHtml = nb.icon
+          ? `<div style="width:54px;height:54px;border-radius:12px;background:#fff;border:1.5px solid ${t.border};display:inline-flex;align-items:center;justify-content:center;font-size:30px;line-height:1;flex-shrink:0;">${nb.icon}</div>`
+          : '';
+        const sep = `<div style="display:flex;align-items:center;justify-content:center;color:${t.accent};font-size:22px;font-weight:800;flex-shrink:0;">→</div>`;
+        const primaryHtml = nb.primary
+          ? `<div style="display:flex;align-items:center;gap:14px;flex:1.1;min-width:0;">${iconHtml}<div style="font-size:13.5px;color:#0B1426;line-height:1.5;">${nb.primary}</div></div>`
+          : '';
+        const secondaryHtml = nb.secondary
+          ? `<div style="flex:1;min-width:0;font-size:13.5px;color:#0B1426;line-height:1.5;">${nb.secondary}</div>`
+          : '';
+        const exampleHtml = nb.example
+          ? `<div style="flex:1;min-width:0;background:rgba(255,255,255,0.55);border-radius:10px;padding:10px 12px;border:1px dashed ${t.border};"><div style="font-size:11px;font-weight:800;color:${t.label};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${nb.exampleLabel || 'Example'}</div><div style="font-size:13px;color:#0B1426;line-height:1.45;">${nb.example}</div></div>`
+          : '';
+        return `${title}<div style="display:flex;align-items:stretch;gap:14px;background:${t.bg};border:1px solid ${t.border};border-radius:14px;padding:14px 16px;margin-bottom:22px;">${primaryHtml}${secondaryHtml ? sep + secondaryHtml : ''}${exampleHtml}</div>`;
+      })() : ''}
+
+      ${c.checkList && c.checkList.items && c.checkList.items.length ? (() => {
+        const cl = c.checkList;
+        const t = PATTERN_TONES[cl.tone || 'green'] || PATTERN_TONES.green;
+        const title = cl.label ? genSecLabel(cl.emoji || '✅', cl.label) : '';
+        const rows = cl.items.map(it => `
+          <div style="display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #E7E7EA;border-radius:12px;padding:12px 16px;">
+            <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:${t.soft};color:${t.label};display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin-top:1px;">✓</div>
+            <div style="flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;">
+              <span style="font-size:14px;font-weight:800;color:#0B1426;line-height:1.45;">${it.head}</span>
+              ${it.body ? `<span style="font-size:13px;color:#475569;line-height:1.5;flex:1;min-width:160px;">${it.body}</span>` : ''}
+            </div>
+          </div>`).join('');
+        return `${title}<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">${rows}</div>`;
+      })() : ''}
+
+      ${c.conclusionPosition === 'end' && c.conclusion && (typeof c.conclusion === 'string' || c.conclusion.text) ? (() => {
+        const conTitle = typeof c.conclusion === 'object' ? (c.conclusion.title || 'Big idea') : 'Big idea';
+        const conText  = typeof c.conclusion === 'object' ? c.conclusion.text : c.conclusion;
+        return `
+          <div style="display:flex;gap:14px;align-items:flex-start;background:#ECFDF5;border:1px solid #A7F3D0;border-left:4px solid #059669;border-radius:12px;padding:12px 16px;margin-bottom:16px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">★</div>
+            <div style="flex:1;">
+              <div style="font-size:12px;font-weight:800;color:#065F46;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">${conTitle}</div>
+              <div style="font-size:14px;color:#0B1426;line-height:1.6;">${conText}</div>
+            </div>
           </div>`;
       })() : ''}
 

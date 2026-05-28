@@ -248,28 +248,28 @@ window.ECONOS_TOPIC = {
             analysis: 'In this simplest model, income = output = expenditure. There are no withdrawals or injections yet – every pound earned is a pound spent, and national income is whatever level keeps the two flows balanced.'
           },
           {
-            label: 'Add the financial markets',
+            label: 'Add financial markets',
             tone: 'purple',
             head: 'Saving (S) and Investment (I)',
             body: 'Not all income is spent. <strong>Saving (S)</strong> is income households set aside in banks and other financial institutions – it leaves the circular flow. Those institutions channel saving into <strong>Investment (I)</strong> by firms in capital goods (machines, factories, software), which returns to the flow as firm spending.',
             analysis: 'S is a withdrawal; I is an injection. They don’t have to be equal individually – what matters is whether <em>total</em> injections equal <em>total</em> withdrawals across the whole system.'
           },
           {
-            label: 'Add the government',
+            label: 'Add G',
             tone: 'amber',
             head: 'Taxation (T) and Government spending (G)',
             body: 'The government takes a share of household income as <strong>Taxation (T)</strong> – this leaves the circular flow. It returns to the flow as <strong>Government spending (G)</strong> on public services, infrastructure, and transfers. The gap between G and T is the budget balance – a deficit if G > T, a surplus if T > G.',
             analysis: 'T is a withdrawal; G is an injection. Fiscal policy works by adjusting one or both. A balanced-budget expansion (raising both G and T by the same amount) still increases income – the balanced-budget multiplier.'
           },
           {
-            label: 'Add the overseas sector',
+            label: 'Add Trade',
             tone: 'green',
             head: 'Imports (M) and Exports (X)',
             body: 'Domestic households and firms buy <strong>Imports (M)</strong> from abroad – that money leaves the domestic flow as it pays foreign producers. Domestic firms also sell <strong>Exports (X)</strong> to foreign buyers – that money enters the flow from outside. The net trade balance (X − M) is the current account.',
             analysis: 'M is a withdrawal; X is an injection. A trade deficit (M > X) means more money leaves the domestic flow than enters via trade – but that can still be consistent with equilibrium if other injections (I, G) exceed other withdrawals (S, T) by enough.'
           },
           {
-            label: 'Equilibrium: J = W',
+            label: 'J = W - Macro balance',
             tone: 'rose',
             head: 'National income equilibrium',
             body: 'National income is in equilibrium when total injections equal total withdrawals: <strong>I + G + X = S + T + M</strong>. If J > W, demand exceeds supply and income rises. If W > J, demand is insufficient and income falls. This identity is the foundation of every macro question about AD, the multiplier, and fiscal policy.',

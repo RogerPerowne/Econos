@@ -156,3 +156,53 @@ You do **not** need to bump for changes to topic data files (`js/data/<topic>/..
 
 No new HTML, no engine changes. The shells discover the data through
 `TopicLoader.loadData(...)` at runtime.
+
+## Articles — SEO long-form content
+
+Articles live at `/articles/<slug>/` and exist for one job: rank on Google
+for high-intent A-level economics queries from the SEO queue
+(`articles/SEO_PRIORITY.md`). Each article is its own indexable HTML page —
+**not** JS-driven, **not** rendered through the SPA — so search engines see
+the prose immediately and per-article meta / OG / JSON-LD live in the
+response.
+
+### Two source formats
+
+Both end up at `dist/articles/<slug>/index.html` after `npm run build`:
+
+1. **Markdown sources** (preferred for new articles) — `articles/sources/<slug>.md`.
+   YAML frontmatter holds all metadata and the structured blocks
+   (`friction`, `glance`, `faq`, `want_more`); the body is Markdown with
+   `:::section` directives wrapping each prose section. The `article-routes`
+   Vite plugin reads each `.md`, renders through `markdown-it` (with HTML
+   pass-through so authors can drop raw `<svg>` for diagrams), wraps in
+   the shared topnav + breadcrumb + article header + footer chrome, and
+   emits the final HTML. **One source file, ~150–200 lines, ships a full
+   article.** See `articles/sources/inflation-a-level-economics.md` for the
+   reference shape.
+2. **Hand-rolled HTML** — `articles/<slug>/index.html`. Pinned exemplars
+   that need bespoke per-article visuals beyond what the directive palette
+   supports (e.g. the monopoly article's custom chain widget + two-col
+   cause-cards + want-more preview tile). Copied through verbatim. Their
+   metadata is read from `articles/search-index.json` so the hub still
+   knows about them.
+
+### Adding a new Markdown article
+
+1. Pick the next item from `articles/SEO_PRIORITY.md` and tick it `[~]` (drafted).
+2. Create `articles/sources/<slug>.md`. The slug IS the URL segment.
+3. Fill in frontmatter — title, description, lede, theme, spec, keywords,
+   read_minutes, dates, friction, glance, faq, want_more, breadcrumb. Mark
+   `status: draft` if WIP (the build skips drafts).
+4. Write the body using `:::section eyebrow="…" color="green|purple|blue|pink"
+   icon="bulb|target|globe|scale|cap|spark|check"` containers around each
+   prose section. Each container produces the eyebrow-prefixed
+   `<section class="section">` chrome the existing articles use.
+5. `npm run build` — emits `dist/articles/<slug>/index.html` + appends a
+   `<url>` to `dist/sitemap.xml` + adds the entry to
+   `dist/articles/search-index.json` (so the hub picks it up).
+6. Tick `[L]` (live) in `SEO_PRIORITY.md` once it ships.
+
+The hub's "Library status: N of 70 articles live" reads N from the
+search-index.json at runtime, so it updates automatically when an article
+is added or moved out of draft.

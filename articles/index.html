@@ -63,7 +63,7 @@
     <div class="hub__grid" id="hub-grid" role="list" aria-label="Article library"></div>
 
     <div class="hub__coming-soon">
-      <strong>Library status:</strong> 1 of 70 articles live. The full SEO queue (macro definitions, micro definitions, diagrams, exam technique, UK case studies, misconception pages) is in <code>articles/SEO_PRIORITY.md</code>.
+      <strong>Library status:</strong> <span id="hub-status">…</span> of 70 articles live. The full SEO queue (macro definitions, micro definitions, diagrams, exam technique, UK case studies, misconception pages) is in <code>articles/SEO_PRIORITY.md</code>.
     </div>
 
   </main>
@@ -90,6 +90,9 @@
         grid.innerHTML = '<p class="hub__empty">Could not load article index.</p>';
         return;
       }
+
+      const statusEl = document.getElementById('hub-status');
+      if (statusEl) statusEl.textContent = String(articles.length);
 
       function render(list) {
         if (list.length === 0) {

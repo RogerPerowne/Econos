@@ -55,6 +55,7 @@
       "files": [
         "tests/**/*.js",
         "vite.config.js",
+        "vitest.config.js",
         "playwright.config.js"
       ],
       "parserOptions": {
